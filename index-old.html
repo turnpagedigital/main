@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turnpage Digital Markets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Archivo', sans-serif;
+      background: #000;
+      color: #fff;
+      min-height: 100%;
+    }
+
+    /* Hero section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Background */
+    .bg-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .bg-layer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.3) contrast(1.1);
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      pointer-events: none;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.65) 0%,
+        rgba(0,0,0,0.3) 30%,
+        rgba(0,0,0,0.2) 55%,
+        rgba(0,0,0,0.95) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Layout */
+    .content-wrapper {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: clamp(1.5rem, 3vh, 2.5rem) clamp(1.5rem, 5vw, 4rem);
+    }
+
+    /* Middle: logo + description */
+    .middle {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeUp 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      opacity: 0;
+    }
+
+    .description {
+      max-width: 760px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .logo-inline {
+      margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+      text-align: left;
+    }
+
+    .logo-inline img {
+      width: clamp(140px, 19vw, 260px);
+      height: auto;
+    }
+
+    .description h2 {
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      color: #D4FF00;
+      margin-bottom: clamp(0.8rem, 1.5vh, 1.2rem);
+    }
+
+    .description .lead {
+      font-weight: 500;
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: clamp(0.6rem, 1.2vh, 1rem);
+    }
+
+    .description .lead strong {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .description .body-text {
+      font-weight: 400;
+      font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: clamp(0.4rem, 0.8vh, 0.8rem);
+    }
+
+    .description .body-text:last-child {
+      margin-bottom: 0;
+    }
+
+    .description .body-text strong {
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .cta {
+      margin-top: clamp(1.8rem, 3.5vh, 2.8rem);
+    }
+
+    /* Bottom: footer in hero */
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      padding-bottom: clamp(0.5rem, 1.5vh, 1rem);
+      animation: fadeIn 1.5s ease 1s forwards;
+      opacity: 0;
+    }
+
+    a.btn {
+      display: inline-block;
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.85rem, 1.3vw, 1rem);
+      color: #000;
+      background: #D4FF00;
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9em 2.8em;
+      border-radius: 50px;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    a.btn:hover {
+      background: #e2ff4d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(212, 255, 0, 0.25);
+    }
+
+    .footer {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.18);
+    }
+
+    /* Contact section - dark with bg image */
+    .contact-section {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+      overflow: hidden;
+    }
+
+    .contact-section .contact-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .contact-section .contact-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.28) contrast(1.05);
+    }
+
+    .contact-section .contact-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.95) 0%,
+        rgba(0,0,0,0.3) 20%,
+        rgba(0,0,0,0.15) 50%,
+        rgba(0,0,0,0.4) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Frosted glass form card */
+    .form-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      width: 100%;
+      max-width: 640px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-card h3 {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-card .form-subtitle {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-info-item label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-info-item span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #D4FF00;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.95rem;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: #D4FF00;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.9rem center;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .form-group select:valid {
+      color: #fff;
+    }
+
+    .form-group select option {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit {
+      display: block;
+      width: 100%;
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.85rem, 1.3vw, 1rem);
+      color: #000;
+      background: #D4FF00;
+      border: none;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9em;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    .form-submit:hover {
+      background: #e2ff4d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(212, 255, 0, 0.3);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    .form-success .check {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .form-success h3 {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-success p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+
+    /* Bottom footer */
+    .site-footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.18);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="bg-layer">
+      <img src="bg-paper.jpg" alt="">
+    </div>
+    <div class="grain"></div>
+    <div class="overlay"></div>
+
+    <div class="content-wrapper">
+      <div class="middle">
+        <div class="description">
+          <div class="logo-inline">
+            <img src="TPDM%20Logo%20Green%20on%20Black.png" alt="Turnpage Digital Markets">
+          </div>
+          <h2>Your world class OTC claims desk.</h2>
+          <p class="lead">Turnpage offers <strong>strategic guidance</strong> and <strong>turn-key liquidity solutions</strong> for rights holders entitled to compensation.</p>
+          <p class="body-text">Our experts have helped customers, creditors and other claimants liquidate over <strong>$1 billion</strong> in claims across the largest class actions, bankruptcies and complex litigation matters.</p>
+          <p class="body-text">We partner with leading asset managers to offer competitive rates and frictionless solutions. With over <strong>500 financial institutions</strong> on speed dial, we save you countless hours identifying the right counterparty to meet your needs.</p>
+          <div class="cta">
+            <a class="btn" href="#contact">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="contact-bg">
+      <img src="sebastian-schuster-_i6LPp_mu38-unsplash.jpg" alt="">
+    </div>
+    <div class="contact-overlay"></div>
+      <div class="form-card">
+        <div id="contactForm">
+          <h3>Get In Touch</h3>
+          <p class="form-subtitle">Fill out the form below and our team will respond within 48 hours.</p>
+
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <label>Email</label>
+              <span>info@turnpagedigital.com</span>
+            </div>
+            <div class="contact-info-item">
+              <label>Phone</label>
+              <span>+1 646 860 0068</span>
+            </div>
+          </div>
+
+          <form id="theForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Select a subject</option>
+                <option value="quote">Request a Quote</option>
+                <option value="claims">Claims Inquiry</option>
+                <option value="partnership">Partnership</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your situation..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message &rarr;</button>
+          </form>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="check">&#10003;</div>
+          <h3>Message Sent</h3>
+          <p>We'll be in touch shortly.</p>
+        </div>
+      </div>
+  </section>
+
+  <footer class="site-footer">&copy; 2026 Turnpage Digital Markets LLC</footer>
+
+  <script>
+    const form = document.getElementById('theForm');
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
