@@ -237,9 +237,12 @@ export default function App() {
             </div>
           ) : (
             <>
-              <h3 style={{ fontWeight: 800, fontSize: "1.4rem", color: NEON, marginBottom: "0.4rem" }}>
-                Get In Touch
-              </h3>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.4rem" }}>
+                <h3 style={{ fontWeight: 800, fontSize: "1.4rem", color: NEON }}>
+                  Get In Touch
+                </h3>
+                <img src="/Logotype green.png" alt="Turnpage" style={{ height: 28, opacity: 0.85 }} />
+              </div>
               <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>
                 Fill out the form below and our team will respond within 48 hours.
               </p>
