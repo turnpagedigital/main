@@ -149,7 +149,7 @@ export default function App() {
 
               <p style={{
                 fontWeight: 500, fontSize: "clamp(1.1rem,1.8vw,1.35rem)", lineHeight: 1.5,
-                color: "rgba(255,255,255,0.9)", marginBottom: "clamp(0.6rem,1.2vh,1rem)",
+                color: "rgba(255,255,255,0.9)", marginBottom: "clamp(1.2rem,2.5vh,1.8rem)",
               }}>
                 Turnpage offers <strong style={{ fontWeight: 700, color: "#fff" }}>strategic guidance</strong> and{" "}
                 <strong style={{ fontWeight: 700, color: "#fff" }}>turn-key liquidity solutions</strong> for rights holders entitled to compensation.
@@ -157,7 +157,7 @@ export default function App() {
 
               <p style={{
                 fontWeight: 400, fontSize: "clamp(0.9rem,1.4vw,1.1rem)", lineHeight: 1.65,
-                color: "rgba(255,255,255,0.55)", marginBottom: "clamp(0.4rem,0.8vh,0.8rem)",
+                color: "rgba(255,255,255,0.55)", marginBottom: "clamp(1rem,2vh,1.5rem)",
               }}>
                 Our experts have helped customers, creditors and other claimants liquidate over{" "}
                 <strong style={{ fontWeight: 600, color: "rgba(255,255,255,0.8)" }}>$1 billion</strong> in claims across the largest class actions, bankruptcies and complex litigation matters.
@@ -190,19 +190,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Bottom */}
-          <div style={{
-            display: "flex", flexDirection: "column", alignItems: "center", gap: "0.8rem",
-            paddingBottom: "clamp(0.5rem,1.5vh,1rem)",
-            animation: "fadeIn 1.5s ease 1s forwards", opacity: 0,
-          }}>
-            <span style={{
-              fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase",
-              color: "rgba(255,255,255,0.18)",
-            }}>
-              Turnpage Digital Markets
-            </span>
-          </div>
         </div>
       </section>
 
@@ -250,7 +237,7 @@ export default function App() {
             </div>
           ) : (
             <>
-              <h3 style={{ fontWeight: 800, fontSize: "1.4rem", color: "#fff", marginBottom: "0.4rem" }}>
+              <h3 style={{ fontWeight: 800, fontSize: "1.4rem", color: NEON, marginBottom: "0.4rem" }}>
                 Get In Touch
               </h3>
               <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>
