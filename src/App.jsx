@@ -237,15 +237,17 @@ export default function App() {
             </div>
           ) : (
             <>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.4rem" }}>
-                <h3 style={{ fontWeight: 800, fontSize: "1.4rem", color: NEON }}>
-                  Get In Touch
-                </h3>
-                <img src="/Logotype green.png" alt="Turnpage" style={{ height: 28, opacity: 0.85 }} />
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.5rem" }}>
+                <div>
+                  <h3 style={{ fontWeight: 800, fontSize: "1.4rem", color: NEON, marginBottom: "0.4rem" }}>
+                    Get In Touch
+                  </h3>
+                  <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)" }}>
+                    Fill out the form below and our team will respond within 48 hours.
+                  </p>
+                </div>
+                <img src="/Logotype green.png" alt="Turnpage" style={{ height: 52, opacity: 0.85, flexShrink: 0, marginLeft: "1.5rem" }} />
               </div>
-              <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>
-                Fill out the form below and our team will respond within 48 hours.
-              </p>
 
               <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
