@@ -30,7 +30,7 @@ export async function onRequestPost(context) {
     }
 
     const body = await context.request.json();
-    const { firstName, lastName, email, phone, subject, message } = body;
+    const { firstName, lastName, email, phone, telegram, whatsapp, subject, message } = body;
 
     if (!firstName || !lastName || !email || !subject || !message) {
       return new Response(
@@ -66,6 +66,8 @@ export async function onRequestPost(context) {
               <td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #1a1a1a;">${email}</a></td>
             </tr>
             ${phone ? `<tr><td style="padding: 8px 0; color: #666;">Phone</td><td style="padding: 8px 0;">${phone}</td></tr>` : ""}
+            ${telegram ? `<tr><td style="padding: 8px 0; color: #666;">Telegram</td><td style="padding: 8px 0;">${telegram}</td></tr>` : ""}
+            ${whatsapp ? `<tr><td style="padding: 8px 0; color: #666;">WhatsApp</td><td style="padding: 8px 0;">${whatsapp}</td></tr>` : ""}
             <tr>
               <td style="padding: 8px 0; color: #666;">Subject</td>
               <td style="padding: 8px 0;">${subjectLabels[subject] || subject}</td>

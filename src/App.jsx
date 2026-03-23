@@ -39,6 +39,7 @@ input:focus, textarea:focus, select:focus { outline:none; }
 @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
 @media(max-width:640px) {
   .form-row-2col { grid-template-columns:1fr !important; }
+  .form-row-3col { grid-template-columns:1fr !important; }
   .contact-info-grid { grid-template-columns:1fr !important; }
   .hero-content { padding-left:clamp(1.5rem,5vw,4rem) !important; padding-right:clamp(1.5rem,5vw,4rem) !important; }
 }
@@ -68,6 +69,8 @@ export default function App() {
       lastName: fd.get("lastName"),
       email: fd.get("email"),
       phone: fd.get("phone") || "",
+      telegram: fd.get("telegram") || "",
+      whatsapp: fd.get("whatsapp") || "",
       subject: fd.get("subject"),
       message: fd.get("message"),
     };
@@ -254,9 +257,11 @@ export default function App() {
                   <FormField label="First Name" name="firstName" type="text" required />
                   <FormField label="Last Name" name="lastName" type="text" required />
                 </div>
-                <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-                  <FormField label="Email" name="email" type="email" required />
+                <FormField label="Email" name="email" type="email" required />
+                <div className="form-row-3col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
                   <FormField label="Phone" name="phone" type="tel" />
+                  <FormField label="Telegram" name="telegram" type="text" placeholder="@username" />
+                  <FormField label="WhatsApp" name="whatsapp" type="tel" placeholder="+1 234 567 8900" />
                 </div>
                 <FormSelect label="Subject" name="subject" required options={[
                   { value: "", label: "Select a subject", disabled: true },
