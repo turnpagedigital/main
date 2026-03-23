@@ -8,6 +8,7 @@
  *   RESEND_API_KEY  — your Resend API key
  *   NOTIFY_EMAIL    — recipient (default: info@turnpagedigital.com)
  *   FROM_EMAIL      — sender (default: Turnpage Digital Markets <noreply@turnpagedigital.com>)
+ *   GOOGLE_SHEET_URL — your Google Apps Script web app URL
  */
 
 export async function onRequestPost(context) {
@@ -84,6 +85,20 @@ export async function onRequestPost(context) {
         </p>
       </div>
     `;
+
+    // Send to Google Sheet (fire and forget — don't block on it)
+    const sheetUrl = env.GOOGLE_SHEET_URL;
+    if (sheetUrl) {
+      fetch(sheetUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName, lastName, email, phone, telegram, whatsapp,
+          subject: subjectLabels[subject] || subject, message,
+          timestamp: new Date().toISOString(),
+        }),
+      }).catch((err) => console.error("Google Sheet error:", err.message));
+    }
 
     // Send via Resend
     const resendRes = await fetch("https://api.resend.com/emails", {
