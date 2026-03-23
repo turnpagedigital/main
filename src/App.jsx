@@ -257,30 +257,6 @@ export default function App() {
                 Fill out the form below and our team will respond within 48 hours.
               </p>
 
-              {/* Contact info */}
-              <div className="contact-info-grid" style={{
-                display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem",
-                marginBottom: "1.5rem", paddingBottom: "1.5rem",
-                borderBottom: "1px solid rgba(255,255,255,0.12)",
-              }}>
-                <div>
-                  <div style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: "0.25rem" }}>
-                    Email
-                  </div>
-                  <div style={{ fontSize: "0.9rem", fontWeight: 600, color: NEON }}>
-                    info@turnpagedigital.com
-                  </div>
-                </div>
-                <div>
-                  <div style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", marginBottom: "0.25rem" }}>
-                    Phone
-                  </div>
-                  <div style={{ fontSize: "0.9rem", fontWeight: 600, color: NEON }}>
-                    +1 646 860 0068
-                  </div>
-                </div>
-              </div>
-
               <form ref={formRef} onSubmit={handleSubmit}>
                 <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                   <FormField label="First Name" name="firstName" type="text" required />
