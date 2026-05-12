@@ -1,0 +1,393 @@
+import { NEON, FONT, PAPER, PAPER_2, SURFACE, INK, INK_60, INK_40, LINE, LINE_STRONG } from "./tokens.js";
+
+/* Global CSS string injected once at app boot. */
+export const GLOBAL_CSS = `
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { height:100%; scroll-behavior:smooth; }
+body { font-family: ${FONT}; background:#000; color:#fff; min-height:100%; -webkit-font-smoothing:antialiased; }
+::selection { background: rgba(212,255,0,0.3); }
+a { color: inherit; text-decoration: none; }
+input:focus, textarea:focus, select:focus { outline:none; }
+button { font-family: inherit; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { to { opacity:1; } }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+@keyframes slideDown { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:translateY(0); } }
+@keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+/* ─── Utility classes ─── */
+.reveal-hidden { opacity:0; transform:translateY(20px); }
+.reveal-visible { opacity:1; transform:translateY(0); transition: opacity 0.8s ease, transform 0.8s ease; }
+
+.section-pad { padding: clamp(3rem,7vw,6rem) clamp(1.5rem,5vw,4rem); }
+.section-pad-tight { padding: clamp(2rem,5vw,4rem) clamp(1.5rem,5vw,4rem); }
+.container-narrow { max-width: 760px; margin: 0 auto; }
+.container { max-width: 1180px; margin: 0 auto; }
+.container-wide { max-width: 1320px; margin: 0 auto; }
+
+/* ─── Light surface utilities ─── */
+.surface-paper { background: ${PAPER}; color: ${INK}; }
+.surface-paper-2 { background: ${PAPER_2}; color: ${INK}; }
+.surface-white { background: ${SURFACE}; color: ${INK}; }
+.surface-dark { background: #000; color: #fff; }
+.surface-dark-lift { background: #16161B; color: #fff; }
+
+/* Eyebrow tag (uppercase tiny label above headlines).
+   Default eyebrow is INK black — high contrast on cream paper.
+   Includes a small neon bar before the text for brand presence.
+   For dark surfaces, use the .eyebrow-neon variant. */
+.eyebrow {
+  font-family: ${FONT};
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: ${INK};
+}
+.eyebrow::before {
+  content: ""; display: inline-block;
+  width: 1.6em; height: 0.18em;
+  background: ${NEON}; border-radius: 2px;
+  margin-right: 0.6em; vertical-align: 0.22em;
+}
+.eyebrow-neon {
+  font-family: ${FONT};
+  font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: ${NEON};
+}
+.eyebrow-ink {
+  font-family: ${FONT};
+  font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: ${INK};
+  background: ${NEON};
+  display: inline-block; padding: 0.32rem 0.7rem; border-radius: 4px;
+}
+
+/* Highlighter accent — for italic accent phrases on LIGHT surfaces.
+   Black text with a neon-yellow highlighter bar across the lower portion.
+   Brand pops while contrast stays excellent. */
+.accent-light {
+  color: ${INK};
+  font-style: italic;
+  font-weight: 800;
+  background-image: linear-gradient(180deg, transparent 58%, ${NEON} 58%, ${NEON} 94%, transparent 94%);
+  padding: 0 0.12em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Section headings */
+.h-section {
+  font-family: ${FONT}; font-weight: 800;
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  line-height: 1.15; letter-spacing: -0.02em;
+  color: ${INK};
+}
+.h-section-dark { color: #fff; }
+
+/* ─── Buttons ─── */
+.btn-neon {
+  display: inline-block; font-family: ${FONT}; font-weight: 700;
+  font-size: clamp(0.85rem,1.3vw,1rem); color: #000; background: ${NEON};
+  text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.95em 2.4em; border-radius: 50px; border: none; cursor: pointer;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.btn-neon:hover { background: #E2FF4D; transform: translateY(-2px); box-shadow: 0 6px 28px rgba(212,255,0,0.32); }
+
+.btn-ghost {
+  display: inline-block; font-family: ${FONT}; font-weight: 600;
+  font-size: clamp(0.85rem,1.3vw,1rem); color: #fff;
+  background: transparent; border: 1.5px solid rgba(255,255,255,0.4);
+  text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: calc(0.95em - 1.5px) calc(2.4em - 1.5px); border-radius: 50px; cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s, color 0.25s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: ${NEON}; color: ${NEON}; transform: translateY(-1px); }
+
+/* Light ghost button (on cream surfaces) */
+.btn-ghost-ink {
+  display: inline-block; font-family: ${FONT}; font-weight: 600;
+  font-size: clamp(0.85rem,1.3vw,1rem); color: ${INK};
+  background: transparent; border: 1.5px solid ${INK};
+  text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: calc(0.95em - 1.5px) calc(2.4em - 1.5px); border-radius: 50px; cursor: pointer;
+  transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+.btn-ghost-ink:hover { background: ${INK}; color: ${NEON}; transform: translateY(-1px); }
+
+/* Inline arrow link */
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: ${FONT}; font-weight: 700; font-size: 0.92rem;
+  color: ${INK}; letter-spacing: 0.02em;
+  transition: gap 0.25s, color 0.25s;
+}
+.link-arrow:hover { gap: 0.7rem; }
+.link-arrow-neon { color: ${NEON}; }
+.link-arrow-neon:hover { color: ${NEON}; }
+
+/* ─── Layout ─── */
+.grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem,2vw,1.5rem); }
+.grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,2vw,1.5rem); }
+.grid-4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem,2vw,1.5rem); }
+
+/* ─── Stat strip (light) ─── */
+.stat-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: ${LINE_STRONG};
+  border: 1px solid ${LINE_STRONG}; border-radius: 14px; overflow: hidden;
+}
+.stat-strip > div {
+  padding: 1.4rem 1.4rem; background: ${SURFACE}; text-align: left;
+}
+.stat-strip .stat-value {
+  font-family: ${FONT}; font-weight: 900;
+  font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1;
+  letter-spacing: -0.02em; color: ${INK}; margin-bottom: 0.45rem;
+}
+.stat-strip .stat-label {
+  font-family: ${FONT}; font-size: 0.82rem; line-height: 1.45;
+  color: ${INK_60};
+}
+
+/* Stat strip (dark variant — used on hero/dark sections) */
+.stat-strip-dark {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; overflow: hidden;
+}
+.stat-strip-dark > div { padding: 1.4rem 1.4rem; background: #0A0A0A; text-align: left; }
+.stat-strip-dark .stat-value {
+  font-family: ${FONT}; font-weight: 900;
+  font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1;
+  letter-spacing: -0.02em; color: ${NEON}; margin-bottom: 0.45rem;
+}
+.stat-strip-dark .stat-label {
+  font-family: ${FONT}; font-size: 0.82rem; line-height: 1.45;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ─── Card on light surface ─── */
+.card-light {
+  background: ${SURFACE};
+  border: 1px solid ${LINE};
+  border-radius: 14px;
+  padding: 1.8rem 1.7rem;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.card-light:hover {
+  border-color: ${INK};
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(10,10,10,0.06);
+}
+.card-light-link { display: block; cursor: pointer; }
+
+/* ─── FAQ accordion ─── */
+.faq-item { border-top: 1px solid ${LINE}; }
+.faq-item:last-child { border-bottom: 1px solid ${LINE}; }
+.faq-toggle {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 1.4rem 0; background: transparent; border: 0; cursor: pointer;
+  text-align: left;
+  font-family: ${FONT}; font-size: clamp(1rem, 1.6vw, 1.15rem); font-weight: 700;
+  color: ${INK}; letter-spacing: -0.005em;
+}
+.faq-toggle:hover { opacity: 0.7; }
+.faq-icon {
+  width: 28px; height: 28px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid ${INK}; border-radius: 50%;
+  transition: transform 0.3s, background 0.25s, color 0.25s;
+  color: ${INK}; font-weight: 700; font-size: 0.95rem;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg); background: ${INK}; color: ${NEON};
+}
+.faq-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.35s ease;
+  opacity: 0; padding: 0 0;
+}
+.faq-item.open .faq-body {
+  max-height: 800px; opacity: 1; padding: 0 0 1.4rem;
+}
+.faq-body p {
+  font-family: ${FONT}; font-size: 1rem; line-height: 1.65;
+  color: ${INK_60}; max-width: 760px;
+}
+.faq-body p + p { margin-top: 0.8rem; }
+
+/* ─── Announcement banner ─── */
+.ann-banner {
+  background: #0A0A0A; color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ann-banner-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0.55rem clamp(1rem,3vw,2rem);
+  display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+  font-family: ${FONT}; font-size: 0.82rem;
+  color: rgba(255,255,255,0.85); flex-wrap: wrap;
+}
+.ann-banner-pill {
+  background: ${NEON}; color: #000;
+  padding: 0.2rem 0.6rem; border-radius: 50px;
+  font-size: 0.66rem; font-weight: 800; letter-spacing: 0.16em;
+  text-transform: uppercase; flex-shrink: 0;
+}
+.ann-banner a { color: ${NEON}; font-weight: 700; }
+.ann-banner a:hover { color: #E2FF4D; }
+
+/* ─── Chips ─── */
+.chip-row {
+  display: flex; flex-wrap: wrap; gap: 0.55rem 0.7rem;
+  justify-content: center;
+}
+.chip {
+  font-family: ${FONT}; font-size: 0.82rem; font-weight: 600;
+  color: ${INK}; background: transparent;
+  border: 1px solid ${LINE_STRONG};
+  padding: 0.45rem 0.95rem; border-radius: 50px;
+  white-space: nowrap;
+  transition: border-color 0.25s, background 0.25s;
+}
+.chip:hover { border-color: ${INK}; background: ${SURFACE}; }
+.chip-dark {
+  font-family: ${FONT}; font-size: 0.82rem; font-weight: 600;
+  color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 0.45rem 0.95rem; border-radius: 50px;
+  white-space: nowrap;
+}
+
+/* ─── Comparison block (Old way / TPDM way) ─── */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2vw, 1.5rem); }
+.compare-card {
+  background: ${SURFACE}; border: 1px solid ${LINE};
+  border-radius: 14px; padding: 1.9rem 1.7rem;
+}
+.compare-card.tpdm {
+  background: #0A0A0A; color: #fff; border-color: rgba(255,255,255,0.12);
+  position: relative; overflow: hidden;
+}
+.compare-card.tpdm::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(120% 70% at 0% 0%, rgba(212,255,0,0.10), transparent 50%);
+  pointer-events: none;
+}
+.compare-title {
+  font-family: ${FONT}; font-weight: 800; font-size: 1.3rem;
+  letter-spacing: -0.01em; margin-bottom: 1.3rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.compare-title .tag {
+  font-size: 0.66rem; font-weight: 800; letter-spacing: 0.18em;
+  text-transform: uppercase; padding: 0.22rem 0.55rem; border-radius: 4px;
+}
+.compare-card.tpdm .compare-title .tag { background: ${NEON}; color: #000; }
+.compare-card:not(.tpdm) .compare-title .tag { background: ${INK}; color: #fff; }
+.compare-list { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
+.compare-list li {
+  font-family: ${FONT}; font-size: 0.95rem; line-height: 1.55;
+  padding: 0.75rem 0 0.75rem 1.7rem;
+  position: relative;
+  border-top: 1px solid ${LINE};
+}
+.compare-card.tpdm .compare-list li {
+  border-top-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85);
+}
+.compare-list li:first-child { border-top: 0; }
+.compare-list li::before {
+  content: ""; position: absolute; left: 0; top: 1.1rem;
+  width: 8px; height: 8px; border-radius: 50%;
+}
+.compare-card:not(.tpdm) .compare-list li::before { background: ${INK_40}; }
+.compare-card.tpdm .compare-list li::before { background: ${NEON}; box-shadow: 0 0 12px rgba(212,255,0,0.5); }
+
+/* ─── Bottom CTA panel ─── */
+.bottom-cta {
+  background: #0A0A0A; color: #fff;
+  border-radius: 24px; padding: clamp(2.5rem,5vw,4rem);
+  position: relative; overflow: hidden; text-align: center;
+}
+.bottom-cta::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(60% 80% at 50% -20%, rgba(212,255,0,0.18), transparent 60%),
+    radial-gradient(80% 60% at 100% 100%, rgba(212,255,0,0.08), transparent 60%);
+  pointer-events: none;
+}
+.bottom-cta > * { position: relative; z-index: 2; }
+
+/* ─── Briefing markdown styling (light surface) ─── */
+.briefing-body { color: ${INK}; font-size: 1.05rem; line-height: 1.7; }
+.briefing-body h1 { font-size: clamp(1.7rem,3vw,2.4rem); font-weight: 800; color: ${INK}; margin: 0 0 1rem; line-height: 1.15; letter-spacing: -0.02em; }
+.briefing-body h2 { font-size: clamp(1.25rem,2.2vw,1.6rem); font-weight: 800; color: ${INK}; margin: 2.2rem 0 0.8rem; letter-spacing: -0.01em; }
+.briefing-body h3 { font-size: 1.1rem; font-weight: 700; color: ${INK}; margin: 1.5rem 0 0.6rem; }
+.briefing-body p { margin: 0 0 1.1rem; color: ${INK_60}; }
+.briefing-body strong { color: ${INK}; font-weight: 700; }
+.briefing-body em { color: ${INK_60}; font-style: italic; }
+.briefing-body a { color: ${INK}; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: ${NEON}; text-decoration-thickness: 2px; }
+.briefing-body a:hover { background: ${NEON}; color: ${INK}; text-decoration: none; padding: 0 2px; }
+.briefing-body ul, .briefing-body ol { margin: 0 0 1.1rem 1.5rem; padding-left: 0.5rem; color: ${INK_60}; }
+.briefing-body li { margin-bottom: 0.4rem; }
+.briefing-body blockquote { border-left: 3px solid ${NEON}; padding: 0.2rem 0 0.2rem 1.2rem; margin: 1.2rem 0; color: ${INK_60}; font-style: italic; }
+.briefing-body code { font-family: ui-monospace, "SF Mono", Menlo, monospace; background: ${LINE}; color: ${INK}; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.92em; }
+.briefing-body hr { border: none; border-top: 1px solid ${LINE}; margin: 2rem 0; }
+
+/* ─── Form fields (light surface) ─── */
+.field-light input,
+.field-light textarea,
+.field-light select {
+  width: 100%;
+  background: ${SURFACE};
+  border: 1px solid ${LINE_STRONG};
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-family: ${FONT}; font-size: 0.98rem;
+  color: ${INK};
+  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+}
+.field-light input:focus,
+.field-light textarea:focus,
+.field-light select:focus {
+  border-color: ${INK};
+  background: #FFFEF5;
+  box-shadow: 0 0 0 4px rgba(212,255,0,0.18);
+}
+.field-light label {
+  display: block;
+  font-family: ${FONT}; font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: ${INK}; margin-bottom: 0.4rem;
+}
+.field-light textarea { resize: vertical; min-height: 120px; }
+
+/* ─── Responsive ─── */
+@media (max-width: 980px) {
+  .grid-4col { grid-template-columns: repeat(2, 1fr); }
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-strip-dark { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .grid-3col { grid-template-columns: 1fr; }
+  .grid-2col { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .form-row-2col { grid-template-columns: 1fr !important; }
+  .form-row-3col { grid-template-columns: 1fr !important; }
+  .nav-desktop { display: none !important; }
+  .nav-mobile-toggle { display: flex !important; }
+  .hero-title-xl { font-size: clamp(1.9rem, 7vw, 2.8rem) !important; }
+  .hero-sub-xl { font-size: 1.05rem !important; }
+  .hide-on-mobile { display: none !important; }
+  .ann-banner-inner { font-size: 0.74rem; }
+}
+@media (min-width: 769px) {
+  .nav-desktop { display: flex !important; }
+  .nav-mobile-toggle { display: none !important; }
+  .nav-mobile-menu { display: none !important; }
+}
+`;

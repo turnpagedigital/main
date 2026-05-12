@@ -31,7 +31,7 @@ export async function onRequestPost(context) {
     }
 
     const body = await context.request.json();
-    const { firstName, lastName, email, phone, telegram, whatsapp, subject, message } = body;
+    const { firstName, lastName, email, phone, telegram, whatsapp, subject, message, source } = body;
 
     if (!firstName || !lastName || !email || !subject || !message) {
       return new Response(
@@ -42,11 +42,21 @@ export async function onRequestPost(context) {
 
     // Subject labels
     const subjectLabels = {
+      "ai-copyright": "AI Copyright Inquiry",
+      "crypto": "Crypto Claims Inquiry",
       quote: "Request a Quote",
-      claims: "Claims Inquiry",
+      claims: "General Claims Inquiry",
       partnership: "Partnership",
       other: "Other",
     };
+
+    // Friendly source labels
+    const sourceLabels = {
+      "ai-copyright": "AI Copyright page",
+      "crypto": "Crypto Claims page",
+      "briefings": "Briefings",
+    };
+    const sourceLabel = source ? (sourceLabels[source] || source) : "";
 
     const subjectLine = `New inquiry from ${firstName} ${lastName} — ${subjectLabels[subject] || subject}`;
 
@@ -73,6 +83,7 @@ export async function onRequestPost(context) {
               <td style="padding: 8px 0; color: #666;">Subject</td>
               <td style="padding: 8px 0;">${subjectLabels[subject] || subject}</td>
             </tr>
+            ${sourceLabel ? `<tr><td style="padding: 8px 0; color: #666;">Source</td><td style="padding: 8px 0;">${sourceLabel}</td></tr>` : ""}
           </table>
           <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 16px 0;" />
           <div style="font-size: 14px; line-height: 1.6; color: #333;">
@@ -95,6 +106,7 @@ export async function onRequestPost(context) {
         body: JSON.stringify({
           firstName, lastName, email, phone, telegram, whatsapp,
           subject: subjectLabels[subject] || subject, message,
+          source: sourceLabel,
           timestamp: new Date().toISOString(),
         }),
       }).catch((err) => console.error("Google Sheet error:", err.message));
