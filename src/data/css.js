@@ -239,13 +239,28 @@ button { font-family: inherit; }
   color: ${INK_60};
 }
 
-/* Stat strip (dark variant — used on hero/dark sections) */
+/* Stat strip (dark variant — used on hero/dark sections).
+   Independent glass boxes with gaps between them — frosted, translucent,
+   slight inner highlight, soft drop shadow. Auto-fits to item count. */
 .stat-strip-dark {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1px; background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: clamp(0.6rem, 1.2vw, 1rem);
+  background: transparent; border: none; border-radius: 0; overflow: visible;
 }
-.stat-strip-dark > div { padding: 1.4rem 1.4rem; background: #0A0A0A; text-align: left; }
+.stat-strip-dark > div {
+  padding: 1.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 10px 32px rgba(0, 0, 0, 0.22);
+  text-align: left;
+}
 .stat-strip-dark .stat-value {
   font-family: ${FONT}; font-weight: 900;
   font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1;
@@ -253,7 +268,7 @@ button { font-family: inherit; }
 }
 .stat-strip-dark .stat-label {
   font-family: ${FONT}; font-size: 0.82rem; line-height: 1.45;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 /* ─── Card on light surface ─── */
@@ -456,7 +471,7 @@ button { font-family: inherit; }
 @media (max-width: 980px) {
   .grid-4col { grid-template-columns: repeat(2, 1fr); }
   .stat-strip { grid-template-columns: repeat(2, 1fr); }
-  .stat-strip-dark { grid-template-columns: repeat(2, 1fr); }
+  /* .stat-strip-dark uses auto-fit so it adapts on its own */
 }
 @media (max-width: 768px) {
   .grid-3col { grid-template-columns: 1fr; }
