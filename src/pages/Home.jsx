@@ -16,6 +16,31 @@ const STATS = [
   { value: "2018",  label: "Founded to serve rights holders the markets overlook" },
 ];
 
+/* Hero ticker — case/estate names that slowly drift up behind the headline.
+   Listed twice in JSX so the loop is seamless. */
+const HERO_TICKER = [
+  "Bartz v. Anthropic",
+  "OpenAI MDL",
+  "Concord v. Anthropic",
+  "Getty v. Stability",
+  "Andersen v. Stability",
+  "UMG v. Suno",
+  "UMG v. Udio",
+  "Disney v. Midjourney",
+  "Kadrey v. Meta",
+  "NYT v. OpenAI",
+  "Advance Local v. Cohere",
+  "GEMA v. OpenAI",
+  "Concord II",
+  "FTX",
+  "Celsius",
+  "BlockFi",
+  "Voyager",
+  "Genesis",
+  "Chapter 11 trade claims",
+  "Mass-tort settlements",
+];
+
 const OLD_WAY = {
   title: "Wait years. Take whatever comes.",
   items: [
@@ -72,22 +97,59 @@ export default function Home() {
         minHeight: "calc(100vh - 100px)",
         display: "flex", alignItems: "center",
         padding: "clamp(3rem,6vh,5rem) clamp(1.5rem,5vw,4rem) clamp(3.5rem,7vh,6rem)",
+        background: "#06070A",
       }}>
-        <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-          <img src="/bg-paper.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.28) contrast(1.1)" }} />
-        </div>
+        {/* Base dark wash so everything has a solid foundation. */}
         <div style={{
-          position: "absolute", inset: 0, zIndex: 1, opacity: 0.06, pointerEvents: "none",
+          position: "absolute", inset: 0, zIndex: 0,
+          background: "linear-gradient(180deg, #0A0C10 0%, #06070A 100%)",
+        }} />
+
+        {/* OPTIONAL VIDEO BACKGROUND
+            Drop an .mp4 (or .webm) into public/hero.mp4 and it will appear here.
+            If the file doesn't exist, the <video> hides itself (onError) and the
+            animated mesh below takes over. To force the mesh-only look even
+            when a video is uploaded, just delete this <video> element. */}
+        <video
+          autoPlay muted loop playsInline
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
+          style={{
+            position: "absolute", inset: 0, zIndex: 1,
+            width: "100%", height: "100%", objectFit: "cover",
+            opacity: 0.45, filter: "saturate(0.6) contrast(1.05)",
+            pointerEvents: "none",
+          }}
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+          <source src="/hero.webm" type="video/webm" />
+        </video>
+
+        {/* Animated gradient mesh — fallback / always-visible ambient layer. */}
+        <div className="hero-mesh" style={{ zIndex: 2 }} />
+
+        {/* Vertical ticker of case names — slow upward drift, very dim. */}
+        <div className="hero-ticker" style={{ zIndex: 3 }}>
+          <div className="hero-ticker-track">
+            {[...HERO_TICKER, ...HERO_TICKER].map((t, i) => (
+              <span key={i}>{t}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* Diagonal neon sweep — passes across the hero every 18s. */}
+        <div className="hero-sweep" style={{ zIndex: 4 }} />
+
+        {/* Grain. */}
+        <div style={{
+          position: "absolute", inset: 0, zIndex: 5, opacity: 0.06, pointerEvents: "none",
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
           backgroundSize: "200px 200px",
         }} />
+
+        {/* Bottom fade — so the section transitions cleanly into the chip row below. */}
         <div style={{
-          position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none",
-          background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.95) 100%)",
-        }} />
-        <div style={{
-          position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none",
-          background: "radial-gradient(45% 60% at 85% 0%, rgba(212,255,0,0.10), transparent 60%), radial-gradient(40% 50% at 0% 100%, rgba(212,255,0,0.05), transparent 70%)",
+          position: "absolute", inset: 0, zIndex: 6, pointerEvents: "none",
+          background: "linear-gradient(180deg, rgba(6,7,10,0.30) 0%, transparent 25%, transparent 60%, rgba(0,0,0,0.85) 100%)",
         }} />
 
         <div className="container" style={{ position: "relative", zIndex: 10, maxWidth: 1080 }}>

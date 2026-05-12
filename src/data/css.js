@@ -16,6 +16,73 @@ button { font-family: inherit; }
 @keyframes slideDown { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:translateY(0); } }
 @keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
 
+/* Slow gradient-mesh drift for the home hero. Three radial glows reposition
+   over 30s, creating a subtle ambient "living surface" feel. */
+@keyframes heroMeshDrift {
+  0%   { background-position:   0%   0%, 100% 100%, 50% 50%; }
+  25%  { background-position:  60%  20%,  20%  80%, 70% 30%; }
+  50%  { background-position:  20%  60%,  80%  10%, 30% 70%; }
+  75%  { background-position:  80%  40%,  40%  60%, 60% 20%; }
+  100% { background-position:   0%   0%, 100% 100%, 50% 50%; }
+}
+
+/* Vertical drift for the ticker overlay — slow upward bleed of case names. */
+@keyframes heroTicker {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Diagonal sweep — a slow neon-tinted spotlight passes across the hero every 18s. */
+@keyframes heroSweep {
+  0%   { transform: translate(-30%, -30%) rotate(20deg); opacity: 0; }
+  20%  { opacity: 0.35; }
+  50%  { transform: translate(40%, 30%) rotate(20deg); opacity: 0.35; }
+  80%  { opacity: 0; }
+  100% { transform: translate(80%, 60%) rotate(20deg); opacity: 0; }
+}
+
+.hero-mesh {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(45% 55% at 25% 30%, rgba(212,255,0,0.10), transparent 65%),
+    radial-gradient(50% 60% at 75% 65%, rgba(70,110,180,0.18), transparent 65%),
+    radial-gradient(40% 50% at 50% 50%, rgba(40,40,55,0.30), transparent 60%);
+  background-repeat: no-repeat;
+  background-size: 220% 220%, 220% 220%, 220% 220%;
+  animation: heroMeshDrift 30s ease-in-out infinite;
+}
+
+.hero-sweep {
+  position: absolute; top: 0; left: 0;
+  width: 80%; height: 200%; pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(212,255,0,0.04) 45%,
+    rgba(212,255,0,0.10) 50%,
+    rgba(212,255,0,0.04) 55%,
+    transparent 70%
+  );
+  animation: heroSweep 18s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+.hero-ticker {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  opacity: 0.10; mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+}
+.hero-ticker-track {
+  display: flex; flex-direction: column; gap: 0.4em;
+  animation: heroTicker 70s linear infinite;
+  font-family: ${FONT}; font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.02em; line-height: 1.05;
+  color: #fff;
+  white-space: nowrap;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+}
+
 /* ─── Utility classes ─── */
 .reveal-hidden { opacity:0; transform:translateY(20px); }
 .reveal-visible { opacity:1; transform:translateY(0); transition: opacity 0.8s ease, transform 0.8s ease; }
