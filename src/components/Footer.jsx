@@ -5,6 +5,7 @@ import { hashHref } from "../lib/router.js";
 const COL_DESKS = [
   { key: "ai-copyright", label: "AI Copyright" },
   { key: "crypto", label: "Crypto Claims" },
+  { key: "tariff-refunds", label: "Tariff Refunds", externalHref: "https://www.rewindtariffs.com" },
   { key: "contact", label: "Bankruptcy & Litigation" },
 ];
 const COL_RESOURCES = [
@@ -125,21 +126,32 @@ function FooterCol({ title, items }) {
         {title}
       </p>
       <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-        {items.map(item => (
-          <li key={item.key + (item.hashSuffix || "")}>
-            <a
-              href={hashHref(item.key) + (item.hashSuffix || "")}
-              style={{
-                fontFamily: FONT, fontSize: "0.92rem",
-                color: "rgba(255,255,255,0.72)", transition: "color 0.2s",
-              }}
-              onMouseEnter={e => { e.target.style.color = NEON; }}
-              onMouseLeave={e => { e.target.style.color = "rgba(255,255,255,0.72)"; }}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+        {items.map(item => {
+          const isExternal = Boolean(item.externalHref);
+          return (
+            <li key={item.key + (item.hashSuffix || "")}>
+              <a
+                href={isExternal ? item.externalHref : hashHref(item.key) + (item.hashSuffix || "")}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                style={{
+                  fontFamily: FONT, fontSize: "0.92rem",
+                  color: "rgba(255,255,255,0.72)", transition: "color 0.2s",
+                  display: "inline-flex", alignItems: "center", gap: "0.35em",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.color = NEON; }}
+                onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.72)"; }}
+              >
+                {item.label}
+                {isExternal && (
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.6 }}>
+                    <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
+                  </svg>
+                )}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

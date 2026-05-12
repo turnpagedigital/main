@@ -9,7 +9,6 @@ import BottomCTA from "../components/BottomCTA.jsx";
 const STATS = [
   { value: "$1B+",  label: "Claims liquidated" },
   { value: "500+",  label: "Institutional buyers" },
-  { value: "2018",  label: "Founded" },
   { value: "NYC",   label: "Based" },
 ];
 
@@ -20,7 +19,7 @@ export default function About() {
         eyebrow="About"
         title="An OTC desk for"
         accentTitle="rights holders."
-        subtitle="Built in 2018 to bring institutional liquidity to claims markets that overlooked everyone but the largest creditors."
+        subtitle="Institutional liquidity for claims markets that overlooked everyone but the largest creditors."
       />
 
       {/* STAT STRIP */}

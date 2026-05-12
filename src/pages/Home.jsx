@@ -12,24 +12,6 @@ const STATS = [
   { value: "$1B+",  label: "In claims liquidated" },
   { value: "500+",  label: "Institutional buyers" },
   { value: "<48h",  label: "Response time" },
-  { value: "2018",  label: "Founded" },
-];
-
-/* Hero ticker — case/estate names that slowly drift up behind the headline.
-   Listed twice in JSX so the loop is seamless. */
-const HERO_TICKER = [
-  "Bartz v. Anthropic",
-  "OpenAI MDL",
-  "Concord v. Anthropic",
-  "Getty v. Stability",
-  "UMG v. Suno",
-  "Disney v. Midjourney",
-  "NYT v. OpenAI",
-  "FTX",
-  "Celsius",
-  "BlockFi",
-  "Voyager",
-  "Chapter 11 trade claims",
 ];
 
 const OLD_WAY = {
@@ -107,20 +89,21 @@ export default function Home() {
           <source src="/hero.webm" type="video/webm" />
         </video>
 
-        {/* Animated gradient mesh — fallback / always-visible ambient layer. */}
+        {/* Animated gradient mesh — ambient layer. */}
         <div className="hero-mesh" style={{ zIndex: 2 }} />
 
-        {/* Vertical ticker of case names — slow upward drift, very dim. */}
-        <div className="hero-ticker" style={{ zIndex: 3 }}>
-          <div className="hero-ticker-track">
-            {[...HERO_TICKER, ...HERO_TICKER].map((t, i) => (
-              <span key={i}>{t}</span>
-            ))}
+        {/* Pages-turning-in-a-book — Turnpage made literal. Sits on the
+            right side of the hero, behind the headline. */}
+        <div className="hero-book-wrap" style={{ zIndex: 3 }}>
+          <div className="hero-book">
+            <div className="book-side left" />
+            <div className="book-side right" />
+            <div className="book-page p1" />
+            <div className="book-page p2" />
+            <div className="book-page p3" />
+            <div className="book-spine" />
           </div>
         </div>
-
-        {/* Diagonal neon sweep. */}
-        <div className="hero-sweep" style={{ zIndex: 4 }} />
 
         {/* Grain. */}
         <div style={{
@@ -140,7 +123,7 @@ export default function Home() {
             fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.22em",
             textTransform: "uppercase", color: NEON, marginBottom: "1.4rem",
           }}>
-            OTC Claims Desk · Est. 2018
+            OTC Claims Desk
           </p>
           <h1 className="hero-title-xl" style={{
             fontFamily: FONT, fontWeight: 900, fontSize: "clamp(2.4rem,6vw,4.6rem)",
