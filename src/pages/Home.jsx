@@ -81,7 +81,7 @@ export default function Home() {
           style={{
             position: "absolute", inset: 0, zIndex: 1,
             width: "100%", height: "100%", objectFit: "cover",
-            opacity: 0.45, filter: "saturate(0.6) contrast(1.05)",
+            opacity: 0.85, filter: "saturate(0.85) contrast(1.05)",
             pointerEvents: "none",
           }}
         >
@@ -91,19 +91,6 @@ export default function Home() {
 
         {/* Animated gradient mesh — ambient layer. */}
         <div className="hero-mesh" style={{ zIndex: 2 }} />
-
-        {/* Pages-turning-in-a-book — Turnpage made literal. Sits on the
-            right side of the hero, behind the headline. */}
-        <div className="hero-book-wrap" style={{ zIndex: 3 }}>
-          <div className="hero-book">
-            <div className="book-side left" />
-            <div className="book-side right" />
-            <div className="book-page p1" />
-            <div className="book-page p2" />
-            <div className="book-page p3" />
-            <div className="book-spine" />
-          </div>
-        </div>
 
         {/* Grain. */}
         <div style={{

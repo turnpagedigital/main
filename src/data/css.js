@@ -83,69 +83,6 @@ button { font-family: inherit; }
   padding-left: clamp(1.5rem, 5vw, 4rem);
 }
 
-/* ─── Hero book — pages turning in a book ─── */
-/* Sits behind the headline on the right side of the hero. Three pages
-   stagger-flip continuously so something is always in motion. */
-@keyframes pageFlip {
-  0%   { transform: rotateY(0deg); }
-  18%  { transform: rotateY(0deg); }
-  42%  { transform: rotateY(-175deg); }
-  100% { transform: rotateY(-175deg); }
-}
-.hero-book-wrap {
-  position: absolute;
-  right: clamp(-4vw, -2vw, 2vw); top: 50%;
-  transform: translateY(-50%);
-  width: clamp(320px, 46vw, 720px);
-  height: clamp(220px, 32vw, 480px);
-  perspective: 2000px;
-  pointer-events: none;
-  opacity: 0.55;
-}
-.hero-book {
-  position: absolute; inset: 0;
-  transform: rotateX(8deg) rotateZ(-2deg);
-  transform-style: preserve-3d;
-}
-.book-side {
-  position: absolute; top: 0; bottom: 0;
-  width: 50%;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
-}
-.book-side.left { left: 0; border-right: 1px solid rgba(255,255,255,0.22); border-top-left-radius: 6px; border-bottom-left-radius: 6px; }
-.book-side.right { right: 0; border-left: 1px solid rgba(255,255,255,0.22); border-top-right-radius: 6px; border-bottom-right-radius: 6px; }
-.book-spine {
-  position: absolute; left: 50%; top: 0; bottom: 0;
-  width: 2px; transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba(212,255,0,0.0), rgba(212,255,0,0.35) 40%, rgba(212,255,0,0.35) 60%, rgba(212,255,0,0.0));
-  z-index: 5;
-}
-.book-page {
-  position: absolute; top: 0; bottom: 0;
-  width: 50%; right: 50%;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.06) 100%);
-  border: 1px solid rgba(255,255,255,0.20);
-  transform-origin: right center;
-  transform-style: preserve-3d;
-  backface-visibility: visible;
-  animation: pageFlip 9s ease-in-out infinite;
-  z-index: 4;
-  box-shadow: 0 0 24px rgba(212,255,0,0.06);
-}
-.book-page::before,
-.book-page::after {
-  content: ""; position: absolute; left: 8%; right: 8%;
-  height: 1px; background: rgba(255,255,255,0.12);
-}
-.book-page::before { top: 22%; box-shadow: 0 12px 0 rgba(255,255,255,0.08), 0 24px 0 rgba(255,255,255,0.10), 0 36px 0 rgba(255,255,255,0.08); }
-.book-page::after { bottom: 22%; box-shadow: 0 -12px 0 rgba(255,255,255,0.10), 0 -24px 0 rgba(255,255,255,0.08); }
-.book-page.p1 { animation-delay: 0s; }
-.book-page.p2 { animation-delay: 3s; }
-.book-page.p3 { animation-delay: 6s; }
 
 /* ─── Utility classes ─── */
 .reveal-hidden { opacity:0; transform:translateY(20px); }
