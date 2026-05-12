@@ -369,26 +369,26 @@ button { font-family: inherit; }
 }
 .faq-body p + p { margin-top: 0.8rem; }
 
-/* ─── Announcement banner ─── */
+/* ─── Announcement banner — bright neon strip across the top ─── */
 .ann-banner {
-  background: #0A0A0A; color: #fff;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: ${NEON}; color: ${INK};
+  border-bottom: 1px solid rgba(0,0,0,0.18);
 }
 .ann-banner-inner {
   max-width: 1280px; margin: 0 auto;
   padding: 0.55rem clamp(1rem,3vw,2rem);
   display: flex; align-items: center; justify-content: center; gap: 0.7rem;
-  font-family: ${FONT}; font-size: 0.82rem;
-  color: rgba(255,255,255,0.85); flex-wrap: wrap;
+  font-family: ${FONT}; font-size: 0.82rem; font-weight: 600;
+  color: ${INK}; flex-wrap: wrap;
 }
 .ann-banner-pill {
-  background: ${NEON}; color: #000;
+  background: ${INK}; color: ${NEON};
   padding: 0.2rem 0.6rem; border-radius: 50px;
   font-size: 0.66rem; font-weight: 800; letter-spacing: 0.16em;
   text-transform: uppercase; flex-shrink: 0;
 }
-.ann-banner a { color: ${NEON}; font-weight: 700; }
-.ann-banner a:hover { color: #E2FF4D; }
+.ann-banner a { color: ${INK}; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+.ann-banner a:hover { opacity: 0.7; }
 
 /* ─── Chips ─── */
 .chip-row {
