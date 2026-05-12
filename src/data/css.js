@@ -321,26 +321,37 @@ button { font-family: inherit; }
 }
 .faq-body p + p { margin-top: 0.8rem; }
 
-/* ─── Announcement banner — bright neon strip across the top ─── */
+/* ─── Announcement banner — quiet light-gray strip above the white nav.
+   Polestar-style restraint: thin, low-contrast, with a tiny neon dot for
+   "Latest" instead of a heavy pill. ─── */
 .ann-banner {
-  background: ${NEON}; color: ${INK};
-  border-bottom: 1px solid rgba(0,0,0,0.18);
+  background: #F4F5F7; color: ${INK_60};
+  border-bottom: 1px solid rgba(10,10,10,0.05);
 }
 .ann-banner-inner {
-  max-width: 1280px; margin: 0 auto;
-  padding: 0.55rem clamp(1rem,3vw,2rem);
-  display: flex; align-items: center; justify-content: center; gap: 0.7rem;
-  font-family: ${FONT}; font-size: 0.82rem; font-weight: 600;
-  color: ${INK}; flex-wrap: wrap;
+  max-width: 1440px; margin: 0 auto;
+  padding: 0.5rem clamp(1.25rem,3vw,2.5rem);
+  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  font-family: ${FONT}; font-size: 0.78rem; font-weight: 500;
+  color: ${INK_60}; flex-wrap: wrap;
 }
 .ann-banner-pill {
-  background: ${INK}; color: ${NEON};
-  padding: 0.2rem 0.6rem; border-radius: 50px;
-  font-size: 0.66rem; font-weight: 800; letter-spacing: 0.16em;
-  text-transform: uppercase; flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 0.4em;
+  font-family: ${FONT};
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: ${INK}; flex-shrink: 0;
 }
-.ann-banner a { color: ${INK}; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
-.ann-banner a:hover { opacity: 0.7; }
+.ann-banner-pill::before {
+  content: ""; display: inline-block;
+  width: 0.5em; height: 0.5em; border-radius: 50%; background: ${NEON};
+}
+.ann-banner a {
+  color: ${INK}; font-weight: 600;
+  text-decoration: underline; text-decoration-color: rgba(10,10,10,0.2);
+  text-underline-offset: 3px; text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s;
+}
+.ann-banner a:hover { text-decoration-color: ${INK}; }
 
 /* ─── Chips ─── */
 .chip-row {
