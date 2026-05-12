@@ -200,15 +200,33 @@ button { font-family: inherit; }
 .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,2vw,1.5rem); }
 .grid-4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem,2vw,1.5rem); }
 
-/* ─── Stat strip (light) ─── */
+/* ─── Stat strip (light) — glassmorphism ───
+   Frosted glass over the cool gray paper background.
+   Single rounded container with subtle internal dividers between cells. */
 .stat-strip {
   display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: ${LINE_STRONG};
-  border: 1px solid ${LINE_STRONG}; border-radius: 14px; overflow: hidden;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 18px; overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 10px 36px rgba(10, 10, 10, 0.06);
 }
 .stat-strip > div {
-  padding: 1.4rem 1.4rem; background: ${SURFACE}; text-align: left;
+  padding: 1.5rem 1.5rem; background: transparent; text-align: left;
+  border-right: 1px solid rgba(10, 10, 10, 0.07);
+}
+.stat-strip > div:last-child { border-right: none; }
+@media (max-width: 980px) {
+  .stat-strip > div { border-right: none; border-bottom: 1px solid rgba(10,10,10,0.07); }
+  .stat-strip > div:nth-last-child(-n+2) { border-bottom: none; }
+}
+@media (max-width: 600px) {
+  .stat-strip > div { border-bottom: 1px solid rgba(10,10,10,0.07); }
+  .stat-strip > div:last-child { border-bottom: none; }
 }
 .stat-strip .stat-value {
   font-family: ${FONT}; font-weight: 900;
