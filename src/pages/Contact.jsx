@@ -35,7 +35,7 @@ export default function Contact() {
         eyebrow="Get in Touch"
         title="Tell us about"
         accentTitle="your claim."
-        subtitle="Fill out the form and a member of our team will respond within 48 hours. Confidentiality assured."
+        subtitle="48-hour response. Confidentiality default."
       />
 
       <section className="surface-paper" style={{
@@ -72,8 +72,7 @@ export default function Contact() {
               fontFamily: FONT, fontSize: "1.02rem", color: INK_60,
               lineHeight: 1.65, marginBottom: "1.6rem",
             }}>
-              Every inquiry is read by a partner. We respond within 48 hours — usually sooner.
-              Confidentiality is the default; NDA available on request.
+              Every inquiry is read by a partner. NDA available on request.
             </p>
             <div style={{
               padding: "1.2rem 1.4rem",

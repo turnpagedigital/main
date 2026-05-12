@@ -46,7 +46,7 @@ export default function Footer() {
               fontFamily: FONT, fontSize: "0.92rem", lineHeight: 1.65,
               color: "rgba(255,255,255,0.6)", maxWidth: 340, marginBottom: "1.4rem",
             }}>
-              The OTC desk for rights holders. Capital and advisory across the largest class actions, bankruptcies, and complex litigation in the world.
+              The OTC desk for rights holders.
             </p>
             <a
               href="mailto:info@turnpagedigital.com"

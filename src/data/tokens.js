@@ -17,9 +17,11 @@ export const LIFT_2 = "#1F1F25";
 export const DARK_BORDER = "rgba(255,255,255,0.12)";
 
 /* Light surfaces (body of subpages — OffDeal vibe).
-   Cool slate-gray palette: neutral, modern, no beige warmth. */
-export const PAPER = "#ECEEF2";       // primary light background — cool light gray
-export const PAPER_2 = "#DFE3E9";     // slightly deeper cool gray for alt sections
+   Cool slate-gray palette: neutral, modern, no beige warmth.
+   These are noticeably gray (not just off-white) so the white cards on top
+   lift clearly off the background. */
+export const PAPER = "#E5E7EB";       // primary light background — clear cool gray
+export const PAPER_2 = "#D5D9DF";     // deeper cool gray for alt sections
 export const SURFACE = "#FFFFFF";     // pure white card surface
 export const INK = "#0A0A0A";         // ink text on light
 export const INK_60 = "rgba(10,10,10,0.6)";

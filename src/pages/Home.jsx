@@ -6,14 +6,13 @@ import SectionHeader from "../components/SectionHeader.jsx";
 import SubBrandTile from "../components/SubBrandTile.jsx";
 import Comparison from "../components/Comparison.jsx";
 import FAQ from "../components/FAQ.jsx";
-import CaseChipRow from "../components/CaseChipRow.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 
 const STATS = [
-  { value: "$1B+",  label: "In claims liquidated across class actions, bankruptcies, and complex litigation" },
-  { value: "500+",  label: "Financial institutions on speed dial for competitive bids" },
-  { value: "<48h",  label: "From inquiry to a serious response on most claims" },
-  { value: "2018",  label: "Founded to serve rights holders the markets overlook" },
+  { value: "$1B+",  label: "In claims liquidated" },
+  { value: "500+",  label: "Institutional buyers" },
+  { value: "<48h",  label: "Response time" },
+  { value: "2018",  label: "Founded" },
 ];
 
 /* Hero ticker — case/estate names that slowly drift up behind the headline.
@@ -23,68 +22,53 @@ const HERO_TICKER = [
   "OpenAI MDL",
   "Concord v. Anthropic",
   "Getty v. Stability",
-  "Andersen v. Stability",
   "UMG v. Suno",
-  "UMG v. Udio",
   "Disney v. Midjourney",
-  "Kadrey v. Meta",
   "NYT v. OpenAI",
-  "Advance Local v. Cohere",
-  "GEMA v. OpenAI",
-  "Concord II",
   "FTX",
   "Celsius",
   "BlockFi",
   "Voyager",
-  "Genesis",
   "Chapter 11 trade claims",
-  "Mass-tort settlements",
 ];
 
 const OLD_WAY = {
-  title: "Wait years. Take whatever comes.",
+  title: "The traditional path.",
   items: [
-    "Distributions stretched across multi-year court timelines.",
-    "Pricing opaque — you have no idea what your claim is worth today.",
-    "DIY outreach to a handful of buyers, all bidding for themselves.",
-    "Bespoke documentation, contingent payouts, surprise carve-outs.",
-    "Tax and timing decisions left until the last moment.",
+    "Wait years for distributions.",
+    "Pricing opaque, counterparties scattered.",
+    "Bespoke documentation every time.",
   ],
 };
 const NEW_WAY = {
-  title: "Liquidate in days. On your terms.",
+  title: "Through Turnpage.",
   items: [
-    "All-cash bids today — convert a contingent recovery into capital.",
-    "Competitive auction across 500+ institutional buyers.",
-    "Transparent pricing, benchmarked against the broader market.",
-    "Standardized documentation. Days to close, not months.",
-    "Tax-aware structuring and counsel introductions built in.",
+    "Cash bid today, in days not years.",
+    "Competitive auction across our buyer network.",
+    "Standardized docs, transparent pricing.",
   ],
 };
 
 const FAQS = [
   {
-    q: "What is Turnpage Digital Markets?",
-    a: [
-      "We are the institutional OTC desk for rights holders — individuals and institutions with claims to compensation across class actions, bankruptcies, and complex litigation.",
-      "We bring competitive capital and lifecycle advisory to a market that historically only worked for the largest creditors. Founded 2018; over $1B in claims transacted.",
-    ],
+    q: "What does Turnpage do?",
+    a: "We buy claims and advise rights holders. Our counterparties hold positions in class actions, bankruptcies, and complex litigation. We quote, document, and close.",
   },
   {
-    q: "What types of claims do you buy?",
-    a: "Today we are most active in AI copyright (Bartz, the OpenAI MDL, Concord, Getty, and adjacent matters) and crypto bankruptcy claims (FTX, Celsius, BlockFi, Voyager). We also work on Chapter 11 trade claims, mass-tort settlements, and other complex litigation — speak with a partner about your specific matter.",
+    q: "What claims do you buy?",
+    a: "AI copyright (Bartz, the OpenAI MDL, Concord, Getty, and adjacent matters) and crypto bankruptcy claims (FTX, Celsius, BlockFi, Voyager). Also Chapter 11 trade claims and mass-tort settlements by conversation.",
   },
   {
     q: "How does pricing work?",
-    a: "We run a competitive process across our network of 500+ institutional buyers. You see real bids from real counterparties. We earn a market-clearing spread on each transaction; you keep the rest. No upfront retainers, no hidden fees.",
+    a: "We run a competitive process across our buyer network. You see real bids. No upfront retainers; we earn a spread on what closes.",
   },
   {
     q: "How fast can you close?",
-    a: "On simple, well-documented claims, days. On complex matters — multi-party catalogues, contested filings, or transfers requiring court approval — we plan against the relevant docket. Either way, we move on your timeline, not the docket's.",
+    a: "Days on simple matters. Longer when the docket requires it.",
   },
   {
-    q: "Is this advice?",
-    a: "No. Information on this site is general in nature and is not legal, tax, or investment advice. We will, however, introduce you to counsel and tax professionals when a matter requires them — and structure any transaction we lead to be transparent about every economic moving part.",
+    q: "Is this legal or financial advice?",
+    a: "No. Information on this site is general in nature. We will introduce you to counsel and tax specialists when a matter calls for it.",
   },
 ];
 
@@ -108,8 +92,7 @@ export default function Home() {
         {/* OPTIONAL VIDEO BACKGROUND
             Drop an .mp4 (or .webm) into public/hero.mp4 and it will appear here.
             If the file doesn't exist, the <video> hides itself (onError) and the
-            animated mesh below takes over. To force the mesh-only look even
-            when a video is uploaded, just delete this <video> element. */}
+            animated mesh below takes over. */}
         <video
           autoPlay muted loop playsInline
           onError={(e) => { e.currentTarget.style.display = "none"; }}
@@ -136,7 +119,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Diagonal neon sweep — passes across the hero every 18s. */}
+        {/* Diagonal neon sweep. */}
         <div className="hero-sweep" style={{ zIndex: 4 }} />
 
         {/* Grain. */}
@@ -146,7 +129,7 @@ export default function Home() {
           backgroundSize: "200px 200px",
         }} />
 
-        {/* Bottom fade — so the section transitions cleanly into the chip row below. */}
+        {/* Bottom fade. */}
         <div style={{
           position: "absolute", inset: 0, zIndex: 6, pointerEvents: "none",
           background: "linear-gradient(180deg, rgba(6,7,10,0.30) 0%, transparent 25%, transparent 60%, rgba(0,0,0,0.85) 100%)",
@@ -157,7 +140,7 @@ export default function Home() {
             fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.22em",
             textTransform: "uppercase", color: NEON, marginBottom: "1.4rem",
           }}>
-            OTC Claims Desk · Established 2018
+            OTC Claims Desk · Est. 2018
           </p>
           <h1 className="hero-title-xl" style={{
             fontFamily: FONT, fontWeight: 900, fontSize: "clamp(2.4rem,6vw,4.6rem)",
@@ -169,45 +152,19 @@ export default function Home() {
           </h1>
           <p className="hero-sub-xl" style={{
             fontFamily: FONT, fontSize: "clamp(1.1rem,1.7vw,1.4rem)", fontWeight: 400,
-            lineHeight: 1.5, color: "rgba(255,255,255,0.82)", maxWidth: 780,
+            lineHeight: 1.5, color: "rgba(255,255,255,0.82)", maxWidth: 680,
             marginBottom: "2.2rem",
           }}>
-            Capital and advisory for individuals and institutions with claims to compensation —
-            across the largest class actions, bankruptcies, and complex litigation in the world.
+            We buy claims. Class actions, bankruptcies, complex litigation.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", marginBottom: "3rem" }}>
             <a href={hashHref("contact")} className="btn-neon">Talk to a Partner</a>
-            <a href={hashHref("ai-copyright")} className="btn-ghost">Explore AI Copyright</a>
+            <a href={hashHref("ai-copyright")} className="btn-ghost">AI Copyright Desk</a>
           </div>
 
-          {/* Hero stat strip — sits just below the CTA, gives credibility above the fold */}
           <div style={{ maxWidth: 980 }}>
             <StatStrip items={STATS} theme="dark" />
           </div>
-        </div>
-      </section>
-
-      {/* ─── CASES WE COVER (chip row on dark) ─── */}
-      <section className="surface-dark" style={{ padding: "clamp(2rem,4vw,3rem) clamp(1.5rem,5vw,4rem) clamp(2.5rem,5vw,4rem)" }}>
-        <div className="container">
-          <CaseChipRow
-            label="Cases & estates we cover"
-            theme="dark"
-            items={[
-              "Bartz v. Anthropic",
-              "OpenAI MDL",
-              "Concord v. Anthropic",
-              "Getty v. Stability",
-              "Andersen v. Stability",
-              "UMG v. Suno / Udio",
-              "Disney v. Midjourney",
-              "FTX",
-              "Celsius",
-              "BlockFi",
-              "Voyager",
-              "Chapter 11 trade claims",
-            ]}
-          />
         </div>
       </section>
 
@@ -215,10 +172,8 @@ export default function Home() {
       <section className="surface-paper section-pad">
         <div className="container">
           <SectionHeader
-            eyebrow="Where We Work"
-            title="One desk."
-            accent="Every claim type."
-            kicker="Three sub-brands organized by where the action is. AI Copyright is the front line. Crypto is live. Bankruptcy and complex litigation is the original book."
+            eyebrow="Desks"
+            title="Where we work."
           />
           <div className="grid-3col" style={{ alignItems: "stretch" }}>
             <SubBrandTile
@@ -226,40 +181,25 @@ export default function Home() {
               tag="Featured"
               number="01"
               title="AI Copyright"
-              body="Capital and advisory for authors, music publishers, news organizations, and visual artists with claims against generative AI companies."
-              bullets={[
-                "Bartz, OpenAI MDL, Concord, Getty, Disney v. Midjourney",
-                "Class-member purchases & opt-out economics",
-                "Strategy across U.S., UK, EU, and Germany",
-              ]}
+              body="Bartz, the OpenAI MDL, Concord, Getty, Disney v. Midjourney. Class members, plaintiffs, publishers."
               href={hashHref("ai-copyright")}
-              cta="Explore the AI Copyright desk →"
+              cta="Explore →"
             />
             <SubBrandTile
               variant="live"
               tag="Live"
               number="02"
               title="Crypto Claims"
-              body="Liquidity for creditors holding claims in major crypto bankruptcies — from FTX and Celsius to BlockFi, Voyager, and beyond."
-              bullets={[
-                "Single-creditor and bulk-fund dispositions",
-                "All-cash close, fiat settlement",
-                "Tax-basis-aware structuring",
-              ]}
+              body="FTX, Celsius, BlockFi, Voyager. Single creditors, funds, estates."
               href={hashHref("crypto")}
-              cta="Explore the Crypto desk →"
+              cta="Explore →"
             />
             <SubBrandTile
               variant="soon"
               tag="By Conversation"
               number="03"
-              title="Bankruptcy & Complex Litigation"
-              body="The original Turnpage book of business — Chapter 11 trade claims, mass-tort settlements, and bespoke complex matters."
-              bullets={[
-                "Chapter 11 trade claim purchases",
-                "Mass-tort settlement liquidity",
-                "Direct underwrite for unusual claims",
-              ]}
+              title="Bankruptcy & Litigation"
+              body="Chapter 11 trade claims, mass-tort settlements, bespoke matters."
               href={hashHref("contact")}
               cta="Speak to a partner →"
             />
@@ -267,38 +207,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── COMPARISON — Old way vs Turnpage way ─── */}
+      {/* ─── COMPARISON ─── */}
       <section className="surface-paper-2 section-pad">
         <div className="container">
           <SectionHeader
             eyebrow="Why Turnpage"
-            title="Time kills claims."
-            accent="We save both."
-            kicker="The market for claims has worked for institutional creditors for decades. We bring the same machinery to everyone else."
+            title="A simpler path"
+            accent="to liquidity."
           />
           <Comparison oldWay={OLD_WAY} newWay={NEW_WAY} />
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─── */}
-      <section className="surface-paper section-pad">
-        <div className="container">
-          <SectionHeader
-            eyebrow="How It Works"
-            title="Three steps."
-            accent="Days, not years."
-            kicker="No retainers, no obligation. We sign an NDA, diligence the matter, and come back with terms."
-          />
-          <div className="grid-3col">
-            <Step n="01" title="Tell us about your claim" body="Share the basics — what type of claim, against whom, what stage. We sign an NDA and start diligence." />
-            <Step n="02" title="We assess and structure a bid" body="We tap our 500+ institutional buyers for competitive pricing and structure terms that fit your timeline and tax posture." />
-            <Step n="03" title="We close" body="Documentation, transfer mechanics, settlement — handled end-to-end. Most claims close in days." />
-          </div>
-        </div>
-      </section>
-
       {/* ─── FAQ ─── */}
-      <section className="surface-paper-2 section-pad">
+      <section className="surface-paper section-pad">
         <div className="container" style={{ maxWidth: 960 }}>
           <div style={{
             display: "grid", gridTemplateColumns: "minmax(0,1fr) minmax(0,1.4fr)",
@@ -309,12 +231,6 @@ export default function Home() {
               <h2 className="h-section" style={{ marginBottom: "1rem" }}>
                 Questions, <span className="accent-light">answered.</span>
               </h2>
-              <p style={{
-                fontFamily: FONT, fontSize: "1rem", color: INK_60,
-                lineHeight: 1.65, marginBottom: "1.4rem",
-              }}>
-                What we hear most often from new counterparties. If your question isn't here, send it.
-              </p>
               <a href={hashHref("contact")} className="btn-ghost-ink">Ask a Question</a>
             </div>
             <div>
@@ -329,39 +245,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── BOTTOM CTA ─── */}
       <BottomCTA
-        eyebrow="Ready to talk?"
+        eyebrow="Get in Touch"
         title="Hold a claim?"
         accent="Talk to us."
-        kicker="We respond to every inquiry within 48 hours. Confidentiality assured."
+        kicker="48-hour response. Confidentiality default."
         primary={{ label: "Get in Touch", href: hashHref("contact") }}
-        secondary={{ label: "Read the Briefings", href: hashHref("briefings") }}
+        secondary={null}
       />
     </>
-  );
-}
-
-function Step({ n, title, body }) {
-  return (
-    <div className="card-light" style={{ position: "relative" }}>
-      <p style={{
-        fontFamily: FONT, fontWeight: 900, fontSize: "0.85rem",
-        color: NEON, background: INK, padding: "0.25rem 0.55rem",
-        borderRadius: 4, display: "inline-block",
-        letterSpacing: "0.16em", marginBottom: "1rem",
-      }}>
-        Step {n}
-      </p>
-      <h3 style={{
-        fontFamily: FONT, fontSize: "1.2rem", fontWeight: 800, color: INK,
-        marginBottom: "0.6rem", letterSpacing: "-0.01em", lineHeight: 1.25,
-      }}>
-        {title}
-      </h3>
-      <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60, lineHeight: 1.6 }}>
-        {body}
-      </p>
-    </div>
   );
 }

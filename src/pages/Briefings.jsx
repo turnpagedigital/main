@@ -27,9 +27,9 @@ export default function Briefings() {
     <>
       <Hero
         eyebrow="Briefings"
-        title="Analysis from the AI copyright"
-        accentTitle="frontier."
-        subtitle="Daily-grade analysis on the cases, settlements, and rulings shaping the AI copyright landscape — written for rights holders, counsel, and dealmakers."
+        title="Notes from the"
+        accentTitle="docket."
+        subtitle="Analysis on the cases, settlements, and rulings shaping the AI copyright landscape."
       />
 
       <section className="surface-paper section-pad">
@@ -64,7 +64,7 @@ export default function Briefings() {
         eyebrow="Subscribe"
         title="Want these by email?"
         accent="Just ask."
-        kicker="We send the most important briefings directly to counterparties and counsel. Reach out to be added."
+        kicker="Reach out to be added to the distribution list."
         primary={{ label: "Get in Touch", href: hashHref("contact") + "?source=briefings" }}
         secondary={null}
       />
