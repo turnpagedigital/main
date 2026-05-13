@@ -144,12 +144,12 @@ export default function NavBar({ currentPage }) {
             style={{
               fontFamily: FONT, fontSize: "0.82rem", fontWeight: 700,
               color: INK, background: NEON,
-              padding: "0.6rem 1.4rem",
-              borderRadius: 50, letterSpacing: "0.04em",
-              transition: "background 0.25s, transform 0.2s",
+              padding: "0.65rem 1.3rem",
+              borderRadius: 0, letterSpacing: "0.02em",
+              transition: "background 0.2s",
               display: "inline-block",
             }}
-            onMouseLeave={e => { e.currentTarget.style.background = NEON; e.currentTarget.style.transform = ""; }}
+            onMouseLeave={e => { e.currentTarget.style.background = NEON; }}
           >
             Get in Touch
           </a>
@@ -326,7 +326,7 @@ export default function NavBar({ currentPage }) {
                 fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700,
                 color: INK, background: NEON,
                 padding: "0.95rem 1.5rem",
-                borderRadius: 50, letterSpacing: "0.04em",
+                borderRadius: 0, letterSpacing: "0.02em",
               }}
             >
               Get in Touch

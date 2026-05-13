@@ -267,28 +267,36 @@ function SituationsSection() {
       padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-        <div style={{ maxWidth: 900, marginBottom: "clamp(3rem, 7vw, 6rem)" }}>
-          <p style={{
-            fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-            letterSpacing: "0.22em", textTransform: "uppercase",
-            color: INK_60, marginBottom: "1.5rem",
-          }}>
-            What we cover
-          </p>
-          <h2 style={{
-            fontFamily: FONT, fontWeight: 800,
-            fontSize: "clamp(2.4rem, 6vw, 5.5rem)",
-            lineHeight: 0.98, letterSpacing: "-0.04em",
-            color: INK, marginBottom: "1.4rem",
-          }}>
-            The toughest claims<br/>
-            <span className="accent-light">on the docket.</span>
-          </h2>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.4fr)",
+          gap: "clamp(2rem, 5vw, 5rem)",
+          marginBottom: "clamp(3rem, 7vw, 6rem)",
+          alignItems: "end",
+        }} className="section-split">
+          <div>
+            <p style={{
+              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
+              letterSpacing: "0.22em", textTransform: "uppercase",
+              color: INK_60, marginBottom: "1.2rem",
+            }}>
+              What we cover
+            </p>
+            <h2 style={{
+              fontFamily: FONT, fontWeight: 800,
+              fontSize: "clamp(2rem, 4.5vw, 4rem)",
+              lineHeight: 1.02, letterSpacing: "-0.035em",
+              color: INK,
+            }}>
+              The toughest claims<br/>
+              <span className="accent-light">on the docket.</span>
+            </h2>
+          </div>
           <p style={{
             fontFamily: FONT, fontSize: "clamp(1.05rem, 1.4vw, 1.25rem)",
-            color: INK_60, lineHeight: 1.55, maxWidth: 720,
+            color: INK_60, lineHeight: 1.6, maxWidth: 640,
           }}>
-            Whatever the situation, if there's a path to liquidity, we know it.
+            We cover every kind of compensation claim — from class action settlements and Chapter 11 customer positions to refund rights and locked digital assets. Whatever the situation, if there's a path to liquidity, we know it.
           </p>
         </div>
 
@@ -505,29 +513,37 @@ function ExperienceSection() {
       padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-        <p style={{
-          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-          letterSpacing: "0.22em", textTransform: "uppercase",
-          color: NEON, marginBottom: "1.5rem",
-        }}>
-          Relevant Experience
-        </p>
-        <h2 style={{
-          fontFamily: FONT, fontWeight: 800,
-          fontSize: "clamp(2.4rem, 6vw, 5rem)",
-          lineHeight: 0.98, letterSpacing: "-0.04em",
-          color: "#fff", marginBottom: "1.4rem",
-          maxWidth: 1100,
-        }}>
-          Every major crypto insolvency of the last decade.
-        </h2>
-        <p style={{
-          fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
-          color: "rgba(255,255,255,0.65)", lineHeight: 1.55,
-          marginBottom: "clamp(3rem,6vw,5rem)", maxWidth: 760,
-        }}>
-          FTX. Mt. Gox. Genesis. Celsius. BlockFi. Three Arrows. Voyager. Terra. A representative slice of Andrew's prior deal track record.
-        </p>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.4fr)",
+          gap: "clamp(2rem, 5vw, 5rem)",
+          marginBottom: "clamp(3rem, 6vw, 5rem)",
+          alignItems: "end",
+        }} className="section-split">
+          <div>
+            <p style={{
+              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
+              letterSpacing: "0.22em", textTransform: "uppercase",
+              color: NEON, marginBottom: "1.2rem",
+            }}>
+              Relevant Experience
+            </p>
+            <h2 style={{
+              fontFamily: FONT, fontWeight: 800,
+              fontSize: "clamp(2rem, 4.5vw, 4rem)",
+              lineHeight: 1.02, letterSpacing: "-0.035em",
+              color: "#fff",
+            }}>
+              Every major crypto insolvency of the last decade.
+            </h2>
+          </div>
+          <p style={{
+            fontFamily: FONT, fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+            color: "rgba(255,255,255,0.65)", lineHeight: 1.6, maxWidth: 640,
+          }}>
+            FTX. Mt. Gox. Genesis. Celsius. BlockFi. Three Arrows. Voyager. Terra. A representative slice of Andrew's prior deal track record across the largest claims trades in recent crypto bankruptcy history.
+          </p>
+        </div>
 
         <div style={{
           display: "grid",
@@ -609,23 +625,35 @@ function EdgeSection() {
       padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-        <p style={{
-          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-          letterSpacing: "0.22em", textTransform: "uppercase",
-          color: INK_60, marginBottom: "1.5rem",
+        <div className="section-split" style={{
+          alignItems: "end",
+          marginBottom: "clamp(3rem, 6vw, 5rem)",
         }}>
-          Our Edge
-        </p>
-        <h2 style={{
-          fontFamily: FONT, fontWeight: 800,
-          fontSize: "clamp(2.4rem, 6vw, 5rem)",
-          lineHeight: 0.98, letterSpacing: "-0.04em",
-          color: INK, marginBottom: "clamp(3rem,6vw,5rem)",
-          maxWidth: 1100,
-        }}>
-          Built to move fast<br />
-          <span className="accent-light">when it counts.</span>
-        </h2>
+          <div>
+            <p style={{
+              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
+              letterSpacing: "0.22em", textTransform: "uppercase",
+              color: INK_60, marginBottom: "1.2rem",
+            }}>
+              Our Edge
+            </p>
+            <h2 style={{
+              fontFamily: FONT, fontWeight: 800,
+              fontSize: "clamp(2rem, 4.5vw, 4rem)",
+              lineHeight: 1.02, letterSpacing: "-0.035em",
+              color: INK,
+            }}>
+              Built to move fast<br />
+              <span className="accent-light">when it counts.</span>
+            </h2>
+          </div>
+          <p style={{
+            fontFamily: FONT, fontSize: "clamp(1.05rem, 1.4vw, 1.25rem)",
+            color: INK_60, lineHeight: 1.6, maxWidth: 640,
+          }}>
+            Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.
+          </p>
+        </div>
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",

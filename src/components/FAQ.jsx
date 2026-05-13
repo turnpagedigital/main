@@ -18,7 +18,7 @@ export default function FAQ({ items = [], openFirst = true }) {
               onClick={() => setOpenIdx(isOpen ? -1 : i)}
             >
               <span>{it.q}</span>
-              <span className="faq-icon" aria-hidden>+</span>
+              <span className="faq-icon" aria-hidden>{isOpen ? "−" : "+"}</span>
             </button>
             <div className="faq-body">
               {paragraphs.map((p, j) => <p key={j}>{p}</p>)}

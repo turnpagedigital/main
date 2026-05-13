@@ -154,36 +154,39 @@ button { font-family: inherit; }
 }
 .h-section-dark { color: #fff; }
 
-/* ─── Buttons ─── */
+/* ─── Buttons — rectangular, Polestar-style ─── */
 .btn-neon {
-  display: inline-block; font-family: ${FONT}; font-weight: 700;
-  font-size: clamp(0.85rem,1.3vw,1rem); color: #000; background: ${NEON};
-  text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 0.95em 2.4em; border-radius: 50px; border: none; cursor: pointer;
-  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+  display: inline-flex; align-items: center; gap: 0.6em;
+  font-family: ${FONT}; font-weight: 700;
+  font-size: clamp(0.85rem,1.2vw,0.95rem); color: #000; background: ${NEON};
+  text-decoration: none; letter-spacing: 0.02em;
+  padding: 0.95em 1.6em; border-radius: 0; border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.2s, gap 0.2s;
 }
-.btn-neon:hover { background: #E2FF4D; transform: translateY(-2px); box-shadow: 0 6px 28px rgba(212,255,0,0.32); }
+.btn-neon:hover { background: #E2FF4D; gap: 0.85em; }
 
 .btn-ghost {
-  display: inline-block; font-family: ${FONT}; font-weight: 600;
-  font-size: clamp(0.85rem,1.3vw,1rem); color: #fff;
-  background: transparent; border: 1.5px solid rgba(255,255,255,0.4);
-  text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: calc(0.95em - 1.5px) calc(2.4em - 1.5px); border-radius: 50px; cursor: pointer;
-  transition: background 0.25s, border-color 0.25s, transform 0.25s, color 0.25s;
+  display: inline-flex; align-items: center; gap: 0.6em;
+  font-family: ${FONT}; font-weight: 600;
+  font-size: clamp(0.85rem,1.2vw,0.95rem); color: #fff;
+  background: transparent; border: 1px solid rgba(255,255,255,0.5);
+  text-decoration: none; letter-spacing: 0.02em;
+  padding: calc(0.95em - 1px) calc(1.6em - 1px); border-radius: 0; cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, gap 0.2s;
 }
-.btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: ${NEON}; color: ${NEON}; transform: translateY(-1px); }
+.btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: #fff; color: #fff; gap: 0.85em; }
 
-/* Light ghost button (on cream surfaces) */
+/* Light ghost button (on cream / paper surfaces) */
 .btn-ghost-ink {
-  display: inline-block; font-family: ${FONT}; font-weight: 600;
-  font-size: clamp(0.85rem,1.3vw,1rem); color: ${INK};
-  background: transparent; border: 1.5px solid ${INK};
-  text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: calc(0.95em - 1.5px) calc(2.4em - 1.5px); border-radius: 50px; cursor: pointer;
-  transition: background 0.25s, color 0.25s, transform 0.25s;
+  display: inline-flex; align-items: center; gap: 0.6em;
+  font-family: ${FONT}; font-weight: 600;
+  font-size: clamp(0.85rem,1.2vw,0.95rem); color: ${INK};
+  background: transparent; border: 1px solid ${INK};
+  text-decoration: none; letter-spacing: 0.02em;
+  padding: calc(0.95em - 1px) calc(1.6em - 1px); border-radius: 0; cursor: pointer;
+  transition: background 0.2s, color 0.2s, gap 0.2s;
 }
-.btn-ghost-ink:hover { background: ${INK}; color: ${NEON}; transform: translateY(-1px); }
+.btn-ghost-ink:hover { background: ${INK}; color: #fff; gap: 0.85em; }
 
 /* Inline arrow link */
 .link-arrow {
@@ -197,6 +200,18 @@ button { font-family: inherit; }
 .link-arrow-neon:hover { color: ${NEON}; }
 
 /* ─── Layout ─── */
+/* Polestar-style split section header — title/eyebrow column on the left,
+   body paragraph column on the right. Collapses to a single column on
+   narrow viewports. */
+.section-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+@media (max-width: 880px) {
+  .section-split { grid-template-columns: 1fr !important; gap: 1.2rem !important; }
+}
+
 .grid-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem,2vw,1.5rem); }
 .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,2vw,1.5rem); }
 .grid-4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem,2vw,1.5rem); }
@@ -286,26 +301,22 @@ button { font-family: inherit; }
 }
 .card-light-link { display: block; cursor: pointer; }
 
-/* ─── FAQ accordion ─── */
+/* ─── FAQ accordion — Polestar-style: thin lines, simple + / − ─── */
 .faq-item { border-top: 1px solid ${LINE}; }
 .faq-item:last-child { border-bottom: 1px solid ${LINE}; }
 .faq-toggle {
   width: 100%; display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem; padding: 1.4rem 0; background: transparent; border: 0; cursor: pointer;
+  gap: 1rem; padding: 1.7rem 0; background: transparent; border: 0; cursor: pointer;
   text-align: left;
-  font-family: ${FONT}; font-size: clamp(1rem, 1.6vw, 1.15rem); font-weight: 700;
+  font-family: ${FONT}; font-size: clamp(1.05rem, 1.5vw, 1.2rem); font-weight: 500;
   color: ${INK}; letter-spacing: -0.005em;
+  transition: opacity 0.2s;
 }
-.faq-toggle:hover { opacity: 0.7; }
+.faq-toggle:hover { opacity: 0.55; }
 .faq-icon {
-  width: 28px; height: 28px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  border: 1.5px solid ${INK}; border-radius: 50%;
-  transition: transform 0.3s, background 0.25s, color 0.25s;
-  color: ${INK}; font-weight: 700; font-size: 0.95rem;
-}
-.faq-item.open .faq-icon {
-  transform: rotate(45deg); background: ${INK}; color: ${NEON};
+  width: 24px; height: 24px; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: ${INK}; font-weight: 400; font-size: 1.6rem; line-height: 1;
 }
 .faq-body {
   max-height: 0; overflow: hidden;
