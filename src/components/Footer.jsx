@@ -86,18 +86,17 @@ export default function Footer() {
           display: "flex", flexWrap: "wrap", gap: "1rem 2rem",
           justifyContent: "space-between", alignItems: "center",
         }}>
-          <p style={{
-            fontFamily: FONT, fontSize: "0.82rem",
-            color: INK_60,
-          }}>
-            Turnpage Digital Markets © 2026 · All rights reserved
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
-            <FooterBottomLink href={hashHref("privacy")}>Legal</FooterBottomLink>
-            <FooterBottomLink href={hashHref("privacy")}>Privacy</FooterBottomLink>
-            <FooterBottomLink href={hashHref("terms")}>Terms</FooterBottomLink>
-            <FooterBottomLink href="mailto:info@turnpagedigital.com">info@turnpagedigital.com</FooterBottomLink>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem 2rem", alignItems: "center" }}>
+            <p style={{ fontFamily: FONT, fontSize: "0.82rem", color: INK_60 }}>
+              Turnpage Digital Markets © 2026 · All rights reserved
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
+              <FooterBottomLink href={hashHref("privacy")}>Privacy</FooterBottomLink>
+              <FooterBottomLink href={hashHref("terms")}>Terms</FooterBottomLink>
+              <FooterBottomLink href="mailto:info@turnpagedigital.com">info@turnpagedigital.com</FooterBottomLink>
+            </div>
           </div>
+          <RegionSelector />
         </div>
       </div>
 
@@ -156,6 +155,68 @@ function FooterCol({ title, items }) {
           );
         })}
       </ul>
+    </div>
+  );
+}
+
+/* Polestar-style globe + "Global" region selector.
+   Currently a single-region indicator — clicking opens a small menu, but the
+   only entry is "Global (English)" since TPDM doesn't yet have regional sites.
+   Easy to extend with more regions later. */
+function RegionSelector() {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div style={{ position: "relative" }}>
+      <button
+        onClick={() => setOpen(o => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        style={{
+          background: "transparent", border: 0, padding: 0, cursor: "pointer",
+          display: "inline-flex", alignItems: "center", gap: "0.5em",
+          fontFamily: FONT, fontSize: "0.82rem",
+          color: INK, transition: "opacity 0.2s",
+        }}
+        onMouseEnter={e => { e.currentTarget.style.opacity = "0.7"; }}
+        onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+        </svg>
+        <span>Global</span>
+      </button>
+      {open && (
+        <div
+          role="listbox"
+          style={{
+            position: "absolute", bottom: "calc(100% + 0.6rem)", right: 0,
+            background: "#FFFFFF",
+            border: `1px solid ${LINE}`,
+            boxShadow: "0 8px 24px rgba(10,10,10,0.08)",
+            minWidth: 200,
+            zIndex: 20,
+          }}
+        >
+          <button
+            role="option"
+            aria-selected={true}
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block", width: "100%", textAlign: "left",
+              padding: "0.85rem 1rem",
+              background: "transparent", border: 0, cursor: "pointer",
+              fontFamily: FONT, fontSize: "0.92rem", fontWeight: 600,
+              color: INK,
+              transition: "background 0.15s",
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = "#F4F5F7"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
+          >
+            Global · English
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -99,6 +99,7 @@ export default function Home() {
       <SituationsSection />
       <LeadershipSection />
       <TestimonialsSection />
+      <FullBleedPhoto />
       <ExperienceSection />
       <EdgeSection />
       <FAQSection />
@@ -501,6 +502,35 @@ function TestimonialsSection() {
           }
         `}</style>
       </div>
+    </section>
+  );
+}
+
+/* ─── FULL-BLEED PHOTO — Polestar editorial breathing moment ─── */
+/* Drop a different file into /public/ and update the src below to swap.
+   Recommended aspect: wide (16:6 or wider) so the image reads as a horizontal
+   pause between sections. Falls back to bg-paper.jpg if hero-break.jpg
+   doesn't exist. */
+function FullBleedPhoto() {
+  return (
+    <section style={{
+      position: "relative",
+      width: "100%",
+      height: "clamp(320px, 50vw, 720px)",
+      overflow: "hidden",
+      background: "#0A0B0E",
+    }}>
+      <img
+        src="/Paper.jpg"
+        alt=""
+        style={{
+          position: "absolute", inset: 0,
+          width: "100%", height: "100%",
+          objectFit: "cover",
+          filter: "saturate(0.7) contrast(1.05)",
+        }}
+        onError={(e) => { e.currentTarget.src = "/bg-paper.jpg"; }}
+      />
     </section>
   );
 }
