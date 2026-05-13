@@ -1,30 +1,33 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
-
-const COL_DESKS = [
-  { key: "ai-copyright", label: "Copyright Claims" },
-  { key: "crypto", label: "Locked Crypto" },
-  { key: "tariff-refunds", label: "Tariff Refunds", externalHref: "https://www.rewindtariffs.com" },
-  { key: "contact", label: "Bankruptcy & Litigation" },
-];
-const COL_RESOURCES = [
-  { key: "briefings", label: "Briefings" },
-  { key: "ai-copyright", label: "Top 12 Cases", hashSuffix: "#cases-section" },
-];
-const COL_FIRM = [
-  { key: "about", label: "About" },
-  { key: "contact", label: "Get in Touch" },
-];
-const COL_LEGAL = [
-  { key: "privacy", label: "Privacy Policy" },
-  { key: "terms", label: "Terms of Use" },
-];
+import { LANGUAGES, useI18n } from "../lib/i18n.js";
 
 /* Polestar-style simple footer.
    Light gray background, subscribe column on the left, multiple short link
    columns to the right, thin bottom-row with copyright and legal links. */
 export default function Footer() {
+  const { t } = useI18n();
+
+  const COL_DESKS = [
+    { key: "ai-copyright", label: t("nav.copyright") },
+    { key: "crypto", label: t("nav.crypto") },
+    { key: "tariff-refunds", label: t("nav.tariff"), externalHref: "https://www.rewindtariffs.com" },
+    { key: "contact", label: "Bankruptcy & Litigation" },
+  ];
+  const COL_RESOURCES = [
+    { key: "briefings", label: t("nav.briefings") },
+    { key: "ai-copyright", label: "Top 12 Cases", hashSuffix: "#cases-section" },
+  ];
+  const COL_FIRM = [
+    { key: "about", label: t("footer.firm.about") },
+    { key: "contact", label: t("footer.firm.contact") },
+  ];
+  const COL_LEGAL = [
+    { key: "privacy", label: t("footer.legal.privacy") },
+    { key: "terms", label: t("footer.legal.terms") },
+  ];
+
   return (
     <footer style={{
       background: "#F4F5F7",
@@ -51,7 +54,7 @@ export default function Footer() {
               color: INK, marginBottom: "1.4rem",
               maxWidth: 360,
             }}>
-              Stay current on the latest Turnpage briefings.
+              {t("footer.subscribe_title")}
             </h3>
             <a
               href={hashHref("briefings")}
@@ -67,17 +70,17 @@ export default function Footer() {
               onMouseEnter={e => { e.currentTarget.style.background = INK; e.currentTarget.style.color = "#fff"; e.currentTarget.style.gap = "1em"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = INK; e.currentTarget.style.gap = "0.7em"; }}
             >
-              <span>Subscribe</span>
+              <span>{t("footer.subscribe_cta")}</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
             </a>
           </div>
 
-          <FooterCol title="Desks" items={COL_DESKS} />
-          <FooterCol title="Resources" items={COL_RESOURCES} />
-          <FooterCol title="Firm" items={COL_FIRM} />
-          <FooterCol title="Legal" items={COL_LEGAL} />
+          <FooterCol title={t("footer.col.desks")} items={COL_DESKS} />
+          <FooterCol title={t("footer.col.resources")} items={COL_RESOURCES} />
+          <FooterCol title={t("footer.col.firm")} items={COL_FIRM} />
+          <FooterCol title={t("footer.col.legal")} items={COL_LEGAL} />
         </div>
 
         {/* Bottom row */}
@@ -88,15 +91,15 @@ export default function Footer() {
         }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem 2rem", alignItems: "center" }}>
             <p style={{ fontFamily: FONT, fontSize: "0.82rem", color: INK_60 }}>
-              Turnpage Digital Markets © 2026 · All rights reserved
+              {t("footer.copyright")}
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
-              <FooterBottomLink href={hashHref("privacy")}>Privacy</FooterBottomLink>
-              <FooterBottomLink href={hashHref("terms")}>Terms</FooterBottomLink>
+              <FooterBottomLink href={hashHref("privacy")}>{t("footer.legal.privacy")}</FooterBottomLink>
+              <FooterBottomLink href={hashHref("terms")}>{t("footer.legal.terms")}</FooterBottomLink>
               <FooterBottomLink href="mailto:info@turnpagedigital.com">info@turnpagedigital.com</FooterBottomLink>
             </div>
           </div>
-          <RegionSelector />
+          <LanguageSelector />
         </div>
       </div>
 
@@ -159,14 +162,26 @@ function FooterCol({ title, items }) {
   );
 }
 
-/* Polestar-style globe + "Global" region selector.
-   Currently a single-region indicator — clicking opens a small menu, but the
-   only entry is "Global (English)" since TPDM doesn't yet have regional sites.
-   Easy to extend with more regions later. */
-function RegionSelector() {
+/* Globe + current language label.  Click to open a menu and switch.
+   Choice persists to localStorage via the I18n context. */
+function LanguageSelector() {
+  const { lang, setLang, t } = useI18n();
   const [open, setOpen] = React.useState(false);
+  const current = LANGUAGES.find(l => l.code === lang) || LANGUAGES[0];
+
+  // Close on outside click
+  const wrapRef = React.useRef(null);
+  React.useEffect(() => {
+    if (!open) return;
+    function handler(e) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false);
+    }
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
   return (
-    <div style={{ position: "relative" }}>
+    <div ref={wrapRef} style={{ position: "relative" }}>
       <button
         onClick={() => setOpen(o => !o)}
         aria-haspopup="listbox"
@@ -184,7 +199,7 @@ function RegionSelector() {
           <circle cx="12" cy="12" r="9" />
           <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
         </svg>
-        <span>Global</span>
+        <span>{t("footer.region_label")} · {current.nativeLabel}</span>
       </button>
       {open && (
         <div
@@ -193,28 +208,35 @@ function RegionSelector() {
             position: "absolute", bottom: "calc(100% + 0.6rem)", right: 0,
             background: "#FFFFFF",
             border: `1px solid ${LINE}`,
-            boxShadow: "0 8px 24px rgba(10,10,10,0.08)",
-            minWidth: 200,
+            boxShadow: "0 12px 28px rgba(10,10,10,0.08)",
+            minWidth: 220,
             zIndex: 20,
+            maxHeight: "60vh", overflowY: "auto",
           }}
         >
-          <button
-            role="option"
-            aria-selected={true}
-            onClick={() => setOpen(false)}
-            style={{
-              display: "block", width: "100%", textAlign: "left",
-              padding: "0.85rem 1rem",
-              background: "transparent", border: 0, cursor: "pointer",
-              fontFamily: FONT, fontSize: "0.92rem", fontWeight: 600,
-              color: INK,
-              transition: "background 0.15s",
-            }}
-            onMouseEnter={e => { e.currentTarget.style.background = "#F4F5F7"; }}
-            onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
-          >
-            Global · English
-          </button>
+          {LANGUAGES.map(l => (
+            <button
+              key={l.code}
+              role="option"
+              aria-selected={l.code === lang}
+              onClick={() => { setLang(l.code); setOpen(false); }}
+              style={{
+                display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between",
+                padding: "0.8rem 1rem",
+                background: "transparent", border: 0, cursor: "pointer",
+                fontFamily: FONT, fontSize: "0.92rem",
+                fontWeight: l.code === lang ? 700 : 500,
+                color: INK, textAlign: "left",
+                transition: "background 0.15s",
+                borderTop: l.code === LANGUAGES[0].code ? "none" : `1px solid ${LINE}`,
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#F4F5F7"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}
+            >
+              <span>{l.nativeLabel}</span>
+              <span style={{ color: INK_60, fontSize: "0.78rem" }}>{l.englishLabel}</span>
+            </button>
+          ))}
         </div>
       )}
     </div>

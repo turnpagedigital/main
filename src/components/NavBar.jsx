@@ -1,13 +1,15 @@
 import React, { useState, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
+import { useI18n } from "../lib/i18n.js";
 
+/* Nav items reference translation keys; labels are resolved at render time. */
 const NAV_ITEMS = [
-  { key: "ai-copyright", label: "Copyright Claims" },
-  { key: "crypto", label: "Locked Crypto" },
-  { key: "tariff-refunds", label: "Tariff Refunds", externalHref: "https://www.rewindtariffs.com" },
-  { key: "briefings", label: "Briefings" },
-  { key: "about", label: "About" },
+  { key: "ai-copyright",  labelKey: "nav.copyright" },
+  { key: "crypto",        labelKey: "nav.crypto" },
+  { key: "tariff-refunds",labelKey: "nav.tariff", externalHref: "https://www.rewindtariffs.com" },
+  { key: "briefings",     labelKey: "nav.briefings" },
+  { key: "about",         labelKey: "nav.about" },
 ];
 
 /* Preview content shown when hovering over a nav item.
@@ -59,6 +61,7 @@ export default function NavBar({ currentPage }) {
   const [open, setOpen] = useState(false);
   const [activeDrop, setActiveDrop] = useState(null);
   const closeTimer = useRef(null);
+  const { t } = useI18n();
 
   function close() { setOpen(false); }
 
@@ -80,7 +83,6 @@ export default function NavBar({ currentPage }) {
   return (
     <nav style={{
       background: "#FFFFFF",
-      borderBottom: "1px solid rgba(10,10,10,0.08)",
       position: "relative",
     }}>
       <div style={{
@@ -129,7 +131,7 @@ export default function NavBar({ currentPage }) {
                   borderBottom: activeDrop === item.key ? `2px solid ${INK}` : "2px solid transparent",
                 }}
               >
-                {item.label}
+                {t(item.labelKey)}
                 {isExternal && (
                   <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
                     <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
@@ -151,7 +153,7 @@ export default function NavBar({ currentPage }) {
             }}
             onMouseLeave={e => { e.currentTarget.style.background = NEON; }}
           >
-            Get in Touch
+            {t("nav.contact")}
           </a>
         </div>
 
@@ -309,7 +311,7 @@ export default function NavBar({ currentPage }) {
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                   }}
                 >
-                  <span>{item.label}</span>
+                  <span>{t(item.labelKey)}</span>
                   {isExternal && (
                     <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
                       <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />

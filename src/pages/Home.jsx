@@ -1,6 +1,7 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, INK_40, LINE, LINE_STRONG } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
+import { useI18n } from "../lib/i18n.js";
 import FAQ from "../components/FAQ.jsx";
 import CTABanner from "../components/CTABanner.jsx";
 
@@ -115,6 +116,7 @@ export default function Home() {
 
 /* ─── HERO ─── */
 function HeroSection() {
+  const { t } = useI18n();
   return (
     <section style={{
       position: "relative", overflow: "hidden",
@@ -150,7 +152,7 @@ function HeroSection() {
           letterSpacing: "0.22em", textTransform: "uppercase",
           color: "rgba(255,255,255,0.78)", marginBottom: "1.5rem",
         }}>
-          OTC Claims Desk
+          {t("hero.eyebrow")}
         </p>
         <h1 style={{
           fontFamily: FONT, fontWeight: 900,
@@ -159,18 +161,18 @@ function HeroSection() {
           color: "#FFFFFF", marginBottom: "1.8rem",
           maxWidth: 1200,
         }}>
-          Strategic guidance.<br />
-          <span style={{ fontStyle: "italic", fontWeight: 800, color: NEON }}>Turn-key liquidity.</span>
+          {t("hero.title_1")}<br />
+          <span style={{ fontStyle: "italic", fontWeight: 800, color: NEON }}>{t("hero.title_2")}</span>
         </h1>
         <p style={{
           fontFamily: FONT, fontSize: "clamp(1rem, 1.5vw, 1.3rem)",
           color: "rgba(255,255,255,0.75)", lineHeight: 1.5,
           maxWidth: 720, marginBottom: "2.4rem",
         }}>
-          For rights holders entitled to compensation — across litigation, class actions, bankruptcies, locked assets, and refund rights.
+          {t("hero.subtitle")}
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
-          <a href={hashHref("contact")} className="btn-neon">Talk to a Partner</a>
+          <a href={hashHref("contact")} className="btn-neon">{t("hero.cta_primary")}</a>
           <a
             href="#situations"
             style={{
@@ -182,7 +184,7 @@ function HeroSection() {
             onMouseEnter={e => { e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "#fff"; }}
             onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.85)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)"; }}
           >
-            What we cover →
+            {t("hero.cta_secondary")} →
           </a>
         </div>
       </div>
@@ -194,7 +196,7 @@ function HeroSection() {
         color: "rgba(255,255,255,0.5)",
         display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem",
       }} className="hide-on-mobile">
-        <span>Scroll</span>
+        <span>{t("hero.scroll")}</span>
         <span style={{ width: 1, height: 36, background: "linear-gradient(180deg, rgba(255,255,255,0.6), transparent)" }} />
       </div>
     </section>

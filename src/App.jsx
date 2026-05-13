@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { GLOBAL_CSS } from "./data/css.js";
 import { useHashRoute } from "./lib/router.js";
+import { I18nProvider } from "./lib/i18n.js";
 import AppHeader from "./components/AppHeader.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
@@ -45,11 +46,11 @@ export default function App() {
   const Page = renderPage(route);
 
   return (
-    <>
+    <I18nProvider>
       <AppHeader currentPage={route.page} />
       <main>{Page}</main>
       <Footer />
-    </>
+    </I18nProvider>
   );
 }
 
