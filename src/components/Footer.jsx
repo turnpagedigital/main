@@ -1,5 +1,5 @@
 import React from "react";
-import { NEON, FONT } from "../data/tokens.js";
+import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 
 const COL_DESKS = [
@@ -13,7 +13,7 @@ const COL_RESOURCES = [
   { key: "ai-copyright", label: "Top 12 Cases", hashSuffix: "#cases-section" },
 ];
 const COL_FIRM = [
-  { key: "about", label: "About Turnpage" },
+  { key: "about", label: "About" },
   { key: "contact", label: "Get in Touch" },
 ];
 const COL_LEGAL = [
@@ -21,44 +21,56 @@ const COL_LEGAL = [
   { key: "terms", label: "Terms of Use" },
 ];
 
+/* Polestar-style simple footer.
+   Light gray background, subscribe column on the left, multiple short link
+   columns to the right, thin bottom-row with copyright and legal links. */
 export default function Footer() {
   return (
     <footer style={{
-      background: "#000",
-      borderTop: "1px solid rgba(255,255,255,0.08)",
-      color: "#fff",
+      background: "#F4F5F7",
+      color: INK,
+      borderTop: `1px solid ${LINE}`,
     }}>
-      <div className="container" style={{ padding: "clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem) 2rem" }}>
-        {/* Big brand row */}
+      <div style={{
+        maxWidth: 1440, margin: "0 auto",
+        padding: "clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem) 2rem",
+      }}>
+        {/* Top row: subscribe + link columns */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "minmax(0,1.6fr) repeat(4, minmax(0,1fr))",
-          gap: "clamp(1.5rem,3vw,2.4rem)",
-          marginBottom: "3rem",
+          gridTemplateColumns: "minmax(0, 1.6fr) repeat(4, minmax(0, 1fr))",
+          gap: "clamp(2rem, 4vw, 3.5rem)",
+          marginBottom: "clamp(3rem, 5vw, 4rem)",
         }} className="footer-grid">
-          {/* Brand */}
+          {/* Subscribe */}
           <div>
-            <img
-              src="/Logotype green.png"
-              alt="Turnpage Digital Markets"
-              style={{ height: 32, marginBottom: "1.2rem" }}
-            />
-            <p style={{
-              fontFamily: FONT, fontSize: "0.92rem", lineHeight: 1.65,
-              color: "rgba(255,255,255,0.6)", maxWidth: 340, marginBottom: "1.4rem",
+            <h3 style={{
+              fontFamily: FONT, fontWeight: 800,
+              fontSize: "clamp(1.4rem, 2.2vw, 1.75rem)",
+              lineHeight: 1.2, letterSpacing: "-0.02em",
+              color: INK, marginBottom: "1.4rem",
+              maxWidth: 360,
             }}>
-              The OTC desk for rights holders.
-            </p>
+              Stay current on the latest Turnpage briefings.
+            </h3>
             <a
-              href="mailto:info@turnpagedigital.com"
+              href={hashHref("briefings")}
               style={{
-                display: "inline-block",
-                fontFamily: FONT, fontSize: "0.88rem",
-                color: NEON, fontWeight: 600,
-                borderBottom: `1px solid rgba(212,255,0,0.3)`, paddingBottom: 2,
+                display: "inline-flex", alignItems: "center", gap: "0.7em",
+                fontFamily: FONT, fontSize: "0.92rem", fontWeight: 600,
+                color: INK,
+                padding: "0.85rem 1.4rem",
+                border: `1px solid ${INK}`, borderRadius: 0,
+                letterSpacing: "0.02em",
+                transition: "background 0.2s, color 0.2s, gap 0.2s",
               }}
+              onMouseEnter={e => { e.currentTarget.style.background = INK; e.currentTarget.style.color = "#fff"; e.currentTarget.style.gap = "1em"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = INK; e.currentTarget.style.gap = "0.7em"; }}
             >
-              info@turnpagedigital.com
+              <span>Subscribe</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
 
@@ -68,47 +80,38 @@ export default function Footer() {
           <FooterCol title="Legal" items={COL_LEGAL} />
         </div>
 
-        {/* Big tagline word — wordmark style flourish */}
-        <div style={{
-          padding: "1.5rem 0 2rem", borderTop: "1px solid rgba(255,255,255,0.06)",
-          marginBottom: "1.5rem",
-        }}>
-          <p style={{
-            fontFamily: FONT, fontWeight: 900,
-            fontSize: "clamp(2.2rem,6.5vw,5rem)",
-            color: "rgba(255,255,255,0.06)",
-            letterSpacing: "-0.04em", lineHeight: 1,
-            textTransform: "uppercase", textAlign: "center",
-          }}>
-            Turnpage Digital Markets
-          </p>
-        </div>
-
         {/* Bottom row */}
         <div style={{
-          paddingTop: "1.5rem", borderTop: "1px solid rgba(255,255,255,0.06)",
-          display: "flex", flexWrap: "wrap", gap: "1rem",
+          paddingTop: "1.5rem", borderTop: `1px solid ${LINE}`,
+          display: "flex", flexWrap: "wrap", gap: "1rem 2rem",
           justifyContent: "space-between", alignItems: "center",
         }}>
           <p style={{
-            fontFamily: FONT, fontSize: "0.72rem", letterSpacing: "0.18em",
-            textTransform: "uppercase", color: "rgba(255,255,255,0.4)",
+            fontFamily: FONT, fontSize: "0.82rem",
+            color: INK_60,
           }}>
-            &copy; 2026 Turnpage Digital Markets LLC
+            Turnpage Digital Markets © 2026 · All rights reserved
           </p>
-          <p style={{
-            fontFamily: FONT, fontSize: "0.72rem",
-            color: "rgba(255,255,255,0.4)", maxWidth: 560, textAlign: "right",
-          }}>
-            Information on this site is general in nature and is not legal, tax, or investment advice.
-          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
+            <FooterBottomLink href={hashHref("privacy")}>Legal</FooterBottomLink>
+            <FooterBottomLink href={hashHref("privacy")}>Privacy</FooterBottomLink>
+            <FooterBottomLink href={hashHref("terms")}>Terms</FooterBottomLink>
+            <FooterBottomLink href="mailto:info@turnpagedigital.com">info@turnpagedigital.com</FooterBottomLink>
+          </div>
         </div>
       </div>
 
       <style>{`
         @media (max-width: 900px) {
-          .footer-grid { grid-template-columns: 1fr 1fr !important; }
+          .footer-grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 2rem !important;
+          }
           .footer-grid > div:first-child { grid-column: 1 / -1; }
+        }
+        @media (max-width: 540px) {
+          .footer-grid { grid-template-columns: 1fr !important; }
+          .footer-grid > div:first-child { grid-column: auto; }
         }
       `}</style>
     </footer>
@@ -119,13 +122,13 @@ function FooterCol({ title, items }) {
   return (
     <div>
       <p style={{
-        fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-        letterSpacing: "0.2em", textTransform: "uppercase",
-        color: NEON, marginBottom: "1.1rem",
+        fontFamily: FONT, fontSize: "0.82rem",
+        color: INK_60, marginBottom: "0.9rem",
+        fontWeight: 500,
       }}>
         {title}
       </p>
-      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.55rem" }}>
         {items.map(item => {
           const isExternal = Boolean(item.externalHref);
           return (
@@ -135,16 +138,16 @@ function FooterCol({ title, items }) {
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
                 style={{
-                  fontFamily: FONT, fontSize: "0.92rem",
-                  color: "rgba(255,255,255,0.72)", transition: "color 0.2s",
+                  fontFamily: FONT, fontSize: "0.95rem",
+                  color: INK, transition: "color 0.2s",
                   display: "inline-flex", alignItems: "center", gap: "0.35em",
                 }}
-                onMouseEnter={e => { e.currentTarget.style.color = NEON; }}
-                onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,0.72)"; }}
+                onMouseEnter={e => { e.currentTarget.style.color = INK_60; }}
+                onMouseLeave={e => { e.currentTarget.style.color = INK; }}
               >
                 {item.label}
                 {isExternal && (
-                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.6 }}>
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
                     <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
                   </svg>
                 )}
@@ -154,5 +157,21 @@ function FooterCol({ title, items }) {
         })}
       </ul>
     </div>
+  );
+}
+
+function FooterBottomLink({ href, children }) {
+  return (
+    <a
+      href={href}
+      style={{
+        fontFamily: FONT, fontSize: "0.82rem",
+        color: INK_60, transition: "color 0.2s",
+      }}
+      onMouseEnter={e => { e.currentTarget.style.color = INK; }}
+      onMouseLeave={e => { e.currentTarget.style.color = INK_60; }}
+    >
+      {children}
+    </a>
   );
 }

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NEON, FONT, INK, INK_60 } from "../data/tokens.js";
+import React, { useState, useRef } from "react";
+import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 
 const NAV_ITEMS = [
@@ -10,24 +10,85 @@ const NAV_ITEMS = [
   { key: "about", label: "About" },
 ];
 
-/* Polestar-inspired clean white header.
-   White background, thin gray hairline below, black wordmark + nav,
-   neon "Get in Touch" CTA as the single signature accent. */
+/* Preview content shown when hovering over a nav item.
+   Keyed by nav item `key`. Items without an entry here render no dropdown. */
+const PREVIEWS = {
+  "ai-copyright": {
+    title: "Copyright Claims",
+    body: "Capital and advisory for rights holders with claims against generative AI companies — Bartz, the OpenAI MDL, Concord, Getty.",
+    links: [
+      { label: "Top 12 active cases", href: hashHref("ai-copyright") + "#cases-section" },
+      { label: "Who we help",         href: hashHref("ai-copyright") },
+      { label: "FAQ",                 href: hashHref("ai-copyright") },
+    ],
+    cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=ai-copyright" },
+  },
+  "crypto": {
+    title: "Locked Crypto",
+    body: "Liquidity for locked digital assets — FTX, Celsius, BlockFi, Voyager, Genesis, Mt. Gox. Quoted in fiat, closed in days.",
+    links: [
+      { label: "Who we help",      href: hashHref("crypto") },
+      { label: "How it works",     href: hashHref("crypto") + "#how-crypto" },
+      { label: "FAQ",              href: hashHref("crypto") },
+    ],
+    cta: { label: "Get a Quote", href: hashHref("contact") + "?source=crypto" },
+  },
+  "tariff-refunds": {
+    title: "Tariff Refunds",
+    body: "Liquidity for tariff refund rights and customs recoveries — a separate Turnpage property at rewindtariffs.com.",
+    links: [
+      { label: "Active CIT cases", href: "https://www.rewindtariffs.com/#cases", external: true },
+      { label: "For brokers",      href: "https://www.rewindtariffs.com/#brokers", external: true },
+    ],
+    cta: { label: "Visit Rewind Tariffs", href: "https://www.rewindtariffs.com", external: true },
+  },
+  "briefings": {
+    title: "Briefings",
+    body: "Analysis on the AI copyright docket — cases, settlements, and rulings, written for rights holders, counsel, and dealmakers.",
+    links: [
+      { label: "Latest briefings",        href: hashHref("briefings") },
+      { label: "Subscribe via email",     href: hashHref("contact") + "?source=briefings" },
+    ],
+    cta: { label: "Read the briefings", href: hashHref("briefings") },
+  },
+};
+
+/* Polestar-style clean white header with hover dropdowns showing preview
+   info for each desk/section.  Wraps the announcement banner outside. */
 export default function NavBar({ currentPage }) {
   const [open, setOpen] = useState(false);
+  const [activeDrop, setActiveDrop] = useState(null);
+  const closeTimer = useRef(null);
+
   function close() { setOpen(false); }
+
+  function openDrop(key) {
+    if (closeTimer.current) { clearTimeout(closeTimer.current); closeTimer.current = null; }
+    if (PREVIEWS[key]) setActiveDrop(key);
+    else setActiveDrop(null);
+  }
+  function cancelClose() {
+    if (closeTimer.current) { clearTimeout(closeTimer.current); closeTimer.current = null; }
+  }
+  function scheduleClose() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setActiveDrop(null), 140);
+  }
+
+  const dropContent = activeDrop ? PREVIEWS[activeDrop] : null;
 
   return (
     <nav style={{
       background: "#FFFFFF",
       borderBottom: "1px solid rgba(10,10,10,0.08)",
+      position: "relative",
     }}>
       <div style={{
         maxWidth: 1440, margin: "0 auto",
         padding: "0.85rem clamp(1.25rem,3vw,2.5rem)",
         display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16,
       }}>
-        {/* Logo — green wordmark filtered to black for the white header. */}
+        {/* Logo */}
         <a
           href={hashHref("")}
           onClick={close}
@@ -37,10 +98,7 @@ export default function NavBar({ currentPage }) {
           <img
             src="/TPDM Logo Green_No BKGD.png"
             alt="Turnpage Digital Markets"
-            style={{
-              height: 26, width: "auto", display: "block",
-              filter: "brightness(0)",
-            }}
+            style={{ height: 26, width: "auto", display: "block", filter: "brightness(0)" }}
           />
         </a>
 
@@ -49,22 +107,27 @@ export default function NavBar({ currentPage }) {
           {NAV_ITEMS.map(item => {
             const active = !item.externalHref && currentPage === item.key;
             const isExternal = Boolean(item.externalHref);
+            const hasPreview = Boolean(PREVIEWS[item.key]);
             return (
               <a
                 key={item.key}
                 href={isExternal ? item.externalHref : hashHref(item.key)}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
+                onMouseEnter={() => hasPreview ? openDrop(item.key) : setActiveDrop(null)}
+                onMouseLeave={hasPreview ? scheduleClose : undefined}
+                onFocus={() => hasPreview ? openDrop(item.key) : setActiveDrop(null)}
+                onBlur={hasPreview ? scheduleClose : undefined}
                 style={{
                   fontFamily: FONT, fontSize: "0.92rem",
                   fontWeight: active ? 700 : 500,
                   color: INK, letterSpacing: "0.005em",
                   transition: "opacity 0.2s",
                   display: "inline-flex", alignItems: "center", gap: "0.4em",
-                  opacity: active ? 1 : 0.85,
+                  opacity: active ? 1 : (activeDrop === item.key ? 1 : 0.85),
+                  paddingBottom: 2,
+                  borderBottom: activeDrop === item.key ? `2px solid ${INK}` : "2px solid transparent",
                 }}
-                onMouseEnter={e => { e.currentTarget.style.opacity = "1"; }}
-                onMouseLeave={e => { e.currentTarget.style.opacity = active ? "1" : "0.85"; }}
               >
                 {item.label}
                 {isExternal && (
@@ -77,6 +140,7 @@ export default function NavBar({ currentPage }) {
           })}
           <a
             href={hashHref("contact")}
+            onMouseEnter={() => setActiveDrop(null)}
             style={{
               fontFamily: FONT, fontSize: "0.82rem", fontWeight: 700,
               color: INK, background: NEON,
@@ -85,7 +149,6 @@ export default function NavBar({ currentPage }) {
               transition: "background 0.25s, transform 0.2s",
               display: "inline-block",
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = "#E2FF4D"; e.currentTarget.style.transform = "translateY(-1px)"; }}
             onMouseLeave={e => { e.currentTarget.style.background = NEON; e.currentTarget.style.transform = ""; }}
           >
             Get in Touch
@@ -111,6 +174,115 @@ export default function NavBar({ currentPage }) {
           )}
         </button>
       </div>
+
+      {/* Desktop dropdown panel — shows preview for hovered nav item */}
+      {dropContent && (
+        <div
+          onMouseEnter={cancelClose}
+          onMouseLeave={scheduleClose}
+          className="nav-dropdown"
+          style={{
+            position: "absolute", top: "100%", left: 0, right: 0,
+            background: "#FFFFFF",
+            borderBottom: `1px solid ${LINE}`,
+            boxShadow: "0 14px 28px rgba(10,10,10,0.06)",
+            animation: "navDropFade 0.18s ease-out",
+            zIndex: 50,
+          }}
+        >
+          <div style={{
+            maxWidth: 1440, margin: "0 auto",
+            padding: "clamp(1.8rem,3vw,2.8rem) clamp(1.25rem,3vw,2.5rem)",
+            display: "grid",
+            gridTemplateColumns: "minmax(0,1.4fr) minmax(0,1fr) auto",
+            gap: "clamp(2rem, 5vw, 5rem)",
+            alignItems: "start",
+          }}>
+            <div>
+              <p style={{
+                fontFamily: FONT, fontSize: "0.74rem", fontWeight: 600,
+                letterSpacing: "0.22em", textTransform: "uppercase",
+                color: INK_60, marginBottom: "0.8rem",
+              }}>
+                Overview
+              </p>
+              <h3 style={{
+                fontFamily: FONT, fontWeight: 800,
+                fontSize: "clamp(1.4rem, 2vw, 1.75rem)",
+                lineHeight: 1.15, letterSpacing: "-0.02em",
+                color: INK, marginBottom: "0.9rem",
+              }}>
+                {dropContent.title}
+              </h3>
+              <p style={{
+                fontFamily: FONT, fontSize: "0.98rem",
+                color: INK_60, lineHeight: 1.55,
+                maxWidth: 460,
+              }}>
+                {dropContent.body}
+              </p>
+            </div>
+
+            <div>
+              <p style={{
+                fontFamily: FONT, fontSize: "0.74rem", fontWeight: 600,
+                letterSpacing: "0.22em", textTransform: "uppercase",
+                color: INK_60, marginBottom: "0.8rem",
+              }}>
+                Quick links
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.55rem" }}>
+                {dropContent.links.map((l, i) => (
+                  <li key={i}>
+                    <a
+                      href={l.href}
+                      target={l.external ? "_blank" : undefined}
+                      rel={l.external ? "noopener noreferrer" : undefined}
+                      onClick={() => setActiveDrop(null)}
+                      style={{
+                        fontFamily: FONT, fontSize: "0.98rem", fontWeight: 600,
+                        color: INK, transition: "color 0.2s, gap 0.2s",
+                        display: "inline-flex", alignItems: "center", gap: "0.4em",
+                      }}
+                      onMouseEnter={e => { e.currentTarget.style.color = INK_60; }}
+                      onMouseLeave={e => { e.currentTarget.style.color = INK; }}
+                    >
+                      <span>{l.label}</span>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6 }}>
+                        <path d="M5 12h14M13 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div style={{ alignSelf: "center" }}>
+              <a
+                href={dropContent.cta.href}
+                target={dropContent.cta.external ? "_blank" : undefined}
+                rel={dropContent.cta.external ? "noopener noreferrer" : undefined}
+                onClick={() => setActiveDrop(null)}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: "0.7em",
+                  fontFamily: FONT, fontSize: "0.88rem", fontWeight: 700,
+                  color: "#fff", background: INK,
+                  padding: "0.9rem 1.4rem",
+                  letterSpacing: "0.02em",
+                  transition: "background 0.2s, gap 0.2s",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = "#222"; e.currentTarget.style.gap = "1em"; }}
+                onMouseLeave={e => { e.currentTarget.style.background = INK; e.currentTarget.style.gap = "0.7em"; }}
+              >
+                <span>{dropContent.cta.label}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={NEON} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Mobile menu */}
       {open && (
@@ -162,6 +334,16 @@ export default function NavBar({ currentPage }) {
           </div>
         </div>
       )}
+
+      <style>{`
+        @keyframes navDropFade {
+          from { opacity: 0; transform: translateY(-4px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 880px) {
+          .nav-dropdown { display: none; }
+        }
+      `}</style>
     </nav>
   );
 }

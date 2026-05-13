@@ -2,6 +2,7 @@ import React from "react";
 import { NEON, FONT, INK, INK_60, INK_40, LINE, LINE_STRONG } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import FAQ from "../components/FAQ.jsx";
+import CTABanner from "../components/CTABanner.jsx";
 
 /* Content sourced from the May 2026 brand deck (TPDM_Overview).
    Home page focuses on the situations TPDM covers and the credibility of
@@ -101,6 +102,11 @@ export default function Home() {
       <ExperienceSection />
       <EdgeSection />
       <FAQSection />
+      <CTABanner
+        title="Stay current on the docket."
+        cta="Read the briefings"
+        href={hashHref("briefings")}
+      />
       <ClosingSection />
     </>
   );
