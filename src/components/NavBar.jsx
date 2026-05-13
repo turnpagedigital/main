@@ -3,8 +3,8 @@ import { NEON, FONT, INK, INK_60 } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 
 const NAV_ITEMS = [
-  { key: "ai-copyright", label: "AI Copyright" },
-  { key: "crypto", label: "Crypto" },
+  { key: "ai-copyright", label: "Copyright Claims" },
+  { key: "crypto", label: "Locked Crypto" },
   { key: "tariff-refunds", label: "Tariff Refunds", externalHref: "https://www.rewindtariffs.com" },
   { key: "briefings", label: "Briefings" },
   { key: "about", label: "About" },

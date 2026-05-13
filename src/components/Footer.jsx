@@ -3,8 +3,8 @@ import { NEON, FONT } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 
 const COL_DESKS = [
-  { key: "ai-copyright", label: "AI Copyright" },
-  { key: "crypto", label: "Crypto Claims" },
+  { key: "ai-copyright", label: "Copyright Claims" },
+  { key: "crypto", label: "Locked Crypto" },
   { key: "tariff-refunds", label: "Tariff Refunds", externalHref: "https://www.rewindtariffs.com" },
   { key: "contact", label: "Bankruptcy & Litigation" },
 ];

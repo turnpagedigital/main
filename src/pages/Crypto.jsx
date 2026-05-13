@@ -55,10 +55,10 @@ export default function Crypto() {
   return (
     <>
       <Hero
-        eyebrow="Crypto Claims Desk"
-        title="Liquidity for crypto creditors"
-        accentTitle="when the docket says wait."
-        subtitle="FTX. Celsius. BlockFi. Voyager. We quote in fiat and close fast."
+        eyebrow="Locked Crypto"
+        title="Liquidity for locked"
+        accentTitle="digital assets."
+        subtitle="FTX. Celsius. BlockFi. Voyager. Genesis. Mt. Gox. We quote in fiat and close fast."
         size="tall"
       >
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>

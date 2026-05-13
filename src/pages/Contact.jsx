@@ -85,13 +85,26 @@ export default function Contact() {
                 letterSpacing: "0.16em", textTransform: "uppercase",
                 color: INK_60, marginBottom: "0.5rem",
               }}>
-                Prefer email
+                Email
               </p>
               <a href="mailto:info@turnpagedigital.com" style={{
                 fontFamily: FONT, fontSize: "1.05rem", fontWeight: 700,
                 color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
               }}>
                 info@turnpagedigital.com
+              </a>
+              <p style={{
+                fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
+                letterSpacing: "0.16em", textTransform: "uppercase",
+                color: INK_60, marginBottom: "0.5rem", marginTop: "1.2rem",
+              }}>
+                Phone
+              </p>
+              <a href="tel:+16468600068" style={{
+                fontFamily: FONT, fontSize: "1.05rem", fontWeight: 700,
+                color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
+              }}>
+                +1 646 860 0068
               </a>
             </div>
             <p style={{

@@ -42,7 +42,7 @@ export default function AICopyright() {
   return (
     <>
       <Hero
-        eyebrow="AI Copyright Desk"
+        eyebrow="Copyright Claims"
         title="Capital and advisory for"
         accentTitle="rights holders."
         subtitle="Bartz. The OpenAI MDL. Concord. Getty. We buy claims and advise on strategy."
