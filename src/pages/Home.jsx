@@ -60,6 +60,7 @@ const TESTIMONIALS = [
 const DEALS = [
   { amt: "$270M",  who: "FTX",                 type: "Disputed-Ownership Claim",        form: "Advisory",                            when: "Oct 2024 – Aug 2025" },
   { amt: "$103M",  who: "Failed ICO Issuer",   type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation",            when: "Jan 2025" },
+  { amt: "$89M",   who: "FTX",                 type: "Breach of Contract Claim",        form: "Structured Assignment",               when: "Dec 2023" },
   { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",                          when: "Jun 2023" },
   { amt: "$48M",   who: "Visa / Mastercard",   type: "Payment Card Settlement Claim",   form: "Participation",                       when: "Apr 2025" },
   { amt: "$42M",   who: "U.S. Importers",      type: "IEEPA Refund Rights",             form: "Traded or Advised · Participation",   when: "Mar 2026 – Present" },
