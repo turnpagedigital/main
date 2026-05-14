@@ -140,13 +140,6 @@ function HeroSection() {
       }} />
 
       <div style={{ position: "relative", zIndex: 10, maxWidth: 1440, width: "100%", margin: "0 auto" }}>
-        <p style={{
-          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-          letterSpacing: "0.22em", textTransform: "uppercase",
-          color: "rgba(255,255,255,0.78)", marginBottom: "1.5rem",
-        }}>
-          {t("hero.eyebrow")}
-        </p>
         <h1 style={{
           fontFamily: FONT, fontWeight: 900,
           fontSize: "clamp(2.6rem, 8vw, 7.5rem)",
