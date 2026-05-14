@@ -342,9 +342,18 @@ button { font-family: inherit; }
 .ann-banner-inner {
   max-width: 1440px; margin: 0 auto;
   padding: 0.5rem clamp(1.25rem,3vw,2.5rem);
-  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
   font-family: ${FONT}; font-size: 0.78rem; font-weight: 500;
-  color: ${INK_60}; flex-wrap: wrap;
+  color: ${INK_60};
+}
+.ann-banner-content {
+  grid-column: 2;
+  display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.ann-banner-region {
+  grid-column: 3; justify-self: end;
+  display: flex; align-items: center;
 }
 .ann-banner-pill {
   display: inline-flex; align-items: center; gap: 0.4em;
@@ -506,7 +515,9 @@ button { font-family: inherit; }
   .hero-title-xl { font-size: clamp(1.9rem, 7vw, 2.8rem) !important; }
   .hero-sub-xl { font-size: 1.05rem !important; }
   .hide-on-mobile { display: none !important; }
-  .ann-banner-inner { font-size: 0.74rem; }
+  .ann-banner-inner { font-size: 0.74rem; grid-template-columns: 1fr; }
+  .ann-banner-content { grid-column: 1; }
+  .ann-banner-region { display: none; }
 }
 @media (min-width: 769px) {
   .nav-desktop { display: flex !important; }

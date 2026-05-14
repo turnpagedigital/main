@@ -1,4 +1,5 @@
 import React from "react";
+import LanguageSelector from "./LanguageSelector.jsx";
 
 /* Thin promo bar above the nav. Like OffDeal's Series A banner — used to
    feature the latest briefing, settlement, or news item.
@@ -17,11 +18,16 @@ export default function AnnouncementBanner() {
   return (
     <div className="ann-banner" role="region" aria-label="Latest update">
       <div className="ann-banner-inner">
-        <span className="ann-banner-pill">{LATEST.pill}</span>
-        <span>{LATEST.text}</span>
-        <a href={LATEST.href} aria-label={LATEST.linkText}>
-          {LATEST.linkText} →
-        </a>
+        <div className="ann-banner-content">
+          <span className="ann-banner-pill">{LATEST.pill}</span>
+          <span>{LATEST.text}</span>
+          <a href={LATEST.href} aria-label={LATEST.linkText}>
+            {LATEST.linkText} →
+          </a>
+        </div>
+        <div className="ann-banner-region">
+          <LanguageSelector direction="down" fontSize="0.78rem" />
+        </div>
       </div>
     </div>
   );
