@@ -58,6 +58,9 @@ const TESTIMONIALS = [
 ];
 
 const DEALS = [
+  { amt: "$270M",  who: "FTX",                 type: "Disputed-Ownership Claim",        form: "Advisory",                 when: "Oct 2024 – Aug 2025" },
+  { amt: "$103M",  who: "Failed ICO Issuer",   type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation", when: "Jan 2025" },
+  { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",               when: "Jun 2023" },
   { amt: "$48M",   who: "Visa / Mastercard",   type: "Payment Card Settlement Claim",   form: "Participation",            when: "Apr 2025" },
   { amt: "$36M",   who: "Yellow Corp",         type: "Multi-Employer Pension Claim",    form: "Assignment",               when: "Mar 2025" },
 ];
@@ -558,7 +561,7 @@ function ExperienceSection() {
             fontFamily: FONT, fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
             color: "rgba(255,255,255,0.65)", lineHeight: 1.6, maxWidth: 640,
           }}>
-            A representative slice of recent deals across pension claims, antitrust settlements, and complex litigation matters.
+            A representative slice of recent deals across crypto insolvencies, pension claims, antitrust settlements, and complex litigation matters.
           </p>
         </div>
 
