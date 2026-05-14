@@ -58,11 +58,13 @@ const TESTIMONIALS = [
 ];
 
 const DEALS = [
-  { amt: "$270M",  who: "FTX",                 type: "Disputed-Ownership Claim",        form: "Advisory",                 when: "Oct 2024 – Aug 2025" },
-  { amt: "$103M",  who: "Failed ICO Issuer",   type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation", when: "Jan 2025" },
-  { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",               when: "Jun 2023" },
-  { amt: "$48M",   who: "Visa / Mastercard",   type: "Payment Card Settlement Claim",   form: "Participation",            when: "Apr 2025" },
-  { amt: "$36M",   who: "Yellow Corp",         type: "Multi-Employer Pension Claim",    form: "Assignment",               when: "Mar 2025" },
+  { amt: "$270M",  who: "FTX",                 type: "Disputed-Ownership Claim",        form: "Advisory",                            when: "Oct 2024 – Aug 2025" },
+  { amt: "$103M",  who: "Failed ICO Issuer",   type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation",            when: "Jan 2025" },
+  { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",                          when: "Jun 2023" },
+  { amt: "$48M",   who: "Visa / Mastercard",   type: "Payment Card Settlement Claim",   form: "Participation",                       when: "Apr 2025" },
+  { amt: "$42M",   who: "U.S. Importers",      type: "IEEPA Refund Rights",             form: "Traded or Advised · Participation",   when: "2024–2026" },
+  { amt: "$36M",   who: "Yellow Corp",         type: "Multi-Employer Pension Claim",    form: "Assignment",                          when: "Mar 2025" },
+  { amt: "$30M",   who: "100s of College Athletes", type: "NCAA College Athlete NIL Settlement", form: "Assignment",                  when: "Jun 2025 – Jan 2026" },
 ];
 
 const FAQS = [
