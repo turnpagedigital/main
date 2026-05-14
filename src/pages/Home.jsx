@@ -58,15 +58,8 @@ const TESTIMONIALS = [
 ];
 
 const DEALS = [
-  { amt: "$270M",  who: "FTX",                 type: "Disputed-Ownership Claim",        form: "Advisory",                 when: "Oct 2024 – Aug 2025" },
-  { amt: "$106M",  who: "Mt. Gox",             type: "Trust Interest Participation",    form: "Participation",            when: "Nov 2023" },
-  { amt: "$103M",  who: "Polybius",            type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation", when: "Jan 2025" },
-  { amt: "$89M",   who: "FTX",                 type: "Breach of Contract Claim",        form: "Structured Assignment",    when: "Dec 2023" },
-  { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",               when: "Jun 2023" },
-  { amt: "$33M",   who: "FTX",                 type: "Institutional Customer Claim",    form: "Contingent Assignment",    when: "Jun 2025" },
-  { amt: "$27M",   who: "Three Arrows Capital",type: "Digital Asset Loan Claim",        form: "Advisory",                 when: "Jun 2025" },
-  { amt: "$8M",    who: "Genesis",             type: "BTC/ETH Loan Claim Portfolio",    form: "Assignment",               when: "Oct 2024" },
-  { amt: "$4M",    who: "Celsius",             type: "Retail Customer Claims",          form: "Assignment",               when: "Feb–Dec 2023" },
+  { amt: "$48M",   who: "Visa / Mastercard",   type: "Payment Card Settlement Claim",   form: "Participation",            when: "Apr 2025" },
+  { amt: "$36M",   who: "Yellow Corp",         type: "Multi-Employer Pension Claim",    form: "Assignment",               when: "Mar 2025" },
 ];
 
 const FAQS = [
@@ -565,14 +558,14 @@ function ExperienceSection() {
               lineHeight: 1.02, letterSpacing: "-0.035em",
               color: "#fff",
             }}>
-              Every major crypto insolvency of the last decade.
+              A track record across the largest claims trades.
             </h2>
           </div>
           <p style={{
             fontFamily: FONT, fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
             color: "rgba(255,255,255,0.65)", lineHeight: 1.6, maxWidth: 640,
           }}>
-            FTX. Mt. Gox. Genesis. Celsius. BlockFi. Three Arrows. Voyager. Terra. A representative slice of Andrew's prior deal track record across the largest claims trades in recent crypto bankruptcy history.
+            A representative slice of recent deals across pension claims, antitrust settlements, and complex litigation matters.
           </p>
         </div>
 
@@ -627,7 +620,7 @@ function ExperienceSection() {
           color: "rgba(255,255,255,0.4)", marginTop: "1.2rem",
           fontStyle: "italic",
         }}>
-          Other situations actively covered include BlockFi, Terraform Labs, VAULD, Blockfills, Gatecoin, and Voyager. Experience prior to founding Turnpage Digital.
+          Additional matters covered by conversation. See our <a href={hashHref("crypto")} style={{ color: "inherit", textDecoration: "underline" }}>locked crypto desk</a> for a full track record across major crypto insolvencies.
         </p>
 
         <style>{`

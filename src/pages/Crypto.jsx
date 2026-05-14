@@ -32,6 +32,18 @@ const NEW_WAY = {
   ],
 };
 
+const DEALS = [
+  { amt: "$270M",  who: "FTX",                 type: "Disputed-Ownership Claim",        form: "Advisory",                 when: "Oct 2024 – Aug 2025" },
+  { amt: "$106M",  who: "Mt. Gox",             type: "Trust Interest Participation",    form: "Participation",            when: "Nov 2023" },
+  { amt: "$103M",  who: "Polybius",            type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation", when: "Jan 2025" },
+  { amt: "$89M",   who: "FTX",                 type: "Breach of Contract Claim",        form: "Structured Assignment",    when: "Dec 2023" },
+  { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",               when: "Jun 2023" },
+  { amt: "$33M",   who: "FTX",                 type: "Institutional Customer Claim",    form: "Contingent Assignment",    when: "Jun 2025" },
+  { amt: "$27M",   who: "Three Arrows Capital",type: "Digital Asset Loan Claim",        form: "Advisory",                 when: "Jun 2025" },
+  { amt: "$8M",    who: "Genesis",             type: "BTC/ETH Loan Claim Portfolio",    form: "Assignment",               when: "Oct 2024" },
+  { amt: "$4M",    who: "Celsius",             type: "Retail Customer Claims",          form: "Assignment",               when: "Feb–Dec 2023" },
+];
+
 const FAQS = [
   {
     q: "Which estates are you active in?",
@@ -129,6 +141,109 @@ export default function Crypto() {
               body="Plan-of-reorganization analysis. Token-vs-fiat valuation strategy. Counsel introductions when needed."
             />
           </div>
+        </div>
+      </section>
+
+      {/* RELEVANT EXPERIENCE */}
+      <section style={{
+        background: "#0A0B0E", color: "#fff",
+        padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
+      }}>
+        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.4fr)",
+            gap: "clamp(2rem, 5vw, 5rem)",
+            marginBottom: "clamp(3rem, 6vw, 5rem)",
+            alignItems: "end",
+          }} className="section-split">
+            <div>
+              <p style={{
+                fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
+                letterSpacing: "0.22em", textTransform: "uppercase",
+                color: NEON, marginBottom: "1.2rem",
+              }}>
+                Relevant Experience
+              </p>
+              <h2 style={{
+                fontFamily: FONT, fontWeight: 800,
+                fontSize: "clamp(2rem, 4.5vw, 4rem)",
+                lineHeight: 1.02, letterSpacing: "-0.035em",
+                color: "#fff",
+              }}>
+                Every major crypto insolvency of the last decade.
+              </h2>
+            </div>
+            <p style={{
+              fontFamily: FONT, fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+              color: "rgba(255,255,255,0.65)", lineHeight: 1.6, maxWidth: 640,
+            }}>
+              FTX. Mt. Gox. Genesis. Celsius. BlockFi. Three Arrows. Voyager. Terra. A representative slice of Andrew's prior deal track record across the largest claims trades in recent crypto bankruptcy history.
+            </p>
+          </div>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "1px",
+            background: "rgba(255,255,255,0.10)",
+            border: "1px solid rgba(255,255,255,0.10)",
+            borderRadius: 8, overflow: "hidden",
+          }} className="deals-grid">
+            {DEALS.map((d, i) => (
+              <div key={i} style={{
+                background: "#0A0B0E",
+                padding: "clamp(1.4rem, 2.5vw, 2rem)",
+              }}>
+                <div style={{
+                  fontFamily: FONT, fontWeight: 900,
+                  fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
+                  lineHeight: 1, letterSpacing: "-0.03em",
+                  color: NEON, marginBottom: "0.8rem",
+                }}>
+                  {d.amt}
+                </div>
+                <div style={{
+                  fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700,
+                  color: "#fff", marginBottom: "0.4rem",
+                  letterSpacing: "-0.01em",
+                }}>
+                  {d.who}
+                </div>
+                <div style={{
+                  fontFamily: FONT, fontSize: "0.92rem",
+                  color: "rgba(255,255,255,0.78)", lineHeight: 1.45,
+                  marginBottom: "0.9rem",
+                }}>
+                  {d.type}
+                </div>
+                <div style={{
+                  fontFamily: FONT, fontSize: "0.74rem",
+                  color: "rgba(255,255,255,0.45)",
+                  letterSpacing: "0.04em",
+                }}>
+                  {d.form} · {d.when}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p style={{
+            fontFamily: FONT, fontSize: "0.78rem",
+            color: "rgba(255,255,255,0.4)", marginTop: "1.2rem",
+            fontStyle: "italic",
+          }}>
+            Other situations actively covered include BlockFi, Terraform Labs, VAULD, Blockfills, Gatecoin, and Voyager. Experience prior to founding Turnpage Digital.
+          </p>
+
+          <style>{`
+            @media (max-width: 1000px) {
+              .deals-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            }
+            @media (max-width: 640px) {
+              .deals-grid { grid-template-columns: 1fr !important; }
+            }
+          `}</style>
         </div>
       </section>
 
