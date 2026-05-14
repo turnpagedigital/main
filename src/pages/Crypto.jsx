@@ -35,7 +35,7 @@ const NEW_WAY = {
 const DEALS = [
   { amt: "$270M",  who: "FTX",                 type: "Disputed-Ownership Claim",        form: "Advisory",                 when: "Oct 2024 – Aug 2025" },
   { amt: "$106M",  who: "Mt. Gox",             type: "Trust Interest Participation",    form: "Participation",            when: "Nov 2023" },
-  { amt: "$103M",  who: "Polybius",            type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation", when: "Jan 2025" },
+  { amt: "$103M",  who: "Failed ICO Issuer",   type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation", when: "Jan 2025" },
   { amt: "$89M",   who: "FTX",                 type: "Breach of Contract Claim",        form: "Structured Assignment",    when: "Dec 2023" },
   { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",               when: "Jun 2023" },
   { amt: "$33M",   who: "FTX",                 type: "Institutional Customer Claim",    form: "Contingent Assignment",    when: "Jun 2025" },
