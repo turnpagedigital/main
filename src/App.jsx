@@ -9,7 +9,6 @@ import AICopyright from "./pages/AICopyright.jsx";
 import Crypto from "./pages/Crypto.jsx";
 import Briefings from "./pages/Briefings.jsx";
 import Briefing from "./pages/Briefing.jsx";
-import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Legal from "./pages/Legal.jsx";
 import NotFound from "./pages/NotFound.jsx";
@@ -20,7 +19,6 @@ const TITLES = {
   "crypto": "Crypto Claims — Turnpage Digital Markets",
   "briefings": "Briefings — Turnpage Digital Markets",
   "briefing": "Briefing — Turnpage Digital Markets",
-  "about": "About — Turnpage Digital Markets",
   "contact": "Get in Touch — Turnpage Digital Markets",
   "privacy": "Privacy Policy — Turnpage Digital Markets",
   "terms": "Terms of Use — Turnpage Digital Markets",
@@ -61,7 +59,6 @@ function renderPage(route) {
     case "crypto":         return <Crypto />;
     case "briefings":      return <Briefings />;
     case "briefing":       return <Briefing slug={route.slug} />;
-    case "about":          return <About />;
     case "contact":        return <Contact />;
     case "privacy":        return <Legal kind="privacy" />;
     case "terms":          return <Legal kind="terms" />;

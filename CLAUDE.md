@@ -28,7 +28,6 @@ The site is a multi-page Vite/React SPA with hash-based in-app routing (no React
 - `#/crypto` → Crypto Claims sub-brand (placeholder copy — replace with turnpage-crypto content)
 - `#/briefings` → Briefings library (blog index)
 - `#/briefings/SLUG` → Single briefing
-- `#/about` → About TPDM + founder bio
 - `#/contact` → Contact / intake form (reads `?source=ai-copyright` from hash to attribute leads)
 - `#/privacy`, `#/terms` → Legal pages
 
@@ -54,7 +53,6 @@ src/
     Crypto.jsx             — Crypto Claims sub-brand (PLACEHOLDER copy)
     Briefings.jsx          — Briefings library list
     Briefing.jsx           — Single briefing (renders markdown via marked)
-    About.jsx              — About + founder bio (PLACEHOLDER bio)
     Contact.jsx            — Contact page wrapping IntakeForm
     Legal.jsx              — Privacy + Terms (kind="privacy" or "terms")
     NotFound.jsx           — 404
@@ -72,7 +70,6 @@ index.html                 — Vite entry, meta + OG tags
 - **Update a case** → edit `src/data/cases.js`. Each entry has `rank`, `name`, `defendants`, `court`, `status`, `damages`, `summary`.
 - **Post a briefing** → see "Posting a Briefing" below.
 - **Replace Crypto placeholder copy** → edit `src/pages/Crypto.jsx`. Structure mirrors AICopyright.jsx.
-- **Add the founder bio** → edit `src/pages/About.jsx` and replace the `[Founder bio — paste your bio here ...]` block.
 - **Hero copy** → home is in `src/pages/Home.jsx`; AI Copyright hero is in `src/pages/AICopyright.jsx` (uses the shared `Hero` component).
 - **Subject options on contact form** → edit `SUBJECT_OPTIONS` in `src/components/IntakeForm.jsx`. Also update `subjectLabels` in `functions/api/contact.js` so the email shows the right label.
 

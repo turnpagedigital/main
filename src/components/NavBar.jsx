@@ -9,7 +9,6 @@ const NAV_ITEMS = [
   { key: "crypto",        labelKey: "nav.crypto" },
   { key: "tariff-refunds",labelKey: "nav.tariff", externalHref: "https://www.rewindtariffs.com" },
   { key: "briefings",     labelKey: "nav.briefings" },
-  { key: "about",         labelKey: "nav.about" },
 ];
 
 /* Preview content shown when hovering over a nav item.

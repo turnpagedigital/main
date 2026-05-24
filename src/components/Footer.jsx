@@ -21,7 +21,6 @@ export default function Footer() {
     { key: "ai-copyright", label: "Top 12 Cases", hashSuffix: "#cases-section" },
   ];
   const COL_FIRM = [
-    { key: "about", label: t("footer.firm.about") },
     { key: "contact", label: t("footer.firm.contact") },
   ];
   const COL_LEGAL = [

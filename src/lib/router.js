@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
      #/crypto                 → Crypto Claims sub-brand
      #/briefings              → Briefings index
      #/briefings/SLUG         → single briefing
-     #/about                  → About
      #/contact                → Contact
      #/privacy                → Privacy
      #/terms                  → Terms
