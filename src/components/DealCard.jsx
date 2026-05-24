@@ -68,7 +68,7 @@ export default function DealCard({ deal }) {
 
           {hasSummary && (
             <span aria-hidden="true" style={{
-              position: "absolute", top: "1.1rem", right: "1.1rem",
+              position: "absolute", top: "calc(1.1rem + 10px)", right: "calc(1.1rem - 10px)",
               display: "inline-flex", alignItems: "center", justifyContent: "center",
             }}>
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -96,7 +96,7 @@ export default function DealCard({ deal }) {
             {deal.summary}
           </div>
           <span aria-hidden="true" style={{
-            position: "absolute", top: "1.1rem", right: "1.1rem",
+            position: "absolute", top: "calc(1.1rem + 10px)", right: "calc(1.1rem - 10px)",
             display: "inline-flex", alignItems: "center", justifyContent: "center",
           }}>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
