@@ -307,27 +307,33 @@ function SituationsSection() {
         <div style={{ borderTop: `1px solid ${LINE_STRONG}` }}>
           {SITUATIONS.map((s, idx) => {
             const isOpen = openIdx === idx;
+            const ROW_PAD = "clamp(1.8rem, 3vw, 2.4rem)";
             return (
-              <div key={s.no} style={{
-                borderBottom: `1px solid ${LINE_STRONG}`,
-                background: isOpen ? "#FAFAFA" : "transparent",
-                transition: "background 0.25s",
-              }}>
-                {/* Trigger row */}
-                <button
-                  onClick={() => toggle(idx)}
-                  aria-expanded={isOpen}
-                  style={{
-                    width: "100%",
-                    display: "grid",
-                    gridTemplateColumns: "2.8rem 1fr",
-                    gap: "clamp(1rem, 2.5vw, 2.5rem)",
-                    alignItems: "center",
-                    padding: "clamp(1.6rem, 2.8vw, 2.2rem) 0",
-                    background: "none", border: "none",
-                    cursor: "pointer", textAlign: "left",
-                  }}
-                >
+              <div
+                key={s.no}
+                onClick={() => toggle(idx)}
+                aria-expanded={isOpen}
+                role="button"
+                tabIndex={0}
+                onKeyDown={e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(idx); } }}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "auto minmax(220px, 1.4fr) minmax(0, 2fr)",
+                  columnGap: "clamp(1.5rem, 4vw, 4rem)",
+                  alignItems: "start",
+                  borderBottom: `1px solid ${LINE_STRONG}`,
+                  background: isOpen ? "#FAFAFA" : "transparent",
+                  transition: "background 0.25s",
+                  cursor: "pointer",
+                }}
+                className="situations-row"
+              >
+                {/* Col 1 — toggle icon */}
+                <div style={{
+                  paddingTop: ROW_PAD,
+                  paddingBottom: ROW_PAD,
+                  display: "flex", alignItems: "flex-start",
+                }}>
                   <span style={{
                     fontFamily: FONT, fontWeight: 700,
                     fontSize: "1.6rem", lineHeight: 1,
@@ -339,44 +345,48 @@ function SituationsSection() {
                   }}>
                     +
                   </span>
+                </div>
+
+                {/* Col 2 — title + expandable body */}
+                <div style={{ paddingTop: ROW_PAD }}>
                   <h3 style={{
                     fontFamily: FONT, fontWeight: 800,
                     fontSize: "clamp(1.5rem, 3vw, 2.4rem)",
                     color: INK, letterSpacing: "-0.02em", lineHeight: 1.05,
                     margin: 0,
+                    paddingBottom: isOpen ? "0.6rem" : ROW_PAD,
+                    transition: "padding-bottom 0.1s",
                   }}>
                     {s.title}
                   </h3>
-                </button>
-
-                {/* Expandable content */}
-                <div style={{
-                  overflow: "hidden",
-                  maxHeight: isOpen ? "500px" : "0",
-                  transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
-                }}>
                   <div style={{
-                    paddingLeft: "calc(2.8rem + clamp(1rem, 2.5vw, 2.5rem))",
-                    paddingBottom: "clamp(1.6rem, 2.8vw, 2.4rem)",
+                    overflow: "hidden",
+                    maxHeight: isOpen ? "500px" : "0",
+                    transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
                   }}>
-                    <p style={{
-                      fontFamily: FONT,
-                      fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
-                      color: INK_60, lineHeight: 1.65,
-                      marginBottom: "0.75rem", marginTop: 0,
-                    }}>
-                      {s.body}
-                    </p>
-                    <p style={{
-                      fontFamily: FONT,
-                      fontSize: "clamp(0.9rem, 1.1vw, 1rem)",
-                      color: INK_40, lineHeight: 1.7,
-                      margin: 0,
-                    }}>
-                      {s.details}
-                    </p>
+                    <div style={{ paddingBottom: ROW_PAD }}>
+                      <p style={{
+                        fontFamily: FONT,
+                        fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
+                        color: INK_60, lineHeight: 1.65,
+                        marginTop: 0, marginBottom: "0.75rem",
+                      }}>
+                        {s.body}
+                      </p>
+                      <p style={{
+                        fontFamily: FONT,
+                        fontSize: "clamp(0.9rem, 1.1vw, 1rem)",
+                        color: INK_40, lineHeight: 1.7,
+                        margin: 0,
+                      }}>
+                        {s.details}
+                      </p>
+                    </div>
                   </div>
                 </div>
+
+                {/* Col 3 — empty spacer, preserves original proportions */}
+                <div />
               </div>
             );
           })}
@@ -385,6 +395,8 @@ function SituationsSection() {
         <style>{`
           @media (max-width: 720px) {
             .section-split { grid-template-columns: 1fr !important; }
+            .situations-row { grid-template-columns: auto 1fr !important; }
+            .situations-row > div:last-child { display: none; }
           }
         `}</style>
       </div>
