@@ -189,21 +189,22 @@ function HeroSection() {
 }
 
 /* ─── STATS BAND — three big numbers right below the hero ───
-   Black-glass card grid floating over a darkened architectural BG image.
-   Sharp 90° corners throughout. Each stat has a small NEON rank (01/02/03),
-   a giant value, a thin NEON accent line, and the label. */
+   Plain flat 3-column strip sitting on a darkened architectural BG image.
+   The dark layer is partially transparent so the image bleeds through,
+   giving the panel a glass-over-photo feel without any cards, eyebrow,
+   rank numbers, or neon corner accents. */
 function StatsBand() {
   const { t } = useI18n();
   const items = [
-    { rank: "01", v: "$1B+", l: t("stats.claims_traded") },
-    { rank: "02", v: "5K+",  l: t("stats.claims_advised") },
-    { rank: "03", v: "500+", l: t("stats.institutions") },
+    { v: "$1B+", l: t("stats.claims_traded") },
+    { v: "5K+",  l: t("stats.claims_advised") },
+    { v: "500+", l: t("stats.institutions") },
   ];
   return (
     <section style={{
-      position: "relative", overflow: "hidden",
-      borderTop: `1px solid ${NEON}`,
-      borderBottom: `1px solid ${NEON}`,
+      position: "relative", overflow: "hidden", color: "#fff",
+      borderTop: "1px solid rgba(255,255,255,0.08)",
+      borderBottom: "1px solid rgba(255,255,255,0.08)",
     }}>
       {/* BG image */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
@@ -212,88 +213,37 @@ function StatsBand() {
           alt=""
           style={{
             width: "100%", height: "100%", objectFit: "cover",
-            filter: "brightness(0.22) contrast(1.15) saturate(0.6)",
+            filter: "brightness(0.4) contrast(1.1) saturate(0.7)",
           }}
         />
       </div>
-      {/* Black-glass overlay */}
+      {/* Semi-transparent dark overlay — keeps the image visible */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 1,
-        background: "rgba(10, 11, 14, 0.72)",
-        backdropFilter: "blur(14px) saturate(140%)",
-        WebkitBackdropFilter: "blur(14px) saturate(140%)",
-      }} />
-      {/* Neon corner accents (top-left + bottom-right) */}
-      <span aria-hidden="true" style={{
-        position: "absolute", top: 0, left: 0, zIndex: 2,
-        width: 56, height: 56,
-        borderTop: `2px solid ${NEON}`, borderLeft: `2px solid ${NEON}`,
-        pointerEvents: "none",
-      }} />
-      <span aria-hidden="true" style={{
-        position: "absolute", bottom: 0, right: 0, zIndex: 2,
-        width: 56, height: 56,
-        borderBottom: `2px solid ${NEON}`, borderRight: `2px solid ${NEON}`,
-        pointerEvents: "none",
+        background: "rgba(10, 11, 14, 0.55)",
       }} />
 
-      <div style={{
-        position: "relative", zIndex: 3,
-        maxWidth: 1440, margin: "0 auto",
-        padding: "clamp(3rem, 6vw, 5rem) clamp(1.5rem, 3vw, 2.5rem)",
-      }}>
-        {/* Eyebrow */}
-        <p style={{
-          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
-          letterSpacing: "0.28em", textTransform: "uppercase",
-          color: NEON, marginBottom: "clamp(2rem, 4vw, 3rem)",
-          display: "inline-flex", alignItems: "center", gap: "0.7em",
-        }}>
-          <span style={{
-            display: "inline-block", width: "1.6rem", height: 1,
-            background: NEON,
-          }} />
-          {t("stats.eyebrow")}
-        </p>
-
+      <div style={{ position: "relative", zIndex: 2, maxWidth: 1440, margin: "0 auto" }}>
         <div style={{
           display: "grid", gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "clamp(1rem, 2vw, 1.6rem)",
+          borderLeft: "1px solid rgba(255,255,255,0.08)",
         }} className="stats-band-grid">
           {items.map((it, i) => (
-            <div key={i} className="stats-card" style={{
-              position: "relative",
-              padding: "clamp(1.8rem, 3vw, 2.6rem) clamp(1.4rem, 2.4vw, 2.2rem)",
-              background: "rgba(255, 255, 255, 0.04)",
-              backdropFilter: "blur(10px) saturate(140%)",
-              WebkitBackdropFilter: "blur(10px) saturate(140%)",
-              border: "1px solid rgba(255, 255, 255, 0.10)",
-              boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.06)",
-              transition: "background 0.3s, border-color 0.3s",
+            <div key={i} style={{
+              padding: "clamp(2rem,4vw,3.5rem) clamp(1.5rem,3vw,2.5rem)",
+              borderRight: "1px solid rgba(255,255,255,0.08)",
             }}>
               <div style={{
-                fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
-                letterSpacing: "0.24em", color: NEON,
-                marginBottom: "clamp(1.4rem, 2.8vw, 2.2rem)",
-              }}>
-                {it.rank}
-              </div>
-              <div style={{
                 fontFamily: FONT, fontWeight: 900,
-                fontSize: "clamp(2.6rem, 5.4vw, 4.4rem)",
-                lineHeight: 0.92, letterSpacing: "-0.045em",
-                color: "#fff",
-                marginBottom: "clamp(0.9rem, 1.5vw, 1.2rem)",
+                fontSize: "clamp(2.4rem, 5vw, 4rem)",
+                lineHeight: 0.95, letterSpacing: "-0.04em",
+                color: "#fff", marginBottom: "0.6rem",
               }}>
                 {it.v}
               </div>
               <div style={{
-                width: 36, height: 2, background: NEON,
-                marginBottom: "clamp(0.9rem, 1.6vw, 1.2rem)",
-              }} />
-              <div style={{
-                fontFamily: FONT, fontSize: "0.92rem", lineHeight: 1.45,
-                color: "rgba(255,255,255,0.72)",
+                fontFamily: FONT, fontSize: "0.92rem",
+                color: "rgba(255,255,255,0.78)",
                 letterSpacing: "0.01em",
               }}>
                 {it.l}
@@ -301,26 +251,19 @@ function StatsBand() {
             </div>
           ))}
         </div>
-
         <p style={{
-          fontFamily: FONT, fontSize: "0.72rem",
-          color: "rgba(255,255,255,0.45)",
-          marginTop: "clamp(1.4rem, 2.5vw, 2rem)",
+          fontFamily: FONT, fontSize: "0.72rem", color: "rgba(255,255,255,0.5)",
+          padding: "0.9rem clamp(1.5rem,3vw,2.5rem)",
           fontStyle: "italic",
         }}>
           {t("stats.footnote")}
         </p>
+        <style>{`
+          @media (max-width: 720px) {
+            .stats-band-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
       </div>
-
-      <style>{`
-        .stats-card:hover {
-          background: rgba(255, 255, 255, 0.07) !important;
-          border-color: rgba(212, 255, 0, 0.35) !important;
-        }
-        @media (max-width: 900px) {
-          .stats-band-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

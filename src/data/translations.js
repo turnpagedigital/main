@@ -29,7 +29,6 @@ export const TRANSLATIONS = {
     "hero.scroll":      "Scroll",
 
     // Stats band
-    "stats.eyebrow":          "Track Record",
     "stats.claims_traded":    "Claims traded*",
     "stats.claims_advised":   "Claims sold or advised*",
     "stats.institutions":     "Financial institutions on speed dial",
@@ -93,7 +92,6 @@ export const TRANSLATIONS = {
     "hero.cta_secondary": "Lo que cubrimos",
     "hero.scroll":      "Desplazar",
 
-    "stats.eyebrow":         "Trayectoria",
     "stats.claims_traded":   "Reclamos negociados*",
     "stats.claims_advised":  "Reclamos vendidos o asesorados*",
     "stats.institutions":    "Instituciones financieras en agenda",
@@ -153,7 +151,6 @@ export const TRANSLATIONS = {
     "hero.cta_secondary": "Ce que nous couvrons",
     "hero.scroll":      "Défiler",
 
-    "stats.eyebrow":         "Bilan",
     "stats.claims_traded":   "Créances négociées*",
     "stats.claims_advised":  "Créances vendues ou conseillées*",
     "stats.institutions":    "Institutions financières en relation",
@@ -213,7 +210,6 @@ export const TRANSLATIONS = {
     "hero.cta_secondary": "Was wir abdecken",
     "hero.scroll":      "Scrollen",
 
-    "stats.eyebrow":         "Bilanz",
     "stats.claims_traded":   "Gehandelte Ansprüche*",
     "stats.claims_advised":  "Verkaufte oder beratene Ansprüche*",
     "stats.institutions":    "Finanzinstitute im Netzwerk",
@@ -273,7 +269,6 @@ export const TRANSLATIONS = {
     "hero.cta_secondary": "Cosa copriamo",
     "hero.scroll":      "Scorri",
 
-    "stats.eyebrow":         "Track Record",
     "stats.claims_traded":   "Crediti negoziati*",
     "stats.claims_advised":  "Crediti venduti o assistiti*",
     "stats.institutions":    "Istituzioni finanziarie in agenda",
@@ -333,7 +328,6 @@ export const TRANSLATIONS = {
     "hero.cta_secondary": "O que cobrimos",
     "hero.scroll":      "Rolar",
 
-    "stats.eyebrow":         "Histórico",
     "stats.claims_traded":   "Reivindicações negociadas*",
     "stats.claims_advised":  "Reivindicações vendidas ou assessoradas*",
     "stats.institutions":    "Instituições financeiras na agenda",
@@ -393,7 +387,6 @@ export const TRANSLATIONS = {
     "hero.cta_secondary": "취급 범위",
     "hero.scroll":      "스크롤",
 
-    "stats.eyebrow":         "실적",
     "stats.claims_traded":   "거래된 청구*",
     "stats.claims_advised":  "매각 또는 자문된 청구*",
     "stats.institutions":    "주요 금융기관 네트워크",
@@ -453,7 +446,6 @@ export const TRANSLATIONS = {
     "hero.cta_secondary": "我们涵盖的范围",
     "hero.scroll":      "向下滚动",
 
-    "stats.eyebrow":         "业绩记录",
     "stats.claims_traded":   "已交易索赔*",
     "stats.claims_advised":  "已出售或顾问索赔*",
     "stats.institutions":    "金融机构合作网络",
