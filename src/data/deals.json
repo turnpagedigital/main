@@ -8,8 +8,11 @@
       "form": "Advisory",
       "when": "Oct 2024 – Aug 2025",
       "summary": "Advised investor group on resolving disputed ownership of FTX claim arising from post-bankruptcy ponzi scheme in Korea. Assisted with identification and engagement of U.S. bankruptcy counsel, coordinated with Korean advisors and assisted on all aspects of strategy including with respect to Korean bankruptcy matters.",
-      "pages": ["home", "crypto"],
-      "preTurnpage": false
+      "pages": [
+        "home",
+        "crypto"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$106M",
@@ -18,8 +21,10 @@
       "form": "Participation",
       "when": "Nov 2023",
       "summary": "",
-      "pages": ["crypto"],
-      "preTurnpage": false
+      "pages": [
+        "crypto"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$103M",
@@ -28,8 +33,11 @@
       "form": "Structured Participation",
       "when": "Jan 2025",
       "summary": "Brokered exclusive sale of minority interest in seized crypto, crypto-backed loans, real estate and other assets held across multiple jurisdictions to a family office buyer. Proceeds used to fund seller's ongoing legal expenses in active DOJ litigation.",
-      "pages": ["home", "crypto"],
-      "preTurnpage": false
+      "pages": [
+        "crypto",
+        "home"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$89M",
@@ -38,8 +46,11 @@
       "form": "Structured Assignment",
       "when": "Dec 2023",
       "summary": "Brokered exclusive sale of a rejected licensing agreement claim to a multinational hedge fund group. Structured sale to include contingent consideration for seller based on ultimate allowed amount of claim.",
-      "pages": ["home", "crypto"],
-      "preTurnpage": false
+      "pages": [
+        "home",
+        "crypto"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$58M",
@@ -48,8 +59,11 @@
       "form": "Assignment",
       "when": "Jun 2023",
       "summary": "Brokered exclusive sale of Korean crypto exchange claim against Genesis Global to U.K.-based hedge fund with settlement in BTC.",
-      "pages": ["home", "crypto"],
-      "preTurnpage": false
+      "pages": [
+        "home",
+        "crypto"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$48M",
@@ -58,8 +72,10 @@
       "form": "Participation",
       "when": "Apr 2025",
       "summary": "Brokered exclusive secondary sale of Visa/MasterCard claim to prop desk of U.S.-based investment bank.",
-      "pages": ["home"],
-      "preTurnpage": false
+      "pages": [
+        "home"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$42M",
@@ -68,7 +84,9 @@
       "form": "Participation / Advisory",
       "when": "Mar 2026 – Present",
       "summary": "Advised importers on pathways to monetize tariff refund rights arising from the U.S. Supreme Court's decision in Learning Resources v. Trump and subsequent rulings at the Court of International Trade. Arranged multiple transactions to provide immediate cash to sellers and balance counterparty risk.",
-      "pages": ["home"],
+      "pages": [
+        "home"
+      ],
       "preTurnpage": false
     },
     {
@@ -78,8 +96,10 @@
       "form": "Participation",
       "when": "Mar 2025",
       "summary": "Brokered sale of multi-employer pension plan claim held by teamsters union to U.S.-based hedge fund. Advised client over many months, navigating volatile market through complex Delaware bankruptcy court litigation and multiple appeals.",
-      "pages": ["home"],
-      "preTurnpage": false
+      "pages": [
+        "home"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$33M",
@@ -88,8 +108,10 @@
       "form": "Contingent Assignment",
       "when": "Jun 2025",
       "summary": "",
-      "pages": ["crypto"],
-      "preTurnpage": false
+      "pages": [
+        "crypto"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$30M",
@@ -98,8 +120,10 @@
       "form": "Assignment",
       "when": "Jun 2025 – Jan 2026",
       "summary": "Partnered with series of capital providers to offer instant liquidity to college athletes seeking to monetize 10-year structured settlement.",
-      "pages": ["home"],
-      "preTurnpage": false
+      "pages": [
+        "home"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$27M",
@@ -108,8 +132,10 @@
       "form": "Advisory",
       "when": "Jun 2025",
       "summary": "",
-      "pages": ["crypto"],
-      "preTurnpage": false
+      "pages": [
+        "crypto"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$20M",
@@ -118,7 +144,9 @@
       "form": "Trading",
       "when": "Jul 2022 – Jan 2024",
       "summary": "Built marketplace to offer competitive exit options for smaller customer claims on form documents across multiple bankrupt crypto exchanges.",
-      "pages": ["home"],
+      "pages": [
+        "home"
+      ],
       "preTurnpage": true
     },
     {
@@ -128,8 +156,10 @@
       "form": "Assignment",
       "when": "Oct 2024",
       "summary": "",
-      "pages": ["crypto"],
-      "preTurnpage": false
+      "pages": [
+        "crypto"
+      ],
+      "preTurnpage": true
     },
     {
       "amt": "$4M",
@@ -138,8 +168,10 @@
       "form": "Assignment",
       "when": "Feb–Dec 2023",
       "summary": "",
-      "pages": ["crypto"],
-      "preTurnpage": false
+      "pages": [
+        "crypto"
+      ],
+      "preTurnpage": true
     }
   ]
 }
