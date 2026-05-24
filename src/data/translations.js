@@ -24,7 +24,7 @@ export const TRANSLATIONS = {
     "hero.title_1":     "Strategic guidance.",
     "hero.title_2":     "Turn-key liquidity.",
     "hero.subtitle":    "For rights holders entitled to compensation — we buy litigation, class action and bankruptcy claims, receivables, refunds, and other locked assets.",
-    "hero.cta_primary": "Talk to a Partner",
+    "hero.cta_primary": "Get in Touch",
     "hero.cta_secondary": "What we cover",
     "hero.scroll":      "Scroll",
 
@@ -88,7 +88,7 @@ export const TRANSLATIONS = {
     "hero.title_1":     "Asesoría estratégica.",
     "hero.title_2":     "Liquidez llave en mano.",
     "hero.subtitle":    "Para titulares de derechos con derecho a indemnización — compramos demandas judiciales, acciones colectivas y créditos por quiebra, cuentas por cobrar, reembolsos y otros activos bloqueados.",
-    "hero.cta_primary": "Hablar con un Socio",
+    "hero.cta_primary": "Contáctenos",
     "hero.cta_secondary": "Lo que cubrimos",
     "hero.scroll":      "Desplazar",
 
@@ -147,7 +147,7 @@ export const TRANSLATIONS = {
     "hero.title_1":     "Conseil stratégique.",
     "hero.title_2":     "Liquidité clé en main.",
     "hero.subtitle":    "Pour les titulaires de droits à indemnisation — nous achetons des créances issues de contentieux, d'actions collectives et de faillites, des créances commerciales, des remboursements et d'autres actifs bloqués.",
-    "hero.cta_primary": "Parler à un Associé",
+    "hero.cta_primary": "Nous contacter",
     "hero.cta_secondary": "Ce que nous couvrons",
     "hero.scroll":      "Défiler",
 
@@ -206,7 +206,7 @@ export const TRANSLATIONS = {
     "hero.title_1":     "Strategische Beratung.",
     "hero.title_2":     "Schlüsselfertige Liquidität.",
     "hero.subtitle":    "Für Anspruchsberechtigte — wir kaufen Forderungen aus Rechtsstreitigkeiten, Sammelklagen und Insolvenzen sowie Außenstände, Rückerstattungsansprüche und andere gesperrte Vermögenswerte.",
-    "hero.cta_primary": "Mit einem Partner sprechen",
+    "hero.cta_primary": "Kontakt aufnehmen",
     "hero.cta_secondary": "Was wir abdecken",
     "hero.scroll":      "Scrollen",
 
@@ -265,7 +265,7 @@ export const TRANSLATIONS = {
     "hero.title_1":     "Guida strategica.",
     "hero.title_2":     "Liquidità chiavi in mano.",
     "hero.subtitle":    "Per i titolari di diritti di indennizzo — acquistiamo crediti da contenzioso, class action e fallimenti, crediti commerciali, rimborsi e altri asset bloccati.",
-    "hero.cta_primary": "Parla con un Partner",
+    "hero.cta_primary": "Contattaci",
     "hero.cta_secondary": "Cosa copriamo",
     "hero.scroll":      "Scorri",
 
@@ -324,7 +324,7 @@ export const TRANSLATIONS = {
     "hero.title_1":     "Orientação estratégica.",
     "hero.title_2":     "Liquidez chave na mão.",
     "hero.subtitle":    "Para titulares de direitos a indenização — compramos créditos de litígios, ações coletivas e falências, recebíveis, reembolsos e outros ativos bloqueados.",
-    "hero.cta_primary": "Fale com um Sócio",
+    "hero.cta_primary": "Fale Conosco",
     "hero.cta_secondary": "O que cobrimos",
     "hero.scroll":      "Rolar",
 
@@ -383,7 +383,7 @@ export const TRANSLATIONS = {
     "hero.title_1":     "전략적 자문.",
     "hero.title_2":     "턴키 유동성.",
     "hero.subtitle":    "보상을 받을 권리가 있는 권리자를 위해 — 당사는 소송, 집단소송 및 파산 청구권, 매출채권, 환급금, 기타 잠긴 자산을 매입합니다.",
-    "hero.cta_primary": "파트너와 상담",
+    "hero.cta_primary": "문의하기",
     "hero.cta_secondary": "취급 범위",
     "hero.scroll":      "스크롤",
 
@@ -442,7 +442,7 @@ export const TRANSLATIONS = {
     "hero.title_1":     "战略指导。",
     "hero.title_2":     "一站式流动性。",
     "hero.subtitle":    "面向有权获得赔偿的权利人 — 我们收购诉讼、集体诉讼和破产索赔、应收账款、退款及其他锁定资产。",
-    "hero.cta_primary": "联系合伙人",
+    "hero.cta_primary": "联系我们",
     "hero.cta_secondary": "我们涵盖的范围",
     "hero.scroll":      "向下滚动",
 
