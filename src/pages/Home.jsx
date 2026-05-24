@@ -686,7 +686,7 @@ function ExperienceSection() {
 function EdgeSection() {
   const points = [
     { h: "Practically unlimited liquidity", b: "We partner with major asset managers — over 500 institutions on speed dial." },
-    { h: "Lightning-fast settlement",       b: "Automation accelerates diligence and closing in the largest cases." },
+    { h: "Lightning-fast settlement",       b: "Automation accelerates diligence and closing in the largest volume cases." },
     { h: "Relationship builders, not just dealmakers", b: "We're built to move fast when it counts — and every other day." },
   ];
   return (
