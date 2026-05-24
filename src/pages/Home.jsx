@@ -589,6 +589,7 @@ function FullBleedPhoto() {
           width: "100%", height: "100%",
           objectFit: "cover",
           filter: "saturate(0.7) contrast(1.05)",
+          transform: "scaleX(-1) scaleY(-1)",
         }}
         onError={(e) => { e.currentTarget.src = "/bg-paper.jpg"; }}
       />
@@ -598,11 +599,11 @@ function FullBleedPhoto() {
         right: "clamp(1.5rem, 5vw, 4rem)",
         margin: 0, zIndex: 10,
         fontFamily: FONT, fontWeight: 800,
-        fontSize: "clamp(2rem, 4.5vw, 4rem)",
-        lineHeight: 1.02, letterSpacing: "-0.035em",
+        fontSize: "clamp(2.4rem, 6vw, 5rem)",
+        lineHeight: 0.98, letterSpacing: "-0.04em",
         color: "#000", textAlign: "right",
       }}>
-        Too hard isn't<br />in our <span className="accent-light">vocabulary.</span>
+        "Too hard" isn't<br />in our <span className="accent-light">vocabulary.</span>
       </p>
     </section>
   );
@@ -769,7 +770,7 @@ function FAQSection() {
           letterSpacing: "0.22em", textTransform: "uppercase",
           color: INK_60, marginBottom: "1.5rem",
         }}>
-          Frequently asked
+          FAQ
         </p>
         <h2 style={{
           fontFamily: FONT, fontWeight: 800,
@@ -778,7 +779,7 @@ function FAQSection() {
           color: INK, marginBottom: "clamp(2.5rem, 5vw, 4rem)",
           maxWidth: 880,
         }}>
-          Questions, <span className="accent-light">answered.</span>
+          Your questions, <span className="accent-light">answered.</span>
         </h2>
         <div style={{ maxWidth: 880 }}>
           <FAQ items={FAQS} openFirst={false} />
