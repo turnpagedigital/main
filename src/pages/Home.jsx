@@ -202,32 +202,11 @@ function StatsBand() {
   ];
   return (
     <section style={{
-      position: "relative", overflow: "hidden", color: "#fff",
+      background: "#0A0B0E", color: "#fff",
       borderTop: "1px solid rgba(255,255,255,0.08)",
       borderBottom: "1px solid rgba(255,255,255,0.08)",
     }}>
-      {/* BG image — paper texture, thematically continuous with the hero
-          video's pages/book scene and matching the house texture used
-          throughout the site. */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-        <img
-          src="/Paper.jpg"
-          alt=""
-          onError={(e) => { e.currentTarget.src = "/bg-paper.jpg"; }}
-          style={{
-            width: "100%", height: "100%", objectFit: "cover",
-            objectPosition: "center bottom",
-            filter: "brightness(0.45) contrast(1.1) saturate(0.8)",
-          }}
-        />
-      </div>
-      {/* Semi-transparent dark overlay — keeps the image visible but readable */}
-      <div style={{
-        position: "absolute", inset: 0, zIndex: 1,
-        background: "rgba(10, 11, 14, 0.55)",
-      }} />
-
-      <div style={{ position: "relative", zIndex: 2, maxWidth: 1440, margin: "0 auto" }}>
+      <div style={{ maxWidth: 1440, margin: "0 auto" }}>
         <div style={{
           display: "grid", gridTemplateColumns: "repeat(3, 1fr)",
           borderLeft: "1px solid rgba(255,255,255,0.08)",
