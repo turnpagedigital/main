@@ -111,6 +111,7 @@ index.html                 — Vite entry, meta + OG tags
 - Deploys via GitHub push (NOT wrangler)
 - No Supabase, no auth, no magic links
 - Owner: Andrew (andrewglantz@gmail.com)
+- **Translations**: every English copy change must be reflected in all 7 languages in `src/data/translations.js` (en, es, fr, it, pt, ko, zh). If the English string lives in a translation key, update all 7; if it's a new piece of copy that isn't translated yet, add a new key and translate to all 7. Do NOT leave non-English translations referencing the old wording.
 
 ## Other Projects
 - **rewind-tariffs**: IEEPA tariff refund site with CIT case tracker (`public/cit-cases.json`), Vite+React, Cloudflare Pages
