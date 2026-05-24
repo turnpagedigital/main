@@ -4,6 +4,7 @@ import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 import FAQ from "../components/FAQ.jsx";
 import CTABanner from "../components/CTABanner.jsx";
+import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
 
@@ -107,7 +108,14 @@ export default function Home() {
         cta="Read the briefings"
         href={hashHref("briefings")}
       />
-      <ClosingSection />
+      <BottomCTA
+        eyebrow="Get a Quote"
+        title="Why wait?"
+        accent="Talk to us."
+        kicker="Contact us for a quote or to learn more. 48-hour response. Confidentiality default."
+        primary={{ label: "Get in Touch", href: hashHref("contact") }}
+        secondary={null}
+      />
     </>
   );
 }
@@ -793,83 +801,3 @@ function FAQSection() {
   );
 }
 
-/* ─── CLOSING — Why wait? ─── */
-function ClosingSection() {
-  return (
-    <section style={{
-      background: "#0A0B0E",
-      padding: "clamp(6rem, 14vw, 12rem) clamp(1.5rem, 5vw, 4rem)",
-      position: "relative", overflow: "hidden",
-    }}>
-      <div style={{
-        position: "absolute", inset: 0, pointerEvents: "none",
-        background: "radial-gradient(60% 70% at 50% 0%, rgba(212,255,0,0.06), transparent 60%)",
-      }} />
-      <div style={{ maxWidth: 1080, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
-        <p style={{
-          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-          letterSpacing: "0.22em", textTransform: "uppercase",
-          color: NEON, marginBottom: "2rem",
-        }}>
-          Get a quote
-        </p>
-        <h2 style={{
-          fontFamily: FONT, fontWeight: 800,
-          fontSize: "clamp(3.5rem, 10vw, 9rem)",
-          lineHeight: 0.92, letterSpacing: "-0.05em",
-          color: "#FFFFFF", marginBottom: "2.2rem",
-        }}>
-          Why wait?
-        </h2>
-        <p style={{
-          fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
-          color: "rgba(255,255,255,0.7)", lineHeight: 1.55,
-          maxWidth: 540, margin: "0 auto 3rem",
-        }}>
-          Contact us for a quote or to learn more.
-        </p>
-
-        <div style={{
-          display: "flex", flexWrap: "wrap", gap: "2.5rem 4rem",
-          justifyContent: "center", alignItems: "center",
-          marginBottom: "3rem",
-        }}>
-          <div style={{ textAlign: "left" }}>
-            <p style={{
-              fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-              letterSpacing: "0.22em", textTransform: "uppercase",
-              color: "rgba(255,255,255,0.5)", marginBottom: "0.5rem",
-            }}>
-              Email
-            </p>
-            <a href="mailto:info@turnpagedigital.com" style={{
-              fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
-              fontWeight: 700, color: "#fff",
-              borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
-            }}>
-              info@turnpagedigital.com
-            </a>
-          </div>
-          <div style={{ textAlign: "left" }}>
-            <p style={{
-              fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-              letterSpacing: "0.22em", textTransform: "uppercase",
-              color: "rgba(255,255,255,0.5)", marginBottom: "0.5rem",
-            }}>
-              Phone
-            </p>
-            <a href="tel:+16468600068" style={{
-              fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
-              fontWeight: 700, color: "#fff",
-              borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
-            }}>
-              +1 646 860 0068
-            </a>
-          </div>
-        </div>
-
-        <a href={hashHref("contact")} className="btn-neon">Get in Touch</a>
-      </div>
-    </section>
-  );
-}

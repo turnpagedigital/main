@@ -45,35 +45,14 @@ export default function Footer() {
           gap: "clamp(2rem, 4vw, 3.5rem)",
           marginBottom: "clamp(3rem, 5vw, 4rem)",
         }} className="footer-grid">
-          {/* Subscribe */}
-          <div>
-            <h3 style={{
-              fontFamily: FONT, fontWeight: 800,
-              fontSize: "clamp(1.4rem, 2.2vw, 1.75rem)",
-              lineHeight: 1.2, letterSpacing: "-0.02em",
-              color: INK, marginBottom: "1.4rem",
-              maxWidth: 360,
-            }}>
-              {t("footer.subscribe_title")}
-            </h3>
-            <a
-              href={hashHref("briefings")}
-              style={{
-                display: "inline-flex", alignItems: "center", gap: "0.7em",
-                fontFamily: FONT, fontSize: "0.92rem", fontWeight: 600,
-                color: INK,
-                padding: "0.85rem 1.4rem",
-                border: `1px solid ${INK}`, borderRadius: 0,
-                letterSpacing: "0.02em",
-                transition: "background 0.2s, color 0.2s, gap 0.2s",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = INK; e.currentTarget.style.color = "#fff"; e.currentTarget.style.gap = "1em"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = INK; e.currentTarget.style.gap = "0.7em"; }}
-            >
-              <span>{t("footer.subscribe_cta")}</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
+          {/* Logo */}
+          <div style={{ display: "flex", alignItems: "flex-start" }}>
+            <a href={hashHref("")} style={{ display: "inline-block", lineHeight: 0 }}>
+              <img
+                src="/TPDM Logo_No bkgd.png"
+                alt="Turnpage Digital Markets"
+                style={{ height: 56, width: "auto", display: "block" }}
+              />
             </a>
           </div>
 
