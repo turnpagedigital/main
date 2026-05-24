@@ -12,6 +12,7 @@ import Briefing from "./pages/Briefing.jsx";
 import Contact from "./pages/Contact.jsx";
 import Legal from "./pages/Legal.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import Admin from "./pages/Admin.jsx";
 
 const TITLES = {
   "home": "Turnpage Digital Markets — The OTC Desk for Rights Holders",
@@ -22,7 +23,12 @@ const TITLES = {
   "contact": "Get in Touch — Turnpage Digital Markets",
   "privacy": "Privacy Policy — Turnpage Digital Markets",
   "terms": "Terms of Use — Turnpage Digital Markets",
+  "admin": "Admin — Turnpage Digital Markets",
 };
+
+// Pages that should NOT render the public marketing chrome (announcement
+// bar, nav, footer). Admin is a standalone app shell.
+const STANDALONE_PAGES = new Set(["admin"]);
 
 export default function App() {
   const { route } = useHashRoute();
@@ -42,12 +48,13 @@ export default function App() {
   }, [route.page]);
 
   const Page = renderPage(route);
+  const standalone = STANDALONE_PAGES.has(route.page);
 
   return (
     <I18nProvider>
-      <AppHeader currentPage={route.page} />
+      {!standalone && <AppHeader currentPage={route.page} />}
       <main>{Page}</main>
-      <Footer />
+      {!standalone && <Footer />}
     </I18nProvider>
   );
 }
@@ -62,6 +69,7 @@ function renderPage(route) {
     case "contact":        return <Contact />;
     case "privacy":        return <Legal kind="privacy" />;
     case "terms":          return <Legal kind="terms" />;
+    case "admin":          return <Admin />;
     default:               return <NotFound />;
   }
 }

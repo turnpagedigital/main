@@ -40,21 +40,28 @@ src/
     tokens.js              — Color and font tokens
     css.js                 — Global CSS (injected at runtime)
     cases.js               — Top 12 AI copyright cases (edit to update tracker)
+    deals.json             — Deal cards for Home + Crypto (edit via chat OR /#/admin)
+    translations.js        — 8-language string table (en/es/fr/de/it/pt/ko/zh)
   lib/
     router.js              — useHashRoute() hook + parseHash() + hashHref()
+    i18n.js                — Language provider + LANGUAGES list + useI18n()
   components/
     NavBar.jsx             — Fixed top nav with mobile hamburger menu
     Footer.jsx             — 4-col footer
     Hero.jsx               — Subpage hero (eyebrow + title + accentTitle + subtitle)
     IntakeForm.jsx         — Reusable contact form, posts to /api/contact
+    DealCard.jsx           — Single deal tile with flip animation (front/back)
+    LanguageSelector.jsx   — Globe + language dropdown (banner + footer)
+    AnnouncementBanner.jsx — Thin promo bar above the nav
   pages/
     Home.jsx               — Marketing landing
     AICopyright.jsx        — AI Copyright deep page
-    Crypto.jsx             — Crypto Claims sub-brand (PLACEHOLDER copy)
+    Crypto.jsx             — Crypto Claims sub-brand
     Briefings.jsx          — Briefings library list
     Briefing.jsx           — Single briefing (renders markdown via marked)
     Contact.jsx            — Contact page wrapping IntakeForm
     Legal.jsx              — Privacy + Terms (kind="privacy" or "terms")
+    Admin.jsx              — Admin panel (login + deal editor at /#/admin)
     NotFound.jsx           — 404
 public/
   briefings/
@@ -63,6 +70,12 @@ public/
   bg-paper.jpg, *.png      — Existing imagery (unchanged)
 functions/api/
   contact.js               — Cloudflare Pages Function (Resend + Google Sheet)
+  admin/
+    _utils.js              — HMAC session cookie + cookie parsing helpers
+    login.js               — POST: verify ADMIN_PASSWORD, set session cookie
+    logout.js              — POST: clear session cookie
+    session.js             — GET: check if session is valid (for frontend init)
+    deals.js               — GET/PUT deals.json via GitHub Contents API
 index.html                 — Vite entry, meta + OG tags
 ```
 
@@ -100,6 +113,25 @@ index.html                 — Vite entry, meta + OG tags
 - `NOTIFY_EMAIL` — recipient (default: info@turnpagedigital.com)
 - `FROM_EMAIL` — sender (default: Turnpage Digital Markets <noreply@turnpagedigital.com>)
 - `GOOGLE_SHEET_URL` — Google Apps Script web app URL
+- `ADMIN_PASSWORD` — admin login password (for /#/admin)
+- `ADMIN_SECRET` — random 32+ char string, signs session cookies
+- `GITHUB_TOKEN` — fine-grained PAT scoped to this repo with "Contents: Read and write"
+- `GITHUB_REPO` — `turnpagedigital/main`
+- `GITHUB_BRANCH` — `dev` on the dev environment, `main` on production
+
+## Admin Panel (`/#/admin`)
+The admin panel manages the deal cards shown on the home + crypto pages. Single source of truth is `src/data/deals.json` in this repo. Two ways to edit:
+1. **Chat with Claude** — Claude edits `deals.json` directly and pushes via git.
+2. **Admin UI at `/#/admin`** — user logs in with `ADMIN_PASSWORD`, edits via a form, clicks Save. The Cloudflare Pages Function (`functions/api/admin/deals.js`) commits the new JSON via the GitHub Contents API.
+
+Both paths write to the same JSON file. Git enforces ordering — the latest commit wins. There is no parallel database.
+
+**Schema-change rule:** when changing the shape of a deal (adding/removing/renaming fields), update *all three* in the same commit:
+1. `src/data/deals.json` — the data itself
+2. `src/components/DealCard.jsx` — the public-facing render
+3. `src/pages/Admin.jsx` — the `FIELD_DEFS` array and `DEAL_FIELDS` list (also mirrored in `functions/api/admin/deals.js`)
+
+The admin panel does NOT auto-generate forms from the JSON — the form fields are explicitly listed in `FIELD_DEFS`. This is intentional (so we can add per-field help text, validators, etc.) but it means a schema change is a 3-file change.
 
 ## Design Tokens
 - Neon green: #D4FF00

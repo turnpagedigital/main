@@ -1,0 +1,443 @@
+import React, { useEffect, useState, useCallback, useMemo } from "react";
+import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
+
+/* Admin panel for managing deal cards.
+   - One password login, session stored in HttpOnly cookie.
+   - Reads + writes src/data/deals.json via Cloudflare Pages Functions
+     that commit through the GitHub Contents API.
+   - Single source of truth: the JSON file in git. Both this admin panel
+     and direct chat edits write to the same file. Latest commit wins.
+
+   When you change the deal schema in deals.json, update both
+   src/components/DealCard.jsx AND the FIELD_DEFS array below
+   in the same commit so the admin form stays in sync. */
+
+const DEAL_FIELDS = ["amt", "who", "type", "form", "when", "summary"];
+
+const FIELD_DEFS = [
+  { key: "amt",     label: "Amount",      type: "text",     placeholder: "$270M" },
+  { key: "who",     label: "Counterparty", type: "text",    placeholder: "FTX" },
+  { key: "type",    label: "Claim type",  type: "text",     placeholder: "Disputed-Ownership Claim" },
+  { key: "form",    label: "Form",        type: "text",     placeholder: "Advisory" },
+  { key: "when",    label: "When",        type: "text",     placeholder: "Oct 2024 – Aug 2025" },
+  { key: "summary", label: "Summary (back of flip card — leave empty to disable flip)", type: "textarea", placeholder: "Optional 2-4 sentence description that appears when a visitor hovers or taps the card." },
+];
+
+function blankDeal() {
+  const d = {};
+  for (const f of DEAL_FIELDS) d[f] = "";
+  return d;
+}
+
+export default function Admin() {
+  const [phase, setPhase] = useState("checking"); // checking | login | ready | saving | error
+  const [errorMsg, setErrorMsg] = useState("");
+  const [deals, setDeals] = useState(null);            // current edit state
+  const [original, setOriginal] = useState(null);      // last-saved server state, for dirty detection
+  const [activeTab, setActiveTab] = useState("home");
+  const [lastSavedAt, setLastSavedAt] = useState(null);
+
+  // Check session on mount
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const r = await fetch("/api/admin/session", { credentials: "include" });
+        if (cancelled) return;
+        if (r.ok) {
+          await loadDeals();
+        } else {
+          setPhase("login");
+        }
+      } catch (e) {
+        if (cancelled) return;
+        setPhase("login");
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
+  const loadDeals = useCallback(async () => {
+    setPhase("loading");
+    setErrorMsg("");
+    try {
+      const r = await fetch("/api/admin/deals", { credentials: "include" });
+      if (r.status === 401) { setPhase("login"); return; }
+      const body = await r.json();
+      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
+      const fresh = {
+        home: (body.data.home || []).map(sanitize),
+        crypto: (body.data.crypto || []).map(sanitize),
+      };
+      setDeals(fresh);
+      setOriginal(JSON.parse(JSON.stringify(fresh)));
+      setPhase("ready");
+    } catch (e) {
+      setErrorMsg(e.message);
+      setPhase("error");
+    }
+  }, []);
+
+  const isDirty = useMemo(() => {
+    if (!deals || !original) return false;
+    return JSON.stringify(deals) !== JSON.stringify(original);
+  }, [deals, original]);
+
+  async function handleLogin(password) {
+    setErrorMsg("");
+    setPhase("checking");
+    try {
+      const r = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ password }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Login failed");
+      await loadDeals();
+    } catch (e) {
+      setErrorMsg(e.message);
+      setPhase("login");
+    }
+  }
+
+  async function handleLogout() {
+    try { await fetch("/api/admin/logout", { method: "POST", credentials: "include" }); } catch {}
+    setDeals(null);
+    setOriginal(null);
+    setPhase("login");
+  }
+
+  async function handleSave() {
+    if (!deals) return;
+    setPhase("saving");
+    setErrorMsg("");
+    try {
+      const r = await fetch("/api/admin/deals", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ home: deals.home, crypto: deals.crypto }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
+      // Refresh from server so we have the post-save canonical state.
+      await loadDeals();
+      setLastSavedAt(new Date());
+    } catch (e) {
+      setErrorMsg(e.message);
+      setPhase("ready");
+    }
+  }
+
+  // --- Rendering --------------------------------------------------------
+
+  if (phase === "checking" || phase === "loading") {
+    return <CenteredMessage>Loading admin…</CenteredMessage>;
+  }
+
+  if (phase === "login") {
+    return <LoginForm onSubmit={handleLogin} error={errorMsg} />;
+  }
+
+  if (phase === "error") {
+    return (
+      <CenteredMessage>
+        <p style={{ color: "#c44", marginBottom: "1rem" }}>{errorMsg}</p>
+        <button onClick={loadDeals} style={btnStyle}>Retry</button>
+      </CenteredMessage>
+    );
+  }
+
+  if (!deals) return null;
+
+  const list = deals[activeTab];
+
+  function updateList(updater) {
+    setDeals((d) => ({ ...d, [activeTab]: updater(d[activeTab]) }));
+  }
+
+  function updateDeal(idx, field, value) {
+    updateList((list) => {
+      const next = list.slice();
+      next[idx] = { ...next[idx], [field]: value };
+      return next;
+    });
+  }
+
+  function moveDeal(idx, dir) {
+    updateList((list) => {
+      const j = idx + dir;
+      if (j < 0 || j >= list.length) return list;
+      const next = list.slice();
+      [next[idx], next[j]] = [next[j], next[idx]];
+      return next;
+    });
+  }
+
+  function deleteDeal(idx) {
+    if (!confirm("Delete this deal?")) return;
+    updateList((list) => list.filter((_, i) => i !== idx));
+  }
+
+  function addDeal() {
+    updateList((list) => [...list, blankDeal()]);
+  }
+
+  return (
+    <div style={{ background: "#F4F5F7", minHeight: "100vh", fontFamily: FONT, color: INK }}>
+      {/* Top bar */}
+      <div style={{
+        position: "sticky", top: 0, zIndex: 10,
+        background: "#FFFFFF", borderBottom: `1px solid ${LINE}`,
+        padding: "0.9rem clamp(1rem, 3vw, 2rem)",
+        display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap",
+      }}>
+        <div style={{ fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.01em" }}>
+          Admin · Deals
+        </div>
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60 }}>
+          {phase === "saving" && "Saving…"}
+          {phase !== "saving" && isDirty && "Unsaved changes"}
+          {phase !== "saving" && !isDirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
+          {phase !== "saving" && !isDirty && !lastSavedAt && "Up to date"}
+        </div>
+        <button onClick={handleSave} disabled={!isDirty || phase === "saving"} style={{
+          ...btnPrimaryStyle,
+          opacity: (!isDirty || phase === "saving") ? 0.5 : 1,
+          cursor: (!isDirty || phase === "saving") ? "default" : "pointer",
+        }}>
+          {phase === "saving" ? "Saving…" : "Save"}
+        </button>
+        <button onClick={handleLogout} style={btnStyle}>Log out</button>
+      </div>
+
+      {errorMsg && (
+        <div style={{
+          background: "#fce8e8", color: "#7a1a1a",
+          padding: "0.75rem clamp(1rem, 3vw, 2rem)",
+          borderBottom: `1px solid #f4caca`, fontSize: "0.9rem",
+        }}>
+          {errorMsg}
+        </div>
+      )}
+
+      <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
+        {/* Tabs */}
+        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.5rem", borderBottom: `1px solid ${LINE}` }}>
+          {[
+            { key: "home",   label: `Home deals (${deals.home.length})` },
+            { key: "crypto", label: `Crypto deals (${deals.crypto.length})` },
+          ].map((t) => (
+            <button
+              key={t.key}
+              onClick={() => setActiveTab(t.key)}
+              style={{
+                background: "transparent", border: "none", cursor: "pointer",
+                padding: "0.6rem 1rem", fontFamily: FONT, fontSize: "0.95rem",
+                fontWeight: activeTab === t.key ? 700 : 500,
+                color: activeTab === t.key ? INK : INK_60,
+                borderBottom: activeTab === t.key ? `2px solid ${INK}` : "2px solid transparent",
+                marginBottom: -1,
+              }}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Deal list */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          {list.map((deal, i) => (
+            <DealRow
+              key={i}
+              index={i}
+              deal={deal}
+              onChange={(field, value) => updateDeal(i, field, value)}
+              onMoveUp={() => moveDeal(i, -1)}
+              onMoveDown={() => moveDeal(i, 1)}
+              onDelete={() => deleteDeal(i)}
+              isFirst={i === 0}
+              isLast={i === list.length - 1}
+            />
+          ))}
+          {list.length === 0 && (
+            <div style={{
+              padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`,
+              color: INK_60, textAlign: "center",
+            }}>
+              No deals yet on this tab.
+            </div>
+          )}
+          <button onClick={addDeal} style={{
+            ...btnStyle,
+            background: "transparent", border: `1px dashed ${LINE}`,
+            color: INK, padding: "1rem", fontWeight: 700,
+          }}>
+            + Add deal
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DealRow({ index, deal, onChange, onMoveUp, onMoveDown, onDelete, isFirst, isLast }) {
+  return (
+    <div style={{
+      background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem",
+    }}>
+      <div style={{
+        display: "flex", alignItems: "center", marginBottom: "1rem",
+        gap: "0.5rem",
+      }}>
+        <div style={{ flex: 1, fontWeight: 700, fontSize: "0.85rem", color: INK_60 }}>
+          #{index + 1} — {deal.amt || "—"} {deal.who ? `· ${deal.who}` : ""}
+        </div>
+        <button onClick={onMoveUp} disabled={isFirst} style={iconBtnStyle(isFirst)} title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={isLast} style={iconBtnStyle(isLast)} title="Move down">↓</button>
+        <button onClick={onDelete} style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
+      </div>
+      <div style={{
+        display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.7rem 1rem",
+      }}>
+        {FIELD_DEFS.map((f) => {
+          const fullWidth = f.type === "textarea";
+          return (
+            <label key={f.key} style={{
+              display: "block",
+              gridColumn: fullWidth ? "1 / -1" : "auto",
+              fontSize: "0.78rem", color: INK_60, fontWeight: 600,
+            }}>
+              {f.label}
+              {f.type === "textarea" ? (
+                <textarea
+                  value={deal[f.key] || ""}
+                  onChange={(e) => onChange(f.key, e.target.value)}
+                  placeholder={f.placeholder}
+                  rows={4}
+                  style={inputStyle}
+                />
+              ) : (
+                <input
+                  type="text"
+                  value={deal[f.key] || ""}
+                  onChange={(e) => onChange(f.key, e.target.value)}
+                  placeholder={f.placeholder}
+                  style={inputStyle}
+                />
+              )}
+            </label>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function LoginForm({ onSubmit, error }) {
+  const [password, setPassword] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  async function submit(e) {
+    e.preventDefault();
+    if (!password) return;
+    setSubmitting(true);
+    await onSubmit(password);
+    setSubmitting(false);
+  }
+
+  return (
+    <div style={{
+      minHeight: "100vh", background: "#F4F5F7", fontFamily: FONT, color: INK,
+      display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem",
+    }}>
+      <form onSubmit={submit} style={{
+        background: "#fff", border: `1px solid ${LINE}`,
+        padding: "2rem", width: "100%", maxWidth: 380,
+      }}>
+        <h1 style={{ fontWeight: 800, fontSize: "1.3rem", marginBottom: "0.4rem", letterSpacing: "-0.01em" }}>
+          Turnpage Admin
+        </h1>
+        <p style={{ fontSize: "0.85rem", color: INK_60, marginBottom: "1.5rem" }}>
+          Enter the admin password to continue.
+        </p>
+        <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoFocus
+            disabled={submitting}
+            style={inputStyle}
+          />
+        </label>
+        {error && (
+          <p style={{ color: "#c44", fontSize: "0.85rem", marginTop: "0.6rem" }}>{error}</p>
+        )}
+        <button type="submit" disabled={!password || submitting} style={{
+          ...btnPrimaryStyle, width: "100%", marginTop: "1.2rem",
+          opacity: (!password || submitting) ? 0.5 : 1,
+          cursor: (!password || submitting) ? "default" : "pointer",
+        }}>
+          {submitting ? "Signing in…" : "Sign in"}
+        </button>
+      </form>
+    </div>
+  );
+}
+
+function CenteredMessage({ children }) {
+  return (
+    <div style={{
+      minHeight: "100vh", background: "#F4F5F7", fontFamily: FONT, color: INK_60,
+      display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem",
+      flexDirection: "column",
+    }}>
+      {children}
+    </div>
+  );
+}
+
+function sanitize(d) {
+  const out = {};
+  for (const f of DEAL_FIELDS) out[f] = typeof d[f] === "string" ? d[f] : "";
+  return out;
+}
+
+function formatTime(d) {
+  const hh = String(d.getHours()).padStart(2, "0");
+  const mm = String(d.getMinutes()).padStart(2, "0");
+  return `${hh}:${mm}`;
+}
+
+// --- Inline styles ---------------------------------------------------------
+
+const inputStyle = {
+  display: "block", width: "100%", marginTop: "0.3rem",
+  padding: "0.55rem 0.7rem", border: `1px solid ${LINE}`, borderRadius: 0,
+  fontFamily: FONT, fontSize: "0.92rem", color: INK,
+  background: "#fff", outline: "none",
+  resize: "vertical",
+};
+const btnStyle = {
+  background: "transparent", border: `1px solid ${LINE}`, color: INK,
+  padding: "0.5rem 0.9rem", fontFamily: FONT, fontSize: "0.85rem", fontWeight: 600,
+  cursor: "pointer", borderRadius: 0,
+};
+const btnPrimaryStyle = {
+  background: NEON, border: "none", color: "#000",
+  padding: "0.55rem 1.1rem", fontFamily: FONT, fontSize: "0.85rem", fontWeight: 700,
+  cursor: "pointer", borderRadius: 0, letterSpacing: "0.02em",
+};
+function iconBtnStyle(disabled) {
+  return {
+    width: 32, height: 32, padding: 0, lineHeight: 1,
+    border: `1px solid ${LINE}`, background: "#fff", color: INK,
+    fontFamily: FONT, fontSize: "1rem", fontWeight: 700,
+    cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.35 : 1,
+    borderRadius: 0,
+  };
+}
