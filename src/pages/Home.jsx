@@ -18,7 +18,7 @@ const SITUATIONS = [
   {
     no: "02",
     title: "Class Action Claims",
-    body: "Class-member positions in the largest collective actions on the docket.",
+    body: "Class-member positions in the largest collective actions post-settlement.",
   },
   {
     no: "03",
@@ -369,7 +369,7 @@ function SituationsSection() {
             fontFamily: FONT, fontSize: "clamp(1.05rem, 1.4vw, 1.25rem)",
             color: INK_60, lineHeight: 1.6, maxWidth: 640,
           }}>
-            We cover every kind of compensation claim — from class action settlements and Chapter 11 customer positions to refund rights and locked digital assets. Whatever the situation, if there's a path to liquidity, we know it.
+            We handle every kind of compensation claim — from class action settlements and Chapter 11 customer positions to refund rights and locked digital assets. Whatever the situation, if there's a path to liquidity, we've got it covered.
           </p>
         </div>
 
