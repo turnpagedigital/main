@@ -6,7 +6,11 @@ import SectionHeader from "../components/SectionHeader.jsx";
 import StatStrip from "../components/StatStrip.jsx";
 import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
+import DealCard from "../components/DealCard.jsx";
+import dealsData from "../data/deals.json";
 import { TOP_CASES, FEATURED_NEW, STATUS_COLORS } from "../data/cases.js";
+
+const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("ai-copyright"));
 
 const STATS = [
   { value: "$1.5B",   label: "Bartz settlement" },
@@ -160,6 +164,70 @@ export default function AICopyright() {
           </div>
         </div>
       </section>
+
+      {/* RELEVANT EXPERIENCE */}
+      {DEALS.length > 0 && (
+        <section style={{
+          background: "#0A0B0E", color: "#fff",
+          padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
+        }}>
+          <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.4fr)",
+              gap: "clamp(2rem, 5vw, 5rem)",
+              marginBottom: "clamp(3rem, 6vw, 5rem)",
+              alignItems: "end",
+            }} className="section-split">
+              <div>
+                <p style={{
+                  fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
+                  letterSpacing: "0.22em", textTransform: "uppercase",
+                  color: NEON, marginBottom: "1.2rem",
+                }}>
+                  Relevant Experience
+                </p>
+                <h2 style={{
+                  fontFamily: FONT, fontWeight: 800,
+                  fontSize: "clamp(2rem, 4.5vw, 4rem)",
+                  lineHeight: 1.02, letterSpacing: "-0.035em",
+                  color: "#fff",
+                }}>
+                  A track record across AI copyright matters.
+                </h2>
+              </div>
+              <p style={{
+                fontFamily: FONT, fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+                color: "rgba(255,255,255,0.65)", lineHeight: 1.6, maxWidth: 640,
+              }}>
+                A representative selection of our work advising rights holders, class members, and institutional buyers across the emerging AI copyright landscape.
+              </p>
+            </div>
+
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "1px",
+              background: "rgba(255,255,255,0.10)",
+              border: "1px solid rgba(255,255,255,0.10)",
+              borderRadius: 8, overflow: "hidden",
+            }} className="deals-grid">
+              {DEALS.map((d, i) => (
+                <DealCard key={i} deal={d} />
+              ))}
+            </div>
+
+            <style>{`
+              @media (max-width: 1000px) {
+                .deals-grid { grid-template-columns: repeat(2, 1fr) !important; }
+              }
+              @media (max-width: 640px) {
+                .deals-grid { grid-template-columns: 1fr !important; }
+              }
+            `}</style>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="surface-paper section-pad">
