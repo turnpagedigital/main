@@ -602,7 +602,7 @@ function FullBleedPhoto() {
         lineHeight: 1.02, letterSpacing: "-0.035em",
         color: "#000", textAlign: "right",
       }}>
-        the pathway to liquidity<br />can be <span className="accent-light">complex.</span>
+        Complexity doesn't<br /><span className="accent-light">faze us.</span>
       </p>
     </section>
   );
