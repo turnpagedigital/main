@@ -63,7 +63,7 @@ const DEALS = [
   { amt: "$89M",   who: "FTX",                 type: "Breach of Contract Claim",        form: "Structured Assignment",               when: "Dec 2023" },
   { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",                          when: "Jun 2023" },
   { amt: "$48M",   who: "Visa / Mastercard",   type: "Payment Card Settlement Claim",   form: "Participation",                       when: "Apr 2025" },
-  { amt: "$42M",   who: "U.S. Importers",      type: "IEEPA Refund Rights",             form: "Traded or Advised · Participation",   when: "Mar 2026 – Present" },
+  { amt: "$42M",   who: "Dozens of U.S. Importers", type: "IEEPA Tariff Refund Rights",  form: "Traded or Advised · Participation",   when: "Mar 2026 – Present" },
   { amt: "$36M",   who: "Yellow Corp",         type: "Multi-Employer Pension Claim",    form: "Assignment",                          when: "Mar 2025" },
   { amt: "$30M",   who: "100s of College Athletes", type: "NCAA College Athlete NIL Settlement", form: "Assignment",                  when: "Jun 2025 – Jan 2026" },
 ];
@@ -205,7 +205,6 @@ function StatsBand() {
     { rank: "01", v: "$1B+", l: t("stats.claims_traded") },
     { rank: "02", v: "5K+",  l: t("stats.claims_advised") },
     { rank: "03", v: "500+", l: t("stats.institutions") },
-    { rank: "04", v: "2.4x", l: t("stats.investor_return") },
   ];
   return (
     <section style={{
@@ -265,7 +264,7 @@ function StatsBand() {
         </p>
 
         <div style={{
-          display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
+          display: "grid", gridTemplateColumns: "repeat(3, 1fr)",
           gap: "clamp(1rem, 2vw, 1.6rem)",
         }} className="stats-band-grid">
           {items.map((it, i) => (
@@ -325,10 +324,7 @@ function StatsBand() {
           background: rgba(255, 255, 255, 0.07) !important;
           border-color: rgba(212, 255, 0, 0.35) !important;
         }
-        @media (max-width: 1100px) {
-          .stats-band-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 560px) {
+        @media (max-width: 900px) {
           .stats-band-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>

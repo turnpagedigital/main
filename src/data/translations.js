@@ -33,7 +33,6 @@ export const TRANSLATIONS = {
     "stats.claims_traded":    "Claims traded*",
     "stats.claims_advised":   "Claims sold or advised*",
     "stats.institutions":     "Financial institutions on speed dial",
-    "stats.investor_return":  "Est. investor return — weighted average across historical transactions*",
     "stats.footnote":         "*Experience prior to founding Turnpage Digital.",
 
     // Section eyebrows + titles
@@ -48,9 +47,9 @@ export const TRANSLATIONS = {
     "edge.eyebrow":           "Our Edge",
     "edge.title_1":           "Built to move fast",
     "edge.title_2":           "when it counts.",
-    "faq.eyebrow":            "Frequently asked",
-    "faq.title_1":            "Questions,",
-    "faq.title_2":            "answered.",
+    "faq.eyebrow":            "FAQ",
+    "faq.title_1":            "Your questions,",
+    "faq.title_2":            "answered",
 
     // Closing
     "closing.eyebrow":  "Get a quote",
@@ -98,7 +97,6 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Reclamos negociados*",
     "stats.claims_advised":  "Reclamos vendidos o asesorados*",
     "stats.institutions":    "Instituciones financieras en agenda",
-    "stats.investor_return": "Retorno estimado para inversores — promedio ponderado en transacciones históricas*",
     "stats.footnote":        "*Experiencia previa a la fundación de Turnpage Digital.",
 
     "situations.eyebrow":     "Lo que cubrimos",
@@ -112,9 +110,9 @@ export const TRANSLATIONS = {
     "edge.eyebrow":           "Nuestra Ventaja",
     "edge.title_1":           "Diseñados para actuar rápido",
     "edge.title_2":           "cuando importa.",
-    "faq.eyebrow":            "Preguntas frecuentes",
-    "faq.title_1":            "Respuestas",
-    "faq.title_2":            "claras.",
+    "faq.eyebrow":            "FAQ",
+    "faq.title_1":            "Sus preguntas,",
+    "faq.title_2":            "respondidas",
 
     "closing.eyebrow":  "Pida una cotización",
     "closing.title":    "¿Por qué esperar?",
@@ -159,7 +157,6 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Créances négociées*",
     "stats.claims_advised":  "Créances vendues ou conseillées*",
     "stats.institutions":    "Institutions financières en relation",
-    "stats.investor_return": "Rendement estimé pour les investisseurs — moyenne pondérée sur les transactions historiques*",
     "stats.footnote":        "*Expérience antérieure à la création de Turnpage Digital.",
 
     "situations.eyebrow":     "Ce que nous couvrons",
@@ -173,9 +170,9 @@ export const TRANSLATIONS = {
     "edge.eyebrow":           "Notre Force",
     "edge.title_1":           "Conçus pour agir vite",
     "edge.title_2":           "quand cela compte.",
-    "faq.eyebrow":            "Questions fréquentes",
+    "faq.eyebrow":            "FAQ",
     "faq.title_1":            "Vos questions,",
-    "faq.title_2":            "nos réponses.",
+    "faq.title_2":            "nos réponses",
 
     "closing.eyebrow":  "Demander un devis",
     "closing.title":    "Pourquoi attendre ?",
@@ -220,7 +217,6 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Gehandelte Ansprüche*",
     "stats.claims_advised":  "Verkaufte oder beratene Ansprüche*",
     "stats.institutions":    "Finanzinstitute im Netzwerk",
-    "stats.investor_return": "Geschätzte Rendite für Investoren — gewichteter Durchschnitt historischer Transaktionen*",
     "stats.footnote":        "*Erfahrung vor Gründung von Turnpage Digital.",
 
     "situations.eyebrow":     "Was wir abdecken",
@@ -234,9 +230,9 @@ export const TRANSLATIONS = {
     "edge.eyebrow":           "Unser Vorteil",
     "edge.title_1":           "Geschaffen für schnelles Handeln,",
     "edge.title_2":           "wenn es darauf ankommt.",
-    "faq.eyebrow":            "Häufig gestellt",
-    "faq.title_1":            "Fragen,",
-    "faq.title_2":            "beantwortet.",
+    "faq.eyebrow":            "FAQ",
+    "faq.title_1":            "Ihre Fragen,",
+    "faq.title_2":            "beantwortet",
 
     "closing.eyebrow":  "Angebot anfordern",
     "closing.title":    "Warum warten?",
@@ -281,7 +277,6 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Crediti negoziati*",
     "stats.claims_advised":  "Crediti venduti o assistiti*",
     "stats.institutions":    "Istituzioni finanziarie in agenda",
-    "stats.investor_return": "Rendimento stimato per gli investitori — media ponderata su transazioni storiche*",
     "stats.footnote":        "*Esperienza precedente alla fondazione di Turnpage Digital.",
 
     "situations.eyebrow":     "Cosa copriamo",
@@ -295,9 +290,9 @@ export const TRANSLATIONS = {
     "edge.eyebrow":           "Il Nostro Vantaggio",
     "edge.title_1":           "Costruiti per muoversi rapidamente",
     "edge.title_2":           "quando conta.",
-    "faq.eyebrow":            "Domande frequenti",
-    "faq.title_1":            "Le domande,",
-    "faq.title_2":            "le risposte.",
+    "faq.eyebrow":            "FAQ",
+    "faq.title_1":            "Le tue domande,",
+    "faq.title_2":            "le nostre risposte",
 
     "closing.eyebrow":  "Chiedi un preventivo",
     "closing.title":    "Perché aspettare?",
@@ -342,7 +337,6 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Reivindicações negociadas*",
     "stats.claims_advised":  "Reivindicações vendidas ou assessoradas*",
     "stats.institutions":    "Instituições financeiras na agenda",
-    "stats.investor_return": "Retorno estimado a investidores — média ponderada em transações históricas*",
     "stats.footnote":        "*Experiência anterior à fundação da Turnpage Digital.",
 
     "situations.eyebrow":     "O que cobrimos",
@@ -356,9 +350,9 @@ export const TRANSLATIONS = {
     "edge.eyebrow":           "Nossa Vantagem",
     "edge.title_1":           "Feitos para agir rápido",
     "edge.title_2":           "quando importa.",
-    "faq.eyebrow":            "Perguntas frequentes",
-    "faq.title_1":            "Perguntas,",
-    "faq.title_2":            "respondidas.",
+    "faq.eyebrow":            "FAQ",
+    "faq.title_1":            "Suas perguntas,",
+    "faq.title_2":            "respondidas",
 
     "closing.eyebrow":  "Solicitar cotação",
     "closing.title":    "Por que esperar?",
@@ -403,7 +397,6 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "거래된 청구*",
     "stats.claims_advised":  "매각 또는 자문된 청구*",
     "stats.institutions":    "주요 금융기관 네트워크",
-    "stats.investor_return": "투자자 예상 수익 — 과거 거래 가중 평균*",
     "stats.footnote":        "*Turnpage Digital 설립 이전의 경력.",
 
     "situations.eyebrow":     "취급 범위",
@@ -417,9 +410,9 @@ export const TRANSLATIONS = {
     "edge.eyebrow":           "우리의 강점",
     "edge.title_1":           "결정적 순간에",
     "edge.title_2":           "빠르게 움직입니다.",
-    "faq.eyebrow":            "자주 묻는 질문",
-    "faq.title_1":            "질문에",
-    "faq.title_2":            "답합니다.",
+    "faq.eyebrow":            "FAQ",
+    "faq.title_1":            "여러분의 질문,",
+    "faq.title_2":            "답변드립니다",
 
     "closing.eyebrow":  "견적 받기",
     "closing.title":    "왜 기다리시나요?",
@@ -464,7 +457,6 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "已交易索赔*",
     "stats.claims_advised":  "已出售或顾问索赔*",
     "stats.institutions":    "金融机构合作网络",
-    "stats.investor_return": "投资者预期回报 — 历史交易加权平均*",
     "stats.footnote":        "*Turnpage Digital 成立之前的经验。",
 
     "situations.eyebrow":     "我们涵盖的范围",
@@ -478,9 +470,9 @@ export const TRANSLATIONS = {
     "edge.eyebrow":           "我们的优势",
     "edge.title_1":           "在关键时刻",
     "edge.title_2":           "迅速行动。",
-    "faq.eyebrow":            "常见问题",
-    "faq.title_1":            "问题,",
-    "faq.title_2":            "我们来解答。",
+    "faq.eyebrow":            "FAQ",
+    "faq.title_1":            "您的问题,",
+    "faq.title_2":            "我们解答",
 
     "closing.eyebrow":  "获取报价",
     "closing.title":    "何必等待?",
