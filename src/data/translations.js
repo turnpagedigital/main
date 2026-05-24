@@ -23,7 +23,7 @@ export const TRANSLATIONS = {
     "hero.eyebrow":     "OTC Claims Desk",
     "hero.title_1":     "Strategic guidance.",
     "hero.title_2":     "Turn-key liquidity.",
-    "hero.subtitle":    "For rights holders entitled to compensation — across litigation, class actions, bankruptcies, locked assets, and refund rights.",
+    "hero.subtitle":    "For rights holders entitled to compensation — we buy litigation, class action and bankruptcy claims, receivables, refunds, and other locked assets.",
     "hero.cta_primary": "Talk to a Partner",
     "hero.cta_secondary": "What we cover",
     "hero.scroll":      "Scroll",
