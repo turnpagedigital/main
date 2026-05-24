@@ -73,9 +73,9 @@ export default function DealCard({ deal }) {
               display: "inline-flex", alignItems: "center", justifyContent: "center",
               border: "1px solid rgba(212,255,0,0.45)",
               color: NEON,
-              fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-              letterSpacing: 0,
-            }}>i</span>
+              fontFamily: FONT, fontSize: "1rem", fontWeight: 700,
+              transform: "rotate(-45deg)",
+            }}>↑</span>
           )}
         </div>
 
