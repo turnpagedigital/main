@@ -4,6 +4,8 @@ import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 import FAQ from "../components/FAQ.jsx";
 import CTABanner from "../components/CTABanner.jsx";
+import DealCard from "../components/DealCard.jsx";
+import dealsData from "../data/deals.json";
 
 /* Content sourced from the May 2026 brand deck (TPDM_Overview).
    Home page focuses on the situations TPDM covers and the credibility of
@@ -57,16 +59,7 @@ const TESTIMONIALS = [
   },
 ];
 
-const DEALS = [
-  { amt: "$270M",  who: "FTX",                 type: "Disputed-Ownership Claim",        form: "Advisory",                            when: "Oct 2024 – Aug 2025" },
-  { amt: "$103M",  who: "Failed ICO Issuer",   type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation",            when: "Jan 2025" },
-  { amt: "$89M",   who: "FTX",                 type: "Breach of Contract Claim",        form: "Structured Assignment",               when: "Dec 2023" },
-  { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",                          when: "Jun 2023" },
-  { amt: "$48M",   who: "Visa / Mastercard",   type: "Payment Card Settlement Claim",   form: "Participation",                       when: "Apr 2025" },
-  { amt: "$42M",   who: "Dozens of U.S. Importers", type: "IEEPA Tariff Refund Rights",  form: "Traded or Advised · Participation",   when: "Mar 2026 – Present" },
-  { amt: "$36M",   who: "Yellow Corp",         type: "Multi-Employer Pension Claim",    form: "Assignment",                          when: "Mar 2025" },
-  { amt: "$30M",   who: "100s of College Athletes", type: "NCAA College Athlete NIL Settlement", form: "Assignment",                  when: "Jun 2025 – Jan 2026" },
-];
+const DEALS = dealsData.home;
 
 const FAQS = [
   {
@@ -656,40 +649,7 @@ function ExperienceSection() {
           borderRadius: 8, overflow: "hidden",
         }} className="deals-grid">
           {DEALS.map((d, i) => (
-            <div key={i} style={{
-              background: "#0A0B0E",
-              padding: "clamp(1.4rem, 2.5vw, 2rem)",
-            }}>
-              <div style={{
-                fontFamily: FONT, fontWeight: 900,
-                fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
-                lineHeight: 1, letterSpacing: "-0.03em",
-                color: NEON, marginBottom: "0.8rem",
-              }}>
-                {d.amt}
-              </div>
-              <div style={{
-                fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700,
-                color: "#fff", marginBottom: "0.4rem",
-                letterSpacing: "-0.01em",
-              }}>
-                {d.who}
-              </div>
-              <div style={{
-                fontFamily: FONT, fontSize: "0.92rem",
-                color: "rgba(255,255,255,0.78)", lineHeight: 1.45,
-                marginBottom: "0.9rem",
-              }}>
-                {d.type}
-              </div>
-              <div style={{
-                fontFamily: FONT, fontSize: "0.74rem",
-                color: "rgba(255,255,255,0.45)",
-                letterSpacing: "0.04em",
-              }}>
-                {d.form} · {d.when}
-              </div>
-            </div>
+            <DealCard key={i} deal={d} />
           ))}
         </div>
 

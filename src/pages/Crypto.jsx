@@ -7,6 +7,8 @@ import StatStrip from "../components/StatStrip.jsx";
 import Comparison from "../components/Comparison.jsx";
 import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
+import DealCard from "../components/DealCard.jsx";
+import dealsData from "../data/deals.json";
 
 const STATS = [
   { value: "$10B+",  label: "Unresolved claims" },
@@ -32,17 +34,7 @@ const NEW_WAY = {
   ],
 };
 
-const DEALS = [
-  { amt: "$270M",  who: "FTX",                 type: "Disputed-Ownership Claim",        form: "Advisory",                 when: "Oct 2024 – Aug 2025" },
-  { amt: "$106M",  who: "Mt. Gox",             type: "Trust Interest Participation",    form: "Participation",            when: "Nov 2023" },
-  { amt: "$103M",  who: "Failed ICO Issuer",   type: "Gov't-seized BTC/ETH Assets",     form: "Structured Participation", when: "Jan 2025" },
-  { amt: "$89M",   who: "FTX",                 type: "Breach of Contract Claim",        form: "Structured Assignment",    when: "Dec 2023" },
-  { amt: "$58M",   who: "Genesis",             type: "Institutional BTC Loan Claim",    form: "Assignment",               when: "Jun 2023" },
-  { amt: "$33M",   who: "FTX",                 type: "Institutional Customer Claim",    form: "Contingent Assignment",    when: "Jun 2025" },
-  { amt: "$27M",   who: "Three Arrows Capital",type: "Digital Asset Loan Claim",        form: "Advisory",                 when: "Jun 2025" },
-  { amt: "$8M",    who: "Genesis",             type: "BTC/ETH Loan Claim Portfolio",    form: "Assignment",               when: "Oct 2024" },
-  { amt: "$4M",    who: "Celsius",             type: "Retail Customer Claims",          form: "Assignment",               when: "Feb–Dec 2023" },
-];
+const DEALS = dealsData.crypto;
 
 const FAQS = [
   {
@@ -191,40 +183,7 @@ export default function Crypto() {
             borderRadius: 8, overflow: "hidden",
           }} className="deals-grid">
             {DEALS.map((d, i) => (
-              <div key={i} style={{
-                background: "#0A0B0E",
-                padding: "clamp(1.4rem, 2.5vw, 2rem)",
-              }}>
-                <div style={{
-                  fontFamily: FONT, fontWeight: 900,
-                  fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
-                  lineHeight: 1, letterSpacing: "-0.03em",
-                  color: NEON, marginBottom: "0.8rem",
-                }}>
-                  {d.amt}
-                </div>
-                <div style={{
-                  fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700,
-                  color: "#fff", marginBottom: "0.4rem",
-                  letterSpacing: "-0.01em",
-                }}>
-                  {d.who}
-                </div>
-                <div style={{
-                  fontFamily: FONT, fontSize: "0.92rem",
-                  color: "rgba(255,255,255,0.78)", lineHeight: 1.45,
-                  marginBottom: "0.9rem",
-                }}>
-                  {d.type}
-                </div>
-                <div style={{
-                  fontFamily: FONT, fontSize: "0.74rem",
-                  color: "rgba(255,255,255,0.45)",
-                  letterSpacing: "0.04em",
-                }}>
-                  {d.form} · {d.when}
-                </div>
-              </div>
+              <DealCard key={i} deal={d} />
             ))}
           </div>
 

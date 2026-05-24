@@ -1,0 +1,143 @@
+{
+  "_comment": "Single source of truth for deal cards on Home and Crypto pages. Edited both via chat (direct edits) and the /#/admin panel (which commits via the GitHub API). Always the latest commit wins. Schema: { amt, who, type, form, when, summary }. If you change this schema, update src/components/DealCard.jsx AND the admin form in src/pages/Admin.jsx in the same commit.",
+  "home": [
+    {
+      "amt": "$270M",
+      "who": "FTX",
+      "type": "Disputed-Ownership Claim",
+      "form": "Advisory",
+      "when": "Oct 2024 – Aug 2025",
+      "summary": "Multi-year advisory mandate on a contested institutional customer claim through FTX's disputed-ownership track. Structured the negotiation strategy with counsel, coordinated diligence with the buyer network, and closed in August 2025."
+    },
+    {
+      "amt": "$103M",
+      "who": "Failed ICO Issuer",
+      "type": "Gov't-seized BTC/ETH Assets",
+      "form": "Structured Participation",
+      "when": "Jan 2025",
+      "summary": ""
+    },
+    {
+      "amt": "$89M",
+      "who": "FTX",
+      "type": "Breach of Contract Claim",
+      "form": "Structured Assignment",
+      "when": "Dec 2023",
+      "summary": ""
+    },
+    {
+      "amt": "$58M",
+      "who": "Genesis",
+      "type": "Institutional BTC Loan Claim",
+      "form": "Assignment",
+      "when": "Jun 2023",
+      "summary": ""
+    },
+    {
+      "amt": "$48M",
+      "who": "Visa / Mastercard",
+      "type": "Payment Card Settlement Claim",
+      "form": "Participation",
+      "when": "Apr 2025",
+      "summary": ""
+    },
+    {
+      "amt": "$42M",
+      "who": "Dozens of U.S. Importers",
+      "type": "IEEPA Tariff Refund Rights",
+      "form": "Traded or Advised · Participation",
+      "when": "Mar 2026 – Present",
+      "summary": ""
+    },
+    {
+      "amt": "$36M",
+      "who": "Yellow Corp",
+      "type": "Multi-Employer Pension Claim",
+      "form": "Assignment",
+      "when": "Mar 2025",
+      "summary": ""
+    },
+    {
+      "amt": "$30M",
+      "who": "100s of College Athletes",
+      "type": "NCAA College Athlete NIL Settlement",
+      "form": "Assignment",
+      "when": "Jun 2025 – Jan 2026",
+      "summary": ""
+    }
+  ],
+  "crypto": [
+    {
+      "amt": "$270M",
+      "who": "FTX",
+      "type": "Disputed-Ownership Claim",
+      "form": "Advisory",
+      "when": "Oct 2024 – Aug 2025",
+      "summary": ""
+    },
+    {
+      "amt": "$106M",
+      "who": "Mt. Gox",
+      "type": "Trust Interest Participation",
+      "form": "Participation",
+      "when": "Nov 2023",
+      "summary": ""
+    },
+    {
+      "amt": "$103M",
+      "who": "Failed ICO Issuer",
+      "type": "Gov't-seized BTC/ETH Assets",
+      "form": "Structured Participation",
+      "when": "Jan 2025",
+      "summary": ""
+    },
+    {
+      "amt": "$89M",
+      "who": "FTX",
+      "type": "Breach of Contract Claim",
+      "form": "Structured Assignment",
+      "when": "Dec 2023",
+      "summary": ""
+    },
+    {
+      "amt": "$58M",
+      "who": "Genesis",
+      "type": "Institutional BTC Loan Claim",
+      "form": "Assignment",
+      "when": "Jun 2023",
+      "summary": ""
+    },
+    {
+      "amt": "$33M",
+      "who": "FTX",
+      "type": "Institutional Customer Claim",
+      "form": "Contingent Assignment",
+      "when": "Jun 2025",
+      "summary": ""
+    },
+    {
+      "amt": "$27M",
+      "who": "Three Arrows Capital",
+      "type": "Digital Asset Loan Claim",
+      "form": "Advisory",
+      "when": "Jun 2025",
+      "summary": ""
+    },
+    {
+      "amt": "$8M",
+      "who": "Genesis",
+      "type": "BTC/ETH Loan Claim Portfolio",
+      "form": "Assignment",
+      "when": "Oct 2024",
+      "summary": ""
+    },
+    {
+      "amt": "$4M",
+      "who": "Celsius",
+      "type": "Retail Customer Claims",
+      "form": "Assignment",
+      "when": "Feb–Dec 2023",
+      "summary": ""
+    }
+  ]
+}

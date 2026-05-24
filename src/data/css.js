@@ -373,6 +373,50 @@ button { font-family: inherit; }
 }
 .ann-banner a:hover { text-decoration-color: ${INK}; }
 
+/* ─── Deal card flip — used in the Relevant Experience grid on Home + Crypto.
+   Front face shows the headline + meta. Back face shows a longer summary,
+   revealed on hover (desktop) or tap (touch). Sharp 90° corners to match
+   the rest of the dark-section styling. */
+.deal-card-flip {
+  position: relative;
+  perspective: 1400px;
+  background: #0A0B0E;
+  outline: none;
+}
+.deal-card-flip:focus-visible {
+  box-shadow: inset 0 0 0 2px ${NEON};
+}
+.deal-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+}
+.deal-card-face {
+  position: relative;
+  width: 100%;
+  padding: clamp(1.4rem, 2.5vw, 2rem);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.deal-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  background: #0A0B0E;
+}
+.deal-card-flip.is-flipped .deal-card-inner {
+  transform: rotateY(180deg);
+}
+@media (hover: hover) {
+  .deal-card-flip.has-summary:hover .deal-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
 /* ─── Chips ─── */
 .chip-row {
   display: flex; flex-wrap: wrap; gap: 0.55rem 0.7rem;
