@@ -69,13 +69,14 @@ export default function DealCard({ deal }) {
           {hasSummary && (
             <span aria-hidden="true" style={{
               position: "absolute", top: "1rem", right: "1rem",
-              width: 26, height: 26,
+              width: 28, height: 28,
               display: "inline-flex", alignItems: "center", justifyContent: "center",
-              border: "1px solid rgba(212,255,0,0.45)",
-              color: NEON,
-              fontFamily: FONT, fontSize: "1rem", fontWeight: 700,
-              transform: "rotate(-45deg)",
-            }}>↑</span>
+              border: `1px solid rgba(212,255,0,0.45)`,
+            }}>
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                <path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke={NEON} strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="miter"/>
+              </svg>
+            </span>
           )}
         </div>
 
@@ -98,12 +99,14 @@ export default function DealCard({ deal }) {
           </div>
           <span aria-hidden="true" style={{
             position: "absolute", top: "1rem", right: "1rem",
-            width: 26, height: 26,
+            width: 28, height: 28,
             display: "inline-flex", alignItems: "center", justifyContent: "center",
             border: "1px solid rgba(212,255,0,0.45)",
-            color: NEON,
-            fontFamily: FONT, fontSize: "1rem", fontWeight: 700,
-          }}>×</span>
+          }}>
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+              <path d="M1.5 1.5L11.5 11.5M11.5 1.5L1.5 11.5" stroke={NEON} strokeWidth="1.5" strokeLinecap="square"/>
+            </svg>
+          </span>
         </div>
       </div>
     </div>
