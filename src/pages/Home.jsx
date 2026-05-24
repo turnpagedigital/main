@@ -587,6 +587,24 @@ function FullBleedPhoto() {
         }}
         onError={(e) => { e.currentTarget.src = "/bg-paper.jpg"; }}
       />
+      <p style={{
+        position: "absolute",
+        bottom: "clamp(2rem, 5vw, 4rem)",
+        right: "clamp(1.5rem, 5vw, 4rem)",
+        margin: 0, zIndex: 10,
+        fontFamily: FONT, fontWeight: 900,
+        fontSize: "clamp(1.3rem, 2.8vw, 2.6rem)",
+        lineHeight: 1.1, letterSpacing: "-0.035em",
+        color: "#000", textAlign: "right",
+      }}>
+        the pathway to liquidity<br />can be{" "}
+        <span style={{
+          textDecoration: "underline",
+          textDecorationColor: NEON,
+          textDecorationThickness: "4px",
+          textUnderlineOffset: "5px",
+        }}>complex</span>.
+      </p>
     </section>
   );
 }
