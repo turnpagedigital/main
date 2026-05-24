@@ -687,7 +687,7 @@ function EdgeSection() {
   const points = [
     { h: "Practically unlimited liquidity", b: "We partner with major asset managers — over 500 institutions on speed dial." },
     { h: "Lightning-fast settlement",       b: "Automation accelerates diligence and closing in the largest volume cases." },
-    { h: "Relationship builders, not just dealmakers", b: "We're built to move fast when it counts — and every other day." },
+    { h: "Relationship builders, not just dealmakers", b: "We go the extra mile to understand your business needs so we can structure the right deal for our clients." },
   ];
   return (
     <section style={{
