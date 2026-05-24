@@ -4,7 +4,7 @@
     {
       "amt": "$270M",
       "who": "FTX Trading Ltd.",
-      "type": "Disputed-Ownership Claim",
+      "type": "Investor Group / Disputed-Ownership Claim",
       "form": "Advisory",
       "when": "Oct 2024 – Aug 2025",
       "summary": "Advised investor group whose investments in a Korean asset manager became trapped when FTX filed for chapter 11 and then became subject to the Korean asset manager's post-FTX ponzi scheme. Assisted with engagement of U.S. bankruptcy counsel and all aspects of strategy including with respect to separate bankruptcy proceedings in Korea."
@@ -19,16 +19,16 @@
     },
     {
       "amt": "$89M",
-      "who": "FTX Trading Ltd.",
-      "type": "General Unsecured Claim",
+      "who": "FTX Trading Ltd. Ch. 11",
+      "type": "Licensing Partner / General Unsecured Claim",
       "form": "Structured Assignment",
       "when": "Dec 2023",
       "summary": "Brokered exclusive sale of a rejected licensing agreement claim to a multinational hedge fund group. Structured sale to include contingent consideration for seller based on ultimate allowed amount of claim."
     },
     {
       "amt": "$58M",
-      "who": "Genesis Global Holdings",
-      "type": "Institutional BTC Loan Claim",
+      "who": "Genesis Global Holdings Ch. 11",
+      "type": "Crypto Exchange / Institutional BTC Loan Claim",
       "form": "Assignment",
       "when": "Jun 2023",
       "summary": "Brokered exclusive sale of Korean crypto exchange claim against Genesis Global to U.K.-based hedge fund with settlement in BTC."
@@ -36,34 +36,34 @@
     {
       "amt": "$48M",
       "who": "Visa / Mastercard Payment Card Settlement",
-      "type": "Retailer Settlement Claim",
+      "type": "Retailer / Settlement Claim",
       "form": "Participation",
       "when": "Apr 2025",
-      "summary": "Brokered exclusive secondary sale of Visa/MC claim to prop desk of U.S.-based investment bank."
+      "summary": "Brokered exclusive secondary sale of Visa/MasterCard claim to prop desk of U.S.-based investment bank."
     },
     {
       "amt": "$42M",
-      "who": "Dozens of U.S. Importers",
-      "type": "IEEPA Tariff Refund Rights",
-      "form": "Traded or Advised · Participation",
+      "who": "CIT Tariff Refund Process",
+      "type": "Dozens of U.S. Importers / IEEPA Tariff Refund Rights",
+      "form": "Participation • Advisory",
       "when": "Mar 2026 – Present",
-      "summary": ""
+      "summary": "Advised importers on pathways to monetize tariff refund rights arising from the U.S. Supreme Court's decision in Learning Resources v. Trump and subsequent rulings at the Court of International Trade. Arranged multiple transactions to provide immediate cash to sellers and balance counterparty risk. "
     },
     {
       "amt": "$36M",
-      "who": "Yellow Corp",
-      "type": "Multi-Employer Pension Claim",
-      "form": "Assignment",
+      "who": "Yellow Corp. Ch. 11",
+      "type": "Multi-Employer Pension Plan Claim",
+      "form": "Participation",
       "when": "Mar 2025",
-      "summary": ""
+      "summary": "Brokered sale of multi-employer pension plan claim held by teamsters union to U.S.-based hedge fund. Advised client over many months, navigating volatile market through complex Delaware bankruptcy court litigation and multiple appeals."
     },
     {
       "amt": "$30M",
-      "who": "100s of College Athletes",
-      "type": "NCAA College Athlete NIL Settlement",
+      "who": "NCAA College Athlete Compensation Settlement",
+      "type": "100s of Current and Former College Athletes / Class Action Claims",
       "form": "Assignment",
       "when": "Jun 2025 – Jan 2026",
-      "summary": ""
+      "summary": "Partnered with series of capital providers to offer instant liquidity to college athletes seeking to monetize 10-year structured settlement. "
     }
   ],
   "crypto": [
