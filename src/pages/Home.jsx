@@ -589,7 +589,6 @@ function FullBleedPhoto() {
           width: "100%", height: "100%",
           objectFit: "cover",
           filter: "saturate(0.7) contrast(1.05)",
-          transform: "scaleX(-1) scaleY(-1)",
         }}
         onError={(e) => { e.currentTarget.src = "/bg-paper.jpg"; }}
       />
