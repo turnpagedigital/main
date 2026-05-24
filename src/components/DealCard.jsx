@@ -85,6 +85,7 @@ export default function DealCard({ deal }) {
             fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
             lineHeight: 1.15, letterSpacing: "-0.01em",
             color: "#000", marginBottom: "0.6rem",
+            paddingRight: "3.5rem",
           }}>
             {deal.amt} · {deal.who}
           </div>
