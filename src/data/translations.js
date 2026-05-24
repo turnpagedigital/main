@@ -29,11 +29,12 @@ export const TRANSLATIONS = {
     "hero.scroll":      "Scroll",
 
     // Stats band
-    "stats.eyebrow":         "Track Record",
-    "stats.claims_traded":   "Claims traded*",
-    "stats.claims_advised":  "Claims sold or advised*",
-    "stats.institutions":    "Financial institutions on speed dial",
-    "stats.footnote":        "*Experience prior to founding Turnpage Digital.",
+    "stats.eyebrow":          "Track Record",
+    "stats.claims_traded":    "Claims traded*",
+    "stats.claims_advised":   "Claims sold or advised*",
+    "stats.institutions":     "Financial institutions on speed dial",
+    "stats.investor_return":  "Est. investor return — weighted average across historical transactions*",
+    "stats.footnote":         "*Experience prior to founding Turnpage Digital.",
 
     // Section eyebrows + titles
     "situations.eyebrow":     "What we cover",
@@ -97,6 +98,7 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Reclamos negociados*",
     "stats.claims_advised":  "Reclamos vendidos o asesorados*",
     "stats.institutions":    "Instituciones financieras en agenda",
+    "stats.investor_return": "Retorno estimado para inversores — promedio ponderado en transacciones históricas*",
     "stats.footnote":        "*Experiencia previa a la fundación de Turnpage Digital.",
 
     "situations.eyebrow":     "Lo que cubrimos",
@@ -157,6 +159,7 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Créances négociées*",
     "stats.claims_advised":  "Créances vendues ou conseillées*",
     "stats.institutions":    "Institutions financières en relation",
+    "stats.investor_return": "Rendement estimé pour les investisseurs — moyenne pondérée sur les transactions historiques*",
     "stats.footnote":        "*Expérience antérieure à la création de Turnpage Digital.",
 
     "situations.eyebrow":     "Ce que nous couvrons",
@@ -217,6 +220,7 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Gehandelte Ansprüche*",
     "stats.claims_advised":  "Verkaufte oder beratene Ansprüche*",
     "stats.institutions":    "Finanzinstitute im Netzwerk",
+    "stats.investor_return": "Geschätzte Rendite für Investoren — gewichteter Durchschnitt historischer Transaktionen*",
     "stats.footnote":        "*Erfahrung vor Gründung von Turnpage Digital.",
 
     "situations.eyebrow":     "Was wir abdecken",
@@ -277,6 +281,7 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Crediti negoziati*",
     "stats.claims_advised":  "Crediti venduti o assistiti*",
     "stats.institutions":    "Istituzioni finanziarie in agenda",
+    "stats.investor_return": "Rendimento stimato per gli investitori — media ponderata su transazioni storiche*",
     "stats.footnote":        "*Esperienza precedente alla fondazione di Turnpage Digital.",
 
     "situations.eyebrow":     "Cosa copriamo",
@@ -337,6 +342,7 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "Reivindicações negociadas*",
     "stats.claims_advised":  "Reivindicações vendidas ou assessoradas*",
     "stats.institutions":    "Instituições financeiras na agenda",
+    "stats.investor_return": "Retorno estimado a investidores — média ponderada em transações históricas*",
     "stats.footnote":        "*Experiência anterior à fundação da Turnpage Digital.",
 
     "situations.eyebrow":     "O que cobrimos",
@@ -397,6 +403,7 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "거래된 청구*",
     "stats.claims_advised":  "매각 또는 자문된 청구*",
     "stats.institutions":    "주요 금융기관 네트워크",
+    "stats.investor_return": "투자자 예상 수익 — 과거 거래 가중 평균*",
     "stats.footnote":        "*Turnpage Digital 설립 이전의 경력.",
 
     "situations.eyebrow":     "취급 범위",
@@ -457,6 +464,7 @@ export const TRANSLATIONS = {
     "stats.claims_traded":   "已交易索赔*",
     "stats.claims_advised":  "已出售或顾问索赔*",
     "stats.institutions":    "金融机构合作网络",
+    "stats.investor_return": "投资者预期回报 — 历史交易加权平均*",
     "stats.footnote":        "*Turnpage Digital 成立之前的经验。",
 
     "situations.eyebrow":     "我们涵盖的范围",

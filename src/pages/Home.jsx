@@ -205,6 +205,7 @@ function StatsBand() {
     { rank: "01", v: "$1B+", l: t("stats.claims_traded") },
     { rank: "02", v: "5K+",  l: t("stats.claims_advised") },
     { rank: "03", v: "500+", l: t("stats.institutions") },
+    { rank: "04", v: "2.4x", l: t("stats.investor_return") },
   ];
   return (
     <section style={{
@@ -264,7 +265,7 @@ function StatsBand() {
         </p>
 
         <div style={{
-          display: "grid", gridTemplateColumns: "repeat(3, 1fr)",
+          display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
           gap: "clamp(1rem, 2vw, 1.6rem)",
         }} className="stats-band-grid">
           {items.map((it, i) => (
@@ -324,7 +325,10 @@ function StatsBand() {
           background: rgba(255, 255, 255, 0.07) !important;
           border-color: rgba(212, 255, 0, 0.35) !important;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
+          .stats-band-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 560px) {
           .stats-band-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
