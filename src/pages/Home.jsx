@@ -478,9 +478,15 @@ function LeadershipSection() {
             </p>
             <p style={{
               fontFamily: FONT, fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
-              color: INK_60, lineHeight: 1.7,
+              color: INK_60, lineHeight: 1.7, marginBottom: "1.2rem",
             }}>
               Trained as a bankruptcy lawyer, Andrew has over a decade of experience in Chapter 11 restructuring, special situations investments, and asset recovery strategies — seamlessly bridging traditional and digital assets.
+            </p>
+            <p style={{
+              fontFamily: FONT, fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
+              color: INK_60, lineHeight: 1.7,
+            }}>
+              Prior to founding Turnpage, Andrew built one of the leading marketplaces for trading bankruptcy claims, establishing deep relationships across the institutional buyer network that TPDM draws on today. Across his career, he has traded or advised on billions of dollars in transactions — giving clients access to pricing, counterparties, and execution that the market simply cannot replicate.
             </p>
           </div>
         </div>
