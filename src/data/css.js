@@ -406,7 +406,7 @@ button { font-family: inherit; }
   position: absolute;
   inset: 0;
   transform: rotateY(180deg);
-  background: #0A0B0E;
+  background: ${NEON};
 }
 .deal-card-flip.is-flipped .deal-card-inner {
   transform: rotateY(180deg);

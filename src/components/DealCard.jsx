@@ -84,13 +84,13 @@ export default function DealCard({ deal }) {
             fontFamily: FONT, fontWeight: 800,
             fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
             lineHeight: 1.15, letterSpacing: "-0.01em",
-            color: NEON, marginBottom: "0.6rem",
+            color: "#000", marginBottom: "0.6rem",
           }}>
             {deal.amt} · {deal.who}
           </div>
           <div style={{
             fontFamily: FONT, fontSize: "0.92rem",
-            color: "rgba(255,255,255,0.88)", lineHeight: 1.55,
+            color: "rgba(0,0,0,0.75)", lineHeight: 1.55,
             overflowY: "auto", flex: 1, paddingRight: "0.3rem",
           }}>
             {deal.summary}
@@ -100,7 +100,7 @@ export default function DealCard({ deal }) {
             display: "inline-flex", alignItems: "center", justifyContent: "center",
           }}>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M2 2L18 18M18 2L2 18" stroke={NEON} strokeWidth="1.75" strokeLinecap="square"/>
+              <path d="M2 2L18 18M18 2L2 18" stroke="#000" strokeWidth="1.75" strokeLinecap="square"/>
             </svg>
           </span>
         </div>
