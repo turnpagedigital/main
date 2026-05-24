@@ -17,7 +17,6 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Locked Crypto",
     "nav.tariff":      "Tariff Refunds",
     "nav.briefings":   "Briefings",
-    "nav.about":       "About",
     "nav.contact":     "Get in Touch",
 
     // Hero
@@ -66,7 +65,6 @@ export const TRANSLATIONS = {
     "footer.col.resources":   "Resources",
     "footer.col.firm":        "Firm",
     "footer.col.legal":       "Legal",
-    "footer.firm.about":      "About",
     "footer.firm.contact":    "Get in Touch",
     "footer.legal.privacy":   "Privacy Policy",
     "footer.legal.terms":     "Terms of Use",
@@ -84,7 +82,6 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Cripto Bloqueada",
     "nav.tariff":      "Reembolsos Arancelarios",
     "nav.briefings":   "Informes",
-    "nav.about":       "Nosotros",
     "nav.contact":     "Contáctenos",
 
     "hero.eyebrow":     "Mesa OTC de Reclamaciones",
@@ -128,7 +125,6 @@ export const TRANSLATIONS = {
     "footer.col.resources":   "Recursos",
     "footer.col.firm":        "Empresa",
     "footer.col.legal":       "Legal",
-    "footer.firm.about":      "Nosotros",
     "footer.firm.contact":    "Contáctenos",
     "footer.legal.privacy":   "Política de Privacidad",
     "footer.legal.terms":     "Términos de Uso",
@@ -145,7 +141,6 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Crypto Bloquée",
     "nav.tariff":      "Remboursements Douaniers",
     "nav.briefings":   "Briefings",
-    "nav.about":       "À propos",
     "nav.contact":     "Nous contacter",
 
     "hero.eyebrow":     "Desk OTC pour Créances",
@@ -189,7 +184,6 @@ export const TRANSLATIONS = {
     "footer.col.resources":   "Ressources",
     "footer.col.firm":        "Société",
     "footer.col.legal":       "Mentions légales",
-    "footer.firm.about":      "À propos",
     "footer.firm.contact":    "Nous contacter",
     "footer.legal.privacy":   "Politique de confidentialité",
     "footer.legal.terms":     "Conditions d'utilisation",
@@ -206,7 +200,6 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Cripto Bloccate",
     "nav.tariff":      "Rimborsi Doganali",
     "nav.briefings":   "Briefing",
-    "nav.about":       "Chi siamo",
     "nav.contact":     "Contattaci",
 
     "hero.eyebrow":     "Desk OTC per Crediti",
@@ -250,7 +243,6 @@ export const TRANSLATIONS = {
     "footer.col.resources":   "Risorse",
     "footer.col.firm":        "Azienda",
     "footer.col.legal":       "Legale",
-    "footer.firm.about":      "Chi siamo",
     "footer.firm.contact":    "Contattaci",
     "footer.legal.privacy":   "Informativa sulla privacy",
     "footer.legal.terms":     "Termini d'uso",
@@ -267,7 +259,6 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Cripto Bloqueado",
     "nav.tariff":      "Reembolsos Tarifários",
     "nav.briefings":   "Briefings",
-    "nav.about":       "Sobre",
     "nav.contact":     "Fale Conosco",
 
     "hero.eyebrow":     "Mesa OTC de Reivindicações",
@@ -311,7 +302,6 @@ export const TRANSLATIONS = {
     "footer.col.resources":   "Recursos",
     "footer.col.firm":        "Empresa",
     "footer.col.legal":       "Jurídico",
-    "footer.firm.about":      "Sobre",
     "footer.firm.contact":    "Fale Conosco",
     "footer.legal.privacy":   "Política de Privacidade",
     "footer.legal.terms":     "Termos de Uso",
@@ -328,7 +318,6 @@ export const TRANSLATIONS = {
     "nav.crypto":      "잠긴 암호화폐",
     "nav.tariff":      "관세 환급",
     "nav.briefings":   "브리핑",
-    "nav.about":       "회사 소개",
     "nav.contact":     "문의하기",
 
     "hero.eyebrow":     "OTC 청구 데스크",
@@ -372,7 +361,6 @@ export const TRANSLATIONS = {
     "footer.col.resources":   "리소스",
     "footer.col.firm":        "회사",
     "footer.col.legal":       "법적 고지",
-    "footer.firm.about":      "회사 소개",
     "footer.firm.contact":    "문의하기",
     "footer.legal.privacy":   "개인정보 처리방침",
     "footer.legal.terms":     "이용약관",
@@ -389,7 +377,6 @@ export const TRANSLATIONS = {
     "nav.crypto":      "锁定加密资产",
     "nav.tariff":      "关税退款",
     "nav.briefings":   "简报",
-    "nav.about":       "关于我们",
     "nav.contact":     "联系我们",
 
     "hero.eyebrow":     "OTC 索赔交易台",
@@ -433,7 +420,6 @@ export const TRANSLATIONS = {
     "footer.col.resources":   "资源",
     "footer.col.firm":        "公司",
     "footer.col.legal":       "法律",
-    "footer.firm.about":      "关于我们",
     "footer.firm.contact":    "联系我们",
     "footer.legal.privacy":   "隐私政策",
     "footer.legal.terms":     "使用条款",
