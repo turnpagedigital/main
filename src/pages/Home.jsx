@@ -206,18 +206,22 @@ function StatsBand() {
       borderTop: "1px solid rgba(255,255,255,0.08)",
       borderBottom: "1px solid rgba(255,255,255,0.08)",
     }}>
-      {/* BG image */}
+      {/* BG image — paper texture, thematically continuous with the hero
+          video's pages/book scene and matching the house texture used
+          throughout the site. */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <img
-          src="/anders-jilden-Sc5RKXLBjGg-unsplash.jpg"
+          src="/Paper.jpg"
           alt=""
+          onError={(e) => { e.currentTarget.src = "/bg-paper.jpg"; }}
           style={{
             width: "100%", height: "100%", objectFit: "cover",
-            filter: "brightness(0.4) contrast(1.1) saturate(0.7)",
+            objectPosition: "center bottom",
+            filter: "brightness(0.45) contrast(1.1) saturate(0.8)",
           }}
         />
       </div>
-      {/* Semi-transparent dark overlay — keeps the image visible */}
+      {/* Semi-transparent dark overlay — keeps the image visible but readable */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 1,
         background: "rgba(10, 11, 14, 0.55)",
