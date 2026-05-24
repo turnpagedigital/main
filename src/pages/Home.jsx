@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NEON, FONT, INK, INK_60, INK_40, LINE, LINE_STRONG } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
@@ -16,31 +16,37 @@ const SITUATIONS = [
     no: "01",
     title: "Litigation Claims",
     body: "Complex disputes, contested matters, and judgments awaiting recovery.",
+    details: "We work with plaintiffs, defendants, and investors across pre-judgment, post-judgment, and appellate stages. Our network includes institutional buyers who specialize in contested matters across federal and state courts.",
   },
   {
     no: "02",
     title: "Class Action Claims",
     body: "Class-member positions in the largest collective actions post-settlement.",
+    details: "From antitrust and securities fraud to data breach settlements, we connect class members to competitive bids. We handle large individual positions as well as portfolios of smaller positions aggregated for efficiency.",
   },
   {
     no: "03",
     title: "Bankruptcy Claims",
     body: "Chapter 11 trade claims, customer claims, and creditor positions in major estates.",
+    details: "Whether your claim is scheduled or unscheduled, secured or unsecured, we price it against our network of institutional buyers. We've traded claims in the largest Chapter 11 cases of the past decade.",
   },
   {
     no: "04",
     title: "Locked Assets",
     body: "Locked digital assets, frozen accounts, and deposits trapped in restructurings.",
+    details: "Digital assets locked on exchange platforms, frozen bank accounts, and deposits trapped in restructurings are all addressable. Our team has deep expertise in the major crypto estate cases that defined this asset class.",
   },
   {
     no: "05",
     title: "Refund Rights",
     body: "Government refunds, including tariff refund rights and customs recoveries.",
+    details: "We were among the first to build a market for IEEPA tariff refund rights. We work with importers, exporters, and counsel to structure assignments and participations on pending and anticipated refund claims.",
   },
   {
     no: "06",
     title: "Other Illiquid Assets",
     body: "Trade receivables, seized property, and one-off complex matters by conversation.",
+    details: "If your situation doesn't fit a standard category, reach out. We've structured solutions for seized property, legacy receivables, and novel asset classes that most intermediaries won't touch.",
   },
 ];
 
@@ -253,6 +259,12 @@ function StatsBand() {
 
 /* ─── SITUATIONS WE COVER ─── */
 function SituationsSection() {
+  const [openIdx, setOpenIdx] = useState(null);
+
+  function toggle(idx) {
+    setOpenIdx(prev => prev === idx ? null : idx);
+  }
+
   return (
     <section id="situations" style={{
       background: "#FFFFFF",
@@ -293,45 +305,86 @@ function SituationsSection() {
         </div>
 
         <div style={{ borderTop: `1px solid ${LINE_STRONG}` }}>
-          {SITUATIONS.map((s) => (
-            <div key={s.no} style={{
-              display: "grid",
-              gridTemplateColumns: "auto minmax(220px, 1.4fr) minmax(0, 2fr)",
-              gap: "clamp(1.5rem, 4vw, 4rem)",
-              alignItems: "baseline",
-              padding: "clamp(1.8rem, 3vw, 2.4rem) 0",
-              borderBottom: `1px solid ${LINE_STRONG}`,
-            }} className="situations-row">
-              <div style={{
-                fontFamily: FONT, fontWeight: 600,
-                fontSize: "0.78rem", color: INK_40,
-                letterSpacing: "0.22em",
+          {SITUATIONS.map((s, idx) => {
+            const isOpen = openIdx === idx;
+            return (
+              <div key={s.no} style={{
+                borderBottom: `1px solid ${LINE_STRONG}`,
+                background: isOpen ? "#FAFAFA" : "transparent",
+                transition: "background 0.25s",
               }}>
-                {s.no}
+                {/* Trigger row */}
+                <button
+                  onClick={() => toggle(idx)}
+                  aria-expanded={isOpen}
+                  style={{
+                    width: "100%",
+                    display: "grid",
+                    gridTemplateColumns: "2.8rem 1fr",
+                    gap: "clamp(1rem, 2.5vw, 2.5rem)",
+                    alignItems: "center",
+                    padding: "clamp(1.6rem, 2.8vw, 2.2rem) 0",
+                    background: "none", border: "none",
+                    cursor: "pointer", textAlign: "left",
+                  }}
+                >
+                  <span style={{
+                    fontFamily: FONT, fontWeight: 700,
+                    fontSize: "1.6rem", lineHeight: 1,
+                    color: isOpen ? INK : INK_40,
+                    display: "inline-block",
+                    transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+                    transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1), color 0.2s",
+                    userSelect: "none",
+                  }}>
+                    +
+                  </span>
+                  <h3 style={{
+                    fontFamily: FONT, fontWeight: 800,
+                    fontSize: "clamp(1.5rem, 3vw, 2.4rem)",
+                    color: INK, letterSpacing: "-0.02em", lineHeight: 1.05,
+                    margin: 0,
+                  }}>
+                    {s.title}
+                  </h3>
+                </button>
+
+                {/* Expandable content */}
+                <div style={{
+                  overflow: "hidden",
+                  maxHeight: isOpen ? "500px" : "0",
+                  transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
+                }}>
+                  <div style={{
+                    paddingLeft: "calc(2.8rem + clamp(1rem, 2.5vw, 2.5rem))",
+                    paddingBottom: "clamp(1.6rem, 2.8vw, 2.4rem)",
+                  }}>
+                    <p style={{
+                      fontFamily: FONT,
+                      fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
+                      color: INK_60, lineHeight: 1.65,
+                      marginBottom: "0.75rem", marginTop: 0,
+                    }}>
+                      {s.body}
+                    </p>
+                    <p style={{
+                      fontFamily: FONT,
+                      fontSize: "clamp(0.9rem, 1.1vw, 1rem)",
+                      color: INK_40, lineHeight: 1.7,
+                      margin: 0,
+                    }}>
+                      {s.details}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 style={{
-                fontFamily: FONT, fontWeight: 800,
-                fontSize: "clamp(1.5rem, 3vw, 2.4rem)",
-                color: INK, letterSpacing: "-0.02em", lineHeight: 1.05,
-              }}>
-                {s.title}
-              </h3>
-              <p style={{
-                fontFamily: FONT, fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
-                color: INK_60, lineHeight: 1.55,
-              }}>
-                {s.body}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <style>{`
           @media (max-width: 720px) {
-            .situations-row {
-              grid-template-columns: 1fr !important;
-              gap: 0.7rem !important;
-            }
+            .section-split { grid-template-columns: 1fr !important; }
           }
         `}</style>
       </div>
