@@ -194,6 +194,65 @@ export const TRANSLATIONS = {
     "ctabanner.cta":   "Lire les briefings",
   },
 
+  /* ─── German ─── */
+  de: {
+    "nav.copyright":   "Urheberrechtsansprüche",
+    "nav.crypto":      "Gesperrtes Krypto",
+    "nav.tariff":      "Zollrückerstattungen",
+    "nav.briefings":   "Briefings",
+    "nav.contact":     "Kontakt",
+
+    "hero.eyebrow":     "OTC-Desk für Ansprüche",
+    "hero.title_1":     "Strategische Beratung.",
+    "hero.title_2":     "Schlüsselfertige Liquidität.",
+    "hero.subtitle":    "Für Anspruchsberechtigte — wir kaufen Forderungen aus Rechtsstreitigkeiten, Sammelklagen und Insolvenzen sowie Außenstände, Rückerstattungsansprüche und andere gesperrte Vermögenswerte.",
+    "hero.cta_primary": "Mit einem Partner sprechen",
+    "hero.cta_secondary": "Was wir abdecken",
+    "hero.scroll":      "Scrollen",
+
+    "stats.claims_traded":   "Gehandelte Ansprüche*",
+    "stats.claims_advised":  "Verkaufte oder beratene Ansprüche*",
+    "stats.institutions":    "Finanzinstitute im Netzwerk",
+    "stats.footnote":        "*Erfahrung vor Gründung von Turnpage Digital.",
+
+    "situations.eyebrow":     "Was wir abdecken",
+    "situations.title_1":     "Die komplexesten Forderungen",
+    "situations.title_2":     "im Verfahren.",
+    "leadership.eyebrow":     "Führung",
+    "testimonials.eyebrow":   "Was unsere Kunden sagen",
+    "testimonials.title_1":   "Wenn andere aufgeben,",
+    "testimonials.title_2":   "graben wir tiefer.",
+    "experience.eyebrow":     "Relevante Erfahrung",
+    "edge.eyebrow":           "Unser Vorteil",
+    "edge.title_1":           "Geschaffen für schnelles Handeln,",
+    "edge.title_2":           "wenn es darauf ankommt.",
+    "faq.eyebrow":            "Häufig gestellt",
+    "faq.title_1":            "Fragen,",
+    "faq.title_2":            "beantwortet.",
+
+    "closing.eyebrow":  "Angebot anfordern",
+    "closing.title":    "Warum warten?",
+    "closing.kicker":   "Kontaktieren Sie uns für ein Angebot oder weitere Informationen.",
+    "closing.email":    "E-Mail",
+    "closing.phone":    "Telefon",
+    "closing.cta":      "Kontakt",
+
+    "footer.subscribe_title": "Bleiben Sie über die neuesten Turnpage-Briefings informiert.",
+    "footer.subscribe_cta":   "Abonnieren",
+    "footer.col.desks":       "Desks",
+    "footer.col.resources":   "Ressourcen",
+    "footer.col.firm":        "Unternehmen",
+    "footer.col.legal":       "Rechtliches",
+    "footer.firm.contact":    "Kontakt",
+    "footer.legal.privacy":   "Datenschutzerklärung",
+    "footer.legal.terms":     "Nutzungsbedingungen",
+    "footer.copyright":       "Turnpage Digital Markets © 2026 · Alle Rechte vorbehalten",
+    "footer.region_label":    "Global",
+
+    "ctabanner.title": "Bleiben Sie über das Verfahren informiert.",
+    "ctabanner.cta":   "Briefings lesen",
+  },
+
   /* ─── Italian ─── */
   it: {
     "nav.copyright":   "Diritti d'Autore",
