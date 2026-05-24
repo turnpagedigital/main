@@ -594,7 +594,7 @@ function FullBleedPhoto() {
       />
       <p style={{
         position: "absolute",
-        bottom: "clamp(2rem, 5vw, 4rem)",
+        bottom: "clamp(4rem, 8vw, 7rem)",
         right: "clamp(1.5rem, 5vw, 4rem)",
         margin: 0, zIndex: 10,
         fontFamily: FONT, fontWeight: 800,
@@ -602,7 +602,7 @@ function FullBleedPhoto() {
         lineHeight: 1.02, letterSpacing: "-0.035em",
         color: "#000", textAlign: "right",
       }}>
-        Complexity doesn't<br /><span className="accent-light">faze us.</span>
+        Too hard isn't<br />in our <span className="accent-light">vocabulary.</span>
       </p>
     </section>
   );
