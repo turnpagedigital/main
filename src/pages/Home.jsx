@@ -65,7 +65,7 @@ const TESTIMONIALS = [
   },
 ];
 
-const DEALS = dealsData.home;
+const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("home"));
 
 const FAQS = [
   {

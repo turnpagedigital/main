@@ -5,51 +5,59 @@ import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
    - One password login, session stored in HttpOnly cookie.
    - Reads + writes src/data/deals.json via Cloudflare Pages Functions
      that commit through the GitHub Contents API.
-   - Single source of truth: the JSON file in git. Both this admin panel
-     and direct chat edits write to the same file. Latest commit wins.
+   - Single source of truth: the JSON file in git.
 
    When you change the deal schema in deals.json, update both
    src/components/DealCard.jsx AND the FIELD_DEFS array below
    in the same commit so the admin form stays in sync. */
 
-const DEAL_FIELDS = ["amt", "who", "type", "form", "when", "summary"];
-
 const FIELD_DEFS = [
-  { key: "amt",     label: "Amount",      type: "text",     placeholder: "$270M" },
-  { key: "who",     label: "Counterparty", type: "text",    placeholder: "FTX" },
-  { key: "type",    label: "Claim type",  type: "text",     placeholder: "Disputed-Ownership Claim" },
-  { key: "form",    label: "Form",        type: "text",     placeholder: "Advisory" },
-  { key: "when",    label: "When",        type: "text",     placeholder: "Oct 2024 – Aug 2025" },
-  { key: "summary", label: "Summary (back of flip card — leave empty to disable flip)", type: "textarea", placeholder: "Optional 2-4 sentence description that appears when a visitor hovers or taps the card." },
+  { key: "amt",     label: "Amount",       type: "text",     placeholder: "$270M" },
+  { key: "who",     label: "Counterparty", type: "text",     placeholder: "FTX" },
+  { key: "type",    label: "Claim type",   type: "text",     placeholder: "Disputed-Ownership Claim" },
+  { key: "form",    label: "Form",         type: "text",     placeholder: "Advisory" },
+  { key: "when",    label: "When",         type: "text",     placeholder: "Oct 2024 – Aug 2025" },
+  { key: "summary", label: "Summary (back of flip card — leave empty to disable flip)", type: "textarea", placeholder: "Optional 2-4 sentence description." },
+];
+
+const PAGES = [
+  { key: "home",         label: "Home" },
+  { key: "crypto",       label: "Crypto" },
+  { key: "ai-copyright", label: "AI Copyright" },
 ];
 
 function blankDeal() {
-  const d = {};
-  for (const f of DEAL_FIELDS) d[f] = "";
-  return d;
+  return { amt: "", who: "", type: "", form: "", when: "", summary: "", pages: [], preTurnpage: false };
+}
+
+function sanitize(d) {
+  return {
+    amt:         typeof d.amt === "string"     ? d.amt     : "",
+    who:         typeof d.who === "string"     ? d.who     : "",
+    type:        typeof d.type === "string"    ? d.type    : "",
+    form:        typeof d.form === "string"    ? d.form    : "",
+    when:        typeof d.when === "string"    ? d.when    : "",
+    summary:     typeof d.summary === "string" ? d.summary : "",
+    pages:       Array.isArray(d.pages) ? d.pages.filter(p => typeof p === "string") : [],
+    preTurnpage: Boolean(d.preTurnpage),
+  };
 }
 
 export default function Admin() {
-  const [phase, setPhase] = useState("checking"); // checking | login | ready | saving | error
+  const [phase, setPhase] = useState("checking");
   const [errorMsg, setErrorMsg] = useState("");
-  const [deals, setDeals] = useState(null);            // current edit state
-  const [original, setOriginal] = useState(null);      // last-saved server state, for dirty detection
-  const [activeTab, setActiveTab] = useState("home");
+  const [deals, setDeals] = useState(null);
+  const [original, setOriginal] = useState(null);
   const [lastSavedAt, setLastSavedAt] = useState(null);
 
-  // Check session on mount
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
         const r = await fetch("/api/admin/session", { credentials: "include" });
         if (cancelled) return;
-        if (r.ok) {
-          await loadDeals();
-        } else {
-          setPhase("login");
-        }
-      } catch (e) {
+        if (r.ok) { await loadDeals(); } else { setPhase("login"); }
+      } catch {
         if (cancelled) return;
         setPhase("login");
       }
@@ -65,10 +73,7 @@ export default function Admin() {
       if (r.status === 401) { setPhase("login"); return; }
       const body = await r.json();
       if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
-      const fresh = {
-        home: (body.data.home || []).map(sanitize),
-        crypto: (body.data.crypto || []).map(sanitize),
-      };
+      const fresh = { deals: (body.data.deals || []).map(sanitize) };
       setDeals(fresh);
       setOriginal(JSON.parse(JSON.stringify(fresh)));
       setPhase("ready");
@@ -118,11 +123,10 @@ export default function Admin() {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ home: deals.home, crypto: deals.crypto }),
+        body: JSON.stringify({ deals: deals.deals }),
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
-      // Refresh from server so we have the post-save canonical state.
       await loadDeals();
       setLastSavedAt(new Date());
     } catch (e) {
@@ -131,16 +135,14 @@ export default function Admin() {
     }
   }
 
-  // --- Rendering --------------------------------------------------------
+  // --- Rendering -----------------------------------------------------------
 
   if (phase === "checking" || phase === "loading") {
     return <CenteredMessage>Loading admin…</CenteredMessage>;
   }
-
   if (phase === "login") {
     return <LoginForm onSubmit={handleLogin} error={errorMsg} />;
   }
-
   if (phase === "error") {
     return (
       <CenteredMessage>
@@ -149,15 +151,13 @@ export default function Admin() {
       </CenteredMessage>
     );
   }
-
   if (!deals) return null;
 
-  const list = deals[activeTab];
+  const list = deals.deals;
 
   function updateList(updater) {
-    setDeals((d) => ({ ...d, [activeTab]: updater(d[activeTab]) }));
+    setDeals((d) => ({ ...d, deals: updater(d.deals) }));
   }
-
   function updateDeal(idx, field, value) {
     updateList((list) => {
       const next = list.slice();
@@ -165,7 +165,6 @@ export default function Admin() {
       return next;
     });
   }
-
   function moveDeal(idx, dir) {
     updateList((list) => {
       const j = idx + dir;
@@ -175,12 +174,10 @@ export default function Admin() {
       return next;
     });
   }
-
   function deleteDeal(idx) {
     if (!confirm("Delete this deal?")) return;
     updateList((list) => list.filter((_, i) => i !== idx));
   }
-
   function addDeal() {
     updateList((list) => [...list, blankDeal()]);
   }
@@ -224,30 +221,10 @@ export default function Admin() {
       )}
 
       <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
-        {/* Tabs */}
-        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "1.5rem", borderBottom: `1px solid ${LINE}` }}>
-          {[
-            { key: "home",   label: `Home deals (${deals.home.length})` },
-            { key: "crypto", label: `Crypto deals (${deals.crypto.length})` },
-          ].map((t) => (
-            <button
-              key={t.key}
-              onClick={() => setActiveTab(t.key)}
-              style={{
-                background: "transparent", border: "none", cursor: "pointer",
-                padding: "0.6rem 1rem", fontFamily: FONT, fontSize: "0.95rem",
-                fontWeight: activeTab === t.key ? 700 : 500,
-                color: activeTab === t.key ? INK : INK_60,
-                borderBottom: activeTab === t.key ? `2px solid ${INK}` : "2px solid transparent",
-                marginBottom: -1,
-              }}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
+        <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
+          All deals ({list.length}) — use the <strong>Pages</strong> checkboxes on each card to control where it appears. Order here = order on each page.
+        </p>
 
-        {/* Deal list */}
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
           {list.map((deal, i) => (
             <DealRow
@@ -267,7 +244,7 @@ export default function Admin() {
               padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`,
               color: INK_60, textAlign: "center",
             }}>
-              No deals yet on this tab.
+              No deals yet.
             </div>
           )}
           <button onClick={addDeal} style={{
@@ -285,52 +262,103 @@ export default function Admin() {
 
 function DealRow({ index, deal, onChange, onMoveUp, onMoveDown, onDelete, isFirst, isLast }) {
   return (
-    <div style={{
-      background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem",
-    }}>
-      <div style={{
-        display: "flex", alignItems: "center", marginBottom: "1rem",
-        gap: "0.5rem",
-      }}>
+    <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem" }}>
+      {/* Header */}
+      <div style={{ display: "flex", alignItems: "center", marginBottom: "1rem", gap: "0.5rem" }}>
         <div style={{ flex: 1, fontWeight: 700, fontSize: "0.85rem", color: INK_60 }}>
-          #{index + 1} — {deal.amt || "—"} {deal.who ? `· ${deal.who}` : ""}
+          #{index + 1} — {deal.amt || "—"}{deal.who ? ` · ${deal.who}` : ""}
+          {deal.pages && deal.pages.length > 0 && (
+            <span style={{ marginLeft: "0.5rem", fontWeight: 400 }}>
+              [{deal.pages.join(", ")}]
+            </span>
+          )}
+          {deal.preTurnpage && (
+            <span style={{ marginLeft: "0.5rem", color: "#888", fontWeight: 400 }}>pre-Turnpage *</span>
+          )}
         </div>
-        <button onClick={onMoveUp} disabled={isFirst} style={iconBtnStyle(isFirst)} title="Move up">↑</button>
-        <button onClick={onMoveDown} disabled={isLast} style={iconBtnStyle(isLast)} title="Move down">↓</button>
-        <button onClick={onDelete} style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
+        <button onClick={onMoveUp}   disabled={isFirst} style={iconBtnStyle(isFirst)}              title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={isLast}  style={iconBtnStyle(isLast)}               title="Move down">↓</button>
+        <button onClick={onDelete}   style={{ ...iconBtnStyle(false), color: "#c44" }}             title="Delete">×</button>
       </div>
+
+      {/* Text fields */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.7rem 1rem" }}>
+        {FIELD_DEFS.map((f) => (
+          <label key={f.key} style={{
+            display: "block",
+            gridColumn: f.type === "textarea" ? "1 / -1" : "auto",
+            fontSize: "0.78rem", color: INK_60, fontWeight: 600,
+          }}>
+            {f.label}
+            {f.type === "textarea" ? (
+              <textarea
+                value={deal[f.key] || ""}
+                onChange={(e) => onChange(f.key, e.target.value)}
+                placeholder={f.placeholder}
+                rows={4}
+                style={inputStyle}
+              />
+            ) : (
+              <input
+                type="text"
+                value={deal[f.key] || ""}
+                onChange={(e) => onChange(f.key, e.target.value)}
+                placeholder={f.placeholder}
+                style={inputStyle}
+              />
+            )}
+          </label>
+        ))}
+      </div>
+
+      {/* Pages + Pre-Turnpage */}
       <div style={{
-        display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.7rem 1rem",
+        borderTop: `1px solid ${LINE}`, marginTop: "1rem", paddingTop: "0.9rem",
+        display: "flex", flexWrap: "wrap", gap: "1rem 2rem", alignItems: "center",
       }}>
-        {FIELD_DEFS.map((f) => {
-          const fullWidth = f.type === "textarea";
-          return (
-            <label key={f.key} style={{
-              display: "block",
-              gridColumn: fullWidth ? "1 / -1" : "auto",
-              fontSize: "0.78rem", color: INK_60, fontWeight: 600,
-            }}>
-              {f.label}
-              {f.type === "textarea" ? (
-                <textarea
-                  value={deal[f.key] || ""}
-                  onChange={(e) => onChange(f.key, e.target.value)}
-                  placeholder={f.placeholder}
-                  rows={4}
-                  style={inputStyle}
-                />
-              ) : (
-                <input
-                  type="text"
-                  value={deal[f.key] || ""}
-                  onChange={(e) => onChange(f.key, e.target.value)}
-                  placeholder={f.placeholder}
-                  style={inputStyle}
-                />
-              )}
-            </label>
-          );
-        })}
+        <div>
+          <div style={{ fontSize: "0.78rem", fontWeight: 600, color: INK_60, marginBottom: "0.4rem" }}>
+            Pages
+          </div>
+          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            {PAGES.map((p) => {
+              const checked = Array.isArray(deal.pages) && deal.pages.includes(p.key);
+              return (
+                <label key={p.key} style={{
+                  display: "flex", alignItems: "center", gap: "0.35rem",
+                  cursor: "pointer", fontSize: "0.88rem", color: INK,
+                }}>
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={(e) => {
+                      const cur = Array.isArray(deal.pages) ? deal.pages : [];
+                      onChange("pages", e.target.checked
+                        ? [...cur, p.key]
+                        : cur.filter((x) => x !== p.key));
+                    }}
+                    style={{ accentColor: NEON, width: 14, height: 14 }}
+                  />
+                  {p.label}
+                </label>
+              );
+            })}
+          </div>
+        </div>
+
+        <label style={{
+          display: "flex", alignItems: "center", gap: "0.4rem",
+          cursor: "pointer", fontSize: "0.88rem", color: INK, marginLeft: "auto",
+        }}>
+          <input
+            type="checkbox"
+            checked={Boolean(deal.preTurnpage)}
+            onChange={(e) => onChange("preTurnpage", e.target.checked)}
+            style={{ accentColor: NEON, width: 14, height: 14 }}
+          />
+          Pre-Turnpage experience
+          <span style={{ color: INK_60, fontSize: "0.8rem" }}>(shows * on card)</span>
+        </label>
       </div>
     </div>
   );
@@ -374,9 +402,7 @@ function LoginForm({ onSubmit, error }) {
             style={inputStyle}
           />
         </label>
-        {error && (
-          <p style={{ color: "#c44", fontSize: "0.85rem", marginTop: "0.6rem" }}>{error}</p>
-        )}
+        {error && <p style={{ color: "#c44", fontSize: "0.85rem", marginTop: "0.6rem" }}>{error}</p>}
         <button type="submit" disabled={!password || submitting} style={{
           ...btnPrimaryStyle, width: "100%", marginTop: "1.2rem",
           opacity: (!password || submitting) ? 0.5 : 1,
@@ -393,18 +419,12 @@ function CenteredMessage({ children }) {
   return (
     <div style={{
       minHeight: "100vh", background: "#F4F5F7", fontFamily: FONT, color: INK_60,
-      display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem",
-      flexDirection: "column",
+      display: "flex", alignItems: "center", justifyContent: "center",
+      padding: "2rem", flexDirection: "column",
     }}>
       {children}
     </div>
   );
-}
-
-function sanitize(d) {
-  const out = {};
-  for (const f of DEAL_FIELDS) out[f] = typeof d[f] === "string" ? d[f] : "";
-  return out;
 }
 
 function formatTime(d) {
@@ -413,14 +433,13 @@ function formatTime(d) {
   return `${hh}:${mm}`;
 }
 
-// --- Inline styles ---------------------------------------------------------
+// --- Styles ------------------------------------------------------------------
 
 const inputStyle = {
   display: "block", width: "100%", marginTop: "0.3rem",
   padding: "0.55rem 0.7rem", border: `1px solid ${LINE}`, borderRadius: 0,
   fontFamily: FONT, fontSize: "0.92rem", color: INK,
-  background: "#fff", outline: "none",
-  resize: "vertical",
+  background: "#fff", outline: "none", resize: "vertical", boxSizing: "border-box",
 };
 const btnStyle = {
   background: "transparent", border: `1px solid ${LINE}`, color: INK,

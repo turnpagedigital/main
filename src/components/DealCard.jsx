@@ -56,7 +56,7 @@ export default function DealCard({ deal }) {
             color: "rgba(255,255,255,0.78)", lineHeight: 1.45,
             marginBottom: "0.9rem",
           }}>
-            {deal.type}
+            {deal.type}{deal.preTurnpage ? <span style={{ color: NEON, marginLeft: "0.15em" }}>*</span> : null}
           </div>
           <div style={{
             fontFamily: FONT, fontSize: "0.74rem",

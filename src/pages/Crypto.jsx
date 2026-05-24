@@ -34,7 +34,7 @@ const NEW_WAY = {
   ],
 };
 
-const DEALS = dealsData.crypto;
+const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("crypto"));
 
 const FAQS = [
   {
