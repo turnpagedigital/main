@@ -308,6 +308,7 @@ function SituationsSection() {
           {SITUATIONS.map((s, idx) => {
             const isOpen = openIdx === idx;
             const ROW_PAD = "clamp(1.8rem, 3vw, 2.4rem)";
+            const rowPb = isOpen ? "0.6rem" : ROW_PAD;
             return (
               <div
                 key={s.no}
@@ -328,10 +329,9 @@ function SituationsSection() {
                 }}
                 className="situations-row"
               >
-                {/* Col 1 — toggle icon */}
+                {/* Row 1 Col 1 — toggle icon */}
                 <div style={{
-                  paddingTop: ROW_PAD,
-                  paddingBottom: ROW_PAD,
+                  paddingTop: ROW_PAD, paddingBottom: rowPb,
                   display: "flex", alignItems: "flex-start",
                 }}>
                   <span style={{
@@ -347,46 +347,45 @@ function SituationsSection() {
                   </span>
                 </div>
 
-                {/* Col 2 — title + expandable body */}
-                <div style={{ paddingTop: ROW_PAD }}>
-                  <h3 style={{
-                    fontFamily: FONT, fontWeight: 800,
-                    fontSize: "clamp(1.5rem, 3vw, 2.4rem)",
-                    color: INK, letterSpacing: "-0.02em", lineHeight: 1.05,
-                    margin: 0,
-                    paddingBottom: isOpen ? "0.6rem" : ROW_PAD,
-                    transition: "padding-bottom 0.1s",
-                  }}>
-                    {s.title}
-                  </h3>
-                  <div style={{
-                    overflow: "hidden",
-                    maxHeight: isOpen ? "500px" : "0",
-                    transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
-                  }}>
-                    <div style={{ paddingBottom: ROW_PAD }}>
-                      <p style={{
-                        fontFamily: FONT,
-                        fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
-                        color: INK_60, lineHeight: 1.65,
-                        marginTop: 0, marginBottom: "0.75rem",
-                      }}>
-                        {s.body}
-                      </p>
-                      <p style={{
-                        fontFamily: FONT,
-                        fontSize: "clamp(0.9rem, 1.1vw, 1rem)",
-                        color: INK_40, lineHeight: 1.7,
-                        margin: 0,
-                      }}>
-                        {s.details}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                {/* Row 1 Col 2 — title */}
+                <h3 style={{
+                  fontFamily: FONT, fontWeight: 800,
+                  fontSize: "clamp(1.5rem, 3vw, 2.4rem)",
+                  color: INK, letterSpacing: "-0.02em", lineHeight: 1.05,
+                  margin: 0,
+                  paddingTop: ROW_PAD, paddingBottom: rowPb,
+                }}>
+                  {s.title}
+                </h3>
 
-                {/* Col 3 — empty spacer, preserves original proportions */}
-                <div />
+                {/* Row 1 Col 3 — short body, always visible */}
+                <p className="situations-body" style={{
+                  fontFamily: FONT,
+                  fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
+                  color: INK_60, lineHeight: 1.6,
+                  margin: 0,
+                  paddingTop: ROW_PAD, paddingBottom: rowPb,
+                }}>
+                  {s.body}
+                </p>
+
+                {/* Row 2 — expandable details, spans all columns */}
+                <div style={{
+                  gridColumn: "1 / -1",
+                  overflow: "hidden",
+                  maxHeight: isOpen ? "300px" : "0",
+                  transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
+                }}>
+                  <p style={{
+                    fontFamily: FONT,
+                    fontSize: "clamp(0.9rem, 1.1vw, 1.05rem)",
+                    color: INK_40, lineHeight: 1.7,
+                    margin: 0,
+                    paddingBottom: ROW_PAD,
+                  }}>
+                    {s.details}
+                  </p>
+                </div>
               </div>
             );
           })}
@@ -396,7 +395,7 @@ function SituationsSection() {
           @media (max-width: 720px) {
             .section-split { grid-template-columns: 1fr !important; }
             .situations-row { grid-template-columns: auto 1fr !important; }
-            .situations-row > div:last-child { display: none; }
+            .situations-body { grid-column: 2 / -1 !important; padding-top: 0 !important; }
           }
         `}</style>
       </div>
