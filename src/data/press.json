@@ -2,29 +2,17 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
-      "type": "Panel Discussion",
-      "author": "Other",
-      "date": "November 14, 2023",
-      "url": "https://www.benzinga.com/markets/cryptocurrency/23/11/35791298/from-chaos-to-clarity-experts-agree-bankruptcies-add-resilience-to-the-crypto-industry-tra",
-      "logo_url": "https://1000logos.net/wp-content/uploads/2022/05/Benzinga-Logo.png",
-      "excerpt": "Benzinga CEO Jason Raznick moderated a discussion with Thomas Braziel, John Glover, and Andrew Glantz. Raznick, a member of the unsecured creditor committee in the Voyager Digital bankruptcy case, set the stage with his experience on Voyager’s credit committee, highlighting the difficulties in the bankruptcy process and the partial recovery of investments. He emphasized the complexity and unpredictability of the crypto bankruptcy process, underscoring the need for better systems and regulations. \n\n“I don’t think bankruptcy and crypto are set up to work properly right now,” Raznick said.\n\nGlantz shared how his firm's platform has become a vital tool in the trading of bankruptcy claims, including those in crypto.\n\n[We're] educating both bankruptcy and crypto investors, bridging a critical knowledge gap, he said. “Bankruptcy is a good opportunity, I think, for the crypto industry to grow up a little bit.”\n\nGlantz’s insights into the process of claim trading and the emotional impact on claimants provided a human perspective on the bankruptcy process. He also discussed the challenges of reconciling the privacy desires of crypto investors with the transparency requirements of bankruptcy proceedings.",
-      "publication_title": "Benzinga",
-      "piece_title": " CingariFrom Chaos to Clarity: Experts Agree 'Bankruptcies Add Resilience' To The Crypto Industry",
+      "type": "social post",
+      "author": "Andrew",
+      "date": "May 11, 2026",
+      "url": "https://www.linkedin.com/posts/andrewglantz_rewind-tariffs-liquidate-your-ieepa-refund-activity-7458518310234750976-z767?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADYlmUBIgr3_ZLp4FoChoF9AvaiOSl8Xd8",
+      "logo_url": "",
+      "excerpt": "Yesterday a 2-1 panel at the Court of International Trade ruled in Burlap & Barrel v. Trump that Trump's 10% global tariff, imposed under Section 122 of the 1974 Trade Act, is unlawful.\n\nUnlike the rulings in V.O.S. Selections and Learning Resources, which halted IEEPA tariffs and required refunds on all duties paid, here, the CIT crafted narrow relief for the two importer plaintiffs (Burlap & Barrel, Basic Fun!) and Washington State, which paid duties directly. \n\nThe court rejected any universal injunction on Section 122 tariffs (which are set to expire by statute on July 24 in any event) and denied standing to the other 23 state Attorney Generals that joined the suit because their alleged harm — pass-through costs borne by in-state businesses — was indirect and speculative.\n\nSo what’s next?\n\n➡️ Unlike with IEEPA, there are no automatic refunds here. Importers will need to preserve their rights by filing protests under 19 U.S.C. §1514 or fresh lawsuits at the CIT (i.e., the same protocol for IEEPA prior to the rulings earlier this year that kicked off the refund process through CAPE.\n\n➡️ A Federal Circuit appeal is likely, and although the administration’s track record hasn’t exactly been sterling here, this extends the uncertainty around whether all importers will ultimately be eligible for refunds of Section 122 tariffs as well.\n\n➡️ The Office of the United States Trade Representative’s Section 301 investigations into 16 economies continue marching toward replacement tariffs before the Section 122 tariffs expire.\n\n➡️ The first IEEPA refunds are expected to flow starting around May 12 via CAPE. Only a fraction of importers are due to receive this first wave of payments with many importers still unregistered on the ACE Portal. The government still has a window to try and halt payments by filing an appeal, but hasn’t taken action.\n\nFor importers holding significant Section 122, IEEPA, Section 232, or Section 301 exposure seeking to evaluate and monetize their refund rights, Rewind Tariffs is here to help. www.rewindtariffs.com.\n\nhashtag#TariffRefunds hashtag#Section122 hashtag#IEEPA hashtag#InternationalTrade hashtag#CIT hashtag#FederalCircuit hashtag#CustomsLaw hashtag#TradePolicy hashtag#ClaimsTrading",
+      "publication_title": "LinkedIn",
+      "piece_title": "⚖️ Section 122 Tariffs — Another win for importers",
       "pages": [
-        "crypto",
-        "bankruptcy"
+        "tariffs"
       ]
-    },
-    {
-      "type": "publication",
-      "author": "Other",
-      "date": "August 9, 2022",
-      "url": "https://www.bloomberg.com/news/articles/2022-08-09/wall-street-pros-offer-crypto-holders-a-backdoor-bankruptcy-exit",
-      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bloomberg_logo.svg",
-      "excerpt": "Andrew discussed the incredible inflow of Voyager and Celsius creditors seeking liquidity in the summer of 2022.",
-      "publication_title": "Bloomberg",
-      "piece_title": "Wall Street Offers Crypto Holders at Voyager, Celsius a Backdoor Bankruptcy Exit",
-      "pages": []
     },
     {
       "type": "social post",
@@ -117,6 +105,20 @@
       ]
     },
     {
+      "type": "Panel Discussion",
+      "author": "Other",
+      "date": "November 14, 2023",
+      "url": "https://www.benzinga.com/markets/cryptocurrency/23/11/35791298/from-chaos-to-clarity-experts-agree-bankruptcies-add-resilience-to-the-crypto-industry-tra",
+      "logo_url": "https://1000logos.net/wp-content/uploads/2022/05/Benzinga-Logo.png",
+      "excerpt": "Benzinga CEO Jason Raznick moderated a discussion with Thomas Braziel, John Glover, and Andrew Glantz. Raznick, a member of the unsecured creditor committee in the Voyager Digital bankruptcy case, set the stage with his experience on Voyager’s credit committee, highlighting the difficulties in the bankruptcy process and the partial recovery of investments. He emphasized the complexity and unpredictability of the crypto bankruptcy process, underscoring the need for better systems and regulations. \n\n“I don’t think bankruptcy and crypto are set up to work properly right now,” Raznick said.\n\nGlantz shared how his firm's platform has become a vital tool in the trading of bankruptcy claims, including those in crypto.\n\n[We're] educating both bankruptcy and crypto investors, bridging a critical knowledge gap, he said. “Bankruptcy is a good opportunity, I think, for the crypto industry to grow up a little bit.”\n\nGlantz’s insights into the process of claim trading and the emotional impact on claimants provided a human perspective on the bankruptcy process. He also discussed the challenges of reconciling the privacy desires of crypto investors with the transparency requirements of bankruptcy proceedings.",
+      "publication_title": "Benzinga",
+      "piece_title": " CingariFrom Chaos to Clarity: Experts Agree 'Bankruptcies Add Resilience' To The Crypto Industry",
+      "pages": [
+        "crypto",
+        "bankruptcy"
+      ]
+    },
+    {
       "type": "podcast",
       "author": "Other",
       "date": "Apr 15, 2023",
@@ -170,6 +172,17 @@
       "pages": [
         "bankruptcy"
       ]
+    },
+    {
+      "type": "publication",
+      "author": "Other",
+      "date": "August 9, 2022",
+      "url": "https://www.bloomberg.com/news/articles/2022-08-09/wall-street-pros-offer-crypto-holders-a-backdoor-bankruptcy-exit",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bloomberg_logo.svg",
+      "excerpt": "Andrew discussed the incredible inflow of Voyager and Celsius creditors seeking liquidity in the summer of 2022.",
+      "publication_title": "Bloomberg",
+      "piece_title": "Wall Street Offers Crypto Holders at Voyager, Celsius a Backdoor Bankruptcy Exit",
+      "pages": []
     }
   ]
 }
