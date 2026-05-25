@@ -366,12 +366,14 @@ function PageTags({ pages, dark = false }) {
 
 /* ── Outlet logo helper ──────────────────────────────────────────────────────
    Priority: 1) logo_url set in admin  2) Google favicon for known domains
-   Falls back silently if neither works.                                      */
+   Falls back silently if neither works.
+   All logos — square favicons or wide wordmarks — are constrained to the same
+   maxHeight × maxWidth bounding box. Using max-height + max-width (not fixed
+   height) preserves aspect ratio without distortion for any shape of image.  */
 function OutletLogo({ name, logoUrl, style = {} }) {
   const [failed, setFailed] = useState(false);
-  const domain  = name ? OUTLET_DOMAINS[name.toLowerCase().trim()] : null;
-  const src     = logoUrl || (domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=128` : null);
-  const isFavicon = !logoUrl && !!domain;
+  const domain = name ? OUTLET_DOMAINS[name.toLowerCase().trim()] : null;
+  const src    = logoUrl || (domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=128` : null);
 
   if (!src || failed) return null;
   return (
@@ -379,11 +381,12 @@ function OutletLogo({ name, logoUrl, style = {} }) {
       src={src}
       alt={name || ""}
       style={{
-        height: isFavicon ? 24 : 26,
-        maxWidth: isFavicon ? 24 : 130,
+        maxHeight: 28,
+        height: "auto",
+        maxWidth: 110,
         width: "auto",
-        objectFit: "contain", objectPosition: "left center",
-        display: "block", marginBottom: "0.9rem",
+        display: "block",
+        marginBottom: "0.9rem",
         ...style,
       }}
       onError={() => setFailed(true)}
