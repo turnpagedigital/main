@@ -10,6 +10,7 @@ export default function Hero({
   accentTitle,
   children,
   size = "default", // "default" | "tall" | "full"
+  video = null,
 }) {
   const isTall = size === "tall";
   const isFull = size === "full";
@@ -31,6 +32,21 @@ export default function Hero({
           style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.22) contrast(1.1)" }}
         />
       </div>
+      {/* Optional video background */}
+      {video && (
+        <video
+          autoPlay muted loop playsInline
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
+          style={{
+            position: "absolute", inset: 0, zIndex: 1,
+            width: "100%", height: "100%", objectFit: "cover",
+            opacity: 0.8, filter: "saturate(0.75) contrast(1.05) brightness(0.55)",
+            pointerEvents: "none",
+          }}
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+      )}
       {/* Grain */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 1, opacity: 0.05, pointerEvents: "none",

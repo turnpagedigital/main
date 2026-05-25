@@ -43,6 +43,7 @@ export default function AICopyright() {
         accentTitle="claim what's yours."
         subtitle="Bartz. The OpenAI MDL. Concord. Getty. We buy claims and advise on strategy."
         size="tall"
+        video="/robottypes1.mp4"
       >
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
           <a href={hashHref("contact") + "?source=ai-copyright"} className="btn-neon">Talk to a Partner</a>
