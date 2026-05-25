@@ -637,16 +637,16 @@ function UnifiedCard({ item }) {
   const [hovered, setHovered] = useState(false);
   const isSocial  = item.mediaType === "social";
   const isArticle = item.mediaType === "article";
+  const lifted = hovered && item.href;
 
   const inner = (
     <div style={{
       background: "#fff",
-      border: `1px solid ${LINE}`,
+      border: `1px solid ${lifted ? "rgba(10,10,10,0.35)" : LINE}`,
       padding: "clamp(1.4rem, 2.5vw, 1.8rem)",
       height: "100%", boxSizing: "border-box",
       display: "flex", flexDirection: "column",
-      opacity: hovered && item.href ? 0.7 : 1,
-      transition: "opacity 0.2s",
+      transition: "border-color 0.18s",
     }}>
       {/* ── Type indicator ─────────────────────────────────────────── */}
       <TypeIndicator item={item} />
@@ -718,11 +718,20 @@ function UnifiedCard({ item }) {
     </div>
   );
 
+  const liftStyle = {
+    display: "block", textDecoration: "none", height: "100%",
+    transform: lifted ? "translateY(-5px)" : "translateY(0)",
+    boxShadow: lifted
+      ? "0 10px 28px rgba(10,10,10,0.13)"
+      : "0 1px 3px rgba(10,10,10,0.04)",
+    transition: "transform 0.18s ease, box-shadow 0.18s ease",
+  };
+
   if (item.href) {
     return (
       <a
         href={item.href} target="_blank" rel="noopener noreferrer"
-        style={{ display: "block", textDecoration: "none", height: "100%" }}
+        style={liftStyle}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -730,5 +739,5 @@ function UnifiedCard({ item }) {
       </a>
     );
   }
-  return <div style={{ height: "100%" }}>{inner}</div>;
+  return <div style={{ height: "100%", boxShadow: "0 1px 3px rgba(10,10,10,0.04)" }}>{inner}</div>;
 }
