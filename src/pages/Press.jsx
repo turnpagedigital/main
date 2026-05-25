@@ -4,6 +4,66 @@ import { hashHref } from "../lib/router.js";
 import BottomCTA from "../components/BottomCTA.jsx";
 import pressData from "../data/press.json";
 
+/* ── Outlet name → domain (used for Clearbit logo fetches) ──────────────── */
+const OUTLET_DOMAINS = {
+  "wall street journal": "wsj.com",
+  "wsj": "wsj.com",
+  "bloomberg": "bloomberg.com",
+  "bloomberg law": "bloomberg.com",
+  "bloomberg businessweek": "bloomberg.com",
+  "new york times": "nytimes.com",
+  "the new york times": "nytimes.com",
+  "nyt": "nytimes.com",
+  "financial times": "ft.com",
+  "the financial times": "ft.com",
+  "ft": "ft.com",
+  "reuters": "reuters.com",
+  "npr": "npr.org",
+  "bbc": "bbc.com",
+  "bbc news": "bbc.com",
+  "forbes": "forbes.com",
+  "fortune": "fortune.com",
+  "axios": "axios.com",
+  "coindesk": "coindesk.com",
+  "coin desk": "coindesk.com",
+  "cointelegraph": "cointelegraph.com",
+  "coin telegraph": "cointelegraph.com",
+  "the block": "theblock.co",
+  "decrypt": "decrypt.co",
+  "law360": "law360.com",
+  "abi journal": "abi.org",
+  "american bankruptcy institute": "abi.org",
+  "grant's": "grantspub.com",
+  "grant's interest rate observer": "grantspub.com",
+  "politico": "politico.com",
+  "the information": "theinformation.com",
+  "techcrunch": "techcrunch.com",
+  "wired": "wired.com",
+  "the verge": "theverge.com",
+  "variety": "variety.com",
+  "hollywood reporter": "hollywoodreporter.com",
+  "the hollywood reporter": "hollywoodreporter.com",
+  "guardian": "theguardian.com",
+  "the guardian": "theguardian.com",
+  "washington post": "washingtonpost.com",
+  "the washington post": "washingtonpost.com",
+  "cnbc": "cnbc.com",
+  "cnn": "cnn.com",
+  "barron's": "barrons.com",
+  "barrons": "barrons.com",
+  "seeking alpha": "seekingalpha.com",
+  "yahoo finance": "finance.yahoo.com",
+  "the atlantic": "theatlantic.com",
+  "new yorker": "newyorker.com",
+  "the new yorker": "newyorker.com",
+  "slate": "slate.com",
+  "vox": "vox.com",
+  "business insider": "businessinsider.com",
+  "insider": "businessinsider.com",
+  "morning brew": "morningbrew.com",
+  "the economist": "economist.com",
+};
+
 /* ── Data-driven from src/data/press.json (managed via /#/admin) ─────────────
    author === "Other" (or unset)              → In the press
    author === "Andrew", type !== "social post" → Articles & Commentary
@@ -173,11 +233,17 @@ export default function Press() {
 
       {/* ── LinkedIn Posts ────────────────────────────────────────── */}
       <section style={{
-        background: "#F4F5F7",
+        background: "#080C12",
         padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
-        borderTop: `1px solid ${LINE}`,
+        borderTop: "1px solid rgba(10,102,194,0.2)",
+        position: "relative", overflow: "hidden",
       }}>
-        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+        {/* Subtle dark gradient accent */}
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: "radial-gradient(70% 50% at 50% 0%, rgba(10,102,194,0.07), transparent 70%)",
+        }} />
+        <div style={{ maxWidth: 1440, margin: "0 auto", position: "relative" }}>
           <div style={{
             display: "grid",
             gridTemplateColumns: "minmax(0,1fr) minmax(0,1.4fr)",
@@ -192,24 +258,22 @@ export default function Press() {
                 color: "#0A66C2", marginBottom: "1.2rem",
                 display: "flex", alignItems: "center", gap: "0.5em",
               }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="#0A66C2" style={{ flexShrink: 0 }}>
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
+                <LinkedInSVG size={14} color="#0A66C2" />
                 LinkedIn
               </p>
               <h2 style={{
                 fontFamily: FONT, fontWeight: 800,
                 fontSize: "clamp(2rem,4.5vw,4rem)",
                 lineHeight: 1.02, letterSpacing: "-0.04em",
-                color: INK, margin: 0,
+                color: "#fff", margin: 0,
               }}>
                 On the<br />
-                <span className="accent-light">feed.</span>
+                <span style={{ color: NEON }}>feed.</span>
               </h2>
             </div>
             <p style={{
               fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
-              color: INK_60, lineHeight: 1.6, maxWidth: 640,
+              color: "rgba(255,255,255,0.55)", lineHeight: 1.6, maxWidth: 640,
             }}>
               Posts from Andrew on LinkedIn — market commentary, case updates, and observations from the claims desk.
             </p>
@@ -217,8 +281,8 @@ export default function Press() {
 
           {LINKEDIN_POSTS.length === 0 ? (
             <div style={{
-              padding: "3rem", border: `1px dashed ${LINE}`,
-              color: INK_60, fontFamily: FONT, fontSize: "0.92rem",
+              padding: "3rem", border: "1px dashed rgba(10,102,194,0.3)",
+              color: "rgba(255,255,255,0.35)", fontFamily: FONT, fontSize: "0.92rem",
               fontStyle: "italic", textAlign: "center",
             }}>
               LinkedIn posts to be added via admin — select type "Social post" and author "Andrew".
@@ -263,42 +327,62 @@ export default function Press() {
   );
 }
 
+/* ── Clearbit logo helper ────────────────────────────────────────────────── */
+function OutletLogo({ name, style = {} }) {
+  const domain = name ? OUTLET_DOMAINS[name.toLowerCase().trim()] : null;
+  if (!domain) return null;
+  return (
+    <img
+      src={`https://logo.clearbit.com/${domain}`}
+      alt={name}
+      style={{
+        height: 22, maxWidth: 110, width: "auto",
+        objectFit: "contain", objectPosition: "left center",
+        display: "block", marginBottom: "0.9rem",
+        ...style,
+      }}
+      onError={e => { e.currentTarget.style.display = "none"; }}
+    />
+  );
+}
+
 /* ── Card components ─────────────────────────────────────────────────────── */
 
 function PressCard({ item }) {
   const [hovered, setHovered] = useState(false);
   const inner = (
     <div style={{
-      borderTop: `2px solid ${INK}`,
-      padding: "1.4rem 0 0",
       opacity: hovered && item.href ? 0.65 : 1,
       transition: "opacity 0.2s",
     }}>
-      <p style={{
-        fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-        letterSpacing: "0.18em", textTransform: "uppercase",
-        color: INK_60, marginBottom: "0.7rem",
-      }}>
-        {item.outlet}{item.date ? ` · ${item.date}` : ""}
-      </p>
-      <h3 style={{
-        fontFamily: FONT, fontWeight: 800,
-        fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
-        lineHeight: 1.3, letterSpacing: "-0.01em",
-        color: INK, marginBottom: item.excerpt ? "0.75rem" : 0,
-      }}>
-        {item.headline}
-      </h3>
-      {item.excerpt && (
+      <OutletLogo name={item.outlet} />
+      <div style={{ borderTop: `2px solid ${INK}`, paddingTop: "1.4rem" }}>
         <p style={{
-          fontFamily: FONT, fontSize: "0.95rem",
-          color: INK_60, lineHeight: 1.6,
-          borderLeft: `3px solid ${NEON}`,
-          paddingLeft: "0.8rem", margin: 0,
+          fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+          letterSpacing: "0.18em", textTransform: "uppercase",
+          color: INK_60, marginBottom: "0.7rem",
         }}>
-          "{item.excerpt}"
+          {item.outlet}{item.date ? ` · ${item.date}` : ""}
         </p>
-      )}
+        <h3 style={{
+          fontFamily: FONT, fontWeight: 800,
+          fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
+          lineHeight: 1.3, letterSpacing: "-0.01em",
+          color: INK, marginBottom: item.excerpt ? "0.75rem" : 0,
+        }}>
+          {item.headline}
+        </h3>
+        {item.excerpt && (
+          <p style={{
+            fontFamily: FONT, fontSize: "0.95rem",
+            color: INK_60, lineHeight: 1.6,
+            borderLeft: `3px solid ${NEON}`,
+            paddingLeft: "0.8rem", margin: 0,
+          }}>
+            "{item.excerpt}"
+          </p>
+        )}
+      </div>
     </div>
   );
   if (item.href) {
@@ -324,7 +408,9 @@ function ByAndrewCard({ item }) {
       padding: "clamp(1.5rem, 3vw, 2rem)",
       opacity: hovered && item.href ? 0.65 : 1,
       transition: "opacity 0.2s",
+      height: "100%", boxSizing: "border-box",
     }}>
+      <OutletLogo name={item.venue} style={{ marginBottom: "1rem", filter: "grayscale(1)", opacity: 0.6 }} />
       <p style={{
         fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
         letterSpacing: "0.18em", textTransform: "uppercase",
@@ -365,54 +451,85 @@ function ByAndrewCard({ item }) {
   return <div>{inner}</div>;
 }
 
+/* LinkedIn SVG icon reused in two places */
+const LinkedInSVG = ({ size = 16, color = "#fff" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={color} style={{ flexShrink: 0 }}>
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+);
+
 function LinkedInCard({ item }) {
   const [hovered, setHovered] = useState(false);
   const inner = (
     <div style={{
-      background: "#fff",
-      border: `1px solid ${LINE}`,
-      borderTop: "3px solid #0A66C2",
-      padding: "1.4rem 1.5rem",
+      background: "#0D1827",
+      border: "1px solid rgba(10,102,194,0.35)",
+      padding: "1.6rem 1.8rem",
       height: "100%", boxSizing: "border-box",
-      opacity: hovered && item.href ? 0.72 : 1,
+      opacity: hovered && item.href ? 0.8 : 1,
       transition: "opacity 0.2s",
-      display: "flex", flexDirection: "column", gap: "0.65rem",
+      display: "flex", flexDirection: "column", gap: "0.75rem",
+      position: "relative", overflow: "hidden",
     }}>
-      {/* Header row: LinkedIn icon + date */}
-      <div style={{ display: "flex", alignItems: "center", gap: "0.45em" }}>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="#0A66C2" style={{ flexShrink: 0 }}>
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-        </svg>
-        <span style={{
-          fontFamily: FONT, fontSize: "0.68rem", fontWeight: 700,
-          letterSpacing: "0.12em", textTransform: "uppercase", color: "#0A66C2",
-        }}>
-          {item.date || "LinkedIn"}
-        </span>
+      {/* Subtle blue glow top-left */}
+      <div style={{
+        position: "absolute", inset: 0, pointerEvents: "none",
+        background: "radial-gradient(60% 55% at 0% 0%, rgba(10,102,194,0.18), transparent 65%)",
+      }} />
+      {/* Header: LinkedIn logo + date */}
+      <div style={{
+        display: "flex", alignItems: "center",
+        justifyContent: "space-between", position: "relative",
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.45em" }}>
+          <LinkedInSVG size={15} color="#0A66C2" />
+          <span style={{
+            fontFamily: FONT, fontSize: "0.68rem", fontWeight: 700,
+            letterSpacing: "0.12em", textTransform: "uppercase",
+            color: "#0A66C2",
+          }}>
+            LinkedIn
+          </span>
+        </div>
+        {item.date && (
+          <span style={{
+            fontFamily: FONT, fontSize: "0.68rem",
+            color: "rgba(255,255,255,0.3)", letterSpacing: "0.04em",
+          }}>
+            {item.date}
+          </span>
+        )}
       </div>
-      {/* Optional title/topic */}
+      {/* Optional topic/title label */}
       {item.title && (
         <p style={{
-          fontFamily: FONT, fontWeight: 700, fontSize: "0.95rem",
-          color: INK, lineHeight: 1.3, margin: 0,
+          fontFamily: FONT, fontWeight: 700, fontSize: "0.85rem",
+          color: "rgba(255,255,255,0.5)", lineHeight: 1.3,
+          margin: 0, position: "relative",
+          textTransform: "uppercase", letterSpacing: "0.06em",
         }}>
           {item.title}
         </p>
       )}
-      {/* Post text */}
+      {/* Post excerpt — hero text */}
       {item.excerpt && (
         <p style={{
-          fontFamily: FONT, fontSize: "0.92rem",
-          color: INK_60, lineHeight: 1.65, margin: 0, flex: 1,
+          fontFamily: FONT,
+          fontSize: "clamp(0.97rem, 1.2vw, 1.05rem)",
+          color: "rgba(255,255,255,0.85)",
+          lineHeight: 1.7, margin: 0, flex: 1,
+          position: "relative",
+          fontStyle: "italic",
         }}>
-          {item.excerpt}
+          "{item.excerpt}"
         </p>
       )}
-      {/* View post link */}
+      {/* View post CTA */}
       {item.href && (
         <span style={{
           fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
-          color: "#0A66C2", letterSpacing: "0.02em", marginTop: "auto",
+          color: "#0A66C2", letterSpacing: "0.04em",
+          marginTop: "auto", position: "relative",
         }}>
           View post →
         </span>
@@ -431,5 +548,5 @@ function LinkedInCard({ item }) {
       </a>
     );
   }
-  return <div>{inner}</div>;
+  return <div style={{ height: "100%" }}>{inner}</div>;
 }
