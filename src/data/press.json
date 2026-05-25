@@ -1,4 +1,13 @@
 {
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
-  "items": []
+  "items": [
+    {
+      "type": "podcast",
+      "date": "February 2025",
+      "url": "https://www.nalufinance.com/post/andrew-glantz-opportunities-in-bankruptcy",
+      "excerpt": "In this episode of Nalu Finance, we sit down with Andrew Glantz to explore the $40-50 billion market of bankruptcy claims trading. Andrew dives deep into the risks and rewards of investing in bankruptcy claims, including why this asset class remains largely uncorrelated to traditional markets, the four key risks investors must assess, and how careful research can uncover significant value-creation opportunities. He also unpacks the extraordinary case of FTX bankruptcy claims, where early buyers saw 10x+ returns as assets were uncovered.",
+      "publication_title": "Nalu Finance Podcast",
+      "piece_title": "Opportunities in Bankruptcy"
+    }
+  ]
 }
