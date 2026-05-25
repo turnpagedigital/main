@@ -192,29 +192,30 @@ export default function Press() {
       {/* ── Page header ─────────────────────────────────────────────────── */}
       <section style={{
         background: "#FFFFFF",
-        padding: "clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 4rem)",
+        padding: "clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 5vw, 4rem)",
         borderTop: `1px solid ${LINE}`,
       }}>
-        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-          <p style={{
-            fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-            letterSpacing: "0.22em", textTransform: "uppercase",
-            color: INK_60, marginBottom: "1.2rem",
-          }}>
-            Overview
-          </p>
+        <div style={{
+          maxWidth: 1440, margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)",
+          gap: "clamp(2rem,5vw,5rem)",
+          alignItems: "center",
+        }} className="press-header">
+          {/* Left: heading */}
           <h2 style={{
             fontFamily: FONT, fontWeight: 800,
             fontSize: "clamp(2rem,4.5vw,4rem)",
             lineHeight: 1.02, letterSpacing: "-0.04em",
-            color: INK, margin: "0 0 1.4rem",
+            color: INK, margin: 0,
           }}>
             Press &<br />
             <span className="accent-light">Publications.</span>
           </h2>
+          {/* Right: description */}
           <p style={{
             fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.15rem)",
-            color: INK_60, lineHeight: 1.6, maxWidth: 560, margin: 0,
+            color: INK_60, lineHeight: 1.6, margin: 0,
           }}>
             Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.
           </p>
@@ -283,7 +284,8 @@ export default function Press() {
 
         /* Responsive grid */
         @media (max-width: 880px) {
-          .press-grid  { grid-template-columns: repeat(2, 1fr) !important; }
+          .press-header { grid-template-columns: 1fr !important; }
+          .press-grid   { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 560px) {
           .press-grid  { grid-template-columns: 1fr !important; }
