@@ -64,6 +64,20 @@ const PRESS_PAGE_LABELS = {
   "bankruptcy":         "Bankruptcy",
 };
 
+/* Parse freeform date strings into a sortable timestamp (0 = unknown → bottom) */
+function parseDateForSort(str) {
+  if (!str) return 0;
+  const d = new Date(str);
+  if (!isNaN(d)) return d.getTime();
+  // "March 2025", "Jan 2026", etc.
+  const m = str.match(/([A-Za-z]+)\s+(\d{4})/);
+  if (m) { const d2 = new Date(`${m[1]} 1, ${m[2]}`); if (!isNaN(d2)) return d2.getTime(); }
+  // "2025" bare year
+  const y = str.match(/^(\d{4})$/);
+  if (y) return new Date(`${y[1]}-01-01`).getTime();
+  return 0;
+}
+
 function blankPressItem() {
   return { type: "publication", author: "Other", pages: [], date: "", url: "", excerpt: "", publication_title: "", piece_title: "" };
 }
@@ -177,6 +191,7 @@ export default function Admin() {
       const body = await r.json();
       if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
       const fresh = (body.data.items || []).map(sanitizePressItem);
+      fresh.sort((a, b) => parseDateForSort(b.date) - parseDateForSort(a.date));
       setPressItems(fresh);
       setOriginalPressItems(JSON.parse(JSON.stringify(fresh)));
       setPressPhase("ready");
@@ -780,6 +795,18 @@ function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt
 
 function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastSavedAt }) {
   const isSaving = phase === "saving";
+  const [filterType,   setFilterType]   = useState("");
+  const [filterAuthor, setFilterAuthor] = useState("");
+  const [filterPage,   setFilterPage]   = useState("");
+
+  const isFiltered = !!(filterType || filterAuthor || filterPage);
+
+  const displayItems = isFiltered ? items.filter(item => {
+    if (filterType   && item.type   !== filterType)   return false;
+    if (filterAuthor && item.author !== filterAuthor) return false;
+    if (filterPage   && !(Array.isArray(item.pages) && item.pages.includes(filterPage))) return false;
+    return true;
+  }) : items;
 
   function updateItem(i, field, value) {
     const next = items.slice();
@@ -798,7 +825,8 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
     onChangeItems(items.filter((_, idx) => idx !== i));
   }
   function addItem() {
-    onChangeItems([...items, blankPressItem()]);
+    // Insert at the top so the new (undated) item is immediately visible
+    onChangeItems([blankPressItem(), ...items]);
   }
 
   return (
@@ -833,17 +861,55 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
         </div>
       )}
 
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.75rem" }}>
-        {items.length} item{items.length !== 1 ? "s" : ""} — <strong>Publications</strong> and <strong>Podcasts</strong> appear under "In the press". <strong>Articles</strong> and <strong>Blog posts</strong> appear under "Articles &amp; Commentary". <strong>Social posts</strong> appear in the "On the feed" section — set the Platform field to LinkedIn, X, Substack, etc.
-      </p>
+      {/* Filter bar */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap",
+        marginBottom: "0.9rem", padding: "0.7rem 0.9rem",
+        background: "#fff", border: `1px solid ${LINE}`,
+      }}>
+        <span style={{ fontSize: "0.75rem", fontWeight: 700, color: INK_60, textTransform: "uppercase", letterSpacing: "0.1em", marginRight: "0.2rem" }}>
+          Filter
+        </span>
+        <select value={filterType} onChange={e => setFilterType(e.target.value)} style={filterSelectStyle}>
+          <option value="">All types</option>
+          {PRESS_TYPE_VALUES.map(t => <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>)}
+        </select>
+        <select value={filterAuthor} onChange={e => setFilterAuthor(e.target.value)} style={filterSelectStyle}>
+          <option value="">All authors</option>
+          {PRESS_AUTHOR_VALUES.map(a => <option key={a} value={a}>{a}</option>)}
+        </select>
+        <select value={filterPage} onChange={e => setFilterPage(e.target.value)} style={filterSelectStyle}>
+          <option value="">All sub-pages</option>
+          {PRESS_PAGE_VALUES.map(v => <option key={v} value={v}>{PRESS_PAGE_LABELS[v]}</option>)}
+        </select>
+        {isFiltered && (
+          <button
+            onClick={() => { setFilterType(""); setFilterAuthor(""); setFilterPage(""); }}
+            style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.7rem", color: "#c44", borderColor: "#f4caca" }}
+          >
+            Clear
+          </button>
+        )}
+        <span style={{ marginLeft: "auto", fontSize: "0.78rem", color: INK_60 }}>
+          {isFiltered ? `${displayItems.length} of ${items.length}` : `${items.length}`} item{items.length !== 1 ? "s" : ""}
+          {!isFiltered && <span style={{ color: "rgba(0,0,0,0.3)", marginLeft: "0.4em" }}>· sorted newest first</span>}
+        </span>
+      </div>
+
+      <div style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.75rem" }}>
+        <strong>Publications</strong> &amp; <strong>Podcasts</strong> → "In the press" · <strong>Articles</strong> &amp; <strong>Blog posts</strong> → "Articles &amp; Commentary" · <strong>Social posts</strong> → "On the feed" (set Platform field to LinkedIn, X, etc.)
+      </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "2.5rem" }}>
-        {items.map((item, i) => (
+        {displayItems.map((item) => {
+          const i = items.indexOf(item);
+          return (
           <div key={i} style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem" }}>
             {/* Row header */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.9rem" }}>
               <div style={{ flex: 1, fontWeight: 700, fontSize: "0.85rem", color: INK_60 }}>
-                #{i + 1} — <span style={{ textTransform: "capitalize" }}>{item.type}</span>
+                {item.date ? <span style={{ color: INK, marginRight: "0.4em" }}>{item.date}</span> : null}
+                <span style={{ textTransform: "capitalize" }}>{item.type}</span>
                 {Array.isArray(item.pages) && item.pages.map(p => (
                   <span key={p} style={{
                     marginLeft: "0.3rem", background: "#0A0A0A", color: NEON,
@@ -856,9 +922,11 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
                 {item.publication_title && ` · ${item.publication_title}`}
                 {item.piece_title && ` — "${item.piece_title}"`}
               </div>
-              <button onClick={() => moveItem(i, -1)} disabled={i === 0}                style={iconBtnStyle(i === 0)}               title="Move up">↑</button>
-              <button onClick={() => moveItem(i, 1)}  disabled={i === items.length - 1} style={iconBtnStyle(i === items.length - 1)} title="Move down">↓</button>
-              <button onClick={() => deleteItem(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }}                               title="Delete">×</button>
+              {!isFiltered && <>
+                <button onClick={() => moveItem(i, -1)} disabled={i === 0}                style={iconBtnStyle(i === 0)}               title="Move up">↑</button>
+                <button onClick={() => moveItem(i, 1)}  disabled={i === items.length - 1} style={iconBtnStyle(i === items.length - 1)} title="Move down">↓</button>
+              </>}
+              <button onClick={() => deleteItem(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
             </div>
 
             {/* Fields */}
@@ -982,11 +1050,12 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
               </label>
             </div>
           </div>
-        ))}
+          );
+        })}
 
-        {items.length === 0 && (
+        {displayItems.length === 0 && (
           <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
-            No press items yet. Click "+ Add press item" to get started.
+            {isFiltered ? "No items match the current filters." : "No press items yet. Click \"+ Add press item\" to get started."}
           </div>
         )}
 
@@ -1079,6 +1148,12 @@ function formatTime(d) {
 }
 
 // --- Styles ------------------------------------------------------------------
+
+const filterSelectStyle = {
+  padding: "0.32rem 0.6rem", border: `1px solid ${LINE}`, borderRadius: 0,
+  fontFamily: FONT, fontSize: "0.82rem", color: INK,
+  background: "#fff", cursor: "pointer", outline: "none",
+};
 
 const inputStyle = {
   display: "block", width: "100%", marginTop: "0.3rem",
