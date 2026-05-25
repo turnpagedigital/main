@@ -5,16 +5,13 @@ import BottomCTA from "../components/BottomCTA.jsx";
 import pressData from "../data/press.json";
 
 /* ── Data-driven from src/data/press.json (managed via /#/admin) ─────────────
-   Types "publication" and "podcast" → In the press section
-   Types "article", "social post", "blog post" → By Andrew section          */
-const MEDIA_TYPES = new Set(["publication", "podcast"]);
-const AUTHOR_TYPES = new Set(["article", "social post", "blog post"]);
-
+   author === "Andrew" → Articles & Commentary section
+   author === "Other" (or unset) → In the press section               */
 const ALL_ITEMS = (pressData.items || []);
 
 // Map to the shape each card component expects
 const PRESS_ITEMS = ALL_ITEMS
-  .filter(d => MEDIA_TYPES.has(d.type))
+  .filter(d => d.author !== "Andrew")
   .map(d => ({
     outlet:   d.publication_title,
     date:     d.date || null,
@@ -24,7 +21,7 @@ const PRESS_ITEMS = ALL_ITEMS
   }));
 
 const BY_ANDREW = ALL_ITEMS
-  .filter(d => AUTHOR_TYPES.has(d.type))
+  .filter(d => d.author === "Andrew")
   .map(d => ({
     venue:   d.publication_title,
     date:    d.date || null,

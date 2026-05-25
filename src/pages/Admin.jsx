@@ -54,13 +54,16 @@ function sanitizeBio(d) {
 
 const PRESS_TYPE_VALUES = ["publication", "podcast", "article", "social post", "blog post"];
 
+const PRESS_AUTHOR_VALUES = ["Other", "Andrew"];
+
 function blankPressItem() {
-  return { type: "publication", date: "", url: "", excerpt: "", publication_title: "", piece_title: "" };
+  return { type: "publication", author: "Other", date: "", url: "", excerpt: "", publication_title: "", piece_title: "" };
 }
 
 function sanitizePressItem(d) {
   return {
     type:              PRESS_TYPE_VALUES.includes(d.type) ? d.type : "publication",
+    author:            PRESS_AUTHOR_VALUES.includes(d.author) ? d.author : "Other",
     date:              typeof d.date              === "string" ? d.date              : "",
     url:               typeof d.url               === "string" ? d.url               : "",
     excerpt:           typeof d.excerpt           === "string" ? d.excerpt           : "",
@@ -853,6 +856,19 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
                   {PRESS_TYPE_VALUES.map(t => (
                     <option key={t} value={t} style={{ textTransform: "capitalize" }}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>
                   ))}
+                </select>
+              </label>
+
+              {/* Author */}
+              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+                Author
+                <select
+                  value={item.author || "Other"}
+                  onChange={e => updateItem(i, "author", e.target.value)}
+                  style={{ ...inputStyle, cursor: "pointer" }}
+                >
+                  <option value="Other">Other — appears "In the press"</option>
+                  <option value="Andrew">Andrew — appears in "Articles &amp; Commentary"</option>
                 </select>
               </label>
 
