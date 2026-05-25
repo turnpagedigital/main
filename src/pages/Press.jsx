@@ -64,10 +64,19 @@ const OUTLET_DOMAINS = {
   "the economist": "economist.com",
 };
 
+/* ── Sub-page label map (mirrors admin) ─────────────────────────────────── */
+const PAGE_LABELS = {
+  "copyright":  "Copyright Claims",
+  "crypto":     "Locked Crypto",
+  "litigation": "Litigation Claims",
+  "tariffs":    "Tariff Refunds",
+  "bankruptcy": "Bankruptcy Claims",
+};
+
 /* ── Data-driven from src/data/press.json (managed via /#/admin) ─────────────
    author === "Other" (or unset)              → In the press
    author === "Andrew", type !== "social post" → Articles & Commentary
-   author === "Andrew", type === "social post" → LinkedIn Posts         */
+   author === "Andrew", type === "social post" → Social feed              */
 const ALL_ITEMS = (pressData.items || []);
 
 const PRESS_ITEMS = ALL_ITEMS
@@ -78,6 +87,7 @@ const PRESS_ITEMS = ALL_ITEMS
     headline: d.piece_title,
     excerpt:  d.excerpt || null,
     href:     d.url || null,
+    pages:    Array.isArray(d.pages) ? d.pages : [],
   }));
 
 const BY_ANDREW = ALL_ITEMS
@@ -88,16 +98,18 @@ const BY_ANDREW = ALL_ITEMS
     title:   d.piece_title,
     excerpt: d.excerpt || null,
     href:    d.url || null,
+    pages:   Array.isArray(d.pages) ? d.pages : [],
   }));
 
 const SOCIAL_POSTS = ALL_ITEMS
   .filter(d => d.author === "Andrew" && d.type === "social post")
   .map(d => ({
-    platform: d.publication_title || "",   // e.g. "LinkedIn", "X", "Substack"
+    platform: d.publication_title || "",
     date:     d.date || null,
     title:    d.piece_title || null,
     excerpt:  d.excerpt || null,
     href:     d.url || null,
+    pages:    Array.isArray(d.pages) ? d.pages : [],
   }));
 
 export default function Press() {
@@ -331,6 +343,25 @@ export default function Press() {
   );
 }
 
+/* ── Sub-page tags ───────────────────────────────────────────────────────── */
+function PageTags({ pages, dark = false }) {
+  if (!pages || pages.length === 0) return null;
+  return (
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", marginTop: "0.9rem" }}>
+      {pages.map(p => (
+        <span key={p} style={{
+          fontFamily: FONT, fontSize: "0.62rem", fontWeight: 800,
+          letterSpacing: "0.1em", textTransform: "uppercase",
+          background: NEON, color: "#000",
+          padding: "0.2em 0.5em",
+        }}>
+          {PAGE_LABELS[p] || p}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 /* ── Clearbit logo helper ────────────────────────────────────────────────── */
 function OutletLogo({ name, style = {} }) {
   const domain = name ? OUTLET_DOMAINS[name.toLowerCase().trim()] : null;
@@ -388,6 +419,7 @@ function PressCard({ item }) {
             "{item.excerpt}"
           </p>
         )}
+        <PageTags pages={item.pages} />
       </div>
     </div>
   );
@@ -452,6 +484,7 @@ function ByAndrewCard({ item }) {
           {item.excerpt}
         </p>
       )}
+      <PageTags pages={item.pages} />
     </div>
   );
   if (item.href) {
@@ -580,6 +613,7 @@ function SocialPostCard({ item }) {
           "{item.excerpt}"
         </p>
       )}
+      <PageTags pages={item.pages} />
       {/* View post CTA */}
       {item.href && (
         <span style={{
