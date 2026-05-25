@@ -75,6 +75,7 @@ export default function Admin() {
   const [deals, setDeals] = useState(null);
   const [original, setOriginal] = useState(null);
   const [lastSavedAt, setLastSavedAt] = useState(null);
+  const [tab, setTab] = useState("bio");
 
   // Bio state — independent of deals
   const [bio, setBio] = useState(null);
@@ -316,34 +317,70 @@ export default function Admin() {
     updateList((list) => [...list, blankDeal()]);
   }
 
+  const TAB_DEFS = [
+    { key: "bio",   label: "Bio",    dirty: bioDirty },
+    { key: "deals", label: "Deals",  dirty: isDirty  },
+    { key: "press", label: "Press",  dirty: pressDirty },
+  ];
+
   return (
     <div style={{ background: "#F4F5F7", minHeight: "100vh", fontFamily: FONT, color: INK }}>
-      {/* Top bar */}
+
+      {/* ── Top bar ───────────────────────────────────────────────── */}
       <div style={{
         position: "sticky", top: 0, zIndex: 10,
         background: "#FFFFFF", borderBottom: `1px solid ${LINE}`,
-        padding: "0.9rem clamp(1rem, 3vw, 2rem)",
-        display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap",
       }}>
-        <div style={{ fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.01em" }}>
-          Admin · Deals, Bio &amp; Press
-        </div>
-        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60 }}>
-          {phase === "saving" && "Saving…"}
-          {phase !== "saving" && isDirty && "Unsaved changes"}
-          {phase !== "saving" && !isDirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
-          {phase !== "saving" && !isDirty && !lastSavedAt && "Up to date"}
-        </div>
-        <button onClick={handleSave} disabled={!isDirty || phase === "saving"} style={{
-          ...btnPrimaryStyle,
-          opacity: (!isDirty || phase === "saving") ? 0.5 : 1,
-          cursor: (!isDirty || phase === "saving") ? "default" : "pointer",
+        {/* Title row */}
+        <div style={{
+          padding: "0.75rem clamp(1rem, 3vw, 2rem)",
+          display: "flex", alignItems: "center", gap: "1rem",
         }}>
-          {phase === "saving" ? "Saving…" : "Save"}
-        </button>
-        <button onClick={handleLogout} style={btnStyle}>Log out</button>
+          <div style={{ fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.01em", flex: 1 }}>
+            Turnpage Admin
+          </div>
+          <button onClick={handleLogout} style={btnStyle}>Log out</button>
+        </div>
+
+        {/* Tab row */}
+        <div style={{
+          display: "flex", alignItems: "stretch",
+          padding: "0 clamp(1rem, 3vw, 2rem)",
+          gap: 0, borderTop: `1px solid ${LINE}`,
+        }}>
+          {TAB_DEFS.map(({ key, label, dirty }) => {
+            const active = tab === key;
+            return (
+              <button
+                key={key}
+                onClick={() => setTab(key)}
+                style={{
+                  fontFamily: FONT, fontSize: "0.88rem",
+                  fontWeight: active ? 700 : 500,
+                  color: active ? INK : INK_60,
+                  background: "transparent", border: "none",
+                  borderBottom: active ? `2px solid ${INK}` : "2px solid transparent",
+                  padding: "0.7rem 1.4rem 0.7rem 0",
+                  marginRight: "1.8rem",
+                  cursor: "pointer",
+                  display: "inline-flex", alignItems: "center", gap: "0.45em",
+                  transition: "color 0.15s",
+                }}
+              >
+                {label}
+                {dirty && (
+                  <span style={{
+                    width: 7, height: 7, borderRadius: "50%",
+                    background: NEON, display: "inline-block", flexShrink: 0,
+                  }} />
+                )}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
+      {/* Global deals error banner */}
       {errorMsg && (
         <div style={{
           background: "#fce8e8", color: "#7a1a1a",
@@ -354,91 +391,117 @@ export default function Admin() {
         </div>
       )}
 
-      {/* ── Bio section ───────────────────────────────────────────── */}
-      {(bioPhase === "ready" || bioPhase === "saving") && bio ? (
-        <BioSection
-          bio={bio}
-          onChangeBio={(field, value) => setBio(b => ({ ...b, [field]: value }))}
-          onSave={handleSaveBio}
-          dirty={bioDirty}
-          phase={bioPhase}
-          error={bioError}
-          lastSavedAt={bioLastSavedAt}
-        />
-      ) : bioPhase === "loading" ? (
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "1.5rem clamp(1rem, 3vw, 2rem)", fontSize: "0.85rem", color: INK_60 }}>
-          Loading bio…
-        </div>
-      ) : bioPhase === "error" ? (
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 clamp(1rem, 3vw, 2rem) 1rem" }}>
-          <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", fontSize: "0.9rem", display: "flex", gap: "1rem", alignItems: "center" }}>
-            <span>Bio: {bioError}</span>
-            <button onClick={loadBio} style={btnStyle}>Retry</button>
-          </div>
-        </div>
-      ) : null}
-
-      {/* ── Press section ─────────────────────────────────────────── */}
-      {(pressPhase === "ready" || pressPhase === "saving") && pressItems !== null ? (
-        <PressSection
-          items={pressItems}
-          onChangeItems={setPressItems}
-          onSave={handleSavePress}
-          dirty={pressDirty}
-          phase={pressPhase}
-          error={pressError}
-          lastSavedAt={pressLastSavedAt}
-        />
-      ) : pressPhase === "loading" ? (
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "1.5rem clamp(1rem, 3vw, 2rem)", fontSize: "0.85rem", color: INK_60 }}>
-          Loading press…
-        </div>
-      ) : pressPhase === "error" ? (
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 clamp(1rem, 3vw, 2rem) 1rem" }}>
-          <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", fontSize: "0.9rem", display: "flex", gap: "1rem", alignItems: "center" }}>
-            <span>Press: {pressError}</span>
-            <button onClick={loadPress} style={btnStyle}>Retry</button>
-          </div>
-        </div>
-      ) : null}
-
-      {/* ── Deals section ─────────────────────────────────────────── */}
-      <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
-        <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
-          All deals ({list.length}) — use the <strong>Pages</strong> checkboxes on each card to control where it appears. Order here = order on each page.
-        </p>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-          {list.map((deal, i) => (
-            <DealRow
-              key={i}
-              index={i}
-              deal={deal}
-              onChange={(field, value) => updateDeal(i, field, value)}
-              onMoveUp={() => moveDeal(i, -1)}
-              onMoveDown={() => moveDeal(i, 1)}
-              onDelete={() => deleteDeal(i)}
-              isFirst={i === 0}
-              isLast={i === list.length - 1}
-            />
-          ))}
-          {list.length === 0 && (
-            <div style={{
-              padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`,
-              color: INK_60, textAlign: "center",
-            }}>
-              No deals yet.
+      {/* ── Bio tab ───────────────────────────────────────────────── */}
+      {tab === "bio" && (
+        (bioPhase === "ready" || bioPhase === "saving") && bio ? (
+          <BioSection
+            bio={bio}
+            onChangeBio={(field, value) => setBio(b => ({ ...b, [field]: value }))}
+            onSave={handleSaveBio}
+            dirty={bioDirty}
+            phase={bioPhase}
+            error={bioError}
+            lastSavedAt={bioLastSavedAt}
+          />
+        ) : bioPhase === "loading" ? (
+          <CenteredMessage>Loading bio…</CenteredMessage>
+        ) : bioPhase === "error" ? (
+          <div style={{ maxWidth: 1080, margin: "2rem auto", padding: "0 clamp(1rem, 3vw, 2rem)" }}>
+            <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", fontSize: "0.9rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+              <span>{bioError}</span>
+              <button onClick={loadBio} style={btnStyle}>Retry</button>
             </div>
-          )}
-          <button onClick={addDeal} style={{
-            ...btnStyle,
-            background: "transparent", border: `1px dashed ${LINE}`,
-            color: INK, padding: "1rem", fontWeight: 700,
+          </div>
+        ) : null
+      )}
+
+      {/* ── Deals tab ─────────────────────────────────────────────── */}
+      {tab === "deals" && (
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
+          {/* Deals section header */}
+          <div style={{
+            display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap",
+            marginBottom: "1.5rem", paddingBottom: "1rem",
+            borderBottom: `2px solid ${LINE}`,
           }}>
-            + Add deal
-          </button>
+            <div style={{ fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.01em" }}>
+              Deals
+            </div>
+            <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60 }}>
+              {phase === "saving" && "Saving…"}
+              {phase !== "saving" && isDirty && "Unsaved changes"}
+              {phase !== "saving" && !isDirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
+              {phase !== "saving" && !isDirty && !lastSavedAt && "Up to date"}
+            </div>
+            <button onClick={handleSave} disabled={!isDirty || phase === "saving"} style={{
+              ...btnPrimaryStyle,
+              opacity: (!isDirty || phase === "saving") ? 0.5 : 1,
+              cursor: (!isDirty || phase === "saving") ? "default" : "pointer",
+            }}>
+              {phase === "saving" ? "Saving…" : "Save Deals"}
+            </button>
+          </div>
+
+          <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
+            {list.length} deal{list.length !== 1 ? "s" : ""} — use the <strong>Pages</strong> checkboxes on each card to control where it appears. Order here = order on each page.
+          </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {list.map((deal, i) => (
+              <DealRow
+                key={i}
+                index={i}
+                deal={deal}
+                onChange={(field, value) => updateDeal(i, field, value)}
+                onMoveUp={() => moveDeal(i, -1)}
+                onMoveDown={() => moveDeal(i, 1)}
+                onDelete={() => deleteDeal(i)}
+                isFirst={i === 0}
+                isLast={i === list.length - 1}
+              />
+            ))}
+            {list.length === 0 && (
+              <div style={{
+                padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`,
+                color: INK_60, textAlign: "center",
+              }}>
+                No deals yet.
+              </div>
+            )}
+            <button onClick={addDeal} style={{
+              ...btnStyle,
+              background: "transparent", border: `1px dashed ${LINE}`,
+              color: INK, padding: "1rem", fontWeight: 700,
+            }}>
+              + Add deal
+            </button>
+          </div>
         </div>
-      </div>
+      )}
+
+      {/* ── Press tab ─────────────────────────────────────────────── */}
+      {tab === "press" && (
+        (pressPhase === "ready" || pressPhase === "saving") && pressItems !== null ? (
+          <PressSection
+            items={pressItems}
+            onChangeItems={setPressItems}
+            onSave={handleSavePress}
+            dirty={pressDirty}
+            phase={pressPhase}
+            error={pressError}
+            lastSavedAt={pressLastSavedAt}
+          />
+        ) : pressPhase === "loading" ? (
+          <CenteredMessage>Loading press…</CenteredMessage>
+        ) : pressPhase === "error" ? (
+          <div style={{ maxWidth: 1080, margin: "2rem auto", padding: "0 clamp(1rem, 3vw, 2rem)" }}>
+            <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", fontSize: "0.9rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+              <span>{pressError}</span>
+              <button onClick={loadPress} style={btnStyle}>Retry</button>
+            </div>
+          </div>
+        ) : null
+      )}
     </div>
   );
 }
