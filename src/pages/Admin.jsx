@@ -801,6 +801,23 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
   const [filterAuthor, setFilterAuthor] = useState("");
   const [filterPage,   setFilterPage]   = useState("");
 
+  // Managed option lists — initialised from defaults + any values already in the loaded items
+  const [typeOptions, setTypeOptions] = useState(() => {
+    const extra = items.map(it => it.type).filter(Boolean)
+      .filter(t => !PRESS_TYPE_SUGGESTIONS.includes(t));
+    return [...new Set([...PRESS_TYPE_SUGGESTIONS, ...extra])];
+  });
+  const [authorOptions, setAuthorOptions] = useState(() => {
+    const extra = items.map(it => it.author).filter(Boolean)
+      .filter(a => !PRESS_AUTHOR_SUGGESTIONS.includes(a));
+    return [...new Set([...PRESS_AUTHOR_SUGGESTIONS, ...extra])];
+  });
+
+  function addTypeOption(val)    { const v = val.trim(); if (!v) return; setTypeOptions(prev => prev.includes(v) ? prev : [...prev, v]); }
+  function removeTypeOption(val) { setTypeOptions(prev => prev.filter(t => t !== val)); }
+  function addAuthorOption(val)    { const v = val.trim(); if (!v) return; setAuthorOptions(prev => prev.includes(v) ? prev : [...prev, v]); }
+  function removeAuthorOption(val) { setAuthorOptions(prev => prev.filter(a => a !== val)); }
+
   const isFiltered = !!(filterType || filterAuthor || filterPage);
 
   // Derive unique type/author values from current items for the filter dropdowns
@@ -902,6 +919,16 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
         </span>
       </div>
 
+      {/* Option management strips */}
+      <div style={{
+        background: "#fff", border: `1px solid ${LINE}`,
+        padding: "0.65rem 0.9rem", marginBottom: "0.85rem",
+        display: "flex", flexDirection: "column", gap: "0.45rem",
+      }}>
+        <OptionChips label="Types"   options={typeOptions}   onRemove={removeTypeOption} />
+        <OptionChips label="Authors" options={authorOptions} onRemove={removeAuthorOption} />
+      </div>
+
       <div style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.75rem" }}>
         <strong>Publications</strong> &amp; <strong>Podcasts</strong> → "In the press" · <strong>Articles</strong> &amp; <strong>Blog posts</strong> → "Articles &amp; Commentary" · <strong>Social posts</strong> → "On the feed" (set Platform field to LinkedIn, X, etc.)
       </div>
@@ -947,27 +974,25 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.7rem 1rem" }} className="press-item-grid">
               {/* Type */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
-                Type <span style={{ fontWeight: 400 }}>(type anything or pick a suggestion)</span>
-                <input
-                  type="text"
-                  list="press-type-opts"
+                Type
+                <EditableSelect
                   value={item.type}
-                  onChange={e => updateItem(i, "type", e.target.value)}
-                  placeholder="publication"
-                  style={inputStyle}
+                  options={typeOptions}
+                  onChange={v => updateItem(i, "type", v)}
+                  onAddOption={addTypeOption}
+                  addPlaceholder="e.g. interview"
                 />
               </label>
 
               {/* Author */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
                 Author <span style={{ fontWeight: 400 }}>("Andrew" → Articles &amp; Commentary · anything else → In the press)</span>
-                <input
-                  type="text"
-                  list="press-author-opts"
+                <EditableSelect
                   value={item.author || ""}
-                  onChange={e => updateItem(i, "author", e.target.value)}
-                  placeholder="Andrew"
-                  style={inputStyle}
+                  options={authorOptions}
+                  onChange={v => updateItem(i, "author", v)}
+                  onAddOption={addAuthorOption}
+                  addPlaceholder="e.g. John Smith"
                 />
               </label>
 
@@ -1103,20 +1128,103 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
         </button>
       </div>
 
-      {/* Shared datalists for freeform type/author inputs */}
-      <datalist id="press-type-opts">
-        {PRESS_TYPE_SUGGESTIONS.map(t => <option key={t} value={t} />)}
-      </datalist>
-      <datalist id="press-author-opts">
-        {PRESS_AUTHOR_SUGGESTIONS.map(a => <option key={a} value={a} />)}
-      </datalist>
-
       <style>{`
         @media (max-width: 540px) {
           .press-item-grid { grid-template-columns: 1fr !important; }
           .press-item-grid label { grid-column: auto !important; }
         }
       `}</style>
+    </div>
+  );
+}
+
+/* A <select> with a sentinel "— Add new… —" option.
+   When the sentinel is chosen, an inline text input appears so the user can
+   type a new value; confirming adds it to the shared options list via onAddOption. */
+function EditableSelect({ value, options, onChange, onAddOption, addPlaceholder = "New value…" }) {
+  const [adding, setAdding] = useState(false);
+  const [draft,  setDraft]  = useState("");
+
+  function confirm() {
+    const v = draft.trim();
+    if (v) { onAddOption(v); onChange(v); }
+    setAdding(false);
+    setDraft("");
+  }
+
+  if (adding) {
+    return (
+      <div style={{ display: "flex", gap: "0.4rem", marginTop: "0.3rem" }}>
+        <input
+          autoFocus
+          type="text"
+          value={draft}
+          onChange={e => setDraft(e.target.value)}
+          onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); confirm(); } if (e.key === "Escape") { setAdding(false); setDraft(""); } }}
+          placeholder={addPlaceholder}
+          style={{ ...inputStyle, marginTop: 0, flex: 1 }}
+        />
+        <button type="button" onClick={confirm}
+          style={{ ...btnPrimaryStyle, padding: "0.45rem 0.75rem", fontSize: "0.82rem" }}>
+          Add
+        </button>
+        <button type="button" onClick={() => { setAdding(false); setDraft(""); }}
+          style={{ ...btnStyle, padding: "0.45rem 0.55rem", fontSize: "0.9rem" }}>
+          ✕
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <select
+      value={value}
+      onChange={e => {
+        if (e.target.value === "__add_new__") { setAdding(true); setDraft(""); }
+        else onChange(e.target.value);
+      }}
+      style={{ ...inputStyle, cursor: "pointer" }}
+    >
+      {options.map(o => (
+        <option key={o} value={o}>{o.charAt(0).toUpperCase() + o.slice(1)}</option>
+      ))}
+      <option disabled style={{ color: "#aaa" }}>──────────</option>
+      <option value="__add_new__">— Add new… —</option>
+    </select>
+  );
+}
+
+/* Renders a labelled row of removable chips — used to manage the type/author option lists. */
+function OptionChips({ label, options, onRemove }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flexWrap: "wrap" }}>
+      <span style={{
+        fontSize: "0.68rem", fontWeight: 700, color: INK_60,
+        textTransform: "uppercase", letterSpacing: "0.1em",
+        minWidth: "3.8rem", flexShrink: 0,
+      }}>
+        {label}:
+      </span>
+      {options.map(o => (
+        <span key={o} style={{
+          display: "inline-flex", alignItems: "center", gap: "0.2rem",
+          background: "#F4F5F7", border: `1px solid ${LINE}`,
+          padding: "0.15rem 0.35rem 0.15rem 0.55rem",
+          fontFamily: FONT, fontSize: "0.78rem", color: INK,
+        }}>
+          {o}
+          <button
+            type="button"
+            onClick={() => onRemove(o)}
+            title={`Remove "${o}" from list`}
+            style={{
+              background: "none", border: "none", cursor: "pointer",
+              color: "#c44", padding: "0 0.1rem", lineHeight: 1,
+              fontSize: "1rem", fontWeight: 700, fontFamily: FONT,
+            }}
+          >×</button>
+        </span>
+      ))}
     </div>
   );
 }
