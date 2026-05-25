@@ -4,6 +4,7 @@
     {
       "type": "podcast",
       "author": "Other",
+      "page": "",
       "date": "February 3, 2025",
       "url": "https://www.nalufinance.com/post/andrew-glantz-opportunities-in-bankruptcy",
       "excerpt": "In this episode of Nalu Finance, we sit down with Andrew Glantz to explore the $40-50 billion market of bankruptcy claims trading. Andrew dives deep into the risks and rewards of investing in bankruptcy claims, including why this asset class remains largely uncorrelated to traditional markets, the four key risks investors must assess, and how careful research can uncover significant value-creation opportunities. He also unpacks the extraordinary case of FTX bankruptcy claims, where early buyers saw 10x+ returns as assets were uncovered.",
@@ -13,6 +14,7 @@
     {
       "type": "blog post",
       "author": "Andrew",
+      "page": "",
       "date": "September 4, 2025",
       "url": "https://www.abi.org/committee-post/cardones-235m-via-mizner-bid-a-crypto-bankruptcy-experiment?check_logged_in=1",
       "excerpt": "Cardone’s bet is an unusual one. He proposes to merge the Via Mizner property with a $100 million slug of Bitcoin (BTC) and syndicate the package to retail investors. His pitch is that the real estate/BTC mix will allow him to plow rental cash flows into more BTC when crypto prices fall and to buy more real estate assets when crypto prices rise. But there are no obvious synergies between rental properties and BTC, and historically weak correlation between these asset classes mean both could easily fall in value at the same time. In June, the Ninth Circuit Court of Appeals in Christine Pino vs. Cardone Capital et al revived a securities class action lawsuit against Cardone Capital claiming fraudulent misrepresentation related to earlier real estate investment offerings. If this project fails, he’ll almost certainly face another.",
@@ -22,6 +24,7 @@
     {
       "type": "publication",
       "author": "Andrew",
+      "page": "",
       "date": "July 1, 2025",
       "url": "https://www.abi.org/abi-journal/the-illusion-of-advocacy-creditor-committees-and-divergent-interests-in-complex-chapter",
       "excerpt": "The unsecured creditors’ committee (UCC) is a fiduciary body appointed in chapter 11 cases to represent all unsecured creditors.1 When creditor interests are fractured, the UCC often finds itself hamstrung — unable to advocate for certain of its constituents without harming the interests of others. Sophisticated creditors will form unofficial “ad hoc” groups and engage counsel to represent their distinct objectives. Smaller or less-experienced creditors may, naively or due to inadequate resources, rely on the UCC or these ad hoc groups to advance their own priorities. By failing to organize early or at all, these creditors can find their interests sidelined at pivotal inflection points.",
@@ -31,6 +34,7 @@
     {
       "type": "podcast",
       "author": "Other",
+      "page": "",
       "date": "April 19, 2024",
       "url": "https://podcasts.apple.com/us/podcast/ftx-and-the-serengeti-of-bankruptcy/id290783428?i=1000653016793",
       "excerpt": "For the last year and a half, the story of FTX has focused largely on the crimes and punishment of Sam Bankman-Fried. But in the background, the actual customers he left behind have been caught in a financial feeding frenzy over the remains of the company.\n\nOn today's show, we do a deep dive into the anatomy of the FTX bankruptcy. We meet the vulture investors who make markets out of risky debt, and hear how customers fare in the secretive world of bankruptcy claims trading.\n",
@@ -40,11 +44,22 @@
     {
       "type": "social post",
       "author": "Andrew",
+      "page": "",
       "date": "May 2026",
       "url": "https://www.linkedin.com/posts/andrewglantz_homepage-share-7460768935009845248-jmtX/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADYlmUBIgr3_ZLp4FoChoF9AvaiOSl8Xd8",
       "excerpt": "Yesterday, class counsel in Bartz v. Anthropic PBC (N.D. Cal.) sought final approval of the $1.5 billion settlement and for the court to overrule all objections. At the hearing, counsel simultaneously disclosed a downsized fee request from 15% to 12.5% of the gross fund (approximately $187.5 million plus $3 million in incurred expenses, an $18.22 million cost reserve, and $50,000 service awards to each of the three class representatives). \n\nThe claimant participation rate is unprecedented: 440,490 of 482,460 eligible works, or 91.3% (as reported in April) compared to typical filing rates of 20-30%. The settlement is structured as a per-work compensation scheme with each work eligible to receive approximately $3,000 (far less than the $150,000 statutory limits), split among rights holders. \n\nJudge Martínez-Olguín took the ruling under submission and could approve the settlement on a final basis at any time in the coming days or weeks, which would trigger an additional funding requirement by Anthropic. \n\nKey developments to watch:\n\n→ June 11 - expected distributions per work to be calculated\n→ June 11 - appellate oral argument in Thomson Reuters v. ROSS on whether AI training constitutes fair-use\n→ July - Potential appeals by objecting parties (group-registration undercounting - Pinder, opt-out due process - Chakanga, and co-owner consent - Esquivel)\n\nMeanwhile, the docket for copyright cases against LLM providers continues to grow, with 60+ putative class actions working their way through the process.\n\n#Copyright #AILitigation #ClassAction #FairUse #BartzVAnthropic",
       "publication_title": "LinkedIn",
       "piece_title": "The largest copyright settlement in U.S. history just had its day in court."
+    },
+    {
+      "type": "article",
+      "author": "Other",
+      "page": "crypto",
+      "date": "February 2, 2023",
+      "url": "https://news.bloomberglaw.com/crypto/distressed-funds-eye-another-crypto-prize-in-genesis-bankruptcy",
+      "excerpt": "Just months after FTX’s collapse drew some of the largest distressed investors to crypto, the spiraling industry has thrown up a new high-profile target: Genesis.\n\nWhile the lender only filed for bankruptcy less than two weeks ago, the broker XClaim has confirmed three trades for its claims with an average value of over $1 million, in the range of 25% to 35% of face value, according to Chief Strategy Officer Andrew Glantz. A $4 million claim was sold to Jefferies Leveraged Credit Products LLC, according to a Tuesday filing.\n\nGenesis, a unit of Barry Silbert’s Digital Currency Group, ...",
+      "publication_title": "Bloomberg",
+      "piece_title": "Distressed Funds Eye Another Prize in Genesis Bankruptcy"
     }
   ]
 }
