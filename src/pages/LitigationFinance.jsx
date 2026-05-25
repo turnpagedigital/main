@@ -64,7 +64,7 @@ export default function LitigationFinance() {
       </Hero>
 
       {/* WHO WE HELP */}
-      <section className="surface-paper-2 section-pad">
+      <section id="who-we-help" className="surface-paper-2 section-pad">
         <div className="container">
           <SectionHeader
             eyebrow="Who We Help"

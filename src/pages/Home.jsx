@@ -444,7 +444,7 @@ function SituationsSection() {
 /* ─── LEADERSHIP ─── */
 function LeadershipSection() {
   return (
-    <section style={{
+    <section id="team" style={{
       background: "#F4F5F7",
       padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
       borderTop: `1px solid ${LINE}`,

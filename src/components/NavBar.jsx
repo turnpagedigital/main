@@ -3,24 +3,23 @@ import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 
-/* Nav items reference translation keys; labels are resolved at render time. */
+/* ─── Main site nav ──────────────────────────────────────────────────────── */
+
 const NAV_ITEMS = [
-  { key: "ai-copyright",      labelKey: "nav.copyright" },
-  { key: "crypto",            labelKey: "nav.crypto" },
-  { key: "litigation-finance",labelKey: "nav.litigation" },
-  { key: "tariff-refunds",    labelKey: "nav.tariff", externalHref: "https://www.rewindtariffs.com" },
-  { key: "press",             labelKey: "nav.press" },
+  { key: "ai-copyright",       labelKey: "nav.copyright" },
+  { key: "crypto",             labelKey: "nav.crypto" },
+  { key: "litigation-finance", labelKey: "nav.litigation" },
+  { key: "tariff-refunds",     labelKey: "nav.tariff", externalHref: "https://www.rewindtariffs.com" },
+  { key: "press",              labelKey: "nav.press" },
 ];
 
-/* Preview content shown when hovering over a nav item.
-   Keyed by nav item `key`. Items without an entry here render no dropdown. */
 const PREVIEWS = {
   "ai-copyright": {
     title: "Copyright Claims",
     body: "Capital and advisory for rights holders with claims against generative AI companies — Bartz, the OpenAI MDL, Concord, Getty.",
     links: [
       { label: "Top 12 active cases", href: hashHref("ai-copyright") + "#cases-section" },
-      { label: "Who we help",         href: hashHref("ai-copyright") },
+      { label: "Who we help",         href: hashHref("ai-copyright") + "#who-we-help" },
       { label: "Briefings",           href: hashHref("briefings") },
       { label: "FAQ",                 href: hashHref("ai-copyright") },
     ],
@@ -30,9 +29,9 @@ const PREVIEWS = {
     title: "Locked Crypto",
     body: "Liquidity for locked digital assets — FTX, Celsius, BlockFi, Voyager, Genesis, Mt. Gox. Quoted in fiat, closed in days.",
     links: [
-      { label: "Who we help",      href: hashHref("crypto") },
-      { label: "How it works",     href: hashHref("crypto") + "#how-crypto" },
-      { label: "FAQ",              href: hashHref("crypto") },
+      { label: "Who we help",  href: hashHref("crypto") + "#who-we-help" },
+      { label: "How it works", href: hashHref("crypto") + "#how-crypto" },
+      { label: "FAQ",          href: hashHref("crypto") },
     ],
     cta: { label: "Get a Quote", href: hashHref("contact") + "?source=crypto" },
   },
@@ -49,10 +48,10 @@ const PREVIEWS = {
     title: "Litigation Finance",
     body: "Turnpage helps the best law firms pursue cases on contingency — capital deployed against the merit of the case, not the client's ability to fund it.",
     links: [
-      { label: "Who we help",    href: hashHref("litigation-finance") },
-      { label: "What we fund",   href: hashHref("litigation-finance") + "#how-litfin" },
-      { label: "How it works",   href: hashHref("litigation-finance") + "#how-litfin" },
-      { label: "FAQ",            href: hashHref("litigation-finance") },
+      { label: "Who we help",  href: hashHref("litigation-finance") + "#who-we-help" },
+      { label: "What we fund", href: hashHref("litigation-finance") + "#how-litfin" },
+      { label: "How it works", href: hashHref("litigation-finance") + "#how-litfin" },
+      { label: "FAQ",          href: hashHref("litigation-finance") },
     ],
     cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=litigation-finance" },
   },
@@ -60,16 +59,48 @@ const PREVIEWS = {
     title: "Press & Publications",
     body: "Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.",
     links: [
-      { label: "Media coverage",    href: hashHref("press") },
-      { label: "By Andrew",         href: hashHref("press") },
-      { label: "Briefings",         href: hashHref("briefings") },
+      { label: "Media coverage", href: hashHref("press") },
+      { label: "By Andrew",      href: hashHref("press") },
+      { label: "Briefings",      href: hashHref("briefings") },
     ],
     cta: { label: "View all", href: hashHref("press") },
   },
 };
 
-/* Polestar-style clean white header with hover dropdowns showing preview
-   info for each desk/section.  Wraps the announcement banner outside. */
+/* ─── Microsite navs (one per sub-brand page) ───────────────────────────── */
+
+const MICROSITE_NAVS = {
+  "ai-copyright": {
+    brand:  { label: "Copyright Claims",     href: hashHref("ai-copyright") },
+    items: [
+      { label: "How We Help",         href: hashHref("ai-copyright") + "#who-we-help" },
+      { label: "Team",                href: hashHref("") + "#team" },
+      { label: "Press & Publications", href: hashHref("press") },
+    ],
+    cta: { label: "Get a Quote", href: hashHref("contact") + "?source=ai-copyright" },
+  },
+  "crypto": {
+    brand:  { label: "Locked Crypto",        href: hashHref("crypto") },
+    items: [
+      { label: "How We Help",         href: hashHref("crypto") + "#who-we-help" },
+      { label: "Team",                href: hashHref("") + "#team" },
+      { label: "Press & Publications", href: hashHref("press") },
+    ],
+    cta: { label: "Get a Quote", href: hashHref("contact") + "?source=crypto" },
+  },
+  "litigation-finance": {
+    brand:  { label: "Litigation Finance",   href: hashHref("litigation-finance") },
+    items: [
+      { label: "How We Help",         href: hashHref("litigation-finance") + "#who-we-help" },
+      { label: "Team",                href: hashHref("") + "#team" },
+      { label: "Press & Publications", href: hashHref("press") },
+    ],
+    cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=litigation-finance" },
+  },
+};
+
+/* ─── NavBar ────────────────────────────────────────────────────────────── */
+
 export default function NavBar({ currentPage }) {
   const [open, setOpen] = useState(false);
   const [activeDrop, setActiveDrop] = useState(null);
@@ -91,19 +122,17 @@ export default function NavBar({ currentPage }) {
     closeTimer.current = setTimeout(() => setActiveDrop(null), 140);
   }
 
+  const microsite = MICROSITE_NAVS[currentPage] || null;
   const dropContent = activeDrop ? PREVIEWS[activeDrop] : null;
 
   return (
-    <nav style={{
-      background: "#FFFFFF",
-      position: "relative",
-    }}>
+    <nav style={{ background: "#FFFFFF", position: "relative" }}>
       <div style={{
         maxWidth: 1440, margin: "0 auto",
         padding: "0.85rem clamp(1.25rem,3vw,2.5rem)",
         display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16,
       }}>
-        {/* Logo */}
+        {/* Logo — always links home */}
         <a
           href={hashHref("")}
           onClick={close}
@@ -117,58 +146,111 @@ export default function NavBar({ currentPage }) {
           />
         </a>
 
-        {/* Desktop links */}
-        <div className="nav-desktop" style={{ alignItems: "center", gap: "clamp(1rem,2vw,2rem)" }}>
-          {NAV_ITEMS.map(item => {
-            const active = !item.externalHref && currentPage === item.key;
-            const isExternal = Boolean(item.externalHref);
-            const hasPreview = Boolean(PREVIEWS[item.key]);
-            return (
+        {/* ── Desktop links ─────────────────────────────────────────── */}
+        {microsite ? (
+          /* Microsite nav — flat links, no dropdowns */
+          <div className="nav-desktop" style={{ alignItems: "center", gap: "clamp(1rem,2vw,2rem)" }}>
+            {/* Brand name — active/current */}
+            <a
+              href={microsite.brand.href}
+              style={{
+                fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700,
+                color: INK, letterSpacing: "0.005em",
+                borderBottom: `2px solid ${INK}`, paddingBottom: 2,
+              }}
+            >
+              {microsite.brand.label}
+            </a>
+
+            {/* Divider */}
+            <span style={{ width: 1, height: 16, background: LINE, flexShrink: 0 }} />
+
+            {/* Section links */}
+            {microsite.items.map(item => (
               <a
-                key={item.key}
-                href={isExternal ? item.externalHref : hashHref(item.key)}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noopener noreferrer" : undefined}
-                onMouseEnter={() => hasPreview ? openDrop(item.key) : setActiveDrop(null)}
-                onMouseLeave={hasPreview ? scheduleClose : undefined}
-                onFocus={() => hasPreview ? openDrop(item.key) : setActiveDrop(null)}
-                onBlur={hasPreview ? scheduleClose : undefined}
+                key={item.label}
+                href={item.href}
                 style={{
-                  fontFamily: FONT, fontSize: "0.92rem",
-                  fontWeight: active ? 700 : 500,
+                  fontFamily: FONT, fontSize: "0.92rem", fontWeight: 500,
                   color: INK, letterSpacing: "0.005em",
-                  transition: "opacity 0.2s",
-                  display: "inline-flex", alignItems: "center", gap: "0.4em",
-                  opacity: active ? 1 : (activeDrop === item.key ? 1 : 0.85),
-                  paddingBottom: 2,
-                  borderBottom: activeDrop === item.key ? `2px solid ${INK}` : "2px solid transparent",
+                  opacity: 0.75, transition: "opacity 0.15s",
+                  paddingBottom: 2, borderBottom: "2px solid transparent",
                 }}
+                onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.borderBottomColor = "rgba(10,10,10,0.2)"; }}
+                onMouseLeave={e => { e.currentTarget.style.opacity = "0.75"; e.currentTarget.style.borderBottomColor = "transparent"; }}
               >
-                {t(item.labelKey)}
-                {isExternal && (
-                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
-                    <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
-                  </svg>
-                )}
+                {item.label}
               </a>
-            );
-          })}
-          <a
-            href={hashHref("contact")}
-            onMouseEnter={() => setActiveDrop(null)}
-            style={{
-              fontFamily: FONT, fontSize: "0.82rem", fontWeight: 700,
-              color: INK, background: NEON,
-              padding: "0.65rem 1.3rem",
-              borderRadius: 0, letterSpacing: "0.02em",
-              transition: "background 0.2s",
-              display: "inline-block",
-            }}
-            onMouseLeave={e => { e.currentTarget.style.background = NEON; }}
-          >
-            {t("nav.contact")}
-          </a>
-        </div>
+            ))}
+
+            {/* CTA */}
+            <a
+              href={microsite.cta.href}
+              style={{
+                fontFamily: FONT, fontSize: "0.82rem", fontWeight: 700,
+                color: INK, background: NEON,
+                padding: "0.65rem 1.3rem",
+                letterSpacing: "0.02em",
+                display: "inline-block",
+              }}
+            >
+              {microsite.cta.label}
+            </a>
+          </div>
+        ) : (
+          /* Main site nav — with dropdowns */
+          <div className="nav-desktop" style={{ alignItems: "center", gap: "clamp(1rem,2vw,2rem)" }}>
+            {NAV_ITEMS.map(item => {
+              const active = !item.externalHref && currentPage === item.key;
+              const isExternal = Boolean(item.externalHref);
+              const hasPreview = Boolean(PREVIEWS[item.key]);
+              return (
+                <a
+                  key={item.key}
+                  href={isExternal ? item.externalHref : hashHref(item.key)}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  onMouseEnter={() => hasPreview ? openDrop(item.key) : setActiveDrop(null)}
+                  onMouseLeave={hasPreview ? scheduleClose : undefined}
+                  onFocus={() => hasPreview ? openDrop(item.key) : setActiveDrop(null)}
+                  onBlur={hasPreview ? scheduleClose : undefined}
+                  style={{
+                    fontFamily: FONT, fontSize: "0.92rem",
+                    fontWeight: active ? 700 : 500,
+                    color: INK, letterSpacing: "0.005em",
+                    transition: "opacity 0.2s",
+                    display: "inline-flex", alignItems: "center", gap: "0.4em",
+                    opacity: active ? 1 : (activeDrop === item.key ? 1 : 0.85),
+                    paddingBottom: 2,
+                    borderBottom: activeDrop === item.key ? `2px solid ${INK}` : "2px solid transparent",
+                  }}
+                >
+                  {t(item.labelKey)}
+                  {isExternal && (
+                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
+                      <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
+                    </svg>
+                  )}
+                </a>
+              );
+            })}
+            <a
+              href={hashHref("contact")}
+              onMouseEnter={() => setActiveDrop(null)}
+              style={{
+                fontFamily: FONT, fontSize: "0.82rem", fontWeight: 700,
+                color: INK, background: NEON,
+                padding: "0.65rem 1.3rem",
+                borderRadius: 0, letterSpacing: "0.02em",
+                transition: "background 0.2s",
+                display: "inline-block",
+              }}
+              onMouseLeave={e => { e.currentTarget.style.background = NEON; }}
+            >
+              {t("nav.contact")}
+            </a>
+          </div>
+        )}
 
         {/* Mobile toggle */}
         <button
@@ -190,8 +272,8 @@ export default function NavBar({ currentPage }) {
         </button>
       </div>
 
-      {/* Desktop dropdown panel — shows preview for hovered nav item */}
-      {dropContent && (
+      {/* Desktop dropdown — only on the main nav, not microsite nav */}
+      {!microsite && dropContent && (
         <div
           onMouseEnter={cancelClose}
           onMouseLeave={scheduleClose}
@@ -218,24 +300,17 @@ export default function NavBar({ currentPage }) {
                 fontFamily: FONT, fontSize: "0.74rem", fontWeight: 600,
                 letterSpacing: "0.22em", textTransform: "uppercase",
                 color: INK_60, marginBottom: "0.8rem",
-              }}>
-                Overview
-              </p>
+              }}>Overview</p>
               <h3 style={{
                 fontFamily: FONT, fontWeight: 800,
                 fontSize: "clamp(1.4rem, 2vw, 1.75rem)",
                 lineHeight: 1.15, letterSpacing: "-0.02em",
                 color: INK, marginBottom: "0.9rem",
-              }}>
-                {dropContent.title}
-              </h3>
+              }}>{dropContent.title}</h3>
               <p style={{
                 fontFamily: FONT, fontSize: "0.98rem",
-                color: INK_60, lineHeight: 1.55,
-                maxWidth: 460,
-              }}>
-                {dropContent.body}
-              </p>
+                color: INK_60, lineHeight: 1.55, maxWidth: 460,
+              }}>{dropContent.body}</p>
             </div>
 
             <div>
@@ -243,9 +318,7 @@ export default function NavBar({ currentPage }) {
                 fontFamily: FONT, fontSize: "0.74rem", fontWeight: 600,
                 letterSpacing: "0.22em", textTransform: "uppercase",
                 color: INK_60, marginBottom: "0.8rem",
-              }}>
-                Quick links
-              </p>
+              }}>Quick links</p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.55rem" }}>
                 {dropContent.links.map((l, i) => (
                   <li key={i}>
@@ -306,35 +379,85 @@ export default function NavBar({ currentPage }) {
           animation: "slideDown 0.2s ease",
         }}>
           <div style={{ display: "flex", flexDirection: "column", padding: "0.5rem 1.25rem 1.25rem" }}>
-            {NAV_ITEMS.map(item => {
-              const active = !item.externalHref && currentPage === item.key;
-              const isExternal = Boolean(item.externalHref);
-              return (
+            {microsite ? (
+              /* Microsite mobile links */
+              <>
                 <a
-                  key={item.key}
-                  href={isExternal ? item.externalHref : hashHref(item.key)}
-                  target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  href={microsite.brand.href}
                   onClick={close}
                   style={{
-                    fontFamily: FONT, fontSize: "1.05rem",
-                    fontWeight: active ? 700 : 500,
-                    color: INK,
-                    padding: "0.9rem 0", borderBottom: `1px solid rgba(10,10,10,0.06)`,
+                    fontFamily: FONT, fontSize: "1.05rem", fontWeight: 700,
+                    color: INK, padding: "0.9rem 0",
+                    borderBottom: `1px solid rgba(10,10,10,0.06)`,
                     display: "flex", alignItems: "center", justifyContent: "space-between",
                   }}
                 >
-                  <span>{t(item.labelKey)}</span>
-                  {isExternal && (
-                    <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
-                      <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
-                    </svg>
-                  )}
+                  {microsite.brand.label}
                 </a>
-              );
-            })}
+                {microsite.items.map(item => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={close}
+                    style={{
+                      fontFamily: FONT, fontSize: "1.05rem", fontWeight: 500,
+                      color: INK, padding: "0.9rem 0",
+                      borderBottom: `1px solid rgba(10,10,10,0.06)`,
+                      display: "flex", alignItems: "center", justifyContent: "space-between",
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+                {/* Back to main site */}
+                <a
+                  href={hashHref("")}
+                  onClick={close}
+                  style={{
+                    fontFamily: FONT, fontSize: "0.88rem", fontWeight: 500,
+                    color: INK_60, padding: "0.75rem 0",
+                    borderBottom: `1px solid rgba(10,10,10,0.06)`,
+                    display: "flex", alignItems: "center", gap: "0.4em",
+                  }}
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                  </svg>
+                  Turnpage Digital Markets
+                </a>
+              </>
+            ) : (
+              /* Main mobile links */
+              NAV_ITEMS.map(item => {
+                const active = !item.externalHref && currentPage === item.key;
+                const isExternal = Boolean(item.externalHref);
+                return (
+                  <a
+                    key={item.key}
+                    href={isExternal ? item.externalHref : hashHref(item.key)}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    onClick={close}
+                    style={{
+                      fontFamily: FONT, fontSize: "1.05rem",
+                      fontWeight: active ? 700 : 500,
+                      color: INK, padding: "0.9rem 0",
+                      borderBottom: `1px solid rgba(10,10,10,0.06)`,
+                      display: "flex", alignItems: "center", justifyContent: "space-between",
+                    }}
+                  >
+                    <span>{t(item.labelKey)}</span>
+                    {isExternal && (
+                      <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
+                        <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
+                      </svg>
+                    )}
+                  </a>
+                );
+              })
+            )}
             <a
-              href={hashHref("contact")}
+              href={microsite ? microsite.cta.href : hashHref("contact")}
               onClick={close}
               style={{
                 marginTop: "1.2rem", textAlign: "center",
@@ -344,7 +467,7 @@ export default function NavBar({ currentPage }) {
                 borderRadius: 0, letterSpacing: "0.02em",
               }}
             >
-              Get in Touch
+              {microsite ? microsite.cta.label : "Get in Touch"}
             </a>
           </div>
         </div>
