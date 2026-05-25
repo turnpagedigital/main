@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import BottomCTA from "../components/BottomCTA.jsx";
 import pressData from "../data/press.json";
 
-/* ── Outlet name → domain (used for Clearbit logo fetches) ──────────────── */
+/* ── Outlet name → domain (used for Google favicon fallback) ────────────── */
 const OUTLET_DOMAINS = {
   "wall street journal": "wsj.com",
   "wsj": "wsj.com",
@@ -33,6 +33,7 @@ const OUTLET_DOMAINS = {
   "law360": "law360.com",
   "abi journal": "abi.org",
   "american bankruptcy institute": "abi.org",
+  "american bankruptcy institute newsletter": "abi.org",
   "grant's": "grantspub.com",
   "grant's interest rate observer": "grantspub.com",
   "politico": "politico.com",
@@ -64,7 +65,7 @@ const OUTLET_DOMAINS = {
   "the economist": "economist.com",
 };
 
-/* ── Sub-page label map (mirrors admin) ─────────────────────────────────── */
+/* ── Sub-page label map ─────────────────────────────────────────────────── */
 const PAGE_LABELS = {
   "copyright":  "Copyright Claims",
   "crypto":     "Locked Crypto",
@@ -73,63 +74,116 @@ const PAGE_LABELS = {
   "bankruptcy": "Bankruptcy Claims",
 };
 
-/* ── Data-driven from src/data/press.json (managed via /#/admin) ─────────────
-   author === "Other" (or unset)              → In the press
-   author === "Andrew", type !== "social post" → Articles & Commentary
-   author === "Andrew", type === "social post" → Social feed              */
-const ALL_ITEMS = (pressData.items || []);
+/* ── Media type labels for filter pills ─────────────────────────────────── */
+const TYPE_OPTS = [
+  { key: "all",     label: "All" },
+  { key: "press",   label: "Press Features" },
+  { key: "article", label: "Articles" },
+  { key: "social",  label: "Social Posts" },
+];
 
-const PRESS_ITEMS = ALL_ITEMS
-  .filter(d => d.author !== "Andrew")
-  .map(d => ({
-    outlet:   d.publication_title,
-    logoUrl:  d.logo_url || null,
-    date:     d.date || null,
-    headline: d.piece_title,
-    excerpt:  d.excerpt || null,
-    href:     d.url || null,
-    pages:    Array.isArray(d.pages) ? d.pages : [],
-  }));
+/* ── Date parser (handles "May 2026", "Apr 15, 2023", ISO, etc.) ─────────── */
+function parseDate(str) {
+  if (!str) return null;
+  const s = str.trim().replace(/\s+/g, " ");
+  let d = new Date(s);
+  if (!isNaN(d.getTime())) return d;
+  // "Month YYYY" with no day
+  const m = /^([A-Za-z]+)\s+(\d{4})$/.exec(s);
+  if (m) {
+    d = new Date(`${m[1]} 1, ${m[2]}`);
+    if (!isNaN(d.getTime())) return d;
+  }
+  return null;
+}
 
-const BY_ANDREW = ALL_ITEMS
-  .filter(d => d.author === "Andrew" && d.type !== "social post")
-  .map(d => ({
-    venue:   d.publication_title,
-    logoUrl: d.logo_url || null,
-    date:    d.date || null,
-    title:   d.piece_title,
-    excerpt: d.excerpt || null,
-    href:    d.url || null,
-    pages:   Array.isArray(d.pages) ? d.pages : [],
-  }));
+/* ── Normalise every press.json item into a unified shape ───────────────── */
+const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
+  _key:     i,
+  mediaType: d.author !== "Andrew" ? "press"
+           : d.type === "social post" ? "social"
+           : "article",
+  type:     d.type || "",
+  outlet:   d.publication_title || "",
+  logoUrl:  d.logo_url || null,
+  date:     d.date || null,
+  dateSort: parseDate(d.date),
+  headline: d.piece_title || "",
+  excerpt:  d.excerpt || null,
+  href:     d.url || null,
+  pages:    Array.isArray(d.pages) ? d.pages : [],
+}));
 
-const SOCIAL_POSTS = ALL_ITEMS
-  .filter(d => d.author === "Andrew" && d.type === "social post")
-  .map(d => ({
-    platform: d.publication_title || "",
-    date:     d.date || null,
-    title:    d.piece_title || null,
-    excerpt:  d.excerpt || null,
-    href:     d.url || null,
-    pages:    Array.isArray(d.pages) ? d.pages : [],
-  }));
+/* ── Derived filter option lists (computed once from static data) ─────────── */
+const ALL_TOPICS  = [...new Set(UNIFIED_ITEMS.flatMap(d => d.pages).filter(Boolean))].sort();
+const ALL_OUTLETS = [...new Set(UNIFIED_ITEMS.map(d => d.outlet).filter(Boolean))]
+  .sort((a, b) => a.localeCompare(b));
 
+/* ── Sort helper ─────────────────────────────────────────────────────────── */
+function sortByDate(items, dir) {
+  return [...items].sort((a, b) => {
+    const da = a.dateSort, db = b.dateSort;
+    if (da && db) return dir === "desc" ? db - da : da - db;
+    if (da) return dir === "desc" ? -1 : 1;
+    if (db) return dir === "desc" ? 1 : -1;
+    return 0;
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PRESS PAGE
+═══════════════════════════════════════════════════════════════════════════ */
 export default function Press() {
+  const [filterType,   setFilterType]   = useState("all");
+  const [filterTopic,  setFilterTopic]  = useState("all");
+  const [filterOutlet, setFilterOutlet] = useState("all");
+  const [sortDir,      setSortDir]      = useState("desc");
+
+  /* Decide which sections are eligible to render */
+  const showPressSection  = filterType === "all" || filterType === "press";
+  const showAndrewSection = filterType === "all" || filterType === "article" || filterType === "social";
+
+  /* Filtered + sorted items per section */
+  const visiblePress = useMemo(() => {
+    let items = UNIFIED_ITEMS.filter(d => d.mediaType === "press");
+    if (filterTopic  !== "all") items = items.filter(d => d.pages.includes(filterTopic));
+    if (filterOutlet !== "all") items = items.filter(d => d.outlet === filterOutlet);
+    return sortByDate(items, sortDir);
+  }, [filterTopic, filterOutlet, sortDir]);
+
+  const visibleAndrew = useMemo(() => {
+    let items = UNIFIED_ITEMS.filter(d => d.mediaType !== "press");
+    if (filterType === "article") items = items.filter(d => d.mediaType === "article");
+    if (filterType === "social")  items = items.filter(d => d.mediaType === "social");
+    if (filterTopic  !== "all") items = items.filter(d => d.pages.includes(filterTopic));
+    if (filterOutlet !== "all") items = items.filter(d => d.outlet === filterOutlet);
+    return sortByDate(items, sortDir);
+  }, [filterType, filterTopic, filterOutlet, sortDir]);
+
+  const hasFilters = filterType !== "all" || filterTopic !== "all" || filterOutlet !== "all";
+  function clearFilters() {
+    setFilterType("all");
+    setFilterTopic("all");
+    setFilterOutlet("all");
+  }
+
   return (
     <>
-      {/* ── Divider strip ─────────────────────────────────────────── */}
-      <div style={{ width: "100%", height: "clamp(180px, 27vw, 330px)", overflow: "hidden", display: "block" }}>
+      {/* ── Hero image ──────────────────────────────────────────────────── */}
+      <div style={{
+        width: "100%", height: "clamp(180px, 27vw, 330px)",
+        overflow: "hidden", display: "block",
+      }}>
         <img
-          src="/metal-folds.jpg"
-          alt=""
+          src="/metal-folds.jpg" alt=""
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }}
         />
       </div>
 
-      {/* ── Media Coverage ────────────────────────────────────────── */}
+      {/* ── Page header ─────────────────────────────────────────────────── */}
       <section style={{
         background: "#FFFFFF",
-        padding: "clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 4rem) clamp(5rem, 12vw, 11rem)",
+        padding: "clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 4rem)",
         borderTop: `1px solid ${LINE}`,
       }}>
         <div style={{ maxWidth: 1440, margin: "0 auto" }}>
@@ -137,7 +191,6 @@ export default function Press() {
             display: "grid",
             gridTemplateColumns: "minmax(0,1fr) minmax(0,1.4fr)",
             gap: "clamp(2rem,5vw,5rem)",
-            marginBottom: "clamp(3rem,6vw,5rem)",
             alignItems: "end",
           }} className="press-split">
             <div>
@@ -146,7 +199,7 @@ export default function Press() {
                 letterSpacing: "0.22em", textTransform: "uppercase",
                 color: INK_60, marginBottom: "1.2rem",
               }}>
-                Media Coverage
+                Press & Publications
               </p>
               <h2 style={{
                 fontFamily: FONT, fontWeight: 800,
@@ -155,167 +208,107 @@ export default function Press() {
                 color: INK, margin: 0,
               }}>
                 In the<br />
-                <span className="accent-light">press.</span>
+                <span className="accent-light">conversation.</span>
               </h2>
             </div>
             <p style={{
               fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
               color: INK_60, lineHeight: 1.6, maxWidth: 640,
             }}>
-              Selected quotes, features, and commentary from financial and legal media covering bankruptcy, crypto insolvencies, and AI copyright claims.
+              Media features, published articles, and commentary from Andrew Glantz and Turnpage Digital Markets — across press, publications, and social.
             </p>
           </div>
-
-          {PRESS_ITEMS.length === 0 ? (
-            <div style={{
-              padding: "3rem", border: `1px dashed ${LINE}`,
-              color: INK_60, fontFamily: FONT, fontSize: "0.92rem",
-              fontStyle: "italic", textAlign: "center",
-            }}>
-              Press coverage to be added — populate the <code style={{ fontSize: "0.85em", background: "#f0f0f0", padding: "0.1em 0.4em" }}>PRESS_ITEMS</code> array at the top of this file.
-            </div>
-          ) : (
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "clamp(1.5rem, 3vw, 2.5rem)",
-            }} className="press-grid">
-              {PRESS_ITEMS.map((item, i) => <PressCard key={i} item={item} />)}
-            </div>
-          )}
         </div>
       </section>
 
-      {/* ── By Andrew ─────────────────────────────────────────────── */}
-      <section style={{
-        background: "#F4F5F7",
-        padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
-        borderTop: `1px solid ${LINE}`,
-      }}>
-        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0,1fr) minmax(0,1.4fr)",
-            gap: "clamp(2rem,5vw,5rem)",
-            marginBottom: "clamp(3rem,6vw,5rem)",
-            alignItems: "end",
-          }} className="press-split">
-            <div>
-              <p style={{
-                fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-                letterSpacing: "0.22em", textTransform: "uppercase",
-                color: INK_60, marginBottom: "1.2rem",
-              }}>
-                By Andrew
-              </p>
-              <h2 style={{
-                fontFamily: FONT, fontWeight: 800,
-                fontSize: "clamp(2rem,4.5vw,4rem)",
-                lineHeight: 1.02, letterSpacing: "-0.04em",
-                color: INK, margin: 0,
-              }}>
-                Articles &<br />
-                <span className="accent-light">commentary.</span>
-              </h2>
-            </div>
-            <p style={{
-              fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
-              color: INK_60, lineHeight: 1.6, maxWidth: 640,
-            }}>
-              Analysis, op-eds, and published work authored by Andrew Glantz on claims markets, restructuring, and digital assets.
-            </p>
+      {/* ── Filter bar ──────────────────────────────────────────────────── */}
+      <FilterBar
+        filterType={filterType}   onFilterType={setFilterType}
+        filterTopic={filterTopic}  onFilterTopic={setFilterTopic}
+        filterOutlet={filterOutlet} onFilterOutlet={setFilterOutlet}
+        sortDir={sortDir}          onSortDir={setSortDir}
+        hasFilters={hasFilters}    onClear={clearFilters}
+      />
+
+      {/* ── Section 1: In the Press ─────────────────────────────────────── */}
+      {showPressSection && (
+        <section style={{
+          background: "#FFFFFF",
+          padding: "clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem)",
+          borderTop: `1px solid ${LINE}`,
+        }}>
+          <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+            <SectionHeader
+              eyebrow="Media Coverage"
+              title={<>In the<br /><span className="accent-light">press.</span></>}
+              description="Selected quotes, features, and commentary from financial and legal media covering bankruptcy, crypto insolvencies, and AI copyright claims."
+              count={visiblePress.length}
+              hasFilters={hasFilters}
+            />
+
+            {visiblePress.length === 0 ? (
+              <EmptyState hasFilters={hasFilters} onClear={clearFilters} dark={false} />
+            ) : (
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: "clamp(1.5rem, 3vw, 2.5rem)",
+              }} className="press-grid">
+                {visiblePress.map(item => <PressCard key={item._key} item={item} />)}
+              </div>
+            )}
           </div>
+        </section>
+      )}
 
-          {BY_ANDREW.length === 0 ? (
-            <div style={{
-              padding: "3rem", border: `1px dashed ${LINE}`,
-              color: INK_60, fontFamily: FONT, fontSize: "0.92rem",
-              fontStyle: "italic", textAlign: "center",
-            }}>
-              Articles to be added via admin.
-            </div>
-          ) : (
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: "clamp(1.5rem, 3vw, 2.5rem)",
-            }} className="press-by-grid">
-              {BY_ANDREW.map((item, i) => <ByAndrewCard key={i} item={item} />)}
-            </div>
-          )}
-        </div>
-      </section>
+      {/* ── Section 2: Articles & Commentary ───────────────────────────── */}
+      {showAndrewSection && (
+        <section style={{
+          background: "#F4F5F7",
+          padding: "clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(5rem, 12vw, 11rem)",
+          borderTop: `1px solid ${LINE}`,
+        }}>
+          <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+            <SectionHeader
+              eyebrow="By Andrew"
+              title={<>Articles &<br /><span className="accent-light">commentary.</span></>}
+              description="Analysis, op-eds, published work, and social posts from Andrew Glantz on claims markets, restructuring, and digital assets."
+              count={visibleAndrew.length}
+              hasFilters={hasFilters}
+            />
 
-      {/* ── LinkedIn Posts ────────────────────────────────────────── */}
-      <section style={{
-        background: "#080C12",
-        padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
-        borderTop: "1px solid rgba(10,102,194,0.2)",
-        position: "relative", overflow: "hidden",
-      }}>
-        {/* Subtle dark gradient accent */}
-        <div style={{
-          position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(70% 50% at 50% 0%, rgba(10,102,194,0.07), transparent 70%)",
-        }} />
-        <div style={{ maxWidth: 1440, margin: "0 auto", position: "relative" }}>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0,1fr) minmax(0,1.4fr)",
-            gap: "clamp(2rem,5vw,5rem)",
-            marginBottom: "clamp(3rem,6vw,5rem)",
-            alignItems: "end",
-          }} className="press-split">
-            <div>
-              <p style={{
-                fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-                letterSpacing: "0.22em", textTransform: "uppercase",
-                color: "rgba(255,255,255,0.45)", marginBottom: "1.2rem",
-                display: "flex", alignItems: "center", gap: "0.5em",
-              }}>
-                {/* Feed icon */}
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-                Social
-              </p>
-              <h2 style={{
-                fontFamily: FONT, fontWeight: 800,
-                fontSize: "clamp(2rem,4.5vw,4rem)",
-                lineHeight: 1.02, letterSpacing: "-0.04em",
-                color: "#fff", margin: 0,
-              }}>
-                On the<br />
-                <span style={{ color: NEON }}>feed.</span>
-              </h2>
-            </div>
-            <p style={{
-              fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
-              color: "rgba(255,255,255,0.55)", lineHeight: 1.6, maxWidth: 640,
-            }}>
-              Posts from Andrew across LinkedIn, X, and beyond — market commentary, case updates, and observations from the claims desk.
-            </p>
+            {visibleAndrew.length === 0 ? (
+              <EmptyState hasFilters={hasFilters} onClear={clearFilters} dark={false} />
+            ) : (
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: "clamp(1.5rem, 3vw, 2.5rem)",
+                alignItems: "start",
+              }} className="press-andrew-grid">
+                {visibleAndrew.map(item =>
+                  item.mediaType === "social"
+                    ? <SocialPostCard key={item._key} item={item} />
+                    : <ByAndrewCard   key={item._key} item={item} />
+                )}
+              </div>
+            )}
           </div>
+        </section>
+      )}
 
-          {SOCIAL_POSTS.length === 0 ? (
-            <div style={{
-              padding: "3rem", border: "1px dashed rgba(255,255,255,0.12)",
-              color: "rgba(255,255,255,0.35)", fontFamily: FONT, fontSize: "0.92rem",
-              fontStyle: "italic", textAlign: "center",
-            }}>
-              Social posts to be added via admin — select type "Social post", author "Andrew", and enter the platform name (LinkedIn, X, etc.) in the outlet field.
-            </div>
-          ) : (
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "clamp(1rem, 2vw, 1.5rem)",
-            }} className="press-li-grid">
-              {SOCIAL_POSTS.map((item, i) => <SocialPostCard key={i} item={item} />)}
-            </div>
-          )}
-        </div>
-      </section>
+      {/* Both sections empty but filters active */}
+      {!showPressSection && !showAndrewSection && (
+        <section style={{
+          background: "#fff",
+          padding: "clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem)",
+          borderTop: `1px solid ${LINE}`,
+        }}>
+          <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+            <EmptyState hasFilters={hasFilters} onClear={clearFilters} dark={false} />
+          </div>
+        </section>
+      )}
 
       <BottomCTA
         eyebrow="Get in Touch"
@@ -326,24 +319,249 @@ export default function Press() {
       />
 
       <style>{`
+        /* Filter bar selects */
+        .press-filter-select {
+          font-family: ${FONT};
+          font-size: 0.78rem;
+          color: ${INK};
+          background: #fff;
+          border: 1px solid ${LINE};
+          padding: 0.38rem 0.65rem;
+          cursor: pointer;
+          appearance: none;
+          -webkit-appearance: none;
+          padding-right: 1.8rem;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 0.55rem center;
+          min-width: 130px;
+        }
+        .press-filter-select:focus { outline: 2px solid ${NEON}; outline-offset: 1px; }
+
+        /* Responsive grid breakpoints */
         @media (max-width: 880px) {
-          .press-split { grid-template-columns: 1fr !important; }
-          .press-grid  { grid-template-columns: repeat(2, 1fr) !important; }
+          .press-split        { grid-template-columns: 1fr !important; }
+          .press-grid         { grid-template-columns: repeat(2, 1fr) !important; }
+          .press-andrew-grid  { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 560px) {
-          .press-grid    { grid-template-columns: 1fr !important; }
-          .press-by-grid { grid-template-columns: 1fr !important; }
+          .press-grid         { grid-template-columns: 1fr !important; }
+          .press-andrew-grid  { grid-template-columns: 1fr !important; }
         }
-        @media (max-width: 880px) {
-          .press-li-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 560px) {
-          .press-li-grid { grid-template-columns: 1fr !important; }
+
+        /* Filter bar responsive */
+        @media (max-width: 760px) {
+          .press-filter-bar   { flex-direction: column !important; align-items: flex-start !important; }
+          .press-filter-right { margin-left: 0 !important; }
         }
       `}</style>
     </>
   );
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FILTER BAR
+═══════════════════════════════════════════════════════════════════════════ */
+function FilterBar({
+  filterType, onFilterType,
+  filterTopic, onFilterTopic,
+  filterOutlet, onFilterOutlet,
+  sortDir, onSortDir,
+  hasFilters, onClear,
+}) {
+  return (
+    <div style={{
+      background: "#F4F5F7",
+      borderTop: `1px solid ${LINE}`,
+      borderBottom: `1px solid ${LINE}`,
+      padding: "0.75rem clamp(1.5rem, 5vw, 4rem)",
+    }}>
+      <div style={{
+        maxWidth: 1440, margin: "0 auto",
+        display: "flex", flexWrap: "wrap",
+        gap: "0.5rem", alignItems: "center",
+      }} className="press-filter-bar">
+
+        {/* ── Type pills ─────────────────────────────────────────────── */}
+        <div style={{ display: "flex", gap: "0.3rem", flexWrap: "wrap" }}>
+          {TYPE_OPTS.map(({ key, label }) => (
+            <button
+              key={key}
+              onClick={() => onFilterType(key)}
+              style={{
+                fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+                letterSpacing: "0.07em", textTransform: "uppercase",
+                padding: "0.38rem 0.8rem",
+                background: filterType === key ? INK : "transparent",
+                color: filterType === key ? "#fff" : INK_60,
+                border: `1px solid ${filterType === key ? INK : LINE}`,
+                cursor: "pointer", transition: "background 0.15s, color 0.15s, border-color 0.15s",
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {/* ── Vertical divider ─────────────────────────────────────── */}
+        <div style={{ width: 1, height: 22, background: LINE, flexShrink: 0, margin: "0 0.15rem" }} />
+
+        {/* ── Topic dropdown ────────────────────────────────────────── */}
+        <div style={{ position: "relative" }}>
+          <select
+            className="press-filter-select"
+            value={filterTopic}
+            onChange={e => onFilterTopic(e.target.value)}
+          >
+            <option value="all">All Topics</option>
+            {ALL_TOPICS.map(t => (
+              <option key={t} value={t}>{PAGE_LABELS[t] || t}</option>
+            ))}
+          </select>
+        </div>
+
+        {/* ── Publication dropdown ──────────────────────────────────── */}
+        <div style={{ position: "relative" }}>
+          <select
+            className="press-filter-select"
+            value={filterOutlet}
+            onChange={e => onFilterOutlet(e.target.value)}
+          >
+            <option value="all">All Publications</option>
+            {ALL_OUTLETS.map(o => (
+              <option key={o} value={o}>{o}</option>
+            ))}
+          </select>
+        </div>
+
+        {/* ── Sort + clear (pushed right) ───────────────────────────── */}
+        <div style={{
+          display: "flex", gap: "0.3rem", alignItems: "center",
+          marginLeft: "auto",
+        }} className="press-filter-right">
+          {[["desc", "Newest ↓"], ["asc", "Oldest ↑"]].map(([dir, label]) => (
+            <button
+              key={dir}
+              onClick={() => onSortDir(dir)}
+              style={{
+                fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+                letterSpacing: "0.06em", textTransform: "uppercase",
+                padding: "0.38rem 0.8rem",
+                background: sortDir === dir ? NEON : "transparent",
+                color: sortDir === dir ? "#000" : INK_60,
+                border: `1px solid ${sortDir === dir ? NEON : LINE}`,
+                cursor: "pointer", transition: "background 0.15s, color 0.15s, border-color 0.15s",
+              }}
+            >
+              {label}
+            </button>
+          ))}
+
+          {hasFilters && (
+            <button
+              onClick={onClear}
+              style={{
+                fontFamily: FONT, fontSize: "0.72rem", fontWeight: 600,
+                color: INK_60, background: "none", border: "none",
+                cursor: "pointer", padding: "0.38rem 0.4rem",
+                textDecoration: "underline", marginLeft: "0.2rem",
+              }}
+            >
+              Clear
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION HEADER  (compact 2-col layout used for each section)
+═══════════════════════════════════════════════════════════════════════════ */
+function SectionHeader({ eyebrow, title, description, count, hasFilters }) {
+  return (
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "minmax(0,1fr) minmax(0,1.4fr)",
+      gap: "clamp(2rem,5vw,5rem)",
+      marginBottom: "clamp(2.5rem,5vw,4rem)",
+      alignItems: "end",
+    }} className="press-split">
+      <div>
+        <p style={{
+          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
+          letterSpacing: "0.22em", textTransform: "uppercase",
+          color: INK_60, marginBottom: "1.2rem",
+        }}>
+          {eyebrow}
+        </p>
+        <h2 style={{
+          fontFamily: FONT, fontWeight: 800,
+          fontSize: "clamp(2rem,4.5vw,4rem)",
+          lineHeight: 1.02, letterSpacing: "-0.04em",
+          color: INK, margin: 0,
+        }}>
+          {title}
+        </h2>
+      </div>
+      <div>
+        <p style={{
+          fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
+          color: INK_60, lineHeight: 1.6, maxWidth: 640,
+          marginBottom: count != null ? "0.75rem" : 0,
+        }}>
+          {description}
+        </p>
+        {count != null && (
+          <p style={{
+            fontFamily: FONT, fontSize: "0.75rem", color: INK_60,
+            margin: 0, letterSpacing: "0.02em",
+          }}>
+            {count === 0
+              ? (hasFilters ? "No items match the selected filters." : "No items yet.")
+              : `${count} item${count === 1 ? "" : "s"}`}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   EMPTY STATE
+═══════════════════════════════════════════════════════════════════════════ */
+function EmptyState({ hasFilters, onClear, dark = false }) {
+  const textColor = dark ? "rgba(255,255,255,0.45)" : INK_60;
+  const borderColor = dark ? "rgba(255,255,255,0.12)" : LINE;
+  return (
+    <div style={{
+      padding: "3rem", border: `1px dashed ${borderColor}`,
+      color: textColor, fontFamily: FONT, fontSize: "0.92rem",
+      fontStyle: "italic", textAlign: "center",
+    }}>
+      No items match the selected filters.
+      {hasFilters && (
+        <button
+          onClick={onClear}
+          style={{
+            fontFamily: FONT, fontSize: "0.92rem",
+            color: dark ? "#fff" : INK,
+            background: "none", border: "none", cursor: "pointer",
+            textDecoration: "underline", marginLeft: "0.5em",
+            fontStyle: "normal",
+          }}
+        >
+          Clear filters
+        </button>
+      )}
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SHARED HELPERS
+═══════════════════════════════════════════════════════════════════════════ */
 
 /* ── Sub-page tags ───────────────────────────────────────────────────────── */
 function PageTags({ pages, dark = false }) {
@@ -364,12 +582,10 @@ function PageTags({ pages, dark = false }) {
   );
 }
 
-/* ── Outlet logo helper ──────────────────────────────────────────────────────
-   Priority: 1) logo_url set in admin  2) Google favicon for known domains
-   Falls back silently if neither works.
-   All logos — square favicons or wide wordmarks — are constrained to the same
-   maxHeight × maxWidth bounding box. Using max-height + max-width (not fixed
-   height) preserves aspect ratio without distortion for any shape of image.  */
+/* ── Outlet logo ─────────────────────────────────────────────────────────────
+   Fixed 140 × 32 bounding box with objectFit: contain so every logo —
+   square favicon or wide wordmark — displays at the same optical height
+   without distortion or clipping.                                           */
 function OutletLogo({ name, logoUrl, style = {} }) {
   const [failed, setFailed] = useState(false);
   const domain = name ? OUTLET_DOMAINS[name.toLowerCase().trim()] : null;
@@ -381,10 +597,9 @@ function OutletLogo({ name, logoUrl, style = {} }) {
       src={src}
       alt={name || ""}
       style={{
-        maxHeight: 28,
-        height: "auto",
-        maxWidth: 110,
-        width: "auto",
+        width: 140, height: 32,
+        objectFit: "contain",
+        objectPosition: "left center",
         display: "block",
         marginBottom: "0.9rem",
         ...style,
@@ -394,8 +609,9 @@ function OutletLogo({ name, logoUrl, style = {} }) {
   );
 }
 
-/* ── Card components ─────────────────────────────────────────────────────── */
-
+/* ═══════════════════════════════════════════════════════════════════════════
+   PRESS CARD  (In the Press — features & coverage)
+═══════════════════════════════════════════════════════════════════════════ */
 function PressCard({ item }) {
   const [hovered, setHovered] = useState(false);
   const inner = (
@@ -451,6 +667,9 @@ function PressCard({ item }) {
   return <div>{inner}</div>;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   BY ANDREW CARD  (published articles, newsletters, etc.)
+═══════════════════════════════════════════════════════════════════════════ */
 function ByAndrewCard({ item }) {
   const [hovered, setHovered] = useState(false);
   const inner = (
@@ -461,14 +680,21 @@ function ByAndrewCard({ item }) {
       transition: "opacity 0.2s",
       height: "100%", boxSizing: "border-box",
     }}>
-      <OutletLogo name={item.venue} logoUrl={item.logoUrl} style={{ marginBottom: "1rem", filter: "grayscale(1)", opacity: 0.6 }} />
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.7rem", flexWrap: "wrap", gap: "0.4rem" }}>
+      <OutletLogo
+        name={item.outlet} logoUrl={item.logoUrl}
+        style={{ filter: "grayscale(1)", opacity: 0.6 }}
+      />
+      <div style={{
+        display: "flex", alignItems: "center",
+        justifyContent: "space-between",
+        marginBottom: "0.7rem", flexWrap: "wrap", gap: "0.4rem",
+      }}>
         <p style={{
           fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
           letterSpacing: "0.18em", textTransform: "uppercase",
           color: INK_60, margin: 0,
         }}>
-          {item.venue}{item.date ? ` · ${item.date}` : ""}
+          {item.outlet}{item.date ? ` · ${item.date}` : ""}
         </p>
         <span style={{
           fontFamily: FONT, fontSize: "0.68rem", fontWeight: 800,
@@ -485,7 +711,7 @@ function ByAndrewCard({ item }) {
         lineHeight: 1.25, letterSpacing: "-0.01em",
         color: INK, marginBottom: item.excerpt ? "0.7rem" : 0,
       }}>
-        {item.title}
+        {item.headline}
       </h3>
       {item.excerpt && (
         <p style={{
@@ -515,7 +741,9 @@ function ByAndrewCard({ item }) {
   return <div>{inner}</div>;
 }
 
-/* ── Platform icons + color map ─────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════════════
+   SOCIAL POST CARD  (LinkedIn, X, etc.)
+═══════════════════════════════════════════════════════════════════════════ */
 const PlatformIcon = ({ platform, size = 14, color = "currentColor" }) => {
   const key = (platform || "").toLowerCase().trim();
   if (key === "linkedin") return (
@@ -533,7 +761,6 @@ const PlatformIcon = ({ platform, size = 14, color = "currentColor" }) => {
       <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
     </svg>
   );
-  /* Generic speech-bubble fallback */
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -559,13 +786,13 @@ function getPlatformLabel(platform) {
 
 function SocialPostCard({ item }) {
   const [hovered, setHovered] = useState(false);
-  const accent = getPlatformAccent(item.platform);
-  const label  = getPlatformLabel(item.platform);
+  const accent = getPlatformAccent(item.outlet);
+  const label  = getPlatformLabel(item.outlet);
 
   const inner = (
     <div style={{
       background: "#0D1827",
-      border: `1px solid ${accent}33`,   /* 20% opacity border in accent color */
+      border: `1px solid ${accent}33`,
       padding: "1.6rem 1.8rem",
       height: "100%", boxSizing: "border-box",
       opacity: hovered && item.href ? 0.8 : 1,
@@ -573,7 +800,7 @@ function SocialPostCard({ item }) {
       display: "flex", flexDirection: "column", gap: "0.75rem",
       position: "relative", overflow: "hidden",
     }}>
-      {/* Subtle glow top-left in platform accent color */}
+      {/* Accent glow */}
       <div style={{
         position: "absolute", inset: 0, pointerEvents: "none",
         background: `radial-gradient(60% 55% at 0% 0%, ${accent}22, transparent 65%)`,
@@ -584,7 +811,7 @@ function SocialPostCard({ item }) {
         justifyContent: "space-between", position: "relative",
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.45em" }}>
-          <PlatformIcon platform={item.platform} size={14} color={accent} />
+          <PlatformIcon platform={item.outlet} size={14} color={accent} />
           <span style={{
             fontFamily: FONT, fontSize: "0.68rem", fontWeight: 700,
             letterSpacing: "0.12em", textTransform: "uppercase", color: accent,
@@ -601,18 +828,18 @@ function SocialPostCard({ item }) {
           </span>
         )}
       </div>
-      {/* Optional topic/title label */}
-      {item.title && (
+      {/* Topic/title label */}
+      {item.headline && (
         <p style={{
           fontFamily: FONT, fontWeight: 700, fontSize: "0.85rem",
           color: "rgba(255,255,255,0.5)", lineHeight: 1.3,
           margin: 0, position: "relative",
           textTransform: "uppercase", letterSpacing: "0.06em",
         }}>
-          {item.title}
+          {item.headline}
         </p>
       )}
-      {/* Post excerpt — hero text */}
+      {/* Post excerpt */}
       {item.excerpt && (
         <p style={{
           fontFamily: FONT,
@@ -627,7 +854,6 @@ function SocialPostCard({ item }) {
         </p>
       )}
       <PageTags pages={item.pages} />
-      {/* View post CTA */}
       {item.href && (
         <span style={{
           fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
@@ -639,6 +865,7 @@ function SocialPostCard({ item }) {
       )}
     </div>
   );
+
   if (item.href) {
     return (
       <a
