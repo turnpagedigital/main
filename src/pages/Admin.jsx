@@ -80,7 +80,7 @@ function parseDateForSort(str) {
 }
 
 function blankPressItem() {
-  return { type: "publication", author: "Other", pages: [], date: "", url: "", excerpt: "", publication_title: "", piece_title: "" };
+  return { type: "publication", author: "Other", pages: [], date: "", url: "", logo_url: "", excerpt: "", publication_title: "", piece_title: "" };
 }
 
 function sanitizePressItem(d) {
@@ -90,6 +90,7 @@ function sanitizePressItem(d) {
     pages:             Array.isArray(d.pages) ? d.pages.filter(p => PRESS_PAGE_VALUES.includes(p)) : [],
     date:              typeof d.date              === "string" ? d.date              : "",
     url:               typeof d.url               === "string" ? d.url               : "",
+    logo_url:          typeof d.logo_url          === "string" ? d.logo_url          : "",
     excerpt:           typeof d.excerpt           === "string" ? d.excerpt           : "",
     publication_title: typeof d.publication_title === "string" ? d.publication_title : "",
     piece_title:       typeof d.piece_title       === "string" ? d.piece_title       : "",
@@ -1021,6 +1022,28 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
                   style={inputStyle}
                 />
               </label>
+
+              {/* Logo URL (non-social only) */}
+              {item.type !== "social post" && (
+                <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+                  Logo URL <span style={{ fontWeight: 400 }}>(optional — paste a direct image link)</span>
+                  <input
+                    type="text"
+                    value={item.logo_url || ""}
+                    onChange={e => updateItem(i, "logo_url", e.target.value)}
+                    placeholder="https://upload.wikimedia.org/wikipedia/commons/..."
+                    style={inputStyle}
+                  />
+                  {item.logo_url && (
+                    <img
+                      src={item.logo_url}
+                      alt="logo preview"
+                      style={{ marginTop: "0.4rem", height: 24, maxWidth: 120, objectFit: "contain", display: "block", border: `1px solid ${LINE}`, padding: "0.2rem" }}
+                      onError={e => { e.currentTarget.style.opacity = "0.3"; }}
+                    />
+                  )}
+                </label>
+              )}
 
               {/* Piece title */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>

@@ -83,6 +83,7 @@ const PRESS_ITEMS = ALL_ITEMS
   .filter(d => d.author !== "Andrew")
   .map(d => ({
     outlet:   d.publication_title,
+    logoUrl:  d.logo_url || null,
     date:     d.date || null,
     headline: d.piece_title,
     excerpt:  d.excerpt || null,
@@ -94,6 +95,7 @@ const BY_ANDREW = ALL_ITEMS
   .filter(d => d.author === "Andrew" && d.type !== "social post")
   .map(d => ({
     venue:   d.publication_title,
+    logoUrl: d.logo_url || null,
     date:    d.date || null,
     title:   d.piece_title,
     excerpt: d.excerpt || null,
@@ -362,21 +364,29 @@ function PageTags({ pages, dark = false }) {
   );
 }
 
-/* ── Clearbit logo helper ────────────────────────────────────────────────── */
-function OutletLogo({ name, style = {} }) {
-  const domain = name ? OUTLET_DOMAINS[name.toLowerCase().trim()] : null;
-  if (!domain) return null;
+/* ── Outlet logo helper ──────────────────────────────────────────────────────
+   Priority: 1) logo_url set in admin  2) Google favicon for known domains
+   Falls back silently if neither works.                                      */
+function OutletLogo({ name, logoUrl, style = {} }) {
+  const [failed, setFailed] = useState(false);
+  const domain  = name ? OUTLET_DOMAINS[name.toLowerCase().trim()] : null;
+  const src     = logoUrl || (domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=128` : null);
+  const isFavicon = !logoUrl && !!domain;
+
+  if (!src || failed) return null;
   return (
     <img
-      src={`https://logo.clearbit.com/${domain}`}
-      alt={name}
+      src={src}
+      alt={name || ""}
       style={{
-        height: 22, maxWidth: 110, width: "auto",
+        height: isFavicon ? 24 : 26,
+        maxWidth: isFavicon ? 24 : 130,
+        width: "auto",
         objectFit: "contain", objectPosition: "left center",
         display: "block", marginBottom: "0.9rem",
         ...style,
       }}
-      onError={e => { e.currentTarget.style.display = "none"; }}
+      onError={() => setFailed(true)}
     />
   );
 }
@@ -390,7 +400,7 @@ function PressCard({ item }) {
       opacity: hovered && item.href ? 0.65 : 1,
       transition: "opacity 0.2s",
     }}>
-      <OutletLogo name={item.outlet} />
+      <OutletLogo name={item.outlet} logoUrl={item.logoUrl} />
       <div style={{ borderTop: `2px solid ${INK}`, paddingTop: "1.4rem" }}>
         <p style={{
           fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
@@ -448,7 +458,7 @@ function ByAndrewCard({ item }) {
       transition: "opacity 0.2s",
       height: "100%", boxSizing: "border-box",
     }}>
-      <OutletLogo name={item.venue} style={{ marginBottom: "1rem", filter: "grayscale(1)", opacity: 0.6 }} />
+      <OutletLogo name={item.venue} logoUrl={item.logoUrl} style={{ marginBottom: "1rem", filter: "grayscale(1)", opacity: 0.6 }} />
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.7rem", flexWrap: "wrap", gap: "0.4rem" }}>
         <p style={{
           fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
