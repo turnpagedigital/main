@@ -179,7 +179,7 @@ export default function Press() {
     <>
       {/* ── Hero image ──────────────────────────────────────────────────── */}
       <div style={{
-        width: "100%", height: "clamp(180px, 27vw, 330px)",
+        width: "100%", height: "clamp(126px, 19vw, 231px)",
         overflow: "hidden", display: "block",
       }}>
         <img
