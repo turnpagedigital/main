@@ -59,9 +59,9 @@ const PREVIEWS = {
     title: "Press & Publications",
     body: "Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.",
     links: [
-      { label: "Press Features",     href: hashHref("press") + "?type=press" },
-      { label: "By Andrew Glantz",   href: hashHref("press") + "?type=article" },
-      { label: "Social Posts",       href: hashHref("press") + "?type=social" },
+      { label: "Press Features", href: hashHref("press") + "?type=press" },
+      { label: "Articles",       href: hashHref("press") + "?type=article" },
+      { label: "Social Posts",   href: hashHref("press") + "?type=social" },
     ],
     cta: { label: "View all", href: hashHref("press") },
   },
@@ -319,7 +319,7 @@ export default function NavBar({ currentPage }) {
                 letterSpacing: "0.22em", textTransform: "uppercase",
                 color: INK_60, marginBottom: "0.8rem",
               }}>Quick links</p>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.55rem" }}>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
                 {dropContent.links.map((l, i) => (
                   <li key={i}>
                     <a
@@ -328,17 +328,27 @@ export default function NavBar({ currentPage }) {
                       rel={l.external ? "noopener noreferrer" : undefined}
                       onClick={() => setActiveDrop(null)}
                       style={{
-                        fontFamily: FONT, fontSize: "0.98rem", fontWeight: 600,
-                        color: INK, transition: "color 0.2s, gap 0.2s",
-                        display: "inline-flex", alignItems: "center", gap: "0.4em",
+                        fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+                        letterSpacing: "0.07em", textTransform: "uppercase",
+                        color: INK_60,
+                        border: `1px solid rgba(10,10,10,0.18)`,
+                        padding: "0.38rem 0.8rem",
+                        display: "inline-block",
+                        textDecoration: "none",
+                        transition: "background 0.15s, color 0.15s, border-color 0.15s",
                       }}
-                      onMouseEnter={e => { e.currentTarget.style.color = INK_60; }}
-                      onMouseLeave={e => { e.currentTarget.style.color = INK; }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.background = INK;
+                        e.currentTarget.style.color = "#fff";
+                        e.currentTarget.style.borderColor = INK;
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.background = "transparent";
+                        e.currentTarget.style.color = INK_60;
+                        e.currentTarget.style.borderColor = "rgba(10,10,10,0.18)";
+                      }}
                     >
-                      <span>{l.label}</span>
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.6 }}>
-                        <path d="M5 12h14M13 5l7 7-7 7" />
-                      </svg>
+                      {l.label}
                     </a>
                   </li>
                 ))}
