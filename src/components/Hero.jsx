@@ -10,6 +10,7 @@ export default function Hero({
   accentTitle,
   children,
   size = "default", // "default" | "tall"
+  video = null,
 }) {
   const isTall = size === "tall";
   return (
@@ -20,7 +21,7 @@ export default function Hero({
         : "clamp(3.5rem,7vw,6rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem)",
       background: "#000",
     }}>
-      {/* BG image */}
+      {/* BG image (fallback) */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <img
           src="/bg-paper.jpg"
@@ -28,6 +29,21 @@ export default function Hero({
           style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.22) contrast(1.1)" }}
         />
       </div>
+      {/* Optional video background */}
+      {video && (
+        <video
+          autoPlay muted loop playsInline
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
+          style={{
+            position: "absolute", inset: 0, zIndex: 1,
+            width: "100%", height: "100%", objectFit: "cover",
+            opacity: 0.75, filter: "saturate(0.7) contrast(1.05) brightness(0.6)",
+            pointerEvents: "none",
+          }}
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+      )}
       {/* Grain */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 1, opacity: 0.05, pointerEvents: "none",
