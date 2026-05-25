@@ -82,6 +82,27 @@ const TYPE_OPTS = [
   { key: "social",  label: "Social Posts" },
 ];
 
+/* ── Media helpers ───────────────────────────────────────────────────────── */
+function getYouTubeId(url) {
+  if (!url) return null;
+  const m = url.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+function getVimeoId(url) {
+  if (!url) return null;
+  const m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  return m ? m[1] : null;
+}
+function isVideoUrl(url) {
+  if (!url) return false;
+  return /youtube\.com|youtu\.be|vimeo\.com|\.mp4|\.webm|\.mov/i.test(url);
+}
+function getVideoThumbnail(url) {
+  const ytId = getYouTubeId(url);
+  if (ytId) return `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+  return null; // Vimeo needs API; direct video has no thumbnail
+}
+
 /* ── Date parser (handles "May 2026", "Apr 15, 2023", ISO, etc.) ─────────── */
 function parseDate(str) {
   if (!str) return null;
@@ -112,6 +133,7 @@ const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
   excerpt:  d.excerpt || null,
   href:     d.url || null,
   pages:    Array.isArray(d.pages) ? d.pages : [],
+  mediaUrl: d.media_url || null,
 }));
 
 /* ── Derived filter option lists (computed once from static data) ─────────── */
@@ -631,13 +653,70 @@ function TypeIndicator({ item }) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   MEDIA THUMBNAIL — image or video (with play overlay)
+═══════════════════════════════════════════════════════════════════════════ */
+function MediaThumb({ url }) {
+  const [imgFailed, setImgFailed] = useState(false);
+  if (!url) return null;
+
+  const isVid   = isVideoUrl(url);
+  const ytThumb = isVid ? getVideoThumbnail(url) : null;
+  const imgSrc  = isVid ? ytThumb : url; // null for Vimeo / direct video with no thumb
+
+  return (
+    <div style={{
+      marginTop: "1rem",
+      position: "relative",
+      width: "100%",
+      aspectRatio: "16 / 9",
+      background: "#111",
+      overflow: "hidden",
+      flexShrink: 0,
+    }}>
+      {/* Background image (or color block if no thumbnail) */}
+      {imgSrc && !imgFailed && (
+        <img
+          src={imgSrc}
+          alt=""
+          onError={() => setImgFailed(true)}
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+        />
+      )}
+
+      {/* Play button overlay for videos */}
+      {isVid && (
+        <div style={{
+          position: "absolute", inset: 0,
+          display: "flex", alignItems: "center", justifyContent: "center",
+          background: "rgba(0,0,0,0.28)",
+        }}>
+          <div style={{
+            width: 48, height: 48,
+            borderRadius: "50%",
+            background: "rgba(255,255,255,0.92)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            flexShrink: 0,
+          }}>
+            {/* Triangle play icon, offset right slightly to centre optically */}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#000" style={{ marginLeft: 3 }}>
+              <polygon points="5,3 19,12 5,21" />
+            </svg>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    UNIFIED CARD  — all three media types, one white card design
 ═══════════════════════════════════════════════════════════════════════════ */
 function UnifiedCard({ item }) {
   const [hovered, setHovered] = useState(false);
   const isSocial  = item.mediaType === "social";
   const isArticle = item.mediaType === "article";
-  const lifted = hovered && item.href;
+  const lifted    = hovered && item.href;
+  const hasMedia  = Boolean(item.mediaUrl);
 
   const inner = (
     <div style={{
@@ -694,12 +773,15 @@ function UnifiedCard({ item }) {
             borderLeft: `3px solid ${NEON}`,
             paddingLeft: "0.8rem",
           } : {}),
-          display: "-webkit-box", WebkitLineClamp: 8,
+          display: "-webkit-box", WebkitLineClamp: hasMedia ? 3 : 8,
           WebkitBoxOrient: "vertical", overflow: "hidden",
         }}>
           {(item.mediaType === "press" || isSocial) ? `"${item.excerpt}"` : item.excerpt}
         </p>
       )}
+
+      {/* ── Media (image or video thumbnail) ───────────────────────── */}
+      {hasMedia && <MediaThumb url={item.mediaUrl} />}
 
       {/* ── Topic tags ──────────────────────────────────────────────── */}
       <PageTags pages={item.pages} />
