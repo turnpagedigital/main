@@ -3,11 +3,27 @@
   "items": [
     {
       "type": "podcast",
-      "date": "February 2025",
+      "date": "February 3, 2025",
       "url": "https://www.nalufinance.com/post/andrew-glantz-opportunities-in-bankruptcy",
       "excerpt": "In this episode of Nalu Finance, we sit down with Andrew Glantz to explore the $40-50 billion market of bankruptcy claims trading. Andrew dives deep into the risks and rewards of investing in bankruptcy claims, including why this asset class remains largely uncorrelated to traditional markets, the four key risks investors must assess, and how careful research can uncover significant value-creation opportunities. He also unpacks the extraordinary case of FTX bankruptcy claims, where early buyers saw 10x+ returns as assets were uncovered.",
       "publication_title": "Nalu Finance Podcast",
       "piece_title": "Opportunities in Bankruptcy"
+    },
+    {
+      "type": "blog post",
+      "date": "September 4, 2025",
+      "url": "https://www.abi.org/committee-post/cardones-235m-via-mizner-bid-a-crypto-bankruptcy-experiment?check_logged_in=1",
+      "excerpt": "Cardone’s bet is an unusual one. He proposes to merge the Via Mizner property with a $100 million slug of Bitcoin (BTC) and syndicate the package to retail investors. His pitch is that the real estate/BTC mix will allow him to plow rental cash flows into more BTC when crypto prices fall and to buy more real estate assets when crypto prices rise. But there are no obvious synergies between rental properties and BTC, and historically weak correlation between these asset classes mean both could easily fall in value at the same time. In June, the Ninth Circuit Court of Appeals in Christine Pino vs. Cardone Capital et al revived a securities class action lawsuit against Cardone Capital claiming fraudulent misrepresentation related to earlier real estate investment offerings. If this project fails, he’ll almost certainly face another.",
+      "publication_title": "American Bankruptcy Institute Newsletter",
+      "piece_title": "Cardone's $235M Via Mizner Bid: A Crypto-Bankruptcy Experiment"
+    },
+    {
+      "type": "publication",
+      "date": "July 1, 2025",
+      "url": "https://www.abi.org/abi-journal/the-illusion-of-advocacy-creditor-committees-and-divergent-interests-in-complex-chapter",
+      "excerpt": "The unsecured creditors’ committee (UCC) is a fiduciary body appointed in chapter 11 cases to represent all unsecured creditors.1 When creditor interests are fractured, the UCC often finds itself hamstrung — unable to advocate for certain of its constituents without harming the interests of others. Sophisticated creditors will form unofficial “ad hoc” groups and engage counsel to represent their distinct objectives. Smaller or less-experienced creditors may, naively or due to inadequate resources, rely on the UCC or these ad hoc groups to advance their own priorities. By failing to organize early or at all, these creditors can find their interests sidelined at pivotal inflection points.",
+      "publication_title": "American Bankruptcy Institute Journal",
+      "piece_title": "The Illusion of Advocacy: Creditor Committees and Divergent Interests in Complex Chapter 11 Cases"
     }
   ]
 }
