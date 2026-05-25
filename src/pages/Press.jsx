@@ -34,7 +34,7 @@ export default function Press() {
   return (
     <>
       {/* ── Divider strip ─────────────────────────────────────────── */}
-      <div style={{ width: "100%", height: "clamp(120px, 18vw, 220px)", overflow: "hidden", display: "block" }}>
+      <div style={{ width: "100%", height: "clamp(180px, 27vw, 330px)", overflow: "hidden", display: "block" }}>
         <img
           src="/metal-folds.jpg"
           alt=""
@@ -45,7 +45,7 @@ export default function Press() {
       {/* ── Media Coverage ────────────────────────────────────────── */}
       <section style={{
         background: "#FFFFFF",
-        padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
+        padding: "clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 4rem) clamp(5rem, 12vw, 11rem)",
         borderTop: `1px solid ${LINE}`,
       }}>
         <div style={{ maxWidth: 1440, margin: "0 auto" }}>
