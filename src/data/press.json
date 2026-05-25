@@ -2,17 +2,6 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
-      "type": "publication",
-      "author": "Other",
-      "date": "March  2026",
-      "url": "https://x.com/andreweglantz/status/2036917623623975106?s=20",
-      "logo_url": "",
-      "excerpt": "Some great content from my friend @zackbshapiro. For all those out there building these kind of systems, you should read your employment agreements. Your company likely owns whatever system you're building for yourself. So either don't become too reliant on it, or start thinking about re-negotiating your agreement now.",
-      "publication_title": "X",
-      "piece_title": "Comment: The Input Layer",
-      "pages": []
-    },
-    {
       "type": "social post",
       "author": "Andrew",
       "date": "May 12, 2026",
@@ -34,6 +23,17 @@
       "excerpt": "Yesterday, class counsel in Bartz v. Anthropic PBC (N.D. Cal.) sought final approval of the $1.5 billion settlement and for the court to overrule all objections. At the hearing, counsel simultaneously disclosed a downsized fee request from 15% to 12.5% of the gross fund (approximately $187.5 million plus $3 million in incurred expenses, an $18.22 million cost reserve, and $50,000 service awards to each of the three class representatives). \n\nThe claimant participation rate is unprecedented: 440,490 of 482,460 eligible works, or 91.3% (as reported in April) compared to typical filing rates of 20-30%. The settlement is structured as a per-work compensation scheme with each work eligible to receive approximately $3,000 (far less than the $150,000 statutory limits), split among rights holders. \n\nJudge Martínez-Olguín took the ruling under submission and could approve the settlement on a final basis at any time in the coming days or weeks, which would trigger an additional funding requirement by Anthropic. \n\nKey developments to watch:\n\n→ June 11 - expected distributions per work to be calculated\n→ June 11 - appellate oral argument in Thomson Reuters v. ROSS on whether AI training constitutes fair-use\n→ July - Potential appeals by objecting parties (group-registration undercounting - Pinder, opt-out due process - Chakanga, and co-owner consent - Esquivel)\n\nMeanwhile, the docket for copyright cases against LLM providers continues to grow, with 60+ putative class actions working their way through the process.\n\n#Copyright #AILitigation #ClassAction #FairUse #BartzVAnthropic",
       "publication_title": "LinkedIn",
       "piece_title": "The largest copyright settlement in U.S. history just had its day in court.",
+      "pages": []
+    },
+    {
+      "type": "publication",
+      "author": "Other",
+      "date": "March  2026",
+      "url": "https://x.com/andreweglantz/status/2036917623623975106?s=20",
+      "logo_url": "",
+      "excerpt": "Some great content from my friend @zackbshapiro. For all those out there building these kind of systems, you should read your employment agreements. Your company likely owns whatever system you're building for yourself. So either don't become too reliant on it, or start thinking about re-negotiating your agreement now.",
+      "publication_title": "X",
+      "piece_title": "Comment: The Input Layer",
       "pages": []
     },
     {
@@ -82,7 +82,7 @@
       "author": "Other",
       "date": "April 19, 2024",
       "url": "https://podcasts.apple.com/us/podcast/ftx-and-the-serengeti-of-bankruptcy/id290783428?i=1000653016793",
-      "logo_url": "",
+      "logo_url": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/720x240+0+0/resize/1300/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F72%2F47%2F3af6563646acbc60a2c6e752fdec%2Fnpr-logo-color-cmyk-full.jpg",
       "excerpt": "For the last year and a half, the story of FTX has focused largely on the crimes and punishment of Sam Bankman-Fried. But in the background, the actual customers he left behind have been caught in a financial feeding frenzy over the remains of the company.\n\nOn today's show, we do a deep dive into the anatomy of the FTX bankruptcy. We meet the vulture investors who make markets out of risky debt, and hear how customers fare in the secretive world of bankruptcy claims trading.\n",
       "publication_title": "NPR Planet Money",
       "piece_title": "FTX and the Serengeti of bankruptcy",
@@ -96,7 +96,7 @@
       "author": "Other",
       "date": "February 2, 2023",
       "url": "https://news.bloomberglaw.com/crypto/distressed-funds-eye-another-crypto-prize-in-genesis-bankruptcy",
-      "logo_url": "",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bloomberg_logo.svg",
       "excerpt": "Just months after FTX’s collapse drew some of the largest distressed investors to crypto, the spiraling industry has thrown up a new high-profile target: Genesis.\n\nWhile the lender only filed for bankruptcy less than two weeks ago, the broker XClaim has confirmed three trades for its claims with an average value of over $1 million, in the range of 25% to 35% of face value, according to Chief Strategy Officer Andrew Glantz. A $4 million claim was sold to Jefferies Leveraged Credit Products LLC, according to a Tuesday filing.\n\nGenesis, a unit of Barry Silbert’s Digital Currency Group, ...",
       "publication_title": "Bloomberg",
       "piece_title": "Distressed Funds Eye Another Prize in Genesis Bankruptcy",
