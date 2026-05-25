@@ -221,7 +221,7 @@ export default function Press() {
 
       {/* ── Unified grid ────────────────────────────────────────────────── */}
       <section style={{
-        background: "#FFFFFF",
+        background: "#F4F5F7",
         padding: "clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(5rem, 12vw, 11rem)",
         borderTop: `1px solid ${LINE}`,
       }}>
@@ -235,11 +235,7 @@ export default function Press() {
               gap: "clamp(1.5rem, 3vw, 2.5rem)",
               alignItems: "start",
             }} className="press-grid">
-              {visibleItems.map(item => {
-                if (item.mediaType === "social")  return <SocialPostCard key={item._key} item={item} />;
-                if (item.mediaType === "article") return <ByAndrewCard   key={item._key} item={item} />;
-                return <PressCard key={item._key} item={item} />;
-              })}
+              {visibleItems.map(item => <UnifiedCard key={item._key} item={item} />)}
             </div>
           )}
         </div>
@@ -502,141 +498,28 @@ function OutletLogo({ name, logoUrl, style = {} }) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   PRESS CARD  (In the Press — features & coverage)
+   TYPE INDICATOR ICONS
 ═══════════════════════════════════════════════════════════════════════════ */
-function PressCard({ item }) {
-  const [hovered, setHovered] = useState(false);
-  const inner = (
-    <div style={{
-      opacity: hovered && item.href ? 0.65 : 1,
-      transition: "opacity 0.2s",
-    }}>
-      <OutletLogo name={item.outlet} logoUrl={item.logoUrl} />
-      <div style={{ borderTop: `2px solid ${INK}`, paddingTop: "1.4rem" }}>
-        <p style={{
-          fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-          letterSpacing: "0.18em", textTransform: "uppercase",
-          color: INK_60, marginBottom: "0.7rem",
-        }}>
-          {item.outlet}{item.date ? ` · ${item.date}` : ""}
-        </p>
-        <h3 style={{
-          fontFamily: FONT, fontWeight: 800,
-          fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
-          lineHeight: 1.3, letterSpacing: "-0.01em",
-          color: INK, marginBottom: item.excerpt ? "0.75rem" : 0,
-        }}>
-          {item.headline}
-        </h3>
-        {item.excerpt && (
-          <p style={{
-            fontFamily: FONT, fontSize: "0.95rem",
-            color: INK_60, lineHeight: 1.6,
-            borderLeft: `3px solid ${NEON}`,
-            paddingLeft: "0.8rem", margin: 0,
-            display: "-webkit-box", WebkitLineClamp: 8,
-            WebkitBoxOrient: "vertical", overflow: "hidden",
-          }}>
-            "{item.excerpt}"
-          </p>
-        )}
-        <PageTags pages={item.pages} />
-      </div>
-    </div>
-  );
-  if (item.href) {
-    return (
-      <a
-        href={item.href} target="_blank" rel="noopener noreferrer"
-        style={{ display: "block", textDecoration: "none" }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        {inner}
-      </a>
-    );
-  }
-  return <div>{inner}</div>;
-}
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   BY ANDREW CARD  (published articles, newsletters, etc.)
-═══════════════════════════════════════════════════════════════════════════ */
-function ByAndrewCard({ item }) {
-  const [hovered, setHovered] = useState(false);
-  const inner = (
-    <div style={{
-      background: "#fff", border: `1px solid ${LINE}`,
-      padding: "clamp(1.5rem, 3vw, 2rem)",
-      opacity: hovered && item.href ? 0.65 : 1,
-      transition: "opacity 0.2s",
-      height: "100%", boxSizing: "border-box",
-    }}>
-      <OutletLogo
-        name={item.outlet} logoUrl={item.logoUrl}
-        style={{ filter: "grayscale(1)", opacity: 0.6 }}
-      />
-      <div style={{
-        display: "flex", alignItems: "center",
-        justifyContent: "space-between",
-        marginBottom: "0.7rem", flexWrap: "wrap", gap: "0.4rem",
-      }}>
-        <p style={{
-          fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-          letterSpacing: "0.18em", textTransform: "uppercase",
-          color: INK_60, margin: 0,
-        }}>
-          {item.outlet}{item.date ? ` · ${item.date}` : ""}
-        </p>
-        <span style={{
-          fontFamily: FONT, fontSize: "0.68rem", fontWeight: 800,
-          letterSpacing: "0.08em", textTransform: "uppercase",
-          background: NEON, color: "#000",
-          padding: "0.2em 0.55em", flexShrink: 0,
-        }}>
-          Andrew Glantz
-        </span>
-      </div>
-      <h3 style={{
-        fontFamily: FONT, fontWeight: 800,
-        fontSize: "clamp(1.1rem, 1.6vw, 1.35rem)",
-        lineHeight: 1.25, letterSpacing: "-0.01em",
-        color: INK, marginBottom: item.excerpt ? "0.7rem" : 0,
-      }}>
-        {item.headline}
-      </h3>
-      {item.excerpt && (
-        <p style={{
-          fontFamily: FONT, fontSize: "0.95rem",
-          color: INK_60, lineHeight: 1.6, margin: 0,
-          display: "-webkit-box", WebkitLineClamp: 8,
-          WebkitBoxOrient: "vertical", overflow: "hidden",
-        }}>
-          {item.excerpt}
-        </p>
-      )}
-      <PageTags pages={item.pages} />
-    </div>
-  );
-  if (item.href) {
-    return (
-      <a
-        href={item.href} target="_blank" rel="noopener noreferrer"
-        style={{ display: "block", textDecoration: "none" }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        {inner}
-      </a>
-    );
-  }
-  return <div>{inner}</div>;
-}
+/* Newspaper icon — for press features */
+const NewsIcon = ({ size = 13, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+    <path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6Z"/>
+  </svg>
+);
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   SOCIAL POST CARD  (LinkedIn, X, etc.)
-═══════════════════════════════════════════════════════════════════════════ */
-const PlatformIcon = ({ platform, size = 14, color = "currentColor" }) => {
+/* Pen icon — for authored articles */
+const PenIcon = ({ size = 13, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+  </svg>
+);
+
+/* Platform icons — for social posts */
+const PlatformIcon = ({ platform, size = 13, color = "currentColor" }) => {
   const key = (platform || "").toLowerCase().trim();
   if (key === "linkedin") return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill={color} style={{ flexShrink: 0 }}>
@@ -653,8 +536,10 @@ const PlatformIcon = ({ platform, size = 14, color = "currentColor" }) => {
       <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
     </svg>
   );
+  /* Generic speech-bubble fallback */
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
+      strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
     </svg>
   );
@@ -663,9 +548,9 @@ const PlatformIcon = ({ platform, size = 14, color = "currentColor" }) => {
 function getPlatformAccent(platform) {
   const key = (platform || "").toLowerCase().trim();
   if (key === "linkedin") return "#0A66C2";
-  if (key === "x" || key === "twitter") return "#e7e7e7";
+  if (key === "x" || key === "twitter") return "#1a1a1a";
   if (key === "substack") return "#FF6719";
-  return "rgba(255,255,255,0.5)";
+  return INK_60;
 }
 
 function getPlatformLabel(platform) {
@@ -676,81 +561,141 @@ function getPlatformLabel(platform) {
   return platform;
 }
 
-function SocialPostCard({ item }) {
+/* ── Type indicator strip at the top of every card ───────────────────────── */
+function TypeIndicator({ item }) {
+  const base = {
+    display: "flex", alignItems: "center",
+    justifyContent: "space-between",
+    paddingBottom: "0.85rem",
+    marginBottom: "0.95rem",
+    borderBottom: `1px solid ${LINE}`,
+  };
+  const labelStyle = {
+    fontFamily: FONT, fontSize: "0.68rem", fontWeight: 700,
+    letterSpacing: "0.12em", textTransform: "uppercase",
+  };
+  const dateStyle = {
+    fontFamily: FONT, fontSize: "0.68rem",
+    color: INK_60, letterSpacing: "0.02em",
+  };
+
+  if (item.mediaType === "social") {
+    const accent = getPlatformAccent(item.outlet);
+    const label  = getPlatformLabel(item.outlet);
+    return (
+      <div style={base}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
+          <PlatformIcon platform={item.outlet} size={13} color={accent} />
+          <span style={{ ...labelStyle, color: accent }}>{label}</span>
+        </div>
+        {item.date && <span style={dateStyle}>{item.date}</span>}
+      </div>
+    );
+  }
+
+  if (item.mediaType === "article") {
+    return (
+      <div style={base}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
+          <PenIcon size={13} color={INK_60} />
+          <span style={{ ...labelStyle, color: INK_60 }}>By Andrew</span>
+        </div>
+      </div>
+    );
+  }
+
+  /* press */
+  return (
+    <div style={base}>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
+        <NewsIcon size={13} color={INK_60} />
+        <span style={{ ...labelStyle, color: INK_60 }}>Press Feature</span>
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UNIFIED CARD  — all three media types, one white card design
+═══════════════════════════════════════════════════════════════════════════ */
+function UnifiedCard({ item }) {
   const [hovered, setHovered] = useState(false);
-  const accent = getPlatformAccent(item.outlet);
-  const label  = getPlatformLabel(item.outlet);
+  const isSocial  = item.mediaType === "social";
+  const isArticle = item.mediaType === "article";
 
   const inner = (
     <div style={{
-      background: "#0D1827",
-      border: `1px solid ${accent}33`,
-      padding: "1.6rem 1.8rem",
+      background: "#fff",
+      border: `1px solid ${LINE}`,
+      padding: "clamp(1.4rem, 2.5vw, 1.8rem)",
       height: "100%", boxSizing: "border-box",
-      opacity: hovered && item.href ? 0.8 : 1,
+      display: "flex", flexDirection: "column",
+      opacity: hovered && item.href ? 0.7 : 1,
       transition: "opacity 0.2s",
-      display: "flex", flexDirection: "column", gap: "0.75rem",
-      position: "relative", overflow: "hidden",
     }}>
-      {/* Accent glow */}
-      <div style={{
-        position: "absolute", inset: 0, pointerEvents: "none",
-        background: `radial-gradient(60% 55% at 0% 0%, ${accent}22, transparent 65%)`,
-      }} />
-      {/* Header: platform icon + label + date */}
-      <div style={{
-        display: "flex", alignItems: "center",
-        justifyContent: "space-between", position: "relative",
-      }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.45em" }}>
-          <PlatformIcon platform={item.outlet} size={14} color={accent} />
-          <span style={{
-            fontFamily: FONT, fontSize: "0.68rem", fontWeight: 700,
-            letterSpacing: "0.12em", textTransform: "uppercase", color: accent,
-          }}>
-            {label}
-          </span>
-        </div>
-        {item.date && (
-          <span style={{
-            fontFamily: FONT, fontSize: "0.68rem",
-            color: "rgba(255,255,255,0.3)", letterSpacing: "0.04em",
-          }}>
-            {item.date}
-          </span>
-        )}
-      </div>
-      {/* Topic/title label */}
-      {item.headline && (
+      {/* ── Type indicator ─────────────────────────────────────────── */}
+      <TypeIndicator item={item} />
+
+      {/* ── Outlet logo (press + article only) ─────────────────────── */}
+      {!isSocial && (
+        <OutletLogo
+          name={item.outlet} logoUrl={item.logoUrl}
+          style={isArticle ? { filter: "grayscale(1)", opacity: 0.55 } : {}}
+        />
+      )}
+
+      {/* ── Meta: outlet · date ─────────────────────────────────────── */}
+      {!isSocial && (item.outlet || item.date) && (
         <p style={{
-          fontFamily: FONT, fontWeight: 700, fontSize: "0.85rem",
-          color: "rgba(255,255,255,0.5)", lineHeight: 1.3,
-          margin: 0, position: "relative",
-          textTransform: "uppercase", letterSpacing: "0.06em",
+          fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
+          letterSpacing: "0.16em", textTransform: "uppercase",
+          color: INK_60, margin: "0 0 0.65rem",
         }}>
-          {item.headline}
+          {item.outlet}{item.date ? ` · ${item.date}` : ""}
         </p>
       )}
-      {/* Post excerpt */}
+
+      {/* ── Headline ────────────────────────────────────────────────── */}
+      {item.headline && (
+        <h3 style={{
+          fontFamily: FONT, fontWeight: isSocial ? 700 : 800,
+          fontSize: isSocial ? "0.85rem" : "clamp(1rem, 1.4vw, 1.15rem)",
+          lineHeight: 1.3, letterSpacing: isSocial ? "0.05em" : "-0.01em",
+          textTransform: isSocial ? "uppercase" : "none",
+          color: isSocial ? INK_60 : INK,
+          margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}`,
+        }}>
+          {item.headline}
+        </h3>
+      )}
+
+      {/* ── Excerpt ─────────────────────────────────────────────────── */}
       {item.excerpt && (
         <p style={{
-          fontFamily: FONT,
-          fontSize: "clamp(0.97rem, 1.2vw, 1.05rem)",
-          color: "rgba(255,255,255,0.85)",
-          lineHeight: 1.7, margin: 0,
-          position: "relative", fontStyle: "italic",
+          fontFamily: FONT, fontSize: "0.95rem",
+          color: INK_60, lineHeight: 1.65,
+          margin: 0, flex: 1,
+          fontStyle: isSocial ? "italic" : "normal",
+          ...(item.mediaType === "press" ? {
+            borderLeft: `3px solid ${NEON}`,
+            paddingLeft: "0.8rem",
+          } : {}),
           display: "-webkit-box", WebkitLineClamp: 8,
           WebkitBoxOrient: "vertical", overflow: "hidden",
         }}>
-          "{item.excerpt}"
+          {(item.mediaType === "press" || isSocial) ? `"${item.excerpt}"` : item.excerpt}
         </p>
       )}
+
+      {/* ── Topic tags ──────────────────────────────────────────────── */}
       <PageTags pages={item.pages} />
-      {item.href && (
+
+      {/* ── Social CTA ──────────────────────────────────────────────── */}
+      {isSocial && item.href && (
         <span style={{
           fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
-          color: accent, letterSpacing: "0.04em",
-          marginTop: "auto", position: "relative",
+          color: getPlatformAccent(item.outlet),
+          letterSpacing: "0.04em", marginTop: "0.8rem",
         }}>
           View post →
         </span>
@@ -762,7 +707,7 @@ function SocialPostCard({ item }) {
     return (
       <a
         href={item.href} target="_blank" rel="noopener noreferrer"
-        style={{ display: "block", textDecoration: "none" }}
+        style={{ display: "block", textDecoration: "none", height: "100%" }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
