@@ -2,28 +2,6 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
-      "type": "publication",
-      "author": "Other",
-      "date": "",
-      "url": "",
-      "excerpt": "",
-      "publication_title": "",
-      "piece_title": "",
-      "pages": []
-    },
-    {
-      "type": "publication",
-      "author": "Andrew",
-      "date": "December 1, 2022",
-      "url": "https://www.abi.org/abi-journal/when-creditors-seek-an-early-offramp-are-claim-purchasers-the-only-answer",
-      "excerpt": "Debtors are not the only parties that experience financial distress in chapter 11. Creditors often have their own economic woes that are created or exacerbated by a debtor’s f iling. This has been on dramatic display in the proceedings of two cryptocurrency finance platforms: Voyager Digital and Celsius Network.1 Pre-petition depositors, unable to access their accounts and unexpectedly finding themselves as creditors, inundated the courts with pleas for immediate relief, many in dire financial straits.2 While the presiding judges asked for patience to address threshold legal issues, it is cash — not sympathy — that pays the bills. Congress understood the importance of timely liquidity. It created a mechanism by which creditors may sell their rights to payment to another party pursuant to Rule 3001 (e) of the Federal Rules of Bankruptcy Procedure (FRBP). This allows creditors to “collect” from a third party rather than the debtor without violating the automatic stay, which precludes collection actions during the debtor’s chapter 11 case. ",
-      "publication_title": "American Bankruptcy Institute Journal",
-      "piece_title": "When Creditors Seek an Early Offramp Are Claim Purchasers the Only Answer",
-      "pages": [
-        "bankruptcy"
-      ]
-    },
-    {
       "type": "social post",
       "author": "Andrew",
       "date": "May 2026",
@@ -94,6 +72,18 @@
       "piece_title": "Distressed Funds Eye Another Prize in Genesis Bankruptcy",
       "pages": [
         "crypto",
+        "bankruptcy"
+      ]
+    },
+    {
+      "type": "publication",
+      "author": "Andrew",
+      "date": "December 1, 2022",
+      "url": "https://www.abi.org/abi-journal/when-creditors-seek-an-early-offramp-are-claim-purchasers-the-only-answer",
+      "excerpt": "Debtors are not the only parties that experience financial distress in chapter 11. Creditors often have their own economic woes that are created or exacerbated by a debtor’s f iling. This has been on dramatic display in the proceedings of two cryptocurrency finance platforms: Voyager Digital and Celsius Network.1 Pre-petition depositors, unable to access their accounts and unexpectedly finding themselves as creditors, inundated the courts with pleas for immediate relief, many in dire financial straits.2 While the presiding judges asked for patience to address threshold legal issues, it is cash — not sympathy — that pays the bills. Congress understood the importance of timely liquidity. It created a mechanism by which creditors may sell their rights to payment to another party pursuant to Rule 3001 (e) of the Federal Rules of Bankruptcy Procedure (FRBP). This allows creditors to “collect” from a third party rather than the debtor without violating the automatic stay, which precludes collection actions during the debtor’s chapter 11 case. ",
+      "publication_title": "American Bankruptcy Institute Journal",
+      "piece_title": "When Creditors Seek an Early Offramp Are Claim Purchasers the Only Answer",
+      "pages": [
         "bankruptcy"
       ]
     }
