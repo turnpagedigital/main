@@ -3,7 +3,7 @@ import { jsonResponse, isAuthed } from "./_utils.js";
 const PRESS_PATH = "src/data/press.json";
 // Type and author are freeform strings — no enum validation, just string check.
 const PRESS_PAGE_VALUES   = ["copyright", "crypto", "litigation", "tariffs", "bankruptcy"];
-const PRESS_STRING_FIELDS = ["type", "author", "date", "url", "logo_url", "excerpt", "publication_title", "piece_title"];
+const PRESS_STRING_FIELDS = ["type", "author", "date", "url", "logo_url", "excerpt", "publication_title", "piece_title", "media_url"];
 
 export async function onRequestGet({ request, env }) {
   if (!(await isAuthed(request, env))) {

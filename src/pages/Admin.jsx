@@ -87,7 +87,7 @@ function parseDateForSort(str) {
 }
 
 function blankPressItem() {
-  return { type: "publication", author: "Other", pages: [], date: "", url: "", logo_url: "", excerpt: "", publication_title: "", piece_title: "" };
+  return { type: "publication", author: "Other", pages: [], date: "", url: "", logo_url: "", excerpt: "", publication_title: "", piece_title: "", media_url: "" };
 }
 
 function sanitizePressItem(d) {
@@ -101,6 +101,7 @@ function sanitizePressItem(d) {
     excerpt:           typeof d.excerpt           === "string" ? d.excerpt           : "",
     publication_title: typeof d.publication_title === "string" ? d.publication_title : "",
     piece_title:       typeof d.piece_title       === "string" ? d.piece_title       : "",
+    media_url:         typeof d.media_url         === "string" ? d.media_url         : "",
   };
 }
 
@@ -1363,6 +1364,18 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
                   onChange={e => updateItem(i, "excerpt", e.target.value)}
                   rows={3}
                   placeholder="Short quote or summary from the article…"
+                  style={inputStyle}
+                />
+              </label>
+
+              {/* Media URL */}
+              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, gridColumn: "1 / -1" }}>
+                Image or video URL (optional — shown as a thumbnail below the excerpt)
+                <input
+                  type="text"
+                  value={item.media_url || ""}
+                  onChange={e => updateItem(i, "media_url", e.target.value)}
+                  placeholder="https://… (image URL or YouTube link)"
                   style={inputStyle}
                 />
               </label>
