@@ -535,49 +535,49 @@ function LeadershipSection() {
                 gap: "clamp(1.4rem, 3vw, 2.4rem)",
               }}>
                 {/* Wall Street Journal */}
-                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "0.82rem",
+                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "1.23rem",
                   letterSpacing: "0.04em", color: INK, opacity: 0.42,
                   textTransform: "uppercase", whiteSpace: "nowrap" }}>
                   The Wall Street Journal
                 </span>
 
                 {/* Bloomberg */}
-                <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "1rem",
+                <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "1.5rem",
                   letterSpacing: "-0.02em", color: INK, opacity: 0.42,
                   textTransform: "uppercase", whiteSpace: "nowrap" }}>
                   Bloomberg
                 </span>
 
                 {/* NYT */}
-                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "0.82rem",
+                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "1.23rem",
                   letterSpacing: "0.02em", color: INK, opacity: 0.42,
                   whiteSpace: "nowrap" }}>
                   The New York Times
                 </span>
 
                 {/* NPR */}
-                <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "0.88rem",
+                <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "1.32rem",
                   letterSpacing: "0.06em", color: INK, opacity: 0.42,
                   textTransform: "uppercase", whiteSpace: "nowrap" }}>
                   NPR
                 </span>
 
-                {/* BBC — three-box SVG */}
-                <svg width="60" height="22" viewBox="0 0 60 22" fill="none"
+                {/* BBC — three-box SVG (scaled ×1.5 from 60×22) */}
+                <svg width="90" height="33" viewBox="0 0 90 33" fill="none"
                   style={{ opacity: 0.42, flexShrink: 0 }}>
-                  <rect x="0"  y="0" width="18" height="22" fill={INK} />
-                  <rect x="21" y="0" width="18" height="22" fill={INK} />
-                  <rect x="42" y="0" width="18" height="22" fill={INK} />
-                  <text x="9"  y="15.5" textAnchor="middle" fontFamily={FONT} fontWeight="900"
-                    fontSize="13" fill="#F4F5F7">B</text>
-                  <text x="30" y="15.5" textAnchor="middle" fontFamily={FONT} fontWeight="900"
-                    fontSize="13" fill="#F4F5F7">B</text>
-                  <text x="51" y="15.5" textAnchor="middle" fontFamily={FONT} fontWeight="900"
-                    fontSize="13" fill="#F4F5F7">C</text>
+                  <rect x="0"    y="0" width="27" height="33" fill={INK} />
+                  <rect x="31.5" y="0" width="27" height="33" fill={INK} />
+                  <rect x="63"   y="0" width="27" height="33" fill={INK} />
+                  <text x="13.5" y="23" textAnchor="middle" fontFamily={FONT} fontWeight="900"
+                    fontSize="19.5" fill="#F4F5F7">B</text>
+                  <text x="45"   y="23" textAnchor="middle" fontFamily={FONT} fontWeight="900"
+                    fontSize="19.5" fill="#F4F5F7">B</text>
+                  <text x="76.5" y="23" textAnchor="middle" fontFamily={FONT} fontWeight="900"
+                    fontSize="19.5" fill="#F4F5F7">C</text>
                 </svg>
 
                 {/* CoinDesk */}
-                <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: "0.88rem",
+                <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: "1.32rem",
                   letterSpacing: "-0.01em", color: INK, opacity: 0.42,
                   whiteSpace: "nowrap" }}>
                   CoinDesk
@@ -585,9 +585,16 @@ function LeadershipSection() {
 
                 {/* Grant's */}
                 <span style={{ fontFamily: "'Georgia', serif", fontStyle: "italic",
-                  fontWeight: 700, fontSize: "0.88rem",
+                  fontWeight: 700, fontSize: "1.32rem",
                   color: INK, opacity: 0.42, whiteSpace: "nowrap" }}>
                   Grant's
+                </span>
+
+                {/* ABI Journal */}
+                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "1.23rem",
+                  letterSpacing: "0.06em", color: INK, opacity: 0.42,
+                  textTransform: "uppercase", whiteSpace: "nowrap" }}>
+                  ABI Journal
                 </span>
               </div>
             </div>
@@ -710,7 +717,7 @@ function FullBleedPhoto() {
         lineHeight: 0.98, letterSpacing: "-0.04em",
         color: "#000", textAlign: "right",
       }}>
-        "Too hard" isn't<br />in our <span className="accent-light">vocabulary.</span>
+        Too hard? Not in<br />our <span className="accent-light">vocabulary.</span>
       </p>
     </section>
   );
