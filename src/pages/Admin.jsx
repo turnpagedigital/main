@@ -69,7 +69,21 @@ function sanitizePressItem(d) {
   };
 }
 
+/* Swap the favicon to the original (favicon.png) while admin is mounted,
+   then restore the main site favicon (favicon1.png) on unmount. */
+function useFaviconSwap(adminHref, restoreHref) {
+  useEffect(() => {
+    const icons = document.querySelectorAll("link[rel~='icon'], link[rel='apple-touch-icon']");
+    icons.forEach(el => { el.href = adminHref; });
+    return () => {
+      icons.forEach(el => { el.href = restoreHref; });
+    };
+  }, [adminHref, restoreHref]);
+}
+
 export default function Admin() {
+  useFaviconSwap("/favicon.png", "/favicon1.png");
+
   const [phase, setPhase] = useState("checking");
   const [errorMsg, setErrorMsg] = useState("");
   const [deals, setDeals] = useState(null);
