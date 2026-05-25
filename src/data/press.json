@@ -2,16 +2,36 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
-      "type": "podcast",
+      "type": "publication",
       "author": "Other",
-      "date": "February 3, 2025",
-      "url": "https://www.nalufinance.com/post/andrew-glantz-opportunities-in-bankruptcy",
-      "excerpt": "In this episode of Nalu Finance, we sit down with Andrew Glantz to explore the $40-50 billion market of bankruptcy claims trading. Andrew dives deep into the risks and rewards of investing in bankruptcy claims, including why this asset class remains largely uncorrelated to traditional markets, the four key risks investors must assess, and how careful research can uncover significant value-creation opportunities. He also unpacks the extraordinary case of FTX bankruptcy claims, where early buyers saw 10x+ returns as assets were uncovered.",
-      "publication_title": "Nalu Finance Podcast",
-      "piece_title": "Opportunities in Bankruptcy",
+      "date": "",
+      "url": "",
+      "excerpt": "",
+      "publication_title": "",
+      "piece_title": "",
+      "pages": []
+    },
+    {
+      "type": "publication",
+      "author": "Andrew",
+      "date": "December 1, 2022",
+      "url": "https://www.abi.org/abi-journal/when-creditors-seek-an-early-offramp-are-claim-purchasers-the-only-answer",
+      "excerpt": "Debtors are not the only parties that experience financial distress in chapter 11. Creditors often have their own economic woes that are created or exacerbated by a debtor’s f iling. This has been on dramatic display in the proceedings of two cryptocurrency finance platforms: Voyager Digital and Celsius Network.1 Pre-petition depositors, unable to access their accounts and unexpectedly finding themselves as creditors, inundated the courts with pleas for immediate relief, many in dire financial straits.2 While the presiding judges asked for patience to address threshold legal issues, it is cash — not sympathy — that pays the bills. Congress understood the importance of timely liquidity. It created a mechanism by which creditors may sell their rights to payment to another party pursuant to Rule 3001 (e) of the Federal Rules of Bankruptcy Procedure (FRBP). This allows creditors to “collect” from a third party rather than the debtor without violating the automatic stay, which precludes collection actions during the debtor’s chapter 11 case. ",
+      "publication_title": "American Bankruptcy Institute Journal",
+      "piece_title": "When Creditors Seek an Early Offramp Are Claim Purchasers the Only Answer",
       "pages": [
         "bankruptcy"
       ]
+    },
+    {
+      "type": "social post",
+      "author": "Andrew",
+      "date": "May 2026",
+      "url": "https://www.linkedin.com/posts/andrewglantz_homepage-share-7460768935009845248-jmtX/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADYlmUBIgr3_ZLp4FoChoF9AvaiOSl8Xd8",
+      "excerpt": "Yesterday, class counsel in Bartz v. Anthropic PBC (N.D. Cal.) sought final approval of the $1.5 billion settlement and for the court to overrule all objections. At the hearing, counsel simultaneously disclosed a downsized fee request from 15% to 12.5% of the gross fund (approximately $187.5 million plus $3 million in incurred expenses, an $18.22 million cost reserve, and $50,000 service awards to each of the three class representatives). \n\nThe claimant participation rate is unprecedented: 440,490 of 482,460 eligible works, or 91.3% (as reported in April) compared to typical filing rates of 20-30%. The settlement is structured as a per-work compensation scheme with each work eligible to receive approximately $3,000 (far less than the $150,000 statutory limits), split among rights holders. \n\nJudge Martínez-Olguín took the ruling under submission and could approve the settlement on a final basis at any time in the coming days or weeks, which would trigger an additional funding requirement by Anthropic. \n\nKey developments to watch:\n\n→ June 11 - expected distributions per work to be calculated\n→ June 11 - appellate oral argument in Thomson Reuters v. ROSS on whether AI training constitutes fair-use\n→ July - Potential appeals by objecting parties (group-registration undercounting - Pinder, opt-out due process - Chakanga, and co-owner consent - Esquivel)\n\nMeanwhile, the docket for copyright cases against LLM providers continues to grow, with 60+ putative class actions working their way through the process.\n\n#Copyright #AILitigation #ClassAction #FairUse #BartzVAnthropic",
+      "publication_title": "LinkedIn",
+      "piece_title": "The largest copyright settlement in U.S. history just had its day in court.",
+      "pages": []
     },
     {
       "type": "blog post",
@@ -42,6 +62,18 @@
     {
       "type": "podcast",
       "author": "Other",
+      "date": "February 3, 2025",
+      "url": "https://www.nalufinance.com/post/andrew-glantz-opportunities-in-bankruptcy",
+      "excerpt": "In this episode of Nalu Finance, we sit down with Andrew Glantz to explore the $40-50 billion market of bankruptcy claims trading. Andrew dives deep into the risks and rewards of investing in bankruptcy claims, including why this asset class remains largely uncorrelated to traditional markets, the four key risks investors must assess, and how careful research can uncover significant value-creation opportunities. He also unpacks the extraordinary case of FTX bankruptcy claims, where early buyers saw 10x+ returns as assets were uncovered.",
+      "publication_title": "Nalu Finance Podcast",
+      "piece_title": "Opportunities in Bankruptcy",
+      "pages": [
+        "bankruptcy"
+      ]
+    },
+    {
+      "type": "podcast",
+      "author": "Other",
       "date": "April 19, 2024",
       "url": "https://podcasts.apple.com/us/podcast/ftx-and-the-serengeti-of-bankruptcy/id290783428?i=1000653016793",
       "excerpt": "For the last year and a half, the story of FTX has focused largely on the crimes and punishment of Sam Bankman-Fried. But in the background, the actual customers he left behind have been caught in a financial feeding frenzy over the remains of the company.\n\nOn today's show, we do a deep dive into the anatomy of the FTX bankruptcy. We meet the vulture investors who make markets out of risky debt, and hear how customers fare in the secretive world of bankruptcy claims trading.\n",
@@ -50,18 +82,6 @@
       "pages": [
         "crypto",
         "bankruptcy"
-      ]
-    },
-    {
-      "type": "social post",
-      "author": "Andrew",
-      "date": "May 2026",
-      "url": "https://www.linkedin.com/posts/andrewglantz_homepage-share-7460768935009845248-jmtX/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADYlmUBIgr3_ZLp4FoChoF9AvaiOSl8Xd8",
-      "excerpt": "Yesterday, class counsel in Bartz v. Anthropic PBC (N.D. Cal.) sought final approval of the $1.5 billion settlement and for the court to overrule all objections. At the hearing, counsel simultaneously disclosed a downsized fee request from 15% to 12.5% of the gross fund (approximately $187.5 million plus $3 million in incurred expenses, an $18.22 million cost reserve, and $50,000 service awards to each of the three class representatives). \n\nThe claimant participation rate is unprecedented: 440,490 of 482,460 eligible works, or 91.3% (as reported in April) compared to typical filing rates of 20-30%. The settlement is structured as a per-work compensation scheme with each work eligible to receive approximately $3,000 (far less than the $150,000 statutory limits), split among rights holders. \n\nJudge Martínez-Olguín took the ruling under submission and could approve the settlement on a final basis at any time in the coming days or weeks, which would trigger an additional funding requirement by Anthropic. \n\nKey developments to watch:\n\n→ June 11 - expected distributions per work to be calculated\n→ June 11 - appellate oral argument in Thomson Reuters v. ROSS on whether AI training constitutes fair-use\n→ July - Potential appeals by objecting parties (group-registration undercounting - Pinder, opt-out due process - Chakanga, and co-owner consent - Esquivel)\n\nMeanwhile, the docket for copyright cases against LLM providers continues to grow, with 60+ putative class actions working their way through the process.\n\n#Copyright #AILitigation #ClassAction #FairUse #BartzVAnthropic",
-      "publication_title": "LinkedIn",
-      "piece_title": "The largest copyright settlement in U.S. history just had its day in court.",
-      "pages": [
-        "ai-copyright"
       ]
     },
     {
