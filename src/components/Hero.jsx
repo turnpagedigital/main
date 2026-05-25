@@ -40,12 +40,19 @@ export default function Hero({
           style={{
             position: "absolute", inset: 0, zIndex: 1,
             width: "100%", height: "100%", objectFit: "cover",
-            opacity: 0.8, filter: "saturate(0.75) contrast(1.05) brightness(0.55)",
+            opacity: 0.8, filter: "saturate(1.1) contrast(1.05) brightness(0.55) sepia(0.45)",
             pointerEvents: "none",
           }}
         >
           <source src={video} type="video/mp4" />
         </video>
+      )}
+      {/* Warm tint overlay (only when video is present) */}
+      {video && (
+        <div style={{
+          position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none",
+          background: "rgba(210, 120, 30, 0.13)",
+        }} />
       )}
       {/* Grain */}
       <div style={{
