@@ -68,7 +68,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Get in Touch",
     "footer.legal.privacy":   "Privacy Policy",
     "footer.legal.terms":     "Terms of Use",
-    "footer.copyright":       "Turnpage Digital Markets © 2026 · All rights reserved",
+    "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · All rights reserved",
     "footer.region_label":    "Global",
 
     // CTA banner
@@ -128,7 +128,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Contáctenos",
     "footer.legal.privacy":   "Política de Privacidad",
     "footer.legal.terms":     "Términos de Uso",
-    "footer.copyright":       "Turnpage Digital Markets © 2026 · Todos los derechos reservados",
+    "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Todos los derechos reservados",
     "footer.region_label":    "Global",
 
     "ctabanner.title": "Manténgase al día con el expediente.",
@@ -187,7 +187,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Nous contacter",
     "footer.legal.privacy":   "Politique de confidentialité",
     "footer.legal.terms":     "Conditions d'utilisation",
-    "footer.copyright":       "Turnpage Digital Markets © 2026 · Tous droits réservés",
+    "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Tous droits réservés",
     "footer.region_label":    "Global",
 
     "ctabanner.title": "Suivez l'actualité du rôle.",
@@ -246,7 +246,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Kontakt",
     "footer.legal.privacy":   "Datenschutzerklärung",
     "footer.legal.terms":     "Nutzungsbedingungen",
-    "footer.copyright":       "Turnpage Digital Markets © 2026 · Alle Rechte vorbehalten",
+    "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Alle Rechte vorbehalten",
     "footer.region_label":    "Global",
 
     "ctabanner.title": "Bleiben Sie über das Verfahren informiert.",
@@ -305,7 +305,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Contattaci",
     "footer.legal.privacy":   "Informativa sulla privacy",
     "footer.legal.terms":     "Termini d'uso",
-    "footer.copyright":       "Turnpage Digital Markets © 2026 · Tutti i diritti riservati",
+    "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Tutti i diritti riservati",
     "footer.region_label":    "Global",
 
     "ctabanner.title": "Resta al passo con il ruolo.",
@@ -364,7 +364,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "Fale Conosco",
     "footer.legal.privacy":   "Política de Privacidade",
     "footer.legal.terms":     "Termos de Uso",
-    "footer.copyright":       "Turnpage Digital Markets © 2026 · Todos os direitos reservados",
+    "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Todos os direitos reservados",
     "footer.region_label":    "Global",
 
     "ctabanner.title": "Acompanhe a pauta.",
@@ -423,7 +423,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "문의하기",
     "footer.legal.privacy":   "개인정보 처리방침",
     "footer.legal.terms":     "이용약관",
-    "footer.copyright":       "Turnpage Digital Markets © 2026 · 모든 권리 보유",
+    "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · 모든 권리 보유",
     "footer.region_label":    "글로벌",
 
     "ctabanner.title": "최신 동향을 확인하세요.",
@@ -482,7 +482,7 @@ export const TRANSLATIONS = {
     "footer.firm.contact":    "联系我们",
     "footer.legal.privacy":   "隐私政策",
     "footer.legal.terms":     "使用条款",
-    "footer.copyright":       "Turnpage Digital Markets © 2026 · 版权所有",
+    "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · 版权所有",
     "footer.region_label":    "全球",
 
     "ctabanner.title": "紧跟案件进展。",
