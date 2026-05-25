@@ -220,7 +220,7 @@ export default function Press() {
               <div style={{ display: "flex", flexDirection: "column", gap: "0.1rem" }}>
                 {[
                   { key: "press",   label: "Press Features" },
-                  { key: "article", label: "By Andrew" },
+                  { key: "article", label: "By Andrew Glantz" },
                   { key: "social",  label: "Social Posts" },
                 ].map(({ key, label }) => {
                   const active = filterType === key;
@@ -653,7 +653,7 @@ function TypeIndicator({ item }) {
       <div style={base}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
           <PenIcon size={13} color={INK_60} />
-          <span style={{ ...labelStyle, color: INK_60 }}>By Andrew</span>
+          <span style={{ ...labelStyle, color: INK_60 }}>By Andrew Glantz</span>
         </div>
         {item.date && <span style={dateStyle}>{item.date}</span>}
       </div>
