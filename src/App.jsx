@@ -13,6 +13,7 @@ import Contact from "./pages/Contact.jsx";
 import Legal from "./pages/Legal.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Admin from "./pages/Admin.jsx";
+import Press from "./pages/Press.jsx";
 
 const TITLES = {
   "home": "Turnpage Digital Markets — The OTC Desk for Rights Holders",
@@ -20,6 +21,7 @@ const TITLES = {
   "crypto": "Crypto Claims — Turnpage Digital Markets",
   "briefings": "Briefings — Turnpage Digital Markets",
   "briefing": "Briefing — Turnpage Digital Markets",
+  "press": "Press & Publications — Turnpage Digital Markets",
   "contact": "Get in Touch — Turnpage Digital Markets",
   "privacy": "Privacy Policy — Turnpage Digital Markets",
   "terms": "Terms of Use — Turnpage Digital Markets",
@@ -69,6 +71,7 @@ function renderPage(route) {
     case "contact":        return <Contact />;
     case "privacy":        return <Legal kind="privacy" />;
     case "terms":          return <Legal kind="terms" />;
+    case "press":          return <Press />;
     case "admin":          return <Admin />;
     default:               return <NotFound />;
   }

@@ -17,6 +17,7 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Locked Crypto",
     "nav.tariff":      "Tariff Refunds",
     "nav.briefings":   "Briefings",
+    "nav.press":       "Press & Publications",
     "nav.contact":     "Get in Touch",
 
     // Hero
@@ -82,6 +83,7 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Cripto Bloqueada",
     "nav.tariff":      "Reembolsos Arancelarios",
     "nav.briefings":   "Informes",
+    "nav.press":       "Prensa y Publicaciones",
     "nav.contact":     "Contáctenos",
 
     "hero.eyebrow":     "Mesa OTC de Reclamaciones",
@@ -141,6 +143,7 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Crypto Bloquée",
     "nav.tariff":      "Remboursements Douaniers",
     "nav.briefings":   "Briefings",
+    "nav.press":       "Presse et Publications",
     "nav.contact":     "Nous contacter",
 
     "hero.eyebrow":     "Desk OTC pour Créances",
@@ -200,6 +203,7 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Gesperrtes Krypto",
     "nav.tariff":      "Zollrückerstattungen",
     "nav.briefings":   "Briefings",
+    "nav.press":       "Presse & Publikationen",
     "nav.contact":     "Kontakt",
 
     "hero.eyebrow":     "OTC-Desk für Ansprüche",
@@ -259,6 +263,7 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Cripto Bloccate",
     "nav.tariff":      "Rimborsi Doganali",
     "nav.briefings":   "Briefing",
+    "nav.press":       "Stampa e Pubblicazioni",
     "nav.contact":     "Contattaci",
 
     "hero.eyebrow":     "Desk OTC per Crediti",
@@ -318,6 +323,7 @@ export const TRANSLATIONS = {
     "nav.crypto":      "Cripto Bloqueado",
     "nav.tariff":      "Reembolsos Tarifários",
     "nav.briefings":   "Briefings",
+    "nav.press":       "Imprensa e Publicações",
     "nav.contact":     "Fale Conosco",
 
     "hero.eyebrow":     "Mesa OTC de Reivindicações",
@@ -377,6 +383,7 @@ export const TRANSLATIONS = {
     "nav.crypto":      "잠긴 암호화폐",
     "nav.tariff":      "관세 환급",
     "nav.briefings":   "브리핑",
+    "nav.press":       "언론 및 출판",
     "nav.contact":     "문의하기",
 
     "hero.eyebrow":     "OTC 청구 데스크",
@@ -436,6 +443,7 @@ export const TRANSLATIONS = {
     "nav.crypto":      "锁定加密资产",
     "nav.tariff":      "关税退款",
     "nav.briefings":   "简报",
+    "nav.press":       "媒体与出版",
     "nav.contact":     "联系我们",
 
     "hero.eyebrow":     "OTC 索赔交易台",

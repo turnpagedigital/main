@@ -17,7 +17,8 @@ export default function Footer() {
     { key: "contact", label: "Bankruptcy & Litigation" },
   ];
   const COL_RESOURCES = [
-    { key: "briefings", label: t("nav.briefings") },
+    { key: "press",        label: t("nav.press") },
+    { key: "briefings",    label: t("nav.briefings") },
     { key: "ai-copyright", label: "Top 12 Cases", hashSuffix: "#cases-section" },
   ];
   const COL_FIRM = [

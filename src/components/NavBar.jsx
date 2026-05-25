@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { key: "ai-copyright",  labelKey: "nav.copyright" },
   { key: "crypto",        labelKey: "nav.crypto" },
   { key: "tariff-refunds",labelKey: "nav.tariff", externalHref: "https://www.rewindtariffs.com" },
-  { key: "briefings",     labelKey: "nav.briefings" },
+  { key: "press",         labelKey: "nav.press" },
 ];
 
 /* Preview content shown when hovering over a nav item.
@@ -20,6 +20,7 @@ const PREVIEWS = {
     links: [
       { label: "Top 12 active cases", href: hashHref("ai-copyright") + "#cases-section" },
       { label: "Who we help",         href: hashHref("ai-copyright") },
+      { label: "Briefings",           href: hashHref("briefings") },
       { label: "FAQ",                 href: hashHref("ai-copyright") },
     ],
     cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=ai-copyright" },
@@ -43,14 +44,15 @@ const PREVIEWS = {
     ],
     cta: { label: "Visit Rewind Tariffs", href: "https://www.rewindtariffs.com", external: true },
   },
-  "briefings": {
-    title: "Briefings",
-    body: "Analysis on the AI copyright docket — cases, settlements, and rulings, written for rights holders, counsel, and dealmakers.",
+  "press": {
+    title: "Press & Publications",
+    body: "Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.",
     links: [
-      { label: "Latest briefings",        href: hashHref("briefings") },
-      { label: "Subscribe via email",     href: hashHref("contact") + "?source=briefings" },
+      { label: "Media coverage",    href: hashHref("press") },
+      { label: "By Andrew",         href: hashHref("press") },
+      { label: "Briefings",         href: hashHref("briefings") },
     ],
-    cta: { label: "Read the briefings", href: hashHref("briefings") },
+    cta: { label: "View all", href: hashHref("press") },
   },
 };
 
