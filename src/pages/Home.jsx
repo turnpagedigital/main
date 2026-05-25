@@ -531,6 +531,78 @@ function LeadershipSection() {
             }}>
               Andrew's work has been featured in the <em>Wall Street Journal</em>, <em>Bloomberg</em>, <em>The New York Times</em>, <em>CoinDesk</em>, NPR's <em>Planet Money</em>, the <em>BBC</em>, <em>Grant's Interest Rate Observer</em>, and numerous other outlets.
             </p>
+
+            {/* Press logo strip */}
+            <div style={{ marginTop: "2.2rem" }}>
+              <p style={{
+                fontFamily: FONT, fontSize: "0.68rem", fontWeight: 600,
+                letterSpacing: "0.2em", textTransform: "uppercase",
+                color: INK_40, marginBottom: "1.2rem",
+              }}>
+                As seen in
+              </p>
+              <div style={{
+                display: "flex", flexWrap: "wrap",
+                alignItems: "center",
+                gap: "clamp(1.4rem, 3vw, 2.4rem)",
+              }}>
+                {/* Wall Street Journal */}
+                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "0.82rem",
+                  letterSpacing: "0.04em", color: INK, opacity: 0.42,
+                  textTransform: "uppercase", whiteSpace: "nowrap" }}>
+                  The Wall Street Journal
+                </span>
+
+                {/* Bloomberg */}
+                <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "1rem",
+                  letterSpacing: "-0.02em", color: INK, opacity: 0.42,
+                  textTransform: "uppercase", whiteSpace: "nowrap" }}>
+                  Bloomberg
+                </span>
+
+                {/* NYT */}
+                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "0.82rem",
+                  letterSpacing: "0.02em", color: INK, opacity: 0.42,
+                  whiteSpace: "nowrap" }}>
+                  The New York Times
+                </span>
+
+                {/* NPR */}
+                <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "0.88rem",
+                  letterSpacing: "0.06em", color: INK, opacity: 0.42,
+                  textTransform: "uppercase", whiteSpace: "nowrap" }}>
+                  NPR
+                </span>
+
+                {/* BBC — three-box SVG */}
+                <svg width="60" height="22" viewBox="0 0 60 22" fill="none"
+                  style={{ opacity: 0.42, flexShrink: 0 }}>
+                  <rect x="0"  y="0" width="18" height="22" fill={INK} />
+                  <rect x="21" y="0" width="18" height="22" fill={INK} />
+                  <rect x="42" y="0" width="18" height="22" fill={INK} />
+                  <text x="9"  y="15.5" textAnchor="middle" fontFamily={FONT} fontWeight="900"
+                    fontSize="13" fill="#F4F5F7">B</text>
+                  <text x="30" y="15.5" textAnchor="middle" fontFamily={FONT} fontWeight="900"
+                    fontSize="13" fill="#F4F5F7">B</text>
+                  <text x="51" y="15.5" textAnchor="middle" fontFamily={FONT} fontWeight="900"
+                    fontSize="13" fill="#F4F5F7">C</text>
+                </svg>
+
+                {/* CoinDesk */}
+                <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: "0.88rem",
+                  letterSpacing: "-0.01em", color: INK, opacity: 0.42,
+                  whiteSpace: "nowrap" }}>
+                  CoinDesk
+                </span>
+
+                {/* Grant's */}
+                <span style={{ fontFamily: "'Georgia', serif", fontStyle: "italic",
+                  fontWeight: 700, fontSize: "0.88rem",
+                  color: INK, opacity: 0.42, whiteSpace: "nowrap" }}>
+                  Grant's
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
