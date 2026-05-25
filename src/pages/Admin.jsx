@@ -43,6 +43,15 @@ function sanitize(d) {
   };
 }
 
+function sanitizeBio(d) {
+  return {
+    tagline_before: typeof d.tagline_before === "string" ? d.tagline_before : "A",
+    tagline_accent: typeof d.tagline_accent === "string" ? d.tagline_accent : "singular force",
+    tagline_after:  typeof d.tagline_after  === "string" ? d.tagline_after  : "",
+    paragraphs:     Array.isArray(d.paragraphs) ? d.paragraphs.filter(p => typeof p === "string") : [],
+  };
+}
+
 export default function Admin() {
   const [phase, setPhase] = useState("checking");
   const [errorMsg, setErrorMsg] = useState("");
@@ -50,13 +59,20 @@ export default function Admin() {
   const [original, setOriginal] = useState(null);
   const [lastSavedAt, setLastSavedAt] = useState(null);
 
+  // Bio state — independent of deals
+  const [bio, setBio] = useState(null);
+  const [originalBio, setOriginalBio] = useState(null);
+  const [bioPhase, setBioPhase] = useState("idle"); // "idle"|"loading"|"ready"|"saving"|"error"
+  const [bioError, setBioError] = useState("");
+  const [bioLastSavedAt, setBioLastSavedAt] = useState(null);
+
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
         const r = await fetch("/api/admin/session", { credentials: "include" });
         if (cancelled) return;
-        if (r.ok) { await loadDeals(); } else { setPhase("login"); }
+        if (r.ok) { loadDeals(); loadBio(); } else { setPhase("login"); }
       } catch {
         if (cancelled) return;
         setPhase("login");
@@ -83,10 +99,33 @@ export default function Admin() {
     }
   }, []);
 
+  const loadBio = useCallback(async () => {
+    setBioPhase("loading");
+    setBioError("");
+    try {
+      const r = await fetch("/api/admin/bio", { credentials: "include" });
+      if (r.status === 401) return; // deals handler shows login screen
+      const body = await r.json();
+      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
+      const fresh = sanitizeBio(body.data);
+      setBio(fresh);
+      setOriginalBio(JSON.parse(JSON.stringify(fresh)));
+      setBioPhase("ready");
+    } catch (e) {
+      setBioError(e.message);
+      setBioPhase("error");
+    }
+  }, []);
+
   const isDirty = useMemo(() => {
     if (!deals || !original) return false;
     return JSON.stringify(deals) !== JSON.stringify(original);
   }, [deals, original]);
+
+  const bioDirty = useMemo(() => {
+    if (!bio || !originalBio) return false;
+    return JSON.stringify(bio) !== JSON.stringify(originalBio);
+  }, [bio, originalBio]);
 
   async function handleLogin(password) {
     setErrorMsg("");
@@ -100,7 +139,8 @@ export default function Admin() {
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || "Login failed");
-      await loadDeals();
+      loadDeals();
+      loadBio();
     } catch (e) {
       setErrorMsg(e.message);
       setPhase("login");
@@ -132,6 +172,27 @@ export default function Admin() {
     } catch (e) {
       setErrorMsg(e.message);
       setPhase("ready");
+    }
+  }
+
+  async function handleSaveBio() {
+    if (!bio) return;
+    setBioPhase("saving");
+    setBioError("");
+    try {
+      const r = await fetch("/api/admin/bio", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ bio }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
+      await loadBio();
+      setBioLastSavedAt(new Date());
+    } catch (e) {
+      setBioError(e.message);
+      setBioPhase("ready");
     }
   }
 
@@ -192,7 +253,7 @@ export default function Admin() {
         display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap",
       }}>
         <div style={{ fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.01em" }}>
-          Admin · Deals
+          Admin · Deals &amp; Bio
         </div>
         <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60 }}>
           {phase === "saving" && "Saving…"}
@@ -220,6 +281,31 @@ export default function Admin() {
         </div>
       )}
 
+      {/* ── Bio section ───────────────────────────────────────────── */}
+      {(bioPhase === "ready" || bioPhase === "saving") && bio ? (
+        <BioSection
+          bio={bio}
+          onChangeBio={(field, value) => setBio(b => ({ ...b, [field]: value }))}
+          onSave={handleSaveBio}
+          dirty={bioDirty}
+          phase={bioPhase}
+          error={bioError}
+          lastSavedAt={bioLastSavedAt}
+        />
+      ) : bioPhase === "loading" ? (
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "1.5rem clamp(1rem, 3vw, 2rem)", fontSize: "0.85rem", color: INK_60 }}>
+          Loading bio…
+        </div>
+      ) : bioPhase === "error" ? (
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 clamp(1rem, 3vw, 2rem) 1rem" }}>
+          <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", fontSize: "0.9rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+            <span>Bio: {bioError}</span>
+            <button onClick={loadBio} style={btnStyle}>Retry</button>
+          </div>
+        </div>
+      ) : null}
+
+      {/* ── Deals section ─────────────────────────────────────────── */}
       <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
         <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
           All deals ({list.length}) — use the <strong>Pages</strong> checkboxes on each card to control where it appears. Order here = order on each page.
@@ -360,6 +446,148 @@ function DealRow({ index, deal, onChange, onMoveUp, onMoveDown, onDelete, isFirs
           <span style={{ color: INK_60, fontSize: "0.8rem" }}>(shows * on card)</span>
         </label>
       </div>
+    </div>
+  );
+}
+
+function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt }) {
+  const isSaving = phase === "saving";
+  const paragraphs = bio.paragraphs || [];
+
+  function updateParagraph(i, val) {
+    const next = [...paragraphs];
+    next[i] = val;
+    onChangeBio("paragraphs", next);
+  }
+  function moveParagraph(i, dir) {
+    const j = i + dir;
+    if (j < 0 || j >= paragraphs.length) return;
+    const next = [...paragraphs];
+    [next[i], next[j]] = [next[j], next[i]];
+    onChangeBio("paragraphs", next);
+  }
+  function deleteParagraph(i) {
+    if (!confirm("Delete this paragraph?")) return;
+    onChangeBio("paragraphs", paragraphs.filter((_, idx) => idx !== i));
+  }
+  function addParagraph() {
+    onChangeBio("paragraphs", [...paragraphs, ""]);
+  }
+
+  return (
+    <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem) 0" }}>
+      {/* Section header */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap",
+        marginBottom: "1rem", paddingBottom: "1rem",
+        borderBottom: `2px solid ${LINE}`,
+      }}>
+        <div style={{ fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.01em" }}>
+          Bio — Andrew Glantz
+        </div>
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60 }}>
+          {isSaving && "Saving…"}
+          {!isSaving && dirty && "Unsaved changes"}
+          {!isSaving && !dirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
+          {!isSaving && !dirty && !lastSavedAt && "Up to date"}
+        </div>
+        <button onClick={onSave} disabled={!dirty || isSaving} style={{
+          ...btnPrimaryStyle,
+          opacity: (!dirty || isSaving) ? 0.5 : 1,
+          cursor: (!dirty || isSaving) ? "default" : "pointer",
+        }}>
+          {isSaving ? "Saving…" : "Save Bio"}
+        </button>
+      </div>
+
+      {error && (
+        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
+          {error}
+        </div>
+      )}
+
+      {/* Tagline */}
+      <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1rem" }}>
+        <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.8rem" }}>
+          Tagline
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.7rem 1rem" }} className="bio-tagline-grid">
+          <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+            Before accent
+            <input
+              type="text"
+              value={bio.tagline_before || ""}
+              onChange={e => onChangeBio("tagline_before", e.target.value)}
+              style={inputStyle}
+            />
+          </label>
+          <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+            Accent (neon italic on page)
+            <input
+              type="text"
+              value={bio.tagline_accent || ""}
+              onChange={e => onChangeBio("tagline_accent", e.target.value)}
+              style={inputStyle}
+            />
+          </label>
+          <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, gridColumn: "1 / -1" }}>
+            After accent
+            <textarea
+              value={bio.tagline_after || ""}
+              onChange={e => onChangeBio("tagline_after", e.target.value)}
+              rows={2}
+              style={inputStyle}
+            />
+          </label>
+        </div>
+        <p style={{ marginTop: "0.8rem", fontSize: "0.8rem", color: INK_60 }}>
+          Preview: <em>{bio.tagline_before} <strong style={{ color: NEON }}>{bio.tagline_accent}</strong> {bio.tagline_after}</em>
+        </p>
+      </div>
+
+      {/* Paragraphs */}
+      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.75rem" }}>
+        Bio paragraphs ({paragraphs.length}) — rendered in order on the home page.
+      </p>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "2.5rem" }}>
+        {paragraphs.map((para, i) => (
+          <div key={i} style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.6rem" }}>
+              <div style={{ flex: 1, fontWeight: 700, fontSize: "0.85rem", color: INK_60 }}>
+                Paragraph {i + 1}
+              </div>
+              <button onClick={() => moveParagraph(i, -1)} disabled={i === 0}                    style={iconBtnStyle(i === 0)}                    title="Move up">↑</button>
+              <button onClick={() => moveParagraph(i, 1)}  disabled={i === paragraphs.length - 1} style={iconBtnStyle(i === paragraphs.length - 1)} title="Move down">↓</button>
+              <button onClick={() => deleteParagraph(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }}             title="Delete">×</button>
+            </div>
+            <textarea
+              value={para}
+              onChange={e => updateParagraph(i, e.target.value)}
+              rows={4}
+              placeholder="Enter paragraph text…"
+              style={inputStyle}
+            />
+          </div>
+        ))}
+        {paragraphs.length === 0 && (
+          <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
+            No paragraphs yet.
+          </div>
+        )}
+        <button onClick={addParagraph} style={{
+          ...btnStyle,
+          background: "transparent", border: `1px dashed ${LINE}`,
+          color: INK, padding: "1rem", fontWeight: 700,
+        }}>
+          + Add paragraph
+        </button>
+      </div>
+
+      <style>{`
+        @media (max-width: 540px) {
+          .bio-tagline-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   );
 }
