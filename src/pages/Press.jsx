@@ -90,13 +90,14 @@ const BY_ANDREW = ALL_ITEMS
     href:    d.url || null,
   }));
 
-const LINKEDIN_POSTS = ALL_ITEMS
+const SOCIAL_POSTS = ALL_ITEMS
   .filter(d => d.author === "Andrew" && d.type === "social post")
   .map(d => ({
-    date:    d.date || null,
-    title:   d.piece_title || null,
-    excerpt: d.excerpt || null,
-    href:    d.url || null,
+    platform: d.publication_title || "",   // e.g. "LinkedIn", "X", "Substack"
+    date:     d.date || null,
+    title:    d.piece_title || null,
+    excerpt:  d.excerpt || null,
+    href:     d.url || null,
   }));
 
 export default function Press() {
@@ -255,11 +256,14 @@ export default function Press() {
               <p style={{
                 fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
                 letterSpacing: "0.22em", textTransform: "uppercase",
-                color: "#0A66C2", marginBottom: "1.2rem",
+                color: "rgba(255,255,255,0.45)", marginBottom: "1.2rem",
                 display: "flex", alignItems: "center", gap: "0.5em",
               }}>
-                <LinkedInSVG size={14} color="#0A66C2" />
-                LinkedIn
+                {/* Feed icon */}
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                Social
               </p>
               <h2 style={{
                 fontFamily: FONT, fontWeight: 800,
@@ -275,17 +279,17 @@ export default function Press() {
               fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
               color: "rgba(255,255,255,0.55)", lineHeight: 1.6, maxWidth: 640,
             }}>
-              Posts from Andrew on LinkedIn — market commentary, case updates, and observations from the claims desk.
+              Posts from Andrew across LinkedIn, X, and beyond — market commentary, case updates, and observations from the claims desk.
             </p>
           </div>
 
-          {LINKEDIN_POSTS.length === 0 ? (
+          {SOCIAL_POSTS.length === 0 ? (
             <div style={{
-              padding: "3rem", border: "1px dashed rgba(10,102,194,0.3)",
+              padding: "3rem", border: "1px dashed rgba(255,255,255,0.12)",
               color: "rgba(255,255,255,0.35)", fontFamily: FONT, fontSize: "0.92rem",
               fontStyle: "italic", textAlign: "center",
             }}>
-              LinkedIn posts to be added via admin — select type "Social post" and author "Andrew".
+              Social posts to be added via admin — select type "Social post", author "Andrew", and enter the platform name (LinkedIn, X, etc.) in the outlet field.
             </div>
           ) : (
             <div style={{
@@ -293,7 +297,7 @@ export default function Press() {
               gridTemplateColumns: "repeat(3, 1fr)",
               gap: "clamp(1rem, 2vw, 1.5rem)",
             }} className="press-li-grid">
-              {LINKEDIN_POSTS.map((item, i) => <LinkedInCard key={i} item={item} />)}
+              {SOCIAL_POSTS.map((item, i) => <SocialPostCard key={i} item={item} />)}
             </div>
           )}
         </div>
@@ -451,19 +455,57 @@ function ByAndrewCard({ item }) {
   return <div>{inner}</div>;
 }
 
-/* LinkedIn SVG icon reused in two places */
-const LinkedInSVG = ({ size = 16, color = "#fff" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill={color} style={{ flexShrink: 0 }}>
-    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-  </svg>
-);
+/* ── Platform icons + color map ─────────────────────────────────────────── */
+const PlatformIcon = ({ platform, size = 14, color = "currentColor" }) => {
+  const key = (platform || "").toLowerCase().trim();
+  if (key === "linkedin") return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} style={{ flexShrink: 0 }}>
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  );
+  if (key === "x" || key === "twitter") return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} style={{ flexShrink: 0 }}>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+  );
+  if (key === "substack") return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill={color} style={{ flexShrink: 0 }}>
+      <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+    </svg>
+  );
+  /* Generic speech-bubble fallback */
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  );
+};
 
-function LinkedInCard({ item }) {
+function getPlatformAccent(platform) {
+  const key = (platform || "").toLowerCase().trim();
+  if (key === "linkedin") return "#0A66C2";
+  if (key === "x" || key === "twitter") return "#e7e7e7";
+  if (key === "substack") return "#FF6719";
+  return "rgba(255,255,255,0.5)";
+}
+
+function getPlatformLabel(platform) {
+  const key = (platform || "").toLowerCase().trim();
+  if (key === "x") return "X";
+  if (key === "twitter") return "X (Twitter)";
+  if (!platform) return "Social";
+  return platform;
+}
+
+function SocialPostCard({ item }) {
   const [hovered, setHovered] = useState(false);
+  const accent = getPlatformAccent(item.platform);
+  const label  = getPlatformLabel(item.platform);
+
   const inner = (
     <div style={{
       background: "#0D1827",
-      border: "1px solid rgba(10,102,194,0.35)",
+      border: `1px solid ${accent}33`,   /* 20% opacity border in accent color */
       padding: "1.6rem 1.8rem",
       height: "100%", boxSizing: "border-box",
       opacity: hovered && item.href ? 0.8 : 1,
@@ -471,24 +513,23 @@ function LinkedInCard({ item }) {
       display: "flex", flexDirection: "column", gap: "0.75rem",
       position: "relative", overflow: "hidden",
     }}>
-      {/* Subtle blue glow top-left */}
+      {/* Subtle glow top-left in platform accent color */}
       <div style={{
         position: "absolute", inset: 0, pointerEvents: "none",
-        background: "radial-gradient(60% 55% at 0% 0%, rgba(10,102,194,0.18), transparent 65%)",
+        background: `radial-gradient(60% 55% at 0% 0%, ${accent}22, transparent 65%)`,
       }} />
-      {/* Header: LinkedIn logo + date */}
+      {/* Header: platform icon + label + date */}
       <div style={{
         display: "flex", alignItems: "center",
         justifyContent: "space-between", position: "relative",
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.45em" }}>
-          <LinkedInSVG size={15} color="#0A66C2" />
+          <PlatformIcon platform={item.platform} size={14} color={accent} />
           <span style={{
             fontFamily: FONT, fontSize: "0.68rem", fontWeight: 700,
-            letterSpacing: "0.12em", textTransform: "uppercase",
-            color: "#0A66C2",
+            letterSpacing: "0.12em", textTransform: "uppercase", color: accent,
           }}>
-            LinkedIn
+            {label}
           </span>
         </div>
         {item.date && (
@@ -518,8 +559,7 @@ function LinkedInCard({ item }) {
           fontSize: "clamp(0.97rem, 1.2vw, 1.05rem)",
           color: "rgba(255,255,255,0.85)",
           lineHeight: 1.7, margin: 0, flex: 1,
-          position: "relative",
-          fontStyle: "italic",
+          position: "relative", fontStyle: "italic",
         }}>
           "{item.excerpt}"
         </p>
@@ -528,7 +568,7 @@ function LinkedInCard({ item }) {
       {item.href && (
         <span style={{
           fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
-          color: "#0A66C2", letterSpacing: "0.04em",
+          color: accent, letterSpacing: "0.04em",
           marginTop: "auto", position: "relative",
         }}>
           View post →

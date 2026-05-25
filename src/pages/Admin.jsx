@@ -835,7 +835,7 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
       )}
 
       <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.75rem" }}>
-        {items.length} item{items.length !== 1 ? "s" : ""} — <strong>Publications</strong> and <strong>Podcasts</strong> appear under "In the press". <strong>Articles</strong>, <strong>Social posts</strong>, and <strong>Blog posts</strong> appear under "By Andrew".
+        {items.length} item{items.length !== 1 ? "s" : ""} — <strong>Publications</strong> and <strong>Podcasts</strong> appear under "In the press". <strong>Articles</strong> and <strong>Blog posts</strong> appear under "Articles &amp; Commentary". <strong>Social posts</strong> appear in the "On the feed" section — set the Platform field to LinkedIn, X, Substack, etc.
       </p>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "2.5rem" }}>
@@ -917,14 +917,14 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
                 />
               </label>
 
-              {/* Publication title */}
+              {/* Publication title / platform */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
-                Publication / outlet name
+                {item.type === "social post" ? "Platform (e.g. LinkedIn, X, Substack)" : "Publication / outlet name"}
                 <input
                   type="text"
                   value={item.publication_title}
                   onChange={e => updateItem(i, "publication_title", e.target.value)}
-                  placeholder="The Wall Street Journal"
+                  placeholder={item.type === "social post" ? "LinkedIn" : "The Wall Street Journal"}
                   style={inputStyle}
                 />
               </label>
