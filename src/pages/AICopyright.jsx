@@ -92,7 +92,7 @@ export default function AICopyright() {
             title="Capital."
             accent="Advisory."
           />
-          <div className="grid-2col">
+          <div className="grid-3col">
             <ServiceCard
               title="Capital"
               body="A competitive cash bid from our institutional buyer network. Class-member purchases, opt-out direct purchases, bulk catalogues. Days to close."
@@ -100,6 +100,10 @@ export default function AICopyright() {
             <ServiceCard
               title="Advisory"
               body="Opt-in vs. opt-out economics. Statutory damages modeling. Counsel introductions across U.S., UK, EU, and Germany."
+            />
+            <ServiceCard
+              title="Claim Monitoring"
+              body="We track and file claims for you, automatically."
             />
           </div>
         </div>
