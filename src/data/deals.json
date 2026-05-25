@@ -1,5 +1,5 @@
 {
-  "_comment": "Single source of truth for deal cards. Edited via chat (direct edits) or /#/admin (GitHub API commit). Schema: { amt, who, type, form, when, summary, pages, preTurnpage }. pages = array of page slugs the deal appears on (home, crypto, ai-copyright). preTurnpage = true shows * after claim type on the card. Change schema → update DealCard.jsx + Admin.jsx + functions/api/admin/deals.js in the same commit.",
+  "_comment": "Single source of truth for deal cards. Edited via chat (direct edits) or /#/admin (GitHub API commit). Schema: { amt, who, type, form, when, summary, pages, preTurnpage, logos }. logos = array of up to 3 image URLs shown on the front of the card. pages = array of page slugs the deal appears on (home, crypto, ai-copyright). preTurnpage = true shows * after claim type on the card. Change schema → update DealCard.jsx + Admin.jsx + functions/api/admin/deals.js in the same commit.",
   "deals": [
     {
       "amt": "$270M",
@@ -11,7 +11,8 @@
       "pages": [
         "home"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$106M",
@@ -23,7 +24,8 @@
       "pages": [
         "crypto"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$103M",
@@ -35,7 +37,8 @@
       "pages": [
         "home"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$89M",
@@ -47,7 +50,8 @@
       "pages": [
         "home"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$58M",
@@ -59,7 +63,8 @@
       "pages": [
         "home"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$48M",
@@ -72,7 +77,8 @@
         "home",
         "ai-copyright"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$42M",
@@ -84,7 +90,8 @@
       "pages": [
         "home"
       ],
-      "preTurnpage": false
+      "preTurnpage": false,
+      "logos": []
     },
     {
       "amt": "$36M",
@@ -96,7 +103,8 @@
       "pages": [
         "home"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$30M",
@@ -109,7 +117,8 @@
         "home",
         "ai-copyright"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$27M",
@@ -121,7 +130,8 @@
       "pages": [
         "crypto"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$20M",
@@ -133,7 +143,8 @@
       "pages": [
         "home"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$8M",
@@ -145,7 +156,8 @@
       "pages": [
         "crypto"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     },
     {
       "amt": "$4M",
@@ -157,7 +169,8 @@
       "pages": [
         "crypto"
       ],
-      "preTurnpage": true
+      "preTurnpage": true,
+      "logos": []
     }
   ]
 }

@@ -66,6 +66,30 @@ export default function DealCard({ deal }) {
             {deal.form} · {deal.when}
           </div>
 
+          {/* Logos — up to 3, rendered as white silhouettes */}
+          {Array.isArray(deal.logos) && deal.logos.filter(Boolean).length > 0 && (
+            <div style={{
+              display: "flex", alignItems: "center", gap: "0.6rem",
+              marginTop: "0.85rem", flexWrap: "wrap",
+            }}>
+              {deal.logos.filter(Boolean).slice(0, 3).map((url, i) => (
+                <img
+                  key={i}
+                  src={url}
+                  alt=""
+                  style={{
+                    height: 18, maxWidth: 64,
+                    objectFit: "contain",
+                    filter: "brightness(0) invert(1)",
+                    opacity: 0.65,
+                    display: "block",
+                  }}
+                  onError={e => { e.currentTarget.style.display = "none"; }}
+                />
+              ))}
+            </div>
+          )}
+
           {hasSummary && (
             <span aria-hidden="true" style={{
               position: "absolute", top: "calc(1.1rem + 10px)", right: "calc(1.1rem + 5px)",

@@ -27,7 +27,7 @@ const PAGES = [
 ];
 
 function blankDeal() {
-  return { amt: "", who: "", type: "", form: "", when: "", summary: "", pages: [], preTurnpage: false };
+  return { amt: "", who: "", type: "", form: "", when: "", summary: "", pages: [], preTurnpage: false, logos: [] };
 }
 
 function sanitize(d) {
@@ -40,6 +40,7 @@ function sanitize(d) {
     summary:     typeof d.summary === "string" ? d.summary : "",
     pages:       Array.isArray(d.pages) ? d.pages.filter(p => typeof p === "string") : [],
     preTurnpage: Boolean(d.preTurnpage),
+    logos:       Array.isArray(d.logos) ? d.logos.filter(l => typeof l === "string").slice(0, 3) : [],
   };
 }
 
@@ -649,6 +650,55 @@ function DealRow({ index, deal, onChange, onMoveUp, onMoveDown, onDelete, isFirs
           <span style={{ color: INK_60, fontSize: "0.8rem" }}>(shows * on card)</span>
         </label>
       </div>
+
+      {/* Logos */}
+      <div style={{ borderTop: `1px solid ${LINE}`, marginTop: "1rem", paddingTop: "0.9rem" }}>
+        <div style={{ fontSize: "0.78rem", fontWeight: 600, color: INK_60, marginBottom: "0.6rem" }}>
+          Logos <span style={{ fontWeight: 400 }}>(optional — up to 3, shown as white icons on the card)</span>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.7rem 1rem" }} className="deal-logos-grid">
+          {[0, 1, 2].map(idx => {
+            const url = (Array.isArray(deal.logos) && typeof deal.logos[idx] === "string") ? deal.logos[idx] : "";
+            return (
+              <label key={idx} style={{ display: "block", fontSize: "0.75rem", color: INK_60, fontWeight: 600 }}>
+                Logo {idx + 1}
+                <input
+                  type="text"
+                  value={url}
+                  onChange={e => {
+                    const slots = [0, 1, 2].map(i =>
+                      (Array.isArray(deal.logos) && typeof deal.logos[i] === "string") ? deal.logos[i] : ""
+                    );
+                    slots[idx] = e.target.value;
+                    // Compact: drop trailing empty slots
+                    let end = 2;
+                    while (end > 0 && !slots[end]) end--;
+                    onChange("logos", slots.slice(0, end + 1).filter((_, i) => i <= end));
+                  }}
+                  placeholder="https://..."
+                  style={inputStyle}
+                />
+                {url && (
+                  <div style={{ marginTop: "0.35rem", background: "#111", padding: "0.3rem 0.5rem", display: "inline-flex", alignItems: "center" }}>
+                    <img
+                      src={url}
+                      alt="logo preview"
+                      style={{ height: 18, maxWidth: 80, objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.7, display: "block" }}
+                      onError={e => { e.currentTarget.style.opacity = "0.2"; }}
+                    />
+                  </div>
+                )}
+              </label>
+            );
+          })}
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 540px) {
+          .deal-logos-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   );
 }
