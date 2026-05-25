@@ -5,10 +5,11 @@ import { useI18n } from "../lib/i18n.js";
 
 /* Nav items reference translation keys; labels are resolved at render time. */
 const NAV_ITEMS = [
-  { key: "ai-copyright",  labelKey: "nav.copyright" },
-  { key: "crypto",        labelKey: "nav.crypto" },
-  { key: "tariff-refunds",labelKey: "nav.tariff", externalHref: "https://www.rewindtariffs.com" },
-  { key: "press",         labelKey: "nav.press" },
+  { key: "ai-copyright",      labelKey: "nav.copyright" },
+  { key: "crypto",            labelKey: "nav.crypto" },
+  { key: "litigation-finance",labelKey: "nav.litigation" },
+  { key: "tariff-refunds",    labelKey: "nav.tariff", externalHref: "https://www.rewindtariffs.com" },
+  { key: "press",             labelKey: "nav.press" },
 ];
 
 /* Preview content shown when hovering over a nav item.
@@ -43,6 +44,17 @@ const PREVIEWS = {
       { label: "For brokers",      href: "https://www.rewindtariffs.com/#brokers", external: true },
     ],
     cta: { label: "Visit Rewind Tariffs", href: "https://www.rewindtariffs.com", external: true },
+  },
+  "litigation-finance": {
+    title: "Litigation Finance",
+    body: "Turnpage helps the best law firms pursue cases on contingency — capital deployed against the merit of the case, not the client's ability to fund it.",
+    links: [
+      { label: "Who we help",    href: hashHref("litigation-finance") },
+      { label: "What we fund",   href: hashHref("litigation-finance") + "#how-litfin" },
+      { label: "How it works",   href: hashHref("litigation-finance") + "#how-litfin" },
+      { label: "FAQ",            href: hashHref("litigation-finance") },
+    ],
+    cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=litigation-finance" },
   },
   "press": {
     title: "Press & Publications",

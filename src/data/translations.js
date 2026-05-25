@@ -15,6 +15,7 @@ export const TRANSLATIONS = {
     // Nav
     "nav.copyright":   "Copyright Claims",
     "nav.crypto":      "Locked Crypto",
+    "nav.litigation":  "Litigation Finance",
     "nav.tariff":      "Tariff Refunds",
     "nav.briefings":   "Briefings",
     "nav.press":       "Press & Publications",
@@ -81,6 +82,7 @@ export const TRANSLATIONS = {
   es: {
     "nav.copyright":   "Reclamos de Derechos de Autor",
     "nav.crypto":      "Cripto Bloqueada",
+    "nav.litigation":  "Financiación de Litigios",
     "nav.tariff":      "Reembolsos Arancelarios",
     "nav.briefings":   "Informes",
     "nav.press":       "Prensa y Publicaciones",
@@ -141,6 +143,7 @@ export const TRANSLATIONS = {
   fr: {
     "nav.copyright":   "Droits d'Auteur",
     "nav.crypto":      "Crypto Bloquée",
+    "nav.litigation":  "Financement du Contentieux",
     "nav.tariff":      "Remboursements Douaniers",
     "nav.briefings":   "Briefings",
     "nav.press":       "Presse et Publications",
@@ -201,6 +204,7 @@ export const TRANSLATIONS = {
   de: {
     "nav.copyright":   "Urheberrechtsansprüche",
     "nav.crypto":      "Gesperrtes Krypto",
+    "nav.litigation":  "Prozessfinanzierung",
     "nav.tariff":      "Zollrückerstattungen",
     "nav.briefings":   "Briefings",
     "nav.press":       "Presse & Publikationen",
@@ -261,6 +265,7 @@ export const TRANSLATIONS = {
   it: {
     "nav.copyright":   "Diritti d'Autore",
     "nav.crypto":      "Cripto Bloccate",
+    "nav.litigation":  "Finanziamento del Contenzioso",
     "nav.tariff":      "Rimborsi Doganali",
     "nav.briefings":   "Briefing",
     "nav.press":       "Stampa e Pubblicazioni",
@@ -321,6 +326,7 @@ export const TRANSLATIONS = {
   pt: {
     "nav.copyright":   "Direitos Autorais",
     "nav.crypto":      "Cripto Bloqueado",
+    "nav.litigation":  "Financiamento de Litígios",
     "nav.tariff":      "Reembolsos Tarifários",
     "nav.briefings":   "Briefings",
     "nav.press":       "Imprensa e Publicações",
@@ -381,6 +387,7 @@ export const TRANSLATIONS = {
   ko: {
     "nav.copyright":   "저작권 청구",
     "nav.crypto":      "잠긴 암호화폐",
+    "nav.litigation":  "소송 금융",
     "nav.tariff":      "관세 환급",
     "nav.briefings":   "브리핑",
     "nav.press":       "언론 및 출판",
@@ -441,6 +448,7 @@ export const TRANSLATIONS = {
   zh: {
     "nav.copyright":   "版权索赔",
     "nav.crypto":      "锁定加密资产",
+    "nav.litigation":  "诉讼融资",
     "nav.tariff":      "关税退款",
     "nav.briefings":   "简报",
     "nav.press":       "媒体与出版",

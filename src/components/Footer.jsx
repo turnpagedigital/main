@@ -11,10 +11,10 @@ export default function Footer() {
   const { t } = useI18n();
 
   const COL_DESKS = [
-    { key: "ai-copyright", label: t("nav.copyright") },
-    { key: "crypto", label: t("nav.crypto") },
-    { key: "tariff-refunds", label: t("nav.tariff"), externalHref: "https://www.rewindtariffs.com" },
-    { key: "contact", label: "Bankruptcy & Litigation" },
+    { key: "ai-copyright",      label: t("nav.copyright") },
+    { key: "crypto",             label: t("nav.crypto") },
+    { key: "litigation-finance", label: t("nav.litigation") },
+    { key: "tariff-refunds",     label: t("nav.tariff"), externalHref: "https://www.rewindtariffs.com" },
   ];
   const COL_RESOURCES = [
     { key: "press",        label: t("nav.press") },
