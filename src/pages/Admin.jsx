@@ -1054,6 +1054,129 @@ function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt
   );
 }
 
+/* ── Media upload field — URL entry + optional file upload ──────────────── */
+function MediaUploadField({ value, onChange, inputStyle }) {
+  const [phase,   setPhase]   = useState("idle"); // idle | uploading | done | error
+  const [errMsg,  setErrMsg]  = useState("");
+  const fileRef = React.useRef(null);
+
+  async function handleFile(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const isImage = file.type.startsWith("image/");
+    const isVideo = ["video/mp4", "video/webm"].includes(file.type);
+    if (!isImage && !isVideo) {
+      setErrMsg("Unsupported type. Use JPEG, PNG, WebP, GIF, MP4, or WebM.");
+      return;
+    }
+    if (file.size > 11 * 1024 * 1024) {
+      setErrMsg("File too large — max 11 MB. For longer videos paste a YouTube or Vimeo URL instead.");
+      return;
+    }
+
+    setPhase("uploading");
+    setErrMsg("");
+
+    try {
+      const base64 = await new Promise((res, rej) => {
+        const reader = new FileReader();
+        reader.onload  = ev => res(ev.target.result.split(",")[1]);
+        reader.onerror = rej;
+        reader.readAsDataURL(file);
+      });
+
+      const r = await fetch("/api/admin/press-media", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ content: base64, mime_type: file.type, filename: file.name }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Upload failed");
+
+      onChange(body.url);
+      setPhase("done");
+    } catch (err) {
+      setErrMsg(err.message);
+      setPhase("error");
+    } finally {
+      // reset file input so the same file can be re-selected if needed
+      if (fileRef.current) fileRef.current.value = "";
+    }
+  }
+
+  return (
+    <div style={{ gridColumn: "1 / -1" }}>
+      <span style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.35rem" }}>
+        Image or video (optional — shown as a thumbnail below the excerpt)
+      </span>
+
+      {/* URL input + upload button row */}
+      <div style={{ display: "flex", gap: "0.5rem", alignItems: "stretch" }}>
+        <input
+          type="text"
+          value={value}
+          onChange={e => { onChange(e.target.value); setPhase("idle"); setErrMsg(""); }}
+          placeholder="Paste a URL (image or YouTube link) — or upload a file →"
+          style={{ ...inputStyle, marginTop: 0, flex: 1 }}
+        />
+
+        {/* Hidden file input */}
+        <input
+          ref={fileRef}
+          type="file"
+          accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm"
+          style={{ display: "none" }}
+          onChange={handleFile}
+        />
+
+        {/* Upload trigger button */}
+        <button
+          type="button"
+          onClick={() => fileRef.current && fileRef.current.click()}
+          disabled={phase === "uploading"}
+          style={{
+            fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
+            padding: "0 1rem", whiteSpace: "nowrap",
+            background: phase === "done" ? "#22c55e" : INK,
+            color: "#fff",
+            border: "none", cursor: phase === "uploading" ? "wait" : "pointer",
+            opacity: phase === "uploading" ? 0.6 : 1,
+            transition: "background 0.2s",
+            flexShrink: 0,
+          }}
+        >
+          {phase === "uploading" ? "Uploading…" : phase === "done" ? "✓ Uploaded" : "Upload file"}
+        </button>
+      </div>
+
+      {/* Error */}
+      {errMsg && (
+        <p style={{ fontFamily: FONT, fontSize: "0.75rem", color: "#ef4444", margin: "0.3rem 0 0" }}>
+          {errMsg}
+        </p>
+      )}
+
+      {/* Preview thumbnail if there's a URL */}
+      {value && (
+        <div style={{ marginTop: "0.5rem" }}>
+          {/\.(mp4|webm)$/i.test(value) ? (
+            <video src={value} style={{ maxHeight: 80, maxWidth: 160, display: "block", background: "#000" }} />
+          ) : (
+            <img
+              src={value}
+              alt=""
+              style={{ maxHeight: 80, maxWidth: 160, objectFit: "cover", display: "block" }}
+              onError={e => { e.target.style.display = "none"; }}
+            />
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastSavedAt }) {
   const isSaving = phase === "saving";
   const [filterType,   setFilterType]   = useState("");
@@ -1368,17 +1491,12 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
                 />
               </label>
 
-              {/* Media URL */}
-              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, gridColumn: "1 / -1" }}>
-                Image or video URL (optional — shown as a thumbnail below the excerpt)
-                <input
-                  type="text"
-                  value={item.media_url || ""}
-                  onChange={e => updateItem(i, "media_url", e.target.value)}
-                  placeholder="https://… (image URL or YouTube link)"
-                  style={inputStyle}
-                />
-              </label>
+              {/* Media URL + upload */}
+              <MediaUploadField
+                value={item.media_url || ""}
+                onChange={val => updateItem(i, "media_url", val)}
+                inputStyle={inputStyle}
+              />
             </div>
           </div>
           );
