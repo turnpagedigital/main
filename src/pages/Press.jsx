@@ -655,13 +655,13 @@ function TypeIndicator({ item }) {
 /* ═══════════════════════════════════════════════════════════════════════════
    MEDIA THUMBNAIL — image or video (with play overlay)
 ═══════════════════════════════════════════════════════════════════════════ */
-function MediaThumb({ url }) {
+function MediaThumb({ url, href }) {
   const [imgFailed, setImgFailed] = useState(false);
   if (!url) return null;
 
-  const isVid   = isVideoUrl(url);
-  const ytThumb = isVid ? getVideoThumbnail(url) : null;
-  const imgSrc  = isVid ? ytThumb : url; // null for Vimeo / direct video with no thumb
+  const isVid   = isVideoUrl(url) || isVideoUrl(href); // play icon if media OR link is a video
+  const ytThumb = getVideoThumbnail(url) || getVideoThumbnail(href);
+  const imgSrc  = isVideoUrl(url) ? ytThumb : url; // use YouTube thumb only when media_url is YT
 
   return (
     <div style={{
@@ -781,7 +781,7 @@ function UnifiedCard({ item }) {
       )}
 
       {/* ── Media (image or video thumbnail) ───────────────────────── */}
-      {hasMedia && <MediaThumb url={item.mediaUrl} />}
+      {hasMedia && <MediaThumb url={item.mediaUrl} href={item.href} />}
 
       {/* ── Topic tags ──────────────────────────────────────────────── */}
       <PageTags pages={item.pages} />
