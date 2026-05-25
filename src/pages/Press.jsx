@@ -3,23 +3,36 @@ import { NEON, FONT, INK, INK_60, INK_40, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import Hero from "../components/Hero.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
+import pressData from "../data/press.json";
 
-/* ── Media coverage items ─────────────────────────────────────────────────────
-   Add objects here to populate the "In the Press" grid.
-   Schema: { outlet, date, headline, excerpt, href }
-   - outlet: e.g. "The Wall Street Journal"
-   - date:   display string e.g. "March 2025"
-   - headline: article headline or quote intro
-   - excerpt:  short quote or description (optional)
-   - href:  URL to the article (string), or null if not yet linked  */
-const PRESS_ITEMS = [];
+/* ── Data-driven from src/data/press.json (managed via /#/admin) ─────────────
+   Types "publication" and "podcast" → In the press section
+   Types "article", "social post", "blog post" → By Andrew section          */
+const MEDIA_TYPES = new Set(["publication", "podcast"]);
+const AUTHOR_TYPES = new Set(["article", "social post", "blog post"]);
 
-/* ── Publications by Andrew ───────────────────────────────────────────────────
-   Add objects here to populate the "By Andrew" grid.
-   Schema: { title, venue, date, excerpt, href }
-   - venue: e.g. "ABI Journal"
-   - href: URL or null  */
-const BY_ANDREW = [];
+const ALL_ITEMS = (pressData.items || []);
+
+// Map to the shape each card component expects
+const PRESS_ITEMS = ALL_ITEMS
+  .filter(d => MEDIA_TYPES.has(d.type))
+  .map(d => ({
+    outlet:   d.publication_title,
+    date:     d.date || null,
+    headline: d.piece_title,
+    excerpt:  d.excerpt || null,
+    href:     d.url || null,
+  }));
+
+const BY_ANDREW = ALL_ITEMS
+  .filter(d => AUTHOR_TYPES.has(d.type))
+  .map(d => ({
+    venue:   d.publication_title,
+    date:    d.date || null,
+    title:   d.piece_title,
+    excerpt: d.excerpt || null,
+    href:    d.url || null,
+  }));
 
 export default function Press() {
   return (

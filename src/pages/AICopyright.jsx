@@ -332,7 +332,7 @@ function DamagesSection() {
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setAnimated(true); },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -386,85 +386,94 @@ function DamagesSection() {
           </p>
         </div>
 
-        {/* Bars */}
-        <div ref={ref}>
+        {/* Bar chart */}
+        <div ref={ref} style={{ display: "flex", flexDirection: "column", gap: "clamp(1.4rem,3vw,2rem)" }}>
           {DAMAGES_DATA.map((c, i) => {
             const widthPct = (c.amountB / MAX_B) * 100;
             const isSettled = c.type === "settled";
-            const barFill = isSettled ? NEON : "rgba(255,255,255,0.55)";
+            const barFill = isSettled
+              ? NEON
+              : c.type === "dmca"
+                ? "rgba(255,255,255,0.38)"
+                : "rgba(255,255,255,0.52)";
             const amtColor = isSettled ? NEON : "#fff";
             const badgeBg = isSettled ? "rgba(212,255,0,0.12)" : "rgba(255,255,255,0.07)";
             const badgeBorder = isSettled ? "rgba(212,255,0,0.4)" : "rgba(255,255,255,0.18)";
-            const badgeText = isSettled ? NEON : "rgba(255,255,255,0.65)";
-            const delay = `${i * 0.28}s`;
+            const badgeText = isSettled ? NEON : "rgba(255,255,255,0.6)";
+            const delay = `${i * 0.32}s`;
+            const amtDelay = `${i * 0.32 + 1.1}s`;
             return (
-              <div key={c.name} style={{
-                padding: "clamp(1.4rem,2.5vw,1.8rem) 0",
-                borderTop: "1px solid rgba(255,255,255,0.08)",
-              }}>
-                {/* Name + badge + amount */}
+              <div key={c.name} className="chart-row" style={{ display: "flex", gap: "clamp(1rem,2vw,1.5rem)", alignItems: "stretch" }}>
+                {/* Label column */}
                 <div style={{
-                  display: "flex", alignItems: "center",
-                  justifyContent: "space-between", gap: "1rem",
-                  marginBottom: "0.75rem", flexWrap: "wrap",
+                  width: "clamp(150px,22%,220px)", flexShrink: 0,
+                  display: "flex", flexDirection: "column",
+                  justifyContent: "center", gap: "0.45rem",
                 }}>
                   <span style={{
                     fontFamily: FONT, fontWeight: 700,
-                    fontSize: "clamp(0.95rem,1.4vw,1.05rem)", color: "#fff",
+                    fontSize: "clamp(0.78rem,1.1vw,0.92rem)",
+                    color: "#fff", lineHeight: 1.3,
                   }}>
                     {c.name}
                   </span>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexShrink: 0 }}>
-                    <span style={{
-                      fontFamily: FONT, fontSize: "0.66rem", fontWeight: 700,
-                      letterSpacing: "0.09em", textTransform: "uppercase",
-                      background: badgeBg, border: `1px solid ${badgeBorder}`,
-                      color: badgeText, padding: "0.28rem 0.6rem",
-                      borderRadius: 4, whiteSpace: "nowrap",
+                  <span style={{
+                    fontFamily: FONT, fontSize: "0.62rem", fontWeight: 700,
+                    letterSpacing: "0.09em", textTransform: "uppercase",
+                    background: badgeBg, border: `1px solid ${badgeBorder}`,
+                    color: badgeText, padding: "0.2rem 0.5rem",
+                    borderRadius: 3, display: "inline-block", alignSelf: "flex-start",
+                  }}>
+                    {c.badge}
+                  </span>
+                </div>
+
+                {/* Bar + metadata column */}
+                <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+                  {/* Bar track row */}
+                  <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                    {/* Track */}
+                    <div style={{
+                      flex: 1, height: 54,
+                      background: "rgba(255,255,255,0.05)",
+                      position: "relative", overflow: "hidden",
                     }}>
-                      {c.badge}
-                    </span>
+                      {/* Fill */}
+                      <div style={{
+                        position: "absolute", left: 0, top: 0, bottom: 0,
+                        width: animated ? `${widthPct}%` : "0%",
+                        background: barFill,
+                        transition: `width 1.5s cubic-bezier(0.4,0,0.15,1) ${delay}`,
+                      }} />
+                    </div>
+                    {/* Amount label */}
                     <span style={{
                       fontFamily: FONT, fontWeight: 900,
-                      fontSize: "clamp(1.1rem,1.8vw,1.4rem)",
+                      fontSize: "clamp(1.05rem,1.7vw,1.35rem)",
                       color: amtColor, letterSpacing: "-0.03em",
+                      flexShrink: 0, minWidth: "4rem", textAlign: "right",
+                      opacity: animated ? 1 : 0,
+                      transition: `opacity 0.5s ease ${amtDelay}`,
                     }}>
                       {c.label}
                     </span>
                   </div>
-                </div>
-
-                {/* Bar track + fill */}
-                <div style={{
-                  height: 6, background: "rgba(255,255,255,0.07)",
-                  borderRadius: 2, overflow: "hidden", marginBottom: "0.55rem",
-                }}>
-                  <div style={{
-                    height: "100%", borderRadius: 2,
-                    background: barFill,
-                    width: animated ? `${widthPct}%` : "0%",
-                    transition: `width 1.4s cubic-bezier(0.4,0,0.2,1) ${delay}`,
-                  }} />
-                </div>
-
-                {/* Basis + source */}
-                <div style={{
-                  display: "flex", justifyContent: "space-between",
-                  gap: "1rem", flexWrap: "wrap",
-                }}>
-                  <span style={{
-                    fontFamily: FONT, fontSize: "0.75rem",
-                    color: "rgba(255,255,255,0.42)", lineHeight: 1.5,
-                  }}>
-                    {c.basis}
-                  </span>
-                  <span style={{
-                    fontFamily: FONT, fontSize: "0.7rem",
-                    color: "rgba(255,255,255,0.26)", fontStyle: "italic",
-                    whiteSpace: "nowrap",
-                  }}>
-                    {c.source}
-                  </span>
+                  {/* Basis + source */}
+                  <div style={{ display: "flex", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap" }}>
+                    <span style={{
+                      fontFamily: FONT, fontSize: "0.72rem",
+                      color: "rgba(255,255,255,0.38)", lineHeight: 1.5,
+                    }}>
+                      {c.basis}
+                    </span>
+                    <span style={{
+                      fontFamily: FONT, fontSize: "0.67rem",
+                      color: "rgba(255,255,255,0.22)", fontStyle: "italic",
+                      whiteSpace: "nowrap",
+                    }}>
+                      {c.source}
+                    </span>
+                  </div>
                 </div>
               </div>
             );
@@ -474,7 +483,7 @@ function DamagesSection() {
           <div style={{
             borderTop: "2px solid rgba(255,255,255,0.18)",
             paddingTop: "clamp(1.4rem,2.5vw,2rem)",
-            marginTop: "0.25rem",
+            marginTop: "0.5rem",
             display: "flex", justifyContent: "space-between",
             alignItems: "flex-end", gap: "2rem", flexWrap: "wrap",
           }}>
@@ -510,6 +519,18 @@ function DamagesSection() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .chart-row { flex-direction: column !important; }
+          .chart-row > div:first-child {
+            width: 100% !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 0.75rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
