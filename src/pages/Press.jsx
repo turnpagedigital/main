@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { NEON, FONT, INK, INK_60, INK_40, LINE } from "../data/tokens.js";
+import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
-import Hero from "../components/Hero.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 import pressData from "../data/press.json";
 
@@ -37,92 +36,6 @@ const BY_ANDREW = ALL_ITEMS
 export default function Press() {
   return (
     <>
-      <Hero
-        eyebrow="Press & Publications"
-        title="Coverage and"
-        accentTitle="commentary."
-        subtitle="Andrew Glantz has been quoted or featured in the Wall Street Journal, Bloomberg, The New York Times, CoinDesk, NPR's Planet Money, the BBC, Grant's Interest Rate Observer, and the ABI Journal."
-        size="tall"
-      />
-
-      {/* ── As seen in ────────────────────────────────────────────── */}
-      <section style={{
-        background: "#F4F5F7",
-        padding: "clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,4rem)",
-        borderBottom: `1px solid ${LINE}`,
-      }}>
-        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-          <p style={{
-            fontFamily: FONT, fontSize: "0.68rem", fontWeight: 600,
-            letterSpacing: "0.2em", textTransform: "uppercase",
-            color: INK_40, marginBottom: "1.8rem",
-          }}>
-            As seen in
-          </p>
-          <div style={{
-            display: "flex", flexWrap: "wrap",
-            alignItems: "center",
-            gap: "clamp(1.8rem, 3.5vw, 3rem)",
-          }}>
-            {/* Wall Street Journal */}
-            <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "1.23rem",
-              letterSpacing: "0.04em", color: INK, opacity: 0.42,
-              textTransform: "uppercase", whiteSpace: "nowrap" }}>
-              The Wall Street Journal
-            </span>
-            {/* Bloomberg */}
-            <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "1.5rem",
-              letterSpacing: "-0.02em", color: INK, opacity: 0.42,
-              textTransform: "uppercase", whiteSpace: "nowrap" }}>
-              Bloomberg
-            </span>
-            {/* NYT */}
-            <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "1.23rem",
-              letterSpacing: "0.02em", color: INK, opacity: 0.42,
-              whiteSpace: "nowrap" }}>
-              The New York Times
-            </span>
-            {/* NPR */}
-            <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "1.32rem",
-              letterSpacing: "0.06em", color: INK, opacity: 0.42,
-              textTransform: "uppercase", whiteSpace: "nowrap" }}>
-              NPR
-            </span>
-            {/* BBC — three-box SVG */}
-            <svg width="90" height="33" viewBox="0 0 90 33" fill="none"
-              style={{ opacity: 0.42, flexShrink: 0 }}>
-              <rect x="0"    y="0" width="27" height="33" fill={INK} />
-              <rect x="31.5" y="0" width="27" height="33" fill={INK} />
-              <rect x="63"   y="0" width="27" height="33" fill={INK} />
-              <text x="13.5" y="23" textAnchor="middle" fontFamily={FONT} fontWeight="900"
-                fontSize="19.5" fill="#F4F5F7">B</text>
-              <text x="45"   y="23" textAnchor="middle" fontFamily={FONT} fontWeight="900"
-                fontSize="19.5" fill="#F4F5F7">B</text>
-              <text x="76.5" y="23" textAnchor="middle" fontFamily={FONT} fontWeight="900"
-                fontSize="19.5" fill="#F4F5F7">C</text>
-            </svg>
-            {/* CoinDesk */}
-            <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: "1.32rem",
-              letterSpacing: "-0.01em", color: INK, opacity: 0.42,
-              whiteSpace: "nowrap" }}>
-              CoinDesk
-            </span>
-            {/* Grant's */}
-            <span style={{ fontFamily: "'Georgia', serif", fontStyle: "italic",
-              fontWeight: 700, fontSize: "1.32rem",
-              color: INK, opacity: 0.42, whiteSpace: "nowrap" }}>
-              Grant's
-            </span>
-            {/* ABI Journal */}
-            <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "1.23rem",
-              letterSpacing: "0.06em", color: INK, opacity: 0.42,
-              textTransform: "uppercase", whiteSpace: "nowrap" }}>
-              ABI Journal
-            </span>
-          </div>
-        </div>
-      </section>
-
       {/* ── Media Coverage ────────────────────────────────────────── */}
       <section style={{
         background: "#FFFFFF",
