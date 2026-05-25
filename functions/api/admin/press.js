@@ -3,8 +3,8 @@ import { jsonResponse, isAuthed } from "./_utils.js";
 const PRESS_PATH = "src/data/press.json";
 const PRESS_TYPE_VALUES   = ["publication", "podcast", "article", "social post", "blog post"];
 const PRESS_AUTHOR_VALUES = ["Andrew", "Other", ""];
-const PRESS_PAGE_VALUES   = ["", "ai-copyright", "crypto", "litigation-finance", "bankruptcy"];
-const PRESS_STRING_FIELDS = ["type", "author", "page", "date", "url", "excerpt", "publication_title", "piece_title"];
+const PRESS_PAGE_VALUES   = ["ai-copyright", "crypto", "litigation-finance", "bankruptcy"];
+const PRESS_STRING_FIELDS = ["type", "author", "date", "url", "excerpt", "publication_title", "piece_title"];
 
 export async function onRequestGet({ request, env }) {
   if (!(await isAuthed(request, env))) {
@@ -71,8 +71,13 @@ function validateList(list) {
     if (!PRESS_AUTHOR_VALUES.includes(d.author)) {
       return `items[${i}].author must be "Andrew", "Other", or ""`;
     }
-    if (!PRESS_PAGE_VALUES.includes(d.page)) {
-      return `items[${i}].page must be one of: ${PRESS_PAGE_VALUES.map(v => v || '""').join(", ")}`;
+    if (!Array.isArray(d.pages)) {
+      return `items[${i}].pages must be an array`;
+    }
+    for (const p of d.pages) {
+      if (!PRESS_PAGE_VALUES.includes(p)) {
+        return `items[${i}].pages contains invalid value "${p}"; must be one of: ${PRESS_PAGE_VALUES.join(", ")}`;
+      }
     }
   }
   return null;
@@ -81,6 +86,7 @@ function validateList(list) {
 function normalizeItem(d) {
   const out = {};
   for (const f of PRESS_STRING_FIELDS) out[f] = String(d[f] ?? "");
+  out.pages = Array.isArray(d.pages) ? d.pages.filter(p => PRESS_PAGE_VALUES.includes(p)) : [];
   return out;
 }
 

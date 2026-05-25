@@ -56,9 +56,8 @@ const PRESS_TYPE_VALUES = ["publication", "podcast", "article", "social post", "
 
 const PRESS_AUTHOR_VALUES = ["Other", "Andrew"];
 
-const PRESS_PAGE_VALUES = ["", "ai-copyright", "crypto", "litigation-finance", "bankruptcy"];
+const PRESS_PAGE_VALUES = ["ai-copyright", "crypto", "litigation-finance", "bankruptcy"];
 const PRESS_PAGE_LABELS = {
-  "":                   "General (Press page only)",
   "ai-copyright":       "AI Copyright",
   "crypto":             "Crypto",
   "litigation-finance": "Litigation Finance",
@@ -66,14 +65,14 @@ const PRESS_PAGE_LABELS = {
 };
 
 function blankPressItem() {
-  return { type: "publication", author: "Other", page: "", date: "", url: "", excerpt: "", publication_title: "", piece_title: "" };
+  return { type: "publication", author: "Other", pages: [], date: "", url: "", excerpt: "", publication_title: "", piece_title: "" };
 }
 
 function sanitizePressItem(d) {
   return {
-    type:              PRESS_TYPE_VALUES.includes(d.type)   ? d.type   : "publication",
+    type:              PRESS_TYPE_VALUES.includes(d.type)     ? d.type   : "publication",
     author:            PRESS_AUTHOR_VALUES.includes(d.author) ? d.author : "Other",
-    page:              PRESS_PAGE_VALUES.includes(d.page)   ? d.page   : "",
+    pages:             Array.isArray(d.pages) ? d.pages.filter(p => PRESS_PAGE_VALUES.includes(p)) : [],
     date:              typeof d.date              === "string" ? d.date              : "",
     url:               typeof d.url               === "string" ? d.url               : "",
     excerpt:           typeof d.excerpt           === "string" ? d.excerpt           : "",
@@ -845,15 +844,15 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.9rem" }}>
               <div style={{ flex: 1, fontWeight: 700, fontSize: "0.85rem", color: INK_60 }}>
                 #{i + 1} — <span style={{ textTransform: "capitalize" }}>{item.type}</span>
-                {item.page && (
-                  <span style={{
-                    marginLeft: "0.5rem", background: "#0A0A0A", color: NEON,
+                {Array.isArray(item.pages) && item.pages.map(p => (
+                  <span key={p} style={{
+                    marginLeft: "0.3rem", background: "#0A0A0A", color: NEON,
                     fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.06em",
                     textTransform: "uppercase", padding: "0.1em 0.45em",
                   }}>
-                    {PRESS_PAGE_LABELS[item.page] || item.page}
+                    {PRESS_PAGE_LABELS[p] || p}
                   </span>
-                )}
+                ))}
                 {item.publication_title && ` · ${item.publication_title}`}
                 {item.piece_title && ` — "${item.piece_title}"`}
               </div>
@@ -891,19 +890,36 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
                 </select>
               </label>
 
-              {/* Sub-page / brand association */}
-              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
-                Sub-page (which brand page to associate)
-                <select
-                  value={item.page || ""}
-                  onChange={e => updateItem(i, "page", e.target.value)}
-                  style={{ ...inputStyle, cursor: "pointer" }}
-                >
-                  {PRESS_PAGE_VALUES.map(v => (
-                    <option key={v} value={v}>{PRESS_PAGE_LABELS[v]}</option>
-                  ))}
-                </select>
-              </label>
+              {/* Sub-page / brand association — multi-select checkboxes */}
+              <div style={{ gridColumn: "1 / -1" }}>
+                <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.4rem" }}>
+                  Sub-pages (select all that apply)
+                </div>
+                <div style={{ display: "flex", gap: "1.2rem", flexWrap: "wrap" }}>
+                  {PRESS_PAGE_VALUES.map(v => {
+                    const checked = Array.isArray(item.pages) && item.pages.includes(v);
+                    return (
+                      <label key={v} style={{
+                        display: "flex", alignItems: "center", gap: "0.35rem",
+                        cursor: "pointer", fontSize: "0.88rem", color: INK, fontWeight: 400,
+                      }}>
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={e => {
+                            const cur = Array.isArray(item.pages) ? item.pages : [];
+                            updateItem(i, "pages", e.target.checked
+                              ? [...cur, v]
+                              : cur.filter(x => x !== v));
+                          }}
+                          style={{ accentColor: NEON, width: 14, height: 14 }}
+                        />
+                        {PRESS_PAGE_LABELS[v]}
+                      </label>
+                    );
+                  })}
+                </div>
+              </div>
 
               {/* Date */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
