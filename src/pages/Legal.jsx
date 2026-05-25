@@ -1,18 +1,14 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, INK_40, LINE } from "../data/tokens.js";
-import Hero from "../components/Hero.jsx";
 
-/* Privacy & Terms — content adapted from the Rewind Tariffs versions
-   (a Turnpage Digital Markets property) and broadened to cover TPDM's
-   full services across claims liquidation, advisory, and capital. */
+/* Privacy & Terms — rendered as a proper legal document.
+   Content is unchanged; only the layout and typography have been redesigned. */
 
 const LAST_UPDATED = "May 12, 2026";
 
 /* ─── Privacy Policy ─── */
 const PRIVACY = {
-  eyebrow: "Privacy",
-  title: "Privacy",
-  accentTitle: "Policy.",
+  title: "Privacy Policy",
   subtitle: "How Turnpage Digital Markets LLC collects, uses, discloses, and safeguards your personal information when you visit our website or use our claims services.",
   sections: [
     {
@@ -45,7 +41,7 @@ const PRIVACY = {
       ],
     },
     {
-      n: "3", h: "Legal basis for processing (GDPR)",
+      n: "3", h: "Legal Basis for Processing (GDPR)",
       body: [
         "If you are located in the European Economic Area, the United Kingdom, or another jurisdiction with similar data protection laws, we process your personal data on the following legal bases:",
       ],
@@ -57,7 +53,7 @@ const PRIVACY = {
       ],
     },
     {
-      n: "4", h: "How we use your information",
+      n: "4", h: "How We Use Your Information",
       body: [
         "We use the information we collect to:",
       ],
@@ -71,7 +67,7 @@ const PRIVACY = {
       ],
     },
     {
-      n: "5", h: "Data sharing and disclosure",
+      n: "5", h: "Data Sharing and Disclosure",
       body: [
         "We do not sell, rent, or trade your personal information. We may share your data with:",
       ],
@@ -83,13 +79,13 @@ const PRIVACY = {
       ],
     },
     {
-      n: "6", h: "Data retention",
+      n: "6", h: "Data Retention",
       body: [
         "We retain your personal data only as long as necessary to fulfill the purposes for which it was collected, including to satisfy legal, accounting, or reporting requirements. Inquiry and transaction data are typically retained for seven years from the date of your last interaction, after which the data is securely deleted or anonymized, except where a longer retention period is required by law.",
       ],
     },
     {
-      n: "7", h: "Your rights",
+      n: "7", h: "Your Rights",
       body: [
         "Depending on your jurisdiction, you may have the following rights regarding your personal data:",
       ],
@@ -105,37 +101,37 @@ const PRIVACY = {
       trailing: "To exercise any of these rights, please contact us at privacy@turnpagedigital.com. We will respond within 30 days (or as required by applicable law).",
     },
     {
-      n: "8", h: "Cookies and tracking",
+      n: "8", h: "Cookies and Tracking",
       body: [
         "Our website may use essential cookies to ensure proper functionality. We do not use advertising or third-party tracking cookies without your explicit consent. You can manage cookie preferences through your browser settings.",
       ],
     },
     {
-      n: "9", h: "Data security",
+      n: "9", h: "Data Security",
       body: [
         "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. These include encryption in transit (TLS/SSL), access controls, and regular security assessments. However, no method of transmission over the internet is 100% secure.",
       ],
     },
     {
-      n: "10", h: "International transfers",
+      n: "10", h: "International Transfers",
       body: [
         "Your data may be transferred to and processed in the United States. If you are located outside the United States, we ensure appropriate safeguards are in place (such as Standard Contractual Clauses) to protect your data in compliance with applicable data protection laws.",
       ],
     },
     {
-      n: "11", h: "Children's privacy",
+      n: "11", h: "Children's Privacy",
       body: [
         "Our services are not directed to individuals under the age of 16. We do not knowingly collect personal data from children. If we become aware that we have collected data from a child, we will promptly delete it.",
       ],
     },
     {
-      n: "12", h: "Changes to this policy",
+      n: "12", h: "Changes to This Policy",
       body: [
         "We may update this Privacy Policy from time to time. We will notify you of material changes by posting the updated policy on our website with a new \"Last updated\" date. Your continued use of our services after changes constitutes acceptance of the updated policy.",
       ],
     },
     {
-      n: "13", h: "Contact us",
+      n: "13", h: "Contact Us",
       body: [
         "If you have questions about this Privacy Policy or wish to exercise your data rights, please contact:",
       ],
@@ -146,43 +142,41 @@ const PRIVACY = {
 
 /* ─── Terms of Use ─── */
 const TERMS = {
-  eyebrow: "Terms",
-  title: "Terms",
-  accentTitle: "of Use.",
+  title: "Terms of Use",
   subtitle: "The terms governing your use of turnpagedigital.com and the services offered by Turnpage Digital Markets LLC.",
   sections: [
     {
-      n: "1", h: "Acceptance of terms",
+      n: "1", h: "Acceptance of Terms",
       body: [
         "By accessing or using the website and services of Turnpage Digital Markets LLC (\"we,\" \"us,\" or \"our\"), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our services.",
       ],
     },
     {
-      n: "2", h: "Description of services",
+      n: "2", h: "Description of Services",
       body: [
         "Turnpage Digital Markets provides strategic guidance and turn-key liquidity solutions for rights holders entitled to compensation. Our services include OTC claim brokerage, capital solutions (assignments, participations, advances, contingency arrangements), and advisory across bankruptcy claims, litigation claims, class action claims, locked digital assets, government refunds, judgments, seized property, and other illiquid assets.",
       ],
     },
     {
-      n: "3", h: "No legal, tax, or financial advice",
+      n: "3", h: "No Legal, Tax, or Financial Advice",
       body: [
         "The information provided on this website and through our services is for general informational purposes only and does not constitute legal, tax, financial, investment, or brokerage advice. Content on this site, including references to court decisions, claim values, settlement data, and recovery estimates, should not be relied upon as a substitute for professional advice. We recommend consulting with qualified counsel, tax professionals, or other licensed professionals before making decisions regarding your claims.",
       ],
     },
     {
-      n: "4", h: "No client relationship",
+      n: "4", h: "No Client Relationship",
       body: [
         "Use of this site or submission of the contact form does not create an attorney-client, fiduciary, advisory, or other professional relationship with Turnpage Digital Markets LLC, its principals, employees, or affiliates. A relationship is formed only by a separately executed written agreement.",
       ],
     },
     {
-      n: "5", h: "No guarantees",
+      n: "5", h: "No Guarantees",
       body: [
         "While we strive to provide accurate and up-to-date information, we make no representations or warranties regarding the accuracy, completeness, or timeliness of any information on our website. Claim values, eligibility, timelines, recovery amounts, and outcomes vary based on individual circumstances. Past results do not guarantee future outcomes. Statistics and figures cited on our website are based on publicly available data sources and reasonable estimates.",
       ],
     },
     {
-      n: "6", h: "User obligations",
+      n: "6", h: "User Obligations",
       body: [
         "When using our services, you agree to:",
       ],
@@ -195,25 +189,25 @@ const TERMS = {
       ],
     },
     {
-      n: "7", h: "Intellectual property",
+      n: "7", h: "Intellectual Property",
       body: [
         "All content on this website — including text, graphics, logos, icons, images, data compilations, charts, briefings, and software — is the property of Turnpage Digital Markets LLC or its content suppliers and is protected by U.S. and international copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from our content without prior written consent.",
       ],
     },
     {
-      n: "8", h: "Third-party links and content",
+      n: "8", h: "Third-Party Links and Content",
       body: [
         "Our website may contain links to third-party websites and references to third-party content, court filings, news reports, and other publicly available materials. We are not responsible for the content, accuracy, or privacy practices of third-party sites. Links and citations are provided for informational convenience only and do not imply endorsement.",
       ],
     },
     {
-      n: "9", h: "Forward-looking statements",
+      n: "9", h: "Forward-Looking Statements",
       body: [
         "Some of the information on this site discusses pending litigation, settlements, regulatory matters, and market conditions. Outcomes are uncertain. Past performance is not indicative of future results, and no representation is made that any particular result can be obtained.",
       ],
     },
     {
-      n: "10", h: "Limitation of liability",
+      n: "10", h: "Limitation of Liability",
       body: [
         "To the maximum extent permitted by law, Turnpage Digital Markets LLC, its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages — including loss of profits, data, or business opportunities — arising from your use of or inability to use our services, even if we have been advised of the possibility of such damages. Our total liability for any claim arising from these terms or our services shall not exceed the amount you paid to us (if any) in the twelve months preceding the claim.",
       ],
@@ -243,7 +237,7 @@ const TERMS = {
       ],
     },
     {
-      n: "15", h: "Governing law",
+      n: "15", h: "Governing Law",
       body: [
         "These Terms of Use are governed by and construed in accordance with the laws of the State of Delaware, without regard to conflict of law principles. Any disputes arising from these Terms or your use of our services shall be resolved in the state or federal courts located in Delaware.",
       ],
@@ -265,143 +259,257 @@ const TERMS = {
   ],
 };
 
+/* ─── Helpers ────────────────────────────────────────────────────────────── */
+
+function linkifyEmail(text) {
+  return text.split(/(privacy@turnpagedigital\.com|legal@turnpagedigital\.com|info@turnpagedigital\.com)/).map((part, k) =>
+    part.includes("@turnpagedigital.com")
+      ? <a key={k} href={`mailto:${part}`} style={{ color: INK, fontWeight: 600, borderBottom: `1px solid ${INK}`, paddingBottom: 1 }}>{part}</a>
+      : <React.Fragment key={k}>{part}</React.Fragment>
+  );
+}
+
+/* ─── Component ─────────────────────────────────────────────────────────── */
+
 export default function Legal({ kind }) {
   const data = kind === "terms" ? TERMS : PRIVACY;
 
+  // Build TOC: all sections, with sub-sections indented
+  const toc = data.sections.map(s => ({
+    n: s.n,
+    h: s.h,
+    isSub: s.n.includes("."),
+    anchor: `#sec-${s.n.replace(".", "-")}`,
+  }));
+
   return (
-    <>
-      <Hero
-        eyebrow={data.eyebrow}
-        title={data.title}
-        accentTitle={data.accentTitle}
-        subtitle={data.subtitle}
-      />
+    <div style={{
+      background: "#F2F2F0",
+      minHeight: "100vh",
+      padding: "clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem)",
+      fontFamily: FONT,
+    }}>
+      {/* Document card */}
+      <div style={{
+        maxWidth: 780,
+        margin: "0 auto",
+        background: "#FFFFFF",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.05)",
+        padding: "clamp(2.5rem, 7vw, 5rem) clamp(2rem, 6vw, 4.5rem)",
+      }}>
 
-      <section className="surface-paper section-pad">
-        <div className="container" style={{ maxWidth: 880 }}>
+        {/* ── Document header ─────────────────────────────────────── */}
+        <header style={{ marginBottom: "2.5rem" }}>
           <p style={{
-            fontFamily: FONT, fontSize: "0.78rem", color: INK_60,
-            marginBottom: "3rem", letterSpacing: "0.18em",
-            textTransform: "uppercase", fontWeight: 600,
+            fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.22em",
+            textTransform: "uppercase", color: INK_60, marginBottom: "1.1rem",
           }}>
-            Last updated: {LAST_UPDATED}
+            Turnpage Digital Markets LLC
           </p>
+          <h1 style={{
+            fontSize: "clamp(1.7rem, 3.5vw, 2.3rem)", fontWeight: 800,
+            letterSpacing: "-0.025em", color: INK,
+            lineHeight: 1.1, margin: "0 0 1.1rem",
+          }}>
+            {data.title}
+          </h1>
+          <div style={{
+            display: "flex", gap: "2rem", flexWrap: "wrap",
+            fontSize: "0.82rem", color: INK_60, fontWeight: 500,
+          }}>
+            <span>Last Updated: {LAST_UPDATED}</span>
+            <span>Turnpage Digital Markets LLC</span>
+          </div>
+        </header>
 
-          {data.sections.map((s, i) => {
-            const isSub = s.n.includes(".");
-            return (
-              <section key={s.n} style={{
-                marginBottom: isSub ? "2rem" : "2.6rem",
-                paddingTop: !isSub && i > 0 ? "2.6rem" : 0,
-                borderTop: !isSub && i > 0 ? `1px solid ${LINE}` : "none",
-                paddingLeft: isSub ? "clamp(0rem, 2vw, 1.5rem)" : 0,
+        <hr style={{ border: "none", borderTop: `2px solid ${INK}`, margin: "0 0 2rem" }} />
+
+        {/* ── Preamble ────────────────────────────────────────────── */}
+        <p style={{
+          fontSize: "0.96rem", color: INK_60, lineHeight: 1.75,
+          marginBottom: "2.5rem",
+        }}>
+          {data.subtitle}
+        </p>
+
+        {/* ── Table of Contents ───────────────────────────────────── */}
+        <div style={{
+          background: "#F7F7F5",
+          border: `1px solid rgba(0,0,0,0.08)`,
+          borderLeft: `3px solid ${INK}`,
+          padding: "1.5rem 1.75rem",
+          marginBottom: "3rem",
+        }}>
+          <p style={{
+            fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.22em",
+            textTransform: "uppercase", color: INK_60, marginBottom: "1.1rem",
+          }}>
+            Table of Contents
+          </p>
+          <ol style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            {toc.map(item => (
+              <li key={item.n} style={{
+                paddingLeft: item.isSub ? "1.75rem" : "0",
+                marginBottom: item.isSub ? "0.3rem" : "0.45rem",
               }}>
+                <a
+                  href={item.anchor}
+                  style={{
+                    fontSize: item.isSub ? "0.83rem" : "0.88rem",
+                    fontWeight: item.isSub ? 400 : 500,
+                    color: INK,
+                    display: "inline-flex", gap: "0.6rem", alignItems: "baseline",
+                    textDecoration: "none",
+                    opacity: item.isSub ? 0.75 : 1,
+                    transition: "opacity 0.15s",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.textDecoration = "underline"; }}
+                  onMouseLeave={e => { e.currentTarget.style.opacity = item.isSub ? "0.75" : "1"; e.currentTarget.style.textDecoration = "none"; }}
+                >
+                  <span style={{ color: INK_40, minWidth: item.isSub ? "2.4em" : "1.4em", fontWeight: 600, flexShrink: 0, fontSize: "0.78rem" }}>
+                    {item.n}.
+                  </span>
+                  <span>{item.h}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* ── Sections ────────────────────────────────────────────── */}
+        <div>
+          {data.sections.map((s, i) => {
+            const isSub   = s.n.includes(".");
+            const isEmpty = !s.body && !s.bullets && !s.contact; // header-only sections like §2
+            const anchor  = `sec-${s.n.replace(".", "-")}`;
+
+            // Separate top-level sections with a rule
+            const prevSec      = data.sections[i - 1];
+            const prevIsSub    = prevSec ? prevSec.n.includes(".") : false;
+            const addTopBorder = !isSub && i > 0;
+
+            return (
+              <section
+                key={s.n}
+                id={anchor}
+                style={{
+                  marginTop: addTopBorder ? "2.8rem" : (isSub ? "1.8rem" : "0"),
+                  paddingTop: addTopBorder ? "2.8rem" : "0",
+                  borderTop: addTopBorder ? `1px solid rgba(0,0,0,0.1)` : "none",
+                  scrollMarginTop: 110,
+                }}
+              >
+                {/* Section heading */}
                 <div style={{
-                  display: "flex", alignItems: "baseline", gap: "1rem",
-                  marginBottom: "0.8rem", flexWrap: "wrap",
+                  display: "flex", gap: "0.8rem", alignItems: "baseline",
+                  marginBottom: isEmpty ? 0 : "0.9rem",
                 }}>
                   <span style={{
-                    fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-                    color: INK_40, letterSpacing: "0.04em",
-                    minWidth: "2.4em",
+                    fontSize: "0.72rem", fontWeight: 700, color: INK_40,
+                    letterSpacing: "0.06em", minWidth: isSub ? "2.5em" : "1.6em",
+                    flexShrink: 0, paddingTop: "0.1em",
                   }}>
-                    {s.n}
+                    {s.n}.
                   </span>
                   <h2 style={{
-                    fontFamily: FONT, fontWeight: 800,
-                    fontSize: isSub ? "clamp(1.05rem, 1.5vw, 1.2rem)" : "clamp(1.2rem, 1.8vw, 1.5rem)",
-                    color: INK, letterSpacing: "-0.01em",
-                    lineHeight: 1.25, margin: 0,
+                    fontSize: isSub ? "0.93rem" : "0.88rem",
+                    fontWeight: isSub ? 700 : 800,
+                    letterSpacing: isSub ? "-0.005em" : "0.1em",
+                    textTransform: isSub ? "none" : "uppercase",
+                    color: INK,
+                    margin: 0,
+                    lineHeight: 1.3,
                   }}>
                     {s.h}
                   </h2>
                 </div>
 
-                {s.body && s.body.map((p, j) => (
-                  <p key={j} style={{
-                    fontFamily: FONT, fontSize: "1.02rem",
-                    color: INK_60, lineHeight: 1.7,
-                    marginBottom: "1rem", marginLeft: "calc(2.4em + 1rem)",
-                  }}>
-                    {p}
-                  </p>
-                ))}
+                {/* Section body */}
+                {!isEmpty && (
+                  <div style={{ paddingLeft: "calc(0.8rem + " + (isSub ? "2.5em" : "1.6em") + ")" }}>
 
-                {s.bullets && (
-                  <ul style={{
-                    listStyle: "none", padding: 0,
-                    margin: "0 0 1rem calc(2.4em + 1rem)",
-                    display: "flex", flexDirection: "column", gap: "0.65rem",
-                  }}>
-                    {s.bullets.map((b, j) => (
-                      <li key={j} style={{
-                        fontFamily: FONT, fontSize: "1.02rem",
-                        color: INK_60, lineHeight: 1.6,
-                        paddingLeft: "1.3rem", position: "relative",
+                    {s.body && s.body.map((p, j) => (
+                      <p key={j} style={{
+                        fontSize: "0.96rem", color: INK, lineHeight: 1.8,
+                        marginBottom: j < s.body.length - 1 || s.bullets ? "0.85rem" : 0,
                       }}>
-                        <span style={{
-                          position: "absolute", left: 0, top: "0.7em",
-                          width: 6, height: 1, background: INK_40,
-                        }} />
-                        {b}
-                      </li>
+                        {p}
+                      </p>
                     ))}
-                  </ul>
-                )}
 
-                {s.trailing && (
-                  <p style={{
-                    fontFamily: FONT, fontSize: "1.02rem",
-                    color: INK_60, lineHeight: 1.7,
-                    marginLeft: "calc(2.4em + 1rem)", marginTop: "1rem",
-                  }}>
-                    {s.trailing.split(/(privacy@turnpagedigital\.com|legal@turnpagedigital\.com|info@turnpagedigital\.com)/).map((part, k) => (
-                      part.includes("@turnpagedigital.com")
-                        ? <a key={k} href={`mailto:${part}`} style={{ color: INK, fontWeight: 600, borderBottom: `2px solid ${NEON}`, paddingBottom: 1 }}>{part}</a>
-                        : <React.Fragment key={k}>{part}</React.Fragment>
-                    ))}
-                  </p>
-                )}
+                    {s.bullets && (
+                      <ul style={{
+                        margin: "0 0 0 0.25rem",
+                        paddingLeft: "1.1rem",
+                        display: "flex", flexDirection: "column", gap: "0.55rem",
+                      }}>
+                        {s.bullets.map((b, j) => (
+                          <li key={j} style={{
+                            fontSize: "0.96rem", color: INK, lineHeight: 1.75,
+                            listStyleType: "disc",
+                          }}>
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
 
-                {s.contact && (
-                  <div style={{ marginLeft: "calc(2.4em + 1rem)", marginTop: "0.5rem" }}>
-                    <p style={{
-                      fontFamily: FONT, fontSize: "1.02rem",
-                      color: INK, lineHeight: 1.7, marginBottom: "0.4rem", fontWeight: 600,
-                    }}>
-                      Turnpage Digital Markets LLC
-                    </p>
-                    <p style={{
-                      fontFamily: FONT, fontSize: "1.02rem",
-                      color: INK_60, lineHeight: 1.7,
-                    }}>
-                      Email:{" "}
-                      <a
-                        href={`mailto:${s.contactEmail || "privacy@turnpagedigital.com"}`}
-                        style={{ color: INK, fontWeight: 600, borderBottom: `2px solid ${NEON}`, paddingBottom: 1 }}
-                      >
-                        {s.contactEmail || "privacy@turnpagedigital.com"}
-                      </a>
-                    </p>
+                    {s.trailing && (
+                      <p style={{
+                        fontSize: "0.96rem", color: INK, lineHeight: 1.8,
+                        marginTop: "0.85rem",
+                      }}>
+                        {linkifyEmail(s.trailing)}
+                      </p>
+                    )}
+
+                    {s.contact && (
+                      <address style={{ fontStyle: "normal", marginTop: "0.85rem" }}>
+                        <p style={{ fontSize: "0.96rem", fontWeight: 700, color: INK, marginBottom: "0.25rem" }}>
+                          Turnpage Digital Markets LLC
+                        </p>
+                        <p style={{ fontSize: "0.96rem", color: INK }}>
+                          Email:{" "}
+                          <a
+                            href={`mailto:${s.contactEmail || "privacy@turnpagedigital.com"}`}
+                            style={{ color: INK, fontWeight: 600, borderBottom: `1px solid ${INK}`, paddingBottom: 1 }}
+                          >
+                            {s.contactEmail || "privacy@turnpagedigital.com"}
+                          </a>
+                        </p>
+                      </address>
+                    )}
                   </div>
                 )}
               </section>
             );
           })}
-
-          <div style={{
-            marginTop: "3rem", paddingTop: "1.5rem",
-            borderTop: `1px solid ${LINE}`,
-          }}>
-            <p style={{
-              fontFamily: FONT, fontSize: "0.9rem", color: INK_60,
-              fontStyle: "italic", lineHeight: 1.6,
-            }}>
-              Disclaimer: Turnpage Digital Markets LLC is not a law firm, investment advisor, or broker-dealer. We do not provide legal, tax, or professional advice. Consult with qualified counsel and tax professionals before making decisions regarding your claims.
-            </p>
-          </div>
         </div>
-      </section>
-    </>
+
+        {/* ── Footer disclaimer ───────────────────────────────────── */}
+        <div style={{
+          marginTop: "3.5rem", paddingTop: "2rem",
+          borderTop: `1px solid rgba(0,0,0,0.1)`,
+        }}>
+          <p style={{
+            fontSize: "0.8rem", color: INK_60, lineHeight: 1.75, fontStyle: "italic",
+          }}>
+            Disclaimer: Turnpage Digital Markets LLC is not a law firm, investment advisor, or broker-dealer. We do not provide legal, tax, or professional advice. Consult with qualified counsel and tax professionals before making decisions regarding your claims.
+          </p>
+        </div>
+
+      </div>
+
+      {/* Print styles */}
+      <style>{`
+        @media print {
+          body { background: #fff !important; }
+          nav, footer, .announcement-banner { display: none !important; }
+        }
+        @media (max-width: 540px) {
+          #sec-1, #sec-2, #sec-3 { scroll-margin-top: 80px; }
+        }
+      `}</style>
+    </div>
   );
 }
