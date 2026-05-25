@@ -114,6 +114,7 @@ export default function Home() {
         <div className="container">
           <div style={{
             border: "1px solid rgba(255,255,255,0.15)",
+            borderRadius: 8,
             padding: "clamp(2.5rem,5vw,4rem)",
             textAlign: "center",
           }}>
