@@ -655,6 +655,7 @@ function TypeIndicator({ item }) {
           <PenIcon size={13} color={INK_60} />
           <span style={{ ...labelStyle, color: INK_60 }}>By Andrew</span>
         </div>
+        {item.date && <span style={dateStyle}>{item.date}</span>}
       </div>
     );
   }
@@ -666,6 +667,7 @@ function TypeIndicator({ item }) {
         <NewsIcon size={13} color={INK_60} />
         <span style={{ ...labelStyle, color: INK_60 }}>Press Feature</span>
       </div>
+      {item.date && <span style={dateStyle}>{item.date}</span>}
     </div>
   );
 }
@@ -699,14 +701,14 @@ function UnifiedCard({ item }) {
         />
       )}
 
-      {/* ── Meta: outlet · date ─────────────────────────────────────── */}
-      {!isSocial && (item.outlet || item.date) && (
+      {/* ── Meta: outlet only (date lives in TypeIndicator) ────────── */}
+      {!isSocial && item.outlet && (
         <p style={{
           fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
           letterSpacing: "0.16em", textTransform: "uppercase",
           color: INK_60, margin: "0 0 0.65rem",
         }}>
-          {item.outlet}{item.date ? ` · ${item.date}` : ""}
+          {item.outlet}
         </p>
       )}
 
