@@ -2,32 +2,29 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
-      "type": "podcast",
+      "type": "Panel Discussion",
       "author": "Other",
-      "date": "Apr 15, 2023",
-      "url": "https://www.youtube.com/watch?v=b3aiMyKEaNo",
-      "logo_url": "https://www.citypng.com/public/uploads/preview/hd-official-youtube-yt-logo-png-701751694786680qxacfiwgqw.png",
-      "excerpt": "",
-      "publication_title": "The Business, Humanities, Science and Ethics University, USA (",
-      "piece_title": "Interview for MBA Series, Prof. Olivier Chazoule, MBA, LLM",
+      "date": "November 14, 2023",
+      "url": "https://www.benzinga.com/markets/cryptocurrency/23/11/35791298/from-chaos-to-clarity-experts-agree-bankruptcies-add-resilience-to-the-crypto-industry-tra",
+      "logo_url": "https://1000logos.net/wp-content/uploads/2022/05/Benzinga-Logo.png",
+      "excerpt": "Benzinga CEO Jason Raznick moderated a discussion with Thomas Braziel, John Glover, and Andrew Glantz. Raznick, a member of the unsecured creditor committee in the Voyager Digital bankruptcy case, set the stage with his experience on Voyager’s credit committee, highlighting the difficulties in the bankruptcy process and the partial recovery of investments. He emphasized the complexity and unpredictability of the crypto bankruptcy process, underscoring the need for better systems and regulations. \n\n“I don’t think bankruptcy and crypto are set up to work properly right now,” Raznick said.\n\nGlantz shared how his firm's platform has become a vital tool in the trading of bankruptcy claims, including those in crypto.\n\n[We're] educating both bankruptcy and crypto investors, bridging a critical knowledge gap, he said. “Bankruptcy is a good opportunity, I think, for the crypto industry to grow up a little bit.”\n\nGlantz’s insights into the process of claim trading and the emotional impact on claimants provided a human perspective on the bankruptcy process. He also discussed the challenges of reconciling the privacy desires of crypto investors with the transparency requirements of bankruptcy proceedings.",
+      "publication_title": "Benzinga",
+      "piece_title": " CingariFrom Chaos to Clarity: Experts Agree 'Bankruptcies Add Resilience' To The Crypto Industry",
       "pages": [
         "crypto",
         "bankruptcy"
       ]
     },
     {
-      "type": "article",
+      "type": "publication",
       "author": "Other",
-      "date": "January 11, 2023",
-      "url": "https://www.coindesk.com/business/2023/01/11/ftx-creditor-claims-going-for-13-cents-on-the-dollar-on-bankruptcy-marketplace-xclaim",
-      "logo_url": "https://1000logos.net/wp-content/uploads/2022/03/CoinDesk-logo.png",
-      "excerpt": "",
-      "publication_title": "CoinDesk",
-      "piece_title": "FTX Creditor Claims Going for 13 Cents on the Dollar on Bankruptcy Marketplace",
-      "pages": [
-        "bankruptcy",
-        "crypto"
-      ]
+      "date": "August 9, 2022",
+      "url": "https://www.bloomberg.com/news/articles/2022-08-09/wall-street-pros-offer-crypto-holders-a-backdoor-bankruptcy-exit",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bloomberg_logo.svg",
+      "excerpt": "Andrew discussed the incredible inflow of Voyager and Celsius creditors seeking liquidity in the summer of 2022.",
+      "publication_title": "Bloomberg",
+      "piece_title": "Wall Street Offers Crypto Holders at Voyager, Celsius a Backdoor Bankruptcy Exit",
+      "pages": []
     },
     {
       "type": "social post",
@@ -120,6 +117,20 @@
       ]
     },
     {
+      "type": "podcast",
+      "author": "Other",
+      "date": "Apr 15, 2023",
+      "url": "https://www.youtube.com/watch?v=b3aiMyKEaNo",
+      "logo_url": "https://www.citypng.com/public/uploads/preview/hd-official-youtube-yt-logo-png-701751694786680qxacfiwgqw.png",
+      "excerpt": "",
+      "publication_title": "The Business, Humanities, Science and Ethics University, USA (",
+      "piece_title": "Interview for MBA Series, Prof. Olivier Chazoule, MBA, LLM",
+      "pages": [
+        "crypto",
+        "bankruptcy"
+      ]
+    },
+    {
       "type": "article",
       "author": "Other",
       "date": "February 2, 2023",
@@ -131,6 +142,20 @@
       "pages": [
         "crypto",
         "bankruptcy"
+      ]
+    },
+    {
+      "type": "article",
+      "author": "Other",
+      "date": "January 11, 2023",
+      "url": "https://www.coindesk.com/business/2023/01/11/ftx-creditor-claims-going-for-13-cents-on-the-dollar-on-bankruptcy-marketplace-xclaim",
+      "logo_url": "https://1000logos.net/wp-content/uploads/2022/03/CoinDesk-logo.png",
+      "excerpt": "",
+      "publication_title": "CoinDesk",
+      "piece_title": "FTX Creditor Claims Going for 13 Cents on the Dollar on Bankruptcy Marketplace",
+      "pages": [
+        "bankruptcy",
+        "crypto"
       ]
     },
     {
