@@ -39,7 +39,7 @@ export default function Press() {
       {/* ── Divider strip ─────────────────────────────────────────── */}
       <div style={{ width: "100%", height: "clamp(120px, 18vw, 220px)", overflow: "hidden", display: "block" }}>
         <img
-          src="/metalarray.jpg"
+          src="/metal-folds.jpg"
           alt=""
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }}
         />
