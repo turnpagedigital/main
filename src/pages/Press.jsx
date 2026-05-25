@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
+import { hashHref } from "../lib/router.js";
 import BottomCTA from "../components/BottomCTA.jsx";
 import pressData from "../data/press.json";
 
