@@ -642,11 +642,10 @@ function UnifiedCard({ item }) {
   const inner = (
     <div style={{
       background: "#fff",
-      border: `1px solid ${lifted ? "rgba(10,10,10,0.35)" : LINE}`,
+      border: `1px solid ${LINE}`,
       padding: "clamp(1.4rem, 2.5vw, 1.8rem)",
       height: "100%", boxSizing: "border-box",
       display: "flex", flexDirection: "column",
-      transition: "border-color 0.18s",
     }}>
       {/* ── Type indicator ─────────────────────────────────────────── */}
       <TypeIndicator item={item} />
