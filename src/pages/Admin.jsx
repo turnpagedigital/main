@@ -657,6 +657,50 @@ function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt
   const isSaving = phase === "saving";
   const paragraphs = bio.paragraphs || [];
 
+  // Photo upload state (independent of bio text)
+  const [photoFile,     setPhotoFile]     = useState(null);   // File object selected by user
+  const [photoPreview,  setPhotoPreview]  = useState(null);   // data URL for new-photo preview
+  const [photoPhase,    setPhotoPhase]    = useState("idle"); // idle | uploading | done | error
+  const [photoError,    setPhotoError]    = useState("");
+  const [photoCacheBust, setPhotoCacheBust] = useState("");   // appended to current-photo URL after upload
+
+  function handlePhotoChange(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (!file.type.startsWith("image/")) { setPhotoError("Please select an image file."); return; }
+    if (file.size > 4.5 * 1024 * 1024) { setPhotoError("Image must be under 4.5 MB."); return; }
+    setPhotoFile(file);
+    setPhotoError("");
+    setPhotoPhase("idle");
+    const reader = new FileReader();
+    reader.onload = ev => setPhotoPreview(ev.target.result);
+    reader.readAsDataURL(file);
+  }
+
+  async function handlePhotoUpload() {
+    if (!photoFile || !photoPreview) return;
+    setPhotoPhase("uploading");
+    setPhotoError("");
+    try {
+      const base64 = photoPreview.split(",")[1]; // strip data:<mime>;base64, prefix
+      const r = await fetch("/api/admin/photo", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ content: base64, mime_type: photoFile.type }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Upload failed");
+      setPhotoPhase("done");
+      setPhotoFile(null);
+      setPhotoPreview(null);
+      setPhotoCacheBust(`?v=${Date.now()}`);
+    } catch (e) {
+      setPhotoError(e.message);
+      setPhotoPhase("error");
+    }
+  }
+
   function updateParagraph(i, val) {
     const next = [...paragraphs];
     next[i] = val;
@@ -708,6 +752,68 @@ function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt
           {error}
         </div>
       )}
+
+      {/* Photo */}
+      <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1rem" }}>
+        <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.8rem" }}>
+          Profile Photo
+        </div>
+        <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", alignItems: "flex-start" }}>
+
+          {/* Current photo */}
+          <div>
+            <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.4rem", fontWeight: 600 }}>Current</p>
+            <img
+              src={`/andrew.png${photoCacheBust}`}
+              alt="Andrew Glantz"
+              style={{ width: 90, height: 112, objectFit: "cover", border: `1px solid ${LINE}`, filter: "grayscale(100%)", display: "block" }}
+            />
+          </div>
+
+          {/* Upload controls */}
+          <div style={{ flex: 1, minWidth: 240 }}>
+            <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.5rem" }}>
+              Replace with a new photo — JPEG or PNG, max 4.5 MB:
+            </p>
+            <input
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              onChange={handlePhotoChange}
+              style={{ fontSize: "0.85rem", display: "block", marginBottom: "0.65rem", fontFamily: FONT }}
+            />
+            {photoPreview && (
+              <div style={{ marginBottom: "0.65rem" }}>
+                <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.3rem", fontWeight: 600 }}>Preview</p>
+                <img
+                  src={photoPreview}
+                  alt="preview"
+                  style={{ width: 90, height: 112, objectFit: "cover", border: `1px solid ${LINE}`, display: "block" }}
+                />
+              </div>
+            )}
+            {photoError && (
+              <p style={{ color: "#c44", fontSize: "0.82rem", marginBottom: "0.5rem" }}>{photoError}</p>
+            )}
+            {photoPhase === "done" && (
+              <p style={{ color: "#2a7a2a", fontSize: "0.82rem", marginBottom: "0.5rem" }}>
+                ✓ Uploaded — live on the site in ~1–2 min.
+              </p>
+            )}
+            <button
+              type="button"
+              onClick={handlePhotoUpload}
+              disabled={!photoFile || photoPhase === "uploading"}
+              style={{
+                ...btnPrimaryStyle,
+                opacity: (!photoFile || photoPhase === "uploading") ? 0.5 : 1,
+                cursor: (!photoFile || photoPhase === "uploading") ? "default" : "pointer",
+              }}
+            >
+              {photoPhase === "uploading" ? "Uploading…" : "Upload Photo"}
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* Tagline */}
       <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1rem" }}>

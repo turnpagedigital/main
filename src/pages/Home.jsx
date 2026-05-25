@@ -479,7 +479,7 @@ function LeadershipSection() {
               background: "#0A0A0A", border: `1px solid ${LINE_STRONG}`,
             }}>
               <img
-                src="/andrew.png"
+                src={bioData.photo_url || "/andrew.png"}
                 alt="Andrew Glantz, Founder & Managing Partner"
                 style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
               />
