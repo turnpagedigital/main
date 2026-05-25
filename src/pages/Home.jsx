@@ -4,6 +4,7 @@ import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 import FAQ from "../components/FAQ.jsx";
 import CTABanner from "../components/CTABanner.jsx";
+import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
 
@@ -107,58 +108,14 @@ export default function Home() {
         cta="Read the briefings"
         href={hashHref("briefings")}
       />
-      <section style={{
-        background: "#000",
-        padding: "clamp(2rem,4vw,3.5rem) clamp(1.5rem,5vw,4rem) clamp(3rem,5vw,5rem)",
-      }}>
-        <div className="container">
-          <div style={{
-            background: NEON, borderRadius: 24,
-            padding: "clamp(2.5rem,5vw,4rem)",
-            textAlign: "center",
-          }}>
-            <p style={{
-              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
-              letterSpacing: "0.22em", textTransform: "uppercase",
-              color: "rgba(0,0,0,0.55)", marginBottom: "1.1rem",
-            }}>
-              Get a Quote
-            </p>
-            <h2 style={{
-              fontFamily: FONT, fontWeight: 800,
-              fontSize: "clamp(1.8rem,3.6vw,2.8rem)",
-              lineHeight: 1.15, letterSpacing: "-0.02em",
-              color: "#000", marginBottom: "1rem",
-              maxWidth: 760, margin: "0 auto 1rem",
-            }}>
-              Why wait?{" "}
-              <span style={{ fontStyle: "italic" }}>Talk to us.</span>
-            </h2>
-            <p style={{
-              fontFamily: FONT, fontSize: "1.05rem",
-              color: "rgba(0,0,0,0.6)", lineHeight: 1.6,
-              maxWidth: 600, margin: "0 auto 2rem",
-            }}>
-              Contact us for a quote or to learn more. 48-hour response. Confidentiality default.
-            </p>
-            <a
-              href={hashHref("contact")}
-              style={{
-                display: "inline-block",
-                fontFamily: FONT, fontSize: "0.95rem", fontWeight: 700,
-                color: NEON, background: "#000",
-                padding: "0.95rem 2rem",
-                letterSpacing: "0.02em",
-                transition: "background 0.2s",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#1a1a1a"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "#000"; }}
-            >
-              Get in Touch
-            </a>
-          </div>
-        </div>
-      </section>
+      <BottomCTA
+        eyebrow="Get a Quote"
+        title="Why wait?"
+        accent="Talk to us."
+        kicker="Contact us for a quote or to learn more. 48-hour response. Confidentiality default."
+        primary={{ label: "Get in Touch", href: hashHref("contact") }}
+        secondary={null}
+      />
     </>
   );
 }
