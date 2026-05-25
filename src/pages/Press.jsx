@@ -417,13 +417,23 @@ function ByAndrewCard({ item }) {
       height: "100%", boxSizing: "border-box",
     }}>
       <OutletLogo name={item.venue} style={{ marginBottom: "1rem", filter: "grayscale(1)", opacity: 0.6 }} />
-      <p style={{
-        fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-        letterSpacing: "0.18em", textTransform: "uppercase",
-        color: INK_60, marginBottom: "0.7rem",
-      }}>
-        {item.venue}{item.date ? ` · ${item.date}` : ""}
-      </p>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.7rem", flexWrap: "wrap", gap: "0.4rem" }}>
+        <p style={{
+          fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+          letterSpacing: "0.18em", textTransform: "uppercase",
+          color: INK_60, margin: 0,
+        }}>
+          {item.venue}{item.date ? ` · ${item.date}` : ""}
+        </p>
+        <span style={{
+          fontFamily: FONT, fontSize: "0.68rem", fontWeight: 800,
+          letterSpacing: "0.08em", textTransform: "uppercase",
+          background: NEON, color: "#000",
+          padding: "0.2em 0.55em", flexShrink: 0,
+        }}>
+          Andrew Glantz
+        </span>
+      </div>
       <h3 style={{
         fontFamily: FONT, fontWeight: 800,
         fontSize: "clamp(1.1rem, 1.6vw, 1.35rem)",
