@@ -71,10 +71,9 @@ function validateList(list) {
     if (!PRESS_AUTHOR_VALUES.includes(d.author)) {
       return `items[${i}].author must be "Andrew", "Other", or ""`;
     }
-    if (!Array.isArray(d.pages)) {
-      return `items[${i}].pages must be an array`;
-    }
-    for (const p of d.pages) {
+    // Accept missing pages (old schema had page string) — treat as empty array
+    const itemPages = Array.isArray(d.pages) ? d.pages : [];
+    for (const p of itemPages) {
       if (!PRESS_PAGE_VALUES.includes(p)) {
         return `items[${i}].pages contains invalid value "${p}"; must be one of: ${PRESS_PAGE_VALUES.join(", ")}`;
       }
