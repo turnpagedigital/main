@@ -40,7 +40,7 @@ export default function Hero({
           style={{
             position: "absolute", inset: 0, zIndex: 1,
             width: "100%", height: "100%", objectFit: "cover",
-            opacity: 0.8, filter: "saturate(1.1) contrast(1.05) brightness(0.55) sepia(0.45)",
+            opacity: 0.9, filter: "saturate(1.0) contrast(1.05) brightness(0.72) sepia(0.18)",
             pointerEvents: "none",
           }}
         >
@@ -51,7 +51,7 @@ export default function Hero({
       {video && (
         <div style={{
           position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none",
-          background: "rgba(210, 120, 30, 0.13)",
+          background: "rgba(210, 120, 30, 0.06)",
         }} />
       )}
       {/* Grain */}

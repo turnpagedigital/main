@@ -184,7 +184,7 @@ export default function AICopyright() {
                   lineHeight: 1.02, letterSpacing: "-0.035em",
                   color: "#fff",
                 }}>
-                  A track record across AI copyright matters.
+                  A track record across other class actions.
                 </h2>
               </div>
               <p style={{

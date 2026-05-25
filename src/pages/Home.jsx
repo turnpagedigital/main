@@ -525,6 +525,12 @@ function LeadershipSection() {
             }}>
               Prior to founding Turnpage, Andrew built one of the leading marketplaces for trading bankruptcy claims, establishing deep relationships across the institutional buyer network that TPDM draws on today. Across his career, he has traded or advised on billions of dollars in transactions — giving clients access to pricing, counterparties, and execution that the market simply cannot replicate.
             </p>
+            <p style={{
+              fontFamily: FONT, fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
+              color: INK_60, lineHeight: 1.7,
+            }}>
+              Andrew's work has been featured in the <em>Wall Street Journal</em>, <em>Bloomberg</em>, <em>The New York Times</em>, <em>CoinDesk</em>, NPR's <em>Planet Money</em>, the <em>BBC</em>, <em>Grant's Interest Rate Observer</em>, and numerous other outlets.
+            </p>
           </div>
         </div>
 
