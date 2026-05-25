@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import Hero from "../components/Hero.jsx";
@@ -7,7 +7,50 @@ import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
-import { TOP_CASES, FEATURED_NEW, STATUS_COLORS } from "../data/cases.js";
+
+/* ── Damages exposure data ──────────────────────────────────────────────────
+   Only cases with (a) a confirmed settlement or (b) an arithmetic statutory
+   ceiling (registered-works count × 17 U.S.C. §504(c)(2) maximum of $150,000)
+   are charted. Cases where damages remain formally unquantified are footnoted. */
+const DAMAGES_DATA = [
+  {
+    name: "Bartz v. Anthropic PBC",
+    amountB: 1.5,
+    label: "$1.5B",
+    type: "settled",
+    badge: "Settled",
+    basis: "482,460 registered works · ~$3,000/work class distribution",
+    source: "N.D. Cal. No. 3:23-cv-03223 · Settlement Order (Aug. 2025)",
+  },
+  {
+    name: "Getty Images v. Stability AI",
+    amountB: 1.7,
+    label: "$1.7B",
+    type: "statutory",
+    badge: "Statutory ceiling",
+    basis: "11,383 registered works × $150,000 · 17 U.S.C. §504(c)(2)",
+    source: "D. Del. No. 1:23-cv-00135 · Am. Compl. ¶ 151",
+  },
+  {
+    name: "Concord / UMG v. Anthropic (II)",
+    amountB: 3.1,
+    label: "$3.1B",
+    type: "statutory",
+    badge: "Statutory ceiling",
+    basis: "20,517 musical compositions × $150,000 · 17 U.S.C. §504(c)(2)",
+    source: "N.D. Cal. · Compl. ¶ 12 (filed Jan. 2026)",
+  },
+  {
+    name: "Doe 1 v. GitHub / Microsoft / OpenAI",
+    amountB: 9.0,
+    label: "$9B+",
+    type: "dmca",
+    badge: "DMCA §1202 est.",
+    basis: "Est. from >1.2B code lines affected · DMCA §1202(b) per-violation ceiling",
+    source: "N.D. Cal. No. 4:22-cv-06823 · Compl. ¶ 92",
+  },
+];
+const MAX_B = Math.max(...DAMAGES_DATA.map(c => c.amountB));
 
 const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("ai-copyright"));
 
@@ -47,7 +90,7 @@ export default function AICopyright() {
       >
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
           <a href={hashHref("contact") + "?source=ai-copyright"} className="btn-neon">Talk to a Partner</a>
-          <a href="#cases-section" className="btn-ghost">See active cases</a>
+          <a href="#cases-section" className="btn-ghost">See exposure data</a>
         </div>
       </Hero>
 
@@ -110,50 +153,8 @@ export default function AICopyright() {
         </div>
       </section>
 
-      {/* TOP 12 CASES (dark) */}
-      <section id="cases-section" className="surface-dark section-pad" style={{ position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, opacity: 0.18 }}>
-          <img src="/bg-paper.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.5) contrast(1.1)" }} />
-        </div>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85))" }} />
-        <div className="container" style={{ position: "relative", zIndex: 5 }}>
-          <SectionHeader
-            eyebrow="Active Docket"
-            title="Top 12 cases"
-            accent="we track."
-            theme="dark"
-          />
-
-          {/* New 2026 callout */}
-          <div style={{
-            marginBottom: "1.6rem", padding: "1.4rem 1.6rem",
-            background: "rgba(212,255,0,0.06)", border: "1px solid rgba(212,255,0,0.3)",
-            borderRadius: 12,
-          }}>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: "0.9rem", flexWrap: "wrap" }}>
-              <span style={{
-                fontFamily: FONT, fontSize: "0.66rem", fontWeight: 800, letterSpacing: "0.2em",
-                textTransform: "uppercase", color: "#000", background: NEON,
-                padding: "0.32rem 0.7rem", borderRadius: 4, flexShrink: 0,
-              }}>
-                New for 2026
-              </span>
-              <div style={{ flex: 1, minWidth: 240 }}>
-                <p style={{ fontFamily: FONT, fontSize: "1rem", fontWeight: 700, color: "#fff", marginBottom: "0.3rem" }}>
-                  {FEATURED_NEW.name} — <span style={{ color: NEON }}>{FEATURED_NEW.damages}</span>
-                </p>
-                <p style={{ fontFamily: FONT, fontSize: "0.9rem", color: "rgba(255,255,255,0.7)", lineHeight: 1.55 }}>
-                  {FEATURED_NEW.summary} {FEATURED_NEW.citation}.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid-2col" style={{ gap: "1rem" }}>
-            {TOP_CASES.map(c => <CaseCard key={c.rank} c={c} />)}
-          </div>
-        </div>
-      </section>
+      {/* DAMAGES EXPOSURE */}
+      <DamagesSection />
 
       {/* RELEVANT EXPERIENCE */}
       {DEALS.length > 0 && (
@@ -322,62 +323,193 @@ function ServiceCard({ title, body }) {
   );
 }
 
-function CaseCard({ c }) {
-  const colors = STATUS_COLORS[c.statusColor] || STATUS_COLORS.active;
-  return (
-    <div style={{
-      padding: "1.4rem 1.4rem", background: "rgba(255,255,255,0.03)",
-      border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12,
-      display: "flex", flexDirection: "column", gap: "0.7rem",
-      transition: "border-color 0.25s, background 0.25s",
-    }}
-      onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(212,255,0,0.3)"; e.currentTarget.style.background = "rgba(212,255,0,0.03)"; }}
-      onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.background = "rgba(255,255,255,0.03)"; }}
-    >
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem" }}>
-        <div style={{ flex: 1, minWidth: 0 }}>
-          <p style={{
-            fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700, color: NEON,
-            letterSpacing: "0.18em", marginBottom: "0.35rem",
-          }}>
-            #{c.rank} · {c.citation}
-          </p>
-          <h3 style={{
-            fontFamily: FONT, fontSize: "1.1rem", fontWeight: 700, color: "#fff",
-            lineHeight: 1.25, letterSpacing: "-0.01em",
-          }}>
-            {c.name}
-          </h3>
-        </div>
-        <span style={{
-          flexShrink: 0, fontFamily: FONT, fontSize: "0.68rem", fontWeight: 700,
-          letterSpacing: "0.08em", textTransform: "uppercase",
-          background: colors.bg, border: `1px solid ${colors.border}`, color: colors.text,
-          padding: "0.3rem 0.6rem", borderRadius: 4, whiteSpace: "nowrap",
-        }}>
-          {c.status}
-        </span>
-      </div>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem 1.2rem" }}>
-        <Meta label="Defendants" value={c.defendants} />
-        <Meta label="Court" value={c.court} />
-        <Meta label="Damages" value={c.damages} />
-      </div>
-      <p style={{
-        fontFamily: FONT, fontSize: "0.92rem", color: "rgba(255,255,255,0.72)",
-        lineHeight: 1.6,
-      }}>
-        {c.summary}
-      </p>
-    </div>
-  );
-}
+function DamagesSection() {
+  const [animated, setAnimated] = useState(false);
+  const ref = useRef(null);
 
-function Meta({ label, value }) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setAnimated(true); },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <p style={{ fontFamily: FONT, fontSize: "0.78rem", color: "rgba(255,255,255,0.55)" }}>
-      <span style={{ color: "rgba(255,255,255,0.4)", marginRight: 4 }}>{label}:</span>
-      <span style={{ color: "rgba(255,255,255,0.8)" }}>{value}</span>
-    </p>
+    <section id="cases-section" style={{
+      background: "#0A0B0E", color: "#fff",
+      padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
+      position: "relative", overflow: "hidden",
+    }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.18 }}>
+        <img src="/bg-paper.jpg" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.5) contrast(1.1)" }} />
+      </div>
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85))" }} />
+
+      <div className="container" style={{ position: "relative", zIndex: 5, maxWidth: 1080 }}>
+        {/* Header */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "minmax(0,1fr) minmax(0,1.4fr)",
+          gap: "clamp(2rem,4vw,4rem)",
+          alignItems: "end",
+          marginBottom: "clamp(3rem,6vw,5rem)",
+        }} className="section-split">
+          <div>
+            <p style={{
+              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
+              letterSpacing: "0.22em", textTransform: "uppercase",
+              color: NEON, marginBottom: "1rem",
+            }}>
+              Active Docket
+            </p>
+            <h2 style={{
+              fontFamily: FONT, fontWeight: 800,
+              fontSize: "clamp(2rem,4.5vw,4rem)",
+              lineHeight: 1.02, letterSpacing: "-0.035em",
+              color: "#fff", margin: 0,
+            }}>
+              Quantified exposure<br />
+              <span style={{ color: NEON, fontStyle: "italic" }}>across the docket.</span>
+            </h2>
+          </div>
+          <p style={{
+            fontFamily: FONT, fontSize: "clamp(0.95rem,1.3vw,1.1rem)",
+            color: "rgba(255,255,255,0.6)", lineHeight: 1.65, margin: 0,
+          }}>
+            Cases with a confirmed settlement or an arithmetic statutory ceiling
+            (registered-works count&nbsp;×&nbsp;17&nbsp;U.S.C.&nbsp;§504(c)(2) maximum of $150,000 per work).
+            Excludes cases where damages remain formally unquantified.
+          </p>
+        </div>
+
+        {/* Bars */}
+        <div ref={ref}>
+          {DAMAGES_DATA.map((c, i) => {
+            const widthPct = (c.amountB / MAX_B) * 100;
+            const isSettled = c.type === "settled";
+            const barFill = isSettled ? NEON : "rgba(255,255,255,0.55)";
+            const amtColor = isSettled ? NEON : "#fff";
+            const badgeBg = isSettled ? "rgba(212,255,0,0.12)" : "rgba(255,255,255,0.07)";
+            const badgeBorder = isSettled ? "rgba(212,255,0,0.4)" : "rgba(255,255,255,0.18)";
+            const badgeText = isSettled ? NEON : "rgba(255,255,255,0.65)";
+            const delay = `${i * 0.28}s`;
+            return (
+              <div key={c.name} style={{
+                padding: "clamp(1.4rem,2.5vw,1.8rem) 0",
+                borderTop: "1px solid rgba(255,255,255,0.08)",
+              }}>
+                {/* Name + badge + amount */}
+                <div style={{
+                  display: "flex", alignItems: "center",
+                  justifyContent: "space-between", gap: "1rem",
+                  marginBottom: "0.75rem", flexWrap: "wrap",
+                }}>
+                  <span style={{
+                    fontFamily: FONT, fontWeight: 700,
+                    fontSize: "clamp(0.95rem,1.4vw,1.05rem)", color: "#fff",
+                  }}>
+                    {c.name}
+                  </span>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexShrink: 0 }}>
+                    <span style={{
+                      fontFamily: FONT, fontSize: "0.66rem", fontWeight: 700,
+                      letterSpacing: "0.09em", textTransform: "uppercase",
+                      background: badgeBg, border: `1px solid ${badgeBorder}`,
+                      color: badgeText, padding: "0.28rem 0.6rem",
+                      borderRadius: 4, whiteSpace: "nowrap",
+                    }}>
+                      {c.badge}
+                    </span>
+                    <span style={{
+                      fontFamily: FONT, fontWeight: 900,
+                      fontSize: "clamp(1.1rem,1.8vw,1.4rem)",
+                      color: amtColor, letterSpacing: "-0.03em",
+                    }}>
+                      {c.label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bar track + fill */}
+                <div style={{
+                  height: 6, background: "rgba(255,255,255,0.07)",
+                  borderRadius: 2, overflow: "hidden", marginBottom: "0.55rem",
+                }}>
+                  <div style={{
+                    height: "100%", borderRadius: 2,
+                    background: barFill,
+                    width: animated ? `${widthPct}%` : "0%",
+                    transition: `width 1.4s cubic-bezier(0.4,0,0.2,1) ${delay}`,
+                  }} />
+                </div>
+
+                {/* Basis + source */}
+                <div style={{
+                  display: "flex", justifyContent: "space-between",
+                  gap: "1rem", flexWrap: "wrap",
+                }}>
+                  <span style={{
+                    fontFamily: FONT, fontSize: "0.75rem",
+                    color: "rgba(255,255,255,0.42)", lineHeight: 1.5,
+                  }}>
+                    {c.basis}
+                  </span>
+                  <span style={{
+                    fontFamily: FONT, fontSize: "0.7rem",
+                    color: "rgba(255,255,255,0.26)", fontStyle: "italic",
+                    whiteSpace: "nowrap",
+                  }}>
+                    {c.source}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+
+          {/* Total row */}
+          <div style={{
+            borderTop: "2px solid rgba(255,255,255,0.18)",
+            paddingTop: "clamp(1.4rem,2.5vw,2rem)",
+            marginTop: "0.25rem",
+            display: "flex", justifyContent: "space-between",
+            alignItems: "flex-end", gap: "2rem", flexWrap: "wrap",
+          }}>
+            <div>
+              <p style={{
+                fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
+                letterSpacing: "0.18em", textTransform: "uppercase",
+                color: "rgba(255,255,255,0.35)", marginBottom: "0.35rem",
+              }}>
+                Charted total · 4 cases
+              </p>
+              <p style={{
+                fontFamily: FONT, fontWeight: 900,
+                fontSize: "clamp(2.2rem,4.5vw,3.6rem)",
+                letterSpacing: "-0.045em", color: "#fff", lineHeight: 1,
+                margin: 0,
+              }}>
+                $15.3B<span style={{ color: NEON }}>+</span>
+              </p>
+            </div>
+            <p style={{
+              fontFamily: FONT, fontSize: "0.75rem",
+              color: "rgba(255,255,255,0.35)", lineHeight: 1.6,
+              maxWidth: 500, textAlign: "right", margin: 0,
+            }}>
+              Excludes <em>In re OpenAI MDL</em> (MDL No. 3143, S.D.N.Y. — exposure described as
+              "trillions theoretical"), <em>UMG v. Suno</em> (D. Mass.),{" "}
+              <em>Andersen v. Stability AI</em> (N.D. Cal.), and{" "}
+              <em>Disney v. Midjourney</em> (C.D. Cal.), among others.
+              Statutory ceilings reflect 17&nbsp;U.S.C.&nbsp;§504(c)(2) maximum; actual awards
+              may differ. Not legal advice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
