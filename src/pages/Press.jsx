@@ -1,6 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
-import { hashHref } from "../lib/router.js";
 import BottomCTA from "../components/BottomCTA.jsx";
 import pressData from "../data/press.json";
 
@@ -130,14 +129,35 @@ function sortByDate(items, dir) {
   });
 }
 
+/* ── Read ?type= from the current hash URL ───────────────────────────────── */
+function getTypeFromHash() {
+  if (typeof window === "undefined") return "all";
+  const qi = window.location.hash.indexOf("?");
+  if (qi === -1) return "all";
+  const params = new URLSearchParams(window.location.hash.slice(qi + 1));
+  const t = params.get("type");
+  return ["press", "article", "social"].includes(t) ? t : "all";
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    PRESS PAGE
 ═══════════════════════════════════════════════════════════════════════════ */
 export default function Press() {
-  const [filterType,   setFilterType]   = useState("all");
+  const [filterType,   setFilterType]   = useState(getTypeFromHash);
   const [filterTopic,  setFilterTopic]  = useState("all");
   const [filterOutlet, setFilterOutlet] = useState("all");
   const [sortDir,      setSortDir]      = useState("desc");
+
+  /* Keep filterType in sync when user clicks a nav dropdown link */
+  useEffect(() => {
+    function onHashChange() {
+      setFilterType(getTypeFromHash());
+      setFilterTopic("all");
+      setFilterOutlet("all");
+    }
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
 
   /* Single filtered + sorted list across all item types */
   const visibleItems = useMemo(() => {
@@ -175,92 +195,28 @@ export default function Press() {
         borderTop: `1px solid ${LINE}`,
       }}>
         <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0,2fr) minmax(0,1fr)",
-            gap: "clamp(2rem,5vw,5rem)",
-            alignItems: "start",
-          }} className="press-split">
-
-            {/* Left: eyebrow + heading + description */}
-            <div>
-              <p style={{
-                fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-                letterSpacing: "0.22em", textTransform: "uppercase",
-                color: INK_60, marginBottom: "1.2rem",
-              }}>
-                Overview
-              </p>
-              <h2 style={{
-                fontFamily: FONT, fontWeight: 800,
-                fontSize: "clamp(2rem,4.5vw,4rem)",
-                lineHeight: 1.02, letterSpacing: "-0.04em",
-                color: INK, margin: "0 0 1.4rem",
-              }}>
-                Press &<br />
-                <span className="accent-light">Publications.</span>
-              </h2>
-              <p style={{
-                fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.15rem)",
-                color: INK_60, lineHeight: 1.6, maxWidth: 560, margin: 0,
-              }}>
-                Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.
-              </p>
-            </div>
-
-            {/* Right: Quick Links wired to filter state */}
-            <div>
-              <p style={{
-                fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-                letterSpacing: "0.22em", textTransform: "uppercase",
-                color: INK_60, marginBottom: "1.1rem",
-              }}>
-                Quick Links
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.1rem" }}>
-                {[
-                  { key: "press",   label: "Press Features" },
-                  { key: "article", label: "By Andrew Glantz" },
-                  { key: "social",  label: "Social Posts" },
-                ].map(({ key, label }) => {
-                  const active = filterType === key;
-                  return (
-                    <button
-                      key={key}
-                      onClick={() => setFilterType(active ? "all" : key)}
-                      style={{
-                        display: "flex", alignItems: "center", justifyContent: "space-between",
-                        gap: "0.5rem",
-                        fontFamily: FONT, fontSize: "clamp(1rem,1.3vw,1.1rem)",
-                        fontWeight: 700, letterSpacing: "-0.01em",
-                        color: active ? INK : INK,
-                        background: "none", border: "none", cursor: "pointer",
-                        padding: "0.5rem 0",
-                        borderBottom: `1px solid ${active ? INK : LINE}`,
-                        textAlign: "left",
-                        transition: "border-color 0.15s",
-                      }}
-                    >
-                      <span style={{
-                        borderBottom: active ? `2px solid ${NEON}` : "2px solid transparent",
-                        paddingBottom: "1px",
-                        transition: "border-color 0.15s",
-                      }}>
-                        {label}
-                      </span>
-                      <span style={{
-                        fontSize: "1rem",
-                        color: active ? NEON : INK_60,
-                        transition: "color 0.15s",
-                      }}>
-                        →
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
+          <p style={{
+            fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
+            letterSpacing: "0.22em", textTransform: "uppercase",
+            color: INK_60, marginBottom: "1.2rem",
+          }}>
+            Overview
+          </p>
+          <h2 style={{
+            fontFamily: FONT, fontWeight: 800,
+            fontSize: "clamp(2rem,4.5vw,4rem)",
+            lineHeight: 1.02, letterSpacing: "-0.04em",
+            color: INK, margin: "0 0 1.4rem",
+          }}>
+            Press &<br />
+            <span className="accent-light">Publications.</span>
+          </h2>
+          <p style={{
+            fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.15rem)",
+            color: INK_60, lineHeight: 1.6, maxWidth: 560, margin: 0,
+          }}>
+            Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.
+          </p>
         </div>
       </section>
 
@@ -326,7 +282,6 @@ export default function Press() {
 
         /* Responsive grid */
         @media (max-width: 880px) {
-          .press-split { grid-template-columns: 1fr !important; }
           .press-grid  { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 560px) {

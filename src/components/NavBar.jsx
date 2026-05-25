@@ -59,9 +59,9 @@ const PREVIEWS = {
     title: "Press & Publications",
     body: "Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.",
     links: [
-      { label: "Media coverage", href: hashHref("press") },
-      { label: "By Andrew",      href: hashHref("press") },
-      { label: "Briefings",      href: hashHref("briefings") },
+      { label: "Press Features",     href: hashHref("press") + "?type=press" },
+      { label: "By Andrew Glantz",   href: hashHref("press") + "?type=article" },
+      { label: "Social Posts",       href: hashHref("press") + "?type=social" },
     ],
     cta: { label: "View all", href: hashHref("press") },
   },
