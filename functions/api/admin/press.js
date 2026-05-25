@@ -1,8 +1,7 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 
 const PRESS_PATH = "src/data/press.json";
-const PRESS_TYPE_VALUES   = ["publication", "podcast", "article", "social post", "blog post"];
-const PRESS_AUTHOR_VALUES = ["Andrew", "Other", ""];
+// Type and author are freeform strings — no enum validation, just string check.
 const PRESS_PAGE_VALUES   = ["copyright", "crypto", "litigation", "tariffs", "bankruptcy"];
 const PRESS_STRING_FIELDS = ["type", "author", "date", "url", "logo_url", "excerpt", "publication_title", "piece_title"];
 
@@ -64,12 +63,6 @@ function validateList(list) {
     if (!d || typeof d !== "object") return `items[${i}] is not an object`;
     for (const f of PRESS_STRING_FIELDS) {
       if (typeof d[f] !== "string") return `items[${i}].${f} must be a string`;
-    }
-    if (!PRESS_TYPE_VALUES.includes(d.type)) {
-      return `items[${i}].type must be one of: ${PRESS_TYPE_VALUES.join(", ")}`;
-    }
-    if (!PRESS_AUTHOR_VALUES.includes(d.author)) {
-      return `items[${i}].author must be "Andrew", "Other", or ""`;
     }
     // Accept missing pages (old schema had page string) — treat as empty array
     const itemPages = Array.isArray(d.pages) ? d.pages : [];

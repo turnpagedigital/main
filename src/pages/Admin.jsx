@@ -52,9 +52,9 @@ function sanitizeBio(d) {
   };
 }
 
-const PRESS_TYPE_VALUES = ["publication", "podcast", "article", "social post", "blog post"];
-
-const PRESS_AUTHOR_VALUES = ["Other", "Andrew"];
+// Default suggestions shown in the datalist dropdowns — user can type anything else
+const PRESS_TYPE_SUGGESTIONS   = ["publication", "podcast", "article", "social post", "blog post"];
+const PRESS_AUTHOR_SUGGESTIONS = ["Andrew", "Other"];
 
 const PRESS_PAGE_VALUES = ["copyright", "crypto", "litigation", "tariffs", "bankruptcy"];
 const PRESS_PAGE_LABELS = {
@@ -85,8 +85,8 @@ function blankPressItem() {
 
 function sanitizePressItem(d) {
   return {
-    type:              PRESS_TYPE_VALUES.includes(d.type)     ? d.type   : "publication",
-    author:            PRESS_AUTHOR_VALUES.includes(d.author) ? d.author : "Other",
+    type:              typeof d.type   === "string" ? d.type   : "publication",
+    author:            typeof d.author === "string" ? d.author : "Other",
     pages:             Array.isArray(d.pages) ? d.pages.filter(p => PRESS_PAGE_VALUES.includes(p)) : [],
     date:              typeof d.date              === "string" ? d.date              : "",
     url:               typeof d.url               === "string" ? d.url               : "",
@@ -803,6 +803,10 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
 
   const isFiltered = !!(filterType || filterAuthor || filterPage);
 
+  // Derive unique type/author values from current items for the filter dropdowns
+  const liveTypes   = [...new Set(items.map(it => it.type).filter(Boolean))].sort();
+  const liveAuthors = [...new Set(items.map(it => it.author).filter(Boolean))].sort();
+
   const displayItems = isFiltered ? items.filter(item => {
     if (filterType   && item.type   !== filterType)   return false;
     if (filterAuthor && item.author !== filterAuthor) return false;
@@ -874,11 +878,11 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
         </span>
         <select value={filterType} onChange={e => setFilterType(e.target.value)} style={filterSelectStyle}>
           <option value="">All types</option>
-          {PRESS_TYPE_VALUES.map(t => <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>)}
+          {liveTypes.map(t => <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>)}
         </select>
         <select value={filterAuthor} onChange={e => setFilterAuthor(e.target.value)} style={filterSelectStyle}>
           <option value="">All authors</option>
-          {PRESS_AUTHOR_VALUES.map(a => <option key={a} value={a}>{a}</option>)}
+          {liveAuthors.map(a => <option key={a} value={a}>{a}</option>)}
         </select>
         <select value={filterPage} onChange={e => setFilterPage(e.target.value)} style={filterSelectStyle}>
           <option value="">All sub-pages</option>
@@ -943,29 +947,28 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.7rem 1rem" }} className="press-item-grid">
               {/* Type */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
-                Type
-                <select
+                Type <span style={{ fontWeight: 400 }}>(type anything or pick a suggestion)</span>
+                <input
+                  type="text"
+                  list="press-type-opts"
                   value={item.type}
                   onChange={e => updateItem(i, "type", e.target.value)}
-                  style={{ ...inputStyle, cursor: "pointer" }}
-                >
-                  {PRESS_TYPE_VALUES.map(t => (
-                    <option key={t} value={t} style={{ textTransform: "capitalize" }}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>
-                  ))}
-                </select>
+                  placeholder="publication"
+                  style={inputStyle}
+                />
               </label>
 
               {/* Author */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
-                Author
-                <select
-                  value={item.author || "Other"}
+                Author <span style={{ fontWeight: 400 }}>("Andrew" → Articles &amp; Commentary · anything else → In the press)</span>
+                <input
+                  type="text"
+                  list="press-author-opts"
+                  value={item.author || ""}
                   onChange={e => updateItem(i, "author", e.target.value)}
-                  style={{ ...inputStyle, cursor: "pointer" }}
-                >
-                  <option value="Other">Other — appears "In the press"</option>
-                  <option value="Andrew">Andrew — appears in "Articles &amp; Commentary"</option>
-                </select>
+                  placeholder="Andrew"
+                  style={inputStyle}
+                />
               </label>
 
               {/* Sub-page / brand association — multi-select checkboxes */}
@@ -1099,6 +1102,14 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
           + Add press item
         </button>
       </div>
+
+      {/* Shared datalists for freeform type/author inputs */}
+      <datalist id="press-type-opts">
+        {PRESS_TYPE_SUGGESTIONS.map(t => <option key={t} value={t} />)}
+      </datalist>
+      <datalist id="press-author-opts">
+        {PRESS_AUTHOR_SUGGESTIONS.map(a => <option key={a} value={a} />)}
+      </datalist>
 
       <style>{`
         @media (max-width: 540px) {
