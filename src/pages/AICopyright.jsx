@@ -3,7 +3,6 @@ import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import Hero from "../components/Hero.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
-import StatStrip from "../components/StatStrip.jsx";
 import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
@@ -11,13 +10,6 @@ import dealsData from "../data/deals.json";
 import { TOP_CASES, FEATURED_NEW, STATUS_COLORS } from "../data/cases.js";
 
 const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("ai-copyright"));
-
-const STATS = [
-  { value: "$1.5B",   label: "Bartz settlement" },
-  { value: "70+",     label: "Federal lawsuits" },
-  { value: "$3.1B",   label: "Concord II ceiling" },
-  { value: "91%",     label: "Bartz claim rate" },
-];
 
 const FAQS = [
   {
@@ -57,13 +49,6 @@ export default function AICopyright() {
           <a href="#cases-section" className="btn-ghost">See active cases</a>
         </div>
       </Hero>
-
-      {/* STAT STRIP */}
-      <section className="surface-paper" style={{ padding: "clamp(2rem,4vw,3.5rem) clamp(1.5rem,5vw,4rem)" }}>
-        <div className="container">
-          <StatStrip items={STATS} theme="light" />
-        </div>
-      </section>
 
       {/* WHO WE HELP */}
       <section className="surface-paper-2 section-pad">
