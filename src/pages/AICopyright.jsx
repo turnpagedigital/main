@@ -39,8 +39,8 @@ export default function AICopyright() {
     <>
       <Hero
         eyebrow="Copyright Claims"
-        title="Calling all creators to"
-        accentTitle="claim what's yours."
+        title="Calling all creators."
+        accentTitle="Claim what's yours."
         subtitle="Bartz. The OpenAI MDL. Concord. Getty. We buy claims and advise on strategy."
         size="tall"
         video="/robottypes1.mp4"
