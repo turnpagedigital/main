@@ -50,6 +50,12 @@ function sanitizeBio(d) {
     tagline_accent: typeof d.tagline_accent === "string" ? d.tagline_accent : "singular force",
     tagline_after:  typeof d.tagline_after  === "string" ? d.tagline_after  : "",
     paragraphs:     Array.isArray(d.paragraphs) ? d.paragraphs.filter(p => typeof p === "string") : [],
+    media_logos:    Array.isArray(d.media_logos)
+      ? d.media_logos.filter(l => l && typeof l === "object").map(l => ({
+          name: typeof l.name === "string" ? l.name : "",
+          url:  typeof l.url  === "string" ? l.url  : "",
+        }))
+      : [],
   };
 }
 
@@ -771,6 +777,28 @@ function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt
     onChangeBio("paragraphs", [...paragraphs, ""]);
   }
 
+  // ── Media logo helpers ──────────────────────────────────────────────────
+  const logos = Array.isArray(bio.media_logos) ? bio.media_logos : [];
+
+  function updateLogo(i, field, val) {
+    const next = logos.map((l, idx) => idx === i ? { ...l, [field]: val } : l);
+    onChangeBio("media_logos", next);
+  }
+  function moveLogo(i, dir) {
+    const j = i + dir;
+    if (j < 0 || j >= logos.length) return;
+    const next = [...logos];
+    [next[i], next[j]] = [next[j], next[i]];
+    onChangeBio("media_logos", next);
+  }
+  function deleteLogo(i) {
+    if (!confirm("Remove this logo?")) return;
+    onChangeBio("media_logos", logos.filter((_, idx) => idx !== i));
+  }
+  function addLogo() {
+    onChangeBio("media_logos", [...logos, { name: "", url: "" }]);
+  }
+
   return (
     <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem) 0" }}>
       {/* Section header */}
@@ -939,6 +967,80 @@ function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt
           color: INK, padding: "1rem", fontWeight: 700,
         }}>
           + Add paragraph
+        </button>
+      </div>
+
+      {/* ── "As Seen In" Logos ─────────────────────────────────────────── */}
+      <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "2.5rem" }}>
+        <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.35rem" }}>
+          "As Seen In" Logos
+        </div>
+        <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.9rem" }}>
+          Logos appear as grayscale images in the Team section. Paste any public image URL (PNG, SVG, WebP). Name is used for accessibility only.
+        </p>
+
+        {logos.length > 0 && (
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem", marginBottom: "0.75rem" }}>
+            {logos.map((logo, i) => (
+              <div key={i} style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}>
+                {/* Live preview */}
+                <div style={{
+                  width: 64, height: 32, flexShrink: 0,
+                  background: "#F4F5F7", border: `1px solid ${LINE}`,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  overflow: "hidden",
+                }}>
+                  {logo.url ? (
+                    <img
+                      src={logo.url}
+                      alt={logo.name || "preview"}
+                      style={{ maxWidth: 60, maxHeight: 28, objectFit: "contain", filter: "grayscale(1)", opacity: 0.55 }}
+                      onError={e => { e.currentTarget.style.display = "none"; }}
+                    />
+                  ) : (
+                    <span style={{ fontSize: "0.62rem", color: INK_60 }}>no url</span>
+                  )}
+                </div>
+
+                {/* Name */}
+                <input
+                  type="text"
+                  value={logo.name}
+                  onChange={e => updateLogo(i, "name", e.target.value)}
+                  placeholder="Name (e.g. Bloomberg)"
+                  style={{ ...inputStyle, marginTop: 0, width: 160, flexShrink: 0 }}
+                />
+
+                {/* URL */}
+                <input
+                  type="text"
+                  value={logo.url}
+                  onChange={e => updateLogo(i, "url", e.target.value)}
+                  placeholder="https://example.com/logo.png"
+                  style={{ ...inputStyle, marginTop: 0, flex: 1, minWidth: 200 }}
+                />
+
+                {/* Actions */}
+                <button onClick={() => moveLogo(i, -1)} disabled={i === 0}              style={iconBtnStyle(i === 0)}              title="Move up">↑</button>
+                <button onClick={() => moveLogo(i, 1)}  disabled={i === logos.length - 1} style={iconBtnStyle(i === logos.length - 1)} title="Move down">↓</button>
+                <button onClick={() => deleteLogo(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Remove">×</button>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {logos.length === 0 && (
+          <p style={{ fontSize: "0.82rem", color: INK_60, fontStyle: "italic", marginBottom: "0.75rem" }}>
+            No logos yet — add one below.
+          </p>
+        )}
+
+        <button onClick={addLogo} style={{
+          ...btnStyle,
+          background: "transparent", border: `1px dashed ${LINE}`,
+          color: INK, padding: "0.55rem 1rem", fontWeight: 700,
+        }}>
+          + Add logo
         </button>
       </div>
 

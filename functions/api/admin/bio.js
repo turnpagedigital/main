@@ -53,6 +53,9 @@ export async function onRequestPut({ request, env }) {
     tagline_accent: String(bio.tagline_accent ?? ""),
     tagline_after:  String(bio.tagline_after  ?? ""),
     paragraphs:     (bio.paragraphs || []).map(p => String(p)),
+    media_logos:    Array.isArray(bio.media_logos)
+      ? bio.media_logos.map(l => ({ name: String(l.name ?? ""), url: String(l.url ?? "") }))
+      : [],
   };
   Object.keys(merged).forEach(k => merged[k] === undefined && delete merged[k]);
 
@@ -70,6 +73,15 @@ function validateBio(bio) {
   if (!Array.isArray(bio.paragraphs)) return "paragraphs must be an array";
   for (let i = 0; i < bio.paragraphs.length; i++) {
     if (typeof bio.paragraphs[i] !== "string") return `paragraphs[${i}] must be a string`;
+  }
+  if (bio.media_logos !== undefined) {
+    if (!Array.isArray(bio.media_logos)) return "media_logos must be an array";
+    for (let i = 0; i < bio.media_logos.length; i++) {
+      const l = bio.media_logos[i];
+      if (!l || typeof l !== "object") return `media_logos[${i}] must be an object`;
+      if (typeof l.name !== "string") return `media_logos[${i}].name must be a string`;
+      if (typeof l.url  !== "string") return `media_logos[${i}].url must be a string`;
+    }
   }
   return null;
 }

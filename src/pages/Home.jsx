@@ -520,84 +520,40 @@ function LeadershipSection() {
               </p>
             ))}
 
-            {/* Press logo strip */}
-            <div style={{ marginTop: "2.2rem" }}>
-              <p style={{
-                fontFamily: FONT, fontSize: "0.68rem", fontWeight: 600,
-                letterSpacing: "0.2em", textTransform: "uppercase",
-                color: INK_40, marginBottom: "1.2rem",
-              }}>
-                As seen in
-              </p>
-              <div style={{
-                display: "flex", flexWrap: "wrap",
-                alignItems: "center",
-                gap: "clamp(1.4rem, 3vw, 2.4rem)",
-              }}>
-                {/* Wall Street Journal */}
-                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "1.23rem",
-                  letterSpacing: "0.04em", color: INK, opacity: 0.42,
-                  textTransform: "uppercase", whiteSpace: "nowrap" }}>
-                  The Wall Street Journal
-                </span>
-
-                {/* Bloomberg */}
-                <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "1.5rem",
-                  letterSpacing: "-0.02em", color: INK, opacity: 0.42,
-                  textTransform: "uppercase", whiteSpace: "nowrap" }}>
-                  Bloomberg
-                </span>
-
-                {/* NYT */}
-                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "1.23rem",
-                  letterSpacing: "0.02em", color: INK, opacity: 0.42,
-                  whiteSpace: "nowrap" }}>
-                  The New York Times
-                </span>
-
-                {/* NPR */}
-                <span style={{ fontFamily: FONT, fontWeight: 900, fontSize: "1.32rem",
-                  letterSpacing: "0.06em", color: INK, opacity: 0.42,
-                  textTransform: "uppercase", whiteSpace: "nowrap" }}>
-                  NPR
-                </span>
-
-                {/* BBC — three-box SVG (scaled ×1.5 from 60×22) */}
-                <svg width="90" height="33" viewBox="0 0 90 33" fill="none"
-                  style={{ opacity: 0.42, flexShrink: 0 }}>
-                  <rect x="0"    y="0" width="27" height="33" fill={INK} />
-                  <rect x="31.5" y="0" width="27" height="33" fill={INK} />
-                  <rect x="63"   y="0" width="27" height="33" fill={INK} />
-                  <text x="13.5" y="23" textAnchor="middle" fontFamily={FONT} fontWeight="900"
-                    fontSize="19.5" fill="#F4F5F7">B</text>
-                  <text x="45"   y="23" textAnchor="middle" fontFamily={FONT} fontWeight="900"
-                    fontSize="19.5" fill="#F4F5F7">B</text>
-                  <text x="76.5" y="23" textAnchor="middle" fontFamily={FONT} fontWeight="900"
-                    fontSize="19.5" fill="#F4F5F7">C</text>
-                </svg>
-
-                {/* CoinDesk */}
-                <span style={{ fontFamily: FONT, fontWeight: 700, fontSize: "1.32rem",
-                  letterSpacing: "-0.01em", color: INK, opacity: 0.42,
-                  whiteSpace: "nowrap" }}>
-                  CoinDesk
-                </span>
-
-                {/* Grant's */}
-                <span style={{ fontFamily: "'Georgia', serif", fontStyle: "italic",
-                  fontWeight: 700, fontSize: "1.32rem",
-                  color: INK, opacity: 0.42, whiteSpace: "nowrap" }}>
-                  Grant's
-                </span>
-
-                {/* ABI Journal */}
-                <span style={{ fontFamily: "'Georgia', serif", fontWeight: 700, fontSize: "1.23rem",
-                  letterSpacing: "0.06em", color: INK, opacity: 0.42,
-                  textTransform: "uppercase", whiteSpace: "nowrap" }}>
-                  ABI Journal
-                </span>
+            {/* Press logo strip — data-driven from bio.json media_logos */}
+            {Array.isArray(bioData.media_logos) && bioData.media_logos.some(l => l.url) && (
+              <div style={{ marginTop: "2.2rem" }}>
+                <p style={{
+                  fontFamily: FONT, fontSize: "0.68rem", fontWeight: 600,
+                  letterSpacing: "0.2em", textTransform: "uppercase",
+                  color: INK_40, marginBottom: "1.2rem",
+                }}>
+                  As seen in
+                </p>
+                <div style={{
+                  display: "flex", flexWrap: "wrap",
+                  alignItems: "center",
+                  gap: "clamp(1.4rem, 3vw, 2.4rem)",
+                }}>
+                  {bioData.media_logos.filter(l => l.url).map((logo, i) => (
+                    <img
+                      key={i}
+                      src={logo.url}
+                      alt={logo.name || ""}
+                      style={{
+                        maxHeight: 30, height: "auto",
+                        maxWidth: 160, width: "auto",
+                        objectFit: "contain",
+                        filter: "grayscale(1)",
+                        opacity: 0.42,
+                        display: "block",
+                        flexShrink: 0,
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
 
