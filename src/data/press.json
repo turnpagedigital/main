@@ -2,6 +2,34 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
+      "type": "podcast",
+      "author": "Other",
+      "date": "Apr 15, 2023",
+      "url": "https://www.youtube.com/watch?v=b3aiMyKEaNo",
+      "logo_url": "https://www.citypng.com/public/uploads/preview/hd-official-youtube-yt-logo-png-701751694786680qxacfiwgqw.png",
+      "excerpt": "",
+      "publication_title": "The Business, Humanities, Science and Ethics University, USA (",
+      "piece_title": "Interview for MBA Series, Prof. Olivier Chazoule, MBA, LLM",
+      "pages": [
+        "crypto",
+        "bankruptcy"
+      ]
+    },
+    {
+      "type": "article",
+      "author": "Other",
+      "date": "January 11, 2023",
+      "url": "https://www.coindesk.com/business/2023/01/11/ftx-creditor-claims-going-for-13-cents-on-the-dollar-on-bankruptcy-marketplace-xclaim",
+      "logo_url": "https://1000logos.net/wp-content/uploads/2022/03/CoinDesk-logo.png",
+      "excerpt": "",
+      "publication_title": "CoinDesk",
+      "piece_title": "FTX Creditor Claims Going for 13 Cents on the Dollar on Bankruptcy Marketplace",
+      "pages": [
+        "bankruptcy",
+        "crypto"
+      ]
+    },
+    {
       "type": "social post",
       "author": "Andrew",
       "date": "May 12, 2026",
