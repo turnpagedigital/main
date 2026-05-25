@@ -56,12 +56,13 @@ const PRESS_TYPE_VALUES = ["publication", "podcast", "article", "social post", "
 
 const PRESS_AUTHOR_VALUES = ["Other", "Andrew"];
 
-const PRESS_PAGE_VALUES = ["ai-copyright", "crypto", "litigation-finance", "bankruptcy"];
+const PRESS_PAGE_VALUES = ["copyright", "crypto", "litigation", "tariffs", "bankruptcy"];
 const PRESS_PAGE_LABELS = {
-  "ai-copyright":       "AI Copyright",
-  "crypto":             "Crypto",
-  "litigation-finance": "Litigation Finance",
-  "bankruptcy":         "Bankruptcy",
+  "copyright":  "Copyright Claims",
+  "crypto":     "Locked Crypto",
+  "litigation": "Litigation Claims",
+  "tariffs":    "Tariff Refunds",
+  "bankruptcy": "Bankruptcy Claims",
 };
 
 /* Parse freeform date strings into a sortable timestamp (0 = unknown → bottom) */
