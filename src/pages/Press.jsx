@@ -36,6 +36,15 @@ const BY_ANDREW = ALL_ITEMS
 export default function Press() {
   return (
     <>
+      {/* ── Divider strip ─────────────────────────────────────────── */}
+      <div style={{ width: "100%", height: "clamp(120px, 18vw, 220px)", overflow: "hidden", display: "block" }}>
+        <img
+          src="/metalarray.jpg"
+          alt=""
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }}
+        />
+      </div>
+
       {/* ── Media Coverage ────────────────────────────────────────── */}
       <section style={{
         background: "#FFFFFF",
