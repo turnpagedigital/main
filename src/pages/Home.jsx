@@ -4,7 +4,6 @@ import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 import FAQ from "../components/FAQ.jsx";
 import CTABanner from "../components/CTABanner.jsx";
-import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
 
@@ -108,14 +107,36 @@ export default function Home() {
         cta="Read the briefings"
         href={hashHref("briefings")}
       />
-      <BottomCTA
-        eyebrow="Get a Quote"
-        title="Why wait?"
-        accent="Talk to us."
-        kicker="Contact us for a quote or to learn more. 48-hour response. Confidentiality default."
-        primary={{ label: "Get in Touch", href: hashHref("contact") }}
-        secondary={null}
-      />
+      <section style={{
+        background: "#000",
+        padding: "clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem)",
+        textAlign: "center",
+      }}>
+        <p style={{
+          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
+          letterSpacing: "0.22em", textTransform: "uppercase",
+          color: NEON, marginBottom: "1.1rem",
+        }}>
+          Get a Quote
+        </p>
+        <h2 style={{
+          fontFamily: FONT, fontWeight: 800,
+          fontSize: "clamp(1.8rem,3.6vw,2.8rem)",
+          lineHeight: 1.15, letterSpacing: "-0.02em",
+          color: "#fff", maxWidth: 760, margin: "0 auto 1rem",
+        }}>
+          Why wait?{" "}
+          <span style={{ color: NEON, fontStyle: "italic" }}>Talk to us.</span>
+        </h2>
+        <p style={{
+          fontFamily: FONT, fontSize: "1.05rem",
+          color: "rgba(255,255,255,0.6)", lineHeight: 1.6,
+          maxWidth: 600, margin: "0 auto 2rem",
+        }}>
+          Contact us for a quote or to learn more. 48-hour response. Confidentiality default.
+        </p>
+        <a href={hashHref("contact")} className="btn-neon">Get in Touch</a>
+      </section>
     </>
   );
 }
