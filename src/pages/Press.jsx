@@ -139,22 +139,10 @@ export default function Press() {
   const [filterOutlet, setFilterOutlet] = useState("all");
   const [sortDir,      setSortDir]      = useState("desc");
 
-  /* Decide which sections are eligible to render */
-  const showPressSection  = filterType === "all" || filterType === "press";
-  const showAndrewSection = filterType === "all" || filterType === "article" || filterType === "social";
-
-  /* Filtered + sorted items per section */
-  const visiblePress = useMemo(() => {
-    let items = UNIFIED_ITEMS.filter(d => d.mediaType === "press");
-    if (filterTopic  !== "all") items = items.filter(d => d.pages.includes(filterTopic));
-    if (filterOutlet !== "all") items = items.filter(d => d.outlet === filterOutlet);
-    return sortByDate(items, sortDir);
-  }, [filterTopic, filterOutlet, sortDir]);
-
-  const visibleAndrew = useMemo(() => {
-    let items = UNIFIED_ITEMS.filter(d => d.mediaType !== "press");
-    if (filterType === "article") items = items.filter(d => d.mediaType === "article");
-    if (filterType === "social")  items = items.filter(d => d.mediaType === "social");
+  /* Single filtered + sorted list across all item types */
+  const visibleItems = useMemo(() => {
+    let items = UNIFIED_ITEMS;
+    if (filterType   !== "all") items = items.filter(d => d.mediaType === filterType);
     if (filterTopic  !== "all") items = items.filter(d => d.pages.includes(filterTopic));
     if (filterOutlet !== "all") items = items.filter(d => d.outlet === filterOutlet);
     return sortByDate(items, sortDir);
@@ -223,92 +211,39 @@ export default function Press() {
 
       {/* ── Filter bar ──────────────────────────────────────────────────── */}
       <FilterBar
-        filterType={filterType}   onFilterType={setFilterType}
-        filterTopic={filterTopic}  onFilterTopic={setFilterTopic}
+        filterType={filterType}    onFilterType={setFilterType}
+        filterTopic={filterTopic}   onFilterTopic={setFilterTopic}
         filterOutlet={filterOutlet} onFilterOutlet={setFilterOutlet}
-        sortDir={sortDir}          onSortDir={setSortDir}
-        hasFilters={hasFilters}    onClear={clearFilters}
+        sortDir={sortDir}           onSortDir={setSortDir}
+        hasFilters={hasFilters}     onClear={clearFilters}
+        count={visibleItems.length}
       />
 
-      {/* ── Section 1: In the Press ─────────────────────────────────────── */}
-      {showPressSection && (
-        <section style={{
-          background: "#FFFFFF",
-          padding: "clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem)",
-          borderTop: `1px solid ${LINE}`,
-        }}>
-          <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-            <SectionHeader
-              eyebrow="Media Coverage"
-              title={<>In the<br /><span className="accent-light">press.</span></>}
-              description="Selected quotes, features, and commentary from financial and legal media covering bankruptcy, crypto insolvencies, and AI copyright claims."
-              count={visiblePress.length}
-              hasFilters={hasFilters}
-            />
-
-            {visiblePress.length === 0 ? (
-              <EmptyState hasFilters={hasFilters} onClear={clearFilters} dark={false} />
-            ) : (
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "clamp(1.5rem, 3vw, 2.5rem)",
-              }} className="press-grid">
-                {visiblePress.map(item => <PressCard key={item._key} item={item} />)}
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* ── Section 2: Articles & Commentary ───────────────────────────── */}
-      {showAndrewSection && (
-        <section style={{
-          background: "#F4F5F7",
-          padding: "clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(5rem, 12vw, 11rem)",
-          borderTop: `1px solid ${LINE}`,
-        }}>
-          <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-            <SectionHeader
-              eyebrow="By Andrew"
-              title={<>Articles &<br /><span className="accent-light">commentary.</span></>}
-              description="Analysis, op-eds, published work, and social posts from Andrew Glantz on claims markets, restructuring, and digital assets."
-              count={visibleAndrew.length}
-              hasFilters={hasFilters}
-            />
-
-            {visibleAndrew.length === 0 ? (
-              <EmptyState hasFilters={hasFilters} onClear={clearFilters} dark={false} />
-            ) : (
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "clamp(1.5rem, 3vw, 2.5rem)",
-                alignItems: "start",
-              }} className="press-andrew-grid">
-                {visibleAndrew.map(item =>
-                  item.mediaType === "social"
-                    ? <SocialPostCard key={item._key} item={item} />
-                    : <ByAndrewCard   key={item._key} item={item} />
-                )}
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* Both sections empty but filters active */}
-      {!showPressSection && !showAndrewSection && (
-        <section style={{
-          background: "#fff",
-          padding: "clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem)",
-          borderTop: `1px solid ${LINE}`,
-        }}>
-          <div style={{ maxWidth: 1440, margin: "0 auto" }}>
-            <EmptyState hasFilters={hasFilters} onClear={clearFilters} dark={false} />
-          </div>
-        </section>
-      )}
+      {/* ── Unified grid ────────────────────────────────────────────────── */}
+      <section style={{
+        background: "#FFFFFF",
+        padding: "clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem) clamp(5rem, 12vw, 11rem)",
+        borderTop: `1px solid ${LINE}`,
+      }}>
+        <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+          {visibleItems.length === 0 ? (
+            <EmptyState hasFilters={hasFilters} onClear={clearFilters} />
+          ) : (
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "clamp(1.5rem, 3vw, 2.5rem)",
+              alignItems: "start",
+            }} className="press-grid">
+              {visibleItems.map(item => {
+                if (item.mediaType === "social")  return <SocialPostCard key={item._key} item={item} />;
+                if (item.mediaType === "article") return <ByAndrewCard   key={item._key} item={item} />;
+                return <PressCard key={item._key} item={item} />;
+              })}
+            </div>
+          )}
+        </div>
+      </section>
 
       <BottomCTA
         eyebrow="Get in Touch"
@@ -338,15 +273,13 @@ export default function Press() {
         }
         .press-filter-select:focus { outline: 2px solid ${NEON}; outline-offset: 1px; }
 
-        /* Responsive grid breakpoints */
+        /* Responsive grid */
         @media (max-width: 880px) {
-          .press-split        { grid-template-columns: 1fr !important; }
-          .press-grid         { grid-template-columns: repeat(2, 1fr) !important; }
-          .press-andrew-grid  { grid-template-columns: repeat(2, 1fr) !important; }
+          .press-split { grid-template-columns: 1fr !important; }
+          .press-grid  { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 560px) {
-          .press-grid         { grid-template-columns: 1fr !important; }
-          .press-andrew-grid  { grid-template-columns: 1fr !important; }
+          .press-grid  { grid-template-columns: 1fr !important; }
         }
 
         /* Filter bar responsive */
@@ -368,6 +301,7 @@ function FilterBar({
   filterOutlet, onFilterOutlet,
   sortDir, onSortDir,
   hasFilters, onClear,
+  count,
 }) {
   return (
     <div style={{
@@ -471,57 +405,15 @@ function FilterBar({
             </button>
           )}
         </div>
-      </div>
-    </div>
-  );
-}
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   SECTION HEADER  (compact 2-col layout used for each section)
-═══════════════════════════════════════════════════════════════════════════ */
-function SectionHeader({ eyebrow, title, description, count, hasFilters }) {
-  return (
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "minmax(0,1fr) minmax(0,1.4fr)",
-      gap: "clamp(2rem,5vw,5rem)",
-      marginBottom: "clamp(2.5rem,5vw,4rem)",
-      alignItems: "end",
-    }} className="press-split">
-      <div>
-        <p style={{
-          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-          letterSpacing: "0.22em", textTransform: "uppercase",
-          color: INK_60, marginBottom: "1.2rem",
-        }}>
-          {eyebrow}
-        </p>
-        <h2 style={{
-          fontFamily: FONT, fontWeight: 800,
-          fontSize: "clamp(2rem,4.5vw,4rem)",
-          lineHeight: 1.02, letterSpacing: "-0.04em",
-          color: INK, margin: 0,
-        }}>
-          {title}
-        </h2>
-      </div>
-      <div>
-        <p style={{
-          fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
-          color: INK_60, lineHeight: 1.6, maxWidth: 640,
-          marginBottom: count != null ? "0.75rem" : 0,
-        }}>
-          {description}
-        </p>
+        {/* ── Item count ───────────────────────────────────────────── */}
         {count != null && (
-          <p style={{
-            fontFamily: FONT, fontSize: "0.75rem", color: INK_60,
-            margin: 0, letterSpacing: "0.02em",
+          <span style={{
+            fontFamily: FONT, fontSize: "0.72rem", color: INK_60,
+            marginLeft: "0.5rem", whiteSpace: "nowrap",
           }}>
-            {count === 0
-              ? (hasFilters ? "No items match the selected filters." : "No items yet.")
-              : `${count} item${count === 1 ? "" : "s"}`}
-          </p>
+            {count} item{count === 1 ? "" : "s"}
+          </span>
         )}
       </div>
     </div>
