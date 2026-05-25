@@ -902,6 +902,14 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "2.5rem" }}>
+        <button onClick={addItem} style={{
+          ...btnStyle,
+          background: "transparent", border: `1px dashed ${LINE}`,
+          color: INK, padding: "0.7rem", fontWeight: 700,
+        }}>
+          + Add press item
+        </button>
+
         {displayItems.map((item) => {
           const i = items.indexOf(item);
           return (
