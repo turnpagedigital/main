@@ -382,6 +382,8 @@ function PressCard({ item }) {
             color: INK_60, lineHeight: 1.6,
             borderLeft: `3px solid ${NEON}`,
             paddingLeft: "0.8rem", margin: 0,
+            display: "-webkit-box", WebkitLineClamp: 8,
+            WebkitBoxOrient: "vertical", overflow: "hidden",
           }}>
             "{item.excerpt}"
           </p>
@@ -434,6 +436,8 @@ function ByAndrewCard({ item }) {
         <p style={{
           fontFamily: FONT, fontSize: "0.95rem",
           color: INK_60, lineHeight: 1.6, margin: 0,
+          display: "-webkit-box", WebkitLineClamp: 8,
+          WebkitBoxOrient: "vertical", overflow: "hidden",
         }}>
           {item.excerpt}
         </p>
@@ -558,8 +562,10 @@ function SocialPostCard({ item }) {
           fontFamily: FONT,
           fontSize: "clamp(0.97rem, 1.2vw, 1.05rem)",
           color: "rgba(255,255,255,0.85)",
-          lineHeight: 1.7, margin: 0, flex: 1,
+          lineHeight: 1.7, margin: 0,
           position: "relative", fontStyle: "italic",
+          display: "-webkit-box", WebkitLineClamp: 8,
+          WebkitBoxOrient: "vertical", overflow: "hidden",
         }}>
           "{item.excerpt}"
         </p>
