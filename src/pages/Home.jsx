@@ -774,7 +774,7 @@ function ExperienceSection() {
           color: "rgba(255,255,255,0.4)", marginTop: "1.2rem",
           fontStyle: "italic",
         }}>
-          Additional matters covered by conversation. See our <a href={hashHref("crypto")} style={{ color: "inherit", textDecoration: "underline" }}>locked crypto desk</a> for a full track record across major crypto insolvencies.
+          * Experience prior to Turnpage
         </p>
 
         <style>{`

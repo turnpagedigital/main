@@ -3,19 +3,11 @@ import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import Hero from "../components/Hero.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
-import StatStrip from "../components/StatStrip.jsx";
 import Comparison from "../components/Comparison.jsx";
 import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
-
-const STATS = [
-  { value: "$10B+",  label: "Unresolved claims" },
-  { value: "FTX",    label: "Most active estate" },
-  { value: "Fiat",   label: "All-cash close" },
-  { value: "<14d",   label: "Median close" },
-];
 
 const OLD_WAY = {
   title: "Wait for the docket.",
@@ -64,19 +56,13 @@ export default function Crypto() {
         accentTitle="digital assets."
         subtitle="FTX. Celsius. BlockFi. Voyager. Genesis. Mt. Gox. We quote in fiat and close fast."
         size="tall"
+        video="/robotvault1.mp4"
       >
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
           <a href={hashHref("contact") + "?source=crypto"} className="btn-neon">Get a Quote</a>
           <a href="#how-crypto" className="btn-ghost">How it works</a>
         </div>
       </Hero>
-
-      {/* STAT STRIP */}
-      <section className="surface-paper" style={{ padding: "clamp(2rem,4vw,3.5rem) clamp(1.5rem,5vw,4rem)" }}>
-        <div className="container">
-          <StatStrip items={STATS} theme="light" />
-        </div>
-      </section>
 
       {/* WHO WE HELP */}
       <section className="surface-paper-2 section-pad">
@@ -86,15 +72,19 @@ export default function Crypto() {
             title="Creditors. Funds."
             accent="Estates."
           />
-          <div className="grid-3col">
+          <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
             <AudienceCard
+              priority
               title="Individual Creditors"
               body="Single-position holders on FTX, Celsius, BlockFi, Voyager, and others."
             />
             <AudienceCard
+              priority
               title="Funds & Institutions"
               body="Bulk dispositions and side-pocket cleanups. Size moved discreetly."
             />
+          </div>
+          <div className="grid-2col">
             <AudienceCard
               title="Estates & Trustees"
               body="Administering an estate or trust? We can quote the entire position."
@@ -170,7 +160,7 @@ export default function Crypto() {
               fontFamily: FONT, fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
               color: "rgba(255,255,255,0.65)", lineHeight: 1.6, maxWidth: 640,
             }}>
-              FTX. Mt. Gox. Genesis. Celsius. BlockFi. Three Arrows. Voyager. Terra. A representative slice of Andrew's prior deal track record across the largest claims trades in recent crypto bankruptcy history.
+              FTX. Mt. Gox. Genesis. Celsius. BlockFi. Three Arrows. Voyager. Terra. A representative slice of deal history across the largest claims trades in recent crypto bankruptcy history.
             </p>
           </div>
 
@@ -192,7 +182,7 @@ export default function Crypto() {
             color: "rgba(255,255,255,0.4)", marginTop: "1.2rem",
             fontStyle: "italic",
           }}>
-            Other situations actively covered include BlockFi, Terraform Labs, VAULD, Blockfills, Gatecoin, and Voyager. Experience prior to founding Turnpage Digital.
+            * Experience prior to Turnpage
           </p>
 
           <style>{`
@@ -245,30 +235,47 @@ export default function Crypto() {
   );
 }
 
-function AudienceCard({ title, body }) {
+function AudienceCard({ title, body, priority }) {
   return (
-    <div className="card-light">
-      <h3 style={{
-        fontFamily: FONT, fontSize: "1.2rem", fontWeight: 800, color: INK,
-        marginBottom: "0.6rem", letterSpacing: "-0.01em", lineHeight: 1.2,
-      }}>
-        {title}
-      </h3>
-      <p style={{
-        fontFamily: FONT, fontSize: "0.95rem", color: INK_60, lineHeight: 1.6,
-      }}>
-        {body}
-      </p>
+    <div className="card-light" style={{
+      background: priority ? "#0A0A0A" : "#fff",
+      color: priority ? "#fff" : INK,
+      borderColor: priority ? "rgba(255,255,255,0.14)" : LINE,
+      position: priority ? "relative" : undefined,
+      overflow: priority ? "hidden" : undefined,
+    }}>
+      {priority && (
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: "radial-gradient(60% 70% at 0% 0%, rgba(212,255,0,0.08), transparent 60%)",
+        }} />
+      )}
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <h3 style={{
+          fontFamily: FONT, fontSize: "1.3rem", fontWeight: 800,
+          color: priority ? "#fff" : INK,
+          marginBottom: "0.7rem", letterSpacing: "-0.01em", lineHeight: 1.2,
+        }}>
+          {title}
+        </h3>
+        <p style={{
+          fontFamily: FONT, fontSize: "0.97rem",
+          color: priority ? "rgba(255,255,255,0.78)" : INK_60,
+          lineHeight: 1.6,
+        }}>
+          {body}
+        </p>
+      </div>
     </div>
   );
 }
 
 function ServiceCard({ title, body }) {
   return (
-    <div style={{
-      padding: "2rem 1.8rem", background: "#0A0A0A", color: "#fff",
-      border: "1px solid rgba(255,255,255,0.14)", borderRadius: 14,
-      position: "relative", overflow: "hidden",
+    <div className="card-light" style={{
+      background: "#0A0A0A", color: "#fff",
+      borderColor: "rgba(255,255,255,0.14)",
+      padding: "2rem 1.8rem", position: "relative", overflow: "hidden",
     }}>
       <div style={{
         position: "absolute", inset: 0, pointerEvents: "none",
