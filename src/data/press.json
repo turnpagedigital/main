@@ -2,21 +2,6 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
-      "type": "article",
-      "author": "Other",
-      "date": "March 10, 2023",
-      "url": "",
-      "logo_url": "https://grantspub.com/images/logo.svg",
-      "excerpt": "Sifting through the opportunities in crypto salvage investment. Andrew Glantz quoted on Genesis market activity.\n",
-      "publication_title": "Grant's Interest Rate Observer (Vol. 41, No. 5)",
-      "piece_title": "Pennies on the Dollar",
-      "media_url": "",
-      "pages": [
-        "bankruptcy",
-        "crypto"
-      ]
-    },
-    {
       "type": "social post",
       "author": "Andrew",
       "date": "May 12, 2026",
@@ -204,6 +189,21 @@
     {
       "type": "article",
       "author": "Other",
+      "date": "March 10, 2023",
+      "url": "",
+      "logo_url": "https://grantspub.com/images/logo.svg",
+      "excerpt": "Sifting through the opportunities in crypto salvage investment. Andrew Glantz quoted on Genesis market activity.\n",
+      "publication_title": "Grant's Interest Rate Observer (Vol. 41, No. 5)",
+      "piece_title": "Pennies on the Dollar",
+      "media_url": "",
+      "pages": [
+        "bankruptcy",
+        "crypto"
+      ]
+    },
+    {
+      "type": "article",
+      "author": "Other",
       "date": "February 2, 2023",
       "url": "https://news.bloomberglaw.com/crypto/distressed-funds-eye-another-crypto-prize-in-genesis-bankruptcy",
       "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bloomberg_logo.svg",
@@ -225,7 +225,7 @@
       "excerpt": "",
       "publication_title": "CoinDesk",
       "piece_title": "FTX Creditor Claims Going for 13 Cents on the Dollar on Bankruptcy Marketplace",
-      "media_url": "",
+      "media_url": "/uploads/press/1779761101829-screenshot-2026-05-25-at-10-04-46-pm.png",
       "pages": [
         "bankruptcy",
         "crypto"
