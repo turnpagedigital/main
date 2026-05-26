@@ -2725,14 +2725,14 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
                 />
               </label>
 
-              {/* Excerpt */}
+              {/* Excerpt / Abstract */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, gridColumn: "1 / -1" }}>
-                Excerpt / quote (optional — shown as a pull quote on the card)
+                {item.type === "blog post" ? "Abstract / summary (shown on the card below the title)" : "Excerpt / quote (optional — shown as a pull quote on the card)"}
                 <textarea
                   value={item.excerpt}
                   onChange={e => updateItem(i, "excerpt", e.target.value)}
                   rows={3}
-                  placeholder="Short quote or summary from the article…"
+                  placeholder={item.type === "blog post" ? "2–4 sentence abstract describing what the post covers…" : "Short quote or summary from the article…"}
                   style={inputStyle}
                 />
               </label>

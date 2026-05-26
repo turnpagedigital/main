@@ -836,6 +836,7 @@ function UnifiedCard({ item }) {
   const [hovered, setHovered] = useState(false);
   const isSocial  = item.mediaType === "social";
   const isArticle = item.mediaType === "article";
+  const isBlog    = item.mediaType === "blog";
   const lifted    = hovered && item.href;
   const hasMedia  = Boolean(item.mediaUrl);
 
@@ -910,15 +911,15 @@ function UnifiedCard({ item }) {
             fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
             lineHeight: 1.3, letterSpacing: "-0.01em",
             color: INK,
-            margin: `0 0 ${isArticle ? "0.3rem" : item.excerpt ? "0.7rem" : "0"}`,
+            margin: `0 0 ${(isArticle || isBlog) ? "0.3rem" : item.excerpt ? "0.7rem" : "0"}`,
           }}>
             {item.headline}
           </h3>
         )
       )}
 
-      {/* ── Byline — publications only ──────────────────────────────── */}
-      {isArticle && (
+      {/* ── Byline — publications + blog posts ─────────────────────── */}
+      {(isArticle || isBlog) && (
         <div style={{ margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}` }}>
           <span style={{
             fontFamily: FONT, fontSize: "0.62rem", fontWeight: 800,
