@@ -1,4 +1,5 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
+import { commitBinaryToGitHub } from "./_github.js";
 
 /* Accepts base64-encoded image or video, commits it to public/uploads/press/
    in the GitHub repo, and returns the public URL.
@@ -58,36 +59,8 @@ export async function onRequestPost({ request, env }) {
   const publicUrl  = `/uploads/press/${storedName}`;
 
   // File is new — no need to look up existing SHA (timestamp guarantees uniqueness)
-  const result = await commitBinary(env, repoPath, content, null, `Admin: upload press media ${storedName}`);
+  const result = await commitBinaryToGitHub(env, repoPath, content, null, `Admin: upload press media ${storedName}`);
   if (!result.ok) return jsonResponse({ ok: false, error: result.error }, 502);
 
   return jsonResponse({ ok: true, url: publicUrl });
-}
-
-async function commitBinary(env, path, base64Content, sha, message) {
-  const branch  = env.GITHUB_BRANCH || "dev";
-  const url     = `https://api.github.com/repos/${env.GITHUB_REPO}/contents/${path}`;
-  const bodyObj = { message, content: base64Content, branch };
-  if (sha) bodyObj.sha = sha;
-
-  const r = await fetch(url, {
-    method: "PUT",
-    headers: { ...githubHeaders(env), "Content-Type": "application/json" },
-    body: JSON.stringify(bodyObj),
-  });
-  if (!r.ok) {
-    const text = (await r.text()).slice(0, 400);
-    return { ok: false, error: `GitHub PUT ${r.status}: ${text}` };
-  }
-  const j = await r.json();
-  return { ok: true, sha: (j.commit && j.commit.sha) || "" };
-}
-
-function githubHeaders(env) {
-  return {
-    Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-    "User-Agent": "tpdm-admin",
-    "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
-  };
 }

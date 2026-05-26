@@ -1,4 +1,5 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
+import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
 const PRESS_PATH = "src/data/press.json";
 // Type and author are freeform strings — no enum validation, just string check.
@@ -51,7 +52,7 @@ export async function onRequestPut({ request, env }) {
   Object.keys(merged).forEach((k) => merged[k] === undefined && delete merged[k]);
 
   const newContent = JSON.stringify(merged, null, 2) + "\n";
-  const result = await commitFile(env, newContent, current.sha);
+  const result = await commitFileToGitHub(env, PRESS_PATH, newContent, current.sha, "Admin: update press.json");
   if (!result.ok) return jsonResponse({ ok: false, error: result.error }, 502);
 
   return jsonResponse({ ok: true, commitSha: result.sha });
@@ -83,49 +84,5 @@ function normalizeItem(d) {
 }
 
 async function fetchFile(env) {
-  const branch = env.GITHUB_BRANCH || "dev";
-  const url = `https://api.github.com/repos/${env.GITHUB_REPO}/contents/${PRESS_PATH}?ref=${encodeURIComponent(branch)}`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
-  if (!r.ok) return { ok: false, error: `GitHub GET ${r.status}: ${(await r.text()).slice(0, 300)}` };
-  const meta = await r.json();
-  let decoded;
-  try {
-    const raw = atob(meta.content.replace(/\n/g, ""));
-    decoded = JSON.parse(decodeURIComponent(escape(raw)));
-  } catch (e) {
-    return { ok: false, error: `Failed to parse press.json: ${e.message}` };
-  }
-  return { ok: true, data: decoded, sha: meta.sha };
-}
-
-async function commitFile(env, newContent, currentSha) {
-  const branch = env.GITHUB_BRANCH || "dev";
-  const url = `https://api.github.com/repos/${env.GITHUB_REPO}/contents/${PRESS_PATH}`;
-  const utf8 = unescape(encodeURIComponent(newContent));
-  const body = JSON.stringify({
-    message: "Admin: update press.json",
-    content: btoa(utf8),
-    sha: currentSha,
-    branch,
-  });
-  const r = await fetch(url, {
-    method: "PUT",
-    headers: { ...githubHeaders(env), "Content-Type": "application/json" },
-    body,
-  });
-  if (!r.ok) {
-    const text = (await r.text()).slice(0, 400);
-    return { ok: false, error: `GitHub PUT ${r.status}: ${text}` };
-  }
-  const j = await r.json();
-  return { ok: true, sha: (j.commit && j.commit.sha) || "" };
-}
-
-function githubHeaders(env) {
-  return {
-    Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-    "User-Agent": "tpdm-admin",
-    "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
-  };
+  return getFileFromGitHub(env, PRESS_PATH);
 }
