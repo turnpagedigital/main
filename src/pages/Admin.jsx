@@ -9,7 +9,17 @@ import FAQsTab   from "./admin/FAQsTab.jsx";
 import AlertsTab from "./admin/AlertsTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.
-   Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/). */
+   Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
+   Tab state syncs to the URL hash: #/admin/<tab>. */
+
+const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs"];
+
+function getTabFromHash() {
+  if (typeof window === "undefined") return "bio";
+  const m = window.location.hash.match(/^#\/admin(?:\/([a-z]+))?/);
+  if (!m) return "bio";
+  return VALID_TABS.includes(m[1]) ? m[1] : "bio";
+}
 
 /* Swap the favicon to the original (favicon.png) while admin is mounted,
    then restore the main site favicon (favicon1.png) on unmount. */
@@ -28,8 +38,20 @@ export default function Admin() {
 
   const [phase, setPhase] = useState("checking"); // checking | login | ready
   const [errorMsg, setErrorMsg] = useState("");
-  const [tab, setTab] = useState("bio");
+  const [tab, setTab] = useState(getTabFromHash);
   const [dirtyTabs, setDirtyTabs] = useState({});
+
+  // Sync tab state with URL hash (back/forward + bookmarks)
+  useEffect(() => {
+    function onHashChange() { setTab(getTabFromHash()); }
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  function selectTab(key) {
+    // Writing to location.hash fires a hashchange event, which updates tab state
+    window.location.hash = `#/admin/${key}`;
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -115,7 +137,7 @@ export default function Admin() {
             return (
               <button
                 key={key}
-                onClick={() => setTab(key)}
+                onClick={() => selectTab(key)}
                 style={{
                   fontFamily: FONT, fontSize: "0.88rem",
                   fontWeight: active ? 700 : 500,
