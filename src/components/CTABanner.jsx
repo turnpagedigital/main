@@ -21,6 +21,7 @@ export default function CTABanner({
       <img
         src={image}
         alt=""
+        loading="lazy"
         style={{
           position: "absolute", inset: 0, zIndex: 0,
           width: "100%", height: "100%", objectFit: "cover",

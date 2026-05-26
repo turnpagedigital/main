@@ -101,6 +101,7 @@ export default function DealCard({ deal }) {
                 {deal.logos.filter(Boolean).slice(0, 3).map((url, i) => (
                   <img
                     key={i} src={url} alt=""
+                    loading="lazy"
                     style={{
                       height: 18, maxWidth: 64,
                       objectFit: "contain",

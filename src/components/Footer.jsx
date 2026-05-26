@@ -52,6 +52,7 @@ export default function Footer() {
               <img
                 src="/TPDM Logo Black_No BKGD .png"
                 alt="Turnpage Digital Markets"
+                loading="lazy"
                 style={{ height: 56, width: "auto", display: "block" }}
               />
             </a>

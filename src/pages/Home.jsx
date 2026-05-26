@@ -465,6 +465,7 @@ function LeadershipSection() {
               <img
                 src={bioData.photo_url || "/andrew.png"}
                 alt="Andrew Glantz, Founder & Managing Partner"
+                loading="lazy"
                 style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
               />
             </div>
@@ -524,6 +525,7 @@ function LeadershipSection() {
                       key={i}
                       src={logo.url}
                       alt={logo.name || ""}
+                      loading="lazy"
                       style={{
                         maxHeight: 30, height: "auto",
                         maxWidth: 160, width: "auto",
@@ -634,6 +636,7 @@ function FullBleedPhoto() {
       <img
         src="/Paper.jpg"
         alt=""
+        loading="lazy"
         style={{
           position: "absolute", inset: 0,
           width: "100%", height: "100%",

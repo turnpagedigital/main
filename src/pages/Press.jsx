@@ -603,6 +603,7 @@ function OutletLogo({ name, logoUrl, style = {} }) {
     <img
       src={src}
       alt={name || ""}
+      loading="lazy"
       style={{
         width: 140, height: 32,
         objectFit: "contain",
@@ -831,6 +832,7 @@ function MediaThumb({ url, href }) {
         <img
           src={imgSrc}
           alt=""
+          loading="lazy"
           onError={() => setImgFailed(true)}
           style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
         />
@@ -914,6 +916,7 @@ function UnifiedCard({ item }) {
               <img
                 src={bioData.avatar_url || bioData.photo_url || "/andrew.png"}
                 alt="Andrew Glantz"
+                loading="lazy"
                 style={{
                   width: "100%", height: "100%",
                   objectFit: "cover", display: "block",
