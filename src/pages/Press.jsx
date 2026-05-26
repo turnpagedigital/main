@@ -646,12 +646,11 @@ function TypeIndicator({ item }) {
 
   if (item.mediaType === "social") {
     const accent = getPlatformAccent(item.outlet);
-    const label  = getPlatformLabel(item.outlet);
     return (
       <div style={base}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
           <PlatformIcon platform={item.outlet} size={13} color={accent} />
-          <span style={{ ...labelStyle, color: accent }}>{label}</span>
+          <span style={{ ...labelStyle, color: accent }}>Post</span>
         </div>
         {item.date && <span style={dateStyle}>{item.date}</span>}
       </div>
