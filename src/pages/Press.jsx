@@ -80,7 +80,6 @@ const TYPE_OPTS = [
   { key: "all",     label: "All" },
   { key: "press",   label: "Press" },
   { key: "article", label: "Publications" },
-  { key: "blog",    label: "Blog" },
   { key: "podcast", label: "Podcasts" },
   { key: "social",  label: "Posts" },
 ];
@@ -167,7 +166,7 @@ function getTypeFromHash() {
   if (qi === -1) return "all";
   const params = new URLSearchParams(window.location.hash.slice(qi + 1));
   const t = params.get("type");
-  return ["press", "article", "blog", "social", "podcast"].includes(t) ? t : "all";
+  return ["press", "article", "social", "podcast"].includes(t) ? t : "all";
 }
 function getTopicFromHash() {
   if (typeof window === "undefined") return "all";
@@ -201,7 +200,11 @@ export default function Press() {
   /* Single filtered + sorted list across all item types */
   const visibleItems = useMemo(() => {
     let items = UNIFIED_ITEMS;
-    if (filterType   !== "all") items = items.filter(d => d.mediaType === filterType);
+    if (filterType   !== "all") items = items.filter(d =>
+      filterType === "article"
+        ? (d.mediaType === "article" || d.mediaType === "blog")
+        : d.mediaType === filterType
+    );
     if (filterTopic  !== "all") items = items.filter(d => d.pages.includes(filterTopic));
     if (filterOutlet !== "all") items = items.filter(d => d.outlet === filterOutlet);
     return sortByDate(items, sortDir);
