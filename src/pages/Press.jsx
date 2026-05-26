@@ -251,7 +251,7 @@ export default function Press() {
             const teaser = sentences.slice(0, 2).join(" ").trim();
             const accent = getPlatformAccent(latest.outlet);
             return (
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem", background: "#0A0A0A", borderRadius: "0.75rem", padding: "1.5rem 1.75rem" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", borderLeft: "1px solid rgba(10,10,10,0.18)", paddingLeft: "1.75rem" }}>
                 {/* Attribution row */}
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                   <PlatformIcon platform={latest.outlet} size={14} color={accent} />
@@ -263,7 +263,7 @@ export default function Press() {
                     From the feed
                   </span>
                   {latest.date && (
-                    <span style={{ fontFamily: FONT, fontSize: "0.68rem", color: "rgba(255,255,255,0.45)" }}>
+                    <span style={{ fontFamily: FONT, fontSize: "0.68rem", color: INK_60 }}>
                       · {latest.date}
                     </span>
                   )}
@@ -271,7 +271,7 @@ export default function Press() {
                 {/* Teaser */}
                 <p style={{
                   fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.15rem)",
-                  color: "rgba(255,255,255,0.75)", lineHeight: 1.6, margin: 0,
+                  color: INK_60, lineHeight: 1.6, margin: 0,
                   fontStyle: "italic",
                 }}>
                   {teaser}
@@ -283,9 +283,8 @@ export default function Press() {
                     target="_blank" rel="noopener noreferrer"
                     style={{
                       fontFamily: FONT, fontSize: "0.82rem", fontWeight: 700,
-                      color: "#fff", textDecoration: "underline",
+                      color: accent, textDecoration: "underline",
                       textUnderlineOffset: "3px", alignSelf: "flex-start",
-                      opacity: 0.9,
                     }}
                   >
                     Read the full post →
