@@ -2430,6 +2430,7 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
   const [filterType,   setFilterType]   = useState("");
   const [filterAuthor, setFilterAuthor] = useState("");
   const [filterPage,   setFilterPage]   = useState("");
+  const [filterSearch, setFilterSearch] = useState("");
 
   // Managed option lists — initialised from defaults + any values already in the loaded items
   const [typeOptions, setTypeOptions] = useState(() => {
@@ -2448,7 +2449,7 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
   function addAuthorOption(val)    { const v = val.trim(); if (!v) return; setAuthorOptions(prev => prev.includes(v) ? prev : [...prev, v]); }
   function removeAuthorOption(val) { setAuthorOptions(prev => prev.filter(a => a !== val)); }
 
-  const isFiltered = !!(filterType || filterAuthor || filterPage);
+  const isFiltered = !!(filterType || filterAuthor || filterPage || filterSearch);
 
   // Derive unique type/author values from current items for the filter dropdowns
   const liveTypes   = [...new Set(items.map(it => it.type).filter(Boolean))].sort();
@@ -2458,6 +2459,14 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
     if (filterType   && item.type   !== filterType)   return false;
     if (filterAuthor && item.author !== filterAuthor) return false;
     if (filterPage   && !(Array.isArray(item.pages) && item.pages.includes(filterPage))) return false;
+    if (filterSearch) {
+      const q = filterSearch.toLowerCase();
+      if (!(
+        (item.piece_title        || "").toLowerCase().includes(q) ||
+        (item.publication_title  || "").toLowerCase().includes(q) ||
+        (item.excerpt            || "").toLowerCase().includes(q)
+      )) return false;
+    }
     return true;
   }) : items;
 
@@ -2535,9 +2544,20 @@ function PressSection({ items, onChangeItems, onSave, dirty, phase, error, lastS
           <option value="">All sub-pages</option>
           {PRESS_PAGE_VALUES.map(v => <option key={v} value={v}>{PRESS_PAGE_LABELS[v]}</option>)}
         </select>
+        <input
+          type="text"
+          placeholder="Search title / outlet / excerpt…"
+          value={filterSearch}
+          onChange={e => setFilterSearch(e.target.value)}
+          style={{
+            ...filterSelectStyle,
+            flex: "1 1 180px", minWidth: 140,
+            fontFamily: "inherit",
+          }}
+        />
         {isFiltered && (
           <button
-            onClick={() => { setFilterType(""); setFilterAuthor(""); setFilterPage(""); }}
+            onClick={() => { setFilterType(""); setFilterAuthor(""); setFilterPage(""); setFilterSearch(""); }}
             style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.7rem", color: "#c44", borderColor: "#f4caca" }}
           >
             Clear
