@@ -50,28 +50,6 @@ export default function AnnouncementBanner({ page = "home" }) {
             </a>
           )}
         </div>
-        {alerts.length > 1 && (
-          <div style={{ display: "flex", gap: 4, alignItems: "center", flexShrink: 0, marginRight: "0.5rem" }}>
-            {alerts.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => { setFading(false); setIdx(i); }}
-                aria-label={`Alert ${i + 1}`}
-                style={{
-                  width: i === idx ? 16 : 6,
-                  height: 6,
-                  borderRadius: 3,
-                  background: i === idx ? "#D4FF00" : "rgba(255,255,255,0.35)",
-                  border: "none",
-                  padding: 0,
-                  cursor: "pointer",
-                  transition: "width 0.3s ease, background 0.3s ease",
-                  flexShrink: 0,
-                }}
-              />
-            ))}
-          </div>
-        )}
         <div className="ann-banner-region">
           <LanguageSelector direction="down" fontSize="0.78rem" />
         </div>
