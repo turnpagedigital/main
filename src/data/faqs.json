@@ -6,7 +6,8 @@
       "q": "What types of claims do you cover?",
       "a": "Bankruptcy claims, litigation claims, class action claims, trade receivables, judgments, locked digital assets, frozen accounts, government refunds, and seized property.",
       "pages": [
-        "home"
+        "home",
+        "briefings"
       ]
     },
     {
@@ -14,7 +15,8 @@
       "q": "What services do you offer?",
       "a": "Capital solutions (assignments, participations, litigation financing, advances, contingency arrangements), trading strategies (OTC brokerage, auctions, private pools, structured portfolios), and advisory (claim analysis, price discovery, complex recovery strategies, expert testimony).",
       "pages": [
-        "home"
+        "home",
+        "briefings"
       ]
     },
     {
@@ -22,7 +24,8 @@
       "q": "How fast can you close?",
       "a": "Days on simple matters, longer when the docket requires it. Automation enables lightning-fast settlement in the largest cases.",
       "pages": [
-        "home"
+        "home",
+        "contact"
       ]
     },
     {
@@ -30,7 +33,10 @@
       "q": "How do you price a claim?",
       "a": "If no market price, diligence to establish range of pricing in consultation with our buyer network.",
       "pages": [
-        "ai-copyright"
+        "home",
+        "ai-copyright",
+        "crypto",
+        "contact"
       ]
     },
     {
@@ -39,6 +45,232 @@
       "a": "We are currently focused on BlockFills, FTX, and the GSB Settlement Fund.",
       "pages": [
         "crypto"
+      ]
+    },
+    {
+      "active": true,
+      "q": "What is a claim, exactly?",
+      "a": "A legal right to receive money or other consideration from someone — most commonly a company in bankruptcy, a defendant in a class action or judgment, or another counterparty that owes you compensation. Selling the claim assigns that right to a buyer for cash today; the buyer collects whatever the case ultimately pays.",
+      "pages": [
+        "home",
+        "ai-copyright",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Who typically sells a claim?",
+      "a": "Trade creditors, customers of failed crypto exchanges, plaintiffs and class members, institutional holders of distressed receivables, family offices, trustees, and estates. The common thread is wanting cash today rather than waiting years for an uncertain distribution.",
+      "pages": [
+        "home"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Are you a broker or a principal buyer?",
+      "a": "Both. We transact as principal when speed and certainty matter, and we broker into our network of 500+ institutional buyers when a competitive process will get you a better price.",
+      "pages": [
+        "home",
+        "briefings"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Are you affiliated with the debtor, court, or settlement administrator?",
+      "a": "No. We're independent — not employed by, affiliated with, or acting on behalf of any debtor, plaintiff's counsel, defense counsel, claims agent, or settlement administrator. Our only economic interest is in transacting fairly with you.",
+      "pages": [
+        "home",
+        "ai-copyright",
+        "crypto",
+        "briefings",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Why sell rather than wait?",
+      "a": "Immediate cash instead of a multi-year wait. Certainty instead of recovery risk. No exposure to illiquid consideration like restricted stock, trust interests, or tokens. No further administrative burden. A clean tax event in the current year. The right answer depends on your situation — we'll walk you through both sides before you commit.",
+      "pages": [
+        "home",
+        "ai-copyright",
+        "crypto"
+      ]
+    },
+    {
+      "active": true,
+      "q": "What documents will you need from me?",
+      "a": "Usually the proof of claim or schedule entry, supporting invoices or contracts, any objections or stipulations affecting the claim, KYC/AML documentation, and wire instructions. For class action and settlement claims, the claim number, claim form, and proof of identity. We'll tell you exactly what's required after a brief call.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "What does the process look like from first contact to payment?",
+      "a": "Send us the case and your claim amount; we come back with an indicative price within 48 hours. You send documentation, we confirm the bid and send a market-standard assignment for e-signature. Once signed and diligence clears, we wire payment and file the transfer with the court or settlement administrator. No further action from you.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "How quickly do I get paid?",
+      "a": "Most straightforward trades fund within one to two business days of a signed assignment agreement. Larger or contested claims take longer because diligence is heavier — we'll set realistic expectations up front, not after the fact.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "How will I be paid?",
+      "a": "USD wire transfer is the default. We can also accommodate ACH for smaller transactions and USDC or another stablecoin where it fits — common for non-U.S. creditors in crypto bankruptcies. The method is agreed in the assignment agreement before closing.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "What fees do you charge sellers?",
+      "a": "When we transact as principal, none — the price we quote is the price you receive. When we broker, our fee is paid by the buyer or clearly disclosed and deducted from proceeds, and it's always agreed in writing before you commit. No listing fees, no upfront costs.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Is the sale recourse or non-recourse?",
+      "a": "Non-recourse on ultimate recovery — you don't refund anything if the case pays less than expected. Standard reps and warranties still apply: you own the claim, haven't pledged or sold it, and the documentation is accurate. If the claim is later reduced for a defect that existed at sale, the agreement requires a pro-rata refund. We walk you through these provisions before you sign.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Do I need to file a Proof of Claim before selling?",
+      "a": "In Chapter 7, generally yes. In Chapter 11, only if your claim isn't already scheduled as undisputed. We strongly recommend filing in either case to lock in your position, and we can usually bid conditioned on filing before closing.",
+      "pages": [
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "After I sell, do I need to notify the court or settlement administrator?",
+      "a": "No. We file the Notice of Transfer of Claim under Bankruptcy Rule 3001(e) (or the equivalent assignment notice for class action and trust matters). The register is updated, all future distributions go to the buyer, and you're out of the case.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Is the transaction confidential?",
+      "a": "The economic terms are private. Bankruptcy claim transfers are reflected on the public claims register and notice is filed on the docket, so the fact of a transfer is public record — the price and structure are not. Supporting documents you share with us are kept confidential and redacted before any third-party review.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "How is the sale of my claim taxed?",
+      "a": "It depends on your basis in the claim, the entity selling, and your jurisdiction. In many cases a sale crystallizes a deductible loss in the year of sale. We're not your tax advisor — please consult your accountant — but we provide trade confirmations and 1099 reporting where applicable.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Can I sell my FTX, Celsius, Genesis, BlockFi, or Voyager claim?",
+      "a": "Yes — the crypto claims market is one of the most active right now and we trade it daily. Pricing depends on the estate's asset position, the plan's treatment of customer claims, valuation methodology, and any KYC complications. We work with U.S. and non-U.S. creditors and can settle in fiat or stablecoin.",
+      "pages": [
+        "crypto"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Can I sell a stub claim after I've already received a distribution?",
+      "a": "Yes. The right to remaining future distributions trades separately, and we bid stubs on the same documented basis as full claims. Sellers often choose this route because additional distributions can take years and stay exposed to litigation, recovery, and trust-administration risk.",
+      "pages": [
+        "crypto"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Can I sell a class action or settlement claim?",
+      "a": "In many class actions, judgments, and consent-decree distributions, your right to a future payment is freely assignable. Whether and when it's liquid depends on the settlement order, the trustee or special master's process, and the size and predictability of the expected payout. Send us the case and we'll tell you quickly.",
+      "pages": [
+        "ai-copyright"
+      ]
+    },
+    {
+      "active": true,
+      "q": "I'm based outside the U.S. — can I still sell?",
+      "a": "Yes. We regularly work with non-U.S. creditors, particularly in crypto bankruptcies and global class actions. KYC and tax documentation are heavier and payment is usually by international wire or stablecoin, but the underlying transaction is the same. We'll outline any additional requirements up front.",
+      "pages": [
+        "ai-copyright",
+        "crypto",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Do you work with brokers, attorneys, and referral partners?",
+      "a": "Yes. We work with law firms, financial advisors, trustees, fiduciaries, and other intermediaries on both one-off introductions and formal master referral arrangements. Fast indicative pricing, market-standard documents, prompt referral compensation. [Get in touch](https://turnpagedigital.com/#/contact) and we'll structure it around your practice.",
+      "pages": [
+        "home",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "Do you require exclusivity on referred claims?",
+      "a": "Not by default — for typical introductions, you and your client are free to shop our bid. For large or complex claims where we're committing meaningful diligence resources, we may request a short exclusivity window in exchange for a stronger price, always agreed in writing.",
+      "pages": [
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "How do you protect referred clients and the information I share?",
+      "a": "Your client is yours. We don't solicit referred clients for other matters or market to them outside the scope of the engagement, and we'll sign NDAs whenever you'd like. Deal information is handled on a need-to-know basis and supporting documents are redacted before any third-party review.",
+      "pages": [
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "What kinds of claims and clients should I refer?",
+      "a": "Anything where a rights holder is entitled to compensation and could benefit from liquidity, certainty, or a market check — trade creditors in Chapter 11, customers of failed crypto exchanges, class members in major settlements, holders of judgments and arbitration awards, counterparties to commercial litigation. If you're not sure, ask. We'd rather decline a single matter than miss a chance to help your client.",
+      "pages": [
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "q": "How are you different from a marketplace like Xclaim or a principal buyer like Hain or Pioneer?",
+      "a": "Four things. We work across litigation, class actions, bankruptcy, locked digital assets, frozen accounts, government refunds (including tariff refunds via our [Rewind Tariffs sub-brand](https://rewindtariffs.com)), seized property, and other illiquid recovery rights — not just bankruptcy receivables. We close as advisory engagements, participations, structured assignments, contingent assignments, and outright assignments, picking the form that fits your tax posture and timing. We run a competitive process across 500+ institutional buyers rather than quoting from a single principal balance sheet. And we stay across the lifecycle — claim analysis, settlement architecture, opt-out economics, plan-of-reorganization analysis, tax-aware structuring, counsel introductions. Track record: $1B+ traded across every major crypto insolvency of the last decade — FTX, Mt. Gox, Genesis, Celsius, BlockFi, Three Arrows, Voyager, Terra — plus the [AI copyright docket](https://turnpagedigital.com/#/ai-copyright) and government refund work. (Track-record numbers reflect experience prior to founding Turnpage Digital Markets.)",
+      "pages": [
+        "home",
+        "ai-copyright",
+        "crypto",
+        "briefings"
       ]
     }
   ]
