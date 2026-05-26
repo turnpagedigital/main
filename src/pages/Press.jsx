@@ -125,6 +125,7 @@ const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
   _key:     i,
   mediaType: (d.type || "").toLowerCase() === "podcast"    ? "podcast"
            : (d.type || "").toLowerCase() === "blog post"  ? "blog"
+           : (d.type || "").toLowerCase() === "news"       ? "news"
            : d.author !== "Andrew"                         ? "press"
            : d.type === "social post"                      ? "social"
            : "article",
@@ -201,9 +202,10 @@ export default function Press() {
   const visibleItems = useMemo(() => {
     let items = UNIFIED_ITEMS;
     if (filterType   !== "all") items = items.filter(d =>
-      filterType === "article"
-        ? (d.mediaType === "article" || d.mediaType === "blog")
-        : d.mediaType === filterType
+      filterType === "article" ? d.mediaType === "article"
+      : filterType === "social" ? (d.mediaType === "social" || d.mediaType === "blog")
+      : filterType === "press"  ? (d.mediaType === "press"  || d.mediaType === "news")
+      : d.mediaType === filterType
     );
     if (filterTopic  !== "all") items = items.filter(d => d.pages.includes(filterTopic));
     if (filterOutlet !== "all") items = items.filter(d => d.outlet === filterOutlet);
@@ -255,7 +257,16 @@ export default function Press() {
           </h2>
           {/* Right: excerpt from the latest social post */}
           {(() => {
-            const latest = UNIFIED_ITEMS
+            const topicCandidates = UNIFIED_ITEMS
+              .filter(d => d.mediaType === "social" && d.excerpt
+                && (filterTopic === "all" || d.pages.includes(filterTopic)))
+              .sort((a, b) => {
+                const ta = a.date ? new Date(a.date).getTime() : 0;
+                const tb = b.date ? new Date(b.date).getTime() : 0;
+                return tb - ta;
+              });
+            // Fall back to any topic if no match for current topic
+            const latest = topicCandidates[0] ?? UNIFIED_ITEMS
               .filter(d => d.mediaType === "social" && d.excerpt)
               .sort((a, b) => {
                 const ta = a.date ? new Date(a.date).getTime() : 0;
@@ -640,6 +651,15 @@ const BlogIcon = ({ size = 13, color = "currentColor" }) => (
   </svg>
 );
 
+/* Bullhorn icon — for news / press releases */
+const BullhornIcon = ({ size = 13, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M22 3.58v16.84a1 1 0 0 1-1.62.77L14 16H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h8l6.38-5.19A1 1 0 0 1 22 3.58z"/>
+    <line x1="6" y1="16" x2="6" y2="20"/>
+  </svg>
+);
+
 /* Microphone icon — for podcasts */
 const MicIcon = ({ size = 13, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
@@ -755,6 +775,18 @@ function TypeIndicator({ item }) {
         <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
           <BlogIcon size={13} color={INK_60} />
           <span style={{ ...labelStyle, color: INK_60 }}>Blog</span>
+        </div>
+        {item.date && <span style={dateStyle}>{item.date}</span>}
+      </div>
+    );
+  }
+
+  if (item.mediaType === "news") {
+    return (
+      <div style={base}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
+          <BullhornIcon size={13} color={INK_60} />
+          <span style={{ ...labelStyle, color: INK_60 }}>News</span>
         </div>
         {item.date && <span style={dateStyle}>{item.date}</span>}
       </div>

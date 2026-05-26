@@ -60,7 +60,7 @@ function sanitizeBio(d) {
 }
 
 // Default suggestions shown in the datalist dropdowns — user can type anything else
-const PRESS_TYPE_SUGGESTIONS   = ["publication", "podcast", "article", "social post", "blog post"];
+const PRESS_TYPE_SUGGESTIONS   = ["publication", "podcast", "article", "social post", "blog post", "news"];
 const PRESS_AUTHOR_SUGGESTIONS = ["Andrew", "Other"];
 
 const PRESS_PAGE_VALUES = ["copyright", "crypto", "litigation", "tariffs", "bankruptcy"];
