@@ -26,6 +26,19 @@
         "briefings",
         "contact"
       ]
+    },
+    {
+      "active": true,
+      "pill": "FILING",
+      "text": "BlockFills Disclosure Statement Hearing Scheduled for May 28",
+      "linkText": "View Docket",
+      "href": "",
+      "pages": [
+        "home",
+        "crypto",
+        "press",
+        "contact"
+      ]
     }
   ]
 }
