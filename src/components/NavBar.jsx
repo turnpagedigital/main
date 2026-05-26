@@ -18,7 +18,6 @@ const PREVIEWS = {
     title: "Copyright Claims",
     body: "Capital and advisory for rights holders with claims against generative AI companies — Bartz, the OpenAI MDL, Concord, Getty.",
     links: [
-      { label: "Top 12 active cases",         href: hashHref("ai-copyright") + "#cases-section" },
       { label: "Who we help",                 href: hashHref("ai-copyright") + "#who-we-help" },
       { label: "Briefings",                   href: hashHref("briefings") },
       { label: "Related media", href: hashHref("press") + "?topic=copyright" },
