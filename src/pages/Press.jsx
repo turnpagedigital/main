@@ -251,7 +251,7 @@ export default function Press() {
             const teaser = sentences.slice(0, 2).join(" ").trim();
             const accent = getPlatformAccent(latest.outlet);
             return (
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem", borderLeft: `3px solid ${NEON}`, paddingLeft: "1.25rem" }}>
                 {/* Attribution row */}
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                   <PlatformIcon platform={latest.outlet} size={14} color={accent} />
