@@ -2,6 +2,20 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
+      "type": "blog post",
+      "author": "Other",
+      "date": "May 26, 2026",
+      "url": "",
+      "logo_url": "",
+      "excerpt": "",
+      "publication_title": "Turnpage Digital Markets",
+      "piece_title": "",
+      "media_url": "",
+      "pages": [
+        "tariffs"
+      ]
+    },
+    {
       "type": "social post",
       "author": "Andrew",
       "date": "May 15, 2026",
