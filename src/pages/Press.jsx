@@ -77,9 +77,10 @@ const PAGE_LABELS = {
 /* ── Media type labels for filter pills ─────────────────────────────────── */
 const TYPE_OPTS = [
   { key: "all",     label: "All" },
-  { key: "press",   label: "Press Features" },
+  { key: "press",   label: "Press" },
   { key: "article", label: "Publications" },
-  { key: "social",  label: "Social Posts" },
+  { key: "social",  label: "Social" },
+  { key: "podcast", label: "Podcasts" },
 ];
 
 /* ── Media helpers ───────────────────────────────────────────────────────── */
@@ -121,7 +122,8 @@ function parseDate(str) {
 /* ── Normalise every press.json item into a unified shape ───────────────── */
 const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
   _key:     i,
-  mediaType: d.author !== "Andrew" ? "press"
+  mediaType: (d.type || "").toLowerCase() === "podcast" ? "podcast"
+           : d.author !== "Andrew" ? "press"
            : d.type === "social post" ? "social"
            : "article",
   type:     d.type || "",
@@ -134,7 +136,6 @@ const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
   href:      d.url || null,
   pages:     Array.isArray(d.pages) ? d.pages : [],
   mediaUrl:  d.media_url || null,
-  isPodcast: (d.type || "").toLowerCase() === "podcast",
 }));
 
 /* ── Derived filter option lists (computed once from static data) ─────────── */
@@ -160,7 +161,7 @@ function getTypeFromHash() {
   if (qi === -1) return "all";
   const params = new URLSearchParams(window.location.hash.slice(qi + 1));
   const t = params.get("type");
-  return ["press", "article", "social"].includes(t) ? t : "all";
+  return ["press", "article", "social", "podcast"].includes(t) ? t : "all";
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -631,7 +632,7 @@ function TypeIndicator({ item }) {
     color: INK_60, letterSpacing: "0.02em",
   };
 
-  if (item.isPodcast) {
+  if (item.mediaType === "podcast") {
     return (
       <div style={base}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
