@@ -80,6 +80,7 @@ const TYPE_OPTS = [
   { key: "all",     label: "All" },
   { key: "press",   label: "Press" },
   { key: "article", label: "Publications" },
+  { key: "blog",    label: "Blog" },
   { key: "podcast", label: "Podcasts" },
   { key: "social",  label: "Posts" },
 ];
@@ -123,9 +124,10 @@ function parseDate(str) {
 /* ── Normalise every press.json item into a unified shape ───────────────── */
 const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
   _key:     i,
-  mediaType: (d.type || "").toLowerCase() === "podcast" ? "podcast"
-           : d.author !== "Andrew" ? "press"
-           : d.type === "social post" ? "social"
+  mediaType: (d.type || "").toLowerCase() === "podcast"    ? "podcast"
+           : (d.type || "").toLowerCase() === "blog post"  ? "blog"
+           : d.author !== "Andrew"                         ? "press"
+           : d.type === "social post"                      ? "social"
            : "article",
   type:     d.type || "",
   outlet:   d.publication_title || "",
@@ -165,7 +167,7 @@ function getTypeFromHash() {
   if (qi === -1) return "all";
   const params = new URLSearchParams(window.location.hash.slice(qi + 1));
   const t = params.get("type");
-  return ["press", "article", "social", "podcast"].includes(t) ? t : "all";
+  return ["press", "article", "blog", "social", "podcast"].includes(t) ? t : "all";
 }
 function getTopicFromHash() {
   if (typeof window === "undefined") return "all";
@@ -626,6 +628,15 @@ const QuillIcon = ({ size = 13, color = "currentColor" }) => (
   </svg>
 );
 
+/* Pencil/blog icon — for blog posts */
+const BlogIcon = ({ size = 13, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M12 20h9"/>
+    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+  </svg>
+);
+
 /* Microphone icon — for podcasts */
 const MicIcon = ({ size = 13, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
@@ -729,6 +740,18 @@ function TypeIndicator({ item }) {
         <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
           <QuillIcon size={13} color={INK_60} />
           <span style={{ ...labelStyle, color: INK_60 }}>Publication</span>
+        </div>
+        {item.date && <span style={dateStyle}>{item.date}</span>}
+      </div>
+    );
+  }
+
+  if (item.mediaType === "blog") {
+    return (
+      <div style={base}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
+          <BlogIcon size={13} color={INK_60} />
+          <span style={{ ...labelStyle, color: INK_60 }}>Blog</span>
         </div>
         {item.date && <span style={dateStyle}>{item.date}</span>}
       </div>
