@@ -258,8 +258,7 @@ export default function Press() {
                 return tb - ta;
               })[0];
             if (!latest) return null;
-            const sentences = latest.excerpt.replace(/\n/g, " ").match(/[^.!?]+[.!?]+/g) || [];
-            const teaser = sentences.slice(0, 2).join(" ").trim();
+            const teaser = latest.excerpt.replace(/\n+/g, " ").trim();
             const accent = getPlatformAccent(latest.outlet);
             return (
               <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", borderLeft: "1px solid rgba(10,10,10,0.18)", paddingLeft: "1.75rem" }}>
@@ -287,6 +286,8 @@ export default function Press() {
                   fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.15rem)",
                   color: INK_60, lineHeight: 1.6, margin: 0,
                   fontStyle: "italic",
+                  display: "-webkit-box", WebkitLineClamp: 3,
+                  WebkitBoxOrient: "vertical", overflow: "hidden",
                 }}>
                   {teaser}
                 </p>
