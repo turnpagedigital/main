@@ -763,35 +763,149 @@ export default function Admin() {
   );
 }
 
-function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSavedAt }) {
-  const isSaving = phase === "saving";
+/* ── CSV helpers ────────────────────────────────────────────────────────────
+   Minimal RFC-4180-compatible parser. Handles quoted fields, embedded commas,
+   escaped double-quotes (""), and CRLF / LF line endings.                    */
 
+function parseCSVRows(text) {
+  const rows = [];
+  let row = [], field = "", inQ = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i], n = text[i + 1];
+    if (inQ) {
+      if (c === '"' && n === '"') { field += '"'; i++; }
+      else if (c === '"')         { inQ = false; }
+      else                        { field += c; }
+    } else {
+      if      (c === '"')                        { inQ = true; }
+      else if (c === ',')                        { row.push(field); field = ""; }
+      else if (c === '\n' || (c === '\r' && n === '\n')) {
+        if (c === '\r') i++;
+        row.push(field); field = "";
+        if (row.some(f => f !== "")) rows.push(row);
+        row = [];
+      } else { field += c; }
+    }
+  }
+  row.push(field);
+  if (row.some(f => f !== "")) rows.push(row);
+  return rows;
+}
+
+function csvToFaqs(text) {
+  const rows = parseCSVRows(text.trim());
+  if (rows.length < 1) return { ok: false, error: "File appears to be empty." };
+  const headers = rows[0].map(h => h.trim().toLowerCase());
+  const qIdx      = headers.indexOf("question");
+  const aIdx      = headers.indexOf("answer");
+  const pIdx      = headers.indexOf("pages");
+  const activeIdx = headers.indexOf("active");
+  if (qIdx === -1) return { ok: false, error: "CSV must have a 'question' column." };
+  if (aIdx === -1) return { ok: false, error: "CSV must have an 'answer' column." };
+
+  const imported = [], skipped = [];
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    const q = (row[qIdx] || "").trim();
+    const a = (row[aIdx] || "").trim();
+    if (!q) { skipped.push(`Row ${i + 1}: missing question — skipped`); continue; }
+    let pages = ["home"];
+    if (pIdx !== -1 && row[pIdx]) {
+      const parsed = row[pIdx].split(",").map(p => p.trim().toLowerCase()).filter(p => FAQ_PAGE_VALUES.includes(p));
+      if (parsed.length) pages = parsed;
+    }
+    const active = activeIdx !== -1 && row[activeIdx]
+      ? row[activeIdx].trim().toLowerCase() !== "false"
+      : true;
+    imported.push({ active, q, a, pages });
+  }
+  return { ok: true, imported, skipped };
+}
+
+function faqsToCsvString(faqs) {
+  const esc = s => `"${String(s ?? "").replace(/"/g, '""')}"`;
+  const header = "question,answer,pages,active";
+  const rows   = faqs.map(f => [
+    esc(f.q),
+    esc(f.a),
+    esc((f.pages || []).join(",")),
+    f.active !== false ? "true" : "false",
+  ].join(","));
+  return [header, ...rows].join("\r\n");
+}
+
+function downloadText(filename, text) {
+  const blob = new Blob([text], { type: "text/csv;charset=utf-8;" });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement("a");
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+}
+
+/* ── FaqsSection ──────────────────────────────────────────────────────────── */
+function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSavedAt }) {
+  const isSaving  = phase === "saving";
+  const csvRef    = React.useRef(null);
+  const [csvPreview, setCsvPreview] = useState(null); // { imported, skipped } | null
+  const [csvError,   setCsvError]   = useState("");
+
+  // ── CRUD helpers ────────────────────────────────────────────────────────
   function updateFaq(i, field, value) {
-    const next = faqs.slice();
-    next[i] = { ...next[i], [field]: value };
-    onChangeFaqs(next);
+    const next = faqs.slice(); next[i] = { ...next[i], [field]: value }; onChangeFaqs(next);
   }
   function moveFaq(i, dir) {
     const j = i + dir;
     if (j < 0 || j >= faqs.length) return;
-    const next = faqs.slice();
-    [next[i], next[j]] = [next[j], next[i]];
-    onChangeFaqs(next);
+    const next = faqs.slice(); [next[i], next[j]] = [next[j], next[i]]; onChangeFaqs(next);
   }
   function deleteFaq(i) {
     if (!confirm("Delete this FAQ?")) return;
     onChangeFaqs(faqs.filter((_, idx) => idx !== i));
   }
-  function addFaq() {
-    onChangeFaqs([...faqs, blankFaq()]);
+  function addFaq() { onChangeFaqs([...faqs, blankFaq()]); }
+
+  // ── CSV export ──────────────────────────────────────────────────────────
+  function handleExport() {
+    downloadText("faqs.csv", faqsToCsvString(faqs));
+  }
+  function handleTemplateDownload() {
+    const sample = [
+      { active: true,  q: "How does pricing work?", a: "Competitive auction across our buyer network.", pages: ["home"] },
+      { active: false, q: "Sample inactive FAQ",    a: "Set active to false to hide this FAQ.",          pages: ["home", "crypto"] },
+    ];
+    downloadText("faqs-template.csv", faqsToCsvString(sample));
+  }
+
+  // ── CSV import ──────────────────────────────────────────────────────────
+  function handleFileSelect(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (!file.name.endsWith(".csv") && file.type !== "text/csv") {
+      setCsvError("Please select a .csv file."); return;
+    }
+    setCsvError("");
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const result = csvToFaqs(ev.target.result);
+      if (!result.ok) { setCsvError(result.error); return; }
+      setCsvPreview(result);
+    };
+    reader.readAsText(file, "utf-8");
+    e.target.value = ""; // reset so same file can be re-selected
+  }
+
+  function applyImport(mode) {
+    if (!csvPreview) return;
+    onChangeFaqs(mode === "replace" ? csvPreview.imported : [...faqs, ...csvPreview.imported]);
+    setCsvPreview(null);
   }
 
   return (
     <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem) 0" }}>
 
-      {/* Section header */}
+      {/* ── Section header ────────────────────────────────────────────── */}
       <div style={{
-        display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap",
+        display: "flex", alignItems: "center", gap: "0.7rem", flexWrap: "wrap",
         marginBottom: "1rem", paddingBottom: "1rem",
         borderBottom: `2px solid ${LINE}`,
       }}>
@@ -804,6 +918,19 @@ function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSave
           {!isSaving && !dirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
           {!isSaving && !dirty && !lastSavedAt && "Up to date"}
         </div>
+
+        {/* CSV actions */}
+        <button onClick={handleTemplateDownload} style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.4rem 0.75rem" }}>
+          ↓ Template
+        </button>
+        <button onClick={handleExport} disabled={faqs.length === 0} style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.4rem 0.75rem", opacity: faqs.length === 0 ? 0.4 : 1 }}>
+          ↓ Export CSV
+        </button>
+        <button onClick={() => csvRef.current && csvRef.current.click()} style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.4rem 0.75rem" }}>
+          ↑ Import CSV
+        </button>
+        <input ref={csvRef} type="file" accept=".csv,text/csv" style={{ display: "none" }} onChange={handleFileSelect} />
+
         <button onClick={onSave} disabled={!dirty || isSaving} style={{
           ...btnPrimaryStyle,
           opacity: (!dirty || isSaving) ? 0.5 : 1,
@@ -822,13 +949,82 @@ function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSave
       <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1rem" }}>
         Use the <strong>Pages</strong> checkboxes to control which pages each FAQ appears on.
         Inactive FAQs are hidden everywhere. Order here = order on the page.
-        To add a hyperlink in an answer, use <code style={{ background: "#F4F5F7", padding: "0.1em 0.3em" }}>[link text](https://...)</code> syntax.
+        Use <code style={{ background: "#F4F5F7", padding: "0.1em 0.3em" }}>[link text](https://...)</code> in answers for hyperlinks.
       </p>
 
+      {/* ── CSV import preview ────────────────────────────────────────── */}
+      {csvError && (
+        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+          <span>{csvError}</span>
+          <button onClick={() => setCsvError("")} style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.2rem 0.55rem" }}>✕</button>
+        </div>
+      )}
+
+      {csvPreview && (
+        <div style={{
+          background: "#fff", border: `2px solid ${NEON}`,
+          padding: "1.2rem", marginBottom: "1.2rem",
+        }}>
+          <div style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: "0.6rem" }}>
+            CSV preview — {csvPreview.imported.length} row{csvPreview.imported.length !== 1 ? "s" : ""} ready to import
+          </div>
+
+          {/* Skipped rows */}
+          {csvPreview.skipped.length > 0 && (
+            <div style={{ marginBottom: "0.7rem" }}>
+              {csvPreview.skipped.map((msg, i) => (
+                <p key={i} style={{ color: "#b45309", fontSize: "0.78rem", margin: "0.15rem 0" }}>⚠ {msg}</p>
+              ))}
+            </div>
+          )}
+
+          {/* Row list */}
+          <div style={{ maxHeight: 220, overflowY: "auto", marginBottom: "0.9rem", border: `1px solid ${LINE}` }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.78rem" }}>
+              <thead>
+                <tr style={{ background: "#F4F5F7" }}>
+                  <th style={{ padding: "0.35rem 0.6rem", textAlign: "left", fontWeight: 700, color: INK_60, borderBottom: `1px solid ${LINE}`, width: "40%" }}>Question</th>
+                  <th style={{ padding: "0.35rem 0.6rem", textAlign: "left", fontWeight: 700, color: INK_60, borderBottom: `1px solid ${LINE}`, width: "35%" }}>Answer (preview)</th>
+                  <th style={{ padding: "0.35rem 0.6rem", textAlign: "left", fontWeight: 700, color: INK_60, borderBottom: `1px solid ${LINE}` }}>Pages</th>
+                  <th style={{ padding: "0.35rem 0.6rem", textAlign: "left", fontWeight: 700, color: INK_60, borderBottom: `1px solid ${LINE}` }}>Active</th>
+                </tr>
+              </thead>
+              <tbody>
+                {csvPreview.imported.map((f, i) => (
+                  <tr key={i} style={{ borderBottom: `1px solid ${LINE}` }}>
+                    <td style={{ padding: "0.3rem 0.6rem", verticalAlign: "top" }}>{f.q.slice(0, 60)}{f.q.length > 60 ? "…" : ""}</td>
+                    <td style={{ padding: "0.3rem 0.6rem", color: INK_60, verticalAlign: "top" }}>{f.a.slice(0, 60)}{f.a.length > 60 ? "…" : ""}</td>
+                    <td style={{ padding: "0.3rem 0.6rem", color: INK_60, verticalAlign: "top" }}>{(f.pages || []).join(", ") || "—"}</td>
+                    <td style={{ padding: "0.3rem 0.6rem", verticalAlign: "top" }}>{f.active ? "✓" : "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Import action buttons */}
+          <div style={{ display: "flex", gap: "0.65rem", flexWrap: "wrap", alignItems: "center" }}>
+            <button onClick={() => applyImport("append")} style={btnPrimaryStyle}>
+              + Append to existing ({faqs.length + csvPreview.imported.length} total)
+            </button>
+            <button
+              onClick={() => { if (confirm(`Replace all ${faqs.length} existing FAQs with the ${csvPreview.imported.length} imported rows?`)) applyImport("replace"); }}
+              style={{ ...btnStyle, color: "#c44", borderColor: "#f4caca" }}
+            >
+              Replace all ({csvPreview.imported.length} rows)
+            </button>
+            <button onClick={() => setCsvPreview(null)} style={btnStyle}>Cancel</button>
+            <span style={{ marginLeft: "auto", fontSize: "0.75rem", color: INK_60 }}>
+              Hit <strong>Save FAQs</strong> after importing to publish changes.
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* ── FAQ rows ──────────────────────────────────────────────────── */}
       <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "2.5rem" }}>
         <button onClick={addFaq} style={{
-          ...btnStyle,
-          background: "transparent", border: `1px dashed ${LINE}`,
+          ...btnStyle, background: "transparent", border: `1px dashed ${LINE}`,
           color: INK, padding: "0.7rem", fontWeight: 700,
         }}>
           + Add FAQ
@@ -837,33 +1033,23 @@ function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSave
         {faqs.map((faq, i) => (
           <div key={i} style={{
             background: "#fff", border: `1px solid ${faq.active ? LINE : "#e0e0e0"}`,
-            padding: "1.2rem",
-            opacity: faq.active ? 1 : 0.6,
+            padding: "1.2rem", opacity: faq.active ? 1 : 0.6,
           }}>
             {/* Row header */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.9rem", flexWrap: "wrap" }}>
-
-              {/* Active toggle */}
               <label style={{ display: "flex", alignItems: "center", gap: "0.45rem", cursor: "pointer", userSelect: "none" }}>
                 <input
-                  type="checkbox"
-                  checked={Boolean(faq.active)}
+                  type="checkbox" checked={Boolean(faq.active)}
                   onChange={e => updateFaq(i, "active", e.target.checked)}
                   style={{ accentColor: NEON, width: 16, height: 16 }}
                 />
-                <span style={{
-                  fontSize: "0.78rem", fontWeight: 700,
-                  color: faq.active ? "#1a7a1a" : INK_60,
-                  textTransform: "uppercase", letterSpacing: "0.06em",
-                }}>
+                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: faq.active ? "#1a7a1a" : INK_60, textTransform: "uppercase", letterSpacing: "0.06em" }}>
                   {faq.active ? "Active" : "Inactive"}
                 </span>
               </label>
-
               <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontWeight: 600, marginLeft: "0.5rem" }}>
                 {faq.q ? faq.q.slice(0, 80) + (faq.q.length > 80 ? "…" : "") : <em>No question set</em>}
               </div>
-
               <button onClick={() => moveFaq(i, -1)} disabled={i === 0}               style={iconBtnStyle(i === 0)}              title="Move up">↑</button>
               <button onClick={() => moveFaq(i, 1)}  disabled={i === faqs.length - 1} style={iconBtnStyle(i === faqs.length - 1)} title="Move down">↓</button>
               <button onClick={() => deleteFaq(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
@@ -871,57 +1057,34 @@ function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSave
 
             {/* Fields */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "0.7rem" }}>
-
-              {/* Question */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
                 Question
-                <input
-                  type="text"
-                  value={faq.q}
-                  onChange={e => updateFaq(i, "q", e.target.value)}
-                  placeholder="How does pricing work?"
-                  style={inputStyle}
-                />
+                <input type="text" value={faq.q} onChange={e => updateFaq(i, "q", e.target.value)} placeholder="How does pricing work?" style={inputStyle} />
               </label>
-
-              {/* Answer */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
                 Answer
                 <span style={{ fontWeight: 400, marginLeft: "0.4em" }}>
-                  — use{" "}
-                  <code style={{ background: "#F4F5F7", padding: "0.1em 0.3em", fontSize: "0.9em" }}>[text](url)</code>
-                  {" "}for links; blank line = new paragraph
+                  — <code style={{ background: "#F4F5F7", padding: "0.1em 0.3em", fontSize: "0.9em" }}>[text](url)</code> for links · blank line = new paragraph
                 </span>
                 <textarea
-                  value={faq.a}
-                  onChange={e => updateFaq(i, "a", e.target.value)}
+                  value={faq.a} onChange={e => updateFaq(i, "a", e.target.value)}
                   rows={4}
                   placeholder={"We run a competitive auction across our buyer network.\n\nLearn more at [our website](https://turnpagedigital.com)."}
                   style={inputStyle}
                 />
               </label>
-
-              {/* Pages */}
               <div>
-                <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.4rem" }}>
-                  Show on pages
-                </div>
+                <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.4rem" }}>Show on pages</div>
                 <div style={{ display: "flex", gap: "1.2rem", flexWrap: "wrap" }}>
                   {FAQ_PAGE_VALUES.map(v => {
                     const checked = Array.isArray(faq.pages) && faq.pages.includes(v);
                     return (
-                      <label key={v} style={{
-                        display: "flex", alignItems: "center", gap: "0.35rem",
-                        cursor: "pointer", fontSize: "0.88rem", color: INK, fontWeight: 400,
-                      }}>
+                      <label key={v} style={{ display: "flex", alignItems: "center", gap: "0.35rem", cursor: "pointer", fontSize: "0.88rem", color: INK, fontWeight: 400 }}>
                         <input
-                          type="checkbox"
-                          checked={checked}
+                          type="checkbox" checked={checked}
                           onChange={e => {
                             const cur = Array.isArray(faq.pages) ? faq.pages : [];
-                            updateFaq(i, "pages", e.target.checked
-                              ? [...cur, v]
-                              : cur.filter(x => x !== v));
+                            updateFaq(i, "pages", e.target.checked ? [...cur, v] : cur.filter(x => x !== v));
                           }}
                           style={{ accentColor: NEON, width: 14, height: 14 }}
                         />
@@ -937,15 +1100,11 @@ function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSave
 
         {faqs.length === 0 && (
           <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
-            No FAQs yet. Click "+ Add FAQ" to create one.
+            No FAQs yet. Click "+ Add FAQ" or import a CSV above.
           </div>
         )}
 
-        <button onClick={addFaq} style={{
-          ...btnStyle,
-          background: "transparent", border: `1px dashed ${LINE}`,
-          color: INK, padding: "1rem", fontWeight: 700,
-        }}>
+        <button onClick={addFaq} style={{ ...btnStyle, background: "transparent", border: `1px dashed ${LINE}`, color: INK, padding: "1rem", fontWeight: 700 }}>
           + Add FAQ
         </button>
       </div>
