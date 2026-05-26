@@ -78,7 +78,7 @@ const PAGE_LABELS = {
 const TYPE_OPTS = [
   { key: "all",     label: "All" },
   { key: "press",   label: "Press Features" },
-  { key: "article", label: "Articles" },
+  { key: "article", label: "Publications" },
   { key: "social",  label: "Social Posts" },
 ];
 
@@ -545,11 +545,12 @@ const NewsIcon = ({ size = 13, color = "currentColor" }) => (
   </svg>
 );
 
-/* Pen icon — for authored articles */
-const PenIcon = ({ size = 13, color = "currentColor" }) => (
+/* Quill icon — for authored publications */
+const QuillIcon = ({ size = 13, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+    <path d="M3 22l4-4"/>
+    <path d="M7 18C7 18 6 12 11 9C16 6 21 2 21 2C21 2 17 7 14 12C11 17 7 18 7 18Z"/>
   </svg>
 );
 
@@ -632,8 +633,8 @@ function TypeIndicator({ item }) {
     return (
       <div style={base}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
-          <PenIcon size={13} color={INK_60} />
-          <span style={{ ...labelStyle, color: INK_60 }}>By Andrew Glantz</span>
+          <QuillIcon size={13} color={INK_60} />
+          <span style={{ ...labelStyle, color: INK_60 }}>Publication</span>
         </div>
         {item.date && <span style={dateStyle}>{item.date}</span>}
       </div>
@@ -756,10 +757,21 @@ function UnifiedCard({ item }) {
           lineHeight: 1.3, letterSpacing: isSocial ? "0.05em" : "-0.01em",
           textTransform: isSocial ? "uppercase" : "none",
           color: isSocial ? INK_60 : INK,
-          margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}`,
+          margin: `0 0 ${isArticle ? "0.3rem" : item.excerpt ? "0.7rem" : "0"}`,
         }}>
           {item.headline}
         </h3>
+      )}
+
+      {/* ── Byline — publications only ──────────────────────────────── */}
+      {isArticle && (
+        <p style={{
+          fontFamily: FONT, fontSize: "0.72rem", fontWeight: 600,
+          letterSpacing: "0.08em", textTransform: "uppercase",
+          color: INK_60, margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}`,
+        }}>
+          By Andrew Glantz
+        </p>
       )}
 
       {/* ── Excerpt ─────────────────────────────────────────────────── */}
