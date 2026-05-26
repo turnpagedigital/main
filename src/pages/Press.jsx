@@ -789,7 +789,7 @@ function UnifiedCard({ item }) {
               overflow: "hidden", flexShrink: 0, marginTop: "0.05rem",
             }}>
               <img
-                src={bioData.photo_url || "/andrew.png"}
+                src={bioData.avatar_url || bioData.photo_url || "/andrew.png"}
                 alt="Andrew Glantz"
                 style={{
                   width: "100%", height: "100%",

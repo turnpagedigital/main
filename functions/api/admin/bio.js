@@ -42,13 +42,14 @@ export async function onRequestPut({ request, env }) {
   const current = await fetchFile(env);
   if (!current.ok) return jsonResponse({ ok: false, error: current.error }, 502);
 
-  // Preserve photo_url from the existing file (photo uploads go through /api/admin/photo)
-  const existingPhotoUrl = (current.data && typeof current.data.photo_url === "string")
-    ? current.data.photo_url : undefined;
+  // Preserve photo_url and avatar_url from the existing file (those go through /api/admin/photo and /api/admin/avatar)
+  const existingPhotoUrl  = (current.data && typeof current.data.photo_url  === "string") ? current.data.photo_url  : undefined;
+  const existingAvatarUrl = (current.data && typeof current.data.avatar_url === "string") ? current.data.avatar_url : undefined;
 
   const merged = {
     _comment:       (current.data && current.data._comment) || undefined,
     photo_url:      existingPhotoUrl,
+    avatar_url:     existingAvatarUrl,
     tagline_before: String(bio.tagline_before ?? ""),
     tagline_accent: String(bio.tagline_accent ?? ""),
     tagline_after:  String(bio.tagline_after  ?? ""),

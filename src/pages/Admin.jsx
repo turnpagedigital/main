@@ -710,51 +710,246 @@ function DealRow({ index, deal, onChange, onMoveUp, onMoveDown, onDelete, isFirs
   );
 }
 
+/* ── CropTool ───────────────────────────────────────────────────────────────
+   A simple drag-to-pan + zoom-slider crop widget.
+   - src: data URL of the image to crop
+   - circular: if true, the crop viewport is shown as a circle (for avatars)
+   - onApply(base64png): called with the cropped PNG as base64 (no data: prefix)
+   - onCancel(): called when user clicks Cancel
+*/
+const CROP_SIZE   = 280;   // viewport display px
+const OUTPUT_SIZE = 400;   // exported image px
+
+function CropTool({ src, circular, onApply, onCancel }) {
+  const imgRef  = React.useRef(null);
+  const [zoom,   setZoomState] = useState(1);
+  const [offset, setOffset]    = useState({ x: 0, y: 0 }); // img top-left in container
+  const dragRef = React.useRef(null); // { startX, startY, origX, origY }
+
+  // After image loads, centre it in the viewport
+  function handleLoad() {
+    const img = imgRef.current;
+    if (!img || !img.naturalWidth) return;
+    const h = CROP_SIZE * img.naturalHeight / img.naturalWidth;
+    setOffset({ x: 0, y: (CROP_SIZE - h) / 2 });
+    setZoomState(1);
+  }
+
+  // Zoom while keeping the viewport centre anchored to the same image pixel
+  function handleZoom(newZoom) {
+    const ratio = newZoom / zoom;
+    setOffset(prev => ({
+      x: CROP_SIZE / 2 - (CROP_SIZE / 2 - prev.x) * ratio,
+      y: CROP_SIZE / 2 - (CROP_SIZE / 2 - prev.y) * ratio,
+    }));
+    setZoomState(newZoom);
+  }
+
+  // Pointer-capture drag (works for mouse + touch, stays captured outside element)
+  function handlePointerDown(e) {
+    e.preventDefault();
+    e.currentTarget.setPointerCapture(e.pointerId);
+    dragRef.current = { startX: e.clientX, startY: e.clientY, origX: offset.x, origY: offset.y };
+  }
+  function handlePointerMove(e) {
+    if (!dragRef.current) return;
+    const dx = e.clientX - dragRef.current.startX;
+    const dy = e.clientY - dragRef.current.startY;
+    setOffset({ x: dragRef.current.origX + dx, y: dragRef.current.origY + dy });
+  }
+  function handlePointerUp(e) {
+    e.currentTarget.releasePointerCapture(e.pointerId);
+    dragRef.current = null;
+  }
+
+  function handleApply() {
+    const img = imgRef.current;
+    if (!img || !img.naturalWidth) return;
+
+    const nw = img.naturalWidth;
+    const nh = img.naturalHeight;
+    const displayW = CROP_SIZE * zoom;           // px wide the img is drawn
+    const scale    = nw / displayW;              // natural px per display px
+
+    // Crop window top-left in display-image coords
+    const cropDX = -offset.x;
+    const cropDY = -offset.y;
+
+    // Clamp to image bounds
+    const srcX = Math.max(0, cropDX * scale);
+    const srcY = Math.max(0, cropDY * scale);
+    const srcW = Math.min(CROP_SIZE * scale, nw - srcX);
+    const srcH = Math.min(CROP_SIZE * scale, nh - srcY);
+
+    const canvas = document.createElement("canvas");
+    canvas.width  = OUTPUT_SIZE;
+    canvas.height = OUTPUT_SIZE;
+    const ctx = canvas.getContext("2d");
+
+    if (circular) {
+      ctx.beginPath();
+      ctx.arc(OUTPUT_SIZE / 2, OUTPUT_SIZE / 2, OUTPUT_SIZE / 2, 0, Math.PI * 2);
+      ctx.clip();
+    }
+
+    ctx.drawImage(img, srcX, srcY, srcW, srcH, 0, 0, OUTPUT_SIZE, OUTPUT_SIZE);
+    onApply(canvas.toDataURL("image/png").split(",")[1]);
+  }
+
+  return (
+    <div>
+      {/* Viewport */}
+      <div
+        style={{
+          width: CROP_SIZE, height: CROP_SIZE,
+          overflow: "hidden", position: "relative",
+          cursor: "move",
+          background: "#888",
+          borderRadius: circular ? "50%" : 0,
+          border: `2px solid ${LINE}`,
+          touchAction: "none",
+          flexShrink: 0,
+        }}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+      >
+        <img
+          ref={imgRef}
+          src={src}
+          onLoad={handleLoad}
+          draggable={false}
+          style={{
+            position: "absolute",
+            width: `${zoom * 100}%`,
+            height: "auto",
+            left: offset.x,
+            top: offset.y,
+            display: "block",
+            pointerEvents: "none",
+            userSelect: "none",
+          }}
+        />
+        {/* Guide overlay */}
+        {!circular && (
+          <div style={{
+            position: "absolute", inset: 0,
+            border: "1px dashed rgba(255,255,255,0.5)",
+            pointerEvents: "none",
+          }} />
+        )}
+      </div>
+
+      {/* Zoom */}
+      <div style={{ marginTop: "0.6rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+        <span style={{ fontSize: "0.72rem", color: INK_60, fontWeight: 600, flexShrink: 0 }}>Zoom</span>
+        <input
+          type="range" min={1} max={4} step={0.01} value={zoom}
+          onChange={e => handleZoom(parseFloat(e.target.value))}
+          style={{ flex: 1, accentColor: NEON, cursor: "pointer" }}
+        />
+        <span style={{ fontSize: "0.72rem", color: INK_60, minWidth: "2.5rem" }}>{zoom.toFixed(2)}×</span>
+      </div>
+
+      <p style={{ fontSize: "0.72rem", color: INK_60, margin: "0.3rem 0 0.6rem" }}>
+        Drag to reposition · scroll slider to zoom
+      </p>
+
+      <div style={{ display: "flex", gap: "0.5rem" }}>
+        <button type="button" onClick={handleApply} style={btnPrimaryStyle}>Apply Crop</button>
+        <button type="button" onClick={onCancel} style={btnStyle}>Cancel</button>
+      </div>
+    </div>
+  );
+}
+
 function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt }) {
   const isSaving = phase === "saving";
   const paragraphs = bio.paragraphs || [];
 
-  // Photo upload state (independent of bio text)
-  const [photoFile,     setPhotoFile]     = useState(null);   // File object selected by user
-  const [photoPreview,  setPhotoPreview]  = useState(null);   // data URL for new-photo preview
-  const [photoPhase,    setPhotoPhase]    = useState("idle"); // idle | uploading | done | error
-  const [photoError,    setPhotoError]    = useState("");
-  const [photoCacheBust, setPhotoCacheBust] = useState("");   // appended to current-photo URL after upload
+  // ── Profile photo upload + crop state ──────────────────────────────────────
+  // phases: idle | cropping | cropped | uploading | done | error
+  const [photoRaw,       setPhotoRaw]       = useState(null);  // raw data URL → shown in CropTool
+  const [photoCropped,   setPhotoCropped]   = useState(null);  // base64 PNG from CropTool
+  const [photoPhase,     setPhotoPhase]     = useState("idle");
+  const [photoError,     setPhotoError]     = useState("");
+  const [photoCacheBust, setPhotoCacheBust] = useState("");
 
   function handlePhotoChange(e) {
     const file = e.target.files[0];
     if (!file) return;
     if (!file.type.startsWith("image/")) { setPhotoError("Please select an image file."); return; }
-    if (file.size > 4.5 * 1024 * 1024) { setPhotoError("Image must be under 4.5 MB."); return; }
-    setPhotoFile(file);
+    if (file.size > 10 * 1024 * 1024) { setPhotoError("Image must be under 10 MB."); return; }
     setPhotoError("");
-    setPhotoPhase("idle");
     const reader = new FileReader();
-    reader.onload = ev => setPhotoPreview(ev.target.result);
+    reader.onload = ev => { setPhotoRaw(ev.target.result); setPhotoPhase("cropping"); };
     reader.readAsDataURL(file);
+    e.target.value = "";   // reset so same file can be re-selected
   }
 
   async function handlePhotoUpload() {
-    if (!photoFile || !photoPreview) return;
+    if (!photoCropped) return;
     setPhotoPhase("uploading");
     setPhotoError("");
     try {
-      const base64 = photoPreview.split(",")[1]; // strip data:<mime>;base64, prefix
       const r = await fetch("/api/admin/photo", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ content: base64, mime_type: photoFile.type }),
+        body: JSON.stringify({ content: photoCropped, mime_type: "image/png" }),
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || "Upload failed");
       setPhotoPhase("done");
-      setPhotoFile(null);
-      setPhotoPreview(null);
+      setPhotoCropped(null);
+      setPhotoRaw(null);
       setPhotoCacheBust(`?v=${Date.now()}`);
     } catch (e) {
       setPhotoError(e.message);
       setPhotoPhase("error");
+    }
+  }
+
+  // ── Avatar upload + crop state ───────────────────────────────────────────
+  // The avatar is a separate circular crop used in social post cards
+  const [avatarRaw,       setAvatarRaw]       = useState(null);
+  const [avatarCropped,   setAvatarCropped]   = useState(null);
+  const [avatarPhase,     setAvatarPhase]     = useState("idle");
+  const [avatarError,     setAvatarError]     = useState("");
+  const [avatarCacheBust, setAvatarCacheBust] = useState("");
+
+  function handleAvatarChange(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (!file.type.startsWith("image/")) { setAvatarError("Please select an image file."); return; }
+    if (file.size > 10 * 1024 * 1024) { setAvatarError("Image must be under 10 MB."); return; }
+    setAvatarError("");
+    const reader = new FileReader();
+    reader.onload = ev => { setAvatarRaw(ev.target.result); setAvatarPhase("cropping"); };
+    reader.readAsDataURL(file);
+    e.target.value = "";
+  }
+
+  async function handleAvatarUpload() {
+    if (!avatarCropped) return;
+    setAvatarPhase("uploading");
+    setAvatarError("");
+    try {
+      const r = await fetch("/api/admin/avatar", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ content: avatarCropped, mime_type: "image/png" }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Upload failed");
+      setAvatarPhase("done");
+      setAvatarCropped(null);
+      setAvatarRaw(null);
+      setAvatarCacheBust(`?v=${Date.now()}`);
+    } catch (e) {
+      setAvatarError(e.message);
+      setAvatarPhase("error");
     }
   }
 
@@ -832,66 +1027,206 @@ function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt
         </div>
       )}
 
-      {/* Photo */}
+      {/* ── Profile Photo ─────────────────────────────────────────────────── */}
       <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1rem" }}>
         <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.8rem" }}>
           Profile Photo
         </div>
-        <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", alignItems: "flex-start" }}>
 
-          {/* Current photo */}
+        {photoPhase === "cropping" ? (
+          /* ── Crop step ── */
           <div>
-            <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.4rem", fontWeight: 600 }}>Current</p>
-            <img
-              src={`/andrew.png${photoCacheBust}`}
-              alt="Andrew Glantz"
-              style={{ width: 90, height: 112, objectFit: "cover", border: `1px solid ${LINE}`, filter: "grayscale(100%)", display: "block" }}
+            <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.7rem" }}>
+              Drag to reposition · use the slider to zoom · click <strong>Apply Crop</strong> when ready.
+            </p>
+            <CropTool
+              src={photoRaw}
+              circular={false}
+              onApply={b64 => { setPhotoCropped(b64); setPhotoPhase("cropped"); }}
+              onCancel={() => { setPhotoRaw(null); setPhotoPhase("idle"); }}
             />
           </div>
+        ) : (
+          /* ── Idle / cropped / uploading / done ── */
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", alignItems: "flex-start" }}>
 
-          {/* Upload controls */}
-          <div style={{ flex: 1, minWidth: 240 }}>
-            <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.5rem" }}>
-              Replace with a new photo — JPEG or PNG, max 4.5 MB:
+            {/* Current photo */}
+            <div>
+              <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.4rem", fontWeight: 600 }}>Current</p>
+              <img
+                src={`/andrew.png${photoCacheBust}`}
+                alt="Andrew Glantz"
+                style={{ width: 90, height: 112, objectFit: "cover", border: `1px solid ${LINE}`, filter: "grayscale(100%)", display: "block" }}
+              />
+            </div>
+
+            {/* Upload controls */}
+            <div style={{ flex: 1, minWidth: 240 }}>
+              {photoCropped ? (
+                <div style={{ marginBottom: "0.65rem" }}>
+                  <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.3rem", fontWeight: 600 }}>
+                    Cropped preview
+                  </p>
+                  <img
+                    src={`data:image/png;base64,${photoCropped}`}
+                    alt="cropped preview"
+                    style={{ width: 90, height: 90, objectFit: "cover", border: `1px solid ${LINE}`, display: "block" }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => { setPhotoPhase("cropping"); }}
+                    style={{ ...btnStyle, fontSize: "0.75rem", padding: "0.25rem 0.6rem", marginTop: "0.4rem" }}
+                  >
+                    Re-crop
+                  </button>
+                </div>
+              ) : (
+                <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.5rem" }}>
+                  Replace with a new photo — JPEG, PNG, or WebP, max 10 MB:
+                </p>
+              )}
+
+              {!photoCropped && (
+                <input
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  onChange={handlePhotoChange}
+                  style={{ fontSize: "0.85rem", display: "block", marginBottom: "0.65rem", fontFamily: FONT }}
+                />
+              )}
+
+              {photoError && (
+                <p style={{ color: "#c44", fontSize: "0.82rem", marginBottom: "0.5rem" }}>{photoError}</p>
+              )}
+              {photoPhase === "done" && (
+                <p style={{ color: "#2a7a2a", fontSize: "0.82rem", marginBottom: "0.5rem" }}>
+                  ✓ Uploaded — live on the site in ~1–2 min.
+                </p>
+              )}
+
+              {photoCropped && (
+                <button
+                  type="button"
+                  onClick={handlePhotoUpload}
+                  disabled={photoPhase === "uploading"}
+                  style={{
+                    ...btnPrimaryStyle,
+                    opacity: photoPhase === "uploading" ? 0.5 : 1,
+                    cursor: photoPhase === "uploading" ? "default" : "pointer",
+                  }}
+                >
+                  {photoPhase === "uploading" ? "Uploading…" : "Upload Photo"}
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* ── Avatar (circular crop — used in social post cards) ────────────── */}
+      <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1rem" }}>
+        <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.3rem" }}>
+          Avatar <span style={{ fontWeight: 400, color: INK_60 }}>(circle crop)</span>
+        </div>
+        <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.8rem" }}>
+          This cropped headshot appears in the social post cards on the Press page.
+          Upload a separate tightly-cropped face photo, or re-use the profile photo.
+        </p>
+
+        {avatarPhase === "cropping" ? (
+          <div>
+            <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.7rem" }}>
+              Centre your face in the circle · drag to reposition · zoom in as needed.
             </p>
-            <input
-              type="file"
-              accept="image/jpeg,image/png,image/webp"
-              onChange={handlePhotoChange}
-              style={{ fontSize: "0.85rem", display: "block", marginBottom: "0.65rem", fontFamily: FONT }}
+            <CropTool
+              src={avatarRaw}
+              circular={true}
+              onApply={b64 => { setAvatarCropped(b64); setAvatarPhase("cropped"); }}
+              onCancel={() => { setAvatarRaw(null); setAvatarPhase("idle"); }}
             />
-            {photoPreview && (
-              <div style={{ marginBottom: "0.65rem" }}>
-                <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.3rem", fontWeight: 600 }}>Preview</p>
+          </div>
+        ) : (
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", alignItems: "flex-start" }}>
+
+            {/* Current avatar */}
+            <div>
+              <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.4rem", fontWeight: 600 }}>Current</p>
+              <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", border: `1px solid ${LINE}`, background: "#eee" }}>
                 <img
-                  src={photoPreview}
-                  alt="preview"
-                  style={{ width: 90, height: 112, objectFit: "cover", border: `1px solid ${LINE}`, display: "block" }}
+                  src={`/andrew-avatar.png${avatarCacheBust}`}
+                  alt="avatar"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  onError={e => { e.currentTarget.style.display = "none"; }}
                 />
               </div>
-            )}
-            {photoError && (
-              <p style={{ color: "#c44", fontSize: "0.82rem", marginBottom: "0.5rem" }}>{photoError}</p>
-            )}
-            {photoPhase === "done" && (
-              <p style={{ color: "#2a7a2a", fontSize: "0.82rem", marginBottom: "0.5rem" }}>
-                ✓ Uploaded — live on the site in ~1–2 min.
+              <p style={{ fontSize: "0.65rem", color: INK_60, marginTop: "0.3rem", maxWidth: 72 }}>
+                (blank until first upload)
               </p>
-            )}
-            <button
-              type="button"
-              onClick={handlePhotoUpload}
-              disabled={!photoFile || photoPhase === "uploading"}
-              style={{
-                ...btnPrimaryStyle,
-                opacity: (!photoFile || photoPhase === "uploading") ? 0.5 : 1,
-                cursor: (!photoFile || photoPhase === "uploading") ? "default" : "pointer",
-              }}
-            >
-              {photoPhase === "uploading" ? "Uploading…" : "Upload Photo"}
-            </button>
+            </div>
+
+            {/* Upload controls */}
+            <div style={{ flex: 1, minWidth: 240 }}>
+              {avatarCropped ? (
+                <div style={{ marginBottom: "0.65rem" }}>
+                  <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.3rem", fontWeight: 600 }}>
+                    Cropped preview
+                  </p>
+                  <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", border: `1px solid ${LINE}` }}>
+                    <img
+                      src={`data:image/png;base64,${avatarCropped}`}
+                      alt="avatar preview"
+                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => { setAvatarPhase("cropping"); }}
+                    style={{ ...btnStyle, fontSize: "0.75rem", padding: "0.25rem 0.6rem", marginTop: "0.4rem" }}
+                  >
+                    Re-crop
+                  </button>
+                </div>
+              ) : (
+                <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.5rem" }}>
+                  Upload a photo — JPEG, PNG, or WebP, max 10 MB:
+                </p>
+              )}
+
+              {!avatarCropped && (
+                <input
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  onChange={handleAvatarChange}
+                  style={{ fontSize: "0.85rem", display: "block", marginBottom: "0.65rem", fontFamily: FONT }}
+                />
+              )}
+
+              {avatarError && (
+                <p style={{ color: "#c44", fontSize: "0.82rem", marginBottom: "0.5rem" }}>{avatarError}</p>
+              )}
+              {avatarPhase === "done" && (
+                <p style={{ color: "#2a7a2a", fontSize: "0.82rem", marginBottom: "0.5rem" }}>
+                  ✓ Avatar uploaded — live in ~1–2 min.
+                </p>
+              )}
+
+              {avatarCropped && (
+                <button
+                  type="button"
+                  onClick={handleAvatarUpload}
+                  disabled={avatarPhase === "uploading"}
+                  style={{
+                    ...btnPrimaryStyle,
+                    opacity: avatarPhase === "uploading" ? 0.5 : 1,
+                    cursor: avatarPhase === "uploading" ? "default" : "pointer",
+                  }}
+                >
+                  {avatarPhase === "uploading" ? "Uploading…" : "Upload Avatar"}
+                </button>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Tagline */}
