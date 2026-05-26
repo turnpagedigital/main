@@ -4,7 +4,7 @@
 
 *A Turnpage Digital Markets field guide for importers sitting on a federal refund right and deciding what to do with it.*
 
-When the Supreme Court struck down the IEEPA tariff regime in *Learning Resources, Inc. v. Trump* on February 20, 2026, it converted years of duty deposits into the largest involuntary federal receivable in modern customs history — by industry estimate, **over $175 billion across the importing community.** What it did not do is hand any importer cash. Between the SCOTUS opinion and a wire on Friday sits a filing process, a buyer's underwriting screen, and a closing set. This piece walks through all three, from the seller's chair.
+When the Supreme Court struck down the IEEPA tariff regime in *Learning Resources, Inc. v. Trump* on February 20, 2026, it converted years of duty deposits into the largest involuntary federal receivable in modern customs history — by industry estimate, **over $166 billion across the importing community.** What it did not do is hand any importer cash. Between the SCOTUS opinion and a wire on Friday sits a filing process, a buyer's underwriting screen, and a closing set. This piece walks through all three, from the seller's chair.
 
 The goal is simple: monetize a refund you have already earned, on a timeline you control, without giving away the upside or absorbing risks that belong to a buyer.
 
