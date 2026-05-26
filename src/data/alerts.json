@@ -3,11 +3,29 @@
   "alerts": [
     {
       "active": true,
-      "pill": "Latest",
+      "pill": "LinkedIn",
       "text": "Section 122 — What does \"balance of payments deficit\" really mean?",
       "linkText": "Read the post",
       "href": "https://www.linkedin.com/posts/andrewglantz_ieepa-trade-tariffs-share-7458543859929673729-RqAA/",
-      "pages": ["home", "ai-copyright", "crypto", "press", "briefings", "contact"]
+      "pages": [
+        "home",
+        "press",
+        "contact"
+      ]
+    },
+    {
+      "active": true,
+      "pill": "Latest",
+      "text": "Bartz v. Anthropic Fairness Hearing",
+      "linkText": "Read the briefing",
+      "href": "",
+      "pages": [
+        "home",
+        "ai-copyright",
+        "press",
+        "briefings",
+        "contact"
+      ]
     }
   ]
 }
