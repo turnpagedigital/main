@@ -254,7 +254,10 @@ export default function Press() {
               <div style={{ display: "flex", flexDirection: "column", gap: "0.9rem", borderLeft: "1px solid rgba(10,10,10,0.18)", paddingLeft: "1.75rem" }}>
                 {/* Attribution row */}
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <PlatformIcon platform={latest.outlet} size={14} color={accent} />
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={accent}
+                    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
                   <span style={{
                     fontFamily: FONT, fontSize: "0.68rem", fontWeight: 700,
                     letterSpacing: "0.14em", textTransform: "uppercase",
@@ -917,12 +920,6 @@ function UnifiedCard({ item }) {
           marginTop: "0.85rem", paddingTop: "0.75rem",
           borderTop: `1px solid ${LINE}`,
         }}>
-          {/* Speech-bubble icon */}
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-            stroke={getPlatformAccent(item.outlet)} strokeWidth="2.2"
-            strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
           <span style={{
             fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
             color: getPlatformAccent(item.outlet),
