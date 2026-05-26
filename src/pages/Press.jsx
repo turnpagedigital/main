@@ -131,9 +131,10 @@ const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
   dateSort: parseDate(d.date),
   headline: d.piece_title || "",
   excerpt:  d.excerpt || null,
-  href:     d.url || null,
-  pages:    Array.isArray(d.pages) ? d.pages : [],
-  mediaUrl: d.media_url || null,
+  href:      d.url || null,
+  pages:     Array.isArray(d.pages) ? d.pages : [],
+  mediaUrl:  d.media_url || null,
+  isPodcast: (d.type || "").toLowerCase() === "podcast",
 }));
 
 /* ── Derived filter option lists (computed once from static data) ─────────── */
@@ -545,12 +546,27 @@ const NewsIcon = ({ size = 13, color = "currentColor" }) => (
   </svg>
 );
 
-/* Quill icon — for authored publications */
+/* Quill / feather icon — for authored publications */
 const QuillIcon = ({ size = 13, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-    <path d="M3 22l4-4"/>
-    <path d="M7 18C7 18 6 12 11 9C16 6 21 2 21 2C21 2 17 7 14 12C11 17 7 18 7 18Z"/>
+    {/* Feather body */}
+    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+    {/* Shaft running through */}
+    <line x1="16" y1="8" x2="2" y2="22"/>
+    {/* Barb */}
+    <line x1="17.5" y1="15" x2="9" y2="15"/>
+  </svg>
+);
+
+/* Microphone icon — for podcasts */
+const MicIcon = ({ size = 13, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+    <line x1="12" y1="19" x2="12" y2="23"/>
+    <line x1="8" y1="23" x2="16" y2="23"/>
   </svg>
 );
 
@@ -614,6 +630,18 @@ function TypeIndicator({ item }) {
     fontFamily: FONT, fontSize: "0.68rem",
     color: INK_60, letterSpacing: "0.02em",
   };
+
+  if (item.isPodcast) {
+    return (
+      <div style={base}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
+          <MicIcon size={13} color={INK_60} />
+          <span style={{ ...labelStyle, color: INK_60 }}>Podcast</span>
+        </div>
+        {item.date && <span style={dateStyle}>{item.date}</span>}
+      </div>
+    );
+  }
 
   if (item.mediaType === "social") {
     const accent = getPlatformAccent(item.outlet);
