@@ -2,17 +2,18 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
-      "type": "social post",
-      "author": "Andrew",
-      "date": "April 25, 2026",
-      "url": "",
-      "logo_url": "",
-      "excerpt": "There’s a lot of talk about the upcoming April 20th opening date for the CAPE portal, which will allow importers to submit declarations and, in theory, within 60-90 days after approval, receive refund payments via ACH (I posted separately here about the likelihood that timeline gets blown out significantly —> https://lnkd.in/erGNJJpU). \n\nI’m seeing a lot of warnings from folks about the April 20th CAPE deadline so wanted to clarify here that the April 20th date is merely the starting gate, not the finish. It’s a milestone for payment readiness but not a cut off. It’s likely that importers that register early will be first in line to receive checks, and it’s important not to lose track of liquidation dates, but no one should be panicking here. \n\nIf you’re an importer looking for help registering for the ACE portal, submitting declarations in CAPE, understanding your refund eligibility or interested in exploring an early payment, get in touch! \n\nRewind Tariffs is offering refund holders competitive rates and a streamlined closing process. Check us out. www.rewindtariffs.com",
-      "publication_title": "LinkedIn",
-      "piece_title": "🚢 IEEPA Tariffs — myth busting ",
-      "media_url": "https://media.licdn.com/dms/image/v2/D4E22AQEbKNtJxeWVbQ/feedshare-shrink_800/B4EZ2diwCYJAAg-/0/1776464626065?e=1781136000&v=beta&t=j5prKV5z1JyKHTzLIBasRBkaWpMJdzNTiUbuDwCp7Ec",
+      "type": "article",
+      "author": "Other",
+      "date": "December 20, 2023",
+      "url": "https://www.nytimes.com/2023/12/20/technology/crypto-trading-ftx-bankruptcy.html",
+      "logo_url": "https://en.wikipedia.org/wiki/File:NewYorkTimes.svg",
+      "excerpt": "Andrew Glantz quoted on trading volume in Genesis and FTX.",
+      "publication_title": "The New York Times",
+      "piece_title": "The Hot New Market in Crypto? Trading FTX's Carcass.",
+      "media_url": "",
       "pages": [
-        "tariffs"
+        "crypto",
+        "bankruptcy"
       ]
     },
     {
@@ -54,6 +55,20 @@
       "piece_title": "The largest copyright settlement in U.S. history just had its day in court.",
       "media_url": "",
       "pages": []
+    },
+    {
+      "type": "social post",
+      "author": "Andrew",
+      "date": "April 25, 2026",
+      "url": "",
+      "logo_url": "",
+      "excerpt": "There’s a lot of talk about the upcoming April 20th opening date for the CAPE portal, which will allow importers to submit declarations and, in theory, within 60-90 days after approval, receive refund payments via ACH (I posted separately here about the likelihood that timeline gets blown out significantly —> https://lnkd.in/erGNJJpU). \n\nI’m seeing a lot of warnings from folks about the April 20th CAPE deadline so wanted to clarify here that the April 20th date is merely the starting gate, not the finish. It’s a milestone for payment readiness but not a cut off. It’s likely that importers that register early will be first in line to receive checks, and it’s important not to lose track of liquidation dates, but no one should be panicking here. \n\nIf you’re an importer looking for help registering for the ACE portal, submitting declarations in CAPE, understanding your refund eligibility or interested in exploring an early payment, get in touch! \n\nRewind Tariffs is offering refund holders competitive rates and a streamlined closing process. Check us out. www.rewindtariffs.com",
+      "publication_title": "LinkedIn",
+      "piece_title": "🚢 IEEPA Tariffs — myth busting ",
+      "media_url": "https://media.licdn.com/dms/image/v2/D4E22AQEbKNtJxeWVbQ/feedshare-shrink_800/B4EZ2diwCYJAAg-/0/1776464626065?e=1781136000&v=beta&t=j5prKV5z1JyKHTzLIBasRBkaWpMJdzNTiUbuDwCp7Ec",
+      "pages": [
+        "tariffs"
+      ]
     },
     {
       "type": "social post",
