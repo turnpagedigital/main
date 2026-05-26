@@ -675,7 +675,7 @@ function TypeIndicator({ item }) {
     <div style={base}>
       <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
         <NewsIcon size={13} color={INK_60} />
-        <span style={{ ...labelStyle, color: INK_60 }}>Press Feature</span>
+        <span style={{ ...labelStyle, color: INK_60 }}>Press</span>
       </div>
       {item.date && <span style={dateStyle}>{item.date}</span>}
     </div>
