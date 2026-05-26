@@ -407,9 +407,9 @@ function SituationsSection() {
                   {s.body}
                 </p>
 
-                {/* Row 2 — expandable details, spans all columns */}
+                {/* Row 2 — expandable details, aligned to title column */}
                 <div style={{
-                  gridColumn: "1 / -1",
+                  gridColumn: "2 / -1",
                   overflow: "hidden",
                   maxHeight: isOpen ? "300px" : "0",
                   transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
@@ -419,7 +419,9 @@ function SituationsSection() {
                     fontSize: "clamp(0.9rem, 1.1vw, 1.05rem)",
                     color: INK_40, lineHeight: 1.7,
                     margin: 0,
+                    paddingTop: "clamp(0.5rem, 1vw, 0.75rem)",
                     paddingBottom: ROW_PAD,
+                    paddingRight: "clamp(1rem, 4vw, 4rem)",
                   }}>
                     {s.details}
                   </p>
