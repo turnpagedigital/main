@@ -5,11 +5,16 @@
   "tagline_before": "A",
   "tagline_accent": "singular force",
   "tagline_after": "in the claims market for the toughest situations that demand tenacity, creativity, flexibility, and finesse.",
-  "media_logos": [],
   "paragraphs": [
     "Andrew has spent the better part of his career helping claimants navigate complex proceedings and accelerate recovery efforts. Trained as a bankruptcy lawyer, Andrew has deep expertise in workouts, chapter 11 restructurings, special situations investments and asset recovery strategies — seamlessly bridging traditional and digital assets.",
     "Prior to founding Turnpage, Andrew built one of the leading marketplaces for trading bankruptcy claims, establishing deep relationships across the institutional buyer network that he draws on today. Andrew has traded or advised on billions of dollars in transactions — giving clients access to pricing, counterparties and execution that is difficult to replicate. ",
     "Andrew draws on his training as a mediator to uncover the interests that drive each party to a transaction. This lays the foundation to reallocate risk creatively and close gaps in negotiation that, on first blush, appear too wide to bridge.  ",
     "Andrew has been quoted or featured in numerous media outlets and professional publications including the ABI Journal, the BBC, Bloomberg, Business Insider, CoinDesk, Grant's Interest Rate Observer, NPR's Planet Money, The New York Times, and the Wall Street Journal."
+  ],
+  "media_logos": [
+    {
+      "name": "Grant's Interest Rate Reporter",
+      "url": ""
+    }
   ]
 }
