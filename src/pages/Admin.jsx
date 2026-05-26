@@ -1504,62 +1504,64 @@ function BioSection({ bio, onChangeBio, onSave, dirty, phase, error, lastSavedAt
             {/* Upload controls */}
             <div style={{ flex: 1, minWidth: 240 }}>
               {avatarCropped ? (
-                <div style={{ marginBottom: "0.65rem" }}>
-                  <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.3rem", fontWeight: 600 }}>
+                /* ── Post-crop: preview + action buttons side-by-side ── */
+                <div>
+                  <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.4rem", fontWeight: 600 }}>
                     Cropped preview
                   </p>
-                  <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", border: `1px solid ${LINE}` }}>
-                    <img
-                      src={`data:image/png;base64,${avatarCropped}`}
-                      alt="avatar preview"
-                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                    />
+                  <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap" }}>
+                    <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", border: `1px solid ${LINE}`, flexShrink: 0 }}>
+                      <img
+                        src={`data:image/png;base64,${avatarCropped}`}
+                        alt="avatar preview"
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+                      <button
+                        type="button"
+                        onClick={handleAvatarUpload}
+                        disabled={avatarPhase === "uploading"}
+                        style={{
+                          ...btnPrimaryStyle,
+                          opacity: avatarPhase === "uploading" ? 0.5 : 1,
+                          cursor: avatarPhase === "uploading" ? "default" : "pointer",
+                        }}
+                      >
+                        {avatarPhase === "uploading" ? "Uploading…" : "Upload Avatar"}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setAvatarPhase("cropping")}
+                        style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.7rem" }}
+                      >
+                        Re-crop
+                      </button>
+                    </div>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => { setAvatarPhase("cropping"); }}
-                    style={{ ...btnStyle, fontSize: "0.75rem", padding: "0.25rem 0.6rem", marginTop: "0.4rem" }}
-                  >
-                    Re-crop
-                  </button>
                 </div>
               ) : (
-                <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.5rem" }}>
-                  Upload a photo — JPEG, PNG, or WebP, max 10 MB:
-                </p>
-              )}
-
-              {!avatarCropped && (
-                <input
-                  type="file"
-                  accept="image/jpeg,image/png,image/webp"
-                  onChange={handleAvatarChange}
-                  style={{ fontSize: "0.85rem", display: "block", marginBottom: "0.65rem", fontFamily: FONT }}
-                />
+                /* ── Idle: file picker ── */
+                <div>
+                  <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.5rem" }}>
+                    Upload a photo — JPEG, PNG, or WebP, max 10 MB:
+                  </p>
+                  <input
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp"
+                    onChange={handleAvatarChange}
+                    style={{ fontSize: "0.85rem", display: "block", marginBottom: "0.65rem", fontFamily: FONT }}
+                  />
+                </div>
               )}
 
               {avatarError && (
-                <p style={{ color: "#c44", fontSize: "0.82rem", marginBottom: "0.5rem" }}>{avatarError}</p>
+                <p style={{ color: "#c44", fontSize: "0.82rem", marginTop: "0.5rem" }}>{avatarError}</p>
               )}
               {avatarPhase === "done" && (
-                <p style={{ color: "#2a7a2a", fontSize: "0.82rem", marginBottom: "0.5rem" }}>
+                <p style={{ color: "#2a7a2a", fontSize: "0.82rem", marginTop: "0.5rem" }}>
                   ✓ Avatar uploaded — live in ~1–2 min.
                 </p>
-              )}
-
-              {avatarCropped && (
-                <button
-                  type="button"
-                  onClick={handleAvatarUpload}
-                  disabled={avatarPhase === "uploading"}
-                  style={{
-                    ...btnPrimaryStyle,
-                    opacity: avatarPhase === "uploading" ? 0.5 : 1,
-                    cursor: avatarPhase === "uploading" ? "default" : "pointer",
-                  }}
-                >
-                  {avatarPhase === "uploading" ? "Uploading…" : "Upload Avatar"}
-                </button>
               )}
             </div>
           </div>

@@ -872,13 +872,27 @@ function UnifiedCard({ item }) {
 
       {/* ── Social CTA ──────────────────────────────────────────────── */}
       {isSocial && item.href && (
-        <span style={{
-          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
-          color: getPlatformAccent(item.outlet),
-          letterSpacing: "0.04em", marginTop: "0.8rem",
+        <div style={{
+          display: "flex", alignItems: "center", gap: "0.45rem",
+          marginTop: "0.85rem", paddingTop: "0.75rem",
+          borderTop: `1px solid ${LINE}`,
         }}>
-          View post →
-        </span>
+          {/* Speech-bubble icon */}
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+            stroke={getPlatformAccent(item.outlet)} strokeWidth="2.2"
+            strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span style={{
+            fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
+            color: getPlatformAccent(item.outlet),
+            letterSpacing: "0.04em",
+            textDecoration: "underline",
+            textUnderlineOffset: "2px",
+          }}>
+            View on {getPlatformLabel(item.outlet)} →
+          </span>
+        </div>
       )}
     </div>
   );
