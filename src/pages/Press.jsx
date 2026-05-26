@@ -783,14 +783,21 @@ function UnifiedCard({ item }) {
         isSocial ? (
           <div style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem",
             margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}` }}>
-            <img
-              src={bioData.photo_url || "/andrew.png"}
-              alt="Andrew Glantz"
-              style={{
-                width: 36, height: 36, borderRadius: "50%",
-                objectFit: "cover", flexShrink: 0, marginTop: "0.05rem",
-              }}
-            />
+            <div style={{
+              width: 36, height: 36, borderRadius: "50%",
+              overflow: "hidden", flexShrink: 0, marginTop: "0.05rem",
+            }}>
+              <img
+                src={bioData.photo_url || "/andrew.png"}
+                alt="Andrew Glantz"
+                style={{
+                  width: "100%", height: "100%",
+                  objectFit: "cover", objectPosition: "50% 12%",
+                  transform: "scale(1.55)", transformOrigin: "50% 18%",
+                  display: "block",
+                }}
+              />
+            </div>
             <h3 style={{
               fontFamily: FONT, fontWeight: 700,
               fontSize: "0.85rem", lineHeight: 1.3,
