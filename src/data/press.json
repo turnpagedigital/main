@@ -2,16 +2,18 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
-      "type": "publication",
-      "author": "Other",
-      "date": "Feb 26, 2015",
-      "url": "https://www.pbs.org/newshour/economy/taxes-arent-so-bad-without-them-we-might-not-have-pubs",
-      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/PBS_logo_2019.svg",
-      "excerpt": "The window tax lasted until 1851, but its legacy survives in architecture. Residents were charged a flat rate of two shillings -- plus four shillings more for homes with 10 to 20 windows and double that for homes with more than 20. Soon, English homes featured either nine or 19 windows. Andrew Glantz, a window tax expert and a lawyer, says new construction was affected as well, noting that \"entire bottom floors would have no windows\" in lower-income housing designs. The tax also gave rise to internal stairwell windows, which allowed for surreptitious access to light and air.",
-      "publication_title": "PBS",
-      "piece_title": "Taxes aren't so bad. Without them we might not have pubs.",
+      "type": "social post",
+      "author": "Andrew",
+      "date": "May 15, 2026",
+      "url": "https://www.linkedin.com/posts/andrewglantz_homepage-activity-7461081657484296192-JW30?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADYlmUBIgr3_ZLp4FoChoF9AvaiOSl8Xd8",
+      "logo_url": "",
+      "excerpt": "Class counsel in Bartz v. Anthropic PBC (N.D. Cal.) sought final approval of the $1.5 billion settlement and for the court to overrule all objections. At the hearing, counsel simultaneously disclosed a downsized fee request from 15% to 12.5% of the gross fund (approximately $187.5 million plus $3 million in incurred expenses, an $18.22 million cost reserve, and $50,000 service awards to each of the three class representatives). \n\nThe claimant participation rate is unprecedented: 440,490 of 482,460 eligible works, or 91.3% (as reported in April) compared to typical filing rates of 20-30%. The settlement is structured as a per-work compensation scheme with each work eligible to receive approximately $3,000 (far less than the $150,000 statutory limits), split among rights holders. \n\nJudge Martínez-Olguín took the ruling under submission and could approve the settlement on a final basis at any time in the coming days or weeks, which would trigger an additional funding requirement by Anthropic. \n\nKey developments to watch:\n\n→ June 11 - expected distributions per work to be calculated\n→ June 11 - appellate oral argument in Thomson Reuters v. ROSS on whether AI training constitutes fair-use\n→ July - Potential appeals by objecting parties (group-registration undercounting - Pinder, opt-out due process - Chakanga, and co-owner consent - Esquivel)\n\nMeanwhile, the docket for copyright cases against LLM providers continues to grow, with 60+ putative class actions working their way through the process. \n\nhashtag#Copyright hashtag#AILitigation hashtag#ClassAction hashtag#FairUse hashtag#BartzVAnthropic",
+      "publication_title": "LinkedIn",
+      "piece_title": "📗 The largest copyright settlement in U.S. history just had its day in court.",
       "media_url": "",
-      "pages": []
+      "pages": [
+        "copyright"
+      ]
     },
     {
       "type": "social post",
@@ -308,6 +310,18 @@
       "publication_title": "BBC Radio 4",
       "piece_title": "Can Pay Won't Pay",
       "media_url": "/uploads/press/1779759865862-screenshot-2026-05-25-at-9-44-10-pm.png",
+      "pages": []
+    },
+    {
+      "type": "publication",
+      "author": "Other",
+      "date": "Feb 26, 2015",
+      "url": "https://www.pbs.org/newshour/economy/taxes-arent-so-bad-without-them-we-might-not-have-pubs",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/PBS_logo_2019.svg",
+      "excerpt": "The window tax lasted until 1851, but its legacy survives in architecture. Residents were charged a flat rate of two shillings -- plus four shillings more for homes with 10 to 20 windows and double that for homes with more than 20. Soon, English homes featured either nine or 19 windows. Andrew Glantz, a window tax expert and a lawyer, says new construction was affected as well, noting that \"entire bottom floors would have no windows\" in lower-income housing designs. The tax also gave rise to internal stairwell windows, which allowed for surreptitious access to light and air.",
+      "publication_title": "PBS",
+      "piece_title": "Taxes aren't so bad. Without them we might not have pubs.",
+      "media_url": "",
       "pages": []
     }
   ]
