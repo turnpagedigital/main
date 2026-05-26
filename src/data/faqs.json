@@ -5,85 +5,41 @@
       "active": true,
       "q": "What types of claims do you cover?",
       "a": "Bankruptcy claims, litigation claims, class action claims, trade receivables, judgments, locked digital assets, frozen accounts, government refunds, and seized property.",
-      "pages": ["home"]
+      "pages": [
+        "home"
+      ]
     },
     {
       "active": true,
       "q": "What services do you offer?",
       "a": "Capital solutions (assignments, participations, litigation financing, advances, contingency arrangements), trading strategies (OTC brokerage, auctions, private pools, structured portfolios), and advisory (claim analysis, price discovery, complex recovery strategies, expert testimony).",
-      "pages": ["home"]
-    },
-    {
-      "active": true,
-      "q": "How does pricing work?",
-      "a": "Competitive auction across our network of 500+ institutional buyers. No upfront retainers; we earn a spread on what closes.",
-      "pages": ["home"]
+      "pages": [
+        "home"
+      ]
     },
     {
       "active": true,
       "q": "How fast can you close?",
       "a": "Days on simple matters, longer when the docket requires it. Automation enables lightning-fast settlement in the largest cases.",
-      "pages": ["home"]
-    },
-    {
-      "active": true,
-      "q": "Is this legal or financial advice?",
-      "a": "No. Information is general in nature. We introduce you to counsel and tax specialists when a matter calls for it.",
-      "pages": ["home", "ai-copyright", "crypto"]
-    },
-    {
-      "active": true,
-      "q": "Bartz class member — sell or wait?",
-      "a": "It depends on your cash needs and tax posture. We quote in days. We'll also tell you if waiting is the better call.",
-      "pages": ["ai-copyright"]
-    },
-    {
-      "active": true,
-      "q": "Considering opting out for an independent action?",
-      "a": "We model the math against the class settlement and introduce you to specialist counsel if independent litigation makes sense.",
-      "pages": ["ai-copyright"]
-    },
-    {
-      "active": true,
-      "q": "Music publisher with Concord exposure?",
-      "a": "We work with publishers on settlement architecture, fairness-hearing positioning, and bulk catalogue dispositions.",
-      "pages": ["ai-copyright"]
-    },
-    {
-      "active": true,
-      "q": "Non-U.S. matters — UK, EU, Germany?",
-      "a": "Covered. We coordinate counsel across the U.S., UK, EU, and Germany.",
-      "pages": ["ai-copyright"]
+      "pages": [
+        "home"
+      ]
     },
     {
       "active": true,
       "q": "How do you price a claim?",
-      "a": "Competitive auction across our buyer network. You see a real bid, not an indication.",
-      "pages": ["ai-copyright"]
+      "a": "If no market price, diligence to establish range of pricing in consultation with our buyer network.",
+      "pages": [
+        "ai-copyright"
+      ]
     },
     {
       "active": true,
-      "q": "Which estates are you active in?",
-      "a": "FTX, Celsius, BlockFi, Voyager, Genesis. Also smaller and edge-case estates by conversation.",
-      "pages": ["crypto"]
-    },
-    {
-      "active": true,
-      "q": "How does pricing work?",
-      "a": "Competitive auction across our buyer network. A real bid in fiat, not an indication.",
-      "pages": ["crypto"]
-    },
-    {
-      "active": true,
-      "q": "Token-vs-fiat valuation?",
-      "a": "Our quotes reflect current case law and plan-of-reorganization mechanics. We'll walk you through the math.",
-      "pages": ["crypto"]
-    },
-    {
-      "active": true,
-      "q": "Can you handle bulk fund positions?",
-      "a": "Yes. Bulk dispositions, side-pockets, time-pressured liquidations. We move size discreetly.",
-      "pages": ["crypto"]
+      "q": "Which cases are you active in?",
+      "a": "We are currently focused on BlockFills, FTX, and the GSB Settlement Fund.",
+      "pages": [
+        "crypto"
+      ]
     }
   ]
 }
