@@ -846,8 +846,23 @@ function downloadText(filename, text) {
 function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSavedAt }) {
   const isSaving  = phase === "saving";
   const csvRef    = React.useRef(null);
-  const [csvPreview, setCsvPreview] = useState(null); // { imported, skipped } | null
+  const [csvPreview, setCsvPreview] = useState(null);
   const [csvError,   setCsvError]   = useState("");
+
+  // ── Filters ──────────────────────────────────────────────────────────────
+  const [filterActive, setFilterActive] = useState(""); // "" | "true" | "false"
+  const [filterPage,   setFilterPage]   = useState("");
+  const [filterSearch, setFilterSearch] = useState("");
+
+  const isFiltered = !!(filterActive || filterPage || filterSearch);
+  const displayFaqs = isFiltered ? faqs.filter(f => {
+    if (filterActive === "true"  && !f.active)  return false;
+    if (filterActive === "false" &&  f.active)  return false;
+    if (filterPage && !(Array.isArray(f.pages) && f.pages.includes(filterPage))) return false;
+    if (filterSearch && !f.q.toLowerCase().includes(filterSearch.toLowerCase())) return false;
+    return true;
+  }) : faqs;
+  function clearFilters() { setFilterActive(""); setFilterPage(""); setFilterSearch(""); }
 
   // ── CRUD helpers ────────────────────────────────────────────────────────
   function updateFaq(i, field, value) {
@@ -1021,16 +1036,59 @@ function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSave
         </div>
       )}
 
+      {/* ── Filters ───────────────────────────────────────────────────── */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap",
+        marginBottom: "0.9rem", padding: "0.7rem 0.9rem",
+        background: "#fff", border: `1px solid ${LINE}`,
+      }}>
+        <span style={{ fontSize: "0.75rem", fontWeight: 700, color: INK_60, textTransform: "uppercase", letterSpacing: "0.1em", marginRight: "0.2rem" }}>Filter</span>
+        <select
+          value={filterActive}
+          onChange={e => setFilterActive(e.target.value)}
+          style={{ ...inputStyle, padding: "0.3rem 0.55rem", fontSize: "0.82rem", marginTop: 0, minWidth: 110 }}
+        >
+          <option value="">All status</option>
+          <option value="true">Active only</option>
+          <option value="false">Inactive only</option>
+        </select>
+        <select
+          value={filterPage}
+          onChange={e => setFilterPage(e.target.value)}
+          style={{ ...inputStyle, padding: "0.3rem 0.55rem", fontSize: "0.82rem", marginTop: 0, minWidth: 130 }}
+        >
+          <option value="">All pages</option>
+          {FAQ_PAGE_VALUES.map(v => <option key={v} value={v}>{FAQ_PAGE_LABELS[v]}</option>)}
+        </select>
+        <input
+          type="text"
+          value={filterSearch}
+          onChange={e => setFilterSearch(e.target.value)}
+          placeholder="Search question…"
+          style={{ ...inputStyle, padding: "0.3rem 0.55rem", fontSize: "0.82rem", marginTop: 0, minWidth: 160, flex: 1 }}
+        />
+        {isFiltered && (
+          <button onClick={clearFilters} style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.7rem", color: "#c44", borderColor: "#f4caca" }}>Clear</button>
+        )}
+        <span style={{ marginLeft: "auto", fontSize: "0.78rem", color: INK_60 }}>
+          {isFiltered ? `${displayFaqs.length} of ${faqs.length}` : `${faqs.length}`} FAQ{faqs.length !== 1 ? "s" : ""}
+        </span>
+      </div>
+
       {/* ── FAQ rows ──────────────────────────────────────────────────── */}
       <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "2.5rem" }}>
-        <button onClick={addFaq} style={{
-          ...btnStyle, background: "transparent", border: `1px dashed ${LINE}`,
-          color: INK, padding: "0.7rem", fontWeight: 700,
-        }}>
-          + Add FAQ
-        </button>
+        {!isFiltered && (
+          <button onClick={addFaq} style={{
+            ...btnStyle, background: "transparent", border: `1px dashed ${LINE}`,
+            color: INK, padding: "0.7rem", fontWeight: 700,
+          }}>
+            + Add FAQ
+          </button>
+        )}
 
-        {faqs.map((faq, i) => (
+        {displayFaqs.map((faq) => {
+          const i = faqs.indexOf(faq);
+          return (
           <div key={i} style={{
             background: "#fff", border: `1px solid ${faq.active ? LINE : "#e0e0e0"}`,
             padding: "1.2rem", opacity: faq.active ? 1 : 0.6,
@@ -1050,8 +1108,8 @@ function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSave
               <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontWeight: 600, marginLeft: "0.5rem" }}>
                 {faq.q ? faq.q.slice(0, 80) + (faq.q.length > 80 ? "…" : "") : <em>No question set</em>}
               </div>
-              <button onClick={() => moveFaq(i, -1)} disabled={i === 0}               style={iconBtnStyle(i === 0)}              title="Move up">↑</button>
-              <button onClick={() => moveFaq(i, 1)}  disabled={i === faqs.length - 1} style={iconBtnStyle(i === faqs.length - 1)} title="Move down">↓</button>
+              <button onClick={() => moveFaq(i, -1)} disabled={isFiltered || i === 0}               style={iconBtnStyle(isFiltered || i === 0)}              title={isFiltered ? "Clear filters to reorder" : "Move up"}>↑</button>
+              <button onClick={() => moveFaq(i, 1)}  disabled={isFiltered || i === faqs.length - 1} style={iconBtnStyle(isFiltered || i === faqs.length - 1)} title={isFiltered ? "Clear filters to reorder" : "Move down"}>↓</button>
               <button onClick={() => deleteFaq(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
             </div>
 
@@ -1096,11 +1154,17 @@ function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSave
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
 
-        {faqs.length === 0 && (
+        {faqs.length === 0 && !isFiltered && (
           <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
             No FAQs yet. Click "+ Add FAQ" or import a CSV above.
+          </div>
+        )}
+        {isFiltered && displayFaqs.length === 0 && (
+          <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
+            No FAQs match the current filters.
           </div>
         )}
 
@@ -1114,6 +1178,19 @@ function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSave
 
 function AlertsSection({ alerts, onChangeAlerts, onSave, dirty, phase, error, lastSavedAt }) {
   const isSaving = phase === "saving";
+
+  // ── Filters ──────────────────────────────────────────────────────────────
+  const [filterActive, setFilterActive] = useState(""); // "" | "true" | "false"
+  const [filterPage,   setFilterPage]   = useState("");
+
+  const isFiltered = !!(filterActive || filterPage);
+  const displayAlerts = isFiltered ? alerts.filter(a => {
+    if (filterActive === "true"  && !a.active)  return false;
+    if (filterActive === "false" &&  a.active)  return false;
+    if (filterPage && !(Array.isArray(a.pages) && a.pages.includes(filterPage))) return false;
+    return true;
+  }) : alerts;
+  function clearFilters() { setFilterActive(""); setFilterPage(""); }
 
   function updateAlert(i, field, value) {
     const next = alerts.slice();
@@ -1173,8 +1250,42 @@ function AlertsSection({ alerts, onChangeAlerts, onSave, dirty, phase, error, la
         Inactive alerts are hidden site-wide. Order matters — drag or use arrows to re-rank.
       </p>
 
+      {/* ── Filters ───────────────────────────────────────────────────── */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap",
+        marginBottom: "0.9rem", padding: "0.7rem 0.9rem",
+        background: "#fff", border: `1px solid ${LINE}`,
+      }}>
+        <span style={{ fontSize: "0.75rem", fontWeight: 700, color: INK_60, textTransform: "uppercase", letterSpacing: "0.1em", marginRight: "0.2rem" }}>Filter</span>
+        <select
+          value={filterActive}
+          onChange={e => setFilterActive(e.target.value)}
+          style={{ ...inputStyle, padding: "0.3rem 0.55rem", fontSize: "0.82rem", marginTop: 0, minWidth: 110 }}
+        >
+          <option value="">All status</option>
+          <option value="true">Active only</option>
+          <option value="false">Inactive only</option>
+        </select>
+        <select
+          value={filterPage}
+          onChange={e => setFilterPage(e.target.value)}
+          style={{ ...inputStyle, padding: "0.3rem 0.55rem", fontSize: "0.82rem", marginTop: 0, minWidth: 130 }}
+        >
+          <option value="">All pages</option>
+          {ALERT_PAGE_VALUES.map(v => <option key={v} value={v}>{ALERT_PAGE_LABELS[v]}</option>)}
+        </select>
+        {isFiltered && (
+          <button onClick={clearFilters} style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.7rem", color: "#c44", borderColor: "#f4caca" }}>Clear</button>
+        )}
+        <span style={{ marginLeft: "auto", fontSize: "0.78rem", color: INK_60 }}>
+          {isFiltered ? `${displayAlerts.length} of ${alerts.length}` : `${alerts.length}`} alert{alerts.length !== 1 ? "s" : ""}
+        </span>
+      </div>
+
       <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "2.5rem" }}>
-        {alerts.map((alert, i) => (
+        {displayAlerts.map((alert) => {
+          const i = alerts.indexOf(alert);
+          return (
           <div key={i} style={{
             background: "#fff", border: `1px solid ${alert.active ? LINE : "#e0e0e0"}`,
             padding: "1.2rem",
@@ -1207,8 +1318,8 @@ function AlertsSection({ alerts, onChangeAlerts, onSave, dirty, phase, error, la
                 {alert.text ? `"${alert.text.slice(0, 60)}${alert.text.length > 60 ? "…" : ""}"` : <em>No text set</em>}
               </div>
 
-              <button onClick={() => moveAlert(i, -1)} disabled={i === 0}                  style={iconBtnStyle(i === 0)}                 title="Move up">↑</button>
-              <button onClick={() => moveAlert(i, 1)}  disabled={i === alerts.length - 1}  style={iconBtnStyle(i === alerts.length - 1)} title="Move down">↓</button>
+              <button onClick={() => moveAlert(i, -1)} disabled={isFiltered || i === 0}                  style={iconBtnStyle(isFiltered || i === 0)}                 title={isFiltered ? "Clear filters to reorder" : "Move up"}>↑</button>
+              <button onClick={() => moveAlert(i, 1)}  disabled={isFiltered || i === alerts.length - 1}  style={iconBtnStyle(isFiltered || i === alerts.length - 1)} title={isFiltered ? "Clear filters to reorder" : "Move down"}>↓</button>
               <button onClick={() => deleteAlert(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
             </div>
 
@@ -1318,11 +1429,17 @@ function AlertsSection({ alerts, onChangeAlerts, onSave, dirty, phase, error, la
               </div>
             )}
           </div>
-        ))}
+          );
+        })}
 
-        {alerts.length === 0 && (
+        {alerts.length === 0 && !isFiltered && (
           <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
             No alerts yet. Click "+ Add alert" to create one.
+          </div>
+        )}
+        {isFiltered && displayAlerts.length === 0 && (
+          <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
+            No alerts match the current filters.
           </div>
         )}
 
