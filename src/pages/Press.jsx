@@ -842,9 +842,15 @@ function UnifiedCard({ item }) {
                 alt="Andrew Glantz"
                 style={{
                   width: "100%", height: "100%",
-                  objectFit: "cover", objectPosition: "50% 18%",
-                  transform: "scale(1.35)", transformOrigin: "50% 28%",
-                  display: "block",
+                  objectFit: "cover", display: "block",
+                  // When a dedicated avatar is uploaded it's already cropped —
+                  // no transforms needed. Fallback to profile photo gets a
+                  // zoom + upward shift to approximate a face crop.
+                  ...(bioData.avatar_url ? {} : {
+                    objectPosition: "50% 18%",
+                    transform: "scale(1.35)",
+                    transformOrigin: "50% 28%",
+                  }),
                 }}
               />
             </div>
