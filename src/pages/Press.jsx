@@ -3,6 +3,7 @@ import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import BottomCTA from "../components/BottomCTA.jsx";
 import pressData from "../data/press.json";
+import bioData   from "../data/bio.json";
 
 /* ── Outlet name → domain (used for Google favicon fallback) ────────────── */
 const OUTLET_DOMAINS = {
@@ -777,18 +778,39 @@ function UnifiedCard({ item }) {
         </p>
       )}
 
-      {/* ── Headline ────────────────────────────────────────────────── */}
+      {/* ── Headline (with avatar for social posts) ─────────────────── */}
       {item.headline && (
-        <h3 style={{
-          fontFamily: FONT, fontWeight: isSocial ? 700 : 800,
-          fontSize: isSocial ? "0.85rem" : "clamp(1rem, 1.4vw, 1.15rem)",
-          lineHeight: 1.3, letterSpacing: isSocial ? "0.05em" : "-0.01em",
-          textTransform: isSocial ? "uppercase" : "none",
-          color: isSocial ? INK_60 : INK,
-          margin: `0 0 ${isArticle ? "0.3rem" : item.excerpt ? "0.7rem" : "0"}`,
-        }}>
-          {item.headline}
-        </h3>
+        isSocial ? (
+          <div style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem",
+            margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}` }}>
+            <img
+              src={bioData.photo_url || "/andrew.png"}
+              alt="Andrew Glantz"
+              style={{
+                width: 36, height: 36, borderRadius: "50%",
+                objectFit: "cover", flexShrink: 0, marginTop: "0.05rem",
+              }}
+            />
+            <h3 style={{
+              fontFamily: FONT, fontWeight: 700,
+              fontSize: "0.85rem", lineHeight: 1.3,
+              letterSpacing: "0.05em", textTransform: "uppercase",
+              color: INK_60, margin: 0,
+            }}>
+              {item.headline}
+            </h3>
+          </div>
+        ) : (
+          <h3 style={{
+            fontFamily: FONT, fontWeight: 800,
+            fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
+            lineHeight: 1.3, letterSpacing: "-0.01em",
+            color: INK,
+            margin: `0 0 ${isArticle ? "0.3rem" : item.excerpt ? "0.7rem" : "0"}`,
+          }}>
+            {item.headline}
+          </h3>
+        )
       )}
 
       {/* ── Byline — publications only ──────────────────────────────── */}
