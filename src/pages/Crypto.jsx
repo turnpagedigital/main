@@ -8,6 +8,7 @@ import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
+import faqsData from "../data/faqs.json";
 
 const OLD_WAY = {
   title: "Wait for the docket.",
@@ -28,24 +29,9 @@ const NEW_WAY = {
 
 const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("crypto"));
 
-const FAQS = [
-  {
-    q: "Which estates are you active in?",
-    a: "FTX, Celsius, BlockFi, Voyager, Genesis. Also smaller and edge-case estates by conversation.",
-  },
-  {
-    q: "How does pricing work?",
-    a: "Competitive auction across our buyer network. A real bid in fiat, not an indication.",
-  },
-  {
-    q: "Token-vs-fiat valuation?",
-    a: "Our quotes reflect current case law and plan-of-reorganization mechanics. We'll walk you through the math.",
-  },
-  {
-    q: "Can you handle bulk fund positions?",
-    a: "Yes. Bulk dispositions, side-pockets, time-pressured liquidations. We move size discreetly.",
-  },
-];
+const FAQS = (faqsData.faqs || []).filter(
+  f => f.active !== false && Array.isArray(f.pages) && f.pages.includes("crypto")
+);
 
 export default function Crypto() {
   return (

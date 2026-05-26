@@ -97,6 +97,29 @@ function sanitizeAlert(a) {
   };
 }
 
+const FAQ_PAGE_VALUES = ["home", "ai-copyright", "crypto", "press", "briefings", "contact"];
+const FAQ_PAGE_LABELS = {
+  "home":         "Home",
+  "ai-copyright": "AI Copyright",
+  "crypto":       "Locked Crypto",
+  "press":        "Press & Publications",
+  "briefings":    "Briefings",
+  "contact":      "Contact",
+};
+
+function blankFaq() {
+  return { active: true, q: "", a: "", pages: ["home"] };
+}
+
+function sanitizeFaq(f) {
+  return {
+    active: Boolean(f.active),
+    q:      typeof f.q === "string" ? f.q : "",
+    a:      typeof f.a === "string" ? f.a : (Array.isArray(f.a) ? f.a.join("\n\n") : ""),
+    pages:  Array.isArray(f.pages) ? f.pages.filter(p => FAQ_PAGE_VALUES.includes(p)) : [],
+  };
+}
+
 /* Parse freeform date strings into a sortable timestamp (0 = unknown → bottom) */
 function parseDateForSort(str) {
   if (!str) return 0;
@@ -173,13 +196,20 @@ export default function Admin() {
   const [alertsError, setAlertsError] = useState("");
   const [alertsLastSavedAt, setAlertsLastSavedAt] = useState(null);
 
+  // FAQs state
+  const [faqItems, setFaqItems] = useState(null);
+  const [originalFaqItems, setOriginalFaqItems] = useState(null);
+  const [faqsPhase, setFaqsPhase] = useState("idle"); // "idle"|"loading"|"ready"|"saving"|"error"
+  const [faqsError, setFaqsError] = useState("");
+  const [faqsLastSavedAt, setFaqsLastSavedAt] = useState(null);
+
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
         const r = await fetch("/api/admin/session", { credentials: "include" });
         if (cancelled) return;
-        if (r.ok) { loadDeals(); loadBio(); loadPress(); loadAlerts(); } else { setPhase("login"); }
+        if (r.ok) { loadDeals(); loadBio(); loadPress(); loadAlerts(); loadFaqs(); } else { setPhase("login"); }
       } catch {
         if (cancelled) return;
         setPhase("login");
@@ -281,6 +311,50 @@ export default function Admin() {
     return JSON.stringify(alertItems) !== JSON.stringify(originalAlertItems);
   }, [alertItems, originalAlertItems]);
 
+  const faqsDirty = useMemo(() => {
+    if (faqItems === null || originalFaqItems === null) return false;
+    return JSON.stringify(faqItems) !== JSON.stringify(originalFaqItems);
+  }, [faqItems, originalFaqItems]);
+
+  const loadFaqs = useCallback(async () => {
+    setFaqsPhase("loading");
+    setFaqsError("");
+    try {
+      const r = await fetch("/api/admin/faqs", { credentials: "include" });
+      if (r.status === 401) return;
+      const body = await r.json();
+      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
+      const fresh = (body.data.faqs || []).map(sanitizeFaq);
+      setFaqItems(fresh);
+      setOriginalFaqItems(JSON.parse(JSON.stringify(fresh)));
+      setFaqsPhase("ready");
+    } catch (e) {
+      setFaqsError(e.message);
+      setFaqsPhase("error");
+    }
+  }, []);
+
+  async function handleSaveFaqs() {
+    if (faqItems === null) return;
+    setFaqsPhase("saving");
+    setFaqsError("");
+    try {
+      const r = await fetch("/api/admin/faqs", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ faqs: faqItems }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
+      await loadFaqs();
+      setFaqsLastSavedAt(new Date());
+    } catch (e) {
+      setFaqsError(e.message);
+      setFaqsPhase("ready");
+    }
+  }
+
   async function handleSaveAlerts() {
     if (alertItems === null) return;
     setAlertsPhase("saving");
@@ -318,6 +392,7 @@ export default function Admin() {
       loadBio();
       loadPress();
       loadAlerts();
+      loadFaqs();
     } catch (e) {
       setErrorMsg(e.message);
       setPhase("login");
@@ -334,6 +409,8 @@ export default function Admin() {
     setOriginalPressItems(null);
     setAlertItems(null);
     setOriginalAlertItems(null);
+    setFaqItems(null);
+    setOriginalFaqItems(null);
     setPhase("login");
   }
 
@@ -452,6 +529,7 @@ export default function Admin() {
     { key: "deals",  label: "Deals",   dirty: isDirty     },
     { key: "press",  label: "Press",   dirty: pressDirty  },
     { key: "alerts", label: "Alerts",  dirty: alertsDirty },
+    { key: "faqs",   label: "FAQs",    dirty: faqsDirty   },
   ];
 
   return (
@@ -634,6 +712,30 @@ export default function Admin() {
         ) : null
       )}
 
+      {/* ── FAQs tab ──────────────────────────────────────────────── */}
+      {tab === "faqs" && (
+        (faqsPhase === "ready" || faqsPhase === "saving") && faqItems !== null ? (
+          <FaqsSection
+            faqs={faqItems}
+            onChangeFaqs={setFaqItems}
+            onSave={handleSaveFaqs}
+            dirty={faqsDirty}
+            phase={faqsPhase}
+            error={faqsError}
+            lastSavedAt={faqsLastSavedAt}
+          />
+        ) : faqsPhase === "loading" ? (
+          <CenteredMessage>Loading FAQs…</CenteredMessage>
+        ) : faqsPhase === "error" ? (
+          <div style={{ maxWidth: 1080, margin: "2rem auto", padding: "0 clamp(1rem, 3vw, 2rem)" }}>
+            <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", fontSize: "0.9rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+              <span>{faqsError}</span>
+              <button onClick={loadFaqs} style={btnStyle}>Retry</button>
+            </div>
+          </div>
+        ) : null
+      )}
+
       {/* ── Alerts tab ────────────────────────────────────────────── */}
       {tab === "alerts" && (
         (alertsPhase === "ready" || alertsPhase === "saving") && alertItems !== null ? (
@@ -657,6 +759,196 @@ export default function Admin() {
           </div>
         ) : null
       )}
+    </div>
+  );
+}
+
+function FaqsSection({ faqs, onChangeFaqs, onSave, dirty, phase, error, lastSavedAt }) {
+  const isSaving = phase === "saving";
+
+  function updateFaq(i, field, value) {
+    const next = faqs.slice();
+    next[i] = { ...next[i], [field]: value };
+    onChangeFaqs(next);
+  }
+  function moveFaq(i, dir) {
+    const j = i + dir;
+    if (j < 0 || j >= faqs.length) return;
+    const next = faqs.slice();
+    [next[i], next[j]] = [next[j], next[i]];
+    onChangeFaqs(next);
+  }
+  function deleteFaq(i) {
+    if (!confirm("Delete this FAQ?")) return;
+    onChangeFaqs(faqs.filter((_, idx) => idx !== i));
+  }
+  function addFaq() {
+    onChangeFaqs([...faqs, blankFaq()]);
+  }
+
+  return (
+    <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem) 0" }}>
+
+      {/* Section header */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap",
+        marginBottom: "1rem", paddingBottom: "1rem",
+        borderBottom: `2px solid ${LINE}`,
+      }}>
+        <div style={{ fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.01em" }}>
+          FAQs
+        </div>
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60 }}>
+          {isSaving && "Saving…"}
+          {!isSaving && dirty && "Unsaved changes"}
+          {!isSaving && !dirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
+          {!isSaving && !dirty && !lastSavedAt && "Up to date"}
+        </div>
+        <button onClick={onSave} disabled={!dirty || isSaving} style={{
+          ...btnPrimaryStyle,
+          opacity: (!dirty || isSaving) ? 0.5 : 1,
+          cursor: (!dirty || isSaving) ? "default" : "pointer",
+        }}>
+          {isSaving ? "Saving…" : "Save FAQs"}
+        </button>
+      </div>
+
+      {error && (
+        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
+          {error}
+        </div>
+      )}
+
+      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1rem" }}>
+        Use the <strong>Pages</strong> checkboxes to control which pages each FAQ appears on.
+        Inactive FAQs are hidden everywhere. Order here = order on the page.
+        To add a hyperlink in an answer, use <code style={{ background: "#F4F5F7", padding: "0.1em 0.3em" }}>[link text](https://...)</code> syntax.
+      </p>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "2.5rem" }}>
+        <button onClick={addFaq} style={{
+          ...btnStyle,
+          background: "transparent", border: `1px dashed ${LINE}`,
+          color: INK, padding: "0.7rem", fontWeight: 700,
+        }}>
+          + Add FAQ
+        </button>
+
+        {faqs.map((faq, i) => (
+          <div key={i} style={{
+            background: "#fff", border: `1px solid ${faq.active ? LINE : "#e0e0e0"}`,
+            padding: "1.2rem",
+            opacity: faq.active ? 1 : 0.6,
+          }}>
+            {/* Row header */}
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.9rem", flexWrap: "wrap" }}>
+
+              {/* Active toggle */}
+              <label style={{ display: "flex", alignItems: "center", gap: "0.45rem", cursor: "pointer", userSelect: "none" }}>
+                <input
+                  type="checkbox"
+                  checked={Boolean(faq.active)}
+                  onChange={e => updateFaq(i, "active", e.target.checked)}
+                  style={{ accentColor: NEON, width: 16, height: 16 }}
+                />
+                <span style={{
+                  fontSize: "0.78rem", fontWeight: 700,
+                  color: faq.active ? "#1a7a1a" : INK_60,
+                  textTransform: "uppercase", letterSpacing: "0.06em",
+                }}>
+                  {faq.active ? "Active" : "Inactive"}
+                </span>
+              </label>
+
+              <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontWeight: 600, marginLeft: "0.5rem" }}>
+                {faq.q ? faq.q.slice(0, 80) + (faq.q.length > 80 ? "…" : "") : <em>No question set</em>}
+              </div>
+
+              <button onClick={() => moveFaq(i, -1)} disabled={i === 0}               style={iconBtnStyle(i === 0)}              title="Move up">↑</button>
+              <button onClick={() => moveFaq(i, 1)}  disabled={i === faqs.length - 1} style={iconBtnStyle(i === faqs.length - 1)} title="Move down">↓</button>
+              <button onClick={() => deleteFaq(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
+            </div>
+
+            {/* Fields */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "0.7rem" }}>
+
+              {/* Question */}
+              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+                Question
+                <input
+                  type="text"
+                  value={faq.q}
+                  onChange={e => updateFaq(i, "q", e.target.value)}
+                  placeholder="How does pricing work?"
+                  style={inputStyle}
+                />
+              </label>
+
+              {/* Answer */}
+              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+                Answer
+                <span style={{ fontWeight: 400, marginLeft: "0.4em" }}>
+                  — use{" "}
+                  <code style={{ background: "#F4F5F7", padding: "0.1em 0.3em", fontSize: "0.9em" }}>[text](url)</code>
+                  {" "}for links; blank line = new paragraph
+                </span>
+                <textarea
+                  value={faq.a}
+                  onChange={e => updateFaq(i, "a", e.target.value)}
+                  rows={4}
+                  placeholder={"We run a competitive auction across our buyer network.\n\nLearn more at [our website](https://turnpagedigital.com)."}
+                  style={inputStyle}
+                />
+              </label>
+
+              {/* Pages */}
+              <div>
+                <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.4rem" }}>
+                  Show on pages
+                </div>
+                <div style={{ display: "flex", gap: "1.2rem", flexWrap: "wrap" }}>
+                  {FAQ_PAGE_VALUES.map(v => {
+                    const checked = Array.isArray(faq.pages) && faq.pages.includes(v);
+                    return (
+                      <label key={v} style={{
+                        display: "flex", alignItems: "center", gap: "0.35rem",
+                        cursor: "pointer", fontSize: "0.88rem", color: INK, fontWeight: 400,
+                      }}>
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={e => {
+                            const cur = Array.isArray(faq.pages) ? faq.pages : [];
+                            updateFaq(i, "pages", e.target.checked
+                              ? [...cur, v]
+                              : cur.filter(x => x !== v));
+                          }}
+                          style={{ accentColor: NEON, width: 14, height: 14 }}
+                        />
+                        {FAQ_PAGE_LABELS[v]}
+                      </label>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {faqs.length === 0 && (
+          <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
+            No FAQs yet. Click "+ Add FAQ" to create one.
+          </div>
+        )}
+
+        <button onClick={addFaq} style={{
+          ...btnStyle,
+          background: "transparent", border: `1px dashed ${LINE}`,
+          color: INK, padding: "1rem", fontWeight: 700,
+        }}>
+          + Add FAQ
+        </button>
+      </div>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import CTABanner from "../components/CTABanner.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
 import bioData from "../data/bio.json";
+import faqsData from "../data/faqs.json";
 
 /* Content sourced from the May 2026 brand deck (TPDM_Overview).
    Home page focuses on the situations TPDM covers and the credibility of
@@ -68,28 +69,9 @@ const TESTIMONIALS = [
 
 const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("home"));
 
-const FAQS = [
-  {
-    q: "What types of claims do you cover?",
-    a: "Bankruptcy claims, litigation claims, class action claims, trade receivables, judgments, locked digital assets, frozen accounts, government refunds, and seized property.",
-  },
-  {
-    q: "What services do you offer?",
-    a: "Capital solutions (assignments, participations, litigation financing, advances, contingency arrangements), trading strategies (OTC brokerage, auctions, private pools, structured portfolios), and advisory (claim analysis, price discovery, complex recovery strategies, expert testimony).",
-  },
-  {
-    q: "How does pricing work?",
-    a: "Competitive auction across our network of 500+ institutional buyers. No upfront retainers; we earn a spread on what closes.",
-  },
-  {
-    q: "How fast can you close?",
-    a: "Days on simple matters, longer when the docket requires it. Automation enables lightning-fast settlement in the largest cases.",
-  },
-  {
-    q: "Is this legal or financial advice?",
-    a: "No. Information is general in nature. We introduce you to counsel and tax specialists when a matter calls for it.",
-  },
-];
+const FAQS = (faqsData.faqs || []).filter(
+  f => f.active !== false && Array.isArray(f.pages) && f.pages.includes("home")
+);
 
 export default function Home() {
   return (

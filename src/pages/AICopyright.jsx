@@ -7,6 +7,7 @@ import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
+import faqsData from "../data/faqs.json";
 
 /* ── Damages exposure data ──────────────────────────────────────────────────
    Only cases with (a) a confirmed settlement or (b) an arithmetic statutory
@@ -54,28 +55,9 @@ const MAX_B = Math.max(...DAMAGES_DATA.map(c => c.amountB));
 
 const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("ai-copyright"));
 
-const FAQS = [
-  {
-    q: "Bartz class member — sell or wait?",
-    a: "It depends on your cash needs and tax posture. We quote in days. We'll also tell you if waiting is the better call.",
-  },
-  {
-    q: "Considering opting out for an independent action?",
-    a: "We model the math against the class settlement and introduce you to specialist counsel if independent litigation makes sense.",
-  },
-  {
-    q: "Music publisher with Concord exposure?",
-    a: "We work with publishers on settlement architecture, fairness-hearing positioning, and bulk catalogue dispositions.",
-  },
-  {
-    q: "Non-U.S. matters — UK, EU, Germany?",
-    a: "Covered. We coordinate counsel across the U.S., UK, EU, and Germany.",
-  },
-  {
-    q: "How do you price a claim?",
-    a: "Competitive auction across our buyer network. You see a real bid, not an indication.",
-  },
-];
+const FAQS = (faqsData.faqs || []).filter(
+  f => f.active !== false && Array.isArray(f.pages) && f.pages.includes("ai-copyright")
+);
 
 export default function AICopyright() {
   return (
