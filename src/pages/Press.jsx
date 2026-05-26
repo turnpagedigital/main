@@ -79,8 +79,8 @@ const TYPE_OPTS = [
   { key: "all",     label: "All" },
   { key: "press",   label: "Press" },
   { key: "article", label: "Publications" },
-  { key: "social",  label: "Social" },
   { key: "podcast", label: "Podcasts" },
+  { key: "social",  label: "Posts" },
 ];
 
 /* ── Media helpers ───────────────────────────────────────────────────────── */

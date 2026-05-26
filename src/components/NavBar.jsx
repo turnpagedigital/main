@@ -62,7 +62,7 @@ const PREVIEWS = {
       { label: "Press",        href: hashHref("press") + "?type=press" },
       { label: "Publications", href: hashHref("press") + "?type=article" },
       { label: "Podcasts",     href: hashHref("press") + "?type=podcast" },
-      { label: "Social",       href: hashHref("press") + "?type=social" },
+      { label: "Posts",        href: hashHref("press") + "?type=social" },
     ],
     cta: { label: "View all", href: hashHref("press") },
   },
