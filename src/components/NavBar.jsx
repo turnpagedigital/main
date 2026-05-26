@@ -21,7 +21,6 @@ const PREVIEWS = {
       { label: "Top 12 active cases",         href: hashHref("ai-copyright") + "#cases-section" },
       { label: "Who we help",                 href: hashHref("ai-copyright") + "#who-we-help" },
       { label: "Briefings",                   href: hashHref("briefings") },
-      { label: "FAQ",                         href: hashHref("ai-copyright") },
       { label: "Related media", href: hashHref("press") + "?topic=copyright" },
     ],
     cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=ai-copyright" },
@@ -32,7 +31,6 @@ const PREVIEWS = {
     links: [
       { label: "Who we help",                 href: hashHref("crypto") + "#who-we-help" },
       { label: "How it works",                href: hashHref("crypto") + "#how-crypto" },
-      { label: "FAQ",                         href: hashHref("crypto") },
       { label: "Related media", href: hashHref("press") + "?topic=crypto" },
     ],
     cta: { label: "Get a Quote", href: hashHref("contact") + "?source=crypto" },
@@ -54,7 +52,6 @@ const PREVIEWS = {
       { label: "Who we help",                 href: hashHref("litigation-finance") + "#who-we-help" },
       { label: "What we fund",                href: hashHref("litigation-finance") + "#how-litfin" },
       { label: "How it works",                href: hashHref("litigation-finance") + "#how-litfin" },
-      { label: "FAQ",                         href: hashHref("litigation-finance") },
       { label: "Related media", href: hashHref("press") + "?topic=litigation" },
     ],
     cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=litigation-finance" },
