@@ -4,6 +4,27 @@ import { hashHref } from "../lib/router.js";
 import Hero from "../components/Hero.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 
+/* ── Type badge (mirrors Briefing.jsx — keep in sync if labels change) ───── */
+const TYPE_CFG = {
+  briefing:     { label: "Briefing",     bg: NEON, fg: "#000" },
+  article:      { label: "Article",      bg: INK,  fg: "#fff" },
+  announcement: { label: "Announcement", bg: NEON, fg: "#000" },
+};
+function TypeBadge({ type }) {
+  const cfg = TYPE_CFG[(type || "briefing").toLowerCase()] || TYPE_CFG.briefing;
+  return (
+    <span style={{
+      fontFamily: FONT, fontSize: "0.64rem", fontWeight: 800,
+      letterSpacing: "0.18em", textTransform: "uppercase",
+      background: cfg.bg, color: cfg.fg,
+      padding: "0.25rem 0.6rem", borderRadius: 3,
+      display: "inline-block",
+    }}>
+      {cfg.label}
+    </span>
+  );
+}
+
 export default function Briefings() {
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
@@ -26,10 +47,10 @@ export default function Briefings() {
   return (
     <>
       <Hero
-        eyebrow="Briefings"
-        title="Notes from the"
-        accentTitle="docket."
-        subtitle="Analysis on the cases, settlements, and rulings shaping the AI copyright landscape."
+        eyebrow="Publications"
+        title="Briefings."
+        accentTitle="Articles. Updates."
+        subtitle="Analysis, deep dives, and market updates from the Turnpage desk."
       />
 
       <section className="surface-paper section-pad">
@@ -92,21 +113,24 @@ function FeaturedBriefing({ item }) {
         background: "radial-gradient(60% 70% at 100% 0%, rgba(212,255,0,0.10), transparent 60%)",
       }} />
       <div style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.7rem", marginBottom: "1.2rem" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.7rem", marginBottom: "1.2rem", flexWrap: "wrap" }}>
+          <TypeBadge type={item.type} />
           <span style={{
             fontFamily: FONT, fontSize: "0.66rem", fontWeight: 800, letterSpacing: "0.2em",
-            textTransform: "uppercase", color: "#000", background: NEON,
+            textTransform: "uppercase", color: "rgba(255,255,255,0.85)", background: "rgba(255,255,255,0.12)",
             padding: "0.32rem 0.7rem", borderRadius: 4,
           }}>
             Latest
           </span>
-          <span style={{
-            fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
-            letterSpacing: "0.18em", textTransform: "uppercase",
-            color: "rgba(255,255,255,0.6)",
-          }}>
-            {dateStr}
-          </span>
+          {dateStr && (
+            <span style={{
+              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
+              letterSpacing: "0.18em", textTransform: "uppercase",
+              color: "rgba(255,255,255,0.6)",
+            }}>
+              {dateStr}
+            </span>
+          )}
         </div>
         <h2 style={{
           fontFamily: FONT, fontSize: "clamp(1.6rem, 3.2vw, 2.4rem)", fontWeight: 800,
@@ -142,12 +166,14 @@ function BriefingCard({ item }) {
       className="card-light card-light-link"
       style={{ display: "flex", flexDirection: "column", height: "100%" }}
     >
-      <p style={{
-        fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.18em",
-        textTransform: "uppercase", color: INK_60, marginBottom: "0.6rem",
-      }}>
-        {dateStr}
-      </p>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.7rem", flexWrap: "wrap" }}>
+        <TypeBadge type={item.type} />
+        {dateStr && (
+          <p style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: INK_60, margin: 0 }}>
+            {dateStr}
+          </p>
+        )}
+      </div>
       <h3 style={{
         fontFamily: FONT, fontSize: "1.15rem", fontWeight: 800, color: INK,
         lineHeight: 1.25, marginBottom: "0.7rem", letterSpacing: "-0.01em",

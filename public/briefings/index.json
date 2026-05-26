@@ -3,6 +3,7 @@
     {
       "slug": "2026-04-29-advisory",
       "date": "2026-04-29",
+      "type": "briefing",
       "title": "Bartz Second Installment Due Tomorrow; Fairness Hearing Confirmed for May 14",
       "summary": "Anthropic's second $300M installment is due April 30, bringing the funded total to $600M of the $1.5B settlement. Authors Alliance publishes unsealed-objection analysis as the May 14 fairness hearing approaches. CCIA, AI Progress, and NetChoice file Concord amicus; OpenAI's 20M-log production order continues to reshape AI copyright discovery; CJEU holds first-ever generative-AI hearing in Like Company v. Google.",
       "tags": ["Bartz", "Anthropic", "OpenAI MDL", "Concord", "CJEU"]
@@ -10,6 +11,7 @@
     {
       "slug": "2026-04-28-advisory",
       "date": "2026-04-28",
+      "type": "briefing",
       "title": "Forty-Eight Hours to Bartz: Settlement Funding, Fairness-Hearing Stakes, and the Concord Cross-Motion",
       "summary": "With the second $300M installment due in 48 hours, the Bartz settlement approaches its most consequential week since preliminary approval. We map the inflection points across Bartz, Concord (Anthropic cross-MSJ filed April 22), and the broader docket.",
       "tags": ["Bartz", "Anthropic", "Concord", "Settlement"]
@@ -17,6 +19,7 @@
     {
       "slug": "2026-04-26-advisory",
       "date": "2026-04-26",
+      "type": "briefing",
       "title": "Bartz Settlement Enters Its Most Consequential Week",
       "summary": "Anthropic's second $300M installment is now four days out on April 30, and the Bartz v. Anthropic settlement enters its most consequential week since preliminary approval. We trace the implications for class members, opt-outs, and parallel music-publisher matters.",
       "tags": ["Bartz", "Anthropic", "Settlement"]
@@ -24,6 +27,7 @@
     {
       "slug": "2026-04-24-advisory",
       "date": "2026-04-24",
+      "type": "briefing",
       "title": "Anthropic's Concord Cross-Motion: The Most Consequential Fair-Use Motion in AI Music Copyright",
       "summary": "Anthropic's cross-motion for summary judgment in Concord Music Group v. Anthropic, filed April 22, is the most consequential fair-use motion in any AI music copyright case to date. We unpack the doctrinal stakes for §107 analysis and the parallel publisher docket.",
       "tags": ["Concord", "Anthropic", "Fair Use", "Music"]
@@ -31,6 +35,7 @@
     {
       "slug": "2026-04-23-advisory",
       "date": "2026-04-23",
+      "type": "briefing",
       "title": "Bartz Fairness Hearing Rescheduled; Unsealed Objections Reach the Docket",
       "summary": "What was to be the day of reckoning for the largest copyright settlement in American history shifted under Judge Martínez-Olguín's April 8 order. We catalogue the unsealed objections — publisher favoritism, group-registration collapse, and statutory-damages adequacy — and what each may mean at the May 14 hearing.",
       "tags": ["Bartz", "Anthropic", "Fairness Hearing", "Objections"]

@@ -514,6 +514,21 @@ button { font-family: inherit; }
 .briefing-body code { font-family: ui-monospace, "SF Mono", Menlo, monospace; background: ${LINE}; color: ${INK}; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.92em; }
 .briefing-body hr { border: none; border-top: 1px solid ${LINE}; margin: 2rem 0; }
 
+/* ─── Article-body overrides (long-form editorial) ─── */
+/* Applied alongside .briefing-body for type="article" posts */
+.article-body { font-size: 1.08rem; line-height: 1.75; }
+.article-body p { color: ${INK}; margin-bottom: 1.35rem; }
+.article-body h2 { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid ${LINE}; }
+.article-body h3 { margin-top: 2rem; }
+.article-body blockquote {
+  border-left: 4px solid ${NEON};
+  background: rgba(212,255,0,0.06);
+  padding: 1rem 1.4rem;
+  margin: 2rem 0;
+  border-radius: 0 6px 6px 0;
+}
+.article-body blockquote p { color: ${INK}; font-style: normal; font-size: 1.05rem; font-weight: 600; margin: 0; }
+
 /* ─── Form fields (light surface) ─── */
 .field-light input,
 .field-light textarea,
