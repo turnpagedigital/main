@@ -2,6 +2,18 @@
   "_comment": "Press items managed via /#/admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
+      "type": "podcast",
+      "author": "Other",
+      "date": "May 22, 2015",
+      "url": "https://www.bbc.co.uk/programmes/b05v7tm6",
+      "logo_url": "https://logos-world.net/wp-content/uploads/2022/01/BBC-Logo.png",
+      "excerpt": "All through history people have wanted to get one over on the tax man. Whether it was the peasants of the 14th century who hid their fellow villagers to avoid the Poll Tax, homeowners in the 18th century who promised their votes to those tax collectors who would turn a blind eye to the window tax or the rich money men of the 1970s who would pay clever accountants to construct shell companies to avoid income tax. It has created a headache for governments throughout the ages. Paul Lewis looks at what can history tell us about what is a fair rate of tax, what will bring in the most revenue and asks when did paying your taxes become a moral issue.",
+      "publication_title": "BBC Radio 4",
+      "piece_title": "Can Pay Won't Pay",
+      "media_url": "/uploads/press/1779759865862-screenshot-2026-05-25-at-9-44-10-pm.png",
+      "pages": []
+    },
+    {
       "type": "social post",
       "author": "Andrew",
       "date": "May 12, 2026",
