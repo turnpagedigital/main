@@ -10,7 +10,7 @@ export default function AppHeader({ currentPage }) {
       <div style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
       }}>
-        <AnnouncementBanner />
+        <AnnouncementBanner page={currentPage} />
         <NavBar currentPage={currentPage} />
       </div>
       {/* Spacer — height set wide to accommodate banner + nav.

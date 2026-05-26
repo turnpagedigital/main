@@ -1,0 +1,13 @@
+{
+  "_comment": "Announcement banner alerts — edit via /#/admin. Each alert shows on the pages listed. The first active alert for a given page is displayed.",
+  "alerts": [
+    {
+      "active": true,
+      "pill": "Latest",
+      "text": "Section 122 — What does \"balance of payments deficit\" really mean?",
+      "linkText": "Read the post",
+      "href": "https://www.linkedin.com/posts/andrewglantz_ieepa-trade-tariffs-share-7458543859929673729-RqAA/",
+      "pages": ["home", "ai-copyright", "crypto", "press", "briefings", "contact"]
+    }
+  ]
+}

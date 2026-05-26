@@ -72,6 +72,31 @@ const PRESS_PAGE_LABELS = {
   "bankruptcy": "Bankruptcy Claims",
 };
 
+const ALERT_PAGE_VALUES = ["home", "ai-copyright", "crypto", "press", "briefings", "contact"];
+const ALERT_PAGE_LABELS = {
+  "home":         "Home",
+  "ai-copyright": "AI Copyright",
+  "crypto":       "Locked Crypto",
+  "press":        "Press & Publications",
+  "briefings":    "Briefings",
+  "contact":      "Contact",
+};
+
+function blankAlert() {
+  return { active: true, pill: "Latest", text: "", linkText: "", href: "", pages: ["home"] };
+}
+
+function sanitizeAlert(a) {
+  return {
+    active:   Boolean(a.active),
+    pill:     typeof a.pill     === "string" ? a.pill     : "Latest",
+    text:     typeof a.text     === "string" ? a.text     : "",
+    linkText: typeof a.linkText === "string" ? a.linkText : "",
+    href:     typeof a.href     === "string" ? a.href     : "",
+    pages:    Array.isArray(a.pages) ? a.pages.filter(p => ALERT_PAGE_VALUES.includes(p)) : [],
+  };
+}
+
 /* Parse freeform date strings into a sortable timestamp (0 = unknown → bottom) */
 function parseDateForSort(str) {
   if (!str) return 0;
@@ -141,13 +166,20 @@ export default function Admin() {
   const [pressError, setPressError] = useState("");
   const [pressLastSavedAt, setPressLastSavedAt] = useState(null);
 
+  // Alerts state
+  const [alertItems, setAlertItems] = useState(null);
+  const [originalAlertItems, setOriginalAlertItems] = useState(null);
+  const [alertsPhase, setAlertsPhase] = useState("idle"); // "idle"|"loading"|"ready"|"saving"|"error"
+  const [alertsError, setAlertsError] = useState("");
+  const [alertsLastSavedAt, setAlertsLastSavedAt] = useState(null);
+
   useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
         const r = await fetch("/api/admin/session", { credentials: "include" });
         if (cancelled) return;
-        if (r.ok) { loadDeals(); loadBio(); loadPress(); } else { setPhase("login"); }
+        if (r.ok) { loadDeals(); loadBio(); loadPress(); loadAlerts(); } else { setPhase("login"); }
       } catch {
         if (cancelled) return;
         setPhase("login");
@@ -211,6 +243,24 @@ export default function Admin() {
     }
   }, []);
 
+  const loadAlerts = useCallback(async () => {
+    setAlertsPhase("loading");
+    setAlertsError("");
+    try {
+      const r = await fetch("/api/admin/alerts", { credentials: "include" });
+      if (r.status === 401) return;
+      const body = await r.json();
+      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
+      const fresh = (body.data.alerts || []).map(sanitizeAlert);
+      setAlertItems(fresh);
+      setOriginalAlertItems(JSON.parse(JSON.stringify(fresh)));
+      setAlertsPhase("ready");
+    } catch (e) {
+      setAlertsError(e.message);
+      setAlertsPhase("error");
+    }
+  }, []);
+
   const isDirty = useMemo(() => {
     if (!deals || !original) return false;
     return JSON.stringify(deals) !== JSON.stringify(original);
@@ -225,6 +275,32 @@ export default function Admin() {
     if (pressItems === null || originalPressItems === null) return false;
     return JSON.stringify(pressItems) !== JSON.stringify(originalPressItems);
   }, [pressItems, originalPressItems]);
+
+  const alertsDirty = useMemo(() => {
+    if (alertItems === null || originalAlertItems === null) return false;
+    return JSON.stringify(alertItems) !== JSON.stringify(originalAlertItems);
+  }, [alertItems, originalAlertItems]);
+
+  async function handleSaveAlerts() {
+    if (alertItems === null) return;
+    setAlertsPhase("saving");
+    setAlertsError("");
+    try {
+      const r = await fetch("/api/admin/alerts", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ alerts: alertItems }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
+      await loadAlerts();
+      setAlertsLastSavedAt(new Date());
+    } catch (e) {
+      setAlertsError(e.message);
+      setAlertsPhase("ready");
+    }
+  }
 
   async function handleLogin(password) {
     setErrorMsg("");
@@ -241,6 +317,7 @@ export default function Admin() {
       loadDeals();
       loadBio();
       loadPress();
+      loadAlerts();
     } catch (e) {
       setErrorMsg(e.message);
       setPhase("login");
@@ -255,6 +332,8 @@ export default function Admin() {
     setOriginalBio(null);
     setPressItems(null);
     setOriginalPressItems(null);
+    setAlertItems(null);
+    setOriginalAlertItems(null);
     setPhase("login");
   }
 
@@ -369,9 +448,10 @@ export default function Admin() {
   }
 
   const TAB_DEFS = [
-    { key: "bio",   label: "Bio",    dirty: bioDirty },
-    { key: "deals", label: "Deals",  dirty: isDirty  },
-    { key: "press", label: "Press",  dirty: pressDirty },
+    { key: "bio",    label: "Bio",     dirty: bioDirty    },
+    { key: "deals",  label: "Deals",   dirty: isDirty     },
+    { key: "press",  label: "Press",   dirty: pressDirty  },
+    { key: "alerts", label: "Alerts",  dirty: alertsDirty },
   ];
 
   return (
@@ -553,6 +633,263 @@ export default function Admin() {
           </div>
         ) : null
       )}
+
+      {/* ── Alerts tab ────────────────────────────────────────────── */}
+      {tab === "alerts" && (
+        (alertsPhase === "ready" || alertsPhase === "saving") && alertItems !== null ? (
+          <AlertsSection
+            alerts={alertItems}
+            onChangeAlerts={setAlertItems}
+            onSave={handleSaveAlerts}
+            dirty={alertsDirty}
+            phase={alertsPhase}
+            error={alertsError}
+            lastSavedAt={alertsLastSavedAt}
+          />
+        ) : alertsPhase === "loading" ? (
+          <CenteredMessage>Loading alerts…</CenteredMessage>
+        ) : alertsPhase === "error" ? (
+          <div style={{ maxWidth: 1080, margin: "2rem auto", padding: "0 clamp(1rem, 3vw, 2rem)" }}>
+            <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", fontSize: "0.9rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+              <span>{alertsError}</span>
+              <button onClick={loadAlerts} style={btnStyle}>Retry</button>
+            </div>
+          </div>
+        ) : null
+      )}
+    </div>
+  );
+}
+
+function AlertsSection({ alerts, onChangeAlerts, onSave, dirty, phase, error, lastSavedAt }) {
+  const isSaving = phase === "saving";
+
+  function updateAlert(i, field, value) {
+    const next = alerts.slice();
+    next[i] = { ...next[i], [field]: value };
+    onChangeAlerts(next);
+  }
+  function moveAlert(i, dir) {
+    const j = i + dir;
+    if (j < 0 || j >= alerts.length) return;
+    const next = alerts.slice();
+    [next[i], next[j]] = [next[j], next[i]];
+    onChangeAlerts(next);
+  }
+  function deleteAlert(i) {
+    if (!confirm("Delete this alert?")) return;
+    onChangeAlerts(alerts.filter((_, idx) => idx !== i));
+  }
+  function addAlert() {
+    onChangeAlerts([...alerts, blankAlert()]);
+  }
+
+  return (
+    <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem) 0" }}>
+
+      {/* Section header */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap",
+        marginBottom: "1rem", paddingBottom: "1rem",
+        borderBottom: `2px solid ${LINE}`,
+      }}>
+        <div style={{ fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.01em" }}>
+          Announcement Alerts
+        </div>
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60 }}>
+          {isSaving && "Saving…"}
+          {!isSaving && dirty && "Unsaved changes"}
+          {!isSaving && !dirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
+          {!isSaving && !dirty && !lastSavedAt && "Up to date"}
+        </div>
+        <button onClick={onSave} disabled={!dirty || isSaving} style={{
+          ...btnPrimaryStyle,
+          opacity: (!dirty || isSaving) ? 0.5 : 1,
+          cursor: (!dirty || isSaving) ? "default" : "pointer",
+        }}>
+          {isSaving ? "Saving…" : "Save Alerts"}
+        </button>
+      </div>
+
+      {error && (
+        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
+          {error}
+        </div>
+      )}
+
+      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1rem" }}>
+        The first <strong>active</strong> alert that includes a given page is shown in the top bar.
+        Inactive alerts are hidden site-wide. Order matters — drag or use arrows to re-rank.
+      </p>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "2.5rem" }}>
+        {alerts.map((alert, i) => (
+          <div key={i} style={{
+            background: "#fff", border: `1px solid ${alert.active ? LINE : "#e0e0e0"}`,
+            padding: "1.2rem",
+            opacity: alert.active ? 1 : 0.6,
+          }}>
+            {/* Row header */}
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.9rem", flexWrap: "wrap" }}>
+
+              {/* Active toggle */}
+              <label style={{
+                display: "flex", alignItems: "center", gap: "0.45rem",
+                cursor: "pointer", userSelect: "none",
+              }}>
+                <input
+                  type="checkbox"
+                  checked={Boolean(alert.active)}
+                  onChange={e => updateAlert(i, "active", e.target.checked)}
+                  style={{ accentColor: NEON, width: 16, height: 16 }}
+                />
+                <span style={{
+                  fontSize: "0.78rem", fontWeight: 700,
+                  color: alert.active ? "#1a7a1a" : INK_60,
+                  textTransform: "uppercase", letterSpacing: "0.06em",
+                }}>
+                  {alert.active ? "Active" : "Inactive"}
+                </span>
+              </label>
+
+              <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontWeight: 600, marginLeft: "0.5rem" }}>
+                {alert.text ? `"${alert.text.slice(0, 60)}${alert.text.length > 60 ? "…" : ""}"` : <em>No text set</em>}
+              </div>
+
+              <button onClick={() => moveAlert(i, -1)} disabled={i === 0}                  style={iconBtnStyle(i === 0)}                 title="Move up">↑</button>
+              <button onClick={() => moveAlert(i, 1)}  disabled={i === alerts.length - 1}  style={iconBtnStyle(i === alerts.length - 1)} title="Move down">↓</button>
+              <button onClick={() => deleteAlert(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
+            </div>
+
+            {/* Fields */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.7rem 1rem" }} className="alert-grid">
+
+              {/* Pill label */}
+              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+                Pill label <span style={{ fontWeight: 400 }}>(e.g. "Latest", "Update", "New")</span>
+                <input
+                  type="text"
+                  value={alert.pill}
+                  onChange={e => updateAlert(i, "pill", e.target.value)}
+                  placeholder="Latest"
+                  style={inputStyle}
+                />
+              </label>
+
+              {/* CTA link text */}
+              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+                CTA link text <span style={{ fontWeight: 400 }}>(leave blank to hide the link)</span>
+                <input
+                  type="text"
+                  value={alert.linkText}
+                  onChange={e => updateAlert(i, "linkText", e.target.value)}
+                  placeholder="Read the briefing"
+                  style={inputStyle}
+                />
+              </label>
+
+              {/* Alert text */}
+              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, gridColumn: "1 / -1" }}>
+                Alert text
+                <input
+                  type="text"
+                  value={alert.text}
+                  onChange={e => updateAlert(i, "text", e.target.value)}
+                  placeholder="Bartz v. Anthropic fairness hearing — May 14, 2026"
+                  style={inputStyle}
+                />
+              </label>
+
+              {/* Link URL */}
+              <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, gridColumn: "1 / -1" }}>
+                Link URL
+                <input
+                  type="text"
+                  value={alert.href}
+                  onChange={e => updateAlert(i, "href", e.target.value)}
+                  placeholder="#/briefings/2026-04-29-advisory  or  https://..."
+                  style={inputStyle}
+                />
+              </label>
+
+              {/* Pages */}
+              <div style={{ gridColumn: "1 / -1" }}>
+                <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.4rem" }}>
+                  Show on pages
+                </div>
+                <div style={{ display: "flex", gap: "1.2rem", flexWrap: "wrap" }}>
+                  {ALERT_PAGE_VALUES.map(v => {
+                    const checked = Array.isArray(alert.pages) && alert.pages.includes(v);
+                    return (
+                      <label key={v} style={{
+                        display: "flex", alignItems: "center", gap: "0.35rem",
+                        cursor: "pointer", fontSize: "0.88rem", color: INK, fontWeight: 400,
+                      }}>
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={e => {
+                            const cur = Array.isArray(alert.pages) ? alert.pages : [];
+                            updateAlert(i, "pages", e.target.checked
+                              ? [...cur, v]
+                              : cur.filter(x => x !== v));
+                          }}
+                          style={{ accentColor: NEON, width: 14, height: 14 }}
+                        />
+                        {ALERT_PAGE_LABELS[v]}
+                      </label>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Preview */}
+            {alert.active && alert.text && (
+              <div style={{
+                marginTop: "0.9rem", paddingTop: "0.75rem",
+                borderTop: `1px solid ${LINE}`,
+                display: "flex", alignItems: "center", gap: "0.6rem",
+                fontSize: "0.8rem", color: INK_60,
+              }}>
+                <span style={{ fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: INK_60 }}>Preview:</span>
+                {alert.pill && (
+                  <span style={{ background: NEON, color: "#000", fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", padding: "0.15em 0.55em" }}>
+                    {alert.pill}
+                  </span>
+                )}
+                <span style={{ color: INK }}>{alert.text}</span>
+                {alert.linkText && (
+                  <span style={{ fontWeight: 700, textDecoration: "underline", color: INK }}>
+                    {alert.linkText} →
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+
+        {alerts.length === 0 && (
+          <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
+            No alerts yet. Click "+ Add alert" to create one.
+          </div>
+        )}
+
+        <button onClick={addAlert} style={{
+          ...btnStyle,
+          background: "transparent", border: `1px dashed ${LINE}`,
+          color: INK, padding: "1rem", fontWeight: 700,
+        }}>
+          + Add alert
+        </button>
+      </div>
+
+      <style>{`
+        @media (max-width: 540px) {
+          .alert-grid { grid-template-columns: 1fr !important; }
+          .alert-grid label, .alert-grid div { grid-column: auto !important; }
+        }
+      `}</style>
     </div>
   );
 }

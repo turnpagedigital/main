@@ -1,29 +1,29 @@
 import React from "react";
 import LanguageSelector from "./LanguageSelector.jsx";
+import alertsData from "../data/alerts.json";
 
-/* Thin promo bar above the nav. Like OffDeal's Series A banner — used to
-   feature the latest briefing, settlement, or news item.
-   Edit the LATEST constant below to update. Set show=false to hide it. */
+/* Thin promo bar above the nav.
+   Reads from src/data/alerts.json — edit via /#/admin → Alerts tab.
+   Shows the first active alert whose 'pages' array includes the current page. */
 
-const LATEST = {
-  show: true,
-  pill: "Latest",
-  text: "Bartz v. Anthropic fairness hearing — May 14, 2026",
-  linkText: "Read the briefing",
-  href: "#/briefings/2026-04-29-advisory",
-};
+export default function AnnouncementBanner({ page = "home" }) {
+  const alert = (alertsData.alerts || []).find(
+    a => a.active && Array.isArray(a.pages) && a.pages.includes(page)
+  );
 
-export default function AnnouncementBanner() {
-  if (!LATEST.show) return null;
+  if (!alert) return null;
+
   return (
     <div className="ann-banner" role="region" aria-label="Latest update">
       <div className="ann-banner-inner">
         <div className="ann-banner-content">
-          <span className="ann-banner-pill">{LATEST.pill}</span>
-          <span>{LATEST.text}</span>
-          <a href={LATEST.href} aria-label={LATEST.linkText}>
-            {LATEST.linkText} →
-          </a>
+          {alert.pill && <span className="ann-banner-pill">{alert.pill}</span>}
+          <span>{alert.text}</span>
+          {alert.href && alert.linkText && (
+            <a href={alert.href} aria-label={alert.linkText}>
+              {alert.linkText} →
+            </a>
+          )}
         </div>
         <div className="ann-banner-region">
           <LanguageSelector direction="down" fontSize="0.78rem" />
