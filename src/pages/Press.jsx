@@ -793,8 +793,8 @@ function UnifiedCard({ item }) {
                 alt="Andrew Glantz"
                 style={{
                   width: "100%", height: "100%",
-                  objectFit: "cover", objectPosition: "50% 12%",
-                  transform: "scale(1.55)", transformOrigin: "50% 18%",
+                  objectFit: "cover", objectPosition: "50% 18%",
+                  transform: "scale(1.35)", transformOrigin: "50% 28%",
                   display: "block",
                 }}
               />
