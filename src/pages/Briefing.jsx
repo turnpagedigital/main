@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { marked } from "marked";
+import DOMPurify from "dompurify";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 
@@ -129,7 +130,7 @@ function BriefingTemplate({ meta, bodyHtml }) {
 
       <div className="surface-paper" style={{ padding: "clamp(2.5rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem)" }}>
         <div className="container" style={{ maxWidth: 760 }}>
-          <div className="briefing-body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+          <div className="briefing-body" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(bodyHtml) }} />
         </div>
       </div>
 
@@ -223,7 +224,7 @@ function ArticleTemplate({ meta, bodyHtml }) {
       {/* Body */}
       <div className="surface-paper" style={{ padding: "clamp(2.5rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem)" }}>
         <div className="container" style={{ maxWidth: 760 }}>
-          <div className="briefing-body article-body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+          <div className="briefing-body article-body" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(bodyHtml) }} />
         </div>
       </div>
 
@@ -299,7 +300,7 @@ function AnnouncementTemplate({ meta, bodyHtml }) {
       {hasBody && (
         <div className="surface-paper" style={{ padding: "clamp(2.5rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem)" }}>
           <div className="container" style={{ maxWidth: 760 }}>
-            <div className="briefing-body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+            <div className="briefing-body" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(bodyHtml) }} />
           </div>
         </div>
       )}

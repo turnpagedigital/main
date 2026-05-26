@@ -148,7 +148,7 @@ function HeroSection() {
         background: "linear-gradient(180deg, #0A0C10 0%, #06070A 100%)",
       }} />
       <video
-        autoPlay muted loop playsInline
+        autoPlay muted loop playsInline preload="none"
         onError={(e) => { e.currentTarget.style.display = "none"; }}
         style={{
           position: "absolute", inset: 0, zIndex: 1,

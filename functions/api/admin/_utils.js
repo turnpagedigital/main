@@ -20,10 +20,20 @@ export function jsonResponse(body, status = 200, extraHeaders) {
 }
 
 export function constantTimeEqual(a, b) {
-  if (typeof a !== "string" || typeof b !== "string" || a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
+  const encoder = new TextEncoder();
+  const bufA = encoder.encode(a);
+  const bufB = encoder.encode(b);
+  // Pad both buffers to the same length so we always compare the same number
+  // of bytes regardless of input length — prevents a length-oracle timing attack.
+  const len = Math.max(bufA.length, bufB.length);
+  const paddedA = new Uint8Array(len);
+  const paddedB = new Uint8Array(len);
+  paddedA.set(bufA);
+  paddedB.set(bufB);
+  // timingSafeEqual does a constant-time byte comparison.
+  // We still require identical lengths before returning true so that
+  // "abc\0" does not compare equal to "abc".
+  return bufA.length === bufB.length && crypto.subtle.timingSafeEqual(paddedA, paddedB);
 }
 
 function bufToBase64Url(buf) {
