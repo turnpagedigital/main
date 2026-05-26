@@ -140,7 +140,10 @@ const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
 }));
 
 /* ── Derived filter option lists (computed once from static data) ─────────── */
-const ALL_TOPICS  = [...new Set(UNIFIED_ITEMS.flatMap(d => d.pages).filter(Boolean))].sort();
+// ALL_TOPICS uses the static PAGE_LABELS keys so every topic always appears in
+// the dropdown — even before any press items carry that tag. This lets the
+// nav "Related press" links pre-select a topic that may have no items yet.
+const ALL_TOPICS  = Object.keys(PAGE_LABELS); // ["copyright","crypto","litigation","tariffs","bankruptcy"]
 const ALL_OUTLETS = [...new Set(UNIFIED_ITEMS.map(d => d.outlet).filter(Boolean))]
   .sort((a, b) => a.localeCompare(b));
 
@@ -155,7 +158,7 @@ function sortByDate(items, dir) {
   });
 }
 
-/* ── Read ?type= from the current hash URL ───────────────────────────────── */
+/* ── Read ?type= and ?topic= from the current hash URL ──────────────────── */
 function getTypeFromHash() {
   if (typeof window === "undefined") return "all";
   const qi = window.location.hash.indexOf("?");
@@ -164,21 +167,29 @@ function getTypeFromHash() {
   const t = params.get("type");
   return ["press", "article", "social", "podcast"].includes(t) ? t : "all";
 }
+function getTopicFromHash() {
+  if (typeof window === "undefined") return "all";
+  const qi = window.location.hash.indexOf("?");
+  if (qi === -1) return "all";
+  const params = new URLSearchParams(window.location.hash.slice(qi + 1));
+  const t = params.get("topic");
+  return Object.keys(PAGE_LABELS).includes(t) ? t : "all";
+}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    PRESS PAGE
 ═══════════════════════════════════════════════════════════════════════════ */
 export default function Press() {
   const [filterType,   setFilterType]   = useState(getTypeFromHash);
-  const [filterTopic,  setFilterTopic]  = useState("all");
+  const [filterTopic,  setFilterTopic]  = useState(getTopicFromHash);
   const [filterOutlet, setFilterOutlet] = useState("all");
   const [sortDir,      setSortDir]      = useState("desc");
 
-  /* Keep filterType in sync when user clicks a nav dropdown link */
+  /* Keep filters in sync when user clicks a nav dropdown link */
   useEffect(() => {
     function onHashChange() {
       setFilterType(getTypeFromHash());
-      setFilterTopic("all");
+      setFilterTopic(getTopicFromHash());
       setFilterOutlet("all");
     }
     window.addEventListener("hashchange", onHashChange);
