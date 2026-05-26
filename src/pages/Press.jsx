@@ -290,7 +290,7 @@ export default function Press() {
                       textUnderlineOffset: "3px", alignSelf: "flex-start",
                     }}
                   >
-                    Read the full post →
+                    Read the full post on {getPlatformLabel(latest.outlet)} →
                   </a>
                 )}
               </div>
