@@ -417,6 +417,41 @@ button { font-family: inherit; }
   }
 }
 
+/* ─── Case study modal ───────────────────────────────────────────────────── */
+.cs-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.cs-modal-panel {
+  position: relative;
+  background: #fff;
+  width: min(680px, 100%);
+  max-height: 82vh;
+  overflow-y: auto;
+  padding: clamp(1.75rem, 4vw, 3rem);
+}
+.cs-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.45;
+  transition: opacity 0.15s;
+}
+.cs-modal-close:hover { opacity: 1; }
+
 /* ─── Chips ─── */
 .chip-row {
   display: flex; flex-wrap: wrap; gap: 0.55rem 0.7rem;

@@ -17,7 +17,8 @@ const FIELD_DEFS = [
   { key: "type",    label: "Claim type",   type: "text",     placeholder: "Disputed-Ownership Claim" },
   { key: "form",    label: "Form",         type: "text",     placeholder: "Advisory" },
   { key: "when",    label: "When",         type: "text",     placeholder: "Oct 2024 – Aug 2025" },
-  { key: "summary", label: "Summary (back of flip card — leave empty to disable flip)", type: "textarea", placeholder: "Optional 2-4 sentence description." },
+  { key: "summary",    label: "Summary (back of flip card — leave empty to disable flip)", type: "textarea", placeholder: "Optional 2-4 sentence description." },
+  { key: "case_study", label: "Case study (optional — opens a full modal when the card is clicked)", type: "textarea", placeholder: "Full narrative of the deal, strategy, outcome…" },
 ];
 
 const PAGES = [
@@ -27,17 +28,18 @@ const PAGES = [
 ];
 
 function blankDeal() {
-  return { amt: "", who: "", type: "", form: "", when: "", summary: "", pages: [], preTurnpage: false, logos: [] };
+  return { amt: "", who: "", type: "", form: "", when: "", summary: "", case_study: "", pages: [], preTurnpage: false, logos: [] };
 }
 
 function sanitize(d) {
   return {
-    amt:         typeof d.amt === "string"     ? d.amt     : "",
-    who:         typeof d.who === "string"     ? d.who     : "",
-    type:        typeof d.type === "string"    ? d.type    : "",
-    form:        typeof d.form === "string"    ? d.form    : "",
-    when:        typeof d.when === "string"    ? d.when    : "",
-    summary:     typeof d.summary === "string" ? d.summary : "",
+    amt:         typeof d.amt         === "string" ? d.amt         : "",
+    who:         typeof d.who         === "string" ? d.who         : "",
+    type:        typeof d.type        === "string" ? d.type        : "",
+    form:        typeof d.form        === "string" ? d.form        : "",
+    when:        typeof d.when        === "string" ? d.when        : "",
+    summary:     typeof d.summary     === "string" ? d.summary     : "",
+    case_study:  typeof d.case_study  === "string" ? d.case_study  : "",
     pages:       Array.isArray(d.pages) ? d.pages.filter(p => typeof p === "string") : [],
     preTurnpage: Boolean(d.preTurnpage),
     logos:       Array.isArray(d.logos) ? d.logos.filter(l => typeof l === "string").slice(0, 3) : [],

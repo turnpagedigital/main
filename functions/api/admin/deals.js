@@ -1,7 +1,7 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 
 const DEALS_PATH = "src/data/deals.json";
-const DEAL_STRING_FIELDS = ["amt", "who", "type", "form", "when", "summary"];
+const DEAL_STRING_FIELDS = ["amt", "who", "type", "form", "when", "summary", "case_study"];
 
 export async function onRequestGet({ request, env }) {
   if (!(await isAuthed(request, env))) {
