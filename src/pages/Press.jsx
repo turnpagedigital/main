@@ -498,7 +498,8 @@ function PageTags({ pages, dark = false }) {
         <span key={p} style={{
           fontFamily: FONT, fontSize: "0.62rem", fontWeight: 800,
           letterSpacing: "0.1em", textTransform: "uppercase",
-          background: NEON, color: "#000",
+          background: "#fff", color: "#000",
+          border: "1px solid #000",
           padding: "0.2em 0.5em",
         }}>
           {PAGE_LABELS[p] || p}
@@ -822,13 +823,16 @@ function UnifiedCard({ item }) {
 
       {/* ── Byline — publications only ──────────────────────────────── */}
       {isArticle && (
-        <p style={{
-          fontFamily: FONT, fontSize: "0.72rem", fontWeight: 600,
-          letterSpacing: "0.08em", textTransform: "uppercase",
-          color: INK_60, margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}`,
-        }}>
-          By Andrew Glantz
-        </p>
+        <div style={{ margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}` }}>
+          <span style={{
+            fontFamily: FONT, fontSize: "0.62rem", fontWeight: 800,
+            letterSpacing: "0.1em", textTransform: "uppercase",
+            background: NEON, color: "#000",
+            padding: "0.2em 0.5em", display: "inline-block",
+          }}>
+            By Andrew Glantz
+          </span>
+        </div>
       )}
 
       {/* ── Excerpt ─────────────────────────────────────────────────── */}
@@ -838,10 +842,6 @@ function UnifiedCard({ item }) {
           color: INK_60, lineHeight: 1.65,
           margin: 0, flex: 1,
           fontStyle: isSocial ? "italic" : "normal",
-          ...(item.mediaType === "press" ? {
-            borderLeft: `3px solid ${NEON}`,
-            paddingLeft: "0.8rem",
-          } : {}),
           display: "-webkit-box", WebkitLineClamp: hasMedia ? 3 : 8,
           WebkitBoxOrient: "vertical", overflow: "hidden",
         }}>
