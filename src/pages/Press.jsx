@@ -237,13 +237,28 @@ export default function Press() {
             Press &<br />
             <span className="accent-light">Publications.</span>
           </h2>
-          {/* Right: description */}
-          <p style={{
-            fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.15rem)",
-            color: INK_60, lineHeight: 1.6, margin: 0,
-          }}>
-            Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.
-          </p>
+          {/* Right: excerpt from the latest social post */}
+          {(() => {
+            const latest = UNIFIED_ITEMS
+              .filter(d => d.mediaType === "social" && d.excerpt)
+              .sort((a, b) => {
+                const ta = a.date ? new Date(a.date).getTime() : 0;
+                const tb = b.date ? new Date(b.date).getTime() : 0;
+                return tb - ta;
+              })[0];
+            if (!latest) return null;
+            // Trim to the first 2 sentences for a compact teaser
+            const sentences = latest.excerpt.replace(/\n/g, " ").match(/[^.!?]+[.!?]+/g) || [];
+            const teaser = sentences.slice(0, 2).join(" ").trim();
+            return (
+              <p style={{
+                fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.15rem)",
+                color: INK_60, lineHeight: 1.6, margin: 0,
+              }}>
+                {teaser}
+              </p>
+            );
+          })()}
         </div>
       </section>
 
@@ -845,7 +860,7 @@ function UnifiedCard({ item }) {
           display: "-webkit-box", WebkitLineClamp: hasMedia ? 3 : 8,
           WebkitBoxOrient: "vertical", overflow: "hidden",
         }}>
-          {(item.mediaType === "press" || isSocial) ? `"${item.excerpt}"` : item.excerpt}
+          {item.excerpt}
         </p>
       )}
 
