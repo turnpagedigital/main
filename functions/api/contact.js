@@ -11,14 +11,55 @@
  *   GOOGLE_SHEET_URL — your Google Apps Script web app URL
  */
 
-export async function onRequestPost(context) {
-  const corsHeaders = {
-    "Access-Control-Allow-Origin": "*",
+/* ── CORS allowlist ─────────────────────────────────────────────────────────
+   Echo the request Origin back only if it matches an approved value.
+   Anything else gets the canonical production URL, which causes the browser
+   to block the response on the requester's side. */
+const ALLOWED_ORIGINS = [
+  "https://turnpagedigital.com",
+  "https://www.turnpagedigital.com",
+];
+function corsHeadersFor(request) {
+  const origin = request.headers.get("Origin") || "";
+  const allowed =
+    ALLOWED_ORIGINS.includes(origin) ||
+    /^https:\/\/[a-z0-9-]+\.turnpagedigital\.pages\.dev$/i.test(origin);
+  return {
+    "Access-Control-Allow-Origin": allowed ? origin : "https://turnpagedigital.com",
     "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Vary": "Origin",
   };
+}
+
+/* ── HTML escape ────────────────────────────────────────────────────────────
+   Every user-supplied value rendered into the notification email must pass
+   through this. Without it, a name like `<script>...` would render as
+   executing HTML in the inbox client. */
+function escapeHtml(s) {
+  if (s == null) return "";
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+/* ── Field length limits ────────────────────────────────────────────────────
+   Reject submissions where any field exceeds a reasonable cap.
+   Stops 1 MB pastes and basic resource-exhaustion abuse. */
+const FIELD_LIMITS = {
+  firstName: 100, lastName: 100, email: 254,
+  phone: 40, telegram: 80, whatsapp: 40,
+  subject: 80, message: 5000, source: 80,
+};
+
+export async function onRequestPost(context) {
+  const { request, env } = context;
+  const corsHeaders = corsHeadersFor(request);
 
   try {
-    const { env } = context;
     const resendKey = env.RESEND_API_KEY;
     const notifyEmail = env.NOTIFY_EMAIL || "info@turnpagedigital.com";
     const fromEmail = env.FROM_EMAIL || "Turnpage Digital Markets <noreply@turnpagedigital.com>";
@@ -30,7 +71,7 @@ export async function onRequestPost(context) {
       );
     }
 
-    const body = await context.request.json();
+    const body = await request.json();
     const { firstName, lastName, email, phone, telegram, whatsapp, subject, message, source } = body;
 
     if (!firstName || !lastName || !email || !subject || !message) {
@@ -38,6 +79,17 @@ export async function onRequestPost(context) {
         JSON.stringify({ error: "Missing required fields" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
+    }
+
+    // Length check — reject if any field exceeds its cap
+    for (const [key, limit] of Object.entries(FIELD_LIMITS)) {
+      const v = body[key];
+      if (typeof v === "string" && v.length > limit) {
+        return new Response(
+          JSON.stringify({ error: `Field "${key}" exceeds maximum length` }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
     }
 
     // Subject labels
@@ -57,8 +109,24 @@ export async function onRequestPost(context) {
       "briefings": "Briefings",
     };
     const sourceLabel = source ? (sourceLabels[source] || source) : "";
+    const subjectFriendly = subjectLabels[subject] || subject;
 
-    const subjectLine = `New inquiry from ${firstName} ${lastName} — ${subjectLabels[subject] || subject}`;
+    const subjectLine = `New inquiry from ${firstName} ${lastName} — ${subjectFriendly}`;
+
+    // Pre-escape every value before interpolation
+    const safe = {
+      firstName: escapeHtml(firstName),
+      lastName:  escapeHtml(lastName),
+      email:     escapeHtml(email),
+      phone:     escapeHtml(phone),
+      telegram:  escapeHtml(telegram),
+      whatsapp:  escapeHtml(whatsapp),
+      message:   escapeHtml(message),
+      subject:   escapeHtml(subjectFriendly),
+      source:    escapeHtml(sourceLabel),
+    };
+    // Email address used inside an href="mailto:…" attribute — URL-encode
+    const emailHref = encodeURIComponent(email);
 
     // Build notification email HTML
     const html = `
@@ -70,25 +138,25 @@ export async function onRequestPost(context) {
           <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
             <tr>
               <td style="padding: 8px 0; color: #666; width: 100px;">Name</td>
-              <td style="padding: 8px 0; font-weight: 600;">${firstName} ${lastName}</td>
+              <td style="padding: 8px 0; font-weight: 600;">${safe.firstName} ${safe.lastName}</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; color: #666;">Email</td>
-              <td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #1a1a1a;">${email}</a></td>
+              <td style="padding: 8px 0;"><a href="mailto:${emailHref}" style="color: #1a1a1a;">${safe.email}</a></td>
             </tr>
-            ${phone ? `<tr><td style="padding: 8px 0; color: #666;">Phone</td><td style="padding: 8px 0;">${phone}</td></tr>` : ""}
-            ${telegram ? `<tr><td style="padding: 8px 0; color: #666;">Telegram</td><td style="padding: 8px 0;">${telegram}</td></tr>` : ""}
-            ${whatsapp ? `<tr><td style="padding: 8px 0; color: #666;">WhatsApp</td><td style="padding: 8px 0;">${whatsapp}</td></tr>` : ""}
+            ${phone    ? `<tr><td style="padding: 8px 0; color: #666;">Phone</td><td style="padding: 8px 0;">${safe.phone}</td></tr>` : ""}
+            ${telegram ? `<tr><td style="padding: 8px 0; color: #666;">Telegram</td><td style="padding: 8px 0;">${safe.telegram}</td></tr>` : ""}
+            ${whatsapp ? `<tr><td style="padding: 8px 0; color: #666;">WhatsApp</td><td style="padding: 8px 0;">${safe.whatsapp}</td></tr>` : ""}
             <tr>
               <td style="padding: 8px 0; color: #666;">Subject</td>
-              <td style="padding: 8px 0;">${subjectLabels[subject] || subject}</td>
+              <td style="padding: 8px 0;">${safe.subject}</td>
             </tr>
-            ${sourceLabel ? `<tr><td style="padding: 8px 0; color: #666;">Source</td><td style="padding: 8px 0;">${sourceLabel}</td></tr>` : ""}
+            ${sourceLabel ? `<tr><td style="padding: 8px 0; color: #666;">Source</td><td style="padding: 8px 0;">${safe.source}</td></tr>` : ""}
           </table>
           <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 16px 0;" />
           <div style="font-size: 14px; line-height: 1.6; color: #333;">
             <strong style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Message</strong>
-            <p style="margin: 8px 0 0; white-space: pre-wrap;">${message}</p>
+            <p style="margin: 8px 0 0; white-space: pre-wrap;">${safe.message}</p>
           </div>
         </div>
         <p style="font-size: 11px; color: #999; margin-top: 16px; text-align: center;">
@@ -105,7 +173,7 @@ export async function onRequestPost(context) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           firstName, lastName, email, phone, telegram, whatsapp,
-          subject: subjectLabels[subject] || subject, message,
+          subject: subjectFriendly, message,
           source: sourceLabel,
           timestamp: new Date().toISOString(),
         }),
@@ -148,12 +216,6 @@ export async function onRequestPost(context) {
 }
 
 // Handle CORS preflight
-export async function onRequestOptions() {
-  return new Response(null, {
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-    },
-  });
+export async function onRequestOptions(context) {
+  return new Response(null, { headers: corsHeadersFor(context.request) });
 }
