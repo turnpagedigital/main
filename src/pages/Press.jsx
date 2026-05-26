@@ -247,16 +247,50 @@ export default function Press() {
                 return tb - ta;
               })[0];
             if (!latest) return null;
-            // Trim to the first 2 sentences for a compact teaser
             const sentences = latest.excerpt.replace(/\n/g, " ").match(/[^.!?]+[.!?]+/g) || [];
             const teaser = sentences.slice(0, 2).join(" ").trim();
+            const accent = getPlatformAccent(latest.outlet);
             return (
-              <p style={{
-                fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.15rem)",
-                color: INK_60, lineHeight: 1.6, margin: 0,
-              }}>
-                {teaser}
-              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+                {/* Attribution row */}
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <PlatformIcon platform={latest.outlet} size={14} color={accent} />
+                  <span style={{
+                    fontFamily: FONT, fontSize: "0.68rem", fontWeight: 700,
+                    letterSpacing: "0.14em", textTransform: "uppercase",
+                    color: accent,
+                  }}>
+                    From the feed
+                  </span>
+                  {latest.date && (
+                    <span style={{ fontFamily: FONT, fontSize: "0.68rem", color: INK_60 }}>
+                      · {latest.date}
+                    </span>
+                  )}
+                </div>
+                {/* Teaser */}
+                <p style={{
+                  fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.15rem)",
+                  color: INK_60, lineHeight: 1.6, margin: 0,
+                  fontStyle: "italic",
+                }}>
+                  {teaser}
+                </p>
+                {/* Link */}
+                {latest.href && (
+                  <a
+                    href={latest.href}
+                    target="_blank" rel="noopener noreferrer"
+                    style={{
+                      fontFamily: FONT, fontSize: "0.82rem", fontWeight: 700,
+                      color: accent, textDecoration: "underline",
+                      textUnderlineOffset: "3px", alignSelf: "flex-start",
+                    }}
+                  >
+                    Read the full post →
+                  </a>
+                )}
+              </div>
             );
           })()}
         </div>
