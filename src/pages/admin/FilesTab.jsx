@@ -338,7 +338,7 @@ function AddFileSection({ onAdd }) {
 }
 
 /* Reusable dropzone — also exposed for the favicon "upload new" shortcut. */
-function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false }) {
+function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false, label = "Upload new favicon" }) {
   const [phase,  setPhase]  = useState("idle"); // idle | uploading | done | error
   const [error,  setError]  = useState("");
   const fileRef = useRef(null);
@@ -409,7 +409,7 @@ function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false })
             cursor:  phase === "uploading" ? "wait" : "pointer",
           }}
         >
-          {phase === "uploading" ? "Uploading…" : phase === "done" ? "✓ Uploaded" : "Upload new favicon"}
+          {phase === "uploading" ? "Uploading…" : phase === "done" ? "✓ Uploaded" : label}
         </button>
         {error && <p style={{ color: "#c44", fontSize: "0.75rem", margin: "0.35rem 0 0" }}>{error}</p>}
       </div>
@@ -663,39 +663,24 @@ function FaviconSection({ favicons, files, onSelect, onAdd }) {
             current={favicons[key] || ""}
             eligible={eligible}
             onSelect={url => onSelect(key, url)}
+            onUpload={({ url, filename }) => {
+              // Add to library AND auto-assign to this row's environment
+              onAdd({
+                url,
+                name:   filename.replace(/\.[^.]+$/, ""),
+                type:   "favicon",
+                source: "upload",
+              });
+              onSelect(key, url);
+            }}
           />
         ))}
-      </div>
-
-      <div style={{
-        marginTop: "1.1rem", paddingTop: "0.85rem", borderTop: `1px solid ${LINE}`,
-        display: "flex", gap: "0.7rem", alignItems: "center", flexWrap: "wrap",
-      }}>
-        <span style={{ fontSize: "0.78rem", color: INK_60 }}>
-          Need a new icon?
-        </span>
-        <UploadDropzone
-          compact
-          accept="image/png,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,image/webp"
-          onUploaded={({ url, filename }) => {
-            onAdd({
-              url,
-              name:   filename.replace(/\.[^.]+$/, ""),
-              // Uploading from the favicon section → default the type to "favicon"
-              type:   "favicon",
-              source: "upload",
-            });
-          }}
-        />
-        <span style={{ fontSize: "0.72rem", color: INK_60 }}>
-          Uploaded file appears in the library above — select it in the dropdowns to assign.
-        </span>
       </div>
     </div>
   );
 }
 
-function FaviconRow({ envKey, label, hint, current, eligible, onSelect }) {
+function FaviconRow({ envKey, label, hint, current, eligible, onSelect, onUpload }) {
   // Sentinel select values: "" = none, "__custom__" = paste a URL, anything else = library URL
   const inLibrary = current && eligible.some(f => f.url === current);
   const isCustomBootstrap = current && !inLibrary;
@@ -766,22 +751,30 @@ function FaviconRow({ envKey, label, hint, current, eligible, onSelect }) {
         </div>
       </div>
 
-      {/* Picker */}
+      {/* Picker — dropdown + inline upload button (uploads to library AND auto-assigns) */}
       <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-        <select
-          value={mode === "custom" ? "__custom__" : current}
-          onChange={handleSelectChange}
-          style={{ ...inputStyle, marginTop: 0, cursor: "pointer" }}
-        >
-          <option value="">— None —</option>
-          {eligible.map(f => (
-            <option key={f.id} value={f.url}>
-              {f.name}{f.type ? ` (${f.type})` : ""}
-            </option>
-          ))}
-          <option disabled style={{ color: "#aaa" }}>──────────</option>
-          <option value="__custom__">— Custom URL —</option>
-        </select>
+        <div style={{ display: "flex", gap: "0.4rem" }}>
+          <select
+            value={mode === "custom" ? "__custom__" : current}
+            onChange={handleSelectChange}
+            style={{ ...inputStyle, marginTop: 0, cursor: "pointer", flex: 1 }}
+          >
+            <option value="">— None —</option>
+            {eligible.map(f => (
+              <option key={f.id} value={f.url}>
+                {f.name}{f.type ? ` (${f.type})` : ""}
+              </option>
+            ))}
+            <option disabled style={{ color: "#aaa" }}>──────────</option>
+            <option value="__custom__">— Custom URL —</option>
+          </select>
+          <UploadDropzone
+            compact
+            label="Upload"
+            accept="image/png,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,image/webp"
+            onUploaded={onUpload}
+          />
+        </div>
 
         {mode === "custom" && (
           <div style={{ display: "flex", gap: "0.4rem" }}>
