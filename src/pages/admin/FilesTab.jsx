@@ -1,18 +1,14 @@
-import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   FilesTab — centralised image / logo library + per-environment favicon picker
-   + an index of every other media file in the repo's public/ directory.
+   FilesTab — centralised image / logo library + per-environment favicon picker.
 
-   Four sections:
+   Three sections:
      1. Add new file (upload OR by URL)
-     2. Library — tracked entries from src/data/file-library.json
-     3. Site assets — every other image/video in public/ that isn't already in
-        the library. Each row has Replace (overwrites the file in place) and
-        Add to library (adopts it into the library above).
-     4. Favicons (production / preview / admin pickers)
+     2. File grid (cards: thumbnail, name, companies chips, copy/delete)
+     3. Favicons (production / preview / admin pickers)
 
    Self-contained: owns its own fetch/save lifecycle and reports dirty state
    via onDirtyChange?.(dirty). Mirrors the DealsTab pattern.
@@ -27,14 +23,7 @@ const FAVICON_ROWS = [
 const TYPE_OPTIONS = ["image", "logo", "favicon", "icon"];
 const FAVICON_PICKER_TYPES = ["favicon", "icon", "logo"]; // types eligible for the favicon dropdowns
 
-// MIME accept lists used by the various upload widgets.
-const UPLOAD_ACCEPT       = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,image/avif";
-const UPLOAD_ACCEPT_VIDEO = "video/mp4,video/webm,video/quicktime";
-const UPLOAD_ACCEPT_ALL   = `${UPLOAD_ACCEPT},${UPLOAD_ACCEPT_VIDEO}`;
-
-// Upload size cap (raw bytes). Videos in public/ are 1–4 MB so 25 MB is plenty
-// of headroom without making it easy to accidentally commit huge files.
-const MAX_UPLOAD_BYTES = 25 * 1024 * 1024;
+const UPLOAD_ACCEPT = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon";
 
 /* Infer a sensible default `type` (category) for a new entry. Filename or URL
  * containing "favicon" → favicon. Otherwise default to "image". Users can change
@@ -98,43 +87,12 @@ function deriveNameFromUrl(url) {
   }
 }
 
-/* Human-friendly byte size — "12 KB", "1.4 MB", etc. */
-function formatBytes(n) {
-  if (typeof n !== "number" || !isFinite(n) || n <= 0) return "—";
-  if (n < 1024)            return `${n} B`;
-  if (n < 1024 * 1024)     return `${Math.round(n / 1024)} KB`;
-  if (n < 1024 * 1024 * 10) return `${(n / (1024 * 1024)).toFixed(1)} MB`;
-  return `${Math.round(n / (1024 * 1024))} MB`;
-}
-
-/* Group an array of indexed files by a coarse category for the section
- * headings. We use extension class (Images / Videos / Icons) — simpler than
- * inferring by filename ("favicon", "hero", "bg") and the user can scan
- * thumbnails to find what they want anyway. */
-function groupIndexed(files) {
-  const groups = { Images: [], Videos: [], Icons: [] };
-  for (const f of files) {
-    if (f.type === "video")     groups.Videos.push(f);
-    else if (f.type === "icon") groups.Icons.push(f);
-    else                        groups.Images.push(f);
-  }
-  // Drop empty groups
-  return Object.entries(groups).filter(([, arr]) => arr.length > 0);
-}
-
 export default function FilesTab({ onDirtyChange }) {
   const [library, setLibrary]     = useState(null);    // { files: [], favicons: {} }
   const [original, setOriginal]   = useState(null);
   const [phase, setPhase]         = useState("loading");
   const [error, setError]         = useState("");
   const [lastSavedAt, setLastSavedAt] = useState(null);
-
-  // Indexed site assets — every media file in public/. Fetched once on mount
-  // and again after each Save (in case a Replace landed). Independent from
-  // dirty/save lifecycle so the user can still edit the library while the
-  // index is loading or revalidating.
-  const [indexedFiles, setIndexedFiles]   = useState(null);   // null = loading
-  const [indexedError, setIndexedError]   = useState("");
 
   const dirty = useMemo(() => {
     if (!library || !original) return false;
@@ -148,49 +106,19 @@ export default function FilesTab({ onDirtyChange }) {
   async function load() {
     setPhase("loading"); setError("");
     try {
-      // Fetch the library and the indexed site assets in parallel.
-      const [libRes, idxRes] = await Promise.all([
-        fetch("/api/admin/file-library", { credentials: "include" }),
-        fetch("/api/admin/file-index",   { credentials: "include" }),
-      ]);
-      if (libRes.status === 401 || idxRes.status === 401) return;
-
-      const libBody = await libRes.json();
-      if (!libRes.ok || !libBody.ok) throw new Error(libBody.error || `HTTP ${libRes.status}`);
+      const r = await fetch("/api/admin/file-library", { credentials: "include" });
+      if (r.status === 401) return;
+      const body = await r.json();
+      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
       const fresh = {
-        files: (libBody.data.files || []).map(sanitizeFile),
-        favicons: sanitizeFavicons(libBody.data.favicons),
+        files: (body.data.files || []).map(sanitizeFile),
+        favicons: sanitizeFavicons(body.data.favicons),
       };
       setLibrary(fresh);
       setOriginal(JSON.parse(JSON.stringify(fresh)));
-
-      // Index is best-effort — a failure here doesn't block library edits.
-      const idxBody = await idxRes.json().catch(() => ({}));
-      if (idxRes.ok && idxBody.ok) {
-        setIndexedFiles(Array.isArray(idxBody.files) ? idxBody.files : []);
-        setIndexedError("");
-      } else {
-        setIndexedFiles([]);
-        setIndexedError(idxBody.error || `Index fetch failed (${idxRes.status})`);
-      }
-
       setPhase("ready");
     } catch (e) { setError(e.message); setPhase("error"); }
   }
-
-  // Reload just the indexed files — used after a Replace so the user sees
-  // the updated size/thumbnail without nuking unsaved library edits.
-  const reloadIndex = useCallback(async () => {
-    try {
-      const r = await fetch("/api/admin/file-index", { credentials: "include" });
-      if (r.status === 401) return;
-      const body = await r.json().catch(() => ({}));
-      if (r.ok && body.ok) {
-        setIndexedFiles(Array.isArray(body.files) ? body.files : []);
-        setIndexedError("");
-      }
-    } catch { /* swallow — keep the previous index visible */ }
-  }, []);
 
   async function save() {
     if (!library) return;
@@ -263,12 +191,6 @@ export default function FilesTab({ onDirtyChange }) {
     .slice()
     .sort((a, b) => (b.addedAt || "").localeCompare(a.addedAt || ""));
 
-  // Dedupe the indexed files against the library — any indexed file whose URL
-  // already appears in a library entry shouldn't show in "Site assets" since
-  // it's already controllable from the Library section above.
-  const librarySet = useMemoSet(library.files.map(f => f.url));
-  const indexedUnclaimed = (indexedFiles || []).filter(f => !librarySet.has(f.url));
-
   return (
     <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
       {/* Section header — sticky so the Save button stays visible while the
@@ -311,7 +233,6 @@ export default function FilesTab({ onDirtyChange }) {
       <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
         Centralised library of logos, icons, and images. Upload a file (commits to <code>public/library/</code>) or paste any image URL.
         Tag each entry with company names so you can reuse them when tagging press items and deals.
-        The <strong>Site assets</strong> section below lists every other media file already in the repo so you can replace or adopt them.
       </p>
 
       {/* ── Section 1: Add new file ─────────────────────────────────────── */}
@@ -324,40 +245,15 @@ export default function FilesTab({ onDirtyChange }) {
         onDelete={deleteFile}
       />
 
-      {/* ── Section 3: Site assets (indexed media in public/) ───────────── */}
-      <SiteAssetsSection
-        indexedFiles={indexedUnclaimed}
-        loading={indexedFiles === null}
-        error={indexedError}
-        onReplaced={reloadIndex}
-        onAdopt={(idx) => {
-          // Adopt an indexed file into the library. The dedupe filter above
-          // means this row will disappear from "Site assets" once added.
-          addFile({
-            url:    idx.url,
-            name:   deriveNameFromUrl(idx.url),
-            type:   inferTypeFromFilename(idx.url),
-            source: idx.type === "video" ? "url" : "url",  // not an "upload" event — they're pre-existing
-          });
-        }}
-      />
-
-      {/* ── Section 4: Favicons ─────────────────────────────────────────── */}
+      {/* ── Section 3: Favicons ─────────────────────────────────────────── */}
       <FaviconSection
         favicons={library.favicons}
         files={library.files}
-        indexedFiles={indexedFiles || []}
         onSelect={setFavicon}
         onAdd={addFile}
       />
     </div>
   );
-}
-
-/* Stable Set built from an array of strings. useMemo against the joined-key
- * so reordering or in-place edits don't churn the Set identity. */
-function useMemoSet(items) {
-  return useMemo(() => new Set(items), [items.join("\n")]); // eslint-disable-line react-hooks/exhaustive-deps
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -450,8 +346,8 @@ function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false, l
   async function handleFile(e) {
     const file = e.target.files[0];
     if (!file) return;
-    if (file.size > MAX_UPLOAD_BYTES) {
-      setError(`File too large — max ${Math.round(MAX_UPLOAD_BYTES / (1024 * 1024))} MB.`);
+    if (file.size > 5 * 1024 * 1024) {
+      setError("File too large — max 5 MB.");
       setPhase("error");
       if (fileRef.current) fileRef.current.value = "";
       return;
@@ -537,7 +433,7 @@ function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false, l
         style={{ fontSize: "0.85rem", fontFamily: FONT }}
       />
       <p style={{ fontSize: "0.72rem", color: INK_60, margin: 0 }}>
-        PNG, JPEG, WebP, GIF, SVG, AVIF, or ICO. Max 25 MB. File is committed to <code>public/library/</code>.
+        PNG, JPEG, WebP, GIF, SVG, or ICO. Max 5 MB. File is committed to <code>public/library/</code>.
       </p>
       {phase === "uploading" && (
         <p style={{ color: INK_60, fontSize: "0.78rem", margin: 0 }}>Uploading…</p>
@@ -628,8 +524,8 @@ function FileRow({ file, onUpdate, onDelete }) {
   async function handleReplace(e) {
     const f = e.target.files && e.target.files[0];
     if (!f) return;
-    if (f.size > MAX_UPLOAD_BYTES) {
-      setReplaceError(`File too large — max ${Math.round(MAX_UPLOAD_BYTES / (1024 * 1024))} MB.`);
+    if (f.size > 5 * 1024 * 1024) {
+      setReplaceError("File too large — max 5 MB.");
       if (replaceInputRef.current) replaceInputRef.current.value = "";
       return;
     }
@@ -806,273 +702,15 @@ function FileRow({ file, onUpdate, onDelete }) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Section 3 — Site assets
-
-   Read-only index of every media file in public/ that isn't already tracked
-   by the library above. Each row offers:
-     - Replace — overwrites the file in place via /api/admin/file-upload
-       with a `targetPath` matching the original path. References elsewhere on
-       the site continue to resolve because the URL didn't change.
-     - Add to library — adopts the file into the library so the user can give
-       it a name, type, and company tags. After adoption + Save, the row
-       disappears from this section (handled by the dedupe in the parent).
-
-   No edit fields here — the path is the source of truth. If you want to
-   rename or recategorise, adopt it into the library first.
+   Section 3 — Favicons
 ═══════════════════════════════════════════════════════════════════════════ */
-function SiteAssetsSection({ indexedFiles, loading, error, onReplaced, onAdopt }) {
-  const groups = useMemo(() => groupIndexed(indexedFiles), [indexedFiles]);
-  const total = indexedFiles.length;
-
-  return (
-    <div style={{ marginBottom: "2rem" }}>
-      <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.3rem" }}>
-        Site assets{" "}
-        <span style={{ fontWeight: 400 }}>
-          ({loading ? "scanning repo…" : `${total} file${total !== 1 ? "s" : ""} in public/ not yet in the library`})
-        </span>
-      </div>
-      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.8rem" }}>
-        Every image and video already in the repo. Use <strong>Replace</strong> to swap a file out in place (keeps the same URL, so anywhere on the site that points at it picks up the new content) or <strong>Add to library</strong> to track it with a name and company tags.
-      </p>
-
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.6rem 0.75rem", marginBottom: "0.8rem", fontSize: "0.82rem" }}>
-          Couldn't load the site asset index: {error}
-        </div>
-      )}
-
-      {loading && (
-        <div style={{
-          padding: "1.5rem", background: "#fff", border: `1px dashed ${LINE}`,
-          color: INK_60, textAlign: "center", fontSize: "0.85rem",
-        }}>
-          Scanning repo for media files…
-        </div>
-      )}
-
-      {!loading && total === 0 && !error && (
-        <div style={{
-          padding: "1.5rem", background: "#fff", border: `1px dashed ${LINE}`,
-          color: INK_60, textAlign: "center", fontSize: "0.85rem",
-        }}>
-          Every media file in <code>public/</code> is already in the library above.
-        </div>
-      )}
-
-      {!loading && groups.map(([groupLabel, items]) => (
-        <div key={groupLabel} style={{ marginBottom: "1rem" }}>
-          <div style={{
-            fontSize: "0.72rem", fontWeight: 700, color: INK_60,
-            textTransform: "uppercase", letterSpacing: "0.06em",
-            margin: "0.6rem 0 0.4rem",
-          }}>
-            {groupLabel} <span style={{ fontWeight: 400, textTransform: "none", letterSpacing: 0 }}>({items.length})</span>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-            {items.map(file => (
-              <SiteAssetRow
-                key={file.path}
-                file={file}
-                onReplaced={onReplaced}
-                onAdopt={() => onAdopt(file)}
-              />
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function SiteAssetRow({ file, onReplaced, onAdopt }) {
-  const [replacing,    setReplacing]    = useState(false);
-  const [replaceError, setReplaceError] = useState("");
-  const [replaceOk,    setReplaceOk]    = useState(false);
-  const [copied,       setCopied]       = useState(false);
-  const replaceInputRef                 = useRef(null);
-
-  // Accept type matches the file extension class so the picker shows the right
-  // kinds. The server-side validator will reject any mismatched payload too.
-  const accept = file.type === "video"
-    ? UPLOAD_ACCEPT_VIDEO
-    : file.type === "icon"
-      ? "image/x-icon,image/vnd.microsoft.icon,image/png"
-      : UPLOAD_ACCEPT;
-
-  async function handleReplace(e) {
-    const f = e.target.files && e.target.files[0];
-    if (!f) return;
-    if (f.size > MAX_UPLOAD_BYTES) {
-      setReplaceError(`File too large — max ${Math.round(MAX_UPLOAD_BYTES / (1024 * 1024))} MB.`);
-      if (replaceInputRef.current) replaceInputRef.current.value = "";
-      return;
-    }
-    setReplaceError("");
-    setReplaceOk(false);
-    setReplacing(true);
-    try {
-      const base64 = await new Promise((res, rej) => {
-        const reader = new FileReader();
-        reader.onload  = ev => res(ev.target.result.split(",")[1]);
-        reader.onerror = rej;
-        reader.readAsDataURL(f);
-      });
-      const r = await fetch("/api/admin/file-upload", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({
-          filename:      f.name,
-          contentBase64: base64,
-          contentType:   f.type,
-          targetPath:    file.path,   // key bit — overwrite in place
-        }),
-      });
-      const body = await r.json().catch(() => ({}));
-      if (!r.ok || !body.ok) throw new Error(body.error || "Upload failed");
-      setReplaceOk(true);
-      setTimeout(() => setReplaceOk(false), 2500);
-      // Refresh the indexed-files list so the new size shows up
-      onReplaced?.();
-    } catch (err) {
-      setReplaceError(err.message);
-    } finally {
-      setReplacing(false);
-      if (replaceInputRef.current) replaceInputRef.current.value = "";
-    }
-  }
-
-  async function copyUrl() {
-    try {
-      const absolute = typeof window !== "undefined" ? window.location.origin + file.url : file.url;
-      await navigator.clipboard.writeText(absolute);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1400);
-    } catch {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1400);
-    }
-  }
-
-  return (
-    <div
-      style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}
-      className="file-row"
-    >
-      {/* Thumbnail (image) or video badge */}
-      <div style={{
-        width: 64, height: 40, flexShrink: 0,
-        background: "#F4F5F7", border: `1px solid ${LINE}`,
-        display: "flex", alignItems: "center", justifyContent: "center",
-        overflow: "hidden",
-      }}>
-        {file.type === "video" ? (
-          <span style={{ fontSize: "0.62rem", fontWeight: 700, color: INK_60, letterSpacing: "0.04em" }}>
-            VIDEO
-          </span>
-        ) : (
-          <img
-            src={file.url}
-            alt={file.path}
-            style={{ maxWidth: 58, maxHeight: 34, objectFit: "contain", display: "block" }}
-            onError={e => { e.currentTarget.style.opacity = "0.25"; }}
-          />
-        )}
-      </div>
-
-      {/* Path + meta */}
-      <div style={{ flex: 1, minWidth: 200, display: "flex", flexDirection: "column", gap: "0.15rem" }}>
-        <code style={{
-          fontFamily: "ui-monospace, Menlo, monospace", fontSize: "0.78rem",
-          color: INK, overflowWrap: "anywhere",
-        }}>
-          {file.url}
-        </code>
-        <div style={{ fontSize: "0.7rem", color: INK_60 }}>
-          {file.ext.toUpperCase()} · {formatBytes(file.size)}
-        </div>
-      </div>
-
-      {/* Actions */}
-      <input
-        ref={replaceInputRef}
-        type="file"
-        accept={accept}
-        style={{ display: "none" }}
-        onChange={handleReplace}
-      />
-      <button
-        type="button"
-        onClick={() => replaceInputRef.current && replaceInputRef.current.click()}
-        disabled={replacing}
-        title={`Overwrite ${file.path} with a new upload`}
-        style={{
-          ...iconBtnStyle(false),
-          width: "auto", padding: "0 0.55rem", fontSize: "0.72rem", fontWeight: 700,
-          opacity: replacing ? 0.6 : 1, cursor: replacing ? "wait" : "pointer",
-        }}
-      >
-        {replacing ? "…" : replaceOk ? "✓ Replaced" : "Replace"}
-      </button>
-      <button
-        type="button"
-        onClick={onAdopt}
-        title="Add this file to the library above (lets you give it a name and tags)"
-        style={{
-          ...iconBtnStyle(false),
-          width: "auto", padding: "0 0.55rem", fontSize: "0.72rem", fontWeight: 700,
-        }}
-      >
-        + Library
-      </button>
-      <button
-        type="button"
-        onClick={copyUrl}
-        title="Copy URL"
-        style={{ ...iconBtnStyle(false), width: "auto", padding: "0 0.55rem", fontSize: "0.72rem", fontWeight: 700 }}
-      >
-        {copied ? "✓" : "Copy"}
-      </button>
-
-      {replaceError && (
-        <div style={{ flexBasis: "100%", fontSize: "0.72rem", color: "#c44", marginTop: "0.2rem" }}>
-          {replaceError}
-        </div>
-      )}
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   Section 4 — Favicons
-═══════════════════════════════════════════════════════════════════════════ */
-function FaviconSection({ favicons, files, indexedFiles, onSelect, onAdd }) {
-  // Eligible favicon files come from two places:
-  //   1. The library — any entry whose `type` is favicon, icon, or logo.
-  //   2. Site assets — any indexed .ico or any image whose filename contains
-  //      "favicon". This lets the user pick e.g. /favicon1.png without first
-  //      having to adopt it into the library.
-  // We dedupe by URL (library entries win — they have a name/type the user
-  // chose).
+function FaviconSection({ favicons, files, onSelect, onAdd }) {
+  // Eligible favicon files: any entry whose `type` is favicon, icon, or logo.
+  // Always include the currently-selected URL even if it isn't in the library
+  // (so the user can see what's set without surprises).
   const eligible = useMemo(() => {
-    const fromLibrary = files.filter(f => FAVICON_PICKER_TYPES.includes(f.type));
-    const seen = new Set(fromLibrary.map(f => f.url));
-    const fromIndexed = (indexedFiles || [])
-      .filter(f => {
-        if (seen.has(f.url)) return false;
-        if (f.type === "icon") return true;
-        const base = f.url.split("/").pop().toLowerCase();
-        return base.startsWith("favicon");
-      })
-      .map(f => ({
-        id:   `idx:${f.path}`,
-        name: f.url.split("/").pop().replace(/\.[^.]+$/, ""),
-        url:  f.url,
-        type: f.type === "icon" ? "icon" : "favicon",
-      }));
-    return [...fromLibrary, ...fromIndexed];
-  }, [files, indexedFiles]);
+    return files.filter(f => FAVICON_PICKER_TYPES.includes(f.type));
+  }, [files]);
 
   return (
     <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "2.5rem" }}>

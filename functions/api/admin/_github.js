@@ -79,33 +79,6 @@ export async function getFileSha(env, path) {
   return j.sha || null;
 }
 
-/* Recursively list every file in the repo on the configured branch via the
-   Git Trees API. Returns a flat array of entries — one fetch, no walking the
-   contents tree. Each entry looks like:
-     { path, mode, type: "blob"|"tree", sha, size?, url }
-
-   `truncated: true` in the response means the tree exceeded GitHub's 7MB /
-   100k-entry limit. We surface this via the result so callers can decide what
-   to do (we don't paginate — this repo is well under the limit and likely to
-   stay that way).
-
-   On HTTP error, returns { ok: false, error }. */
-export async function listRepoTree(env, branch) {
-  const useBranch = branch || branchOf(env);
-  const url = `https://api.github.com/repos/${env.GITHUB_REPO}/git/trees/${encodeURIComponent(useBranch)}?recursive=1`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
-  if (!r.ok) {
-    return { ok: false, error: `GitHub trees GET ${r.status}: ${(await r.text()).slice(0, 300)}` };
-  }
-  const j = await r.json();
-  return {
-    ok: true,
-    tree: Array.isArray(j.tree) ? j.tree : [],
-    truncated: Boolean(j.truncated),
-    sha: j.sha || "",
-  };
-}
-
 /* ── Writes ──────────────────────────────────────────────────────────────── */
 
 /* Commit a text file (UTF-8 string) to GitHub. The string is base64-encoded
