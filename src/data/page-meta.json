@@ -9,25 +9,25 @@
     {
       "path": "/",
       "title": "Turnpage Digital Markets — The OTC Desk for Rights Holders",
-      "description": "Capital and advisory for rights holders. AI copyright class actions, crypto bankruptcies, complex litigation — over $1B liquidated.",
+      "description": "Capital and advisory solutions for rights holders — complex claims, locked assets and creative financing options",
       "og": "home"
     },
     {
       "path": "/crypto",
-      "title": "Locked Crypto — Turnpage Digital Markets",
-      "description": "FTX. Celsius. BlockFi. Voyager. Genesis. Mt. Gox. We quote in fiat and close fast on locked digital assets.",
+      "title": "Crypto Loss Claimants — Turnpage Digital",
+      "description": "Crypto-native liquidity provider for locked crypto assets — bankruptcies, asset forfeitures and other situations",
       "og": "crypto"
     },
     {
       "path": "/ai-copyright",
-      "title": "AI Copyright Claims — Turnpage Digital Markets",
-      "description": "Bartz. The OpenAI MDL. Concord. Getty. We buy copyright claims against generative AI companies and advise on strategy.",
+      "title": "Copyright Claimants — Turnpage Digital",
+      "description": "Capital and advisory for creators and rights holders with claims against generative AI companies",
       "og": "ai-copyright"
     },
     {
       "path": "/litigation-finance",
-      "title": "Litigation Finance — Turnpage Digital Markets",
-      "description": "Capital for the best contingency law firms — so merit drives the docket, not client cashflow.",
+      "title": "Litigation Funding — Turnpage Digital Markets",
+      "description": "Capital and advisory for high stakes, contingency matters",
       "og": "litigation-finance"
     }
   ]
