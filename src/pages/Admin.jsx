@@ -7,7 +7,7 @@ import PressTab  from "./admin/PressTab.jsx";
 import PostsTab  from "./admin/PostsTab.jsx";
 import FAQsTab   from "./admin/FAQsTab.jsx";
 import AlertsTab from "./admin/AlertsTab.jsx";
-import FilesTab  from "./admin/AssetsTab.jsx";
+import AssetsTab from "./admin/AssetsTab.jsx";
 import PagesTab  from "./admin/PagesTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.
@@ -18,7 +18,7 @@ import PagesTab  from "./admin/PagesTab.jsx";
    driven by src/data/file-library.json. The favicon picker lives in the
    Pages tab here. */
 
-const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "files", "pages"];
+const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "assets", "pages"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "bio";
@@ -102,7 +102,7 @@ export default function Admin() {
     { key: "press",  label: "Press",  dirty: dirtyTabs.press  ?? false },
     { key: "alerts", label: "Alerts", dirty: dirtyTabs.alerts ?? false },
     { key: "faqs",   label: "FAQs",   dirty: dirtyTabs.faqs   ?? false },
-    { key: "files",  label: "Files",  dirty: dirtyTabs.files  ?? false },
+    { key: "assets", label: "Assets", dirty: dirtyTabs.assets ?? false },
     { key: "pages",  label: "Pages",  dirty: dirtyTabs.pages  ?? false },
   ];
 
@@ -170,7 +170,7 @@ export default function Admin() {
       {tab === "press"  && <PressTab  onDirtyChange={makeDirtyCallback("press")} />}
       {tab === "alerts" && <AlertsTab onDirtyChange={makeDirtyCallback("alerts")} />}
       {tab === "faqs"   && <FAQsTab   onDirtyChange={makeDirtyCallback("faqs")} />}
-      {tab === "files"  && <FilesTab  onDirtyChange={makeDirtyCallback("files")} />}
+      {tab === "assets" && <AssetsTab onDirtyChange={makeDirtyCallback("assets")} />}
       {tab === "pages"  && <PagesTab  onDirtyChange={makeDirtyCallback("pages")} />}
     </div>
   );

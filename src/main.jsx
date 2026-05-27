@@ -28,7 +28,7 @@ if (typeof window !== "undefined" && window.location.hash.startsWith("#/")) {
 //   *.pages.dev hosts  → favicons.preview
 //   everything else    → favicons.production
 // The static <link rel="icon"> in index.html is the build-time fallback.
-// Edit /admin/files to change which icon is used per environment.
+// Edit /admin/pages to change which icon is used per environment.
 if (typeof window !== "undefined") {
   try {
     const favicons = (fileLibrary && fileLibrary.favicons) || {};

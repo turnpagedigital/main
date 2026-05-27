@@ -55,6 +55,9 @@ export async function onRequestPut({ request, env }) {
     tagline_accent: String(bio.tagline_accent ?? ""),
     tagline_after:  String(bio.tagline_after  ?? ""),
     paragraphs:     (bio.paragraphs || []).map(p => String(p)),
+    social_links:   Array.isArray(bio.social_links)
+      ? bio.social_links.map(s => ({ url: String(s.url ?? "").trim() })).filter(s => s.url)
+      : [],
     media_logos:    Array.isArray(bio.media_logos)
       ? bio.media_logos.map(l => ({ name: String(l.name ?? ""), url: String(l.url ?? "") }))
       : [],
@@ -75,6 +78,14 @@ function validateBio(bio) {
   if (!Array.isArray(bio.paragraphs)) return "paragraphs must be an array";
   for (let i = 0; i < bio.paragraphs.length; i++) {
     if (typeof bio.paragraphs[i] !== "string") return `paragraphs[${i}] must be a string`;
+  }
+  if (bio.social_links !== undefined) {
+    if (!Array.isArray(bio.social_links)) return "social_links must be an array";
+    for (let i = 0; i < bio.social_links.length; i++) {
+      const s = bio.social_links[i];
+      if (!s || typeof s !== "object") return `social_links[${i}] must be an object`;
+      if (typeof s.url !== "string") return `social_links[${i}].url must be a string`;
+    }
   }
   if (bio.media_logos !== undefined) {
     if (!Array.isArray(bio.media_logos)) return "media_logos must be an array";

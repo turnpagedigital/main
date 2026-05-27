@@ -13,7 +13,7 @@ import { inputStyle, btnStyle, btnPrimaryStyle, formatTime, CenteredMessage } fr
    favicon picker needs the file list to populate its dropdowns, so keeping
    both in one file avoids cross-file fetches). PagesTab fetches the library
    read-only to render dropdowns, but only ever PUTs `{ favicons }`. The
-   /api/admin/file-library PUT does a partial merge, so PagesTab and FilesTab
+   /api/admin/file-library PUT does a partial merge, so PagesTab and AssetsTab
    can save independently without trampling each other's edits.
 
    Self-contained: owns its own fetch/save lifecycle and reports dirty state
@@ -74,7 +74,7 @@ export default function PagesTab({ onDirtyChange }) {
     setPhase("saving"); setError("");
     try {
       // PUT only { favicons } — server merges with current files[] so any
-      // unsaved changes in FilesTab stay intact.
+      // unsaved changes in AssetsTab stay intact.
       const r = await fetch("/api/admin/file-library", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -105,7 +105,7 @@ export default function PagesTab({ onDirtyChange }) {
 
   return (
     <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
-      {/* Sticky header bar — matches FilesTab */}
+      {/* Sticky header bar — matches AssetsTab */}
       <div style={{
         position: "sticky",
         top: "88px",
@@ -159,7 +159,7 @@ export default function PagesTab({ onDirtyChange }) {
    Favicon section — picker for production / preview / admin favicons.
 
    Sources the eligible-favicon list from the (read-only here) file library.
-   Uploads route to /api/admin/file-upload (same endpoint as FilesTab); after
+   Uploads route to /api/admin/file-upload (same endpoint as AssetsTab); after
    a successful upload we trigger a library reload so the new file appears in
    the dropdown, then auto-assign it to whichever row the user uploaded from.
 ═══════════════════════════════════════════════════════════════════════════ */

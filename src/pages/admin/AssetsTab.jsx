@@ -1,18 +1,31 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   FilesTab — centralised image / logo / document / video library.
+   AssetsTab — centralised image / logo / document / video library.
+   (Renamed from FilesTab; underlying data file is still file-library.json
+   because the entries are called "files" in the data model. The "Assets"
+   label is purely a UI rename.)
 
    Two sections:
-     1. Add new file (upload OR by URL)
-     2. File list (rows: thumbnail, name, type, URL, copy/replace/delete)
+     1. Add new asset (upload OR by URL)
+     2. Asset list (rows: thumbnail, name, type, URL, copy/replace/delete)
+        Above the list: type filter + count (search-ready flex container)
 
    The per-environment favicon picker used to live here too; it has moved to
    the Pages tab (which manages site-level settings). Both tabs talk to the
    same /api/admin/file-library endpoint, which does a partial merge on PUT
    so the tabs can save independently without trampling each other's edits.
+
+   Rename cascade: when the user edits an entry's name AND the URL is a
+   library-hosted file (/library/*), Save first POSTs each renamed entry to
+   /api/admin/file-rename. That endpoint:
+     - moves the binary in the repo to a slugified new path
+     - rewrites every reference across admin-managed JSON data files
+     - returns the new URL
+   We update local state with the new URLs, then PUT file-library to persist
+   the new display names + new URLs. External-URL renames stay cosmetic.
 
    Self-contained: owns its own fetch/save lifecycle and reports dirty state
    via onDirtyChange?.(dirty). Mirrors the DealsTab pattern.
@@ -21,6 +34,20 @@ import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, Center
 const TYPE_OPTIONS = ["image", "logo", "favicon", "icon", "document", "video"];
 
 const UPLOAD_ACCEPT = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,application/pdf";
+
+// Filter options for the assets list — first entry is the no-filter sentinel.
+const FILTER_OPTIONS = [
+  { value: "all", label: "All types" },
+  ...TYPE_OPTIONS.map(t => ({ value: t, label: t.charAt(0).toUpperCase() + t.slice(1) })),
+];
+
+/* Plural noun for the "Library (N foos)" header — keeps the type-filter
+ * header readable when a filter is active. */
+function pluralForType(type, count) {
+  if (type === "all") return count === 1 ? "asset" : "assets";
+  // Most types pluralise with simple "s"; "favicon" → "favicons" works too.
+  return count === 1 ? type : `${type}s`;
+}
 
 /* Infer a sensible default `type` (category) for a new entry. Filename or URL
  * containing "favicon" → favicon, ".pdf" → document, video extensions → video,
@@ -77,12 +104,16 @@ function deriveNameFromUrl(url) {
   }
 }
 
-export default function FilesTab({ onDirtyChange }) {
+export default function AssetsTab({ onDirtyChange }) {
   const [library, setLibrary]     = useState(null);    // { files: [] }  (favicons live in Pages tab)
   const [original, setOriginal]   = useState(null);
   const [phase, setPhase]         = useState("loading");
   const [error, setError]         = useState("");
   const [lastSavedAt, setLastSavedAt] = useState(null);
+  // Save-flow progress state — only used during multi-step save (rename cascade)
+  const [saveProgress, setSaveProgress] = useState(null); // null | { current, total }
+  // Type filter — purely client-side, doesn't affect storage
+  const [typeFilter, setTypeFilter] = useState("all");
 
   const dirty = useMemo(() => {
     if (!library || !original) return false;
@@ -109,18 +140,88 @@ export default function FilesTab({ onDirtyChange }) {
     } catch (e) { setError(e.message); setPhase("error"); }
   }
 
+  /* Detect entries that were renamed (display name changed) AND whose URL
+   * points to a /library/ file. These need the cascade-rename endpoint to
+   * move the binary + rewrite references before we persist the library. */
+  function detectRenames(currentFiles, originalFiles) {
+    if (!Array.isArray(currentFiles) || !Array.isArray(originalFiles)) return [];
+    const originalById = new Map(originalFiles.map(f => [f.id, f]));
+    const renames = [];
+    for (const file of currentFiles) {
+      const orig = originalById.get(file.id);
+      if (!orig) continue; // new entry — no old URL to migrate
+      if (orig.name === file.name) continue;
+      // Only library-hosted files get the file-rename treatment. External
+      // URLs and other paths get their display name updated cosmetically
+      // by the regular file-library PUT.
+      if (!file.url || !file.url.startsWith("/library/")) continue;
+      // Also skip if the URL itself changed (the user edited URL manually)
+      // — we'd be renaming against the wrong source path.
+      if (orig.url !== file.url) continue;
+      renames.push({ id: file.id, oldUrl: orig.url, newName: file.name });
+    }
+    return renames;
+  }
+
   async function save() {
     if (!library) return;
-    setPhase("saving"); setError("");
+    setPhase("saving"); setError(""); setSaveProgress(null);
+
+    // ── Step 1: cascade-rename every changed library-hosted entry ──────────
+    // Sequential because each rename mutates the same data files; running
+    // them in parallel would cause SHA conflicts on the cascade commits.
+    const renames = detectRenames(library.files, original?.files || []);
+    let workingFiles = library.files;
+
+    if (renames.length > 0) {
+      setSaveProgress({ current: 0, total: renames.length });
+      for (let i = 0; i < renames.length; i++) {
+        const { id, oldUrl, newName } = renames[i];
+        setSaveProgress({ current: i + 1, total: renames.length });
+        try {
+          const r = await fetch("/api/admin/file-rename", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ oldUrl, newName }),
+          });
+          const body = await r.json().catch(() => ({}));
+          if (!r.ok || !body.ok) {
+            throw new Error(body.error || `Rename failed (HTTP ${r.status})`);
+          }
+          // Update local state: swap the URL on this entry to the server's
+          // returned newUrl. Keep the rest of the entry intact.
+          if (body.newUrl && body.changed) {
+            workingFiles = workingFiles.map(f =>
+              f.id === id ? { ...f, url: body.newUrl } : f
+            );
+          }
+        } catch (err) {
+          // Abort — keep the user's edits in place so they can fix and retry.
+          // Apply whatever URL swaps we already did so the user sees them.
+          setLibrary(lib => lib ? { ...lib, files: workingFiles } : lib);
+          setError(`Rename failed for "${newName}": ${err.message}`);
+          setPhase("ready");
+          setSaveProgress(null);
+          return;
+        }
+      }
+      // Reflect the URL changes locally so the PUT below sees them.
+      setLibrary(lib => lib ? { ...lib, files: workingFiles } : lib);
+    }
+
+    setSaveProgress(null);
+
+    // ── Step 2: persist the library (display names + any URL swaps) ────────
+    // PUT only { files } — the server merges with current favicons[] so any
+    // unsaved changes from the Pages tab stay intact. See file-library.js
+    // for the partial-merge semantics.
     try {
-      // PUT only { files } — the server merges with current favicons[] so any
-      // unsaved changes from the Pages tab stay intact. See file-library.js
-      // for the partial-merge semantics.
       const r = await fetch("/api/admin/file-library", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ files: library.files }),
+        body: JSON.stringify({ files: workingFiles }),
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
@@ -129,7 +230,7 @@ export default function FilesTab({ onDirtyChange }) {
     } catch (e) { setError(e.message); setPhase("ready"); }
   }
 
-  if (phase === "loading") return <CenteredMessage>Loading file library…</CenteredMessage>;
+  if (phase === "loading") return <CenteredMessage>Loading asset library…</CenteredMessage>;
   if (phase === "error" && library === null) return (
     <CenteredMessage>
       <p style={{ color: "#c44", marginBottom: "1rem" }}>{error}</p>
@@ -175,15 +276,18 @@ export default function FilesTab({ onDirtyChange }) {
     }));
   }
 
-  // Sort newest first for the grid display
-  const displayFiles = library.files
+  // Sort newest first, then apply the type filter (client-side only)
+  const sortedFiles = library.files
     .slice()
     .sort((a, b) => (b.addedAt || "").localeCompare(a.addedAt || ""));
+  const displayFiles = typeFilter === "all"
+    ? sortedFiles
+    : sortedFiles.filter(f => f.type === typeFilter);
 
   return (
     <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
       {/* Section header — sticky so the Save button stays visible while the
-          user scrolls through the file grid. The Admin shell's top bar is also
+          user scrolls through the asset grid. The Admin shell's top bar is also
           sticky at top: 0, so we offset enough to sit below it. */}
       <div style={{
         position: "sticky",
@@ -196,10 +300,11 @@ export default function FilesTab({ onDirtyChange }) {
         transition: "border-color 0.15s",
       }}>
         <div style={{ fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.01em" }}>
-          Files
+          Assets
         </div>
         <div style={{ flex: 1, fontSize: "0.85rem", color: dirty ? "#7a5c00" : INK_60, fontWeight: dirty ? 700 : 400 }}>
-          {isSaving && "Saving…"}
+          {isSaving && saveProgress && `Renaming: ${saveProgress.current} of ${saveProgress.total}…`}
+          {isSaving && !saveProgress && "Saving…"}
           {!isSaving && dirty && "⚠ Unsaved changes — click Save to commit"}
           {!isSaving && !dirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
           {!isSaving && !dirty && !lastSavedAt && "Up to date"}
@@ -220,16 +325,21 @@ export default function FilesTab({ onDirtyChange }) {
       )}
 
       <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
-        Centralised library of logos, icons, and images. Upload a file (commits to <code>public/library/</code>) or paste any image URL.
-        Tag each entry with company names so you can reuse them when tagging press items and deals.
+        Centralised library of logos, icons, images, documents, and videos.
+        Upload an asset (commits to <code>public/library/</code>) or paste any URL.
+        Renaming an entry will rename the underlying file and update every reference
+        across data files.
       </p>
 
-      {/* ── Section 1: Add new file ─────────────────────────────────────── */}
+      {/* ── Section 1: Add new asset ────────────────────────────────────── */}
       <AddFileSection onAdd={addFile} />
 
-      {/* ── Section 2: File list ────────────────────────────────────────── */}
+      {/* ── Section 2: Asset list ───────────────────────────────────────── */}
       <FileGrid
         files={displayFiles}
+        totalCount={library.files.length}
+        typeFilter={typeFilter}
+        onTypeFilterChange={setTypeFilter}
         onUpdate={updateFile}
         onDelete={deleteFile}
       />
@@ -238,7 +348,7 @@ export default function FilesTab({ onDirtyChange }) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Section 1 — Add new file (upload or by URL)
+   Section 1 — Add new asset (upload or by URL)
 ═══════════════════════════════════════════════════════════════════════════ */
 function AddFileSection({ onAdd }) {
   const [urlValue, setUrlValue]   = useState("");
@@ -261,7 +371,7 @@ function AddFileSection({ onAdd }) {
   return (
     <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1.5rem" }}>
       <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.8rem" }}>
-        Add a file
+        Add an asset
       </div>
       <div style={{
         display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem",
@@ -430,24 +540,63 @@ function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false, l
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Section 2 — File list (rows)
+   Section 2 — Asset list (rows + filter header)
 
-   Matches the "As Seen In" Logos pattern from BioTab — compact one-row-per-file
-   with thumbnail, name, type, URL, companies (only when type === "logo"),
-   and copy/delete actions.
+   Header row: "Library (N foos — newest first)" on the left, the type filter
+   (and a placeholder for a future search input) on the right. The header sits
+   in a flex container so a search box can drop in next to the filter later
+   without re-laying-out the whole header.
+
+   Each row matches the "As Seen In" Logos pattern from BioTab — compact
+   one-row-per-file with thumbnail, name, type, URL, companies (only when
+   type === "logo"), and copy/replace/delete actions.
 ═══════════════════════════════════════════════════════════════════════════ */
-function FileGrid({ files, onUpdate, onDelete }) {
+function FileGrid({ files, totalCount, typeFilter, onTypeFilterChange, onUpdate, onDelete }) {
+  const filtering = typeFilter !== "all";
+  const noun = pluralForType(typeFilter, files.length);
+
   return (
     <div style={{ marginBottom: "2rem" }}>
-      <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.6rem" }}>
-        Library <span style={{ fontWeight: 400 }}>({files.length} file{files.length !== 1 ? "s" : ""} — newest first)</span>
+      {/* Filter + count header */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.75rem",
+        flexWrap: "wrap", marginBottom: "0.6rem",
+      }}>
+        <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, flex: 1 }}>
+          Library{" "}
+          <span style={{ fontWeight: 400 }}>
+            ({files.length} {noun}
+            {filtering && totalCount !== files.length && (
+              <> of {totalCount}</>
+            )}
+            {!filtering && " — newest first"})
+          </span>
+        </div>
+        {/* Right-aligned filter controls. Wrapped in a flex container so a
+            future search input can drop in alongside the type select. */}
+        <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+          <select
+            value={typeFilter}
+            onChange={e => onTypeFilterChange(e.target.value)}
+            style={filterSelectStyle}
+            title="Filter by asset type"
+          >
+            {FILTER_OPTIONS.map(opt => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+          {/* TODO: search input lands here when wired up */}
+        </div>
       </div>
+
       {files.length === 0 ? (
         <div style={{
           padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`,
           color: INK_60, textAlign: "center", fontSize: "0.88rem",
         }}>
-          No files yet. Upload one or paste a URL above to get started.
+          {filtering
+            ? `No ${noun} in the library yet. Try a different filter or upload one above.`
+            : "No assets yet. Upload one or paste a URL above to get started."}
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem" }}>
@@ -758,7 +907,7 @@ function FileRow({ file, onUpdate, onDelete }) {
       <button
         type="button"
         onClick={openDeleteConfirm}
-        title="Delete this file"
+        title="Delete this asset"
         disabled={delPhase === "loading" || delPhase === "deleting"}
         style={{
           ...iconBtnStyle(false),
@@ -825,7 +974,7 @@ function DeleteConfirmPanel({
       color: INK,
     }}>
       <div style={{ fontWeight: 700, marginBottom: "0.45rem" }}>
-        Delete {file.name || "this file"}?
+        Delete {file.name || "this asset"}?
       </div>
 
       {loading && (

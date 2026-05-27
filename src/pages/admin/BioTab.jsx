@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { detectPlatform, PLATFORMS } from "../../components/SocialLinks.jsx";
 
 function sanitizeBio(d) {
   return {
@@ -8,6 +9,11 @@ function sanitizeBio(d) {
     tagline_accent: typeof d.tagline_accent === "string" ? d.tagline_accent : "singular force",
     tagline_after:  typeof d.tagline_after  === "string" ? d.tagline_after  : "",
     paragraphs:     Array.isArray(d.paragraphs) ? d.paragraphs.filter(p => typeof p === "string") : [],
+    social_links:   Array.isArray(d.social_links)
+      ? d.social_links.filter(s => s && typeof s === "object").map(s => ({
+          url: typeof s.url === "string" ? s.url : "",
+        }))
+      : [],
     media_logos:    Array.isArray(d.media_logos)
       ? d.media_logos.filter(l => l && typeof l === "object").map(l => ({
           name: typeof l.name === "string" ? l.name : "",
@@ -344,6 +350,27 @@ function BioSectionInner({ bio, onChangeBio, onSave, dirty, isSaving, error, las
     onChangeBio("paragraphs", [...paragraphs, ""]);
   }
 
+  // ── Social link helpers ─────────────────────────────────────────────────
+  const socialLinks = Array.isArray(bio.social_links) ? bio.social_links : [];
+
+  function updateSocialLink(i, val) {
+    const next = socialLinks.map((s, idx) => idx === i ? { url: val } : s);
+    onChangeBio("social_links", next);
+  }
+  function moveSocialLink(i, dir) {
+    const j = i + dir;
+    if (j < 0 || j >= socialLinks.length) return;
+    const next = [...socialLinks];
+    [next[i], next[j]] = [next[j], next[i]];
+    onChangeBio("social_links", next);
+  }
+  function deleteSocialLink(i) {
+    onChangeBio("social_links", socialLinks.filter((_, idx) => idx !== i));
+  }
+  function addSocialLink() {
+    onChangeBio("social_links", [...socialLinks, { url: "" }]);
+  }
+
   // ── Media logo helpers ──────────────────────────────────────────────────
   const logos = Array.isArray(bio.media_logos) ? bio.media_logos : [];
 
@@ -600,6 +627,78 @@ function BioSectionInner({ bio, onChangeBio, onSave, dirty, isSaving, error, las
             </div>
           </div>
         )}
+      </div>
+
+      {/* ── Social Links ──────────────────────────────────────────────────── */}
+      <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1rem" }}>
+        <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.3rem" }}>
+          Social Profiles
+        </div>
+        <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.9rem" }}>
+          Paste a profile URL — the platform icon is detected automatically and shown on the site next to your name.
+          Supported: LinkedIn, X, Instagram, Facebook, YouTube, GitHub, Threads.
+        </p>
+
+        {socialLinks.length > 0 && (
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "0.75rem" }}>
+            {socialLinks.map((link, i) => {
+              const platform = detectPlatform(link.url);
+              const cfg = PLATFORMS[platform] || PLATFORMS.link;
+              return (
+                <div key={i} style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+
+                  {/* Icon preview */}
+                  <div style={{
+                    width: 36, height: 36, flexShrink: 0,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    background: "#F4F5F7", border: `1px solid ${LINE}`,
+                    color: link.url ? cfg.color : "#ccc",
+                  }}>
+                    <span style={{ display: "inline-flex", width: 18, height: 18 }}>
+                      {cfg.icon}
+                    </span>
+                  </div>
+
+                  {/* Platform label */}
+                  <span style={{
+                    fontSize: "0.75rem", fontWeight: 700, color: link.url ? INK : INK_60,
+                    width: 76, flexShrink: 0,
+                  }}>
+                    {link.url ? cfg.label : "—"}
+                  </span>
+
+                  {/* URL input */}
+                  <input
+                    type="url"
+                    value={link.url}
+                    onChange={e => updateSocialLink(i, e.target.value)}
+                    placeholder="https://linkedin.com/in/yourname"
+                    style={{ ...inputStyle, marginTop: 0, flex: 1 }}
+                  />
+
+                  {/* Reorder + delete */}
+                  <button onClick={() => moveSocialLink(i, -1)} disabled={i === 0}                       style={iconBtnStyle(i === 0)}                       title="Move up">↑</button>
+                  <button onClick={() => moveSocialLink(i, 1)}  disabled={i === socialLinks.length - 1}  style={iconBtnStyle(i === socialLinks.length - 1)}  title="Move down">↓</button>
+                  <button onClick={() => deleteSocialLink(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Remove">×</button>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {socialLinks.length === 0 && (
+          <p style={{ fontSize: "0.82rem", color: INK_60, fontStyle: "italic", marginBottom: "0.75rem" }}>
+            No social links yet.
+          </p>
+        )}
+
+        <button onClick={addSocialLink} style={{
+          ...btnStyle,
+          background: "transparent", border: `1px dashed ${LINE}`,
+          color: INK, padding: "0.55rem 1rem", fontWeight: 700,
+        }}>
+          + Add social link
+        </button>
       </div>
 
       {/* Tagline */}

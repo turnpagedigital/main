@@ -5,6 +5,7 @@ import { useI18n } from "../lib/i18n.js";
 import FAQ from "../components/FAQ.jsx";
 import CTABanner from "../components/CTABanner.jsx";
 import DealCard from "../components/DealCard.jsx";
+import SocialLinks from "../components/SocialLinks.jsx";
 import dealsData from "../data/deals.json";
 import bioData from "../data/bio.json";
 import faqsData from "../data/faqs.json";
@@ -482,6 +483,11 @@ function LeadershipSection() {
             }}>
               Founder & Managing Partner
             </p>
+            {Array.isArray(bioData.social_links) && bioData.social_links.length > 0 && (
+              <div style={{ marginTop: "0.85rem" }}>
+                <SocialLinks links={bioData.social_links} dark={false} size={20} gap="0.55rem" />
+              </div>
+            )}
           </div>
 
           <div>

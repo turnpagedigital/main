@@ -79,6 +79,28 @@ export async function getFileSha(env, path) {
   return j.sha || null;
 }
 
+/* Fetch a binary file from GitHub and return its raw base64 content + sha,
+   without any text-decoding. Used when "moving" a binary (e.g. renaming a
+   library image) — we need to write the same bytes back at a new path, and
+   the Contents API stores base64 natively, so round-tripping it as base64
+   avoids any encoding round-trip risk.
+
+   Returns { ok: true, contentBase64, sha } | { ok: false, error }. */
+export async function getFileBase64FromGitHub(env, path) {
+  const branch = branchOf(env);
+  const url = `${contentsUrl(env, path)}?ref=${encodeURIComponent(branch)}`;
+  const r = await fetch(url, { headers: githubHeaders(env) });
+  if (!r.ok) return { ok: false, error: `GitHub GET ${r.status}: ${(await r.text()).slice(0, 300)}` };
+  const meta = await r.json();
+  // GitHub returns base64 wrapped at 60 chars with newlines — strip them so
+  // a downstream PUT with the same payload doesn't include stray whitespace.
+  const contentBase64 = typeof meta.content === "string"
+    ? meta.content.replace(/\n/g, "")
+    : "";
+  if (!contentBase64) return { ok: false, error: "GitHub returned empty content" };
+  return { ok: true, contentBase64, sha: meta.sha };
+}
+
 /* ── Writes ──────────────────────────────────────────────────────────────── */
 
 /* Commit a text file (UTF-8 string) to GitHub. The string is base64-encoded
