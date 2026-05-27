@@ -489,6 +489,9 @@ function FileRow({ file, onUpdate, onDelete }) {
   const [urlDraft,       setUrlDraft]       = useState(file.url);
   const [companiesDraft, setCompaniesDraft] = useState((file.companies || []).join(", "));
   const [copied,         setCopied]         = useState(false);
+  const [replacing,      setReplacing]      = useState(false);
+  const [replaceError,   setReplaceError]   = useState("");
+  const replaceInputRef                     = useRef(null);
 
   // Reset drafts when underlying file changes (e.g., after save/load)
   useEffect(() => { setNameDraft(file.name); }, [file.name]);
@@ -516,6 +519,46 @@ function FileRow({ file, onUpdate, onDelete }) {
       onUpdate("companies", deduped);
     }
     setCompaniesDraft(deduped.join(", "));
+  }
+
+  async function handleReplace(e) {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    if (f.size > 5 * 1024 * 1024) {
+      setReplaceError("File too large — max 5 MB.");
+      if (replaceInputRef.current) replaceInputRef.current.value = "";
+      return;
+    }
+    setReplaceError("");
+    setReplacing(true);
+    try {
+      const base64 = await new Promise((res, rej) => {
+        const reader = new FileReader();
+        reader.onload  = ev => res(ev.target.result.split(",")[1]);
+        reader.onerror = rej;
+        reader.readAsDataURL(f);
+      });
+      const r = await fetch("/api/admin/file-upload", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          filename:      f.name,
+          contentBase64: base64,
+          contentType:   f.type,
+        }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Upload failed");
+      // Swap the URL and flip the source to "upload" — keep name/type/companies
+      onUpdate("url", body.url);
+      onUpdate("source", "upload");
+    } catch (err) {
+      setReplaceError(err.message);
+    } finally {
+      setReplacing(false);
+      if (replaceInputRef.current) replaceInputRef.current.value = "";
+    }
   }
 
   async function copyUrl() {
@@ -612,6 +655,26 @@ function FileRow({ file, onUpdate, onDelete }) {
       )}
 
       {/* Actions */}
+      <input
+        ref={replaceInputRef}
+        type="file"
+        accept={UPLOAD_ACCEPT}
+        style={{ display: "none" }}
+        onChange={handleReplace}
+      />
+      <button
+        type="button"
+        onClick={() => replaceInputRef.current && replaceInputRef.current.click()}
+        disabled={replacing}
+        title="Replace this file with a new upload"
+        style={{
+          ...iconBtnStyle(false),
+          width: "auto", padding: "0 0.55rem", fontSize: "0.72rem", fontWeight: 700,
+          opacity: replacing ? 0.6 : 1, cursor: replacing ? "wait" : "pointer",
+        }}
+      >
+        {replacing ? "…" : "Replace"}
+      </button>
       <button
         type="button"
         onClick={copyUrl}
@@ -628,6 +691,12 @@ function FileRow({ file, onUpdate, onDelete }) {
       >
         ×
       </button>
+
+      {replaceError && (
+        <div style={{ flexBasis: "100%", fontSize: "0.72rem", color: "#c44", marginTop: "0.2rem" }}>
+          {replaceError}
+        </div>
+      )}
     </div>
   );
 }
