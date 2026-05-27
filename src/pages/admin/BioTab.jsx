@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
 import { detectPlatform, PLATFORMS } from "../../components/SocialLinks.jsx";
+import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
 function sanitizeBio(d) {
   return {
@@ -784,55 +785,23 @@ function BioSectionInner({ bio, onChangeBio, onSave, dirty, isSaving, error, las
           "As Seen In" Logos
         </div>
         <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.9rem" }}>
-          Logos appear as grayscale images in the Team section. Paste any public image URL (PNG, SVG, WebP). Name is used for accessibility only.
+          Logos appear as grayscale images in the Team section. Paste any public image URL or use the Pick button to select from the library. Name is used for accessibility only.
         </p>
 
         {logos.length > 0 && (
           <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem", marginBottom: "0.75rem" }}>
             {logos.map((logo, i) => (
-              <div key={i} style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}>
-                {/* Live preview */}
-                <div style={{
-                  width: 64, height: 32, flexShrink: 0,
-                  background: "#F4F5F7", border: `1px solid ${LINE}`,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  overflow: "hidden",
-                }}>
-                  {logo.url ? (
-                    <img
-                      src={logo.url}
-                      alt={logo.name || "preview"}
-                      style={{ maxWidth: 60, maxHeight: 28, objectFit: "contain", filter: "grayscale(1)", opacity: 0.55 }}
-                      onError={e => { e.currentTarget.style.display = "none"; }}
-                    />
-                  ) : (
-                    <span style={{ fontSize: "0.62rem", color: INK_60 }}>no url</span>
-                  )}
-                </div>
-
-                {/* Name */}
-                <input
-                  type="text"
-                  value={logo.name}
-                  onChange={e => updateLogo(i, "name", e.target.value)}
-                  placeholder="Name (e.g. Bloomberg)"
-                  style={{ ...inputStyle, marginTop: 0, width: 160, flexShrink: 0 }}
-                />
-
-                {/* URL */}
-                <input
-                  type="text"
-                  value={logo.url}
-                  onChange={e => updateLogo(i, "url", e.target.value)}
-                  placeholder="https://example.com/logo.png"
-                  style={{ ...inputStyle, marginTop: 0, flex: 1, minWidth: 200 }}
-                />
-
-                {/* Actions */}
-                <button onClick={() => moveLogo(i, -1)} disabled={i === 0}              style={iconBtnStyle(i === 0)}              title="Move up">↑</button>
-                <button onClick={() => moveLogo(i, 1)}  disabled={i === logos.length - 1} style={iconBtnStyle(i === logos.length - 1)} title="Move down">↓</button>
-                <button onClick={() => deleteLogo(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Remove">×</button>
-              </div>
+              <LogoRow
+                key={i}
+                logo={logo}
+                index={i}
+                total={logos.length}
+                onUpdateName={val => updateLogo(i, "name", val)}
+                onUpdateUrl={val => updateLogo(i, "url", val)}
+                onMoveUp={() => moveLogo(i, -1)}
+                onMoveDown={() => moveLogo(i, 1)}
+                onDelete={() => deleteLogo(i)}
+              />
             ))}
           </div>
         )}
@@ -857,6 +826,85 @@ function BioSectionInner({ bio, onChangeBio, onSave, dirty, isSaving, error, las
           .bio-tagline-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
+    </div>
+  );
+}
+
+/* ── LogoRow — one "As Seen In" logo with AssetPicker ────────────────────── */
+function LogoRow({ logo, index, total, onUpdateName, onUpdateUrl, onMoveUp, onMoveDown, onDelete }) {
+  const [pickerOpen, setPickerOpen] = useState(false);
+  return (
+    <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}>
+      {/* Live preview */}
+      <div style={{
+        width: 64, height: 40, flexShrink: 0,
+        background: "#F4F5F7", border: `1px solid ${LINE}`,
+        display: "flex", alignItems: "center", justifyContent: "center",
+        overflow: "hidden",
+      }}>
+        {logo.url ? (
+          <img
+            src={logo.url}
+            alt={logo.name || "preview"}
+            style={{ maxWidth: 60, maxHeight: 36, objectFit: "contain", filter: "grayscale(1)", opacity: 0.55 }}
+            onError={e => { e.currentTarget.style.display = "none"; }}
+          />
+        ) : (
+          <span style={{ fontSize: "0.62rem", color: INK_60 }}>no url</span>
+        )}
+      </div>
+
+      {/* Name */}
+      <input
+        type="text"
+        value={logo.name}
+        onChange={e => onUpdateName(e.target.value)}
+        placeholder="Name (e.g. Bloomberg)"
+        style={{ ...inputStyle, marginTop: 0, width: 150, flexShrink: 0 }}
+      />
+
+      {/* URL */}
+      <input
+        type="text"
+        value={logo.url}
+        onChange={e => onUpdateUrl(e.target.value)}
+        placeholder="https://… or pick →"
+        style={{ ...inputStyle, marginTop: 0, flex: 1, minWidth: 160 }}
+      />
+
+      {/* Pick button */}
+      <button
+        type="button"
+        onClick={() => setPickerOpen(true)}
+        style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.45rem 0.75rem", flexShrink: 0, whiteSpace: "nowrap" }}
+      >
+        Pick
+      </button>
+
+      {/* Clear */}
+      {logo.url && (
+        <button
+          type="button"
+          onClick={() => onUpdateUrl("")}
+          style={{ ...iconBtnStyle(false) }}
+          title="Clear URL"
+        >×</button>
+      )}
+
+      {/* Reorder + delete */}
+      <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
+      <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
+      <button onClick={onDelete}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Remove">×</button>
+
+      <AssetPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPick={(url) => { onUpdateUrl(url); if (!logo.name) { const n = url.split("/").pop().replace(/\.[^.]+$/, ""); onUpdateName(n); } setPickerOpen(false); }}
+        defaultType="logo"
+        defaultCompany={logo.name || null}
+        acceptTypes={["logo", "image"]}
+        title="Pick a media logo"
+      />
     </div>
   );
 }

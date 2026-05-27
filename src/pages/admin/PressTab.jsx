@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
 // Default suggestions shown in the datalist dropdowns — user can type anything else
 const PRESS_TYPE_SUGGESTIONS   = ["publication", "podcast", "article", "social post", "blog post", "news"];
@@ -30,7 +31,7 @@ function parseDateForSort(str) {
 }
 
 function blankPressItem() {
-  return { type: "publication", author: "Other", pages: [], date: "", url: "", logo_url: "", excerpt: "", publication_title: "", piece_title: "", media_url: "" };
+  return { type: "publication", author: "Other", pages: [], date: "", url: "", logo_url: "", excerpt: "", publication_title: "", piece_title: "", media_url: "", pdf_url: "" };
 }
 
 function sanitizePressItem(d) {
@@ -45,6 +46,7 @@ function sanitizePressItem(d) {
     publication_title: typeof d.publication_title === "string" ? d.publication_title : "",
     piece_title:       typeof d.piece_title       === "string" ? d.piece_title       : "",
     media_url:         typeof d.media_url         === "string" ? d.media_url         : "",
+    pdf_url:           typeof d.pdf_url           === "string" ? d.pdf_url           : "",
   };
 }
 
@@ -391,24 +393,18 @@ function PressSectionInner({ items, onChangeItems, onSave, dirty, isSaving, erro
 
               {/* Logo URL (non-social only) */}
               {item.type !== "social post" && (
-                <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
-                  Logo URL <span style={{ fontWeight: 400 }}>(optional — paste a direct image link)</span>
-                  <input
-                    type="text"
+                <div style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+                  Logo URL <span style={{ fontWeight: 400 }}>(optional — paste a link or pick from library)</span>
+                  <PressAssetField
                     value={item.logo_url || ""}
-                    onChange={e => updateItem(i, "logo_url", e.target.value)}
-                    placeholder="https://upload.wikimedia.org/wikipedia/commons/..."
-                    style={inputStyle}
+                    onChange={val => updateItem(i, "logo_url", val)}
+                    assetType="logo"
+                    contextCompany={item.publication_title || null}
+                    acceptTypes={["logo", "image"]}
+                    pickerTitle="Pick an outlet logo"
+                    placeholder="https://… or pick →"
                   />
-                  {item.logo_url && (
-                    <img
-                      src={item.logo_url}
-                      alt="logo preview"
-                      style={{ marginTop: "0.4rem", height: 24, maxWidth: 120, objectFit: "contain", display: "block", border: `1px solid ${LINE}`, padding: "0.2rem" }}
-                      onError={e => { e.currentTarget.style.opacity = "0.3"; }}
-                    />
-                  )}
-                </label>
+                </div>
               )}
 
               {/* Piece title */}
@@ -435,6 +431,21 @@ function PressSectionInner({ items, onChangeItems, onSave, dirty, isSaving, erro
                 />
               </label>
 
+              {/* PDF URL — for paywalled articles or document attachments */}
+              <div style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, gridColumn: "1 / -1" }}>
+                PDF attachment <span style={{ fontWeight: 400 }}>(optional — for paywalled articles; shows a "Read full PDF" link on the press page)</span>
+                <PressAssetField
+                  value={item.pdf_url || ""}
+                  onChange={val => updateItem(i, "pdf_url", val)}
+                  assetType="document"
+                  contextCompany={item.publication_title || null}
+                  acceptTypes={["document"]}
+                  pickerTitle="Pick or upload PDF"
+                  placeholder="/library/… or upload a PDF →"
+                  isDocument
+                />
+              </div>
+
               {/* Excerpt / Abstract */}
               <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, gridColumn: "1 / -1" }}>
                 {item.type === "blog post" ? "Abstract / summary (shown on the card below the title)" : "Excerpt / quote (optional — shown as a pull quote on the card)"}
@@ -452,6 +463,7 @@ function PressSectionInner({ items, onChangeItems, onSave, dirty, isSaving, erro
                 value={item.media_url || ""}
                 onChange={val => updateItem(i, "media_url", val)}
                 inputStyle={inputStyle}
+                contextCompany={item.publication_title || null}
               />
             </div>
           </div>
@@ -483,10 +495,85 @@ function PressSectionInner({ items, onChangeItems, onSave, dirty, isSaving, erro
   );
 }
 
-/* ── Media upload field — URL entry + optional file upload ──────────────── */
-function MediaUploadField({ value, onChange, inputStyle }) {
+/* ── PressAssetField — URL input + thumbnail + AssetPicker button ──────────
+   Used for logo_url and pdf_url in each press item.
+   isDocument=true shows a PDF badge instead of img preview.               */
+function PressAssetField({ value, onChange, assetType, contextCompany, acceptTypes, pickerTitle, placeholder, isDocument }) {
+  const [pickerOpen, setPickerOpen] = useState(false);
+  return (
+    <div style={{ marginTop: "0.3rem" }}>
+      <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+        {/* Thumbnail / doc badge */}
+        <div style={{
+          width: 64, height: 40, flexShrink: 0,
+          background: isDocument ? "#F4F5F7" : "#F4F5F7",
+          border: `1px solid ${LINE}`,
+          display: "flex", alignItems: "center", justifyContent: "center",
+          overflow: "hidden",
+        }}>
+          {value ? (
+            isDocument ? (
+              <span style={{ fontSize: "0.58rem", fontWeight: 800, color: INK_60, textTransform: "uppercase" }}>PDF</span>
+            ) : (
+              <img
+                src={value}
+                alt="preview"
+                style={{ maxWidth: 60, maxHeight: 36, objectFit: "contain", display: "block" }}
+                onError={e => { e.currentTarget.style.opacity = "0.2"; }}
+              />
+            )
+          ) : (
+            <span style={{ fontSize: "0.55rem", color: INK_60 }}>—</span>
+          )}
+        </div>
+
+        {/* URL input */}
+        <input
+          type="text"
+          value={value}
+          onChange={e => onChange(e.target.value)}
+          placeholder={placeholder}
+          style={{ ...inputStyle, marginTop: 0, flex: 1 }}
+        />
+
+        {/* Pick button */}
+        <button
+          type="button"
+          onClick={() => setPickerOpen(true)}
+          style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.45rem 0.75rem", flexShrink: 0, whiteSpace: "nowrap" }}
+        >
+          Pick
+        </button>
+
+        {/* Clear */}
+        {value && (
+          <button
+            type="button"
+            onClick={() => onChange("")}
+            style={{ ...iconBtnStyle(false) }}
+            title="Clear"
+          >×</button>
+        )}
+      </div>
+
+      <AssetPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPick={(url) => { onChange(url); setPickerOpen(false); }}
+        defaultType={assetType}
+        defaultCompany={contextCompany}
+        acceptTypes={acceptTypes}
+        title={pickerTitle}
+      />
+    </div>
+  );
+}
+
+/* ── Media upload field — URL entry + optional file upload + AssetPicker ─── */
+function MediaUploadField({ value, onChange, inputStyle, contextCompany }) {
   const [phase,   setPhase]   = useState("idle"); // idle | uploading | done | error
   const [errMsg,  setErrMsg]  = useState("");
+  const [pickerOpen, setPickerOpen] = useState(false);
   const fileRef = useRef(null);
 
   async function handleFile(e) {
@@ -541,13 +628,13 @@ function MediaUploadField({ value, onChange, inputStyle }) {
         Image or video (optional — shown as a thumbnail below the excerpt)
       </span>
 
-      {/* URL input + upload button row */}
+      {/* URL input + upload button + picker row */}
       <div style={{ display: "flex", gap: "0.5rem", alignItems: "stretch" }}>
         <input
           type="text"
           value={value}
           onChange={e => { onChange(e.target.value); setPhase("idle"); setErrMsg(""); }}
-          placeholder="Paste a URL (image or YouTube link) — or upload a file →"
+          placeholder="Paste a URL (image or YouTube link) — or upload/pick →"
           style={{ ...inputStyle, marginTop: 0, flex: 1 }}
         />
 
@@ -559,6 +646,23 @@ function MediaUploadField({ value, onChange, inputStyle }) {
           style={{ display: "none" }}
           onChange={handleFile}
         />
+
+        {/* Pick from library */}
+        <button
+          type="button"
+          onClick={() => setPickerOpen(true)}
+          style={{
+            fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
+            padding: "0 0.75rem", whiteSpace: "nowrap",
+            background: "transparent",
+            color: INK,
+            border: `1px solid ${LINE}`,
+            cursor: "pointer",
+            flexShrink: 0,
+          }}
+        >
+          Pick
+        </button>
 
         {/* Upload trigger button */}
         <button
@@ -576,7 +680,7 @@ function MediaUploadField({ value, onChange, inputStyle }) {
             flexShrink: 0,
           }}
         >
-          {phase === "uploading" ? "Uploading…" : phase === "done" ? "✓ Uploaded" : "Upload file"}
+          {phase === "uploading" ? "Uploading…" : phase === "done" ? "Uploaded" : "Upload file"}
         </button>
       </div>
 
@@ -602,6 +706,16 @@ function MediaUploadField({ value, onChange, inputStyle }) {
           )}
         </div>
       )}
+
+      <AssetPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPick={(url) => { onChange(url); setPhase("idle"); setPickerOpen(false); }}
+        defaultType="image"
+        defaultCompany={contextCompany}
+        acceptTypes={["image"]}
+        title="Pick an image or thumbnail"
+      />
     </div>
   );
 }

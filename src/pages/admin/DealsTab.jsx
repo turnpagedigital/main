@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
 const FIELD_DEFS = [
   { key: "amt",     label: "Amount",       type: "text",     placeholder: "$270M" },
@@ -300,36 +301,23 @@ function DealRow({ index, deal, onChange, onMoveUp, onMoveDown, onDelete, isFirs
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.7rem 1rem" }} className="deal-logos-grid">
           {[0, 1, 2].map(idx => {
             const url = (Array.isArray(deal.logos) && typeof deal.logos[idx] === "string") ? deal.logos[idx] : "";
+            function setLogoSlot(val) {
+              const slots = [0, 1, 2].map(i =>
+                (Array.isArray(deal.logos) && typeof deal.logos[i] === "string") ? deal.logos[i] : ""
+              );
+              slots[idx] = val;
+              let end = 2;
+              while (end > 0 && !slots[end]) end--;
+              onChange("logos", slots.slice(0, end + 1).filter((_, i) => i <= end));
+            }
             return (
-              <label key={idx} style={{ display: "block", fontSize: "0.75rem", color: INK_60, fontWeight: 600 }}>
-                Logo {idx + 1}
-                <input
-                  type="text"
-                  value={url}
-                  onChange={e => {
-                    const slots = [0, 1, 2].map(i =>
-                      (Array.isArray(deal.logos) && typeof deal.logos[i] === "string") ? deal.logos[i] : ""
-                    );
-                    slots[idx] = e.target.value;
-                    // Compact: drop trailing empty slots
-                    let end = 2;
-                    while (end > 0 && !slots[end]) end--;
-                    onChange("logos", slots.slice(0, end + 1).filter((_, i) => i <= end));
-                  }}
-                  placeholder="https://..."
-                  style={inputStyle}
-                />
-                {url && (
-                  <div style={{ marginTop: "0.35rem", background: "#111", padding: "0.3rem 0.5rem", display: "inline-flex", alignItems: "center" }}>
-                    <img
-                      src={url}
-                      alt="logo preview"
-                      style={{ height: 18, maxWidth: 80, objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.7, display: "block" }}
-                      onError={e => { e.currentTarget.style.opacity = "0.2"; }}
-                    />
-                  </div>
-                )}
-              </label>
+              <DealLogoSlot
+                key={idx}
+                label={`Logo ${idx + 1}`}
+                url={url}
+                contextCompany={deal.who || null}
+                onChange={setLogoSlot}
+              />
             );
           })}
         </div>
@@ -340,6 +328,71 @@ function DealRow({ index, deal, onChange, onMoveUp, onMoveDown, onDelete, isFirs
           .deal-logos-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
+    </div>
+  );
+}
+
+/* ── DealLogoSlot — one logo slot with inline picker ──────────────────────── */
+function DealLogoSlot({ label, url, contextCompany, onChange }) {
+  const [pickerOpen, setPickerOpen] = useState(false);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+      <span style={{ fontSize: "0.75rem", color: INK_60, fontWeight: 600 }}>{label}</span>
+
+      {/* Preview */}
+      <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+        <div style={{
+          width: 64, height: 40, flexShrink: 0,
+          background: "#111", border: `1px solid ${LINE}`,
+          display: "flex", alignItems: "center", justifyContent: "center",
+          overflow: "hidden",
+        }}>
+          {url ? (
+            <img
+              src={url}
+              alt="logo preview"
+              style={{ height: 22, maxWidth: 58, objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.8, display: "block" }}
+              onError={e => { e.currentTarget.style.opacity = "0.15"; }}
+            />
+          ) : (
+            <span style={{ fontSize: "0.55rem", color: "#555" }}>empty</span>
+          )}
+        </div>
+        <button
+          type="button"
+          onClick={() => setPickerOpen(true)}
+          style={{ ...btnStyle, fontSize: "0.75rem", padding: "0.35rem 0.65rem", flexShrink: 0 }}
+        >
+          Pick
+        </button>
+        {url && (
+          <button
+            type="button"
+            onClick={() => onChange("")}
+            style={{ ...iconBtnStyle(false) }}
+            title="Clear"
+          >×</button>
+        )}
+      </div>
+
+      {/* URL input — direct edit fallback */}
+      <input
+        type="text"
+        value={url}
+        onChange={e => onChange(e.target.value)}
+        placeholder="https://… or pick above"
+        style={{ ...inputStyle, marginTop: 0, fontSize: "0.8rem" }}
+      />
+
+      <AssetPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPick={(pickedUrl) => { onChange(pickedUrl); setPickerOpen(false); }}
+        defaultType="logo"
+        defaultCompany={contextCompany}
+        acceptTypes={["logo", "image"]}
+        title={`Pick ${label}`}
+      />
     </div>
   );
 }

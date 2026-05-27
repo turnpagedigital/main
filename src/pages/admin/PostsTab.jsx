@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, formatTime } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime } from "./shared.jsx";
 import RichEditor from "./RichEditor.jsx";
+import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    PostsSection — create / edit / delete briefings, articles, announcements
@@ -29,7 +30,7 @@ function slugify(title, date) {
 function blankPostForm() {
   return {
     slug: "", date: new Date().toISOString().slice(0, 10),
-    type: "briefing", title: "", summary: "", tags: "", active: true, content: "",
+    type: "briefing", title: "", summary: "", tags: "", active: true, content: "", hero_image: "",
   };
 }
 
@@ -86,14 +87,15 @@ export default function PostsTab({ onDirtyChange }) {
     setEditorPhase("loading-content");
     setEditorError("");
     setForm({
-      slug:    meta.slug    || "",
-      date:    meta.date    || "",
-      type:    meta.type    || "briefing",
-      title:   meta.title   || "",
-      summary: meta.summary || "",
-      tags:    Array.isArray(meta.tags) ? meta.tags.join(", ") : "",
-      active:  meta.active !== false,
-      content: "",
+      slug:       meta.slug       || "",
+      date:       meta.date       || "",
+      type:       meta.type       || "briefing",
+      title:      meta.title      || "",
+      summary:    meta.summary    || "",
+      tags:       Array.isArray(meta.tags) ? meta.tags.join(", ") : "",
+      active:     meta.active !== false,
+      content:    "",
+      hero_image: meta.hero_image || "",
     });
     try {
       const r = await fetch(`/api/admin/posts?slug=${encodeURIComponent(meta.slug)}`, { credentials: "include" });
@@ -136,13 +138,14 @@ export default function PostsTab({ onDirtyChange }) {
     setEditorPhase("saving");
     setEditorError("");
     const item = {
-      slug:    form.slug.trim(),
-      date:    form.date.trim(),
-      type:    form.type,
-      title:   form.title.trim(),
-      summary: form.summary.trim(),
-      tags:    form.tags.split(",").map(t => t.trim()).filter(Boolean),
-      active:  form.active,
+      slug:       form.slug.trim(),
+      date:       form.date.trim(),
+      type:       form.type,
+      title:      form.title.trim(),
+      summary:    form.summary.trim(),
+      tags:       form.tags.split(",").map(t => t.trim()).filter(Boolean),
+      active:     form.active,
+      hero_image: form.hero_image ? form.hero_image.trim() : "",
     };
     try {
       const r = await fetch("/api/admin/posts", {
@@ -377,7 +380,16 @@ export default function PostsTab({ onDirtyChange }) {
             />
           </label>
 
-          {/* Row 5: Tags */}
+          {/* Row 5: Hero image */}
+          <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+            Hero image <span style={{ fontWeight: 400 }}>(optional — shown at the top of the post page)</span>
+            <PostHeroImageField
+              value={form.hero_image || ""}
+              onChange={val => setField("hero_image", val)}
+            />
+          </div>
+
+          {/* Row 6: Tags */}
           <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
             Tags <span style={{ fontWeight: 400 }}>(comma-separated — shown as topic pills on article posts)</span>
             <input
@@ -389,7 +401,7 @@ export default function PostsTab({ onDirtyChange }) {
             />
           </label>
 
-          {/* Row 6: Content — WYSIWYG */}
+          {/* Row 7: Content — WYSIWYG */}
           <div>
             <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.4rem" }}>
               Content
@@ -422,6 +434,72 @@ export default function PostsTab({ onDirtyChange }) {
           .post-editor-row { grid-template-columns: 1fr !important; }
         }
       `}</style>
+    </div>
+  );
+}
+
+/* ── PostHeroImageField — hero image URL + thumbnail + AssetPicker ──────── */
+function PostHeroImageField({ value, onChange }) {
+  const [pickerOpen, setPickerOpen] = useState(false);
+  return (
+    <div style={{ marginTop: "0.3rem" }}>
+      <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+        {/* Thumbnail */}
+        <div style={{
+          width: 64, height: 40, flexShrink: 0,
+          background: "#F4F5F7", border: `1px solid ${LINE}`,
+          display: "flex", alignItems: "center", justifyContent: "center",
+          overflow: "hidden",
+        }}>
+          {value ? (
+            <img
+              src={value}
+              alt="hero preview"
+              style={{ maxWidth: 60, maxHeight: 36, objectFit: "cover", display: "block" }}
+              onError={e => { e.currentTarget.style.opacity = "0.2"; }}
+            />
+          ) : (
+            <span style={{ fontSize: "0.6rem", color: INK_60 }}>—</span>
+          )}
+        </div>
+
+        {/* URL input */}
+        <input
+          type="text"
+          value={value}
+          onChange={e => onChange(e.target.value)}
+          placeholder="https://… or pick →"
+          style={{ ...inputStyle, marginTop: 0, flex: 1 }}
+        />
+
+        {/* Pick button */}
+        <button
+          type="button"
+          onClick={() => setPickerOpen(true)}
+          style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.45rem 0.75rem", flexShrink: 0 }}
+        >
+          Pick
+        </button>
+
+        {/* Clear */}
+        {value && (
+          <button
+            type="button"
+            onClick={() => onChange("")}
+            style={{ ...iconBtnStyle(false) }}
+            title="Clear"
+          >×</button>
+        )}
+      </div>
+
+      <AssetPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPick={(url) => { onChange(url); setPickerOpen(false); }}
+        defaultType="image"
+        acceptTypes={["image"]}
+        title="Pick a hero image"
+      />
     </div>
   );
 }

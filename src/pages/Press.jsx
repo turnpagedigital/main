@@ -153,6 +153,7 @@ const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
   href:      normalizeUrl(d.url),
   pages:     Array.isArray(d.pages) ? d.pages : [],
   mediaUrl:  d.media_url || null,
+  pdfUrl:    d.pdf_url   || null,
 }));
 
 /* ── Derived filter option lists (computed once from static data) ─────────── */
@@ -996,6 +997,29 @@ function UnifiedCard({ item }) {
 
       {/* ── Topic tags ──────────────────────────────────────────────── */}
       <PageTags pages={item.pages} />
+
+      {/* ── PDF link (for paywalled articles with uploaded PDFs) ────── */}
+      {item.pdfUrl && (
+        <div style={{
+          display: "flex", alignItems: "center", gap: "0.45rem",
+          marginTop: "0.85rem", paddingTop: "0.75rem",
+          borderTop: `1px solid ${LINE}`,
+        }}>
+          <a
+            href={item.pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={e => e.stopPropagation()}
+            style={{
+              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
+              color: INK, textDecoration: "underline",
+              textUnderlineOffset: "2px", letterSpacing: "0.02em",
+            }}
+          >
+            Read full PDF →
+          </a>
+        </div>
+      )}
 
       {/* ── Social CTA ──────────────────────────────────────────────── */}
       {isSocial && item.href && (
