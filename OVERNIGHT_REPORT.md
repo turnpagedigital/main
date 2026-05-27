@@ -1,0 +1,58 @@
+# Overnight Work Report
+
+**Started:** 2026-05-27 (late evening)
+**Branch:** `claude/heuristic-hugle-c98d9f` (preview only — `dev` untouched)
+**Backup tag:** `backup/assets-system-2026-05-27` (pre-overnight snapshot)
+
+## Plan
+
+### Phase 1 — AssetPicker component + Archive feature
+- Reusable modal-style picker (used by all admin tabs)
+- Filters: type, company, search (name/URL/companies)
+- Upload + Add URL tabs inline
+- Auto-syncs new assets back to library
+- Archive feature: soft-delete with `archived` field; restore from Assets tab
+
+### Phase 2 — Wire AssetPicker into existing admin tabs (parallel)
+- Bio: avatar, photo, media_logos
+- Deals: logos array
+- Press: logo, thumbnail, PDF attachment
+- Posts: hero image / inline images
+
+### Phase 3 — Site-level content (parallel)
+- Extract NavBar to `nav.json` + Navigation admin tab
+- Extract Footer to `footer.json` + Footer admin tab
+- Per-page meta editor in Pages tab
+- Site Metadata section in Pages tab
+
+### Phase 4 — Polish (if time)
+- Extract Home `SITUATIONS` + `TESTIMONIALS` to JSON
+- Home Content admin tab
+- `renderPage()` refactor in `App.jsx`
+
+## Progress
+
+| Phase | Status | Commit | Notes |
+|---|---|---|---|
+| 1 — AssetPicker + Archive | ⏳ in progress | — | — |
+| 2 — Bio/Deals/Press/Posts | pending | — | — |
+| 3 — Nav/Footer/Meta | pending | — | — |
+| 4 — Polish | pending | — | — |
+
+## Issues encountered
+
+_None yet._
+
+## How to test in the morning
+
+1. Go to Cloudflare dashboard → Workers & Pages → tpdm-aah → Deployments
+2. Find newest deployment for branch `claude/heuristic-hugle-c98d9f`
+3. Open in incognito → log into `/admin`
+4. Click through each admin tab — confirm AssetPicker appears where expected
+
+## Rollback if needed
+
+```bash
+# To restore the pre-overnight state on dev:
+git push origin backup/assets-system-2026-05-27:dev --force-with-lease
+```
