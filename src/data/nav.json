@@ -37,15 +37,19 @@
       "labelKey": "nav.crypto",
       "dropdown": {
         "title": "Locked Crypto",
-        "body": "Liquidity for locked digital assets — FTX, Celsius, BlockFi, Voyager, Genesis, Mt. Gox. Quoted in fiat, closed in days.",
+        "body": "Crypto-native liquidity provider for locked crypto assets — exchange bankruptcies, frozen customer accounts and seized assets",
         "links": [
           {
             "label": "Who we help",
             "href": "/crypto#who-we-help"
           },
           {
-            "label": "How it works",
-            "href": "/crypto#how-crypto"
+            "label": "How we help",
+            "href": "/crypto#how-we-help"
+          },
+          {
+            "label": "Relevant experience",
+            "href": "/crypto#/relevant-experience"
           },
           {
             "label": "Related media",
@@ -53,7 +57,7 @@
           }
         ],
         "cta": {
-          "label": "Get a Quote",
+          "label": "Get in Touch",
           "href": "/contact?source=crypto"
         }
       }
