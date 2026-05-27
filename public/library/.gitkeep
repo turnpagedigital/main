@@ -1,0 +1,2 @@
+# Keep this directory in git so Cloudflare Pages serves /library/ at build time
+# even before any files have been uploaded via /admin/files.

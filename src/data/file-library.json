@@ -1,0 +1,9 @@
+{
+  "_comment": "File library — centralised store for images, logos, and favicons used across the site. Managed via /admin/files. Files live in public/library/ (uploaded) or as external URLs. favicons map { production, preview, admin } → URL from this library or a static path under /. Schema: { files: [{ id, name, url, type, companies, source, addedAt }], favicons: { production, preview, admin } }.",
+  "files": [],
+  "favicons": {
+    "production": "/favicon1.png",
+    "preview": "/favicon1.png",
+    "admin": "/favicon.png"
+  }
+}

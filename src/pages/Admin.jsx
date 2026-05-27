@@ -7,12 +7,16 @@ import PressTab  from "./admin/PressTab.jsx";
 import PostsTab  from "./admin/PostsTab.jsx";
 import FAQsTab   from "./admin/FAQsTab.jsx";
 import AlertsTab from "./admin/AlertsTab.jsx";
+import FilesTab  from "./admin/FilesTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
-   Tab state syncs to the URL path: /admin/<tab>. */
+   Tab state syncs to the URL path: /admin/<tab>.
 
-const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs"];
+   NOTE: The favicon for /admin is set in src/main.jsx before React mounts,
+   driven by src/data/file-library.json. Nothing to manage here. */
+
+const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "files"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "bio";
@@ -21,21 +25,7 @@ function getTabFromPath() {
   return VALID_TABS.includes(m[1]) ? m[1] : "bio";
 }
 
-/* Swap the favicon to the original (favicon.png) while admin is mounted,
-   then restore the main site favicon (favicon1.png) on unmount. */
-function useFaviconSwap(adminHref, restoreHref) {
-  useEffect(() => {
-    const icons = document.querySelectorAll("link[rel~='icon'], link[rel='apple-touch-icon']");
-    icons.forEach(el => { el.href = adminHref; });
-    return () => {
-      icons.forEach(el => { el.href = restoreHref; });
-    };
-  }, [adminHref, restoreHref]);
-}
-
 export default function Admin() {
-  useFaviconSwap("/favicon.png", "/favicon1.png");
-
   const [phase, setPhase] = useState("checking"); // checking | login | ready
   const [errorMsg, setErrorMsg] = useState("");
   const [tab, setTab] = useState(getTabFromPath);
@@ -110,6 +100,7 @@ export default function Admin() {
     { key: "press",  label: "Press",  dirty: dirtyTabs.press  ?? false },
     { key: "alerts", label: "Alerts", dirty: dirtyTabs.alerts ?? false },
     { key: "faqs",   label: "FAQs",   dirty: dirtyTabs.faqs   ?? false },
+    { key: "files",  label: "Files",  dirty: dirtyTabs.files  ?? false },
   ];
 
   return (
@@ -176,6 +167,7 @@ export default function Admin() {
       {tab === "press"  && <PressTab  onDirtyChange={makeDirtyCallback("press")} />}
       {tab === "alerts" && <AlertsTab onDirtyChange={makeDirtyCallback("alerts")} />}
       {tab === "faqs"   && <FAQsTab   onDirtyChange={makeDirtyCallback("faqs")} />}
+      {tab === "files"  && <FilesTab  onDirtyChange={makeDirtyCallback("files")} />}
     </div>
   );
 }

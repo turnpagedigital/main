@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import fileLibrary from './data/file-library.json'
 
 // ─── Legacy hash-route shim ────────────────────────────────────────────────
 // Earlier versions of the site used hash routing (e.g. /#/crypto). External
@@ -19,6 +20,30 @@ if (typeof window !== "undefined" && window.location.hash.startsWith("#/")) {
     (hashTail || "/") +
     (window.location.search || "");
   window.history.replaceState(null, "", newUrl);
+}
+
+// ─── Environment-aware favicon ─────────────────────────────────────────────
+// Picks the right favicon for the current environment from file-library.json:
+//   /admin/*           → favicons.admin
+//   *.pages.dev hosts  → favicons.preview
+//   everything else    → favicons.production
+// The static <link rel="icon"> in index.html is the build-time fallback.
+// Edit /admin/files to change which icon is used per environment.
+if (typeof window !== "undefined") {
+  try {
+    const favicons = (fileLibrary && fileLibrary.favicons) || {};
+    const isAdmin   = window.location.pathname.startsWith("/admin");
+    const isPreview = window.location.hostname.endsWith(".pages.dev");
+    const href = isAdmin   ? favicons.admin
+              : isPreview ? favicons.preview
+                          : favicons.production;
+    if (href) {
+      const icons = document.querySelectorAll("link[rel~='icon'], link[rel='apple-touch-icon']");
+      icons.forEach(el => { el.href = href; });
+    }
+  } catch {
+    // Fall back to whatever was set in index.html — better to do nothing than crash boot.
+  }
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
