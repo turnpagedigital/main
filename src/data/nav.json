@@ -3,7 +3,7 @@
     {
       "id": "ai-copyright",
       "label": "Copyright Claims",
-      "href": "/ai-copyright",
+      "href": "/copyright",
       "active": true,
       "labelKey": "nav.copyright",
       "dropdown": {
