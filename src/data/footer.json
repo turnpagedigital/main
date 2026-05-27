@@ -2,29 +2,29 @@
   "columns": [
     {
       "id": "desks",
-      "title": "Desks",
+      "title": "Services",
       "links": [
         {
           "id": "ai-copyright",
-          "label": "Copyright Claims",
+          "label": "Copyright",
           "href": "/ai-copyright",
           "labelKey": "nav.copyright"
         },
         {
           "id": "crypto",
-          "label": "Locked Crypto",
+          "label": "Crypto",
           "href": "/crypto",
           "labelKey": "nav.crypto"
         },
         {
           "id": "litigation-finance",
-          "label": "Litigation Finance",
+          "label": "Litigation",
           "href": "/litigation-finance",
           "labelKey": "nav.litigation"
         },
         {
           "id": "tariff-refunds",
-          "label": "Tariff Refunds",
+          "label": "Tariffs",
           "href": "https://www.rewindtariffs.com",
           "labelKey": "nav.tariff",
           "external": true
@@ -50,7 +50,7 @@
         },
         {
           "id": "link-1779881007269-p8ym",
-          "label": "Trade Documentation",
+          "label": "Trade Docs",
           "href": "/documentation"
         }
       ],
