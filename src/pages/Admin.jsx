@@ -7,7 +7,7 @@ import PressTab  from "./admin/PressTab.jsx";
 import PostsTab  from "./admin/PostsTab.jsx";
 import FAQsTab   from "./admin/FAQsTab.jsx";
 import AlertsTab from "./admin/AlertsTab.jsx";
-import FilesTab  from "./admin/FilesTab.jsx";
+import FilesTab  from "./admin/AssetsTab.jsx";
 import PagesTab  from "./admin/PagesTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.

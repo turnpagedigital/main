@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, formatTime } from "./shared.jsx";
+import RichEditor from "./RichEditor.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    PostsSection — create / edit / delete briefings, articles, announcements
@@ -388,28 +389,16 @@ export default function PostsTab({ onDirtyChange }) {
             />
           </label>
 
-          {/* Row 6: Markdown content */}
+          {/* Row 6: Content — WYSIWYG */}
           <div>
             <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.4rem" }}>
-              Content <span style={{ fontWeight: 400 }}>— Markdown</span>
+              Content
             </div>
-            {/* Markdown quick-reference */}
-            <div style={{
-              display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center",
-              padding: "0.45rem 0.7rem", background: "#F4F5F7", border: `1px solid ${LINE}`,
-              borderBottom: "none", fontSize: "0.73rem", color: INK_60, fontFamily: "ui-monospace, 'SF Mono', Menlo, monospace",
-            }}>
-              <span style={{ fontFamily: FONT, fontWeight: 700, color: INK_60, fontStyle: "normal", marginRight: "0.2rem" }}>Syntax:</span>
-              {["# H1", "## H2", "**bold**", "*italic*", "[text](url)", "> quote", "---"].map(hint => (
-                <code key={hint} style={{ background: "#E5E7EB", padding: "0.1em 0.35em", borderRadius: 2, fontSize: "0.78rem" }}>{hint}</code>
-              ))}
-            </div>
-            <textarea
+            <RichEditor
               value={form.content}
-              onChange={e => setField("content", e.target.value)}
-              rows={24}
-              placeholder={"## Introduction\n\nStart writing your post here...\n\n## Section heading\n\nMore content...\n\n> A pull quote or key takeaway\n\nFinal thoughts."}
-              style={{ ...inputStyle, fontFamily: "ui-monospace, 'SF Mono', Menlo, monospace", fontSize: "0.88rem", lineHeight: 1.6 }}
+              onChange={val => setField("content", val)}
+              disabled={isLoadingContent || isSaving}
+              minHeight={480}
             />
           </div>
 
