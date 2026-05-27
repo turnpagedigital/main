@@ -6,6 +6,7 @@ import { I18nProvider } from "./lib/i18n.js";
 import AppHeader from "./components/AppHeader.jsx";
 import Footer from "./components/Footer.jsx";
 import pageMeta from "./data/page-meta.json";
+import routesData from "./data/routes.json";
 
 // Page components are lazy-loaded so each route becomes its own chunk.
 // Only downloaded when the user first navigates to that page.
@@ -152,20 +153,38 @@ export default function App() {
   );
 }
 
-// Static route map — page key → component factory.
-// Dynamic routes that need props are handled inline below.
-const PAGE_MAP = {
-  "home":               () => <Home />,
-  "ai-copyright":       () => <AICopyright />,
-  "crypto":             () => <Crypto />,
-  "briefings":          () => <Briefings />,
-  "contact":            () => <Contact />,
-  "privacy":            () => <Legal kind="privacy" />,
-  "terms":              () => <Legal kind="terms" />,
-  "press":              () => <Press />,
-  "litigation-finance": () => <LitigationFinance />,
-  "admin":              () => <Admin />,
+// Component registry — maps component names from routes.json to actual components
+const COMPONENT_MAP = {
+  "Home":               Home,
+  "AICopyright":        AICopyright,
+  "Crypto":             Crypto,
+  "Briefings":          Briefings,
+  "Briefing":           Briefing,
+  "Contact":            Contact,
+  "Legal":              Legal,
+  "NotFound":           NotFound,
+  "Admin":              Admin,
+  "Press":              Press,
+  "LitigationFinance":  LitigationFinance,
 };
+
+// Build PAGE_MAP dynamically from routes.json at import time.
+// This makes routes admin-editable without changing this file.
+const PAGE_MAP = {};
+for (const route of routesData.routes) {
+  const Comp = COMPONENT_MAP[route.component];
+  if (!Comp) {
+    console.error(`Component not found for route ${route.path}: ${route.component}`);
+    continue;
+  }
+
+  // Handle routes that need special props (e.g., Legal component's legalkind prop)
+  if (route.legalkind) {
+    PAGE_MAP[route.key] = () => <Comp kind={route.legalkind} />;
+  } else {
+    PAGE_MAP[route.key] = () => <Comp />;
+  }
+}
 
 // Build a set of page-keys whose active flag is false.
 // Path "/" maps to page-key "home"; all other paths strip the leading "/".

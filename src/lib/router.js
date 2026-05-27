@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import routesData from "../data/routes.json";
 
 /* HTML5 history-based router. URLs look like:
      /                       → home
@@ -19,19 +20,36 @@ import { useState, useEffect } from "react";
    A legacy shim in src/main.jsx rewrites incoming /#/foo URLs to /foo before
    React mounts, so old shared links keep working. A Cloudflare Pages
    _redirects rule serves index.html for any path that doesn't match a static
-   file, so deep links on first load also work. */
+   file, so deep links on first load also work.
+
+   Route definitions are now data-driven from src/data/routes.json — this makes
+   the router compatible with editable routes from the admin panel. */
 
 export function parsePath(pathname) {
-  // Strip leading "/" and trailing "/"
-  let p = (pathname || "/").split("?")[0].split("#")[0];
-  p = p.replace(/^\/+/, "").replace(/\/+$/, "");
-  if (!p) return { page: "home", slug: null };
+  // Strip query string and hash
+  const p = (pathname || "/").split("?")[0].split("#")[0];
 
-  const parts = p.split("/").filter(Boolean);
-  if (parts[0] === "briefings" && parts[1]) {
-    return { page: "briefing", slug: parts.slice(1).join("/") };
+  // Try exact path match first (for static routes)
+  for (const route of routesData.routes) {
+    if (!route.dynamic && route.path === p) {
+      return { page: route.key, slug: null };
+    }
   }
-  return { page: parts[0], slug: null };
+
+  // Try dynamic routes (e.g., /briefings/:slug)
+  for (const route of routesData.routes) {
+    if (route.dynamic) {
+      const pattern = route.path.replace(":slug", "([^/]+)");
+      const regex = new RegExp(`^${pattern}$`);
+      const match = p.match(regex);
+      if (match) {
+        return { page: route.key, slug: match[1] };
+      }
+    }
+  }
+
+  // Home fallback
+  return { page: "home", slug: null };
 }
 
 /* Back-compat alias — older code may import parseHash. */

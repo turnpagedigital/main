@@ -7,6 +7,7 @@ import PressTab  from "./admin/PressTab.jsx";
 import PostsTab  from "./admin/PostsTab.jsx";
 import FAQsTab   from "./admin/FAQsTab.jsx";
 import AlertsTab from "./admin/AlertsTab.jsx";
+import RoutesTab from "./admin/RoutesTab.jsx";
 import AssetsTab      from "./admin/AssetsTab.jsx";
 import PagesTab       from "./admin/PagesTab.jsx";
 import NavigationTab    from "./admin/NavigationTab.jsx";
@@ -22,7 +23,7 @@ import MarketingPagesTab   from "./admin/MarketingPagesTab.jsx";
    driven by src/data/file-library.json. The favicon picker lives in the
    Pages tab here. */
 
-const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "assets", "pages", "navigation", "footer", "home-content", "marketing-pages"];
+const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "routes", "assets", "pages", "navigation", "footer", "home-content", "marketing-pages"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "bio";
@@ -106,6 +107,7 @@ export default function Admin() {
     { key: "press",  label: "Press",  dirty: dirtyTabs.press  ?? false },
     { key: "alerts", label: "Alerts", dirty: dirtyTabs.alerts ?? false },
     { key: "faqs",   label: "FAQs",   dirty: dirtyTabs.faqs   ?? false },
+    { key: "routes",    label: "Routes",    dirty: dirtyTabs.routes    ?? false },
     { key: "assets",     label: "Assets",     dirty: dirtyTabs.assets     ?? false },
     { key: "pages",      label: "Pages",      dirty: dirtyTabs.pages      ?? false },
     { key: "navigation",    label: "Navigation",    dirty: dirtyTabs.navigation    ?? false },
@@ -178,6 +180,7 @@ export default function Admin() {
       {tab === "press"  && <PressTab  onDirtyChange={makeDirtyCallback("press")} />}
       {tab === "alerts" && <AlertsTab onDirtyChange={makeDirtyCallback("alerts")} />}
       {tab === "faqs"   && <FAQsTab   onDirtyChange={makeDirtyCallback("faqs")} />}
+      {tab === "routes"    && <RoutesTab    onDirtyChange={makeDirtyCallback("routes")} />}
       {tab === "assets"     && <AssetsTab      onDirtyChange={makeDirtyCallback("assets")} />}
       {tab === "pages"      && <PagesTab       onDirtyChange={makeDirtyCallback("pages")} />}
       {tab === "navigation"   && <NavigationTab   onDirtyChange={makeDirtyCallback("navigation")} />}
