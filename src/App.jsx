@@ -151,19 +151,27 @@ export default function App() {
   );
 }
 
+// Static route map — page key → component factory.
+// Dynamic routes that need props are handled inline below.
+const PAGE_MAP = {
+  "home":               () => <Home />,
+  "ai-copyright":       () => <AICopyright />,
+  "crypto":             () => <Crypto />,
+  "briefings":          () => <Briefings />,
+  "contact":            () => <Contact />,
+  "privacy":            () => <Legal kind="privacy" />,
+  "terms":              () => <Legal kind="terms" />,
+  "press":              () => <Press />,
+  "litigation-finance": () => <LitigationFinance />,
+  "admin":              () => <Admin />,
+};
+
 function renderPage(route) {
-  switch (route.page) {
-    case "home":           return <Home />;
-    case "ai-copyright":   return <AICopyright />;
-    case "crypto":         return <Crypto />;
-    case "briefings":      return <Briefings />;
-    case "briefing":       return <Briefing slug={route.slug} />;
-    case "contact":        return <Contact />;
-    case "privacy":        return <Legal kind="privacy" />;
-    case "terms":          return <Legal kind="terms" />;
-    case "press":               return <Press />;
-    case "litigation-finance":  return <LitigationFinance />;
-    case "admin":               return <Admin />;
-    default:               return <NotFound />;
-  }
+  // Dynamic route — briefing detail page receives a slug prop
+  if (route.page === "briefing") return <Briefing slug={route.slug} />;
+
+  const factory = PAGE_MAP[route.page];
+  if (factory) return factory();
+
+  return <NotFound />;
 }

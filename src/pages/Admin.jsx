@@ -9,8 +9,9 @@ import FAQsTab   from "./admin/FAQsTab.jsx";
 import AlertsTab from "./admin/AlertsTab.jsx";
 import AssetsTab      from "./admin/AssetsTab.jsx";
 import PagesTab       from "./admin/PagesTab.jsx";
-import NavigationTab  from "./admin/NavigationTab.jsx";
-import FooterTab      from "./admin/FooterTab.jsx";
+import NavigationTab    from "./admin/NavigationTab.jsx";
+import FooterTab        from "./admin/FooterTab.jsx";
+import HomeContentTab   from "./admin/HomeContentTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
@@ -20,7 +21,7 @@ import FooterTab      from "./admin/FooterTab.jsx";
    driven by src/data/file-library.json. The favicon picker lives in the
    Pages tab here. */
 
-const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "assets", "pages", "navigation", "footer"];
+const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "assets", "pages", "navigation", "footer", "home-content"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "bio";
@@ -106,8 +107,9 @@ export default function Admin() {
     { key: "faqs",   label: "FAQs",   dirty: dirtyTabs.faqs   ?? false },
     { key: "assets",     label: "Assets",     dirty: dirtyTabs.assets     ?? false },
     { key: "pages",      label: "Pages",      dirty: dirtyTabs.pages      ?? false },
-    { key: "navigation", label: "Navigation", dirty: dirtyTabs.navigation ?? false },
-    { key: "footer",     label: "Footer",     dirty: dirtyTabs.footer     ?? false },
+    { key: "navigation",    label: "Navigation",    dirty: dirtyTabs.navigation    ?? false },
+    { key: "footer",        label: "Footer",        dirty: dirtyTabs.footer        ?? false },
+    { key: "home-content",  label: "Home Content",  dirty: dirtyTabs["home-content"] ?? false },
   ];
 
   return (
@@ -176,8 +178,9 @@ export default function Admin() {
       {tab === "faqs"   && <FAQsTab   onDirtyChange={makeDirtyCallback("faqs")} />}
       {tab === "assets"     && <AssetsTab      onDirtyChange={makeDirtyCallback("assets")} />}
       {tab === "pages"      && <PagesTab       onDirtyChange={makeDirtyCallback("pages")} />}
-      {tab === "navigation" && <NavigationTab  onDirtyChange={makeDirtyCallback("navigation")} />}
-      {tab === "footer"     && <FooterTab      onDirtyChange={makeDirtyCallback("footer")} />}
+      {tab === "navigation"   && <NavigationTab   onDirtyChange={makeDirtyCallback("navigation")} />}
+      {tab === "footer"       && <FooterTab       onDirtyChange={makeDirtyCallback("footer")} />}
+      {tab === "home-content" && <HomeContentTab  onDirtyChange={makeDirtyCallback("home-content")} />}
     </div>
   );
 }

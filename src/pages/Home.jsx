@@ -9,64 +9,15 @@ import SocialLinks from "../components/SocialLinks.jsx";
 import dealsData from "../data/deals.json";
 import bioData from "../data/bio.json";
 import faqsData from "../data/faqs.json";
+import homeContent from "../data/home-content.json";
 
 /* Content sourced from the May 2026 brand deck (TPDM_Overview).
    Home page focuses on the situations TPDM covers and the credibility of
-   the team — not trade strategies. */
+   the team — not trade strategies.
+   SITUATIONS and TESTIMONIALS are now admin-editable via src/data/home-content.json. */
 
-const SITUATIONS = [
-  {
-    no: "01",
-    title: "Litigation Claims",
-    body: "Complex disputes, contested matters, and judgments awaiting recovery.",
-    details: "We work with plaintiffs, defendants, and investors across pre-judgment, post-judgment, and appellate stages. Our network includes institutional buyers who specialize in contested matters across federal and state courts.",
-  },
-  {
-    no: "02",
-    title: "Class Action Claims",
-    body: "Class-member positions in the largest collective actions post-settlement.",
-    details: "From antitrust and securities fraud to data breach settlements, we connect class members to competitive bids. We handle large individual positions as well as portfolios of smaller positions aggregated for efficiency.",
-  },
-  {
-    no: "03",
-    title: "Bankruptcy Claims",
-    body: "Chapter 11 trade claims, customer claims, and creditor positions in major estates.",
-    details: "Whether your claim is scheduled or unscheduled, secured or unsecured, we price it against our network of institutional buyers. We've traded claims in the largest Chapter 11 cases of the past decade.",
-  },
-  {
-    no: "04",
-    title: "Locked Assets",
-    body: "Locked digital assets, frozen accounts, and deposits trapped in restructurings.",
-    details: "Digital assets locked on exchange platforms, frozen bank accounts, and deposits trapped in restructurings are all addressable. Our team has deep expertise in the major crypto estate cases that defined this asset class.",
-  },
-  {
-    no: "05",
-    title: "Refund Rights",
-    body: "Government refunds, including tariff refund rights and customs recoveries.",
-    details: "We were among the first to build a market for IEEPA tariff refund rights. We work with importers, exporters, and counsel to structure assignments and participations on pending and anticipated refund claims.",
-  },
-  {
-    no: "06",
-    title: "Other Illiquid Assets",
-    body: "Trade receivables, seized property, and one-off complex matters by conversation.",
-    details: "If your situation doesn't fit a standard category, reach out. We've structured solutions for seized property, legacy receivables, and novel asset classes that most intermediaries won't touch.",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote: "Andrew is always thinking about how to structure trades in the most elegant way to allocate risk among the parties. When others give up, Andrew digs in.",
-    by: "Locked Crypto Interest Holder",
-  },
-  {
-    quote: "Andrew is extremely professional and easy to work with. His negotiating style is collaborative rather than confrontational, but he knows how to dial it up for a client when the situation demands.",
-    by: "FTX Trading Ltd. Creditor",
-  },
-  {
-    quote: "Andrew has deep knowledge about bankruptcy and restructuring that gives his clients a major advantage in negotiations.",
-    by: "Genesis Global Creditor",
-  },
-];
+const SITUATIONS   = homeContent.situations   || [];
+const TESTIMONIALS = homeContent.testimonials || [];
 
 const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("home"));
 
