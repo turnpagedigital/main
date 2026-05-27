@@ -341,7 +341,7 @@ export default function AssetsTab({ onDirtyChange }) {
         </div>
       )}
 
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1.5rem" }}>
         Centralised library of logos, icons, images, documents, and videos.
         Upload an asset (commits to <code>public/library/</code>) or paste any URL.
         Renaming an entry will rename the underlying file and update every reference

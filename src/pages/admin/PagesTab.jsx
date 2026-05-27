@@ -244,7 +244,7 @@ export default function PagesTab({ onDirtyChange }) {
         </div>
       )}
 
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1.5rem" }}>
         Pages settings — site-level metadata and per-page SEO/OG configuration.
       </p>
 
@@ -625,7 +625,7 @@ function LabeledField({ label, hint, children }) {
   return (
     <div>
       <div style={{ display: "flex", alignItems: "baseline", gap: "0.5em", marginBottom: "0.3rem" }}>
-        <span style={{ fontSize: "0.82rem", fontWeight: 700, color: INK }}>{label}</span>
+        <span style={{ fontSize: "0.78rem", fontWeight: 700, color: INK_60 }}>{label}</span>
         {hint && <span style={{ fontSize: "0.72rem", color: INK_60 }}>{hint}</span>}
       </div>
       {children}

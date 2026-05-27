@@ -154,7 +154,7 @@ export default function DealsTab({ onDirtyChange }) {
         </div>
       )}
 
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1.5rem" }}>
         {list.length} deal{list.length !== 1 ? "s" : ""} — use the <strong>Pages</strong> checkboxes on each card to control where it appears. Order here = order on each page.
       </p>
 

@@ -206,7 +206,7 @@ export default function HomeContentTab({ onDirtyChange }) {
         </div>
       )}
 
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "2rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "2rem" }}>
         Manage the situations and testimonials shown on the home page. Use the arrows to reorder. Changes deploy on Save.
       </p>
 
@@ -285,7 +285,7 @@ function SituationRow({ sit, index, total, onUpdate, onMoveUp, onMoveDown, onRem
     <div style={{
       border: `1px solid ${LINE}`,
       background: "#fff",
-      padding: "1.25rem",
+      padding: "1.2rem",
     }}>
       {/* Controls row */}
       <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
@@ -389,7 +389,7 @@ function TestimonialRow({ test, index, total, onUpdate, onMoveUp, onMoveDown, on
     <div style={{
       border: `1px solid ${LINE}`,
       background: "#fff",
-      padding: "1.25rem",
+      padding: "1.2rem",
     }}>
       {/* Controls + delete */}
       <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>

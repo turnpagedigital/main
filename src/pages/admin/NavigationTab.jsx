@@ -263,7 +263,7 @@ export default function NavigationTab({ onDirtyChange }) {
         </div>
       )}
 
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1.5rem" }}>
         Edit the top nav. Use the arrows to reorder. Toggle Active to hide an item without deleting it.
         Expand "Edit dropdown" to manage the hover dropdown content for each item.
       </p>
@@ -332,7 +332,7 @@ export default function NavigationTab({ onDirtyChange }) {
         }}>
           Sub-brand microsite navs
         </div>
-        <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1.5rem" }}>
+        <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1.5rem" }}>
           Each sub-brand page has its own simplified nav. Edit the brand link, section items, and CTA here.
         </p>
         <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>

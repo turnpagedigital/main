@@ -366,7 +366,7 @@ function CryptoSection({ page, d, updateItem, moveItem, removeItem, addItem, upd
   return (
     <>
       <SectionHeader>Audience Cards (Who We Help)</SectionHeader>
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
         Cards shown in the "Who We Help" section. Items with <em>priority</em> checked render with dark background.
       </p>
       <CardList
@@ -427,7 +427,7 @@ function AICopyrightSection({ page, d, updateItem, moveItem, removeItem, addItem
   return (
     <>
       <SectionHeader>Audience Cards (Who We Help)</SectionHeader>
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
         Cards shown in the "Who We Help" section. Items with <em>priority</em> checked render with dark background.
       </p>
       <CardList
@@ -472,7 +472,7 @@ function AICopyrightSection({ page, d, updateItem, moveItem, removeItem, addItem
       />
 
       <SectionHeader>Damages Data (Active Docket Chart)</SectionHeader>
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
         Cases shown in the animated bar chart. amountB is the dollar amount in billions (e.g. 1.5 for $1.5B).
         Type: "settled" (neon bar), "statutory" (white bar), "dmca" (grey bar).
       </p>
@@ -503,7 +503,7 @@ function LitFinSection({ page, d, updateItem, moveItem, removeItem, addItem, upd
   return (
     <>
       <SectionHeader>Audience Cards (Who We Help)</SectionHeader>
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
         Cards shown in the "Who We Help" section. Items with <em>priority</em> checked render with dark background.
       </p>
       <CardList
@@ -633,7 +633,7 @@ function AudienceCardRow({ card, index, total, onUpdate, onMoveUp, onMoveDown, o
   const titleEmpty = !String(card.title || "").trim();
   const bodyEmpty  = !String(card.body  || "").trim();
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.25rem" }}>
+    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
         <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
         <div style={{ flex: 1 }}>
@@ -673,7 +673,7 @@ function ServiceCardRow({ card, index, total, onUpdate, onMoveUp, onMoveDown, on
   const titleEmpty = !String(card.title || "").trim();
   const bodyEmpty  = !String(card.body  || "").trim();
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.25rem" }}>
+    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
         <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
         <div style={{ flex: 1 }}>
@@ -708,7 +708,7 @@ function ServiceCardRow({ card, index, total, onUpdate, onMoveUp, onMoveDown, on
 function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const nameEmpty = !String(item.name || "").trim();
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.25rem" }}>
+    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
         <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
         <div style={{ flex: 2 }}>
@@ -792,7 +792,7 @@ function StepRow({ step, index, total, onUpdate, onMoveUp, onMoveDown, onRemove 
   const titleEmpty = !String(step.title || "").trim();
   const bodyEmpty  = !String(step.body  || "").trim();
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.25rem" }}>
+    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
         <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
         <div style={{ width: 64 }}>
@@ -839,7 +839,7 @@ function FAQRow({ faq, index, total, onUpdate, onMoveUp, onMoveDown, onRemove })
   const qEmpty = !String(faq.q || "").trim();
   const aEmpty = !String(faq.a || "").trim();
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.25rem" }}>
+    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
         <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
         <div style={{ flex: 1 }}>
@@ -881,7 +881,7 @@ function ComparisonEditor({ cmp, page, updateComparison, updateComparisonItem, a
         const col = cmp[side] || { title: "", items: [] };
         const label = side === "oldWay" ? "Old Way" : "New Way (Through Turnpage)";
         return (
-          <div key={side} style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.25rem" }}>
+          <div key={side} style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
             <div style={{ fontSize: "0.72rem", fontWeight: 700, color: INK_60, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "0.75rem" }}>
               {label}
             </div>

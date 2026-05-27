@@ -235,7 +235,7 @@ export default function FooterTab({ onDirtyChange }) {
         </div>
       )}
 
-      <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "2rem" }}>
+      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "2rem" }}>
         Manage footer link columns and bottom-bar text. Use the arrows to reorder columns and links. Changes deploy on Save.
       </p>
 
@@ -278,7 +278,7 @@ export default function FooterTab({ onDirtyChange }) {
       {/* ── Bottom-bar fields ──────────────────────────────────────── */}
       <SectionHeader>Bottom bar</SectionHeader>
 
-      <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.25rem", marginBottom: "2.5rem" }}>
+      <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "2.5rem" }}>
         <label style={labelStyle}>
           Copyright text
           <input
@@ -316,7 +316,7 @@ function ColumnCard({
   return (
     <div style={{
       border: `1px solid ${LINE}`, background: "#fff",
-      marginBottom: "1rem", padding: "1.25rem",
+      marginBottom: "1rem", padding: "1.2rem",
     }}>
       {/* Column header row */}
       <div style={{
