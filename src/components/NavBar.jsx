@@ -8,15 +8,26 @@ import navData from "../data/nav.json";
 
 // Build NAV_ITEMS from nav.json — only active items, in JSON order.
 // Each JSON item has: id, label, href, labelKey, active, external (optional).
-// We map to the shape the rest of NavBar expects: key, labelKey, externalHref.
+// We map to the shape the rest of NavBar expects: key, label, labelKey, externalHref.
+// `label` (admin-editable plain text) wins; `labelKey` is a translation fallback.
 const NAV_ITEMS = navData.items
   .filter(i => i.active)
   .map(i => ({
     key:          i.id,
+    label:        i.label,
     labelKey:     i.labelKey,
     externalHref: i.external ? i.href : undefined,
     _href:        i.href,
   }));
+
+/* Resolve a nav item's display label: prefer the admin-editable plain `label`,
+ * fall back to the i18n translation by labelKey. This way edits made in the
+ * admin Navigation tab actually show up on the site. */
+function navLabel(t, item) {
+  if (item.label && item.label.trim()) return item.label;
+  if (item.labelKey) return t(item.labelKey);
+  return "";
+}
 
 // Build PREVIEWS from nav.json items that have a dropdown.
 const PREVIEWS = Object.fromEntries(
@@ -156,7 +167,7 @@ export default function NavBar({ currentPage }) {
                     borderBottom: activeDrop === item.key ? `2px solid ${INK}` : "2px solid transparent",
                   }}
                 >
-                  {t(item.labelKey)}
+                  {navLabel(t, item)}
                   {isExternal && (
                     <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
                       <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
@@ -377,7 +388,7 @@ export default function NavBar({ currentPage }) {
                       display: "flex", alignItems: "center", justifyContent: "space-between",
                     }}
                   >
-                    <span>{t(item.labelKey)}</span>
+                    <span>{navLabel(t, item)}</span>
                     {isExternal && (
                       <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
                         <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />

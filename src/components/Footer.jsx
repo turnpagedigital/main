@@ -15,9 +15,12 @@ import footerData from "../data/footer.json";
 export default function Footer() {
   const { t } = useI18n();
 
-  // Helper: resolve an i18n key if present, else use the plain string
+  // Resolve a label: admin-editable plain text wins so edits in the Footer
+  // admin tab take effect on the site. Fall back to the i18n key only when
+  // the plain text is empty (legacy entries that were never edited).
   function tx(key, fallback) {
-    return key ? t(key) : fallback;
+    if (fallback && fallback.trim()) return fallback;
+    return key ? t(key) : "";
   }
 
   return (
