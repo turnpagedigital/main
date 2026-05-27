@@ -166,12 +166,12 @@
     "ai-copyright": {
       "brand": {
         "label": "Copyright Claims",
-        "href": "/ai-copyright"
+        "href": "/copyright"
       },
       "items": [
         {
           "label": "How We Help",
-          "href": "/ai-copyright#who-we-help"
+          "href": "/copyright#who-we-help"
         },
         {
           "label": "Team",
@@ -184,7 +184,7 @@
       ],
       "cta": {
         "label": "Get a Quote",
-        "href": "/contact?source=ai-copyright"
+        "href": "/contact?source=copyright"
       }
     },
     "crypto": {
