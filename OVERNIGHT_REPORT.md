@@ -38,6 +38,7 @@
 | 2 — Bio/Deals/Press/Posts | ✅ done | 4714214 | AssetPicker in all 4 tabs; pdf_url on Press page; hero_image on Posts |
 | 3a — Nav as content + admin tab | ✅ done | 853a473 | nav.json seeded (5 items); NavBar renders from JSON; GET/PUT endpoint; NavigationTab with up/down reorder |
 | 3b — Footer as content + admin tab | ✅ done | 0d6ee0c | footer.json seeded (4 cols, 10 links); Footer.jsx renders from JSON; GET/PUT endpoint; FooterTab with column + link reorder |
+| 3c — Per-page meta + site metadata | ✅ done | da2269f | page-meta.json seeded (4 pages); _middleware.js imports from JSON; GET/PUT /api/admin/page-meta; PagesTab extended with Site Metadata + Per-page Meta sections (3 sections, 1 Save button) |
 | 4 — Polish | pending | — | — |
 
 ## Issues encountered
