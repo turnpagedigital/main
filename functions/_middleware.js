@@ -6,47 +6,31 @@
  *
  * Only 4 paths get a custom OG image; everything else falls back to /og/home.
  * The selectors below must exist as placeholders in index.html.
+ *
+ * Metadata source: src/data/page-meta.json — edit via /admin/pages.
  */
 
-const SITE_NAME = "Turnpage Digital Markets";
+import pageMeta from "../src/data/page-meta.json";
 
-const DEFAULT_TITLE = "Turnpage Digital Markets — The OTC Desk for Rights Holders";
-const DEFAULT_DESC =
-  "Capital and advisory for rights holders. AI copyright class actions, crypto bankruptcies, complex litigation — over $1B liquidated.";
+const SITE_NAME     = pageMeta.site.name;
+const DEFAULT_TITLE = pageMeta.site.defaultTitle;
+const DEFAULT_DESC  = pageMeta.site.defaultDescription;
 const DEFAULT_OG_SLUG = "home";
 
 /* Bump this to bust crawler caches (LinkedIn, X, Slack) after design changes.
  * Appended to the OG image URL as ?v=N. */
 const OG_VERSION = 2;
 
-/* Per-path metadata. Keys are exact pathnames. The `og` field is a slug that
- * must exist in functions/og/[slug].js's PAGES registry. Paths not listed here
- * fall back to the home OG image. */
-const PAGE_META = {
-  "/": {
-    title: DEFAULT_TITLE,
-    description: DEFAULT_DESC,
-    og: "home",
-  },
-  "/crypto": {
-    title: "Locked Crypto — Turnpage Digital Markets",
-    description:
-      "FTX. Celsius. BlockFi. Voyager. Genesis. Mt. Gox. We quote in fiat and close fast on locked digital assets.",
-    og: "crypto",
-  },
-  "/ai-copyright": {
-    title: "AI Copyright Claims — Turnpage Digital Markets",
-    description:
-      "Bartz. The OpenAI MDL. Concord. Getty. We buy copyright claims against generative AI companies and advise on strategy.",
-    og: "ai-copyright",
-  },
-  "/litigation-finance": {
-    title: "Litigation Finance — Turnpage Digital Markets",
-    description:
-      "Capital for the best contingency law firms — so merit drives the docket, not client cashflow.",
-    og: "litigation-finance",
-  },
-};
+/* Per-path metadata — built from page-meta.json at import time.
+ * Keys are exact pathnames. The `og` field is a slug that must exist in
+ * functions/og/[slug].js's PAGES registry. Paths not listed here fall back
+ * to the home OG image. */
+const PAGE_META = Object.fromEntries(
+  pageMeta.pages.map(p => [
+    p.path,
+    { title: p.title, description: p.description, og: p.og },
+  ]),
+);
 
 /* Resolve a request path to its OG metadata. Unknown paths use the default
  * title/desc and fall back to the home OG image. */
