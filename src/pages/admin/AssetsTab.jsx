@@ -75,6 +75,7 @@ function sanitizeFile(f) {
     companies: Array.isArray(f.companies) ? f.companies.filter(c => typeof c === "string") : [],
     source:    f.source === "upload" ? "upload" : "url",
     addedAt:   typeof f.addedAt === "string" ? f.addedAt : "",
+    archived:  f.archived === true,
   };
 }
 
@@ -114,6 +115,8 @@ export default function AssetsTab({ onDirtyChange }) {
   const [saveProgress, setSaveProgress] = useState(null); // null | { current, total }
   // Type filter — purely client-side, doesn't affect storage
   const [typeFilter, setTypeFilter] = useState("all");
+  // Show archived toggle — when false, archived entries are hidden
+  const [showArchived, setShowArchived] = useState(false);
 
   const dirty = useMemo(() => {
     if (!library || !original) return false;
@@ -276,13 +279,27 @@ export default function AssetsTab({ onDirtyChange }) {
     }));
   }
 
-  // Sort newest first, then apply the type filter (client-side only)
+  // Soft-delete: toggle archived flag on an entry. Restore is just the same
+  // function with archived = false. The entry stays in the library array; it
+  // is hidden from pickers and from the default grid view.
+  function archiveFile(id, archived) {
+    setLibrary(lib => ({
+      ...lib,
+      files: lib.files.map(f => f.id === id ? { ...f, archived } : f),
+    }));
+  }
+
+  // Sort newest first, then apply the type filter and archived filter (client-side only)
   const sortedFiles = library.files
     .slice()
     .sort((a, b) => (b.addedAt || "").localeCompare(a.addedAt || ""));
-  const displayFiles = typeFilter === "all"
-    ? sortedFiles
-    : sortedFiles.filter(f => f.type === typeFilter);
+  const activeFiles   = sortedFiles.filter(f => !f.archived);
+  const archivedFiles = sortedFiles.filter(f => f.archived);
+  // Files shown in the grid depend on the showArchived toggle
+  const filteredBase  = showArchived ? sortedFiles : activeFiles;
+  const displayFiles  = typeFilter === "all"
+    ? filteredBase
+    : filteredBase.filter(f => f.type === typeFilter);
 
   return (
     <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
@@ -337,11 +354,15 @@ export default function AssetsTab({ onDirtyChange }) {
       {/* ── Section 2: Asset list ───────────────────────────────────────── */}
       <FileGrid
         files={displayFiles}
-        totalCount={library.files.length}
+        activeCount={activeFiles.length}
+        archivedCount={archivedFiles.length}
         typeFilter={typeFilter}
         onTypeFilterChange={setTypeFilter}
+        showArchived={showArchived}
+        onShowArchivedChange={setShowArchived}
         onUpdate={updateFile}
         onDelete={deleteFile}
+        onArchive={archiveFile}
       />
     </div>
   );
@@ -551,9 +572,37 @@ function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false, l
    one-row-per-file with thumbnail, name, type, URL, companies (only when
    type === "logo"), and copy/replace/delete actions.
 ═══════════════════════════════════════════════════════════════════════════ */
-function FileGrid({ files, totalCount, typeFilter, onTypeFilterChange, onUpdate, onDelete }) {
+function FileGrid({
+  files, activeCount, archivedCount,
+  typeFilter, onTypeFilterChange,
+  showArchived, onShowArchivedChange,
+  onUpdate, onDelete, onArchive,
+}) {
   const filtering = typeFilter !== "all";
-  const noun = pluralForType(typeFilter, files.length);
+  // The "count" noun is based on what we're showing
+  const visibleActiveCount = showArchived
+    ? files.filter(f => !f.archived).length
+    : files.length;
+  const visibleArchivedCount = showArchived
+    ? files.filter(f => f.archived).length
+    : 0;
+  const noun = pluralForType(typeFilter, filtering ? visibleActiveCount : activeCount);
+
+  // Build the header label
+  let countLabel;
+  if (showArchived) {
+    if (filtering) {
+      countLabel = `${visibleActiveCount} active + ${visibleArchivedCount} archived ${noun}`;
+    } else {
+      countLabel = `${activeCount} active + ${archivedCount} archived files`;
+    }
+  } else {
+    if (filtering) {
+      countLabel = `${visibleActiveCount} of ${activeCount} active ${noun}`;
+    } else {
+      countLabel = `${activeCount} active file${activeCount === 1 ? "" : "s"} — newest first`;
+    }
+  }
 
   return (
     <div style={{ marginBottom: "2rem" }}>
@@ -564,17 +613,31 @@ function FileGrid({ files, totalCount, typeFilter, onTypeFilterChange, onUpdate,
       }}>
         <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, flex: 1 }}>
           Library{" "}
-          <span style={{ fontWeight: 400 }}>
-            ({files.length} {noun}
-            {filtering && totalCount !== files.length && (
-              <> of {totalCount}</>
-            )}
-            {!filtering && " — newest first"})
-          </span>
+          <span style={{ fontWeight: 400 }}>({countLabel})</span>
         </div>
-        {/* Right-aligned filter controls. Wrapped in a flex container so a
-            future search input can drop in alongside the type select. */}
-        <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+        {/* Right-aligned filter controls */}
+        <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}>
+          {/* Show archived checkbox */}
+          <label style={{
+            display: "flex", alignItems: "center", gap: "0.35rem",
+            fontSize: "0.8rem", color: INK_60, cursor: "pointer", userSelect: "none",
+          }}>
+            <input
+              type="checkbox"
+              checked={showArchived}
+              onChange={e => onShowArchivedChange(e.target.checked)}
+              style={{ cursor: "pointer", accentColor: NEON }}
+            />
+            Show archived
+            {archivedCount > 0 && (
+              <span style={{
+                background: "#e0e0e0", color: INK, borderRadius: 10,
+                padding: "0 6px", fontSize: "0.72rem", fontWeight: 700,
+              }}>
+                {archivedCount}
+              </span>
+            )}
+          </label>
           <select
             value={typeFilter}
             onChange={e => onTypeFilterChange(e.target.value)}
@@ -585,7 +648,6 @@ function FileGrid({ files, totalCount, typeFilter, onTypeFilterChange, onUpdate,
               <option key={opt.value} value={opt.value}>{opt.label}</option>
             ))}
           </select>
-          {/* TODO: search input lands here when wired up */}
         </div>
       </div>
 
@@ -596,7 +658,9 @@ function FileGrid({ files, totalCount, typeFilter, onTypeFilterChange, onUpdate,
         }}>
           {filtering
             ? `No ${noun} in the library yet. Try a different filter or upload one above.`
-            : "No assets yet. Upload one or paste a URL above to get started."}
+            : showArchived
+              ? "No archived assets."
+              : "No assets yet. Upload one or paste a URL above to get started."}
         </div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem" }}>
@@ -606,6 +670,7 @@ function FileGrid({ files, totalCount, typeFilter, onTypeFilterChange, onUpdate,
               file={file}
               onUpdate={(field, value) => onUpdate(file.id, field, value)}
               onDelete={(opts) => onDelete(file.id, opts)}
+              onArchive={(archived) => onArchive(file.id, archived)}
             />
           ))}
         </div>
@@ -614,7 +679,7 @@ function FileGrid({ files, totalCount, typeFilter, onTypeFilterChange, onUpdate,
   );
 }
 
-function FileRow({ file, onUpdate, onDelete }) {
+function FileRow({ file, onUpdate, onDelete, onArchive }) {
   const [nameDraft,      setNameDraft]      = useState(file.name);
   const [urlDraft,       setUrlDraft]       = useState(file.url);
   const [companiesDraft, setCompaniesDraft] = useState((file.companies || []).join(", "));
@@ -795,7 +860,100 @@ function FileRow({ file, onUpdate, onDelete }) {
     }
   }
 
-  const isLogo = file.type === "logo";
+  const isLogo     = file.type === "logo";
+  const isArchived = file.archived === true;
+
+  // For archived rows we show a simplified view with Restore + Delete permanently
+  if (isArchived) {
+    return (
+      <div
+        style={{
+          display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap",
+          opacity: 0.6, position: "relative",
+        }}
+        className="file-row"
+      >
+        {/* Archived badge */}
+        <div style={{
+          position: "absolute", top: 2, left: 2,
+          background: "#888", color: "#fff",
+          fontSize: "0.55rem", fontWeight: 800, letterSpacing: "0.08em",
+          padding: "1px 5px", pointerEvents: "none", zIndex: 1,
+        }}>
+          ARCHIVED
+        </div>
+        {/* Thumbnail */}
+        <div style={{
+          width: 64, height: 40, flexShrink: 0,
+          background: "#F4F5F7", border: `1px solid ${LINE}`,
+          display: "flex", alignItems: "center", justifyContent: "center",
+          overflow: "hidden",
+        }}>
+          {file.url ? (
+            file.type === "document" || /\.pdf($|\?)/i.test(file.url) ? (
+              <span style={{ fontSize: "0.62rem", fontWeight: 800, color: INK_60, textTransform: "uppercase" }}>PDF</span>
+            ) : /\.(mp4|webm|mov)($|\?)/i.test(file.url) ? (
+              <span style={{ fontSize: "0.62rem", fontWeight: 800, color: INK_60, textTransform: "uppercase" }}>VIDEO</span>
+            ) : (
+              <img
+                src={file.url}
+                alt={file.name || "preview"}
+                style={{ maxWidth: 58, maxHeight: 34, objectFit: "contain", display: "block" }}
+                onError={e => { e.currentTarget.style.opacity = "0.25"; }}
+              />
+            )
+          ) : (
+            <span style={{ fontSize: "0.62rem", color: INK_60 }}>no url</span>
+          )}
+        </div>
+        {/* Name (read-only in archived state) */}
+        <span style={{ fontSize: "0.85rem", color: INK, fontFamily: FONT, width: 180, flexShrink: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {file.name || "Untitled"}
+        </span>
+        <span style={{ fontSize: "0.78rem", color: INK_60, width: 110, flexShrink: 0 }}>{file.type}</span>
+        <span style={{ fontSize: "0.78rem", color: INK_60, flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{file.url}</span>
+
+        {/* Archived-row actions */}
+        <button
+          type="button"
+          onClick={() => onArchive(false)}
+          style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.35rem 0.75rem", fontWeight: 700 }}
+        >
+          Restore
+        </button>
+        <button
+          type="button"
+          onClick={openDeleteConfirm}
+          disabled={delPhase === "loading" || delPhase === "deleting"}
+          style={{
+            background: "#c44", border: "none", color: "#fff",
+            padding: "0.35rem 0.75rem", fontFamily: FONT, fontSize: "0.78rem",
+            fontWeight: 700, borderRadius: 0, letterSpacing: "0.02em",
+            opacity: (delPhase === "loading" || delPhase === "deleting") ? 0.6 : 1,
+            cursor: (delPhase === "loading" || delPhase === "deleting") ? "wait" : "pointer",
+          }}
+        >
+          Delete permanently
+        </button>
+
+        {delPhase && (
+          <DeleteConfirmPanel
+            file={file}
+            isExternal={isExternal}
+            repoPath={repoPath}
+            phase={delPhase}
+            references={delReferences}
+            error={delError}
+            confirming={delConfirming}
+            onArchive={null}          // archived rows don't get Archive button
+            onDeletePermanent={deletePermanently}
+            onStartConfirm={() => setDelConfirming(true)}
+            onCancel={cancelDelete}
+          />
+        )}
+      </div>
+    );
+  }
 
   return (
     <div
@@ -912,7 +1070,7 @@ function FileRow({ file, onUpdate, onDelete }) {
       <button
         type="button"
         onClick={openDeleteConfirm}
-        title="Delete this asset"
+        title="Archive or delete this asset"
         disabled={delPhase === "loading" || delPhase === "deleting"}
         style={{
           ...iconBtnStyle(false),
@@ -939,7 +1097,7 @@ function FileRow({ file, onUpdate, onDelete }) {
           references={delReferences}
           error={delError}
           confirming={delConfirming}
-          onRemoveLibrary={removeFromLibrary}
+          onArchive={() => { onArchive(true); cancelDelete(); }}
           onDeletePermanent={deletePermanently}
           onStartConfirm={() => setDelConfirming(true)}
           onCancel={cancelDelete}
@@ -951,9 +1109,15 @@ function FileRow({ file, onUpdate, onDelete }) {
 
 /* ═══════════════════════════════════════════════════════════════════════════
    Inline delete-confirm panel — expands below the FileRow when the user
-   clicks ×. Always offers "Delete permanently" for library-hosted files,
-   regardless of references. When references exist the button label changes
-   and a second click is required (double-confirm) to execute the cascade.
+   clicks ×.
+
+   Active rows offer TWO actions:
+     1. Archive   — soft-delete: hides from library + pickers, file stays in
+                    repo, entry stays in library.json. Restoreable.
+     2. Delete permanently — removes binary from repo + cascades references.
+
+   Archived rows skip to the permanent-delete confirmation immediately (no
+   Archive button — that path only makes sense on active rows).
 
    Renders into the same flex container as the row (flexBasis: 100%) so it
    sits on a new line directly under its row.
@@ -962,13 +1126,14 @@ function DeleteConfirmPanel({
   file, isExternal, repoPath,
   phase, references, error,
   confirming,
-  onRemoveLibrary, onDeletePermanent, onStartConfirm, onCancel,
+  onArchive,           // null for archived rows
+  onDeletePermanent, onStartConfirm, onCancel,
 }) {
   const loading  = phase === "loading";
   const deleting = phase === "deleting";
   const inUse    = references && references.length > 0;
   // "Delete permanently" is available for any library-hosted file — references
-  // no longer block it. External URLs and non-library paths remain library-only.
+  // no longer block it. External URLs and non-library paths can only be archived.
   const canDeletePermanent = !isExternal && !!repoPath && !loading;
 
   const refFileNames = inUse
@@ -986,7 +1151,7 @@ function DeleteConfirmPanel({
       color: INK,
     }}>
       <div style={{ fontWeight: 700, marginBottom: "0.45rem" }}>
-        Delete {file.name || "this asset"}?
+        {onArchive ? `Archive or delete "${file.name || "this asset"}"?` : `Delete "${file.name || "this asset"}" permanently?`}
       </div>
 
       {loading && (
@@ -999,54 +1164,60 @@ function DeleteConfirmPanel({
 
       {phase !== "loading" && !error && (
         <>
-          {isExternal && (
+          {onArchive && (
             <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
-              This is an external URL — the file isn't stored in the repo, so only the
-              library entry can be removed.
+              <strong>Archive</strong> hides this asset from the library and pickers, but the file stays
+              in the repo. You can restore it later.{" "}
+              <strong>Delete permanently</strong> removes the file from the repo and clears all references.
             </p>
           )}
-          {!isExternal && !repoPath && (
+          {!onArchive && !isExternal && repoPath && !inUse && (
             <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
-              This file lives outside <code>/library/</code>, so it can't be permanently
-              deleted from here. Only the library entry can be removed.
+              No other files reference this. The file at <code>{repoPath}</code> will be removed from the repo.
             </p>
           )}
-          {!isExternal && repoPath && !inUse && (
-            <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
-              No other files reference this. You can permanently delete the file from
-              the repo (<code>{repoPath}</code>) or just remove the library entry.
-            </p>
-          )}
-          {!isExternal && repoPath && inUse && !confirming && (
+          {!onArchive && !isExternal && repoPath && inUse && !confirming && (
             <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
               <strong>{references.length} data file{references.length === 1 ? "" : "s"}</strong> reference
-              this image: <strong>{refFileNames}</strong>.{" "}
+              this: <strong>{refFileNames}</strong>.{" "}
               <strong>Delete permanently</strong> will remove the file from the repo AND
-              clear those references from the data files.
+              clear those references.
             </p>
           )}
-          {!isExternal && repoPath && inUse && confirming && (
+          {!onArchive && !isExternal && repoPath && inUse && confirming && (
             <p style={{ margin: "0 0 0.5rem", color: "#c44", fontWeight: 600 }}>
               This will delete the file AND clear {references.length} reference{references.length === 1 ? "" : "s"}
               from: <strong>{refFileNames}</strong>. Click again to confirm.
+            </p>
+          )}
+          {(isExternal || !repoPath) && (
+            <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
+              {isExternal
+                ? "This is an external URL — the file isn't stored in the repo."
+                : `This file lives outside /library/ and can't be deleted from here.`}
+              {" "}Only Archive is available.
             </p>
           )}
         </>
       )}
 
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.3rem" }}>
-        <button
-          type="button"
-          onClick={onRemoveLibrary}
-          disabled={loading || deleting}
-          style={{
-            ...btnStyle, fontSize: "0.78rem", padding: "0.35rem 0.75rem",
-            opacity: (loading || deleting) ? 0.6 : 1,
-            cursor:  (loading || deleting) ? "wait" : "pointer",
-          }}
-        >
-          Remove from library only
-        </button>
+        {/* Archive button — only on active rows */}
+        {onArchive && (
+          <button
+            type="button"
+            onClick={onArchive}
+            disabled={loading || deleting}
+            style={{
+              ...btnPrimaryStyle, fontSize: "0.78rem", padding: "0.35rem 0.75rem",
+              opacity: (loading || deleting) ? 0.6 : 1,
+              cursor:  (loading || deleting) ? "wait" : "pointer",
+            }}
+          >
+            Archive
+          </button>
+        )}
+        {/* Delete permanently — only for library-hosted files */}
         {canDeletePermanent && (
           <button
             type="button"

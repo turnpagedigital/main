@@ -163,7 +163,7 @@ function normalizeFile(f) {
       )).slice(0, MAX_COMPANIES)
     : [];
 
-  return {
+  const out = {
     id:        String(f.id).trim().slice(0, 80),
     name:      String(f.name).trim().slice(0, MAX_NAME_LEN),
     url:       String(f.url).trim().slice(0, MAX_URL_LEN),
@@ -174,6 +174,10 @@ function normalizeFile(f) {
                  ? f.addedAt.slice(0, 40)
                  : new Date().toISOString(),
   };
+  // Preserve the archived flag when present — omit it entirely (falsy default)
+  // to keep the JSON file tidy for the common case.
+  if (f.archived === true) out.archived = true;
+  return out;
 }
 
 function normalizeFavicons(fav) {
