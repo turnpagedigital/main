@@ -3,43 +3,93 @@
     {
       "id": "desks",
       "title": "Desks",
-      "titleKey": "footer.col.desks",
       "links": [
-        { "id": "ai-copyright",       "label": "Copyright Claims",   "labelKey": "nav.copyright",  "href": "/ai-copyright" },
-        { "id": "crypto",             "label": "Locked Crypto",      "labelKey": "nav.crypto",     "href": "/crypto" },
-        { "id": "litigation-finance", "label": "Litigation Finance", "labelKey": "nav.litigation", "href": "/litigation-finance" },
-        { "id": "tariff-refunds",     "label": "Tariff Refunds",     "labelKey": "nav.tariff",     "href": "https://www.rewindtariffs.com", "external": true }
-      ]
+        {
+          "id": "ai-copyright",
+          "label": "Copyright Claims",
+          "href": "/ai-copyright",
+          "labelKey": "nav.copyright"
+        },
+        {
+          "id": "crypto",
+          "label": "Locked Crypto",
+          "href": "/crypto",
+          "labelKey": "nav.crypto"
+        },
+        {
+          "id": "litigation-finance",
+          "label": "Litigation Finance",
+          "href": "/litigation-finance",
+          "labelKey": "nav.litigation"
+        },
+        {
+          "id": "tariff-refunds",
+          "label": "Tariff Refunds",
+          "href": "https://www.rewindtariffs.com",
+          "labelKey": "nav.tariff",
+          "external": true
+        }
+      ],
+      "titleKey": "footer.col.desks"
     },
     {
       "id": "resources",
       "title": "Resources",
-      "titleKey": "footer.col.resources",
       "links": [
-        { "id": "press",        "label": "Press & Publications", "labelKey": "nav.press",      "href": "/press" },
-        { "id": "briefings",    "label": "Briefings",            "labelKey": "nav.briefings",  "href": "/briefings" },
-        { "id": "top-12-cases", "label": "Top 12 Cases",                                       "href": "/ai-copyright#cases-section" }
-      ]
+        {
+          "id": "press",
+          "label": "Press & Publications",
+          "href": "/press",
+          "labelKey": "nav.press"
+        },
+        {
+          "id": "briefings",
+          "label": "Briefings",
+          "href": "/briefings",
+          "labelKey": "nav.briefings"
+        },
+        {
+          "id": "link-1779881007269-p8ym",
+          "label": "Policies",
+          "href": "/"
+        }
+      ],
+      "titleKey": "footer.col.resources"
     },
     {
       "id": "firm",
       "title": "Firm",
-      "titleKey": "footer.col.firm",
       "links": [
-        { "id": "contact", "label": "Get in Touch", "labelKey": "footer.firm.contact", "href": "/contact" }
-      ]
+        {
+          "id": "contact",
+          "label": "Get in Touch",
+          "href": "/contact",
+          "labelKey": "footer.firm.contact"
+        }
+      ],
+      "titleKey": "footer.col.firm"
     },
     {
       "id": "legal",
       "title": "Legal",
-      "titleKey": "footer.col.legal",
       "links": [
-        { "id": "privacy", "label": "Privacy Policy", "labelKey": "footer.legal.privacy", "href": "/privacy" },
-        { "id": "terms",   "label": "Terms of Use",   "labelKey": "footer.legal.terms",   "href": "/terms" }
-      ]
+        {
+          "id": "privacy",
+          "label": "Privacy Policy",
+          "href": "/privacy",
+          "labelKey": "footer.legal.privacy"
+        },
+        {
+          "id": "terms",
+          "label": "Terms of Use",
+          "href": "/terms",
+          "labelKey": "footer.legal.terms"
+        }
+      ],
+      "titleKey": "footer.col.legal"
     }
   ],
   "copyright": "Turnpage Digital Markets LLC © 2026 · All rights reserved",
-  "copyrightKey": "footer.copyright",
-  "contactEmail": "info@turnpagedigital.com"
+  "contactEmail": "info@turnpagedigital.com",
+  "copyrightKey": "footer.copyright"
 }
