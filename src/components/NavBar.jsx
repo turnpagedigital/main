@@ -2,16 +2,21 @@ import React, { useState, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
+import navData from "../data/nav.json";
 
 /* ─── Main site nav ──────────────────────────────────────────────────────── */
 
-const NAV_ITEMS = [
-  { key: "ai-copyright",       labelKey: "nav.copyright" },
-  { key: "crypto",             labelKey: "nav.crypto" },
-  { key: "litigation-finance", labelKey: "nav.litigation" },
-  { key: "tariff-refunds",     labelKey: "nav.tariff", externalHref: "https://www.rewindtariffs.com" },
-  { key: "press",              labelKey: "nav.press" },
-];
+// Build NAV_ITEMS from nav.json — only active items, in JSON order.
+// Each JSON item has: id, label, href, labelKey, active, external (optional).
+// We map to the shape the rest of NavBar expects: key, labelKey, externalHref.
+const NAV_ITEMS = navData.items
+  .filter(i => i.active)
+  .map(i => ({
+    key:          i.id,
+    labelKey:     i.labelKey,
+    externalHref: i.external ? i.href : undefined,
+    _href:        i.href,
+  }));
 
 const PREVIEWS = {
   "ai-copyright": {

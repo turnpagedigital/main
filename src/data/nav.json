@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "id": "ai-copyright",
+      "label": "Copyright Claims",
+      "href": "/ai-copyright",
+      "labelKey": "nav.copyright",
+      "active": true
+    },
+    {
+      "id": "crypto",
+      "label": "Locked Crypto",
+      "href": "/crypto",
+      "labelKey": "nav.crypto",
+      "active": true
+    },
+    {
+      "id": "litigation-finance",
+      "label": "Litigation Finance",
+      "href": "/litigation-finance",
+      "labelKey": "nav.litigation",
+      "active": true
+    },
+    {
+      "id": "tariff-refunds",
+      "label": "Tariff Refunds",
+      "href": "https://www.rewindtariffs.com",
+      "labelKey": "nav.tariff",
+      "active": true,
+      "external": true
+    },
+    {
+      "id": "press",
+      "label": "Press & Publications",
+      "href": "/press",
+      "labelKey": "nav.press",
+      "active": true
+    }
+  ]
+}
