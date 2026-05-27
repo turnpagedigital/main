@@ -3,31 +3,22 @@ import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 import LanguageSelector from "./LanguageSelector.jsx";
+import footerData from "../data/footer.json";
 
 /* Polestar-style simple footer.
    Light gray background, subscribe column on the left, multiple short link
-   columns to the right, thin bottom-row with copyright and legal links. */
+   columns to the right, thin bottom-row with copyright and legal links.
+
+   Column/link data is loaded from src/data/footer.json.
+   labelKey / titleKey fields are used for i18n lookup; plain label/title
+   is the English fallback shown in the admin. */
 export default function Footer() {
   const { t } = useI18n();
 
-  const COL_DESKS = [
-    { key: "ai-copyright",      label: t("nav.copyright") },
-    { key: "crypto",             label: t("nav.crypto") },
-    { key: "litigation-finance", label: t("nav.litigation") },
-    { key: "tariff-refunds",     label: t("nav.tariff"), externalHref: "https://www.rewindtariffs.com" },
-  ];
-  const COL_RESOURCES = [
-    { key: "press",        label: t("nav.press") },
-    { key: "briefings",    label: t("nav.briefings") },
-    { key: "ai-copyright", label: "Top 12 Cases", hashSuffix: "#cases-section" },
-  ];
-  const COL_FIRM = [
-    { key: "contact", label: t("footer.firm.contact") },
-  ];
-  const COL_LEGAL = [
-    { key: "privacy", label: t("footer.legal.privacy") },
-    { key: "terms", label: t("footer.legal.terms") },
-  ];
+  // Helper: resolve an i18n key if present, else use the plain string
+  function tx(key, fallback) {
+    return key ? t(key) : fallback;
+  }
 
   return (
     <footer style={{
@@ -39,10 +30,10 @@ export default function Footer() {
         maxWidth: 1440, margin: "0 auto",
         padding: "clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem) 2rem",
       }}>
-        {/* Top row: subscribe + link columns */}
+        {/* Top row: logo + link columns */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: "minmax(0, 1.6fr) repeat(4, minmax(0, 1fr))",
+          gridTemplateColumns: `minmax(0, 1.6fr) repeat(${footerData.columns.length}, minmax(0, 1fr))`,
           gap: "clamp(2rem, 4vw, 3.5rem)",
           marginBottom: "clamp(3rem, 5vw, 4rem)",
         }} className="footer-grid">
@@ -58,10 +49,18 @@ export default function Footer() {
             </a>
           </div>
 
-          <FooterCol title={t("footer.col.desks")} items={COL_DESKS} />
-          <FooterCol title={t("footer.col.resources")} items={COL_RESOURCES} />
-          <FooterCol title={t("footer.col.firm")} items={COL_FIRM} />
-          <FooterCol title={t("footer.col.legal")} items={COL_LEGAL} />
+          {footerData.columns.map(col => (
+            <FooterCol
+              key={col.id}
+              title={tx(col.titleKey, col.title)}
+              items={col.links.map(link => ({
+                key:          link.id,
+                label:        tx(link.labelKey, link.label),
+                href:         link.href,
+                external:     link.external ?? false,
+              }))}
+            />
+          ))}
         </div>
 
         {/* Bottom row */}
@@ -72,12 +71,20 @@ export default function Footer() {
         }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem 2rem", alignItems: "center" }}>
             <p style={{ fontFamily: FONT, fontSize: "0.82rem", color: INK_60 }}>
-              {t("footer.copyright")}
+              {tx(footerData.copyrightKey, footerData.copyright)}
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
-              <FooterBottomLink href={hashHref("privacy")}>{t("footer.legal.privacy")}</FooterBottomLink>
-              <FooterBottomLink href={hashHref("terms")}>{t("footer.legal.terms")}</FooterBottomLink>
-              <FooterBottomLink href="mailto:info@turnpagedigital.com">info@turnpagedigital.com</FooterBottomLink>
+              {/* Legal links from the "legal" column */}
+              {(footerData.columns.find(c => c.id === "legal")?.links ?? []).map(link => (
+                <FooterBottomLink key={link.id} href={hashHref(link.href.replace(/^\//, ""))}>
+                  {tx(link.labelKey, link.label)}
+                </FooterBottomLink>
+              ))}
+              {footerData.contactEmail && (
+                <FooterBottomLink href={`mailto:${footerData.contactEmail}`}>
+                  {footerData.contactEmail}
+                </FooterBottomLink>
+              )}
             </div>
           </div>
           <LanguageSelector />
@@ -101,6 +108,8 @@ export default function Footer() {
   );
 }
 
+/* ── FooterCol ──────────────────────────────────────────────────────────────── */
+
 function FooterCol({ title, items }) {
   return (
     <div>
@@ -112,36 +121,35 @@ function FooterCol({ title, items }) {
         {title}
       </p>
       <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.55rem" }}>
-        {items.map(item => {
-          const isExternal = Boolean(item.externalHref);
-          return (
-            <li key={item.key + (item.hashSuffix || "")}>
-              <a
-                href={isExternal ? item.externalHref : hashHref(item.key) + (item.hashSuffix || "")}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noopener noreferrer" : undefined}
-                style={{
-                  fontFamily: FONT, fontSize: "0.95rem",
-                  color: INK, transition: "color 0.2s",
-                  display: "inline-flex", alignItems: "center", gap: "0.35em",
-                }}
-                onMouseEnter={e => { e.currentTarget.style.color = INK_60; }}
-                onMouseLeave={e => { e.currentTarget.style.color = INK; }}
-              >
-                {item.label}
-                {isExternal && (
-                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
-                    <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
-                  </svg>
-                )}
-              </a>
-            </li>
-          );
-        })}
+        {items.map(item => (
+          <li key={item.key}>
+            <a
+              href={item.external ? item.href : hashHref(item.href.replace(/^\//, "")) + (item.hashSuffix || "")}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
+              style={{
+                fontFamily: FONT, fontSize: "0.95rem",
+                color: INK, transition: "color 0.2s",
+                display: "inline-flex", alignItems: "center", gap: "0.35em",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.color = INK_60; }}
+              onMouseLeave={e => { e.currentTarget.style.color = INK; }}
+            >
+              {item.label}
+              {item.external && (
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
+                  <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
+                </svg>
+              )}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );
 }
+
+/* ── FooterBottomLink ────────────────────────────────────────────────────────── */
 
 function FooterBottomLink({ href, children }) {
   return (
