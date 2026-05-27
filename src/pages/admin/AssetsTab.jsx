@@ -625,13 +625,16 @@ function FileRow({ file, onUpdate, onDelete }) {
 
   // ── Delete-confirmation state (inline expand) ────────────────────────────
   // States: null | "loading" | "ready" | "deleting" | "error"
-  //   loading  — dry-run in flight
-  //   ready    — dry-run came back, show buttons
-  //   deleting — permanent delete in flight
-  //   error    — some step blew up; show msg + a "Cancel" button
+  //   loading    — dry-run in flight
+  //   ready      — dry-run came back, show buttons
+  //   deleting   — permanent delete in flight
+  //   error      — some step blew up; show msg + a "Cancel" button
   const [delPhase,      setDelPhase]      = useState(null);
   const [delReferences, setDelReferences] = useState([]); // [{file, matches:[]}]
   const [delError,      setDelError]      = useState("");
+  // delConfirming: true when user clicked "Delete permanently" with references
+  // (cascade path) — requires a second click to confirm.
+  const [delConfirming, setDelConfirming] = useState(false);
   // isExternal: external URL (https://…) — we can't delete from repo, only from library
   const isExternal = /^https?:\/\//i.test(file.url);
   // Map the public URL ("/library/foo.png") → repo path ("public/library/foo.png").
@@ -761,6 +764,7 @@ function FileRow({ file, onUpdate, onDelete }) {
     setDelPhase(null);
     setDelReferences([]);
     setDelError("");
+    setDelConfirming(false);
   }
 
   function removeFromLibrary() {
@@ -769,16 +773,17 @@ function FileRow({ file, onUpdate, onDelete }) {
     cancelDelete();
   }
 
-  async function deletePermanently() {
+  async function deletePermanently(cascade = false) {
     if (!repoPath) return;
     setDelError("");
+    setDelConfirming(false);
     setDelPhase("deleting");
     try {
       const r = await fetch("/api/admin/file-delete", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ url: file.url, repoPath }),
+        body: JSON.stringify({ url: file.url, repoPath, ...(cascade ? { cascade: true } : {}) }),
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
@@ -933,8 +938,10 @@ function FileRow({ file, onUpdate, onDelete }) {
           phase={delPhase}
           references={delReferences}
           error={delError}
+          confirming={delConfirming}
           onRemoveLibrary={removeFromLibrary}
           onDeletePermanent={deletePermanently}
+          onStartConfirm={() => setDelConfirming(true)}
           onCancel={cancelDelete}
         />
       )}
@@ -944,24 +951,29 @@ function FileRow({ file, onUpdate, onDelete }) {
 
 /* ═══════════════════════════════════════════════════════════════════════════
    Inline delete-confirm panel — expands below the FileRow when the user
-   clicks ×. Shows either:
-     - "Remove from library only" (for external URLs or library files in use)
-     - "Remove from library only" + "Delete permanently" (for unreferenced
-       library files)
+   clicks ×. Always offers "Delete permanently" for library-hosted files,
+   regardless of references. When references exist the button label changes
+   and a second click is required (double-confirm) to execute the cascade.
+
    Renders into the same flex container as the row (flexBasis: 100%) so it
    sits on a new line directly under its row.
 ═══════════════════════════════════════════════════════════════════════════ */
 function DeleteConfirmPanel({
   file, isExternal, repoPath,
   phase, references, error,
-  onRemoveLibrary, onDeletePermanent, onCancel,
+  confirming,
+  onRemoveLibrary, onDeletePermanent, onStartConfirm, onCancel,
 }) {
-  const loading   = phase === "loading";
-  const deleting  = phase === "deleting";
-  const inUse     = references && references.length > 0;
-  // Permanent delete is only offered for library files with no detected
-  // references. External URLs and "in use" files are library-removal only.
-  const canDeletePermanent = !isExternal && !!repoPath && !inUse && !loading;
+  const loading  = phase === "loading";
+  const deleting = phase === "deleting";
+  const inUse    = references && references.length > 0;
+  // "Delete permanently" is available for any library-hosted file — references
+  // no longer block it. External URLs and non-library paths remain library-only.
+  const canDeletePermanent = !isExternal && !!repoPath && !loading;
+
+  const refFileNames = inUse
+    ? references.map(r => r.file.split("/").pop()).join(", ")
+    : "";
 
   return (
     <div style={{
@@ -999,18 +1011,24 @@ function DeleteConfirmPanel({
               deleted from here. Only the library entry can be removed.
             </p>
           )}
-          {!isExternal && repoPath && inUse && (
-            <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
-              {references.length} data file{references.length === 1 ? "" : "s"} reference
-              this image: <strong>{references.map(r => r.file.split("/").pop()).join(", ")}</strong>.
-              You can still remove the library entry, but the file in the repo won't be
-              deleted.
-            </p>
-          )}
           {!isExternal && repoPath && !inUse && (
             <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
               No other files reference this. You can permanently delete the file from
               the repo (<code>{repoPath}</code>) or just remove the library entry.
+            </p>
+          )}
+          {!isExternal && repoPath && inUse && !confirming && (
+            <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
+              <strong>{references.length} data file{references.length === 1 ? "" : "s"}</strong> reference
+              this image: <strong>{refFileNames}</strong>.{" "}
+              <strong>Delete permanently</strong> will remove the file from the repo AND
+              clear those references from the data files.
+            </p>
+          )}
+          {!isExternal && repoPath && inUse && confirming && (
+            <p style={{ margin: "0 0 0.5rem", color: "#c44", fontWeight: 600 }}>
+              This will delete the file AND clear {references.length} reference{references.length === 1 ? "" : "s"}
+              from: <strong>{refFileNames}</strong>. Click again to confirm.
             </p>
           )}
         </>
@@ -1032,17 +1050,30 @@ function DeleteConfirmPanel({
         {canDeletePermanent && (
           <button
             type="button"
-            onClick={onDeletePermanent}
+            onClick={
+              deleting      ? undefined
+              : !inUse      ? () => onDeletePermanent(false)
+              : !confirming ? onStartConfirm
+              :               () => onDeletePermanent(true)
+            }
             disabled={deleting}
             style={{
-              background: "#c44", border: "none", color: "#fff",
+              background: confirming ? "#8b0000" : "#c44",
+              border: "none", color: "#fff",
               padding: "0.4rem 0.85rem", fontFamily: FONT, fontSize: "0.78rem",
               fontWeight: 700, borderRadius: 0, letterSpacing: "0.02em",
               opacity: deleting ? 0.6 : 1,
               cursor: deleting ? "wait" : "pointer",
             }}
           >
-            {deleting ? "Deleting…" : "Delete permanently"}
+            {deleting
+              ? "Deleting…"
+              : !inUse
+                ? "Delete permanently"
+                : confirming
+                  ? `Confirm — delete file + clear ${references.length} reference${references.length === 1 ? "" : "s"}`
+                  : `Delete file + clear ${references.length} reference${references.length === 1 ? "" : "s"}`
+            }
           </button>
         )}
         <button
