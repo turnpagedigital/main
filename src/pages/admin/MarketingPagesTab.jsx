@@ -14,6 +14,9 @@ import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, Center
    damages data (AI Copyright only), how-it-works steps (Lit Finance only),
    FAQs (Lit Finance only), comparison (Crypto + Lit Finance).
 
+   UI pattern: card-per-item with header row. AudienceCards use a
+   PRIORITY/STANDARD pill toggle instead of a checkbox.
+
    Self-contained — owns its own fetch/save lifecycle.
    Reports dirty state via onDirtyChange?.(dirty).
 ═══════════════════════════════════════════════════════════════════════════ */
@@ -367,7 +370,7 @@ function CryptoSection({ page, d, updateItem, moveItem, removeItem, addItem, upd
     <>
       <SectionHeader>Audience Cards (Who We Help)</SectionHeader>
       <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
-        Cards shown in the "Who We Help" section. Items with <em>priority</em> checked render with dark background.
+        Cards shown in the "Who We Help" section. Items with the <em>PRIORITY</em> pill active render with dark background.
       </p>
       <CardList
         items={d.audienceCards}
@@ -428,7 +431,7 @@ function AICopyrightSection({ page, d, updateItem, moveItem, removeItem, addItem
     <>
       <SectionHeader>Audience Cards (Who We Help)</SectionHeader>
       <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
-        Cards shown in the "Who We Help" section. Items with <em>priority</em> checked render with dark background.
+        Cards shown in the "Who We Help" section. Items with the <em>PRIORITY</em> pill active render with dark background.
       </p>
       <CardList
         items={d.audienceCards}
@@ -504,7 +507,7 @@ function LitFinSection({ page, d, updateItem, moveItem, removeItem, addItem, upd
     <>
       <SectionHeader>Audience Cards (Who We Help)</SectionHeader>
       <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
-        Cards shown in the "Who We Help" section. Items with <em>priority</em> checked render with dark background.
+        Cards shown in the "Who We Help" section. Items with the <em>PRIORITY</em> pill active render with dark background.
       </p>
       <CardList
         items={d.audienceCards}
@@ -612,12 +615,15 @@ function CardList({ items, renderRow, addItem, addLabel }) {
       {items.length === 0 && (
         <EmptyPlaceholder>No items yet. Click "{addLabel.replace("+ ", "")}" to get started.</EmptyPlaceholder>
       )}
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "1rem" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "1rem" }}>
         {items.map((item, i) => renderRow(item, i, items.length))}
       </div>
       <button onClick={addItem} style={{
-        ...btnStyle, fontSize: "0.82rem", marginBottom: "2.5rem",
-        display: "inline-flex", alignItems: "center", gap: "0.4em",
+        ...btnStyle,
+        background: "transparent", border: `1px dashed ${LINE}`,
+        color: INK, padding: "0.75rem 1rem", fontWeight: 700, width: "100%",
+        fontSize: "0.82rem", marginBottom: "2.5rem",
+        display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.4em",
       }}>
         {addLabel}
       </button>
@@ -626,45 +632,80 @@ function CardList({ items, renderRow, addItem, addLabel }) {
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   Row components
+   Row components — card-per-item pattern with header row
 ══════════════════════════════════════════════════════════════════════════ */
 
 function AudienceCardRow({ card, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const titleEmpty = !String(card.title || "").trim();
   const bodyEmpty  = !String(card.body  || "").trim();
+  const summary    = card.title ? `"${card.title.slice(0, 60)}${card.title.length > 60 ? "…" : ""}"` : null;
+
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
-        <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
-        <div style={{ flex: 1 }}>
-          <label style={labelStyle}>
-            Title
-            <input
-              type="text" value={card.title || ""}
-              onChange={e => onUpdate({ title: e.target.value })}
-              placeholder="Card title"
-              style={{ ...inputStyle, marginTop: "0.25rem", borderColor: titleEmpty ? "#e08080" : undefined }}
-            />
-            {titleEmpty && <p style={reqStyle}>Required</p>}
-          </label>
+    <div style={{
+      background: "#fff",
+      border: `1px solid ${LINE}`,
+    }}>
+      {/* Card header row */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.75rem",
+        padding: "0.7rem 1rem",
+        borderBottom: `1px solid ${LINE}`,
+        flexWrap: "wrap",
+      }}>
+        {/* PRIORITY/STANDARD pill toggle */}
+        <button
+          type="button"
+          onClick={() => onUpdate({ priority: !card.priority })}
+          style={{
+            background: card.priority ? NEON : "#E5E7EB",
+            color: card.priority ? "#0A0A0A" : INK_60,
+            border: "none", borderRadius: 0,
+            padding: "0.25rem 0.65rem",
+            fontSize: "0.7rem", fontWeight: 800,
+            letterSpacing: "0.08em", textTransform: "uppercase",
+            cursor: "pointer", fontFamily: FONT,
+            flexShrink: 0,
+          }}
+        >
+          {card.priority ? "PRIORITY" : "STANDARD"}
+        </button>
+
+        {/* Summary text */}
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {summary || <em>No title set</em>}
         </div>
-        <label style={{ ...labelStyle, display: "flex", flexDirection: "column", alignItems: "center", gap: "0.3rem", paddingTop: "0.25rem" }}>
-          <span>Priority</span>
-          <input type="checkbox" checked={Boolean(card.priority)} onChange={e => onUpdate({ priority: e.target.checked })} />
-        </label>
-        <DeleteBtn onRemove={onRemove} />
+
+        {/* Action buttons */}
+        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
+        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
       </div>
-      <label style={{ ...labelStyle, display: "block" }}>
-        Body
-        <textarea
-          value={card.body || ""}
-          onChange={e => onUpdate({ body: e.target.value })}
-          placeholder="Card body text"
-          rows={2}
-          style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 58, borderColor: bodyEmpty ? "#e08080" : undefined }}
-        />
-        {bodyEmpty && <p style={reqStyle}>Required</p>}
-      </label>
+
+      {/* Card body */}
+      <div style={{ padding: "0.95rem 1rem", display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+        <label style={labelStyle}>
+          Title
+          <input
+            type="text" value={card.title || ""}
+            onChange={e => onUpdate({ title: e.target.value })}
+            placeholder="Card title"
+            style={{ ...inputStyle, marginTop: "0.25rem", borderColor: titleEmpty ? "#e08080" : undefined }}
+          />
+          {titleEmpty && <p style={reqStyle}>Required</p>}
+        </label>
+
+        <label style={{ ...labelStyle, display: "block" }}>
+          Body
+          <textarea
+            value={card.body || ""}
+            onChange={e => onUpdate({ body: e.target.value })}
+            placeholder="Card body text"
+            rows={2}
+            style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 58, borderColor: bodyEmpty ? "#e08080" : undefined }}
+          />
+          {bodyEmpty && <p style={reqStyle}>Required</p>}
+        </label>
+      </div>
     </div>
   );
 }
@@ -672,46 +713,90 @@ function AudienceCardRow({ card, index, total, onUpdate, onMoveUp, onMoveDown, o
 function ServiceCardRow({ card, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const titleEmpty = !String(card.title || "").trim();
   const bodyEmpty  = !String(card.body  || "").trim();
+  const summary    = card.title ? `"${card.title.slice(0, 60)}${card.title.length > 60 ? "…" : ""}"` : null;
+
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
-        <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
-        <div style={{ flex: 1 }}>
-          <label style={labelStyle}>
-            Title
-            <input
-              type="text" value={card.title || ""}
-              onChange={e => onUpdate({ title: e.target.value })}
-              placeholder="Service card title"
-              style={{ ...inputStyle, marginTop: "0.25rem", borderColor: titleEmpty ? "#e08080" : undefined }}
-            />
-            {titleEmpty && <p style={reqStyle}>Required</p>}
-          </label>
+    <div style={{
+      background: "#fff",
+      border: `1px solid ${LINE}`,
+    }}>
+      {/* Card header row */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.75rem",
+        padding: "0.7rem 1rem",
+        borderBottom: `1px solid ${LINE}`,
+        flexWrap: "wrap",
+      }}>
+        {/* Summary text */}
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {summary || <em>No title set</em>}
         </div>
-        <DeleteBtn onRemove={onRemove} />
+
+        {/* Action buttons */}
+        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
+        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
       </div>
-      <label style={{ ...labelStyle, display: "block" }}>
-        Body
-        <textarea
-          value={card.body || ""}
-          onChange={e => onUpdate({ body: e.target.value })}
-          placeholder="Description of this service"
-          rows={3}
-          style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 72, borderColor: bodyEmpty ? "#e08080" : undefined }}
-        />
-        {bodyEmpty && <p style={reqStyle}>Required</p>}
-      </label>
+
+      {/* Card body */}
+      <div style={{ padding: "0.95rem 1rem", display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+        <label style={labelStyle}>
+          Title
+          <input
+            type="text" value={card.title || ""}
+            onChange={e => onUpdate({ title: e.target.value })}
+            placeholder="Service card title"
+            style={{ ...inputStyle, marginTop: "0.25rem", borderColor: titleEmpty ? "#e08080" : undefined }}
+          />
+          {titleEmpty && <p style={reqStyle}>Required</p>}
+        </label>
+
+        <label style={{ ...labelStyle, display: "block" }}>
+          Body
+          <textarea
+            value={card.body || ""}
+            onChange={e => onUpdate({ body: e.target.value })}
+            placeholder="Description of this service"
+            rows={3}
+            style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 72, borderColor: bodyEmpty ? "#e08080" : undefined }}
+          />
+          {bodyEmpty && <p style={reqStyle}>Required</p>}
+        </label>
+      </div>
     </div>
   );
 }
 
 function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const nameEmpty = !String(item.name || "").trim();
+  const summary   = item.name ? `"${item.name.slice(0, 60)}${item.name.length > 60 ? "…" : ""}"` : null;
+
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
-        <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
-        <div style={{ flex: 2 }}>
+    <div style={{
+      background: "#fff",
+      border: `1px solid ${LINE}`,
+    }}>
+      {/* Card header row */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.75rem",
+        padding: "0.7rem 1rem",
+        borderBottom: `1px solid ${LINE}`,
+        flexWrap: "wrap",
+      }}>
+        {/* Summary text */}
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {summary || <em>No case name set</em>}
+        </div>
+
+        {/* Action buttons */}
+        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
+        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
+      </div>
+
+      {/* Card body */}
+      <div style={{ padding: "0.95rem 1rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 90px 80px", gap: "0.75rem", marginBottom: "0.75rem" }}>
           <label style={labelStyle}>
             Case Name
             <input
@@ -722,8 +807,6 @@ function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemo
             />
             {nameEmpty && <p style={reqStyle}>Required</p>}
           </label>
-        </div>
-        <div style={{ width: 90 }}>
           <label style={labelStyle}>
             Amount (B)
             <input
@@ -733,8 +816,6 @@ function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemo
               style={{ ...inputStyle, marginTop: "0.25rem" }}
             />
           </label>
-        </div>
-        <div style={{ width: 80 }}>
           <label style={labelStyle}>
             Label
             <input
@@ -745,45 +826,44 @@ function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemo
             />
           </label>
         </div>
-        <DeleteBtn onRemove={onRemove} />
-      </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.75rem", marginBottom: "0.75rem" }}>
-        <label style={labelStyle}>
-          Type
-          <select value={item.type || "statutory"} onChange={e => onUpdate({ type: e.target.value })} style={{ ...inputStyle, marginTop: "0.25rem" }}>
-            <option value="settled">settled</option>
-            <option value="statutory">statutory</option>
-            <option value="dmca">dmca</option>
-          </select>
-        </label>
-        <label style={{ ...labelStyle, gridColumn: "2 / -1" }}>
-          Badge Label
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.75rem", marginBottom: "0.75rem" }}>
+          <label style={labelStyle}>
+            Type
+            <select value={item.type || "statutory"} onChange={e => onUpdate({ type: e.target.value })} style={{ ...inputStyle, marginTop: "0.25rem" }}>
+              <option value="settled">settled</option>
+              <option value="statutory">statutory</option>
+              <option value="dmca">dmca</option>
+            </select>
+          </label>
+          <label style={{ ...labelStyle, gridColumn: "2 / -1" }}>
+            Badge Label
+            <input
+              type="text" value={item.badge || ""}
+              onChange={e => onUpdate({ badge: e.target.value })}
+              placeholder="e.g. Settled"
+              style={{ ...inputStyle, marginTop: "0.25rem" }}
+            />
+          </label>
+        </div>
+        <label style={{ ...labelStyle, display: "block", marginBottom: "0.75rem" }}>
+          Basis (footnote below bar)
           <input
-            type="text" value={item.badge || ""}
-            onChange={e => onUpdate({ badge: e.target.value })}
-            placeholder="e.g. Settled"
+            type="text" value={item.basis || ""}
+            onChange={e => onUpdate({ basis: e.target.value })}
+            placeholder="Works count × amount…"
+            style={{ ...inputStyle, marginTop: "0.25rem" }}
+          />
+        </label>
+        <label style={{ ...labelStyle, display: "block" }}>
+          Source (italic citation)
+          <input
+            type="text" value={item.source || ""}
+            onChange={e => onUpdate({ source: e.target.value })}
+            placeholder="e.g. N.D. Cal. No. …"
             style={{ ...inputStyle, marginTop: "0.25rem" }}
           />
         </label>
       </div>
-      <label style={{ ...labelStyle, display: "block", marginBottom: "0.75rem" }}>
-        Basis (footnote below bar)
-        <input
-          type="text" value={item.basis || ""}
-          onChange={e => onUpdate({ basis: e.target.value })}
-          placeholder="Works count × amount…"
-          style={{ ...inputStyle, marginTop: "0.25rem" }}
-        />
-      </label>
-      <label style={{ ...labelStyle, display: "block" }}>
-        Source (italic citation)
-        <input
-          type="text" value={item.source || ""}
-          onChange={e => onUpdate({ source: e.target.value })}
-          placeholder="e.g. N.D. Cal. No. …"
-          style={{ ...inputStyle, marginTop: "0.25rem" }}
-        />
-      </label>
     </div>
   );
 }
@@ -791,11 +871,34 @@ function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemo
 function StepRow({ step, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const titleEmpty = !String(step.title || "").trim();
   const bodyEmpty  = !String(step.body  || "").trim();
+  const summary    = step.title ? `"${step.title.slice(0, 60)}${step.title.length > 60 ? "…" : ""}"` : null;
+
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
-        <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
-        <div style={{ width: 64 }}>
+    <div style={{
+      background: "#fff",
+      border: `1px solid ${LINE}`,
+    }}>
+      {/* Card header row */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.75rem",
+        padding: "0.7rem 1rem",
+        borderBottom: `1px solid ${LINE}`,
+        flexWrap: "wrap",
+      }}>
+        {/* Summary text */}
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {summary || <em>No title set</em>}
+        </div>
+
+        {/* Action buttons */}
+        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
+        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
+      </div>
+
+      {/* Card body */}
+      <div style={{ padding: "0.95rem 1rem", display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "80px 1fr", gap: "0.75rem" }}>
           <label style={labelStyle}>
             No.
             <input
@@ -805,8 +908,6 @@ function StepRow({ step, index, total, onUpdate, onMoveUp, onMoveDown, onRemove 
               style={{ ...inputStyle, marginTop: "0.25rem" }}
             />
           </label>
-        </div>
-        <div style={{ flex: 1 }}>
           <label style={labelStyle}>
             Title
             <input
@@ -818,19 +919,18 @@ function StepRow({ step, index, total, onUpdate, onMoveUp, onMoveDown, onRemove 
             {titleEmpty && <p style={reqStyle}>Required</p>}
           </label>
         </div>
-        <DeleteBtn onRemove={onRemove} />
+        <label style={{ ...labelStyle, display: "block" }}>
+          Body
+          <textarea
+            value={step.body || ""}
+            onChange={e => onUpdate({ body: e.target.value })}
+            placeholder="Step description"
+            rows={3}
+            style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 72, borderColor: bodyEmpty ? "#e08080" : undefined }}
+          />
+          {bodyEmpty && <p style={reqStyle}>Required</p>}
+        </label>
       </div>
-      <label style={{ ...labelStyle, display: "block" }}>
-        Body
-        <textarea
-          value={step.body || ""}
-          onChange={e => onUpdate({ body: e.target.value })}
-          placeholder="Step description"
-          rows={3}
-          style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 72, borderColor: bodyEmpty ? "#e08080" : undefined }}
-        />
-        {bodyEmpty && <p style={reqStyle}>Required</p>}
-      </label>
     </div>
   );
 }
@@ -838,35 +938,56 @@ function StepRow({ step, index, total, onUpdate, onMoveUp, onMoveDown, onRemove 
 function FAQRow({ faq, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const qEmpty = !String(faq.q || "").trim();
   const aEmpty = !String(faq.a || "").trim();
+  const summary = faq.q ? `"${faq.q.slice(0, 70)}${faq.q.length > 70 ? "…" : ""}"` : null;
+
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
-        <ReorderBtns index={index} total={total} onUp={onMoveUp} onDown={onMoveDown} />
-        <div style={{ flex: 1 }}>
-          <label style={labelStyle}>
-            Question
-            <input
-              type="text" value={faq.q || ""}
-              onChange={e => onUpdate({ q: e.target.value })}
-              placeholder="FAQ question"
-              style={{ ...inputStyle, marginTop: "0.25rem", borderColor: qEmpty ? "#e08080" : undefined }}
-            />
-            {qEmpty && <p style={reqStyle}>Required</p>}
-          </label>
+    <div style={{
+      background: "#fff",
+      border: `1px solid ${LINE}`,
+    }}>
+      {/* Card header row */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.75rem",
+        padding: "0.7rem 1rem",
+        borderBottom: `1px solid ${LINE}`,
+        flexWrap: "wrap",
+      }}>
+        {/* Summary text */}
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {summary || <em>No question set</em>}
         </div>
-        <DeleteBtn onRemove={onRemove} />
+
+        {/* Action buttons */}
+        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
+        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
       </div>
-      <label style={{ ...labelStyle, display: "block" }}>
-        Answer
-        <textarea
-          value={faq.a || ""}
-          onChange={e => onUpdate({ a: e.target.value })}
-          placeholder="FAQ answer"
-          rows={3}
-          style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 72, borderColor: aEmpty ? "#e08080" : undefined }}
-        />
-        {aEmpty && <p style={reqStyle}>Required</p>}
-      </label>
+
+      {/* Card body */}
+      <div style={{ padding: "0.95rem 1rem", display: "flex", flexDirection: "column", gap: "0.7rem" }}>
+        <label style={labelStyle}>
+          Question
+          <input
+            type="text" value={faq.q || ""}
+            onChange={e => onUpdate({ q: e.target.value })}
+            placeholder="FAQ question"
+            style={{ ...inputStyle, marginTop: "0.25rem", borderColor: qEmpty ? "#e08080" : undefined }}
+          />
+          {qEmpty && <p style={reqStyle}>Required</p>}
+        </label>
+
+        <label style={{ ...labelStyle, display: "block" }}>
+          Answer
+          <textarea
+            value={faq.a || ""}
+            onChange={e => onUpdate({ a: e.target.value })}
+            placeholder="FAQ answer"
+            rows={3}
+            style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 72, borderColor: aEmpty ? "#e08080" : undefined }}
+          />
+          {aEmpty && <p style={reqStyle}>Required</p>}
+        </label>
+      </div>
     </div>
   );
 }
@@ -923,24 +1044,6 @@ function ComparisonEditor({ cmp, page, updateComparison, updateComparisonItem, a
 /* ══════════════════════════════════════════════════════════════════════════
    Shared small pieces
 ══════════════════════════════════════════════════════════════════════════ */
-
-function ReorderBtns({ index, total, onUp, onDown }) {
-  return (
-    <div style={{ display: "flex", gap: "0.25rem", paddingTop: "0.3rem" }}>
-      <button type="button" onClick={onUp} disabled={index === 0} title="Move up" style={iconBtnStyle(index === 0)}>&#9650;</button>
-      <button type="button" onClick={onDown} disabled={index === total - 1} title="Move down" style={iconBtnStyle(index === total - 1)}>&#9660;</button>
-    </div>
-  );
-}
-
-function DeleteBtn({ onRemove }) {
-  return (
-    <button type="button" onClick={onRemove} title="Delete"
-      style={{ ...iconBtnStyle(false), color: "#c44", borderColor: "rgba(180,40,40,0.25)", fontSize: "1.1rem", marginTop: "1.6rem" }}>
-      &times;
-    </button>
-  );
-}
 
 const labelStyle = { display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 };
 const reqStyle   = { color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" };

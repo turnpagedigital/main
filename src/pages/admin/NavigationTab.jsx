@@ -9,7 +9,7 @@ import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, Center
    Fetches from GET /api/admin/navigation (reads src/data/nav.json via
    GitHub), saves via PUT /api/admin/navigation. Auth is handled server-side.
 
-   UI pattern: sticky header bar + list of editable rows with up/down reorder.
+   UI pattern: card-per-item with ACTIVE/INACTIVE pill toggle in header row.
    Self-contained — owns its own fetch/save lifecycle.
    Reports dirty state via onDirtyChange?.(dirty).
 ═══════════════════════════════════════════════════════════════════════════ */
@@ -264,29 +264,12 @@ export default function NavigationTab({ onDirtyChange }) {
       )}
 
       <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1.5rem" }}>
-        Edit the top nav. Use the arrows to reorder. Toggle Active to hide an item without deleting it.
+        Edit the top nav. Use the arrows to reorder. Click the ACTIVE/INACTIVE pill to hide an item without deleting it.
         Expand "Edit dropdown" to manage the hover dropdown content for each item.
       </p>
 
-      {/* Column header */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "64px 32px 200px 1fr 52px",
-        gap: "0.5rem",
-        alignItems: "center",
-        padding: "0 0.5rem 0.4rem",
-        fontSize: "0.72rem", fontWeight: 700, color: INK_60,
-        letterSpacing: "0.08em", textTransform: "uppercase",
-      }}>
-        <span>Order</span>
-        <span>On</span>
-        <span>Label</span>
-        <span>Href</span>
-        <span />
-      </div>
-
-      {/* Nav item rows */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", marginBottom: "1rem" }}>
+      {/* Nav item cards */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "1rem" }}>
         {items.length === 0 && (
           <div style={{
             padding: "1.5rem", textAlign: "center",
@@ -318,8 +301,10 @@ export default function NavigationTab({ onDirtyChange }) {
 
       <button onClick={addItem} style={{
         ...btnStyle,
+        background: "transparent", border: `1px dashed ${LINE}`,
+        color: INK, padding: "0.75rem 1rem", fontWeight: 700, width: "100%",
         fontSize: "0.82rem",
-        display: "inline-flex", alignItems: "center", gap: "0.4em",
+        display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.4em",
       }}>
         + Add nav item
       </button>
@@ -367,56 +352,63 @@ function NavRow({
   const hrefEmpty  = !item.href.trim();
   const hasDropdown = Boolean(item.dropdown);
 
+  const summary = item.label
+    ? `"${item.label}"${item.href ? ` — ${item.href}` : ""}`
+    : <em>No label set</em>;
+
   return (
     <div style={{
       background: "#fff",
-      border: `1px solid ${LINE}`,
-      opacity: item.active ? 1 : 0.55,
+      border: `1px solid ${item.active ? LINE : "#e0e0e0"}`,
+      opacity: item.active ? 1 : 0.72,
       transition: "opacity 0.15s",
     }}>
-      {/* Main row */}
+      {/* Card header row */}
       <div style={{
-        display: "grid",
-        gridTemplateColumns: "64px 32px 200px 1fr 52px",
-        gap: "0.5rem",
-        alignItems: "center",
-        padding: "0.5rem",
+        display: "flex", alignItems: "center", gap: "0.75rem",
+        padding: "0.7rem 1rem",
+        borderBottom: `1px solid ${LINE}`,
+        flexWrap: "wrap",
       }}>
-        {/* Up/down reorder buttons */}
-        <div style={{ display: "flex", gap: "0.25rem" }}>
-          <button
-            type="button"
-            onClick={onMoveUp}
-            disabled={index === 0}
-            title="Move up"
-            style={iconBtnStyle(index === 0)}
-          >
-            &#9650;
-          </button>
-          <button
-            type="button"
-            onClick={onMoveDown}
-            disabled={index === total - 1}
-            title="Move down"
-            style={iconBtnStyle(index === total - 1)}
-          >
-            &#9660;
-          </button>
+        {/* ACTIVE/INACTIVE pill toggle */}
+        <button
+          type="button"
+          onClick={() => onUpdate({ active: !item.active })}
+          style={{
+            background: item.active ? NEON : "#E5E7EB",
+            color: item.active ? "#0A0A0A" : INK_60,
+            border: "none", borderRadius: 0,
+            padding: "0.25rem 0.65rem",
+            fontSize: "0.7rem", fontWeight: 800,
+            letterSpacing: "0.08em", textTransform: "uppercase",
+            cursor: "pointer", fontFamily: FONT,
+            flexShrink: 0,
+          }}
+        >
+          {item.active ? "ACTIVE" : "INACTIVE"}
+        </button>
+
+        {/* Summary text */}
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {summary}
         </div>
 
-        {/* Active toggle */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <input
-            type="checkbox"
-            checked={!!item.active}
-            onChange={e => onUpdate({ active: e.target.checked })}
-            title="Active — uncheck to hide without deleting"
-            style={{ width: 16, height: 16, cursor: "pointer", accentColor: INK }}
-          />
-        </div>
+        {/* Action buttons */}
+        <button onClick={onMoveUp}  disabled={index === 0}          style={iconBtnStyle(index === 0)}          title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
+        <button
+          onClick={() => { if (window.confirm(`Remove "${item.label || item.id}"?`)) onRemove(); }}
+          style={{ ...iconBtnStyle(false), color: "#c44" }}
+          title="Delete"
+        >×</button>
+      </div>
+
+      {/* Card body — form fields */}
+      <div style={{ padding: "0.95rem 1rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.7rem 1rem" }} className="nav-grid">
 
         {/* Label */}
-        <div>
+        <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+          Label
           <input
             type="text"
             value={item.label}
@@ -424,17 +416,18 @@ function NavRow({
             placeholder="Label"
             style={{
               ...inputStyle,
-              marginTop: 0,
+              marginTop: "0.25rem",
               borderColor: labelEmpty ? "#e08080" : undefined,
             }}
           />
           {labelEmpty && (
             <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" }}>Required</p>
           )}
-        </div>
+        </label>
 
         {/* Href */}
-        <div>
+        <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+          Href
           <input
             type="text"
             value={item.href}
@@ -442,38 +435,20 @@ function NavRow({
             placeholder="/path or https://…"
             style={{
               ...inputStyle,
-              marginTop: 0,
+              marginTop: "0.25rem",
               borderColor: hrefEmpty ? "#e08080" : undefined,
             }}
           />
           {hrefEmpty && (
             <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" }}>Required</p>
           )}
-        </div>
-
-        {/* Delete */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <button
-            type="button"
-            onClick={() => {
-              if (window.confirm(`Remove "${item.label || item.id}"?`)) onRemove();
-            }}
-            title="Delete"
-            style={{
-              ...iconBtnStyle(false),
-              color: "#c44", borderColor: "rgba(180,40,40,0.25)",
-              fontSize: "1.1rem",
-            }}
-          >
-            &times;
-          </button>
-        </div>
+        </label>
       </div>
 
       {/* Dropdown toggle strip */}
       <div style={{
         borderTop: `1px solid ${LINE}`,
-        padding: "0.3rem 0.5rem",
+        padding: "0.3rem 1rem",
         display: "flex", alignItems: "center", gap: "0.75rem",
       }}>
         <button
@@ -541,7 +516,7 @@ function DropdownEditor({ dd, onUpdate, onUpdateLink, onAddLink, onMoveLink, onR
   const panelStyle = {
     borderTop: `1px solid ${LINE}`,
     background: "#fafafa",
-    padding: "1rem 0.75rem 1rem",
+    padding: "1rem 1rem 1rem",
     display: "flex", flexDirection: "column", gap: "0.75rem",
   };
 
@@ -731,7 +706,7 @@ function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMove
         onClick={() => setOpen(o => !o)}
         style={{
           width: "100%", textAlign: "left",
-          background: "none", border: "none", padding: "0.65rem 0.75rem",
+          background: "none", border: "none", padding: "0.65rem 1rem",
           cursor: "pointer",
           display: "flex", alignItems: "center", gap: "0.5rem",
           fontFamily: FONT, fontSize: "0.88rem", fontWeight: 700, color: INK,
@@ -751,7 +726,7 @@ function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMove
         <div style={{
           borderTop: `1px solid ${LINE}`,
           background: "#fafafa",
-          padding: "1rem 0.75rem",
+          padding: "1rem",
           display: "flex", flexDirection: "column", gap: "0.75rem",
         }}>
           {/* Brand link */}
@@ -874,3 +849,8 @@ function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMove
     </div>
   );
 }
+
+/* ── Responsive grid media query ─────────────────────────────────────────── */
+// Injected via a style tag in index.html or App.jsx — nothing here needed.
+// The .nav-grid class collapses to 1-col on narrow screens via the shared
+// alert-grid media query pattern; add a class name if needed.

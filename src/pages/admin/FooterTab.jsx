@@ -13,6 +13,9 @@ import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, Center
      2. Copyright line
      3. Contact email (bottom bar)
 
+   UI pattern: card-per-column with card header row (title + reorder/delete).
+   Each link inside a column is also a styled card row.
+
    Self-contained — owns its own fetch/save lifecycle.
    Reports dirty state via onDirtyChange?.(dirty).
 ═══════════════════════════════════════════════════════════════════════════ */
@@ -239,38 +242,43 @@ export default function FooterTab({ onDirtyChange }) {
         Manage footer link columns and bottom-bar text. Use the arrows to reorder columns and links. Changes deploy on Save.
       </p>
 
-      {/* ── Link columns ────────────────────────────────────────────── */}
+      {/* ── Link columns ────────────────────────────────────────── */}
       <SectionHeader>Link columns</SectionHeader>
 
       {data.columns.length === 0 && (
         <EmptyPlaceholder>No columns yet. Click "+ Add column" to get started.</EmptyPlaceholder>
       )}
 
-      {data.columns.map((col, ci) => (
-        <ColumnCard
-          key={col.id}
-          col={col}
-          colIndex={ci}
-          totalCols={data.columns.length}
-          onUpdateCol={patch => updateColumn(ci, patch)}
-          onMoveColUp={() => moveColumnUp(ci)}
-          onMoveColDown={() => moveColumnDown(ci)}
-          onRemoveCol={() => {
-            if (window.confirm(`Delete column "${col.title || col.id}"? This will also remove all its links.`)) {
-              removeColumn(ci);
-            }
-          }}
-          onUpdateLink={(li, patch) => updateLink(ci, li, patch)}
-          onMoveLinkUp={li => moveLinkUp(ci, li)}
-          onMoveLinkDown={li => moveLinkDown(ci, li)}
-          onRemoveLink={li => removeLink(ci, li)}
-          onAddLink={() => addLink(ci)}
-        />
-      ))}
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem", marginBottom: "1.5rem" }}>
+        {data.columns.map((col, ci) => (
+          <ColumnCard
+            key={col.id}
+            col={col}
+            colIndex={ci}
+            totalCols={data.columns.length}
+            onUpdateCol={patch => updateColumn(ci, patch)}
+            onMoveColUp={() => moveColumnUp(ci)}
+            onMoveColDown={() => moveColumnDown(ci)}
+            onRemoveCol={() => {
+              if (window.confirm(`Delete column "${col.title || col.id}"? This will also remove all its links.`)) {
+                removeColumn(ci);
+              }
+            }}
+            onUpdateLink={(li, patch) => updateLink(ci, li, patch)}
+            onMoveLinkUp={li => moveLinkUp(ci, li)}
+            onMoveLinkDown={li => moveLinkDown(ci, li)}
+            onRemoveLink={li => removeLink(ci, li)}
+            onAddLink={() => addLink(ci)}
+          />
+        ))}
+      </div>
 
       <button onClick={addColumn} style={{
-        ...btnStyle, fontSize: "0.82rem", marginBottom: "2.5rem",
-        display: "inline-flex", alignItems: "center", gap: "0.4em",
+        ...btnStyle,
+        background: "transparent", border: `1px dashed ${LINE}`,
+        color: INK, padding: "0.75rem 1rem", fontWeight: 700, width: "100%",
+        fontSize: "0.82rem", marginBottom: "2.5rem",
+        display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.4em",
       }}>
         + Add column
       </button>
@@ -313,113 +321,98 @@ function ColumnCard({
   onUpdateCol, onMoveColUp, onMoveColDown, onRemoveCol,
   onUpdateLink, onMoveLinkUp, onMoveLinkDown, onRemoveLink, onAddLink,
 }) {
+  const titleEmpty = !col.title.trim();
+  const colSummary = col.title || <em>Untitled column</em>;
+
   return (
     <div style={{
-      border: `1px solid ${LINE}`, background: "#fff",
-      marginBottom: "1rem", padding: "1.2rem",
+      border: `1px solid ${LINE}`,
+      background: "#fff",
     }}>
-      {/* Column header row */}
+      {/* Column card header row */}
       <div style={{
-        display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem",
+        display: "flex", alignItems: "center", gap: "0.75rem",
+        padding: "0.7rem 1rem",
+        borderBottom: `1px solid ${LINE}`,
       }}>
-        {/* Reorder buttons */}
-        <div style={{ display: "flex", gap: "0.25rem", paddingTop: "0.3rem" }}>
-          <button type="button" onClick={onMoveColUp} disabled={colIndex === 0}
-            title="Move column up" style={iconBtnStyle(colIndex === 0)}>
-            &#9650;
-          </button>
-          <button type="button" onClick={onMoveColDown} disabled={colIndex === totalCols - 1}
-            title="Move column down" style={iconBtnStyle(colIndex === totalCols - 1)}>
-            &#9660;
-          </button>
+        {/* Column summary */}
+        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {colSummary}
         </div>
+
+        {/* Reorder + delete */}
+        <button type="button" onClick={onMoveColUp} disabled={colIndex === 0}
+          title="Move column up" style={iconBtnStyle(colIndex === 0)}>↑</button>
+        <button type="button" onClick={onMoveColDown} disabled={colIndex === totalCols - 1}
+          title="Move column down" style={iconBtnStyle(colIndex === totalCols - 1)}>↓</button>
+        <button type="button" onClick={onRemoveCol} title="Delete column"
+          style={{ ...iconBtnStyle(false), color: "#c44" }}>×</button>
+      </div>
+
+      {/* Column body */}
+      <div style={{ padding: "0.95rem 1rem" }}>
 
         {/* Column title input */}
-        <div style={{ flex: 1 }}>
-          <label style={labelStyle}>
-            Column title
-            <input
-              type="text"
-              value={col.title}
-              onChange={e => onUpdateCol({ title: e.target.value })}
-              placeholder="Column heading"
-              style={{
-                ...inputStyle,
-                marginTop: "0.25rem",
-                borderColor: !col.title.trim() ? "#e08080" : undefined,
-              }}
-            />
-            {!col.title.trim() && (
-              <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" }}>Required</p>
-            )}
-          </label>
-        </div>
-
-        {/* Delete column */}
-        <button type="button" onClick={onRemoveCol} title="Delete column"
-          style={{ ...iconBtnStyle(false), color: "#c44", borderColor: "rgba(180,40,40,0.25)", fontSize: "1.1rem", marginTop: "1.6rem" }}>
-          &times;
-        </button>
-      </div>
-
-      {/* Links sub-section */}
-      <div style={{
-        fontSize: "0.72rem", fontWeight: 700, color: INK_60,
-        letterSpacing: "0.08em", textTransform: "uppercase",
-        marginBottom: "0.5rem",
-      }}>
-        Links
-      </div>
-
-      {col.links.length === 0 && (
-        <div style={{
-          padding: "1rem", textAlign: "center", fontSize: "0.82rem", color: INK_60,
-          border: `1px dashed ${LINE}`, marginBottom: "0.75rem",
-        }}>
-          No links yet.
-        </div>
-      )}
-
-      {/* Link column header */}
-      {col.links.length > 0 && (
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "64px 1fr 1fr 52px",
-          gap: "0.5rem", alignItems: "center",
-          padding: "0 0.5rem 0.35rem",
-          fontSize: "0.72rem", fontWeight: 700, color: INK_60,
-          letterSpacing: "0.08em", textTransform: "uppercase",
-        }}>
-          <span>Order</span>
-          <span>Label</span>
-          <span>Href</span>
-          <span />
-        </div>
-      )}
-
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem", marginBottom: "0.75rem" }}>
-        {col.links.map((link, li) => (
-          <LinkRow
-            key={link.id}
-            link={link}
-            linkIndex={li}
-            totalLinks={col.links.length}
-            onUpdate={patch => onUpdateLink(li, patch)}
-            onMoveUp={() => onMoveLinkUp(li)}
-            onMoveDown={() => onMoveLinkDown(li)}
-            onRemove={() => {
-              if (window.confirm(`Remove link "${link.label || link.id}"?`)) onRemoveLink(li);
+        <label style={labelStyle}>
+          Column title
+          <input
+            type="text"
+            value={col.title}
+            onChange={e => onUpdateCol({ title: e.target.value })}
+            placeholder="Column heading"
+            style={{
+              ...inputStyle,
+              marginTop: "0.3rem",
+              borderColor: titleEmpty ? "#e08080" : undefined,
             }}
           />
-        ))}
-      </div>
+          {titleEmpty && (
+            <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" }}>Required</p>
+          )}
+        </label>
 
-      <button onClick={onAddLink} style={{
-        ...btnStyle, fontSize: "0.78rem",
-        display: "inline-flex", alignItems: "center", gap: "0.35em",
-      }}>
-        + Add link
-      </button>
+        {/* Links sub-section */}
+        <div style={{
+          fontSize: "0.72rem", fontWeight: 700, color: INK_60,
+          letterSpacing: "0.08em", textTransform: "uppercase",
+          marginTop: "1rem", marginBottom: "0.5rem",
+        }}>
+          Links
+        </div>
+
+        {col.links.length === 0 && (
+          <div style={{
+            padding: "1rem", textAlign: "center", fontSize: "0.82rem", color: INK_60,
+            border: `1px dashed ${LINE}`, marginBottom: "0.75rem",
+          }}>
+            No links yet.
+          </div>
+        )}
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "0.75rem" }}>
+          {col.links.map((link, li) => (
+            <LinkRow
+              key={link.id}
+              link={link}
+              linkIndex={li}
+              totalLinks={col.links.length}
+              onUpdate={patch => onUpdateLink(li, patch)}
+              onMoveUp={() => onMoveLinkUp(li)}
+              onMoveDown={() => onMoveLinkDown(li)}
+              onRemove={() => {
+                if (window.confirm(`Remove link "${link.label || link.id}"?`)) onRemoveLink(li);
+              }}
+            />
+          ))}
+        </div>
+
+        <button onClick={onAddLink} style={{
+          ...btnStyle, fontSize: "0.78rem",
+          display: "inline-flex", alignItems: "center", gap: "0.35em",
+        }}>
+          + Add link
+        </button>
+      </div>
     </div>
   );
 }
@@ -429,61 +422,66 @@ function ColumnCard({
 function LinkRow({ link, linkIndex, totalLinks, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const labelEmpty = !link.label.trim();
   const hrefEmpty  = !link.href.trim();
+  const linkSummary = link.label || <em>No label</em>;
 
   return (
     <div style={{
-      display: "grid",
-      gridTemplateColumns: "64px 1fr 1fr 52px",
-      gap: "0.5rem", alignItems: "center",
-      background: "#F8F8F9", border: `1px solid ${LINE}`,
-      padding: "0.4rem 0.5rem",
+      background: "#fff",
+      border: `1px solid ${LINE}`,
     }}>
-      {/* Up/down */}
-      <div style={{ display: "flex", gap: "0.25rem" }}>
+      {/* Link card header row */}
+      <div style={{
+        display: "flex", alignItems: "center", gap: "0.6rem",
+        padding: "0.5rem 0.75rem",
+        borderBottom: `1px solid ${LINE}`,
+      }}>
+        {/* Link summary */}
+        <div style={{ flex: 1, fontSize: "0.82rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          {linkSummary}
+        </div>
+
+        {/* Reorder + delete */}
         <button type="button" onClick={onMoveUp} disabled={linkIndex === 0}
-          title="Move up" style={iconBtnStyle(linkIndex === 0)}>
-          &#9650;
-        </button>
+          title="Move up" style={iconBtnStyle(linkIndex === 0)}>↑</button>
         <button type="button" onClick={onMoveDown} disabled={linkIndex === totalLinks - 1}
-          title="Move down" style={iconBtnStyle(linkIndex === totalLinks - 1)}>
-          &#9660;
-        </button>
-      </div>
-
-      {/* Label */}
-      <div>
-        <input
-          type="text"
-          value={link.label}
-          onChange={e => onUpdate({ label: e.target.value })}
-          placeholder="Link label"
-          style={{ ...inputStyle, marginTop: 0, borderColor: labelEmpty ? "#e08080" : undefined }}
-        />
-        {labelEmpty && (
-          <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.15rem 0 0" }}>Required</p>
-        )}
-      </div>
-
-      {/* Href */}
-      <div>
-        <input
-          type="text"
-          value={link.href}
-          onChange={e => onUpdate({ href: e.target.value })}
-          placeholder="/path or https://…"
-          style={{ ...inputStyle, marginTop: 0, borderColor: hrefEmpty ? "#e08080" : undefined }}
-        />
-        {hrefEmpty && (
-          <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.15rem 0 0" }}>Required</p>
-        )}
-      </div>
-
-      {/* Delete */}
-      <div style={{ display: "flex", justifyContent: "center" }}>
+          title="Move down" style={iconBtnStyle(linkIndex === totalLinks - 1)}>↓</button>
         <button type="button" onClick={onRemove} title="Delete link"
-          style={{ ...iconBtnStyle(false), color: "#c44", borderColor: "rgba(180,40,40,0.25)", fontSize: "1.1rem" }}>
-          &times;
-        </button>
+          style={{ ...iconBtnStyle(false), color: "#c44" }}>×</button>
+      </div>
+
+      {/* Link body — label + href fields */}
+      <div style={{ padding: "0.65rem 0.75rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem 0.75rem" }} className="link-grid">
+        <div>
+          <label style={{ display: "block", fontSize: "0.75rem", color: INK_60, fontWeight: 600 }}>
+            Label
+            <input
+              type="text"
+              value={link.label}
+              onChange={e => onUpdate({ label: e.target.value })}
+              placeholder="Link label"
+              style={{ ...inputStyle, marginTop: "0.2rem", borderColor: labelEmpty ? "#e08080" : undefined }}
+            />
+            {labelEmpty && (
+              <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.15rem 0 0" }}>Required</p>
+            )}
+          </label>
+        </div>
+
+        <div>
+          <label style={{ display: "block", fontSize: "0.75rem", color: INK_60, fontWeight: 600 }}>
+            Href
+            <input
+              type="text"
+              value={link.href}
+              onChange={e => onUpdate({ href: e.target.value })}
+              placeholder="/path or https://…"
+              style={{ ...inputStyle, marginTop: "0.2rem", borderColor: hrefEmpty ? "#e08080" : undefined }}
+            />
+            {hrefEmpty && (
+              <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.15rem 0 0" }}>Required</p>
+            )}
+          </label>
+        </div>
       </div>
     </div>
   );
