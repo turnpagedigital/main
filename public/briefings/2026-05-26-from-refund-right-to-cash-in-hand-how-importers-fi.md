@@ -120,7 +120,7 @@ The IEEPA refund universe is the largest single-trigger federal receivable any o
 
 ## Supreme Court struck down the IEEPA tariff regime in Learning Resources, Inc. v. Trump on February 20, 2026.
 
-**Primary:** [Learning Resources, Inc. v. Trump, slip op. 24-1287 (Feb. 20, 2026)](https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf). **Also:** [Justia case page — 607 U.S. ___ (2026)](https://supreme.justia.com/cases/federal/us/607/24-1287/); [CRS, "Supreme Court Rules Against Tariffs Imposed Under IEEPA"](https://www.congress.gov/crs-product/LSB11398); [K&L Gates — Summary of Supreme Court IEEPA Decision](https://www.klgates.com/Summary-Supreme-Court-Decision-on-IEEPA-Tariffs-2-20-2026); [SCOTUSblog case file](https://www.scotusblog.com/cases/case-files/learning-resources-inc-v-trump/).
+**Primary:** [Learning Resources, Inc. v. Trump, slip op. 24-1287 (Feb. 20, 2026)](https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf). **Also:** [Justia case page — 607 U.S. \__\_ (2026)](https://supreme.justia.com/cases/federal/us/607/24-1287/); [CRS, "Supreme Court Rules Against Tariffs Imposed Under IEEPA"](https://www.congress.gov/crs-product/LSB11398); [K&L Gates — Summary of Supreme Court IEEPA Decision](https://www.klgates.com/Summary-Supreme-Court-Decision-on-IEEPA-Tariffs-2-20-2026); [SCOTUSblog case file](https://www.scotusblog.com/cases/case-files/learning-resources-inc-v-trump/).
 
 ## Over $175 billion in refunds across the importing community.
 
@@ -134,7 +134,7 @@ The IEEPA refund universe is the largest single-trigger federal receivable any o
 
 **Primary:** [CBP — CAPE Phase 1 Trade Information Notice (PDF)](https://www.cbp.gov/sites/default/files/2026-04/trade_information_notice_cape_508c.pdf). **Also:** [Troutman Pepper Locke — CBP Issues Guidance on IEEPA Duty Refunds via New CAPE Process](https://www.troutman.com/insights/cbp-issues-guidance-on-ieepa-duty-refunds-via-new-cape-process-what-importers-must-do-before-april-20/); [Norton Rose Fulbright — CBP Issues Tariff Refund Instructions](https://www.nortonrosefulbright.com/en-us/knowledge/publications/44450c73/cbp-issues-tariff-refund-instructions).
 
-## Phase 1 covers unliquidated entries and entries within 80 days of liquidation; ~63% of affected entries; refunds in 60–90 days with statutory interest.
+## Phase 1 covers unliquidated entries and entries within 80 days of liquidation; \~63% of affected entries; refunds in 60–90 days with statutory interest.
 
 **Primary:** [CBP Phase 1 Trade Information Notice (PDF)](https://www.cbp.gov/sites/default/files/2026-04/trade_information_notice_cape_508c.pdf). **Also:** [Perkins Coie — "The Launch of CAPE Phase 1"](https://perkinscoie.com/insights/blog/launch-cape-phase-1-essential-guidance-ieepa-duty-refunds); [Steptoe — "CBP CAPE Mechanism Begins Processing IEEPA Tariff Refunds"](https://www.steptoe.com/en/news-publications/global-trade-and-investment-law-blog/cbp-cape-mechanism-begins-processing-ieepa-tariff-refunds.html); [Covington & Burling — "CBP Announces April 20 Launch of CAPE"](https://www.cov.com/en/news-and-insights/insights/2026/04/cbp-announces-april-20-launch-of-cape-functionality-for-ieepa-duty-refunds).
 
@@ -142,7 +142,7 @@ The IEEPA refund universe is the largest single-trigger federal receivable any o
 
 **Primary:** [19 U.S.C. § 1501 — Voluntary reliquidation by CBP](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title19-section1501&num=0&edition=prelim). **Also:** [Refundarrow — Liquidated vs. Unliquidated Entries explainer](https://refundarrow.com/learn/liquidated-vs-unliquidated-entries); [Freight Figures — "Your IEEPA Entry Is Not CAPE Phase 1 Eligible — Now What?"](https://www.freightfigures.com/articles/ieepa-refund-options-beyond-cape-phase-1-2026).
 
-## Phase 2 covers the remaining ~37% finally-liquidated entries; no launch date as of mid-2026; executes Judge Eaton's March 27, 2026 amended order in V.O.S. Selections.
+## Phase 2 covers the remaining \~37% finally-liquidated entries; no launch date as of mid-2026; executes Judge Eaton's March 27, 2026 amended order in V.O.S. Selections.
 
 [Freight Figures — IEEPA refund options beyond Phase 1](https://www.freightfigures.com/articles/ieepa-refund-options-beyond-cape-phase-1-2026); [Troutman Pepper Locke — "CBP's CAPE Crusade: A New 45-Day Path"](https://www.troutman.com/insights/cbps-cape-crusade-a-new-45-day-path-to-ieepa-duty-refunds/); [Holland & Knight — CAPE Phase 2 discussion](https://www.hklaw.com/en/insights/publications/2026/04/cape-has-arrived-navigating-the-next-phase-of-ieepa-duty-refunds).
 
