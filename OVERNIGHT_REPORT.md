@@ -35,7 +35,7 @@
 | Phase | Status | Commit | Notes |
 |---|---|---|---|
 | 1 — AssetPicker + Archive | ✅ done | 327f444 | AssetPicker in src/components/admin/; archive feature in AssetsTab |
-| 2 — Bio/Deals/Press/Posts | pending | — | — |
+| 2 — Bio/Deals/Press/Posts | ✅ done | 4714214 | AssetPicker in all 4 tabs; pdf_url on Press page; hero_image on Posts |
 | 3 — Nav/Footer/Meta | pending | — | — |
 | 4 — Polish | pending | — | — |
 
