@@ -177,18 +177,25 @@ export default function FilesTab({ onDirtyChange }) {
 
   return (
     <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
-      {/* Section header */}
+      {/* Section header — sticky so the Save button stays visible while the
+          user scrolls through the file grid. The Admin shell's top bar is also
+          sticky at top: 0, so we offset enough to sit below it. */}
       <div style={{
+        position: "sticky",
+        top: "88px",
+        zIndex: 5,
+        background: "#F4F5F7",
         display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap",
-        marginBottom: "1.5rem", paddingBottom: "1rem",
-        borderBottom: `2px solid ${LINE}`,
+        marginBottom: "1.5rem", paddingBottom: "1rem", paddingTop: "0.5rem",
+        borderBottom: `2px solid ${dirty ? NEON : LINE}`,
+        transition: "border-color 0.15s",
       }}>
         <div style={{ fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.01em" }}>
           Files
         </div>
-        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60 }}>
+        <div style={{ flex: 1, fontSize: "0.85rem", color: dirty ? "#7a5c00" : INK_60, fontWeight: dirty ? 700 : 400 }}>
           {isSaving && "Saving…"}
-          {!isSaving && dirty && "Unsaved changes"}
+          {!isSaving && dirty && "⚠ Unsaved changes — click Save to commit"}
           {!isSaving && !dirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
           {!isSaving && !dirty && !lastSavedAt && "Up to date"}
         </div>
