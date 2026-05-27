@@ -30,6 +30,11 @@
 - Home Content admin tab
 - `renderPage()` refactor in `App.jsx`
 
+### Phase 5 — Marketing page content extraction
+- Extract content arrays from Crypto, AI Copyright, Litigation Finance pages
+- Each page gets its own `src/data/*-content.json` file
+- Combined admin endpoint + MarketingPagesTab (12th tab) with inner page tabs
+
 ## Progress
 
 | Phase | Status | Commit | Notes |
@@ -40,6 +45,7 @@
 | 3b — Footer as content + admin tab | ✅ done | 0d6ee0c | footer.json seeded (4 cols, 10 links); Footer.jsx renders from JSON; GET/PUT endpoint; FooterTab with column + link reorder |
 | 3c — Per-page meta + site metadata | ✅ done | da2269f | page-meta.json seeded (4 pages); _middleware.js imports from JSON; GET/PUT /api/admin/page-meta; PagesTab extended with Site Metadata + Per-page Meta sections (3 sections, 1 Save button) |
 | 4 — Polish | ✅ done | 96df0ff | home-content.json (6 sits, 3 tests); Home.jsx reads from JSON; GET/PUT /api/admin/home-content; HomeContentTab (11th tab); App.jsx renderPage → PAGE_MAP |
+| 5 — Marketing page extraction | ✅ done | 7a36ebd | crypto-content.json, ai-copyright-content.json, litigation-finance-content.json; all 3 pages render from JSON; GET/PUT /api/admin/marketing-pages (combined); MarketingPagesTab (12th tab) with inner page strip |
 
 ## Issues encountered
 
