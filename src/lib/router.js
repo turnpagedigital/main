@@ -29,6 +29,12 @@ export function parsePath(pathname) {
   // Strip query string and hash
   const p = (pathname || "/").split("?")[0].split("#")[0];
 
+  // Special case: /admin* paths (Admin panel routes, not site pages)
+  // These are handled by Admin.jsx, not site routes
+  if (p.startsWith("/admin")) {
+    return { page: "admin", slug: null };
+  }
+
   // Try exact path match first (for static routes)
   for (const route of routesData.routes) {
     if (!route.dynamic && route.path === p) {
