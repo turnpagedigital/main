@@ -1,0 +1,9 @@
+# SPA fallback for Cloudflare Pages.
+# Serves index.html (with 200 status) for any path that isn't a static file
+# or a Pages Function. Required for HTML5 history-mode routing so deep links
+# like https://turnpagedigital.com/crypto work on initial load.
+#
+# Cloudflare Pages applies functions in /functions/* with higher priority,
+# so /api/* etc. continue to route to their handlers.
+
+/*    /index.html   200

@@ -1,7 +1,7 @@
 import React, { useEffect, Suspense } from "react";
 import { GLOBAL_CSS } from "./data/css.js";
 import { FONT, DARK, TEXT } from "./data/tokens.js";
-import { useHashRoute } from "./lib/router.js";
+import { useRoute, navigate } from "./lib/router.js";
 import { I18nProvider } from "./lib/i18n.js";
 import AppHeader from "./components/AppHeader.jsx";
 import Footer from "./components/Footer.jsx";
@@ -56,7 +56,7 @@ const TITLES = {
 const STANDALONE_PAGES = new Set(["admin"]);
 
 export default function App() {
-  const { route } = useHashRoute();
+  const { route } = useRoute();
 
   // Inject global CSS once
   useEffect(() => {
@@ -71,6 +71,72 @@ export default function App() {
     const t = TITLES[route.page] || TITLES["home"];
     document.title = t;
   }, [route.page]);
+
+  // Site-wide <a> click interception. Any internal anchor with an href like
+  // "/foo" triggers pushState instead of a full page reload, preserving SPA
+  // behaviour without requiring a custom <Link> component at every call site.
+  useEffect(() => {
+    function onClick(e) {
+      // Respect modifier keys, non-left clicks, default-prevented events
+      if (e.defaultPrevented) return;
+      if (e.button !== 0) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      // Walk up to find an <a>
+      let el = e.target;
+      while (el && el !== document.body) {
+        if (el.tagName === "A") break;
+        el = el.parentNode;
+      }
+      if (!el || el.tagName !== "A") return;
+
+      // Skip if the anchor opts out or targets a new window/download
+      if (el.target && el.target !== "" && el.target !== "_self") return;
+      if (el.hasAttribute("download")) return;
+      if (el.getAttribute("rel") === "external") return;
+
+      const href = el.getAttribute("href");
+      if (!href) return;
+
+      // External URLs (http://, https://, mailto:, tel:, etc.) — let browser handle
+      if (/^[a-z]+:/i.test(href)) return;
+      if (href.startsWith("//")) return;
+
+      // Pure in-page anchors (#section) — let browser handle native scroll
+      if (href.startsWith("#")) return;
+
+      // Resolve relative paths against the current origin, then check same-origin
+      const url = new URL(href, window.location.href);
+      if (url.origin !== window.location.origin) return;
+
+      // Same-page anchor change (only hash differs) — let browser handle
+      if (
+        url.pathname === window.location.pathname &&
+        url.search === window.location.search &&
+        url.hash &&
+        url.hash !== window.location.hash
+      ) {
+        return;
+      }
+
+      // Intercept and navigate via pushState
+      e.preventDefault();
+      const path = url.pathname + url.search + url.hash;
+      navigate(path);
+
+      // If the URL has a #section anchor, scroll to it after the route renders.
+      if (url.hash) {
+        // Wait a tick so the new page has a chance to mount the target element.
+        setTimeout(() => {
+          const id = url.hash.slice(1);
+          const target = document.getElementById(id);
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 50);
+      }
+    }
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
 
   const standalone = STANDALONE_PAGES.has(route.page);
 

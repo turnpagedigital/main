@@ -10,14 +10,14 @@ import AlertsTab from "./admin/AlertsTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
-   Tab state syncs to the URL hash: #/admin/<tab>. */
+   Tab state syncs to the URL path: /admin/<tab>. */
 
 const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs"];
 
-function getTabFromHash() {
+function getTabFromPath() {
   if (typeof window === "undefined") return "bio";
-  const m = window.location.hash.match(/^#\/admin(?:\/([a-z]+))?/);
-  if (!m) return "bio";
+  const m = window.location.pathname.match(/^\/admin(?:\/([a-z]+))?/);
+  if (!m || !m[1]) return "bio";
   return VALID_TABS.includes(m[1]) ? m[1] : "bio";
 }
 
@@ -38,19 +38,24 @@ export default function Admin() {
 
   const [phase, setPhase] = useState("checking"); // checking | login | ready
   const [errorMsg, setErrorMsg] = useState("");
-  const [tab, setTab] = useState(getTabFromHash);
+  const [tab, setTab] = useState(getTabFromPath);
   const [dirtyTabs, setDirtyTabs] = useState({});
 
-  // Sync tab state with URL hash (back/forward + bookmarks)
+  // Sync tab state with URL path (back/forward + bookmarks)
   useEffect(() => {
-    function onHashChange() { setTab(getTabFromHash()); }
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    function onPopstate() { setTab(getTabFromPath()); }
+    window.addEventListener("popstate", onPopstate);
+    return () => window.removeEventListener("popstate", onPopstate);
   }, []);
 
   function selectTab(key) {
-    // Writing to location.hash fires a hashchange event, which updates tab state
-    window.location.hash = `#/admin/${key}`;
+    const next = `/admin/${key}`;
+    if (window.location.pathname !== next) {
+      window.history.pushState(null, "", next);
+      // Notify our app-level listeners (App.jsx useRoute) that the URL changed
+      window.dispatchEvent(new PopStateEvent("popstate"));
+    }
+    setTab(key);
   }
 
   useEffect(() => {

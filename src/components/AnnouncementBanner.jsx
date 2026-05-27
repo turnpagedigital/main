@@ -3,9 +3,18 @@ import LanguageSelector from "./LanguageSelector.jsx";
 import alertsData from "../data/alerts.json";
 
 /* Thin promo bar above the nav.
-   Reads from src/data/alerts.json — edit via /#/admin → Alerts tab.
+   Reads from src/data/alerts.json — edit via /admin → Alerts tab.
    When multiple active alerts match the current page they rotate every 10 s
    with a short fade transition. Single alerts show statically. */
+
+/* Legacy alert hrefs may use hash-style paths ("#/briefings/foo"). Rewrite
+   them to clean paths so SPA click interception can pick them up. */
+function normalizeHref(u) {
+  if (!u) return u;
+  const s = String(u).trim();
+  if (s.startsWith("#/")) return s.slice(1) || "/";
+  return s;
+}
 
 const ROTATE_MS  = 10_000; // time each alert is shown
 const FADE_MS    = 300;    // fade-out duration before swapping
@@ -45,7 +54,7 @@ export default function AnnouncementBanner({ page = "home" }) {
           {alert.pill && <span className="ann-banner-pill">{alert.pill}</span>}
           <span>{alert.text}</span>
           {alert.href && alert.linkText && (
-            <a href={alert.href} aria-label={alert.linkText}>
+            <a href={normalizeHref(alert.href)} aria-label={alert.linkText}>
               {alert.linkText} →
             </a>
           )}

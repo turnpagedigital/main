@@ -289,7 +289,7 @@ function AlertsSectionInner({ alerts, onChangeAlerts, onSave, dirty, isSaving, e
                   type="text"
                   value={alert.href}
                   onChange={e => updateAlert(i, "href", e.target.value)}
-                  placeholder="#/briefings/2026-04-29-advisory  or  https://..."
+                  placeholder="/briefings/2026-04-29-advisory  or  https://..."
                   style={inputStyle}
                 />
               </label>

@@ -120,6 +120,20 @@ function parseDate(str) {
   return null;
 }
 
+/* ── Normalise a stored URL ───────────────────────────────────────────────── */
+/* Legacy press.json entries used hash-style paths like "#/briefings/foo".
+   After the migration to HTML5 history routing those should be rewritten to
+   clean paths ("/briefings/foo") so they resolve correctly when opened in a
+   new tab. External http(s) URLs and mailto:/tel: links pass through. */
+function normalizeUrl(u) {
+  if (!u) return null;
+  const s = String(u).trim();
+  if (!s) return null;
+  if (s.startsWith("#/")) return s.slice(1) || "/";
+  if (s.startsWith("#")) return s;       // pure anchor — leave alone
+  return s;                              // http(s), mailto:, relative, etc.
+}
+
 /* ── Normalise every press.json item into a unified shape ───────────────── */
 const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
   _key:     i,
@@ -136,7 +150,7 @@ const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
   dateSort: parseDate(d.date),
   headline: d.piece_title || "",
   excerpt:  d.excerpt || null,
-  href:      d.url || null,
+  href:      normalizeUrl(d.url),
   pages:     Array.isArray(d.pages) ? d.pages : [],
   mediaUrl:  d.media_url || null,
 }));
@@ -160,20 +174,16 @@ function sortByDate(items, dir) {
   });
 }
 
-/* ── Read ?type= and ?topic= from the current hash URL ──────────────────── */
-function getTypeFromHash() {
+/* ── Read ?type= and ?topic= from the current URL search string ───────────── */
+function getTypeFromUrl() {
   if (typeof window === "undefined") return "all";
-  const qi = window.location.hash.indexOf("?");
-  if (qi === -1) return "all";
-  const params = new URLSearchParams(window.location.hash.slice(qi + 1));
+  const params = new URLSearchParams(window.location.search || "");
   const t = params.get("type");
   return ["press", "article", "social", "podcast"].includes(t) ? t : "all";
 }
-function getTopicFromHash() {
+function getTopicFromUrl() {
   if (typeof window === "undefined") return "all";
-  const qi = window.location.hash.indexOf("?");
-  if (qi === -1) return "all";
-  const params = new URLSearchParams(window.location.hash.slice(qi + 1));
+  const params = new URLSearchParams(window.location.search || "");
   const t = params.get("topic");
   return Object.keys(PAGE_LABELS).includes(t) ? t : "all";
 }
@@ -182,20 +192,20 @@ function getTopicFromHash() {
    PRESS PAGE
 ═══════════════════════════════════════════════════════════════════════════ */
 export default function Press() {
-  const [filterType,   setFilterType]   = useState(getTypeFromHash);
-  const [filterTopic,  setFilterTopic]  = useState(getTopicFromHash);
+  const [filterType,   setFilterType]   = useState(getTypeFromUrl);
+  const [filterTopic,  setFilterTopic]  = useState(getTopicFromUrl);
   const [filterOutlet, setFilterOutlet] = useState("all");
   const [sortDir,      setSortDir]      = useState("desc");
 
   /* Keep filters in sync when user clicks a nav dropdown link */
   useEffect(() => {
-    function onHashChange() {
-      setFilterType(getTypeFromHash());
-      setFilterTopic(getTopicFromHash());
+    function onPopstate() {
+      setFilterType(getTypeFromUrl());
+      setFilterTopic(getTopicFromUrl());
       setFilterOutlet("all");
     }
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    window.addEventListener("popstate", onPopstate);
+    return () => window.removeEventListener("popstate", onPopstate);
   }, []);
 
   /* Single filtered + sorted list across all item types */

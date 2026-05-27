@@ -9,22 +9,19 @@ const SOURCE_SUBJECTS = {
   "briefings": "ai-copyright",
 };
 
-function readSourceFromHash() {
+function readSourceFromUrl() {
   if (typeof window === "undefined") return "";
-  const h = window.location.hash || "";
-  const q = h.split("?")[1];
-  if (!q) return "";
-  const params = new URLSearchParams(q);
+  const params = new URLSearchParams(window.location.search || "");
   return params.get("source") || "";
 }
 
 export default function Contact() {
-  const [source, setSource] = useState(readSourceFromHash);
+  const [source, setSource] = useState(readSourceFromUrl);
 
   useEffect(() => {
-    const onHash = () => setSource(readSourceFromHash());
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
+    const onChange = () => setSource(readSourceFromUrl());
+    window.addEventListener("popstate", onChange);
+    return () => window.removeEventListener("popstate", onChange);
   }, []);
 
   const defaultSubject = SOURCE_SUBJECTS[source] || "";

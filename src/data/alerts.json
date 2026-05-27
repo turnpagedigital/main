@@ -1,5 +1,5 @@
 {
-  "_comment": "Announcement banner alerts — edit via /#/admin. Each alert shows on the pages listed. The first active alert for a given page is displayed.",
+  "_comment": "Announcement banner alerts — edit via /admin. Each alert shows on the pages listed. The first active alert for a given page is displayed.",
   "alerts": [
     {
       "active": true,
