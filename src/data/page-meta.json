@@ -10,29 +10,25 @@
       "path": "/",
       "title": "Turnpage Digital Markets — The OTC Desk for Rights Holders",
       "description": "Capital and advisory solutions for rights holders — complex claims, locked assets and creative financing options",
-      "og": "home",
-      "active": true
+      "og": "home"
     },
     {
       "path": "/crypto",
       "title": "Crypto Loss Claimants — Turnpage Digital",
-      "description": "Crypto-native liquidity provider for locked crypto assets — bankruptcies, asset forfeitures and other situations",
-      "og": "crypto",
-      "active": true
+      "description": "Crypto-native liquidity provider for locked crypto assets — exchange bankruptcies, frozen customer accounts and seized assets",
+      "og": "crypto"
     },
     {
       "path": "/ai-copyright",
       "title": "Copyright Claimants — Turnpage Digital",
       "description": "Capital and advisory for creators and rights holders with claims against generative AI companies",
-      "og": "ai-copyright",
-      "active": true
+      "og": "ai-copyright"
     },
     {
       "path": "/litigation-finance",
       "title": "Litigation Funding — Turnpage Digital Markets",
       "description": "Capital and advisory for high stakes, contingency matters",
-      "og": "litigation-finance",
-      "active": true
+      "og": "litigation-finance"
     }
   ]
 }
