@@ -36,7 +36,7 @@
 |---|---|---|---|
 | 1 — AssetPicker + Archive | ✅ done | 327f444 | AssetPicker in src/components/admin/; archive feature in AssetsTab |
 | 2 — Bio/Deals/Press/Posts | ✅ done | 4714214 | AssetPicker in all 4 tabs; pdf_url on Press page; hero_image on Posts |
-| 3 — Nav/Footer/Meta | pending | — | — |
+| 3a — Nav as content + admin tab | ✅ done | 853a473 | nav.json seeded (5 items); NavBar renders from JSON; GET/PUT endpoint; NavigationTab with up/down reorder |
 | 4 — Polish | pending | — | — |
 
 ## Issues encountered
