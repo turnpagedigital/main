@@ -1,0 +1,115 @@
+{
+  "audienceCards": [
+    {
+      "id": "contingency-firms",
+      "title": "Contingency Law Firms",
+      "body": "Boutique litigation shops and BigLaw contingency practices looking to grow their docket without tying up equity or taking on overhead risk.",
+      "priority": true
+    },
+    {
+      "id": "elite-plaintiffs",
+      "title": "Elite Plaintiffs' Practices",
+      "body": "Class action, antitrust, and IP litigation teams pursuing high-stakes matters that require patient, long-duration capital.",
+      "priority": true
+    },
+    {
+      "id": "individual-claimants",
+      "title": "Individual Claimants",
+      "body": "Plaintiffs whose counsel needs funding to take a meritorious case to trial. We work with you or your attorney directly.",
+      "priority": false
+    },
+    {
+      "id": "solo-small-firm",
+      "title": "Solo & Small Firm Practitioners",
+      "body": "High-quality litigators with strong cases who need capital to level the playing field against well-resourced defendants.",
+      "priority": false
+    }
+  ],
+  "serviceCards": [
+    {
+      "id": "commercial-litigation",
+      "title": "Commercial Litigation",
+      "body": "Breach of contract, business torts, fraud, and complex commercial disputes with clear damages theories and credible counsel."
+    },
+    {
+      "id": "ip-patent",
+      "title": "IP & Patent",
+      "body": "Patent infringement, trade secret misappropriation, and trademark disputes. We understand IP damages and appeals risk."
+    },
+    {
+      "id": "antitrust-class-actions",
+      "title": "Antitrust & Class Actions",
+      "body": "Multi-plaintiff and class action matters where early capital determines whether a case gets to trial or settles below value."
+    },
+    {
+      "id": "bankruptcy-claims",
+      "title": "Bankruptcy & Litigation Claims",
+      "body": "Claims asserted in or arising out of bankruptcy proceedings — adversary actions, fraudulent transfer, and preference recovery."
+    }
+  ],
+  "howItWorks": [
+    {
+      "id": "submit",
+      "n": "01",
+      "title": "Submit your case",
+      "body": "Share a case summary — claims, defendants, damages theory, and stage of litigation. NDA available on request."
+    },
+    {
+      "id": "underwriting",
+      "n": "02",
+      "title": "Underwriting",
+      "body": "Our team reviews merits, damages, counsel quality, and opposing party resources. We respond with a term sheet within two to four weeks."
+    },
+    {
+      "id": "capital-deployed",
+      "n": "03",
+      "title": "Capital deployed",
+      "body": "Once terms are agreed, capital is available to cover case costs — experts, discovery, depositions, and trial preparation."
+    }
+  ],
+  "comparison": {
+    "oldWay": {
+      "title": "Traditional litigation.",
+      "items": [
+        "Cases declined — capital constraints, not merit.",
+        "Settlements driven by client cashflow, not case value.",
+        "Overhead costs limit the size of your docket."
+      ]
+    },
+    "newWay": {
+      "title": "Powered by Turnpage.",
+      "items": [
+        "Capital deployed against the merit of the case.",
+        "Clients hold out for full value.",
+        "Grow your contingency docket without diluting equity."
+      ]
+    }
+  },
+  "faqs": [
+    {
+      "id": "case-types",
+      "q": "What types of cases do you fund?",
+      "a": "Commercial litigation, IP and patent disputes, antitrust, class actions, mass torts, and breach of contract. We evaluate each case on its merits — size, counsel quality, and clear damages theory are the primary factors."
+    },
+    {
+      "id": "eligibility",
+      "q": "Who is eligible — law firms only, or claimants too?",
+      "a": "Both. We work directly with law firms looking to expand their contingency docket and with individual claimants whose counsel requires case financing. Talk to us about your situation."
+    },
+    {
+      "id": "return",
+      "q": "What does Turnpage receive in return?",
+      "a": "A pre-negotiated share of the recovery. If the case does not result in a recovery, Turnpage bears the loss — there is no recourse to the firm or the client."
+    },
+    {
+      "id": "timeline",
+      "q": "How long does the underwriting process take?",
+      "a": "We respond to initial inquiries within 48 hours. Full underwriting — including case review, opposing counsel analysis, and damages modeling — typically takes two to four weeks depending on the complexity of the matter."
+    },
+    {
+      "id": "minimum-size",
+      "q": "Is there a minimum case size?",
+      "a": "We generally look for matters with damages exposure of $5M or more. Smaller cases with compelling facts are considered on a case-by-case basis."
+    }
+  ]
+}

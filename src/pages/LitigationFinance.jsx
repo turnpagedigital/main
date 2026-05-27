@@ -5,46 +5,11 @@ import Hero from "../components/Hero.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
+import litFinContent from "../data/litigation-finance-content.json";
 
-const OLD_WAY = {
-  title: "Traditional litigation.",
-  items: [
-    "Cases declined — capital constraints, not merit.",
-    "Settlements driven by client cashflow, not case value.",
-    "Overhead costs limit the size of your docket.",
-  ],
-};
-const NEW_WAY = {
-  title: "Powered by Turnpage.",
-  items: [
-    "Capital deployed against the merit of the case.",
-    "Clients hold out for full value.",
-    "Grow your contingency docket without diluting equity.",
-  ],
-};
-
-const FAQS = [
-  {
-    q: "What types of cases do you fund?",
-    a: "Commercial litigation, IP and patent disputes, antitrust, class actions, mass torts, and breach of contract. We evaluate each case on its merits — size, counsel quality, and clear damages theory are the primary factors.",
-  },
-  {
-    q: "Who is eligible — law firms only, or claimants too?",
-    a: "Both. We work directly with law firms looking to expand their contingency docket and with individual claimants whose counsel requires case financing. Talk to us about your situation.",
-  },
-  {
-    q: "What does Turnpage receive in return?",
-    a: "A pre-negotiated share of the recovery. If the case does not result in a recovery, Turnpage bears the loss — there is no recourse to the firm or the client.",
-  },
-  {
-    q: "How long does the underwriting process take?",
-    a: "We respond to initial inquiries within 48 hours. Full underwriting — including case review, opposing counsel analysis, and damages modeling — typically takes two to four weeks depending on the complexity of the matter.",
-  },
-  {
-    q: "Is there a minimum case size?",
-    a: "We generally look for matters with damages exposure of $5M or more. Smaller cases with compelling facts are considered on a case-by-case basis.",
-  },
-];
+const OLD_WAY = litFinContent.comparison.oldWay;
+const NEW_WAY = litFinContent.comparison.newWay;
+const FAQS = litFinContent.faqs;
 
 export default function LitigationFinance() {
   return (
@@ -71,28 +36,25 @@ export default function LitigationFinance() {
             title="Firms. Claimants."
             accent="Cases."
           />
-          <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
-            <AudienceCard
-              priority
-              title="Contingency Law Firms"
-              body="Boutique litigation shops and BigLaw contingency practices looking to grow their docket without tying up equity or taking on overhead risk."
-            />
-            <AudienceCard
-              priority
-              title="Elite Plaintiffs' Practices"
-              body="Class action, antitrust, and IP litigation teams pursuing high-stakes matters that require patient, long-duration capital."
-            />
-          </div>
-          <div className="grid-2col">
-            <AudienceCard
-              title="Individual Claimants"
-              body="Plaintiffs whose counsel needs funding to take a meritorious case to trial. We work with you or your attorney directly."
-            />
-            <AudienceCard
-              title="Solo & Small Firm Practitioners"
-              body="High-quality litigators with strong cases who need capital to level the playing field against well-resourced defendants."
-            />
-          </div>
+          {(() => {
+            const cards = litFinContent.audienceCards;
+            const priority = cards.filter(c => c.priority);
+            const rest = cards.filter(c => !c.priority);
+            return (
+              <>
+                {priority.length > 0 && (
+                  <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
+                    {priority.map(c => <AudienceCard key={c.id} priority title={c.title} body={c.body} />)}
+                  </div>
+                )}
+                {rest.length > 0 && (
+                  <div className="grid-2col">
+                    {rest.map(c => <AudienceCard key={c.id} title={c.title} body={c.body} />)}
+                  </div>
+                )}
+              </>
+            );
+          })()}
         </div>
       </section>
 
@@ -116,26 +78,25 @@ export default function LitigationFinance() {
             title="High-stakes."
             accent="Meritorious."
           />
-          <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
-            <ServiceCard
-              title="Commercial Litigation"
-              body="Breach of contract, business torts, fraud, and complex commercial disputes with clear damages theories and credible counsel."
-            />
-            <ServiceCard
-              title="IP & Patent"
-              body="Patent infringement, trade secret misappropriation, and trademark disputes. We understand IP damages and appeals risk."
-            />
-          </div>
-          <div className="grid-2col">
-            <ServiceCard
-              title="Antitrust & Class Actions"
-              body="Multi-plaintiff and class action matters where early capital determines whether a case gets to trial or settles below value."
-            />
-            <ServiceCard
-              title="Bankruptcy & Litigation Claims"
-              body="Claims asserted in or arising out of bankruptcy proceedings — adversary actions, fraudulent transfer, and preference recovery."
-            />
-          </div>
+          {(() => {
+            const cards = litFinContent.serviceCards;
+            const first = cards.slice(0, 2);
+            const second = cards.slice(2);
+            return (
+              <>
+                {first.length > 0 && (
+                  <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
+                    {first.map(c => <ServiceCard key={c.id} title={c.title} body={c.body} />)}
+                  </div>
+                )}
+                {second.length > 0 && (
+                  <div className="grid-2col">
+                    {second.map(c => <ServiceCard key={c.id} title={c.title} body={c.body} />)}
+                  </div>
+                )}
+              </>
+            );
+          })()}
         </div>
       </section>
 
@@ -189,23 +150,7 @@ export default function LitigationFinance() {
             background: "rgba(255,255,255,0.08)",
             border: "1px solid rgba(255,255,255,0.08)",
           }} className="steps-grid">
-            {[
-              {
-                n: "01",
-                title: "Submit your case",
-                body: "Share a case summary — claims, defendants, damages theory, and stage of litigation. NDA available on request.",
-              },
-              {
-                n: "02",
-                title: "Underwriting",
-                body: "Our team reviews merits, damages, counsel quality, and opposing party resources. We respond with a term sheet within two to four weeks.",
-              },
-              {
-                n: "03",
-                title: "Capital deployed",
-                body: "Once terms are agreed, capital is available to cover case costs — experts, discovery, depositions, and trial preparation.",
-              },
-            ].map(step => (
+            {litFinContent.howItWorks.map(step => (
               <div key={step.n} style={{ padding: "clamp(1.8rem,3vw,2.4rem)", background: "rgba(255,255,255,0.02)" }}>
                 <p style={{
                   fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,

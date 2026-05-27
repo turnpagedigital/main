@@ -9,23 +9,10 @@ import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
 import faqsData from "../data/faqs.json";
+import cryptoContent from "../data/crypto-content.json";
 
-const OLD_WAY = {
-  title: "Wait for the docket.",
-  items: [
-    "Multi-year court timelines.",
-    "Token-vs-fiat valuation risk.",
-    "Plan-of-reorganization surprises.",
-  ],
-};
-const NEW_WAY = {
-  title: "Through Turnpage.",
-  items: [
-    "Cash bid quoted in fiat.",
-    "Tax-basis-aware structuring.",
-    "Single creditor or bulk fund — same desk.",
-  ],
-};
+const OLD_WAY = cryptoContent.comparison.oldWay;
+const NEW_WAY = cryptoContent.comparison.newWay;
 
 const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("crypto"));
 
@@ -58,24 +45,25 @@ export default function Crypto() {
             title="Creditors. Funds."
             accent="Estates."
           />
-          <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
-            <AudienceCard
-              priority
-              title="Individual Creditors"
-              body="Single-position holders on FTX, Celsius, BlockFi, Voyager, and others."
-            />
-            <AudienceCard
-              priority
-              title="Funds & Institutions"
-              body="Bulk dispositions and side-pocket cleanups. Size moved discreetly."
-            />
-          </div>
-          <div className="grid-2col">
-            <AudienceCard
-              title="Estates & Trustees"
-              body="Administering an estate or trust? We can quote the entire position."
-            />
-          </div>
+          {(() => {
+            const cards = cryptoContent.audienceCards;
+            const priority = cards.filter(c => c.priority);
+            const rest = cards.filter(c => !c.priority);
+            return (
+              <>
+                {priority.length > 0 && (
+                  <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
+                    {priority.map(c => <AudienceCard key={c.id} priority title={c.title} body={c.body} />)}
+                  </div>
+                )}
+                {rest.length > 0 && (
+                  <div className="grid-2col">
+                    {rest.map(c => <AudienceCard key={c.id} title={c.title} body={c.body} />)}
+                  </div>
+                )}
+              </>
+            );
+          })()}
         </div>
       </section>
 
@@ -100,14 +88,9 @@ export default function Crypto() {
             accent="Advisory."
           />
           <div className="grid-2col">
-            <ServiceCard
-              title="Capital"
-              body="A competitive cash bid from our institutional buyer network. Quoted and settled in fiat. Days to close."
-            />
-            <ServiceCard
-              title="Advisory"
-              body="Plan-of-reorganization analysis. Token-vs-fiat valuation strategy. Counsel introductions when needed."
-            />
+            {cryptoContent.serviceCards.map(c => (
+              <ServiceCard key={c.id} title={c.title} body={c.body} />
+            ))}
           </div>
         </div>
       </section>

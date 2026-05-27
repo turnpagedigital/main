@@ -8,49 +8,10 @@ import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
 import dealsData from "../data/deals.json";
 import faqsData from "../data/faqs.json";
+import aiCopyrightContent from "../data/ai-copyright-content.json";
 
-/* ── Damages exposure data ──────────────────────────────────────────────────
-   Only cases with (a) a confirmed settlement or (b) an arithmetic statutory
-   ceiling (registered-works count × 17 U.S.C. §504(c)(2) maximum of $150,000)
-   are charted. Cases where damages remain formally unquantified are footnoted. */
-const DAMAGES_DATA = [
-  {
-    name: "Bartz v. Anthropic PBC",
-    amountB: 1.5,
-    label: "$1.5B",
-    type: "settled",
-    badge: "Settled",
-    basis: "482,460 registered works · ~$3,000/work class distribution",
-    source: "N.D. Cal. No. 3:23-cv-03223 · Settlement Order (Aug. 2025)",
-  },
-  {
-    name: "Getty Images v. Stability AI",
-    amountB: 1.7,
-    label: "$1.7B",
-    type: "statutory",
-    badge: "Statutory ceiling",
-    basis: "11,383 registered works × $150,000 · 17 U.S.C. §504(c)(2)",
-    source: "D. Del. No. 1:23-cv-00135 · Am. Compl. ¶ 151",
-  },
-  {
-    name: "Concord / UMG v. Anthropic (II)",
-    amountB: 3.1,
-    label: "$3.1B",
-    type: "statutory",
-    badge: "Statutory ceiling",
-    basis: "20,517 musical compositions × $150,000 · 17 U.S.C. §504(c)(2)",
-    source: "N.D. Cal. · Compl. ¶ 12 (filed Jan. 2026)",
-  },
-  {
-    name: "Doe 1 v. GitHub / Microsoft / OpenAI",
-    amountB: 9.0,
-    label: "$9B+",
-    type: "dmca",
-    badge: "DMCA §1202 est.",
-    basis: "Est. from >1.2B code lines affected · DMCA §1202(b) per-violation ceiling",
-    source: "N.D. Cal. No. 4:22-cv-06823 · Compl. ¶ 92",
-  },
-];
+/* DAMAGES_DATA and MAX_B derived from JSON — no inline data. */
+const DAMAGES_DATA = aiCopyrightContent.damagesData;
 const MAX_B = Math.max(...DAMAGES_DATA.map(c => c.amountB));
 
 const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("ai-copyright"));
@@ -84,29 +45,25 @@ export default function AICopyright() {
             title="Authors. Publishers."
             accent="Newsrooms. Artists."
           />
-
-          <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
-            <AudienceCard
-              priority
-              title="Authors & Writers"
-              body="Bartz class members. OpenAI MDL and Kadrey v. Meta plaintiffs. Pre-litigation rights holders."
-            />
-            <AudienceCard
-              priority
-              title="Music Publishers & Labels"
-              body="Concord plaintiffs, RIAA-coordinated claimants, UMG v. Suno/Udio. Bulk catalogue dispositions."
-            />
-          </div>
-          <div className="grid-2col">
-            <AudienceCard
-              title="News Organizations"
-              body="NYT v. OpenAI, Advance Local v. Cohere, the consolidated MDL."
-            />
-            <AudienceCard
-              title="Visual Artists & Stock"
-              body="Andersen v. Stability. Getty v. Stability (US and UK)."
-            />
-          </div>
+          {(() => {
+            const cards = aiCopyrightContent.audienceCards;
+            const priority = cards.filter(c => c.priority);
+            const rest = cards.filter(c => !c.priority);
+            return (
+              <>
+                {priority.length > 0 && (
+                  <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
+                    {priority.map(c => <AudienceCard key={c.id} priority title={c.title} body={c.body} />)}
+                  </div>
+                )}
+                {rest.length > 0 && (
+                  <div className="grid-2col">
+                    {rest.map(c => <AudienceCard key={c.id} title={c.title} body={c.body} />)}
+                  </div>
+                )}
+              </>
+            );
+          })()}
         </div>
       </section>
 
@@ -119,18 +76,9 @@ export default function AICopyright() {
             accent="Advisory."
           />
           <div className="grid-3col">
-            <ServiceCard
-              title="Capital"
-              body="A competitive cash bid from our institutional buyer network. Class-member purchases, opt-out direct purchases, bulk catalogues. Days to close."
-            />
-            <ServiceCard
-              title="Advisory"
-              body="Opt-in vs. opt-out economics. Statutory damages modeling. Counsel introductions across U.S., UK, EU, and Germany."
-            />
-            <ServiceCard
-              title="Claim Monitoring"
-              body="We track and file claims for you, automatically."
-            />
+            {aiCopyrightContent.serviceCards.map(c => (
+              <ServiceCard key={c.id} title={c.title} body={c.body} />
+            ))}
           </div>
         </div>
       </section>
