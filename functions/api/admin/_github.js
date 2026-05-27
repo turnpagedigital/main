@@ -125,3 +125,60 @@ export async function deleteFileFromGitHub(env, path, sha, message) {
   });
   return { ok: r.ok };
 }
+
+/* Scan every admin-managed data file for any textual reference to the given
+   URL (or its filename). Used before allowing a permanent file delete so we
+   don't strand a `<img src="…">` somewhere.
+
+   Returns { ok: true, references: [{ file, matches: ["url"|"slug"] }] } —
+   an empty `references` array means no references were found (safe to delete).
+   If any file read fails, we surface the failure as { ok: false, error } —
+   we MUST NOT silently pretend it's safe.
+
+   Note: this can't scan compiled JSX sources for hardcoded asset paths. That
+   is a known gap — see the report. */
+const SCAN_FILES = [
+  "src/data/bio.json",
+  "src/data/deals.json",
+  "src/data/press.json",
+  "src/data/alerts.json",
+  "src/data/faqs.json",
+  "public/briefings/index.json",
+];
+
+export async function findUrlReferences(env, urlOrPath) {
+  if (typeof urlOrPath !== "string" || !urlOrPath.trim()) {
+    return { ok: false, error: "url required" };
+  }
+  const url = urlOrPath.trim();
+  // The "slug" is the basename of the URL/path — e.g. "foo.png" from
+  // "/library/foo.png". A substring match on the slug catches the case where
+  // someone wrote the URL with a different prefix than what's in the library
+  // (e.g. an absolute https URL vs. a relative /library/ path).
+  const slug = url.split("/").pop().split("?")[0];
+
+  const references = [];
+  for (const path of SCAN_FILES) {
+    const result = await getFileFromGitHub(env, path);
+    if (!result.ok) {
+      // If a file simply doesn't exist (404), GitHub returns a non-ok with a
+      // 404-ish message. We still want to keep scanning the others, so log
+      // and continue — but if we hit any other read error we surface it.
+      if (/GitHub GET 404/.test(result.error || "")) continue;
+      return { ok: false, error: `Failed to scan ${path}: ${result.error}` };
+    }
+    const text = result.text || "";
+    const matches = [];
+    if (text.includes(url)) matches.push("url");
+    // Only check the slug separately if it's not the same string as the URL
+    // (avoids double-counting) and only if it's at least 4 chars long
+    // (avoids false positives on common short filenames).
+    if (slug && slug !== url && slug.length >= 4 && text.includes(slug)) {
+      matches.push("slug");
+    }
+    if (matches.length > 0) {
+      references.push({ file: path, matches });
+    }
+  }
+  return { ok: true, references };
+}

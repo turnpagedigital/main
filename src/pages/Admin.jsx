@@ -8,15 +8,17 @@ import PostsTab  from "./admin/PostsTab.jsx";
 import FAQsTab   from "./admin/FAQsTab.jsx";
 import AlertsTab from "./admin/AlertsTab.jsx";
 import FilesTab  from "./admin/FilesTab.jsx";
+import PagesTab  from "./admin/PagesTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
    Tab state syncs to the URL path: /admin/<tab>.
 
    NOTE: The favicon for /admin is set in src/main.jsx before React mounts,
-   driven by src/data/file-library.json. Nothing to manage here. */
+   driven by src/data/file-library.json. The favicon picker lives in the
+   Pages tab here. */
 
-const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "files"];
+const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "files", "pages"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "bio";
@@ -101,6 +103,7 @@ export default function Admin() {
     { key: "alerts", label: "Alerts", dirty: dirtyTabs.alerts ?? false },
     { key: "faqs",   label: "FAQs",   dirty: dirtyTabs.faqs   ?? false },
     { key: "files",  label: "Files",  dirty: dirtyTabs.files  ?? false },
+    { key: "pages",  label: "Pages",  dirty: dirtyTabs.pages  ?? false },
   ];
 
   return (
@@ -168,6 +171,7 @@ export default function Admin() {
       {tab === "alerts" && <AlertsTab onDirtyChange={makeDirtyCallback("alerts")} />}
       {tab === "faqs"   && <FAQsTab   onDirtyChange={makeDirtyCallback("faqs")} />}
       {tab === "files"  && <FilesTab  onDirtyChange={makeDirtyCallback("files")} />}
+      {tab === "pages"  && <PagesTab  onDirtyChange={makeDirtyCallback("pages")} />}
     </div>
   );
 }

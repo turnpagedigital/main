@@ -7,7 +7,13 @@ import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
    GET  /api/admin/file-library  → { ok, data, sha }
    PUT  /api/admin/file-library  → { ok, commitSha }
-   Body for PUT: { files: [...], favicons: { production, preview, admin } }
+   Body for PUT: { files?: [...], favicons?: { production, preview, admin } }
+
+   PARTIAL MERGE SEMANTICS: both `files` and `favicons` are optional in the
+   PUT body. Whichever fields are present override the corresponding fields
+   on the existing document; missing fields are preserved as-is. This lets
+   the Files tab save only `{ files }` and the Pages tab save only
+   `{ favicons }` without either tab stomping on the other's edits.
 
    Mirrors the deals.js pattern: GET fetches from GitHub, PUT re-fetches the
    latest SHA before commit to enforce single-source-of-truth.
@@ -53,32 +59,68 @@ export async function onRequestPut({ request, env }) {
     return jsonResponse({ ok: false, error: "Invalid payload" }, 400);
   }
 
-  const files    = Array.isArray(body.files) ? body.files : null;
-  const favicons = (body.favicons && typeof body.favicons === "object") ? body.favicons : null;
+  // Both fields are optional — partial merge semantics. At least one must be
+  // present so we don't waste a commit on a no-op request.
+  const hasFiles    = Object.prototype.hasOwnProperty.call(body, "files");
+  const hasFavicons = Object.prototype.hasOwnProperty.call(body, "favicons");
 
-  if (!files)    return jsonResponse({ ok: false, error: "Payload must include 'files' array" }, 400);
-  if (!favicons) return jsonResponse({ ok: false, error: "Payload must include 'favicons' object" }, 400);
-
-  if (files.length > MAX_FILES) {
-    return jsonResponse({ ok: false, error: `Too many files (max ${MAX_FILES})` }, 400);
+  if (!hasFiles && !hasFavicons) {
+    return jsonResponse({
+      ok: false,
+      error: "Payload must include at least one of 'files' or 'favicons'",
+    }, 400);
   }
 
-  const validationError = validateFiles(files);
-  if (validationError) return jsonResponse({ ok: false, error: validationError }, 400);
+  let files = null;
+  if (hasFiles) {
+    if (!Array.isArray(body.files)) {
+      return jsonResponse({ ok: false, error: "'files' must be an array" }, 400);
+    }
+    files = body.files;
+    if (files.length > MAX_FILES) {
+      return jsonResponse({ ok: false, error: `Too many files (max ${MAX_FILES})` }, 400);
+    }
+    const validationError = validateFiles(files);
+    if (validationError) return jsonResponse({ ok: false, error: validationError }, 400);
+  }
+
+  let favicons = null;
+  if (hasFavicons) {
+    if (!body.favicons || typeof body.favicons !== "object") {
+      return jsonResponse({ ok: false, error: "'favicons' must be an object" }, 400);
+    }
+    favicons = body.favicons;
+  }
 
   // Always re-fetch the latest SHA to enforce single-source-of-truth.
   const current = await fetchFile(env);
   if (!current.ok) return jsonResponse({ ok: false, error: current.error }, 502);
 
+  // Merge: start from the current document, override only the fields that were
+  // explicitly provided in the request body. This is what lets the Files tab
+  // and Pages tab save independently without trampling each other's edits.
+  const currentData = (current.data && typeof current.data === "object") ? current.data : {};
+  const mergedFiles    = files !== null
+    ? files.map(normalizeFile)
+    : (Array.isArray(currentData.files) ? currentData.files : []);
+  const mergedFavicons = favicons !== null
+    ? normalizeFavicons(favicons)
+    : normalizeFavicons(currentData.favicons || {});
+
   const merged = {
-    _comment: (current.data && current.data._comment) || undefined,
-    files:    files.map(normalizeFile),
-    favicons: normalizeFavicons(favicons),
+    _comment: currentData._comment || undefined,
+    files:    mergedFiles,
+    favicons: mergedFavicons,
   };
   Object.keys(merged).forEach((k) => merged[k] === undefined && delete merged[k]);
 
   const newContent = JSON.stringify(merged, null, 2) + "\n";
-  const result = await commitFileToGitHub(env, FILE_LIBRARY_PATH, newContent, current.sha, "Admin: update file-library.json");
+  const message = hasFiles && hasFavicons
+    ? "Admin: update file-library.json"
+    : hasFiles
+      ? "Admin: update file-library.json (files)"
+      : "Admin: update file-library.json (favicons)";
+  const result = await commitFileToGitHub(env, FILE_LIBRARY_PATH, newContent, current.sha, message);
   if (!result.ok) return jsonResponse({ ok: false, error: result.error }, 502);
 
   return jsonResponse({ ok: true, commitSha: result.sha });

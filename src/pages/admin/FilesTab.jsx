@@ -3,36 +3,33 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   FilesTab — centralised image / logo library + per-environment favicon picker.
+   FilesTab — centralised image / logo / document / video library.
 
-   Three sections:
+   Two sections:
      1. Add new file (upload OR by URL)
-     2. File grid (cards: thumbnail, name, companies chips, copy/delete)
-     3. Favicons (production / preview / admin pickers)
+     2. File list (rows: thumbnail, name, type, URL, copy/replace/delete)
+
+   The per-environment favicon picker used to live here too; it has moved to
+   the Pages tab (which manages site-level settings). Both tabs talk to the
+   same /api/admin/file-library endpoint, which does a partial merge on PUT
+   so the tabs can save independently without trampling each other's edits.
 
    Self-contained: owns its own fetch/save lifecycle and reports dirty state
    via onDirtyChange?.(dirty). Mirrors the DealsTab pattern.
 ═══════════════════════════════════════════════════════════════════════════ */
 
-const FAVICON_ROWS = [
-  { key: "production", label: "Production favicon",   hint: "turnpagedigital.com" },
-  { key: "preview",    label: "Preview / dev favicon", hint: "*.pages.dev preview deploys" },
-  { key: "admin",      label: "Admin favicon",         hint: "/admin pages (any environment)" },
-];
+const TYPE_OPTIONS = ["image", "logo", "favicon", "icon", "document", "video"];
 
-const TYPE_OPTIONS = ["image", "logo", "favicon", "icon", "document"];
-const FAVICON_PICKER_TYPES = ["favicon", "icon", "logo"]; // types eligible for the favicon dropdowns
-
-const UPLOAD_ACCEPT     = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,application/pdf";
-const UPLOAD_ACCEPT_ALL = UPLOAD_ACCEPT;
+const UPLOAD_ACCEPT = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,application/pdf";
 
 /* Infer a sensible default `type` (category) for a new entry. Filename or URL
- * containing "favicon" → favicon, ".pdf" → document, otherwise default to "image".
- * Users can change this in the dropdown after adding. */
+ * containing "favicon" → favicon, ".pdf" → document, video extensions → video,
+ * otherwise default to "image". Users can change this in the dropdown after adding. */
 function inferTypeFromFilename(filename) {
   if (!filename) return "image";
   const f = filename.toLowerCase();
   if (f.endsWith(".pdf")) return "document";
+  if (f.endsWith(".mp4") || f.endsWith(".webm") || f.endsWith(".mov")) return "video";
   if (f.includes("favicon") || f.endsWith(".ico")) return "favicon";
   return "image";
 }
@@ -51,15 +48,6 @@ function sanitizeFile(f) {
     companies: Array.isArray(f.companies) ? f.companies.filter(c => typeof c === "string") : [],
     source:    f.source === "upload" ? "upload" : "url",
     addedAt:   typeof f.addedAt === "string" ? f.addedAt : "",
-  };
-}
-
-function sanitizeFavicons(fav) {
-  fav = fav || {};
-  return {
-    production: typeof fav.production === "string" ? fav.production : "",
-    preview:    typeof fav.preview    === "string" ? fav.preview    : "",
-    admin:      typeof fav.admin      === "string" ? fav.admin      : "",
   };
 }
 
@@ -90,7 +78,7 @@ function deriveNameFromUrl(url) {
 }
 
 export default function FilesTab({ onDirtyChange }) {
-  const [library, setLibrary]     = useState(null);    // { files: [], favicons: {} }
+  const [library, setLibrary]     = useState(null);    // { files: [] }  (favicons live in Pages tab)
   const [original, setOriginal]   = useState(null);
   const [phase, setPhase]         = useState("loading");
   const [error, setError]         = useState("");
@@ -114,7 +102,6 @@ export default function FilesTab({ onDirtyChange }) {
       if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
       const fresh = {
         files: (body.data.files || []).map(sanitizeFile),
-        favicons: sanitizeFavicons(body.data.favicons),
       };
       setLibrary(fresh);
       setOriginal(JSON.parse(JSON.stringify(fresh)));
@@ -126,11 +113,14 @@ export default function FilesTab({ onDirtyChange }) {
     if (!library) return;
     setPhase("saving"); setError("");
     try {
+      // PUT only { files } — the server merges with current favicons[] so any
+      // unsaved changes from the Pages tab stay intact. See file-library.js
+      // for the partial-merge semantics.
       const r = await fetch("/api/admin/file-library", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ files: library.files, favicons: library.favicons }),
+        body: JSON.stringify({ files: library.files }),
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
@@ -174,17 +164,14 @@ export default function FilesTab({ onDirtyChange }) {
       files: lib.files.map(f => f.id === id ? { ...f, [field]: value } : f),
     }));
   }
-  function deleteFile(id) {
-    if (!confirm("Remove this file from the library? (The file in the repo stays — this just removes the catalog entry.)")) return;
+  // Remove the catalog entry. Both delete modes (library-only and permanent)
+  // end here — the row component handles the actual repo-delete API call
+  // before invoking us. We just drop the entry from local state and let the
+  // dirty indicator nudge the user to Save.
+  function deleteFile(id /* , { mode } */) {
     setLibrary(lib => ({
       ...lib,
       files: lib.files.filter(f => f.id !== id),
-    }));
-  }
-  function setFavicon(envKey, url) {
-    setLibrary(lib => ({
-      ...lib,
-      favicons: { ...lib.favicons, [envKey]: url },
     }));
   }
 
@@ -240,19 +227,11 @@ export default function FilesTab({ onDirtyChange }) {
       {/* ── Section 1: Add new file ─────────────────────────────────────── */}
       <AddFileSection onAdd={addFile} />
 
-      {/* ── Section 2: File grid ────────────────────────────────────────── */}
+      {/* ── Section 2: File list ────────────────────────────────────────── */}
       <FileGrid
         files={displayFiles}
         onUpdate={updateFile}
         onDelete={deleteFile}
-      />
-
-      {/* ── Section 3: Favicons ─────────────────────────────────────────── */}
-      <FaviconSection
-        favicons={library.favicons}
-        files={library.files}
-        onSelect={setFavicon}
-        onAdd={addFile}
       />
     </div>
   );
@@ -477,7 +456,7 @@ function FileGrid({ files, onUpdate, onDelete }) {
               key={file.id}
               file={file}
               onUpdate={(field, value) => onUpdate(file.id, field, value)}
-              onDelete={() => onDelete(file.id)}
+              onDelete={(opts) => onDelete(file.id, opts)}
             />
           ))}
         </div>
@@ -494,6 +473,23 @@ function FileRow({ file, onUpdate, onDelete }) {
   const [replacing,      setReplacing]      = useState(false);
   const [replaceError,   setReplaceError]   = useState("");
   const replaceInputRef                     = useRef(null);
+
+  // ── Delete-confirmation state (inline expand) ────────────────────────────
+  // States: null | "loading" | "ready" | "deleting" | "error"
+  //   loading  — dry-run in flight
+  //   ready    — dry-run came back, show buttons
+  //   deleting — permanent delete in flight
+  //   error    — some step blew up; show msg + a "Cancel" button
+  const [delPhase,      setDelPhase]      = useState(null);
+  const [delReferences, setDelReferences] = useState([]); // [{file, matches:[]}]
+  const [delError,      setDelError]      = useState("");
+  // isExternal: external URL (https://…) — we can't delete from repo, only from library
+  const isExternal = /^https?:\/\//i.test(file.url);
+  // Map the public URL ("/library/foo.png") → repo path ("public/library/foo.png").
+  // We only support delete for /library/* — anything else is "library-only" delete.
+  const repoPath = file.url.startsWith("/library/")
+    ? "public" + file.url.split("?")[0].split("#")[0]
+    : "";
 
   // Reset drafts when underlying file changes (e.g., after save/load)
   useEffect(() => { setNameDraft(file.name); }, [file.name]);
@@ -580,6 +576,68 @@ function FileRow({ file, onUpdate, onDelete }) {
       ta.remove();
       setCopied(true);
       setTimeout(() => setCopied(false), 1400);
+    }
+  }
+
+  // Open the delete-confirm panel. For local /library/ files we kick off a
+  // dry-run to find references; for external URLs (and other non-library
+  // paths) we skip the scan since there's nothing to delete from the repo.
+  async function openDeleteConfirm() {
+    setDelError("");
+    setDelReferences([]);
+    if (isExternal || !repoPath) {
+      // No repo file to scan / delete — show a simple "remove from library" prompt
+      setDelPhase("ready");
+      return;
+    }
+    setDelPhase("loading");
+    try {
+      const r = await fetch("/api/admin/file-delete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ url: file.url, repoPath, dryRun: true }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
+      setDelReferences(Array.isArray(body.references) ? body.references : []);
+      setDelPhase("ready");
+    } catch (err) {
+      setDelError(err.message || "Failed to check references");
+      setDelPhase("error");
+    }
+  }
+
+  function cancelDelete() {
+    setDelPhase(null);
+    setDelReferences([]);
+    setDelError("");
+  }
+
+  function removeFromLibrary() {
+    // Local state only — caller marks library dirty so the save commits.
+    onDelete({ mode: "library-only" });
+    cancelDelete();
+  }
+
+  async function deletePermanently() {
+    if (!repoPath) return;
+    setDelError("");
+    setDelPhase("deleting");
+    try {
+      const r = await fetch("/api/admin/file-delete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ url: file.url, repoPath }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
+      onDelete({ mode: "permanent" });
+      cancelDelete();
+    } catch (err) {
+      setDelError(err.message || "Delete failed");
+      setDelPhase("error");
     }
   }
 
@@ -699,9 +757,15 @@ function FileRow({ file, onUpdate, onDelete }) {
       </button>
       <button
         type="button"
-        onClick={onDelete}
-        title="Remove from library"
-        style={{ ...iconBtnStyle(false), color: "#c44" }}
+        onClick={openDeleteConfirm}
+        title="Delete this file"
+        disabled={delPhase === "loading" || delPhase === "deleting"}
+        style={{
+          ...iconBtnStyle(false),
+          color: "#c44",
+          opacity: (delPhase === "loading" || delPhase === "deleting") ? 0.6 : 1,
+          cursor:  (delPhase === "loading" || delPhase === "deleting") ? "wait" : "pointer",
+        }}
       >
         ×
       </button>
@@ -711,182 +775,140 @@ function FileRow({ file, onUpdate, onDelete }) {
           {replaceError}
         </div>
       )}
+
+      {delPhase && (
+        <DeleteConfirmPanel
+          file={file}
+          isExternal={isExternal}
+          repoPath={repoPath}
+          phase={delPhase}
+          references={delReferences}
+          error={delError}
+          onRemoveLibrary={removeFromLibrary}
+          onDeletePermanent={deletePermanently}
+          onCancel={cancelDelete}
+        />
+      )}
     </div>
   );
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Section 3 — Favicons
+   Inline delete-confirm panel — expands below the FileRow when the user
+   clicks ×. Shows either:
+     - "Remove from library only" (for external URLs or library files in use)
+     - "Remove from library only" + "Delete permanently" (for unreferenced
+       library files)
+   Renders into the same flex container as the row (flexBasis: 100%) so it
+   sits on a new line directly under its row.
 ═══════════════════════════════════════════════════════════════════════════ */
-function FaviconSection({ favicons, files, onSelect, onAdd }) {
-  // Eligible favicon files: any entry whose `type` is favicon, icon, or logo.
-  // Always include the currently-selected URL even if it isn't in the library
-  // (so the user can see what's set without surprises).
-  const eligible = useMemo(() => {
-    return files.filter(f => FAVICON_PICKER_TYPES.includes(f.type));
-  }, [files]);
-
-  return (
-    <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "2.5rem" }}>
-      <div style={{ fontWeight: 700, fontSize: "0.85rem", color: INK_60, marginBottom: "0.3rem" }}>
-        Favicons
-      </div>
-      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
-        Each environment can show a different favicon. Pick from the file library or paste any URL.
-        Changes take effect on the next page load after you save.
-      </p>
-
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
-        {FAVICON_ROWS.map(({ key, label, hint }) => (
-          <FaviconRow
-            key={key}
-            envKey={key}
-            label={label}
-            hint={hint}
-            current={favicons[key] || ""}
-            eligible={eligible}
-            onSelect={url => onSelect(key, url)}
-            onUpload={({ url, filename }) => {
-              // Add to library AND auto-assign to this row's environment
-              onAdd({
-                url,
-                name:   filename.replace(/\.[^.]+$/, ""),
-                type:   "favicon",
-                source: "upload",
-              });
-              onSelect(key, url);
-            }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function FaviconRow({ envKey, label, hint, current, eligible, onSelect, onUpload }) {
-  // Sentinel select values: "" = none, "__custom__" = paste a URL, anything else = library URL
-  const inLibrary = current && eligible.some(f => f.url === current);
-  const isCustomBootstrap = current && !inLibrary;
-  const [mode, setMode] = useState(isCustomBootstrap ? "custom" : "library");
-  const [customUrl, setCustomUrl] = useState(isCustomBootstrap ? current : "");
-
-  // Sync if outer current changes (e.g., load after save)
-  useEffect(() => {
-    const stillInLibrary = current && eligible.some(f => f.url === current);
-    if (current && !stillInLibrary) {
-      setMode("custom");
-      setCustomUrl(current);
-    } else if (mode === "custom" && !current) {
-      // keep custom mode, just clear the URL
-      setCustomUrl("");
-    } else if (stillInLibrary && mode !== "library") {
-      setMode("library");
-    }
-  }, [current, eligible]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  function handleSelectChange(e) {
-    const v = e.target.value;
-    if (v === "__custom__") {
-      setMode("custom");
-      // don't clear — keep the previous selection until user pastes
-    } else {
-      setMode("library");
-      onSelect(v);
-    }
-  }
-
-  function commitCustom() {
-    const v = customUrl.trim();
-    onSelect(v);
-  }
+function DeleteConfirmPanel({
+  file, isExternal, repoPath,
+  phase, references, error,
+  onRemoveLibrary, onDeletePermanent, onCancel,
+}) {
+  const loading   = phase === "loading";
+  const deleting  = phase === "deleting";
+  const inUse     = references && references.length > 0;
+  // Permanent delete is only offered for library files with no detected
+  // references. External URLs and "in use" files are library-removal only.
+  const canDeletePermanent = !isExternal && !!repoPath && !inUse && !loading;
 
   return (
     <div style={{
-      display: "grid", gridTemplateColumns: "56px 1fr 1.4fr", gap: "0.85rem",
-      alignItems: "center",
-    }} className="favicon-row">
-      {/* Preview swatch */}
-      <div style={{
-        width: 48, height: 48,
-        border: `1px solid ${LINE}`, background: "#F4F5F7",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        overflow: "hidden",
-      }}>
-        {current ? (
-          <img
-            src={current}
-            alt={`${label} preview`}
-            style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
-            onError={e => { e.currentTarget.style.opacity = "0.25"; }}
-          />
-        ) : (
-          <span style={{ fontSize: "0.6rem", color: INK_60 }}>none</span>
-        )}
+      flexBasis: "100%",
+      marginTop: "0.4rem",
+      background: "#fff9e6",
+      border: "1px solid #e6c200",
+      padding: "0.7rem 0.9rem",
+      fontSize: "0.8rem",
+      color: INK,
+    }}>
+      <div style={{ fontWeight: 700, marginBottom: "0.45rem" }}>
+        Delete {file.name || "this file"}?
       </div>
 
-      {/* Label */}
-      <div>
-        <div style={{ fontSize: "0.85rem", fontWeight: 700, color: INK }}>
-          {label}
-        </div>
-        <div style={{ fontSize: "0.72rem", color: INK_60 }}>
-          {hint}
-        </div>
-      </div>
+      {loading && (
+        <p style={{ color: INK_60, margin: 0 }}>Checking for references…</p>
+      )}
 
-      {/* Picker — dropdown + inline upload button (uploads to library AND auto-assigns) */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-        <div style={{ display: "flex", gap: "0.4rem" }}>
-          <select
-            value={mode === "custom" ? "__custom__" : current}
-            onChange={handleSelectChange}
-            style={{ ...inputStyle, marginTop: 0, cursor: "pointer", flex: 1 }}
+      {error && (
+        <p style={{ color: "#c44", margin: "0 0 0.5rem" }}>{error}</p>
+      )}
+
+      {phase !== "loading" && !error && (
+        <>
+          {isExternal && (
+            <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
+              This is an external URL — the file isn't stored in the repo, so only the
+              library entry can be removed.
+            </p>
+          )}
+          {!isExternal && !repoPath && (
+            <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
+              This file lives outside <code>/library/</code>, so it can't be permanently
+              deleted from here. Only the library entry can be removed.
+            </p>
+          )}
+          {!isExternal && repoPath && inUse && (
+            <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
+              {references.length} data file{references.length === 1 ? "" : "s"} reference
+              this image: <strong>{references.map(r => r.file.split("/").pop()).join(", ")}</strong>.
+              You can still remove the library entry, but the file in the repo won't be
+              deleted.
+            </p>
+          )}
+          {!isExternal && repoPath && !inUse && (
+            <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
+              No other files reference this. You can permanently delete the file from
+              the repo (<code>{repoPath}</code>) or just remove the library entry.
+            </p>
+          )}
+        </>
+      )}
+
+      <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.3rem" }}>
+        <button
+          type="button"
+          onClick={onRemoveLibrary}
+          disabled={loading || deleting}
+          style={{
+            ...btnStyle, fontSize: "0.78rem", padding: "0.35rem 0.75rem",
+            opacity: (loading || deleting) ? 0.6 : 1,
+            cursor:  (loading || deleting) ? "wait" : "pointer",
+          }}
+        >
+          Remove from library only
+        </button>
+        {canDeletePermanent && (
+          <button
+            type="button"
+            onClick={onDeletePermanent}
+            disabled={deleting}
+            style={{
+              background: "#c44", border: "none", color: "#fff",
+              padding: "0.4rem 0.85rem", fontFamily: FONT, fontSize: "0.78rem",
+              fontWeight: 700, borderRadius: 0, letterSpacing: "0.02em",
+              opacity: deleting ? 0.6 : 1,
+              cursor: deleting ? "wait" : "pointer",
+            }}
           >
-            <option value="">— None —</option>
-            {eligible.map(f => (
-              <option key={f.id} value={f.url}>
-                {f.name}{f.type ? ` (${f.type})` : ""}
-              </option>
-            ))}
-            <option disabled style={{ color: "#aaa" }}>──────────</option>
-            <option value="__custom__">— Custom URL —</option>
-          </select>
-          <UploadDropzone
-            compact
-            label="Upload"
-            accept="image/png,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,image/webp"
-            onUploaded={onUpload}
-          />
-        </div>
-
-        {mode === "custom" && (
-          <div style={{ display: "flex", gap: "0.4rem" }}>
-            <input
-              type="text"
-              value={customUrl}
-              onChange={e => setCustomUrl(e.target.value)}
-              onBlur={commitCustom}
-              onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); commitCustom(); } }}
-              placeholder="/favicon.png or https://…"
-              style={{ ...inputStyle, marginTop: 0, flex: 1 }}
-            />
-            <button
-              type="button"
-              onClick={commitCustom}
-              style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.35rem 0.7rem" }}
-            >
-              Apply
-            </button>
-          </div>
+            {deleting ? "Deleting…" : "Delete permanently"}
+          </button>
         )}
+        <button
+          type="button"
+          onClick={onCancel}
+          disabled={deleting}
+          style={{
+            ...btnStyle, fontSize: "0.78rem", padding: "0.35rem 0.75rem",
+            opacity: deleting ? 0.6 : 1,
+            cursor: deleting ? "wait" : "pointer",
+          }}
+        >
+          Cancel
+        </button>
       </div>
-
-      <style>{`
-        @media (max-width: 640px) {
-          .favicon-row { grid-template-columns: 48px 1fr !important; }
-          .favicon-row > div:last-child { grid-column: 1 / -1; }
-        }
-      `}</style>
     </div>
   );
 }
