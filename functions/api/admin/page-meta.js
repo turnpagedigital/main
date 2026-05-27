@@ -7,11 +7,13 @@ import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
    PUT  /api/admin/page-meta  → { ok: true, commitSha }
    Body for PUT: { site: { name, defaultTitle, defaultDescription }, pages: [...] }
 
-   Each page entry: { path, title, description, og }
+   Each page entry: { path, title, description, og, active }
    - path:        exact pathname, must start with "/"
    - title:       page <title> and og:title
    - description: meta description and og:description
    - og:          slug for the dynamic OG image (home|crypto|ai-copyright|litigation-finance)
+   - active:      boolean — false hides the page (renders NotFound in the SPA).
+                  Home page (path "/") is always forced to true.
 */
 
 const META_PATH = "src/data/page-meta.json";
@@ -128,10 +130,14 @@ function normalizeSite(site) {
 }
 
 function normalizePage(p) {
+  const path = String(p.path).trim().slice(0, MAX_PATH_LEN);
+  // Home page is always active regardless of what the client sends.
+  const active = path === "/" ? true : Boolean(p.active ?? true);
   return {
-    path:        String(p.path).trim().slice(0, MAX_PATH_LEN),
+    path,
     title:       String(p.title).trim().slice(0, MAX_STR_SHORT),
     description: String(p.description).trim().slice(0, MAX_STR_LONG),
     og:          String(p.og).trim(),
+    active,
   };
 }

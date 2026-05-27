@@ -5,6 +5,7 @@ import { useRoute, navigate } from "./lib/router.js";
 import { I18nProvider } from "./lib/i18n.js";
 import AppHeader from "./components/AppHeader.jsx";
 import Footer from "./components/Footer.jsx";
+import pageMeta from "./data/page-meta.json";
 
 // Page components are lazy-loaded so each route becomes its own chunk.
 // Only downloaded when the user first navigates to that page.
@@ -166,9 +167,23 @@ const PAGE_MAP = {
   "admin":              () => <Admin />,
 };
 
+// Build a set of page-keys whose active flag is false.
+// Path "/" maps to page-key "home"; all other paths strip the leading "/".
+// Home is never included here (server + data both hard-code active: true),
+// but the guard below is belt-and-suspenders.
+const HIDDEN_PAGES = new Set(
+  pageMeta.pages
+    .filter(p => p.active === false)
+    .map(p => (p.path === "/" ? "home" : p.path.replace(/^\//, ""))),
+);
+
 function renderPage(route) {
   // Dynamic route — briefing detail page receives a slug prop
   if (route.page === "briefing") return <Briefing slug={route.slug} />;
+
+  // Hidden pages render NotFound instead of their actual component.
+  // Home is excluded from HIDDEN_PAGES so it's always reachable.
+  if (HIDDEN_PAGES.has(route.page)) return <NotFound />;
 
   const factory = PAGE_MAP[route.page];
   if (factory) return factory();

@@ -57,11 +57,12 @@ function sanitizePages(arr) {
     title:       typeof p.title       === "string" ? p.title       : "",
     description: typeof p.description === "string" ? p.description : "",
     og:          typeof p.og          === "string" ? p.og          : "home",
+    active:      typeof p.active      === "boolean" ? p.active     : true,
   }));
 }
 
 function emptyPage() {
-  return { path: "/", title: "", description: "", og: "home" };
+  return { path: "/", title: "", description: "", og: "home", active: true };
 }
 
 export default function PagesTab({ onDirtyChange }) {
@@ -528,13 +529,16 @@ function PageMetaRow({ page, index, onUpdate, onRemove }) {
   const pathEmpty  = !page.path.trim();
   const titleEmpty = !page.title.trim();
   const descEmpty  = !page.description.trim();
+  const isHome     = page.path.trim() === "/";
+  const isHidden   = page.active === false;
 
   return (
     <div style={{
-      border: `1px solid ${LINE}`,
+      border: `1px solid ${isHidden ? "#d4a040" : LINE}`,
       padding: "0.85rem",
-      background: "#FAFAFA",
+      background: isHidden ? "#fffbf0" : "#FAFAFA",
       position: "relative",
+      transition: "border-color 0.15s, background 0.15s",
     }}>
       {/* Delete button top-right */}
       <button
@@ -552,6 +556,48 @@ function PageMetaRow({ page, index, onUpdate, onRemove }) {
       </button>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem", paddingRight: "2rem" }}>
+        {/* Active toggle row */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+          <label
+            title={isHome ? "Home page can't be hidden" : undefined}
+            style={{
+              display: "flex", alignItems: "center", gap: "0.4em",
+              cursor: isHome ? "not-allowed" : "pointer",
+              userSelect: "none",
+              opacity: isHome ? 0.5 : 1,
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={page.active !== false}
+              disabled={isHome}
+              onChange={e => onUpdate({ active: e.target.checked })}
+              style={{ accentColor: NEON, cursor: isHome ? "not-allowed" : "pointer" }}
+            />
+            <span style={{ fontSize: "0.78rem", fontWeight: 700, color: INK_60 }}>
+              Active
+            </span>
+          </label>
+          {isHidden && (
+            <span style={{
+              fontSize: "0.68rem",
+              fontWeight: 700,
+              letterSpacing: "0.04em",
+              color: "#a06010",
+              background: "#fdecc8",
+              border: `1px solid #d4a040`,
+              padding: "0.1rem 0.4rem",
+            }}>
+              HIDDEN
+            </span>
+          )}
+          {isHome && (
+            <span style={{ fontSize: "0.72rem", color: INK_60 }}>
+              Home page can't be hidden
+            </span>
+          )}
+        </div>
+
         {/* Path */}
         <LabeledField label="Path" hint="Exact pathname, e.g. /crypto">
           <input
