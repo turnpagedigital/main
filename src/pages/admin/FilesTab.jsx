@@ -20,16 +20,32 @@ const FAVICON_ROWS = [
   { key: "admin",      label: "Admin favicon",         hint: "/admin pages (any environment)" },
 ];
 
-const FAVICON_MIME_TYPES = ["image/png", "image/svg+xml", "image/x-icon", "image/vnd.microsoft.icon", "image/webp"];
+const TYPE_OPTIONS = ["image", "logo", "favicon", "icon"];
+const FAVICON_PICKER_TYPES = ["favicon", "icon", "logo"]; // types eligible for the favicon dropdowns
 
 const UPLOAD_ACCEPT = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon";
 
+/* Infer a sensible default `type` (category) for a new entry. Filename or URL
+ * containing "favicon" → favicon. Otherwise default to "image". Users can change
+ * this in the dropdown after adding. */
+function inferTypeFromFilename(filename) {
+  if (!filename) return "image";
+  const f = filename.toLowerCase();
+  if (f.includes("favicon") || f.endsWith(".ico")) return "favicon";
+  return "image";
+}
+
 function sanitizeFile(f) {
+  // Migrate: older entries stored a MIME type (e.g. "image/png") in `type`.
+  // Normalise to the new category enum.
+  let type = typeof f.type === "string" ? f.type : "image";
+  if (type.includes("/")) type = "image";        // legacy MIME → default to "image"
+  if (!TYPE_OPTIONS.includes(type)) type = "image";
   return {
     id:        typeof f.id   === "string" ? f.id   : "",
     name:      typeof f.name === "string" ? f.name : "",
     url:       typeof f.url  === "string" ? f.url  : "",
-    type:      typeof f.type === "string" ? f.type : "",
+    type,
     companies: Array.isArray(f.companies) ? f.companies.filter(c => typeof c === "string") : [],
     source:    f.source === "upload" ? "upload" : "url",
     addedAt:   typeof f.addedAt === "string" ? f.addedAt : "",
@@ -49,15 +65,15 @@ function newId() {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
 }
 
-function inferMimeFromUrl(url) {
-  const u = url.toLowerCase();
-  if (u.endsWith(".png"))  return "image/png";
-  if (u.endsWith(".jpg") || u.endsWith(".jpeg")) return "image/jpeg";
-  if (u.endsWith(".webp")) return "image/webp";
-  if (u.endsWith(".gif"))  return "image/gif";
-  if (u.endsWith(".svg"))  return "image/svg+xml";
-  if (u.endsWith(".ico"))  return "image/x-icon";
-  return "";
+/* Try to extract the last path segment from a URL (or raw filename). Used
+ * for type inference when the user adds by URL. */
+function lastPathSegment(urlOrName) {
+  try {
+    const u = new URL(urlOrName, "https://placeholder.example");
+    return u.pathname.split("/").filter(Boolean).pop() || urlOrName;
+  } catch {
+    return urlOrName;
+  }
 }
 
 function deriveNameFromUrl(url) {
@@ -254,7 +270,7 @@ function AddFileSection({ onAdd }) {
     onAdd({
       url,
       name:   deriveNameFromUrl(url),
-      type:   inferMimeFromUrl(url),
+      type:   inferTypeFromFilename(lastPathSegment(url)),
       source: "url",
     });
     setUrlValue("");
@@ -271,11 +287,11 @@ function AddFileSection({ onAdd }) {
       }} className="files-add-grid">
         {/* Upload */}
         <UploadDropzone
-          onUploaded={({ url, filename, type }) => {
+          onUploaded={({ url, filename }) => {
             onAdd({
               url,
               name:   filename.replace(/\.[^.]+$/, ""),
-              type:   type || inferMimeFromUrl(url),
+              type:   inferTypeFromFilename(filename),
               source: "upload",
             });
           }}
@@ -433,7 +449,11 @@ function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false })
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   Section 2 — File grid
+   Section 2 — File list (rows)
+
+   Matches the "As Seen In" Logos pattern from BioTab — compact one-row-per-file
+   with thumbnail, name, type, URL, companies (only when type === "logo"),
+   and copy/delete actions.
 ═══════════════════════════════════════════════════════════════════════════ */
 function FileGrid({ files, onUpdate, onDelete }) {
   return (
@@ -449,13 +469,9 @@ function FileGrid({ files, onUpdate, onDelete }) {
           No files yet. Upload one or paste a URL above to get started.
         </div>
       ) : (
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-          gap: "0.85rem",
-        }} className="files-grid">
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem" }}>
           {files.map(file => (
-            <FileCard
+            <FileRow
               key={file.id}
               file={file}
               onUpdate={(field, value) => onUpdate(file.id, field, value)}
@@ -468,25 +484,27 @@ function FileGrid({ files, onUpdate, onDelete }) {
   );
 }
 
-function FileCard({ file, onUpdate, onDelete }) {
+function FileRow({ file, onUpdate, onDelete }) {
   const [nameDraft,      setNameDraft]      = useState(file.name);
+  const [urlDraft,       setUrlDraft]       = useState(file.url);
   const [companiesDraft, setCompaniesDraft] = useState((file.companies || []).join(", "));
   const [copied,         setCopied]         = useState(false);
 
   // Reset drafts when underlying file changes (e.g., after save/load)
   useEffect(() => { setNameDraft(file.name); }, [file.name]);
+  useEffect(() => { setUrlDraft(file.url); }, [file.url]);
   useEffect(() => { setCompaniesDraft((file.companies || []).join(", ")); }, [file.companies]);
 
   function commitName() {
     const v = nameDraft.trim();
     if (v !== file.name) onUpdate("name", v || "Untitled");
   }
+  function commitUrl() {
+    const v = urlDraft.trim();
+    if (v !== file.url) onUpdate("url", v);
+  }
   function commitCompanies() {
-    const next = companiesDraft
-      .split(",")
-      .map(c => c.trim())
-      .filter(Boolean);
-    // Dedupe (case-insensitive)
+    const next = companiesDraft.split(",").map(c => c.trim()).filter(Boolean);
     const seen = new Set();
     const deduped = next.filter(c => {
       const k = c.toLowerCase();
@@ -502,7 +520,6 @@ function FileCard({ file, onUpdate, onDelete }) {
 
   async function copyUrl() {
     try {
-      // Build absolute URL for relative paths so the copied value is usable everywhere
       const absolute = /^https?:\/\//i.test(file.url)
         ? file.url
         : (typeof window !== "undefined" ? window.location.origin + file.url : file.url);
@@ -510,7 +527,6 @@ function FileCard({ file, onUpdate, onDelete }) {
       setCopied(true);
       setTimeout(() => setCopied(false), 1400);
     } catch {
-      // Fallback for older browsers / non-HTTPS contexts
       const ta = document.createElement("textarea");
       ta.value = file.url;
       document.body.appendChild(ta);
@@ -522,102 +538,96 @@ function FileCard({ file, onUpdate, onDelete }) {
     }
   }
 
+  const isLogo = file.type === "logo";
+
   return (
-    <div style={{
-      background: "#fff", border: `1px solid ${LINE}`,
-      display: "flex", flexDirection: "column",
-    }}>
+    <div
+      style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}
+      className="file-row"
+    >
       {/* Thumbnail */}
       <div style={{
-        height: 140, background: "#F4F5F7",
+        width: 64, height: 40, flexShrink: 0,
+        background: "#F4F5F7", border: `1px solid ${LINE}`,
         display: "flex", alignItems: "center", justifyContent: "center",
-        borderBottom: `1px solid ${LINE}`, overflow: "hidden", padding: "0.6rem",
+        overflow: "hidden",
       }}>
         {file.url ? (
           <img
             src={file.url}
-            alt={file.name}
-            style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}
+            alt={file.name || "preview"}
+            style={{ maxWidth: 58, maxHeight: 34, objectFit: "contain", display: "block" }}
             onError={e => { e.currentTarget.style.opacity = "0.25"; }}
           />
         ) : (
-          <span style={{ fontSize: "0.78rem", color: INK_60 }}>no preview</span>
+          <span style={{ fontSize: "0.62rem", color: INK_60 }}>no url</span>
         )}
       </div>
 
-      {/* Source badge + actions */}
-      <div style={{
-        display: "flex", alignItems: "center", gap: "0.4rem",
-        padding: "0.45rem 0.7rem", borderBottom: `1px solid ${LINE}`,
-        background: "#FAFAFB",
-      }}>
-        <span style={{
-          fontSize: "0.62rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase",
-          background: file.source === "upload" ? "#0A0A0A" : "#E5E7EB",
-          color: file.source === "upload" ? NEON : INK_60,
-          padding: "0.15em 0.45em",
-        }}>
-          {file.source === "upload" ? "Uploaded" : "URL"}
-        </span>
-        <div style={{ flex: 1 }} />
-        <button
-          type="button"
-          onClick={copyUrl}
-          title="Copy URL"
-          style={{ ...iconBtnStyle(false), width: "auto", padding: "0 0.55rem", fontSize: "0.72rem", fontWeight: 700 }}
-        >
-          {copied ? "✓ Copied" : "Copy URL"}
-        </button>
-        <button
-          type="button"
-          onClick={onDelete}
-          title="Delete from library"
-          style={{ ...iconBtnStyle(false), color: "#c44" }}
-        >
-          ×
-        </button>
-      </div>
+      {/* Name */}
+      <input
+        type="text"
+        value={nameDraft}
+        onChange={e => setNameDraft(e.target.value)}
+        onBlur={commitName}
+        onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); e.currentTarget.blur(); } }}
+        placeholder="Name"
+        style={{ ...inputStyle, marginTop: 0, width: 180, flexShrink: 0 }}
+      />
 
-      {/* Editable fields */}
-      <div style={{ padding: "0.7rem 0.7rem 0.85rem", display: "flex", flexDirection: "column", gap: "0.55rem" }}>
-        <label style={{ display: "block", fontSize: "0.7rem", color: INK_60, fontWeight: 600 }}>
-          Name
-          <input
-            type="text"
-            value={nameDraft}
-            onChange={e => setNameDraft(e.target.value)}
-            onBlur={commitName}
-            onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); e.currentTarget.blur(); } }}
-            placeholder="Logo name"
-            style={{ ...inputStyle, marginTop: "0.2rem", padding: "0.4rem 0.55rem", fontSize: "0.85rem" }}
-          />
-        </label>
+      {/* Type */}
+      <select
+        value={file.type}
+        onChange={e => onUpdate("type", e.target.value)}
+        style={{ ...inputStyle, marginTop: 0, width: 110, flexShrink: 0, cursor: "pointer" }}
+      >
+        {TYPE_OPTIONS.map(t => (
+          <option key={t} value={t}>{t}</option>
+        ))}
+      </select>
 
-        <label style={{ display: "block", fontSize: "0.7rem", color: INK_60, fontWeight: 600 }}>
-          Companies <span style={{ fontWeight: 400 }}>(comma-separated)</span>
-          <input
-            type="text"
-            value={companiesDraft}
-            onChange={e => setCompaniesDraft(e.target.value)}
-            onBlur={commitCompanies}
-            onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); e.currentTarget.blur(); } }}
-            placeholder="Anthropic, OpenAI"
-            style={{ ...inputStyle, marginTop: "0.2rem", padding: "0.4rem 0.55rem", fontSize: "0.85rem" }}
-          />
-        </label>
+      {/* URL */}
+      <input
+        type="text"
+        value={urlDraft}
+        onChange={e => setUrlDraft(e.target.value)}
+        onBlur={commitUrl}
+        onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); e.currentTarget.blur(); } }}
+        placeholder="https://… or /library/…"
+        style={{ ...inputStyle, marginTop: 0, flex: 1, minWidth: 200 }}
+      />
 
-        {file.companies && file.companies.length > 0 && (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.3rem" }}>
-            {file.companies.map(c => (
-              <span key={c} style={{
-                background: "#F4F5F7", border: `1px solid ${LINE}`,
-                fontSize: "0.7rem", color: INK, padding: "0.15rem 0.45rem",
-                fontFamily: FONT,
-              }}>{c}</span>
-            ))}
-          </div>
-        )}
-      </div>
+      {/* Company (only when type === "logo") */}
+      {isLogo && (
+        <input
+          type="text"
+          value={companiesDraft}
+          onChange={e => setCompaniesDraft(e.target.value)}
+          onBlur={commitCompanies}
+          onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); e.currentTarget.blur(); } }}
+          placeholder="Company (e.g. Anthropic)"
+          style={{ ...inputStyle, marginTop: 0, width: 180, flexShrink: 0 }}
+          title="Comma-separated for multiple companies"
+        />
+      )}
+
+      {/* Actions */}
+      <button
+        type="button"
+        onClick={copyUrl}
+        title="Copy URL"
+        style={{ ...iconBtnStyle(false), width: "auto", padding: "0 0.55rem", fontSize: "0.72rem", fontWeight: 700 }}
+      >
+        {copied ? "✓" : "Copy"}
+      </button>
+      <button
+        type="button"
+        onClick={onDelete}
+        title="Remove from library"
+        style={{ ...iconBtnStyle(false), color: "#c44" }}
+      >
+        ×
+      </button>
     </div>
   );
 }
@@ -626,11 +636,11 @@ function FileCard({ file, onUpdate, onDelete }) {
    Section 3 — Favicons
 ═══════════════════════════════════════════════════════════════════════════ */
 function FaviconSection({ favicons, files, onSelect, onAdd }) {
-  // Eligible favicon files: filter to icon-friendly mime types, but always
-  // include the currently-selected URL even if it isn't in the library
+  // Eligible favicon files: any entry whose `type` is favicon, icon, or logo.
+  // Always include the currently-selected URL even if it isn't in the library
   // (so the user can see what's set without surprises).
   const eligible = useMemo(() => {
-    return files.filter(f => !f.type || FAVICON_MIME_TYPES.includes(f.type));
+    return files.filter(f => FAVICON_PICKER_TYPES.includes(f.type));
   }, [files]);
 
   return (
@@ -667,11 +677,12 @@ function FaviconSection({ favicons, files, onSelect, onAdd }) {
         <UploadDropzone
           compact
           accept="image/png,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,image/webp"
-          onUploaded={({ url, filename, type }) => {
+          onUploaded={({ url, filename }) => {
             onAdd({
               url,
               name:   filename.replace(/\.[^.]+$/, ""),
-              type:   type || inferMimeFromUrl(url),
+              // Uploading from the favicon section → default the type to "favicon"
+              type:   "favicon",
               source: "upload",
             });
           }}
@@ -765,7 +776,7 @@ function FaviconRow({ envKey, label, hint, current, eligible, onSelect }) {
           <option value="">— None —</option>
           {eligible.map(f => (
             <option key={f.id} value={f.url}>
-              {f.name}{f.type ? ` (${f.type.replace("image/", "")})` : ""}
+              {f.name}{f.type ? ` (${f.type})` : ""}
             </option>
           ))}
           <option disabled style={{ color: "#aaa" }}>──────────</option>
