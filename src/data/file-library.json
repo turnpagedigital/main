@@ -2,6 +2,17 @@
   "_comment": "File library — centralised store for images, logos, and favicons used across the site. Managed via /admin/files. Files live in public/library/ (uploaded) or as external URLs. favicons map { production, preview, admin } → URL from this library or a static path under /. Schema: { files: [{ id, name, url, type, companies, source, addedAt }], favicons: { production, preview, admin } }.",
   "files": [
     {
+      "id": "mpnerg21-z8e58",
+      "name": "logo_bloomberg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bloomberg_logo.svg",
+      "type": "image/svg+xml",
+      "companies": [
+        "Bloomberg"
+      ],
+      "source": "url",
+      "addedAt": "2026-05-27T01:51:25.705Z"
+    },
+    {
       "id": "mpneqvjo-ch4sf",
       "name": "logo_bbc",
       "url": "https://logos-world.net/wp-content/uploads/2022/01/BBC-Logo-700x394.png",
