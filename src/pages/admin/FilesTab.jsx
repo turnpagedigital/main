@@ -20,17 +20,19 @@ const FAVICON_ROWS = [
   { key: "admin",      label: "Admin favicon",         hint: "/admin pages (any environment)" },
 ];
 
-const TYPE_OPTIONS = ["image", "logo", "favicon", "icon"];
+const TYPE_OPTIONS = ["image", "logo", "favicon", "icon", "document"];
 const FAVICON_PICKER_TYPES = ["favicon", "icon", "logo"]; // types eligible for the favicon dropdowns
 
-const UPLOAD_ACCEPT = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon";
+const UPLOAD_ACCEPT     = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,application/pdf";
+const UPLOAD_ACCEPT_ALL = UPLOAD_ACCEPT;
 
 /* Infer a sensible default `type` (category) for a new entry. Filename or URL
- * containing "favicon" → favicon. Otherwise default to "image". Users can change
- * this in the dropdown after adding. */
+ * containing "favicon" → favicon, ".pdf" → document, otherwise default to "image".
+ * Users can change this in the dropdown after adding. */
 function inferTypeFromFilename(filename) {
   if (!filename) return "image";
   const f = filename.toLowerCase();
+  if (f.endsWith(".pdf")) return "document";
   if (f.includes("favicon") || f.endsWith(".ico")) return "favicon";
   return "image";
 }
@@ -433,7 +435,7 @@ function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false, l
         style={{ fontSize: "0.85rem", fontFamily: FONT }}
       />
       <p style={{ fontSize: "0.72rem", color: INK_60, margin: 0 }}>
-        PNG, JPEG, WebP, GIF, SVG, or ICO. Max 5 MB. File is committed to <code>public/library/</code>.
+        PNG, JPEG, WebP, GIF, SVG, ICO, or PDF. Max 5 MB. File is committed to <code>public/library/</code>.
       </p>
       {phase === "uploading" && (
         <p style={{ color: INK_60, fontSize: "0.78rem", margin: 0 }}>Uploading…</p>
@@ -588,7 +590,7 @@ function FileRow({ file, onUpdate, onDelete }) {
       style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}
       className="file-row"
     >
-      {/* Thumbnail */}
+      {/* Thumbnail (image preview for images/logos/favicons, a badge for video/pdf) */}
       <div style={{
         width: 64, height: 40, flexShrink: 0,
         background: "#F4F5F7", border: `1px solid ${LINE}`,
@@ -596,12 +598,24 @@ function FileRow({ file, onUpdate, onDelete }) {
         overflow: "hidden",
       }}>
         {file.url ? (
-          <img
-            src={file.url}
-            alt={file.name || "preview"}
-            style={{ maxWidth: 58, maxHeight: 34, objectFit: "contain", display: "block" }}
-            onError={e => { e.currentTarget.style.opacity = "0.25"; }}
-          />
+          file.type === "document" || /\.pdf($|\?)/i.test(file.url) ? (
+            <span style={{
+              fontSize: "0.62rem", fontWeight: 800, letterSpacing: "0.04em",
+              color: INK_60, textTransform: "uppercase",
+            }}>PDF</span>
+          ) : /\.(mp4|webm|mov)($|\?)/i.test(file.url) ? (
+            <span style={{
+              fontSize: "0.62rem", fontWeight: 800, letterSpacing: "0.04em",
+              color: INK_60, textTransform: "uppercase",
+            }}>VIDEO</span>
+          ) : (
+            <img
+              src={file.url}
+              alt={file.name || "preview"}
+              style={{ maxWidth: 58, maxHeight: 34, objectFit: "contain", display: "block" }}
+              onError={e => { e.currentTarget.style.opacity = "0.25"; }}
+            />
+          )
         ) : (
           <span style={{ fontSize: "0.62rem", color: INK_60 }}>no url</span>
         )}

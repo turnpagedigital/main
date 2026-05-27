@@ -14,7 +14,7 @@ import { getFileSha, commitBinaryToGitHub } from "./_github.js";
    user can predict the URL from the filename.
 */
 
-const MAX_B64 = 7 * 1024 * 1024;   // ~5 MB raw — favicons/logos shouldn't be huge
+const MAX_B64 = 7 * 1024 * 1024;   // ~5 MB raw — favicons/logos/PDFs shouldn't be huge
 
 const ALLOWED_EXT = {
   "image/png":     "png",
@@ -25,7 +25,13 @@ const ALLOWED_EXT = {
   "image/svg+xml": "svg",
   "image/x-icon":  "ico",
   "image/vnd.microsoft.icon": "ico",
+  "application/pdf": "pdf",
 };
+
+// Extensions allowed for `Replace` operations on existing library files.
+// (Used by the Files tab to swap one file for another of the same kind.)
+// eslint-disable-next-line no-unused-vars
+const REPLACE_EXTS = ["png", "jpg", "jpeg", "webp", "gif", "svg", "ico", "pdf"];
 
 export async function onRequestPost({ request, env }) {
   if (!(await isAuthed(request, env))) {
