@@ -1,20 +1,41 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { GLOBAL_CSS } from "./data/css.js";
+import { FONT, DARK, TEXT } from "./data/tokens.js";
 import { useHashRoute } from "./lib/router.js";
 import { I18nProvider } from "./lib/i18n.js";
 import AppHeader from "./components/AppHeader.jsx";
 import Footer from "./components/Footer.jsx";
-import Home from "./pages/Home.jsx";
-import AICopyright from "./pages/AICopyright.jsx";
-import Crypto from "./pages/Crypto.jsx";
-import Briefings from "./pages/Briefings.jsx";
-import Briefing from "./pages/Briefing.jsx";
-import Contact from "./pages/Contact.jsx";
-import Legal from "./pages/Legal.jsx";
-import NotFound from "./pages/NotFound.jsx";
-import Admin from "./pages/Admin.jsx";
-import Press from "./pages/Press.jsx";
-import LitigationFinance from "./pages/LitigationFinance.jsx";
+
+// Page components are lazy-loaded so each route becomes its own chunk.
+// Only downloaded when the user first navigates to that page.
+const Home             = React.lazy(() => import("./pages/Home.jsx"));
+const AICopyright      = React.lazy(() => import("./pages/AICopyright.jsx"));
+const Crypto           = React.lazy(() => import("./pages/Crypto.jsx"));
+const Briefings        = React.lazy(() => import("./pages/Briefings.jsx"));
+const Briefing         = React.lazy(() => import("./pages/Briefing.jsx"));
+const Contact          = React.lazy(() => import("./pages/Contact.jsx"));
+const Legal            = React.lazy(() => import("./pages/Legal.jsx"));
+const NotFound         = React.lazy(() => import("./pages/NotFound.jsx"));
+const Admin            = React.lazy(() => import("./pages/Admin.jsx"));
+const Press            = React.lazy(() => import("./pages/Press.jsx"));
+const LitigationFinance = React.lazy(() => import("./pages/LitigationFinance.jsx"));
+
+function LoadingFallback() {
+  return (
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      minHeight: "60vh",
+      fontFamily: FONT,
+      fontSize: "0.9rem",
+      color: TEXT,
+      background: DARK,
+    }}>
+      Loading…
+    </div>
+  );
+}
 
 const TITLES = {
   "home": "Turnpage Digital Markets — The OTC Desk for Rights Holders",
@@ -51,13 +72,14 @@ export default function App() {
     document.title = t;
   }, [route.page]);
 
-  const Page = renderPage(route);
   const standalone = STANDALONE_PAGES.has(route.page);
 
   return (
     <I18nProvider>
       {!standalone && <AppHeader currentPage={route.page} />}
-      <main>{Page}</main>
+      <Suspense fallback={<LoadingFallback />}>
+        <main>{renderPage(route)}</main>
+      </Suspense>
       {!standalone && <Footer />}
     </I18nProvider>
   );

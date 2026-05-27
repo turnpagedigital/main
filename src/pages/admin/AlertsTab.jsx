@@ -294,6 +294,21 @@ function AlertsSectionInner({ alerts, onChangeAlerts, onSave, dirty, isSaving, e
                 />
               </label>
 
+              {/* Link validation warning */}
+              {((alert.href && !alert.linkText) || (alert.linkText && !alert.href)) && (
+                <div style={{
+                  gridColumn: "1 / -1",
+                  fontSize: "0.75rem",
+                  color: "rgba(184, 134, 11, 0.75)",
+                  fontWeight: 500,
+                  padding: "0.5rem 0.7rem",
+                  background: "rgba(184, 134, 11, 0.08)",
+                  borderLeft: `2px solid rgba(184, 134, 11, 0.4)`,
+                }}>
+                ⚠ Both link URL and link text are needed for the CTA to appear.
+                </div>
+              )}
+
               {/* Pages */}
               <div style={{ gridColumn: "1 / -1" }}>
                 <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.4rem" }}>
