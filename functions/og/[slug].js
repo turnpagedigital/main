@@ -44,15 +44,16 @@ const PAGES = {
   },
 };
 
-/* HTML escape — workers-og parses our template as HTML, so untrusted strings
- * (in practice, our own copy, but be defensive) need escaping. */
+/* HTML escape — workers-og parses our template as HTML, so we need to escape
+ * characters that would break the surrounding tag structure (`<`, `>`, `&`).
+ * Do NOT escape apostrophes or quotes — Satori does not decode HTML entities
+ * in text content, so &#39; would render literally as "&#39;" in the image.
+ * Content is hardcoded in this file so there is no XSS risk from text. */
 function esc(s) {
   return String(s)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+    .replace(/>/g, "&gt;");
 }
 
 /* Build the HTML template that workers-og (Satori) will rasterize.

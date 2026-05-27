@@ -17,7 +17,7 @@ const DEFAULT_OG_SLUG = "home";
 
 /* Bump this to bust crawler caches (LinkedIn, X, Slack) after design changes.
  * Appended to the OG image URL as ?v=N. */
-const OG_VERSION = 1;
+const OG_VERSION = 2;
 
 /* Per-path metadata. Keys are exact pathnames. The `og` field is a slug that
  * must exist in functions/og/[slug].js's PAGES registry. Paths not listed here
