@@ -9,9 +9,7 @@ import FAQsTab   from "./admin/FAQsTab.jsx";
 import AlertsTab from "./admin/AlertsTab.jsx";
 import RoutesTab from "./admin/RoutesTab.jsx";
 import AssetsTab      from "./admin/AssetsTab.jsx";
-import PagesTab       from "./admin/PagesTab.jsx";
-import NavigationTab    from "./admin/NavigationTab.jsx";
-import FooterTab        from "./admin/FooterTab.jsx";
+import SiteStructureTab from "./admin/SiteStructureTab.jsx";
 import HomeContentTab      from "./admin/HomeContentTab.jsx";
 import MarketingPagesTab   from "./admin/MarketingPagesTab.jsx";
 
@@ -23,7 +21,7 @@ import MarketingPagesTab   from "./admin/MarketingPagesTab.jsx";
    driven by src/data/file-library.json. The favicon picker lives in the
    Pages tab here. */
 
-const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "routes", "assets", "pages", "navigation", "footer", "home-content", "marketing-pages"];
+const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "routes", "assets", "site-structure", "home-content", "marketing-pages"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "bio";
@@ -109,9 +107,7 @@ export default function Admin() {
     { key: "faqs",   label: "FAQs",   dirty: dirtyTabs.faqs   ?? false },
     { key: "routes",    label: "Routes",    dirty: dirtyTabs.routes    ?? false },
     { key: "assets",     label: "Assets",     dirty: dirtyTabs.assets     ?? false },
-    { key: "pages",      label: "Pages",      dirty: dirtyTabs.pages      ?? false },
-    { key: "navigation",    label: "Navigation",    dirty: dirtyTabs.navigation    ?? false },
-    { key: "footer",        label: "Footer",        dirty: dirtyTabs.footer        ?? false },
+    { key: "site-structure", label: "Site Structure", dirty: dirtyTabs["site-structure"] ?? false },
     { key: "home-content",     label: "Home Content",     dirty: dirtyTabs["home-content"]     ?? false },
     { key: "marketing-pages",  label: "Marketing Pages",  dirty: dirtyTabs["marketing-pages"]  ?? false },
   ];
@@ -182,9 +178,7 @@ export default function Admin() {
       {tab === "faqs"   && <FAQsTab   onDirtyChange={makeDirtyCallback("faqs")} />}
       {tab === "routes"    && <RoutesTab    onDirtyChange={makeDirtyCallback("routes")} />}
       {tab === "assets"     && <AssetsTab      onDirtyChange={makeDirtyCallback("assets")} />}
-      {tab === "pages"      && <PagesTab       onDirtyChange={makeDirtyCallback("pages")} />}
-      {tab === "navigation"   && <NavigationTab   onDirtyChange={makeDirtyCallback("navigation")} />}
-      {tab === "footer"       && <FooterTab       onDirtyChange={makeDirtyCallback("footer")} />}
+      {tab === "site-structure" && <SiteStructureTab onDirtyChange={makeDirtyCallback("site-structure")} />}
       {tab === "home-content"    && <HomeContentTab    onDirtyChange={makeDirtyCallback("home-content")} />}
       {tab === "marketing-pages" && <MarketingPagesTab onDirtyChange={makeDirtyCallback("marketing-pages")} />}
     </div>
