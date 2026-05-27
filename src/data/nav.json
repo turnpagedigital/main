@@ -4,118 +4,232 @@
       "id": "ai-copyright",
       "label": "Copyright Claims",
       "href": "/ai-copyright",
-      "labelKey": "nav.copyright",
       "active": true,
+      "labelKey": "nav.copyright",
       "dropdown": {
         "title": "Copyright Claims",
-        "body": "Capital and advisory for rights holders with claims against generative AI companies — Bartz, the OpenAI MDL, Concord, Getty.",
+        "body": "Capital and advisory for rights holders with claims against generative AI companies.",
         "links": [
-          { "label": "Who we help",   "href": "/ai-copyright#who-we-help" },
-          { "label": "Briefings",     "href": "/briefings" },
-          { "label": "Related media", "href": "/press?topic=copyright" }
+          {
+            "label": "Who we help",
+            "href": "/ai-copyright#who-we-help"
+          },
+          {
+            "label": "Briefings",
+            "href": "/briefings"
+          },
+          {
+            "label": "Related media",
+            "href": "/press?topic=copyright"
+          }
         ],
-        "cta": { "label": "Talk to a Partner", "href": "/contact?source=ai-copyright" }
+        "cta": {
+          "label": "Talk to a Partner",
+          "href": "/contact?source=ai-copyright"
+        }
       }
     },
     {
       "id": "crypto",
       "label": "Locked Crypto",
       "href": "/crypto",
-      "labelKey": "nav.crypto",
       "active": true,
+      "labelKey": "nav.crypto",
       "dropdown": {
         "title": "Locked Crypto",
         "body": "Liquidity for locked digital assets — FTX, Celsius, BlockFi, Voyager, Genesis, Mt. Gox. Quoted in fiat, closed in days.",
         "links": [
-          { "label": "Who we help",  "href": "/crypto#who-we-help" },
-          { "label": "How it works", "href": "/crypto#how-crypto" },
-          { "label": "Related media", "href": "/press?topic=crypto" }
+          {
+            "label": "Who we help",
+            "href": "/crypto#who-we-help"
+          },
+          {
+            "label": "How it works",
+            "href": "/crypto#how-crypto"
+          },
+          {
+            "label": "Related media",
+            "href": "/press?topic=crypto"
+          }
         ],
-        "cta": { "label": "Get a Quote", "href": "/contact?source=crypto" }
+        "cta": {
+          "label": "Get a Quote",
+          "href": "/contact?source=crypto"
+        }
       }
     },
     {
       "id": "litigation-finance",
       "label": "Litigation Finance",
       "href": "/litigation-finance",
-      "labelKey": "nav.litigation",
       "active": true,
+      "labelKey": "nav.litigation",
       "dropdown": {
         "title": "Litigation Finance",
         "body": "Turnpage helps the best law firms pursue cases on contingency — capital deployed against the merit of the case, not the client's ability to fund it.",
         "links": [
-          { "label": "Who we help",  "href": "/litigation-finance#who-we-help" },
-          { "label": "What we fund", "href": "/litigation-finance#how-litfin" },
-          { "label": "How it works", "href": "/litigation-finance#how-litfin" },
-          { "label": "Related media", "href": "/press?topic=litigation" }
+          {
+            "label": "Who we help",
+            "href": "/litigation-finance#who-we-help"
+          },
+          {
+            "label": "What we fund",
+            "href": "/litigation-finance#how-litfin"
+          },
+          {
+            "label": "How it works",
+            "href": "/litigation-finance#how-litfin"
+          },
+          {
+            "label": "Related media",
+            "href": "/press?topic=litigation"
+          }
         ],
-        "cta": { "label": "Talk to a Partner", "href": "/contact?source=litigation-finance" }
+        "cta": {
+          "label": "Talk to a Partner",
+          "href": "/contact?source=litigation-finance"
+        }
       }
     },
     {
       "id": "tariff-refunds",
       "label": "Tariff Refunds",
       "href": "https://www.rewindtariffs.com",
-      "labelKey": "nav.tariff",
       "active": true,
+      "labelKey": "nav.tariff",
       "external": true,
       "dropdown": {
         "title": "Tariff Refunds",
         "body": "Liquidity for tariff refund rights and customs recoveries — a separate Turnpage property at rewindtariffs.com.",
         "links": [
-          { "label": "Active CIT cases", "href": "https://www.rewindtariffs.com/#cases",   "external": true },
-          { "label": "For brokers",      "href": "https://www.rewindtariffs.com/#brokers", "external": true },
-          { "label": "Related media",    "href": "/press?topic=tariffs" }
+          {
+            "label": "Active CIT cases",
+            "href": "https://www.rewindtariffs.com/#cases",
+            "external": true
+          },
+          {
+            "label": "For brokers",
+            "href": "https://www.rewindtariffs.com/#brokers",
+            "external": true
+          },
+          {
+            "label": "Related media",
+            "href": "/press?topic=tariffs"
+          }
         ],
-        "cta": { "label": "Visit Rewind Tariffs", "href": "https://www.rewindtariffs.com", "external": true }
+        "cta": {
+          "label": "Visit Rewind Tariffs",
+          "href": "https://www.rewindtariffs.com",
+          "external": true
+        }
       }
     },
     {
       "id": "press",
       "label": "Press & Publications",
       "href": "/press",
-      "labelKey": "nav.press",
       "active": true,
+      "labelKey": "nav.press",
       "dropdown": {
         "title": "Press & Publications",
         "body": "Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.",
         "links": [
-          { "label": "Press",        "href": "/press?type=press" },
-          { "label": "Publications", "href": "/press?type=article" },
-          { "label": "Podcasts",     "href": "/press?type=podcast" },
-          { "label": "Posts",        "href": "/press?type=social" }
+          {
+            "label": "Press",
+            "href": "/press?type=press"
+          },
+          {
+            "label": "Publications",
+            "href": "/press?type=article"
+          },
+          {
+            "label": "Podcasts",
+            "href": "/press?type=podcast"
+          },
+          {
+            "label": "Posts",
+            "href": "/press?type=social"
+          }
         ],
-        "cta": { "label": "View all", "href": "/press" }
+        "cta": {
+          "label": "View all",
+          "href": "/press"
+        }
       }
     }
   ],
   "microsites": {
     "ai-copyright": {
-      "brand": { "label": "Copyright Claims", "href": "/ai-copyright" },
+      "brand": {
+        "label": "Copyright Claims",
+        "href": "/ai-copyright"
+      },
       "items": [
-        { "label": "How We Help",          "href": "/ai-copyright#who-we-help" },
-        { "label": "Team",                 "href": "/#team" },
-        { "label": "Press & Publications", "href": "/press" }
+        {
+          "label": "How We Help",
+          "href": "/ai-copyright#who-we-help"
+        },
+        {
+          "label": "Team",
+          "href": "/#team"
+        },
+        {
+          "label": "Press & Publications",
+          "href": "/press"
+        }
       ],
-      "cta": { "label": "Get a Quote", "href": "/contact?source=ai-copyright" }
+      "cta": {
+        "label": "Get a Quote",
+        "href": "/contact?source=ai-copyright"
+      }
     },
     "crypto": {
-      "brand": { "label": "Locked Crypto", "href": "/crypto" },
+      "brand": {
+        "label": "Locked Crypto",
+        "href": "/crypto"
+      },
       "items": [
-        { "label": "How We Help",          "href": "/crypto#who-we-help" },
-        { "label": "Team",                 "href": "/#team" },
-        { "label": "Press & Publications", "href": "/press" }
+        {
+          "label": "How We Help",
+          "href": "/crypto#who-we-help"
+        },
+        {
+          "label": "Team",
+          "href": "/#team"
+        },
+        {
+          "label": "Press & Publications",
+          "href": "/press"
+        }
       ],
-      "cta": { "label": "Get a Quote", "href": "/contact?source=crypto" }
+      "cta": {
+        "label": "Get a Quote",
+        "href": "/contact?source=crypto"
+      }
     },
     "litigation-finance": {
-      "brand": { "label": "Litigation Finance", "href": "/litigation-finance" },
+      "brand": {
+        "label": "Litigation Finance",
+        "href": "/litigation-finance"
+      },
       "items": [
-        { "label": "How We Help",          "href": "/litigation-finance#who-we-help" },
-        { "label": "Team",                 "href": "/#team" },
-        { "label": "Press & Publications", "href": "/press" }
+        {
+          "label": "How We Help",
+          "href": "/litigation-finance#who-we-help"
+        },
+        {
+          "label": "Team",
+          "href": "/#team"
+        },
+        {
+          "label": "Press & Publications",
+          "href": "/press"
+        }
       ],
-      "cta": { "label": "Talk to a Partner", "href": "/contact?source=litigation-finance" }
+      "cta": {
+        "label": "Talk to a Partner",
+        "href": "/contact?source=litigation-finance"
+      }
     }
   }
 }
