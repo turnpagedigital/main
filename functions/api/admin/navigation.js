@@ -1,19 +1,23 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
-/* Read/write src/data/nav.json — the top navigation items list.
+/* Read/write src/data/nav.json — the top navigation items list, dropdown
+   previews, and sub-brand microsite navs.
 
-   GET  /api/admin/navigation  → { ok: true, data: { items: [...] }, sha }
+   GET  /api/admin/navigation  → { ok: true, data: { items: [...], microsites: {...} }, sha }
    PUT  /api/admin/navigation  → { ok: true, commitSha }
-   Body for PUT: { items: [...] }
+   Body for PUT: { items: [...], microsites?: {...} }
 
-   Each item: { id, label, href, labelKey?, active, external? }
+   Each item: { id, label, href, labelKey?, active, external?, dropdown? }
    - id: stable key (string)
    - label: display text
    - href: path or full URL
    - labelKey: optional i18n key (preserved round-trip, not edited here)
    - active: boolean — false hides without deleting
    - external: boolean — true opens in new tab with rel noopener
+   - dropdown: optional { title, body, links: [{label, href, external?}], cta: {label, href, external?} }
+
+   microsites: map of brandId -> { brand: {label, href}, items: [{label, href}], cta: {label, href} }
 */
 
 const NAV_PATH = "src/data/nav.json";
@@ -65,7 +69,13 @@ export async function onRequestPut({ request, env }) {
   const current = await getFileFromGitHub(env, NAV_PATH);
   if (!current.ok) return jsonResponse({ ok: false, error: current.error }, 502);
 
-  const sanitized = { items: body.items.map(normalizeItem) };
+  const sanitized = {
+    items: body.items.map(normalizeItem),
+  };
+  // Preserve microsites if present — basic shape check, no deep validation.
+  if (body.microsites && typeof body.microsites === "object" && !Array.isArray(body.microsites)) {
+    sanitized.microsites = normalizeMicrosites(body.microsites);
+  }
   const newContent = JSON.stringify(sanitized, null, 2) + "\n";
   const result = await commitFileToGitHub(
     env, NAV_PATH, newContent, current.sha, "Admin: update nav.json",
@@ -113,5 +123,56 @@ function normalizeItem(item) {
   }
   // Preserve external flag
   if (item.external === true) out.external = true;
+  // Preserve dropdown if present and well-shaped
+  if (item.dropdown && typeof item.dropdown === "object") {
+    out.dropdown = normalizeDropdown(item.dropdown);
+  }
+  return out;
+}
+
+function normalizeLink(link) {
+  if (!link || typeof link !== "object") return null;
+  const out = {
+    label: String(link.label || "").trim().slice(0, MAX_LABEL_LEN),
+    href:  String(link.href  || "").trim().slice(0, MAX_HREF_LEN),
+  };
+  if (link.external === true) out.external = true;
+  return out;
+}
+
+function normalizeDropdown(dd) {
+  const out = {
+    title: String(dd.title || "").trim().slice(0, MAX_LABEL_LEN),
+    body:  String(dd.body  || "").trim().slice(0, 2000),
+    links: Array.isArray(dd.links)
+      ? dd.links.map(normalizeLink).filter(Boolean)
+      : [],
+  };
+  if (dd.cta && typeof dd.cta === "object") {
+    out.cta = normalizeLink(dd.cta) || { label: "", href: "/" };
+  } else {
+    out.cta = { label: "", href: "/" };
+  }
+  return out;
+}
+
+function normalizeMicrosites(microsites) {
+  const out = {};
+  for (const [brandId, ms] of Object.entries(microsites)) {
+    if (!ms || typeof ms !== "object") continue;
+    out[String(brandId).trim().slice(0, MAX_ID_LEN)] = {
+      brand: ms.brand && typeof ms.brand === "object"
+        ? { label: String(ms.brand.label || "").trim().slice(0, MAX_LABEL_LEN),
+            href:  String(ms.brand.href  || "").trim().slice(0, MAX_HREF_LEN) }
+        : { label: "", href: "/" },
+      items: Array.isArray(ms.items)
+        ? ms.items.map(normalizeLink).filter(Boolean)
+        : [],
+      cta: ms.cta && typeof ms.cta === "object"
+        ? { label: String(ms.cta.label || "").trim().slice(0, MAX_LABEL_LEN),
+            href:  String(ms.cta.href  || "").trim().slice(0, MAX_HREF_LEN) }
+        : { label: "", href: "/" },
+    };
+  }
   return out;
 }

@@ -18,92 +18,17 @@ const NAV_ITEMS = navData.items
     _href:        i.href,
   }));
 
-const PREVIEWS = {
-  "ai-copyright": {
-    title: "Copyright Claims",
-    body: "Capital and advisory for rights holders with claims against generative AI companies — Bartz, the OpenAI MDL, Concord, Getty.",
-    links: [
-      { label: "Who we help",                 href: hashHref("ai-copyright") + "#who-we-help" },
-      { label: "Briefings",                   href: hashHref("briefings") },
-      { label: "Related media", href: hashHref("press") + "?topic=copyright" },
-    ],
-    cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=ai-copyright" },
-  },
-  "crypto": {
-    title: "Locked Crypto",
-    body: "Liquidity for locked digital assets — FTX, Celsius, BlockFi, Voyager, Genesis, Mt. Gox. Quoted in fiat, closed in days.",
-    links: [
-      { label: "Who we help",                 href: hashHref("crypto") + "#who-we-help" },
-      { label: "How it works",                href: hashHref("crypto") + "#how-crypto" },
-      { label: "Related media", href: hashHref("press") + "?topic=crypto" },
-    ],
-    cta: { label: "Get a Quote", href: hashHref("contact") + "?source=crypto" },
-  },
-  "tariff-refunds": {
-    title: "Tariff Refunds",
-    body: "Liquidity for tariff refund rights and customs recoveries — a separate Turnpage property at rewindtariffs.com.",
-    links: [
-      { label: "Active CIT cases",            href: "https://www.rewindtariffs.com/#cases", external: true },
-      { label: "For brokers",                 href: "https://www.rewindtariffs.com/#brokers", external: true },
-      { label: "Related media", href: hashHref("press") + "?topic=tariffs" },
-    ],
-    cta: { label: "Visit Rewind Tariffs", href: "https://www.rewindtariffs.com", external: true },
-  },
-  "litigation-finance": {
-    title: "Litigation Finance",
-    body: "Turnpage helps the best law firms pursue cases on contingency — capital deployed against the merit of the case, not the client's ability to fund it.",
-    links: [
-      { label: "Who we help",                 href: hashHref("litigation-finance") + "#who-we-help" },
-      { label: "What we fund",                href: hashHref("litigation-finance") + "#how-litfin" },
-      { label: "How it works",                href: hashHref("litigation-finance") + "#how-litfin" },
-      { label: "Related media", href: hashHref("press") + "?topic=litigation" },
-    ],
-    cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=litigation-finance" },
-  },
-  "press": {
-    title: "Press & Publications",
-    body: "Andrew Glantz in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal — plus articles and commentary authored by Andrew.",
-    links: [
-      { label: "Press",        href: hashHref("press") + "?type=press" },
-      { label: "Publications", href: hashHref("press") + "?type=article" },
-      { label: "Podcasts",     href: hashHref("press") + "?type=podcast" },
-      { label: "Posts",        href: hashHref("press") + "?type=social" },
-    ],
-    cta: { label: "View all", href: hashHref("press") },
-  },
-};
+// Build PREVIEWS from nav.json items that have a dropdown.
+const PREVIEWS = Object.fromEntries(
+  navData.items
+    .filter(i => i.dropdown)
+    .map(i => [i.id, i.dropdown])
+);
 
 /* ─── Microsite navs (one per sub-brand page) ───────────────────────────── */
 
-const MICROSITE_NAVS = {
-  "ai-copyright": {
-    brand:  { label: "Copyright Claims",     href: hashHref("ai-copyright") },
-    items: [
-      { label: "How We Help",         href: hashHref("ai-copyright") + "#who-we-help" },
-      { label: "Team",                href: hashHref("") + "#team" },
-      { label: "Press & Publications", href: hashHref("press") },
-    ],
-    cta: { label: "Get a Quote", href: hashHref("contact") + "?source=ai-copyright" },
-  },
-  "crypto": {
-    brand:  { label: "Locked Crypto",        href: hashHref("crypto") },
-    items: [
-      { label: "How We Help",         href: hashHref("crypto") + "#who-we-help" },
-      { label: "Team",                href: hashHref("") + "#team" },
-      { label: "Press & Publications", href: hashHref("press") },
-    ],
-    cta: { label: "Get a Quote", href: hashHref("contact") + "?source=crypto" },
-  },
-  "litigation-finance": {
-    brand:  { label: "Litigation Finance",   href: hashHref("litigation-finance") },
-    items: [
-      { label: "How We Help",         href: hashHref("litigation-finance") + "#who-we-help" },
-      { label: "Team",                href: hashHref("") + "#team" },
-      { label: "Press & Publications", href: hashHref("press") },
-    ],
-    cta: { label: "Talk to a Partner", href: hashHref("contact") + "?source=litigation-finance" },
-  },
-};
+// MICROSITE_NAVS comes from the microsites object in nav.json.
+const MICROSITE_NAVS = navData.microsites || {};
 
 /* ─── NavBar ────────────────────────────────────────────────────────────── */
 
