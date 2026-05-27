@@ -18,18 +18,23 @@ cd "/Users/waquoitcapital/Library/CloudStorage/Dropbox/Career/Current Roles/Turn
 ```
 Note: After push, changes take ~1-2 min. User may need Cmd+Shift+R to clear cache.
 
-## Site Structure (rebuilt April 2026)
+## Site Structure (rebuilt April 2026, refactored May 2026)
 
-The site is a multi-page Vite/React SPA with hash-based in-app routing (no React Router). Positioning is **TPDM as the OTC desk for rights holders**, with sub-brands per claim type. AI Copyright is the headline sub-brand; Crypto is live; Bankruptcy is "Coming Soon."
+The site is a multi-page Vite/React SPA with **HTML5 history routing** (clean paths, not hash fragments). Positioning is **TPDM as the OTC desk for rights holders**, with sub-brands per claim type. AI Copyright is the headline sub-brand; Crypto is live; Bankruptcy is "Coming Soon."
 
-### Routes (hash-based)
-- `#/` → Home (rights-holder positioning, sub-brand cards, $1B+ track record)
-- `#/ai-copyright` → AI Copyright sub-brand (deep page, Top 12 cases)
-- `#/crypto` → Crypto Claims sub-brand (placeholder copy — replace with turnpage-crypto content)
-- `#/briefings` → Briefings library (blog index)
-- `#/briefings/SLUG` → Single briefing
-- `#/contact` → Contact / intake form (reads `?source=ai-copyright` from hash to attribute leads)
-- `#/privacy`, `#/terms` → Legal pages
+### Routes (history mode — clean paths)
+- `/` → Home
+- `/ai-copyright` → AI Copyright sub-brand
+- `/crypto` → Locked Crypto sub-brand
+- `/litigation-finance` → Litigation Finance sub-brand
+- `/press` → Press & insights
+- `/briefings` → Briefings library
+- `/briefings/SLUG` → Single briefing
+- `/contact` → Contact form (reads `?source=ai-copyright` from query string)
+- `/legal` → Legal pages (Privacy/Terms)
+- `/admin` and `/admin/<tab>` → Admin panel
+
+Legacy `/#/path` URLs are auto-redirected to `/path` via a shim in `src/main.jsx` (runs before React mounts). Don't reintroduce hash routing.
 
 ### File layout
 ```
@@ -119,19 +124,68 @@ index.html                 — Vite entry, meta + OG tags
 - `GITHUB_REPO` — `turnpagedigital/main`
 - `GITHUB_BRANCH` — `dev` on the dev environment, `main` on production
 
-## Admin Panel (`/#/admin`)
-The admin panel manages the deal cards shown on the home + crypto pages. Single source of truth is `src/data/deals.json` in this repo. Two ways to edit:
-1. **Chat with Claude** — Claude edits `deals.json` directly and pushes via git.
-2. **Admin UI at `/#/admin`** — user logs in with `ADMIN_PASSWORD`, edits via a form, clicks Save. The Cloudflare Pages Function (`functions/api/admin/deals.js`) commits the new JSON via the GitHub Contents API.
+## Admin Panel (`/admin`)
 
-Both paths write to the same JSON file. Git enforces ordering — the latest commit wins. There is no parallel database.
+Admin panel manages nearly all editable content on the site. Single source of truth: JSON files under `src/data/`. Two ways to edit:
+1. **Chat with Claude** — Claude edits the relevant JSON file and pushes via git.
+2. **Admin UI at `/admin`** — user logs in with `ADMIN_PASSWORD`, edits via per-tab forms. Cloudflare Pages Functions commit the new JSON via the GitHub Contents API.
 
-**Schema-change rule:** when changing the shape of a deal (adding/removing/renaming fields), update *all three* in the same commit:
-1. `src/data/deals.json` — the data itself
-2. `src/components/DealCard.jsx` — the public-facing render
-3. `src/pages/Admin.jsx` — the `FIELD_DEFS` array and `DEAL_FIELDS` list (also mirrored in `functions/api/admin/deals.js`)
+Both paths write to the same files. Git enforces ordering — latest commit wins. There is no parallel database.
 
-The admin panel does NOT auto-generate forms from the JSON — the form fields are explicitly listed in `FIELD_DEFS`. This is intentional (so we can add per-field help text, validators, etc.) but it means a schema change is a 3-file change.
+### Admin tabs (12 total)
+
+| Tab URL | Manages | Data file | Endpoint |
+|---|---|---|---|
+| `/admin/bio` | Andrew's bio, avatar, photo, "As Seen In" logos | `src/data/bio.json` | `/api/admin/bio` (+ `/avatar`, `/photo`) |
+| `/admin/posts` | Briefings index + markdown files | `public/briefings/index.json` + `.md` files | `/api/admin/posts` |
+| `/admin/deals` | Deal cards (logos via AssetPicker) | `src/data/deals.json` | `/api/admin/deals` |
+| `/admin/press` | Press items (logo, thumbnail, PDF via AssetPicker) | `src/data/press.json` | `/api/admin/press` (+ `/press-media`) |
+| `/admin/alerts` | Announcement banner alerts | `src/data/alerts.json` | `/api/admin/alerts` |
+| `/admin/faqs` | Per-page FAQ items | `src/data/faqs.json` | `/api/admin/faqs` |
+| `/admin/assets` | Centralized asset library (74+) — archive, rename cascade, permanent delete cascade | `src/data/file-library.json` | `/api/admin/file-library`, `/file-upload`, `/file-delete`, `/file-rename` |
+| `/admin/pages` | Favicons (per-env), Site Metadata, Per-page Meta | `src/data/file-library.json` (favicons) + `src/data/page-meta.json` | `/api/admin/file-library`, `/page-meta` |
+| `/admin/navigation` | Top nav items | `src/data/nav.json` | `/api/admin/navigation` |
+| `/admin/footer` | Footer columns/links/copyright | `src/data/footer.json` | `/api/admin/footer` |
+| `/admin/home-content` | Home page situations + testimonials | `src/data/home-content.json` | `/api/admin/home-content` |
+| `/admin/marketing-pages` | Crypto / AI Copyright / Litigation Finance content arrays | `src/data/crypto-content.json` + `ai-copyright-content.json` + `litigation-finance-content.json` | `/api/admin/marketing-pages` |
+
+### Asset library pattern (important)
+
+All images, videos, logos, favicons, and documents on the site are tracked in **`src/data/file-library.json`** with `{ id, name, url, type, companies, source, archived, addedAt }`.
+
+When adding an asset URL field to ANY admin tab, use the shared `<AssetPicker />` component at `src/components/admin/AssetPicker.jsx`:
+
+```jsx
+import AssetPicker from "../../components/admin/AssetPicker.jsx";
+
+<AssetPicker
+  open={pickerOpen}
+  onClose={() => setPickerOpen(false)}
+  onPick={(url, entry) => { setUrl(url); setPickerOpen(false); }}
+  defaultType="logo"
+  defaultCompany={item.who || item.outlet}
+  acceptTypes={["logo", "image"]}
+/>
+```
+
+The picker auto-syncs new uploads/URLs back into the library. Archive entries are hidden from the picker by default.
+
+### Schema-change rules
+
+When changing the shape of a JSON data file (adding/removing/renaming fields), update *all three* in the same commit:
+1. The JSON file itself
+2. The component(s) that render it
+3. The admin tab's `sanitize*` function (also mirrored on the server in the relevant `functions/api/admin/*.js`)
+
+Admin tabs do NOT auto-generate forms from JSON. Fields are explicitly listed in each tab's render code. This is intentional (per-field help text, validators) but means a schema change touches multiple files.
+
+### Shared admin helpers
+
+- `functions/api/admin/_github.js` — `getFileFromGitHub`, `commitFileToGitHub`, `commitBinaryToGitHub`, `getFileSha`, `listRepoTree`, `findUrlReferences`, `deleteFileFromGitHub`
+- `functions/api/admin/_utils.js` — `isAuthed`, `jsonResponse`, `constantTimeEqual`, session cookie helpers
+- `src/pages/admin/shared.jsx` — `inputStyle`, `btnStyle`, `btnPrimaryStyle`, `iconBtnStyle`, `formatTime`, `CenteredMessage`, `LoginForm`
+
+Never duplicate these — always import from the shared modules.
 
 ## Design Tokens
 - Neon green: #D4FF00

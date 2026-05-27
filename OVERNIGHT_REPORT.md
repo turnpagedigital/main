@@ -49,14 +49,77 @@
 
 ## Issues encountered
 
-_None yet._
+_None encountered. All 5 phases completed cleanly, every build passed, every push to preview succeeded._
+
+## Final state — what's now in admin
+
+**Twelve admin tabs**, in this order:
+
+| # | Tab | What it manages |
+|---|---|---|
+| 1 | Bio | Andrew's bio, avatar, photo, "As Seen In" logos (uses AssetPicker) |
+| 2 | Posts | Briefings — list + full editor (now with hero_image AssetPicker) |
+| 3 | Deals | Deal cards — each with up to 3 logo slots (uses AssetPicker) |
+| 4 | Press | Press items — logo, thumbnail, NEW `pdf_url` for paywalled-article links (AssetPicker for each) |
+| 5 | Alerts | Announcement banner alerts |
+| 6 | FAQs | Per-page FAQ items |
+| 7 | Assets | Centralized library (74+ assets) — type filter, archive, rename cascade, permanent delete cascade |
+| 8 | Pages | Favicons (per-environment) + Site Metadata (defaults) + Per-page Meta (title/description/OG slug) |
+| 9 | Navigation | Top nav items — add/remove/reorder/rename/toggle active |
+| 10 | Footer | Footer columns + links + tagline + copyright |
+| 11 | Home Content | Home page situations (6) + testimonials (3) |
+| 12 | Marketing Pages | Crypto, AI Copyright, Litigation Finance content (audience cards, services, comparisons, damages data, etc.) |
+
+## What's no longer hardcoded in source
+
+| Source file (before) | Now lives in |
+|---|---|
+| `NavBar.jsx` hardcoded nav items | `src/data/nav.json` |
+| `Footer.jsx` hardcoded columns/links/copyright | `src/data/footer.json` |
+| `_middleware.js` `PAGE_META`/`DEFAULT_TITLE`/`SITE_NAME` | `src/data/page-meta.json` |
+| `Home.jsx` `SITUATIONS`/`TESTIMONIALS` arrays | `src/data/home-content.json` |
+| `Crypto.jsx` content arrays | `src/data/crypto-content.json` |
+| `AICopyright.jsx` content arrays | `src/data/ai-copyright-content.json` |
+| `LitigationFinance.jsx` content arrays | `src/data/litigation-finance-content.json` |
+| `bio.json` base64-embedded logos | Real files in `public/library/bio/` |
+| Files tab favicon picker | Moved to Pages tab |
 
 ## How to test in the morning
 
-1. Go to Cloudflare dashboard → Workers & Pages → tpdm-aah → Deployments
-2. Find newest deployment for branch `claude/heuristic-hugle-c98d9f`
-3. Open in incognito → log into `/admin`
-4. Click through each admin tab — confirm AssetPicker appears where expected
+1. **Get preview URL**: Cloudflare dashboard → Workers & Pages → `tpdm-aah` → Deployments → newest for branch `claude/heuristic-hugle-c98d9f` → copy preview URL.
+2. **Hard-refresh** in your normal browser, or **open in incognito** to avoid cached state.
+3. **Spot-check public site**:
+   - Home page — situations + testimonials should look the same as before
+   - Crypto / AI Copyright / Litigation Finance pages — should look identical
+   - Press page — logos still render; any item with a `pdf_url` set shows "Read full PDF →" link
+   - Nav + Footer — should look identical
+4. **Log into admin** at `<preview-url>/admin`:
+   - Click through each of the 12 tabs — all should load with their data
+   - Open the AssetPicker from Bio/Deals/Press/Posts (any field with a "Pick" button) — search, type filter, company filter should all work
+   - Archive an asset in the Assets tab → confirm it's hidden from the picker → restore it
+   - Try permanent-deleting an asset that has references → see the cascade-warning UX → don't actually delete unless you want to
+   - Edit a nav label → save → confirm public site reflects the change
+   - Edit a footer link → save → confirm change
+   - Edit a per-page meta title → save → view-source on that page to confirm `<title>` tag updates
+
+## Promotion to production
+
+If everything looks good on preview, promote to `dev`:
+
+```bash
+git push origin claude/heuristic-hugle-c98d9f:dev
+```
+
+This pushes the same commit chain to `dev` which auto-deploys to `turnpagedigital.com`.
+
+If you want to do a more careful rollout, push commits one at a time:
+```bash
+# Push just Phase 1
+git push origin 327f444:dev
+# Then Phase 2 after verifying
+git push origin 4714214:dev
+# etc.
+```
 
 ## Rollback if needed
 
@@ -64,3 +127,29 @@ _None yet._
 # To restore the pre-overnight state on dev:
 git push origin backup/assets-system-2026-05-27:dev --force-with-lease
 ```
+
+The backup tag is on origin so it's safe even if your local machine has issues.
+
+## What I did NOT do (still on deck)
+
+- **JSON-LD Organization + Person schema** — needs your LinkedIn URL + bio blurb
+- **Bulk actions on Assets tab** — multi-select archive/delete (not urgent)
+- **Consolidate per-tab AssetField helpers** — each admin tab built its own `AssetField` inline; could be one shared component (cleanup, no user-facing change)
+- **Page activation toggle** — soft-publish/unpublish pages (no clear use case yet)
+- **Create new pages from admin** — would need new infrastructure
+- **Cloudflare dashboard changes** — anything that needs the dashboard
+
+## Total work shipped
+
+- **6 new admin tabs** (Assets, Pages expanded, Navigation, Footer, Home Content, Marketing Pages)
+- **Asset library with 74+ entries** managed across the site
+- **7 new JSON data files** replacing hardcoded content
+- **9 new API endpoints** for admin CRUD
+- **AssetPicker component** integrated into 4 existing tabs
+- **Archive feature** with restore
+- **Rename cascade + permanent delete cascade** for assets
+- **PDF document support** for press items
+- **renderPage() refactor** in App.jsx
+- **bio.json shrank 85%** (base64 logos extracted to files)
+
+All on preview branch `claude/heuristic-hugle-c98d9f`. None of it touched production yet.
