@@ -1,33 +1,34 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { CenteredMessage, LoginForm, btnStyle } from "./admin/shared.jsx";
-import BioTab    from "./admin/BioTab.jsx";
-import DealsTab  from "./admin/DealsTab.jsx";
-import PressTab  from "./admin/PressTab.jsx";
-import PostsTab  from "./admin/PostsTab.jsx";
-import FAQsTab   from "./admin/FAQsTab.jsx";
-import AlertsTab from "./admin/AlertsTab.jsx";
-import RoutesTab from "./admin/RoutesTab.jsx";
-import AssetsTab      from "./admin/AssetsTab.jsx";
-import SiteStructureTab from "./admin/SiteStructureTab.jsx";
-import HomeContentTab      from "./admin/HomeContentTab.jsx";
-import MarketingPagesTab   from "./admin/MarketingPagesTab.jsx";
+import SharedContentTab  from "./admin/SharedContentTab.jsx";
+import ContentPagesTab   from "./admin/ContentPagesTab.jsx";
+import RoutesTab         from "./admin/RoutesTab.jsx";
+import AssetsTab         from "./admin/AssetsTab.jsx";
+import SiteStructureTab  from "./admin/SiteStructureTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
    Tab state syncs to the URL path: /admin/<tab>.
 
+   Master tabs (5):
+     Content        — dropdown sub-nav → Bio, Posts, Deals, Press, Alerts, FAQs
+     Pages          — sub-tab strip → Home, Crypto, AI Copyright, Litigation Finance, Contact Us
+     Routes         — route URL editor with cascade detection
+     Assets         — file library management
+     Site Structure — favicons, metadata, navigation, footer
+
    NOTE: The favicon for /admin is set in src/main.jsx before React mounts,
    driven by src/data/file-library.json. The favicon picker lives in the
-   Pages tab here. */
+   Site Structure tab. */
 
-const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "routes", "assets", "site-structure", "home-content", "marketing-pages"];
+const VALID_TABS = ["content", "pages", "routes", "assets", "site-structure"];
 
 function getTabFromPath() {
-  if (typeof window === "undefined") return "bio";
+  if (typeof window === "undefined") return "content";
   const m = window.location.pathname.match(/^\/admin(?:\/([a-z][a-z0-9-]*))?/);
-  if (!m || !m[1]) return "bio";
-  return VALID_TABS.includes(m[1]) ? m[1] : "bio";
+  if (!m || !m[1]) return "content";
+  return VALID_TABS.includes(m[1]) ? m[1] : "content";
 }
 
 export default function Admin() {
@@ -99,17 +100,11 @@ export default function Admin() {
   if (phase === "login")    return <LoginForm onSubmit={handleLogin} error={errorMsg} />;
 
   const TAB_DEFS = [
-    { key: "bio",    label: "Bio",    dirty: dirtyTabs.bio    ?? false },
-    { key: "posts",  label: "Posts",  dirty: dirtyTabs.posts  ?? false },
-    { key: "deals",  label: "Deals",  dirty: dirtyTabs.deals  ?? false },
-    { key: "press",  label: "Press",  dirty: dirtyTabs.press  ?? false },
-    { key: "alerts", label: "Alerts", dirty: dirtyTabs.alerts ?? false },
-    { key: "faqs",   label: "FAQs",   dirty: dirtyTabs.faqs   ?? false },
-    { key: "routes",    label: "Routes",    dirty: dirtyTabs.routes    ?? false },
-    { key: "assets",     label: "Assets",     dirty: dirtyTabs.assets     ?? false },
-    { key: "site-structure", label: "Site Structure", dirty: dirtyTabs["site-structure"] ?? false },
-    { key: "home-content",     label: "Home Content",     dirty: dirtyTabs["home-content"]     ?? false },
-    { key: "marketing-pages",  label: "Marketing Pages",  dirty: dirtyTabs["marketing-pages"]  ?? false },
+    { key: "content",        label: "Content",        dirty: dirtyTabs.content        ?? false },
+    { key: "pages",          label: "Pages",          dirty: dirtyTabs.pages          ?? false },
+    { key: "routes",         label: "Routes",         dirty: dirtyTabs.routes         ?? false },
+    { key: "assets",         label: "Assets",         dirty: dirtyTabs.assets         ?? false },
+    { key: "site-structure", label: "Site Structure",  dirty: dirtyTabs["site-structure"] ?? false },
   ];
 
   return (
@@ -170,17 +165,11 @@ export default function Admin() {
       </div>
 
       {/* ── Tab panels ────────────────────────────────────────────── */}
-      {tab === "bio"    && <BioTab    onDirtyChange={makeDirtyCallback("bio")} />}
-      {tab === "posts"  && <PostsTab  onDirtyChange={makeDirtyCallback("posts")} />}
-      {tab === "deals"  && <DealsTab  onDirtyChange={makeDirtyCallback("deals")} />}
-      {tab === "press"  && <PressTab  onDirtyChange={makeDirtyCallback("press")} />}
-      {tab === "alerts" && <AlertsTab onDirtyChange={makeDirtyCallback("alerts")} />}
-      {tab === "faqs"   && <FAQsTab   onDirtyChange={makeDirtyCallback("faqs")} />}
-      {tab === "routes"    && <RoutesTab    onDirtyChange={makeDirtyCallback("routes")} />}
-      {tab === "assets"     && <AssetsTab      onDirtyChange={makeDirtyCallback("assets")} />}
-      {tab === "site-structure" && <SiteStructureTab onDirtyChange={makeDirtyCallback("site-structure")} />}
-      {tab === "home-content"    && <HomeContentTab    onDirtyChange={makeDirtyCallback("home-content")} />}
-      {tab === "marketing-pages" && <MarketingPagesTab onDirtyChange={makeDirtyCallback("marketing-pages")} />}
+      {tab === "content"        && <SharedContentTab  onDirtyChange={makeDirtyCallback("content")} />}
+      {tab === "pages"          && <ContentPagesTab   onDirtyChange={makeDirtyCallback("pages")} />}
+      {tab === "routes"         && <RoutesTab         onDirtyChange={makeDirtyCallback("routes")} />}
+      {tab === "assets"         && <AssetsTab         onDirtyChange={makeDirtyCallback("assets")} />}
+      {tab === "site-structure" && <SiteStructureTab  onDirtyChange={makeDirtyCallback("site-structure")} />}
     </div>
   );
 }

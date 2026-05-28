@@ -88,13 +88,13 @@ function normalize(data) {
    Main component
 ══════════════════════════════════════════════════════════════════════════ */
 
-export default function MarketingPagesTab({ onDirtyChange }) {
+export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
   const [data,     setData]     = useState(null);
   const [original, setOriginal] = useState(null);
   const [phase,    setPhase]    = useState("loading");
   const [error,    setError]    = useState("");
   const [lastSavedAt, setLastSavedAt] = useState(null);
-  const [activePage, setActivePage] = useState("crypto");
+  const [activePage, setActivePage] = useState(controlledPage || "crypto");
 
   const dirty = useMemo(() => {
     if (!data || !original) return false;
@@ -103,6 +103,11 @@ export default function MarketingPagesTab({ onDirtyChange }) {
 
   useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
   useEffect(() => { load(); }, []);
+
+  // Sync activePage when controlled externally
+  useEffect(() => {
+    if (controlledPage) setActivePage(controlledPage);
+  }, [controlledPage]);
 
   async function load() {
     setPhase("loading"); setError("");
@@ -288,35 +293,37 @@ export default function MarketingPagesTab({ onDirtyChange }) {
         </div>
       )}
 
-      {/* Inner page tab strip */}
-      <div style={{
-        display: "flex", gap: 0, borderBottom: `1px solid ${LINE}`,
-        marginBottom: "2rem",
-      }}>
-        {PAGE_TABS.map(({ key, label }) => {
-          const active = activePage === key;
-          return (
-            <button
-              key={key}
-              onClick={() => setActivePage(key)}
-              style={{
-                fontFamily: FONT, fontSize: "0.88rem",
-                fontWeight: active ? 700 : 500,
-                color: active ? INK : INK_60,
-                background: "transparent", border: "none",
-                borderBottom: active ? `2px solid ${INK}` : "2px solid transparent",
-                padding: "0.6rem 1.2rem 0.6rem 0",
-                marginRight: "1.4rem",
-                cursor: "pointer",
-                marginBottom: "-1px",
-                transition: "color 0.15s",
-              }}
-            >
-              {label}
-            </button>
-          );
-        })}
-      </div>
+      {/* Inner page tab strip — hidden when controlled externally */}
+      {!controlledPage && (
+        <div style={{
+          display: "flex", gap: 0, borderBottom: `1px solid ${LINE}`,
+          marginBottom: "2rem",
+        }}>
+          {PAGE_TABS.map(({ key, label }) => {
+            const active = activePage === key;
+            return (
+              <button
+                key={key}
+                onClick={() => setActivePage(key)}
+                style={{
+                  fontFamily: FONT, fontSize: "0.88rem",
+                  fontWeight: active ? 700 : 500,
+                  color: active ? INK : INK_60,
+                  background: "transparent", border: "none",
+                  borderBottom: active ? `2px solid ${INK}` : "2px solid transparent",
+                  padding: "0.6rem 1.2rem 0.6rem 0",
+                  marginRight: "1.4rem",
+                  cursor: "pointer",
+                  marginBottom: "-1px",
+                  transition: "color 0.15s",
+                }}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       {/* Page sections */}
       {activePage === "crypto" && (

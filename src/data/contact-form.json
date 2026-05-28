@@ -1,0 +1,28 @@
+{
+  "_comment": "Contact form configuration. Managed via /admin/pages/contact. Fields define the form layout; subjects populate the dropdown.",
+  "heading": "Get in Touch",
+  "accentText": "your claim.",
+  "subtitle": "48-hour response. Confidentiality default.",
+  "sidebarHeading": "Let’s talk.",
+  "sidebarIntro": "Every inquiry is read by a partner. NDA available on request.",
+  "email": "info@turnpagedigital.com",
+  "phone": "+1 646 860 0068",
+  "disclaimer": "All submissions are confidential and not legal, tax, or investment advice. Sending us a message does not create a client relationship.",
+  "subjects": [
+    { "id": "ai-copyright", "label": "AI Copyright Inquiry", "active": true },
+    { "id": "crypto", "label": "Crypto Claims Inquiry", "active": true },
+    { "id": "quote", "label": "Request a Quote", "active": true },
+    { "id": "general", "label": "General Claims Inquiry", "active": true },
+    { "id": "partnership", "label": "Partnership", "active": true },
+    { "id": "other", "label": "Other", "active": true }
+  ],
+  "fields": [
+    { "name": "firstName", "label": "First name", "type": "text", "required": true, "halfWidth": true },
+    { "name": "lastName", "label": "Last name", "type": "text", "required": true, "halfWidth": true },
+    { "name": "email", "label": "Email", "type": "email", "required": true, "halfWidth": false },
+    { "name": "phone", "label": "Phone", "type": "tel", "required": false, "halfWidth": true },
+    { "name": "telegram", "label": "Telegram", "type": "text", "required": false, "halfWidth": true, "placeholder": "@username" },
+    { "name": "whatsapp", "label": "WhatsApp", "type": "tel", "required": false, "halfWidth": true, "placeholder": "+1 234 567 8900" },
+    { "name": "message", "label": "Message", "type": "textarea", "required": true, "halfWidth": false, "placeholder": "Tell us about your situation. What type of claim, against whom, what stage.", "rows": 5 }
+  ]
+}
