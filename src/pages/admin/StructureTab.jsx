@@ -1,41 +1,43 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
-import BioTab    from "./BioTab.jsx";
-import PostsTab  from "./PostsTab.jsx";
-import DealsTab  from "./DealsTab.jsx";
-import PressTab  from "./PressTab.jsx";
-import AlertsTab from "./AlertsTab.jsx";
-import FAQsTab   from "./FAQsTab.jsx";
+import StructureMetaTab from "./StructureMetaTab.jsx";
+import StructureNavTab  from "./StructureNavTab.jsx";
+import StructureFooterTab from "./StructureFooterTab.jsx";
+import RoutesTab        from "./RoutesTab.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   SharedContentTab — master wrapper for Bio, Posts, Deals, Press, Alerts,
-   FAQs. Provides a horizontal sub-tab strip; each child keeps its own
-   fetch/save.
+   StructureTab — master wrapper for site-level settings.
 
-   URL pattern: /admin/content         → defaults to "bio"
-                /admin/content/posts   → Posts sub-tab
-                /admin/content/faqs    → FAQs sub-tab
+   Shows a horizontal sub-tab strip: Metadata | Navigation | Footer | Routes
 
-   Reports combined dirty state (any child dirty → parent dirty).
+   - "metadata"   → Favicons, Site Metadata, Per-page Meta
+   - "navigation"  → Nav items, Microsite navs
+   - "footer"      → Footer columns, Footer bottom bar
+   - "routes"      → Route URL editor with cascade detection
+
+   Each child manages its own fetch/save/dirty lifecycle.
+   URL pattern: /admin/structure            → defaults to "metadata"
+                /admin/structure/navigation → Navigation sub-tab
+                /admin/structure/routes     → Routes sub-tab
+
+   Reports combined dirty state to Admin.jsx.
 ═══════════════════════════════════════════════════════════════════════════ */
 
 const SUB_TABS = [
-  { key: "bio",    label: "Bio" },
-  { key: "posts",  label: "Posts" },
-  { key: "deals",  label: "Deals" },
-  { key: "press",  label: "Press" },
-  { key: "alerts", label: "Alerts" },
-  { key: "faqs",   label: "FAQs" },
+  { key: "metadata",   label: "Metadata" },
+  { key: "navigation", label: "Navigation" },
+  { key: "footer",     label: "Footer" },
+  { key: "routes",     label: "Routes" },
 ];
 
 function getSubTab() {
-  if (typeof window === "undefined") return "bio";
-  const m = window.location.pathname.match(/^\/admin\/content(?:\/([a-z][a-z0-9-]*))?/);
-  if (!m || !m[1]) return "bio";
-  return SUB_TABS.some(t => t.key === m[1]) ? m[1] : "bio";
+  if (typeof window === "undefined") return "metadata";
+  const m = window.location.pathname.match(/^\/admin\/structure(?:\/([a-z][a-z0-9-]*))?/);
+  if (!m || !m[1]) return "metadata";
+  return SUB_TABS.some(t => t.key === m[1]) ? m[1] : "metadata";
 }
 
-export default function SharedContentTab({ onDirtyChange }) {
+export default function StructureTab({ onDirtyChange }) {
   const [sub, setSub] = useState(getSubTab);
   const [dirtyFlags, setDirtyFlags] = useState({});
 
@@ -46,7 +48,7 @@ export default function SharedContentTab({ onDirtyChange }) {
   }, []);
 
   function selectSub(key) {
-    const next = `/admin/content/${key}`;
+    const next = `/admin/structure/${key}`;
     if (window.location.pathname !== next) {
       window.history.pushState(null, "", next);
       window.dispatchEvent(new PopStateEvent("popstate"));
@@ -106,12 +108,10 @@ export default function SharedContentTab({ onDirtyChange }) {
       </div>
 
       {/* Render the active child */}
-      {sub === "bio"    && <BioTab    onDirtyChange={makeDirty("bio")} />}
-      {sub === "posts"  && <PostsTab  onDirtyChange={makeDirty("posts")} />}
-      {sub === "deals"  && <DealsTab  onDirtyChange={makeDirty("deals")} />}
-      {sub === "press"  && <PressTab  onDirtyChange={makeDirty("press")} />}
-      {sub === "alerts" && <AlertsTab onDirtyChange={makeDirty("alerts")} />}
-      {sub === "faqs"   && <FAQsTab   onDirtyChange={makeDirty("faqs")} />}
+      {sub === "metadata"   && <StructureMetaTab   onDirtyChange={makeDirty("metadata")} />}
+      {sub === "navigation" && <StructureNavTab     onDirtyChange={makeDirty("navigation")} />}
+      {sub === "footer"     && <StructureFooterTab  onDirtyChange={makeDirty("footer")} />}
+      {sub === "routes"     && <RoutesTab           onDirtyChange={makeDirty("routes")} />}
     </div>
   );
 }

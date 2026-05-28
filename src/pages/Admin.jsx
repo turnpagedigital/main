@@ -3,26 +3,24 @@ import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { CenteredMessage, LoginForm, btnStyle } from "./admin/shared.jsx";
 import SharedContentTab  from "./admin/SharedContentTab.jsx";
 import ContentPagesTab   from "./admin/ContentPagesTab.jsx";
-import RoutesTab         from "./admin/RoutesTab.jsx";
 import AssetsTab         from "./admin/AssetsTab.jsx";
-import SiteStructureTab  from "./admin/SiteStructureTab.jsx";
+import StructureTab      from "./admin/StructureTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
    Tab state syncs to the URL path: /admin/<tab>.
 
-   Master tabs (5):
-     Content        — dropdown sub-nav → Bio, Posts, Deals, Press, Alerts, FAQs
-     Pages          — sub-tab strip → Home, Crypto, AI Copyright, Litigation Finance, Contact Us
-     Routes         — route URL editor with cascade detection
-     Assets         — file library management
-     Site Structure — favicons, metadata, navigation, footer
+   Master tabs (4):
+     Content   — sub-tab strip → Bio, Posts, Deals, Press, Alerts, FAQs
+     Pages     — sub-tab strip → Home, Crypto, AI Copyright, Litigation Finance, Contact Us
+     Assets    — file library management
+     Structure — sub-tab strip → Metadata, Navigation, Footer, Routes
 
    NOTE: The favicon for /admin is set in src/main.jsx before React mounts,
    driven by src/data/file-library.json. The favicon picker lives in the
-   Site Structure tab. */
+   Structure → Metadata sub-tab. */
 
-const VALID_TABS = ["content", "pages", "routes", "assets", "site-structure"];
+const VALID_TABS = ["content", "pages", "assets", "structure"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "content";
@@ -100,11 +98,10 @@ export default function Admin() {
   if (phase === "login")    return <LoginForm onSubmit={handleLogin} error={errorMsg} />;
 
   const TAB_DEFS = [
-    { key: "content",        label: "Content",        dirty: dirtyTabs.content        ?? false },
-    { key: "pages",          label: "Pages",          dirty: dirtyTabs.pages          ?? false },
-    { key: "routes",         label: "Routes",         dirty: dirtyTabs.routes         ?? false },
-    { key: "assets",         label: "Assets",         dirty: dirtyTabs.assets         ?? false },
-    { key: "site-structure", label: "Site Structure",  dirty: dirtyTabs["site-structure"] ?? false },
+    { key: "content",   label: "Content",   dirty: dirtyTabs.content   ?? false },
+    { key: "pages",     label: "Pages",     dirty: dirtyTabs.pages     ?? false },
+    { key: "assets",    label: "Assets",    dirty: dirtyTabs.assets    ?? false },
+    { key: "structure", label: "Structure", dirty: dirtyTabs.structure ?? false },
   ];
 
   return (
@@ -165,11 +162,10 @@ export default function Admin() {
       </div>
 
       {/* ── Tab panels ────────────────────────────────────────────── */}
-      {tab === "content"        && <SharedContentTab  onDirtyChange={makeDirtyCallback("content")} />}
-      {tab === "pages"          && <ContentPagesTab   onDirtyChange={makeDirtyCallback("pages")} />}
-      {tab === "routes"         && <RoutesTab         onDirtyChange={makeDirtyCallback("routes")} />}
-      {tab === "assets"         && <AssetsTab         onDirtyChange={makeDirtyCallback("assets")} />}
-      {tab === "site-structure" && <SiteStructureTab  onDirtyChange={makeDirtyCallback("site-structure")} />}
+      {tab === "content"   && <SharedContentTab  onDirtyChange={makeDirtyCallback("content")} />}
+      {tab === "pages"     && <ContentPagesTab   onDirtyChange={makeDirtyCallback("pages")} />}
+      {tab === "assets"    && <AssetsTab         onDirtyChange={makeDirtyCallback("assets")} />}
+      {tab === "structure" && <StructureTab      onDirtyChange={makeDirtyCallback("structure")} />}
     </div>
   );
 }

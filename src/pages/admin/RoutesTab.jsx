@@ -356,7 +356,7 @@ export default function RoutesTab({ onDirtyChange }) {
   }
 
   return (
-    <div>
+    <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
       <div style={{ marginBottom: "2rem" }}>
         <h2 style={{ marginTop: 0, marginBottom: "0.5rem", fontFamily: FONT }}>Routes</h2>
         <p style={{ color: INK_60, marginBottom: "1.5rem", fontFamily: FONT, fontSize: "0.9rem" }}>
