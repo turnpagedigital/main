@@ -25,7 +25,7 @@ const VALID_TABS = ["bio", "posts", "deals", "press", "alerts", "faqs", "routes"
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "bio";
-  const m = window.location.pathname.match(/^\/admin(?:\/([a-z]+))?/);
+  const m = window.location.pathname.match(/^\/admin(?:\/([a-z][a-z0-9-]*))?/);
   if (!m || !m[1]) return "bio";
   return VALID_TABS.includes(m[1]) ? m[1] : "bio";
 }
