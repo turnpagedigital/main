@@ -270,11 +270,11 @@ export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
         transition: "border-color 0.15s",
       }}>
         <div style={{ fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.01em" }}>
-          Marketing Pages
+          {PAGE_TABS.find(t => t.key === activePage)?.label ?? "Marketing Pages"}
         </div>
         <div style={{ flex: 1, fontSize: "0.85rem", color: dirty ? "#7a5c00" : INK_60, fontWeight: dirty ? 700 : 400 }}>
           {isSaving && "Saving…"}
-          {!isSaving && dirty && "Unsaved changes — click Save to commit all three files"}
+          {!isSaving && dirty && "Unsaved changes — click Save to commit"}
           {!isSaving && !dirty && lastSavedAt && `Saved ${formatTime(lastSavedAt)}`}
           {!isSaving && !dirty && !lastSavedAt && "Up to date"}
         </div>
