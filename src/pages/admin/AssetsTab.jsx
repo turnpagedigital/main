@@ -702,9 +702,10 @@ function FileRow({ file, onUpdate, onDelete, onArchive }) {
   const [delConfirming, setDelConfirming] = useState(false);
   // isExternal: external URL (https://…) — we can't delete from repo, only from library
   const isExternal = /^https?:\/\//i.test(file.url);
-  // Map the public URL ("/library/foo.png") → repo path ("public/library/foo.png").
-  // We only support delete for /library/* — anything else is "library-only" delete.
-  const repoPath = file.url.startsWith("/library/")
+  // Map the public URL ("/library/foo.png", "/logo.png") → repo path
+  // ("public/library/foo.png", "public/logo.png"). Any file under public/ that
+  // appears in the library can be permanently deleted.
+  const repoPath = !isExternal && file.url.startsWith("/")
     ? "public" + file.url.split("?")[0].split("#")[0]
     : "";
 
@@ -1194,7 +1195,7 @@ function DeleteConfirmPanel({
             <p style={{ margin: "0 0 0.5rem", color: INK_60 }}>
               {isExternal
                 ? "This is an external URL — the file isn't stored in the repo."
-                : `This file lives outside /library/ and can't be deleted from here.`}
+                : "This file's URL can't be mapped to a repo path."}
               {" "}Only Archive is available.
             </p>
           )}

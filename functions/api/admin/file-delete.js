@@ -34,13 +34,11 @@ import {
      (string fields → "", array entries → removed), then proceeds with
      the GitHub file delete. The same CASCADE_FILES list as file-rename.js.
 
-   This endpoint ONLY allows deletion of files under public/library/* — system
-   files in public/ (favicons, hero videos, etc. dropped in directly by the
-   build) are off-limits to prevent accidental loss of assets that aren't
-   actually catalog-managed.
+   Any file under public/ that appears in the asset library (file-library.json)
+   can be permanently deleted. Path traversal is blocked by the ".." check.
 */
 
-const REPO_PREFIX = "public/library/";
+const REPO_PREFIX = "public/";
 
 // Files whose contents we scan + rewrite for the cascade. Must stay in sync
 // with CASCADE_FILES in file-rename.js.
