@@ -6,9 +6,11 @@ import SectionHeader from "../components/SectionHeader.jsx";
 import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
+import TestimonialsBlock from "../components/TestimonialsBlock.jsx";
 import dealsData from "../data/deals.json";
 import faqsData from "../data/faqs.json";
 import aiCopyrightContent from "../data/ai-copyright-content.json";
+import testimonialsData from "../data/testimonials.json";
 
 /* DAMAGES_DATA and MAX_B derived from JSON — no inline data. */
 const DAMAGES_DATA = aiCopyrightContent.damagesData;
@@ -18,6 +20,10 @@ const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pa
 
 const FAQS = (faqsData.faqs || []).filter(
   f => f.active !== false && Array.isArray(f.pages) && f.pages.includes("ai-copyright")
+);
+
+const TESTIMONIALS = (testimonialsData.testimonials || []).filter(
+  t => t.active !== false && Array.isArray(t.tags) && t.tags.includes("ai-copyright")
 );
 
 export default function AICopyright() {
@@ -176,6 +182,8 @@ export default function AICopyright() {
           `}</style>
         </div>
       </section>
+
+      <TestimonialsBlock testimonials={TESTIMONIALS} />
 
       <BottomCTA
         eyebrow="AI Copyright Desk"

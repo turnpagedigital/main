@@ -3,14 +3,16 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   HomeContentTab — manage home page situations (6) and testimonials (3).
+   HomeContentTab — manage home page situations (6).
 
    Fetches from GET /api/admin/home-content (reads src/data/home-content.json
    via GitHub), saves via PUT /api/admin/home-content. Auth is handled server-side.
 
    UI sections:
      1. Situations — reorderable rows with no, title, body, details
-     2. Testimonials — reorderable rows with quote, by
+
+   Testimonials are now managed separately under Content → Testimonials
+   (src/data/testimonials.json via /api/admin/testimonials).
 
    Self-contained — owns its own fetch/save lifecycle.
    Reports dirty state via onDirtyChange?.(dirty).
@@ -23,14 +25,6 @@ function emptySituation() {
     title:   "",
     body:    "",
     details: "",
-  };
-}
-
-function emptyTestimonial() {
-  return {
-    id:    `test-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-    quote: "",
-    by:    "",
   };
 }
 
@@ -133,41 +127,6 @@ export default function HomeContentTab({ onDirtyChange }) {
     setData(prev => ({ ...prev, situations: [...prev.situations, emptySituation()] }));
   }
 
-  // ── testimonial helpers ───────────────────────────────────────────────────
-
-  function updateTestimonial(ti, patch) {
-    setData(prev => ({
-      ...prev,
-      testimonials: prev.testimonials.map((t, i) => i === ti ? { ...t, ...patch } : t),
-    }));
-  }
-
-  function moveTestimonialUp(ti) {
-    if (ti === 0) return;
-    setData(prev => {
-      const next = [...prev.testimonials];
-      [next[ti - 1], next[ti]] = [next[ti], next[ti - 1]];
-      return { ...prev, testimonials: next };
-    });
-  }
-
-  function moveTestimonialDown(ti) {
-    setData(prev => {
-      if (ti >= prev.testimonials.length - 1) return prev;
-      const next = [...prev.testimonials];
-      [next[ti], next[ti + 1]] = [next[ti + 1], next[ti]];
-      return { ...prev, testimonials: next };
-    });
-  }
-
-  function removeTestimonial(ti) {
-    setData(prev => ({ ...prev, testimonials: prev.testimonials.filter((_, i) => i !== ti) }));
-  }
-
-  function addTestimonial() {
-    setData(prev => ({ ...prev, testimonials: [...prev.testimonials, emptyTestimonial()] }));
-  }
-
   return (
     <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
 
@@ -207,8 +166,18 @@ export default function HomeContentTab({ onDirtyChange }) {
       )}
 
       <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "2rem" }}>
-        Manage the situations and testimonials shown on the home page. Use the arrows to reorder. Changes deploy on Save.
+        Manage the situations shown on the home page. Use the arrows to reorder. Changes deploy on Save.
       </p>
+
+      <div style={{
+        background: "#f0f4ff", border: "1px solid #c8d8f8",
+        padding: "0.65rem 0.9rem", marginBottom: "2rem",
+        fontSize: "0.78rem", color: "#334",
+        display: "flex", alignItems: "center", gap: "0.5rem",
+      }}>
+        <span style={{ fontSize: "1rem" }}>ℹ️</span>
+        <span>Testimonials are now managed under <strong>Content → Testimonials</strong>.</span>
+      </div>
 
       {/* ── Situations ──────────────────────────────────────────────── */}
       <SectionHeader>Situations</SectionHeader>
@@ -235,41 +204,10 @@ export default function HomeContentTab({ onDirtyChange }) {
       </div>
 
       <button onClick={addSituation} style={{
-        ...btnStyle, fontSize: "0.82rem", marginBottom: "2.5rem",
+        ...btnStyle, fontSize: "0.82rem", marginBottom: "2rem",
         display: "inline-flex", alignItems: "center", gap: "0.4em",
       }}>
         + Add situation
-      </button>
-
-      {/* ── Testimonials ────────────────────────────────────────────── */}
-      <SectionHeader>Testimonials</SectionHeader>
-
-      {data.testimonials.length === 0 && (
-        <EmptyPlaceholder>No testimonials yet. Click "+ Add testimonial" to get started.</EmptyPlaceholder>
-      )}
-
-      <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "1rem" }}>
-        {data.testimonials.map((t, ti) => (
-          <TestimonialRow
-            key={t.id}
-            test={t}
-            index={ti}
-            total={data.testimonials.length}
-            onUpdate={patch => updateTestimonial(ti, patch)}
-            onMoveUp={() => moveTestimonialUp(ti)}
-            onMoveDown={() => moveTestimonialDown(ti)}
-            onRemove={() => {
-              if (window.confirm(`Remove testimonial by "${t.by || t.id}"?`)) removeTestimonial(ti);
-            }}
-          />
-        ))}
-      </div>
-
-      <button onClick={addTestimonial} style={{
-        ...btnStyle, fontSize: "0.82rem",
-        display: "inline-flex", alignItems: "center", gap: "0.4em",
-      }}>
-        + Add testimonial
       </button>
     </div>
   );
@@ -374,84 +312,6 @@ function SituationRow({ sit, index, total, onUpdate, onMoveUp, onMoveDown, onRem
           rows={3}
           style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 80 }}
         />
-      </label>
-    </div>
-  );
-}
-
-/* ── TestimonialRow ─────────────────────────────────────────────────────── */
-
-function TestimonialRow({ test, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
-  const quoteEmpty = !test.quote.trim();
-  const byEmpty    = !test.by.trim();
-
-  return (
-    <div style={{
-      border: `1px solid ${LINE}`,
-      background: "#fff",
-      padding: "1.2rem",
-    }}>
-      {/* Controls + delete */}
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
-        {/* Reorder */}
-        <div style={{ display: "flex", gap: "0.25rem", paddingTop: "0.3rem" }}>
-          <button type="button" onClick={onMoveUp} disabled={index === 0}
-            title="Move up" style={iconBtnStyle(index === 0)}>
-            &#9650;
-          </button>
-          <button type="button" onClick={onMoveDown} disabled={index === total - 1}
-            title="Move down" style={iconBtnStyle(index === total - 1)}>
-            &#9660;
-          </button>
-        </div>
-
-        {/* Attribution */}
-        <div style={{ flex: 1 }}>
-          <label style={labelStyle}>
-            Attribution ("by")
-            <input
-              type="text"
-              value={test.by}
-              onChange={e => onUpdate({ by: e.target.value })}
-              placeholder="e.g. FTX Trading Ltd. Creditor"
-              style={{
-                ...inputStyle,
-                marginTop: "0.25rem",
-                borderColor: byEmpty ? "#e08080" : undefined,
-              }}
-            />
-            {byEmpty && (
-              <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" }}>Required</p>
-            )}
-          </label>
-        </div>
-
-        {/* Delete */}
-        <button type="button" onClick={onRemove} title="Delete testimonial"
-          style={{ ...iconBtnStyle(false), color: "#c44", borderColor: "rgba(180,40,40,0.25)", fontSize: "1.1rem", marginTop: "1.6rem" }}>
-          &times;
-        </button>
-      </div>
-
-      {/* Quote textarea */}
-      <label style={{ ...labelStyle, display: "block" }}>
-        Quote
-        <textarea
-          value={test.quote}
-          onChange={e => onUpdate({ quote: e.target.value })}
-          placeholder="The testimonial text"
-          rows={4}
-          style={{
-            ...inputStyle,
-            marginTop: "0.25rem",
-            resize: "vertical",
-            minHeight: 96,
-            borderColor: quoteEmpty ? "#e08080" : undefined,
-          }}
-        />
-        {quoteEmpty && (
-          <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" }}>Required</p>
-        )}
       </label>
     </div>
   );

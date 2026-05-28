@@ -7,9 +7,11 @@ import Comparison from "../components/Comparison.jsx";
 import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
 import DealCard from "../components/DealCard.jsx";
+import TestimonialsBlock from "../components/TestimonialsBlock.jsx";
 import dealsData from "../data/deals.json";
 import faqsData from "../data/faqs.json";
 import cryptoContent from "../data/crypto-content.json";
+import testimonialsData from "../data/testimonials.json";
 
 const OLD_WAY = cryptoContent.comparison.oldWay;
 const NEW_WAY = cryptoContent.comparison.newWay;
@@ -18,6 +20,10 @@ const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pa
 
 const FAQS = (faqsData.faqs || []).filter(
   f => f.active !== false && Array.isArray(f.pages) && f.pages.includes("crypto")
+);
+
+const TESTIMONIALS = (testimonialsData.testimonials || []).filter(
+  t => t.active !== false && Array.isArray(t.tags) && t.tags.includes("crypto")
 );
 
 export default function Crypto() {
@@ -191,6 +197,8 @@ export default function Crypto() {
           `}</style>
         </div>
       </section>
+
+      <TestimonialsBlock testimonials={TESTIMONIALS} />
 
       <BottomCTA
         eyebrow="Crypto Claims Desk"

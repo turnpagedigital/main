@@ -1,0 +1,26 @@
+{
+  "_comment": "Testimonials. Each entry is shown on pages matching its tags array. Managed via /admin → Content → Testimonials.",
+  "testimonials": [
+    {
+      "id": "test-1",
+      "quote": "Andrew is always thinking about how to structure trades in the most elegant way to allocate risk among the parties. When others give up, Andrew digs in.",
+      "by": "Locked Crypto Interest Holder",
+      "tags": ["home", "crypto"],
+      "active": true
+    },
+    {
+      "id": "test-2",
+      "quote": "Andrew is extremely professional and easy to work with. His negotiating style is collaborative rather than confrontational, but he knows how to dial it up for a client when the situation demands.",
+      "by": "FTX Trading Ltd. Creditor",
+      "tags": ["home", "crypto"],
+      "active": true
+    },
+    {
+      "id": "test-3",
+      "quote": "Andrew has deep knowledge about bankruptcy and restructuring that gives his clients a major advantage in negotiations.",
+      "by": "Genesis Global Creditor",
+      "tags": ["home", "crypto"],
+      "active": true
+    }
+  ]
+}

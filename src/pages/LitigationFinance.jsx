@@ -5,11 +5,17 @@ import Hero from "../components/Hero.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
 import FAQ from "../components/FAQ.jsx";
 import BottomCTA from "../components/BottomCTA.jsx";
+import TestimonialsBlock from "../components/TestimonialsBlock.jsx";
 import litFinContent from "../data/litigation-finance-content.json";
+import testimonialsData from "../data/testimonials.json";
 
 const OLD_WAY = litFinContent.comparison.oldWay;
 const NEW_WAY = litFinContent.comparison.newWay;
 const FAQS = litFinContent.faqs;
+
+const TESTIMONIALS = (testimonialsData.testimonials || []).filter(
+  t => t.active !== false && Array.isArray(t.tags) && t.tags.includes("litigation-finance")
+);
 
 export default function LitigationFinance() {
   return (
@@ -209,6 +215,8 @@ export default function LitigationFinance() {
           `}</style>
         </div>
       </section>
+
+      <TestimonialsBlock testimonials={TESTIMONIALS} />
 
       <BottomCTA
         eyebrow="Litigation Finance"

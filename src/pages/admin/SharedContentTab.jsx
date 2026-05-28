@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
-import BioTab    from "./BioTab.jsx";
-import PostsTab  from "./PostsTab.jsx";
-import DealsTab  from "./DealsTab.jsx";
-import PressTab  from "./PressTab.jsx";
-import AlertsTab from "./AlertsTab.jsx";
-import FAQsTab   from "./FAQsTab.jsx";
+import BioTab           from "./BioTab.jsx";
+import PostsTab         from "./PostsTab.jsx";
+import DealsTab         from "./DealsTab.jsx";
+import PressTab         from "./PressTab.jsx";
+import AlertsTab        from "./AlertsTab.jsx";
+import FAQsTab          from "./FAQsTab.jsx";
+import TestimonialsTab  from "./TestimonialsTab.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SharedContentTab — master wrapper for Bio, Posts, Deals, Press, Alerts,
@@ -20,12 +21,13 @@ import FAQsTab   from "./FAQsTab.jsx";
 ═══════════════════════════════════════════════════════════════════════════ */
 
 const SUB_TABS = [
-  { key: "bio",    label: "Bio" },
-  { key: "posts",  label: "Posts" },
-  { key: "deals",  label: "Deals" },
-  { key: "press",  label: "Press" },
-  { key: "alerts", label: "Alerts" },
-  { key: "faqs",   label: "FAQs" },
+  { key: "bio",          label: "Bio" },
+  { key: "posts",        label: "Posts" },
+  { key: "deals",        label: "Deals" },
+  { key: "press",        label: "Press" },
+  { key: "alerts",       label: "Alerts" },
+  { key: "faqs",         label: "FAQs" },
+  { key: "testimonials", label: "Testimonials" },
 ];
 
 function getSubTab() {
@@ -106,12 +108,13 @@ export default function SharedContentTab({ onDirtyChange }) {
       </div>
 
       {/* Render the active child */}
-      {sub === "bio"    && <BioTab    onDirtyChange={makeDirty("bio")} />}
-      {sub === "posts"  && <PostsTab  onDirtyChange={makeDirty("posts")} />}
-      {sub === "deals"  && <DealsTab  onDirtyChange={makeDirty("deals")} />}
-      {sub === "press"  && <PressTab  onDirtyChange={makeDirty("press")} />}
-      {sub === "alerts" && <AlertsTab onDirtyChange={makeDirty("alerts")} />}
-      {sub === "faqs"   && <FAQsTab   onDirtyChange={makeDirty("faqs")} />}
+      {sub === "bio"          && <BioTab          onDirtyChange={makeDirty("bio")} />}
+      {sub === "posts"        && <PostsTab        onDirtyChange={makeDirty("posts")} />}
+      {sub === "deals"        && <DealsTab        onDirtyChange={makeDirty("deals")} />}
+      {sub === "press"        && <PressTab        onDirtyChange={makeDirty("press")} />}
+      {sub === "alerts"       && <AlertsTab       onDirtyChange={makeDirty("alerts")} />}
+      {sub === "faqs"         && <FAQsTab         onDirtyChange={makeDirty("faqs")} />}
+      {sub === "testimonials" && <TestimonialsTab onDirtyChange={makeDirty("testimonials")} />}
     </div>
   );
 }

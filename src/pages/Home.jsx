@@ -10,14 +10,18 @@ import dealsData from "../data/deals.json";
 import bioData from "../data/bio.json";
 import faqsData from "../data/faqs.json";
 import homeContent from "../data/home-content.json";
+import testimonialsData from "../data/testimonials.json";
 
 /* Content sourced from the May 2026 brand deck (TPDM_Overview).
    Home page focuses on the situations TPDM covers and the credibility of
    the team — not trade strategies.
-   SITUATIONS and TESTIMONIALS are now admin-editable via src/data/home-content.json. */
+   SITUATIONS are admin-editable via src/data/home-content.json.
+   TESTIMONIALS are admin-editable via src/data/testimonials.json (Content → Testimonials). */
 
-const SITUATIONS   = homeContent.situations   || [];
-const TESTIMONIALS = homeContent.testimonials || [];
+const SITUATIONS   = homeContent.situations || [];
+const TESTIMONIALS = (testimonialsData.testimonials || []).filter(
+  t => t.active !== false && Array.isArray(t.tags) && t.tags.includes("home")
+);
 
 const DEALS = (dealsData.deals || []).filter(d => Array.isArray(d.pages) && d.pages.includes("home"));
 
