@@ -10,28 +10,23 @@
   "disclaimer": "All submissions are confidential. Sending us a message or receiving a reply does not create any client relationship. Turnpage Digital Markets LLC is not a law firm and does not provide legal advice. ",
   "subjects": [
     {
-      "id": "ai-copyright",
-      "label": "AI Copyright Inquiry",
+      "id": "copyright",
+      "label": "I have a copyright claim related to LLM model training",
       "active": true
     },
     {
-      "id": "crypto",
-      "label": "Crypto Claims Inquiry",
-      "active": true
-    },
-    {
-      "id": "quote",
-      "label": "Request a Quote",
+      "id": "crypto ",
+      "label": "I have a claim based on a cryptocurrency loan or deposit account",
       "active": true
     },
     {
       "id": "general",
-      "label": "General Claims Inquiry",
+      "label": "I have a general question about your services",
       "active": true
     },
     {
       "id": "partnership",
-      "label": "Partnership",
+      "label": "I have a question about partnerships",
       "active": true
     },
     {
