@@ -279,7 +279,7 @@ function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMove
                       title="Move up"
                       style={iconBtnStyle(idx === 0)}
                     >
-                      &#9650;
+                      ↑
                     </button>
                     <button
                       type="button"
@@ -288,7 +288,7 @@ function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMove
                       title="Move down"
                       style={iconBtnStyle(idx === (ms?.items || []).length - 1)}
                     >
-                      &#9660;
+                      ↓
                     </button>
                   </div>
                   <input

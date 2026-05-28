@@ -494,7 +494,7 @@ function DropdownEditor({ dd, onUpdate, onUpdateLink, onAddLink, onMoveLink, onR
                   title="Move up"
                   style={iconBtnStyle(li === 0)}
                 >
-                  &#9650;
+                  ↑
                 </button>
                 <button
                   type="button"
@@ -503,7 +503,7 @@ function DropdownEditor({ dd, onUpdate, onUpdateLink, onAddLink, onMoveLink, onR
                   title="Move down"
                   style={iconBtnStyle(li === (dd.links || []).length - 1)}
                 >
-                  &#9660;
+                  ↓
                 </button>
               </div>
               <input

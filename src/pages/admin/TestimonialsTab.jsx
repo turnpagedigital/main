@@ -248,11 +248,11 @@ function TestimonialRow({ test, index, total, onUpdate, onMoveUp, onMoveDown, on
         <div style={{ display: "flex", gap: "0.25rem", paddingTop: "0.1rem" }}>
           <button type="button" onClick={onMoveUp} disabled={index === 0}
             title="Move up" style={iconBtnStyle(index === 0)}>
-            &#9650;
+            ↑
           </button>
           <button type="button" onClick={onMoveDown} disabled={index === total - 1}
             title="Move down" style={iconBtnStyle(index === total - 1)}>
-            &#9660;
+            ↓
           </button>
         </div>
 
@@ -308,28 +308,19 @@ function TestimonialRow({ test, index, total, onUpdate, onMoveUp, onMoveDown, on
       {/* ── Tags ── */}
       <div>
         <div style={{ ...labelStyle, marginBottom: "0.5rem" }}>Topics (pages this testimonial appears on)</div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem 1.5rem" }}>
           {TAG_OPTIONS.map(({ key, label }) => {
             const checked = (test.tags || []).includes(key);
             return (
-              <label
-                key={key}
-                style={{
-                  display: "inline-flex", alignItems: "center", gap: "0.35em",
-                  padding: "0.3rem 0.65rem",
-                  background: checked ? INK : "#f0f0f0",
-                  color: checked ? "#fff" : INK_60,
-                  border: `1px solid ${checked ? INK : LINE}`,
-                  fontSize: "0.78rem", fontWeight: 600,
-                  cursor: "pointer", userSelect: "none",
-                  transition: "all 0.12s",
-                }}
-              >
+              <label key={key} style={{
+                display: "flex", alignItems: "center", gap: "0.35rem",
+                cursor: "pointer", fontSize: "0.88rem", color: INK,
+              }}>
                 <input
                   type="checkbox"
                   checked={checked}
                   onChange={() => toggleTag(key)}
-                  style={{ display: "none" }}
+                  style={{ accentColor: NEON, width: 14, height: 14 }}
                 />
                 {label}
               </label>

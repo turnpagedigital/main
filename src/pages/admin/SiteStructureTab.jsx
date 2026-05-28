@@ -1282,7 +1282,7 @@ function DropdownEditor({ dd, onUpdate, onUpdateLink, onAddLink, onMoveLink, onR
                   title="Move up"
                   style={iconBtnStyle(li === 0)}
                 >
-                  &#9650;
+                  ↑
                 </button>
                 <button
                   type="button"
@@ -1291,7 +1291,7 @@ function DropdownEditor({ dd, onUpdate, onUpdateLink, onAddLink, onMoveLink, onR
                   title="Move down"
                   style={iconBtnStyle(li === (dd.links || []).length - 1)}
                 >
-                  &#9660;
+                  ↓
                 </button>
               </div>
               <input
@@ -1467,7 +1467,7 @@ function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMove
                       title="Move up"
                       style={iconBtnStyle(idx === 0)}
                     >
-                      &#9650;
+                      ↑
                     </button>
                     <button
                       type="button"
@@ -1476,7 +1476,7 @@ function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMove
                       title="Move down"
                       style={iconBtnStyle(idx === (ms?.items || []).length - 1)}
                     >
-                      &#9660;
+                      ↓
                     </button>
                   </div>
                   <input
