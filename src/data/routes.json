@@ -9,7 +9,7 @@
       "title": "Home"
     },
     {
-      "path": "/ai-copyright",
+      "path": "/copyright",
       "key": "ai-copyright",
       "component": "AICopyright",
       "dynamic": false,
