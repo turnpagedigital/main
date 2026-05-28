@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    MarketingPagesTab — manage content arrays for Crypto, AI Copyright, and
@@ -836,7 +836,7 @@ function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemo
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.75rem", marginBottom: "0.75rem" }}>
           <label style={labelStyle}>
             Type
-            <select value={item.type || "statutory"} onChange={e => onUpdate({ type: e.target.value })} style={{ ...inputStyle, marginTop: "0.25rem" }}>
+            <select value={item.type || "statutory"} onChange={e => onUpdate({ type: e.target.value })} style={{ ...selectStyle, marginTop: "0.25rem" }}>
               <option value="settled">settled</option>
               <option value="statutory">statutory</option>
               <option value="dmca">dmca</option>

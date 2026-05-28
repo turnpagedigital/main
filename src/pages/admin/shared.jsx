@@ -3,10 +3,16 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 
 // --- Styles ------------------------------------------------------------------
 
+// SVG chevron for custom <select> arrow (replaces browser-native arrow after appearance:none)
+const CHEVRON = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(10%2C10%2C10%2C0.45)'/%3E%3C/svg%3E")`;
+
 export const filterSelectStyle = {
-  padding: "0.32rem 0.6rem", border: `1px solid ${LINE}`, borderRadius: 0,
+  padding: "0.32rem 1.6rem 0.32rem 0.6rem", border: `1px solid ${LINE}`, borderRadius: 0,
   fontFamily: FONT, fontSize: "0.82rem", color: INK,
-  background: "#fff", cursor: "pointer", outline: "none",
+  background: "#fff", cursor: "pointer", outline: "none", boxShadow: "none",
+  appearance: "none", WebkitAppearance: "none",
+  backgroundImage: CHEVRON, backgroundRepeat: "no-repeat",
+  backgroundPosition: "right 0.45rem center", backgroundSize: "8px 5px",
 };
 
 export const inputStyle = {
@@ -14,6 +20,19 @@ export const inputStyle = {
   padding: "0.55rem 0.7rem", border: `1px solid ${LINE}`, borderRadius: 0,
   fontFamily: FONT, fontSize: "0.92rem", color: INK,
   background: "#fff", outline: "none", resize: "vertical", boxSizing: "border-box",
+  boxShadow: "none", appearance: "none", WebkitAppearance: "none",
+};
+
+// Use this for <select> elements — same as inputStyle but with cursor + custom chevron arrow
+export const selectStyle = {
+  display: "block", width: "100%", marginTop: "0.3rem",
+  padding: "0.55rem 1.8rem 0.55rem 0.7rem", border: `1px solid ${LINE}`, borderRadius: 0,
+  fontFamily: FONT, fontSize: "0.92rem", color: INK,
+  background: "#fff", outline: "none", boxSizing: "border-box",
+  boxShadow: "none", appearance: "none", WebkitAppearance: "none",
+  cursor: "pointer",
+  backgroundImage: CHEVRON, backgroundRepeat: "no-repeat",
+  backgroundPosition: "right 0.6rem center", backgroundSize: "8px 5px",
 };
 export const btnStyle = {
   background: "transparent", border: `1px solid ${LINE}`, color: INK,

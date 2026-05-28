@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    StructureSiteMetaTab — Site Metadata and Per-page Meta (no favicons)
@@ -365,7 +365,7 @@ function PageMetaRow({ page, index, onUpdate, onRemove }) {
           <select
             value={page.og}
             onChange={e => onUpdate({ og: e.target.value })}
-            style={{ ...inputStyle, marginTop: 0, cursor: "pointer" }}
+            style={{ ...selectStyle, marginTop: 0 }}
           >
             {OG_SLUGS.map(slug => (
               <option key={slug} value={slug}>{slug}</option>

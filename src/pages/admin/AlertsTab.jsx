@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, filterSelectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
 
 const ALERT_PAGE_VALUES = ["home", "ai-copyright", "crypto", "press", "briefings", "contact"];
 const ALERT_PAGE_LABELS = {
@@ -180,7 +180,7 @@ function AlertsSectionInner({ alerts, onChangeAlerts, onSave, dirty, isSaving, e
         <select
           value={filterActive}
           onChange={e => setFilterActive(e.target.value)}
-          style={{ ...inputStyle, padding: "0.3rem 0.55rem", fontSize: "0.82rem", marginTop: 0, minWidth: 110 }}
+          style={{ ...filterSelectStyle, minWidth: 110 }}
         >
           <option value="">All status</option>
           <option value="true">Active only</option>
@@ -189,7 +189,7 @@ function AlertsSectionInner({ alerts, onChangeAlerts, onSave, dirty, isSaving, e
         <select
           value={filterPage}
           onChange={e => setFilterPage(e.target.value)}
-          style={{ ...inputStyle, padding: "0.3rem 0.55rem", fontSize: "0.82rem", marginTop: 0, minWidth: 130 }}
+          style={{ ...filterSelectStyle, minWidth: 130 }}
         >
           <option value="">All pages</option>
           {ALERT_PAGE_VALUES.map(v => <option key={v} value={v}>{ALERT_PAGE_LABELS[v]}</option>)}

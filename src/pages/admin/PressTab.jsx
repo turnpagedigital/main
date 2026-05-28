@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage } from "./shared.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
 // Default suggestions shown in the datalist dropdowns — user can type anything else
@@ -765,7 +765,7 @@ function EditableSelect({ value, options, onChange, onAddOption, addPlaceholder 
         if (e.target.value === "__add_new__") { setAdding(true); setDraft(""); }
         else onChange(e.target.value);
       }}
-      style={{ ...inputStyle, cursor: "pointer" }}
+      style={selectStyle}
     >
       {options.map(o => (
         <option key={o} value={o}>{o.charAt(0).toUpperCase() + o.slice(1)}</option>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    AssetsTab — centralised image / logo / document / video library.
@@ -1007,7 +1007,7 @@ function FileRow({ file, onUpdate, onDelete, onArchive }) {
       <select
         value={file.type}
         onChange={e => onUpdate("type", e.target.value)}
-        style={{ ...inputStyle, marginTop: 0, width: 110, flexShrink: 0, cursor: "pointer" }}
+        style={{ ...selectStyle, marginTop: 0, width: 110, flexShrink: 0 }}
       >
         {TYPE_OPTIONS.map(t => (
           <option key={t} value={t}>{t}</option>

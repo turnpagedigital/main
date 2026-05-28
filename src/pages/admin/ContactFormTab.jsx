@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    ContactFormTab — manage the Contact Us page: heading copy, subject
@@ -269,7 +269,7 @@ function FieldRow({ field, idx, total, onUpdate, onMove, onRemove }) {
         <label style={labelSt}>
           Type
           <select value={field.type} onChange={e => onUpdate({ type: e.target.value })}
-            style={{ ...inputStyle, marginTop: "0.2rem", cursor: "pointer" }}>
+            style={{ ...selectStyle, marginTop: "0.2rem" }}>
             <option value="text">text</option>
             <option value="email">email</option>
             <option value="tel">tel</option>

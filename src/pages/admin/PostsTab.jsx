@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime } from "./shared.jsx";
 import RichEditor from "./RichEditor.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
@@ -313,7 +313,7 @@ export default function PostsTab({ onDirtyChange }) {
               <select
                 value={form.type}
                 onChange={e => setField("type", e.target.value)}
-                style={{ ...inputStyle, marginTop: "0.3rem" }}
+                style={{ ...selectStyle, marginTop: "0.3rem" }}
               >
                 {POST_TYPES.map(t => (
                   <option key={t} value={t}>{POST_TYPE_LABELS[t]}</option>
