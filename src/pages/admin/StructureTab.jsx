@@ -1,40 +1,44 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
-import StructureMetaTab from "./StructureMetaTab.jsx";
-import StructureNavTab  from "./StructureNavTab.jsx";
-import StructureFooterTab from "./StructureFooterTab.jsx";
-import RoutesTab        from "./RoutesTab.jsx";
+import StructureFaviconsTab  from "./StructureFaviconsTab.jsx";
+import StructureSiteMetaTab  from "./StructureSiteMetaTab.jsx";
+import StructureNavItemsTab  from "./StructureNavItemsTab.jsx";
+import StructureMicrositesTab from "./StructureMicrositesTab.jsx";
+import StructureFooterTab    from "./StructureFooterTab.jsx";
+import RoutesTab             from "./RoutesTab.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    StructureTab — master wrapper for site-level settings.
 
-   Shows a horizontal sub-tab strip: Metadata | Navigation | Footer | Routes
-
-   - "metadata"   → Favicons, Site Metadata, Per-page Meta
-   - "navigation"  → Nav items, Microsite navs
-   - "footer"      → Footer columns, Footer bottom bar
-   - "routes"      → Route URL editor with cascade detection
+   Horizontal sub-tab strip:
+     Favicons | Site Meta | Navigation | Microsites | Footer | Routes
 
    Each child manages its own fetch/save/dirty lifecycle.
-   URL pattern: /admin/structure            → defaults to "metadata"
-                /admin/structure/navigation → Navigation sub-tab
-                /admin/structure/routes     → Routes sub-tab
+
+   URL pattern: /admin/structure             → defaults to "favicons"
+                /admin/structure/site-meta   → Site Meta sub-tab
+                /admin/structure/navigation  → Navigation sub-tab
+                /admin/structure/microsites  → Microsites sub-tab
+                /admin/structure/footer      → Footer sub-tab
+                /admin/structure/routes      → Routes sub-tab
 
    Reports combined dirty state to Admin.jsx.
 ═══════════════════════════════════════════════════════════════════════════ */
 
 const SUB_TABS = [
-  { key: "metadata",   label: "Metadata" },
-  { key: "navigation", label: "Navigation" },
-  { key: "footer",     label: "Footer" },
-  { key: "routes",     label: "Routes" },
+  { key: "favicons",    label: "Favicons" },
+  { key: "site-meta",   label: "Site Meta" },
+  { key: "navigation",  label: "Navigation" },
+  { key: "microsites",  label: "Microsites" },
+  { key: "footer",      label: "Footer" },
+  { key: "routes",      label: "Routes" },
 ];
 
 function getSubTab() {
-  if (typeof window === "undefined") return "metadata";
+  if (typeof window === "undefined") return "favicons";
   const m = window.location.pathname.match(/^\/admin\/structure(?:\/([a-z][a-z0-9-]*))?/);
-  if (!m || !m[1]) return "metadata";
-  return SUB_TABS.some(t => t.key === m[1]) ? m[1] : "metadata";
+  if (!m || !m[1]) return "favicons";
+  return SUB_TABS.some(t => t.key === m[1]) ? m[1] : "favicons";
 }
 
 export default function StructureTab({ onDirtyChange }) {
@@ -108,10 +112,12 @@ export default function StructureTab({ onDirtyChange }) {
       </div>
 
       {/* Render the active child */}
-      {sub === "metadata"   && <StructureMetaTab   onDirtyChange={makeDirty("metadata")} />}
-      {sub === "navigation" && <StructureNavTab     onDirtyChange={makeDirty("navigation")} />}
-      {sub === "footer"     && <StructureFooterTab  onDirtyChange={makeDirty("footer")} />}
-      {sub === "routes"     && <RoutesTab           onDirtyChange={makeDirty("routes")} />}
+      {sub === "favicons"   && <StructureFaviconsTab   onDirtyChange={makeDirty("favicons")} />}
+      {sub === "site-meta"  && <StructureSiteMetaTab   onDirtyChange={makeDirty("site-meta")} />}
+      {sub === "navigation" && <StructureNavItemsTab   onDirtyChange={makeDirty("navigation")} />}
+      {sub === "microsites" && <StructureMicrositesTab onDirtyChange={makeDirty("microsites")} />}
+      {sub === "footer"     && <StructureFooterTab     onDirtyChange={makeDirty("footer")} />}
+      {sub === "routes"     && <RoutesTab              onDirtyChange={makeDirty("routes")} />}
     </div>
   );
 }
