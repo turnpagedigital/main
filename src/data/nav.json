@@ -108,7 +108,8 @@
         "links": [
           {
             "label": "How it works",
-            "href": "https://www.rewindtariffs.com"
+            "href": "https://www.rewindtariffs.com",
+            "external": true
           },
           {
             "label": "CIT case tracker",
@@ -117,11 +118,13 @@
           },
           {
             "label": "Refund calculator",
-            "href": "https://www.rewindtariffs.com/#calculator"
+            "href": "https://www.rewindtariffs.com/#calculator",
+            "external": true
           },
           {
             "label": "News & research",
-            "href": "https://www.rewindtariffs.com/#research"
+            "href": "https://www.rewindtariffs.com/#research",
+            "external": true
           },
           {
             "label": "Referral program",
