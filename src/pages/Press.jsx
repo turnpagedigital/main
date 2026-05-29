@@ -135,34 +135,91 @@ function normalizeUrl(u) {
 }
 
 /* ── Normalise every press.json item into a unified shape ───────────────── */
-const UNIFIED_ITEMS = (pressData.items || []).map((d, i) => ({
-  _key:     i,
-  mediaType: (d.type || "").toLowerCase() === "podcast"    ? "podcast"
-           : (d.type || "").toLowerCase() === "blog post"  ? "blog"
-           : (d.type || "").toLowerCase() === "news"       ? "news"
-           : d.author !== "Andrew"                         ? "press"
-           : d.type === "social post"                      ? "social"
-           : "article",
-  type:     d.type || "",
-  outlet:   d.publication_title || "",
-  logoUrl:  d.logo_url || null,
-  date:     d.date || null,
-  dateSort: parseDate(d.date),
-  headline: d.piece_title || "",
-  excerpt:  d.excerpt || null,
-  href:      normalizeUrl(d.url),
-  pages:     Array.isArray(d.pages) ? d.pages : [],
-  mediaUrl:  d.media_url || null,
-  pdfUrl:    d.pdf_url   || null,
-}));
+function normalizePressItem(d, i) {
+  return {
+    _key:     "p_" + i,
+    mediaType: (d.type || "").toLowerCase() === "podcast"    ? "podcast"
+             : (d.type || "").toLowerCase() === "blog post"  ? "blog"
+             : (d.type || "").toLowerCase() === "news"       ? "news"
+             : d.author !== "Andrew"                         ? "press"
+             : d.type === "social post"                      ? "social"
+             : "article",
+    type:     d.type || "",
+    outlet:   d.publication_title || "",
+    logoUrl:  d.logo_url || null,
+    date:     d.date || null,
+    dateSort: parseDate(d.date),
+    headline: d.piece_title || "",
+    excerpt:  d.excerpt || null,
+    href:      normalizeUrl(d.url),
+    pages:     Array.isArray(d.pages) ? d.pages : [],
+    mediaUrl:  d.media_url || null,
+    pdfUrl:    d.pdf_url   || null,
+  };
+}
 
-/* ── Derived filter option lists (computed once from static data) ─────────── */
-// ALL_TOPICS uses the static PAGE_LABELS keys so every topic always appears in
-// the dropdown — even before any press items carry that tag. This lets the
-// nav "Related press" links pre-select a topic that may have no items yet.
-const ALL_TOPICS  = Object.keys(PAGE_LABELS); // ["copyright","crypto","litigation","tariffs","bankruptcy"]
-const ALL_OUTLETS = [...new Set(UNIFIED_ITEMS.map(d => d.outlet).filter(Boolean))]
-  .sort((a, b) => a.localeCompare(b));
+const PRESS_ITEMS = (pressData.items || []).map(normalizePressItem);
+
+/* ── Briefings → unified item shape ───────────────────────────────────────
+   Briefings live in `public/briefings/index.json` and are the source of truth
+   for the Briefings admin tab. Press.jsx fetches them at runtime and merges
+   them into the unified list so that publishing a briefing automatically
+   surfaces it here — no need to manually duplicate the entry into press.json.
+   Drafts (active === false) are skipped. Entries whose href already appears
+   in press.json are skipped to avoid duplication for items that were
+   hand-curated before this sync was wired up. */
+
+function formatBriefingDate(iso) {
+  if (!iso) return null;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return iso;
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  return months[parseInt(m[2], 10) - 1] + " " + parseInt(m[3], 10) + ", " + m[1];
+}
+
+/* Heuristic mapping from a briefing's title/slug/tags to /press topic keys.
+   Keep the keyword lists tight: a false positive here puts the briefing on
+   the wrong topic page. */
+function derivePagesFromBriefing(b) {
+  const blob = [
+    b.title || "",
+    b.slug  || "",
+    Array.isArray(b.tags) ? b.tags.join(" ") : "",
+    b.summary || "",
+  ].join(" ").toLowerCase();
+  const pages = [];
+  if (/\b(crypto|ftx|blockfills|celsius|genesis|three arrows|prime trust|insolvency|bankruptcy|chapter 11|liquidat)/i.test(blob)) pages.push("crypto");
+  if (/\b(bartz|anthropic|openai|concord|copyright|llm|fair use|perplexity|midjourney|getty|kadrey|class action)/i.test(blob)) pages.push("copyright");
+  if (/\b(tariff|ieepa|customs|importer|cit\b|court of international trade)/i.test(blob)) pages.push("tariffs");
+  return pages;
+}
+
+function normalizeBriefing(b, i) {
+  const href = "/briefings/" + b.slug;
+  return {
+    _key:     "b_" + (b.slug || i),
+    mediaType: "blog",
+    type:     "briefing",
+    outlet:   "Turnpage Digital Markets",
+    logoUrl:  null,
+    date:     formatBriefingDate(b.date),
+    dateSort: parseDate(b.date),
+    headline: b.title || b.slug || "",
+    excerpt:  b.summary || null,
+    href,
+    pages:    derivePagesFromBriefing(b),
+    mediaUrl: null,
+    pdfUrl:   null,
+  };
+}
+
+/* ── Derived filter option lists ──────────────────────────────────────────
+   ALL_TOPICS uses the static PAGE_LABELS keys so every topic always appears
+   in the dropdown — even before any press items carry that tag. This lets
+   the nav "Related press" links pre-select a topic that may have no items
+   yet. ALL_OUTLETS is derived from the merged list in-component (since
+   briefings contribute "Turnpage Digital Markets" at runtime). */
+const ALL_TOPICS = Object.keys(PAGE_LABELS); // ["copyright","crypto","litigation","tariffs","bankruptcy"]
 
 /* ── Sort helper ─────────────────────────────────────────────────────────── */
 function sortByDate(items, dir) {
@@ -197,6 +254,7 @@ export default function Press() {
   const [filterTopic,  setFilterTopic]  = useState(getTopicFromUrl);
   const [filterOutlet, setFilterOutlet] = useState("all");
   const [sortDir,      setSortDir]      = useState("desc");
+  const [briefings,    setBriefings]    = useState([]);
 
   /* Keep filters in sync when user clicks a nav dropdown link */
   useEffect(() => {
@@ -209,9 +267,47 @@ export default function Press() {
     return () => window.removeEventListener("popstate", onPopstate);
   }, []);
 
+  /* Fetch briefings at mount and merge them into the unified list. We do this
+     at runtime (rather than at build time via a static import) because
+     briefings change without rebuilding the site — the admin commits to
+     public/briefings/index.json directly. If the fetch fails we silently fall
+     back to press.json only, so /press never breaks on a missing index. */
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/briefings/index.json")
+      .then(r => r.ok ? r.json() : { items: [] })
+      .then(d => {
+        if (cancelled) return;
+        const list = Array.isArray(d) ? d : (d.items || []);
+        const items = list
+          .filter(b => b && b.slug && b.active !== false) // drop drafts
+          .map(normalizeBriefing);
+        setBriefings(items);
+      })
+      .catch(() => { if (!cancelled) setBriefings([]); });
+    return () => { cancelled = true; };
+  }, []);
+
+  /* Merged source list: press.json items + briefings (deduped by href so any
+     briefing that was hand-curated into press.json before this sync existed
+     still wins — preserving its richer fields like excerpt and logo_url). */
+  const unifiedItems = useMemo(() => {
+    const pressHrefs = new Set(PRESS_ITEMS.map(p => p.href).filter(Boolean));
+    const newBriefings = briefings.filter(b => !pressHrefs.has(b.href));
+    return [...PRESS_ITEMS, ...newBriefings];
+  }, [briefings]);
+
+  /* Outlets dropdown is derived from the merged list so briefings contribute
+     "Turnpage Digital Markets" once they load. */
+  const allOutlets = useMemo(() =>
+    [...new Set(unifiedItems.map(d => d.outlet).filter(Boolean))]
+      .sort((a, b) => a.localeCompare(b)),
+    [unifiedItems]
+  );
+
   /* Single filtered + sorted list across all item types */
   const visibleItems = useMemo(() => {
-    let items = UNIFIED_ITEMS;
+    let items = unifiedItems;
     if (filterType   !== "all") items = items.filter(d =>
       filterType === "article" ? d.mediaType === "article"
       : filterType === "social" ? (d.mediaType === "social" || d.mediaType === "blog")
@@ -221,7 +317,7 @@ export default function Press() {
     if (filterTopic  !== "all") items = items.filter(d => d.pages.includes(filterTopic));
     if (filterOutlet !== "all") items = items.filter(d => d.outlet === filterOutlet);
     return sortByDate(items, sortDir);
-  }, [filterType, filterTopic, filterOutlet, sortDir]);
+  }, [filterType, filterTopic, filterOutlet, sortDir, unifiedItems]);
 
   const hasFilters = filterType !== "all" || filterTopic !== "all" || filterOutlet !== "all";
   function clearFilters() {
@@ -268,7 +364,7 @@ export default function Press() {
           </h2>
           {/* Right: excerpt from the latest social post */}
           {(() => {
-            const topicCandidates = UNIFIED_ITEMS
+            const topicCandidates = unifiedItems
               .filter(d => d.mediaType === "social" && d.excerpt
                 && (filterTopic === "all" || d.pages.includes(filterTopic)))
               .sort((a, b) => {
@@ -277,7 +373,7 @@ export default function Press() {
                 return tb - ta;
               });
             // Fall back to any topic if no match for current topic
-            const latest = topicCandidates[0] ?? UNIFIED_ITEMS
+            const latest = topicCandidates[0] ?? unifiedItems
               .filter(d => d.mediaType === "social" && d.excerpt)
               .sort((a, b) => {
                 const ta = a.date ? new Date(a.date).getTime() : 0;
@@ -346,6 +442,7 @@ export default function Press() {
         sortDir={sortDir}           onSortDir={setSortDir}
         hasFilters={hasFilters}     onClear={clearFilters}
         count={visibleItems.length}
+        allOutlets={allOutlets}
       />
 
       {/* ── Unified grid ────────────────────────────────────────────────── */}
@@ -427,6 +524,7 @@ function FilterBar({
   sortDir, onSortDir,
   hasFilters, onClear,
   count,
+  allOutlets = [],
 }) {
   return (
     <div style={{
@@ -487,7 +585,7 @@ function FilterBar({
             onChange={e => onFilterOutlet(e.target.value)}
           >
             <option value="all">All Publications</option>
-            {ALL_OUTLETS.map(o => (
+            {allOutlets.map(o => (
               <option key={o} value={o}>{o}</option>
             ))}
           </select>

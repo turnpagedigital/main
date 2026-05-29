@@ -51,8 +51,14 @@ export default function Briefing({ slug }) {
       .then(([idx, md]) => {
         if (cancelled) return;
         const list = Array.isArray(idx) ? idx : (idx.items || []);
-        const m = list.find(x => x.slug === slug) || { slug, title: slug, date: null, summary: null };
-        setMeta(m);
+        const m = list.find(x => x.slug === slug);
+        if (m && m.active === false) {
+          // Direct hit on a draft slug — treat as not-found for the public.
+          // Admins still reach the markdown via the editor, not this page.
+          setError("post not found");
+          return;
+        }
+        setMeta(m || { slug, title: slug, date: null, summary: null });
         marked.setOptions({ mangle: false, headerIds: false, breaks: false });
         setBodyHtml(marked.parse(md.replace(/^#\s+.+\n/, "")));
       })

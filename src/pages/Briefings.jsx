@@ -37,9 +37,11 @@ export default function Briefings() {
       })
       .then(d => {
         const list = Array.isArray(d) ? d : (d.items || []);
+        // Hide drafts (admin marks unpublished posts with active:false)
+        const published = list.filter(it => it && it.active !== false);
         // Newest first
-        list.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-        setItems(list);
+        published.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+        setItems(published);
       })
       .catch(e => setError(e.message || "Failed to load briefings"));
   }, []);
