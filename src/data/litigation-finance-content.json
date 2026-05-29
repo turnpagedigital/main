@@ -67,24 +67,6 @@
       "body": "Once terms are agreed, capital is available to cover case costs — experts, discovery, depositions, and trial preparation."
     }
   ],
-  "comparison": {
-    "oldWay": {
-      "title": "Traditional litigation.",
-      "items": [
-        "Cases declined — capital constraints, not merit.",
-        "Settlements driven by client cashflow, not case value.",
-        "Overhead costs limit the size of your docket."
-      ]
-    },
-    "newWay": {
-      "title": "Powered by Turnpage.",
-      "items": [
-        "Capital deployed against the merit of the case.",
-        "Clients hold out for full value.",
-        "Grow your contingency docket without diluting equity."
-      ]
-    }
-  },
   "faqs": [
     {
       "id": "case-types",
@@ -111,5 +93,23 @@
       "q": "Is there a minimum case size?",
       "a": "We generally look for matters with damages exposure of $5M or more. Smaller cases with compelling facts are considered on a case-by-case basis."
     }
-  ]
+  ],
+  "comparison": {
+    "oldWay": {
+      "title": "Traditional litigation.",
+      "items": [
+        "Cases declined — capital constraints, not merit.",
+        "Settlements driven by client cashflow, not case value.",
+        "Overhead costs limit the size of your docket."
+      ]
+    },
+    "newWay": {
+      "title": "Powered by Turnpage.",
+      "items": [
+        "Capital deployed against the merit of the case.",
+        "Clients hold out for full value.",
+        "Grow your contingency docket without diluting equity."
+      ]
+    }
+  }
 }
