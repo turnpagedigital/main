@@ -2,26 +2,26 @@
   "audienceCards": [
     {
       "id": "authors-writers",
-      "title": "Authors & Writers",
-      "body": "Bartz class members. OpenAI MDL and Kadrey v. Meta plaintiffs. Pre-litigation rights holders.",
+      "title": "Authors & Publishers",
+      "body": "Bartz class members. OpenAI MDL and Kadrey v. Meta plaintiffs.",
       "priority": true
     },
     {
       "id": "music-publishers",
-      "title": "Music Publishers & Labels",
-      "body": "Concord plaintiffs, RIAA-coordinated claimants, UMG v. Suno/Udio. Bulk catalogue dispositions.",
+      "title": "Music Labels, Publishers & Catalogue Owners",
+      "body": "Concord plaintiffs, RIAA-coordinated claimants, UMG v. Suno/Udio.",
       "priority": true
     },
     {
-      "id": "news-organizations",
-      "title": "News Organizations",
-      "body": "NYT v. OpenAI, Advance Local v. Cohere, the consolidated MDL.",
+      "id": "visual-artists",
+      "title": "Visual Artists & Stock Image Libraries",
+      "body": "Andersen v. Stability. Getty v. Stability (US and UK).",
       "priority": false
     },
     {
-      "id": "visual-artists",
-      "title": "Visual Artists & Stock",
-      "body": "Andersen v. Stability. Getty v. Stability (US and UK).",
+      "id": "news-organizations",
+      "title": "News Media Organizations",
+      "body": "NYT v. OpenAI, Advance Local v. Cohere, the consolidated MDL.",
       "priority": false
     }
   ],
@@ -76,7 +76,7 @@
     {
       "id": "doe-github",
       "name": "Doe 1 v. GitHub / Microsoft / OpenAI",
-      "amountB": 9.0,
+      "amountB": 9,
       "label": "$9B+",
       "type": "dmca",
       "badge": "DMCA §1202 est.",
