@@ -428,7 +428,7 @@ export default function NavBar({ currentPage }) {
           from { opacity: 0; transform: translateY(-4px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        @media (max-width: 880px) {
+        @media (max-width: 768px) {
           .nav-dropdown { display: none; }
         }
       `}</style>
