@@ -94,6 +94,37 @@ export async function onRequest({ request, env }) {
       return jsonResponse({ ok: true });
     }
 
+    /* ── toggle-active: flip active field in index.json only ─────────── */
+    if (action === "toggle-active") {
+      const { slug: toggleSlug } = body;
+      if (!toggleSlug) return jsonResponse({ ok: false, error: "Missing slug" }, 400);
+
+      const indexResult = await getFileFromGitHub(env, INDEX_PATH);
+      if (!indexResult.ok) return jsonResponse({ ok: false, error: indexResult.error }, 502);
+
+      const items = Array.isArray(indexResult.data?.items) ? indexResult.data.items : [];
+      const idx = items.findIndex(x => x.slug === toggleSlug);
+      if (idx < 0) return jsonResponse({ ok: false, error: "Post not found" }, 404);
+
+      const wasActive = items[idx].active !== false;
+      const updated = { ...items[idx] };
+      if (wasActive) {
+        updated.active = false;
+      } else {
+        delete updated.active; // omit field = active (default)
+      }
+      items[idx] = updated;
+
+      const newIndexText = JSON.stringify({ items }, null, 2) + "\n";
+      const indexSave = await commitFileToGitHub(
+        env, INDEX_PATH, newIndexText, indexResult.sha,
+        `Posts: ${wasActive ? "unpublish" : "publish"} ${toggleSlug}`,
+      );
+      if (!indexSave.ok) return jsonResponse({ ok: false, error: indexSave.error }, 502);
+
+      return jsonResponse({ ok: true, active: !wasActive });
+    }
+
     /* ── delete-post: remove index entry + delete markdown file ────────── */
     if (action === "delete-post") {
       const { slug: delSlug } = body;

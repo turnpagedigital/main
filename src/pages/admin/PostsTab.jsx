@@ -61,6 +61,7 @@ export default function PostsTab({ onDirtyChange }) {
   const [editorPhase, setEditorPhase] = useState("idle"); // idle|loading-content|saving|error
   const [editorError, setEditorError] = useState("");
   const [savedAt, setSavedAt]      = useState(null);
+  const [togglingSlug, setTogglingSlug] = useState(null); // slug currently being toggled
 
   // ── Load post list ──────────────────────────────────────────────────────
   const loadPosts = useCallback(async () => {
@@ -166,6 +167,31 @@ export default function PostsTab({ onDirtyChange }) {
     }
   }
 
+  // ── Toggle active (publish / unpublish) — updates index.json only ──────
+  async function toggleActive(post) {
+    setTogglingSlug(post.slug);
+    try {
+      const r = await fetch("/api/admin/posts", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ action: "toggle-active", slug: post.slug }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Toggle failed");
+      // Update local state without a full re-fetch
+      setPosts(prev => prev.map(p =>
+        p.slug === post.slug
+          ? (body.active ? { ...p, active: undefined } : { ...p, active: false })
+          : p
+      ));
+    } catch (e) {
+      alert("Toggle failed: " + e.message);
+    } finally {
+      setTogglingSlug(null);
+    }
+  }
+
   // ── Delete post ─────────────────────────────────────────────────────────
   async function deletePost(slug, title) {
     if (!confirm(`Delete "${title || slug}"? This removes the post and its markdown file permanently.`)) return;
@@ -221,37 +247,61 @@ export default function PostsTab({ onDirtyChange }) {
                 No posts yet. Click "+ New Post" to create one.
               </div>
             )}
-            {posts.map(post => (
-              <div key={post.slug} style={{
-                background: "#fff", border: `1px solid ${post.active === false ? "#e0e0e0" : LINE}`,
-                padding: "0.85rem 1rem",
-                display: "flex", alignItems: "center", gap: "0.7rem", flexWrap: "wrap",
-                opacity: post.active === false ? 0.6 : 1,
-              }}>
-                <PostTypeBadge type={post.type || "briefing"} />
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700, color: INK, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                    {post.title || <em style={{ color: INK_60 }}>Untitled</em>}
+            {posts.map(post => {
+              const isLive    = post.active !== false;
+              const toggling  = togglingSlug === post.slug;
+              return (
+                <div key={post.slug} style={{
+                  background: "#fff",
+                  border: `1px solid ${isLive ? LINE : "#e8e0d0"}`,
+                  padding: "0.85rem 1rem",
+                  display: "flex", alignItems: "center", gap: "0.7rem", flexWrap: "wrap",
+                  opacity: isLive ? 1 : 0.75,
+                }}>
+                  <PostTypeBadge type={post.type || "briefing"} />
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700, color: INK, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {post.title || <em style={{ color: INK_60 }}>Untitled</em>}
+                    </div>
+                    <div style={{ fontFamily: FONT, fontSize: "0.75rem", color: INK_60, marginTop: "0.15rem" }}>
+                      {post.date}
+                    </div>
                   </div>
-                  <div style={{ fontFamily: FONT, fontSize: "0.75rem", color: INK_60, marginTop: "0.15rem" }}>
-                    {post.date}
-                    {post.active === false && <span style={{ marginLeft: "0.5rem", color: "#b45309" }}>· Draft</span>}
-                  </div>
+                  {/* Publish / Unpublish toggle */}
+                  <button
+                    onClick={() => toggleActive(post)}
+                    disabled={toggling}
+                    title={isLive ? "Click to unpublish" : "Click to publish"}
+                    style={{
+                      fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+                      padding: "0.28rem 0.65rem",
+                      border: `1px solid ${isLive ? "#b8e0b8" : "#d4c090"}`,
+                      borderRadius: 3,
+                      background: isLive ? "#e8f5e8" : "#fdf6e3",
+                      color: isLive ? "#2a6e2a" : "#8a6200",
+                      cursor: toggling ? "default" : "pointer",
+                      opacity: toggling ? 0.5 : 1,
+                      letterSpacing: "0.04em",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {toggling ? "…" : isLive ? "● Live" : "○ Draft"}
+                  </button>
+                  <button
+                    onClick={() => openEdit(post)}
+                    style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.8rem" }}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => deletePost(post.slug, post.title)}
+                    style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.8rem", color: "#c44", borderColor: "#f4caca" }}
+                  >
+                    Delete
+                  </button>
                 </div>
-                <button
-                  onClick={() => openEdit(post)}
-                  style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.8rem" }}
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => deletePost(post.slug, post.title)}
-                  style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.8rem", color: "#c44", borderColor: "#f4caca" }}
-                >
-                  Delete
-                </button>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
