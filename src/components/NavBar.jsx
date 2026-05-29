@@ -149,7 +149,7 @@ export default function NavBar({ currentPage }) {
               return (
                 <a
                   key={item.key}
-                  href={isExternal ? item.externalHref : hashHref(item.key)}
+                  href={isExternal ? item.externalHref : item._href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
                   onMouseEnter={() => hasPreview ? openDrop(item.key) : setActiveDrop(null)}
@@ -233,7 +233,7 @@ export default function NavBar({ currentPage }) {
             maxWidth: 1440, margin: "0 auto",
             padding: "clamp(1.8rem,3vw,2.8rem) clamp(1.25rem,3vw,2.5rem)",
             display: "grid",
-            gridTemplateColumns: "minmax(0,1.4fr) minmax(0,1fr) auto",
+            gridTemplateColumns: "minmax(0,1.4fr) minmax(0,1.5fr) auto",
             gap: "clamp(2rem, 5vw, 5rem)",
             alignItems: "start",
           }}>
@@ -261,8 +261,16 @@ export default function NavBar({ currentPage }) {
                 letterSpacing: "0.22em", textTransform: "uppercase",
                 color: INK_60, marginBottom: "0.8rem",
               }}>Quick links</p>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.55rem" }}>
-                {dropContent.links.map((l, i) => (
+              <ul style={{
+                listStyle: "none", padding: 0, margin: 0,
+                display: "grid",
+                gridTemplateRows: "repeat(4, auto)",
+                gridAutoFlow: "column",
+                gridAutoColumns: "minmax(0, 1fr)",
+                rowGap: "0.55rem",
+                columnGap: "2.5rem",
+              }}>
+                {dropContent.links.slice(0, 8).map((l, i) => (
                   <li key={i}>
                     <a
                       href={l.href}
@@ -376,7 +384,7 @@ export default function NavBar({ currentPage }) {
                 return (
                   <a
                     key={item.key}
-                    href={isExternal ? item.externalHref : hashHref(item.key)}
+                    href={isExternal ? item.externalHref : item._href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     onClick={close}
