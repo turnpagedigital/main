@@ -40,7 +40,8 @@
         "OpenAI MDL",
         "Concord",
         "CJEU"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-04-28-advisory",
