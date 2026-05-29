@@ -104,15 +104,27 @@
       "external": true,
       "dropdown": {
         "title": "Tariff Refunds",
-        "body": "Liquidity for tariff refund rights and customs recoveries — a separate Turnpage property at rewindtariffs.com.",
+        "body": "Liquidity for tariff refund rights and customs recoveries — a separate Turnpage initiative at rewindtariffs.com.",
         "links": [
           {
-            "label": "Active CIT cases",
+            "label": "How it works",
+            "href": "https://www.rewindtariffs.com"
+          },
+          {
+            "label": "CIT case tracker",
             "href": "https://www.rewindtariffs.com/#cases",
             "external": true
           },
           {
-            "label": "For brokers",
+            "label": "Refund calculator",
+            "href": "https://www.rewindtariffs.com/#calculator"
+          },
+          {
+            "label": "News & research",
+            "href": "https://www.rewindtariffs.com/#research"
+          },
+          {
+            "label": "Referral program",
             "href": "https://www.rewindtariffs.com/#brokers",
             "external": true
           },
