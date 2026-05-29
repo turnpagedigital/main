@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "slug": "2026-05-29-crypto-advisory",
+      "date": "2026-05-29",
+      "type": "briefing",
+      "title": "Crypto Insolvency Advisory — May 29, 2026",
+      "summary": "The FTX Recovery Trust commences its fifth distribution and first preferred-equity payment on May 29, and moves to cut the disputed-claims reserve by $600M from $2.4B to $1.8B — read against the broader 2022–23 insolvency wave spanning Genesis/DCG, Celsius, Prime Trust, and BlockFills.",
+      "active": false
+    },
+    {
       "slug": "2026-05-26-from-refund-right-to-cash-in-hand-how-importers-fi",
       "date": "2026-05-26",
       "type": "article",
