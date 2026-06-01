@@ -5,8 +5,9 @@ import {
   deleteFileFromGitHub,
 } from "./_github.js";
 
-const INDEX_PATH = "public/briefings/index.json";
-const VALID_TYPES = ["briefing", "article", "announcement"];
+const INDEX_PATH    = "public/briefings/index.json";
+const VALID_TYPES   = ["briefing", "article", "announcement"];
+const VALID_AUTHORS = ["Turnpage Intelligence", "Andrew Glantz"];
 
 /* ── onRequest — handles GET, PUT (save-post + delete-post) ───────────────── */
 export async function onRequest({ request, env }) {
@@ -172,6 +173,8 @@ function validateItem(item) {
     return "date is required (YYYY-MM-DD)";
   if (!VALID_TYPES.includes(item.type))
     return `type must be one of: ${VALID_TYPES.join(", ")}`;
+  if (item.author !== undefined && !VALID_AUTHORS.includes(item.author))
+    return `author must be one of: ${VALID_AUTHORS.join(", ")}`;
   return null;
 }
 
@@ -183,6 +186,9 @@ function normalizeItem(item) {
     title:   String(item.title).trim(),
     summary: String(item.summary || "").trim(),
   };
+  // author: omit when default ("Turnpage Intelligence") to keep index.json lean
+  const author = String(item.author || "").trim();
+  if (author && author !== "Turnpage Intelligence") out.author = author;
   const tags = Array.isArray(item.tags)
     ? item.tags.map(t => String(t).trim()).filter(Boolean)
     : [];

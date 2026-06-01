@@ -14,6 +14,12 @@ const POST_TYPE_LABELS = { briefing: "Briefing", article: "Article", announcemen
 const POST_TYPE_COLORS = { briefing: NEON, article: "#0A0A0A", announcement: NEON };
 const POST_TYPE_FG     = { briefing: "#000", article: "#fff",    announcement: "#000" };
 
+const POST_AUTHORS = ["Turnpage Intelligence", "Andrew Glantz"];
+const AUTHOR_COLORS = {
+  "Turnpage Intelligence": { bg: "#e5e5e5", fg: "#555" },
+  "Andrew Glantz":         { bg: NEON,     fg: "#000" },
+};
+
 function slugify(title, date) {
   const d = date || new Date().toISOString().slice(0, 10);
   const s = title
@@ -30,7 +36,8 @@ function slugify(title, date) {
 function blankPostForm() {
   return {
     slug: "", date: new Date().toISOString().slice(0, 10),
-    type: "briefing", title: "", summary: "", tags: "", active: true, content: "", hero_image: "",
+    type: "briefing", author: "Turnpage Intelligence",
+    title: "", summary: "", tags: "", active: true, content: "", hero_image: "",
   };
 }
 
@@ -91,6 +98,7 @@ export default function PostsTab({ onDirtyChange }) {
       slug:       meta.slug       || "",
       date:       meta.date       || "",
       type:       meta.type       || "briefing",
+      author:     meta.author     || "Turnpage Intelligence",
       title:      meta.title      || "",
       summary:    meta.summary    || "",
       tags:       Array.isArray(meta.tags) ? meta.tags.join(", ") : "",
@@ -142,6 +150,7 @@ export default function PostsTab({ onDirtyChange }) {
       slug:       form.slug.trim(),
       date:       form.date.trim(),
       type:       form.type,
+      author:     form.author || "Turnpage Intelligence",
       title:      form.title.trim(),
       summary:    form.summary.trim(),
       tags:       form.tags.split(",").map(t => t.trim()).filter(Boolean),
@@ -259,6 +268,7 @@ export default function PostsTab({ onDirtyChange }) {
                   opacity: isLive ? 1 : 0.75,
                 }}>
                   <PostTypeBadge type={post.type || "briefing"} />
+                  <AuthorChip author={post.author || "Turnpage Intelligence"} />
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700, color: INK, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       {post.title || <em style={{ color: INK_60 }}>Untitled</em>}
@@ -380,6 +390,35 @@ export default function PostsTab({ onDirtyChange }) {
                 {form.active ? "Published" : "Draft (hidden from site)"}
               </span>
             </label>
+          </div>
+
+          {/* Row 1b: Author */}
+          <div style={{ fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+            Author
+            <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.4rem", flexWrap: "wrap" }}>
+              {POST_AUTHORS.map(a => {
+                const selected = (form.author || "Turnpage Intelligence") === a;
+                const cfg = AUTHOR_COLORS[a];
+                return (
+                  <button
+                    key={a}
+                    type="button"
+                    onClick={() => setField("author", a)}
+                    style={{
+                      fontFamily: FONT, fontSize: "0.72rem", fontWeight: 800,
+                      letterSpacing: "0.14em", textTransform: "uppercase",
+                      padding: "0.38rem 0.85rem", borderRadius: 4, cursor: "pointer",
+                      border: selected ? `2px solid ${cfg.bg === "#e5e5e5" ? "#aaa" : cfg.bg}` : `2px solid ${LINE}`,
+                      background: selected ? cfg.bg : "transparent",
+                      color:      selected ? cfg.fg : INK_60,
+                      transition: "all 0.12s",
+                    }}
+                  >
+                    {a}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Row 2: Title */}
@@ -551,5 +590,22 @@ function PostHeroImageField({ value, onChange }) {
         title="Pick a hero image"
       />
     </div>
+  );
+}
+
+/* ── AuthorChip — compact author badge used in list rows ────────────────── */
+function AuthorChip({ author }) {
+  const name = author || "Turnpage Intelligence";
+  const cfg  = AUTHOR_COLORS[name] || AUTHOR_COLORS["Turnpage Intelligence"];
+  return (
+    <span style={{
+      fontFamily: FONT, fontSize: "0.64rem", fontWeight: 700,
+      letterSpacing: "0.12em", textTransform: "uppercase",
+      background: cfg.bg, color: cfg.fg,
+      padding: "0.2rem 0.5rem", borderRadius: 3,
+      display: "inline-block", flexShrink: 0,
+    }}>
+      {name}
+    </span>
   );
 }

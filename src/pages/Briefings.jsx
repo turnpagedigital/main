@@ -25,6 +25,25 @@ function TypeBadge({ type }) {
   );
 }
 
+/* ── Author badge ─────────────────────────────────────────────────────────── */
+function AuthorBadge({ author, dark = false }) {
+  const name = author || "Turnpage Intelligence";
+  const isAndrew = name === "Andrew Glantz";
+  const bg = isAndrew ? NEON : (dark ? "rgba(255,255,255,0.18)" : "#e5e5e5");
+  const fg = isAndrew ? "#000" : (dark ? "rgba(255,255,255,0.75)" : "#555");
+  return (
+    <span style={{
+      fontFamily: FONT, fontSize: "0.64rem", fontWeight: 700,
+      letterSpacing: "0.14em", textTransform: "uppercase",
+      background: bg, color: fg,
+      padding: "0.25rem 0.6rem", borderRadius: 3,
+      display: "inline-block",
+    }}>
+      {name}
+    </span>
+  );
+}
+
 export default function Briefings() {
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
@@ -117,6 +136,7 @@ function FeaturedBriefing({ item }) {
       <div style={{ position: "relative", zIndex: 1 }}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.7rem", marginBottom: "1.2rem", flexWrap: "wrap" }}>
           <TypeBadge type={item.type} />
+          <AuthorBadge author={item.author} dark />
           <span style={{
             fontFamily: FONT, fontSize: "0.66rem", fontWeight: 800, letterSpacing: "0.2em",
             textTransform: "uppercase", color: "rgba(255,255,255,0.85)", background: "rgba(255,255,255,0.12)",
@@ -170,6 +190,7 @@ function BriefingCard({ item }) {
     >
       <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.7rem", flexWrap: "wrap" }}>
         <TypeBadge type={item.type} />
+        <AuthorBadge author={item.author} dark={false} />
         {dateStr && (
           <p style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: INK_60, margin: 0 }}>
             {dateStr}

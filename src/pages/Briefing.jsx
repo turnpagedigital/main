@@ -34,6 +34,26 @@ function TypeBadge({ type, dark = false }) {
   );
 }
 
+/* ── Author badge ────────────────────────────────────────────────────────── */
+// dark=true → for use on dark/black header backgrounds
+function AuthorBadge({ author, dark = false }) {
+  const name = author || "Turnpage Intelligence";
+  const isAndrew = name === "Andrew Glantz";
+  const bg = isAndrew ? NEON : (dark ? "rgba(255,255,255,0.18)" : "#e5e5e5");
+  const fg = isAndrew ? "#000" : (dark ? "rgba(255,255,255,0.8)" : "#555");
+  return (
+    <span style={{
+      fontFamily: FONT, fontSize: "0.66rem", fontWeight: 700,
+      letterSpacing: "0.14em", textTransform: "uppercase",
+      background: bg, color: fg,
+      padding: "0.32rem 0.7rem", borderRadius: 4,
+      display: "inline-block",
+    }}>
+      {name}
+    </span>
+  );
+}
+
 /* ── Single post — fetches index + markdown, dispatches by type ──────────── */
 export default function Briefing({ slug }) {
   const [meta,     setMeta]     = useState(null);
@@ -117,6 +137,7 @@ function BriefingTemplate({ meta, bodyHtml }) {
           </a>
           <div style={{ display: "flex", alignItems: "center", gap: "0.7rem", marginTop: "1.6rem", flexWrap: "wrap" }}>
             <TypeBadge type="briefing" dark />
+            <AuthorBadge author={meta.author} dark />
             {meta.date && (
               <span style={{ fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)" }}>
                 {formatDate(meta.date)}
@@ -170,9 +191,10 @@ function ArticleTemplate({ meta, bodyHtml }) {
             ← All publications
           </a>
 
-          {/* Type badge + date + read time */}
+          {/* Type badge + author + date + read time */}
           <div style={{ display: "flex", alignItems: "center", gap: "0.7rem", flexWrap: "wrap", marginBottom: "1.3rem" }}>
             <TypeBadge type="article" />
+            <AuthorBadge author={meta.author} dark={false} />
             {meta.date && (
               <span style={{ fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: INK_60 }}>
                 {formatDate(meta.date)}
@@ -262,7 +284,10 @@ function AnnouncementTemplate({ meta, bodyHtml }) {
         }} />
 
         <div className="container" style={{ position: "relative", zIndex: 1, maxWidth: 820 }}>
-          <TypeBadge type="announcement" dark />
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem", flexWrap: "wrap" }}>
+            <TypeBadge type="announcement" dark />
+            <AuthorBadge author={meta.author} dark />
+          </div>
 
           {meta.date && (
             <p style={{
