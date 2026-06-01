@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "slug": "2026-06-01-advisory",
+      "date": "2026-06-01",
+      "type": "briefing",
+      "title": "LLM / Copyright Advisory — June 1, 2026",
+      "summary": "Nine plaintiff organizations now have active suits against Perplexity AI as of May 31; OpenAI's Frontier Governance Framework sets the EU AI Act compliance baseline for all frontier labs; Bartz v. Anthropic final approval order still pending with June 11 distribution-calculation date at risk.",
+      "active": false
+    },
+    {
       "slug": "2026-05-29-advisory",
       "date": "2026-05-29",
       "type": "briefing",
