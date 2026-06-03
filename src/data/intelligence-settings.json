@@ -1,8 +1,39 @@
 {
-  "_comment": "Global Intelligence defaults. Managed via /admin/intelligence/defaults. v1 edits voice.default only; external/internal are reserved for a future public-vs-internal voice split, and themes/cases may later add their own voice override.",
+  "_comment": "Global Intelligence defaults. Managed via /admin/intelligence/defaults. voice.default is the house voice (external/internal reserved for later). sources are the GENERIC trusted + blocked lists that apply to every theme; each theme adds its own theme-specific trusted sources on top in the Themes tab.",
   "voice": {
     "default": "House voice — \"trade-law-grade\": write like a senior litigation/restructuring partner briefing a sophisticated client. Lead with what changed and why it matters. Ground every claim in a primary source (docket entry, ruling, agency release) and cite it inline. Be precise and concrete — name the parties, court, judge, dollar figures, dates, and docket numbers. No hype, no marketing adjectives, no hedging filler; short, declarative sentences. Where something is unverified, say so explicitly.",
     "external": null,
     "internal": null
+  },
+  "sources": {
+    "whitelist": [
+      "reuters.com",
+      "bloomberg.com",
+      "wsj.com",
+      "ft.com",
+      "news.bloomberglaw.com",
+      "law360.com",
+      "apnews.com",
+      "washingtonpost.com",
+      "politico.com",
+      "cnbc.com",
+      "courtlistener.com",
+      "pacer.uscourts.gov",
+      "supremecourt.gov",
+      "federalregister.gov",
+      "sec.gov",
+      "justice.gov"
+    ],
+    "blacklist": [
+      "nytimes.com",
+      "aljazeera.com",
+      "zerohedge.com",
+      "dailymail.co.uk",
+      "breitbart.com",
+      "rt.com",
+      "sputniknews.com",
+      "gateway-pundit.com",
+      "infowars.com"
+    ]
   }
 }

@@ -6,7 +6,6 @@ import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx
    cases/<slug>.md + cases/data/<slug>.json). A case can be tagged to multiple
    Themes and carries a freeform scan-guidance prompt. Light admin theme. */
 
-// Fallback theme options if /api/admin/themes is unavailable.
 const FALLBACK_THEMES = [
   { slug: "rewind-tariffs", display_name: "Tariffs / Trade", emoji: "⚖️" },
   { slug: "llm-class-action", display_name: "LLM / Copyright", emoji: "🤖" },
@@ -16,15 +15,20 @@ const FALLBACK_THEMES = [
   { slug: "bankruptcy-creditor-rights", display_name: "Bankruptcy Creditor Rights", emoji: "📜" },
 ];
 
+const CASE_STATES = [
+  { value: "active", label: "Active" },
+  { value: "draft", label: "Draft" },
+  { value: "archived", label: "Archived" },
+];
+
 const DEFAULT_CASE = {
   slug: "",
   display_name: "",
   type: "case",
-  emoji: "⚖️",
-  status: "",
+  status: "draft",
   topics: [],
-  case: { parties: "", court: "", court_id: "", case_number: "", judge: "" },
-  docket_source: { type: "manual", docket_id: null, url: "", awaiting_sync: false },
+  case: { parties: "", court: "", case_number: "", judge: "" },
+  docket_source: { type: "courtlistener", docket_id: null, url: "", awaiting_sync: false },
   claims_administrator: null,
   scan_guidance: "",
 };
@@ -32,10 +36,23 @@ const DEFAULT_CASE = {
 const card = { background: SURFACE, border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1.2rem" };
 const labelStyle = { display: "block", fontSize: "0.74rem", color: INK_60, fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 4 };
 const sectionH = { fontSize: "0.95rem", fontWeight: 800, marginBottom: "0.9rem", color: INK };
+const hint = { fontSize: "0.72rem", color: INK_60, marginTop: 4 };
 
 function slugify(s) {
   return (s || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
+function deriveClaimsName(url) {
+  if (!url) return "";
+  try {
+    const host = String(url).replace(/^https?:\/\//i, "").split("/")[0].replace(/^www\./i, "");
+    const parts = host.split(".");
+    const sld = parts.length >= 2 ? parts[parts.length - 2] : parts[0];
+    return sld.replace(/[-_]+/g, " ").trim().split(" ").filter(Boolean)
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  } catch { return ""; }
+}
+
+const STATE_COLORS = { active: "#1a7f37", draft: "#9a6700", archived: INK_60 };
 
 export default function CasesTab({ onDirtyChange }) {
   const [phase, setPhase] = useState("list");
@@ -47,6 +64,8 @@ export default function CasesTab({ onDirtyChange }) {
   const [error, setError] = useState("");
   const [toast, setToast] = useState("");
   const [deleteSlug, setDeleteSlug] = useState(null);
+  const [lookupBusy, setLookupBusy] = useState(false);
+  const [lookupMsg, setLookupMsg] = useState("");
 
   useEffect(() => { loadCases(); loadThemes(); }, []);
 
@@ -71,7 +90,6 @@ export default function CasesTab({ onDirtyChange }) {
     } catch (e) { setError(e.message); }
     finally { setLoading(false); }
   }
-
   async function loadThemes() {
     try {
       const res = await fetch("/api/admin/themes", { credentials: "include" });
@@ -81,11 +99,12 @@ export default function CasesTab({ onDirtyChange }) {
   }
 
   function openNew() {
-    setForm({ ...DEFAULT_CASE }); setIsNew(true); setPhase("editor"); setError(""); setToast("");
+    setForm({ ...DEFAULT_CASE }); setIsNew(true); setPhase("editor");
+    setError(""); setToast(""); setLookupMsg("");
   }
   function openEdit(c) {
     setForm({ ...DEFAULT_CASE, ...JSON.parse(JSON.stringify(c)) });
-    setIsNew(false); setPhase("editor"); setError(""); setToast("");
+    setIsNew(false); setPhase("editor"); setError(""); setToast(""); setLookupMsg("");
   }
   function closeEditor() {
     if (dirty && !confirm("Discard unsaved changes?")) return;
@@ -96,17 +115,57 @@ export default function CasesTab({ onDirtyChange }) {
   function setNested(group, key, value) {
     setForm(prev => ({ ...prev, [group]: { ...prev[group], [key]: value } }));
   }
+  function setClaims(key, value) {
+    setForm(prev => ({
+      ...prev,
+      claims_administrator: { ...(prev.claims_administrator || { name: "", url: "", key_dates_url: "" }), [key]: value },
+    }));
+  }
+  function setDocketType(type) {
+    setForm(prev => {
+      const next = { ...prev, docket_source: { ...prev.docket_source, type } };
+      if (type === "claims_agent" && !next.claims_administrator) {
+        next.claims_administrator = { name: "", url: "", key_dates_url: "" };
+      }
+      return next;
+    });
+    setLookupMsg("");
+  }
   function toggleTheme(slug) {
     setForm(prev => ({
       ...prev,
       topics: prev.topics.includes(slug) ? prev.topics.filter(t => t !== slug) : [...prev.topics, slug],
     }));
   }
-  function toggleClaims() {
+  function toggleClaimsMirror() {
     setForm(prev => ({
       ...prev,
       claims_administrator: prev.claims_administrator ? null : { name: "", url: "", key_dates_url: "" },
     }));
+  }
+
+  async function lookupDocket() {
+    const id = form.docket_source.docket_id;
+    if (!id) { setLookupMsg("Enter a docket ID first."); return; }
+    setLookupBusy(true); setLookupMsg("Looking up…");
+    try {
+      const res = await fetch(`/api/admin/courtlistener-lookup?docket_id=${encodeURIComponent(id)}`, { credentials: "include" });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || "Lookup failed");
+      setForm(prev => ({
+        ...prev,
+        case: {
+          ...prev.case,
+          parties: data.case_name || prev.case.parties,
+          court: data.court || prev.case.court,
+          case_number: data.docket_number || prev.case.case_number,
+          judge: data.judge || prev.case.judge,
+        },
+        docket_source: { ...prev.docket_source, url: data.docket_url || prev.docket_source.url },
+      }));
+      setLookupMsg("Filled from CourtListener ✓");
+    } catch (e) { setLookupMsg(e.message); }
+    finally { setLookupBusy(false); }
   }
 
   function validate() {
@@ -116,11 +175,16 @@ export default function CasesTab({ onDirtyChange }) {
     if (!form.display_name.trim()) return "Display name is required";
     if (form.topics.length === 0) return "Tag at least one Theme";
     if (!form.case.parties.trim()) return "Parties are required";
-    if (!form.case.court.trim()) return "Court is required";
-    if (!form.case.case_number.trim()) return "Case number is required";
-    if (!form.case.judge.trim()) return "Judge is required";
-    if (form.docket_source.type === "courtlistener" && !form.docket_source.docket_id) {
-      return "Docket ID is required for a CourtListener docket";
+    if (form.docket_source.type === "courtlistener") {
+      if (!form.docket_source.docket_id) return "Docket ID is required for a CourtListener docket";
+      if (!form.case.court.trim()) return "Court is required";
+      if (!form.case.case_number.trim()) return "Case number is required";
+      if (!form.case.judge.trim()) return "Judge is required";
+    }
+    if (form.docket_source.type === "claims_agent") {
+      if (!form.claims_administrator || !(form.claims_administrator.url || "").trim()) {
+        return "A claims-agent URL is required";
+      }
     }
     return null;
   }
@@ -162,6 +226,8 @@ export default function CasesTab({ onDirtyChange }) {
   }
 
   const wrap = { maxWidth: 1080, margin: "0 auto", padding: "1.4rem clamp(1rem,3vw,2rem) 3rem" };
+  const isCL = form.docket_source.type === "courtlistener";
+  const derivedClaimsName = deriveClaimsName(form.claims_administrator && form.claims_administrator.url);
 
   /* ── List view ──────────────────────────────────────────────────────── */
   if (phase === "list") {
@@ -195,9 +261,9 @@ export default function CasesTab({ onDirtyChange }) {
                 <tbody>
                   {cases.map(c => (
                     <tr key={c.slug} style={{ borderBottom: `1px solid ${LINE}` }}>
-                      <Td><span style={{ marginRight: 6 }}>{c.emoji}</span>{c.display_name}
+                      <Td>{c.display_name}
                         <div style={{ fontFamily: "monospace", fontSize: "0.72rem", color: INK_60 }}>{c.slug}</div></Td>
-                      <Td>{c.status || <span style={{ color: INK_60 }}>—</span>}</Td>
+                      <Td><span style={{ color: STATE_COLORS[c.status] || INK_60, fontWeight: 700, textTransform: "capitalize" }}>{c.status || "—"}</span></Td>
                       <Td>{(c.topics || []).map(slug => {
                         const t = themes.find(x => x.slug === slug);
                         return <span key={slug} title={t ? t.display_name : slug} style={{ marginRight: 4 }}>{t ? t.emoji : "🏷️"}</span>;
@@ -241,15 +307,9 @@ export default function CasesTab({ onDirtyChange }) {
         {/* Basics */}
         <div style={card}>
           <h3 style={sectionH}>Basics</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "1rem", marginBottom: "0.9rem" }}>
-            <div>
-              <label style={labelStyle}>Display name *</label>
-              <input style={inputStyle} value={form.display_name} onChange={e => set("display_name", e.target.value)} placeholder="e.g. Bartz v. Anthropic" />
-            </div>
-            <div>
-              <label style={labelStyle}>Emoji</label>
-              <input style={inputStyle} value={form.emoji} maxLength={3} onChange={e => set("emoji", e.target.value)} />
-            </div>
+          <div style={{ marginBottom: "0.9rem" }}>
+            <label style={labelStyle}>Display name *</label>
+            <input style={inputStyle} value={form.display_name} onChange={e => set("display_name", e.target.value)} placeholder="e.g. Bartz v. Anthropic" />
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
             <div>
@@ -258,7 +318,9 @@ export default function CasesTab({ onDirtyChange }) {
             </div>
             <div>
               <label style={labelStyle}>Status</label>
-              <input style={inputStyle} value={form.status} onChange={e => set("status", e.target.value)} placeholder="e.g. Settlement — final approval pending" />
+              <select style={selectStyle} value={form.status} onChange={e => set("status", e.target.value)}>
+                {CASE_STATES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+              </select>
             </div>
           </div>
         </div>
@@ -282,64 +344,76 @@ export default function CasesTab({ onDirtyChange }) {
           </div>
         </div>
 
+        {/* Tracking source */}
+        <div style={card}>
+          <h3 style={sectionH}>Tracking source</h3>
+          <div style={{ maxWidth: 360, marginBottom: "0.9rem" }}>
+            <label style={labelStyle}>Source type</label>
+            <select style={selectStyle} value={form.docket_source.type} onChange={e => setDocketType(e.target.value)}>
+              <option value="courtlistener">Court docket (CourtListener)</option>
+              <option value="claims_agent">Claims agent</option>
+            </select>
+          </div>
+
+          {isCL ? (
+            <>
+              <label style={labelStyle}>Docket ID *</label>
+              <div style={{ display: "flex", gap: 8, marginBottom: 4 }}>
+                <input style={{ ...inputStyle, marginTop: 0 }} value={form.docket_source.docket_id || ""}
+                  onChange={e => setNested("docket_source", "docket_id", e.target.value || null)} placeholder="e.g. 69058235" />
+                <button type="button" style={btnStyle} onClick={lookupDocket} disabled={lookupBusy}>
+                  {lookupBusy ? "Looking…" : "Look up"}
+                </button>
+              </div>
+              <p style={hint}>{lookupMsg || "Enter the CourtListener docket ID and click Look up to auto-fill parties, court, case number, and judge."}</p>
+              <div style={{ marginTop: "0.9rem" }}>
+                <label style={labelStyle}>Docket URL</label>
+                <input style={inputStyle} value={form.docket_source.url} onChange={e => setNested("docket_source", "url", e.target.value)} placeholder="https://www.courtlistener.com/docket/…" />
+              </div>
+              <label style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: "0.88rem", cursor: "pointer", marginTop: "0.9rem" }}>
+                <input type="checkbox" checked={form.docket_source.awaiting_sync} onChange={e => setNested("docket_source", "awaiting_sync", e.target.checked)} />
+                Awaiting sync (dormant until docket refresh)
+              </label>
+            </>
+          ) : (
+            <>
+              <label style={labelStyle}>Claims-agent URL *</label>
+              <input style={inputStyle} value={(form.claims_administrator && form.claims_administrator.url) || ""}
+                onChange={e => setClaims("url", e.target.value)} placeholder="https://www.examplesettlement.com/" />
+              {derivedClaimsName && <p style={hint}>Name (auto from URL): <strong>{derivedClaimsName}</strong></p>}
+              <div style={{ marginTop: "0.9rem" }}>
+                <label style={labelStyle}>Key dates URL</label>
+                <input style={inputStyle} value={(form.claims_administrator && form.claims_administrator.key_dates_url) || ""}
+                  onChange={e => setClaims("key_dates_url", e.target.value)} placeholder="https://…/dates" />
+              </div>
+            </>
+          )}
+        </div>
+
         {/* Case details */}
         <div style={card}>
-          <h3 style={sectionH}>Case details</h3>
+          <h3 style={sectionH}>Case details {!isCL && <span style={{ fontWeight: 500, color: INK_60, fontSize: "0.8rem" }}>(optional for a claims-agent matter)</span>}</h3>
           <div style={{ marginBottom: "0.9rem" }}>
             <label style={labelStyle}>Parties *</label>
             <input style={inputStyle} value={form.case.parties} onChange={e => setNested("case", "parties", e.target.value)} placeholder="e.g. Bartz, et al. v. Anthropic PBC" />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "1rem", marginBottom: "0.9rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
             <div>
-              <label style={labelStyle}>Court *</label>
-              <input style={inputStyle} value={form.case.court} onChange={e => setNested("case", "court", e.target.value)} placeholder="e.g. U.S. District Court, N.D. Cal." />
+              <label style={labelStyle}>Court {isCL && "*"}</label>
+              <input style={inputStyle} value={form.case.court} onChange={e => setNested("case", "court", e.target.value)} placeholder="N.D. Cal." />
             </div>
             <div>
-              <label style={labelStyle}>Court ID</label>
-              <input style={inputStyle} value={form.case.court_id} onChange={e => setNested("case", "court_id", e.target.value)} placeholder="e.g. cand" />
-            </div>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-            <div>
-              <label style={labelStyle}>Case number *</label>
-              <input style={inputStyle} value={form.case.case_number} onChange={e => setNested("case", "case_number", e.target.value)} placeholder="e.g. 3:24-cv-05417" />
+              <label style={labelStyle}>Case number {isCL && "*"}</label>
+              <input style={inputStyle} value={form.case.case_number} onChange={e => setNested("case", "case_number", e.target.value)} placeholder="3:24-cv-05417" />
             </div>
             <div>
-              <label style={labelStyle}>Judge *</label>
-              <input style={inputStyle} value={form.case.judge} onChange={e => setNested("case", "judge", e.target.value)} placeholder="e.g. Hon. Araceli Martínez-Olguín" />
+              <label style={labelStyle}>Judge {isCL && "*"}</label>
+              <input style={inputStyle} value={form.case.judge} onChange={e => setNested("case", "judge", e.target.value)} placeholder="Hon. …" />
             </div>
           </div>
         </div>
 
-        {/* Docket source */}
-        <div style={card}>
-          <h3 style={sectionH}>Docket source</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "0.9rem" }}>
-            <div>
-              <label style={labelStyle}>Type</label>
-              <select style={selectStyle} value={form.docket_source.type} onChange={e => setNested("docket_source", "type", e.target.value)}>
-                <option value="manual">Manual</option>
-                <option value="courtlistener">CourtListener</option>
-              </select>
-            </div>
-            {form.docket_source.type === "courtlistener" && (
-              <div>
-                <label style={labelStyle}>Docket ID *</label>
-                <input style={inputStyle} value={form.docket_source.docket_id || ""} onChange={e => setNested("docket_source", "docket_id", e.target.value || null)} placeholder="e.g. 69058235" />
-              </div>
-            )}
-          </div>
-          <div style={{ marginBottom: "0.9rem" }}>
-            <label style={labelStyle}>Docket URL</label>
-            <input style={inputStyle} value={form.docket_source.url} onChange={e => setNested("docket_source", "url", e.target.value)} placeholder="https://www.courtlistener.com/docket/…" />
-          </div>
-          <label style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: "0.88rem", cursor: "pointer" }}>
-            <input type="checkbox" checked={form.docket_source.awaiting_sync} onChange={e => setNested("docket_source", "awaiting_sync", e.target.checked)} />
-            Awaiting sync (dormant until docket refresh)
-          </label>
-        </div>
-
-        {/* Scan guidance (NEW) */}
+        {/* Scan guidance */}
         <div style={card}>
           <h3 style={sectionH}>Scan guidance</h3>
           <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.7rem" }}>
@@ -347,34 +421,31 @@ export default function CasesTab({ onDirtyChange }) {
           </p>
           <textarea style={{ ...inputStyle, minHeight: 120 }} value={form.scan_guidance}
             onChange={e => set("scan_guidance", e.target.value)}
-            placeholder="e.g. Watch the settlement docket for the final-approval order and any objector appeal to the Ninth Circuit; track the distribution calculation date. Prioritize the claims-administrator site for status." />
+            placeholder="e.g. Watch the settlement docket for the final-approval order and any objector appeal to the Ninth Circuit; track the distribution calculation date." />
         </div>
 
-        {/* Claims administrator (optional) */}
-        <div style={card}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={toggleClaims}>
-            <h3 style={{ ...sectionH, marginBottom: 0 }}>Claims administrator <span style={{ fontWeight: 500, color: INK_60, fontSize: "0.8rem" }}>(optional)</span></h3>
-            <span style={{ fontSize: "1.3rem", color: INK_60 }}>{form.claims_administrator ? "−" : "+"}</span>
-          </div>
-          {form.claims_administrator && (
-            <div style={{ marginTop: "0.9rem", display: "grid", gap: "0.9rem" }}>
-              <div>
-                <label style={labelStyle}>Name</label>
-                <input style={inputStyle} value={form.claims_administrator.name} onChange={e => setNested("claims_administrator", "name", e.target.value)} placeholder="e.g. Anthropic Copyright Settlement Administrator" />
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+        {/* Optional claims-agent mirror (only when primary source is a court docket) */}
+        {isCL && (
+          <div style={card}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }} onClick={toggleClaimsMirror}>
+              <h3 style={{ ...sectionH, marginBottom: 0 }}>Claims-agent mirror <span style={{ fontWeight: 500, color: INK_60, fontSize: "0.8rem" }}>(optional)</span></h3>
+              <span style={{ fontSize: "1.3rem", color: INK_60 }}>{form.claims_administrator ? "−" : "+"}</span>
+            </div>
+            {form.claims_administrator && (
+              <div style={{ marginTop: "0.9rem", display: "grid", gap: "0.9rem" }}>
                 <div>
-                  <label style={labelStyle}>URL</label>
-                  <input style={inputStyle} value={form.claims_administrator.url} onChange={e => setNested("claims_administrator", "url", e.target.value)} placeholder="https://…" />
+                  <label style={labelStyle}>Claims-agent URL</label>
+                  <input style={inputStyle} value={form.claims_administrator.url} onChange={e => setClaims("url", e.target.value)} placeholder="https://…" />
+                  {derivedClaimsName && <p style={hint}>Name (auto from URL): <strong>{derivedClaimsName}</strong></p>}
                 </div>
                 <div>
                   <label style={labelStyle}>Key dates URL</label>
-                  <input style={inputStyle} value={form.claims_administrator.key_dates_url} onChange={e => setNested("claims_administrator", "key_dates_url", e.target.value)} placeholder="https://…/dates" />
+                  <input style={inputStyle} value={form.claims_administrator.key_dates_url} onChange={e => setClaims("key_dates_url", e.target.value)} placeholder="https://…/dates" />
                 </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        )}
 
         <div style={{ display: "flex", gap: 10 }}>
           <button style={{ ...btnPrimaryStyle, opacity: (loading || !dirty) ? 0.5 : 1 }} onClick={save} disabled={loading || !dirty}>

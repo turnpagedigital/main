@@ -1,25 +1,33 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { FONT, INK, INK_60, LINE, SURFACE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
+import { inputStyle, btnPrimaryStyle } from "./shared.jsx";
 
 /* IntelligenceDefaultsTab — global defaults for the Intelligence engine.
-   v1 manages a single default voice/tone. external/internal voices are
-   reserved (shown disabled) for a later public-vs-internal split. */
+   - Default voice/tone (external/internal reserved for later).
+   - Generic trusted + blocked sources that apply to every theme; each theme
+     adds its own theme-specific trusted sources on top. */
 
 const card = { background: SURFACE, border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1.2rem" };
 const labelStyle = { display: "block", fontSize: "0.74rem", color: INK_60, fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 4 };
 const sectionH = { fontSize: "0.95rem", fontWeight: 800, marginBottom: "0.4rem", color: INK };
+
+const lines = (text) => text.split("\n").map(s => s.trim()).filter(Boolean);
 
 export default function IntelligenceDefaultsTab({ onDirtyChange }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [toast, setToast] = useState("");
   const [voiceDefault, setVoiceDefault] = useState("");
-  const [original, setOriginal] = useState("");
+  const [wlText, setWlText] = useState("");
+  const [blText, setBlText] = useState("");
+  const [original, setOriginal] = useState({ voice: "", wl: "", bl: "" });
 
   useEffect(() => { load(); }, []);
 
-  const dirty = useMemo(() => voiceDefault !== original, [voiceDefault, original]);
+  const dirty = useMemo(
+    () => voiceDefault !== original.voice || wlText !== original.wl || blText !== original.bl,
+    [voiceDefault, wlText, blText, original]
+  );
   useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
 
   async function load() {
@@ -28,8 +36,12 @@ export default function IntelligenceDefaultsTab({ onDirtyChange }) {
       const res = await fetch("/api/admin/intelligence-settings", { credentials: "include" });
       const data = await res.json();
       if (!data.ok) throw new Error(data.error || "Failed to load settings");
-      const v = (data.settings && data.settings.voice && data.settings.voice.default) || "";
-      setVoiceDefault(v); setOriginal(v);
+      const s = data.settings || {};
+      const v = (s.voice && s.voice.default) || "";
+      const wl = ((s.sources && s.sources.whitelist) || []).join("\n");
+      const bl = ((s.sources && s.sources.blacklist) || []).join("\n");
+      setVoiceDefault(v); setWlText(wl); setBlText(bl);
+      setOriginal({ voice: v, wl, bl });
     } catch (e) { setError(e.message); }
     finally { setLoading(false); }
   }
@@ -41,12 +53,15 @@ export default function IntelligenceDefaultsTab({ onDirtyChange }) {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ voice: { default: voiceDefault } }),
+        body: JSON.stringify({
+          voice: { default: voiceDefault },
+          sources: { whitelist: lines(wlText), blacklist: lines(blText) },
+        }),
       });
       const data = await res.json();
       if (!data.ok) throw new Error(data.error || "Failed to save");
-      setOriginal(voiceDefault);
-      setToast("Voice saved");
+      setOriginal({ voice: voiceDefault, wl: wlText, bl: blText });
+      setToast("Defaults saved");
       onDirtyChange?.(false);
     } catch (e) { setError(e.message); }
     finally { setLoading(false); }
@@ -75,12 +90,33 @@ export default function IntelligenceDefaultsTab({ onDirtyChange }) {
           </p>
           <label style={labelStyle}>Voice</label>
           <textarea
-            style={{ ...inputStyle, minHeight: 200 }}
+            style={{ ...inputStyle, minHeight: 180 }}
             value={voiceDefault}
             onChange={e => setVoiceDefault(e.target.value)}
             disabled={loading}
             placeholder="Describe the house voice…"
           />
+        </div>
+
+        <div style={card}>
+          <h3 style={sectionH}>Global sources</h3>
+          <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.8rem" }}>
+            Generic trusted &amp; blocked sources used for <em>every</em> theme. One domain per line
+            (e.g. <code>reuters.com</code>). Each theme adds its own theme-specific trusted sources on
+            top of these in the Themes tab; the blocklist is global.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+            <div>
+              <label style={labelStyle}>Trusted (whitelist)</label>
+              <textarea style={{ ...inputStyle, minHeight: 200, fontFamily: "monospace", fontSize: "0.8rem" }}
+                value={wlText} onChange={e => setWlText(e.target.value)} disabled={loading} />
+            </div>
+            <div>
+              <label style={labelStyle}>Blocked (blacklist)</label>
+              <textarea style={{ ...inputStyle, minHeight: 200, fontFamily: "monospace", fontSize: "0.8rem" }}
+                value={blText} onChange={e => setBlText(e.target.value)} disabled={loading} />
+            </div>
+          </div>
         </div>
 
         <div style={{ ...card, opacity: 0.6 }}>
@@ -94,7 +130,7 @@ export default function IntelligenceDefaultsTab({ onDirtyChange }) {
         <div style={{ display: "flex", gap: 10 }}>
           <button style={{ ...btnPrimaryStyle, opacity: (loading || !dirty) ? 0.5 : 1 }}
             onClick={save} disabled={loading || !dirty}>
-            {loading ? "Saving…" : "Save voice"}
+            {loading ? "Saving…" : "Save defaults"}
           </button>
         </div>
       </div>

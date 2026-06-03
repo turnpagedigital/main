@@ -26,7 +26,7 @@ const DEFAULT_THEME = {
   page: null,
   schedule: "daily",
   keywords: [],
-  sources: { whitelist: [], blacklist: [] },
+  sources: { whitelist: [] },
   guidance_prompt: "",
 };
 
@@ -323,22 +323,14 @@ export default function ThemesTab({ onDirtyChange }) {
 
         {/* Sources */}
         <div style={card}>
-          <h3 style={sectionH}>Trusted &amp; blocked sources</h3>
-          <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.7rem" }}>One domain per line (e.g. <code>reuters.com</code>).</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-            <div>
-              <label style={labelStyle}>Trusted (whitelist)</label>
-              <textarea style={{ ...inputStyle, minHeight: 150, fontFamily: "monospace", fontSize: "0.8rem" }}
-                value={form.sources.whitelist.join("\n")}
-                onChange={e => setSources("whitelist", linesToList(e.target.value))} />
-            </div>
-            <div>
-              <label style={labelStyle}>Blocked (blacklist)</label>
-              <textarea style={{ ...inputStyle, minHeight: 150, fontFamily: "monospace", fontSize: "0.8rem" }}
-                value={form.sources.blacklist.join("\n")}
-                onChange={e => setSources("blacklist", linesToList(e.target.value))} />
-            </div>
-          </div>
+          <h3 style={sectionH}>Theme-specific trusted sources</h3>
+          <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.7rem" }}>
+            Extra trusted domains for THIS beat, layered on top of the global trusted &amp; blocked lists
+            in <strong>Defaults</strong>. One domain per line (e.g. <code>law360.com</code>).
+          </p>
+          <textarea style={{ ...inputStyle, minHeight: 150, fontFamily: "monospace", fontSize: "0.8rem" }}
+            value={(form.sources.whitelist || []).join("\n")}
+            onChange={e => setSources("whitelist", linesToList(e.target.value))} />
         </div>
 
         {/* Guidance */}

@@ -36,9 +36,27 @@ const TOPICS = [
 ];
 
 const MODELED_KEYS = new Set([
-  "slug", "display_name", "type", "emoji", "status", "topics",
+  "slug", "display_name", "type", "status", "topics",
   "case", "docket_source", "claims_administrator", "scan_guidance",
 ]);
+
+const CASE_STATES = ["active", "draft", "archived"];
+function coerceStatus(s) {
+  return CASE_STATES.includes(s) ? s : "active"; // legacy free-text posture → treat as active
+}
+
+// Derive a human-ish administrator name from a URL host (best-effort).
+function deriveClaimsName(url) {
+  if (!url) return "";
+  try {
+    const host = String(url).replace(/^https?:\/\//i, "").split("/")[0].replace(/^www\./i, "");
+    const parts = host.split(".");
+    const sld = parts.length >= 2 ? parts[parts.length - 2] : parts[0];
+    return sld.replace(/[-_]+/g, " ").trim()
+      .split(" ").filter(Boolean)
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  } catch { return ""; }
+}
 
 /* ── Validation & normalization ─────────────────────────────────────────── */
 
@@ -51,32 +69,32 @@ function normalizeCase(raw) {
   const cs = c.case || {};
   const ds = c.docket_source || {};
   const ca = c.claims_administrator;
+  const caUrl = ca ? (ca.url || "").trim() : "";
   return {
     slug: (c.slug || "").trim(),
     display_name: (c.display_name || "").trim(),
     type: c.type || "case",
-    emoji: (c.emoji || "⚖️").trim() || "⚖️",
-    status: (c.status || "").trim(),
+    status: coerceStatus(c.status),
     topics: Array.isArray(c.topics)
       ? c.topics.map(t => String(t).trim()).filter(Boolean)
       : [],
     case: {
       parties: (cs.parties || "").trim(),
       court: (cs.court || "").trim(),
-      court_id: (cs.court_id || "").trim(),
       case_number: (cs.case_number || "").trim(),
       judge: (cs.judge || "").trim(),
     },
     docket_source: {
-      type: ds.type === "courtlistener" ? "courtlistener" : "manual",
+      type: ds.type === "claims_agent" ? "claims_agent" : "courtlistener",
       docket_id: ds.docket_id ? String(ds.docket_id).trim() : null,
       url: (ds.url || "").trim(),
       awaiting_sync: ds.awaiting_sync === true,
     },
-    claims_administrator: ca
+    claims_administrator: ca && (caUrl || ca.name)
       ? {
-          name: (ca.name || "").trim(),
-          url: (ca.url || "").trim(),
+          // Name is derived from the URL (falls back to any provided name).
+          name: deriveClaimsName(caUrl) || (ca.name || "").trim(),
+          url: caUrl,
           key_dates_url: (ca.key_dates_url || "").trim(),
         }
       : null,
@@ -90,11 +108,16 @@ function validateCase(c) {
   if (!c.display_name) return "display_name is required";
   if (c.topics.length === 0) return "tag at least one theme";
   if (!c.case.parties) return "case.parties is required";
-  if (!c.case.court) return "case.court is required";
-  if (!c.case.case_number) return "case.case_number is required";
-  if (!c.case.judge) return "case.judge is required";
-  if (c.docket_source.type === "courtlistener" && !c.docket_source.docket_id) {
-    return "docket_id is required when type is 'courtlistener'";
+  if (c.docket_source.type === "courtlistener") {
+    if (!c.docket_source.docket_id) return "docket ID is required for a CourtListener docket";
+    if (!c.case.court) return "court is required";
+    if (!c.case.case_number) return "case number is required";
+    if (!c.case.judge) return "judge is required";
+  }
+  if (c.docket_source.type === "claims_agent") {
+    if (!c.claims_administrator || !c.claims_administrator.url) {
+      return "a claims-agent URL is required";
+    }
   }
   return null;
 }
@@ -110,16 +133,14 @@ function frontMatterBody(c) {
   y += `slug: ${c.slug}\n`;
   y += `display_name: ${c.display_name}\n`;
   y += `type: ${c.type}\n`;
-  y += `emoji: ${c.emoji}\n`;
-  if (c.status) y += `status: ${dq(c.status)}\n`;
+  y += `status: ${c.status}\n`;
   y += "topics:\n";
   for (const t of c.topics) y += `  - ${t}\n`;
   y += "case:\n";
   y += `  parties: ${dq(c.case.parties)}\n`;
-  y += `  court: ${dq(c.case.court)}\n`;
-  if (c.case.court_id) y += `  court_id: ${c.case.court_id}\n`;
-  y += `  case_number: ${dq(c.case.case_number)}\n`;
-  y += `  judge: ${dq(c.case.judge)}\n`;
+  if (c.case.court) y += `  court: ${dq(c.case.court)}\n`;
+  if (c.case.case_number) y += `  case_number: ${dq(c.case.case_number)}\n`;
+  if (c.case.judge) y += `  judge: ${dq(c.case.judge)}\n`;
   y += "docket_source:\n";
   y += `  type: ${c.docket_source.type}\n`;
   if (c.docket_source.docket_id) y += `  docket_id: ${c.docket_source.docket_id}\n`;
@@ -220,30 +241,31 @@ function parseCaseMd(md, fallbackSlug) {
   const dsB = byKey["docket_source"];
   const caB = byKey["claims_administrator"];
 
-  const claims = caB && (subScalar(caB, "name") || subScalar(caB, "url"))
+  const caUrl = caB ? (subScalar(caB, "url") || "") : "";
+  const claims = caB && (caUrl || subScalar(caB, "name"))
     ? {
-        name: subScalar(caB, "name") || "",
-        url: subScalar(caB, "url") || "",
+        name: deriveClaimsName(caUrl) || subScalar(caB, "name") || "",
+        url: caUrl,
         key_dates_url: subScalar(caB, "key_dates_url") || "",
       }
     : null;
+
+  const dsType = dsB ? subScalar(dsB, "type") : "";
 
   return {
     slug: top("slug") || fallbackSlug,
     display_name: top("display_name") || fallbackSlug,
     type: top("type") || "case",
-    emoji: top("emoji") || "⚖️",
-    status: top("status") || "",
+    status: coerceStatus(top("status") || ""),
     topics: byKey["topics"] ? listItems(byKey["topics"]) : [],
     case: {
       parties: caseB ? (subScalar(caseB, "parties") || "") : "",
       court: caseB ? (subScalar(caseB, "court") || "") : "",
-      court_id: caseB ? (subScalar(caseB, "court_id") || "") : "",
       case_number: caseB ? (subScalar(caseB, "case_number") || "") : "",
       judge: caseB ? (subScalar(caseB, "judge") || "") : "",
     },
     docket_source: {
-      type: dsB ? (subScalar(dsB, "type") || "manual") : "manual",
+      type: dsType === "claims_agent" ? "claims_agent" : "courtlistener",
       docket_id: dsB ? (subScalar(dsB, "docket_id") || null) : null,
       url: dsB ? (subScalar(dsB, "url") || "") : "",
       awaiting_sync: dsB ? /^(true|yes|1|on)$/i.test(subScalar(dsB, "awaiting_sync") || "") : false,
@@ -266,7 +288,6 @@ function generateSeedJson(c) {
       display_name: c.display_name,
       case_name: c.case.parties,
       court: c.case.court,
-      court_id: c.case.court_id,
       case_number: c.case.case_number,
       judge: c.case.judge,
       docket_id: docketId || null,

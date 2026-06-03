@@ -13,16 +13,27 @@ import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
 const SETTINGS_PATH = "src/data/intelligence-settings.json";
 
+function cleanStringList(v) {
+  if (!Array.isArray(v)) return [];
+  return v.map(s => (typeof s === "string" ? s.trim() : "")).filter(Boolean);
+}
+
 function normalizeSettings(raw, prev) {
   const r = raw || {};
   const v = r.voice || {};
   const prevVoice = (prev && prev.voice) || {};
+  const s = r.sources || {};
+  const prevSources = (prev && prev.sources) || {};
   return {
     voice: {
       default: typeof v.default === "string" ? v.default : (prevVoice.default || ""),
       // external/internal are reserved — accept a string if provided, else preserve/keep null
       external: typeof v.external === "string" ? v.external : (prevVoice.external ?? null),
       internal: typeof v.internal === "string" ? v.internal : (prevVoice.internal ?? null),
+    },
+    sources: {
+      whitelist: r.sources ? cleanStringList(s.whitelist) : cleanStringList(prevSources.whitelist),
+      blacklist: r.sources ? cleanStringList(s.blacklist) : cleanStringList(prevSources.blacklist),
     },
   };
 }
@@ -53,10 +64,11 @@ export async function onRequest({ request, env }) {
     const body = {};
     if (prev._comment) body._comment = prev._comment;
     body.voice = next.voice;
+    body.sources = next.sources;
 
     const content = JSON.stringify(body, null, 2) + "\n";
     const saved = await commitFileToGitHub(
-      env, SETTINGS_PATH, content, current.sha, "Update Intelligence voice default"
+      env, SETTINGS_PATH, content, current.sha, "Update Intelligence defaults"
     );
     if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 500);
     return jsonResponse({ ok: true });

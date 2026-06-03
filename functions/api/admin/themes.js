@@ -39,8 +39,8 @@ function normalizeTheme(raw) {
     schedule: SCHEDULES.includes(t.schedule) ? t.schedule : "daily",
     keywords: cleanStringList(t.keywords),
     sources: {
+      // Theme-specific trusted sources only; the blocklist is global (Defaults).
       whitelist: cleanStringList(src.whitelist),
-      blacklist: cleanStringList(src.blacklist),
     },
     guidance_prompt: typeof t.guidance_prompt === "string" ? t.guidance_prompt : "",
   };
