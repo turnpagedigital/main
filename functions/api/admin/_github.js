@@ -22,12 +22,26 @@ export function githubHeaders(env) {
   };
 }
 
-function branchOf(env) {
-  return env.GITHUB_BRANCH || DEFAULT_BRANCH;
+function branchOf(env, branch) {
+  return branch || env.GITHUB_BRANCH || DEFAULT_BRANCH;
 }
 
-function contentsUrl(env, path) {
-  return `https://api.github.com/repos/${env.GITHUB_REPO}/contents/${path}`;
+function contentsUrl(env, path, repo) {
+  const repoName = repo || env.GITHUB_REPO;
+  return `https://api.github.com/repos/${repoName}/contents/${path}`;
+}
+
+/* List a directory's immediate entries via the Contents API. Returns
+   { ok, entries: [{ name, path, type, sha }] } | { ok: false, error }.
+   `repo` and `branch` are optional overrides (default to env). */
+export async function listDirFromGitHub(env, dirPath, repo, branch) {
+  const ref = branchOf(env, branch);
+  const url = `${contentsUrl(env, dirPath, repo)}?ref=${encodeURIComponent(ref)}`;
+  const r = await fetch(url, { headers: githubHeaders(env) });
+  if (!r.ok) return { ok: false, error: `GitHub GET ${r.status}: ${(await r.text()).slice(0, 300)}` };
+  const j = await r.json();
+  if (!Array.isArray(j)) return { ok: false, error: "Not a directory" };
+  return { ok: true, entries: j.map(e => ({ name: e.name, path: e.path, type: e.type, sha: e.sha })) };
 }
 
 /* ── Reads ───────────────────────────────────────────────────────────────── */
@@ -39,9 +53,9 @@ function contentsUrl(env, path) {
    "Failed to parse alerts.json: …" instead of a generic message. Defaults to
    the path basename.
 */
-export async function getFileFromGitHub(env, path, parseLabel) {
-  const branch = branchOf(env);
-  const url = `${contentsUrl(env, path)}?ref=${encodeURIComponent(branch)}`;
+export async function getFileFromGitHub(env, path, parseLabel, repo, branch) {
+  const ref = branchOf(env, branch);
+  const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
   const r = await fetch(url, { headers: githubHeaders(env) });
   if (!r.ok) return { ok: false, error: `GitHub GET ${r.status}: ${(await r.text()).slice(0, 300)}` };
   const meta = await r.json();
@@ -70,9 +84,9 @@ export async function getFileFromGitHub(env, path, parseLabel) {
 /* Fetch just the SHA of a file (used before re-committing a binary that may
    or may not already exist). Returns null on any failure — callers should
    omit the sha field on PUT to indicate file creation. */
-export async function getFileSha(env, path) {
-  const branch = branchOf(env);
-  const url = `${contentsUrl(env, path)}?ref=${encodeURIComponent(branch)}`;
+export async function getFileSha(env, path, repo, branch) {
+  const ref = branchOf(env, branch);
+  const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
   const r = await fetch(url, { headers: githubHeaders(env) });
   if (!r.ok) return null;
   const j = await r.json();
@@ -86,9 +100,9 @@ export async function getFileSha(env, path) {
    avoids any encoding round-trip risk.
 
    Returns { ok: true, contentBase64, sha } | { ok: false, error }. */
-export async function getFileBase64FromGitHub(env, path) {
-  const branch = branchOf(env);
-  const url = `${contentsUrl(env, path)}?ref=${encodeURIComponent(branch)}`;
+export async function getFileBase64FromGitHub(env, path, repo, branch) {
+  const ref = branchOf(env, branch);
+  const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
   const r = await fetch(url, { headers: githubHeaders(env) });
   if (!r.ok) return { ok: false, error: `GitHub GET ${r.status}: ${(await r.text()).slice(0, 300)}` };
   const meta = await r.json();
@@ -106,21 +120,21 @@ export async function getFileBase64FromGitHub(env, path) {
 /* Commit a text file (UTF-8 string) to GitHub. The string is base64-encoded
    inside this helper. Pass sha for updates; omit (undefined/null/"") for new
    files. */
-export async function commitFileToGitHub(env, path, content, sha, message) {
+export async function commitFileToGitHub(env, path, content, sha, message, repo, branch) {
   const utf8 = unescape(encodeURIComponent(content));
-  return putContents(env, path, btoa(utf8), sha, message);
+  return putContents(env, path, btoa(utf8), sha, message, repo, branch);
 }
 
 /* Commit a pre-encoded base64 binary (image/video) to GitHub. The base64
    payload is sent through as-is. Pass sha for updates; omit for new files. */
-export async function commitBinaryToGitHub(env, path, base64Content, sha, message) {
-  return putContents(env, path, base64Content, sha, message);
+export async function commitBinaryToGitHub(env, path, base64Content, sha, message, repo, branch) {
+  return putContents(env, path, base64Content, sha, message, repo, branch);
 }
 
-async function putContents(env, path, base64Content, sha, message) {
-  const branch = branchOf(env);
-  const url = contentsUrl(env, path);
-  const bodyObj = { message, content: base64Content, branch };
+async function putContents(env, path, base64Content, sha, message, repo, branch) {
+  const ref = branchOf(env, branch);
+  const url = contentsUrl(env, path, repo);
+  const bodyObj = { message, content: base64Content, branch: ref };
   if (sha) bodyObj.sha = sha;
   const r = await fetch(url, {
     method: "PUT",
@@ -137,13 +151,13 @@ async function putContents(env, path, base64Content, sha, message) {
 
 /* Delete a file from GitHub. Best-effort: returns { ok } reflecting only
    whether the HTTP request succeeded. */
-export async function deleteFileFromGitHub(env, path, sha, message) {
-  const branch = branchOf(env);
-  const url = contentsUrl(env, path);
+export async function deleteFileFromGitHub(env, path, sha, message, repo, branch) {
+  const ref = branchOf(env, branch);
+  const url = contentsUrl(env, path, repo);
   const r = await fetch(url, {
     method: "DELETE",
     headers: { ...githubHeaders(env), "Content-Type": "application/json" },
-    body: JSON.stringify({ message, sha, branch }),
+    body: JSON.stringify({ message, sha, branch: ref }),
   });
   return { ok: r.ok };
 }

@@ -1,0 +1,257 @@
+{
+  "_comment": "Intelligence themes — the standing beats Andrew covers. Managed via /admin/intelligence/themes. Each theme's slug is its stable ID and intentionally matches the slugs that cases reference in their topics[] field. Settings here (keywords, sources, guidance, schedule, page, active) will eventually drive Claude's scraping + briefing; nothing acts on them yet.",
+  "themes": [
+    {
+      "slug": "rewind-tariffs",
+      "display_name": "Tariffs / Trade",
+      "emoji": "⚖️",
+      "active": true,
+      "page": null,
+      "schedule": "daily",
+      "keywords": [
+        "IEEPA tariff refund",
+        "Section 122 tariff Federal Circuit",
+        "CBP CAPE refund",
+        "Court of International Trade tariff",
+        "Section 301 investigation USTR tariff"
+      ],
+      "sources": {
+        "whitelist": [
+          "reuters.com",
+          "bloomberg.com",
+          "news.bloomberglaw.com",
+          "law360.com",
+          "courtlistener.com",
+          "cit.uscourts.gov",
+          "cafc.uscourts.gov",
+          "cbp.gov",
+          "ustr.gov",
+          "federalregister.gov",
+          "diaztradelaw.com",
+          "strtrade.com",
+          "crowell.com",
+          "mayerbrown.com",
+          "whitecase.com"
+        ],
+        "blacklist": [
+          "nytimes.com",
+          "aljazeera.com",
+          "zerohedge.com",
+          "dailymail.co.uk",
+          "breitbart.com",
+          "rt.com",
+          "sputniknews.com"
+        ]
+      },
+      "guidance_prompt": ""
+    },
+    {
+      "slug": "llm-class-action",
+      "display_name": "LLM / Copyright",
+      "emoji": "🤖",
+      "active": true,
+      "page": "ai-copyright",
+      "schedule": "daily",
+      "keywords": [
+        "Bartz Anthropic copyright settlement",
+        "AI training data copyright lawsuit",
+        "OpenAI copyright litigation",
+        "Thomson Reuters ROSS fair use appeal",
+        "Elsevier Meta copyright",
+        "music publisher AI copyright"
+      ],
+      "sources": {
+        "whitelist": [
+          "reuters.com",
+          "bloomberg.com",
+          "news.bloomberglaw.com",
+          "law360.com",
+          "courtlistener.com",
+          "bakerlaw.com",
+          "susmangodfrey.com",
+          "jenner.com",
+          "omm.com",
+          "cooley.com",
+          "gtlaw.com",
+          "techpolicypress.com"
+        ],
+        "blacklist": [
+          "nytimes.com",
+          "aljazeera.com",
+          "zerohedge.com",
+          "dailymail.co.uk",
+          "breitbart.com",
+          "rt.com",
+          "sputniknews.com"
+        ]
+      },
+      "guidance_prompt": ""
+    },
+    {
+      "slug": "crypto-insolvency",
+      "display_name": "Crypto Insolvency",
+      "emoji": "🪙",
+      "active": true,
+      "page": "crypto",
+      "schedule": "daily",
+      "keywords": [
+        "crypto bankruptcy chapter 11",
+        "FTX creditor distribution",
+        "Genesis crypto bankruptcy",
+        "Bitcoin Depot bankruptcy",
+        "crypto customer property bankruptcy"
+      ],
+      "sources": {
+        "whitelist": [
+          "reuters.com",
+          "bloomberg.com",
+          "news.bloomberglaw.com",
+          "law360.com",
+          "courtlistener.com",
+          "sec.gov",
+          "cftc.gov",
+          "coindesk.com",
+          "theblock.co",
+          "morrisoncohen.com",
+          "dlapiper.com",
+          "weil.com",
+          "kirkland.com"
+        ],
+        "blacklist": [
+          "nytimes.com",
+          "aljazeera.com",
+          "zerohedge.com",
+          "dailymail.co.uk",
+          "breitbart.com",
+          "rt.com",
+          "sputniknews.com"
+        ]
+      },
+      "guidance_prompt": ""
+    },
+    {
+      "slug": "fraud-recovery",
+      "display_name": "Ponzi / Fraud Recovery",
+      "emoji": "🕵️",
+      "active": true,
+      "page": null,
+      "schedule": "daily",
+      "keywords": [
+        "SEC Ponzi scheme charges",
+        "receiver clawback Ponzi scheme",
+        "SEC asset freeze fraud",
+        "federal receiver appointment fraud",
+        "fraudulent conveyance clawback"
+      ],
+      "sources": {
+        "whitelist": [
+          "reuters.com",
+          "bloomberg.com",
+          "news.bloomberglaw.com",
+          "law360.com",
+          "courtlistener.com",
+          "sec.gov",
+          "cftc.gov",
+          "justice.gov",
+          "ftc.gov",
+          "cohenmilstein.com",
+          "robbinsgeller.com"
+        ],
+        "blacklist": [
+          "nytimes.com",
+          "aljazeera.com",
+          "zerohedge.com",
+          "dailymail.co.uk",
+          "breitbart.com",
+          "rt.com",
+          "sputniknews.com"
+        ]
+      },
+      "guidance_prompt": ""
+    },
+    {
+      "slug": "billion-dollar-class-actions",
+      "display_name": "$1B+ Class Actions & Mass Arb",
+      "emoji": "💰",
+      "active": true,
+      "page": null,
+      "schedule": "daily",
+      "keywords": [
+        "class action settlement billion",
+        "Visa Mastercard interchange settlement",
+        "Roundup settlement Bayer",
+        "Google mass arbitration advertisers",
+        "securities class action settlement",
+        "Purdue opioid settlement"
+      ],
+      "sources": {
+        "whitelist": [
+          "reuters.com",
+          "bloomberg.com",
+          "news.bloomberglaw.com",
+          "law360.com",
+          "courtlistener.com",
+          "robbinsgeller.com",
+          "hbsslaw.com",
+          "lieffcabraser.com",
+          "cohenmilstein.com",
+          "kellerpostman.com",
+          "bsfllp.com",
+          "gibsondunn.com"
+        ],
+        "blacklist": [
+          "nytimes.com",
+          "aljazeera.com",
+          "zerohedge.com",
+          "dailymail.co.uk",
+          "breitbart.com",
+          "rt.com",
+          "sputniknews.com"
+        ]
+      },
+      "guidance_prompt": ""
+    },
+    {
+      "slug": "bankruptcy-creditor-rights",
+      "display_name": "Bankruptcy Creditor Rights",
+      "emoji": "📜",
+      "active": true,
+      "page": null,
+      "schedule": "daily",
+      "keywords": [
+        "Texas Two-Step bankruptcy",
+        "third-party releases Purdue bankruptcy",
+        "equitable mootness bankruptcy appeal",
+        "Chapter 15 recognition releases",
+        "plan confirmation appeal creditor rights"
+      ],
+      "sources": {
+        "whitelist": [
+          "reuters.com",
+          "bloomberg.com",
+          "news.bloomberglaw.com",
+          "law360.com",
+          "courtlistener.com",
+          "weil.com",
+          "kirkland.com",
+          "jonesday.com",
+          "lw.com",
+          "wlrk.com",
+          "pszjlaw.com",
+          "alvarezandmarsal.com",
+          "houlihanlokey.com"
+        ],
+        "blacklist": [
+          "nytimes.com",
+          "aljazeera.com",
+          "zerohedge.com",
+          "dailymail.co.uk",
+          "breitbart.com",
+          "rt.com",
+          "sputniknews.com"
+        ]
+      },
+      "guidance_prompt": ""
+    }
+  ]
+}

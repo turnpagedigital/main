@@ -6,6 +6,7 @@ import ContentPagesTab   from "./admin/ContentPagesTab.jsx";
 import AssetsTab         from "./admin/AssetsTab.jsx";
 import StructureTab      from "./admin/StructureTab.jsx";
 import BriefingsTab      from "./admin/BriefingsTab.jsx";
+import IntelligenceHubTab from "./admin/IntelligenceHubTab.jsx";
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
@@ -21,7 +22,7 @@ import BriefingsTab      from "./admin/BriefingsTab.jsx";
    driven by src/data/file-library.json. The favicon picker lives in the
    Structure → Metadata sub-tab. */
 
-const VALID_TABS = ["content", "pages", "assets", "structure", "briefings"];
+const VALID_TABS = ["content", "pages", "assets", "structure", "briefings", "intelligence"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "content";
@@ -104,6 +105,7 @@ export default function Admin() {
     { key: "assets",     label: "Assets",     dirty: dirtyTabs.assets     ?? false },
     { key: "structure",  label: "Structure",  dirty: dirtyTabs.structure  ?? false },
     { key: "briefings",  label: "Briefings",  dirty: false },
+    { key: "intelligence", label: "Intelligence", dirty: dirtyTabs.intelligence ?? false },
   ];
 
   return (
@@ -169,6 +171,7 @@ export default function Admin() {
       {tab === "assets"     && <AssetsTab         onDirtyChange={makeDirtyCallback("assets")} />}
       {tab === "structure"  && <StructureTab      onDirtyChange={makeDirtyCallback("structure")} />}
       {tab === "briefings"  && <BriefingsTab      onDirtyChange={makeDirtyCallback("briefings")} />}
+      {tab === "intelligence" && <IntelligenceHubTab onDirtyChange={makeDirtyCallback("intelligence")} />}
     </div>
   );
 }
