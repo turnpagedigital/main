@@ -36,7 +36,20 @@ export async function onRequest({ request, env }) {
   }
 
   try {
-    const dj = await getJson(`${API}/dockets/${docketId}/`, env);
+    const dr = await fetch(`${API}/dockets/${docketId}/`, { headers: clHeaders(env) });
+    if (dr.status === 401 || dr.status === 403) {
+      return jsonResponse({
+        ok: false,
+        error: "CourtListener needs an API token. Add COURTLISTENER_TOKEN in Cloudflare, or fill the fields in manually.",
+      }, 200);
+    }
+    if (dr.status === 404) {
+      return jsonResponse({ ok: false, error: "No CourtListener docket found for that ID." }, 200);
+    }
+    if (!dr.ok) {
+      return jsonResponse({ ok: false, error: `CourtListener returned ${dr.status}. Fill the fields in manually.` }, 200);
+    }
+    const dj = await dr.json();
 
     const caseName = dj.case_name || dj.case_name_full || dj.case_name_short || "";
     const docketNumber = dj.docket_number || "";
