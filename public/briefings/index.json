@@ -78,7 +78,8 @@
         "Bartz",
         "Anthropic",
         "Settlement"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-04-24-advisory",
