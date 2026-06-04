@@ -22,7 +22,7 @@ import {
   listDirFromGitHub,
 } from "./_github.js";
 
-const REPO_BRIEFING = "turnpagedigital/daily-briefing-site";
+const REPO_BRIEFING = "turnpagedigital/intel-turnpage";
 function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
 
 // 6 default themes — returned for convenience; the UI prefers /api/admin/themes.
