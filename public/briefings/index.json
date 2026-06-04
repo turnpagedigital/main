@@ -65,7 +65,8 @@
         "Anthropic",
         "Concord",
         "Settlement"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-04-26-advisory",
