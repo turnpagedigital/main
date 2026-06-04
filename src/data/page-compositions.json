@@ -15,8 +15,14 @@
             "title1": "We broker the claims",
             "title2": "no one else will.",
             "subtitle": "Bankruptcy claims, class action settlements, digital assets, litigation funding, tariff refunds. If it's illiquid and complex, we trade it.",
-            "ctaPrimary": { "label": "Get a Quote", "href": "/contact" },
-            "ctaSecondary": { "label": "What we cover", "href": "#situations" },
+            "ctaPrimary": {
+              "label": "Get a Quote",
+              "href": "/contact"
+            },
+            "ctaSecondary": {
+              "label": "What we cover",
+              "href": "#situations"
+            },
             "video": "/robotpages1.mp4"
           }
         },
@@ -26,9 +32,21 @@
           "visible": true,
           "content": {
             "stats": [
-              { "value": "$1B+", "labelKey": "stats.claims_traded" },
-              { "value": "5K+",  "labelKey": "stats.claims_advised" },
-              { "value": "500+", "labelKey": "stats.institutions" }
+              {
+                "value": "$1.1B",
+                "labelKey": "stats.claims_traded",
+                "label": "Traded"
+              },
+              {
+                "value": "5K+",
+                "labelKey": "stats.claims_advised",
+                "label": "Trades"
+              },
+              {
+                "value": "500+",
+                "labelKey": "stats.institutions",
+                "label": "Funders"
+              }
             ],
             "footnoteKey": "stats.footnote"
           }
@@ -73,9 +91,21 @@
             "titleAccent": "when it counts.",
             "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
             "points": [
-              { "id": "edge-1", "h": "Practically unlimited liquidity", "b": "We partner with major asset managers — over 500 institutions on speed dial." },
-              { "id": "edge-2", "h": "Lightning-fast settlement",       "b": "Automation accelerates diligence and closing in the largest volume cases." },
-              { "id": "edge-3", "h": "Relationship builders, not just dealmakers", "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients." }
+              {
+                "id": "edge-1",
+                "h": "Practically unlimited liquidity",
+                "b": "We partner with major asset managers — over 500 institutions on speed dial."
+              },
+              {
+                "id": "edge-2",
+                "h": "Lightning-fast settlement",
+                "b": "Automation accelerates diligence and closing in the largest volume cases."
+              },
+              {
+                "id": "edge-3",
+                "h": "Relationship builders, not just dealmakers",
+                "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
+              }
             ]
           }
         },
@@ -111,7 +141,10 @@
             "title": "Why wait?",
             "titleAccent": "Talk to us.",
             "body": "Contact us for a quote or to learn more. 48-hour response. Confidentiality default.",
-            "cta": { "label": "Get in Touch", "href": "/contact" }
+            "cta": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            }
           }
         }
       ]
@@ -133,8 +166,14 @@
             "subtitle": "Bartz. The OpenAI MDL. Concord. Getty. We buy claims and advise on strategy.",
             "size": "tall",
             "video": "/robottypes1.mp4",
-            "ctaPrimary": { "label": "Talk to a Partner", "href": "/contact?source=ai-copyright" },
-            "ctaSecondary": { "label": "See exposure data", "href": "#cases-section" }
+            "ctaPrimary": {
+              "label": "Talk to a Partner",
+              "href": "/contact?source=ai-copyright"
+            },
+            "ctaSecondary": {
+              "label": "See exposure data",
+              "href": "#cases-section"
+            }
           }
         },
         {
@@ -182,8 +221,14 @@
             "title": "Hold a claim?",
             "accent": "Talk to us.",
             "kicker": "48-hour response. Confidentiality default.",
-            "primary": { "label": "Get in Touch", "href": "/contact?source=ai-copyright" },
-            "secondary": { "label": "Briefings", "href": "/briefings" }
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact?source=ai-copyright"
+            },
+            "secondary": {
+              "label": "Briefings",
+              "href": "/briefings"
+            }
           }
         }
       ]
@@ -205,8 +250,14 @@
             "subtitle": "FTX. Celsius. BlockFi. Voyager. Genesis. Mt. Gox. We quote in fiat and close fast.",
             "size": "tall",
             "video": "/robotvault1.mp4",
-            "ctaPrimary": { "label": "Get a Quote", "href": "/contact?source=crypto" },
-            "ctaSecondary": { "label": "How it works", "href": "#how-crypto" }
+            "ctaPrimary": {
+              "label": "Get a Quote",
+              "href": "/contact?source=crypto"
+            },
+            "ctaSecondary": {
+              "label": "How it works",
+              "href": "#how-crypto"
+            }
           }
         },
         {
@@ -254,7 +305,10 @@
             "title": "Ready to liquidate?",
             "accent": "Get a quote.",
             "kicker": "48-hour response. Confidentiality default.",
-            "primary": { "label": "Get a Quote", "href": "/contact?source=crypto" },
+            "primary": {
+              "label": "Get a Quote",
+              "href": "/contact?source=crypto"
+            },
             "secondary": null
           }
         }
@@ -277,8 +331,14 @@
             "subtitle": "Turnpage helps the best law firms pursue cases on contingency — providing capital so merit drives the docket, not client cashflow.",
             "size": "tall",
             "video": "/robotobriefcase1.mp4",
-            "ctaPrimary": { "label": "Talk to a Partner", "href": "/contact?source=litigation-finance" },
-            "ctaSecondary": { "label": "How it works", "href": "#how-litfin" }
+            "ctaPrimary": {
+              "label": "Talk to a Partner",
+              "href": "/contact?source=litigation-finance"
+            },
+            "ctaSecondary": {
+              "label": "How it works",
+              "href": "#how-litfin"
+            }
           }
         },
         {
@@ -326,7 +386,10 @@
             "title": "Have a case worth funding?",
             "accent": "Talk to us.",
             "kicker": "48-hour response. Confidentiality default.",
-            "primary": { "label": "Talk to a Partner", "href": "/contact?source=litigation-finance" },
+            "primary": {
+              "label": "Talk to a Partner",
+              "href": "/contact?source=litigation-finance"
+            },
             "secondary": null
           }
         }
