@@ -11,7 +11,7 @@
     {
       "id": "sit-02",
       "no": "02",
-      "hidden": false,
+      "hidden": true,
       "title": "Class Action Settlements",
       "body": "Class-member rights in the the largest collective actions.",
       "details": "From antitrust settlements to mass tort claims, we connect class members to competitive bids. We handle large individual positions as well as portfolios of smaller positions aggregated for efficiency."
@@ -19,7 +19,7 @@
     {
       "id": "sit-03",
       "no": "03",
-      "hidden": false,
+      "hidden": true,
       "title": "Bankruptcy Claims",
       "body": "Trade claims, customer claims, and other interests in significant bankruptcy cases.",
       "details": "Turnpage offers efficient execution and highly competitive pricing for creditors seeking to monetize their recovery rights. Our team has traded hundreds millions of dollars worth of claims in the largest chapter 11 cases and advised thousands of creditors."
