@@ -7,6 +7,7 @@ import AppHeader from "./components/AppHeader.jsx";
 import Footer from "./components/Footer.jsx";
 import pageMeta from "./data/page-meta.json";
 import routesData from "./data/routes.json";
+import PageRenderer from "./components/PageRenderer.jsx";
 
 // Page components are lazy-loaded so each route becomes its own chunk.
 // Only downloaded when the user first navigates to that page.
@@ -170,8 +171,17 @@ const COMPONENT_MAP = {
 
 // Build PAGE_MAP dynamically from routes.json at import time.
 // This makes routes admin-editable without changing this file.
+// component: "DynamicPage" is a special sentinel that renders PageRenderer
+// with the route key — used for pages created via admin without a code deploy.
 const PAGE_MAP = {};
 for (const route of routesData.routes) {
+  if (route.component === "DynamicPage") {
+    // Capture the key in the closure
+    const key = route.key;
+    PAGE_MAP[key] = () => <PageRenderer pageKey={key} />;
+    continue;
+  }
+
   const Comp = COMPONENT_MAP[route.component];
   if (!Comp) {
     console.error(`Component not found for route ${route.path}: ${route.component}`);
