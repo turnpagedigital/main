@@ -106,7 +106,8 @@
         "Anthropic",
         "Fairness Hearing",
         "Objections"
-      ]
+      ],
+      "active": false
     }
   ]
 }
