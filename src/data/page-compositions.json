@@ -1,0 +1,336 @@
+{
+  "_comment": "Per-page ordered section lists. Managed via /admin/pages. Each section instance has: id (unique), type (from section-types.json), visible (bool), and an optional content object for inline types. Shared types (shared:X, page:X) pull from their own data files. Array order = render order.",
+  "pages": [
+    {
+      "pageKey": "home",
+      "title": "Home",
+      "path": "/",
+      "builtIn": true,
+      "sections": [
+        {
+          "id": "sec-home-hero",
+          "type": "home-hero",
+          "visible": true,
+          "content": {
+            "title1": "We broker the claims",
+            "title2": "no one else will.",
+            "subtitle": "Bankruptcy claims, class action settlements, digital assets, litigation funding, tariff refunds. If it's illiquid and complex, we trade it.",
+            "ctaPrimary": { "label": "Get a Quote", "href": "/contact" },
+            "ctaSecondary": { "label": "What we cover", "href": "#situations" },
+            "video": "/robotpages1.mp4"
+          }
+        },
+        {
+          "id": "sec-home-stats",
+          "type": "stats-band",
+          "visible": true,
+          "content": {
+            "stats": [
+              { "value": "$1B+", "labelKey": "stats.claims_traded" },
+              { "value": "5K+",  "labelKey": "stats.claims_advised" },
+              { "value": "500+", "labelKey": "stats.institutions" }
+            ],
+            "footnoteKey": "stats.footnote"
+          }
+        },
+        {
+          "id": "sec-home-situations",
+          "type": "situations",
+          "visible": true
+        },
+        {
+          "id": "sec-home-bio",
+          "type": "bio",
+          "visible": true
+        },
+        {
+          "id": "sec-home-testimonials",
+          "type": "testimonials",
+          "visible": true
+        },
+        {
+          "id": "sec-home-photo",
+          "type": "photo-break",
+          "visible": true,
+          "content": {
+            "imageUrl": "/Paper.jpg",
+            "overlayText": "Too hard? Not in",
+            "overlayAccent": "our vocabulary."
+          }
+        },
+        {
+          "id": "sec-home-experience",
+          "type": "experience",
+          "visible": true
+        },
+        {
+          "id": "sec-home-edge",
+          "type": "our-edge",
+          "visible": true,
+          "content": {
+            "eyebrow": "Our Edge",
+            "title": "Built to move fast",
+            "titleAccent": "when it counts.",
+            "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
+            "points": [
+              { "id": "edge-1", "h": "Practically unlimited liquidity", "b": "We partner with major asset managers — over 500 institutions on speed dial." },
+              { "id": "edge-2", "h": "Lightning-fast settlement",       "b": "Automation accelerates diligence and closing in the largest volume cases." },
+              { "id": "edge-3", "h": "Relationship builders, not just dealmakers", "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients." }
+            ]
+          }
+        },
+        {
+          "id": "sec-home-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "Your questions,",
+            "accent": "answered.",
+            "ctaLabel": "Contact Us",
+            "ctaHref": "/contact"
+          }
+        },
+        {
+          "id": "sec-home-cta-banner",
+          "type": "cta-banner",
+          "visible": true,
+          "content": {
+            "title": "Stay current on the docket.",
+            "cta": "Read the briefings",
+            "href": "/briefings",
+            "image": "/Building_Wide.jpg",
+            "external": false
+          }
+        },
+        {
+          "id": "sec-home-get-quote",
+          "type": "get-quote",
+          "visible": true,
+          "content": {
+            "eyebrow": "Get a Quote",
+            "title": "Why wait?",
+            "titleAccent": "Talk to us.",
+            "body": "Contact us for a quote or to learn more. 48-hour response. Confidentiality default.",
+            "cta": { "label": "Get in Touch", "href": "/contact" }
+          }
+        }
+      ]
+    },
+    {
+      "pageKey": "ai-copyright",
+      "title": "Copyright Claims",
+      "path": "/copyright",
+      "builtIn": true,
+      "sections": [
+        {
+          "id": "sec-aic-hero",
+          "type": "hero",
+          "visible": true,
+          "content": {
+            "eyebrow": "Copyright Claims",
+            "title": "Calling all creators.",
+            "accentTitle": "Claim what's yours.",
+            "subtitle": "Bartz. The OpenAI MDL. Concord. Getty. We buy claims and advise on strategy.",
+            "size": "tall",
+            "video": "/robottypes1.mp4",
+            "ctaPrimary": { "label": "Talk to a Partner", "href": "/contact?source=ai-copyright" },
+            "ctaSecondary": { "label": "See exposure data", "href": "#cases-section" }
+          }
+        },
+        {
+          "id": "sec-aic-audience",
+          "type": "audience-cards",
+          "visible": true
+        },
+        {
+          "id": "sec-aic-service",
+          "type": "service-cards",
+          "visible": true
+        },
+        {
+          "id": "sec-aic-damages",
+          "type": "damages",
+          "visible": true
+        },
+        {
+          "id": "sec-aic-experience",
+          "type": "experience",
+          "visible": true
+        },
+        {
+          "id": "sec-aic-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "AI copyright,",
+            "accent": "answered.",
+            "ctaLabel": "Ask a Question",
+            "ctaHref": "/contact?source=ai-copyright"
+          }
+        },
+        {
+          "id": "sec-aic-testimonials",
+          "type": "testimonials",
+          "visible": true
+        },
+        {
+          "id": "sec-aic-bottom-cta",
+          "type": "bottom-cta",
+          "visible": true,
+          "content": {
+            "eyebrow": "AI Copyright Desk",
+            "title": "Hold a claim?",
+            "accent": "Talk to us.",
+            "kicker": "48-hour response. Confidentiality default.",
+            "primary": { "label": "Get in Touch", "href": "/contact?source=ai-copyright" },
+            "secondary": { "label": "Briefings", "href": "/briefings" }
+          }
+        }
+      ]
+    },
+    {
+      "pageKey": "crypto",
+      "title": "Locked Crypto",
+      "path": "/crypto",
+      "builtIn": true,
+      "sections": [
+        {
+          "id": "sec-crypto-hero",
+          "type": "hero",
+          "visible": true,
+          "content": {
+            "eyebrow": "Locked Crypto",
+            "title": "Liquidity for locked",
+            "accentTitle": "digital assets.",
+            "subtitle": "FTX. Celsius. BlockFi. Voyager. Genesis. Mt. Gox. We quote in fiat and close fast.",
+            "size": "tall",
+            "video": "/robotvault1.mp4",
+            "ctaPrimary": { "label": "Get a Quote", "href": "/contact?source=crypto" },
+            "ctaSecondary": { "label": "How it works", "href": "#how-crypto" }
+          }
+        },
+        {
+          "id": "sec-crypto-audience",
+          "type": "audience-cards",
+          "visible": true
+        },
+        {
+          "id": "sec-crypto-comparison",
+          "type": "comparison",
+          "visible": true
+        },
+        {
+          "id": "sec-crypto-service",
+          "type": "service-cards",
+          "visible": true
+        },
+        {
+          "id": "sec-crypto-experience",
+          "type": "experience",
+          "visible": true
+        },
+        {
+          "id": "sec-crypto-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "Crypto claims,",
+            "accent": "answered.",
+            "ctaLabel": "Get a Quote",
+            "ctaHref": "/contact?source=crypto"
+          }
+        },
+        {
+          "id": "sec-crypto-testimonials",
+          "type": "testimonials",
+          "visible": true
+        },
+        {
+          "id": "sec-crypto-bottom-cta",
+          "type": "bottom-cta",
+          "visible": true,
+          "content": {
+            "eyebrow": "Crypto Claims Desk",
+            "title": "Ready to liquidate?",
+            "accent": "Get a quote.",
+            "kicker": "48-hour response. Confidentiality default.",
+            "primary": { "label": "Get a Quote", "href": "/contact?source=crypto" },
+            "secondary": null
+          }
+        }
+      ]
+    },
+    {
+      "pageKey": "litigation-finance",
+      "title": "Litigation Finance",
+      "path": "/litigation-finance",
+      "builtIn": true,
+      "sections": [
+        {
+          "id": "sec-litfin-hero",
+          "type": "hero",
+          "visible": true,
+          "content": {
+            "eyebrow": "Litigation Finance",
+            "title": "Power the cases that",
+            "accentTitle": "deserve to win.",
+            "subtitle": "Turnpage helps the best law firms pursue cases on contingency — providing capital so merit drives the docket, not client cashflow.",
+            "size": "tall",
+            "video": "/robotobriefcase1.mp4",
+            "ctaPrimary": { "label": "Talk to a Partner", "href": "/contact?source=litigation-finance" },
+            "ctaSecondary": { "label": "How it works", "href": "#how-litfin" }
+          }
+        },
+        {
+          "id": "sec-litfin-audience",
+          "type": "audience-cards",
+          "visible": true
+        },
+        {
+          "id": "sec-litfin-comparison",
+          "type": "comparison",
+          "visible": true
+        },
+        {
+          "id": "sec-litfin-service",
+          "type": "service-cards",
+          "visible": true
+        },
+        {
+          "id": "sec-litfin-how",
+          "type": "how-it-works",
+          "visible": true
+        },
+        {
+          "id": "sec-litfin-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "Litigation finance,",
+            "accent": "answered.",
+            "ctaLabel": "Talk to a Partner",
+            "ctaHref": "/contact?source=litigation-finance"
+          }
+        },
+        {
+          "id": "sec-litfin-testimonials",
+          "type": "testimonials",
+          "visible": true
+        },
+        {
+          "id": "sec-litfin-bottom-cta",
+          "type": "bottom-cta",
+          "visible": true,
+          "content": {
+            "eyebrow": "Litigation Finance",
+            "title": "Have a case worth funding?",
+            "accent": "Talk to us.",
+            "kicker": "48-hour response. Confidentiality default.",
+            "primary": { "label": "Talk to a Partner", "href": "/contact?source=litigation-finance" },
+            "secondary": null
+          }
+        }
+      ]
+    }
+  ]
+}

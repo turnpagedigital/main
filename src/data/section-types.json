@@ -1,0 +1,207 @@
+{
+  "_comment": "Registry of all pre-built section types. Managed via /admin/pages/section-types (read-only view). Adding a new visual renderer requires a code deploy; configuring which types appear on which page does not. dataSource values: 'inline' (content in the composition instance), 'shared:X' (from a shared admin-managed file), 'page:X' (from the page's own marketing content JSON).",
+  "sectionTypes": [
+    {
+      "id": "home-hero",
+      "displayName": "Home Hero",
+      "description": "Full-screen video hero with neon headline. Home page only.",
+      "dataSource": "inline",
+      "allowMultiple": false,
+      "availableOn": ["home"],
+      "defaultContent": {
+        "title1": "We broker the claims",
+        "title2": "no one else will.",
+        "subtitle": "Bankruptcy claims, class action settlements, digital assets, litigation funding, tariff refunds. If it's illiquid and complex, we trade it.",
+        "ctaPrimary": { "label": "Get a Quote", "href": "/contact" },
+        "ctaSecondary": { "label": "What we cover", "href": "#situations" },
+        "video": "/robotpages1.mp4"
+      }
+    },
+    {
+      "id": "hero",
+      "displayName": "Hero",
+      "description": "Standard sub-page hero: eyebrow, title, accent, subtitle, optional video and CTA buttons.",
+      "dataSource": "inline",
+      "allowMultiple": false,
+      "defaultContent": {
+        "eyebrow": "",
+        "title": "",
+        "accentTitle": "",
+        "subtitle": "",
+        "size": "tall",
+        "video": null,
+        "ctaPrimary": { "label": "Get in Touch", "href": "/contact" },
+        "ctaSecondary": null
+      }
+    },
+    {
+      "id": "stats-band",
+      "displayName": "Stats Band",
+      "description": "Three large numbers in a dark horizontal band. Home page credential strip.",
+      "dataSource": "inline",
+      "allowMultiple": false,
+      "defaultContent": {
+        "stats": [
+          { "value": "$1B+", "labelKey": "stats.claims_traded" },
+          { "value": "5K+",  "labelKey": "stats.claims_advised" },
+          { "value": "500+", "labelKey": "stats.institutions" }
+        ],
+        "footnoteKey": "stats.footnote"
+      }
+    },
+    {
+      "id": "situations",
+      "displayName": "What We Cover",
+      "description": "Expandable list of situation types. Content managed in Content → Home Content.",
+      "dataSource": "shared:situations",
+      "allowMultiple": false,
+      "defaultContent": null
+    },
+    {
+      "id": "bio",
+      "displayName": "Leadership",
+      "description": "Andrew Glantz bio, photo, tagline, social links, and press logos. Content managed in Content → Bio.",
+      "dataSource": "shared:bio",
+      "allowMultiple": false,
+      "defaultContent": null
+    },
+    {
+      "id": "testimonials",
+      "displayName": "Testimonials",
+      "description": "Client testimonials filtered by the current page tag. Content managed in Content → Testimonials.",
+      "dataSource": "shared:testimonials",
+      "allowMultiple": false,
+      "defaultContent": null
+    },
+    {
+      "id": "photo-break",
+      "displayName": "Full-Bleed Photo",
+      "description": "A cinematic full-width image with an optional overlay headline.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "defaultContent": {
+        "imageUrl": "/bg-paper.jpg",
+        "overlayText": "",
+        "overlayAccent": ""
+      }
+    },
+    {
+      "id": "experience",
+      "displayName": "Relevant Experience",
+      "description": "Deal cards filtered for the current page. Content managed in Content → Deals.",
+      "dataSource": "shared:deals",
+      "allowMultiple": false,
+      "defaultContent": null
+    },
+    {
+      "id": "our-edge",
+      "displayName": "Our Edge",
+      "description": "Three-point differentiation grid. Inline editable text.",
+      "dataSource": "inline",
+      "allowMultiple": false,
+      "defaultContent": {
+        "eyebrow": "Our Edge",
+        "title": "Built to move fast",
+        "titleAccent": "when it counts.",
+        "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
+        "points": [
+          { "id": "edge-1", "h": "Practically unlimited liquidity", "b": "We partner with major asset managers — over 500 institutions on speed dial." },
+          { "id": "edge-2", "h": "Lightning-fast settlement",       "b": "Automation accelerates diligence and closing in the largest volume cases." },
+          { "id": "edge-3", "h": "Relationship builders, not just dealmakers", "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients." }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "displayName": "FAQ",
+      "description": "FAQ items filtered for the current page. Content managed in Content → FAQs.",
+      "dataSource": "shared:faq",
+      "allowMultiple": false,
+      "defaultContent": null
+    },
+    {
+      "id": "cta-banner",
+      "displayName": "CTA Banner",
+      "description": "Horizontal landscape photo with a headline and single action button.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "defaultContent": {
+        "title": "",
+        "cta": "Learn more",
+        "href": "/contact",
+        "image": "/Building_Wide.jpg",
+        "external": false
+      }
+    },
+    {
+      "id": "bottom-cta",
+      "displayName": "Bottom CTA",
+      "description": "Dark rounded card with a bold headline and primary/secondary buttons. Standard page closer.",
+      "dataSource": "inline",
+      "allowMultiple": false,
+      "defaultContent": {
+        "eyebrow": "Get in Touch",
+        "title": "Hold a claim?",
+        "accent": "Talk to us.",
+        "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+        "primary": { "label": "Get in Touch", "href": "/contact" },
+        "secondary": null
+      }
+    },
+    {
+      "id": "get-quote",
+      "displayName": "Get a Quote CTA",
+      "description": "Home page dark rounded quote section with 'Why wait? Talk to us.' headline.",
+      "dataSource": "inline",
+      "allowMultiple": false,
+      "availableOn": ["home"],
+      "defaultContent": {
+        "eyebrow": "Get a Quote",
+        "title": "Why wait?",
+        "titleAccent": "Talk to us.",
+        "body": "Contact us for a quote or to learn more. 48-hour response. Confidentiality default.",
+        "cta": { "label": "Get in Touch", "href": "/contact" }
+      }
+    },
+    {
+      "id": "audience-cards",
+      "displayName": "Who We Help",
+      "description": "Audience card grid. Content managed in Pages → Marketing Pages for this page.",
+      "dataSource": "page:audienceCards",
+      "allowMultiple": false,
+      "defaultContent": null
+    },
+    {
+      "id": "service-cards",
+      "displayName": "What We Offer",
+      "description": "Service card grid. Content managed in Pages → Marketing Pages for this page.",
+      "dataSource": "page:serviceCards",
+      "allowMultiple": false,
+      "defaultContent": null
+    },
+    {
+      "id": "comparison",
+      "displayName": "Why Turnpage",
+      "description": "Old way / new way comparison. Content managed in Pages → Marketing Pages for this page.",
+      "dataSource": "page:comparison",
+      "allowMultiple": false,
+      "defaultContent": null
+    },
+    {
+      "id": "how-it-works",
+      "displayName": "How It Works",
+      "description": "Numbered step sequence. Content managed in Pages → Marketing Pages for this page.",
+      "dataSource": "page:howItWorks",
+      "allowMultiple": false,
+      "defaultContent": null
+    },
+    {
+      "id": "damages",
+      "displayName": "Case Values",
+      "description": "Animated horizontal bar chart of case damages data. Content managed in Pages → Marketing Pages.",
+      "dataSource": "page:damagesData",
+      "allowMultiple": false,
+      "defaultContent": null
+    }
+  ]
+}
