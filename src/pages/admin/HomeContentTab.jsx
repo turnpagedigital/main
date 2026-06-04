@@ -22,6 +22,7 @@ function emptySituation() {
   return {
     id:      `sit-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
     no:      "",
+    hidden:  false,
     title:   "",
     body:    "",
     details: "",
@@ -218,12 +219,15 @@ export default function HomeContentTab({ onDirtyChange }) {
 function SituationRow({ sit, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const titleEmpty = !sit.title.trim();
   const bodyEmpty  = !sit.body.trim();
+  const isHidden   = sit.hidden === true;
 
   return (
     <div style={{
-      border: `1px solid ${LINE}`,
-      background: "#fff",
+      border: `1px solid ${isHidden ? "#ddd" : LINE}`,
+      background: isHidden ? "#f9f9f9" : "#fff",
       padding: "1.2rem",
+      opacity: isHidden ? 0.65 : 1,
+      transition: "opacity 0.15s",
     }}>
       {/* Controls row */}
       <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", marginBottom: "1rem" }}>
@@ -273,6 +277,24 @@ function SituationRow({ sit, index, total, onUpdate, onMoveUp, onMoveDown, onRem
             )}
           </label>
         </div>
+
+        {/* Hide toggle */}
+        <button
+          type="button"
+          onClick={() => onUpdate({ hidden: !isHidden })}
+          title={isHidden ? "Show on site" : "Hide from site"}
+          style={{
+            ...iconBtnStyle(false),
+            fontSize: "0.9rem",
+            marginTop: "1.6rem",
+            color: isHidden ? "#888" : INK_60,
+            borderColor: isHidden ? "#ccc" : undefined,
+            minWidth: 56,
+            padding: "0 6px",
+          }}
+        >
+          {isHidden ? "Hidden" : "Visible"}
+        </button>
 
         {/* Delete */}
         <button type="button" onClick={onRemove} title="Delete situation"

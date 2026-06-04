@@ -130,10 +130,11 @@ function validateTestimonials(testimonials) {
 
 function normalizeSituation(s) {
   const out = {
-    id:    String(s.id).trim().slice(0, MAX_ID_LEN),
-    no:    typeof s.no === "string" ? s.no.trim().slice(0, MAX_NO_LEN) : "",
-    title: String(s.title).trim().slice(0, MAX_TITLE_LEN),
-    body:  String(s.body).trim().slice(0, MAX_BODY_LEN),
+    id:     String(s.id).trim().slice(0, MAX_ID_LEN),
+    no:     typeof s.no === "string" ? s.no.trim().slice(0, MAX_NO_LEN) : "",
+    hidden: s.hidden === true,
+    title:  String(s.title).trim().slice(0, MAX_TITLE_LEN),
+    body:   String(s.body).trim().slice(0, MAX_BODY_LEN),
   };
   if (typeof s.details === "string") {
     out.details = s.details.trim().slice(0, MAX_DETAILS_LEN);

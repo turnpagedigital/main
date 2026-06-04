@@ -18,7 +18,7 @@ import testimonialsData from "../data/testimonials.json";
    SITUATIONS are admin-editable via src/data/home-content.json.
    TESTIMONIALS are admin-editable via src/data/testimonials.json (Content → Testimonials). */
 
-const SITUATIONS   = homeContent.situations || [];
+const SITUATIONS   = (homeContent.situations || []).filter(s => s.hidden !== true);
 const TESTIMONIALS = (testimonialsData.testimonials || []).filter(
   t => t.active !== false && Array.isArray(t.tags) && t.tags.includes("home")
 );
