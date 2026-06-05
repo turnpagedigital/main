@@ -1,21 +1,21 @@
 {
   "_comment": "Contact form configuration. Managed via /admin/pages/contact. Fields define the form layout; subjects populate the dropdown.",
   "heading": "Get in Touch",
-  "accentText": "your claim.",
-  "subtitle": "Fast and confidential feedback.",
+  "accentText": "your needs.",
+  "subtitle": "Fast and confidential feedback. Competitive pricing.",
   "sidebarHeading": "Let’s connect.",
   "sidebarIntro": "Talk to us for a quote or to discuss your specific situation. ",
   "email": "info@turnpagedigital.com",
   "phone": "+1 646 860 0068",
-  "disclaimer": "All submissions are confidential. Sending us a message or receiving a reply does not create any client relationship. Turnpage Digital Markets LLC is not a law firm and does not provide legal advice. ",
+  "disclaimer": "All submissions are confidential. Sending us a message or receiving a reply does not create any client relationship or funding obligation. Turnpage Digital Markets LLC is not a law firm, or registered broker-dealer and does not provide legal or financial advice. ",
   "subjects": [
     {
-      "id": "copyright",
+      "id": "Class action claims",
       "label": "I have a copyright claim related to LLM model training",
       "active": true
     },
     {
-      "id": "crypto ",
+      "id": "Locked crypto",
       "label": "I have a claim based on a cryptocurrency loan or deposit account",
       "active": true
     },
