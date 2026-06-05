@@ -13,6 +13,32 @@
 
 const DEFAULT_BRANCH = "dev";
 
+/* Map GitHub HTTP error codes to friendly, actionable user messages */
+function friendlyGitHubError(status, responseText) {
+  const status_int = parseInt(status, 10);
+
+  switch (status_int) {
+    case 409:
+      return "This file was changed elsewhere. Reload and try again.";
+    case 403:
+      return "Permission denied. Check that the GitHub token is valid and has write access to this repo.";
+    case 404:
+      return "File or repo not found.";
+    case 422:
+      return "Invalid file content or format. Check that your input is valid JSON/text.";
+    case 500:
+    case 502:
+    case 503:
+      return "GitHub is temporarily unavailable. Please try again in a moment.";
+    default:
+      return `GitHub API error (${status}). ${responseText ? `Details: ${responseText.slice(0, 100)}` : ""}`.trim();
+  }
+}
+
+function makeErrorMessage(method, status, responseText) {
+  return friendlyGitHubError(status, responseText);
+}
+
 export function githubHeaders(env) {
   return {
     Authorization: `Bearer ${env.GITHUB_TOKEN}`,
@@ -38,7 +64,10 @@ export async function listDirFromGitHub(env, dirPath, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, dirPath, repo)}?ref=${encodeURIComponent(ref)}`;
   const r = await fetch(url, { headers: githubHeaders(env) });
-  if (!r.ok) return { ok: false, error: `GitHub GET ${r.status}: ${(await r.text()).slice(0, 300)}` };
+  if (!r.ok) {
+    const text = await r.text();
+    return { ok: false, error: makeErrorMessage("GET", r.status, text) };
+  }
   const j = await r.json();
   if (!Array.isArray(j)) return { ok: false, error: "Not a directory" };
   return { ok: true, entries: j.map(e => ({ name: e.name, path: e.path, type: e.type, sha: e.sha })) };
@@ -57,7 +86,10 @@ export async function getFileFromGitHub(env, path, parseLabel, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
   const r = await fetch(url, { headers: githubHeaders(env) });
-  if (!r.ok) return { ok: false, error: `GitHub GET ${r.status}: ${(await r.text()).slice(0, 300)}` };
+  if (!r.ok) {
+    const text = await r.text();
+    return { ok: false, error: makeErrorMessage("GET", r.status, text) };
+  }
   const meta = await r.json();
 
   let text;
@@ -104,7 +136,10 @@ export async function getFileBase64FromGitHub(env, path, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
   const r = await fetch(url, { headers: githubHeaders(env) });
-  if (!r.ok) return { ok: false, error: `GitHub GET ${r.status}: ${(await r.text()).slice(0, 300)}` };
+  if (!r.ok) {
+    const text = await r.text();
+    return { ok: false, error: makeErrorMessage("GET", r.status, text) };
+  }
   const meta = await r.json();
   // GitHub returns base64 wrapped at 60 chars with newlines — strip them so
   // a downstream PUT with the same payload doesn't include stray whitespace.
@@ -142,8 +177,8 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
     body: JSON.stringify(bodyObj),
   });
   if (!r.ok) {
-    const text = (await r.text()).slice(0, 400);
-    return { ok: false, error: `GitHub PUT ${r.status}: ${text}` };
+    const text = await r.text();
+    return { ok: false, error: makeErrorMessage("PUT", r.status, text) };
   }
   const j = await r.json();
   return { ok: true, sha: (j.commit && j.commit.sha) || "" };
