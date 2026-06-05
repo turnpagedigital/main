@@ -2,7 +2,6 @@ import React, { useEffect, useState, useCallback } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { CenteredMessage, LoginForm, btnStyle } from "./admin/shared.jsx";
 import SharedContentTab  from "./admin/SharedContentTab.jsx";
-import ContentPagesTab   from "./admin/ContentPagesTab.jsx";
 import AssetsTab         from "./admin/AssetsTab.jsx";
 import StructureTab      from "./admin/StructureTab.jsx";
 import BriefingsTab      from "./admin/BriefingsTab.jsx";
