@@ -449,7 +449,10 @@
           "type": "testimonials",
           "visible": true,
           "layout": "layout-1-grid3col",
-          "colorScheme": "light"
+          "colorScheme": "dark",
+          "content": {
+            "colorScheme": "dark"
+          }
         },
         {
           "id": "sec-litfin-bottom-cta",
