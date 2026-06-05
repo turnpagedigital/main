@@ -3,3 +3,8 @@ dist
 .wrangler
 *.zip
 zifPZjEa
+
+# Local worktree and temp files
+.claude/
+Pitchdeck.pptx
+TDPM_Favicon*.png
