@@ -93,7 +93,7 @@ export default function SectionHeader({
             {eyebrow}
           </p>
         ) : (
-          <p className="eyebrow" style={{ marginBottom: "0.9rem" }}>
+          <p className="eyebrow-neon" style={{ marginBottom: "0.9rem" }}>
             {eyebrow}
           </p>
         )
