@@ -336,6 +336,8 @@
           "id": "sec-crypto-bottom-cta",
           "type": "bottom-cta",
           "visible": true,
+          "layout": "layout-3-bottomcta",
+          "colorScheme": "dark",
           "content": {
             "eyebrow": "Crypto Claims Desk",
             "title": "Ready to cash out?",
@@ -346,25 +348,23 @@
               "href": "/contact?source=crypto"
             },
             "secondary": null
-          },
-          "layout": "layout-3-bottomcta",
-          "colorScheme": "dark"
+          }
         },
         {
           "id": "sec-crypto-faq",
           "type": "faq",
           "visible": true,
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light",
           "content": {
             "title": "Crypto claims,",
             "accent": "answered.",
             "ctaLabel": "Get a Quote",
             "ctaHref": "/contact?source=crypto"
-          },
-          "layout": "layout-2-sidebar",
-          "colorScheme": "light"
+          }
         }
       ],
-      "status": "active"
+      "status": "draft"
     },
     {
       "pageKey": "litigation-finance",
