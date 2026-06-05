@@ -40,25 +40,26 @@ export default function AnnouncementBanner({ page = "home" }) {
     return () => clearInterval(interval);
   }, [alerts.length]); // alerts is a static import — length never changes at runtime
 
-  if (alerts.length === 0) return null;
+  const alert = alerts.length > 0 ? alerts[Math.min(idx, alerts.length - 1)] : null;
 
-  const alert = alerts[Math.min(idx, alerts.length - 1)];
-
+  // Always render to keep the language selector accessible, even with no active alerts
   return (
     <div className="ann-banner" role="region" aria-label="Latest update">
       <div className="ann-banner-inner">
-        <div
-          className="ann-banner-content"
-          style={{ opacity: fading ? 0 : 1, transition: `opacity ${FADE_MS}ms ease` }}
-        >
-          {alert.pill && <span className="ann-banner-pill">{alert.pill}</span>}
-          <span>{alert.text}</span>
-          {alert.href && alert.linkText && (
-            <a href={normalizeHref(alert.href)} aria-label={alert.linkText}>
-              {alert.linkText} →
-            </a>
-          )}
-        </div>
+        {alert && (
+          <div
+            className="ann-banner-content"
+            style={{ opacity: fading ? 0 : 1, transition: `opacity ${FADE_MS}ms ease` }}
+          >
+            {alert.pill && <span className="ann-banner-pill">{alert.pill}</span>}
+            <span>{alert.text}</span>
+            {alert.href && alert.linkText && (
+              <a href={normalizeHref(alert.href)} aria-label={alert.linkText}>
+                {alert.linkText} →
+              </a>
+            )}
+          </div>
+        )}
         <div className="ann-banner-region">
           <LanguageSelector direction="down" fontSize="0.78rem" />
         </div>
