@@ -66,6 +66,11 @@
       "title": "Firm",
       "links": [
         {
+          "id": "team",
+          "label": "Team",
+          "href": "/team"
+        },
+        {
           "id": "contact",
           "label": "Get in Touch",
           "href": "/contact",
