@@ -352,14 +352,31 @@
           "visible": true
         },
         {
-          "id": "sec-litfin-faq",
-          "type": "faq",
+          "id": "sec-1780673399693-agc7",
+          "type": "our-edge",
           "visible": true,
           "content": {
-            "title": "Litigation finance,",
-            "accent": "answered.",
-            "ctaLabel": "Talk to a Partner",
-            "ctaHref": "/contact?source=litigation-finance"
+            "eyebrow": "Our Edge",
+            "title": "Built to move fast",
+            "titleAccent": "when it counts.",
+            "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
+            "points": [
+              {
+                "id": "edge-1",
+                "h": "Practically unlimited liquidity",
+                "b": "We partner with major asset managers — over 500 institutions on speed dial."
+              },
+              {
+                "id": "edge-2",
+                "h": "Lightning-fast settlement",
+                "b": "Automation accelerates diligence and closing in the largest volume cases."
+              },
+              {
+                "id": "edge-3",
+                "h": "Relationship builders, not just dealmakers",
+                "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
+              }
+            ]
           }
         },
         {
@@ -381,6 +398,17 @@
               "href": "/contact?source=litigation-finance"
             },
             "secondary": null
+          }
+        },
+        {
+          "id": "sec-litfin-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "Litigation finance,",
+            "accent": "answered.",
+            "ctaLabel": "Talk to a Partner",
+            "ctaHref": "/contact?source=litigation-finance"
           }
         }
       ]
