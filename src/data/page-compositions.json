@@ -14,10 +14,16 @@
           "content": {
             "title1": "Strategic guidance.",
             "title2": "Turn-key liquidity.",
-            "subtitle": "For rights holders entitled to compensation — we buy litigation, class action and bankruptcy claims, receivables, refunds, and other locked assets.",
+            "subtitle": "For rights holders entitled to compensation — Litigation, class action and bankruptcy claims, receivables, refunds, and other locked assets.",
             "video": "/robotpages1.mp4",
-            "ctaPrimary": { "label": "Get in Touch", "href": "/contact" },
-            "ctaSecondary": { "label": "What we cover", "href": "#situations" }
+            "ctaPrimary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "ctaSecondary": {
+              "label": "Our Coverage",
+              "href": "#situations"
+            }
           }
         },
         {
@@ -111,7 +117,7 @@
           "content": {
             "title": "Stay current on the cases we cover.",
             "cta": "Read the briefings",
-            "href": "/press?type=posts",
+            "href": "/press?type=post",
             "image": "/Building_Wide.jpg",
             "external": false
           }
@@ -121,10 +127,10 @@
           "type": "get-quote",
           "visible": true,
           "content": {
-            "eyebrow": "Get a Quote",
+            "eyebrow": "",
             "title": "Why wait?",
             "titleAccent": "Talk to us.",
-            "body": "Contact us for a quote or to learn more. 48-hour response. Confidentiality default.",
+            "body": "Contact us to discuss your funding needs. ",
             "cta": {
               "label": "Get in Touch",
               "href": "/contact"
