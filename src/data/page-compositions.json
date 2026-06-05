@@ -292,11 +292,11 @@
           "visible": true,
           "content": {
             "eyebrow": "Crypto Claims Desk",
-            "title": "Ready to liquidate?",
+            "title": "Ready to cash out?",
             "accent": "Get a quote.",
-            "kicker": "48-hour response. Confidentiality default.",
+            "kicker": "Private. Fast. Secure.",
             "primary": {
-              "label": "Get a Quote",
+              "label": "Get in Touch",
               "href": "/contact?source=crypto"
             },
             "secondary": null
