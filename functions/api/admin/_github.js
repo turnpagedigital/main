@@ -154,14 +154,17 @@ export async function getFileBase64FromGitHub(env, path, repo, branch) {
 
 /* Commit a text file (UTF-8 string) to GitHub. The string is base64-encoded
    inside this helper. Pass sha for updates; omit (undefined/null/"") for new
-   files. */
+   files.
+   All admin saves append [skip ci] so Cloudflare Pages doesn't auto-build.
+   Use the Deploy buttons in the admin top nav to trigger a build when ready. */
 export async function commitFileToGitHub(env, path, content, sha, message, repo, branch) {
   const utf8 = unescape(encodeURIComponent(content));
   return putContents(env, path, btoa(utf8), sha, message, repo, branch);
 }
 
 /* Commit a pre-encoded base64 binary (image/video) to GitHub. The base64
-   payload is sent through as-is. Pass sha for updates; omit for new files. */
+   payload is sent through as-is. Pass sha for updates; omit for new files.
+   Also appends [skip ci] — binaries are saved assets, not deployment events. */
 export async function commitBinaryToGitHub(env, path, base64Content, sha, message, repo, branch) {
   return putContents(env, path, base64Content, sha, message, repo, branch);
 }
@@ -169,7 +172,10 @@ export async function commitBinaryToGitHub(env, path, base64Content, sha, messag
 async function putContents(env, path, base64Content, sha, message, repo, branch) {
   const ref = branchOf(env, branch);
   const url = contentsUrl(env, path, repo);
-  const bodyObj = { message, content: base64Content, branch: ref };
+  // Always append [skip ci] so Cloudflare Pages skips an auto-build on this
+  // commit. Deployments are triggered explicitly via /api/admin/deploy.
+  const commitMessage = message.includes("[skip ci]") ? message : `${message}\n\n[skip ci]`;
+  const bodyObj = { message: commitMessage, content: base64Content, branch: ref };
   if (sha) bodyObj.sha = sha;
   const r = await fetch(url, {
     method: "PUT",

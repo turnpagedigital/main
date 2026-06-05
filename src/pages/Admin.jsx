@@ -39,6 +39,10 @@ export default function Admin() {
   const [tab, setTab] = useState(getTabFromPath);
   const [dirtyTabs, setDirtyTabs] = useState({});
 
+  // Deploy state
+  const [deployState, setDeployState] = useState("idle"); // idle | confirm-dev | confirm-prod | deploying | done | error
+  const [deployMsg, setDeployMsg] = useState("");
+
   // Check if any tab is dirty
   const isAnyDirty = Object.values(dirtyTabs).some(Boolean);
 
@@ -118,6 +122,28 @@ export default function Admin() {
     setPhase("login");
   }
 
+  async function handleDeploy(target) {
+    setDeployState("deploying");
+    setDeployMsg("");
+    try {
+      const r = await fetch("/api/admin/deploy", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ target }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Deploy failed");
+      setDeployState("done");
+      setDeployMsg(body.message || `Deploy to ${target} triggered.`);
+      setTimeout(() => setDeployState("idle"), 6000);
+    } catch (e) {
+      setDeployState("error");
+      setDeployMsg(e.message);
+      setTimeout(() => setDeployState("idle"), 8000);
+    }
+  }
+
   if (phase === "checking") return <CenteredMessage>Loading admin…</CenteredMessage>;
   if (phase === "login")    return <LoginForm onSubmit={handleLogin} error={errorMsg} />;
 
@@ -141,12 +167,81 @@ export default function Admin() {
         {/* Title row */}
         <div style={{
           padding: "0.75rem clamp(1rem, 3vw, 2rem)",
-          display: "flex", alignItems: "center", gap: "1rem",
+          display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap",
         }}>
           <div style={{ fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.01em", flex: 1 }}>
             Turnpage Admin
           </div>
-          <button onClick={handleLogout} style={btnStyle}>Log out</button>
+
+          {/* Deploy status message */}
+          {(deployState === "done" || deployState === "error") && (
+            <span style={{
+              fontSize: "0.78rem", fontWeight: 600,
+              color: deployState === "done" ? "#1a7f37" : "#c0392b",
+              padding: "0.2rem 0.5rem",
+              background: deployState === "done" ? "rgba(26,127,55,0.09)" : "rgba(192,57,43,0.09)",
+              border: `1px solid ${deployState === "done" ? "rgba(26,127,55,0.3)" : "rgba(192,57,43,0.3)"}`,
+            }}>
+              {deployMsg}
+            </span>
+          )}
+
+          {/* Confirm overlay — replaces the buttons briefly */}
+          {(deployState === "confirm-dev" || deployState === "confirm-prod") && (
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <span style={{ fontSize: "0.82rem", fontWeight: 700, color: INK }}>
+                {deployState === "confirm-dev"
+                  ? "Deploy to Dev — are you sure?"
+                  : "Deploy to Production — are you sure?"}
+              </span>
+              <button
+                onClick={() => handleDeploy(deployState === "confirm-dev" ? "dev" : "production")}
+                style={{
+                  ...btnStyle, background: "#0A0A0A", color: "#fff",
+                  border: "1px solid #0A0A0A", fontWeight: 700, fontSize: "0.78rem",
+                }}
+              >
+                Yes, deploy
+              </button>
+              <button
+                onClick={() => setDeployState("idle")}
+                style={{ ...btnStyle, fontSize: "0.78rem" }}
+              >
+                Cancel
+              </button>
+            </div>
+          )}
+
+          {/* Deploy buttons (shown when idle, deploying, done, or error) */}
+          {deployState !== "confirm-dev" && deployState !== "confirm-prod" && (
+            <>
+              <button
+                disabled={deployState === "deploying"}
+                onClick={() => setDeployState("confirm-dev")}
+                style={{
+                  ...btnStyle, fontSize: "0.78rem", fontWeight: 700,
+                  opacity: deployState === "deploying" ? 0.5 : 1,
+                  cursor: deployState === "deploying" ? "default" : "pointer",
+                }}
+              >
+                {deployState === "deploying" ? "Deploying…" : "↑ Deploy to Dev"}
+              </button>
+              <button
+                disabled={deployState === "deploying"}
+                onClick={() => setDeployState("confirm-prod")}
+                style={{
+                  ...btnStyle, fontSize: "0.78rem", fontWeight: 700,
+                  background: "#0A0A0A", color: "#fff", border: "1px solid #0A0A0A",
+                  opacity: deployState === "deploying" ? 0.5 : 1,
+                  cursor: deployState === "deploying" ? "default" : "pointer",
+                }}
+              >
+                {deployState === "deploying" ? "Deploying…" : "↑ Deploy to Production"}
+              </button>
+            </>
+          )}
+
+          <button onClick={handleLogout} style={{ ...btnStyle, fontSize: "0.78rem" }}>Log out</button>
         </div>
 
         {/* Tab row */}
