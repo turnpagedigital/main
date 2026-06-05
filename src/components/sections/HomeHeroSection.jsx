@@ -1,15 +1,19 @@
 import React from "react";
 import { NEON, FONT } from "../../data/tokens.js";
+import { useI18n } from "../../lib/i18n.js";
 
 /* Full-screen video hero — Home page only.
-   Content driven by sectionConfig.content from page-compositions.json. */
+   Content driven by sectionConfig.content from page-compositions.json.
+   Text fields fall back to translation keys so multi-language support is preserved. */
 export default function HomeHeroSection({ sectionConfig }) {
+  const { t } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
-  const title1      = c.title1      || "We broker the claims";
-  const title2      = c.title2      || "no one else will.";
-  const subtitle    = c.subtitle    || "";
-  const ctaPrimary  = c.ctaPrimary  || { label: "Get a Quote", href: "/contact" };
-  const ctaSecondary= c.ctaSecondary|| { label: "What we cover", href: "#situations" };
+  // Use composition content if explicitly set; otherwise fall back to translations
+  const title1      = c.title1      || t("hero.title_1");
+  const title2      = c.title2      || t("hero.title_2");
+  const subtitle    = c.subtitle    || t("hero.subtitle");
+  const ctaPrimary  = c.ctaPrimary  || { label: t("hero.cta_primary"),  href: "/contact" };
+  const ctaSecondary= c.ctaSecondary|| { label: t("hero.cta_secondary"), href: "#situations" };
   const video       = c.video       || null;
 
   return (
@@ -86,7 +90,7 @@ export default function HomeHeroSection({ sectionConfig }) {
         color: "rgba(255,255,255,0.5)",
         display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem",
       }} className="hide-on-mobile">
-        <span>Scroll</span>
+        <span>{t("hero.scroll")}</span>
         <span style={{ width: 1, height: 36, background: "linear-gradient(180deg, rgba(255,255,255,0.6), transparent)" }} />
       </div>
     </section>

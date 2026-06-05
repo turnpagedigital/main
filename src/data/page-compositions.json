@@ -12,17 +12,6 @@
           "type": "home-hero",
           "visible": true,
           "content": {
-            "title1": "We broker the claims",
-            "title2": "no one else will.",
-            "subtitle": "Bankruptcy claims, class action settlements, digital assets, litigation funding, tariff refunds. If it's illiquid and complex, we trade it.",
-            "ctaPrimary": {
-              "label": "Get a Quote",
-              "href": "/contact"
-            },
-            "ctaSecondary": {
-              "label": "What we cover",
-              "href": "#situations"
-            },
             "video": "/robotpages1.mp4"
           }
         },
