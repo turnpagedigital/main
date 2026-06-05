@@ -187,17 +187,6 @@
           "visible": true
         },
         {
-          "id": "sec-aic-faq",
-          "type": "faq",
-          "visible": true,
-          "content": {
-            "title": "AI copyright,",
-            "accent": "answered.",
-            "ctaLabel": "Ask a Question",
-            "ctaHref": "/contact?source=ai-copyright"
-          }
-        },
-        {
           "id": "sec-aic-testimonials",
           "type": "testimonials",
           "visible": true
@@ -219,6 +208,17 @@
               "label": "Briefings",
               "href": "/briefings"
             }
+          }
+        },
+        {
+          "id": "sec-aic-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "AI copyright,",
+            "accent": "answered.",
+            "ctaLabel": "Ask a Question",
+            "ctaHref": "/contact?source=ai-copyright"
           }
         }
       ]
