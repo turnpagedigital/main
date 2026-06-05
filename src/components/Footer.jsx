@@ -4,6 +4,14 @@ import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 import LanguageSelector from "./LanguageSelector.jsx";
 import footerData from "../data/footer.json";
+import pageMeta from "../data/page-meta.json";
+
+// Build a Set of paths that are explicitly marked inactive (draft).
+// Only pages listed in page-meta.json with active: false are suppressed;
+// everything else (including pages not listed there) shows normally.
+const DRAFT_PATHS = new Set(
+  (pageMeta.pages || []).filter(p => p.active === false).map(p => p.path)
+);
 
 /* Polestar-style simple footer.
    Light gray background, subscribe column on the left, multiple short link
@@ -56,12 +64,14 @@ export default function Footer() {
             <FooterCol
               key={col.id}
               title={tx(col.titleKey, col.title)}
-              items={col.links.map(link => ({
-                key:          link.id,
-                label:        tx(link.labelKey, link.label),
-                href:         link.href,
-                external:     link.external ?? false,
-              }))}
+              items={col.links
+                .filter(link => link.external || !DRAFT_PATHS.has(link.href))
+                .map(link => ({
+                  key:      link.id,
+                  label:    tx(link.labelKey, link.label),
+                  href:     link.href,
+                  external: link.external ?? false,
+                }))}
             />
           ))}
         </div>
