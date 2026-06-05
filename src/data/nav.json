@@ -81,12 +81,12 @@
             "href": "/litigation-finance#who-we-help"
           },
           {
-            "label": "What we fund",
+            "label": "How we work",
             "href": "/litigation-finance#how-litfin"
           },
           {
-            "label": "How we work",
-            "href": "/litigation-finance#how-litfin"
+            "label": "Relevant experience",
+            "href": "/"
           },
           {
             "label": "Related media",
@@ -111,23 +111,18 @@
         "body": "Liquidity for tariff refunds and related recovery rights — a separate Turnpage initiative at rewindtariffs.com.",
         "links": [
           {
-            "label": "How it works",
+            "label": "For importers",
             "href": "https://www.rewindtariffs.com",
             "external": true
           },
           {
-            "label": "Calculate your refund",
-            "href": "https://www.rewindtariffs.com/#calculator",
+            "label": "For customs brokers",
+            "href": "https://www.rewindtariffs.com/#brokers",
             "external": true
           },
           {
             "label": "News & research",
             "href": "https://www.rewindtariffs.com/#research",
-            "external": true
-          },
-          {
-            "label": "Referral program",
-            "href": "https://www.rewindtariffs.com/#brokers",
             "external": true
           },
           {
