@@ -452,6 +452,8 @@
           "id": "sec-litfin-bottom-cta",
           "type": "bottom-cta",
           "visible": true,
+          "layout": "layout-3-bottomcta",
+          "colorScheme": "dark",
           "content": {
             "eyebrow": "Litigation Finance",
             "title": "Have a case worth funding?",
@@ -462,25 +464,23 @@
               "href": "/contact?source=litigation-finance"
             },
             "secondary": null
-          },
-          "layout": "layout-3-bottomcta",
-          "colorScheme": "dark"
+          }
         },
         {
           "id": "sec-litfin-faq",
           "type": "faq",
           "visible": true,
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light",
           "content": {
             "title": "Litigation finance,",
             "accent": "answered.",
             "ctaLabel": "Talk to a Partner",
             "ctaHref": "/contact?source=litigation-finance"
-          },
-          "layout": "layout-2-sidebar",
-          "colorScheme": "light"
+          }
         }
       ],
-      "status": "active"
+      "status": "draft"
     }
   ]
 }
