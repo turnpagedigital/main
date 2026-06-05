@@ -57,7 +57,7 @@ export default function SectionEditorModal({ section, sectionType, onSave, onClo
         {/* ── Stats Band ── */}
         {typeId === "stats-band" && (
           <>
-            <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.9rem" }}>Edit the three headline statistics.</p>
+            <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.9rem" }}>Edit the three headline statistics. Leave a label or footnote blank to use the site's built-in translated wording (recommended for multi-language support).</p>
             {(form.stats || []).map((s, i) => (
               <div key={i} style={{ ...fieldGroup, display: "grid", gridTemplateColumns: "1fr 2fr", gap: 8 }}>
                 <div><label style={labelStyle}>Value</label><input style={inputStyle} value={s.value || ""} onChange={e => { const next=[...(form.stats||[])]; next[i]={...next[i],value:e.target.value}; set("stats",next); }} /></div>

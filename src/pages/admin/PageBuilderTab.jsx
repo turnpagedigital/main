@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE, LINE_STRONG, SURFACE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
 import SectionEditorModal from "./SectionEditorModal.jsx";
+import PagePreviewOverlay from "./PagePreviewOverlay.jsx";
 
 /* PageBuilderTab — view and manage the section composition of every page.
 
@@ -55,6 +56,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
   const [addPickerOpen, setAddPickerOpen]   = useState(false);
   const [newPageForm, setNewPageForm]       = useState(null);   // null | { title, pageKey, path }
   const [deleteConfirm, setDeleteConfirm]   = useState(null);   // pageKey to delete
+  const [previewOpen, setPreviewOpen]       = useState(false);  // live preview overlay
 
   useEffect(() => { load(); }, []);
 
@@ -172,6 +174,35 @@ export default function PageBuilderTab({ onDirtyChange }) {
   function sectionIsEditable(typeId) {
     const st = sectionTypes.find(t => t.id === typeId);
     return st && st.dataSource === "inline";
+  }
+
+  // Short human summary of a section's inline content, so two sections of the
+  // same type (e.g. two photo breaks) are distinguishable in the list.
+  function sectionSummary(s) {
+    const c = s.content || {};
+    switch (s.type) {
+      case "home-hero":   return [c.title1, c.title2].filter(Boolean).join(" ");
+      case "hero":        return c.title || c.eyebrow || "";
+      case "stats-band":  return (c.stats || []).map(x => x.value).filter(Boolean).join("  ·  ");
+      case "our-edge":    return [c.title, c.titleAccent].filter(Boolean).join(" ");
+      case "photo-break": return c.overlayText || c.imageUrl || "";
+      case "cta-banner":  return c.title || c.cta || "";
+      case "bottom-cta":  return [c.title, c.accent].filter(Boolean).join(" ");
+      case "get-quote":   return [c.title, c.titleAccent].filter(Boolean).join(" ");
+      default:            return "";
+    }
+  }
+
+  // Whether a section type may be added to the current page right now.
+  // Respects availableOn (page allow-list) and allowMultiple (singletons).
+  function typeAvailability(st) {
+    if (Array.isArray(st.availableOn) && selectedKey && !st.availableOn.includes(selectedKey)) {
+      return { ok: false, reason: `Only on: ${st.availableOn.join(", ")}` };
+    }
+    if (st.allowMultiple !== true && sections.some(s => s.type === st.id)) {
+      return { ok: false, reason: "Already on this page" };
+    }
+    return { ok: true, reason: "" };
   }
 
   // ── New page ────────────────────────────────────────────────────────────
@@ -292,6 +323,9 @@ export default function PageBuilderTab({ onDirtyChange }) {
                   <span style={{ fontSize: "0.75rem", fontWeight: 500, color: INK_60, marginLeft: 8, fontFamily: "monospace" }}>{selectedPage.path}</span>
                 </h3>
                 <div style={{ display: "flex", gap: 8 }}>
+                  <button style={{ ...btnStyle, fontSize: "0.82rem" }} onClick={() => setPreviewOpen(true)} disabled={saving || sections.length === 0} title={sections.length === 0 ? "Add a section to preview" : "Preview this page with your unsaved changes"}>
+                    Preview
+                  </button>
                   <button style={{ ...btnStyle, fontSize: "0.82rem" }} onClick={() => setAddPickerOpen(true)} disabled={saving}>
                     + Add section
                   </button>
@@ -304,6 +338,10 @@ export default function PageBuilderTab({ onDirtyChange }) {
                   </button>
                 </div>
               </div>
+
+              <p style={{ fontSize: "0.74rem", color: INK_60, margin: "0 0 0.9rem" }}>
+                Saved changes publish to the live site after it rebuilds (~1–2 min).
+              </p>
 
               {sections.length === 0 ? (
                 <div style={{ padding: "2rem", textAlign: "center", border: `1px dashed ${LINE}`, color: INK_60, fontSize: "0.9rem" }}>
@@ -330,7 +368,17 @@ export default function PageBuilderTab({ onDirtyChange }) {
                         {/* Section info */}
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <div style={{ fontWeight: 700, fontSize: "0.88rem" }}>{sectionTypeLabel(s.type)}</div>
-                          <div style={{ fontSize: "0.72rem", color: INK_60, marginTop: 2 }}>{sectionDataSource(s.type)}</div>
+                          {(() => {
+                            const summary = sectionSummary(s);
+                            return (
+                              <div
+                                style={{ fontSize: "0.72rem", color: INK_60, marginTop: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontStyle: summary ? "italic" : "normal" }}
+                                title={summary || undefined}
+                              >
+                                {summary || sectionDataSource(s.type)}
+                              </div>
+                            );
+                          })()}
                         </div>
 
                         {/* Actions */}
@@ -375,21 +423,41 @@ export default function PageBuilderTab({ onDirtyChange }) {
         <Modal onClose={() => setAddPickerOpen(false)}>
           <h3 style={{ fontWeight: 800, marginBottom: "1rem" }}>Add a section</h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 8, maxHeight: 360, overflowY: "auto" }}>
-            {sectionTypes.map(st => (
-              <button
-                key={st.id}
-                style={{ ...btnStyle, textAlign: "left", padding: "0.7rem 0.9rem", display: "block" }}
-                onClick={() => addSection(st.id)}
-              >
-                <div style={{ fontWeight: 700, fontSize: "0.9rem" }}>{st.displayName}</div>
-                <div style={{ fontSize: "0.78rem", color: INK_60, marginTop: 2 }}>{st.description}</div>
-              </button>
-            ))}
+            {sectionTypes.map(st => {
+              const avail = typeAvailability(st);
+              return (
+                <button
+                  key={st.id}
+                  disabled={!avail.ok}
+                  style={{
+                    ...btnStyle, textAlign: "left", padding: "0.7rem 0.9rem", display: "block",
+                    opacity: avail.ok ? 1 : 0.45, cursor: avail.ok ? "pointer" : "not-allowed",
+                  }}
+                  onClick={() => { if (avail.ok) addSection(st.id); }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8 }}>
+                    <span style={{ fontWeight: 700, fontSize: "0.9rem" }}>{st.displayName}</span>
+                    {!avail.ok && <span style={{ fontSize: "0.68rem", fontWeight: 600, color: INK_60, whiteSpace: "nowrap", flexShrink: 0 }}>{avail.reason}</span>}
+                  </div>
+                  <div style={{ fontSize: "0.78rem", color: INK_60, marginTop: 2 }}>{st.description}</div>
+                </button>
+              );
+            })}
           </div>
           <div style={{ marginTop: "1rem" }}>
             <button style={btnStyle} onClick={() => setAddPickerOpen(false)}>Cancel</button>
           </div>
         </Modal>
+      )}
+
+      {/* Live Preview */}
+      {previewOpen && selectedPage && (
+        <PagePreviewOverlay
+          sections={sections}
+          pageKey={selectedPage.pageKey}
+          title={selectedPage.title}
+          onClose={() => setPreviewOpen(false)}
+        />
       )}
 
       {/* Section Content Editor */}
@@ -446,7 +514,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
       {deleteConfirm && (
         <Modal onClose={() => setDeleteConfirm(null)}>
           <p style={{ marginBottom: "1.1rem" }}>
-            Delete page "<strong>{deleteConfirm}</strong>"? The route and all section data will be removed. This can't be undone.
+            Delete page "<strong>{(pages.find(p => p.pageKey === deleteConfirm) || {}).title || deleteConfirm}</strong>"? The route and all section data will be removed. This can't be undone.
           </p>
           <div style={{ display: "flex", gap: 10 }}>
             <button style={{ ...btnPrimaryStyle, background: "#c0392b", color: "#fff" }} onClick={() => deletePage(deleteConfirm)} disabled={saving}>
