@@ -115,9 +115,9 @@
           "type": "cta-banner",
           "visible": true,
           "content": {
-            "title": "Stay current on the docket.",
+            "title": "Stay current on the cases we cover.",
             "cta": "Read the briefings",
-            "href": "/briefings",
+            "href": "/press?type=posts",
             "image": "/Building_Wide.jpg",
             "external": false
           }
