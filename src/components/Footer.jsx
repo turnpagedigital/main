@@ -47,7 +47,7 @@ export default function Footer() {
                 src="/TPDM Logo Black_No BKGD .png"
                 alt="Turnpage Digital Markets"
                 loading="lazy"
-                style={{ height: 56, width: "auto", display: "block" }}
+                style={{ height: 26, width: "auto", display: "block", filter: "brightness(0)" }}
               />
             </a>
           </div>
@@ -76,19 +76,11 @@ export default function Footer() {
             <p style={{ fontFamily: FONT, fontSize: "0.82rem", color: INK_60 }}>
               {tx(footerData.copyrightKey, footerData.copyright)}
             </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
-              {/* Legal links from the "legal" column */}
-              {(footerData.columns.find(c => c.id === "legal")?.links ?? []).map(link => (
-                <FooterBottomLink key={link.id} href={hashHref(link.href.replace(/^\//, ""))}>
-                  {tx(link.labelKey, link.label)}
-                </FooterBottomLink>
-              ))}
-              {footerData.contactEmail && (
-                <FooterBottomLink href={`mailto:${footerData.contactEmail}`}>
-                  {footerData.contactEmail}
-                </FooterBottomLink>
-              )}
-            </div>
+            {footerData.contactEmail && (
+              <FooterBottomLink href={`mailto:${footerData.contactEmail}`}>
+                {footerData.contactEmail}
+              </FooterBottomLink>
+            )}
           </div>
           <LanguageSelector />
         </div>
