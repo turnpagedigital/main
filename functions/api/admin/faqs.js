@@ -1,13 +1,12 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
-import routesData from "../../src/data/routes.json";
 
 const FAQS_PATH = "src/data/faqs.json";
 
-// Derived from routes.json — add/rename pages there, not here
-const VALID_PAGES = new Set(
-  routesData.routes.filter(r => !r.dynamic && r.key !== "admin").map(r => r.key)
-);
+// Page validation is enforced on the client (page-keys.js derives from routes.json).
+// The backend accepts any non-empty string so adding a new page in routes.json
+// doesn't require a matching change here.
+const isValidPage = p => typeof p === "string" && p.length > 0;
 
 export async function onRequestGet({ request, env }) {
   if (!(await isAuthed(request, env))) {
@@ -80,7 +79,7 @@ function normalizeFaq(f) {
     q:      String(f.q ?? ""),
     a:      typeof f.a === "string" ? f.a : Array.isArray(f.a) ? f.a.map(String).join("\n\n") : "",
     pages:  Array.isArray(f.pages)
-      ? f.pages.filter(p => VALID_PAGES.has(p))
+      ? f.pages.filter(isValidPage)
       : [],
   };
   if (f.featured !== undefined) result.featured = Boolean(f.featured);

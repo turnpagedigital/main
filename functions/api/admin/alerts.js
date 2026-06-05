@@ -1,13 +1,10 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
-import routesData from "../../src/data/routes.json";
 
 const ALERTS_PATH = "src/data/alerts.json";
 
-// Derived from routes.json — add/rename pages there, not here
-const VALID_PAGES = new Set(
-  routesData.routes.filter(r => !r.dynamic && r.key !== "admin").map(r => r.key)
-);
+// Page validation is enforced on the client (page-keys.js derives from routes.json).
+const isValidPage = p => typeof p === "string" && p.length > 0;
 
 export async function onRequestGet({ request, env }) {
   if (!(await isAuthed(request, env))) {
@@ -83,7 +80,7 @@ function normalizeAlert(a) {
     linkText: String(a.linkText ?? ""),
     href:     String(a.href     ?? ""),
     pages:    Array.isArray(a.pages)
-      ? a.pages.filter(p => VALID_PAGES.has(p))
+      ? a.pages.filter(isValidPage)
       : [],
   };
 }

@@ -1,13 +1,10 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
-import routesData from "../../src/data/routes.json";
 
 const FILE_PATH = "src/data/testimonials.json";
 
-// Derived from routes.json — add/rename pages there, not here
-const VALID_TAGS = new Set(
-  routesData.routes.filter(r => !r.dynamic && r.key !== "admin").map(r => r.key)
-);
+// Tag validation is enforced on the client (page-keys.js derives from routes.json).
+const isValidTag = t => typeof t === "string" && t.length > 0;
 
 export async function onRequestGet({ request, env }) {
   if (!(await isAuthed(request, env))) {
@@ -79,7 +76,7 @@ function normalizeTestimonial(t) {
     id:     typeof t.id === "string" && t.id.trim() ? t.id.trim() : `test-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
     quote:  String(t.quote ?? "").trim(),
     by:     String(t.by    ?? "").trim(),
-    tags:   Array.isArray(t.tags) ? t.tags.filter(tag => VALID_TAGS.has(tag)) : [],
+    tags:   Array.isArray(t.tags) ? t.tags.filter(isValidTag) : [],
     active: t.active !== false,
   };
 }
