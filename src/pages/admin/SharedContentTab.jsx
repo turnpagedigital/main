@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, Suspense, lazy } from "react";
 import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
-import BioTab           from "./BioTab.jsx";
-import PostsTab         from "./PostsTab.jsx";
-import DealsTab         from "./DealsTab.jsx";
-import PressTab         from "./PressTab.jsx";
-import AlertsTab        from "./AlertsTab.jsx";
-import FAQsTab          from "./FAQsTab.jsx";
-import TestimonialsTab  from "./TestimonialsTab.jsx";
+
+// Lazy-load sub-tabs
+const BioTab           = lazy(() => import("./BioTab.jsx"));
+const PostsTab         = lazy(() => import("./PostsTab.jsx"));
+const DealsTab         = lazy(() => import("./DealsTab.jsx"));
+const PressTab         = lazy(() => import("./PressTab.jsx"));
+const AlertsTab        = lazy(() => import("./AlertsTab.jsx"));
+const FAQsTab          = lazy(() => import("./FAQsTab.jsx"));
+const TestimonialsTab  = lazy(() => import("./TestimonialsTab.jsx"));
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SharedContentTab — master wrapper for Bio, Posts, Deals, Press, Alerts,
@@ -113,14 +115,16 @@ export default function SharedContentTab({ onDirtyChange }) {
         </div>
       </div>
 
-      {/* Render the active child */}
-      {sub === "bio"          && <BioTab          onDirtyChange={makeDirty("bio")} />}
-      {sub === "posts"        && <PostsTab        onDirtyChange={makeDirty("posts")} />}
-      {sub === "deals"        && <DealsTab        onDirtyChange={makeDirty("deals")} />}
-      {sub === "press"        && <PressTab        onDirtyChange={makeDirty("press")} />}
-      {sub === "alerts"       && <AlertsTab       onDirtyChange={makeDirty("alerts")} />}
-      {sub === "faqs"         && <FAQsTab         onDirtyChange={makeDirty("faqs")} />}
-      {sub === "testimonials" && <TestimonialsTab onDirtyChange={makeDirty("testimonials")} />}
+      {/* Render the active child (lazy-loaded) */}
+      <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
+        {sub === "bio"          && <BioTab          onDirtyChange={makeDirty("bio")} />}
+        {sub === "posts"        && <PostsTab        onDirtyChange={makeDirty("posts")} />}
+        {sub === "deals"        && <DealsTab        onDirtyChange={makeDirty("deals")} />}
+        {sub === "press"        && <PressTab        onDirtyChange={makeDirty("press")} />}
+        {sub === "alerts"       && <AlertsTab       onDirtyChange={makeDirty("alerts")} />}
+        {sub === "faqs"         && <FAQsTab         onDirtyChange={makeDirty("faqs")} />}
+        {sub === "testimonials" && <TestimonialsTab onDirtyChange={makeDirty("testimonials")} />}
+      </Suspense>
     </div>
   );
 }

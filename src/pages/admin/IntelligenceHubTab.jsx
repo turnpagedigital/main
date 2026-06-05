@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, Suspense, lazy } from "react";
 import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
-import ThemesTab from "./ThemesTab.jsx";
-import CasesTab from "./CasesTab.jsx";
-import IntelligenceDefaultsTab from "./IntelligenceDefaultsTab.jsx";
+
+// Lazy-load sub-tabs
+const ThemesTab = lazy(() => import("./ThemesTab.jsx"));
+const CasesTab = lazy(() => import("./CasesTab.jsx"));
+const IntelligenceDefaultsTab = lazy(() => import("./IntelligenceDefaultsTab.jsx"));
 
 /* IntelligenceHubTab — master wrapper for the Intelligence config layer.
    Horizontal sub-tab strip → Themes / Cases / Defaults. Each child keeps its
@@ -91,10 +93,12 @@ export default function IntelligenceHubTab({ onDirtyChange }) {
         </div>
       </div>
 
-      {/* Active child */}
-      {sub === "themes"   && <ThemesTab               onDirtyChange={makeDirty("themes")} />}
-      {sub === "cases"    && <CasesTab                onDirtyChange={makeDirty("cases")} />}
-      {sub === "defaults" && <IntelligenceDefaultsTab onDirtyChange={makeDirty("defaults")} />}
+      {/* Active child (lazy-loaded) */}
+      <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
+        {sub === "themes"   && <ThemesTab               onDirtyChange={makeDirty("themes")} />}
+        {sub === "cases"    && <CasesTab                onDirtyChange={makeDirty("cases")} />}
+        {sub === "defaults" && <IntelligenceDefaultsTab onDirtyChange={makeDirty("defaults")} />}
+      </Suspense>
     </div>
   );
 }

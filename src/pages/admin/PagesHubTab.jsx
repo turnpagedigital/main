@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, Suspense, lazy } from "react";
 import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
-import PageBuilderTab from "./PageBuilderTab.jsx";
-import SectionTypesTab from "./SectionTypesTab.jsx";
-import HomeContentTab from "./HomeContentTab.jsx";
-import MarketingPagesTab from "./MarketingPagesTab.jsx";
-import ContactFormTab from "./ContactFormTab.jsx";
+
+// Lazy-load sub-tabs
+const PageBuilderTab = lazy(() => import("./PageBuilderTab.jsx"));
+const SectionTypesTab = lazy(() => import("./SectionTypesTab.jsx"));
+const HomeContentTab = lazy(() => import("./HomeContentTab.jsx"));
+const MarketingPagesTab = lazy(() => import("./MarketingPagesTab.jsx"));
+const ContactFormTab = lazy(() => import("./ContactFormTab.jsx"));
 
 /* PagesHubTab — master wrapper for page management and content.
    Sub-tab strip → Builder / Section Types / Home Content / Marketing Pages / Contact Form
@@ -79,11 +81,13 @@ export default function PagesHubTab({ onDirtyChange }) {
         </div>
       </div>
 
-      {sub === "builder"       && <PageBuilderTab      onDirtyChange={makeDirty("builder")} />}
-      {sub === "sections"      && <SectionTypesTab />}
-      {sub === "home"          && <HomeContentTab      onDirtyChange={makeDirty("home")} />}
-      {sub === "marketing"     && <MarketingPagesTab   onDirtyChange={makeDirty("marketing")} />}
-      {sub === "contact-form"  && <ContactFormTab      onDirtyChange={makeDirty("contact-form")} />}
+      <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
+        {sub === "builder"       && <PageBuilderTab      onDirtyChange={makeDirty("builder")} />}
+        {sub === "sections"      && <SectionTypesTab />}
+        {sub === "home"          && <HomeContentTab      onDirtyChange={makeDirty("home")} />}
+        {sub === "marketing"     && <MarketingPagesTab   onDirtyChange={makeDirty("marketing")} />}
+        {sub === "contact-form"  && <ContactFormTab      onDirtyChange={makeDirty("contact-form")} />}
+      </Suspense>
     </div>
   );
 }

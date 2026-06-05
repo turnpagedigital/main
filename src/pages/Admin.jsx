@@ -1,12 +1,14 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, Suspense, lazy } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { CenteredMessage, LoginForm, btnStyle } from "./admin/shared.jsx";
-import SharedContentTab  from "./admin/SharedContentTab.jsx";
-import AssetsTab         from "./admin/AssetsTab.jsx";
-import StructureTab      from "./admin/StructureTab.jsx";
-import BriefingsTab      from "./admin/BriefingsTab.jsx";
-import IntelligenceHubTab from "./admin/IntelligenceHubTab.jsx";
-import PagesHubTab        from "./admin/PagesHubTab.jsx";
+
+// Lazy-load each master tab to reduce the admin bundle size from 779 KB
+const SharedContentTab  = lazy(() => import("./admin/SharedContentTab.jsx"));
+const AssetsTab         = lazy(() => import("./admin/AssetsTab.jsx"));
+const StructureTab      = lazy(() => import("./admin/StructureTab.jsx"));
+const BriefingsTab      = lazy(() => import("./admin/BriefingsTab.jsx"));
+const IntelligenceHubTab = lazy(() => import("./admin/IntelligenceHubTab.jsx"));
+const PagesHubTab        = lazy(() => import("./admin/PagesHubTab.jsx"));
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
@@ -185,14 +187,16 @@ export default function Admin() {
         </div>
       </div>
 
-      {/* ── Tab panels ────────────────────────────────────────────── */}
-      {tab === "content"      && <SharedContentTab  onDirtyChange={makeDirtyCallback("content")} />}
-      {tab === "page-builder" && <PagesHubTab       onDirtyChange={makeDirtyCallback("page-builder")} />}
-      {tab === "assets"       && <AssetsTab         onDirtyChange={makeDirtyCallback("assets")} />}
-      {tab === "structure"    && <StructureTab      onDirtyChange={makeDirtyCallback("structure")} />}
-      {tab === "briefings"    && <BriefingsTab      onDirtyChange={makeDirtyCallback("briefings")} />}
-      {tab === "intelligence" && <IntelligenceHubTab onDirtyChange={makeDirtyCallback("intelligence")} />}
-      {/* Legacy "pages" tab (meta/favicons) still accessible as sub-tab of Structure */}
+      {/* ── Tab panels (lazy-loaded) ────────────────────────────── */}
+      <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
+        {tab === "content"      && <SharedContentTab  onDirtyChange={makeDirtyCallback("content")} />}
+        {tab === "page-builder" && <PagesHubTab       onDirtyChange={makeDirtyCallback("page-builder")} />}
+        {tab === "assets"       && <AssetsTab         onDirtyChange={makeDirtyCallback("assets")} />}
+        {tab === "structure"    && <StructureTab      onDirtyChange={makeDirtyCallback("structure")} />}
+        {tab === "briefings"    && <BriefingsTab      onDirtyChange={makeDirtyCallback("briefings")} />}
+        {tab === "intelligence" && <IntelligenceHubTab onDirtyChange={makeDirtyCallback("intelligence")} />}
+        {/* Legacy "pages" tab (meta/favicons) still accessible as sub-tab of Structure */}
+      </Suspense>
     </div>
   );
 }

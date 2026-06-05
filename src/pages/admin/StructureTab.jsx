@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, Suspense, lazy } from "react";
 import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
-import StructureFaviconsTab  from "./StructureFaviconsTab.jsx";
-import StructureSiteMetaTab  from "./StructureSiteMetaTab.jsx";
-import StructureNavItemsTab  from "./StructureNavItemsTab.jsx";
-import StructureMicrositesTab from "./StructureMicrositesTab.jsx";
-import StructureFooterTab    from "./StructureFooterTab.jsx";
-import RoutesTab             from "./RoutesTab.jsx";
+
+// Lazy-load sub-tabs
+const StructureFaviconsTab  = lazy(() => import("./StructureFaviconsTab.jsx"));
+const StructureSiteMetaTab  = lazy(() => import("./StructureSiteMetaTab.jsx"));
+const StructureNavItemsTab  = lazy(() => import("./StructureNavItemsTab.jsx"));
+const StructureMicrositesTab = lazy(() => import("./StructureMicrositesTab.jsx"));
+const StructureFooterTab    = lazy(() => import("./StructureFooterTab.jsx"));
+const RoutesTab             = lazy(() => import("./RoutesTab.jsx"));
 
 /* ═══════════════════════════════════════════════════════════════════════════
    StructureTab — master wrapper for site-level settings.
@@ -117,13 +119,15 @@ export default function StructureTab({ onDirtyChange }) {
         </div>
       </div>
 
-      {/* Render the active child */}
-      {sub === "favicons"   && <StructureFaviconsTab   onDirtyChange={makeDirty("favicons")} />}
-      {sub === "site-meta"  && <StructureSiteMetaTab   onDirtyChange={makeDirty("site-meta")} />}
-      {sub === "navigation" && <StructureNavItemsTab   onDirtyChange={makeDirty("navigation")} />}
-      {sub === "microsites" && <StructureMicrositesTab onDirtyChange={makeDirty("microsites")} />}
-      {sub === "footer"     && <StructureFooterTab     onDirtyChange={makeDirty("footer")} />}
-      {sub === "routes"     && <RoutesTab              onDirtyChange={makeDirty("routes")} />}
+      {/* Render the active child (lazy-loaded) */}
+      <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
+        {sub === "favicons"   && <StructureFaviconsTab   onDirtyChange={makeDirty("favicons")} />}
+        {sub === "site-meta"  && <StructureSiteMetaTab   onDirtyChange={makeDirty("site-meta")} />}
+        {sub === "navigation" && <StructureNavItemsTab   onDirtyChange={makeDirty("navigation")} />}
+        {sub === "microsites" && <StructureMicrositesTab onDirtyChange={makeDirty("microsites")} />}
+        {sub === "footer"     && <StructureFooterTab     onDirtyChange={makeDirty("footer")} />}
+        {sub === "routes"     && <RoutesTab              onDirtyChange={makeDirty("routes")} />}
+      </Suspense>
     </div>
   );
 }
