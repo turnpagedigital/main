@@ -18,6 +18,7 @@ const Briefings        = React.lazy(() => import("./pages/Briefings.jsx"));
 const Briefing         = React.lazy(() => import("./pages/Briefing.jsx"));
 const Contact          = React.lazy(() => import("./pages/Contact.jsx"));
 const Legal            = React.lazy(() => import("./pages/Legal.jsx"));
+const FAQ              = React.lazy(() => import("./pages/FAQ.jsx"));
 const NotFound         = React.lazy(() => import("./pages/NotFound.jsx"));
 const Admin            = React.lazy(() => import("./pages/Admin.jsx"));
 const Press            = React.lazy(() => import("./pages/Press.jsx"));
@@ -49,6 +50,7 @@ const TITLES = {
   "press": "Press & Publications — Turnpage Digital Markets",
   "litigation-finance": "Litigation Finance — Turnpage Digital Markets",
   "contact": "Get in Touch — Turnpage Digital Markets",
+  "faq": "FAQ — Turnpage Digital Markets",
   "privacy": "Privacy Policy — Turnpage Digital Markets",
   "terms": "Terms of Use — Turnpage Digital Markets",
   "admin": "Admin — Turnpage Digital Markets",
@@ -163,6 +165,7 @@ const COMPONENT_MAP = {
   "Briefing":           Briefing,
   "Contact":            Contact,
   "Legal":              Legal,
+  "FAQ":                FAQ,
   "NotFound":           NotFound,
   "Admin":              Admin,
   "Press":              Press,

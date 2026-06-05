@@ -7,7 +7,8 @@
       "a": "Bankruptcy claims, litigation claims, class action claims, trade receivables, judgments, locked digital assets, frozen accounts, government refunds, and seized property.",
       "pages": [
         "home"
-      ]
+      ],
+      "featured": true
     },
     {
       "active": true,
@@ -15,7 +16,8 @@
       "a": "Capital solutions (assignments, participations, litigation financing, advances, contingency arrangements), trading strategies (OTC brokerage, auctions, private pools, structured portfolios), and advisory (claim analysis, price discovery, complex recovery strategies, expert testimony).",
       "pages": [
         "home"
-      ]
+      ],
+      "featured": true
     },
     {
       "active": true,
@@ -23,7 +25,8 @@
       "a": "Days on simple matters, longer when the docket requires it. Automation enables lightning-fast settlement in the largest cases.",
       "pages": [
         "home"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": true,
@@ -33,13 +36,15 @@
         "home",
         "ai-copyright",
         "crypto"
-      ]
+      ],
+      "featured": true
     },
     {
       "active": false,
       "q": "Which cases are you active in?",
       "a": "We are currently focused on BlockFills, FTX, and the GSB Settlement Fund.",
-      "pages": []
+      "pages": [],
+      "featured": false
     },
     {
       "active": true,
@@ -48,7 +53,8 @@
       "pages": [
         "home",
         "ai-copyright"
-      ]
+      ],
+      "featured": true
     },
     {
       "active": true,
@@ -56,7 +62,8 @@
       "a": "Trade creditors, customers of failed crypto exchanges, plaintiffs and class members, institutional holders of distressed receivables, family offices, trustees, and estates. The common thread is wanting cash today rather than waiting years for an uncertain distribution.",
       "pages": [
         "home"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": true,
@@ -64,7 +71,8 @@
       "a": "Both. We transact as principal when speed and certainty matter, and we broker into our network of 500+ institutional buyers when a competitive process will get you a better price.",
       "pages": [
         "home"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": true,
@@ -74,7 +82,8 @@
         "home",
         "ai-copyright",
         "crypto"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -84,7 +93,8 @@
         "home",
         "ai-copyright",
         "crypto"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -94,7 +104,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": true
     },
     {
       "active": false,
@@ -104,7 +115,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": true
     },
     {
       "active": false,
@@ -114,7 +126,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -124,7 +137,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -134,7 +148,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -144,7 +159,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -153,7 +169,8 @@
       "pages": [
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -163,7 +180,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -173,7 +191,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -183,7 +202,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -191,7 +211,8 @@
       "a": "Yes — the crypto claims market is one of the most active right now and we trade it daily. Pricing depends on the estate's asset position, the plan's treatment of customer claims, valuation methodology, and any KYC complications. We work with U.S. and non-U.S. creditors and can settle in fiat or stablecoin.",
       "pages": [
         "crypto"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -199,7 +220,8 @@
       "a": "Yes. The right to remaining future distributions trades separately, and we bid stubs on the same documented basis as full claims. Sellers often choose this route because additional distributions can take years and stay exposed to litigation, recovery, and trust-administration risk.",
       "pages": [
         "crypto"
-      ]
+      ],
+      "featured": true
     },
     {
       "active": false,
@@ -207,7 +229,8 @@
       "a": "In many class actions, judgments, and consent-decree distributions, your right to a future payment is freely assignable. Whether and when it's liquid depends on the settlement order, the trustee or special master's process, and the size and predictability of the expected payout. Send us the case and we'll tell you quickly.",
       "pages": [
         "ai-copyright"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": true,
@@ -217,7 +240,8 @@
         "ai-copyright",
         "crypto",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": true,
@@ -226,7 +250,8 @@
       "pages": [
         "home",
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -234,7 +259,8 @@
       "a": "Not by default — for typical introductions, you and your client are free to shop our bid. For large or complex claims where we're committing meaningful diligence resources, we may request a short exclusivity window in exchange for a stronger price, always agreed in writing.",
       "pages": [
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -242,7 +268,8 @@
       "a": "Your client is yours. We don't solicit referred clients for other matters or market to them outside the scope of the engagement, and we'll sign NDAs whenever you'd like. Deal information is handled on a need-to-know basis and supporting documents are redacted before any third-party review.",
       "pages": [
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -250,7 +277,8 @@
       "a": "Anything where a rights holder is entitled to compensation and could benefit from liquidity, certainty, or a market check — trade creditors in Chapter 11, customers of failed crypto exchanges, class members in major settlements, holders of judgments and arbitration awards, counterparties to commercial litigation. If you're not sure, ask. We'd rather decline a single matter than miss a chance to help your client.",
       "pages": [
         "contact"
-      ]
+      ],
+      "featured": false
     },
     {
       "active": false,
@@ -261,7 +289,8 @@
         "ai-copyright",
         "crypto",
         "briefings"
-      ]
+      ],
+      "featured": false
     }
   ]
 }

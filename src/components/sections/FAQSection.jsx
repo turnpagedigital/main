@@ -12,8 +12,14 @@ export default function FAQSection({ sectionConfig, pageKey }) {
   const ctaHref  = c.ctaHref  || "/contact";
 
   const faqs = (faqsData.faqs || []).filter(
+    f => f.active !== false && Array.isArray(f.pages) && f.pages.includes(pageKey) && f.featured !== false
+  );
+
+  // Check if there are non-featured FAQs for this page (for CTA visibility)
+  const allFaqsForPage = (faqsData.faqs || []).filter(
     f => f.active !== false && Array.isArray(f.pages) && f.pages.includes(pageKey)
   );
+  const hasMoreFaqs = allFaqsForPage.length > faqs.length;
 
   const isHome = pageKey === "home";
 
@@ -66,6 +72,17 @@ export default function FAQSection({ sectionConfig, pageKey }) {
           </div>
           <div>
             <FAQ items={faqs} />
+            {hasMoreFaqs && (
+              <a href={`/faq?topic=${pageKey}`} style={{
+                display: "inline-block", marginTop: "2rem",
+                fontFamily: FONT, fontSize: "0.88rem", color: INK_60,
+                textDecoration: "none", transition: "color 0.2s",
+              }}
+              onMouseEnter={e => e.target.style.color = INK}
+              onMouseLeave={e => e.target.style.color = INK_60}>
+                More Questions? See all FAQs →
+              </a>
+            )}
           </div>
         </div>
         <style>{`

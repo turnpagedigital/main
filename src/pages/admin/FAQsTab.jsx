@@ -13,15 +13,16 @@ const FAQ_PAGE_LABELS = {
 };
 
 function blankFaq() {
-  return { active: true, q: "", a: "", pages: ["home"] };
+  return { active: true, q: "", a: "", pages: ["home"], featured: false };
 }
 
 function sanitizeFaq(f) {
   return {
-    active: Boolean(f.active),
-    q:      typeof f.q === "string" ? f.q : "",
-    a:      typeof f.a === "string" ? f.a : (Array.isArray(f.a) ? f.a.join("\n\n") : ""),
-    pages:  Array.isArray(f.pages) ? f.pages.filter(p => FAQ_PAGE_VALUES.includes(p)) : [],
+    active:   Boolean(f.active),
+    q:        typeof f.q === "string" ? f.q : "",
+    a:        typeof f.a === "string" ? f.a : (Array.isArray(f.a) ? f.a.join("\n\n") : ""),
+    pages:    Array.isArray(f.pages) ? f.pages.filter(p => FAQ_PAGE_VALUES.includes(p)) : [],
+    featured: Boolean(f.featured),
   };
 }
 
@@ -476,6 +477,16 @@ function FaqsSectionInner({ faqs, onChangeFaqs, onSave, dirty, isSaving, error, 
                     );
                   })}
                 </div>
+                {Array.isArray(faq.pages) && faq.pages.length > 0 && (
+                  <label style={{ display: "flex", alignItems: "center", gap: "0.35rem", cursor: "pointer", fontSize: "0.88rem", color: INK, fontWeight: 400, marginTop: "0.6rem" }}>
+                    <input
+                      type="checkbox" checked={Boolean(faq.featured)}
+                      onChange={e => updateFaq(i, "featured", e.target.checked)}
+                      style={{ accentColor: NEON, width: 14, height: 14 }}
+                    />
+                    <span title="Featured FAQs appear on their pages. Non-featured FAQs only appear on the generic /faq page.">Featured on page</span>
+                  </label>
+                )}
               </div>
             </div>
           </div>

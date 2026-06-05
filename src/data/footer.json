@@ -49,6 +49,11 @@
           "labelKey": "nav.briefings"
         },
         {
+          "id": "faq",
+          "label": "FAQ",
+          "href": "/faq"
+        },
+        {
           "id": "link-1779881007269-p8ym",
           "label": "Trade Docs",
           "href": "/documentation"

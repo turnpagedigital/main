@@ -65,12 +65,13 @@ function validateFaqs(faqs) {
     if (typeof f.q !== "string") return `faqs[${i}].q must be a string`;
     if (typeof f.a !== "string" && !Array.isArray(f.a)) return `faqs[${i}].a must be a string or array`;
     if (!Array.isArray(f.pages)) return `faqs[${i}].pages must be an array`;
+    if (f.featured !== undefined && typeof f.featured !== "boolean") return `faqs[${i}].featured must be a boolean`;
   }
   return null;
 }
 
 function normalizeFaq(f) {
-  return {
+  const result = {
     active: Boolean(f.active),
     q:      String(f.q ?? ""),
     a:      typeof f.a === "string" ? f.a : Array.isArray(f.a) ? f.a.map(String).join("\n\n") : "",
@@ -78,6 +79,8 @@ function normalizeFaq(f) {
       ? f.pages.filter(p => VALID_PAGES.includes(p))
       : [],
   };
+  if (f.featured !== undefined) result.featured = Boolean(f.featured);
+  return result;
 }
 
 async function fetchFile(env) {
