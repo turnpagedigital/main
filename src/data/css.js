@@ -111,12 +111,6 @@ button { font-family: inherit; }
   letter-spacing: 0.22em; text-transform: uppercase;
   color: ${INK};
 }
-.eyebrow::before {
-  content: ""; display: inline-block;
-  width: 1.6em; height: 0.18em;
-  background: ${NEON}; border-radius: 2px;
-  margin-right: 0.6em; vertical-align: 0.22em;
-}
 .eyebrow-neon {
   font-family: ${FONT};
   font-size: 0.78rem; font-weight: 700;
