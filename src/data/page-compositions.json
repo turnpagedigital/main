@@ -24,21 +24,21 @@
               {
                 "value": "$1.1B",
                 "labelKey": "stats.claims_traded",
-                "label": "Traded*"
+                "label": "Monetized*"
               },
               {
                 "value": "5K+",
                 "labelKey": "stats.claims_advised",
-                "label": "Trades*"
+                "label": "Traded or advised*"
               },
               {
                 "value": "500+",
                 "labelKey": "stats.institutions",
-                "label": "Funders*"
+                "label": "Funders on speed dial"
               }
             ],
             "footnoteKey": "stats.footnote",
-            "footnote": "*Includes experience prior to Turnpage"
+            "footnote": "*Includes experience prior to founding Turnpage Digital"
           }
         },
         {
@@ -79,22 +79,22 @@
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
             "titleAccent": "when it counts.",
-            "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
+            "intro": "Automated diligence and deep integration with our capital partners means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
             "points": [
               {
                 "id": "edge-1",
                 "h": "Practically unlimited liquidity",
-                "b": "We partner with major asset managers — over 500 institutions on speed dial."
+                "b": "With over 500 institutions on speed dial, our network of asset managers ensures broad coverage across claim sizes, geographies and asset types. "
               },
               {
                 "id": "edge-2",
-                "h": "Lightning-fast settlement",
-                "b": "Automation accelerates diligence and closing in the largest volume cases."
+                "h": "Secure and confidential analysis",
+                "b": "We only ask for the information we absolutely need to provide an accurate assessment of your rights, and protect your data as if it were our own."
               },
               {
                 "id": "edge-3",
                 "h": "Relationship builders, not just dealmakers",
-                "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
+                "b": "We ask the right questions to understand your needs so we can structure the right deal for you and your business."
               }
             ]
           }
@@ -115,9 +115,9 @@
           "type": "cta-banner",
           "visible": true,
           "content": {
-            "title": "Stay current on the docket.",
+            "title": "Stay current on the cases we cover.",
             "cta": "Read the briefings",
-            "href": "/briefings",
+            "href": "/press?type=posts",
             "image": "/Building_Wide.jpg",
             "external": false
           }
@@ -153,15 +153,15 @@
             "eyebrow": "Copyright Claims",
             "title": "Calling all creators.",
             "accentTitle": "Claim what's yours.",
-            "subtitle": "Bartz. The OpenAI MDL. Concord. Getty. We buy claims and advise on strategy.",
+            "subtitle": "You didn't work this hard to give it away for free — we help authors, publishers, musicians, artists, record labels and other copyright holders get smart about their rights and track compensation opportunities across multiple copyright infringement class actions against generative AI companies",
             "size": "tall",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
-              "label": "Talk to a Partner",
+              "label": "Talk to Us",
               "href": "/contact?source=ai-copyright"
             },
             "ctaSecondary": {
-              "label": "See exposure data",
+              "label": "Top Cases",
               "href": "#cases-section"
             }
           }
@@ -172,13 +172,13 @@
           "visible": true
         },
         {
-          "id": "sec-aic-service",
-          "type": "service-cards",
+          "id": "sec-aic-damages",
+          "type": "damages",
           "visible": true
         },
         {
-          "id": "sec-aic-damages",
-          "type": "damages",
+          "id": "sec-aic-service",
+          "type": "service-cards",
           "visible": true
         },
         {
@@ -207,10 +207,10 @@
           "type": "bottom-cta",
           "visible": true,
           "content": {
-            "eyebrow": "AI Copyright Desk",
-            "title": "Hold a claim?",
+            "eyebrow": "Compensation? Copy that.",
+            "title": "Ready to learn more?",
             "accent": "Talk to us.",
-            "kicker": "48-hour response. Confidentiality default.",
+            "kicker": "Private, fast and secure.",
             "primary": {
               "label": "Get in Touch",
               "href": "/contact?source=ai-copyright"
@@ -292,11 +292,11 @@
           "visible": true,
           "content": {
             "eyebrow": "Crypto Claims Desk",
-            "title": "Ready to liquidate?",
+            "title": "Ready to cash out?",
             "accent": "Get a quote.",
-            "kicker": "48-hour response. Confidentiality default.",
+            "kicker": "Private. Fast. Secure.",
             "primary": {
-              "label": "Get a Quote",
+              "label": "Get in Touch",
               "href": "/contact?source=crypto"
             },
             "secondary": null
@@ -315,18 +315,18 @@
           "type": "hero",
           "visible": true,
           "content": {
-            "eyebrow": "Litigation Finance",
-            "title": "Power the cases that",
+            "eyebrow": "Litigation Funding",
+            "title": "We help power the cases that",
             "accentTitle": "deserve to win.",
-            "subtitle": "Turnpage helps the best law firms pursue cases on contingency — providing capital so merit drives the docket, not client cashflow.",
+            "subtitle": "Turnpage helps the best law firms pursue cases on contingency — providing capital so merit drives the docket, not your firm checking account.",
             "size": "tall",
             "video": "/robotobriefcase1.mp4",
             "ctaPrimary": {
-              "label": "Talk to a Partner",
+              "label": "Talk to Us",
               "href": "/contact?source=litigation-finance"
             },
             "ctaSecondary": {
-              "label": "How it works",
+              "label": "How we work",
               "href": "#how-litfin"
             }
           }

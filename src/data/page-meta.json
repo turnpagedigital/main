@@ -2,8 +2,8 @@
   "_comment": "Site-level metadata and per-page Open Graph / SEO fields. Managed via /admin/pages (Site Metadata + Per-page Meta sections). _middleware.js imports this at build time. Changes here are committed via the admin API and trigger a Cloudflare Pages rebuild.",
   "site": {
     "name": "Turnpage Digital Markets",
-    "defaultTitle": "Turnpage Digital Markets — The OTC Desk for Rights Holders",
-    "defaultDescription": "Capital and advisory for rights holders. AI copyright class actions, crypto bankruptcies, complex litigation — over $1B liquidated."
+    "defaultTitle": "Turnpage Digital Markets — Competitive Capital Solutions for Rights Holders Entitled to Compensation",
+    "defaultDescription": "Capital and advisory for rights holders. AI copyright claims, class actions, crypto bankruptcies, tariff refunds, government receivables, complex litigation — over $1B liquidated, 5,000 clients served."
   },
   "pages": [
     {
@@ -28,7 +28,7 @@
       "active": true
     },
     {
-      "path": "/litigation-finance",
+      "path": "/litigation-funding",
       "title": "Litigation Funding — Turnpage Digital Markets",
       "description": "Capital and advisory for high stakes, contingency matters",
       "og": "litigation-finance",

@@ -6,25 +6,25 @@
       "links": [
         {
           "id": "ai-copyright",
-          "label": "Copyright",
+          "label": "Copyright Claims",
           "href": "/copyright",
           "labelKey": "nav.copyright"
         },
         {
           "id": "crypto",
-          "label": "Crypto",
+          "label": "Locked Crypto",
           "href": "/crypto",
           "labelKey": "nav.crypto"
         },
         {
           "id": "litigation-finance",
-          "label": "Litigation",
-          "href": "/litigation-finance",
+          "label": "Litigation Funding",
+          "href": "/litigation-funding",
           "labelKey": "nav.litigation"
         },
         {
           "id": "tariff-refunds",
-          "label": "Tariffs",
+          "label": "Tariff Refunds",
           "href": "https://www.rewindtariffs.com",
           "labelKey": "nav.tariff",
           "external": true

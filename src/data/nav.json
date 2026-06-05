@@ -8,15 +8,19 @@
       "labelKey": "nav.copyright",
       "dropdown": {
         "title": "Copyright Claims",
-        "body": "Capital and advisory for rights holders with claims against generative AI companies.",
+        "body": "Competitive capital and advisory for copyright holders with claims against generative AI companies.",
         "links": [
           {
             "label": "Who we help",
             "href": "/ai-copyright#who-we-help"
           },
           {
+            "label": "How we work",
+            "href": "/ai-copyright#how-we-work"
+          },
+          {
             "label": "Briefings",
-            "href": "/briefings"
+            "href": "/press?type=posts"
           },
           {
             "label": "Related media",
@@ -37,7 +41,7 @@
       "labelKey": "nav.crypto",
       "dropdown": {
         "title": "Locked Crypto",
-        "body": "Crypto-native liquidity provider for locked crypto assets — exchange bankruptcies, frozen customer accounts and seized assets",
+        "body": "Crypto-native liquidity provider for locked digital assets. We have deep expertise funding claims and related litigation across exchange bankruptcies, fraud cases and complex asset seizure matters.",
         "links": [
           {
             "label": "Who we help",
@@ -64,12 +68,12 @@
     },
     {
       "id": "litigation-finance",
-      "label": "Litigation Finance",
-      "href": "/litigation-finance",
+      "label": "Litigation Funding",
+      "href": "/litigation-funding",
       "active": true,
       "labelKey": "nav.litigation",
       "dropdown": {
-        "title": "Litigation Finance",
+        "title": "Litigation Funding",
         "body": "We help the boldest law firms pursue high-risk / high-reward cases on full or partial contingency, enabling firms to reduce their exposure, while retaining meaningful upside.",
         "links": [
           {
@@ -77,12 +81,12 @@
             "href": "/litigation-finance#who-we-help"
           },
           {
-            "label": "What we fund",
+            "label": "How we work",
             "href": "/litigation-finance#how-litfin"
           },
           {
-            "label": "How it works",
-            "href": "/litigation-finance#how-litfin"
+            "label": "Relevant experience",
+            "href": "/"
           },
           {
             "label": "Related media",
@@ -90,7 +94,7 @@
           }
         ],
         "cta": {
-          "label": "Talk to a Partner",
+          "label": "Talk to Us",
           "href": "/contact?source=litigation-finance"
         }
       }
@@ -104,31 +108,21 @@
       "external": true,
       "dropdown": {
         "title": "Tariff Refunds",
-        "body": "Liquidity for tariff refund rights and customs recoveries — a separate Turnpage initiative at rewindtariffs.com.",
+        "body": "Liquidity for tariff refunds and related recovery rights — a separate Turnpage initiative at rewindtariffs.com.",
         "links": [
           {
-            "label": "How it works",
+            "label": "For importers",
             "href": "https://www.rewindtariffs.com",
             "external": true
           },
           {
-            "label": "CIT case tracker",
-            "href": "https://www.rewindtariffs.com/#cases",
-            "external": true
-          },
-          {
-            "label": "Refund calculator",
-            "href": "https://www.rewindtariffs.com/#calculator",
+            "label": "For customs brokers",
+            "href": "https://www.rewindtariffs.com/#brokers",
             "external": true
           },
           {
             "label": "News & research",
             "href": "https://www.rewindtariffs.com/#research",
-            "external": true
-          },
-          {
-            "label": "Referral program",
-            "href": "https://www.rewindtariffs.com/#brokers",
             "external": true
           },
           {
@@ -185,8 +179,12 @@
       },
       "items": [
         {
-          "label": "How We Help",
+          "label": "Who We Help",
           "href": "/copyright#who-we-help"
+        },
+        {
+          "label": "How we work",
+          "href": "/copyright#how-we-work"
         },
         {
           "label": "Team",
@@ -198,7 +196,7 @@
         }
       ],
       "cta": {
-        "label": "Get in Touch",
+        "label": "Talk to Us",
         "href": "/contact?source=copyright"
       }
     },
@@ -209,8 +207,12 @@
       },
       "items": [
         {
-          "label": "How We Help",
+          "label": "Who We Help",
           "href": "/crypto#who-we-help"
+        },
+        {
+          "label": "How we work",
+          "href": "/crypto#how-we-work"
         },
         {
           "label": "Team",
@@ -222,19 +224,23 @@
         }
       ],
       "cta": {
-        "label": "Get in Touch",
+        "label": "Talk to Us",
         "href": "/contact?source=crypto"
       }
     },
     "litigation-finance": {
       "brand": {
-        "label": "Litigation Finance",
-        "href": "/litigation-finance"
+        "label": "Litigation Funding",
+        "href": "/litigation-funding"
       },
       "items": [
         {
-          "label": "How We Help",
-          "href": "/litigation-finance#who-we-help"
+          "label": "Who we help",
+          "href": "/litigation-funding#who-we-help"
+        },
+        {
+          "label": "How we work",
+          "href": "/litigation-funding#how-we-work"
         },
         {
           "label": "Team",
@@ -246,8 +252,8 @@
         }
       ],
       "cta": {
-        "label": "Get in Touch",
-        "href": "/contact?source=litigation-finance"
+        "label": "Talk to Us",
+        "href": "/contact?source=litigation-funding"
       }
     }
   }
