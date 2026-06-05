@@ -102,8 +102,8 @@ export default function SituationsSection() {
                   transition: "max-height 0.4s cubic-bezier(0.4,0,0.2,1)",
                 }}>
                   <p style={{
-                    fontFamily: FONT, fontSize: "clamp(0.9rem, 1.1vw, 1.05rem)",
-                    color: INK_40, lineHeight: 1.7, margin: 0,
+                    fontFamily: FONT, fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
+                    color: INK, lineHeight: 1.7, margin: 0,
                     paddingTop: "clamp(0.5rem, 1vw, 0.75rem)",
                     paddingBottom: ROW_PAD,
                     paddingRight: "clamp(1rem, 4vw, 4rem)",
