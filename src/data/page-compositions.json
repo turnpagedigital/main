@@ -217,6 +217,8 @@
           "id": "sec-aic-bottom-cta",
           "type": "bottom-cta",
           "visible": true,
+          "layout": "layout-3-bottomcta",
+          "colorScheme": "dark",
           "content": {
             "eyebrow": "Compensation? Copy that.",
             "title": "Ready to learn more?",
@@ -230,25 +232,23 @@
               "label": "Briefings",
               "href": "/briefings"
             }
-          },
-          "layout": "layout-3-bottomcta",
-          "colorScheme": "dark"
+          }
         },
         {
           "id": "sec-aic-faq",
           "type": "faq",
           "visible": true,
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light",
           "content": {
             "title": "AI copyright,",
             "accent": "answered.",
             "ctaLabel": "Ask a Question",
             "ctaHref": "/contact?source=ai-copyright"
-          },
-          "layout": "layout-2-sidebar",
-          "colorScheme": "light"
+          }
         }
       ],
-      "status": "active"
+      "status": "draft"
     },
     {
       "pageKey": "crypto",
