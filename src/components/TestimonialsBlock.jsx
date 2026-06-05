@@ -24,7 +24,7 @@ export default function TestimonialsBlock({
   if (!testimonials || testimonials.length === 0) return null;
 
   return (
-    <section className="surface-paper section-pad">
+    <section className="surface-white section-pad">
       <div className="container">
         <SectionHeader eyebrow={eyebrow} title={title} accent={accent} />
 
