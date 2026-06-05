@@ -5,6 +5,13 @@ import SectionHeader from "../../SectionHeader.jsx";
 /* Testimonials Layout 1 — 3-Column Grid (Home page style)
    Three equal columns with border-top cards, centered layout.
    Props: { testimonials, eyebrow, title, accent, colorScheme } */
+
+const THEMES = {
+  light:        { bg: "#FFFFFF",  quote: INK,    attribution: INK_60,                   border: INK,    headerTheme: "light" },
+  "light-gray": { bg: "#F4F5F7",  quote: INK,    attribution: INK_60,                   border: INK,    headerTheme: "light" },
+  dark:         { bg: "#0A0A0A",  quote: "#fff", attribution: "rgba(255,255,255,0.55)", border: "#fff", headerTheme: "dark"  },
+};
+
 export default function TestimonialsLayout1Grid3Col({
   testimonials,
   eyebrow = "What Clients Say",
@@ -14,27 +21,15 @@ export default function TestimonialsLayout1Grid3Col({
 }) {
   if (!testimonials || testimonials.length === 0) return null;
 
-  const themes = {
-    light: {
-      text: INK,
-      quote: INK,
-      attribution: INK_60,
-      border: INK,
-    },
-  };
-  const theme = themes[colorScheme] || themes.light;
+  const theme = THEMES[colorScheme] || THEMES.light;
 
   return (
-    <section className="surface-white section-pad">
+    <section style={{ background: theme.bg, padding: "clamp(5rem,10vw,9rem) clamp(1.5rem,5vw,4rem)" }}>
       <div className="container">
-        <SectionHeader eyebrow={eyebrow} title={title} accent={accent} />
+        <SectionHeader eyebrow={eyebrow} title={title} accent={accent} theme={theme.headerTheme} />
 
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "clamp(2rem, 4vw, 3rem)",
-          }}
+          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "clamp(2rem, 4vw, 3rem)" }}
           className="testimonials-grid"
         >
           {testimonials.map((t, i) => (

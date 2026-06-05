@@ -132,7 +132,7 @@ export default function SectionEditorModal({ section, sectionType, onSave, onClo
         {/* ── Unified CTA (new template-based type) ── */}
         {typeId === "cta" && (
           <>
-            <LayoutColorPicker typeId="cta" form={form} set={set} sectionTypes={sectionTypesData.sectionTypes} />
+            <VisualLayoutColorPicker typeId="cta" form={form} set={set} sectionTypes={sectionTypesData.sectionTypes} />
             {/* Layout-specific fields */}
             {(form.layout === "layout-1-getquote" || !form.layout) && (
               <>
@@ -164,10 +164,15 @@ export default function SectionEditorModal({ section, sectionType, onSave, onClo
           </>
         )}
 
-        {/* ── FAQ (layout + color pickers) ── */}
+        {/* ── FAQ (color only — layout is auto-selected by page) ── */}
         {typeId === "faq" && (
           <>
-            <LayoutColorPicker typeId="faq" form={form} set={set} sectionTypes={sectionTypesData.sectionTypes} />
+            <ColorSchemePicker
+              typeId="faq"
+              value={form.colorScheme}
+              onChange={v => set("colorScheme", v)}
+              sectionTypes={sectionTypesData.sectionTypes}
+            />
             <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
             <div style={fieldGroup}><label style={labelStyle}>Accent (italic/neon)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
             <div style={fieldGroup}><label style={labelStyle}>CTA button label (sidebar layout only)</label><input style={inputStyle} value={form.ctaLabel || ""} onChange={e => set("ctaLabel", e.target.value)} placeholder="e.g. Ask a Question" /></div>
@@ -175,12 +180,17 @@ export default function SectionEditorModal({ section, sectionType, onSave, onClo
           </>
         )}
 
-        {/* ── Testimonials (layout + color pickers) ── */}
+        {/* ── Testimonials (visual layout + color picker) ── */}
         {typeId === "testimonials" && (
           <>
-            <LayoutColorPicker typeId="testimonials" form={form} set={set} sectionTypes={sectionTypesData.sectionTypes} />
-            <p style={{ fontSize: "0.8rem", color: INK_60, marginTop: "0.5rem" }}>
-              Testimonials content is managed in the Testimonials tab. Layout and color scheme are set here.
+            <VisualLayoutColorPicker
+              typeId="testimonials"
+              form={form}
+              set={set}
+              sectionTypes={sectionTypesData.sectionTypes}
+            />
+            <p style={{ fontSize: "0.78rem", color: INK_60, marginTop: "0.25rem" }}>
+              Testimonials content is managed in the <strong>Content → Testimonials</strong> tab.
             </p>
           </>
         )}
@@ -208,82 +218,256 @@ export default function SectionEditorModal({ section, sectionType, onSave, onClo
   );
 }
 
-/* Layout + Color Scheme picker — renders dropdowns for sections that support templates */
-function LayoutColorPicker({ typeId, form, set, sectionTypes }) {
+/* ── Visual color scheme definitions (for swatches) ────────────────────── */
+const SCHEME_VISUALS = {
+  "light":       { label: "White",      swatch: "#FFFFFF",      text: "#0A0A0A", border: "#E0E0E0" },
+  "light-gray":  { label: "Light Gray", swatch: "#F4F5F7",      text: "#0A0A0A", border: "#E0E0E0" },
+  "light-card":  { label: "Card",       swatch: "#FFFFFF",      text: "#0A0A0A", border: "#E0E0E0" },
+  "dark":        { label: "Dark",       swatch: "#0A0A0A",      text: "#FFFFFF", border: "#333"    },
+  "photo":       { label: "Photo",      swatch: "linear-gradient(135deg,#6b7280 0%,#374151 100%)", text: "#FFFFFF", border: "#555" },
+};
+
+/* ── Layout thumbnail sketches (drawn with CSS divs) ─────────────────────
+   Each returns a tiny 96×60 pixel schematic of the layout.               */
+function LayoutThumb({ layoutId }) {
+  const s = { position: "absolute" };
+  const line = (t, l, w, h, bg = "#0A0A0A") => (
+    <div style={{ ...s, top: t, left: l, width: w, height: h, background: bg, borderRadius: 1 }} />
+  );
+
+  const sketches = {
+    // FAQ: full-width stacked lines
+    "layout-1-fullwidth": (
+      <>
+        {line(8,  10, 76, 4)}
+        {line(16, 10, 55, 3, "rgba(0,0,0,0.25)")}
+        {line(24, 10, 76, 1, "rgba(0,0,0,0.12)")}
+        {line(29, 10, 72, 3, "rgba(0,0,0,0.25)")}
+        {line(36, 10, 76, 1, "rgba(0,0,0,0.12)")}
+        {line(41, 10, 68, 3, "rgba(0,0,0,0.25)")}
+        {line(48, 10, 76, 1, "rgba(0,0,0,0.12)")}
+      </>
+    ),
+    // FAQ: split sidebar
+    "layout-2-sidebar": (
+      <>
+        {line(8,  10, 30, 4)}
+        {line(16, 10, 24, 3, "rgba(0,0,0,0.25)")}
+        {line(22, 10, 20, 2, "rgba(0,0,0,0.25)")}
+        {line(8,  48, 34, 1, "rgba(0,0,0,0.12)")}
+        {line(13, 48, 34, 3, "rgba(0,0,0,0.25)")}
+        {line(20, 48, 34, 1, "rgba(0,0,0,0.12)")}
+        {line(25, 48, 34, 3, "rgba(0,0,0,0.25)")}
+        {line(32, 48, 34, 1, "rgba(0,0,0,0.12)")}
+      </>
+    ),
+    // Testimonials: 3-col grid
+    "layout-1-grid3col": (
+      <>
+        {[10, 38, 66].map(x => (
+          <div key={x} style={{ ...s, top: 6, left: x, width: 22, height: 50, border: "1.5px solid rgba(0,0,0,0.18)", borderTop: "2.5px solid #0A0A0A" }}>
+            {line(4,  3, 16, 2, "rgba(0,0,0,0.2)")}
+            {line(9,  3, 16, 2, "rgba(0,0,0,0.2)")}
+            {line(14, 3, 12, 2, "rgba(0,0,0,0.2)")}
+            {line(20, 3, 10, 2, "rgba(0,0,0,0.4)")}
+          </div>
+        ))}
+      </>
+    ),
+    // Testimonials: single column
+    "layout-2-singlecol": (
+      <>
+        {[10, 30, 48].map(t => (
+          <div key={t} style={{ ...s, top: t, left: 20, right: 20, borderTop: "2px solid #0A0A0A", paddingTop: 3 }}>
+            {line(3,  0, 56, 2, "rgba(0,0,0,0.2)")}
+            {line(8,  0, 40, 2, "rgba(0,0,0,0.2)")}
+          </div>
+        ))}
+      </>
+    ),
+    // Testimonials: large featured
+    "layout-3-featured": (
+      <>
+        <div style={{ ...s, top: 4, left: 28, fontSize: 28, lineHeight: 1, color: "rgba(0,0,0,0.12)", fontFamily: "Georgia,serif" }}>"</div>
+        {line(22, 12, 72, 3)}
+        {line(29, 16, 64, 2, "rgba(0,0,0,0.25)")}
+        {line(36, 12, 72, 2, "rgba(0,0,0,0.25)")}
+        {line(46, 30, 36, 1, "rgba(0,0,0,0.15)")}
+        {line(50, 24, 48, 2, "rgba(0,0,0,0.3)")}
+      </>
+    ),
+    // CTA: dark card (get-quote)
+    "layout-1-getquote": (
+      <div style={{ ...s, inset: 5, background: "#0A0A0A", borderRadius: 3, overflow: "hidden" }}>
+        {line(8,  20, 56, 3, "rgba(212,255,0,0.8)")}
+        {line(16, 14, 68, 4, "#fff")}
+        {line(25, 20, 56, 2, "rgba(255,255,255,0.4)")}
+        <div style={{ ...s, bottom: 10, left: "50%", transform: "translateX(-50%)", width: 36, height: 7, background: "#D4FF00", borderRadius: 2 }} />
+      </div>
+    ),
+    // CTA: photo banner
+    "layout-2-banner": (
+      <div style={{ ...s, inset: 5, background: "linear-gradient(135deg,#6b7280 0%,#374151 100%)", borderRadius: 3, overflow: "hidden" }}>
+        <div style={{ ...s, inset: 0, background: "rgba(0,0,0,0.35)" }} />
+        {line(14, 12, 72, 4, "#fff")}
+        {line(23, 20, 56, 2, "rgba(255,255,255,0.6)")}
+        <div style={{ ...s, bottom: 8, left: "50%", transform: "translateX(-50%)", width: 36, height: 7, background: "#D4FF00", borderRadius: 2 }} />
+      </div>
+    ),
+  };
+
+  return (
+    <div style={{ position: "relative", width: 96, height: 60, background: "#fff", border: "1px solid #E5E7EB", borderRadius: 4, overflow: "hidden", flexShrink: 0 }}>
+      {sketches[layoutId] || <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.6rem", color: "#999" }}>—</div>}
+    </div>
+  );
+}
+
+/* ── Visual Layout + Color Picker ────────────────────────────────────────
+   Shows clickable layout cards (with thumbnail sketches) + color swatches. */
+function VisualLayoutColorPicker({ typeId, form, set, sectionTypes }) {
   const typeDef = (sectionTypes || []).find(t => t.id === typeId);
   if (!typeDef || !typeDef.layouts || typeDef.layouts.length < 2) return null;
 
   const currentLayout = form.layout || typeDef.defaultLayout || typeDef.layouts[0].id;
   const layoutDef = typeDef.layouts.find(l => l.id === currentLayout) || typeDef.layouts[0];
-  const supportedSchemes = layoutDef.supportedColorSchemes || Object.keys(GLOBAL_COLOR_SCHEMES);
+  const supportedSchemes = layoutDef.supportedColorSchemes || ["light"];
   const currentScheme = form.colorScheme || typeDef.defaultColorScheme || supportedSchemes[0];
 
   function handleLayoutChange(newLayout) {
     const newLayoutDef = typeDef.layouts.find(l => l.id === newLayout);
     const newSchemes = newLayoutDef?.supportedColorSchemes || [];
-    // If current scheme isn't supported by new layout, reset to first available
     const newScheme = newSchemes.includes(currentScheme) ? currentScheme : (newSchemes[0] || currentScheme);
     set("layout", newLayout);
     set("colorScheme", newScheme);
   }
 
   return (
-    <div style={{ marginBottom: "1rem", padding: "0.85rem", background: "#F8F9FA", border: `1px solid ${LINE}`, borderLeft: `3px solid ${NEON}` }}>
-      <p style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.75rem" }}>
-        Template Options
+    <div style={{ marginBottom: "1.2rem", padding: "1rem", background: "#F8F9FA", border: `1px solid ${LINE}`, borderLeft: `3px solid ${NEON}` }}>
+      {/* Layout cards */}
+      <p style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.6rem" }}>
+        Layout
       </p>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
-        {/* Layout selector */}
-        <div>
-          <label style={{ ...labelStyle, marginBottom: 4 }}>Layout</label>
-          <select
-            value={currentLayout}
-            onChange={e => handleLayoutChange(e.target.value)}
-            style={{ ...inputStyle, cursor: "pointer" }}
-          >
-            {typeDef.layouts.map(l => (
-              <option key={l.id} value={l.id}>{l.displayName}</option>
-            ))}
-          </select>
-          {layoutDef && (
-            <p style={{ fontSize: "0.72rem", color: INK_60, marginTop: 4 }}>{layoutDef.description}</p>
-          )}
-        </div>
+      <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+        {typeDef.layouts.map(l => {
+          const active = currentLayout === l.id;
+          return (
+            <button
+              key={l.id}
+              type="button"
+              onClick={() => handleLayoutChange(l.id)}
+              style={{
+                display: "flex", flexDirection: "column", alignItems: "center", gap: "0.4rem",
+                padding: "0.5rem",
+                border: `2px solid ${active ? NEON : "#E5E7EB"}`,
+                background: active ? "rgba(212,255,0,0.06)" : "#fff",
+                borderRadius: 6, cursor: "pointer",
+                outline: "none", transition: "border-color 0.15s",
+              }}
+            >
+              <LayoutThumb layoutId={l.id} />
+              <span style={{
+                fontSize: "0.72rem", fontWeight: active ? 700 : 500,
+                color: active ? "#3a5000" : INK_60,
+                letterSpacing: "0.01em",
+              }}>
+                {l.displayName}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+      {layoutDef?.description && (
+        <p style={{ fontSize: "0.72rem", color: INK_60, marginBottom: "0.9rem", marginTop: "-0.5rem" }}>
+          {layoutDef.description}
+        </p>
+      )}
 
-        {/* Color scheme selector */}
-        <div>
-          <label style={{ ...labelStyle, marginBottom: 4 }}>Color Scheme</label>
-          <select
-            value={currentScheme}
-            onChange={e => set("colorScheme", e.target.value)}
-            style={{ ...inputStyle, cursor: "pointer" }}
-          >
-            {supportedSchemes.map(schemeKey => {
-              const scheme = GLOBAL_COLOR_SCHEMES[schemeKey];
+      {/* Color swatches */}
+      {supportedSchemes.length > 1 && (
+        <>
+          <p style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.5rem" }}>
+            Color Scheme
+          </p>
+          <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
+            {supportedSchemes.map(key => {
+              const v = SCHEME_VISUALS[key] || { label: key, swatch: "#eee", text: "#000", border: "#ccc" };
+              const active = currentScheme === key;
               return (
-                <option key={schemeKey} value={schemeKey}>
-                  {scheme ? scheme.label : schemeKey}
-                </option>
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => set("colorScheme", key)}
+                  title={v.label}
+                  style={{
+                    display: "flex", alignItems: "center", gap: "0.4rem",
+                    padding: "0.3rem 0.6rem 0.3rem 0.4rem",
+                    border: `2px solid ${active ? NEON : "#E5E7EB"}`,
+                    background: active ? "rgba(212,255,0,0.06)" : "#fff",
+                    borderRadius: 20, cursor: "pointer", outline: "none",
+                    transition: "border-color 0.15s",
+                  }}
+                >
+                  <div style={{
+                    width: 18, height: 18, borderRadius: "50%",
+                    background: v.swatch,
+                    border: `1px solid ${v.border}`,
+                    flexShrink: 0,
+                  }} />
+                  <span style={{ fontSize: "0.72rem", fontWeight: active ? 700 : 500, color: active ? "#3a5000" : INK_60 }}>
+                    {v.label}
+                  </span>
+                </button>
               );
             })}
-          </select>
-          {/* Color preview swatch */}
-          {GLOBAL_COLOR_SCHEMES[currentScheme] && (
-            <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 4 }}>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+/* ── Color-only picker (for FAQ — layout is auto, just pick background) ──*/
+function ColorSchemePicker({ typeId, value, onChange, sectionTypes }) {
+  const typeDef = (sectionTypes || []).find(t => t.id === typeId);
+  const schemes = typeDef?.supportedColorSchemes || ["light", "light-gray", "light-card"];
+  const current = value || typeDef?.defaultColorScheme || schemes[0];
+
+  return (
+    <div style={{ marginBottom: "1.2rem", padding: "1rem", background: "#F8F9FA", border: `1px solid ${LINE}`, borderLeft: `3px solid ${NEON}` }}>
+      <p style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.6rem" }}>
+        Background Color
+      </p>
+      <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
+        {schemes.map(key => {
+          const v = SCHEME_VISUALS[key] || { label: key, swatch: "#eee", text: "#000", border: "#ccc" };
+          const active = current === key;
+          return (
+            <button
+              key={key}
+              type="button"
+              onClick={() => onChange(key)}
+              title={v.label}
+              style={{
+                display: "flex", alignItems: "center", gap: "0.4rem",
+                padding: "0.35rem 0.75rem 0.35rem 0.45rem",
+                border: `2px solid ${active ? NEON : "#E5E7EB"}`,
+                background: active ? "rgba(212,255,0,0.06)" : "#fff",
+                borderRadius: 20, cursor: "pointer", outline: "none",
+                transition: "border-color 0.15s",
+              }}
+            >
               <div style={{
-                width: 14, height: 14, borderRadius: 2,
-                background: GLOBAL_COLOR_SCHEMES[currentScheme].background === "image"
-                  ? "linear-gradient(135deg, #888 50%, #555)"
-                  : GLOBAL_COLOR_SCHEMES[currentScheme].background,
-                border: "1px solid rgba(0,0,0,0.15)",
+                width: 20, height: 20, borderRadius: "50%",
+                background: v.swatch, border: `1px solid ${v.border}`,
                 flexShrink: 0,
               }} />
-              <span style={{ fontSize: "0.72rem", color: INK_60 }}>
-                {GLOBAL_COLOR_SCHEMES[currentScheme].label}
+              <span style={{ fontSize: "0.75rem", fontWeight: active ? 700 : 500, color: active ? "#3a5000" : INK_60 }}>
+                {v.label}
               </span>
-            </div>
-          )}
-        </div>
+            </button>
+          );
+        })}
       </div>
     </div>
   );

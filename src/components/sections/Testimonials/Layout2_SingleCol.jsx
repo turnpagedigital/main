@@ -5,6 +5,13 @@ import SectionHeader from "../../SectionHeader.jsx";
 /* Testimonials Layout 2 — Single Column (Subpage style)
    One column, left-aligned, optional header above.
    Props: { testimonials, eyebrow, title, accent, colorScheme } */
+
+const THEMES = {
+  light:        { bg: "#FFFFFF",  quote: INK,    attribution: INK_60,                   border: INK,    headerTheme: "light" },
+  "light-gray": { bg: "#F4F5F7",  quote: INK,    attribution: INK_60,                   border: INK,    headerTheme: "light" },
+  dark:         { bg: "#0A0A0A",  quote: "#fff", attribution: "rgba(255,255,255,0.55)", border: "#fff", headerTheme: "dark"  },
+};
+
 export default function TestimonialsLayout2SingleCol({
   testimonials,
   eyebrow = "What Clients Say",
@@ -14,20 +21,12 @@ export default function TestimonialsLayout2SingleCol({
 }) {
   if (!testimonials || testimonials.length === 0) return null;
 
-  const themes = {
-    light: {
-      text: INK,
-      quote: INK,
-      attribution: INK_60,
-      border: INK,
-    },
-  };
-  const theme = themes[colorScheme] || themes.light;
+  const theme = THEMES[colorScheme] || THEMES.light;
 
   return (
-    <section className="surface-white section-pad">
+    <section style={{ background: theme.bg, padding: "clamp(5rem,10vw,9rem) clamp(1.5rem,5vw,4rem)" }}>
       <div className="container" style={{ maxWidth: 760 }}>
-        <SectionHeader eyebrow={eyebrow} title={title} accent={accent} align="left" />
+        <SectionHeader eyebrow={eyebrow} title={title} accent={accent} align="left" theme={theme.headerTheme} />
 
         <div style={{ display: "flex", flexDirection: "column", gap: "clamp(2.5rem, 5vw, 4rem)" }}>
           {testimonials.map((t, i) => (

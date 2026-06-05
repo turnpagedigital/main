@@ -7,13 +7,21 @@
       "description": "Full-screen video hero with neon headline. Home page only.",
       "dataSource": "inline",
       "allowMultiple": false,
-      "availableOn": ["home"],
+      "availableOn": [
+        "home"
+      ],
       "defaultContent": {
         "title1": "We broker the claims",
         "title2": "no one else will.",
         "subtitle": "Bankruptcy claims, class action settlements, digital assets, litigation funding, tariff refunds. If it's illiquid and complex, we trade it.",
-        "ctaPrimary": { "label": "Get a Quote", "href": "/contact" },
-        "ctaSecondary": { "label": "What we cover", "href": "#situations" },
+        "ctaPrimary": {
+          "label": "Get a Quote",
+          "href": "/contact"
+        },
+        "ctaSecondary": {
+          "label": "What we cover",
+          "href": "#situations"
+        },
         "video": "/robotpages1.mp4"
       }
     },
@@ -30,7 +38,10 @@
         "subtitle": "",
         "size": "tall",
         "video": null,
-        "ctaPrimary": { "label": "Get in Touch", "href": "/contact" },
+        "ctaPrimary": {
+          "label": "Get in Touch",
+          "href": "/contact"
+        },
         "ctaSecondary": null
       }
     },
@@ -42,9 +53,18 @@
       "allowMultiple": false,
       "defaultContent": {
         "stats": [
-          { "value": "$1B+", "labelKey": "stats.claims_traded" },
-          { "value": "5K+",  "labelKey": "stats.claims_advised" },
-          { "value": "500+", "labelKey": "stats.institutions" }
+          {
+            "value": "$1B+",
+            "labelKey": "stats.claims_traded"
+          },
+          {
+            "value": "5K+",
+            "labelKey": "stats.claims_advised"
+          },
+          {
+            "value": "500+",
+            "labelKey": "stats.institutions"
+          }
         ],
         "footnoteKey": "stats.footnote"
       }
@@ -76,14 +96,32 @@
         {
           "id": "layout-1-grid3col",
           "displayName": "3-Column Grid",
-          "description": "Three equal columns with border-top cards. Best for homepages.",
-          "supportedColorSchemes": ["light", "light-gray", "light-card"]
+          "description": "Three equal columns, great for 3+ testimonials.",
+          "supportedColorSchemes": [
+            "light",
+            "light-gray",
+            "dark"
+          ]
         },
         {
           "id": "layout-2-singlecol",
           "displayName": "Single Column",
-          "description": "One column, left-aligned. Best for subpages.",
-          "supportedColorSchemes": ["light", "light-gray", "light-card"]
+          "description": "Stacked single column, best for 2–4 longer quotes.",
+          "supportedColorSchemes": [
+            "light",
+            "light-gray",
+            "dark"
+          ]
+        },
+        {
+          "id": "layout-3-featured",
+          "displayName": "Large Featured",
+          "description": "One large pull-quote, secondary quotes below.",
+          "supportedColorSchemes": [
+            "light",
+            "light-gray",
+            "dark"
+          ]
         }
       ],
       "defaultLayout": "layout-1-grid3col",
@@ -121,9 +159,21 @@
         "titleAccent": "when it counts.",
         "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
         "points": [
-          { "id": "edge-1", "h": "Practically unlimited liquidity", "b": "We partner with major asset managers — over 500 institutions on speed dial." },
-          { "id": "edge-2", "h": "Lightning-fast settlement",       "b": "Automation accelerates diligence and closing in the largest volume cases." },
-          { "id": "edge-3", "h": "Relationship builders, not just dealmakers", "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients." }
+          {
+            "id": "edge-1",
+            "h": "Practically unlimited liquidity",
+            "b": "We partner with major asset managers — over 500 institutions on speed dial."
+          },
+          {
+            "id": "edge-2",
+            "h": "Lightning-fast settlement",
+            "b": "Automation accelerates diligence and closing in the largest volume cases."
+          },
+          {
+            "id": "edge-3",
+            "h": "Relationship builders, not just dealmakers",
+            "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
+          }
         ]
       }
     },
@@ -139,17 +189,30 @@
           "id": "layout-1-fullwidth",
           "displayName": "Full Width",
           "description": "Single column, full-width accordion. Best for homepages.",
-          "supportedColorSchemes": ["light", "light-gray", "light-card"]
+          "supportedColorSchemes": [
+            "light",
+            "light-gray",
+            "light-card"
+          ]
         },
         {
           "id": "layout-2-sidebar",
           "displayName": "Split Sidebar",
           "description": "Left sidebar with title/CTA, right accordion. Best for subpages.",
-          "supportedColorSchemes": ["light", "light-gray"]
+          "supportedColorSchemes": [
+            "light",
+            "light-gray"
+          ]
         }
       ],
       "defaultLayout": "layout-1-fullwidth",
-      "defaultColorScheme": "light"
+      "defaultColorScheme": "light",
+      "colorOnly": true,
+      "supportedColorSchemes": [
+        "light",
+        "light-gray",
+        "light-card"
+      ]
     },
     {
       "id": "cta",
@@ -160,24 +223,22 @@
       "layouts": [
         {
           "id": "layout-1-getquote",
-          "displayName": "Get Quote Card",
-          "description": "Dark rounded card, centered headline and body. Best for home page.",
-          "supportedColorSchemes": ["dark"]
+          "displayName": "Quote Card",
+          "description": "Dark centered card with headline, body and button.",
+          "supportedColorSchemes": [
+            "dark"
+          ]
         },
         {
           "id": "layout-2-banner",
           "displayName": "Photo Banner",
-          "description": "Full-bleed landscape image with headline and button overlay.",
-          "supportedColorSchemes": ["photo"]
-        },
-        {
-          "id": "layout-3-bottomcta",
-          "displayName": "Bottom CTA Panel",
-          "description": "Dark rounded panel with bold headline and primary/secondary buttons. Standard page closer.",
-          "supportedColorSchemes": ["dark"]
+          "description": "Full-bleed photo with text overlay and button.",
+          "supportedColorSchemes": [
+            "photo"
+          ]
         }
       ],
-      "defaultLayout": "layout-3-bottomcta",
+      "defaultLayout": "layout-1-getquote",
       "defaultColorScheme": "dark",
       "defaultContent": {
         "layout": "layout-3-bottomcta",
@@ -186,7 +247,10 @@
         "title": "Hold a claim?",
         "accent": "Talk to us.",
         "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
-        "primary": { "label": "Get in Touch", "href": "/contact" },
+        "primary": {
+          "label": "Get in Touch",
+          "href": "/contact"
+        },
         "secondary": null
       }
     },
@@ -215,7 +279,10 @@
         "title": "Hold a claim?",
         "accent": "Talk to us.",
         "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
-        "primary": { "label": "Get in Touch", "href": "/contact" },
+        "primary": {
+          "label": "Get in Touch",
+          "href": "/contact"
+        },
         "secondary": null
       }
     },
@@ -225,13 +292,18 @@
       "description": "Home page dark rounded quote section. Use 'CTA Section' with Get Quote Card layout for new sections.",
       "dataSource": "inline",
       "allowMultiple": false,
-      "availableOn": ["home"],
+      "availableOn": [
+        "home"
+      ],
       "defaultContent": {
         "eyebrow": "Get a Quote",
         "title": "Why wait?",
         "titleAccent": "Talk to us.",
         "body": "Contact us for a quote or to learn more. 48-hour response. Confidentiality default.",
-        "cta": { "label": "Get in Touch", "href": "/contact" }
+        "cta": {
+          "label": "Get in Touch",
+          "href": "/contact"
+        }
       }
     },
     {

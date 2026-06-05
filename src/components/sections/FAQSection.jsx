@@ -6,13 +6,15 @@ import Layout2 from "./FAQ/Layout2_SplitSidebar.jsx";
 /* FAQ Section Wrapper — dispatches to Layout1 or Layout2 based on pageKey.
    Handles data filtering and passes props to layout components. */
 export default function FAQSection({ sectionConfig, pageKey }) {
-  const c = (sectionConfig && sectionConfig.content) || {};
-  const title    = c.title    || "Your questions,";
-  const accent   = c.accent   || "answered.";
-  const ctaLabel = c.ctaLabel || null;
-  const ctaHref  = c.ctaHref  || "/contact";
-  const layout   = c.layout   || (pageKey === "home" ? "layout-1" : "layout-2");
-  const colorScheme = c.colorScheme || "light";
+  const c  = (sectionConfig && sectionConfig.content) || {};
+  const sc = sectionConfig || {};
+  const title       = c.title    || "Your questions,";
+  const accent      = c.accent   || "answered.";
+  const ctaLabel    = c.ctaLabel || null;
+  const ctaHref     = c.ctaHref  || "/contact";
+  // layout auto-selects by page; colorScheme is user-controlled via admin
+  const layout      = sc.layout      || c.layout      || (pageKey === "home" ? "layout-1" : "layout-2");
+  const colorScheme = sc.colorScheme || c.colorScheme || "light";
 
   // Filter featured FAQs for this page
   const faqs = (faqsData.faqs || []).filter(

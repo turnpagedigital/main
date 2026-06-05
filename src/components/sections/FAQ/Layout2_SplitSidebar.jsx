@@ -4,8 +4,14 @@ import FAQ from "../../FAQ.jsx";
 
 /* FAQ Layout 2 — Split Sidebar (Subpage style)
    Two-column: left side has title and optional CTA button, right side has accordion.
-   Shows "More Questions? See all FAQs" link if hasMoreFaqs is true.
    Props: { faqs, title, accent, ctaLabel, ctaHref, hasMoreFaqs, pageKey, colorScheme } */
+
+const THEMES = {
+  "light":      { background: "#F4F5F7", text: INK,    textSecondary: INK_60 },
+  "light-gray": { background: "#ECECEE", text: INK,    textSecondary: INK_60 },
+  "light-card": { background: "#FFFFFF", text: INK,    textSecondary: INK_60 },
+};
+
 export default function FAQLayout2SplitSidebar({
   faqs,
   title = "Your questions,",
@@ -16,17 +22,10 @@ export default function FAQLayout2SplitSidebar({
   pageKey = "home",
   colorScheme = "light",
 }) {
-  const themes = {
-    light: {
-      background: "transparent",
-      text: INK,
-      textSecondary: INK_60,
-    },
-  };
-  const theme = themes[colorScheme] || themes.light;
+  const theme = THEMES[colorScheme] || THEMES.light;
 
   return (
-    <section className="surface-paper section-pad">
+    <section style={{ background: theme.background, padding: "clamp(5rem,10vw,9rem) clamp(1.5rem,5vw,4rem)" }}>
       <div className="container" style={{ maxWidth: 960 }}>
         <div style={{
           display: "grid", gridTemplateColumns: "minmax(0,1fr) minmax(0,1.4fr)",
