@@ -24,21 +24,21 @@
               {
                 "value": "$1.1B",
                 "labelKey": "stats.claims_traded",
-                "label": "Traded*"
+                "label": "Monetized*"
               },
               {
                 "value": "5K+",
                 "labelKey": "stats.claims_advised",
-                "label": "Trades*"
+                "label": "Traded or advised*"
               },
               {
                 "value": "500+",
                 "labelKey": "stats.institutions",
-                "label": "Funders*"
+                "label": "Funders on speed dial"
               }
             ],
             "footnoteKey": "stats.footnote",
-            "footnote": "*Includes experience prior to Turnpage"
+            "footnote": "*Includes experience prior to founding Turnpage Digital"
           }
         },
         {
