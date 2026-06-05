@@ -241,11 +241,11 @@
       "items": [
         {
           "label": "Who we help",
-          "href": "/litigation-finance#who-we-help"
+          "href": "/litigation-funding#who-we-help"
         },
         {
           "label": "How we work",
-          "href": "/litigation-finance#how-we-work"
+          "href": "/litigation-funding#how-we-work"
         },
         {
           "label": "Team",
@@ -258,7 +258,7 @@
       ],
       "cta": {
         "label": "Talk to Us",
-        "href": "/contact?source=litigation-finance"
+        "href": "/contact?source=litigation-funding"
       }
     }
   }
