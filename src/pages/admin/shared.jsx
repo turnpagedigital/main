@@ -122,3 +122,62 @@ export function LoginForm({ onSubmit, error }) {
     </div>
   );
 }
+
+// --- Shared admin UI components -----------------------------------------------
+
+export function Banner({ kind, children }) {
+  const ok = kind === "ok";
+  return (
+    <div style={{
+      padding: "0.7rem 0.9rem", marginBottom: "1rem", fontSize: "0.86rem",
+      background: ok ? "rgba(26,127,55,0.08)" : "rgba(192,57,43,0.07)",
+      border: `1px solid ${ok ? "rgba(26,127,55,0.3)" : "rgba(192,57,43,0.3)"}`,
+      color: ok ? "#1a7f37" : "#c0392b",
+    }}>
+      {children}
+    </div>
+  );
+}
+
+export function Modal({ children, onClose }) {
+  return (
+    <div
+      style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.45)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1000, padding: "1rem" }}
+      onClick={e => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.5rem", maxWidth: 480, width: "100%", fontFamily: FONT, color: INK, maxHeight: "80vh", overflowY: "auto" }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+export function ConfirmDialog({ open, title, message, confirmLabel, onConfirm, onCancel }) {
+  if (!open) return null;
+  return (
+    <Modal onClose={onCancel}>
+      <h3 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.8rem", color: INK }}>
+        {title}
+      </h3>
+      <p style={{ fontSize: "0.9rem", color: INK_60, marginBottom: "1.4rem", lineHeight: 1.5 }}>
+        {message}
+      </p>
+      <div style={{ display: "flex", gap: "0.8rem", justifyContent: "flex-end" }}>
+        <button onClick={onCancel} style={btnStyle}>
+          Cancel
+        </button>
+        <button onClick={onConfirm} style={{ ...btnPrimaryStyle, background: "#c0392b", color: "#fff" }}>
+          {confirmLabel || "Delete"}
+        </button>
+      </div>
+    </Modal>
+  );
+}
+
+// --- Shared style constants ---------------------------------------------------
+
+export const cardStyle = { background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1.2rem" };
+export const labelStyle = { display: "block", fontSize: "0.74rem", color: INK_60, fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 4 };
+export const sectionHeaderStyle = { fontSize: "1rem", fontWeight: 800, margin: 0, marginBottom: "0.9rem", color: INK };
+export const wrapStyle = { maxWidth: 1080, margin: "0 auto", padding: "1.4rem clamp(1rem,3vw,2rem) 3rem" };
+export const wrapNarrowStyle = { maxWidth: 820, margin: "0 auto", padding: "1.4rem clamp(1rem,3vw,2rem) 3rem" };

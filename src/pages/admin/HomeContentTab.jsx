@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HomeContentTab — manage home page situations (6).
@@ -42,6 +42,7 @@ export default function HomeContentTab({ onDirtyChange }) {
   const [phase,    setPhase]    = useState("loading");
   const [error,    setError]    = useState("");
   const [lastSavedAt, setLastSavedAt] = useState(null);
+  const [deleteConfirm, setDeleteConfirm] = useState(null); // { situationIndex, title }
 
   const dirty = useMemo(() => {
     if (!data || !original) return false;
@@ -197,9 +198,7 @@ export default function HomeContentTab({ onDirtyChange }) {
             onUpdate={patch => updateSituation(si, patch)}
             onMoveUp={() => moveSituationUp(si)}
             onMoveDown={() => moveSituationDown(si)}
-            onRemove={() => {
-              if (window.confirm(`Remove situation "${s.title || s.id}"?`)) removeSituation(si);
-            }}
+            onRemove={() => setDeleteConfirm({ index: si, title: s.title || s.id })}
           />
         ))}
       </div>
@@ -210,6 +209,18 @@ export default function HomeContentTab({ onDirtyChange }) {
       }}>
         + Add situation
       </button>
+
+      <ConfirmDialog
+        open={!!deleteConfirm}
+        title="Remove situation?"
+        message={deleteConfirm ? `Remove "${deleteConfirm.title}"? This can't be undone.` : ""}
+        confirmLabel="Remove"
+        onConfirm={() => {
+          if (deleteConfirm) removeSituation(deleteConfirm.index);
+          setDeleteConfirm(null);
+        }}
+        onCancel={() => setDeleteConfirm(null)}
+      />
     </div>
   );
 }

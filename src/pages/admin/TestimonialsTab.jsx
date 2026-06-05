@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    TestimonialsTab — manage testimonials with topic tags.
@@ -48,6 +48,7 @@ export default function TestimonialsTab({ onDirtyChange }) {
   const [phase,        setPhase]        = useState("loading");
   const [error,        setError]        = useState("");
   const [lastSavedAt,  setLastSavedAt]  = useState(null);
+  const [deleteConfirm, setDeleteConfirm] = useState(null); // { index, by }
 
   const dirty = useMemo(() => JSON.stringify(testimonials) !== JSON.stringify(original), [testimonials, original]);
   useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
@@ -183,9 +184,7 @@ export default function TestimonialsTab({ onDirtyChange }) {
             onUpdate={patch => update(i, patch)}
             onMoveUp={() => moveUp(i)}
             onMoveDown={() => moveDown(i)}
-            onRemove={() => {
-              if (window.confirm(`Remove testimonial by "${t.by || "this person"}"?`)) remove(i);
-            }}
+            onRemove={() => setDeleteConfirm({ index: i, by: t.by || "this person" })}
           />
         ))}
       </div>
@@ -199,6 +198,18 @@ export default function TestimonialsTab({ onDirtyChange }) {
       }}>
         + Add testimonial
       </button>
+
+      <ConfirmDialog
+        open={!!deleteConfirm}
+        title="Remove testimonial?"
+        message={deleteConfirm ? `Remove testimonial by "${deleteConfirm.by}"? This can't be undone.` : ""}
+        confirmLabel="Remove"
+        onConfirm={() => {
+          if (deleteConfirm) remove(deleteConfirm.index);
+          setDeleteConfirm(null);
+        }}
+        onCancel={() => setDeleteConfirm(null)}
+      />
     </div>
   );
 }
