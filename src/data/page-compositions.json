@@ -100,17 +100,6 @@
           }
         },
         {
-          "id": "sec-home-faq",
-          "type": "faq",
-          "visible": true,
-          "content": {
-            "title": "Your questions,",
-            "accent": "answered.",
-            "ctaLabel": "Contact Us",
-            "ctaHref": "/contact"
-          }
-        },
-        {
           "id": "sec-home-cta-banner",
           "type": "cta-banner",
           "visible": true,
@@ -135,6 +124,17 @@
               "label": "Get in Touch",
               "href": "/contact"
             }
+          }
+        },
+        {
+          "id": "sec-home-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "Your questions,",
+            "accent": "answered.",
+            "ctaLabel": "Contact Us",
+            "ctaHref": "/contact"
           }
         }
       ]
@@ -187,17 +187,6 @@
           "visible": true
         },
         {
-          "id": "sec-aic-faq",
-          "type": "faq",
-          "visible": true,
-          "content": {
-            "title": "AI copyright,",
-            "accent": "answered.",
-            "ctaLabel": "Ask a Question",
-            "ctaHref": "/contact?source=ai-copyright"
-          }
-        },
-        {
           "id": "sec-aic-testimonials",
           "type": "testimonials",
           "visible": true
@@ -219,6 +208,17 @@
               "label": "Briefings",
               "href": "/briefings"
             }
+          }
+        },
+        {
+          "id": "sec-aic-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "AI copyright,",
+            "accent": "answered.",
+            "ctaLabel": "Ask a Question",
+            "ctaHref": "/contact?source=ai-copyright"
           }
         }
       ]
@@ -256,14 +256,14 @@
           "visible": true
         },
         {
-          "id": "sec-crypto-comparison",
-          "type": "comparison",
-          "visible": true
-        },
-        {
           "id": "sec-crypto-service",
           "type": "service-cards",
           "visible": true
+        },
+        {
+          "id": "sec-crypto-comparison",
+          "type": "comparison",
+          "visible": false
         },
         {
           "id": "sec-crypto-experience",
@@ -271,14 +271,31 @@
           "visible": true
         },
         {
-          "id": "sec-crypto-faq",
-          "type": "faq",
+          "id": "sec-1780673451611-nalm",
+          "type": "our-edge",
           "visible": true,
           "content": {
-            "title": "Crypto claims,",
-            "accent": "answered.",
-            "ctaLabel": "Get a Quote",
-            "ctaHref": "/contact?source=crypto"
+            "eyebrow": "Our Edge",
+            "title": "Built to move fast",
+            "titleAccent": "when it counts.",
+            "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
+            "points": [
+              {
+                "id": "edge-1",
+                "h": "Practically unlimited liquidity",
+                "b": "We partner with major asset managers — over 500 institutions on speed dial."
+              },
+              {
+                "id": "edge-2",
+                "h": "Lightning-fast settlement",
+                "b": "Automation accelerates diligence and closing in the largest volume cases."
+              },
+              {
+                "id": "edge-3",
+                "h": "Relationship builders, not just dealmakers",
+                "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
+              }
+            ]
           }
         },
         {
@@ -300,6 +317,17 @@
               "href": "/contact?source=crypto"
             },
             "secondary": null
+          }
+        },
+        {
+          "id": "sec-crypto-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "Crypto claims,",
+            "accent": "answered.",
+            "ctaLabel": "Get a Quote",
+            "ctaHref": "/contact?source=crypto"
           }
         }
       ]
@@ -339,7 +367,7 @@
         {
           "id": "sec-litfin-comparison",
           "type": "comparison",
-          "visible": true
+          "visible": false
         },
         {
           "id": "sec-litfin-service",
@@ -349,17 +377,34 @@
         {
           "id": "sec-litfin-how",
           "type": "how-it-works",
-          "visible": true
+          "visible": false
         },
         {
-          "id": "sec-litfin-faq",
-          "type": "faq",
+          "id": "sec-1780673399693-agc7",
+          "type": "our-edge",
           "visible": true,
           "content": {
-            "title": "Litigation finance,",
-            "accent": "answered.",
-            "ctaLabel": "Talk to a Partner",
-            "ctaHref": "/contact?source=litigation-finance"
+            "eyebrow": "Our Edge",
+            "title": "Built to move fast",
+            "titleAccent": "when it counts.",
+            "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
+            "points": [
+              {
+                "id": "edge-1",
+                "h": "Practically unlimited liquidity",
+                "b": "We partner with major asset managers — over 500 institutions on speed dial."
+              },
+              {
+                "id": "edge-2",
+                "h": "Lightning-fast settlement",
+                "b": "Automation accelerates diligence and closing in the largest volume cases."
+              },
+              {
+                "id": "edge-3",
+                "h": "Relationship builders, not just dealmakers",
+                "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
+              }
+            ]
           }
         },
         {
@@ -381,6 +426,17 @@
               "href": "/contact?source=litigation-finance"
             },
             "secondary": null
+          }
+        },
+        {
+          "id": "sec-litfin-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "Litigation finance,",
+            "accent": "answered.",
+            "ctaLabel": "Talk to a Partner",
+            "ctaHref": "/contact?source=litigation-finance"
           }
         }
       ]

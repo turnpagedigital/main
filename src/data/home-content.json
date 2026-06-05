@@ -1,6 +1,22 @@
 {
   "situations": [
     {
+      "id": "sit-03",
+      "no": "03",
+      "hidden": false,
+      "title": "Bankruptcy Claims",
+      "body": "Trade claims, customer claims, and other interests in significant insolvency cases in the U.S. and globally.",
+      "details": "Turnpage offers efficient execution and highly competitive pricing for creditors seeking to monetize their recovery rights. Our team has traded hundreds millions of dollars worth of claims in the largest chapter 11 cases and advised thousands of creditors."
+    },
+    {
+      "id": "sit-04",
+      "no": "04",
+      "hidden": false,
+      "title": "Locked Digital Assets",
+      "body": "Cryptocurrency, NFTs, accounts and deposits stuck in judicial proceedings.",
+      "details": "Digital assets locked on exchange platforms, frozen bank accounts, and deposits trapped in restructurings are all addressable. Our team has deep expertise in nearly all of the major crypto estate cases that defined this asset class—BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager and others."
+    },
+    {
       "id": "sit-01",
       "no": "01",
       "hidden": false,
@@ -11,26 +27,10 @@
     {
       "id": "sit-02",
       "no": "02",
-      "hidden": true,
+      "hidden": false,
       "title": "Class Action Settlements",
       "body": "Class-member rights in the the largest collective actions.",
       "details": "From antitrust settlements to mass tort claims, we connect class members to competitive bids. We handle large individual positions as well as portfolios of smaller positions aggregated for efficiency."
-    },
-    {
-      "id": "sit-03",
-      "no": "03",
-      "hidden": true,
-      "title": "Bankruptcy Claims",
-      "body": "Trade claims, customer claims, and other interests in significant bankruptcy cases.",
-      "details": "Turnpage offers efficient execution and highly competitive pricing for creditors seeking to monetize their recovery rights. Our team has traded hundreds millions of dollars worth of claims in the largest chapter 11 cases and advised thousands of creditors."
-    },
-    {
-      "id": "sit-04",
-      "no": "04",
-      "hidden": false,
-      "title": "Locked Digital Assets",
-      "body": "Cryptocurrency, NFTs, accounts and deposits stuck in judicial proceedings.",
-      "details": "Digital assets locked on exchange platforms, frozen bank accounts, and deposits trapped in restructurings are all addressable. Our team has deep expertise in nearly all of the major crypto estate cases that defined this asset class—BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager and others."
     },
     {
       "id": "sit-05",
