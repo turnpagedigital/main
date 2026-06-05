@@ -167,13 +167,13 @@
           }
         },
         {
-          "id": "sec-aic-damages",
-          "type": "damages",
+          "id": "sec-aic-audience",
+          "type": "audience-cards",
           "visible": true
         },
         {
-          "id": "sec-aic-audience",
-          "type": "audience-cards",
+          "id": "sec-aic-damages",
+          "type": "damages",
           "visible": true
         },
         {
@@ -207,10 +207,10 @@
           "type": "bottom-cta",
           "visible": true,
           "content": {
-            "eyebrow": "AI Copyright Desk",
-            "title": "Hold a claim?",
+            "eyebrow": "Compensation? Copy that.",
+            "title": "Ready to learn more?",
             "accent": "Talk to us.",
-            "kicker": "48-hour response. Confidentiality default.",
+            "kicker": "Private, fast and secure.",
             "primary": {
               "label": "Get in Touch",
               "href": "/contact?source=ai-copyright"
