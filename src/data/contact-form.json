@@ -1,7 +1,8 @@
 {
   "_comment": "Contact form configuration. Managed via /admin/pages/contact. Fields define the form layout; subjects populate the dropdown.",
   "heading": "Get in Touch",
-  "accentText": "your needs.",
+  "titlePrefix": "Tell us about",
+  "accentText": "your claim.",
   "subtitle": "Fast and confidential feedback. Competitive pricing.",
   "sidebarHeading": "Let’s connect.",
   "sidebarIntro": "Talk to us for a quote or to discuss your specific situation. ",

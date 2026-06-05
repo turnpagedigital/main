@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NEON, FONT, INK, INK_60, LINE_STRONG } from "../data/tokens.js";
 import Hero from "../components/Hero.jsx";
 import IntakeForm from "../components/IntakeForm.jsx";
+import contactData from "../data/contact-form.json";
 
 const SOURCE_SUBJECTS = {
   "ai-copyright": "ai-copyright",
@@ -26,13 +27,16 @@ export default function Contact() {
 
   const defaultSubject = SOURCE_SUBJECTS[source] || "";
 
+  const cd = contactData;
+  const phoneHref = "tel:" + (cd.phone || "").replace(/\s+/g, "");
+
   return (
     <>
       <Hero
-        eyebrow="Get in Touch"
-        title="Tell us about"
-        accentTitle="your claim."
-        subtitle="48-hour response. Confidentiality default."
+        eyebrow={cd.heading || "Get in Touch"}
+        title={cd.titlePrefix || "Tell us about"}
+        accentTitle={cd.accentText || "your claim."}
+        subtitle={cd.subtitle || "48-hour response. Confidentiality default."}
       />
 
       <section className="surface-paper" style={{
@@ -63,13 +67,13 @@ export default function Contact() {
               lineHeight: 1.15, letterSpacing: "-0.02em", color: INK,
               marginBottom: "1rem",
             }}>
-              Let's talk.
+              {cd.sidebarHeading || "Let's talk."}
             </h2>
             <p style={{
               fontFamily: FONT, fontSize: "1.02rem", color: INK_60,
               lineHeight: 1.65, marginBottom: "1.6rem",
             }}>
-              Every inquiry is read by a partner. NDA available on request.
+              {cd.sidebarIntro || "Every inquiry is read by a partner. NDA available on request."}
             </p>
             <div style={{
               padding: "1.2rem 1.4rem",
@@ -77,39 +81,45 @@ export default function Contact() {
               border: `1px solid ${LINE_STRONG}`, borderRadius: 14,
               marginBottom: "1.2rem",
             }}>
-              <p style={{
-                fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
-                letterSpacing: "0.16em", textTransform: "uppercase",
-                color: INK_60, marginBottom: "0.5rem",
-              }}>
-                Email
-              </p>
-              <a href="mailto:info@turnpagedigital.com" style={{
-                fontFamily: FONT, fontSize: "1.05rem", fontWeight: 700,
-                color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
-              }}>
-                info@turnpagedigital.com
-              </a>
-              <p style={{
-                fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
-                letterSpacing: "0.16em", textTransform: "uppercase",
-                color: INK_60, marginBottom: "0.5rem", marginTop: "1.2rem",
-              }}>
-                Phone
-              </p>
-              <a href="tel:+16468600068" style={{
-                fontFamily: FONT, fontSize: "1.05rem", fontWeight: 700,
-                color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
-              }}>
-                +1 646 860 0068
-              </a>
+              {cd.email && (<>
+                <p style={{
+                  fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
+                  letterSpacing: "0.16em", textTransform: "uppercase",
+                  color: INK_60, marginBottom: "0.5rem",
+                }}>
+                  Email
+                </p>
+                <a href={`mailto:${cd.email}`} style={{
+                  fontFamily: FONT, fontSize: "1.05rem", fontWeight: 700,
+                  color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
+                }}>
+                  {cd.email}
+                </a>
+              </>)}
+              {cd.phone && (<>
+                <p style={{
+                  fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
+                  letterSpacing: "0.16em", textTransform: "uppercase",
+                  color: INK_60, marginBottom: "0.5rem", marginTop: "1.2rem",
+                }}>
+                  Phone
+                </p>
+                <a href={phoneHref} style={{
+                  fontFamily: FONT, fontSize: "1.05rem", fontWeight: 700,
+                  color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
+                }}>
+                  {cd.phone}
+                </a>
+              </>)}
             </div>
-            <p style={{
-              fontFamily: FONT, fontSize: "0.85rem", color: INK_60,
-              lineHeight: 1.55,
-            }}>
-              All submissions are confidential and not legal, tax, or investment advice. Sending us a message does not create a client relationship.
-            </p>
+            {cd.disclaimer && (
+              <p style={{
+                fontFamily: FONT, fontSize: "0.85rem", color: INK_60,
+                lineHeight: 1.55,
+              }}>
+                {cd.disclaimer}
+              </p>
+            )}
           </div>
 
           <div style={{

@@ -51,6 +51,7 @@ export async function onRequestPut({ request, env }) {
   const payload = {
     _comment: "Contact form configuration. Managed via /admin/pages/contact. Fields define the form layout; subjects populate the dropdown.",
     heading:        typeof body.heading === "string"        ? body.heading        : "",
+    titlePrefix:    typeof body.titlePrefix === "string"    ? body.titlePrefix    : "",
     accentText:     typeof body.accentText === "string"     ? body.accentText     : "",
     subtitle:       typeof body.subtitle === "string"       ? body.subtitle       : "",
     sidebarHeading: typeof body.sidebarHeading === "string" ? body.sidebarHeading : "",

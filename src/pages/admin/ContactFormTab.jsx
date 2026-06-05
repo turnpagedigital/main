@@ -160,8 +160,9 @@ export default function ContactFormTab({ onDirtyChange }) {
       <SectionHeader>Page Copy</SectionHeader>
       <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "2.5rem" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
-          <LabeledInput label="Heading" value={data.heading} onChange={v => patch("heading", v)} placeholder="Get in Touch" />
-          <LabeledInput label="Accent text" value={data.accentText} onChange={v => patch("accentText", v)} placeholder="your claim." hint="Highlighted text in the hero" />
+          <LabeledInput label="Heading" value={data.heading} onChange={v => patch("heading", v)} placeholder="Get in Touch" hint="Eyebrow label above the hero title" />
+          <LabeledInput label="Title prefix" value={data.titlePrefix} onChange={v => patch("titlePrefix", v)} placeholder="Tell us about" hint="First (plain) part of the hero H1" />
+          <LabeledInput label="Accent text" value={data.accentText} onChange={v => patch("accentText", v)} placeholder="your claim." hint="Second (highlighted) part of the hero H1" />
           <LabeledInput label="Subtitle" value={data.subtitle} onChange={v => patch("subtitle", v)} placeholder="48-hour response. Confidentiality default." />
           <LabeledInput label="Sidebar heading" value={data.sidebarHeading} onChange={v => patch("sidebarHeading", v)} placeholder="Let's talk." />
           <LabeledInput label="Sidebar intro" value={data.sidebarIntro} onChange={v => patch("sidebarIntro", v)} placeholder="Every inquiry is read by a partner." multiline />
