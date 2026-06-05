@@ -330,7 +330,10 @@
           "type": "testimonials",
           "visible": true,
           "layout": "layout-1-grid3col",
-          "colorScheme": "light"
+          "colorScheme": "light-gray",
+          "content": {
+            "colorScheme": "light-gray"
+          }
         },
         {
           "id": "sec-crypto-bottom-cta",
