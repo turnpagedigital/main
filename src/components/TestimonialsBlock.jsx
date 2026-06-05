@@ -32,26 +32,26 @@ export default function TestimonialsBlock({
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "clamp(1.5rem, 3vw, 2.5rem)",
+            gap: "clamp(2rem, 4vw, 3rem)",
           }}
           className="testimonials-grid"
         >
           {testimonials.map((t, i) => (
             <figure
               key={t.id || i}
-              style={{ borderTop: `2px solid ${INK}`, padding: "1.6rem 0 0", margin: 0 }}
+              style={{ borderTop: `2px solid ${INK}`, padding: "1.6rem 0 0", margin: 0, textAlign: "left" }}
             >
               <blockquote style={{
-                fontFamily: FONT, fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
-                color: INK, lineHeight: 1.55,
-                margin: 0, marginBottom: "1.4rem",
+                fontFamily: FONT, fontSize: "clamp(0.95rem, 1.2vw, 1.1rem)",
+                color: INK, lineHeight: 1.6,
+                margin: 0, marginBottom: "1.2rem", textAlign: "left",
               }}>
                 "{t.quote}"
               </blockquote>
               <figcaption style={{
-                fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
-                letterSpacing: "0.12em", textTransform: "uppercase",
-                color: INK_60,
+                fontFamily: FONT, fontSize: "0.75rem", fontWeight: 600,
+                letterSpacing: "0.1em", textTransform: "uppercase",
+                color: INK_60, textAlign: "left",
               }}>
                 — {t.by}
               </figcaption>
