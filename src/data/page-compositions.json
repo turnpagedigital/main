@@ -100,17 +100,6 @@
           }
         },
         {
-          "id": "sec-home-faq",
-          "type": "faq",
-          "visible": true,
-          "content": {
-            "title": "Your questions,",
-            "accent": "answered.",
-            "ctaLabel": "Contact Us",
-            "ctaHref": "/contact"
-          }
-        },
-        {
           "id": "sec-home-cta-banner",
           "type": "cta-banner",
           "visible": true,
@@ -135,6 +124,17 @@
               "label": "Get in Touch",
               "href": "/contact"
             }
+          }
+        },
+        {
+          "id": "sec-home-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "Your questions,",
+            "accent": "answered.",
+            "ctaLabel": "Contact Us",
+            "ctaHref": "/contact"
           }
         }
       ]
