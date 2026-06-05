@@ -44,6 +44,13 @@
       "title": "Press & Publications"
     },
     {
+      "path": "/faq",
+      "key": "faq",
+      "component": "FAQ",
+      "dynamic": false,
+      "title": "FAQ"
+    },
+    {
       "path": "/litigation-funding",
       "key": "litigation-finance",
       "component": "LitigationFinance",
