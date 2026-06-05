@@ -86,11 +86,6 @@ export default function Footer() {
             <p style={{ fontFamily: FONT, fontSize: "0.82rem", color: INK_60 }}>
               {tx(footerData.copyrightKey, footerData.copyright)}
             </p>
-            {footerData.contactEmail && (
-              <FooterBottomLink href={`mailto:${footerData.contactEmail}`}>
-                {footerData.contactEmail}
-              </FooterBottomLink>
-            )}
           </div>
           <LanguageSelector />
         </div>
