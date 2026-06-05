@@ -3,6 +3,7 @@ import { FONT, INK, INK_60, LINE, SURFACE, NEON } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
 import { GLOBAL_COLOR_SCHEMES, SECTION_COLOR_SUPPORT } from "../../components/sections/ColorSchemes.js";
 import sectionTypesData from "../../data/section-types.json";
+import SectionThumb from "./SectionThumb.jsx";
 
 /* SectionEditorModal — edit the inline content of a section.
    Only section types with dataSource:"inline" have editable content here.
@@ -227,98 +228,11 @@ const SCHEME_VISUALS = {
   "photo":       { label: "Photo",      swatch: "linear-gradient(135deg,#6b7280 0%,#374151 100%)", text: "#FFFFFF", border: "#555" },
 };
 
-/* ── Layout thumbnail sketches (drawn with CSS divs) ─────────────────────
-   Each returns a tiny 96×60 pixel schematic of the layout.               */
-function LayoutThumb({ layoutId }) {
-  const s = { position: "absolute" };
-  const line = (t, l, w, h, bg = "#0A0A0A") => (
-    <div style={{ ...s, top: t, left: l, width: w, height: h, background: bg, borderRadius: 1 }} />
-  );
-
-  const sketches = {
-    // FAQ: full-width stacked lines
-    "layout-1-fullwidth": (
-      <>
-        {line(8,  10, 76, 4)}
-        {line(16, 10, 55, 3, "rgba(0,0,0,0.25)")}
-        {line(24, 10, 76, 1, "rgba(0,0,0,0.12)")}
-        {line(29, 10, 72, 3, "rgba(0,0,0,0.25)")}
-        {line(36, 10, 76, 1, "rgba(0,0,0,0.12)")}
-        {line(41, 10, 68, 3, "rgba(0,0,0,0.25)")}
-        {line(48, 10, 76, 1, "rgba(0,0,0,0.12)")}
-      </>
-    ),
-    // FAQ: split sidebar
-    "layout-2-sidebar": (
-      <>
-        {line(8,  10, 30, 4)}
-        {line(16, 10, 24, 3, "rgba(0,0,0,0.25)")}
-        {line(22, 10, 20, 2, "rgba(0,0,0,0.25)")}
-        {line(8,  48, 34, 1, "rgba(0,0,0,0.12)")}
-        {line(13, 48, 34, 3, "rgba(0,0,0,0.25)")}
-        {line(20, 48, 34, 1, "rgba(0,0,0,0.12)")}
-        {line(25, 48, 34, 3, "rgba(0,0,0,0.25)")}
-        {line(32, 48, 34, 1, "rgba(0,0,0,0.12)")}
-      </>
-    ),
-    // Testimonials: 3-col grid
-    "layout-1-grid3col": (
-      <>
-        {[10, 38, 66].map(x => (
-          <div key={x} style={{ ...s, top: 6, left: x, width: 22, height: 50, border: "1.5px solid rgba(0,0,0,0.18)", borderTop: "2.5px solid #0A0A0A" }}>
-            {line(4,  3, 16, 2, "rgba(0,0,0,0.2)")}
-            {line(9,  3, 16, 2, "rgba(0,0,0,0.2)")}
-            {line(14, 3, 12, 2, "rgba(0,0,0,0.2)")}
-            {line(20, 3, 10, 2, "rgba(0,0,0,0.4)")}
-          </div>
-        ))}
-      </>
-    ),
-    // Testimonials: single column
-    "layout-2-singlecol": (
-      <>
-        {[10, 30, 48].map(t => (
-          <div key={t} style={{ ...s, top: t, left: 20, right: 20, borderTop: "2px solid #0A0A0A", paddingTop: 3 }}>
-            {line(3,  0, 56, 2, "rgba(0,0,0,0.2)")}
-            {line(8,  0, 40, 2, "rgba(0,0,0,0.2)")}
-          </div>
-        ))}
-      </>
-    ),
-    // Testimonials: large featured
-    "layout-3-featured": (
-      <>
-        <div style={{ ...s, top: 4, left: 28, fontSize: 28, lineHeight: 1, color: "rgba(0,0,0,0.12)", fontFamily: "Georgia,serif" }}>"</div>
-        {line(22, 12, 72, 3)}
-        {line(29, 16, 64, 2, "rgba(0,0,0,0.25)")}
-        {line(36, 12, 72, 2, "rgba(0,0,0,0.25)")}
-        {line(46, 30, 36, 1, "rgba(0,0,0,0.15)")}
-        {line(50, 24, 48, 2, "rgba(0,0,0,0.3)")}
-      </>
-    ),
-    // CTA: dark card (get-quote)
-    "layout-1-getquote": (
-      <div style={{ ...s, inset: 5, background: "#0A0A0A", borderRadius: 3, overflow: "hidden" }}>
-        {line(8,  20, 56, 3, "rgba(212,255,0,0.8)")}
-        {line(16, 14, 68, 4, "#fff")}
-        {line(25, 20, 56, 2, "rgba(255,255,255,0.4)")}
-        <div style={{ ...s, bottom: 10, left: "50%", transform: "translateX(-50%)", width: 36, height: 7, background: "#D4FF00", borderRadius: 2 }} />
-      </div>
-    ),
-    // CTA: photo banner
-    "layout-2-banner": (
-      <div style={{ ...s, inset: 5, background: "linear-gradient(135deg,#6b7280 0%,#374151 100%)", borderRadius: 3, overflow: "hidden" }}>
-        <div style={{ ...s, inset: 0, background: "rgba(0,0,0,0.35)" }} />
-        {line(14, 12, 72, 4, "#fff")}
-        {line(23, 20, 56, 2, "rgba(255,255,255,0.6)")}
-        <div style={{ ...s, bottom: 8, left: "50%", transform: "translateX(-50%)", width: 36, height: 7, background: "#D4FF00", borderRadius: 2 }} />
-      </div>
-    ),
-  };
-
+/* ── Layout thumbnail — rendered preview via SectionThumb ────────────── */
+function LayoutThumb({ typeId, layoutId }) {
   return (
-    <div style={{ position: "relative", width: 96, height: 60, background: "#fff", border: "1px solid #E5E7EB", borderRadius: 4, overflow: "hidden", flexShrink: 0 }}>
-      {sketches[layoutId] || <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.6rem", color: "#999" }}>—</div>}
+    <div style={{ border: "1px solid #E5E7EB", borderRadius: 4, overflow: "hidden", flexShrink: 0 }}>
+      <SectionThumb typeId={typeId} layoutId={layoutId} width={120} height={72} />
     </div>
   );
 }
@@ -365,7 +279,7 @@ function VisualLayoutColorPicker({ typeId, form, set, sectionTypes }) {
                 outline: "none", transition: "border-color 0.15s",
               }}
             >
-              <LayoutThumb layoutId={l.id} />
+              <LayoutThumb typeId={typeId} layoutId={l.id} />
               <span style={{
                 fontSize: "0.72rem", fontWeight: active ? 700 : 500,
                 color: active ? "#3a5000" : INK_60,
