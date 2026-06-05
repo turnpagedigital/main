@@ -167,6 +167,11 @@
           }
         },
         {
+          "id": "sec-aic-damages",
+          "type": "damages",
+          "visible": true
+        },
+        {
           "id": "sec-aic-audience",
           "type": "audience-cards",
           "visible": true
@@ -174,11 +179,6 @@
         {
           "id": "sec-aic-service",
           "type": "service-cards",
-          "visible": true
-        },
-        {
-          "id": "sec-aic-damages",
-          "type": "damages",
           "visible": true
         },
         {
