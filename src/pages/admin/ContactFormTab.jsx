@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    ContactFormTab — manage the Contact Us page: heading copy, subject
@@ -40,6 +40,7 @@ export default function ContactFormTab({ onDirtyChange }) {
   const [phase,    setPhase]    = useState("loading");
   const [error,    setError]    = useState("");
   const [lastSavedAt, setLastSavedAt] = useState(null);
+  const [deleteConfirm, setDeleteConfirm] = useState(null); // { type, index, label }
 
   const dirty = useMemo(() => {
     if (!data || !original) return false;
@@ -203,7 +204,7 @@ export default function ContactFormTab({ onDirtyChange }) {
             </div>
             <input type="text" value={subj.id} onChange={e => updateSubject(idx, { id: e.target.value })} placeholder="id-slug" style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem", fontFamily: "monospace" }} />
             <input type="text" value={subj.label} onChange={e => updateSubject(idx, { label: e.target.value })} placeholder="Display label" style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem" }} />
-            <button type="button" onClick={() => { if (window.confirm(`Remove "${subj.label || subj.id}"?`)) removeSubject(idx); }}
+            <button type="button" onClick={() => setDeleteConfirm({ type: "subject", index: idx, label: subj.label || subj.id })}
               style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
           </div>
         ))}
@@ -227,13 +228,28 @@ export default function ContactFormTab({ onDirtyChange }) {
         {data.fields.map((field, idx) => (
           <FieldRow key={field.name || idx} field={field} idx={idx} total={data.fields.length}
             onUpdate={p => updateField(idx, p)} onMove={dir => moveField(idx, dir)}
-            onRemove={() => { if (window.confirm(`Remove field "${field.label || field.name}"?`)) removeField(idx); }}
+            onRemove={() => setDeleteConfirm({ type: "field", index: idx, label: field.label || field.name })}
           />
         ))}
       </div>
       <button onClick={addField} style={{ ...btnStyle, fontSize: "0.82rem", display: "inline-flex", alignItems: "center", gap: "0.4em" }}>
         + Add field
       </button>
+
+      <ConfirmDialog
+        open={!!deleteConfirm}
+        title={deleteConfirm?.type === "subject" ? "Remove subject?" : "Remove field?"}
+        message={deleteConfirm ? `Remove "${deleteConfirm.label}"? This can't be undone.` : ""}
+        confirmLabel="Remove"
+        onConfirm={() => {
+          if (deleteConfirm) {
+            if (deleteConfirm.type === "subject") removeSubject(deleteConfirm.index);
+            else removeField(deleteConfirm.index);
+          }
+          setDeleteConfirm(null);
+        }}
+        onCancel={() => setDeleteConfirm(null)}
+      />
     </div>
   );
 }
