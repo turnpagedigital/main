@@ -339,7 +339,7 @@
         {
           "id": "sec-litfin-comparison",
           "type": "comparison",
-          "visible": true
+          "visible": false
         },
         {
           "id": "sec-litfin-service",
@@ -349,7 +349,7 @@
         {
           "id": "sec-litfin-how",
           "type": "how-it-works",
-          "visible": true
+          "visible": false
         },
         {
           "id": "sec-1780673399693-agc7",
