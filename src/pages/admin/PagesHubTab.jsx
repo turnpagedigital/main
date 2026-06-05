@@ -30,7 +30,15 @@ export default function PagesHubTab({ onDirtyChange }) {
   const [sub, setSub] = useState("builder");
   const [dirtyFlags, setDirtyFlags] = useState({});
 
-  function selectSub(key) { setSub(key); }
+  const isAnyDirty = Object.values(dirtyFlags).some(Boolean);
+
+  function selectSub(key) {
+    // Guard: confirm before switching with unsaved changes
+    if (isAnyDirty && !window.confirm("You have unsaved changes. Discard them and switch?")) {
+      return;
+    }
+    setSub(key);
+  }
 
   const makeDirty = useCallback((key) => (isDirty) => {
     setDirtyFlags(prev => prev[key] === isDirty ? prev : { ...prev, [key]: isDirty });

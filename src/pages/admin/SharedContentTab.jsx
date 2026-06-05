@@ -41,6 +41,8 @@ export default function SharedContentTab({ onDirtyChange }) {
   const [sub, setSub] = useState(getSubTab);
   const [dirtyFlags, setDirtyFlags] = useState({});
 
+  const isAnyDirty = Object.values(dirtyFlags).some(Boolean);
+
   useEffect(() => {
     function onPop() { setSub(getSubTab()); }
     window.addEventListener("popstate", onPop);
@@ -48,6 +50,10 @@ export default function SharedContentTab({ onDirtyChange }) {
   }, []);
 
   function selectSub(key) {
+    // Guard: confirm before switching with unsaved changes
+    if (isAnyDirty && !window.confirm("You have unsaved changes. Discard them and switch?")) {
+      return;
+    }
     const next = `/admin/content/${key}`;
     if (window.location.pathname !== next) {
       window.history.pushState(null, "", next);

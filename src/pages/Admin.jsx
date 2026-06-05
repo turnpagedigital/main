@@ -37,6 +37,9 @@ export default function Admin() {
   const [tab, setTab] = useState(getTabFromPath);
   const [dirtyTabs, setDirtyTabs] = useState({});
 
+  // Check if any tab is dirty
+  const isAnyDirty = Object.values(dirtyTabs).some(Boolean);
+
   // Sync tab state with URL path (back/forward + bookmarks)
   useEffect(() => {
     function onPopstate() { setTab(getTabFromPath()); }
@@ -44,7 +47,24 @@ export default function Admin() {
     return () => window.removeEventListener("popstate", onPopstate);
   }, []);
 
+  // Guard against losing unsaved changes on close/refresh
+  useEffect(() => {
+    function onBeforeUnload(e) {
+      if (isAnyDirty) {
+        e.preventDefault();
+        e.returnValue = "You have unsaved changes. Are you sure you want to leave?";
+        return e.returnValue;
+      }
+    }
+    window.addEventListener("beforeunload", onBeforeUnload);
+    return () => window.removeEventListener("beforeunload", onBeforeUnload);
+  }, [isAnyDirty]);
+
   function selectTab(key) {
+    // If switching tabs with unsaved changes, confirm first
+    if (isAnyDirty && !window.confirm("You have unsaved changes. Discard them and switch tabs?")) {
+      return;
+    }
     const next = `/admin/${key}`;
     if (window.location.pathname !== next) {
       window.history.pushState(null, "", next);
