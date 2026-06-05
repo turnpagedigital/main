@@ -115,11 +115,22 @@
           "type": "cta-banner",
           "visible": true,
           "content": {
-            "title": "Stay current on the cases we cover.",
+            "title": "Stay current on our active cases.",
             "cta": "Read the briefings",
             "href": "/press?type=post",
             "image": "/Building_Wide.jpg",
             "external": false
+          }
+        },
+        {
+          "id": "sec-home-faq",
+          "type": "faq",
+          "visible": true,
+          "content": {
+            "title": "Your questions,",
+            "accent": "answered.",
+            "ctaLabel": "Contact Us",
+            "ctaHref": "/contact"
           }
         },
         {
@@ -135,17 +146,6 @@
               "label": "Get in Touch",
               "href": "/contact"
             }
-          }
-        },
-        {
-          "id": "sec-home-faq",
-          "type": "faq",
-          "visible": true,
-          "content": {
-            "title": "Your questions,",
-            "accent": "answered.",
-            "ctaLabel": "Contact Us",
-            "ctaHref": "/contact"
           }
         }
       ]
