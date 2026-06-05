@@ -152,9 +152,48 @@
       "defaultColorScheme": "light"
     },
     {
+      "id": "cta",
+      "displayName": "CTA Section",
+      "description": "Configurable call-to-action section. Choose from Get Quote card, Banner with image, or Bottom CTA panel. Select a layout and color scheme.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "layouts": [
+        {
+          "id": "layout-1-getquote",
+          "displayName": "Get Quote Card",
+          "description": "Dark rounded card, centered headline and body. Best for home page.",
+          "supportedColorSchemes": ["dark"]
+        },
+        {
+          "id": "layout-2-banner",
+          "displayName": "Photo Banner",
+          "description": "Full-bleed landscape image with headline and button overlay.",
+          "supportedColorSchemes": ["photo"]
+        },
+        {
+          "id": "layout-3-bottomcta",
+          "displayName": "Bottom CTA Panel",
+          "description": "Dark rounded panel with bold headline and primary/secondary buttons. Standard page closer.",
+          "supportedColorSchemes": ["dark"]
+        }
+      ],
+      "defaultLayout": "layout-3-bottomcta",
+      "defaultColorScheme": "dark",
+      "defaultContent": {
+        "layout": "layout-3-bottomcta",
+        "colorScheme": "dark",
+        "eyebrow": "Get in Touch",
+        "title": "Hold a claim?",
+        "accent": "Talk to us.",
+        "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+        "primary": { "label": "Get in Touch", "href": "/contact" },
+        "secondary": null
+      }
+    },
+    {
       "id": "cta-banner",
-      "displayName": "CTA Banner",
-      "description": "Horizontal landscape photo with a headline and single action button.",
+      "displayName": "CTA Banner (legacy)",
+      "description": "Horizontal landscape photo with a headline and single action button. Use 'CTA Section' with Photo Banner layout for new sections.",
       "dataSource": "inline",
       "allowMultiple": true,
       "defaultContent": {
@@ -167,8 +206,8 @@
     },
     {
       "id": "bottom-cta",
-      "displayName": "Bottom CTA",
-      "description": "Dark rounded card with a bold headline and primary/secondary buttons. Standard page closer.",
+      "displayName": "Bottom CTA (legacy)",
+      "description": "Dark rounded card with headline and buttons. Use 'CTA Section' with Bottom CTA layout for new sections.",
       "dataSource": "inline",
       "allowMultiple": false,
       "defaultContent": {
@@ -182,8 +221,8 @@
     },
     {
       "id": "get-quote",
-      "displayName": "Get a Quote CTA",
-      "description": "Home page dark rounded quote section with 'Why wait? Talk to us.' headline.",
+      "displayName": "Get a Quote CTA (legacy)",
+      "description": "Home page dark rounded quote section. Use 'CTA Section' with Get Quote Card layout for new sections.",
       "dataSource": "inline",
       "allowMultiple": false,
       "availableOn": ["home"],

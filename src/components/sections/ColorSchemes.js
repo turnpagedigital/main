@@ -1,4 +1,4 @@
-import { INK, INK_60, LINE, NEON } from "../data/tokens.js";
+import { INK, INK_60, LINE, NEON } from "../../data/tokens.js";
 
 /* Global color scheme registry for section templates.
    All layouts use these schemes; per-section variants reference subsets. */

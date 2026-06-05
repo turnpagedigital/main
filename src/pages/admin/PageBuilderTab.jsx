@@ -157,7 +157,15 @@ export default function PageBuilderTab({ onDirtyChange }) {
 
   function updateSectionContent(i, newContent) {
     const next = [...sections];
-    next[i] = { ...next[i], content: newContent };
+    // Extract layout/colorScheme from content and also store them at section level
+    // (page-compositions.json stores them both places for redundancy)
+    const { layout, colorScheme, ...rest } = newContent || {};
+    next[i] = {
+      ...next[i],
+      content: newContent,
+      ...(layout !== undefined ? { layout } : {}),
+      ...(colorScheme !== undefined ? { colorScheme } : {}),
+    };
     setSections(next);
   }
 
@@ -173,7 +181,8 @@ export default function PageBuilderTab({ onDirtyChange }) {
 
   function sectionIsEditable(typeId) {
     const st = sectionTypes.find(t => t.id === typeId);
-    return st && st.dataSource === "inline";
+    // Inline types are always editable; shared types with layout options are editable for template configuration
+    return st && (st.dataSource === "inline" || (st.layouts && st.layouts.length > 1));
   }
 
   // Short human summary of a section's inline content, so two sections of the
@@ -367,7 +376,44 @@ export default function PageBuilderTab({ onDirtyChange }) {
 
                         {/* Section info */}
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontWeight: 700, fontSize: "0.88rem" }}>{sectionTypeLabel(s.type)}</div>
+                          <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+                            <span style={{ fontWeight: 700, fontSize: "0.88rem" }}>{sectionTypeLabel(s.type)}</span>
+                            {/* Layout badge — shown for template-enabled section types */}
+                            {s.layout && (
+                              <span style={{
+                                fontSize: "0.65rem", fontWeight: 700, padding: "0 5px", height: 16,
+                                display: "inline-flex", alignItems: "center",
+                                background: "rgba(212,255,0,0.15)", color: "#4a6000",
+                                border: "1px solid rgba(212,255,0,0.4)", borderRadius: 3,
+                                letterSpacing: "0.03em", textTransform: "uppercase",
+                              }}>
+                                {(() => {
+                                  const st = sectionTypes.find(t => t.id === s.type);
+                                  const ld = st?.layouts?.find(l => l.id === s.layout);
+                                  return ld ? ld.displayName : s.layout;
+                                })()}
+                              </span>
+                            )}
+                            {/* Color scheme dot */}
+                            {s.colorScheme && (
+                              <span title={s.colorScheme} style={{
+                                fontSize: "0.65rem", fontWeight: 600, padding: "0 5px", height: 16,
+                                display: "inline-flex", alignItems: "center", gap: 4,
+                                background: "#F3F4F6", color: INK_60,
+                                border: `1px solid ${LINE}`, borderRadius: 3,
+                              }}>
+                                <span style={{
+                                  display: "inline-block", width: 8, height: 8, borderRadius: "50%",
+                                  background: {
+                                    light: "#E5E7EB", "light-gray": "#D1D5DB", "light-card": "#fff",
+                                    dark: "#0A0A0A", photo: "linear-gradient(135deg,#888 50%,#444)",
+                                  }[s.colorScheme] || "#ccc",
+                                  border: "1px solid rgba(0,0,0,0.15)",
+                                }} />
+                                {s.colorScheme}
+                              </span>
+                            )}
+                          </div>
                           {(() => {
                             const summary = sectionSummary(s);
                             return (

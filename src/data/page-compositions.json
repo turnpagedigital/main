@@ -16,8 +16,14 @@
             "title2": "Turn-key liquidity.",
             "subtitle": "For rights holders entitled to compensation — we buy litigation, class action and bankruptcy claims, receivables, refunds, and other locked assets.",
             "video": "/robotpages1.mp4",
-            "ctaPrimary": { "label": "Get in Touch", "href": "/contact" },
-            "ctaSecondary": { "label": "What we cover", "href": "#situations" }
+            "ctaPrimary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "ctaSecondary": {
+              "label": "What we cover",
+              "href": "#situations"
+            }
           }
         },
         {
@@ -59,7 +65,9 @@
         {
           "id": "sec-home-testimonials",
           "type": "testimonials",
-          "visible": true
+          "visible": true,
+          "layout": "layout-1-grid3col",
+          "colorScheme": "light"
         },
         {
           "id": "sec-home-photo",
@@ -114,7 +122,9 @@
             "href": "/press?type=posts",
             "image": "/Building_Wide.jpg",
             "external": false
-          }
+          },
+          "layout": "layout-2-banner",
+          "colorScheme": "photo"
         },
         {
           "id": "sec-home-get-quote",
@@ -129,7 +139,9 @@
               "label": "Get in Touch",
               "href": "/contact"
             }
-          }
+          },
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark"
         },
         {
           "id": "sec-home-faq",
@@ -140,7 +152,9 @@
             "accent": "answered.",
             "ctaLabel": "Contact Us",
             "ctaHref": "/contact"
-          }
+          },
+          "layout": "layout-1-fullwidth",
+          "colorScheme": "light"
         }
       ]
     },
@@ -194,7 +208,9 @@
         {
           "id": "sec-aic-testimonials",
           "type": "testimonials",
-          "visible": true
+          "visible": true,
+          "layout": "layout-1-grid3col",
+          "colorScheme": "light"
         },
         {
           "id": "sec-aic-bottom-cta",
@@ -213,7 +229,9 @@
               "label": "Briefings",
               "href": "/briefings"
             }
-          }
+          },
+          "layout": "layout-3-bottomcta",
+          "colorScheme": "dark"
         },
         {
           "id": "sec-aic-faq",
@@ -224,7 +242,9 @@
             "accent": "answered.",
             "ctaLabel": "Ask a Question",
             "ctaHref": "/contact?source=ai-copyright"
-          }
+          },
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light"
         }
       ]
     },
@@ -306,7 +326,9 @@
         {
           "id": "sec-crypto-testimonials",
           "type": "testimonials",
-          "visible": true
+          "visible": true,
+          "layout": "layout-1-grid3col",
+          "colorScheme": "light"
         },
         {
           "id": "sec-crypto-bottom-cta",
@@ -322,7 +344,9 @@
               "href": "/contact?source=crypto"
             },
             "secondary": null
-          }
+          },
+          "layout": "layout-3-bottomcta",
+          "colorScheme": "dark"
         },
         {
           "id": "sec-crypto-faq",
@@ -333,7 +357,9 @@
             "accent": "answered.",
             "ctaLabel": "Get a Quote",
             "ctaHref": "/contact?source=crypto"
-          }
+          },
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light"
         }
       ]
     },
@@ -415,7 +441,9 @@
         {
           "id": "sec-litfin-testimonials",
           "type": "testimonials",
-          "visible": true
+          "visible": true,
+          "layout": "layout-1-grid3col",
+          "colorScheme": "light"
         },
         {
           "id": "sec-litfin-bottom-cta",
@@ -431,7 +459,9 @@
               "href": "/contact?source=litigation-finance"
             },
             "secondary": null
-          }
+          },
+          "layout": "layout-3-bottomcta",
+          "colorScheme": "dark"
         },
         {
           "id": "sec-litfin-faq",
@@ -442,7 +472,9 @@
             "accent": "answered.",
             "ctaLabel": "Talk to a Partner",
             "ctaHref": "/contact?source=litigation-finance"
-          }
+          },
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light"
         }
       ]
     }
