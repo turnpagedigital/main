@@ -2,6 +2,20 @@
   "_comment": "Press items managed via /admin. Types: publication, podcast, article, social post, blog post. Publications and podcasts appear in the 'In the press' section on Press.jsx; articles, social posts, and blog posts appear in the 'By Andrew' section.",
   "items": [
     {
+      "type": "social post",
+      "author": "Andrew",
+      "date": "June 4, 2026",
+      "url": "https://www.linkedin.com/posts/andrewglantz_tariffs-refunds-receivables-share-7468322022213787650-2gQO/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADYlmUBIgr3_ZLp4FoChoF9AvaiOSl8Xd8",
+      "logo_url": "",
+      "excerpt": "The U.S. Government continues its work to issue refunds to importers that paid (now-unconstitutional) tariffs in 2025 and early 2026 through the recently deployed CAPE portal.\n\nWhat's actually being paid right now in Phase 1? ",
+      "publication_title": "LinkedIn",
+      "piece_title": "🚢 IEEPA Tariffs are getting spicy 🌶️",
+      "media_url": "",
+      "pages": [
+        "tariffs"
+      ]
+    },
+    {
       "type": "blog post",
       "author": "Other",
       "date": "May 26, 2026",
