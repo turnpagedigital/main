@@ -14,31 +14,14 @@ const SUB_TABS = [
   { key: "sections", label: "Section Types" },
 ];
 
-function getSubTab() {
-  if (typeof window === "undefined") return "builder";
-  const m = window.location.pathname.match(/^\/admin\/pages(?:\/([a-z][a-z0-9-]*))?/);
-  if (!m || !m[1]) return "builder";
-  return SUB_TABS.some(t => t.key === m[1]) ? m[1] : "builder";
-}
-
 export default function PagesHubTab({ onDirtyChange }) {
-  const [sub, setSub] = useState(getSubTab);
+  // Sub-tab is local state only — no URL syncing, to avoid conflicting
+  // with Admin.jsx's own /admin/<tab> router which would misinterpret
+  // /admin/page-builder/sections as an unknown top-level tab.
+  const [sub, setSub] = useState("builder");
   const [dirtyFlags, setDirtyFlags] = useState({});
 
-  useEffect(() => {
-    function onPop() { setSub(getSubTab()); }
-    window.addEventListener("popstate", onPop);
-    return () => window.removeEventListener("popstate", onPop);
-  }, []);
-
-  function selectSub(key) {
-    const next = `/admin/pages/${key}`;
-    if (window.location.pathname !== next) {
-      window.history.pushState(null, "", next);
-      window.dispatchEvent(new PopStateEvent("popstate"));
-    }
-    setSub(key);
-  }
+  function selectSub(key) { setSub(key); }
 
   const makeDirty = useCallback((key) => (isDirty) => {
     setDirtyFlags(prev => prev[key] === isDirty ? prev : { ...prev, [key]: isDirty });
