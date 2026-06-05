@@ -184,7 +184,7 @@ export default function ContactFormTab({ onDirtyChange }) {
           </div>
         )}
         {data.subjects.map((subj, idx) => (
-          <div key={subj.id || idx} style={{
+          <div key={idx} style={{
             display: "grid", gridTemplateColumns: "auto 56px 1fr 1fr auto",
             gap: "0.4rem", alignItems: "center",
             background: "#fff", border: `1px solid ${LINE}`, padding: "0.5rem 0.75rem",
@@ -226,7 +226,7 @@ export default function ContactFormTab({ onDirtyChange }) {
           </div>
         )}
         {data.fields.map((field, idx) => (
-          <FieldRow key={field.name || idx} field={field} idx={idx} total={data.fields.length}
+          <FieldRow key={idx} field={field} idx={idx} total={data.fields.length}
             onUpdate={p => updateField(idx, p)} onMove={dir => moveField(idx, dir)}
             onRemove={() => setDeleteConfirm({ type: "field", index: idx, label: field.label || field.name })}
           />
