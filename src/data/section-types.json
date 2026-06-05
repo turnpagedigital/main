@@ -71,7 +71,23 @@
       "description": "Client testimonials filtered by the current page tag. Content managed in Content → Testimonials.",
       "dataSource": "shared:testimonials",
       "allowMultiple": false,
-      "defaultContent": null
+      "defaultContent": null,
+      "layouts": [
+        {
+          "id": "layout-1-grid3col",
+          "displayName": "3-Column Grid",
+          "description": "Three equal columns with border-top cards. Best for homepages.",
+          "supportedColorSchemes": ["light", "light-gray", "light-card"]
+        },
+        {
+          "id": "layout-2-singlecol",
+          "displayName": "Single Column",
+          "description": "One column, left-aligned. Best for subpages.",
+          "supportedColorSchemes": ["light", "light-gray", "light-card"]
+        }
+      ],
+      "defaultLayout": "layout-1-grid3col",
+      "defaultColorScheme": "light"
     },
     {
       "id": "photo-break",
@@ -117,7 +133,23 @@
       "description": "FAQ items filtered for the current page. Content managed in Content → FAQs.",
       "dataSource": "shared:faq",
       "allowMultiple": false,
-      "defaultContent": null
+      "defaultContent": null,
+      "layouts": [
+        {
+          "id": "layout-1-fullwidth",
+          "displayName": "Full Width",
+          "description": "Single column, full-width accordion. Best for homepages.",
+          "supportedColorSchemes": ["light", "light-gray", "light-card"]
+        },
+        {
+          "id": "layout-2-sidebar",
+          "displayName": "Split Sidebar",
+          "description": "Left sidebar with title/CTA, right accordion. Best for subpages.",
+          "supportedColorSchemes": ["light", "light-gray"]
+        }
+      ],
+      "defaultLayout": "layout-1-fullwidth",
+      "defaultColorScheme": "light"
     },
     {
       "id": "cta-banner",
