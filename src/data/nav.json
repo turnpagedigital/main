@@ -64,12 +64,12 @@
     },
     {
       "id": "litigation-finance",
-      "label": "Litigation Finance",
-      "href": "/litigation-finance",
+      "label": "Litigation Funding",
+      "href": "/litigation-funding",
       "active": true,
       "labelKey": "nav.litigation",
       "dropdown": {
-        "title": "Litigation Finance",
+        "title": "Litigation Funding",
         "body": "We help the boldest law firms pursue high-risk / high-reward cases on full or partial contingency, enabling firms to reduce their exposure, while retaining meaningful upside.",
         "links": [
           {
@@ -81,7 +81,7 @@
             "href": "/litigation-finance#how-litfin"
           },
           {
-            "label": "How it works",
+            "label": "How we work",
             "href": "/litigation-finance#how-litfin"
           },
           {
@@ -90,7 +90,7 @@
           }
         ],
         "cta": {
-          "label": "Talk to a Partner",
+          "label": "Talk to Us",
           "href": "/contact?source=litigation-finance"
         }
       }
