@@ -12,7 +12,12 @@
           "type": "home-hero",
           "visible": true,
           "content": {
-            "video": "/robotpages1.mp4"
+            "title1": "Strategic guidance.",
+            "title2": "Turn-key liquidity.",
+            "subtitle": "For rights holders entitled to compensation — we buy litigation, class action and bankruptcy claims, receivables, refunds, and other locked assets.",
+            "video": "/robotpages1.mp4",
+            "ctaPrimary": { "label": "Get in Touch", "href": "/contact" },
+            "ctaSecondary": { "label": "What we cover", "href": "#situations" }
           }
         },
         {
