@@ -1,22 +1,6 @@
 {
   "situations": [
     {
-      "id": "sit-01",
-      "no": "01",
-      "hidden": false,
-      "title": "Litigation Funding",
-      "body": "Complex disputes, contested matters, and commercial judgments awaiting recovery.",
-      "details": "Together with our network of capital partners and experts, Turnpage arranges and funds complex, binary and speculative litigation at all stages and many jurisdictions globally. We often work with bankruptcy trustees and liquidating trustees that lack the funding to monetize potentially valuable claims for the benefit of creditors and trust beneficiaries."
-    },
-    {
-      "id": "sit-02",
-      "no": "02",
-      "hidden": true,
-      "title": "Class Action Settlements",
-      "body": "Class-member rights in the the largest collective actions.",
-      "details": "From antitrust settlements to mass tort claims, we connect class members to competitive bids. We handle large individual positions as well as portfolios of smaller positions aggregated for efficiency."
-    },
-    {
       "id": "sit-03",
       "no": "03",
       "hidden": false,
@@ -31,6 +15,22 @@
       "title": "Locked Digital Assets",
       "body": "Cryptocurrency, NFTs, accounts and deposits stuck in judicial proceedings.",
       "details": "Digital assets locked on exchange platforms, frozen bank accounts, and deposits trapped in restructurings are all addressable. Our team has deep expertise in nearly all of the major crypto estate cases that defined this asset class—BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager and others."
+    },
+    {
+      "id": "sit-01",
+      "no": "01",
+      "hidden": false,
+      "title": "Litigation Funding",
+      "body": "Complex disputes, contested matters, and commercial judgments awaiting recovery.",
+      "details": "Together with our network of capital partners and experts, Turnpage arranges and funds complex, binary and speculative litigation at all stages and many jurisdictions globally. We often work with bankruptcy trustees and liquidating trustees that lack the funding to monetize potentially valuable claims for the benefit of creditors and trust beneficiaries."
+    },
+    {
+      "id": "sit-02",
+      "no": "02",
+      "hidden": false,
+      "title": "Class Action Settlements",
+      "body": "Class-member rights in the the largest collective actions.",
+      "details": "From antitrust settlements to mass tort claims, we connect class members to competitive bids. We handle large individual positions as well as portfolios of smaller positions aggregated for efficiency."
     },
     {
       "id": "sit-05",
