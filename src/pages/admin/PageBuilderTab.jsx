@@ -3,6 +3,7 @@ import { NEON, FONT, INK, INK_60, LINE, LINE_STRONG, SURFACE } from "../../data/
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
 import SectionEditorModal from "./SectionEditorModal.jsx";
 import PagePreviewOverlay from "./PagePreviewOverlay.jsx";
+import TemplatePicker from "./TemplatePicker.jsx";
 
 /* PageBuilderTab — view and manage the section composition of every page.
 
@@ -149,14 +150,25 @@ export default function PageBuilderTab({ onDirtyChange }) {
     setSections(sections.filter((_, idx) => idx !== i));
   }
 
-  function addSection(type) {
-    const st = sectionTypes.find(t => t.id === type);
-    const content = st && st.defaultContent ? JSON.parse(JSON.stringify(st.defaultContent)) : undefined;
+  function addSection(typeId, layoutId) {
+    const st = sectionTypes.find(t => t.id === typeId);
+    // Determine layout/colorScheme defaults when a specific layout was picked
+    const layoutDef = layoutId && st?.layouts?.find(l => l.id === layoutId);
+    const colorScheme = layoutDef?.supportedColorSchemes?.[0] || st?.defaultColorScheme || null;
+    // Build content: start with defaultContent, then layer in layout/colorScheme
+    const baseContent = st?.defaultContent ? JSON.parse(JSON.stringify(st.defaultContent)) : {};
+    const content = {
+      ...baseContent,
+      ...(layoutId    ? { layout: layoutId }      : {}),
+      ...(colorScheme ? { colorScheme }            : {}),
+    };
     const newSection = {
       id: `sec-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-      type,
+      type: typeId,
       visible: true,
-      ...(content ? { content } : {}),
+      ...(layoutId    ? { layout: layoutId }      : {}),
+      ...(colorScheme ? { colorScheme }            : {}),
+      ...(Object.keys(content).length > 0 ? { content } : {}),
     };
     setSections([...sections, newSection]);
     setAddPickerOpen(false);
@@ -483,36 +495,15 @@ export default function PageBuilderTab({ onDirtyChange }) {
         </div>
       </div>
 
-      {/* Add Section Picker */}
+      {/* Add Section — Visual Template Picker */}
       {addPickerOpen && (
-        <Modal onClose={() => setAddPickerOpen(false)}>
-          <h3 style={{ fontWeight: 800, marginBottom: "1rem" }}>Add a section</h3>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8, maxHeight: 360, overflowY: "auto" }}>
-            {sectionTypes.map(st => {
-              const avail = typeAvailability(st);
-              return (
-                <button
-                  key={st.id}
-                  disabled={!avail.ok}
-                  style={{
-                    ...btnStyle, textAlign: "left", padding: "0.7rem 0.9rem", display: "block",
-                    opacity: avail.ok ? 1 : 0.45, cursor: avail.ok ? "pointer" : "not-allowed",
-                  }}
-                  onClick={() => { if (avail.ok) addSection(st.id); }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 8 }}>
-                    <span style={{ fontWeight: 700, fontSize: "0.9rem" }}>{st.displayName}</span>
-                    {!avail.ok && <span style={{ fontSize: "0.68rem", fontWeight: 600, color: INK_60, whiteSpace: "nowrap", flexShrink: 0 }}>{avail.reason}</span>}
-                  </div>
-                  <div style={{ fontSize: "0.78rem", color: INK_60, marginTop: 2 }}>{st.description}</div>
-                </button>
-              );
-            })}
-          </div>
-          <div style={{ marginTop: "1rem" }}>
-            <button style={btnStyle} onClick={() => setAddPickerOpen(false)}>Cancel</button>
-          </div>
-        </Modal>
+        <TemplatePicker
+          sectionTypes={sectionTypes}
+          sections={sections}
+          selectedKey={selectedKey}
+          onAdd={(typeId, layoutId) => addSection(typeId, layoutId)}
+          onClose={() => setAddPickerOpen(false)}
+        />
       )}
 
       {/* Live Preview */}
