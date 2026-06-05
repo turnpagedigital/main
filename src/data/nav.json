@@ -185,8 +185,12 @@
       },
       "items": [
         {
-          "label": "How We Help",
+          "label": "Who We Help",
           "href": "/copyright#who-we-help"
+        },
+        {
+          "label": "How we work",
+          "href": "/copyright#how-we-work"
         },
         {
           "label": "Team",
@@ -198,7 +202,7 @@
         }
       ],
       "cta": {
-        "label": "Get in Touch",
+        "label": "Talk to Us",
         "href": "/contact?source=copyright"
       }
     },
@@ -209,8 +213,12 @@
       },
       "items": [
         {
-          "label": "How We Help",
+          "label": "Who We Help",
           "href": "/crypto#who-we-help"
+        },
+        {
+          "label": "How we work",
+          "href": "/crypto#how-we-work"
         },
         {
           "label": "Team",
@@ -222,19 +230,23 @@
         }
       ],
       "cta": {
-        "label": "Get in Touch",
+        "label": "Talk to Us",
         "href": "/contact?source=crypto"
       }
     },
     "litigation-finance": {
       "brand": {
-        "label": "Litigation Finance",
-        "href": "/litigation-finance"
+        "label": "Litigation Funding",
+        "href": "/litigation-funding"
       },
       "items": [
         {
-          "label": "How We Help",
+          "label": "Who we help",
           "href": "/litigation-finance#who-we-help"
+        },
+        {
+          "label": "How we work",
+          "href": "/litigation-finance#how-we-work"
         },
         {
           "label": "Team",
@@ -246,7 +258,7 @@
         }
       ],
       "cta": {
-        "label": "Get in Touch",
+        "label": "Talk to Us",
         "href": "/contact?source=litigation-finance"
       }
     }
