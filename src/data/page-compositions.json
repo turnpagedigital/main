@@ -315,18 +315,18 @@
           "type": "hero",
           "visible": true,
           "content": {
-            "eyebrow": "Litigation Finance",
-            "title": "Power the cases that",
+            "eyebrow": "Litigation Funding",
+            "title": "We help power the cases that",
             "accentTitle": "deserve to win.",
-            "subtitle": "Turnpage helps the best law firms pursue cases on contingency — providing capital so merit drives the docket, not client cashflow.",
+            "subtitle": "Turnpage helps the best law firms pursue cases on contingency — providing capital so merit drives the docket, not your firm checking account.",
             "size": "tall",
             "video": "/robotobriefcase1.mp4",
             "ctaPrimary": {
-              "label": "Talk to a Partner",
+              "label": "Talk to Us",
               "href": "/contact?source=litigation-finance"
             },
             "ctaSecondary": {
-              "label": "How it works",
+              "label": "How we work",
               "href": "#how-litfin"
             }
           }
