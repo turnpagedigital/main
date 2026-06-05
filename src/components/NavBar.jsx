@@ -3,15 +3,29 @@ import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 import navData from "../data/nav.json";
+import pageCompositions from "../data/page-compositions.json";
 
 /* ─── Main site nav ──────────────────────────────────────────────────────── */
 
+// Build a quick path → status lookup so draft/archived pages auto-hide from nav.
+const PAGE_STATUS_BY_PATH = {};
+for (const p of (pageCompositions.pages || [])) {
+  if (p.path && p.status) PAGE_STATUS_BY_PATH[p.path] = p.status;
+}
+
 // Build NAV_ITEMS from nav.json — only active items, in JSON order.
+// Also filters out items pointing to draft or archived pages.
 // Each JSON item has: id, label, href, labelKey, active, external (optional).
-// We map to the shape the rest of NavBar expects: key, label, labelKey, externalHref.
 // `label` (admin-editable plain text) wins; `labelKey` is a translation fallback.
 const NAV_ITEMS = navData.items
-  .filter(i => i.active)
+  .filter(i => {
+    if (!i.active) return false;
+    if (!i.external && i.href) {
+      const st = PAGE_STATUS_BY_PATH[i.href];
+      if (st === "draft" || st === "archive") return false;
+    }
+    return true;
+  })
   .map(i => ({
     key:          i.id,
     label:        i.label,

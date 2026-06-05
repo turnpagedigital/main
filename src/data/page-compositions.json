@@ -156,7 +156,8 @@
           "layout": "layout-1-fullwidth",
           "colorScheme": "light"
         }
-      ]
+      ],
+      "status": "active"
     },
     {
       "pageKey": "ai-copyright",
@@ -246,7 +247,8 @@
           "layout": "layout-2-sidebar",
           "colorScheme": "light"
         }
-      ]
+      ],
+      "status": "active"
     },
     {
       "pageKey": "crypto",
@@ -361,7 +363,8 @@
           "layout": "layout-2-sidebar",
           "colorScheme": "light"
         }
-      ]
+      ],
+      "status": "active"
     },
     {
       "pageKey": "litigation-finance",
@@ -476,7 +479,8 @@
           "layout": "layout-2-sidebar",
           "colorScheme": "light"
         }
-      ]
+      ],
+      "status": "active"
     }
   ]
 }
