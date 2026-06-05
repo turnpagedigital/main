@@ -35,20 +35,21 @@
               {
                 "value": "$1.1B",
                 "labelKey": "stats.claims_traded",
-                "label": "Traded"
+                "label": "Traded*"
               },
               {
                 "value": "5K+",
                 "labelKey": "stats.claims_advised",
-                "label": "Trades"
+                "label": "Trades*"
               },
               {
                 "value": "500+",
                 "labelKey": "stats.institutions",
-                "label": "Funders"
+                "label": "Funders*"
               }
             ],
-            "footnoteKey": "stats.footnote"
+            "footnoteKey": "stats.footnote",
+            "footnote": "*Includes experience prior to Turnpage"
           }
         },
         {
