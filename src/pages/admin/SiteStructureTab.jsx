@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { MARKETING_PAGES } from "../../data/page-keys.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SiteStructureTab — consolidated view for Pages, Navigation, and Footer
@@ -19,7 +20,8 @@ import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, Center
 ═══════════════════════════════════════════════════════════════════════════ */
 
 // ── Constants ───────────────────────────────────────────────────────────
-const OG_SLUGS = ["home", "crypto", "ai-copyright", "litigation-finance"];
+// Derived from routes.json via page-keys.js — add/rename pages there, not here
+const OG_SLUGS = MARKETING_PAGES.map(p => p.key);
 const FAVICON_ROWS = [
   { key: "production", label: "Production favicon",   hint: "turnpagedigital.com" },
   { key: "preview",    label: "Preview / dev favicon", hint: "*.pages.dev preview deploys" },
@@ -1020,8 +1022,8 @@ function PageMetaRow({ page, index, onUpdate, onRemove }) {
             onChange={e => onUpdate({ og: e.target.value })}
             style={{ ...inputStyle, marginTop: 0, cursor: "pointer" }}
           >
-            {OG_SLUGS.map(slug => (
-              <option key={slug} value={slug}>{slug}</option>
+            {MARKETING_PAGES.map(p => (
+              <option key={p.key} value={p.key}>{p.label}</option>
             ))}
           </select>
         </LabeledField>

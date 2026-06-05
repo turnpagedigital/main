@@ -1,9 +1,13 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
+import routesData from "../../src/data/routes.json";
 
 const ALERTS_PATH = "src/data/alerts.json";
 
-const VALID_PAGES = ["home", "ai-copyright", "crypto", "press", "briefings", "contact"];
+// Derived from routes.json — add/rename pages there, not here
+const VALID_PAGES = new Set(
+  routesData.routes.filter(r => !r.dynamic && r.key !== "admin").map(r => r.key)
+);
 
 export async function onRequestGet({ request, env }) {
   if (!(await isAuthed(request, env))) {
@@ -79,7 +83,7 @@ function normalizeAlert(a) {
     linkText: String(a.linkText ?? ""),
     href:     String(a.href     ?? ""),
     pages:    Array.isArray(a.pages)
-      ? a.pages.filter(p => VALID_PAGES.includes(p))
+      ? a.pages.filter(p => VALID_PAGES.has(p))
       : [],
   };
 }

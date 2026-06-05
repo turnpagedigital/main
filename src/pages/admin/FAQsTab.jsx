@@ -1,16 +1,11 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, filterSelectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { MARKETING_PAGES } from "../../data/page-keys.js";
 
-const FAQ_PAGE_VALUES = ["home", "ai-copyright", "crypto", "press", "briefings", "contact"];
-const FAQ_PAGE_LABELS = {
-  "home":         "Home",
-  "ai-copyright": "AI Copyright",
-  "crypto":       "Locked Crypto",
-  "press":        "Press & Publications",
-  "briefings":    "Briefings",
-  "contact":      "Contact",
-};
+// Derived from routes.json via page-keys.js — add/rename pages there, not here
+const FAQ_PAGE_VALUES = MARKETING_PAGES.map(p => p.key);
+const FAQ_PAGE_LABELS = Object.fromEntries(MARKETING_PAGES.map(p => [p.key, p.label]));
 
 function blankFaq() {
   return { active: true, q: "", a: "", pages: ["home"], featured: false };

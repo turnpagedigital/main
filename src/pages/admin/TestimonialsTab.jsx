@@ -1,25 +1,17 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog } from "./shared.jsx";
+import { MARKETING_PAGES } from "../../data/page-keys.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    TestimonialsTab — manage testimonials with topic tags.
 
-   Tags map 1-to-1 with marketing page keys:
-     home                → shown on the Home page
-     ai-copyright        → shown on the AI Copyright page
-     crypto              → shown on the Crypto page
-     litigation-finance  → shown on the Litigation Finance page
-
+   Tags map 1-to-1 with marketing page keys from routes.json.
    Data: src/data/testimonials.json  via  /api/admin/testimonials
 ═══════════════════════════════════════════════════════════════════════════ */
 
-const TAG_OPTIONS = [
-  { key: "home",               label: "Home" },
-  { key: "ai-copyright",       label: "AI Copyright" },
-  { key: "crypto",             label: "Crypto" },
-  { key: "litigation-finance", label: "Litigation Finance" },
-];
+// Derived from routes.json via page-keys.js — add/rename pages there, not here
+const TAG_OPTIONS = MARKETING_PAGES.map(p => ({ key: p.key, label: p.label }));
 
 function emptyTestimonial() {
   return {

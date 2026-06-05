@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { INTERNAL_PAGES } from "../../data/page-keys.js";
+
+// Set of known internal paths for auto-detecting picker mode
+const INTERNAL_PATHS = new Set(INTERNAL_PAGES.map(p => p.path));
 
 /* ═══════════════════════════════════════════════════════════════════════════
    StructureNavItemsTab — Main Navigation Items only
@@ -284,6 +288,10 @@ function NavRow({
   onUpdateDropdownLink, onAddDropdownLink, onMoveDropdownLink, onRemoveDropdownLink,
 }) {
   const [dropOpen, setDropOpen] = useState(false);
+  // Auto-detect mode: "internal" if href matches a known internal path, else "external"
+  const [hrefMode, setHrefMode] = useState(
+    () => INTERNAL_PATHS.has(item.href) ? "internal" : "external"
+  );
   const labelEmpty = !item.label.trim();
   const hrefEmpty  = !item.href.trim();
   const hasDropdown = Boolean(item.dropdown);
@@ -354,23 +362,44 @@ function NavRow({
           )}
         </label>
 
-        <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
-          Href
-          <input
-            type="text"
-            value={item.href}
-            onChange={e => onUpdate({ href: e.target.value })}
-            placeholder="/path or https://…"
-            style={{
-              ...inputStyle,
-              marginTop: "0.25rem",
-              borderColor: hrefEmpty ? "#e08080" : undefined,
-            }}
-          />
+        <div style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.35rem" }}>
+            <span>Href</span>
+            <div style={{ display: "flex", gap: "0.75rem", fontSize: "0.74rem", fontWeight: 500 }}>
+              <label style={{ display: "flex", alignItems: "center", gap: "0.25rem", cursor: "pointer", fontWeight: hrefMode === "internal" ? 700 : 400, color: hrefMode === "internal" ? INK : INK_60 }}>
+                <input type="radio" name={`hrefmode-${index}`} checked={hrefMode === "internal"} onChange={() => {
+                  setHrefMode("internal");
+                  onUpdate({ href: INTERNAL_PAGES[0]?.path || "/" });
+                }} style={{ accentColor: NEON }} /> Internal page
+              </label>
+              <label style={{ display: "flex", alignItems: "center", gap: "0.25rem", cursor: "pointer", fontWeight: hrefMode === "external" ? 700 : 400, color: hrefMode === "external" ? INK : INK_60 }}>
+                <input type="radio" name={`hrefmode-${index}`} checked={hrefMode === "external"} onChange={() => setHrefMode("external")} style={{ accentColor: NEON }} /> External URL
+              </label>
+            </div>
+          </div>
+          {hrefMode === "internal" ? (
+            <select
+              value={item.href}
+              onChange={e => onUpdate({ href: e.target.value })}
+              style={{ ...selectStyle, marginTop: 0, borderColor: hrefEmpty ? "#e08080" : undefined }}
+            >
+              {INTERNAL_PAGES.map(p => (
+                <option key={p.key} value={p.path}>{p.label} — {p.path}</option>
+              ))}
+            </select>
+          ) : (
+            <input
+              type="text"
+              value={item.href}
+              onChange={e => onUpdate({ href: e.target.value })}
+              placeholder="https://… or /path"
+              style={{ ...inputStyle, marginTop: 0, borderColor: hrefEmpty ? "#e08080" : undefined }}
+            />
+          )}
           {hrefEmpty && (
             <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" }}>Required</p>
           )}
-        </label>
+        </div>
       </div>
 
       <div style={{

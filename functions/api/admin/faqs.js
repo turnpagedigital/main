@@ -1,9 +1,13 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
+import routesData from "../../src/data/routes.json";
 
 const FAQS_PATH = "src/data/faqs.json";
 
-const VALID_PAGES = ["home", "ai-copyright", "crypto", "press", "briefings", "contact"];
+// Derived from routes.json — add/rename pages there, not here
+const VALID_PAGES = new Set(
+  routesData.routes.filter(r => !r.dynamic && r.key !== "admin").map(r => r.key)
+);
 
 export async function onRequestGet({ request, env }) {
   if (!(await isAuthed(request, env))) {
@@ -76,7 +80,7 @@ function normalizeFaq(f) {
     q:      String(f.q ?? ""),
     a:      typeof f.a === "string" ? f.a : Array.isArray(f.a) ? f.a.map(String).join("\n\n") : "",
     pages:  Array.isArray(f.pages)
-      ? f.pages.filter(p => VALID_PAGES.includes(p))
+      ? f.pages.filter(p => VALID_PAGES.has(p))
       : [],
   };
   if (f.featured !== undefined) result.featured = Boolean(f.featured);
