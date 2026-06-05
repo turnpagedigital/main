@@ -6,6 +6,7 @@ import { I18nProvider } from "./lib/i18n.js";
 import AppHeader from "./components/AppHeader.jsx";
 import Footer from "./components/Footer.jsx";
 import pageMeta from "./data/page-meta.json";
+import pageCompositions from "./data/page-compositions.json";
 import routesData from "./data/routes.json";
 import PageRenderer from "./components/PageRenderer.jsx";
 
@@ -199,23 +200,31 @@ for (const route of routesData.routes) {
   }
 }
 
-// Build a set of page-keys whose active flag is false.
+// Build a set of page-keys whose active flag is false (from page-meta.json legacy system).
 // Path "/" maps to page-key "home"; all other paths strip the leading "/".
-// Home is never included here (server + data both hard-code active: true),
-// but the guard below is belt-and-suspenders.
 const HIDDEN_PAGES = new Set(
   pageMeta.pages
     .filter(p => p.active === false)
     .map(p => (p.path === "/" ? "home" : p.path.replace(/^\//, ""))),
 );
 
+// Build a lookup of page-key → status from page-compositions.json.
+// Draft and Archive both render 404. Active and missing entries are allowed through.
+const COMPOSITION_STATUS = {};
+for (const p of (pageCompositions.pages || [])) {
+  if (p.pageKey && p.status) COMPOSITION_STATUS[p.pageKey] = p.status;
+}
+
 function renderPage(route) {
   // Dynamic route — briefing detail page receives a slug prop
   if (route.page === "briefing") return <Briefing slug={route.slug} />;
 
-  // Hidden pages render NotFound instead of their actual component.
-  // Home is excluded from HIDDEN_PAGES so it's always reachable.
+  // page-meta.json hidden pages → 404
   if (HIDDEN_PAGES.has(route.page)) return <NotFound />;
+
+  // page-compositions.json status check — Draft and Archive render 404
+  const compositionStatus = COMPOSITION_STATUS[route.page];
+  if (compositionStatus === "draft" || compositionStatus === "archive") return <NotFound />;
 
   const factory = PAGE_MAP[route.page];
   if (factory) return factory();

@@ -1,15 +1,18 @@
-/* Page compositions API — manages the section layout of every page.
+/* Page compositions API — manages the section layout and status of every page.
 
    Storage:
-   - src/data/page-compositions.json — ordered section lists per page
+   - src/data/page-compositions.json — ordered section lists + page status per page
    - src/data/routes.json            — route registrations (also updated on POST/DELETE)
 
    GET  → { ok, pages, sectionTypes }
-   PUT  → update one page's sections (reorder, toggle visibility, edit content)
-          body: { pageKey, sections: [...] }
+   PUT  → update one page's sections and/or status
+          body: { pageKey, sections: [...], status?: "active"|"draft"|"archive" }
+          - active:  page is live, visible in nav
+          - draft:   page hidden from nav, URL returns 404
+          - archive: page hidden from nav, URL returns 404
    POST → create a new custom page
-          body: { pageKey, title, path }  (sections starts empty)
-   DELETE ?pageKey=X → remove a custom page (builtIn pages are protected)
+          body: { pageKey, title, path }  (sections starts empty, status: "active")
+   DELETE ?pageKey=X → permanently remove a page (all pages including builtIn)
 */
 
 import { isAuthed, jsonResponse } from "./_utils.js";
@@ -29,6 +32,8 @@ function isValidPath(p) {
   return /^\/[a-z0-9/-]*$/.test(p) && p.length > 1 && p.length <= 120;
 }
 
+const VALID_STATUSES = new Set(["active", "draft", "archive"]);
+
 function normalizeSection(s) {
   if (!s || typeof s !== "object") return null;
   if (typeof s.type !== "string" || !s.type.trim()) return null;
@@ -36,6 +41,9 @@ function normalizeSection(s) {
     id:      typeof s.id === "string" && s.id.trim() ? s.id.trim() : `sec-${Date.now()}-${Math.random().toString(36).slice(2,6)}`,
     type:    s.type.trim(),
     visible: s.visible !== false,
+    // Persist template layout and colorScheme if present
+    ...(typeof s.layout === "string" ? { layout: s.layout } : {}),
+    ...(typeof s.colorScheme === "string" ? { colorScheme: s.colorScheme } : {}),
     // Only persist content if it's a non-empty object
     ...(s.content && typeof s.content === "object" && Object.keys(s.content).length > 0
       ? { content: s.content }
@@ -105,10 +113,17 @@ export async function onRequest({ request, env }) {
       return jsonResponse({ ok: false, error: `Page "${body.pageKey}" not found` }, 404);
     }
 
-    // Optionally update title / path
+    // Optionally update title
     const updated = { ...pages[idx], sections };
     if (typeof body.title === "string" && body.title.trim() && !updated.builtIn) {
       updated.title = body.title.trim();
+    }
+
+    // Update page status (active | draft | archive)
+    if (body.status && VALID_STATUSES.has(body.status)) {
+      updated.status = body.status;
+    } else if (!updated.status) {
+      updated.status = "active"; // ensure field always present
     }
 
     const next = [...pages];
@@ -119,7 +134,8 @@ export async function onRequest({ request, env }) {
     if (comment) payload._comment = comment;
     payload.pages = next;
 
-    const saved = await saveFile(env, COMPOSITIONS_PATH, payload, comp.sha, `Update page layout: ${body.pageKey}`);
+    const statusNote = updated.status !== "active" ? ` [${updated.status}]` : "";
+    const saved = await saveFile(env, COMPOSITIONS_PATH, payload, comp.sha, `Update page layout: ${body.pageKey}${statusNote}`);
     if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 500);
     return jsonResponse({ ok: true });
   }
@@ -158,7 +174,7 @@ export async function onRequest({ request, env }) {
     }
 
     // Add to compositions
-    const newPage = { pageKey, title, path, builtIn: false, sections: [] };
+    const newPage = { pageKey, title, path, builtIn: false, status: "active", sections: [] };
     const nextPages = [...pages, newPage];
     const compPayload = {};
     if (comp.data._comment) compPayload._comment = comp.data._comment;
@@ -201,9 +217,7 @@ export async function onRequest({ request, env }) {
 
     const page = pages.find(p => p.pageKey === pageKey);
     if (!page) return jsonResponse({ ok: false, error: `Page "${pageKey}" not found` }, 404);
-    if (page.builtIn) {
-      return jsonResponse({ ok: false, error: "Built-in pages cannot be deleted" }, 403);
-    }
+    // Note: all pages including builtIn can be deleted per admin settings
 
     const nextPages  = pages.filter(p => p.pageKey !== pageKey);
     const nextRoutes = routesList.filter(r => r.key  !== pageKey);

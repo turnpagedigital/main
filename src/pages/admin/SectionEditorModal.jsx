@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { FONT, INK, INK_60, LINE, SURFACE } from "../../data/tokens.js";
+import { FONT, INK, INK_60, LINE, SURFACE, NEON } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
+import { GLOBAL_COLOR_SCHEMES, SECTION_COLOR_SUPPORT } from "../../components/sections/ColorSchemes.js";
+import sectionTypesData from "../../data/section-types.json";
 
 /* SectionEditorModal — edit the inline content of a section.
    Only section types with dataSource:"inline" have editable content here.
@@ -127,8 +129,64 @@ export default function SectionEditorModal({ section, sectionType, onSave, onClo
           </>
         )}
 
+        {/* ── Unified CTA (new template-based type) ── */}
+        {typeId === "cta" && (
+          <>
+            <LayoutColorPicker typeId="cta" form={form} set={set} sectionTypes={sectionTypesData.sectionTypes} />
+            {/* Layout-specific fields */}
+            {(form.layout === "layout-1-getquote" || !form.layout) && (
+              <>
+                <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Title accent (italic/neon)</label><input style={inputStyle} value={form.titleAccent || ""} onChange={e => set("titleAccent", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Body text</label><textarea style={{ ...inputStyle, minHeight: 70 }} value={form.body || ""} onChange={e => set("body", e.target.value)} /></div>
+                <CTAField label="CTA button" value={form.cta} onChange={v => set("cta", v)} />
+              </>
+            )}
+            {form.layout === "layout-2-banner" && (
+              <>
+                <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Button label</label><input style={inputStyle} value={form.cta || ""} onChange={e => set("cta", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Button link (href)</label><input style={inputStyle} value={form.href || ""} onChange={e => set("href", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Background image URL</label><input style={inputStyle} value={form.image || ""} onChange={e => set("image", e.target.value)} placeholder="/Building_Wide.jpg" /></div>
+              </>
+            )}
+            {form.layout === "layout-3-bottomcta" && (
+              <>
+                <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Accent (italic/neon)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
+                <div style={fieldGroup}><label style={labelStyle}>Kicker (small body text)</label><textarea style={{ ...inputStyle, minHeight: 70 }} value={form.kicker || ""} onChange={e => set("kicker", e.target.value)} /></div>
+                <CTAField label="Primary button" value={form.primary} onChange={v => set("primary", v)} />
+                <CTAField label="Secondary button (optional)" value={form.secondary} onChange={v => set("secondary", v || null)} nullable />
+              </>
+            )}
+          </>
+        )}
+
+        {/* ── FAQ (layout + color pickers) ── */}
+        {typeId === "faq" && (
+          <>
+            <LayoutColorPicker typeId="faq" form={form} set={set} sectionTypes={sectionTypesData.sectionTypes} />
+            <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+            <div style={fieldGroup}><label style={labelStyle}>Accent (italic/neon)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
+            <div style={fieldGroup}><label style={labelStyle}>CTA button label (sidebar layout only)</label><input style={inputStyle} value={form.ctaLabel || ""} onChange={e => set("ctaLabel", e.target.value)} placeholder="e.g. Ask a Question" /></div>
+            <div style={fieldGroup}><label style={labelStyle}>CTA button link</label><input style={inputStyle} value={form.ctaHref || ""} onChange={e => set("ctaHref", e.target.value)} placeholder="/contact" /></div>
+          </>
+        )}
+
+        {/* ── Testimonials (layout + color pickers) ── */}
+        {typeId === "testimonials" && (
+          <>
+            <LayoutColorPicker typeId="testimonials" form={form} set={set} sectionTypes={sectionTypesData.sectionTypes} />
+            <p style={{ fontSize: "0.8rem", color: INK_60, marginTop: "0.5rem" }}>
+              Testimonials content is managed in the Testimonials tab. Layout and color scheme are set here.
+            </p>
+          </>
+        )}
+
         {/* Fallback for unrecognized inline types — raw JSON */}
-        {!["hero","home-hero","stats-band","our-edge","photo-break","cta-banner","bottom-cta","get-quote"].includes(typeId) && (
+        {!["hero","home-hero","stats-band","our-edge","photo-break","cta-banner","bottom-cta","get-quote","cta","faq","testimonials"].includes(typeId) && (
           <div>
             <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.5rem" }}>
               This section type doesn't have a custom editor yet. Raw JSON:
@@ -144,6 +202,87 @@ export default function SectionEditorModal({ section, sectionType, onSave, onClo
         <div style={{ display: "flex", gap: 10, marginTop: "1.2rem" }}>
           <button style={btnPrimaryStyle} onClick={save}>Apply changes</button>
           <button style={btnStyle} onClick={onClose}>Cancel</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* Layout + Color Scheme picker — renders dropdowns for sections that support templates */
+function LayoutColorPicker({ typeId, form, set, sectionTypes }) {
+  const typeDef = (sectionTypes || []).find(t => t.id === typeId);
+  if (!typeDef || !typeDef.layouts || typeDef.layouts.length < 2) return null;
+
+  const currentLayout = form.layout || typeDef.defaultLayout || typeDef.layouts[0].id;
+  const layoutDef = typeDef.layouts.find(l => l.id === currentLayout) || typeDef.layouts[0];
+  const supportedSchemes = layoutDef.supportedColorSchemes || Object.keys(GLOBAL_COLOR_SCHEMES);
+  const currentScheme = form.colorScheme || typeDef.defaultColorScheme || supportedSchemes[0];
+
+  function handleLayoutChange(newLayout) {
+    const newLayoutDef = typeDef.layouts.find(l => l.id === newLayout);
+    const newSchemes = newLayoutDef?.supportedColorSchemes || [];
+    // If current scheme isn't supported by new layout, reset to first available
+    const newScheme = newSchemes.includes(currentScheme) ? currentScheme : (newSchemes[0] || currentScheme);
+    set("layout", newLayout);
+    set("colorScheme", newScheme);
+  }
+
+  return (
+    <div style={{ marginBottom: "1rem", padding: "0.85rem", background: "#F8F9FA", border: `1px solid ${LINE}`, borderLeft: `3px solid ${NEON}` }}>
+      <p style={{ fontSize: "0.7rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.75rem" }}>
+        Template Options
+      </p>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+        {/* Layout selector */}
+        <div>
+          <label style={{ ...labelStyle, marginBottom: 4 }}>Layout</label>
+          <select
+            value={currentLayout}
+            onChange={e => handleLayoutChange(e.target.value)}
+            style={{ ...inputStyle, cursor: "pointer" }}
+          >
+            {typeDef.layouts.map(l => (
+              <option key={l.id} value={l.id}>{l.displayName}</option>
+            ))}
+          </select>
+          {layoutDef && (
+            <p style={{ fontSize: "0.72rem", color: INK_60, marginTop: 4 }}>{layoutDef.description}</p>
+          )}
+        </div>
+
+        {/* Color scheme selector */}
+        <div>
+          <label style={{ ...labelStyle, marginBottom: 4 }}>Color Scheme</label>
+          <select
+            value={currentScheme}
+            onChange={e => set("colorScheme", e.target.value)}
+            style={{ ...inputStyle, cursor: "pointer" }}
+          >
+            {supportedSchemes.map(schemeKey => {
+              const scheme = GLOBAL_COLOR_SCHEMES[schemeKey];
+              return (
+                <option key={schemeKey} value={schemeKey}>
+                  {scheme ? scheme.label : schemeKey}
+                </option>
+              );
+            })}
+          </select>
+          {/* Color preview swatch */}
+          {GLOBAL_COLOR_SCHEMES[currentScheme] && (
+            <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 4 }}>
+              <div style={{
+                width: 14, height: 14, borderRadius: 2,
+                background: GLOBAL_COLOR_SCHEMES[currentScheme].background === "image"
+                  ? "linear-gradient(135deg, #888 50%, #555)"
+                  : GLOBAL_COLOR_SCHEMES[currentScheme].background,
+                border: "1px solid rgba(0,0,0,0.15)",
+                flexShrink: 0,
+              }} />
+              <span style={{ fontSize: "0.72rem", color: INK_60 }}>
+                {GLOBAL_COLOR_SCHEMES[currentScheme].label}
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </div>

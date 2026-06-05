@@ -48,8 +48,10 @@ export default function PageBuilderTab({ onDirtyChange }) {
   const [toast, setToast]             = useState("");
 
   // Editor state for the selected page
-  const [sections, setSections]       = useState([]);
+  const [sections, setSections]           = useState([]);
   const [originalSections, setOriginalSections] = useState([]);
+  const [pageStatus, setPageStatus]       = useState("active");
+  const [originalStatus, setOriginalStatus] = useState("active");
 
   // Modals
   const [editingSection, setEditingSection] = useState(null);   // { section, sectionType }
@@ -61,8 +63,9 @@ export default function PageBuilderTab({ onDirtyChange }) {
   useEffect(() => { load(); }, []);
 
   const dirty = useMemo(() =>
-    JSON.stringify(sections) !== JSON.stringify(originalSections),
-    [sections, originalSections]
+    JSON.stringify(sections) !== JSON.stringify(originalSections) ||
+    pageStatus !== originalStatus,
+    [sections, originalSections, pageStatus, originalStatus]
   );
   useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
 
@@ -89,6 +92,9 @@ export default function PageBuilderTab({ onDirtyChange }) {
     const s = JSON.parse(JSON.stringify(page.sections || []));
     setSections(s);
     setOriginalSections(s);
+    const st = page.status || "active";
+    setPageStatus(st);
+    setOriginalStatus(st);
     setError(""); setToast("");
     onDirtyChange?.(false);
   }
@@ -101,11 +107,12 @@ export default function PageBuilderTab({ onDirtyChange }) {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ pageKey: selectedKey, sections }),
+        body: JSON.stringify({ pageKey: selectedKey, sections, status: pageStatus }),
       });
       const data = await res.json();
       if (!data.ok) throw new Error(data.error || "Save failed");
       setOriginalSections(JSON.parse(JSON.stringify(sections)));
+      setOriginalStatus(pageStatus);
       onDirtyChange?.(false);
       setToast("Layout saved");
       // Refresh page list to keep in sync
@@ -157,7 +164,15 @@ export default function PageBuilderTab({ onDirtyChange }) {
 
   function updateSectionContent(i, newContent) {
     const next = [...sections];
-    next[i] = { ...next[i], content: newContent };
+    // Extract layout/colorScheme from content and also store them at section level
+    // (page-compositions.json stores them both places for redundancy)
+    const { layout, colorScheme, ...rest } = newContent || {};
+    next[i] = {
+      ...next[i],
+      content: newContent,
+      ...(layout !== undefined ? { layout } : {}),
+      ...(colorScheme !== undefined ? { colorScheme } : {}),
+    };
     setSections(next);
   }
 
@@ -173,7 +188,8 @@ export default function PageBuilderTab({ onDirtyChange }) {
 
   function sectionIsEditable(typeId) {
     const st = sectionTypes.find(t => t.id === typeId);
-    return st && st.dataSource === "inline";
+    // Inline types are always editable; shared types with layout options are editable for template configuration
+    return st && (st.dataSource === "inline" || (st.layouts && st.layouts.length > 1));
   }
 
   // Short human summary of a section's inline content, so two sections of the
@@ -298,18 +314,26 @@ export default function PageBuilderTab({ onDirtyChange }) {
                   style={{ flex: 1, fontSize: "0.88rem", fontWeight: p.pageKey === selectedKey ? 700 : 500 }}
                   onClick={() => selectPage(p)}
                 >
-                  {p.title}
+                  <span style={{ display: "flex", alignItems: "center", gap: 5 }}>
+                    {p.title}
+                    {p.status && p.status !== "active" && (() => {
+                      const cfg = { draft: { label: "Draft", color: "#9a6700", bg: "rgba(154,103,0,0.12)" }, archive: { label: "Archive", color: "#57606a", bg: "rgba(87,96,106,0.12)" } }[p.status];
+                      return cfg ? (
+                        <span style={{ fontSize: "0.6rem", fontWeight: 800, letterSpacing: "0.04em", textTransform: "uppercase", padding: "0 4px", borderRadius: 2, background: cfg.bg, color: cfg.color }}>
+                          {cfg.label}
+                        </span>
+                      ) : null;
+                    })()}
+                  </span>
                   <span style={{ display: "block", fontSize: "0.7rem", color: INK_60, fontFamily: "monospace", marginTop: 1 }}>{p.path}</span>
                 </span>
-                {!p.builtIn && (
-                  <button
-                    style={{ ...ICON_BTN, color: "#c0392b", borderColor: "#e3b7b1", marginLeft: 4, fontSize: "1rem" }}
-                    onClick={() => setDeleteConfirm(p.pageKey)}
-                    title="Delete page"
-                  >
-                    ×
-                  </button>
-                )}
+                <button
+                  style={{ ...ICON_BTN, color: "#c0392b", borderColor: "#e3b7b1", marginLeft: 4, fontSize: "1rem" }}
+                  onClick={() => setDeleteConfirm(p.pageKey)}
+                  title="Delete page"
+                >
+                  ×
+                </button>
               </div>
             ))}
           </div>
@@ -339,9 +363,13 @@ export default function PageBuilderTab({ onDirtyChange }) {
                 </div>
               </div>
 
-              <p style={{ fontSize: "0.74rem", color: INK_60, margin: "0 0 0.9rem" }}>
-                Saved changes publish to the live site after it rebuilds (~1–2 min).
-              </p>
+              {/* ── Page Status Bar ───────────────────────────────────── */}
+              <PageStatusBar
+                status={pageStatus}
+                onChange={setPageStatus}
+                pageKey={selectedKey}
+                onDelete={() => setDeleteConfirm(selectedKey)}
+              />
 
               {sections.length === 0 ? (
                 <div style={{ padding: "2rem", textAlign: "center", border: `1px dashed ${LINE}`, color: INK_60, fontSize: "0.9rem" }}>
@@ -367,7 +395,44 @@ export default function PageBuilderTab({ onDirtyChange }) {
 
                         {/* Section info */}
                         <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ fontWeight: 700, fontSize: "0.88rem" }}>{sectionTypeLabel(s.type)}</div>
+                          <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+                            <span style={{ fontWeight: 700, fontSize: "0.88rem" }}>{sectionTypeLabel(s.type)}</span>
+                            {/* Layout badge — shown for template-enabled section types */}
+                            {s.layout && (
+                              <span style={{
+                                fontSize: "0.65rem", fontWeight: 700, padding: "0 5px", height: 16,
+                                display: "inline-flex", alignItems: "center",
+                                background: "rgba(212,255,0,0.15)", color: "#4a6000",
+                                border: "1px solid rgba(212,255,0,0.4)", borderRadius: 3,
+                                letterSpacing: "0.03em", textTransform: "uppercase",
+                              }}>
+                                {(() => {
+                                  const st = sectionTypes.find(t => t.id === s.type);
+                                  const ld = st?.layouts?.find(l => l.id === s.layout);
+                                  return ld ? ld.displayName : s.layout;
+                                })()}
+                              </span>
+                            )}
+                            {/* Color scheme dot */}
+                            {s.colorScheme && (
+                              <span title={s.colorScheme} style={{
+                                fontSize: "0.65rem", fontWeight: 600, padding: "0 5px", height: 16,
+                                display: "inline-flex", alignItems: "center", gap: 4,
+                                background: "#F3F4F6", color: INK_60,
+                                border: `1px solid ${LINE}`, borderRadius: 3,
+                              }}>
+                                <span style={{
+                                  display: "inline-block", width: 8, height: 8, borderRadius: "50%",
+                                  background: {
+                                    light: "#E5E7EB", "light-gray": "#D1D5DB", "light-card": "#fff",
+                                    dark: "#0A0A0A", photo: "linear-gradient(135deg,#888 50%,#444)",
+                                  }[s.colorScheme] || "#ccc",
+                                  border: "1px solid rgba(0,0,0,0.15)",
+                                }} />
+                                {s.colorScheme}
+                              </span>
+                            )}
+                          </div>
                           {(() => {
                             const summary = sectionSummary(s);
                             return (
@@ -511,19 +576,32 @@ export default function PageBuilderTab({ onDirtyChange }) {
       )}
 
       {/* Delete Confirm */}
-      {deleteConfirm && (
-        <Modal onClose={() => setDeleteConfirm(null)}>
-          <p style={{ marginBottom: "1.1rem" }}>
-            Delete page "<strong>{(pages.find(p => p.pageKey === deleteConfirm) || {}).title || deleteConfirm}</strong>"? The route and all section data will be removed. This can't be undone.
-          </p>
-          <div style={{ display: "flex", gap: 10 }}>
-            <button style={{ ...btnPrimaryStyle, background: "#c0392b", color: "#fff" }} onClick={() => deletePage(deleteConfirm)} disabled={saving}>
-              Delete
-            </button>
-            <button style={btnStyle} onClick={() => setDeleteConfirm(null)} disabled={saving}>Cancel</button>
-          </div>
-        </Modal>
-      )}
+      {deleteConfirm && (() => {
+        const target = pages.find(p => p.pageKey === deleteConfirm);
+        const isBuiltIn = target && target.builtIn;
+        return (
+          <Modal onClose={() => setDeleteConfirm(null)}>
+            <h3 style={{ fontWeight: 800, marginBottom: "0.75rem", color: "#c0392b" }}>
+              {isBuiltIn ? "⚠ Delete built-in page?" : "Delete page?"}
+            </h3>
+            <p style={{ marginBottom: "0.75rem" }}>
+              Delete <strong>{target ? target.title : deleteConfirm}</strong>?
+              The route and all section data will be permanently removed. This can't be undone.
+            </p>
+            {isBuiltIn && (
+              <p style={{ marginBottom: "1rem", padding: "0.6rem 0.75rem", background: "rgba(192,57,43,0.08)", border: "1px solid rgba(192,57,43,0.3)", fontSize: "0.85rem", color: "#9a3020" }}>
+                This is a core site page. If you delete it, the route will be broken and the page can't be recovered from the admin. You'd need to restore it via code. Consider setting it to <strong>Archive</strong> instead.
+              </p>
+            )}
+            <div style={{ display: "flex", gap: 10 }}>
+              <button style={{ ...btnPrimaryStyle, background: "#c0392b", color: "#fff" }} onClick={() => deletePage(deleteConfirm)} disabled={saving}>
+                {saving ? "Deleting…" : "Delete permanently"}
+              </button>
+              <button style={btnStyle} onClick={() => setDeleteConfirm(null)} disabled={saving}>Cancel</button>
+            </div>
+          </Modal>
+        );
+      })()}
     </div>
   );
 }
@@ -548,6 +626,69 @@ function Modal({ children, onClose }) {
     >
       <div style={{ background: SURFACE, border: `1px solid ${LINE}`, padding: "1.5rem", maxWidth: 480, width: "100%", fontFamily: FONT, color: INK, maxHeight: "80vh", overflowY: "auto" }}>
         {children}
+      </div>
+    </div>
+  );
+}
+
+/* ── Page Status Bar ──────────────────────────────────────────────────────── */
+const STATUS_CONFIG = {
+  active:  { label: "Active",  color: "#1a7f37", bg: "rgba(26,127,55,0.10)",  border: "rgba(26,127,55,0.35)",  dot: "#2da44e", desc: "Live on the site, visible in nav." },
+  draft:   { label: "Draft",   color: "#9a6700", bg: "rgba(154,103,0,0.10)",  border: "rgba(154,103,0,0.35)",  dot: "#d4a017", desc: "Hidden from nav, returns 404 to visitors." },
+  archive: { label: "Archive", color: "#57606a", bg: "rgba(87,96,106,0.10)",  border: "rgba(87,96,106,0.35)", dot: "#8c959f", desc: "Taken offline. URL returns 404." },
+};
+
+function PageStatusBar({ status, onChange, pageKey, onDelete }) {
+  const cfg = STATUS_CONFIG[status] || STATUS_CONFIG.active;
+
+  return (
+    <div style={{
+      display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap",
+      padding: "0.6rem 0.9rem",
+      background: cfg.bg, border: `1px solid ${cfg.border}`,
+      marginBottom: "0.9rem",
+    }}>
+      {/* Status dot + label */}
+      <div style={{ display: "flex", alignItems: "center", gap: 6, flex: 1 }}>
+        <span style={{ width: 9, height: 9, borderRadius: "50%", background: cfg.dot, flexShrink: 0 }} />
+        <span style={{ fontWeight: 800, fontSize: "0.82rem", color: cfg.color, letterSpacing: "0.03em" }}>
+          {cfg.label}
+        </span>
+        <span style={{ fontSize: "0.78rem", color: cfg.color, opacity: 0.8 }}>— {cfg.desc}</span>
+      </div>
+
+      {/* Status selector */}
+      <div style={{ display: "flex", gap: 6, flexShrink: 0, flexWrap: "wrap" }}>
+        {Object.entries(STATUS_CONFIG).map(([key, c]) => (
+          <button
+            key={key}
+            onClick={() => onChange(key)}
+            style={{
+              fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
+              padding: "0.25rem 0.65rem", border: `1px solid`,
+              borderColor: status === key ? c.dot : "rgba(0,0,0,0.15)",
+              background: status === key ? c.bg : "transparent",
+              color: status === key ? c.color : INK_60,
+              cursor: "pointer", borderRadius: 3,
+              transition: "all 0.15s",
+            }}
+          >
+            {c.label}
+          </button>
+        ))}
+        <button
+          onClick={onDelete}
+          title="Permanently delete this page"
+          style={{
+            fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
+            padding: "0.25rem 0.65rem",
+            border: "1px solid rgba(192,57,43,0.3)",
+            background: "rgba(192,57,43,0.06)",
+            color: "#c0392b", cursor: "pointer", borderRadius: 3,
+          }}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );
