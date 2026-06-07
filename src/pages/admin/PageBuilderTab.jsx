@@ -4,6 +4,8 @@ import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx
 import SectionEditorModal from "./SectionEditorModal.jsx";
 import PagePreviewOverlay from "./PagePreviewOverlay.jsx";
 import TemplatePicker from "./TemplatePicker.jsx";
+import CenterPreview from "./visualeditor/CenterPreview.jsx";
+import PropertyPanel from "./visualeditor/PropertyPanel.jsx";
 
 /* PageBuilderTab — view and manage the section composition of every page.
 
@@ -53,6 +55,8 @@ export default function PageBuilderTab({ onDirtyChange }) {
   const [originalSections, setOriginalSections] = useState([]);
   const [pageStatus, setPageStatus]       = useState("active");
   const [originalStatus, setOriginalStatus] = useState("active");
+  // Visual editor: which section in the live preview is currently selected
+  const [selectedSectionId, setSelectedSectionId] = useState(null);
 
   // Modals
   const [editingSection, setEditingSection] = useState(null);   // { section, sectionType }
@@ -96,6 +100,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
     const st = page.status || "active";
     setPageStatus(st);
     setOriginalStatus(st);
+    setSelectedSectionId(null);  // clear preview selection when switching pages
     setError(""); setToast("");
     onDirtyChange?.(false);
   }
@@ -303,7 +308,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
         {toast && <Banner kind="ok">{toast}</Banner>}
         {loading && <p style={{ color: INK_60 }}>Loading…</p>}
 
-        <div style={{ display: "grid", gridTemplateColumns: "220px 1fr", gap: "1.5rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "200px minmax(0, 1fr) 320px", gap: "1.25rem", alignItems: "start" }}>
           {/* Left: page list */}
           <div>
             <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: INK_60, marginBottom: "0.6rem" }}>
@@ -350,23 +355,24 @@ export default function PageBuilderTab({ onDirtyChange }) {
             ))}
           </div>
 
-          {/* Right: section list */}
+          {/* Center: live page preview */}
           {selectedPage ? (
             <div>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.9rem" }}>
+              {/* ── Header row above the preview ────────────────────────── */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.6rem", gap: 12, flexWrap: "wrap" }}>
                 <h3 style={{ fontSize: "1rem", fontWeight: 800, margin: 0 }}>
                   {selectedPage.title}
-                  <span style={{ fontSize: "0.75rem", fontWeight: 500, color: INK_60, marginLeft: 8, fontFamily: "monospace" }}>{selectedPage.path}</span>
+                  <span style={{ fontSize: "0.72rem", fontWeight: 500, color: INK_60, marginLeft: 8, fontFamily: "monospace" }}>{selectedPage.path}</span>
                 </h3>
                 <div style={{ display: "flex", gap: 8 }}>
-                  <button style={{ ...btnStyle, fontSize: "0.82rem" }} onClick={() => setPreviewOpen(true)} disabled={saving || sections.length === 0} title={sections.length === 0 ? "Add a section to preview" : "Preview this page with your unsaved changes"}>
-                    Preview
+                  <button style={{ ...btnStyle, fontSize: "0.78rem" }} onClick={() => setPreviewOpen(true)} disabled={saving || sections.length === 0} title={sections.length === 0 ? "Add a section to preview" : "Open in full screen"}>
+                    Full preview
                   </button>
-                  <button style={{ ...btnStyle, fontSize: "0.82rem" }} onClick={() => setAddPickerOpen(true)} disabled={saving}>
+                  <button style={{ ...btnStyle, fontSize: "0.78rem" }} onClick={() => setAddPickerOpen(true)} disabled={saving}>
                     + Add section
                   </button>
                   <button
-                    style={{ ...btnPrimaryStyle, opacity: (!dirty || saving) ? 0.5 : 1, cursor: (!dirty || saving) ? "default" : "pointer" }}
+                    style={{ ...btnPrimaryStyle, fontSize: "0.78rem", opacity: (!dirty || saving) ? 0.5 : 1, cursor: (!dirty || saving) ? "default" : "pointer" }}
                     onClick={save}
                     disabled={!dirty || saving}
                   >
@@ -383,114 +389,81 @@ export default function PageBuilderTab({ onDirtyChange }) {
                 onDelete={() => setDeleteConfirm(selectedKey)}
               />
 
-              {sections.length === 0 ? (
-                <div style={{ padding: "2rem", textAlign: "center", border: `1px dashed ${LINE}`, color: INK_60, fontSize: "0.9rem" }}>
-                  No sections yet. Click "+ Add section" to start building this page.
-                </div>
-              ) : (
-                <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                  {sections.map((s, i) => {
-                    const isInline = sectionIsEditable(s.type);
-                    return (
-                      <div key={s.id} style={{
-                        display: "flex", alignItems: "center", gap: 8,
-                        padding: "0.65rem 0.75rem",
-                        background: s.visible ? SURFACE : "#F7F7F7",
-                        border: `1px solid ${LINE}`,
-                        opacity: s.visible ? 1 : 0.55,
-                      }}>
-                        {/* Reorder */}
-                        <div style={{ display: "flex", flexDirection: "column", gap: 2, flexShrink: 0 }}>
-                          <button style={{ ...ICON_BTN, height: 22, fontSize: "0.65rem" }} onClick={() => moveUp(i)} disabled={i === 0} title="Move up">▲</button>
-                          <button style={{ ...ICON_BTN, height: 22, fontSize: "0.65rem" }} onClick={() => moveDown(i)} disabled={i === sections.length - 1} title="Move down">▼</button>
-                        </div>
+              {/* ── Section action toolbar (for the selected section) ─── */}
+              {selectedSectionId && (() => {
+                const idx = sections.findIndex(s => s.id === selectedSectionId);
+                if (idx < 0) return null;
+                const s = sections[idx];
+                const st = sectionTypes.find(t => t.id === s.type);
+                const isInline = sectionIsEditable(s.type);
+                return (
+                  <div style={{
+                    display: "flex", alignItems: "center", gap: 8,
+                    padding: "0.45rem 0.75rem",
+                    background: "rgba(212,255,0,0.10)",
+                    border: `1px solid ${NEON}`,
+                    marginBottom: "0.6rem",
+                    fontSize: "0.78rem",
+                  }}>
+                    <span style={{ fontWeight: 700 }}>
+                      Editing: {st ? st.displayName : s.type}
+                    </span>
+                    <span style={{ flex: 1 }} />
+                    <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveUp(idx)} disabled={idx === 0} title="Move up">▲ Up</button>
+                    <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveDown(idx)} disabled={idx === sections.length - 1} title="Move down">▼ Down</button>
+                    <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => toggleVisible(idx)} title={s.visible ? "Hide" : "Show"}>
+                      {s.visible ? "Hide" : "Show"}
+                    </button>
+                    {isInline && (
+                      <button
+                        style={{ ...btnStyle, fontSize: "0.74rem", padding: "0.22rem 0.55rem" }}
+                        onClick={() => setEditingSection({ index: idx, section: s, sectionType: st })}
+                      >
+                        Edit content
+                      </button>
+                    )}
+                    <button
+                      style={{ ...ICON_BTN, color: "#c0392b", borderColor: "#e3b7b1", fontSize: "0.95rem", width: 26, height: 26 }}
+                      onClick={() => removeSection(idx)}
+                      title="Remove section"
+                    >
+                      ×
+                    </button>
+                  </div>
+                );
+              })()}
 
-                        {/* Section info */}
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
-                            <span style={{ fontWeight: 700, fontSize: "0.88rem" }}>{sectionTypeLabel(s.type)}</span>
-                            {/* Layout badge — shown for template-enabled section types */}
-                            {s.layout && (
-                              <span style={{
-                                fontSize: "0.65rem", fontWeight: 700, padding: "0 5px", height: 16,
-                                display: "inline-flex", alignItems: "center",
-                                background: "rgba(212,255,0,0.15)", color: "#4a6000",
-                                border: "1px solid rgba(212,255,0,0.4)", borderRadius: 3,
-                                letterSpacing: "0.03em", textTransform: "uppercase",
-                              }}>
-                                {(() => {
-                                  const st = sectionTypes.find(t => t.id === s.type);
-                                  const ld = st?.layouts?.find(l => l.id === s.layout);
-                                  return ld ? ld.displayName : s.layout;
-                                })()}
-                              </span>
-                            )}
-                            {/* Color scheme dot */}
-                            {s.colorScheme && (
-                              <span title={s.colorScheme} style={{
-                                fontSize: "0.65rem", fontWeight: 600, padding: "0 5px", height: 16,
-                                display: "inline-flex", alignItems: "center", gap: 4,
-                                background: "#F3F4F6", color: INK_60,
-                                border: `1px solid ${LINE}`, borderRadius: 3,
-                              }}>
-                                <span style={{
-                                  display: "inline-block", width: 8, height: 8, borderRadius: "50%",
-                                  background: {
-                                    light: "#E5E7EB", "light-gray": "#D1D5DB", "light-card": "#fff",
-                                    dark: "#0A0A0A", photo: "linear-gradient(135deg,#888 50%,#444)",
-                                  }[s.colorScheme] || "#ccc",
-                                  border: "1px solid rgba(0,0,0,0.15)",
-                                }} />
-                                {s.colorScheme}
-                              </span>
-                            )}
-                          </div>
-                          {(() => {
-                            const summary = sectionSummary(s);
-                            return (
-                              <div
-                                style={{ fontSize: "0.72rem", color: INK_60, marginTop: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontStyle: summary ? "italic" : "normal" }}
-                                title={summary || undefined}
-                              >
-                                {summary || sectionDataSource(s.type)}
-                              </div>
-                            );
-                          })()}
-                        </div>
-
-                        {/* Actions */}
-                        {isInline && (
-                          <button
-                            style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.6rem" }}
-                            onClick={() => setEditingSection({ index: i, section: s, sectionType: sectionTypes.find(t => t.id === s.type) })}
-                          >
-                            Edit content
-                          </button>
-                        )}
-                        <button
-                          style={{ ...ICON_BTN, fontSize: "0.78rem", minWidth: 64 }}
-                          onClick={() => toggleVisible(i)}
-                          title={s.visible ? "Hide from page" : "Show on page"}
-                        >
-                          {s.visible ? "Visible" : "Hidden"}
-                        </button>
-                        <button
-                          style={{ ...ICON_BTN, color: "#c0392b", borderColor: "#e3b7b1", fontSize: "1rem", width: 30 }}
-                          onClick={() => removeSection(i)}
-                          title="Remove section"
-                        >
-                          ×
-                        </button>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
+              {/* ── Live page preview ─────────────────────────────────── */}
+              <CenterPreview
+                sections={sections}
+                pageKey={selectedKey}
+                pagePath={selectedPage.path}
+                pageTitle={selectedPage.title}
+                selectedSectionId={selectedSectionId}
+                onSelectSection={setSelectedSectionId}
+                sectionTypes={sectionTypes}
+              />
             </div>
           ) : (
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", color: INK_60, fontSize: "0.9rem" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", color: INK_60, fontSize: "0.9rem", padding: "3rem 1rem" }}>
               Select a page on the left to manage its sections.
             </div>
+          )}
+
+          {/* Right: property panel */}
+          {selectedPage && (
+            <PropertyPanel
+              pageTitle={selectedPage.title}
+              selectedSection={sections.find(s => s.id === selectedSectionId) || null}
+              sectionTypeDef={(() => {
+                const s = sections.find(s => s.id === selectedSectionId);
+                if (!s) return null;
+                return sectionTypes.find(t => t.id === s.type);
+              })()}
+              sections={sections}
+              selectedSectionId={selectedSectionId}
+              onSelectSection={setSelectedSectionId}
+            />
           )}
         </div>
       </div>
