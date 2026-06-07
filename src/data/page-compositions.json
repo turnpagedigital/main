@@ -240,6 +240,11 @@
           }
         },
         {
+          "id": "sec-1780809335234-4wsc",
+          "type": "bio",
+          "visible": true
+        },
+        {
           "id": "sec-aic-testimonials",
           "type": "testimonials",
           "visible": true,
@@ -268,21 +273,17 @@
           }
         },
         {
-          "id": "sec-1780809335234-4wsc",
-          "type": "bio",
-          "visible": true
-        },
-        {
           "id": "sec-aic-faq",
           "type": "faq",
           "visible": true,
           "layout": "layout-2-sidebar",
-          "colorScheme": "light",
+          "colorScheme": "light-card",
           "content": {
             "title": "Copyright claims,",
             "accent": "answered.",
             "ctaLabel": "Ask a Question",
-            "ctaHref": "/contact?source=ai-copyright"
+            "ctaHref": "/contact?source=ai-copyright",
+            "colorScheme": "light-card"
           }
         }
       ],
