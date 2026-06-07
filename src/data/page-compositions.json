@@ -332,6 +332,16 @@
           "visible": false
         },
         {
+          "id": "sec-1780810488155-w95s",
+          "type": "photo-break",
+          "visible": true,
+          "content": {
+            "imageUrl": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg",
+            "overlayText": "We know",
+            "overlayAccent": "crypto"
+          }
+        },
+        {
           "id": "sec-crypto-experience",
           "type": "experience",
           "visible": true
@@ -404,16 +414,6 @@
             "ctaLabel": "Get a Quote",
             "ctaHref": "/contact?source=crypto",
             "colorScheme": "light-gray"
-          }
-        },
-        {
-          "id": "sec-1780810488155-w95s",
-          "type": "photo-break",
-          "visible": true,
-          "content": {
-            "imageUrl": "/bg-paper.jpg",
-            "overlayText": "We know",
-            "overlayAccent": "crypto"
           }
         }
       ],
