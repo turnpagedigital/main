@@ -10,13 +10,13 @@
       "id": "funds-institutions",
       "title": "Funds & Institutions",
       "body": "Bulk dispositions and side-pocket cleanups. Size moved discreetly.",
-      "priority": false
+      "priority": true
     },
     {
       "id": "estates-trustees",
       "title": "Estates & Trustees",
       "body": "Administering an estate or trust? We can quote the entire position.",
-      "priority": false
+      "priority": true
     }
   ],
   "serviceCards": [
