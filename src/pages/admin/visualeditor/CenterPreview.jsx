@@ -75,10 +75,7 @@ export default function CenterPreview({
   }, [sections]);  // re-observe when sections change (new section added etc.)
 
   const scale = containerWidth > 0 ? containerWidth / DESKTOP_W : 1;
-  // Cap the preview at one desktop viewport height (16:10 aspect ratio).
-  // Showing the full scaled page height creates a scroll-within-a-scroll;
-  // use "Full preview" to see the whole page.
-  const clipHeight = Math.ceil(DESKTOP_H * scale);
+  const clipHeight = innerHeight > 0 ? Math.ceil(innerHeight * scale) : Math.ceil(DESKTOP_H * scale);
 
   const visible = (sections || []).filter(s => s.visible !== false);
 

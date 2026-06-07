@@ -47,8 +47,9 @@ export default function PreviewFrame({ path = "/", children }) {
         </div>
       </div>
 
-      {/* Page body — height is controlled by CenterPreview's clip div */}
-      <div style={{ position: "relative", overflow: "hidden" }}>
+      {/* Page body — aspect-ratio constrains the window to 16:10 (desktop viewport);
+          overflowY:auto allows scrolling to see the rest of the page. */}
+      <div style={{ position: "relative", aspectRatio: "16/10", overflowY: "auto", overflowX: "hidden" }}>
         {children}
       </div>
     </div>
