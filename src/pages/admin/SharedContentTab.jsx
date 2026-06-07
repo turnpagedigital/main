@@ -9,6 +9,7 @@ const PressTab         = lazy(() => import("./PressTab.jsx"));
 const AlertsTab        = lazy(() => import("./AlertsTab.jsx"));
 const FAQsTab          = lazy(() => import("./FAQsTab.jsx"));
 const TestimonialsTab  = lazy(() => import("./TestimonialsTab.jsx"));
+const ContactFormTab   = lazy(() => import("./ContactFormTab.jsx"));
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SharedContentTab — master wrapper for Bio, Posts, Deals, Press, Alerts,
@@ -23,13 +24,14 @@ const TestimonialsTab  = lazy(() => import("./TestimonialsTab.jsx"));
 ═══════════════════════════════════════════════════════════════════════════ */
 
 const SUB_TABS = [
-  { key: "bio",          label: "Bio" },
-  { key: "posts",        label: "Posts" },
-  { key: "deals",        label: "Deals" },
-  { key: "press",        label: "Press" },
-  { key: "alerts",       label: "Alerts" },
-  { key: "faqs",         label: "FAQs" },
-  { key: "testimonials", label: "Testimonials" },
+  { key: "bio",           label: "Bio" },
+  { key: "posts",         label: "Posts" },
+  { key: "deals",         label: "Deals" },
+  { key: "press",         label: "Press" },
+  { key: "alerts",        label: "Alerts" },
+  { key: "faqs",          label: "FAQs" },
+  { key: "testimonials",  label: "Testimonials" },
+  { key: "contact-form",  label: "Contact Form" },
 ];
 
 function getSubTab() {
@@ -117,13 +119,14 @@ export default function SharedContentTab({ onDirtyChange }) {
 
       {/* Render the active child (lazy-loaded) */}
       <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
-        {sub === "bio"          && <BioTab          onDirtyChange={makeDirty("bio")} />}
-        {sub === "posts"        && <PostsTab        onDirtyChange={makeDirty("posts")} />}
-        {sub === "deals"        && <DealsTab        onDirtyChange={makeDirty("deals")} />}
-        {sub === "press"        && <PressTab        onDirtyChange={makeDirty("press")} />}
-        {sub === "alerts"       && <AlertsTab       onDirtyChange={makeDirty("alerts")} />}
-        {sub === "faqs"         && <FAQsTab         onDirtyChange={makeDirty("faqs")} />}
-        {sub === "testimonials" && <TestimonialsTab onDirtyChange={makeDirty("testimonials")} />}
+        {sub === "bio"           && <BioTab          onDirtyChange={makeDirty("bio")} />}
+        {sub === "posts"         && <PostsTab        onDirtyChange={makeDirty("posts")} />}
+        {sub === "deals"         && <DealsTab        onDirtyChange={makeDirty("deals")} />}
+        {sub === "press"         && <PressTab        onDirtyChange={makeDirty("press")} />}
+        {sub === "alerts"        && <AlertsTab       onDirtyChange={makeDirty("alerts")} />}
+        {sub === "faqs"          && <FAQsTab         onDirtyChange={makeDirty("faqs")} />}
+        {sub === "testimonials"  && <TestimonialsTab onDirtyChange={makeDirty("testimonials")} />}
+        {sub === "contact-form"  && <ContactFormTab  onDirtyChange={makeDirty("contact-form")} />}
       </Suspense>
     </div>
   );

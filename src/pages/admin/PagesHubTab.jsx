@@ -2,27 +2,17 @@ import React, { useState, useEffect, useCallback, Suspense, lazy } from "react";
 import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
 
 // Lazy-load sub-tabs
-const PageBuilderTab = lazy(() => import("./PageBuilderTab.jsx"));
+const PageBuilderTab  = lazy(() => import("./PageBuilderTab.jsx"));
 const SectionTypesTab = lazy(() => import("./SectionTypesTab.jsx"));
-const HomeContentTab = lazy(() => import("./HomeContentTab.jsx"));
-const MarketingPagesTab = lazy(() => import("./MarketingPagesTab.jsx"));
-const ContactFormTab = lazy(() => import("./ContactFormTab.jsx"));
 
-/* PagesHubTab — master wrapper for page management and content.
-   Sub-tab strip → Builder / Section Types / Home Content / Marketing Pages / Contact Form
-
-   URL: /admin/pages                      → defaults to "builder"
-        /admin/pages/sections             → Section Types
-        /admin/pages/home                 → Home Content (situations, testimonials)
-        /admin/pages/marketing            → Marketing Pages (audience cards, services, comparisons)
-        /admin/pages/contact-form         → Contact Form settings */
+/* PagesHubTab — page builder + section types.
+   Content editing for shared sections (situations, audience cards, service cards, etc.)
+   is accessed via "Edit content" on each section in the Builder.
+   Contact Form settings live under Content → Contact Form. */
 
 const SUB_TABS = [
-  { key: "builder",       label: "Builder" },
-  { key: "sections",      label: "Section Types" },
-  { key: "home",          label: "Home Content" },
-  { key: "marketing",     label: "Marketing Pages" },
-  { key: "contact-form",  label: "Contact Form" },
+  { key: "builder",  label: "Builder" },
+  { key: "sections", label: "Section Types" },
 ];
 
 export default function PagesHubTab({ onDirtyChange }) {
@@ -82,11 +72,8 @@ export default function PagesHubTab({ onDirtyChange }) {
       </div>
 
       <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
-        {sub === "builder"       && <PageBuilderTab      onDirtyChange={makeDirty("builder")} />}
-        {sub === "sections"      && <SectionTypesTab />}
-        {sub === "home"          && <HomeContentTab      onDirtyChange={makeDirty("home")} />}
-        {sub === "marketing"     && <MarketingPagesTab   onDirtyChange={makeDirty("marketing")} />}
-        {sub === "contact-form"  && <ContactFormTab      onDirtyChange={makeDirty("contact-form")} />}
+        {sub === "builder"  && <PageBuilderTab  onDirtyChange={makeDirty("builder")} />}
+        {sub === "sections" && <SectionTypesTab />}
       </Suspense>
     </div>
   );

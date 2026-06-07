@@ -205,8 +205,15 @@ export default function PageBuilderTab({ onDirtyChange }) {
 
   function sectionIsEditable(typeId) {
     const st = sectionTypes.find(t => t.id === typeId);
-    // Inline types are always editable; shared types with layout options are editable for template configuration
-    return st && (st.dataSource === "inline" || (st.layouts && st.layouts.length > 1));
+    if (!st) return false;
+    // Inline types have content editors; shared:situations and page:* data-driven
+    // sections also have editors (they load from their own API endpoints).
+    return (
+      st.dataSource === "inline" ||
+      (st.layouts && st.layouts.length > 1) ||
+      st.dataSource === "shared:situations" ||
+      (typeof st.dataSource === "string" && st.dataSource.startsWith("page:"))
+    );
   }
 
   // Short human summary of a section's inline content, so two sections of the
@@ -494,6 +501,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
         <SectionEditorModal
           section={editingSection.section}
           sectionType={editingSection.sectionType}
+          pageKey={selectedKey}
           onSave={newContent => {
             updateSectionContent(editingSection.index, newContent);
             setEditingSection(null);

@@ -1,9 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import { FONT, INK, INK_60, LINE, SURFACE, NEON } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
 import { GLOBAL_COLOR_SCHEMES, SECTION_COLOR_SUPPORT } from "../../components/sections/ColorSchemes.js";
 import sectionTypesData from "../../data/section-types.json";
 import SectionThumb from "./SectionThumb.jsx";
+
+// Lazy-load data-driven editors — only fetched when a shared/page section is opened
+const HomeContentTab    = lazy(() => import("./HomeContentTab.jsx"));
+const MarketingPagesTab = lazy(() => import("./MarketingPagesTab.jsx"));
+
+// Map page builder pageKey → MarketingPagesTab page key
+const PAGE_KEY_MAP = {
+  "ai-copyright":     "aiCopyright",
+  "crypto":           "crypto",
+  "litigation-finance": "litigationFinance",
+};
+
+// Section types whose data lives in home-content.json (HomeContentTab)
+const HOME_CONTENT_TYPES = new Set(["situations"]);
+
+// Section types whose data lives in per-page marketing content
+const MARKETING_TYPES = new Set(["audience-cards", "service-cards", "comparison", "how-it-works", "damages"]);
 
 /* SectionEditorModal — edit the inline content of a section.
    Only section types with dataSource:"inline" have editable content here.
@@ -12,7 +29,7 @@ import SectionThumb from "./SectionThumb.jsx";
 const labelStyle = { display: "block", fontSize: "0.74rem", color: INK_60, fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 4 };
 const fieldGroup = { marginBottom: "0.9rem" };
 
-export default function SectionEditorModal({ section, sectionType, onSave, onClose }) {
+export default function SectionEditorModal({ section, sectionType, pageKey, onSave, onClose }) {
   const [form, setForm] = useState(JSON.parse(JSON.stringify(section.content || {})));
 
   function set(key, value) { setForm(prev => ({ ...prev, [key]: value })); }
@@ -22,15 +39,42 @@ export default function SectionEditorModal({ section, sectionType, onSave, onClo
 
   const typeId = section.type;
 
+  // Data-driven sections embed their own full editor — no "Apply/Cancel"
+  const isDataDriven = HOME_CONTENT_TYPES.has(typeId) || MARKETING_TYPES.has(typeId);
+  const marketingPage = PAGE_KEY_MAP[pageKey] || "crypto";
+
+  // Wide modal for embedded data-driven editors; narrow for inline
+  const modalWidth = isDataDriven ? 900 : 560;
+
   return (
     <div
       style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.45)", display: "flex", alignItems: "flex-start", justifyContent: "center", zIndex: 1000, padding: "2rem 1rem", overflowY: "auto" }}
       onClick={e => { if (e.target === e.currentTarget) onClose(); }}
     >
-      <div style={{ background: SURFACE, border: `1px solid ${LINE}`, padding: "1.5rem", maxWidth: 560, width: "100%", fontFamily: FONT, color: INK }}>
-        <h3 style={{ fontWeight: 800, marginBottom: "1.2rem" }}>
-          Edit: {sectionType ? sectionType.displayName : section.type}
-        </h3>
+      <div style={{ background: SURFACE, border: `1px solid ${LINE}`, padding: "1.5rem", maxWidth: modalWidth, width: "100%", fontFamily: FONT, color: INK }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.2rem" }}>
+          <h3 style={{ fontWeight: 800, margin: 0 }}>
+            Edit: {sectionType ? sectionType.displayName : section.type}
+          </h3>
+          <button onClick={onClose} style={{ background: "none", border: "none", fontSize: "1.4rem", cursor: "pointer", color: INK_60, lineHeight: 1 }}>×</button>
+        </div>
+
+        {/* ── Situations — embedded HomeContentTab ── */}
+        {typeId === "situations" && (
+          <Suspense fallback={<div style={{ padding: "2rem", color: INK_60 }}>Loading editor…</div>}>
+            <HomeContentTab />
+          </Suspense>
+        )}
+
+        {/* ── Marketing page sections — embedded MarketingPagesTab ── */}
+        {MARKETING_TYPES.has(typeId) && (
+          <Suspense fallback={<div style={{ padding: "2rem", color: INK_60 }}>Loading editor…</div>}>
+            <MarketingPagesTab controlledPage={marketingPage} />
+          </Suspense>
+        )}
+
+        {/* ── Inline section editors ── */}
+        {!isDataDriven && (<>
 
         {/* ── Hero (subpage) ── */}
         {(typeId === "hero") && (
@@ -214,6 +258,14 @@ export default function SectionEditorModal({ section, sectionType, onSave, onClo
           <button style={btnPrimaryStyle} onClick={save}>Apply changes</button>
           <button style={btnStyle} onClick={onClose}>Cancel</button>
         </div>
+
+        </>)}
+        {/* Data-driven editors have their own Save buttons — just close */}
+        {isDataDriven && (
+          <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "1rem", paddingTop: "1rem", borderTop: `1px solid ${LINE}` }}>
+            <button style={btnStyle} onClick={onClose}>Close</button>
+          </div>
+        )}
       </div>
     </div>
   );
