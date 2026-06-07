@@ -495,7 +495,7 @@
           "layout": "layout-3-bottomcta",
           "colorScheme": "dark",
           "content": {
-            "eyebrow": "Litigation Finance",
+            "eyebrow": "Litigation Funding",
             "title": "Have a case worth funding?",
             "accent": "Talk to us.",
             "kicker": "48-hour response. Confidentiality default.",
@@ -513,7 +513,7 @@
           "layout": "layout-2-sidebar",
           "colorScheme": "light",
           "content": {
-            "title": "Litigation finance,",
+            "title": "Litigation funding,",
             "accent": "answered.",
             "ctaLabel": "Talk to a Partner",
             "ctaHref": "/contact?source=litigation-finance"
