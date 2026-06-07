@@ -60,7 +60,7 @@ export default function PageRenderer({ pageKey }) {
         // Optional spacing/size overrides set in the page builder
         const wrapStyle = buildWrapStyle(c);
         return (
-          <div key={section.id} style={wrapStyle || undefined}>
+          <div key={section.id} id={section.id} style={wrapStyle || undefined}>
             <Component sectionConfig={section} pageKey={pageKey} />
           </div>
         );
