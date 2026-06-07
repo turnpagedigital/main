@@ -254,6 +254,44 @@ export default function SectionEditorModal({ section, sectionType, pageKey, onSa
           </div>
         )}
 
+        {/* ── Spacing & Height — universal for all inline sections ── */}
+        <div style={{ marginTop: "1.4rem", paddingTop: "1.2rem", borderTop: `1px solid ${LINE}` }}>
+          <p style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.8rem" }}>
+            Spacing &amp; Height
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.6rem" }}>
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Space above</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form._spacingTop || "none"} onChange={e => set("_spacingTop", e.target.value)}>
+                <option value="none">None</option>
+                <option value="small">Small (2rem)</option>
+                <option value="medium">Medium (4rem)</option>
+                <option value="large">Large (6rem)</option>
+                <option value="xlarge">X-Large (10rem)</option>
+              </select>
+            </div>
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Space below</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form._spacingBottom || "none"} onChange={e => set("_spacingBottom", e.target.value)}>
+                <option value="none">None</option>
+                <option value="small">Small (2rem)</option>
+                <option value="medium">Medium (4rem)</option>
+                <option value="large">Large (6rem)</option>
+                <option value="xlarge">X-Large (10rem)</option>
+              </select>
+            </div>
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Min height</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form._minHeight || "auto"} onChange={e => set("_minHeight", e.target.value)}>
+                <option value="auto">Auto</option>
+                <option value="50">50vh</option>
+                <option value="75">75vh</option>
+                <option value="100">Full screen</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
         <div style={{ display: "flex", gap: 10, marginTop: "1.2rem" }}>
           <button style={btnPrimaryStyle} onClick={save}>Apply changes</button>
           <button style={btnStyle} onClick={onClose}>Cancel</button>
