@@ -286,7 +286,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
   // ── Render ──────────────────────────────────────────────────────────────
 
   const selectedPage = pages.find(p => p.pageKey === selectedKey);
-  const wrap = { maxWidth: 1080, margin: "0 auto", padding: "1.4rem clamp(1rem,3vw,2rem) 3rem" };
+  const wrap = { maxWidth: 1440, margin: "0 auto", padding: "1.4rem clamp(1rem,2vw,1.5rem) 3rem" };
 
   return (
     <div style={{ fontFamily: FONT, color: INK }}>
@@ -308,7 +308,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
         {toast && <Banner kind="ok">{toast}</Banner>}
         {loading && <p style={{ color: INK_60 }}>Loading…</p>}
 
-        <div style={{ display: "grid", gridTemplateColumns: "200px minmax(0, 1fr) 320px", gap: "1.25rem", alignItems: "start" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "180px minmax(0, 1fr) 280px", gap: "1rem", alignItems: "start" }}>
           {/* Left: page list */}
           <div>
             <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: INK_60, marginBottom: "0.6rem" }}>

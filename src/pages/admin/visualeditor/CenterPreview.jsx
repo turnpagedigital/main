@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { I18nProvider } from "../../../lib/i18n.js";
 import { SECTION_MAP } from "../../../components/sections/registry.js";
 import { FONT, INK_60, NEON } from "../../../data/tokens.js";
 import PreviewFrame from "./PreviewFrame.jsx";
 import SectionFrame from "./SectionFrame.jsx";
 
-/* CenterPreview — the live-rendered page that sits in the middle of the
-   page editor. Renders every visible section via SECTION_MAP wrapped in
-   SectionFrame so clicks select instead of navigate. Same render pipeline
-   as PagePreviewOverlay; just instrumented for editing. */
+/* CenterPreview — live-rendered page preview scaled to simulate a real
+   desktop viewport.
+
+   HOW THE SCALE WORKS:
+   - The page is rendered at DESKTOP_W (1280 px) — the real desktop width
+     that the live site uses.
+   - A ResizeObserver watches the outer container and computes:
+       scale = containerWidth / DESKTOP_W
+   - The inner page div is rendered at DESKTOP_W and CSS-scaled down via
+     transform: scale(scale) with transform-origin: top left.
+   - The outer clip div height is set to innerHeight * scale so the scaled
+     content is fully visible without any gap or overflow. This means the
+     whole page is visible in the editor — no scroll needed inside the
+     preview itself (the admin page scrolls normally).
+   - Clicking any section selects it; clicking the background deselects.  */
+
+const DESKTOP_W = 1280;
 
 class SectionBoundary extends React.Component {
   constructor(props) { super(props); this.state = { err: null }; }
@@ -34,6 +47,35 @@ export default function CenterPreview({
   onSelectSection,
   sectionTypes,
 }) {
+  const containerRef = useRef(null);  // outer clip div
+  const innerRef     = useRef(null);  // full-width desktop render
+
+  const [containerWidth, setContainerWidth] = useState(600);
+  const [innerHeight,    setInnerHeight]    = useState(0);
+
+  // Watch outer container width → recompute scale when editor resizes
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const ro = new ResizeObserver(entries => {
+      setContainerWidth(entries[0].contentRect.width);
+    });
+    ro.observe(containerRef.current);
+    return () => ro.disconnect();
+  }, []);
+
+  // Watch inner page height → keep clip div height in sync with scaled content
+  useEffect(() => {
+    if (!innerRef.current) return;
+    const ro = new ResizeObserver(entries => {
+      setInnerHeight(entries[0].contentRect.height);
+    });
+    ro.observe(innerRef.current);
+    return () => ro.disconnect();
+  }, [sections]);  // re-observe when sections change (new section added etc.)
+
+  const scale = containerWidth > 0 ? containerWidth / DESKTOP_W : 1;
+  const clipHeight = innerHeight > 0 ? Math.ceil(innerHeight * scale) : 300;
+
   const visible = (sections || []).filter(s => s.visible !== false);
 
   function labelFor(type) {
@@ -43,60 +85,82 @@ export default function CenterPreview({
 
   return (
     <PreviewFrame path={pagePath}>
-      {/* Click on empty preview body deselects */}
+      {/* Outer clip — sized exactly to the scaled content height */}
       <div
+        ref={containerRef}
         onClick={() => onSelectSection(null)}
-        style={{ minHeight: "100%", background: "#fff" }}
+        style={{
+          width: "100%",
+          height: clipHeight,
+          position: "relative",
+          overflow: "hidden",
+          background: "#fff",
+        }}
       >
-        <I18nProvider>
-          {visible.length === 0 ? (
-            <div style={{
-              padding: "5rem 2rem",
-              textAlign: "center",
-              fontFamily: FONT,
-              color: INK_60,
-            }}>
-              <div style={{ fontSize: "1rem", fontWeight: 700, marginBottom: 6 }}>
-                No sections yet
+        {/* Inner page at full desktop width, scaled to fit */}
+        <div
+          ref={innerRef}
+          style={{
+            width: DESKTOP_W,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            transformOrigin: "top left",
+            transform: `scale(${scale})`,
+          }}
+        >
+          <I18nProvider>
+            {visible.length === 0 ? (
+              <div style={{
+                padding: "10rem 4rem",
+                textAlign: "center",
+                fontFamily: FONT,
+                color: INK_60,
+              }}>
+                <div style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: 12 }}>
+                  No sections yet
+                </div>
+                <div style={{ fontSize: "1.1rem" }}>
+                  Click{" "}
+                  <span style={{ color: NEON, fontWeight: 700 }}>+ Add section</span>
+                  {" "}above to start building this page.
+                </div>
               </div>
-              <div style={{ fontSize: "0.85rem" }}>
-                Click <span style={{ color: NEON, fontWeight: 700 }}>+ Add section</span> above to start building this page.
-              </div>
-            </div>
-          ) : (
-            visible.map(s => {
-              const Component = SECTION_MAP[s.type];
-              if (!Component) {
+            ) : (
+              visible.map(s => {
+                const Component = SECTION_MAP[s.type];
+                if (!Component) {
+                  return (
+                    <SectionFrame
+                      key={s.id}
+                      sectionId={s.id}
+                      sectionLabel={s.type + " (unknown)"}
+                      isSelected={s.id === selectedSectionId}
+                      onSelect={onSelectSection}
+                    >
+                      <div style={{ padding: "2rem", background: "#fff8e8", color: "#a06000", fontFamily: "monospace", fontSize: "0.9rem" }}>
+                        Unknown section type "{s.type}"
+                      </div>
+                    </SectionFrame>
+                  );
+                }
                 return (
                   <SectionFrame
                     key={s.id}
                     sectionId={s.id}
-                    sectionLabel={s.type + " (unknown)"}
+                    sectionLabel={labelFor(s.type)}
                     isSelected={s.id === selectedSectionId}
                     onSelect={onSelectSection}
                   >
-                    <div style={{ padding: "1.5rem 1rem", background: "#fff8e8", color: "#a06000", fontFamily: "monospace", fontSize: "0.82rem" }}>
-                      Unknown section type "{s.type}"
-                    </div>
+                    <SectionBoundary type={s.type}>
+                      <Component sectionConfig={s} pageKey={pageKey} />
+                    </SectionBoundary>
                   </SectionFrame>
                 );
-              }
-              return (
-                <SectionFrame
-                  key={s.id}
-                  sectionId={s.id}
-                  sectionLabel={labelFor(s.type)}
-                  isSelected={s.id === selectedSectionId}
-                  onSelect={onSelectSection}
-                >
-                  <SectionBoundary type={s.type}>
-                    <Component sectionConfig={s} pageKey={pageKey} />
-                  </SectionBoundary>
-                </SectionFrame>
-              );
-            })
-          )}
-        </I18nProvider>
+              })
+            )}
+          </I18nProvider>
+        </div>
       </div>
     </PreviewFrame>
   );
