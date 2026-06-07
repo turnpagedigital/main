@@ -384,3 +384,103 @@ export function CTAField({ label, value, onChange, nullable }) {
     </div>
   );
 }
+
+function CardsArrayEditor({ label, cards, onChange, showPriority }) {
+  const handleChange = (i, field, val) => {
+    const newCards = [...(cards || [])];
+    newCards[i] = { ...newCards[i], [field]: val };
+    onChange(newCards);
+  };
+
+  const handleAdd = () => {
+    onChange([...(cards || []), { id: `card-${Date.now()}`, title: "", body: "", priority: false }]);
+  };
+
+  const handleRemove = (i) => {
+    onChange((cards || []).filter((_, idx) => idx !== i));
+  };
+
+  return (
+    <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+      <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 8 }}>{label}</div>
+      {(cards || []).map((c, i) => (
+        <div key={c.id} style={{ marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid ${LINE}` }}>
+          <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
+          <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Body" value={c.body} onChange={e => handleChange(i, "body", e.target.value)} />
+          {showPriority && (
+            <label style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: "0.75rem", marginBottom: 4, cursor: "pointer" }}>
+              <input type="checkbox" checked={c.priority || false} onChange={e => handleChange(i, "priority", e.target.checked)} />
+              Priority
+            </label>
+          )}
+          <button type="button" onClick={() => handleRemove(i)} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", marginLeft: 8 }}>Remove</button>
+        </div>
+      ))}
+      <button type="button" onClick={handleAdd} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}>+ Add card</button>
+    </div>
+  );
+}
+
+function ComparisonColumnEditor({ label, col, onChange }) {
+  const handleItemChange = (i, val) => {
+    const newItems = [...(col.items || [])];
+    newItems[i] = val;
+    onChange({ ...col, items: newItems });
+  };
+
+  const handleAddItem = () => {
+    onChange({ ...col, items: [...(col.items || []), ""] });
+  };
+
+  const handleRemoveItem = (i) => {
+    onChange({ ...col, items: (col.items || []).filter((_, idx) => idx !== i) });
+  };
+
+  return (
+    <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+      <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 8 }}>{label}</div>
+      <input style={{ ...inputStyle, marginBottom: 8 }} placeholder="Column title" value={col.title} onChange={e => onChange({ ...col, title: e.target.value })} />
+      {(col.items || []).map((item, i) => (
+        <div key={i} style={{ marginBottom: 6, display: "flex", gap: 4 }}>
+          <input style={{ ...inputStyle, flex: 1 }} placeholder="Item" value={item} onChange={e => handleItemChange(i, e.target.value)} />
+          <button type="button" onClick={() => handleRemoveItem(i)} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", width: 60 }}>Remove</button>
+        </div>
+      ))}
+      <button type="button" onClick={handleAddItem} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}>+ Add item</button>
+    </div>
+  );
+}
+
+function StepsArrayEditor({ steps, onChange }) {
+  const handleChange = (i, field, val) => {
+    const newSteps = [...(steps || [])];
+    newSteps[i] = { ...newSteps[i], [field]: val };
+    onChange(newSteps);
+  };
+
+  const handleAdd = () => {
+    const nextNum = ((steps || []).length + 1).toString().padStart(2, "0");
+    onChange([...(steps || []), { id: `step-${Date.now()}`, n: nextNum, title: "", body: "" }]);
+  };
+
+  const handleRemove = (i) => {
+    onChange((steps || []).filter((_, idx) => idx !== i));
+  };
+
+  return (
+    <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+      <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 8 }}>Steps</div>
+      {(steps || []).map((s, i) => (
+        <div key={s.id} style={{ marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid ${LINE}` }}>
+          <div style={{ display: "grid", gridTemplateColumns: "60px 1fr", gap: 4, marginBottom: 4 }}>
+            <input style={{ ...inputStyle }} placeholder="01" value={s.n} onChange={e => handleChange(i, "n", e.target.value)} />
+            <input style={{ ...inputStyle }} placeholder="Step title" value={s.title} onChange={e => handleChange(i, "title", e.target.value)} />
+          </div>
+          <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Step description" value={s.body} onChange={e => handleChange(i, "body", e.target.value)} />
+          <button type="button" onClick={() => handleRemove(i)} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem" }}>Remove</button>
+        </div>
+      ))}
+      <button type="button" onClick={handleAdd} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}>+ Add step</button>
+    </div>
+  );
+}
