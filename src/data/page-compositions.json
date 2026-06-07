@@ -246,9 +246,37 @@
             "ctaLabel": "Ask a Question",
             "ctaHref": "/contact?source=ai-copyright"
           }
+        },
+        {
+          "id": "sec-1780698362997-64wf",
+          "type": "our-edge",
+          "visible": true,
+          "content": {
+            "eyebrow": "Our Edge",
+            "title": "x",
+            "titleAccent": "x",
+            "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
+            "points": [
+              {
+                "id": "edge-1",
+                "h": "Practically unlimited liquidity",
+                "b": "We partner with major asset managers — over 500 institutions on speed dial."
+              },
+              {
+                "id": "edge-2",
+                "h": "Lightning-fast settlement",
+                "b": "Automation accelerates diligence and closing in the largest volume cases."
+              },
+              {
+                "id": "edge-3",
+                "h": "Relationship builders, not just dealmakers",
+                "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
+              }
+            ]
+          }
         }
       ],
-      "status": "draft"
+      "status": "active"
     },
     {
       "pageKey": "crypto",
@@ -330,7 +358,10 @@
           "type": "testimonials",
           "visible": true,
           "layout": "layout-1-grid3col",
-          "colorScheme": "light"
+          "colorScheme": "light-gray",
+          "content": {
+            "colorScheme": "light-gray"
+          }
         },
         {
           "id": "sec-crypto-bottom-cta",
@@ -446,7 +477,10 @@
           "type": "testimonials",
           "visible": true,
           "layout": "layout-1-grid3col",
-          "colorScheme": "light"
+          "colorScheme": "dark",
+          "content": {
+            "colorScheme": "dark"
+          }
         },
         {
           "id": "sec-litfin-bottom-cta",
