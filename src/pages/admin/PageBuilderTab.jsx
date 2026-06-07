@@ -351,13 +351,6 @@ export default function PageBuilderTab({ onDirtyChange }) {
                   </span>
                   <span style={{ display: "block", fontSize: "0.7rem", color: INK_60, fontFamily: "monospace", marginTop: 1 }}>{p.path}</span>
                 </span>
-                <button
-                  style={{ ...ICON_BTN, color: "#c0392b", borderColor: "#e3b7b1", marginLeft: 4, fontSize: "1rem" }}
-                  onClick={() => setDeleteConfirm(p.pageKey)}
-                  title="Delete page"
-                >
-                  ×
-                </button>
               </div>
             ))}
           </div>
