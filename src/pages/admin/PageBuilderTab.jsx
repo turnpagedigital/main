@@ -179,6 +179,12 @@ export default function PageBuilderTab({ onDirtyChange }) {
     setAddPickerOpen(false);
   }
 
+  function updateSectionContentById(sectionId, newContent) {
+    const i = sections.findIndex(s => s.id === sectionId);
+    if (i < 0) return;
+    updateSectionContent(i, newContent);
+  }
+
   function updateSectionContent(i, newContent) {
     const next = [...sections];
     // Extract layout/colorScheme from content and also store them at section level
@@ -315,7 +321,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
         {toast && <Banner kind="ok">{toast}</Banner>}
         {loading && <p style={{ color: INK_60 }}>Loading…</p>}
 
-        <div style={{ display: "grid", gridTemplateColumns: "180px minmax(0, 1fr) 280px", gap: "1rem", alignItems: "start" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "180px minmax(0, 1fr) 360px", gap: "1rem", alignItems: "start" }}>
           {/* Left: page list */}
           <div>
             <div style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: INK_60, marginBottom: "0.6rem" }}>
@@ -414,7 +420,9 @@ export default function PageBuilderTab({ onDirtyChange }) {
                     <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => toggleVisible(idx)} title={s.visible ? "Hide" : "Show"}>
                       {s.visible ? "Hide" : "Show"}
                     </button>
-                    {isInline && (
+                    {/* Data-driven sections (situations, audience-cards, etc.) need
+                        the wide modal. Inline sections are edited in the right panel. */}
+                    {st && (st.dataSource === "shared:situations" || (typeof st.dataSource === "string" && st.dataSource.startsWith("page:"))) && (
                       <button
                         style={{ ...btnStyle, fontSize: "0.74rem", padding: "0.22rem 0.55rem" }}
                         onClick={() => setEditingSection({ index: idx, section: s, sectionType: st })}
@@ -450,7 +458,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
             </div>
           )}
 
-          {/* Right: property panel */}
+          {/* Right: property panel — live editor for the selected section */}
           {selectedPage && (
             <PropertyPanel
               pageTitle={selectedPage.title}
@@ -463,6 +471,10 @@ export default function PageBuilderTab({ onDirtyChange }) {
               sections={sections}
               selectedSectionId={selectedSectionId}
               onSelectSection={setSelectedSectionId}
+              onUpdateContent={updateSectionContentById}
+              onToggleVisible={i => toggleVisible(i)}
+              onMoveUp={i => moveUp(i)}
+              onMoveDown={i => moveDown(i)}
             />
           )}
         </div>
