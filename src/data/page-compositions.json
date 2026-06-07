@@ -405,6 +405,16 @@
             "ctaHref": "/contact?source=crypto",
             "colorScheme": "light-gray"
           }
+        },
+        {
+          "id": "sec-1780810488155-w95s",
+          "type": "photo-break",
+          "visible": true,
+          "content": {
+            "imageUrl": "/bg-paper.jpg",
+            "overlayText": "We know",
+            "overlayAccent": "crypto"
+          }
         }
       ],
       "status": "active"
