@@ -2,8 +2,8 @@
   "audienceCards": [
     {
       "id": "individual-creditors",
-      "title": "Individual Creditors",
-      "body": "Single-position holders on FTX, Celsius, BlockFi, Voyager, and others.",
+      "title": "Crypto lenders and account owners",
+      "body": "Customers",
       "priority": true
     },
     {
