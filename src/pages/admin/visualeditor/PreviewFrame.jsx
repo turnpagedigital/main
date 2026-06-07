@@ -47,8 +47,8 @@ export default function PreviewFrame({ path = "/", children }) {
         </div>
       </div>
 
-      {/* Page body */}
-      <div style={{ position: "relative", overflowX: "auto", overflowY: "auto", maxHeight: "calc(100vh - 280px)" }}>
+      {/* Page body — height is controlled by CenterPreview's clip div */}
+      <div style={{ position: "relative", overflow: "hidden" }}>
         {children}
       </div>
     </div>

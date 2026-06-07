@@ -21,7 +21,8 @@ import SectionFrame from "./SectionFrame.jsx";
      preview itself (the admin page scrolls normally).
    - Clicking any section selects it; clicking the background deselects.  */
 
-const DESKTOP_W = 1280;
+const DESKTOP_W  = 1280;
+const DESKTOP_H  = 800;   // standard laptop viewport height (16:10)
 
 class SectionBoundary extends React.Component {
   constructor(props) { super(props); this.state = { err: null }; }
@@ -74,7 +75,10 @@ export default function CenterPreview({
   }, [sections]);  // re-observe when sections change (new section added etc.)
 
   const scale = containerWidth > 0 ? containerWidth / DESKTOP_W : 1;
-  const clipHeight = innerHeight > 0 ? Math.ceil(innerHeight * scale) : 300;
+  // Cap the preview at one desktop viewport height (16:10 aspect ratio).
+  // Showing the full scaled page height creates a scroll-within-a-scroll;
+  // use "Full preview" to see the whole page.
+  const clipHeight = Math.ceil(DESKTOP_H * scale);
 
   const visible = (sections || []).filter(s => s.visible !== false);
 
