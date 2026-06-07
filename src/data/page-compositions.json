@@ -178,7 +178,7 @@
             "eyebrow": "Copyright Claims",
             "title": "Calling all creators.",
             "accentTitle": "Claim what's yours.",
-            "subtitle": "You didn't work this hard to give it away for free — we help authors, publishers, musicians, artists, record labels and other copyright holders get smart about their rights and track compensation opportunities across multiple copyright infringement class actions against generative AI companies",
+            "subtitle": "We help authors, publishers, artists, record labels and other copyright holders get smart about their rights and track class action compensation opportunities against generative AI companies",
             "size": "tall",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
@@ -186,7 +186,7 @@
               "href": "/contact?source=ai-copyright"
             },
             "ctaSecondary": {
-              "label": "Top Cases",
+              "label": "Largest Cases",
               "href": "#cases-section"
             }
           }
@@ -225,7 +225,7 @@
           "layout": "layout-3-bottomcta",
           "colorScheme": "dark",
           "content": {
-            "eyebrow": "Compensation? Copy that.",
+            "eyebrow": "Get compensated",
             "title": "Ready to learn more?",
             "accent": "Talk to us.",
             "kicker": "Private, fast and secure.",
