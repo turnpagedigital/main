@@ -35,12 +35,12 @@
               {
                 "value": "$1.1B",
                 "labelKey": "stats.claims_traded",
-                "label": "Monetized*"
+                "label": "Claims monetized*"
               },
               {
                 "value": "5K+",
                 "labelKey": "stats.claims_advised",
-                "label": "Traded or advised*"
+                "label": "Clients served*"
               },
               {
                 "value": "500+",
@@ -67,7 +67,11 @@
           "type": "testimonials",
           "visible": true,
           "layout": "layout-1-grid3col",
-          "colorScheme": "light"
+          "colorScheme": "light",
+          "content": {
+            "colorScheme": "light",
+            "layout": "layout-1-grid3col"
+          }
         },
         {
           "id": "sec-home-photo",
@@ -75,7 +79,7 @@
           "visible": true,
           "content": {
             "imageUrl": "/Paper.jpg",
-            "overlayText": "Too hard? Not in",
+            "overlayText": "Too hard? Not in ",
             "overlayAccent": "our vocabulary."
           }
         },
@@ -116,45 +120,46 @@
           "id": "sec-home-cta-banner",
           "type": "cta-banner",
           "visible": true,
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
           "content": {
-            "title": "Stay current on our active cases.",
-            "cta": "Read the briefings",
+            "title": "Stay current on active cases.",
+            "cta": "Read our briefings",
             "href": "/press?type=post",
             "image": "/Building_Wide.jpg",
             "external": false
-          },
-          "layout": "layout-2-banner",
-          "colorScheme": "photo"
+          }
         },
         {
           "id": "sec-home-get-quote",
           "type": "get-quote",
           "visible": true,
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark",
           "content": {
-            "eyebrow": "",
-            "title": "Why wait?",
-            "titleAccent": "Talk to us.",
+            "eyebrow": "Get a quote",
+            "title": "Don't wait.",
+            "titleAccent": "Act today.",
             "body": "Contact us to discuss your funding needs. ",
             "cta": {
               "label": "Get in Touch",
               "href": "/contact"
             }
-          },
-          "layout": "layout-1-getquote",
-          "colorScheme": "dark"
+          }
         },
         {
           "id": "sec-home-faq",
           "type": "faq",
           "visible": true,
+          "layout": "layout-1-fullwidth",
+          "colorScheme": "light-gray",
           "content": {
             "title": "Your questions,",
             "accent": "answered.",
             "ctaLabel": "Contact Us",
-            "ctaHref": "/contact"
-          },
-          "layout": "layout-1-fullwidth",
-          "colorScheme": "light"
+            "ctaHref": "/contact",
+            "colorScheme": "light-gray"
+          }
         }
       ],
       "status": "active"
