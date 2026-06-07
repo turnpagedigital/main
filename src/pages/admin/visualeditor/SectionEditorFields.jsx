@@ -1,6 +1,6 @@
 import React from "react";
 import { INK, INK_60, LINE, NEON } from "../../../data/tokens.js";
-import { inputStyle } from "../shared.jsx";
+import { inputStyle, btnStyle } from "../shared.jsx";
 import sectionTypesData from "../../../data/section-types.json";
 import SectionThumb from "../SectionThumb.jsx";
 
