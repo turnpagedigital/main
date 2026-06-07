@@ -391,12 +391,13 @@
           "type": "faq",
           "visible": true,
           "layout": "layout-2-sidebar",
-          "colorScheme": "light",
+          "colorScheme": "light-gray",
           "content": {
             "title": "Crypto claims,",
             "accent": "answered.",
             "ctaLabel": "Get a Quote",
-            "ctaHref": "/contact?source=crypto"
+            "ctaHref": "/contact?source=crypto",
+            "colorScheme": "light-gray"
           }
         }
       ],
