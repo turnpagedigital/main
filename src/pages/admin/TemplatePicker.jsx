@@ -33,6 +33,7 @@ const TEMPLATE_GROUPS = [
       "bio",
       "experience",
       "our-edge",
+      "photo-break",
       "damages",
     ],
   },
@@ -56,12 +57,6 @@ const TEMPLATE_GROUPS = [
     items: [
       { typeId: "cta", layoutId: "layout-1-getquote", label: "Quote Card",   description: "Dark centered card with headline, body, and button." },
       { typeId: "cta", layoutId: "layout-2-banner",   label: "Photo Banner", description: "Full-bleed photo with overlay text and button." },
-    ],
-  },
-  {
-    label: "Media",
-    items: [
-      "photo-break",
     ],
   },
   {
