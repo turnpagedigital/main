@@ -338,7 +338,10 @@
           "content": {
             "imageUrl": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg",
             "overlayText": "We know",
-            "overlayAccent": "crypto"
+            "overlayAccent": "crypto",
+            "_minHeight": "50",
+            "_spacingBottom": "small",
+            "_spacingTop": "small"
           }
         },
         {
