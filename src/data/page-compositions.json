@@ -194,7 +194,40 @@
         {
           "id": "sec-aic-audience",
           "type": "audience-cards",
-          "visible": true
+          "visible": true,
+          "content": {
+            "eyebrow": "Who We Help",
+            "title": "Authors. Publishers.",
+            "accent": "Newsrooms. Artists.",
+            "colorScheme": "light-gray",
+            "layout": "grid-2col",
+            "cards": [
+              {
+                "id": "authors-writers",
+                "title": "Authors & Publishers",
+                "body": "Bartz class members. OpenAI MDL and Kadrey v. Meta plaintiffs.",
+                "priority": true
+              },
+              {
+                "id": "music-publishers",
+                "title": "Music Labels, Publishers & Catalogue Owners",
+                "body": "Concord plaintiffs, RIAA-coordinated claimants, UMG v. Suno/Udio.",
+                "priority": true
+              },
+              {
+                "id": "visual-artists",
+                "title": "Visual Artists & Stock Image Libraries",
+                "body": "Andersen v. Stability. Getty v. Stability (US and UK).",
+                "priority": false
+              },
+              {
+                "id": "news-organizations",
+                "title": "News Media Organizations",
+                "body": "NYT v. OpenAI, Advance Local v. Cohere, the consolidated MDL.",
+                "priority": false
+              }
+            ]
+          }
         },
         {
           "id": "sec-aic-damages",
@@ -204,7 +237,31 @@
         {
           "id": "sec-aic-service",
           "type": "service-cards",
-          "visible": true
+          "visible": true,
+          "content": {
+            "eyebrow": "What We Offer",
+            "title": "Capital.",
+            "accent": "Advisory.",
+            "colorScheme": "dark",
+            "layout": "grid-3col",
+            "cards": [
+              {
+                "id": "capital",
+                "title": "Capital",
+                "body": "A competitive cash bid from our institutional buyer network. Class-member purchases, opt-out direct purchases, bulk catalogues. Days to close."
+              },
+              {
+                "id": "advisory",
+                "title": "Advisory",
+                "body": "Opt-in vs. opt-out economics. Statutory damages modeling. Counsel introductions across U.S., UK, EU, and Germany."
+              },
+              {
+                "id": "claim-monitoring",
+                "title": "Claim Monitoring",
+                "body": "We track and file claims for you, automatically."
+              }
+            ]
+          }
         },
         {
           "id": "sec-aic-experience",
@@ -319,17 +376,85 @@
         {
           "id": "sec-crypto-audience",
           "type": "audience-cards",
-          "visible": true
+          "visible": true,
+          "content": {
+            "eyebrow": "Who We Help",
+            "title": "Creditors. Funds.",
+            "accent": "Estates.",
+            "colorScheme": "light-gray",
+            "layout": "grid-2col",
+            "cards": [
+              {
+                "id": "individual-creditors",
+                "title": "Crypto lenders and account owners",
+                "body": "Customers",
+                "priority": true
+              },
+              {
+                "id": "funds-institutions",
+                "title": "Funds & Institutions",
+                "body": "Bulk dispositions and side-pocket cleanups. Size moved discreetly.",
+                "priority": true
+              },
+              {
+                "id": "estates-trustees",
+                "title": "Estates & Trustees",
+                "body": "Administering an estate or trust? We can quote the entire position.",
+                "priority": false
+              }
+            ]
+          }
         },
         {
           "id": "sec-crypto-service",
           "type": "service-cards",
-          "visible": true
+          "visible": true,
+          "content": {
+            "eyebrow": "What We Offer",
+            "title": "Trade.",
+            "accent": "Advise. Close.",
+            "colorScheme": "dark",
+            "layout": "grid-3col",
+            "cards": [
+              {
+                "id": "capital",
+                "title": "Capital",
+                "body": "A competitive cash bid from our institutional buyer network. Quoted and settled in fiat. Days to close."
+              },
+              {
+                "id": "advisory",
+                "title": "Advisory",
+                "body": "Plan-of-reorganization analysis. Token-vs-fiat valuation strategy. Counsel introductions when needed."
+              }
+            ]
+          }
         },
         {
           "id": "sec-crypto-comparison",
           "type": "comparison",
-          "visible": false
+          "visible": false,
+          "content": {
+            "eyebrow": "Why Turnpage",
+            "title": "A better way.",
+            "accent": "",
+            "colorScheme": "light-gray",
+            "oldWay": {
+              "title": "Wait for the docket.",
+              "items": [
+                "Multi-year court timelines.",
+                "Token-vs-fiat valuation risk.",
+                "Plan-of-reorganization surprises."
+              ]
+            },
+            "newWay": {
+              "title": "Through Turnpage.",
+              "items": [
+                "Cash bid quoted in fiat.",
+                "Tax-basis-aware structuring.",
+                "Single creditor or bulk fund — same desk."
+              ]
+            }
+          }
         },
         {
           "id": "sec-1780810488155-w95s",
@@ -452,22 +577,133 @@
         {
           "id": "sec-litfin-audience",
           "type": "audience-cards",
-          "visible": true
+          "visible": true,
+          "content": {
+            "eyebrow": "Who We Help",
+            "title": "Firms. Claimants.",
+            "accent": "Cases.",
+            "colorScheme": "light-gray",
+            "layout": "grid-2col",
+            "cards": [
+              {
+                "id": "contingency-firms",
+                "title": "Contingency Law Firms",
+                "body": "Boutique litigation shops and BigLaw contingency practices looking to grow their docket without tying up equity or taking on overhead risk.",
+                "priority": true
+              },
+              {
+                "id": "elite-plaintiffs",
+                "title": "Elite Plaintiffs' Practices",
+                "body": "Class action, antitrust, and IP litigation teams pursuing high-stakes matters that require patient, long-duration capital.",
+                "priority": true
+              },
+              {
+                "id": "individual-claimants",
+                "title": "Individual Claimants",
+                "body": "Plaintiffs whose counsel needs funding to take a meritorious case to trial. We work with you or your attorney directly.",
+                "priority": false
+              },
+              {
+                "id": "solo-small-firm",
+                "title": "Solo & Small Firm Practitioners",
+                "body": "High-quality litigators with strong cases who need capital to level the playing field against well-resourced defendants.",
+                "priority": false
+              }
+            ]
+          }
         },
         {
           "id": "sec-litfin-comparison",
           "type": "comparison",
-          "visible": false
+          "visible": false,
+          "content": {
+            "eyebrow": "Why Turnpage",
+            "title": "A better way.",
+            "accent": "",
+            "colorScheme": "light-gray",
+            "oldWay": {
+              "title": "Traditional litigation.",
+              "items": [
+                "Cases declined — capital constraints, not merit.",
+                "Settlements driven by client cashflow, not case value.",
+                "Overhead costs limit the size of your docket."
+              ]
+            },
+            "newWay": {
+              "title": "Powered by Turnpage.",
+              "items": [
+                "Capital deployed against the merit of the case.",
+                "Clients hold out for full value.",
+                "Grow your contingency docket without diluting equity."
+              ]
+            }
+          }
         },
         {
           "id": "sec-litfin-service",
           "type": "service-cards",
-          "visible": true
+          "visible": true,
+          "content": {
+            "eyebrow": "What We Fund",
+            "title": "Cases that deserve to win.",
+            "accent": "",
+            "colorScheme": "dark",
+            "layout": "grid-3col",
+            "cards": [
+              {
+                "id": "commercial-litigation",
+                "title": "Commercial Litigation",
+                "body": "Breach of contract, business torts, fraud, and complex commercial disputes with clear damages theories and credible counsel."
+              },
+              {
+                "id": "ip-patent",
+                "title": "IP & Patent",
+                "body": "Patent infringement, trade secret misappropriation, and trademark disputes. We understand IP damages and appeals risk."
+              },
+              {
+                "id": "antitrust-class-actions",
+                "title": "Antitrust & Class Actions",
+                "body": "Multi-plaintiff and class action matters where early capital determines whether a case gets to trial or settles below value."
+              },
+              {
+                "id": "bankruptcy-claims",
+                "title": "Bankruptcy & Litigation Claims",
+                "body": "Claims asserted in or arising out of bankruptcy proceedings — adversary actions, fraudulent transfer, and preference recovery."
+              }
+            ]
+          }
         },
         {
           "id": "sec-litfin-how",
           "type": "how-it-works",
-          "visible": false
+          "visible": false,
+          "content": {
+            "eyebrow": "How It Works",
+            "title": "Three steps to a funded case.",
+            "accent": "",
+            "kicker": "We underwrite quickly and move capital decisively. No committees, no endless diligence loops.",
+            "colorScheme": "dark",
+            "steps": [
+              {
+                "id": "submit",
+                "n": "01",
+                "title": "Submit your case",
+                "body": "Share a case summary — claims, defendants, damages theory, and stage of litigation. NDA available on request."
+              },
+              {
+                "id": "underwriting",
+                "n": "02",
+                "title": "Underwriting",
+                "body": "Our team reviews merits, damages, counsel quality, and opposing party resources. We respond with a term sheet within two to four weeks."
+              },
+              {
+                "id": "capital-deployed",
+                "n": "03",
+                "title": "Capital deployed",
+                "body": "Once terms are agreed, capital is available to cover case costs — experts, discovery, depositions, and trial preparation."
+              }
+            ]
+          }
         },
         {
           "id": "sec-1780673399693-agc7",

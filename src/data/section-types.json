@@ -309,34 +309,80 @@
     {
       "id": "audience-cards",
       "displayName": "Who We Help",
-      "description": "Audience card grid. Content managed in Pages → Marketing Pages for this page.",
-      "dataSource": "page:audienceCards",
+      "description": "Audience cards with priority/standard variants. Inline content — editable per page.",
+      "dataSource": "inline",
       "allowMultiple": false,
-      "defaultContent": null
+      "supportedColorSchemes": ["light-gray", "dark", "white"],
+      "defaultColorScheme": "light-gray",
+      "defaultContent": {
+        "eyebrow": "Who We Help",
+        "title": "Who we work with.",
+        "accent": "",
+        "colorScheme": "light-gray",
+        "layout": "grid-2col",
+        "cards": [
+          { "id": "card-1", "title": "Card title", "body": "Describe this audience.", "priority": true },
+          { "id": "card-2", "title": "Card title", "body": "Describe this audience.", "priority": false }
+        ]
+      }
     },
     {
       "id": "service-cards",
       "displayName": "What We Offer",
-      "description": "Service card grid. Content managed in Pages → Marketing Pages for this page.",
-      "dataSource": "page:serviceCards",
+      "description": "Dark service cards with neon titles. Inline content — editable per page.",
+      "dataSource": "inline",
       "allowMultiple": false,
-      "defaultContent": null
+      "supportedColorSchemes": ["dark", "light-gray", "white"],
+      "defaultColorScheme": "dark",
+      "defaultContent": {
+        "eyebrow": "What We Offer",
+        "title": "Services.",
+        "accent": "",
+        "colorScheme": "dark",
+        "layout": "grid-3col",
+        "cards": [
+          { "id": "svc-1", "title": "Service", "body": "Describe this service." },
+          { "id": "svc-2", "title": "Service", "body": "Describe this service." }
+        ]
+      }
     },
     {
       "id": "comparison",
       "displayName": "Why Turnpage",
-      "description": "Old way / new way comparison. Content managed in Pages → Marketing Pages for this page.",
-      "dataSource": "page:comparison",
+      "description": "Two-column old-way vs. new-way comparison. Inline content — editable per page.",
+      "dataSource": "inline",
       "allowMultiple": false,
-      "defaultContent": null
+      "supportedColorSchemes": ["light-gray", "dark", "white"],
+      "defaultColorScheme": "light-gray",
+      "defaultContent": {
+        "eyebrow": "Why Turnpage",
+        "title": "A better way.",
+        "accent": "",
+        "colorScheme": "light-gray",
+        "oldWay": { "title": "The old way.", "items": ["Item one", "Item two", "Item three"] },
+        "newWay": { "title": "Through Turnpage.", "items": ["Item one", "Item two", "Item three"] }
+      }
     },
     {
       "id": "how-it-works",
       "displayName": "How It Works",
-      "description": "Numbered step sequence. Content managed in Pages → Marketing Pages for this page.",
-      "dataSource": "page:howItWorks",
+      "description": "Dark numbered step sequence. Inline content — editable per page.",
+      "dataSource": "inline",
       "allowMultiple": false,
-      "defaultContent": null
+      "supportedColorSchemes": ["dark", "light-gray"],
+      "defaultColorScheme": "dark",
+      "defaultContent": {
+        "eyebrow": "How It Works",
+        "title": "Three steps to close.",
+        "accent": "",
+        "kicker": "",
+        "colorScheme": "dark",
+        "steps": [
+          { "id": "step-1", "n": "01", "title": "Step one", "body": "Describe this step." },
+          { "id": "step-2", "n": "02", "title": "Step two", "body": "Describe this step." },
+          { "id": "step-3", "n": "03", "title": "Step three", "body": "Describe this step." }
+        ]
+      }
     },
     {
       "id": "damages",

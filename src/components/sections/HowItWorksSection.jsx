@@ -1,86 +1,121 @@
 import React from "react";
 import { NEON, FONT } from "../../data/tokens.js";
-import litFinContent from "../../data/litigation-finance-content.json";
 
-/* How It Works step sequence — currently Litigation Finance only. */
-export default function HowItWorksSection({ pageKey }) {
-  // Currently only litigation-finance has this section
-  const steps = (pageKey === "litigation-finance" && litFinContent.howItWorks) || [];
+/* HowItWorksSection — numbered step sequence.
+   Inline section: content lives in page-compositions.json sectionConfig.content.
+   Schema:
+     eyebrow          — section eyebrow
+     title, accent    — section heading (left column)
+     kicker           — subtitle text (right column)
+     steps[]          — { id, n, title, body }
+     colorScheme      — "dark" (default) | "light-gray"
+*/
+export default function HowItWorksSection({ sectionConfig }) {
+  const c = (sectionConfig && sectionConfig.content) || {};
+  const eyebrow     = c.eyebrow     || "How It Works";
+  const title       = c.title       || "Three steps to close.";
+  const accent      = c.accent      || "";
+  const kicker      = c.kicker      || "";
+  const steps       = c.steps       || [];
+  const colorScheme = c.colorScheme || "dark";
+
   if (!steps.length) return null;
 
+  const isDark    = colorScheme === "dark";
+  const sectionBg = isDark ? "#0A0B0E" : "#F4F5F7";
+  const textColor = isDark ? "#fff" : "#0A0A0A";
+
   return (
-    <section id="how-litfin" style={{
-      background: "#0A0B0E", color: "#fff",
+    <section id="how-it-works" style={{
+      background: sectionBg,
+      color: textColor,
       padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+
+        {/* Split header */}
         <div style={{
           display: "grid",
           gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.4fr)",
           gap: "clamp(2rem, 5vw, 5rem)",
           marginBottom: "clamp(3rem, 6vw, 5rem)",
           alignItems: "end",
-        }} className="section-split">
+        }} className="how-header-split">
           <div>
             <p style={{
               fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
               letterSpacing: "0.22em", textTransform: "uppercase",
               color: NEON, marginBottom: "1.2rem",
-            }}>
-              How It Works
-            </p>
+            }}>{eyebrow}</p>
             <h2 style={{
               fontFamily: FONT, fontWeight: 800,
-              fontSize: "clamp(2rem,4.5vw,4rem)",
+              fontSize: "clamp(2rem, 4.5vw, 4rem)",
               lineHeight: 1.02, letterSpacing: "-0.035em",
-              color: "#fff", margin: 0,
+              color: textColor, margin: 0,
             }}>
-              Three steps to a funded case.
+              {title}
+              {accent && <> <span className="accent-neon">{accent}</span></>}
             </h2>
           </div>
-          <p style={{
-            fontFamily: FONT, fontSize: "clamp(1rem,1.4vw,1.2rem)",
-            color: "rgba(255,255,255,0.65)", lineHeight: 1.6, maxWidth: 600, margin: 0,
-          }}>
-            We underwrite quickly and move capital decisively. No committees, no endless diligence loops.
-          </p>
+          {kicker && (
+            <p style={{
+              fontFamily: FONT,
+              fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+              color: isDark ? "rgba(255,255,255,0.65)" : "rgba(10,10,10,0.6)",
+              lineHeight: 1.6, maxWidth: 600, margin: 0,
+            }}>
+              {kicker}
+            </p>
+          )}
         </div>
 
+        {/* Steps grid */}
         <div style={{
-          display: "grid", gridTemplateColumns: "repeat(3, 1fr)",
+          display: "grid",
+          gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,
           gap: "1px",
-          background: "rgba(255,255,255,0.08)",
-          border: "1px solid rgba(255,255,255,0.08)",
+          background: isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.1)",
+          border: isDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(0,0,0,0.1)",
         }} className="steps-grid">
           {steps.map(step => (
-            <div key={step.n} style={{ padding: "clamp(1.8rem,3vw,2.4rem)", background: "rgba(255,255,255,0.02)" }}>
+            <div key={step.n || step.id} style={{
+              padding: "clamp(1.8rem, 3vw, 2.6rem)",
+              background: isDark ? "rgba(255,255,255,0.02)" : "#fff",
+            }}>
               <p style={{
-                fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-                letterSpacing: "0.2em", color: NEON, marginBottom: "1rem",
+                fontFamily: FONT,
+                fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+                fontWeight: 800, letterSpacing: "-0.04em",
+                color: NEON, marginBottom: "1.2rem", lineHeight: 1,
               }}>
                 {step.n}
               </p>
               <h3 style={{
-                fontFamily: FONT, fontWeight: 800, fontSize: "1.15rem",
-                letterSpacing: "-0.01em", color: "#fff",
-                marginBottom: "0.65rem", lineHeight: 1.2,
+                fontFamily: FONT, fontWeight: 800,
+                fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
+                letterSpacing: "-0.01em", lineHeight: 1.2,
+                color: textColor, marginBottom: "0.65rem",
               }}>
                 {step.title}
               </h3>
               <p style={{
                 fontFamily: FONT, fontSize: "0.95rem",
-                color: "rgba(255,255,255,0.6)", lineHeight: 1.6, margin: 0,
+                color: isDark ? "rgba(255,255,255,0.6)" : "rgba(10,10,10,0.6)",
+                lineHeight: 1.65, margin: 0,
               }}>
                 {step.body}
               </p>
             </div>
           ))}
         </div>
-
-        <style>{`
-          @media (max-width: 720px) { .steps-grid { grid-template-columns: 1fr !important; } }
-        `}</style>
       </div>
+
+      <style>{`
+        @media (max-width: 720px) {
+          .how-header-split { grid-template-columns: 1fr !important; }
+          .steps-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   );
 }

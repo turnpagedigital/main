@@ -174,6 +174,68 @@ export default function SectionEditorFields({ typeId, form, set }) {
         </>
       )}
 
+      {/* ── Audience Cards ── */}
+      {typeId === "audience-cards" && (
+        <>
+          <ColorSchemePicker typeId="audience-cards" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["light-gray","dark","white"]} />
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div><label style={labelStyle}>Layout</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.layout || "grid-2col"} onChange={e => set("layout", e.target.value)}>
+                <option value="grid-2col">2-Column Grid</option>
+                <option value="grid-3col">3-Column Grid</option>
+                <option value="list">List</option>
+              </select>
+            </div>
+          </div>
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Accent</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
+          <CardsArrayEditor label="Cards" cards={form.cards || []} onChange={v => set("cards", v)} showPriority />
+        </>
+      )}
+
+      {/* ── Service Cards ── */}
+      {typeId === "service-cards" && (
+        <>
+          <ColorSchemePicker typeId="service-cards" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["dark","light-gray","white"]} />
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div><label style={labelStyle}>Layout</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.layout || "grid-3col"} onChange={e => set("layout", e.target.value)}>
+                <option value="grid-3col">3-Column Grid</option>
+                <option value="grid-2col">2-Column Grid</option>
+                <option value="list">List</option>
+              </select>
+            </div>
+          </div>
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Accent</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
+          <CardsArrayEditor label="Cards" cards={form.cards || []} onChange={v => set("cards", v)} />
+        </>
+      )}
+
+      {/* ── Comparison ── */}
+      {typeId === "comparison" && (
+        <>
+          <ColorSchemePicker typeId="comparison" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["light-gray","dark","white"]} />
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <ComparisonColumnEditor label="Old way" col={form.oldWay || { title: "", items: [] }} onChange={v => set("oldWay", v)} />
+          <ComparisonColumnEditor label="New way (Turnpage)" col={form.newWay || { title: "", items: [] }} onChange={v => set("newWay", v)} />
+        </>
+      )}
+
+      {/* ── How It Works ── */}
+      {typeId === "how-it-works" && (
+        <>
+          <ColorSchemePicker typeId="how-it-works" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["dark","light-gray"]} />
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Kicker (right column subtitle)</label><textarea style={{ ...inputStyle, minHeight: 60 }} value={form.kicker || ""} onChange={e => set("kicker", e.target.value)} /></div>
+          <StepsArrayEditor steps={form.steps || []} onChange={v => set("steps", v)} />
+        </>
+      )}
+
       {/* ── Spacing & Height (universal) ── */}
       <div style={{ marginTop: "1.4rem", paddingTop: "1.2rem", borderTop: `1px solid ${LINE}` }}>
         <p style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.8rem" }}>
@@ -280,9 +342,9 @@ function VisualLayoutColorPicker({ typeId, form, set }) {
   );
 }
 
-function ColorSchemePicker({ typeId, value, onChange }) {
+function ColorSchemePicker({ typeId, value, onChange, schemes: schemesProp }) {
   const typeDef = (sectionTypesData.sectionTypes || []).find(t => t.id === typeId);
-  const schemes = typeDef?.supportedColorSchemes || ["light", "light-gray", "light-card"];
+  const schemes = schemesProp || typeDef?.supportedColorSchemes || ["light", "light-gray", "light-card"];
   const current = value || typeDef?.defaultColorScheme || schemes[0];
   return (
     <div style={{ marginBottom: "1.2rem", padding: "0.85rem", background: "#F8F9FA", border: `1px solid ${LINE}`, borderLeft: `3px solid ${NEON}` }}>

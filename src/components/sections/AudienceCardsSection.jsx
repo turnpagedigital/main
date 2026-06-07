@@ -1,82 +1,162 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import SectionHeader from "../SectionHeader.jsx";
-import aiCopyrightContent   from "../../data/ai-copyright-content.json";
-import cryptoContent        from "../../data/crypto-content.json";
-import litFinContent        from "../../data/litigation-finance-content.json";
 
-const PAGE_CONTENT = {
-  "ai-copyright":      aiCopyrightContent,
-  "crypto":            cryptoContent,
-  "litigation-finance": litFinContent,
-};
+/* AudienceCardsSection — "Who We Help"
+   Inline section: content lives in page-compositions.json sectionConfig.content.
+   Schema:
+     eyebrow, title, accent  — section header text
+     cards[]                 — { id, title, body, priority }
+     layout                  — "grid-2col" (default) | "grid-3col" | "list"
+     colorScheme             — "light-gray" (default) | "dark" | "white"
+*/
+export default function AudienceCardsSection({ sectionConfig }) {
+  const c = (sectionConfig && sectionConfig.content) || {};
+  const cards       = c.cards || [];
+  const eyebrow     = c.eyebrow || "Who We Help";
+  const title       = c.title   || "";
+  const accent      = c.accent  || "";
+  const layout      = c.layout  || "grid-2col";
+  const colorScheme = c.colorScheme || "light-gray";
 
-/* Per-page audience cards ("Who We Help"). Content managed via Pages → Marketing Pages. */
-export default function AudienceCardsSection({ pageKey }) {
-  const content = PAGE_CONTENT[pageKey];
-  if (!content) return null;
-  const cards    = content.audienceCards || [];
-  const priority = cards.filter(c => c.priority);
-  const rest     = cards.filter(c => !c.priority);
+  const isList = layout === "list";
+  const cols   = layout === "grid-3col" ? "repeat(3, 1fr)" : "repeat(2, 1fr)";
 
-  // Page-specific headers
-  const headers = {
-    "ai-copyright":      { eyebrow: "Who We Help", title: "Authors. Publishers.", accent: "Newsrooms. Artists." },
-    "crypto":            { eyebrow: "Who We Help", title: "Creditors. Funds.",    accent: "Estates." },
-    "litigation-finance":{ eyebrow: "Who We Help", title: "Firms. Claimants.",   accent: "Cases." },
-  };
-  const h = headers[pageKey] || { eyebrow: "Who We Help", title: "", accent: "" };
+  const BG = { "light-gray": "#F4F5F7", "dark": "#0A0A0A", "white": "#fff" }[colorScheme] || "#F4F5F7";
+  const eyebrowColor = colorScheme === "dark" ? NEON : INK_60;
+  const titleColor   = colorScheme === "dark" ? "#fff" : INK;
+  const accentClass  = colorScheme === "dark" ? "accent-neon" : "accent-light";
 
   return (
-    <section id="who-we-help" className="surface-paper-2 section-pad">
-      <div className="container">
-        <SectionHeader eyebrow={h.eyebrow} title={h.title} accent={h.accent} />
-        {priority.length > 0 && (
-          <div className="grid-2col" style={{ marginBottom: "1.2rem" }}>
-            {priority.map(c => <AudienceCard key={c.id} priority title={c.title} body={c.body} />)}
+    <section id="who-we-help" style={{
+      background: BG,
+      padding: "clamp(4rem, 9vw, 8rem) clamp(1.5rem, 5vw, 4rem)",
+      borderTop: colorScheme === "light-gray" ? `1px solid ${LINE}` : "none",
+    }}>
+      <div style={{ maxWidth: 1440, margin: "0 auto" }}>
+
+        {/* Header */}
+        <div style={{ marginBottom: "clamp(2.5rem, 5vw, 4rem)", maxWidth: 800 }}>
+          <p style={{
+            fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
+            letterSpacing: "0.22em", textTransform: "uppercase",
+            color: eyebrowColor, marginBottom: "1.1rem",
+          }}>{eyebrow}</p>
+          {title && (
+            <h2 style={{
+              fontFamily: FONT, fontWeight: 800,
+              fontSize: "clamp(2rem, 4vw, 3.5rem)",
+              lineHeight: 1.05, letterSpacing: "-0.03em",
+              color: titleColor, margin: 0,
+            }}>
+              {title}{accent && (
+                <> <span className={accentClass}>{accent}</span></>
+              )}
+            </h2>
+          )}
+        </div>
+
+        {/* Cards */}
+        {isList ? (
+          <div style={{ display: "flex", flexDirection: "column", gap: "1px", background: colorScheme === "dark" ? "rgba(255,255,255,0.08)" : LINE }}>
+            {cards.map(card => <AudienceListRow key={card.id} card={card} dark={colorScheme === "dark"} />)}
           </div>
-        )}
-        {rest.length > 0 && (
-          <div className="grid-2col">
-            {rest.map(c => <AudienceCard key={c.id} title={c.title} body={c.body} />)}
+        ) : (
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: cols,
+            gap: "clamp(1rem, 2vw, 1.5rem)",
+          }} className="audience-grid">
+            {cards.map(card => <AudienceCard key={card.id} card={card} schemeDark={colorScheme === "dark"} />)}
           </div>
         )}
       </div>
+
+      <style>{`
+        @media (max-width: 760px) { .audience-grid { grid-template-columns: 1fr !important; } }
+      `}</style>
     </section>
   );
 }
 
-function AudienceCard({ title, body, priority }) {
+function AudienceCard({ card, schemeDark }) {
+  const { title, body, priority } = card;
+  const cardBg = priority
+    ? "#0A0A0A"
+    : schemeDark ? "rgba(255,255,255,0.05)" : "#fff";
+  const titleClr = (priority || schemeDark) ? "#fff" : INK;
+  const bodyClr  = (priority || schemeDark) ? "rgba(255,255,255,0.72)" : INK_60;
+  const borderClr = (priority || schemeDark)
+    ? "rgba(255,255,255,0.12)"
+    : LINE;
+
   return (
-    <div className="card-light" style={{
-      background: priority ? "#0A0A0A" : "#fff",
-      color: priority ? "#fff" : INK,
-      borderColor: priority ? "rgba(255,255,255,0.14)" : LINE,
-      position: priority ? "relative" : undefined,
-      overflow: priority ? "hidden" : undefined,
+    <div style={{
+      background: cardBg,
+      border: `1px solid ${borderClr}`,
+      padding: "clamp(1.5rem, 2.5vw, 2.2rem)",
+      position: "relative",
+      overflow: "hidden",
     }}>
       {priority && (
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(60% 70% at 0% 0%, rgba(212,255,0,0.08), transparent 60%)",
+          background: "radial-gradient(55% 65% at 0% 0%, rgba(212,255,0,0.11), transparent 65%)",
         }} />
       )}
       <div style={{ position: "relative", zIndex: 1 }}>
+        {priority && (
+          <div style={{
+            display: "inline-block", fontFamily: FONT,
+            fontSize: "0.65rem", fontWeight: 800, letterSpacing: "0.12em",
+            textTransform: "uppercase", color: NEON,
+            background: "rgba(212,255,0,0.12)",
+            padding: "0.2rem 0.55rem", marginBottom: "0.9rem",
+          }}>
+            Priority
+          </div>
+        )}
         <h3 style={{
-          fontFamily: FONT, fontSize: "1.3rem", fontWeight: 800,
-          color: priority ? "#fff" : INK,
-          marginBottom: "0.7rem", letterSpacing: "-0.01em", lineHeight: 1.2,
+          fontFamily: FONT, fontSize: "clamp(1.1rem, 1.6vw, 1.35rem)",
+          fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1.2,
+          color: titleClr, marginBottom: "0.65rem",
         }}>
           {title}
         </h3>
         <p style={{
-          fontFamily: FONT, fontSize: "0.97rem",
-          color: priority ? "rgba(255,255,255,0.78)" : INK_60,
-          lineHeight: 1.6,
+          fontFamily: FONT, fontSize: "0.95rem",
+          color: bodyClr, lineHeight: 1.65, margin: 0,
         }}>
           {body}
         </p>
       </div>
+    </div>
+  );
+}
+
+function AudienceListRow({ card, dark }) {
+  const { title, body, priority } = card;
+  return (
+    <div style={{
+      display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)",
+      gap: "clamp(1rem, 4vw, 3rem)", alignItems: "start",
+      padding: "clamp(1.2rem, 2.5vw, 1.8rem) clamp(1rem, 2.5vw, 2rem)",
+      background: dark ? "#111" : "#fff",
+    }}>
+      <h3 style={{
+        fontFamily: FONT, fontWeight: 800,
+        fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+        color: (dark || priority) ? (priority ? NEON : "#fff") : INK,
+        margin: 0, letterSpacing: "-0.01em",
+      }}>
+        {title}
+      </h3>
+      <p style={{
+        fontFamily: FONT, fontSize: "0.95rem",
+        color: dark ? "rgba(255,255,255,0.65)" : INK_60,
+        lineHeight: 1.65, margin: 0,
+      }}>
+        {body}
+      </p>
     </div>
   );
 }
