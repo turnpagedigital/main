@@ -375,10 +375,10 @@
           "type": "hero",
           "visible": true,
           "content": {
-            "eyebrow": "Locked Crypto",
+            "eyebrow": "Crypto Claims",
             "title": "Liquidity for locked",
             "accentTitle": "digital assets.",
-            "subtitle": "FTX. Celsius. BlockFi. Voyager. Genesis. Mt. Gox. We quote in fiat and close fast.",
+            "subtitle": "Our team has helped crypto investors monetize claims across nearly every major digital asset insolvency case of the last decade—FTX, Celsius, BlockFi, Voyager, Genesis, Mt. Gox, Three Arrows Capital and many more. ",
             "size": "tall",
             "video": "/robotvault1.mp4",
             "ctaPrimary": {
@@ -386,7 +386,7 @@
               "href": "/contact?source=crypto"
             },
             "ctaSecondary": {
-              "label": "How it works",
+              "label": "How we help",
               "href": "#how-crypto"
             }
           }
@@ -395,24 +395,26 @@
           "id": "sec-crypto-audience",
           "type": "audience-cards",
           "visible": true,
+          "layout": "grid-3col",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
             "title": "Creditors. Funds.",
             "accent": "Estates.",
-            "colorScheme": "light-gray",
-            "layout": "grid-2col",
+            "colorScheme": "white",
+            "layout": "grid-3col",
             "cards": [
               {
                 "id": "individual-creditors",
                 "title": "Crypto lenders and account owners",
                 "body": "Customers",
-                "priority": true
+                "priority": false
               },
               {
                 "id": "funds-institutions",
                 "title": "Funds & Institutions",
                 "body": "Bulk dispositions and side-pocket cleanups. Size moved discreetly.",
-                "priority": true
+                "priority": false
               },
               {
                 "id": "estates-trustees",
@@ -427,22 +429,30 @@
           "id": "sec-crypto-service",
           "type": "service-cards",
           "visible": true,
+          "layout": "grid-3col",
+          "colorScheme": "light-gray",
           "content": {
-            "eyebrow": "What We Offer",
-            "title": "Trade.",
-            "accent": "Advise. Close.",
-            "colorScheme": "dark",
+            "eyebrow": "How We Help",
+            "title": "Pricing. Structuring.",
+            "accent": "Resolution.",
+            "colorScheme": "light-gray",
             "layout": "grid-3col",
             "cards": [
               {
                 "id": "capital",
-                "title": "Capital",
+                "title": "Competitive Capital",
                 "body": "A competitive cash bid from our institutional buyer network. Quoted and settled in fiat. Days to close."
               },
               {
                 "id": "advisory",
-                "title": "Advisory",
+                "title": "Strategic Advisory",
                 "body": "Plan-of-reorganization analysis. Token-vs-fiat valuation strategy. Counsel introductions when needed."
+              },
+              {
+                "id": "card-1780883568240",
+                "title": "Dispute Resolution",
+                "body": "",
+                "priority": false
               }
             ]
           }
