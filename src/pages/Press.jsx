@@ -81,7 +81,7 @@ const TYPE_OPTS = [
   { key: "press",   label: "Press" },
   { key: "article", label: "Publications" },
   { key: "podcast", label: "Podcasts" },
-  { key: "social",  label: "Posts" },
+  { key: "posts",   label: "Posts" },
 ];
 
 /* ── Media helpers ───────────────────────────────────────────────────────── */
@@ -237,7 +237,7 @@ function getTypeFromUrl() {
   if (typeof window === "undefined") return "all";
   const params = new URLSearchParams(window.location.search || "");
   const t = params.get("type");
-  return ["press", "article", "social", "podcast"].includes(t) ? t : "all";
+  return ["press", "article", "posts", "podcast"].includes(t) ? t : "all";
 }
 function getTopicFromUrl() {
   if (typeof window === "undefined") return "all";
@@ -310,7 +310,7 @@ export default function Press() {
     let items = unifiedItems;
     if (filterType   !== "all") items = items.filter(d =>
       filterType === "article" ? d.mediaType === "article"
-      : filterType === "social" ? (d.mediaType === "social" || d.mediaType === "blog")
+      : filterType === "posts"  ? (d.mediaType === "social" || d.mediaType === "blog")
       : filterType === "press"  ? (d.mediaType === "press"  || d.mediaType === "news")
       : d.mediaType === filterType
     );
