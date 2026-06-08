@@ -485,6 +485,21 @@
           }
         },
         {
+          "id": "sec-crypto-experience",
+          "type": "experience",
+          "visible": true
+        },
+        {
+          "id": "sec-crypto-testimonials",
+          "type": "testimonials",
+          "visible": true,
+          "layout": "layout-1-grid3col",
+          "colorScheme": "light-gray",
+          "content": {
+            "colorScheme": "light-gray"
+          }
+        },
+        {
           "id": "sec-1780810488155-w95s",
           "type": "photo-break",
           "visible": true,
@@ -496,11 +511,6 @@
             "_spacingBottom": "small",
             "_spacingTop": "small"
           }
-        },
-        {
-          "id": "sec-crypto-experience",
-          "type": "experience",
-          "visible": true
         },
         {
           "id": "sec-1780673451611-nalm",
@@ -531,16 +541,6 @@
           }
         },
         {
-          "id": "sec-crypto-testimonials",
-          "type": "testimonials",
-          "visible": true,
-          "layout": "layout-1-grid3col",
-          "colorScheme": "light-gray",
-          "content": {
-            "colorScheme": "light-gray"
-          }
-        },
-        {
           "id": "sec-crypto-bottom-cta",
           "type": "bottom-cta",
           "visible": true,
@@ -548,11 +548,11 @@
           "colorScheme": "dark",
           "content": {
             "eyebrow": "GET YOUR CRYPTO BACK",
-            "title": "Ready to learn more?",
+            "title": "Ready to trade?",
             "accent": "Talk to us.",
-            "kicker": "Private. Fast. Secure.",
+            "kicker": "Contact us for a quote today. Private. Fast. Secure.",
             "primary": {
-              "label": "Get in Touch",
+              "label": "Get a Quote",
               "href": "/contact?source=crypto"
             },
             "secondary": null
