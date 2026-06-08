@@ -82,9 +82,16 @@ export default function PageBuilderTab({ onDirtyChange }) {
       if (!data.ok) throw new Error(data.error || "Failed to load");
       setPages(data.pages || []);
       setSectionTypes(data.sectionTypes || []);
-      // Select home by default
-      const defaultKey = (data.pages && data.pages[0] && data.pages[0].pageKey) || null;
-      if (defaultKey) selectPage(data.pages[0], false);
+      // Preserve currently selected page (don't jump to home)
+      if (selectedKey && data.pages) {
+        const pageToKeep = data.pages.find(p => p.pageKey === selectedKey);
+        if (pageToKeep) {
+          selectPage(pageToKeep, false);
+        }
+      } else if (data.pages && data.pages[0]) {
+        // Only select home by default if no page is currently selected
+        selectPage(data.pages[0], false);
+      }
     } catch (e) { setError(e.message); }
     finally { setLoading(false); }
   }
