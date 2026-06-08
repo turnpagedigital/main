@@ -92,7 +92,10 @@
         {
           "id": "sec-home-experience",
           "type": "experience",
-          "visible": true
+          "visible": true,
+          "content": {
+            "_bookmark": "experience"
+          }
         },
         {
           "id": "sec-home-edge",
