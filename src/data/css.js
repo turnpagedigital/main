@@ -586,6 +586,22 @@ button { font-family: inherit; }
 }
 .field-light textarea { resize: vertical; min-height: 120px; }
 
+/* ─── Admin panel accessibility & focus indicators ─── */
+/* Ensure keyboard users can see which form field is focused in the admin panel.
+   Targets inputs/textareas/selects that have inline outline:none styling. */
+.tpdm-admin input:focus-visible,
+.tpdm-admin textarea:focus-visible,
+.tpdm-admin select:focus-visible {
+  outline: 2px solid ${NEON} !important;
+  outline-offset: 2px !important;
+}
+
+/* Icon buttons in admin (move, delete, etc.) need focus indicators too */
+.tpdm-admin button:focus-visible {
+  outline: 2px solid ${NEON} !important;
+  outline-offset: 2px !important;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 980px) {
   .grid-4col { grid-template-columns: repeat(2, 1fr); }

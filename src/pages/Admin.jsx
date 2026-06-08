@@ -157,7 +157,7 @@ export default function Admin() {
   ];
 
   return (
-    <div style={{ background: "#F4F5F7", minHeight: "100vh", fontFamily: FONT, color: INK }}>
+    <div className="tpdm-admin" style={{ background: "#F4F5F7", minHeight: "100vh", fontFamily: FONT, color: INK }}>
 
       {/* ── Top bar ───────────────────────────────────────────────── */}
       <div style={{
