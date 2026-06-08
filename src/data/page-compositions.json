@@ -187,7 +187,7 @@
             "eyebrow": "Copyright Claims",
             "title": "Calling all creators.",
             "accentTitle": "Claim what's yours.",
-            "subtitle": "We help authors, publishers, artists, record labels and other copyright holders get smart about their rights and track class action compensation opportunities against generative AI companies",
+            "subtitle": "Open AI and Anthropic trained their models on YOUR WORK. \n\nWe help authors, publishers, artists, record labels and other copyright holders get smart about their rights and track class action compensation opportunities against generative AI companies.",
             "size": "tall",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
@@ -201,6 +201,14 @@
           }
         },
         {
+          "id": "sec-aic-damages",
+          "type": "damages",
+          "visible": true,
+          "content": {
+            "_spacingTop": "small"
+          }
+        },
+        {
           "id": "sec-aic-audience",
           "type": "audience-cards",
           "visible": true,
@@ -208,43 +216,38 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
-            "title": "Authors. Publishers.  Artists.",
-            "accent": " Musicians.",
+            "title": "Writers. Publishers.",
+            "accent": "Artists.",
             "colorScheme": "white",
             "layout": "list",
             "cards": [
               {
                 "id": "authors-writers",
                 "title": "Authors & Publishers",
-                "body": "Top Cases: Bartz v. Anthropic | OpenAI MDL | Kadrey v. Meta",
+                "body": "With claims in cases including: Bartz v. Anthropic | OpenAI MDL | Kadrey v. Meta",
                 "priority": false
               },
               {
                 "id": "music-publishers",
                 "title": "Music Labels, Publishers & Catalogue Owners",
-                "body": "Top Cases: Concord v. Anthropic | RIAA-coordinated claimants | UMG v. Suno/Udio",
+                "body": "With claims in cases including: Concord v. Anthropic | RIAA-coordinated claimants | UMG v. Suno/Udio",
                 "priority": false
               },
               {
                 "id": "visual-artists",
                 "title": "Visual Artists & Stock Image Libraries",
-                "body": "Top Cases: Andersen v. Stability | Getty v. Stability (US and UK).",
+                "body": "With claims in cases including: Andersen v. Stability | Getty v. Stability (US and UK).",
                 "priority": false
               },
               {
                 "id": "news-organizations",
                 "title": "News Media Organizations",
-                "body": "Top Cases: NYT v. OpenAI | Advance Local v. Cohere",
+                "body": "With claims in cases including: NYT v. OpenAI | Advance Local v. Cohere",
                 "priority": false
               }
             ],
             "_bookmark": "clients"
           }
-        },
-        {
-          "id": "sec-aic-damages",
-          "type": "damages",
-          "visible": true
         },
         {
           "id": "sec-aic-service",
@@ -261,17 +264,17 @@
             "cards": [
               {
                 "id": "capital",
-                "title": "Settlement monitoring",
-                "body": "A competitive cash bid from our institutional buyer network. Class-member purchases, opt-out direct purchases, bulk catalogues. Days to close."
+                "title": "Track cases",
+                "body": "Did you know you might be eligible to file a claim in one of 60+ cases that are currently on the docket against Generative AI Companies? Subscribe to alerts about claim filing opportunities in the cases that matter to you so you never miss a deadline."
               },
               {
                 "id": "advisory",
-                "title": "Claim filing",
-                "body": "Opt-in vs. opt-out economics. Statutory damages modeling. Counsel introductions across U.S., UK, EU, and Germany."
+                "title": "File claim",
+                "body": "Need help filing a claim? We can help you identify the materials you need to prove what you're owed and reduce the error rate. "
               },
               {
                 "id": "claim-monitoring",
-                "title": "strategic advisory",
+                "title": "Collect cash",
                 "body": "We track and file claims for you, automatically."
               }
             ]
@@ -327,7 +330,7 @@
             "eyebrow": "Get compensated",
             "title": "Ready to learn more?",
             "accent": "Talk to us.",
-            "kicker": "Contact us to discuss your funding needs. Private, fast and secure.",
+            "kicker": "Contact us to discuss your rights. Private, fast and secure.",
             "primary": {
               "label": "Get in Touch",
               "href": "/contact?source=ai-copyright"
@@ -347,9 +350,10 @@
           "content": {
             "title": "Copyright claims,",
             "accent": "answered.",
-            "ctaLabel": "Ask a Question",
+            "ctaLabel": "Ask our team",
             "ctaHref": "/contact?source=ai-copyright",
-            "colorScheme": "light"
+            "colorScheme": "light",
+            "_bookmark": "faq"
           }
         }
       ],
@@ -369,7 +373,7 @@
             "eyebrow": "Crypto Claims",
             "title": "Liquidity for locked",
             "accentTitle": "digital assets.",
-            "subtitle": "Our team has helped crypto investors monetize claims across nearly every major digital asset insolvency case of the last decade—FTX, Celsius, BlockFi, Voyager, Genesis, Mt. Gox, Three Arrows Capital and many more. ",
+            "subtitle": "Our principals have helped thousands of crypto investors monetize nearly $1 billion in claims across nearly every major digital asset insolvency case of the last decade—BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
             "size": "tall",
             "video": "/robotvault1.mp4",
             "ctaPrimary": {
@@ -378,7 +382,7 @@
             },
             "ctaSecondary": {
               "label": "How we help",
-              "href": "#how-crypto"
+              "href": "#how-we-help"
             }
           }
         },
@@ -390,21 +394,21 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
-            "title": "Creditors. Funds.",
-            "accent": "Estates.",
+            "title": "Customers. Lenders. Trustees",
+            "accent": "Account Holders.",
             "colorScheme": "white",
             "layout": "list",
             "cards": [
               {
                 "id": "individual-creditors",
                 "title": "Crypto lenders and account owners",
-                "body": "Customers",
+                "body": "Liquidity for exchange and wallet customers with deposits and loans stuck in legal proceedings.",
                 "priority": false
               },
               {
                 "id": "funds-institutions",
-                "title": "Funds & Institutions",
-                "body": "Bulk dispositions and side-pocket cleanups. Size moved discreetly.",
+                "title": "Crypto hedge funds & institutions",
+                "body": "Monetization of ",
                 "priority": false
               },
               {
@@ -445,14 +449,9 @@
                 "body": "",
                 "priority": false
               }
-            ]
+            ],
+            "_bookmark": "how-we-help"
           }
-        },
-        {
-          "id": "sec-crypto-claims-chart",
-          "type": "crypto-claims-chart",
-          "visible": true,
-          "content": {}
         },
         {
           "id": "sec-crypto-comparison",
@@ -567,6 +566,44 @@
             "ctaLabel": "Get a Quote",
             "ctaHref": "/contact?source=crypto",
             "colorScheme": "light-gray"
+          }
+        },
+        {
+          "id": "sec-1780956113355-u4jq",
+          "type": "damages",
+          "visible": true
+        },
+        {
+          "id": "sec-1780956144940-j453",
+          "type": "how-it-works",
+          "visible": true,
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "How It Works",
+            "title": "Three steps to close.",
+            "accent": "",
+            "kicker": "",
+            "colorScheme": "dark",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Step one",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "Step two",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Step three",
+                "body": "Describe this step."
+              }
+            ]
           }
         }
       ],
