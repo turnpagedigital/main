@@ -812,7 +812,26 @@
       "path": "/bankruptcy-claims",
       "builtIn": false,
       "status": "active",
-      "sections": []
+      "sections": [
+        {
+          "id": "sec-1780886837475-y1ih",
+          "type": "hero",
+          "visible": true,
+          "content": {
+            "eyebrow": "BANKRUPTCY CLAIMS",
+            "title": "The end is often just the beginning of a ",
+            "accentTitle": "new fight.",
+            "subtitle": "Deep bankruptcy and market expertise to help you recover more, faster.",
+            "size": "tall",
+            "video": null,
+            "ctaPrimary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "ctaSecondary": null
+          }
+        }
+      ]
     }
   ]
 }
