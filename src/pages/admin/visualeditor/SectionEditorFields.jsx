@@ -186,7 +186,27 @@ export default function SectionEditorFields({ typeId, form, set }) {
                 <option value="list">List</option>
               </select>
             </div>
+            <div><label style={labelStyle}>Card Style</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.cardStyle || "standard"} onChange={e => set("cardStyle", e.target.value)}>
+                <option value="standard">Standard</option>
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="light-gray">Light Gray</option>
+                <option value="dark">Dark Glass</option>
+                <option value="light-glass">Light Glass</option>
+                <option value="clear-glass">Clear Glass</option>
+              </select>
+            </div>
           </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div><label style={labelStyle}>Card Radius</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.cardRadius || "rounded"} onChange={e => set("cardRadius", e.target.value)}>
+                <option value="rounded">Rounded</option>
+                <option value="square">Square</option>
+              </select>
+            </div>
+          </div>
+          <div style={fieldGroup}><label style={labelStyle}>Background Image (URL)</label><input style={inputStyle} value={form.backgroundImage || ""} onChange={e => set("backgroundImage", e.target.value)} placeholder="https://..." /></div>
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Accent</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
