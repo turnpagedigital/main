@@ -428,29 +428,36 @@
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "How We Help",
-            "title": "Pricing. Structuring.",
+            "title": "Market Bid. Structuring.",
             "accent": "Resolution.",
             "colorScheme": "light-gray",
             "layout": "grid-3col",
             "cards": [
               {
                 "id": "capital",
-                "title": "Competitive Capital",
+                "title": "Capital Access",
                 "body": "A competitive cash bid from our institutional buyer network. Quoted and settled in fiat. Days to close."
               },
               {
                 "id": "advisory",
-                "title": "Strategic Advisory",
+                "title": "Structuring",
                 "body": "Plan-of-reorganization analysis. Token-vs-fiat valuation strategy. Counsel introductions when needed."
               },
               {
                 "id": "card-1780883568240",
-                "title": "Dispute Resolution",
+                "title": "Disputes & Advisory",
+                "body": "",
+                "priority": false
+              },
+              {
+                "id": "card-1780959098231",
+                "title": "Strudcturing",
                 "body": "",
                 "priority": false
               }
             ],
-            "_bookmark": "how-we-help"
+            "_bookmark": "how-we-help",
+            "cardStyle": "liquid-glass"
           }
         },
         {
@@ -577,13 +584,13 @@
           "id": "sec-1780956144940-j453",
           "type": "how-it-works",
           "visible": true,
-          "colorScheme": "dark",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "How It Works",
             "title": "Three steps to close.",
             "accent": "",
-            "kicker": "",
-            "colorScheme": "dark",
+            "kicker": "Trust us bro.",
+            "colorScheme": "light-gray",
             "steps": [
               {
                 "id": "step-1",
