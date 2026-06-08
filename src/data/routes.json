@@ -86,6 +86,13 @@
       "component": "Admin",
       "dynamic": false,
       "title": "Admin"
+    },
+    {
+      "path": "/team",
+      "key": "team",
+      "component": "DynamicPage",
+      "dynamic": false,
+      "title": "Team"
     }
   ]
 }
