@@ -1,25 +1,30 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import LiquidGlassCard from "../LiquidGlassCard.jsx";
+import Card from "../Card.jsx";
 
 /* ServiceCardsSection — "What We Offer"
    Inline section: content lives in page-compositions.json sectionConfig.content.
    Schema:
-     eyebrow, title, accent  — section header text
-     cards[]                 — { id, title, body }
-     layout                  — "grid-3col" (default) | "grid-2col" | "list"
-     colorScheme             — "dark" (default) | "light-gray" | "white"
-     cardStyle               — "standard" (default) | "liquid-glass"
+     eyebrow, title, accent     — section header text
+     cards[]                    — { id, title, body }
+     layout                     — "grid-3col" (default) | "grid-2col" | "list"
+     colorScheme                — "dark" (default) | "light-gray" | "white"
+     cardStyle                  — "standard" (default) | "liquid-glass" | "white" | "black" | "light-gray" | "dark" | "light-glass" | "clear-glass"
+     cardRadius                 — "rounded" (default) | "square"
+     backgroundImage            — optional image URL for section background
 */
 export default function ServiceCardsSection({ sectionConfig }) {
   const c = (sectionConfig && sectionConfig.content) || {};
-  const cards       = c.cards  || [];
-  const eyebrow     = c.eyebrow || "What We Offer";
-  const title       = c.title   || "";
-  const accent      = c.accent  || "";
-  const layout      = c.layout  || "grid-3col";
-  const colorScheme = c.colorScheme || "dark";
-  const cardStyle   = c.cardStyle || "standard";
+  const cards            = c.cards  || [];
+  const eyebrow          = c.eyebrow || "What We Offer";
+  const title            = c.title   || "";
+  const accent           = c.accent  || "";
+  const layout           = c.layout  || "grid-3col";
+  const colorScheme      = c.colorScheme || "dark";
+  const cardStyle        = c.cardStyle || "standard";
+  const cardRadius       = c.cardRadius || "rounded";
+  const backgroundImage  = c.backgroundImage || "";
 
   const isDark  = colorScheme === "dark";
   const sectionBg = { dark: "#0A0A0A", "light-gray": "#F4F5F7", white: "#fff" }[colorScheme] || "#0A0A0A";
@@ -30,8 +35,11 @@ export default function ServiceCardsSection({ sectionConfig }) {
 
   return (
     <section style={{
-      background: sectionBg,
+      background: backgroundImage
+        ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${backgroundImage}') center/cover no-repeat`
+        : sectionBg,
       padding: "clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem)",
+      position: "relative",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
 
@@ -84,6 +92,31 @@ export default function ServiceCardsSection({ sectionConfig }) {
                 description={card.body}
                 variant={isDark ? "dark" : "light"}
               />
+            ))}
+          </div>
+        ) : ["white", "black", "light-gray", "dark", "light-glass", "clear-glass"].includes(cardStyle) ? (
+          <div style={{
+            display: "grid", gridTemplateColumns: cols,
+            gap: "clamp(1rem, 2vw, 1.5rem)",
+          }} className="service-grid">
+            {cards.map(card => (
+              <Card key={card.id} style={cardStyle} radius={cardRadius}>
+                <h3 style={{
+                  fontFamily: FONT, fontWeight: 800,
+                  fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
+                  letterSpacing: "-0.015em", lineHeight: 1.1,
+                  color: "var(--card-text-color)", marginBottom: "0.85rem",
+                  margin: 0,
+                }}>
+                  {card.title}
+                </h3>
+                <p style={{
+                  fontFamily: FONT, fontSize: "0.97rem",
+                  color: "var(--card-secondary-text)", lineHeight: 1.65, margin: 0,
+                }}>
+                  {card.body}
+                </p>
+              </Card>
             ))}
           </div>
         ) : (
