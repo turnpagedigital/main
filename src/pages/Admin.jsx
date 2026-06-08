@@ -9,6 +9,7 @@ const StructureTab      = lazy(() => import("./admin/StructureTab.jsx"));
 const BriefingsTab      = lazy(() => import("./admin/BriefingsTab.jsx"));
 const IntelligenceHubTab = lazy(() => import("./admin/IntelligenceHubTab.jsx"));
 const PagesHubTab        = lazy(() => import("./admin/PagesHubTab.jsx"));
+const CSSTab             = lazy(() => import("./admin/CSSTab.jsx"));
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
@@ -24,7 +25,7 @@ const PagesHubTab        = lazy(() => import("./admin/PagesHubTab.jsx"));
    driven by src/data/file-library.json. The favicon picker lives in the
    Structure → Metadata sub-tab. */
 
-const VALID_TABS = ["content", "page-builder", "assets", "structure", "briefings", "intelligence"];
+const VALID_TABS = ["content", "page-builder", "assets", "structure", "briefings", "intelligence", "css"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "content";
@@ -154,6 +155,7 @@ export default function Admin() {
     { key: "structure",    label: "Structure",     dirty: dirtyTabs.structure    ?? false },
     { key: "briefings",    label: "Briefings",     dirty: false },
     { key: "intelligence", label: "Intelligence",  dirty: dirtyTabs.intelligence ?? false },
+    { key: "css",          label: "CSS & Design",  dirty: false },
   ];
 
   return (
@@ -290,6 +292,7 @@ export default function Admin() {
         {tab === "structure"    && <StructureTab      onDirtyChange={makeDirtyCallback("structure")} />}
         {tab === "briefings"    && <BriefingsTab      onDirtyChange={makeDirtyCallback("briefings")} />}
         {tab === "intelligence" && <IntelligenceHubTab onDirtyChange={makeDirtyCallback("intelligence")} />}
+        {tab === "css"          && <CSSTab />}
         {/* Legacy "pages" tab (meta/favicons) still accessible as sub-tab of Structure */}
       </Suspense>
     </div>

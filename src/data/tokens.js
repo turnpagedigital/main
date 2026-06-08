@@ -35,5 +35,31 @@ export const TEXT = "#FFFFFF";
 export const MUTED = "rgba(255,255,255,0.6)";
 export const MUTED_2 = "rgba(255,255,255,0.4)";
 
+/* Status colors (audit findings — consolidating scattered hardcodes) */
+export const ERROR = "#c44";
+export const ERROR_BG = "#fce8e8";
+export const ERROR_TEXT = "#7a1a1a";
+export const WARNING = "#7a5c00";
+export const WARNING_BG = "#fdf6e3";
+export const SUCCESS = "#2a6e2a";
+export const SUCCESS_BG = "#e8f5e8";
+export const SECONDARY_BG = "#F4F5F7";
+
 /* Typography */
 export const FONT = "'Archivo', sans-serif";
+
+export const FONT_SIZES = {
+  caption: "0.72rem",    // hints, secondary text
+  label: "0.78rem",      // field labels
+  body: "0.85rem",       // body text
+  bodyMedium: "0.9rem",  // larger body
+  heading: "1.2rem",     // h2/h3
+};
+
+export const SPACING = {
+  xs: "0.25rem",
+  sm: "0.5rem",
+  md: "1rem",
+  lg: "1.5rem",
+  xl: "2rem",
+};
