@@ -244,7 +244,10 @@
         {
           "id": "sec-aic-damages",
           "type": "damages",
-          "visible": true
+          "visible": true,
+          "content": {
+            "_spacingTop": "small"
+          }
         },
         {
           "id": "sec-aic-service",
