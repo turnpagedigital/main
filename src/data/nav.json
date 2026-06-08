@@ -281,6 +281,17 @@
         "label": "Contact",
         "href": "/contact"
       }
+    },
+    "tariff-refunds": {
+      "brand": {
+        "label": "Tariff Refunds",
+        "href": "https://www.rewindtariffs.com"
+      },
+      "items": [],
+      "cta": {
+        "label": "Contact",
+        "href": "/contact"
+      }
     }
   }
 }
