@@ -192,9 +192,11 @@ export default function SectionEditorFields({ typeId, form, set }) {
                 <option value="white">White</option>
                 <option value="black">Black</option>
                 <option value="light-gray">Light Gray</option>
+                <option value="neon">Neon (Bright Green)</option>
                 <option value="dark">Dark Glass</option>
                 <option value="light-glass">Light Glass</option>
                 <option value="clear-glass">Clear Glass</option>
+                <option value="neon-glass">Neon Glass (Green)</option>
               </select>
             </div>
           </div>
@@ -232,9 +234,11 @@ export default function SectionEditorFields({ typeId, form, set }) {
                 <option value="white">White</option>
                 <option value="black">Black</option>
                 <option value="light-gray">Light Gray</option>
+                <option value="neon">Neon (Bright Green)</option>
                 <option value="dark">Dark Glass</option>
                 <option value="light-glass">Light Glass</option>
                 <option value="clear-glass">Clear Glass</option>
+                <option value="neon-glass">Neon Glass (Green)</option>
                 <option value="liquid-glass">Liquid Glass (Legacy)</option>
               </select>
             </div>
@@ -277,9 +281,11 @@ export default function SectionEditorFields({ typeId, form, set }) {
                 <option value="white">White</option>
                 <option value="black">Black</option>
                 <option value="light-gray">Light Gray</option>
+                <option value="neon">Neon (Bright Green)</option>
                 <option value="dark">Dark Glass</option>
                 <option value="light-glass">Light Glass</option>
                 <option value="clear-glass">Clear Glass</option>
+                <option value="neon-glass">Neon Glass (Green)</option>
               </select>
             </div>
             <div><label style={labelStyle}>Card Radius</label>
