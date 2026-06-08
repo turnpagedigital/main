@@ -201,6 +201,14 @@
           }
         },
         {
+          "id": "sec-aic-damages",
+          "type": "damages",
+          "visible": true,
+          "content": {
+            "_spacingTop": "small"
+          }
+        },
+        {
           "id": "sec-aic-audience",
           "type": "audience-cards",
           "visible": true,
@@ -239,14 +247,6 @@
               }
             ],
             "_bookmark": "clients"
-          }
-        },
-        {
-          "id": "sec-aic-damages",
-          "type": "damages",
-          "visible": true,
-          "content": {
-            "_spacingTop": "small"
           }
         },
         {
