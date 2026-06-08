@@ -1,15 +1,17 @@
 import { isAuthed, jsonResponse } from "./_utils.js";
 
-/* Generate Briefing endpoint — triggers briefing generation from intel.turnpage.com
+/* Generate Briefing endpoint — triggers briefing generation from GitHub Actions
 
    POST /api/admin/generate-briefing
-     → Triggers the daily-briefing pipeline to run immediately
-     → intel.turnpage.com will POST generated briefings to /api/admin/posts
+     → Dispatches the daily-briefing-site GitHub Actions workflow
+     → Workflow runs the Python generation script
+     → Generated briefings are committed and deployed to intel.turnpagedigital.com
      → Returns { ok: true, message: "..." }
 
    Requires environment variables:
-   - INTEL_BRIEFING_WEBHOOK_URL (optional) — URL to POST to trigger generation
-     If not set, returns an error.
+   - INTEL_BRIEFING_WEBHOOK_URL — GitHub Actions workflow dispatch API endpoint
+     Format: https://api.github.com/repos/turnpagedigital/daily-briefing-site/actions/workflows/daily-briefing.yml/dispatches
+   - GITHUB_API_TOKEN — GitHub Personal Access Token with 'repo' + 'workflow' scopes
 
    Auth required (session cookie).
 */
@@ -19,41 +21,53 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ ok: false, error: "Unauthorized" }, 401);
   }
 
-  // Get the webhook URL from environment
+  // Get the webhook URL and GitHub token from environment
   const webhookUrl = env.INTEL_BRIEFING_WEBHOOK_URL;
-  if (!webhookUrl) {
+  const githubToken = env.GITHUB_API_TOKEN;
+
+  if (!webhookUrl || !githubToken) {
     return jsonResponse({
       ok: false,
-      error: "Briefing generation webhook not configured. Please set INTEL_BRIEFING_WEBHOOK_URL in Cloudflare environment.",
+      error: "Briefing generation not configured. Please set INTEL_BRIEFING_WEBHOOK_URL and GITHUB_API_TOKEN in Cloudflare environment.",
     }, 500);
   }
 
   try {
-    // Call the intel.turnpage.com webhook to trigger briefing generation
+    // Dispatch the GitHub Actions workflow
     const response = await fetch(webhookUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Accept": "application/vnd.github+json",
+        "Authorization": `Bearer ${githubToken}`,
+        "X-GitHub-Api-Version": "2022-11-28",
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
-        action: "generate",
-        triggered_at: new Date().toISOString(),
+        ref: "main",
+        inputs: {},
       }),
-      timeout: 10000, // 10 second timeout
     });
 
     if (!response.ok) {
       const responseText = await response.text().catch(() => "");
-      console.error(`Intel webhook returned ${response.status}: ${responseText}`);
+      console.error(`GitHub dispatch returned ${response.status}: ${responseText}`);
+      
+      if (response.status === 401 || response.status === 403) {
+        return jsonResponse({
+          ok: false,
+          error: "GitHub authentication failed. Check that GITHUB_API_TOKEN is valid and has 'repo' + 'workflow' scopes.",
+        }, 403);
+      }
+      
       return jsonResponse({
         ok: false,
-        error: `Intel service returned ${response.status}. Check logs for details.`,
+        error: `GitHub returned ${response.status}. The workflow may already be running or the URL may be incorrect.`,
       }, response.status >= 500 ? 502 : 400);
     }
 
-    const data = await response.json().catch(() => ({}));
-
     return jsonResponse({
       ok: true,
-      message: data.message || "Briefing generation triggered. Briefings will appear in the queue within a few moments.",
+      message: "Briefing generation triggered! The GitHub Actions workflow is running. Check https://github.com/turnpagedigital/daily-briefing-site/actions to monitor progress. Briefings will be available at intel.turnpagedigital.com within a few minutes.",
     });
   } catch (error) {
     console.error("Generate briefing error:", error.message);
