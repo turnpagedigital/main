@@ -720,7 +720,9 @@
                 "body": "",
                 "priority": false
               }
-            ]
+            ],
+            "cardStyle": "standard",
+            "cardRadius": "square"
           }
         },
         {
@@ -821,21 +823,29 @@
           }
         },
         {
-          "id": "sec-litfin-bottom-cta",
-          "type": "bottom-cta",
+          "id": "sec-1780962536044-8kwu",
+          "type": "cta",
           "visible": true,
-          "layout": "layout-3-bottomcta",
+          "layout": "layout-1-getquote",
           "colorScheme": "dark",
           "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
             "eyebrow": "FUND YOUR CASE",
             "title": "Ready to learn more?",
             "accent": "Talk to us.",
-            "kicker": "Contact us to discuss your funding needs. Private, fast, secure.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
             "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us to discuss your funding needs. Private, fast and secure.",
+            "cta": {
               "label": "Talk to Us",
               "href": "/contact?source=litigation-finance"
-            },
-            "secondary": null
+            }
           }
         },
         {
