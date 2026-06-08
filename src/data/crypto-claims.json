@@ -1,0 +1,66 @@
+{
+  "title": "Crypto Bankruptcy Claims Market",
+  "subtitle": "Recovery rates and trading status across major insolvencies",
+  "claims": [
+    {
+      "id": "ftx",
+      "name": "FTX",
+      "recoveryRate": 35,
+      "claimsTotal": 8000000000,
+      "claimsResolved": 3500000000,
+      "status": "Active",
+      "filedDate": "2022-11-11",
+      "description": "FTX exchange collapse; customer claims trading actively"
+    },
+    {
+      "id": "genesis",
+      "name": "Genesis Global Capital",
+      "recoveryRate": 28,
+      "claimsTotal": 5000000000,
+      "claimsResolved": 1400000000,
+      "status": "Active",
+      "filedDate": "2023-01-19",
+      "description": "Cryptocurrency lending platform insolvency"
+    },
+    {
+      "id": "blockfi",
+      "name": "BlockFi",
+      "recoveryRate": 98,
+      "claimsTotal": 750000000,
+      "claimsResolved": 735000000,
+      "status": "Resolving",
+      "filedDate": "2022-11-28",
+      "description": "Crypto trading and lending platform; strong recovery"
+    },
+    {
+      "id": "celsius",
+      "name": "Celsius Network",
+      "recoveryRate": 45,
+      "claimsTotal": 3500000000,
+      "claimsResolved": 1575000000,
+      "status": "Active",
+      "filedDate": "2022-07-13",
+      "description": "Lending and staking platform; ongoing distributions"
+    },
+    {
+      "id": "voyager",
+      "name": "Voyager Digital",
+      "recoveryRate": 87,
+      "claimsTotal": 2200000000,
+      "claimsResolved": 1914000000,
+      "status": "Resolving",
+      "filedDate": "2022-07-05",
+      "description": "Digital asset exchange; acquired by FTX then liquidated"
+    },
+    {
+      "id": "mtgox",
+      "name": "Mt. Gox",
+      "recoveryRate": 98,
+      "claimsTotal": 450000000,
+      "claimsResolved": 441000000,
+      "status": "Finalizing",
+      "filedDate": "2014-03-06",
+      "description": "Earliest major exchange collapse; long-term claims resolution"
+    }
+  ]
+}

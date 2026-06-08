@@ -448,6 +448,12 @@
           }
         },
         {
+          "id": "sec-crypto-claims-chart",
+          "type": "crypto-claims-chart",
+          "visible": true,
+          "content": {}
+        },
+        {
           "id": "sec-crypto-comparison",
           "type": "comparison",
           "visible": false,

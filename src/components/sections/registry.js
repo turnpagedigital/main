@@ -25,6 +25,7 @@ import ServiceCardsSection  from "./ServiceCardsSection.jsx";
 import ComparisonSection    from "./ComparisonSection.jsx";
 import HowItWorksSection    from "./HowItWorksSection.jsx";
 import DamagesSection       from "./DamagesSection.jsx";
+import CryptoClaimsChart    from "../CryptoClaimsChart.jsx";
 
 export const SECTION_MAP = {
   "home-hero":      HomeHeroSection,
@@ -46,4 +47,5 @@ export const SECTION_MAP = {
   "comparison":     ComparisonSection,
   "how-it-works":   HowItWorksSection,
   "damages":        DamagesSection,
+  "crypto-claims-chart": CryptoClaimsChart,
 };

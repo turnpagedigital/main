@@ -482,24 +482,14 @@ function NavRow({
         />
       )}
 
-      <div style={{
-        borderTop: `1px solid ${LINE}`,
-        padding: "0.3rem 1rem",
-        display: "flex", alignItems: "center", gap: "0.75rem",
-      }}>
-        <label style={{
-          display: "inline-flex", alignItems: "center", gap: "0.5rem",
-          fontFamily: FONT, fontSize: "0.75rem", fontWeight: 600,
-          background: "none", border: "none", padding: 0,
-          cursor: "pointer", color: INK_60,
-          userSelect: "none",
-        }}>
+      {/* Microsite nav toggle */}
+      <div style={{ borderTop: `1px solid ${LINE}`, padding: "0.5rem 1rem", background: "#fafafa" }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}>
           <input
             type="checkbox"
             checked={hasMicrosite}
             onChange={e => {
               if (e.target.checked) {
-                // Create empty microsite config
                 onUpdateMicrosite({
                   brand: { label: item.label, href: item.href },
                   items: [],
@@ -507,14 +497,12 @@ function NavRow({
                 });
                 setMicrositeOpen(true);
               } else {
-                // Remove microsite (set to null by not including it in update)
-                // Actually we need to handle this differently — we'll just close it
                 setMicrositeOpen(false);
               }
             }}
-            style={{ width: 13, height: 13, accentColor: INK, cursor: "pointer" }}
+            style={{ width: 16, height: 16, cursor: "pointer" }}
           />
-          Enable microsite nav
+          Enable microsite nav for this page
         </label>
       </div>
 
