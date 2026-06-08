@@ -1,5 +1,6 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
+import LiquidGlassCard from "../LiquidGlassCard.jsx";
 
 /* ServiceCardsSection — "What We Offer"
    Inline section: content lives in page-compositions.json sectionConfig.content.
@@ -8,6 +9,7 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
      cards[]                 — { id, title, body }
      layout                  — "grid-3col" (default) | "grid-2col" | "list"
      colorScheme             — "dark" (default) | "light-gray" | "white"
+     cardStyle               — "standard" (default) | "liquid-glass"
 */
 export default function ServiceCardsSection({ sectionConfig }) {
   const c = (sectionConfig && sectionConfig.content) || {};
@@ -17,6 +19,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
   const accent      = c.accent  || "";
   const layout      = c.layout  || "grid-3col";
   const colorScheme = c.colorScheme || "dark";
+  const cardStyle   = c.cardStyle || "standard";
 
   const isDark  = colorScheme === "dark";
   const sectionBg = { dark: "#0A0A0A", "light-gray": "#F4F5F7", white: "#fff" }[colorScheme] || "#0A0A0A";
@@ -69,6 +72,20 @@ export default function ServiceCardsSection({ sectionConfig }) {
           }}>
             {cards.map(card => <ServiceListRow key={card.id} card={card} dark={isDark} />)}
           </div>
+        ) : cardStyle === "liquid-glass" ? (
+          <div style={{
+            display: "grid", gridTemplateColumns: cols,
+            gap: "clamp(1.5rem, 2.5vw, 2rem)",
+          }} className="service-grid">
+            {cards.map(card => (
+              <LiquidGlassCard
+                key={card.id}
+                title={card.title}
+                description={card.body}
+                variant={isDark ? "dark" : "light"}
+              />
+            ))}
+          </div>
         ) : (
           <div style={{
             display: "grid", gridTemplateColumns: cols,
@@ -103,10 +120,6 @@ function ServiceCard({ card, dark }) {
       padding: "clamp(1.5rem, 2.5vw, 2.2rem)",
       position: "relative", overflow: "hidden",
     }}>
-      <div style={{
-        position: "absolute", inset: 0, pointerEvents: "none",
-        background: "radial-gradient(55% 55% at 100% 0%, rgba(212,255,0,0.07), transparent 65%)",
-      }} />
       <div style={{ position: "relative", zIndex: 1 }}>
         <h3 style={{
           fontFamily: FONT, fontWeight: 800,
