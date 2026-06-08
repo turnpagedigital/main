@@ -1,8 +1,0 @@
-# Tracker Changelog — May 15, 2026
-
-- [AI IP Litigation Tracker] > Header Row > Column 15: "2026 Updates (as of May 14, 2026)" → "2026 Updates (as of May 15, 2026)" — source: daily update
-- [AI IP Litigation Tracker] > Bartz v. Anthropic PBC > 2026 Updates: prepended "[2026-05-14]: Rule 23(e) fairness hearing held May 14; Class Counsel filed Proposed Order (Dkt. 646-1) requesting final approval, reducing fee to 12.5%; reply objections from Pinder, Chakanga, Esquivel; ruling under submission." — source: https://www.authorsalliance.org/2026/05/14/bartz-v-anthropic-fairness-hearing-final-reminder-91-3-claims-rate-and-updates-from-the-docket/
-- [AI IP Litigation Tracker] > Elsevier Inc. et al. v. Meta Platforms, Inc. > 2026 Updates: prepended update on Authors Alliance commentary re publisher standing and D&O implications — source: https://www.authorsalliance.org/2026/05/05/surprise-elsevier-is-suing-meta-for-you/
-- [AI IP Litigation Tracker] > NEW ROW ADDED > Thomson Reuters Enterprise Centre GmbH v. Ross Intelligence Inc.: Added to US Cases section; supplemental briefs filed May 11 on ASTM v. UpCodes; oral argument June 11, 2026 — source: https://xira.com/p/2026/05/13/each-side-claims-the-same-recent-ruling-supports-its-position-in-thomson-reuters-v-ross-appeal-2/
-- [Ranked by Alleged Damages] > Bartz v. Anthropic > Notes: updated to reflect hearing held, ruling under submission, fee request reduced to 12.5% ($187.5M) — source: https://www.authorsalliance.org/2026/05/14/bartz-v-anthropic-fairness-hearing-final-reminder-91-3-claims-rate-and-updates-from-the-docket/
-- [Landscape Summary] > Title row: date updated to "May 15, 2026" — source: daily update
