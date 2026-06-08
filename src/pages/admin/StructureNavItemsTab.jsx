@@ -438,12 +438,30 @@ function NavRow({
         </label>
       </div>
 
-      {micrositeEnabled && micrositeOpen && (
-        <div style={{ borderTop: `1px solid ${LINE}`, background: "#fafafa", padding: "1rem", marginBottom: "1rem" }}>
-          <p style={{ fontSize: "0.85rem", color: "#666", marginTop: 0, marginBottom: "1rem" }}>
-            Microsite nav editing coming soon. For now, check this box to enable microsite navigation for this page.
-          </p>
-        </div>
+      {micrositeEnabled && micrositeOpen && onUpdateMicrosite && (
+        <MicrositeAccordion
+          ms={microsite || {}}
+          onUpdate={patch => onUpdateMicrosite(item.id, patch)}
+          onUpdateItem={(idx, patch) => {
+            const items = (microsite?.items || []).map((it, i) => i === idx ? { ...it, ...patch } : it);
+            onUpdateMicrosite(item.id, { items });
+          }}
+          onAddItem={() => {
+            const items = [...(microsite?.items || []), { label: "", href: "/" }];
+            onUpdateMicrosite(item.id, { items });
+          }}
+          onMoveItem={(idx, dir) => {
+            const items = [...(microsite?.items || [])];
+            const target = idx + dir;
+            if (target < 0 || target >= items.length) return;
+            [items[idx], items[target]] = [items[target], items[idx]];
+            onUpdateMicrosite(item.id, { items });
+          }}
+          onRemoveItem={(idx) => {
+            const items = (microsite?.items || []).filter((_, i) => i !== idx);
+            onUpdateMicrosite(item.id, { items });
+          }}
+        />
       )}
 
       <div style={{
@@ -670,6 +688,136 @@ function DropdownEditor({ dd, onUpdate, onUpdateLink, onAddLink, onMoveLink, onR
             />
             External
           </label>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MicrositeAccordion({ ms, onUpdate, onUpdateItem, onAddItem, onMoveItem, onRemoveItem }) {
+  const subLabel = {
+    fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+    color: INK_60, letterSpacing: "0.08em", textTransform: "uppercase",
+    marginBottom: "0.35rem", display: "block",
+  };
+
+  return (
+    <div style={{
+      borderTop: `1px solid ${LINE}`,
+      background: "#fafafa",
+      padding: "1rem",
+      display: "flex", flexDirection: "column", gap: "0.75rem",
+    }}>
+      <div>
+        <span style={subLabel}>Brand link</span>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.4rem" }}>
+          <input
+            type="text"
+            value={ms?.brand?.label || ""}
+            onChange={e => onUpdate({ brand: { ...(ms?.brand || {}), label: e.target.value } })}
+            placeholder="Brand label"
+            style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem" }}
+          />
+          <input
+            type="text"
+            value={ms?.brand?.href || ""}
+            onChange={e => onUpdate({ brand: { ...(ms?.brand || {}), href: e.target.value } })}
+            placeholder="/path or https://…"
+            style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem" }}
+          />
+        </div>
+      </div>
+
+      <div>
+        <span style={subLabel}>Section links</span>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+          {(ms?.items || []).map((item, idx) => (
+            <div key={idx} style={{
+              display: "grid",
+              gridTemplateColumns: "56px 1fr 1fr 36px",
+              gap: "0.4rem", alignItems: "center",
+            }}>
+              <div style={{ display: "flex", gap: "0.2rem" }}>
+                <button
+                  type="button"
+                  onClick={() => onMoveItem(idx, -1)}
+                  disabled={idx === 0}
+                  title="Move up"
+                  style={iconBtnStyle(idx === 0)}
+                >
+                  ↑
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onMoveItem(idx, 1)}
+                  disabled={idx === (ms?.items || []).length - 1}
+                  title="Move down"
+                  style={iconBtnStyle(idx === (ms?.items || []).length - 1)}
+                >
+                  ↓
+                </button>
+              </div>
+              <input
+                type="text"
+                value={item.label}
+                onChange={e => onUpdateItem(idx, { label: e.target.value })}
+                placeholder="Label"
+                style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem" }}
+              />
+              <input
+                type="text"
+                value={item.href}
+                onChange={e => onUpdateItem(idx, { href: e.target.value })}
+                placeholder="/path or https://…"
+                style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem" }}
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  if (window.confirm(`Remove "${item.label || "this item"}"?`)) onRemoveItem(idx);
+                }}
+                title="Delete"
+                style={{
+                  ...iconBtnStyle(false),
+                  color: "#c44", borderColor: "rgba(180,40,40,0.25)",
+                  fontSize: "1rem",
+                }}
+              >
+                ×
+              </button>
+            </div>
+          ))}
+        </div>
+        <button
+          type="button"
+          onClick={onAddItem}
+          style={{
+            ...btnStyle,
+            fontSize: "0.78rem", marginTop: "0.5rem",
+            display: "inline-flex", alignItems: "center", gap: "0.3em",
+          }}
+        >
+          + Add item
+        </button>
+      </div>
+
+      <div>
+        <span style={subLabel}>CTA button</span>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.4rem" }}>
+          <input
+            type="text"
+            value={ms?.cta?.label || ""}
+            onChange={e => onUpdate({ cta: { ...(ms?.cta || {}), label: e.target.value } })}
+            placeholder="CTA label"
+            style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem" }}
+          />
+          <input
+            type="text"
+            value={ms?.cta?.href || ""}
+            onChange={e => onUpdate({ cta: { ...(ms?.cta || {}), href: e.target.value } })}
+            placeholder="/path or https://…"
+            style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem" }}
+          />
         </div>
       </div>
     </div>
