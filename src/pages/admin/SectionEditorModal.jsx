@@ -4,6 +4,7 @@ import { inputStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
 import { GLOBAL_COLOR_SCHEMES, SECTION_COLOR_SUPPORT } from "../../components/sections/ColorSchemes.js";
 import sectionTypesData from "../../data/section-types.json";
 import SectionThumb from "./SectionThumb.jsx";
+import { getSupportedColorSchemes, getPaletteVisuals, getDefaultScheme } from "../../lib/section-palette-adapter.js";
 
 // Lazy-load data-driven editors — only fetched when a shared/page section is opened
 const HomeContentTab    = lazy(() => import("./HomeContentTab.jsx"));
@@ -433,9 +434,10 @@ function VisualLayoutColorPicker({ typeId, form, set, sectionTypes }) {
 
 /* ── Color-only picker (for FAQ — layout is auto, just pick background) ──*/
 function ColorSchemePicker({ typeId, value, onChange, sectionTypes }) {
-  const typeDef = (sectionTypes || []).find(t => t.id === typeId);
-  const schemes = typeDef?.supportedColorSchemes || ["light", "light-gray", "light-card"];
-  const current = value || typeDef?.defaultColorScheme || schemes[0];
+  // Use new palette-adapter system (prefers section-palettes.json)
+  // Falls back to old sectionTypes system for backward compatibility
+  const schemes = getSupportedColorSchemes(typeId) || ["light", "light-gray", "light-card"];
+  const current = value || getDefaultScheme(typeId) || schemes[0];
 
   return (
     <div style={{ marginBottom: "1.2rem", padding: "1rem", background: "#F8F9FA", border: `1px solid ${LINE}`, borderLeft: `3px solid ${NEON}` }}>
@@ -444,7 +446,9 @@ function ColorSchemePicker({ typeId, value, onChange, sectionTypes }) {
       </p>
       <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
         {schemes.map(key => {
-          const v = SCHEME_VISUALS[key] || { label: key, swatch: "#eee", text: "#000", border: "#ccc" };
+          // Try new palette system first, fall back to old SCHEME_VISUALS
+          const paletteV = getPaletteVisuals(typeId, key);
+          const v = paletteV || SCHEME_VISUALS[key] || { label: key, swatch: "#eee", text: "#000", border: "#ccc" };
           const active = current === key;
           return (
             <button
