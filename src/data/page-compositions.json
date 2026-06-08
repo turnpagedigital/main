@@ -63,7 +63,10 @@
         {
           "id": "sec-home-bio",
           "type": "bio",
-          "visible": true
+          "visible": true,
+          "content": {
+            "_bookmark": "leadership"
+          }
         },
         {
           "id": "sec-home-testimonials",
