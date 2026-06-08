@@ -87,8 +87,8 @@ export default function Card({
     "clear-glass": {
       bg: "rgba(255, 255, 255, 0.25)",
       border: "rgba(200, 200, 220, 0.3)",
-      textColor: INK,
-      secondaryText: INK_60,
+      textColor: "#000000",
+      secondaryText: "rgba(0, 0, 0, 0.75)",
       backdrop: "blur(30px) saturate(200%)",
       shadow: "0 2px 8px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.5)",
       hoverShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6)",
