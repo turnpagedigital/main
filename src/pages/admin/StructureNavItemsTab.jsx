@@ -296,7 +296,7 @@ function NavRow({
   onUpdateMicrosite,
 }) {
   const [dropOpen, setDropOpen] = useState(false);
-  const [micrositeOpen, setMicrositeOpen] = useState(false);
+  const [micrositeOpen, setMicrositeOpen] = useState(Boolean(microsite)); // Open if microsite already exists
   const [micrositeEnabled, setMicrositeEnabled] = useState(Boolean(microsite));
   // Auto-detect mode: "internal" if href matches a known internal path, else "external"
   const [hrefMode, setHrefMode] = useState(
