@@ -236,6 +236,22 @@ export default function SectionEditorFields({ typeId, form, set }) {
         </>
       )}
 
+      {/* ── Bookmark (optional, all sections) ── */}
+      <div style={{ marginTop: "1.2rem", marginBottom: "0.9rem" }}>
+        <div style={fieldGroup}>
+          <label style={labelStyle}>Section Bookmark (optional)</label>
+          <input
+            style={inputStyle}
+            placeholder="e.g., capital-advisory"
+            value={form._bookmark || ""}
+            onChange={e => set("_bookmark", e.target.value || null)}
+          />
+          <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 4, margin: 0 }}>
+            Creates a custom URL anchor. E.g., /page#{form._bookmark || 'section-id'}. Leave blank for auto-generated ID.
+          </p>
+        </div>
+      </div>
+
       {/* ── Spacing & Height (universal) ── */}
       <div style={{ marginTop: "1.4rem", paddingTop: "1.2rem", borderTop: `1px solid ${LINE}` }}>
         <p style={{ fontSize: "0.68rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.8rem" }}>

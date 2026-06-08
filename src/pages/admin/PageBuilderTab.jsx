@@ -105,6 +105,43 @@ export default function PageBuilderTab({ onDirtyChange }) {
     onDirtyChange?.(false);
   }
 
+  async function handlePathChange(newPath) {
+    if (!newPath.startsWith("/")) newPath = "/" + newPath;
+    if (newPath === selectedPage.path) return;
+
+    const proceed = window.confirm(
+      `Change path from "${selectedPage.path}" to "${newPath}"?\n\n` +
+      `This will update:\n` +
+      `• routes.json\n` +
+      `• Navigation links\n` +
+      `• Footer links\n` +
+      `• Internal CTAs and links\n\n` +
+      `A redirect will be created from the old path.`
+    );
+    if (!proceed) return;
+
+    setLoading(true);
+    try {
+      const res = await fetch("/api/admin/page-path", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pageKey: selectedKey,
+          oldPath: selectedPage.path,
+          newPath: newPath,
+        }),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      const updated = await res.json();
+      setPages(updated.pages);
+      alert("✓ Page path updated and all references cascaded.");
+    } catch (err) {
+      alert("✗ Error: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   async function save() {
     if (!selectedKey) return;
     setSaving(true); setError("");
@@ -364,6 +401,9 @@ export default function PageBuilderTab({ onDirtyChange }) {
           {/* Center: live page preview */}
           {selectedPage ? (
             <div>
+              {/* ── Path Editor ────────────────────────── */}
+              <PathEditor pageKey={selectedKey} currentPath={selectedPage.path} onPathChange={handlePathChange} />
+
               {/* ── Header row above the preview ────────────────────────── */}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.6rem", gap: 12, flexWrap: "wrap" }}>
                 <h3 style={{ fontSize: "1rem", fontWeight: 800, margin: 0 }}>
@@ -665,6 +705,71 @@ function PageStatusBar({ status, onChange, pageKey, onDelete }) {
           }}
         >
           Delete
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function PathEditor({ pageKey, currentPath, onPathChange }) {
+  const [isEditing, setIsEditing] = React.useState(false);
+  const [newPath, setNewPath] = React.useState(currentPath);
+
+  function handleSave() {
+    onPathChange(newPath);
+    setIsEditing(false);
+  }
+
+  function handleCancel() {
+    setNewPath(currentPath);
+    setIsEditing(false);
+  }
+
+  if (!isEditing) {
+    return (
+      <div style={{
+        display: "flex", gap: 8, alignItems: "center",
+        marginBottom: "0.9rem", padding: "0.6rem 0.8rem",
+        background: "#F9FAFB", border: `1px solid ${LINE}`, borderRadius: 4,
+      }}>
+        <span style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, textTransform: "uppercase", letterSpacing: "0.05em" }}>Page URL</span>
+        <code style={{ fontFamily: "monospace", fontSize: "0.85rem", flex: 1, color: INK }}>{currentPath}</code>
+        <button
+          onClick={() => setIsEditing(true)}
+          style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.5rem" }}
+        >
+          Edit
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{
+      marginBottom: "0.9rem", padding: "0.8rem",
+      background: "rgba(212,255,0,0.06)", border: `1px solid ${NEON}`, borderRadius: 4,
+    }}>
+      <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 6 }}>
+        Change page URL
+      </div>
+      <div style={{ display: "flex", gap: 6, marginBottom: 8 }}>
+        <input
+          type="text"
+          value={newPath}
+          onChange={e => setNewPath(e.target.value)}
+          style={{
+            flex: 1, fontFamily: "monospace", fontSize: "0.85rem",
+            padding: "0.45rem 0.6rem", border: `1px solid ${LINE}`, borderRadius: 3,
+          }}
+          placeholder="/new-path"
+        />
+      </div>
+      <div style={{ display: "flex", gap: 6 }}>
+        <button onClick={handleSave} style={{ ...btnPrimaryStyle, fontSize: "0.7rem", padding: "0.3rem 0.6rem", flex: 1 }}>
+          Update & Cascade
+        </button>
+        <button onClick={handleCancel} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.6rem" }}>
+          Cancel
         </button>
       </div>
     </div>
