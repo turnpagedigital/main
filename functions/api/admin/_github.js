@@ -177,7 +177,7 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
   const commitMessage = message.includes("[skip ci]") ? message : `${message}\n\n[skip ci]`;
   const bodyObj = { message: commitMessage, content: base64Content, branch: ref };
   if (sha) bodyObj.sha = sha;
-  const r = await fetchWithTimeout(url, {
+  const r = await fetch(url, {
     method: "PUT",
     headers: { ...githubHeaders(env), "Content-Type": "application/json" },
     body: JSON.stringify(bodyObj),
@@ -195,7 +195,7 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
 export async function deleteFileFromGitHub(env, path, sha, message, repo, branch) {
   const ref = branchOf(env, branch);
   const url = contentsUrl(env, path, repo);
-  const r = await fetchWithTimeout(url, {
+  const r = await fetch(url, {
     method: "DELETE",
     headers: { ...githubHeaders(env), "Content-Type": "application/json" },
     body: JSON.stringify({ message, sha, branch: ref }),
