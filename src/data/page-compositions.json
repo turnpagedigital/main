@@ -606,14 +606,14 @@
           "id": "sec-litfin-audience",
           "type": "audience-cards",
           "visible": true,
-          "layout": "list",
+          "layout": "grid-2col",
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
             "title": "Firms. Claimants.",
             "accent": "Cases.",
             "colorScheme": "white",
-            "layout": "list",
+            "layout": "grid-2col",
             "cards": [
               {
                 "id": "contingency-firms",
@@ -637,6 +637,49 @@
                 "id": "solo-small-firm",
                 "title": "Solo & Small Firm Practitioners",
                 "body": "High-quality litigators with strong cases who need capital to level the playing field against well-resourced defendants.",
+                "priority": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "sec-litfin-service",
+          "type": "service-cards",
+          "visible": true,
+          "layout": "list",
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "What We Fund",
+            "title": "Tough cases. ",
+            "accent": "Big outcomes.",
+            "colorScheme": "dark",
+            "layout": "list",
+            "cards": [
+              {
+                "id": "ip-patent",
+                "title": "Ad hoc group representations",
+                "body": "Long tails of creditors"
+              },
+              {
+                "id": "antitrust-class-actions",
+                "title": "Antitrust & Class Actions",
+                "body": "Multi-plaintiff and class action matters where early capital determines whether a case gets to trial or settles below value.Patent infringement, trade secret misappropriation, and trademark disputes. We understand IP damages and appeals risk."
+              },
+              {
+                "id": "bankruptcy-claims",
+                "title": "Bankruptcy & Litigation Claims",
+                "body": "Claims asserted in or arising out of bankruptcy proceedings — adversary actions, fraudulent transfer, and preference recovery."
+              },
+              {
+                "id": "card-1780884347844",
+                "title": "Litigation/Liquidating Trusts",
+                "body": "Fraudulent transfer actions, D&O claims and other esoteric actions.",
+                "priority": false
+              },
+              {
+                "id": "card-1780884392379",
+                "title": "",
+                "body": "",
                 "priority": false
               }
             ]
@@ -667,49 +710,6 @@
                 "Grow your contingency docket without diluting equity."
               ]
             }
-          }
-        },
-        {
-          "id": "sec-litfin-service",
-          "type": "service-cards",
-          "visible": true,
-          "layout": "grid-3col",
-          "colorScheme": "light-gray",
-          "content": {
-            "eyebrow": "What We Fund",
-            "title": "Tough cases. ",
-            "accent": "Big outcomes.",
-            "colorScheme": "light-gray",
-            "layout": "grid-3col",
-            "cards": [
-              {
-                "id": "ip-patent",
-                "title": "Ad hoc group representations",
-                "body": "Long tails of creditors"
-              },
-              {
-                "id": "antitrust-class-actions",
-                "title": "Antitrust & Class Actions",
-                "body": "Multi-plaintiff and class action matters where early capital determines whether a case gets to trial or settles below value.Patent infringement, trade secret misappropriation, and trademark disputes. We understand IP damages and appeals risk."
-              },
-              {
-                "id": "bankruptcy-claims",
-                "title": "Bankruptcy & Litigation Claims",
-                "body": "Claims asserted in or arising out of bankruptcy proceedings — adversary actions, fraudulent transfer, and preference recovery."
-              },
-              {
-                "id": "card-1780884347844",
-                "title": "Litigation/Liquidating Trusts",
-                "body": "Fraudulent transfer actions, D&O claims and other esoteric actions.",
-                "priority": false
-              },
-              {
-                "id": "card-1780884392379",
-                "title": "",
-                "body": "",
-                "priority": false
-              }
-            ]
           }
         },
         {
