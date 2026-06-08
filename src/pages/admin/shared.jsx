@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
+import { NEON, FONT, INK, INK_60, LINE, SURFACE, ERROR, ERROR_BG, WARNING, SUCCESS, SECONDARY_BG } from "../../data/tokens.js";
 
 // --- Styles ------------------------------------------------------------------
 
@@ -9,7 +9,7 @@ const CHEVRON = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 export const filterSelectStyle = {
   padding: "0.32rem 1.6rem 0.32rem 0.6rem", border: `1px solid ${LINE}`, borderRadius: 0,
   fontFamily: FONT, fontSize: "0.82rem", color: INK,
-  background: "#fff", cursor: "pointer", outline: "none", boxShadow: "none",
+  background: SURFACE, cursor: "pointer", outline: "none", boxShadow: "none",
   appearance: "none", WebkitAppearance: "none",
   backgroundImage: CHEVRON, backgroundRepeat: "no-repeat",
   backgroundPosition: "right 0.45rem center", backgroundSize: "8px 5px",
@@ -19,7 +19,7 @@ export const inputStyle = {
   display: "block", width: "100%", marginTop: "0.3rem",
   padding: "0.55rem 0.7rem", border: `1px solid ${LINE}`, borderRadius: 0,
   fontFamily: FONT, fontSize: "0.92rem", color: INK,
-  background: "#fff", outline: "none", resize: "vertical", boxSizing: "border-box",
+  background: SURFACE, outline: "none", resize: "vertical", boxSizing: "border-box",
   boxShadow: "none", appearance: "none", WebkitAppearance: "none",
 };
 
@@ -28,7 +28,7 @@ export const selectStyle = {
   display: "block", width: "100%", marginTop: "0.3rem",
   padding: "0.55rem 1.8rem 0.55rem 0.7rem", border: `1px solid ${LINE}`, borderRadius: 0,
   fontFamily: FONT, fontSize: "0.92rem", color: INK,
-  background: "#fff", outline: "none", boxSizing: "border-box",
+  background: SURFACE, outline: "none", boxSizing: "border-box",
   boxShadow: "none", appearance: "none", WebkitAppearance: "none",
   cursor: "pointer",
   backgroundImage: CHEVRON, backgroundRepeat: "no-repeat",
@@ -47,7 +47,7 @@ export const btnPrimaryStyle = {
 export function iconBtnStyle(disabled) {
   return {
     width: 32, height: 32, padding: 0, lineHeight: 1,
-    border: `1px solid ${LINE}`, background: "#fff", color: INK,
+    border: `1px solid ${LINE}`, background: SURFACE, color: INK,
     fontFamily: FONT, fontSize: "1rem", fontWeight: 700,
     cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.35 : 1,
     borderRadius: 0,
@@ -63,7 +63,7 @@ export function formatTime(d) {
 export function CenteredMessage({ children }) {
   return (
     <div style={{
-      minHeight: "100vh", background: "#F4F5F7", fontFamily: FONT, color: INK_60,
+      minHeight: "100vh", background: SECONDARY_BG, fontFamily: FONT, color: INK_60,
       display: "flex", alignItems: "center", justifyContent: "center",
       padding: "2rem", flexDirection: "column",
     }}>
@@ -86,11 +86,11 @@ export function LoginForm({ onSubmit, error }) {
 
   return (
     <div style={{
-      minHeight: "100vh", background: "#F4F5F7", fontFamily: FONT, color: INK,
+      minHeight: "100vh", background: SECONDARY_BG, fontFamily: FONT, color: INK,
       display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem",
     }}>
       <form onSubmit={submit} style={{
-        background: "#fff", border: `1px solid ${LINE}`,
+        background: SURFACE, border: `1px solid ${LINE}`,
         padding: "2rem", width: "100%", maxWidth: 380,
       }}>
         <h1 style={{ fontWeight: 800, fontSize: "1.3rem", marginBottom: "0.4rem", letterSpacing: "-0.01em" }}>
