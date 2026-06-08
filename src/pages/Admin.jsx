@@ -6,7 +6,6 @@ import { CenteredMessage, LoginForm, btnStyle } from "./admin/shared.jsx";
 const SharedContentTab  = lazy(() => import("./admin/SharedContentTab.jsx"));
 const AssetsTab         = lazy(() => import("./admin/AssetsTab.jsx"));
 const StructureTab      = lazy(() => import("./admin/StructureTab.jsx"));
-const BriefingsTab      = lazy(() => import("./admin/BriefingsTab.jsx"));
 const IntelligenceHubTab = lazy(() => import("./admin/IntelligenceHubTab.jsx"));
 const PagesHubTab        = lazy(() => import("./admin/PagesHubTab.jsx"));
 const CSSTab             = lazy(() => import("./admin/CSSTab.jsx"));
@@ -25,7 +24,7 @@ const CSSTab             = lazy(() => import("./admin/CSSTab.jsx"));
    driven by src/data/file-library.json. The favicon picker lives in the
    Structure → Metadata sub-tab. */
 
-const VALID_TABS = ["content", "page-builder", "assets", "structure", "briefings", "intelligence", "css"];
+const VALID_TABS = ["content", "page-builder", "assets", "structure", "intelligence", "css"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "content";
@@ -153,7 +152,6 @@ export default function Admin() {
     { key: "page-builder", label: "Pages",         dirty: dirtyTabs["page-builder"] ?? false },
     { key: "assets",       label: "Assets",        dirty: dirtyTabs.assets       ?? false },
     { key: "structure",    label: "Structure",     dirty: dirtyTabs.structure    ?? false },
-    { key: "briefings",    label: "Briefings",     dirty: false },
     { key: "intelligence", label: "Intelligence",  dirty: dirtyTabs.intelligence ?? false },
     { key: "css",          label: "CSS & Design",  dirty: false },
   ];
@@ -290,7 +288,6 @@ export default function Admin() {
         {tab === "page-builder" && <PagesHubTab       onDirtyChange={makeDirtyCallback("page-builder")} />}
         {tab === "assets"       && <AssetsTab         onDirtyChange={makeDirtyCallback("assets")} />}
         {tab === "structure"    && <StructureTab      onDirtyChange={makeDirtyCallback("structure")} />}
-        {tab === "briefings"    && <BriefingsTab      onDirtyChange={makeDirtyCallback("briefings")} />}
         {tab === "intelligence" && <IntelligenceHubTab onDirtyChange={makeDirtyCallback("intelligence")} />}
         {tab === "css"          && <CSSTab />}
         {/* Legacy "pages" tab (meta/favicons) still accessible as sub-tab of Structure */}

@@ -4,6 +4,7 @@ import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
 // Lazy-load sub-tabs
 const BioTab           = lazy(() => import("./BioTab.jsx"));
 const PostsTab         = lazy(() => import("./PostsTab.jsx"));
+const BriefingsTab     = lazy(() => import("./BriefingsTab.jsx"));
 const DealsTab         = lazy(() => import("./DealsTab.jsx"));
 const PressTab         = lazy(() => import("./PressTab.jsx"));
 const AlertsTab        = lazy(() => import("./AlertsTab.jsx"));
@@ -26,6 +27,7 @@ const ContactFormTab   = lazy(() => import("./ContactFormTab.jsx"));
 const SUB_TABS = [
   { key: "bio",           label: "Bio" },
   { key: "posts",         label: "Posts" },
+  { key: "briefings",     label: "Briefings" },
   { key: "deals",         label: "Deals" },
   { key: "press",         label: "Press" },
   { key: "alerts",        label: "Alerts" },
@@ -121,6 +123,7 @@ export default function SharedContentTab({ onDirtyChange }) {
       <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
         {sub === "bio"           && <BioTab          onDirtyChange={makeDirty("bio")} />}
         {sub === "posts"         && <PostsTab        onDirtyChange={makeDirty("posts")} />}
+        {sub === "briefings"     && <BriefingsTab    onDirtyChange={makeDirty("briefings")} />}
         {sub === "deals"         && <DealsTab        onDirtyChange={makeDirty("deals")} />}
         {sub === "press"         && <PressTab        onDirtyChange={makeDirty("press")} />}
         {sub === "alerts"        && <AlertsTab       onDirtyChange={makeDirty("alerts")} />}
