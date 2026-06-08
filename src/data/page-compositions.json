@@ -373,7 +373,7 @@
             "eyebrow": "Crypto Claims",
             "title": "Liquidity for locked",
             "accentTitle": "digital assets.",
-            "subtitle": "Our team has helped crypto investors monetize claims across nearly every major digital asset insolvency case of the last decade—BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
+            "subtitle": "Our principals have helped thousands of crypto investors monetize nearly $1 billion in claims across nearly every major digital asset insolvency case of the last decade—BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
             "size": "tall",
             "video": "/robotvault1.mp4",
             "ctaPrimary": {
@@ -571,6 +571,39 @@
           "id": "sec-1780956113355-u4jq",
           "type": "damages",
           "visible": true
+        },
+        {
+          "id": "sec-1780956144940-j453",
+          "type": "how-it-works",
+          "visible": true,
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "How It Works",
+            "title": "Three steps to close.",
+            "accent": "",
+            "kicker": "",
+            "colorScheme": "dark",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Step one",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "Step two",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Step three",
+                "body": "Describe this step."
+              }
+            ]
+          }
         }
       ],
       "status": "active"
