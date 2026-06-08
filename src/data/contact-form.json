@@ -11,33 +11,13 @@
   "disclaimer": "All submissions are confidential. Sending us a message or receiving a reply does not create any client relationship or funding obligation. Turnpage Digital Markets LLC is not a law firm, or registered broker-dealer and does not provide legal or financial advice. ",
   "subjects": [
     {
-      "id": "Class action claims",
-      "label": "I have a class action membership interest ",
-      "active": true
-    },
-    {
-      "id": "Digital assets",
-      "label": "I have a claim related to a cryptocurrency loan or deposit account",
-      "active": true
-    },
-    {
-      "id": "General inquiry",
-      "label": "I have a general question about your services",
-      "active": true
-    },
-    {
-      "id": "Partnership",
-      "label": "I have a question about partnerships",
-      "active": true
-    },
-    {
       "id": "Bankruptcy claims",
       "label": "I have a claim in a bankruptcy case",
       "active": true
     },
     {
-      "id": "Referrals",
-      "label": "I would like to learn about your referral program",
+      "id": "Class action claims",
+      "label": "I have a class action membership interest ",
       "active": true
     },
     {
@@ -46,8 +26,38 @@
       "active": true
     },
     {
+      "id": "Digital asset claims",
+      "label": "I have a claim related to a cryptocurrency loan or deposit account",
+      "active": true
+    },
+    {
       "id": "Litigation funding",
       "label": "I am seeking funding for a litigation effort",
+      "active": true
+    },
+    {
+      "id": "Tariff refunds",
+      "label": "I am interested in monetizing tariff refunds and related claims",
+      "active": true
+    },
+    {
+      "id": "Receivables",
+      "label": "I am seeking an advance on receivables",
+      "active": true
+    },
+    {
+      "id": "Referrals",
+      "label": "I would like to learn about your referral program",
+      "active": true
+    },
+    {
+      "id": "Partnership",
+      "label": "I have a question about partnerships",
+      "active": true
+    },
+    {
+      "id": "General inquiry",
+      "label": "I have a general question about your services",
       "active": true
     }
   ],
