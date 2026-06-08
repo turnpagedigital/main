@@ -208,33 +208,33 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
-            "title": "Authors. Publishers.  Artists.",
-            "accent": " Musicians.",
+            "title": "Writers. Publishers.",
+            "accent": "Artists.",
             "colorScheme": "white",
             "layout": "list",
             "cards": [
               {
                 "id": "authors-writers",
                 "title": "Authors & Publishers",
-                "body": "Top Cases: Bartz v. Anthropic | OpenAI MDL | Kadrey v. Meta",
+                "body": "With claims in cases including Bartz v. Anthropic | OpenAI MDL | Kadrey v. Meta",
                 "priority": false
               },
               {
                 "id": "music-publishers",
                 "title": "Music Labels, Publishers & Catalogue Owners",
-                "body": "Top Cases: Concord v. Anthropic | RIAA-coordinated claimants | UMG v. Suno/Udio",
+                "body": "With claims in cases including: Concord v. Anthropic | RIAA-coordinated claimants | UMG v. Suno/Udio",
                 "priority": false
               },
               {
                 "id": "visual-artists",
                 "title": "Visual Artists & Stock Image Libraries",
-                "body": "Top Cases: Andersen v. Stability | Getty v. Stability (US and UK).",
+                "body": "With claims in cases including: Andersen v. Stability | Getty v. Stability (US and UK).",
                 "priority": false
               },
               {
                 "id": "news-organizations",
                 "title": "News Media Organizations",
-                "body": "Top Cases: NYT v. OpenAI | Advance Local v. Cohere",
+                "body": "With claims in cases including: NYT v. OpenAI | Advance Local v. Cohere",
                 "priority": false
               }
             ],
