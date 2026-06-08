@@ -5,7 +5,7 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
    Inline section: content lives in page-compositions.json sectionConfig.content.
    Schema:
      eyebrow, title, accent  — section header text
-     cards[]                 — { id, title, body, priority }
+     cards[]                 — { id, title, body, badge }  (badge is a custom label string, e.g., "Featured", "Urgent")
      layout                  — "grid-2col" (default) | "grid-3col" | "list"
      colorScheme             — "light-gray" (default) | "dark" | "white"
 */
@@ -79,13 +79,14 @@ export default function AudienceCardsSection({ sectionConfig }) {
 }
 
 function AudienceCard({ card, schemeDark }) {
-  const { title, body, priority } = card;
-  const cardBg = priority
+  const { title, body, badge } = card;
+  const hasBadge = badge && badge.trim().length > 0;
+  const cardBg = hasBadge
     ? "#0A0A0A"
     : schemeDark ? "rgba(255,255,255,0.05)" : "#fff";
-  const titleClr = (priority || schemeDark) ? "#fff" : INK;
-  const bodyClr  = (priority || schemeDark) ? "rgba(255,255,255,0.72)" : INK_60;
-  const borderClr = (priority || schemeDark)
+  const titleClr = (hasBadge || schemeDark) ? "#fff" : INK;
+  const bodyClr  = (hasBadge || schemeDark) ? "rgba(255,255,255,0.72)" : INK_60;
+  const borderClr = (hasBadge || schemeDark)
     ? "rgba(255,255,255,0.12)"
     : LINE;
 
@@ -97,14 +98,14 @@ function AudienceCard({ card, schemeDark }) {
       position: "relative",
       overflow: "hidden",
     }}>
-      {priority && (
+      {hasBadge && (
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
           background: "radial-gradient(55% 65% at 0% 0%, rgba(212,255,0,0.11), transparent 65%)",
         }} />
       )}
       <div style={{ position: "relative", zIndex: 1 }}>
-        {priority && (
+        {hasBadge && (
           <div style={{
             display: "inline-block", fontFamily: FONT,
             fontSize: "0.65rem", fontWeight: 800, letterSpacing: "0.12em",
@@ -112,7 +113,7 @@ function AudienceCard({ card, schemeDark }) {
             background: "rgba(212,255,0,0.12)",
             padding: "0.2rem 0.55rem", marginBottom: "0.9rem",
           }}>
-            Priority
+            {badge}
           </div>
         )}
         <h3 style={{
@@ -134,7 +135,8 @@ function AudienceCard({ card, schemeDark }) {
 }
 
 function AudienceListRow({ card, dark }) {
-  const { title, body, priority } = card;
+  const { title, body, badge } = card;
+  const hasBadge = badge && badge.trim().length > 0;
   return (
     <div style={{
       display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 2fr)",
@@ -145,7 +147,7 @@ function AudienceListRow({ card, dark }) {
       <h3 style={{
         fontFamily: FONT, fontWeight: 800,
         fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
-        color: (dark || priority) ? (priority ? NEON : "#fff") : INK,
+        color: (dark || hasBadge) ? (hasBadge ? NEON : "#fff") : INK,
         margin: 0, letterSpacing: "-0.01em",
       }}>
         {title}

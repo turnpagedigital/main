@@ -34,7 +34,7 @@ function uid(prefix) {
 }
 
 function emptyAudienceCard() {
-  return { id: uid("aud"), title: "", body: "", priority: false };
+  return { id: uid("aud"), title: "", body: "", badge: "" };
 }
 
 function emptyServiceCard() {
@@ -659,23 +659,24 @@ function AudienceCardRow({ card, index, total, onUpdate, onMoveUp, onMoveDown, o
         borderBottom: `1px solid ${LINE}`,
         flexWrap: "wrap",
       }}>
-        {/* PRIORITY/STANDARD pill toggle */}
-        <button
-          type="button"
-          onClick={() => onUpdate({ priority: !card.priority })}
+        {/* Custom badge label input */}
+        <input
+          type="text"
+          value={card.badge || ""}
+          onChange={(e) => onUpdate({ badge: e.target.value })}
+          placeholder="e.g., Featured, Urgent"
           style={{
-            background: card.priority ? NEON : "#E5E7EB",
-            color: card.priority ? "#0A0A0A" : INK_60,
-            border: "none", borderRadius: 0,
-            padding: "0.25rem 0.65rem",
-            fontSize: "0.7rem", fontWeight: 800,
-            letterSpacing: "0.08em", textTransform: "uppercase",
-            cursor: "pointer", fontFamily: FONT,
+            border: "1px solid " + (card.badge ? NEON : "#ccc"),
+            borderRadius: "3px",
+            padding: "0.25rem 0.6rem",
+            fontSize: "0.7rem", fontWeight: 600,
+            fontFamily: FONT,
             flexShrink: 0,
+            maxWidth: "140px",
+            background: card.badge ? "rgba(212,255,0,0.08)" : "#fff",
+            color: card.badge ? NEON : INK_60,
           }}
-        >
-          {card.priority ? "PRIORITY" : "STANDARD"}
-        </button>
+        />
 
         {/* Summary text */}
         <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
