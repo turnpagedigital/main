@@ -270,6 +270,17 @@
         "label": "Talk to Us",
         "href": "/contact?source=litigation-funding"
       }
+    },
+    "item-1780886683141": {
+      "brand": {
+        "label": "Bankruptcy Claims",
+        "href": "/"
+      },
+      "items": [],
+      "cta": {
+        "label": "Contact",
+        "href": "/contact"
+      }
     }
   }
 }
