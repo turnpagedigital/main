@@ -424,36 +424,24 @@
           "id": "sec-crypto-service",
           "type": "service-cards",
           "visible": true,
-          "layout": "grid-3col",
+          "layout": "grid-2col",
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "How We Help",
-            "title": "Market Bid. Structuring.",
-            "accent": "Resolution.",
+            "title": "Fair pricing. Real",
+            "accent": "Resolutions.",
             "colorScheme": "light-gray",
-            "layout": "grid-3col",
+            "layout": "grid-2col",
             "cards": [
               {
                 "id": "capital",
-                "title": "Capital Access",
-                "body": "A competitive cash bid from our institutional buyer network. Quoted and settled in fiat. Days to close."
+                "title": "Capital",
+                "body": "Accept a competitive offer from our dedicated capital partners or tap our deep network of institutional buyers. Lean on our experience structuring complex transactions to ensure alignment of incentives and efficient risk allocation. "
               },
               {
                 "id": "advisory",
-                "title": "Structuring",
-                "body": "Plan-of-reorganization analysis. Token-vs-fiat valuation strategy. Counsel introductions when needed."
-              },
-              {
-                "id": "card-1780883568240",
-                "title": "Disputes & Advisory",
-                "body": "",
-                "priority": false
-              },
-              {
-                "id": "card-1780959098231",
-                "title": "Strudcturing",
-                "body": "",
-                "priority": false
+                "title": "Advice",
+                "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances."
               }
             ],
             "_bookmark": "how-we-help",
