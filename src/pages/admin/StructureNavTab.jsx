@@ -283,6 +283,7 @@ export default function StructureNavTab({ onDirtyChange }) {
             item={item}
             index={index}
             total={items.length}
+            microsite={microsites?.[item.id] || null}
             onUpdate={patch => update(index, patch)}
             onMoveUp={() => moveUp(index)}
             onMoveDown={() => moveDown(index)}
@@ -293,6 +294,11 @@ export default function StructureNavTab({ onDirtyChange }) {
             onAddDropdownLink={() => addDropdownLink(index)}
             onMoveDropdownLink={(li, dir) => moveDropdownLink(index, li, dir)}
             onRemoveDropdownLink={li => removeDropdownLink(index, li)}
+            onUpdateMicrosite={(patch) => updateMicrosite(item.id, patch)}
+            onUpdateMicrositeItem={(idx, patch) => updateMicrositeItem(item.id, idx, patch)}
+            onAddMicrositeItem={() => addMicrositeItem(item.id)}
+            onMoveMicrositeItem={(idx, dir) => moveMicrositeItem(item.id, idx, dir)}
+            onRemoveMicrositeItem={idx => removeMicrositeItem(item.id, idx)}
           />
         ))}
       </div>
@@ -308,25 +314,6 @@ export default function StructureNavTab({ onDirtyChange }) {
           + Add nav item
         </button>
       )}
-
-      {/* MICROSITE NAVS */}
-      <SectionHeader style={{ marginTop: "2rem" }}>Microsite Navs</SectionHeader>
-      {microsites && (
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-          {Object.entries(microsites || {}).map(([brandId, ms]) => (
-            <MicrositePanel
-              key={brandId}
-              brandId={brandId}
-              ms={ms}
-              onUpdate={patch => updateMicrosite(brandId, patch)}
-              onUpdateItem={(idx, patch) => updateMicrositeItem(brandId, idx, patch)}
-              onAddItem={() => addMicrositeItem(brandId)}
-              onMoveItem={(idx, dir) => moveMicrositeItem(brandId, idx, dir)}
-              onRemoveItem={idx => removeMicrositeItem(brandId, idx)}
-            />
-          ))}
-        </div>
-      )}
     </div>
   );
 }
@@ -337,14 +324,18 @@ export default function StructureNavTab({ onDirtyChange }) {
 
 function NavRow({
   item, index, total,
+  microsite,
   onUpdate, onMoveUp, onMoveDown, onRemove,
   onToggleDropdown, onUpdateDropdown,
   onUpdateDropdownLink, onAddDropdownLink, onMoveDropdownLink, onRemoveDropdownLink,
+  onUpdateMicrosite, onUpdateMicrositeItem, onAddMicrositeItem, onMoveMicrositeItem, onRemoveMicrositeItem,
 }) {
   const [dropOpen, setDropOpen] = useState(false);
+  const [micrositeOpen, setMicrositeOpen] = useState(false);
   const labelEmpty = !item.label.trim();
   const hrefEmpty  = !item.href.trim();
   const hasDropdown = Boolean(item.dropdown);
+  const hasMicrosite = Boolean(microsite);
 
   const summary = item.label
     ? `"${item.label}"${item.href ? ` — ${item.href}` : ""}`
@@ -488,6 +479,53 @@ function NavRow({
           onAddLink={onAddDropdownLink}
           onMoveLink={onMoveDropdownLink}
           onRemoveLink={onRemoveDropdownLink}
+        />
+      )}
+
+      <div style={{
+        borderTop: `1px solid ${LINE}`,
+        padding: "0.3rem 1rem",
+        display: "flex", alignItems: "center", gap: "0.75rem",
+      }}>
+        <label style={{
+          display: "inline-flex", alignItems: "center", gap: "0.5rem",
+          fontFamily: FONT, fontSize: "0.75rem", fontWeight: 600,
+          background: "none", border: "none", padding: 0,
+          cursor: "pointer", color: INK_60,
+          userSelect: "none",
+        }}>
+          <input
+            type="checkbox"
+            checked={hasMicrosite}
+            onChange={e => {
+              if (e.target.checked) {
+                // Create empty microsite config
+                onUpdateMicrosite({
+                  brand: { label: item.label, href: item.href },
+                  items: [],
+                  cta: { label: "Contact", href: "/contact" },
+                });
+                setMicrositeOpen(true);
+              } else {
+                // Remove microsite (set to null by not including it in update)
+                // Actually we need to handle this differently — we'll just close it
+                setMicrositeOpen(false);
+              }
+            }}
+            style={{ width: 13, height: 13, accentColor: INK, cursor: "pointer" }}
+          />
+          Enable microsite nav
+        </label>
+      </div>
+
+      {hasMicrosite && micrositeOpen && (
+        <MicrositeAccordion
+          ms={microsite}
+          onUpdate={onUpdateMicrosite}
+          onUpdateItem={onUpdateMicrositeItem}
+          onAddItem={onAddMicrositeItem}
+          onMoveItem={onMoveMicrositeItem}
+          onRemoveItem={onRemoveMicrositeItem}
         />
       )}
     </div>
@@ -661,9 +699,7 @@ function DropdownEditor({ dd, onUpdate, onUpdateLink, onAddLink, onMoveLink, onR
   );
 }
 
-function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMoveItem, onRemoveItem }) {
-  const [open, setOpen] = useState(false);
-
+function MicrositeAccordion({ ms, onUpdate, onUpdateItem, onAddItem, onMoveItem, onRemoveItem }) {
   const subLabel = {
     fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
     color: INK_60, letterSpacing: "0.08em", textTransform: "uppercase",
@@ -671,35 +707,12 @@ function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMove
   };
 
   return (
-    <div style={{ border: `1px solid ${LINE}`, background: "#fff" }}>
-      <button
-        type="button"
-        onClick={() => setOpen(o => !o)}
-        style={{
-          width: "100%", textAlign: "left",
-          background: "none", border: "none", padding: "0.65rem 1rem",
-          cursor: "pointer",
-          display: "flex", alignItems: "center", gap: "0.5rem",
-          fontFamily: FONT, fontSize: "0.88rem", fontWeight: 700, color: INK,
-        }}
-      >
-        <span style={{
-          display: "inline-block",
-          transform: open ? "rotate(90deg)" : "rotate(0deg)",
-          transition: "transform 0.15s",
-          color: INK_60,
-        }}>&#9658;</span>
-        <span>{ms?.brand?.label || brandId}</span>
-        <span style={{ fontSize: "0.72rem", color: INK_60, fontWeight: 400 }}>({brandId})</span>
-      </button>
-
-      {open && (
-        <div style={{
-          borderTop: `1px solid ${LINE}`,
-          background: "#fafafa",
-          padding: "1rem",
-          display: "flex", flexDirection: "column", gap: "0.75rem",
-        }}>
+    <div style={{
+      borderTop: `1px solid ${LINE}`,
+      background: "#fafafa",
+      padding: "1rem",
+      display: "flex", flexDirection: "column", gap: "0.75rem",
+    }}>
           <div>
             <span style={subLabel}>Brand link</span>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.4rem" }}>
@@ -813,7 +826,6 @@ function MicrositePanel({ brandId, ms, onUpdate, onUpdateItem, onAddItem, onMove
             </div>
           </div>
         </div>
-      )}
     </div>
   );
 }

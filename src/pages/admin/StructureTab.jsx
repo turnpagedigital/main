@@ -5,7 +5,6 @@ import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
 const StructureFaviconsTab  = lazy(() => import("./StructureFaviconsTab.jsx"));
 const StructureSiteMetaTab  = lazy(() => import("./StructureSiteMetaTab.jsx"));
 const StructureNavItemsTab  = lazy(() => import("./StructureNavItemsTab.jsx"));
-const StructureMicrositesTab = lazy(() => import("./StructureMicrositesTab.jsx"));
 const StructureFooterTab    = lazy(() => import("./StructureFooterTab.jsx"));
 const RoutesTab             = lazy(() => import("./RoutesTab.jsx"));
 
@@ -13,14 +12,14 @@ const RoutesTab             = lazy(() => import("./RoutesTab.jsx"));
    StructureTab — master wrapper for site-level settings.
 
    Horizontal sub-tab strip:
-     Favicons | Site Meta | Navigation | Microsites | Footer | Routes
+     Favicons | Site Meta | Navigation | Footer | Routes
 
    Each child manages its own fetch/save/dirty lifecycle.
+   Microsite navigation is managed within the Navigation tab (per nav item checkbox).
 
    URL pattern: /admin/structure             → defaults to "favicons"
                 /admin/structure/site-meta   → Site Meta sub-tab
-                /admin/structure/navigation  → Navigation sub-tab
-                /admin/structure/microsites  → Microsites sub-tab
+                /admin/structure/navigation  → Navigation sub-tab (includes microsite editing)
                 /admin/structure/footer      → Footer sub-tab
                 /admin/structure/routes      → Routes sub-tab
 
@@ -31,7 +30,6 @@ const SUB_TABS = [
   { key: "favicons",    label: "Favicons" },
   { key: "site-meta",   label: "Site Meta" },
   { key: "navigation",  label: "Navigation" },
-  { key: "microsites",  label: "Microsites" },
   { key: "footer",      label: "Footer" },
   { key: "routes",      label: "Routes" },
 ];
@@ -124,7 +122,6 @@ export default function StructureTab({ onDirtyChange }) {
         {sub === "favicons"   && <StructureFaviconsTab   onDirtyChange={makeDirty("favicons")} />}
         {sub === "site-meta"  && <StructureSiteMetaTab   onDirtyChange={makeDirty("site-meta")} />}
         {sub === "navigation" && <StructureNavItemsTab   onDirtyChange={makeDirty("navigation")} />}
-        {sub === "microsites" && <StructureMicrositesTab onDirtyChange={makeDirty("microsites")} />}
         {sub === "footer"     && <StructureFooterTab     onDirtyChange={makeDirty("footer")} />}
         {sub === "routes"     && <RoutesTab              onDirtyChange={makeDirty("routes")} />}
       </Suspense>
