@@ -41,11 +41,14 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
   const [error,        setError]        = useState("");
   const [lastSavedAt,  setLastSavedAt]  = useState(null);
 
-  // ── Dirty flag — compare items only, microsites are pass-through ──────
+  // ── Dirty flag — compare items AND microsites ──────
+  const [originalMicrosites, setOriginalMicrosites] = useState(null);
   const dirty = useMemo(() => {
     if (!items || !originalItems) return false;
-    return JSON.stringify(items) !== JSON.stringify(originalItems);
-  }, [items, originalItems]);
+    const itemsDirty = JSON.stringify(items) !== JSON.stringify(originalItems);
+    const micrositesDirty = JSON.stringify(passThroughMicrosites) !== JSON.stringify(originalMicrosites);
+    return itemsDirty || micrositesDirty;
+  }, [items, originalItems, passThroughMicrosites, originalMicrosites]);
 
   useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
   useEffect(() => { load(); }, []);
@@ -68,6 +71,7 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
       setItems(fetchedItems);
       setOriginalItems(JSON.parse(JSON.stringify(fetchedItems)));
       setPassThroughMicrosites(fetchedMicrosites);
+      setOriginalMicrosites(JSON.parse(JSON.stringify(fetchedMicrosites)));
 
       setPhase("ready");
     } catch (e) { setError(e.message); setPhase("error"); }
@@ -248,6 +252,7 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
             item={item}
             index={index}
             total={items.length}
+            microsite={passThroughMicrosites?.[item.id] || null}
             onUpdate={patch => update(index, patch)}
             onMoveUp={() => moveUp(index)}
             onMoveDown={() => moveDown(index)}
@@ -258,6 +263,7 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
             onAddDropdownLink={() => addDropdownLink(index)}
             onMoveDropdownLink={(li, dir) => moveDropdownLink(index, li, dir)}
             onRemoveDropdownLink={li => removeDropdownLink(index, li)}
+            onUpdateMicrosite={(brandId, patch) => setPassThroughMicrosites(prev => ({ ...prev, [brandId]: { ...(prev[brandId] || {}), ...patch } }))}
           />
         ))}
       </div>
@@ -283,11 +289,14 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
 
 function NavRow({
   item, index, total,
+  microsite,
   onUpdate, onMoveUp, onMoveDown, onRemove,
   onToggleDropdown, onUpdateDropdown,
   onUpdateDropdownLink, onAddDropdownLink, onMoveDropdownLink, onRemoveDropdownLink,
+  onUpdateMicrosite,
 }) {
   const [dropOpen, setDropOpen] = useState(false);
+  const [micrositeOpen, setMicrositeOpen] = useState(false);
   // Auto-detect mode: "internal" if href matches a known internal path, else "external"
   const [hrefMode, setHrefMode] = useState(
     () => INTERNAL_PATHS.has(item.href) ? "internal" : "external"
@@ -295,6 +304,7 @@ function NavRow({
   const labelEmpty = !item.label.trim();
   const hrefEmpty  = !item.href.trim();
   const hasDropdown = Boolean(item.dropdown);
+  const hasMicrosite = Boolean(microsite);
 
   const summary = item.label
     ? `"${item.label}"${item.href ? ` — ${item.href}` : ""}`
@@ -400,6 +410,30 @@ function NavRow({
             <p style={{ color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" }}>Required</p>
           )}
         </div>
+      </div>
+
+      {/* Microsite nav checkbox */}
+      <div style={{ borderTop: `1px solid ${LINE}`, padding: "0.5rem 1rem", background: "#fff9e6" }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}>
+          <input
+            type="checkbox"
+            checked={hasMicrosite}
+            onChange={e => {
+              if (e.target.checked && onUpdateMicrosite) {
+                onUpdateMicrosite(item.id, {
+                  brand: { label: item.label, href: item.href },
+                  items: [],
+                  cta: { label: "Contact", href: "/contact" },
+                });
+                setMicrositeOpen(true);
+              } else {
+                setMicrositeOpen(false);
+              }
+            }}
+            style={{ width: 16, height: 16, cursor: "pointer" }}
+          />
+          ☑️ Enable microsite nav
+        </label>
       </div>
 
       <div style={{

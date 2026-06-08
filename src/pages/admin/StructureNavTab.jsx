@@ -422,6 +422,30 @@ function NavRow({
         </label>
       </div>
 
+      {/* TEST: Microsite nav toggle */}
+      <div style={{ borderTop: `1px solid ${LINE}`, padding: "0.5rem 1rem", background: "#fff9e6" }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}>
+          <input
+            type="checkbox"
+            checked={hasMicrosite}
+            onChange={e => {
+              if (e.target.checked) {
+                onUpdateMicrosite({
+                  brand: { label: item.label, href: item.href },
+                  items: [],
+                  cta: { label: "Contact", href: "/contact" },
+                });
+                setMicrositeOpen(true);
+              } else {
+                setMicrositeOpen(false);
+              }
+            }}
+            style={{ width: 16, height: 16, cursor: "pointer" }}
+          />
+          ☑️ Enable microsite nav for this page
+        </label>
+      </div>
+
       <div style={{
         borderTop: `1px solid ${LINE}`,
         padding: "0.3rem 1rem",
@@ -482,33 +506,9 @@ function NavRow({
         />
       )}
 
-      {/* Microsite nav toggle */}
-      <div style={{ borderTop: `1px solid ${LINE}`, padding: "0.5rem 1rem", background: "#fafafa" }}>
-        <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}>
-          <input
-            type="checkbox"
-            checked={hasMicrosite}
-            onChange={e => {
-              if (e.target.checked) {
-                onUpdateMicrosite({
-                  brand: { label: item.label, href: item.href },
-                  items: [],
-                  cta: { label: "Contact", href: "/contact" },
-                });
-                setMicrositeOpen(true);
-              } else {
-                setMicrositeOpen(false);
-              }
-            }}
-            style={{ width: 16, height: 16, cursor: "pointer" }}
-          />
-          Enable microsite nav for this page
-        </label>
-      </div>
-
-      {hasMicrosite && micrositeOpen && (
+      {micrositeOpen && (
         <MicrositeAccordion
-          ms={microsite}
+          ms={microsite || {}}
           onUpdate={onUpdateMicrosite}
           onUpdateItem={onUpdateMicrositeItem}
           onAddItem={onAddMicrositeItem}
