@@ -413,9 +413,14 @@ function NavRow({
         </div>
       </div>
 
-      {/* Microsite nav checkbox */}
-      <div style={{ borderTop: `1px solid ${LINE}`, padding: "0.5rem 1rem", background: "#fff9e6" }}>
-        <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}>
+      {/* Microsite nav: separate checkbox and expand/collapse */}
+      <div style={{
+        borderTop: `1px solid ${LINE}`,
+        padding: "0.3rem 1rem",
+        display: "flex", alignItems: "center", gap: "1rem",
+      }}>
+        {/* Checkbox to enable/disable */}
+        <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600, margin: 0 }}>
           <input
             type="checkbox"
             checked={micrositeEnabled}
@@ -427,15 +432,38 @@ function NavRow({
                   items: [],
                   cta: { label: "Contact", href: "/contact" },
                 });
-                setMicrositeOpen(true);
               } else {
                 setMicrositeOpen(false);
+                onUpdateMicrosite?.(item.id, null);
               }
             }}
             style={{ width: 16, height: 16, cursor: "pointer" }}
           />
-          ☑️ Enable microsite nav
+          Enable microsite nav
         </label>
+
+        {/* Expand/collapse button (like dropdown) */}
+        {micrositeEnabled && (
+          <>
+            <button
+              type="button"
+              onClick={() => setMicrositeOpen(o => !o)}
+              style={{
+                fontFamily: FONT, fontSize: "0.75rem", fontWeight: 600,
+                background: "none", border: "none", padding: "0.2rem 0",
+                cursor: "pointer", color: INK_60,
+                display: "inline-flex", alignItems: "center", gap: "0.3em",
+              }}
+            >
+              <span style={{
+                display: "inline-block",
+                transform: micrositeOpen ? "rotate(90deg)" : "rotate(0deg)",
+                transition: "transform 0.15s",
+              }}>&#9658;</span>
+              {micrositeOpen ? "Hide microsite nav" : "Edit microsite nav"}
+            </button>
+          </>
+        )}
       </div>
 
       {micrositeEnabled && micrositeOpen && onUpdateMicrosite && (
