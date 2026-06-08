@@ -341,7 +341,7 @@ export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
         />
       )}
       {activePage === "aiCopyright" && (
-        <AICopyrightSection
+        <CopyrightSection
           page="aiCopyright"
           d={data.aiCopyright}
           updateItem={updateItem}
@@ -433,7 +433,7 @@ function CryptoSection({ page, d, updateItem, moveItem, removeItem, addItem, upd
   );
 }
 
-function AICopyrightSection({ page, d, updateItem, moveItem, removeItem, addItem }) {
+function CopyrightSection({ page, d, updateItem, moveItem, removeItem, addItem }) {
   return (
     <>
       <SectionHeader>Audience Cards (Who We Help)</SectionHeader>

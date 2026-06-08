@@ -13,7 +13,7 @@ import PageRenderer from "./components/PageRenderer.jsx";
 // Page components are lazy-loaded so each route becomes its own chunk.
 // Only downloaded when the user first navigates to that page.
 const Home             = React.lazy(() => import("./pages/Home.jsx"));
-const AICopyright      = React.lazy(() => import("./pages/AICopyright.jsx"));
+const Copyright        = React.lazy(() => import("./pages/Copyright.jsx"));
 const Crypto           = React.lazy(() => import("./pages/Crypto.jsx"));
 const Briefings        = React.lazy(() => import("./pages/Briefings.jsx"));
 const Briefing         = React.lazy(() => import("./pages/Briefing.jsx"));
@@ -23,7 +23,7 @@ const FAQ              = React.lazy(() => import("./pages/FAQ.jsx"));
 const NotFound         = React.lazy(() => import("./pages/NotFound.jsx"));
 const Admin            = React.lazy(() => import("./pages/Admin.jsx"));
 const Press            = React.lazy(() => import("./pages/Press.jsx"));
-const LitigationFinance = React.lazy(() => import("./pages/LitigationFinance.jsx"));
+const LitigationFunding = React.lazy(() => import("./pages/LitigationFunding.jsx"));
 
 function LoadingFallback() {
   return (
@@ -160,7 +160,7 @@ export default function App() {
 // Component registry — maps component names from routes.json to actual components
 const COMPONENT_MAP = {
   "Home":               Home,
-  "AICopyright":        AICopyright,
+  "Copyright":          Copyright,
   "Crypto":             Crypto,
   "Briefings":          Briefings,
   "Briefing":           Briefing,
@@ -170,7 +170,7 @@ const COMPONENT_MAP = {
   "NotFound":           NotFound,
   "Admin":              Admin,
   "Press":              Press,
-  "LitigationFinance":  LitigationFinance,
+  "LitigationFunding":  LitigationFunding,
 };
 
 // Build PAGE_MAP dynamically from routes.json at import time.

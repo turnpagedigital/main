@@ -97,8 +97,8 @@ function validatePayload(key, payload) {
   switch (key) {
     case "crypto":
       return validateCrypto(payload);
-    case "aiCopyright":
-      return validateAICopyright(payload);
+    case "copyright":
+      return validateCopyright(payload);
     case "litigationFinance":
       return validateLitFin(payload);
     default:
@@ -122,7 +122,7 @@ function validateCrypto(p) {
   return null;
 }
 
-function validateAICopyright(p) {
+function validateCopyright(p) {
   if (!Array.isArray(p.audienceCards)) return "aiCopyright.audienceCards must be an array";
   if (!Array.isArray(p.serviceCards)) return "aiCopyright.serviceCards must be an array";
   if (!Array.isArray(p.damagesData)) return "aiCopyright.damagesData must be an array";
@@ -250,7 +250,7 @@ function validateComparison(cmp, label) {
 function sanitizePayload(key, payload) {
   switch (key) {
     case "crypto":       return sanitizeCrypto(payload);
-    case "aiCopyright":  return sanitizeAICopyright(payload);
+    case "copyright":  return sanitizeCopyright(payload);
     case "litigationFinance": return sanitizeLitFin(payload);
     default: return payload;
   }
@@ -291,7 +291,7 @@ function sanitizeCrypto(p) {
   return out;
 }
 
-function sanitizeAICopyright(p) {
+function sanitizeCopyright(p) {
   return {
     audienceCards: p.audienceCards.map(sanitizeAudienceCard),
     serviceCards:  p.serviceCards.map(sanitizeServiceCard),
