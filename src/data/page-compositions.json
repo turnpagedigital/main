@@ -805,6 +805,14 @@
         }
       ],
       "status": "active"
+    },
+    {
+      "pageKey": "bankruptcy-claims",
+      "title": "Bankruptcy Claims",
+      "path": "/bankruptcy-claims",
+      "builtIn": false,
+      "status": "active",
+      "sections": []
     }
   ]
 }
