@@ -350,9 +350,10 @@
           "content": {
             "title": "Copyright claims,",
             "accent": "answered.",
-            "ctaLabel": "Ask a Question",
+            "ctaLabel": "Ask our team",
             "ctaHref": "/contact?source=ai-copyright",
-            "colorScheme": "light"
+            "colorScheme": "light",
+            "_bookmark": "faq"
           }
         }
       ],
