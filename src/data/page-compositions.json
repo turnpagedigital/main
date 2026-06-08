@@ -264,17 +264,17 @@
             "cards": [
               {
                 "id": "capital",
-                "title": "Settlement monitoring",
-                "body": "A competitive cash bid from our institutional buyer network. Class-member purchases, opt-out direct purchases, bulk catalogues. Days to close."
+                "title": "Track cases",
+                "body": "Did you know you might be eligible to file a claim in one of 60+ cases that are currently on the docket against Generative AI Companies? Subscribe to alerts about claim filing opportunities in the cases that matter to you so you never miss a deadline."
               },
               {
                 "id": "advisory",
-                "title": "Claim filing",
-                "body": "Opt-in vs. opt-out economics. Statutory damages modeling. Counsel introductions across U.S., UK, EU, and Germany."
+                "title": "File claim",
+                "body": "Need help filing a claim? We can help you identify the materials you need to prove what you're owed and reduce the error rate. "
               },
               {
                 "id": "claim-monitoring",
-                "title": "strategic advisory",
+                "title": "Collect cash",
                 "body": "We track and file claims for you, automatically."
               }
             ]
