@@ -394,8 +394,8 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
-            "title": "Creditors. Funds.",
-            "accent": "Estates.",
+            "title": "Customers. Lenders. Trustees",
+            "accent": "Account Holders.",
             "colorScheme": "white",
             "layout": "list",
             "cards": [
@@ -451,11 +451,6 @@
               }
             ]
           }
-        },
-        {
-          "id": "sec-crypto-claims-chart",
-          "type": "crypto-claims-chart",
-          "visible": true
         },
         {
           "id": "sec-crypto-comparison",
@@ -571,6 +566,11 @@
             "ctaHref": "/contact?source=crypto",
             "colorScheme": "light-gray"
           }
+        },
+        {
+          "id": "sec-1780956113355-u4jq",
+          "type": "damages",
+          "visible": true
         }
       ],
       "status": "active"
