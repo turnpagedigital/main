@@ -394,15 +394,15 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
-            "title": "Customers. Lenders. Trustees",
-            "accent": "Account Holders.",
+            "title": "Crypto loss",
+            "accent": "claimants",
             "colorScheme": "white",
             "layout": "list",
             "cards": [
               {
                 "id": "individual-creditors",
-                "title": "Crypto lenders and account owners",
-                "body": "Liquidity for exchange and wallet customers with deposits and loans stuck in legal proceedings.",
+                "title": "Exchange Customers",
+                "body": "Account holders with frozen deposits on defunct exchanges stuck in legal proceedings.",
                 "priority": false
               },
               {
@@ -415,6 +415,12 @@
                 "id": "estates-trustees",
                 "title": "Estates & Trustees",
                 "body": "Administering an estate or trust? We can quote the entire position.",
+                "priority": false
+              },
+              {
+                "id": "card-1780962079731",
+                "title": "On-Chain Lenders",
+                "body": "Liquidity for ",
                 "priority": false
               }
             ]
@@ -445,7 +451,7 @@
               }
             ],
             "_bookmark": "how-we-help",
-            "cardStyle": "liquid-glass"
+            "cardStyle": "clear-glass"
           }
         },
         {
