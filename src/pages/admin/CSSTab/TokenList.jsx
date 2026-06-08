@@ -118,7 +118,7 @@ export default function TokenList() {
               const value = TokenModule[tokenName];
               return (
                 <div key={tokenName} style={TOKEN_ROW_STYLE}>
-                  <div style={{ fontFamily: "monospace", fontWeight: 600, color: NEON }}>
+                  <div style={{ fontFamily: "monospace", fontWeight: 600, color: INK }}>
                     {tokenName}
                   </div>
                   <div

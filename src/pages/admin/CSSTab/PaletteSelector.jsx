@@ -82,7 +82,7 @@ export default function PaletteSelector() {
                   fontSize: "1rem",
                   fontWeight: 700,
                   marginBottom: "0.25rem",
-                  color: NEON,
+                  color: INK,
                 }}
               >
                 {section.displayName}
