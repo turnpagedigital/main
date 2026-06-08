@@ -55,6 +55,23 @@ const FIELD_LIMITS = {
   subject: 80, message: 5000, source: 80,
 };
 
+/* Helper to wrap fetch with a timeout */
+async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, { ...options, signal: controller.signal });
+    clearTimeout(timeoutId);
+    return response;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    if (error.name === "AbortError") {
+      throw new Error(`Request timed out after ${timeoutMs}ms`);
+    }
+    throw error;
+  }
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const corsHeaders = corsHeadersFor(request);
@@ -180,8 +197,8 @@ export async function onRequestPost(context) {
       }).catch((err) => console.error("Google Sheet error:", err.message));
     }
 
-    // Send via Resend
-    const resendRes = await fetch("https://api.resend.com/emails", {
+    // Send via Resend (with 8-second timeout)
+    const resendRes = await fetchWithTimeout("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${resendKey}`,

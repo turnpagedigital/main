@@ -12,6 +12,26 @@
 */
 
 const DEFAULT_BRANCH = "dev";
+const GITHUB_TIMEOUT_MS = 8000; // 8 second timeout for GitHub API calls
+
+/* Wrap fetch with a timeout. AbortController triggers after timeoutMs,
+   preventing requests from hanging indefinitely. Cloudflare workers have a
+   30s hard limit, but we fail fast (8s) so the user sees an error quickly. */
+async function fetchWithTimeout(url, options = {}, timeoutMs = GITHUB_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, { ...options, signal: controller.signal });
+    clearTimeout(timeoutId);
+    return response;
+  } catch (error) {
+    clearTimeout(timeoutId);
+    if (error.name === "AbortError") {
+      throw new Error(`Request timed out after ${timeoutMs}ms`);
+    }
+    throw error;
+  }
+}
 
 /* Map GitHub HTTP error codes to friendly, actionable user messages */
 function friendlyGitHubError(status, responseText) {
@@ -63,7 +83,7 @@ function contentsUrl(env, path, repo) {
 export async function listDirFromGitHub(env, dirPath, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, dirPath, repo)}?ref=${encodeURIComponent(ref)}`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
+  const r = await fetchWithTimeout(url, { headers: githubHeaders(env) });
   if (!r.ok) {
     const text = await r.text();
     return { ok: false, error: makeErrorMessage("GET", r.status, text) };
@@ -85,7 +105,7 @@ export async function listDirFromGitHub(env, dirPath, repo, branch) {
 export async function getFileFromGitHub(env, path, parseLabel, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
+  const r = await fetchWithTimeout(url, { headers: githubHeaders(env) });
   if (!r.ok) {
     const text = await r.text();
     return { ok: false, error: makeErrorMessage("GET", r.status, text) };
@@ -119,7 +139,7 @@ export async function getFileFromGitHub(env, path, parseLabel, repo, branch) {
 export async function getFileSha(env, path, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
+  const r = await fetchWithTimeout(url, { headers: githubHeaders(env) });
   if (!r.ok) return null;
   const j = await r.json();
   return j.sha || null;
@@ -135,7 +155,7 @@ export async function getFileSha(env, path, repo, branch) {
 export async function getFileBase64FromGitHub(env, path, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
+  const r = await fetchWithTimeout(url, { headers: githubHeaders(env) });
   if (!r.ok) {
     const text = await r.text();
     return { ok: false, error: makeErrorMessage("GET", r.status, text) };
@@ -177,7 +197,7 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
   const commitMessage = message.includes("[skip ci]") ? message : `${message}\n\n[skip ci]`;
   const bodyObj = { message: commitMessage, content: base64Content, branch: ref };
   if (sha) bodyObj.sha = sha;
-  const r = await fetch(url, {
+  const r = await fetchWithTimeout(url, {
     method: "PUT",
     headers: { ...githubHeaders(env), "Content-Type": "application/json" },
     body: JSON.stringify(bodyObj),
@@ -195,7 +215,7 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
 export async function deleteFileFromGitHub(env, path, sha, message, repo, branch) {
   const ref = branchOf(env, branch);
   const url = contentsUrl(env, path, repo);
-  const r = await fetch(url, {
+  const r = await fetchWithTimeout(url, {
     method: "DELETE",
     headers: { ...githubHeaders(env), "Content-Type": "application/json" },
     body: JSON.stringify({ message, sha, branch: ref }),
