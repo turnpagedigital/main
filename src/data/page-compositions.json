@@ -606,14 +606,14 @@
           "id": "sec-litfin-audience",
           "type": "audience-cards",
           "visible": true,
-          "layout": "grid-2col",
+          "layout": "list",
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
             "title": "Firms. Claimants.",
             "accent": "Cases.",
             "colorScheme": "white",
-            "layout": "grid-2col",
+            "layout": "list",
             "cards": [
               {
                 "id": "contingency-firms",
@@ -646,14 +646,14 @@
           "id": "sec-litfin-service",
           "type": "service-cards",
           "visible": true,
-          "layout": "list",
+          "layout": "grid-2col",
           "colorScheme": "dark",
           "content": {
             "eyebrow": "What We Fund",
             "title": "Tough cases. ",
             "accent": "Big outcomes.",
             "colorScheme": "dark",
-            "layout": "list",
+            "layout": "grid-2col",
             "cards": [
               {
                 "id": "ip-patent",
