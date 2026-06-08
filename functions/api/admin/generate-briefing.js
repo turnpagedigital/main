@@ -12,7 +12,7 @@ import { isAuthed, jsonResponse } from "./_utils.js";
    The workflow is defined at: .github/workflows/daily-briefing.yml
 
    Requires environment variables (in Cloudflare):
-   - GITHUB_API_TOKEN — GitHub Personal Access Token with 'repo' + 'workflow' scopes
+   - GITHUB_TOKEN — GitHub Personal Access Token with 'repo' + 'workflow' scopes
 
    Auth required (session cookie).
 */
@@ -23,12 +23,12 @@ export async function onRequestPost({ request, env }) {
   }
 
   // Get the GitHub token from environment
-  const githubToken = env.GITHUB_API_TOKEN;
+  const githubToken = env.GITHUB_TOKEN;
 
   if (!githubToken) {
     return jsonResponse({
       ok: false,
-      error: "Briefing generation not configured. Please set GITHUB_API_TOKEN in Cloudflare environment with 'repo' + 'workflow' scopes.",
+      error: "Briefing generation not configured. Please set GITHUB_TOKEN in Cloudflare environment with 'repo' + 'workflow' scopes.",
     }, 500);
   }
 
@@ -57,7 +57,7 @@ export async function onRequestPost({ request, env }) {
       if (response.status === 401 || response.status === 403) {
         return jsonResponse({
           ok: false,
-          error: "GitHub authentication failed. Check that GITHUB_API_TOKEN is valid and has 'repo' + 'workflow' scopes.",
+          error: "GitHub authentication failed. Check that GITHUB_TOKEN is valid and has 'repo' + 'workflow' scopes.",
         }, 403);
       }
       
