@@ -1,28 +1,37 @@
 import React from "react";
-import { NEON, FONT } from "../../data/tokens.js";
+import { NEON, FONT, INK, INK_60 } from "../../data/tokens.js";
+import Card from "../Card.jsx";
 
 /* HowItWorksSection — numbered step sequence.
    Inline section: content lives in page-compositions.json sectionConfig.content.
    Schema:
-     eyebrow          — section eyebrow
-     title, accent    — section heading (left column)
-     kicker           — subtitle text (right column)
-     steps[]          — { id, n, title, body }
-     colorScheme      — "dark" (default) | "light-gray"
+     eyebrow                — section eyebrow
+     title, accent          — section heading (left column)
+     kicker                 — subtitle text (right column)
+     steps[]                — { id, n, title, body }
+     colorScheme            — "dark" (default) | "light-gray"
+     cardStyle              — "standard" (default) | "white" | "black" | "light-gray" | "dark" | "light-glass" | "clear-glass"
+     cardRadius             — "rounded" (default) | "square"
+     backgroundImage        — optional image URL for section background
 */
 export default function HowItWorksSection({ sectionConfig }) {
   const c = (sectionConfig && sectionConfig.content) || {};
-  const eyebrow     = c.eyebrow     || "How It Works";
-  const title       = c.title       || "Three steps to close.";
-  const accent      = c.accent      || "";
-  const kicker      = c.kicker      || "";
-  const steps       = c.steps       || [];
-  const colorScheme = c.colorScheme || "dark";
+  const eyebrow          = c.eyebrow     || "How It Works";
+  const title            = c.title       || "Three steps to close.";
+  const accent           = c.accent      || "";
+  const kicker           = c.kicker      || "";
+  const steps            = c.steps       || [];
+  const colorScheme      = c.colorScheme || "dark";
+  const cardStyle        = c.cardStyle   || "standard";
+  const cardRadius       = c.cardRadius  || "rounded";
+  const backgroundImage  = c.backgroundImage || "";
 
   if (!steps.length) return null;
 
   const isDark    = colorScheme === "dark";
-  const sectionBg = isDark ? "#0A0B0E" : "#F4F5F7";
+  const sectionBg = backgroundImage
+    ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${backgroundImage}') center/cover no-repeat`
+    : isDark ? "#0A0B0E" : "#F4F5F7";
   const textColor = isDark ? "#fff" : "#0A0A0A";
 
   return (
@@ -30,6 +39,7 @@ export default function HowItWorksSection({ sectionConfig }) {
       background: sectionBg,
       color: textColor,
       padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
+      position: "relative",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
 
@@ -70,44 +80,80 @@ export default function HowItWorksSection({ sectionConfig }) {
         </div>
 
         {/* Steps grid */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,
-          gap: "1px",
-          background: isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.1)",
-          border: isDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(0,0,0,0.1)",
-        }} className="steps-grid">
-          {steps.map(step => (
-            <div key={step.n || step.id} style={{
-              padding: "clamp(1.8rem, 3vw, 2.6rem)",
-              background: isDark ? "rgba(255,255,255,0.02)" : "#fff",
-            }}>
-              <p style={{
-                fontFamily: FONT,
-                fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-                fontWeight: 800, letterSpacing: "-0.04em",
-                color: NEON, marginBottom: "1.2rem", lineHeight: 1,
+        {["white", "black", "light-gray", "dark", "light-glass", "clear-glass"].includes(cardStyle) ? (
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,
+            gap: "clamp(1rem, 2vw, 1.5rem)",
+          }} className="steps-grid">
+            {steps.map(step => (
+              <Card key={step.n || step.id} style={cardStyle} radius={cardRadius}>
+                <p style={{
+                  fontFamily: FONT,
+                  fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+                  fontWeight: 800, letterSpacing: "-0.04em",
+                  color: NEON, marginBottom: "1.2rem", lineHeight: 1, margin: 0,
+                }}>
+                  {step.n}
+                </p>
+                <h3 style={{
+                  fontFamily: FONT, fontWeight: 800,
+                  fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
+                  letterSpacing: "-0.01em", lineHeight: 1.2,
+                  color: "var(--card-text-color)", marginBottom: "0.65rem", margin: 0,
+                }}>
+                  {step.title}
+                </h3>
+                <p style={{
+                  fontFamily: FONT, fontSize: "0.95rem",
+                  color: "var(--card-secondary-text)",
+                  lineHeight: 1.65, margin: 0,
+                }}>
+                  {step.body}
+                </p>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,
+            gap: "1px",
+            background: isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.1)",
+            border: isDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(0,0,0,0.1)",
+          }} className="steps-grid">
+            {steps.map(step => (
+              <div key={step.n || step.id} style={{
+                padding: "clamp(1.8rem, 3vw, 2.6rem)",
+                background: isDark ? "rgba(255,255,255,0.02)" : "#fff",
               }}>
-                {step.n}
-              </p>
-              <h3 style={{
-                fontFamily: FONT, fontWeight: 800,
-                fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
-                letterSpacing: "-0.01em", lineHeight: 1.2,
-                color: textColor, marginBottom: "0.65rem",
-              }}>
-                {step.title}
-              </h3>
-              <p style={{
-                fontFamily: FONT, fontSize: "0.95rem",
-                color: isDark ? "rgba(255,255,255,0.6)" : "rgba(10,10,10,0.6)",
-                lineHeight: 1.65, margin: 0,
-              }}>
-                {step.body}
-              </p>
-            </div>
-          ))}
-        </div>
+                <p style={{
+                  fontFamily: FONT,
+                  fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+                  fontWeight: 800, letterSpacing: "-0.04em",
+                  color: NEON, marginBottom: "1.2rem", lineHeight: 1,
+                }}>
+                  {step.n}
+                </p>
+                <h3 style={{
+                  fontFamily: FONT, fontWeight: 800,
+                  fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
+                  letterSpacing: "-0.01em", lineHeight: 1.2,
+                  color: textColor, marginBottom: "0.65rem",
+                }}>
+                  {step.title}
+                </h3>
+                <p style={{
+                  fontFamily: FONT, fontSize: "0.95rem",
+                  color: isDark ? "rgba(255,255,255,0.6)" : "rgba(10,10,10,0.6)",
+                  lineHeight: 1.65, margin: 0,
+                }}>
+                  {step.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <style>{`

@@ -1,22 +1,29 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
+import Card from "../Card.jsx";
 
 /* AudienceCardsSection — "Who We Help"
    Inline section: content lives in page-compositions.json sectionConfig.content.
    Schema:
-     eyebrow, title, accent  — section header text
-     cards[]                 — { id, title, body, badge }  (badge is a custom label string, e.g., "Featured", "Urgent")
-     layout                  — "grid-2col" (default) | "grid-3col" | "list"
-     colorScheme             — "light-gray" (default) | "dark" | "white"
+     eyebrow, title, accent     — section header text
+     cards[]                    — { id, title, body, badge }  (badge is a custom label string, e.g., "Featured", "Urgent")
+     layout                     — "grid-2col" (default) | "grid-3col" | "list"
+     colorScheme                — "light-gray" (default) | "dark" | "white"
+     cardStyle                  — "standard" (default) | "white" | "black" | "light-gray" | "dark" | "light-glass" | "clear-glass"
+     cardRadius                 — "rounded" (default) | "square"
+     backgroundImage            — optional image URL for section background
 */
 export default function AudienceCardsSection({ sectionConfig }) {
   const c = (sectionConfig && sectionConfig.content) || {};
-  const cards       = c.cards || [];
-  const eyebrow     = c.eyebrow || "Who We Help";
-  const title       = c.title   || "";
-  const accent      = c.accent  || "";
-  const layout      = c.layout  || "grid-2col";
-  const colorScheme = c.colorScheme || "light-gray";
+  const cards            = c.cards || [];
+  const eyebrow          = c.eyebrow || "Who We Help";
+  const title            = c.title   || "";
+  const accent           = c.accent  || "";
+  const layout           = c.layout  || "grid-2col";
+  const colorScheme      = c.colorScheme || "light-gray";
+  const cardStyle        = c.cardStyle || "standard";
+  const cardRadius       = c.cardRadius || "rounded";
+  const backgroundImage  = c.backgroundImage || "";
 
   const isList = layout === "list";
   const cols   = layout === "grid-3col" ? "repeat(3, 1fr)" : "repeat(2, 1fr)";
@@ -28,9 +35,12 @@ export default function AudienceCardsSection({ sectionConfig }) {
 
   return (
     <section id="who-we-help" style={{
-      background: BG,
+      background: backgroundImage
+        ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${backgroundImage}') center/cover no-repeat`
+        : BG,
       padding: "clamp(4rem, 9vw, 8rem) clamp(1.5rem, 5vw, 4rem)",
-      borderTop: colorScheme === "light-gray" ? `1px solid ${LINE}` : "none",
+      borderTop: colorScheme === "light-gray" && !backgroundImage ? `1px solid ${LINE}` : "none",
+      position: "relative",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
 
