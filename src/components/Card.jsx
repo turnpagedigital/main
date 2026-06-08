@@ -4,13 +4,15 @@ import { FONT, INK, INK_60 } from "../data/tokens.js";
 /**
  * Card — Flexible card component supporting multiple styles and corner radii
  *
- * Supports 6 card styles:
+ * Supports 8 card styles:
  *   - white: solid white background
  *   - black: solid black background
  *   - light-gray: solid light gray background
+ *   - neon: bright green (#D4FF00) with black text
  *   - dark: semi-transparent dark glass
  *   - light-glass: subtle frosted glass
  *   - clear-glass: minimal frosted glass (most transparent)
+ *   - neon-glass: bright green glass with black text
  *
  * And 2 corner styles:
  *   - rounded: smooth 5-10px corners (size-responsive)
@@ -18,7 +20,7 @@ import { FONT, INK, INK_60 } from "../data/tokens.js";
  *
  * Props:
  *   children: ReactNode       — Card content
- *   style?: "white" | "black" | "light-gray" | "dark" | "light-glass" | "clear-glass" (default: "white")
+ *   style?: "white" | "black" | "light-gray" | "neon" | "dark" | "light-glass" | "clear-glass" | "neon-glass" (default: "white")
  *   radius?: "rounded" | "square" (default: "rounded")
  *   isDarkMode?: boolean      — Adjust text colors for dark backgrounds (default: auto-detect)
  *   className?: string        — Additional CSS classes
@@ -31,10 +33,11 @@ export default function Card({
   className = "",
 }) {
   // Auto-detect if we need light text (for dark card styles)
+  // Neon styles always use black text, so exclude them from auto-detection
   const needsLightText =
     isDarkMode !== undefined
       ? isDarkMode
-      : ["black", "dark"].includes(style);
+      : ["black", "dark"].includes(style) && !style.includes("neon");
 
   const cornerRadius = radius === "rounded" ? "clamp(0.3rem, 1.2vw, 0.625rem)" : "0";
 
@@ -89,6 +92,23 @@ export default function Card({
       backdrop: "blur(30px) saturate(200%)",
       shadow: "0 2px 8px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.5)",
       hoverShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.6)",
+    },
+    neon: {
+      bg: "#D4FF00",
+      border: "rgba(0, 0, 0, 0.15)",
+      textColor: "#0A0A0A",
+      secondaryText: "rgba(10, 10, 10, 0.7)",
+      shadow: "0 2px 8px rgba(212, 255, 0, 0.2), 0 4px 16px rgba(212, 255, 0, 0.12)",
+      hoverShadow: "0 4px 16px rgba(212, 255, 0, 0.3), 0 8px 24px rgba(212, 255, 0, 0.18)",
+    },
+    "neon-glass": {
+      bg: "rgba(212, 255, 0, 0.55)",
+      border: "rgba(212, 255, 0, 0.6)",
+      textColor: "#0A0A0A",
+      secondaryText: "rgba(10, 10, 10, 0.75)",
+      backdrop: "blur(25px)",
+      shadow: "0 2px 8px rgba(212, 255, 0, 0.15), 0 4px 16px rgba(212, 255, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3)",
+      hoverShadow: "0 4px 16px rgba(212, 255, 0, 0.25), 0 8px 24px rgba(212, 255, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.4)",
     },
   };
 

@@ -100,7 +100,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className="service-grid">
             {cards.map(card => (
-              <Card key={card.id} style={cardStyle} radius={cardRadius}>
+              <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius}>
                 <h3 style={{
                   fontFamily: FONT, fontWeight: 800,
                   fontSize: "clamp(1.3rem, 2vw, 1.7rem)",

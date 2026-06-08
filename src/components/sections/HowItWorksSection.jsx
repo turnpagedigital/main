@@ -87,7 +87,7 @@ export default function HowItWorksSection({ sectionConfig }) {
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className="steps-grid">
             {steps.map(step => (
-              <Card key={step.n || step.id} style={cardStyle} radius={cardRadius}>
+              <Card key={step.n || step.id} style={step.cardStyle || cardStyle} radius={step.cardRadius || cardRadius}>
                 <p style={{
                   fontFamily: FONT,
                   fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
