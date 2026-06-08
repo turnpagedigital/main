@@ -55,7 +55,10 @@
         {
           "id": "sec-home-situations",
           "type": "situations",
-          "visible": true
+          "visible": true,
+          "content": {
+            "_bookmark": "what-we-cover"
+          }
         },
         {
           "id": "sec-home-bio",
