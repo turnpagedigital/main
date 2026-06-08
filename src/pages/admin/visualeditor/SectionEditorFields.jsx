@@ -206,6 +206,12 @@ export default function SectionEditorFields({ typeId, form, set }) {
                 <option value="list">List</option>
               </select>
             </div>
+            <div><label style={labelStyle}>Card Style</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.cardStyle || "standard"} onChange={e => set("cardStyle", e.target.value)}>
+                <option value="standard">Standard</option>
+                <option value="liquid-glass">Liquid Glass</option>
+              </select>
+            </div>
           </div>
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
