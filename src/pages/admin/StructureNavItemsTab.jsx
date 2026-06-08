@@ -297,6 +297,7 @@ function NavRow({
 }) {
   const [dropOpen, setDropOpen] = useState(false);
   const [micrositeOpen, setMicrositeOpen] = useState(false);
+  const [micrositeEnabled, setMicrositeEnabled] = useState(Boolean(microsite));
   // Auto-detect mode: "internal" if href matches a known internal path, else "external"
   const [hrefMode, setHrefMode] = useState(
     () => INTERNAL_PATHS.has(item.href) ? "internal" : "external"
@@ -417,8 +418,9 @@ function NavRow({
         <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", fontWeight: 600 }}>
           <input
             type="checkbox"
-            checked={hasMicrosite}
+            checked={micrositeEnabled}
             onChange={e => {
+              setMicrositeEnabled(e.target.checked);
               if (e.target.checked && onUpdateMicrosite) {
                 onUpdateMicrosite(item.id, {
                   brand: { label: item.label, href: item.href },
@@ -435,6 +437,14 @@ function NavRow({
           ☑️ Enable microsite nav
         </label>
       </div>
+
+      {micrositeEnabled && micrositeOpen && (
+        <div style={{ borderTop: `1px solid ${LINE}`, background: "#fafafa", padding: "1rem", marginBottom: "1rem" }}>
+          <p style={{ fontSize: "0.85rem", color: "#666", marginTop: 0, marginBottom: "1rem" }}>
+            Microsite nav editing coming soon. For now, check this box to enable microsite navigation for this page.
+          </p>
+        </div>
+      )}
 
       <div style={{
         borderTop: `1px solid ${LINE}`,
