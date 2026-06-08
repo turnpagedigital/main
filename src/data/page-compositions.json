@@ -589,7 +589,7 @@
             "eyebrow": "Litigation Funding",
             "title": "We help power the cases that",
             "accentTitle": "deserve to win.",
-            "subtitle": "Turnpage helps the best law firms pursue cases on contingency — providing capital so merit drives the docket, not your firm checking account.",
+            "subtitle": "Turnpage helps the best law firms pursue cases on contingency — structuring flexible capital solutions aligned with your practice, and your bank account.",
             "size": "tall",
             "video": "/robotobriefcase1.mp4",
             "ctaPrimary": {
@@ -597,7 +597,7 @@
               "href": "/contact?source=litigation-finance"
             },
             "ctaSecondary": {
-              "label": "How we work",
+              "label": "How we help",
               "href": "#how-litfin"
             }
           }
@@ -606,24 +606,26 @@
           "id": "sec-litfin-audience",
           "type": "audience-cards",
           "visible": true,
+          "layout": "list",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
             "title": "Firms. Claimants.",
             "accent": "Cases.",
-            "colorScheme": "light-gray",
-            "layout": "grid-2col",
+            "colorScheme": "white",
+            "layout": "list",
             "cards": [
               {
                 "id": "contingency-firms",
                 "title": "Contingency Law Firms",
                 "body": "Boutique litigation shops and BigLaw contingency practices looking to grow their docket without tying up equity or taking on overhead risk.",
-                "priority": true
+                "priority": false
               },
               {
                 "id": "elite-plaintiffs",
                 "title": "Elite Plaintiffs' Practices",
                 "body": "Class action, antitrust, and IP litigation teams pursuing high-stakes matters that require patient, long-duration capital.",
-                "priority": true
+                "priority": false
               },
               {
                 "id": "individual-claimants",
@@ -671,32 +673,41 @@
           "id": "sec-litfin-service",
           "type": "service-cards",
           "visible": true,
+          "layout": "grid-3col",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "What We Fund",
-            "title": "Cases that deserve to win.",
-            "accent": "",
-            "colorScheme": "dark",
+            "title": "Tough cases. ",
+            "accent": "Big outcomes.",
+            "colorScheme": "light-gray",
             "layout": "grid-3col",
             "cards": [
               {
-                "id": "commercial-litigation",
-                "title": "Commercial Litigation",
-                "body": "Breach of contract, business torts, fraud, and complex commercial disputes with clear damages theories and credible counsel."
-              },
-              {
                 "id": "ip-patent",
-                "title": "IP & Patent",
-                "body": "Patent infringement, trade secret misappropriation, and trademark disputes. We understand IP damages and appeals risk."
+                "title": "Ad hoc group representations",
+                "body": "Long tails of creditors"
               },
               {
                 "id": "antitrust-class-actions",
                 "title": "Antitrust & Class Actions",
-                "body": "Multi-plaintiff and class action matters where early capital determines whether a case gets to trial or settles below value."
+                "body": "Multi-plaintiff and class action matters where early capital determines whether a case gets to trial or settles below value.Patent infringement, trade secret misappropriation, and trademark disputes. We understand IP damages and appeals risk."
               },
               {
                 "id": "bankruptcy-claims",
                 "title": "Bankruptcy & Litigation Claims",
                 "body": "Claims asserted in or arising out of bankruptcy proceedings — adversary actions, fraudulent transfer, and preference recovery."
+              },
+              {
+                "id": "card-1780884347844",
+                "title": "Litigation/Liquidating Trusts",
+                "body": "Fraudulent transfer actions, D&O claims and other esoteric actions.",
+                "priority": false
+              },
+              {
+                "id": "card-1780884392379",
+                "title": "",
+                "body": "",
+                "priority": false
               }
             ]
           }
@@ -778,12 +789,12 @@
           "layout": "layout-3-bottomcta",
           "colorScheme": "dark",
           "content": {
-            "eyebrow": "GET FUNDED",
+            "eyebrow": "FUND YOUR CASE",
             "title": "Ready to learn more?",
             "accent": "Talk to us.",
             "kicker": "Contact us to discuss your funding needs. Private, fast, secure.",
             "primary": {
-              "label": "Talk to a Partner",
+              "label": "Talk to Us",
               "href": "/contact?source=litigation-finance"
             },
             "secondary": null
