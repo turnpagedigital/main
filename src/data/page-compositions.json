@@ -180,6 +180,37 @@
       "builtIn": true,
       "sections": [
         {
+          "id": "sec-aic-service",
+          "type": "service-cards",
+          "visible": true,
+          "layout": "grid-3col",
+          "colorScheme": "light-gray",
+          "content": {
+            "eyebrow": "DON'T MISS OUT",
+            "title": "Claim",
+            "accent": "yours",
+            "colorScheme": "light-gray",
+            "layout": "grid-3col",
+            "cards": [
+              {
+                "id": "capital",
+                "title": "Settlement monitoring",
+                "body": "A competitive cash bid from our institutional buyer network. Class-member purchases, opt-out direct purchases, bulk catalogues. Days to close."
+              },
+              {
+                "id": "advisory",
+                "title": "Claim filing",
+                "body": "Opt-in vs. opt-out economics. Statutory damages modeling. Counsel introductions across U.S., UK, EU, and Germany."
+              },
+              {
+                "id": "claim-monitoring",
+                "title": "strategic advisory",
+                "body": "We track and file claims for you, automatically."
+              }
+            ]
+          }
+        },
+        {
           "id": "sec-aic-hero",
           "type": "hero",
           "visible": true,
@@ -204,20 +235,20 @@
           "id": "sec-aic-audience",
           "type": "audience-cards",
           "visible": true,
-          "layout": "grid-2col",
-          "colorScheme": "light-gray",
+          "layout": "list",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
             "title": "Authors. Publishers.  Artists.",
             "accent": " Musicians.",
-            "colorScheme": "light-gray",
-            "layout": "grid-2col",
+            "colorScheme": "white",
+            "layout": "list",
             "cards": [
               {
                 "id": "authors-writers",
                 "title": "Authors & Publishers",
                 "body": "Top Cases: Bartz v. Anthropic | OpenAI MDL | Kadrey v. Meta",
-                "priority": true
+                "priority": false
               },
               {
                 "id": "music-publishers",
@@ -241,40 +272,19 @@
           }
         },
         {
-          "id": "sec-aic-service",
-          "type": "service-cards",
-          "visible": true,
-          "layout": "grid-3col",
-          "colorScheme": "dark",
-          "content": {
-            "eyebrow": "DON'T MISS OUT",
-            "title": "Claim",
-            "accent": "yours",
-            "colorScheme": "dark",
-            "layout": "grid-3col",
-            "cards": [
-              {
-                "id": "capital",
-                "title": "Settlement monitoring",
-                "body": "A competitive cash bid from our institutional buyer network. Class-member purchases, opt-out direct purchases, bulk catalogues. Days to close."
-              },
-              {
-                "id": "advisory",
-                "title": "Claim filing",
-                "body": "Opt-in vs. opt-out economics. Statutory damages modeling. Counsel introductions across U.S., UK, EU, and Germany."
-              },
-              {
-                "id": "claim-monitoring",
-                "title": "strategic advisory",
-                "body": "We track and file claims for you, automatically."
-              }
-            ]
-          }
-        },
-        {
           "id": "sec-aic-damages",
           "type": "damages",
           "visible": true
+        },
+        {
+          "id": "sec-1780882985504-nsv4",
+          "type": "photo-break",
+          "visible": true,
+          "content": {
+            "imageUrl": "/bg-paper.jpg",
+            "overlayText": "Copyright?",
+            "overlayAccent": "Copy that."
+          }
         },
         {
           "id": "sec-aic-experience",
