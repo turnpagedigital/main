@@ -36,7 +36,17 @@ export default function TokenEditorModal({ tokenName, currentValue, onSave, onCa
   const handleSave = async () => {
     setSaving(true);
     try {
+      const r = await fetch("/api/admin/tokens", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ tokenName, value }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
       await onSave(value);
+    } catch (e) {
+      alert(`Error: ${e.message}`);
     } finally {
       setSaving(false);
     }

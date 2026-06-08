@@ -52,7 +52,17 @@ export default function PaletteEditorModal({ sectionType, schemeId, onSave, onCa
   const handleSave = async () => {
     setSaving(true);
     try {
+      const r = await fetch("/api/admin/section-palettes", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ sectionType, schemeId, tokens }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
       await onSave(sectionType, schemeId, tokens);
+    } catch (e) {
+      alert(`Error: ${e.message}`);
     } finally {
       setSaving(false);
     }
