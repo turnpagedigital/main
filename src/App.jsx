@@ -49,7 +49,7 @@ const TITLES = {
   "briefings": "Briefings — Turnpage Digital Markets",
   "briefing": "Briefing — Turnpage Digital Markets",
   "press": "Press & Publications — Turnpage Digital Markets",
-  "litigation-finance": "Litigation Finance — Turnpage Digital Markets",
+  "litigation-finance": "Litigation Funding — Turnpage Digital Markets",
   "contact": "Get in Touch — Turnpage Digital Markets",
   "faq": "FAQ — Turnpage Digital Markets",
   "privacy": "Privacy Policy — Turnpage Digital Markets",

@@ -15,7 +15,7 @@ export const TRANSLATIONS = {
     // Nav
     "nav.copyright":   "Copyright Claims",
     "nav.crypto":      "Locked Crypto",
-    "nav.litigation":  "Litigation Finance",
+    "nav.litigation":  "Litigation Funding",
     "nav.tariff":      "Tariff Refunds",
     "nav.briefings":   "Briefings",
     "nav.press":       "Press & Publications",

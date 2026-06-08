@@ -30,7 +30,7 @@ export default function FAQPage() {
     home: "Home",
     "ai-copyright": "AI Copyright",
     crypto: "Crypto Claims",
-    "litigation-finance": "Litigation Finance",
+    "litigation-finance": "Litigation Funding",
     contact: "Contact",
     briefings: "Briefings",
   };

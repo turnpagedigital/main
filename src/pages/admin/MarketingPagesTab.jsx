@@ -24,7 +24,7 @@ import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, forma
 const PAGE_TABS = [
   { key: "crypto",            label: "Crypto" },
   { key: "aiCopyright",       label: "AI Copyright" },
-  { key: "litigationFinance", label: "Litigation Finance" },
+  { key: "litigationFinance", label: "Litigation Funding" },
 ];
 
 /* ── ID generators ──────────────────────────────────────────────────────── */
