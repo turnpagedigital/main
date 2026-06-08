@@ -401,7 +401,7 @@
               {
                 "id": "individual-creditors",
                 "title": "Crypto lenders and account owners",
-                "body": "Customers",
+                "body": "Customers with trapped crypto",
                 "priority": false
               },
               {
@@ -454,8 +454,7 @@
         {
           "id": "sec-crypto-claims-chart",
           "type": "crypto-claims-chart",
-          "visible": true,
-          "content": {}
+          "visible": true
         },
         {
           "id": "sec-crypto-comparison",
