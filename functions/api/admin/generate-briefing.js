@@ -1,16 +1,17 @@
 import { isAuthed, jsonResponse } from "./_utils.js";
 
-/* Generate Briefing endpoint — triggers briefing generation from GitHub Actions
+/* Generate Briefing endpoint — triggers briefing generation workflow
 
    POST /api/admin/generate-briefing
-     → Dispatches the daily-briefing-site GitHub Actions workflow
+     → Dispatches the daily-briefing GitHub Actions workflow
      → Workflow runs the Python generation script
-     → Generated briefings are committed and deployed to intel.turnpagedigital.com
+     → Generated dashboards are committed back to the repo
+     → Cloudflare Pages auto-deploys
      → Returns { ok: true, message: "..." }
 
-   Requires environment variables:
-   - INTEL_BRIEFING_WEBHOOK_URL — GitHub Actions workflow dispatch API endpoint
-     Format: https://api.github.com/repos/turnpagedigital/daily-briefing-site/actions/workflows/daily-briefing.yml/dispatches
+   The workflow is defined at: .github/workflows/daily-briefing.yml
+
+   Requires environment variables (in Cloudflare):
    - GITHUB_API_TOKEN — GitHub Personal Access Token with 'repo' + 'workflow' scopes
 
    Auth required (session cookie).
@@ -21,19 +22,20 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ ok: false, error: "Unauthorized" }, 401);
   }
 
-  // Get the webhook URL and GitHub token from environment
-  const webhookUrl = env.INTEL_BRIEFING_WEBHOOK_URL;
+  // Get the GitHub token from environment
   const githubToken = env.GITHUB_API_TOKEN;
 
-  if (!webhookUrl || !githubToken) {
+  if (!githubToken) {
     return jsonResponse({
       ok: false,
-      error: "Briefing generation not configured. Please set INTEL_BRIEFING_WEBHOOK_URL and GITHUB_API_TOKEN in Cloudflare environment.",
+      error: "Briefing generation not configured. Please set GITHUB_API_TOKEN in Cloudflare environment with 'repo' + 'workflow' scopes.",
     }, 500);
   }
 
   try {
-    // Dispatch the GitHub Actions workflow
+    // Dispatch the GitHub Actions workflow in the main repo
+    const webhookUrl = "https://api.github.com/repos/turnpagedigital/main/actions/workflows/daily-briefing.yml/dispatches";
+    
     const response = await fetch(webhookUrl, {
       method: "POST",
       headers: {
@@ -43,7 +45,7 @@ export async function onRequestPost({ request, env }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        ref: "main",
+        ref: "dev",  // Trigger on dev branch
         inputs: {},
       }),
     });
@@ -67,7 +69,7 @@ export async function onRequestPost({ request, env }) {
 
     return jsonResponse({
       ok: true,
-      message: "Briefing generation triggered! The GitHub Actions workflow is running. Check https://github.com/turnpagedigital/daily-briefing-site/actions to monitor progress. Briefings will be available at intel.turnpagedigital.com within a few minutes.",
+      message: "✅ Briefing generation triggered! The GitHub Actions workflow is running. Check https://github.com/turnpagedigital/main/actions to monitor progress. Generated dashboards will appear in public/briefing-dashboard within 5-15 minutes.",
     });
   } catch (error) {
     console.error("Generate briefing error:", error.message);

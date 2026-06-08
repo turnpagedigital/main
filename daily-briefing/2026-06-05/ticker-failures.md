@@ -1,0 +1,55 @@
+# Ticker fetch failures — 2026-06-05
+
+These symbols failed to fetch via yfinance. Possible causes: delisted, halted,
+network/proxy issue, ticker mismatch. Consider pruning from `tickers.md`.
+
+- WMT
+- TGT
+- COST
+- AMZN
+- HD
+- DG
+- DLTR
+- NKE
+- AAPL
+- F
+- GM
+- GOOGL
+- MSFT
+- META
+- NVDA
+- NWSA
+- NYT
+- ADBE
+- ORCL
+- DJCO
+- COIN
+- MARA
+- RIOT
+- HOOD
+- SQ
+- HUT
+- CLSK
+- BTBT
+- MSTR
+- IREN
+- BUR
+- ICE
+- LDOS
+- DGX
+- FDS
+- JNJ
+- PFE
+- BAYRY
+- LLY
+- MRK
+- V
+- MA
+- BHP
+- TWLO
+- WBD
+- AMC
+- PARA
+- CCL
+- WBA
+- GME

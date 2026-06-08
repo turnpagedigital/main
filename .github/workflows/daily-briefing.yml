@@ -1,0 +1,56 @@
+name: Daily Briefing Generation
+
+on:
+  schedule:
+    # 14:00 UTC = 10:00 AM ET during DST (Mar-Nov), 9:00 AM ET in standard time
+    - cron: '0 14 * * *'
+  workflow_dispatch: {}  # allow manual trigger from Actions tab
+
+permissions:
+  contents: write  # needed to commit + push generated files back to the repo
+
+concurrency:
+  group: daily-briefing
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r briefing-generator/scripts/requirements.txt
+
+      - name: Run daily briefing generation
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+        run: |
+          python briefing-generator/scripts/generate.py
+
+      - name: Commit and push if changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Daily Briefing Bot"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            DATE=$(date -u +"%Y-%m-%d")
+            git commit -m "Daily briefing ${DATE}"
+            git push
+          fi

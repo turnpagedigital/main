@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advisory Proposals — April 26, 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; color: #0A0A0A; background: #f5f5f7; padding: 24px; }
+    .container { max-width: 700px; margin: 0 auto; }
+    .header { background: #FFFFFF; border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; border: 1px solid rgba(10,10,10,0.08); display: flex; justify-content: space-between; align-items: center; }
+    .header-title { font-weight: 700; font-size: 16px; }
+    .header-sub { color: #666; font-size: 12px; margin-top: 3px; }
+    .header-actions { display: flex; gap: 8px; }
+    .btn-sm { font-size: 11px; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(10,10,10,0.14); background: #FFFFFF; cursor: pointer; font-family: inherit; color: rgba(10,10,10,0.7); }
+    .btn-sm:hover { background: #F4F5F7; }
+    .briefing-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+    .briefing-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); margin-bottom: 10px; }
+    .briefing-text { font-size: 13px; line-height: 1.65; color: #222; }
+    .briefing-text a { color: #0A0A0A; text-decoration: none; border-bottom: 1px solid #bfdbfe; }
+    .briefing-text a:hover { border-bottom-color: #0A0A0A; }
+    .linkedin-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+    .linkedin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .linkedin-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); }
+    .btn-copy-li { font-size: 11px; padding: 4px 12px; border-radius: 6px; border: 1px solid #0a66c2; background: #FFFFFF; cursor: pointer; font-family: inherit; color: #0a66c2; font-weight: 600; }
+    .btn-copy-li:hover { background: rgba(212,255,0,0.10); }
+    .linkedin-post { font-size: 12.5px; line-height: 1.65; color: rgba(10,10,10,0.78); white-space: pre-wrap; background: #E5E7EB; border-radius: 8px; padding: 14px 16px; border: 1px solid rgba(10,10,10,0.08); cursor: text; user-select: text; }
+    .li-copied { display: none; color: #0A0A0A; font-size: 11px; margin-left: 8px; font-weight: 600; }
+    .li-copied.visible { display: inline; }
+    .section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); margin-bottom: 10px; padding-left: 2px; }
+    .section { margin-bottom: 20px; }
+    .card { display: flex; gap: 12px; padding: 14px 16px; background: #FFFFFF; border-radius: 10px; border: 1.5px solid rgba(10,10,10,0.08); margin-bottom: 8px; cursor: pointer; transition: border-color 0.15s, background 0.15s; user-select: none; }
+    .card:hover { border-color: #D4FF00; }
+    .card.checked { border-color: #3b82f6; background: rgba(212,255,0,0.10); }
+    .card input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; width: 15px; height: 15px; cursor: pointer; accent-color: #3b82f6; }
+    .card-body { min-width: 0; flex: 1; }
+    .card-title { font-weight: 600; color: #0A0A0A; line-height: 1.4; text-decoration: none; }
+    .card-title:hover { text-decoration: underline; }
+    .card-meta { color: rgba(10,10,10,0.45); font-size: 11px; margin-top: 4px; }
+    .card-text { color: #444; font-size: 12px; margin-top: 6px; line-height: 1.55; }
+    .card-text strong { color: #0A0A0A; }
+    .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; margin-left: 8px; vertical-align: middle; flex-shrink: 0; }
+    .tag-legal { background: #dbeafe; color: #0A0A0A; }
+    .tag-policy { background: #f3e8ff; color: #7c3aed; }
+    .tag-breaking { background: #fee2e2; color: #dc2626; }
+    .tag-data { background: #dcfce7; color: #0A0A0A; }
+    .tag-urgent { background: #fef3c7; color: #92400e; }
+    .tag-analysis { background: #D5D9DF; color: #475569; }
+    .tag-doctrine { background: #e0e7ff; color: #4338ca; }
+    .tag-settlement { background: #ecfdf5; color: #065f46; }
+    .footer { background: #FFFFFF; border-radius: 12px; padding: 16px 20px; border: 1.5px solid rgba(10,10,10,0.08); transition: border-color 0.2s, background 0.2s; margin-top: 4px; }
+    .footer.has-selection { border-color: #22c55e; background: #f0fdf4; }
+    .footer-status { font-weight: 600; font-size: 13px; color: rgba(10,10,10,0.7); }
+    .footer.has-selection .footer-status { color: #0A0A0A; }
+    .footer-detail { font-size: 11px; color: #6b7280; margin-top: 4px; }
+    .footer.has-selection .footer-detail { color: #166534; }
+    .btn-copy { margin-top: 12px; display: none; background: #3b82f6; color: #FFFFFF; border: none; border-radius: 7px; padding: 8px 18px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit; }
+    .btn-copy:hover { background: #0A0A0A; }
+    .btn-copy.visible { display: inline-block; }
+    .copied-msg { display: none; color: #0A0A0A; font-size: 12px; margin-left: 10px; font-weight: 600; }
+    .copied-msg.visible { display: inline; }
+  /* Turnpage brand patch v3 ===================================== */
+  body { font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
+  h1 { letter-spacing: -0.02em; font-weight: 800; }
+
+  /* ----- Section eyebrow headings (h2): neon bar prefix, no underline */
+  section h2 {
+    border-bottom: none !important;
+    padding: 4px 0 4px 1.8em !important;
+    position: relative;
+    letter-spacing: 0.22em !important;
+    font-weight: 700 !important;
+    font-size: 0.78rem !important;
+    text-transform: uppercase !important;
+    margin: 0 0 14px !important;
+  }
+  section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 1.4em;
+    height: 0.18em;
+    background: #D4FF00;
+    border-radius: 2px;
+  }
+  section h2 .pill { margin-left: 8px; }
+
+  /* ----- NAV: dark by default; light theme overrides explicitly */
+  .tn { background: #000000; border-bottom-color: rgba(255,255,255,0.12); }
+  .tn-brand { color: #FFFFFF; text-decoration: none !important; }
+  .tn-brand:hover { color: #D4FF00; }
+  .tn-date { color: rgba(255,255,255,0.6); }
+  .tn-pill { color: rgba(255,255,255,0.7); text-decoration: none !important; background: transparent; border: 1px solid transparent; }
+  .tn-pill:hover { color: #FFFFFF; background: rgba(255,255,255,0.06); }
+  .tn-pill.active { color: #D4FF00; background: rgba(212,255,0,0.12); border-color: rgba(212,255,0,0.45); }
+  #theme-toggle { border-color: rgba(255,255,255,0.25); color: inherit; }
+
+  [data-theme="light"] .tn { background: #FFFFFF !important; border-bottom-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .tn-brand { color: #0A0A0A !important; }
+  [data-theme="light"] .tn-brand:hover { color: #0A0A0A !important; text-decoration: underline !important; text-decoration-color: #D4FF00 !important; text-decoration-thickness: 2px !important; }
+  [data-theme="light"] .tn-date { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] .tn-pill { color: rgba(10,10,10,0.65) !important; }
+  [data-theme="light"] .tn-pill:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; }
+  [data-theme="light"] .tn-pill.active { color: #0A0A0A !important; background: #D4FF00 !important; border-color: #D4FF00 !important; font-weight: 700 !important; }
+  [data-theme="light"] #theme-toggle { border-color: rgba(10,10,10,0.14) !important; color: #0A0A0A !important; }
+
+  /* ----- LIGHT THEME: white-led look, paper only for the Refine subtab */
+  [data-theme="light"] body { background: #FFFFFF !important; color: #0A0A0A !important; }
+  [data-theme="light"] header { background: #FFFFFF !important; border-bottom: 1px solid rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] main { background: #FFFFFF; }
+  [data-theme="light"] footer { background: #FFFFFF !important; border-top: 1px solid rgba(10,10,10,0.08) !important; color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  [data-theme="light"] .card { background: #FFFFFF !important; border-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .card.canonical { box-shadow: 0 1px 3px rgba(10,10,10,0.06) !important; border-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] th { color: rgba(10,10,10,0.45) !important; border-bottom-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] td { border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] td .matter-name { color: #0A0A0A !important; }
+  [data-theme="light"] td .court { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] td .status { color: rgba(10,10,10,0.78) !important; }
+  [data-theme="light"] section h2 { color: #0A0A0A !important; }
+  [data-theme="light"] ul.qlist li { color: rgba(10,10,10,0.78) !important; border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] ul.qlist li strong { color: #0A0A0A !important; }
+  [data-theme="light"] header .date, [data-theme="light"] header .meta, [data-theme="light"] .subtitle, [data-theme="light"] .header-left .date { color: rgba(10,10,10,0.55) !important; }
+
+  /* ----- Refine subtab full-width card */
+  body.refine-page { background: #0A0A0A; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  .refine-box { border-top: none !important; }
+
+  /* ----- Body links (in main content only): subtle accents */
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  [data-theme="light"] main p a, [data-theme="light"] main .qlist a, [data-theme="light"] main .advisory-list a, [data-theme="light"] .advisory-body a, [data-theme="light"] .briefing-block a {
+    color: #0A0A0A;
+    text-decoration-color: rgba(212,255,0,0.85);
+  }
+  [data-theme="light"] main p a:hover, [data-theme="light"] main .qlist a:hover, [data-theme="light"] main .advisory-list a:hover, [data-theme="light"] .advisory-body a:hover, [data-theme="light"] .briefing-block a:hover {
+    background: rgba(212,255,0,0.30);
+  }
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a { color: #D4FF00; text-decoration-color: rgba(212,255,0,0.55); }
+
+  /* ----- Tables: subtle hover */
+  tbody tr:hover { background: rgba(255,255,255,0.03) !important; }
+  [data-theme="light"] tbody tr:hover { background: rgba(10,10,10,0.025) !important; }
+
+  /* ----- Canonical / seed pills (outlined) */
+  .canonical-pill, .seed-pill { background: rgba(212,255,0,0.12) !important; color: #D4FF00 !important; border: 1px solid rgba(212,255,0,0.45) !important; border-radius: 99px !important; }
+  [data-theme="light"] .canonical-pill, [data-theme="light"] .seed-pill { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+  .degraded-pill { border-radius: 99px !important; }
+
+  /* ----- SQUARE BUTTONS — Turnpage three styles */
+  /* Primary (.btn-primary, .dashboard-btn, .open-btn, .btn-copy): ink bg + white text + neon arrow */
+  .dashboard-btn, .open-btn, .btn-copy,
+  .approval-btn, .btn-cal, .btn-send-feedback {
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+    padding: 10px 18px !important;
+    font-family: 'Archivo', -apple-system, sans-serif !important;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  /* PRIMARY (dashboard-btn, open-btn): ink bg + white text */
+  .dashboard-btn, .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border: 1px solid #0A0A0A !important; }
+  .dashboard-btn:hover, .open-btn:hover { background: #16161B !important; border-color: #16161B !important; }
+  [data-theme="light"] .dashboard-btn, [data-theme="light"] .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border-color: #0A0A0A !important; }
+  [data-theme="light"] .dashboard-btn:hover, [data-theme="light"] .open-btn:hover { background: #16161B !important; }
+
+  /* GHOST (approval-btn, btn-cal, .btn-send-feedback, .btn-refine-secondary): outlined */
+  .approval-btn { background: transparent !important; color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .approval-btn:hover { background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .approval-btn { background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; }
+  [data-theme="light"] .approval-btn:hover { background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  .btn-cal, .btn-send-feedback {
+    background: transparent !important;
+    color: #0A0A0A !important;
+    border: 1px solid #0A0A0A !important;
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+  }
+  .btn-cal:hover, .btn-send-feedback:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-cal, [data-theme="dark"] .btn-send-feedback { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-cal:hover, [data-theme="dark"] .btn-send-feedback:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* NEON CTA (btn-copy, btn-refine): solid neon bg + ink text */
+  .btn-copy { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; }
+  .btn-copy:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; border-radius: 0 !important; font-weight: 700 !important; padding: 11px 20px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-refine:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine-secondary { border-radius: 0 !important; padding: 11px 16px !important; font-weight: 600 !important; font-family: 'Archivo', sans-serif !important; background: transparent !important; color: rgba(255,255,255,0.7) !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .btn-refine-secondary:hover { color: #FFFFFF !important; background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .btn-refine-secondary { color: rgba(10,10,10,0.65) !important; border-color: rgba(10,10,10,0.4) !important; }
+  [data-theme="light"] .btn-refine-secondary:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  /* Btn-sm (used on approval HTML header bar) → ghost-style */
+  .btn-sm { border-radius: 0 !important; font-weight: 600 !important; background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; padding: 6px 12px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-sm:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-sm { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-sm:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* Refine status */
+  .refine-status { color: #D4FF00 !important; }
+  [data-theme="light"] .refine-status { color: #0A0A0A !important; }
+
+  /* Doctrine pills */
+  .pill.doctrine { border-color: rgba(212,255,0,0.45) !important; color: #D4FF00 !important; background: rgba(212,255,0,0.12) !important; }
+  [data-theme="light"] .pill.doctrine { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+
+  /* Banner */
+  [data-theme="light"] .banner { background: #F4F5F7 !important; border-left-color: #D4FF00 !important; color: rgba(10,10,10,0.78) !important; }
+
+  /* Advisory toggle (light/dark): square corners, ghost-style border treatment */
+  .advisory-toggle { border-radius: 0 !important; }
+  .advisory-toggle.open { border-radius: 0 !important; }
+  .advisory-body { border-radius: 0 !important; }
+  .briefing-block, .dates-block, .linkedin-block, .disclaimer { border-radius: 0 !important; }
+
+  /* The view (subnav) row: subtle visual indent + breathing room */
+  .tn-row:nth-of-type(3) { padding-top: 6px; gap: 22px; }
+
+  /* View pills: NOT pills — plain text links with active neon underline */
+  .tn-pill.view {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4px 0 !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,0.55) !important;
+    letter-spacing: 0.01em;
+    transition: color 0.12s, border-bottom-color 0.12s;
+  }
+  .tn-pill.view:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+  }
+  .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    padding-bottom: 4px !important;
+  }
+  [data-theme="light"] .tn-pill.view {
+    color: rgba(10,10,10,0.55) !important;
+  }
+  [data-theme="light"] .tn-pill.view:hover {
+    background: transparent !important;
+    color: #0A0A0A !important;
+  }
+  [data-theme="light"] .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #0A0A0A !important;
+    font-weight: 700 !important;
+  }
+
+
+  /* --- Turnpage logo in brand strip ------------------- */
+  .tn-brand { display: inline-flex; align-items: center; gap: 0; }
+  .tn-brand-logo { height: 18px; width: auto; vertical-align: middle; transition: filter 0.15s; filter: invert(1) brightness(2); }
+  /* On LIGHT theme, the logo is already black — no invert needed */
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { font-weight: 700; letter-spacing: -0.01em; }
+    /* Original is black-on-white JPEG. In dark theme we invert to get white-on-black. */
+    filter: invert(1);
+  }
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { display: none; } /* legacy text — replaced by product label on tab row */
+  .tn-brand:hover .tn-brand-logo { opacity: 0.85; }
+  [data-theme="light"]
+
+  /* Tab row: align product label + tabs horizontally with a vertical divider between them */
+  .tn-row:nth-of-type(2) {
+    align-items: center;
+    padding: 8px 0;
+  }
+  [data-theme="light"]
+
+  /* Brand row: logo on left, meta (date + toggle) on right */
+  .tn-row.brand { padding-bottom: 8px !important; }
+
+  /* Slight arrow indicator on tab pill suggesting dropdown */
+  .tn-tab > .tn-pill::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55;
+    vertical-align: 2px;
+  }/* ====== MASTER PATCH START — do not edit between sentinels ====== */
+
+  /* === Polestar-style full-width dropdowns === */
+  .tn { position: relative; }
+  .tn-tabs-row { gap: clamp(0.4rem, 1vw, 0.8rem); }
+  .tn-tab { position: static; display: inline-block; padding-bottom: 12px; margin-bottom: -12px; }
+  .tn-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: -10px;
+    background: #D4FF00;
+    border-bottom: 1px solid rgba(10,10,10,0.12);
+    box-shadow: 0 14px 28px rgba(10,10,10,0.10);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0s 0.25s;
+    pointer-events: none;
+  }
+  [data-theme="dark"] .tn-dropdown {
+    background: #D4FF00;
+    border-bottom-color: rgba(10,10,10,0.18);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.5);
+  }
+  .tn-tab:hover .tn-dropdown, .tn-tab:focus-within .tn-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0s 0s;
+    pointer-events: auto;
+  }
+  .tn-dd-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(1.8rem, 3vw, 2.8rem) clamp(1.25rem, 3vw, 2.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+    background: #D4FF00;
+  }
+  .tn-dd-eyebrow {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #0A0A0A; margin: 0 0 0.8rem 0;
+  }
+  .tn-dd-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800; font-size: clamp(1.4rem, 2vw, 1.75rem);
+    line-height: 1.15; letter-spacing: -0.02em;
+    color: #0A0A0A; margin: 0 0 0.9rem 0;
+  }
+  .tn-dd-body {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; color: #0A0A0A;
+    line-height: 1.55; max-width: 460px; margin: 0;
+  }
+  .tn-dd-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+  .tn-dd-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; font-weight: 600;
+    color: #0A0A0A !important; background: transparent !important;
+    border: none !important; border-radius: 0 !important; padding: 4px 0 !important;
+    display: inline-flex !important; align-items: center;
+    text-decoration: none !important;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .tn-dd-link:hover { color: rgba(10,10,10,0.55) !important; background: transparent !important; }
+  .tn-dd-link.active span { border-bottom: 2px solid #0A0A0A; padding-bottom: 1px; }
+  .tn-dd-col-cta { align-self: center; }
+  .tn-dd-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    color: #FFFFFF !important; background: #0A0A0A !important;
+    padding: 0.9rem 1.4rem; letter-spacing: 0.02em;
+    text-decoration: none !important;
+    border: none !important; border-radius: 0 !important;
+    transition: background 0.2s, gap 0.2s;
+  }
+  .tn-dd-cta:hover { background: #222 !important; gap: 12px; }
+  .tn-dd-cta svg { stroke: #D4FF00 !important; }
+  .tn-tab > .tn-pill::after { display: none; }
+  .tn-row.brand > .tn-date { display: none !important; }
+
+  /* === Logo size consistency === */
+  .tn-brand-logo { height: 36px !important; }
+
+  /* === Bigger, more readable tab names === */
+  .tn-pill {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    padding: 9px 18px !important;
+    letter-spacing: 0.005em !important;
+    gap: 6px !important;
+    border-radius: 0 !important;
+  }
+  .tn-pill.active { font-weight: 700 !important; }
+
+  /* === Neon active tab; hover any tab = neon === */
+  .tn-pill.active,
+  [data-theme="light"] .tn-pill.active,
+  [data-theme="dark"] .tn-pill.active {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  .tn-pill:hover,
+  [data-theme="light"] .tn-pill:hover,
+  [data-theme="dark"] .tn-pill:hover {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  /* Active tab dims when another tab is hovered */
+  .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(10,10,10,0.06) !important;
+    color: rgba(10,10,10,0.55) !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+  }
+  [data-theme="dark"] .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(255,255,255,0.06) !important;
+    color: rgba(255,255,255,0.55) !important;
+    border: 1px solid transparent !important;
+  }
+  /* Active tab not clickable */
+  .tn-pill.active { cursor: default !important; pointer-events: none !important; }
+
+  /* === src-arrow: light gray bg (not neon) === */
+  .src-arrow {
+    background: rgba(10,10,10,0.08) !important;
+    color: #0A0A0A !important;
+  }
+  .src-arrow:hover { background: rgba(10,10,10,0.16) !important; }
+  [data-theme="dark"] .src-arrow {
+    background: rgba(229,231,235,0.10) !important;
+    color: #E5E7EB !important;
+  }
+  [data-theme="dark"] .src-arrow:hover { background: rgba(229,231,235,0.20) !important; }
+
+  /* === Tooltip overflow fix === */
+  .col-left .src-tooltip {
+    width: 300px !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-left .src-tooltip::after {
+    left: 14px !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip {
+    width: 300px !important;
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip::after {
+    left: auto !important;
+    right: 14px !important;
+    transform: none !important;
+  }
+  .src-tooltip { max-width: calc(100vw - 32px); }
+
+  /* === Remove eyebrow neon bars === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+  /* === Byline + multi-column body === */
+  .briefing-body .byline {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    margin: 0 0 24px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink-20);
+    flex-wrap: wrap;
+  }
+  .briefing-body .byline .byline-desk {
+    font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink);
+  }
+  .briefing-body .byline .byline-time,
+  .briefing-body .byline .byline-date {
+    font-size: 12px; color: var(--ink-60); font-style: italic;
+  }
+  .briefing-body .prose {
+    column-count: 2;
+    column-gap: 36px;
+    column-rule: 1px solid var(--line);
+  }
+  .briefing-body .prose p {
+    break-inside: avoid-column;
+    margin: 0 0 16px;
+  }
+  .briefing-body .prose p:first-of-type { margin-top: 0; }
+  @media (max-width: 880px) {
+    .briefing-body .prose { column-count: 1; }
+  }
+
+/* ====== MASTER PATCH END ====== */
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div>
+      <div class="header-title">Advisory Proposals</div>
+      <div class="header-sub">April 26, 2026 &nbsp;&middot;&nbsp; Check items to approve, copy selections, paste to Claude</div>
+    </div>
+    <div class="header-actions">
+      <button class="btn-sm" onclick="selectAll()">Select all</button>
+      <button class="btn-sm" onclick="clearAll()">Clear all</button>
+    </div>
+  </div>
+
+  <div class="briefing-block">
+    <div class="briefing-label">Today's Briefing</div>
+    <div class="briefing-text">
+      Anthropic's second $300 million settlement installment is due in four days (April 30), and the <a href="https://legalblogs.wolterskluwer.com/copyright-blog/the-bartz-v-anthropic-settlement-understanding-americas-largest-copyright-settlement/">Kluwer Copyright Blog</a> has published the first comprehensive international legal analysis of the $1.5 billion Bartz settlement, identifying the publisher-versus-author allocation formula as the central issue for the May 14 fairness hearing. On Capitol Hill, Senator Blackburn is announcing <a href="https://www.blackburn.senate.gov/2026/4/ai/what-they-are-saying-blackburn-announces-growing-momentum-for-trump-america-ai-act">growing momentum for the TRUMP AMERICA AI Act</a>, whose 291-page draft would legislatively declare AI training on copyrighted works not fair use &mdash; a provision that could override the pending Concord v. Anthropic summary judgment hearing (July 15) and the OpenAI MDL's anticipated fair-use motions. <a href="https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026">Norton Rose Fulbright's 2026 litigation update</a> confirms the OpenAI MDL's 108 million log production is the largest AI discovery production in any copyright case, while the <a href="https://www.blackburn.senate.gov/2026/4/ai/blackburn-welch-hold-roundtable-with-over-20-artists-who-support-no-fakes-act-and-train-act-to-protect-creators-from-ai-harms">Blackburn-Welch roundtable</a> with 20+ artists during GRAMMYs on the Hill builds bipartisan legislative momentum for the NO FAKES Act and TRAIN Act.
+    </div>
+  </div>
+
+  <div class="linkedin-block">
+    <div class="linkedin-header">
+      <div class="linkedin-label">Auto-Generated LinkedIn Post</div>
+      <div>
+        <button class="btn-copy-li" onclick="copyLinkedIn()">Copy post</button>
+        <span class="li-copied" id="li-copied">&check; Copied!</span>
+      </div>
+    </div>
+    <div class="linkedin-post" id="linkedin-post">The largest copyright settlement in U.S. history hits a critical milestone this week: Anthropic's second $300 million installment is due April 30, bringing total funded commitments to $600 million of the $1.5 billion Bartz v. Anthropic settlement fund.
+
+With the fairness hearing just 18 days away (May 14), three forces are converging:
+
+→ The Kluwer Copyright Blog published the first comprehensive international legal analysis of the settlement structure, identifying publisher-vs-author allocation as the central issue for final approval
+→ Senator Blackburn is building momentum for the TRUMP AMERICA AI Act, which would legislatively declare AI training on copyrighted works not fair use — potentially overriding pending judicial determinations in Concord v. Anthropic and the OpenAI MDL
+→ Norton Rose Fulbright confirms the OpenAI MDL's 108 million log production is the largest AI discovery order in any copyright case
+
+For rights-holders: verify your claim status, calendar April 30 and May 14, and track the TRUMP AMERICA AI Act — the legislative landscape could shift before key rulings arrive.
+
+#Copyright #AILitigation #ClassAction #FairUse #BartzVAnthropic</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Proposed News Articles (5)</div>
+
+    <div class="card" id="card-a1" onclick="toggle('a1')">
+      <input type="checkbox" id="a1" onclick="event.stopPropagation(); toggle('a1')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://legalblogs.wolterskluwer.com/copyright-blog/the-bartz-v-anthropic-settlement-understanding-americas-largest-copyright-settlement/" target="_blank" onclick="event.stopPropagation()">The Bartz v. Anthropic Settlement: Understanding America's Largest Copyright Settlement</a>
+          <span class="tag tag-settlement">Settlement</span>
+        </div>
+        <div class="card-meta">Kluwer Copyright Blog (Wolters Kluwer) &nbsp;&middot;&nbsp; April 2026</div>
+        <div class="card-text">First comprehensive international legal analysis of the $1.5 billion settlement. Identifies ~$3,000 per-title payout and highlights publisher-versus-author allocation as the central fairness-hearing issue. Distinguishes Judge Alsup's fair-use ruling on lawfully acquired copies from the infringement finding on shadow-library downloads.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-a2" onclick="toggle('a2')">
+      <input type="checkbox" id="a2" onclick="event.stopPropagation(); toggle('a2')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://www.blackburn.senate.gov/2026/4/ai/blackburn-welch-hold-roundtable-with-over-20-artists-who-support-no-fakes-act-and-train-act-to-protect-creators-from-ai-harms" target="_blank" onclick="event.stopPropagation()">Blackburn, Welch Hold Roundtable with Over 20 Artists Who Support NO FAKES Act and TRAIN Act</a>
+          <span class="tag tag-policy">Policy</span>
+        </div>
+        <div class="card-meta">U.S. Senate (Blackburn Office) &nbsp;&middot;&nbsp; April 21&ndash;23, 2026</div>
+        <div class="card-text">Bipartisan roundtable with 20+ artists including Grace Potter, Taylor Hanson, and Molly Tuttle during GRAMMYs on the Hill Advocacy Day. Builds legislative momentum for the TRAIN Act (training-data transparency) and NO FAKES Act (digital replica protection). Signals active creator-community support for the three-bill package.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-a3" onclick="toggle('a3')">
+      <input type="checkbox" id="a3" onclick="event.stopPropagation(); toggle('a3')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026" target="_blank" onclick="event.stopPropagation()">AI in Litigation Series: An Update on AI Copyright Cases in 2026</a>
+          <span class="tag tag-legal">Legal</span>
+        </div>
+        <div class="card-meta">Norton Rose Fulbright &nbsp;&middot;&nbsp; April 2026</div>
+        <div class="card-text">Authoritative law-firm survey of the full 2026 AI copyright docket. Confirms OpenAI MDL's 108M log production is the largest AI discovery production in any copyright case. Synthesizes Thaler certiorari denial, Thomson Reuters v. ROSS, and the Bartz/Kadrey fair-use rulings into a coherent doctrinal framework.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-a4" onclick="toggle('a4')">
+      <input type="checkbox" id="a4" onclick="event.stopPropagation(); toggle('a4')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://writerbeware.blog/2026/04/10/anthropic-copyright-settlement-april-update/" target="_blank" onclick="event.stopPropagation()">Anthropic Copyright Settlement: April Update</a>
+          <span class="tag tag-settlement">Settlement</span>
+        </div>
+        <div class="card-meta">Writer Beware &nbsp;&middot;&nbsp; April 10, 2026</div>
+        <div class="card-text">Practical guidance for authors in the post-claim-deadline period. Confirms distributions calculated by June 11, disbursement expected June 2026+, subject to appeals. Details the rescheduled May 14 fairness hearing, unsealed objections, and the revised fee petition of $187.5M (down from $300M).</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-a5" onclick="toggle('a5')">
+      <input type="checkbox" id="a5" onclick="event.stopPropagation(); toggle('a5')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://www.blackburn.senate.gov/2026/4/ai/what-they-are-saying-blackburn-announces-growing-momentum-for-trump-america-ai-act" target="_blank" onclick="event.stopPropagation()">Blackburn Announces Growing Momentum for TRUMP AMERICA AI Act</a>
+          <span class="tag tag-policy">Policy</span>
+        </div>
+        <div class="card-meta">U.S. Senate (Blackburn Office) &nbsp;&middot;&nbsp; April 2026</div>
+        <div class="card-text">The 291-page TRUMP AMERICA AI Act would legislatively declare AI training on copyrighted works not fair use &mdash; directly overriding pending judicial determinations in Concord v. Anthropic (July 15 hearing) and the OpenAI MDL. Growing bipartisan support creates a scenario where the statutory landscape could shift before key summary judgment rulings arrive.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Proposed Tracker Updates (5)</div>
+
+    <div class="card" id="card-t1" onclick="toggle('t1')">
+      <input type="checkbox" id="t1" onclick="event.stopPropagation(); toggle('t1')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">AI IP Litigation Tracker &rsaquo; Header &rsaquo; Col 15 date</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> 2026 Updates (as of April 24, 2026)</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> 2026 Updates (as of April 26, 2026)</div>
+        <div class="card-meta" style="margin-top:6px;">Source: Date roll</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t2" onclick="toggle('t2')">
+      <input type="checkbox" id="t2" onclick="event.stopPropagation(); toggle('t2')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">AI IP Litigation Tracker &rsaquo; Bartz v. Anthropic PBC &rsaquo; 2026 Updates</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> [2026-04-24]: Six days until Anthropic's second $300M settlement installment (Apr 30), bringing total funded to $600M of $1.5B. Mozilla Foundation's Copyforward symposium at USC Gould...</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> [2026-04-26]: Four days until Anthropic's second $300M settlement installment (Apr 30). Kluwer Copyright Blog publishes comprehensive analysis of settlement structure, noting ~$3,000 per-title payout and publisher-vs-author allocation as key fairness hearing issue...</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://legalblogs.wolterskluwer.com/copyright-blog/the-bartz-v-anthropic-settlement-understanding-americas-largest-copyright-settlement/" target="_blank" onclick="event.stopPropagation()">Kluwer Copyright Blog</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t3" onclick="toggle('t3')">
+      <input type="checkbox" id="t3" onclick="event.stopPropagation(); toggle('t3')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Landscape Summary &rsaquo; Title date</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> AI Copyright &amp; IP Litigation Landscape &mdash; Summary (as of April 24, 2026)</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> AI Copyright &amp; IP Litigation Landscape &mdash; Summary (as of April 26, 2026)</div>
+        <div class="card-meta" style="margin-top:6px;">Source: Date roll</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t4" onclick="toggle('t4')">
+      <input type="checkbox" id="t4" onclick="event.stopPropagation(); toggle('t4')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Landscape Summary &rsaquo; GRAMMYS on the Hill 2026 &rsaquo; Value</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> Recording Academy's 25th GRAMMYS on the Hill concludes April 23; champions three-bill package...</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> Expanded with Blackburn-Welch roundtable details (20+ artists, Grace Potter, Taylor Hanson, Molly Tuttle), TRUMP AMERICA AI Act momentum, and White House Framework hands-off posture.</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://www.blackburn.senate.gov/2026/4/ai/blackburn-welch-hold-roundtable-with-over-20-artists-who-support-no-fakes-act-and-train-act-to-protect-creators-from-ai-harms" target="_blank" onclick="event.stopPropagation()">Blackburn Senate Office</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t5" onclick="toggle('t5')">
+      <input type="checkbox" id="t5" onclick="event.stopPropagation(); toggle('t5')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Landscape Summary &rsaquo; 2026 Developments &rsaquo; Section header</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> 2026 DEVELOPMENTS (as of April 23, 2026)</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> 2026 DEVELOPMENTS (as of April 26, 2026)</div>
+        <div class="card-meta" style="margin-top:6px;">Source: Date roll</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Proposed Site Updates (3)</div>
+
+    <div class="card" id="card-s1" onclick="toggle('s1')">
+      <input type="checkbox" id="s1" onclick="event.stopPropagation(); toggle('s1')" />
+      <div class="card-body">
+        <div class="card-title" style="color:#0A0A0A; cursor:default;">Alert Banner</div>
+        <div class="card-text"><strong>Currently:</strong> May reference stale pre-April 30 milestone information</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> &ldquo;Next Milestone: Anthropic $300M Installment Due April 30 | Fairness Hearing: May 14, 2026 at 2:00 PM PT.&rdquo;</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-s2" onclick="toggle('s2')">
+      <input type="checkbox" id="s2" onclick="event.stopPropagation(); toggle('s2')" />
+      <div class="card-body">
+        <div class="card-title" style="color:#0A0A0A; cursor:default;">Key Dates</div>
+        <div class="card-text"><strong>Currently:</strong> April 30 and May 14 may or may not be displayed; June 11 distribution calculation date missing</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> Add &ldquo;June 11, 2026 &mdash; Settlement administrator calculates distributions&rdquo; and verify July 15 Concord hearing is listed. Source: Writer Beware April update.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-s3" onclick="toggle('s3')">
+      <input type="checkbox" id="s3" onclick="event.stopPropagation(); toggle('s3')" />
+      <div class="card-body">
+        <div class="card-title" style="color:#0A0A0A; cursor:default;">FAQ — TRUMP AMERICA AI Act Impact</div>
+        <div class="card-text"><strong>Currently:</strong> No FAQ entry addressing the TRUMP AMERICA AI Act's potential impact on pending settlements</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> New FAQ: &ldquo;Q: Could the TRUMP AMERICA AI Act affect the Bartz settlement? A: The settlement is a private agreement approved by the court under Rule 23(e). Legislative changes to the fair-use framework would primarily affect pending and future litigation rather than an already-approved class settlement.&rdquo;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer" id="footer">
+    <div class="footer-status" id="footer-status">No items selected.</div>
+    <div class="footer-detail" id="footer-detail">Check proposals above, then click "Copy Selections" and paste into Claude.</div>
+    <div>
+      <button class="btn-copy" id="btn-copy" onclick="copySelections()">&nbsp;Copy Selections</button>
+      <span class="copied-msg" id="copied-msg">&check; Copied! Paste into Claude.</span>
+    </div>
+  </div>
+
+</div>
+<script>
+  const state = { a1: false, a2: false, a3: false, a4: false, a5: false, t1: false, t2: false, t3: false, t4: false, t5: false, s1: false, s2: false, s3: false };
+  const labels = {
+    a1: "Article A1: Kluwer Copyright Blog — Bartz Settlement Analysis",
+    a2: "Article A2: Blackburn-Welch Roundtable — NO FAKES & TRAIN Acts",
+    a3: "Article A3: Norton Rose Fulbright — 2026 AI Copyright Update",
+    a4: "Article A4: Writer Beware — Anthropic Settlement April Update",
+    a5: "Article A5: TRUMP AMERICA AI Act Growing Momentum",
+    t1: "Tracker T1: AI IP Litigation Tracker > Header > Col 15 date",
+    t2: "Tracker T2: AI IP Litigation Tracker > Bartz v. Anthropic > 2026 Updates",
+    t3: "Tracker T3: Landscape Summary > Title date",
+    t4: "Tracker T4: Landscape Summary > GRAMMYS on the Hill 2026 > Value",
+    t5: "Tracker T5: Landscape Summary > 2026 Developments > Section header",
+    s1: "Site Update S1: Alert Banner — April 30 milestone",
+    s2: "Site Update S2: Key Dates — add June 11 distribution date",
+    s3: "Site Update S3: FAQ — TRUMP AMERICA AI Act impact"
+  };
+
+  function toggle(id) {
+    state[id] = !state[id];
+    document.getElementById(id).checked = state[id];
+    document.getElementById('card-' + id).classList.toggle('checked', state[id]);
+    updateFooter();
+  }
+  function selectAll() { Object.keys(state).forEach(id => { state[id] = true; document.getElementById(id).checked = true; document.getElementById('card-' + id).classList.add('checked'); }); updateFooter(); }
+  function clearAll() { Object.keys(state).forEach(id => { state[id] = false; document.getElementById(id).checked = false; document.getElementById('card-' + id).classList.remove('checked'); }); updateFooter(); document.getElementById('copied-msg').classList.remove('visible'); }
+  function updateFooter() {
+    const selected = Object.keys(state).filter(k => state[k]);
+    const footer = document.getElementById('footer');
+    footer.classList.toggle('has-selection', selected.length > 0);
+    document.getElementById('footer-status').textContent = selected.length ? selected.length + ' item' + (selected.length !== 1 ? 's' : '') + ' selected.' : 'No items selected.';
+    document.getElementById('footer-detail').textContent = selected.length ? selected.map(k => labels[k]).join(' \u00b7 ') : 'Check proposals above, then click "Copy Selections" and paste into Claude.';
+    document.getElementById('btn-copy').classList.toggle('visible', selected.length > 0);
+    if (!selected.length) document.getElementById('copied-msg').classList.remove('visible');
+  }
+  function copySelections() {
+    const selected = Object.keys(state).filter(k => state[k]);
+    if (!selected.length) return;
+    navigator.clipboard.writeText("Apply approved:\n" + selected.map(k => "- " + labels[k]).join("\n")).then(() => { document.getElementById('copied-msg').classList.add('visible'); });
+  }
+  function copyLinkedIn() {
+    navigator.clipboard.writeText(document.getElementById('linkedin-post').textContent).then(() => {
+      const el = document.getElementById('li-copied');
+      el.classList.add('visible');
+      setTimeout(() => el.classList.remove('visible'), 3000);
+    });
+  }
+</script>
+</body>
+</html>

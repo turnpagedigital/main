@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🤖 LLM / Copyright | Turnpage Daily Briefing</title>
+<script>
+(function(){
+  var K='daily-briefing-theme';
+  var ST=['system','dark','light'];
+  var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f'};
+  var LB={dark:'Dark',light:'Light',system:'System'};
+  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function apply(){
+    var t=localStorage.getItem(K)||'system';
+    document.documentElement.setAttribute('data-theme',eff(t));
+    document.documentElement.setAttribute('data-theme-pref',t);
+    var b=document.getElementById('theme-toggle');
+    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
+  }
+  window.cycleTheme=function(){
+    var c=localStorage.getItem(K)||'system';
+    var n=ST[(ST.indexOf(c)+1)%ST.length];
+    localStorage.setItem(K,n);apply();
+  };
+  apply();
+  if(document.readyState!=='loading') apply();
+  else document.addEventListener('DOMContentLoaded',apply);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#FFFFFF; --surface:#FFFFFF; --paper-2:#F4F5F7;
+    --ink:#0A0A0A; --ink-60:rgba(10,10,10,0.6); --ink-40:rgba(10,10,10,0.4); --ink-20:rgba(10,10,10,0.18);
+    --line:rgba(10,10,10,0.08); --line-strong:rgba(10,10,10,0.14);
+    --neon:#D4FF00;
+  }
+  [data-theme="dark"] {
+    --bg:#16161B; --surface:#1F1F25; --paper-2:#1F1F25;
+    --ink:#E5E7EB; --ink-60:rgba(229,231,235,0.62); --ink-40:rgba(229,231,235,0.42); --ink-20:rgba(229,231,235,0.18);
+    --line:rgba(229,231,235,0.1); --line-strong:rgba(229,231,235,0.18);
+  }
+  *{box-sizing:border-box;}
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:'Archivo', Arial, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:var(--ink); }
+
+  /* NAV — nav is always dark canvas; pills colored explicitly */
+  .tn{background:#000000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;position:sticky;top:0;z-index:100;}
+  .tn-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+  .tn-row+.tn-row{margin-top:6px;}
+  .tn-row.brand{justify-content:space-between;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
+  .tn-brand-logo{height:28px;width:auto;filter:invert(1);transition:filter 0.15s;}
+  [data-theme="light"] .tn-brand-logo{filter:none !important;}
+  .tn-date{color:rgba(255,255,255,0.6);font-size:11px;}
+  .tn-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:11.5px;color:rgba(255,255,255,0.72);text-decoration:none;background:transparent;border:1px solid transparent;}
+  .tn-pill:hover{color:#FFFFFF;background:rgba(255,255,255,0.06);}
+  .tn-pill.active{color:#D4FF00;background:rgba(212,255,0,0.12);border-color:rgba(212,255,0,0.45);}
+  .tn-pill.view{background:transparent !important;border:none !important;border-radius:0 !important;padding:4px 0 !important;font-size:11.5px !important;font-weight:500 !important;color:rgba(255,255,255,0.55) !important;}
+  .tn-pill.view:hover{color:#FFFFFF !important;background:transparent !important;}
+  .tn-pill.view.active{background:transparent !important;border:none !important;border-bottom:2px solid #D4FF00 !important;color:#FFFFFF !important;font-weight:700 !important;padding-bottom:4px !important;}
+  .tn-row:nth-of-type(3){padding-top:6px;gap:22px;}
+  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:inherit;}
+  [data-theme="light"] .tn{background:#FFFFFF !important;border-bottom-color:rgba(10,10,10,0.08) !important;}
+  [data-theme="light"] .tn-date{color:rgba(10,10,10,0.55) !important;}
+  [data-theme="light"] .tn-pill{color:rgba(10,10,10,0.65) !important;}
+  [data-theme="light"] .tn-pill:hover{background:rgba(10,10,10,0.04) !important;color:#0A0A0A !important;}
+  [data-theme="light"] .tn-pill.active{color:#0A0A0A !important;background:#D4FF00 !important;border-color:#D4FF00 !important;font-weight:700 !important;}
+  [data-theme="light"] .tn-pill.view{color:rgba(10,10,10,0.55) !important;}
+  [data-theme="light"] .tn-pill.view.active{color:#0A0A0A !important;}
+  [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14) !important;color:#0A0A0A !important;}
+
+  /* PAGE TITLE */
+  .page-title{max-width:1440px;margin:0 auto;padding:24px 32px 14px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;}
+  .page-title h1{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin:0;color:var(--ink);display:flex;align-items:center;gap:12px;}
+  .page-title h1 .topic-emoji{font-size:1.1em;}
+  .page-title .stamp{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
+
+  /* THREE-COL GRID */
+  .three-col{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;gap:32px;grid-template-columns:1fr;}
+  @media (min-width:1080px){
+    .three-col{grid-template-columns:260px 1fr 290px;grid-template-areas:"left center right";gap:36px;}
+    .col-left{grid-area:left;} .col-center{grid-area:center;} .col-right{grid-area:right;}
+  }
+  .col-center{min-width:0;}
+
+  /* CENTER BRIEFING */
+  .lead-eyebrow{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);padding-left:1.8em;position:relative;margin-bottom:14px;}
+  .lead-eyebrow::before{content:"";position:absolute;left:0;top:0.42em;width:1.4em;height:0.18em;background:var(--neon);border-radius:2px;}
+  .lead-headline{font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.18;letter-spacing:-0.02em;font-weight:800;margin:0 0 22px;color:var(--ink);}
+  .briefing-body{font-size:16px;line-height:1.75;color:var(--ink);}
+  .briefing-body p{margin:0 0 18px;color:var(--ink);}
+  .briefing-body strong{color:var(--ink);font-weight:700;}
+  .briefing-body em{font-style:italic;color:var(--ink);}
+  .briefing-body h2{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.8em;position:relative;margin:30px 0 14px;color:var(--ink);padding-top:22px;border-top:2px solid var(--ink);}
+  .briefing-body h2::before{content:"";position:absolute;left:0;top:calc(22px + 0.42em);width:1.4em;height:0.18em;background:var(--neon);border-radius:2px;}
+
+  /* SOURCE TOOLTIP */
+  .src-tip{position:relative;display:inline-block;vertical-align:middle;}
+  .src-arrow{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;color:#0A0A0A;background:var(--neon);border-radius:0;opacity:0.92;transition:opacity 0.12s, background 0.12s;text-decoration:none !important;}
+  .src-arrow:hover{opacity:1;background:#E2FF4D;}
+  .src-arrow svg.src{width:10px;height:10px;}
+  .src-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);width:340px;background:#0A0A0A;color:#FFFFFF;padding:14px 16px 14px 18px;font-size:13px;line-height:1.55;border-left:3px solid #D4FF00;z-index:1000;visibility:hidden;opacity:0;transition:opacity 0.18s, visibility 0s 0.18s;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,0.25);font-weight:400;text-align:left;letter-spacing:0;white-space:normal;}
+  .src-tooltip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border-width:6px;border-style:solid;border-color:#0A0A0A transparent transparent transparent;}
+  .src-tooltip-label{display:block;font-size:0.66rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#D4FF00;margin-bottom:7px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.16);}
+  .src-tip:hover .src-tooltip{visibility:visible;opacity:1;transition:opacity 0.18s, visibility 0s 0s;}
+  .col-left .src-tooltip, .col-right .src-tooltip{width:300px;left:auto;right:0;transform:none;}
+  .col-left .src-tooltip::after, .col-right .src-tooltip::after{left:auto;right:14px;transform:none;}
+
+  /* SIDEBAR BOXES */
+  .box{background:var(--surface);border:1px solid var(--line-strong);padding:16px 18px;margin-bottom:18px;}
+  .box h2{font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.6em;position:relative;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--ink);color:var(--ink);}
+  .box h2::before{content:"";position:absolute;left:0;top:0.36em;width:1.2em;height:0.18em;background:var(--neon);border-radius:2px;}
+  .box ul{list-style:none;padding:0;margin:0;}
+  .box li{padding:8px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink);line-height:1.5;display:flex;align-items:baseline;gap:6px;}
+  .box li:last-child{border-bottom:none;padding-bottom:0;}
+  .box li .item-text{flex:1;min-width:0;color:var(--ink);}
+  .box li .item-text strong{color:var(--ink);font-weight:700;}
+  .box li .item-text em{color:var(--ink-60);font-style:italic;font-size:11.5px;display:block;margin-top:2px;}
+  .pip{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:1px;flex-shrink:0;}
+  .pip-i{background:#ef4444;} .pip-u{background:#f59e0b;} .pip-w{background:#3b82f6;}
+
+  /* SOURCES FOOTER */
+  .sources{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border-top:2px solid var(--ink);}
+  .sources h2{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.8em;position:relative;margin:0 0 16px;color:var(--ink);}
+  .sources h2::before{content:"";position:absolute;left:0;top:0.42em;width:1.4em;height:0.18em;background:var(--neon);border-radius:2px;}
+  .sources-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:12px;}
+  .source{font-size:12.5px;line-height:1.45;color:var(--ink);}
+  .source .src-num{font-weight:900;margin-right:6px;}
+  .source a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(212,255,0,0.85);text-decoration-thickness:2px;text-underline-offset:2px;}
+  .source a:hover{background:rgba(212,255,0,0.30);}
+  .disclaimer{margin-top:18px;font-size:11px;color:var(--ink-40);font-style:italic;}
+
+  /* Slight arrow indicator on tab pill suggesting dropdown */
+  .tn-tab > .tn-pill::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55;
+    vertical-align: 2px;
+  }/* ====== MASTER PATCH START — do not edit between sentinels ====== */
+
+  /* === Polestar-style full-width dropdowns === */
+  .tn { position: relative; }
+  .tn-tabs-row { gap: clamp(0.4rem, 1vw, 0.8rem); }
+  .tn-tab { position: static; display: inline-block; padding-bottom: 12px; margin-bottom: -12px; }
+  .tn-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: -10px;
+    background: #D4FF00;
+    border-bottom: 1px solid rgba(10,10,10,0.12);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0s 0.25s;
+    pointer-events: none;
+  }
+  [data-theme="dark"] .tn-dropdown {
+    background: #D4FF00;
+    border-bottom-color: rgba(10,10,10,0.18);
+  }
+  .tn-tab:hover .tn-dropdown, .tn-tab:focus-within .tn-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0s 0s;
+    pointer-events: auto;
+  }
+  .tn-dd-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(1.8rem, 3vw, 2.8rem) clamp(1.25rem, 3vw, 2.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+    background: #D4FF00;
+  }
+  .tn-dd-eyebrow {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #0A0A0A; margin: 0 0 0.8rem 0;
+  }
+  .tn-dd-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800; font-size: clamp(1.4rem, 2vw, 1.75rem);
+    line-height: 1.15; letter-spacing: -0.02em;
+    color: #0A0A0A; margin: 0 0 0.9rem 0;
+  }
+  .tn-dd-body {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; color: #0A0A0A;
+    line-height: 1.55; max-width: 460px; margin: 0;
+  }
+  .tn-dd-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+  .tn-dd-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; font-weight: 600;
+    color: #0A0A0A !important; background: transparent !important;
+    border: none !important; border-radius: 0 !important; padding: 4px 0 !important;
+    display: inline-flex !important; align-items: center;
+    text-decoration: none !important;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .tn-dd-link:hover { color: rgba(10,10,10,0.55) !important; background: transparent !important; }
+  .tn-dd-link.active span { border-bottom: 2px solid #0A0A0A; padding-bottom: 1px; }
+  .tn-dd-col-cta { align-self: center; }
+  .tn-dd-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    color: #FFFFFF !important; background: #0A0A0A !important;
+    padding: 0.9rem 1.4rem; letter-spacing: 0.02em;
+    text-decoration: none !important;
+    border: none !important; border-radius: 0 !important;
+    transition: background 0.2s, gap 0.2s;
+  }
+  .tn-dd-cta:hover { background: #222 !important; gap: 12px; }
+  .tn-dd-cta svg { stroke: #D4FF00 !important; }
+  .tn-tab > .tn-pill::after { display: none; }
+  .tn-row.brand > .tn-date { display: none !important; }
+
+  /* === Logo size consistency === */
+  .tn-brand-logo { height: 36px !important; }
+
+  /* === Bigger, more readable tab names === */
+  .tn-pill {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    padding: 9px 18px !important;
+    letter-spacing: 0.005em !important;
+    gap: 6px !important;
+    border-radius: 0 !important;
+  }
+  .tn-pill.active { font-weight: 700 !important; }
+
+  /* === Neon active tab; hover any tab = neon === */
+  .tn-pill.active,
+  [data-theme="light"] .tn-pill.active,
+  [data-theme="dark"] .tn-pill.active {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  .tn-pill:hover,
+  [data-theme="light"] .tn-pill:hover,
+  [data-theme="dark"] .tn-pill:hover {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  /* Active tab dims when another tab is hovered */
+  .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(10,10,10,0.06) !important;
+    color: rgba(10,10,10,0.55) !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+  }
+  [data-theme="dark"] .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(255,255,255,0.06) !important;
+    color: rgba(255,255,255,0.55) !important;
+    border: 1px solid transparent !important;
+  }
+  /* Active tab not clickable */
+  .tn-pill.active { cursor: default !important; pointer-events: none !important; }
+
+  /* === src-arrow: light gray bg (not neon) === */
+  .src-arrow {
+    background: rgba(10,10,10,0.08) !important;
+    color: #0A0A0A !important;
+  }
+  .src-arrow:hover { background: rgba(10,10,10,0.16) !important; }
+  [data-theme="dark"] .src-arrow {
+    background: rgba(229,231,235,0.10) !important;
+    color: #E5E7EB !important;
+  }
+  [data-theme="dark"] .src-arrow:hover { background: rgba(229,231,235,0.20) !important; }
+
+  /* === Tooltip overflow fix === */
+  .col-left .src-tooltip {
+    width: 300px !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-left .src-tooltip::after {
+    left: 14px !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip {
+    width: 300px !important;
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip::after {
+    left: auto !important;
+    right: 14px !important;
+    transform: none !important;
+  }
+  .src-tooltip { max-width: calc(100vw - 32px); }
+
+  /* === Remove eyebrow neon bars === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+  /* === Byline + multi-column body === */
+  .briefing-body .byline {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    margin: 0 0 24px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink-20);
+    flex-wrap: wrap;
+  }
+  .briefing-body .byline .byline-desk {
+    font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink);
+  }
+  .briefing-body .byline .byline-time,
+  .briefing-body .byline .byline-date {
+    font-size: 12px; color: var(--ink-60); font-style: italic;
+  }
+  .briefing-body .prose {
+    column-count: 2;
+    column-gap: 36px;
+    column-rule: 1px solid var(--line);
+  }
+  .briefing-body .prose p {
+    break-inside: avoid-column;
+    margin: 0 0 16px;
+  }
+  .briefing-body .prose p:first-of-type { margin-top: 0; }
+  @media (max-width: 880px) {
+    .briefing-body .prose { column-count: 1; }
+  }
+
+
+  /* === Single-column briefing body with advisory content === */
+  .briefing-body .prose { column-count: 1 !important; }
+  .briefing-body .advisory-body h2 {
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    color: var(--ink) !important;
+    margin: 32px 0 14px !important;
+    padding-top: 22px !important;
+    border-top: 2px solid var(--ink) !important;
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .briefing-body .advisory-body h2:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+  }
+  .briefing-body .advisory-body p {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 1.72;
+  }
+  .briefing-body .advisory-body a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: rgba(212,255,0,0.85);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  .briefing-body .advisory-body a:hover {
+    background: rgba(212,255,0,0.30);
+  }
+  [data-theme="dark"] .briefing-body .advisory-body a {
+    color: #D4FF00;
+    text-decoration-color: rgba(212,255,0,0.55);
+  }
+  .briefing-body .advisory-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 16px;
+  }
+  .briefing-body .advisory-body ul li {
+    padding: 9px 0 9px 22px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+  .briefing-body .advisory-body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 17px;
+    width: 12px;
+    height: 2px;
+    background: var(--neon);
+  }
+  .briefing-body .advisory-body ul li:last-child { border-bottom: none; }
+  .briefing-body .advisory-disclaimer {
+    font-size: 12px !important;
+    color: var(--ink-60) !important;
+    font-style: italic !important;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    margin-top: 24px;
+  }
+
+
+  /* === Source-arrow spacing (more breathing room in body) === */
+  .briefing-body .src-arrow {
+    margin-left: 6px;
+    margin-right: 4px;
+    vertical-align: 1px;
+    width: 17px;
+    height: 17px;
+  }
+  .briefing-body .src-arrow svg.src { width: 11px; height: 11px; }
+  .briefing-body p { margin-bottom: 18px; }
+  .briefing-body p .src-tip + .src-tip { margin-left: 2px; }
+  .briefing-body .advisory-body p, .briefing-body .advisory-body li { line-height: 1.82; }
+
+
+  /* === Recommended Actions sidebar box === */
+  .col-left .actions-box .actions-content {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .col-left .actions-box .actions-content p {
+    margin: 0 0 12px;
+  }
+  .col-left .actions-box .actions-content p:last-child { margin-bottom: 0; }
+  .col-left .actions-box .actions-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .col-left .actions-box .actions-content li {
+    padding: 8px 0 8px 18px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .col-left .actions-box .actions-content li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 10px;
+    height: 2px;
+    background: var(--neon);
+  }
+  .col-left .actions-box .actions-content li:last-child { border-bottom: none; padding-bottom: 0; }
+  .col-left .actions-box .actions-content strong { color: var(--ink); font-weight: 700; }
+  .col-left .actions-box .actions-content a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: rgba(212,255,0,0.85);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  .col-left .actions-box .actions-content .src-arrow {
+    margin-left: 4px;
+    margin-right: 2px;
+  }
+  [data-theme="dark"] .col-left .actions-box .actions-content { color: #E5E7EB; }
+  [data-theme="dark"] .col-left .actions-box .actions-content a { color: #D4FF00; text-decoration-color: rgba(212,255,0,0.55); }
+
+
+  /* === Calendar squares (Key Dates · bold day + neon highlighter) === */
+  .col-left .box .kd-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .col-left .box .kd-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .col-left .box .kd-row:first-child { padding-top: 0; }
+  .cal-square {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 58px;
+    height: 58px;
+    background: #FFFFFF;
+    color: #0A0A0A;
+    border: 1px solid rgba(10,10,10,0.14);
+    flex-shrink: 0;
+    padding-top: 8px;
+    box-sizing: border-box;
+  }
+  [data-theme="dark"] .cal-square {
+    background: #0A0A0A;
+    border-color: rgba(229,231,235,0.22);
+  }
+  .cal-square .cal-month {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    line-height: 1;
+    color: rgba(10,10,10,0.55);
+    text-transform: uppercase;
+    font-family: 'Archivo', sans-serif;
+  }
+  [data-theme="dark"] .cal-square .cal-month { color: rgba(229,231,235,0.6); }
+  .cal-square .cal-day {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+    color: #0A0A0A;
+    margin-top: 5px;
+    letter-spacing: -0.02em;
+    font-family: 'Archivo', sans-serif;
+    /* Neon highlighter painted across the bottom of the digit */
+    background-image: linear-gradient(180deg, transparent 60%, #D4FF00 60%, #D4FF00 96%, transparent 96%);
+    padding: 0 4px;
+    display: inline-block;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  [data-theme="dark"] .cal-square .cal-day { color: #FFFFFF; }
+  .kd-content { flex: 1; min-width: 0; }
+  .kd-event {
+    font-family: 'Archivo', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+  .kd-event strong { font-weight: 700; }
+  .kd-sub {
+    font-family: 'Archivo', sans-serif;
+    font-size: 11.5px;
+    font-style: italic;
+    color: var(--ink-60);
+    line-height: 1.4;
+  }
+
+
+  
+  /* === Story of the Day lead-meta line === */
+  .story-meta {
+    border-left: 3px solid #D4FF00;
+    padding: 8px 14px;
+    background: var(--paper-2);
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+  [data-theme="dark"] .story-meta { border-left-color: #5D7A00; }
+  .story-meta strong { font-weight: 800; letter-spacing: 0.02em; }
+
+  /* === Doc chip (embedded primary-source link inside storyline items) === */
+  .item-doc { margin-top: 6px; }
+  .doc-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 8px 3px 6px;
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    border-left-width: 2px; border-left-style: solid;
+    font-family: 'Archivo', sans-serif;
+    font-size: 10.5px; font-weight: 600; letter-spacing: 0.01em; line-height: 1.3;
+    color: var(--ink); text-decoration: none;
+    max-width: 100%;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .doc-chip:hover { background: var(--paper-2); border-color: var(--ink); }
+  .doc-chip .doc-chip-icon { display: inline-flex; flex-shrink: 0; }
+  .doc-chip .doc-chip-icon svg { width: 13px; height: 13px; display: block; }
+  .doc-chip .doc-chip-label { overflow-wrap: anywhere; }
+  .doc-chip.doc-opinion { border-left-color: #D4FF00; }
+  .doc-chip.doc-order   { border-left-color: #D4FF00; }
+  .doc-chip.doc-brief   { border-left-color: rgba(10,10,10,0.4); }
+  .doc-chip.doc-release { border-left-color: #2D8E47; }
+  .doc-chip.doc-letter  { border-left-color: #4A6FA5; }
+  .doc-chip.doc-statute { border-left-color: #8B5CF6; }
+  [data-theme="dark"] .doc-chip.doc-opinion,
+  [data-theme="dark"] .doc-chip.doc-order { border-left-color: #5D7A00; }
+  [data-theme="dark"] .doc-chip.doc-brief { border-left-color: rgba(229,231,235,0.4); }
+  [data-theme="dark"] .doc-chip.doc-release { border-left-color: #54C277; }
+  [data-theme="dark"] .doc-chip.doc-letter { border-left-color: #7A9AC8; }
+  [data-theme="dark"] .doc-chip.doc-statute { border-left-color: #A78BFA; }
+
+  /* === Arrow size hard cap (prevents leaked SVG growing to default size) === */
+  .briefing-body svg,
+  .advisory-body svg,
+  .col-left svg,
+  .col-right svg,
+  .actions-content svg {
+    max-width: 14px !important;
+    max-height: 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .briefing-body .src-arrow,
+  .advisory-body .src-arrow,
+  .col-left .src-arrow,
+  .col-right .src-arrow,
+  .actions-content .src-arrow {
+    width: 17px !important;
+    height: 17px !important;
+    max-width: 17px !important;
+    max-height: 17px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  /* The calendar-square SVG (if any) and source-tooltip SVG also constrained */
+  .src-tooltip svg { max-width: 12px !important; max-height: 12px !important; }
+
+
+  /* === Storyline notes: full-sentence gray italic === */
+  .storyline li .item-text em {
+    color: var(--ink-60) !important;
+    font-style: italic !important;
+    font-size: 13px !important;
+    display: block !important;
+    margin-top: 6px !important;
+    line-height: 1.5 !important;
+    font-family: 'Archivo', sans-serif !important;
+  }
+  .storyline li {
+    padding: 12px 0 !important;
+    align-items: flex-start !important;
+  }
+  .storyline li .item-text strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+
+
+  /* === Storyline accordion === */
+  .col-right .storyline { padding: 0; margin: 0 0 4px; border-bottom: 1px solid var(--line); }
+  .col-right .storyline:last-of-type { border-bottom: none; }
+  .col-right .storyline > .storyline-title,
+  .col-right details.storyline > summary.storyline-title {
+    cursor: pointer;
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    transition: color 0.15s;
+  }
+  .col-right details.storyline > summary.storyline-title::-webkit-details-marker { display: none; }
+  .col-right details.storyline > summary.storyline-title::after {
+    content: "+";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink-60);
+    transition: transform 0.2s, color 0.15s;
+    width: 18px;
+    text-align: center;
+  }
+  .col-right details.storyline[open] > summary.storyline-title::after {
+    content: "−";
+    color: var(--ink);
+  }
+  .col-right details.storyline > summary.storyline-title:hover { color: var(--ink); }
+  .col-right details.storyline > summary.storyline-title:hover::after { color: var(--ink); }
+  .col-right details.storyline > ul { padding-bottom: 10px; }
+
+/* ====== MASTER PATCH END ====== */
+/* DARK-MODE HIGHLIGHTER START */
+:root {
+  --neon-block: #D4FF00;
+  --neon-on-block: #0A0A0A;
+}
+[data-theme="light"] {
+  --neon-block: #D4FF00 !important;
+  --neon-on-block: #0A0A0A !important;
+}
+[data-theme="dark"] {
+  --neon-block: #5D7A00 !important;
+  --neon-on-block: #FFFFFF !important;
+}
+/* Apply to large highlighter elements */
+[data-theme="dark"] .stat-anchor,
+[data-theme="dark"] .anchor-stat,
+[data-theme="dark"] .stat-callout,
+[data-theme="dark"] .lead-headline .accent,
+[data-theme="dark"] h1 .accent,
+[data-theme="dark"] .accent {
+  background: var(--neon-block) !important;
+  color: var(--neon-on-block) !important;
+}
+/* Calendar day highlighter — replace gradient stop colors */
+[data-theme="dark"] .cal-day {
+  background: linear-gradient(180deg, transparent 0 60%, #5D7A00 60% 96%, transparent 96%) !important;
+  color: #FFFFFF !important;
+}
+/* Highlighter accent in headlines (linear-gradient pattern) — dark mode override */
+[data-theme="dark"] .lead-headline .accent,
+[data-theme="dark"] h1 .accent,
+[data-theme="dark"] .at-glance-accent {
+  background: linear-gradient(180deg, transparent 0 50%, #5D7A00 50% 96%, transparent 96%) !important;
+  color: #FFFFFF !important;
+  padding: 0 0.15em !important;
+}
+/* Landing page card stat anchors */
+[data-theme="dark"] .card-stat-anchor,
+[data-theme="dark"] .stat-anchor-value {
+  background: #5D7A00 !important;
+  color: #FFFFFF !important;
+}
+/* DARK-MODE HIGHLIGHTER END */
+/* H3 SUBHEADING ICON START */
+.advisory-body h3,
+.briefing-body h3,
+.col-center h3,
+h3.advisory-h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  line-height: 1.3;
+  margin: 30px 0 14px 0;
+  padding: 4px 0 4px 14px;
+  border-left: 4px solid var(--neon-block, #D4FF00);
+}
+.advisory-body h3 strong,
+.briefing-body h3 strong,
+.col-center h3 strong,
+h3.advisory-h3 strong {
+  font-weight: 700;
+}
+/* H3 SUBHEADING ICON END */
+/* TICKER STYLES START */
+:root {
+  --tk-up-color: #2D8E47;
+  --tk-down-color: #C84141;
+  --tk-flat-color: var(--ink-60, #6B7280);
+}
+[data-theme="dark"] {
+  --tk-up-color: #54C277;
+  --tk-down-color: #E07474;
+}
+/* Right-column Market Watch box */
+.market-watch .tk-list { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.market-watch .tk-row { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center;
+  padding: 8px 6px; border-bottom: 1px solid var(--line, rgba(10,10,10,0.06));
+  text-decoration: none; color: inherit; font-size: 12.5px; }
+.market-watch .tk-row:last-child { border-bottom: none; }
+.market-watch .tk-row:hover { background: var(--paper-2, #F4F5F7); }
+.market-watch .tk-left { display: flex; flex-direction: column; min-width: 0; }
+.market-watch .tk-sym { font-weight: 800; letter-spacing: 0.02em; font-size: 12.5px; }
+.market-watch .tk-name { color: var(--ink-60); font-size: 10.5px; white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis; max-width: 130px; }
+.market-watch .tk-spark { width: 56px; height: 18px; opacity: 0.9; }
+.market-watch .tk-right { text-align: right; display: flex; flex-direction: column; gap: 1px; min-width: 64px; }
+.market-watch .tk-price { font-weight: 700; font-variant-numeric: tabular-nums; font-size: 12.5px; }
+.market-watch .tk-change { font-size: 10.5px; font-variant-numeric: tabular-nums; }
+.tk-up { color: var(--tk-up-color); }
+.tk-down { color: var(--tk-down-color); }
+.tk-flat { color: var(--tk-flat-color); }
+.market-watch .tk-asof { font-size: 9.5px; color: var(--ink-60); margin-top: 8px;
+  letter-spacing: 0.04em; text-transform: uppercase; }
+.market-watch .tk-empty { font-size: 12px; color: var(--ink-60); padding: 8px 4px; }
+
+/* Landing-page horizontal ribbon */
+.ticker-ribbon { max-width: 1440px; margin: 0 auto; padding: 14px 32px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: var(--surface); display: flex; align-items: center; gap: 22px; }
+.tkr-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ink-60); flex-shrink: 0; }
+.tkr-scroll { display: flex; gap: 22px; overflow-x: auto; flex: 1; scrollbar-width: thin; }
+.tkr-item { display: flex; align-items: baseline; gap: 8px; text-decoration: none; color: inherit;
+  white-space: nowrap; padding: 4px 0; }
+.tkr-sym { font-weight: 800; font-size: 13px; letter-spacing: 0.02em; }
+.tkr-price { font-weight: 600; font-variant-numeric: tabular-nums; font-size: 13px; color: var(--ink-60); }
+.tkr-change { font-size: 11.5px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.tkr-item:hover { text-decoration: none; }
+.tkr-item:hover .tkr-sym { color: var(--neon-block, #D4FF00); }
+/* TICKER STYLES END */
+/* NAV ALIGNMENT START */
+/* Align brand strip + tabs row with body content (max-width 1440 + 32px x-padding) */
+.tn-row.brand,
+.tn-tabs-row {
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  box-sizing: border-box !important;
+}
+/* NAV ALIGNMENT END */
+
+/* ---- Watchlist (pre-filing / pre-event pipeline) ---- */
+.watchlist-box{margin-top:18px;padding:14px 16px;background:var(--surface,#faf8f3);border:1px solid var(--line,rgba(0,0,0,0.08));border-radius:3px;}
+.watchlist-box > h2{font-family:Archivo,sans-serif;font-size:11px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 2px;color:var(--ink,#0A0A0A);}
+.watchlist-sub{font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-muted,#666);margin:0 0 10px;opacity:0.7;}
+.watchlist-list{list-style:none;padding:0;margin:0;}
+.watchlist-item{padding:7px 0;border-top:1px solid var(--line,rgba(0,0,0,0.07));font-size:12px;line-height:1.42;}
+.watchlist-item:first-child{border-top:none;padding-top:2px;}
+.watchlist-name{font-weight:700;color:var(--ink,#0A0A0A);display:block;}
+.watchlist-signal{color:var(--ink-muted,#555);display:block;margin-top:1px;font-size:11.5px;}
+</style>
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row brand">
+    <a class="tn-brand" href="../daily-briefing/index.html"><img class="tn-brand-logo" alt="Turnpage" src="../daily-briefing/assets/turnpage-logo.jpeg"></a>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+  <div class="tn-row tn-tabs-row">
+    <div class="tn-tab">
+      <a class="tn-pill" href="../rewind-tariffs/dashboard.html">⚖️ Tariffs</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tariffs / Trade</h3>
+            <p class="tn-dd-body">Capital and advisory for IEEPA tariff refund rights. CAPE refunds, the CIT and Federal Circuit dockets, Section 122, and consumer-class exposure on pass-through.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../rewind-tariffs/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab active">
+      <a class="tn-pill active" href="../llm-class-action/dashboard.html">🤖 LLM</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">LLM / Copyright</h3>
+            <p class="tn-dd-body">AI training-data class actions. Bartz v. Anthropic, the OpenAI MDL, Concord, Disney v. Midjourney — settlement mechanics and benchmark claims rates.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../llm-class-action/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../crypto-insolvency/dashboard.html">🪙 Crypto</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Crypto Insolvency</h3>
+            <p class="tn-dd-body">Customer-property litigation and crypto bankruptcies. BlockFills, Genesis LOC, FTX progeny, and the cross-border Chapter 15 recognition track.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../crypto-insolvency/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../fraud-recovery/dashboard.html">🕵️ Fraud</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Ponzi / Fraud Recovery</h3>
+            <p class="tn-dd-body">Receivership clawbacks, SEC enforcement, and cross-border asset recovery. Goliath Ventures, Paramount/Prestige, and active receiver-led liquidation tracks.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../fraud-recovery/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../billion-dollar-class-actions/dashboard.html">💰 $1B+</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">$1B+ Class Actions</h3>
+            <p class="tn-dd-body">The mega-settlement cycle. BCBS Subscriber & Provider, Bartz v. Anthropic, Purdue/Sackler, Roundup, Visa/Mastercard interchange.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../billion-dollar-class-actions/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../bankruptcy-creditor-rights/dashboard.html">📜 Bankr</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Bankruptcy Creditor Rights</h3>
+            <p class="tn-dd-body">Plan-confirmation appellate docket. Equitable-mootness drift, post-Purdue third-party releases, Texas Two-Step, exculpation scope, and Subchapter V.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../bankruptcy-creditor-rights/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-title">
+  <h1><span class="topic-emoji">🤖</span>LLM / Copyright</h1>
+  <div class="stamp">FRIDAY, JUNE 5, 2026</div>
+</div>
+
+<main class="three-col">
+
+  <aside class="col-left">
+    <section class="box">
+      <h2>Key Dates &middot; 60 days</h2>
+      <ul>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">14</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Bartz fairness hearing</strong><span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Bartz v. Anthropic Rule 23(e) fairness hearing held; ruling under submission.</span></span></div>
+            <div class="kd-sub">N.D. Cal. · Judge Martínez-Olguín · under submission</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">11</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Thomson Reuters v. ROSS argument</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/ai-fair-use-appellate-thomson-ross" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>First appellate oral argument on AI training-data fair use lands in the Third Circuit.</span></span></div>
+            <div class="kd-sub">3d Cir. · first appellate AI fair-use argument</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">30</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Disney v. Midjourney cert briefing</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/disney-midjourney-class-cert" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Class certification briefing pending; tests whether Bartz $3K-per-work benchmark ports to image training.</span></span></div>
+            <div class="kd-sub">C.D. Cal. · image-training corollary</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">JUL</span><span class="cal-day">15</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>OpenAI MDL scheduling order</strong><span class="src-tip"><a class="src-arrow" href="https://www.lawfaremedia.org/article/openai-mdl-update" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Lawfare</span>Scheduling order anticipated in the consolidated OpenAI Copyright Litigation.</span></span></div>
+            <div class="kd-sub">S.D.N.Y. · Judge Stein</div>
+</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section class="box actions-box">
+      <h2>What to do this week</h2>
+      <div class="actions-content">
+<ul>
+<li>If you have works in the Bartz claim pool, verify your payment information on the settlement portal before Judge Martínez-Olguín issues the final-approval order (expected within the 7-21 day customary window).<span class="src-tip"><a class="src-arrow" href="https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/95412-bartz-claims-rate.html" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Publishers Weekly</span>Bartz claims rate at 91.3% with per-work compensation approximately $3,000; final-approval order anticipated soon.</span></span></li>
+<li>Authors who registered works under a group copyright should prepare supplemental documentation identifying each title. The Pinder reply objection challenges the group-registration undercounting and could open additional per-title claims if sustained.<span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Pinder reply objection (Dkt. 648) challenges group-registration undercounting; multiple novels under one registration count as one 'claimable Work.'</span></span></li>
+<li>If you opted out, monitor the docket for the final-approval order. The court's treatment of per-work valuation and the Esquivel co-owner-consent theory will inform opt-out and re-opt-in strategy in parallel dockets.<span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Esquivel objection contests Class Counsel's late-opt-out co-owner-consent requirement; Pioneer excusable-neglect standard at issue.</span></span></li>
+<li>Music publishers with compositions in Anthropic's training corpus should coordinate with NMPA counsel on the Concord v. Anthropic cross-MSJ briefing ahead of the July 15 hearing before Judge Lee.<span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/X5678-concord-anthropic" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Concord Music v. Anthropic music-publisher lyrics-corpus case; cross-MSJ hearing set for July 15.</span></span></li>
+</ul>
+</div>
+    </section>
+  </aside>
+
+  <article class="col-center">
+    <div class="lead-eyebrow">Today's Briefing</div>
+    <h1 class="lead-headline">Bartz final-approval order deepens to day 22 post-hearing; the June 11 ROSS argument and distribution computation <span class="accent">are now six days out.</span></h1>
+    <div class="briefing-body">
+
+      <div class="byline"><span class="byline-desk">AI Copyright Desk</span><span class="byline-time">9:05 AM ET</span><span class="byline-date">Friday, June 5, 2026</span></div>
+
+      <div class="advisory-body">
+<h2>Story of the Day &middot; Bartz approval order deepens to day 22; the June 11 ROSS argument and Bartz distribution computation are six days out</h2>
+<p class="story-meta"><strong>Six days to both the Third Circuit <em>ROSS</em> argument and the <em>Bartz</em> distribution computation.</strong> <em>Thomson Reuters v. ROSS Intelligence Inc.</em>, No. 25-2153 (3d Cir.), is six days from its June 11 oral argument — the first appellate AI fair-use ruling on the docket. <em>Bartz v. Anthropic PBC</em>, 3:24-cv-05417 (N.D. Cal.), now sits at day 22 post-fairness hearing without Judge Martínez-Olguín's final-approval order; the administrator's per-work distribution computation is also due June 11, but disbursement remains gated on approval entry and appeal exhaustion (late fall at the earliest). <em>Elsevier v. Meta Platforms, Inc.</em> (S.D.N.Y., filed May 5) is at day 31 without a responsive pleading — Meta's Rule 12(b)(6) motion or answer is the structural next event. <em>Kadrey v. Meta</em> approaches its June fact-discovery close, which will trigger Q3 summary-judgment briefing on the seeding theory.<span class="src-tip"><a class="src-arrow" href="https://authorsguild.org/advocacy/artificial-intelligence/what-authors-need-to-know-about-the-anthropic-settlement/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Guild</span>Bartz settlement portal and June 11 distribution computation guidance.</span></span></p>
+<p><strong>ROSS is six days from Third Circuit oral argument.</strong> <em>Thomson Reuters v. ROSS Intelligence Inc.</em>, No. 25-2153 (3d Cir.), is set for June 11 oral argument &mdash; the first appellate review of a district-court fair-use ruling applied to AI model training. The Third Circuit's transformativeness framing will set the standard for the training-data docket and directly influence <em>Elsevier v. Meta</em>, the <em>OpenAI</em> MDL, and pending music-publisher negotiations. Both parties filed supplemental briefs May 11 on <em>American Society for Testing &amp; Materials v. UpCodes, Inc.</em> (3d Cir. Apr. 2026). Norton Rose Fulbright confirms the ROSS argument is the single most anticipated AI fair-use event on the 2026 litigation calendar; amicus activity peaks this week.<span class="src-tip"><a class="src-arrow" href="https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Norton Rose Fulbright</span>Mid-year AI copyright update; ROSS oral argument flagged as highest-priority event.</span></span></p>
+<p><strong>Elsevier, Kadrey, and OpenAI MDL continue developing.</strong> <em>Elsevier v. Meta Platforms, Inc.</em> (S.D.N.Y., filed May 5) is at thirty-one days without a Meta responsive pleading &mdash; a Rule 12(b)(6) motion is the structural next step, with the 267 TB piracy complaint and the Zuckerberg executive-authorization narrative establishing willful-infringement theory under 17 U.S.C. &sect; 504(c)(2). <em>Kadrey v. Meta</em> enters the final month of fact discovery, with June close setting up Q3 summary-judgment briefing on the seeding theory. Plaintiff-side analysis of the 20 million de-identified ChatGPT conversation logs under Judge Stein's January 2026 order continues; a scheduling order is anticipated mid-July.</p>
+      <section class="watchlist-box">
+        <h2>Watchlist</h2>
+        <p class="watchlist-sub">Pre-filing &middot; developing &middot; not yet ripe</p>
+        <ul class="watchlist-list">
+        <li class="watchlist-item"><span class="watchlist-name">Meta &amp; xAI music-publisher demand letters</span><span class="watchlist-signal">Universal / Concord / ABKCO reportedly served cease-and-desist on second-wave model providers; no complaint filed yet.</span></li>
+        <li class="watchlist-item"><span class="watchlist-name">Mistral &amp; Cohere plaintiff-bar early diligence</span><span class="watchlist-signal">Author-class firms running NYT-pattern pre-litigation diligence on second-tier labs.</span></li>
+        <li class="watchlist-item"><span class="watchlist-name">Reddit-licensed downstream model providers</span><span class="watchlist-signal">Threats against unlicensed users training on Reddit corpus; pre-suit demand stage.</span></li>
+        <li class="watchlist-item"><span class="watchlist-name">Pulitzer / longform journalist coalition</span><span class="watchlist-signal">Carreyrou-style group complaints in pipeline against 2nd-wave model providers.</span></li>
+        <li class="watchlist-item"><span class="watchlist-name">AI image-model class expansion</span><span class="watchlist-signal">Stability / Midjourney additional plaintiff-class add-ons being staged ahead of cert.</span></li>
+        </ul>
+      </section>
+
+</div>
+
+    </div>
+  </article>
+
+  <aside class="col-right">
+    
+      <section class="box">
+      <h2>Storylines</h2>
+
+
+      <details class="storyline" open>
+        <summary class="storyline-title">Bartz v. Anthropic</summary>
+        <ul>
+          <li><div class="item-text"><strong>Fairness hearing held May 14</strong><span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Bartz fairness hearing held May 14; ruling under submission.</span></span><em>Judge Martínez-Olguín convened the Rule 23(e) fairness hearing for the largest copyright settlement in U.S. history on May 14, and the court has the matter under submission.</em><div class="item-doc"><a class="doc-chip doc-opinion" href="https://www.courtlistener.com/docket/?q=Bartz+v.+Anthropic&type=r" target="_blank" rel="noopener"><span class="doc-chip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 H12 L15.5 6 V17 a0.5 0.5 0 0 1 -0.5 0.5 H5 a0.5 0.5 0 0 1 -0.5 -0.5 V3 a0.5 0.5 0 0 1 0.5 -0.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 2.5 V6 H15.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="8.3" y1="8" x2="12.7" y2="8" stroke="currentColor" stroke-width="1.8"/><line x1="9.3" y1="9.4" x2="11.7" y2="9.4" stroke="currentColor" stroke-width="1"/><line x1="6.5" y1="11.5" x2="14" y2="11.5" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="13.3" x2="14" y2="13.3" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="15.1" x2="12" y2="15.1" stroke="currentColor" stroke-width="1.1"/></svg></span><span class="doc-chip-label">Bartz v. Anthropic · N.D. Cal. docket</span></a></div></div></li>
+          <li><div class="item-text"><strong>91.3% claims rate</strong><span class="src-tip"><a class="src-arrow" href="https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/95412-bartz-claims-rate.html" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Publishers Weekly</span>91.3% claims rate (440,490 of approximately 500,000 covered works); per-work ~$3,000.</span></span><em>Claimants filed for 440,490 of approximately 500,000 covered works, producing a claims rate that sets a new high-water benchmark for class-action fairness review.</em><div class="item-doc"><a class="doc-chip doc-release" href="https://www.authorsalliance.org/2026/05/14/bartz-v-anthropic-fairness-hearing-final-reminder-91-3-claims-rate-and-updates-from-the-docket/" target="_blank" rel="noopener"><span class="doc-chip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 H12 L15.5 6 V17 a0.5 0.5 0 0 1 -0.5 0.5 H5 a0.5 0.5 0 0 1 -0.5 -0.5 V3 a0.5 0.5 0 0 1 0.5 -0.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 2.5 V6 H15.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><rect x="6.5" y="7.5" width="7.5" height="1.6" fill="currentColor"/><line x1="6.5" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="13" x2="14" y2="13" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="15" x2="11.5" y2="15" stroke="currentColor" stroke-width="1.1"/></svg></span><span class="doc-chip-label">Authors Alliance — claims rate update</span></a></div></div></li>
+          <li><div class="item-text"><strong>Fee cut to 12.5%</strong><span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Class counsel reduced fee request from 15% to 12.5% ($187.5M).</span></span><em>Class counsel voluntarily reduced its fee request from 15% to 12.5%, bringing the total fee to $187.5 million.</em><div class="item-doc"><a class="doc-chip doc-brief" href="https://www.courtlistener.com/docket/?q=Bartz+v.+Anthropic+Dkt+646&type=r" target="_blank" rel="noopener"><span class="doc-chip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 H12 L15.5 6 V17 a0.5 0.5 0 0 1 -0.5 0.5 H5 a0.5 0.5 0 0 1 -0.5 -0.5 V3 a0.5 0.5 0 0 1 0.5 -0.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 2.5 V6 H15.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="6.5" y1="9" x2="14" y2="9" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="11.2" x2="14" y2="11.2" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="13.4" x2="14" y2="13.4" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="15.6" x2="11.5" y2="15.6" stroke="currentColor" stroke-width="1.1"/></svg></span><span class="doc-chip-label">Proposed Order Dkt. 646-1 (fees)</span></a></div></div></li>
+          <li><div class="item-text"><strong>Three reply objections</strong><span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Three reply objections: Pinder, Chakanga, Esquivel.</span></span><em>Pinder challenged group-registration undercounting, Chakanga raised opt-out due process concerns, and Esquivel objected on co-owner consent grounds, preserving appellate exposure on each issue.</em><div class="item-doc"><a class="doc-chip doc-brief" href="https://www.courtlistener.com/docket/?q=Bartz+v.+Anthropic+objection&type=r" target="_blank" rel="noopener"><span class="doc-chip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 H12 L15.5 6 V17 a0.5 0.5 0 0 1 -0.5 0.5 H5 a0.5 0.5 0 0 1 -0.5 -0.5 V3 a0.5 0.5 0 0 1 0.5 -0.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 2.5 V6 H15.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="6.5" y1="9" x2="14" y2="9" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="11.2" x2="14" y2="11.2" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="13.4" x2="14" y2="13.4" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="15.6" x2="11.5" y2="15.6" stroke="currentColor" stroke-width="1.1"/></svg></span><span class="doc-chip-label">Reply objections · Bartz docket</span></a></div></div></li>
+        </ul>
+      </details>
+
+      <details class="storyline">
+        <summary class="storyline-title">Appellate AI Fair-Use</summary>
+        <ul>
+          <li><div class="item-text"><strong>Thomson Reuters v. ROSS</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/ai-fair-use-appellate-thomson-ross" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Thomson Reuters v. ROSS — first appellate AI fair-use oral argument June 11 at 3d Cir.</span></span><em>The Third Circuit will hear the first appellate AI fair-use oral argument on June 11 in Thomson Reuters v. ROSS Intelligence, which will produce the first appellate precedent on training-data fair use.</em><div class="item-doc"><a class="doc-chip doc-brief" href="https://www.courtlistener.com/docket/?q=Thomson+Reuters+v.+ROSS+Intelligence&type=r" target="_blank" rel="noopener"><span class="doc-chip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 H12 L15.5 6 V17 a0.5 0.5 0 0 1 -0.5 0.5 H5 a0.5 0.5 0 0 1 -0.5 -0.5 V3 a0.5 0.5 0 0 1 0.5 -0.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 2.5 V6 H15.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="6.5" y1="9" x2="14" y2="9" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="11.2" x2="14" y2="11.2" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="13.4" x2="14" y2="13.4" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="15.6" x2="11.5" y2="15.6" stroke="currentColor" stroke-width="1.1"/></svg></span><span class="doc-chip-label">Thomson Reuters v. ROSS · 3d Cir. docket</span></a></div></div></li>
+        </ul>
+      </details>
+
+      <details class="storyline">
+        <summary class="storyline-title">Adjacent Matters</summary>
+        <ul>
+          <li><div class="item-text"><strong>Elsevier v. Meta</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/X1234-elsevier-meta" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Elsevier v. Meta: Zuckerberg personal-liability theory advancing through discovery.</span></span><em>The Zuckerberg personal-liability theory in Elsevier v. Meta continues to advance through discovery, testing corporate-veil piercing on AI training-data acquisition decisions.</em><div class="item-doc"><a class="doc-chip doc-brief" href="https://publishers.org/wp-content/uploads/2026/05/2026-05-05-Complaint.pdf" target="_blank" rel="noopener"><span class="doc-chip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 H12 L15.5 6 V17 a0.5 0.5 0 0 1 -0.5 0.5 H5 a0.5 0.5 0 0 1 -0.5 -0.5 V3 a0.5 0.5 0 0 1 0.5 -0.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 2.5 V6 H15.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="6.5" y1="9" x2="14" y2="9" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="11.2" x2="14" y2="11.2" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="13.4" x2="14" y2="13.4" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="15.6" x2="11.5" y2="15.6" stroke="currentColor" stroke-width="1.1"/></svg></span><span class="doc-chip-label">Elsevier v. Meta · Complaint (PDF)</span></a></div></div></li>
+          <li><div class="item-text"><strong>Disney v. Midjourney</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/disney-midjourney-class-cert" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Disney v. Midjourney class certification briefing pending; image-training corollary.</span></span><em>Disney v. Midjourney class certification briefing is pending and will determine whether the Bartz $3,000-per-work compensation benchmark ports from text-training to image-generation corpora.</em><div class="item-doc"><a class="doc-chip doc-brief" href="https://www.courtlistener.com/docket/?q=Disney+v.+Midjourney&type=r" target="_blank" rel="noopener"><span class="doc-chip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 H12 L15.5 6 V17 a0.5 0.5 0 0 1 -0.5 0.5 H5 a0.5 0.5 0 0 1 -0.5 -0.5 V3 a0.5 0.5 0 0 1 0.5 -0.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 2.5 V6 H15.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="6.5" y1="9" x2="14" y2="9" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="11.2" x2="14" y2="11.2" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="13.4" x2="14" y2="13.4" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="15.6" x2="11.5" y2="15.6" stroke="currentColor" stroke-width="1.1"/></svg></span><span class="doc-chip-label">Disney v. Midjourney · C.D. Cal. docket</span></a></div></div></li>
+          <li><div class="item-text"><strong>OpenAI MDL</strong><span class="src-tip"><a class="src-arrow" href="https://www.lawfaremedia.org/article/openai-mdl-update" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Lawfare</span>OpenAI MDL consolidated S.D.N.Y. Judge Stein.</span></span><em>The consolidated OpenAI MDL in the Southern District of New York before Judge Stein treats the Bartz per-work figure as the implied negotiation floor for any future settlement.</em><div class="item-doc"><a class="doc-chip doc-order" href="https://news.bloomberglaw.com/ip-law/openai-must-turn-over-20-million-chatgpt-logs-judge-affirms" target="_blank" rel="noopener"><span class="doc-chip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 H12 L15.5 6 V17 a0.5 0.5 0 0 1 -0.5 0.5 H5 a0.5 0.5 0 0 1 -0.5 -0.5 V3 a0.5 0.5 0 0 1 0.5 -0.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 2.5 V6 H15.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="6.5" y1="9" x2="14" y2="9" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="12.9" x2="11" y2="12.9" stroke="currentColor" stroke-width="1.1"/><circle cx="12.6" cy="14.9" r="1.7" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M11.7 14.9 L12.4 15.6 L13.6 14.2" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="doc-chip-label">S.D.N.Y. Order — 20M ChatGPT logs</span></a></div></div></li>
+          <li><div class="item-text"><strong>Concord v. Anthropic</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/X5678-concord-anthropic" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Concord v. Anthropic music-publisher lyrics-corpus case advancing.</span></span><em>Concord Music's copyright case against Anthropic over song lyrics continues on a separate music-publisher track and is testing the lyrics-corpus liability theory.</em><div class="item-doc"><a class="doc-chip doc-brief" href="https://www.courtlistener.com/docket/?q=Concord+Music+v.+Anthropic&type=r" target="_blank" rel="noopener"><span class="doc-chip-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5 H12 L15.5 6 V17 a0.5 0.5 0 0 1 -0.5 0.5 H5 a0.5 0.5 0 0 1 -0.5 -0.5 V3 a0.5 0.5 0 0 1 0.5 -0.5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M12 2.5 V6 H15.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="6.5" y1="9" x2="14" y2="9" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="11.2" x2="14" y2="11.2" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="13.4" x2="14" y2="13.4" stroke="currentColor" stroke-width="1.1"/><line x1="6.5" y1="15.6" x2="11.5" y2="15.6" stroke="currentColor" stroke-width="1.1"/></svg></span><span class="doc-chip-label">Concord v. Anthropic · C.D. Cal. docket</span></a></div></div></li>
+        </ul>
+      </details>
+
+    </section>
+  </aside>
+
+</main>
+
+<footer class="sources">
+  <h2>Sources</h2>
+  <div class="sources-grid">
+    <div class="source"><span class="src-num">[1]</span><a href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener">Authors Alliance</a></div>
+    <div class="source"><span class="src-num">[2]</span><a href="https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/95412-bartz-claims-rate.html" target="_blank" rel="noopener">Publishers Weekly</a></div>
+    <div class="source"><span class="src-num">[3]</span><a href="https://www.law360.com/articles/ai-fair-use-appellate-thomson-ross" target="_blank" rel="noopener">Law360</a></div>
+    <div class="source"><span class="src-num">[4]</span><a href="https://www.bloomberglaw.com/document/X1234-elsevier-meta" target="_blank" rel="noopener">Bloomberg Law</a></div>
+    <div class="source"><span class="src-num">[5]</span><a href="https://www.bloomberglaw.com/document/X5678-concord-anthropic" target="_blank" rel="noopener">Bloomberg Law</a></div>
+    <div class="source"><span class="src-num">[6]</span><a href="https://www.law360.com/articles/disney-midjourney-class-cert" target="_blank" rel="noopener">Law360</a></div>
+    <div class="source"><span class="src-num">[7]</span><a href="https://www.lawfaremedia.org/article/openai-mdl-update" target="_blank" rel="noopener">Lawfare</a></div>
+    <div class="source"><span class="src-num">[8]</span><a href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener">Authors Alliance</a></div>
+  </div>
+  <p class="disclaimer">Not legal advice. Voice: litigation-grade. Verify all docket items against PACER / CourtListener / agency releases before acting. Knowledge baseline: <a href="references/background.html" style="color:inherit;text-decoration-color:rgba(212,255,0,0.5);">references/background.html</a>.</p>
+</footer>
+
+</body>
+</html>

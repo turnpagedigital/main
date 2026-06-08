@@ -1,0 +1,10 @@
+# Tracker Changelog — April 30, 2026
+
+- [AI IP Litigation Tracker] > Header Row > Column O: "2026 Updates (as of April 29, 2026)" → "2026 Updates (as of April 30, 2026)" — source: N/A (date roll)
+- [AI IP Litigation Tracker] > Bartz v. Anthropic PBC > 2026 Updates: prepended "Anthropic's second $300M settlement installment due TODAY (April 30), bringing total funded to $600M of $1.5B. Fairness " — source: https://www.anthropiccopyrightsettlement.com/dates
+- [AI IP Litigation Tracker] > In re OpenAI Copyright Infringement Litigation > 2026 Updates: prepended "MDL docket updated Apr 24. Summary judgment briefing in NYT v. OpenAI track expected mid-2026. Advance Local v. Cohere '" — source: https://www.courtlistener.com/docket/69879510/in-re-openai-inc-copyright-infringement-litigation/
+- [AI IP Litigation Tracker] > Concord Music Group et al. v. Anthropic PBC > 2026 Updates: prepended "Anthropic filed summary judgment brief (Apr 20) arguing training on lyrics is 'transformative' fair use. Publishers' par" — source: https://www.digitalmusicnews.com/2026/04/22/anthropic-music-publishers-lawsuit-summary-judgment-motion/
+- [AI IP Litigation Tracker] > Getty Images v. Stability AI Ltd. (UK) > 2026 Updates: prepended "Getty Images appeal to Court of Appeal expected to be heard during 2026. CJEU Like Company v. Google hearing (Mar 10) aw" — source: https://chambers.com/articles/copyright-and-ai-remain-in-focus-for-2026-with-getty-appeal-given-the-green-light
+- [AI IP Litigation Tracker] > Doe 1 v. GitHub, Inc. > 2026 Updates: prepended "DMCA claim on appeal to Ninth Circuit. Bloomberg Law warns 'vibe coding' raises new copyright risks for AI-generated cod" — source: https://news.bloomberglaw.com/legal-exchange-insights-and-commentary/copyright-infringement-suits-loom-with-unchecked-ai-vibe-coding
+- [Ranked by Alleged Damages] > Bartz v. Anthropic PBC > Notes: prepended installment/hearing update — source: https://www.anthropiccopyrightsettlement.com/dates
+- [Landscape Summary] > Title > Date: updated to "as of April 30, 2026" — source: N/A (date roll)

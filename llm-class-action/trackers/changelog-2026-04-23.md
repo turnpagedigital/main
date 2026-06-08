@@ -1,0 +1,10 @@
+# Changelog — 2026-04-23
+
+- [AI IP Litigation Tracker] > Header Row > Col 15: "2026 Updates (as of April 22, 2026)" → "2026 Updates (as of April 23, 2026)" — source: date update
+- [AI IP Litigation Tracker] > Bartz v. Anthropic PBC > Actual Damages / Judgment Awarded: updated fee request figure ($319M → $187.5M) and hearing date (April 23 → May 14) — source: https://www.pymnts.com/cpi-posts/anthropic-copyright-settlement-lawyers-cut-fee-request-to-187-5-million/
+- [AI IP Litigation Tracker] > Bartz v. Anthropic PBC > 2026 Updates: prepended 2026-04-23 update (original hearing date, fee cut context, GRAMMYS on the Hill) — source: https://www.authorsalliance.org/2026/04/14/bartz-v-anthropic-settlement-update-new-date-and-time-for-the-fairness-hearing-you-can-join-online-and-unsealed-objections/
+- [AI IP Litigation Tracker] > Concord Music Group et al. v. Anthropic PBC > 2026 Updates: prepended 2026-04-23 update (FAC naming Amodei/Mann, Cox Communications impact) — source: https://chatgptiseatingtheworld.com/2026/04/07/after-supreme-courts-decision-in-cox-communications-concord-music-changes-its-claim-of-intentional-contributory-infringement-from-anthropic-to-dario-amodei-benjamin-mann-based-on-evidence-revealed/
+- [Landscape Summary] > Title Row: "AI Copyright & IP Litigation Landscape — Summary (as of April 22, 2026)" → "AI Copyright & IP Litigation Landscape — Summary (as of April 23, 2026)" — source: date update
+- [Landscape Summary] > Bartz v. Anthropic (settled) > Value: updated fee percentage/amount — source: https://www.pymnts.com/cpi-posts/anthropic-copyright-settlement-lawyers-cut-fee-request-to-187-5-million/
+- [Landscape Summary] > 2026 Developments header: "2026 DEVELOPMENTS (as of April 22, 2026)" → "2026 DEVELOPMENTS (as of April 23, 2026)" — source: date update
+- [Landscape Summary] > NEW ROW: GRAMMYS on the Hill 2026 entry added — source: https://www.recordingacademy.com/advocacy/news/grammys-on-the-hill-2026-chris-coons-maria-salazar-congressional-honorees

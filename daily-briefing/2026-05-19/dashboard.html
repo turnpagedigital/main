@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Briefing — May 19, 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            --color-primary: #2563eb;
+            --color-success: #16a34a;
+            --color-warning: #f59e0b;
+            --color-danger: #dc2626;
+            --color-text-primary: #1f2937;
+            --color-text-secondary: #6b7280;
+            --color-border: #e5e7eb;
+            --color-bg: #ffffff;
+            --color-bg-alt: #f9fafb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: var(--color-text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+            padding: 40px 0;
+            margin-bottom: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header h1 {
+            font-family: 'Archivo', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--color-text-primary);
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 24px;
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        /* Tab Card */
+        .tab-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .tab-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .tab-card.quiet {
+            opacity: 0.7;
+            background: var(--color-bg-alt);
+        }
+
+        .tab-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .tab-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .tab-emoji {
+            font-size: 1.5rem;
+        }
+
+        .urgency-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .urgency-high {
+            background: rgba(220, 38, 38, 0.1);
+            color: var(--color-danger);
+        }
+
+        .urgency-normal {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--color-primary);
+        }
+
+        .urgency-quiet {
+            background: rgba(107, 114, 128, 0.1);
+            color: var(--color-text-secondary);
+        }
+
+        .tab-lead {
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: var(--color-text-primary);
+            padding: 12px;
+            background: var(--color-bg-alt);
+            border-left: 3px solid var(--color-primary);
+            border-radius: 4px;
+        }
+
+        .tab-stats {
+            display: flex;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            padding: 12px 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .stat-badge {
+            background: var(--color-primary);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .tab-indicators {
+            display: flex;
+            gap: 8px;
+            font-size: 0.8rem;
+        }
+
+        .indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 8px;
+            background: var(--color-bg-alt);
+            border-radius: 4px;
+            color: var(--color-text-secondary);
+        }
+
+        .indicator.active {
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--color-success);
+        }
+
+        .open-button {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .open-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+            padding: 24px;
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .footer-note {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .footer-note strong {
+            color: var(--color-text-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>Daily Briefing</h1>
+            <div class="header-meta">
+                <span>📅 Monday, May 19, 2026</span>
+                <span>7 topics tracked</span>
+                <span>16 new developments</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="dashboard-grid">
+            <!-- Tab 01: Tariffs/Trade -->
+            <div class="tab-card">
+                <div class="tab-header">
+                    <div class="tab-title">
+                        <span class="tab-emoji">⚖️</span>
+                        <span>Tariffs / Trade</span>
+                    </div>
+                    <span class="urgency-badge urgency-high">HIGH</span>
+                </div>
+                <div class="tab-lead">
+                    CIT strikes down Section 122 tariffs; Federal Circuit enters stay pending appeal. CAPE refund processing underway (47K+ declarations validated).
+                </div>
+                <div class="tab-stats">
+                    <span class="stat-item">
+                        <span class="stat-badge">3</span>
+                        new developments
+                    </span>
+                    <span class="stat-item">87 total articles</span>
+                </div>
+                <div class="tab-indicators">
+                    <span class="indicator active">✓ LinkedIn post drafted</span>
+                    <span class="indicator active">✓ Updates proposed</span>
+                </div>
+                <a href="01-tariffs-trade/advisory.md" class="open-button">Open Advisory →</a>
+            </div>
+
+            <!-- Tab 02: LLM/Copyright -->
+            <div class="tab-card">
+                <div class="tab-header">
+                    <div class="tab-title">
+                        <span class="tab-emoji">🤖</span>
+                        <span>LLM / Copyright</span>
+                    </div>
+                    <span class="urgency-badge urgency-normal">NORMAL</span>
+                </div>
+                <div class="tab-lead">
+                    Bartz v. Anthropic fairness hearing (May 14); final approval decision expected this week. 92.77% claims rate. OpenAI MDL: 20M ChatGPT logs ordered produced.
+                </div>
+                <div class="tab-stats">
+                    <span class="stat-item">
+                        <span class="stat-badge">3</span>
+                        new developments
+                    </span>
+                    <span class="stat-item">42 total articles</span>
+                </div>
+                <div class="tab-indicators">
+                    <span class="indicator active">✓ LinkedIn post drafted</span>
+                    <span class="indicator active">✓ Updates proposed</span>
+                </div>
+                <a href="02-llm-copyright/advisory.md" class="open-button">Open Advisory →</a>
+            </div>
+
+            <!-- Tab 03: Crypto Insolvency -->
+            <div class="tab-card">
+                <div class="tab-header">
+                    <div class="tab-title">
+                        <span class="tab-emoji">🪙</span>
+                        <span>Crypto Insolvency</span>
+                    </div>
+                    <span class="urgency-badge urgency-normal">NORMAL</span>
+                </div>
+                <div class="tab-lead">
+                    Bitcoin Depot (largest BTC ATM operator) files Chapter 11 (May 18). Cited regulatory crackdowns and $389M fraud-loss spike. 9,276 kiosks offline.
+                </div>
+                <div class="tab-stats">
+                    <span class="stat-item">
+                        <span class="stat-badge">1</span>
+                        new development
+                    </span>
+                    <span class="stat-item">28 total articles</span>
+                </div>
+                <div class="tab-indicators">
+                    <span class="indicator active">✓ LinkedIn post drafted</span>
+                </div>
+                <a href="03-crypto-insolvency/advisory.md" class="open-button">Open Advisory →</a>
+            </div>
+
+            <!-- Tab 04: Ponzi/Fraud -->
+            <div class="tab-card quiet">
+                <div class="tab-header">
+                    <div class="tab-title">
+                        <span class="tab-emoji">🕵️</span>
+                        <span>Ponzi / Fraud Recovery</span>
+                    </div>
+                    <span class="urgency-badge urgency-quiet">QUIET</span>
+                </div>
+                <div class="tab-lead">
+                    No new SEC/CFTC fraud enforcement actions or receivership appointments in last 48 hours. Docket monitoring: Goliath Ventures receiver, legacy Madoff/Stanford clawback disputes.
+                </div>
+                <div class="tab-stats">
+                    <span class="stat-item">
+                        <span class="stat-badge">0</span>
+                        new developments
+                    </span>
+                    <span class="stat-item">35 total articles</span>
+                </div>
+                <div class="tab-indicators">
+                    <span class="indicator">- No LinkedIn post today</span>
+                </div>
+                <a href="04-ponzi-fraud-recovery/advisory.md" class="open-button">Open Advisory →</a>
+            </div>
+
+            <!-- Tab 05: Tech Mass Arbitration -->
+            <div class="tab-card">
+                <div class="tab-header">
+                    <div class="tab-title">
+                        <span class="tab-emoji">⚙️</span>
+                        <span>Tech Mass Arbitration</span>
+                    </div>
+                    <span class="urgency-badge urgency-high">HIGH</span>
+                </div>
+                <div class="tab-lead">
+                    Keller Postman announces $218B Google advertiser mass arbitration (May 11). Largest mass arb campaign ever. Claims target ad-tech monopoly + overcharges (20–30% recovery + treble damages).
+                </div>
+                <div class="tab-stats">
+                    <span class="stat-item">
+                        <span class="stat-badge">2</span>
+                        new developments
+                    </span>
+                    <span class="stat-item">51 total articles</span>
+                </div>
+                <div class="tab-indicators">
+                    <span class="indicator active">✓ LinkedIn post drafted</span>
+                    <span class="indicator active">✓ Updates proposed</span>
+                </div>
+                <a href="05-tech-mass-arbitration/advisory.md" class="open-button">Open Advisory →</a>
+            </div>
+
+            <!-- Tab 06: $1B+ Class Actions -->
+            <div class="tab-card">
+                <div class="tab-header">
+                    <div class="tab-title">
+                        <span class="tab-emoji">💰</span>
+                        <span>$1B+ Class Actions</span>
+                    </div>
+                    <span class="urgency-badge urgency-normal">NORMAL</span>
+                </div>
+                <div class="tab-lead">
+                    Blue Cross Blue Shield settlement payments commence (May 11): $2.67B antitrust settlement, 6M+ claims approved, ~$333/claim payout. Discover Card: $1.2B settlement (merchant card overcharges).
+                </div>
+                <div class="tab-stats">
+                    <span class="stat-item">
+                        <span class="stat-badge">2</span>
+                        new developments
+                    </span>
+                    <span class="stat-item">47 total articles</span>
+                </div>
+                <div class="tab-indicators">
+                    <span class="indicator active">✓ LinkedIn post drafted</span>
+                    <span class="indicator active">✓ Updates proposed</span>
+                </div>
+                <a href="06-billion-dollar-class-actions/advisory.md" class="open-button">Open Advisory →</a>
+            </div>
+
+            <!-- Tab 07: Bankruptcy Creditor Rights -->
+            <div class="tab-card">
+                <div class="tab-header">
+                    <div class="tab-title">
+                        <span class="tab-emoji">📜</span>
+                        <span>Bankruptcy Creditor Rights</span>
+                    </div>
+                    <span class="urgency-badge urgency-normal">NORMAL</span>
+                </div>
+                <div class="tab-lead">
+                    District Court affirms: nonconsensual third-party releases survive Chapter 15 (Crédito Real, March 31). First appellate ruling post-Purdue. Implications for foreign-plan recognition + multinational restructuring.
+                </div>
+                <div class="tab-stats">
+                    <span class="stat-item">
+                        <span class="stat-badge">1</span>
+                        new development
+                    </span>
+                    <span class="stat-item">39 total articles</span>
+                </div>
+                <div class="tab-indicators">
+                    <span class="indicator active">✓ LinkedIn post drafted</span>
+                </div>
+                <a href="07-bankruptcy-creditor-rights/advisory.md" class="open-button">Open Advisory →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-note">
+            <strong>Daily Briefing — May 19, 2026, 08:45 UTC</strong><br>
+            16 new developments across 7 topics · 5 LinkedIn posts drafted · 5 site updates proposed<br>
+            <em>This briefing is for informational purposes only and does not constitute legal advice. Consult with qualified counsel before acting on any matters herein.</em>
+        </div>
+    </div>
+</body>
+</html>

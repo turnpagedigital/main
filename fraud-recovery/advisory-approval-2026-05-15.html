@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponzi / Fraud Recovery — Advisory Approval | May 15, 2026</title>
+<script>
+(function(){
+  var K='daily-briefing-theme';
+  var ST=['system','dark','light'];
+  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
+  var LB={dark:'Dark',light:'Light',system:'System'};
+  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function apply(){
+    var t=localStorage.getItem(K)||'system';
+    document.documentElement.setAttribute('data-theme',eff(t));
+    document.documentElement.setAttribute('data-theme-pref',t);
+    var b=document.getElementById('theme-toggle');
+    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
+  }
+  window.cycleTheme=function(){
+    var c=localStorage.getItem(K)||'system';
+    var n=ST[(ST.indexOf(c)+1)%ST.length];
+    localStorage.setItem(K,n);apply();
+  };
+  apply();
+  if(document.readyState!=='loading') apply();
+  else document.addEventListener('DOMContentLoaded',apply);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
+})();
+</script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif; background: #E5E7EB; color: rgba(10,10,10,0.78); padding: 24px 16px 80px; max-width: 680px; margin: 0 auto; }
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.header-left h1 { font-size: 16px; font-weight: 700; color: #0A0A0A; }
+.header-left .date { font-size: 11px; color: rgba(10,10,10,0.45); margin-top: 2px; }
+.header-actions { display: flex; gap: 8px; }
+.btn-sm { font-size: 10px; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(10,10,10,0.14); background: #FFFFFF; cursor: pointer; font-family: inherit; color: rgba(10,10,10,0.7); }
+.btn-sm:hover { background: #F4F5F7; }
+.section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); margin-bottom: 6px; }
+.briefing-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+.briefing-block p { font-size: 13px; line-height: 1.7; color: rgba(10,10,10,0.78); }
+.briefing-block a, .advisory-body a, .card-title a { color: #0A0A0A; text-decoration: none; }
+.briefing-block a:hover, .advisory-body a:hover, .card-title a:hover { text-decoration: underline; }
+.advisory-toggle { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 14px 18px; background: #FFFFFF; border: 1px solid rgba(10,10,10,0.08); border-radius: 12px; transition: border-radius 0.2s; }
+.advisory-toggle.open { border-radius: 12px 12px 0 0; border-bottom: none; }
+.advisory-toggle-title { font-size: 13.5px; font-weight: 700; color: #0A0A0A; }
+.advisory-chevron { font-size: 14px; color: rgba(10,10,10,0.45); transition: transform 0.2s; }
+.advisory-chevron.open { transform: rotate(180deg); }
+.advisory-body { display: none; background: #FFFFFF; border: 1px solid rgba(10,10,10,0.08); border-top: none; border-radius: 0 0 12px 12px; padding: 20px 22px 24px; margin-bottom: 16px; }
+.advisory-body.open { display: block; }
+.advisory-body h2 { font-size: 13px; font-weight: 700; color: #0A0A0A; text-transform: uppercase; letter-spacing: 0.04em; margin: 22px 0 10px; }
+.advisory-body h2:first-child { margin-top: 0; }
+.advisory-body p { font-size: 12.5px; line-height: 1.75; color: rgba(10,10,10,0.78); margin-bottom: 14px; }
+.advisory-body p:last-child { margin-bottom: 0; }
+.advisory-body .advisory-footer-note { font-size: 11px; color: rgba(10,10,10,0.45); font-style: italic; margin-top: 18px; padding-top: 14px; border-top: 1px solid #D5D9DF; }
+.dates-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+.date-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #D5D9DF; }
+.date-row:last-child { border-bottom: none; }
+.date-pip { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.date-urgency-imminent { background: #ef4444; } .date-urgency-upcoming { background: #f59e0b; } .date-urgency-watch { background: #3b82f6; }
+.date-text { flex: 1; font-size: 12.5px; line-height: 1.5; } .date-text strong { color: #0A0A0A; }
+.btn-cal { font-size: 10px; padding: 3px 10px; border-radius: 5px; border: 1px solid rgba(10,10,10,0.14); background: #FFFFFF; cursor: pointer; font-family: inherit; color: rgba(10,10,10,0.7); white-space: nowrap; }
+.btn-cal:hover { background: #F4F5F7; }
+.linkedin-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+.linkedin-post { font-size: 13px; line-height: 1.7; white-space: pre-wrap; color: rgba(10,10,10,0.78); margin-bottom: 12px; }
+.btn-copy { font-size: 11px; padding: 6px 16px; border-radius: 6px; border: 1px solid #0a66c2; background: #0a66c2; color: #FFFFFF; cursor: pointer; font-family: inherit; font-weight: 600; }
+.btn-copy:hover { background: #004182; }
+.copied-msg { display: none; color: #0A0A0A; font-size: 11px; margin-left: 10px; font-weight: 600; }
+.copied-msg.visible { display: inline; }
+.li-feedback { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(10,10,10,0.08); }
+.li-feedback-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); margin-bottom: 8px; }
+.li-chat-area { display: flex; gap: 8px; align-items: flex-start; }
+.li-chat-input { flex: 1; font-size: 12px; padding: 8px 10px; border-radius: 6px; border: 1px solid rgba(10,10,10,0.14); font-family: inherit; resize: vertical; line-height: 1.5; }
+.li-chat-input:focus { outline: none; border-color: #D4FF00; box-shadow: 0 0 0 2px rgba(212,255,0,0.18); }
+.btn-send-feedback { font-size: 11px; padding: 8px 14px; border-radius: 6px; border: 1px solid #0a66c2; background: #FFFFFF; cursor: pointer; font-family: inherit; color: #0a66c2; font-weight: 600; white-space: nowrap; }
+.btn-send-feedback:hover { background: rgba(212,255,0,0.10); }
+.li-used-row { display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: #E5E7EB; cursor: pointer; user-select: none; }
+.li-used-row:hover { background: #D5D9DF; }
+.li-used-label { font-size: 12px; color: rgba(10,10,10,0.78); } .li-used-sublabel { font-size: 11px; color: rgba(10,10,10,0.45); margin-top: 2px; }
+.li-learn-msg { display: none; color: #0A0A0A; font-size: 11px; margin-top: 6px; padding-left: 2px; font-weight: 600; }
+.li-learn-msg.visible { display: block; }
+.card { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 16px 18px; margin-bottom: 10px; cursor: pointer; transition: border-color 0.15s; }
+.card:hover { border-color: #D4FF00; }
+.card.selected { border-color: #3b82f6; background: #f0f7ff; }
+.card-top { display: flex; align-items: flex-start; gap: 10px; }
+.card-cb { margin-top: 3px; flex-shrink: 0; }
+.card-body { flex: 1; }
+.card-title { font-size: 13px; font-weight: 600; color: #0A0A0A; margin-bottom: 3px; }
+.card-meta { font-size: 11px; color: rgba(10,10,10,0.45); margin-bottom: 5px; }
+.card-insight { font-size: 12px; line-height: 1.6; color: #555; }
+.tag { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 7px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+.tag-active { background: #fef2f2; color: #dc2626; }
+.tag-doctrine { background: rgba(212,255,0,0.10); color: #0A0A0A; }
+.tag-regulator { background: #fefce8; color: #ca8a04; }
+.tag-crossborder { background: #faf5ff; color: #9333ea; }
+.footer { position: fixed; bottom: 0; left: 0; right: 0; background: #FFFFFF; border-top: 1px solid rgba(10,10,10,0.08); padding: 12px 24px; display: flex; justify-content: center; z-index: 10; }
+.btn-primary { font-size: 12px; padding: 10px 28px; border-radius: 8px; border: none; background: #0A0A0A; color: #FFFFFF; cursor: pointer; font-family: inherit; font-weight: 600; }
+.btn-primary:hover { background: #0A0A0A; }
+.back-link { font-size: 11px; color: #0A0A0A; text-decoration: none; display: inline-block; margin-bottom: 8px; }
+.back-link:hover { text-decoration: underline; }
+.tn{background:#000000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif;position:sticky;top:0;z-index:100;width:100vw;margin-left:calc(50% - 50vw);margin-top:-24px;margin-bottom:20px;}
+.tn-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+.tn-row+.tn-row{margin-top:6px;}
+.tn-row.brand{justify-content:space-between;margin-bottom:8px;}
+.tn-brand{color:#FFFFFF;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:-0.01em;}
+.tn-brand:hover{color:#D4FF00;}
+.tn-date{color:rgba(255,255,255,0.6);font-size:11px;}
+.tn-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:11.5px;color:rgba(255,255,255,0.6);text-decoration:none;background:transparent;border:1px solid transparent;transition:background 0.15s,color 0.15s;}
+.tn-pill:hover{color:#FFFFFF;background:#16161B;}
+.tn-pill.active{color:#D4FF00;background:rgba(212,255,0,0.15);border-color:rgba(212,255,0,0.4);}
+.tn-pill.disabled{color:rgba(255,255,255,0.3);cursor:default;}
+.tn-pill.disabled:hover{background:transparent;color:rgba(255,255,255,0.3);}
+.tn-pill.view{font-size:11px;padding:2px 9px;}
+
+  [data-theme="dark"] body { background:#000000 !important; color:#FFFFFF !important; }
+  [data-theme="dark"] .container,
+  [data-theme="dark"] .briefing-block,
+  [data-theme="dark"] .advisory-toggle,
+  [data-theme="dark"] .advisory-body,
+  [data-theme="dark"] .dates-block,
+  [data-theme="dark"] .linkedin-block,
+  [data-theme="dark"] .card,
+  [data-theme="dark"] .advisory-block { background:#0A0A0A !important; border-color:rgba(255,255,255,0.12) !important; color:#FFFFFF; }
+  [data-theme="dark"] .footer { background:#0A0A0A !important; border-top-color:rgba(255,255,255,0.12) !important; }
+  [data-theme="dark"] .briefing-block p,
+  [data-theme="dark"] .advisory-body p,
+  [data-theme="dark"] .card-insight,
+  [data-theme="dark"] .linkedin-post,
+  [data-theme="dark"] .date-text { color:#c9d1d9 !important; }
+  [data-theme="dark"] .advisory-toggle-title,
+  [data-theme="dark"] .advisory-body h2,
+  [data-theme="dark"] .card-title,
+  [data-theme="dark"] .header-left h1,
+  [data-theme="dark"] .header-title,
+  [data-theme="dark"] .date-text strong,
+  [data-theme="dark"] .li-used-label { color:#FFFFFF !important; }
+  [data-theme="dark"] .card-title a,
+  [data-theme="dark"] .briefing-block a,
+  [data-theme="dark"] .advisory-body a { color:#D4FF00 !important; }
+  [data-theme="dark"] .date-row { border-bottom-color:rgba(255,255,255,0.12) !important; }
+  [data-theme="dark"] .section-label,
+  [data-theme="dark"] .header-left .date,
+  [data-theme="dark"] .header-sub,
+  [data-theme="dark"] .card-meta,
+  [data-theme="dark"] .li-used-sublabel,
+  [data-theme="dark"] .copied-msg { color:rgba(255,255,255,0.6) !important; }
+  [data-theme="dark"] .btn-sm,
+  [data-theme="dark"] .btn-cal,
+  [data-theme="dark"] .btn-gcal,
+  [data-theme="dark"] .advisory-toggle { background:#16161B !important; border-color:rgba(255,255,255,0.12) !important; color:#c9d1d9 !important; }
+  [data-theme="dark"] .li-chat-input { background:#16161B !important; border-color:rgba(255,255,255,0.12) !important; color:#FFFFFF !important; }
+  [data-theme="dark"] .li-used-row { background:#16161B !important; }
+  [data-theme="dark"] .card.selected { background:rgba(31,111,235,0.12) !important; border-color:#D4FF00 !important; }
+  [data-theme="dark"] .card:hover { border-color:#D4FF00 !important; }
+  [data-theme="dark"] .advisory-body .advisory-footer-note { color:rgba(255,255,255,0.6) !important; border-top-color:rgba(255,255,255,0.12) !important; }
+  [data-theme="dark"] .advisory-toggle .advisory-toggle-title { color:#FFFFFF !important; }
+  [data-theme="dark"] .pending-banner { background:rgba(210,153,34,0.15) !important; }
+  [data-theme="dark"] .update-card { background:rgba(212,255,0,0.10) !important; }
+  [data-theme="dark"] .back-link { color:#D4FF00 !important; }
+  #theme-toggle { border-color:rgba(10,10,10,0.08); }
+  
+
+  [data-theme="light"] .tn { background:#ffffff !important; border-bottom-color:rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .tn-brand { color:#0A0A0A !important; }
+  [data-theme="light"] .tn-brand:hover { color:#0A0A0A !important; }
+  [data-theme="light"] .tn-date { color:rgba(10,10,10,0.4) !important; }
+  [data-theme="light"] .tn-pill { color:rgba(10,10,10,0.6) !important; }
+  [data-theme="light"] .tn-pill:hover { background:#D5D9DF !important; color:#0A0A0A !important; }
+  [data-theme="light"] .tn-pill.active { color:#0A0A0A !important; background:rgba(212,255,0,0.18) !important; border-color:rgba(212,255,0,0.5) !important; }
+  [data-theme="light"] .tn-pill.disabled { color:rgba(10,10,10,0.3) !important; }
+  [data-theme="light"] #theme-toggle { border-color:rgba(10,10,10,0.08) !important; color:rgba(10,10,10,0.6) !important; }
+  [data-theme="light"] #theme-toggle:hover { background:#D5D9DF !important; }
+  /* Turnpage brand patch v3 ===================================== */
+  body { font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
+  h1 { letter-spacing: -0.02em; font-weight: 800; }
+
+  /* ----- Section eyebrow headings (h2): neon bar prefix, no underline */
+  section h2 {
+    border-bottom: none !important;
+    padding: 4px 0 4px 1.8em !important;
+    position: relative;
+    letter-spacing: 0.22em !important;
+    font-weight: 700 !important;
+    font-size: 0.78rem !important;
+    text-transform: uppercase !important;
+    margin: 0 0 14px !important;
+  }
+  section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 1.4em;
+    height: 0.18em;
+    background: #D4FF00;
+    border-radius: 2px;
+  }
+  section h2 .pill { margin-left: 8px; }
+
+  /* ----- NAV: dark by default; light theme overrides explicitly */
+  .tn { background: #000000; border-bottom-color: rgba(255,255,255,0.12); }
+  .tn-brand { color: #FFFFFF; text-decoration: none !important; }
+  .tn-brand:hover { color: #D4FF00; }
+  .tn-date { color: rgba(255,255,255,0.6); }
+  .tn-pill { color: rgba(255,255,255,0.7); text-decoration: none !important; background: transparent; border: 1px solid transparent; }
+  .tn-pill:hover { color: #FFFFFF; background: rgba(255,255,255,0.06); }
+  .tn-pill.active { color: #D4FF00; background: rgba(212,255,0,0.12); border-color: rgba(212,255,0,0.45); }
+  #theme-toggle { border-color: rgba(255,255,255,0.25); color: inherit; }
+
+  [data-theme="light"] .tn { background: #FFFFFF !important; border-bottom-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .tn-brand { color: #0A0A0A !important; }
+  [data-theme="light"] .tn-brand:hover { color: #0A0A0A !important; text-decoration: underline !important; text-decoration-color: #D4FF00 !important; text-decoration-thickness: 2px !important; }
+  [data-theme="light"] .tn-date { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] .tn-pill { color: rgba(10,10,10,0.65) !important; }
+  [data-theme="light"] .tn-pill:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; }
+  [data-theme="light"] .tn-pill.active { color: #0A0A0A !important; background: #D4FF00 !important; border-color: #D4FF00 !important; font-weight: 700 !important; }
+  [data-theme="light"] #theme-toggle { border-color: rgba(10,10,10,0.14) !important; color: #0A0A0A !important; }
+
+  /* ----- LIGHT THEME: white-led look, paper only for the Refine subtab */
+  [data-theme="light"] body { background: #FFFFFF !important; color: #0A0A0A !important; }
+  [data-theme="light"] header { background: #FFFFFF !important; border-bottom: 1px solid rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] main { background: #FFFFFF; }
+  [data-theme="light"] footer { background: #FFFFFF !important; border-top: 1px solid rgba(10,10,10,0.08) !important; color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  [data-theme="light"] .card { background: #FFFFFF !important; border-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .card.canonical { box-shadow: 0 1px 3px rgba(10,10,10,0.06) !important; border-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] th { color: rgba(10,10,10,0.45) !important; border-bottom-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] td { border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] td .matter-name { color: #0A0A0A !important; }
+  [data-theme="light"] td .court { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] td .status { color: rgba(10,10,10,0.78) !important; }
+  [data-theme="light"] section h2 { color: #0A0A0A !important; }
+  [data-theme="light"] ul.qlist li { color: rgba(10,10,10,0.78) !important; border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] ul.qlist li strong { color: #0A0A0A !important; }
+  [data-theme="light"] header .date, [data-theme="light"] header .meta, [data-theme="light"] .subtitle, [data-theme="light"] .header-left .date { color: rgba(10,10,10,0.55) !important; }
+
+  /* ----- Refine subtab full-width card */
+  body.refine-page { background: #0A0A0A; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  .refine-box { border-top: none !important; }
+
+  /* ----- Body links (in main content only): subtle accents */
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  [data-theme="light"] main p a, [data-theme="light"] main .qlist a, [data-theme="light"] main .advisory-list a, [data-theme="light"] .advisory-body a, [data-theme="light"] .briefing-block a {
+    color: #0A0A0A;
+    text-decoration-color: rgba(212,255,0,0.85);
+  }
+  [data-theme="light"] main p a:hover, [data-theme="light"] main .qlist a:hover, [data-theme="light"] main .advisory-list a:hover, [data-theme="light"] .advisory-body a:hover, [data-theme="light"] .briefing-block a:hover {
+    background: rgba(212,255,0,0.30);
+  }
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a { color: #D4FF00; text-decoration-color: rgba(212,255,0,0.55); }
+
+  /* ----- Tables: subtle hover */
+  tbody tr:hover { background: rgba(255,255,255,0.03) !important; }
+  [data-theme="light"] tbody tr:hover { background: rgba(10,10,10,0.025) !important; }
+
+  /* ----- Canonical / seed pills (outlined) */
+  .canonical-pill, .seed-pill { background: rgba(212,255,0,0.12) !important; color: #D4FF00 !important; border: 1px solid rgba(212,255,0,0.45) !important; border-radius: 99px !important; }
+  [data-theme="light"] .canonical-pill, [data-theme="light"] .seed-pill { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+  .degraded-pill { border-radius: 99px !important; }
+
+  /* ----- SQUARE BUTTONS — Turnpage three styles */
+  /* Primary (.btn-primary, .dashboard-btn, .open-btn, .btn-copy): ink bg + white text + neon arrow */
+  .dashboard-btn, .open-btn, .btn-copy,
+  .approval-btn, .btn-cal, .btn-send-feedback {
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+    padding: 10px 18px !important;
+    font-family: 'Archivo', -apple-system, sans-serif !important;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  /* PRIMARY (dashboard-btn, open-btn): ink bg + white text */
+  .dashboard-btn, .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border: 1px solid #0A0A0A !important; }
+  .dashboard-btn:hover, .open-btn:hover { background: #16161B !important; border-color: #16161B !important; }
+  [data-theme="light"] .dashboard-btn, [data-theme="light"] .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border-color: #0A0A0A !important; }
+  [data-theme="light"] .dashboard-btn:hover, [data-theme="light"] .open-btn:hover { background: #16161B !important; }
+
+  /* GHOST (approval-btn, btn-cal, .btn-send-feedback, .btn-refine-secondary): outlined */
+  .approval-btn { background: transparent !important; color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .approval-btn:hover { background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .approval-btn { background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; }
+  [data-theme="light"] .approval-btn:hover { background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  .btn-cal, .btn-send-feedback {
+    background: transparent !important;
+    color: #0A0A0A !important;
+    border: 1px solid #0A0A0A !important;
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+  }
+  .btn-cal:hover, .btn-send-feedback:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-cal, [data-theme="dark"] .btn-send-feedback { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-cal:hover, [data-theme="dark"] .btn-send-feedback:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* NEON CTA (btn-copy, btn-refine): solid neon bg + ink text */
+  .btn-copy { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; }
+  .btn-copy:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; border-radius: 0 !important; font-weight: 700 !important; padding: 11px 20px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-refine:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine-secondary { border-radius: 0 !important; padding: 11px 16px !important; font-weight: 600 !important; font-family: 'Archivo', sans-serif !important; background: transparent !important; color: rgba(255,255,255,0.7) !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .btn-refine-secondary:hover { color: #FFFFFF !important; background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .btn-refine-secondary { color: rgba(10,10,10,0.65) !important; border-color: rgba(10,10,10,0.4) !important; }
+  [data-theme="light"] .btn-refine-secondary:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  /* Btn-sm (used on approval HTML header bar) → ghost-style */
+  .btn-sm { border-radius: 0 !important; font-weight: 600 !important; background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; padding: 6px 12px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-sm:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-sm { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-sm:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* Refine status */
+  .refine-status { color: #D4FF00 !important; }
+  [data-theme="light"] .refine-status { color: #0A0A0A !important; }
+
+  /* Doctrine pills */
+  .pill.doctrine { border-color: rgba(212,255,0,0.45) !important; color: #D4FF00 !important; background: rgba(212,255,0,0.12) !important; }
+  [data-theme="light"] .pill.doctrine { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+
+  /* Banner */
+  [data-theme="light"] .banner { background: #F4F5F7 !important; border-left-color: #D4FF00 !important; color: rgba(10,10,10,0.78) !important; }
+
+  /* Advisory toggle (light/dark): square corners, ghost-style border treatment */
+  .advisory-toggle { border-radius: 0 !important; }
+  .advisory-toggle.open { border-radius: 0 !important; }
+  .advisory-body { border-radius: 0 !important; }
+  .briefing-block, .dates-block, .linkedin-block, .disclaimer { border-radius: 0 !important; }
+
+  /* The view (subnav) row: subtle visual indent + breathing room */
+  .tn-row:nth-of-type(3) { padding-top: 6px; gap: 22px; }
+
+  /* View pills: NOT pills — plain text links with active neon underline */
+  .tn-pill.view {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4px 0 !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,0.55) !important;
+    letter-spacing: 0.01em;
+    transition: color 0.12s, border-bottom-color 0.12s;
+  }
+  .tn-pill.view:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+  }
+  .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    padding-bottom: 4px !important;
+  }
+  [data-theme="light"] .tn-pill.view {
+    color: rgba(10,10,10,0.55) !important;
+  }
+  [data-theme="light"] .tn-pill.view:hover {
+    background: transparent !important;
+    color: #0A0A0A !important;
+  }
+  [data-theme="light"] .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #0A0A0A !important;
+    font-weight: 700 !important;
+  }
+
+
+  /* --- Turnpage logo in brand strip ------------------- */
+  .tn-brand { display: inline-flex; align-items: center; gap: 0; }
+  .tn-brand-logo { height: 18px; width: auto; vertical-align: middle; transition: filter 0.15s; filter: invert(1) brightness(2); }
+  /* On LIGHT theme, the logo is already black — no invert needed */
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { font-weight: 700; letter-spacing: -0.01em; }
+    /* Original is black-on-white JPEG. In dark theme we invert to get white-on-black. */
+    filter: invert(1);
+  }
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { display: none; } /* legacy text — replaced by product label on tab row */
+  .tn-brand:hover .tn-brand-logo { opacity: 0.85; }
+  [data-theme="light"]
+
+  /* Tab row: align product label + tabs horizontally with a vertical divider between them */
+  .tn-row:nth-of-type(2) {
+    align-items: center;
+    padding: 8px 0;
+  }
+  [data-theme="light"]
+
+  /* Brand row: logo on left, meta (date + toggle) on right */
+  .tn-row.brand { padding-bottom: 8px !important; }
+
+  /* Slight arrow indicator on tab pill suggesting dropdown */
+  .tn-tab > .tn-pill::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55;
+    vertical-align: 2px;
+  }/* ====== MASTER PATCH START — do not edit between sentinels ====== */
+
+  /* === Polestar-style full-width dropdowns === */
+  .tn { position: relative; }
+  .tn-tabs-row { gap: clamp(0.4rem, 1vw, 0.8rem); }
+  .tn-tab { position: static; display: inline-block; padding-bottom: 12px; margin-bottom: -12px; }
+  .tn-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: -10px;
+    background: #D4FF00;
+    border-bottom: 1px solid rgba(10,10,10,0.12);
+    box-shadow: 0 14px 28px rgba(10,10,10,0.10);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0s 0.25s;
+    pointer-events: none;
+  }
+  [data-theme="dark"] .tn-dropdown {
+    background: #D4FF00;
+    border-bottom-color: rgba(10,10,10,0.18);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.5);
+  }
+  .tn-tab:hover .tn-dropdown, .tn-tab:focus-within .tn-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0s 0s;
+    pointer-events: auto;
+  }
+  .tn-dd-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(1.8rem, 3vw, 2.8rem) clamp(1.25rem, 3vw, 2.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+    background: #D4FF00;
+  }
+  .tn-dd-eyebrow {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #0A0A0A; margin: 0 0 0.8rem 0;
+  }
+  .tn-dd-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800; font-size: clamp(1.4rem, 2vw, 1.75rem);
+    line-height: 1.15; letter-spacing: -0.02em;
+    color: #0A0A0A; margin: 0 0 0.9rem 0;
+  }
+  .tn-dd-body {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; color: #0A0A0A;
+    line-height: 1.55; max-width: 460px; margin: 0;
+  }
+  .tn-dd-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+  .tn-dd-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; font-weight: 600;
+    color: #0A0A0A !important; background: transparent !important;
+    border: none !important; border-radius: 0 !important; padding: 4px 0 !important;
+    display: inline-flex !important; align-items: center;
+    text-decoration: none !important;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .tn-dd-link:hover { color: rgba(10,10,10,0.55) !important; background: transparent !important; }
+  .tn-dd-link.active span { border-bottom: 2px solid #0A0A0A; padding-bottom: 1px; }
+  .tn-dd-col-cta { align-self: center; }
+  .tn-dd-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    color: #FFFFFF !important; background: #0A0A0A !important;
+    padding: 0.9rem 1.4rem; letter-spacing: 0.02em;
+    text-decoration: none !important;
+    border: none !important; border-radius: 0 !important;
+    transition: background 0.2s, gap 0.2s;
+  }
+  .tn-dd-cta:hover { background: #222 !important; gap: 12px; }
+  .tn-dd-cta svg { stroke: #D4FF00 !important; }
+  .tn-tab > .tn-pill::after { display: none; }
+  .tn-row.brand > .tn-date { display: none !important; }
+
+  /* === Logo size consistency === */
+  .tn-brand-logo { height: 36px !important; }
+
+  /* === Bigger, more readable tab names === */
+  .tn-pill {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    padding: 9px 18px !important;
+    letter-spacing: 0.005em !important;
+    gap: 6px !important;
+    border-radius: 0 !important;
+  }
+  .tn-pill.active { font-weight: 700 !important; }
+
+  /* === Neon active tab; hover any tab = neon === */
+  .tn-pill.active,
+  [data-theme="light"] .tn-pill.active,
+  [data-theme="dark"] .tn-pill.active {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  .tn-pill:hover,
+  [data-theme="light"] .tn-pill:hover,
+  [data-theme="dark"] .tn-pill:hover {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  /* Active tab dims when another tab is hovered */
+  .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(10,10,10,0.06) !important;
+    color: rgba(10,10,10,0.55) !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+  }
+  [data-theme="dark"] .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(255,255,255,0.06) !important;
+    color: rgba(255,255,255,0.55) !important;
+    border: 1px solid transparent !important;
+  }
+  /* Active tab not clickable */
+  .tn-pill.active { cursor: default !important; pointer-events: none !important; }
+
+  /* === src-arrow: light gray bg (not neon) === */
+  .src-arrow {
+    background: rgba(10,10,10,0.08) !important;
+    color: #0A0A0A !important;
+  }
+  .src-arrow:hover { background: rgba(10,10,10,0.16) !important; }
+  [data-theme="dark"] .src-arrow {
+    background: rgba(229,231,235,0.10) !important;
+    color: #E5E7EB !important;
+  }
+  [data-theme="dark"] .src-arrow:hover { background: rgba(229,231,235,0.20) !important; }
+
+  /* === Tooltip overflow fix === */
+  .col-left .src-tooltip {
+    width: 300px !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-left .src-tooltip::after {
+    left: 14px !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip {
+    width: 300px !important;
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip::after {
+    left: auto !important;
+    right: 14px !important;
+    transform: none !important;
+  }
+  .src-tooltip { max-width: calc(100vw - 32px); }
+
+  /* === Remove eyebrow neon bars === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+  /* === Byline + multi-column body === */
+  .briefing-body .byline {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    margin: 0 0 24px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink-20);
+    flex-wrap: wrap;
+  }
+  .briefing-body .byline .byline-desk {
+    font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink);
+  }
+  .briefing-body .byline .byline-time,
+  .briefing-body .byline .byline-date {
+    font-size: 12px; color: var(--ink-60); font-style: italic;
+  }
+  .briefing-body .prose {
+    column-count: 2;
+    column-gap: 36px;
+    column-rule: 1px solid var(--line);
+  }
+  .briefing-body .prose p {
+    break-inside: avoid-column;
+    margin: 0 0 16px;
+  }
+  .briefing-body .prose p:first-of-type { margin-top: 0; }
+  @media (max-width: 880px) {
+    .briefing-body .prose { column-count: 1; }
+  }
+
+/* ====== MASTER PATCH END ====== */
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row brand">
+    <a class="tn-brand" href="../daily-briefing/index.html"><img class="tn-brand-logo" alt="Turnpage" src="../daily-briefing/assets/turnpage-logo.jpeg"></a>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+  <div class="tn-row tn-tabs-row">
+    <div class="tn-tab">
+      <a class="tn-pill" href="../rewind-tariffs/dashboard.html">⚖️ Tariffs</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tariffs / Trade</h3>
+            <p class="tn-dd-body">Capital and advisory for IEEPA tariff refund rights. CAPE refunds, the CIT and Federal Circuit dockets, Section 122, and consumer-class exposure on pass-through.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../rewind-tariffs/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../rewind-tariffs/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../llm-class-action/dashboard.html">🤖 LLM</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">LLM / Copyright</h3>
+            <p class="tn-dd-body">AI training-data class actions. Bartz v. Anthropic, the OpenAI MDL, Concord, Disney v. Midjourney — settlement mechanics and benchmark claims rates.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../llm-class-action/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../llm-class-action/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../crypto-insolvency/dashboard.html">🪙 Crypto</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Crypto Insolvency</h3>
+            <p class="tn-dd-body">Customer-property litigation and crypto bankruptcies. BlockFills, Genesis LOC, FTX progeny, and the cross-border Chapter 15 recognition track.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../crypto-insolvency/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../crypto-insolvency/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab active">
+      <a class="tn-pill active" href="../fraud-recovery/dashboard.html">🕵️ Fraud</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Ponzi / Fraud Recovery</h3>
+            <p class="tn-dd-body">Receivership clawbacks, SEC enforcement, and cross-border asset recovery. Goliath Ventures, Paramount/Prestige, and active receiver-led liquidation tracks.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../fraud-recovery/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link active" href="../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../fraud-recovery/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../tech-mass-arbitration/dashboard.html">⚙️ Mass Arb</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tech Mass Arbitration</h3>
+            <p class="tn-dd-body">B2B mass-arbitration campaigns against Big Tech defendants. The Google advertiser playbook, Meta waiver track, AAA/JAMS mechanics, foreign analogues.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../tech-mass-arbitration/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../billion-dollar-class-actions/dashboard.html">💰 $1B+</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">$1B+ Class Actions</h3>
+            <p class="tn-dd-body">The mega-settlement cycle. BCBS Subscriber & Provider, Bartz v. Anthropic, Purdue/Sackler, Roundup, Visa/Mastercard interchange.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../billion-dollar-class-actions/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../bankruptcy-creditor-rights/dashboard.html">📜 Bankr</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Bankruptcy Creditor Rights</h3>
+            <p class="tn-dd-body">Plan-confirmation appellate docket. Equitable-mootness drift, post-Purdue third-party releases, Texas Two-Step, exculpation scope, and Subchapter V.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../bankruptcy-creditor-rights/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="header">
+  <div class="header-left">
+    <h1>🕵️ Ponzi / Fraud Recovery — Advisory Approval</h1>
+    <div class="date">May 15, 2026 · Day 1 initialization</div>
+  </div>
+  <div class="header-actions">
+    <button class="btn-sm" onclick="selectAll()">Select All</button>
+    <button class="btn-sm" onclick="clearAll()">Clear All</button>
+  </div>
+</div>
+
+<div class="section-label">Today's Briefing</div>
+<div class="briefing-block">
+  <p>The dominant active Ponzi-recovery matter remains <strong>Goliath Ventures</strong> (M.D. Fla., ~$328M crypto Ponzi), where Receiver Michael S. Budwick continues asset identification following Delgado's <a href="https://www.cryptotimes.io/2026/05/12/ex-goliath-ventures-ceo-apologizes-as-328m-crypto-scam-charges-mount/">May 12 public apology</a>. The claims bar date was extended to <strong>September 30, 2026</strong>, signaling a larger investor population than the publicly reported 2,000; first turnover recovery of <a href="https://www.dehek.com/general/scam-fraud-investigations/goliath-ventures-bankruptcy-michael-s-budwick-recovers-141k-from-wealth-md-account-in-court-filing/">$141K from Wealth MD</a> reported. The <strong>Heller / Paramount-Prestige</strong> $400M Ponzi proceeds in E.D. Pa. with parallel USAO-EDPA criminal track. Doctrine continues to tilt receiver-side: the 2d Circuit's <em>In re Madoff</em> trajectory preserves the Ponzi presumption even where § 546(e) blocks constructive fraud, and the futility-exception to good faith has been rejected. <strong>SEC Enforcement Director Woodcock</strong> took over May 4 — watch for Ponzi-priority signaling.</p>
+</div>
+
+<div class="section-label">Full Advisory</div>
+<div class="advisory-toggle" id="advisory-toggle" onclick="toggleAdvisory()">
+  <span class="advisory-toggle-title">Ponzi / Fraud Recovery Advisory &mdash; May 15, 2026</span>
+  <span class="advisory-chevron" id="advisory-chevron">&#9660;</span>
+</div>
+<div class="advisory-body" id="advisory-body">
+  <h2>Analysis &amp; Developments</h2>
+  <p>The dominant active matter in the U.S. Ponzi-recovery docket continues to be the <em>Goliath Ventures</em> receivership in the Middle District of Florida, in which Receiver Michael S. Budwick (Meland Budwick, Miami) is now working through the asset-identification and net-winner-identification phases following the February 24, 2026 arrest of CEO Christopher Alexander Delgado on wire-fraud and money-laundering charges. The most consequential operational data point this week is Delgado's public apology, dated May 12, 2026, which both narrows his cooperation posture for plea negotiations and creates a contemporaneous record that the receiver and the U.S. Attorney's Office in M.D. Fla. will use against any net-winner defense relying on the <em>Pioneer v. Brunswick</em> &ldquo;excusable neglect&rdquo; framework. The asset-pool picture continues to develop along three vectors: four residential homes ranging from $1.15M to $8.5M; Dubai-account repatriation deadlines that lapsed at the end of April; and a $141,412 turnover recovery from a Wealth MD account in the parallel Chapter 11 proceeding. The claims bar date was extended from May 26 to September 30, 2026, which gives the receiver additional runway but also signals the receiver's view that the investor population is materially larger than the publicly reported 2,000-investor count. (<a href="https://www.cryptotimes.io/2026/05/12/ex-goliath-ventures-ceo-apologizes-as-328m-crypto-scam-charges-mount/">Crypto Times</a>) (<a href="https://www.dehek.com/general/scam-fraud-investigations/goliath-ventures-bankruptcy-michael-s-budwick-recovers-141k-from-wealth-md-account-in-court-filing/">Dehek</a>)</p>
+
+  <p>The Paramount Management Group / Prestige Investment Group / Daryl F. Heller matter in the Eastern District of Pennsylvania remains the highest-dollar active Ponzi-recovery docket &mdash; $400M of investor losses within a $770M ATM-network funding flow that ran from 2017 through 2024 and affected approximately 2,700 investors, many in the Lancaster, PA Amish/Mennonite community. The SEC complaint (filed September 3, 2025) seeks injunctions, disgorgement, civil penalties, conduct-based injunctions, and an officer-and-director bar; parallel criminal charges have been filed by USAO-EDPA. Heller allegedly misappropriated $185M+ for personal use including a beach house, which makes the personal-asset recovery side of this matter unusually rich. (<a href="https://www.sec.gov/newsroom/press-releases/2025-111-sec-charges-pennsylvania-resident-his-companies-770-million-ponzi-scheme">SEC PR 2025-111</a>) (<a href="https://www.americanbanker.com/payments/news/sec-charges-leader-of-770-million-atm-centered-ponzi-scheme">American Banker</a>)</p>
+
+  <p>The doctrinal posture across the docket continues to reflect the Second Circuit's <em>In re Bernard L. Madoff Inv. Sec. LLC</em> trajectory, in which the Ponzi-scheme presumption under &sect; 548(a)(1)(A) and state UVTA analogues remains available even where the &sect; 546(e) safe harbor blocks constructive-fraud theories, and in which the &ldquo;futility exception&rdquo; to the good-faith defense has been rejected. Receivers and SIPA trustees evaluating clawback exposure should expect courts to demand affirmative documentation of pre-investment diligence from any transferee on inquiry notice. The SIPC's seventeenth interim distribution to Madoff customers, filed February 27, 2026, exceeded $253 million and brings aggregate customer payout to approximately $15.38 billion. (<a href="https://www.jonesday.com/en/insights/2021/11/case-update-second-circuit-breathes-new-life-into-madoff-trustees-efforts-to-recover-ponzi-scheme-payments">Jones Day</a>) (<a href="https://www.abi.org/feed-item/fraudulent-transfer%E2%80%99s-good-faith-defense-a-futility-exception-to-investigation">ABI</a>)</p>
+
+  <p>The cross-border tracing landscape is moving forward materially on two parallel tracks. First, the Second Circuit's evolving &sect; 1782 jurisprudence has now produced rulings holding that a foreign forum-selection clause can weigh against &sect; 1782 relief where it suggests evasion of foreign proof-gathering rules, while the Ninth Circuit has confirmed that documents obtained for one foreign proceeding may be reused in related or subsequent foreign actions. Second, the BVI / Cayman recovery channel continues to be the dominant offshore venue for recognition / enforcement and Norwich Pharmacal-style disclosure orders that pair with &sect; 1782 applications, though Hong Kong courts' continued adherence to <em>Gibbs</em> and their COMI scrutiny of Cayman provisional liquidator petitions create friction. (<a href="https://ktslaw.com/en/insights/perspectives/2025/9/recent%20developments%20as%20to%20discovery%20applications%20under%2028%20us%20c%20section%201782">Kilpatrick Townsend</a>)</p>
+
+  <p>The most material institutional development of the week is the May 4, 2026 transition of David Woodcock into the SEC Division of Enforcement Director role. Practitioners are watching closely for revised Ponzi-enforcement priorities, any Wells-notice slowdown signaling, and whether the FY26 SEC fiscal-year-end push will produce the same kind of high-volume late-cycle enforcement docket that has historically characterized SEC Ponzi action timing. (<a href="https://www.hklaw.com/en/insights/publications/2026/04/looking-back-looking-ahead-sec-fy-2025-results">Holland &amp; Knight</a>)</p>
+
+  <h2>Recommended Actions</h2>
+  <p>Federal receivers and SIPA trustees managing active matters should be calendaring against the <em>In re Madoff</em> good-faith defense framework, marshalling documentary records of transferee inquiry-notice events, and preparing motion-in-limine practice to exclude any &ldquo;futility exception&rdquo; arguments at trial. Net-winner defense counsel should be auditing their clients' contemporaneous diligence records and should be pricing settlement against the Second Circuit's narrowed good-faith standard rather than the more permissive pre-<em>Madoff</em> framework. Victim-side counsel in Goliath Ventures and Paramount/Prestige should be coordinating directly with the respective receivers to avoid duplicative parallel proceedings, and should be evaluating insurance-recovery vehicles (D&amp;O / E&amp;O / fidelity bonds) as primary rather than fallback recovery channels. Cross-border counsel should be filing &sect; 1782 applications early, structuring proof-of-need affidavits to address the post-2025 Second Circuit forum-selection-clause weight problem.</p>
+
+  <div class="advisory-footer-note">
+    This advisory is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.<br>
+    For assessment of specific exposure to a Ponzi or fraud matter, contact Turnpage Digital Markets.
+  </div>
+</div>
+
+<div class="section-label">Key Upcoming Dates</div>
+<div class="dates-block">
+  <div class="date-row">
+    <div class="date-pip date-urgency-imminent"></div>
+    <div class="date-text"><strong>Late May / June</strong> &mdash; Delgado plea / status conferences in M.D. Fla. (probable after May 12 apology)</div>
+    <button class="btn-cal" onclick="downloadICS('Delgado Status Conference (Probable)','20260601','Expected status conference in USAO-MDFL prosecution of Goliath Ventures CEO following May 12 public apology')">&#128197; .ics</button>
+  </div>
+  <div class="date-row">
+    <div class="date-pip date-urgency-upcoming"></div>
+    <div class="date-text"><strong>Late May / June</strong> &mdash; Heller (Paramount/Prestige) criminal arraignment milestones in E.D. Pa.</div>
+    <button class="btn-cal" onclick="downloadICS('Heller Criminal Milestones','20260601','USAO-EDPA criminal arraignment / motion practice milestones in Paramount-Prestige Ponzi prosecution')">&#128197; .ics</button>
+  </div>
+  <div class="date-row">
+    <div class="date-pip date-urgency-watch"></div>
+    <div class="date-text"><strong>Sept 30, 2026</strong> &mdash; Goliath Ventures claims bar date (extended from May 26)</div>
+    <button class="btn-cal" onclick="downloadICS('Goliath Ventures Claims Bar Date','20260930','Extended claims bar date in Goliath Ventures Chapter 11 / receivership')">&#128197; .ics</button>
+  </div>
+  <div class="date-row">
+    <div class="date-pip date-urgency-watch"></div>
+    <div class="date-text"><strong>Watch</strong> &mdash; First Liberty Building &amp; Loan (Frost) trial schedule post-Apr 23 plea</div>
+    <button class="btn-cal" onclick="downloadICS('First Liberty / Frost Trial Schedule','20260701','Trial schedule following Edwin Brant Frost IV not-guilty plea Apr 23, 2026 (N.D. Ga.)')">&#128197; .ics</button>
+  </div>
+  <div class="date-row">
+    <div class="date-pip date-urgency-watch"></div>
+    <div class="date-text"><strong>Late 2026</strong> &mdash; Madoff 18th interim SIPA distribution (probable)</div>
+    <button class="btn-cal" onclick="downloadICS('Madoff 18th Interim Distribution (Probable)','20261001','Expected next SIPA interim distribution to Madoff customers following $253M+ Feb 27 2026 distribution')">&#128197; .ics</button>
+  </div>
+</div>
+
+<div class="section-label">LinkedIn Post</div>
+<div class="linkedin-block">
+  <div class="linkedin-post" id="linkedin-post">&#x1F575;&#xFE0F; Goliath Ventures — The Receivership Playbook Is Working
+
+A few operational notes from the Goliath Ventures receivership that translate to any active fraud-recovery matter:
+
+The bar date was just extended from May 26 to September 30, 2026 — a strong signal that Receiver Budwick (Meland Budwick) views the investor population as materially larger than the publicly reported 2,000. The Wealth MD turnover recovery of $141K is the first publicly reported clawback; expect a cascade of similar turnover demands as the asset-tracing work matures.
+
+The doctrinal landscape continues to evolve in receivers' favor. The Second Circuit's In re Madoff trajectory — Ponzi-scheme presumption available even where § 546(e) blocks constructive-fraud theories, plus rejection of the "futility exception" to the good-faith defense — raises the diligence floor materially. Net-winner investors on inquiry notice can no longer hide behind "investigation would have been futile."
+
+The SEC Enforcement Director transition to David Woodcock (May 4) is the institutional variable to watch. Practitioner consensus expects the late-FY enforcement push pattern to hold, but watch for revised Ponzi enforcement priorities.
+
+For receivers and victim-side counsel: § 1782 is your friend, but the 2d Cir.'s recent forum-selection-clause skepticism narrows the lane. Structure proof-of-need affidavits accordingly.
+
+#Receivership #PonziScheme #FraudRecovery #Clawback #WhiteCollar</div>
+  <div><button class="btn-copy" onclick="copyLinkedIn()">Copy post</button><span class="copied-msg" id="li-copied">Copied!</span></div>
+  <div class="li-feedback">
+    <div class="li-feedback-label">Adjust This Post</div>
+    <div class="li-chat-area">
+      <textarea class="li-chat-input" id="li-chat-input" placeholder='e.g. "Make it shorter", "Add Heller as second example", "Lead with the SEC transition"...' rows="2"></textarea>
+      <button class="btn-send-feedback" onclick="sendLiFeedback()">Copy to Claude</button>
+    </div>
+  </div>
+  <div class="li-used-row" id="li-used-row" onclick="toggleUsed()">
+    <input type="checkbox" id="li-used-cb" onclick="event.stopPropagation()">
+    <div><div class="li-used-label"><strong>I used this post</strong> &mdash; teach the skill my preferences</div><div class="li-used-sublabel">When checked, "Copy post" will also copy a preference signal.</div></div>
+  </div>
+  <div class="li-learn-msg" id="li-learn-msg">&#10003; Preference signal included.</div>
+</div>
+
+<div class="section-label">Proposed Reference Articles</div>
+
+<div class="card" id="card-a1" onclick="toggle('a1')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-a1" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title"><a href="https://www.cryptotimes.io/2026/05/12/ex-goliath-ventures-ceo-apologizes-as-328m-crypto-scam-charges-mount/" target="_blank">Crypto Times: Ex-Goliath Ventures CEO Apologizes (May 12, 2026)</a> <span class="tag tag-active">Active</span></div>
+    <div class="card-meta">Crypto Times · May 12, 2026</div>
+    <div class="card-insight">Delgado's public apology narrows cooperation posture and creates contemporaneous record.</div>
+  </div></div>
+</div>
+
+<div class="card" id="card-a2" onclick="toggle('a2')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-a2" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title"><a href="https://www.nortonrosefulbright.com/en/knowledge/publications/a2e6cab3/even-the-winners-lose-in-a-ponzi-scheme-payments-made-to-investors-in-a-ponzi-scheme-clawed-back-as-fraudulent-conveyances" target="_blank">Norton Rose Fulbright: Even the Winners Lose</a> <span class="tag tag-doctrine">Doctrine</span></div>
+    <div class="card-meta">Norton Rose Fulbright · running</div>
+    <div class="card-insight">Canonical client-facing framing of net-winner clawback exposure.</div>
+  </div></div>
+</div>
+
+<div class="card" id="card-a3" onclick="toggle('a3')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-a3" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title"><a href="https://www.hklaw.com/en/insights/publications/2026/04/looking-back-looking-ahead-sec-fy-2025-results" target="_blank">Holland &amp; Knight: SEC FY 2025 — Looking Back, Looking Ahead</a> <span class="tag tag-regulator">Regulator</span></div>
+    <div class="card-meta">Holland &amp; Knight · April 2026</div>
+    <div class="card-insight">Best practitioner summary of Woodcock transition (May 4) and likely Ponzi enforcement priority changes.</div>
+  </div></div>
+</div>
+
+<div class="card" id="card-a4" onclick="toggle('a4')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-a4" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title"><a href="https://ktslaw.com/en/insights/perspectives/2025/9/recent%20developments%20as%20to%20discovery%20applications%20under%2028%20us%20c%20section%201782" target="_blank">Kilpatrick Townsend: § 1782 Recent Developments</a> <span class="tag tag-crossborder">Cross-Border</span></div>
+    <div class="card-meta">Kilpatrick Townsend · Sep 2025</div>
+    <div class="card-insight">2d Cir. forum-selection-clause weight + 9th Cir. document-reuse scope.</div>
+  </div></div>
+</div>
+
+<div class="card" id="card-a5" onclick="toggle('a5')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-a5" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title"><a href="https://www.dehek.com/general/scam-fraud-investigations/goliath-ventures-bankruptcy-michael-s-budwick-recovers-141k-from-wealth-md-account-in-court-filing/" target="_blank">Dehek: Goliath — Budwick Recovers $141K from Wealth MD</a> <span class="tag tag-active">Active</span></div>
+    <div class="card-meta">Dehek · May 2026</div>
+    <div class="card-insight">Receiver's first publicly reported turnover recovery; benchmark for follow-on demands.</div>
+  </div></div>
+</div>
+
+<div class="section-label">Proposed Dashboard Updates</div>
+
+<div class="card" id="card-s1" onclick="toggle('s1')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-s1" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title">Active Receiverships &mdash; Add Goliath Ventures</div>
+    <div class="card-meta">Source: DOJ USAO-MDFL + Sonn Law</div>
+    <div class="card-insight">Goliath Ventures (M.D. Fla.) — Budwick receiver; bar date Sep 30, 2026; $141K Wealth MD recovery; Dubai-asset repatriation deadlines lapsed.</div>
+  </div></div>
+</div>
+
+<div class="card" id="card-s2" onclick="toggle('s2')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-s2" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title">Active Receiverships &mdash; Add Paramount/Prestige (Heller)</div>
+    <div class="card-meta">Source: SEC PR 2025-111</div>
+    <div class="card-insight">$400M Ponzi, ~2,700 investors, USAO-EDPA criminal parallel pending.</div>
+  </div></div>
+</div>
+
+<div class="card" id="card-s3" onclick="toggle('s3')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-s3" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title">Active Receiverships &mdash; Add First Liberty Building &amp; Loan</div>
+    <div class="card-meta">Source: SEC PR 2025-98 + Fox 5 Atlanta</div>
+    <div class="card-insight">Hays receiver; $3.59M cash on hand vs $140M claims; Frost not-guilty plea Apr 23, 2026.</div>
+  </div></div>
+</div>
+
+<div class="card" id="card-s4" onclick="toggle('s4')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-s4" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title">Recent Enforcement &mdash; Add Nightingale (Schwartz) + Wolf Capital (Ford)</div>
+    <div class="card-meta">Source: SEC PR 2026-34 + CFTC PR 9168-26</div>
+    <div class="card-insight">Add SEC PR 2026-34 (Nightingale/Schwartz, $60M, $52M+ misappropriated) and CFTC Wolf Capital matter.</div>
+  </div></div>
+</div>
+
+<div class="card" id="card-s5" onclick="toggle('s5')">
+  <div class="card-top"><input type="checkbox" class="card-cb" id="cb-s5" onclick="event.stopPropagation()"><div class="card-body">
+    <div class="card-title">Cross-Border &mdash; Update § 1782 doctrine note</div>
+    <div class="card-meta">Source: Kilpatrick Townsend Sep 2025</div>
+    <div class="card-insight">Update doctrine note with 2d Cir. forum-selection-clause weight and 9th Cir. document-reuse scope.</div>
+  </div></div>
+</div>
+
+<p style="font-size: 12px; color: rgba(10,10,10,0.45); font-style: italic; margin-top: 8px; margin-bottom: 16px;">Awaiting your approval &mdash; no changes will be made to the persistent dashboard.</p>
+
+<div class="footer"><button class="btn-primary" onclick="copySelections()">Copy Selections to Clipboard</button></div>
+
+<script>
+var state = { a1:false,a2:false,a3:false,a4:false,a5:false,s1:false,s2:false,s3:false,s4:false,s5:false };
+var labels = {
+  a1: 'Article: Crypto Times — Delgado Apology',
+  a2: 'Article: Norton Rose Fulbright — Even the Winners Lose',
+  a3: 'Article: Holland & Knight — SEC FY25',
+  a4: 'Article: Kilpatrick Townsend — § 1782 Developments',
+  a5: 'Article: Dehek — Budwick $141K Recovery',
+  s1: 'Dashboard Update: Active Receiverships — Add Goliath Ventures',
+  s2: 'Dashboard Update: Active Receiverships — Add Paramount/Prestige (Heller)',
+  s3: 'Dashboard Update: Active Receiverships — Add First Liberty',
+  s4: 'Dashboard Update: Recent Enforcement — Nightingale + Wolf Capital',
+  s5: 'Dashboard Update: Cross-Border — § 1782 doctrine refresh'
+};
+function toggle(id){ state[id]=!state[id]; document.getElementById('card-'+id).classList.toggle('selected', state[id]); document.getElementById('cb-'+id).checked = state[id]; }
+function selectAll(){ for(var k in state){state[k]=true;document.getElementById('card-'+k).classList.add('selected');document.getElementById('cb-'+k).checked=true;} }
+function clearAll(){ for(var k in state){state[k]=false;document.getElementById('card-'+k).classList.remove('selected');document.getElementById('cb-'+k).checked=false;} }
+function copySelections(){
+  var lines=['PONZI / FRAUD RECOVERY ADVISORY APPROVAL — May 15, 2026\n'];
+  var approved=[],declined=[];
+  for(var k in state){ if(state[k]) approved.push('  ✓ '+labels[k]); else declined.push('  ✗ '+labels[k]); }
+  if(approved.length){lines.push('APPROVED:');lines=lines.concat(approved);lines.push('');}
+  if(declined.length){lines.push('NOT SELECTED:');lines=lines.concat(declined);}
+  navigator.clipboard.writeText(lines.join('\n'));
+}
+function toggleAdvisory(){ var b=document.getElementById('advisory-body'),t=document.getElementById('advisory-toggle'),c=document.getElementById('advisory-chevron'); b.classList.toggle('open');t.classList.toggle('open');c.classList.toggle('open'); }
+function downloadICS(summary,dateStr,description,url){
+  var end=String(Number(dateStr)+1);
+  var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Turnpage Digital Markets//Fraud Recovery//EN','BEGIN:VEVENT','DTSTART;VALUE=DATE:'+dateStr,'DTEND;VALUE=DATE:'+end,'SUMMARY:'+summary,'DESCRIPTION:'+(description||'').replace(/\n/g,'\\n'),url?'URL:'+url:'','END:VEVENT','END:VCALENDAR'].filter(Boolean).join('\r\n');
+  var b=new Blob([ics],{type:'text/calendar'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=summary.replace(/[^a-zA-Z0-9]/g,'_')+'.ics';a.click();
+}
+function copyLinkedIn(){
+  var text=document.getElementById('linkedin-post').textContent;
+  var used=document.getElementById('li-used-cb').checked;
+  if(used){text+='\n\n---\nLINKEDIN PREFERENCE SIGNAL\nI used the following post as-is (or with minor edits). Please save it to linkedin-post-preferences.json approved_posts[] with style_signals.\n\nPost text:\n'+document.getElementById('linkedin-post').textContent;}
+  navigator.clipboard.writeText(text).then(function(){
+    var el=document.getElementById('li-copied');el.classList.add('visible');setTimeout(function(){el.classList.remove('visible');},3000);
+    if(used) document.getElementById('li-learn-msg').classList.add('visible');
+  });
+}
+function sendLiFeedback(){
+  var fb=document.getElementById('li-chat-input').value.trim(); if(!fb)return;
+  var block='LINKEDIN POST ADJUSTMENT REQUEST\n\nCurrent post:\n'+document.getElementById('linkedin-post').textContent+'\n\nRequested changes:\n'+fb;
+  navigator.clipboard.writeText(block).then(function(){document.getElementById('li-chat-input').value='';document.getElementById('li-chat-input').placeholder='Copied! Paste into Claude.';});
+}
+function toggleUsed(){ var cb=document.getElementById('li-used-cb'); cb.checked=!cb.checked; }
+</script>
+</body>
+</html>

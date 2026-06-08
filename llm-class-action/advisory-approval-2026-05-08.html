@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advisory Proposals — May 8, 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; color: #0A0A0A; background: #f5f5f7; padding: 24px; }
+    .container { max-width: 700px; margin: 0 auto; }
+    .header { background: #FFFFFF; border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; border: 1px solid rgba(10,10,10,0.08); display: flex; justify-content: space-between; align-items: center; }
+    .header-title { font-weight: 700; font-size: 16px; }
+    .header-sub { color: #666; font-size: 12px; margin-top: 3px; }
+    .header-actions { display: flex; gap: 8px; }
+    .btn-sm { font-size: 11px; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(10,10,10,0.14); background: #FFFFFF; cursor: pointer; font-family: inherit; color: rgba(10,10,10,0.7); }
+    .btn-sm:hover { background: #F4F5F7; }
+    .briefing-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+    .briefing-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); margin-bottom: 10px; }
+    .briefing-text { font-size: 13px; line-height: 1.65; color: #222; }
+    .briefing-text a { color: #0A0A0A; text-decoration: none; border-bottom: 1px solid #bfdbfe; }
+    .briefing-text a:hover { border-bottom-color: #0A0A0A; }
+    .linkedin-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+    .linkedin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .linkedin-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); }
+    .btn-copy-li { font-size: 11px; padding: 4px 12px; border-radius: 6px; border: 1px solid #0a66c2; background: #FFFFFF; cursor: pointer; font-family: inherit; color: #0a66c2; font-weight: 600; }
+    .btn-copy-li:hover { background: rgba(212,255,0,0.10); }
+    .linkedin-post { font-size: 12.5px; line-height: 1.65; color: rgba(10,10,10,0.78); white-space: pre-wrap; background: #E5E7EB; border-radius: 8px; padding: 14px 16px; border: 1px solid rgba(10,10,10,0.08); cursor: text; user-select: text; }
+    .li-copied { display: none; color: #0A0A0A; font-size: 11px; margin-left: 8px; font-weight: 600; }
+    .li-copied.visible { display: inline; }
+    .section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); margin-bottom: 10px; padding-left: 2px; }
+    .section { margin-bottom: 20px; }
+    .card { display: flex; gap: 12px; padding: 14px 16px; background: #FFFFFF; border-radius: 10px; border: 1.5px solid rgba(10,10,10,0.08); margin-bottom: 8px; cursor: pointer; transition: border-color 0.15s, background 0.15s; user-select: none; }
+    .card:hover { border-color: #D4FF00; }
+    .card.checked { border-color: #3b82f6; background: rgba(212,255,0,0.10); }
+    .card input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; width: 15px; height: 15px; cursor: pointer; accent-color: #3b82f6; }
+    .card-body { min-width: 0; flex: 1; }
+    .card-title { font-weight: 600; color: #0A0A0A; line-height: 1.4; text-decoration: none; }
+    .card-title:hover { text-decoration: underline; }
+    .card-meta { color: rgba(10,10,10,0.45); font-size: 11px; margin-top: 4px; }
+    .card-text { color: #444; font-size: 12px; margin-top: 6px; line-height: 1.55; }
+    .card-text strong { color: #0A0A0A; }
+    .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 4px; margin-left: 8px; vertical-align: middle; flex-shrink: 0; }
+    .tag-legal { background: #dbeafe; color: #0A0A0A; }
+    .tag-policy { background: #f3e8ff; color: #7c3aed; }
+    .tag-breaking { background: #fee2e2; color: #dc2626; }
+    .tag-data { background: #dcfce7; color: #0A0A0A; }
+    .tag-urgent { background: #fef3c7; color: #92400e; }
+    .tag-analysis { background: #D5D9DF; color: #475569; }
+    .tag-doctrine { background: #e0e7ff; color: #4338ca; }
+    .tag-settlement { background: #ecfdf5; color: #065f46; }
+    .footer { background: #FFFFFF; border-radius: 12px; padding: 16px 20px; border: 1.5px solid rgba(10,10,10,0.08); transition: border-color 0.2s, background 0.2s; margin-top: 4px; }
+    .footer.has-selection { border-color: #22c55e; background: #f0fdf4; }
+    .footer-status { font-weight: 600; font-size: 13px; color: rgba(10,10,10,0.7); }
+    .footer.has-selection .footer-status { color: #0A0A0A; }
+    .footer-detail { font-size: 11px; color: #6b7280; margin-top: 4px; }
+    .footer.has-selection .footer-detail { color: #166534; }
+    .btn-copy { margin-top: 12px; display: none; background: #3b82f6; color: #FFFFFF; border: none; border-radius: 7px; padding: 8px 18px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit; }
+    .btn-copy:hover { background: #0A0A0A; }
+    .btn-copy.visible { display: inline-block; }
+    .copied-msg { display: none; color: #0A0A0A; font-size: 12px; margin-left: 10px; font-weight: 600; }
+    .copied-msg.visible { display: inline; }
+  /* Turnpage brand patch v3 ===================================== */
+  body { font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
+  h1 { letter-spacing: -0.02em; font-weight: 800; }
+
+  /* ----- Section eyebrow headings (h2): neon bar prefix, no underline */
+  section h2 {
+    border-bottom: none !important;
+    padding: 4px 0 4px 1.8em !important;
+    position: relative;
+    letter-spacing: 0.22em !important;
+    font-weight: 700 !important;
+    font-size: 0.78rem !important;
+    text-transform: uppercase !important;
+    margin: 0 0 14px !important;
+  }
+  section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 1.4em;
+    height: 0.18em;
+    background: #D4FF00;
+    border-radius: 2px;
+  }
+  section h2 .pill { margin-left: 8px; }
+
+  /* ----- NAV: dark by default; light theme overrides explicitly */
+  .tn { background: #000000; border-bottom-color: rgba(255,255,255,0.12); }
+  .tn-brand { color: #FFFFFF; text-decoration: none !important; }
+  .tn-brand:hover { color: #D4FF00; }
+  .tn-date { color: rgba(255,255,255,0.6); }
+  .tn-pill { color: rgba(255,255,255,0.7); text-decoration: none !important; background: transparent; border: 1px solid transparent; }
+  .tn-pill:hover { color: #FFFFFF; background: rgba(255,255,255,0.06); }
+  .tn-pill.active { color: #D4FF00; background: rgba(212,255,0,0.12); border-color: rgba(212,255,0,0.45); }
+  #theme-toggle { border-color: rgba(255,255,255,0.25); color: inherit; }
+
+  [data-theme="light"] .tn { background: #FFFFFF !important; border-bottom-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .tn-brand { color: #0A0A0A !important; }
+  [data-theme="light"] .tn-brand:hover { color: #0A0A0A !important; text-decoration: underline !important; text-decoration-color: #D4FF00 !important; text-decoration-thickness: 2px !important; }
+  [data-theme="light"] .tn-date { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] .tn-pill { color: rgba(10,10,10,0.65) !important; }
+  [data-theme="light"] .tn-pill:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; }
+  [data-theme="light"] .tn-pill.active { color: #0A0A0A !important; background: #D4FF00 !important; border-color: #D4FF00 !important; font-weight: 700 !important; }
+  [data-theme="light"] #theme-toggle { border-color: rgba(10,10,10,0.14) !important; color: #0A0A0A !important; }
+
+  /* ----- LIGHT THEME: white-led look, paper only for the Refine subtab */
+  [data-theme="light"] body { background: #FFFFFF !important; color: #0A0A0A !important; }
+  [data-theme="light"] header { background: #FFFFFF !important; border-bottom: 1px solid rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] main { background: #FFFFFF; }
+  [data-theme="light"] footer { background: #FFFFFF !important; border-top: 1px solid rgba(10,10,10,0.08) !important; color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  [data-theme="light"] .card { background: #FFFFFF !important; border-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .card.canonical { box-shadow: 0 1px 3px rgba(10,10,10,0.06) !important; border-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] th { color: rgba(10,10,10,0.45) !important; border-bottom-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] td { border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] td .matter-name { color: #0A0A0A !important; }
+  [data-theme="light"] td .court { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] td .status { color: rgba(10,10,10,0.78) !important; }
+  [data-theme="light"] section h2 { color: #0A0A0A !important; }
+  [data-theme="light"] ul.qlist li { color: rgba(10,10,10,0.78) !important; border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] ul.qlist li strong { color: #0A0A0A !important; }
+  [data-theme="light"] header .date, [data-theme="light"] header .meta, [data-theme="light"] .subtitle, [data-theme="light"] .header-left .date { color: rgba(10,10,10,0.55) !important; }
+
+  /* ----- Refine subtab full-width card */
+  body.refine-page { background: #0A0A0A; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  .refine-box { border-top: none !important; }
+
+  /* ----- Body links (in main content only): subtle accents */
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  [data-theme="light"] main p a, [data-theme="light"] main .qlist a, [data-theme="light"] main .advisory-list a, [data-theme="light"] .advisory-body a, [data-theme="light"] .briefing-block a {
+    color: #0A0A0A;
+    text-decoration-color: rgba(212,255,0,0.85);
+  }
+  [data-theme="light"] main p a:hover, [data-theme="light"] main .qlist a:hover, [data-theme="light"] main .advisory-list a:hover, [data-theme="light"] .advisory-body a:hover, [data-theme="light"] .briefing-block a:hover {
+    background: rgba(212,255,0,0.30);
+  }
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a { color: #D4FF00; text-decoration-color: rgba(212,255,0,0.55); }
+
+  /* ----- Tables: subtle hover */
+  tbody tr:hover { background: rgba(255,255,255,0.03) !important; }
+  [data-theme="light"] tbody tr:hover { background: rgba(10,10,10,0.025) !important; }
+
+  /* ----- Canonical / seed pills (outlined) */
+  .canonical-pill, .seed-pill { background: rgba(212,255,0,0.12) !important; color: #D4FF00 !important; border: 1px solid rgba(212,255,0,0.45) !important; border-radius: 99px !important; }
+  [data-theme="light"] .canonical-pill, [data-theme="light"] .seed-pill { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+  .degraded-pill { border-radius: 99px !important; }
+
+  /* ----- SQUARE BUTTONS — Turnpage three styles */
+  /* Primary (.btn-primary, .dashboard-btn, .open-btn, .btn-copy): ink bg + white text + neon arrow */
+  .dashboard-btn, .open-btn, .btn-copy,
+  .approval-btn, .btn-cal, .btn-send-feedback {
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+    padding: 10px 18px !important;
+    font-family: 'Archivo', -apple-system, sans-serif !important;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  /* PRIMARY (dashboard-btn, open-btn): ink bg + white text */
+  .dashboard-btn, .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border: 1px solid #0A0A0A !important; }
+  .dashboard-btn:hover, .open-btn:hover { background: #16161B !important; border-color: #16161B !important; }
+  [data-theme="light"] .dashboard-btn, [data-theme="light"] .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border-color: #0A0A0A !important; }
+  [data-theme="light"] .dashboard-btn:hover, [data-theme="light"] .open-btn:hover { background: #16161B !important; }
+
+  /* GHOST (approval-btn, btn-cal, .btn-send-feedback, .btn-refine-secondary): outlined */
+  .approval-btn { background: transparent !important; color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .approval-btn:hover { background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .approval-btn { background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; }
+  [data-theme="light"] .approval-btn:hover { background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  .btn-cal, .btn-send-feedback {
+    background: transparent !important;
+    color: #0A0A0A !important;
+    border: 1px solid #0A0A0A !important;
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+  }
+  .btn-cal:hover, .btn-send-feedback:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-cal, [data-theme="dark"] .btn-send-feedback { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-cal:hover, [data-theme="dark"] .btn-send-feedback:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* NEON CTA (btn-copy, btn-refine): solid neon bg + ink text */
+  .btn-copy { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; }
+  .btn-copy:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; border-radius: 0 !important; font-weight: 700 !important; padding: 11px 20px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-refine:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine-secondary { border-radius: 0 !important; padding: 11px 16px !important; font-weight: 600 !important; font-family: 'Archivo', sans-serif !important; background: transparent !important; color: rgba(255,255,255,0.7) !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .btn-refine-secondary:hover { color: #FFFFFF !important; background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .btn-refine-secondary { color: rgba(10,10,10,0.65) !important; border-color: rgba(10,10,10,0.4) !important; }
+  [data-theme="light"] .btn-refine-secondary:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  /* Btn-sm (used on approval HTML header bar) → ghost-style */
+  .btn-sm { border-radius: 0 !important; font-weight: 600 !important; background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; padding: 6px 12px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-sm:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-sm { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-sm:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* Refine status */
+  .refine-status { color: #D4FF00 !important; }
+  [data-theme="light"] .refine-status { color: #0A0A0A !important; }
+
+  /* Doctrine pills */
+  .pill.doctrine { border-color: rgba(212,255,0,0.45) !important; color: #D4FF00 !important; background: rgba(212,255,0,0.12) !important; }
+  [data-theme="light"] .pill.doctrine { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+
+  /* Banner */
+  [data-theme="light"] .banner { background: #F4F5F7 !important; border-left-color: #D4FF00 !important; color: rgba(10,10,10,0.78) !important; }
+
+  /* Advisory toggle (light/dark): square corners, ghost-style border treatment */
+  .advisory-toggle { border-radius: 0 !important; }
+  .advisory-toggle.open { border-radius: 0 !important; }
+  .advisory-body { border-radius: 0 !important; }
+  .briefing-block, .dates-block, .linkedin-block, .disclaimer { border-radius: 0 !important; }
+
+  /* The view (subnav) row: subtle visual indent + breathing room */
+  .tn-row:nth-of-type(3) { padding-top: 6px; gap: 22px; }
+
+  /* View pills: NOT pills — plain text links with active neon underline */
+  .tn-pill.view {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4px 0 !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,0.55) !important;
+    letter-spacing: 0.01em;
+    transition: color 0.12s, border-bottom-color 0.12s;
+  }
+  .tn-pill.view:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+  }
+  .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    padding-bottom: 4px !important;
+  }
+  [data-theme="light"] .tn-pill.view {
+    color: rgba(10,10,10,0.55) !important;
+  }
+  [data-theme="light"] .tn-pill.view:hover {
+    background: transparent !important;
+    color: #0A0A0A !important;
+  }
+  [data-theme="light"] .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #0A0A0A !important;
+    font-weight: 700 !important;
+  }
+
+
+  /* --- Turnpage logo in brand strip ------------------- */
+  .tn-brand { display: inline-flex; align-items: center; gap: 0; }
+  .tn-brand-logo { height: 18px; width: auto; vertical-align: middle; transition: filter 0.15s; filter: invert(1) brightness(2); }
+  /* On LIGHT theme, the logo is already black — no invert needed */
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { font-weight: 700; letter-spacing: -0.01em; }
+    /* Original is black-on-white JPEG. In dark theme we invert to get white-on-black. */
+    filter: invert(1);
+  }
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { display: none; } /* legacy text — replaced by product label on tab row */
+  .tn-brand:hover .tn-brand-logo { opacity: 0.85; }
+  [data-theme="light"]
+
+  /* Tab row: align product label + tabs horizontally with a vertical divider between them */
+  .tn-row:nth-of-type(2) {
+    align-items: center;
+    padding: 8px 0;
+  }
+  [data-theme="light"]
+
+  /* Brand row: logo on left, meta (date + toggle) on right */
+  .tn-row.brand { padding-bottom: 8px !important; }
+
+  /* Slight arrow indicator on tab pill suggesting dropdown */
+  .tn-tab > .tn-pill::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55;
+    vertical-align: 2px;
+  }/* ====== MASTER PATCH START — do not edit between sentinels ====== */
+
+  /* === Polestar-style full-width dropdowns === */
+  .tn { position: relative; }
+  .tn-tabs-row { gap: clamp(0.4rem, 1vw, 0.8rem); }
+  .tn-tab { position: static; display: inline-block; padding-bottom: 12px; margin-bottom: -12px; }
+  .tn-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: -10px;
+    background: #D4FF00;
+    border-bottom: 1px solid rgba(10,10,10,0.12);
+    box-shadow: 0 14px 28px rgba(10,10,10,0.10);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0s 0.25s;
+    pointer-events: none;
+  }
+  [data-theme="dark"] .tn-dropdown {
+    background: #D4FF00;
+    border-bottom-color: rgba(10,10,10,0.18);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.5);
+  }
+  .tn-tab:hover .tn-dropdown, .tn-tab:focus-within .tn-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0s 0s;
+    pointer-events: auto;
+  }
+  .tn-dd-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(1.8rem, 3vw, 2.8rem) clamp(1.25rem, 3vw, 2.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+    background: #D4FF00;
+  }
+  .tn-dd-eyebrow {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #0A0A0A; margin: 0 0 0.8rem 0;
+  }
+  .tn-dd-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800; font-size: clamp(1.4rem, 2vw, 1.75rem);
+    line-height: 1.15; letter-spacing: -0.02em;
+    color: #0A0A0A; margin: 0 0 0.9rem 0;
+  }
+  .tn-dd-body {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; color: #0A0A0A;
+    line-height: 1.55; max-width: 460px; margin: 0;
+  }
+  .tn-dd-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+  .tn-dd-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; font-weight: 600;
+    color: #0A0A0A !important; background: transparent !important;
+    border: none !important; border-radius: 0 !important; padding: 4px 0 !important;
+    display: inline-flex !important; align-items: center;
+    text-decoration: none !important;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .tn-dd-link:hover { color: rgba(10,10,10,0.55) !important; background: transparent !important; }
+  .tn-dd-link.active span { border-bottom: 2px solid #0A0A0A; padding-bottom: 1px; }
+  .tn-dd-col-cta { align-self: center; }
+  .tn-dd-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    color: #FFFFFF !important; background: #0A0A0A !important;
+    padding: 0.9rem 1.4rem; letter-spacing: 0.02em;
+    text-decoration: none !important;
+    border: none !important; border-radius: 0 !important;
+    transition: background 0.2s, gap 0.2s;
+  }
+  .tn-dd-cta:hover { background: #222 !important; gap: 12px; }
+  .tn-dd-cta svg { stroke: #D4FF00 !important; }
+  .tn-tab > .tn-pill::after { display: none; }
+  .tn-row.brand > .tn-date { display: none !important; }
+
+  /* === Logo size consistency === */
+  .tn-brand-logo { height: 36px !important; }
+
+  /* === Bigger, more readable tab names === */
+  .tn-pill {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    padding: 9px 18px !important;
+    letter-spacing: 0.005em !important;
+    gap: 6px !important;
+    border-radius: 0 !important;
+  }
+  .tn-pill.active { font-weight: 700 !important; }
+
+  /* === Neon active tab; hover any tab = neon === */
+  .tn-pill.active,
+  [data-theme="light"] .tn-pill.active,
+  [data-theme="dark"] .tn-pill.active {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  .tn-pill:hover,
+  [data-theme="light"] .tn-pill:hover,
+  [data-theme="dark"] .tn-pill:hover {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  /* Active tab dims when another tab is hovered */
+  .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(10,10,10,0.06) !important;
+    color: rgba(10,10,10,0.55) !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+  }
+  [data-theme="dark"] .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(255,255,255,0.06) !important;
+    color: rgba(255,255,255,0.55) !important;
+    border: 1px solid transparent !important;
+  }
+  /* Active tab not clickable */
+  .tn-pill.active { cursor: default !important; pointer-events: none !important; }
+
+  /* === src-arrow: light gray bg (not neon) === */
+  .src-arrow {
+    background: rgba(10,10,10,0.08) !important;
+    color: #0A0A0A !important;
+  }
+  .src-arrow:hover { background: rgba(10,10,10,0.16) !important; }
+  [data-theme="dark"] .src-arrow {
+    background: rgba(229,231,235,0.10) !important;
+    color: #E5E7EB !important;
+  }
+  [data-theme="dark"] .src-arrow:hover { background: rgba(229,231,235,0.20) !important; }
+
+  /* === Tooltip overflow fix === */
+  .col-left .src-tooltip {
+    width: 300px !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-left .src-tooltip::after {
+    left: 14px !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip {
+    width: 300px !important;
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip::after {
+    left: auto !important;
+    right: 14px !important;
+    transform: none !important;
+  }
+  .src-tooltip { max-width: calc(100vw - 32px); }
+
+  /* === Remove eyebrow neon bars === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+  /* === Byline + multi-column body === */
+  .briefing-body .byline {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    margin: 0 0 24px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink-20);
+    flex-wrap: wrap;
+  }
+  .briefing-body .byline .byline-desk {
+    font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink);
+  }
+  .briefing-body .byline .byline-time,
+  .briefing-body .byline .byline-date {
+    font-size: 12px; color: var(--ink-60); font-style: italic;
+  }
+  .briefing-body .prose {
+    column-count: 2;
+    column-gap: 36px;
+    column-rule: 1px solid var(--line);
+  }
+  .briefing-body .prose p {
+    break-inside: avoid-column;
+    margin: 0 0 16px;
+  }
+  .briefing-body .prose p:first-of-type { margin-top: 0; }
+  @media (max-width: 880px) {
+    .briefing-body .prose { column-count: 1; }
+  }
+
+/* ====== MASTER PATCH END ====== */
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div>
+      <div class="header-title">Advisory Proposals</div>
+      <div class="header-sub">May 8, 2026 &nbsp;&middot;&nbsp; Check items to approve, copy selections, paste to Claude</div>
+    </div>
+    <div class="header-actions">
+      <button class="btn-sm" onclick="selectAll()">Select all</button>
+      <button class="btn-sm" onclick="clearAll()">Clear all</button>
+    </div>
+  </div>
+
+  <div class="briefing-block">
+    <div class="briefing-label">Today's Briefing</div>
+    <div class="briefing-text">
+      Six days before the Bartz v. Anthropic fairness hearing, five major publishers &mdash; Elsevier, Cengage, Hachette, Macmillan, and McGraw Hill &mdash; joined Scott Turow in filing a <a href="https://publishers.org/news/publishers-and-authors-file-class-action-lawsuit-against-meta-and-zuckerberg-for-willful-copyright-infringement-to-develop-llama-ai-models/">class action against Meta and Zuckerberg personally</a> in S.D.N.Y., alleging Meta torrented 267 TB of pirated material from LibGen and Anna's Archive with the CEO's personal authorization, after abandoning a $200M licensing budget. The complaint tracks the Bartz pirated-copy liability theory and distinguishes itself from the dismissed <a href="https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026">Kadrey v. Meta</a> action by foregrounding input-side reproduction rather than output-side similarity. The <a href="https://www.authorsalliance.org/2026/04/14/bartz-v-anthropic-settlement-update-new-date-and-time-for-the-fairness-hearing-you-can-join-online-and-unsealed-objections/">fairness hearing</a> for the $1.5B settlement proceeds May 14 with the 91.3% claim rate (440,490 works) and the Thomson Reuters v. Ross <a href="https://chatgptiseatingtheworld.com/2026/04/14/third-circuit-sets-oral-argument-on-june-11-for-1st-appeal-of-decision-on-fair-use-in-ai-training-case-follows-another-recent-third-circuit-decision-on-fair-use-in-american-society-for-testing-v-upc/">Third Circuit oral argument</a> set for June 11.
+    </div>
+  </div>
+
+  <div class="linkedin-block">
+    <div class="linkedin-header">
+      <div class="linkedin-label">Auto-Generated LinkedIn Post</div>
+      <div>
+        <button class="btn-copy-li" onclick="copyLinkedIn()">Copy post</button>
+        <span class="li-copied" id="li-copied">&check; Copied!</span>
+      </div>
+    </div>
+    <div class="linkedin-post" id="linkedin-post">Five of the world's largest publishers just sued Meta and Mark Zuckerberg personally for AI copyright infringement — six days before the $1.5 billion Bartz v. Anthropic fairness hearing.
+
+The complaint alleges Meta torrented 267 TB of pirated books from LibGen and Anna's Archive to train Llama, after Zuckerberg personally authorized abandoning a $200M licensing budget in April 2023.
+
+Why it matters for the AI copyright docket:
+
+→ The pirated-copy liability theory mirrors the Bartz framework — input-side infringement, not just output similarity
+→ Internal communications showing a deliberate choice to pirate rather than license will reshape discovery priorities in every pending case
+→ The fairness hearing for the largest copyright settlement in U.S. history is May 14 — with 440,490 works claimed (91.3% rate)
+→ The Third Circuit hears the first appellate AI fair-use argument June 11 in Thomson Reuters v. Ross
+
+Class members: verify your claim status at anthropiccopyrightsettlement.com before the hearing.
+
+#Copyright #AILitigation #ClassAction #FairUse #GenerativeAI</div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Proposed News Articles (5)</div>
+
+    <div class="card" id="card-a1" onclick="toggle('a1')">
+      <input type="checkbox" id="a1" onclick="event.stopPropagation(); toggle('a1')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://publishers.org/news/publishers-and-authors-file-class-action-lawsuit-against-meta-and-zuckerberg-for-willful-copyright-infringement-to-develop-llama-ai-models/" target="_blank" onclick="event.stopPropagation()">Publishers and Authors File Class Action Against Meta and Zuckerberg for Willful Copyright Infringement</a>
+          <span class="tag tag-breaking">Breaking</span>
+        </div>
+        <div class="card-meta">Association of American Publishers &nbsp;&middot;&nbsp; May 5, 2026</div>
+        <div class="card-text">Five major publishers + Scott Turow file S.D.N.Y. class action alleging Meta torrented 267 TB from LibGen/Anna's Archive with Zuckerberg's personal authorization. Seeks statutory damages under 17 U.S.C. &sect; 504(c), permanent injunction, and destruction of infringing copies.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-a2" onclick="toggle('a2')">
+      <input type="checkbox" id="a2" onclick="event.stopPropagation(); toggle('a2')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://www.npr.org/2026/05/05/nx-s1-5812623/scott-turow-meta-lawsuit" target="_blank" onclick="event.stopPropagation()">Scott Turow, Macmillan, McGraw Hill Sue Meta for AI Copyright Infringement</a>
+          <span class="tag tag-legal">Legal</span>
+        </div>
+        <div class="card-meta">NPR &nbsp;&middot;&nbsp; May 5, 2026</div>
+        <div class="card-text">Detailed reporting on the complaint's factual allegations including Meta's decision to stop licensing and Zuckerberg's personal role. Notes $1.5B Bartz settlement as precedent and Meta's fair-use defense — setting up the clash between input-side piracy and output-side fair use.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-a3" onclick="toggle('a3')">
+      <input type="checkbox" id="a3" onclick="event.stopPropagation(); toggle('a3')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://fortune.com/2026/05/05/james-patterson-mark-zuckerberg-authorized-copyright-infringement-meta-book-lawsuit/" target="_blank" onclick="event.stopPropagation()">James Patterson, Biden Publishers Say Zuckerberg 'Personally Authorized' Copyright Infringement</a>
+          <span class="tag tag-legal">Legal</span>
+        </div>
+        <div class="card-meta">Fortune &nbsp;&middot;&nbsp; May 5, 2026</div>
+        <div class="card-text">Fortune reports Zuckerberg named individually with internal communications showing verbal instructions to cease licensing. The personal-liability theory against a CEO is novel in AI copyright litigation and raises D&amp;O exposure for other AI companies.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-a4" onclick="toggle('a4')">
+      <input type="checkbox" id="a4" onclick="event.stopPropagation(); toggle('a4')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://www.authorsalliance.org/2026/04/14/bartz-v-anthropic-settlement-update-new-date-and-time-for-the-fairness-hearing-you-can-join-online-and-unsealed-objections/" target="_blank" onclick="event.stopPropagation()">Bartz v. Anthropic Settlement Update: Fairness Hearing, Unsealed Objections</a>
+          <span class="tag tag-settlement">Settlement</span>
+        </div>
+        <div class="card-meta">Authors Alliance &nbsp;&middot;&nbsp; April 14, 2026</div>
+        <div class="card-text">Comprehensive hearing-logistics guide and unsealed-objections catalogue. Five objection themes: foreign-work exclusion, publisher-author allocation, notice deficiencies, per-work compensation adequacy, class-counsel conflicts. Hearing May 14, 2:00 p.m. PT with Zoom.</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-a5" onclick="toggle('a5')">
+      <input type="checkbox" id="a5" onclick="event.stopPropagation(); toggle('a5')" />
+      <div class="card-body">
+        <div>
+          <a class="card-title" href="https://www.hachettebookgroup.com/articles/publishers-and-authors-file-class-action-lawsuit-against-meta-and-zuckerberg-for-willful-copyright-infringement-to-develop-llama-ai-models/" target="_blank" onclick="event.stopPropagation()">Publishers and Authors File Class Action Against Meta &mdash; Hachette Statement</a>
+          <span class="tag tag-breaking">Breaking</span>
+        </div>
+        <div class="card-meta">Hachette Book Group &nbsp;&middot;&nbsp; May 5, 2026</div>
+        <div class="card-text">Publisher's own statement detailing scope of alleged infringement &mdash; Meta downloaded material "many times the size of the entire print collection of the Library of Congress." Underscores the industry's coordinated enforcement strategy following the Bartz settlement.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Proposed Tracker Updates (11)</div>
+
+    <div class="card" id="card-t1" onclick="toggle('t1')">
+      <input type="checkbox" id="t1" onclick="event.stopPropagation(); toggle('t1')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">AI IP Litigation Tracker &rsaquo; Header &rsaquo; 2026 Updates Column</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> 2026 Updates (as of May 7, 2026)</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> 2026 Updates (as of May 8, 2026)</div>
+        <div class="card-meta" style="margin-top:6px;">Source: Date roll</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t2" onclick="toggle('t2')">
+      <input type="checkbox" id="t2" onclick="event.stopPropagation(); toggle('t2')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">AI IP Litigation Tracker &rsaquo; Bartz v. Anthropic &rsaquo; 2026 Updates</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> [2026-05-07]: Fairness hearing now 7 days away (May 14, 2:00 p.m. PT)...</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> [2026-05-08]: Fairness hearing 6 days away. Five major publishers + Scott Turow file class action against Meta/Zuckerberg (S.D.N.Y., May 5)...</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://www.npr.org/2026/05/05/nx-s1-5812623/scott-turow-meta-lawsuit" target="_blank" onclick="event.stopPropagation()">NPR</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t3" onclick="toggle('t3')">
+      <input type="checkbox" id="t3" onclick="event.stopPropagation(); toggle('t3')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">AI IP Litigation Tracker &rsaquo; Kadrey v. Meta &rsaquo; 2026 Updates</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> [2026-04-28]: Cox v. Sony Music (SCOTUS, Mar 25) heightens bar for contributory liability...</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> Prepend [2026-05-08]: Five major publishers + Turow file new S.D.N.Y. class action against Meta (May 5), with internal evidence of willful copying and abandoned licensing...</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://fortune.com/2026/05/05/james-patterson-mark-zuckerberg-authorized-copyright-infringement-meta-book-lawsuit/" target="_blank" onclick="event.stopPropagation()">Fortune</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t4" onclick="toggle('t4')">
+      <input type="checkbox" id="t4" onclick="event.stopPropagation(); toggle('t4')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">AI IP Litigation Tracker &rsaquo; NEW CASE: Elsevier et al. v. Meta Platforms</div>
+          <span class="tag tag-breaking">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> [Does not exist]</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> New row added. S.D.N.Y., May 5, 2026. Five publishers + Turow v. Meta &amp; Zuckerberg. Willful infringement. 267 TB pirated. Statutory damages + injunction sought.</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://publishers.org/news/publishers-and-authors-file-class-action-lawsuit-against-meta-and-zuckerberg-for-willful-copyright-infringement-to-develop-llama-ai-models/" target="_blank" onclick="event.stopPropagation()">AAP</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t5" onclick="toggle('t5')">
+      <input type="checkbox" id="t5" onclick="event.stopPropagation(); toggle('t5')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Ranked by Alleged Damages &rsaquo; Bartz v. Anthropic &rsaquo; Notes</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> [2026-05-07]: Fairness hearing 7 days away (May 14). $600M funded. TR v. Ross oral arg. set June 11.</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> [2026-05-08]: Fairness hearing 6 days away (May 14). $600M funded. New Meta publisher suit (May 5) strengthens settlement comparators...</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://www.npr.org/2026/05/05/nx-s1-5812623/scott-turow-meta-lawsuit" target="_blank" onclick="event.stopPropagation()">NPR</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t6" onclick="toggle('t6')">
+      <input type="checkbox" id="t6" onclick="event.stopPropagation(); toggle('t6')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Ranked by Alleged Damages &rsaquo; NEW: Elsevier et al. v. Meta</div>
+          <span class="tag tag-breaking">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> [Does not exist]</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> New row. Statutory damages up to $150K/work (willful). Filed May 5, 2026. Zuckerberg named personally.</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://www.npr.org/2026/05/05/nx-s1-5812623/scott-turow-meta-lawsuit" target="_blank" onclick="event.stopPropagation()">NPR</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t7" onclick="toggle('t7')">
+      <input type="checkbox" id="t7" onclick="event.stopPropagation(); toggle('t7')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Landscape Summary &rsaquo; Title &rsaquo; Date</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> as of May 7, 2026</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> as of May 8, 2026</div>
+        <div class="card-meta" style="margin-top:6px;">Source: Date roll</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t8" onclick="toggle('t8')">
+      <input type="checkbox" id="t8" onclick="event.stopPropagation(); toggle('t8')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Landscape Summary &rsaquo; Total copyright lawsuits</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> 70+</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> 75+</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://publishers.org/news/publishers-and-authors-file-class-action-lawsuit-against-meta-and-zuckerberg-for-willful-copyright-infringement-to-develop-llama-ai-models/" target="_blank" onclick="event.stopPropagation()">AAP</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t9" onclick="toggle('t9')">
+      <input type="checkbox" id="t9" onclick="event.stopPropagation(); toggle('t9')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Landscape Summary &rsaquo; 2026 Developments header</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> as of May 7, 2026</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> as of May 8, 2026</div>
+        <div class="card-meta" style="margin-top:6px;">Source: Date roll</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t10" onclick="toggle('t10')">
+      <input type="checkbox" id="t10" onclick="event.stopPropagation(); toggle('t10')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Landscape Summary &rsaquo; Total Active U.S. Cases</div>
+          <span class="tag tag-settlement">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> Estimated 70+ federal copyright cases as of May 7, 2026...</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> Estimated 75+ federal copyright cases as of May 8, 2026, with new publisher class action v. Meta (May 5) the latest major filing.</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://publishers.org/news/publishers-and-authors-file-class-action-lawsuit-against-meta-and-zuckerberg-for-willful-copyright-infringement-to-develop-llama-ai-models/" target="_blank" onclick="event.stopPropagation()">AAP</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="card-t11" onclick="toggle('t11')">
+      <input type="checkbox" id="t11" onclick="event.stopPropagation(); toggle('t11')" />
+      <div class="card-body">
+        <div>
+          <div class="card-title" style="color:#0A0A0A; cursor:default;">Landscape Summary &rsaquo; NEW: Elsevier et al. v. Meta — Publisher Class Action</div>
+          <span class="tag tag-breaking">Tracker</span>
+        </div>
+        <div class="card-text"><strong>Currently:</strong> [Does not exist]</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> New development row added. Five publishers + Turow file S.D.N.Y. class action. 267 TB pirated. Zuckerberg named personally. $200M licensing abandoned April 2023.</div>
+        <div class="card-meta" style="margin-top:6px;">Source: <a href="https://www.npr.org/2026/05/05/nx-s1-5812623/scott-turow-meta-lawsuit" target="_blank" onclick="event.stopPropagation()">NPR</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Proposed Site Updates (2)</div>
+
+    <div class="card" id="card-s1" onclick="toggle('s1')">
+      <input type="checkbox" id="s1" onclick="event.stopPropagation(); toggle('s1')" />
+      <div class="card-body">
+        <div class="card-title" style="color:#0A0A0A; cursor:default;">Alert Banner</div>
+        <div class="card-text"><strong>Currently:</strong> Fairness hearing: May 14, 2026, 2:00 p.m. PT (7 days). $600M of $1.5B funded. Claims closed &mdash; 91.3% claim rate. Thomson Reuters v. Ross oral argument set June 11.</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> Fairness hearing: May 14, 2026, 2:00 p.m. PT (6 days). $600M of $1.5B funded. Claims closed &mdash; 91.3% claim rate. NEW: Five major publishers + Scott Turow sue Meta &amp; Zuckerberg (S.D.N.Y., May 5).</div>
+      </div>
+    </div>
+
+    <div class="card" id="card-s2" onclick="toggle('s2')">
+      <input type="checkbox" id="s2" onclick="event.stopPropagation(); toggle('s2')" />
+      <div class="card-body">
+        <div class="card-title" style="color:#0A0A0A; cursor:default;">Case Matrix</div>
+        <div class="card-text"><strong>Currently:</strong> No entry for Elsevier et al. v. Meta.</div>
+        <div class="card-text" style="margin-top:5px;"><strong>Proposed:</strong> Add new entry: Elsevier et al. v. Meta Platforms, Inc. (S.D.N.Y., filed May 5, 2026). Five major publishers + Scott Turow. Class action. Willful infringement. Zuckerberg named personally.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer" id="footer">
+    <div class="footer-status" id="footer-status">No items selected.</div>
+    <div class="footer-detail" id="footer-detail">Check proposals above, then click "Copy Selections" and paste into Claude.</div>
+    <div>
+      <button class="btn-copy" id="btn-copy" onclick="copySelections()">&#x1F4CB; Copy Selections</button>
+      <span class="copied-msg" id="copied-msg">&check; Copied! Paste into Claude.</span>
+    </div>
+  </div>
+
+</div>
+<script>
+  const state = {
+    a1: false, a2: false, a3: false, a4: false, a5: false,
+    t1: false, t2: false, t3: false, t4: false, t5: false, t6: false, t7: false, t8: false, t9: false, t10: false, t11: false,
+    s1: false, s2: false
+  };
+  const labels = {
+    a1: "Article A1: AAP — Publishers File Class Action Against Meta",
+    a2: "Article A2: NPR — Scott Turow, Macmillan, McGraw Hill Sue Meta",
+    a3: "Article A3: Fortune — Zuckerberg 'Personally Authorized' Infringement",
+    a4: "Article A4: Authors Alliance — Bartz Settlement Fairness Hearing Update",
+    a5: "Article A5: Hachette — Publisher Statement on Meta Suit",
+    t1: "Tracker T1: AI IP Litigation Tracker > Header > 2026 Updates Column",
+    t2: "Tracker T2: AI IP Litigation Tracker > Bartz v. Anthropic > 2026 Updates",
+    t3: "Tracker T3: AI IP Litigation Tracker > Kadrey v. Meta > 2026 Updates",
+    t4: "Tracker T4: AI IP Litigation Tracker > NEW CASE: Elsevier et al. v. Meta",
+    t5: "Tracker T5: Ranked by Alleged Damages > Bartz v. Anthropic > Notes",
+    t6: "Tracker T6: Ranked by Alleged Damages > NEW: Elsevier et al. v. Meta",
+    t7: "Tracker T7: Landscape Summary > Title > Date",
+    t8: "Tracker T8: Landscape Summary > Total copyright lawsuits",
+    t9: "Tracker T9: Landscape Summary > 2026 Developments header",
+    t10: "Tracker T10: Landscape Summary > Total Active U.S. Cases",
+    t11: "Tracker T11: Landscape Summary > NEW: Elsevier et al. v. Meta development row",
+    s1: "Site Update S1: Alert Banner — countdown + Meta publisher suit",
+    s2: "Site Update S2: Case Matrix — add Elsevier et al. v. Meta"
+  };
+
+  function toggle(id) {
+    state[id] = !state[id];
+    document.getElementById(id).checked = state[id];
+    document.getElementById('card-' + id).classList.toggle('checked', state[id]);
+    updateFooter();
+  }
+  function selectAll() { Object.keys(state).forEach(id => { state[id] = true; document.getElementById(id).checked = true; document.getElementById('card-' + id).classList.add('checked'); }); updateFooter(); }
+  function clearAll() { Object.keys(state).forEach(id => { state[id] = false; document.getElementById(id).checked = false; document.getElementById('card-' + id).classList.remove('checked'); }); updateFooter(); document.getElementById('copied-msg').classList.remove('visible'); }
+  function updateFooter() {
+    const selected = Object.keys(state).filter(k => state[k]);
+    const footer = document.getElementById('footer');
+    footer.classList.toggle('has-selection', selected.length > 0);
+    document.getElementById('footer-status').textContent = selected.length ? selected.length + ' item' + (selected.length !== 1 ? 's' : '') + ' selected.' : 'No items selected.';
+    document.getElementById('footer-detail').textContent = selected.length ? selected.map(k => labels[k]).join(' · ') : 'Check proposals above, then click "Copy Selections" and paste into Claude.';
+    document.getElementById('btn-copy').classList.toggle('visible', selected.length > 0);
+    if (!selected.length) document.getElementById('copied-msg').classList.remove('visible');
+  }
+  function copySelections() {
+    const selected = Object.keys(state).filter(k => state[k]);
+    if (!selected.length) return;
+    navigator.clipboard.writeText("Apply approved:\n" + selected.map(k => "- " + labels[k]).join("\n")).then(() => { document.getElementById('copied-msg').classList.add('visible'); });
+  }
+  function copyLinkedIn() {
+    navigator.clipboard.writeText(document.getElementById('linkedin-post').textContent).then(() => {
+      const el = document.getElementById('li-copied');
+      el.classList.add('visible');
+      setTimeout(() => el.classList.remove('visible'), 3000);
+    });
+  }
+</script>
+</body>
+</html>

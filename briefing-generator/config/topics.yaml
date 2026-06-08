@@ -1,0 +1,35 @@
+topics:
+  - slug: rewind-tariffs
+    display: "Tariffs / Trade"
+    emoji: "⚖️"
+    voice: "trade-law-grade"
+    
+  - slug: llm-class-action
+    display: "LLM / Copyright"
+    emoji: "🤖"
+    voice: "litigation-grade"
+    
+  - slug: crypto-insolvency
+    display: "Crypto Insolvency"
+    emoji: "🪙"
+    voice: "restructuring-grade"
+    
+  - slug: fraud-recovery
+    display: "Ponzi / Fraud Recovery"
+    emoji: "🕵️"
+    voice: "recovery-grade"
+    
+  - slug: billion-dollar-class-actions
+    display: "$1B+ Class Actions & Mass Arbitration"
+    emoji: "💰"
+    voice: "litigation-grade"
+    
+  - slug: bankruptcy-creditor-rights
+    display: "Bankruptcy Creditor Rights"
+    emoji: "📜"
+    voice: "restructuring-grade"
+
+generation:
+  schedule: "0 14 * * *"  # 10am ET daily
+  timeout_minutes: 25
+  anthropic_model: "claude-opus"

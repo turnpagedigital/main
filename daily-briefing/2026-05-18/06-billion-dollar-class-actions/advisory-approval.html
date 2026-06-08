@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>$1B+ Class Actions — Advisory Approval | Monday, May 18, 2026</title>
+<script>
+(function(){
+  var K='daily-briefing-theme';
+  var ST=['system','light','dark'];
+  var IC={light:'☀️',dark:'🌙',system:'🖥️'};
+  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function apply(){
+    var t=localStorage.getItem(K)||'system';
+    document.documentElement.setAttribute('data-theme',eff(t));
+    var b=document.getElementById('theme-toggle');
+    if(b){b.textContent=IC[t];b.title='Theme: '+t;}
+  }
+  window.cycleTheme=function(){
+    var c=localStorage.getItem(K)||'system';
+    var n=ST[(ST.indexOf(c)+1)%ST.length];
+    localStorage.setItem(K,n);apply();
+  };
+  apply();
+  if(document.readyState!=='loading') apply();
+  else document.addEventListener('DOMContentLoaded',apply);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
+})();
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap');
+:root{color-scheme:light dark;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Archivo',-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:#E5E7EB;color:rgba(10,10,10,0.85);min-height:100vh;}
+.wrap{max-width:780px;margin:0 auto;padding:24px 18px 80px;}
+.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-top:4px;}
+.header h1{font-size:18px;font-weight:800;letter-spacing:-0.01em;}
+.header .meta{font-size:11px;color:rgba(10,10,10,0.55);margin-top:3px;}
+.section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(10,10,10,0.45);margin-bottom:6px;margin-top:14px;}
+.card-box{background:#FFFFFF;border:1px solid rgba(10,10,10,0.08);padding:18px 20px;margin-bottom:14px;}
+.card-box p{font-size:13px;line-height:1.7;color:rgba(10,10,10,0.82);margin-bottom:12px;}
+.card-box p:last-child{margin-bottom:0;}
+.card-box a{color:#0A0A0A;text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:rgba(212,255,0,0.85);text-underline-offset:2px;}
+.card-box a:hover{background:rgba(212,255,0,0.30);}
+.card-box h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#0A0A0A;margin:18px 0 10px;}
+.card-box h3:first-child{margin-top:0;}
+.advisory-toggle{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:14px 18px;background:#FFFFFF;border:1px solid rgba(10,10,10,0.08);}
+.advisory-toggle-title{font-size:13.5px;font-weight:700;color:#0A0A0A;}
+.advisory-chevron{font-size:14px;color:rgba(10,10,10,0.45);transition:transform .2s;}
+.advisory-chevron.open{transform:rotate(180deg);}
+.advisory-body{display:none;background:#FFFFFF;border:1px solid rgba(10,10,10,0.08);border-top:none;padding:18px 22px 24px;margin-bottom:14px;}
+.advisory-body.open{display:block;}
+.advisory-body p{font-size:12.5px;line-height:1.75;color:rgba(10,10,10,0.82);margin-bottom:14px;}
+.advisory-body p:last-child{margin-bottom:0;}
+.advisory-body h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#0A0A0A;margin:18px 0 10px;}
+.advisory-body h3:first-child{margin-top:0;}
+.advisory-body a{color:#0A0A0A;text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:rgba(212,255,0,0.85);text-underline-offset:2px;}
+.dates-block{background:#FFFFFF;border:1px solid rgba(10,10,10,0.08);padding:18px 20px;margin-bottom:14px;}
+.date-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #D5D9DF;}
+.date-row:last-child{border-bottom:none;}
+.date-pip{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.pip-imminent{background:#ef4444;}
+.pip-upcoming{background:#f59e0b;}
+.pip-watch{background:#3b82f6;}
+.date-text{flex:1;font-size:12.5px;line-height:1.5;color:rgba(10,10,10,0.82);}
+.date-text strong{color:#0A0A0A;}
+.linkedin-block{background:#FFFFFF;border:1px solid rgba(10,10,10,0.08);padding:18px 20px;margin-bottom:14px;}
+.linkedin-post{font-size:13px;line-height:1.7;white-space:pre-wrap;color:rgba(10,10,10,0.85);margin-bottom:12px;}
+.btn-copy{font-size:11px;padding:8px 18px;border:1px solid #D4FF00;background:#D4FF00;color:#0A0A0A;cursor:pointer;font-family:inherit;font-weight:700;}
+.btn-copy:hover{background:#E2FF4D;}
+.copied-msg{display:none;color:#0A0A0A;font-size:11px;margin-left:10px;font-weight:600;}
+.copied-msg.visible{display:inline;}
+.card{background:#FFFFFF;border:1px solid rgba(10,10,10,0.08);padding:14px 16px;margin-bottom:10px;}
+.card-title{font-size:13px;font-weight:600;color:#0A0A0A;margin-bottom:3px;}
+.card-title a{color:#0A0A0A;text-decoration:none;}
+.card-title a:hover{text-decoration:underline;}
+.card-meta{font-size:11px;color:rgba(10,10,10,0.45);margin-bottom:5px;}
+.card-insight{font-size:12px;line-height:1.6;color:rgba(10,10,10,0.7);}
+.empty-state{font-size:12.5px;color:rgba(10,10,10,0.55);font-style:italic;padding:16px 0;}
+.disclaimer{font-size:11px;color:rgba(10,10,10,0.55);font-style:italic;padding:14px 16px;border-top:1px solid rgba(10,10,10,0.08);margin-top:16px;}
+.back-link{font-size:11px;color:rgba(10,10,10,0.55);text-decoration:none;}
+.back-link:hover{color:#0A0A0A;}
+/* NAV */
+.tn{background:#000000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;width:100%;position:sticky;top:0;z-index:100;}
+.tn-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.tn-row+.tn-row{margin-top:6px;}
+.tn-row.brand{justify-content:space-between;padding-bottom:8px;}
+.tn-brand{display:inline-flex;align-items:center;gap:0;text-decoration:none;}
+.tn-brand-logo{height:18px;width:auto;filter:invert(1) brightness(2);transition:filter .15s;}
+#theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);color:inherit;cursor:pointer;font-size:12px;padding:3px 8px;}
+.tn-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:11.5px;color:rgba(255,255,255,0.7);text-decoration:none;background:transparent;border:1px solid transparent;transition:background .15s,color .15s;}
+.tn-pill:hover{color:#FFFFFF;background:rgba(255,255,255,0.06);}
+.tn-pill.active{color:#D4FF00;background:rgba(212,255,0,0.12);border-color:rgba(212,255,0,0.45);}
+.tn-views{display:flex;gap:20px;padding-top:4px;}
+.tn-view{font-size:11px;color:rgba(255,255,255,0.55);text-decoration:none;font-weight:500;padding:2px 0;}
+.tn-view:hover{color:#FFFFFF;}
+.tn-view.active{color:#FFFFFF;font-weight:700;border-bottom:2px solid #D4FF00;padding-bottom:2px;}
+[data-theme="light"] .tn{background:#FFFFFF;border-bottom-color:rgba(10,10,10,0.08);}
+[data-theme="light"] .tn-brand-logo{filter:none;}
+[data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}
+[data-theme="light"] .tn-pill{color:rgba(10,10,10,0.65);}
+[data-theme="light"] .tn-pill:hover{color:#0A0A0A;background:rgba(10,10,10,0.04);}
+[data-theme="light"] .tn-pill.active{color:#0A0A0A;background:#D4FF00;border-color:#D4FF00;font-weight:700;}
+[data-theme="light"] .tn-view{color:rgba(10,10,10,0.55);}
+[data-theme="light"] .tn-view:hover{color:#0A0A0A;}
+[data-theme="light"] .tn-view.active{color:#0A0A0A;border-bottom-color:#D4FF00;}
+[data-theme="dark"] body{background:#000000;color:#FFFFFF;}
+[data-theme="dark"] .card-box,[data-theme="dark"] .advisory-toggle,[data-theme="dark"] .advisory-body,[data-theme="dark"] .dates-block,[data-theme="dark"] .linkedin-block,[data-theme="dark"] .card{background:#0A0A0A;border-color:rgba(255,255,255,0.12);}
+[data-theme="dark"] .card-box p,[data-theme="dark"] .advisory-body p,[data-theme="dark"] .date-text,[data-theme="dark"] .linkedin-post,[data-theme="dark"] .card-insight,[data-theme="dark"] .empty-state{color:#c9d1d9;}
+[data-theme="dark"] .card-box h3,[data-theme="dark"] .advisory-toggle-title,[data-theme="dark"] .date-text strong,[data-theme="dark"] .card-title,[data-theme="dark"] .advisory-body h3{color:#FFFFFF;}
+[data-theme="dark"] .card-box a,[data-theme="dark"] .advisory-body a{color:#D4FF00;}
+[data-theme="dark"] .section-label,[data-theme="dark"] .header .meta,[data-theme="dark"] .card-meta,[data-theme="dark"] .back-link,[data-theme="dark"] .disclaimer{color:rgba(255,255,255,0.6);}
+[data-theme="dark"] .header h1{color:#FFFFFF;}
+[data-theme="dark"] .date-row{border-bottom-color:rgba(255,255,255,0.12);}
+  /* === Polestar-style full-width dropdowns === */
+  .tn { position: relative; }
+  .tn-tabs-row { gap: clamp(0.6rem, 1.6vw, 1.4rem); }
+  .tn-tab { position: static; display: inline-block; }
+  .tn-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(10,10,10,0.08);
+    box-shadow: 0 14px 28px rgba(10,10,10,0.08);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0s 0.18s;
+    pointer-events: none;
+  }
+  [data-theme="dark"] .tn-dropdown { background: #16161B; border-bottom-color: rgba(255,255,255,0.12); box-shadow: 0 14px 28px rgba(0,0,0,0.5); }
+  .tn-tab:hover .tn-dropdown, .tn-tab:focus-within .tn-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0s 0s;
+    pointer-events: auto;
+  }
+  .tn-dd-inner {
+    max-width: 1440px; margin: 0 auto;
+    padding: clamp(1.8rem, 3vw, 2.8rem) clamp(1.25rem, 3vw, 2.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .tn-dd-eyebrow {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(10,10,10,0.6); margin: 0 0 0.8rem 0;
+  }
+  [data-theme="dark"] .tn-dd-eyebrow { color: rgba(229,231,235,0.6); }
+  .tn-dd-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800; font-size: clamp(1.4rem, 2vw, 1.75rem);
+    line-height: 1.15; letter-spacing: -0.02em;
+    color: #0A0A0A; margin: 0 0 0.9rem 0;
+  }
+  [data-theme="dark"] .tn-dd-title { color: #E5E7EB; }
+  .tn-dd-body {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; color: rgba(10,10,10,0.6);
+    line-height: 1.55; max-width: 460px; margin: 0;
+  }
+  [data-theme="dark"] .tn-dd-body { color: rgba(229,231,235,0.65); }
+
+  .tn-dd-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+  .tn-dd-list li { margin: 0; }
+  .tn-dd-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; font-weight: 600;
+    color: #0A0A0A !important; background: transparent !important;
+    border: none !important; border-radius: 0 !important; padding: 4px 0 !important;
+    display: inline-flex !important; align-items: center;
+    text-decoration: none !important;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .tn-dd-link:hover { color: rgba(10,10,10,0.55) !important; background: transparent !important; }
+  .tn-dd-link.active { color: #0A0A0A !important; }
+  .tn-dd-link.active span { border-bottom: 2px solid #D4FF00; padding-bottom: 1px; }
+  [data-theme="dark"] .tn-dd-link { color: #E5E7EB !important; }
+  [data-theme="dark"] .tn-dd-link:hover { color: rgba(229,231,235,0.65) !important; }
+  [data-theme="dark"] .tn-dd-link.active { color: #E5E7EB !important; }
+
+  .tn-dd-col-cta { align-self: center; }
+  .tn-dd-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    color: #FFFFFF !important; background: #0A0A0A !important;
+    padding: 0.9rem 1.4rem; letter-spacing: 0.02em;
+    text-decoration: none !important;
+    border: none !important; border-radius: 0 !important;
+    transition: background 0.2s, gap 0.2s;
+  }
+  .tn-dd-cta:hover { background: #222 !important; gap: 12px; }
+  [data-theme="dark"] .tn-dd-cta { background: #FFFFFF !important; color: #0A0A0A !important; }
+  [data-theme="dark"] .tn-dd-cta:hover { background: #E5E7EB !important; }
+  [data-theme="dark"] .tn-dd-cta svg { stroke: #D4FF00 !important; }
+
+  /* Remove the chevron we added to tab pills (we'll keep them as clean pills) */
+  .tn-tab > .tn-pill::after { display: none; }
+
+  /* Drop the duplicate small date in the brand row */
+  .tn-row.brand > .tn-date { display: none !important; }
+
+  /* Collapse dropdown on mobile (fall back to direct tap on tab pill which still navigates to dashboard.html) */
+  @media (max-width: 880px) {
+    .tn-dd-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    .tn-dd-col-cta { align-self: stretch; }
+  }
+
+
+  /* === Remove eyebrow neon bars (user pref) === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+</style>
+</head>
+<body>
+<nav class="tn">
+  <div class="tn-row brand">
+    <a class="tn-brand" href="../../daily-briefing/dashboard-latest.html"><img class="tn-brand-logo" alt="Turnpage" src="../../daily-briefing/assets/turnpage-logo.jpeg"></a>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+  <div class="tn-row tn-tabs-row">
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../rewind-tariffs/dashboard.html">⚖️ Tariffs</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tariffs / Trade</h3>
+            <p class="tn-dd-body">Capital and advisory for IEEPA tariff refund rights. CAPE refunds, the CIT and Federal Circuit dockets, Section 122, and consumer-class exposure on pass-through.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../rewind-tariffs/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../llm-class-action/dashboard.html">🤖 LLM</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">LLM / Copyright</h3>
+            <p class="tn-dd-body">AI training-data class actions. Bartz v. Anthropic, the OpenAI MDL, Concord, Disney v. Midjourney — settlement mechanics and benchmark claims rates.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../llm-class-action/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../llm-class-action/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../crypto-insolvency/dashboard.html">🪙 Crypto</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Crypto Insolvency</h3>
+            <p class="tn-dd-body">Customer-property litigation and crypto bankruptcies. BlockFills, Genesis LOC, FTX progeny, and the cross-border Chapter 15 recognition track.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../crypto-insolvency/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../fraud-recovery/dashboard.html">🕵️ Fraud</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Ponzi / Fraud Recovery</h3>
+            <p class="tn-dd-body">Receivership clawbacks, SEC enforcement, and cross-border asset recovery. Goliath Ventures, Paramount/Prestige, and active receiver-led liquidation tracks.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../fraud-recovery/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../fraud-recovery/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../tech-mass-arbitration/dashboard.html">⚙️ Mass Arb</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tech Mass Arbitration</h3>
+            <p class="tn-dd-body">B2B mass-arbitration campaigns against Big Tech defendants. The Google advertiser playbook, Meta waiver track, AAA/JAMS mechanics, foreign analogues.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../tech-mass-arbitration/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../billion-dollar-class-actions/dashboard.html">💰 $1B+</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">$1B+ Class Actions</h3>
+            <p class="tn-dd-body">The mega-settlement cycle. BCBS Subscriber & Provider, Bartz v. Anthropic, Purdue/Sackler, Roundup, Visa/Mastercard interchange.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../billion-dollar-class-actions/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../bankruptcy-creditor-rights/dashboard.html">📜 Bankr</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Bankruptcy Creditor Rights</h3>
+            <p class="tn-dd-body">Plan-confirmation appellate docket. Equitable-mootness drift, post-Purdue third-party releases, Texas Two-Step, exculpation scope, and Subchapter V.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../bankruptcy-creditor-rights/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <a href="../dashboard.html" class="back-link">← Back to Daily Dashboard</a>
+      <h1 style="margin-top:6px;">💰 $1B+ Class Actions</h1>
+      <div class="meta">Daily Advisory · Monday, May 18, 2026</div>
+    </div>
+  </div>
+
+  <div class="section-label">Briefing — Lead</div>
+  <div class="card-box">
+    <p>The mega-settlement cycle is running hot heading into Memorial Day. The <a href="https://openclassactions.com/news/blue-cross-blue-shield-settlement-payment-may-2026.php" target="_blank" rel="noopener">$2.67 billion Blue Cross Blue Shield subscriber antitrust settlement</a> began payments on May 11 to approximately 7.8 million claimants under the distribution plan approved by Judge R. David Proctor (N.D. Ala.). Approximately $1.9 billion is being distributed after legal and administrative fees. In parallel, Bartz v. Anthropic ($1.5B AI-copyright settlement) closed its fairness hearing on May 14 — final approval is expected on a customary 7–21 day post-hearing window. With the $2.8 billion BCBS Provider Settlement already final (2025), the cumulative BCBS antitrust resolution now exceeds $5.4 billion.</p>
+  </div>
+
+  <div class="section-label">Full Advisory</div>
+  <div class="advisory-toggle" onclick="var b=this.nextElementSibling;b.classList.toggle('open');this.querySelector('.advisory-chevron').classList.toggle('open');">
+    <div class="advisory-toggle-title">Open full advisory ↓</div>
+    <div class="advisory-chevron">▾</div>
+  </div>
+  <div class="advisory-body">
+    <h3>I. BCBS Subscriber Settlement — $2.67B Payment Cycle Live</h3>
+<p>The <a href="https://openclassactions.com/news/blue-cross-blue-shield-settlement-payment-may-2026.php" target="_blank" rel="noopener">$2.67 billion Blue Cross Blue Shield subscriber antitrust settlement</a> began distribution payments on May 11, 2026, under the distribution plan approved by Judge R. David Proctor of the Northern District of Alabama on the April 23 motion. Approximately $1.9 billion is being distributed to approximately 7.8 million valid claimants after deduction of legal and administrative fees. The settlement resolves claims that more than 35 Blue Cross Blue Shield affiliates carved up the country into exclusive territories and agreed not to compete against one another. The Eleventh Circuit affirmed the settlement in October 2023, and the Supreme Court declined to hear further challenges.</p>
+<p>The separate $2.8 billion BCBS Provider Settlement, addressing claims from healthcare providers who treated BCBS patients, received final court approval in 2025 and is in its own distribution cycle. The combined BCBS antitrust resolution exceeds $5.4 billion — making it one of the largest healthcare-antitrust resolutions on record.</p>
+
+<h3>II. Bartz v. Anthropic — Final Approval Order Watch</h3>
+<p>The Bartz v. Anthropic <a href="https://legalblogs.wolterskluwer.com/copyright-blog/the-bartz-v-anthropic-settlement-understanding-americas-largest-copyright-settlement/" target="_blank" rel="noopener">$1.5 billion AI-copyright class settlement</a> (cross-link Tab 02) closed its fairness hearing on May 14 before Judge William Alsup. The customary post-hearing window for a final-approval order is 7–21 days, putting the order in a Memorial Day to early-June window. If approved, Bartz becomes the largest copyright class settlement in U.S. history and the first AI training-data class settlement at the $1B+ threshold. The 91.3% claims rate is itself the procedural defense against adequacy-of-notice objections on appeal.</p>
+
+<h3>III. Cumulative Mega-Settlement Cycle — 2026 Pace</h3>
+<p>The 2026 cycle is now running ahead of the post-2020 average for $1B+ class settlements. CFO Dive's annual top-settlements roundup continues to be the operative calibration benchmark. Cornerstone Research's mid-year securities-class-action update is the next major comparator publication; Stanford Securities Class Action Clearinghouse data updates monthly.</p>
+
+<h3>IV. Pending Approval Calendars</h3>
+<p>No major preliminary or final approval orders in the 48-hour window beyond the BCBS payment-cycle activation. The next high-value pending matters include the Visa/Mastercard interchange merchant class (residual claims), residual MDL settlements in opioid/PFAS tracks, and the OpenAI MDL (which is being read as the next likely $1B+ AI settlement after Bartz sets the per-work benchmark).</p>
+
+<h3>Recommended Actions</h3>
+<p>Mega-class plaintiff firms should treat the Bartz per-book pricing as the operative settlement comparator for AI-training cases at the $1B+ threshold. Defense-side mega-class firms should prepare for compressed approval calendars as Bartz and BCBS activate consecutive mega-distribution cycles. Settlement administrators should track BCBS distribution-defect signals (notice failures, claim-rejection patterns) as benchmark data for upcoming approvals. Litigation funders should recalibrate AI-copyright damages models against the Bartz benchmark; pricing on the OpenAI MDL is expected to track Bartz on a per-work basis.</p>
+  </div>
+
+  <div class="section-label">Key Upcoming Dates</div>
+  <div class="dates-block">
+    <div class="date-row"><span class="date-pip pip-imminent"></span><div class="date-text"><strong>May 22, 2026</strong> — Bartz v. Anthropic final approval order — earliest customary window</div></div>
+<div class="date-row"><span class="date-pip pip-upcoming"></span><div class="date-text"><strong>June 5, 2026</strong> — Bartz final approval order — latest customary window</div></div>
+<div class="date-row"><span class="date-pip pip-upcoming"></span><div class="date-text"><strong>Ongoing</strong> — BCBS subscriber settlement — $2.67B distribution cycle (started May 11)</div></div>
+<div class="date-row"><span class="date-pip pip-watch"></span><div class="date-text"><strong>Q3 2026</strong> — OpenAI MDL — preliminary approval window (estimated)</div></div>
+  </div>
+
+  <div class="section-label">LinkedIn Post (Draft)</div>
+  <div class="linkedin-block">
+    <div class="linkedin-post" id="li-post-06-billion-dollar-class-actions">Two mega-distributions firing in the same week.
+
+— Blue Cross Blue Shield subscriber antitrust: $2.67B began payment on May 11. ~$1.9B distributed to ~7.8M claimants after fees. With the parallel $2.8B BCBS Provider Settlement already final, the cumulative BCBS antitrust resolution exceeds $5.4 billion.
+
+— Bartz v. Anthropic: $1.5B AI-copyright settlement. Fairness hearing closed May 14. Final approval order expected on a customary 7–21 day post-hearing window — putting it between Memorial Day and early June.
+
+If Bartz approves, it becomes the largest copyright class settlement in U.S. history and the first AI training-data class settlement at the $1B+ threshold. The implicit per-book price (~$3,000 at the high end of the claimed pool) becomes the operative comparator for OpenAI MDL, Concord/UMG, and the rest of the AI training-data docket.
+
+Two things settlement administrators and class-action defense are watching:
+
+1. BCBS distribution-defect signals — notice failures, claim-rejection rates — function as benchmark data for the next round of mega-approvals.
+
+2. The OpenAI MDL is the next likely $1B+ AI settlement. Pricing will track Bartz on a per-work basis. Litigation funders should be recalibrating now.
+
+The 2026 mega-settlement cycle is running ahead of the post-2020 average. Compression in approval calendars is the operating condition.
+
+#ClassAction #Settlement #Antitrust #AICopyright #BCBS #Bartz</div>
+    <button class="btn-copy" onclick="var t=document.getElementById('li-post-06-billion-dollar-class-actions').textContent;navigator.clipboard.writeText(t);var m=document.getElementById('li-copied-06-billion-dollar-class-actions');m.classList.add('visible');setTimeout(function(){m.classList.remove('visible');},2000);">Copy to clipboard</button>
+    <span id="li-copied-06-billion-dollar-class-actions" class="copied-msg">Copied!</span>
+  </div>
+
+  <div class="section-label">Proposed Articles (48h window)</div>
+  <div class="card"><div class="card-title"><a href="https://openclassactions.com/news/blue-cross-blue-shield-settlement-payment-may-2026.php" target="_blank" rel="noopener">Blue Cross Blue Shield Settlement Checks May 2026: BCBS $2.67B Antitrust Payment Update</a></div><div class="card-meta">OpenClassActions (Tier 3) · May 16, 2026</div><div class="card-insight">Distribution-plan operational walkthrough; 7.8M claimants, $1.9B net distribution, May 11 payment-cycle activation.</div></div>
+<div class="card"><div class="card-title"><a href="https://www.claimdepot.com/cases/blue-cross-blue-shield-267b-antitrust-settlement-payments-set-to-begin-may-2026" target="_blank" rel="noopener">Blue Cross Blue Shield $2.67 billion class action settlement payments begin May 2026</a></div><div class="card-meta">Claim Depot (Tier 3) · May 17, 2026</div><div class="card-insight">Distribution-cycle activation; cumulative BCBS antitrust resolution at $5.4B with the parallel $2.8B Provider Settlement.</div></div>
+
+  <div class="disclaimer">This advisory is provided for informational purposes and does not constitute legal advice. Voice: litigation-grade. Verify all docket items against PACER / CourtListener / agency releases before acting.</div>
+</div>
+</body>
+</html>
