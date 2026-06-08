@@ -407,23 +407,24 @@
               },
               {
                 "id": "funds-institutions",
-                "title": "Crypto hedge funds & institutions",
-                "body": "Monetization of ",
+                "title": "Trust Administrators",
+                "body": "xxx",
                 "priority": false
               },
               {
                 "id": "estates-trustees",
-                "title": "Estates & Trustees",
+                "title": "Bankruptcy Estates",
                 "body": "Administering an estate or trust? We can quote the entire position.",
                 "priority": false
               },
               {
                 "id": "card-1780962079731",
                 "title": "On-Chain Lenders",
-                "body": "Liquidity for ",
+                "body": "Digital asset lenders with locked collateral. ",
                 "priority": false
               }
-            ]
+            ],
+            "_bookmark": "who-we-help"
           }
         },
         {
@@ -479,6 +480,41 @@
                 "Single creditor or bulk fund — same desk."
               ]
             }
+          }
+        },
+        {
+          "id": "sec-1780956144940-j453",
+          "type": "how-it-works",
+          "visible": true,
+          "colorScheme": "light-gray",
+          "content": {
+            "eyebrow": "How It Works",
+            "title": "Three steps to close.",
+            "accent": "",
+            "kicker": "Trust us bro.",
+            "colorScheme": "light-gray",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Step one",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "Step two",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Step three",
+                "body": "Describe this step."
+              }
+            ],
+            "cardRadius": "rounded",
+            "cardStyle": "black"
           }
         },
         {
@@ -573,39 +609,6 @@
           "id": "sec-1780956113355-u4jq",
           "type": "damages",
           "visible": true
-        },
-        {
-          "id": "sec-1780956144940-j453",
-          "type": "how-it-works",
-          "visible": true,
-          "colorScheme": "light-gray",
-          "content": {
-            "eyebrow": "How It Works",
-            "title": "Three steps to close.",
-            "accent": "",
-            "kicker": "Trust us bro.",
-            "colorScheme": "light-gray",
-            "steps": [
-              {
-                "id": "step-1",
-                "n": "01",
-                "title": "Step one",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-2",
-                "n": "02",
-                "title": "Step two",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-3",
-                "n": "03",
-                "title": "Step three",
-                "body": "Describe this step."
-              }
-            ]
-          }
         }
       ],
       "status": "active"
