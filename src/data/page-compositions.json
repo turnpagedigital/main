@@ -373,7 +373,7 @@
             "eyebrow": "Crypto Claims",
             "title": "Liquidity for locked",
             "accentTitle": "digital assets.",
-            "subtitle": "Our team has helped crypto investors monetize claims across nearly every major digital asset insolvency case of the last decade—FTX, Celsius, BlockFi, Voyager, Genesis, Mt. Gox, Three Arrows Capital and many more. ",
+            "subtitle": "Our team has helped crypto investors monetize claims across nearly every major digital asset insolvency case of the last decade—BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
             "size": "tall",
             "video": "/robotvault1.mp4",
             "ctaPrimary": {
@@ -382,7 +382,7 @@
             },
             "ctaSecondary": {
               "label": "How we help",
-              "href": "#how-crypto"
+              "href": "#how-we-help"
             }
           }
         },
@@ -402,13 +402,13 @@
               {
                 "id": "individual-creditors",
                 "title": "Crypto lenders and account owners",
-                "body": "Customers with trapped crypto",
+                "body": "Liquidity for exchange and wallet customers with deposits and loans stuck in legal proceedings.",
                 "priority": false
               },
               {
                 "id": "funds-institutions",
-                "title": "Funds & Institutions",
-                "body": "Bulk dispositions and side-pocket cleanups. Size moved discreetly.",
+                "title": "Crypto hedge funds & institutions",
+                "body": "Monetization of ",
                 "priority": false
               },
               {
