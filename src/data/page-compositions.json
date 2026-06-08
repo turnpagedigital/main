@@ -395,14 +395,14 @@
           "id": "sec-crypto-audience",
           "type": "audience-cards",
           "visible": true,
-          "layout": "grid-3col",
+          "layout": "list",
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
             "title": "Creditors. Funds.",
             "accent": "Estates.",
             "colorScheme": "white",
-            "layout": "grid-3col",
+            "layout": "list",
             "cards": [
               {
                 "id": "individual-creditors",
