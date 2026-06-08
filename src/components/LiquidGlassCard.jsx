@@ -2,14 +2,15 @@ import React from "react";
 import { NEON, FONT, INK, INK_60 } from "../data/tokens.js";
 
 /**
- * LiquidGlassCard — Premium glassmorphism component with liquid glass effect
+ * LiquidGlassCard — Apple-style frosted glassmorphism with gradient accents
  *
- * A high-end card component featuring:
- * - Heavy backdrop blur for glassmorphism
- * - Realistic liquid glass qualities (refraction, iridescence, caustics)
- * - Smooth hover animations
+ * A premium card component featuring:
+ * - Thick frosted glass appearance with high opacity
+ * - Colored gradient accent borders (neon glow)
+ * - Smooth rounded corners with subtle depth
+ * - Minimal animation, premium static feel
  * - Light and dark mode support
- * - Responsive and works over any background
+ * - Works over any background
  *
  * Props:
  *   title: string          — Main heading
@@ -17,6 +18,7 @@ import { NEON, FONT, INK, INK_60 } from "../data/tokens.js";
  *   subtitle?: string      — Optional secondary text
  *   icon?: React.ReactNode — Optional icon/image to display
  *   variant?: "light" | "dark" — Theme variant (default: "light")
+ *   accentColor?: string   — Gradient accent color (default: NEON)
  *   className?: string     — Additional CSS classes
  */
 export default function LiquidGlassCard({
@@ -25,88 +27,86 @@ export default function LiquidGlassCard({
   subtitle,
   icon,
   variant = "light",
+  accentColor = NEON,
   className = "",
 }) {
   const isDark = variant === "dark";
 
   const colors = isDark
     ? {
-        bg: "rgba(15, 15, 15, 0.4)",
-        border: "rgba(255, 255, 255, 0.15)",
+        bg: "rgba(30, 30, 35, 0.75)",
+        border: "rgba(255, 255, 255, 0.12)",
         title: "#fff",
-        text: "rgba(255, 255, 255, 0.85)",
-        subtitle: "rgba(255, 255, 255, 0.65)",
-        glowColor: "rgba(212, 255, 0, 0.4)",
+        text: "rgba(255, 255, 255, 0.8)",
+        subtitle: "rgba(255, 255, 255, 0.6)",
       }
     : {
-        bg: "rgba(255, 255, 255, 0.65)",
-        border: "rgba(255, 255, 255, 0.95)",
+        bg: "rgba(255, 255, 255, 0.75)",
+        border: "rgba(255, 255, 255, 0.9)",
         title: INK,
         text: INK_60,
-        subtitle: "rgba(10, 10, 10, 0.55)",
-        glowColor: "rgba(212, 255, 0, 0.25)",
+        subtitle: "rgba(10, 10, 10, 0.5)",
       };
 
   return (
     <div className={`liquid-glass-card ${className}`}>
-      {/* Outer container with blur backdrop */}
+      {/* Outer container with frosted glass effect */}
       <div
         style={{
           position: "relative",
           background: colors.bg,
-          border: `1.5px solid ${colors.border}`,
-          borderRadius: "1.2rem",
+          border: `1px solid ${colors.border}`,
+          borderRadius: "1.6rem",
           padding: "clamp(1.8rem, 3vw, 2.5rem)",
-          backdropFilter: "blur(20px) saturate(200%)",
-          WebkitBackdropFilter: "blur(20px) saturate(200%)",
+          backdropFilter: "blur(30px) saturate(180%)",
+          WebkitBackdropFilter: "blur(30px) saturate(180%)",
           overflow: "hidden",
-          transition: "all 0.5s cubic-bezier(0.23, 1, 0.320, 1)",
+          transition: "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
           willChange: "transform, box-shadow",
+          boxShadow: `0 8px 32px rgba(0, 0, 0, ${isDark ? 0.3 : 0.08}),
+                      inset 0 1px 0 rgba(255, 255, 255, ${isDark ? 0.1 : 0.4})`,
         }}
         className="glass-card-base"
       >
-        {/* Animated background layers for liquid effect */}
+        {/* Colored gradient accent — top-right corner glow */}
+        <div
+          style={{
+            position: "absolute",
+            top: -40,
+            right: -40,
+            width: 200,
+            height: 200,
+            background: `radial-gradient(circle, ${accentColor}, transparent 70%)`,
+            opacity: 0.25,
+            pointerEvents: "none",
+            filter: "blur(40px)",
+          }}
+        />
+
+        {/* Subtle top accent bar with gradient */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "2px",
+            background: `linear-gradient(90deg, transparent, ${accentColor}, transparent)`,
+            opacity: 0.4,
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Frosted glass texture overlay */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            opacity: 0.6,
-            background: `linear-gradient(135deg, ${colors.glowColor} 0%, transparent 50%, rgba(255,255,255,0.1) 100%)`,
+            background: `
+              radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1), transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05), transparent 50%)
+            `,
             pointerEvents: "none",
-            animation: "liquidShift 8s ease-in-out infinite",
-          }}
-        />
-
-        {/* Inner glow refraction layer */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-40%",
-            right: "-20%",
-            width: "60%",
-            height: "60%",
-            background: `radial-gradient(circle, ${colors.glowColor}, transparent 70%)`,
-            opacity: 0,
-            pointerEvents: "none",
-            transition: "opacity 0.6s ease-out",
-          }}
-          className="glass-inner-glow"
-        />
-
-        {/* Subtle caustic effect lines */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: `repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 2px,
-              rgba(255, 255, 255, 0.03) 2px,
-              rgba(255, 255, 255, 0.03) 4px
-            )`,
-            pointerEvents: "none",
-            opacity: 0.5,
           }}
         />
 
@@ -117,7 +117,7 @@ export default function LiquidGlassCard({
             zIndex: 10,
             display: "flex",
             flexDirection: "column",
-            gap: "1rem",
+            gap: "0.9rem",
           }}
         >
           {/* Icon if provided */}
@@ -126,7 +126,7 @@ export default function LiquidGlassCard({
               style={{
                 fontSize: "2.5rem",
                 opacity: 0.9,
-                marginBottom: "0.5rem",
+                marginBottom: "0.3rem",
               }}
             >
               {icon}
@@ -157,7 +157,7 @@ export default function LiquidGlassCard({
                 color: colors.subtitle,
                 margin: 0,
                 fontWeight: 500,
-                opacity: 0.8,
+                opacity: 0.85,
               }}
             >
               {subtitle}
@@ -172,7 +172,7 @@ export default function LiquidGlassCard({
               color: colors.text,
               lineHeight: 1.7,
               margin: 0,
-              marginTop: subtitle ? "-0.2rem" : "0.3rem",
+              marginTop: subtitle ? "-0.1rem" : "0.2rem",
             }}
           >
             {description}
@@ -184,11 +184,11 @@ export default function LiquidGlassCard({
           style={{
             position: "absolute",
             inset: 0,
-            borderRadius: "1.2rem",
-            background: `linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 40%, transparent 60%, rgba(255,255,255,0.1) 100%)`,
+            borderRadius: "1.6rem",
+            background: `linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 40%, transparent 60%, rgba(255,255,255,0.1) 100%)`,
             opacity: 0,
             pointerEvents: "none",
-            transition: "opacity 0.6s ease-out",
+            transition: "opacity 0.4s ease-out",
           }}
           className="glass-shine"
         />
@@ -197,51 +197,20 @@ export default function LiquidGlassCard({
       {/* Styles */}
       <style>{`
         .liquid-glass-card:hover .glass-card-base {
-          transform: translateY(-8px) scale(1.02);
+          transform: translateY(-6px);
           box-shadow:
-            0 25px 50px rgba(0, 0, 0, 0.15),
-            0 0 40px ${colors.glowColor},
-            inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-
-        .liquid-glass-card:hover .glass-inner-glow {
-          opacity: 1;
-          animation: glowPulse 1.5s ease-in-out infinite;
+            0 16px 40px rgba(0, 0, 0, ${isDark ? 0.4 : 0.12}),
+            inset 0 1px 0 rgba(255, 255, 255, ${isDark ? 0.15 : 0.5}),
+            0 0 30px ${accentColor}40;
         }
 
         .liquid-glass-card:hover .glass-shine {
           opacity: 1;
         }
 
-        @keyframes liquidShift {
-          0%, 100% {
-            transform: translate(0, 0) rotate(0deg);
-          }
-          25% {
-            transform: translate(5px, -5px) rotate(1deg);
-          }
-          50% {
-            transform: translate(-3px, 3px) rotate(-0.5deg);
-          }
-          75% {
-            transform: translate(4px, 2px) rotate(0.5deg);
-          }
-        }
-
-        @keyframes glowPulse {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 0.8;
-          }
-          50% {
-            transform: scale(1.1);
-            opacity: 1;
-          }
-        }
-
         @media (max-width: 768px) {
           .liquid-glass-card:hover .glass-card-base {
-            transform: translateY(-4px) scale(1.01);
+            transform: translateY(-3px);
           }
         }
       `}</style>
