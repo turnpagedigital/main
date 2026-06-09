@@ -277,7 +277,8 @@
                 "title": "Collect cash",
                 "body": "We track and file claims for you, automatically."
               }
-            ]
+            ],
+            "_bookmark": "how-we-work"
           }
         },
         {
@@ -431,28 +432,29 @@
               {
                 "id": "individual-creditors",
                 "title": "Exchange Customers",
-                "body": "Account holders with frozen deposits on defunct exchanges stuck in legal proceedings.",
+                "body": "We help account holders with funds frozen on a failed exchange and tied up in bankruptcy or liquidation. These cases drag on for years and rarely pay in full. Trading delivers you guaranteed cash now, with no claims process to monitor and navigate.",
                 "priority": false
               },
               {
                 "id": "funds-institutions",
                 "title": "Crypto Hedge Funds",
-                "body": "",
+                "body": "We help funds with trapped capital unlock value.  A claim against a collapsed exchange, lender, or counterparty weighs on your NAV and stalls distributions. Converting it to cash lets you return capital to LPs, who didn't sign up to be distressed investors.",
                 "priority": false
               },
               {
                 "id": "estates-trustees",
                 "title": "Estates & Trustees",
-                "body": "Administering an estate or trust? We can quote the entire position.",
+                "body": "We help fiduciaries managing bankruptcy estates or liquidating trusts that hold crypto-related claims and interests.  Your mandate is to settle and distribute, efficiently, not pursue speculative lottery tickets. A clean sale or litigation funding with shared upside caps costs, reduces risk and preserves value.",
                 "priority": false
               },
               {
                 "id": "card-1780956570722",
                 "title": "On Chain Lenders",
-                "body": "Digital asset lenders",
+                "body": "We help lenders left holding defaulted loans or locked collateral. Recovery against a failed borrower or protocol can be slow and uncertain, and underlying asset volatility can erode the benefit of waiting for a higher percentage recovery. ",
                 "priority": false
               }
-            ]
+            ],
+            "_bookmark": "who-we-help"
           }
         },
         {
@@ -479,7 +481,7 @@
                 "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances.\n\n"
               }
             ],
-            "_bookmark": "how-we-help",
+            "_bookmark": "how-we-work",
             "cardStyle": "light-glass"
           }
         },
@@ -537,7 +539,7 @@
             "points": [
               {
                 "id": "edge-1",
-                "h": "Practically unlimited liquidity",
+                "h": "Practically ulimited liquidity",
                 "b": "We partner with major asset managers — over 500 institutions on speed dial."
               },
               {
@@ -696,12 +698,12 @@
           "type": "service-cards",
           "visible": true,
           "layout": "grid-2col",
-          "colorScheme": "light-gray",
+          "colorScheme": "dark",
           "content": {
-            "eyebrow": "What We Fund",
-            "title": "Tough cases. ",
-            "accent": "Big outcomes.",
-            "colorScheme": "light-gray",
+            "eyebrow": "How We work",
+            "title": "We fund tough cases for",
+            "accent": "big outcomes.",
+            "colorScheme": "dark",
             "layout": "grid-2col",
             "cards": [
               {
@@ -726,8 +728,9 @@
                 "priority": false
               }
             ],
-            "cardStyle": "neon",
-            "cardRadius": "square"
+            "cardStyle": "standard",
+            "cardRadius": "square",
+            "_bookmark": "how-we-work"
           }
         },
         {
@@ -793,6 +796,7 @@
           "id": "sec-1780673399693-agc7",
           "type": "our-edge",
           "visible": true,
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
@@ -814,7 +818,8 @@
                 "h": "Relationship builders, not just dealmakers",
                 "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
               }
-            ]
+            ],
+            "colorScheme": "light-gray"
           }
         },
         {
@@ -915,6 +920,37 @@
             },
             "ctaSecondary": null
           }
+        },
+        {
+          "id": "sec-1780974589433-renp",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
+          "content": {
+            "layout": "layout-2-banner",
+            "colorScheme": "photo",
+            "eyebrow": "Get in Touch",
+            "title": "Stay up to date on the docket.",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "cta": "Read case briefings"
+          }
+        },
+        {
+          "id": "sec-1780974631667-1mni",
+          "type": "experience",
+          "visible": true
+        },
+        {
+          "id": "sec-1780974644933-upgt",
+          "type": "damages",
+          "visible": true
         }
       ]
     }
