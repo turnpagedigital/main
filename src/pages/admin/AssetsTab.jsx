@@ -33,7 +33,7 @@ import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filte
 
 const TYPE_OPTIONS = ["image", "logo", "favicon", "icon", "document", "video"];
 
-const UPLOAD_ACCEPT = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,application/pdf";
+const UPLOAD_ACCEPT = "image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,application/pdf,video/mp4,video/webm,video/quicktime";
 
 // Filter options for the assets list — first entry is the no-filter sentinel.
 const FILTER_OPTIONS = [
@@ -545,7 +545,7 @@ function UploadDropzone({ onUploaded, accept = UPLOAD_ACCEPT, compact = false, l
         style={{ fontSize: "0.85rem", fontFamily: FONT }}
       />
       <p style={{ fontSize: "0.72rem", color: INK_60, margin: 0 }}>
-        PNG, JPEG, WebP, GIF, SVG, ICO, or PDF. Max 5 MB. File is committed to <code>public/library/</code>.
+        PNG, JPEG, WebP, GIF, SVG, ICO, PDF, MP4, WebM, or MOV. Max 50 MB. File is committed to <code>public/library/</code>.
       </p>
       {phase === "uploading" && (
         <p style={{ color: INK_60, fontSize: "0.78rem", margin: 0 }}>Uploading…</p>
