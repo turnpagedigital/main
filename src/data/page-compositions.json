@@ -795,6 +795,27 @@
           }
         },
         {
+          "id": "sec-1780972932525-x8c3",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
+          "content": {
+            "layout": "layout-2-banner",
+            "colorScheme": "photo",
+            "eyebrow": "Get in Touch",
+            "title": "Follow the latest cases.",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "cta": "Read the briefings"
+          }
+        },
+        {
           "id": "sec-litfin-testimonials",
           "type": "testimonials",
           "visible": true,
