@@ -70,6 +70,46 @@ export default function AudienceCardsSection({ sectionConfig }) {
           <div style={{ display: "flex", flexDirection: "column", gap: "1px", background: colorScheme === "dark" ? "rgba(255,255,255,0.08)" : LINE }}>
             {cards.map(card => <AudienceListRow key={card.id} card={card} dark={colorScheme === "dark"} />)}
           </div>
+        ) : ["white", "black", "light-gray", "dark", "light-glass", "clear-glass", "neon", "neon-glass"].includes(cardStyle) ? (
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: cols,
+            gap: "clamp(1rem, 2vw, 1.5rem)",
+          }} className="audience-grid">
+            {cards.map(card => {
+              const { badge } = card;
+              const hasBadge = badge && badge.trim().length > 0;
+              return (
+                <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius}>
+                  {hasBadge && (
+                    <div style={{
+                      display: "inline-block", fontFamily: FONT,
+                      fontSize: "0.65rem", fontWeight: 800, letterSpacing: "0.12em",
+                      textTransform: "uppercase", color: NEON,
+                      background: "rgba(212,255,0,0.12)",
+                      padding: "0.2rem 0.55rem", marginBottom: "0.9rem",
+                    }}>
+                      {badge}
+                    </div>
+                  )}
+                  <h3 style={{
+                    fontFamily: FONT, fontSize: "clamp(1.1rem, 1.6vw, 1.35rem)",
+                    fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1.2,
+                    color: "var(--card-text-color)", marginBottom: "0.65rem",
+                    margin: 0,
+                  }}>
+                    {card.title}
+                  </h3>
+                  <p style={{
+                    fontFamily: FONT, fontSize: "0.95rem",
+                    color: "var(--card-secondary-text)", lineHeight: 1.65, margin: 0,
+                  }}>
+                    {card.body}
+                  </p>
+                </Card>
+              );
+            })}
+          </div>
         ) : (
           <div style={{
             display: "grid",

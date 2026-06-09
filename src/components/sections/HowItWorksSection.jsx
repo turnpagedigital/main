@@ -80,7 +80,7 @@ export default function HowItWorksSection({ sectionConfig }) {
         </div>
 
         {/* Steps grid */}
-        {["white", "black", "light-gray", "dark", "light-glass", "clear-glass"].includes(cardStyle) ? (
+        {["white", "black", "light-gray", "dark", "light-glass", "clear-glass", "neon", "neon-glass"].includes(cardStyle) ? (
           <div style={{
             display: "grid",
             gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,

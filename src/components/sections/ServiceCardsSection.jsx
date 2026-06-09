@@ -94,7 +94,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
               />
             ))}
           </div>
-        ) : ["white", "black", "light-gray", "dark", "light-glass", "clear-glass"].includes(cardStyle) ? (
+        ) : ["white", "black", "light-gray", "dark", "light-glass", "clear-glass", "neon", "neon-glass"].includes(cardStyle) ? (
           <div style={{
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1rem, 2vw, 1.5rem)",
