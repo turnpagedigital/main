@@ -497,19 +497,6 @@
           }
         },
         {
-          "id": "sec-1780810488155-w95s",
-          "type": "photo-break",
-          "visible": true,
-          "content": {
-            "imageUrl": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg",
-            "overlayText": "We know",
-            "overlayAccent": "crypto",
-            "_minHeight": "50",
-            "_spacingBottom": "small",
-            "_spacingTop": "small"
-          }
-        },
-        {
           "id": "sec-1780673451611-nalm",
           "type": "our-edge",
           "visible": true,
@@ -538,6 +525,42 @@
           }
         },
         {
+          "id": "sec-1780969912375-v2eo",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
+          "content": {
+            "layout": "layout-2-banner",
+            "colorScheme": "photo",
+            "eyebrow": "Get in Touch",
+            "title": "Follow the latest in digital asset distress.",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "cta": "Read the briefings",
+            "image": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg"
+          }
+        },
+        {
+          "id": "sec-crypto-faq",
+          "type": "faq",
+          "visible": false,
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light-gray",
+          "content": {
+            "title": "Crypto claims,",
+            "accent": "answered.",
+            "ctaLabel": "Get a Quote",
+            "ctaHref": "/contact?source=crypto",
+            "colorScheme": "light-gray"
+          }
+        },
+        {
           "id": "sec-1780969821258-quug",
           "type": "cta",
           "visible": true,
@@ -562,20 +585,6 @@
               "href": ""
             },
             "_bookmark": "CTA"
-          }
-        },
-        {
-          "id": "sec-crypto-faq",
-          "type": "faq",
-          "visible": true,
-          "layout": "layout-2-sidebar",
-          "colorScheme": "light-gray",
-          "content": {
-            "title": "Crypto claims,",
-            "accent": "answered.",
-            "ctaLabel": "Get a Quote",
-            "ctaHref": "/contact?source=crypto",
-            "colorScheme": "light-gray"
           }
         },
         {
