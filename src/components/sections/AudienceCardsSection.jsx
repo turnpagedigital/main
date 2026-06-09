@@ -95,7 +95,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
                   <h3 style={{
                     fontFamily: FONT, fontSize: "clamp(1.1rem, 1.6vw, 1.35rem)",
                     fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1.2,
-                    color: "var(--card-text-color)", marginBottom: "0.65rem",
+                    color: "var(--card-text-color)", marginBottom: "1.2rem",
                     margin: 0,
                   }}>
                     {card.title}
