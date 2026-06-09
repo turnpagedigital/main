@@ -64,10 +64,20 @@ export default function NavBar({ currentPage }) {
   const { t } = useI18n();
 
   // Persist microsite context in sessionStorage so we keep the microsite nav
-  // even when navigating to pages like /home that don't have a microsite nav
-  const activeMicrosite = MICROSITE_NAVS[currentPage] ? currentPage : sessionStorage.getItem('activeMicrosite');
+  // when navigating to the home page (via Team link) from a microsite.
+  // Clear context when on non-microsite pages, or when clicking the logo.
+  let activeMicrosite = null;
   if (MICROSITE_NAVS[currentPage]) {
+    // On a microsite page → use it and save to storage
+    activeMicrosite = currentPage;
     sessionStorage.setItem('activeMicrosite', currentPage);
+  } else if (currentPage === "home") {
+    // On home page → use saved context (for Team link persistence)
+    activeMicrosite = sessionStorage.getItem('activeMicrosite');
+  } else {
+    // On any other non-microsite page → clear the context and show main nav
+    sessionStorage.removeItem('activeMicrosite');
+    activeMicrosite = null;
   }
 
   function close() { setOpen(false); }
