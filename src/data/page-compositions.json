@@ -432,25 +432,25 @@
               {
                 "id": "individual-creditors",
                 "title": "Exchange Customers",
-                "body": "Account holders with frozen deposits on defunct exchanges stuck in legal proceedings.",
+                "body": "Account holders with funds frozen on a failed exchange and tied up in bankruptcy or liquidation.",
                 "priority": false
               },
               {
                 "id": "funds-institutions",
                 "title": "Crypto Hedge Funds",
-                "body": "",
+                "body": "Funds with capital trapped as a creditor of a collapsed exchange, lender, or counterparty — and LPs waiting to be made whole.",
                 "priority": false
               },
               {
                 "id": "estates-trustees",
                 "title": "Estates & Trustees",
-                "body": "Administering an estate or trust? We can quote the entire position.",
+                "body": "Fiduciaries managing bankruptcy estates or liquidating trusts that hold crypto-related claims and interests.",
                 "priority": false
               },
               {
                 "id": "card-1780956570722",
                 "title": "On Chain Lenders",
-                "body": "Digital asset lenders",
+                "body": "Lenders left holding defaulted loans or locked collateral after a borrower or protocol failed.",
                 "priority": false
               }
             ]
@@ -538,7 +538,7 @@
             "points": [
               {
                 "id": "edge-1",
-                "h": "Practically unlimited liquidity",
+                "h": "Practically ulimited liquidity",
                 "b": "We partner with major asset managers — over 500 institutions on speed dial."
               },
               {
