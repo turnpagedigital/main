@@ -373,7 +373,7 @@
             "eyebrow": "Crypto Claims",
             "title": "Liquidity for locked",
             "accentTitle": "digital assets.",
-            "subtitle": "Our principals have helped thousands of crypto investors monetize nearly $1 billion in claims across nearly every major digital asset insolvency case of the last decade—BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
+            "subtitle": "Our principals have helped thousands of crypto investors monetize their claims across nearly every major digital asset insolvency case of the last decade—BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
             "size": "tall",
             "video": "/robotvault1.mp4",
             "ctaPrimary": {
@@ -394,21 +394,21 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
-            "title": "Crypto loss",
-            "accent": "claimants",
+            "title": "Crypto lenders and",
+            "accent": "account holders.",
             "colorScheme": "white",
             "layout": "list",
             "cards": [
               {
                 "id": "individual-creditors",
                 "title": "Exchange Customers",
-                "body": "Account holders with frozen deposits on defunct exchanges stuck in legal proceedings.",
+                "body": "Liquidity for exchange and wallet customers with deposits and loans stuck in legal proceedings.",
                 "priority": false
               },
               {
                 "id": "funds-institutions",
-                "title": "Trust Administrators",
-                "body": "xxx",
+                "title": "Crypto Hedge Funds",
+                "body": "Monetization of ",
                 "priority": false
               },
               {
@@ -418,41 +418,51 @@
                 "priority": false
               },
               {
-                "id": "card-1780962079731",
-                "title": "On-Chain Lenders",
-                "body": "Digital asset lenders with locked collateral. ",
+                "id": "card-1780956570722",
+                "title": "Trustees",
+                "body": "",
+                "priority": false
+              },
+              {
+                "id": "card-1780956576456",
+                "title": "Lending Protocols",
+                "body": "",
                 "priority": false
               }
-            ],
-            "_bookmark": "who-we-help"
+            ]
           }
         },
         {
           "id": "sec-crypto-service",
           "type": "service-cards",
           "visible": true,
-          "layout": "grid-2col",
+          "layout": "grid-3col",
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "How We Help",
-            "title": "Fair pricing. Real",
-            "accent": "Resolutions.",
+            "title": "Pricing. Structuring.",
+            "accent": "Resolution.",
             "colorScheme": "light-gray",
-            "layout": "grid-2col",
+            "layout": "grid-3col",
             "cards": [
               {
                 "id": "capital",
-                "title": "Capital",
-                "body": "Accept a competitive offer from our dedicated capital partners or tap our deep network of institutional buyers. Lean on our experience structuring complex transactions to ensure alignment of incentives and efficient risk allocation. "
+                "title": "Competitive Capital",
+                "body": "A competitive cash bid from our institutional buyer network. Quoted and settled in fiat. Days to close."
               },
               {
                 "id": "advisory",
-                "title": "Advice",
-                "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances."
+                "title": "Strategic Advisory",
+                "body": "Plan-of-reorganization analysis. Token-vs-fiat valuation strategy. Counsel introductions when needed."
+              },
+              {
+                "id": "card-1780883568240",
+                "title": "Dispute Resolution",
+                "body": "",
+                "priority": false
               }
             ],
-            "_bookmark": "how-we-help",
-            "cardStyle": "neon"
+            "_bookmark": "how-we-help"
           }
         },
         {
@@ -480,41 +490,6 @@
                 "Single creditor or bulk fund — same desk."
               ]
             }
-          }
-        },
-        {
-          "id": "sec-1780956144940-j453",
-          "type": "how-it-works",
-          "visible": true,
-          "colorScheme": "light-gray",
-          "content": {
-            "eyebrow": "How It Works",
-            "title": "Three steps to close.",
-            "accent": "",
-            "kicker": "Trust us bro.",
-            "colorScheme": "light-gray",
-            "steps": [
-              {
-                "id": "step-1",
-                "n": "01",
-                "title": "Step one",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-2",
-                "n": "02",
-                "title": "Step two",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-3",
-                "n": "03",
-                "title": "Step three",
-                "body": "Describe this step."
-              }
-            ],
-            "cardRadius": "rounded",
-            "cardStyle": "black"
           }
         },
         {
@@ -609,6 +584,39 @@
           "id": "sec-1780956113355-u4jq",
           "type": "damages",
           "visible": true
+        },
+        {
+          "id": "sec-1780956144940-j453",
+          "type": "how-it-works",
+          "visible": true,
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "How It Works",
+            "title": "Three steps to close.",
+            "accent": "",
+            "kicker": "",
+            "colorScheme": "dark",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Step one",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "Step two",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Step three",
+                "body": "Describe this step."
+              }
+            ]
+          }
         }
       ],
       "status": "active"
