@@ -201,14 +201,6 @@
           }
         },
         {
-          "id": "sec-aic-damages",
-          "type": "damages",
-          "visible": true,
-          "content": {
-            "_spacingTop": "small"
-          }
-        },
-        {
           "id": "sec-aic-audience",
           "type": "audience-cards",
           "visible": true,
@@ -250,35 +242,11 @@
           }
         },
         {
-          "id": "sec-aic-service",
-          "type": "service-cards",
+          "id": "sec-aic-damages",
+          "type": "damages",
           "visible": true,
-          "layout": "grid-3col",
-          "colorScheme": "white",
           "content": {
-            "eyebrow": "DON'T MISS OUT",
-            "title": "Claim",
-            "accent": "yours",
-            "colorScheme": "white",
-            "layout": "grid-3col",
-            "cards": [
-              {
-                "id": "capital",
-                "title": "Track cases",
-                "body": "Did you know you might be eligible to file a claim in one of 60+ cases that are currently on the docket against Generative AI Companies? Subscribe to alerts about claim filing opportunities in the cases that matter to you so you never miss a deadline."
-              },
-              {
-                "id": "advisory",
-                "title": "File claim",
-                "body": "Need help filing a claim? We can help you identify the materials you need to prove what you're owed and reduce the error rate. "
-              },
-              {
-                "id": "claim-monitoring",
-                "title": "Collect cash",
-                "body": "We track and file claims for you, automatically."
-              }
-            ],
-            "_bookmark": "how-we-work"
+            "_spacingTop": "small"
           }
         },
         {
@@ -296,24 +264,24 @@
               {
                 "id": "step-1",
                 "n": "01",
-                "title": "Step one",
-                "body": "Describe this step."
+                "title": "Track Relevant Cases",
+                "body": "Did you know you might be eligible to file a claim in one of 60+ cases that are currently on the docket against Generative AI Companies? Subscribe to alerts about claim filing opportunities in the cases that matter to you so you never miss a deadline."
               },
               {
                 "id": "step-2",
                 "n": "02",
-                "title": "Step two",
-                "body": "Describe this step."
+                "title": "File Your Claim(s)",
+                "body": "Need help filing a claim? We can help you identify the materials you need to prove what you're owed and reduce the error rate. "
               },
               {
                 "id": "step-3",
                 "n": "03",
-                "title": "Step three",
-                "body": "Describe this step."
+                "title": "Receive Settlement Payments",
+                "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you."
               }
             ],
-            "cardStyle": "black",
-            "cardRadius": "square"
+            "cardStyle": "light-glass",
+            "cardRadius": "rounded"
           }
         },
         {
