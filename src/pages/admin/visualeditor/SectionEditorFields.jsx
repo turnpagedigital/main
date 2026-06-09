@@ -287,7 +287,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
       {/* ── How It Works ── */}
       {typeId === "how-it-works" && (
         <>
-          <ColorSchemePicker typeId="how-it-works" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["dark","light-gray"]} />
+          <ColorSchemePicker typeId="how-it-works" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["dark","light-gray","white"]} />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
             <div><label style={labelStyle}>Card Style</label>
               <select style={{ ...inputStyle, marginTop: 4 }} value={form.cardStyle || "standard"} onChange={e => set("cardStyle", e.target.value)}>

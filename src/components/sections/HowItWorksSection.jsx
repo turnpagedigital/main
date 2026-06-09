@@ -9,7 +9,7 @@ import Card from "../Card.jsx";
      title, accent          — section heading (left column)
      kicker                 — subtitle text (right column)
      steps[]                — { id, n, title, body }
-     colorScheme            — "dark" (default) | "light-gray"
+     colorScheme            — "dark" (default) | "light-gray" | "white"
      cardStyle              — "standard" (default) | "white" | "black" | "light-gray" | "dark" | "light-glass" | "clear-glass"
      cardRadius             — "rounded" (default) | "square"
      backgroundImage        — optional image URL for section background
@@ -29,10 +29,12 @@ export default function HowItWorksSection({ sectionConfig }) {
   if (!steps.length) return null;
 
   const isDark    = colorScheme === "dark";
+  const isWhite   = colorScheme === "white";
   const sectionBg = backgroundImage
     ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${backgroundImage}') center/cover no-repeat`
-    : isDark ? "#0A0B0E" : "#F4F5F7";
+    : isDark ? "#0A0B0E" : isWhite ? "#FFFFFF" : "#F4F5F7";
   const textColor = isDark ? "#fff" : "#0A0A0A";
+  const eyebrowColor = isDark ? NEON : INK_60;
 
   return (
     <section id="how-it-works" style={{
@@ -55,7 +57,7 @@ export default function HowItWorksSection({ sectionConfig }) {
             <p style={{
               fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
               letterSpacing: "0.22em", textTransform: "uppercase",
-              color: NEON, marginBottom: "1.2rem",
+              color: eyebrowColor, marginBottom: "1.2rem",
             }}>{eyebrow}</p>
             <h2 style={{
               fontFamily: FONT, fontWeight: 800,
@@ -100,7 +102,7 @@ export default function HowItWorksSection({ sectionConfig }) {
                   fontFamily: FONT, fontWeight: 800,
                   fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
                   letterSpacing: "-0.01em", lineHeight: 1.2,
-                  color: "var(--card-text-color)", marginBottom: "0.65rem", margin: 0,
+                  color: "var(--card-text-color)", marginBottom: "1rem", margin: 0,
                 }}>
                   {step.title}
                 </h3>
