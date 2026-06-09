@@ -206,6 +206,10 @@
           "href": "/#team"
         },
         {
+          "label": "About",
+          "href": "/"
+        },
+        {
           "label": "Press & Publications",
           "href": "/press"
         }
@@ -232,6 +236,10 @@
         {
           "label": "Team",
           "href": "/#team"
+        },
+        {
+          "label": "About",
+          "href": "/"
         },
         {
           "label": "Press & Publications",
@@ -262,6 +270,10 @@
           "href": "/#team"
         },
         {
+          "label": "About",
+          "href": "/"
+        },
+        {
           "label": "Press & Publications",
           "href": "/press"
         }
@@ -275,17 +287,6 @@
       "brand": {
         "label": "Bankruptcy Claims",
         "href": "/"
-      },
-      "items": [],
-      "cta": {
-        "label": "Contact",
-        "href": "/contact"
-      }
-    },
-    "tariff-refunds": {
-      "brand": {
-        "label": "Tariff Refunds",
-        "href": "https://www.rewindtariffs.com"
       },
       "items": [],
       "cta": {
