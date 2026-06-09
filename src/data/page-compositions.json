@@ -238,7 +238,7 @@
                 "priority": false
               }
             ],
-            "_bookmark": "clients"
+            "_bookmark": "who-we-help"
           }
         },
         {
@@ -462,8 +462,20 @@
                 "priority": false
               },
               {
+                "id": "card-1780979369229",
+                "title": "Trade Creditors",
+                "body": "Vendors, market makers, OTC desks, law firms, and other counterparties owed funds by a collapsed exchange or lender.",
+                "priority": false
+              },
+              {
+                "id": "card-1780979410997",
+                "title": "Token & Equity Investors",
+                "body": "Holders of tokens, SAFTs, SAFEs, or equity in a failed project or company. Junior in the waterfall, but real claims and litigation interests entitled to compensation.",
+                "priority": false
+              },
+              {
                 "id": "card-1780975936290",
-                "title": "Legal Partners",
+                "title": "Law Firms",
                 "body": "We help law firms that represent digital asset creditors trace and investigate historical fraud and real-time asset conversions to assess recoverability and litigation options.",
                 "priority": false
               }
@@ -478,7 +490,7 @@
           "layout": "grid-3col",
           "colorScheme": "light-gray",
           "content": {
-            "eyebrow": "How We Work",
+            "eyebrow": "How We Help",
             "title": "Fair pricing. Real",
             "accent": "resolutions.",
             "colorScheme": "light-gray",
@@ -490,20 +502,9 @@
                 "body": "Accept a competitive offer from our dedicated capital partners or tap our deep network of institutional buyers. "
               },
               {
-                "id": "advisory",
-                "title": "Advice",
-                "body": "KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances.\n\n"
-              },
-              {
                 "id": "card-1780977882577",
                 "title": "Structuring",
                 "body": "Lean on our experience structuring complex transactions to ensure alignment of incentives and efficient risk allocation.",
-                "priority": false
-              },
-              {
-                "id": "card-1780977891245",
-                "title": "Disputes",
-                "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. ",
                 "priority": false
               },
               {
@@ -511,9 +512,20 @@
                 "title": "Analysis",
                 "body": "Hire us to trace and investigate historical crypto transactions to assess recoverability and litigation options, in partnership with sophisticated counsel.",
                 "priority": false
+              },
+              {
+                "id": "advisory",
+                "title": "Advice",
+                "body": "KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances.\n\n"
+              },
+              {
+                "id": "card-1780977891245",
+                "title": "Disputes",
+                "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. ",
+                "priority": false
               }
             ],
-            "_bookmark": "how-we-work",
+            "_bookmark": "how-we-help",
             "cardStyle": "clear-glass"
           }
         },
@@ -681,7 +693,7 @@
             },
             "ctaSecondary": {
               "label": "How we help",
-              "href": "#how-litfin"
+              "href": "#how-we-help"
             }
           }
         },
@@ -732,7 +744,7 @@
           "layout": "grid-2col",
           "colorScheme": "dark",
           "content": {
-            "eyebrow": "How We work",
+            "eyebrow": "How We Help",
             "title": "We fund tough cases for",
             "accent": "big outcomes.",
             "colorScheme": "dark",
@@ -740,8 +752,8 @@
             "cards": [
               {
                 "id": "ip-patent",
-                "title": "Ad hoc group representations",
-                "body": "Long tails of creditors"
+                "title": "Ad Hoc Victim Groups",
+                "body": "The law firms that represent claimants in mass tort cases."
               },
               {
                 "id": "antitrust-class-actions",
@@ -762,7 +774,7 @@
             ],
             "cardStyle": "standard",
             "cardRadius": "square",
-            "_bookmark": "how-we-work"
+            "_bookmark": "how-we-help"
           }
         },
         {
