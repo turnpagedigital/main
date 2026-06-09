@@ -498,13 +498,35 @@ function CardsArrayEditor({ label, cards, onChange, showPriority }) {
     onChange((cards || []).filter((_, idx) => idx !== i));
   };
 
+  const handleMoveUp = (i) => {
+    if (i <= 0) return;
+    const newCards = [...(cards || [])];
+    [newCards[i - 1], newCards[i]] = [newCards[i], newCards[i - 1]];
+    onChange(newCards);
+  };
+
+  const handleMoveDown = (i) => {
+    if (i >= (cards || []).length - 1) return;
+    const newCards = [...(cards || [])];
+    [newCards[i], newCards[i + 1]] = [newCards[i + 1], newCards[i]];
+    onChange(newCards);
+  };
+
   return (
     <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
       <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 8 }}>{label}</div>
       {(cards || []).map((c, i) => (
         <div key={c.id} style={{ marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid ${LINE}` }}>
-          <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
-          <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Body" value={c.body} onChange={e => handleChange(i, "body", e.target.value)} />
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
+            <div style={{ flex: 1 }}>
+              <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
+              <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Body" value={c.body} onChange={e => handleChange(i, "body", e.target.value)} />
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 4, marginLeft: 8 }}>
+              <button type="button" onClick={() => handleMoveUp(i)} disabled={i === 0} title="Move up" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === 0 ? 0.5 : 1, cursor: i === 0 ? "default" : "pointer" }}>↑</button>
+              <button type="button" onClick={() => handleMoveDown(i)} disabled={i === (cards || []).length - 1} title="Move down" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === (cards || []).length - 1 ? 0.5 : 1, cursor: i === (cards || []).length - 1 ? "default" : "pointer" }}>↓</button>
+            </div>
+          </div>
           {showPriority && (
             <label style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: "0.75rem", marginBottom: 4, cursor: "pointer" }}>
               <input type="checkbox" checked={c.priority || false} onChange={e => handleChange(i, "priority", e.target.checked)} />
