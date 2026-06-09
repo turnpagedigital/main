@@ -14,7 +14,7 @@ import { getFileSha, commitBinaryToGitHub } from "./_github.js";
    user can predict the URL from the filename.
 */
 
-const MAX_B64 = 7 * 1024 * 1024;   // ~5 MB raw — favicons/logos/PDFs shouldn't be huge
+const MAX_B64 = 100 * 1024 * 1024;   // ~75 MB raw — allows video uploads up to ~50 MB
 
 const ALLOWED_EXT = {
   "image/png":     "png",
@@ -26,6 +26,9 @@ const ALLOWED_EXT = {
   "image/x-icon":  "ico",
   "image/vnd.microsoft.icon": "ico",
   "application/pdf": "pdf",
+  "video/mp4":     "mp4",
+  "video/webm":    "webm",
+  "video/quicktime": "mov",
 };
 
 // Extensions allowed for `Replace` operations on existing library files.
@@ -58,7 +61,7 @@ export async function onRequestPost({ request, env }) {
   if (!ext) {
     return jsonResponse({
       ok: false,
-      error: `Unsupported type: ${contentType}. Use PNG, JPEG, WebP, GIF, SVG, or ICO.`,
+      error: `Unsupported type: ${contentType}. Use PNG, JPEG, WebP, GIF, SVG, ICO, PDF, MP4, WebM, or MOV.`,
     }, 400);
   }
 
