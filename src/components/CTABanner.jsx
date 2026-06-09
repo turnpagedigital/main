@@ -11,7 +11,9 @@ export default function CTABanner({
   cta = "Sign up",
   image = "/Building_Wide.jpg",
   external = false,
+  align = "left",
 }) {
+  const isRight = align === "right";
   return (
     <section style={{
       position: "relative", overflow: "hidden",
@@ -30,12 +32,16 @@ export default function CTABanner({
       />
       <div style={{
         position: "absolute", inset: 0, zIndex: 1,
-        background: "linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.70) 35%, rgba(255,255,255,0.20) 65%, transparent 100%)",
+        background: isRight
+          ? "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.20) 35%, rgba(255,255,255,0.70) 65%, rgba(255,255,255,0.92) 100%)"
+          : "linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.70) 35%, rgba(255,255,255,0.20) 65%, transparent 100%)",
       }} className="cta-banner-overlay" />
       <div style={{
         position: "relative", zIndex: 2,
         maxWidth: 1440, width: "100%", margin: "0 auto",
         padding: "clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)",
+        display: "flex", flexDirection: "column",
+        alignItems: isRight ? "flex-end" : "flex-start",
       }}>
         <h2 style={{
           fontFamily: FONT, fontWeight: 800,
@@ -43,10 +49,11 @@ export default function CTABanner({
           lineHeight: 1.1, letterSpacing: "-0.025em",
           color: INK, marginBottom: "2rem",
           maxWidth: 640,
+          textAlign: isRight ? "right" : "left",
         }}>
           {title}
         </h2>
-        <a
+        <
           href={href}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}

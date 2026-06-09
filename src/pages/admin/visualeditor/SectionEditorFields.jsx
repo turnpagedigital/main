@@ -100,6 +100,13 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Button label</label><input style={inputStyle} value={form.cta || ""} onChange={e => set("cta", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Button link (href)</label><input style={inputStyle} value={form.href || ""} onChange={e => set("href", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Background image URL</label><input style={inputStyle} value={form.image || ""} onChange={e => set("image", e.target.value)} placeholder="/Building_Wide.jpg" /></div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Text Alignment</label>
+            <select style={selectStyle} value={form.align || "left"} onChange={e => set("align", e.target.value)}>
+              <option value="left">Left</option>
+              <option value="right">Right</option>
+            </select>
+          </div>
         </>
       )}
 

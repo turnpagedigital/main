@@ -11,6 +11,7 @@ export default function CTABannerSection({ sectionConfig }) {
       cta={c.cta || "Learn more"}
       image={c.image || "/Building_Wide.jpg"}
       external={c.external || false}
+      align={c.align || "left"}
     />
   );
 }
