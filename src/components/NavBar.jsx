@@ -63,6 +63,13 @@ export default function NavBar({ currentPage }) {
   const closeTimer = useRef(null);
   const { t } = useI18n();
 
+  // Persist microsite context in sessionStorage so we keep the microsite nav
+  // even when navigating to pages like /home that don't have a microsite nav
+  const activeMicrosite = MICROSITE_NAVS[currentPage] ? currentPage : sessionStorage.getItem('activeMicrosite');
+  if (MICROSITE_NAVS[currentPage]) {
+    sessionStorage.setItem('activeMicrosite', currentPage);
+  }
+
   function close() { setOpen(false); }
 
   function openDrop(key) {
@@ -78,7 +85,7 @@ export default function NavBar({ currentPage }) {
     closeTimer.current = setTimeout(() => setActiveDrop(null), 140);
   }
 
-  const microsite = MICROSITE_NAVS[currentPage] || null;
+  const microsite = activeMicrosite ? MICROSITE_NAVS[activeMicrosite] : null;
   const dropContent = activeDrop ? PREVIEWS[activeDrop] : null;
 
   return (
@@ -91,7 +98,11 @@ export default function NavBar({ currentPage }) {
         {/* Logo — always links home */}
         <a
           href={hashHref("")}
-          onClick={close}
+          onClick={() => {
+            close();
+            // Clear microsite context when returning to main site via logo
+            sessionStorage.removeItem('activeMicrosite');
+          }}
           style={{ display: "flex", alignItems: "center", flexShrink: 0 }}
           aria-label="Turnpage Digital Markets — Home"
         >
