@@ -281,7 +281,8 @@
               }
             ],
             "cardStyle": "light-glass",
-            "cardRadius": "rounded"
+            "cardRadius": "rounded",
+            "_bookmark": "how-we-work"
           }
         },
         {
@@ -474,28 +475,46 @@
           "id": "sec-crypto-service",
           "type": "service-cards",
           "visible": true,
-          "layout": "grid-2col",
+          "layout": "grid-3col",
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "How We Work",
             "title": "Fair pricing. Real",
             "accent": "resolutions.",
             "colorScheme": "light-gray",
-            "layout": "grid-2col",
+            "layout": "grid-3col",
             "cards": [
               {
                 "id": "capital",
                 "title": "Capital",
-                "body": "Accept a competitive offer from our dedicated capital partners or tap our deep network of institutional buyers. Lean on our experience structuring complex transactions to ensure alignment of incentives and efficient risk allocation."
+                "body": "Accept a competitive offer from our dedicated capital partners or tap our deep network of institutional buyers. "
               },
               {
                 "id": "advisory",
                 "title": "Advice",
-                "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances.\n\n"
+                "body": "KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances.\n\n"
+              },
+              {
+                "id": "card-1780977882577",
+                "title": "Structuring",
+                "body": "Lean on our experience structuring complex transactions to ensure alignment of incentives and efficient risk allocation.",
+                "priority": false
+              },
+              {
+                "id": "card-1780977891245",
+                "title": "Disputes",
+                "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. ",
+                "priority": false
+              },
+              {
+                "id": "card-1780977988861",
+                "title": "Analysis",
+                "body": "Hire us to trace and investigate historical crypto transactions to assess recoverability and litigation options, in partnership with sophisticated counsel.",
+                "priority": false
               }
             ],
             "_bookmark": "how-we-work",
-            "cardStyle": "light-glass"
+            "cardStyle": "clear-glass"
           }
         },
         {

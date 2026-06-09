@@ -2,14 +2,14 @@
   "_comment": "Site-level metadata and per-page Open Graph / SEO fields. Managed via /admin/pages (Site Metadata + Per-page Meta sections). _middleware.js imports this at build time. Changes here are committed via the admin API and trigger a Cloudflare Pages rebuild.",
   "site": {
     "name": "Turnpage Digital Markets",
-    "defaultTitle": "Turnpage Digital Markets — Capital Solutions for Rights Holders Entitled to Compensation",
-    "defaultDescription": "Litigation, class action and bankruptcy claims to receivables, tariff refunds and locked digital assets."
+    "defaultTitle": "Turnpage Digital Markets — For Rights Holders Entitled to Compensation",
+    "defaultDescription": "Turnpage offers strategic guidance and turn-key liquidity solutions for rights holders entitled to compensation. Our experts have helped customers, creditors and other claimants liquidate over $1 billion in claims across the largest class actions, bankruptcies and complex litigation matters. We partner with leading asset managers to offer competitive rates and frictionless solutions. With over 500 financial institutions on speed dial, we save you countless hours identifying the right counterparty to meet your needs. Specifically, we cover rights from litigation, class action and bankruptcy cla"
   },
   "pages": [
     {
       "path": "/",
-      "title": "Turnpage Digital Markets — The OTC Desk for Rights Holders",
-      "description": "Capital and advisory solutions for rights holders — complex claims, locked assets and creative financing options",
+      "title": "Turnpage Digital Markets — Capital and advisory solutions for rights holders",
+      "description": "Capital and advisory solutions for rights holders — OTC desk for complex claims, locked assets and creative financing options",
       "og": "home",
       "active": true
     },
