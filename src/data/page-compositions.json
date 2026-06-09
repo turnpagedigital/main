@@ -321,30 +321,9 @@
           "colorScheme": "light"
         },
         {
-          "id": "sec-aic-bottom-cta",
-          "type": "bottom-cta",
-          "visible": true,
-          "layout": "layout-3-bottomcta",
-          "colorScheme": "dark",
-          "content": {
-            "eyebrow": "Get compensated",
-            "title": "Ready to learn more?",
-            "accent": "Talk to us.",
-            "kicker": "Contact us to discuss your rights. Private, fast and secure.",
-            "primary": {
-              "label": "Get in Touch",
-              "href": "/contact?source=ai-copyright"
-            },
-            "secondary": {
-              "label": "Briefings",
-              "href": "/briefings"
-            }
-          }
-        },
-        {
           "id": "sec-aic-faq",
           "type": "faq",
-          "visible": true,
+          "visible": false,
           "layout": "layout-2-sidebar",
           "colorScheme": "light",
           "content": {
@@ -354,6 +333,56 @@
             "ctaHref": "/contact?source=ai-copyright",
             "colorScheme": "light",
             "_bookmark": "faq"
+          }
+        },
+        {
+          "id": "sec-1780973311793-kxeo",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
+          "content": {
+            "layout": "layout-2-banner",
+            "colorScheme": "photo",
+            "eyebrow": "Get in Touch",
+            "title": "Follow along as we track the latest cases.",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "cta": "Subscribe to briefings",
+            "href": "/contact?source=copyright",
+            "image": "/bharath-kumar-ML95FigqyR0-unsplash.jpg"
+          }
+        },
+        {
+          "id": "sec-1780972607455-de6l",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
+            "eyebrow": "Get Compensated",
+            "title": "Have a claim?",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us to discuss your rights. Private, fast and secure.",
+            "cta": {
+              "label": "Get in Touch",
+              "href": ""
+            },
+            "_bookmark": "cta"
           }
         }
       ],
@@ -542,7 +571,7 @@
               "href": "/contact"
             },
             "secondary": null,
-            "cta": "Read the briefings",
+            "cta": "Subscribe to briefings",
             "image": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg"
           }
         },
@@ -582,7 +611,7 @@
             "body": "Contact us for a quote today. Private, fast and secure.",
             "cta": {
               "label": "Get a Quote",
-              "href": ""
+              "href": "/contact?source=locked-crypto"
             },
             "_bookmark": "CTA"
           }
@@ -786,6 +815,28 @@
                 "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
               }
             ]
+          }
+        },
+        {
+          "id": "sec-1780972932525-x8c3",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
+          "content": {
+            "layout": "layout-2-banner",
+            "colorScheme": "photo",
+            "eyebrow": "Get in Touch",
+            "title": "Read what we're reading.",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "cta": "Subscribe to briefings",
+            "image": "/library/joel-filipe-pyhpjejuyhy-unsplash.jpg"
           }
         },
         {
