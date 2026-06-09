@@ -394,39 +394,33 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
-            "title": "Crypto lenders and",
-            "accent": "account holders.",
+            "title": "Crypto loss",
+            "accent": "claimants.",
             "colorScheme": "white",
             "layout": "list",
             "cards": [
               {
                 "id": "individual-creditors",
                 "title": "Exchange Customers",
-                "body": "Liquidity for exchange and wallet customers with deposits and loans stuck in legal proceedings.",
+                "body": "Account holders with frozen deposits on defunct exchanges stuck in legal proceedings.",
                 "priority": false
               },
               {
                 "id": "funds-institutions",
                 "title": "Crypto Hedge Funds",
-                "body": "Monetization of ",
+                "body": "",
                 "priority": false
               },
               {
                 "id": "estates-trustees",
-                "title": "Bankruptcy Estates",
+                "title": "Estates & Trustees",
                 "body": "Administering an estate or trust? We can quote the entire position.",
                 "priority": false
               },
               {
                 "id": "card-1780956570722",
-                "title": "Trustees",
-                "body": "",
-                "priority": false
-              },
-              {
-                "id": "card-1780956576456",
-                "title": "Lending Protocols",
-                "body": "",
+                "title": "On Chain Lenders",
+                "body": "Digital asset lenders",
                 "priority": false
               }
             ]
@@ -436,33 +430,28 @@
           "id": "sec-crypto-service",
           "type": "service-cards",
           "visible": true,
-          "layout": "grid-3col",
+          "layout": "grid-2col",
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "How We Help",
-            "title": "Pricing. Structuring.",
-            "accent": "Resolution.",
+            "title": "Fair pricing. Real",
+            "accent": "resolutions.",
             "colorScheme": "light-gray",
-            "layout": "grid-3col",
+            "layout": "grid-2col",
             "cards": [
               {
                 "id": "capital",
-                "title": "Competitive Capital",
-                "body": "A competitive cash bid from our institutional buyer network. Quoted and settled in fiat. Days to close."
+                "title": "Capital",
+                "body": "Accept a competitive offer from our dedicated capital partners or tap our deep network of institutional buyers. Lean on our experience structuring complex transactions to ensure alignment of incentives and efficient risk allocation."
               },
               {
                 "id": "advisory",
-                "title": "Strategic Advisory",
-                "body": "Plan-of-reorganization analysis. Token-vs-fiat valuation strategy. Counsel introductions when needed."
-              },
-              {
-                "id": "card-1780883568240",
-                "title": "Dispute Resolution",
-                "body": "",
-                "priority": false
+                "title": "Advice",
+                "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances.\n\n"
               }
             ],
-            "_bookmark": "how-we-help"
+            "_bookmark": "how-we-help",
+            "cardStyle": "light-glass"
           }
         },
         {
@@ -549,21 +538,30 @@
           }
         },
         {
-          "id": "sec-crypto-bottom-cta",
-          "type": "bottom-cta",
+          "id": "sec-1780969821258-quug",
+          "type": "cta",
           "visible": true,
-          "layout": "layout-3-bottomcta",
+          "layout": "layout-1-getquote",
           "colorScheme": "dark",
           "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
             "eyebrow": "GET YOUR CRYPTO BACK",
             "title": "Ready to trade?",
             "accent": "Talk to us.",
-            "kicker": "Contact us for a quote today. Private. Fast. Secure.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
             "primary": {
-              "label": "Get a Quote",
-              "href": "/contact?source=crypto"
+              "label": "Get in Touch",
+              "href": "/contact"
             },
-            "secondary": null
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us for a quote today. Private, fast and secure.",
+            "cta": {
+              "label": "Get a Quote",
+              "href": ""
+            },
+            "_bookmark": "CTA"
           }
         },
         {
@@ -584,39 +582,6 @@
           "id": "sec-1780956113355-u4jq",
           "type": "damages",
           "visible": true
-        },
-        {
-          "id": "sec-1780956144940-j453",
-          "type": "how-it-works",
-          "visible": true,
-          "colorScheme": "dark",
-          "content": {
-            "eyebrow": "How It Works",
-            "title": "Three steps to close.",
-            "accent": "",
-            "kicker": "",
-            "colorScheme": "dark",
-            "steps": [
-              {
-                "id": "step-1",
-                "n": "01",
-                "title": "Step one",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-2",
-                "n": "02",
-                "title": "Step two",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-3",
-                "n": "03",
-                "title": "Step three",
-                "body": "Describe this step."
-              }
-            ]
-          }
         }
       ],
       "status": "active"
