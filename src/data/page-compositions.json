@@ -336,6 +336,28 @@
           }
         },
         {
+          "id": "sec-1780973311793-kxeo",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
+          "content": {
+            "layout": "layout-2-banner",
+            "colorScheme": "photo",
+            "eyebrow": "Get in Touch",
+            "title": "Follow along as we track the latest cases.",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "cta": "Subscribe to briefings",
+            "href": "/contact?source=copyright"
+          }
+        },
+        {
           "id": "sec-1780972607455-de6l",
           "type": "cta",
           "visible": true,
@@ -345,7 +367,7 @@
             "layout": "layout-1-getquote",
             "colorScheme": "dark",
             "eyebrow": "Get Compensated",
-            "title": "Ready to learn more?",
+            "title": "Have a claim?",
             "accent": "Talk to us.",
             "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
             "primary": {
