@@ -53,7 +53,7 @@ export default function CTABanner({
         }}>
           {title}
         </h2>
-        <
+        <a
           href={href}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
