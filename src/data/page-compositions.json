@@ -373,7 +373,7 @@
             "eyebrow": "Crypto Claims",
             "title": "Liquidity for locked",
             "accentTitle": "digital assets.",
-            "subtitle": "Our principals have helped thousands of crypto investors monetize nearly $1 billion in claims across nearly every major digital asset insolvency case of the last decade—BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
+            "subtitle": "Our principals have helped thousands of crypto investors monetize their claims across nearly every major digital asset insolvency case of the last decade—BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
             "size": "tall",
             "video": "/robotvault1.mp4",
             "ctaPrimary": {
@@ -395,7 +395,7 @@
           "content": {
             "eyebrow": "Who We Help",
             "title": "Crypto loss",
-            "accent": "claimants",
+            "accent": "claimants.",
             "colorScheme": "white",
             "layout": "list",
             "cards": [
@@ -407,24 +407,23 @@
               },
               {
                 "id": "funds-institutions",
-                "title": "Trust Administrators",
-                "body": "xxx",
+                "title": "Crypto Hedge Funds",
+                "body": "",
                 "priority": false
               },
               {
                 "id": "estates-trustees",
-                "title": "Bankruptcy Estates",
+                "title": "Estates & Trustees",
                 "body": "Administering an estate or trust? We can quote the entire position.",
                 "priority": false
               },
               {
-                "id": "card-1780962079731",
-                "title": "On-Chain Lenders",
-                "body": "Digital asset lenders with locked collateral. ",
+                "id": "card-1780956570722",
+                "title": "On Chain Lenders",
+                "body": "Digital asset lenders",
                 "priority": false
               }
-            ],
-            "_bookmark": "who-we-help"
+            ]
           }
         },
         {
@@ -436,23 +435,23 @@
           "content": {
             "eyebrow": "How We Help",
             "title": "Fair pricing. Real",
-            "accent": "Resolutions.",
+            "accent": "resolutions.",
             "colorScheme": "light-gray",
             "layout": "grid-2col",
             "cards": [
               {
                 "id": "capital",
                 "title": "Capital",
-                "body": "Accept a competitive offer from our dedicated capital partners or tap our deep network of institutional buyers. Lean on our experience structuring complex transactions to ensure alignment of incentives and efficient risk allocation. "
+                "body": "Accept a competitive offer from our dedicated capital partners or tap our deep network of institutional buyers. Lean on our experience structuring complex transactions to ensure alignment of incentives and efficient risk allocation."
               },
               {
                 "id": "advisory",
                 "title": "Advice",
-                "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances."
+                "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances.\n\n"
               }
             ],
             "_bookmark": "how-we-help",
-            "cardStyle": "clear-glass"
+            "cardStyle": "light-glass"
           }
         },
         {
@@ -483,41 +482,6 @@
           }
         },
         {
-          "id": "sec-1780956144940-j453",
-          "type": "how-it-works",
-          "visible": true,
-          "colorScheme": "light-gray",
-          "content": {
-            "eyebrow": "How It Works",
-            "title": "Three steps to close.",
-            "accent": "",
-            "kicker": "Trust us bro.",
-            "colorScheme": "light-gray",
-            "steps": [
-              {
-                "id": "step-1",
-                "n": "01",
-                "title": "Step one",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-2",
-                "n": "02",
-                "title": "Step two",
-                "body": "Describe this step."
-              },
-              {
-                "id": "step-3",
-                "n": "03",
-                "title": "Step three",
-                "body": "Describe this step."
-              }
-            ],
-            "cardRadius": "rounded",
-            "cardStyle": "black"
-          }
-        },
-        {
           "id": "sec-crypto-experience",
           "type": "experience",
           "visible": true
@@ -530,19 +494,6 @@
           "colorScheme": "light-gray",
           "content": {
             "colorScheme": "light-gray"
-          }
-        },
-        {
-          "id": "sec-1780810488155-w95s",
-          "type": "photo-break",
-          "visible": true,
-          "content": {
-            "imageUrl": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg",
-            "overlayText": "We know",
-            "overlayAccent": "crypto",
-            "_minHeight": "50",
-            "_spacingBottom": "small",
-            "_spacingTop": "small"
           }
         },
         {
@@ -574,27 +525,31 @@
           }
         },
         {
-          "id": "sec-crypto-bottom-cta",
-          "type": "bottom-cta",
+          "id": "sec-1780969912375-v2eo",
+          "type": "cta",
           "visible": true,
-          "layout": "layout-3-bottomcta",
-          "colorScheme": "dark",
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
           "content": {
-            "eyebrow": "GET YOUR CRYPTO BACK",
-            "title": "Ready to trade?",
+            "layout": "layout-2-banner",
+            "colorScheme": "photo",
+            "eyebrow": "Get in Touch",
+            "title": "Follow the latest in digital asset distress.",
             "accent": "Talk to us.",
-            "kicker": "Contact us for a quote today. Private. Fast. Secure.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
             "primary": {
-              "label": "Get a Quote",
-              "href": "/contact?source=crypto"
+              "label": "Get in Touch",
+              "href": "/contact"
             },
-            "secondary": null
+            "secondary": null,
+            "cta": "Read the briefings",
+            "image": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg"
           }
         },
         {
           "id": "sec-crypto-faq",
           "type": "faq",
-          "visible": true,
+          "visible": false,
           "layout": "layout-2-sidebar",
           "colorScheme": "light-gray",
           "content": {
@@ -603,6 +558,33 @@
             "ctaLabel": "Get a Quote",
             "ctaHref": "/contact?source=crypto",
             "colorScheme": "light-gray"
+          }
+        },
+        {
+          "id": "sec-1780969821258-quug",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
+            "eyebrow": "GET YOUR CRYPTO BACK",
+            "title": "Ready to trade?",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us for a quote today. Private, fast and secure.",
+            "cta": {
+              "label": "Get a Quote",
+              "href": ""
+            },
+            "_bookmark": "CTA"
           }
         },
         {
@@ -685,12 +667,12 @@
           "type": "service-cards",
           "visible": true,
           "layout": "grid-2col",
-          "colorScheme": "dark",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "What We Fund",
             "title": "Tough cases. ",
             "accent": "Big outcomes.",
-            "colorScheme": "dark",
+            "colorScheme": "light-gray",
             "layout": "grid-2col",
             "cards": [
               {
@@ -715,7 +697,7 @@
                 "priority": false
               }
             ],
-            "cardStyle": "standard",
+            "cardStyle": "neon",
             "cardRadius": "square"
           }
         },
@@ -845,7 +827,7 @@
         {
           "id": "sec-litfin-faq",
           "type": "faq",
-          "visible": true,
+          "visible": false,
           "layout": "layout-2-sidebar",
           "colorScheme": "light",
           "content": {
