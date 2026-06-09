@@ -39,7 +39,7 @@ export default function Card({
       ? isDarkMode
       : ["black", "dark"].includes(style) && !style.includes("neon");
 
-  const cornerRadius = radius === "rounded" ? "clamp(0.3rem, 1.2vw, 0.625rem)" : "0";
+  const cornerRadius = radius === "rounded" ? "clamp(0.2rem, 1.2vw, 0.3125rem)" : "0.125rem";
 
   const styleConfigs = {
     white: {
