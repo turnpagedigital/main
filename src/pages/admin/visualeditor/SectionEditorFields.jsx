@@ -143,7 +143,8 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
               <div style={fieldGroup}><label style={labelStyle}>Title accent</label><input style={inputStyle} value={form.titleAccent || ""} onChange={e => set("titleAccent", e.target.value)} /></div>
               <div style={fieldGroup}><label style={labelStyle}>Body text</label><textarea style={{ ...inputStyle, minHeight: 70 }} value={form.body || ""} onChange={e => set("body", e.target.value)} /></div>
-              <CTAField label="CTA button" value={form.cta} onChange={v => set("cta", v)} />
+              <CTAField label="Primary button" value={form.cta} onChange={v => set("cta", v)} />
+              <CTAField label="Secondary button (optional)" value={form.secondary} onChange={v => set("secondary", v || null)} nullable />
             </>
           )}
           {form.layout === "layout-2-banner" && (

@@ -20,6 +20,7 @@ export default function CTASection({ sectionConfig, pageKey }) {
         titleAccent={c.titleAccent || "Talk to us."}
         body={c.body || "Contact us for a quote or to learn more. 48-hour response. Confidentiality default."}
         cta={c.cta || { label: "Get in Touch", href: "/contact" }}
+        secondary={c.secondary || null}
         colorScheme={colorScheme}
       />
     );

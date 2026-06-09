@@ -2,13 +2,14 @@ import React from "react";
 import { NEON, FONT } from "../../../data/tokens.js";
 
 /* CTA Layout 1 — Get Quote Card (Dark rounded panel style)
-   Props: { eyebrow, title, titleAccent, body, cta, colorScheme } */
+   Props: { eyebrow, title, titleAccent, body, cta, secondary, colorScheme } */
 export default function CTALayout1GetQuote({
   eyebrow = "Get a Quote",
   title = "Why wait?",
   titleAccent = "Talk to us.",
   body = "Contact us for a quote or to learn more. 48-hour response. Confidentiality default.",
   cta = { label: "Get in Touch", href: "/contact" },
+  secondary = null,
   colorScheme = "dark",
 }) {
   const themes = {
@@ -58,7 +59,12 @@ export default function CTALayout1GetQuote({
           }}>
             {body}
           </p>
-          <a href={cta.href} className="btn-neon">{cta.label}</a>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", justifyContent: "center" }}>
+            <a href={cta.href} className="btn-neon">{cta.label}</a>
+            {secondary && (
+              <a href={secondary.href} className="btn-ghost">{secondary.label}</a>
+            )}
+          </div>
         </div>
       </div>
     </section>
