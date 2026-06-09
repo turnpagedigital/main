@@ -462,8 +462,20 @@
                 "priority": false
               },
               {
+                "id": "card-1780979369229",
+                "title": "Trade Creditors",
+                "body": "Vendors, market makers, OTC desks, law firms, and other counterparties owed funds by a collapsed exchange or lender.",
+                "priority": false
+              },
+              {
+                "id": "card-1780979410997",
+                "title": "Token & Equity Investors",
+                "body": "Holders of tokens, SAFTs, SAFEs, or equity in a failed project or company. Junior in the waterfall, but real claims and litigation interests entitled to compensation.",
+                "priority": false
+              },
+              {
                 "id": "card-1780975936290",
-                "title": "Legal Partners",
+                "title": "Law Firms",
                 "body": "We help law firms that represent digital asset creditors trace and investigate historical fraud and real-time asset conversions to assess recoverability and litigation options.",
                 "priority": false
               }
@@ -478,7 +490,7 @@
           "layout": "grid-3col",
           "colorScheme": "light-gray",
           "content": {
-            "eyebrow": "How We Work",
+            "eyebrow": "How We Help",
             "title": "Fair pricing. Real",
             "accent": "resolutions.",
             "colorScheme": "light-gray",
@@ -513,7 +525,7 @@
                 "priority": false
               }
             ],
-            "_bookmark": "how-we-work",
+            "_bookmark": "how-we-help",
             "cardStyle": "clear-glass"
           }
         },
