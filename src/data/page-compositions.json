@@ -697,12 +697,12 @@
           "type": "service-cards",
           "visible": true,
           "layout": "grid-2col",
-          "colorScheme": "light-gray",
+          "colorScheme": "dark",
           "content": {
-            "eyebrow": "What We Fund",
-            "title": "Tough cases. ",
-            "accent": "Big outcomes.",
-            "colorScheme": "light-gray",
+            "eyebrow": "How We work",
+            "title": "We fund tough cases for",
+            "accent": "big outcomes.",
+            "colorScheme": "dark",
             "layout": "grid-2col",
             "cards": [
               {
@@ -727,8 +727,9 @@
                 "priority": false
               }
             ],
-            "cardStyle": "neon",
-            "cardRadius": "square"
+            "cardStyle": "standard",
+            "cardRadius": "square",
+            "_bookmark": "how-we-work"
           }
         },
         {
@@ -794,6 +795,7 @@
           "id": "sec-1780673399693-agc7",
           "type": "our-edge",
           "visible": true,
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
@@ -815,7 +817,8 @@
                 "h": "Relationship builders, not just dealmakers",
                 "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
               }
-            ]
+            ],
+            "colorScheme": "light-gray"
           }
         },
         {
