@@ -490,6 +490,12 @@
                 "title": "On Chain Lenders",
                 "body": "We help lenders left holding defaulted loans or locked collateral. Recovery against a failed borrower or protocol can be slow and uncertain, and underlying asset volatility can erode the benefit of waiting for a higher percentage recovery. ",
                 "priority": false
+              },
+              {
+                "id": "card-1780975936290",
+                "title": "Legal Partners",
+                "body": "We help law firms that represent digital asset creditors trace and investigate historical fraud and real-time asset conversions to assess recoverability and litigation options.",
+                "priority": false
               }
             ],
             "_bookmark": "who-we-help"
