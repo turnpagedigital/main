@@ -432,28 +432,29 @@
               {
                 "id": "individual-creditors",
                 "title": "Exchange Customers",
-                "body": "Account holders with funds frozen on a failed exchange and tied up in bankruptcy or liquidation.",
+                "body": "We help account holders with funds frozen on a failed exchange and tied up in bankruptcy or liquidation. These cases drag on for years and rarely pay in full. Trading delivers you guaranteed cash now, with no claims process to monitor and navigate.",
                 "priority": false
               },
               {
                 "id": "funds-institutions",
                 "title": "Crypto Hedge Funds",
-                "body": "Funds with capital trapped as a creditor of a collapsed exchange, lender, or counterparty — and LPs waiting to be made whole.",
+                "body": "We help funds with trapped capital unlock value.  A claim against a collapsed exchange, lender, or counterparty weighs on your NAV and stalls distributions. Converting it to cash lets you return capital to LPs, who didn't sign up to be distressed investors.",
                 "priority": false
               },
               {
                 "id": "estates-trustees",
                 "title": "Estates & Trustees",
-                "body": "Fiduciaries managing bankruptcy estates or liquidating trusts that hold crypto-related claims and interests.",
+                "body": "We help fiduciaries managing bankruptcy estates or liquidating trusts that hold crypto-related claims and interests.  Your mandate is to settle and distribute, efficiently, not pursue speculative lottery tickets. A clean sale or litigation funding with shared upside caps costs, reduces risk and preserves value.",
                 "priority": false
               },
               {
                 "id": "card-1780956570722",
                 "title": "On Chain Lenders",
-                "body": "Lenders left holding defaulted loans or locked collateral after a borrower or protocol failed.",
+                "body": "We help lenders left holding defaulted loans or locked collateral. Recovery against a failed borrower or protocol can be slow and uncertain, and underlying asset volatility can erode the benefit of waiting for a higher percentage recovery. ",
                 "priority": false
               }
-            ]
+            ],
+            "_bookmark": "who-we-help"
           }
         },
         {
@@ -480,7 +481,7 @@
                 "body": "Engage us to help you work through tough situations with counterparties that need a voice of reason in the middle. KYC, claim validation or jurisdictional challenges? We've seen it all and can guide you as your advocate to improve your recovery chances.\n\n"
               }
             ],
-            "_bookmark": "how-we-help",
+            "_bookmark": "how-we-work",
             "cardStyle": "light-glass"
           }
         },
