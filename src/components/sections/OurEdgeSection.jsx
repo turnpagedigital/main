@@ -8,14 +8,20 @@ export default function OurEdgeSection({ sectionConfig }) {
   const title      = c.title      || "Built to move fast";
   const titleAccent= c.titleAccent|| "when it counts.";
   const intro      = c.intro      || "";
+  const colorScheme = c.colorScheme || "white";
   const points = c.points || [
     { id: "e1", h: "Practically unlimited liquidity", b: "We partner with major asset managers — over 500 institutions on speed dial." },
     { id: "e2", h: "Lightning-fast settlement",       b: "Automation accelerates diligence and closing in the largest volume cases." },
     { id: "e3", h: "Relationship builders, not just dealmakers", b: "We go the extra mile to understand your business needs so we can structure the right deal for our clients." },
   ];
 
+  const isLightGray = colorScheme === "light-gray";
+  const bgColor = isLightGray ? "#F4F5F7" : "#FFFFFF";
+  const eyebrowColor = isLightGray ? INK_60 : INK_60;
+  const borderColor = isLightGray ? INK : INK;
+
   return (
-    <section style={{ background: "#FFFFFF", padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)" }}>
+    <section style={{ background: bgColor, padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)" }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
         <div className="section-split" style={{ alignItems: "end", marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
           <div>
@@ -49,7 +55,7 @@ export default function OurEdgeSection({ sectionConfig }) {
           gap: "clamp(1.5rem, 3vw, 3rem)",
         }} className="edge-grid">
           {points.map(p => (
-            <div key={p.id || p.h} style={{ borderTop: `2px solid ${INK}`, paddingTop: "1.4rem" }}>
+            <div key={p.id || p.h} style={{ borderTop: `2px solid ${borderColor}`, paddingTop: "1.4rem" }}>
               <h3 style={{
                 fontFamily: FONT, fontSize: "clamp(1.2rem, 1.8vw, 1.45rem)",
                 fontWeight: 800, color: INK, letterSpacing: "-0.015em",
