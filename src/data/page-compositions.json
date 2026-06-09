@@ -919,6 +919,37 @@
             },
             "ctaSecondary": null
           }
+        },
+        {
+          "id": "sec-1780974589433-renp",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-2-banner",
+          "colorScheme": "photo",
+          "content": {
+            "layout": "layout-2-banner",
+            "colorScheme": "photo",
+            "eyebrow": "Get in Touch",
+            "title": "Stay up to date on the docket.",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "cta": "Read case briefings"
+          }
+        },
+        {
+          "id": "sec-1780974631667-1mni",
+          "type": "experience",
+          "visible": true
+        },
+        {
+          "id": "sec-1780974644933-upgt",
+          "type": "damages",
+          "visible": true
         }
       ]
     }
