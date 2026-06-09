@@ -213,12 +213,12 @@
           "type": "audience-cards",
           "visible": true,
           "layout": "list",
-          "colorScheme": "white",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "Who We Help",
             "title": "Writers. Publishers.",
             "accent": "Artists.",
-            "colorScheme": "white",
+            "colorScheme": "light-gray",
             "layout": "list",
             "cards": [
               {
@@ -254,12 +254,12 @@
           "type": "service-cards",
           "visible": true,
           "layout": "grid-3col",
-          "colorScheme": "light-gray",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "DON'T MISS OUT",
             "title": "Claim",
             "accent": "yours",
-            "colorScheme": "light-gray",
+            "colorScheme": "white",
             "layout": "grid-3col",
             "cards": [
               {
@@ -282,6 +282,41 @@
           }
         },
         {
+          "id": "sec-1780975716723-79i5",
+          "type": "how-it-works",
+          "visible": true,
+          "colorScheme": "light-gray",
+          "content": {
+            "eyebrow": "How It Works",
+            "title": "Three steps to close.",
+            "accent": "",
+            "kicker": "",
+            "colorScheme": "light-gray",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Step one",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "Step two",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Step three",
+                "body": "Describe this step."
+              }
+            ],
+            "cardStyle": "black",
+            "cardRadius": "square"
+          }
+        },
+        {
           "id": "sec-aic-experience",
           "type": "experience",
           "visible": true
@@ -290,6 +325,7 @@
           "id": "sec-1780698362997-64wf",
           "type": "our-edge",
           "visible": true,
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "Our Edge",
             "title": "What set us",
@@ -311,7 +347,8 @@
                 "h": "Relationship builders, not just dealmakers",
                 "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
               }
-            ]
+            ],
+            "colorScheme": "light-gray"
           }
         },
         {
