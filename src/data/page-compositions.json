@@ -321,30 +321,9 @@
           "colorScheme": "light"
         },
         {
-          "id": "sec-aic-bottom-cta",
-          "type": "bottom-cta",
-          "visible": true,
-          "layout": "layout-3-bottomcta",
-          "colorScheme": "dark",
-          "content": {
-            "eyebrow": "Get compensated",
-            "title": "Ready to learn more?",
-            "accent": "Talk to us.",
-            "kicker": "Contact us to discuss your rights. Private, fast and secure.",
-            "primary": {
-              "label": "Get in Touch",
-              "href": "/contact?source=ai-copyright"
-            },
-            "secondary": {
-              "label": "Briefings",
-              "href": "/briefings"
-            }
-          }
-        },
-        {
           "id": "sec-aic-faq",
           "type": "faq",
-          "visible": true,
+          "visible": false,
           "layout": "layout-2-sidebar",
           "colorScheme": "light",
           "content": {
@@ -354,6 +333,33 @@
             "ctaHref": "/contact?source=ai-copyright",
             "colorScheme": "light",
             "_bookmark": "faq"
+          }
+        },
+        {
+          "id": "sec-1780972607455-de6l",
+          "type": "cta",
+          "visible": true,
+          "layout": "layout-1-getquote",
+          "colorScheme": "dark",
+          "content": {
+            "layout": "layout-1-getquote",
+            "colorScheme": "dark",
+            "eyebrow": "Get Compensated",
+            "title": "Ready to learn more?",
+            "accent": "Talk to us.",
+            "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null,
+            "titleAccent": "Talk to us.",
+            "body": "Contact us to discuss your rights. Private, fast and secure.",
+            "cta": {
+              "label": "Get in Touch",
+              "href": ""
+            },
+            "_bookmark": "cta"
           }
         }
       ],
