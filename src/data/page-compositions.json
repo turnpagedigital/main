@@ -681,7 +681,7 @@
             },
             "ctaSecondary": {
               "label": "How we help",
-              "href": "#how-litfin"
+              "href": "#how-we-help"
             }
           }
         },
@@ -732,7 +732,7 @@
           "layout": "grid-2col",
           "colorScheme": "dark",
           "content": {
-            "eyebrow": "How We work",
+            "eyebrow": "How We Help",
             "title": "We fund tough cases for",
             "accent": "big outcomes.",
             "colorScheme": "dark",
@@ -762,7 +762,7 @@
             ],
             "cardStyle": "standard",
             "cardRadius": "square",
-            "_bookmark": "how-we-work"
+            "_bookmark": "how-we-help"
           }
         },
         {
