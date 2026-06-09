@@ -293,7 +293,7 @@
           "id": "sec-1780698362997-64wf",
           "type": "our-edge",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "Our Edge",
             "title": "What set us",
@@ -316,7 +316,8 @@
                 "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
               }
             ],
-            "colorScheme": "light-gray"
+            "colorScheme": "white",
+            "_bookmark": "our-edge"
           }
         },
         {
