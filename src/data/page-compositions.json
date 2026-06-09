@@ -667,12 +667,12 @@
           "type": "service-cards",
           "visible": true,
           "layout": "grid-2col",
-          "colorScheme": "dark",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "What We Fund",
             "title": "Tough cases. ",
             "accent": "Big outcomes.",
-            "colorScheme": "dark",
+            "colorScheme": "light-gray",
             "layout": "grid-2col",
             "cards": [
               {
@@ -697,7 +697,7 @@
                 "priority": false
               }
             ],
-            "cardStyle": "standard",
+            "cardStyle": "neon",
             "cardRadius": "square"
           }
         },
@@ -827,7 +827,7 @@
         {
           "id": "sec-litfin-faq",
           "type": "faq",
-          "visible": true,
+          "visible": false,
           "layout": "layout-2-sidebar",
           "colorScheme": "light",
           "content": {
