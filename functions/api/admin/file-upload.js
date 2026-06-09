@@ -27,14 +27,17 @@ const ALLOWED_EXT = {
   "image/vnd.microsoft.icon": "ico",
   "application/pdf": "pdf",
   "video/mp4":     "mp4",
+  "video/mpeg":    "mp4",
+  "video/x-msvideo": "mp4",
   "video/webm":    "webm",
   "video/quicktime": "mov",
+  "video/x-quicktime": "mov",
 };
 
 // Extensions allowed for `Replace` operations on existing library files.
 // (Used by the Files tab to swap one file for another of the same kind.)
 // eslint-disable-next-line no-unused-vars
-const REPLACE_EXTS = ["png", "jpg", "jpeg", "webp", "gif", "svg", "ico", "pdf"];
+const REPLACE_EXTS = ["png", "jpg", "jpeg", "webp", "gif", "svg", "ico", "pdf", "mp4", "webm", "mov"];
 
 export async function onRequestPost({ request, env }) {
   if (!(await isAuthed(request, env))) {
@@ -54,7 +57,7 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ ok: false, error: "Missing contentBase64" }, 400);
   }
   if (contentBase64.length > MAX_B64) {
-    return jsonResponse({ ok: false, error: "File too large (max ~5 MB)" }, 400);
+    return jsonResponse({ ok: false, error: "File too large (max ~50 MB)" }, 400);
   }
 
   const ext = ALLOWED_EXT[contentType];
