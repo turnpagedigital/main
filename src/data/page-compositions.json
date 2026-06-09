@@ -354,7 +354,8 @@
             },
             "secondary": null,
             "cta": "Subscribe to briefings",
-            "href": "/contact?source=copyright"
+            "href": "/contact?source=copyright",
+            "image": "/bg-paper.jpg"
           }
         },
         {
