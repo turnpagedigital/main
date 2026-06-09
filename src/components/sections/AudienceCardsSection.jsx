@@ -196,7 +196,7 @@ function AudienceListRow({ card, dark }) {
     }}>
       <h3 style={{
         fontFamily: FONT, fontWeight: 800,
-        fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+        fontSize: "clamp(1.2rem, 1.8vw, 1.5rem)",
         color: (dark || hasBadge) ? (hasBadge ? NEON : "#fff") : INK,
         margin: 0, letterSpacing: "-0.01em",
       }}>
