@@ -77,11 +77,12 @@ const PAGE_LABELS = {
 
 /* ── Media type labels for filter pills ─────────────────────────────────── */
 const TYPE_OPTS = [
-  { key: "all",     label: "All" },
-  { key: "press",   label: "Press" },
-  { key: "article", label: "Publications" },
-  { key: "podcast", label: "Podcasts" },
-  { key: "posts",   label: "Posts" },
+  { key: "all",       label: "All" },
+  { key: "press",     label: "Press" },
+  { key: "article",   label: "Publications" },
+  { key: "podcast",   label: "Podcasts" },
+  { key: "posts",     label: "Posts" },
+  { key: "briefings", label: "Briefings" },
 ];
 
 /* ── Media helpers ───────────────────────────────────────────────────────── */
@@ -197,10 +198,14 @@ function derivePagesFromBriefing(b) {
 
 function normalizeBriefing(b, i) {
   const href = "/briefings/" + b.slug;
+  // Posts published from the admin carry a type: "briefing" gets its own
+  // card identity + filter pill; "article"/"announcement" stay under Posts.
+  const isBriefing = !b.type || b.type === "briefing";
   return {
     _key:     "b_" + (b.slug || i),
-    mediaType: "blog",
-    type:     "briefing",
+    mediaType: isBriefing ? "briefing" : "blog",
+    type:     b.type || "briefing",
+    author:   b.author || "",
     outlet:   "Turnpage Digital Markets",
     logoUrl:  null,
     date:     formatBriefingDate(b.date),
@@ -209,7 +214,7 @@ function normalizeBriefing(b, i) {
     excerpt:  b.summary || null,
     href,
     pages:    derivePagesFromBriefing(b),
-    mediaUrl: null,
+    mediaUrl: b.hero_image || null,
     pdfUrl:   null,
   };
 }
@@ -238,7 +243,7 @@ function getTypeFromUrl() {
   if (typeof window === "undefined") return "all";
   const params = new URLSearchParams(window.location.search || "");
   const t = params.get("type");
-  return ["press", "article", "posts", "podcast"].includes(t) ? t : "all";
+  return ["press", "article", "posts", "podcast", "briefings"].includes(t) ? t : "all";
 }
 function getTopicFromUrl() {
   if (typeof window === "undefined") return "all";
@@ -313,6 +318,7 @@ export default function Press() {
       filterType === "article" ? d.mediaType === "article"
       : filterType === "posts"  ? (d.mediaType === "social" || d.mediaType === "blog")
       : filterType === "press"  ? (d.mediaType === "press"  || d.mediaType === "news")
+      : filterType === "briefings" ? d.mediaType === "briefing"
       : d.mediaType === filterType
     );
     if (filterTopic  !== "all") items = items.filter(d => d.pages.includes(filterTopic));
@@ -762,6 +768,17 @@ const BlogIcon = ({ size = 13, color = "currentColor" }) => (
   </svg>
 );
 
+/* Document icon — for briefings */
+const BriefingIcon = ({ size = 13, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <line x1="16" y1="13" x2="8" y2="13"/>
+    <line x1="16" y1="17" x2="8" y2="17"/>
+  </svg>
+);
+
 /* Bullhorn icon — for news / press releases */
 const BullhornIcon = ({ size = 13, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color}
@@ -880,6 +897,18 @@ function TypeIndicator({ item }) {
     );
   }
 
+  if (item.mediaType === "briefing") {
+    return (
+      <div style={base}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4em" }}>
+          <BriefingIcon size={13} color={INK_60} />
+          <span style={{ ...labelStyle, color: INK_60 }}>Briefing</span>
+        </div>
+        {item.date && <span style={dateStyle}>{item.date}</span>}
+      </div>
+    );
+  }
+
   if (item.mediaType === "blog") {
     return (
       <div style={base}>
@@ -978,9 +1007,10 @@ function MediaThumb({ url, href }) {
 ═══════════════════════════════════════════════════════════════════════════ */
 function UnifiedCard({ item }) {
   const [hovered, setHovered] = useState(false);
-  const isSocial  = item.mediaType === "social";
-  const isArticle = item.mediaType === "article";
-  const isBlog    = item.mediaType === "blog";
+  const isSocial   = item.mediaType === "social";
+  const isArticle  = item.mediaType === "article";
+  const isBlog     = item.mediaType === "blog";
+  const isBriefing = item.mediaType === "briefing";
   const lifted    = hovered && item.href;
   const hasMedia  = Boolean(item.mediaUrl);
 
@@ -1073,24 +1103,35 @@ function UnifiedCard({ item }) {
             fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
             lineHeight: 1.3, letterSpacing: "-0.01em",
             color: INK,
-            margin: `0 0 ${(isArticle || isBlog) ? "0.3rem" : item.excerpt ? "0.7rem" : "0"}`,
+            margin: `0 0 ${(isArticle || isBlog || isBriefing) ? "0.3rem" : item.excerpt ? "0.7rem" : "0"}`,
           }}>
             {item.headline}
           </h3>
         )
       )}
 
-      {/* ── Byline — publications + blog posts ─────────────────────── */}
-      {(isArticle || isBlog) && (
+      {/* ── Byline — publications, blog posts, briefings ───────────── */}
+      {(isArticle || isBlog || isBriefing) && (
         <div style={{ margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}` }}>
-          <span style={{
-            fontFamily: FONT, fontSize: "0.62rem", fontWeight: 800,
-            letterSpacing: "0.1em", textTransform: "uppercase",
-            background: NEON, color: "#000",
-            padding: "0.2em 0.5em", display: "inline-block",
-          }}>
-            By Andrew Glantz
-          </span>
+          {isBriefing && item.author !== "Andrew Glantz" ? (
+            <span style={{
+              fontFamily: FONT, fontSize: "0.62rem", fontWeight: 800,
+              letterSpacing: "0.1em", textTransform: "uppercase",
+              background: "#e5e5e5", color: "#555",
+              padding: "0.2em 0.5em", display: "inline-block",
+            }}>
+              Turnpage Intelligence
+            </span>
+          ) : (
+            <span style={{
+              fontFamily: FONT, fontSize: "0.62rem", fontWeight: 800,
+              letterSpacing: "0.1em", textTransform: "uppercase",
+              background: NEON, color: "#000",
+              padding: "0.2em 0.5em", display: "inline-block",
+            }}>
+              By Andrew Glantz
+            </span>
+          )}
         </div>
       )}
 
