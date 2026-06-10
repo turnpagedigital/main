@@ -16,7 +16,7 @@
 */
 
 import { isAuthed, jsonResponse } from "./_utils.js";
-import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
+import { getFileFromGitHub, commitFileToGitHub, commitFilesToGitHub } from "./_github.js";
 
 const COMPOSITIONS_PATH = "src/data/page-compositions.json";
 const ROUTES_PATH        = "src/data/routes.json";
@@ -187,13 +187,13 @@ export async function onRequest({ request, env }) {
     if (routes.data._comment) routesPayload._comment = routes.data._comment;
     routesPayload.routes = nextRoutes;
 
-    // Commit both files
-    const [s1, s2] = await Promise.all([
-      saveFile(env, COMPOSITIONS_PATH, compPayload,   comp.sha,   `Create page: ${title} (${path})`),
-      saveFile(env, ROUTES_PATH,       routesPayload, routes.sha, `Register route: ${path} → ${pageKey}`),
-    ]);
-    if (!s1.ok) return jsonResponse({ ok: false, error: `Failed to save compositions: ${s1.error}` }, 500);
-    if (!s2.ok) return jsonResponse({ ok: false, error: `Failed to save routes: ${s2.error}` },       500);
+    // Commit both files in ONE atomic commit — a failure applies neither,
+    // so a page can never exist without its route (or vice versa).
+    const saved = await commitFilesToGitHub(env, [
+      { path: COMPOSITIONS_PATH, content: JSON.stringify(compPayload, null, 2) + "\n",   sha: comp.sha },
+      { path: ROUTES_PATH,       content: JSON.stringify(routesPayload, null, 2) + "\n", sha: routes.sha },
+    ], `Create page: ${title} (${path})`);
+    if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 502);
 
     return jsonResponse({ ok: true, pageKey });
   }
@@ -229,12 +229,12 @@ export async function onRequest({ request, env }) {
     compPayload.pages    = nextPages;
     routesPayload.routes = nextRoutes;
 
-    const [s1, s2] = await Promise.all([
-      saveFile(env, COMPOSITIONS_PATH, compPayload,   comp.sha,   `Delete page: ${pageKey}`),
-      saveFile(env, ROUTES_PATH,       routesPayload, routes.sha, `Remove route: ${pageKey}`),
-    ]);
-    if (!s1.ok) return jsonResponse({ ok: false, error: `Failed to remove from compositions: ${s1.error}` }, 500);
-    if (!s2.ok) return jsonResponse({ ok: false, error: `Failed to remove from routes: ${s2.error}` },       500);
+    // Atomic: page and route are removed together or not at all.
+    const saved = await commitFilesToGitHub(env, [
+      { path: COMPOSITIONS_PATH, content: JSON.stringify(compPayload, null, 2) + "\n",   sha: comp.sha },
+      { path: ROUTES_PATH,       content: JSON.stringify(routesPayload, null, 2) + "\n", sha: routes.sha },
+    ], `Delete page: ${pageKey} (+ route)`);
+    if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 502);
 
     return jsonResponse({ ok: true });
   }

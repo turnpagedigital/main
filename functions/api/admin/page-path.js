@@ -1,10 +1,10 @@
 import { isAuthed, jsonResponse } from "./_utils.js";
-import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
+import { getFileFromGitHub, commitFilesToGitHub } from "./_github.js";
 import { detectRouteReferences, applyRouteReferences } from "./_routes.js";
 
 /* PUT /api/admin/page-path — change a page's URL path and cascade the change.
 
-   Updates, in order:
+   Updates, in ONE atomic commit:
      1. src/data/routes.json            — the route's path
      2. src/data/nav.json               — nav items, dropdown links/CTAs, microsites
      3. src/data/footer.json            — footer column links
@@ -12,7 +12,6 @@ import { detectRouteReferences, applyRouteReferences } from "./_routes.js";
                                           in section content pointing at the old path
 
    Body: { pageKey, oldPath, newPath }
-   Idempotent: re-running after a partial failure finishes the cascade.
 */
 
 const ROUTES_PATH       = "src/data/routes.json";
@@ -99,30 +98,15 @@ export async function onRequestPut({ request, env }) {
   };
   (compData.pages || []).forEach(p => (p.sections || []).forEach(s => updateHrefs(s.content)));
 
-  // ── Commit sequentially; on failure report exactly how far we got ────────
-  const commits = [
-    [ROUTES_PATH,       routesData, routes.sha],
-    [NAV_PATH,          navData,    nav.sha],
-    [FOOTER_PATH,       footerData, footer.sha],
-    [COMPOSITIONS_PATH, compData,   comp.sha],
-  ];
-  const committed = [];
-  for (const [path, data, sha] of commits) {
-    const name = path.split("/").pop();
-    const result = await commitFileToGitHub(
-      env, path,
-      JSON.stringify(data, null, 2) + "\n",
-      sha,
-      `Page path: ${oldPath} → ${newPath} (${name})`,
-    );
-    if (!result.ok) {
-      const progress = committed.length
-        ? ` Already updated: ${committed.join(", ")}. Re-running the same change will finish the rest.`
-        : "";
-      return jsonResponse({ ok: false, error: `Failed updating ${name}: ${result.error}${progress}` }, 502);
-    }
-    committed.push(name);
-  }
+  // ── Commit all four files in ONE atomic commit — applied together or not
+  //    at all, so the route/nav/footer/compositions can never drift apart. ──
+  const saved = await commitFilesToGitHub(env, [
+    { path: ROUTES_PATH,       content: JSON.stringify(routesData, null, 2) + "\n", sha: routes.sha },
+    { path: NAV_PATH,          content: JSON.stringify(navData, null, 2) + "\n",    sha: nav.sha },
+    { path: FOOTER_PATH,       content: JSON.stringify(footerData, null, 2) + "\n", sha: footer.sha },
+    { path: COMPOSITIONS_PATH, content: JSON.stringify(compData, null, 2) + "\n",   sha: comp.sha },
+  ], `Page path: ${oldPath} → ${newPath}`);
+  if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 502);
 
   return jsonResponse({
     ok: true,

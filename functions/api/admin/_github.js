@@ -214,6 +214,123 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
   return { ok: true, sha: (j.commit && j.commit.sha) || "" };
 }
 
+/* Commit MULTIPLE files in ONE atomic commit via the Git Data API.
+   Use this instead of sequential commitFileToGitHub calls whenever an
+   operation spans files (e.g. index.json + markdown, compositions + routes) —
+   sequential commits can fail halfway and leave the repo half-updated.
+
+   files: [{ path, content, sha? }]
+     content — UTF-8 string to write, or null to DELETE the path
+     sha     — the blob sha from a prior getFileFromGitHub read. When provided,
+               the file's current sha is re-checked before committing so a
+               concurrent edit surfaces as a friendly conflict error instead
+               of being clobbered. Omit for brand-new files.
+
+   Flow: verify shas → read branch head → create blobs → create tree (with
+   base_tree, so untouched files carry over) → create commit → fast-forward
+   the branch ref. If anything fails, NOTHING is applied. The ref update is
+   non-forced, so a commit landing in the tiny window after the sha check
+   also fails cleanly rather than overwriting.
+
+   Returns { ok: true, sha: commitSha } | { ok: false, error }. */
+export async function commitFilesToGitHub(env, files, message, repo, branch) {
+  const ref = branchOf(env, branch);
+  const repoName = repo || env.GITHUB_REPO;
+  const apiBase = `https://api.github.com/repos/${repoName}`;
+  const headers = { ...githubHeaders(env), "Content-Type": "application/json" };
+
+  if (!Array.isArray(files) || files.length === 0) {
+    return { ok: false, error: "No files to commit" };
+  }
+
+  // 1 — Optimistic-lock check: any file whose expected sha no longer matches
+  //     means someone changed it since we read it.
+  for (const f of files) {
+    if (!f.sha) continue;
+    const currentSha = await getFileSha(env, f.path, repo, branch);
+    if (currentSha !== f.sha) {
+      const name = f.path.split("/").pop();
+      return { ok: false, error: `${name} was changed elsewhere. Reload and try again.` };
+    }
+  }
+
+  // 2 — Branch head commit
+  const refRes = await ghFetch(`${apiBase}/git/ref/${encodeURIComponent(`heads/${ref}`)}`, { headers });
+  if (!refRes.ok) {
+    return { ok: false, error: makeErrorMessage("GET", refRes.status, await refRes.text()) };
+  }
+  const headSha = (await refRes.json())?.object?.sha;
+  if (!headSha) return { ok: false, error: "Could not read branch head" };
+
+  // 3 — Base tree of the head commit
+  const headCommitRes = await ghFetch(`${apiBase}/git/commits/${headSha}`, { headers });
+  if (!headCommitRes.ok) {
+    return { ok: false, error: makeErrorMessage("GET", headCommitRes.status, await headCommitRes.text()) };
+  }
+  const baseTreeSha = (await headCommitRes.json())?.tree?.sha;
+  if (!baseTreeSha) return { ok: false, error: "Could not read base tree" };
+
+  // 4 — Blobs for written files (base64 round-trip keeps UTF-8 intact);
+  //     deletions are tree entries with sha: null.
+  const treeEntries = [];
+  for (const f of files) {
+    if (f.content === null) {
+      treeEntries.push({ path: f.path, mode: "100644", type: "blob", sha: null });
+      continue;
+    }
+    const utf8 = unescape(encodeURIComponent(f.content));
+    const blobRes = await ghFetch(`${apiBase}/git/blobs`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({ content: btoa(utf8), encoding: "base64" }),
+    });
+    if (!blobRes.ok) {
+      return { ok: false, error: makeErrorMessage("POST", blobRes.status, await blobRes.text()) };
+    }
+    const blobSha = (await blobRes.json())?.sha;
+    if (!blobSha) return { ok: false, error: "Blob creation returned no sha" };
+    treeEntries.push({ path: f.path, mode: "100644", type: "blob", sha: blobSha });
+  }
+
+  // 5 — New tree on top of the base tree
+  const treeRes = await ghFetch(`${apiBase}/git/trees`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ base_tree: baseTreeSha, tree: treeEntries }),
+  });
+  if (!treeRes.ok) {
+    return { ok: false, error: makeErrorMessage("POST", treeRes.status, await treeRes.text()) };
+  }
+  const newTreeSha = (await treeRes.json())?.sha;
+  if (!newTreeSha) return { ok: false, error: "Tree creation returned no sha" };
+
+  // 6 — Commit ([skip ci] convention matches putContents)
+  const commitMessage = message.includes("[skip ci]") ? message : `${message}\n\n[skip ci]`;
+  const commitRes = await ghFetch(`${apiBase}/git/commits`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ message: commitMessage, tree: newTreeSha, parents: [headSha] }),
+  });
+  if (!commitRes.ok) {
+    return { ok: false, error: makeErrorMessage("POST", commitRes.status, await commitRes.text()) };
+  }
+  const commitSha = (await commitRes.json())?.sha;
+  if (!commitSha) return { ok: false, error: "Commit creation returned no sha" };
+
+  // 7 — Fast-forward the branch (force: false → fails cleanly on a race)
+  const updateRes = await ghFetch(`${apiBase}/git/refs/${encodeURIComponent(`heads/${ref}`)}`, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify({ sha: commitSha, force: false }),
+  });
+  if (!updateRes.ok) {
+    const status = updateRes.status === 422 ? 409 : updateRes.status;
+    return { ok: false, error: makeErrorMessage("PATCH", status, await updateRes.text()) };
+  }
+
+  return { ok: true, sha: commitSha };
+}
+
 /* Delete a file from GitHub. Best-effort: returns { ok } reflecting only
    whether the HTTP request succeeded. */
 export async function deleteFileFromGitHub(env, path, sha, message, repo, branch) {

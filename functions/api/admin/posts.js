@@ -2,7 +2,7 @@ import { jsonResponse, isAuthed } from "./_utils.js";
 import {
   getFileFromGitHub,
   commitFileToGitHub,
-  deleteFileFromGitHub,
+  commitFilesToGitHub,
 } from "./_github.js";
 
 const INDEX_PATH    = "public/briefings/index.json";
@@ -75,22 +75,16 @@ export async function onRequest({ request, env }) {
       // Keep newest-first order
       items.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
+      // 2 — Commit index + markdown in ONE atomic commit, so the index can
+      //     never reference a markdown file that failed to save.
       const newIndexText = JSON.stringify({ items }, null, 2) + "\n";
-      const indexSave = await commitFileToGitHub(
-        env, INDEX_PATH, newIndexText, indexResult.sha,
-        `Posts: ${isNew ? "add" : "update"} ${item.slug}`,
-      );
-      if (!indexSave.ok) return jsonResponse({ ok: false, error: indexSave.error }, 502);
-
-      // 2 — Save markdown file
       const mdPath = `public/briefings/${item.slug}.md`;
       const mdResult = await getFileFromGitHub(env, mdPath);
-      const mdSave = await commitFileToGitHub(
-        env, mdPath, content,
-        mdResult.ok ? mdResult.sha : undefined,
-        `Posts: ${isNew ? "add" : "update"} content for ${item.slug}`,
-      );
-      if (!mdSave.ok) return jsonResponse({ ok: false, error: mdSave.error }, 502);
+      const saved = await commitFilesToGitHub(env, [
+        { path: INDEX_PATH, content: newIndexText, sha: indexResult.sha },
+        { path: mdPath,     content,               sha: mdResult.ok ? mdResult.sha : undefined },
+      ], `Posts: ${isNew ? "add" : "update"} ${item.slug}`);
+      if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 502);
 
       return jsonResponse({ ok: true });
     }
@@ -138,19 +132,16 @@ export async function onRequest({ request, env }) {
       const items = (Array.isArray(indexResult.data?.items) ? indexResult.data.items : [])
         .filter(x => x.slug !== delSlug);
 
+      // 2 — Remove index entry and delete the markdown in ONE atomic commit
+      //     (markdown deletion is skipped if the file doesn't exist).
       const newIndexText = JSON.stringify({ items }, null, 2) + "\n";
-      const indexSave = await commitFileToGitHub(
-        env, INDEX_PATH, newIndexText, indexResult.sha,
-        `Posts: delete ${delSlug}`,
-      );
-      if (!indexSave.ok) return jsonResponse({ ok: false, error: indexSave.error }, 502);
-
-      // 2 — Delete markdown file (best-effort — don't fail if it doesn't exist)
       const mdPath = `public/briefings/${delSlug}.md`;
       const mdResult = await getFileFromGitHub(env, mdPath);
-      if (mdResult.ok) {
-        await deleteFileFromGitHub(env, mdPath, mdResult.sha, `Posts: delete content for ${delSlug}`);
-      }
+      const files = [{ path: INDEX_PATH, content: newIndexText, sha: indexResult.sha }];
+      if (mdResult.ok) files.push({ path: mdPath, content: null, sha: mdResult.sha });
+
+      const saved = await commitFilesToGitHub(env, files, `Posts: delete ${delSlug}`);
+      if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 502);
 
       return jsonResponse({ ok: true });
     }

@@ -1,5 +1,5 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
-import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
+import { getFileFromGitHub, commitFilesToGitHub } from "./_github.js";
 import { detectRouteReferences, applyRouteReferences } from "./_routes.js";
 
 /* Routes admin API — read/write src/data/routes.json + cascade changes to nav.json.
@@ -113,32 +113,26 @@ export async function onRequestPost({ request, env }) {
     2
   ) + "\n";
 
-  const routesCommit = await commitFileToGitHub(
-    env,
-    ROUTES_PATH,
-    routesPayload,
-    routesResult.sha,
-    `Routes: rename ${oldPath} → ${newPath}`,
-  );
-  if (!routesCommit.ok) return jsonResponse({ ok: false, error: routesCommit.error }, 502);
+  // Build the file list: routes.json always, nav.json when cascade changes
+  // were approved — committed together in ONE atomic commit so the route can
+  // never change without its nav references (or vice versa).
+  const files = [{ path: ROUTES_PATH, content: routesPayload, sha: routesResult.sha }];
 
-  // Commit nav.json if cascade changes were approved
   if (applyChanges && applyChanges.length > 0) {
     const navResult = await getFileFromGitHub(env, NAV_PATH);
     if (!navResult.ok) return jsonResponse({ ok: false, error: navResult.error }, 502);
     if (!navResult.data) return jsonResponse({ ok: false, error: "Failed to parse nav.json" }, 502);
 
     const updatedNavData = applyRouteReferences(navResult.data, applyChanges);
-    const navPayload = JSON.stringify(updatedNavData, null, 2) + "\n";
-    const navCommit = await commitFileToGitHub(
-      env,
-      NAV_PATH,
-      navPayload,
-      navResult.sha,
-      `Nav: update refs for route rename ${oldPath} → ${newPath}`,
-    );
-    if (!navCommit.ok) return jsonResponse({ ok: false, error: navCommit.error }, 502);
+    files.push({
+      path: NAV_PATH,
+      content: JSON.stringify(updatedNavData, null, 2) + "\n",
+      sha: navResult.sha,
+    });
   }
+
+  const commit = await commitFilesToGitHub(env, files, `Routes: rename ${oldPath} → ${newPath}`);
+  if (!commit.ok) return jsonResponse({ ok: false, error: commit.error }, 502);
 
   return jsonResponse({
     ok: true,
