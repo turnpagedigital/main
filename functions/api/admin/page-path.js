@@ -10,6 +10,8 @@ import { detectRouteReferences, applyRouteReferences } from "./_routes.js";
      3. src/data/footer.json            — footer column links
      4. src/data/page-compositions.json — the page's own path field + any href
                                           in section content pointing at the old path
+     5. public/_redirects               — Cloudflare Pages redirect rule
+                                          "oldPath newPath 301" (live on next deploy)
 
    Body: { pageKey, oldPath, newPath }
 */
@@ -18,6 +20,25 @@ const ROUTES_PATH       = "src/data/routes.json";
 const NAV_PATH          = "src/data/nav.json";
 const FOOTER_PATH       = "src/data/footer.json";
 const COMPOSITIONS_PATH = "src/data/page-compositions.json";
+const REDIRECTS_PATH    = "public/_redirects";
+
+/* Merge a rename into the _redirects rule list:
+   - keep comment lines as-is
+   - drop any rule whose source is the path coming back into service (newPath)
+   - re-point rules that targeted oldPath at newPath (no redirect chains)
+   - replace any stale rule for oldPath with "oldPath newPath 301" */
+export function buildRedirects(existingText, oldPath, newPath) {
+  const lines = (existingText || "").split("\n").map(l => l.trim()).filter(Boolean);
+  const comments = lines.filter(l => l.startsWith("#"));
+  const rules = lines
+    .filter(l => !l.startsWith("#"))
+    .map(l => l.split(/\s+/))
+    .filter(parts => parts.length >= 2)
+    .filter(([from]) => from !== newPath && from !== oldPath)
+    .map(([from, to, ...rest]) => [from, to === oldPath ? newPath : to, ...rest]);
+  rules.push([oldPath, newPath, "301"]);
+  return [...comments, ...rules.map(p => p.join(" "))].join("\n") + "\n";
+}
 
 // Lowercase letters, numbers, dashes, slashes. No dots — also rules out traversal.
 const PATH_RE = /^\/[a-z0-9\-/]*$/;
@@ -98,19 +119,25 @@ export async function onRequestPut({ request, env }) {
   };
   (compData.pages || []).forEach(p => (p.sections || []).forEach(s => updateHrefs(s.content)));
 
-  // ── Commit all four files in ONE atomic commit — applied together or not
+  // ── 5. public/_redirects — permanent redirect from the old path ──────────
+  //    (missing file is fine: it's created in the same commit)
+  const redirects = await getFileFromGitHub(env, REDIRECTS_PATH);
+  const redirectsContent = buildRedirects(redirects.ok ? redirects.text : "", oldPath, newPath);
+
+  // ── Commit all five files in ONE atomic commit — applied together or not
   //    at all, so the route/nav/footer/compositions can never drift apart. ──
   const saved = await commitFilesToGitHub(env, [
     { path: ROUTES_PATH,       content: JSON.stringify(routesData, null, 2) + "\n", sha: routes.sha },
     { path: NAV_PATH,          content: JSON.stringify(navData, null, 2) + "\n",    sha: nav.sha },
     { path: FOOTER_PATH,       content: JSON.stringify(footerData, null, 2) + "\n", sha: footer.sha },
     { path: COMPOSITIONS_PATH, content: JSON.stringify(compData, null, 2) + "\n",   sha: comp.sha },
+    { path: REDIRECTS_PATH,    content: redirectsContent, sha: redirects.ok ? redirects.sha : undefined },
   ], `Page path: ${oldPath} → ${newPath}`);
   if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 502);
 
   return jsonResponse({
     ok: true,
-    message: `Path updated: ${oldPath} → ${newPath}`,
+    message: `Path updated: ${oldPath} → ${newPath}. A 301 redirect goes live on the next deploy.`,
     pages: compData.pages,
   });
 }

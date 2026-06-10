@@ -123,7 +123,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
       `• Navigation links\n` +
       `• Footer links\n` +
       `• Internal CTAs and links\n\n` +
-      `Note: links to the old path stop working after the next deploy.`
+      `A 301 redirect from the old path will go live on the next deploy.`
     );
     if (!proceed) return;
 

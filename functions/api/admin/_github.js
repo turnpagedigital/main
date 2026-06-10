@@ -232,8 +232,21 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
    non-forced, so a commit landing in the tiny window after the sha check
    also fails cleanly rather than overwriting.
 
+   If the ref update loses a race to an UNRELATED commit, the whole flow is
+   retried once against the new head (the per-file sha checks re-run, so a
+   conflicting edit to one of OUR files still surfaces as a conflict error).
+
    Returns { ok: true, sha: commitSha } | { ok: false, error }. */
 export async function commitFilesToGitHub(env, files, message, repo, branch) {
+  let result = await commitFilesAttempt(env, files, message, repo, branch);
+  if (!result.ok && result.refRace) {
+    result = await commitFilesAttempt(env, files, message, repo, branch);
+  }
+  if (result.refRace) delete result.refRace;
+  return result;
+}
+
+async function commitFilesAttempt(env, files, message, repo, branch) {
   const ref = branchOf(env, branch);
   const repoName = repo || env.GITHUB_REPO;
   const apiBase = `https://api.github.com/repos/${repoName}`;
@@ -317,15 +330,18 @@ export async function commitFilesToGitHub(env, files, message, repo, branch) {
   const commitSha = (await commitRes.json())?.sha;
   if (!commitSha) return { ok: false, error: "Commit creation returned no sha" };
 
-  // 7 — Fast-forward the branch (force: false → fails cleanly on a race)
+  // 7 — Fast-forward the branch (force: false → fails cleanly on a race).
+  //     422 here means the head moved since we read it; the caller retries
+  //     the whole attempt once against the new head.
   const updateRes = await ghFetch(`${apiBase}/git/refs/${encodeURIComponent(`heads/${ref}`)}`, {
     method: "PATCH",
     headers,
     body: JSON.stringify({ sha: commitSha, force: false }),
   });
   if (!updateRes.ok) {
+    const raced = updateRes.status === 422 || updateRes.status === 409;
     const status = updateRes.status === 422 ? 409 : updateRes.status;
-    return { ok: false, error: makeErrorMessage("PATCH", status, await updateRes.text()) };
+    return { ok: false, refRace: raced, error: makeErrorMessage("PATCH", status, await updateRes.text()) };
   }
 
   return { ok: true, sha: commitSha };
