@@ -241,11 +241,11 @@ function SituationRow({ sit, index, total, onUpdate, onMoveUp, onMoveDown, onRem
         {/* Reorder */}
         <div style={{ display: "flex", gap: "0.25rem", paddingTop: "0.3rem" }}>
           <button type="button" onClick={onMoveUp} disabled={index === 0}
-            title="Move up" style={iconBtnStyle(index === 0)}>
+            aria-label="Move up" title="Move up" style={iconBtnStyle(index === 0)}>
             ↑
           </button>
           <button type="button" onClick={onMoveDown} disabled={index === total - 1}
-            title="Move down" style={iconBtnStyle(index === total - 1)}>
+            aria-label="Move down" title="Move down" style={iconBtnStyle(index === total - 1)}>
             ↓
           </button>
         </div>

@@ -674,9 +674,9 @@ function BioSectionInner({ bio, onChangeBio, onSave, dirty, isSaving, error, las
                   />
 
                   {/* Reorder + delete */}
-                  <button onClick={() => moveSocialLink(i, -1)} disabled={i === 0}                       style={iconBtnStyle(i === 0)}                       title="Move up">↑</button>
-                  <button onClick={() => moveSocialLink(i, 1)}  disabled={i === socialLinks.length - 1}  style={iconBtnStyle(i === socialLinks.length - 1)}  title="Move down">↓</button>
-                  <button onClick={() => deleteSocialLink(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Remove">×</button>
+                  <button onClick={() => moveSocialLink(i, -1)} disabled={i === 0}                       style={iconBtnStyle(i === 0)}                       aria-label="Move up" title="Move up">↑</button>
+                  <button onClick={() => moveSocialLink(i, 1)}  disabled={i === socialLinks.length - 1}  style={iconBtnStyle(i === socialLinks.length - 1)}  aria-label="Move down" title="Move down">↓</button>
+                  <button onClick={() => deleteSocialLink(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} aria-label="Remove" title="Remove">×</button>
                 </div>
               );
             })}
@@ -748,9 +748,9 @@ function BioSectionInner({ bio, onChangeBio, onSave, dirty, isSaving, error, las
               <div style={{ flex: 1, fontWeight: 700, fontSize: "0.85rem", color: INK_60 }}>
                 Paragraph {i + 1}
               </div>
-              <button onClick={() => moveParagraph(i, -1)} disabled={i === 0}                    style={iconBtnStyle(i === 0)}                    title="Move up">↑</button>
-              <button onClick={() => moveParagraph(i, 1)}  disabled={i === paragraphs.length - 1} style={iconBtnStyle(i === paragraphs.length - 1)} title="Move down">↓</button>
-              <button onClick={() => deleteParagraph(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }}             title="Delete">×</button>
+              <button onClick={() => moveParagraph(i, -1)} disabled={i === 0}                    style={iconBtnStyle(i === 0)}                    aria-label="Move up" title="Move up">↑</button>
+              <button onClick={() => moveParagraph(i, 1)}  disabled={i === paragraphs.length - 1} style={iconBtnStyle(i === paragraphs.length - 1)} aria-label="Move down" title="Move down">↓</button>
+              <button onClick={() => deleteParagraph(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }}             aria-label="Delete" title="Delete">×</button>
             </div>
             <textarea
               value={para}
@@ -888,9 +888,9 @@ function LogoRow({ logo, index, total, onUpdateName, onUpdateUrl, onMoveUp, onMo
       )}
 
       {/* Reorder + delete */}
-      <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
-      <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
-      <button onClick={onDelete}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Remove">×</button>
+      <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         aria-label="Move up" title="Move up">↑</button>
+      <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} aria-label="Move down" title="Move down">↓</button>
+      <button onClick={onDelete}   style={{ ...iconBtnStyle(false), color: "#c44" }} aria-label="Remove" title="Remove">×</button>
 
       <AssetPicker
         open={pickerOpen}

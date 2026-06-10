@@ -300,10 +300,10 @@ function PressSectionInner({ items, onChangeItems, onSave, dirty, isSaving, erro
                 {item.piece_title && ` — "${item.piece_title}"`}
               </div>
               {!isFiltered && <>
-                <button onClick={() => moveItem(i, -1)} disabled={i === 0}                style={iconBtnStyle(i === 0)}               title="Move up">↑</button>
-                <button onClick={() => moveItem(i, 1)}  disabled={i === items.length - 1} style={iconBtnStyle(i === items.length - 1)} title="Move down">↓</button>
+                <button onClick={() => moveItem(i, -1)} disabled={i === 0}                style={iconBtnStyle(i === 0)}               aria-label="Move up" title="Move up">↑</button>
+                <button onClick={() => moveItem(i, 1)}  disabled={i === items.length - 1} style={iconBtnStyle(i === items.length - 1)} aria-label="Move down" title="Move down">↓</button>
               </>}
-              <button onClick={() => deleteItem(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
+              <button onClick={() => deleteItem(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} aria-label="Delete" title="Delete">×</button>
             </div>
 
             {/* Fields */}
@@ -547,7 +547,7 @@ function PressAssetField({ value, onChange, assetType, contextCompany, acceptTyp
             type="button"
             onClick={() => onChange("")}
             style={{ ...iconBtnStyle(false) }}
-            title="Clear"
+            aria-label="Clear" title="Clear"
           >×</button>
         )}
       </div>

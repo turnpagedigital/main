@@ -159,6 +159,16 @@ export default function Admin() {
 
   return (
     <div className="tpdm-admin" style={{ background: "#F4F5F7", minHeight: "100vh", fontFamily: FONT, color: INK }}>
+      {/* Keyboard focus indicator — admin styles strip the native outline
+          (outline: none in inputStyle/selectStyle), so without this a
+          keyboard user can't see which control is focused. focus-visible
+          keeps mouse clicks outline-free. */}
+      <style>{`
+        .tpdm-admin :is(button, input, select, textarea, a, [tabindex]):focus-visible {
+          outline: 2px solid ${NEON};
+          outline-offset: 2px;
+        }
+      `}</style>
 
       {/* ── Top bar ───────────────────────────────────────────────── */}
       <div style={{

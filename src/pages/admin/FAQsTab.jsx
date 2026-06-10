@@ -427,7 +427,7 @@ function FaqsSectionInner({ faqs, onChangeFaqs, onSave, dirty, isSaving, error, 
               </div>
               <button onClick={() => moveFaq(i, -1)} disabled={isFiltered || i === 0}               style={iconBtnStyle(isFiltered || i === 0)}              title={isFiltered ? "Clear filters to reorder" : "Move up"}>↑</button>
               <button onClick={() => moveFaq(i, 1)}  disabled={isFiltered || i === faqs.length - 1} style={iconBtnStyle(isFiltered || i === faqs.length - 1)} title={isFiltered ? "Clear filters to reorder" : "Move down"}>↓</button>
-              <button onClick={() => deleteFaq(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
+              <button onClick={() => deleteFaq(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} aria-label="Delete" title="Delete">×</button>
             </div>
 
             {/* Fields */}

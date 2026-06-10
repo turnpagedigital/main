@@ -523,8 +523,8 @@ function CardsArrayEditor({ label, cards, onChange, showPriority }) {
               <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Body" value={c.body} onChange={e => handleChange(i, "body", e.target.value)} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 4, marginLeft: 8 }}>
-              <button type="button" onClick={() => handleMoveUp(i)} disabled={i === 0} title="Move up" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === 0 ? 0.5 : 1, cursor: i === 0 ? "default" : "pointer" }}>↑</button>
-              <button type="button" onClick={() => handleMoveDown(i)} disabled={i === (cards || []).length - 1} title="Move down" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === (cards || []).length - 1 ? 0.5 : 1, cursor: i === (cards || []).length - 1 ? "default" : "pointer" }}>↓</button>
+              <button type="button" onClick={() => handleMoveUp(i)} disabled={i === 0} aria-label="Move up" title="Move up" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === 0 ? 0.5 : 1, cursor: i === 0 ? "default" : "pointer" }}>↑</button>
+              <button type="button" onClick={() => handleMoveDown(i)} disabled={i === (cards || []).length - 1} aria-label="Move down" title="Move down" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === (cards || []).length - 1 ? 0.5 : 1, cursor: i === (cards || []).length - 1 ? "default" : "pointer" }}>↓</button>
             </div>
           </div>
           {showPriority && (

@@ -246,11 +246,11 @@ function TestimonialRow({ test, index, total, onUpdate, onMoveUp, onMoveDown, on
         {/* Reorder */}
         <div style={{ display: "flex", gap: "0.25rem", paddingTop: "0.1rem" }}>
           <button type="button" onClick={onMoveUp} disabled={index === 0}
-            title="Move up" style={iconBtnStyle(index === 0)}>
+            aria-label="Move up" title="Move up" style={iconBtnStyle(index === 0)}>
             ↑
           </button>
           <button type="button" onClick={onMoveDown} disabled={index === total - 1}
-            title="Move down" style={iconBtnStyle(index === total - 1)}>
+            aria-label="Move down" title="Move down" style={iconBtnStyle(index === total - 1)}>
             ↓
           </button>
         </div>
@@ -276,7 +276,7 @@ function TestimonialRow({ test, index, total, onUpdate, onMoveUp, onMoveDown, on
         </div>
 
         {/* Delete */}
-        <button type="button" onClick={onRemove} title="Delete"
+        <button type="button" onClick={onRemove} aria-label="Delete" title="Delete"
           style={{
             ...iconBtnStyle(false), color: "#c44",
             borderColor: "rgba(180,40,40,0.25)",

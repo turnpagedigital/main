@@ -572,7 +572,7 @@ function PostHeroImageField({ value, onChange }) {
             type="button"
             onClick={() => onChange("")}
             style={{ ...iconBtnStyle(false) }}
-            title="Clear"
+            aria-label="Clear" title="Clear"
           >×</button>
         )}
       </div>

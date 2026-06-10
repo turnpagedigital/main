@@ -220,9 +220,9 @@ function DealRow({ index, deal, pages, onChange, onMoveUp, onMoveDown, onDelete,
             <span style={{ marginLeft: "0.5rem", color: "#888", fontWeight: 400 }}>pre-Turnpage *</span>
           )}
         </div>
-        <button onClick={onMoveUp}   disabled={isFirst} style={iconBtnStyle(isFirst)}              title="Move up">↑</button>
-        <button onClick={onMoveDown} disabled={isLast}  style={iconBtnStyle(isLast)}               title="Move down">↓</button>
-        <button onClick={onDelete}   style={{ ...iconBtnStyle(false), color: "#c44" }}             title="Delete">×</button>
+        <button onClick={onMoveUp}   disabled={isFirst} style={iconBtnStyle(isFirst)}              aria-label="Move up" title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={isLast}  style={iconBtnStyle(isLast)}               aria-label="Move down" title="Move down">↓</button>
+        <button onClick={onDelete}   style={{ ...iconBtnStyle(false), color: "#c44" }}             aria-label="Delete" title="Delete">×</button>
       </div>
 
       {/* Text fields */}
@@ -386,7 +386,7 @@ function DealLogoSlot({ label, url, contextCompany, onChange }) {
             type="button"
             onClick={() => onChange("")}
             style={{ ...iconBtnStyle(false) }}
-            title="Clear"
+            aria-label="Clear" title="Clear"
           >×</button>
         )}
       </div>

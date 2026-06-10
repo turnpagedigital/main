@@ -460,8 +460,8 @@ export default function PageBuilderTab({ onDirtyChange }) {
                       Editing: {st ? st.displayName : s.type}
                     </span>
                     <span style={{ flex: 1 }} />
-                    <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveUp(idx)} disabled={idx === 0} title="Move up">▲ Up</button>
-                    <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveDown(idx)} disabled={idx === sections.length - 1} title="Move down">▼ Down</button>
+                    <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveUp(idx)} disabled={idx === 0} aria-label="Move up" title="Move up">▲ Up</button>
+                    <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveDown(idx)} disabled={idx === sections.length - 1} aria-label="Move down" title="Move down">▼ Down</button>
                     <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => toggleVisible(idx)} title={s.visible ? "Hide" : "Show"}>
                       {s.visible ? "Hide" : "Show"}
                     </button>

@@ -196,13 +196,13 @@ export default function ContactFormTab({ onDirtyChange }) {
               {subj.active ? "ACTIVE" : "OFF"}
             </button>
             <div style={{ display: "flex", gap: "0.2rem" }}>
-              <button type="button" onClick={() => moveSubject(idx, -1)} disabled={idx === 0} style={iconBtnStyle(idx === 0)} title="Move up">↑</button>
-              <button type="button" onClick={() => moveSubject(idx, 1)} disabled={idx === data.subjects.length - 1} style={iconBtnStyle(idx === data.subjects.length - 1)} title="Move down">↓</button>
+              <button type="button" onClick={() => moveSubject(idx, -1)} disabled={idx === 0} style={iconBtnStyle(idx === 0)} aria-label="Move up" title="Move up">↑</button>
+              <button type="button" onClick={() => moveSubject(idx, 1)} disabled={idx === data.subjects.length - 1} style={iconBtnStyle(idx === data.subjects.length - 1)} aria-label="Move down" title="Move down">↓</button>
             </div>
             <input type="text" value={subj.id} onChange={e => updateSubject(idx, { id: e.target.value })} placeholder="id-slug" style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem", fontFamily: "monospace" }} />
             <input type="text" value={subj.label} onChange={e => updateSubject(idx, { label: e.target.value })} placeholder="Display label" style={{ ...inputStyle, marginTop: 0, fontSize: "0.82rem" }} />
             <button type="button" onClick={() => setDeleteConfirm({ type: "subject", index: idx, label: subj.label || subj.id })}
-              style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
+              style={{ ...iconBtnStyle(false), color: "#c44" }} aria-label="Delete" title="Delete">×</button>
           </div>
         ))}
       </div>
@@ -264,9 +264,9 @@ function FieldRow({ field, idx, total, onUpdate, onMove, onRemove }) {
           {field.label || field.name || <em>New field</em>}
           {field.required && <span style={{ color: "#c44", marginLeft: "0.3em" }}>*</span>}
         </div>
-        <button type="button" onClick={() => onMove(-1)} disabled={idx === 0} style={iconBtnStyle(idx === 0)} title="Move up">↑</button>
-        <button type="button" onClick={() => onMove(1)} disabled={idx === total - 1} style={iconBtnStyle(idx === total - 1)} title="Move down">↓</button>
-        <button type="button" onClick={onRemove} style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
+        <button type="button" onClick={() => onMove(-1)} disabled={idx === 0} style={iconBtnStyle(idx === 0)} aria-label="Move up" title="Move up">↑</button>
+        <button type="button" onClick={() => onMove(1)} disabled={idx === total - 1} style={iconBtnStyle(idx === total - 1)} aria-label="Move down" title="Move down">↓</button>
+        <button type="button" onClick={onRemove} style={{ ...iconBtnStyle(false), color: "#c44" }} aria-label="Delete" title="Delete">×</button>
       </div>
       <div style={{ padding: "0.65rem 0.75rem", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.5rem 0.75rem" }}>
         <label style={labelSt}>

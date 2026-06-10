@@ -318,9 +318,9 @@ function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemo
         </div>
 
         {/* Action buttons */}
-        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
-        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
-        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
+        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         aria-label="Move up" title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} aria-label="Move down" title="Move down">↓</button>
+        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        aria-label="Delete" title="Delete">×</button>
       </div>
 
       {/* Card body */}

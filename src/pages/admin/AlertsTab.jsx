@@ -231,7 +231,7 @@ function AlertsSectionInner({ alerts, onChangeAlerts, onSave, dirty, isSaving, e
 
               <button onClick={() => moveAlert(i, -1)} disabled={isFiltered || i === 0}                  style={iconBtnStyle(isFiltered || i === 0)}                 title={isFiltered ? "Clear filters to reorder" : "Move up"}>↑</button>
               <button onClick={() => moveAlert(i, 1)}  disabled={isFiltered || i === alerts.length - 1}  style={iconBtnStyle(isFiltered || i === alerts.length - 1)} title={isFiltered ? "Clear filters to reorder" : "Move down"}>↓</button>
-              <button onClick={() => deleteAlert(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} title="Delete">×</button>
+              <button onClick={() => deleteAlert(i)}   style={{ ...iconBtnStyle(false), color: "#c44" }} aria-label="Delete" title="Delete">×</button>
             </div>
 
             {/* Fields */}

@@ -368,12 +368,12 @@ function NavRow({
           {summary}
         </div>
 
-        <button onClick={onMoveUp}   disabled={index === 0}          style={iconBtnStyle(index === 0)}          title="Move up">↑</button>
-        <button onClick={onMoveDown} disabled={index === total - 1}  style={iconBtnStyle(index === total - 1)}  title="Move down">↓</button>
+        <button onClick={onMoveUp}   disabled={index === 0}          style={iconBtnStyle(index === 0)}          aria-label="Move up" title="Move up">↑</button>
+        <button onClick={onMoveDown} disabled={index === total - 1}  style={iconBtnStyle(index === total - 1)}  aria-label="Move down" title="Move down">↓</button>
         <button
           onClick={() => { if (window.confirm(`Remove "${item.label || item.id}"?`)) onRemove(); }}
           style={{ ...iconBtnStyle(false), color: "#c44" }}
-          title="Delete"
+          aria-label="Delete" title="Delete"
         >×</button>
       </div>
 
@@ -633,7 +633,7 @@ function DropdownEditor({ dd, onUpdate, onUpdateLink, onAddLink, onMoveLink, onR
                   type="button"
                   onClick={() => onMoveLink(li, -1)}
                   disabled={li === 0}
-                  title="Move up"
+                  aria-label="Move up" title="Move up"
                   style={iconBtnStyle(li === 0)}
                 >
                   ↑
@@ -642,7 +642,7 @@ function DropdownEditor({ dd, onUpdate, onUpdateLink, onAddLink, onMoveLink, onR
                   type="button"
                   onClick={() => onMoveLink(li, 1)}
                   disabled={li === (dd.links || []).length - 1}
-                  title="Move down"
+                  aria-label="Move down" title="Move down"
                   style={iconBtnStyle(li === (dd.links || []).length - 1)}
                 >
                   ↓
@@ -793,7 +793,7 @@ function MicrositeAccordion({ ms, onUpdate, onUpdateItem, onAddItem, onMoveItem,
                   type="button"
                   onClick={() => onMoveItem(idx, -1)}
                   disabled={idx === 0}
-                  title="Move up"
+                  aria-label="Move up" title="Move up"
                   style={iconBtnStyle(idx === 0)}
                 >
                   ↑
@@ -802,7 +802,7 @@ function MicrositeAccordion({ ms, onUpdate, onUpdateItem, onAddItem, onMoveItem,
                   type="button"
                   onClick={() => onMoveItem(idx, 1)}
                   disabled={idx === (ms?.items || []).length - 1}
-                  title="Move down"
+                  aria-label="Move down" title="Move down"
                   style={iconBtnStyle(idx === (ms?.items || []).length - 1)}
                 >
                   ↓
@@ -827,7 +827,7 @@ function MicrositeAccordion({ ms, onUpdate, onUpdateItem, onAddItem, onMoveItem,
                 onClick={() => {
                   if (window.confirm(`Remove "${item.label || "this item"}"?`)) onRemoveItem(idx);
                 }}
-                title="Delete"
+                aria-label="Delete" title="Delete"
                 style={{
                   ...iconBtnStyle(false),
                   color: "#c44", borderColor: "rgba(180,40,40,0.25)",

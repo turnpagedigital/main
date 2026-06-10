@@ -97,9 +97,9 @@ export default function PropertyPanel({
                   style={{ ...iconBtnStyle(false), fontSize: "0.7rem", padding: "0.2rem 0.4rem" }}>
                   {selectedSection.visible !== false ? "Hide" : "Show"}
                 </button>
-                <button onClick={() => onMoveUp?.(selectedIndex)} disabled={selectedIndex === 0} title="Move up"
+                <button onClick={() => onMoveUp?.(selectedIndex)} disabled={selectedIndex === 0} aria-label="Move up" title="Move up"
                   style={iconBtnStyle(selectedIndex === 0)}>↑</button>
-                <button onClick={() => onMoveDown?.(selectedIndex)} disabled={selectedIndex >= (sections||[]).length - 1} title="Move down"
+                <button onClick={() => onMoveDown?.(selectedIndex)} disabled={selectedIndex >= (sections||[]).length - 1} aria-label="Move down" title="Move down"
                   style={iconBtnStyle(selectedIndex >= (sections||[]).length - 1)}>↓</button>
               </div>
             </div>

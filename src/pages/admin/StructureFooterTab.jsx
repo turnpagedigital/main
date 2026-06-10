@@ -177,9 +177,9 @@ function LinkRow({ link, linkIndex, totalLinks, onUpdate, onMoveUp, onMoveDown, 
         </div>
 
         <button type="button" onClick={onMoveUp} disabled={linkIndex === 0}
-          title="Move up" style={iconBtnStyle(linkIndex === 0)}>↑</button>
+          aria-label="Move up" title="Move up" style={iconBtnStyle(linkIndex === 0)}>↑</button>
         <button type="button" onClick={onMoveDown} disabled={linkIndex === totalLinks - 1}
-          title="Move down" style={iconBtnStyle(linkIndex === totalLinks - 1)}>↓</button>
+          aria-label="Move down" title="Move down" style={iconBtnStyle(linkIndex === totalLinks - 1)}>↓</button>
         <button type="button" onClick={onRemove} title="Delete link"
           style={{ ...iconBtnStyle(false), color: "#c44" }}>×</button>
       </div>
