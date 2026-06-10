@@ -1,29 +1,36 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
-/* Read/write the three marketing page content JSON files.
+/* Read/write src/data/ai-copyright-content.json — the AI Copyright page's
+   content store. DamagesSection renders damagesData from it (the Active
+   Docket chart); edited via MarketingPagesTab inside the Page Builder's
+   "damages" section editor.
 
    GET  /api/admin/marketing-pages
-     → { ok: true, data: { crypto, aiCopyright, litigationFinance } }
+     → { ok: true, data: { aiCopyright } }
 
    PUT  /api/admin/marketing-pages
-     Body: { crypto?, aiCopyright?, litigationFinance? }
-     Each key present in the body triggers a separate commit for that file.
-     → { ok: true, commits: { crypto?, aiCopyright?, litigationFinance? } }
+     Body: { aiCopyright }
+     → { ok: true, commits: { aiCopyright } }
+
+   Historical note: this endpoint once also managed crypto-content.json and
+   litigation-finance-content.json, but those pages render entirely from
+   page-compositions.json — the files were written and never read, so they
+   were removed (June 2026). The PUT validator also dispatched on the key
+   "copyright" while the payload key was "aiCopyright", so AI Copyright
+   saves were rejected with "Unknown key" — fixed in the same change.
 
    Auth required (session cookie).
 */
 
 const PATHS = {
-  crypto:            "src/data/crypto-content.json",
-  aiCopyright:       "src/data/ai-copyright-content.json",
-  litigationFinance: "src/data/litigation-finance-content.json",
+  aiCopyright: "src/data/ai-copyright-content.json",
 };
 
 /* ── Field length limits ─────────────────────────────────────────────────── */
-const MAX_ITEMS   = 30;
-const MAX_STR     = 1200;
-const MAX_ID      = 80;
+const MAX_ITEMS = 30;
+const MAX_STR   = 1200;
+const MAX_ID    = 80;
 
 /* ── GET ─────────────────────────────────────────────────────────────────── */
 
@@ -95,31 +102,11 @@ function validatePayload(key, payload) {
   if (!payload || typeof payload !== "object") return `${key} must be an object`;
 
   switch (key) {
-    case "crypto":
-      return validateCrypto(payload);
-    case "copyright":
+    case "aiCopyright":
       return validateCopyright(payload);
-    case "litigationFinance":
-      return validateLitFin(payload);
     default:
       return `Unknown key: ${key}`;
   }
-}
-
-function validateCrypto(p) {
-  if (!Array.isArray(p.audienceCards)) return "crypto.audienceCards must be an array";
-  if (!Array.isArray(p.serviceCards)) return "crypto.serviceCards must be an array";
-  if (p.audienceCards.length > MAX_ITEMS) return `Too many audienceCards (max ${MAX_ITEMS})`;
-  if (p.serviceCards.length > MAX_ITEMS) return `Too many serviceCards (max ${MAX_ITEMS})`;
-  const a = validateAudienceCards(p.audienceCards, "crypto.audienceCards");
-  if (a) return a;
-  const s = validateServiceCards(p.serviceCards, "crypto.serviceCards");
-  if (s) return s;
-  if (p.comparison) {
-    const c = validateComparison(p.comparison, "crypto.comparison");
-    if (c) return c;
-  }
-  return null;
 }
 
 function validateCopyright(p) {
@@ -135,30 +122,6 @@ function validateCopyright(p) {
   if (s) return s;
   const d = validateDamagesData(p.damagesData);
   if (d) return d;
-  return null;
-}
-
-function validateLitFin(p) {
-  if (!Array.isArray(p.audienceCards)) return "litigationFinance.audienceCards must be an array";
-  if (!Array.isArray(p.serviceCards)) return "litigationFinance.serviceCards must be an array";
-  if (!Array.isArray(p.howItWorks)) return "litigationFinance.howItWorks must be an array";
-  if (!Array.isArray(p.faqs)) return "litigationFinance.faqs must be an array";
-  if (p.audienceCards.length > MAX_ITEMS) return `Too many audienceCards (max ${MAX_ITEMS})`;
-  if (p.serviceCards.length > MAX_ITEMS) return `Too many serviceCards (max ${MAX_ITEMS})`;
-  if (p.howItWorks.length > MAX_ITEMS) return `Too many howItWorks steps (max ${MAX_ITEMS})`;
-  if (p.faqs.length > MAX_ITEMS) return `Too many faqs (max ${MAX_ITEMS})`;
-  const a = validateAudienceCards(p.audienceCards, "litigationFinance.audienceCards");
-  if (a) return a;
-  const s = validateServiceCards(p.serviceCards, "litigationFinance.serviceCards");
-  if (s) return s;
-  const h = validateHowItWorks(p.howItWorks);
-  if (h) return h;
-  const f = validateFAQs(p.faqs);
-  if (f) return f;
-  if (p.comparison) {
-    const c = validateComparison(p.comparison, "litigationFinance.comparison");
-    if (c) return c;
-  }
   return null;
 }
 
@@ -207,51 +170,11 @@ function validateDamagesData(items) {
   return null;
 }
 
-function validateHowItWorks(steps) {
-  const seen = new Set();
-  for (let i = 0; i < steps.length; i++) {
-    const s = steps[i];
-    if (!s || typeof s !== "object") return `howItWorks[${i}] is not an object`;
-    if (typeof s.id !== "string" || !s.id.trim()) return `howItWorks[${i}].id is required`;
-    if (seen.has(s.id.trim())) return `howItWorks[${i}].id "${s.id}" is duplicated`;
-    seen.add(s.id.trim());
-    if (typeof s.title !== "string" || !s.title.trim()) return `howItWorks[${i}].title is required`;
-    if (typeof s.body !== "string" || !s.body.trim()) return `howItWorks[${i}].body is required`;
-  }
-  return null;
-}
-
-function validateFAQs(faqs) {
-  const seen = new Set();
-  for (let i = 0; i < faqs.length; i++) {
-    const f = faqs[i];
-    if (!f || typeof f !== "object") return `faqs[${i}] is not an object`;
-    if (typeof f.id !== "string" || !f.id.trim()) return `faqs[${i}].id is required`;
-    if (seen.has(f.id.trim())) return `faqs[${i}].id "${f.id}" is duplicated`;
-    seen.add(f.id.trim());
-    if (typeof f.q !== "string" || !f.q.trim()) return `faqs[${i}].q is required`;
-    if (typeof f.a !== "string" || !f.a.trim()) return `faqs[${i}].a is required`;
-  }
-  return null;
-}
-
-function validateComparison(cmp, label) {
-  if (!cmp || typeof cmp !== "object") return `${label} must be an object`;
-  if (!cmp.oldWay || !cmp.newWay) return `${label} must have oldWay and newWay`;
-  if (typeof cmp.oldWay.title !== "string") return `${label}.oldWay.title must be a string`;
-  if (!Array.isArray(cmp.oldWay.items)) return `${label}.oldWay.items must be an array`;
-  if (typeof cmp.newWay.title !== "string") return `${label}.newWay.title must be a string`;
-  if (!Array.isArray(cmp.newWay.items)) return `${label}.newWay.items must be an array`;
-  return null;
-}
-
 /* ── Sanitisation ────────────────────────────────────────────────────────── */
 
 function sanitizePayload(key, payload) {
   switch (key) {
-    case "crypto":       return sanitizeCrypto(payload);
-    case "copyright":  return sanitizeCopyright(payload);
-    case "litigationFinance": return sanitizeLitFin(payload);
+    case "aiCopyright": return sanitizeCopyright(payload);
     default: return payload;
   }
 }
@@ -269,28 +192,6 @@ function sanitizeServiceCard(c) {
   return { id: sid(c.id), title: s(c.title), body: s(c.body) };
 }
 
-function sanitizeComparison(cmp) {
-  return {
-    oldWay: {
-      title: s(cmp.oldWay.title),
-      items: Array.isArray(cmp.oldWay.items) ? cmp.oldWay.items.map(i => s(i)) : [],
-    },
-    newWay: {
-      title: s(cmp.newWay.title),
-      items: Array.isArray(cmp.newWay.items) ? cmp.newWay.items.map(i => s(i)) : [],
-    },
-  };
-}
-
-function sanitizeCrypto(p) {
-  const out = {
-    audienceCards: p.audienceCards.map(sanitizeAudienceCard),
-    serviceCards:  p.serviceCards.map(sanitizeServiceCard),
-  };
-  if (p.comparison) out.comparison = sanitizeComparison(p.comparison);
-  return out;
-}
-
 function sanitizeCopyright(p) {
   return {
     audienceCards: p.audienceCards.map(sanitizeAudienceCard),
@@ -306,24 +207,4 @@ function sanitizeCopyright(p) {
       source:  s(d.source),
     })),
   };
-}
-
-function sanitizeLitFin(p) {
-  const out = {
-    audienceCards: p.audienceCards.map(sanitizeAudienceCard),
-    serviceCards:  p.serviceCards.map(sanitizeServiceCard),
-    howItWorks: p.howItWorks.map(step => ({
-      id:    sid(step.id),
-      n:     s(step.n),
-      title: s(step.title),
-      body:  s(step.body),
-    })),
-    faqs: p.faqs.map(f => ({
-      id: sid(f.id),
-      q:  s(f.q),
-      a:  s(f.a),
-    })),
-  };
-  if (p.comparison) out.comparison = sanitizeComparison(p.comparison);
-  return out;
 }

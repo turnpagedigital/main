@@ -3,16 +3,16 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   MarketingPagesTab — manage content arrays for Crypto, AI Copyright, and
-   Litigation Finance marketing pages.
+   MarketingPagesTab — manage src/data/ai-copyright-content.json.
 
-   Fetches all three from GET /api/admin/marketing-pages (reads the three
-   src/data/*-content.json files via GitHub), saves via PUT.
+   Embedded by SectionEditorModal when editing a "damages" section (the
+   Active Docket chart on the AI Copyright page renders damagesData from
+   this file). Fetches via GET /api/admin/marketing-pages, saves via PUT.
 
-   Inner tab strip: Crypto | AI Copyright | Litigation Finance
-   Each page shows its content sections — audience cards, service cards,
-   damages data (AI Copyright only), how-it-works steps (Lit Finance only),
-   FAQs (Lit Finance only), comparison (Crypto + Lit Finance).
+   Historical note: this tab once also edited crypto-content.json and
+   litigation-finance-content.json, but those pages render entirely from
+   page-compositions.json — the files were written and never read, so the
+   editors were removed (June 2026).
 
    UI pattern: card-per-item with header row. AudienceCards use a
    PRIORITY/STANDARD pill toggle instead of a checkbox.
@@ -22,9 +22,7 @@ import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, forma
 ═══════════════════════════════════════════════════════════════════════════ */
 
 const PAGE_TABS = [
-  { key: "crypto",            label: "Crypto" },
-  { key: "aiCopyright",       label: "AI Copyright" },
-  { key: "litigationFinance", label: "Litigation Funding" },
+  { key: "aiCopyright", label: "AI Copyright" },
 ];
 
 /* ── ID generators ──────────────────────────────────────────────────────── */
@@ -45,41 +43,15 @@ function emptyDamage() {
   return { id: uid("dmg"), name: "", amountB: 0, label: "", type: "statutory", badge: "", basis: "", source: "" };
 }
 
-function emptyStep() {
-  return { id: uid("step"), n: "", title: "", body: "" };
-}
-
-function emptyFAQ() {
-  return { id: uid("faq"), q: "", a: "" };
-}
-
-function emptyComparisonItem() {
-  return "";
-}
-
 /* ── Normalize ──────────────────────────────────────────────────────────── */
 
 function normalize(data) {
-  const crypto = data?.crypto || {};
   const aiCopyright = data?.aiCopyright || {};
-  const litFin = data?.litigationFinance || {};
   return {
-    crypto: {
-      audienceCards: Array.isArray(crypto.audienceCards) ? crypto.audienceCards : [],
-      serviceCards:  Array.isArray(crypto.serviceCards)  ? crypto.serviceCards  : [],
-      comparison:    crypto.comparison || { oldWay: { title: "", items: [] }, newWay: { title: "", items: [] } },
-    },
     aiCopyright: {
       audienceCards: Array.isArray(aiCopyright.audienceCards) ? aiCopyright.audienceCards : [],
       serviceCards:  Array.isArray(aiCopyright.serviceCards)  ? aiCopyright.serviceCards  : [],
       damagesData:   Array.isArray(aiCopyright.damagesData)   ? aiCopyright.damagesData   : [],
-    },
-    litigationFinance: {
-      audienceCards: Array.isArray(litFin.audienceCards) ? litFin.audienceCards : [],
-      serviceCards:  Array.isArray(litFin.serviceCards)  ? litFin.serviceCards  : [],
-      howItWorks:    Array.isArray(litFin.howItWorks)    ? litFin.howItWorks    : [],
-      faqs:          Array.isArray(litFin.faqs)          ? litFin.faqs          : [],
-      comparison:    litFin.comparison || { oldWay: { title: "", items: [] }, newWay: { title: "", items: [] } },
     },
   };
 }
@@ -94,7 +66,7 @@ export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
   const [phase,    setPhase]    = useState("loading");
   const [error,    setError]    = useState("");
   const [lastSavedAt, setLastSavedAt] = useState(null);
-  const [activePage, setActivePage] = useState(controlledPage || "crypto");
+  const [activePage, setActivePage] = useState(controlledPage || "aiCopyright");
 
   const dirty = useMemo(() => {
     if (!data || !original) return false;
@@ -189,70 +161,6 @@ export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
     }));
   }
 
-  /* ── Comparison helpers ─────────────────────────────────────────────────── */
-
-  function updateComparison(page, side, field, value) {
-    setData(prev => ({
-      ...prev,
-      [page]: {
-        ...prev[page],
-        comparison: {
-          ...prev[page].comparison,
-          [side]: { ...prev[page].comparison[side], [field]: value },
-        },
-      },
-    }));
-  }
-
-  function updateComparisonItem(page, side, idx, value) {
-    setData(prev => {
-      const items = [...prev[page].comparison[side].items];
-      items[idx] = value;
-      return {
-        ...prev,
-        [page]: {
-          ...prev[page],
-          comparison: {
-            ...prev[page].comparison,
-            [side]: { ...prev[page].comparison[side], items },
-          },
-        },
-      };
-    });
-  }
-
-  function addComparisonItem(page, side) {
-    setData(prev => {
-      const items = [...prev[page].comparison[side].items, emptyComparisonItem()];
-      return {
-        ...prev,
-        [page]: {
-          ...prev[page],
-          comparison: {
-            ...prev[page].comparison,
-            [side]: { ...prev[page].comparison[side], items },
-          },
-        },
-      };
-    });
-  }
-
-  function removeComparisonItem(page, side, idx) {
-    setData(prev => {
-      const items = prev[page].comparison[side].items.filter((_, i) => i !== idx);
-      return {
-        ...prev,
-        [page]: {
-          ...prev[page],
-          comparison: {
-            ...prev[page].comparison,
-            [side]: { ...prev[page].comparison[side], items },
-          },
-        },
-      };
-    });
-  }
-
   /* ── Render ─────────────────────────────────────────────────────────────── */
 
   return (
@@ -322,20 +230,6 @@ export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
       )}
 
       {/* Page sections */}
-      {activePage === "crypto" && (
-        <CryptoSection
-          page="crypto"
-          d={data.crypto}
-          updateItem={updateItem}
-          moveItem={moveItem}
-          removeItem={removeItem}
-          addItem={addItem}
-          updateComparison={updateComparison}
-          updateComparisonItem={updateComparisonItem}
-          addComparisonItem={addComparisonItem}
-          removeComparisonItem={removeComparisonItem}
-        />
-      )}
       {activePage === "aiCopyright" && (
         <CopyrightSection
           page="aiCopyright"
@@ -346,20 +240,6 @@ export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
           addItem={addItem}
         />
       )}
-      {activePage === "litigationFinance" && (
-        <LitFinSection
-          page="litigationFinance"
-          d={data.litigationFinance}
-          updateItem={updateItem}
-          moveItem={moveItem}
-          removeItem={removeItem}
-          addItem={addItem}
-          updateComparison={updateComparison}
-          updateComparisonItem={updateComparisonItem}
-          addComparisonItem={addComparisonItem}
-          removeComparisonItem={removeComparisonItem}
-        />
-      )}
     </div>
   );
 }
@@ -367,67 +247,6 @@ export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
 /* ══════════════════════════════════════════════════════════════════════════
    Page sections
 ══════════════════════════════════════════════════════════════════════════ */
-
-function CryptoSection({ page, d, updateItem, moveItem, removeItem, addItem, updateComparison, updateComparisonItem, addComparisonItem, removeComparisonItem }) {
-  return (
-    <>
-      <SectionHeader>Audience Cards (Who We Help)</SectionHeader>
-      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
-        Cards shown in the "Who We Help" section. Items with the <em>PRIORITY</em> pill active render with dark background.
-      </p>
-      <CardList
-        items={d.audienceCards}
-        page={page}
-        sectionKey="audienceCards"
-        updateItem={updateItem}
-        moveItem={moveItem}
-        removeItem={removeItem}
-        addItem={() => addItem(page, "audienceCards", emptyAudienceCard)}
-        renderRow={(c, i, total) => (
-          <AudienceCardRow
-            key={c.id} card={c} index={i} total={total}
-            onUpdate={patch => updateItem(page, "audienceCards", i, patch)}
-            onMoveUp={() => moveItem(page, "audienceCards", i, -1)}
-            onMoveDown={() => moveItem(page, "audienceCards", i, 1)}
-            onRemove={() => { if (window.confirm(`Remove card "${c.title || c.id}"?`)) removeItem(page, "audienceCards", i); }}
-          />
-        )}
-        addLabel="+ Add audience card"
-      />
-
-      <SectionHeader>Service Cards (What We Offer)</SectionHeader>
-      <CardList
-        items={d.serviceCards}
-        page={page}
-        sectionKey="serviceCards"
-        updateItem={updateItem}
-        moveItem={moveItem}
-        removeItem={removeItem}
-        addItem={() => addItem(page, "serviceCards", emptyServiceCard)}
-        renderRow={(c, i, total) => (
-          <ServiceCardRow
-            key={c.id} card={c} index={i} total={total}
-            onUpdate={patch => updateItem(page, "serviceCards", i, patch)}
-            onMoveUp={() => moveItem(page, "serviceCards", i, -1)}
-            onMoveDown={() => moveItem(page, "serviceCards", i, 1)}
-            onRemove={() => { if (window.confirm(`Remove card "${c.title || c.id}"?`)) removeItem(page, "serviceCards", i); }}
-          />
-        )}
-        addLabel="+ Add service card"
-      />
-
-      <SectionHeader>Comparison (Old Way / New Way)</SectionHeader>
-      <ComparisonEditor
-        cmp={d.comparison}
-        page={page}
-        updateComparison={updateComparison}
-        updateComparisonItem={updateComparisonItem}
-        addComparisonItem={addComparisonItem}
-        removeComparisonItem={removeComparisonItem}
-      />
-    </>
-  );
-}
 
 function CopyrightSection({ page, d, updateItem, moveItem, removeItem, addItem }) {
   return (
@@ -504,113 +323,6 @@ function CopyrightSection({ page, d, updateItem, moveItem, removeItem, addItem }
     </>
   );
 }
-
-function LitFinSection({ page, d, updateItem, moveItem, removeItem, addItem, updateComparison, updateComparisonItem, addComparisonItem, removeComparisonItem }) {
-  return (
-    <>
-      <SectionHeader>Audience Cards (Who We Help)</SectionHeader>
-      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
-        Cards shown in the "Who We Help" section. Items with the <em>PRIORITY</em> pill active render with dark background.
-      </p>
-      <CardList
-        items={d.audienceCards}
-        page={page}
-        sectionKey="audienceCards"
-        updateItem={updateItem}
-        moveItem={moveItem}
-        removeItem={removeItem}
-        addItem={() => addItem(page, "audienceCards", emptyAudienceCard)}
-        renderRow={(c, i, total) => (
-          <AudienceCardRow
-            key={c.id} card={c} index={i} total={total}
-            onUpdate={patch => updateItem(page, "audienceCards", i, patch)}
-            onMoveUp={() => moveItem(page, "audienceCards", i, -1)}
-            onMoveDown={() => moveItem(page, "audienceCards", i, 1)}
-            onRemove={() => { if (window.confirm(`Remove card "${c.title || c.id}"?`)) removeItem(page, "audienceCards", i); }}
-          />
-        )}
-        addLabel="+ Add audience card"
-      />
-
-      <SectionHeader>Service Cards (What We Fund)</SectionHeader>
-      <CardList
-        items={d.serviceCards}
-        page={page}
-        sectionKey="serviceCards"
-        updateItem={updateItem}
-        moveItem={moveItem}
-        removeItem={removeItem}
-        addItem={() => addItem(page, "serviceCards", emptyServiceCard)}
-        renderRow={(c, i, total) => (
-          <ServiceCardRow
-            key={c.id} card={c} index={i} total={total}
-            onUpdate={patch => updateItem(page, "serviceCards", i, patch)}
-            onMoveUp={() => moveItem(page, "serviceCards", i, -1)}
-            onMoveDown={() => moveItem(page, "serviceCards", i, 1)}
-            onRemove={() => { if (window.confirm(`Remove card "${c.title || c.id}"?`)) removeItem(page, "serviceCards", i); }}
-          />
-        )}
-        addLabel="+ Add service card"
-      />
-
-      <SectionHeader>How It Works (3 Steps)</SectionHeader>
-      <CardList
-        items={d.howItWorks}
-        page={page}
-        sectionKey="howItWorks"
-        updateItem={updateItem}
-        moveItem={moveItem}
-        removeItem={removeItem}
-        addItem={() => addItem(page, "howItWorks", emptyStep)}
-        renderRow={(c, i, total) => (
-          <StepRow
-            key={c.id} step={c} index={i} total={total}
-            onUpdate={patch => updateItem(page, "howItWorks", i, patch)}
-            onMoveUp={() => moveItem(page, "howItWorks", i, -1)}
-            onMoveDown={() => moveItem(page, "howItWorks", i, 1)}
-            onRemove={() => { if (window.confirm(`Remove step "${c.title || c.id}"?`)) removeItem(page, "howItWorks", i); }}
-          />
-        )}
-        addLabel="+ Add step"
-      />
-
-      <SectionHeader>FAQs</SectionHeader>
-      <CardList
-        items={d.faqs}
-        page={page}
-        sectionKey="faqs"
-        updateItem={updateItem}
-        moveItem={moveItem}
-        removeItem={removeItem}
-        addItem={() => addItem(page, "faqs", emptyFAQ)}
-        renderRow={(c, i, total) => (
-          <FAQRow
-            key={c.id} faq={c} index={i} total={total}
-            onUpdate={patch => updateItem(page, "faqs", i, patch)}
-            onMoveUp={() => moveItem(page, "faqs", i, -1)}
-            onMoveDown={() => moveItem(page, "faqs", i, 1)}
-            onRemove={() => { if (window.confirm(`Remove FAQ "${c.q || c.id}"?`)) removeItem(page, "faqs", i); }}
-          />
-        )}
-        addLabel="+ Add FAQ"
-      />
-
-      <SectionHeader>Comparison (Old Way / New Way)</SectionHeader>
-      <ComparisonEditor
-        cmp={d.comparison}
-        page={page}
-        updateComparison={updateComparison}
-        updateComparisonItem={updateComparisonItem}
-        addComparisonItem={addComparisonItem}
-        removeComparisonItem={removeComparisonItem}
-      />
-    </>
-  );
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
-   Reusable list container
-══════════════════════════════════════════════════════════════════════════ */
 
 function CardList({ items, renderRow, addItem, addLabel }) {
   return (
@@ -871,186 +583,6 @@ function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemo
     </div>
   );
 }
-
-function StepRow({ step, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
-  const titleEmpty = !String(step.title || "").trim();
-  const bodyEmpty  = !String(step.body  || "").trim();
-  const summary    = step.title ? `"${step.title.slice(0, 60)}${step.title.length > 60 ? "…" : ""}"` : null;
-
-  return (
-    <div style={{
-      background: "#fff",
-      border: `1px solid ${LINE}`,
-    }}>
-      {/* Card header row */}
-      <div style={{
-        display: "flex", alignItems: "center", gap: "0.75rem",
-        padding: "0.7rem 1rem",
-        borderBottom: `1px solid ${LINE}`,
-        flexWrap: "wrap",
-      }}>
-        {/* Summary text */}
-        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-          {summary || <em>No title set</em>}
-        </div>
-
-        {/* Action buttons */}
-        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
-        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
-        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
-      </div>
-
-      {/* Card body */}
-      <div style={{ padding: "0.95rem 1rem", display: "flex", flexDirection: "column", gap: "0.7rem" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "80px 1fr", gap: "0.75rem" }}>
-          <label style={labelStyle}>
-            No.
-            <input
-              type="text" value={step.n || ""}
-              onChange={e => onUpdate({ n: e.target.value })}
-              placeholder="01"
-              style={{ ...inputStyle, marginTop: "0.25rem" }}
-            />
-          </label>
-          <label style={labelStyle}>
-            Title
-            <input
-              type="text" value={step.title || ""}
-              onChange={e => onUpdate({ title: e.target.value })}
-              placeholder="Step title"
-              style={{ ...inputStyle, marginTop: "0.25rem", borderColor: titleEmpty ? "#e08080" : undefined }}
-            />
-            {titleEmpty && <p style={reqStyle}>Required</p>}
-          </label>
-        </div>
-        <label style={{ ...labelStyle, display: "block" }}>
-          Body
-          <textarea
-            value={step.body || ""}
-            onChange={e => onUpdate({ body: e.target.value })}
-            placeholder="Step description"
-            rows={3}
-            style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 72, borderColor: bodyEmpty ? "#e08080" : undefined }}
-          />
-          {bodyEmpty && <p style={reqStyle}>Required</p>}
-        </label>
-      </div>
-    </div>
-  );
-}
-
-function FAQRow({ faq, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
-  const qEmpty = !String(faq.q || "").trim();
-  const aEmpty = !String(faq.a || "").trim();
-  const summary = faq.q ? `"${faq.q.slice(0, 70)}${faq.q.length > 70 ? "…" : ""}"` : null;
-
-  return (
-    <div style={{
-      background: "#fff",
-      border: `1px solid ${LINE}`,
-    }}>
-      {/* Card header row */}
-      <div style={{
-        display: "flex", alignItems: "center", gap: "0.75rem",
-        padding: "0.7rem 1rem",
-        borderBottom: `1px solid ${LINE}`,
-        flexWrap: "wrap",
-      }}>
-        {/* Summary text */}
-        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-          {summary || <em>No question set</em>}
-        </div>
-
-        {/* Action buttons */}
-        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
-        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
-        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
-      </div>
-
-      {/* Card body */}
-      <div style={{ padding: "0.95rem 1rem", display: "flex", flexDirection: "column", gap: "0.7rem" }}>
-        <label style={labelStyle}>
-          Question
-          <input
-            type="text" value={faq.q || ""}
-            onChange={e => onUpdate({ q: e.target.value })}
-            placeholder="FAQ question"
-            style={{ ...inputStyle, marginTop: "0.25rem", borderColor: qEmpty ? "#e08080" : undefined }}
-          />
-          {qEmpty && <p style={reqStyle}>Required</p>}
-        </label>
-
-        <label style={{ ...labelStyle, display: "block" }}>
-          Answer
-          <textarea
-            value={faq.a || ""}
-            onChange={e => onUpdate({ a: e.target.value })}
-            placeholder="FAQ answer"
-            rows={3}
-            style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 72, borderColor: aEmpty ? "#e08080" : undefined }}
-          />
-          {aEmpty && <p style={reqStyle}>Required</p>}
-        </label>
-      </div>
-    </div>
-  );
-}
-
-/* ── Comparison editor ───────────────────────────────────────────────────── */
-
-function ComparisonEditor({ cmp, page, updateComparison, updateComparisonItem, addComparisonItem, removeComparisonItem }) {
-  if (!cmp) return null;
-  return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "2.5rem" }}>
-      {["oldWay", "newWay"].map(side => {
-        const col = cmp[side] || { title: "", items: [] };
-        const label = side === "oldWay" ? "Old Way" : "New Way (Through Turnpage)";
-        return (
-          <div key={side} style={{ border: `1px solid ${LINE}`, background: "#fff", padding: "1.2rem" }}>
-            <div style={{ fontSize: "0.72rem", fontWeight: 700, color: INK_60, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "0.75rem" }}>
-              {label}
-            </div>
-            <label style={{ ...labelStyle, display: "block", marginBottom: "0.75rem" }}>
-              Column title
-              <input
-                type="text" value={col.title || ""}
-                onChange={e => updateComparison(page, side, "title", e.target.value)}
-                placeholder="e.g. Wait for the docket."
-                style={{ ...inputStyle, marginTop: "0.25rem" }}
-              />
-            </label>
-            <div style={{ fontSize: "0.72rem", fontWeight: 600, color: INK_60, marginBottom: "0.5rem" }}>Items</div>
-            {(col.items || []).map((item, idx) => (
-              <div key={idx} style={{ display: "flex", gap: "0.5rem", marginBottom: "0.5rem", alignItems: "center" }}>
-                <input
-                  type="text" value={item}
-                  onChange={e => updateComparisonItem(page, side, idx, e.target.value)}
-                  placeholder="Item text"
-                  style={{ ...inputStyle, flex: 1 }}
-                />
-                <button type="button"
-                  onClick={() => removeComparisonItem(page, side, idx)}
-                  style={{ ...iconBtnStyle(false), color: "#c44", borderColor: "rgba(180,40,40,0.25)", fontSize: "1.1rem" }}>
-                  &times;
-                </button>
-              </div>
-            ))}
-            <button onClick={() => addComparisonItem(page, side)} style={{ ...btnStyle, fontSize: "0.78rem", marginTop: "0.25rem" }}>
-              + Add item
-            </button>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
-   Shared small pieces
-══════════════════════════════════════════════════════════════════════════ */
-
-const labelStyle = { display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 };
-const reqStyle   = { color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" };
 
 function SectionHeader({ children }) {
   return (
