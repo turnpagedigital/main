@@ -3,9 +3,7 @@ import {
   getFileSha,
   getFileBase64FromGitHub,
   getFileFromGitHub,
-  commitBinaryToGitHub,
-  commitFileToGitHub,
-  deleteFileFromGitHub,
+  commitFilesToGitHub,
 } from "./_github.js";
 
 /* Rename a library-hosted file in place AND cascade the URL change across
@@ -26,13 +24,9 @@ import {
      500 — env vars missing
      502 — any GitHub I/O step failed
 
-   IMPORTANT: this endpoint generates multiple commits in sequence (file
-   move = 2 commits, plus one per cascaded data file). At ~500ms each that
-   adds up — 5 cascaded files takes ~3-4s. Acceptable for an admin tool.
-
-   Conservative: if any step fails we surface the error immediately and do
-   NOT attempt to roll back. Partial state is recoverable by re-running the
-   rename or fixing the offending file by hand.
+   The move (write new path + delete old path) and every cascaded data-file
+   rewrite land in ONE atomic commit via commitFilesToGitHub — either the
+   whole rename applies or none of it does. No partial states.
 */
 
 const LIBRARY_PREFIX_URL  = "/library/";
@@ -122,8 +116,7 @@ export async function onRequestPost({ request, env }) {
     newUrl      = `${LIBRARY_PREFIX_URL}${newBasename}`;
   }
 
-  // ── Move the binary ──────────────────────────────────────────────────────
-  // Step 1: fetch the old file's raw base64 + sha.
+  // ── Read the binary ──────────────────────────────────────────────────────
   const fetched = await getFileBase64FromGitHub(env, oldRepoPath);
   if (!fetched.ok) {
     return jsonResponse({
@@ -132,80 +125,48 @@ export async function onRequestPost({ request, env }) {
     }, 502);
   }
 
-  // Step 2: write the same bytes to the new path.
-  const writeResult = await commitBinaryToGitHub(
-    env,
-    newRepoPath,
-    fetched.contentBase64,
-    null,
-    `Admin: rename library file → ${newBasename}`,
-  );
-  if (!writeResult.ok) {
-    return jsonResponse({
-      ok: false,
-      error: `Couldn't write new file: ${writeResult.error}`,
-    }, 502);
-  }
-
-  // Step 3: delete the old file. If this fails we leave the new file in
-  // place — the user has a dupe but no data loss, and they can clean up by
-  // hand or by re-running the rename.
-  const deleteResult = await deleteFileFromGitHub(
-    env,
-    oldRepoPath,
-    fetched.sha,
-    `Admin: rename library file (remove old path ${oldRepoPath})`,
-  );
-  if (!deleteResult.ok) {
-    return jsonResponse({
-      ok: false,
-      error: `New file written but old file delete failed. Manual cleanup needed at ${oldRepoPath}.`,
-    }, 502);
-  }
-
-  // ── Cascade URL replacement across data files ────────────────────────────
-  // Sequential, not parallel — each commit needs the latest SHA, so we read
-  // and write one file at a time. The list is short (~6 files) so the total
-  // round-trip cost stays under a few seconds.
+  // ── Read cascade files and prepare rewrites ──────────────────────────────
+  // Global string replace. We rely on the URL being distinctive enough that
+  // we won't accidentally match unrelated text — /library/foo.png includes
+  // the extension, so it's never a substring of another library URL.
   const cascadedFiles = [];
+  const commitList = [
+    { path: newRepoPath, contentBase64: fetched.contentBase64 },        // write new path
+    { path: oldRepoPath, content: null, sha: fetched.sha },             // delete old path
+  ];
   for (const dataPath of CASCADE_FILES) {
     const fileRes = await getFileFromGitHub(env, dataPath);
     if (!fileRes.ok) {
       // Missing files (404) are fine — they may not exist in this repo yet
-      // (e.g. posts.json hasn't been created). Anything else is an error
-      // worth surfacing because the cascade would be incomplete.
-      if (/GitHub GET 404/.test(fileRes.error || "")) continue;
+      // (e.g. posts.json hasn't been created). Anything else halts BEFORE
+      // committing, so nothing has been applied.
+      if (/not found/i.test(fileRes.error || "")) continue;
       return jsonResponse({
         ok: false,
-        error: `Cascade halted — couldn't read ${dataPath}: ${fileRes.error}`,
-        partial: { newUrl, cascadedFiles },
+        error: `Rename aborted (nothing changed) — couldn't read ${dataPath}: ${fileRes.error}`,
       }, 502);
     }
     const text = fileRes.text || "";
     if (!text.includes(oldUrl)) continue;
-
-    // Global string replace. We rely on the URL being distinctive enough that
-    // we won't accidentally match unrelated text. /library/foo.png is unique
-    // enough in practice; the URLs aren't substrings of other URLs because
-    // they include the extension.
-    const newText = text.split(oldUrl).join(newUrl);
-    if (newText === text) continue;
-
-    const commitResult = await commitFileToGitHub(
-      env,
-      dataPath,
-      newText,
-      fileRes.sha,
-      `Admin: cascade rename ${oldBasename} → ${newBasename} in ${dataPath.split("/").pop()}`,
-    );
-    if (!commitResult.ok) {
-      return jsonResponse({
-        ok: false,
-        error: `Cascade halted — couldn't write ${dataPath}: ${commitResult.error}`,
-        partial: { newUrl, cascadedFiles },
-      }, 502);
-    }
+    commitList.push({
+      path: dataPath,
+      content: text.split(oldUrl).join(newUrl),
+      sha: fileRes.sha,
+    });
     cascadedFiles.push(dataPath);
+  }
+
+  // ── One atomic commit: move + every cascaded rewrite together ────────────
+  const saved = await commitFilesToGitHub(
+    env,
+    commitList,
+    `Admin: rename library file ${oldBasename} → ${newBasename}${cascadedFiles.length ? ` (+${cascadedFiles.length} reference file${cascadedFiles.length > 1 ? "s" : ""})` : ""}`,
+  );
+  if (!saved.ok) {
+    return jsonResponse({
+      ok: false,
+      error: `Rename failed (nothing changed): ${saved.error}`,
+    }, 502);
   }
 
   return jsonResponse({

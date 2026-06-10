@@ -219,12 +219,16 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
    operation spans files (e.g. index.json + markdown, compositions + routes) —
    sequential commits can fail halfway and leave the repo half-updated.
 
-   files: [{ path, content, sha? }]
-     content — UTF-8 string to write, or null to DELETE the path
-     sha     — the blob sha from a prior getFileFromGitHub read. When provided,
-               the file's current sha is re-checked before committing so a
-               concurrent edit surfaces as a friendly conflict error instead
-               of being clobbered. Omit for brand-new files.
+   files: [{ path, content, contentBase64?, sha? }]
+     content       — UTF-8 string to write, or null to DELETE the path
+     contentBase64 — alternative to content for BINARY files (raw base64,
+                     e.g. from getFileBase64FromGitHub) — sent to the blob
+                     API as-is with no text round-trip
+     sha           — the blob sha from a prior getFileFromGitHub read. When
+                     provided, the file's current sha is re-checked before
+                     committing so a concurrent edit surfaces as a friendly
+                     conflict error instead of being clobbered. Omit for
+                     brand-new files.
 
    Flow: verify shas → read branch head → create blobs → create tree (with
    base_tree, so untouched files carry over) → create commit → fast-forward
@@ -291,11 +295,13 @@ async function commitFilesAttempt(env, files, message, repo, branch) {
       treeEntries.push({ path: f.path, mode: "100644", type: "blob", sha: null });
       continue;
     }
-    const utf8 = unescape(encodeURIComponent(f.content));
+    const base64 = typeof f.contentBase64 === "string"
+      ? f.contentBase64
+      : btoa(unescape(encodeURIComponent(f.content)));
     const blobRes = await ghFetch(`${apiBase}/git/blobs`, {
       method: "POST",
       headers,
-      body: JSON.stringify({ content: btoa(utf8), encoding: "base64" }),
+      body: JSON.stringify({ content: base64, encoding: "base64" }),
     });
     if (!blobRes.ok) {
       return { ok: false, error: makeErrorMessage("POST", blobRes.status, await blobRes.text()) };

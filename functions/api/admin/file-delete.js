@@ -1,10 +1,9 @@
 import { jsonResponse, isAuthed } from "./_utils.js";
 import {
   getFileSha,
-  deleteFileFromGitHub,
   findUrlReferences,
   getFileFromGitHub,
-  commitFileToGitHub,
+  commitFilesToGitHub,
 } from "./_github.js";
 
 /* Permanently delete a file from the repo (the actual binary in
@@ -122,19 +121,20 @@ export async function onRequestPost({ request, env }) {
     }, 409);
   }
 
-  // ── Cascade: scrub the URL from every data file that references it ────────
-  // Sequential, not parallel — each commit needs the latest SHA of its file.
+  // ── Prepare the cascade: scrub the URL from every referencing data file ──
+  // All reads happen up front; the scrubbed rewrites AND the binary delete
+  // land in ONE atomic commit below — either everything applies or nothing.
   const cascadedFiles = [];
+  const commitList = [];
   if (cascade && scan.references.length > 0) {
     for (const dataPath of CASCADE_FILES) {
       const fileRes = await getFileFromGitHub(env, dataPath);
       if (!fileRes.ok) {
         // 404 means the file doesn't exist yet — skip it gracefully.
-        if (/GitHub GET 404/.test(fileRes.error || "")) continue;
+        if (/not found/i.test(fileRes.error || "")) continue;
         return jsonResponse({
           ok: false,
-          error: `Cascade halted — couldn't read ${dataPath}: ${fileRes.error}`,
-          partial: { cascadedFiles },
+          error: `Delete aborted (nothing changed) — couldn't read ${dataPath}: ${fileRes.error}`,
         }, 502);
       }
 
@@ -148,50 +148,41 @@ export async function onRequestPost({ request, env }) {
       } catch (e) {
         return jsonResponse({
           ok: false,
-          error: `Cascade halted — couldn't parse ${dataPath}: ${e.message}`,
-          partial: { cascadedFiles },
+          error: `Delete aborted (nothing changed) — couldn't parse ${dataPath}: ${e.message}`,
         }, 502);
       }
 
       scrubUrl(data, url);
-      const newText = JSON.stringify(data, null, 2) + "\n";
-
-      // Skip if nothing actually changed (defensive — text.includes check
-      // above should have caught this, but the JSON round-trip normalises
-      // whitespace so the strings won't be byte-identical).
-      const commitResult = await commitFileToGitHub(
-        env,
-        dataPath,
-        newText,
-        fileRes.sha,
-        `Admin: cascade delete — clear ${url} from ${dataPath.split("/").pop()}`,
-      );
-      if (!commitResult.ok) {
-        return jsonResponse({
-          ok: false,
-          error: `Cascade halted — couldn't write ${dataPath}: ${commitResult.error}`,
-          partial: { cascadedFiles },
-        }, 502);
-      }
+      commitList.push({
+        path: dataPath,
+        content: JSON.stringify(data, null, 2) + "\n",
+        sha: fileRes.sha,
+      });
       cascadedFiles.push(dataPath);
     }
   }
 
-  // ── Delete the actual file from GitHub ────────────────────────────────────
-  // Get the current SHA so we can DELETE it. If the file isn't in the repo
-  // (already gone, or the user passed a path that doesn't exist), treat that
-  // as success — the goal of "permanent delete" has been met.
+  // ── The binary itself. If it isn't in the repo (already gone), the goal of
+  //    "permanent delete" is met — but still commit any cascade rewrites. ──
   const sha = await getFileSha(env, repoPath);
-  if (!sha) {
+  if (sha) {
+    commitList.push({ path: repoPath, content: null, sha });
+  }
+
+  if (commitList.length === 0) {
     return jsonResponse({ ok: true, alreadyMissing: true, cascadedFiles });
   }
 
-  const result = await deleteFileFromGitHub(env, repoPath, sha, `Admin: delete ${repoPath}`);
-  if (!result.ok) {
-    return jsonResponse({ ok: false, error: "GitHub delete failed" }, 502);
+  const saved = await commitFilesToGitHub(
+    env,
+    commitList,
+    `Admin: delete ${repoPath}${cascadedFiles.length ? ` (+ clear ${cascadedFiles.length} reference file${cascadedFiles.length > 1 ? "s" : ""})` : ""}`,
+  );
+  if (!saved.ok) {
+    return jsonResponse({ ok: false, error: `Delete failed (nothing changed): ${saved.error}` }, 502);
   }
 
-  return jsonResponse({ ok: true, cascadedFiles });
+  return jsonResponse({ ok: true, alreadyMissing: !sha, cascadedFiles });
 }
 
 /* Recursively walk a parsed JSON value and scrub every occurrence of `url`:
