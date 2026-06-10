@@ -138,11 +138,11 @@ function normalizeUrl(u) {
 function normalizePressItem(d, i) {
   return {
     _key:     "p_" + i,
-    mediaType: (d.type || "").toLowerCase() === "podcast"    ? "podcast"
+    mediaType: (d.type || "").toLowerCase() === "podcast"     ? "podcast"
              : (d.type || "").toLowerCase() === "blog post"  ? "blog"
              : (d.type || "").toLowerCase() === "news"       ? "news"
+             : (d.type || "").toLowerCase() === "social post" ? "social"
              : d.author !== "Andrew"                         ? "press"
-             : d.type === "social post"                      ? "social"
              : "article",
     type:     d.type || "",
     outlet:   d.publication_title || "",
