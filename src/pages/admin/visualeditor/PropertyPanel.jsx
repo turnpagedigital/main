@@ -122,7 +122,7 @@ export default function PropertyPanel({
         {!isEditing && (
           <div style={{ padding: "0.65rem" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              {(sections || []).map((s, idx) => {
+              {(sections || []).map((s, _idx) => {
                 const hidden = s.visible === false;
                 return (
                   <button

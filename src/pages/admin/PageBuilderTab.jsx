@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE, LINE_STRONG, SURFACE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
 import SectionEditorModal from "./SectionEditorModal.jsx";
 import PagePreviewOverlay from "./PagePreviewOverlay.jsx";
 import TemplatePicker from "./TemplatePicker.jsx";
@@ -234,7 +234,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
     const next = [...sections];
     // Extract layout/colorScheme from content and also store them at section level
     // (page-compositions.json stores them both places for redundancy)
-    const { layout, colorScheme, ...rest } = newContent || {};
+    const { layout, colorScheme } = newContent || {};
     next[i] = {
       ...next[i],
       content: newContent,
@@ -249,7 +249,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
     return st ? st.displayName : typeId;
   }
 
-  function sectionDataSource(typeId) {
+  function _sectionDataSource(typeId) {
     const st = sectionTypes.find(t => t.id === typeId);
     return st ? (DATA_SOURCE_LABELS[st.dataSource] || st.dataSource) : "";
   }
@@ -269,7 +269,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
 
   // Short human summary of a section's inline content, so two sections of the
   // same type (e.g. two photo breaks) are distinguishable in the list.
-  function sectionSummary(s) {
+  function _sectionSummary(s) {
     const c = s.content || {};
     switch (s.type) {
       case "home-hero":   return [c.title1, c.title2].filter(Boolean).join(" ");
@@ -286,7 +286,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
 
   // Whether a section type may be added to the current page right now.
   // Respects availableOn (page allow-list). Removed allowMultiple check — sections can now be added multiple times.
-  function typeAvailability(st) {
+  function _typeAvailability(st) {
     if (Array.isArray(st.availableOn) && selectedKey && !st.availableOn.includes(selectedKey)) {
       return { ok: false, reason: `Only on: ${st.availableOn.join(", ")}` };
     }
@@ -446,7 +446,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
                 if (idx < 0) return null;
                 const s = sections[idx];
                 const st = sectionTypes.find(t => t.id === s.type);
-                const isInline = sectionIsEditable(s.type);
+                const _isInline = sectionIsEditable(s.type);
                 return (
                   <div style={{
                     display: "flex", alignItems: "center", gap: 8,
@@ -660,7 +660,7 @@ const STATUS_CONFIG = {
   archive: { label: "Archive", color: "#57606a", bg: "rgba(87,96,106,0.10)",  border: "rgba(87,96,106,0.35)", dot: "#8c959f", desc: "Taken offline. URL returns 404." },
 };
 
-function PageStatusBar({ status, onChange, pageKey, onDelete }) {
+function PageStatusBar({ status, onChange, pageKey: _pageKey, onDelete }) {
   const cfg = STATUS_CONFIG[status] || STATUS_CONFIG.active;
 
   return (
@@ -716,7 +716,7 @@ function PageStatusBar({ status, onChange, pageKey, onDelete }) {
   );
 }
 
-function PathEditor({ pageKey, currentPath, onPathChange }) {
+function PathEditor({ pageKey: _pageKey, currentPath, onPathChange }) {
   const [isEditing, setIsEditing] = React.useState(false);
   const [newPath, setNewPath] = React.useState(currentPath);
 

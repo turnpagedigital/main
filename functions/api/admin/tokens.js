@@ -111,9 +111,6 @@ function parseTokensFromContent(content) {
  * Handles quoted strings, both single and double quotes
  */
 function updateTokenInContent(content, tokenName, newValue) {
-  // Escape special regex characters in newValue
-  const escapedValue = newValue.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-
   // Try to match the token with various quote styles
   const patterns = [
     // Double quotes
@@ -133,10 +130,8 @@ function updateTokenInContent(content, tokenName, newValue) {
 
   for (const pattern of patterns) {
     if (pattern.test(updated)) {
-      updated = updated.replace(
-        pattern,
-        `$1"${newValue}"$3`
-      );
+      // Replacer function so "$" sequences in newValue are taken literally
+      updated = updated.replace(pattern, (_m, pre, _old, post) => `${pre}"${newValue}"${post}`);
       found = true;
       break;
     }

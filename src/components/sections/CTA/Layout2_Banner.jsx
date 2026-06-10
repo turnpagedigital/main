@@ -9,7 +9,7 @@ export default function CTALayout2Banner({
   href = "/contact",
   image = "/Building_Wide.jpg",
   external = false,
-  colorScheme = "photo",
+  _colorScheme = "photo",
 }) {
   return (
     <CTABanner

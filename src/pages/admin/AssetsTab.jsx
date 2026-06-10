@@ -829,7 +829,7 @@ function FileRow({ file, onUpdate, onDelete, onArchive }) {
     setDelConfirming(false);
   }
 
-  function removeFromLibrary() {
+  function _removeFromLibrary() {
     // Local state only — caller marks library dirty so the save commits.
     onDelete({ mode: "library-only" });
     cancelDelete();

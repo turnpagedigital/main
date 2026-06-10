@@ -198,13 +198,15 @@ export function ErrorBanner({ children }) {
 
    Returns [sub, selectSub]. */
 export function useSubTabs(basePath, tabKeys, defaultKey, guard) {
+  // Hubs pass module-level constant arrays; a joined string keeps the
+  // callback stable even if a caller inlines the array.
+  const tabKeysKey = tabKeys.join(",");
   const get = useCallback(() => {
     if (typeof window === "undefined") return defaultKey;
     const m = window.location.pathname.match(new RegExp(`^${basePath}(?:/([a-z][a-z0-9-]*))?`));
     if (!m || !m[1]) return defaultKey;
-    return tabKeys.includes(m[1]) ? m[1] : defaultKey;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [basePath, defaultKey, tabKeys.join(",")]);
+    return tabKeysKey.split(",").includes(m[1]) ? m[1] : defaultKey;
+  }, [basePath, defaultKey, tabKeysKey]);
 
   const [sub, setSub] = useState(get);
 

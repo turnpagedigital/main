@@ -43,7 +43,7 @@ function Sep() {
 }
 
 /* ── Main component ─────────────────────────────────────────────────────── */
-export default function RichEditor({ value, onChange, disabled, minHeight = 420, placeholder }) {
+export default function RichEditor({ value, onChange, disabled, minHeight = 420, placeholder: _placeholder }) {
   // Track the last value we pushed INTO the editor so we can avoid
   // an infinite loop when the parent syncs back the same string.
   const internalRef = useRef(value ?? "");

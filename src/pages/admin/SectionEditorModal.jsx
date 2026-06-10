@@ -31,7 +31,7 @@ const FIELD_EDITOR_TYPES = new Set([
   "audience-cards", "service-cards", "comparison", "how-it-works",
 ]);
 
-export default function SectionEditorModal({ section, sectionType, pageKey, onSave, onClose }) {
+export default function SectionEditorModal({ section, sectionType, pageKey: _pageKey, onSave, onClose }) {
   const [form, setForm] = useState(JSON.parse(JSON.stringify(section.content || {})));
 
   function set(key, value) { setForm(prev => ({ ...prev, [key]: value })); }

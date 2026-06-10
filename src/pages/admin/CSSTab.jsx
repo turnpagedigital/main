@@ -5,7 +5,7 @@
 
 import React, { useState } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnPrimaryStyle, btnStyle } from "./shared.jsx";
+import { btnPrimaryStyle, btnStyle } from "./shared.jsx";
 import TokenList from "./CSSTab/TokenList.jsx";
 import PaletteSelector from "./CSSTab/PaletteSelector.jsx";
 import DesignSystemReference from "./CSSTab/DesignSystemReference.jsx";

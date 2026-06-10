@@ -190,7 +190,7 @@ function FaviconSection({ favicons, files, onSelect, onReload }) {
   );
 }
 
-function FaviconRow({ envKey, label, hint, current, eligible, onSelect, onUploaded }) {
+function FaviconRow({ envKey: _envKey, label, hint, current, eligible, onSelect, onUploaded }) {
   const inLibrary = current && eligible.some(f => f.url === current);
   const isCustomBootstrap = current && !inLibrary;
   const [mode, setMode] = useState(isCustomBootstrap ? "custom" : "library");

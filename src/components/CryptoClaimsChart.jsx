@@ -190,9 +190,9 @@ function ClaimsStatusOverview({ totalClaims, totalResolved, totalPending, overal
 
   // Calculate pie slices
   const resolvedAngle = (resolvedPercent / 100) * 360;
-  const pendingStartAngle = resolvedAngle;
+  const _pendingStartAngle = resolvedAngle;
 
-  const pie = {
+  const _pie = {
     resolved: { percent: resolvedPercent, angle: resolvedAngle, color: NEON, label: "Resolved" },
     pending: { percent: pendingPercent, angle: 360 - resolvedAngle, color: "#444", label: "Pending" },
   };

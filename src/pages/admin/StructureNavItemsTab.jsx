@@ -328,7 +328,7 @@ function NavRow({
   const labelEmpty = !item.label.trim();
   const hrefEmpty  = !item.href.trim();
   const hasDropdown = Boolean(item.dropdown);
-  const hasMicrosite = Boolean(microsite);
+  const _hasMicrosite = Boolean(microsite);
 
   const summary = item.label
     ? `"${item.label}"${item.href ? ` — ${item.href}` : ""}`

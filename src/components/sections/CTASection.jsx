@@ -6,7 +6,7 @@ import Layout3 from "./CTA/Layout3_BottomCTA.jsx";
 /* Unified CTA Section Wrapper — dispatches to Layout1, Layout2, or Layout3 based on layout prop.
    Supports three styles: Get Quote card, Banner with image, and Bottom CTA panel.
    Props: { sectionConfig, pageKey } */
-export default function CTASection({ sectionConfig, pageKey }) {
+export default function CTASection({ sectionConfig, pageKey: _pageKey }) {
   const c = (sectionConfig && sectionConfig.content) || {};
   const layout = c.layout || "layout-1";
   const colorScheme = c.colorScheme || "dark";

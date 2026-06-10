@@ -55,7 +55,7 @@ function PostTypeBadge({ type, size = "sm" }) {
   );
 }
 
-export default function PostsTab({ onDirtyChange }) {
+export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   // Posts use a save-immediately pattern — no bulk dirty state to track.
   // onDirtyChange is accepted for API parity with the other tabs but unused.
   const [listPhase, setListPhase]  = useState("loading"); // loading|ready|error

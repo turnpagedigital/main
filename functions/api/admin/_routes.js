@@ -14,7 +14,7 @@ export function detectRouteReferences(oldPath, newPath, navData) {
   const refs = [];
 
   // Nav items
-  (navData.items || []).forEach((item, idx) => {
+  (navData.items || []).forEach((item, _idx) => {
     if (item.href === oldPath) {
       refs.push({
         type: "nav-item-href",

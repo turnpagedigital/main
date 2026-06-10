@@ -17,7 +17,7 @@ export default function OurEdgeSection({ sectionConfig }) {
 
   const isLightGray = colorScheme === "light-gray";
   const bgColor = isLightGray ? "#F4F5F7" : "#FFFFFF";
-  const eyebrowColor = isLightGray ? INK_60 : INK_60;
+  const _eyebrowColor = isLightGray ? INK_60 : INK_60;
   const borderColor = isLightGray ? INK : INK;
 
   return (

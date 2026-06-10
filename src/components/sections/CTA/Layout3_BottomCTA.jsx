@@ -10,7 +10,7 @@ export default function CTALayout3BottomCTA({
   kicker,
   primary,
   secondary = null,
-  colorScheme = "dark",
+  _colorScheme = "dark",
 }) {
   return (
     <BottomCTA

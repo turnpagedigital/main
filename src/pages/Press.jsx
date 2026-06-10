@@ -90,7 +90,7 @@ function getYouTubeId(url) {
   const m = url.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
   return m ? m[1] : null;
 }
-function getVimeoId(url) {
+function _getVimeoId(url) {
   if (!url) return null;
   const m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
   return m ? m[1] : null;
@@ -679,7 +679,7 @@ function EmptyState({ hasFilters, onClear, dark = false }) {
 ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ── Sub-page tags ───────────────────────────────────────────────────────── */
-function PageTags({ pages, dark = false }) {
+function PageTags({ pages, _dark = false }) {
   if (!pages || pages.length === 0) return null;
   return (
     <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", marginTop: "0.9rem" }}>

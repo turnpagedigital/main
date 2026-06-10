@@ -385,7 +385,7 @@ export default function Legal({ kind }) {
 
             // Separate top-level sections with a rule
             const prevSec      = data.sections[i - 1];
-            const prevIsSub    = prevSec ? prevSec.n.includes(".") : false;
+            const _prevIsSub    = prevSec ? prevSec.n.includes(".") : false;
             const addTopBorder = !isSub && i > 0;
 
             return (

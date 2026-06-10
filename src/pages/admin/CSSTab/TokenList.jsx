@@ -5,7 +5,7 @@
 import React, { useState } from "react";
 import * as TokenModule from "../../../data/tokens.js";
 import { FONT, INK, INK_60, LINE, NEON } from "../../../data/tokens.js";
-import { inputStyle, btnStyle } from "../shared.jsx";
+import { btnStyle } from "../shared.jsx";
 import TokenEditorModal from "./TokenEditorModal.jsx";
 
 const CATEGORIES = {

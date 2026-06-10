@@ -43,7 +43,7 @@ function buildWrapStyle(c) {
 export default function PageRenderer({ pageKey }) {
   const page = (pageCompositions.pages || []).find(p => p.pageKey === pageKey);
   if (!page) {
-    if (process.env.NODE_ENV !== "production") {
+    if (import.meta.env.DEV) {
       console.warn(`[PageRenderer] No composition found for pageKey: "${pageKey}"`);
     }
     return null;

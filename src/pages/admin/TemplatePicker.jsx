@@ -70,7 +70,7 @@ const TEMPLATE_GROUPS = [
   },
 ];
 
-export default function TemplatePicker({ sectionTypes, sections, selectedKey, onAdd, onClose }) {
+export default function TemplatePicker({ sectionTypes, sections: _sections, selectedKey, onAdd, onClose }) {
   const [hovered, setHovered] = useState(null);
 
   // Resolve a group item (string or object) into a card descriptor
@@ -84,7 +84,7 @@ export default function TemplatePicker({ sectionTypes, sections, selectedKey, on
   }
 
   // Whether a type can be added right now
-  function availability(typeId, layoutId) {
+  function availability(typeId, _layoutId) {
     const st = sectionTypes.find(t => t.id === typeId);
     if (!st) return { ok: false, reason: "Unknown type" };
     if (Array.isArray(st.availableOn) && selectedKey && !st.availableOn.includes(selectedKey)) {

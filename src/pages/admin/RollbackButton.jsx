@@ -11,7 +11,7 @@ import { btnStyle } from "./shared.jsx";
  *   onRollbackStart — Callback when rollback begins
  *   onRollbackDone — Callback when rollback completes
  */
-export default function RollbackButton({ deployState, deployMsg, onRollbackStart, onRollbackDone }) {
+export default function RollbackButton({ deployState, deployMsg: _deployMsg, onRollbackStart, onRollbackDone }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [expandedOpen, setExpandedOpen] = useState(false);
   const [commits, setCommits] = useState([]);
@@ -232,7 +232,7 @@ export default function RollbackButton({ deployState, deployMsg, onRollbackStart
 /**
  * CommitRow — Single commit in the dropdown list
  */
-function CommitRow({ commit, branch, onSelect, idx }) {
+function CommitRow({ commit, branch: _branch, onSelect, idx }) {
   return (
     <button
       onClick={onSelect}

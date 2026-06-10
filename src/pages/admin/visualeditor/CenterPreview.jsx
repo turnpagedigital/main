@@ -43,7 +43,7 @@ export default function CenterPreview({
   sections,
   pageKey,
   pagePath = "/",
-  pageTitle,
+  _pageTitle,
   selectedSectionId,
   onSelectSection,
   sectionTypes,

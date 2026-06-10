@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import { MARKETING_PAGES } from "../../data/page-keys.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -277,7 +277,7 @@ function PageMetaSection({ pages, onUpdate, onRemove, onAdd }) {
   );
 }
 
-function PageMetaRow({ page, index, onUpdate, onRemove }) {
+function PageMetaRow({ page, index: _index, onUpdate, onRemove }) {
   const pathEmpty  = !page.path.trim();
   const titleEmpty = !page.title.trim();
   const descEmpty  = !page.description.trim();
@@ -436,6 +436,6 @@ function LabeledField({ label, hint, children }) {
   );
 }
 
-const labelStyle = {
+const _labelStyle = {
   display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600,
 };

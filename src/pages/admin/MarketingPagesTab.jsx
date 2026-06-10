@@ -125,7 +125,7 @@ export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
 
   /* ── Generic array helpers ─────────────────────────────────────────────── */
 
-  function setPageKey(page, key, value) {
+  function _setPageKey(page, key, value) {
     setData(prev => ({ ...prev, [page]: { ...prev[page], [key]: value } }));
   }
 
@@ -583,6 +583,9 @@ function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemo
     </div>
   );
 }
+
+const labelStyle = { display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 };
+const reqStyle   = { color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" };
 
 function SectionHeader({ children }) {
   return (

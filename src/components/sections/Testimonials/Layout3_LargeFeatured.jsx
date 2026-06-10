@@ -42,8 +42,8 @@ const THEMES = {
 export default function TestimonialsLayout3LargeFeatured({
   testimonials,
   eyebrow = "What Clients Say",
-  title,
-  accent,
+  _title,
+  _accent,
   colorScheme = "light",
 }) {
   if (!testimonials || testimonials.length === 0) return null;

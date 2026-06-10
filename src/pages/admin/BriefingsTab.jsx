@@ -15,7 +15,7 @@ import { btnStyle, btnPrimaryStyle, formatTime } from "./shared.jsx";
    Full editing is done via Content → Posts tab.
 ═══════════════════════════════════════════════════════════════════════════ */
 
-export default function BriefingsTab({ onDirtyChange }) {
+export default function BriefingsTab({ onDirtyChange: _onDirtyChange }) {
   const [phase, setPhase]         = useState("loading"); // loading|ready|error
   const [error, setError]         = useState("");
   const [briefings, setBriefings] = useState([]);        // type=briefing only
