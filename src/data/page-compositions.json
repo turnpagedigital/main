@@ -964,11 +964,11 @@
           "visible": true,
           "content": {
             "eyebrow": "BANKRUPTCY CLAIMS",
-            "title": "The end is often just the beginning of a ",
-            "accentTitle": "new fight.",
+            "title": "The end of the road or the beginning of a ",
+            "accentTitle": "new fight?",
             "subtitle": "Deep bankruptcy and market expertise to help you recover more, faster.",
             "size": "tall",
-            "video": "/library/robotwallet1.mp4",
+            "video": null,
             "ctaPrimary": {
               "label": "Get in Touch",
               "href": "/contact"
