@@ -123,10 +123,18 @@ export function buildSetCookieHeader(value, maxAgeSeconds) {
   return attrs.join("; ");
 }
 
+/* The session-cookie signing secret binds ADMIN_SECRET to ADMIN_PASSWORD.
+   Rotating EITHER env var in Cloudflare instantly invalidates every
+   outstanding session — the revocation lever for a stolen cookie, with no
+   server-side session storage needed. */
+export function sessionSecret(env) {
+  return `${env.ADMIN_SECRET}|pw:${env.ADMIN_PASSWORD || ""}`;
+}
+
 export async function isAuthed(request, env) {
   if (!env.ADMIN_SECRET) return false;
   const cookies = parseCookies(request);
-  return verifySessionCookieValue(cookies[COOKIE_NAME], env.ADMIN_SECRET);
+  return verifySessionCookieValue(cookies[COOKIE_NAME], sessionSecret(env));
 }
 
 export { SESSION_TTL_SECONDS };
