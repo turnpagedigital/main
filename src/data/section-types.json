@@ -236,6 +236,14 @@
           "supportedColorSchemes": [
             "photo"
           ]
+        },
+        {
+          "id": "layout-3-bottomcta",
+          "displayName": "Bottom CTA",
+          "description": "Dark rounded panel with headline and buttons.",
+          "supportedColorSchemes": [
+            "dark"
+          ]
         }
       ],
       "defaultLayout": "layout-1-getquote",

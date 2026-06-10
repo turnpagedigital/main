@@ -1,16 +1,12 @@
 import React from "react";
-import { FONT, INK, INK_60 } from "../../../data/tokens.js";
+import { FONT } from "../../../data/tokens.js";
+import { getSectionTheme } from "../../../lib/palette-resolver.js";
 import SectionHeader from "../../SectionHeader.jsx";
 
 /* Testimonials Layout 1 — 3-Column Grid (Home page style)
    Three equal columns with border-top cards, centered layout.
+   Colors come from section-palettes.json (testimonials.* schemes).
    Props: { testimonials, eyebrow, title, accent, colorScheme } */
-
-const THEMES = {
-  light:        { bg: "#FFFFFF",  quote: INK,    attribution: INK_60,                   border: INK,    headerTheme: "light" },
-  "light-gray": { bg: "#F4F5F7",  quote: INK,    attribution: INK_60,                   border: INK,    headerTheme: "light" },
-  dark:         { bg: "#0A0A0A",  quote: "#fff", attribution: "rgba(255,255,255,0.55)", border: "#fff", headerTheme: "dark"  },
-};
 
 export default function TestimonialsLayout1Grid3Col({
   testimonials,
@@ -21,10 +17,10 @@ export default function TestimonialsLayout1Grid3Col({
 }) {
   if (!testimonials || testimonials.length === 0) return null;
 
-  const theme = THEMES[colorScheme] || THEMES.light;
+  const theme = getSectionTheme("testimonials", colorScheme, "light");
 
   return (
-    <section style={{ background: theme.bg, padding: "clamp(5rem,10vw,9rem) clamp(1.5rem,5vw,4rem)" }}>
+    <section style={{ background: theme.background, padding: "clamp(5rem,10vw,9rem) clamp(1.5rem,5vw,4rem)" }}>
       <div className="container">
         <SectionHeader eyebrow={eyebrow} title={title} accent={accent} theme={theme.headerTheme} />
 

@@ -5,6 +5,7 @@
 import React from "react";
 import * as TokenModule from "../../../data/tokens.js";
 import { FONT, INK, INK_60, LINE, NEON, FONT_SIZES, SPACING } from "../../../data/tokens.js";
+import { SECTION_PALETTES, resolvePaletteTokens } from "../../../lib/palette-resolver.js";
 
 const CARD_STYLE = {
   border: `1px solid ${LINE}`,
@@ -193,11 +194,11 @@ const buttonStyle = {
   fontSize: FONT_SIZES.body,
 };
 
-// Import palette resolver for sections
-import { resolvePaletteTokens } from "src/lib/palette-resolver.js";
+// Sections resolve their colors from section-palettes.json
+import { getSectionTheme } from "src/lib/palette-resolver.js";
 
-const colors = resolvePaletteTokens("faq", "light");
-// → { background: "#E5E7EB", text: "#0A0A0A", ... }`}
+const theme = getSectionTheme("faq", colorScheme, "light");
+// faq "light" → { background: "#F4F5F7", text: "#0A0A0A", ... }`}
         </pre>
       </div>
 
@@ -207,26 +208,37 @@ const colors = resolvePaletteTokens("faq", "light");
           Section Palettes
         </h3>
         <p style={{ fontSize: "0.9rem", marginBottom: "1rem", color: INK_60 }}>
-          Each section type (FAQ, Testimonials, CTA, etc.) has pre-defined color schemes. See the{" "}
-          <strong>Section Palettes</strong> tab to edit them.
+          FAQ, Testimonials, and CTA sections resolve their colors from{" "}
+          <code>section-palettes.json</code> — these are the real rendered values. Edit them in the{" "}
+          <strong>Section Palettes</strong> tab; token references cascade automatically when a token changes.
         </p>
-        <ul style={{ margin: 0, paddingLeft: "1.5rem", fontSize: "0.9rem", lineHeight: 1.6 }}>
-          <li>
-            <strong>Light:</strong> Light gray background, good for subpages
-          </li>
-          <li>
-            <strong>Light Gray:</strong> Darker gray for higher contrast
-          </li>
-          <li>
-            <strong>Light Card:</strong> White cards on light background (Home page style)
-          </li>
-          <li>
-            <strong>Dark:</strong> Black background with white text
-          </li>
-          <li>
-            <strong>Photo:</strong> Full-bleed photo background (CTA sections only)
-          </li>
-        </ul>
+        {Object.values(SECTION_PALETTES).map(section => (
+          <div key={section.id} style={{ marginBottom: "1rem" }}>
+            <div style={{ fontSize: "0.85rem", fontWeight: 700, marginBottom: "0.4rem" }}>
+              {section.displayName}
+            </div>
+            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+              {Object.values(section.schemes || {}).map(scheme => {
+                const resolved = resolvePaletteTokens(section.id, scheme.id);
+                const bg = resolved.background;
+                const isColor = typeof bg === "string" && (bg.startsWith("#") || bg.startsWith("rgb"));
+                return (
+                  <div key={scheme.id} style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                    <div style={{
+                      width: 18, height: 18, borderRadius: 3,
+                      background: isColor ? bg : "#eee",
+                      border: `1px solid ${LINE}`,
+                    }} />
+                    <span style={{ fontSize: "0.78rem", color: INK_60 }}>
+                      {scheme.displayName}
+                      {isColor && <code style={{ marginLeft: "0.3rem", fontSize: "0.7rem" }}>{bg}</code>}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

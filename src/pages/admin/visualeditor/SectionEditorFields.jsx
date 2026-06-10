@@ -3,6 +3,7 @@ import { INK, INK_60, LINE, NEON } from "../../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle } from "../shared.jsx";
 import sectionTypesData from "../../../data/section-types.json";
 import SectionThumb from "../SectionThumb.jsx";
+import { getSchemeVisual } from "./scheme-visuals.js";
 
 /* SectionEditorFields — the actual form fields for each section type.
    Used by both PropertyPanel (inline rail) and SectionEditorModal (overlay).
@@ -377,13 +378,8 @@ export default function SectionEditorFields({ typeId, form, set }) {
 
 /* ── Shared visual helpers ─────────────────────────────────────────────── */
 
-const SCHEME_VISUALS = {
-  "light":       { label: "White",      swatch: "#FFFFFF",      border: "#E0E0E0" },
-  "light-gray":  { label: "Light Gray", swatch: "#F4F5F7",      border: "#E0E0E0" },
-  "light-card":  { label: "Card",       swatch: "#FFFFFF",      border: "#E0E0E0" },
-  "dark":        { label: "Dark",       swatch: "#0A0A0A",      border: "#333"    },
-  "photo":       { label: "Photo",      swatch: "linear-gradient(135deg,#6b7280 0%,#374151 100%)", border: "#555" },
-};
+/* Swatches/labels come from scheme-visuals.js — palette-registry-driven for
+   faq/testimonials/cta (always matches what renders), static for the rest. */
 
 function VisualLayoutColorPicker({ typeId, form, set }) {
   const typeDef = (sectionTypesData.sectionTypes || []).find(t => t.id === typeId);
@@ -423,7 +419,7 @@ function VisualLayoutColorPicker({ typeId, form, set }) {
           <p style={{ fontSize: "0.65rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.4rem" }}>Color</p>
           <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
             {supportedSchemes.map(key => {
-              const v = SCHEME_VISUALS[key] || { label: key, swatch: "#eee", border: "#ccc" };
+              const v = getSchemeVisual(typeId, key);
               const active = currentScheme === key;
               return (
                 <button key={key} type="button" onClick={() => set("colorScheme", key)} title={v.label}
@@ -449,7 +445,7 @@ function ColorSchemePicker({ typeId, value, onChange, schemes: schemesProp }) {
       <p style={{ fontSize: "0.65rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: INK_60, marginBottom: "0.5rem" }}>Background</p>
       <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
         {schemes.map(key => {
-          const v = SCHEME_VISUALS[key] || { label: key, swatch: "#eee", border: "#ccc" };
+          const v = getSchemeVisual(typeId, key);
           const active = current === key;
           return (
             <button key={key} type="button" onClick={() => onChange(key)} title={v.label}

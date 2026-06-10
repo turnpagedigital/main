@@ -1,56 +1,53 @@
 /**
- * PaletteEditorModal — Modal for editing a palette scheme's token assignments
+ * PaletteEditorModal — edit one scheme's slot assignments against live data.
+ *
+ * Each slot is either a design token (picked from the dropdown — token edits
+ * then cascade automatically) or a custom CSS color. Non-color slots (e.g.
+ * headerTheme) are shown as plain text. Saving PUTs the whole scheme to
+ * /api/admin/section-palettes (commits to GitHub).
  */
 
 import React, { useState } from "react";
-import { SECTION_PALETTES, resolvePaletteTokens } from "../../../lib/palette-resolver.js";
-import * as TokenModule from "../../../data/tokens.js";
-import { FONT, INK, INK_60, LINE, NEON } from "../../../data/tokens.js";
+import { FONT, INK, INK_60, LINE, ERROR_BG, ERROR_TEXT } from "../../../data/tokens.js";
+import { resolveScheme, isTokenName } from "../../../lib/resolve-scheme.js";
 import { inputStyle, btnPrimaryStyle, btnStyle, selectStyle } from "../shared.jsx";
 
 const MODAL_OVERLAY = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
+  position: "fixed", inset: 0,
   background: "rgba(0,0,0,0.5)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  zIndex: 1000,
-  overflowY: "auto",
-  padding: "2rem",
+  display: "flex", alignItems: "center", justifyContent: "center",
+  zIndex: 1000, overflowY: "auto", padding: "2rem",
 };
 
 const MODAL_BOX = {
-  background: "#fff",
-  borderRadius: "8px",
-  padding: "2rem",
-  maxWidth: "600px",
-  width: "100%",
-  boxShadow: "0 10px 40px rgba(0,0,0,0.2)",
-  fontFamily: FONT,
+  background: "#fff", borderRadius: "8px", padding: "2rem",
+  maxWidth: "620px", width: "100%",
+  boxShadow: "0 10px 40px rgba(0,0,0,0.2)", fontFamily: FONT,
 };
 
-// Get all available token names
-const AVAILABLE_TOKENS = Object.keys(TokenModule).filter(
-  (key) => !key.startsWith("_") && typeof TokenModule[key] === "string"
-);
+const CUSTOM = "__custom__";
 
-export default function PaletteEditorModal({ sectionType, schemeId, onSave, onCancel }) {
-  const section = SECTION_PALETTES[sectionType];
-  const scheme = section.schemes[schemeId];
+function isColorValue(v) {
+  return typeof v === "string" && (v.startsWith("#") || v.startsWith("rgba") || v.startsWith("rgb("));
+}
 
+export default function PaletteEditorModal({ section, scheme, sectionType, schemeId, liveTokens, onSaved, onCancel }) {
   const [tokens, setTokens] = useState({ ...scheme.tokens });
   const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState("");
 
-  const handleTokenChange = (key, value) => {
-    setTokens((prev) => ({ ...prev, [key]: value }));
+  // Token names whose live value is a color — the sensible dropdown choices
+  const colorTokenNames = Object.keys(liveTokens)
+    .filter(k => /^[A-Z][A-Z0-9_]*$/.test(k) && isColorValue(liveTokens[k]));
+
+  const resolved = resolveScheme(tokens, liveTokens);
+
+  const handleSlotChange = (slot, value) => {
+    setTokens(prev => ({ ...prev, [slot]: value }));
   };
 
   const handleSave = async () => {
-    setSaving(true);
+    setSaving(true); setSaveError("");
     try {
       const r = await fetch("/api/admin/section-palettes", {
         method: "PUT",
@@ -60,118 +57,104 @@ export default function PaletteEditorModal({ sectionType, schemeId, onSave, onCa
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
-      await onSave(sectionType, schemeId, tokens);
+      onSaved(sectionType, schemeId, tokens);
     } catch (e) {
-      alert(`Error: ${e.message}`);
+      setSaveError(e.message);
     } finally {
       setSaving(false);
     }
   };
 
-  // Resolve current tokens to show color preview
-  const resolvedColors = resolvePaletteTokens(sectionType, schemeId);
-
   return (
     <div style={MODAL_OVERLAY} onClick={onCancel}>
       <div style={MODAL_BOX} onClick={(e) => e.stopPropagation()}>
-        <h2 style={{ marginBottom: "0.5rem", fontSize: "1.2rem", fontWeight: 700 }}>
-          Edit Palette: {scheme.displayName}
+        <h2 style={{ marginBottom: "0.35rem", fontSize: "1.15rem", fontWeight: 800 }}>
+          {section.displayName} — {scheme.displayName}
         </h2>
-        <p style={{ marginBottom: "1.5rem", color: INK_60, fontSize: "0.85rem" }}>
-          {section.displayName} → {scheme.description}
+        <p style={{ marginBottom: "1.25rem", color: INK_60, fontSize: "0.8rem" }}>
+          {scheme.description || "Edit this scheme's color slots."} Pick a design token (recommended —
+          token edits cascade automatically) or enter a custom color.
         </p>
 
-        {/* Token assignments */}
-        <div style={{ maxHeight: "60vh", overflowY: "auto", marginBottom: "1.5rem" }}>
-          {Object.entries(tokens).map(([key, value]) => {
-            const resolvedColor = resolvedColors[key];
-            const isColor =
-              resolvedColor && (resolvedColor.startsWith("#") || resolvedColor.startsWith("rgba"));
+        <div style={{ maxHeight: "55vh", overflowY: "auto", marginBottom: "1.25rem" }}>
+          {Object.entries(tokens).map(([slot, value]) => {
+            const resolvedValue = resolved[slot];
+            const isColor = isColorValue(resolvedValue);
+            const usingToken = isTokenName(value) && liveTokens[value] !== undefined;
+            const nonColorSlot = !isColor && !usingToken;
 
             return (
-              <div
-                key={key}
-                style={{
-                  marginBottom: "1.5rem",
-                  paddingBottom: "1.5rem",
-                  borderBottom: `1px solid ${LINE}`,
-                }}
-              >
-                <label
-                  style={{
-                    display: "block",
-                    fontSize: "0.78rem",
-                    fontWeight: 600,
-                    marginBottom: "0.5rem",
-                    color: INK,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  {key}
+              <div key={slot} style={{
+                display: "grid",
+                gridTemplateColumns: "130px 36px 1fr",
+                gap: "0.7rem", alignItems: "center",
+                padding: "0.6rem 0",
+                borderBottom: `1px solid ${LINE}`,
+              }}>
+                <label style={{ fontSize: "0.74rem", fontWeight: 700, color: INK, letterSpacing: "0.03em" }}>
+                  {slot}
                 </label>
 
-                {/* Dropdown to select token */}
-                <select
-                  value={value}
-                  onChange={(e) => handleTokenChange(key, e.target.value)}
-                  style={{
-                    ...selectStyle,
-                    width: "100%",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  <option value="">-- Select a token --</option>
-                  {AVAILABLE_TOKENS.map((tokenName) => (
-                    <option key={tokenName} value={tokenName}>
-                      {tokenName}
-                    </option>
-                  ))}
-                </select>
-
-                {/* Or custom hex */}
-                <input
-                  type="text"
-                  value={value && !AVAILABLE_TOKENS.includes(value) ? value : ""}
-                  onChange={(e) => handleTokenChange(key, e.target.value)}
-                  placeholder="#000000 or rgba(...)"
-                  style={{
-                    ...inputStyle,
-                    width: "100%",
-                    fontSize: "0.78rem",
-                    fontFamily: "monospace",
-                  }}
-                />
-
-                {/* Color preview */}
-                {isColor && (
-                  <div
-                    style={{
-                      marginTop: "0.5rem",
-                      width: "100%",
-                      height: "36px",
-                      borderRadius: "4px",
-                      background: resolvedColor,
-                      border: `1px solid ${LINE}`,
-                    }}
-                  />
+                {/* Resolved swatch */}
+                {isColor ? (
+                  <div title={resolvedValue} style={{ width: 32, height: 28, borderRadius: 4, background: resolvedValue, border: `1px solid ${LINE}` }} />
+                ) : (
+                  <div style={{ width: 32, height: 28, borderRadius: 4, border: `1px dashed ${LINE}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.6rem", color: INK_60 }}>txt</div>
                 )}
 
-                <p style={{ fontSize: "0.72rem", color: INK_60, margin: "0.5rem 0 0 0" }}>
-                  Resolves to: {resolvedColor}
-                </p>
+                {/* Editor: token dropdown + custom input */}
+                {nonColorSlot ? (
+                  <input
+                    type="text"
+                    value={value}
+                    onChange={(e) => handleSlotChange(slot, e.target.value)}
+                    style={{ ...inputStyle, marginTop: 0, fontSize: "0.78rem", fontFamily: "monospace" }}
+                  />
+                ) : (
+                  <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", minWidth: 0 }}>
+                    <select
+                      value={usingToken ? value : CUSTOM}
+                      onChange={(e) => {
+                        const v = e.target.value;
+                        handleSlotChange(slot, v === CUSTOM ? (resolvedValue || "#") : v);
+                      }}
+                      style={{ ...selectStyle, marginTop: 0, flex: "0 0 150px", fontSize: "0.76rem" }}
+                    >
+                      <option value={CUSTOM}>Custom…</option>
+                      {colorTokenNames.map((name) => (
+                        <option key={name} value={name}>{name}</option>
+                      ))}
+                    </select>
+                    {usingToken ? (
+                      <span style={{ fontSize: "0.72rem", color: INK_60, fontFamily: "monospace", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        = {liveTokens[value]}
+                      </span>
+                    ) : (
+                      <input
+                        type="text"
+                        value={value}
+                        onChange={(e) => handleSlotChange(slot, e.target.value)}
+                        placeholder="#000000 or rgba(…)"
+                        style={{ ...inputStyle, marginTop: 0, flex: 1, fontSize: "0.76rem", fontFamily: "monospace" }}
+                      />
+                    )}
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
 
-        {/* Buttons */}
-        <div style={{ display: "flex", gap: "1rem", justifyContent: "flex-end" }}>
-          <button style={btnStyle} onClick={onCancel} disabled={saving}>
-            Cancel
-          </button>
+        {saveError && (
+          <p style={{ fontSize: "0.78rem", color: ERROR_TEXT, background: ERROR_BG, padding: "0.5rem 0.7rem", borderRadius: 3, margin: "0 0 0.9rem" }}>
+            {saveError}
+          </p>
+        )}
+
+        <div style={{ display: "flex", gap: "0.7rem", justifyContent: "flex-end" }}>
+          <button style={btnStyle} onClick={onCancel} disabled={saving}>Cancel</button>
           <button
-            style={{ ...btnPrimaryStyle, ...btnStyle }}
+            style={{ ...btnPrimaryStyle, opacity: saving ? 0.5 : 1, cursor: saving ? "default" : "pointer" }}
             onClick={handleSave}
             disabled={saving}
           >
@@ -179,8 +162,8 @@ export default function PaletteEditorModal({ sectionType, schemeId, onSave, onCa
           </button>
         </div>
 
-        <p style={{ marginTop: "1rem", fontSize: "0.72rem", color: INK_60 }}>
-          Changes will update section-palettes.json and be committed to GitHub.
+        <p style={{ marginTop: "0.9rem", fontSize: "0.7rem", color: INK_60 }}>
+          Saving commits section-palettes.json to GitHub; the live site rebuilds in ~1–2 minutes.
         </p>
       </div>
     </div>

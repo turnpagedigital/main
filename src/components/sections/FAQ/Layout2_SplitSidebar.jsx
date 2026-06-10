@@ -1,16 +1,12 @@
 import React from "react";
-import { FONT, INK, INK_60 } from "../../../data/tokens.js";
+import { FONT } from "../../../data/tokens.js";
+import { getSectionTheme } from "../../../lib/palette-resolver.js";
 import FAQ from "../../FAQ.jsx";
 
 /* FAQ Layout 2 — Split Sidebar (Subpage style)
    Two-column: left side has title and optional CTA button, right side has accordion.
+   Colors come from section-palettes.json (faq.* schemes).
    Props: { faqs, title, accent, ctaLabel, ctaHref, hasMoreFaqs, pageKey, colorScheme } */
-
-const THEMES = {
-  "light":      { background: "#F4F5F7", text: INK,    textSecondary: INK_60 },
-  "light-gray": { background: "#ECECEE", text: INK,    textSecondary: INK_60 },
-  "light-card": { background: "#FFFFFF", text: INK,    textSecondary: INK_60 },
-};
 
 export default function FAQLayout2SplitSidebar({
   faqs,
@@ -22,7 +18,7 @@ export default function FAQLayout2SplitSidebar({
   pageKey = "home",
   colorScheme = "light",
 }) {
-  const theme = THEMES[colorScheme] || THEMES.light;
+  const theme = getSectionTheme("faq", colorScheme, "light");
 
   return (
     <section style={{ background: theme.background, padding: "clamp(5rem,10vw,9rem) clamp(1.5rem,5vw,4rem)" }}>

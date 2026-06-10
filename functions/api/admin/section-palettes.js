@@ -56,8 +56,16 @@ export async function onRequestPut({ request, env }) {
   if (typeof schemeId !== "string" || !schemeId) {
     return jsonResponse({ ok: false, error: "schemeId must be a non-empty string" }, 400);
   }
-  if (!tokens || typeof tokens !== "object") {
+  if (!tokens || typeof tokens !== "object" || Array.isArray(tokens)) {
     return jsonResponse({ ok: false, error: "tokens must be an object" }, 400);
+  }
+  for (const [slot, value] of Object.entries(tokens)) {
+    if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(slot)) {
+      return jsonResponse({ ok: false, error: `Invalid slot name "${slot}"` }, 400);
+    }
+    if (typeof value !== "string" || value.length === 0 || value.length > 120) {
+      return jsonResponse({ ok: false, error: `Slot "${slot}" must be a non-empty string (max 120 chars)` }, 400);
+    }
   }
 
   // Fetch current file

@@ -1,7 +1,9 @@
 import React from "react";
-import { NEON, FONT } from "../../../data/tokens.js";
+import { FONT } from "../../../data/tokens.js";
+import { getSectionTheme } from "../../../lib/palette-resolver.js";
 
 /* CTA Layout 1 — Get Quote Card (Dark rounded panel style)
+   Colors come from section-palettes.json (cta.* schemes).
    Props: { eyebrow, title, titleAccent, body, cta, secondary, colorScheme } */
 export default function CTALayout1GetQuote({
   eyebrow = "Get a Quote",
@@ -12,17 +14,7 @@ export default function CTALayout1GetQuote({
   secondary = null,
   colorScheme = "dark",
 }) {
-  const themes = {
-    dark: {
-      background: "#000",
-      border: "rgba(255,255,255,0.15)",
-      eyebrow: NEON,
-      title: "#fff",
-      body: "rgba(255,255,255,0.6)",
-      accent: NEON,
-    },
-  };
-  const theme = themes[colorScheme] || themes.dark;
+  const theme = getSectionTheme("cta", colorScheme, "dark");
 
   return (
     <section style={{

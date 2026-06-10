@@ -435,6 +435,28 @@ function CTAGetQuoteThumb() {
   );
 }
 
+function CTABottomThumb() {
+  return (
+    <div style={{ width: W, height: H, background: "#000", display: "flex",
+      alignItems: "center", justifyContent: "center", padding: "40px 80px" }}>
+      <div style={{ background: "#0A0A0A", border: "1px solid rgba(255,255,255,0.12)",
+        borderRadius: 14, padding: "48px 60px", textAlign: "center", width: "100%", maxWidth: 760 }}>
+        <Eyebrow>Get in Touch</Eyebrow>
+        <h2 style={{ fontFamily: FONT, fontSize: 56, fontWeight: 800, letterSpacing: "-0.025em",
+          lineHeight: 1.1, color: "#fff", margin: "0 0 14px" }}>
+          Hold a claim?{" "}
+          <span style={{ color: NEON, fontStyle: "italic" }}>Talk to us.</span>
+        </h2>
+        <p style={{ fontFamily: FONT, fontSize: 18, color: "rgba(255,255,255,0.55)",
+          lineHeight: 1.5, margin: "0 0 28px" }}>
+          Confidentiality assured. We respond within 48 hours.
+        </p>
+        <Btn>Get in Touch</Btn>
+      </div>
+    </div>
+  );
+}
+
 function CTABannerThumb() {
   return (
     <div style={{ width: W, height: H, position: "relative", overflow: "hidden",
@@ -600,6 +622,8 @@ const THUMBS = {
   "faq/layout-2-sidebar":            FAQSidebarThumb,
   "cta/layout-1-getquote":           CTAGetQuoteThumb,
   "cta/layout-2-banner":             CTABannerThumb,
+  "cta/layout-3-bottomcta":          CTABottomThumb,
+  "bottom-cta":                      CTABottomThumb,
   "audience-cards":                  AudienceCardsThumb,
   "service-cards":                   ServiceCardsThumb,
   "comparison":                      ComparisonThumb,

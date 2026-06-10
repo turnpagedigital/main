@@ -1,19 +1,15 @@
 import React from "react";
-import { FONT, INK, INK_60, LINE } from "../../../data/tokens.js";
+import { FONT } from "../../../data/tokens.js";
+import { getSectionTheme } from "../../../lib/palette-resolver.js";
 import FAQ from "../../FAQ.jsx";
 
 /* FAQ Layout 1 — Full Width (Home page style)
    Single column, large headline, full-width accordion below.
+   Colors come from section-palettes.json (faq.* schemes).
    Props: { faqs, title, accent, colorScheme } */
 
-const THEMES = {
-  "light":      { background: "#F4F5F7", text: INK, eyebrow: INK_60, border: LINE },
-  "light-gray": { background: "#ECECEE", text: INK, eyebrow: INK_60, border: LINE },
-  "light-card": { background: "#FFFFFF", text: INK, eyebrow: INK_60, border: "rgba(10,10,10,0.08)" },
-};
-
 export default function FAQLayout1FullWidth({ faqs, title = "Your questions,", accent = "answered.", colorScheme = "light" }) {
-  const theme = THEMES[colorScheme] || THEMES.light;
+  const theme = getSectionTheme("faq", colorScheme, "light");
 
   return (
     <section style={{
@@ -25,7 +21,7 @@ export default function FAQLayout1FullWidth({ faqs, title = "Your questions,", a
         <p style={{
           fontFamily: FONT, fontSize: "0.78rem", fontWeight: 600,
           letterSpacing: "0.22em", textTransform: "uppercase",
-          color: theme.eyebrow, marginBottom: "1.5rem",
+          color: theme.textSecondary, marginBottom: "1.5rem",
         }}>
           FAQ
         </p>

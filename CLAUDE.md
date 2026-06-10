@@ -97,6 +97,8 @@ index.html                 — Vite entry, meta + OG tags
 - **Replace Crypto placeholder copy** → edit `src/pages/Crypto.jsx`. Structure mirrors AICopyright.jsx.
 - **Hero copy** → home is in `src/pages/Home.jsx`; AI Copyright hero is in `src/pages/AICopyright.jsx` (uses the shared `Hero` component).
 - **Subject options on contact form** → edit `SUBJECT_OPTIONS` in `src/components/IntakeForm.jsx`. Also update `subjectLabels` in `functions/api/contact.js` so the email shows the right label.
+- **Change a site-wide color (NEON, INK, …)** → `/admin/css` → Colors & Tokens, or edit `src/data/tokens.js`. Everything importing the token follows on the next deploy.
+- **Change FAQ/Testimonials/CTA section colors** → `/admin/css` → Section Palettes, or edit `src/data/section-palettes.json`. Those sections resolve colors from this file at render time (`src/lib/palette-resolver.js`); `tests/palette-equivalence.test.js` snapshots the expected values — update it when intentionally changing a palette.
 
 ## Posting a Briefing
 
@@ -148,7 +150,7 @@ Both paths write to the same files. Git enforces ordering — latest commit wins
 | `/admin/assets` | — | `file-library.json` — archive, rename cascade, permanent delete cascade |
 | `/admin/structure` | Favicons, Site Meta, Navigation, Footer, Routes | `file-library.json` (favicons), `page-meta.json`, `nav.json`, `footer.json`, `routes.json` |
 | `/admin/intelligence` | Themes, Cases, Defaults | Briefing-system config (`themes.json`, cases, intelligence settings) |
-| `/admin/css` | — | Design tokens + section palettes (`tokens.js`, `section-palettes.json`) |
+| `/admin/css` | Colors & Tokens, Section Palettes, Design System | `tokens.js` (global design tokens — editing NEON etc. restyles the whole site after rebuild) + `section-palettes.json` (drives the real colors of FAQ/Testimonials/CTA sections via `src/lib/palette-resolver.js`) |
 
 Sub-tab URLs follow `/admin/<master>/<sub>` (e.g. `/admin/structure/navigation`), except the Pages hub which keeps its sub-tab in local state. Each sub-tab owns its own fetch/save/dirty lifecycle and reports dirty state up via `onDirtyChange`.
 

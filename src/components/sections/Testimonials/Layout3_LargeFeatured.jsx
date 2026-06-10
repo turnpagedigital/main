@@ -1,43 +1,13 @@
 import React from "react";
-import { FONT, NEON } from "../../../data/tokens.js";
+import { FONT } from "../../../data/tokens.js";
+import { getSectionTheme } from "../../../lib/palette-resolver.js";
 
 /* Testimonials Layout 3 — Large Featured Quote
    One prominent quote, centered, with oversized quotation marks.
    Great for a single standout testimonial or a hero-style endorsement.
+   Colors come from section-palettes.json (testimonials.* schemes) —
+   this layout uses the featured* slots plus quoteMark/attrLine.
    Props: { testimonials, eyebrow, title, accent, colorScheme } */
-
-const THEMES = {
-  light: {
-    sectionBg: "#FFFFFF",
-    quoteMark: "rgba(10,10,10,0.08)",
-    quoteText: "#0A0A0A",
-    attribution: "rgba(10,10,10,0.5)",
-    attrLine: "rgba(10,10,10,0.15)",
-    eyebrow: "rgba(10,10,10,0.45)",
-    title: "#0A0A0A",
-    accent: NEON,
-  },
-  "light-gray": {
-    sectionBg: "#F4F5F7",
-    quoteMark: "rgba(10,10,10,0.07)",
-    quoteText: "#0A0A0A",
-    attribution: "rgba(10,10,10,0.5)",
-    attrLine: "rgba(10,10,10,0.15)",
-    eyebrow: "rgba(10,10,10,0.45)",
-    title: "#0A0A0A",
-    accent: NEON,
-  },
-  dark: {
-    sectionBg: "#0A0A0A",
-    quoteMark: "rgba(212,255,0,0.12)",
-    quoteText: "#FFFFFF",
-    attribution: "rgba(255,255,255,0.5)",
-    attrLine: "rgba(255,255,255,0.15)",
-    eyebrow: "rgba(255,255,255,0.45)",
-    title: "#FFFFFF",
-    accent: NEON,
-  },
-};
 
 export default function TestimonialsLayout3LargeFeatured({
   testimonials,
@@ -50,11 +20,11 @@ export default function TestimonialsLayout3LargeFeatured({
 
   // Show just the first testimonial as the featured quote
   const featured = testimonials[0];
-  const theme = THEMES[colorScheme] || THEMES.light;
+  const theme = getSectionTheme("testimonials", colorScheme, "light");
 
   return (
     <section style={{
-      background: theme.sectionBg,
+      background: theme.background,
       padding: "clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem)",
     }}>
       <div className="container" style={{ maxWidth: 860, margin: "0 auto", textAlign: "center" }}>
@@ -63,7 +33,7 @@ export default function TestimonialsLayout3LargeFeatured({
           <p style={{
             fontFamily: FONT, fontSize: "0.75rem", fontWeight: 700,
             letterSpacing: "0.22em", textTransform: "uppercase",
-            color: theme.eyebrow, marginBottom: "2.5rem",
+            color: theme.featuredEyebrow, marginBottom: "2.5rem",
           }}>
             {eyebrow}
           </p>
@@ -88,7 +58,7 @@ export default function TestimonialsLayout3LargeFeatured({
           fontWeight: 500,
           lineHeight: 1.5,
           letterSpacing: "-0.01em",
-          color: theme.quoteText,
+          color: theme.quote,
           margin: "0 0 2.5rem",
           fontStyle: "italic",
         }}>
@@ -103,7 +73,7 @@ export default function TestimonialsLayout3LargeFeatured({
           <figcaption style={{
             fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
             letterSpacing: "0.12em", textTransform: "uppercase",
-            color: theme.attribution,
+            color: theme.featuredAttribution,
           }}>
             {featured.by}
           </figcaption>
@@ -125,7 +95,7 @@ export default function TestimonialsLayout3LargeFeatured({
               <div key={t.id || i}>
                 <p style={{
                   fontFamily: FONT, fontSize: "0.9rem", lineHeight: 1.6,
-                  color: theme.quoteText, marginBottom: "0.75rem",
+                  color: theme.quote, marginBottom: "0.75rem",
                   fontStyle: "italic",
                 }}>
                   "{t.quote}"
@@ -133,7 +103,7 @@ export default function TestimonialsLayout3LargeFeatured({
                 <p style={{
                   fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
                   letterSpacing: "0.1em", textTransform: "uppercase",
-                  color: theme.attribution,
+                  color: theme.featuredAttribution,
                 }}>
                   — {t.by}
                 </p>
