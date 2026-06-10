@@ -956,7 +956,7 @@
       "title": "Bankruptcy Claims",
       "path": "/bankruptcy-claims",
       "builtIn": false,
-      "status": "draft",
+      "status": "active",
       "sections": [
         {
           "id": "sec-1780886837475-y1ih",
@@ -968,7 +968,7 @@
             "accentTitle": "new fight.",
             "subtitle": "Deep bankruptcy and market expertise to help you recover more, faster.",
             "size": "tall",
-            "video": null,
+            "video": "/library/robotwallet1.mp4",
             "ctaPrimary": {
               "label": "Get in Touch",
               "href": "/contact"
