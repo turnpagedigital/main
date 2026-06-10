@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
-import { INTERNAL_PAGES } from "../../data/page-keys.js";
-
-// Set of known internal paths for auto-detecting picker mode
-const INTERNAL_PATHS = new Set(INTERNAL_PAGES.map(p => p.path));
 
 /* ═══════════════════════════════════════════════════════════════════════════
    StructureNavItemsTab — Main Navigation Items only
@@ -36,6 +32,10 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
   const [originalItems,        setOriginalItems]        = useState(null);
   const [passThroughMicrosites, setPassThroughMicrosites] = useState(null);
 
+  // ── Pages state (dynamically fetched) ──────────────────────────────────
+  const [pages, setPages] = useState([]);
+  const INTERNAL_PATHS = useMemo(() => new Set(pages.map(p => p.path)), [pages]);
+
   // ── Shared ────────────────────────────────────────────────────────────
   const [phase,        setPhase]        = useState("loading");
   const [error,        setError]        = useState("");
@@ -56,22 +56,35 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
   async function load() {
     setPhase("loading"); setError("");
     try {
-      const res = await fetch("/api/admin/navigation", { credentials: "include" });
+      // Fetch both navigation and routes in parallel
+      const [navRes, routesRes] = await Promise.all([
+        fetch("/api/admin/navigation", { credentials: "include" }),
+        fetch("/api/admin/routes", { credentials: "include" }),
+      ]);
 
-      if (res.status === 401) return;
+      if (navRes.status === 401 || routesRes.status === 401) return;
 
-      const body = await res.json();
+      const navBody = await navRes.json();
+      const routesBody = await routesRes.json();
 
-      if (!res.ok || !body.ok) throw new Error(body.error || `HTTP ${res.status}`);
+      if (!navRes.ok || !navBody.ok) throw new Error(navBody.error || `Navigation HTTP ${navRes.status}`);
+      if (!routesRes.ok || !routesBody.ok) throw new Error(routesBody.error || `Routes HTTP ${routesRes.status}`);
 
-      const fetchedItems      = Array.isArray(body.data?.items) ? body.data.items : [];
-      const fetchedMicrosites = body.data?.microsites && typeof body.data.microsites === "object"
-        ? body.data.microsites : {};
+      const fetchedItems      = Array.isArray(navBody.data?.items) ? navBody.data.items : [];
+      const fetchedMicrosites = navBody.data?.microsites && typeof navBody.data.microsites === "object"
+        ? navBody.data.microsites : {};
+      const fetchedRoutes = routesBody.routes || [];
+
+      // Convert routes to page selector format: { key, label, path }
+      const pageList = fetchedRoutes
+        .filter(r => !r.dynamic && r.key !== "admin")
+        .map(r => ({ key: r.key, label: r.title, path: r.path }));
 
       setItems(fetchedItems);
       setOriginalItems(JSON.parse(JSON.stringify(fetchedItems)));
       setPassThroughMicrosites(fetchedMicrosites);
       setOriginalMicrosites(JSON.parse(JSON.stringify(fetchedMicrosites)));
+      setPages(pageList);
 
       setPhase("ready");
     } catch (e) { setError(e.message); setPhase("error"); }
@@ -390,7 +403,7 @@ function NavRow({
               <label style={{ display: "flex", alignItems: "center", gap: "0.25rem", cursor: "pointer", fontWeight: hrefMode === "internal" ? 700 : 400, color: hrefMode === "internal" ? INK : INK_60 }}>
                 <input type="radio" name={`hrefmode-${index}`} checked={hrefMode === "internal"} onChange={() => {
                   setHrefMode("internal");
-                  onUpdate({ href: INTERNAL_PAGES[0]?.path || "/" });
+                  onUpdate({ href: pages[0]?.path || "/" });
                 }} style={{ accentColor: NEON }} /> Internal page
               </label>
               <label style={{ display: "flex", alignItems: "center", gap: "0.25rem", cursor: "pointer", fontWeight: hrefMode === "external" ? 700 : 400, color: hrefMode === "external" ? INK : INK_60 }}>
@@ -404,7 +417,7 @@ function NavRow({
               onChange={e => onUpdate({ href: e.target.value })}
               style={{ ...selectStyle, marginTop: 0, borderColor: hrefEmpty ? "#e08080" : undefined }}
             >
-              {INTERNAL_PAGES.map(p => (
+              {pages.map(p => (
                 <option key={p.key} value={p.path}>{p.label} — {p.path}</option>
               ))}
             </select>

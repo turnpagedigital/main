@@ -102,6 +102,7 @@ export async function onRequestPost({ request, env }) {
   // Commit routes.json
   const routesResult = await getFileFromGitHub(env, ROUTES_PATH);
   if (!routesResult.ok) return jsonResponse({ ok: false, error: routesResult.error }, 502);
+  if (!routesResult.data) return jsonResponse({ ok: false, error: "Failed to parse routes.json" }, 502);
 
   const routesPayload = JSON.stringify(
     {
@@ -125,6 +126,7 @@ export async function onRequestPost({ request, env }) {
   if (applyChanges && applyChanges.length > 0) {
     const navResult = await getFileFromGitHub(env, NAV_PATH);
     if (!navResult.ok) return jsonResponse({ ok: false, error: navResult.error }, 502);
+    if (!navResult.data) return jsonResponse({ ok: false, error: "Failed to parse nav.json" }, 502);
 
     const updatedNavData = applyRouteReferences(navResult.data, applyChanges);
     const navPayload = JSON.stringify(updatedNavData, null, 2) + "\n";
