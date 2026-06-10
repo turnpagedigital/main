@@ -942,6 +942,11 @@
             "ctaLabel": "Talk to our team",
             "ctaHref": "/contact?source=litigation-funding"
           }
+        },
+        {
+          "id": "sec-1781058276215-1223",
+          "type": "damages",
+          "visible": true
         }
       ],
       "status": "active"
