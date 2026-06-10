@@ -326,11 +326,29 @@ export default function Press() {
     return sortByDate(items, sortDir);
   }, [filterType, filterTopic, filterOutlet, sortDir, unifiedItems]);
 
+  /* Keep type/topic in the URL so filtered views are shareable and
+     back/forward steps through filter states (the popstate listener above
+     restores them). Defaults ("all") are omitted to keep URLs clean.
+     Outlet + sort stay ephemeral UI state. */
+  function pushFilterUrl(nextType, nextTopic) {
+    const params = new URLSearchParams(window.location.search);
+    if (nextType && nextType !== "all") params.set("type", nextType); else params.delete("type");
+    if (nextTopic && nextTopic !== "all") params.set("topic", nextTopic); else params.delete("topic");
+    const qs = params.toString();
+    const url = window.location.pathname + (qs ? "?" + qs : "");
+    if (url !== window.location.pathname + window.location.search) {
+      window.history.pushState({}, "", url);
+    }
+  }
+  function changeFilterType(t)  { setFilterType(t);  pushFilterUrl(t, filterTopic); }
+  function changeFilterTopic(t) { setFilterTopic(t); pushFilterUrl(filterType, t); }
+
   const hasFilters = filterType !== "all" || filterTopic !== "all" || filterOutlet !== "all";
   function clearFilters() {
     setFilterType("all");
     setFilterTopic("all");
     setFilterOutlet("all");
+    pushFilterUrl("all", "all");
   }
 
   return (
@@ -443,8 +461,8 @@ export default function Press() {
 
       {/* ── Filter bar ──────────────────────────────────────────────────── */}
       <FilterBar
-        filterType={filterType}    onFilterType={setFilterType}
-        filterTopic={filterTopic}   onFilterTopic={setFilterTopic}
+        filterType={filterType}    onFilterType={changeFilterType}
+        filterTopic={filterTopic}   onFilterTopic={changeFilterTopic}
         filterOutlet={filterOutlet} onFilterOutlet={setFilterOutlet}
         sortDir={sortDir}           onSortDir={setSortDir}
         hasFilters={hasFilters}     onClear={clearFilters}
