@@ -11,9 +11,23 @@ import { useTabData } from "./useTabData.js";
 ═══════════════════════════════════════════════════════════════════════════ */
 
 // ── Normalizer ─────────────────────────────────────────────────────────
+function uid(prefix) {
+  return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
+}
+
 function normalizeFooter(data) {
+  // Backfill missing ids — the server requires them on every column and
+  // link, and rejects the whole save otherwise.
+  const columns = (Array.isArray(data?.columns) ? data.columns : []).map(col => ({
+    ...col,
+    id: (typeof col.id === "string" && col.id.trim()) ? col.id : uid("col"),
+    links: (Array.isArray(col.links) ? col.links : []).map(link => ({
+      ...link,
+      id: (typeof link.id === "string" && link.id.trim()) ? link.id : uid("link"),
+    })),
+  }));
   return {
-    columns:      Array.isArray(data?.columns) ? data.columns : [],
+    columns,
     copyright:    typeof data?.copyright === "string"    ? data.copyright    : "",
     copyrightKey: typeof data?.copyrightKey === "string" ? data.copyrightKey : undefined,
     contactEmail: typeof data?.contactEmail === "string" ? data.contactEmail : "",
@@ -22,15 +36,11 @@ function normalizeFooter(data) {
 
 // ── Empty item factories ────────────────────────────────────────────────
 function emptyColumn() {
-  return {
-    id:    `col-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-    title: "",
-    links: [],
-  };
+  return { id: uid("col"), title: "", links: [] };
 }
 
 function emptyLink() {
-  return { label: "", href: "/" };
+  return { id: uid("link"), label: "", href: "/" };
 }
 
 // ── Shared helpers ─────────────────────────────────────────────────────
