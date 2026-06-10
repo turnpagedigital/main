@@ -27,11 +27,11 @@
         "links": [
           {
             "label": "Who we help",
-            "href": "/ai-copyright#who-we-help"
+            "href": "/copyright#who-we-help"
           },
           {
             "label": "How we work",
-            "href": "/ai-copyright#how-we-work"
+            "href": "/copyright#how-we-work"
           },
           {
             "label": "Briefings",
@@ -68,7 +68,7 @@
           },
           {
             "label": "Relevant experience",
-            "href": "/crypto#/relevant-experience"
+            "href": "/crypto#relevant-experience"
           },
           {
             "label": "Related media",
@@ -101,7 +101,7 @@
           },
           {
             "label": "Relevant experience",
-            "href": "/"
+            "href": "/litigation-funding#experience"
           },
           {
             "label": "Related media",
@@ -176,7 +176,7 @@
           },
           {
             "label": "Posts",
-            "href": "/press?type=social"
+            "href": "/press?type=posts"
           }
         ],
         "cta": {
