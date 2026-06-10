@@ -132,22 +132,20 @@ Admin panel manages nearly all editable content on the site. Single source of tr
 
 Both paths write to the same files. Git enforces ordering — latest commit wins. There is no parallel database.
 
-### Admin tabs (12 total)
+### Admin structure: 6 master tabs, each with lazy-loaded sub-tabs
 
-| Tab URL | Manages | Data file | Endpoint |
-|---|---|---|---|
-| `/admin/bio` | Andrew's bio, avatar, photo, "As Seen In" logos | `src/data/bio.json` | `/api/admin/bio` (+ `/avatar`, `/photo`) |
-| `/admin/posts` | Briefings index + markdown files | `public/briefings/index.json` + `.md` files | `/api/admin/posts` |
-| `/admin/deals` | Deal cards (logos via AssetPicker) | `src/data/deals.json` | `/api/admin/deals` |
-| `/admin/press` | Press items (logo, thumbnail, PDF via AssetPicker) | `src/data/press.json` | `/api/admin/press` (+ `/press-media`) |
-| `/admin/alerts` | Announcement banner alerts | `src/data/alerts.json` | `/api/admin/alerts` |
-| `/admin/faqs` | Per-page FAQ items | `src/data/faqs.json` | `/api/admin/faqs` |
-| `/admin/assets` | Centralized asset library (74+) — archive, rename cascade, permanent delete cascade | `src/data/file-library.json` | `/api/admin/file-library`, `/file-upload`, `/file-delete`, `/file-rename` |
-| `/admin/pages` | Favicons (per-env), Site Metadata, Per-page Meta | `src/data/file-library.json` (favicons) + `src/data/page-meta.json` | `/api/admin/file-library`, `/page-meta` |
-| `/admin/navigation` | Top nav items | `src/data/nav.json` | `/api/admin/navigation` |
-| `/admin/footer` | Footer columns/links/copyright | `src/data/footer.json` | `/api/admin/footer` |
-| `/admin/home-content` | Home page situations + testimonials | `src/data/home-content.json` | `/api/admin/home-content` |
-| `/admin/marketing-pages` | Crypto / AI Copyright / Litigation Finance content arrays | `src/data/crypto-content.json` + `ai-copyright-content.json` + `litigation-finance-content.json` | `/api/admin/marketing-pages` |
+| Master tab URL | Sub-tabs | What they manage |
+|---|---|---|
+| `/admin/content` | Bio, Posts, Briefings, Deals, Press, Alerts, FAQs, Testimonials, Contact Form | `bio.json`, `public/briefings/*`, `deals.json`, `press.json`, `alerts.json`, `faqs.json`, `testimonials.json`, `contact-form.json` |
+| `/admin/page-builder` | Builder, Section Types | `page-compositions.json` (+ registers routes in `routes.json` on page create/delete; changes page URLs via `/api/admin/page-path` cascade) |
+| `/admin/assets` | — | `file-library.json` — archive, rename cascade, permanent delete cascade |
+| `/admin/structure` | Favicons, Site Meta, Navigation, Footer, Routes | `file-library.json` (favicons), `page-meta.json`, `nav.json`, `footer.json`, `routes.json` |
+| `/admin/intelligence` | Themes, Cases, Defaults | Briefing-system config (`themes.json`, cases, intelligence settings) |
+| `/admin/css` | — | Design tokens + section palettes (`tokens.js`, `section-palettes.json`) |
+
+Sub-tab URLs follow `/admin/<master>/<sub>` (e.g. `/admin/structure/navigation`), except the Pages hub which keeps its sub-tab in local state. Each sub-tab owns its own fetch/save/dirty lifecycle and reports dirty state up via `onDirtyChange`.
+
+Endpoint naming still matches the data file (`/api/admin/deals` → `deals.json`, etc.). The old flat URLs (`/admin/bio`, `/admin/deals`, …) no longer exist.
 
 ### Asset library pattern (important)
 
@@ -181,9 +179,10 @@ Admin tabs do NOT auto-generate forms from JSON. Fields are explicitly listed in
 
 ### Shared admin helpers
 
-- `functions/api/admin/_github.js` — `getFileFromGitHub`, `commitFileToGitHub`, `commitBinaryToGitHub`, `getFileSha`, `listRepoTree`, `findUrlReferences`, `deleteFileFromGitHub`
-- `functions/api/admin/_utils.js` — `isAuthed`, `jsonResponse`, `constantTimeEqual`, session cookie helpers
-- `src/pages/admin/shared.jsx` — `inputStyle`, `btnStyle`, `btnPrimaryStyle`, `iconBtnStyle`, `formatTime`, `CenteredMessage`, `LoginForm`
+- `functions/api/admin/_github.js` — `getFileFromGitHub`, `commitFileToGitHub`, `commitBinaryToGitHub`, `getFileSha`, `listDirFromGitHub`, `findUrlReferences`, `deleteFileFromGitHub`. All GitHub calls have a 10s timeout. Signatures: reads return `{ ok, text, data, sha }`; `commitFileToGitHub(env, path, content, sha, message)` — **sha comes before message**.
+- `functions/api/admin/_routes.js` — `detectRouteReferences`, `applyRouteReferences` (nav.json cascade for path renames; used by both `routes.js` and `page-path.js`)
+- `functions/api/admin/_utils.js` — `isAuthed(request, env)` (async — always `await`), `jsonResponse`, `constantTimeEqual`, session cookie helpers
+- `src/pages/admin/shared.jsx` — `inputStyle`, `selectStyle`, `btnStyle`, `btnPrimaryStyle`, `iconBtnStyle`, `formatTime`, `CenteredMessage`, `LoginForm`, `Banner`, `Modal`, `ConfirmDialog`, `ErrorBanner`, `SubTabStrip`, `useSubTabs`, style consts (`cardStyle`, `labelStyle`, `wrapStyle`)
 
 Never duplicate these — always import from the shared modules.
 
