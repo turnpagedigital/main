@@ -13,12 +13,6 @@ const FIELD_DEFS = [
   { key: "case_study", label: "Case study (optional — opens a full modal when the card is clicked)", type: "textarea", placeholder: "Full narrative of the deal, strategy, outcome…" },
 ];
 
-const PAGES = [
-  { key: "home",         label: "Home" },
-  { key: "crypto",       label: "Crypto" },
-  { key: "ai-copyright", label: "AI Copyright" },
-];
-
 function blankDeal() {
   return { amt: "", who: "", type: "", form: "", when: "", summary: "", case_study: "", pages: [], preTurnpage: false, logos: [] };
 }
@@ -41,6 +35,7 @@ function sanitize(d) {
 export default function DealsTab({ onDirtyChange }) {
   const [deals, setDeals] = useState(null);
   const [original, setOriginal] = useState(null);
+  const [pages, setPages] = useState([]);
   const [phase, setPhase] = useState("loading");
   const [error, setError] = useState("");
   const [lastSavedAt, setLastSavedAt] = useState(null);
@@ -53,6 +48,26 @@ export default function DealsTab({ onDirtyChange }) {
   useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
 
   useEffect(() => { load(); }, []);
+
+  // Fetch pages from routes
+  useEffect(() => {
+    (async () => {
+      try {
+        const r = await fetch("/api/admin/routes", { credentials: "include" });
+        if (r.ok) {
+          const body = await r.json();
+          if (body.ok && body.routes) {
+            const pageList = body.routes
+              .filter(r => !r.dynamic && r.key !== "admin")
+              .map(r => ({ key: r.key, label: r.title }));
+            setPages(pageList);
+          }
+        }
+      } catch {
+        // Silently fail — if routes fetch fails, pages list stays empty
+      }
+    })();
+  }, []);
 
   async function load() {
     setPhase("loading"); setError("");
@@ -164,6 +179,7 @@ export default function DealsTab({ onDirtyChange }) {
             key={i}
             index={i}
             deal={deal}
+            pages={pages}
             onChange={(field, value) => updateDeal(i, field, value)}
             onMoveUp={() => moveDeal(i, -1)}
             onMoveDown={() => moveDeal(i, 1)}
@@ -192,7 +208,7 @@ export default function DealsTab({ onDirtyChange }) {
   );
 }
 
-function DealRow({ index, deal, onChange, onMoveUp, onMoveDown, onDelete, isFirst, isLast }) {
+function DealRow({ index, deal, pages, onChange, onMoveUp, onMoveDown, onDelete, isFirst, isLast }) {
   return (
     <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem" }}>
       {/* Header */}
@@ -253,28 +269,32 @@ function DealRow({ index, deal, onChange, onMoveUp, onMoveDown, onDelete, isFirs
             Pages
           </div>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            {PAGES.map((p) => {
-              const checked = Array.isArray(deal.pages) && deal.pages.includes(p.key);
-              return (
-                <label key={p.key} style={{
-                  display: "flex", alignItems: "center", gap: "0.35rem",
-                  cursor: "pointer", fontSize: "0.88rem", color: INK,
-                }}>
-                  <input
-                    type="checkbox"
-                    checked={checked}
-                    onChange={(e) => {
-                      const cur = Array.isArray(deal.pages) ? deal.pages : [];
-                      onChange("pages", e.target.checked
-                        ? [...cur, p.key]
-                        : cur.filter((x) => x !== p.key));
-                    }}
-                    style={{ accentColor: NEON, width: 14, height: 14 }}
-                  />
-                  {p.label}
-                </label>
-              );
-            })}
+            {pages.length === 0 ? (
+              <span style={{ fontSize: "0.85rem", color: INK_60, fontStyle: "italic" }}>Loading pages…</span>
+            ) : (
+              pages.map((p) => {
+                const checked = Array.isArray(deal.pages) && deal.pages.includes(p.key);
+                return (
+                  <label key={p.key} style={{
+                    display: "flex", alignItems: "center", gap: "0.35rem",
+                    cursor: "pointer", fontSize: "0.88rem", color: INK,
+                  }}>
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={(e) => {
+                        const cur = Array.isArray(deal.pages) ? deal.pages : [];
+                        onChange("pages", e.target.checked
+                          ? [...cur, p.key]
+                          : cur.filter((x) => x !== p.key));
+                      }}
+                      style={{ accentColor: NEON, width: 14, height: 14 }}
+                    />
+                    {p.label}
+                  </label>
+                );
+              })
+            )}
           </div>
         </div>
 

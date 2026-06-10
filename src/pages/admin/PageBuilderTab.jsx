@@ -284,13 +284,10 @@ export default function PageBuilderTab({ onDirtyChange }) {
   }
 
   // Whether a section type may be added to the current page right now.
-  // Respects availableOn (page allow-list) and allowMultiple (singletons).
+  // Respects availableOn (page allow-list). Removed allowMultiple check — sections can now be added multiple times.
   function typeAvailability(st) {
     if (Array.isArray(st.availableOn) && selectedKey && !st.availableOn.includes(selectedKey)) {
       return { ok: false, reason: `Only on: ${st.availableOn.join(", ")}` };
-    }
-    if (st.allowMultiple !== true && sections.some(s => s.type === st.id)) {
-      return { ok: false, reason: "Already on this page" };
     }
     return { ok: true, reason: "" };
   }

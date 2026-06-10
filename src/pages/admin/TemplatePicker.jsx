@@ -90,12 +90,7 @@ export default function TemplatePicker({ sectionTypes, sections, selectedKey, on
     if (Array.isArray(st.availableOn) && selectedKey && !st.availableOn.includes(selectedKey)) {
       return { ok: false, reason: `Only on: ${st.availableOn.join(", ")}` };
     }
-    // Singleton check: for layout-specific items, only block if the base type is singleton AND already added
-    if (st.allowMultiple !== true) {
-      // For layout items in multi-layout types (testimonials, faq, cta), allowMultiple governs the base type
-      const alreadyAdded = sections.some(s => s.type === typeId);
-      if (alreadyAdded) return { ok: false, reason: "Already on this page" };
-    }
+    // Note: allowMultiple check removed — sections can now be added multiple times on a page
     return { ok: true, reason: "" };
   }
 
