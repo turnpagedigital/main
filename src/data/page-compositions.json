@@ -893,7 +893,8 @@
             },
             "secondary": null,
             "cta": "Subscribe to briefings",
-            "image": "/library/joel-filipe-pyhpjejuyhy-unsplash.jpg"
+            "image": "/library/joel-filipe-pyhpjejuyhy-unsplash.jpg",
+            "href": "/press?type=briefings"
           }
         },
         {
