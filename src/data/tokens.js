@@ -42,7 +42,7 @@ export const ERROR_TEXT = "#7a1a1a";
 export const WARNING = "#7a5c00";
 export const WARNING_BG = "#fdf6e3";
 export const SUCCESS = "#05a173";
-export const SUCCESS_BG = "#e8f5e8";
+export const SUCCESS_BG = "#dafef4";
 export const SECONDARY_BG = "#F4F5F7";
 
 /* Typography */
