@@ -123,7 +123,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
       `• Navigation links\n` +
       `• Footer links\n` +
       `• Internal CTAs and links\n\n` +
-      `A redirect will be created from the old path.`
+      `Note: links to the old path stop working after the next deploy.`
     );
     if (!proceed) return;
 
@@ -132,14 +132,15 @@ export default function PageBuilderTab({ onDirtyChange }) {
       const res = await fetch("/api/admin/page-path", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({
           pageKey: selectedKey,
           oldPath: selectedPage.path,
           newPath: newPath,
         }),
       });
-      if (!res.ok) throw new Error(await res.text());
-      const updated = await res.json();
+      const updated = await res.json().catch(() => ({}));
+      if (!res.ok || !updated.ok) throw new Error(updated.error || `HTTP ${res.status}`);
       setPages(updated.pages);
       alert("✓ Page path updated and all references cascaded.");
     } catch (err) {
