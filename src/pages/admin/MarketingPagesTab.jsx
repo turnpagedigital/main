@@ -3,7 +3,8 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   MarketingPagesTab — manage src/data/ai-copyright-content.json.
+   MarketingPagesTab — edit the AI Copyright Damages chart data
+   (src/data/ai-copyright-content.json → damagesData).
 
    Embedded by SectionEditorModal when editing a "damages" section (the
    Active Docket chart on the AI Copyright page renders damagesData from
@@ -31,14 +32,6 @@ function uid(prefix) {
   return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
 }
 
-function emptyAudienceCard() {
-  return { id: uid("aud"), title: "", body: "", badge: "" };
-}
-
-function emptyServiceCard() {
-  return { id: uid("svc"), title: "", body: "" };
-}
-
 function emptyDamage() {
   return { id: uid("dmg"), name: "", amountB: 0, label: "", type: "statutory", badge: "", basis: "", source: "" };
 }
@@ -49,9 +42,7 @@ function normalize(data) {
   const aiCopyright = data?.aiCopyright || {};
   return {
     aiCopyright: {
-      audienceCards: Array.isArray(aiCopyright.audienceCards) ? aiCopyright.audienceCards : [],
-      serviceCards:  Array.isArray(aiCopyright.serviceCards)  ? aiCopyright.serviceCards  : [],
-      damagesData:   Array.isArray(aiCopyright.damagesData)   ? aiCopyright.damagesData   : [],
+      damagesData: Array.isArray(aiCopyright.damagesData) ? aiCopyright.damagesData : [],
     },
   };
 }
@@ -251,51 +242,6 @@ export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
 function CopyrightSection({ page, d, updateItem, moveItem, removeItem, addItem }) {
   return (
     <>
-      <SectionHeader>Audience Cards (Who We Help)</SectionHeader>
-      <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
-        Cards shown in the "Who We Help" section. Items with the <em>PRIORITY</em> pill active render with dark background.
-      </p>
-      <CardList
-        items={d.audienceCards}
-        page={page}
-        sectionKey="audienceCards"
-        updateItem={updateItem}
-        moveItem={moveItem}
-        removeItem={removeItem}
-        addItem={() => addItem(page, "audienceCards", emptyAudienceCard)}
-        renderRow={(c, i, total) => (
-          <AudienceCardRow
-            key={c.id} card={c} index={i} total={total}
-            onUpdate={patch => updateItem(page, "audienceCards", i, patch)}
-            onMoveUp={() => moveItem(page, "audienceCards", i, -1)}
-            onMoveDown={() => moveItem(page, "audienceCards", i, 1)}
-            onRemove={() => { if (window.confirm(`Remove card "${c.title || c.id}"?`)) removeItem(page, "audienceCards", i); }}
-          />
-        )}
-        addLabel="+ Add audience card"
-      />
-
-      <SectionHeader>Service Cards (What We Offer)</SectionHeader>
-      <CardList
-        items={d.serviceCards}
-        page={page}
-        sectionKey="serviceCards"
-        updateItem={updateItem}
-        moveItem={moveItem}
-        removeItem={removeItem}
-        addItem={() => addItem(page, "serviceCards", emptyServiceCard)}
-        renderRow={(c, i, total) => (
-          <ServiceCardRow
-            key={c.id} card={c} index={i} total={total}
-            onUpdate={patch => updateItem(page, "serviceCards", i, patch)}
-            onMoveUp={() => moveItem(page, "serviceCards", i, -1)}
-            onMoveDown={() => moveItem(page, "serviceCards", i, 1)}
-            onRemove={() => { if (window.confirm(`Remove card "${c.title || c.id}"?`)) removeItem(page, "serviceCards", i); }}
-          />
-        )}
-        addLabel="+ Add service card"
-      />
-
       <SectionHeader>Damages Data (Active Docket Chart)</SectionHeader>
       <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1rem" }}>
         Cases shown in the animated bar chart. amountB is the dollar amount in billions (e.g. 1.5 for $1.5B).
@@ -349,139 +295,6 @@ function CardList({ items, renderRow, addItem, addLabel }) {
 /* ══════════════════════════════════════════════════════════════════════════
    Row components — card-per-item pattern with header row
 ══════════════════════════════════════════════════════════════════════════ */
-
-function AudienceCardRow({ card, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
-  const titleEmpty = !String(card.title || "").trim();
-  const bodyEmpty  = !String(card.body  || "").trim();
-  const summary    = card.title ? `"${card.title.slice(0, 60)}${card.title.length > 60 ? "…" : ""}"` : null;
-
-  return (
-    <div style={{
-      background: "#fff",
-      border: `1px solid ${LINE}`,
-    }}>
-      {/* Card header row */}
-      <div style={{
-        display: "flex", alignItems: "center", gap: "0.75rem",
-        padding: "0.7rem 1rem",
-        borderBottom: `1px solid ${LINE}`,
-        flexWrap: "wrap",
-      }}>
-        {/* Custom badge label input */}
-        <input
-          type="text"
-          value={card.badge || ""}
-          onChange={(e) => onUpdate({ badge: e.target.value })}
-          placeholder="e.g., Featured, Urgent"
-          style={{
-            border: "1px solid " + (card.badge ? NEON : "#ccc"),
-            borderRadius: "3px",
-            padding: "0.25rem 0.6rem",
-            fontSize: "0.7rem", fontWeight: 600,
-            fontFamily: FONT,
-            flexShrink: 0,
-            maxWidth: "140px",
-            background: card.badge ? "rgba(212,255,0,0.08)" : "#fff",
-            color: card.badge ? NEON : INK_60,
-          }}
-        />
-
-        {/* Summary text */}
-        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-          {summary || <em>No title set</em>}
-        </div>
-
-        {/* Action buttons */}
-        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
-        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
-        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
-      </div>
-
-      {/* Card body */}
-      <div style={{ padding: "0.95rem 1rem", display: "flex", flexDirection: "column", gap: "0.7rem" }}>
-        <label style={labelStyle}>
-          Title
-          <input
-            type="text" value={card.title || ""}
-            onChange={e => onUpdate({ title: e.target.value })}
-            placeholder="Card title"
-            style={{ ...inputStyle, marginTop: "0.25rem", borderColor: titleEmpty ? "#e08080" : undefined }}
-          />
-          {titleEmpty && <p style={reqStyle}>Required</p>}
-        </label>
-
-        <label style={{ ...labelStyle, display: "block" }}>
-          Body
-          <textarea
-            value={card.body || ""}
-            onChange={e => onUpdate({ body: e.target.value })}
-            placeholder="Card body text"
-            rows={2}
-            style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 58, borderColor: bodyEmpty ? "#e08080" : undefined }}
-          />
-          {bodyEmpty && <p style={reqStyle}>Required</p>}
-        </label>
-      </div>
-    </div>
-  );
-}
-
-function ServiceCardRow({ card, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
-  const titleEmpty = !String(card.title || "").trim();
-  const bodyEmpty  = !String(card.body  || "").trim();
-  const summary    = card.title ? `"${card.title.slice(0, 60)}${card.title.length > 60 ? "…" : ""}"` : null;
-
-  return (
-    <div style={{
-      background: "#fff",
-      border: `1px solid ${LINE}`,
-    }}>
-      {/* Card header row */}
-      <div style={{
-        display: "flex", alignItems: "center", gap: "0.75rem",
-        padding: "0.7rem 1rem",
-        borderBottom: `1px solid ${LINE}`,
-        flexWrap: "wrap",
-      }}>
-        {/* Summary text */}
-        <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-          {summary || <em>No title set</em>}
-        </div>
-
-        {/* Action buttons */}
-        <button onClick={onMoveUp}   disabled={index === 0}         style={iconBtnStyle(index === 0)}         title="Move up">↑</button>
-        <button onClick={onMoveDown} disabled={index === total - 1} style={iconBtnStyle(index === total - 1)} title="Move down">↓</button>
-        <button onClick={onRemove}   style={{ ...iconBtnStyle(false), color: "#c44" }}                        title="Delete">×</button>
-      </div>
-
-      {/* Card body */}
-      <div style={{ padding: "0.95rem 1rem", display: "flex", flexDirection: "column", gap: "0.7rem" }}>
-        <label style={labelStyle}>
-          Title
-          <input
-            type="text" value={card.title || ""}
-            onChange={e => onUpdate({ title: e.target.value })}
-            placeholder="Service card title"
-            style={{ ...inputStyle, marginTop: "0.25rem", borderColor: titleEmpty ? "#e08080" : undefined }}
-          />
-          {titleEmpty && <p style={reqStyle}>Required</p>}
-        </label>
-
-        <label style={{ ...labelStyle, display: "block" }}>
-          Body
-          <textarea
-            value={card.body || ""}
-            onChange={e => onUpdate({ body: e.target.value })}
-            placeholder="Description of this service"
-            rows={3}
-            style={{ ...inputStyle, marginTop: "0.25rem", resize: "vertical", minHeight: 72, borderColor: bodyEmpty ? "#e08080" : undefined }}
-          />
-          {bodyEmpty && <p style={reqStyle}>Required</p>}
-        </label>
-      </div>
-    </div>
-  );
-}
 
 function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const nameEmpty = !String(item.name || "").trim();

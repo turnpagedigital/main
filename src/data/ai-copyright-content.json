@@ -1,47 +1,4 @@
 {
-  "audienceCards": [
-    {
-      "id": "authors-writers",
-      "title": "Authors & Publishers",
-      "body": "Bartz class members. OpenAI MDL and Kadrey v. Meta plaintiffs.",
-      "priority": true
-    },
-    {
-      "id": "music-publishers",
-      "title": "Music Labels, Publishers & Catalogue Owners",
-      "body": "Concord plaintiffs, RIAA-coordinated claimants, UMG v. Suno/Udio.",
-      "priority": true
-    },
-    {
-      "id": "visual-artists",
-      "title": "Visual Artists & Stock Image Libraries",
-      "body": "Andersen v. Stability. Getty v. Stability (US and UK).",
-      "priority": false
-    },
-    {
-      "id": "news-organizations",
-      "title": "News Media Organizations",
-      "body": "NYT v. OpenAI, Advance Local v. Cohere, the consolidated MDL.",
-      "priority": false
-    }
-  ],
-  "serviceCards": [
-    {
-      "id": "capital",
-      "title": "Capital",
-      "body": "A competitive cash bid from our institutional buyer network. Class-member purchases, opt-out direct purchases, bulk catalogues. Days to close."
-    },
-    {
-      "id": "advisory",
-      "title": "Advisory",
-      "body": "Opt-in vs. opt-out economics. Statutory damages modeling. Counsel introductions across U.S., UK, EU, and Germany."
-    },
-    {
-      "id": "claim-monitoring",
-      "title": "Claim Monitoring",
-      "body": "We track and file claims for you, automatically."
-    }
-  ],
   "damagesData": [
     {
       "id": "bartz-anthropic",
@@ -50,8 +7,8 @@
       "label": "$1.5B",
       "type": "settled",
       "badge": "Settled",
-      "basis": "482,460 registered works · ~$3,000/work class distribution",
-      "source": "N.D. Cal. No. 3:23-cv-03223 · Settlement Order (Aug. 2025)"
+      "basis": "482,460 registered works \u00b7 ~$3,000/work class distribution",
+      "source": "N.D. Cal. No. 3:23-cv-03223 \u00b7 Settlement Order (Aug. 2025)"
     },
     {
       "id": "getty-stability",
@@ -60,8 +17,8 @@
       "label": "$1.7B",
       "type": "statutory",
       "badge": "Statutory ceiling",
-      "basis": "11,383 registered works × $150,000 · 17 U.S.C. §504(c)(2)",
-      "source": "D. Del. No. 1:23-cv-00135 · Am. Compl. ¶ 151"
+      "basis": "11,383 registered works \u00d7 $150,000 \u00b7 17 U.S.C. \u00a7504(c)(2)",
+      "source": "D. Del. No. 1:23-cv-00135 \u00b7 Am. Compl. \u00b6 151"
     },
     {
       "id": "concord-umg-anthropic",
@@ -70,8 +27,8 @@
       "label": "$3.1B",
       "type": "statutory",
       "badge": "Statutory ceiling",
-      "basis": "20,517 musical compositions × $150,000 · 17 U.S.C. §504(c)(2)",
-      "source": "N.D. Cal. · Compl. ¶ 12 (filed Jan. 2026)"
+      "basis": "20,517 musical compositions \u00d7 $150,000 \u00b7 17 U.S.C. \u00a7504(c)(2)",
+      "source": "N.D. Cal. \u00b7 Compl. \u00b6 12 (filed Jan. 2026)"
     },
     {
       "id": "doe-github",
@@ -79,9 +36,9 @@
       "amountB": 9,
       "label": "$9B+",
       "type": "dmca",
-      "badge": "DMCA §1202 est.",
-      "basis": "Est. from >1.2B code lines affected · DMCA §1202(b) per-violation ceiling",
-      "source": "N.D. Cal. No. 4:22-cv-06823 · Compl. ¶ 92"
+      "badge": "DMCA \u00a71202 est.",
+      "basis": "Est. from >1.2B code lines affected \u00b7 DMCA \u00a71202(b) per-violation ceiling",
+      "source": "N.D. Cal. No. 4:22-cv-06823 \u00b7 Compl. \u00b6 92"
     }
   ]
 }

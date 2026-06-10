@@ -110,47 +110,9 @@ function validatePayload(key, payload) {
 }
 
 function validateCopyright(p) {
-  if (!Array.isArray(p.audienceCards)) return "aiCopyright.audienceCards must be an array";
-  if (!Array.isArray(p.serviceCards)) return "aiCopyright.serviceCards must be an array";
   if (!Array.isArray(p.damagesData)) return "aiCopyright.damagesData must be an array";
-  if (p.audienceCards.length > MAX_ITEMS) return `Too many audienceCards (max ${MAX_ITEMS})`;
-  if (p.serviceCards.length > MAX_ITEMS) return `Too many serviceCards (max ${MAX_ITEMS})`;
   if (p.damagesData.length > MAX_ITEMS) return `Too many damagesData entries (max ${MAX_ITEMS})`;
-  const a = validateAudienceCards(p.audienceCards, "aiCopyright.audienceCards");
-  if (a) return a;
-  const s = validateServiceCards(p.serviceCards, "aiCopyright.serviceCards");
-  if (s) return s;
-  const d = validateDamagesData(p.damagesData);
-  if (d) return d;
-  return null;
-}
-
-function validateAudienceCards(cards, label) {
-  const seen = new Set();
-  for (let i = 0; i < cards.length; i++) {
-    const c = cards[i];
-    if (!c || typeof c !== "object") return `${label}[${i}] is not an object`;
-    if (typeof c.id !== "string" || !c.id.trim()) return `${label}[${i}].id is required`;
-    if (seen.has(c.id.trim())) return `${label}[${i}].id "${c.id}" is duplicated`;
-    seen.add(c.id.trim());
-    if (typeof c.title !== "string" || !c.title.trim()) return `${label}[${i}].title is required`;
-    if (typeof c.body !== "string" || !c.body.trim()) return `${label}[${i}].body is required`;
-  }
-  return null;
-}
-
-function validateServiceCards(cards, label) {
-  const seen = new Set();
-  for (let i = 0; i < cards.length; i++) {
-    const c = cards[i];
-    if (!c || typeof c !== "object") return `${label}[${i}] is not an object`;
-    if (typeof c.id !== "string" || !c.id.trim()) return `${label}[${i}].id is required`;
-    if (seen.has(c.id.trim())) return `${label}[${i}].id "${c.id}" is duplicated`;
-    seen.add(c.id.trim());
-    if (typeof c.title !== "string" || !c.title.trim()) return `${label}[${i}].title is required`;
-    if (typeof c.body !== "string" || !c.body.trim()) return `${label}[${i}].body is required`;
-  }
-  return null;
+  return validateDamagesData(p.damagesData);
 }
 
 function validateDamagesData(items) {
@@ -181,22 +143,10 @@ function sanitizePayload(key, payload) {
 
 const s = (v) => typeof v === "string" ? v.trim().slice(0, MAX_STR) : "";
 const sid = (v) => typeof v === "string" ? v.trim().slice(0, MAX_ID) : "";
-const bool = (v) => Boolean(v);
-
-function sanitizeAudienceCard(c) {
-  const out = { id: sid(c.id), title: s(c.title), body: s(c.body), priority: bool(c.priority) };
-  return out;
-}
-
-function sanitizeServiceCard(c) {
-  return { id: sid(c.id), title: s(c.title), body: s(c.body) };
-}
 
 function sanitizeCopyright(p) {
   return {
-    audienceCards: p.audienceCards.map(sanitizeAudienceCard),
-    serviceCards:  p.serviceCards.map(sanitizeServiceCard),
-    damagesData:   p.damagesData.map(d => ({
+    damagesData: p.damagesData.map(d => ({
       id:      sid(d.id),
       name:    s(d.name),
       amountB: Number(d.amountB),
