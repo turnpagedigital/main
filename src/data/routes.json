@@ -93,6 +93,13 @@
       "component": "DynamicPage",
       "dynamic": false,
       "title": "Team"
+    },
+    {
+      "path": "/bankruptcy-claims",
+      "key": "bankruptcy-claims",
+      "component": "DynamicPage",
+      "dynamic": false,
+      "title": "Bankruptcy Claims"
     }
   ]
 }
