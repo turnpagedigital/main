@@ -20,14 +20,8 @@ export async function onRequestGet({ request, env }) {
   const result = await getFileFromGitHub(env, PALETTES_PATH);
   if (!result.ok) return jsonResponse({ ok: false, error: result.error }, 502);
 
-  let data;
-  try {
-    data = JSON.parse(result.data);
-  } catch {
-    return jsonResponse({ ok: false, error: "Could not parse section-palettes.json" }, 500);
-  }
-
-  return jsonResponse({ ok: true, data, sha: result.sha });
+  // .json files arrive pre-parsed in result.data (the helper 502s on bad JSON)
+  return jsonResponse({ ok: true, data: result.data, sha: result.sha });
 }
 
 export async function onRequestPut({ request, env }) {
@@ -68,14 +62,12 @@ export async function onRequestPut({ request, env }) {
     }
   }
 
-  // Fetch current file
+  // Fetch current file — .json arrives pre-parsed in current.data
   const current = await getFileFromGitHub(env, PALETTES_PATH);
   if (!current.ok) return jsonResponse({ ok: false, error: current.error }, 502);
 
-  let palettes;
-  try {
-    palettes = JSON.parse(current.data);
-  } catch {
+  const palettes = current.data;
+  if (!palettes || typeof palettes !== "object") {
     return jsonResponse({ ok: false, error: "Could not parse section-palettes.json" }, 500);
   }
 

@@ -20,8 +20,9 @@ export async function onRequestGet({ request, env }) {
   const result = await getFileFromGitHub(env, TOKENS_PATH);
   if (!result.ok) return jsonResponse({ ok: false, error: result.error }, 502);
 
-  // Parse tokens from the JavaScript file
-  const tokens = parseTokensFromContent(result.data);
+  // tokens.js is a .js file, so the helper's parsed `data` is null —
+  // parse the raw text
+  const tokens = parseTokensFromContent(result.text);
   if (!tokens) return jsonResponse({ ok: false, error: "Could not parse tokens.js" }, 500);
 
   return jsonResponse({ ok: true, data: tokens, sha: result.sha });
@@ -59,15 +60,16 @@ export async function onRequestPut({ request, env }) {
   if (!current.ok) return jsonResponse({ ok: false, error: current.error }, 502);
 
   // Validate against the current value (color tokens must stay colors;
-  // any value must be safe to embed in a quoted JS string)
-  const existing = parseTokensFromContent(current.data) || {};
+  // any value must be safe to embed in a quoted JS string).
+  // Use .text — tokens.js is not JSON, so the helper's `data` is null.
+  const existing = parseTokensFromContent(current.text) || {};
   const check = validateTokenValue(existing[tokenName], value);
   if (!check.ok) {
     return jsonResponse({ ok: false, error: check.error }, 400);
   }
 
   // Update the specific token
-  const updated = updateTokenInContent(current.data, tokenName, value);
+  const updated = updateTokenInContent(current.text, tokenName, value);
   if (!updated.success) {
     return jsonResponse({ ok: false, error: updated.error }, 400);
   }
