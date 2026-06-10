@@ -255,7 +255,7 @@
           "visible": true,
           "colorScheme": "light-gray",
           "content": {
-            "eyebrow": "How It Works",
+            "eyebrow": "How we Help",
             "title": "Three steps to close.",
             "accent": "",
             "kicker": "",
@@ -280,9 +280,9 @@
                 "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you."
               }
             ],
-            "cardStyle": "light-glass",
-            "cardRadius": "rounded",
-            "_bookmark": "how-we-work"
+            "cardStyle": "black",
+            "cardRadius": "square",
+            "_bookmark": "how-we-help"
           }
         },
         {
