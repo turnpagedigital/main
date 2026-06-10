@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, filterSelectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, filterSelectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import { MARKETING_PAGES } from "../../data/page-keys.js";
 
 // Derived from routes.json via page-keys.js — add/rename pages there, not here
@@ -154,11 +154,7 @@ function AlertsSectionInner({ alerts, onChangeAlerts, onSave, dirty, isSaving, e
         </button>
       </div>
 
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
+      <ErrorBanner>{error}</ErrorBanner>
 
       <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1rem" }}>
         The first <strong>active</strong> alert that includes a given page is shown in the top bar.

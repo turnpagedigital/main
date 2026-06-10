@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
 // Default suggestions shown in the datalist dropdowns — user can type anything else
@@ -207,11 +207,7 @@ function PressSectionInner({ items, onChangeItems, onSave, dirty, isSaving, erro
         </button>
       </div>
 
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
+      <ErrorBanner>{error}</ErrorBanner>
 
       {/* Filter bar */}
       <div style={{

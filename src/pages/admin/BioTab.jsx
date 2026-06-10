@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import { detectPlatform, PLATFORMS } from "../../components/SocialLinks.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
@@ -420,11 +420,7 @@ function BioSectionInner({ bio, onChangeBio, onSave, dirty, isSaving, error, las
         </button>
       </div>
 
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
+      <ErrorBanner>{error}</ErrorBanner>
 
       {/* ── Profile Photo ─────────────────────────────────────────────────── */}
       <div style={{ background: "#fff", border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1rem" }}>

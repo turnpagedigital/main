@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { NEON, FONT, INK, INK_60, LINE, SURFACE, ERROR, ERROR_BG, WARNING, SUCCESS, SECONDARY_BG } from "../../data/tokens.js";
 
 // --- Styles ------------------------------------------------------------------
@@ -171,6 +171,100 @@ export function ConfirmDialog({ open, title, message, confirmLabel, onConfirm, o
         </button>
       </div>
     </Modal>
+  );
+}
+
+/* ErrorBanner — the standard red error strip used across admin tabs.
+   Renders nothing when children is falsy, so callers can pass the error
+   string directly without an outer guard. */
+export function ErrorBanner({ children }) {
+  if (!children) return null;
+  return (
+    <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
+      {children}
+    </div>
+  );
+}
+
+/* useSubTabs — URL-synced sub-tab state for hub tabs (Content, Pages,
+   Structure, Intelligence). Keeps the active sub-tab in sync with
+   /admin/<hub>/<sub> paths, including back/forward navigation.
+
+   basePath   "/admin/content" (no trailing slash)
+   tabKeys    array of valid sub-tab keys
+   defaultKey key used when the URL has no (or an unknown) sub segment
+   guard      optional () => boolean — return false to block a switch
+              (used for the unsaved-changes confirm)
+
+   Returns [sub, selectSub]. */
+export function useSubTabs(basePath, tabKeys, defaultKey, guard) {
+  const get = useCallback(() => {
+    if (typeof window === "undefined") return defaultKey;
+    const m = window.location.pathname.match(new RegExp(`^${basePath}(?:/([a-z][a-z0-9-]*))?`));
+    if (!m || !m[1]) return defaultKey;
+    return tabKeys.includes(m[1]) ? m[1] : defaultKey;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [basePath, defaultKey, tabKeys.join(",")]);
+
+  const [sub, setSub] = useState(get);
+
+  useEffect(() => {
+    function onPop() { setSub(get()); }
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [get]);
+
+  function selectSub(key) {
+    if (guard && !guard()) return;
+    const next = `${basePath}/${key}`;
+    if (window.location.pathname !== next) {
+      window.history.pushState(null, "", next);
+      // Notify app-level listeners (App.jsx useRoute) that the URL changed
+      window.dispatchEvent(new PopStateEvent("popstate"));
+    }
+    setSub(key);
+  }
+
+  return [sub, selectSub];
+}
+
+/* SubTabStrip — the horizontal sub-tab bar rendered by every hub tab.
+   tabs        [{ key, label }]
+   active      current sub-tab key
+   dirtyFlags  { [key]: boolean } — shows the neon unsaved dot
+   onSelect    (key) => void */
+export function SubTabStrip({ tabs, active, dirtyFlags = {}, onSelect }) {
+  return (
+    <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0.6rem clamp(1rem, 3vw, 2rem) 0" }}>
+      <div style={{ display: "flex", gap: 0, borderBottom: `1px solid ${LINE}` }}>
+        {tabs.map(({ key, label }) => {
+          const isActive = active === key;
+          const isDirty = dirtyFlags[key];
+          return (
+            <button
+              key={key}
+              onClick={() => onSelect(key)}
+              style={{
+                fontFamily: FONT, fontSize: "0.85rem",
+                fontWeight: isActive ? 700 : 500,
+                color: isActive ? INK : INK_60,
+                background: "transparent", border: "none",
+                borderBottom: isActive ? `2px solid ${INK}` : "2px solid transparent",
+                padding: "0.6rem 1.1rem 0.6rem 0",
+                marginRight: "1.2rem", marginBottom: "-1px",
+                cursor: "pointer", transition: "color 0.15s",
+                display: "inline-flex", alignItems: "center", gap: "0.4em",
+              }}
+            >
+              {label}
+              {isDirty && (
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: NEON, display: "inline-block", flexShrink: 0 }} />
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 

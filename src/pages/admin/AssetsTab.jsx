@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    AssetsTab — centralised image / logo / document / video library.
@@ -335,11 +335,7 @@ export default function AssetsTab({ onDirtyChange }) {
         </button>
       </div>
 
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
+      <ErrorBanner>{error}</ErrorBanner>
 
       <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1.5rem" }}>
         Centralised library of logos, icons, images, documents, and videos.

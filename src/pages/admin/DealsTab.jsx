@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
 const FIELD_DEFS = [
@@ -163,11 +163,7 @@ export default function DealsTab({ onDirtyChange }) {
         </button>
       </div>
 
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
+      <ErrorBanner>{error}</ErrorBanner>
 
       <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "1.5rem" }}>
         {list.length} deal{list.length !== 1 ? "s" : ""} — use the <strong>Pages</strong> checkboxes on each card to control where it appears. Order here = order on each page.

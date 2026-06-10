@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, ErrorBanner } from "./shared.jsx";
 import RichEditor from "./RichEditor.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
@@ -355,11 +355,7 @@ export default function PostsTab({ onDirtyChange }) {
         </button>
       </div>
 
-      {editorError && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {editorError}
-        </div>
-      )}
+      <ErrorBanner>{editorError}</ErrorBanner>
 
       {isLoadingContent ? (
         <div style={{ padding: "3rem", textAlign: "center", color: INK_60 }}>Loading post content…</div>

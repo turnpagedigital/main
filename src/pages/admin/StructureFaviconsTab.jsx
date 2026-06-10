@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    StructureFaviconsTab — Favicons only
@@ -140,11 +140,7 @@ export default function StructureFaviconsTab({ onDirtyChange }) {
         </button>
       </div>
 
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
+      <ErrorBanner>{error}</ErrorBanner>
 
       {/* Favicons */}
       <SectionHeader>Favicons</SectionHeader>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog, ErrorBanner } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HomeContentTab — manage home page situations (6).
@@ -161,11 +161,7 @@ export default function HomeContentTab({ onDirtyChange }) {
         </button>
       </div>
 
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
+      <ErrorBanner>{error}</ErrorBanner>
 
       <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "2rem" }}>
         Manage the situations shown on the home page. Use the arrows to reorder. Changes deploy on Save.

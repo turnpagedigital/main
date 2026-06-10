@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, filterSelectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage } from "./shared.jsx";
+import { inputStyle, selectStyle, filterSelectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import { MARKETING_PAGES } from "../../data/page-keys.js";
 
 // Derived from routes.json via page-keys.js — add/rename pages there, not here
@@ -276,11 +276,7 @@ function FaqsSectionInner({ faqs, onChangeFaqs, onSave, dirty, isSaving, error, 
         </button>
       </div>
 
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
+      <ErrorBanner>{error}</ErrorBanner>
 
       <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "1rem" }}>
         Use the <strong>Pages</strong> checkboxes to control which pages each FAQ appears on.

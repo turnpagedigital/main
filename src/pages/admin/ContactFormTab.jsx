@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog, ErrorBanner } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    ContactFormTab — manage the Contact Us page: heading copy, subject
@@ -150,11 +150,7 @@ export default function ContactFormTab({ onDirtyChange }) {
         </button>
       </div>
 
-      {error && (
-        <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-          {error}
-        </div>
-      )}
+      <ErrorBanner>{error}</ErrorBanner>
 
       {/* ── Page Copy ──────────────────────────────────────────────── */}
       <SectionHeader>Page Copy</SectionHeader>
