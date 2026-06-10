@@ -32,9 +32,8 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
   const [originalItems,        setOriginalItems]        = useState(null);
   const [passThroughMicrosites, setPassThroughMicrosites] = useState(null);
 
-  // ── Pages state (dynamically fetched) ──────────────────────────────────
+  // ── Pages state (dynamically fetched for href picker) ────────────────────
   const [pages, setPages] = useState([]);
-  const INTERNAL_PATHS = useMemo(() => new Set(pages.map(p => p.path)), [pages]);
 
   // ── Shared ────────────────────────────────────────────────────────────
   const [phase,        setPhase]        = useState("loading");
@@ -267,6 +266,7 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
             item={item}
             index={index}
             total={items.length}
+            pages={pages}
             microsite={passThroughMicrosites?.[item.id] || null}
             onUpdate={patch => update(index, patch)}
             onMoveUp={() => moveUp(index)}
@@ -314,18 +314,20 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
 
 function NavRow({
   item, index, total,
+  pages = [],
   microsite,
   onUpdate, onMoveUp, onMoveDown, onRemove,
   onToggleDropdown, onUpdateDropdown,
   onUpdateDropdownLink, onAddDropdownLink, onMoveDropdownLink, onRemoveDropdownLink,
   onUpdateMicrosite,
 }) {
+  const internalPaths = new Set(pages.map(p => p.path));
   const [dropOpen, setDropOpen] = useState(false);
   const [micrositeOpen, setMicrositeOpen] = useState(Boolean(microsite)); // Open if microsite already exists
   const [micrositeEnabled, setMicrositeEnabled] = useState(Boolean(microsite));
   // Auto-detect mode: "internal" if href matches a known internal path, else "external"
   const [hrefMode, setHrefMode] = useState(
-    () => INTERNAL_PATHS.has(item.href) ? "internal" : "external"
+    () => internalPaths.has(item.href) ? "internal" : "external"
   );
   const labelEmpty = !item.label.trim();
   const hrefEmpty  = !item.href.trim();
