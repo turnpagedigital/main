@@ -12,12 +12,36 @@
 */
 
 const DEFAULT_BRANCH = "dev";
+const FETCH_TIMEOUT_MS = 10000;
+
+/* All GitHub calls go through this wrapper so a hung connection can't
+   freeze an admin action indefinitely. On timeout/network failure it
+   returns a Response-shaped object with status 0, which the helpers'
+   existing !r.ok paths turn into a friendly error message. */
+async function ghFetch(url, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } catch {
+    return {
+      ok: false,
+      status: 0,
+      text: async () => "",
+      json: async () => ({}),
+    };
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 /* Map GitHub HTTP error codes to friendly, actionable user messages */
 function friendlyGitHubError(status, responseText) {
   const status_int = parseInt(status, 10);
 
   switch (status_int) {
+    case 0:
+      return "GitHub is responding slowly or unreachable. Please try again.";
     case 409:
       return "This file was changed elsewhere. Reload and try again.";
     case 403:
@@ -63,7 +87,7 @@ function contentsUrl(env, path, repo) {
 export async function listDirFromGitHub(env, dirPath, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, dirPath, repo)}?ref=${encodeURIComponent(ref)}`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
+  const r = await ghFetch(url, { headers: githubHeaders(env) });
   if (!r.ok) {
     const text = await r.text();
     return { ok: false, error: makeErrorMessage("GET", r.status, text) };
@@ -85,7 +109,7 @@ export async function listDirFromGitHub(env, dirPath, repo, branch) {
 export async function getFileFromGitHub(env, path, parseLabel, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
+  const r = await ghFetch(url, { headers: githubHeaders(env) });
   if (!r.ok) {
     const text = await r.text();
     return { ok: false, error: makeErrorMessage("GET", r.status, text) };
@@ -119,7 +143,7 @@ export async function getFileFromGitHub(env, path, parseLabel, repo, branch) {
 export async function getFileSha(env, path, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
+  const r = await ghFetch(url, { headers: githubHeaders(env) });
   if (!r.ok) return null;
   const j = await r.json();
   return j.sha || null;
@@ -135,7 +159,7 @@ export async function getFileSha(env, path, repo, branch) {
 export async function getFileBase64FromGitHub(env, path, repo, branch) {
   const ref = branchOf(env, branch);
   const url = `${contentsUrl(env, path, repo)}?ref=${encodeURIComponent(ref)}`;
-  const r = await fetch(url, { headers: githubHeaders(env) });
+  const r = await ghFetch(url, { headers: githubHeaders(env) });
   if (!r.ok) {
     const text = await r.text();
     return { ok: false, error: makeErrorMessage("GET", r.status, text) };
@@ -177,7 +201,7 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
   const commitMessage = message.includes("[skip ci]") ? message : `${message}\n\n[skip ci]`;
   const bodyObj = { message: commitMessage, content: base64Content, branch: ref };
   if (sha) bodyObj.sha = sha;
-  const r = await fetch(url, {
+  const r = await ghFetch(url, {
     method: "PUT",
     headers: { ...githubHeaders(env), "Content-Type": "application/json" },
     body: JSON.stringify(bodyObj),
@@ -195,7 +219,7 @@ async function putContents(env, path, base64Content, sha, message, repo, branch)
 export async function deleteFileFromGitHub(env, path, sha, message, repo, branch) {
   const ref = branchOf(env, branch);
   const url = contentsUrl(env, path, repo);
-  const r = await fetch(url, {
+  const r = await ghFetch(url, {
     method: "DELETE",
     headers: { ...githubHeaders(env), "Content-Type": "application/json" },
     body: JSON.stringify({ message, sha, branch: ref }),

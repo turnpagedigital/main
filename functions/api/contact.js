@@ -165,19 +165,29 @@ export async function onRequestPost(context) {
       </div>
     `;
 
-    // Send to Google Sheet (fire and forget — don't block on it)
+    // Log to Google Sheet. Awaited so the request can't be cancelled when the
+    // handler returns (Workers may drop un-awaited fetches) and failures are
+    // visible — but a sheet failure alone doesn't fail the submission, since
+    // the email below is the primary channel.
     const sheetUrl = env.GOOGLE_SHEET_URL;
     if (sheetUrl) {
-      fetch(sheetUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          firstName, lastName, email, phone, telegram, whatsapp,
-          subject: subjectFriendly, message,
-          source: sourceLabel,
-          timestamp: new Date().toISOString(),
-        }),
-      }).catch((err) => console.error("Google Sheet error:", err.message));
+      try {
+        const sheetRes = await fetch(sheetUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName, lastName, email, phone, telegram, whatsapp,
+            subject: subjectFriendly, message,
+            source: sourceLabel,
+            timestamp: new Date().toISOString(),
+          }),
+        });
+        if (!sheetRes.ok) {
+          console.error("Google Sheet error:", sheetRes.status, (await sheetRes.text()).slice(0, 200));
+        }
+      } catch (err) {
+        console.error("Google Sheet error:", err.message);
+      }
     }
 
     // Send via Resend

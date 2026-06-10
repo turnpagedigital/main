@@ -10,7 +10,7 @@
 */
 
 import { isAuthed, jsonResponse } from "./_utils.js";
-import { githubHeaders, getFileFromGitHub, commitFileToGitHub, getFileSha } from "./_github.js";
+import { githubHeaders, getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
 export async function onRequest({ request, env }) {
   if (!(await isAuthed(request, env))) {
@@ -39,7 +39,7 @@ export async function onRequest({ request, env }) {
     try {
       const histRes = await fetch(`${apiBase}/commits?sha=${branch}&per_page=${limit}`, { headers });
       if (!histRes.ok) {
-        return jsonResponse({ ok: false, error: `GitHub error: ${histRes.status}` }, 500);
+        return jsonResponse({ ok: false, error: `Could not load commit history from GitHub (HTTP ${histRes.status}). Try again in a moment.` }, 500);
       }
       const commits = await histRes.json();
 
@@ -84,10 +84,9 @@ export async function onRequest({ request, env }) {
         body: JSON.stringify({ sha: commitSha, force: true }),
       });
       if (!updateRefRes.ok) {
-        const errText = await updateRefRes.text();
         return jsonResponse({
           ok: false,
-          error: `Could not update ref: ${updateRefRes.status} ${errText.slice(0, 100)}`,
+          error: `GitHub rejected the rollback (HTTP ${updateRefRes.status}). Reload the commit list and try again.`,
         }, 500);
       }
 
@@ -129,16 +128,14 @@ export async function onRequest({ request, env }) {
 async function logRollback(env, entry) {
   try {
     const filePath = "rollback-log.json";
-    const repo = env.GITHUB_REPO;
 
+    // getFileFromGitHub returns { ok, data, sha } — data is the parsed log
     let log = [];
-    try {
-      const existing = await getFileFromGitHub(env, filePath);
-      if (existing) {
-        log = JSON.parse(existing);
-      }
-    } catch {
-      // File doesn't exist yet, start fresh
+    let sha = null;
+    const existing = await getFileFromGitHub(env, filePath);
+    if (existing.ok && Array.isArray(existing.data)) {
+      log = existing.data;
+      sha = existing.sha;
     }
 
     log.push(entry);
@@ -151,7 +148,8 @@ async function logRollback(env, entry) {
     await commitFileToGitHub(
       env,
       filePath,
-      JSON.stringify(log, null, 2),
+      JSON.stringify(log, null, 2) + "\n",
+      sha,
       `Admin: log rollback ${entry.branch} to ${entry.commitSha.slice(0, 7)}`
     );
   } catch (e) {
