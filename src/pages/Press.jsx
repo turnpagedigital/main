@@ -145,6 +145,7 @@ function normalizePressItem(d, i) {
              : d.author !== "Andrew"                         ? "press"
              : "article",
     type:     d.type || "",
+    author:   d.author || "",
     outlet:   d.publication_title || "",
     logoUrl:  d.logo_url || null,
     date:     d.date || null,
@@ -1018,28 +1019,45 @@ function UnifiedCard({ item }) {
         isSocial ? (
           <div style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem",
             margin: `0 0 ${item.excerpt ? "0.7rem" : "0"}` }}>
-            <div style={{
-              width: 36, height: 36, borderRadius: "50%",
-              overflow: "hidden", flexShrink: 0, marginTop: "0.05rem",
-            }}>
-              <img
-                src={bioData.avatar_url || bioData.photo_url || "/andrew.png"}
-                alt="Andrew Glantz"
-                loading="lazy"
-                style={{
-                  width: "100%", height: "100%",
-                  objectFit: "cover", display: "block",
-                  // When a dedicated avatar is uploaded it's already cropped —
-                  // no transforms needed. Fallback to profile photo gets a
-                  // zoom + upward shift to approximate a face crop.
-                  ...(bioData.avatar_url ? {} : {
-                    objectPosition: "50% 18%",
-                    transform: "scale(1.35)",
-                    transformOrigin: "50% 28%",
-                  }),
-                }}
-              />
-            </div>
+            {item.author === "Andrew" ? (
+              <div style={{
+                width: 36, height: 36, borderRadius: "50%",
+                overflow: "hidden", flexShrink: 0, marginTop: "0.05rem",
+              }}>
+                <img
+                  src={bioData.avatar_url || bioData.photo_url || "/andrew.png"}
+                  alt="Andrew Glantz"
+                  loading="lazy"
+                  style={{
+                    width: "100%", height: "100%",
+                    objectFit: "cover", display: "block",
+                    ...(bioData.avatar_url ? {} : {
+                      objectPosition: "50% 18%",
+                      transform: "scale(1.35)",
+                      transformOrigin: "50% 28%",
+                    }),
+                  }}
+                />
+              </div>
+            ) : (
+              <div style={{
+                width: 36, height: 36, borderRadius: 6,
+                flexShrink: 0, marginTop: "0.05rem",
+                background: "#e8e8e8", border: `1px solid ${LINE}`,
+                display: "flex", alignItems: "center", justifyContent: "center",
+              }}>
+                <img
+                  src="/favicon1.png"
+                  alt="Turnpage Digital Markets"
+                  loading="lazy"
+                  style={{
+                    width: 22, height: 22,
+                    objectFit: "contain", display: "block",
+                    filter: "grayscale(1) opacity(0.5)",
+                  }}
+                />
+              </div>
+            )}
             <h3 style={{
               fontFamily: FONT, fontWeight: 700,
               fontSize: "0.85rem", lineHeight: 1.3,
