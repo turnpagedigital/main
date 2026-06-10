@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog, ErrorBanner } from "./shared.jsx";
+import { useTabData } from "./useTabData.js";
 import { MARKETING_PAGES } from "../../data/page-keys.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -35,46 +36,16 @@ function sanitize(data) {
 }
 
 export default function TestimonialsTab({ onDirtyChange }) {
-  const [testimonials, setTestimonials] = useState([]);
-  const [original,     setOriginal]     = useState([]);
-  const [phase,        setPhase]        = useState("loading");
-  const [error,        setError]        = useState("");
-  const [lastSavedAt,  setLastSavedAt]  = useState(null);
+  const {
+    data: testimonials, setData: setTestimonials,
+    phase, error, dirty, lastSavedAt, load, save,
+  } = useTabData({
+    endpoint: "/api/admin/testimonials",
+    parse: body => sanitize(body.data),
+    serialize: testimonials => ({ testimonials }),
+    onDirtyChange,
+  });
   const [deleteConfirm, setDeleteConfirm] = useState(null); // { index, by }
-
-  const dirty = useMemo(() => JSON.stringify(testimonials) !== JSON.stringify(original), [testimonials, original]);
-  useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
-  useEffect(() => { load(); }, []);
-
-  async function load() {
-    setPhase("loading"); setError("");
-    try {
-      const r = await fetch("/api/admin/testimonials", { credentials: "include" });
-      if (r.status === 401) return;
-      const body = await r.json();
-      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
-      const data = sanitize(body.data);
-      setTestimonials(data);
-      setOriginal(JSON.parse(JSON.stringify(data)));
-      setPhase("ready");
-    } catch (e) { setError(e.message); setPhase("error"); }
-  }
-
-  async function save() {
-    setPhase("saving"); setError("");
-    try {
-      const r = await fetch("/api/admin/testimonials", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ testimonials }),
-      });
-      const body = await r.json().catch(() => ({}));
-      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
-      await load();
-      setLastSavedAt(new Date());
-    } catch (e) { setError(e.message); setPhase("ready"); }
-  }
 
   function update(i, patch) {
     setTestimonials(prev => prev.map((t, idx) => idx === i ? { ...t, ...patch } : t));

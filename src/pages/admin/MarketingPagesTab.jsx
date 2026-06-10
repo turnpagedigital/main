@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
+import { useTabData } from "./useTabData.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    MarketingPagesTab — edit the AI Copyright Damages chart data
@@ -52,56 +53,21 @@ function normalize(data) {
 ══════════════════════════════════════════════════════════════════════════ */
 
 export default function MarketingPagesTab({ onDirtyChange, controlledPage }) {
-  const [data,     setData]     = useState(null);
-  const [original, setOriginal] = useState(null);
-  const [phase,    setPhase]    = useState("loading");
-  const [error,    setError]    = useState("");
-  const [lastSavedAt, setLastSavedAt] = useState(null);
+  const {
+    data, setData,
+    phase, error, dirty, lastSavedAt, load, save,
+  } = useTabData({
+    endpoint: "/api/admin/marketing-pages",
+    parse: body => normalize(body.data),
+    serialize: data => data,
+    onDirtyChange,
+  });
   const [activePage, setActivePage] = useState(controlledPage || "aiCopyright");
-
-  const dirty = useMemo(() => {
-    if (!data || !original) return false;
-    return JSON.stringify(data) !== JSON.stringify(original);
-  }, [data, original]);
-
-  useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
-  useEffect(() => { load(); }, []);
 
   // Sync activePage when controlled externally
   useEffect(() => {
     if (controlledPage) setActivePage(controlledPage);
   }, [controlledPage]);
-
-  async function load() {
-    setPhase("loading"); setError("");
-    try {
-      const r = await fetch("/api/admin/marketing-pages", { credentials: "include" });
-      if (r.status === 401) return;
-      const body = await r.json();
-      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
-      const normalized = normalize(body.data);
-      setData(normalized);
-      setOriginal(JSON.parse(JSON.stringify(normalized)));
-      setPhase("ready");
-    } catch (e) { setError(e.message); setPhase("error"); }
-  }
-
-  async function save() {
-    if (!data) return;
-    setPhase("saving"); setError("");
-    try {
-      const r = await fetch("/api/admin/marketing-pages", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(data),
-      });
-      const body = await r.json().catch(() => ({}));
-      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
-      await load();
-      setLastSavedAt(new Date());
-    } catch (e) { setError(e.message); setPhase("ready"); }
-  }
 
   if (phase === "loading") return <CenteredMessage>Loading marketing page content…</CenteredMessage>;
   if (phase === "error" && data === null) return (

@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog, ErrorBanner } from "./shared.jsx";
+import { useTabData } from "./useTabData.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HomeContentTab — manage home page situations (6).
@@ -37,51 +38,16 @@ function normalize(data) {
 }
 
 export default function HomeContentTab({ onDirtyChange }) {
-  const [data,     setData]     = useState(null);   // null = not yet loaded
-  const [original, setOriginal] = useState(null);
-  const [phase,    setPhase]    = useState("loading");
-  const [error,    setError]    = useState("");
-  const [lastSavedAt, setLastSavedAt] = useState(null);
+  const {
+    data, setData,
+    phase, error, dirty, lastSavedAt, load, save,
+  } = useTabData({
+    endpoint: "/api/admin/home-content",
+    parse: body => normalize(body.data),
+    serialize: data => data,
+    onDirtyChange,
+  });
   const [deleteConfirm, setDeleteConfirm] = useState(null); // { situationIndex, title }
-
-  const dirty = useMemo(() => {
-    if (!data || !original) return false;
-    return JSON.stringify(data) !== JSON.stringify(original);
-  }, [data, original]);
-
-  useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
-  useEffect(() => { load(); }, []);
-
-  async function load() {
-    setPhase("loading"); setError("");
-    try {
-      const r = await fetch("/api/admin/home-content", { credentials: "include" });
-      if (r.status === 401) return;
-      const body = await r.json();
-      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
-      const normalized = normalize(body.data);
-      setData(normalized);
-      setOriginal(JSON.parse(JSON.stringify(normalized)));
-      setPhase("ready");
-    } catch (e) { setError(e.message); setPhase("error"); }
-  }
-
-  async function save() {
-    if (!data) return;
-    setPhase("saving"); setError("");
-    try {
-      const r = await fetch("/api/admin/home-content", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(data),
-      });
-      const body = await r.json().catch(() => ({}));
-      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
-      await load();
-      setLastSavedAt(new Date());
-    } catch (e) { setError(e.message); setPhase("ready"); }
-  }
 
   if (phase === "loading") return <CenteredMessage>Loading home content…</CenteredMessage>;
   if (phase === "error" && data === null) return (

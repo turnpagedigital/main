@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
+import { useTabData } from "./useTabData.js";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
 // Default suggestions shown in the datalist dropdowns — user can type anything else
@@ -51,50 +52,19 @@ function sanitizePressItem(d) {
 }
 
 export default function PressTab({ onDirtyChange }) {
-  const [items, setItems] = useState(null);
-  const [original, setOriginal] = useState(null);
-  const [phase, setPhase] = useState("loading");
-  const [error, setError] = useState("");
-  const [lastSavedAt, setLastSavedAt] = useState(null);
-
-  const dirty = useMemo(() => {
-    if (items === null || original === null) return false;
-    return JSON.stringify(items) !== JSON.stringify(original);
-  }, [items, original]);
-
-  useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
-
-  useEffect(() => { load(); }, []);
-
-  async function load() {
-    setPhase("loading"); setError("");
-    try {
-      const r = await fetch("/api/admin/press", { credentials: "include" });
-      if (r.status === 401) return;
-      const body = await r.json();
-      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
+  const {
+    data: items, setData: setItems,
+    phase, error, dirty, lastSavedAt, load, save,
+  } = useTabData({
+    endpoint: "/api/admin/press",
+    parse: body => {
       const fresh = (body.data.items || []).map(sanitizePressItem);
       fresh.sort((a, b) => parseDateForSort(b.date) - parseDateForSort(a.date));
-      setItems(fresh);
-      setOriginal(JSON.parse(JSON.stringify(fresh)));
-      setPhase("ready");
-    } catch (e) { setError(e.message); setPhase("error"); }
-  }
-
-  async function save() {
-    if (items === null) return;
-    setPhase("saving"); setError("");
-    try {
-      const r = await fetch("/api/admin/press", {
-        method: "PUT", headers: { "Content-Type": "application/json" },
-        credentials: "include", body: JSON.stringify({ items }),
-      });
-      const body = await r.json().catch(() => ({}));
-      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
-      await load();
-      setLastSavedAt(new Date());
-    } catch (e) { setError(e.message); setPhase("ready"); }
-  }
+      return fresh;
+    },
+    serialize: items => ({ items }),
+    onDirtyChange,
+  });
 
   if (phase === "loading") return <CenteredMessage>Loading press…</CenteredMessage>;
   if (phase === "error" && items === null) return (

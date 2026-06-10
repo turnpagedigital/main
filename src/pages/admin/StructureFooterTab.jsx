@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
+import { useTabData } from "./useTabData.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    StructureFooterTab — Footer Link Columns + Footer Bottom Bar
@@ -224,55 +225,15 @@ function LinkRow({ link, linkIndex, totalLinks, onUpdate, onMoveUp, onMoveDown, 
 // ── Main Component ──────────────────────────────────────────────────────
 export default function StructureFooterTab({ onDirtyChange }) {
   // ── State ────────────────────────────────────────────────────────────
-  const [footer,          setFooter]          = useState(null);
-  const [originalFooter,  setOriginalFooter]  = useState(null);
-  const [phase,           setPhase]           = useState("loading");
-  const [error,           setError]           = useState("");
-  const [lastSavedAt,     setLastSavedAt]     = useState(null);
-
-  // ── Dirty logic ──────────────────────────────────────────────────────
-  const dirty = useMemo(() => {
-    if (!footer || !originalFooter) return false;
-    return JSON.stringify(footer) !== JSON.stringify(originalFooter);
-  }, [footer, originalFooter]);
-
-  useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
-  useEffect(() => { load(); }, []);
-
-  // ── Load ─────────────────────────────────────────────────────────────
-  async function load() {
-    setPhase("loading"); setError("");
-    try {
-      const res = await fetch("/api/admin/footer", { credentials: "include" });
-      if (res.status === 401) return;
-      const body = await res.json();
-      if (!res.ok || !body.ok) throw new Error(body.error || `HTTP ${res.status}`);
-
-      const normalized = normalizeFooter(body.data);
-      setFooter(normalized);
-      setOriginalFooter(JSON.parse(JSON.stringify(normalized)));
-      setPhase("ready");
-    } catch (e) { setError(e.message); setPhase("error"); }
-  }
-
-  // ── Save ─────────────────────────────────────────────────────────────
-  async function save() {
-    if (!footer) return;
-    setPhase("saving"); setError("");
-    try {
-      const res = await fetch("/api/admin/footer", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify(footer),
-      });
-      const body = await res.json().catch(() => ({}));
-      if (!res.ok || !body.ok) throw new Error(body.error || "Save failed");
-
-      await load();
-      setLastSavedAt(new Date());
-    } catch (e) { setError(e.message); setPhase("ready"); }
-  }
+  const {
+    data: footer, setData: setFooter,
+    phase, error, dirty, lastSavedAt, load, save,
+  } = useTabData({
+    endpoint: "/api/admin/footer",
+    parse: body => normalizeFooter(body.data),
+    serialize: footer => footer,
+    onDirtyChange,
+  });
 
   // ── Early returns ────────────────────────────────────────────────────
   if (phase === "loading") return <CenteredMessage>Loading footer...</CenteredMessage>;

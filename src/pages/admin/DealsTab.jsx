@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
+import { useTabData } from "./useTabData.js";
 
 const FIELD_DEFS = [
   { key: "amt",     label: "Amount",       type: "text",     placeholder: "$270M" },
@@ -33,21 +34,17 @@ function sanitize(d) {
 }
 
 export default function DealsTab({ onDirtyChange }) {
-  const [deals, setDeals] = useState(null);
-  const [original, setOriginal] = useState(null);
+  const {
+    data: deals, setData: setDeals,
+    phase, error, dirty, lastSavedAt, load, save,
+  } = useTabData({
+    endpoint: "/api/admin/deals",
+    parse: body => ({ deals: (body.data.deals || []).map(sanitize) }),
+    serialize: d => ({ deals: d.deals }),
+    onDirtyChange,
+  });
+
   const [pages, setPages] = useState([]);
-  const [phase, setPhase] = useState("loading");
-  const [error, setError] = useState("");
-  const [lastSavedAt, setLastSavedAt] = useState(null);
-
-  const dirty = useMemo(() => {
-    if (!deals || !original) return false;
-    return JSON.stringify(deals) !== JSON.stringify(original);
-  }, [deals, original]);
-
-  useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
-
-  useEffect(() => { load(); }, []);
 
   // Fetch pages from routes
   useEffect(() => {
@@ -68,35 +65,6 @@ export default function DealsTab({ onDirtyChange }) {
       }
     })();
   }, []);
-
-  async function load() {
-    setPhase("loading"); setError("");
-    try {
-      const r = await fetch("/api/admin/deals", { credentials: "include" });
-      if (r.status === 401) return;
-      const body = await r.json();
-      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
-      const fresh = { deals: (body.data.deals || []).map(sanitize) };
-      setDeals(fresh);
-      setOriginal(JSON.parse(JSON.stringify(fresh)));
-      setPhase("ready");
-    } catch (e) { setError(e.message); setPhase("error"); }
-  }
-
-  async function save() {
-    if (!deals) return;
-    setPhase("saving"); setError("");
-    try {
-      const r = await fetch("/api/admin/deals", {
-        method: "PUT", headers: { "Content-Type": "application/json" },
-        credentials: "include", body: JSON.stringify({ deals: deals.deals }),
-      });
-      const body = await r.json().catch(() => ({}));
-      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
-      await load();
-      setLastSavedAt(new Date());
-    } catch (e) { setError(e.message); setPhase("ready"); }
-  }
 
   if (phase === "loading") return <CenteredMessage>Loading deals…</CenteredMessage>;
   if (phase === "error" && deals === null) return (

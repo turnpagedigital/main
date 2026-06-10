@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, filterSelectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
+import { useTabData } from "./useTabData.js";
 import { MARKETING_PAGES } from "../../data/page-keys.js";
 
 // Derived from routes.json via page-keys.js — add/rename pages there, not here
@@ -23,49 +24,15 @@ function sanitizeAlert(a) {
 }
 
 export default function AlertsTab({ onDirtyChange }) {
-  const [items, setItems] = useState(null);
-  const [original, setOriginal] = useState(null);
-  const [phase, setPhase] = useState("loading"); // "loading"|"ready"|"saving"|"error"
-  const [error, setError] = useState("");
-  const [lastSavedAt, setLastSavedAt] = useState(null);
-
-  const dirty = useMemo(() => {
-    if (items === null || original === null) return false;
-    return JSON.stringify(items) !== JSON.stringify(original);
-  }, [items, original]);
-
-  useEffect(() => { onDirtyChange?.(dirty); }, [dirty, onDirtyChange]);
-
-  useEffect(() => { load(); }, []);
-
-  async function load() {
-    setPhase("loading"); setError("");
-    try {
-      const r = await fetch("/api/admin/alerts", { credentials: "include" });
-      if (r.status === 401) return;
-      const body = await r.json();
-      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
-      const fresh = (body.data.alerts || []).map(sanitizeAlert);
-      setItems(fresh);
-      setOriginal(JSON.parse(JSON.stringify(fresh)));
-      setPhase("ready");
-    } catch (e) { setError(e.message); setPhase("error"); }
-  }
-
-  async function save() {
-    if (items === null) return;
-    setPhase("saving"); setError("");
-    try {
-      const r = await fetch("/api/admin/alerts", {
-        method: "PUT", headers: { "Content-Type": "application/json" },
-        credentials: "include", body: JSON.stringify({ alerts: items }),
-      });
-      const body = await r.json().catch(() => ({}));
-      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
-      await load();
-      setLastSavedAt(new Date());
-    } catch (e) { setError(e.message); setPhase("ready"); }
-  }
+  const {
+    data: items, setData: setItems,
+    phase, error, dirty, lastSavedAt, load, save,
+  } = useTabData({
+    endpoint: "/api/admin/alerts",
+    parse: body => (body.data.alerts || []).map(sanitizeAlert),
+    serialize: items => ({ alerts: items }),
+    onDirtyChange,
+  });
 
   if (phase === "loading") return <CenteredMessage>Loading alerts…</CenteredMessage>;
   if (phase === "error" && items === null) return (
