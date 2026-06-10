@@ -56,29 +56,31 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
   async function load() {
     setPhase("loading"); setError("");
     try {
-      // Fetch both navigation and routes in parallel
-      const [navRes, routesRes] = await Promise.all([
-        fetch("/api/admin/navigation", { credentials: "include" }),
-        fetch("/api/admin/routes", { credentials: "include" }),
-      ]);
-
-      if (navRes.status === 401 || routesRes.status === 401) return;
-
+      // Fetch navigation (required)
+      const navRes = await fetch("/api/admin/navigation", { credentials: "include" });
+      if (navRes.status === 401) return;
       const navBody = await navRes.json();
-      const routesBody = await routesRes.json();
-
       if (!navRes.ok || !navBody.ok) throw new Error(navBody.error || `Navigation HTTP ${navRes.status}`);
-      if (!routesRes.ok || !routesBody.ok) throw new Error(routesBody.error || `Routes HTTP ${routesRes.status}`);
 
       const fetchedItems      = Array.isArray(navBody.data?.items) ? navBody.data.items : [];
       const fetchedMicrosites = navBody.data?.microsites && typeof navBody.data.microsites === "object"
         ? navBody.data.microsites : {};
-      const fetchedRoutes = routesBody.routes || [];
 
-      // Convert routes to page selector format: { key, label, path }
-      const pageList = fetchedRoutes
-        .filter(r => !r.dynamic && r.key !== "admin")
-        .map(r => ({ key: r.key, label: r.title, path: r.path }));
+      // Fetch routes (optional — if it fails, use empty pages list)
+      let pageList = [];
+      try {
+        const routesRes = await fetch("/api/admin/routes", { credentials: "include" });
+        if (routesRes.ok) {
+          const routesBody = await routesRes.json();
+          if (routesBody.ok && routesBody.routes) {
+            pageList = routesBody.routes
+              .filter(r => !r.dynamic && r.key !== "admin")
+              .map(r => ({ key: r.key, label: r.title, path: r.path }));
+          }
+        }
+      } catch {
+        // Routes fetch failed — continue with empty pages list
+      }
 
       setItems(fetchedItems);
       setOriginalItems(JSON.parse(JSON.stringify(fetchedItems)));
