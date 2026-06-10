@@ -1,70 +1,52 @@
 /**
- * Palette Resolver — Convert token references to actual hex values
+ * Palette Resolver — section color schemes, resolved against design tokens.
  *
- * Each palette scheme specifies which tokens to use (e.g., "NEON", "INK").
- * This utility resolves those token names to their actual hex values.
- * Inline hex values (starting with #) are passed through as-is.
+ * section-palettes.json is the single source of truth for template-section
+ * colors (FAQ, Testimonials, CTA). Each scheme maps slot names to either a
+ * token name from tokens.js or a literal CSS value; resolveScheme() turns
+ * that into ready-to-use colors. Layout components call getSectionTheme().
+ *
+ * Editing flow: /admin/css → Section Palettes commits section-palettes.json;
+ * the deployed site picks the change up on the next build (~1–2 min).
  */
 
 import * as TokenModule from "../data/tokens.js";
 import SECTION_PALETTES from "../data/section-palettes.json";
+import { resolveScheme } from "./resolve-scheme.js";
 
 /**
- * Resolve a palette scheme to actual color values
- * @param {string} sectionType - e.g., "faq", "testimonials", "cta"
- * @param {string} schemeId - e.g., "light", "dark", "light-card"
- * @returns {object} Resolved color values, e.g., { background: "#E5E7EB", text: "#0A0A0A", ... }
+ * Resolve a palette scheme to actual color values.
+ * @param {string} sectionType - e.g. "faq", "testimonials", "cta"
+ * @param {string} schemeId    - e.g. "light", "dark", "light-card"
+ * @returns {object} resolved slot map, {} if unknown
  */
 export function resolvePaletteTokens(sectionType, schemeId) {
-  const section = SECTION_PALETTES[sectionType];
-  if (!section) {
-    console.warn(`Palette resolver: unknown section type "${sectionType}"`);
-    return {};
-  }
-
-  const scheme = section.schemes[schemeId];
-  if (!scheme) {
-    console.warn(`Palette resolver: unknown scheme "${schemeId}" for section "${sectionType}"`);
-    return {};
-  }
-
-  const resolved = {};
-
-  Object.entries(scheme.tokens || {}).forEach(([key, val]) => {
-    if (typeof val !== "string") {
-      resolved[key] = val;
-      return;
-    }
-
-    // If the value is a direct hex color, use it as-is
-    if (val.startsWith("#") || val.startsWith("rgba")) {
-      resolved[key] = val;
-      return;
-    }
-
-    // Otherwise, look up the token name in the tokens module
-    const tokenValue = TokenModule[val];
-    if (tokenValue === undefined) {
-      console.warn(`Palette resolver: unknown token "${val}" referenced in palette ${sectionType}.${schemeId}`);
-      resolved[key] = val; // fallback: use the token name itself
-      return;
-    }
-
-    resolved[key] = tokenValue;
-  });
-
-  return resolved;
+  const scheme = SECTION_PALETTES[sectionType]?.schemes?.[schemeId];
+  if (!scheme) return {};
+  return resolveScheme(scheme.tokens, TokenModule);
 }
 
 /**
- * Get available palettes for a given section type
- * @param {string} sectionType - e.g., "faq"
- * @returns {array} Array of { id, displayName, description }
+ * Resolve a scheme with a fallback — mirrors the old per-component
+ * `THEMES[colorScheme] || THEMES.<default>` behavior exactly.
+ * @param {string} sectionType
+ * @param {string} schemeId        - requested scheme (may be unknown)
+ * @param {string} fallbackScheme  - scheme to use when schemeId is unknown
+ */
+export function getSectionTheme(sectionType, schemeId, fallbackScheme) {
+  const schemes = SECTION_PALETTES[sectionType]?.schemes || {};
+  const id = schemes[schemeId] ? schemeId : fallbackScheme;
+  if (!schemes[id]) return {};
+  return resolveScheme(schemes[id].tokens, TokenModule);
+}
+
+/**
+ * Get available palettes for a given section type.
+ * @returns {array} [{ id, displayName, description }]
  */
 export function getPalettesForSection(sectionType) {
   const section = SECTION_PALETTES[sectionType];
   if (!section) return [];
-
   return Object.values(section.schemes).map((scheme) => ({
     id: scheme.id,
     displayName: scheme.displayName,
@@ -73,8 +55,7 @@ export function getPalettesForSection(sectionType) {
 }
 
 /**
- * Get the default palette scheme for a section type
- * (Currently: "light" is default for most; "dark" for CTA)
+ * Get the default palette scheme for a section type.
  * @param {string} sectionType
  * @returns {string} Scheme ID
  */
@@ -83,7 +64,5 @@ export function getDefaultPaletteForSection(sectionType) {
   return "light";
 }
 
-/**
- * Export the raw SECTION_PALETTES for admin UI use
- */
+/** Export the raw registry (admin UI + scheme-visuals helpers). */
 export { SECTION_PALETTES };

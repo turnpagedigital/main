@@ -1,4 +1,5 @@
 {
+  "_comment": "Color schemes for template sections (FAQ, Testimonials, CTA). These are LIVE — the layout components in src/components/sections/{FAQ,Testimonials,CTA}/ resolve their colors from this file via src/lib/palette-resolver.js. Values are either token names from src/data/tokens.js (UPPER_SNAKE) or literal CSS colors. Lowercase non-color strings (e.g. headerTheme) pass through as-is. Edit via /admin/css → Section Palettes, or here directly. Cards-family sections (service-cards, audience-cards, comparison, how-it-works, our-edge) still style themselves inline and are intentionally absent.",
   "faq": {
     "id": "faq",
     "displayName": "FAQ Section",
@@ -6,54 +7,35 @@
     "schemes": {
       "light": {
         "id": "light",
-        "displayName": "Light Background",
-        "description": "Light gray background with dark text, ideal for subpages",
+        "displayName": "Light",
+        "description": "Soft gray background (#F4F5F7) with dark text",
         "tokens": {
-          "background": "PAPER",
+          "background": "SECONDARY_BG",
           "text": "INK",
-          "accent": "NEON",
-          "border": "LINE",
-          "secondaryText": "INK_60",
-          "accentBg": "NEON_SOFT"
+          "textSecondary": "INK_60",
+          "border": "LINE"
         }
       },
       "light-gray": {
         "id": "light-gray",
         "displayName": "Light Gray",
-        "description": "Slightly darker gray for contrast",
+        "description": "Deeper gray background (#ECECEE)",
         "tokens": {
-          "background": "PAPER_2",
+          "background": "#ECECEE",
           "text": "INK",
-          "accent": "NEON",
-          "border": "LINE_STRONG",
-          "secondaryText": "INK_60",
-          "accentBg": "NEON_SOFT"
+          "textSecondary": "INK_60",
+          "border": "LINE"
         }
       },
       "light-card": {
         "id": "light-card",
-        "displayName": "Light Card",
-        "description": "White cards on light background (Home page style)",
+        "displayName": "White",
+        "description": "Pure white background",
         "tokens": {
           "background": "SURFACE",
           "text": "INK",
-          "accent": "NEON",
-          "border": "LINE",
-          "secondaryText": "INK_60",
-          "accentBg": "NEON_SOFT"
-        }
-      },
-      "dark": {
-        "id": "dark",
-        "displayName": "Dark Background",
-        "description": "Black background with white text",
-        "tokens": {
-          "background": "DARK",
-          "text": "TEXT",
-          "accent": "NEON",
-          "border": "DARK_BORDER",
-          "secondaryText": "MUTED",
-          "accentBg": "NEON_SOFT_DARK"
+          "textSecondary": "INK_60",
+          "border": "LINE"
         }
       }
     }
@@ -61,170 +43,74 @@
   "testimonials": {
     "id": "testimonials",
     "displayName": "Testimonials Section",
-    "description": "Customer testimonials and quotes",
+    "description": "Client testimonials and quotes",
     "schemes": {
       "light": {
         "id": "light",
-        "displayName": "Light Background",
-        "description": "Light gray background",
+        "displayName": "White",
+        "description": "Pure white background with dark text",
         "tokens": {
-          "background": "PAPER",
-          "text": "INK",
-          "accent": "NEON",
-          "border": "LINE",
-          "secondaryText": "INK_60",
-          "cardBg": "SURFACE",
-          "cardBorder": "LINE"
+          "background": "SURFACE",
+          "quote": "INK",
+          "attribution": "INK_60",
+          "border": "INK",
+          "headerTheme": "light",
+          "quoteMark": "rgba(10,10,10,0.08)",
+          "featuredAttribution": "rgba(10,10,10,0.5)",
+          "attrLine": "rgba(10,10,10,0.15)",
+          "featuredEyebrow": "rgba(10,10,10,0.45)"
         }
       },
       "light-gray": {
         "id": "light-gray",
         "displayName": "Light Gray",
+        "description": "Soft gray background (#F4F5F7)",
         "tokens": {
-          "background": "PAPER_2",
-          "text": "INK",
-          "accent": "NEON",
-          "border": "LINE_STRONG",
-          "secondaryText": "INK_60",
-          "cardBg": "SURFACE",
-          "cardBorder": "LINE"
-        }
-      },
-      "light-card": {
-        "id": "light-card",
-        "displayName": "Light Card",
-        "description": "White cards on light background (Home page style)",
-        "tokens": {
-          "background": "SURFACE",
-          "text": "INK",
-          "accent": "NEON",
-          "border": "LINE",
-          "secondaryText": "INK_60",
-          "cardBg": "PAPER",
-          "cardBorder": "LINE"
+          "background": "SECONDARY_BG",
+          "quote": "INK",
+          "attribution": "INK_60",
+          "border": "INK",
+          "headerTheme": "light",
+          "quoteMark": "rgba(10,10,10,0.07)",
+          "featuredAttribution": "rgba(10,10,10,0.5)",
+          "attrLine": "rgba(10,10,10,0.15)",
+          "featuredEyebrow": "rgba(10,10,10,0.45)"
         }
       },
       "dark": {
         "id": "dark",
-        "displayName": "Dark Background",
+        "displayName": "Dark",
+        "description": "Near-black background with white text",
         "tokens": {
-          "background": "DARK",
-          "text": "TEXT",
-          "accent": "NEON",
-          "border": "DARK_BORDER",
-          "secondaryText": "MUTED",
-          "cardBg": "DARK_CARD",
-          "cardBorder": "DARK_BORDER"
+          "background": "DARK_CARD",
+          "quote": "TEXT",
+          "attribution": "rgba(255,255,255,0.55)",
+          "border": "TEXT",
+          "headerTheme": "dark",
+          "quoteMark": "rgba(212,255,0,0.12)",
+          "featuredAttribution": "rgba(255,255,255,0.5)",
+          "attrLine": "rgba(255,255,255,0.15)",
+          "featuredEyebrow": "rgba(255,255,255,0.45)"
         }
       }
     }
   },
   "cta": {
     "id": "cta",
-    "displayName": "Call-to-Action Section",
-    "description": "Various CTA layouts (button, banner, card)",
+    "displayName": "CTA Section",
+    "description": "Quote Card CTA (Photo Banner and Bottom CTA layouts use fixed styling)",
     "schemes": {
-      "dark": {
-        "id": "dark",
-        "displayName": "Dark Card",
-        "description": "Dark background CTA card (Get Quote style)",
-        "tokens": {
-          "background": "DARK",
-          "text": "TEXT",
-          "accent": "NEON",
-          "border": "DARK_BORDER",
-          "secondaryText": "MUTED",
-          "buttonBg": "NEON",
-          "buttonText": "DARK"
-        }
-      },
-      "light": {
-        "id": "light",
-        "displayName": "Light Card",
-        "description": "Light background CTA",
-        "tokens": {
-          "background": "PAPER",
-          "text": "INK",
-          "accent": "NEON",
-          "border": "LINE",
-          "secondaryText": "INK_60",
-          "buttonBg": "NEON",
-          "buttonText": "DARK"
-        }
-      },
-      "photo": {
-        "id": "photo",
-        "displayName": "Photo Background",
-        "description": "Full-bleed photo background with text overlay",
-        "tokens": {
-          "background": "#000",
-          "text": "TEXT",
-          "accent": "NEON",
-          "border": "DARK_BORDER",
-          "secondaryText": "MUTED",
-          "buttonBg": "NEON",
-          "buttonText": "DARK",
-          "overlayOpacity": "0.7"
-        }
-      }
-    }
-  },
-  "copy": {
-    "id": "copy",
-    "displayName": "Copy Block",
-    "description": "Text-based content sections",
-    "schemes": {
-      "light": {
-        "id": "light",
-        "displayName": "Light",
-        "tokens": {
-          "background": "PAPER",
-          "text": "INK",
-          "accent": "NEON",
-          "secondaryText": "INK_60",
-          "border": "LINE"
-        }
-      },
       "dark": {
         "id": "dark",
         "displayName": "Dark",
+        "description": "Black background, neon accents",
         "tokens": {
           "background": "DARK",
-          "text": "TEXT",
-          "accent": "NEON",
-          "secondaryText": "MUTED",
-          "border": "DARK_BORDER"
-        }
-      }
-    }
-  },
-  "experience": {
-    "id": "experience",
-    "displayName": "Experience / Stats",
-    "description": "Statistics and key metrics display",
-    "schemes": {
-      "light": {
-        "id": "light",
-        "displayName": "Light",
-        "tokens": {
-          "background": "PAPER",
-          "text": "INK",
-          "accent": "NEON",
-          "secondaryText": "INK_60",
-          "cardBg": "SURFACE",
-          "cardBorder": "LINE"
-        }
-      },
-      "dark": {
-        "id": "dark",
-        "displayName": "Dark",
-        "tokens": {
-          "background": "DARK",
-          "text": "TEXT",
-          "accent": "NEON",
-          "secondaryText": "MUTED",
-          "cardBg": "DARK_CARD",
-          "cardBorder": "DARK_BORDER"
+          "border": "rgba(255,255,255,0.15)",
+          "eyebrow": "NEON",
+          "title": "TEXT",
+          "body": "MUTED",
+          "accent": "NEON"
         }
       }
     }
