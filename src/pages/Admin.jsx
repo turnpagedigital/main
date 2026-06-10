@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback, Suspense, lazy } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { CenteredMessage, LoginForm, btnStyle } from "./admin/shared.jsx";
+import RollbackButton from "./admin/RollbackButton.jsx";
 
 // Lazy-load each master tab to reduce the admin bundle size from 779 KB
 const SharedContentTab  = lazy(() => import("./admin/SharedContentTab.jsx"));
@@ -215,6 +216,16 @@ export default function Admin() {
           {/* Deploy buttons (shown when idle, deploying, done, or error) */}
           {deployState !== "confirm-dev" && deployState !== "confirm-prod" && (
             <>
+              <RollbackButton
+                deployState={deployState}
+                deployMsg={deployMsg}
+                onRollbackStart={() => setDeployState("deploying")}
+                onRollbackDone={(data) => {
+                  setDeployState("done");
+                  setDeployMsg(data.message || "Rollback complete.");
+                  setTimeout(() => setDeployState("idle"), 6000);
+                }}
+              />
               <button
                 disabled={deployState === "deploying"}
                 onClick={() => setDeployState("confirm-dev")}
