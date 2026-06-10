@@ -18,6 +18,13 @@ cd "/Users/waquoitcapital/Library/CloudStorage/Dropbox/Career/Current Roles/Turn
 ```
 Note: After push, changes take ~1-2 min. User may need Cmd+Shift+R to clear cache.
 
+## Checks (run before pushing)
+```bash
+npm run lint    # ESLint — errors gate real breakage; warnings are advisory
+npm test        # node:test unit tests (nav cascade, session HMAC, redirects)
+npm run build   # Vite build must stay green
+```
+
 ## Site Structure (rebuilt April 2026, refactored May 2026)
 
 The site is a multi-page Vite/React SPA with **HTML5 history routing** (clean paths, not hash fragments). Positioning is **TPDM as the OTC desk for rights holders**, with sub-brands per claim type. AI Copyright is the headline sub-brand; Crypto is live; Bankruptcy is "Coming Soon."
@@ -179,12 +186,17 @@ Admin tabs do NOT auto-generate forms from JSON. Fields are explicitly listed in
 
 ### Shared admin helpers
 
-- `functions/api/admin/_github.js` — `getFileFromGitHub`, `commitFileToGitHub`, `commitBinaryToGitHub`, `getFileSha`, `listDirFromGitHub`, `findUrlReferences`, `deleteFileFromGitHub`. All GitHub calls have a 10s timeout. Signatures: reads return `{ ok, text, data, sha }`; `commitFileToGitHub(env, path, content, sha, message)` — **sha comes before message**.
+- `functions/api/admin/_github.js` — `getFileFromGitHub`, `commitFileToGitHub`, `commitBinaryToGitHub`, **`commitFilesToGitHub`** (atomic multi-file commit via Git Data API — use it whenever a save spans files; supports `content: null` deletions and `contentBase64` binaries, retries once on a ref race), `getFileSha`, `listDirFromGitHub`, `findUrlReferences`, `deleteFileFromGitHub`. All GitHub calls have a 10s timeout. Signatures: reads return `{ ok, text, data, sha }`; `commitFileToGitHub(env, path, content, sha, message)` — **sha comes before message**.
 - `functions/api/admin/_routes.js` — `detectRouteReferences`, `applyRouteReferences` (nav.json cascade for path renames; used by both `routes.js` and `page-path.js`)
-- `functions/api/admin/_utils.js` — `isAuthed(request, env)` (async — always `await`), `jsonResponse`, `constantTimeEqual`, session cookie helpers
+- `functions/api/admin/_utils.js` — `isAuthed(request, env)` (async — always `await`), `jsonResponse`, `constantTimeEqual`, `sessionSecret` (session cookies are signed with ADMIN_SECRET+ADMIN_PASSWORD — rotating either env var logs every session out), cookie helpers
 - `src/pages/admin/shared.jsx` — `inputStyle`, `selectStyle`, `btnStyle`, `btnPrimaryStyle`, `iconBtnStyle`, `formatTime`, `CenteredMessage`, `LoginForm`, `Banner`, `Modal`, `ConfirmDialog`, `ErrorBanner`, `SubTabStrip`, `useSubTabs`, style consts (`cardStyle`, `labelStyle`, `wrapStyle`)
+- `src/pages/admin/useTabData.js` — **the standard tab lifecycle** (load/save/dirty/error/lastSavedAt). All standard content tabs use it; when adding a new admin tab, start here. Bespoke flows (Posts, Briefings, Assets, Routes, PageBuilder, NavItems, SiteMeta, Favicons, IntelligenceDefaults) intentionally don't.
 
 Never duplicate these — always import from the shared modules.
+
+### Page URL changes & redirects
+
+Changing a page's URL (Page Builder → path field, or the Routes tab) cascades through routes.json, nav.json, footer.json, and page-compositions.json in one atomic commit. The Page Builder flow also appends a `301` rule to `public/_redirects` (Cloudflare-native), so old links keep working after the next deploy.
 
 ## Design Tokens
 - Neon green: #D4FF00
