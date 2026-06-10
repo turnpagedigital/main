@@ -84,7 +84,7 @@ export default function FAQPage() {
 
         {/* FAQ Accordion */}
         {filteredFAQs.length > 0 ? (
-          <FAQ faqs={filteredFAQs} />
+          <FAQ items={filteredFAQs} />
         ) : (
           <div style={{
             textAlign: "center",
