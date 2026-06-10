@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
-import { hashHref } from "../lib/router.js";
+import { hashHref, navigate } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 import navData from "../data/nav.json";
 import pageCompositions from "../data/page-compositions.json";
@@ -96,13 +96,16 @@ export default function NavBar({ currentPage }) {
         padding: "0.85rem clamp(1.25rem,3vw,2.5rem)",
         display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16,
       }}>
-        {/* Logo — always links home */}
+        {/* Logo — always links home and resets microsite nav */}
         <a
           href={hashHref("")}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             close();
             // Clear microsite context when returning to main site via logo
             sessionStorage.removeItem('activeMicrosite');
+            // Explicitly navigate to home to ensure route changes
+            navigate("/");
           }}
           style={{ display: "flex", alignItems: "center", flexShrink: 0 }}
           aria-label="Turnpage Digital Markets — Home"
