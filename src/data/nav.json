@@ -19,7 +19,7 @@
       "id": "ai-copyright",
       "label": "Copyright Claims",
       "href": "/copyright",
-      "active": true,
+      "active": false,
       "labelKey": "nav.copyright",
       "dropdown": {
         "title": "Copyright Claims",
@@ -52,7 +52,7 @@
       "id": "crypto",
       "label": "Locked Crypto",
       "href": "/crypto",
-      "active": true,
+      "active": false,
       "labelKey": "nav.crypto",
       "dropdown": {
         "title": "Locked Crypto",
@@ -85,7 +85,7 @@
       "id": "litigation-finance",
       "label": "Litigation Funding",
       "href": "/litigation-funding",
-      "active": true,
+      "active": false,
       "labelKey": "nav.litigation",
       "dropdown": {
         "title": "Litigation Funding",
@@ -118,7 +118,7 @@
       "id": "tariff-refunds",
       "label": "Tariff Refunds",
       "href": "https://www.rewindtariffs.com",
-      "active": true,
+      "active": false,
       "labelKey": "nav.tariff",
       "external": true,
       "dropdown": {
@@ -151,6 +151,12 @@
           "external": true
         }
       }
+    },
+    {
+      "id": "item-1781195939905",
+      "label": "Team",
+      "href": "/team",
+      "active": true
     },
     {
       "id": "press",
