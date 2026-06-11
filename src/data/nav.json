@@ -154,13 +154,34 @@
     },
     {
       "id": "item-1781198075347",
-      "label": "Actively Funding",
+      "label": "What we Fund",
       "href": "/#what-we-cover",
       "active": true
     },
     {
+      "id": "item-1781198101329",
+      "label": "Team",
+      "href": "/#leadership",
+      "active": true,
+      "dropdown": {
+        "title": "",
+        "body": "",
+        "links": [],
+        "cta": {
+          "label": "",
+          "href": "/"
+        }
+      }
+    },
+    {
+      "id": "item-1781204786861",
+      "label": "Experience",
+      "href": "/#experience",
+      "active": true
+    },
+    {
       "id": "item-1781195939905",
-      "label": "Our Edge",
+      "label": "Advantage",
       "href": "/#Our edge",
       "active": true,
       "dropdown": {
@@ -183,27 +204,6 @@
         "cta": {
           "label": "Contact Us",
           "href": "/contact?"
-        }
-      }
-    },
-    {
-      "id": "item-1781204786861",
-      "label": "Experience",
-      "href": "/#experience",
-      "active": true
-    },
-    {
-      "id": "item-1781198101329",
-      "label": "Team",
-      "href": "/#leadership",
-      "active": true,
-      "dropdown": {
-        "title": "",
-        "body": "",
-        "links": [],
-        "cta": {
-          "label": "",
-          "href": "/"
         }
       }
     },
