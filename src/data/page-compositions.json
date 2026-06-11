@@ -263,9 +263,9 @@
           "colorScheme": "dark",
           "content": {
             "eyebrow": "How we Help",
-            "title": "Three steps to close.",
+            "title": "Get paid in three simple steps.",
             "accent": "",
-            "kicker": "",
+            "kicker": "We help you stay on top of compensation opportunities, gather evidence, meet key deadlines and get paid faster. ",
             "colorScheme": "dark",
             "steps": [
               {
@@ -290,7 +290,7 @@
             "cardStyle": "liquid-glass",
             "cardRadius": "square",
             "_bookmark": "how-we-help",
-            "backgroundImage": ""
+            "backgroundImage": "/bg-paper.jpg"
           }
         },
         {
