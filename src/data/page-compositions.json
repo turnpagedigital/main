@@ -278,7 +278,7 @@
                 "id": "step-2",
                 "n": "02",
                 "title": "File Your Claim(s)",
-                "body": "Need help filing a claim? We can help you identify the materials you need to prove what you're owed and reduce the error rate. "
+                "body": "Need help filing a claim? We can help you identify the materials you need to prove what you're owed and reduce the error rate. \n\n"
               },
               {
                 "id": "step-3",
@@ -287,7 +287,7 @@
                 "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you."
               }
             ],
-            "cardStyle": "liquid-glass",
+            "cardStyle": "clear-glass",
             "cardRadius": "square",
             "_bookmark": "how-we-help",
             "backgroundImage": "/library/data-center-2.jpg"
