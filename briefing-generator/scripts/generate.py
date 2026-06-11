@@ -179,7 +179,39 @@ def build_news_block(items):
 def read_text(p):
     return p.read_text(encoding="utf-8") if p.exists() else ""
 
-def build_prompt(topic, brand_styling, skill_md, sources_md, news_block=""):
+def build_case_truth_block(topic_slug):
+    """Compact authoritative block from the repo's tracked-case data so the
+    model can't drift on cases we already track (e.g. settlement posture)."""
+    cases_dir = REPO_ROOT / "cases"
+    if not cases_dir.exists():
+        return ""
+    blocks = []
+    for md_file in sorted(cases_dir.glob("*.md")):
+        if md_file.name == "README.md":
+            continue
+        try:
+            head = md_file.read_text(encoding="utf-8")[:2000]
+        except Exception:
+            continue
+        if topic_slug not in head:
+            continue
+        slug = md_file.stem
+        data_file = cases_dir / "data" / f"{slug}.json"
+        entry = f"## {slug}\n{head[:900]}"
+        if data_file.exists():
+            try:
+                entry += "\n### live data\n" + data_file.read_text(encoding="utf-8")[:900]
+            except Exception:
+                pass
+        blocks.append(entry)
+        if len(blocks) >= 3:
+            break
+    if not blocks:
+        return ""
+    return ("# Tracked-case ground truth (AUTHORITATIVE — overrides anything "
+            "you believe from memory; never contradict this)\n\n" + "\n\n".join(blocks) + "\n\n")
+
+def build_prompt(topic, brand_styling, skill_md, sources_md, news_block="", case_truth_block=""):
     return f"""You are producing today's daily-briefing advisory for {topic['display']} for Andrew at Turnpage Digital Markets.
 
 TODAY: {DATE_PRETTY}
@@ -198,7 +230,7 @@ You must follow the SKILL.md spec verbatim. The output is **MARKDOWN ONLY** — 
 
 {sources_md[:4000]}
 
-{news_block}# Your task
+{case_truth_block}{news_block}# Your task
 
 Produce the FULL rich advisory in markdown format per the SKILL.md output spec. Sections:
 
@@ -229,7 +261,11 @@ Produce the FULL rich advisory in markdown format per the SKILL.md output spec. 
 
 Inline citations must use the format `(__[Source Name](https://url)__)` for every factual proposition. Voice: {topic['voice']}. Length: 1,500–2,500 words. Density at the Bartz-passage level (full case caption + docket + judge + courtroom + dollar figures + percentages + statutory citations). Apply incremental-focus rules from SKILL.md — carry forward prior advisory's analytical content; today's lede surfaces NEW + DELTA matters; STALE matters stay in body, do not strip.
 
-If you cannot access live news (you are an LLM), produce a plausible advisory based on the most recent publicly-known developments and clearly mark uncertain claims with `(__[Source Name — needs verification](URL)__)`.
+VERIFICATION RULES (hard requirements):
+- You have a web_search tool. USE IT to verify every case posture, docket number, judge, dollar figure, percentage, and date before asserting it, and to find the specific article or primary-source page for each citation.
+- Every factual proposition must cite a specific URL you confirmed THIS run: from the news scan above, your web_search results, or the tracked-case ground truth. Cite the article/filing page itself — never a bare outlet homepage.
+- The tracked-case ground truth block is authoritative. If your memory of a case conflicts with it, the block wins.
+- If you cannot verify a claim, OMIT it entirely. Do not write "plausible" developments. Never use the phrase "needs verification".
 
 Output: markdown only. Start with `# {topic['emoji']}`. End with the "informational purposes" disclaimer line. No prose outside the markdown.
 """
@@ -323,14 +359,22 @@ def main():
             news_block = build_enriched_news_block(enriched_items)
         else:
             news_block = build_news_block([])  # fallback for no headlines
-        prompt = build_prompt(topic, brand_styling, skill_md, sources_md, news_block)
+        case_truth_block = build_case_truth_block(topic['slug'])
+        if case_truth_block:
+            print(f"  ground truth: tracked-case block included")
+        prompt = build_prompt(topic, brand_styling, skill_md, sources_md, news_block, case_truth_block)
 
         response = client.messages.create(
             model="claude-sonnet-4-6",
             max_tokens=16000,
+            tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 8}],
             messages=[{"role": "user", "content": prompt}],
         )
-        advisory_md = response.content[0].text.strip()
+        # With server-side tools the content list interleaves search blocks
+        # with text blocks — join every text block.
+        advisory_md = "".join(
+            b.text for b in response.content if getattr(b, "type", "") == "text"
+        ).strip()
         # Strip code fences if present
         if advisory_md.startswith("```"):
             advisory_md = advisory_md.split("\n", 1)[1].rsplit("```", 1)[0].strip()
@@ -339,6 +383,14 @@ def main():
         topic_dir = REPO_ROOT / topic['slug']
         public_dir = topic_dir / "public"
         public_dir.mkdir(parents=True, exist_ok=True)
+        # Grounding guards — loud warnings if the model slipped
+        nv = advisory_md.lower().count("needs verification")
+        if nv:
+            print(f"  ! WARNING: {nv} 'needs verification' markers remain", file=sys.stderr)
+        homepage_cites = len(re.findall(r"\]\(https?://[^/)]+/?\)", advisory_md))
+        if homepage_cites:
+            print(f"  ! WARNING: {homepage_cites} homepage-only citations", file=sys.stderr)
+
         advisory_path = public_dir / f"advisory-{DATE_ISO}.md"
         advisory_path.write_text(advisory_md, encoding="utf-8")
         print(f"  ✓ wrote {advisory_path.relative_to(REPO_ROOT)} ({len(advisory_md)} chars)")
