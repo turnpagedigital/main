@@ -1,6 +1,7 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60 } from "../../data/tokens.js";
 import Card from "../Card.jsx";
+import { sectionBackground } from "../../lib/section-background.js";
 import LiquidGlassCard from "../LiquidGlassCard.jsx";
 
 /* HowItWorksSection — numbered step sequence.
@@ -26,13 +27,15 @@ export default function HowItWorksSection({ sectionConfig }) {
   const cardStyle        = c.cardStyle   || "standard";
   const cardRadius       = c.cardRadius  || "rounded";
   const backgroundImage  = c.backgroundImage || "";
+  const imageFilter         = c.imageFilter || "dark";
+  const imageFilterStrength = c.imageFilterStrength ?? 30;
 
   if (!steps.length) return null;
 
   const isDark    = colorScheme === "dark";
   const isWhite   = colorScheme === "white";
   const sectionBg = backgroundImage
-    ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${backgroundImage}') center/cover no-repeat`
+    ? sectionBackground(backgroundImage, imageFilter, imageFilterStrength)
     : isDark ? "#0A0B0E" : isWhite ? "#FFFFFF" : "#F4F5F7";
   const textColor = isDark ? "#fff" : "#0A0A0A";
   const eyebrowColor = isDark ? NEON : INK_60;

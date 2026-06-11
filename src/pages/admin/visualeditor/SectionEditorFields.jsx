@@ -241,6 +241,18 @@ export default function SectionEditorFields({ typeId, form, set }) {
             </div>
           </div>
           <div style={fieldGroup}><label style={labelStyle}>Background Image (URL)</label><input style={inputStyle} value={form.backgroundImage || ""} onChange={e => set("backgroundImage", e.target.value)} placeholder="https://..." /></div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div><label style={labelStyle}>Image filter</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilter || "dark"} onChange={e => set("imageFilter", e.target.value)}>
+                <option value="dark">Darken</option>
+                <option value="light">Lighten</option>
+                <option value="none">None</option>
+              </select>
+            </div>
+            <div><label style={labelStyle}>Filter strength %</label>
+              <input type="number" min="0" max="100" style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilterStrength ?? 30} onChange={e => set("imageFilterStrength", e.target.value === "" ? "" : Math.max(0, Math.min(100, Number(e.target.value))))} disabled={form.imageFilter === "none"} />
+            </div>
+          </div>
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Accent</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
@@ -284,6 +296,18 @@ export default function SectionEditorFields({ typeId, form, set }) {
             </div>
           </div>
           <div style={fieldGroup}><label style={labelStyle}>Background Image (URL)</label><input style={inputStyle} value={form.backgroundImage || ""} onChange={e => set("backgroundImage", e.target.value)} placeholder="https://..." /></div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div><label style={labelStyle}>Image filter</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilter || "dark"} onChange={e => set("imageFilter", e.target.value)}>
+                <option value="dark">Darken</option>
+                <option value="light">Lighten</option>
+                <option value="none">None</option>
+              </select>
+            </div>
+            <div><label style={labelStyle}>Filter strength %</label>
+              <input type="number" min="0" max="100" style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilterStrength ?? 30} onChange={e => set("imageFilterStrength", e.target.value === "" ? "" : Math.max(0, Math.min(100, Number(e.target.value))))} disabled={form.imageFilter === "none"} />
+            </div>
+          </div>
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Accent</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
@@ -329,6 +353,18 @@ export default function SectionEditorFields({ typeId, form, set }) {
             </div>
           </div>
           <div style={fieldGroup}><label style={labelStyle}>Background Image (URL)</label><input style={inputStyle} value={form.backgroundImage || ""} onChange={e => set("backgroundImage", e.target.value)} placeholder="https://..." /></div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div><label style={labelStyle}>Image filter</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilter || "dark"} onChange={e => set("imageFilter", e.target.value)}>
+                <option value="dark">Darken</option>
+                <option value="light">Lighten</option>
+                <option value="none">None</option>
+              </select>
+            </div>
+            <div><label style={labelStyle}>Filter strength %</label>
+              <input type="number" min="0" max="100" style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilterStrength ?? 30} onChange={e => set("imageFilterStrength", e.target.value === "" ? "" : Math.max(0, Math.min(100, Number(e.target.value))))} disabled={form.imageFilter === "none"} />
+            </div>
+          </div>
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Kicker (right column subtitle)</label><textarea style={{ ...inputStyle, minHeight: 60 }} value={form.kicker || ""} onChange={e => set("kicker", e.target.value)} /></div>

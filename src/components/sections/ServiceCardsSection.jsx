@@ -2,6 +2,7 @@ import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import LiquidGlassCard from "../LiquidGlassCard.jsx";
 import Card from "../Card.jsx";
+import { sectionBackground } from "../../lib/section-background.js";
 
 /* ServiceCardsSection — "What We Offer"
    Inline section: content lives in page-compositions.json sectionConfig.content.
@@ -25,6 +26,8 @@ export default function ServiceCardsSection({ sectionConfig }) {
   const cardStyle        = c.cardStyle || "standard";
   const cardRadius       = c.cardRadius || "rounded";
   const backgroundImage  = c.backgroundImage || "";
+  const imageFilter         = c.imageFilter || "dark";
+  const imageFilterStrength = c.imageFilterStrength ?? 30;
 
   const isDark  = colorScheme === "dark";
   const sectionBg = { dark: "#0A0A0A", "light-gray": "#F4F5F7", white: "#fff" }[colorScheme] || "#0A0A0A";
@@ -36,7 +39,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
   return (
     <section style={{
       background: backgroundImage
-        ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${backgroundImage}') center/cover no-repeat`
+        ? sectionBackground(backgroundImage, imageFilter, imageFilterStrength)
         : sectionBg,
       padding: "clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem)",
       position: "relative",

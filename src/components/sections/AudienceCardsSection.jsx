@@ -1,6 +1,7 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import Card from "../Card.jsx";
+import { sectionBackground } from "../../lib/section-background.js";
 import LiquidGlassCard from "../LiquidGlassCard.jsx";
 
 /* AudienceCardsSection — "Who We Help"
@@ -25,6 +26,8 @@ export default function AudienceCardsSection({ sectionConfig }) {
   const cardStyle        = c.cardStyle || "standard";
   const cardRadius       = c.cardRadius || "rounded";
   const backgroundImage  = c.backgroundImage || "";
+  const imageFilter         = c.imageFilter || "dark";
+  const imageFilterStrength = c.imageFilterStrength ?? 30;
 
   const isList = layout === "list";
   const cols   = layout === "grid-3col" ? "repeat(3, 1fr)" : "repeat(2, 1fr)";
@@ -37,7 +40,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
   return (
     <section id="who-we-help" style={{
       background: backgroundImage
-        ? `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${backgroundImage}') center/cover no-repeat`
+        ? sectionBackground(backgroundImage, imageFilter, imageFilterStrength)
         : BG,
       padding: "clamp(4rem, 9vw, 8rem) clamp(1.5rem, 5vw, 4rem)",
       borderTop: colorScheme === "light-gray" && !backgroundImage ? `1px solid ${LINE}` : "none",
