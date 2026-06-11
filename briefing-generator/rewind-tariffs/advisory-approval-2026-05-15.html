@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rewind Tariffs — Advisory Approval | May 15, 2026</title>
+<script>
+(function(){
+  var K='daily-briefing-theme';
+  var ST=['system','dark','light'];
+  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
+  var LB={dark:'Dark',light:'Light',system:'System'};
+  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function apply(){
+    var t=localStorage.getItem(K)||'system';
+    document.documentElement.setAttribute('data-theme',eff(t));
+    document.documentElement.setAttribute('data-theme-pref',t);
+    var b=document.getElementById('theme-toggle');
+    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
+  }
+  window.cycleTheme=function(){
+    var c=localStorage.getItem(K)||'system';
+    var n=ST[(ST.indexOf(c)+1)%ST.length];
+    localStorage.setItem(K,n);apply();
+  };
+  apply();
+  if(document.readyState!=='loading') apply();
+  else document.addEventListener('DOMContentLoaded',apply);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
+})();
+</script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif; background: #E5E7EB; color: rgba(10,10,10,0.78); padding: 24px 16px 80px; max-width: 680px; margin: 0 auto; }
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.header-left h1 { font-size: 16px; font-weight: 700; color: #0A0A0A; }
+.header-left .date { font-size: 11px; color: rgba(10,10,10,0.45); margin-top: 2px; }
+.header-actions { display: flex; gap: 8px; }
+.btn-sm { font-size: 10px; padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(10,10,10,0.14); background: #FFFFFF; cursor: pointer; font-family: inherit; color: rgba(10,10,10,0.7); }
+.btn-sm:hover { background: #F4F5F7; }
+.section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); margin-bottom: 6px; }
+.briefing-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+.briefing-block p { font-size: 13px; line-height: 1.7; color: rgba(10,10,10,0.78); }
+.briefing-block a { color: #0A0A0A; text-decoration: none; }
+.briefing-block a:hover { text-decoration: underline; }
+
+/* Full Advisory */
+.advisory-toggle { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 14px 18px; background: #FFFFFF; border: 1px solid rgba(10,10,10,0.08); border-radius: 12px; margin-bottom: 0; transition: border-radius 0.2s; }
+.advisory-toggle.open { border-radius: 12px 12px 0 0; margin-bottom: 0; border-bottom: none; }
+.advisory-toggle-title { font-size: 13.5px; font-weight: 700; color: #0A0A0A; }
+.advisory-chevron { font-size: 14px; color: rgba(10,10,10,0.45); transition: transform 0.2s; }
+.advisory-chevron.open { transform: rotate(180deg); }
+.advisory-body { display: none; background: #FFFFFF; border: 1px solid rgba(10,10,10,0.08); border-top: none; border-radius: 0 0 12px 12px; padding: 20px 22px 24px; margin-bottom: 16px; }
+.advisory-body.open { display: block; }
+.advisory-body h2 { font-size: 13px; font-weight: 700; color: #0A0A0A; text-transform: uppercase; letter-spacing: 0.04em; margin: 22px 0 10px; }
+.advisory-body h2:first-child { margin-top: 0; }
+.advisory-body p { font-size: 12.5px; line-height: 1.75; color: rgba(10,10,10,0.78); margin-bottom: 14px; }
+.advisory-body p:last-child { margin-bottom: 0; }
+.advisory-body a { color: #0A0A0A; text-decoration: none; }
+.advisory-body a:hover { text-decoration: underline; }
+.advisory-body .advisory-footer-note { font-size: 11px; color: rgba(10,10,10,0.45); font-style: italic; margin-top: 18px; padding-top: 14px; border-top: 1px solid #D5D9DF; }
+
+/* Key Upcoming Dates */
+.dates-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+.date-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #D5D9DF; }
+.date-row:last-child { border-bottom: none; }
+.date-pip { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.date-urgency-imminent { background: #ef4444; }
+.date-urgency-upcoming { background: #f59e0b; }
+.date-urgency-watch { background: #3b82f6; }
+.date-text { flex: 1; font-size: 12.5px; line-height: 1.5; }
+.date-text strong { color: #0A0A0A; }
+.btn-cal { font-size: 10px; padding: 3px 10px; border-radius: 5px; border: 1px solid rgba(10,10,10,0.14); background: #FFFFFF; cursor: pointer; font-family: inherit; color: rgba(10,10,10,0.7); white-space: nowrap; }
+.btn-cal:hover { background: #F4F5F7; }
+.btn-gcal { font-size: 10px; padding: 3px 10px; border-radius: 5px; border: 1px solid #4285f4; background: #FFFFFF; cursor: pointer; font-family: inherit; color: #4285f4; white-space: nowrap; }
+.btn-gcal:hover { background: #e8f0fe; }
+.btn-gcal.added { background: #e6f4ea; color: #137333; border-color: #137333; cursor: default; }
+
+/* LinkedIn */
+.linkedin-block { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 18px 20px; margin-bottom: 16px; }
+.linkedin-post { font-size: 13px; line-height: 1.7; white-space: pre-wrap; color: rgba(10,10,10,0.78); margin-bottom: 12px; }
+.btn-copy { font-size: 11px; padding: 6px 16px; border-radius: 6px; border: 1px solid #0a66c2; background: #0a66c2; color: #FFFFFF; cursor: pointer; font-family: inherit; font-weight: 600; }
+.btn-copy:hover { background: #004182; }
+.copied-msg { display: none; color: #0A0A0A; font-size: 11px; margin-left: 10px; font-weight: 600; }
+.copied-msg.visible { display: inline; }
+
+/* LinkedIn Feedback Chat */
+.li-feedback { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(10,10,10,0.08); }
+.li-feedback-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(10,10,10,0.45); margin-bottom: 8px; }
+.li-chat-area { display: flex; gap: 8px; align-items: flex-start; }
+.li-chat-input { flex: 1; font-size: 12px; padding: 8px 10px; border-radius: 6px; border: 1px solid rgba(10,10,10,0.14); font-family: inherit; resize: vertical; line-height: 1.5; }
+.li-chat-input:focus { outline: none; border-color: #D4FF00; box-shadow: 0 0 0 2px rgba(212,255,0,0.18); }
+.btn-send-feedback { font-size: 11px; padding: 8px 14px; border-radius: 6px; border: 1px solid #0a66c2; background: #FFFFFF; cursor: pointer; font-family: inherit; color: #0a66c2; font-weight: 600; white-space: nowrap; }
+.btn-send-feedback:hover { background: rgba(212,255,0,0.10); }
+
+/* I Used This Post */
+.li-used-row { display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: #E5E7EB; cursor: pointer; user-select: none; }
+.li-used-row:hover { background: #D5D9DF; }
+.li-used-label { font-size: 12px; color: rgba(10,10,10,0.78); }
+.li-used-sublabel { font-size: 11px; color: rgba(10,10,10,0.45); margin-top: 2px; }
+.li-learn-msg { display: none; color: #0A0A0A; font-size: 11px; margin-top: 6px; padding-left: 2px; font-weight: 600; }
+.li-learn-msg.visible { display: block; }
+
+/* Article / Update Cards */
+.card { background: #FFFFFF; border-radius: 12px; border: 1px solid rgba(10,10,10,0.08); padding: 16px 18px; margin-bottom: 10px; cursor: pointer; transition: border-color 0.15s; }
+.card:hover { border-color: #D4FF00; }
+.card.selected { border-color: #3b82f6; background: #f0f7ff; }
+.card-top { display: flex; align-items: flex-start; gap: 10px; }
+.card-cb { margin-top: 3px; flex-shrink: 0; }
+.card-body { flex: 1; }
+.card-title { font-size: 13px; font-weight: 600; color: #0A0A0A; margin-bottom: 3px; }
+.card-title a { color: #0A0A0A; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-meta { font-size: 11px; color: rgba(10,10,10,0.45); margin-bottom: 5px; }
+.card-insight { font-size: 12px; line-height: 1.6; color: #555; }
+.tag { display: inline-block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 7px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+.tag-breaking { background: #fef2f2; color: #dc2626; }
+.tag-legal { background: rgba(212,255,0,0.10); color: #0A0A0A; }
+.tag-policy { background: #f0fdf4; color: #16a34a; }
+.tag-data { background: #fefce8; color: #ca8a04; }
+.tag-trade { background: #faf5ff; color: #9333ea; }
+
+/* Footer */
+.footer { position: fixed; bottom: 0; left: 0; right: 0; background: #FFFFFF; border-top: 1px solid rgba(10,10,10,0.08); padding: 12px 24px; display: flex; justify-content: center; z-index: 10; }
+.btn-primary { font-size: 12px; padding: 10px 28px; border-radius: 8px; border: none; background: #0A0A0A; color: #FFFFFF; cursor: pointer; font-family: inherit; font-weight: 600; }
+.btn-primary:hover { background: #0A0A0A; }
+.tn{background:#000000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif;position:sticky;top:0;z-index:100;width:100vw;margin-left:calc(50% - 50vw);margin-top:-24px;margin-bottom:20px;}
+.tn-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+.tn-row+.tn-row{margin-top:6px;}
+.tn-row.brand{justify-content:space-between;margin-bottom:8px;}
+.tn-brand{color:#FFFFFF;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:-0.01em;}
+.tn-brand:hover{color:#D4FF00;}
+.tn-date{color:rgba(255,255,255,0.6);font-size:11px;}
+.tn-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:11.5px;color:rgba(255,255,255,0.6);text-decoration:none;background:transparent;border:1px solid transparent;transition:background 0.15s,color 0.15s;}
+.tn-pill:hover{color:#FFFFFF;background:#16161B;}
+.tn-pill.active{color:#D4FF00;background:rgba(212,255,0,0.15);border-color:rgba(212,255,0,0.4);}
+.tn-pill.disabled{color:rgba(255,255,255,0.3);cursor:default;}
+.tn-pill.disabled:hover{background:transparent;color:rgba(255,255,255,0.3);}
+.tn-pill.view{font-size:11px;padding:2px 9px;}
+
+  [data-theme="dark"] body { background:#000000 !important; color:#FFFFFF !important; }
+  [data-theme="dark"] .container,
+  [data-theme="dark"] .briefing-block,
+  [data-theme="dark"] .advisory-toggle,
+  [data-theme="dark"] .advisory-body,
+  [data-theme="dark"] .dates-block,
+  [data-theme="dark"] .linkedin-block,
+  [data-theme="dark"] .card,
+  [data-theme="dark"] .advisory-block { background:#0A0A0A !important; border-color:rgba(255,255,255,0.12) !important; color:#FFFFFF; }
+  [data-theme="dark"] .footer { background:#0A0A0A !important; border-top-color:rgba(255,255,255,0.12) !important; }
+  [data-theme="dark"] .briefing-block p,
+  [data-theme="dark"] .advisory-body p,
+  [data-theme="dark"] .card-insight,
+  [data-theme="dark"] .linkedin-post,
+  [data-theme="dark"] .date-text { color:#c9d1d9 !important; }
+  [data-theme="dark"] .advisory-toggle-title,
+  [data-theme="dark"] .advisory-body h2,
+  [data-theme="dark"] .card-title,
+  [data-theme="dark"] .header-left h1,
+  [data-theme="dark"] .header-title,
+  [data-theme="dark"] .date-text strong,
+  [data-theme="dark"] .li-used-label { color:#FFFFFF !important; }
+  [data-theme="dark"] .card-title a,
+  [data-theme="dark"] .briefing-block a,
+  [data-theme="dark"] .advisory-body a { color:#D4FF00 !important; }
+  [data-theme="dark"] .date-row { border-bottom-color:rgba(255,255,255,0.12) !important; }
+  [data-theme="dark"] .section-label,
+  [data-theme="dark"] .header-left .date,
+  [data-theme="dark"] .header-sub,
+  [data-theme="dark"] .card-meta,
+  [data-theme="dark"] .li-used-sublabel,
+  [data-theme="dark"] .copied-msg { color:rgba(255,255,255,0.6) !important; }
+  [data-theme="dark"] .btn-sm,
+  [data-theme="dark"] .btn-cal,
+  [data-theme="dark"] .btn-gcal,
+  [data-theme="dark"] .advisory-toggle { background:#16161B !important; border-color:rgba(255,255,255,0.12) !important; color:#c9d1d9 !important; }
+  [data-theme="dark"] .li-chat-input { background:#16161B !important; border-color:rgba(255,255,255,0.12) !important; color:#FFFFFF !important; }
+  [data-theme="dark"] .li-used-row { background:#16161B !important; }
+  [data-theme="dark"] .card.selected { background:rgba(31,111,235,0.12) !important; border-color:#D4FF00 !important; }
+  [data-theme="dark"] .card:hover { border-color:#D4FF00 !important; }
+  [data-theme="dark"] .advisory-body .advisory-footer-note { color:rgba(255,255,255,0.6) !important; border-top-color:rgba(255,255,255,0.12) !important; }
+  [data-theme="dark"] .advisory-toggle .advisory-toggle-title { color:#FFFFFF !important; }
+  [data-theme="dark"] .pending-banner { background:rgba(210,153,34,0.15) !important; }
+  [data-theme="dark"] .update-card { background:rgba(212,255,0,0.10) !important; }
+  [data-theme="dark"] .back-link { color:#D4FF00 !important; }
+  #theme-toggle { border-color:rgba(10,10,10,0.08); }
+  
+
+  [data-theme="light"] .tn { background:#ffffff !important; border-bottom-color:rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .tn-brand { color:#0A0A0A !important; }
+  [data-theme="light"] .tn-brand:hover { color:#0A0A0A !important; }
+  [data-theme="light"] .tn-date { color:rgba(10,10,10,0.4) !important; }
+  [data-theme="light"] .tn-pill { color:rgba(10,10,10,0.6) !important; }
+  [data-theme="light"] .tn-pill:hover { background:#D5D9DF !important; color:#0A0A0A !important; }
+  [data-theme="light"] .tn-pill.active { color:#0A0A0A !important; background:rgba(212,255,0,0.18) !important; border-color:rgba(212,255,0,0.5) !important; }
+  [data-theme="light"] .tn-pill.disabled { color:rgba(10,10,10,0.3) !important; }
+  [data-theme="light"] #theme-toggle { border-color:rgba(10,10,10,0.08) !important; color:rgba(10,10,10,0.6) !important; }
+  [data-theme="light"] #theme-toggle:hover { background:#D5D9DF !important; }
+  /* Turnpage brand patch v3 ===================================== */
+  body { font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
+  h1 { letter-spacing: -0.02em; font-weight: 800; }
+
+  /* ----- Section eyebrow headings (h2): neon bar prefix, no underline */
+  section h2 {
+    border-bottom: none !important;
+    padding: 4px 0 4px 1.8em !important;
+    position: relative;
+    letter-spacing: 0.22em !important;
+    font-weight: 700 !important;
+    font-size: 0.78rem !important;
+    text-transform: uppercase !important;
+    margin: 0 0 14px !important;
+  }
+  section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 1.4em;
+    height: 0.18em;
+    background: #D4FF00;
+    border-radius: 2px;
+  }
+  section h2 .pill { margin-left: 8px; }
+
+  /* ----- NAV: dark by default; light theme overrides explicitly */
+  .tn { background: #000000; border-bottom-color: rgba(255,255,255,0.12); }
+  .tn-brand { color: #FFFFFF; text-decoration: none !important; }
+  .tn-brand:hover { color: #D4FF00; }
+  .tn-date { color: rgba(255,255,255,0.6); }
+  .tn-pill { color: rgba(255,255,255,0.7); text-decoration: none !important; background: transparent; border: 1px solid transparent; }
+  .tn-pill:hover { color: #FFFFFF; background: rgba(255,255,255,0.06); }
+  .tn-pill.active { color: #D4FF00; background: rgba(212,255,0,0.12); border-color: rgba(212,255,0,0.45); }
+  #theme-toggle { border-color: rgba(255,255,255,0.25); color: inherit; }
+
+  [data-theme="light"] .tn { background: #FFFFFF !important; border-bottom-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .tn-brand { color: #0A0A0A !important; }
+  [data-theme="light"] .tn-brand:hover { color: #0A0A0A !important; text-decoration: underline !important; text-decoration-color: #D4FF00 !important; text-decoration-thickness: 2px !important; }
+  [data-theme="light"] .tn-date { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] .tn-pill { color: rgba(10,10,10,0.65) !important; }
+  [data-theme="light"] .tn-pill:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; }
+  [data-theme="light"] .tn-pill.active { color: #0A0A0A !important; background: #D4FF00 !important; border-color: #D4FF00 !important; font-weight: 700 !important; }
+  [data-theme="light"] #theme-toggle { border-color: rgba(10,10,10,0.14) !important; color: #0A0A0A !important; }
+
+  /* ----- LIGHT THEME: white-led look, paper only for the Refine subtab */
+  [data-theme="light"] body { background: #FFFFFF !important; color: #0A0A0A !important; }
+  [data-theme="light"] header { background: #FFFFFF !important; border-bottom: 1px solid rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] main { background: #FFFFFF; }
+  [data-theme="light"] footer { background: #FFFFFF !important; border-top: 1px solid rgba(10,10,10,0.08) !important; color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  [data-theme="light"] .card { background: #FFFFFF !important; border-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .card.canonical { box-shadow: 0 1px 3px rgba(10,10,10,0.06) !important; border-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] th { color: rgba(10,10,10,0.45) !important; border-bottom-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] td { border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] td .matter-name { color: #0A0A0A !important; }
+  [data-theme="light"] td .court { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] td .status { color: rgba(10,10,10,0.78) !important; }
+  [data-theme="light"] section h2 { color: #0A0A0A !important; }
+  [data-theme="light"] ul.qlist li { color: rgba(10,10,10,0.78) !important; border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] ul.qlist li strong { color: #0A0A0A !important; }
+  [data-theme="light"] header .date, [data-theme="light"] header .meta, [data-theme="light"] .subtitle, [data-theme="light"] .header-left .date { color: rgba(10,10,10,0.55) !important; }
+
+  /* ----- Refine subtab full-width card */
+  body.refine-page { background: #0A0A0A; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  .refine-box { border-top: none !important; }
+
+  /* ----- Body links (in main content only): subtle accents */
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  [data-theme="light"] main p a, [data-theme="light"] main .qlist a, [data-theme="light"] main .advisory-list a, [data-theme="light"] .advisory-body a, [data-theme="light"] .briefing-block a {
+    color: #0A0A0A;
+    text-decoration-color: rgba(212,255,0,0.85);
+  }
+  [data-theme="light"] main p a:hover, [data-theme="light"] main .qlist a:hover, [data-theme="light"] main .advisory-list a:hover, [data-theme="light"] .advisory-body a:hover, [data-theme="light"] .briefing-block a:hover {
+    background: rgba(212,255,0,0.30);
+  }
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a { color: #D4FF00; text-decoration-color: rgba(212,255,0,0.55); }
+
+  /* ----- Tables: subtle hover */
+  tbody tr:hover { background: rgba(255,255,255,0.03) !important; }
+  [data-theme="light"] tbody tr:hover { background: rgba(10,10,10,0.025) !important; }
+
+  /* ----- Canonical / seed pills (outlined) */
+  .canonical-pill, .seed-pill { background: rgba(212,255,0,0.12) !important; color: #D4FF00 !important; border: 1px solid rgba(212,255,0,0.45) !important; border-radius: 99px !important; }
+  [data-theme="light"] .canonical-pill, [data-theme="light"] .seed-pill { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+  .degraded-pill { border-radius: 99px !important; }
+
+  /* ----- SQUARE BUTTONS — Turnpage three styles */
+  /* Primary (.btn-primary, .dashboard-btn, .open-btn, .btn-copy): ink bg + white text + neon arrow */
+  .dashboard-btn, .open-btn, .btn-copy,
+  .approval-btn, .btn-cal, .btn-send-feedback {
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+    padding: 10px 18px !important;
+    font-family: 'Archivo', -apple-system, sans-serif !important;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  /* PRIMARY (dashboard-btn, open-btn): ink bg + white text */
+  .dashboard-btn, .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border: 1px solid #0A0A0A !important; }
+  .dashboard-btn:hover, .open-btn:hover { background: #16161B !important; border-color: #16161B !important; }
+  [data-theme="light"] .dashboard-btn, [data-theme="light"] .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border-color: #0A0A0A !important; }
+  [data-theme="light"] .dashboard-btn:hover, [data-theme="light"] .open-btn:hover { background: #16161B !important; }
+
+  /* GHOST (approval-btn, btn-cal, .btn-send-feedback, .btn-refine-secondary): outlined */
+  .approval-btn { background: transparent !important; color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .approval-btn:hover { background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .approval-btn { background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; }
+  [data-theme="light"] .approval-btn:hover { background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  .btn-cal, .btn-send-feedback {
+    background: transparent !important;
+    color: #0A0A0A !important;
+    border: 1px solid #0A0A0A !important;
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+  }
+  .btn-cal:hover, .btn-send-feedback:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-cal, [data-theme="dark"] .btn-send-feedback { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-cal:hover, [data-theme="dark"] .btn-send-feedback:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* NEON CTA (btn-copy, btn-refine): solid neon bg + ink text */
+  .btn-copy { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; }
+  .btn-copy:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; border-radius: 0 !important; font-weight: 700 !important; padding: 11px 20px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-refine:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine-secondary { border-radius: 0 !important; padding: 11px 16px !important; font-weight: 600 !important; font-family: 'Archivo', sans-serif !important; background: transparent !important; color: rgba(255,255,255,0.7) !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .btn-refine-secondary:hover { color: #FFFFFF !important; background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .btn-refine-secondary { color: rgba(10,10,10,0.65) !important; border-color: rgba(10,10,10,0.4) !important; }
+  [data-theme="light"] .btn-refine-secondary:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  /* Btn-sm (used on approval HTML header bar) → ghost-style */
+  .btn-sm { border-radius: 0 !important; font-weight: 600 !important; background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; padding: 6px 12px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-sm:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-sm { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-sm:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* Refine status */
+  .refine-status { color: #D4FF00 !important; }
+  [data-theme="light"] .refine-status { color: #0A0A0A !important; }
+
+  /* Doctrine pills */
+  .pill.doctrine { border-color: rgba(212,255,0,0.45) !important; color: #D4FF00 !important; background: rgba(212,255,0,0.12) !important; }
+  [data-theme="light"] .pill.doctrine { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+
+  /* Banner */
+  [data-theme="light"] .banner { background: #F4F5F7 !important; border-left-color: #D4FF00 !important; color: rgba(10,10,10,0.78) !important; }
+
+  /* Advisory toggle (light/dark): square corners, ghost-style border treatment */
+  .advisory-toggle { border-radius: 0 !important; }
+  .advisory-toggle.open { border-radius: 0 !important; }
+  .advisory-body { border-radius: 0 !important; }
+  .briefing-block, .dates-block, .linkedin-block, .disclaimer { border-radius: 0 !important; }
+
+  /* The view (subnav) row: subtle visual indent + breathing room */
+  .tn-row:nth-of-type(3) { padding-top: 6px; gap: 22px; }
+
+  /* View pills: NOT pills — plain text links with active neon underline */
+  .tn-pill.view {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4px 0 !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,0.55) !important;
+    letter-spacing: 0.01em;
+    transition: color 0.12s, border-bottom-color 0.12s;
+  }
+  .tn-pill.view:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+  }
+  .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    padding-bottom: 4px !important;
+  }
+  [data-theme="light"] .tn-pill.view {
+    color: rgba(10,10,10,0.55) !important;
+  }
+  [data-theme="light"] .tn-pill.view:hover {
+    background: transparent !important;
+    color: #0A0A0A !important;
+  }
+  [data-theme="light"] .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #0A0A0A !important;
+    font-weight: 700 !important;
+  }
+
+
+  /* --- Turnpage logo in brand strip ------------------- */
+  .tn-brand { display: inline-flex; align-items: center; gap: 0; }
+  .tn-brand-logo { height: 18px; width: auto; vertical-align: middle; transition: filter 0.15s; filter: invert(1) brightness(2); }
+  /* On LIGHT theme, the logo is already black — no invert needed */
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { font-weight: 700; letter-spacing: -0.01em; }
+    /* Original is black-on-white JPEG. In dark theme we invert to get white-on-black. */
+    filter: invert(1);
+  }
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { display: none; } /* legacy text — replaced by product label on tab row */
+  .tn-brand:hover .tn-brand-logo { opacity: 0.85; }
+  [data-theme="light"]
+
+  /* Tab row: align product label + tabs horizontally with a vertical divider between them */
+  .tn-row:nth-of-type(2) {
+    align-items: center;
+    padding: 8px 0;
+  }
+  [data-theme="light"]
+
+  /* Brand row: logo on left, meta (date + toggle) on right */
+  .tn-row.brand { padding-bottom: 8px !important; }
+
+  /* Slight arrow indicator on tab pill suggesting dropdown */
+  .tn-tab > .tn-pill::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55;
+    vertical-align: 2px;
+  }
+  /* === Remove eyebrow neon bars (user pref) === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
+  <!-- AUTH GATE START -->
+  <script src="/auth/config.js"></script>
+  <script type="module" src="/auth/auth.js"></script>
+  <!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row brand">
+    <a class="tn-brand" href="../daily-briefing/dashboard-latest.html"><img class="tn-brand-logo" alt="Turnpage" src="/assets/turnpage-logo.jpeg"></a>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+  <div class="tn-row tn-tabs-row">
+    <div class="tn-tab active">
+      <a class="tn-pill active" href="../rewind-tariffs/dashboard.html">⚖️ Tariffs</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tariffs / Trade</h3>
+            <p class="tn-dd-body">Capital and advisory for IEEPA tariff refund rights. CAPE refunds, the CIT and Federal Circuit dockets, Section 122, and consumer-class exposure on pass-through.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../rewind-tariffs/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link active" href="../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../rewind-tariffs/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../llm-class-action/dashboard.html">🤖 LLM</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">LLM / Copyright</h3>
+            <p class="tn-dd-body">AI training-data class actions. Bartz v. Anthropic, the OpenAI MDL, Concord, Disney v. Midjourney — settlement mechanics and benchmark claims rates.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../llm-class-action/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../llm-class-action/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../crypto-insolvency/dashboard.html">🪙 Crypto</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Crypto Insolvency</h3>
+            <p class="tn-dd-body">Customer-property litigation and crypto bankruptcies. BlockFills, Genesis LOC, FTX progeny, and the cross-border Chapter 15 recognition track.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../crypto-insolvency/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../crypto-insolvency/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../fraud-recovery/dashboard.html">🕵️ Fraud</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Ponzi / Fraud Recovery</h3>
+            <p class="tn-dd-body">Receivership clawbacks, SEC enforcement, and cross-border asset recovery. Goliath Ventures, Paramount/Prestige, and active receiver-led liquidation tracks.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../fraud-recovery/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../fraud-recovery/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../tech-mass-arbitration/dashboard.html">⚙️ Mass Arb</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tech Mass Arbitration</h3>
+            <p class="tn-dd-body">B2B mass-arbitration campaigns against Big Tech defendants. The Google advertiser playbook, Meta waiver track, AAA/JAMS mechanics, foreign analogues.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../tech-mass-arbitration/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../tech-mass-arbitration/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../billion-dollar-class-actions/dashboard.html">💰 $1B+</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">$1B+ Class Actions</h3>
+            <p class="tn-dd-body">The mega-settlement cycle. BCBS Subscriber & Provider, Bartz v. Anthropic, Purdue/Sackler, Roundup, Visa/Mastercard interchange.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../billion-dollar-class-actions/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../bankruptcy-creditor-rights/dashboard.html">📜 Bankr</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Bankruptcy Creditor Rights</h3>
+            <p class="tn-dd-body">Plan-confirmation appellate docket. Equitable-mootness drift, post-Purdue third-party releases, Texas Two-Step, exculpation scope, and Subchapter V.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../bankruptcy-creditor-rights/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="header">
+  <div class="header-left">
+    <h1>Rewind Tariffs — Advisory Approval</h1>
+    <div class="date">May 15, 2026</div>
+  </div>
+  <div class="header-actions">
+    <button class="btn-sm" onclick="selectAll()">Select All</button>
+    <button class="btn-sm" onclick="clearAll()">Clear All</button>
+  </div>
+</div>
+
+<!-- TODAY'S BRIEFING -->
+<div class="section-label">Today's Briefing</div>
+<div class="briefing-block">
+  <p>CBP's CAPE refund system has processed <strong>$35.46 billion</strong> across 8.3 million entries, with the first payments now reaching importers — <a href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-">wine importer VOS Selections received $110,000 this week</a>. The Section 122 replacement tariff was <a href="https://customsandinternationaltradelaw.com/2026/05/14/appeals-court-keeps-section-122-tariffs-in-place-for-now-what-importers-need-to-know/">declared unlawful by the CIT on May 7</a> but the Federal Circuit granted an administrative stay on May 12, keeping the 10% duty in place while the appeal proceeds on an expedited schedule. State officials are <a href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-">demanding consumer pass-through protections</a> as consumer class actions multiply. The DOJ's June 6 appeal deadline for the IEEPA refund order approaches without any filing activity.</p>
+</div>
+
+<!-- FULL ADVISORY -->
+<div class="section-label">Full Advisory</div>
+<div class="advisory-toggle" id="advisory-toggle" onclick="toggleAdvisory()">
+  <span class="advisory-toggle-title">IEEPA Tariff Advisory &mdash; May 15, 2026</span>
+  <span class="advisory-chevron" id="advisory-chevron">&#9660;</span>
+</div>
+<div class="advisory-body" id="advisory-body">
+  <h2>Analysis &amp; Developments</h2>
+  <p>CBP's second progress report to the Court of International Trade, filed on May 12, confirms that the CAPE refund system has crossed a significant operational threshold: 8,338,081 entries have been liquidated or reliquidated without IEEPA duties, representing an anticipated refund and interest amount of approximately $35.46 billion. Since the portal's April 20 launch, 126,237 CAPE declarations have been submitted, of which 86,874 passed file validations covering 15,123,221 individual entries accepted for the removal of IEEPA duties. The first actual payments are now reaching importers &mdash; wine importer VOS Selections, a plaintiff in one of the Democratic-led state actions, reported receiving a $110,000 refund this week. (<a href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-">Spectrum News</a>) Judge Eaton has set May 26 as the next date for CBP to file an updated progress report, while the Department of Justice still has until June 6 to file an appeal of the CIT's March 4 refund order &mdash; a deadline that continues to approach without any filing, motion for extension, or public signaling of intent. (<a href="https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/may/tariffs-today-cbp-reports-further-progress-on-cape-refund-process">Sandler, Travis &amp; Rosenberg</a>)</p>
+
+  <p>The Section 122 replacement tariff landscape shifted dramatically over the past week. On May 7, the CIT ruled in a 2-1 decision that the administration's 10% global tariff imposed under Section 122 of the Trade Act of 1974 was unlawful, holding that the statutory prerequisite &mdash; a &ldquo;large and serious United States balance-of-payments deficit&rdquo; as understood in 1974 &mdash; was not satisfied and that the administration improperly relied on persistent trade deficits to justify the measure. However, the CIT limited its permanent injunction to the named plaintiffs: Burlap &amp; Barrel, Basic Fun, and the State of Washington. The DOJ filed a notice of appeal on May 8 and an emergency stay motion on May 11, and the Federal Circuit granted a temporary administrative stay on May 12, keeping Section 122 tariffs in effect for all importers while the appeal proceeds. (<a href="https://customsandinternationaltradelaw.com/2026/05/14/appeals-court-keeps-section-122-tariffs-in-place-for-now-what-importers-need-to-know/">Diaz Trade Law</a>) The expedited briefing schedule gives plaintiffs until May 19 to respond and DOJ until May 22 to reply, signaling that the Federal Circuit intends to resolve the stay question quickly. Regardless of the appeal outcome, Section 122 tariffs are set to expire on July 24, 2026 under the statute's 150-day limitation unless Congress passes affirmative legislation to extend them &mdash; a prospect that remains uncertain given bipartisan skepticism about executive tariff authority in the wake of the Supreme Court's IEEPA ruling. (<a href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/">Troutman Pepper</a>)</p>
+
+  <p>A coalition of eight state comptrollers and treasurers sent a letter to President Trump this week demanding public disclosure of all IEEPA refund applications and protections for consumers who bore the economic burden of the now-invalidated tariffs through higher prices. The letter, released publicly on May 14, argues that a refund process that does not account for pass-through costs risks directing public relief to parties who were not economically harmed. Minnesota State Auditor Julie Blaha suggested that consumer reimbursements could be handled through direct payments based on per-household impact estimates or through business-administered refunds to individual customers. (<a href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-">Spectrum News</a>) This development arrives as plaintiffs' firms continue to file putative nationwide class actions alleging that companies are unjustly enriched by receiving IEEPA tariff refunds while retaining the tariff-related price increases they passed on to consumers, with legal theories spanning contract, restitution, and state consumer protection statutes. (<a href="https://www.arnoldporter.com/en/perspectives/advisories/2026/03/the-next-wave-of-tariff-litigation">Arnold &amp; Porter</a>) (<a href="https://www.troutman.com/insights/ieepa-tariff-refunds-may-come-with-an-unforeseen-cost-exposure-to-consumer-class-actions/">Troutman Pepper</a>)</p>
+
+  <p>On the broader trade policy front, USTR Ambassador Jamieson Greer testified before the House Ways and Means Committee on May 11, citing a 24% reduction in the trade deficit since &ldquo;Liberation Day&rdquo; in April 2025. Notably, USTR has launched 76 new Section 301 investigations targeting structural overcapacity in manufacturing sectors and forced labor practices across major trading partners, with public hearings that commenced May 5. Greer indicated that the administration is not receptive to exclusion requests, and findings will lead to proposed responsive actions including potential new targeted tariffs. (<a href="https://waysandmeans.house.gov/2026/05/11/five-key-moments-hearing-on-u-s-trade-with-ambassador-jamieson-greer/">Ways and Means Committee</a>) Meanwhile, the Commerce Department released applications for onshoring agreements that would allow domestic producers to reduce Section 232 tariff exposure in exchange for commitments to expand U.S.-based manufacturing capacity. (<a href="https://customsandinternationaltradelaw.com/2026/05/14/commerce-releases-applications-for-onshoring-agreements-to-reduce-section-232-tariffs/">Diaz Trade Law</a>)</p>
+
+  <p>CBP's progress report also flagged an operational gap: 1,880 consolidated refunds have stalled because importers of record failed to register ACH account information on CBP's electronic payment portal. Additionally, importers should not rely solely on CAPE for refund recovery and should continue to monitor liquidation dates and file timely protests under 19 U.S.C. &sect;1514, particularly for entries not yet eligible for CAPE processing or entries where compliance concerns may trigger additional CBP review. The 60-to-90-day processing timeline that CBP has projected remains aspirational, and the DOJ's June 6 appeal deadline introduces residual uncertainty into the entire refund architecture. (<a href="https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/may/tariffs-today-cbp-reports-further-progress-on-cape-refund-process">Sandler, Travis &amp; Rosenberg</a>)</p>
+
+  <h2>Recommended Actions</h2>
+  <p>Companies with IEEPA tariff exposure should take several concrete steps in the coming weeks. Importers who have filed CAPE declarations should verify that ACH account information is current on CBP's electronic refund portal to avoid being among the 1,880 stalled payments identified in the May 12 progress report. All importers should continue to monitor liquidation dates for their affected entries and file timely protests under &sect;1514 &mdash; even for entries accepted into CAPE &mdash; as the DOJ's June 6 appeal deadline leaves the durability of the CIT's refund order in question. Companies that passed IEEPA tariff costs to customers through pricing adjustments or line-item surcharges should consult counsel regarding exposure to the growing wave of consumer class actions, document their pricing rationale, and consider voluntary disclosure strategies. For Section 122 tariffs, importers should continue paying the 10% duty while the Federal Circuit stay is in effect but should consider filing their own CIT actions to preserve refund rights, since the May 7 ruling was expressly limited to named plaintiffs and entries may liquidate while the appeal proceeds. Companies involved in Section 301-affected supply chains should monitor USTR hearing schedules for the 76 new investigations and prepare comments where their sectors are implicated.</p>
+
+  <div class="advisory-footer-note">
+    This advisory is provided for informational purposes by Rewind Tariffs and does not constitute legal advice.<br>
+    For assessment of your specific IEEPA tariff exposure, contact us at rewindtariffs.com.
+  </div>
+</div>
+
+<!-- KEY UPCOMING DATES -->
+<div class="section-label">Key Upcoming Dates</div>
+<div class="dates-block">
+  <div class="date-row">
+    <div class="date-pip date-urgency-imminent"></div>
+    <div class="date-text"><strong>May 19</strong> &mdash; Plaintiffs' response due in Section 122 Federal Circuit appeal (stay motion)</div>
+    <button class="btn-cal" onclick="downloadICS('Section 122 Appeal - Plaintiffs Response Due','20260519','Deadline for plaintiffs to respond to DOJ emergency stay motion in Federal Circuit Section 122 appeal','')">&#128197; .ics</button>
+    <button class="btn-gcal added" disabled>&#10003; Added</button>
+  </div>
+  <div class="date-row">
+    <div class="date-pip date-urgency-imminent"></div>
+    <div class="date-text"><strong>May 22</strong> &mdash; DOJ reply deadline in Section 122 Federal Circuit appeal</div>
+    <button class="btn-cal" onclick="downloadICS('Section 122 Appeal - DOJ Reply Due','20260522','DOJ reply brief deadline for emergency stay of CIT Section 122 invalidation ruling','')">&#128197; .ics</button>
+    <button class="btn-gcal added" disabled>&#10003; Added</button>
+  </div>
+  <div class="date-row">
+    <div class="date-pip date-urgency-upcoming"></div>
+    <div class="date-text"><strong>May 26</strong> &mdash; CBP CAPE refund progress report due to CIT (Judge Eaton)</div>
+    <button class="btn-cal" onclick="downloadICS('CBP CAPE Refund Progress Report Due','20260526','Next CBP progress report on IEEPA refund processing to Judge Eaton at CIT','')">&#128197; .ics</button>
+    <button class="btn-gcal added" disabled>&#10003; Added</button>
+  </div>
+  <div class="date-row">
+    <div class="date-pip date-urgency-upcoming"></div>
+    <div class="date-text"><strong>June 6</strong> &mdash; DOJ appeal deadline for IEEPA CIT refund order</div>
+    <button class="btn-cal" onclick="downloadICS('DOJ Appeal Deadline - IEEPA Refund Order','20260606','Final deadline for DOJ to appeal Judge Eatons March 4 CIT order directing CBP to refund all IEEPA tariffs','')">&#128197; .ics</button>
+    <button class="btn-gcal added" disabled>&#10003; Added</button>
+  </div>
+  <div class="date-row">
+    <div class="date-pip date-urgency-watch"></div>
+    <div class="date-text"><strong>July 24</strong> &mdash; Section 122 tariff 150-day sunset (expires unless Congress acts)</div>
+    <button class="btn-cal" onclick="downloadICS('Section 122 Tariff Expiration','20260724','10% Section 122 tariff expires at 12:01 AM EDT unless Congress passes extension legislation','')">&#128197; .ics</button>
+    <button class="btn-gcal added" disabled>&#10003; Added</button>
+  </div>
+</div>
+
+<!-- LINKEDIN POST -->
+<div class="section-label">LinkedIn Post</div>
+<div class="linkedin-block">
+  <div class="linkedin-post" id="linkedin-post">&#x1F6A2; IEEPA Tariff Refunds - The money is actually moving
+
+$35.46 billion. That's the number CBP reported to Judge Eaton this week for IEEPA refunds processed through the CAPE system since its April 20 launch. And the first checks are landing — VOS Selections, one of the plaintiffs in the state AG action, confirmed receiving $110,000. For a government system built in under two months, that's a remarkable throughput number. There are still 1,880 refunds stuck because importers haven't registered ACH details, which feels like the kind of problem you want to have.
+
+Meanwhile, the Section 122 replacement tariff is living on borrowed time. The CIT ruled it unlawful on May 7, but the Federal Circuit stayed the ruling within five days. Expedited briefing wraps by May 22, and the underlying tariff sunsets July 24 regardless. So the real question isn't whether Section 122 survives — it's whether anyone in Congress is willing to extend it.
+
+The underreported angle? Eight state comptrollers are now demanding consumer pass-through protections on IEEPA refunds. If you passed tariff costs to customers, the class action risk just got louder.
+
+Christina Santucci at Spectrum News has good reporting on the $35B figure and the state officials' letter: https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-
+
+#IEEPA #TradePolicy #ImportDuties #TariffRefund
+Rewind Tariffs</div>
+  <div>
+    <button class="btn-copy" onclick="copyLinkedIn()">Copy post</button>
+    <span class="copied-msg" id="li-copied">Copied!</span>
+  </div>
+  <div class="li-feedback">
+    <div class="li-feedback-label">Adjust This Post</div>
+    <div class="li-chat-area">
+      <textarea class="li-chat-input" id="li-chat-input" placeholder='e.g. "Make it shorter", "More urgent tone", "Add a stat about small businesses"...' rows="2"></textarea>
+      <button class="btn-send-feedback" onclick="sendLiFeedback()">Copy to Claude</button>
+    </div>
+  </div>
+  <div class="li-used-row" id="li-used-row" onclick="toggleUsed()">
+    <input type="checkbox" id="li-used-cb" onclick="event.stopPropagation()">
+    <div>
+      <div class="li-used-label"><strong>I used this post</strong> &mdash; teach the skill my preferences</div>
+      <div class="li-used-sublabel">When checked, "Copy post" will also copy a preference signal for Claude to save.</div>
+    </div>
+  </div>
+  <div class="li-learn-msg" id="li-learn-msg">&#10003; Preference signal included — paste into Claude to save.</div>
+</div>
+
+<!-- PROPOSED ARTICLES -->
+<div class="section-label">Proposed News Articles (5 Selections)</div>
+
+<div class="card" id="card-a1" onclick="toggle('a1')">
+  <div class="card-top">
+    <input type="checkbox" class="card-cb" id="cb-a1" onclick="event.stopPropagation()">
+    <div class="card-body">
+      <div class="card-title"><a href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-" target="_blank">Customs says it's issuing $35 billion in tariff refunds as some businesses report reimbursements received</a> <span class="tag tag-breaking">Breaking</span></div>
+      <div class="card-meta">Spectrum News (AP/Christina Santucci) &bull; May 14, 2026</div>
+      <div class="card-insight">CBP reported $35.46B in processed IEEPA refunds across 8.3M entries as of May 11. First payments confirmed — VOS Selections received $110,000. Judge Eaton set May 26 for next progress report. Eight state officials demand consumer pass-through protections.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="card-a2" onclick="toggle('a2')">
+  <div class="card-top">
+    <input type="checkbox" class="card-cb" id="cb-a2" onclick="event.stopPropagation()">
+    <div class="card-body">
+      <div class="card-title"><a href="https://customsandinternationaltradelaw.com/2026/05/14/appeals-court-keeps-section-122-tariffs-in-place-for-now-what-importers-need-to-know/" target="_blank">Appeals Court Keeps Section 122 Tariffs in Place (For Now): What Importers Need to Know</a> <span class="tag tag-legal">Legal</span></div>
+      <div class="card-meta">Diaz Trade Law (Jennifer Diaz) &bull; May 14, 2026</div>
+      <div class="card-insight">Federal Circuit granted temporary stay of CIT's Section 122 invalidation ruling on May 12. Plaintiffs have until May 19 to respond; DOJ reply by May 22. Relief limited to named plaintiffs — importers should file their own CIT actions to preserve refund rights.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="card-a3" onclick="toggle('a3')">
+  <div class="card-top">
+    <input type="checkbox" class="card-cb" id="cb-a3" onclick="event.stopPropagation()">
+    <div class="card-body">
+      <div class="card-title"><a href="https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/may/tariffs-today-cbp-reports-further-progress-on-cape-refund-process" target="_blank">Tariffs Today: CBP Reports Further Progress on CAPE Refund Process</a> <span class="tag tag-data">Data</span></div>
+      <div class="card-meta">Sandler, Travis &amp; Rosenberg &bull; May 14, 2026</div>
+      <div class="card-insight">Detailed breakdown of CAPE metrics: 126,237 declarations submitted, 86,874 passing validation, 15.1M entries accepted. STR recommends filing timely protests under &sect;1514 even for CAPE-accepted entries, and notes DOJ appeal deadline of June 6 as key risk factor.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="card-a4" onclick="toggle('a4')">
+  <div class="card-top">
+    <input type="checkbox" class="card-cb" id="cb-a4" onclick="event.stopPropagation()">
+    <div class="card-body">
+      <div class="card-title"><a href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/" target="_blank">Federal Circuit Hits Pause on CIT's Section 122 Tariff Ruling</a> <span class="tag tag-legal">Legal</span></div>
+      <div class="card-meta">Troutman Pepper Locke &bull; May 14, 2026</div>
+      <div class="card-insight">Analysis of the Federal Circuit's May 12 administrative stay and its procedural implications. Notes that CIT expressly limited relief to named plaintiffs and that entries could liquidate while appeal proceeds, narrowing the window for non-party importers.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="card-a5" onclick="toggle('a5')">
+  <div class="card-top">
+    <input type="checkbox" class="card-cb" id="cb-a5" onclick="event.stopPropagation()">
+    <div class="card-body">
+      <div class="card-title"><a href="https://customsandinternationaltradelaw.com/2026/05/14/commerce-releases-applications-for-onshoring-agreements-to-reduce-section-232-tariffs/" target="_blank">Commerce Releases Applications for Onshoring Agreements to Reduce Section 232 Tariffs</a> <span class="tag tag-policy">Policy</span></div>
+      <div class="card-meta">Diaz Trade Law (Jennifer Diaz) &bull; May 14, 2026</div>
+      <div class="card-insight">Commerce Department opens applications for onshoring agreements allowing domestic manufacturers to reduce Section 232 tariff exposure by committing to expand U.S. production capacity. Signals administration's shift toward incentive-based trade mechanisms alongside enforcement.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROPOSED SITE UPDATES -->
+<div class="section-label">Proposed Site Updates</div>
+
+<div class="card" id="card-s1" onclick="toggle('s1')">
+  <div class="card-top">
+    <input type="checkbox" class="card-cb" id="cb-s1" onclick="event.stopPropagation()">
+    <div class="card-body">
+      <div class="card-title">Update Hero Badge &mdash; "$35.46B in refunds processed"</div>
+      <div class="card-meta">Source: CBP May 12 progress report to CIT</div>
+      <div class="card-insight">Update the hero section stat badge to reflect the latest CAPE figure: "$35.46B in IEEPA refunds processed" with "Updated May 15, 2026" date badge. Previous figure was from the April launch period.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="card-s2" onclick="toggle('s2')">
+  <div class="card-top">
+    <input type="checkbox" class="card-cb" id="cb-s2" onclick="event.stopPropagation()">
+    <div class="card-body">
+      <div class="card-title">Update Stats/Metrics &mdash; CAPE processing numbers</div>
+      <div class="card-meta">Source: CBP May 12 progress report to CIT</div>
+      <div class="card-insight">Update site metrics: 126,237 declarations submitted; 86,874 passed validation; 15.1M entries accepted; 8.3M entries liquidated/reliquidated; $35.46B anticipated refunds. Add note: "First payments confirmed — some importers report receiving refunds."</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="card-s3" onclick="toggle('s3')">
+  <div class="card-top">
+    <input type="checkbox" class="card-cb" id="cb-s3" onclick="event.stopPropagation()">
+    <div class="card-body">
+      <div class="card-title">Alert Banner &mdash; Section 122 tariff stay and consumer class action risk</div>
+      <div class="card-meta">Source: Federal Circuit May 12 stay order; state officials' May 14 letter</div>
+      <div class="card-insight">Suggested banner text: "Section 122 tariffs remain in effect after Federal Circuit stay (May 12). Consumer class action risk growing for importers who passed IEEPA tariff costs to customers. Contact us for refund strategy."</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="card-s4" onclick="toggle('s4')">
+  <div class="card-top">
+    <input type="checkbox" class="card-cb" id="cb-s4" onclick="event.stopPropagation()">
+    <div class="card-body">
+      <div class="card-title">FAQ Addition &mdash; "Do I need to file a protest even if I'm in CAPE?"</div>
+      <div class="card-meta">Source: Sandler, Travis &amp; Rosenberg May 14 advisory</div>
+      <div class="card-insight">Add FAQ entry addressing the STR recommendation that importers file timely protests under &sect;1514 even for CAPE-accepted entries, given DOJ appeal risk. Suggested answer: "Yes. STR and other trade counsel recommend filing protests as a protective measure while the DOJ appeal deadline (June 6) remains open."</div>
+    </div>
+  </div>
+</div>
+
+<p style="font-size: 12px; color: rgba(10,10,10,0.45); font-style: italic; margin-top: 8px; margin-bottom: 16px;">Awaiting your approval &mdash; no changes will be made to the site.</p>
+
+<!-- FOOTER -->
+<div class="footer">
+  <button class="btn-primary" onclick="copySelections()">Copy Selections to Clipboard</button>
+</div>
+
+<script>
+var state = { a1: false, a2: false, a3: false, a4: false, a5: false, s1: false, s2: false, s3: false, s4: false };
+var labels = {
+  a1: 'Article: Customs says it\'s issuing $35 billion in tariff refunds (Spectrum News, May 14)',
+  a2: 'Article: Appeals Court Keeps Section 122 Tariffs in Place (Diaz Trade Law, May 14)',
+  a3: 'Article: CBP Reports Further Progress on CAPE Refund Process (STR, May 14)',
+  a4: 'Article: Federal Circuit Hits Pause on CIT\'s Section 122 Ruling (Troutman Pepper, May 14)',
+  a5: 'Article: Commerce Releases Onshoring Agreement Applications (Diaz Trade Law, May 14)',
+  s1: 'Site Update: Hero Badge — $35.46B in refunds processed',
+  s2: 'Site Update: Stats/Metrics — CAPE processing numbers',
+  s3: 'Site Update: Alert Banner — Section 122 stay + class action risk',
+  s4: 'Site Update: FAQ — File protests even if in CAPE'
+};
+
+function toggle(id) {
+  state[id] = !state[id];
+  var card = document.getElementById('card-' + id);
+  var cb = document.getElementById('cb-' + id);
+  card.classList.toggle('selected', state[id]);
+  cb.checked = state[id];
+}
+
+function selectAll() {
+  for (var k in state) { state[k] = true; document.getElementById('card-' + k).classList.add('selected'); document.getElementById('cb-' + k).checked = true; }
+}
+function clearAll() {
+  for (var k in state) { state[k] = false; document.getElementById('card-' + k).classList.remove('selected'); document.getElementById('cb-' + k).checked = false; }
+}
+
+function copySelections() {
+  var lines = ['ADVISORY APPROVAL — May 15, 2026\n'];
+  var approved = [], declined = [];
+  for (var k in state) {
+    if (state[k]) approved.push('  ✓ ' + labels[k]);
+    else declined.push('  ✗ ' + labels[k]);
+  }
+  if (approved.length) { lines.push('APPROVED:'); lines = lines.concat(approved); lines.push(''); }
+  if (declined.length) { lines.push('NOT SELECTED:'); lines = lines.concat(declined); }
+  navigator.clipboard.writeText(lines.join('\n'));
+}
+
+// Advisory toggle
+function toggleAdvisory() {
+  var body = document.getElementById('advisory-body');
+  var toggle = document.getElementById('advisory-toggle');
+  var chevron = document.getElementById('advisory-chevron');
+  var isOpen = body.classList.contains('open');
+  if (isOpen) {
+    body.classList.remove('open');
+    toggle.classList.remove('open');
+    chevron.classList.remove('open');
+  } else {
+    body.classList.add('open');
+    toggle.classList.add('open');
+    chevron.classList.add('open');
+  }
+}
+
+// ICS Download
+function downloadICS(summary, dateStr, description, url) {
+  var end = String(Number(dateStr) + 1);
+  var ics = [
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Rewind Tariffs//Advisory//EN',
+    'BEGIN:VEVENT',
+    'DTSTART;VALUE=DATE:' + dateStr,
+    'DTEND;VALUE=DATE:' + end,
+    'SUMMARY:' + summary,
+    'DESCRIPTION:' + description.replace(/\n/g, '\\n'),
+    url ? 'URL:' + url : '',
+    'END:VEVENT', 'END:VCALENDAR'
+  ].filter(Boolean).join('\r\n');
+  var blob = new Blob([ics], {type: 'text/calendar'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = summary.replace(/[^a-zA-Z0-9]/g, '_') + '.ics';
+  a.click();
+}
+
+// LinkedIn copy with optional preference signal
+function copyLinkedIn() {
+  var text = document.getElementById('linkedin-post').textContent;
+  var used = document.getElementById('li-used-cb').checked;
+  if (used) {
+    text += '\n\n---\nLINKEDIN PREFERENCE SIGNAL\nI used the following post as-is (or with minor edits). Please save it to linkedin-post-preferences.json approved_posts[] with style_signals.\n\nPost text:\n' + document.getElementById('linkedin-post').textContent;
+  }
+  navigator.clipboard.writeText(text).then(function() {
+    var el = document.getElementById('li-copied');
+    el.classList.add('visible');
+    setTimeout(function() { el.classList.remove('visible'); }, 3000);
+    if (used) {
+      document.getElementById('li-learn-msg').classList.add('visible');
+    }
+  });
+}
+
+// LinkedIn adjustment chat
+function sendLiFeedback() {
+  var feedback = document.getElementById('li-chat-input').value.trim();
+  if (!feedback) return;
+  var block = 'LINKEDIN POST ADJUSTMENT REQUEST\n\nCurrent post:\n' + document.getElementById('linkedin-post').textContent + '\n\nRequested changes:\n' + feedback;
+  navigator.clipboard.writeText(block).then(function() {
+    document.getElementById('li-chat-input').value = '';
+    document.getElementById('li-chat-input').placeholder = 'Copied! Paste into Claude.';
+  });
+}
+
+// I Used This Post toggle
+function toggleUsed() {
+  var cb = document.getElementById('li-used-cb');
+  cb.checked = !cb.checked;
+}
+</script>
+</body>
+</html>

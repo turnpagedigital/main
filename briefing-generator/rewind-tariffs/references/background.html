@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tariffs / Trade — Background Knowledge Baseline</title>
+<script>
+(function(){
+  var K='daily-briefing-theme';
+  var ST=['system','dark','light'];
+  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
+  var LB={dark:'Dark',light:'Light',system:'System'};
+  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function apply(){
+    var t=localStorage.getItem(K)||'system';
+    document.documentElement.setAttribute('data-theme',eff(t));
+    document.documentElement.setAttribute('data-theme-pref',t);
+    var b=document.getElementById('theme-toggle');
+    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
+  }
+  window.cycleTheme=function(){
+    var c=localStorage.getItem(K)||'system';
+    var n=ST[(ST.indexOf(c)+1)%ST.length];
+    localStorage.setItem(K,n);apply();
+  };
+  apply();
+  if(document.readyState!=='loading') apply();
+  else document.addEventListener('DOMContentLoaded',apply);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
+})();
+</script>
+<style>
+  :root { --bg:#000000; --surface:#0A0A0A; --surface-2:#16161B; --border:rgba(255,255,255,0.12); --text:#FFFFFF; --text-dim:rgba(255,255,255,0.6); --text-muted:rgba(255,255,255,0.4); --accent:#D4FF00; --good:#D4FF00; --normal:#d29922; --high:#f85149; }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  .page-wrap{max-width:820px;margin:0 auto;padding:32px 40px 60px;}
+  .page-header{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:28px;}
+  .page-header h1{margin:0 0 6px;font-size:24px;font-weight:600;letter-spacing:-0.02em;color:var(--text);}
+  .page-header .sub{color:var(--text-dim);font-size:13px;}
+  .meta-banner{background:rgba(31,111,235,0.08);border-left:3px solid var(--accent);color:var(--text-dim);padding:12px 16px;margin-bottom:28px;border-radius:4px;font-size:13px;}
+  .content h1{font-size:22px;font-weight:600;margin:32px 0 12px;color:var(--text);letter-spacing:-0.02em;border-bottom:1px solid var(--border);padding-bottom:8px;}
+  .content h1:first-child{margin-top:0;}
+  .content h2{font-size:16px;font-weight:600;margin:24px 0 10px;color:var(--text);text-transform:uppercase;letter-spacing:0.04em;}
+  .content h3{font-size:14px;font-weight:600;margin:18px 0 8px;color:var(--text);}
+  .content p{font-size:14px;color:var(--text-dim);margin:0 0 14px;line-height:1.7;}
+  .content p strong{color:var(--text);}
+  .content a{color:var(--accent);text-decoration:none;}
+  .content a:hover{text-decoration:underline;}
+  .content ul, .content ol{margin:0 0 18px 20px;padding:0;}
+  .content li{font-size:14px;color:var(--text-dim);margin-bottom:6px;line-height:1.65;}
+  .content li strong{color:var(--text);}
+  .content code{background:var(--surface);padding:1px 6px;border-radius:3px;font-size:12.5px;color:#ffa657;}
+  .content hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
+  .content em{color:#bc8cff;font-style:italic;}
+  .content blockquote{border-left:3px solid var(--border);padding-left:14px;margin:0 0 14px;color:var(--text-muted);font-style:italic;}
+  .content table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:13px;}
+  .content th, .content td{padding:8px 12px;border:1px solid var(--border);text-align:left;}
+  .content th{background:var(--surface);color:var(--text-muted);text-transform:uppercase;font-size:11px;letter-spacing:0.04em;}
+  .tn{background:var(--bg);border-bottom:1px solid var(--border);padding:10px 20px;font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif;position:sticky;top:0;z-index:100;}
+  .tn-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+  .tn-row+.tn-row{margin-top:6px;}
+  .tn-row.brand{justify-content:space-between;margin-bottom:8px;}
+  .tn-brand{color:var(--text);font-size:13px;font-weight:600;text-decoration:none;letter-spacing:-0.01em;}
+  .tn-brand:hover{color:var(--accent);}
+  .tn-date{color:var(--text-dim);font-size:11px;margin-right:auto;margin-left:12px;}
+  .tn-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:11.5px;color:var(--text-dim);text-decoration:none;background:transparent;border:1px solid transparent;transition:background 0.15s,color 0.15s;}
+  .tn-pill:hover{color:var(--text);background:var(--surface-2);}
+  .tn-pill.active{color:var(--accent);background:rgba(212,255,0,0.15);border-color:rgba(212,255,0,0.4);}
+  .tn-pill.disabled{color:var(--text-muted);cursor:default;}
+  .tn-pill.disabled:hover{background:transparent;color:var(--text-muted);}
+  .tn-pill.view{font-size:11px;padding:2px 9px;}
+
+  [data-theme="light"] { --bg:#E5E7EB; --surface:#ffffff; --surface-2:#D5D9DF; --border:rgba(10,10,10,0.08); --text:#0A0A0A; --text-dim:rgba(10,10,10,0.6); --text-muted:rgba(10,10,10,0.4); }
+  [data-theme="light"] .tn { background:#ffffff; border-bottom-color:rgba(10,10,10,0.08); }
+  [data-theme="light"] .tn-brand { color:#0A0A0A; }
+  [data-theme="light"] .tn-brand:hover { color:#0A0A0A; }
+  [data-theme="light"] .tn-date { color:rgba(10,10,10,0.4); }
+  [data-theme="light"] .tn-pill { color:rgba(10,10,10,0.6); }
+  [data-theme="light"] .tn-pill:hover { background:#D5D9DF; color:#0A0A0A; }
+  [data-theme="light"] .tn-pill.active { color:#0A0A0A; background:rgba(212,255,0,0.18); border-color:rgba(212,255,0,0.5); }
+  [data-theme="light"] .tn-pill.disabled { color:rgba(10,10,10,0.3); }
+  [data-theme="light"] #theme-toggle { border-color:rgba(10,10,10,0.08); }
+  #theme-toggle { background:transparent; border:1px solid rgba(255,255,255,0.12); border-radius:99px; padding:2px 8px; cursor:pointer; font-size:13px; font-family:inherit; line-height:1; color:inherit; }
+  #theme-toggle:hover { background:rgba(127,127,127,0.1); }
+  /* Turnpage brand patch v3 ===================================== */
+  body { font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
+  h1 { letter-spacing: -0.02em; font-weight: 800; }
+
+  /* ----- Section eyebrow headings (h2): neon bar prefix, no underline */
+  section h2 {
+    border-bottom: none !important;
+    padding: 4px 0 4px 1.8em !important;
+    position: relative;
+    letter-spacing: 0.22em !important;
+    font-weight: 700 !important;
+    font-size: 0.78rem !important;
+    text-transform: uppercase !important;
+    margin: 0 0 14px !important;
+  }
+  section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 1.4em;
+    height: 0.18em;
+    background: #D4FF00;
+    border-radius: 2px;
+  }
+  section h2 .pill { margin-left: 8px; }
+
+  /* ----- NAV: dark by default; light theme overrides explicitly */
+  .tn { background: #000000; border-bottom-color: rgba(255,255,255,0.12); }
+  .tn-brand { color: #FFFFFF; text-decoration: none !important; }
+  .tn-brand:hover { color: #D4FF00; }
+  .tn-date { color: rgba(255,255,255,0.6); }
+  .tn-pill { color: rgba(255,255,255,0.7); text-decoration: none !important; background: transparent; border: 1px solid transparent; }
+  .tn-pill:hover { color: #FFFFFF; background: rgba(255,255,255,0.06); }
+  .tn-pill.active { color: #D4FF00; background: rgba(212,255,0,0.12); border-color: rgba(212,255,0,0.45); }
+  #theme-toggle { border-color: rgba(255,255,255,0.25); color: inherit; }
+
+  [data-theme="light"] .tn { background: #FFFFFF !important; border-bottom-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .tn-brand { color: #0A0A0A !important; }
+  [data-theme="light"] .tn-brand:hover { color: #0A0A0A !important; text-decoration: underline !important; text-decoration-color: #D4FF00 !important; text-decoration-thickness: 2px !important; }
+  [data-theme="light"] .tn-date { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] .tn-pill { color: rgba(10,10,10,0.65) !important; }
+  [data-theme="light"] .tn-pill:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; }
+  [data-theme="light"] .tn-pill.active { color: #0A0A0A !important; background: #D4FF00 !important; border-color: #D4FF00 !important; font-weight: 700 !important; }
+  [data-theme="light"] #theme-toggle { border-color: rgba(10,10,10,0.14) !important; color: #0A0A0A !important; }
+
+  /* ----- LIGHT THEME: white-led look, paper only for the Refine subtab */
+  [data-theme="light"] body { background: #FFFFFF !important; color: #0A0A0A !important; }
+  [data-theme="light"] header { background: #FFFFFF !important; border-bottom: 1px solid rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] main { background: #FFFFFF; }
+  [data-theme="light"] footer { background: #FFFFFF !important; border-top: 1px solid rgba(10,10,10,0.08) !important; color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  [data-theme="light"] .card { background: #FFFFFF !important; border-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .card.canonical { box-shadow: 0 1px 3px rgba(10,10,10,0.06) !important; border-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] th { color: rgba(10,10,10,0.45) !important; border-bottom-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] td { border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] td .matter-name { color: #0A0A0A !important; }
+  [data-theme="light"] td .court { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] td .status { color: rgba(10,10,10,0.78) !important; }
+  [data-theme="light"] section h2 { color: #0A0A0A !important; }
+  [data-theme="light"] ul.qlist li { color: rgba(10,10,10,0.78) !important; border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] ul.qlist li strong { color: #0A0A0A !important; }
+  [data-theme="light"] header .date, [data-theme="light"] header .meta, [data-theme="light"] .subtitle, [data-theme="light"] .header-left .date { color: rgba(10,10,10,0.55) !important; }
+
+  /* ----- Refine subtab full-width card */
+  body.refine-page { background: #0A0A0A; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  .refine-box { border-top: none !important; }
+
+  /* ----- Body links (in main content only): subtle accents */
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  [data-theme="light"] main p a, [data-theme="light"] main .qlist a, [data-theme="light"] main .advisory-list a, [data-theme="light"] .advisory-body a, [data-theme="light"] .briefing-block a {
+    color: #0A0A0A;
+    text-decoration-color: rgba(212,255,0,0.85);
+  }
+  [data-theme="light"] main p a:hover, [data-theme="light"] main .qlist a:hover, [data-theme="light"] main .advisory-list a:hover, [data-theme="light"] .advisory-body a:hover, [data-theme="light"] .briefing-block a:hover {
+    background: rgba(212,255,0,0.30);
+  }
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a { color: #D4FF00; text-decoration-color: rgba(212,255,0,0.55); }
+
+  /* ----- Tables: subtle hover */
+  tbody tr:hover { background: rgba(255,255,255,0.03) !important; }
+  [data-theme="light"] tbody tr:hover { background: rgba(10,10,10,0.025) !important; }
+
+  /* ----- Canonical / seed pills (outlined) */
+  .canonical-pill, .seed-pill { background: rgba(212,255,0,0.12) !important; color: #D4FF00 !important; border: 1px solid rgba(212,255,0,0.45) !important; border-radius: 99px !important; }
+  [data-theme="light"] .canonical-pill, [data-theme="light"] .seed-pill { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+  .degraded-pill { border-radius: 99px !important; }
+
+  /* ----- SQUARE BUTTONS — Turnpage three styles */
+  /* Primary (.btn-primary, .dashboard-btn, .open-btn, .btn-copy): ink bg + white text + neon arrow */
+  .dashboard-btn, .open-btn, .btn-copy,
+  .approval-btn, .btn-cal, .btn-send-feedback {
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+    padding: 10px 18px !important;
+    font-family: 'Archivo', -apple-system, sans-serif !important;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  /* PRIMARY (dashboard-btn, open-btn): ink bg + white text */
+  .dashboard-btn, .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border: 1px solid #0A0A0A !important; }
+  .dashboard-btn:hover, .open-btn:hover { background: #16161B !important; border-color: #16161B !important; }
+  [data-theme="light"] .dashboard-btn, [data-theme="light"] .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border-color: #0A0A0A !important; }
+  [data-theme="light"] .dashboard-btn:hover, [data-theme="light"] .open-btn:hover { background: #16161B !important; }
+
+  /* GHOST (approval-btn, btn-cal, .btn-send-feedback, .btn-refine-secondary): outlined */
+  .approval-btn { background: transparent !important; color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .approval-btn:hover { background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .approval-btn { background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; }
+  [data-theme="light"] .approval-btn:hover { background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  .btn-cal, .btn-send-feedback {
+    background: transparent !important;
+    color: #0A0A0A !important;
+    border: 1px solid #0A0A0A !important;
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+  }
+  .btn-cal:hover, .btn-send-feedback:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-cal, [data-theme="dark"] .btn-send-feedback { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-cal:hover, [data-theme="dark"] .btn-send-feedback:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* NEON CTA (btn-copy, btn-refine): solid neon bg + ink text */
+  .btn-copy { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; }
+  .btn-copy:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; border-radius: 0 !important; font-weight: 700 !important; padding: 11px 20px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-refine:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine-secondary { border-radius: 0 !important; padding: 11px 16px !important; font-weight: 600 !important; font-family: 'Archivo', sans-serif !important; background: transparent !important; color: rgba(255,255,255,0.7) !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .btn-refine-secondary:hover { color: #FFFFFF !important; background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .btn-refine-secondary { color: rgba(10,10,10,0.65) !important; border-color: rgba(10,10,10,0.4) !important; }
+  [data-theme="light"] .btn-refine-secondary:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  /* Btn-sm (used on approval HTML header bar) → ghost-style */
+  .btn-sm { border-radius: 0 !important; font-weight: 600 !important; background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; padding: 6px 12px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-sm:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-sm { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-sm:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* Refine status */
+  .refine-status { color: #D4FF00 !important; }
+  [data-theme="light"] .refine-status { color: #0A0A0A !important; }
+
+  /* Doctrine pills */
+  .pill.doctrine { border-color: rgba(212,255,0,0.45) !important; color: #D4FF00 !important; background: rgba(212,255,0,0.12) !important; }
+  [data-theme="light"] .pill.doctrine { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+
+  /* Banner */
+  [data-theme="light"] .banner { background: #F4F5F7 !important; border-left-color: #D4FF00 !important; color: rgba(10,10,10,0.78) !important; }
+
+  /* Advisory toggle (light/dark): square corners, ghost-style border treatment */
+  .advisory-toggle { border-radius: 0 !important; }
+  .advisory-toggle.open { border-radius: 0 !important; }
+  .advisory-body { border-radius: 0 !important; }
+  .briefing-block, .dates-block, .linkedin-block, .disclaimer { border-radius: 0 !important; }
+
+  /* The view (subnav) row: subtle visual indent + breathing room */
+  .tn-row:nth-of-type(3) { padding-top: 6px; gap: 22px; }
+
+  /* View pills: NOT pills — plain text links with active neon underline */
+  .tn-pill.view {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4px 0 !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,0.55) !important;
+    letter-spacing: 0.01em;
+    transition: color 0.12s, border-bottom-color 0.12s;
+  }
+  .tn-pill.view:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+  }
+  .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    padding-bottom: 4px !important;
+  }
+  [data-theme="light"] .tn-pill.view {
+    color: rgba(10,10,10,0.55) !important;
+  }
+  [data-theme="light"] .tn-pill.view:hover {
+    background: transparent !important;
+    color: #0A0A0A !important;
+  }
+  [data-theme="light"] .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #0A0A0A !important;
+    font-weight: 700 !important;
+  }
+
+
+  /* --- Turnpage logo in brand strip ------------------- */
+  .tn-brand { display: inline-flex; align-items: center; gap: 0; }
+  .tn-brand-logo { height: 18px; width: auto; vertical-align: middle; transition: filter 0.15s; filter: invert(1) brightness(2); }
+  /* On LIGHT theme, the logo is already black — no invert needed */
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { font-weight: 700; letter-spacing: -0.01em; }
+    /* Original is black-on-white JPEG. In dark theme we invert to get white-on-black. */
+    filter: invert(1);
+  }
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { display: none; } /* legacy text — replaced by product label on tab row */
+  .tn-brand:hover .tn-brand-logo { opacity: 0.85; }
+  [data-theme="light"]
+
+  /* Tab row: align product label + tabs horizontally with a vertical divider between them */
+  .tn-row:nth-of-type(2) {
+    align-items: center;
+    padding: 8px 0;
+  }
+  [data-theme="light"]
+
+  /* Brand row: logo on left, meta (date + toggle) on right */
+  .tn-row.brand { padding-bottom: 8px !important; }
+
+  /* Slight arrow indicator on tab pill suggesting dropdown */
+  .tn-tab > .tn-pill::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55;
+    vertical-align: 2px;
+  }
+  /* === Remove eyebrow neon bars (user pref) === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
+  <!-- AUTH GATE START -->
+  <script src="/auth/config.js"></script>
+  <script type="module" src="/auth/auth.js"></script>
+  <!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row brand">
+    <a class="tn-brand" href="../../daily-briefing/dashboard-latest.html"><img class="tn-brand-logo" alt="Turnpage" src="/assets/turnpage-logo.jpeg"></a>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+  <div class="tn-row tn-tabs-row">
+    <div class="tn-tab active">
+      <a class="tn-pill active" href="../../rewind-tariffs/dashboard.html">⚖️ Tariffs</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tariffs / Trade</h3>
+            <p class="tn-dd-body">Capital and advisory for IEEPA tariff refund rights. CAPE refunds, the CIT and Federal Circuit dockets, Section 122, and consumer-class exposure on pass-through.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link active" href="../../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../rewind-tariffs/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../llm-class-action/dashboard.html">🤖 LLM</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">LLM / Copyright</h3>
+            <p class="tn-dd-body">AI training-data class actions. Bartz v. Anthropic, the OpenAI MDL, Concord, Disney v. Midjourney — settlement mechanics and benchmark claims rates.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../llm-class-action/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../llm-class-action/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../crypto-insolvency/dashboard.html">🪙 Crypto</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Crypto Insolvency</h3>
+            <p class="tn-dd-body">Customer-property litigation and crypto bankruptcies. BlockFills, Genesis LOC, FTX progeny, and the cross-border Chapter 15 recognition track.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../crypto-insolvency/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../fraud-recovery/dashboard.html">🕵️ Fraud</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Ponzi / Fraud Recovery</h3>
+            <p class="tn-dd-body">Receivership clawbacks, SEC enforcement, and cross-border asset recovery. Goliath Ventures, Paramount/Prestige, and active receiver-led liquidation tracks.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../fraud-recovery/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../fraud-recovery/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../tech-mass-arbitration/dashboard.html">⚙️ Mass Arb</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tech Mass Arbitration</h3>
+            <p class="tn-dd-body">B2B mass-arbitration campaigns against Big Tech defendants. The Google advertiser playbook, Meta waiver track, AAA/JAMS mechanics, foreign analogues.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../tech-mass-arbitration/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../billion-dollar-class-actions/dashboard.html">💰 $1B+</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">$1B+ Class Actions</h3>
+            <p class="tn-dd-body">The mega-settlement cycle. BCBS Subscriber & Provider, Bartz v. Anthropic, Purdue/Sackler, Roundup, Visa/Mastercard interchange.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../billion-dollar-class-actions/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../bankruptcy-creditor-rights/dashboard.html">📜 Bankr</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Bankruptcy Creditor Rights</h3>
+            <p class="tn-dd-body">Plan-confirmation appellate docket. Equitable-mootness drift, post-Purdue third-party releases, Texas Two-Step, exculpation scope, and Subchapter V.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../bankruptcy-creditor-rights/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Tariffs / Trade — Knowledge Baseline</h1>
+    <div class="sub">Synthesized from 20+ daily advisories, May 15, 2026 · Used as standing context for daily 48-hour advisories</div>
+  </div>
+
+  <div class="meta-banner">
+    <strong>Purpose:</strong> This is the foundational knowledge baseline for the Tariffs tab. The daily run uses the 48-hour freshness window to find what's new; this page provides the standing context (active matters, doctrine, key actors, watchlist) against which today's news is evaluated.
+  </div>
+
+  <div class="content">
+<h1>Tariffs / Trade — Knowledge Baseline</h1>
+<p><strong>Generated:</strong> May 15, 2026 (synthesized from 20 daily advisories spanning April 15 – May 15, 2026)
+<strong>Purpose:</strong> Seed background knowledge for the daily-briefing topic project dir. The daily advisories generated each morning rely on this baseline for context; daily runs use the 48-hour freshness window to surface what is genuinely new against the standing picture captured here.</p>
+<hr />
+<h2>Active Matters (live cases, status, key dates)</h2>
+<h3>IEEPA Refund Implementation Docket — <em>Euro-Notions Florida, Inc. v. United States</em>, No. 1:25-cv-00595-RKE (CIT)</h3>
+<p>The operative refund-implementation case at the Court of International Trade. <strong>Senior Judge Richard K. Eaton</strong> presides. The litigation began as <em>Atmus Filtration v. United States</em> and was the vehicle through which the CIT entered its <strong>March 4, 2026 nationwide refund order</strong> following the Supreme Court's February 20, 2026 ruling in <em>Learning Resources, Inc. v. Trump</em>, 146 S. Ct. 628 (2026). After Atmus filed a voluntary notice of dismissal on April 6, 2026, Judge Eaton on April 7 lifted the stay in <em>Euro-Notions Florida</em> and reissued the comprehensive refund order, directing CBP to liquidate or reliquidate three categories of entries without regard to IEEPA duties: (i) unliquidated entries, (ii) entries under active protest, and (iii) finally-liquidated entries — a scope that, as written, extends relief to non-litigant importers as well as named plaintiffs (<a href="https://www.thompsonhinesmartrade.com/2026/04/new-cit-ieepa-tariff-refund-case-selected-after-dismissal-of-lead-case/">Thompson Hine SmarTrade</a>; <a href="https://internationaltradetoday.com/news/2026/04/07/lead-ieepa-litigant-files-notice-of-dismissal-eaton-reissues-refund-order-in-new-case-2604070011">International Trade Today</a>). Judge Eaton's April 1, 2026 order confirmed CBP was "on track to meet the April 20, 2026 deadline" for the Consolidated Administration and Processing of Entries (CAPE) Phase 1 launch (<a href="https://www.thompsonhinesmartrade.com/2026/04/cit-endorses-phase-1-of-the-ieepa-tariff-refund-process-ahead-of-cbps-april-20-rollout/">Thompson Hine SmarTrade</a>). Subsequent closed status conferences on April 28 and progress reports filed by <strong>CBP Executive Director Brandon Lord</strong> on April 30, May 12, and (forthcoming) May 26 constitute the CIT's primary oversight mechanism for Phase 1 throughput. The government's deadline to appeal the underlying refund order to the U.S. Court of Appeals for the Federal Circuit runs to <strong>June 6–8, 2026</strong> (~60 days from the reissued April 7 order); as of May 15 no appeal, motion for extension of time, or public signaling of intent has been filed.</p>
+<h3>Section 122 Replacement-Tariff Litigation — <em>Oregon v. Trump</em> (consolidated with <em>Burlap &amp; Barrel, Inc. v. Trump</em>), Slip Op. 26-47 (CIT), No. 26-01472</h3>
+<p>A three-judge CIT panel heard consolidated oral argument on April 10, 2026 in twin challenges to the 10% global ad valorem surcharge imposed under <strong>Section 122 of the Trade Act of 1974 (19 U.S.C. § 2132)</strong> via Presidential Proclamation 11012, effective February 24/25, 2026 — the administration's bridge measure following the Supreme Court's IEEPA invalidation. The plaintiffs are <strong>Liberty Justice Center</strong> (representing spice importer Burlap &amp; Barrel, Inc. and toy importer Basic Fun, Inc.) and a 24-state attorney general coalition led by Oregon and including New York AG Letitia James (<a href="https://libertyjusticecenter.org/mediaalert/media-alert-federal-court-to-hear-oral-arguments-in-liberty-justice-centers-section-122-tariffs-challenge-at-10-a-m-edt/">Liberty Justice Center</a>; <a href="https://reason.com/volokh/2026/04/10/thoughts-on-todays-oral-argument-in-the-section-122-tariff-cases/">Reason/Volokh</a>). During argument, government counsel <strong>Brett Shumate</strong> acknowledged inability to articulate or estimate the current balance-of-payments deficit — the statute's gating condition. The State of Washington was added as a plaintiff. On <strong>May 7, 2026</strong>, the panel ruled 2–1 (Judge Stanceu dissenting) that the proclamation's reliance on current-account and goods-trade deficits did not satisfy Section 122's "large and serious" balance-of-payments-deficit prerequisite as Congress understood that term in 1974, holding the tariffs <em>ultra vires</em> (<a href="https://www.hklaw.com/en/insights/publications/2026/05/us-court-of-international-trade-invalidates-the-administrations">Holland &amp; Knight</a>; <a href="https://reason.com/2026/05/07/federal-court-trumps-newest-tariffs-are-also-illegal/">Reason</a>). The court entered a <strong>permanent injunction limited to the named plaintiffs only</strong> (Burlap &amp; Barrel, Basic Fun, Washington), declining nationwide relief. DOJ filed a notice of appeal <strong>May 8</strong>, an emergency stay motion <strong>May 11</strong>, and on <strong>May 12–13</strong> the Federal Circuit granted a <strong>temporary administrative stay</strong> keeping the 10% surcharge in effect for all non-plaintiff importers during appeal (<a href="https://wwd.com/sourcing-journal/trade/court-international-trade-cit-section-122-tariffs-stay-injunction-1238950938/">WWD/Sourcing Journal</a>; <a href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/">Troutman Pepper</a>). The expedited briefing schedule: plaintiffs' response due <strong>May 19</strong>, DOJ reply due <strong>May 22</strong>. The Section 122 surcharge in any event reaches its statutory 150-day sunset on <strong>July 24, 2026</strong>, and the President lacks unilateral authority to extend under 19 U.S.C. § 2132; congressional extension would require 60 Senate votes.</p>
+<h3>Consumer Pass-Through Class Actions (multi-district)</h3>
+<p>A rapidly proliferating docket of putative consumer class actions alleging that importers passing IEEPA duties through to retail prices while simultaneously recovering refunds from CBP are unjustly enriched. The template was set by the <strong>March 27, 2026</strong> filing against <strong>Lululemon USA Inc.</strong> in the Eastern District of Michigan (No. 2:26-cv-11029), alleging approximately $240 million in pass-through (<a href="https://www.cov.com/en/news-and-insights/insights/2026/03/consumer-class-actions-arising-from-ieepa-tariff-refund-efforts">Covington</a>). The roster as of May 15 also includes putative class actions against <strong>Walmart</strong> (N.D. Ohio, filed April 27, alleging $10.2 billion in potential double recovery — the largest single-company figure to date) (<a href="https://www.claimdepot.com/cases/walmart-class-action-alleges-102b-tariff-refund-windfall-at-consumers-expense">Claim Depot</a>); <strong>Nike</strong> (D. Or., filed May 8/9, alleging ~$1 billion in pass-through via $5–$10 footwear and $2–$10 apparel price increases) (<a href="https://www.foxbusiness.com/economy/nike-faces-class-action-lawsuit-accusing-pocketing-tariff-refunds-while-charging-consumers-more">Fox Business</a>); <strong>Temu</strong> and <strong>Shein</strong> (Cook County Circuit Court, Illinois Consumer Fraud Act, with Bloomberg-sourced price-increase data showing up to 377% on certain categories); and additional actions against <strong>Costco</strong>, <strong>FedEx</strong>, <strong>UPS</strong>, <strong>EssilorLuxottica</strong>, <strong>Fabletics</strong>, and <strong>Nintendo</strong> filed across the Northern District of Georgia, Southern District of Florida, and Eastern District of New York. Causes of action span unjust enrichment, money had and received, breach of contract, and state unfair-and-deceptive-trade-practices statutes. The structural asymmetry — only the importer of record holds standing to seek a CBP refund — is the foundation of the plaintiffs' theory (<a href="https://www.troutman.com/insights/ieepa-tariff-refunds-may-come-with-an-unforeseen-cost-exposure-to-consumer-class-actions/">Troutman Pepper</a>; <a href="https://www.arnoldporter.com/en/perspectives/advisories/2026/03/the-next-wave-of-tariff-litigation">Arnold &amp; Porter</a>; <a href="https://www.ballardspahr.com/insights/alerts-and-articles/2026/03/tariff-ied-of-a-refund-lawsuit-takeaways-from-the-early-complaints">Ballard Spahr</a>).</p>
+<h3>USTR Section 301 Investigations</h3>
+<p>USTR initiated parallel Section 301 investigations on <strong>March 11, 2026</strong>: one targeting structural manufacturing excess capacity across <strong>16 economies</strong> (including China, the EU, Japan, India, Mexico, Vietnam), the other targeting forced-labor enforcement failures across <strong>60+ economies</strong>. Written-comment period closed <strong>April 15, 2026</strong>; USITC public hearings on forced labor opened <strong>April 28</strong>; hearings on manufacturing overcapacity ran <strong>May 5–8</strong>. Post-hearing rebuttal comments on overcapacity were due <strong>May 15</strong>. On <strong>May 6, 2026</strong>, USTR separately initiated its statutory four-year review of the legacy 2018 China Section 301 actions, with comment windows running through <strong>July 5</strong> (List 1) and <strong>August 22</strong> (List 2). USTR Ambassador <strong>Jamieson Greer</strong> testified before House Ways and Means on May 11, 2026, citing a 24% reduction in the trade deficit and signaling that the administration is <strong>not receptive to exclusion requests</strong>, with 76 active Section 301 investigation tracks now underway (<a href="https://waysandmeans.house.gov/2026/05/11/five-key-moments-hearing-on-u-s-trade-with-ambassador-jamieson-greer/">Ways and Means</a>; <a href="https://www.hklaw.com/en/insights/publications/2026/03/ustr-launches-awaited-section-301-investigations">Holland &amp; Knight</a>; <a href="https://www.thompsonhinesmartrade.com/2026/05/ustr-initiates-second-four-year-review-of-section-301-tariff-actions-on-imports-of-certain-chinese-products/">Thompson Hine SmarTrade</a>).</p>
+<hr />
+<h2>CAPE Refund System (Operational State)</h2>
+<p>CBP's <strong>Consolidated Administration and Processing of Entries (CAPE)</strong> tool went live at <strong>8:00 a.m. EDT on April 20, 2026</strong> inside the ACE Secure Data Portal, accessible through a new CAPE tab. Filings take the form of CSV-formatted <strong>CAPE Declarations</strong>, with brokers permitted to bundle up to <strong>9,999 entries</strong> per declaration across multiple importers of record. Refunds issue exclusively by ACH; refund timing is <strong>60–90 days from CAPE Declaration acceptance</strong> (not submission), and the clock resets on any rejection. CBP-issued ACE reporting modules now include the <strong>Entry Summary Report</strong>, <strong>ACH Rejected Refunds Report</strong>, <strong>Trade Refund Report</strong>, and <strong>CAPE Details Report</strong> (<a href="https://www.cbp.gov/trade/programs-administration/trade-remedies/ieepa-duty-refunds">CBP IEEPA Duty Refunds</a>; <a href="https://content.govdelivery.com/accounts/USDHSCBP/bulletins/412cc7f">CBP CSMS #68340863</a>; <a href="https://www.forvismazars.us/forsights/2026/05/ace-reports-now-available-support-for-ieepa-tariff-refunds">Forvis Mazars</a>).</p>
+<p><strong>Phase 1 scope</strong> is limited to unliquidated entries and entries within <strong>80 days of liquidation</strong> — representing approximately <strong>60–63% of IEEPA-duty entries</strong> by count, and approximately <strong>82% of refund dollars</strong> ($127 billion of the estimated $166 billion total, including interest). <strong>Phase 2</strong> (liquidated entries beyond the 80-day window, reconciliation entries, drawback entries, entries subject to open protests, AD/CVD entries) has not yet received a launch timeline.</p>
+<p><strong>Cumulative operational metrics across the advisory archive (April 20 – May 12, 2026):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Apr 20 (launch)</th>
+<th>Apr 28</th>
+<th>May 1</th>
+<th>May 11</th>
+<th>May 12 (CBP filing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAPE Declarations submitted</td>
+<td>—</td>
+<td>—</td>
+<td>75,300+</td>
+<td>75,300+</td>
+<td><strong>126,237</strong></td>
+</tr>
+<tr>
+<td>Declarations validated</td>
+<td>—</td>
+<td>—</td>
+<td>47,000</td>
+<td>~21%</td>
+<td><strong>86,874</strong></td>
+</tr>
+<tr>
+<td>Entries covered</td>
+<td>—</td>
+<td>13.3M cleared review</td>
+<td>11.22M</td>
+<td>11.2M</td>
+<td><strong>15,123,221</strong></td>
+</tr>
+<tr>
+<td>Entries fully processed / queued</td>
+<td>—</td>
+<td>—</td>
+<td>1.74M</td>
+<td>1.74M (3%)</td>
+<td><strong>8,338,081 liq./reliq.</strong></td>
+</tr>
+<tr>
+<td>Refunds finalized (incl. interest)</td>
+<td>$0</td>
+<td>$0</td>
+<td>$0</td>
+<td>First ACH May 11</td>
+<td><strong>$35.46B</strong></td>
+</tr>
+<tr>
+<td>Stalled for ACH-enrollment gap</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><strong>1,880 consolidated refunds</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Importer/notify-party ACH enrollment:</strong> 26,664 of ~330,000 eligible importers (8%) as of late March 2026; <strong>56,497 by April 9</strong> (representing $127B / 82% of refund dollars). Penn Wharton Budget Model (April 15, 2026 update) places total customs revenue from tariff-rate changes (January 2025 – February 2026) at <strong>$224.8 billion</strong> and IEEPA-specific collections through December 14, 2025 at <strong>$133.5 billion</strong>; revised totals incorporating ongoing collections place the IEEPA refund universe at <strong>$166–175 billion</strong> across roughly <strong>330,000 importers</strong> and <strong>53 million entries</strong> (<a href="https://budgetmodel.wharton.upenn.edu/p/2026-04-15-effective-tariff-rates-and-revenues-updated-april-15-2026/">Penn Wharton Budget Model</a>). Statutory interest accrues at approximately <strong>6% per annum</strong> from date of duty payment through liquidation — roughly <strong>$650 million per month</strong> in aggregate, per CBO data.</p>
+<p><strong>First disbursements arrived May 11, 2026.</strong> Reported recipients include wine importer <strong>VOS Selections</strong> (~$110,000), <strong>Flexport</strong> clients (~$137 million aggregate), and confirmed small-importer ACH deposits. <strong>Rejection rate</strong> ran 15% at end of Week 1 (CBP characterized as data-quality issues, not gatekeeping), climbing to <strong>~40% by May 14</strong> — primarily HTS-classification mismatches, IOR-tax-ID conflicts ("Duplicate Tax ID" errors), entered-value/quantity variances, and incomplete ACH-enrollment data. Express consignment operators <strong>UPS, FedEx, and DHL</strong> all confirmed by April 21 they are filing CAPE Declarations as importer of record / broker for customers; UPS disclosed it remitted $5B in IEEPA duties across 16M entries and has filed initial declarations covering $500M / 2.5M entries. <strong>FedEx, DHL, and Cards Against Humanity</strong> have publicly committed to passing refunds through to original duty payers; <strong>Costco</strong> committed to returning value via "lower prices and better values"; the carrier pass-through represents an estimated <strong>$5B+</strong> flowing back to small and mid-size shippers (<a href="https://fortune.com/2026/04/29/fedex-ups-pledging-tariff-refunds-back-to-customers/">Fortune</a>; <a href="https://wwd.com/sourcing-journal/logistics/ups-5-billion-tariff-refunds-cbp-phase-1-guidance-outlook-fuel-costs-surcharges-iran-war-amazon-volumes-treasury-1238932414/">WWD/Sourcing Journal</a>).</p>
+<hr />
+<h2>Recent Precedent / Rulings Timeline</h2>
+<ul>
+<li>
+<p><strong>February 20, 2026 — <em>Learning Resources, Inc. v. Trump</em>, 146 S. Ct. 628 (2026)</strong>. The Supreme Court strikes down the Trump administration's IEEPA tariff authority. The decision is the trigger for the entire refund architecture and is the predicate authority for all subsequent CIT orders. As of May 15, 2026, no rehearing petition, motion for extension of time, or DOJ statement of intent to challenge has been filed; the approximate rehearing-petition window expires late May–early June 2026.</p>
+</li>
+<li>
+<p><strong>March 4, 2026 — CIT Nationwide Refund Order</strong>. Judge Eaton enters the original nationwide refund order in <em>Atmus Filtration v. United States</em>, directing CBP to develop the operational mechanism for returning IEEPA duties to importers.</p>
+</li>
+<li>
+<p><strong>April 1, 2026 — CIT Status Order</strong>. Judge Eaton finds CBP "continues to make satisfactory progress" and is "on track to meet the April 20, 2026 deadline" for CAPE Phase 1 implementation (<a href="https://www.thompsonhinesmartrade.com/2026/04/cit-endorses-phase-1-of-the-ieepa-tariff-refund-process-ahead-of-cbps-april-20-rollout/">Thompson Hine SmarTrade</a>).</p>
+</li>
+<li>
+<p><strong>April 2, 2026 — Section 232 Proclamations</strong>. The President issues proclamations under <strong>Section 232 of the Trade Expansion Act of 1962 (19 U.S.C. § 1862)</strong> imposing 50% duties on articles substantially of steel, aluminum, or copper (25% on derivatives, effective April 6), and — in a novel statutory extension — imposing 100% Section 232 duties on patented pharmaceuticals and active pharmaceutical ingredients, tiered to take effect July 31 (17 named major drug companies) and September 29 (all remaining). Strategic-partner rates: 15% for EU/Japan/South Korea/Switzerland, 10% for the UK with a pathway to zero contingent on a bilateral pharmaceutical pricing agreement (<a href="https://www.lawfaremedia.org/article/trump-s-new-tariffs-expand-the-boundaries-of-section-232">Lawfare</a>; <a href="https://www.nortonrosefulbright.com/en/knowledge/publications/d2cd8123/section-232-spotlight-overhauled-metals-tariffs-and-new-pharmaceutical-tariffs">Norton Rose Fulbright</a>).</p>
+</li>
+<li>
+<p><strong>April 6, 2026 — Atmus Voluntary Dismissal / April 7 Euro-Notions Substitution</strong>. Lead-case substitution; Judge Eaton reissues the refund order under the new docket without altering substantive scope.</p>
+</li>
+<li>
+<p><strong>April 20, 2026 — CAPE Phase 1 Launch</strong>. ACE Secure Data Portal opens the CAPE tab at 8:00 a.m. EDT.</p>
+</li>
+<li>
+<p><strong>May 7, 2026 — <em>Burlap &amp; Barrel / Oregon v. Trump</em>, CIT Slip Op. 26-47</strong>. Three-judge CIT panel rules 2–1 that Section 122 tariffs are <em>ultra vires</em> for failure to satisfy the "large and serious" balance-of-payments-deficit prerequisite. Permanent injunction limited to named plaintiffs only.</p>
+</li>
+<li>
+<p><strong>May 11–13, 2026 — Federal Circuit Administrative Stay</strong>. DOJ files notice of appeal May 8, emergency stay motion May 11; Federal Circuit grants temporary administrative stay May 12–13 pending full briefing (plaintiffs' response due May 19; DOJ reply May 22). Section 122 tariffs remain in effect for non-plaintiff importers.</p>
+</li>
+<li>
+<p><strong>Buchalter / Federal Circuit "Clearing the Lane" Doctrine</strong>. Earlier Federal Circuit and CIT jurisprudence under <strong>28 U.S.C. § 1581(i)</strong> confirmed the CIT's exclusive jurisdiction over IEEPA refund litigation, foreclosing parallel district-court actions and channeling the entire post-<em>Learning Resources</em> refund effort through Eaton's CIT docket.</p>
+</li>
+</ul>
+<hr />
+<h2>Section 122 / Replacement Tariff Doctrine</h2>
+<p>Section 122 of the Trade Act of 1974 (19 U.S.C. § 2132) is the doctrinal track that warrants standalone treatment because it is the only post-IEEPA tariff authority operating under an automatic statutory sunset, with plaintiffs-specific judicial relief, and with no unilateral presidential extension authority. The statute authorizes temporary import surcharges of up to 15% to address "large and serious United States balance-of-payments deficits," "to prevent an imminent and significant depreciation of the dollar in foreign exchange markets," or to cooperate with countries similarly situated; it imposes a hard <strong>150-day duration cap</strong> absent congressional extension, and Congress's 1974 legislative history tied "balance-of-payments deficits" to liquidity, official-settlements, and basic-balance measures rather than the goods-trade or current-account framing the Trump administration advanced. The CIT's May 7 ruling embraced the 1974 statutory reading and rejected the administration's reliance on Bureau of Economic Analysis current-account data.</p>
+<p><strong>Operational consequences for importers:</strong>
+1. <strong>Plaintiffs-only relief.</strong> Unlike the IEEPA refund order, there is no nationwide injunction; non-plaintiff importers continue to pay the 10% surcharge and have <strong>no automatic refund pathway</strong>.
+2. <strong>Protection strategy for non-plaintiffs.</strong> Counsel uniformly recommends filing <strong>protests under 19 U.S.C. § 1514</strong> within 180 days of liquidation, and/or initiating individual CIT actions under <strong>28 U.S.C. § 1581(i)</strong>, to preserve refund rights against the contingency that the Federal Circuit affirms (<a href="https://customsandinternationaltradelaw.com/2026/05/12/title-another-blow-to-the-u-s-tariff-war-can-importers-obtain-refunds-after-section-122-tariffs-were-invalidated/">Diaz Trade Law</a>; <a href="https://www.swlaw.com/publication/more-tariff-refunds-not-so-fast-court-of-international-trade-strikes-down-section-122-tariffs-but-relief-is-limited-to-plaintiffs/">Snell &amp; Wilmer</a>).
+3. <strong>July 24, 2026 statutory sunset.</strong> Even if the Federal Circuit reverses on the merits, the surcharge expires by operation of law. Approximately 170,000 importers across an estimated 13 million entries are paying Section 122 duties.
+4. <strong>Administration sequencing risk.</strong> The CIT's May 7 ruling, if upheld or expanded, could collapse the Section 122 bridge before USTR's Section 301 architecture is in place — leaving a gap for non-USMCA, non-Section-232 goods. The administration is engineered to land Section 301 determinations before July 24 specifically to avoid this gap.</p>
+<hr />
+<h2>Consumer Pass-Through / Class Action Theory</h2>
+<p>The doctrinal core of the consumer class-action wave: when an importer of record raises consumer-facing prices to absorb IEEPA duties and subsequently recovers those duties from CBP through CAPE, plaintiffs allege the importer has received "double recovery" — once from consumers via price increases, and again from the government. Claims sound primarily in unjust enrichment, money had and received, breach of contract (where pricing terms or surcharge line-items are involved), and state UDAP statutes (Illinois Consumer Fraud Act, California UCL, FDUTPA, etc.). The Lululemon, Walmart, Nike, Temu, Shein, Costco, FedEx, UPS, EssilorLuxottica, Fabletics, and Nintendo filings collectively establish the template. Yale Budget Lab per-household impact calculations have been cited as a damages framework, with <strong>Minnesota State Auditor Julie Blaha</strong> suggesting consumer reimbursement either via direct payments based on per-household impact estimates or via business-administered customer refunds.</p>
+<p><strong>State-level activism.</strong> A coalition of <strong>eight state comptrollers and treasurers</strong> sent a public letter to the President on May 14, 2026 demanding disclosure of all IEEPA refund applications and protections for consumers who bore the economic burden through higher prices. New York AG Letitia James and 23 state AG counterparts called on Congress in April to mandate refund-with-interest legislation; Reps. <strong>Steven Horsford (D-NV)</strong> and <strong>Janelle Bynum (D-OR)</strong> introduced the <strong>Restoring Economic Lifelines for Independent Enterprises and Family Businesses (RELIEF) Act</strong> (<a href="https://bynum.house.gov/media/press-releases/bynum-and-horsford-introduce-relief-act-following-supreme-court-tariff-ruling">Bynum press release</a>) — automatic CBP refunds with interest — but the bill lacks Republican co-sponsorship. Horsford also sent letters to major retailers on April 23, 2026 demanding pass-through accountability (<a href="https://horsford.house.gov/sites/evo-subsites/horsford.house.gov/files/evo-media-document/quill-letter-l36017-letter-to-corporations-re-tariff-refund-accountability-version-3-04-23-2026-11-05-am.pdf">Horsford Letter</a>).</p>
+<p><strong>Disclosure / securities posture.</strong> Refund-anticipation accruals, tariff-cost-recovery representations, and MD&amp;A descriptions of expected pass-through economics are now plaintiff-discovery targets. Public-company 10-Q cycles overlapping the first refund disbursements (May 11 onward) create compounding risk. Counsel uniformly advise contemporaneous documentation of pricing decisions, cost-allocation methodology, and customer communications prior to filing CAPE Declarations, and litigation-hold implementation covering the IEEPA tariff period (approximately February 2025 – February 2026).</p>
+<hr />
+<h2>USTR / Section 301 / Section 232</h2>
+<p><strong>Section 301 of the Trade Act of 1974 (19 U.S.C. § 2411)</strong> has emerged as the administration's primary durable replacement vehicle precisely because it has no statutory rate ceiling and no sunset provision. As of May 11, 2026, <strong>USTR has 76 active Section 301 investigation tracks</strong> open, with USTR Greer explicitly disinclined to entertain exclusion requests (<a href="https://waysandmeans.house.gov/2026/05/11/five-key-moments-hearing-on-u-s-trade-with-ambassador-jamieson-greer/">Ways and Means Hearing</a>). The two flagship investigations launched March 11 target (i) structural manufacturing excess capacity across 16 economies, and (ii) forced-labor enforcement across 60+ economies; public hearings concluded May 8, with rebuttal comments closed approximately May 15. The May 6 statutory four-year review of the legacy 2018 China List 1 / List 2 actions adds a parallel comment track running through July 5 / August 22. Determinations are timed to land <strong>before the July 24 Section 122 sunset</strong>, though the historical Section 301 investigation-to-tariff timeline runs 12–18 months and the compression carries procedural-rigor risk that may invite judicial scrutiny.</p>
+<p><strong>Section 232.</strong> The April 2 proclamations expand Section 232 beyond traditional national-security commodities — testing the statute's boundaries with the 100% pharmaceutical-tariff regime and modified copper-derivative treatment. The Commerce Department released applications on May 14 for <strong>onshoring agreements</strong> that would allow domestic producers to reduce Section 232 exposure in exchange for U.S. manufacturing-capacity commitments (<a href="https://customsandinternationaltradelaw.com/2026/05/14/commerce-releases-applications-for-onshoring-agreements-to-reduce-section-232-tariffs/">Diaz Trade Law</a>).</p>
+<p><strong>US-China bilateral track.</strong> The <strong>Geneva 90-day tariff truce</strong> announced <strong>May 12, 2026</strong> cuts the U.S. headline rate on Chinese goods from 145% to 30% and the Chinese rate on U.S. goods from 125% to 10%; China suspended rare-earth export restrictions, regulatory investigations of select U.S. firms, and use of the "unreliable entity list." The truce window expires approximately <strong>August 10, 2026</strong> (<a href="https://www.cfr.org/expert-brief/trumps-china-truce-tariffs-comes-cost-us-credibility">Council on Foreign Relations</a>; <a href="https://www.atlanticcouncil.org/blogs/econographics/as-the-trump-xi-summit-draws-closer-trade-uncertainty-still-looms-large/">Atlantic Council</a>). The <strong>Trump–Xi Beijing summit (May 14–15, 2026)</strong> — the first U.S. presidential visit to China in nearly a decade — produced expected announcements on Boeing aircraft purchases (~500 aircraft), agricultural commitments, rare-earth supply, and a proposed bilateral "<strong>Board of Trade</strong>" managed-trade mechanism originally floated by USTR Greer in March, including identification of approximately $30 billion in goods for mutual tariff reductions. The pre-existing November 2025 U.S.–China framework (one-year extension, fentanyl-related tariff reduced to 10%, general China rate at 49%, agricultural purchases committed through 2028) expires <strong>November 10, 2026</strong>.</p>
+<p><strong>Fiscal scale.</strong> The CBO scored the IEEPA invalidation as adding ~$2 trillion to federal deficits over a decade; administration replacement measures are projected to recover $800–900 billion of that shortfall.</p>
+<hr />
+<h2>Key Actors</h2>
+<p><strong>Judiciary.</strong> <em>CIT:</em> <strong>Senior Judge Richard K. Eaton</strong> (refund-implementation docket, <em>Euro-Notions Florida</em>); three-judge panel including <strong>Judge Stanceu</strong> (dissenting on Section 122) deciding <em>Burlap &amp; Barrel / Oregon</em>. <em>Federal Circuit:</em> Panel adjudicating the Section 122 stay motion and forthcoming appeal of <em>Burlap &amp; Barrel</em>; also the prospective forum for any appeal of Eaton's refund order. <em>Supreme Court:</em> Author of <em>Learning Resources, Inc. v. Trump</em>, 146 S. Ct. 628 (2026); rehearing window approximately late May–early June 2026.</p>
+<p><strong>Executive Branch.</strong> <strong>USTR Ambassador Jamieson Greer</strong> (Section 301 investigations, Board of Trade framework architect, "accelerated timeline" posture); <strong>DOJ</strong> appellate posture marked by complete silence on the IEEPA appeal and an aggressive defense of the Section 122 surcharge; <strong>CBP Executive Director Brandon Lord</strong> (operational owner of CAPE, sworn-statement reports to CIT); <strong>Commerce Department</strong> (Section 232 onshoring agreements); Section 122 oral-argument counsel <strong>Brett Shumate</strong>.</p>
+<p><strong>Plaintiffs (named).</strong> <strong>VOS Selections</strong> (received the publicly reported $110,000 IEEPA refund); <strong>Burlap &amp; Barrel, Inc.</strong> and <strong>Basic Fun, Inc.</strong> (Section 122 plaintiffs via Liberty Justice Center); <strong>Euro-Notions Florida, Inc.</strong> (current IEEPA refund-order lead plaintiff); <strong>State of Washington</strong> (Section 122 plaintiff state); <strong>State of Oregon</strong> and the 24-state AG coalition (Section 122 challengers). Consumer class-action defendants: Lululemon, Walmart, Nike, Temu, Shein, Costco, FedEx, UPS, EssilorLuxottica, Fabletics, Nintendo.</p>
+<p><strong>Plaintiff-side counsel and amici.</strong> <strong>Liberty Justice Center</strong> (lead small-importer counsel on Section 122); <strong>New York AG Letitia James</strong> (state AG coalition leader); <strong>Cato Institute</strong> (small-importer access-equity commentary); <strong>Yale Budget Lab</strong> (per-household impact calculations cited in pass-through claims).</p>
+<p><strong>State officials.</strong> Eight-state comptroller/treasurer coalition (May 14 letter); <strong>Minnesota State Auditor Julie Blaha</strong> (per-household consumer-rebate proposal).</p>
+<p><strong>Congressional.</strong> Reps. <strong>Steven Horsford (D-NV)</strong> and <strong>Janelle Bynum (D-OR)</strong> (RELIEF Act; April 23 retailer-accountability letters); House Ways and Means (May 11 Greer hearing).</p>
+<hr />
+<h2>Recurring Legal Questions</h2>
+<ol>
+<li>
+<p><strong>Interest accrual rate on IEEPA refunds.</strong> CBP confirms statutory interest at approximately 6%, accruing from date of duty payment through liquidation — but the precise statutory basis (whether under 19 U.S.C. § 1505(c), Treasury Department rates, or court-ordered alternative) and the treatment of compounding remain refinement points in practitioner guidance.</p>
+</li>
+<li>
+<p><strong>Protection strategy for non-plaintiff Section 122 importers.</strong> Whether protective protests under § 1514 (180-day window from liquidation) or individual § 1581(i) CIT actions provide the more durable preservation pathway pending Federal Circuit resolution. Counsel uniformly recommend layering both where economically justified.</p>
+</li>
+<li>
+<p><strong>Pass-through liability theories.</strong> Whether state UDAP statutes and federal unjust-enrichment doctrines reach corporate retention of CBP refunds for costs previously embedded in consumer prices. The doctrinal centerpiece is the structural standing asymmetry (only the IOR can file with CBP, no consumer pathway exists).</p>
+</li>
+<li>
+<p><strong>Anti-Assignment Act exposure for refund-claim purchasers.</strong> Sidley Austin's April 30 analysis flags that the statutory prerequisites — claim "allowed," amount "decided," and warrant for payment issued — are likely not met for most IEEPA claims at filing stage, recommending obligation-to-pursue structures rather than outright assignments (<a href="https://www.sidley.com/en/insights/newsupdates/2026/04/ieepa-tariff-refund-claims-key-considerations-for-lenders-borrowers-and-claims-purchasers">Sidley Austin</a>).</p>
+</li>
+<li>
+<p><strong>Reach of the Euro-Notions refund order to non-litigants.</strong> The order's facial extension to "non-litigant importers" remains the single most consequential open question on appeal; the government has stipulated not to object to refunds on liquidated entries but reserves appellate rights.</p>
+</li>
+<li>
+<p><strong>Phase 2 scope and timing.</strong> CBP has not yet announced a launch timeline for liquidated entries beyond the 80-day window, reconciliation entries, drawback entries, AD/CVD entries, and entries with active compliance review — the residual ~18% of refund dollars (~$39 billion).</p>
+</li>
+<li>
+<p><strong>Section 301 procedural rigor under compression.</strong> Whether USTR's accelerated July-24-targeted determinations can withstand the <em>Learning Resources</em> / <em>Burlap &amp; Barrel</em> level of judicial scrutiny applied to IEEPA and Section 122.</p>
+</li>
+<li>
+<p><strong>Section 232 statutory-boundary testing.</strong> Whether the pharmaceutical-tariff application of Section 232 will invite challenge analogous to the IEEPA precedent, given the absence of a traditional national-security nexus.</p>
+</li>
+</ol>
+<hr />
+<h2>Source Landscape</h2>
+<p><strong>Government primary.</strong> CBP IEEPA Duty Refunds page; CBP CSMS bulletins (#68340863 and successors); CIT dockets via PACER (<em>Euro-Notions Florida</em>, <em>Burlap &amp; Barrel</em>, <em>Oregon v. Trump</em>); USTR press releases and federal-register notices; House Ways and Means hearing transcripts.</p>
+<p><strong>Tier 1 trade press (best on operational developments).</strong> <strong>Bloomberg</strong> (CAPE launch metrics, rejection rates, carrier filings); <strong>Reuters</strong> (Geneva truce, summit coverage); <strong>CBS News</strong> (refund-timeline reporting, "first refunds arriving" coverage); <strong>CNBC</strong> (carrier pass-through, retail exposure); <strong>Fortune</strong> (small-business access barriers, carrier-pass-through reporting, filing-guide content); <strong>CNN, AP</strong>; <strong>WWD/Sourcing Journal</strong> (logistics-sector and retail-sector coverage); <strong>Supply Chain Dive</strong> (FedEx/UPS/DHL operational mechanics); <strong>NPR</strong> (small-importer access gap, "He recorded his quest" investigative piece); <strong>Marketplace</strong> (consumer-side framing). <strong>Reason / Volokh Conspiracy</strong> is the canonical source for CIT oral-argument coverage. <strong>Spectrum News</strong> for state-comptroller and individual-importer reporting. <strong>Foreign Policy</strong> and <strong>Atlantic Council</strong> for US-China summit analytics. <strong>Council on Foreign Relations</strong> for Geneva-truce strategic analysis. <em>(Do not cite NYT or Al Jazeera.)</em></p>
+<p><strong>Tier 3 law firms (practitioner-grade analysis).</strong> <strong>Holland &amp; Knight</strong> publishes the gold-standard CIT-ruling and Section 122 alerts; <strong>Thompson Hine SmarTrade</strong> publishes the operational refund-process tracking (CAPE rollout, lead-case substitution, CIT scheduling); <strong>Troutman Pepper</strong> (now Troutman Pepper Locke) leads pass-through class-action analysis; <strong>Sidley Austin</strong> owns the lender/borrower/claims-purchaser angle and Anti-Assignment Act risk; <strong>Covington &amp; Burling</strong> publishes the consumer-class-action survey work; <strong>Arnold &amp; Porter</strong> publishes "The Next Wave of Tariff Litigation" series; <strong>Baker Botts</strong> ("Plan B" Section 301 series; Trump Tariff Tracker); <strong>Baker Donelson</strong> (consolidated trade-policy-shift coverage); <strong>Greenberg Traurig</strong> (refund mechanics); <strong>Diaz Trade Law / Customs &amp; International Trade Law Blog</strong> (practical refund-pathway guidance, Section 122 protest strategy); <strong>Sandler, Travis &amp; Rosenberg</strong> (STR Trade Report; CAPE progress-tracking); <strong>Buchalter</strong> (Federal Circuit jurisdictional/refund-litigation lane); <strong>Snell &amp; Wilmer</strong> (Section 122 plaintiff-limitation analysis, CAPE phase guidance); <strong>Davis Wright Tremaine</strong> (CIT order-broadening coverage); <strong>Skadden</strong> (refund-mechanism overview); <strong>Norton Rose Fulbright</strong> (Section 232 metals/pharmaceutical analysis); <strong>Duane Morris</strong> (integrated Section 301 / IEEPA / Section 122 alerts); <strong>Ballard Spahr</strong> ("Tariff IED of a Refund Lawsuit"); <strong>Morgan Lewis</strong> (retailer disclosure and litigation risk); <strong>Wiley</strong> (US-China framework); <strong>Jones Walker</strong> (consumer class action commentary); <strong>Hinshaw &amp; Culbertson</strong> (CAPE filing Q&amp;A); <strong>Lawfare</strong> (Section 232 boundary analysis).</p>
+<p><strong>Industry / accounting advisory.</strong> <strong>Forvis Mazars</strong> (middle-market filing guidance, ACE-reporting walkthroughs); <strong>Cherry Bekaert</strong> (Section 122 challenge tracking); <strong>Grant Thornton</strong> (tariff roadmap); <strong>Wipfli</strong>; <strong>Baker Tilly</strong> (CAPE portal coverage); <strong>AdvaMed</strong> (MedTech-specific filing guidance); <strong>Penn Wharton Budget Model</strong> (fiscal-impact baseline); <strong>Tax Foundation</strong>; <strong>Kearney Reshoring Index</strong>; <strong>SAFE</strong> (metals-sector Section 301 testimony).</p>
+<hr />
+<h2>Watchlist (next 60 days)</h2>
+<ol>
+<li><strong>May 19, 2026</strong> — Plaintiffs' response brief due at the Federal Circuit on the Section 122 stay motion (<em>Burlap &amp; Barrel / Oregon</em> appeal).</li>
+<li><strong>May 22, 2026</strong> — DOJ reply brief due at the Federal Circuit on the Section 122 stay motion. Expect ruling on full stay shortly thereafter.</li>
+<li><strong>Approximately late May / early June 2026</strong> — Supreme Court rehearing-petition window in <em>Learning Resources, Inc. v. Trump</em> expires. Continued DOJ silence increasingly reads as acquiescence.</li>
+<li><strong>May 26, 2026</strong> — Next CBP progress report to Judge Eaton on CAPE Phase 1 throughput, rejection categories, and Phase 2 parameters.</li>
+<li><strong>June 6–8, 2026</strong> — Government's deadline to appeal Judge Eaton's reissued refund order in <em>Euro-Notions Florida</em> to the Federal Circuit. No filing or motion for extension as of May 15.</li>
+<li><strong>July 5, 2026</strong> — Comment deadline on USTR Section 301 four-year review of legacy China List 1 action.</li>
+<li><strong>July 6, 2026</strong> — Comment deadline on the 16-economy Section 301 overcapacity investigation.</li>
+<li><strong>July 24, 2026</strong> — Section 122 surcharge statutory sunset at 12:01 a.m. ET. No unilateral presidential extension authority; 60-vote Senate threshold for congressional extension appears politically out of reach.</li>
+<li><strong>July 31, 2026</strong> — 100% Section 232 pharmaceutical-tariff effective date for 17 named major drug companies.</li>
+<li><strong>August 10, 2026 (approx.)</strong> — Geneva 90-day US-China tariff truce expires.</li>
+<li><strong>August 22, 2026</strong> — Comment deadline on USTR Section 301 four-year review of legacy China List 2 action.</li>
+<li><strong>September 29, 2026</strong> — 100% Section 232 pharmaceutical-tariff effective date for all remaining drug companies.</li>
+<li><strong>November 10, 2026</strong> — Pre-existing November 2025 US-China framework expires.</li>
+<li><strong>Rolling / ongoing</strong> — Phase 2 CAPE scope announcement; consumer class-action motion-to-dismiss calendars in Lululemon (E.D. Mich.), Walmart (N.D. Ohio), Nike (D. Or.), and Temu/Shein (Cook County); 1,880 stalled ACH-registration consolidated refunds; the 80-day Phase 1 reliquidation window narrowing daily for entries liquidating in late April / early May.</li>
+</ol>
+<hr />
+<p><strong>Coverage caveats:</strong> Searches across the advisory archive show consistent reporting of the $166 billion total IEEPA-refund liability, but the figure spans a range ($165B–$175B) depending on whether the Penn Wharton revised estimate is used and how ongoing collections are amortized. CBP's own operational figure is $166B; Penn-Wharton supports $175B; the higher estimate is more defensible for forward-looking analysis. Section 122 importer-population estimates (~170,000 importers across ~13 million entries) derive from DOJ filings and may not include de minimis or express-consignment shipments. The "60-90 day" CAPE processing window is CBP's representation, not a court-imposed deadline, and observed processing times have varied significantly with rejection cascades. The consumer class-action damages framework (Yale Budget Lab per-household calculations) has not yet been tested at the motion-to-dismiss stage in any of the pending suits as of May 15, 2026.</p>
+  </div>
+</div>
+
+</body>
+</html>

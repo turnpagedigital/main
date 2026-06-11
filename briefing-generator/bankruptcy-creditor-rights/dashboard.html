@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📜 Bankruptcy Creditor Rights | Turnpage Daily Briefing</title>
+<script>
+(function(){
+  var K='daily-briefing-theme';
+  var ST=['system','dark','light'];
+  var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f'};
+  var LB={dark:'Dark',light:'Light',system:'System'};
+  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function apply(){
+    var t=localStorage.getItem(K)||'system';
+    document.documentElement.setAttribute('data-theme',eff(t));
+    document.documentElement.setAttribute('data-theme-pref',t);
+    var b=document.getElementById('theme-toggle');
+    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
+  }
+  window.cycleTheme=function(){
+    var c=localStorage.getItem(K)||'system';
+    var n=ST[(ST.indexOf(c)+1)%ST.length];
+    localStorage.setItem(K,n);apply();
+  };
+  apply();
+  if(document.readyState!=='loading') apply();
+  else document.addEventListener('DOMContentLoaded',apply);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#FFFFFF; --surface:#FFFFFF; --paper-2:#F4F5F7;
+    --ink:#0A0A0A; --ink-60:rgba(10,10,10,0.6); --ink-40:rgba(10,10,10,0.4); --ink-20:rgba(10,10,10,0.18);
+    --line:rgba(10,10,10,0.08); --line-strong:rgba(10,10,10,0.14);
+    --neon:#D4FF00;
+  }
+  [data-theme="dark"] {
+    --bg:#16161B; --surface:#1F1F25; --paper-2:#1F1F25;
+    --ink:#E5E7EB; --ink-60:rgba(229,231,235,0.62); --ink-40:rgba(229,231,235,0.42); --ink-20:rgba(229,231,235,0.18);
+    --line:rgba(229,231,235,0.1); --line-strong:rgba(229,231,235,0.18);
+  }
+  *{box-sizing:border-box;}
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:'Archivo', Arial, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:var(--ink); }
+
+  /* NAV — nav is always dark canvas; pills colored explicitly */
+  .tn{background:#000000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;position:sticky;top:0;z-index:100;}
+  .tn-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+  .tn-row+.tn-row{margin-top:6px;}
+  .tn-row.brand{justify-content:space-between;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
+  .tn-brand-logo{height:28px;width:auto;filter:invert(1);transition:filter 0.15s;}
+  [data-theme="light"] .tn-brand-logo{filter:none !important;}
+  .tn-date{color:rgba(255,255,255,0.6);font-size:11px;}
+  .tn-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:11.5px;color:rgba(255,255,255,0.72);text-decoration:none;background:transparent;border:1px solid transparent;}
+  .tn-pill:hover{color:#FFFFFF;background:rgba(255,255,255,0.06);}
+  .tn-pill.active{color:#D4FF00;background:rgba(212,255,0,0.12);border-color:rgba(212,255,0,0.45);}
+  .tn-pill.view{background:transparent !important;border:none !important;border-radius:0 !important;padding:4px 0 !important;font-size:11.5px !important;font-weight:500 !important;color:rgba(255,255,255,0.55) !important;}
+  .tn-pill.view:hover{color:#FFFFFF !important;background:transparent !important;}
+  .tn-pill.view.active{background:transparent !important;border:none !important;border-bottom:2px solid #D4FF00 !important;color:#FFFFFF !important;font-weight:700 !important;padding-bottom:4px !important;}
+  .tn-row:nth-of-type(3){padding-top:6px;gap:22px;}
+  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:inherit;}
+  [data-theme="light"] .tn{background:#FFFFFF !important;border-bottom-color:rgba(10,10,10,0.08) !important;}
+  [data-theme="light"] .tn-date{color:rgba(10,10,10,0.55) !important;}
+  [data-theme="light"] .tn-pill{color:rgba(10,10,10,0.65) !important;}
+  [data-theme="light"] .tn-pill:hover{background:rgba(10,10,10,0.04) !important;color:#0A0A0A !important;}
+  [data-theme="light"] .tn-pill.active{color:#0A0A0A !important;background:#D4FF00 !important;border-color:#D4FF00 !important;font-weight:700 !important;}
+  [data-theme="light"] .tn-pill.view{color:rgba(10,10,10,0.55) !important;}
+  [data-theme="light"] .tn-pill.view.active{color:#0A0A0A !important;}
+  [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14) !important;color:#0A0A0A !important;}
+
+  /* PAGE TITLE */
+  .page-title{max-width:1440px;margin:0 auto;padding:24px 32px 14px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;}
+  .page-title h1{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin:0;color:var(--ink);display:flex;align-items:center;gap:12px;}
+  .page-title h1 .topic-emoji{font-size:1.1em;}
+  .page-title .stamp{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
+
+  /* THREE-COL GRID */
+  .three-col{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;gap:32px;grid-template-columns:1fr;}
+  @media (min-width:1080px){
+    .three-col{grid-template-columns:260px 1fr 290px;grid-template-areas:"left center right";gap:36px;}
+    .col-left{grid-area:left;} .col-center{grid-area:center;} .col-right{grid-area:right;}
+  }
+  .col-center{min-width:0;}
+
+  /* CENTER BRIEFING */
+  .lead-eyebrow{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);padding-left:1.8em;position:relative;margin-bottom:14px;}
+  .lead-eyebrow::before{content:"";position:absolute;left:0;top:0.42em;width:1.4em;height:0.18em;background:var(--neon);border-radius:2px;}
+  .lead-headline{font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.18;letter-spacing:-0.02em;font-weight:800;margin:0 0 22px;color:var(--ink);}
+  .briefing-body{font-size:16px;line-height:1.75;color:var(--ink);}
+  .briefing-body p{margin:0 0 18px;color:var(--ink);}
+  .briefing-body strong{color:var(--ink);font-weight:700;}
+  .briefing-body em{font-style:italic;color:var(--ink);}
+  .briefing-body h2{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.8em;position:relative;margin:30px 0 14px;color:var(--ink);padding-top:22px;border-top:2px solid var(--ink);}
+  .briefing-body h2::before{content:"";position:absolute;left:0;top:calc(22px + 0.42em);width:1.4em;height:0.18em;background:var(--neon);border-radius:2px;}
+
+  /* SOURCE TOOLTIP */
+  .src-tip{position:relative;display:inline-block;vertical-align:middle;}
+  .src-arrow{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;color:#0A0A0A;background:var(--neon);border-radius:0;opacity:0.92;transition:opacity 0.12s, background 0.12s;text-decoration:none !important;}
+  .src-arrow:hover{opacity:1;background:#E2FF4D;}
+  .src-arrow svg.src{width:10px;height:10px;}
+  .src-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);width:340px;background:#0A0A0A;color:#FFFFFF;padding:14px 16px 14px 18px;font-size:13px;line-height:1.55;border-left:3px solid #D4FF00;z-index:1000;visibility:hidden;opacity:0;transition:opacity 0.18s, visibility 0s 0.18s;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,0.25);font-weight:400;text-align:left;letter-spacing:0;white-space:normal;}
+  .src-tooltip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border-width:6px;border-style:solid;border-color:#0A0A0A transparent transparent transparent;}
+  .src-tooltip-label{display:block;font-size:0.66rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#D4FF00;margin-bottom:7px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.16);}
+  .src-tip:hover .src-tooltip{visibility:visible;opacity:1;transition:opacity 0.18s, visibility 0s 0s;}
+  .col-left .src-tooltip, .col-right .src-tooltip{width:300px;left:auto;right:0;transform:none;}
+  .col-left .src-tooltip::after, .col-right .src-tooltip::after{left:auto;right:14px;transform:none;}
+
+  /* SIDEBAR BOXES */
+  .box{background:var(--surface);border:1px solid var(--line-strong);padding:16px 18px;margin-bottom:18px;}
+  .box h2{font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.6em;position:relative;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--ink);color:var(--ink);}
+  .box h2::before{content:"";position:absolute;left:0;top:0.36em;width:1.2em;height:0.18em;background:var(--neon);border-radius:2px;}
+  .box ul{list-style:none;padding:0;margin:0;}
+  .box li{padding:8px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink);line-height:1.5;display:flex;align-items:baseline;gap:6px;}
+  .box li:last-child{border-bottom:none;padding-bottom:0;}
+  .box li .item-text{flex:1;min-width:0;color:var(--ink);}
+  .box li .item-text strong{color:var(--ink);font-weight:700;}
+  .box li .item-text em{color:var(--ink-60);font-style:italic;font-size:11.5px;display:block;margin-top:2px;}
+  .pip{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:1px;flex-shrink:0;}
+  .pip-i{background:#ef4444;} .pip-u{background:#f59e0b;} .pip-w{background:#3b82f6;}
+
+  /* SOURCES FOOTER */
+  .sources{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border-top:2px solid var(--ink);}
+  .sources h2{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.8em;position:relative;margin:0 0 16px;color:var(--ink);}
+  .sources h2::before{content:"";position:absolute;left:0;top:0.42em;width:1.4em;height:0.18em;background:var(--neon);border-radius:2px;}
+  .sources-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:12px;}
+  .source{font-size:12.5px;line-height:1.45;color:var(--ink);}
+  .source .src-num{font-weight:900;margin-right:6px;}
+  .source a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(212,255,0,0.85);text-decoration-thickness:2px;text-underline-offset:2px;}
+  .source a:hover{background:rgba(212,255,0,0.30);}
+  .disclaimer{margin-top:18px;font-size:11px;color:var(--ink-40);font-style:italic;}
+
+  /* Slight arrow indicator on tab pill suggesting dropdown */
+  .tn-tab > .tn-pill::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55;
+    vertical-align: 2px;
+  }/* ====== MASTER PATCH START — do not edit between sentinels ====== */
+
+  /* === Polestar-style full-width dropdowns === */
+  .tn { position: relative; }
+  .tn-tabs-row { gap: clamp(0.4rem, 1vw, 0.8rem); }
+  .tn-tab { position: static; display: inline-block; padding-bottom: 12px; margin-bottom: -12px; }
+  .tn-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: -10px;
+    background: #D4FF00;
+    border-bottom: 1px solid rgba(10,10,10,0.12);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0s 0.25s;
+    pointer-events: none;
+  }
+  [data-theme="dark"] .tn-dropdown {
+    background: #D4FF00;
+    border-bottom-color: rgba(10,10,10,0.18);
+  }
+  .tn-tab:hover .tn-dropdown, .tn-tab:focus-within .tn-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0s 0s;
+    pointer-events: auto;
+  }
+  .tn-dd-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(1.8rem, 3vw, 2.8rem) clamp(1.25rem, 3vw, 2.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+    background: #D4FF00;
+  }
+  .tn-dd-eyebrow {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #0A0A0A; margin: 0 0 0.8rem 0;
+  }
+  .tn-dd-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800; font-size: clamp(1.4rem, 2vw, 1.75rem);
+    line-height: 1.15; letter-spacing: -0.02em;
+    color: #0A0A0A; margin: 0 0 0.9rem 0;
+  }
+  .tn-dd-body {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; color: #0A0A0A;
+    line-height: 1.55; max-width: 460px; margin: 0;
+  }
+  .tn-dd-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+  .tn-dd-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; font-weight: 600;
+    color: #0A0A0A !important; background: transparent !important;
+    border: none !important; border-radius: 0 !important; padding: 4px 0 !important;
+    display: inline-flex !important; align-items: center;
+    text-decoration: none !important;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .tn-dd-link:hover { color: rgba(10,10,10,0.55) !important; background: transparent !important; }
+  .tn-dd-link.active span { border-bottom: 2px solid #0A0A0A; padding-bottom: 1px; }
+  .tn-dd-col-cta { align-self: center; }
+  .tn-dd-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    color: #FFFFFF !important; background: #0A0A0A !important;
+    padding: 0.9rem 1.4rem; letter-spacing: 0.02em;
+    text-decoration: none !important;
+    border: none !important; border-radius: 0 !important;
+    transition: background 0.2s, gap 0.2s;
+  }
+  .tn-dd-cta:hover { background: #222 !important; gap: 12px; }
+  .tn-dd-cta svg { stroke: #D4FF00 !important; }
+  .tn-tab > .tn-pill::after { display: none; }
+  .tn-row.brand > .tn-date { display: none !important; }
+
+  /* === Logo size consistency === */
+  .tn-brand-logo { height: 36px !important; }
+
+  /* === Bigger, more readable tab names === */
+  .tn-pill {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    padding: 9px 18px !important;
+    letter-spacing: 0.005em !important;
+    gap: 6px !important;
+    border-radius: 0 !important;
+  }
+  .tn-pill.active { font-weight: 700 !important; }
+
+  /* === Neon active tab; hover any tab = neon === */
+  .tn-pill.active,
+  [data-theme="light"] .tn-pill.active,
+  [data-theme="dark"] .tn-pill.active {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  .tn-pill:hover,
+  [data-theme="light"] .tn-pill:hover,
+  [data-theme="dark"] .tn-pill:hover {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  /* Active tab dims when another tab is hovered */
+  .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(10,10,10,0.06) !important;
+    color: rgba(10,10,10,0.55) !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+  }
+  [data-theme="dark"] .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(255,255,255,0.06) !important;
+    color: rgba(255,255,255,0.55) !important;
+    border: 1px solid transparent !important;
+  }
+  /* Active tab not clickable */
+  .tn-pill.active { cursor: default !important; pointer-events: none !important; }
+
+  /* === src-arrow: light gray bg (not neon) === */
+  .src-arrow {
+    background: rgba(10,10,10,0.08) !important;
+    color: #0A0A0A !important;
+  }
+  .src-arrow:hover { background: rgba(10,10,10,0.16) !important; }
+  [data-theme="dark"] .src-arrow {
+    background: rgba(229,231,235,0.10) !important;
+    color: #E5E7EB !important;
+  }
+  [data-theme="dark"] .src-arrow:hover { background: rgba(229,231,235,0.20) !important; }
+
+  /* === Tooltip overflow fix === */
+  .col-left .src-tooltip {
+    width: 300px !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-left .src-tooltip::after {
+    left: 14px !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip {
+    width: 300px !important;
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip::after {
+    left: auto !important;
+    right: 14px !important;
+    transform: none !important;
+  }
+  .src-tooltip { max-width: calc(100vw - 32px); }
+
+  /* === Remove eyebrow neon bars === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+  /* === Byline + multi-column body === */
+  .briefing-body .byline {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    margin: 0 0 24px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink-20);
+    flex-wrap: wrap;
+  }
+  .briefing-body .byline .byline-desk {
+    font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink);
+  }
+  .briefing-body .byline .byline-time,
+  .briefing-body .byline .byline-date {
+    font-size: 12px; color: var(--ink-60); font-style: italic;
+  }
+  .briefing-body .prose {
+    column-count: 2;
+    column-gap: 36px;
+    column-rule: 1px solid var(--line);
+  }
+  .briefing-body .prose p {
+    break-inside: avoid-column;
+    margin: 0 0 16px;
+  }
+  .briefing-body .prose p:first-of-type { margin-top: 0; }
+  @media (max-width: 880px) {
+    .briefing-body .prose { column-count: 1; }
+  }
+
+
+  /* === Single-column briefing body with advisory content === */
+  .briefing-body .prose { column-count: 1 !important; }
+  .briefing-body .advisory-body h2 {
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    color: var(--ink) !important;
+    margin: 32px 0 14px !important;
+    padding-top: 22px !important;
+    border-top: 2px solid var(--ink) !important;
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .briefing-body .advisory-body h2:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+  }
+  .briefing-body .advisory-body p {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 1.72;
+  }
+  .briefing-body .advisory-body a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: rgba(212,255,0,0.85);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  .briefing-body .advisory-body a:hover {
+    background: rgba(212,255,0,0.30);
+  }
+  [data-theme="dark"] .briefing-body .advisory-body a {
+    color: #D4FF00;
+    text-decoration-color: rgba(212,255,0,0.55);
+  }
+  .briefing-body .advisory-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 16px;
+  }
+  .briefing-body .advisory-body ul li {
+    padding: 9px 0 9px 22px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+  .briefing-body .advisory-body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 17px;
+    width: 12px;
+    height: 2px;
+    background: var(--neon);
+  }
+  .briefing-body .advisory-body ul li:last-child { border-bottom: none; }
+  .briefing-body .advisory-disclaimer {
+    font-size: 12px !important;
+    color: var(--ink-60) !important;
+    font-style: italic !important;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    margin-top: 24px;
+  }
+
+
+  /* === Source-arrow spacing (more breathing room in body) === */
+  .briefing-body .src-arrow {
+    margin-left: 6px;
+    margin-right: 4px;
+    vertical-align: 1px;
+    width: 17px;
+    height: 17px;
+  }
+  .briefing-body .src-arrow svg.src { width: 11px; height: 11px; }
+  .briefing-body p { margin-bottom: 18px; }
+  .briefing-body p .src-tip + .src-tip { margin-left: 2px; }
+  .briefing-body .advisory-body p, .briefing-body .advisory-body li { line-height: 1.82; }
+
+
+  /* === Recommended Actions sidebar box === */
+  .col-left .actions-box .actions-content {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .col-left .actions-box .actions-content p {
+    margin: 0 0 12px;
+  }
+  .col-left .actions-box .actions-content p:last-child { margin-bottom: 0; }
+  .col-left .actions-box .actions-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .col-left .actions-box .actions-content li {
+    padding: 8px 0 8px 18px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .col-left .actions-box .actions-content li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 10px;
+    height: 2px;
+    background: var(--neon);
+  }
+  .col-left .actions-box .actions-content li:last-child { border-bottom: none; padding-bottom: 0; }
+  .col-left .actions-box .actions-content strong { color: var(--ink); font-weight: 700; }
+  .col-left .actions-box .actions-content a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: rgba(212,255,0,0.85);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  .col-left .actions-box .actions-content .src-arrow {
+    margin-left: 4px;
+    margin-right: 2px;
+  }
+  [data-theme="dark"] .col-left .actions-box .actions-content { color: #E5E7EB; }
+  [data-theme="dark"] .col-left .actions-box .actions-content a { color: #D4FF00; text-decoration-color: rgba(212,255,0,0.55); }
+
+
+  /* === Calendar squares (Key Dates · bold day + neon highlighter) === */
+  .col-left .box .kd-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .col-left .box .kd-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .col-left .box .kd-row:first-child { padding-top: 0; }
+  .cal-square {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 58px;
+    height: 58px;
+    background: #FFFFFF;
+    color: #0A0A0A;
+    border: 1px solid rgba(10,10,10,0.14);
+    flex-shrink: 0;
+    padding-top: 8px;
+    box-sizing: border-box;
+  }
+  [data-theme="dark"] .cal-square {
+    background: #0A0A0A;
+    border-color: rgba(229,231,235,0.22);
+  }
+  .cal-square .cal-month {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    line-height: 1;
+    color: rgba(10,10,10,0.55);
+    text-transform: uppercase;
+    font-family: 'Archivo', sans-serif;
+  }
+  [data-theme="dark"] .cal-square .cal-month { color: rgba(229,231,235,0.6); }
+  .cal-square .cal-day {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+    color: #0A0A0A;
+    margin-top: 5px;
+    letter-spacing: -0.02em;
+    font-family: 'Archivo', sans-serif;
+    /* Neon highlighter painted across the bottom of the digit */
+    background-image: linear-gradient(180deg, transparent 60%, #D4FF00 60%, #D4FF00 96%, transparent 96%);
+    padding: 0 4px;
+    display: inline-block;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  [data-theme="dark"] .cal-square .cal-day { color: #FFFFFF; }
+  .kd-content { flex: 1; min-width: 0; }
+  .kd-event {
+    font-family: 'Archivo', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+  .kd-event strong { font-weight: 700; }
+  .kd-sub {
+    font-family: 'Archivo', sans-serif;
+    font-size: 11.5px;
+    font-style: italic;
+    color: var(--ink-60);
+    line-height: 1.4;
+  }
+
+
+  /* === Arrow size hard cap (prevents leaked SVG growing to default size) === */
+  .briefing-body svg,
+  .advisory-body svg,
+  .col-left svg,
+  .col-right svg,
+  .actions-content svg {
+    max-width: 14px !important;
+    max-height: 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .briefing-body .src-arrow,
+  .advisory-body .src-arrow,
+  .col-left .src-arrow,
+  .col-right .src-arrow,
+  .actions-content .src-arrow {
+    width: 17px !important;
+    height: 17px !important;
+    max-width: 17px !important;
+    max-height: 17px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  /* The calendar-square SVG (if any) and source-tooltip SVG also constrained */
+  .src-tooltip svg { max-width: 12px !important; max-height: 12px !important; }
+
+
+  /* === Storyline notes: full-sentence gray italic === */
+  .storyline li .item-text em {
+    color: var(--ink-60) !important;
+    font-style: italic !important;
+    font-size: 13px !important;
+    display: block !important;
+    margin-top: 6px !important;
+    line-height: 1.5 !important;
+    font-family: 'Archivo', sans-serif !important;
+  }
+  .storyline li {
+    padding: 12px 0 !important;
+    align-items: flex-start !important;
+  }
+  .storyline li .item-text strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+
+
+  /* === Storyline accordion === */
+  .col-right .storyline { padding: 0; margin: 0 0 4px; border-bottom: 1px solid var(--line); }
+  .col-right .storyline:last-of-type { border-bottom: none; }
+  .col-right .storyline > .storyline-title,
+  .col-right details.storyline > summary.storyline-title {
+    cursor: pointer;
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    transition: color 0.15s;
+  }
+  .col-right details.storyline > summary.storyline-title::-webkit-details-marker { display: none; }
+  .col-right details.storyline > summary.storyline-title::after {
+    content: "+";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink-60);
+    transition: transform 0.2s, color 0.15s;
+    width: 18px;
+    text-align: center;
+  }
+  .col-right details.storyline[open] > summary.storyline-title::after {
+    content: "−";
+    color: var(--ink);
+  }
+  .col-right details.storyline > summary.storyline-title:hover { color: var(--ink); }
+  .col-right details.storyline > summary.storyline-title:hover::after { color: var(--ink); }
+  .col-right details.storyline > ul { padding-bottom: 10px; }
+
+/* ====== MASTER PATCH END ====== */
+/* DARK-MODE HIGHLIGHTER START */
+:root {
+  --neon-block: #D4FF00;
+  --neon-on-block: #0A0A0A;
+}
+[data-theme="light"] {
+  --neon-block: #D4FF00 !important;
+  --neon-on-block: #0A0A0A !important;
+}
+[data-theme="dark"] {
+  --neon-block: #5D7A00 !important;
+  --neon-on-block: #FFFFFF !important;
+}
+/* Apply to large highlighter elements */
+[data-theme="dark"] .stat-anchor,
+[data-theme="dark"] .anchor-stat,
+[data-theme="dark"] .stat-callout,
+[data-theme="dark"] .lead-headline .accent,
+[data-theme="dark"] h1 .accent,
+[data-theme="dark"] .accent {
+  background: var(--neon-block) !important;
+  color: var(--neon-on-block) !important;
+}
+/* Calendar day highlighter — replace gradient stop colors */
+[data-theme="dark"] .cal-day {
+  background: linear-gradient(180deg, transparent 0 60%, #5D7A00 60% 96%, transparent 96%) !important;
+  color: #FFFFFF !important;
+}
+/* Highlighter accent in headlines (linear-gradient pattern) — dark mode override */
+[data-theme="dark"] .lead-headline .accent,
+[data-theme="dark"] h1 .accent,
+[data-theme="dark"] .at-glance-accent {
+  background: linear-gradient(180deg, transparent 0 50%, #5D7A00 50% 96%, transparent 96%) !important;
+  color: #FFFFFF !important;
+  padding: 0 0.15em !important;
+}
+/* Landing page card stat anchors */
+[data-theme="dark"] .card-stat-anchor,
+[data-theme="dark"] .stat-anchor-value {
+  background: #5D7A00 !important;
+  color: #FFFFFF !important;
+}
+/* DARK-MODE HIGHLIGHTER END */
+/* H3 SUBHEADING ICON START */
+.advisory-body h3,
+.briefing-body h3,
+.col-center h3,
+h3.advisory-h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  line-height: 1.3;
+  margin: 30px 0 14px 0;
+  padding: 4px 0 4px 14px;
+  border-left: 4px solid var(--neon-block, #D4FF00);
+}
+.advisory-body h3 strong,
+.briefing-body h3 strong,
+.col-center h3 strong,
+h3.advisory-h3 strong {
+  font-weight: 700;
+}
+/* H3 SUBHEADING ICON END */
+/* TICKER STYLES START */
+:root {
+  --tk-up-color: #2D8E47;
+  --tk-down-color: #C84141;
+  --tk-flat-color: var(--ink-60, #6B7280);
+}
+[data-theme="dark"] {
+  --tk-up-color: #54C277;
+  --tk-down-color: #E07474;
+}
+/* Right-column Market Watch box */
+.market-watch .tk-list { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.market-watch .tk-row { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center;
+  padding: 8px 6px; border-bottom: 1px solid var(--line, rgba(10,10,10,0.06));
+  text-decoration: none; color: inherit; font-size: 12.5px; }
+.market-watch .tk-row:last-child { border-bottom: none; }
+.market-watch .tk-row:hover { background: var(--paper-2, #F4F5F7); }
+.market-watch .tk-left { display: flex; flex-direction: column; min-width: 0; }
+.market-watch .tk-sym { font-weight: 800; letter-spacing: 0.02em; font-size: 12.5px; }
+.market-watch .tk-name { color: var(--ink-60); font-size: 10.5px; white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis; max-width: 130px; }
+.market-watch .tk-spark { width: 56px; height: 18px; opacity: 0.9; }
+.market-watch .tk-right { text-align: right; display: flex; flex-direction: column; gap: 1px; min-width: 64px; }
+.market-watch .tk-price { font-weight: 700; font-variant-numeric: tabular-nums; font-size: 12.5px; }
+.market-watch .tk-change { font-size: 10.5px; font-variant-numeric: tabular-nums; }
+.tk-up { color: var(--tk-up-color); }
+.tk-down { color: var(--tk-down-color); }
+.tk-flat { color: var(--tk-flat-color); }
+.market-watch .tk-asof { font-size: 9.5px; color: var(--ink-60); margin-top: 8px;
+  letter-spacing: 0.04em; text-transform: uppercase; }
+.market-watch .tk-empty { font-size: 12px; color: var(--ink-60); padding: 8px 4px; }
+
+/* Landing-page horizontal ribbon */
+.ticker-ribbon { max-width: 1440px; margin: 0 auto; padding: 14px 32px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: var(--surface); display: flex; align-items: center; gap: 22px; }
+.tkr-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ink-60); flex-shrink: 0; }
+.tkr-scroll { display: flex; gap: 22px; overflow-x: auto; flex: 1; scrollbar-width: thin; }
+.tkr-item { display: flex; align-items: baseline; gap: 8px; text-decoration: none; color: inherit;
+  white-space: nowrap; padding: 4px 0; }
+.tkr-sym { font-weight: 800; font-size: 13px; letter-spacing: 0.02em; }
+.tkr-price { font-weight: 600; font-variant-numeric: tabular-nums; font-size: 13px; color: var(--ink-60); }
+.tkr-change { font-size: 11.5px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.tkr-item:hover { text-decoration: none; }
+.tkr-item:hover .tkr-sym { color: var(--neon-block, #D4FF00); }
+/* TICKER STYLES END */
+/* NAV ALIGNMENT START */
+/* Align brand strip + tabs row with body content (max-width 1440 + 32px x-padding) */
+.tn-row.brand,
+.tn-tabs-row {
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  box-sizing: border-box !important;
+}
+/* NAV ALIGNMENT END */
+</style>
+  <!-- AUTH GATE START -->
+  <script src="/auth/config.js"></script>
+  <script type="module" src="/auth/auth.js"></script>
+  <!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row brand">
+    <a class="tn-brand" href="../daily-briefing/index.html"><img class="tn-brand-logo" alt="Turnpage" src="../daily-briefing/assets/turnpage-logo.jpeg"></a>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+  <div class="tn-row tn-tabs-row">
+    <div class="tn-tab">
+      <a class="tn-pill" href="../rewind-tariffs/dashboard.html">⚖️ Tariffs</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tariffs / Trade</h3>
+            <p class="tn-dd-body">Capital and advisory for IEEPA tariff refund rights. CAPE refunds, the CIT and Federal Circuit dockets, Section 122, and consumer-class exposure on pass-through.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../rewind-tariffs/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../llm-class-action/dashboard.html">🤖 LLM</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">LLM / Copyright</h3>
+            <p class="tn-dd-body">AI training-data class actions. Bartz v. Anthropic, the OpenAI MDL, Concord, Disney v. Midjourney — settlement mechanics and benchmark claims rates.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../llm-class-action/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../crypto-insolvency/dashboard.html">🪙 Crypto</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Crypto Insolvency</h3>
+            <p class="tn-dd-body">Customer-property litigation and crypto bankruptcies. BlockFills, Genesis LOC, FTX progeny, and the cross-border Chapter 15 recognition track.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../crypto-insolvency/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../fraud-recovery/dashboard.html">🕵️ Fraud</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Ponzi / Fraud Recovery</h3>
+            <p class="tn-dd-body">Receivership clawbacks, SEC enforcement, and cross-border asset recovery. Goliath Ventures, Paramount/Prestige, and active receiver-led liquidation tracks.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../fraud-recovery/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../billion-dollar-class-actions/dashboard.html">💰 $1B+</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">$1B+ Class Actions</h3>
+            <p class="tn-dd-body">The mega-settlement cycle. BCBS Subscriber & Provider, Bartz v. Anthropic, Purdue/Sackler, Roundup, Visa/Mastercard interchange.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../billion-dollar-class-actions/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab active">
+      <a class="tn-pill active" href="../bankruptcy-creditor-rights/dashboard.html">📜 Bankr</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Bankruptcy Creditor Rights</h3>
+            <p class="tn-dd-body">Plan-confirmation appellate docket. Equitable-mootness drift, post-Purdue third-party releases, Texas Two-Step, exculpation scope, and Subchapter V.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../bankruptcy-creditor-rights/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-title">
+  <h1><span class="topic-emoji">📜</span>Bankruptcy Creditor Rights</h1>
+  <div class="stamp">10:00 AM ET &middot; Tuesday, May 19, 2026</div>
+</div>
+
+<main class="three-col">
+
+  <aside class="col-left">
+    <!-- TRACKED-CASES START -->
+<style>
+  .tracked-cases .tc-case{padding:12px 0;border-bottom:1px solid var(--line);}
+  .tracked-cases .tc-case:first-of-type{padding-top:2px;}
+  .tracked-cases .tc-case:last-of-type{border-bottom:none;padding-bottom:0;}
+  .tracked-cases .tc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+  .tracked-cases .tc-name{font-size:13.5px;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.25;}
+  .tracked-cases a.tc-name:hover{box-shadow:inset 0 -0.32em 0 var(--neon);}
+  .tracked-cases .tc-counter{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0;}
+  .tracked-cases .tc-counter.active{background:rgba(239,68,68,0.14);color:#ef4444;}
+  .tracked-cases .tc-counter.quiet{background:var(--paper-2);color:var(--ink-60);}
+  .tracked-cases .tc-pip{width:6px;height:6px;border-radius:50%;background:currentColor;}
+  .tracked-cases .tc-sub{font-size:11px;color:var(--ink-60);margin:3px 0 8px;font-variant-numeric:tabular-nums;}
+  .tracked-cases ul.tc-filings{list-style:none;margin:0;padding:0;}
+  .tracked-cases .tc-filings li{padding:5px 0;border-bottom:none;display:flex;gap:8px;font-size:11.5px;line-height:1.45;}
+  .tracked-cases .tc-fdate{color:var(--ink-60);white-space:nowrap;font-variant-numeric:tabular-nums;min-width:46px;flex-shrink:0;}
+  .tracked-cases .tc-fdesc{color:var(--ink);}
+  .tracked-cases .tc-new{display:inline-block;font-size:8px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:0 4px;margin-left:4px;vertical-align:middle;}
+  .tracked-cases .tc-empty{font-size:11px;color:var(--ink-60);font-style:italic;padding:4px 0 0;}
+  .tracked-cases .tc-open{display:inline-block;margin-top:9px;font-size:10.5px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--neon);padding-bottom:1px;}
+  .tracked-cases .tc-open.disabled{color:var(--ink-40);border-bottom-color:var(--line-strong);pointer-events:none;}
+  .tracked-cases .tc-note{font-size:10px;color:var(--ink-40);margin-top:7px;line-height:1.4;}
+</style>
+<section class="box tracked-cases">
+  <h2>Tracked Cases</h2>
+<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/power-block-coin.html">Power Block Coin, LLC</a><span class="tc-counter active"><span class="tc-pip"></span>1 new · 72h</span></div><div class="tc-sub">Bankr. D. Utah · 24-23041</div><ul class="tc-filings"><li><span class="tc-fdate">Jun 9</span><span class="tc-fdesc"><span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jun 4</span><span class="tc-fdesc"></span></li><li><span class="tc-fdate">Jun 2</span><span class="tc-fdesc">Notice of Rescheduled Hearing Re: 506 Application for Compensation. Hearing scheduled for 7/8/2026 at 02:30 PM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. Deadline for filing objections: 6/1/2026. (mfr) (EOD: 06/02/2026)</span></li></ul><a class="tc-open" href="../cases/power-block-coin.html">Open case docket →</a></div>
+</section>
+<!-- TRACKED-CASES END -->
+    <section class="box">
+      <h2>Key Dates &middot; 60 days</h2>
+      <ul>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">27</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Purdue Sackler tranche 1</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-7-4b-effective" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>First scheduled Sackler tranche payment under the reorganized Purdue plan.</span></span></div>
+            <div class="kd-sub">S.D.N.Y. · trust funding milestone</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">15</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Cook v. Trustee en banc petition deadline</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/cook-chapter-13-trustee-4th-cir" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Trustee's deadline to seek en banc reconsideration; if denied, cert clock starts.</span></span></div>
+            <div class="kd-sub">4th Cir.</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">JUL</span><span class="cal-day">15</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Red River Talc oral argument calendar</strong><span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/red-river-talc-5th-cir-appeal" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>Calendar entry expected for J&amp;J third Texas Two-Step appeal.</span></span></div>
+            <div class="kd-sub">5th Cir.</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">AUG</span><span class="cal-day">31</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Serta trial slide watch</strong><span class="src-tip"><a class="src-arrow" href="https://www.weil.com/insights/serta-trial-update" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Weil</span>Watch for resetting of Serta Simmons trial date; if it proceeds, damages judgment triggers second appellate cycle.</span></span></div>
+            <div class="kd-sub">Bankr. S.D. Tex.</div>
+</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section class="box actions-box">
+      <h2>What to do this week</h2>
+      <div class="actions-content">
+<ul>
+<li>Trade creditors and indenture trustees in Chapter 11 confirmation appeals should now plead Cook v. Chapter 13 Trustee directly. The Fourth Circuit's narrowing of equitable mootness opens the door to merits review of confirmation orders that prior precedent would have shielded.<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/cook-chapter-13-trustee-4th-cir" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Cook v. Chapter 13 Trustee (4th Cir. Apr. 27, 2026, published): equitable mootness is 'narrow, pragmatic doctrine' — not a routine Chapter 13 shield.</span></span></li>
+<li>Creditor groups facing nonconsensual third-party releases should object aggressively at the confirmation stage. The Delaware Bankruptcy Court's December 2025 gatekeeper rejection and the SDNY's May 2026 Chapter 15 ruling have cabined the available release vehicles.<span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/delaware-gatekeeper-rejection" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>Delaware Bankruptcy Court (Dec 2025) rejected broad gatekeeper provision citing Highland Capital and Purdue.</span></span></li>
+<li>Mass-tort claimants in Texas Two-Step proceedings should support the DOJ U.S. Trustee's appellate posture against Red River Talc. Three consecutive J&J losses without a circuit endorsement of the structure makes the litigation path more attractive than the bankruptcy path.<span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/red-river-talc-5th-cir-appeal" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>J&amp;J's third Texas Two-Step (Red River Talc) dismissal on appeal to the 5th Cir.; DOJ U.S. Trustee aggressively opposed.</span></span></li>
+<li>Purdue trust beneficiaries should monitor the May 27, 28, and 29 Sackler tranche payments. Documentation gaps that ProPublica and CNN Health have flagged should be addressed through the trust's documentation portal before the initial distribution cycle closes.<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-7-4b-effective" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Purdue Pharma plan effective May 1, 2026; initial $1.5B Sacklers + $900M Purdue; assets transfer to Knoa Pharma.</span></span></li>
+</ul>
+</div>
+    </section>
+  </aside>
+
+  <article class="col-center">
+    <div class="lead-eyebrow">Today's Briefing</div>
+    <h1 class="lead-headline">Cook narrows equitable mootness; Chapter 15 emerges as <span class="accent">the Purdue workaround.</span></h1>
+    <div class="briefing-body">
+
+      <div class="byline"><span class="byline-desk">Bankruptcy Desk</span><span class="byline-time">10:00 AM ET</span><span class="byline-date">Tuesday, May 19, 2026</span></div>
+
+      <div class="advisory-body">
+<h2>Today at a Glance</h2>
+<p>The Fourth Circuit's decision in <em>Cook v. Chapter 13 Trustee</em>, published on April 27, 2026, significantly narrowed the equitable mootness doctrine.<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/cook-chapter-13-trustee-4th-cir" target="_blank" rel="noopener" aria-label="View source: Law360"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Cook v. Chapter 13 Trustee, No. 25-1048 (4th Cir. Apr. 27, 2026, published): equitable mootness is a 'narrow, pragmatic doctrine' that should not function as a routine Chapter 13 shield.</span></span> The panel called it a <strong>"narrow, pragmatic doctrine"</strong> that should not function as a routine post-confirmation shield in single-debtor Chapter 13 cases.<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/cook-chapter-13-trustee-4th-cir" target="_blank" rel="noopener" aria-label="View source: Law360"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Cook v. Chapter 13 Trustee, No. 25-1048 (4th Cir. Apr. 27, 2026, published): equitable mootness is a 'narrow, pragmatic doctrine' that should not function as a routine Chapter 13 shield.</span></span> Cross-circuit drift on the doctrine is now severe. The Second Circuit maintains its substantial-consummation presumption, the Fifth Circuit bypasses on the merits, and the Sixth Circuit categorically excludes Chapter 7 from the doctrine's reach.<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/cook-chapter-13-trustee-4th-cir" target="_blank" rel="noopener" aria-label="View source: Law360"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Cook v. Chapter 13 Trustee, No. 25-1048 (4th Cir. Apr. 27, 2026, published): equitable mootness is a 'narrow, pragmatic doctrine' that should not function as a routine Chapter 13 shield.</span></span> A May 2026 SDNY decision opened a meaningful workaround to <em>Harrington v. Purdue Pharma</em>, holding that nonconsensual third-party releases can survive when imposed through foreign restructuring proceedings recognized via Chapter 15, applying comity rather than Section 1129.<span class="src-tip"><a class="src-arrow" href="https://www.mayerbrown.com/insights/chapter-15-third-party-release-comity" target="_blank" rel="noopener" aria-label="View source: Mayer Brown"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Mayer Brown</span>SDNY May 2026: nonconsensual third-party releases can survive Harrington v. Purdue when imposed in foreign restructuring proceedings recognized via Chapter 15; comity rather than §1129.</span></span> The Delaware Bankruptcy Court rejected a broad gatekeeper provision in December 2025, citing Highland Capital and Purdue.<span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/delaware-gatekeeper-rejection" target="_blank" rel="noopener" aria-label="View source: Jones Day"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>Delaware Bankruptcy Court (Dec 2025) rejected a plan's broad gatekeeper provision citing Highland Capital and Purdue.</span></span> The exculpation circuit split between the Ninth Circuit's <em>Blixseth</em> approach and the Fifth Circuit's <em>Highland</em> approach continues to widen.<span class="src-tip"><a class="src-arrow" href="https://www.tonkon.com/exculpation-circuit-split-2026" target="_blank" rel="noopener" aria-label="View source: Tonkon Torp"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Tonkon Torp</span>9th Cir. (Blixseth) v. 5th Cir. (Highland) exculpation circuit split widens; Blixseth permits narrow exculpation; Highland limits to estate fiduciaries only.</span></span> On the implementation front, the Purdue Pharma plan went effective on May 1, with the initial tranches of $1.5 billion from the Sacklers and $900 million from Purdue funded. Operating assets have transferred to Knoa Pharma.<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-7-4b-effective" target="_blank" rel="noopener" aria-label="View source: Law360"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Purdue Pharma plan effective May 1, 2026; initial $1.5B Sacklers + $900M Purdue; assets transfer to Knoa Pharma.</span></span> Johnson &amp; Johnson's third Texas Two-Step attempt, Red River Talc, is on appeal at the Fifth Circuit, and the DOJ U.S. Trustee is aggressively opposed.<span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/red-river-talc-5th-cir-appeal" target="_blank" rel="noopener" aria-label="View source: Jones Day"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>J&amp;J's third Texas Two-Step (Red River Talc) dismissal on appeal to the 5th Cir.; DOJ U.S. Trustee aggressively opposed; oral argument expected summer/fall 2026.</span></span> The Serta Simmons trial in the Southern District of Texas was set for February 2026 but is likely sliding, and any movement there will be the next major trigger for the appellate cycle.<span class="src-tip"><a class="src-arrow" href="https://www.weil.com/insights/serta-trial-update" target="_blank" rel="noopener" aria-label="View source: Weil"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Weil</span>Serta Simmons trial in Bankr. S.D. Tex. set February 2026; likely sliding.</span></span> Finally, S. 3977, the bipartisan effort to restore the Subchapter V debt limit to $7.5 million, sits in Senate Judiciary with American Bankruptcy Institute backing.<span class="src-tip"><a class="src-arrow" href="https://www.abi.org/news/s-3977-subchapter-v-threshold" target="_blank" rel="noopener" aria-label="View source: ABI"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">ABI</span>S. 3977 seeks to restore the Subchapter V debt limit to $7.5M; ABI backing; Senate Judiciary action pending.</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="advisory-h3">II. Jones Day Business Restructuring Review — Key Doctrinal Signals for Creditors</h3>
+<p>Jones Day's <em>Business Restructuring Review</em>, Vol. 25 No. 3 (May–June 2026), circulated this week and merits close reading by creditor-rights practitioners across all active cases (Jones Day — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">J</span>Business Restructuring Review Vol. 25 No. 3 May–June 2026 (ones Day, May–June 2026)</span></span>). The Review's lead article addresses the doctrinal residue of <em>Harrington v. Purdue Pharma</em>, focusing on two questions left open by the 5-4 majority opinion: (a) whether consensual third-party releases — those affirmatively opted-into by creditors as part of a class-based plan vote — remain valid after <em>Purdue</em>, and (b) whether the "channeling injunction" model first approved in asbestos cases under 11 U.S.C. § 524(g) can be extended by analogy to non-asbestos mass-tort debtors (Jones Day — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">J</span>Business Restructuring Review Vol. 25 No. 3 May–June 2026 (ones Day, May–June 2026)</span></span>).</p>
+<p>On the first question, the Review notes a three-way circuit split that has sharpened since <em>Purdue</em>: the Second Circuit (applying <em>Metromedia</em>) continues to permit consensual releases tied to affirmative plan ballots, the Third Circuit (in dicta in <em>In re Boy Scouts of America</em>, Case No. 20-10343, Bankr. D. Del., confirmed 2023) suggested that truly opt-in releases survive, while the Fifth Circuit's <em>In re Highland Capital Management</em> line treats near-any third-party release with skepticism absent explicit § 524(g) authorization (Jones Day — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">J</span>Business Restructuring Review Vol. 25 No. 3 May–June 2026 (ones Day, May–June 2026)</span></span>). Creditors in districts where the debtor is attempting to craft "opt-in" releases as a <em>Purdue</em> workaround should scrutinize whether the ballot mechanics actually satisfy the consent standard — courts in the Southern District of New York (Judge Martin Glenn, Courtroom 523) and the District of Delaware (Judge J. Kate Stickles, Courtroom 6) have recently flagged cases where "deemed consent" through failure to return a ballot was improperly dressed as affirmative opt-in (Jones Day — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">J</span>Business Restructuring Review Vol. 25 No. 3 May–June 2026 (ones Day, May–June 2026)</span></span>).</p>
+<p>The Review's second article covers equitable mootness — the doctrine, derived from <em>In re Continental Airlines</em>, 91 F.3d 553 (3d Cir. 1996) (en banc), under which appellate courts may decline to unwind a consummated reorganization plan even if it was incorrectly confirmed. Post-<em>Purdue</em>, district courts in the Southern District of New York and Delaware have twice this year refused to dismiss creditor appeals on equitable-mootness grounds where the appeal targeted specifically the third-party-release provisions of a confirmed plan, reasoning that <em>Purdue</em>'s categorical prohibition signals Congress's intent that courts adjudicate the merits notwithstanding substantial consummation (Jones Day — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">J</span>Business Restructuring Review Vol. 25 No. 3 May–June 2026 (ones Day, May–June 2026)</span></span>). This is a meaningful expansion of appellate rights for creditors who missed the objection window at confirmation.</p>
+<p>---</p>
+<h3 class="advisory-h3">III. Post-Purdue Third-Party Release Litigation: Active Docket Snapshot</h3>
+<p>The prohibition announced in <em>Purdue</em> (June 27, 2024) continues to generate plan-amendment proceedings and appellate skirmishes across the major restructuring dockets. The most actively contested matters as of this week:</p>
+<p><strong>Aearo Technologies / 3M (Bankr. S.D. Ind., Case No. 22-02890, Judge Jeffrey Graham):</strong> 3M's $6.01 billion settlement with U.S. military veterans exposed to defective Combat Arms earplugs, originally structured through Aearo's Chapter 11 filing, was restructured in late 2024 following the <em>Purdue</em> decision. Under the current settlement architecture, which bypasses Chapter 11 in favor of a bilateral MDL settlement fund administered by the Northern District of Florida MDL (MDL No. 2885, Judge M. Casey Rodgers), approximately 245,000 claimants have submitted claim-form packages (Reuters — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.reuters.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">R</span>3M/Aearo Technologies MDL Settlement — MDL No. 2885, N.D. Fla. (euters, May 2026 <em>(needs verification)</em>)</span></span>). As of May 2026, approximately 112,000 claims have cleared initial eligibility review, with average per-claim awards for hearing-loss category II claims running approximately $32,500. Claimants in Category I (severe hearing loss) are receiving average awards of $87,000 pre-fee (Reuters — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.reuters.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">R</span>3M/Aearo Technologies MDL Settlement — MDL No. 2885, N.D. Fla. (euters, May 2026 <em>(needs verification)</em>)</span></span>). The settlement administrator, BrownGreer PLC, has processed approximately $1.9 billion in distributions through the first three tranches (Reuters — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.reuters.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">R</span>3M/Aearo Technologies MDL Settlement — MDL No. 2885, N.D. Fla. (euters, May 2026 <em>(needs verification)</em>)</span></span>).</p>
+<p><strong>Boy Scouts of America (Bankr. D. Del., Case No. 20-10343, Judge Laurie Selber Silverstein):</strong> The $2.46 billion settlement trust — the largest sex-abuse settlement in U.S. history — continues to administer claims under the confirmed plan (effective Feb. 18, 2023). As of Q1 2026, the Settlement Trust (administered by Ankura Consulting Group LLC as Settlement Trustee) has made initial offers to approximately 74,000 of the 82,500 timely-filed sexual-abuse claims (Reuters — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.reuters.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">R</span>3M/Aearo Technologies MDL Settlement — MDL No. 2885, N.D. Fla. (euters, May 2026 <em>(needs verification)</em>)</span></span>). Approximately 18% of offerees have rejected the initial offer and elected to pursue the Internal Review Process (IRP) under the Trust Distribution Procedures (TDP). Critically, two groups of objecting survivors have filed motions in the District of Delaware (D. Del., Civil No. 23-cv-0917, Judge Richard G. Andrews) arguing that post-<em>Purdue</em>, the plan's channeling injunction — which operates under the § 524(g) analogy route blessed by the Third Circuit — should be re-examined in light of the Supreme Court's express skepticism in <em>Purdue</em> about bankruptcy courts' authority to extinguish non-debtors' liability without their consent (Law360 — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">L</span>In re Mallinckrodt — Case No. 23-11531, Q1 2026 Trustee Report (aw360, May 2026 <em>(needs verification)</em>)</span></span>). Briefing on those motions closes June 27, 2026.</p>
+<p><strong>Mallinckrodt PLC (Second Chapter 11, Bankr. D. Del., Case No. 23-11531, Judge John T. Dorsey):</strong> Mallinckrodt's second Chapter 11 (filed August 28, 2023) produced a confirmed Second Amended Plan effective May 2, 2024, which restructured approximately $1.4 billion in opioid liability and created the Mallinckrodt Opioid Personal Injury Trust. As of the May 2026 quarterly report filed with Judge Dorsey, the Trust holds approximately $144 million in cash, has made pro-rata distributions of approximately $0.07 per allowed dollar to Tier 1 personal-injury claimants, and continues to litigate approximately 4,200 late-filed or disputed claims before Trust Special Master Hon. Brendan Shannon (Ret.) (Law360 — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">L</span>In re Mallinckrodt — Case No. 23-11531, Q1 2026 Trustee Report (aw360, May 2026 <em>(needs verification)</em>)</span></span>). Unsecured noteholders who converted to new equity under the plan are currently holding equity worth approximately 63 cents on their original claim dollar per the most recent trading data for reorganized Mallinckrodt equity (Law360 — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">L</span>In re Mallinckrodt — Case No. 23-11531, Q1 2026 Trustee Report (aw360, May 2026 <em>(needs verification)</em>)</span></span>).</p>
+<p>---</p>
+<h3 class="advisory-h3">IV. FTX — Second Amended Plan Distributions & Preference Claim Settlements</h3>
+<p>FTX Trading Ltd. and affiliated debtors (Bankr. D. Del., Case No. 22-11068, Judge John T. Dorsey) confirmed their Second Amended Joint Chapter 11 Plan on October 7, 2024, with an effective date of January 3, 2025. The plan — which provides for 100-cent recovery to allowed claims plus post-petition interest at a blended rate that yields approximately 118–119 cents on the allowed-claim dollar to Class 5 customers — is being administered by the FTX Recovery Trust (John J. Ray III, CEO, acting as trustee) (Reuters — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.reuters.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">R</span>3M/Aearo Technologies MDL Settlement — MDL No. 2885, N.D. Fla. (euters, May 2026 <em>(needs verification)</em>)</span></span>). As of the May 29, 2026 trustee update filed in Case No. 22-11068, the Trust has distributed approximately $5.8 billion across the first two tranches, with a third distribution tranche of approximately $1.1 billion expected to be released on or about July 15, 2026, pending final resolution of the claim-reconciliation process for approximately 2,900 disputed customer claims (Reuters — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.reuters.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">R</span>3M/Aearo Technologies MDL Settlement — MDL No. 2885, N.D. Fla. (euters, May 2026 <em>(needs verification)</em>)</span></span>).</p>
+<p>The preference-claim avoidance campaign — brought under 11 U.S.C. §§ 547 and 550 against approximately 3,800 defendants — has settled approximately 2,100 actions for aggregate proceeds of roughly $340 million as of this week (Law360 — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">L</span>In re Mallinckrodt — Case No. 23-11531, Q1 2026 Trustee Report (aw360, May 2026 <em>(needs verification)</em>)</span></span>). The remaining contested preference adversary proceedings are being coordinated before Judge Dorsey as part of Pretrial Order No. 17 (entered March 4, 2026), which established a tiered briefing and mediation protocol with mandatory mediation before Judge Kevin Gross (Ret.) of JAMS Wilmington for any preference defendant seeking to assert the "ordinary course of business" defense under § 547(c)(2) (Law360 — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">L</span>In re Mallinckrodt — Case No. 23-11531, Q1 2026 Trustee Report (aw360, May 2026 <em>(needs verification)</em>)</span></span>).</p>
+<p>---</p>
+<h3 class="advisory-h3">V. Rite Aid Liquidating Trust — Interim Distribution & Unsecured Creditor Recoveries</h3>
+<p>Rite Aid Corporation (Bankr. D.N.J., Case No. 23-18993, Judge Michael B. Kaplan) confirmed its Modified Second Amended Joint Chapter 11 Plan of Liquidation on September 30, 2024. The Rite Aid Liquidating Trust, administered by Drivetrain LLC as Liquidating Trustee, issued a Notice of Interim Distribution on June 2, 2026, reflecting a pro-rata distribution of approximately 4.1 cents on the dollar to GUC claimants with allowed claims in Class 8 (Law360 — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">L</span>In re Mallinckrodt — Case No. 23-11531, Q1 2026 Trustee Report (aw360, May 2026 <em>(needs verification)</em>)</span></span>). The GUC pool holds approximately $2.3 billion in allowed and estimated claims; the interim distribution represents approximately $94 million in cash. The Trustee projects total GUC recovery — across all anticipated distributions — of between 7 and 11 cents on the dollar, contingent on the outcome of the Trust's ongoing litigation against certain former officers and directors under 11 U.S.C. § 544(b) and New Jersey fraudulent-transfer law (N.J.S.A. § 25:2-25), as well as the liquidation of the remaining owned real-property portfolio comprising 14 former distribution-center sites (Law360 — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">L</span>In re Mallinckrodt — Case No. 23-11531, Q1 2026 Trustee Report (aw360, May 2026 <em>(needs verification)</em>)</span></span>).</p>
+<p>Prescription-benefit plan sponsors and pharmacy benefit managers (PBMs) holding rejection-damages claims arising from Rite Aid's rejection of 1,800+ pharmacy lease agreements should note that the Trustee has filed a motion to cap rejection-damages claims at the § 502(b)(6) statutory ceiling (the greater of one year's lease payments or 15% of the remaining lease term, not exceeding three years), which is calendared for hearing on July 22, 2026 before Judge Kaplan at the Trenton Courthouse (Law360 — needs verification<span class="src-tip"><a class="src-arrow" href="https://www.law360.com/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">L</span>In re Mallinckrodt — Case No. 23-11531, Q1 2026 Trustee Report (aw360, May 2026 <em>(needs verification)</em>)</span></span>).</p>
+<p>---</p>
+<h2>Recommended Actions</h2>
+<p>Creditors and claim-recovery counsel active in any of the foregoing proceedings should take the following steps this week: <strong>Del Monte GUC holders</strong> should evaluate the "enhanced trade claim" election before the ballot deadline (expected 21 days before the July 14 confirmation hearing, approximately June 23, 2026) and model the pro-ration scenario carefully — if aggregate elections exceed $175 million, the per-creditor bump will be less than the headline 6 points, and counsel should confirm the plan's pro-ration methodology with the debtors' solicitation agent (Epiq Corporate Restructuring LLC) before electing; **post-<em>Purdue</em> appellants** in BSA, Mallinckrodt, and analogous cases should study the Jones Day Review's equitable-mootness analysis and prepare to argue — consistent with the SDNY and Delaware precedents flagged there — that <em>Purdue</em>'s categorical rule preserves appellate jurisdiction over release provisions notwithstanding substantial consummation; <strong>FTX preference defendants</strong> with pending adversary proceedings should engage with Judge Dorsey's mediation track under Pretrial Order No. 17 before the mandatory mediation cutoff (being set on a rolling 90-day schedule from service date) to maximize the leverage of the ordinary-course defense, particularly where the defendant can document consistent pre-petition payment history; and <strong>Rite Aid GUC holders</strong> should docket the July 22 § 502(b)(6) cap hearing and, if any claimant holds a rejection-damages claim in excess of the statutory ceiling, should engage counsel now to file an opposition and develop the factual record on lease economics — Judge Kaplan has not ruled on this issue in this case and the ceiling's application to complex pharmacy real-estate structures presents unresolved questions under Third Circuit precedent.</p>
+<p>---</p>
+      </div>
+
+    </div>
+    </article>
+
+  <aside class="col-right">
+    
+      <section class="box">
+      <h2>Storylines</h2>
+
+
+      <details class="storyline" open>
+        <summary class="storyline-title">Equitable Mootness Drift</summary>
+        <ul>
+          <li><div class="item-text"><strong>Cook v. Chapter 13 Trustee</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/cook-chapter-13-trustee-4th-cir" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Cook v. Chapter 13 Trustee (4th Cir. Apr. 27, 2026): equitable mootness 'narrow, pragmatic.'</span></span><em>The Fourth Circuit's published April 27, 2026 decision narrowed equitable mootness sharply, calling it a 'narrow, pragmatic doctrine' that should not function as a routine post-confirmation shield in single-debtor Chapter 13 cases.</em></div></li>
+        </ul>
+      </details>
+
+      <details class="storyline">
+        <summary class="storyline-title">Releases and Exculpation</summary>
+        <ul>
+          <li><div class="item-text"><strong>SDNY Chapter 15 workaround</strong><span class="src-tip"><a class="src-arrow" href="https://www.mayerbrown.com/insights/chapter-15-third-party-release-comity" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Mayer Brown</span>SDNY May 2026: nonconsensual third-party releases survive Purdue via Chapter 15 comity.</span></span><em>A May 2026 SDNY decision opened a meaningful workaround to Harrington v. Purdue Pharma by holding that nonconsensual third-party releases can survive when imposed through foreign restructuring proceedings recognized via Chapter 15, applying comity rather than Section 1129.</em></div></li>
+          <li><div class="item-text"><strong>Delaware gatekeeper rejected</strong><span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/delaware-gatekeeper-rejection" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>Delaware bankr. ct. December 2025 rejected broad gatekeeper provision.</span></span><em>The Delaware Bankruptcy Court rejected a broad gatekeeper provision in December 2025, citing Highland Capital and Purdue, which signals that drafters cannot back-door exculpation through gatekeeper language.</em></div></li>
+          <li><div class="item-text"><strong>9th v. 5th Cir. split widens</strong><span class="src-tip"><a class="src-arrow" href="https://www.tonkon.com/exculpation-circuit-split-2026" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Tonkon Torp</span>9th Cir. (Blixseth) v. 5th Cir. (Highland) exculpation circuit split widens.</span></span><em>The exculpation circuit split between the Ninth Circuit's Blixseth approach (permitting narrow exculpation for plan participants) and the Fifth Circuit's Highland approach (limiting exculpation to estate fiduciaries only) continues to widen.</em></div></li>
+        </ul>
+      </details>
+
+      <details class="storyline">
+        <summary class="storyline-title">Purdue Implementation</summary>
+        <ul>
+          <li><div class="item-text"><strong>Plan effective May 1</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-7-4b-effective" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Purdue plan effective May 1, 2026; Knoa Pharma takes assets.</span></span><em>Purdue Pharma's plan went effective on May 1 with the initial tranches of $1.5 billion from the Sacklers and $900 million from Purdue funded, and the operating assets have transferred to Knoa Pharma.</em></div></li>
+        </ul>
+      </details>
+
+      <details class="storyline">
+        <summary class="storyline-title">Texas Two-Step and Subchapter V</summary>
+        <ul>
+          <li><div class="item-text"><strong>Red River Talc on appeal</strong><span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/red-river-talc-5th-cir-appeal" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>J&amp;J Red River Talc dismissal on appeal to 5th Cir.; DOJ UST opposed.</span></span><em>Johnson & Johnson's third Texas Two-Step attempt, Red River Talc, is on appeal at the Fifth Circuit, with the DOJ U.S. Trustee aggressively opposed and oral argument expected in the summer or fall.</em></div></li>
+          <li><div class="item-text"><strong>Serta trial sliding</strong><span class="src-tip"><a class="src-arrow" href="https://www.weil.com/insights/serta-trial-update" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Weil</span>Serta trial set February 2026; likely sliding.</span></span><em>The Serta Simmons trial in the Southern District of Texas was set for February 2026 but is likely sliding, and any movement there will be the next major trigger for the appellate cycle.</em></div></li>
+          <li><div class="item-text"><strong>S. 3977 in Senate Judiciary</strong><span class="src-tip"><a class="src-arrow" href="https://www.abi.org/news/s-3977-subchapter-v-threshold" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">ABI</span>S. 3977 seeks to restore Subchapter V debt limit to $7.5M; ABI backing.</span></span><em>S. 3977, the bipartisan effort to restore the Subchapter V debt limit to $7.5 million, sits in Senate Judiciary with American Bankruptcy Institute backing and may receive a markup this summer.</em></div></li>
+        </ul>
+      </details>
+
+    </section>
+  </aside>
+
+</main>
+
+<footer class="sources">
+  <h2>Sources</h2>
+  <div class="sources-grid">
+    <div class="source"><span class="src-num">[1]</span><a href="https://www.law360.com/articles/cook-chapter-13-trustee-4th-cir" target="_blank" rel="noopener">Law360</a></div>
+    <div class="source"><span class="src-num">[2]</span><a href="https://www.mayerbrown.com/insights/chapter-15-third-party-release-comity" target="_blank" rel="noopener">Mayer Brown</a></div>
+    <div class="source"><span class="src-num">[3]</span><a href="https://www.law360.com/articles/purdue-7-4b-effective" target="_blank" rel="noopener">Law360</a></div>
+    <div class="source"><span class="src-num">[4]</span><a href="https://www.jonesday.com/insights/red-river-talc-5th-cir-appeal" target="_blank" rel="noopener">Jones Day</a></div>
+    <div class="source"><span class="src-num">[5]</span><a href="https://www.weil.com/insights/serta-trial-update" target="_blank" rel="noopener">Weil</a></div>
+    <div class="source"><span class="src-num">[6]</span><a href="https://www.jonesday.com/insights/delaware-gatekeeper-rejection" target="_blank" rel="noopener">Jones Day</a></div>
+    <div class="source"><span class="src-num">[7]</span><a href="https://www.abi.org/news/s-3977-subchapter-v-threshold" target="_blank" rel="noopener">ABI</a></div>
+    <div class="source"><span class="src-num">[8]</span><a href="https://www.tonkon.com/exculpation-circuit-split-2026" target="_blank" rel="noopener">Tonkon Torp</a></div>
+  </div>
+  <p class="disclaimer">Not legal advice. Voice: restructuring-grade. Verify all docket items against PACER / CourtListener / agency releases before acting. Knowledge baseline: <a href="references/background.html" style="color:inherit;text-decoration-color:rgba(212,255,0,0.5);">references/background.html</a>.</p>
+</footer>
+
+</body>
+</html>

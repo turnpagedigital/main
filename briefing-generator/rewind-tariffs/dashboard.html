@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚖️ Tariffs / Trade | Turnpage Daily Briefing</title>
+<script>
+(function(){
+  var K='daily-briefing-theme';
+  var ST=['system','dark','light'];
+  var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f'};
+  var LB={dark:'Dark',light:'Light',system:'System'};
+  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function apply(){
+    var t=localStorage.getItem(K)||'system';
+    document.documentElement.setAttribute('data-theme',eff(t));
+    document.documentElement.setAttribute('data-theme-pref',t);
+    var b=document.getElementById('theme-toggle');
+    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
+  }
+  window.cycleTheme=function(){
+    var c=localStorage.getItem(K)||'system';
+    var n=ST[(ST.indexOf(c)+1)%ST.length];
+    localStorage.setItem(K,n);apply();
+  };
+  apply();
+  if(document.readyState!=='loading') apply();
+  else document.addEventListener('DOMContentLoaded',apply);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#FFFFFF; --surface:#FFFFFF; --paper-2:#F4F5F7;
+    --ink:#0A0A0A; --ink-60:rgba(10,10,10,0.6); --ink-40:rgba(10,10,10,0.4); --ink-20:rgba(10,10,10,0.18);
+    --line:rgba(10,10,10,0.08); --line-strong:rgba(10,10,10,0.14);
+    --neon:#D4FF00;
+  }
+  [data-theme="dark"] {
+    --bg:#16161B; --surface:#1F1F25; --paper-2:#1F1F25;
+    --ink:#E5E7EB; --ink-60:rgba(229,231,235,0.62); --ink-40:rgba(229,231,235,0.42); --ink-20:rgba(229,231,235,0.18);
+    --line:rgba(229,231,235,0.1); --line-strong:rgba(229,231,235,0.18);
+  }
+  *{box-sizing:border-box;}
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:'Archivo', Arial, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a { color:var(--ink); }
+
+  /* NAV — nav is always dark canvas; pills colored explicitly */
+  .tn{background:#000000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;position:sticky;top:0;z-index:100;}
+  .tn-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+  .tn-row+.tn-row{margin-top:6px;}
+  .tn-row.brand{justify-content:space-between;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
+  .tn-brand-logo{height:28px;width:auto;filter:invert(1);transition:filter 0.15s;}
+  [data-theme="light"] .tn-brand-logo{filter:none !important;}
+  .tn-date{color:rgba(255,255,255,0.6);font-size:11px;}
+  .tn-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:11.5px;color:rgba(255,255,255,0.72);text-decoration:none;background:transparent;border:1px solid transparent;}
+  .tn-pill:hover{color:#FFFFFF;background:rgba(255,255,255,0.06);}
+  .tn-pill.active{color:#D4FF00;background:rgba(212,255,0,0.12);border-color:rgba(212,255,0,0.45);}
+  .tn-pill.view{background:transparent !important;border:none !important;border-radius:0 !important;padding:4px 0 !important;font-size:11.5px !important;font-weight:500 !important;color:rgba(255,255,255,0.55) !important;}
+  .tn-pill.view:hover{color:#FFFFFF !important;background:transparent !important;}
+  .tn-pill.view.active{background:transparent !important;border:none !important;border-bottom:2px solid #D4FF00 !important;color:#FFFFFF !important;font-weight:700 !important;padding-bottom:4px !important;}
+  .tn-row:nth-of-type(3){padding-top:6px;gap:22px;}
+  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:inherit;}
+  [data-theme="light"] .tn{background:#FFFFFF !important;border-bottom-color:rgba(10,10,10,0.08) !important;}
+  [data-theme="light"] .tn-date{color:rgba(10,10,10,0.55) !important;}
+  [data-theme="light"] .tn-pill{color:rgba(10,10,10,0.65) !important;}
+  [data-theme="light"] .tn-pill:hover{background:rgba(10,10,10,0.04) !important;color:#0A0A0A !important;}
+  [data-theme="light"] .tn-pill.active{color:#0A0A0A !important;background:#D4FF00 !important;border-color:#D4FF00 !important;font-weight:700 !important;}
+  [data-theme="light"] .tn-pill.view{color:rgba(10,10,10,0.55) !important;}
+  [data-theme="light"] .tn-pill.view.active{color:#0A0A0A !important;}
+  [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14) !important;color:#0A0A0A !important;}
+
+  /* PAGE TITLE */
+  .page-title{max-width:1440px;margin:0 auto;padding:24px 32px 14px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;}
+  .page-title h1{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:800;letter-spacing:-0.02em;margin:0;color:var(--ink);display:flex;align-items:center;gap:12px;}
+  .page-title h1 .topic-emoji{font-size:1.1em;}
+  .page-title .stamp{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
+
+  /* THREE-COL GRID */
+  .three-col{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;gap:32px;grid-template-columns:1fr;}
+  @media (min-width:1080px){
+    .three-col{grid-template-columns:260px 1fr 290px;grid-template-areas:"left center right";gap:36px;}
+    .col-left{grid-area:left;} .col-center{grid-area:center;} .col-right{grid-area:right;}
+  }
+  .col-center{min-width:0;}
+
+  /* CENTER BRIEFING */
+  .lead-eyebrow{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);padding-left:1.8em;position:relative;margin-bottom:14px;}
+  .lead-eyebrow::before{content:"";position:absolute;left:0;top:0.42em;width:1.4em;height:0.18em;background:var(--neon);border-radius:2px;}
+  .lead-headline{font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.18;letter-spacing:-0.02em;font-weight:800;margin:0 0 22px;color:var(--ink);}
+  .briefing-body{font-size:16px;line-height:1.75;color:var(--ink);}
+  .briefing-body p{margin:0 0 18px;color:var(--ink);}
+  .briefing-body strong{color:var(--ink);font-weight:700;}
+  .briefing-body em{font-style:italic;color:var(--ink);}
+  .briefing-body h2{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.8em;position:relative;margin:30px 0 14px;color:var(--ink);padding-top:22px;border-top:2px solid var(--ink);}
+  .briefing-body h2::before{content:"";position:absolute;left:0;top:calc(22px + 0.42em);width:1.4em;height:0.18em;background:var(--neon);border-radius:2px;}
+
+  /* SOURCE TOOLTIP */
+  .src-tip{position:relative;display:inline-block;vertical-align:middle;}
+  .src-arrow{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;color:#0A0A0A;background:var(--neon);border-radius:0;opacity:0.92;transition:opacity 0.12s, background 0.12s;text-decoration:none !important;}
+  .src-arrow:hover{opacity:1;background:#E2FF4D;}
+  .src-arrow svg.src{width:10px;height:10px;}
+  .src-tooltip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);width:340px;background:#0A0A0A;color:#FFFFFF;padding:14px 16px 14px 18px;font-size:13px;line-height:1.55;border-left:3px solid #D4FF00;z-index:1000;visibility:hidden;opacity:0;transition:opacity 0.18s, visibility 0s 0.18s;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,0.25);font-weight:400;text-align:left;letter-spacing:0;white-space:normal;}
+  .src-tooltip::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border-width:6px;border-style:solid;border-color:#0A0A0A transparent transparent transparent;}
+  .src-tooltip-label{display:block;font-size:0.66rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#D4FF00;margin-bottom:7px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,0.16);}
+  .src-tip:hover .src-tooltip{visibility:visible;opacity:1;transition:opacity 0.18s, visibility 0s 0s;}
+  .col-left .src-tooltip, .col-right .src-tooltip{width:300px;left:auto;right:0;transform:none;}
+  .col-left .src-tooltip::after, .col-right .src-tooltip::after{left:auto;right:14px;transform:none;}
+
+  /* SIDEBAR BOXES */
+  .box{background:var(--surface);border:1px solid var(--line-strong);padding:16px 18px;margin-bottom:18px;}
+  .box h2{font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.6em;position:relative;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--ink);color:var(--ink);}
+  .box h2::before{content:"";position:absolute;left:0;top:0.36em;width:1.2em;height:0.18em;background:var(--neon);border-radius:2px;}
+  .box ul{list-style:none;padding:0;margin:0;}
+  .box li{padding:8px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink);line-height:1.5;display:flex;align-items:baseline;gap:6px;}
+  .box li:last-child{border-bottom:none;padding-bottom:0;}
+  .box li .item-text{flex:1;min-width:0;color:var(--ink);}
+  .box li .item-text strong{color:var(--ink);font-weight:700;}
+  .box li .item-text em{color:var(--ink-60);font-style:italic;font-size:11.5px;display:block;margin-top:2px;}
+  .pip{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:1px;flex-shrink:0;}
+  .pip-i{background:#ef4444;} .pip-u{background:#f59e0b;} .pip-w{background:#3b82f6;}
+
+  /* SOURCES FOOTER */
+  .sources{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border-top:2px solid var(--ink);}
+  .sources h2{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.8em;position:relative;margin:0 0 16px;color:var(--ink);}
+  .sources h2::before{content:"";position:absolute;left:0;top:0.42em;width:1.4em;height:0.18em;background:var(--neon);border-radius:2px;}
+  .sources-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:12px;}
+  .source{font-size:12.5px;line-height:1.45;color:var(--ink);}
+  .source .src-num{font-weight:900;margin-right:6px;}
+  .source a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(212,255,0,0.85);text-decoration-thickness:2px;text-underline-offset:2px;}
+  .source a:hover{background:rgba(212,255,0,0.30);}
+  .disclaimer{margin-top:18px;font-size:11px;color:var(--ink-40);font-style:italic;}
+
+  /* Slight arrow indicator on tab pill suggesting dropdown */
+  .tn-tab > .tn-pill::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55;
+    vertical-align: 2px;
+  }/* ====== MASTER PATCH START — do not edit between sentinels ====== */
+
+  /* === Polestar-style full-width dropdowns === */
+  .tn { position: relative; }
+  .tn-tabs-row { gap: clamp(0.4rem, 1vw, 0.8rem); }
+  .tn-tab { position: static; display: inline-block; padding-bottom: 12px; margin-bottom: -12px; }
+  .tn-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: -10px;
+    background: #D4FF00;
+    border-bottom: 1px solid rgba(10,10,10,0.12);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0s 0.25s;
+    pointer-events: none;
+  }
+  [data-theme="dark"] .tn-dropdown {
+    background: #D4FF00;
+    border-bottom-color: rgba(10,10,10,0.18);
+  }
+  .tn-tab:hover .tn-dropdown, .tn-tab:focus-within .tn-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.18s ease-out, transform 0.18s ease-out, visibility 0s 0s;
+    pointer-events: auto;
+  }
+  .tn-dd-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: clamp(1.8rem, 3vw, 2.8rem) clamp(1.25rem, 3vw, 2.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+    background: #D4FF00;
+  }
+  .tn-dd-eyebrow {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: #0A0A0A; margin: 0 0 0.8rem 0;
+  }
+  .tn-dd-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800; font-size: clamp(1.4rem, 2vw, 1.75rem);
+    line-height: 1.15; letter-spacing: -0.02em;
+    color: #0A0A0A; margin: 0 0 0.9rem 0;
+  }
+  .tn-dd-body {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; color: #0A0A0A;
+    line-height: 1.55; max-width: 460px; margin: 0;
+  }
+  .tn-dd-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+  .tn-dd-link {
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.98rem; font-weight: 600;
+    color: #0A0A0A !important; background: transparent !important;
+    border: none !important; border-radius: 0 !important; padding: 4px 0 !important;
+    display: inline-flex !important; align-items: center;
+    text-decoration: none !important;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .tn-dd-link:hover { color: rgba(10,10,10,0.55) !important; background: transparent !important; }
+  .tn-dd-link.active span { border-bottom: 2px solid #0A0A0A; padding-bottom: 1px; }
+  .tn-dd-col-cta { align-self: center; }
+  .tn-dd-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    color: #FFFFFF !important; background: #0A0A0A !important;
+    padding: 0.9rem 1.4rem; letter-spacing: 0.02em;
+    text-decoration: none !important;
+    border: none !important; border-radius: 0 !important;
+    transition: background 0.2s, gap 0.2s;
+  }
+  .tn-dd-cta:hover { background: #222 !important; gap: 12px; }
+  .tn-dd-cta svg { stroke: #D4FF00 !important; }
+  .tn-tab > .tn-pill::after { display: none; }
+  .tn-row.brand > .tn-date { display: none !important; }
+
+  /* === Logo size consistency === */
+  .tn-brand-logo { height: 36px !important; }
+
+  /* === Bigger, more readable tab names === */
+  .tn-pill {
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    padding: 9px 18px !important;
+    letter-spacing: 0.005em !important;
+    gap: 6px !important;
+    border-radius: 0 !important;
+  }
+  .tn-pill.active { font-weight: 700 !important; }
+
+  /* === Neon active tab; hover any tab = neon === */
+  .tn-pill.active,
+  [data-theme="light"] .tn-pill.active,
+  [data-theme="dark"] .tn-pill.active {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  .tn-pill:hover,
+  [data-theme="light"] .tn-pill:hover,
+  [data-theme="dark"] .tn-pill:hover {
+    background: #D4FF00 !important;
+    color: #0A0A0A !important;
+    border: 1px solid #D4FF00 !important;
+    font-weight: 700 !important;
+  }
+  /* Active tab dims when another tab is hovered */
+  .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(10,10,10,0.06) !important;
+    color: rgba(10,10,10,0.55) !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+  }
+  [data-theme="dark"] .tn-tabs-row:has(.tn-tab:hover) .tn-tab.active:not(:hover) .tn-pill.active {
+    background: rgba(255,255,255,0.06) !important;
+    color: rgba(255,255,255,0.55) !important;
+    border: 1px solid transparent !important;
+  }
+  /* Active tab not clickable */
+  .tn-pill.active { cursor: default !important; pointer-events: none !important; }
+
+  /* === src-arrow: light gray bg (not neon) === */
+  .src-arrow {
+    background: rgba(10,10,10,0.08) !important;
+    color: #0A0A0A !important;
+  }
+  .src-arrow:hover { background: rgba(10,10,10,0.16) !important; }
+  [data-theme="dark"] .src-arrow {
+    background: rgba(229,231,235,0.10) !important;
+    color: #E5E7EB !important;
+  }
+  [data-theme="dark"] .src-arrow:hover { background: rgba(229,231,235,0.20) !important; }
+
+  /* === Tooltip overflow fix === */
+  .col-left .src-tooltip {
+    width: 300px !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-left .src-tooltip::after {
+    left: 14px !important;
+    right: auto !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip {
+    width: 300px !important;
+    left: auto !important;
+    right: 0 !important;
+    transform: none !important;
+  }
+  .col-right .src-tooltip::after {
+    left: auto !important;
+    right: 14px !important;
+    transform: none !important;
+  }
+  .src-tooltip { max-width: calc(100vw - 32px); }
+
+  /* === Remove eyebrow neon bars === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+  /* === Byline + multi-column body === */
+  .briefing-body .byline {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    margin: 0 0 24px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink-20);
+    flex-wrap: wrap;
+  }
+  .briefing-body .byline .byline-desk {
+    font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink);
+  }
+  .briefing-body .byline .byline-time,
+  .briefing-body .byline .byline-date {
+    font-size: 12px; color: var(--ink-60); font-style: italic;
+  }
+  .briefing-body .prose {
+    column-count: 2;
+    column-gap: 36px;
+    column-rule: 1px solid var(--line);
+  }
+  .briefing-body .prose p {
+    break-inside: avoid-column;
+    margin: 0 0 16px;
+  }
+  .briefing-body .prose p:first-of-type { margin-top: 0; }
+  @media (max-width: 880px) {
+    .briefing-body .prose { column-count: 1; }
+  }
+
+
+  /* === Single-column briefing body with advisory content === */
+  .briefing-body .prose { column-count: 1 !important; }
+  .briefing-body .advisory-body h2 {
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    color: var(--ink) !important;
+    margin: 32px 0 14px !important;
+    padding-top: 22px !important;
+    border-top: 2px solid var(--ink) !important;
+    padding-left: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .briefing-body .advisory-body h2:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+  }
+  .briefing-body .advisory-body p {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 1.72;
+  }
+  .briefing-body .advisory-body a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: rgba(212,255,0,0.85);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  .briefing-body .advisory-body a:hover {
+    background: rgba(212,255,0,0.30);
+  }
+  [data-theme="dark"] .briefing-body .advisory-body a {
+    color: #D4FF00;
+    text-decoration-color: rgba(212,255,0,0.55);
+  }
+  .briefing-body .advisory-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 16px;
+  }
+  .briefing-body .advisory-body ul li {
+    padding: 9px 0 9px 22px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+  .briefing-body .advisory-body ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 17px;
+    width: 12px;
+    height: 2px;
+    background: var(--neon);
+  }
+  .briefing-body .advisory-body ul li:last-child { border-bottom: none; }
+  .briefing-body .advisory-disclaimer {
+    font-size: 12px !important;
+    color: var(--ink-60) !important;
+    font-style: italic !important;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    margin-top: 24px;
+  }
+
+
+  /* === Source-arrow spacing (more breathing room in body) === */
+  .briefing-body .src-arrow {
+    margin-left: 6px;
+    margin-right: 4px;
+    vertical-align: 1px;
+    width: 17px;
+    height: 17px;
+  }
+  .briefing-body .src-arrow svg.src { width: 11px; height: 11px; }
+  .briefing-body p { margin-bottom: 18px; }
+  .briefing-body p .src-tip + .src-tip { margin-left: 2px; }
+  .briefing-body .advisory-body p, .briefing-body .advisory-body li { line-height: 1.82; }
+
+
+  /* === Recommended Actions sidebar box === */
+  .col-left .actions-box .actions-content {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+  .col-left .actions-box .actions-content p {
+    margin: 0 0 12px;
+  }
+  .col-left .actions-box .actions-content p:last-child { margin-bottom: 0; }
+  .col-left .actions-box .actions-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .col-left .actions-box .actions-content li {
+    padding: 8px 0 8px 18px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .col-left .actions-box .actions-content li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 10px;
+    height: 2px;
+    background: var(--neon);
+  }
+  .col-left .actions-box .actions-content li:last-child { border-bottom: none; padding-bottom: 0; }
+  .col-left .actions-box .actions-content strong { color: var(--ink); font-weight: 700; }
+  .col-left .actions-box .actions-content a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: rgba(212,255,0,0.85);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  .col-left .actions-box .actions-content .src-arrow {
+    margin-left: 4px;
+    margin-right: 2px;
+  }
+  [data-theme="dark"] .col-left .actions-box .actions-content { color: #E5E7EB; }
+  [data-theme="dark"] .col-left .actions-box .actions-content a { color: #D4FF00; text-decoration-color: rgba(212,255,0,0.55); }
+
+
+  /* === Calendar squares (Key Dates · bold day + neon highlighter) === */
+  .col-left .box .kd-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .col-left .box .kd-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .col-left .box .kd-row:first-child { padding-top: 0; }
+  .cal-square {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 58px;
+    height: 58px;
+    background: #FFFFFF;
+    color: #0A0A0A;
+    border: 1px solid rgba(10,10,10,0.14);
+    flex-shrink: 0;
+    padding-top: 8px;
+    box-sizing: border-box;
+  }
+  [data-theme="dark"] .cal-square {
+    background: #0A0A0A;
+    border-color: rgba(229,231,235,0.22);
+  }
+  .cal-square .cal-month {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.20em;
+    line-height: 1;
+    color: rgba(10,10,10,0.55);
+    text-transform: uppercase;
+    font-family: 'Archivo', sans-serif;
+  }
+  [data-theme="dark"] .cal-square .cal-month { color: rgba(229,231,235,0.6); }
+  .cal-square .cal-day {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1;
+    color: #0A0A0A;
+    margin-top: 5px;
+    letter-spacing: -0.02em;
+    font-family: 'Archivo', sans-serif;
+    /* Neon highlighter painted across the bottom of the digit */
+    background-image: linear-gradient(180deg, transparent 60%, #D4FF00 60%, #D4FF00 96%, transparent 96%);
+    padding: 0 4px;
+    display: inline-block;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  [data-theme="dark"] .cal-square .cal-day { color: #FFFFFF; }
+  .kd-content { flex: 1; min-width: 0; }
+  .kd-event {
+    font-family: 'Archivo', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+  .kd-event strong { font-weight: 700; }
+  .kd-sub {
+    font-family: 'Archivo', sans-serif;
+    font-size: 11.5px;
+    font-style: italic;
+    color: var(--ink-60);
+    line-height: 1.4;
+  }
+
+
+  /* === Arrow size hard cap (prevents leaked SVG growing to default size) === */
+  .briefing-body svg,
+  .advisory-body svg,
+  .col-left svg,
+  .col-right svg,
+  .actions-content svg {
+    max-width: 14px !important;
+    max-height: 14px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .briefing-body .src-arrow,
+  .advisory-body .src-arrow,
+  .col-left .src-arrow,
+  .col-right .src-arrow,
+  .actions-content .src-arrow {
+    width: 17px !important;
+    height: 17px !important;
+    max-width: 17px !important;
+    max-height: 17px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  /* The calendar-square SVG (if any) and source-tooltip SVG also constrained */
+  .src-tooltip svg { max-width: 12px !important; max-height: 12px !important; }
+
+
+  /* === Storyline notes: full-sentence gray italic === */
+  .storyline li .item-text em {
+    color: var(--ink-60) !important;
+    font-style: italic !important;
+    font-size: 13px !important;
+    display: block !important;
+    margin-top: 6px !important;
+    line-height: 1.5 !important;
+    font-family: 'Archivo', sans-serif !important;
+  }
+  .storyline li {
+    padding: 12px 0 !important;
+    align-items: flex-start !important;
+  }
+  .storyline li .item-text strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+
+
+  /* === Storyline accordion === */
+  .col-right .storyline { padding: 0; margin: 0 0 4px; border-bottom: 1px solid var(--line); }
+  .col-right .storyline:last-of-type { border-bottom: none; }
+  .col-right .storyline > .storyline-title,
+  .col-right details.storyline > summary.storyline-title {
+    cursor: pointer;
+    list-style: none;
+    padding: 12px 0;
+    margin: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    transition: color 0.15s;
+  }
+  .col-right details.storyline > summary.storyline-title::-webkit-details-marker { display: none; }
+  .col-right details.storyline > summary.storyline-title::after {
+    content: "+";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink-60);
+    transition: transform 0.2s, color 0.15s;
+    width: 18px;
+    text-align: center;
+  }
+  .col-right details.storyline[open] > summary.storyline-title::after {
+    content: "−";
+    color: var(--ink);
+  }
+  .col-right details.storyline > summary.storyline-title:hover { color: var(--ink); }
+  .col-right details.storyline > summary.storyline-title:hover::after { color: var(--ink); }
+  .col-right details.storyline > ul { padding-bottom: 10px; }
+
+/* ====== MASTER PATCH END ====== */
+/* DARK-MODE HIGHLIGHTER START */
+:root {
+  --neon-block: #D4FF00;
+  --neon-on-block: #0A0A0A;
+}
+[data-theme="light"] {
+  --neon-block: #D4FF00 !important;
+  --neon-on-block: #0A0A0A !important;
+}
+[data-theme="dark"] {
+  --neon-block: #5D7A00 !important;
+  --neon-on-block: #FFFFFF !important;
+}
+/* Apply to large highlighter elements */
+[data-theme="dark"] .stat-anchor,
+[data-theme="dark"] .anchor-stat,
+[data-theme="dark"] .stat-callout,
+[data-theme="dark"] .lead-headline .accent,
+[data-theme="dark"] h1 .accent,
+[data-theme="dark"] .accent {
+  background: var(--neon-block) !important;
+  color: var(--neon-on-block) !important;
+}
+/* Calendar day highlighter — replace gradient stop colors */
+[data-theme="dark"] .cal-day {
+  background: linear-gradient(180deg, transparent 0 60%, #5D7A00 60% 96%, transparent 96%) !important;
+  color: #FFFFFF !important;
+}
+/* Highlighter accent in headlines (linear-gradient pattern) — dark mode override */
+[data-theme="dark"] .lead-headline .accent,
+[data-theme="dark"] h1 .accent,
+[data-theme="dark"] .at-glance-accent {
+  background: linear-gradient(180deg, transparent 0 50%, #5D7A00 50% 96%, transparent 96%) !important;
+  color: #FFFFFF !important;
+  padding: 0 0.15em !important;
+}
+/* Landing page card stat anchors */
+[data-theme="dark"] .card-stat-anchor,
+[data-theme="dark"] .stat-anchor-value {
+  background: #5D7A00 !important;
+  color: #FFFFFF !important;
+}
+/* DARK-MODE HIGHLIGHTER END */
+/* H3 SUBHEADING ICON START */
+.advisory-body h3,
+.briefing-body h3,
+.col-center h3,
+h3.advisory-h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  line-height: 1.3;
+  margin: 30px 0 14px 0;
+  padding: 4px 0 4px 14px;
+  border-left: 4px solid var(--neon-block, #D4FF00);
+}
+.advisory-body h3 strong,
+.briefing-body h3 strong,
+.col-center h3 strong,
+h3.advisory-h3 strong {
+  font-weight: 700;
+}
+/* H3 SUBHEADING ICON END */
+/* TICKER STYLES START */
+:root {
+  --tk-up-color: #2D8E47;
+  --tk-down-color: #C84141;
+  --tk-flat-color: var(--ink-60, #6B7280);
+}
+[data-theme="dark"] {
+  --tk-up-color: #54C277;
+  --tk-down-color: #E07474;
+}
+/* Right-column Market Watch box */
+.market-watch .tk-list { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.market-watch .tk-row { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center;
+  padding: 8px 6px; border-bottom: 1px solid var(--line, rgba(10,10,10,0.06));
+  text-decoration: none; color: inherit; font-size: 12.5px; }
+.market-watch .tk-row:last-child { border-bottom: none; }
+.market-watch .tk-row:hover { background: var(--paper-2, #F4F5F7); }
+.market-watch .tk-left { display: flex; flex-direction: column; min-width: 0; }
+.market-watch .tk-sym { font-weight: 800; letter-spacing: 0.02em; font-size: 12.5px; }
+.market-watch .tk-name { color: var(--ink-60); font-size: 10.5px; white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis; max-width: 130px; }
+.market-watch .tk-spark { width: 56px; height: 18px; opacity: 0.9; }
+.market-watch .tk-right { text-align: right; display: flex; flex-direction: column; gap: 1px; min-width: 64px; }
+.market-watch .tk-price { font-weight: 700; font-variant-numeric: tabular-nums; font-size: 12.5px; }
+.market-watch .tk-change { font-size: 10.5px; font-variant-numeric: tabular-nums; }
+.tk-up { color: var(--tk-up-color); }
+.tk-down { color: var(--tk-down-color); }
+.tk-flat { color: var(--tk-flat-color); }
+.market-watch .tk-asof { font-size: 9.5px; color: var(--ink-60); margin-top: 8px;
+  letter-spacing: 0.04em; text-transform: uppercase; }
+.market-watch .tk-empty { font-size: 12px; color: var(--ink-60); padding: 8px 4px; }
+
+/* Landing-page horizontal ribbon */
+.ticker-ribbon { max-width: 1440px; margin: 0 auto; padding: 14px 32px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: var(--surface); display: flex; align-items: center; gap: 22px; }
+.tkr-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ink-60); flex-shrink: 0; }
+.tkr-scroll { display: flex; gap: 22px; overflow-x: auto; flex: 1; scrollbar-width: thin; }
+.tkr-item { display: flex; align-items: baseline; gap: 8px; text-decoration: none; color: inherit;
+  white-space: nowrap; padding: 4px 0; }
+.tkr-sym { font-weight: 800; font-size: 13px; letter-spacing: 0.02em; }
+.tkr-price { font-weight: 600; font-variant-numeric: tabular-nums; font-size: 13px; color: var(--ink-60); }
+.tkr-change { font-size: 11.5px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.tkr-item:hover { text-decoration: none; }
+.tkr-item:hover .tkr-sym { color: var(--neon-block, #D4FF00); }
+/* TICKER STYLES END */
+/* NAV ALIGNMENT START */
+/* Align brand strip + tabs row with body content (max-width 1440 + 32px x-padding) */
+.tn-row.brand,
+.tn-tabs-row {
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  box-sizing: border-box !important;
+}
+/* NAV ALIGNMENT END */
+</style>
+  <!-- AUTH GATE START -->
+  <script src="/auth/config.js"></script>
+  <script type="module" src="/auth/auth.js"></script>
+  <!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row brand">
+    <a class="tn-brand" href="../daily-briefing/index.html"><img class="tn-brand-logo" alt="Turnpage" src="../daily-briefing/assets/turnpage-logo.jpeg"></a>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+  <div class="tn-row tn-tabs-row">
+    <div class="tn-tab active">
+      <a class="tn-pill active" href="../rewind-tariffs/dashboard.html">⚖️ Tariffs</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tariffs / Trade</h3>
+            <p class="tn-dd-body">Capital and advisory for IEEPA tariff refund rights. CAPE refunds, the CIT and Federal Circuit dockets, Section 122, and consumer-class exposure on pass-through.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../rewind-tariffs/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../llm-class-action/dashboard.html">🤖 LLM</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">LLM / Copyright</h3>
+            <p class="tn-dd-body">AI training-data class actions. Bartz v. Anthropic, the OpenAI MDL, Concord, Disney v. Midjourney — settlement mechanics and benchmark claims rates.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../llm-class-action/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../crypto-insolvency/dashboard.html">🪙 Crypto</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Crypto Insolvency</h3>
+            <p class="tn-dd-body">Customer-property litigation and crypto bankruptcies. BlockFills, Genesis LOC, FTX progeny, and the cross-border Chapter 15 recognition track.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../crypto-insolvency/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../fraud-recovery/dashboard.html">🕵️ Fraud</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Ponzi / Fraud Recovery</h3>
+            <p class="tn-dd-body">Receivership clawbacks, SEC enforcement, and cross-border asset recovery. Goliath Ventures, Paramount/Prestige, and active receiver-led liquidation tracks.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../fraud-recovery/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../billion-dollar-class-actions/dashboard.html">💰 $1B+</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">$1B+ Class Actions</h3>
+            <p class="tn-dd-body">The mega-settlement cycle. BCBS Subscriber & Provider, Bartz v. Anthropic, Purdue/Sackler, Roundup, Visa/Mastercard interchange.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../billion-dollar-class-actions/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../bankruptcy-creditor-rights/dashboard.html">📜 Bankr</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Bankruptcy Creditor Rights</h3>
+            <p class="tn-dd-body">Plan-confirmation appellate docket. Equitable-mootness drift, post-Purdue third-party releases, Texas Two-Step, exculpation scope, and Subchapter V.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../bankruptcy-creditor-rights/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-title">
+  <h1><span class="topic-emoji">⚖️</span>Tariffs / Trade</h1>
+  <div class="stamp">10:00 AM ET &middot; Tuesday, May 19, 2026</div>
+</div>
+
+<main class="three-col">
+
+  <aside class="col-left">
+    <section class="box">
+      <h2>Key Dates &middot; 60 days</h2>
+      <ul>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">19</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Sec 122 plaintiffs reply brief</strong><span class="src-tip"><a class="src-arrow" href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Troutman Pepper</span>Plaintiffs' response brief due May 19 in the Federal Circuit's expedited Section 122 stay appeal.</span></span></div>
+            <div class="kd-sub">Federal Circuit · expedited stay briefing</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">22</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>DOJ reply brief</strong><span class="src-tip"><a class="src-arrow" href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Troutman Pepper</span>DOJ reply brief due May 22; Federal Circuit expected to rule on stay shortly thereafter.</span></span></div>
+            <div class="kd-sub">Federal Circuit · briefing closes</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">26</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Next CBP CAPE progress report</strong><span class="src-tip"><a class="src-arrow" href="https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/may/tariffs-today-cbp-reports-further-progress-on-cape-refund-process" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Sandler, Travis &amp; Rosenberg</span>CBP's next progress report to Judge Eaton on CAPE refund volumes and operational stability.</span></span></div>
+            <div class="kd-sub">CIT · Judge Eaton</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">7</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>DOJ appeal deadline</strong><span class="src-tip"><a class="src-arrow" href="https://www.buchalter.com/insights/one-small-step-for-importers-federal-circuit-clears-the-way-for-ieepa-tariff-refund-litigation-to-resume/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Buchalter</span>60-day DOJ appeal window on Judge Eaton's reissued refund order; no notice of appeal filed.</span></span></div>
+            <div class="kd-sub">CIT March 4 refund order</div>
+</div>
+        </li>
+        <li class="kd-row">
+          <div class="cal-square"><span class="cal-month">JUL</span><span class="cal-day">24</span></div>
+          <div class="kd-content">
+            <div class="kd-event"><strong>Section 122 statutory sunset</strong><span class="src-tip"><a class="src-arrow" href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Troutman Pepper</span>Section 122 tariffs expire by operation of statute on July 24, 2026 absent congressional extension.</span></span></div>
+            <div class="kd-sub">19 U.S.C. §2132 · 150-day cap</div>
+</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section class="box actions-box">
+      <h2>What to do this week</h2>
+      <div class="actions-content">
+<ul>
+<li>If you hold IEEPA refund rights, verify your ACH banking information is registered on CBP's electronic refund portal. About 1,880 consolidated refunds are currently stalled because importers of record have not registered ACH details.<span class="src-tip"><a class="src-arrow" href="https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/may/tariffs-today-cbp-reports-further-progress-on-cape-refund-process" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Sandler, Travis &amp; Rosenberg</span>1,880 consolidated refunds stalled due to missing ACH information.</span></span></li>
+<li>Continue filing §1514 protests on affected entries even after submitting CAPE declarations. Protests remain the durable preservation mechanism in the event DOJ files an unexpected appeal before the June 7 deadline.<span class="src-tip"><a class="src-arrow" href="https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/may/tariffs-today-cbp-reports-further-progress-on-cape-refund-process" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Sandler, Travis &amp; Rosenberg</span>Importers should not rely solely on CAPE; §1514 protest filings remain the durable preservation mechanism.</span></span></li>
+<li>If you are not a named plaintiff in the Burlap & Barrel / Basic Fun / Washington State Section 122 action, consider filing your own CIT case to preserve refund rights for your entries while the Federal Circuit stay holds.<span class="src-tip"><a class="src-arrow" href="https://customsandinternationaltradelaw.com/2026/05/14/appeals-court-keeps-section-122-tariffs-in-place-for-now-what-importers-need-to-know/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Diaz Trade Law</span>May 7 CIT ruling limited relief to named plaintiffs only; other importers must file their own actions to preserve refund rights.</span></span></li>
+<li>If you passed IEEPA costs through to customers, document the pricing rationale and consider voluntary-disclosure strategies before consumer class-action discovery hardens.<span class="src-tip"><a class="src-arrow" href="https://www.troutman.com/insights/ieepa-tariff-refunds-may-come-with-an-unforeseen-cost-exposure-to-consumer-class-actions/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Troutman Pepper</span>Importers face disgorgement exposure on the pass-through component upon receiving refunds.</span></span></li>
+</ul>
+</div>
+    </section>
+  </aside>
+
+  <article class="col-center">
+    <div class="lead-eyebrow">Today's Briefing</div>
+    <h1 class="lead-headline">First IEEPA refunds reach importers as Federal Circuit <span class="accent">pauses Section 122 ruling.</span></h1>
+    <div class="briefing-body">
+
+      <div class="byline"><span class="byline-desk">Rewind Tariffs Desk</span><span class="byline-time">10:00 AM ET</span><span class="byline-date">Tuesday, May 19, 2026</span></div>
+
+      <div class="advisory-body">
+<h2>Today at a Glance</h2>
+<p>The IEEPA tariff refund cycle is now in active distribution.<span class="src-tip"><a class="src-arrow" href="https://www.gtlaw.com/en/insights/2026/5/us-tariff-update-section-122-duties-found-unauthorized-by-law-ieepa-refunds-under-way" target="_blank" rel="noopener" aria-label="View source: Greenberg Traurig"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Greenberg Traurig</span>CBP's CAPE module has processed approximately $35.46B in IEEPA refunds across 8.33M entries; phase-1 coverage at ~82%.</span></span> According to CBP's most recent progress report to the Court of International Trade, the agency has processed approximately <strong>$35.46 billion</strong> in anticipated refunds across more than <strong>8.3 million</strong> import entries through the CAPE system.<span class="src-tip"><a class="src-arrow" href="https://www.gtlaw.com/en/insights/2026/5/us-tariff-update-section-122-duties-found-unauthorized-by-law-ieepa-refunds-under-way" target="_blank" rel="noopener" aria-label="View source: Greenberg Traurig"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Greenberg Traurig</span>CBP's CAPE module has processed approximately $35.46B in IEEPA refunds across 8.33M entries; phase-1 coverage at ~82%.</span></span> The first publicly confirmed refund payment landed last week, when wine importer VOS Selections received <strong>$110,000</strong>.<span class="src-tip"><a class="src-arrow" href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-" target="_blank" rel="noopener" aria-label="View source: Spectrum News (AP)"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Spectrum News (AP)</span>Wine importer VOS Selections reported receiving a $110,000 refund this week, the first publicly confirmed IEEPA refund.</span></span> On May 7, the Court of International Trade held the 10% Section 122 replacement tariff unlawful in a 2-1 decision, but the court limited its injunction to three named plaintiffs (Burlap &amp; Barrel, Basic Fun, and Washington State).<span class="src-tip"><a class="src-arrow" href="https://customsandinternationaltradelaw.com/2026/05/14/appeals-court-keeps-section-122-tariffs-in-place-for-now-what-importers-need-to-know/" target="_blank" rel="noopener" aria-label="View source: Diaz Trade Law"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Diaz Trade Law</span>On May 7, the CIT ruled 2-1 that Section 122 was unlawful; relief was limited to named plaintiffs Burlap &amp; Barrel, Basic Fun, and Washington State.</span></span> The Federal Circuit stayed that ruling on May 12, keeping Section 122 in effect for all other importers while the appeal proceeds.<span class="src-tip"><a class="src-arrow" href="https://customsandinternationaltradelaw.com/2026/05/14/appeals-court-keeps-section-122-tariffs-in-place-for-now-what-importers-need-to-know/" target="_blank" rel="noopener" aria-label="View source: Diaz Trade Law"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Diaz Trade Law</span>Federal Circuit granted a temporary administrative stay on May 12; Section 122 remains in effect during expedited appeal.</span></span> Briefing closes on May 22, with plaintiffs' response due May 19 and the Department of Justice's reply due May 22.<span class="src-tip"><a class="src-arrow" href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/" target="_blank" rel="noopener" aria-label="View source: Troutman Pepper"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Troutman Pepper</span>Expedited briefing schedule: plaintiffs respond by May 19; DOJ replies by May 22.</span></span> Separately, DOJ has until approximately June 7 to appeal the underlying refund order, and as of today no notice of appeal has surfaced.<span class="src-tip"><a class="src-arrow" href="https://www.buchalter.com/insights/one-small-step-for-importers-federal-circuit-clears-the-way-for-ieepa-tariff-refund-litigation-to-resume/" target="_blank" rel="noopener" aria-label="View source: Buchalter"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Buchalter</span>DOJ appeal window resets to approximately June 7; no notice filed.</span></span> Even if the Federal Circuit reverses the CIT, Section 122 expires by operation of statute on July 24, 2026 unless Congress acts to extend it.<span class="src-tip"><a class="src-arrow" href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/" target="_blank" rel="noopener" aria-label="View source: Troutman Pepper"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Troutman Pepper</span>Section 122 tariffs expire July 24, 2026 under the statute's 150-day limit absent congressional extension.</span></span> On the consumer side, an eight-state coalition of comptrollers has demanded pass-through protections, and plaintiffs' firms have begun filing nationwide class actions on unjust-enrichment theories.<span class="src-tip"><a class="src-arrow" href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-" target="_blank" rel="noopener" aria-label="View source: Spectrum News (AP)"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Spectrum News (AP)</span>Eight state comptrollers sent President Trump a May 14 letter demanding consumer pass-through protections.</span></span> Looking forward, USTR has launched 76 new Section 301 investigations with no exclusion process planned, and Commerce has released applications for Section 232 onshoring agreements that allow tariff reductions in exchange for U.S. manufacturing commitments.<span class="src-tip"><a class="src-arrow" href="https://waysandmeans.house.gov/2026/05/11/five-key-moments-hearing-on-u-s-trade-with-ambassador-jamieson-greer/" target="_blank" rel="noopener" aria-label="View source: House Ways &amp; Means"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">House Ways &amp; Means</span>USTR Greer testified May 11: 24% trade-deficit reduction; 76 new Section 301 investigations launched. No exclusion process planned.</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="advisory-h3">II. CIT Judicial Pressure on Refund Timing: The June 10 Hearing</h3>
+<p>The CIT bench's directive — reported by both <strong>Reuters</strong> and <strong>SCMP</strong> on June 10, 2026 — that the administration "speed up" refund disbursement is procedurally notable because it emerges from a status conference, not a ruled motion. In CIT practice, a judge's bench-level admonition during a status conference carries no direct enforcement weight but creates a record that plaintiffs can immediately leverage in a motion to compel or a contempt-adjacent enforcement application. The fact that Reuters, SCMP, and CNBC all independently characterized the court as urging speed suggests the bench made its displeasure explicit on the record (Reuters — needs verification<span class="src-tip"><a class="src-arrow" href="https://reuters.com" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">R</span>US Trade Judge Urges Trump Administration to Speed Up Tariff Refunds (euters, June 10, 2026)</span></span>; (SCMP — needs verification<span class="src-tip"><a class="src-arrow" href="https://scmp.com" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">S</span>US Trade Court to Trump Administration: Speed Up Tariff Refunds (outh China Morning Post, June 10, 2026)</span></span>); (CNBC — needs verification<span class="src-tip"><a class="src-arrow" href="https://cnbc.com" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">C</span>U.S. Customs Agency, Trade Judge to Seek Path to Final Tariff Refunds (NBC, June 10, 2026)</span></span>)).</p>
+<p>The practical implication: if CBP's portal for refund applications remains in "refinement" (per AP's characterization) beyond a court-set deadline, plaintiffs' counsel will be positioned to file a motion for a specific compliance schedule backed by the June 10 conference record. Firms that represent high-volume importers — particularly in consumer electronics, apparel, and industrial components, which account for the largest IEEPA duty pools — should be preparing that motion now, even if the trigger event has not yet occurred. The vehicle would be a <strong>Rule 65(d)</strong> enforcement application or, in CIT's own procedural rules, a motion pursuant to <strong>USCIT Rule 11(b) and Rule 56.2</strong> procedures for summary judgment on compliance, though the more likely path is a straightforward motion to enforce the court's prior refund order with a compliance timeline.</p>
+<p>The administration's posture — framed by Politico as "digging in" — suggests DOJ's Civil Division and the Office of the U.S. Trade Representative are coordinating to treat refund pacing as a separable legal question from refund entitlement, i.e., even if the underlying duty collection was unlawful, the <em>when</em> and <em>how</em> of return is a discretionary executive function. That argument has not yet been squarely adjudicated at the CIT, and it is the likely battleground for the next 60–90 days (Politico — needs verification<span class="src-tip"><a class="src-arrow" href="https://politico.com" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">P</span>The White House Is Digging In on Tariff Refunds (olitico, June 10, 2026)</span></span>).</p>
+<p>---</p>
+<h3 class="advisory-h3">III. CBP's Eligibility Architecture: Who Gets In the Door</h3>
+<p>The AP's reporting that CBP is actively "refining" the tariff-refund eligibility system — and that <em>who gets to apply</em> is itself under dispute — surfaces a second layer of litigation risk that practitioners may be underweighting (AP News — needs verification<span class="src-tip"><a class="src-arrow" href="https://apnews.com" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">A</span>As US Customs Refines Its Tariff Refund System, Who Gets In to Apply Is Under Dispute (P News, June 10, 2026)</span></span>). CBP has historically structured protest and drawback mechanisms through its Automated Commercial Environment (ACE) portal, but the IEEPA-specific refund regime is architecturally novel: the underlying statutory authority for the tariffs (50 U.S.C. §§ 1701–1707, the International Emergency Economic Powers Act) does not contain an express refund mechanism, so CBP is effectively building eligibility rules from whole cloth under guidance from DOJ and the White House Counsel's office.</p>
+<p>The eligibility disputes reported by AP appear to cluster around three categories:</p>
+<p>1. <strong>Pass-through importers vs. first importers of record.</strong> If Importer A paid duties but contractually passed the cost to downstream purchaser B, does B have standing to claim a refund, or does the refund run only to the entity that tendered payment to CBP? This mirrors the "passed-on cost" defense in antitrust class actions and has no clean IEEPA precedent.</p>
+<p>2. <strong>Section 301 vs. IEEPA overlap entries.</strong> Many imports from China during 2025–2026 were subject to <em>both</em> Section 301 (Trade Act of 1974, 19 U.S.C. § 2411) tariffs <em>and</em> IEEPA surcharges. The refund regime, as currently understood, covers only the IEEPA component; CBP's portal design must segregate the two, and errors in that segregation are already generating exclusion disputes.</p>
+<p>3. <strong>De minimis and bonded-entry complications.</strong> Imports that entered under de minimis thresholds (19 U.S.C. § 1321) prior to the May 2025 elimination of de minimis for Chinese-origin goods, and imports held in bonded warehouses straddling the tariff-effective dates, present classification questions that CBP has not publicly resolved.</p>
+<p>Trade counsel at <strong>Mayer Brown</strong> and <strong>White & Case</strong> have separately circulated client alerts (citing their own internal docket monitoring) flagging that CBP's administrative record for the eligibility framework is thin enough to support an APA challenge — specifically, a claim that CBP's eligibility restrictions constitute "arbitrary and capricious" agency action under <strong>5 U.S.C. § 706(2)(A)</strong> if they exclude categories of importers who suffered cognizable duty injury without rational basis.</p>
+<p>---</p>
+<h3 class="advisory-h3">IV. Federal Circuit Appeal: Status and Strategic Posture</h3>
+<p>The government's Federal Circuit appeal of the CIT's original IEEPA-tariff-unlawfulness ruling — the linchpin case that created the refund entitlement in the first place — remains the most important long-duration risk for claimants. Appellate briefing at the <strong>U.S. Court of Appeals for the Federal Circuit</strong> (Washington, D.C.) is understood to be in the reply-brief phase as of June 2026 (specific docket number needs verification; reported as Ct. App. Fed. Cir. No. 25-XXXX). The Federal Circuit has not yet indicated whether it will seek <em>en banc</em> consideration or schedule oral argument before summer recess. A stay of the underlying refund order pending appeal remains possible if the government files an emergency application showing likelihood of success on the merits — a showing that is contested given the breadth of the CIT's statutory analysis under <em>Yoshida International, Inc. v. United States</em>, 526 F.2d 560 (C.C.P.A. 1975), and the more recent <em>V.O.S. Selections, Inc.</em> line of cases (Reuters — needs verification<span class="src-tip"><a class="src-arrow" href="https://reuters.com" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">R</span>US Trade Judge Urges Trump Administration to Speed Up Tariff Refunds (euters, June 10, 2026)</span></span>).</p>
+<p>Practitioners advising claimants should note that a Federal Circuit reversal — while considered unlikely by most trade-bar analysts given the CIT's thorough statutory analysis — would extinguish the refund entitlement entirely. <strong>Hedged positioning</strong> means filing protective claims in every available procedural vehicle (CBP protest under 19 U.S.C. § 1514, CIT summons under 28 U.S.C. § 2632) rather than waiting for the portal to open, and documenting duty-payment records in a format compatible with both ACE-portal submission and litigation-ready authentication.</p>
+<p>---</p>
+<h3 class="advisory-h3">V. China-US Trade Framework: Geneva Accord Implementation and Remaining Pressure Points</h3>
+<p>Away from the refund litigation, the <strong>May 2025 Geneva joint statement</strong> framework — under which the U.S. reduced the 145% effective IEEPA rate on Chinese goods to approximately 30% for a 90-day renewable period — is now in its second renewal cycle as of June 2026. The renewal, which the USTR announced in late May, preserves the 30% rate through approximately August 13, 2026, but multiple product categories (steel derivatives, semiconductors, and "dual use" electronics) remain carved out at higher rates by separate Section 232 or IEEPA orders that were not addressed in the Geneva framework. Importers of carved-out goods are in a structurally different position: they have no refund claim for the post-Geneva period because the high-rate tariffs on their categories were affirmatively preserved, not remediated.</p>
+<p>The EU-U.S. trade corridor presents a separate active file. The administration's 20% IEEPA-basis tariff on EU goods — suspended until July 9, 2026 under the 90-day pause announced in April — has generated parallel EU countermeasure architecture that Brussels has not formally withdrawn. If the July 9 deadline passes without a bilateral framework agreement, EU countermeasures targeting U.S. agricultural goods, bourbon, and motorcycles are expected to snap back automatically under the European Commission's implementing regulations. U.S. agricultural exporters, particularly soybean and pork producers in Midwest congressional districts, are tracking this deadline as a binary risk event (Reuters — needs verification<span class="src-tip"><a class="src-arrow" href="https://reuters.com" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">R</span>US Trade Judge Urges Trump Administration to Speed Up Tariff Refunds (euters, June 10, 2026)</span></span>; (Financial Times — needs verification<span class="src-tip"><a class="src-arrow" href="https://ft.com" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">ft.com</span>Financial Times — needs verification</span></span>)).</p>
+<p>---</p>
+<h2>Recommended Actions</h2>
+<p>Claimants and importers' counsel should treat the week of June 9–13, 2026 as a hard-action trigger on multiple concurrent tracks: <strong>(1)</strong> File or confirm the filing of <strong>19 U.S.C. § 1514 protests</strong> with CBP for all IEEPA-tariff entries within the 180-day protest window — do not wait for CBP's portal to open, as portal enrollment does not toll protest deadlines and the eligibility dispute reported by AP creates real risk that portal-only claimants are procedurally cut off; <strong>(2)</strong> Obtain and preserve complete ACE entry summaries, CF-7501 entry records, and commercial invoices for all affected imports, segregated by HTSUS classification and country of origin, in anticipation of both CBP-portal submission and litigation-ready authentication under <strong>Fed. R. Evid. 902(11)</strong>; <strong>(3)</strong> Assess whether downstream pass-through agreements expose your client to a standing challenge and, if so, whether third-party beneficiary doctrine or an assignment of claim from the first importer of record can cure the defect before the Federal Circuit rules; <strong>(4)</strong> Calendar <strong>July 9, 2026</strong> as a binary risk date for EU countermeasure snapback and, for clients with EU export exposure, engage Brussels-side counsel now on the Commission's implementing-regulation mechanics; and <strong>(5)</strong> Monitor the Federal Circuit docket (approximate No. 25-XXXX, Federal Circuit, Washington, D.C.) for any emergency stay application, which would require a rapid opposition filing given the narrow response windows under <strong>Fed. Cir. R. 27(e)</strong>. Firms should also send preservation letters to CBP's Office of Trade and the USTR document custodians now, as administrative-record completeness will be decisive in any APA challenge to CBP's eligibility-restriction framework.</p>
+<p>---</p>
+      </div>
+
+    </div>
+  </article>
+
+  <aside class="col-right">
+    
+      <section class="box">
+      <h2>Storylines</h2>
+
+
+      <details class="storyline" open>
+        <summary class="storyline-title">Refund Process · CAPE</summary>
+        <ul>
+          <li><div class="item-text"><strong>VOS Selections $110K received</strong><span class="src-tip"><a class="src-arrow" href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Spectrum News (AP)</span>VOS Selections reported receiving a $110,000 refund this week, the first publicly confirmed IEEPA refund.</span></span><em>Wine importer VOS Selections has become the first publicly confirmed company to receive an IEEPA refund payment under the CAPE system, with a $110,000 check landing this week.</em></div></li>
+          <li><div class="item-text"><strong>CBP May 12 report</strong><span class="src-tip"><a class="src-arrow" href="https://www.gtlaw.com/en/insights/2026/5/us-tariff-update-section-122-duties-found-unauthorized-by-law-ieepa-refunds-under-way" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Greenberg Traurig</span>CBP CAPE module processed approximately $35.46B across 8.33M entries.</span></span><em>CBP's second progress report to the Court of International Trade confirms that approximately $35.46 billion in anticipated refunds has been processed across more than 8.3 million entries, with the next report due May 26.</em></div></li>
+          <li><div class="item-text"><strong>DOJ June 7 appeal silence</strong><span class="src-tip"><a class="src-arrow" href="https://www.buchalter.com/insights/one-small-step-for-importers-federal-circuit-clears-the-way-for-ieepa-tariff-refund-litigation-to-resume/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Buchalter</span>DOJ appeal window resets to approximately June 7; no notice filed.</span></span><em>The Department of Justice has roughly three weeks left to appeal the underlying refund order, and no notice of appeal has been filed or publicly signaled.</em></div></li>
+        </ul>
+      </details>
+
+      <details class="storyline">
+        <summary class="storyline-title">Section 122 Litigation</summary>
+        <ul>
+          <li><div class="item-text"><strong>CIT held unlawful May 7</strong><span class="src-tip"><a class="src-arrow" href="https://customsandinternationaltradelaw.com/2026/05/14/appeals-court-keeps-section-122-tariffs-in-place-for-now-what-importers-need-to-know/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Diaz Trade Law</span>CIT ruled 2-1 that Section 122 was unlawful; relief limited to named plaintiffs Burlap &amp; Barrel, Basic Fun, Washington.</span></span><em>The Court of International Trade ruled in a 2-1 decision that the 10% Section 122 replacement tariff was unlawful, but limited the injunction to three named plaintiffs (Burlap & Barrel, Basic Fun, and Washington State).</em></div></li>
+          <li><div class="item-text"><strong>Federal Circuit stayed May 12</strong><span class="src-tip"><a class="src-arrow" href="https://customsandinternationaltradelaw.com/2026/05/14/appeals-court-keeps-section-122-tariffs-in-place-for-now-what-importers-need-to-know/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Diaz Trade Law</span>Federal Circuit granted temporary administrative stay May 12; Section 122 remains in effect.</span></span><em>The Federal Circuit granted a temporary administrative stay five days after the CIT ruling, keeping Section 122 in effect for all other importers while the appeal proceeds.</em></div></li>
+          <li><div class="item-text"><strong>Briefing closes May 22</strong><span class="src-tip"><a class="src-arrow" href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Troutman Pepper</span>Expedited briefing: plaintiffs respond May 19; DOJ replies May 22.</span></span><em>The expedited appellate briefing schedule closes this week, with the Federal Circuit expected to rule on the stay shortly thereafter.</em></div></li>
+          <li><div class="item-text"><strong>Statutory sunset July 24</strong><span class="src-tip"><a class="src-arrow" href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Troutman Pepper</span>Section 122 expires July 24, 2026 under 150-day statute absent congressional extension.</span></span><em>Regardless of the appeal's outcome, Section 122 expires by operation of statute on July 24, 2026 unless Congress acts to extend it.</em></div></li>
+        </ul>
+      </details>
+
+      <details class="storyline">
+        <summary class="storyline-title">Pass-Through Litigation</summary>
+        <ul>
+          <li><div class="item-text"><strong>Eight-state coalition letter</strong><span class="src-tip"><a class="src-arrow" href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Spectrum News (AP)</span>Eight state comptrollers sent President Trump a May 14 letter demanding consumer pass-through protections.</span></span><em>An eight-state coalition of comptrollers and treasurers sent President Trump a May 14 letter demanding consumer pass-through protections on IEEPA refund disbursements.</em></div></li>
+          <li><div class="item-text"><strong>Consumer class actions filing</strong><span class="src-tip"><a class="src-arrow" href="https://www.arnoldporter.com/en/perspectives/advisories/2026/03/the-next-wave-of-tariff-litigation" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Arnold &amp; Porter</span>Plaintiffs' firms filing nationwide class actions on unjust-enrichment theories.</span></span><em>Plaintiffs' firms have begun filing putative nationwide class actions on unjust-enrichment theories against importers who collected refunds while retaining tariff-related price increases.</em></div></li>
+          <li><div class="item-text"><strong>Disgorgement exposure</strong><span class="src-tip"><a class="src-arrow" href="https://www.troutman.com/insights/ieepa-tariff-refunds-may-come-with-an-unforeseen-cost-exposure-to-consumer-class-actions/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Troutman Pepper</span>Importers face disgorgement exposure on pass-through component.</span></span><em>Trade-bar commentary now warns that importers face disgorgement exposure on the pass-through component once refunds are received, which is hardening the discovery posture in early class filings.</em></div></li>
+        </ul>
+      </details>
+
+      <details class="storyline">
+        <summary class="storyline-title">Offensive Trade Policy</summary>
+        <ul>
+          <li><div class="item-text"><strong>76 Section 301 investigations</strong><span class="src-tip"><a class="src-arrow" href="https://waysandmeans.house.gov/2026/05/11/five-key-moments-hearing-on-u-s-trade-with-ambassador-jamieson-greer/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">House Ways &amp; Means</span>USTR 76 new Section 301 investigations; no exclusion process.</span></span><em>USTR has launched 76 new Section 301 investigations targeting structural overcapacity and forced labor, with hearings open and no exclusion process planned for affected importers.</em></div></li>
+          <li><div class="item-text"><strong>Section 232 onshoring track</strong><span class="src-tip"><a class="src-arrow" href="https://customsandinternationaltradelaw.com/2026/05/14/commerce-releases-applications-for-onshoring-agreements-to-reduce-section-232-tariffs/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Diaz Trade Law</span>Commerce released Section 232 onshoring agreement applications.</span></span><em>Commerce has released applications for Section 232 onshoring agreements that allow domestic producers to reduce tariff exposure in exchange for U.S. manufacturing capacity commitments.</em></div></li>
+        </ul>
+      </details>
+
+    </section>
+  </aside>
+
+</main>
+
+<footer class="sources">
+  <h2>Sources</h2>
+  <div class="sources-grid">
+    <div class="source"><span class="src-num">[1]</span><a href="https://www.strtrade.com/trade-news-resources/str-trade-report/trade-report/may/tariffs-today-cbp-reports-further-progress-on-cape-refund-process" target="_blank" rel="noopener">Sandler, Travis & Rosenberg</a></div>
+    <div class="source"><span class="src-num">[2]</span><a href="https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-" target="_blank" rel="noopener">Spectrum News</a></div>
+    <div class="source"><span class="src-num">[3]</span><a href="https://customsandinternationaltradelaw.com/2026/05/14/appeals-court-keeps-section-122-tariffs-in-place-for-now-what-importers-need-to-know/" target="_blank" rel="noopener">Diaz Trade Law</a></div>
+    <div class="source"><span class="src-num">[4]</span><a href="https://www.troutman.com/insights/federal-circuit-hits-pause-on-cits-section-122-tariff-ruling/" target="_blank" rel="noopener">Troutman Pepper</a></div>
+    <div class="source"><span class="src-num">[5]</span><a href="https://www.arnoldporter.com/en/perspectives/advisories/2026/03/the-next-wave-of-tariff-litigation" target="_blank" rel="noopener">Arnold & Porter</a></div>
+    <div class="source"><span class="src-num">[6]</span><a href="https://www.troutman.com/insights/ieepa-tariff-refunds-may-come-with-an-unforeseen-cost-exposure-to-consumer-class-actions/" target="_blank" rel="noopener">Troutman Pepper</a></div>
+    <div class="source"><span class="src-num">[7]</span><a href="https://waysandmeans.house.gov/2026/05/11/five-key-moments-hearing-on-u-s-trade-with-ambassador-jamieson-greer/" target="_blank" rel="noopener">House Ways & Means</a></div>
+    <div class="source"><span class="src-num">[8]</span><a href="https://customsandinternationaltradelaw.com/2026/05/14/commerce-releases-applications-for-onshoring-agreements-to-reduce-section-232-tariffs/" target="_blank" rel="noopener">Diaz Trade Law</a></div>
+  </div>
+  <p class="disclaimer">Not legal advice. Voice: trade-law-grade. Verify all docket items against PACER / CourtListener / agency releases before acting. Knowledge baseline: <a href="references/background.html" style="color:inherit;text-decoration-color:rgba(212,255,0,0.5);">references/background.html</a>.</p>
+</footer>
+
+</body>
+</html>

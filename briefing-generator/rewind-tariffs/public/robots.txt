@@ -1,0 +1,51 @@
+# Rewind Tariffs — robots.txt
+# https://rewindtariffs.com
+
+User-agent: *
+Allow: /
+Disallow: /cit-cases.json
+Disallow: /admin
+
+# Sitemap
+Sitemap: https://rewindtariffs.com/sitemap.xml
+
+# ─── AI search / retrieval bots (power citations & answers) ───
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ─── AI training-only crawlers (block to protect content IP) ───
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
