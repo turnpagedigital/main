@@ -788,9 +788,10 @@
                 "priority": false
               }
             ],
-            "cardStyle": "standard",
+            "cardStyle": "liquid-glass",
             "cardRadius": "square",
-            "_bookmark": "how-we-help"
+            "_bookmark": "how-we-help",
+            "backgroundImage": "/library/black-paper-data.jpg"
           }
         },
         {
