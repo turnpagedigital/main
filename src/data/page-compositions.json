@@ -1003,7 +1003,8 @@
               "href": "/contact"
             },
             "secondary": null,
-            "cta": "Read case briefings"
+            "cta": "Read our briefings",
+            "href": "/press?topic=bankruptcy&type=briefings"
           }
         },
         {
