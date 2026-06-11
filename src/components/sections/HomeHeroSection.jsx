@@ -94,19 +94,20 @@ export default function HomeHeroSection({ sectionConfig }) {
       </div>
 
       <style>{`
-        /* Desktop default: fill the fold (no stats peek). */
-        .home-hero { min-height: calc(100vh - 88px); }
+        /* Desktop: fill the fold, but never balloon past 920px — on tall or
+           portrait windows an uncapped viewport-based hero turns into a wall
+           of empty video. The cap is what keeps resizing feeling smooth:
+           every window shape converges to a bounded hero. */
+        .home-hero { min-height: min(calc(100vh - 88px), 920px); }
         @supports (height: 1svh) {
-          .home-hero { min-height: calc(100svh - 88px); }
+          .home-hero { min-height: min(calc(100svh - 88px), 920px); }
         }
-        /* Wide-landscape desktops only (typical monitors/laptops): end the
-           hero ~120px short of the fold so the stats band peeks in. Squarer
-           or vertically-short windows skip the peek — it would just compress
-           the hero. */
+        /* Wide-landscape desktops (typical monitors/laptops): end the hero
+           ~120px short of the fold so the stats band peeks in. */
         @media (min-aspect-ratio: 7/5) {
-          .home-hero { min-height: calc(100vh - 208px); }
+          .home-hero { min-height: min(calc(100vh - 208px), 920px); }
           @supports (height: 1svh) {
-            .home-hero { min-height: calc(100svh - 208px); }
+            .home-hero { min-height: min(calc(100svh - 208px), 920px); }
           }
         }
         /* In-between (tablets / narrow windows): these are often portrait,
