@@ -51,7 +51,7 @@
         {
           "id": "team",
           "label": "Team",
-          "href": "/team"
+          "href": "/#team"
         },
         {
           "id": "contact",
@@ -61,25 +61,6 @@
         }
       ],
       "titleKey": "footer.col.firm"
-    },
-    {
-      "id": "legal",
-      "title": "Legal",
-      "links": [
-        {
-          "id": "privacy",
-          "label": "Privacy Policy",
-          "href": "/privacy",
-          "labelKey": "footer.legal.privacy"
-        },
-        {
-          "id": "terms",
-          "label": "Terms of Use",
-          "href": "/terms",
-          "labelKey": "footer.legal.terms"
-        }
-      ],
-      "titleKey": "footer.col.legal"
     },
     {
       "id": "col-1781139565432-hfx5",
@@ -111,6 +92,25 @@
           "href": "/press?type=podcasts"
         }
       ]
+    },
+    {
+      "id": "legal",
+      "title": "Legal",
+      "links": [
+        {
+          "id": "privacy",
+          "label": "Privacy Policy",
+          "href": "/privacy",
+          "labelKey": "footer.legal.privacy"
+        },
+        {
+          "id": "terms",
+          "label": "Terms of Use",
+          "href": "/terms",
+          "labelKey": "footer.legal.terms"
+        }
+      ],
+      "titleKey": "footer.col.legal"
     }
   ],
   "copyright": "Turnpage Digital Markets LLC © 2026 · All rights reserved · Competitive capital solutions for rights holders entitled to compensation",
