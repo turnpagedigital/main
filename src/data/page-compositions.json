@@ -105,21 +105,21 @@
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
             "titleAccent": "when it counts.",
-            "intro": "Automated diligence and deep integration with our capital partners means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
+            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
             "points": [
               {
                 "id": "edge-1",
                 "h": "Practically unlimited liquidity",
-                "b": "With over 500 institutions on speed dial, our network of asset managers ensures broad coverage across claim sizes, geographies and asset types. "
+                "b": "With 500+ institutions on speed dial, our network of capital partners ensures broad coverage across claim sizes, geographies and asset types. If we can't fund your needs directly, we can usually pair you with the right partner."
               },
               {
                 "id": "edge-2",
-                "h": "Secure and confidential analysis",
-                "b": "We only ask for the information we absolutely need to provide an accurate assessment of your rights, and protect your data as if it were our own."
+                "h": "Your confidentiality protected",
+                "b": "We only ask for the information we absolutely need to provide an accurate assessment of your rights, and we protect your data as if it were our own."
               },
               {
                 "id": "edge-3",
-                "h": "Relationship builders, not just dealmakers",
+                "h": "Your best advocate in the ring",
                 "b": "We ask the right questions to understand your needs so we can structure the right deal for you and your business."
               }
             ]
@@ -132,11 +132,12 @@
           "layout": "layout-2-banner",
           "colorScheme": "photo",
           "content": {
-            "title": "Stay current on active cases.",
-            "cta": "Read our briefings",
-            "href": "/press?type=posts",
+            "title": "Follow our most active situations.",
+            "cta": "Read the briefings",
+            "href": "/press?type=briefings",
             "image": "/Building_Wide.jpg",
-            "external": false
+            "external": false,
+            "_bookmark": "Briefings"
           }
         },
         {
