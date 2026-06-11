@@ -17,9 +17,8 @@ export default function HomeHeroSection({ sectionConfig }) {
   const video       = c.video       || null;
 
   return (
-    <section style={{
+    <section className="home-hero" style={{
       position: "relative", overflow: "hidden",
-      minHeight: "calc(100vh - 88px)",
       display: "flex", alignItems: "flex-end",
       padding: "0 clamp(1.5rem,5vw,4rem) clamp(3rem,6vh,5rem)",
       background: "#06070A",
@@ -93,6 +92,23 @@ export default function HomeHeroSection({ sectionConfig }) {
         <span>{t("hero.scroll")}</span>
         <span style={{ width: 1, height: 36, background: "linear-gradient(180deg, rgba(255,255,255,0.6), transparent)" }} />
       </div>
+
+      <style>{`
+        /* Desktop: fill the viewport below the nav (the original look). */
+        .home-hero { min-height: calc(100vh - 88px); }
+        @supports (height: 1svh) {
+          .home-hero { min-height: calc(100svh - 88px); }
+        }
+        /* Mobile: a full viewport of bottom-anchored text over empty video
+           reads as an endless hero — cap it at ~70% of the screen. The
+           section still grows if translated copy needs more room. */
+        @media (max-width: 760px) {
+          .home-hero { min-height: min(70vh, 640px); padding-top: 3.5rem; }
+          @supports (height: 1svh) {
+            .home-hero { min-height: min(70svh, 640px); }
+          }
+        }
+      `}</style>
     </section>
   );
 }
