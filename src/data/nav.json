@@ -118,7 +118,7 @@
       "id": "tariff-refunds",
       "label": "Tariff Refunds",
       "href": "https://www.rewindtariffs.com",
-      "active": false,
+      "active": true,
       "labelKey": "nav.tariff",
       "external": true,
       "dropdown": {
@@ -154,7 +154,7 @@
     },
     {
       "id": "item-1781198075347",
-      "label": "What we Fund",
+      "label": "Coverage",
       "href": "/#what-we-cover",
       "active": true
     },
