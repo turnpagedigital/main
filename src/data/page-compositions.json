@@ -624,10 +624,10 @@
               "href": "/contact"
             },
             "secondary": null,
-            "cta": "Subscribe to briefings",
+            "cta": "Read our briefings",
             "image": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg",
             "_bookmark": "subscribe",
-            "href": "/press"
+            "href": "/press?topic=crypto&type=briefings"
           }
         },
         {
