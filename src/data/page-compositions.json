@@ -94,7 +94,10 @@
           "type": "experience",
           "visible": true,
           "content": {
-            "_bookmark": "experience"
+            "_bookmark": "experience",
+            "title": "A track record across the largest claims trades.",
+            "body": "From rapid settlement to complex advisory roles, we are proud of our ability to deliver exceptional value for our clients and counterparties.",
+            "eyebrow": "Relevant experience"
           }
         },
         {
@@ -109,20 +112,21 @@
             "points": [
               {
                 "id": "edge-1",
-                "h": "Practically unlimited liquidity",
+                "h": "Lightening Fast",
                 "b": "With 500+ institutions on speed dial, our network of capital partners ensures broad coverage across claim sizes, geographies and asset types. If we can't fund your needs directly, we can usually pair you with the right partner."
               },
               {
                 "id": "edge-2",
-                "h": "Your confidentiality protected",
-                "b": "We only ask for the information we absolutely need to provide an accurate assessment of your rights, and we protect your data as if it were our own."
+                "h": "Confidential and Secure",
+                "b": "We only ask for the information we absolutely need to provide an accurate assessment of your rights. We take your privacy seriously and protect your data as if it were our own."
               },
               {
                 "id": "edge-3",
-                "h": "Your best advocate in the ring",
-                "b": "We ask the right questions to understand your needs so we can structure the right deal for you and your business."
+                "h": "Relationships First",
+                "b": "We ask the right questions and take a collaborative approach to negotiations to structure transactions that actually meet your needs. Your situation may not be a cause for celebration, but we work hard to cut deals where everyone wins. "
               }
-            ]
+            ],
+            "_bookmark": "Our edge"
           }
         },
         {
