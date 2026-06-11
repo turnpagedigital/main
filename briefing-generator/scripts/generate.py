@@ -405,6 +405,12 @@ def main():
         # Strip code fences if present
         if advisory_md.startswith("```"):
             advisory_md = advisory_md.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+        # The search loop can leak conversational preamble ("I'll verify...")
+        # ahead of the advisory — keep only from the first markdown H1 on.
+        if not advisory_md.startswith("#"):
+            h1 = advisory_md.find("\n# ")
+            if h1 != -1:
+                advisory_md = advisory_md[h1 + 1:]
 
         # Save advisory.md
         topic_dir = REPO_ROOT / topic['slug']
