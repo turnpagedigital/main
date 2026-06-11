@@ -365,10 +365,10 @@
               "href": "/contact"
             },
             "secondary": null,
-            "cta": "Subscribe to briefings",
-            "href": "/contact?source=copyright-claims",
+            "cta": "Read our briefings",
+            "href": "/press?topic=copyright&type=briefings",
             "image": "/bharath-kumar-ML95FigqyR0-unsplash.jpg",
-            "_bookmark": "subscribe"
+            "_bookmark": "briefings"
           }
         },
         {
