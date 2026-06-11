@@ -154,7 +154,7 @@
     },
     {
       "id": "item-1781198075347",
-      "label": "Focus",
+      "label": "What we Fund",
       "href": "/#what-we-cover",
       "active": true
     },
@@ -178,34 +178,6 @@
       "label": "Experience",
       "href": "/#experience",
       "active": true
-    },
-    {
-      "id": "item-1781195939905",
-      "label": "Advantage",
-      "href": "/#Our edge",
-      "active": true,
-      "dropdown": {
-        "title": "About Turnpage",
-        "body": "Turnpage Digital Markets is your go to OTC desk for complex and illiquid claims and interests.",
-        "links": [
-          {
-            "label": "What We Cover",
-            "href": "/"
-          },
-          {
-            "label": "Relevant Experience",
-            "href": "/"
-          },
-          {
-            "label": "Our Team",
-            "href": "/"
-          }
-        ],
-        "cta": {
-          "label": "Contact Us",
-          "href": "/contact?"
-        }
-      }
     },
     {
       "id": "press",
