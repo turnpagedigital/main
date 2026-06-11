@@ -20,7 +20,15 @@ const CATEGORIES = {
   light: { label: "Light Surfaces", tokens: ["PAPER", "PAPER_2", "SURFACE", "INK", "INK_60", "INK_40", "INK_20", "LINE", "LINE_STRONG"] },
   darkText: { label: "Dark Text", tokens: ["TEXT", "MUTED", "MUTED_2"] },
   status: { label: "Status Colors", tokens: ["ERROR", "ERROR_BG", "ERROR_TEXT", "WARNING", "WARNING_BG", "SUCCESS", "SUCCESS_BG", "SECONDARY_BG"] },
+  corners: { label: "Corners & Radius", tokens: ["RADIUS_CARD", "RADIUS_CARD_SQUARE", "RADIUS_GLASS", "RADIUS_GLASS_SQUARE"] },
   typography: { label: "Typography", tokens: ["FONT"] },
+};
+
+const RADIUS_LABELS = {
+  RADIUS_CARD:         "Card styles — Rounded",
+  RADIUS_CARD_SQUARE:  "Card styles — Square",
+  RADIUS_GLASS:        "Liquid Glass — Rounded",
+  RADIUS_GLASS_SQUARE: "Liquid Glass — Square",
 };
 
 const TOKEN_ROW_STYLE = {
@@ -127,6 +135,8 @@ export default function TokenList() {
                   <div>
                     {isColorValue(liveValue)
                       ? <div style={{ ...SWATCH_STYLE, background: liveValue }} />
+                      : tokenName.startsWith("RADIUS_")
+                      ? <div title={RADIUS_LABELS[tokenName] || tokenName} style={{ ...SWATCH_STYLE, borderRadius: liveValue, border: "2px solid #555", background: "#fff" }} />
                       : <div style={{ ...SWATCH_STYLE, display: "flex", alignItems: "center", justifyContent: "center", color: INK_60 }}>—</div>}
                   </div>
                   <div>

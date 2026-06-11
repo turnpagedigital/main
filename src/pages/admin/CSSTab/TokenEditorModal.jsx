@@ -114,6 +114,24 @@ function PreviewPanes({ t }) {
   );
 }
 
+/* Radius preview — a sample card pane rendered with the pending value */
+function RadiusPreview({ value }) {
+  const box = {
+    height: 86, borderRadius: value, overflow: "hidden",
+    display: "flex", alignItems: "flex-end", padding: "0.6rem",
+  };
+  return (
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.6rem", marginBottom: "0.9rem" }}>
+      <div style={{ ...box, background: "#0A0A0A", border: "1px solid rgba(255,255,255,0.25)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.35)" }}>
+        <span style={{ fontFamily: FONT, fontSize: "0.7rem", color: "rgba(255,255,255,0.7)" }}>Dark card</span>
+      </div>
+      <div style={{ ...box, background: "#fff", border: `1px solid ${LINE}`, boxShadow: "0 4px 12px rgba(10,10,30,0.12)" }}>
+        <span style={{ fontFamily: FONT, fontSize: "0.7rem", color: INK_60 }}>Light card</span>
+      </div>
+    </div>
+  );
+}
+
 /* ── Modal ───────────────────────────────────────────────────────────────── */
 
 export default function TokenEditorModal({ tokenName, currentValue, liveTokens, onSaved, onCancel }) {
@@ -121,10 +139,11 @@ export default function TokenEditorModal({ tokenName, currentValue, liveTokens, 
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState("");
 
+  const isRadiusToken = tokenName.startsWith("RADIUS_");
   const validationError = validateClientSide(currentValue, value);
   const previewTokens = { ...liveTokens, [tokenName]: value };
-  const rgba = isValidCssColor(value) ? parseColor(value) : null;
-  const hex6 = toHex6(value);
+  const rgba = !isRadiusToken && isValidCssColor(value) ? parseColor(value) : null;
+  const hex6 = isRadiusToken ? null : toHex6(value);
 
   const handleSave = async () => {
     if (validationError) return;
@@ -157,7 +176,7 @@ export default function TokenEditorModal({ tokenName, currentValue, liveTokens, 
         </p>
 
         {/* Live preview using all tokens with this one overridden */}
-        <PreviewPanes t={previewTokens} />
+        {isRadiusToken ? <RadiusPreview value={value} /> : <PreviewPanes t={previewTokens} />}
 
         {/* Inputs */}
         <div style={{ display: "flex", gap: "0.6rem", alignItems: "center", marginBottom: "0.5rem" }}>
@@ -174,7 +193,7 @@ export default function TokenEditorModal({ tokenName, currentValue, liveTokens, 
             type="text"
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            placeholder="#D4FF00 or rgba(10,10,10,0.6)"
+            placeholder={isRadiusToken ? "e.g. 16px, 1rem, or clamp(0.2rem, 1.2vw, 0.3125rem)" : "#D4FF00 or rgba(10,10,10,0.6)"}
             style={{ ...inputStyle, marginTop: 0, flex: 1, fontFamily: "monospace" }}
           />
         </div>

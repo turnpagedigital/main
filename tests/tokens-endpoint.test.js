@@ -18,6 +18,7 @@ export const NEON = "#D4FF00";
 export const DARK = "#000";
 export const DARK_CARD = "#0A0A0A";
 export const INK_60 = "rgba(10,10,10,0.6)";
+export const RADIUS_CARD = "clamp(0.2rem, 1.2vw, 0.3125rem)";
 export const FONT = "'Archivo', sans-serif";
 `;
 
@@ -72,4 +73,15 @@ test("updateTokenInContent errors on unknown token", () => {
   const result = updateTokenInContent(SAMPLE, "NOT_REAL", "#fff");
   assert.equal(result.success, false);
   assert.match(result.error, /not found/);
+});
+
+test("radius tokens (clamp values with commas/parens) parse and update", () => {
+  const tokens = parseTokensFromContent(SAMPLE);
+  assert.equal(tokens.RADIUS_CARD, "clamp(0.2rem, 1.2vw, 0.3125rem)");
+
+  const { success, content } = updateTokenInContent(SAMPLE, "RADIUS_CARD", "12px");
+  assert.ok(success);
+  assert.match(content, /export const RADIUS_CARD = "12px";/);
+  // non-color token accepts length values through validation
+  assert.equal(validateTokenValue("clamp(0.2rem, 1.2vw, 0.3125rem)", "1rem").ok, true);
 });

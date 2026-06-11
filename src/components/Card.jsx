@@ -1,5 +1,5 @@
 import React from "react";
-import { FONT, INK, INK_60 } from "../data/tokens.js";
+import { INK, INK_60, RADIUS_CARD, RADIUS_CARD_SQUARE } from "../data/tokens.js";
 
 /**
  * Card — Flexible card component supporting multiple styles and corner radii
@@ -39,7 +39,7 @@ export default function Card({
       ? isDarkMode
       : ["black", "dark"].includes(style) && !style.includes("neon");
 
-  const cornerRadius = radius === "rounded" ? "clamp(0.2rem, 1.2vw, 0.3125rem)" : "0.125rem";
+  const cornerRadius = radius === "rounded" ? RADIUS_CARD : RADIUS_CARD_SQUARE;
 
   const styleConfigs = {
     white: {

@@ -1,5 +1,5 @@
 import React, { useId } from "react";
-import { FONT, INK, INK_60 } from "../data/tokens.js";
+import { FONT, INK, INK_60, RADIUS_GLASS, RADIUS_GLASS_SQUARE } from "../data/tokens.js";
 
 /**
  * LiquidGlassCard — Apple "Liquid Glass" style card.
@@ -84,7 +84,7 @@ export default function LiquidGlassCard({
           position: "relative",
           isolation: "isolate",
           overflow: "hidden",
-          borderRadius: radius === "square" ? "1px" : "2rem",
+          borderRadius: radius === "square" ? RADIUS_GLASS_SQUARE : RADIUS_GLASS,
           border: `1px solid ${colors.border}`,
           padding: "clamp(1.8rem, 3vw, 2.5rem)",
           transition: "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease",
