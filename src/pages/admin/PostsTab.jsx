@@ -5,8 +5,10 @@ import RichEditor from "./RichEditor.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   PostsSection — create / edit / delete briefings, articles, announcements
-   Self-contained: manages its own state and hits /api/admin/posts directly.
+   PostsTab — Posts & Briefings, unified.
+   Create / edit / delete posts AND review/publish the daily-briefing queue
+   (drafts the pipeline lands via repository_dispatch). Absorbed the former
+   Briefings sub-tab June 2026: same /api/admin/posts data, one surface.
 ═══════════════════════════════════════════════════════════════════════════ */
 
 const POST_TYPES = ["briefing", "article", "announcement"];
@@ -63,6 +65,9 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   const [posts, setPosts]          = useState([]);         // metadata array
 
   const [view, setView]            = useState("list");     // "list" | "editor"
+  const [filter, setFilter]        = useState("all");      // "all" | "queue" | "published"
+  const [running, setRunning]      = useState(false);      // briefing generation in flight
+  const [runMsg, setRunMsg]        = useState(null);       // { ok, text } banner
   const [form, setForm]            = useState(blankPostForm());
   const [isNew, setIsNew]          = useState(false);
   const [editorPhase, setEditorPhase] = useState("idle"); // idle|loading-content|saving|error
@@ -87,6 +92,25 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   }, []);
 
   useEffect(() => { loadPosts(); }, [loadPosts]);
+
+  // ── Trigger the daily-briefing pipeline (absorbed from BriefingsTab) ────
+  async function runBriefing() {
+    setRunning(true);
+    setRunMsg(null);
+    try {
+      const r = await fetch("/api/admin/generate-briefing", {
+        method: "POST",
+        credentials: "include",
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
+      setRunMsg({ ok: true, text: body.message || "Briefing generation triggered." });
+    } catch (e) {
+      setRunMsg({ ok: false, text: e.message });
+    } finally {
+      setRunning(false);
+    }
+  }
 
   // ── Open editor for existing post ───────────────────────────────────────
   async function openEdit(meta) {
@@ -220,6 +244,12 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   }
 
   // ── LIST VIEW ───────────────────────────────────────────────────────────
+  const queueCount     = posts.filter(p => p.active === false).length;
+  const publishedCount = posts.length - queueCount;
+  const visiblePosts = filter === "queue"     ? posts.filter(p => p.active === false)
+                     : filter === "published" ? posts.filter(p => p.active !== false)
+                     : posts;
+
   if (view === "list") {
     return (
       <div style={{ maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem) 0" }}>
@@ -229,12 +259,60 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
           display: "flex", alignItems: "center", gap: "0.7rem", flexWrap: "wrap",
           marginBottom: "1rem", paddingBottom: "1rem", borderBottom: `2px solid ${LINE}`,
         }}>
-          <div style={{ fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.01em" }}>Posts</div>
+          <div style={{ fontWeight: 800, fontSize: "0.95rem", letterSpacing: "-0.01em" }}>Posts & Briefings</div>
           <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60 }}>
             {listPhase === "loading" && "Loading…"}
-            {listPhase === "ready"   && `${posts.length} post${posts.length !== 1 ? "s" : ""}`}
+            {listPhase === "ready" && (queueCount > 0
+              ? `${queueCount} queued · ${publishedCount} published`
+              : `${posts.length} post${posts.length !== 1 ? "s" : ""}`)}
           </div>
+          <button
+            onClick={runBriefing}
+            disabled={running}
+            title="Trigger the daily-briefing pipeline — new drafts land in the Queue in ~10–15 min"
+            style={{ ...btnStyle, opacity: running ? 0.6 : 1, cursor: running ? "default" : "pointer" }}
+          >
+            {running ? "Running…" : "Run Briefing"}
+          </button>
+          <button onClick={loadPosts} style={btnStyle}>Refresh</button>
           <button onClick={openNew} style={btnPrimaryStyle}>+ New Post</button>
+        </div>
+
+        {/* Briefing-run result banner */}
+        {runMsg && (
+          <div style={{
+            background: runMsg.ok ? "#dafef4" : "#fce8e8",
+            color:      runMsg.ok ? "#05674a" : "#7a1a1a",
+            padding: "0.7rem 1rem", marginBottom: "1rem", fontSize: "0.85rem",
+            display: "flex", gap: "1rem", alignItems: "center",
+          }}>
+            <span style={{ flex: 1 }}>{runMsg.text}</span>
+            <button onClick={() => setRunMsg(null)} style={{ ...btnStyle, padding: "0.2rem 0.6rem", fontSize: "0.75rem" }}>×</button>
+          </div>
+        )}
+
+        {/* Status filter pills */}
+        <div style={{ display: "flex", gap: "0.4rem", marginBottom: "1rem", alignItems: "center", flexWrap: "wrap" }}>
+          {[["all", `All (${posts.length})`], ["queue", `Queue (${queueCount})`], ["published", `Published (${publishedCount})`]].map(([key, label]) => (
+            <button
+              key={key}
+              onClick={() => setFilter(key)}
+              style={{
+                fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
+                letterSpacing: "0.05em", textTransform: "uppercase",
+                padding: "0.35rem 0.8rem",
+                background: filter === key ? INK : "transparent",
+                color: filter === key ? "#fff" : INK_60,
+                border: `1px solid ${filter === key ? INK : LINE}`,
+                cursor: "pointer",
+              }}
+            >
+              {label}
+            </button>
+          ))}
+          <span style={{ fontSize: "0.75rem", color: INK_60, marginLeft: "0.5rem" }}>
+            Daily briefings land in the Queue as drafts — review or edit, then flip to ● Live to publish.
+          </span>
         </div>
 
         {listError && (
@@ -253,10 +331,15 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "2.5rem" }}>
             {posts.length === 0 && (
               <div style={{ padding: "3rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
-                No posts yet. Click "+ New Post" to create one.
+                No posts yet. Click "+ New Post" to create one — daily briefings from the pipeline appear here automatically.
               </div>
             )}
-            {posts.map(post => {
+            {posts.length > 0 && visiblePosts.length === 0 && (
+              <div style={{ padding: "2rem", background: "#fff", border: `1px dashed ${LINE}`, color: INK_60, textAlign: "center" }}>
+                {filter === "queue" ? "Queue is empty — nothing awaiting review." : "No published posts."}
+              </div>
+            )}
+            {visiblePosts.map(post => {
               const isLive    = post.active !== false;
               const toggling  = togglingSlug === post.slug;
               return (

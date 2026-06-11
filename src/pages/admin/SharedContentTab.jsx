@@ -5,7 +5,6 @@ import { SubTabStrip, useSubTabs } from "./shared.jsx";
 // Lazy-load sub-tabs
 const BioTab           = lazy(() => import("./BioTab.jsx"));
 const PostsTab         = lazy(() => import("./PostsTab.jsx"));
-const BriefingsTab     = lazy(() => import("./BriefingsTab.jsx"));
 const DealsTab         = lazy(() => import("./DealsTab.jsx"));
 const PressTab         = lazy(() => import("./PressTab.jsx"));
 const AlertsTab        = lazy(() => import("./AlertsTab.jsx"));
@@ -27,8 +26,7 @@ const ContactFormTab   = lazy(() => import("./ContactFormTab.jsx"));
 
 const SUB_TABS = [
   { key: "bio",           label: "Bio" },
-  { key: "posts",         label: "Posts" },
-  { key: "briefings",     label: "Briefings" },
+  { key: "posts",         label: "Posts & Briefings" },
   { key: "deals",         label: "Deals" },
   { key: "press",         label: "Press" },
   { key: "alerts",        label: "Alerts" },
@@ -38,14 +36,19 @@ const SUB_TABS = [
 ];
 const SUB_KEYS = SUB_TABS.map(t => t.key);
 
+// The former Briefings sub-tab merged into Posts (June 2026) — old
+// /admin/content/briefings URLs land on the combined tab.
+const SUB_ALIASES = { briefings: "posts" };
+
 export default function SharedContentTab({ onDirtyChange }) {
   const [dirtyFlags, setDirtyFlags] = useState({});
   const isAnyDirty = Object.values(dirtyFlags).some(Boolean);
 
-  const [sub, selectSub] = useSubTabs(
-    "/admin/content", SUB_KEYS, "bio",
+  const [rawSub, selectSub] = useSubTabs(
+    "/admin/content", [...SUB_KEYS, ...Object.keys(SUB_ALIASES)], "bio",
     () => !isAnyDirty || window.confirm("You have unsaved changes. Discard them and switch?"),
   );
+  const sub = SUB_ALIASES[rawSub] || rawSub;
 
   const makeDirty = useCallback((key) => (isDirty) => {
     setDirtyFlags(prev => prev[key] === isDirty ? prev : { ...prev, [key]: isDirty });
@@ -61,7 +64,6 @@ export default function SharedContentTab({ onDirtyChange }) {
       <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
         {sub === "bio"           && <BioTab          onDirtyChange={makeDirty("bio")} />}
         {sub === "posts"         && <PostsTab        onDirtyChange={makeDirty("posts")} />}
-        {sub === "briefings"     && <BriefingsTab    onDirtyChange={makeDirty("briefings")} />}
         {sub === "deals"         && <DealsTab        onDirtyChange={makeDirty("deals")} />}
         {sub === "press"         && <PressTab        onDirtyChange={makeDirty("press")} />}
         {sub === "alerts"        && <AlertsTab       onDirtyChange={makeDirty("alerts")} />}

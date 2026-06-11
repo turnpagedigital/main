@@ -12,7 +12,7 @@ brand-styled chassis lives in the repo (each topic dir has a dashboard.html
 with the full CSS + 3-column layout + nav + everything). This script only swaps
 text content.
 """
-import os, sys, json, subprocess, re
+import os, sys, json, subprocess, re, time
 import datetime as dt
 import urllib.parse, urllib.request
 import html as _html
@@ -20,7 +20,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 try:
-    from anthropic import Anthropic
+    from anthropic import Anthropic, RateLimitError
 except ImportError:
     print("ERROR: anthropic package not installed. Run: pip install -r scripts/requirements.txt", file=sys.stderr)
     sys.exit(1)
@@ -211,14 +211,11 @@ def build_case_truth_block(topic_slug):
     return ("# Tracked-case ground truth (AUTHORITATIVE — overrides anything "
             "you believe from memory; never contradict this)\n\n" + "\n\n".join(blocks) + "\n\n")
 
-def build_prompt(topic, brand_styling, skill_md, sources_md, news_block="", case_truth_block=""):
-    return f"""You are producing today's daily-briefing advisory for {topic['display']} for Andrew at Turnpage Digital Markets.
-
-TODAY: {DATE_PRETTY}
-
-You must follow the SKILL.md spec verbatim. The output is **MARKDOWN ONLY** — no commentary outside the markdown, no JSON wrapper.
-
-# SKILL.md (authoritative workflow)
+def build_prompt_docs(brand_styling, skill_md, sources_md):
+    """Static reference docs — identical for every topic, sent as a cached
+    prompt block so search-loop iterations and later topics read it from
+    cache instead of burning input-tokens-per-minute budget."""
+    return f"""# SKILL.md (authoritative workflow)
 
 {skill_md[:8000]}
 
@@ -229,6 +226,14 @@ You must follow the SKILL.md spec verbatim. The output is **MARKDOWN ONLY** — 
 # sources.md (whitelist/blacklist)
 
 {sources_md[:4000]}
+"""
+
+def build_prompt(topic, news_block="", case_truth_block=""):
+    return f"""You are producing today's daily-briefing advisory for {topic['display']} for Andrew at Turnpage Digital Markets.
+
+TODAY: {DATE_PRETTY}
+
+You must follow the SKILL.md spec verbatim (provided above). The output is **MARKDOWN ONLY** — no commentary outside the markdown, no JSON wrapper.
 
 {case_truth_block}{news_block}# Your task
 
@@ -344,7 +349,23 @@ def main():
     whitelist, blacklist = parse_source_lists(sources_md)
     print(f"Source lists: {len(whitelist)} whitelisted, {len(blacklist)} blacklisted domains")
 
+    docs_block = build_prompt_docs(brand_styling, skill_md, sources_md)
+
+    def create_with_retry(**kwargs):
+        for attempt in range(5):
+            try:
+                return client.messages.create(**kwargs)
+            except RateLimitError:
+                wait = 70
+                print(f"  rate-limited (attempt {attempt + 1}/5) — sleeping {wait}s", flush=True)
+                time.sleep(wait)
+        raise RuntimeError("rate limit retries exhausted")
+
+    first_topic = True
     for topic in TOPICS:
+        if not first_topic:
+            time.sleep(25)  # pace topics under the org input-tokens/min limit
+        first_topic = False
         print(f"=== Generating {topic['slug']} ===", flush=True)
         try:
             news_items = fetch_news(topic['slug'], whitelist, blacklist)
@@ -362,13 +383,19 @@ def main():
         case_truth_block = build_case_truth_block(topic['slug'])
         if case_truth_block:
             print(f"  ground truth: tracked-case block included")
-        prompt = build_prompt(topic, brand_styling, skill_md, sources_md, news_block, case_truth_block)
+        prompt = build_prompt(topic, news_block, case_truth_block)
 
-        response = client.messages.create(
+        response = create_with_retry(
             model="claude-sonnet-4-6",
             max_tokens=16000,
-            tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 8}],
-            messages=[{"role": "user", "content": prompt}],
+            tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 5}],
+            messages=[{
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": docs_block, "cache_control": {"type": "ephemeral"}},
+                    {"type": "text", "text": prompt},
+                ],
+            }],
         )
         # With server-side tools the content list interleaves search blocks
         # with text blocks — join every text block.
