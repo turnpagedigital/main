@@ -19,6 +19,7 @@ import { FONT, INK, INK_60 } from "../data/tokens.js";
  *   subtitle?: string      — Optional secondary text
  *   icon?: React.ReactNode — Optional icon/image to display
  *   variant?: "light" | "dark" — Theme variant (default: "light")
+ *   radius?: "rounded" | "square" — Corner style (default: "rounded"; square = 1px)
  *   className?: string     — Additional CSS classes
  */
 export default function LiquidGlassCard({
@@ -27,6 +28,7 @@ export default function LiquidGlassCard({
   subtitle,
   icon,
   variant = "light",
+  radius = "rounded",
   className = "",
 }) {
   const isDark = variant === "dark";
@@ -82,7 +84,7 @@ export default function LiquidGlassCard({
           position: "relative",
           isolation: "isolate",
           overflow: "hidden",
-          borderRadius: "2rem",
+          borderRadius: radius === "square" ? "1px" : "2rem",
           border: `1px solid ${colors.border}`,
           padding: "clamp(1.8rem, 3vw, 2.5rem)",
           transition: "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease",

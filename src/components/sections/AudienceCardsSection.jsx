@@ -83,6 +83,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
                 title={card.title}
                 description={card.body}
                 subtitle={card.badge && card.badge.trim() ? card.badge : undefined}
+                radius={card.cardRadius || cardRadius}
                 variant={colorScheme === "dark" ? "dark" : "light"}
               />
             ))}

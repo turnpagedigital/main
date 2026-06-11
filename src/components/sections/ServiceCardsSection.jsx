@@ -90,6 +90,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
                 key={card.id}
                 title={card.title}
                 description={card.body}
+                radius={card.cardRadius || cardRadius}
                 variant={isDark ? "dark" : "light"}
               />
             ))}

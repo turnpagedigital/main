@@ -102,6 +102,7 @@ export default function HowItWorksSection({ sectionConfig }) {
                     {step.n}
                   </span>
                 )}
+                radius={step.cardRadius || cardRadius}
                 variant={isDark ? "dark" : "light"}
               />
             ))}
