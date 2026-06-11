@@ -761,8 +761,8 @@
           "colorScheme": "dark",
           "content": {
             "eyebrow": "How We Help",
-            "title": "We fund tough cases for",
-            "accent": "big outcomes.",
+            "title": "Bold cases.",
+            "accent": "Big outcomes.",
             "colorScheme": "dark",
             "layout": "grid-2col",
             "cards": [
@@ -850,6 +850,15 @@
                 "body": "Once terms are agreed, capital is available to cover case costs — experts, discovery, depositions, and trial preparation."
               }
             ]
+          }
+        },
+        {
+          "id": "sec-1781060053803-fmsi",
+          "type": "experience",
+          "visible": true,
+          "content": {
+            "body": "A selection of representative matters showcasing our ability to structure creative funding solutions that power winning outcomes. ",
+            "title": "We've been there. "
           }
         },
         {
@@ -957,11 +966,6 @@
         {
           "id": "sec-1781058276215-1223",
           "type": "damages",
-          "visible": true
-        },
-        {
-          "id": "sec-1781060053803-fmsi",
-          "type": "experience",
           "visible": true
         }
       ],
