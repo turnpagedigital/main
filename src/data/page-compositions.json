@@ -260,13 +260,13 @@
           "id": "sec-1780975716723-79i5",
           "type": "how-it-works",
           "visible": true,
-          "colorScheme": "dark",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "How we Help",
             "title": "Get paid in three simple steps.",
             "accent": "",
             "kicker": "We help you stay on top of compensation opportunities, gather evidence, meet key deadlines and get paid faster. ",
-            "colorScheme": "dark",
+            "colorScheme": "white",
             "steps": [
               {
                 "id": "step-1",
@@ -287,10 +287,10 @@
                 "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you."
               }
             ],
-            "cardStyle": "liquid-glass",
+            "cardStyle": "black",
             "cardRadius": "square",
             "_bookmark": "how-we-help",
-            "backgroundImage": "/library/black-paper-data.jpg"
+            "backgroundImage": ""
           }
         },
         {
