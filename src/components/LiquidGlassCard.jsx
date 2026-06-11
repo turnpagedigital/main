@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useId } from "react";
 import { FONT, INK, INK_60 } from "../data/tokens.js";
 
 /**
- * LiquidGlassCard — Minimal, refined glassmorphism (Apple neumorphism style)
+ * LiquidGlassCard — Apple "Liquid Glass" style card.
  *
- * A clean, understated card component featuring:
- * - Subtle, transparent glass (very clear, minimal opacity)
- * - Thin, neutral borders (gray/white, no color accents)
- * - Smooth rounded corners with soft shadow depth
- * - Minimal, refined aesthetic
- * - Light and dark mode support
- * - Works beautifully over any background
+ * Not uniform frosted blur: behaves like a lens —
+ * - edge ring REFRACTS the backdrop (SVG displacement via backdrop-filter,
+ *   Chromium; Safari falls back to a clean frosted ring)
+ * - clearer, color-boosted center (light blur + saturate)
+ * - specular rim highlights top/bottom + a soft diagonal glare
+ * - slow internal "liquid" drift so the card stays alive on flat
+ *   backgrounds where backdrop blur has nothing to grab
+ * - hover: lift + glare sweep (disabled under prefers-reduced-motion)
  *
  * Props:
  *   title: string          — Main heading
@@ -29,132 +30,222 @@ export default function LiquidGlassCard({
   className = "",
 }) {
   const isDark = variant === "dark";
+  // useId emits ":r1:" — strip the colons so url(#id) stays valid
+  const filterId = "lg-refract-" + useId().replace(/[^a-zA-Z0-9_-]/g, "");
 
   const colors = isDark
     ? {
-        bg: "rgba(255, 255, 255, 0.08)",
-        border: "rgba(255, 255, 255, 0.15)",
+        tint: "rgba(255, 255, 255, 0.055)",
+        border: "rgba(255, 255, 255, 0.22)",
         title: "#fff",
-        text: "rgba(255, 255, 255, 0.75)",
+        text: "rgba(255, 255, 255, 0.78)",
         subtitle: "rgba(255, 255, 255, 0.55)",
-        shadow: "rgba(0, 0, 0, 0.2)",
+        shadow: "rgba(0, 0, 0, 0.35)",
+        rimTop: "rgba(255, 255, 255, 0.38)",
+        rimBottom: "rgba(255, 255, 255, 0.10)",
       }
     : {
-        bg: "rgba(255, 255, 255, 0.45)",
-        border: "rgba(180, 180, 200, 0.4)",
+        tint: "rgba(255, 255, 255, 0.28)",
+        border: "rgba(255, 255, 255, 0.65)",
         title: INK,
         text: INK_60,
         subtitle: "rgba(10, 10, 10, 0.45)",
-        shadow: "rgba(0, 0, 0, 0.08)",
+        shadow: "rgba(10, 10, 30, 0.16)",
+        rimTop: "rgba(255, 255, 255, 0.85)",
+        rimBottom: "rgba(255, 255, 255, 0.35)",
       };
 
+  const variantClass = isDark ? "lg-card--dark" : "lg-card--light";
+  const layer = {
+    position: "absolute",
+    inset: 0,
+    borderRadius: "inherit",
+    pointerEvents: "none",
+  };
+
   return (
-    <div className={`liquid-glass-card ${className}`}>
-      {/* Card container */}
+    <div className={`liquid-glass-card ${variantClass} ${className}`} style={{ position: "relative" }}>
+      {/* Displacement filter for the refractive edge ring (Chromium).
+          Browsers that can't use SVG filters in backdrop-filter ignore the
+          inline declaration and keep the frosted fallback from CSS. */}
+      <svg aria-hidden="true" width="0" height="0" style={{ position: "absolute" }}>
+        <filter id={filterId} x="-30%" y="-30%" width="160%" height="160%" colorInterpolationFilters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.022" numOctaves="2" seed="92" />
+          <feGaussianBlur stdDeviation="1.6" />
+          <feDisplacementMap in="SourceGraphic" scale="72" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
+
       <div
+        className="glass-card-base"
         style={{
           position: "relative",
-          background: colors.bg,
-          border: `1px solid ${colors.border}`,
-          borderRadius: "2rem",
-          padding: "clamp(1.8rem, 3vw, 2.5rem)",
-          backdropFilter: "blur(25px)",
-          WebkitBackdropFilter: "blur(25px)",
+          isolation: "isolate",
           overflow: "hidden",
-          transition: "all 0.3s ease-out",
-          willChange: "transform, box-shadow",
-          boxShadow: `
-            0 2px 8px ${colors.shadow},
-            0 8px 24px ${colors.shadow},
-            inset 0 1px 0 rgba(255, 255, 255, ${isDark ? 0.08 : 0.3})
-          `,
+          borderRadius: "2rem",
+          border: `1px solid ${colors.border}`,
+          padding: "clamp(1.8rem, 3vw, 2.5rem)",
+          transition: "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease",
+          boxShadow: `0 2px 8px ${colors.shadow}, 0 14px 34px ${colors.shadow}`,
         }}
-        className="glass-card-base"
       >
-        {/* Content container */}
+        {/* 1 — internal liquid drift (life on flat backgrounds) */}
+        <div className="lg-drift" style={{ ...layer, zIndex: 0 }} />
+
+        {/* 2 — lens center: light blur, boosted color */}
+        <div className="lg-frost" style={{ ...layer, zIndex: 1, background: colors.tint }} />
+
+        {/* 3 — refractive edge ring (masked to the rim) */}
         <div
+          className="lg-bend"
           style={{
-            position: "relative",
-            zIndex: 10,
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.8rem",
+            ...layer,
+            zIndex: 2,
+            // Chromium upgrades to displacement; invalid elsewhere, so those
+            // browsers keep the .lg-bend frosted ring from the stylesheet
+            backdropFilter: `blur(5px) saturate(1.8) url(#${filterId})`,
           }}
-        >
-          {/* Icon if provided */}
+        />
+
+        {/* 4 — specular rims + diagonal glare */}
+        <div
+          className="lg-shine"
+          style={{
+            ...layer,
+            zIndex: 3,
+            boxShadow: `inset 0 1px 0 ${colors.rimTop}, inset 0 -1px 0 ${colors.rimBottom}`,
+          }}
+        />
+
+        {/* 5 — content */}
+        <div style={{ position: "relative", zIndex: 4, display: "flex", flexDirection: "column", gap: "0.8rem" }}>
           {icon && (
-            <div
-              style={{
-                fontSize: "2.5rem",
-                opacity: 0.85,
-                marginBottom: "0.2rem",
-              }}
-            >
+            <div style={{ fontSize: "2.5rem", opacity: 0.85, marginBottom: "0.2rem" }}>
               {icon}
             </div>
           )}
 
-          {/* Title */}
-          <h3
-            style={{
-              fontFamily: FONT,
-              fontSize: "clamp(1.3rem, 2.2vw, 1.6rem)",
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-              color: colors.title,
-              margin: 0,
-              lineHeight: 1.15,
-            }}
-          >
+          <h3 style={{
+            fontFamily: FONT,
+            fontSize: "clamp(1.3rem, 2.2vw, 1.6rem)",
+            fontWeight: 800,
+            letterSpacing: "-0.02em",
+            color: colors.title,
+            margin: 0,
+            lineHeight: 1.15,
+          }}>
             {title}
           </h3>
 
-          {/* Subtitle if provided */}
           {subtitle && (
-            <p
-              style={{
-                fontFamily: FONT,
-                fontSize: "0.85rem",
-                color: colors.subtitle,
-                margin: 0,
-                fontWeight: 500,
-                opacity: 0.8,
-              }}
-            >
+            <p style={{
+              fontFamily: FONT,
+              fontSize: "0.85rem",
+              color: colors.subtitle,
+              margin: 0,
+              fontWeight: 500,
+              opacity: 0.8,
+            }}>
               {subtitle}
             </p>
           )}
 
-          {/* Description */}
-          <p
-            style={{
-              fontFamily: FONT,
-              fontSize: "0.95rem",
-              color: colors.text,
-              lineHeight: 1.65,
-              margin: 0,
-              marginTop: subtitle ? "-0.1rem" : "0.1rem",
-            }}
-          >
+          <p style={{
+            fontFamily: FONT,
+            fontSize: "0.95rem",
+            color: colors.text,
+            lineHeight: 1.65,
+            margin: 0,
+            marginTop: subtitle ? "-0.1rem" : "0.1rem",
+          }}>
             {description}
           </p>
         </div>
       </div>
 
-      {/* Styles */}
       <style>{`
-        .liquid-glass-card:hover .glass-card-base {
-          transform: translateY(-4px);
-          box-shadow:
-            0 4px 12px ${colors.shadow},
-            0 12px 32px ${colors.shadow},
-            inset 0 1px 0 rgba(255, 255, 255, ${isDark ? 0.12 : 0.4});
+        /* Lens center — light blur so the middle stays readable/clear */
+        .liquid-glass-card .lg-frost {
+          backdrop-filter: blur(3px) saturate(1.7) brightness(1.04);
+          -webkit-backdrop-filter: blur(6px) saturate(1.7) brightness(1.04);
+        }
+
+        /* Edge ring — frosted fallback; the inline url() declaration upgrades
+           this to true refraction in Chromium. Masked to the rim so the
+           center stays lens-clear. */
+        .liquid-glass-card .lg-bend {
+          backdrop-filter: blur(6px) saturate(1.8);
+          -webkit-backdrop-filter: blur(10px) saturate(1.8);
+          mask-image: radial-gradient(140% 140% at 50% 50%, transparent 52%, black 78%);
+          -webkit-mask-image: radial-gradient(140% 140% at 50% 50%, transparent 52%, black 78%);
+        }
+
+        /* Diagonal glare strip, swept on hover */
+        .liquid-glass-card .lg-shine::before {
+          content: "";
+          position: absolute;
+          inset: -40% -60%;
+          background: linear-gradient(115deg,
+            transparent 38%,
+            rgba(255, 255, 255, 0.16) 47%,
+            rgba(255, 255, 255, 0.30) 50%,
+            rgba(255, 255, 255, 0.16) 53%,
+            transparent 62%);
+          transform: translateX(-36%);
+          transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .liquid-glass-card:hover .lg-shine::before { transform: translateX(30%); }
+
+        /* Corner glints */
+        .liquid-glass-card .lg-shine::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background:
+            radial-gradient(38% 26% at 12% 0%, rgba(255, 255, 255, 0.28), transparent 70%),
+            radial-gradient(30% 22% at 92% 104%, rgba(255, 255, 255, 0.14), transparent 70%);
+        }
+
+        /* Internal liquid drift — oversized blurred blobs, clipped by the card */
+        .liquid-glass-card .lg-drift {
+          inset: -35%;
+          filter: blur(28px);
+          animation: lgDrift 16s ease-in-out infinite alternate;
+        }
+        .lg-card--dark .lg-drift {
+          background:
+            radial-gradient(42% 36% at 22% 18%, rgba(212, 255, 0, 0.10), transparent 70%),
+            radial-gradient(38% 42% at 82% 86%, rgba(130, 190, 255, 0.09), transparent 70%);
+        }
+        .lg-card--light .lg-drift {
+          background:
+            radial-gradient(42% 36% at 22% 18%, rgba(255, 255, 255, 0.55), transparent 70%),
+            radial-gradient(38% 42% at 82% 86%, rgba(212, 255, 0, 0.10), transparent 70%);
+        }
+
+        @keyframes lgDrift {
+          0%   { transform: translate(0%, 0%) rotate(0deg); }
+          50%  { transform: translate(7%, -5%) rotate(4deg); }
+          100% { transform: translate(-6%, 6%) rotate(-4deg); }
+        }
+
+        /* Hover lift */
+        .liquid-glass-card:hover .glass-card-base { transform: translateY(-5px) scale(1.012); }
+        .lg-card--dark:hover .glass-card-base {
+          box-shadow: 0 4px 14px rgba(0,0,0,0.4), 0 22px 48px rgba(0,0,0,0.45);
+        }
+        .lg-card--light:hover .glass-card-base {
+          box-shadow: 0 4px 14px rgba(10,10,30,0.18), 0 22px 48px rgba(10,10,30,0.22);
         }
 
         @media (max-width: 768px) {
-          .liquid-glass-card:hover .glass-card-base {
-            transform: translateY(-2px);
-          }
+          .liquid-glass-card:hover .glass-card-base { transform: translateY(-2px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .liquid-glass-card .lg-drift { animation: none; }
+          .liquid-glass-card .lg-shine::before { transition: none; }
+          .liquid-glass-card:hover .glass-card-base { transform: none; }
         }
       `}</style>
     </div>
