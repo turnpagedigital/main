@@ -94,11 +94,20 @@ export default function HomeHeroSection({ sectionConfig }) {
       </div>
 
       <style>{`
-        /* Desktop: just short of the viewport so the top of the stats band
-           is visible before any scrolling (~120px peek below the 88px nav). */
-        .home-hero { min-height: calc(100vh - 208px); }
+        /* Desktop default: fill the fold (no stats peek). */
+        .home-hero { min-height: calc(100vh - 88px); }
         @supports (height: 1svh) {
-          .home-hero { min-height: calc(100svh - 208px); }
+          .home-hero { min-height: calc(100svh - 88px); }
+        }
+        /* Wide-landscape desktops only (typical monitors/laptops): end the
+           hero ~120px short of the fold so the stats band peeks in. Squarer
+           or vertically-short windows skip the peek — it would just compress
+           the hero. */
+        @media (min-aspect-ratio: 7/5) {
+          .home-hero { min-height: calc(100vh - 208px); }
+          @supports (height: 1svh) {
+            .home-hero { min-height: calc(100svh - 208px); }
+          }
         }
         /* In-between (tablets / narrow windows): these are often portrait,
            where viewport-based heights leave a wall of empty video above the
