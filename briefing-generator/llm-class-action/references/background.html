@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM / Copyright — Background Knowledge Baseline</title>
+<script>
+(function(){
+  var K='daily-briefing-theme';
+  var ST=['system','dark','light'];
+  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
+  var LB={dark:'Dark',light:'Light',system:'System'};
+  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function apply(){
+    var t=localStorage.getItem(K)||'system';
+    document.documentElement.setAttribute('data-theme',eff(t));
+    document.documentElement.setAttribute('data-theme-pref',t);
+    var b=document.getElementById('theme-toggle');
+    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
+  }
+  window.cycleTheme=function(){
+    var c=localStorage.getItem(K)||'system';
+    var n=ST[(ST.indexOf(c)+1)%ST.length];
+    localStorage.setItem(K,n);apply();
+  };
+  apply();
+  if(document.readyState!=='loading') apply();
+  else document.addEventListener('DOMContentLoaded',apply);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
+})();
+</script>
+<style>
+  :root { --bg:#000000; --surface:#0A0A0A; --surface-2:#16161B; --border:rgba(255,255,255,0.12); --text:#FFFFFF; --text-dim:rgba(255,255,255,0.6); --text-muted:rgba(255,255,255,0.4); --accent:#D4FF00; --good:#D4FF00; --normal:#d29922; --high:#f85149; }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  .page-wrap{max-width:820px;margin:0 auto;padding:32px 40px 60px;}
+  .page-header{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:28px;}
+  .page-header h1{margin:0 0 6px;font-size:24px;font-weight:600;letter-spacing:-0.02em;color:var(--text);}
+  .page-header .sub{color:var(--text-dim);font-size:13px;}
+  .meta-banner{background:rgba(31,111,235,0.08);border-left:3px solid var(--accent);color:var(--text-dim);padding:12px 16px;margin-bottom:28px;border-radius:4px;font-size:13px;}
+  .content h1{font-size:22px;font-weight:600;margin:32px 0 12px;color:var(--text);letter-spacing:-0.02em;border-bottom:1px solid var(--border);padding-bottom:8px;}
+  .content h1:first-child{margin-top:0;}
+  .content h2{font-size:16px;font-weight:600;margin:24px 0 10px;color:var(--text);text-transform:uppercase;letter-spacing:0.04em;}
+  .content h3{font-size:14px;font-weight:600;margin:18px 0 8px;color:var(--text);}
+  .content p{font-size:14px;color:var(--text-dim);margin:0 0 14px;line-height:1.7;}
+  .content p strong{color:var(--text);}
+  .content a{color:var(--accent);text-decoration:none;}
+  .content a:hover{text-decoration:underline;}
+  .content ul, .content ol{margin:0 0 18px 20px;padding:0;}
+  .content li{font-size:14px;color:var(--text-dim);margin-bottom:6px;line-height:1.65;}
+  .content li strong{color:var(--text);}
+  .content code{background:var(--surface);padding:1px 6px;border-radius:3px;font-size:12.5px;color:#ffa657;}
+  .content hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
+  .content em{color:#bc8cff;font-style:italic;}
+  .content blockquote{border-left:3px solid var(--border);padding-left:14px;margin:0 0 14px;color:var(--text-muted);font-style:italic;}
+  .content table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:13px;}
+  .content th, .content td{padding:8px 12px;border:1px solid var(--border);text-align:left;}
+  .content th{background:var(--surface);color:var(--text-muted);text-transform:uppercase;font-size:11px;letter-spacing:0.04em;}
+  .tn{background:var(--bg);border-bottom:1px solid var(--border);padding:10px 20px;font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif;position:sticky;top:0;z-index:100;}
+  .tn-row{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+  .tn-row+.tn-row{margin-top:6px;}
+  .tn-row.brand{justify-content:space-between;margin-bottom:8px;}
+  .tn-brand{color:var(--text);font-size:13px;font-weight:600;text-decoration:none;letter-spacing:-0.01em;}
+  .tn-brand:hover{color:var(--accent);}
+  .tn-date{color:var(--text-dim);font-size:11px;margin-right:auto;margin-left:12px;}
+  .tn-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:99px;font-size:11.5px;color:var(--text-dim);text-decoration:none;background:transparent;border:1px solid transparent;transition:background 0.15s,color 0.15s;}
+  .tn-pill:hover{color:var(--text);background:var(--surface-2);}
+  .tn-pill.active{color:var(--accent);background:rgba(212,255,0,0.15);border-color:rgba(212,255,0,0.4);}
+  .tn-pill.disabled{color:var(--text-muted);cursor:default;}
+  .tn-pill.disabled:hover{background:transparent;color:var(--text-muted);}
+  .tn-pill.view{font-size:11px;padding:2px 9px;}
+
+  [data-theme="light"] { --bg:#E5E7EB; --surface:#ffffff; --surface-2:#D5D9DF; --border:rgba(10,10,10,0.08); --text:#0A0A0A; --text-dim:rgba(10,10,10,0.6); --text-muted:rgba(10,10,10,0.4); }
+  [data-theme="light"] .tn { background:#ffffff; border-bottom-color:rgba(10,10,10,0.08); }
+  [data-theme="light"] .tn-brand { color:#0A0A0A; }
+  [data-theme="light"] .tn-brand:hover { color:#0A0A0A; }
+  [data-theme="light"] .tn-date { color:rgba(10,10,10,0.4); }
+  [data-theme="light"] .tn-pill { color:rgba(10,10,10,0.6); }
+  [data-theme="light"] .tn-pill:hover { background:#D5D9DF; color:#0A0A0A; }
+  [data-theme="light"] .tn-pill.active { color:#0A0A0A; background:rgba(212,255,0,0.18); border-color:rgba(212,255,0,0.5); }
+  [data-theme="light"] .tn-pill.disabled { color:rgba(10,10,10,0.3); }
+  [data-theme="light"] #theme-toggle { border-color:rgba(10,10,10,0.08); }
+  #theme-toggle { background:transparent; border:1px solid rgba(255,255,255,0.12); border-radius:99px; padding:2px 8px; cursor:pointer; font-size:13px; font-family:inherit; line-height:1; color:inherit; }
+  #theme-toggle:hover { background:rgba(127,127,127,0.1); }
+  /* Turnpage brand patch v3 ===================================== */
+  body { font-family: 'Archivo', -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
+  h1 { letter-spacing: -0.02em; font-weight: 800; }
+
+  /* ----- Section eyebrow headings (h2): neon bar prefix, no underline */
+  section h2 {
+    border-bottom: none !important;
+    padding: 4px 0 4px 1.8em !important;
+    position: relative;
+    letter-spacing: 0.22em !important;
+    font-weight: 700 !important;
+    font-size: 0.78rem !important;
+    text-transform: uppercase !important;
+    margin: 0 0 14px !important;
+  }
+  section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 1.4em;
+    height: 0.18em;
+    background: #D4FF00;
+    border-radius: 2px;
+  }
+  section h2 .pill { margin-left: 8px; }
+
+  /* ----- NAV: dark by default; light theme overrides explicitly */
+  .tn { background: #000000; border-bottom-color: rgba(255,255,255,0.12); }
+  .tn-brand { color: #FFFFFF; text-decoration: none !important; }
+  .tn-brand:hover { color: #D4FF00; }
+  .tn-date { color: rgba(255,255,255,0.6); }
+  .tn-pill { color: rgba(255,255,255,0.7); text-decoration: none !important; background: transparent; border: 1px solid transparent; }
+  .tn-pill:hover { color: #FFFFFF; background: rgba(255,255,255,0.06); }
+  .tn-pill.active { color: #D4FF00; background: rgba(212,255,0,0.12); border-color: rgba(212,255,0,0.45); }
+  #theme-toggle { border-color: rgba(255,255,255,0.25); color: inherit; }
+
+  [data-theme="light"] .tn { background: #FFFFFF !important; border-bottom-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .tn-brand { color: #0A0A0A !important; }
+  [data-theme="light"] .tn-brand:hover { color: #0A0A0A !important; text-decoration: underline !important; text-decoration-color: #D4FF00 !important; text-decoration-thickness: 2px !important; }
+  [data-theme="light"] .tn-date { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] .tn-pill { color: rgba(10,10,10,0.65) !important; }
+  [data-theme="light"] .tn-pill:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; }
+  [data-theme="light"] .tn-pill.active { color: #0A0A0A !important; background: #D4FF00 !important; border-color: #D4FF00 !important; font-weight: 700 !important; }
+  [data-theme="light"] #theme-toggle { border-color: rgba(10,10,10,0.14) !important; color: #0A0A0A !important; }
+
+  /* ----- LIGHT THEME: white-led look, paper only for the Refine subtab */
+  [data-theme="light"] body { background: #FFFFFF !important; color: #0A0A0A !important; }
+  [data-theme="light"] header { background: #FFFFFF !important; border-bottom: 1px solid rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] main { background: #FFFFFF; }
+  [data-theme="light"] footer { background: #FFFFFF !important; border-top: 1px solid rgba(10,10,10,0.08) !important; color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  [data-theme="light"] .card { background: #FFFFFF !important; border-color: rgba(10,10,10,0.08) !important; }
+  [data-theme="light"] .card.canonical { box-shadow: 0 1px 3px rgba(10,10,10,0.06) !important; border-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] th { color: rgba(10,10,10,0.45) !important; border-bottom-color: rgba(10,10,10,0.14) !important; }
+  [data-theme="light"] td { border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] td .matter-name { color: #0A0A0A !important; }
+  [data-theme="light"] td .court { color: rgba(10,10,10,0.55) !important; }
+  [data-theme="light"] td .status { color: rgba(10,10,10,0.78) !important; }
+  [data-theme="light"] section h2 { color: #0A0A0A !important; }
+  [data-theme="light"] ul.qlist li { color: rgba(10,10,10,0.78) !important; border-bottom-color: rgba(10,10,10,0.06) !important; }
+  [data-theme="light"] ul.qlist li strong { color: #0A0A0A !important; }
+  [data-theme="light"] header .date, [data-theme="light"] header .meta, [data-theme="light"] .subtitle, [data-theme="light"] .header-left .date { color: rgba(10,10,10,0.55) !important; }
+
+  /* ----- Refine subtab full-width card */
+  body.refine-page { background: #0A0A0A; }
+  [data-theme="light"] body.refine-page { background: #F4F5F7 !important; }
+  .refine-box { border-top: none !important; }
+
+  /* ----- Body links (in main content only): subtle accents */
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  [data-theme="light"] main p a, [data-theme="light"] main .qlist a, [data-theme="light"] main .advisory-list a, [data-theme="light"] .advisory-body a, [data-theme="light"] .briefing-block a {
+    color: #0A0A0A;
+    text-decoration-color: rgba(212,255,0,0.85);
+  }
+  [data-theme="light"] main p a:hover, [data-theme="light"] main .qlist a:hover, [data-theme="light"] main .advisory-list a:hover, [data-theme="light"] .advisory-body a:hover, [data-theme="light"] .briefing-block a:hover {
+    background: rgba(212,255,0,0.30);
+  }
+  main p a, main .qlist a, main .advisory-list a, .advisory-body a, .briefing-block a { color: #D4FF00; text-decoration-color: rgba(212,255,0,0.55); }
+
+  /* ----- Tables: subtle hover */
+  tbody tr:hover { background: rgba(255,255,255,0.03) !important; }
+  [data-theme="light"] tbody tr:hover { background: rgba(10,10,10,0.025) !important; }
+
+  /* ----- Canonical / seed pills (outlined) */
+  .canonical-pill, .seed-pill { background: rgba(212,255,0,0.12) !important; color: #D4FF00 !important; border: 1px solid rgba(212,255,0,0.45) !important; border-radius: 99px !important; }
+  [data-theme="light"] .canonical-pill, [data-theme="light"] .seed-pill { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+  .degraded-pill { border-radius: 99px !important; }
+
+  /* ----- SQUARE BUTTONS — Turnpage three styles */
+  /* Primary (.btn-primary, .dashboard-btn, .open-btn, .btn-copy): ink bg + white text + neon arrow */
+  .dashboard-btn, .open-btn, .btn-copy,
+  .approval-btn, .btn-cal, .btn-send-feedback {
+    border-radius: 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+    padding: 10px 18px !important;
+    font-family: 'Archivo', -apple-system, sans-serif !important;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  /* PRIMARY (dashboard-btn, open-btn): ink bg + white text */
+  .dashboard-btn, .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border: 1px solid #0A0A0A !important; }
+  .dashboard-btn:hover, .open-btn:hover { background: #16161B !important; border-color: #16161B !important; }
+  [data-theme="light"] .dashboard-btn, [data-theme="light"] .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border-color: #0A0A0A !important; }
+  [data-theme="light"] .dashboard-btn:hover, [data-theme="light"] .open-btn:hover { background: #16161B !important; }
+
+  /* GHOST (approval-btn, btn-cal, .btn-send-feedback, .btn-refine-secondary): outlined */
+  .approval-btn { background: transparent !important; color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .approval-btn:hover { background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .approval-btn { background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; }
+  [data-theme="light"] .approval-btn:hover { background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  .btn-cal, .btn-send-feedback {
+    background: transparent !important;
+    color: #0A0A0A !important;
+    border: 1px solid #0A0A0A !important;
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+  }
+  .btn-cal:hover, .btn-send-feedback:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-cal, [data-theme="dark"] .btn-send-feedback { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-cal:hover, [data-theme="dark"] .btn-send-feedback:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* NEON CTA (btn-copy, btn-refine): solid neon bg + ink text */
+  .btn-copy { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; }
+  .btn-copy:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine { background: #D4FF00 !important; color: #0A0A0A !important; border: 1px solid #D4FF00 !important; border-radius: 0 !important; font-weight: 700 !important; padding: 11px 20px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-refine:hover { background: #E2FF4D !important; border-color: #E2FF4D !important; }
+  .btn-refine-secondary { border-radius: 0 !important; padding: 11px 16px !important; font-weight: 600 !important; font-family: 'Archivo', sans-serif !important; background: transparent !important; color: rgba(255,255,255,0.7) !important; border: 1px solid rgba(255,255,255,0.4) !important; }
+  .btn-refine-secondary:hover { color: #FFFFFF !important; background: rgba(255,255,255,0.06) !important; border-color: #FFFFFF !important; }
+  [data-theme="light"] .btn-refine-secondary { color: rgba(10,10,10,0.65) !important; border-color: rgba(10,10,10,0.4) !important; }
+  [data-theme="light"] .btn-refine-secondary:hover { color: #0A0A0A !important; background: rgba(10,10,10,0.04) !important; border-color: #0A0A0A !important; }
+
+  /* Btn-sm (used on approval HTML header bar) → ghost-style */
+  .btn-sm { border-radius: 0 !important; font-weight: 600 !important; background: transparent !important; color: #0A0A0A !important; border: 1px solid #0A0A0A !important; padding: 6px 12px !important; font-family: 'Archivo', sans-serif !important; }
+  .btn-sm:hover { background: rgba(10,10,10,0.04) !important; }
+  [data-theme="dark"] .btn-sm { color: #FFFFFF !important; border-color: rgba(255,255,255,0.4) !important; }
+  [data-theme="dark"] .btn-sm:hover { background: rgba(255,255,255,0.06) !important; }
+
+  /* Refine status */
+  .refine-status { color: #D4FF00 !important; }
+  [data-theme="light"] .refine-status { color: #0A0A0A !important; }
+
+  /* Doctrine pills */
+  .pill.doctrine { border-color: rgba(212,255,0,0.45) !important; color: #D4FF00 !important; background: rgba(212,255,0,0.12) !important; }
+  [data-theme="light"] .pill.doctrine { color: #0A0A0A !important; background: rgba(212,255,0,0.30) !important; border-color: rgba(212,255,0,0.7) !important; }
+
+  /* Banner */
+  [data-theme="light"] .banner { background: #F4F5F7 !important; border-left-color: #D4FF00 !important; color: rgba(10,10,10,0.78) !important; }
+
+  /* Advisory toggle (light/dark): square corners, ghost-style border treatment */
+  .advisory-toggle { border-radius: 0 !important; }
+  .advisory-toggle.open { border-radius: 0 !important; }
+  .advisory-body { border-radius: 0 !important; }
+  .briefing-block, .dates-block, .linkedin-block, .disclaimer { border-radius: 0 !important; }
+
+  /* The view (subnav) row: subtle visual indent + breathing room */
+  .tn-row:nth-of-type(3) { padding-top: 6px; gap: 22px; }
+
+  /* View pills: NOT pills — plain text links with active neon underline */
+  .tn-pill.view {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4px 0 !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,0.55) !important;
+    letter-spacing: 0.01em;
+    transition: color 0.12s, border-bottom-color 0.12s;
+  }
+  .tn-pill.view:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+  }
+  .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    padding-bottom: 4px !important;
+  }
+  [data-theme="light"] .tn-pill.view {
+    color: rgba(10,10,10,0.55) !important;
+  }
+  [data-theme="light"] .tn-pill.view:hover {
+    background: transparent !important;
+    color: #0A0A0A !important;
+  }
+  [data-theme="light"] .tn-pill.view.active {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #D4FF00 !important;
+    color: #0A0A0A !important;
+    font-weight: 700 !important;
+  }
+
+
+  /* --- Turnpage logo in brand strip ------------------- */
+  .tn-brand { display: inline-flex; align-items: center; gap: 0; }
+  .tn-brand-logo { height: 18px; width: auto; vertical-align: middle; transition: filter 0.15s; filter: invert(1) brightness(2); }
+  /* On LIGHT theme, the logo is already black — no invert needed */
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { font-weight: 700; letter-spacing: -0.01em; }
+    /* Original is black-on-white JPEG. In dark theme we invert to get white-on-black. */
+    filter: invert(1);
+  }
+  [data-theme="light"] .tn-brand-logo { filter: none !important; }
+  .tn-brand-text { display: none; } /* legacy text — replaced by product label on tab row */
+  .tn-brand:hover .tn-brand-logo { opacity: 0.85; }
+  [data-theme="light"]
+
+  /* Tab row: align product label + tabs horizontally with a vertical divider between them */
+  .tn-row:nth-of-type(2) {
+    align-items: center;
+    padding: 8px 0;
+  }
+  [data-theme="light"]
+
+  /* Brand row: logo on left, meta (date + toggle) on right */
+  .tn-row.brand { padding-bottom: 8px !important; }
+
+  /* Slight arrow indicator on tab pill suggesting dropdown */
+  .tn-tab > .tn-pill::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    opacity: 0.55;
+    vertical-align: 2px;
+  }
+  /* === Remove eyebrow neon bars (user pref) === */
+  .eyebrow::before,
+  .lead-eyebrow::before,
+  .hero-eyebrow::before,
+  section h2::before,
+  .box h2::before,
+  .briefing-body h2::before,
+  .sources h2::before,
+  .refine-history-label::before,
+  .post-card-platform::before,
+  .adjust-label::before,
+  .tn-product-label::before,
+  header.posts-header .eyebrow::before,
+  header.brand-hero .hero-eyebrow::before {
+    display: none !important;
+    content: none !important;
+  }
+  .eyebrow,
+  .lead-eyebrow,
+  .hero-eyebrow,
+  section h2,
+  .box h2,
+  .briefing-body h2,
+  .sources h2,
+  .refine-history-label,
+  .post-card-platform,
+  .adjust-label,
+  .tn-product-label,
+  header.posts-header .eyebrow,
+  header.brand-hero .hero-eyebrow {
+    padding-left: 0 !important;
+  }
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
+  <!-- AUTH GATE START -->
+  <script src="/auth/config.js"></script>
+  <script type="module" src="/auth/auth.js"></script>
+  <!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row brand">
+    <a class="tn-brand" href="../../daily-briefing/dashboard-latest.html"><img class="tn-brand-logo" alt="Turnpage" src="/assets/turnpage-logo.jpeg"></a>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+  <div class="tn-row tn-tabs-row">
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../rewind-tariffs/dashboard.html">⚖️ Tariffs</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tariffs / Trade</h3>
+            <p class="tn-dd-body">Capital and advisory for IEEPA tariff refund rights. CAPE refunds, the CIT and Federal Circuit dockets, Section 122, and consumer-class exposure on pass-through.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../rewind-tariffs/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab active">
+      <a class="tn-pill active" href="../../llm-class-action/dashboard.html">🤖 LLM</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">LLM / Copyright</h3>
+            <p class="tn-dd-body">AI training-data class actions. Bartz v. Anthropic, the OpenAI MDL, Concord, Disney v. Midjourney — settlement mechanics and benchmark claims rates.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../llm-class-action/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link active" href="../../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../llm-class-action/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../crypto-insolvency/dashboard.html">🪙 Crypto</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Crypto Insolvency</h3>
+            <p class="tn-dd-body">Customer-property litigation and crypto bankruptcies. BlockFills, Genesis LOC, FTX progeny, and the cross-border Chapter 15 recognition track.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../crypto-insolvency/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../fraud-recovery/dashboard.html">🕵️ Fraud</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Ponzi / Fraud Recovery</h3>
+            <p class="tn-dd-body">Receivership clawbacks, SEC enforcement, and cross-border asset recovery. Goliath Ventures, Paramount/Prestige, and active receiver-led liquidation tracks.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../fraud-recovery/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../fraud-recovery/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../tech-mass-arbitration/dashboard.html">⚙️ Mass Arb</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Tech Mass Arbitration</h3>
+            <p class="tn-dd-body">B2B mass-arbitration campaigns against Big Tech defendants. The Google advertiser playbook, Meta waiver track, AAA/JAMS mechanics, foreign analogues.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../tech-mass-arbitration/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../tech-mass-arbitration/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../billion-dollar-class-actions/dashboard.html">💰 $1B+</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">$1B+ Class Actions</h3>
+            <p class="tn-dd-body">The mega-settlement cycle. BCBS Subscriber & Provider, Bartz v. Anthropic, Purdue/Sackler, Roundup, Visa/Mastercard interchange.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../billion-dollar-class-actions/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tn-tab">
+      <a class="tn-pill" href="../../bankruptcy-creditor-rights/dashboard.html">📜 Bankr</a>
+      <div class="tn-dropdown">
+        <div class="tn-dd-inner">
+          <div class="tn-dd-col tn-dd-col-overview">
+            <p class="tn-dd-eyebrow">Overview</p>
+            <h3 class="tn-dd-title">Bankruptcy Creditor Rights</h3>
+            <p class="tn-dd-body">Plan-confirmation appellate docket. Equitable-mootness drift, post-Purdue third-party releases, Texas Two-Step, exculpation scope, and Subchapter V.</p>
+          </div>
+          <div class="tn-dd-col tn-dd-col-links">
+            <p class="tn-dd-eyebrow">Quick Links</p>
+            <ul class="tn-dd-list">
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/dashboard.html"><span>Daily Briefing</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+            </ul>
+          </div>
+          <div class="tn-dd-col tn-dd-col-cta">
+            <a class="tn-dd-cta" href="../../bankruptcy-creditor-rights/dashboard.html"><span>Open Daily Briefing</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>LLM / Copyright — Knowledge Baseline</h1>
+    <div class="sub">Synthesized from 20+ daily advisories, May 15, 2026 · Used as standing context for daily 48-hour advisories</div>
+  </div>
+
+  <div class="meta-banner">
+    <strong>Purpose:</strong> This is the foundational knowledge baseline for the LLM tab. The daily run uses the 48-hour freshness window to find what's new; this page provides the standing context (active matters, doctrine, key actors, watchlist) against which today's news is evaluated.
+  </div>
+
+  <div class="content">
+<h1>LLM / Copyright — Knowledge Baseline</h1>
+<p><strong>Generated:</strong> May 15, 2026 (synthesized from 25 daily advisories, April 15–May 15, 2026)
+<strong>Purpose:</strong> Seed background knowledge for the daily-briefing topic project dir. Daily advisories rely on this baseline for context; daily runs use the 48-hour freshness window to identify what is new against the docket state captured here.</p>
+<hr />
+<h2>Active Matters (live cases, status, key dates)</h2>
+<h3><em>Bartz v. Anthropic PBC</em>, No. 3:24-cv-05417 (N.D. Cal.)</h3>
+<ul>
+<li><strong>Court &amp; Judge:</strong> Northern District of California; <strong>Judge Araceli Martínez-Olguín</strong> (succeeding <strong>Judge William Alsup</strong>, who issued the June 2025 summary-judgment ruling). Courtroom 12, San Francisco Federal Courthouse.</li>
+<li><strong>Settlement:</strong> $1.5 billion gross — the largest copyright settlement in U.S. history. Net fund estimated at ~$1.29–$1.31 billion after fees and administration; Anthropic funding in $300M installments running through September 2027.</li>
+<li><strong>Funded to date:</strong> $600M of $1.5B (first installment Oct. 2025; <strong>second $300M installment April 30, 2026</strong>).</li>
+<li><strong>Claim rate:</strong> 91.3% (440,490 of 482,460 eligible works; ~120,000 individual authors), against the ~10% baseline typical in consumer class actions (<a href="https://authorsguild.org/news/anthropic-settlement-update-91-percent-of-books-claimed/">Authors Guild</a>).</li>
+<li><strong>Class Counsel:</strong> <strong>Susman Godfrey</strong> and <strong>Lieff Cabraser</strong> (lead structure under Rule 23(g)); coordination-counsel firms <strong>Cowan DeBaets</strong>, <strong>Edelson</strong>, and <strong>Oppenheim + Zebrak</strong> were subject to Judge Alsup's December 23, 2025 fee-sharing memorandum.</li>
+<li><strong>Fee petition:</strong> Reduced from $300M (20%) to <strong>$187.5M (12.5%)</strong> of the gross fund, plus ~$3M expenses, $18.22M cost reserve, and $50,000 service awards per named representative (<a href="https://www.jdjournal.com/2026/03/23/anthropic-settlement-lawyers-cut-fees-to-win-approval/">JDJournal</a>; <a href="https://www.law360.com/articles/2455799/authors-attys-cut-fee-bid-to-187m-in-1-5b-anthropic-ip-deal">Law360</a>; <a href="https://www.pymnts.com/cpi-posts/anthropic-copyright-settlement-lawyers-cut-fee-request-to-187-5-million/">PYMNTS</a>).</li>
+<li><strong>Status:</strong> Rule 23(e) <strong>fairness hearing held May 14, 2026</strong> at 2:00 p.m. PT (Courtroom 12; Zoom for objectors preserving Rule 23(e)(5) rights). Ruling <strong>taken under submission</strong> — final-approval order pending. Distribution computation by Settlement Administrator scheduled <strong>June 11, 2026</strong>; disbursement to follow (<a href="https://www.authorsalliance.org/2026/05/14/bartz-v-anthropic-fairness-hearing-final-reminder-91-3-claims-rate-and-updates-from-the-docket/">Authors Alliance</a>).</li>
+<li><strong>Per-title base payout:</strong> approximately <strong>$2,931–$3,000</strong> depending on allocation resolution, against the 17 U.S.C. § 504(c)(2) willful ceiling of $150,000.</li>
+</ul>
+<h3><em>In re OpenAI, Inc. Copyright Infringement Litigation</em>, MDL No. 1:25-md-03143 (S.D.N.Y.)</h3>
+<ul>
+<li><strong>Judge:</strong> <strong>Sidney H. Stein</strong>, with <strong>Magistrate Judge Ona T. Wang</strong> managing discovery.</li>
+<li><strong>Status:</strong> Intensive discovery. Stein's <strong>January 5, 2026 order</strong> (affirming Wang) compelled production of an <strong>anonymized 20-million-log ChatGPT sample</strong>, rejecting OpenAI's user-privacy objection (<a href="https://news.bloomberglaw.com/ip-law/openai-must-turn-over-20-million-chatgpt-logs-judge-affirms">Bloomberg Law</a>; <a href="https://www.joneswalker.com/en/insights/blogs/ai-law-blog/openai-loses-privacy-gambit-20-million-chatgpt-logs-likely-headed-to-copyright-p.html?id=102lzo9">Jones Walker</a>).</li>
+<li><strong>March 9, 2026 expansion order</strong> (Magistrate Judge Wang): compelled additional <strong>78 million</strong> and <strong>10 million</strong> ChatGPT log reservoirs — aggregate <strong>~108 million logs</strong>, the most expansive compelled disclosure of generative-AI output in any copyright proceeding (<a href="https://natlawreview.com/article/openai-loses-privacy-gambit-20-million-chatgpt-logs-likely-headed-copyright">National Law Review</a>).</li>
+<li><strong>March 10, 2026 order</strong>: compelled production of co-founder <strong>Greg Brockman's personal journal</strong> (first surfaced in <em>Musk v. OpenAI</em>); deposition of OpenAI employee Vinnie Monaco on "Project Giraffe" guardrails flagged as insufficiently prepared (<a href="https://chatgptiseatingtheworld.com/2026/03/10/court-orders-openai-to-turn-over-greg-brockmans-journal-to-plaintiffs-in-mdl-copyright-suit-plus-oai-employee-vinnie-monaco-was-unprepared-for-deposition-re-project-giraffe-guardrails/">ChatGPT Is Eating the World</a>).</li>
+<li><strong>Books1/Books2 deletion</strong>: live Rule 37(e) spoliation inquiry; adverse-inference sanctions possible.</li>
+<li>Summary-judgment briefing on the <strong>NYT v. OpenAI</strong> track expected mid-2026; settlement discussions reportedly ongoing per Norton Rose Fulbright's 2026 survey (<a href="https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026">Norton Rose Fulbright</a>).</li>
+</ul>
+<h3><em>Concord Music Group, Inc. v. Anthropic PBC</em>, No. 5:24-cv-03811 (N.D. Cal.)</h3>
+<ul>
+<li><strong>Judge:</strong> <strong>Eumi K. Lee</strong> (San Jose).</li>
+<li><strong>Status:</strong> Cross-motions for partial summary judgment <strong>fully briefed</strong>; <strong>hearing July 15, 2026</strong>. Publishers' motion (filed March 23, 2026) marshals <strong>218 undisputed facts</strong> on Anthropic's copying of 499 musical compositions (<a href="https://www.musicbusinessworldwide.com/infringement-on-a-massive-scale-umg-concord-and-abkco-ask-court-to-rule-against-ai-company-anthropic-ahead-of-trial/">Music Business Worldwide</a>). Anthropic's <strong>April 22, 2026 cross-motion</strong> argues training on lyrics is categorically transformative and that publishers cannot identify works from which CMI was removed for DMCA § 1202 purposes (<a href="https://www.digitalmusicnews.com/2026/04/22/anthropic-music-publishers-lawsuit-summary-judgment-motion/">Digital Music News</a>).</li>
+<li><strong>April 7, 2026 First Amended Complaint:</strong> redirected the intentional-contributory-infringement claim from Anthropic PBC to CEO <strong>Dario Amodei</strong> and co-founder <strong>Benjamin Mann</strong> in their individual capacities, relying on evidence unsealed in <em>Bartz</em>; added Claude 4.6 Opus and Sonnet as accused instrumentalities (<a href="https://chatgptiseatingtheworld.com/2026/04/07/after-supreme-courts-decision-in-cox-communications-concord-music-changes-its-claim-of-intentional-contributory-infringement-from-anthropic-to-dario-amodei-benjamin-mann-based-on-evidence-revealed/">ChatGPT Is Eating the World</a>).</li>
+<li><strong>Amicus record (broadest in any AI copyright matter):</strong> RIAA/NMPA/A2IM/SoundExchange (Mar. 30 — calling unlicensed copying "inexcusable"); AAP/News-Media Alliance/STM/Authors Guild (Apr. — cross-industry rights-holder coalition); CCIA/Chamber of Progress/NetChoice and AI Progress (counter-amicus — "intermediate, non-expressive copying") (<a href="https://publishers.org/news/book-news-and-journal-publishers-join-with-authors-in-amicus-brief-in-support-of-music-publishers-in-concord-v-anthropic/">AAP</a>; <a href="https://ccianet.org/news/2026/04/ccia-urges-court-to-affirm-fair-use-protections-for-generative-ai-training/">CCIA</a>).</li>
+</ul>
+<h3><em>Concord/UMG/ABKCO v. Anthropic II</em> (N.D. Cal., filed January 28, 2026)</h3>
+<ul>
+<li>Successor action covering <strong>20,517 torrented compositions</strong>; seeks <strong>$3.1 billion</strong> in statutory damages. Adds Capitol CMG as plaintiff. Tracks the same N.D. Cal. forum as the original Concord action (<a href="https://ipwatchdog.com/2026/01/29/music-publishers-file-new-piracy-suit-against-anthropic-alleging-mass-torrenting-copyrighted-works/">IP Watchdog</a>).</li>
+</ul>
+<h3><em>BMG Rights Management v. Anthropic PBC</em> (N.D. Cal., filed March 18, 2026)</h3>
+<ul>
+<li>Third concurrent music-publisher action; <strong>493 compositions</strong> including works by Bruno Mars, the Rolling Stones, Ariana Grande, and Justin Bieber. Alleges automated scraping and BitTorrent piracy plus Claude's on-demand reproduction of infringing lyrics (<a href="https://musically.com/2026/03/19/bmg-joins-the-lyrical-lawsuits-against-ai-company-anthropic/">Music Ally</a>; <a href="https://www.rollingstone.com/music/music-news/bmg-anthropic-copyright-lawsuit-justin-bieber-bruno-mars-1235533474/">Rolling Stone</a>; <a href="https://www.musicbusinessworldwide.com/bmg-sues-anthropic-alleging-ai-giants-380b-valuation-was-built-on-stolen-copyrighted-works/">Music Business Worldwide</a>).</li>
+</ul>
+<h3><em>Elsevier Inc. et al. v. Meta Platforms, Inc.</em> (S.D.N.Y., filed May 5, 2026)</h3>
+<ul>
+<li><strong>Plaintiffs:</strong> Elsevier, Cengage, <strong>Hachette Book Group</strong>, <strong>Macmillan Publishing Group</strong>, <strong>McGraw Hill</strong>, and bestselling author <strong>Scott Turow</strong>.</li>
+<li><strong>Defendants:</strong> Meta Platforms and CEO <strong>Mark Zuckerberg in his individual capacity</strong>.</li>
+<li><strong>Plaintiff Counsel:</strong> <strong>Debevoise &amp; Plimpton</strong>, <strong>Oppenheim + Zebrak</strong>, <strong>Keller Rohrback</strong>.</li>
+<li><strong>Allegations:</strong> Meta torrented <strong>~267 terabytes</strong> from <strong>LibGen</strong> and <strong>Anna's Archive</strong> to train Llama models after Zuckerberg personally authorized abandoning a <strong>$200 million licensing budget</strong> in April 2023. Statutory damages, permanent injunction, and destruction of all infringing copies sought (<a href="https://publishers.org/news/publishers-and-authors-file-class-action-lawsuit-against-meta-and-zuckerberg-for-willful-copyright-infringement-to-develop-llama-ai-models/">AAP</a>; <a href="https://variety.com/2026/digital/news/meta-ai-mark-zuckerberg-copyright-infringement-lawsuit-publishers-scott-turow-1236738383/">Variety</a>; <a href="https://www.npr.org/2026/05/05/nx-s1-5812623/scott-turow-meta-lawsuit">NPR</a>; <a href="https://fortune.com/2026/05/05/james-patterson-mark-zuckerberg-authorized-copyright-infringement-meta-book-lawsuit/">Fortune</a>).</li>
+<li><strong>Novel theory:</strong> Personal CEO liability raises D&amp;O coverage and corporate-veil questions. AAP President Maria Pallante framed the action as a vindication of constitutional copyright principles. Meta has stated it will "fight this lawsuit aggressively."</li>
+</ul>
+<h3><em>Kadrey v. Meta Platforms, Inc.</em>, No. 3:23-cv-03417 (N.D. Cal.)</h3>
+<ul>
+<li><strong>Judge:</strong> <strong>Vince Chhabria</strong>. <strong>June 2025</strong> summary judgment for Meta on the training-as-fair-use theory: court found absence of substantially similar outputs defeated the extrinsic/intrinsic similarity inquiry.</li>
+<li><strong>Surviving claims:</strong> BitTorrent seeding and § 106(3) distribution theory. <strong>March 27, 2026 scheduling order</strong>: dispositive-motion hearing <strong>February 25, 2027 at 10:00 a.m.</strong> in San Francisco (<a href="https://chatgptiseatingtheworld.com/2026/03/27/kadrey-v-meta-gets-scheduling-order-summary-judgment-motion-hearing-for-distribution-claim-wont-be-heard-until-feb-25-2027/">ChatGPT Is Eating the World</a>).</li>
+</ul>
+<h3><em>Thomson Reuters Enterprise Centre GmbH v. Ross Intelligence, Inc.</em>, No. 25-2153 (3d Cir.)</h3>
+<ul>
+<li><strong>Counsel:</strong> ROSS — <strong>White &amp; Case</strong> and <strong>Pillsbury</strong>. Thomson Reuters — <strong>Kirkland &amp; Ellis</strong>.</li>
+<li><strong>Status:</strong> Briefing complete. <strong>Oral argument June 11, 2026</strong> — first appellate fair-use argument on AI training in any U.S. court. ROSS filed Rule 28(j) letter citing <strong>Third Circuit's April 7 ASTM v. UpCodes</strong> decision (fair use for AI-native legal-tech republication of incorporated building codes). Supplemental briefs filed <strong>May 11</strong> present divergent readings: ROSS argues UpCodes is functionally controlling; Thomson Reuters argues the purpose was commercially substitutive and invokes Judge Alsup's <em>Bartz</em> framework (<a href="https://xira.com/p/2026/05/13/each-side-claims-the-same-recent-ruling-supports-its-position-in-thomson-reuters-v-ross-appeal-2/">XIRA/LawNext</a>; <a href="https://www.lawnext.com/2025/11/thomson-reuters-tells-appeals-court-rosss-copying-was-theft-not-innovation.html">LawNext</a>; <a href="https://chatgptiseatingtheworld.com/2026/04/14/third-circuit-sets-oral-argument-on-june-11-for-1st-appeal-of-decision-on-fair-use-in-ai-training-case-follows-another-recent-third-circuit-decision-on-fair-use-in-american-society-for-testing-v-upc/">ChatGPT Is Eating the World</a>).</li>
+</ul>
+<h3><em>Andersen v. Stability AI Ltd.</em> (N.D. Cal.)</h3>
+<ul>
+<li><strong>Judge:</strong> <strong>William H. Orrick</strong>. <strong>Trial: September 8, 2026</strong> — the first AI visual-arts copyright trial in any U.S. court. Third Amended Complaint filed February 27, 2026; Stability AI and Midjourney answered March 13, 2026. Plaintiffs press direct and induced infringement on the LAION dataset (5 billion scraped images) (<a href="https://www.courtlistener.com/docket/66732129/andersen-v-stability-ai-ltd/">CourtListener</a>; <a href="https://jipel.law.nyu.edu/andersen-v-stability-ai-the-landmark-case-unpacking-the-copyright-risks-of-ai-image-generators/">NYU JIPEL</a>).</li>
+</ul>
+<h3><em>Disney Enterprises, Inc. v. Midjourney, Inc.</em>, No. 2:25-cv-05275 (C.D. Cal.)</h3>
+<ul>
+<li>Consolidated with Warner Bros. and Universal claims against Midjourney's character-output engine. Informal discovery conference held April 7, 2026; post-mediation status conference scheduled August 31, 2026. The May 2025 Disney–OpenAI three-year Sora licensing deal ($1B investment; 200+ characters) supplies a market-rate comparator that undercuts Midjourney's fourth-factor fair-use defense.</li>
+</ul>
+<h3><em>Carreyrou v. Anthropic, OpenAI, Google, Meta, xAI, and Perplexity</em> (N.D. Cal.)</h3>
+<ul>
+<li>Six-author <em>Bartz</em> opt-out action led by Pulitzer-winner <strong>John Carreyrou</strong> seeking the full § 504(c)(2) willful ceiling — <strong>$150,000 per work per defendant</strong> (theoretical exposure ~$900,000 per book). First copyright training suit against <strong>xAI</strong> and first authors' training suit against <strong>Perplexity</strong> (<a href="https://www.publishersweekly.com/pw/by-topic/industry-news/publisher-news/article/99347-authors-file-new-lawsuit-against-ai-companies-seeking-more-money.html">Publishers Weekly</a>; <a href="https://news.bloomberglaw.com/ip-law/openai-anthropic-xai-hit-with-copyright-lawsuit-from-writers">Bloomberg Law</a>).</li>
+</ul>
+<h3><em>UMG Recordings, Inc. v. Suno, Inc.</em> (D. Mass.)</h3>
+<ul>
+<li><strong>Judge:</strong> <strong>F. Dennis Saylor IV</strong>. Summary judgment hearing <strong>July 2026</strong>. Sony has declined to settle with either Suno or Udio, in contrast to <strong>Warner Music's November 2025 Suno settlement</strong> (Suno to deprecate unlicensed models; new licensed models in 2026; download caps; full NIL control for WMG artists) and <strong>UMG's October 2025 Udio deal</strong> (<a href="https://www.rollingstone.com/music/music-features/suno-warner-music-group-ai-music-settlement-lawsuit-1235472868/">Rolling Stone</a>; <a href="https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/">Music Business Worldwide</a>).</li>
+</ul>
+<h3><em>Advance Local Media v. Cohere</em> (S.D.N.Y.)</h3>
+<ul>
+<li><strong>Judge:</strong> <strong>Colleen McMahon</strong>. Motion-to-dismiss denial recognized <strong>"substitutive summaries"</strong> as a viable direct-infringement theory: AI outputs that mirror the expressive structure and journalistic storytelling choices of copyrighted originals may infringe without verbatim copying (<a href="https://copyrightlately.com/court-rules-ai-news-summaries-may-infringe-copyright/">Copyright Lately</a>; <a href="https://www.law.com/newyorklawjournal/2026/04/20/recent-decisions-reshape-copyright-liability-for-ai-platforms-and-their-users/">New York Law Journal</a>).</li>
+</ul>
+<h3><em>Doe v. GitHub</em> (9th Cir., interlocutory appeal pending)</h3>
+<ul>
+<li>Ninth Circuit interlocutory appeal on DMCA § 1202 CMI-stripping claims arising from Copilot's training on public repositories. Outcome will define the contours of CMI liability for code-generation tools.</li>
+</ul>
+<h3><em>SEIU Pension Plans Master Trust v. Adobe Board</em> (April 24, 2026)</h3>
+<ul>
+<li>First shareholder derivative action arising from AI copyright exposure. Alleges directors breached fiduciary duties by knowingly permitting SlimLM to train on pirated works, adopting an "ask forgiveness not approval" posture that produced multiple copyright suits and a 25%+ share-price decline (<a href="https://www.dandodiary.com/2026/04/articles/artificial-intelligence/ai-related-ip-litigation-triggers-follow-on-do-lawsuit/">D&amp;O Diary</a>; <a href="https://news.bloomberglaw.com/securities-law/adobe-investor-sues-board-over-ai-training-copyright-accusations">Bloomberg Law</a>). Establishes the <em>Bartz</em> $1.5B figure as a D&amp;O benchmark across the AI industry.</li>
+</ul>
+<h3>International (live)</h3>
+<ul>
+<li><strong>Getty Images (US) Inc. v. Stability AI Ltd.</strong> (UK Court of Appeal). UK High Court November 4, 2025 judgment (Mrs Justice Joanna Smith) <strong>rejected secondary infringement</strong> under CDPA § 27 — model weights do not "contain or store" the underlying works — while recognizing limited trade-mark infringement for watermark reproduction. Permission to appeal granted <strong>December 16, 2025</strong>; formal grant <strong>April 1, 2026</strong> (<a href="https://www.wiggin.co.uk/insight/high-court-grants-permission-to-appeal-in-getty-images-v-stability-ai/">Wiggin LLP</a>; <a href="https://www.burges-salmon.com/articles/102lydc/getty-images-v-stability-ai-getty-granted-permission-to-appeal/">Burges Salmon</a>; <a href="https://www.taylorwessing.com/en/insights-and-events/insights/2026/01/next-steps-for-getty-v-stability-why-has-permission-to-appeal-been-granted">Taylor Wessing</a>). First UK appellate ruling on whether intangible AI model weights are "infringing copies."</li>
+<li><strong>Like Company v. Google Ireland Ltd.</strong>, C-250/25 (CJEU). First-ever CJEU hearing on generative AI and copyright (six hours, March 10, 2026); examined communication-to-the-public doctrine, reproduction, and DSM Directive Article 4 TDM exception. <strong>AG opinion expected September 3, 2026</strong> (<a href="https://www.twobirds.com/en/insights/2026/like-company-v-google-cjeu-holds-first-ever-hearing-on-generative-ai-and-copyright-on-10-march-2026">Bird &amp; Bird</a>).</li>
+<li><strong>GEMA v. OpenAI</strong> (Munich Regional Court). Found that storage of lyrics in model parameters constitutes copyright infringement — continental data point likely to weigh on the AG.</li>
+</ul>
+<hr />
+<h2><em>Bartz v. Anthropic</em> Settlement — Deep Dive</h2>
+<p><strong>Structure.</strong> $1.5B gross / 482,460 eligible works / ~$3,000 per work base payout. Funded in $300M installments through September 2027 ($600M of $1.5B funded as of April 30, 2026). Settlement Administrator computes pro rata distributions June 11, 2026; cy pres treatment of residuals to be addressed at final approval.</p>
+<p><strong>Class definition.</strong> U.S.-registered works ingested through Library Genesis and the Pirate Library Mirror (PiLiMi) shadow-library corpora. Foreign and non-U.S.-registered works are <strong>excluded</strong>, notwithstanding 17 U.S.C. § 411(a)'s registration exemption for foreign authors — the exclusion potentially affects <strong>2 million+ titles</strong> and is the subject of Bishop and other objections.</p>
+<p><strong>Claims data (extraordinary).</strong> 440,490 / 482,460 = <strong>91.3% claim rate</strong>, against the ~10% benchmark typical in consumer class actions. Approximately <strong>120,000 individual authors</strong> filed. Claim rate jumped from 54% (March 19) to 91.3% by the March 30 deadline, suggesting institutional bulk filings in the final days. The participation rate functions as class counsel's strongest Rule 23(e)(2)(C)(ii) adequacy argument (<a href="https://authorsguild.org/news/anthropic-settlement-update-91-percent-of-books-claimed/">Authors Guild</a>).</p>
+<p><strong>Fee petition.</strong> Reduced from $300M (20%) to <strong>$187.5M (12.5%)</strong> after Judge Alsup's December 23, 2025 memorandum criticized $75M earmarked for Cowan DeBaets, Edelson, and Oppenheim + Zebrak — firms not formally appointed to represent the full class under <strong>Rule 23(g)</strong>. Lodestar cross-check under <strong>Rule 23(h)</strong> remains pending. Susman Godfrey and Lieff Cabraser are the lead structure.</p>
+<p><strong>Reply objections (May 13, 2026 wave).</strong>
+- <strong>Pinder (Dkt. 648):</strong> 40+ independently published novels registered under a single group registration count as one "claimable Work." Identically prolific authors who registered individually would receive 40 shares to her one.
+- <strong>Chakanga (Dkt. 649):</strong> Opt-out due-process challenge. Sealed summary-judgment records were not unsealed until <strong>January 21, 2026</strong> — eight days before the original opt-out deadline. Cites the Ninth Circuit's <strong>January 28 decision in Avery v. TEKsystems</strong> for the proposition that compressed timing plus a sealed judicial record is a substantive procedural defect.
+- <strong>Esquivel (Dkt. 651):</strong> Mexican author of <em>Como agua para chocolate</em>. Class Counsel imposed a novel co-owner-consent requirement for her late opt-out, despite Long Form Notice language providing that a single rightsholder binds co-owners. Argues excusable neglect under <strong>Pioneer Investment Services Co. v. Brunswick Associates Limited Partnership, 507 U.S. 380 (1993)</strong> based on absence of Spanish-language notice and an intervening stroke.</p>
+<p><strong>Other principal objection themes.</strong>
+- <strong>Bishop (Dkt. 602/630):</strong> Publishers may capture ~50% or more of the net fund under contractual reversion and royalty-split mechanics, despite author-centric pleading. Allegedly omitted Judge Alsup's December 2025 fee-sharing concerns from updates to incoming Judge Martínez-Olguín. Notice allegedly framed the choice as "settlement or nothing" rather than contextualizing the $3,000 figure against the $150,000 § 504(c) ceiling.
+- <strong>Sills (Dkt. 600):</strong> Elsevier proposed an 88/12 publisher-author split for his textbook — focal point for intra-class fairness.
+- <strong>Foreign-works exclusion</strong> under § 411(a).
+- <strong>Class-counsel conflicts</strong> arising from Susman Godfrey/Lieff Cabraser exposure in parallel music-publisher dockets where Anthropic is adverse.
+- <strong>Free Software Foundation</strong> declined monetary participation, demanding release of training inputs, model weights, training configuration, and source code (<a href="https://www.fsf.org/blogs/licensing/2026-anthropic-settlement">FSF</a>).</p>
+<p><strong>Named representatives.</strong> Andrea Bartz, Charles Graeber, Kirk Wallace Johnson (three class representatives; $50K service awards each).</p>
+<p><strong>Notable opt-outs.</strong> Carreyrou group (six authors) suing Anthropic, OpenAI, Google, Meta, xAI, and Perplexity for full § 504(c) statutory exposure; <strong>Laura Esquivel</strong> seeking late opt-out.</p>
+<p><strong>Procedural posture.</strong> Hearing held <strong>May 14, 2026</strong>; <strong>ruling under submission</strong>. Appellate preservation governed by <strong>Devlin v. Scardelletti, 536 U.S. 1 (2002)</strong> for non-named objectors. Class Counsel's Proposed Order (Dkt. 646-1) seeks overruling of all objections and final approval; the court did not rule from the bench.</p>
+<hr />
+<h2>Recent Precedent / Rulings Timeline</h2>
+<ul>
+<li><strong>Bartz fair-use summary judgment (Judge Alsup, June 2025).</strong> Bifurcated framework: training on <strong>lawfully acquired</strong> copies is <strong>transformative fair use</strong> under 17 U.S.C. § 107; <strong>acquisition and storage of pirated copies</strong> from LibGen/PiLiMi is <strong>per se infringement independent of fair use</strong>. Characterized by Kluwer Copyright Blog as "the most significant judicial statement on AI copyright in any jurisdiction" (<a href="https://legalblogs.wolterskluwer.com/copyright-blog/the-bartz-v-anthropic-settlement-understanding-americas-largest-copyright-settlement/">Kluwer Copyright Blog</a>).</li>
+<li><strong>Kadrey v. Meta summary judgment (Judge Chhabria, June 2025).</strong> Training-as-fair-use granted on output-similarity deficiency; BitTorrent seeding and § 106(3) distribution claims survive (Feb. 25, 2027 hearing).</li>
+<li><strong>Thomson Reuters v. ROSS Intelligence (D. Del., 2025).</strong> Only federal ruling to date holding AI training is <strong>not</strong> fair use. Currently on appeal (3d Cir., No. 25-2153; oral argument June 11, 2026).</li>
+<li><strong>Andersen v. Stability AI (Judge Orrick).</strong> Motion-to-dismiss denial preserved direct and induced infringement theories on LAION dataset; trial September 8, 2026.</li>
+<li><strong>Cox Communications, Inc. v. Sony Music Entertainment, 605 U.S. ___ (Mar. 25, 2026).</strong> Unanimous reversal of $1B Fourth Circuit verdict. Narrowed contributory copyright liability to <strong>(i) active inducement</strong> or <strong>(ii) services "not capable of substantial or commercially significant noninfringing uses."</strong> Functionally retired the "mere knowledge" theory at the entity level but opened individual-officer inducement liability — directly cited in Concord Music's April 7 FAC against Amodei and Mann (<a href="https://www.arnoldporter.com/en/perspectives/advisories/2026/04/supreme-court-narrows-secondary-copyright-liability-in-cox">Arnold &amp; Porter</a>; <a href="https://www.hklaw.com/en/insights/publications/2026/04/what-the-scotus-ruling-in-cox-v-sony-means-for-tech-providers">Holland &amp; Knight</a>; <a href="https://www.jonesday.com/en/insights/2026/04/isps-off-the-hook-supreme-court-narrows-contributory-copyright-liability">Jones Day</a>; <a href="https://www.scotusblog.com/2026/03/court-rejects-billion-dollar-judgment-for-copyright-infringement-by-internet-service-provider/">SCOTUSblog</a>).</li>
+<li><strong>Thaler v. Perlmutter (SCOTUS cert denied March 2, 2026).</strong> Leaves intact the D.C. Circuit affirmance and the Copyright Office's human-authorship requirement. AI-generated works without meaningful human creative contribution are not copyrightable. Does not address the threshold of human involvement for AI-assisted works (<a href="https://www.bakerdonelson.com/supreme-court-denies-certiorari-in-thaler-v-perlmutter-ai-cannot-be-an-author-under-the-copyright-act">Baker Donelson</a>; <a href="https://www.mayerbrown.com/en/insights/publications/2026/03/supreme-court-denies-review-in-ai-authorship-case">Mayer Brown</a>; <a href="https://www.morganlewis.com/pubs/2026/03/us-supreme-court-declines-to-consider-whether-ai-alone-can-create-copyrighted-works">Morgan Lewis</a>).</li>
+<li><strong>ASTM v. UpCodes (3d Cir., April 7, 2026).</strong> Third Circuit fair-use ruling on AI-native legal-tech republication of incorporated building codes; the doctrinal anchor for both sides' supplemental briefs in <em>Thomson Reuters v. ROSS</em>.</li>
+<li><strong>Advance Local Media v. Cohere (Judge McMahon, MTD denial).</strong> Non-verbatim <strong>"substitutive summaries"</strong> that mirror the expressive structure of originals may plausibly infringe. Rejects bright-line copying threshold.</li>
+<li><strong>OpenAI MDL January 5 and March 9, 2026 orders.</strong> 20M, then +78M, then +10M log production; most expansive AI discovery in any copyright proceeding.</li>
+<li><strong>Concord Music FAC, April 7, 2026.</strong> First post-<em>Cox</em> individual-officer pleading in AI copyright; relies on <em>Bartz</em> unsealing.</li>
+<li><strong>Copyright Office Part 3 Report (May 2025).</strong> Training is not categorically fair use; pirated inputs weigh against the first factor; declines to recommend compulsory licensing — administrative gloss consistent with the <em>Bartz</em> settlement valuation framework (<a href="https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-3-Generative-AI-Training-Report-Pre-Publication-Version.pdf">Copyright Office Part 3 Report</a>).</li>
+</ul>
+<hr />
+<h2>Key Actors</h2>
+<h3>Judges</h3>
+<ul>
+<li><strong>Araceli Martínez-Olguín</strong> (N.D. Cal.) — succeeded Alsup; presiding over <em>Bartz</em> Rule 23(e) approval.</li>
+<li><strong>William Alsup</strong> (N.D. Cal., recalled status) — June 2025 <em>Bartz</em> summary judgment; December 23, 2025 fee-sharing memorandum.</li>
+<li><strong>Sidney H. Stein</strong> (S.D.N.Y.) — OpenAI MDL; January 5 and March 9, 2026 log-production orders.</li>
+<li><strong>Ona T. Wang</strong> (Mag. J., S.D.N.Y.) — March 10, 2026 order compelling Brockman journal.</li>
+<li><strong>Eumi K. Lee</strong> (N.D. Cal., San Jose) — <em>Concord v. Anthropic</em>; cross-MSJ July 15, 2026.</li>
+<li><strong>Vince Chhabria</strong> (N.D. Cal.) — <em>Kadrey v. Meta</em>; June 2025 partial summary judgment for Meta.</li>
+<li><strong>William H. Orrick</strong> (N.D. Cal.) — <em>Andersen v. Stability AI</em>; September 8, 2026 trial.</li>
+<li><strong>F. Dennis Saylor IV</strong> (D. Mass.) — <em>UMG v. Suno</em>; July 2026 MSJ hearing.</li>
+<li><strong>Colleen McMahon</strong> (S.D.N.Y.) — <em>Advance Local v. Cohere</em>; "substitutive summaries" doctrine.</li>
+<li><strong>Mrs Justice Joanna Smith</strong> (UK High Court, KBD) — November 4, 2025 <em>Getty v. Stability AI</em> judgment.</li>
+</ul>
+<h3>Class Counsel (plaintiff-side, <em>Bartz</em>)</h3>
+<ul>
+<li><strong>Susman Godfrey</strong> (lead, Rule 23(g))</li>
+<li><strong>Lieff Cabraser Heimann &amp; Bernstein</strong> (co-lead)</li>
+<li><strong>Cowan DeBaets</strong>, <strong>Edelson PC</strong>, <strong>Oppenheim + Zebrak</strong> (coordination counsel — fee-sharing subject of Alsup memorandum)</li>
+</ul>
+<h3>Defense Counsel</h3>
+<ul>
+<li><strong>Anthropic</strong> — counsel structure includes leading IP/litigation firms across <em>Bartz</em>, <em>Concord</em>, BMG, and the second Concord action.</li>
+<li><strong>OpenAI</strong> — defending the S.D.N.Y. MDL; privacy/discovery posture has been notably aggressive.</li>
+<li><strong>Meta</strong> — <em>Elsevier v. Meta</em> defense to draw on its <em>Kadrey</em> counsel architecture; <strong>Debevoise &amp; Plimpton</strong>, <strong>Oppenheim + Zebrak</strong>, <strong>Keller Rohrback</strong> represent plaintiffs.</li>
+<li><strong>ROSS Intelligence</strong> — <strong>White &amp; Case</strong> and <strong>Pillsbury</strong>.</li>
+<li><strong>Thomson Reuters</strong> — <strong>Kirkland &amp; Ellis</strong>.</li>
+</ul>
+<h3>Publisher / Rightsholder Plaintiffs and Coalitions</h3>
+<ul>
+<li><strong>Hachette Book Group</strong>, <strong>Macmillan Publishing Group</strong>, <strong>McGraw Hill</strong>, <strong>Elsevier</strong>, <strong>Cengage</strong>, <strong>HarperCollins</strong>, <strong>Penguin Random House</strong> — book publishers.</li>
+<li><strong>UMG (Universal Music Group)</strong>, <strong>Concord Music Group</strong>, <strong>ABKCO</strong>, <strong>Capitol CMG</strong>, <strong>BMG Rights Management</strong>, <strong>Sony Music Entertainment</strong>, <strong>Warner Music Group (settled with Suno)</strong> — music publishers.</li>
+<li><strong>Scott Turow</strong>, <strong>James Patterson</strong>, <strong>John Carreyrou</strong> — named author plaintiffs.</li>
+<li><strong>Getty Images</strong> (UK).</li>
+<li>Coalitions: <strong>RIAA</strong>, <strong>NMPA</strong>, <strong>A2IM</strong>, <strong>SoundExchange</strong>, <strong>SONA</strong>, <strong>AAP</strong> (Maria Pallante, President), <strong>News/Media Alliance</strong>, <strong>STM</strong> (Scientific, Technical &amp; Medical Publishers), <strong>Recording Academy</strong>.</li>
+</ul>
+<h3>Author / Rightsholder Advocacy Organizations</h3>
+<ul>
+<li><strong>Authors Guild</strong></li>
+<li><strong>Authors Alliance</strong> (publishes the most authoritative updates on the <em>Bartz</em> docket)</li>
+<li><strong>Copyright Alliance</strong></li>
+<li><strong>Free Software Foundation</strong> (filed non-monetary objection in <em>Bartz</em>)</li>
+<li><strong>SAG-AFTRA</strong>, <strong>WGA</strong>, <strong>ASCAP</strong>, <strong>BMI</strong></li>
+</ul>
+<h3>Industry Counter-Coalitions</h3>
+<ul>
+<li><strong>CCIA</strong> (Computer &amp; Communications Industry Association)</li>
+<li><strong>Chamber of Progress</strong></li>
+<li><strong>NetChoice</strong></li>
+<li><strong>AI Progress</strong></li>
+</ul>
+<h3>Appellate Panel Watchlist</h3>
+<ul>
+<li><strong>Third Circuit</strong> panel in <em>Thomson Reuters v. ROSS</em>, No. 25-2153 (oral argument June 11, 2026).</li>
+<li><strong>Ninth Circuit</strong> panel in <em>Doe v. GitHub</em> (DMCA § 1202 interlocutory).</li>
+<li><strong>D.C. Circuit</strong> (Thaler affirmance now final post-cert denial).</li>
+<li><strong>UK Court of Appeal</strong> in <em>Getty Images v. Stability AI</em>.</li>
+<li><strong>CJEU</strong> in <em>Like Company v. Google</em> (AG opinion September 3, 2026).</li>
+</ul>
+<hr />
+<h2>Legislative Tracker</h2>
+<ul>
+<li><strong>TRAIN Act (H.R. 7209 / S. 2455).</strong> Reps. Dean and Moran; Sens. Welch and Blackburn. Administrative subpoena empowering rights-holders to compel disclosure of training-data use; <strong>rebuttable presumption of copying upon noncompliance</strong>. Procedural counterpart to the French Senate's April 8 burden-shifting bill (<a href="https://www.congress.gov/bill/119th-congress/house-bill/7209/text">Congress.gov</a>).</li>
+<li><strong>NO FAKES Act (H.R. 2794 / S. 1367).</strong> Sens. Blackburn, Coons, Tillis, Klobuchar (bipartisan). Federal <strong>digital-replication right</strong> for voice, image, and likeness; 70 years post-mortem; $5,000 statutory damages per unauthorized replica; platform liability. Senate Judiciary subcommittee hearing expected May 2026.</li>
+<li><strong>CLEAR Act (S. 3813).</strong> Sens. Schiff (D-CA) and Curtis (R-UT). 30-day pre-release notice to Register of Copyrights enumerating copyrighted works in training datasets; <strong>$5,000 per-failure civil penalty</strong>; public Copyright Office database; retroactive application to existing models. 25+ endorsing organizations including SAG-AFTRA, Authors Guild, RIAA (<a href="https://ipwatchdog.com/2026/02/11/clear-act-establish-notice-requirements-copyrighted-works-ai-training-data/">IP Watchdog</a>; <a href="https://www.swlaw.com/publication/legislation-watch-for-ai-developers-and-registered-copyright-owners-the-federal-clear-act/">Snell &amp; Wilmer</a>).</li>
+<li><strong>Generative AI Copyright Disclosure Act (Dean–Moran, January 2026).</strong> Mandatory Copyright Office disclosure of copyrighted training data.</li>
+<li><strong>TRUMP AMERICA AI Act (Blackburn discussion draft, March 18, 2026).</strong> 291-page omnibus incorporating NO FAKES Act, TRAIN Act, and Kids Online Safety Act provisions. <strong>Title XIII/XV would amend the Copyright Act to declare that AI training on copyrighted works does not constitute fair use under 17 U.S.C. § 107</strong> — a statutory override of pending judicial determinations in <em>Bartz</em>, <em>Thomson Reuters</em>, the OpenAI MDL, and <em>Concord</em> (<a href="https://deadline.com/2026/03/ai-legislation-copyright-hollywood-trump-1236759660/">Deadline</a>; <a href="https://www.blackburn.senate.gov/2026/4/ai/what-they-are-saying-blackburn-announces-growing-momentum-for-trump-america-ai-act">Blackburn Senate Office</a>).</li>
+<li><strong>White House National AI Policy Framework (March 20, 2026).</strong> Recommends Congress defer to courts on fair use; endorses voluntary licensing and collective-rights frameworks with antitrust safe harbors (<a href="https://www.lw.com/en/insights/trump-administration-takes-major-steps-toward-comprehensive-federal-ai-regulation">Latham &amp; Watkins</a>; <a href="https://www.cooley.com/news/insight/2026/2026-03-25-white-house-releases-ai-regulatory-blueprint-what-the-national-policy-framework-means-for-companies">Cooley</a>). Creates tension with the Blackburn fair-use override.</li>
+<li><strong>GRAMMYS on the Hill (25th annual, April 21–23, 2026).</strong> Bipartisan honorees Sen. Chris Coons (D-DE) and Rep. María Salazar (R-FL); Blackburn–Welch roundtable with 20+ artists (Grace Potter, Taylor Hanson, Molly Tuttle) (<a href="https://www.blackburn.senate.gov/2026/4/ai/blackburn-welch-hold-roundtable-with-over-20-artists-who-support-no-fakes-act-and-train-act-to-protect-creators-from-ai-harms">Blackburn Senate Office</a>; <a href="https://thehill.com/blogs/in-the-know/5843379-lawmakers-honor-music-protections/">The Hill</a>).</li>
+<li><strong>International:</strong></li>
+<li><strong>French Senate (April 8, 2026).</strong> Unanimous adoption of bill creating a <strong>rebuttable presumption</strong> under Intellectual Property Code Article L. 331-4-1 that AI systems have exploited copyrighted works — burden-shifting model (<a href="https://www.britishcopyright.org/rightsholders-gain-a-significantly-stronger-litigation-position-as-frances-senate-unanimously-adopts-the-bill-introducing-a-presumption-of-use-of-cultural-content-by-ai-providers/">British Copyright Council</a>; <a href="https://www.jonesday.com/en/insights/2026/05/navigating-copyright-in-the-age-of-generative-ai-eu-french-and-uk-developments-and-approaches">Jones Day</a>).</li>
+<li><strong>UK Government AI Copyright Report (March 18, 2026).</strong> Abandoned proposed TDM opt-out exception; status quo (CDPA applies, no AI safe harbor); 90%+ respondent consensus on training-data disclosure (<a href="https://www.fieldfisher.com/en/services/intellectual-property/intellectual-property-blog/uk-government-maintains-status-quo-on-ai-and-copyr">Fieldfisher</a>; <a href="https://www.reedsmith.com/articles/uk-copyright-and-ai-report-the-opt-out-is-dead-but-what-comes-next/">Reed Smith</a>).</li>
+<li><strong>European Parliament March 10, 2026 Resolution</strong> on copyright and AI.</li>
+</ul>
+<hr />
+<h2>Licensing-Deal Pricing Comparators</h2>
+<ul>
+<li><strong>Anthropic / Bartz settlement:</strong> $1.5B / ~482,460 works = <strong>~$3,000 per work</strong> (effective ~$2,931 after fees).</li>
+<li><strong>Disney–OpenAI (May 2025).</strong> Three-year Sora licensing covering 200+ Disney/Lucasfilm/Marvel characters; <strong>$1B Disney investment</strong> in OpenAI. First major studio-AI licensing framework; functions as fourth-factor market evidence in <em>Disney v. Midjourney</em>.</li>
+<li><strong>NYT–Amazon.</strong> Reportedly <strong>$20–25M</strong> licensing deal.</li>
+<li><strong>Google–Reddit.</strong> Content licensing for training; pricing not public.</li>
+<li><strong>Meta–Publishers (abandoned).</strong> Per <em>Elsevier v. Meta</em> complaint, Meta abandoned a <strong>$200M licensing budget</strong> at Zuckerberg's instruction in April 2023 in favor of LibGen/Anna's Archive piracy.</li>
+<li><strong>Warner Music Group–Suno (November 2025).</strong> Suno to deprecate unlicensed models; new licensed models 2026; download caps for paid accounts; full NIL control retained by WMG artists. First major-label deal with an AI music generator.</li>
+<li><strong>UMG–Udio (October 2025).</strong> Followed by WMG–Udio.</li>
+<li><strong>HarperCollins; Axel Springer; AP–OpenAI; Reuters–Google.</strong> Smaller-dollar licensing deals cited as comparators.</li>
+<li><strong>UK Publishers Association report (March 2026).</strong> Maturing licensing market; AI publisher participation expected to nearly double by year-end; multi-million-pound deals predominantly with U.S. technology firms.</li>
+</ul>
+<hr />
+<h2>Recurring Legal Questions</h2>
+<ol>
+<li><strong>Pirated-copy vs. lawful-copy training.</strong> <em>Bartz</em>'s bifurcated framework — fair use for lawfully acquired training, per se infringement for shadow-library downloads — is being tested in <em>Concord</em>, <em>Elsevier v. Meta</em>, and the OpenAI MDL. The piracy track does not require resolving the fair-use question.</li>
+<li><strong>Group-registration undercounting.</strong> Multiple distinct titles registered under a single Copyright Office group registration collapse into one "claimable Work" under the <em>Bartz</em> distribution methodology. Pinder (Dkt. 648) is the test case; could prompt supplemental briefing or amended distribution.</li>
+<li><strong>Opt-out due process under compressed timing.</strong> Chakanga (Dkt. 649) and the Avery v. TEKsystems (9th Cir., Jan. 28, 2026) framework: sealed records unsealed eight days before deadline. Implicates Rule 23(c)(2)(B).</li>
+<li><strong>Co-owner consent for late opt-outs.</strong> Esquivel (Dkt. 651): Class Counsel's requirement contrasts with Long Form Notice. Excusable neglect under <strong>Pioneer v. Brunswick, 507 U.S. 380</strong>.</li>
+<li><strong>Publisher-author allocation.</strong> Bishop's estimate that publishers may capture ~50%+ under contractual reversion/royalty splits; Sills (Dkt. 600) reports 88/12 publisher-author split proposed by Elsevier. Implicates Rule 23(a)(4) adequacy.</li>
+<li><strong>Foreign-work exclusion.</strong> Despite § 411(a)'s registration exemption for foreign authors. Affects ~2M+ titles. Will drive 18 months of parallel individual filings depending on the court's treatment.</li>
+<li><strong>DMCA § 1202 CMI stripping.</strong> Anthropic's <em>Concord</em> MSJ argues no work in suit has identified CMI removed; the theory is also live in <em>Doe v. GitHub</em> (9th Cir. interlocutory).</li>
+<li><strong>CEO personal liability and D&amp;O coverage.</strong> Concord FAC (Amodei, Mann); <em>Elsevier v. Meta</em> (Zuckerberg). First test cases for post-<em>Cox</em> individual-officer liability.</li>
+<li><strong>Cox v. Sony's effect on AI contributory liability.</strong> Entity-level "mere knowledge" theories functionally retired; "active inducement" route opens individual liability for executives whose contemporaneous communications evidence encouragement of pirate-library ingestion.</li>
+<li><strong>Output-side direct infringement vs. training-side fair use.</strong> Anthropic's <em>Concord</em> MSJ frames inputs (transformative) and outputs (rare, user-provoked) separately. Advance Local v. Cohere "substitutive summaries" doctrine collapses the distinction.</li>
+<li><strong>Books1/Books2 spoliation (OpenAI MDL).</strong> Fed. R. Civ. P. 37(e) analysis. Adverse-inference sanctions on the table.</li>
+<li><strong>Model weights as "infringing copies."</strong> UK Court of Appeal in Getty; first appellate ruling on whether intangible weights are CDPA § 27 "articles." Comparator value for U.S. § 106 reproduction-right theories.</li>
+<li><strong>Statutory override of fair use.</strong> Whether the Blackburn TRUMP AMERICA AI Act fair-use provision (Title XIII/XV) advances before pending fair-use rulings issue.</li>
+<li><strong>Collateral estoppel.</strong> Whether antitrust or piracy findings in one AI docket bind defendants across parallel proceedings.</li>
+</ol>
+<hr />
+<h2>Source Landscape</h2>
+<p><strong>Tier 1 — Wire / business / IP news:</strong> Reuters, Bloomberg Law, Bloomberg, WSJ, FT, Publishers Weekly, Variety, Deadline, Rolling Stone, Fortune, Billboard, NPR, Washington Post (sparingly), Music Business Worldwide, Digital Music News, Music Ally.</p>
+<p><strong>Tier 2 — Trade and practitioner outlets:</strong> AI Business, IP Watchdog, Law360, JDJournal, PYMNTS, FedScoop, LawNext / XIRA, Copyright Lately, ChatGPT Is Eating the World (Franklin Graves), Project DISCO, Chartlex, Winbuzzer.</p>
+<p><strong>Tier 3 — Law-firm and academic-grade commentary:</strong>
+- <strong>Plaintiff/rightsholder oriented or neutral:</strong> Authors Alliance (essential for <em>Bartz</em>), Authors Guild, Copyright Alliance, Banner Witcoff IP Alert, Loeb &amp; Loeb, McKool Smith, Jones Walker, Norton Rose Fulbright, Latham &amp; Watkins, Cooley, Holland &amp; Knight, Arnold &amp; Porter, Snell &amp; Wilmer, Baker Donelson, Mayer Brown, Morgan Lewis, Morrison Foerster, Sterne Kessler, Jones Day, Baker Botts, BakerHostetler (case tracker), Foundation for American Innovation, Sidley.
+- <strong>Defense-side or industry-aligned:</strong> CCIA, Chamber of Progress, NetChoice, AI Progress, Disruptive Competition Project.
+- <strong>Music industry / D&amp;O:</strong> D&amp;O Diary.
+- <strong>International:</strong> Bird &amp; Bird, Taylor Wessing, Lewis Silkin, Wiggin LLP, Burges Salmon, Fieldfisher, Reed Smith, Kluwer Copyright Blog (Wolters Kluwer), IPKat, Osborne Clarke, IP Helpdesk (EC), Chambers and Partners, British Copyright Council.
+- <strong>Settlement/docket primary sources:</strong> anthropiccopyrightsettlement.com (key dates), CourtListener (Andersen, Disney v. Midjourney, OpenAI MDL).
+- <strong>Academic:</strong> NYU JIPEL, Harvard Bankruptcy Roundtable (analog framework), USC Gould (Mozilla Copyforward symposium).
+- <strong>Specialty / niche:</strong> Writer Beware, Playwire, AllAboutLawyer, Remove Your Media, Noah News, Gerben IP, Inside Tech Law.</p>
+<p><strong>Government / official:</strong> U.S. Copyright Office Part 3 Report (May 2025); Senate offices (Blackburn, Welch, Coons, Schiff); AAP press releases; White House National AI Policy Framework (March 20, 2026); CourtListener dockets.</p>
+<p><strong>Excluded sources:</strong> NYT and Al Jazeera (per editorial policy).</p>
+<hr />
+<h2>Watchlist (next 60 days)</h2>
+<ol>
+<li><strong><em>Bartz</em> final-approval order.</strong> Judge Martínez-Olguín's ruling under submission post-May 14. Could issue at any time. Watch for treatment of: Bishop publisher-author allocation theory; Pinder group-registration undercounting; Chakanga opt-out due process; Esquivel co-owner consent. Appellate window opens upon entry of final-approval order.</li>
+<li><strong><em>Bartz</em> distribution computation: June 11, 2026.</strong> Settlement Administrator applies weighted methodology. Disbursement to follow contingent on appeals.</li>
+<li><strong><em>Thomson Reuters v. ROSS</em> oral argument: June 11, 2026.</strong> First federal appellate fair-use argument on AI training. Third Circuit panel's treatment of objective-vs-subjective transformative-purpose distinction under <em>UpCodes</em> will inform every pending docket.</li>
+<li><strong><em>Concord v. Anthropic</em> cross-MSJ hearing: July 15, 2026, Judge Lee, San Jose.</strong> First judicial ruling on whether AI training on music constitutes fair use. Anthropic's DMCA § 1202 argument and the publishers' 218 undisputed facts both in play.</li>
+<li><strong><em>UMG v. Suno</em> MSJ hearing: July 2026, Judge Saylor, D. Mass.</strong> Parallel music-AI test case.</li>
+<li><strong><em>Andersen v. Stability AI</em> trial: September 8, 2026, Judge Orrick.</strong> First U.S. AI visual-arts copyright trial.</li>
+<li><strong>CJEU AG opinion in <em>Like Company v. Google</em>: September 3, 2026.</strong> First binding EU-level guidance on DSM Directive Article 4 TDM and generative AI.</li>
+<li><strong>Getty Images v. Stability AI</strong> at UK Court of Appeal — listing date pending.</li>
+<li><strong>OpenAI MDL.</strong> Continued log production; Books1/Books2 spoliation determination; NYT track summary-judgment briefing mid-2026.</li>
+<li><strong><em>Doe v. GitHub</em></strong> Ninth Circuit interlocutory ruling on DMCA § 1202.</li>
+<li><strong>Legislative calendar.</strong> NO FAKES Act Senate Judiciary subcommittee hearing (May 2026); CLEAR Act and TRAIN Act markup schedule; TRUMP AMERICA AI Act movement; French Senate AI bill's progression through the National Assembly.</li>
+<li><strong>Elsevier v. Meta.</strong> Initial scheduling order; Meta's motion-to-dismiss timing; D&amp;O coverage litigation for Zuckerberg defense.</li>
+<li><strong>Possible new filings.</strong> Carreyrou-pattern opt-out actions; additional shareholder derivative suits along the SEIU v. Adobe Board template; coordinated UK Independent Publishers Guild action (40+ publishers filed February 2026 pre-action letters via Fox Williams LLP).</li>
+<li><strong>Settlement-administration data.</strong> Final claim-count audit; any cy pres treatment; appellate-window triggers.</li>
+</ol>
+<hr />
+<p><strong>Coverage caveats:</strong> The <em>Bartz</em> docket has produced day-by-day filings that may continue to surface reply objections, supplemental authority, and Class Counsel responses through the period the ruling remains under submission. Where advisories across the April 15–May 15 period reflected evolving figures (e.g., per-title payout estimates moving between $2,931 and $3,000, fee petition history $375M → $300M → $187.5M), this baseline records the most recent and authoritative position. The Concord FAC's individual-officer pivot post-<em>Cox</em> is novel and untested; outcomes there will define the post-<em>Cox</em> AI inducement-liability frontier.</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -4,10 +4,20 @@ on:
   schedule:
     # 14:00 UTC = 10:00 AM ET during DST (Mar-Nov), 9:00 AM ET in standard time
     - cron: '0 14 * * *'
-  workflow_dispatch: {}  # allow manual trigger from Actions tab
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Override briefing date (YYYY-MM-DD, optional)"
+        required: false
+        default: ""
+  # Fired by the admin's "Run Now" button via POST /repos/{repo}/dispatches —
+  # works with a fine-grained token that has Contents: write (no Actions
+  # permission needed, unlike workflow_dispatch).
+  repository_dispatch:
+    types: [daily-briefing]
 
 permissions:
-  contents: write  # needed to commit + push generated files back to the repo
+  contents: write  # commit + push generated briefing files back to the repo
 
 concurrency:
   group: daily-briefing
@@ -29,24 +39,30 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
+          cache-dependency-path: briefing-generator/scripts/requirements.txt
 
       - name: Install dependencies
+        working-directory: briefing-generator
         run: |
           pip install --upgrade pip
-          pip install -r briefing-generator/scripts/requirements.txt
+          pip install -r scripts/requirements.txt
 
       - name: Run daily briefing generation
+        working-directory: briefing-generator
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Optional: free CourtListener API token enables live docket pulls.
+          # Without it, the seeded case JSON renders unchanged.
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+          BRIEFING_DATE: ${{ github.event.inputs.date || '' }}
         run: |
-          python briefing-generator/scripts/generate.py
+          python scripts/generate.py
 
       - name: Commit and push if changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "Daily Briefing Bot"
-          git add -A
+          git add briefing-generator
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

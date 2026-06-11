@@ -1,90 +1,64 @@
-# Briefing Generator
+# Turnpage Daily Briefing — hosted site
 
-Daily legal/regulatory briefing generation system for Turnpage Digital Markets.
+Live at: **https://intel.turnpagedigital.com** (Cloudflare Access gated to ag@turnpagedigital.com)
 
-Generates 6 topic-specific dashboards covering:
-- Tariffs / Trade
-- LLM / Copyright
-- Crypto Insolvency
-- Fraud Recovery / Ponzi
-- $1B+ Class Actions & Mass Arbitration
-- Bankruptcy Creditor Rights
+Daily briefing across 7 legal/regulatory topics — tariffs/trade, LLM copyright, crypto insolvency, ponzi/fraud, tech mass arbitration, $1B+ class actions, bankruptcy creditor rights.
 
-## How it Works
+## How it works
 
-1. **Scheduled run** — GitHub Actions runs daily at 10am ET (configurable)
-2. **Generation** — Python script calls Anthropic Claude API for each topic
-3. **Output** — Generates static HTML dashboards to `public/briefing-dashboard/`
-4. **Deploy** — Cloudflare Pages auto-deploys on git push
-5. **Live** — Accessible at `turnpagedigital.com/briefing-dashboard/`
+1. GitHub Actions runs `scripts/generate.py` daily at 10am ET.
+2. The script calls the Anthropic Claude API for each topic, asking it to scan today's developments and produce structured JSON.
+3. JSON gets rendered to HTML using the brand-styling spec in `BRAND_STYLING.md`.
+4. The workflow commits the generated files back to `main`.
+5. Cloudflare Pages auto-deploys on push.
+6. You log in via Cloudflare Access magic-link and read the briefing.
 
-## Structure
+## Setup
 
-```
-briefing-generator/
-├── scripts/
-│   ├── generate.py          # Main generation script
-│   └── requirements.txt     # Python dependencies
-├── config/
-│   ├── topics.yaml          # Topic definitions
-│   ├── sources.md           # Whitelisted/blacklisted news sources
-│   └── prompts.yaml         # Claude prompts (per topic)
-├── templates/
-│   ├── dashboard.html       # Dashboard template
-│   └── components/          # Reusable HTML components
-├── BRAND_STYLING.md         # Design system reference
-└── README.md                # This file
-```
+See **DEPLOY.md** for step-by-step setup instructions.
 
-## Configuration
-
-### Topics (`config/topics.yaml`)
-Define which topics to generate and their voice/tone.
-
-### Sources (`config/sources.md`)
-Whitelist preferred news sources, blacklist unreliable sources.
-
-### Prompts (`config/prompts.yaml`)
-Claude system prompts for each topic. Controls depth, density, and voice.
-
-## Running Manually
+## Local development
 
 ```bash
-# Set your API key
+# Install Python deps
+pip install -r scripts/requirements.txt
+
+# Set the API key
 export ANTHROPIC_API_KEY=sk-ant-...
 
-# Run generation
-python briefing-generator/scripts/generate.py
+# Run a one-off generation
+python scripts/generate.py
 ```
 
-## Outputs
+The script will produce HTML files in each topic dir (`rewind-tariffs/`, `llm-class-action/`, etc.).
 
-Generated files appear in:
-- `public/briefing-dashboard/index.html` — Main landing page
-- `public/briefing-dashboard/<topic>/dashboard.html` — Per-topic pages
+## Brand styling
 
-Individual briefing posts go in:
-- `public/briefings/YYYY-MM-DD-slug.md` — Briefing markdown
+Canonical reference: `BRAND_STYLING.md`. When the styling iterates, update that file. The next run reads the latest spec.
 
-## Triggering from Admin
+## Tracked topics
 
-The admin panel "Run Now" button triggers the GitHub Actions workflow:
-- **Endpoint**: `POST /api/admin/generate-briefing`
-- **Handler**: `functions/api/admin/generate-briefing.js`
-- **Result**: Workflow runs and commits generated files back to repo
+| # | Slug | Display | Voice |
+|---|---|---|---|
+| 01 | `rewind-tariffs` | Tariffs / Trade | trade-law-grade |
+| 02 | `llm-class-action` | LLM / Copyright | litigation-grade |
+| 03 | `crypto-insolvency` | Crypto Insolvency | restructuring-grade |
+| 04 | `fraud-recovery` | Ponzi / Fraud Recovery | recovery-grade |
+| 05 | `tech-mass-arbitration` | Tech Mass Arbitration | litigation-grade |
+| 06 | `billion-dollar-class-actions` | $1B+ Class Actions | litigation-grade |
+| 07 | `bankruptcy-creditor-rights` | Bankruptcy Creditor Rights | restructuring-grade |
+
+## Add / remove a topic
+
+Edit `TOPICS` in `scripts/generate.py`. The list controls which dirs get generated and what's in the nav. Each entry needs `slug`, `display`, `emoji`, `voice`, `themes`, `tier_1_sources`, `tier_3_sources`, `excludes`.
+
+## Logs
+
+GitHub Actions → Daily Briefing Generation workflow → most recent run. The log shows per-topic generation status and any JSON parse failures (saved to `<topic>/_debug-YYYY-MM-DD.txt`).
 
 ## Costs
 
-- GitHub Actions: Free (~2000 min/month included)
-- Anthropic API: ~$1-3/day (~$30-90/month)
-- Cloudflare Pages: Free
-
-## Development
-
-To iterate on the generation logic locally:
-1. Edit `scripts/generate.py` or config files
-2. Run `python briefing-generator/scripts/generate.py`
-3. Review output in `public/briefing-dashboard/`
-4. Commit and push when ready
-
-The GitHub Actions workflow will use the same script, so local testing verifies production behavior.
+- Cloudflare Pages: free
+- Cloudflare Access: free (≤ 50 users)
+- GitHub Actions: free for private repo (≤ 2000 min/month)
+- Anthropic API: ~$1-3/day = ~$30-90/month

@@ -1,19 +1,18 @@
 import { isAuthed, jsonResponse } from "./_utils.js";
 
-/* Generate Briefing endpoint — triggers the daily-briefing workflow in the
-   BRIEFING repo (intel.turnpage.com).
+/* Generate Briefing endpoint — triggers the daily-briefing workflow in THIS
+   repo (the briefing system was consolidated from intel-turnpage into
+   briefing-generator/, June 2026).
 
    POST /api/admin/generate-briefing
-     → Dispatches .github/workflows/daily-briefing.yml in
-       turnpagedigital/intel-turnpage (override via GITHUB_BRIEFING_REPO /
-       GITHUB_BRIEFING_BRANCH — same convention cases.js uses)
-     → That workflow runs scripts/generate.py (Anthropic + CourtListener via
-       the intel repo's Actions secrets) and commits dashboards back
-     → intel.turnpage.com redeploys with the new briefing
+     → Sends a repository_dispatch event ("daily-briefing") to GITHUB_REPO
+     → .github/workflows/daily-briefing.yml (on the default branch) runs
+       briefing-generator/scripts/generate.py and commits the dashboards back
+     → Returns { ok: true, message: "..." }
 
-   Requires (Cloudflare env): GITHUB_TOKEN that can dispatch workflows in the
-   briefing repo — fine-grained PAT with the briefing repo selected and
-   "Actions: Read and write" (classic PATs: 'repo' + 'workflow' scopes).
+   Why repository_dispatch instead of workflow_dispatch: it only needs the
+   fine-grained "Contents: Read and write" permission the admin token already
+   uses for every save — no extra Actions permission to get wrong.
 
    Auth required (session cookie).
 */
@@ -27,54 +26,53 @@ export async function onRequestPost({ request, env }) {
   if (!githubToken) {
     return jsonResponse({
       ok: false,
-      error: "Briefing generation not configured. Please set GITHUB_TOKEN in Cloudflare environment with access to the briefing repo.",
+      error: "Briefing generation not configured. Please set GITHUB_TOKEN in Cloudflare environment.",
     }, 500);
   }
 
-  const repo = env.GITHUB_BRIEFING_REPO || "turnpagedigital/intel-turnpage";
-  const ref  = env.GITHUB_BRIEFING_BRANCH || "main";
+  const repo = env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main";
 
   try {
-    const dispatchUrl = `https://api.github.com/repos/${repo}/actions/workflows/daily-briefing.yml/dispatches`;
-
-    const response = await fetch(dispatchUrl, {
+    const response = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
       method: "POST",
       headers: {
         "Accept": "application/vnd.github+json",
         "Authorization": `Bearer ${githubToken}`,
         "X-GitHub-Api-Version": "2022-11-28",
         "Content-Type": "application/json",
+        "User-Agent": "tpdm-admin",
       },
-      body: JSON.stringify({ ref, inputs: {} }),
+      body: JSON.stringify({ event_type: "daily-briefing" }),
     });
 
-    if (!response.ok) {
-      const responseText = await response.text().catch(() => "");
-      console.error(`GitHub dispatch returned ${response.status}: ${responseText}`);
+    // Success is 204 No Content
+    if (response.status === 204) {
+      return jsonResponse({
+        ok: true,
+        message: `✅ Briefing generation triggered! Monitor progress at https://github.com/${repo}/actions — takes ~10–15 minutes, then the updated dashboards are committed to briefing-generator/.`,
+      });
+    }
 
-      if (response.status === 401 || response.status === 403) {
-        return jsonResponse({
-          ok: false,
-          error: `GitHub authentication failed. The GITHUB_TOKEN must have access to ${repo} with "Actions: Read and write" permission (fine-grained) or 'repo' + 'workflow' scopes (classic).`,
-        }, 403);
-      }
-      if (response.status === 404) {
-        return jsonResponse({
-          ok: false,
-          error: `GitHub can't find the workflow in ${repo}. Either the token has no access to that repo (fine-grained tokens must list it under Repository access) or daily-briefing.yml is missing on ${ref}.`,
-        }, 404);
-      }
+    const responseText = await response.text().catch(() => "");
+    console.error(`GitHub dispatch returned ${response.status}: ${responseText}`);
 
+    if (response.status === 401 || response.status === 403) {
       return jsonResponse({
         ok: false,
-        error: `GitHub returned ${response.status}. The workflow may already be running or the request was rejected.`,
-      }, response.status >= 500 ? 502 : 400);
+        error: `GitHub authentication failed. The GITHUB_TOKEN must have "Contents: Read and write" on ${repo} (the same permission admin saves use).`,
+      }, 403);
+    }
+    if (response.status === 404) {
+      return jsonResponse({
+        ok: false,
+        error: `GitHub can't find ${repo} with this token — fine-grained tokens must list it under Repository access.`,
+      }, 404);
     }
 
     return jsonResponse({
-      ok: true,
-      message: `✅ Briefing generation triggered! Monitor progress at https://github.com/${repo}/actions — the updated dashboard appears on intel.turnpage.com in ~5–15 minutes.`,
-    });
+      ok: false,
+      error: `GitHub returned ${response.status}. ${responseText.slice(0, 140)}`,
+    }, response.status >= 500 ? 502 : 400);
   } catch (error) {
     console.error("Generate briefing error:", error.message);
     return jsonResponse({

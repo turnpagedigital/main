@@ -1,0 +1,26 @@
+# HTML shells must never be cached long-term: they reference hashed asset
+# filenames that change on every deploy. Caching them causes stale HTML to
+# request bundles that no longer exist, which Cloudflare serves as index.html
+# (text/html), breaking the module-script MIME check and blanking the page.
+/
+  Cache-Control: no-cache, must-revalidate
+
+/index.html
+  Cache-Control: no-cache, must-revalidate
+
+/admin.html
+  Cache-Control: no-cache, must-revalidate
+
+# Vite emits content-hashed filenames for assets, so they're safe to cache
+# forever. New deploys get new hashes.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com https://cdn.stat-track.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://images.unsplash.com https://*.googleusercontent.com https://www.google.com https://googleads.g.doubleclick.net; connect-src 'self' https://eorvwzbvsgxillflanae.supabase.co wss://eorvwzbvsgxillflanae.supabase.co https://www.google-analytics.com https://cdn.stat-track.com https://region1.google-analytics.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://forms.m-pages.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-XSS-Protection: 1; mode=block

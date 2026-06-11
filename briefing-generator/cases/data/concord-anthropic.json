@@ -1,0 +1,43 @@
+{
+  "case": {
+    "slug": "concord-anthropic",
+    "display_name": "Concord Music Group v. Anthropic",
+    "case_name": "Concord Music Group, Inc., et al. v. Anthropic PBC",
+    "court": "M.D. Tenn. → N.D. Cal.",
+    "court_id": "cand",
+    "case_number": "(music-publisher parallel docket)",
+    "judge": "",
+    "docket_id": "",
+    "status": "Cross-MSJ pending · awaiting first docket sync"
+  },
+  "docket": {
+    "source": "seed",
+    "awaiting_sync": true,
+    "docket_url": "",
+    "fetched_at": "2026-05-14T00:00:00Z",
+    "as_of": "May 14, 2026",
+    "new_in_72h": 0,
+    "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-22",
+        "date_display": "Apr 22, 2026",
+        "description": "Last known public filing — Anthropic cross-motion for summary judgment (fair use).",
+        "is_new": false,
+        "landmark": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-22",
+        "date_display": "Apr 22, 2026",
+        "description": "Last known public filing — Anthropic cross-motion for summary judgment (fair use).",
+        "is_new": false,
+        "landmark": ""
+      }
+    ]
+  },
+  "claims_administrator": null,
+  "coverage": []
+}

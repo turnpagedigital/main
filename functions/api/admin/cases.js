@@ -5,8 +5,11 @@
    docket/claims info (refreshed by the briefing pipeline; not touched here on
    create beyond seeding).
 
-   Reads/writes target the BRIEFING repo (daily-briefing-site) on its own
-   branch (default "main"), independent of the main site's GITHUB_BRANCH.
+   The briefing system was consolidated into THIS repo under
+   briefing-generator/ (June 2026) — reads/writes target
+   briefing-generator/cases/ on the branch the pipeline commits to
+   (default "main", the repo's default branch, where the daily workflow
+   runs), independent of the main site's GITHUB_BRANCH.
 
    On update we regenerate only the MODELED front-matter fields and re-attach
    any unmodeled blocks (e.g. research:, alert_cadence:) and the markdown body
@@ -22,8 +25,9 @@ import {
   listDirFromGitHub,
 } from "./_github.js";
 
-const REPO_BRIEFING = "turnpagedigital/intel-turnpage";
+function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main"; }
 function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
+const CASES_DIR = "briefing-generator/cases";
 
 // 6 default themes — returned for convenience; the UI prefers /api/admin/themes.
 const TOPICS = [
@@ -310,7 +314,7 @@ function generateSeedJson(c) {
 
 async function listCases(env) {
   const branch = briefingBranch(env);
-  const dir = await listDirFromGitHub(env, "cases", REPO_BRIEFING, branch);
+  const dir = await listDirFromGitHub(env, CASES_DIR, briefingRepo(env), branch);
   if (!dir.ok) {
     // Don't hard-fail the tab if the dir/repo is unreachable — surface a warning.
     return { ok: true, cases: [], topics: TOPICS, warning: dir.error };
@@ -321,7 +325,7 @@ async function listCases(env) {
   );
   const cases = [];
   for (const f of mdFiles) {
-    const r = await getFileFromGitHub(env, f.path, null, REPO_BRIEFING, branch);
+    const r = await getFileFromGitHub(env, f.path, null, briefingRepo(env), branch);
     if (!r.ok) continue;
     const slug = f.name.replace(/\.md$/, "");
     const parsed = parseCaseMd(r.text, slug);
@@ -354,18 +358,18 @@ export async function onRequest({ request, env }) {
     const err = validateCase(c);
     if (err) return jsonResponse({ ok: false, error: err }, 400);
 
-    const mdPath = `cases/${c.slug}.md`;
-    const exists = await getFileSha(env, mdPath, REPO_BRIEFING, branch);
+    const mdPath = `${CASES_DIR}/${c.slug}.md`;
+    const exists = await getFileSha(env, mdPath, briefingRepo(env), branch);
     if (exists) return jsonResponse({ ok: false, error: "A case with that slug already exists" }, 400);
 
     const md = buildCaseMarkdown(c, "", "");
-    const mdRes = await commitFileToGitHub(env, mdPath, md, null, `Add case: ${c.display_name}`, REPO_BRIEFING, branch);
+    const mdRes = await commitFileToGitHub(env, mdPath, md, null, `Add case: ${c.display_name}`, briefingRepo(env), branch);
     if (!mdRes.ok) return jsonResponse({ ok: false, error: `Failed to create case file: ${mdRes.error}` }, 500);
 
-    const jsonPath = `cases/data/${c.slug}.json`;
+    const jsonPath = `${CASES_DIR}/data/${c.slug}.json`;
     const jsonRes = await commitFileToGitHub(
       env, jsonPath, JSON.stringify(generateSeedJson(c), null, 2) + "\n", null,
-      `Add case data: ${c.display_name}`, REPO_BRIEFING, branch
+      `Add case data: ${c.display_name}`, briefingRepo(env), branch
     );
     if (!jsonRes.ok) return jsonResponse({ ok: false, error: `Failed to create case data: ${jsonRes.error}` }, 500);
 
@@ -377,19 +381,19 @@ export async function onRequest({ request, env }) {
     const err = validateCase(c);
     if (err) return jsonResponse({ ok: false, error: err }, 400);
 
-    const mdPath = `cases/${c.slug}.md`;
-    const existing = await getFileFromGitHub(env, mdPath, null, REPO_BRIEFING, branch);
+    const mdPath = `${CASES_DIR}/${c.slug}.md`;
+    const existing = await getFileFromGitHub(env, mdPath, null, briefingRepo(env), branch);
     if (!existing.ok) return jsonResponse({ ok: false, error: "Case not found" }, 404);
 
     // Preserve unmodeled front-matter blocks + the markdown body verbatim.
     const prev = parseCaseMd(existing.text, c.slug);
     const md = buildCaseMarkdown(c, prev._preserved, prev._body);
-    const mdRes = await commitFileToGitHub(env, mdPath, md, existing.sha, `Update case: ${c.display_name}`, REPO_BRIEFING, branch);
+    const mdRes = await commitFileToGitHub(env, mdPath, md, existing.sha, `Update case: ${c.display_name}`, briefingRepo(env), branch);
     if (!mdRes.ok) return jsonResponse({ ok: false, error: `Failed to update case file: ${mdRes.error}` }, 500);
 
     // Merge the modeled metadata into the data JSON, preserving live docket + coverage.
-    const jsonPath = `cases/data/${c.slug}.json`;
-    const cur = await getFileFromGitHub(env, jsonPath, null, REPO_BRIEFING, branch);
+    const jsonPath = `${CASES_DIR}/data/${c.slug}.json`;
+    const cur = await getFileFromGitHub(env, jsonPath, null, briefingRepo(env), branch);
     if (cur.ok && cur.data) {
       const updated = generateSeedJson(c);
       if (cur.data.docket && cur.data.docket.source !== "seed") {
@@ -398,7 +402,7 @@ export async function onRequest({ request, env }) {
       if (Array.isArray(cur.data.coverage)) updated.coverage = cur.data.coverage;
       const jr = await commitFileToGitHub(
         env, jsonPath, JSON.stringify(updated, null, 2) + "\n", cur.sha,
-        `Update case data: ${c.display_name}`, REPO_BRIEFING, branch
+        `Update case data: ${c.display_name}`, briefingRepo(env), branch
       );
       if (!jr.ok) return jsonResponse({ ok: false, error: `Failed to update case data: ${jr.error}` }, 500);
     }
@@ -411,17 +415,17 @@ export async function onRequest({ request, env }) {
     if (!slug || !isValidSlug(slug)) {
       return jsonResponse({ ok: false, error: "Invalid slug parameter" }, 400);
     }
-    const mdPath = `cases/${slug}.md`;
-    const jsonPath = `cases/data/${slug}.json`;
-    const mdSha = await getFileSha(env, mdPath, REPO_BRIEFING, branch);
+    const mdPath = `${CASES_DIR}/${slug}.md`;
+    const jsonPath = `${CASES_DIR}/data/${slug}.json`;
+    const mdSha = await getFileSha(env, mdPath, briefingRepo(env), branch);
     if (!mdSha) return jsonResponse({ ok: false, error: "Case not found" }, 404);
 
-    const del = await deleteFileFromGitHub(env, mdPath, mdSha, `Remove case: ${slug}`, REPO_BRIEFING, branch);
+    const del = await deleteFileFromGitHub(env, mdPath, mdSha, `Remove case: ${slug}`, briefingRepo(env), branch);
     if (!del.ok) return jsonResponse({ ok: false, error: "Failed to delete case file" }, 500);
 
-    const jsonSha = await getFileSha(env, jsonPath, REPO_BRIEFING, branch);
+    const jsonSha = await getFileSha(env, jsonPath, briefingRepo(env), branch);
     if (jsonSha) {
-      await deleteFileFromGitHub(env, jsonPath, jsonSha, `Remove case data: ${slug}`, REPO_BRIEFING, branch);
+      await deleteFileFromGitHub(env, jsonPath, jsonSha, `Remove case data: ${slug}`, briefingRepo(env), branch);
     }
     return jsonResponse({ ok: true });
   }

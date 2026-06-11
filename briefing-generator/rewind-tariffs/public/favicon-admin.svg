@@ -1,0 +1,16 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="40" height="40" rx="9" fill="#0c0e1a"/>
+  <!-- Vertical stem (right side of R) -->
+  <path d="M26 6 L26 34" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Top curve going left into arrow -->
+  <path d="M26 10 C26 6, 22 4, 17 4 L10 4" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Left arrow head top -->
+  <path d="M14 0 L8 4 L14 8" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Middle horizontal bar curving left -->
+  <path d="M26 20 C22 20, 18 19, 14 19 L10 19" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Middle left arrow head -->
+  <path d="M14 15 L8 19 L14 23" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Small diagonal kick bottom-right -->
+  <path d="M26 28 L32 36" stroke="#fff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M29 36 L33 36 L33 32" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
