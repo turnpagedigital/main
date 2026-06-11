@@ -73,3 +73,19 @@ test("exact-match only — /crypto does not touch /crypto-faq", () => {
   const nav = { items: [{ id: "x", label: "X", href: "/crypto-faq" }], microsites: {} };
   assert.deepEqual(detectRouteReferences("/crypto", "/digital-assets", nav), []);
 });
+
+test("anchored hrefs (/page#section) are detected and rewritten with the anchor preserved", () => {
+  const nav = {
+    items: [
+      { id: "a", label: "Crypto How", href: "/crypto#sec-how-it-works" },
+      { id: "b", label: "Other", href: "/crypto-adjacent" },
+    ],
+    microsites: {},
+  };
+  const refs = detectRouteReferences("/crypto", "/digital-assets", nav);
+  assert.equal(refs.length, 1);
+  const updated = applyRouteReferences(nav, refs);
+  assert.equal(updated.items[0].href, "/digital-assets#sec-how-it-works");
+  // prefix-similar paths must NOT be rewritten
+  assert.equal(updated.items[1].href, "/crypto-adjacent");
+});

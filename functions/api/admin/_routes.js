@@ -1,6 +1,20 @@
 /* Route-reference detection helpers for cascade updates.
    Used by routes.js to find all references to a path in nav.json. */
 
+/* Hrefs may carry a section bookmark ("/page#section") — a rename of /page
+   must catch and rewrite those too, preserving the anchor. */
+function matchesPath(href, oldPath) {
+  return href === oldPath ||
+    (typeof href === "string" && href.startsWith(oldPath + "#"));
+}
+function rewriteHref(href, oldPath, newPath) {
+  if (href === oldPath) return newPath;
+  if (typeof href === "string" && href.startsWith(oldPath + "#")) {
+    return newPath + href.slice(oldPath.length);
+  }
+  return href;
+}
+
 /**
  * Scan navData for references to oldPath and return a list of changes
  * that would be made if the path were renamed to newPath.
@@ -15,7 +29,7 @@ export function detectRouteReferences(oldPath, newPath, navData) {
 
   // Nav items
   (navData.items || []).forEach((item, _idx) => {
-    if (item.href === oldPath) {
+    if (matchesPath(item.href, oldPath)) {
       refs.push({
         type: "nav-item-href",
         location: `Nav item "${item.label || item.id}"`,
@@ -25,7 +39,7 @@ export function detectRouteReferences(oldPath, newPath, navData) {
     }
     // Dropdown links
     (item.dropdown?.links || []).forEach((link, li) => {
-      if (link.href === oldPath) {
+      if (matchesPath(link.href, oldPath)) {
         refs.push({
           type: "nav-dropdown-link",
           location: `Nav "${item.label}" → dropdown link "${link.label || li}"`,
@@ -34,7 +48,7 @@ export function detectRouteReferences(oldPath, newPath, navData) {
         });
       }
     });
-    if (item.dropdown?.cta?.href === oldPath) {
+    if (matchesPath(item.dropdown?.cta?.href, oldPath)) {
       refs.push({
         type: "nav-dropdown-cta",
         location: `Nav "${item.label}" → dropdown CTA`,
@@ -46,7 +60,7 @@ export function detectRouteReferences(oldPath, newPath, navData) {
 
   // Microsite navs
   Object.entries(navData.microsites || {}).forEach(([key, microsite]) => {
-    if (microsite.brand?.href === oldPath) {
+    if (matchesPath(microsite.brand?.href, oldPath)) {
       refs.push({
         type: "microsite-brand",
         location: `Microsite "${key}" → brand link`,
@@ -55,7 +69,7 @@ export function detectRouteReferences(oldPath, newPath, navData) {
       });
     }
     (microsite.items || []).forEach((item, idx) => {
-      if (item.href === oldPath) {
+      if (matchesPath(item.href, oldPath)) {
         refs.push({
           type: "microsite-item",
           location: `Microsite "${key}" → item "${item.label || idx}"`,
@@ -64,7 +78,7 @@ export function detectRouteReferences(oldPath, newPath, navData) {
         });
       }
     });
-    if (microsite.cta?.href === oldPath) {
+    if (matchesPath(microsite.cta?.href, oldPath)) {
       refs.push({
         type: "microsite-cta",
         location: `Microsite "${key}" → CTA`,
@@ -91,43 +105,43 @@ export function applyRouteReferences(navData, changes) {
     switch (change.type) {
       case "nav-item-href":
         (updated.items || []).forEach(item => {
-          if (item.href === change.old) item.href = change.new;
+          item.href = rewriteHref(item.href, change.old, change.new);
         });
         break;
 
       case "nav-dropdown-link":
         (updated.items || []).forEach(item => {
           (item.dropdown?.links || []).forEach(link => {
-            if (link.href === change.old) link.href = change.new;
+            link.href = rewriteHref(link.href, change.old, change.new);
           });
         });
         break;
 
       case "nav-dropdown-cta":
         (updated.items || []).forEach(item => {
-          if (item.dropdown?.cta?.href === change.old) {
-            item.dropdown.cta.href = change.new;
+          if (item.dropdown?.cta) {
+            item.dropdown.cta.href = rewriteHref(item.dropdown.cta.href, change.old, change.new);
           }
         });
         break;
 
       case "microsite-brand":
         Object.values(updated.microsites || {}).forEach(ms => {
-          if (ms.brand?.href === change.old) ms.brand.href = change.new;
+          if (ms.brand) ms.brand.href = rewriteHref(ms.brand.href, change.old, change.new);
         });
         break;
 
       case "microsite-item":
         Object.values(updated.microsites || {}).forEach(ms => {
           (ms.items || []).forEach(item => {
-            if (item.href === change.old) item.href = change.new;
+            item.href = rewriteHref(item.href, change.old, change.new);
           });
         });
         break;
 
       case "microsite-cta":
         Object.values(updated.microsites || {}).forEach(ms => {
-          if (ms.cta?.href === change.old) ms.cta.href = change.new;
+          if (ms.cta) ms.cta.href = rewriteHref(ms.cta.href, change.old, change.new);
         });
         break;
     }

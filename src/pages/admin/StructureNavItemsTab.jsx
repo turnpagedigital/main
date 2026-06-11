@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
+import sectionTypesData from "../../data/section-types.json";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    StructureNavItemsTab — Main Navigation Items only
@@ -25,6 +26,28 @@ function emptyLink() {
   return { label: "", href: "/" };
 }
 
+// ── Section-bookmark helpers ────────────────────────────────────────────
+// Nav hrefs may be "/page#section-anchor". Split for the two-dropdown picker.
+function splitHref(href) {
+  const s = typeof href === "string" ? href : "";
+  const i = s.indexOf("#");
+  return i === -1 ? { path: s, anchor: "" } : { path: s.slice(0, i), anchor: s.slice(i + 1) };
+}
+function joinHref(path, anchor) {
+  return anchor ? `${path}#${anchor}` : path;
+}
+
+const TYPE_LABELS = Object.fromEntries(
+  (sectionTypesData.sectionTypes || []).map(t => [t.id, t.displayName])
+);
+
+function sectionLabel(sec) {
+  const type = TYPE_LABELS[sec.type] || sec.type;
+  const c = sec.content || {};
+  const title = (c.title || c.eyebrow || "").toString().trim();
+  return title ? `${type} — ${title.slice(0, 36)}` : type;
+}
+
 // ── Main Component ──────────────────────────────────────────────────────
 export default function StructureNavItemsTab({ onDirtyChange }) {
   // ── Navigation items state ────────────────────────────────────────────
@@ -34,6 +57,8 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
 
   // ── Pages state (dynamically fetched for href picker) ────────────────────
   const [pages, setPages] = useState([]);
+  // path → [{ anchor, label }] for the "jump to section" picker
+  const [sectionsByPath, setSectionsByPath] = useState({});
 
   // ── Shared ────────────────────────────────────────────────────────────
   const [phase,        setPhase]        = useState("loading");
@@ -81,11 +106,35 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
         // Routes fetch failed — continue with empty pages list
       }
 
+      // Fetch page compositions (optional — powers the section-bookmark picker)
+      let byPath = {};
+      try {
+        const compRes = await fetch("/api/admin/page-compositions", { credentials: "include" });
+        if (compRes.ok) {
+          const compBody = await compRes.json();
+          const compPages = compBody?.data?.pages || compBody?.pages || [];
+          const keyToPath = Object.fromEntries(pageList.map(pg => [pg.key, pg.path]));
+          for (const pg of compPages) {
+            const path = keyToPath[pg.pageKey];
+            if (!path) continue;
+            byPath[path] = (pg.sections || [])
+              .filter(sec => sec.visible !== false)
+              .map(sec => ({
+                anchor: ((sec.content || {})._bookmark || "").trim() || sec.id,
+                label: sectionLabel(sec),
+              }));
+          }
+        }
+      } catch {
+        // Compositions fetch failed — picker simply shows "Top of page" only
+      }
+
       setItems(fetchedItems);
       setOriginalItems(JSON.parse(JSON.stringify(fetchedItems)));
       setPassThroughMicrosites(fetchedMicrosites);
       setOriginalMicrosites(JSON.parse(JSON.stringify(fetchedMicrosites)));
       setPages(pageList);
+      setSectionsByPath(byPath);
 
       setPhase("ready");
     } catch (e) { setError(e.message); setPhase("error"); }
@@ -263,6 +312,7 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
             index={index}
             total={items.length}
             pages={pages}
+            sectionsByPath={sectionsByPath}
             microsite={passThroughMicrosites?.[item.id] || null}
             onUpdate={patch => update(index, patch)}
             onMoveUp={() => moveUp(index)}
@@ -311,6 +361,7 @@ export default function StructureNavItemsTab({ onDirtyChange }) {
 function NavRow({
   item, index, total,
   pages = [],
+  sectionsByPath = {},
   microsite,
   onUpdate, onMoveUp, onMoveDown, onRemove,
   onToggleDropdown, onUpdateDropdown,
@@ -321,10 +372,15 @@ function NavRow({
   const [dropOpen, setDropOpen] = useState(false);
   const [micrositeOpen, setMicrositeOpen] = useState(Boolean(microsite)); // Open if microsite already exists
   const [micrositeEnabled, setMicrositeEnabled] = useState(Boolean(microsite));
-  // Auto-detect mode: "internal" if href matches a known internal path, else "external"
+  // Hrefs may carry a #section bookmark — split so an anchored internal link
+  // still counts as internal.
+  const { path: hrefPath, anchor: hrefAnchor } = splitHref(item.href);
+  // Auto-detect mode: "internal" if the path part matches a known internal page
   const [hrefMode, setHrefMode] = useState(
-    () => internalPaths.has(item.href) ? "internal" : "external"
+    () => internalPaths.has(splitHref(item.href).path) ? "internal" : "external"
   );
+  const pageSections = sectionsByPath[hrefPath] || [];
+  const anchorKnown = !hrefAnchor || pageSections.some(s => s.anchor === hrefAnchor);
   const labelEmpty = !item.label.trim();
   const hrefEmpty  = !item.href.trim();
   const hasDropdown = Boolean(item.dropdown);
@@ -412,15 +468,31 @@ function NavRow({
             </div>
           </div>
           {hrefMode === "internal" ? (
-            <select
-              value={item.href}
-              onChange={e => onUpdate({ href: e.target.value })}
-              style={{ ...selectStyle, marginTop: 0, borderColor: hrefEmpty ? "#e08080" : undefined }}
-            >
-              {pages.map(p => (
-                <option key={p.key} value={p.path}>{p.label} — {p.path}</option>
-              ))}
-            </select>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+              <select
+                value={hrefPath}
+                onChange={e => onUpdate({ href: e.target.value })}
+                style={{ ...selectStyle, marginTop: 0, borderColor: hrefEmpty ? "#e08080" : undefined }}
+              >
+                {pages.map(p => (
+                  <option key={p.key} value={p.path}>{p.label} — {p.path}</option>
+                ))}
+              </select>
+              <select
+                value={hrefAnchor}
+                onChange={e => onUpdate({ href: joinHref(hrefPath, e.target.value) })}
+                style={{ ...selectStyle, marginTop: 0 }}
+                title="Optional: link to a specific section on the page"
+              >
+                <option value="">Top of page</option>
+                {pageSections.map(s => (
+                  <option key={s.anchor} value={s.anchor}>↳ {s.label}</option>
+                ))}
+                {!anchorKnown && (
+                  <option value={hrefAnchor}>↳ custom anchor: #{hrefAnchor}</option>
+                )}
+              </select>
+            </div>
           ) : (
             <input
               type="text"

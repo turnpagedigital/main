@@ -59,10 +59,12 @@ export default function PageRenderer({ pageKey }) {
         const c = section.content || {};
         // Optional spacing/size overrides set in the page builder
         const wrapStyle = buildWrapStyle(c);
-        // Use custom bookmark if set, otherwise fall back to section ID
+        // Use custom bookmark if set, otherwise fall back to section ID.
+        // scrollMarginTop keeps anchored sections clear of the fixed nav
+        // when a #bookmark link scrolls to them.
         const sectionId = (c._bookmark && c._bookmark.trim()) || section.id;
         return (
-          <div key={section.id} id={sectionId} style={wrapStyle || undefined}>
+          <div key={section.id} id={sectionId} style={{ scrollMarginTop: "98px", ...(wrapStyle || {}) }}>
             <Component sectionConfig={section} pageKey={pageKey} />
           </div>
         );

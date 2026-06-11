@@ -61,6 +61,17 @@ const TITLES = {
 // bar, nav, footer). Admin is a standalone app shell.
 const STANDALONE_PAGES = new Set(["admin"]);
 
+/* Scroll to a section anchor, retrying while the target page mounts —
+   lazy-loaded route chunks can take well over one tick on cold loads. */
+function scrollToAnchor(id, attempt = 0) {
+  const target = document.getElementById(id);
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    return;
+  }
+  if (attempt < 30) setTimeout(() => scrollToAnchor(id, attempt + 1), 100);
+}
+
 export default function App() {
   const { route } = useRoute();
 
@@ -130,18 +141,18 @@ export default function App() {
       const path = url.pathname + url.search + url.hash;
       navigate(path);
 
-      // If the URL has a #section anchor, scroll to it after the route renders.
-      if (url.hash) {
-        // Wait a tick so the new page has a chance to mount the target element.
-        setTimeout(() => {
-          const id = url.hash.slice(1);
-          const target = document.getElementById(id);
-          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 50);
-      }
+      // If the URL has a #section anchor, scroll to it after the route renders
+      // (retries while lazy page chunks load).
+      if (url.hash) scrollToAnchor(url.hash.slice(1));
     }
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
+  }, []);
+
+  // Direct loads of an anchored URL (e.g. a shared /crypto#section link):
+  // the browser can't scroll to an element React hasn't mounted yet.
+  useEffect(() => {
+    if (window.location.hash) scrollToAnchor(window.location.hash.slice(1));
   }, []);
 
   const standalone = STANDALONE_PAGES.has(route.page);
