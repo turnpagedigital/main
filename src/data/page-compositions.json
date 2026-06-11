@@ -287,10 +287,10 @@
                 "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you."
               }
             ],
-            "cardStyle": "clear-glass",
-            "cardRadius": "rounded",
+            "cardStyle": "liquid-glass",
+            "cardRadius": "square",
             "_bookmark": "how-we-help",
-            "backgroundImage": "/metalarray.jpg"
+            "backgroundImage": ""
           }
         },
         {
