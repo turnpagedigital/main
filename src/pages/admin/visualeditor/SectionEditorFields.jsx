@@ -225,6 +225,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
                 <option value="light-glass">Light Glass</option>
                 <option value="clear-glass">Clear Glass</option>
                 <option value="neon-glass">Neon Glass (Green)</option>
+                <option value="liquid-glass">Liquid Glass (refractive)</option>
               </select>
             </div>
           </div>
@@ -267,7 +268,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
                 <option value="light-glass">Light Glass</option>
                 <option value="clear-glass">Clear Glass</option>
                 <option value="neon-glass">Neon Glass (Green)</option>
-                <option value="liquid-glass">Liquid Glass (Legacy)</option>
+                <option value="liquid-glass">Liquid Glass (refractive)</option>
               </select>
             </div>
           </div>
@@ -314,6 +315,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
                 <option value="light-glass">Light Glass</option>
                 <option value="clear-glass">Clear Glass</option>
                 <option value="neon-glass">Neon Glass (Green)</option>
+                <option value="liquid-glass">Liquid Glass (refractive)</option>
               </select>
             </div>
             <div><label style={labelStyle}>Card Radius</label>

@@ -1,6 +1,7 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import Card from "../Card.jsx";
+import LiquidGlassCard from "../LiquidGlassCard.jsx";
 
 /* AudienceCardsSection — "Who We Help"
    Inline section: content lives in page-compositions.json sectionConfig.content.
@@ -69,6 +70,22 @@ export default function AudienceCardsSection({ sectionConfig }) {
         {isList ? (
           <div style={{ display: "flex", flexDirection: "column", gap: "1px", background: colorScheme === "dark" ? "rgba(255,255,255,0.08)" : LINE }}>
             {cards.map(card => <AudienceListRow key={card.id} card={card} dark={colorScheme === "dark"} />)}
+          </div>
+        ) : cardStyle === "liquid-glass" ? (
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: cols,
+            gap: "clamp(1.5rem, 2.5vw, 2rem)",
+          }} className="audience-grid">
+            {cards.map(card => (
+              <LiquidGlassCard
+                key={card.id}
+                title={card.title}
+                description={card.body}
+                subtitle={card.badge && card.badge.trim() ? card.badge : undefined}
+                variant={colorScheme === "dark" ? "dark" : "light"}
+              />
+            ))}
           </div>
         ) : ["white", "black", "light-gray", "dark", "light-glass", "clear-glass", "neon", "neon-glass"].includes(cardStyle) ? (
           <div style={{

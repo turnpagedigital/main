@@ -1,6 +1,7 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60 } from "../../data/tokens.js";
 import Card from "../Card.jsx";
+import LiquidGlassCard from "../LiquidGlassCard.jsx";
 
 /* HowItWorksSection — numbered step sequence.
    Inline section: content lives in page-compositions.json sectionConfig.content.
@@ -82,7 +83,30 @@ export default function HowItWorksSection({ sectionConfig }) {
         </div>
 
         {/* Steps grid */}
-        {["white", "black", "light-gray", "dark", "light-glass", "clear-glass", "neon", "neon-glass"].includes(cardStyle) ? (
+        {cardStyle === "liquid-glass" ? (
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,
+            gap: "clamp(1.5rem, 2.5vw, 2rem)",
+          }} className="steps-grid">
+            {steps.map(step => (
+              <LiquidGlassCard
+                key={step.n || step.id}
+                title={step.title}
+                description={step.body}
+                icon={(
+                  <span style={{
+                    fontFamily: FONT, fontWeight: 800, letterSpacing: "-0.04em",
+                    color: NEON, fontSize: "clamp(2rem, 3.5vw, 3rem)", lineHeight: 1,
+                  }}>
+                    {step.n}
+                  </span>
+                )}
+                variant={isDark ? "dark" : "light"}
+              />
+            ))}
+          </div>
+        ) : ["white", "black", "light-gray", "dark", "light-glass", "clear-glass", "neon", "neon-glass"].includes(cardStyle) ? (
           <div style={{
             display: "grid",
             gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,
