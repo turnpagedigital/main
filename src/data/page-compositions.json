@@ -885,7 +885,7 @@
             "layout": "layout-2-banner",
             "colorScheme": "photo",
             "eyebrow": "Get in Touch",
-            "title": "Read what we're reading.",
+            "title": "Follow the latest situations.",
             "accent": "Talk to us.",
             "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
             "primary": {
@@ -893,9 +893,9 @@
               "href": "/contact"
             },
             "secondary": null,
-            "cta": "Subscribe to briefings",
+            "cta": "Read our briefings",
             "image": "/library/joel-filipe-pyhpjejuyhy-unsplash.jpg",
-            "href": "/press?type=briefings"
+            "href": "/press?topic=litigation-funding&type=briefings"
           }
         },
         {
