@@ -538,7 +538,8 @@
               }
             ],
             "_bookmark": "how-we-help",
-            "cardStyle": "clear-glass"
+            "cardStyle": "standard",
+            "cardRadius": "square"
           }
         },
         {
