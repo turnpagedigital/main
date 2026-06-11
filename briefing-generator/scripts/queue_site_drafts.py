@@ -23,7 +23,7 @@ import re
 import sys
 from pathlib import Path
 
-# Site-relevant topics → queue entry conventions
+# All six briefing topics → queue entry conventions
 TOPICS = [
     {
         "folder": "llm-class-action",
@@ -36,6 +36,30 @@ TOPICS = [
         "slug_suffix": "crypto-advisory",
         "title_prefix": "Crypto Insolvency Advisory",
         "tags": ["Crypto", "Insolvency", "Advisory"],
+    },
+    {
+        "folder": "rewind-tariffs",
+        "slug_suffix": "tariff-advisory",
+        "title_prefix": "Tariffs / Trade Advisory",
+        "tags": ["Tariffs", "IEEPA", "Advisory"],
+    },
+    {
+        "folder": "fraud-recovery",
+        "slug_suffix": "fraud-advisory",
+        "title_prefix": "Fraud Recovery Advisory",
+        "tags": ["Fraud", "Recovery", "Advisory"],
+    },
+    {
+        "folder": "billion-dollar-class-actions",
+        "slug_suffix": "class-actions-advisory",
+        "title_prefix": "$1B+ Class Actions Advisory",
+        "tags": ["Class Actions", "Settlements", "Advisory"],
+    },
+    {
+        "folder": "bankruptcy-creditor-rights",
+        "slug_suffix": "bankruptcy-advisory",
+        "title_prefix": "Bankruptcy Creditor Rights Advisory",
+        "tags": ["Bankruptcy", "Creditor Rights", "Advisory"],
     },
 ]
 
@@ -103,11 +127,13 @@ def main():
             print(f"skip {topic['folder']}: no advisory for {args.date}")
             continue
         slug = f"{args.date}-{topic['slug_suffix']}"
-        if slug in existing_slugs:
-            print(f"skip {slug}: already in index")
-            continue
-
         md = advisory.read_text(encoding="utf-8")
+        if slug in existing_slugs:
+            # Already queued — refresh the markdown body (the pipeline may
+            # have regenerated today's advisory) but leave the index entry.
+            (briefings_dir / f"{slug}.md").write_text(md, encoding="utf-8")
+            print(f"refreshed content for {slug} (already in index)")
+            continue
         item = {
             "slug": slug,
             "date": args.date,
