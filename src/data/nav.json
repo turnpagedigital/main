@@ -115,6 +115,21 @@
       }
     },
     {
+      "id": "item-1781198075347",
+      "label": "Actively Trading",
+      "href": "/#what-we-cover",
+      "active": true,
+      "dropdown": {
+        "title": "",
+        "body": "",
+        "links": [],
+        "cta": {
+          "label": "",
+          "href": "/"
+        }
+      }
+    },
+    {
       "id": "tariff-refunds",
       "label": "Tariff Refunds",
       "href": "https://www.rewindtariffs.com",
@@ -155,7 +170,7 @@
     {
       "id": "item-1781195939905",
       "label": "About",
-      "href": "/team",
+      "href": "/#Our edge",
       "active": true,
       "dropdown": {
         "title": "About Turnpage",
@@ -179,6 +194,12 @@
           "href": "/contact?"
         }
       }
+    },
+    {
+      "id": "item-1781198101329",
+      "label": "Team",
+      "href": "/#leadership",
+      "active": true
     },
     {
       "id": "press",
