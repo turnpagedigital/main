@@ -154,22 +154,13 @@
     },
     {
       "id": "item-1781198075347",
-      "label": "Actively Trading",
+      "label": "Actively Funding",
       "href": "/#what-we-cover",
-      "active": true,
-      "dropdown": {
-        "title": "",
-        "body": "",
-        "links": [],
-        "cta": {
-          "label": "",
-          "href": "/"
-        }
-      }
+      "active": true
     },
     {
       "id": "item-1781195939905",
-      "label": "About",
+      "label": "Our Edge",
       "href": "/#Our edge",
       "active": true,
       "dropdown": {
@@ -196,10 +187,25 @@
       }
     },
     {
+      "id": "item-1781204786861",
+      "label": "Experience",
+      "href": "/#experience",
+      "active": true
+    },
+    {
       "id": "item-1781198101329",
       "label": "Team",
       "href": "/#leadership",
-      "active": true
+      "active": true,
+      "dropdown": {
+        "title": "",
+        "body": "",
+        "links": [],
+        "cta": {
+          "label": "",
+          "href": "/"
+        }
+      }
     },
     {
       "id": "press",
@@ -209,7 +215,7 @@
       "labelKey": "nav.press",
       "dropdown": {
         "title": "Press & Publications",
-        "body": "Andrew Glantz featured in the Wall Street Journal, Bloomberg, New York Times, CoinDesk, NPR, BBC, Grant's, and the ABI Journal.",
+        "body": "Briefings, posts and articles from our team, updates and features in major media outlets.",
         "links": [
           {
             "label": "Press",
