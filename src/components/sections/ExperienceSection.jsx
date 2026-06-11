@@ -38,6 +38,11 @@ export default function ExperienceSection({ sectionConfig, pageKey }) {
     title:   (typeof c.title   === "string" && c.title.trim())   ? c.title   : fallback.title,
     body:    (typeof c.body    === "string" && c.body.trim())    ? c.body    : fallback.body,
   };
+  // Footnote: never edited → built-in note; custom text → shown as-is;
+  // cleared in the builder ("") → hidden entirely.
+  const footnote = typeof c.footnote === "string"
+    ? c.footnote.trim()
+    : "* Experience prior to Turnpage";
 
   return (
     <section style={{
@@ -86,12 +91,14 @@ export default function ExperienceSection({ sectionConfig, pageKey }) {
           {deals.map((d, i) => <DealCard key={i} deal={d} />)}
         </div>
 
-        <p style={{
-          fontFamily: FONT, fontSize: "0.78rem",
-          color: "rgba(255,255,255,0.4)", marginTop: "1.2rem", fontStyle: "italic",
-        }}>
-          * Experience prior to Turnpage
-        </p>
+        {footnote && (
+          <p style={{
+            fontFamily: FONT, fontSize: "0.78rem",
+            color: "rgba(255,255,255,0.4)", marginTop: "1.2rem", fontStyle: "italic",
+          }}>
+            {footnote}
+          </p>
+        )}
 
         <style>{`
           @media (max-width: 1000px) { .deals-grid { grid-template-columns: repeat(2, 1fr) !important; } }

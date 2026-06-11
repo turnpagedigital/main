@@ -91,8 +91,11 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} placeholder="Relevant Experience" /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title</label><textarea style={{ ...inputStyle, minHeight: 60 }} value={form.title || ""} onChange={e => set("title", e.target.value)} placeholder="A track record across…" /></div>
           <div style={fieldGroup}><label style={labelStyle}>Body (right column)</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.body || ""} onChange={e => set("body", e.target.value)} placeholder="A representative slice of deals across…" /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Footnote (below the cards)</label><input style={inputStyle} value={form.footnote !== undefined ? form.footnote : ""} onChange={e => set("footnote", e.target.value)} placeholder="* Experience prior to Turnpage" /></div>
           <p style={{ fontSize: "0.72rem", color: INK_60, margin: "0 0 0.9rem" }}>
-            Blank fields fall back to this page's built-in copy. The deal cards themselves are managed in Content → Deals (use each deal's Pages checkboxes).
+            Blank fields fall back to this page's built-in copy — except the footnote: once you edit it,
+            clearing it removes the note from the page entirely. Deal cards themselves are managed in
+            Content → Deals (use each deal's Pages checkboxes).
           </p>
         </>
       )}
