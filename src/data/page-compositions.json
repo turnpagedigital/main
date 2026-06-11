@@ -239,7 +239,9 @@
                 "priority": false
               }
             ],
-            "_bookmark": "who-we-help"
+            "_bookmark": "who-we-help",
+            "backgroundImage": "",
+            "cardStyle": "standard"
           }
         },
         {
@@ -254,13 +256,13 @@
           "id": "sec-1780975716723-79i5",
           "type": "how-it-works",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "dark",
           "content": {
             "eyebrow": "How we Help",
             "title": "Three steps to close.",
             "accent": "",
             "kicker": "",
-            "colorScheme": "light-gray",
+            "colorScheme": "dark",
             "steps": [
               {
                 "id": "step-1",
@@ -281,9 +283,10 @@
                 "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you."
               }
             ],
-            "cardStyle": "black",
-            "cardRadius": "square",
-            "_bookmark": "how-we-help"
+            "cardStyle": "clear-glass",
+            "cardRadius": "rounded",
+            "_bookmark": "how-we-help",
+            "backgroundImage": "/metalarray.jpg"
           }
         },
         {
