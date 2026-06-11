@@ -115,21 +115,6 @@
       }
     },
     {
-      "id": "item-1781198075347",
-      "label": "Actively Trading",
-      "href": "/#what-we-cover",
-      "active": true,
-      "dropdown": {
-        "title": "",
-        "body": "",
-        "links": [],
-        "cta": {
-          "label": "",
-          "href": "/"
-        }
-      }
-    },
-    {
       "id": "tariff-refunds",
       "label": "Tariff Refunds",
       "href": "https://www.rewindtariffs.com",
@@ -164,6 +149,21 @@
           "label": "Visit Rewind Tariffs",
           "href": "https://www.rewindtariffs.com",
           "external": true
+        }
+      }
+    },
+    {
+      "id": "item-1781198075347",
+      "label": "Actively Trading",
+      "href": "/#what-we-cover",
+      "active": true,
+      "dropdown": {
+        "title": "",
+        "body": "",
+        "links": [],
+        "cta": {
+          "label": "",
+          "href": "/"
         }
       }
     },
