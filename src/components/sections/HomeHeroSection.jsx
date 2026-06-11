@@ -94,14 +94,23 @@ export default function HomeHeroSection({ sectionConfig }) {
       </div>
 
       <style>{`
-        /* Desktop: fill the viewport below the nav (the original look). */
-        .home-hero { min-height: calc(100vh - 88px); }
+        /* Desktop: just short of the viewport so the top of the stats band
+           is visible before any scrolling (~120px peek below the 88px nav). */
+        .home-hero { min-height: calc(100vh - 208px); }
         @supports (height: 1svh) {
-          .home-hero { min-height: calc(100svh - 88px); }
+          .home-hero { min-height: calc(100svh - 208px); }
         }
-        /* Mobile: a full viewport of bottom-anchored text over empty video
-           reads as an endless hero — cap it at ~70% of the screen. The
-           section still grows if translated copy needs more room. */
+        /* In-between (tablets / narrow windows): these are often portrait,
+           where viewport-based heights leave a wall of empty video above the
+           bottom-anchored headline — cap harder. */
+        @media (max-width: 1180px) {
+          .home-hero { min-height: min(76vh, 720px); }
+          @supports (height: 1svh) {
+            .home-hero { min-height: min(76svh, 720px); }
+          }
+        }
+        /* Phones: ~70% of the screen. The section still grows if translated
+           copy needs more room. */
         @media (max-width: 760px) {
           .home-hero { min-height: min(70vh, 640px); padding-top: 3.5rem; }
           @supports (height: 1svh) {
