@@ -29,6 +29,7 @@ const FIELD_EDITOR_TYPES = new Set([
   "hero", "home-hero", "stats-band", "our-edge", "photo-break",
   "cta-banner", "bottom-cta", "get-quote", "cta", "faq", "testimonials",
   "audience-cards", "service-cards", "comparison", "how-it-works",
+  "experience",
 ]);
 
 export default function SectionEditorModal({ section, sectionType, pageKey: _pageKey, onSave, onClose }) {

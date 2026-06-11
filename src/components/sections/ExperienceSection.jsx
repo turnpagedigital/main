@@ -4,14 +4,16 @@ import DealCard from "../DealCard.jsx";
 import dealsData from "../../data/deals.json";
 
 /* Relevant Experience — deal cards filtered by pageKey.
-   Content managed in Content → Deals. */
-export default function ExperienceSection({ pageKey }) {
+   Deal cards are managed in Content → Deals. Header copy (eyebrow/title/body)
+   is editable per page in the page builder via sectionConfig.content; blank
+   fields fall back to the built-in per-page copy below. */
+export default function ExperienceSection({ sectionConfig, pageKey }) {
   const deals = (dealsData.deals || []).filter(
     d => Array.isArray(d.pages) && d.pages.includes(pageKey)
   );
   if (!deals.length) return null;
 
-  // Page-specific heading copy
+  // Built-in per-page heading copy (fallbacks)
   const headings = {
     home: {
       eyebrow: "Relevant Experience",
@@ -29,7 +31,13 @@ export default function ExperienceSection({ pageKey }) {
       body: "A representative slice of deals across crypto insolvencies, exchange failures, and digital-asset restructurings.",
     },
   };
-  const h = headings[pageKey] || headings.home;
+  const fallback = headings[pageKey] || headings.home;
+  const c = (sectionConfig && sectionConfig.content) || {};
+  const h = {
+    eyebrow: (typeof c.eyebrow === "string" && c.eyebrow.trim()) ? c.eyebrow : fallback.eyebrow,
+    title:   (typeof c.title   === "string" && c.title.trim())   ? c.title   : fallback.title,
+    body:    (typeof c.body    === "string" && c.body.trim())    ? c.body    : fallback.body,
+  };
 
   return (
     <section style={{
