@@ -26,7 +26,7 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35  # web-search verification adds a few minutes per topic
 
     steps:
       - name: Checkout repo
