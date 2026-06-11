@@ -60,7 +60,11 @@ interface BrandConfig {
 
 function pickBrand(redirectTo: string): BrandConfig {
   const url = redirectTo.toLowerCase();
-  if (url.includes("intel.turnpagedigital.com")) {
+  // Intel briefing — both the legacy subdomain (intel.turnpagedigital.com)
+  // and the consolidated path mount (turnpagedigital.com/intel/...). Matching
+  // on the bare apex is safe: the main marketing site doesn't use this auth
+  // hook, only the /intel dashboards do.
+  if (url.includes("turnpagedigital.com")) {
     return {
       from: "Turnpage Intel <noreply@turnpagedigital.com>",
       templateFn: intelTemplate,
