@@ -1,6 +1,34 @@
 {
   "items": [
     {
+      "slug": "2026-06-11-crypto-advisory",
+      "date": "2026-06-11",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 11, 2026",
+      "summary": "Today's principal deltas in the crypto insolvency complex center on three vectors: (1) the FTX Debtors' continuing wave of preference and fraudulent-transfer litigation following the confirmation of the Modified Second Amended Joint Chapter 11 Plan and the establishment of the FTX Recovery Trust, wi…",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-11-advisory",
+      "date": "2026-06-11",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 11, 2026",
+      "summary": "The Bartz v. Anthropic discovery phase continues to generate significant motion practice in the Northern District of California, with plaintiffs' counsel pressing for production of training-data manifests; the Kadrey v. Meta Ninth Circuit appeal has entered final briefing; the New York Times v.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-01-advisory",
       "date": "2026-06-01",
       "type": "briefing",

@@ -49,7 +49,7 @@ export async function onRequestPost({ request, env }) {
     if (response.status === 204) {
       return jsonResponse({
         ok: true,
-        message: `✅ Briefing generation triggered! Monitor progress at https://github.com/${repo}/actions — takes ~10–15 minutes, then the updated dashboards are committed to briefing-generator/.`,
+        message: `✅ Briefing generation triggered! Takes ~10–15 minutes — new LLM/Copyright and Crypto drafts then appear in the Queue below (hit Refresh), and the topic dashboards update. Monitor at https://github.com/${repo}/actions.`,
       });
     }
 

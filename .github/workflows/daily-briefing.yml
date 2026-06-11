@@ -70,3 +70,37 @@ jobs:
             git commit -m "Daily briefing ${DATE}"
             git push
           fi
+
+      # ── Bridge into the site briefings QUEUE (dev branch) ────────────────
+      # Today's LLM/Copyright + Crypto advisories become DRAFT posts the
+      # admin Briefings tab reviews and publishes. Idempotent — existing
+      # slugs are skipped. [skip ci] avoids a pointless dev rebuild; the
+      # admin reads the queue via the GitHub API, so drafts show on Refresh.
+      - name: Checkout dev branch (site queue)
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: dev-site
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Queue site briefing drafts
+        run: |
+          DATE=${BRIEFING_DATE:-$(date -u +"%Y-%m-%d")}
+          python briefing-generator/scripts/queue_site_drafts.py \
+            --source briefing-generator --target dev-site --date "$DATE"
+        env:
+          BRIEFING_DATE: ${{ github.event.inputs.date || '' }}
+
+      - name: Commit queued drafts to dev
+        working-directory: dev-site
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Daily Briefing Bot"
+          git add public/briefings
+          if git diff --staged --quiet; then
+            echo "No new drafts to queue"
+          else
+            DATE=$(date -u +"%Y-%m-%d")
+            git commit -m "Queue briefing drafts ${DATE} [skip ci]"
+            git push origin HEAD:dev
+          fi
