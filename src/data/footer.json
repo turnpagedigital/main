@@ -37,26 +37,9 @@
       "title": "Resources",
       "links": [
         {
-          "id": "press",
-          "label": "Press & Publications",
-          "href": "/press",
-          "labelKey": "nav.press"
-        },
-        {
-          "id": "briefings",
-          "label": "Briefings",
-          "href": "/press",
-          "labelKey": "nav.briefings"
-        },
-        {
           "id": "faq",
           "label": "FAQ",
           "href": "/faq"
-        },
-        {
-          "id": "link-1779881007269-p8ym",
-          "label": "Trade Docs",
-          "href": "/documentation"
         }
       ],
       "titleKey": "footer.col.resources"
@@ -97,6 +80,37 @@
         }
       ],
       "titleKey": "footer.col.legal"
+    },
+    {
+      "id": "col-1781139565432-hfx5",
+      "title": "Media Center",
+      "links": [
+        {
+          "id": "link-1781139571331-9h6y",
+          "label": "Briefings",
+          "href": "/press?type=briefings"
+        },
+        {
+          "id": "link-1781139573681-czq9",
+          "label": "Publications",
+          "href": "/press?type=publications"
+        },
+        {
+          "id": "link-1781139577464-s3c5",
+          "label": "Press",
+          "href": "/press?type=press"
+        },
+        {
+          "id": "link-1781139583864-25xi",
+          "label": "Posts",
+          "href": "/press?type=posts"
+        },
+        {
+          "id": "link-1781139586832-zblk",
+          "label": "Podcasts",
+          "href": "/press?type=podcasts"
+        }
+      ]
     }
   ],
   "copyright": "Turnpage Digital Markets LLC © 2026 · All rights reserved · Competitive capital solutions for rights holders entitled to compensation",
