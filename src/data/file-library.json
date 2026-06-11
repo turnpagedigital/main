@@ -2,6 +2,24 @@
   "_comment": "File library — centralised store for images, logos, favicons, documents, and videos used across the site. Managed via /admin/assets (file list) and /admin/pages (favicon picker). Files live in public/library/ (uploaded) or as external URLs. favicons map { production, preview, admin } → URL from this library or a static path under /. Schema: { files: [{ id, name, url, type, companies, source, addedAt }], favicons: { production, preview, admin } }.",
   "files": [
     {
+      "id": "mq8v76u6-05cfw",
+      "name": "data-center",
+      "url": "/library/data-center.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-06-11T02:14:43.806Z"
+    },
+    {
+      "id": "mq8v72wk-0b40n",
+      "name": "data-center-2",
+      "url": "/library/data-center-2.jpg",
+      "type": "image",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-06-11T02:14:38.708Z"
+    },
+    {
       "id": "mq8utcs3-ofhym",
       "name": "black-paper-data",
       "url": "/library/black-paper-data.jpg",
