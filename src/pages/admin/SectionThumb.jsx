@@ -594,6 +594,50 @@ function HowItWorksThumb() {
   );
 }
 
+// ─── Image + Text ─────────────────────────────────────────────────────────────
+function ImageTextSplitThumb({ imageLeft = false }) {
+  const text = (
+    <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: 14 }}>
+      <div style={{ width: 110, height: 10, background: "rgba(10,10,10,0.35)" }} />
+      <p style={{ fontFamily: FONT, fontSize: 38, fontWeight: 800, color: INK, margin: 0, lineHeight: 1.1 }}>
+        Headline goes here.
+      </p>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        <div style={{ width: "92%", height: 9, background: "rgba(10,10,10,0.18)" }} />
+        <div style={{ width: "84%", height: 9, background: "rgba(10,10,10,0.18)" }} />
+        <div style={{ width: "60%", height: 9, background: "rgba(10,10,10,0.18)" }} />
+      </div>
+    </div>
+  );
+  const img = (
+    <div style={{ flex: 1, position: "relative", borderRadius: 10, overflow: "hidden" }}>
+      <ImgPlaceholder style={{ position: "absolute", inset: 0 }} />
+    </div>
+  );
+  return (
+    <div style={{ width: W, height: H, background: "#fff", padding: "60px 70px", display: "flex", gap: 50 }}>
+      {imageLeft ? img : text}
+      {imageLeft ? text : img}
+    </div>
+  );
+}
+function ImageTextRightThumb() { return <ImageTextSplitThumb imageLeft={false} />; }
+function ImageTextLeftThumb()  { return <ImageTextSplitThumb imageLeft={true} />; }
+function ImageTextTopThumb() {
+  return (
+    <div style={{ width: W, height: H, background: "#fff", padding: "50px 70px", display: "flex", flexDirection: "column", gap: 28 }}>
+      <div style={{ position: "relative", height: "46%", borderRadius: 10, overflow: "hidden" }}>
+        <ImgPlaceholder style={{ position: "absolute", inset: 0 }} />
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+        <p style={{ fontFamily: FONT, fontSize: 32, fontWeight: 800, color: INK, margin: 0 }}>Headline goes here.</p>
+        <div style={{ width: "62%", height: 9, background: "rgba(10,10,10,0.18)" }} />
+        <div style={{ width: "48%", height: 9, background: "rgba(10,10,10,0.18)" }} />
+      </div>
+    </div>
+  );
+}
+
 // ─── Fallback ─────────────────────────────────────────────────────────────────
 function DefaultThumb() {
   return (
@@ -628,6 +672,10 @@ const THUMBS = {
   "service-cards":                   ServiceCardsThumb,
   "comparison":                      ComparisonThumb,
   "how-it-works":                    HowItWorksThumb,
+  "image-text":                          ImageTextRightThumb,
+  "image-text/layout-1-image-right":     ImageTextRightThumb,
+  "image-text/layout-2-image-left":      ImageTextLeftThumb,
+  "image-text/layout-3-image-top":       ImageTextTopThumb,
 };
 
 // ─── Public component ─────────────────────────────────────────────────────────

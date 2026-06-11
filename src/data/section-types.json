@@ -320,7 +320,11 @@
       "description": "Audience cards with priority/standard variants. Inline content — editable per page.",
       "dataSource": "inline",
       "allowMultiple": false,
-      "supportedColorSchemes": ["light-gray", "dark", "white"],
+      "supportedColorSchemes": [
+        "light-gray",
+        "dark",
+        "white"
+      ],
       "defaultColorScheme": "light-gray",
       "defaultContent": {
         "eyebrow": "Who We Help",
@@ -329,8 +333,18 @@
         "colorScheme": "light-gray",
         "layout": "grid-2col",
         "cards": [
-          { "id": "card-1", "title": "Card title", "body": "Describe this audience.", "priority": true },
-          { "id": "card-2", "title": "Card title", "body": "Describe this audience.", "priority": false }
+          {
+            "id": "card-1",
+            "title": "Card title",
+            "body": "Describe this audience.",
+            "priority": true
+          },
+          {
+            "id": "card-2",
+            "title": "Card title",
+            "body": "Describe this audience.",
+            "priority": false
+          }
         ]
       }
     },
@@ -340,7 +354,11 @@
       "description": "Dark service cards with neon titles. Inline content — editable per page.",
       "dataSource": "inline",
       "allowMultiple": false,
-      "supportedColorSchemes": ["dark", "light-gray", "white"],
+      "supportedColorSchemes": [
+        "dark",
+        "light-gray",
+        "white"
+      ],
       "defaultColorScheme": "dark",
       "defaultContent": {
         "eyebrow": "What We Offer",
@@ -349,8 +367,16 @@
         "colorScheme": "dark",
         "layout": "grid-3col",
         "cards": [
-          { "id": "svc-1", "title": "Service", "body": "Describe this service." },
-          { "id": "svc-2", "title": "Service", "body": "Describe this service." }
+          {
+            "id": "svc-1",
+            "title": "Service",
+            "body": "Describe this service."
+          },
+          {
+            "id": "svc-2",
+            "title": "Service",
+            "body": "Describe this service."
+          }
         ]
       }
     },
@@ -360,15 +386,33 @@
       "description": "Two-column old-way vs. new-way comparison. Inline content — editable per page.",
       "dataSource": "inline",
       "allowMultiple": false,
-      "supportedColorSchemes": ["light-gray", "dark", "white"],
+      "supportedColorSchemes": [
+        "light-gray",
+        "dark",
+        "white"
+      ],
       "defaultColorScheme": "light-gray",
       "defaultContent": {
         "eyebrow": "Why Turnpage",
         "title": "A better way.",
         "accent": "",
         "colorScheme": "light-gray",
-        "oldWay": { "title": "The old way.", "items": ["Item one", "Item two", "Item three"] },
-        "newWay": { "title": "Through Turnpage.", "items": ["Item one", "Item two", "Item three"] }
+        "oldWay": {
+          "title": "The old way.",
+          "items": [
+            "Item one",
+            "Item two",
+            "Item three"
+          ]
+        },
+        "newWay": {
+          "title": "Through Turnpage.",
+          "items": [
+            "Item one",
+            "Item two",
+            "Item three"
+          ]
+        }
       }
     },
     {
@@ -377,7 +421,10 @@
       "description": "Dark numbered step sequence. Inline content — editable per page.",
       "dataSource": "inline",
       "allowMultiple": false,
-      "supportedColorSchemes": ["dark", "light-gray"],
+      "supportedColorSchemes": [
+        "dark",
+        "light-gray"
+      ],
       "defaultColorScheme": "dark",
       "defaultContent": {
         "eyebrow": "How It Works",
@@ -386,10 +433,75 @@
         "kicker": "",
         "colorScheme": "dark",
         "steps": [
-          { "id": "step-1", "n": "01", "title": "Step one", "body": "Describe this step." },
-          { "id": "step-2", "n": "02", "title": "Step two", "body": "Describe this step." },
-          { "id": "step-3", "n": "03", "title": "Step three", "body": "Describe this step." }
+          {
+            "id": "step-1",
+            "n": "01",
+            "title": "Step one",
+            "body": "Describe this step."
+          },
+          {
+            "id": "step-2",
+            "n": "02",
+            "title": "Step two",
+            "body": "Describe this step."
+          },
+          {
+            "id": "step-3",
+            "n": "03",
+            "title": "Step three",
+            "body": "Describe this step."
+          }
         ]
+      }
+    },
+    {
+      "id": "image-text",
+      "displayName": "Image + Text",
+      "description": "An image beside (or above) a heading and paragraph. Pick image left, right, or top, plus a background color.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "layouts": [
+        {
+          "id": "layout-1-image-right",
+          "displayName": "Image Right",
+          "description": "Text left, image right.",
+          "supportedColorSchemes": [
+            "white",
+            "light-gray",
+            "dark"
+          ]
+        },
+        {
+          "id": "layout-2-image-left",
+          "displayName": "Image Left",
+          "description": "Image left, text right.",
+          "supportedColorSchemes": [
+            "white",
+            "light-gray",
+            "dark"
+          ]
+        },
+        {
+          "id": "layout-3-image-top",
+          "displayName": "Image Top",
+          "description": "Wide image above centered text.",
+          "supportedColorSchemes": [
+            "white",
+            "light-gray",
+            "dark"
+          ]
+        }
+      ],
+      "defaultLayout": "layout-1-image-right",
+      "defaultColorScheme": "white",
+      "defaultContent": {
+        "eyebrow": "",
+        "title": "Headline goes here.",
+        "accent": "",
+        "body": "Add a paragraph of supporting text that sits next to the image.",
+        "image": "/bg-paper.jpg",
+        "imageAlt": "",
+        "cta": null
       }
     },
     {

@@ -100,6 +100,20 @@ export default function SectionEditorFields({ typeId, form, set }) {
         </>
       )}
 
+      {/* ── Image + Text ── */}
+      {typeId === "image-text" && (
+        <>
+          <VisualLayoutColorPicker typeId="image-text" form={form} set={set} />
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Accent (italic/neon)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Paragraph</label><textarea style={{ ...inputStyle, minHeight: 110 }} value={form.body || ""} onChange={e => set("body", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Image URL</label><input style={inputStyle} value={form.image || ""} onChange={e => set("image", e.target.value)} placeholder="/bg-paper.jpg or https://…" /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Image alt text</label><input style={inputStyle} value={form.imageAlt || ""} onChange={e => set("imageAlt", e.target.value)} placeholder="Describe the image for accessibility" /></div>
+          <CTAField label="Button (optional)" value={form.cta} onChange={v => set("cta", v || null)} nullable />
+        </>
+      )}
+
       {/* ── Photo Break ── */}
       {typeId === "photo-break" && (
         <>

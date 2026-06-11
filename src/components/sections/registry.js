@@ -24,6 +24,7 @@ import AudienceCardsSection from "./AudienceCardsSection.jsx";
 import ServiceCardsSection  from "./ServiceCardsSection.jsx";
 import ComparisonSection    from "./ComparisonSection.jsx";
 import HowItWorksSection    from "./HowItWorksSection.jsx";
+import ImageTextSection     from "./ImageTextSection.jsx";
 import DamagesSection       from "./DamagesSection.jsx";
 import CryptoClaimsChart    from "../CryptoClaimsChart.jsx";
 
@@ -46,6 +47,7 @@ export const SECTION_MAP = {
   "service-cards":  ServiceCardsSection,
   "comparison":     ComparisonSection,
   "how-it-works":   HowItWorksSection,
+  "image-text":     ImageTextSection,
   "damages":        DamagesSection,
   "crypto-claims-chart": CryptoClaimsChart,
 };
