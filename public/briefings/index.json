@@ -25,7 +25,8 @@
         "Class Actions",
         "Settlements",
         "Advisory"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-06-11-fraud-advisory",
