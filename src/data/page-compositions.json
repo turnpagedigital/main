@@ -138,7 +138,7 @@
           "content": {
             "title": "Follow our most active situations.",
             "cta": "Read the briefings",
-            "href": "/press?type=briefings",
+            "href": "/press?type=briefings%2Cposts",
             "image": "/Building_Wide.jpg",
             "external": false,
             "_bookmark": "Briefings"
