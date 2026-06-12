@@ -172,7 +172,7 @@ function CardInner({ card, titleColor }) {
         <p style={{
           fontFamily: FONT, fontSize: "0.97rem",
           color: "var(--card-secondary-text)", lineHeight: 1.65,
-          margin: hasExtras ? "1.1rem 0 0" : 0,
+          margin: hasExtras ? "1.1rem 0 0" : "0.85rem 0 0",
         }}>
           {card.body}
         </p>

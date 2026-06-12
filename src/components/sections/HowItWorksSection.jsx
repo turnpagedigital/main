@@ -122,7 +122,7 @@ export default function HowItWorksSection({ sectionConfig }) {
                   fontFamily: FONT,
                   fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
                   fontWeight: 800, letterSpacing: "-0.04em",
-                  color: NEON, marginBottom: "1.2rem", lineHeight: 1, margin: 0,
+                  color: NEON, lineHeight: 1, margin: "0 0 1.2rem",
                 }}>
                   {step.n}
                 </p>
@@ -130,7 +130,7 @@ export default function HowItWorksSection({ sectionConfig }) {
                   fontFamily: FONT, fontWeight: 800,
                   fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
                   letterSpacing: "-0.01em", lineHeight: 1.2,
-                  color: "var(--card-text-color)", marginBottom: "1rem", margin: 0,
+                  color: "var(--card-text-color)", margin: "0 0 0.65rem",
                 }}>
                   {step.title}
                 </h3>
