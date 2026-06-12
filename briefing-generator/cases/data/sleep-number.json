@@ -1,0 +1,26 @@
+{
+  "case": {
+    "slug": "sleep-number",
+    "display_name": "Sleep Number",
+    "case_name": "Sleep Number Corporation",
+    "court": "United States Bankruptcy Court, S.D. New York",
+    "case_number": "26-11399",
+    "judge": "NOT ASSIGNED",
+    "docket_id": "73476260",
+    "status": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": {
+    "name": "Kroll",
+    "url": "https://restructuring.ra.kroll.com/SleepNumber",
+    "key_dates_url": "https://restructuring.ra.kroll.com/SleepNumber"
+  },
+  "coverage": []
+}
