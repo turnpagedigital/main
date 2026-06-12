@@ -55,4 +55,17 @@ for await (const file of walk(DEST)) {
   }
 }
 
-console.log(`intel dashboards mounted at dist/intel (${rewritten} files path-rewritten)`);
+// /intel is gated server-side by functions/intel/_middleware.js (the admin
+// session). Neutralize the legacy Supabase client gate so authed pages render
+// directly instead of redirecting to the dead Supabase login.
+const authJs = join(DEST, "auth", "auth.js");
+try {
+  await writeFile(
+    authJs,
+    "/* Supabase auth gate removed June 2026 — /intel is now gated by the\n" +
+    "   admin session via functions/intel/_middleware.js. This file is kept\n" +
+    "   as a harmless no-op because the dashboards still <script src> it. */\n"
+  );
+} catch { /* auth.js absent — nothing to neutralize */ }
+
+console.log(`intel dashboards mounted at dist/intel (${rewritten} files path-rewritten, Supabase gate neutralized)`);
