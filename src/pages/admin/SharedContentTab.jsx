@@ -11,6 +11,7 @@ const AlertsTab        = lazy(() => import("./AlertsTab.jsx"));
 const FAQsTab          = lazy(() => import("./FAQsTab.jsx"));
 const TestimonialsTab  = lazy(() => import("./TestimonialsTab.jsx"));
 const ContactFormTab   = lazy(() => import("./ContactFormTab.jsx"));
+const FlowsTab         = lazy(() => import("./FlowsTab.jsx"));
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SharedContentTab — master wrapper for Bio, Posts, Deals, Press, Alerts,
@@ -33,6 +34,7 @@ const SUB_TABS = [
   { key: "faqs",          label: "FAQs" },
   { key: "testimonials",  label: "Testimonials" },
   { key: "contact-form",  label: "Contact Form" },
+  { key: "flows",         label: "Flows" },
 ];
 const SUB_KEYS = SUB_TABS.map(t => t.key);
 
@@ -70,6 +72,7 @@ export default function SharedContentTab({ onDirtyChange }) {
         {sub === "faqs"          && <FAQsTab         onDirtyChange={makeDirty("faqs")} />}
         {sub === "testimonials"  && <TestimonialsTab onDirtyChange={makeDirty("testimonials")} />}
         {sub === "contact-form"  && <ContactFormTab  onDirtyChange={makeDirty("contact-form")} />}
+        {sub === "flows"         && <FlowsTab        onDirtyChange={makeDirty("flows")} />}
       </Suspense>
     </div>
   );

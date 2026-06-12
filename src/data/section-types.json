@@ -511,6 +511,19 @@
       "dataSource": "page:damagesData",
       "allowMultiple": false,
       "defaultContent": null
+    },
+    {
+      "id": "registration-flow",
+      "displayName": "Registration Flow",
+      "description": "Multi-step registration wizard. Pick a flow built in Content → Flows; supports branching steps and file upload. Submits to /api/register with landing-page + ad attribution.",
+      "dataSource": "forms.json",
+      "allowMultiple": false,
+      "defaultContent": {
+        "flowId": "",
+        "eyebrow": "Register",
+        "title": "Start your registration",
+        "accent": ""
+      }
     }
   ]
 }

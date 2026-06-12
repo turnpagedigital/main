@@ -2,6 +2,7 @@ import React from "react";
 import { INK, INK_60, LINE, NEON } from "../../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle } from "../shared.jsx";
 import sectionTypesData from "../../../data/section-types.json";
+import formsData from "../../../data/forms.json";
 import SectionThumb from "../SectionThumb.jsx";
 import { getSchemeVisual } from "./scheme-visuals.js";
 
@@ -32,6 +33,27 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Video URL</label><input style={inputStyle} value={form.video || ""} onChange={e => set("video", e.target.value || null)} placeholder="/video.mp4 or blank" /></div>
           <CTAField label="Primary CTA" value={form.ctaPrimary} onChange={v => set("ctaPrimary", v)} />
           <CTAField label="Secondary CTA (optional)" value={form.ctaSecondary} onChange={v => set("ctaSecondary", v || null)} nullable />
+        </>
+      )}
+
+      {/* ── Registration Flow ── */}
+      {typeId === "registration-flow" && (
+        <>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Flow</label>
+            <select style={selectStyle} value={form.flowId || ""} onChange={e => set("flowId", e.target.value)}>
+              <option value="">— pick a flow —</option>
+              {(formsData.flows || []).map(f => (
+                <option key={f.id} value={f.id}>{f.name}{f.active === false ? " (inactive)" : ""}</option>
+              ))}
+            </select>
+            <p style={{ fontSize: "0.74rem", color: INK_60, marginTop: 4 }}>
+              Flows are built in Content → Flows. An inactive or unpicked flow renders nothing on the public page.
+            </p>
+          </div>
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title accent (italic/neon)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
         </>
       )}
 

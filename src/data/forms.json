@@ -1,0 +1,95 @@
+{
+  "_comment": "Multi-step registration flows. Edited via /admin/content/flows; rendered on landing pages by the 'registration-flow' section (pick a flow in the Page Builder). Field types: text, email, phone, textarea, select, choice (button group), yesno, file. A step with showIf only appears when the named earlier field equals the given value. Submissions POST to /api/register → notification email (+ Google Sheet, + Attio when ATTIO_API_KEY is configured, labeled with attioLabel).",
+  "flows": [
+    {
+      "id": "bartz-registration",
+      "name": "AI Copyright — Bartz Registration",
+      "active": true,
+      "attioLabel": "bartz-landing",
+      "intro": "Tell us about your claim. Takes about two minutes — we'll come back with next steps within 48 hours.",
+      "submitLabel": "Submit registration",
+      "successTitle": "You're registered.",
+      "successBody": "We've received your details and will be in touch within 48 hours. Check your inbox for a confirmation.",
+      "steps": [
+        {
+          "id": "claim-status",
+          "title": "Your claim",
+          "fields": [
+            {
+              "id": "class_member",
+              "type": "choice",
+              "label": "Are you a Bartz v. Anthropic class member?",
+              "required": true,
+              "options": [
+                "Yes — I received a notice",
+                "I believe so, but no notice yet",
+                "Not sure"
+              ]
+            },
+            {
+              "id": "works_count",
+              "type": "select",
+              "label": "How many of your works are on the settlement works list?",
+              "required": true,
+              "options": ["1–2", "3–10", "11–50", "50+", "I don't know yet"]
+            }
+          ]
+        },
+        {
+          "id": "notice-details",
+          "title": "Your notice",
+          "showIf": { "fieldId": "class_member", "equals": "Yes — I received a notice" },
+          "fields": [
+            {
+              "id": "claim_filed",
+              "type": "yesno",
+              "label": "Have you already filed through the settlement portal?",
+              "required": true
+            },
+            {
+              "id": "notice_file",
+              "type": "file",
+              "label": "Upload your notice or claim confirmation (optional)",
+              "required": false,
+              "accept": ["pdf", "png", "jpg"],
+              "help": "PDF or image, up to 8 MB. Speeds up our review."
+            }
+          ]
+        },
+        {
+          "id": "goals",
+          "title": "What you're looking for",
+          "fields": [
+            {
+              "id": "interest",
+              "type": "choice",
+              "label": "What brings you to Turnpage?",
+              "required": true,
+              "options": [
+                "Sell my claim for cash now",
+                "Understand what my claim is worth",
+                "Guidance on the settlement process"
+              ]
+            },
+            {
+              "id": "details",
+              "type": "textarea",
+              "label": "Anything else we should know?",
+              "required": false
+            }
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "Contact details",
+          "fields": [
+            { "id": "firstName", "type": "text", "label": "First name", "required": true },
+            { "id": "lastName", "type": "text", "label": "Last name", "required": true },
+            { "id": "email", "type": "email", "label": "Email", "required": true },
+            { "id": "phone", "type": "phone", "label": "Phone (optional)", "required": false }
+          ]
+        }
+      ]
+    }
+  ]
+}

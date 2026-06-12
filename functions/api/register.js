@@ -1,0 +1,314 @@
+/**
+ * Cloudflare Pages Function: /api/register
+ *
+ * Receives multi-step registration-flow submissions (see
+ * src/components/sections/RegistrationFlowSection.jsx). The flow definition
+ * in src/data/forms.json is the server-side source of truth: unknown flows,
+ * unknown fields, missing required answers, and oversized/odd files are all
+ * rejected here regardless of what the client sent.
+ *
+ * Delivery:
+ *  1. Notification email via Resend (file answers become attachments) —
+ *     always, this is the baseline channel.
+ *  2. Google Sheet row via Apps Script (best-effort, same as /api/contact).
+ *  3. Attio CRM (best-effort, only when ATTIO_API_KEY is set): asserts the
+ *     person by email and attaches a note titled with the flow's attioLabel
+ *     so each landing page's registrations are identifiable in the CRM.
+ *
+ * Environment variables: RESEND_API_KEY, NOTIFY_EMAIL, FROM_EMAIL,
+ * GOOGLE_SHEET_URL (all shared with /api/contact), plus optional
+ * ATTIO_API_KEY.
+ */
+
+import formsData from "../../src/data/forms.json";
+
+const ALLOWED_ORIGINS = [
+  "https://turnpagedigital.com",
+  "https://www.turnpagedigital.com",
+];
+function corsHeadersFor(request) {
+  const origin = request.headers.get("Origin") || "";
+  const allowed =
+    ALLOWED_ORIGINS.includes(origin) ||
+    /^https:\/\/[a-z0-9-]+\.turnpagedigital\.pages\.dev$/i.test(origin);
+  return {
+    "Access-Control-Allow-Origin": allowed ? origin : "https://turnpagedigital.com",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Vary": "Origin",
+  };
+}
+
+function escapeHtml(s) {
+  if (s == null) return "";
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+const ANSWER_MAX = { textarea: 5000, default: 300 };
+const MAX_FILES = 3;
+const MAX_FILE_BYTES = 8 * 1024 * 1024;
+const FILE_TYPES = new Set(["application/pdf", "image/png", "image/jpeg"]);
+const ATTRIBUTION_FIELDS = [
+  "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+  "gclid",
+];
+
+/* Mirror of the client's branching rule — answers on hidden steps are not
+   required and not accepted. */
+function visibleSteps(flow, answers) {
+  return (flow.steps || []).filter(
+    (s) => !s.showIf || !s.showIf.fieldId || answers[s.showIf.fieldId] === s.showIf.equals,
+  );
+}
+
+export async function onRequestPost(context) {
+  const { request, env } = context;
+  const corsHeaders = corsHeadersFor(request);
+  const fail = (msg, status = 400) =>
+    new Response(JSON.stringify({ error: msg }), {
+      status,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+
+  try {
+    if (!env.RESEND_API_KEY) return fail("Registration service not configured", 500);
+
+    let body;
+    try { body = await request.json(); }
+    catch { return fail("Bad request"); }
+    if (!body || typeof body !== "object") return fail("Bad request");
+
+    const flow = (formsData.flows || []).find(
+      (f) => f.id === body.flowId && f.active !== false,
+    );
+    if (!flow) return fail("Unknown registration flow");
+
+    const rawAnswers = body.answers && typeof body.answers === "object" ? body.answers : {};
+
+    // Field map for the flow; validate answers against it
+    const fieldById = {};
+    for (const step of flow.steps || []) {
+      for (const f of step.fields || []) fieldById[f.id] = f;
+    }
+
+    const answers = {};
+    for (const [k, v] of Object.entries(rawAnswers)) {
+      const field = fieldById[k];
+      if (!field || field.type === "file") continue; // unknown/file ids: ignore
+      if (typeof v !== "string") return fail(`Answer "${k}" must be a string`);
+      const cap = ANSWER_MAX[field.type] || ANSWER_MAX.default;
+      if (v.length > cap) return fail(`Answer "${k}" exceeds maximum length`);
+      answers[k] = v.trim();
+    }
+
+    // Enforce required fields on the steps actually visible for these answers
+    const steps = visibleSteps(flow, answers);
+    const visibleFieldIds = new Set(steps.flatMap((s) => (s.fields || []).map((f) => f.id)));
+    const files = Array.isArray(body.files) ? body.files.slice(0, MAX_FILES) : [];
+    for (const step of steps) {
+      for (const f of step.fields || []) {
+        if (!f.required) continue;
+        if (f.type === "file") {
+          if (!files.some((x) => x && x.fieldId === f.id)) return fail(`Missing required file: ${f.label}`);
+        } else if (!answers[f.id]) {
+          return fail(`Missing required answer: ${f.label}`);
+        }
+      }
+    }
+    // Drop answers that belong to steps hidden under the final branch state
+    for (const k of Object.keys(answers)) {
+      if (!visibleFieldIds.has(k)) delete answers[k];
+    }
+
+    // Validate files
+    const attachments = [];
+    for (const file of files) {
+      if (!file || typeof file !== "object") continue;
+      const field = fieldById[file.fieldId];
+      if (!field || field.type !== "file" || !visibleFieldIds.has(file.fieldId)) continue;
+      if (typeof file.dataBase64 !== "string" || typeof file.name !== "string") continue;
+      if (!FILE_TYPES.has(file.type)) return fail(`File type not accepted for "${field.label}"`);
+      if (!/^[A-Za-z0-9+/=]+$/.test(file.dataBase64)) return fail("Malformed file payload");
+      const approxBytes = (file.dataBase64.length * 3) / 4;
+      if (approxBytes > MAX_FILE_BYTES) return fail(`"${file.name}" is over the 8 MB limit`);
+      attachments.push({
+        filename: file.name.replace(/[^\w.\- ]/g, "_").slice(0, 120),
+        content: file.dataBase64,
+      });
+    }
+
+    const email = answers.email || "";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail("A valid email is required");
+
+    const attribution = {};
+    for (const f of ATTRIBUTION_FIELDS) {
+      if (typeof body[f] === "string" && body[f].trim()) {
+        attribution[f] = body[f].trim().slice(0, 200);
+      }
+    }
+    const pageKey = typeof body.pageKey === "string" ? body.pageKey.slice(0, 80) : "";
+
+    const notifyEmail = env.NOTIFY_EMAIL || "info@turnpagedigital.com";
+    const fromEmail = env.FROM_EMAIL || "Turnpage Digital Markets <noreply@turnpagedigital.com>";
+    const fullName = [answers.firstName, answers.lastName].filter(Boolean).join(" ") || email;
+
+    // Ordered answer rows following the flow's own step/field order
+    const answerRows = steps
+      .flatMap((s) => s.fields || [])
+      .filter((f) => f.type !== "file" && answers[f.id])
+      .map((f) =>
+        `<tr><td style="padding:6px 8px 6px 0;color:#666;vertical-align:top;width:45%;">${escapeHtml(f.label)}</td>` +
+        `<td style="padding:6px 0;font-weight:600;white-space:pre-wrap;">${escapeHtml(answers[f.id])}</td></tr>`)
+      .join("");
+    const attributionRows = Object.entries(attribution)
+      .map(([k, v]) => `<tr><td style="padding:4px 8px 4px 0;color:#666;">${escapeHtml(k)}</td><td style="padding:4px 0;font-family:monospace;font-size:12px;">${escapeHtml(v)}</td></tr>`)
+      .join("");
+
+    const html = `
+      <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:640px;margin:0 auto;">
+        <div style="background:#1a1a1a;padding:24px 32px;border-radius:12px 12px 0 0;">
+          <h2 style="color:#D4FF00;margin:0;font-size:18px;">New Registration — ${escapeHtml(flow.name)}</h2>
+          <p style="color:rgba(255,255,255,0.65);margin:6px 0 0;font-size:12px;">Landing page: ${escapeHtml(pageKey || "unknown")} · Label: ${escapeHtml(flow.attioLabel || flow.id)}${attachments.length ? ` · ${attachments.length} file(s) attached` : ""}</p>
+        </div>
+        <div style="background:#fff;padding:32px;border:1px solid #e5e5e5;border-top:none;border-radius:0 0 12px 12px;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;">${answerRows}</table>
+          ${attributionRows ? `
+          <hr style="border:none;border-top:1px solid #e5e5e5;margin:16px 0;" />
+          <strong style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Attribution</strong>
+          <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;">${attributionRows}</table>` : ""}
+        </div>
+        <p style="font-size:11px;color:#999;margin-top:16px;text-align:center;">Sent via turnpagedigital.com registration flow</p>
+      </div>`;
+
+    // Google Sheet (best-effort)
+    if (env.GOOGLE_SHEET_URL) {
+      try {
+        const sheetRes = await fetch(env.GOOGLE_SHEET_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName: answers.firstName || "",
+            lastName: answers.lastName || "",
+            email,
+            phone: answers.phone || "",
+            subject: `Registration: ${flow.name}`,
+            message: steps.flatMap((s) => s.fields || [])
+              .filter((f) => f.type !== "file" && answers[f.id])
+              .map((f) => `${f.label}: ${answers[f.id]}`).join("\n"),
+            source: flow.attioLabel || flow.id,
+            ...attribution,
+            timestamp: new Date().toISOString(),
+          }),
+        });
+        if (!sheetRes.ok) console.error("Sheet error:", sheetRes.status);
+      } catch (err) {
+        console.error("Sheet error:", err.message);
+      }
+    }
+
+    // Attio (best-effort, only when configured)
+    if (env.ATTIO_API_KEY) {
+      try {
+        await pushToAttio(env, { flow, answers, email, fullName, pageKey, attribution, steps });
+      } catch (err) {
+        console.error("Attio error:", err.message);
+      }
+    }
+
+    // Notification email — the one channel that must succeed
+    const resendRes = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: fromEmail,
+        to: [notifyEmail],
+        reply_to: email,
+        subject: `New registration: ${fullName} — ${flow.name}`,
+        html,
+        ...(attachments.length ? { attachments } : {}),
+      }),
+    });
+    if (!resendRes.ok) {
+      console.error("Resend error:", resendRes.status, (await resendRes.text()).slice(0, 300));
+      throw new Error("Failed to send email");
+    }
+
+    return new Response(JSON.stringify({ success: true }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    console.error("Register API error:", err.message);
+    return fail("Failed to submit. Please email us directly at info@turnpagedigital.com.", 500);
+  }
+}
+
+/* Assert the person by email, then attach a note labeled with the flow's
+   attioLabel. Uses Attio's standard People object; the label travels in the
+   note title + content so it works in any workspace without custom-attribute
+   setup. */
+async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attribution, steps }) {
+  const headers = {
+    Authorization: `Bearer ${env.ATTIO_API_KEY}`,
+    "Content-Type": "application/json",
+  };
+
+  const personValues = {
+    email_addresses: [{ email_address: email }],
+  };
+  if (answers.firstName || answers.lastName) {
+    personValues.name = [{
+      first_name: answers.firstName || "",
+      last_name: answers.lastName || "",
+      full_name: fullName,
+    }];
+  }
+  if (answers.phone) {
+    personValues.phone_numbers = [{ original_phone_number: answers.phone }];
+  }
+
+  const assertRes = await fetch(
+    "https://api.attio.com/v2/objects/people/records?matching_attribute=email_addresses",
+    { method: "PUT", headers, body: JSON.stringify({ data: { values: personValues } }) },
+  );
+  if (!assertRes.ok) {
+    throw new Error(`person assert ${assertRes.status}: ${(await assertRes.text()).slice(0, 200)}`);
+  }
+  const person = await assertRes.json();
+  const recordId = person?.data?.id?.record_id;
+  if (!recordId) throw new Error("person assert returned no record id");
+
+  const lines = steps.flatMap((s) => s.fields || [])
+    .filter((f) => f.type !== "file" && answers[f.id])
+    .map((f) => `${f.label}: ${answers[f.id]}`);
+  if (pageKey) lines.push(`Landing page: ${pageKey}`);
+  for (const [k, v] of Object.entries(attribution)) lines.push(`${k}: ${v}`);
+
+  const noteRes = await fetch("https://api.attio.com/v2/notes", {
+    method: "POST",
+    headers,
+    body: JSON.stringify({
+      data: {
+        parent_object: "people",
+        parent_record_id: recordId,
+        title: `Registration [${flow.attioLabel || flow.id}] — ${flow.name}`,
+        format: "plaintext",
+        content: lines.join("\n"),
+      },
+    }),
+  });
+  if (!noteRes.ok) {
+    throw new Error(`note ${noteRes.status}: ${(await noteRes.text()).slice(0, 200)}`);
+  }
+}
+
+export async function onRequestOptions(context) {
+  return new Response(null, { headers: corsHeadersFor(context.request) });
+}
