@@ -2,27 +2,11 @@
   "situations": [
     {
       "id": "sit-03",
-      "no": "03",
+      "no": "01",
       "hidden": false,
       "title": "Bankruptcy Claims",
       "body": "Trade claims, customer claims, and other interests in significant insolvency cases in the U.S. and globally.",
       "details": "Turnpage offers efficient execution and highly competitive pricing for creditors seeking to monetize their recovery rights. Our team has traded hundreds millions of dollars worth of claims in the largest chapter 11 cases and advised thousands of creditors."
-    },
-    {
-      "id": "sit-04",
-      "no": "04",
-      "hidden": false,
-      "title": "Locked Digital Assets",
-      "body": "Crypto accounts, deposits and loans stuck in judicial proceedings.",
-      "details": "Digital assets locked on exchange platforms, frozen bank accounts, and deposits trapped in restructurings are all addressable. Our team has deep expertise in nearly all of the major crypto estate cases that defined this asset class—BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager and others."
-    },
-    {
-      "id": "sit-01",
-      "no": "01",
-      "hidden": false,
-      "title": "Litigation Funding",
-      "body": "Complex disputes, adversary proceedings, estate claims and commercial judgments awaiting recovery.",
-      "details": "Together with our network of capital partners and experts, Turnpage arranges and funds complex, binary and speculative litigation at all stages and many jurisdictions globally. We work with bankruptcy trustees and liquidating trustees that lack the funding to monetize potentially valuable claims for the benefit of creditors and trust beneficiaries."
     },
     {
       "id": "sit-02",
@@ -34,11 +18,27 @@
     },
     {
       "id": "sit-05",
-      "no": "05",
+      "no": "03",
       "hidden": false,
       "title": "Government Receivables",
       "body": "IEEPA and Section 122 tariff refund rights, duty drawbacks and related receivables.",
       "details": "Turnpage launched standalone platform Rewind Tariffs to serve the $166 billion market for trading IEEPA tariff refund rights and has brokered or advised on over $50 million of refund claims.  We partner seamlessly with importers, customs brokers and trade advisors to augment their services and structure transactions to efficiently manage counterparty risk."
+    },
+    {
+      "id": "sit-01",
+      "no": "04",
+      "hidden": false,
+      "title": "Litigation Funding",
+      "body": "Complex disputes, adversary proceedings, estate claims and commercial judgments awaiting recovery.",
+      "details": "Together with our network of capital partners and experts, Turnpage arranges and funds complex, binary and speculative litigation at all stages and many jurisdictions globally. We work with bankruptcy trustees and liquidating trustees that lack the funding to monetize potentially valuable claims for the benefit of creditors and trust beneficiaries."
+    },
+    {
+      "id": "sit-04",
+      "no": "05",
+      "hidden": false,
+      "title": "Locked Digital Assets",
+      "body": "Crypto accounts, deposits and loans stuck in judicial proceedings.",
+      "details": "Digital assets locked on exchange platforms, frozen bank accounts, and deposits trapped in restructurings are all addressable. Our team has deep expertise in nearly all of the major crypto estate cases that defined this asset class—BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager and others."
     },
     {
       "id": "sit-06",
