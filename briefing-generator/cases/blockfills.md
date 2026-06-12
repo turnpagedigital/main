@@ -13,7 +13,7 @@ case:
   judge: "Thomas M. Horan"
 docket_source:
   type: courtlistener
-  docket_id: 26-10371
+  docket_id: 72494188
 claims_administrator:
   name: "Veritaglobal"
   url: "https://veritaglobal.net/blockfills/document/list/6500"
