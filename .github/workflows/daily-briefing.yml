@@ -10,6 +10,10 @@ on:
         description: "Override briefing date (YYYY-MM-DD, optional)"
         required: false
         default: ""
+      topics:
+        description: "Run only these topic slugs, comma-separated (e.g. crypto-insolvency). Empty = all topics."
+        required: false
+        default: ""
   # Fired by the admin's "Run Now" button via POST /repos/{repo}/dispatches —
   # works with a fine-grained token that has Contents: write (no Actions
   # permission needed, unlike workflow_dispatch).
@@ -55,6 +59,9 @@ jobs:
           # Without it, the seeded case JSON renders unchanged.
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
           BRIEFING_DATE: ${{ github.event.inputs.date || '' }}
+          # Single-topic mode: comma-separated slugs from the manual-run form
+          # or the admin "Run Now" dispatch payload. Empty = run all topics.
+          BRIEFING_TOPICS: ${{ github.event.inputs.topics || github.event.client_payload.topics || '' }}
         run: |
           python scripts/generate.py
 

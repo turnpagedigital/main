@@ -584,6 +584,25 @@ def themes_to_runtime(themes):
     ]
 
 
+def parse_topic_filter():
+    """Slugs to run, from `--topics a,b` / `--topics=a,b` argv or the
+    BRIEFING_TOPICS env var (set by the workflow from the dispatch payload).
+    Empty list = run every topic."""
+    vals = []
+    argv = sys.argv[1:]
+    for i, a in enumerate(argv):
+        if a == "--topics" and i + 1 < len(argv):
+            vals.append(argv[i + 1])
+        elif a.startswith("--topics="):
+            vals.append(a.split("=", 1)[1])
+    if not vals and os.environ.get("BRIEFING_TOPICS"):
+        vals.append(os.environ["BRIEFING_TOPICS"])
+    slugs = []
+    for v in vals:
+        slugs.extend(s.strip() for s in v.split(",") if s.strip())
+    return slugs
+
+
 def main():
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
@@ -612,6 +631,18 @@ def main():
         topics = TOPICS
         effective_queries = NEWS_QUERIES
         print("Using hardcoded topic list (themes.json unavailable)")
+
+    # ── Optional topic filter — run only the requested slug(s) ──────────────
+    requested = parse_topic_filter()
+    if requested:
+        known = {t["slug"] for t in topics}
+        unknown = [s for s in requested if s not in known]
+        if unknown:
+            print(f"ERROR: unknown topic slug(s): {', '.join(unknown)}. "
+                  f"Valid slugs: {', '.join(sorted(known))}", file=sys.stderr)
+            sys.exit(1)
+        topics = [t for t in topics if t["slug"] in requested]
+        print(f"Topic filter active — running only: {', '.join(t['slug'] for t in topics)}")
 
     whitelist, blacklist = parse_source_lists(sources_md)
     intel = load_intelligence_settings()
@@ -734,8 +765,9 @@ def main():
 
     # Call inject_dashboard.py to push the new advisories into existing brand-styled dashboards
     print("\n=== Injecting advisories into brand-styled dashboards (in place) ===", flush=True)
+    inject_args = [t["slug"] for t in topics] if requested else []
     result = subprocess.run(
-        [sys.executable, str(SCRIPTS_DIR / "inject_dashboard.py")],
+        [sys.executable, str(SCRIPTS_DIR / "inject_dashboard.py"), *inject_args],
         capture_output=True, text=True
     )
     print(result.stdout)

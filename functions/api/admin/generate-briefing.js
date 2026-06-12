@@ -5,6 +5,8 @@ import { isAuthed, jsonResponse } from "./_utils.js";
    briefing-generator/, June 2026).
 
    POST /api/admin/generate-briefing
+   Body (optional): { "topics": ["crypto-insolvency"] } or { "topics": "a,b" }
+     — restricts the run to those topic slugs; empty/missing = all topics
      → Sends a repository_dispatch event ("daily-briefing") to GITHUB_REPO
      → .github/workflows/daily-briefing.yml (on the default branch) runs
        briefing-generator/scripts/generate.py and commits the dashboards back
@@ -32,6 +34,18 @@ export async function onRequestPost({ request, env }) {
 
   const repo = env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main";
 
+  // Optional topic filter from the request body — slugs only, comma string or
+  // array. Anything that isn't kebab-case is dropped rather than forwarded.
+  let topics = [];
+  try {
+    const body = await request.json();
+    const raw = body?.topics ?? body?.topic ?? [];
+    const list = Array.isArray(raw) ? raw : String(raw).split(",");
+    topics = list.map(s => String(s).trim()).filter(s => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s));
+  } catch {
+    // No/invalid JSON body — run all topics.
+  }
+
   try {
     const response = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
       method: "POST",
@@ -42,14 +56,20 @@ export async function onRequestPost({ request, env }) {
         "Content-Type": "application/json",
         "User-Agent": "tpdm-admin",
       },
-      body: JSON.stringify({ event_type: "daily-briefing" }),
+      body: JSON.stringify({
+        event_type: "daily-briefing",
+        ...(topics.length ? { client_payload: { topics: topics.join(",") } } : {}),
+      }),
     });
 
     // Success is 204 No Content
     if (response.status === 204) {
+      const scope = topics.length
+        ? `for ${topics.join(", ")} only — takes ~3–5 minutes`
+        : "for all topics — takes ~10–15 minutes";
       return jsonResponse({
         ok: true,
-        message: `✅ Briefing generation triggered! Takes ~10–15 minutes — new LLM/Copyright and Crypto drafts then appear in the Queue below (hit Refresh), and the topic dashboards update. Monitor at https://github.com/${repo}/actions.`,
+        message: `✅ Briefing generation triggered ${scope}. New drafts then appear in the Queue below (hit Refresh), and the topic dashboard(s) update. Monitor at https://github.com/${repo}/actions.`,
       });
     }
 

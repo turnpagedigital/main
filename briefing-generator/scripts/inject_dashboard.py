@@ -4,6 +4,7 @@ content for the dashboard's center column. Parse markdown handling all citation
 formats: [Text](URL), __[Text](URL)__, and reversed [URL](text). Wrap every link
 as a brand-styled source-arrow tooltip. Preserve overview + sidebars."""
 import re
+import sys
 import datetime as dt
 from pathlib import Path
 from urllib.parse import urlparse
@@ -239,7 +240,13 @@ def patch(slug):
     print(f"  ✓ {slug}: rich content from {src.name} ({arrows} citations; {stamp_n} date stamp(s) → {DATE_PRETTY})")
 
 def main():
-  for slug in TOPICS: patch(slug)
+  # Optional slug args restrict the run to those topics (single-topic mode).
+  requested = [a for a in sys.argv[1:] if not a.startswith("-")]
+  unknown = [s for s in requested if s not in TOPICS]
+  if unknown:
+    print(f"  ! ignoring unknown topic slug(s): {', '.join(unknown)}")
+  slugs = [s for s in TOPICS if s in requested] if requested else TOPICS
+  for slug in slugs: patch(slug)
 
 if __name__ == "__main__":
   main()

@@ -54,6 +54,41 @@ export function iconBtnStyle(disabled) {
   };
 }
 
+/* ── Briefing topics (for the per-topic "Run Now" selector) ──────────────────
+   Loads active themes from /api/admin/themes so the dropdown tracks whatever
+   Andrew manages in Intelligence → Themes. Falls back to the known six if the
+   fetch fails. Returns [{ slug, label }]. */
+const BRIEFING_TOPIC_FALLBACK = [
+  { slug: "rewind-tariffs",               label: "Tariffs / Trade" },
+  { slug: "llm-class-action",             label: "LLM / Copyright" },
+  { slug: "crypto-insolvency",            label: "Crypto Insolvency" },
+  { slug: "fraud-recovery",               label: "Ponzi / Fraud Recovery" },
+  { slug: "billion-dollar-class-actions", label: "$1B+ Class Actions & Mass Arb" },
+  { slug: "bankruptcy-creditor-rights",   label: "Bankruptcy Creditor Rights" },
+];
+
+export function useBriefingTopics() {
+  const [topics, setTopics] = useState(BRIEFING_TOPIC_FALLBACK);
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const r = await fetch("/api/admin/themes", { credentials: "include" });
+        const body = await r.json().catch(() => ({}));
+        if (!r.ok || !body.ok || !Array.isArray(body.themes)) return;
+        const active = body.themes
+          .filter(t => t.active !== false && t.slug)
+          .map(t => ({ slug: t.slug, label: t.display_name || t.slug }));
+        if (!cancelled && active.length) setTopics(active);
+      } catch {
+        // keep fallback list
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
+  return topics;
+}
+
 export function formatTime(d) {
   const hh = String(d.getHours()).padStart(2, "0");
   const mm = String(d.getMinutes()).padStart(2, "0");

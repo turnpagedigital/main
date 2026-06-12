@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, ErrorBanner } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, ErrorBanner, useBriefingTopics } from "./shared.jsx";
 import RichEditor from "./RichEditor.jsx";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
 
@@ -68,6 +68,8 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   const [filter, setFilter]        = useState("all");      // "all" | "queue" | "published"
   const [running, setRunning]      = useState(false);      // briefing generation in flight
   const [runMsg, setRunMsg]        = useState(null);       // { ok, text } banner
+  const [runTopic, setRunTopic]    = useState("");         // "" = all topics
+  const briefingTopics = useBriefingTopics();
   const [form, setForm]            = useState(blankPostForm());
   const [isNew, setIsNew]          = useState(false);
   const [editorPhase, setEditorPhase] = useState("idle"); // idle|loading-content|saving|error
@@ -100,7 +102,9 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
     try {
       const r = await fetch("/api/admin/generate-briefing", {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
         credentials: "include",
+        body: JSON.stringify(runTopic ? { topics: [runTopic] } : {}),
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
@@ -266,10 +270,22 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
               ? `${queueCount} queued · ${publishedCount} published`
               : `${posts.length} post${posts.length !== 1 ? "s" : ""}`)}
           </div>
+          <select
+            value={runTopic}
+            onChange={e => setRunTopic(e.target.value)}
+            disabled={running}
+            title="Choose one topic to run by itself, or leave on All topics"
+            style={{ ...selectStyle, width: "auto", marginTop: 0, fontSize: "0.8rem", padding: "0.45rem 1.6rem 0.45rem 0.6rem" }}
+          >
+            <option value="">All topics</option>
+            {briefingTopics.map(t => (
+              <option key={t.slug} value={t.slug}>{t.label}</option>
+            ))}
+          </select>
           <button
             onClick={runBriefing}
             disabled={running}
-            title="Trigger the daily-briefing pipeline — new drafts land in the Queue in ~10–15 min"
+            title="Trigger the daily-briefing pipeline — new drafts land in the Queue (one topic: ~3–5 min, all topics: ~10–15 min)"
             style={{ ...btnStyle, opacity: running ? 0.6 : 1, cursor: running ? "default" : "pointer" }}
           >
             {running ? "Running…" : "Run Briefing"}

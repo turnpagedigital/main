@@ -28,9 +28,22 @@ export ANTHROPIC_API_KEY=sk-ant-...
 
 # Run a one-off generation
 python scripts/generate.py
+
+# Run a single topic only (comma-separate for several)
+python scripts/generate.py --topics crypto-insolvency
 ```
 
 The script will produce HTML files in each topic dir (`rewind-tariffs/`, `llm-class-action/`, etc.).
+
+## Running one topic at a time
+
+Three ways to run a single topic instead of all six:
+
+1. **Admin panel** — on `/admin/content/posts` (or the Briefings tab), pick the topic in the dropdown next to the Run button, then click Run. Leave it on "All topics" for the full daily run.
+2. **GitHub Actions** — Actions → Daily Briefing Generation → Run workflow → put the topic slug (e.g. `crypto-insolvency`) in the `topics` field.
+3. **Locally** — `python scripts/generate.py --topics <slug>` (or set `BRIEFING_TOPICS=<slug>`).
+
+A single-topic run updates only that topic's advisory, dashboard, landing-page card, and queued draft; everything else is left as-is. The scheduled 10am ET run still covers all topics.
 
 ## Brand styling
 

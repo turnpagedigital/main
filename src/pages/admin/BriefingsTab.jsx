@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { btnStyle, btnPrimaryStyle, formatTime } from "./shared.jsx";
+import { btnStyle, btnPrimaryStyle, selectStyle, formatTime, useBriefingTopics } from "./shared.jsx";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    BriefingsTab — Queue and publish daily briefings.
@@ -23,6 +23,8 @@ export default function BriefingsTab({ onDirtyChange: _onDirtyChange }) {
   const [lastAction, setLastAction] = useState(null);    // { slug, at, label }
   const [running, setRunning]     = useState(false);     // run-now in progress
   const [runStatus, setRunStatus] = useState(null);      // { at, message, type: "ok"|"error" }
+  const [runTopic, setRunTopic]   = useState("");        // "" = all topics
+  const topics = useBriefingTopics();
 
   // ── Load briefings ────────────────────────────────────────────────────────
   const load = useCallback(async () => {
@@ -52,7 +54,7 @@ export default function BriefingsTab({ onDirtyChange: _onDirtyChange }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({}),
+        body: JSON.stringify(runTopic ? { topics: [runTopic] } : {}),
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) {
@@ -135,6 +137,18 @@ export default function BriefingsTab({ onDirtyChange: _onDirtyChange }) {
             {lastAction.label} · {formatTime(lastAction.at)}
           </span>
         )}
+        <select
+          value={runTopic}
+          onChange={e => setRunTopic(e.target.value)}
+          disabled={running}
+          title="Choose one topic to run by itself, or leave on All topics"
+          style={{ ...selectStyle, width: "auto", marginTop: 0, fontSize: "0.78rem", padding: "0.4rem 1.6rem 0.4rem 0.6rem" }}
+        >
+          <option value="">All topics</option>
+          {topics.map(t => (
+            <option key={t.slug} value={t.slug}>{t.label}</option>
+          ))}
+        </select>
         <button
           onClick={runNow}
           disabled={running}
