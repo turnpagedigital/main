@@ -42,6 +42,9 @@ function normalizeTheme(raw) {
       // Theme-specific trusted sources only; the blocklist is global (Defaults).
       whitelist: cleanStringList(src.whitelist),
     },
+    // Slugs of tracked cases to spotlight as priority ground truth in this
+    // beat's daily briefing (set in the Themes editor; read by generate.py).
+    key_focus_cases: cleanStringList(t.key_focus_cases),
     guidance_prompt: typeof t.guidance_prompt === "string" ? t.guidance_prompt : "",
   };
 }

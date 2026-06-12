@@ -27,6 +27,7 @@ const DEFAULT_THEME = {
   schedule: "daily",
   keywords: [],
   sources: { whitelist: [] },
+  key_focus_cases: [],
   guidance_prompt: "",
 };
 
@@ -55,8 +56,15 @@ export default function ThemesTab({ onDirtyChange }) {
   const [toast, setToast] = useState("");
   const [deleteSlug, setDeleteSlug] = useState(null);
   const [kwInput, setKwInput] = useState("");
+  const [cases, setCases] = useState([]);
 
-  useEffect(() => { loadThemes(); }, []);
+  useEffect(() => { loadThemes(); loadCases(); }, []);
+
+  // Cases already tagged to the theme being edited — the candidates for key focus.
+  const themeCases = useMemo(
+    () => cases.filter(c => (c.topics || []).includes(form.slug)),
+    [cases, form.slug]
+  );
 
   const original = useMemo(() => {
     if (isNew) return { ...DEFAULT_THEME };
@@ -78,6 +86,13 @@ export default function ThemesTab({ onDirtyChange }) {
       setThemes(data.themes || []);
     } catch (e) { setError(e.message); }
     finally { setLoading(false); }
+  }
+  async function loadCases() {
+    try {
+      const res = await fetch("/api/admin/cases", { credentials: "include" });
+      const data = await res.json();
+      if (data.ok && Array.isArray(data.cases)) setCases(data.cases);
+    } catch { /* key-focus picker just shows empty if cases can't load */ }
   }
 
   function openNew() {
@@ -108,6 +123,16 @@ export default function ThemesTab({ onDirtyChange }) {
     setKwInput("");
   }
   function removeKeyword(k) { set("keywords", form.keywords.filter(x => x !== k)); }
+
+  function toggleKeyFocus(slug) {
+    setForm(prev => {
+      const cur = prev.key_focus_cases || [];
+      return {
+        ...prev,
+        key_focus_cases: cur.includes(slug) ? cur.filter(s => s !== slug) : [...cur, slug],
+      };
+    });
+  }
 
   function validate() {
     if (!form.display_name.trim()) return "Display name is required";
@@ -319,6 +344,41 @@ export default function ThemesTab({ onDirtyChange }) {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* Key focus cases */}
+        <div style={card}>
+          <h3 style={sectionH}>Key focus cases <span style={{ fontWeight: 500, color: INK_60, fontSize: "0.8rem" }}>(spotlight in this beat&rsquo;s briefing)</span></h3>
+          <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.7rem" }}>
+            Pick which tracked cases this beat should lead with. Checked cases are passed to the daily
+            briefing as priority ground truth &mdash; today&rsquo;s lede opens with the most consequential one,
+            and they always get the most space. Add or tag cases in the <strong>Cases</strong> sub-tab.
+          </p>
+          {themeCases.length === 0 ? (
+            <p style={{ color: INK_60, fontSize: "0.85rem" }}>
+              {isNew
+                ? "Save this theme first, then tag cases to it in the Cases sub-tab."
+                : "No cases are tagged to this theme yet. Open the Cases sub-tab and tag one to this theme."}
+            </p>
+          ) : (
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+              {themeCases.map(c => {
+                const on = (form.key_focus_cases || []).includes(c.slug);
+                return (
+                  <label key={c.slug} style={{
+                    display: "flex", alignItems: "center", gap: 8, padding: "0.6rem 0.7rem", cursor: "pointer",
+                    border: `1px solid ${on ? INK : LINE}`, background: on ? "#F4F5F7" : SURFACE, fontSize: "0.86rem",
+                  }}>
+                    <input type="checkbox" checked={on} onChange={() => toggleKeyFocus(c.slug)} />
+                    <span style={{ display: "flex", flexDirection: "column", lineHeight: 1.3 }}>
+                      <span style={{ fontWeight: 600 }}>{c.display_name || c.slug}</span>
+                      <span style={{ fontFamily: "monospace", fontSize: "0.72rem", color: INK_60 }}>{c.slug}</span>
+                    </span>
+                  </label>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* Sources */}

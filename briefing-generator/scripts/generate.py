@@ -196,13 +196,20 @@ def build_news_block(items):
 def read_text(p):
     return p.read_text(encoding="utf-8") if p.exists() else ""
 
-def build_case_truth_block(topic_slug):
+def build_case_truth_block(topic_slug, key_focus_slugs=()):
     """Compact authoritative block from the repo's tracked-case data so the
-    model can't drift on cases we already track (e.g. settlement posture)."""
+    model can't drift on cases we already track (e.g. settlement posture).
+
+    Cases whose slug is in key_focus_slugs (set per-theme in the admin Themes
+    editor) ALWAYS lead and are always included; remaining slots fill with the
+    other tagged cases. Key-focus cases are flagged ★ so the model opens the
+    lede with them."""
     cases_dir = REPO_ROOT / "cases"
     if not cases_dir.exists():
         return ""
-    blocks = []
+    key_set = set(key_focus_slugs or ())
+    # Gather all cases tagged to this topic, splitting key-focus from the rest.
+    focus, rest = [], []
     for md_file in sorted(cases_dir.glob("*.md")):
         if md_file.name == "README.md":
             continue
@@ -213,20 +220,29 @@ def build_case_truth_block(topic_slug):
         if topic_slug not in head:
             continue
         slug = md_file.stem
+        (focus if slug in key_set else rest).append((slug, head))
+    # Key-focus cases always included; others fill up to a cap (min 3).
+    ordered = (focus + rest)[: max(3, len(focus))]
+    if not ordered:
+        return ""
+    blocks = []
+    for slug, head in ordered:
+        marker = " ★ KEY FOCUS — lead the advisory with this matter" if slug in key_set else ""
+        entry = f"## {slug}{marker}\n{head[:900]}"
         data_file = cases_dir / "data" / f"{slug}.json"
-        entry = f"## {slug}\n{head[:900]}"
         if data_file.exists():
             try:
                 entry += "\n### live data\n" + data_file.read_text(encoding="utf-8")[:900]
             except Exception:
                 pass
         blocks.append(entry)
-        if len(blocks) >= 3:
-            break
-    if not blocks:
-        return ""
-    return ("# Tracked-case ground truth (AUTHORITATIVE — overrides anything "
-            "you believe from memory; never contradict this)\n\n" + "\n\n".join(blocks) + "\n\n")
+    header = ("# Tracked-case ground truth (AUTHORITATIVE — overrides anything "
+              "you believe from memory; never contradict this)\n")
+    if focus:
+        header += ("\nCases marked ★ KEY FOCUS are the priority matters for this beat — open today's "
+                   "lede with the most consequential KEY FOCUS development and give these cases the "
+                   "most space.\n")
+    return header + "\n" + "\n\n".join(blocks) + "\n\n"
 
 def build_prompt_docs(brand_styling, skill_md, sources_md):
     """Static reference docs — identical for every topic, sent as a cached
@@ -542,13 +558,14 @@ def themes_to_runtime(themes):
     """Convert admin-schema theme objects to the topic dicts generate.py uses."""
     return [
         {
-            "slug":            t["slug"],
-            "display":         t["display_name"],
-            "emoji":           t.get("emoji", "📋"),
-            "voice":           _SLUG_VOICE.get(t["slug"], ""),
-            "guidance_prompt": t.get("guidance_prompt", ""),
-            "theme_whitelist": set(t.get("sources", {}).get("whitelist", [])),
-            "keywords":        t.get("keywords", []),
+            "slug":             t["slug"],
+            "display":          t["display_name"],
+            "emoji":            t.get("emoji", "📋"),
+            "voice":            _SLUG_VOICE.get(t["slug"], ""),
+            "guidance_prompt":  t.get("guidance_prompt", ""),
+            "theme_whitelist":  set(t.get("sources", {}).get("whitelist", [])),
+            "keywords":         t.get("keywords", []),
+            "key_focus_cases":  t.get("key_focus_cases", []),
         }
         for t in themes
     ]
@@ -632,9 +649,11 @@ def main():
             news_block = build_enriched_news_block(enriched_items)
         else:
             news_block = build_news_block([])  # fallback for no headlines
-        case_truth_block = build_case_truth_block(topic['slug'])
+        case_truth_block = build_case_truth_block(topic['slug'], topic.get('key_focus_cases', ()))
         if case_truth_block:
-            print(f"  ground truth: tracked-case block included")
+            kf = topic.get('key_focus_cases') or []
+            extra = f" (key focus: {', '.join(kf)})" if kf else ""
+            print(f"  ground truth: tracked-case block included{extra}")
         prompt = build_prompt(topic, news_block, case_truth_block)
 
         response = create_with_retry(
