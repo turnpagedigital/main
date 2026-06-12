@@ -54,11 +54,54 @@ function AuthorBadge({ author, dark = false }) {
   );
 }
 
+/* ── Share row — LinkedIn / X share intents for the current post ─────────── */
+function ShareRow({ meta, dark = false }) {
+  const pageUrl = typeof window !== "undefined"
+    ? `${window.location.origin}/briefings/${meta.slug}`
+    : `https://turnpagedigital.com/briefings/${meta.slug}`;
+  const enc = encodeURIComponent;
+  const links = [
+    { label: "Share on LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${enc(pageUrl)}` },
+    { label: "Share on X",        href: `https://twitter.com/intent/tweet?url=${enc(pageUrl)}&text=${enc(meta.title || "")}` },
+  ];
+  const fg = dark ? "rgba(255,255,255,0.65)" : INK_60;
+  const line = dark ? "rgba(255,255,255,0.25)" : LINE;
+  return (
+    <div style={{ display: "flex", gap: "0.6rem", marginTop: "1.4rem", flexWrap: "wrap" }}>
+      {links.map(l => (
+        <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
+          style={{
+            fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+            letterSpacing: "0.12em", textTransform: "uppercase",
+            color: fg, border: `1px solid ${line}`, padding: "0.42rem 0.85rem",
+            borderRadius: 4, textDecoration: "none",
+          }}>
+          {l.label} ↗
+        </a>
+      ))}
+    </div>
+  );
+}
+
 /* ── Single post — fetches index + markdown, dispatches by type ──────────── */
 export default function Briefing({ slug }) {
   const [meta,     setMeta]     = useState(null);
   const [bodyHtml, setBodyHtml] = useState(null);
   const [error,    setError]    = useState(null);
+
+  /* Sync the browser tab + history entry with the loaded post. Crawlers get
+     the same values server-side from functions/_middleware.js; this is for
+     humans and SPA navigations. App.jsx resets the title on route change. */
+  useEffect(() => {
+    if (!meta || !meta.title || meta.title === meta.slug) return;
+    document.title = `${meta.title} — Turnpage Digital Markets`;
+    const descEl = document.querySelector('meta[name="description"]');
+    const prevDesc = descEl ? descEl.getAttribute("content") : null;
+    if (descEl && meta.summary) descEl.setAttribute("content", meta.summary);
+    return () => {
+      if (descEl && prevDesc != null) descEl.setAttribute("content", prevDesc);
+    };
+  }, [meta]);
 
   useEffect(() => {
     let cancelled = false;
@@ -152,6 +195,7 @@ function BriefingTemplate({ meta, bodyHtml }) {
               {meta.summary}
             </p>
           )}
+          <ShareRow meta={meta} dark />
         </div>
       </header>
 
@@ -224,6 +268,7 @@ function ArticleTemplate({ meta, bodyHtml }) {
               {meta.summary}
             </p>
           )}
+          <ShareRow meta={meta} />
         </div>
       </header>
 

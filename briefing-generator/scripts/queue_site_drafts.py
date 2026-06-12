@@ -78,6 +78,16 @@ def clean_inline_md(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
+def strip_preamble(md):
+    """Drop any conversational preamble ahead of the advisory's first H1
+    ("I'll run targeted searches...# 📜 ..."), even when it's fused onto the
+    heading line with no newline between."""
+    if md.startswith("#"):
+        return md
+    h1 = md.find("# ")
+    return md[h1:] if h1 != -1 else md
+
+
 def extract_summary(md):
     """Prefer the 'Today's principal deltas' lead; fall back to the first
     body paragraph. Trim to ~300 chars at a sentence boundary."""
@@ -89,9 +99,12 @@ def extract_summary(md):
             break
     if lead is None:
         for p in paras:
-            if not p.startswith("#") and not p.startswith("---"):
-                lead = p
-                break
+            if p.startswith("#") or p.startswith("---"):
+                continue
+            if "Turnpage Digital Markets" in p:  # letterhead block, not a lede
+                continue
+            lead = p
+            break
     if lead is None:
         return ""
     lead = clean_inline_md(lead)
@@ -127,7 +140,7 @@ def main():
             print(f"skip {topic['folder']}: no advisory for {args.date}")
             continue
         slug = f"{args.date}-{topic['slug_suffix']}"
-        md = advisory.read_text(encoding="utf-8")
+        md = strip_preamble(advisory.read_text(encoding="utf-8"))
         if slug in existing_slugs:
             # Already queued — refresh the markdown body (the pipeline may
             # have regenerated today's advisory) but leave the index entry.

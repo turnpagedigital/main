@@ -1,4 +1,4 @@
-I'll research the key developments before drafting the advisory.# 🕵️ Ponzi / Fraud Recovery | Thursday, June 11, 2026
+# 🕵️ Ponzi / Fraud Recovery | Thursday, June 11, 2026
 
 ## Analysis & Developments
 

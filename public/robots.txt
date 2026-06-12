@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /intel
+Disallow: /intel/
+
+Sitemap: https://turnpagedigital.com/sitemap.xml

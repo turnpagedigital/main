@@ -12,6 +12,8 @@
  */
 
 import { ImageResponse, loadGoogleFont } from "workers-og";
+import briefingsIndex from "../../public/briefings/index.json";
+import { isActiveBriefing, clampText } from "../_meta.js";
 
 const NEON = "#D4FF00";
 const BG = "#000000";
@@ -136,17 +138,135 @@ function buildHtml({ title, subtitle }) {
   `;
 }
 
-export const onRequest = async (context) => {
-  const slug = String(context.params.slug || "").toLowerCase();
+/* Briefing OG variant — same brand chassis, briefing title + date + topic tag.
+ * Long headlines get a smaller font so they fit the 1200x630 canvas. */
+function buildBriefingHtml(item) {
+  const title = clampText(item.title, 120);
+  const fontSize = title.length > 70 ? 54 : title.length > 45 ? 64 : 76;
+  const dateLabel = formatBriefingDate(item.date);
+  const tag = Array.isArray(item.tags) && item.tags.length ? item.tags[0] : "";
 
-  // Unknown slug → redirect to the home OG so we never serve a broken preview.
-  if (!PAGES[slug]) {
+  return `
+    <div style="
+      display: flex;
+      flex-direction: column;
+      width: 1200px;
+      height: 630px;
+      background: ${BG};
+      position: relative;
+      font-family: 'Archivo', sans-serif;
+      color: ${TEXT};
+      padding: 80px 88px 64px 96px;
+      box-sizing: border-box;
+    ">
+      <div style="
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 8px;
+        background: ${NEON};
+        display: flex;
+      "></div>
+
+      <div style="display: flex; flex-direction: column; align-items: flex-start;">
+        <div style="
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: 6px;
+          color: ${TEXT};
+          display: flex;
+        ">TURNPAGE DIGITAL MARKETS</div>
+        <div style="
+          font-size: 19px;
+          font-weight: 700;
+          letter-spacing: 4px;
+          color: ${NEON};
+          margin-top: 12px;
+          display: flex;
+        ">INTELLIGENCE BRIEFING</div>
+      </div>
+
+      <div style="
+        display: flex;
+        flex-direction: column;
+        margin-top: 72px;
+        max-width: 1010px;
+      ">
+        <div style="
+          font-size: ${fontSize}px;
+          font-weight: 900;
+          line-height: 1.06;
+          letter-spacing: -1.5px;
+          color: ${TEXT};
+          display: flex;
+        ">${esc(title)}</div>
+        <div style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 36px;
+        ">
+          <div style="
+            background: ${NEON};
+            color: ${BG};
+            font-size: 22px;
+            font-weight: 700;
+            padding: 8px 18px;
+            display: flex;
+          ">${esc(dateLabel)}</div>
+          ${tag ? `<div style="
+            border: 2px solid rgba(255,255,255,0.35);
+            color: ${MUTED};
+            font-size: 22px;
+            font-weight: 600;
+            padding: 6px 18px;
+            margin-left: 16px;
+            display: flex;
+          ">${esc(tag)}</div>` : ""}
+        </div>
+      </div>
+
+      <div style="
+        position: absolute;
+        right: 88px;
+        bottom: 56px;
+        font-size: 22px;
+        font-weight: 600;
+        color: ${MUTED};
+        display: flex;
+      ">turnpagedigital.com/briefings</div>
+    </div>
+  `;
+}
+
+function formatBriefingDate(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+  if (!m) return iso || "";
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  return `${months[parseInt(m[2], 10) - 1]} ${parseInt(m[3], 10)}, ${m[1]}`;
+}
+
+export const onRequest = async (context) => {
+  /* Briefing slugs are case-sensitive (date-prefixed); marketing slugs are
+   * lowercased as before. */
+  const rawSlug = String(context.params.slug || "");
+  const slug = rawSlug.toLowerCase();
+
+  let html;
+  if (rawSlug.startsWith("briefing--")) {
+    const briefingSlug = rawSlug.slice("briefing--".length);
+    const item = briefingsIndex.items.find((b) => b.slug === briefingSlug);
+    if (!isActiveBriefing(item)) {
+      const url = new URL(context.request.url);
+      return Response.redirect(`${url.origin}/og/home`, 302);
+    }
+    html = buildBriefingHtml(item);
+  } else if (PAGES[slug]) {
+    html = buildHtml(PAGES[slug]);
+  } else {
+    // Unknown slug → redirect to the home OG so we never serve a broken preview.
     const url = new URL(context.request.url);
     return Response.redirect(`${url.origin}/og/home`, 302);
   }
-
-  const page = PAGES[slug];
-  const html = buildHtml(page);
 
   // Load Archivo from Google Fonts. If it fails (rare — Cloudflare egress is
   // reliable, but be safe), fall back to Satori's default sans-serif so we

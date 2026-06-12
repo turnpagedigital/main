@@ -449,8 +449,9 @@ def main():
             }],
         )
         # With server-side tools the content list interleaves search blocks
-        # with text blocks — join every text block.
-        advisory_md = "".join(
+        # with text blocks — join with a newline so a preamble block never
+        # fuses onto the advisory's H1 line ("...drafting.# 📜 ...").
+        advisory_md = "\n".join(
             b.text for b in response.content if getattr(b, "type", "") == "text"
         ).strip()
         # Strip code fences if present
@@ -458,10 +459,11 @@ def main():
             advisory_md = advisory_md.split("\n", 1)[1].rsplit("```", 1)[0].strip()
         # The search loop can leak conversational preamble ("I'll verify...")
         # ahead of the advisory — keep only from the first markdown H1 on.
+        # find("# ") (not "\n# ") also catches preamble already fused to the H1.
         if not advisory_md.startswith("#"):
-            h1 = advisory_md.find("\n# ")
+            h1 = advisory_md.find("# ")
             if h1 != -1:
-                advisory_md = advisory_md[h1 + 1:]
+                advisory_md = advisory_md[h1:]
 
         # Save advisory.md
         topic_dir = REPO_ROOT / topic['slug']

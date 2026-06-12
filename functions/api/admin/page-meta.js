@@ -126,6 +126,9 @@ function normalizeSite(site) {
     name:               String(site.name).trim().slice(0, MAX_STR_SHORT),
     defaultTitle:       String(site.defaultTitle).trim().slice(0, MAX_STR_SHORT),
     defaultDescription: String(site.defaultDescription).trim().slice(0, MAX_STR_LONG),
+    // Optional "@handle" for twitter:site (emitted by functions/_middleware.js
+    // when non-empty). Normalized here so admin saves don't strip it.
+    twitterHandle:      String(site.twitterHandle || "").trim().slice(0, 32),
   };
 }
 
