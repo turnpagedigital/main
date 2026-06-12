@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { NEON, FONT, INK, INK_60, LINE, SURFACE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
-import routesData from "../../data/routes.json";
 
 /* ThemesTab — manage the standing "beats" Andrew covers.
    List view + per-theme editor. Saves to /api/admin/themes (themes.json in the
-   main repo). Input layer only — nothing triggers scraping yet. */
+   main repo). Each beat's output home is its intelligence dashboard at
+   /intel/<slug>/dashboard.html, which the daily pipeline writes to. */
 
 const SCHEDULES = [
   { value: "daily", label: "Daily" },
@@ -13,10 +13,8 @@ const SCHEDULES = [
   { value: "manual", label: "Manual only" },
 ];
 
-// Public pages a theme can publish to (its output home). Excludes utility routes.
-const PAGE_OPTIONS = (routesData.routes || []).filter(
-  r => !r.dynamic && !["admin", "privacy", "terms", "contact"].includes(r.key)
-);
+// The public intelligence dashboard a beat publishes to (1:1 with its slug).
+const intelDashboardPath = (slug) => (slug ? `/intel/${slug}/dashboard.html` : "");
 
 const DEFAULT_THEME = {
   slug: "",
@@ -179,6 +177,8 @@ export default function ThemesTab({ onDirtyChange }) {
   }
 
   const wrap = { maxWidth: 1080, margin: "0 auto", padding: "1.4rem clamp(1rem,3vw,2rem) 3rem" };
+  // Output home = the beat's intel dashboard, derived from its slug (live preview for new themes).
+  const editorIntelPath = intelDashboardPath(isNew ? slugify(form.slug || form.display_name) : form.slug);
 
   /* ── List view ──────────────────────────────────────────────────────── */
   if (phase === "list") {
@@ -206,17 +206,21 @@ export default function ThemesTab({ onDirtyChange }) {
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.88rem" }}>
                 <thead>
                   <tr style={{ borderBottom: `1px solid ${LINE}`, textAlign: "left" }}>
-                    <Th>Theme</Th><Th>Slug</Th><Th>Output page</Th><Th>Schedule</Th><Th>Status</Th><Th right>Actions</Th>
+                    <Th>Theme</Th><Th>Slug</Th><Th>Dashboard</Th><Th>Schedule</Th><Th>Status</Th><Th right>Actions</Th>
                   </tr>
                 </thead>
                 <tbody>
                   {themes.map(t => {
-                    const page = PAGE_OPTIONS.find(p => p.key === t.page);
                     return (
                       <tr key={t.slug} style={{ borderBottom: `1px solid ${LINE}` }}>
                         <Td><span style={{ marginRight: 6 }}>{t.emoji}</span>{t.display_name}</Td>
                         <Td mono>{t.slug}</Td>
-                        <Td>{page ? page.title : <span style={{ color: INK_60 }}>—</span>}</Td>
+                        <Td>
+                          <a href={intelDashboardPath(t.slug)} target="_blank" rel="noreferrer"
+                            style={{ color: INK, fontWeight: 600, textDecoration: "underline", fontSize: "0.8rem" }}>
+                            /intel/{t.slug} ↗
+                          </a>
+                        </Td>
                         <Td style={{ textTransform: "capitalize" }}>{t.schedule}</Td>
                         <Td>{t.active
                           ? <span style={{ color: "#1a7f37", fontWeight: 700 }}>Active</span>
@@ -300,12 +304,23 @@ export default function ThemesTab({ onDirtyChange }) {
           <h3 style={sectionH}>Output &amp; schedule</h3>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
             <div>
-              <label style={labelStyle}>Linked public page (output home)</label>
-              <select style={selectStyle} value={form.page || ""}
-                onChange={e => set("page", e.target.value || null)}>
-                <option value="">— None yet —</option>
-                {PAGE_OPTIONS.map(p => <option key={p.key} value={p.key}>{p.title} ({p.path})</option>)}
-              </select>
+              <label style={labelStyle}>Output home (intelligence dashboard)</label>
+              {editorIntelPath ? (
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: "0.5rem", flexWrap: "wrap" }}>
+                  <code style={{ fontSize: "0.82rem", background: "#F4F5F7", border: `1px solid ${LINE}`, padding: "0.35rem 0.5rem" }}>
+                    {editorIntelPath}
+                  </code>
+                  <a href={editorIntelPath} target="_blank" rel="noreferrer"
+                    style={{ fontSize: "0.82rem", color: INK, fontWeight: 700, textDecoration: "underline" }}>Open ↗</a>
+                </div>
+              ) : (
+                <p style={{ fontSize: "0.8rem", color: INK_60, marginTop: "0.5rem" }}>
+                  The dashboard URL is derived from the slug once you name this beat.
+                </p>
+              )}
+              <p style={{ fontSize: "0.72rem", color: INK_60, marginTop: 6 }}>
+                The daily briefing writes this beat&rsquo;s advisory here automatically.
+              </p>
             </div>
             <div>
               <label style={labelStyle}>Schedule</label>
@@ -313,7 +328,9 @@ export default function ThemesTab({ onDirtyChange }) {
                 onChange={e => set("schedule", e.target.value)}>
                 {SCHEDULES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
               </select>
-              <p style={{ fontSize: "0.72rem", color: INK_60, marginTop: 4 }}>Stored only — nothing runs on this yet.</p>
+              <p style={{ fontSize: "0.72rem", color: INK_60, marginTop: 4 }}>
+                Stored only — the daily run currently includes every Active beat.
+              </p>
             </div>
           </div>
         </div>
