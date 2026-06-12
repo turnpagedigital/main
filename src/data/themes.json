@@ -217,7 +217,25 @@
       "sources": {
         "whitelist": [
           "https://bondoro.com/",
-          "https://www.dailydac.com/"
+          "https://www.dailydac.com/",
+          "https://www.law360.com/bankruptcy",
+          "https://bankruptcyroundtable.law.harvard.edu/",
+          "https://www.ncbrc.org/",
+          "https://www.nytimes.com/topic/subject/bankruptcies?scp=1-spot&sq=bankruptcy&st=cse",
+          "https://www.abi.org/member-resources/blogs",
+          "https://www.abajournal.com/topic/bankruptcy+law",
+          "https://www.reuters.com/legal/bankruptcy/",
+          "https://www.usnews.com/topics/subjects/bankruptcy",
+          "https://www.businesslawprofessors.com/category/bankruptcy-reorganizations/",
+          "https://creditorcoalition.org/creditor-corner/",
+          "https://www.foxrothschild.com/bankruptcy-litigation/insolvency-blog",
+          "https://www.bankruptcylitigation.blog/",
+          "https://www.abi.org/newsroom/headlines",
+          "https://bkinformation.com/news/dailynews.cfm",
+          "https://www.mintz.com/insights-center/bankruptcy-restructuring",
+          "https://bankruptcy.cooley.com/",
+          "https://globalrestructuringreview.com/",
+          "https://www.jdsupra.com/law-news/bankruptcy-law/vd"
         ]
       },
       "key_focus_cases": [
