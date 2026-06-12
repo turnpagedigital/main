@@ -84,6 +84,22 @@ const TYPE_OPTS = [
   { key: "posts",     label: "Posts" },
   { key: "briefings", label: "Briefings" },
 ];
+/* Selectable type keys (everything except the special "all"/clear pill). The
+   type filter is MULTI-select: an empty selection means "all". */
+const VALID_TYPES = TYPE_OPTS.filter(o => o.key !== "all").map(o => o.key);
+
+/* Does one item satisfy a single type-filter key? Some pills map to more than
+   one underlying mediaType (Posts = social + blog; Press = press + news). */
+function itemMatchesType(item, key) {
+  switch (key) {
+    case "article":   return item.mediaType === "article";
+    case "posts":     return item.mediaType === "social" || item.mediaType === "blog";
+    case "press":     return item.mediaType === "press"  || item.mediaType === "news";
+    case "briefings": return item.mediaType === "briefing";
+    case "podcast":   return item.mediaType === "podcast";
+    default:          return false;
+  }
+}
 
 /* ── Media helpers ───────────────────────────────────────────────────────── */
 function getYouTubeId(url) {
@@ -239,11 +255,16 @@ function sortByDate(items, dir) {
 }
 
 /* ── Read ?type= and ?topic= from the current URL search string ───────────── */
-function getTypeFromUrl() {
-  if (typeof window === "undefined") return "all";
+/* type is a comma-separated list ("posts,briefings") for multi-select; a bare
+   single value ("posts") still parses, so old shared links keep working.
+   Returns a de-duped array of valid keys; [] means "all". */
+function getTypesFromUrl() {
+  if (typeof window === "undefined") return [];
   const params = new URLSearchParams(window.location.search || "");
-  const t = params.get("type");
-  return ["press", "article", "posts", "podcast", "briefings"].includes(t) ? t : "all";
+  const raw = params.get("type");
+  if (!raw) return [];
+  const picked = raw.split(",").map(s => s.trim().toLowerCase()).filter(t => VALID_TYPES.includes(t));
+  return [...new Set(picked)];
 }
 function getTopicFromUrl() {
   if (typeof window === "undefined") return "all";
@@ -256,7 +277,7 @@ function getTopicFromUrl() {
    PRESS PAGE
 ═══════════════════════════════════════════════════════════════════════════ */
 export default function Press() {
-  const [filterType,   setFilterType]   = useState(getTypeFromUrl);
+  const [filterTypes,  setFilterTypes]  = useState(getTypesFromUrl); // string[] — [] means "all"
   const [filterTopic,  setFilterTopic]  = useState(getTopicFromUrl);
   const [filterOutlet, setFilterOutlet] = useState("all");
   const [sortDir,      setSortDir]      = useState("desc");
@@ -265,7 +286,7 @@ export default function Press() {
   /* Keep filters in sync when user clicks a nav dropdown link */
   useEffect(() => {
     function onPopstate() {
-      setFilterType(getTypeFromUrl());
+      setFilterTypes(getTypesFromUrl());
       setFilterTopic(getTopicFromUrl());
       setFilterOutlet("all");
     }
@@ -311,28 +332,23 @@ export default function Press() {
     [unifiedItems]
   );
 
-  /* Single filtered + sorted list across all item types */
+  /* Single filtered + sorted list across all item types. Type is multi-select
+     with OR semantics: an item shows if it matches ANY selected type. */
   const visibleItems = useMemo(() => {
     let items = unifiedItems;
-    if (filterType   !== "all") items = items.filter(d =>
-      filterType === "article" ? d.mediaType === "article"
-      : filterType === "posts"  ? (d.mediaType === "social" || d.mediaType === "blog")
-      : filterType === "press"  ? (d.mediaType === "press"  || d.mediaType === "news")
-      : filterType === "briefings" ? d.mediaType === "briefing"
-      : d.mediaType === filterType
-    );
+    if (filterTypes.length) items = items.filter(d => filterTypes.some(t => itemMatchesType(d, t)));
     if (filterTopic  !== "all") items = items.filter(d => d.pages.includes(filterTopic));
     if (filterOutlet !== "all") items = items.filter(d => d.outlet === filterOutlet);
     return sortByDate(items, sortDir);
-  }, [filterType, filterTopic, filterOutlet, sortDir, unifiedItems]);
+  }, [filterTypes, filterTopic, filterOutlet, sortDir, unifiedItems]);
 
   /* Keep type/topic in the URL so filtered views are shareable and
      back/forward steps through filter states (the popstate listener above
      restores them). Defaults ("all") are omitted to keep URLs clean.
      Outlet + sort stay ephemeral UI state. */
-  function pushFilterUrl(nextType, nextTopic) {
+  function pushFilterUrl(nextTypes, nextTopic) {
     const params = new URLSearchParams(window.location.search);
-    if (nextType && nextType !== "all") params.set("type", nextType); else params.delete("type");
+    if (nextTypes && nextTypes.length) params.set("type", nextTypes.join(",")); else params.delete("type");
     if (nextTopic && nextTopic !== "all") params.set("topic", nextTopic); else params.delete("topic");
     const qs = params.toString();
     const url = window.location.pathname + (qs ? "?" + qs : "");
@@ -340,15 +356,22 @@ export default function Press() {
       window.history.pushState({}, "", url);
     }
   }
-  function changeFilterType(t)  { setFilterType(t);  pushFilterUrl(t, filterTopic); }
-  function changeFilterTopic(t) { setFilterTopic(t); pushFilterUrl(filterType, t); }
+  /* The "all" pill clears the type selection; every other pill toggles. */
+  function toggleFilterType(key) {
+    const next = key === "all"
+      ? []
+      : filterTypes.includes(key) ? filterTypes.filter(t => t !== key) : [...filterTypes, key];
+    setFilterTypes(next);
+    pushFilterUrl(next, filterTopic);
+  }
+  function changeFilterTopic(t) { setFilterTopic(t); pushFilterUrl(filterTypes, t); }
 
-  const hasFilters = filterType !== "all" || filterTopic !== "all" || filterOutlet !== "all";
+  const hasFilters = filterTypes.length > 0 || filterTopic !== "all" || filterOutlet !== "all";
   function clearFilters() {
-    setFilterType("all");
+    setFilterTypes([]);
     setFilterTopic("all");
     setFilterOutlet("all");
-    pushFilterUrl("all", "all");
+    pushFilterUrl([], "all");
   }
 
   return (
@@ -461,7 +484,7 @@ export default function Press() {
 
       {/* ── Filter bar ──────────────────────────────────────────────────── */}
       <FilterBar
-        filterType={filterType}    onFilterType={changeFilterType}
+        filterTypes={filterTypes}  onToggleType={toggleFilterType}
         filterTopic={filterTopic}   onFilterTopic={changeFilterTopic}
         filterOutlet={filterOutlet} onFilterOutlet={setFilterOutlet}
         sortDir={sortDir}           onSortDir={setSortDir}
@@ -543,7 +566,7 @@ export default function Press() {
    FILTER BAR
 ═══════════════════════════════════════════════════════════════════════════ */
 function FilterBar({
-  filterType, onFilterType,
+  filterTypes = [], onToggleType,
   filterTopic, onFilterTopic,
   filterOutlet, onFilterOutlet,
   sortDir, onSortDir,
@@ -564,25 +587,29 @@ function FilterBar({
         gap: "0.5rem", alignItems: "center",
       }} className="press-filter-bar">
 
-        {/* ── Type pills ─────────────────────────────────────────────── */}
+        {/* ── Type pills (multi-select; "All" clears the selection) ──── */}
         <div style={{ display: "flex", gap: "0.3rem", flexWrap: "wrap" }}>
-          {TYPE_OPTS.map(({ key, label }) => (
-            <button
-              key={key}
-              onClick={() => onFilterType(key)}
-              style={{
-                fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
-                letterSpacing: "0.07em", textTransform: "uppercase",
-                padding: "0.38rem 0.8rem",
-                background: filterType === key ? INK : "transparent",
-                color: filterType === key ? "#fff" : INK_60,
-                border: `1px solid ${filterType === key ? INK : LINE}`,
-                cursor: "pointer", transition: "background 0.15s, color 0.15s, border-color 0.15s",
-              }}
-            >
-              {label}
-            </button>
-          ))}
+          {TYPE_OPTS.map(({ key, label }) => {
+            const active = key === "all" ? filterTypes.length === 0 : filterTypes.includes(key);
+            return (
+              <button
+                key={key}
+                onClick={() => onToggleType(key)}
+                aria-pressed={active}
+                style={{
+                  fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+                  letterSpacing: "0.07em", textTransform: "uppercase",
+                  padding: "0.38rem 0.8rem",
+                  background: active ? INK : "transparent",
+                  color: active ? "#fff" : INK_60,
+                  border: `1px solid ${active ? INK : LINE}`,
+                  cursor: "pointer", transition: "background 0.15s, color 0.15s, border-color 0.15s",
+                }}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
 
         {/* ── Vertical divider ─────────────────────────────────────── */}
