@@ -1,5 +1,5 @@
 import React from "react";
-import { FONT, INK, INK_60, INK_40, LINE, LINE_STRONG } from "../../data/tokens.js";
+import { FONT, INK, INK_60, LINE, LINE_STRONG } from "../../data/tokens.js";
 import SocialLinks from "../SocialLinks.jsx";
 import bioData from "../../data/bio.json";
 
@@ -85,7 +85,9 @@ export default function BioSection() {
                 <p style={{
                   fontFamily: FONT, fontSize: "0.68rem", fontWeight: 600,
                   letterSpacing: "0.2em", textTransform: "uppercase",
-                  color: INK_40, marginBottom: "1.2rem",
+                  /* 0.4 alpha fails WCAG AA (≈3.9:1) at this size; 0.55 passes
+                     (≈4.9:1) with a near-invisible visual difference. */
+                  color: "rgba(10,10,10,0.55)", marginBottom: "1.2rem",
                 }}>
                   As seen in
                 </p>

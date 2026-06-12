@@ -161,7 +161,7 @@ export default function App() {
     <I18nProvider>
       {!standalone && <AppHeader currentPage={route.page} />}
       <Suspense fallback={<LoadingFallback />}>
-        <main>{renderPage(route)}</main>
+        <main id="main-content">{renderPage(route)}</main>
       </Suspense>
       {!standalone && <Footer />}
     </I18nProvider>

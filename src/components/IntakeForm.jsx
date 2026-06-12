@@ -54,8 +54,8 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
 
   if (formState === "success") {
     return (
-      <div style={{ textAlign: "center", padding: "3rem 1rem" }}>
-        <div style={{
+      <div role="status" style={{ textAlign: "center", padding: "3rem 1rem" }}>
+        <div aria-hidden="true" style={{
           width: 56, height: 56, borderRadius: 50, background: NEON,
           color: INK, fontWeight: 900, fontSize: "1.5rem",
           display: "flex", alignItems: "center", justifyContent: "center",
@@ -95,7 +95,7 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       <Field label="Message" name="message" type="textarea" placeholder="Tell us about your situation. What type of claim, against whom, what stage." required />
 
       {formState === "error" && (
-        <p style={{ fontFamily: FONT, fontSize: "0.9rem", color: "#C03030", marginBottom: "0.8rem" }}>
+        <p id="intake-form-error" role="alert" style={{ fontFamily: FONT, fontSize: "0.9rem", color: "#C03030", marginBottom: "0.8rem" }}>
           {errorMsg}
         </p>
       )}
@@ -103,6 +103,8 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       <button
         type="submit"
         disabled={formState === "submitting"}
+        aria-busy={formState === "submitting"}
+        aria-describedby={formState === "error" ? "intake-form-error" : undefined}
         className="btn-neon"
         style={{
           display: "block", width: "100%", marginTop: "0.4rem",
@@ -117,28 +119,42 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
 }
 
 function Field({ label, name, type, placeholder, required }) {
+  const id = React.useId();
+  const [invalid, setInvalid] = useState(false);
   const isTextarea = type === "textarea";
   const Tag = isTextarea ? "textarea" : "input";
   return (
     <div style={{ marginBottom: "1rem" }}>
-      <label>{label}{required && <span style={{ color: INK, marginLeft: 4, fontWeight: 800 }}>*</span>}</label>
+      <label htmlFor={id}>{label}{required && <span aria-hidden="true" style={{ color: INK, marginLeft: 4, fontWeight: 800 }}>*</span>}</label>
       <Tag
+        id={id}
         name={name}
         type={isTextarea ? undefined : type}
         placeholder={placeholder}
         required={required}
+        aria-required={required || undefined}
+        aria-invalid={invalid || undefined}
+        onInvalid={() => setInvalid(true)}
+        onInput={() => invalid && setInvalid(false)}
       />
     </div>
   );
 }
 
 function Select({ label, name, required, options, defaultValue }) {
+  const id = React.useId();
+  const [invalid, setInvalid] = useState(false);
   return (
     <div style={{ marginBottom: "1rem" }}>
-      <label>{label}{required && <span style={{ color: INK, marginLeft: 4, fontWeight: 800 }}>*</span>}</label>
+      <label htmlFor={id}>{label}{required && <span aria-hidden="true" style={{ color: INK, marginLeft: 4, fontWeight: 800 }}>*</span>}</label>
       <select
+        id={id}
         name={name}
         required={required}
+        aria-required={required || undefined}
+        aria-invalid={invalid || undefined}
+        onInvalid={() => setInvalid(true)}
+        onInput={() => invalid && setInvalid(false)}
         defaultValue={defaultValue || ""}
         style={{
           appearance: "none", cursor: "pointer",

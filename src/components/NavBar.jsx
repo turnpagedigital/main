@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref, navigate } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
@@ -72,6 +72,17 @@ export default function NavBar({ currentPage }) {
   }
 
   function close() { setOpen(false); }
+
+  // Escape closes the mobile menu and any open desktop dropdown.
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.key !== "Escape") return;
+      setOpen(false);
+      setActiveDrop(null);
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   function openDrop(key) {
     if (closeTimer.current) { clearTimeout(closeTimer.current); closeTimer.current = null; }
@@ -228,6 +239,8 @@ export default function NavBar({ currentPage }) {
           className="nav-mobile-toggle"
           onClick={() => setOpen(o => !o)}
           aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="nav-mobile-menu"
           style={{
             display: "none", alignItems: "center", justifyContent: "center",
             width: 38, height: 38, padding: 0,
@@ -353,7 +366,7 @@ export default function NavBar({ currentPage }) {
 
       {/* Mobile menu */}
       {open && (
-        <div className="nav-mobile-menu" style={{
+        <div className="nav-mobile-menu" id="nav-mobile-menu" style={{
           background: "#FFFFFF", borderTop: `1px solid rgba(10,10,10,0.08)`,
           animation: "slideDown 0.2s ease",
         }}>

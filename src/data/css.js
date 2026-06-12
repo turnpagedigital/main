@@ -10,6 +10,45 @@ a { color: inherit; text-decoration: none; }
 input:focus, textarea:focus, select:focus { outline:none; }
 button { font-family: inherit; }
 
+/* ─── Keyboard focus indicators (public site) ───
+   :focus-visible only fires for keyboard navigation, so mouse users see no
+   change. Neon ring on dark surfaces; ink ring on light "paper" surfaces. */
+input:focus-visible, textarea:focus-visible, select:focus-visible,
+button:focus-visible, a:focus-visible {
+  outline: 2px solid ${NEON};
+  outline-offset: 2px;
+}
+.surface-paper input:focus-visible, .surface-paper textarea:focus-visible,
+.surface-paper select:focus-visible, .surface-paper button:focus-visible,
+.surface-paper a:focus-visible,
+.surface-paper-2 input:focus-visible, .surface-paper-2 textarea:focus-visible,
+.surface-paper-2 select:focus-visible, .surface-paper-2 button:focus-visible,
+.surface-paper-2 a:focus-visible {
+  outline-color: ${INK};
+}
+
+/* Skip-to-content link: visually hidden until keyboard-focused. */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 10000;
+  background: ${NEON}; color: #000; font-family: ${FONT};
+  font-weight: 800; font-size: 0.85rem; letter-spacing: 0.06em;
+  padding: 0.85rem 1.4rem; text-decoration: none;
+}
+.skip-link:focus { left: 0; }
+
+/* ─── Reduced motion ───
+   Mirrors the LiquidGlassCard pattern site-wide: collapse all ambient
+   animation (hero mesh drift, sweeps, tickers, reveals, card flips) for
+   users who ask for less motion. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 @keyframes fadeIn { to { opacity:1; } }
 @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
