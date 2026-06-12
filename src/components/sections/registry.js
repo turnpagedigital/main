@@ -25,6 +25,7 @@ import ServiceCardsSection  from "./ServiceCardsSection.jsx";
 import ComparisonSection    from "./ComparisonSection.jsx";
 import HowItWorksSection    from "./HowItWorksSection.jsx";
 import ImageTextSection     from "./ImageTextSection.jsx";
+import RichTextSection      from "./RichTextSection.jsx";
 import DamagesSection       from "./DamagesSection.jsx";
 import RegistrationFlowSection from "./RegistrationFlowSection.jsx";
 import CryptoClaimsChart    from "../CryptoClaimsChart.jsx";
@@ -49,6 +50,7 @@ export const SECTION_MAP = {
   "comparison":     ComparisonSection,
   "how-it-works":   HowItWorksSection,
   "image-text":     ImageTextSection,
+  "rich-text":      RichTextSection,
   "damages":        DamagesSection,
   "registration-flow": RegistrationFlowSection,
   "crypto-claims-chart": CryptoClaimsChart,

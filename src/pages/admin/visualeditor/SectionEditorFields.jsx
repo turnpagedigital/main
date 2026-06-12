@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { INK, INK_60, LINE, NEON } from "../../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle } from "../shared.jsx";
 import sectionTypesData from "../../../data/section-types.json";
 import formsData from "../../../data/forms.json";
 import SectionThumb from "../SectionThumb.jsx";
+import AssetPicker from "../../../components/admin/AssetPicker.jsx";
 import { getSchemeVisual } from "./scheme-visuals.js";
 
 /* SectionEditorFields — the actual form fields for each section type.
@@ -130,16 +131,38 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Accent (italic/neon)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Paragraph</label><textarea style={{ ...inputStyle, minHeight: 110 }} value={form.body || ""} onChange={e => set("body", e.target.value)} /></div>
-          <div style={fieldGroup}><label style={labelStyle}>Image URL</label><input style={inputStyle} value={form.image || ""} onChange={e => set("image", e.target.value)} placeholder="/bg-paper.jpg or https://…" /></div>
+          <ImageField label="Image" value={form.image || ""} onChange={v => set("image", v)} placeholder="/bg-paper.jpg or https://…" />
           <div style={fieldGroup}><label style={labelStyle}>Image alt text</label><input style={inputStyle} value={form.imageAlt || ""} onChange={e => set("imageAlt", e.target.value)} placeholder="Describe the image for accessibility" /></div>
           <CTAField label="Button (optional)" value={form.cta} onChange={v => set("cta", v || null)} nullable />
+        </>
+      )}
+
+      {/* ── Text Block (rich text / markdown) ── */}
+      {typeId === "rich-text" && (
+        <>
+          <VisualLayoutColorPicker typeId="rich-text" form={form} set={set} />
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow (optional)</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} placeholder="Small uppercase kicker above the text" /></div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Text (Markdown)</label>
+            <textarea
+              style={{ ...inputStyle, minHeight: 280, fontFamily: "monospace", fontSize: "0.82rem", lineHeight: 1.55 }}
+              value={form.markdown || ""}
+              onChange={e => set("markdown", e.target.value)}
+              placeholder={"# Big heading\n\nA paragraph of text…\n\n## Section heading\n\n- Bullet one\n- Bullet two"}
+            />
+            <p style={{ fontSize: "0.72rem", color: INK_60, marginTop: 5, lineHeight: 1.6 }}>
+              <code># </code>H1 &nbsp;·&nbsp; <code>## </code>H2 &nbsp;·&nbsp; <code>### </code>H3 &nbsp;·&nbsp;
+              blank line = new paragraph &nbsp;·&nbsp; <code>- </code>bullet &nbsp;·&nbsp;
+              <code>**bold**</code> &nbsp;·&nbsp; <code>*italic*</code> &nbsp;·&nbsp; <code>[label](/link)</code>
+            </p>
+          </div>
         </>
       )}
 
       {/* ── Photo Break ── */}
       {typeId === "photo-break" && (
         <>
-          <div style={fieldGroup}><label style={labelStyle}>Image URL</label><input style={inputStyle} value={form.imageUrl || ""} onChange={e => set("imageUrl", e.target.value)} placeholder="/bg-paper.jpg" /></div>
+          <ImageField label="Image" value={form.imageUrl || ""} onChange={v => set("imageUrl", v)} placeholder="/bg-paper.jpg" />
           <div style={fieldGroup}><label style={labelStyle}>Overlay text (optional)</label><input style={inputStyle} value={form.overlayText || ""} onChange={e => set("overlayText", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Overlay accent (italic/neon)</label><input style={inputStyle} value={form.overlayAccent || ""} onChange={e => set("overlayAccent", e.target.value)} /></div>
         </>
@@ -151,7 +174,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Button label</label><input style={inputStyle} value={form.cta || ""} onChange={e => set("cta", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Button link (href)</label><input style={inputStyle} value={form.href || ""} onChange={e => set("href", e.target.value)} /></div>
-          <div style={fieldGroup}><label style={labelStyle}>Background image URL</label><input style={inputStyle} value={form.image || ""} onChange={e => set("image", e.target.value)} placeholder="/Building_Wide.jpg" /></div>
+          <ImageField label="Background image" value={form.image || ""} onChange={v => set("image", v)} placeholder="/Building_Wide.jpg" />
           <div style={fieldGroup}>
             <label style={labelStyle}>Text Alignment</label>
             <select style={selectStyle} value={form.align || "left"} onChange={e => set("align", e.target.value)}>
@@ -204,7 +227,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
               <div style={fieldGroup}><label style={labelStyle}>Button label</label><input style={inputStyle} value={form.cta || ""} onChange={e => set("cta", e.target.value)} /></div>
               <div style={fieldGroup}><label style={labelStyle}>Button link</label><input style={inputStyle} value={form.href || ""} onChange={e => set("href", e.target.value)} /></div>
-              <div style={fieldGroup}><label style={labelStyle}>Background image URL</label><input style={inputStyle} value={form.image || ""} onChange={e => set("image", e.target.value)} placeholder="/Building_Wide.jpg" /></div>
+              <ImageField label="Background image" value={form.image || ""} onChange={v => set("image", v)} placeholder="/Building_Wide.jpg" />
             </>
           )}
           {form.layout === "layout-3-bottomcta" && (
@@ -276,7 +299,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               </select>
             </div>
           </div>
-          <div style={fieldGroup}><label style={labelStyle}>Background Image (URL)</label><input style={inputStyle} value={form.backgroundImage || ""} onChange={e => set("backgroundImage", e.target.value)} placeholder="https://..." /></div>
+          <ImageField label="Background image" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
             <div><label style={labelStyle}>Image filter</label>
               <select style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilter || "dark"} onChange={e => set("imageFilter", e.target.value)}>
@@ -331,7 +354,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               </select>
             </div>
           </div>
-          <div style={fieldGroup}><label style={labelStyle}>Background Image (URL)</label><input style={inputStyle} value={form.backgroundImage || ""} onChange={e => set("backgroundImage", e.target.value)} placeholder="https://..." /></div>
+          <ImageField label="Background image" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
             <div><label style={labelStyle}>Image filter</label>
               <select style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilter || "dark"} onChange={e => set("imageFilter", e.target.value)}>
@@ -388,7 +411,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               </select>
             </div>
           </div>
-          <div style={fieldGroup}><label style={labelStyle}>Background Image (URL)</label><input style={inputStyle} value={form.backgroundImage || ""} onChange={e => set("backgroundImage", e.target.value)} placeholder="https://..." /></div>
+          <ImageField label="Background image" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
             <div><label style={labelStyle}>Image filter</label>
               <select style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilter || "dark"} onChange={e => set("imageFilter", e.target.value)}>
@@ -545,6 +568,33 @@ function ColorSchemePicker({ typeId, value, onChange, schemes: schemesProp }) {
           );
         })}
       </div>
+    </div>
+  );
+}
+
+/* ImageField — an image URL input with a Browse button that opens the shared
+   asset library (AssetPicker). Pasting a URL still works; Browse lets the
+   admin pick/upload without leaving the editor. Shows a small live preview. */
+export function ImageField({ label, value, onChange, placeholder }) {
+  const [pickerOpen, setPickerOpen] = useState(false);
+  return (
+    <div style={fieldGroup}>
+      <label style={labelStyle}>{label}</label>
+      <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+        {value ? (
+          <img src={value} alt="" style={{ width: 42, height: 30, objectFit: "cover", border: `1px solid ${LINE}`, borderRadius: 3, flexShrink: 0, background: "#F4F5F7" }}
+            onError={e => { e.currentTarget.style.visibility = "hidden"; }} />
+        ) : null}
+        <input style={{ ...inputStyle, marginTop: 0, flex: 1 }} value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder} />
+        <button type="button" style={{ ...btnStyle, whiteSpace: "nowrap" }} onClick={() => setPickerOpen(true)}>Browse…</button>
+      </div>
+      <AssetPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPick={(url) => { onChange(url); setPickerOpen(false); }}
+        defaultType="image"
+        acceptTypes={["image", "logo"]}
+      />
     </div>
   );
 }

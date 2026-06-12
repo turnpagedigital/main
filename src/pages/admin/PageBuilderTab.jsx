@@ -200,6 +200,15 @@ export default function PageBuilderTab({ onDirtyChange }) {
     setSections(sections.filter((_, idx) => idx !== i));
   }
 
+  function duplicateSection(i) {
+    const copy = JSON.parse(JSON.stringify(sections[i]));
+    copy.id = `sec-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
+    const next = [...sections];
+    next.splice(i + 1, 0, copy);
+    setSections(next);
+    setSelectedSectionId(copy.id); // jump straight into editing the copy
+  }
+
   function addSection(typeId, layoutId) {
     const st = sectionTypes.find(t => t.id === typeId);
     // Determine layout/colorScheme defaults when a specific layout was picked
@@ -462,6 +471,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
                     <span style={{ flex: 1 }} />
                     <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveUp(idx)} disabled={idx === 0} aria-label="Move up" title="Move up">▲ Up</button>
                     <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => moveDown(idx)} disabled={idx === sections.length - 1} aria-label="Move down" title="Move down">▼ Down</button>
+                    <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => duplicateSection(idx)} title="Duplicate this section (copy appears below)">⧉ Duplicate</button>
                     <button style={{ ...ICON_BTN, fontSize: "0.7rem", height: 26 }} onClick={() => toggleVisible(idx)} title={s.visible ? "Hide" : "Show"}>
                       {s.visible ? "Hide" : "Show"}
                     </button>

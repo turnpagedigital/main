@@ -638,6 +638,47 @@ function ImageTextTopThumb() {
   );
 }
 
+// ─── Rich Text (Text Block) ───────────────────────────────────────────────────
+const TextLine = ({ w, h = 9 }) => (
+  <div style={{ width: w, height: h, background: "rgba(10,10,10,0.18)" }} />
+);
+function RichTextNarrowThumb() {
+  return (
+    <div style={{ width: W, height: H, background: "#fff", padding: "60px 230px", display: "flex", flexDirection: "column", gap: 14 }}>
+      <p style={{ fontFamily: FONT, fontSize: 38, fontWeight: 800, color: INK, margin: "0 0 8px" }}>Heading goes here.</p>
+      <TextLine w="100%" /><TextLine w="94%" /><TextLine w="97%" /><TextLine w="62%" />
+      <p style={{ fontFamily: FONT, fontSize: 26, fontWeight: 800, color: INK, margin: "18px 0 4px" }}>Subheading</p>
+      <TextLine w="100%" /><TextLine w="88%" /><TextLine w="40%" />
+    </div>
+  );
+}
+function RichTextWideThumb() {
+  return (
+    <div style={{ width: W, height: H, background: "#fff", padding: "60px 80px", display: "flex", flexDirection: "column", gap: 14 }}>
+      <p style={{ fontFamily: FONT, fontSize: 40, fontWeight: 800, color: INK, margin: "0 0 8px" }}>Heading goes here.</p>
+      <TextLine w="100%" /><TextLine w="96%" /><TextLine w="99%" /><TextLine w="93%" /><TextLine w="55%" />
+      <p style={{ fontFamily: FONT, fontSize: 27, fontWeight: 800, color: INK, margin: "18px 0 4px" }}>Subheading</p>
+      <TextLine w="100%" /><TextLine w="72%" />
+    </div>
+  );
+}
+function RichTextTwoColThumb() {
+  const col = (
+    <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 13 }}>
+      <TextLine w="100%" /><TextLine w="95%" /><TextLine w="98%" /><TextLine w="91%" />
+      <TextLine w="97%" /><TextLine w="60%" />
+    </div>
+  );
+  return (
+    <div style={{ width: W, height: H, background: "#fff", padding: "60px 80px", display: "flex", flexDirection: "column", gap: 26 }}>
+      <p style={{ fontFamily: FONT, fontSize: 40, fontWeight: 800, color: INK, margin: 0 }}>Heading goes here.</p>
+      <div style={{ display: "flex", gap: 56 }}>
+        {col}{col}
+      </div>
+    </div>
+  );
+}
+
 // ─── Fallback ─────────────────────────────────────────────────────────────────
 function DefaultThumb() {
   return (
@@ -676,6 +717,10 @@ const THUMBS = {
   "image-text/layout-1-image-right":     ImageTextRightThumb,
   "image-text/layout-2-image-left":      ImageTextLeftThumb,
   "image-text/layout-3-image-top":       ImageTextTopThumb,
+  "rich-text":                           RichTextNarrowThumb,
+  "rich-text/layout-1-narrow":           RichTextNarrowThumb,
+  "rich-text/layout-2-wide":             RichTextWideThumb,
+  "rich-text/layout-3-two-col":          RichTextTwoColThumb,
 };
 
 // ─── Public component ─────────────────────────────────────────────────────────

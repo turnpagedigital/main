@@ -505,6 +505,51 @@
       }
     },
     {
+      "id": "rich-text",
+      "displayName": "Text Block",
+      "description": "Standalone formatted text — headings (H1/H2/H3), paragraphs, bullet lists, links — written in simple Markdown. Narrow reading column, full width, or two-column flow.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "layouts": [
+        {
+          "id": "layout-1-narrow",
+          "displayName": "Narrow",
+          "description": "Centered reading column — best for essays and long copy.",
+          "supportedColorSchemes": [
+            "white",
+            "light-gray",
+            "dark"
+          ]
+        },
+        {
+          "id": "layout-2-wide",
+          "displayName": "Wide",
+          "description": "Full content width, left-aligned.",
+          "supportedColorSchemes": [
+            "white",
+            "light-gray",
+            "dark"
+          ]
+        },
+        {
+          "id": "layout-3-two-col",
+          "displayName": "Two Column",
+          "description": "Text flows across two columns on desktop.",
+          "supportedColorSchemes": [
+            "white",
+            "light-gray",
+            "dark"
+          ]
+        }
+      ],
+      "defaultLayout": "layout-1-narrow",
+      "defaultColorScheme": "white",
+      "defaultContent": {
+        "eyebrow": "",
+        "markdown": "# Heading goes here\n\nWrite your text in Markdown — a blank line starts a new paragraph.\n\n## Subheading\n\n- Bullet point one\n- Bullet point two\n\n**Bold**, *italic*, and [links](/contact) are supported."
+      }
+    },
+    {
       "id": "damages",
       "displayName": "Case Values",
       "description": "Animated horizontal bar chart of case damages data. Content managed in Pages → Marketing Pages.",
