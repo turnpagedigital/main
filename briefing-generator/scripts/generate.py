@@ -316,22 +316,73 @@ def update_landing_stamp():
     INDEX_HTML.write_text(html, encoding="utf-8")
     print(f"  ✓ landing stamp → {DATE_STAMP_UPPER}")
 
+# Trailing tokens that end with "." but do NOT end a sentence (legal prose is
+# dense with these — "U.S.", "*Bartz v.*", "Bankr. D. Del.", "No. 25-00595").
+_NON_TERMINAL = {
+    "v.", "vs.", "no.", "nos.", "inc.", "corp.", "co.", "ltd.", "llc.", "l.p.",
+    "ch.", "sec.", "secs.", "cir.", "bankr.", "fed.", "dist.", "op.", "slip",
+    "mr.", "ms.", "mrs.", "dr.", "jr.", "sr.", "hon.", "j.", "jj.",
+    "jan.", "feb.", "mar.", "apr.", "jun.", "jul.", "aug.", "sep.", "sept.",
+    "oct.", "nov.", "dec.", "approx.", "est.", "dept.", "div.", "stat.",
+    "vol.", "art.", "para.", "p.", "pp.", "ex.", "exh.", "doc.", "dkt.",
+}
+
+def _strip_md(text):
+    """Flatten markdown to plain text for card display."""
+    text = re.sub(r'\(__\[[^\]]+\]\([^)]+\)__\)', '', text)   # (__[cite](url)__)
+    text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)       # [text](url) → text
+    text = re.sub(r'(\*\*|__)(.+?)\1', r'\2', text)             # bold
+    text = re.sub(r'(?<!\w)([*_])(.+?)\1(?!\w)', r'\2', text)   # italics
+    text = re.sub(r'`([^`]*)`', r'\1', text)                    # inline code
+    return re.sub(r'\s+', ' ', text).strip()
+
+def _truncate_words(text, max_len):
+    """Cut at a word boundary with an ellipsis instead of mid-word."""
+    if len(text) <= max_len:
+        return text
+    return text[:max_len].rsplit(" ", 1)[0].rstrip(",;:—-") + "…"
+
+def _first_sentence(text, max_len=300):
+    """First sentence, refusing to break after abbreviations like U.S. or v."""
+    for m in re.finditer(r'(?<=[.!?])\s+', text):
+        last_word = text[:m.start()].rsplit(" ", 1)[-1]
+        bare = last_word.strip("()\"'*_").lower()
+        if bare in _NON_TERMINAL:
+            continue
+        if re.fullmatch(r"(?:[a-z]\.)+", bare):  # initials: U.S., E.D.N.Y., D.
+            continue
+        return _truncate_words(text[:m.start()].strip(), max_len)
+    return _truncate_words(text.strip(), max_len)
+
 def extract_card_summary(advisory_md, topic):
-    """Pull a 1-sentence delta + 4-7 word stat anchor from the new advisory."""
-    # Stat anchor: take the first sentence's headline noun phrase, OR the lede's first stat
-    # Card body: first sentence of the lede paragraph after ## Analysis & Developments
+    """Pull a 1-sentence delta + short stat anchor from the new advisory."""
     m = re.search(r'## Analysis & Developments\s*\n+(.+?)(?=\n## |\Z)', advisory_md, re.DOTALL)
-    if m:
-        first_para = m.group(1).strip().split("\n\n")[0]
-        # Strip inline citation markup for the card
-        cleaned = re.sub(r'\(__\[[^\]]+\]\([^)]+\)__\)', '', first_para).strip()
-        # Take first sentence
-        sentences = re.split(r'(?<=[.!?])\s+', cleaned)
-        first_sentence = sentences[0] if sentences else cleaned[:200]
-        # Stat anchor heuristic: pull a 4-7 word phrase from the start
+    if not m:
+        return f"{topic['display']} — see briefing", "See per-topic dashboard for full advisory."
+    blocks = [b.strip() for b in m.group(1).strip().split("\n\n") if b.strip()]
+    # A "### DELTA: …" headline makes the best stat anchor when present; the
+    # heading may sit in its own block or share one with the lede paragraph.
+    heading = ""
+    body_text = ""
+    for block in blocks[:4]:
+        prose_lines = []
+        for line in block.splitlines():
+            if line.lstrip().startswith("#"):
+                if not heading:
+                    heading = _strip_md(re.sub(r'^#+\s*(DELTA[S]?:\s*|Today.s Delta[s]?:\s*)?', '', line.lstrip(), flags=re.I))
+            else:
+                prose_lines.append(line)
+        if prose_lines:
+            body_text = _strip_md(" ".join(prose_lines))
+            break
+    if not body_text:
+        body_text = _strip_md(blocks[0])
+    first_sentence = _first_sentence(body_text)
+    if heading:
+        stat = _truncate_words(heading, 80)
+    else:
         stat = " ".join(first_sentence.split()[:6]) + "…"
-        return stat, first_sentence[:300]
-    return f"{topic['display']} — see briefing", "See per-topic dashboard for full advisory."
+    return _html.escape(stat, quote=False), _html.escape(first_sentence, quote=False)
 
 def main():
     api_key = os.environ.get("ANTHROPIC_API_KEY")
