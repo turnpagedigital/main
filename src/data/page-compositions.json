@@ -1055,6 +1055,37 @@
           }
         },
         {
+          "id": "sec-1781306502755-efk3",
+          "type": "rich-text",
+          "visible": true,
+          "layout": "layout-2-wide",
+          "colorScheme": "white",
+          "content": {
+            "eyebrow": "",
+            "markdown": "# Heading goes here\n\nWrite your text in Markdown — a blank line starts a new paragraph.\n\n## Subheading\n\n- Bullet point one\n- Bullet point two\n\n**Bold**, *italic*, and [links](/contact) are supported.",
+            "layout": "layout-2-wide",
+            "colorScheme": "white"
+          }
+        },
+        {
+          "id": "sec-1781306554734-6saj",
+          "type": "image-text",
+          "visible": true,
+          "layout": "layout-2-image-left",
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "",
+            "title": "Headline goes here.",
+            "accent": "",
+            "body": "Add a paragraph of supporting text that sits next to the image.",
+            "image": "/library/data-center-2.jpg",
+            "imageAlt": "",
+            "cta": null,
+            "layout": "layout-2-image-left",
+            "colorScheme": "dark"
+          }
+        },
+        {
           "id": "sec-bartz-flow",
           "type": "registration-flow",
           "visible": true,
@@ -1134,6 +1165,11 @@
         {
           "id": "sec-1781266011054-xfyw",
           "type": "experience",
+          "visible": true
+        },
+        {
+          "id": "sec-1781306546138-ilkr",
+          "type": "damages",
           "visible": true
         }
       ]
