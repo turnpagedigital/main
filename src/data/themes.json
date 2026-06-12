@@ -223,13 +223,14 @@
       ],
       "sources": {
         "whitelist": [
-          "https://bondoro.com/"
+          "https://bondoro.com/",
+          "https://www.dailydac.com/"
         ]
       },
       "key_focus_cases": [
         "blockfills"
       ],
-      "guidance_prompt": "Tracks appellate-level bankruptcy doctrine that changes creditor recoveries — not run-of-the-mill Ch. 11 filings. Key doctrinal areas: third-party / non-debtor releases post-Harrington v. Purdue Pharma (603 U.S. ___ (2024)) — how lower courts apply the consent and statutory-authority limits; equitable mootness (circuit splits on review of confirmed plans; any SCOTUS interest); structured dismissals and gifting (Czyzewski v. Jevic progeny); Texas Two-Step / divisional mergers (In re LTL Management and Bestwall aftermath; good-faith dismissals); mass-tort channeling injunctions (§ 524(g) asbestos vs. expanding § 105(a)); § 363 free-and-clear (successor liability / tort-claim discharge boundaries); and DIP/priming fights plus avoidance actions (§ 547 preference, § 548 fraudulent transfer). Frame every doctrinal shift in terms of recovery economics, not pure legal theory. Key fora: S.D.N.Y., D. Del., S.D. Tex., N.D. Ill.; 2nd/3rd/5th Circuits; Supreme Court (rare but high-impact — Purdue, Jevic, Stern v. Marshall). Anchors: 11 U.S.C. § 105(a), § 363, § 502, § 524, § 547, § 1129, § 1141. Voice: restructuring-grade; audience: creditor-side claims investors, distressed funds, lender-side counsel. (Crypto Ch. 11 plan-confirmation doctrine cross-references Crypto Insolvency.)"
+      "guidance_prompt": "Monitor new bankruptcy filings with over $100 million in liabilities and track appellate-level bankruptcy cases that have the potential to remake the chapter 11 landscape, with a particular focus if there is a circuit split. Track SCOTUS interest. Consider developments in law and practice that impact jurisdictional issues, economics, burden shifting, customer property, procedural and other practical issues that could have bearing on distressed investments and creditor recoveries. Key areas of interest include ad hoc groups, cases with 10,000+ creditors, free-fall bankruptcies, bankruptcies with delays or busted plans, interesting 363 sales, bankruptcies where valuation is based on volatile assets or binary risks. Other areas of interest include group representation dynamics (creditors in the same class with divergent interests) and pro se representation by creditors and the impact of AI. Audience is distressed investors looking for opportunities. "
     }
   ]
 }
