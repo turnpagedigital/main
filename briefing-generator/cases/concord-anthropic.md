@@ -2,20 +2,21 @@
 slug: concord-anthropic
 display_name: Concord Music Group v. Anthropic
 type: case
-emoji: ⚖️
-status: "Cross-MSJ pending · awaiting first docket sync"
+status: active
 topics:
   - llm-class-action
 case:
-  parties: "Concord Music Group, Inc., et al. v. Anthropic PBC"
-  court: "M.D. Tenn. → N.D. Cal."
-  court_id: cand
-  case_number: "(music-publisher parallel docket)"
-  judge: ""
+  parties: "Concord Music Group, Inc. v. Anthropic PBC"
+  court: "N.D. Cal."
+  case_number: "5:26-cv-00880"
+  judge: "Susan G. Van Keulen"
 docket_source:
   type: courtlistener
-  docket_id: ""                   # not yet wired — box shows the quiet/awaiting state until a docket_id + token land
+  docket_id: 5:26-cv-00880
+  url: "https://www.courtlistener.com/docket/72199828/concord-music-group-inc-v-anthropic-pbc/"
   awaiting_sync: true
+scan_guidance: "Monitor for developments in the case that would impact any future settlement of claims, legal fees or evolution in copyright law."
+emoji: ⚖️
 research:
   themes:
     - "Music-publisher AI-training copyright; lyrics reproduction; fair-use cross-motions"
