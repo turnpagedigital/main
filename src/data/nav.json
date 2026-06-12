@@ -195,6 +195,10 @@
           {
             "label": "Posts",
             "href": "/press?type=posts"
+          },
+          {
+            "label": "Briefings",
+            "href": "/press?type=briefings"
           }
         ],
         "cta": {
