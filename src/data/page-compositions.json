@@ -450,15 +450,15 @@
             "layout": "list",
             "cards": [
               {
-                "id": "individual-creditors",
-                "title": "Exchange Customers",
-                "body": "We help account holders with funds frozen on a failed exchange and tied up in bankruptcy or liquidation. These cases drag on for years and rarely pay in full. Trading delivers you guaranteed cash now, with no claims process to monitor and navigate.",
+                "id": "funds-institutions",
+                "title": "Fund Vehicles",
+                "body": "We help funds with trapped capital unlock value.  A claim against a collapsed exchange, lender, or counterparty weighs on your NAV and stalls distributions. Converting it to cash lets you return capital to LPs, who didn't sign up to be distressed investors.",
                 "priority": false
               },
               {
-                "id": "funds-institutions",
-                "title": "Crypto Hedge Funds",
-                "body": "We help funds with trapped capital unlock value.  A claim against a collapsed exchange, lender, or counterparty weighs on your NAV and stalls distributions. Converting it to cash lets you return capital to LPs, who didn't sign up to be distressed investors.",
+                "id": "individual-creditors",
+                "title": "Exchange Customers",
+                "body": "We help account holders with funds frozen on a failed exchange and tied up in bankruptcy or liquidation. These cases drag on for years and rarely pay in full. Trading delivers you guaranteed cash now, with no claims process to monitor and navigate.",
                 "priority": false
               },
               {
@@ -474,21 +474,9 @@
                 "priority": false
               },
               {
-                "id": "card-1780979369229",
-                "title": "Trade Creditors",
-                "body": "Vendors, market makers, OTC desks, law firms, and other counterparties owed funds by a collapsed exchange or lender.",
-                "priority": false
-              },
-              {
                 "id": "card-1780979410997",
                 "title": "Token & Equity Investors",
                 "body": "Holders of tokens, SAFTs, SAFEs, or equity in a failed project or company. Junior in the waterfall, but real claims and litigation interests entitled to compensation.",
-                "priority": false
-              },
-              {
-                "id": "card-1780975936290",
-                "title": "Law Firms",
-                "body": "We help law firms that represent digital asset creditors trace and investigate historical fraud and real-time asset conversions to assess recoverability and litigation options.",
                 "priority": false
               }
             ],
@@ -539,7 +527,10 @@
             ],
             "_bookmark": "how-we-help",
             "cardStyle": "standard",
-            "cardRadius": "square"
+            "cardRadius": "square",
+            "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
+            "imageFilter": "light",
+            "imageFilterStrength": 15
           }
         },
         {
