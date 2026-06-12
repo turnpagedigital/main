@@ -723,33 +723,27 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "Who We Help",
-            "title": "Firms. Claimants.",
-            "accent": "Cases.",
+            "title": "Claimants",
+            "accent": "with conviction",
             "colorScheme": "white",
             "layout": "list",
             "cards": [
               {
                 "id": "contingency-firms",
-                "title": "Contingency Law Firms",
-                "body": "Boutique litigation shops and BigLaw contingency practices looking to grow their docket without tying up equity or taking on overhead risk.",
+                "title": "Contingency Firms",
+                "body": "Boutique litigation shops and BigLaw contingency practices looking to grow their docket without tying up equity or taking on overhead risk. Class action, antitrust, and IP litigation teams pursuing high-stakes matters that require patient, long-duration capital.",
                 "priority": false
               },
               {
-                "id": "elite-plaintiffs",
-                "title": "Elite Plaintiffs' Practices",
-                "body": "Class action, antitrust, and IP litigation teams pursuing high-stakes matters that require patient, long-duration capital.",
+                "id": "card-1781306027710",
+                "title": "Estate Fiduciaries",
+                "body": "Bankruptcy estates and litigation/liquidating trustees tasked with monetizing claims for the benefit of creditors.",
                 "priority": false
               },
               {
                 "id": "individual-claimants",
-                "title": "Individual Claimants",
-                "body": "Plaintiffs whose counsel needs funding to take a meritorious case to trial. We work with you or your attorney directly.",
-                "priority": false
-              },
-              {
-                "id": "solo-small-firm",
-                "title": "Solo & Small Firm Practitioners",
-                "body": "High-quality litigators with strong cases who need capital to level the playing field against well-resourced defendants.",
+                "title": "Individual Platiniffs",
+                "body": "Corporate plaintiffs and groups of claimants whose counsel needs funding to take a meritorious case to trial. We work with you or your attorney directly.",
                 "priority": false
               }
             ]
