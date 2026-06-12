@@ -1031,6 +1031,11 @@
           "id": "sec-1780974644933-upgt",
           "type": "damages",
           "visible": true
+        },
+        {
+          "id": "sec-1781266042704-9gtc",
+          "type": "experience",
+          "visible": true
         }
       ]
     },
