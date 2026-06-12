@@ -45,7 +45,7 @@ export default function PagesHubTab({ onDirtyChange }) {
 
       <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
         {sub === "builder"  && <PageBuilderTab  onDirtyChange={makeDirty("builder")} />}
-        {sub === "sections" && <SectionTypesTab />}
+        {sub === "sections" && <SectionTypesTab onDirtyChange={makeDirty("sections")} />}
       </Suspense>
     </div>
   );
