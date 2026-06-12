@@ -35,6 +35,8 @@ export default function FAQSection({ sectionConfig, pageKey }) {
         title={title}
         accent={accent}
         colorScheme={colorScheme}
+        hasMoreFaqs={hasMoreFaqs}
+        pageKey={pageKey}
       />
     );
   }

@@ -1,13 +1,32 @@
 import React, { useMemo, useState } from "react";
-import { FONT, INK, INK_60, PAPER } from "../data/tokens.js";
+import { FONT, INK, INK_60, NEON, PAPER } from "../data/tokens.js";
 import SectionHeader from "../components/SectionHeader.jsx";
 import FAQ from "../components/FAQ.jsx";
 import faqs from "../data/faqs.json";
+import { MARKETING_PAGES } from "../data/page-keys.js";
 
 export default function FAQPage() {
   const [searchTerm, setSearchTerm] = useState("");
-  const urlParams = new URLSearchParams(window.location.search);
-  const topicFilter = urlParams.get("topic");
+  const [topicFilter, setTopicFilter] = useState(
+    () => new URLSearchParams(window.location.search).get("topic"),
+  );
+
+  /* Only offer topics that actually have live FAQs tagged to them. */
+  const topics = useMemo(() => {
+    const tagged = new Set(
+      faqs.faqs.filter(f => f.active).flatMap(f => f.pages || []),
+    );
+    return MARKETING_PAGES.filter(p => tagged.has(p.key));
+  }, []);
+
+  /* Chip click: update state + keep the URL shareable (?topic=). */
+  function selectTopic(key) {
+    setTopicFilter(key);
+    const url = new URL(window.location.href);
+    if (key) url.searchParams.set("topic", key);
+    else url.searchParams.delete("topic");
+    window.history.replaceState({}, "", url);
+  }
 
   // Filter FAQs by active status, topic (if specified), and search term
   const filteredFAQs = useMemo(() => {
@@ -25,17 +44,18 @@ export default function FAQPage() {
     });
   }, [searchTerm, topicFilter]);
 
-  // Map topic key to display name
-  const topicNames = {
-    home: "Home",
-    "ai-copyright": "AI Copyright",
-    crypto: "Crypto Claims",
-    "litigation-finance": "Litigation Funding",
-    contact: "Contact",
-    briefings: "Briefings",
-  };
+  const displayTopicName = topicFilter
+    ? (topics.find(t => t.key === topicFilter)?.label || topicFilter)
+    : null;
 
-  const displayTopicName = topicFilter ? topicNames[topicFilter] || topicFilter : null;
+  const chipStyle = (selected) => ({
+    fontFamily: FONT, fontSize: "0.82rem", fontWeight: 600,
+    padding: "0.45rem 1rem", borderRadius: 999, cursor: "pointer",
+    border: `1px solid ${selected ? INK : "#ddd"}`,
+    background: selected ? INK : "transparent",
+    color: selected ? NEON : INK_60,
+    transition: "all 0.15s",
+  });
 
   return (
     <div style={{ background: PAPER, paddingTop: "2rem", paddingBottom: "4rem" }}>
@@ -68,6 +88,18 @@ export default function FAQPage() {
               boxSizing: "border-box",
             }}
           />
+        </div>
+
+        {/* Topic filter chips */}
+        <div role="group" aria-label="Filter by topic" style={{ display: "flex", flexWrap: "wrap", gap: "0.55rem", marginBottom: "2rem" }}>
+          <button type="button" onClick={() => selectTopic(null)} aria-pressed={!topicFilter} style={chipStyle(!topicFilter)}>
+            All topics
+          </button>
+          {topics.map(t => (
+            <button key={t.key} type="button" onClick={() => selectTopic(t.key)} aria-pressed={topicFilter === t.key} style={chipStyle(topicFilter === t.key)}>
+              {t.label}
+            </button>
+          ))}
         </div>
 
         {/* Topic Filter Label */}
