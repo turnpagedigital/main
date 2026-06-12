@@ -760,12 +760,12 @@
           "type": "service-cards",
           "visible": true,
           "layout": "grid-2col",
-          "colorScheme": "dark",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "How We Help",
             "title": "Bold cases.",
             "accent": "Big outcomes.",
-            "colorScheme": "dark",
+            "colorScheme": "light-gray",
             "layout": "grid-2col",
             "cards": [
               {
@@ -790,10 +790,11 @@
                 "priority": false
               }
             ],
-            "cardStyle": "liquid-glass",
-            "cardRadius": "square",
+            "cardStyle": "standard",
+            "cardRadius": "rounded",
             "_bookmark": "how-we-help",
-            "backgroundImage": "/library/black-paper-data.jpg"
+            "backgroundImage": "/wudan3551-qcx33EkJ8ac-unsplash.jpg",
+            "imageFilterStrength": 5
           }
         },
         {
