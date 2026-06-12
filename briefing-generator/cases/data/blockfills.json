@@ -2,20 +2,233 @@
   "case": {
     "slug": "blockfills",
     "display_name": "BlockFills",
-    "case_name": "Reliz Technology Group Holdings Inc., et al. (BlockFills)",
+    "case_name": "Reliz Technology Group Holdings Inc.",
     "court": "Bankr. D. Del.",
     "case_number": "26-10371",
     "judge": "Thomas M. Horan",
     "docket_id": "72494188",
-    "status": "active"
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": null,
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "docket_url": "https://www.courtlistener.com/docket/72494188/",
+    "date_last_filing": "2026-06-12",
+    "fetched_at": "2026-06-12T16:56:35.580499+00:00",
+    "as_of": "Jun 12, 2026",
+    "new_in_72h": 9,
+    "recent": [
+      {
+        "entry_number": 424,
+        "date_filed": "2026-06-12",
+        "date_display": "Jun 12, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 420,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 419,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 424,
+        "date_filed": "2026-06-12",
+        "date_display": "Jun 12, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 420,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 419,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 418,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 416,
+        "date_filed": "2026-06-10",
+        "date_display": "Jun 10, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 415,
+        "date_filed": "2026-06-10",
+        "date_display": "Jun 10, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 414,
+        "date_filed": "2026-06-10",
+        "date_display": "Jun 10, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 417,
+        "date_filed": "2026-06-10",
+        "date_display": "Jun 10, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 413,
+        "date_filed": "2026-06-09",
+        "date_display": "Jun 9, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 410,
+        "date_filed": "2026-06-08",
+        "date_display": "Jun 8, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 409,
+        "date_filed": "2026-06-08",
+        "date_display": "Jun 8, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 411,
+        "date_filed": "2026-06-08",
+        "date_display": "Jun 8, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 412,
+        "date_filed": "2026-06-08",
+        "date_display": "Jun 8, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 407,
+        "date_filed": "2026-06-06",
+        "date_display": "Jun 6, 2026",
+        "description": "Motion to Approve Compromise under Rule 9019 // Motion of Debtors for Entry of an Order (I) Approving the Settlement and Stipulation Between the Debtors and Korn Ferry (US); (II) Resolving Any and All Claims Arising Between the Settlement Parties; (III) Authorizing the Debtors to",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 408,
+        "date_filed": "2026-06-06",
+        "date_display": "Jun 6, 2026",
+        "description": "Certificate of Service re: Notice of Phishing Attempts (related document(s)397) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (Kass, Albert) (Entered: 06/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 405,
+        "date_filed": "2026-06-05",
+        "date_display": "Jun 5, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: Fig Markets Limited & FMIP Limited To CRG Financial LLC. Filed by CRG Financial LLC. (Kalb, Shannon) (Entered: 06/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 404,
+        "date_filed": "2026-06-05",
+        "date_display": "Jun 5, 2026",
+        "description": "Monthly Application for Compensation and Reimbursement of Expenses of McDermott Will & Schulte LLP, Counsel to the Debtors and Debtors in Possession for the period March 15, 2026 to April 30, 2026 Filed by Reliz Technology Group Holdings Inc.. Objections due by 6/26/2026. (Attach",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 406,
+        "date_filed": "2026-06-05",
+        "date_display": "Jun 5, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 26-10371-TMH) [claims,trclm11] ( 28.00). Receipt Number A12697036, amount $ 28.00. (U.S. Treasury) (Entered: 06/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 403,
+        "date_filed": "2026-06-05",
+        "date_display": "Jun 5, 2026",
+        "description": "Monthly Application for Compensation and Reimbursement of Expenses of Cole Schotz P.C., Counsel to the Debtors at the Sole Direction of the Disinterested Director for the period March 15, 2026 to April 30, 2026 Filed by Reliz Technology Group Holdings Inc.. Objections due by 6/26",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ]
   },
   "claims_administrator": {
     "name": "Veritaglobal",

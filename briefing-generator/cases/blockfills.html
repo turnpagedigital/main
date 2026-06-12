@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlockFills — Case Docket | Turnpage Daily Briefing</title>
+<script>
+(function(){
+  var K='daily-briefing-theme';
+  var ST=['system','dark','light'];
+  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
+  var LB={dark:'Dark',light:'Light',system:'System'};
+  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
+  function apply(){
+    var t=localStorage.getItem(K)||'system';
+    document.documentElement.setAttribute('data-theme',eff(t));
+    document.documentElement.setAttribute('data-theme-pref',t);
+    var b=document.getElementById('theme-toggle');
+    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
+  }
+  window.cycleTheme=function(){
+    var c=localStorage.getItem(K)||'system';
+    var n=ST[(ST.indexOf(c)+1)%ST.length];
+    localStorage.setItem(K,n);apply();
+  };
+  apply();
+  if(document.readyState!=='loading') apply();
+  else document.addEventListener('DOMContentLoaded',apply);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
+  [data-theme="dark"]{--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:var(--ink);}
+  .tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 20px;position:sticky;top:0;z-index:100;}
+  .tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1180px;margin:0 auto;}
+  .tn-left{display:flex;align-items:center;gap:16px;}
+  .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
+  .tn-brand-logo{height:26px;width:auto;filter:invert(1);}
+  [data-theme="light"] .tn-brand-logo{filter:none;}
+  .tn-back{color:rgba(255,255,255,0.72);font-size:12px;text-decoration:none;border-left:1px solid rgba(255,255,255,0.18);padding-left:16px;}
+  .tn-back:hover{color:#fff;}
+  [data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
+  [data-theme="light"] .tn-back{color:rgba(10,10,10,0.6);border-left-color:rgba(10,10,10,0.14);}
+  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:#fff;}
+  [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}
+  .page-title{max-width:1180px;margin:0 auto;padding:26px 32px 16px;border-bottom:2px solid var(--ink);}
+  .page-title .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
+  .page-title h1{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-0.02em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;}
+  .case-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-60);}
+  .case-meta strong{color:var(--ink);font-weight:700;}
+  .status-badge{display:inline-block;margin-top:13px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;background:rgba(212,255,0,0.16);color:var(--ink);border:1px solid var(--neon);padding:3px 10px;}
+  .also{margin-top:13px;font-size:11.5px;color:var(--ink-60);}
+  .also a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);}
+  .seed-note{max-width:1180px;margin:16px auto 0;padding:0 32px;}
+  .seed-note .inner{border:1px dashed var(--line-strong);padding:9px 13px;font-size:11.5px;color:var(--ink-60);}
+  .seed-note strong{color:var(--ink);}
+  .wrap{max-width:1180px;margin:0 auto;padding:22px 32px 12px;display:grid;gap:24px;grid-template-columns:1fr;}
+  @media(min-width:920px){.wrap{grid-template-columns:1.9fr 1fr;align-items:start;}}
+  .panel{background:var(--surface);border:1px solid var(--line-strong);}
+  .panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line-strong);}
+  .panel-head h2{margin:0;font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding-left:1.4em;position:relative;color:var(--ink);}
+  .panel-head h2::before{content:"";position:absolute;left:0;top:0.36em;width:1.1em;height:0.18em;background:var(--neon);}
+  .panel-head .meta{display:flex;align-items:center;gap:12px;}
+  .panel-head .src{font-size:11px;color:var(--ink-60);}
+  .tc-counter{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;white-space:nowrap;}
+  .tc-counter.active{background:rgba(239,68,68,0.14);color:#ef4444;}
+  .tc-counter.quiet{background:var(--paper-2);color:var(--ink-60);}
+  .tc-pip{width:7px;height:7px;border-radius:50%;background:currentColor;}
+  table{width:100%;border-collapse:collapse;}
+  th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:10px 18px;border-bottom:1px solid var(--line-strong);font-weight:700;}
+  td{padding:12px 18px;font-size:13px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink);}
+  tr:last-child td{border-bottom:none;}
+  tr.is-new td{background:rgba(212,255,0,0.06);}
+  .dkt{font-variant-numeric:tabular-nums;color:var(--ink-60);white-space:nowrap;}
+  .date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
+  .new-pill{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:1px 6px;margin-left:8px;vertical-align:middle;}
+  .landmark{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-left:8px;vertical-align:middle;}
+  .panel-foot{padding:12px 18px;border-top:1px solid var(--line-strong);font-size:12px;}
+  .panel-foot a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);}
+  .empty{font-size:12.5px;color:var(--ink-60);font-style:italic;padding:14px 18px;}
+  .stat{padding:16px 18px;border-bottom:1px solid var(--line-strong);}
+  .stat .big{font-size:30px;font-weight:800;line-height:1;color:var(--ink);}
+  .stat .big .accent{box-shadow:inset 0 -0.34em 0 var(--neon);}
+  [data-theme="dark"] .stat .big .accent{box-shadow:inset 0 -0.34em 0 #5D7A00;}
+  .stat .sub{font-size:12px;color:var(--ink-60);margin-top:7px;}
+  .dates{list-style:none;margin:0;padding:6px 18px;}
+  .dates li{padding:11px 0 11px 22px;border-bottom:1px solid var(--line);position:relative;font-size:12.5px;}
+  .dates li:last-child{border-bottom:none;}
+  .dates li::before{content:"";position:absolute;left:2px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--line-strong);}
+  .dates li.done::before{background:var(--neon);}
+  .dates .d-date{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
+  .dates .d-label{color:var(--ink-60);display:block;}
+  .section-label{max-width:1180px;margin:14px auto 0;padding:0 32px;font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);}
+  .cards{max-width:1180px;margin:14px auto 0;padding:0 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media(max-width:760px){.cards{grid-template-columns:1fr;}}
+  .news-card{background:var(--surface);border:1px solid var(--line-strong);padding:14px;text-decoration:none;display:block;}
+  .news-card:hover{border-color:var(--ink-40);}
+  .news-card .src-line{font-size:10.5px;color:var(--ink-40);display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;}
+  .news-card .h{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4;}
+  .foot{max-width:1180px;margin:28px auto 0;padding:24px 32px 50px;border-top:2px solid var(--ink);font-size:11px;color:var(--ink-60);line-height:1.7;}
+</style>
+<!-- AUTH GATE START -->
+<script src="/auth/config.js"></script>
+<script type="module" src="/auth/auth.js"></script>
+<!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="/index.html"><img class="tn-brand-logo" alt="Turnpage" src="/assets/turnpage-logo.jpeg"></a>
+      <a class="tn-back" href="../crypto-insolvency/dashboard.html">← 🪙 Crypto Insolvency briefing</a>
+    </div>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+</nav>
+
+<div class="page-title">
+  <div class="eyebrow">Tracked Case · Docket Mirror</div>
+  <h1><span>⚖️</span>BlockFills</h1>
+  <div class="case-meta">
+        <span><strong>Court:</strong> Bankr. D. Del.</span>
+        <span><strong>No.:</strong> 26-10371</span>
+        <span><strong>Judge:</strong> Thomas M. Horan</span>
+  </div>
+  <span class="status-badge">active</span>
+  <div class="also">Also tracked in: <a href="../bankruptcy-creditor-rights/dashboard.html">Bankruptcy Creditor Rights</a></div>
+</div>
+
+
+
+<main class="wrap">
+  <div class="panel"><div class="panel-head"><h2>Docket</h2><div class="meta"><span class="tc-counter active"><span class="tc-pip"></span>9 new · 72h</span><span class="src">via CourtListener</span></div></div><table><thead><tr><th style="width:54px;">Dkt.</th><th style="width:104px;">Filed</th><th>Entry</th></tr></thead><tbody>
+<tr class="is-new"><td class="dkt">424</td><td class="date">Jun 12, 2026</td><td><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">420</td><td class="date">Jun 11, 2026</td><td><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">419</td><td class="date">Jun 11, 2026</td><td><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">—</td><td class="date">Jun 11, 2026</td><td><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">418</td><td class="date">Jun 11, 2026</td><td><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">416</td><td class="date">Jun 10, 2026</td><td><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">415</td><td class="date">Jun 10, 2026</td><td><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">414</td><td class="date">Jun 10, 2026</td><td><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">417</td><td class="date">Jun 10, 2026</td><td><span class="new-pill">NEW</span></td></tr>
+<tr><td class="dkt">413</td><td class="date">Jun 9, 2026</td><td></td></tr>
+<tr><td class="dkt">410</td><td class="date">Jun 8, 2026</td><td></td></tr>
+<tr><td class="dkt">409</td><td class="date">Jun 8, 2026</td><td></td></tr>
+<tr><td class="dkt">411</td><td class="date">Jun 8, 2026</td><td></td></tr>
+<tr><td class="dkt">412</td><td class="date">Jun 8, 2026</td><td></td></tr>
+<tr><td class="dkt">407</td><td class="date">Jun 6, 2026</td><td>Motion to Approve Compromise under Rule 9019 // Motion of Debtors for Entry of an Order (I) Approving the Settlement and Stipulation Between the Debtors and Korn Ferry (US); (II) Resolving Any and All Claims Arising Between the Settlement Parties; (III) Authorizing the Debtors to</td></tr>
+<tr><td class="dkt">408</td><td class="date">Jun 6, 2026</td><td>Certificate of Service re: Notice of Phishing Attempts (related document(s)397) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (Kass, Albert) (Entered: 06/06/2026)</td></tr>
+<tr><td class="dkt">405</td><td class="date">Jun 5, 2026</td><td>Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: Fig Markets Limited &amp; FMIP Limited To CRG Financial LLC. Filed by CRG Financial LLC. (Kalb, Shannon) (Entered: 06/05/2026)</td></tr>
+<tr><td class="dkt">404</td><td class="date">Jun 5, 2026</td><td>Monthly Application for Compensation and Reimbursement of Expenses of McDermott Will &amp; Schulte LLP, Counsel to the Debtors and Debtors in Possession for the period March 15, 2026 to April 30, 2026 Filed by Reliz Technology Group Holdings Inc.. Objections due by 6/26/2026. (Attach</td></tr>
+<tr><td class="dkt">406</td><td class="date">Jun 5, 2026</td><td>Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 26-10371-TMH) [claims,trclm11] ( 28.00). Receipt Number A12697036, amount $ 28.00. (U.S. Treasury) (Entered: 06/05/2026)</td></tr>
+<tr><td class="dkt">403</td><td class="date">Jun 5, 2026</td><td>Monthly Application for Compensation and Reimbursement of Expenses of Cole Schotz P.C., Counsel to the Debtors at the Sole Direction of the Disinterested Director for the period March 15, 2026 to April 30, 2026 Filed by Reliz Technology Group Holdings Inc.. Objections due by 6/26</td></tr>
+</tbody></table><div class="panel-foot"><a href="https://www.courtlistener.com/docket/72494188/" target="_blank" rel="noopener">View full docket on CourtListener →</a></div></div>
+  <div class="panel"><div class="panel-head"><h2>Claims Administrator</h2><span class="src">settlement site</span></div><div class="panel-foot"><a href="https://veritaglobal.net/BlockFills" target="_blank" rel="noopener">veritaglobal.net/BlockFills →</a></div></div>
+</main>
+
+
+
+<footer class="foot">
+  Docket data via CourtListener (Free Law Project) · claim status via the settlement administrator · coverage per the case's source tiers.<br>
+  Provided for informational purposes only and does not constitute legal advice.
+</footer>
+
+</body>
+</html>
