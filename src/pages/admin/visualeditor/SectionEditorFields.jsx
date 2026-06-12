@@ -367,10 +367,17 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <input type="number" min="0" max="100" style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilterStrength ?? 30} onChange={e => set("imageFilterStrength", e.target.value === "" ? "" : Math.max(0, Math.min(100, Number(e.target.value))))} disabled={form.imageFilter === "none"} />
             </div>
           </div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Card title color</label>
+            <select style={selectStyle} value={form.cardTitleColor || "default"} onChange={e => set("cardTitleColor", e.target.value)}>
+              <option value="default">Default (follows card style)</option>
+              <option value="neon">Neon</option>
+            </select>
+          </div>
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Accent</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
-          <CardsArrayEditor label="Cards" cards={form.cards || []} onChange={v => set("cards", v)} />
+          <CardsArrayEditor label="Cards" cards={form.cards || []} onChange={v => set("cards", v)} showIconSubtitle />
         </>
       )}
 
@@ -428,6 +435,39 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Kicker (right column subtitle)</label><textarea style={{ ...inputStyle, minHeight: 60 }} value={form.kicker || ""} onChange={e => set("kicker", e.target.value)} /></div>
           <StepsArrayEditor steps={form.steps || []} onChange={v => set("steps", v)} />
+        </>
+      )}
+
+      {/* ── Process Flow ── */}
+      {typeId === "process-flow" && (
+        <>
+          <ColorSchemePicker typeId="process-flow" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["neon","white","light-gray","dark"]} />
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Pill style</label>
+            <select style={selectStyle} value={form.pillStyle || "white"} onChange={e => set("pillStyle", e.target.value)}>
+              <option value="white">White</option>
+              <option value="black">Black</option>
+              <option value="neon">Neon</option>
+              <option value="outline">Outline</option>
+            </select>
+          </div>
+          <BackgroundImageFields form={form} set={set} />
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow (optional)</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Accent (italic)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
+          <ProcessStepsEditor steps={form.steps || []} onChange={v => set("steps", v)} />
+        </>
+      )}
+
+      {/* ── Bullet Columns ── */}
+      {typeId === "bullet-columns" && (
+        <>
+          <ColorSchemePicker typeId="bullet-columns" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["neon","white","light-gray","dark"]} />
+          <BackgroundImageFields form={form} set={set} />
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow (optional)</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Accent (italic)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
+          <BulletColumnsEditor columns={form.columns || []} onChange={v => set("columns", v)} />
         </>
       )}
 
@@ -599,6 +639,28 @@ export function ImageField({ label, value, onChange, placeholder }) {
   );
 }
 
+/* BackgroundImageFields — optional section background image + overlay filter,
+   the same trio of controls the cards-family sections use. */
+function BackgroundImageFields({ form, set }) {
+  return (
+    <>
+      <ImageField label="Background image (optional)" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+        <div><label style={labelStyle}>Image filter</label>
+          <select style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilter || "dark"} onChange={e => set("imageFilter", e.target.value)}>
+            <option value="dark">Darken</option>
+            <option value="light">Lighten</option>
+            <option value="none">None</option>
+          </select>
+        </div>
+        <div><label style={labelStyle}>Filter strength %</label>
+          <input type="number" min="0" max="100" style={{ ...inputStyle, marginTop: 4 }} value={form.imageFilterStrength ?? 30} onChange={e => set("imageFilterStrength", e.target.value === "" ? "" : Math.max(0, Math.min(100, Number(e.target.value))))} disabled={form.imageFilter === "none"} />
+        </div>
+      </div>
+    </>
+  );
+}
+
 /* VideoField — like ImageField, but for video assets. Browse opens the asset
    library filtered to videos; the thumb shows the video's first frame. */
 export function VideoField({ label, value, onChange, placeholder }) {
@@ -671,7 +733,88 @@ export function CTAField({ label, value, onChange, nullable }) {
   );
 }
 
-function CardsArrayEditor({ label, cards, onChange, showPriority }) {
+/* ProcessStepsEditor — steps for the Process Flow section. Bullets are edited
+   as a textarea, one bullet per line. */
+function ProcessStepsEditor({ steps, onChange }) {
+  const handleChange = (i, field, val) => {
+    const next = [...(steps || [])];
+    next[i] = { ...next[i], [field]: val };
+    onChange(next);
+  };
+  const move = (i, dir) => {
+    const j = i + dir;
+    if (j < 0 || j >= (steps || []).length) return;
+    const next = [...(steps || [])];
+    [next[i], next[j]] = [next[j], next[i]];
+    onChange(next);
+  };
+  return (
+    <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+      <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 8 }}>Steps</div>
+      {(steps || []).map((s, i) => (
+        <div key={s.id || i} style={{ marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid ${LINE}` }}>
+          <div style={{ display: "flex", gap: 4, marginBottom: 4 }}>
+            <input style={{ ...inputStyle, flex: 1 }} placeholder="Pill label (e.g. Partner)" value={s.label || ""} onChange={e => handleChange(i, "label", e.target.value)} />
+            <button type="button" onClick={() => move(i, -1)} disabled={i === 0} aria-label="Move up" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === 0 ? 0.5 : 1 }}>↑</button>
+            <button type="button" onClick={() => move(i, 1)} disabled={i === (steps || []).length - 1} aria-label="Move down" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === (steps || []).length - 1 ? 0.5 : 1 }}>↓</button>
+          </div>
+          <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Heading" value={s.heading || ""} onChange={e => handleChange(i, "heading", e.target.value)} />
+          <textarea
+            style={{ ...inputStyle, minHeight: 70, marginBottom: 4 }}
+            placeholder={"One bullet per line"}
+            value={(s.bullets || []).join("\n")}
+            onChange={e => handleChange(i, "bullets", e.target.value.split("\n"))}
+            onBlur={e => handleChange(i, "bullets", e.target.value.split("\n").map(b => b.trim()).filter(Boolean))}
+          />
+          <button type="button" onClick={() => onChange((steps || []).filter((_, idx) => idx !== i))} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem" }}>Remove</button>
+        </div>
+      ))}
+      <button type="button" onClick={() => onChange([...(steps || []), { id: `step-${(steps || []).length + 1}-${(steps || []).length}`, label: "", heading: "", bullets: [] }])} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}>+ Add step</button>
+    </div>
+  );
+}
+
+/* BulletColumnsEditor — columns for the Bullet Columns section. Items are
+   edited as a textarea, one item per line. */
+function BulletColumnsEditor({ columns, onChange }) {
+  const handleChange = (i, field, val) => {
+    const next = [...(columns || [])];
+    next[i] = { ...next[i], [field]: val };
+    onChange(next);
+  };
+  const move = (i, dir) => {
+    const j = i + dir;
+    if (j < 0 || j >= (columns || []).length) return;
+    const next = [...(columns || [])];
+    [next[i], next[j]] = [next[j], next[i]];
+    onChange(next);
+  };
+  return (
+    <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+      <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 8 }}>Columns</div>
+      {(columns || []).map((col, i) => (
+        <div key={col.id || i} style={{ marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid ${LINE}` }}>
+          <div style={{ display: "flex", gap: 4, marginBottom: 4 }}>
+            <input style={{ ...inputStyle, flex: 1 }} placeholder="Column heading" value={col.heading || ""} onChange={e => handleChange(i, "heading", e.target.value)} />
+            <button type="button" onClick={() => move(i, -1)} disabled={i === 0} aria-label="Move left" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === 0 ? 0.5 : 1 }}>↑</button>
+            <button type="button" onClick={() => move(i, 1)} disabled={i === (columns || []).length - 1} aria-label="Move right" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === (columns || []).length - 1 ? 0.5 : 1 }}>↓</button>
+          </div>
+          <textarea
+            style={{ ...inputStyle, minHeight: 90, marginBottom: 4 }}
+            placeholder={"One item per line"}
+            value={(col.items || []).join("\n")}
+            onChange={e => handleChange(i, "items", e.target.value.split("\n"))}
+            onBlur={e => handleChange(i, "items", e.target.value.split("\n").map(t => t.trim()).filter(Boolean))}
+          />
+          <button type="button" onClick={() => onChange((columns || []).filter((_, idx) => idx !== i))} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem" }}>Remove</button>
+        </div>
+      ))}
+      <button type="button" onClick={() => onChange([...(columns || []), { id: `col-${(columns || []).length + 1}-${(columns || []).length}`, heading: "", items: [] }])} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}>+ Add column</button>
+    </div>
+  );
+}
+
+function CardsArrayEditor({ label, cards, onChange, showPriority, showIconSubtitle }) {
   const handleChange = (i, field, val) => {
     const newCards = [...(cards || [])];
     newCards[i] = { ...newCards[i], [field]: val };
@@ -707,7 +850,17 @@ function CardsArrayEditor({ label, cards, onChange, showPriority }) {
         <div key={c.id} style={{ marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid ${LINE}` }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
             <div style={{ flex: 1 }}>
-              <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
+              {showIconSubtitle ? (
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 70px", gap: 4, marginBottom: 4 }}>
+                  <input style={inputStyle} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
+                  <input style={inputStyle} placeholder="Icon" title="Optional emoji shown top-right of the card (e.g. ⚖️)" value={c.icon || ""} onChange={e => handleChange(i, "icon", e.target.value)} />
+                </div>
+              ) : (
+                <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
+              )}
+              {showIconSubtitle && (
+                <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Subtitle (optional — bold line under a neon divider)" value={c.subtitle || ""} onChange={e => handleChange(i, "subtitle", e.target.value)} />
+              )}
               <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Body" value={c.body} onChange={e => handleChange(i, "body", e.target.value)} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 4, marginLeft: 8 }}>

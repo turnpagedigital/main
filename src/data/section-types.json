@@ -459,6 +459,131 @@
       }
     },
     {
+      "id": "process-flow",
+      "displayName": "Process Flow",
+      "description": "Horizontal step timeline: pill labels with arrows, each step with a bold heading and bullet list. Neon, white, gray, or dark background; optional background image.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "supportedColorSchemes": [
+        "neon",
+        "white",
+        "light-gray",
+        "dark"
+      ],
+      "defaultColorScheme": "neon",
+      "defaultContent": {
+        "eyebrow": "",
+        "title": "How the typical sales process works",
+        "accent": "",
+        "colorScheme": "neon",
+        "pillStyle": "white",
+        "backgroundImage": "",
+        "steps": [
+          {
+            "id": "step-1",
+            "label": "Partner",
+            "heading": "Define objectives; execute marketing agreement",
+            "bullets": [
+              "Exclusivity and lock-up terms",
+              "Pricing (ask/reserve)",
+              "Form of agreement and key transaction terms",
+              "Diligence requests"
+            ]
+          },
+          {
+            "id": "step-2",
+            "label": "Prepare",
+            "heading": "Prepare marketing materials and VDR",
+            "bullets": [
+              "Customer contracts",
+              "Proofs of claim",
+              "Account statements",
+              "Seller KYC/AML"
+            ]
+          },
+          {
+            "id": "step-3",
+            "label": "Solicit",
+            "heading": "Educate buyers; solicit offers",
+            "bullets": [
+              "Private sale: 1:1 communication to top buyers",
+              "Auctions: widely distributed bid solicitation"
+            ]
+          },
+          {
+            "id": "step-4",
+            "label": "Transact",
+            "heading": "Confirm trade with winning bidder and proceed to close",
+            "bullets": [
+              "Buyer diligence",
+              "Final documentation",
+              "Confirm purchase price",
+              "Notify court"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bullet-columns",
+      "displayName": "Bullet Columns",
+      "description": "Title with 2–4 columns of bold headings and bullet lists (e.g. a services overview). Neon, white, gray, or dark background; optional background image.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "supportedColorSchemes": [
+        "neon",
+        "white",
+        "light-gray",
+        "dark"
+      ],
+      "defaultColorScheme": "neon",
+      "defaultContent": {
+        "eyebrow": "",
+        "title": "Our services",
+        "accent": "",
+        "colorScheme": "neon",
+        "backgroundImage": "",
+        "columns": [
+          {
+            "id": "col-1",
+            "heading": "Covered Assets",
+            "items": [
+              "Bankruptcy Claims",
+              "Litigation Claims",
+              "Class Action Claims"
+            ]
+          },
+          {
+            "id": "col-2",
+            "heading": "Capital Solutions",
+            "items": [
+              "Claim Assignments",
+              "Participations",
+              "Litigation Financing"
+            ]
+          },
+          {
+            "id": "col-3",
+            "heading": "Trading Strategies",
+            "items": [
+              "OTC Brokerage",
+              "Public Auctions",
+              "Private Pools"
+            ]
+          },
+          {
+            "id": "col-4",
+            "heading": "Advisory",
+            "items": [
+              "Claim Disputes",
+              "Claim Analysis",
+              "Price Discovery"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "image-text",
       "displayName": "Image + Text",
       "description": "An image beside (or above) a heading and paragraph. Pick image left, right, or top, plus a background color.",

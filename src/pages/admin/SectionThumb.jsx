@@ -679,6 +679,71 @@ function RichTextTwoColThumb() {
   );
 }
 
+function ProcessFlowThumb() {
+  const steps = [
+    { label: "PARTNER",  lines: 3 },
+    { label: "PREPARE",  lines: 4 },
+    { label: "SOLICIT",  lines: 2 },
+    { label: "TRANSACT", lines: 3 },
+  ];
+  return (
+    <div style={{ width: W, height: H, background: NEON, padding: "44px 60px" }}>
+      <h2 style={{ fontFamily: FONT, fontSize: 44, fontWeight: 800, letterSpacing: "-0.03em",
+        color: INK, margin: "0 0 40px" }}>
+        How the typical sales process works
+      </h2>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 28 }}>
+        {steps.map((s, i) => (
+          <div key={i}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 22 }}>
+              <span style={{ fontFamily: FONT, fontSize: 15, fontWeight: 800, letterSpacing: "0.1em",
+                background: "#fff", color: INK, border: `2px solid ${INK}`, borderRadius: 999,
+                padding: "8px 20px", boxShadow: "0 3px 0 rgba(0,0,0,0.35)", whiteSpace: "nowrap" }}>
+                {s.label}
+              </span>
+              {i < steps.length - 1 && <span style={{ flex: 1, height: 2, background: INK }} />}
+            </div>
+            <div style={{ width: "90%", height: 12, background: INK, opacity: 0.85, marginBottom: 14, borderRadius: 2 }} />
+            {Array.from({ length: s.lines }).map((_, j) => (
+              <div key={j} style={{ width: `${82 - j * 9}%`, height: 8, background: INK, opacity: 0.45, marginBottom: 9, borderRadius: 2 }} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function BulletColumnsThumb() {
+  const cols = [
+    { heading: "Covered Assets",     lines: 6 },
+    { heading: "Capital Solutions",  lines: 4 },
+    { heading: "Trading Strategies", lines: 4 },
+    { heading: "Advisory",           lines: 5 },
+  ];
+  return (
+    <div style={{ width: W, height: H, background: NEON, padding: "44px 60px" }}>
+      <h2 style={{ fontFamily: FONT, fontSize: 46, fontWeight: 800, letterSpacing: "-0.03em",
+        color: INK, margin: "0 0 40px" }}>
+        Our services
+      </h2>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 34 }}>
+        {cols.map((c, i) => (
+          <div key={i}>
+            <p style={{ fontFamily: FONT, fontSize: 21, fontWeight: 800, color: INK, margin: "0 0 16px" }}>{c.heading}</p>
+            {Array.from({ length: c.lines }).map((_, j) => (
+              <div key={j} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 11 }}>
+                <span style={{ width: 5, height: 5, borderRadius: "50%", background: INK, flexShrink: 0 }} />
+                <div style={{ width: `${78 - (j % 3) * 12}%`, height: 8, background: INK, opacity: 0.5, borderRadius: 2 }} />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Fallback ─────────────────────────────────────────────────────────────────
 function DefaultThumb() {
   return (
@@ -713,6 +778,8 @@ const THUMBS = {
   "service-cards":                   ServiceCardsThumb,
   "comparison":                      ComparisonThumb,
   "how-it-works":                    HowItWorksThumb,
+  "process-flow":                    ProcessFlowThumb,
+  "bullet-columns":                  BulletColumnsThumb,
   "image-text":                          ImageTextRightThumb,
   "image-text/layout-1-image-right":     ImageTextRightThumb,
   "image-text/layout-2-image-left":      ImageTextLeftThumb,

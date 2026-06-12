@@ -8,11 +8,14 @@ import { sectionBackground } from "../../lib/section-background.js";
    Inline section: content lives in page-compositions.json sectionConfig.content.
    Schema:
      eyebrow, title, accent     — section header text
-     cards[]                    — { id, title, body }
+     cards[]                    — { id, title, body, icon?, subtitle? }
+                                  icon: emoji/short text shown top-right;
+                                  subtitle: bold lead-in under a neon divider
      layout                     — "grid-3col" (default) | "grid-2col" | "list"
      colorScheme                — "dark" (default) | "light-gray" | "white"
      cardStyle                  — "standard" (default) | "liquid-glass" | "white" | "black" | "light-gray" | "dark" | "light-glass" | "clear-glass"
      cardRadius                 — "rounded" (default) | "square"
+     cardTitleColor             — "default" | "neon" (neon card titles + icon)
      backgroundImage            — optional image URL for section background
 */
 export default function ServiceCardsSection({ sectionConfig }) {
@@ -25,6 +28,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
   const colorScheme      = c.colorScheme || "dark";
   const cardStyle        = c.cardStyle || "standard";
   const cardRadius       = c.cardRadius || "rounded";
+  const cardTitleColor   = c.cardTitleColor || "default";
   const backgroundImage  = c.backgroundImage || "";
   const imageFilter         = c.imageFilter || "dark";
   const imageFilterStrength = c.imageFilterStrength ?? 30;
@@ -105,21 +109,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
           }} className="service-grid">
             {cards.map(card => (
               <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius}>
-                <h3 style={{
-                  fontFamily: FONT, fontWeight: 800,
-                  fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
-                  letterSpacing: "-0.015em", lineHeight: 1.1,
-                  color: "var(--card-text-color)", marginBottom: "0.85rem",
-                  margin: 0,
-                }}>
-                  {card.title}
-                </h3>
-                <p style={{
-                  fontFamily: FONT, fontSize: "0.97rem",
-                  color: "var(--card-secondary-text)", lineHeight: 1.65, margin: 0,
-                }}>
-                  {card.body}
-                </p>
+                <CardInner card={card} titleColor={cardTitleColor === "neon" ? NEON : "var(--card-text-color)"} />
               </Card>
             ))}
           </div>
@@ -141,6 +131,53 @@ export default function ServiceCardsSection({ sectionConfig }) {
         @media (max-width: 600px) { .service-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </section>
+  );
+}
+
+/* Card body shared by the styled-Card grid: title (+ optional icon row),
+   then — when a subtitle is set — a neon divider and bold subtitle line,
+   then the body copy. Cards without icon/subtitle render exactly as before. */
+function CardInner({ card, titleColor }) {
+  const hasExtras = card.subtitle || card.icon;
+  return (
+    <>
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem" }}>
+        <h3 style={{
+          fontFamily: FONT, fontWeight: 800,
+          fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
+          letterSpacing: "-0.015em", lineHeight: 1.1,
+          color: titleColor, margin: 0,
+        }}>
+          {card.title}
+        </h3>
+        {card.icon && (
+          <span aria-hidden="true" style={{
+            fontFamily: FONT, fontSize: "1.5rem", lineHeight: 1,
+            color: titleColor, flexShrink: 0,
+          }}>{card.icon}</span>
+        )}
+      </div>
+      {card.subtitle && (
+        <>
+          <div style={{ height: 1, background: NEON, margin: "1.1rem 0" }} />
+          <p style={{
+            fontFamily: FONT, fontWeight: 700, fontSize: "1.08rem",
+            color: "var(--card-text-color)", lineHeight: 1.4, margin: 0,
+          }}>
+            {card.subtitle}
+          </p>
+        </>
+      )}
+      {card.body && (
+        <p style={{
+          fontFamily: FONT, fontSize: "0.97rem",
+          color: "var(--card-secondary-text)", lineHeight: 1.65,
+          margin: hasExtras ? "1.1rem 0 0" : 0,
+        }}>
+          {card.body}
+        </p>
+      )}
+    </>
   );
 }
 

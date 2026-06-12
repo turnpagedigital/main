@@ -25,6 +25,8 @@ import ServiceCardsSection  from "./ServiceCardsSection.jsx";
 import ComparisonSection    from "./ComparisonSection.jsx";
 import HowItWorksSection    from "./HowItWorksSection.jsx";
 import ImageTextSection     from "./ImageTextSection.jsx";
+import ProcessFlowSection   from "./ProcessFlowSection.jsx";
+import BulletColumnsSection from "./BulletColumnsSection.jsx";
 import RichTextSection      from "./RichTextSection.jsx";
 import DamagesSection       from "./DamagesSection.jsx";
 import RegistrationFlowSection from "./RegistrationFlowSection.jsx";
@@ -50,6 +52,8 @@ export const SECTION_MAP = {
   "comparison":     ComparisonSection,
   "how-it-works":   HowItWorksSection,
   "image-text":     ImageTextSection,
+  "process-flow":   ProcessFlowSection,
+  "bullet-columns": BulletColumnsSection,
   "rich-text":      RichTextSection,
   "damages":        DamagesSection,
   "registration-flow": RegistrationFlowSection,

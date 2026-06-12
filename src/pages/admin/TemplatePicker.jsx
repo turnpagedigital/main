@@ -77,6 +77,8 @@ const TEMPLATE_GROUPS = [
       "service-cards",
       "comparison",
       "how-it-works",
+      "process-flow",
+      "bullet-columns",
     ],
   },
   {
