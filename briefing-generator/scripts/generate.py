@@ -35,12 +35,18 @@ TICKERS_FILE = REPO_ROOT / "tickers.md"
 INDEX_HTML = REPO_ROOT / "index.html"
 SCRIPTS_DIR = Path(__file__).resolve().parent
 
+# Admin-editable config files (live one level up in the main site repo)
+SITE_ROOT         = REPO_ROOT.parent
+THEMES_FILE       = SITE_ROOT / "src" / "data" / "themes.json"
+INTELLIGENCE_FILE = SITE_ROOT / "src" / "data" / "intelligence-settings.json"
+
 TODAY = dt.date.today()
 DATE_ISO = TODAY.isoformat()
 DATE_PRETTY = TODAY.strftime("%A, %B %d, %Y")
 DATE_STAMP_UPPER = f"{dt.datetime.now().strftime('%-I:%M %p ET').upper()} · {TODAY.strftime('%A, %B %-d, %Y').upper()}"
 
-# 6 topics (Tech Mass Arb consolidated into $1B+ Class Actions on 2026-05-19)
+# Fallback topic list used when themes.json is unavailable.
+# These are normally overridden at startup by load_themes() below.
 TOPICS = [
     {"slug":"rewind-tariffs",                "display":"Tariffs / Trade",                  "emoji":"⚖️", "voice":"trade-law-grade"},
     {"slug":"llm-class-action",              "display":"LLM / Copyright",                  "emoji":"🤖", "voice":"litigation-grade"},
@@ -49,6 +55,17 @@ TOPICS = [
     {"slug":"billion-dollar-class-actions",  "display":"$1B+ Class Actions & Mass Arb",    "emoji":"💰", "voice":"litigation-grade"},
     {"slug":"bankruptcy-creditor-rights",    "display":"Bankruptcy Creditor Rights",       "emoji":"📜", "voice":"restructuring-grade"},
 ]
+
+# Voice string per slug — used when building topics from themes.json (which
+# stores voice inline in guidance_prompt but not as a separate field).
+_SLUG_VOICE = {
+    "rewind-tariffs":               "trade-law-grade",
+    "llm-class-action":             "litigation-grade",
+    "crypto-insolvency":            "restructuring-grade",
+    "fraud-recovery":               "recovery-grade",
+    "billion-dollar-class-actions": "litigation-grade",
+    "bankruptcy-creditor-rights":   "restructuring-grade",
+}
 
 # ── News scan ──────────────────────────────────────────────────────────────
 # Google News RSS queries per topic. The scan grounds each advisory on real
@@ -115,9 +132,9 @@ def _host(url):
 def _domain_match(host, domains):
     return any(host == d or host.endswith("." + d) for d in domains)
 
-def fetch_news(slug, whitelist, blacklist, hours=72, max_items=12):
+def fetch_news(slug, whitelist, blacklist, hours=72, max_items=12, queries_override=None):
     """Scan Google News RSS for the topic, keep recent whitelisted (non-blacklisted) items."""
-    queries = NEWS_QUERIES.get(slug, [])
+    queries = queries_override if queries_override is not None else NEWS_QUERIES.get(slug, [])
     cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=hours)
     seen, items = set(), []
     for q in queries:
@@ -229,13 +246,19 @@ def build_prompt_docs(brand_styling, skill_md, sources_md):
 """
 
 def build_prompt(topic, news_block="", case_truth_block=""):
+    guidance = topic.get("guidance_prompt", "")
+    guidance_block = (
+        f"# Desk-specific guidance (authoritative — follow above SKILL.md + this)\n\n{guidance}\n\n"
+        if guidance else ""
+    )
+    voice_line = topic.get("voice") or "house voice per BRAND_STYLING.md"
     return f"""You are producing today's daily-briefing advisory for {topic['display']} for Andrew at Turnpage Digital Markets.
 
 TODAY: {DATE_PRETTY}
 
 You must follow the SKILL.md spec verbatim (provided above). The output is **MARKDOWN ONLY** — no commentary outside the markdown, no JSON wrapper.
 
-{case_truth_block}{news_block}# Your task
+{guidance_block}{case_truth_block}{news_block}# Your task
 
 Produce the FULL rich advisory in markdown format per the SKILL.md output spec. Sections:
 
@@ -264,7 +287,7 @@ Produce the FULL rich advisory in markdown format per the SKILL.md output spec. 
 - (one entry per inline citation)
 ```
 
-Inline citations must use the format `(__[Source Name](https://url)__)` for every factual proposition. Voice: {topic['voice']}. Length: 1,500–2,500 words. Density at the Bartz-passage level (full case caption + docket + judge + courtroom + dollar figures + percentages + statutory citations). Apply incremental-focus rules from SKILL.md — carry forward prior advisory's analytical content; today's lede surfaces NEW + DELTA matters; STALE matters stay in body, do not strip.
+Inline citations must use the format `(__[Source Name](https://url)__)` for every factual proposition. Voice: {voice_line}. Length: 1,500–2,500 words. Density at the Bartz-passage level (full case caption + docket + judge + courtroom + dollar figures + percentages + statutory citations). Apply incremental-focus rules from SKILL.md — carry forward prior advisory's analytical content; today's lede surfaces NEW + DELTA matters; STALE matters stay in body, do not strip.
 
 VERIFICATION RULES (hard requirements):
 - You have a web_search tool. USE IT to verify every case posture, docket number, judge, dollar figure, percentage, and date before asserting it, and to find the specific article or primary-source page for each citation.
@@ -489,6 +512,48 @@ def extract_card_summary(advisory_md, topic):
         stat = " ".join(first_sentence.split()[:6]) + "…"
     return _html.escape(stat, quote=False), _html.escape(first_sentence, quote=False)
 
+def load_themes():
+    """Load active themes from src/data/themes.json (admin-editable).
+    Returns a list of theme dicts, or None if the file is missing/unreadable."""
+    if not THEMES_FILE.exists():
+        return None
+    try:
+        data = json.loads(THEMES_FILE.read_text(encoding="utf-8"))
+        active = [t for t in data.get("themes", []) if t.get("active", True)]
+        return active or None
+    except Exception as e:
+        print(f"! themes.json load failed: {e} — using hardcoded topics", file=sys.stderr)
+        return None
+
+
+def load_intelligence_settings():
+    """Load global source lists from intelligence-settings.json (admin-editable).
+    Returns the parsed dict, or None if the file is missing/unreadable."""
+    if not INTELLIGENCE_FILE.exists():
+        return None
+    try:
+        return json.loads(INTELLIGENCE_FILE.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"! intelligence-settings.json load failed: {e}", file=sys.stderr)
+        return None
+
+
+def themes_to_runtime(themes):
+    """Convert admin-schema theme objects to the topic dicts generate.py uses."""
+    return [
+        {
+            "slug":            t["slug"],
+            "display":         t["display_name"],
+            "emoji":           t.get("emoji", "📋"),
+            "voice":           _SLUG_VOICE.get(t["slug"], ""),
+            "guidance_prompt": t.get("guidance_prompt", ""),
+            "theme_whitelist": set(t.get("sources", {}).get("whitelist", [])),
+            "keywords":        t.get("keywords", []),
+        }
+        for t in themes
+    ]
+
+
 def main():
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
@@ -502,8 +567,33 @@ def main():
 
     update_landing_stamp()
 
+    # ── Load admin-managed config ────────────────────────────────────────────
+    raw_themes = load_themes()
+    if raw_themes:
+        topics = themes_to_runtime(raw_themes)
+        # Build news-query dict from theme keywords; fall back to hardcoded for
+        # any slug the admin hasn't given keywords yet.
+        effective_queries = {t["slug"]: t["keywords"] for t in topics if t["keywords"]}
+        for slug, qs in NEWS_QUERIES.items():
+            if slug not in effective_queries:
+                effective_queries[slug] = qs
+        print(f"Loaded {len(topics)} active themes from admin (themes.json)")
+    else:
+        topics = TOPICS
+        effective_queries = NEWS_QUERIES
+        print("Using hardcoded topic list (themes.json unavailable)")
+
     whitelist, blacklist = parse_source_lists(sources_md)
-    print(f"Source lists: {len(whitelist)} whitelisted, {len(blacklist)} blacklisted domains")
+    intel = load_intelligence_settings()
+    if intel:
+        global_wl = set(intel.get("sources", {}).get("whitelist", []))
+        global_bl = set(intel.get("sources", {}).get("blacklist", []))
+        whitelist = whitelist | global_wl
+        blacklist = blacklist | global_bl
+        print(f"Source lists merged with intelligence-settings.json: "
+              f"{len(whitelist)} whitelisted, {len(blacklist)} blacklisted")
+    else:
+        print(f"Source lists: {len(whitelist)} whitelisted, {len(blacklist)} blacklisted domains")
 
     docs_block = build_prompt_docs(brand_styling, skill_md, sources_md)
 
@@ -518,13 +608,19 @@ def main():
         raise RuntimeError("rate limit retries exhausted")
 
     first_topic = True
-    for topic in TOPICS:
+    for topic in topics:
         if not first_topic:
             time.sleep(25)  # pace topics under the org input-tokens/min limit
         first_topic = False
         print(f"=== Generating {topic['slug']} ===", flush=True)
         try:
-            news_items = fetch_news(topic['slug'], whitelist, blacklist)
+            # Merge per-theme whitelist on top of the global whitelist so
+            # admin-added trusted sources are picked up immediately.
+            topic_whitelist = whitelist | topic.get("theme_whitelist", set())
+            news_items = fetch_news(
+                topic['slug'], topic_whitelist, blacklist,
+                queries_override=effective_queries.get(topic['slug']),
+            )
         except Exception as e:
             print(f"  ! news scan error: {e}", file=sys.stderr)
             news_items = []
