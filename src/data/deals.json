@@ -59,7 +59,8 @@
       "case_study": "",
       "pages": [
         "home",
-        "crypto"
+        "crypto",
+        "bankruptcy-claims"
       ],
       "preTurnpage": true,
       "logos": [
@@ -76,7 +77,8 @@
       "case_study": "",
       "pages": [
         "home",
-        "crypto"
+        "crypto",
+        "bankruptcy-claims"
       ],
       "preTurnpage": true,
       "logos": [
@@ -93,7 +95,7 @@
       "case_study": "",
       "pages": [
         "home",
-        "ai-copyright"
+        "litigation-finance"
       ],
       "preTurnpage": true,
       "logos": [
@@ -111,7 +113,7 @@
       "case_study": "",
       "pages": [
         "home",
-        "ai-copyright"
+        "litigation-finance"
       ],
       "preTurnpage": false,
       "logos": [
@@ -127,10 +129,13 @@
       "summary": "Brokered sale of multi-employer pension plan claim held by teamsters union to U.S.-based hedge fund. Advised client over many months, navigating volatile market through complex Delaware bankruptcy court litigation and multiple appeals.",
       "case_study": "",
       "pages": [
-        "home"
+        "home",
+        "bankruptcy-claims"
       ],
       "preTurnpage": true,
-      "logos": []
+      "logos": [
+        "/library/yellow-logo.png"
+      ]
     },
     {
       "amt": "$30M",
@@ -142,7 +147,7 @@
       "case_study": "",
       "pages": [
         "home",
-        "ai-copyright"
+        "litigation-finance"
       ],
       "preTurnpage": true,
       "logos": [
@@ -158,7 +163,8 @@
       "summary": "",
       "case_study": "",
       "pages": [
-        "crypto"
+        "crypto",
+        "bankruptcy-claims"
       ],
       "preTurnpage": true,
       "logos": []
@@ -173,7 +179,8 @@
       "case_study": "",
       "pages": [
         "home",
-        "crypto"
+        "crypto",
+        "bankruptcy-claims"
       ],
       "preTurnpage": true,
       "logos": [
@@ -191,7 +198,8 @@
       "summary": "",
       "case_study": "",
       "pages": [
-        "crypto"
+        "crypto",
+        "bankruptcy-claims"
       ],
       "preTurnpage": true,
       "logos": [
@@ -207,7 +215,8 @@
       "summary": "",
       "case_study": "",
       "pages": [
-        "crypto"
+        "crypto",
+        "bankruptcy-claims"
       ],
       "preTurnpage": true,
       "logos": [
