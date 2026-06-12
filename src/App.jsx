@@ -3,6 +3,7 @@ import { GLOBAL_CSS } from "./data/css.js";
 import { FONT, DARK, TEXT } from "./data/tokens.js";
 import { useRoute, navigate } from "./lib/router.js";
 import { I18nProvider } from "./lib/i18n.js";
+import { captureAttribution, trackPageView } from "./lib/analytics.js";
 import AppHeader from "./components/AppHeader.jsx";
 import Footer from "./components/Footer.jsx";
 import pageMeta from "./data/page-meta.json";
@@ -88,6 +89,19 @@ export default function App() {
     const t = TITLES[route.page] || TITLES["home"];
     document.title = t;
   }, [route.page]);
+
+  // Ad-click attribution (utm_*/gclid → sessionStorage) — captured once at
+  // boot; runs with or without analytics IDs configured.
+  useEffect(() => {
+    captureAttribution();
+  }, []);
+
+  // SPA page_view per route change. Inert until src/data/analytics.json has
+  // a GA4 measurement ID. Runs after the title effect so GA sees the right
+  // page_title.
+  useEffect(() => {
+    trackPageView();
+  }, [route.page, route.slug]);
 
   // Site-wide <a> click interception. Any internal anchor with an href like
   // "/foo" triggers pushState instead of a full page reload, preserving SPA

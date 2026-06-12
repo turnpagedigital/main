@@ -1,0 +1,6 @@
+{
+  "_comment": "Analytics configuration. Everything ships INERT: gtag.js only loads when ga4MeasurementId is non-empty. Paste the GA4 measurement ID (G-XXXXXXXXXX) and, once Google Ads is set up, the conversion ID (AW-XXXXXXXXX) + label to activate. See docs/marketing/setup-checklists.md for the exact click-paths.",
+  "ga4MeasurementId": "",
+  "adsConversionId": "",
+  "adsConversionLabel": ""
+}

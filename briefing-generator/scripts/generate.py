@@ -275,6 +275,111 @@ VERIFICATION RULES (hard requirements):
 Output: markdown only. Start with `# {topic['emoji']}`. End with the "informational purposes" disclaimer line. No prose outside the markdown.
 """
 
+# Topics that also get daily LinkedIn/X draft posts (Andrew's three priority
+# channels). The drafts land in <topic>/posts/DATE.md and are injected into
+# the editable <topic>/posts.html surface (copy buttons, adjust block,
+# "I used this post" preference signal — all already built there).
+SOCIAL_TOPICS = {"llm-class-action", "crypto-insolvency", "bankruptcy-creditor-rights"}
+
+def build_social_prompt(topic, advisory_md):
+    return f"""You write Turnpage Digital Markets' social drafts for the {topic['display']} desk.
+
+SOURCE — today's verified advisory (every fact below was verified this morning; do NOT add facts that aren't in it, do NOT re-verify):
+
+{advisory_md}
+
+Write TWO posts from this advisory.
+
+VOICE (house rules):
+- Lead with the single sharpest development — a number, a date, or a ruling. No throat-clearing, no "exciting news".
+- Sound like a desk note from someone who reads dockets, not a content marketer. Plain words, short sentences, no hype adjectives.
+- Concrete: case names, courts, dollar figures, record dates. Bullet case-status lines with "•" where listing estates/cases.
+- End the LinkedIn post with one practical takeaway for claimants/creditors, then 3-5 CamelCase hashtags on the final line.
+- Never promise outcomes or returns. Never give legal advice. No emojis except an optional single one in the first line.
+
+FORMAT — return EXACTLY this markdown structure and nothing else:
+
+# {topic['display']} — Social Posts | {DATE_PRETTY}
+
+## LinkedIn
+
+<900-1400 character LinkedIn post>
+
+## X.com
+
+<X post, target under 280 characters, compressed telegraph style ("—" separators fine), 1-3 hashtags>
+"""
+
+def parse_social_md(social_md):
+    """Split the generated posts file into (linkedin_text, x_text)."""
+    li = x = ""
+    m = re.search(r'## LinkedIn\s*\n+(.*?)(?=\n## |\Z)', social_md, re.DOTALL)
+    if m: li = m.group(1).strip()
+    m = re.search(r'## X\.com\s*\n+(.*?)(?=\n## |\Z)', social_md, re.DOTALL)
+    if m: x = m.group(1).strip()
+    return li, x
+
+def _esc_textarea(text):
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+def inject_posts_html(topic, li_text, x_text):
+    """Update <topic>/posts.html in place: swap the two editable textareas,
+    the date stamp, and the char counts. Never regenerates the page chassis
+    (same in-place philosophy as the dashboards)."""
+    posts_path = REPO_ROOT / topic['slug'] / "posts.html"
+    if not posts_path.exists():
+        print(f"  ! posts.html missing for {topic['slug']} — skipping injection")
+        return False
+    html = posts_path.read_text(encoding="utf-8")
+
+    html = re.sub(
+        r'(<textarea class="post-text-editable linkedin"[^>]*>).*?(</textarea>)',
+        lambda m: m.group(1) + _esc_textarea(li_text) + m.group(2),
+        html, count=1, flags=re.DOTALL)
+    html = re.sub(
+        r'(<textarea class="post-text-editable x"[^>]*>).*?(</textarea>)',
+        lambda m: m.group(1) + _esc_textarea(x_text) + m.group(2),
+        html, count=1, flags=re.DOTALL)
+    html = re.sub(
+        r'(<div class="stamp">).*?(</div>)',
+        lambda m: m.group(1) + f"{DATE_PRETTY} &middot; {topic['display']}" + m.group(2),
+        html, count=1, flags=re.DOTALL)
+    html = re.sub(r'(<span id="li-count">)\d+(</span>)',
+                  lambda m: m.group(1) + str(len(li_text)) + m.group(2), html, count=1)
+    html = re.sub(r'(<span id="x-count">)\d+(</span>)',
+                  lambda m: m.group(1) + str(len(x_text)) + m.group(2), html, count=1)
+
+    posts_path.write_text(html, encoding="utf-8")
+    return True
+
+def generate_social_posts(create_with_retry, topic, advisory_md):
+    """Second short generation per social topic: advisory → LinkedIn/X drafts.
+    Writes <topic>/posts/DATE.md and refreshes <topic>/posts.html. Failures
+    are contained — the advisory run must never die over a social draft."""
+    response = create_with_retry(
+        model="claude-sonnet-4-6",
+        max_tokens=2000,
+        messages=[{"role": "user", "content": build_social_prompt(topic, advisory_md)}],
+    )
+    social_md = "\n".join(
+        b.text for b in response.content if getattr(b, "type", "") == "text"
+    ).strip()
+    if social_md.startswith("```"):
+        social_md = social_md.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+
+    li_text, x_text = parse_social_md(social_md)
+    if not li_text or not x_text:
+        print(f"  ! social drafts for {topic['slug']}: could not parse LinkedIn/X sections — skipping")
+        return
+
+    posts_dir = REPO_ROOT / topic['slug'] / "posts"
+    posts_dir.mkdir(parents=True, exist_ok=True)
+    out = posts_dir / f"{DATE_ISO}.md"
+    out.write_text(social_md + "\n", encoding="utf-8")
+    print(f"  ✓ wrote {out.relative_to(REPO_ROOT)} (LinkedIn {len(li_text)} chars, X {len(x_text)} chars)")
+    if inject_posts_html(topic, li_text, x_text):
+        print(f"  ✓ injected drafts into {topic['slug']}/posts.html")
+
 def update_card_in_landing(slug, card_stat, card_body):
     """Update the .card-stat and .card-body for a topic on the landing page."""
     if not INDEX_HTML.exists():
@@ -484,6 +589,16 @@ def main():
         # Update landing card with the day's delta
         stat, body = extract_card_summary(advisory_md, topic)
         update_card_in_landing(topic['slug'], stat, body)
+
+        # LinkedIn/X drafts for the three priority topics — same verified
+        # advisory as source, short second generation, paced by the same
+        # rate-limit retry wrapper. Never fatal to the advisory run.
+        if topic['slug'] in SOCIAL_TOPICS:
+            try:
+                time.sleep(10)  # breathing room under the input-tokens/min limit
+                generate_social_posts(create_with_retry, topic, advisory_md)
+            except Exception as e:
+                print(f"  ! social drafts failed for {topic['slug']}: {e}", file=sys.stderr)
 
     # Call inject_dashboard.py to push the new advisories into existing brand-styled dashboards
     print("\n=== Injecting advisories into brand-styled dashboards (in place) ===", flush=True)

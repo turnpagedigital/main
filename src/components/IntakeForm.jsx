@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE_STRONG } from "../data/tokens.js";
+import { getAttribution, trackLead } from "../lib/analytics.js";
 
 const SUBJECT_OPTIONS = [
   { value: "", label: "Select a subject", disabled: true },
@@ -34,6 +35,13 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       subject: fd.get("subject"),
       message: fd.get("message"),
       source: fd.get("source") || "",
+      // Ad-click attribution captured from the landing URL (hidden fields)
+      utm_source: fd.get("utm_source") || "",
+      utm_medium: fd.get("utm_medium") || "",
+      utm_campaign: fd.get("utm_campaign") || "",
+      utm_term: fd.get("utm_term") || "",
+      utm_content: fd.get("utm_content") || "",
+      gclid: fd.get("gclid") || "",
     };
     try {
       const res = await fetch("/api/contact", {
@@ -46,6 +54,7 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
         throw new Error(body.error || "Something went wrong. Please try again.");
       }
       setFormState("success");
+      trackLead(payload.source); // GA4 generate_lead + Ads conversion (inert without IDs)
     } catch (err) {
       setErrorMsg(err.message);
       setFormState("error");
@@ -71,9 +80,14 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
     );
   }
 
+  const attribution = getAttribution();
+
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="field-light">
       <input type="hidden" name="source" value={source} />
+      {Object.entries(attribution).map(([k, v]) => (
+        <input key={k} type="hidden" name={k} value={v} />
+      ))}
 
       <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
         <Field label="First Name" name="firstName" type="text" required />

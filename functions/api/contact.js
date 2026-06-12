@@ -53,7 +53,16 @@ const FIELD_LIMITS = {
   firstName: 100, lastName: 100, email: 254,
   phone: 40, telegram: 80, whatsapp: 40,
   subject: 80, message: 5000, source: 80,
+  utm_source: 200, utm_medium: 200, utm_campaign: 200,
+  utm_term: 200, utm_content: 200, gclid: 200,
 };
+
+/* Ad-click attribution fields (optional, sent as hidden form fields when the
+   visit landed with utm or gclid params — see src/lib/analytics.js). */
+const ATTRIBUTION_FIELDS = [
+  "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+  "gclid",
+];
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -113,6 +122,18 @@ export async function onRequestPost(context) {
 
     const subjectLine = `New inquiry from ${firstName} ${lastName} — ${subjectFriendly}`;
 
+    // Attribution block (only when at least one field arrived)
+    const attribution = {};
+    for (const f of ATTRIBUTION_FIELDS) {
+      if (typeof body[f] === "string" && body[f].trim()) {
+        attribution[f] = body[f].trim();
+      }
+    }
+    const attributionRows = Object.entries(attribution)
+      .map(([k, v]) =>
+        `<tr><td style="padding: 6px 0; color: #666;">${escapeHtml(k)}</td><td style="padding: 6px 0; font-family: monospace; font-size: 12px;">${escapeHtml(v)}</td></tr>`)
+      .join("");
+
     // Pre-escape every value before interpolation
     const safe = {
       firstName: escapeHtml(firstName),
@@ -158,6 +179,12 @@ export async function onRequestPost(context) {
             <strong style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Message</strong>
             <p style="margin: 8px 0 0; white-space: pre-wrap;">${safe.message}</p>
           </div>
+          ${attributionRows ? `
+          <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 16px 0;" />
+          <div style="font-size: 13px;">
+            <strong style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Attribution</strong>
+            <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 6px;">${attributionRows}</table>
+          </div>` : ""}
         </div>
         <p style="font-size: 11px; color: #999; margin-top: 16px; text-align: center;">
           Sent via turnpagedigital.com contact form
@@ -179,6 +206,7 @@ export async function onRequestPost(context) {
             firstName, lastName, email, phone, telegram, whatsapp,
             subject: subjectFriendly, message,
             source: sourceLabel,
+            ...attribution,
             timestamp: new Date().toISOString(),
           }),
         });
