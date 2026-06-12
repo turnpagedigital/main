@@ -47,12 +47,19 @@ const META_DATA = {
 };
 
 export async function onRequest(context) {
+  const url = new URL(context.request.url);
+
+  /* The /intel mount (briefing dashboards + their login gate) carries its
+   * own titles and is noindex by robots.txt — never rewrite it. */
+  if (url.pathname === "/intel" || url.pathname.startsWith("/intel/")) {
+    return context.next();
+  }
+
   const response = await context.next();
 
   const contentType = response.headers.get("content-type") || "";
   if (!contentType.includes("text/html")) return response;
 
-  const url = new URL(context.request.url);
   const meta = resolveMeta(url.pathname, META_DATA);
 
   const fullImageUrl = `${url.origin}/og/${meta.og}?v=${OG_VERSION}`;
