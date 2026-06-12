@@ -2,6 +2,17 @@
   "_comment": "File library — centralised store for images, logos, favicons, documents, and videos used across the site. Managed via /admin/assets (file list) and /admin/pages (favicon picker). Files live in public/library/ (uploaded) or as external URLs. favicons map { production, preview, admin } → URL from this library or a static path under /. Schema: { files: [{ id, name, url, type, companies, source, addedAt }], favicons: { production, preview, admin } }.",
   "files": [
     {
+      "id": "mqb5bllu-z2e8r",
+      "name": "Yellow logo",
+      "url": "/library/yellow-logo.png",
+      "type": "logo",
+      "companies": [
+        "Yellow Corp. Ch. 11"
+      ],
+      "source": "upload",
+      "addedAt": "2026-06-12T16:33:38.082Z"
+    },
+    {
       "id": "mqa5j7f9-shqis",
       "name": "Section 122 Stay Order",
       "url": "/library/section-122-stay-order.pdf",
