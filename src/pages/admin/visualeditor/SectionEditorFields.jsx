@@ -31,7 +31,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Accent title (italic/neon)</label><input style={inputStyle} value={form.accentTitle || ""} onChange={e => set("accentTitle", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Subtitle</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.subtitle || ""} onChange={e => set("subtitle", e.target.value)} /></div>
-          <div style={fieldGroup}><label style={labelStyle}>Video URL</label><input style={inputStyle} value={form.video || ""} onChange={e => set("video", e.target.value || null)} placeholder="/video.mp4 or blank" /></div>
+          <HeroMediaFields form={form} set={set} defaultLabel="Black paper texture (default)" />
           <CTAField label="Primary CTA" value={form.ctaPrimary} onChange={v => set("ctaPrimary", v)} />
           <CTAField label="Secondary CTA (optional)" value={form.ctaSecondary} onChange={v => set("ctaSecondary", v || null)} nullable />
         </>
@@ -64,7 +64,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Title line 1</label><input style={inputStyle} value={form.title1 || ""} onChange={e => set("title1", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title line 2 (italic/neon)</label><input style={inputStyle} value={form.title2 || ""} onChange={e => set("title2", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Subtitle</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.subtitle || ""} onChange={e => set("subtitle", e.target.value)} /></div>
-          <div style={fieldGroup}><label style={labelStyle}>Video URL</label><input style={inputStyle} value={form.video || ""} onChange={e => set("video", e.target.value || null)} placeholder="/video.mp4 or blank" /></div>
+          <HeroMediaFields form={form} set={set} defaultLabel="Plain dark gradient (no media)" />
           <CTAField label="Primary CTA" value={form.ctaPrimary} onChange={v => set("ctaPrimary", v)} />
           <CTAField label="Secondary CTA" value={form.ctaSecondary} onChange={v => set("ctaSecondary", v)} />
         </>
@@ -596,6 +596,59 @@ export function ImageField({ label, value, onChange, placeholder }) {
         acceptTypes={["image", "logo"]}
       />
     </div>
+  );
+}
+
+/* VideoField — like ImageField, but for video assets. Browse opens the asset
+   library filtered to videos; the thumb shows the video's first frame. */
+export function VideoField({ label, value, onChange, placeholder }) {
+  const [pickerOpen, setPickerOpen] = useState(false);
+  return (
+    <div style={fieldGroup}>
+      <label style={labelStyle}>{label}</label>
+      <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+        {value ? (
+          <video src={value} muted preload="metadata"
+            style={{ width: 42, height: 30, objectFit: "cover", border: `1px solid ${LINE}`, borderRadius: 3, flexShrink: 0, background: "#F4F5F7" }}
+            onError={e => { e.currentTarget.style.visibility = "hidden"; }} />
+        ) : null}
+        <input style={{ ...inputStyle, marginTop: 0, flex: 1 }} value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder} />
+        <button type="button" style={{ ...btnStyle, whiteSpace: "nowrap" }} onClick={() => setPickerOpen(true)}>Browse…</button>
+      </div>
+      <AssetPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPick={(url) => { onChange(url); setPickerOpen(false); }}
+        defaultType="video"
+        acceptTypes={["video"]}
+      />
+    </div>
+  );
+}
+
+/* HeroMediaFields — the background chooser shared by the hero and home-hero
+   editors: default backdrop, static image, or looping video. The image/video
+   URL fields only show for the matching choice; the renderers ignore the
+   other one, so switching back and forth never loses what was entered. */
+function HeroMediaFields({ form, set, defaultLabel }) {
+  const mediaType = form.mediaType || (form.video ? "video" : "default");
+  return (
+    <>
+      <div style={fieldGroup}>
+        <label style={labelStyle}>Background</label>
+        <select style={selectStyle} value={mediaType} onChange={e => set("mediaType", e.target.value)}>
+          <option value="default">{defaultLabel}</option>
+          <option value="image">Static image</option>
+          <option value="video">Video (autoplays, muted, loops)</option>
+        </select>
+      </div>
+      {mediaType === "image" && (
+        <ImageField label="Background image" value={form.image || ""} onChange={v => set("image", v || null)} placeholder="/bg-paper.jpg or https://…" />
+      )}
+      {mediaType === "video" && (
+        <VideoField label="Background video" value={form.video || ""} onChange={v => set("video", v || null)} placeholder="/robotpages1.mp4 or https://…" />
+      )}
+    </>
   );
 }
 

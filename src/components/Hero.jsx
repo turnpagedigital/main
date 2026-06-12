@@ -11,6 +11,7 @@ export default function Hero({
   children,
   size = "default", // "default" | "tall" | "full"
   video = null,
+  image = null, // custom photo background — gets the video layer's treatment, not the crushed paper-base filter
 }) {
   const isTall = size === "tall";
   const isFull = size === "full";
@@ -32,6 +33,20 @@ export default function Hero({
           style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.22) contrast(1.1)" }}
         />
       </div>
+      {/* Optional custom image background — same layer/treatment as video */}
+      {image && (
+        <img
+          src={image}
+          alt=""
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
+          style={{
+            position: "absolute", inset: 0, zIndex: 1,
+            width: "100%", height: "100%", objectFit: "cover",
+            opacity: 0.9, filter: "saturate(1.0) contrast(1.05) brightness(0.72)",
+            pointerEvents: "none",
+          }}
+        />
+      )}
       {/* Optional video background */}
       {video && (
         <video

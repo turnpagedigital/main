@@ -4,7 +4,7 @@
     {
       "id": "home-hero",
       "displayName": "Home Hero",
-      "description": "Full-screen video hero with neon headline. Home page only.",
+      "description": "Full-screen hero with neon headline and a video or static-image background. Home page only.",
       "dataSource": "inline",
       "allowMultiple": false,
       "availableOn": [
@@ -22,13 +22,15 @@
           "label": "What we cover",
           "href": "#situations"
         },
-        "video": "/robotpages1.mp4"
+        "mediaType": "video",
+        "video": "/robotpages1.mp4",
+        "image": null
       }
     },
     {
       "id": "hero",
       "displayName": "Hero",
-      "description": "Standard sub-page hero: eyebrow, title, accent, subtitle, optional video and CTA buttons.",
+      "description": "Standard sub-page hero: eyebrow, title, accent, subtitle, CTA buttons, and a background of black paper (default), a static image, or a video.",
       "dataSource": "inline",
       "allowMultiple": false,
       "defaultContent": {
@@ -37,7 +39,9 @@
         "accentTitle": "",
         "subtitle": "",
         "size": "tall",
+        "mediaType": "default",
         "video": null,
+        "image": null,
         "ctaPrimary": {
           "label": "Get in Touch",
           "href": "/contact"

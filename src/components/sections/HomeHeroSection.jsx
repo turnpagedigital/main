@@ -14,7 +14,11 @@ export default function HomeHeroSection({ sectionConfig }) {
   const subtitle    = c.subtitle    || t("hero.subtitle");
   const ctaPrimary  = c.ctaPrimary  || { label: t("hero.cta_primary"),  href: "/contact" };
   const ctaSecondary= c.ctaSecondary|| { label: t("hero.cta_secondary"), href: "#situations" };
-  const video       = c.video       || null;
+  // Background choice: "video", "image", or "default" (plain dark gradient).
+  // Older compositions have no mediaType — infer from whether a video was set.
+  const mediaType   = c.mediaType   || (c.video ? "video" : "default");
+  const video       = mediaType === "video" ? (c.video || null) : null;
+  const image       = mediaType === "image" ? (c.image || null) : null;
 
   return (
     <section className="home-hero" style={{
@@ -27,6 +31,19 @@ export default function HomeHeroSection({ sectionConfig }) {
         position: "absolute", inset: 0, zIndex: 0,
         background: "linear-gradient(180deg, #0A0C10 0%, #06070A 100%)",
       }} />
+      {image && (
+        <img
+          src={image}
+          alt=""
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
+          style={{
+            position: "absolute", inset: 0, zIndex: 1,
+            width: "100%", height: "100%", objectFit: "cover",
+            opacity: 0.85, filter: "saturate(0.85) contrast(1.05)",
+            pointerEvents: "none",
+          }}
+        />
+      )}
       {video && (
         <video
           autoPlay muted loop playsInline preload="none"

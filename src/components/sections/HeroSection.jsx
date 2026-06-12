@@ -6,6 +6,9 @@ export default function HeroSection({ sectionConfig }) {
   const c = (sectionConfig && sectionConfig.content) || {};
   const ctaPrimary   = c.ctaPrimary   || null;
   const ctaSecondary = c.ctaSecondary || null;
+  // Background choice: "default" (black paper), "image", or "video".
+  // Older compositions have no mediaType — infer from whether a video was set.
+  const mediaType = c.mediaType || (c.video ? "video" : "default");
 
   return (
     <Hero
@@ -14,7 +17,8 @@ export default function HeroSection({ sectionConfig }) {
       accentTitle={c.accentTitle || ""}
       subtitle={c.subtitle || ""}
       size={c.size || "tall"}
-      video={c.video || null}
+      video={mediaType === "video" ? (c.video || null) : null}
+      image={mediaType === "image" ? (c.image || null) : null}
     >
       {(ctaPrimary || ctaSecondary) && (
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
