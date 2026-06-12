@@ -55,6 +55,9 @@ export default function ThemesTab({ onDirtyChange }) {
   const [deleteSlug, setDeleteSlug] = useState(null);
   const [kwInput, setKwInput] = useState("");
   const [cases, setCases] = useState([]);
+  // Raw textarea text for the trusted-sources box, kept separate from the
+  // cleaned list so newlines (incl. a trailing blank line) survive while typing.
+  const [whitelistText, setWhitelistText] = useState("");
 
   useEffect(() => { loadThemes(); loadCases(); }, []);
 
@@ -95,11 +98,12 @@ export default function ThemesTab({ onDirtyChange }) {
 
   function openNew() {
     setForm({ ...DEFAULT_THEME }); setIsNew(true); setPhase("editor");
-    setError(""); setToast(""); setKwInput("");
+    setError(""); setToast(""); setKwInput(""); setWhitelistText("");
   }
   function openEdit(theme) {
     setForm(JSON.parse(JSON.stringify(theme))); setIsNew(false); setPhase("editor");
     setError(""); setToast(""); setKwInput("");
+    setWhitelistText(((theme.sources && theme.sources.whitelist) || []).join("\n"));
   }
   function closeEditor() {
     if (dirty && !confirm("Discard unsaved changes?")) return;
@@ -112,6 +116,11 @@ export default function ThemesTab({ onDirtyChange }) {
   }
   function linesToList(text) {
     return text.split("\n").map(s => s.trim()).filter(Boolean);
+  }
+  // Textarea shows raw text (newlines preserved); form keeps the cleaned list.
+  function onWhitelistChange(text) {
+    setWhitelistText(text);
+    setSources("whitelist", linesToList(text));
   }
 
   function addKeyword() {
@@ -406,8 +415,8 @@ export default function ThemesTab({ onDirtyChange }) {
             in <strong>Defaults</strong>. One domain per line (e.g. <code>law360.com</code>).
           </p>
           <textarea style={{ ...inputStyle, minHeight: 150, fontFamily: "monospace", fontSize: "0.8rem" }}
-            value={(form.sources.whitelist || []).join("\n")}
-            onChange={e => setSources("whitelist", linesToList(e.target.value))} />
+            value={whitelistText}
+            onChange={e => onWhitelistChange(e.target.value)} />
         </div>
 
         {/* Guidance */}
