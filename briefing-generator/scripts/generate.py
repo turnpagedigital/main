@@ -244,15 +244,28 @@ def build_case_truth_block(topic_slug, key_focus_slugs=()):
                    "most space.\n")
     return header + "\n" + "\n\n".join(blocks) + "\n\n"
 
-def build_prompt_docs(brand_styling, skill_md, sources_md):
+def build_prompt_docs(brand_styling, skill_md, sources_md, house_voice=""):
     """Static reference docs — identical for every topic, sent as a cached
     prompt block so search-loop iterations and later topics read it from
-    cache instead of burning input-tokens-per-minute budget."""
-    return f"""# SKILL.md (authoritative workflow)
+    cache instead of burning input-tokens-per-minute budget.
+
+    house_voice is the admin-managed house voice from intelligence-settings.json
+    (Intelligence → Defaults). When present it is AUTHORITATIVE for tone/voice
+    and overrides any voice guidance in BRAND_STYLING.md; BRAND_STYLING.md still
+    governs citation format."""
+    house_voice_block = ""
+    if house_voice and house_voice.strip():
+        house_voice_block = (
+            "# House voice (admin-managed — AUTHORITATIVE for tone & voice; "
+            "overrides any voice guidance in BRAND_STYLING.md below. Follow this "
+            "exactly for register, phrasing, and what to avoid)\n\n"
+            f"{house_voice.strip()[:6000]}\n\n"
+        )
+    return f"""{house_voice_block}# SKILL.md (authoritative workflow)
 
 {skill_md[:8000]}
 
-# BRAND_STYLING.md (citation + voice spec)
+# BRAND_STYLING.md (citation format + supplementary voice spec)
 
 {brand_styling[:4000]}
 
@@ -602,17 +615,21 @@ def main():
 
     whitelist, blacklist = parse_source_lists(sources_md)
     intel = load_intelligence_settings()
+    house_voice = ""
     if intel:
         global_wl = set(intel.get("sources", {}).get("whitelist", []))
         global_bl = set(intel.get("sources", {}).get("blacklist", []))
         whitelist = whitelist | global_wl
         blacklist = blacklist | global_bl
+        house_voice = (intel.get("voice", {}) or {}).get("default", "") or ""
         print(f"Source lists merged with intelligence-settings.json: "
               f"{len(whitelist)} whitelisted, {len(blacklist)} blacklisted")
+        if house_voice.strip():
+            print(f"House voice loaded from Defaults ({len(house_voice.strip())} chars)")
     else:
         print(f"Source lists: {len(whitelist)} whitelisted, {len(blacklist)} blacklisted domains")
 
-    docs_block = build_prompt_docs(brand_styling, skill_md, sources_md)
+    docs_block = build_prompt_docs(brand_styling, skill_md, sources_md, house_voice)
 
     def create_with_retry(**kwargs):
         for attempt in range(5):
