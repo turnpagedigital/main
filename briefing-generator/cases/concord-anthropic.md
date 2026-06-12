@@ -12,7 +12,7 @@ case:
   judge: "Susan G. Van Keulen"
 docket_source:
   type: courtlistener
-  docket_id: 5:26-cv-00880
+  docket_id: 72199828
   url: "https://www.courtlistener.com/docket/72199828/concord-music-group-inc-v-anthropic-pbc/"
   awaiting_sync: true
 scan_guidance: "Monitor for developments in the case that would impact any future settlement of claims, legal fees or evolution in copyright law."
