@@ -4,12 +4,36 @@ content for the dashboard's center column. Parse markdown handling all citation
 formats: [Text](URL), __[Text](URL)__, and reversed [URL](text). Wrap every link
 as a brand-styled source-arrow tooltip. Preserve overview + sidebars."""
 import re
+import datetime as dt
 from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 TOPICS = ["rewind-tariffs","llm-class-action","crypto-insolvency","fraud-recovery",
           "billion-dollar-class-actions","bankruptcy-creditor-rights"]
+
+# Today's date in the dashboard's display format ("Friday, June 12, 2026").
+DATE_PRETTY = dt.date.today().strftime("%A, %B %-d, %Y")
+# Matches a "Weekday, Month D, YYYY" date (non-capturing) so we can swap it in
+# the header stamp + byline without disturbing the surrounding markup.
+_DATE_PAT = (r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s+"
+             r"(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+"
+             r"\d{1,2},\s+\d{4}")
+
+def refresh_stamps(html):
+    """Update the visible date stamp(s) to today. The body injection only swaps
+    the advisory prose; previously the header stamp and byline date stayed frozen
+    at whatever was baked into the chassis. Returns (html, count_replaced)."""
+    total = 0
+    # Header: <div class="stamp">10:00 AM ET &middot; Tuesday, May 19, 2026</div>
+    html, n1 = re.subn(
+        r'(<div class="stamp">[^<]*?&middot;\s*)' + _DATE_PAT + r'(\s*</div>)',
+        lambda m: m.group(1) + DATE_PRETTY + m.group(2), html)
+    # Byline: <span class="byline-date">Tuesday, May 19, 2026</span>
+    html, n2 = re.subn(
+        r'(<span class="byline-date">)' + _DATE_PAT + r'(</span>)',
+        lambda m: m.group(1) + DATE_PRETTY + m.group(2), html)
+    return html, n1 + n2
 
 ARROW_SVG = '<svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
@@ -186,12 +210,19 @@ def patch(slug):
 
   dash = ROOT / slug / "dashboard.html"
   if not dash.exists(): return
-  with open(dash, encoding="utf-8") as f: html = f.read()
+  with open(dash, encoding="utf-8") as f: original = f.read()
+
+  # Refresh the visible date stamp(s) first, then inject the advisory body.
+  html, stamp_n = refresh_stamps(original)
 
   # Find the advisory-body section
   body_m = re.search(r'(<div class="advisory-body">)(.*?)(</div>\s*\n\s*</div>)', html, re.DOTALL)
   if not body_m:
-    print(f"  ✗ {slug}: advisory-body not found"); return
+    print(f"  ✗ {slug}: advisory-body not found")
+    if html != original:  # still persist a date-stamp refresh
+      with open(dash, "w", encoding="utf-8") as f: f.write(html)
+      print(f"  ✓ {slug}: date stamp refreshed → {DATE_PRETTY}")
+    return
   head, body, tail = body_m.group(1), body_m.group(2), body_m.group(3)
 
   # Preserve "Today at a Glance" overview section + recommended actions area
@@ -202,10 +233,10 @@ def patch(slug):
   new_body = "\n" + glance_html + "\n" + body_html + "\n      "
   new_html = html.replace(head + body + tail, head + new_body + tail, 1)
 
-  if new_html != html:
+  if new_html != original:
     arrows = body_html.count('class="src-arrow"')
     with open(dash, "w", encoding="utf-8") as f: f.write(new_html)
-    print(f"  ✓ {slug}: rich content from {src.name} ({arrows} citations)")
+    print(f"  ✓ {slug}: rich content from {src.name} ({arrows} citations; {stamp_n} date stamp(s) → {DATE_PRETTY})")
 
 def main():
   for slug in TOPICS: patch(slug)

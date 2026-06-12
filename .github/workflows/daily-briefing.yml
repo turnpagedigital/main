@@ -68,20 +68,44 @@ jobs:
           else
             DATE=$(date -u +"%Y-%m-%d")
             git commit -m "Daily briefing ${DATE}"
-            git push
+            # Rebase-and-push with retries: another run or a deploy may have
+            # advanced main between checkout and push — a bare push then fails
+            # ("fetch first"), silently dropping the day's briefing.
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin main && git push; then
+                echo "pushed to main on attempt ${attempt}"; break
+              fi
+              echo "main push attempt ${attempt} failed; retrying in 5s"; sleep 5
+            done
           fi
 
-      # ── Bridge into the site briefings QUEUE (dev branch) ────────────────
-      # Today's LLM/Copyright + Crypto advisories become DRAFT posts the
-      # admin Briefings tab reviews and publishes. Idempotent — existing
-      # slugs are skipped. [skip ci] avoids a pointless dev rebuild; the
-      # admin reads the queue via the GitHub API, so drafts show on Refresh.
-      - name: Checkout dev branch (site queue)
+      # ── Deliver to the dev branch (intel dashboards + site queue) ────────
+      # The dev site is what the admin's "output home" links point to, so it
+      # needs the fresh intel dashboards too — not just main/production. We
+      # also queue today's advisories as DRAFT posts for the Briefings tab
+      # (idempotent — existing slugs skipped). This commit DOES rebuild dev
+      # (no [skip ci]) so /intel/<slug> on dev serves the new dashboards.
+      - name: Checkout dev branch (intel + site queue)
         uses: actions/checkout@v4
         with:
           ref: dev
           path: dev-site
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy fresh intel dashboards into dev
+        run: |
+          # Copy ONLY generated artifacts (dashboards, advisories, posts,
+          # landing) — never scripts/cases/config, so dev keeps its own
+          # pipeline code (which may be ahead of main).
+          cp -f briefing-generator/index.html dev-site/briefing-generator/index.html 2>/dev/null || true
+          for slug in rewind-tariffs llm-class-action crypto-insolvency fraud-recovery billion-dollar-class-actions bankruptcy-creditor-rights; do
+            d="dev-site/briefing-generator/$slug"
+            mkdir -p "$d/public" "$d/posts"
+            cp -f "briefing-generator/$slug/dashboard.html" "$d/dashboard.html" 2>/dev/null || true
+            cp -f "briefing-generator/$slug/posts.html"     "$d/posts.html"     2>/dev/null || true
+            cp -f briefing-generator/$slug/public/advisory-*.md "$d/public/" 2>/dev/null || true
+            cp -f briefing-generator/$slug/posts/*.md           "$d/posts/"   2>/dev/null || true
+          done
 
       - name: Queue site briefing drafts
         run: |
@@ -91,16 +115,21 @@ jobs:
         env:
           BRIEFING_DATE: ${{ github.event.inputs.date || '' }}
 
-      - name: Commit queued drafts to dev
+      - name: Commit intel dashboards + queued drafts to dev
         working-directory: dev-site
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "Daily Briefing Bot"
-          git add public/briefings
+          git add briefing-generator public/briefings
           if git diff --staged --quiet; then
-            echo "No new drafts to queue"
+            echo "Nothing new for dev"
           else
             DATE=$(date -u +"%Y-%m-%d")
-            git commit -m "Queue briefing drafts ${DATE} [skip ci]"
-            git push origin HEAD:dev
+            git commit -m "Daily briefing ${DATE}: refresh dev intel dashboards + queue drafts"
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin dev && git push origin HEAD:dev; then
+                echo "pushed to dev on attempt ${attempt}"; break
+              fi
+              echo "dev push attempt ${attempt} failed; retrying in 5s"; sleep 5
+            done
           fi
