@@ -2,7 +2,7 @@
 slug: blockfills
 display_name: BlockFills
 type: case
-status: draft
+status: active
 topics:
   - crypto-insolvency
   - bankruptcy-creditor-rights
