@@ -14,7 +14,7 @@
           "content": {
             "title1": "Strategic guidance.",
             "title2": "Turn-key liquidity.",
-            "subtitle": "For rights holders entitled to compensation — from litigation, class action and bankruptcy claims to receivables, tariff refunds and locked digital assets.",
+            "subtitle": "For rights holders entitled to compensation — from litigation, class action and bankruptcy claims, to receivables, tariff refunds and locked digital assets.",
             "video": "/robotpages1.mp4",
             "ctaPrimary": {
               "label": "Get in Touch",
@@ -164,7 +164,7 @@
         {
           "id": "sec-home-faq",
           "type": "faq",
-          "visible": true,
+          "visible": false,
           "layout": "layout-1-fullwidth",
           "colorScheme": "light-gray",
           "content": {
