@@ -38,6 +38,17 @@ const TEMPLATE_GROUPS = [
     ],
   },
   {
+    label: "Text & Media",
+    items: [
+      { typeId: "rich-text",  layoutId: "layout-1-narrow",      label: "Text — Narrow",     description: "Centered reading column with H1/H2/H3 headings, paragraphs, lists, links (Markdown)." },
+      { typeId: "rich-text",  layoutId: "layout-2-wide",        label: "Text — Wide",       description: "Full-width formatted text with heading structure (Markdown)." },
+      { typeId: "rich-text",  layoutId: "layout-3-two-col",     label: "Text — Two Column", description: "Formatted text flowing across two columns on desktop (Markdown)." },
+      { typeId: "image-text", layoutId: "layout-1-image-right", label: "Image Right",       description: "Headline + paragraph on the left, image on the right." },
+      { typeId: "image-text", layoutId: "layout-2-image-left",  label: "Image Left",        description: "Image on the left, headline + paragraph on the right." },
+      { typeId: "image-text", layoutId: "layout-3-image-top",   label: "Image Top",         description: "Wide image above centered headline + paragraph." },
+    ],
+  },
+  {
     label: "Social Proof",
     items: [
       { typeId: "testimonials", layoutId: "layout-1-grid3col",  label: "3-Column Grid",  description: "Three equal columns. Best for 3+ testimonials." },
@@ -66,6 +77,12 @@ const TEMPLATE_GROUPS = [
       "service-cards",
       "comparison",
       "how-it-works",
+    ],
+  },
+  {
+    label: "Forms",
+    items: [
+      "registration-flow",
     ],
   },
 ];
