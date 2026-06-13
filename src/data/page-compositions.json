@@ -1171,6 +1171,115 @@
           "id": "sec-1781306546138-ilkr",
           "type": "damages",
           "visible": true
+        },
+        {
+          "id": "sec-1781309787242-jjvo",
+          "type": "process-flow",
+          "visible": true,
+          "colorScheme": "neon",
+          "content": {
+            "eyebrow": "",
+            "title": "How the typical sales process works",
+            "accent": "",
+            "colorScheme": "neon",
+            "pillStyle": "white",
+            "backgroundImage": "",
+            "steps": [
+              {
+                "id": "step-1",
+                "label": "Partner",
+                "heading": "Define objectives; execute marketing agreement",
+                "bullets": [
+                  "Exclusivity and lock-up terms",
+                  "Pricing (ask/reserve)",
+                  "Form of agreement and key transaction terms",
+                  "Diligence requests"
+                ]
+              },
+              {
+                "id": "step-2",
+                "label": "Prepare",
+                "heading": "Prepare marketing materials and VDR",
+                "bullets": [
+                  "Customer contracts",
+                  "Proofs of claim",
+                  "Account statements",
+                  "Seller KYC/AML"
+                ]
+              },
+              {
+                "id": "step-3",
+                "label": "Solicit",
+                "heading": "Educate buyers; solicit offers",
+                "bullets": [
+                  "Private sale: 1:1 communication to top buyers",
+                  "Auctions: widely distributed bid solicitation"
+                ]
+              },
+              {
+                "id": "step-4",
+                "label": "Transact",
+                "heading": "Confirm trade with winning bidder and proceed to close",
+                "bullets": [
+                  "Buyer diligence",
+                  "Final documentation",
+                  "Confirm purchase price",
+                  "Notify court"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "sec-1781309798626-uode",
+          "type": "bullet-columns",
+          "visible": true,
+          "colorScheme": "neon",
+          "content": {
+            "eyebrow": "",
+            "title": "Our services",
+            "accent": "",
+            "colorScheme": "neon",
+            "backgroundImage": "",
+            "columns": [
+              {
+                "id": "col-1",
+                "heading": "Covered Assets",
+                "items": [
+                  "Bankruptcy Claims",
+                  "Litigation Claims",
+                  "Class Action Claims"
+                ]
+              },
+              {
+                "id": "col-2",
+                "heading": "Capital Solutions",
+                "items": [
+                  "Claim Assignments",
+                  "Participations",
+                  "Litigation Financing"
+                ]
+              },
+              {
+                "id": "col-3",
+                "heading": "Trading Strategies",
+                "items": [
+                  "OTC Brokerage",
+                  "Public Auctions",
+                  "Private Pools"
+                ]
+              },
+              {
+                "id": "col-4",
+                "heading": "Advisory",
+                "items": [
+                  "Claim Disputes",
+                  "Claim Analysis",
+                  "Price Discovery"
+                ]
+              }
+            ]
+          }
         }
       ]
     }
