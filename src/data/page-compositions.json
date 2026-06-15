@@ -76,7 +76,8 @@
           "colorScheme": "light",
           "content": {
             "colorScheme": "light",
-            "layout": "layout-1-grid3col"
+            "layout": "layout-1-grid3col",
+            "_bookmark": "testimonials"
           }
         },
         {
@@ -112,7 +113,7 @@
             "points": [
               {
                 "id": "edge-1",
-                "h": "Lightening Fast",
+                "h": "Lightening Fast Liquidity",
                 "b": "With 500+ institutions on speed dial, our network of capital partners ensures broad coverage across claim sizes, geographies and asset types. If we can't fund your needs directly, we can quickly pair you with the right partner."
               },
               {
@@ -263,28 +264,28 @@
           "colorScheme": "dark",
           "content": {
             "eyebrow": "How we Help",
-            "title": "Get paid in three simple steps.",
+            "title": "You own your output. Take home what's yours.",
             "accent": "",
-            "kicker": "We help you stay on top of compensation opportunities, gather evidence, meet key deadlines and get paid faster. ",
+            "kicker": "You worked hard to create something original, but you don't need to create more work for yourself just to get paid. With dozens of active copyright cases, we help you stay on top of compensation opportunities, gather documents and meet filing deadlines. ",
             "colorScheme": "dark",
             "steps": [
               {
                 "id": "step-1",
                 "n": "01",
-                "title": "Track Relevant Cases",
+                "title": "Track open settlements »",
                 "body": "Did you know you might be eligible to file a claim in one of 60+ cases that are currently on the docket against Generative AI Companies? Subscribe to alerts about claim filing opportunities in the cases that matter to you so you never miss a deadline."
               },
               {
                 "id": "step-2",
                 "n": "02",
-                "title": "File Your Claim(s)",
-                "body": "Need help filing a claim? We can help you identify the materials you need to prove what you're owed and reduce the error rate. \n\n"
+                "title": "File your claims »",
+                "body": "Who needs all that paperwork? Let our experts help you file you claim to ensure you don't miss a cent. We can help you identify the materials you need to prove what you're owed and reduce the error rate by over 95%. \n\n"
               },
               {
                 "id": "step-3",
                 "n": "03",
-                "title": "Receive Settlement Payments",
-                "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you."
+                "title": "Get paid without the hassle »",
+                "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you, or buy your claim outright so you can get cash today."
               }
             ],
             "cardStyle": "standard",
@@ -311,7 +312,7 @@
             "eyebrow": "Our Edge",
             "title": "What set us",
             "titleAccent": "apart",
-            "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
+            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process. ",
             "points": [
               {
                 "id": "edge-1",
@@ -591,12 +592,12 @@
               {
                 "id": "edge-1",
                 "h": "Practically ulimited liquidity",
-                "b": "We partner with major asset managers — over 500 institutions on speed dial."
+                "b": "With 500+ institutions on speed dial, our network of capital partners ensures broad coverage across claim sizes, geographies and asset types. If we can't fund your needs directly, we can quickly pair you with the right partner."
               },
               {
                 "id": "edge-2",
                 "h": "Lightning-fast settlement",
-                "b": "Automation accelerates diligence and closing in the largest volume cases."
+                "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their market value. "
               },
               {
                 "id": "edge-3",
