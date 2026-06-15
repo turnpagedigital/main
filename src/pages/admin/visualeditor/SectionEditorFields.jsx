@@ -91,13 +91,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title accent</label><input style={inputStyle} value={form.titleAccent || ""} onChange={e => set("titleAccent", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Intro paragraph</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.intro || ""} onChange={e => set("intro", e.target.value)} /></div>
-          <div style={fieldGroup}>
-            <label style={labelStyle}>Background Color</label>
-            <select style={selectStyle} value={form.colorScheme || "white"} onChange={e => set("colorScheme", e.target.value)}>
-              <option value="white">White</option>
-              <option value="light-gray">Light Gray</option>
-            </select>
-          </div>
+          <ColorSchemePicker typeId="our-edge" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["white","light-gray"]} />
           <p style={{ fontSize: "0.78rem", fontWeight: 700, color: INK_60, marginBottom: "0.5rem", textTransform: "uppercase", letterSpacing: "0.03em" }}>Points</p>
           {(form.points || []).map((p, i) => (
             <div key={p.id || i} style={{ marginBottom: "0.9rem", padding: "0.75rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>

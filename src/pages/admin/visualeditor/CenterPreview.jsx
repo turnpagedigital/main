@@ -77,7 +77,7 @@ export default function CenterPreview({
   const scale = containerWidth > 0 ? containerWidth / DESKTOP_W : 1;
   const clipHeight = innerHeight > 0 ? Math.ceil(innerHeight * scale) : Math.ceil(DESKTOP_H * scale);
 
-  const visible = (sections || []).filter(s => s.visible !== false);
+  const allSections = sections || [];
 
   function labelFor(type) {
     const st = (sectionTypes || []).find(t => t.id === type);
@@ -111,7 +111,7 @@ export default function CenterPreview({
           }}
         >
           <I18nProvider>
-            {visible.length === 0 ? (
+            {allSections.length === 0 ? (
               <div style={{
                 padding: "10rem 4rem",
                 textAlign: "center",
@@ -128,34 +128,49 @@ export default function CenterPreview({
                 </div>
               </div>
             ) : (
-              visible.map(s => {
+              allSections.map(s => {
+                const isHidden = s.visible === false;
                 const Component = SECTION_MAP[s.type];
-                if (!Component) {
-                  return (
-                    <SectionFrame
-                      key={s.id}
-                      sectionId={s.id}
-                      sectionLabel={s.type + " (unknown)"}
-                      isSelected={s.id === selectedSectionId}
-                      onSelect={onSelectSection}
-                    >
-                      <div style={{ padding: "2rem", background: "#fff8e8", color: "#a06000", fontFamily: "monospace", fontSize: "0.9rem" }}>
-                        Unknown section type "{s.type}"
-                      </div>
-                    </SectionFrame>
-                  );
-                }
+                const inner = !Component ? (
+                  <div style={{ padding: "2rem", background: "#fff8e8", color: "#a06000", fontFamily: "monospace", fontSize: "0.9rem" }}>
+                    Unknown section type "{s.type}"
+                  </div>
+                ) : (
+                  <SectionBoundary type={s.type}>
+                    <Component sectionConfig={s} pageKey={pageKey} />
+                  </SectionBoundary>
+                );
                 return (
                   <SectionFrame
                     key={s.id}
                     sectionId={s.id}
-                    sectionLabel={labelFor(s.type)}
+                    sectionLabel={labelFor(s.type) + (isHidden ? " (hidden)" : "")}
                     isSelected={s.id === selectedSectionId}
                     onSelect={onSelectSection}
                   >
-                    <SectionBoundary type={s.type}>
-                      <Component sectionConfig={s} pageKey={pageKey} />
-                    </SectionBoundary>
+                    <div style={{ position: "relative" }}>
+                      {isHidden && (
+                        <div style={{
+                          position: "absolute",
+                          top: 0, left: 0, right: 0,
+                          background: "rgba(0,0,0,0.65)",
+                          color: "#fff",
+                          fontFamily: FONT,
+                          fontSize: "11px",
+                          fontWeight: 800,
+                          padding: "5px 12px",
+                          letterSpacing: "0.07em",
+                          textTransform: "uppercase",
+                          zIndex: 5,
+                          pointerEvents: "none",
+                        }}>
+                          Hidden — click to select, then click "Show"
+                        </div>
+                      )}
+                      <div style={{ opacity: isHidden ? 0.35 : 1 }}>
+                        {inner}
+                      </div>
+                    </div>
                   </SectionFrame>
                 );
               })

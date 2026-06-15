@@ -269,6 +269,16 @@ export default function CasesTab({ onDirtyChange }) {
                         return <span key={slug} title={t ? t.display_name : slug} style={{ marginRight: 4 }}>{t ? t.emoji : "🏷️"}</span>;
                       })}</Td>
                       <Td right>
+                        {(c.docket_source?.url || c.claims_administrator?.url) && (
+                          <a
+                            href={c.docket_source?.url || c.claims_administrator?.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ ...btnStyle, display: "inline-flex", alignItems: "center", gap: 3, textDecoration: "none", marginRight: 6 }}
+                          >
+                            Docket ↗
+                          </a>
+                        )}
                         <button style={{ ...btnStyle, marginRight: 6 }} onClick={() => openEdit(c)} disabled={loading}>Edit</button>
                         <button style={{ ...btnStyle, color: "#c0392b", borderColor: "#e3b7b1" }} onClick={() => setDeleteSlug(c.slug)} disabled={loading}>Delete</button>
                       </Td>
