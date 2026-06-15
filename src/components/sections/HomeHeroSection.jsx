@@ -23,8 +23,8 @@ export default function HomeHeroSection({ sectionConfig }) {
   return (
     <section className="home-hero" style={{
       position: "relative", overflow: "hidden",
-      display: "flex", alignItems: "flex-end",
-      padding: "0 clamp(1.5rem,5vw,4rem) clamp(3rem,6vh,5rem)",
+      display: "flex", flexDirection: "column",
+      padding: "0 clamp(1.5rem,5vw,4rem)",
       background: "#06070A",
     }}>
       <div style={{
@@ -63,7 +63,12 @@ export default function HomeHeroSection({ sectionConfig }) {
         background: "linear-gradient(180deg, rgba(0,0,0,0.20) 0%, transparent 30%, transparent 45%, rgba(0,0,0,0.70) 100%)",
       }} />
 
-      <div style={{ position: "relative", zIndex: 10, maxWidth: 1440, width: "100%", margin: "0 auto" }}>
+      {/* Spacer that grows to fill space above the content — flex-basis 25% of the
+          hero's height (column main-axis), with flex-shrink:0 so the hero expands
+          rather than letting the spacer collapse below the minimum. */}
+      <div aria-hidden="true" style={{ flex: "1 0 25%" }} />
+
+      <div style={{ position: "relative", zIndex: 10, maxWidth: 1440, width: "100%", margin: "0 auto", paddingBottom: "clamp(3rem,6vh,5rem)" }}>
         <h1 style={{
           fontFamily: FONT, fontWeight: 900,
           fontSize: "clamp(2.6rem, 8vw, 7.5rem)",
@@ -139,7 +144,7 @@ export default function HomeHeroSection({ sectionConfig }) {
         /* Phones: ~70% of the screen. The section still grows if translated
            copy needs more room. */
         @media (max-width: 760px) {
-          .home-hero { min-height: min(70vh, 640px); padding-top: 3.5rem; }
+          .home-hero { min-height: min(70vh, 640px); }
           @supports (height: 1svh) {
             .home-hero { min-height: min(70svh, 640px); }
           }
