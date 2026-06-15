@@ -535,14 +535,23 @@
           }
         },
         {
+          "id": "sec-crypto-experience",
+          "type": "experience",
+          "visible": true,
+          "content": {
+            "_bookmark": "experience"
+          }
+        },
+        {
           "id": "sec-crypto-comparison",
           "type": "comparison",
           "visible": false,
+          "colorScheme": "white",
           "content": {
             "eyebrow": "Why Turnpage",
             "title": "A better way.",
             "accent": "",
-            "colorScheme": "light-gray",
+            "colorScheme": "white",
             "oldWay": {
               "title": "Wait for the docket.",
               "items": [
@@ -559,14 +568,6 @@
                 "Single creditor or bulk fund — same desk."
               ]
             }
-          }
-        },
-        {
-          "id": "sec-crypto-experience",
-          "type": "experience",
-          "visible": true,
-          "content": {
-            "_bookmark": "experience"
           }
         },
         {
