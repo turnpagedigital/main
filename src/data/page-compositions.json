@@ -581,7 +581,7 @@
         {
           "id": "sec-1780673451611-nalm",
           "type": "our-edge",
-          "visible": true,
+          "visible": false,
           "content": {
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
