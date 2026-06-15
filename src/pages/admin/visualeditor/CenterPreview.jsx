@@ -47,6 +47,7 @@ export default function CenterPreview({
   selectedSectionId,
   onSelectSection,
   sectionTypes,
+  showHidden = true,
 }) {
   const containerRef = useRef(null);  // outer clip div
   const innerRef     = useRef(null);  // full-width desktop render
@@ -78,6 +79,9 @@ export default function CenterPreview({
   const clipHeight = innerHeight > 0 ? Math.ceil(innerHeight * scale) : Math.ceil(DESKTOP_H * scale);
 
   const allSections = sections || [];
+  // When showHidden=false, filter to only visible sections (published view).
+  // When showHidden=true, show all sections — hidden ones get a dim overlay.
+  const displaySections = showHidden ? allSections : allSections.filter(s => s.visible !== false);
 
   function labelFor(type) {
     const st = (sectionTypes || []).find(t => t.id === type);
@@ -128,7 +132,7 @@ export default function CenterPreview({
                 </div>
               </div>
             ) : (
-              allSections.map(s => {
+              displaySections.map(s => {
                 const isHidden = s.visible === false;
                 const Component = SECTION_MAP[s.type];
                 const inner = !Component ? (

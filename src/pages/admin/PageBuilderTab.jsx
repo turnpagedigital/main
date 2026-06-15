@@ -57,6 +57,8 @@ export default function PageBuilderTab({ onDirtyChange }) {
   const [originalStatus, setOriginalStatus] = useState("active");
   // Visual editor: which section in the live preview is currently selected
   const [selectedSectionId, setSelectedSectionId] = useState(null);
+  // Preview mode: show hidden sections (with overlay) or hide them entirely
+  const [showHidden, setShowHidden] = useState(true);
 
   // Modals
   const [editingSection, setEditingSection] = useState(null);   // { section, sectionType }
@@ -425,6 +427,20 @@ export default function PageBuilderTab({ onDirtyChange }) {
                   <span style={{ fontSize: "0.72rem", fontWeight: 500, color: INK_60, marginLeft: 8, fontFamily: "monospace" }}>{selectedPage.path}</span>
                 </h3>
                 <div style={{ display: "flex", gap: 8 }}>
+                  {sections.some(s => s.visible === false) && (
+                    <button
+                      style={{
+                        ...btnStyle, fontSize: "0.78rem",
+                        background: showHidden ? "rgba(212,255,0,0.12)" : "transparent",
+                        borderColor: showHidden ? NEON : undefined,
+                        color: showHidden ? INK : INK_60,
+                      }}
+                      onClick={() => setShowHidden(v => !v)}
+                      title={showHidden ? "Click to hide hidden sections from preview (see published view)" : "Click to show hidden sections in preview"}
+                    >
+                      {showHidden ? "Showing hidden" : "Show hidden"}
+                    </button>
+                  )}
                   <button style={{ ...btnStyle, fontSize: "0.78rem" }} onClick={() => setPreviewOpen(true)} disabled={saving || sections.length === 0} title={sections.length === 0 ? "Add a section to preview" : "Open in full screen"}>
                     Full preview
                   </button>
@@ -505,6 +521,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
                 selectedSectionId={selectedSectionId}
                 onSelectSection={setSelectedSectionId}
                 sectionTypes={sectionTypes}
+                showHidden={showHidden}
               />
             </div>
           ) : (
