@@ -854,7 +854,7 @@
           "id": "sec-1780673399693-agc7",
           "type": "our-edge",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
@@ -877,7 +877,7 @@
                 "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
               }
             ],
-            "colorScheme": "light-gray"
+            "colorScheme": "white"
           }
         },
         {
