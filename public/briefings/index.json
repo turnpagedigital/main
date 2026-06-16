@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-16-bankruptcy-advisory",
+      "date": "2026-06-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 16, 2026",
+      "summary": "Today's apex delta: two tracked cases simultaneously arrive at dispositive junctures. In Wilmington, the Bankruptcy Court for the District of Delaware convenes this morning to hear approval of the Keyrock SA asset sale in Reliz Technology Group Holdings Inc., et al. (BlockFills), Case No.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-16-class-actions-advisory",
+      "date": "2026-06-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 16, 2026",
+      "summary": "I'll run targeted web searches to verify current postures for all tracked cases before writing the advisory.# 💰 $1B+ Class Actions & Mass Arb | Tuesday, June 16, 2026",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-16-fraud-advisory",
+      "date": "2026-06-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 16, 2026",
+      "summary": "I'll research the current state of major Ponzi/fraud recovery cases before drafting the advisory.# 🕵️ Ponzi / Fraud Recovery | Tuesday, June 16, 2026",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-16-tariff-advisory",
+      "date": "2026-06-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 16, 2026",
+      "summary": "I'll run targeted searches to verify current postures on all major tariff/trade tracked cases before drafting.# ⚖️ Tariffs / Trade | Tuesday, June 16, 2026",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-16-crypto-advisory",
+      "date": "2026-06-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 16, 2026",
+      "summary": "I'll research the current state of crypto insolvency cases before drafting the advisory.# 🪙 Crypto Insolvency | Tuesday, June 16, 2026",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-16-advisory",
+      "date": "2026-06-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 16, 2026",
+      "summary": "I'll run targeted searches to verify current case postures, recent docket activity, and live developments before drafting the advisory.# 🤖 LLM / Copyright | Tuesday, June 16, 2026",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-12-bankruptcy-advisory",
       "date": "2026-06-12",
       "type": "briefing",
