@@ -427,7 +427,7 @@
             "eyebrow": "Crypto Claims",
             "title": "Liquidity for locked",
             "accentTitle": "digital assets.",
-            "subtitle": "Our principals have helped thousands of crypto investors monetize their claims across nearly every major digital asset insolvency case of the last decade\u2014BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
+            "subtitle": "Our principals have helped thousands of crypto holders monetize claims across nearly every major digital asset insolvency of the last decade—BlockFi, BlockFills, Celsius, Genesis, FTX, Mt. Gox, Three Arrows Capital, Vauld, Voyager, and many more. ",
             "size": "tall",
             "video": "/robotvault1.mp4",
             "ctaPrimary": {
@@ -447,7 +447,7 @@
           "layout": "list",
           "colorScheme": "white",
           "content": {
-            "eyebrow": "Who We Help",
+            "eyebrow": "Who we help",
             "title": "Crypto loss",
             "accent": "claimants.",
             "colorScheme": "white",
@@ -578,15 +578,16 @@
           "type": "testimonials",
           "visible": true,
           "layout": "layout-1-grid3col",
-          "colorScheme": "light-gray",
+          "colorScheme": "dark",
           "content": {
-            "colorScheme": "light-gray"
+            "colorScheme": "dark"
           }
         },
         {
           "id": "sec-1780673451611-nalm",
           "type": "our-edge",
-          "visible": false,
+          "visible": true,
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
@@ -609,7 +610,8 @@
                 "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul."
               }
             ],
-            "_bookmark": "Our-edge"
+            "_bookmark": "Our-edge",
+            "colorScheme": "light-gray"
           }
         },
         {
