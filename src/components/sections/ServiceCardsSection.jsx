@@ -39,7 +39,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
   const eyebrowColor = isDark ? NEON : INK_60;
   const titleColor   = isDark ? "#fff" : INK;
   const isList = layout === "list";
-  const cols   = layout === "grid-2col" ? "repeat(2, 1fr)" : "repeat(3, 1fr)";
+  const cols = { "grid-2col": "repeat(2, 1fr)", "grid-3col": "repeat(3, 1fr)", "grid-4col": "repeat(4, 1fr)" }[layout] || "repeat(3, 1fr)";
 
   return (
     <section style={{
@@ -92,7 +92,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
           <div style={{
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1.5rem, 2.5vw, 2rem)",
-          }} className="service-grid">
+          }} className={layout === "grid-4col" ? "service-grid service-grid-4col" : "service-grid"}>
             {cards.map(card => (
               <LiquidGlassCard
                 key={card.id}
@@ -108,7 +108,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
           <div style={{
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1rem, 2vw, 1.5rem)",
-          }} className="service-grid">
+          }} className={layout === "grid-4col" ? "service-grid service-grid-4col" : "service-grid"}>
             {cards.map(card => (
               <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur}>
                 <CardInner card={card} titleColor={cardTitleColor === "neon" ? NEON : "var(--card-text-color)"} />
@@ -119,18 +119,24 @@ export default function ServiceCardsSection({ sectionConfig }) {
           <div style={{
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1rem, 2vw, 1.5rem)",
-          }} className="service-grid">
+          }} className={layout === "grid-4col" ? "service-grid service-grid-4col" : "service-grid"}>
             {cards.map(card => <ServiceCard key={card.id} card={card} dark={isDark} />)}
           </div>
         )}
       </div>
 
       <style>{`
+        @media (max-width: 1100px) {
+          .service-grid-4col { grid-template-columns: 1fr 1fr !important; }
+        }
         @media (max-width: 900px) {
           .service-grid { grid-template-columns: 1fr 1fr !important; }
           .service-header-split { grid-template-columns: 1fr !important; }
         }
-        @media (max-width: 600px) { .service-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 600px) {
+          .service-grid { grid-template-columns: 1fr !important; }
+          .service-grid-4col { grid-template-columns: 1fr !important; }
+        }
       `}</style>
     </section>
   );
@@ -184,10 +190,11 @@ function CardInner({ card, titleColor }) {
 }
 
 function ServiceCard({ card, dark }) {
-  const { title, body } = card;
+  const { title, body, subtitle, icon } = card;
   const cardBg    = dark ? "rgba(255,255,255,0.03)" : "#fff";
   const cardBorder = dark ? "rgba(255,255,255,0.1)" : LINE;
   const bodyColor = dark ? "rgba(255,255,255,0.72)" : INK_60;
+  const titleColor = dark ? NEON : INK;
 
   return (
     <div style={{
@@ -197,21 +204,38 @@ function ServiceCard({ card, dark }) {
       position: "relative", overflow: "hidden",
     }}>
       <div style={{ position: "relative", zIndex: 1 }}>
-        <h3 style={{
-          fontFamily: FONT, fontWeight: 800,
-          fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
-          letterSpacing: "-0.015em", lineHeight: 1.1,
-          color: dark ? NEON : INK,
-          marginBottom: "0.85rem",
-        }}>
-          {title}
-        </h3>
-        <p style={{
-          fontFamily: FONT, fontSize: "0.97rem",
-          color: bodyColor, lineHeight: 1.65, margin: 0,
-        }}>
-          {body}
-        </p>
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem", marginBottom: "0.85rem" }}>
+          <h3 style={{
+            fontFamily: FONT, fontWeight: 800,
+            fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
+            letterSpacing: "-0.015em", lineHeight: 1.1,
+            color: titleColor, margin: 0,
+          }}>
+            {title}
+          </h3>
+          {icon && (
+            <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1, flexShrink: 0 }}>{icon}</span>
+          )}
+        </div>
+        {subtitle && (
+          <>
+            <div style={{ height: 1, background: NEON, margin: "0 0 1.1rem" }} />
+            <p style={{
+              fontFamily: FONT, fontWeight: 700, fontSize: "1.08rem",
+              color: titleColor, lineHeight: 1.4, margin: "0 0 1.1rem",
+            }}>
+              {subtitle}
+            </p>
+          </>
+        )}
+        {body && (
+          <p style={{
+            fontFamily: FONT, fontSize: "0.97rem",
+            color: bodyColor, lineHeight: 1.65, margin: 0,
+          }}>
+            {body}
+          </p>
+        )}
       </div>
     </div>
   );

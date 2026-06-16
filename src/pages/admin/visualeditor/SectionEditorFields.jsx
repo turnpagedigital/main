@@ -365,6 +365,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <select style={{ ...inputStyle, marginTop: 4 }} value={form.layout || "grid-3col"} onChange={e => set("layout", e.target.value)}>
                 <option value="grid-3col">3-Column Grid</option>
                 <option value="grid-2col">2-Column Grid</option>
+                <option value="grid-4col">4-Column Grid</option>
                 <option value="list">List</option>
               </select>
             </div>
@@ -948,9 +949,9 @@ function CardsArrayEditor({ label, cards, onChange, showPriority, showIconSubtit
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 4 }}>
             <div style={{ flex: 1 }}>
               {showIconSubtitle ? (
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 70px", gap: 4, marginBottom: 4 }}>
-                  <input style={inputStyle} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
-                  <input style={inputStyle} placeholder="Icon" title="Optional emoji shown top-right of the card (e.g. ⚖️)" value={c.icon || ""} onChange={e => handleChange(i, "icon", e.target.value)} />
+                <div style={{ marginBottom: 4 }}>
+                  <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
+                  <input style={inputStyle} placeholder="Icon emoji (e.g. ⚖️ 🏛️ 💼)" title="Paste or type an emoji — shown top-right of the card" value={c.icon || ""} onChange={e => handleChange(i, "icon", e.target.value)} />
                 </div>
               ) : (
                 <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
