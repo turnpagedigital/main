@@ -1309,9 +1309,9 @@
             "accentTitle": "your claim.",
             "subtitle": "Fast and confidential feedback. Competitive pricing.",
             "size": "short",
-            "mediaType": "default",
+            "mediaType": "image",
             "video": null,
-            "image": null,
+            "image": "/bg-paper.jpg",
             "ctaPrimary": null,
             "ctaSecondary": null
           }
