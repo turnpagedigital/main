@@ -71,7 +71,7 @@
     {
       "id": "General inquiry",
       "label": "I have a general question about your services",
-      "active": false
+      "active": true
     }
   ],
   "fields": [
