@@ -1371,14 +1371,13 @@
           "visible": true,
           "content": {
             "eyebrow": "FAQ",
-            "title": "Your questions,",
+            "title": "Your questions",
             "accentTitle": "answered.",
             "subtitle": "",
             "size": "short",
-            "mediaType": "image",
+            "mediaType": "default",
             "ctaPrimary": null,
-            "ctaSecondary": null,
-            "image": "/bg-paper.jpg"
+            "ctaSecondary": null
           }
         }
       ]
