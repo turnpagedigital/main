@@ -63,10 +63,11 @@ export default function HomeHeroSection({ sectionConfig }) {
         background: "linear-gradient(180deg, rgba(0,0,0,0.20) 0%, transparent 30%, transparent 45%, rgba(0,0,0,0.70) 100%)",
       }} />
 
-      {/* Spacer that grows to fill space above the content — flex-basis 25% of the
-          hero's height (column main-axis), with flex-shrink:0 so the hero expands
-          rather than letting the spacer collapse below the minimum. */}
-      <div aria-hidden="true" style={{ flex: "1 0 25%" }} />
+      {/* Spacer that fills all available space above the content. flex-basis:0 always
+          resolves; minHeight enforces the 25%-of-hero-height floor using svh units
+          (25svh ≈ 25% of the hero's viewport-relative min-height, capped at 230px
+          which is 25% of the 920px hero maximum). */}
+      <div aria-hidden="true" style={{ flex: "1 0 0", minHeight: "min(25svh, 230px)" }} />
 
       <div style={{ position: "relative", zIndex: 10, maxWidth: 1440, width: "100%", margin: "0 auto", paddingBottom: "clamp(3rem,6vh,5rem)" }}>
         <h1 style={{
