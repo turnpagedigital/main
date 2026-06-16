@@ -10,7 +10,8 @@
       "pages": [
         "home",
         "press",
-        "contact"
+        "contact",
+        "team"
       ]
     },
     {
@@ -24,7 +25,9 @@
         "ai-copyright",
         "press",
         "briefings",
-        "contact"
+        "contact",
+        "bartz-registration",
+        "team"
       ]
     },
     {
@@ -42,7 +45,7 @@
     },
     {
       "active": true,
-      "pill": "Latest",
+      "pill": "Alert",
       "text": "Government appeals Phase 2 IEEPA refund plans",
       "linkText": "Read the Post",
       "href": "https://www.linkedin.com/posts/andrewglantz_tariffs-refunds-receivables-share-7468322022213787650-2gQO/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAADYlmUBIgr3_ZLp4FoChoF9AvaiOSl8Xd8",
@@ -50,7 +53,8 @@
         "home",
         "press",
         "briefings",
-        "contact"
+        "contact",
+        "team"
       ]
     },
     {
