@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FONT, INK, INK_60, INK_40, LINE_STRONG } from "../../data/tokens.js";
 import homeContent from "../../data/home-content.json";
+import { useI18n } from "../../lib/i18n.js";
 
 const SITUATIONS = (homeContent.situations || []).filter(s => s.hidden !== true);
 
@@ -8,13 +9,14 @@ const SITUATIONS = (homeContent.situations || []).filter(s => s.hidden !== true)
    Header text (eyebrow, title, titleAccent, body) is overrideable via
    sectionConfig.content in page-compositions.json. */
 export default function SituationsSection({ sectionConfig }) {
+  const { t } = useI18n();
   const [openIdx, setOpenIdx] = useState(null);
   const toggle = idx => setOpenIdx(prev => prev === idx ? null : idx);
 
   const c = (sectionConfig && sectionConfig.content) || {};
-  const eyebrow     = c.eyebrow     || "What we cover";
-  const title       = c.title       || "The toughest claims";
-  const titleAccent = c.titleAccent || "on the docket.";
+  const eyebrow     = c.eyebrow     || t("situations.eyebrow");
+  const title       = c.title       || t("situations.title_1");
+  const titleAccent = c.titleAccent || t("situations.title_2");
   const body        = c.body        || "We handle every kind of compensation claim — from class action settlements and Chapter 11 customer positions to refund rights and locked digital assets. Whatever the situation, if there's a path to liquidity, we've got it covered.";
 
   return (

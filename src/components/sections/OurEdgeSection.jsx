@@ -1,12 +1,14 @@
 import React from "react";
 import { FONT, INK, INK_60 } from "../../data/tokens.js";
+import { useI18n } from "../../lib/i18n.js";
 
 /* Three-point differentiation grid. Content from sectionConfig.content. */
 export default function OurEdgeSection({ sectionConfig }) {
+  const { t } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
-  const eyebrow    = c.eyebrow    || "Our Edge";
-  const title      = c.title      || "Built to move fast";
-  const titleAccent= c.titleAccent|| "when it counts.";
+  const eyebrow    = c.eyebrow    || t("edge.eyebrow");
+  const title      = c.title      || t("edge.title_1");
+  const titleAccent= c.titleAccent|| t("edge.title_2");
   const intro      = c.intro      || "";
   const colorScheme = c.colorScheme || "white";
   const points = c.points || [

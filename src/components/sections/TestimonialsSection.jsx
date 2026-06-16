@@ -3,17 +3,19 @@ import Layout1 from "./Testimonials/Layout1_Grid3Col.jsx";
 import Layout2 from "./Testimonials/Layout2_SingleCol.jsx";
 import Layout3 from "./Testimonials/Layout3_LargeFeatured.jsx";
 import testimonialsData from "../../data/testimonials.json";
+import { useI18n } from "../../lib/i18n.js";
 
 /* Testimonials Section Wrapper — filters by pageKey and dispatches to layout components.
    layout-1-grid3col  : 3-column grid (default for home)
    layout-2-singlecol : stacked single column (subpages)
    layout-3-featured  : large centered pull-quote (1 featured + smaller secondary) */
 export default function TestimonialsSection({ sectionConfig, pageKey }) {
+  const { t } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
   const sc = sectionConfig || {};
-  const eyebrow = c.eyebrow || "What Clients Say";
-  const title = c.title || "When others give up,";
-  const accent = c.accent || "we dig in.";
+  const eyebrow = c.eyebrow || t("testimonials.eyebrow");
+  const title = c.title || t("testimonials.title_1");
+  const accent = c.accent || t("testimonials.title_2");
   // layout + colorScheme live at section level (or inside content for legacy)
   const layout = sc.layout || c.layout || "layout-1-grid3col";
   const colorScheme = sc.colorScheme || c.colorScheme || "light";

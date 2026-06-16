@@ -2,14 +2,16 @@ import React from "react";
 import faqsData from "../../data/faqs.json";
 import Layout1 from "./FAQ/Layout1_FullWidth.jsx";
 import Layout2 from "./FAQ/Layout2_SplitSidebar.jsx";
+import { useI18n } from "../../lib/i18n.js";
 
 /* FAQ Section Wrapper — dispatches to Layout1 or Layout2 based on pageKey.
    Handles data filtering and passes props to layout components. */
 export default function FAQSection({ sectionConfig, pageKey }) {
+  const { t } = useI18n();
   const c  = (sectionConfig && sectionConfig.content) || {};
   const sc = sectionConfig || {};
-  const title       = c.title    || "Your questions,";
-  const accent      = c.accent   || "answered.";
+  const title       = c.title    || t("faq.title_1");
+  const accent      = c.accent   || t("faq.title_2");
   const ctaLabel    = c.ctaLabel || null;
   const ctaHref     = c.ctaHref  || "/contact";
   // layout auto-selects by page; colorScheme is user-controlled via admin

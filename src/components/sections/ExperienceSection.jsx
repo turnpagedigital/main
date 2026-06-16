@@ -2,12 +2,14 @@ import React from "react";
 import { NEON, FONT } from "../../data/tokens.js";
 import DealCard from "../DealCard.jsx";
 import dealsData from "../../data/deals.json";
+import { useI18n } from "../../lib/i18n.js";
 
 /* Relevant Experience — deal cards filtered by pageKey.
    Deal cards are managed in Content → Deals. Header copy (eyebrow/title/body)
    is editable per page in the page builder via sectionConfig.content; blank
    fields fall back to the built-in per-page copy below. */
 export default function ExperienceSection({ sectionConfig, pageKey }) {
+  const { t } = useI18n();
   const deals = (dealsData.deals || []).filter(
     d => Array.isArray(d.pages) && d.pages.includes(pageKey)
   );
@@ -16,17 +18,17 @@ export default function ExperienceSection({ sectionConfig, pageKey }) {
   // Built-in per-page heading copy (fallbacks)
   const headings = {
     home: {
-      eyebrow: "Relevant Experience",
+      eyebrow: t("experience.eyebrow"),
       title: "A track record across the largest claims trades.",
       body: "A representative slice of recent deals across crypto insolvencies, pension claims, antitrust settlements, and complex litigation matters.",
     },
     "ai-copyright": {
-      eyebrow: "Relevant Experience",
+      eyebrow: t("experience.eyebrow"),
       title: "A track record across other class actions.",
       body: "A representative selection of our work advising rights holders, class members, and institutional buyers across the emerging AI copyright landscape.",
     },
     crypto: {
-      eyebrow: "Relevant Experience",
+      eyebrow: t("experience.eyebrow"),
       title: "A track record across digital-asset insolvencies.",
       body: "A representative slice of deals across crypto insolvencies, exchange failures, and digital-asset restructurings.",
     },
