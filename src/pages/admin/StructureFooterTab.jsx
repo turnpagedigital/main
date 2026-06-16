@@ -171,12 +171,14 @@ function ColumnCard({
 function LinkRow({ link, linkIndex, totalLinks, onUpdate, onMoveUp, onMoveDown, onRemove }) {
   const labelEmpty = !link.label.trim();
   const hrefEmpty  = !link.href.trim();
+  const hidden = link.hidden === true;
   const linkSummary = link.label || <em>No label</em>;
 
   return (
     <div style={{
-      background: "#fff",
+      background: hidden ? "#F9FAFB" : "#fff",
       border: `1px solid ${LINE}`,
+      opacity: hidden ? 0.65 : 1,
     }}>
       <div style={{
         display: "flex", alignItems: "center", gap: "0.6rem",
@@ -185,8 +187,14 @@ function LinkRow({ link, linkIndex, totalLinks, onUpdate, onMoveUp, onMoveDown, 
       }}>
         <div style={{ flex: 1, fontSize: "0.82rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
           {linkSummary}
+          {hidden && <span style={{ marginLeft: "0.5em", fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#9CA3AF", fontStyle: "normal" }}>Hidden</span>}
         </div>
 
+        <button type="button" onClick={() => onUpdate({ hidden: !hidden })}
+          title={hidden ? "Show link" : "Hide link"}
+          style={{ ...iconBtnStyle(false), fontSize: "0.68rem", padding: "0.15rem 0.4rem", color: hidden ? "#2563EB" : INK_60 }}>
+          {hidden ? "Show" : "Hide"}
+        </button>
         <button type="button" onClick={onMoveUp} disabled={linkIndex === 0}
           aria-label="Move up" title="Move up" style={iconBtnStyle(linkIndex === 0)}>↑</button>
         <button type="button" onClick={onMoveDown} disabled={linkIndex === totalLinks - 1}

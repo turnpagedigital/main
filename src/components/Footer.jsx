@@ -67,7 +67,7 @@ export default function Footer() {
               key={col.id}
               title={tx(col.titleKey, col.title)}
               items={col.links
-                .filter(link => link.external || !DRAFT_PATHS.has(link.href))
+                .filter(link => !link.hidden && (link.external || !DRAFT_PATHS.has(link.href)))
                 .map(link => ({
                   key:      link.id,
                   label:    tx(link.labelKey, link.label),
