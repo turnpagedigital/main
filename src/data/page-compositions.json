@@ -886,7 +886,8 @@
         {
           "id": "sec-litfin-how",
           "type": "how-it-works",
-          "visible": false,
+          "visible": true,
+          "colorScheme": "dark",
           "content": {
             "eyebrow": "How It Works",
             "title": "Three steps to a funded case.",
@@ -897,22 +898,26 @@
               {
                 "id": "submit",
                 "n": "01",
-                "title": "Submit your case",
+                "title": "Diligence »",
                 "body": "Share a case summary — claims, defendants, damages theory, and stage of litigation. NDA available on request."
               },
               {
                 "id": "underwriting",
                 "n": "02",
-                "title": "Underwriting",
+                "title": "Underwriting »",
                 "body": "Our team reviews merits, damages, counsel quality, and opposing party resources. We respond with a term sheet within two to four weeks."
               },
               {
                 "id": "capital-deployed",
                 "n": "03",
-                "title": "Capital deployed",
+                "title": "Deployment »",
                 "body": "Once terms are agreed, capital is available to cover case costs — experts, discovery, depositions, and trial preparation."
               }
-            ]
+            ],
+            "backgroundImage": "/paul-kramer-GKtS3leA5js-unsplash.jpg",
+            "imageFilterStrength": 80,
+            "cardBrightness": 65,
+            "cardStyle": "standard"
           }
         },
         {
