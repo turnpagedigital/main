@@ -1359,6 +1359,31 @@
       ]
     },
     {
+      "pageKey": "press",
+      "title": "Press & Publications",
+      "path": "/press",
+      "builtIn": true,
+      "status": "active",
+      "sections": [
+        {
+          "id": "sec-press-bottom-cta",
+          "type": "bottom-cta",
+          "visible": true,
+          "content": {
+            "eyebrow": "Get in Touch",
+            "title": "Have a claim?",
+            "accent": "Talk to us.",
+            "kicker": "48-hour response. Confidentiality default.",
+            "primary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "secondary": null
+          }
+        }
+      ]
+    },
+    {
       "pageKey": "contact",
       "title": "Contact",
       "path": "/contact",

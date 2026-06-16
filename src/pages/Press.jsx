@@ -2,8 +2,14 @@ import React, { useState, useMemo, useEffect } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import BottomCTA from "../components/BottomCTA.jsx";
-import pressData from "../data/press.json";
-import bioData   from "../data/bio.json";
+import pressData       from "../data/press.json";
+import bioData         from "../data/bio.json";
+import pageCompositions from "../data/page-compositions.json";
+
+// Read the bottom-cta section content from the page builder so admin edits
+// made in Page Builder → Press take effect without a code change.
+const _pressPage   = (pageCompositions.pages || []).find(p => p.pageKey === "press");
+const _pressCTA    = (_pressPage?.sections || []).find(s => s.type === "bottom-cta")?.content || {};
 
 /* ── Outlet name → domain (used for Google favicon fallback) ────────────── */
 const OUTLET_DOMAINS = {
@@ -516,11 +522,12 @@ export default function Press() {
       </section>
 
       <BottomCTA
-        eyebrow="Get in Touch"
-        title="Have a claim?"
-        accent="Talk to us."
-        kicker="48-hour response. Confidentiality default."
-        primary={{ label: "Get in Touch", href: hashHref("contact") }}
+        eyebrow={_pressCTA.eyebrow || "Get in Touch"}
+        title={_pressCTA.title   || "Have a claim?"}
+        accent={_pressCTA.accent  || "Talk to us."}
+        kicker={_pressCTA.kicker  || "48-hour response. Confidentiality default."}
+        primary={_pressCTA.primary || { label: "Get in Touch", href: hashHref("contact") }}
+        secondary={_pressCTA.secondary || null}
       />
 
       <style>{`
