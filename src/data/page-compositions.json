@@ -1386,8 +1386,9 @@
           "visible": true,
           "content": {
             "defaultSource": "",
-            "variant": "image",
-            "backgroundImage": "/bg-paper.jpg"
+            "variant": "white",
+            "backgroundImage": "/bg-paper.jpg",
+            "formCardStyle": "white"
           }
         }
       ]
