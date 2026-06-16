@@ -1359,6 +1359,30 @@
       ]
     },
     {
+      "pageKey": "faq",
+      "title": "FAQ",
+      "path": "/faq",
+      "builtIn": true,
+      "status": "active",
+      "sections": [
+        {
+          "id": "sec-faq-header",
+          "type": "hero",
+          "visible": true,
+          "content": {
+            "eyebrow": "Questions?",
+            "title": "Frequently Asked",
+            "accentTitle": "Answers.",
+            "subtitle": "",
+            "size": "short",
+            "mediaType": "default",
+            "ctaPrimary": null,
+            "ctaSecondary": null
+          }
+        }
+      ]
+    },
+    {
       "pageKey": "press",
       "title": "Press & Publications",
       "path": "/press",

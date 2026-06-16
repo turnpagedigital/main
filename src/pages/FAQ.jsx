@@ -4,6 +4,11 @@ import SectionHeader from "../components/SectionHeader.jsx";
 import FAQ from "../components/FAQ.jsx";
 import faqs from "../data/faqs.json";
 import { MARKETING_PAGES } from "../data/page-keys.js";
+import pageCompositions from "../data/page-compositions.json";
+
+// Read header text from page-compositions.json so it's editable in Pages → FAQ.
+const _faqPage   = (pageCompositions.pages || []).find(p => p.pageKey === "faq");
+const _faqHeader = (_faqPage?.sections || []).find(s => s.type === "hero")?.content || {};
 
 export default function FAQPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -62,9 +67,9 @@ export default function FAQPage() {
       <div className="container" style={{ maxWidth: 960, margin: "0 auto", padding: "0 clamp(1rem, 3vw, 2rem)" }}>
         {/* Header */}
         <SectionHeader
-          eyebrow="Questions?"
-          title="Frequently Asked"
-          accent="Answers."
+          eyebrow={_faqHeader.eyebrow     || "Questions?"}
+          title={_faqHeader.title         || "Frequently Asked"}
+          accent={_faqHeader.accentTitle  || "Answers."}
           align="left"
           theme="light"
           layout="stack"
