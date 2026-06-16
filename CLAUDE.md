@@ -96,7 +96,7 @@ index.html                 — Vite entry, meta + OG tags
 - **Post a briefing** → see "Posting a Briefing" below.
 - **Replace Crypto placeholder copy** → edit `src/pages/Crypto.jsx`. Structure mirrors AICopyright.jsx.
 - **Hero copy** → home is in `src/pages/Home.jsx`; AI Copyright hero is in `src/pages/AICopyright.jsx` (uses the shared `Hero` component).
-- **Subject options on contact form** → edit `SUBJECT_OPTIONS` in `src/components/IntakeForm.jsx`. Also update `subjectLabels` in `functions/api/contact.js` so the email shows the right label.
+- **Subject options on contact form** → edit subjects in `src/data/contact-form.json` (or via Admin → Content → Contact Form). `IntakeForm.jsx` reads them at build time. The `id` field is what gets submitted; use a readable value like "Copyright claims". The email notification shows the `id` value directly.
 - **Change a site-wide color (NEON, INK, …)** → `/admin/css` → Colors & Tokens, or edit `src/data/tokens.js`. Everything importing the token follows on the next deploy.
 - **Change FAQ/Testimonials/CTA section colors** → `/admin/css` → Section Palettes, or edit `src/data/section-palettes.json`. Those sections resolve colors from this file at render time (`src/lib/palette-resolver.js`); `tests/palette-equivalence.test.js` snapshots the expected values — update it when intentionally changing a palette.
 
@@ -116,11 +116,13 @@ index.html                 — Vite entry, meta + OG tags
 3. `git add -A && git commit -m "Briefing: Bartz fairness hearing" && git push`. Cloudflare auto-deploys in ~1–2 min.
 
 ## Contact Form
-- Fields: First Name, Last Name (required), Email (required), Phone, Telegram, WhatsApp (optional), Subject (required), Message (required)
-- Hidden `source` field captures which sub-brand drove the lead (`ai-copyright`, `crypto`, `briefings`).
+- Fields: First Name, Last Name (required), Email (required), Subject (required), Message (required)
+- Optional contact method: a dropdown ("How would you like to be contacted?") with Phone/SMS, Telegram, WhatsApp. Selecting one reveals a single handle/number field. Submits as `contactMethod` + `contactHandle`.
+- Hidden `source` field captures which sub-brand drove the lead (`ai-copyright`, `crypto`, `briefings`). Maps to a default subject selection via `SOURCE_SUBJECTS` in `IntakeForm.jsx`.
+- Subjects are loaded at build time from `src/data/contact-form.json` — admin changes to subjects take effect after the next deploy.
 - Submits to `/api/contact` which:
-  1. Sends formatted HTML email to info@turnpagedigital.com via Resend API (now includes the Source field)
-  2. Logs row to Google Sheet via Apps Script (now includes the source label)
+  1. Sends formatted HTML email to info@turnpagedigital.com via Resend API
+  2. Logs row to Google Sheet via Apps Script
 
 ## Cloudflare Environment Variables
 - `RESEND_API_KEY` — Resend API key

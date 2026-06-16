@@ -51,8 +51,8 @@ function escapeHtml(s) {
    Stops 1 MB pastes and basic resource-exhaustion abuse. */
 const FIELD_LIMITS = {
   firstName: 100, lastName: 100, email: 254,
-  phone: 40, telegram: 80, whatsapp: 40,
-  subject: 80, message: 5000, source: 80,
+  contactMethod: 20, contactHandle: 100,
+  subject: 200, message: 5000, source: 80,
   utm_source: 200, utm_medium: 200, utm_campaign: 200,
   utm_term: 200, utm_content: 200, gclid: 200,
 };
@@ -81,7 +81,7 @@ export async function onRequestPost(context) {
     }
 
     const body = await request.json();
-    const { firstName, lastName, email, phone, telegram, whatsapp, subject, message, source } = body;
+    const { firstName, lastName, email, contactMethod, contactHandle, subject, message, source } = body;
 
     if (!firstName || !lastName || !email || !subject || !message) {
       return new Response(
@@ -101,15 +101,13 @@ export async function onRequestPost(context) {
       }
     }
 
-    // Subject labels
-    const subjectLabels = {
-      "ai-copyright": "AI Copyright Inquiry",
-      "crypto": "Crypto Claims Inquiry",
-      quote: "Request a Quote",
-      claims: "General Claims Inquiry",
-      partnership: "Partnership",
-      other: "Other",
+    // Contact method friendly labels
+    const contactMethodLabels = {
+      phone: "Phone / SMS",
+      telegram: "Telegram",
+      whatsapp: "WhatsApp",
     };
+    const contactMethodFriendly = contactMethodLabels[contactMethod] || contactMethod || "";
 
     // Friendly source labels
     const sourceLabels = {
@@ -118,7 +116,7 @@ export async function onRequestPost(context) {
       "briefings": "Briefings",
     };
     const sourceLabel = source ? (sourceLabels[source] || source) : "";
-    const subjectFriendly = subjectLabels[subject] || subject;
+    const subjectFriendly = subject || "";
 
     const subjectLine = `New inquiry from ${firstName} ${lastName} — ${subjectFriendly}`;
 
@@ -136,15 +134,14 @@ export async function onRequestPost(context) {
 
     // Pre-escape every value before interpolation
     const safe = {
-      firstName: escapeHtml(firstName),
-      lastName:  escapeHtml(lastName),
-      email:     escapeHtml(email),
-      phone:     escapeHtml(phone),
-      telegram:  escapeHtml(telegram),
-      whatsapp:  escapeHtml(whatsapp),
-      message:   escapeHtml(message),
-      subject:   escapeHtml(subjectFriendly),
-      source:    escapeHtml(sourceLabel),
+      firstName:       escapeHtml(firstName),
+      lastName:        escapeHtml(lastName),
+      email:           escapeHtml(email),
+      contactMethod:   escapeHtml(contactMethodFriendly),
+      contactHandle:   escapeHtml(contactHandle),
+      message:         escapeHtml(message),
+      subject:         escapeHtml(subjectFriendly),
+      source:          escapeHtml(sourceLabel),
     };
     // Email address used inside an href="mailto:…" attribute — URL-encode
     const emailHref = encodeURIComponent(email);
@@ -165,9 +162,7 @@ export async function onRequestPost(context) {
               <td style="padding: 8px 0; color: #666;">Email</td>
               <td style="padding: 8px 0;"><a href="mailto:${emailHref}" style="color: #1a1a1a;">${safe.email}</a></td>
             </tr>
-            ${phone    ? `<tr><td style="padding: 8px 0; color: #666;">Phone</td><td style="padding: 8px 0;">${safe.phone}</td></tr>` : ""}
-            ${telegram ? `<tr><td style="padding: 8px 0; color: #666;">Telegram</td><td style="padding: 8px 0;">${safe.telegram}</td></tr>` : ""}
-            ${whatsapp ? `<tr><td style="padding: 8px 0; color: #666;">WhatsApp</td><td style="padding: 8px 0;">${safe.whatsapp}</td></tr>` : ""}
+            ${(contactMethodFriendly && contactHandle) ? `<tr><td style="padding: 8px 0; color: #666;">${safe.contactMethod}</td><td style="padding: 8px 0;">${safe.contactHandle}</td></tr>` : ""}
             <tr>
               <td style="padding: 8px 0; color: #666;">Subject</td>
               <td style="padding: 8px 0;">${safe.subject}</td>
@@ -203,7 +198,8 @@ export async function onRequestPost(context) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            firstName, lastName, email, phone, telegram, whatsapp,
+            firstName, lastName, email,
+            contactMethod: contactMethodFriendly, contactHandle,
             subject: subjectFriendly, message,
             source: sourceLabel,
             ...attribution,

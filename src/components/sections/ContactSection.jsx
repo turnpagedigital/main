@@ -3,12 +3,6 @@ import { NEON, FONT, INK, INK_60, LINE_STRONG } from "../../data/tokens.js";
 import IntakeForm from "../IntakeForm.jsx";
 import contactData from "../../data/contact-form.json";
 
-const SOURCE_SUBJECTS = {
-  "ai-copyright": "ai-copyright",
-  "crypto": "crypto",
-  "briefings": "ai-copyright",
-};
-
 function readSourceFromUrl() {
   if (typeof window === "undefined") return "";
   const params = new URLSearchParams(window.location.search || "");
@@ -114,7 +108,6 @@ export default function ContactSection({ sectionConfig }) {
   }, []);
 
   const source = urlSource || c.defaultSource || "";
-  const defaultSubject = SOURCE_SUBJECTS[source] || "";
 
   const cd = contactData;
   // Section content overrides take priority over global contact-form.json values
@@ -267,7 +260,7 @@ export default function ContactSection({ sectionConfig }) {
 
         {/* Form card */}
         <div style={formCardStyle}>
-          <IntakeForm source={source} defaultSubject={defaultSubject} />
+          <IntakeForm source={source} />
         </div>
       </div>
 
