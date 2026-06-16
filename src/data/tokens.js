@@ -50,7 +50,7 @@ export const SECONDARY_BG = "#F4F5F7";
 export const RADIUS_CARD = "clamp(0.2rem, 1.2vw, 0.3125rem)";
 export const RADIUS_CARD_SQUARE = "0.2rem";
 export const RADIUS_GLASS = ".75rem";
-export const RADIUS_GLASS_SQUARE = "1px";
+export const RADIUS_GLASS_SQUARE = ".2rem";
 
 /* Typography */
 export const FONT = "'Archivo', sans-serif";
