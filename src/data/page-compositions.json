@@ -1366,7 +1366,7 @@
         {
           "id": "sec-contact-hero",
           "type": "hero",
-          "visible": true,
+          "visible": false,
           "content": {
             "eyebrow": "Get in Touch",
             "title": "Tell us about",
@@ -1386,7 +1386,8 @@
           "visible": true,
           "content": {
             "defaultSource": "",
-            "variant": "image"
+            "variant": "image",
+            "backgroundImage": "/bg-paper.jpg"
           }
         }
       ]
