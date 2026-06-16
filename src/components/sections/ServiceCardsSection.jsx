@@ -120,7 +120,12 @@ export default function ServiceCardsSection({ sectionConfig }) {
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className={layout === "grid-4col" ? "service-grid service-grid-4col" : "service-grid"}>
-            {cards.map(card => <ServiceCard key={card.id} card={card} dark={isDark} />)}
+            {cards.map(card => card.cardStyle
+              ? <Card key={card.id} style={card.cardStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur}>
+                  <CardInner card={card} titleColor={cardTitleColor === "neon" ? NEON : "var(--card-text-color)"} />
+                </Card>
+              : <ServiceCard key={card.id} card={card} dark={isDark} />
+            )}
           </div>
         )}
       </div>

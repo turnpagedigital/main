@@ -970,6 +970,19 @@ function CardsArrayEditor({ label, cards, onChange, showPriority, showIconSubtit
                 <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
               )}
               {showIconSubtitle && (
+                <select style={{ ...inputStyle, marginBottom: 4 }} value={c.cardStyle || ""} onChange={e => handleChange(i, "cardStyle", e.target.value)}>
+                  <option value="">Card color — inherit from section</option>
+                  <option value="white">White</option>
+                  <option value="black">Black</option>
+                  <option value="light-gray">Light Gray</option>
+                  <option value="neon">Neon (bright green)</option>
+                  <option value="dark">Dark Glass</option>
+                  <option value="light-glass">Light Glass</option>
+                  <option value="clear-glass">Clear Glass</option>
+                  <option value="neon-glass">Neon Glass</option>
+                </select>
+              )}
+              {showIconSubtitle && (
                 <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Subtitle (optional — bold line under a neon divider)" value={c.subtitle || ""} onChange={e => handleChange(i, "subtitle", e.target.value)} />
               )}
               <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Body" value={c.body} onChange={e => handleChange(i, "body", e.target.value)} />
