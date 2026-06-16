@@ -913,6 +913,8 @@ function BulletColumnsEditor({ columns, onChange }) {
 }
 
 function CardsArrayEditor({ label, cards, onChange, showPriority, showIconSubtitle }) {
+  const [pickerOpenIdx, setPickerOpenIdx] = React.useState(null);
+
   const handleChange = (i, field, val) => {
     const newCards = [...(cards || [])];
     newCards[i] = { ...newCards[i], [field]: val };
@@ -950,8 +952,19 @@ function CardsArrayEditor({ label, cards, onChange, showPriority, showIconSubtit
             <div style={{ flex: 1 }}>
               {showIconSubtitle ? (
                 <div style={{ marginBottom: 4 }}>
-                  <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
-                  <input style={inputStyle} placeholder="Icon emoji (e.g. ⚖️ 🏛️ 💼)" title="Paste or type an emoji — shown top-right of the card" value={c.icon || ""} onChange={e => handleChange(i, "icon", e.target.value)} />
+                  <input style={{ ...inputStyle, marginBottom: 6 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                    {c.icon
+                      ? <img src={c.icon} alt="" style={{ width: 36, height: 36, objectFit: "contain", borderRadius: 4, border: `1px solid ${LINE}`, background: "#f3f4f6", flexShrink: 0 }} />
+                      : <div style={{ width: 36, height: 36, border: `1px dashed ${LINE}`, borderRadius: 4, background: "#f9fafb", flexShrink: 0 }} />
+                    }
+                    <button type="button" style={{ ...btnStyle, fontSize: "0.75rem" }} onClick={() => setPickerOpenIdx(i)}>
+                      {c.icon ? "Change icon" : "Pick icon"}
+                    </button>
+                    {c.icon && (
+                      <button type="button" style={{ ...btnStyle, fontSize: "0.75rem", color: "#C03030", borderColor: "#E5B5B5" }} onClick={() => handleChange(i, "icon", "")}>Remove</button>
+                    )}
+                  </div>
                 </div>
               ) : (
                 <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={c.title} onChange={e => handleChange(i, "title", e.target.value)} />
@@ -976,6 +989,12 @@ function CardsArrayEditor({ label, cards, onChange, showPriority, showIconSubtit
         </div>
       ))}
       <button type="button" onClick={handleAdd} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}>+ Add card</button>
+      <AssetPicker
+        open={pickerOpenIdx !== null}
+        onClose={() => setPickerOpenIdx(null)}
+        onPick={(url) => { if (pickerOpenIdx !== null) { handleChange(pickerOpenIdx, "icon", url); setPickerOpenIdx(null); } }}
+        acceptTypes={["logo", "image"]}
+      />
     </div>
   );
 }

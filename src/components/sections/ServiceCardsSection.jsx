@@ -159,10 +159,7 @@ function CardInner({ card, titleColor }) {
           {card.title}
         </h3>
         {card.icon && (
-          <span aria-hidden="true" style={{
-            fontFamily: FONT, fontSize: "1.5rem", lineHeight: 1,
-            color: titleColor, flexShrink: 0,
-          }}>{card.icon}</span>
+          <img src={card.icon} alt="" style={{ width: 36, height: 36, objectFit: "contain", flexShrink: 0 }} />
         )}
       </div>
       {card.subtitle && (
@@ -214,7 +211,7 @@ function ServiceCard({ card, dark }) {
             {title}
           </h3>
           {icon && (
-            <span aria-hidden="true" style={{ fontSize: "1.5rem", lineHeight: 1, flexShrink: 0 }}>{icon}</span>
+            <img src={icon} alt="" style={{ width: 36, height: 36, objectFit: "contain", flexShrink: 0 }} />
           )}
         </div>
         {subtitle && (
