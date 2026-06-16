@@ -46,18 +46,20 @@ export default function Contact() {
         <div className="container contact-grid" style={{
           display: "grid",
           gridTemplateColumns: "minmax(0,1fr) minmax(0,1.6fr)",
-          gap: "clamp(2rem,5vw,4rem)",
+          gap: "clamp(3rem,6vw,6rem)",
           alignItems: "start",
           maxWidth: 1100,
         }}>
+
+          {/* Sidebar */}
           <div style={{ position: "sticky", top: 130 }} className="contact-side">
             {source && (
               <div style={{
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                padding: "0.4rem 0.8rem", marginBottom: "1.2rem",
+                padding: "0.35rem 0.75rem", marginBottom: "1.4rem",
                 background: NEON, color: INK,
-                borderRadius: 50, fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
-                letterSpacing: "0.12em", textTransform: "uppercase",
+                fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+                letterSpacing: "0.14em", textTransform: "uppercase",
               }}>
                 {labelForSource(source)} inquiry
               </div>
@@ -65,72 +67,72 @@ export default function Contact() {
             <h2 style={{
               fontFamily: FONT, fontWeight: 800,
               fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
-              lineHeight: 1.15, letterSpacing: "-0.02em", color: INK,
+              lineHeight: 1.1, letterSpacing: "-0.025em", color: INK,
               marginBottom: "1rem",
             }}>
               {cd.sidebarHeading || "Let's talk."}
             </h2>
             <p style={{
-              fontFamily: FONT, fontSize: "1.02rem", color: INK_60,
-              lineHeight: 1.65, marginBottom: "1.6rem",
+              fontFamily: FONT, fontSize: "1rem", color: INK_60,
+              lineHeight: 1.65, marginBottom: "2rem",
             }}>
               {cd.sidebarIntro || "Every inquiry is read by a partner. NDA available on request."}
             </p>
-            <div style={{
-              padding: "1.2rem 1.4rem",
-              background: "#fff",
-              border: `1px solid ${LINE_STRONG}`, borderRadius: 14,
-              marginBottom: "1.2rem",
-            }}>
-              {cd.email && (<>
-                <p style={{
-                  fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
-                  letterSpacing: "0.16em", textTransform: "uppercase",
-                  color: INK_60, marginBottom: "0.5rem",
-                }}>
-                  Email
-                </p>
-                <a href={`mailto:${cd.email}`} style={{
-                  fontFamily: FONT, fontSize: "1.05rem", fontWeight: 700,
-                  color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
-                }}>
-                  {cd.email}
-                </a>
-              </>)}
-              {cd.phone && (<>
-                <p style={{
-                  fontFamily: FONT, fontSize: "0.74rem", fontWeight: 700,
-                  letterSpacing: "0.16em", textTransform: "uppercase",
-                  color: INK_60, marginBottom: "0.5rem", marginTop: "1.2rem",
-                }}>
-                  Phone
-                </p>
-                <a href={phoneHref} style={{
-                  fontFamily: FONT, fontSize: "1.05rem", fontWeight: 700,
-                  color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 2,
-                }}>
-                  {cd.phone}
-                </a>
-              </>)}
+
+            {/* Contact info — flat divider list */}
+            <div style={{ borderTop: `1px solid ${LINE_STRONG}` }}>
+              {cd.email && (
+                <div style={{ padding: "1rem 0", borderBottom: `1px solid ${LINE_STRONG}` }}>
+                  <p style={{
+                    fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
+                    letterSpacing: "0.18em", textTransform: "uppercase",
+                    color: INK_60, marginBottom: "0.35rem",
+                  }}>Email</p>
+                  <a href={`mailto:${cd.email}`} style={{
+                    fontFamily: FONT, fontSize: "0.98rem", fontWeight: 600,
+                    color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 1,
+                  }}>
+                    {cd.email}
+                  </a>
+                </div>
+              )}
+              {cd.phone && (
+                <div style={{ padding: "1rem 0", borderBottom: `1px solid ${LINE_STRONG}` }}>
+                  <p style={{
+                    fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
+                    letterSpacing: "0.18em", textTransform: "uppercase",
+                    color: INK_60, marginBottom: "0.35rem",
+                  }}>Phone</p>
+                  <a href={phoneHref} style={{
+                    fontFamily: FONT, fontSize: "0.98rem", fontWeight: 600,
+                    color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 1,
+                  }}>
+                    {cd.phone}
+                  </a>
+                </div>
+              )}
+              {Array.isArray(cd.social_links) && cd.social_links.some(l => l.url) && (
+                <div style={{ padding: "1rem 0", borderBottom: `1px solid ${LINE_STRONG}` }}>
+                  <SocialLinks links={cd.social_links} dark={false} size={20} gap="0.3rem" />
+                </div>
+              )}
             </div>
-            {Array.isArray(cd.social_links) && cd.social_links.some(l => l.url) && (
-              <div style={{ marginTop: "1.2rem" }}>
-                <SocialLinks links={cd.social_links} dark={false} size={20} gap="0.4rem" />
-              </div>
-            )}
+
             {cd.disclaimer && (
               <p style={{
-                fontFamily: FONT, fontSize: "0.85rem", color: INK_60,
-                lineHeight: 1.55, marginTop: "1.2rem",
+                fontFamily: FONT, fontSize: "0.82rem", color: INK_60,
+                lineHeight: 1.6, marginTop: "1.4rem",
               }}>
                 {cd.disclaimer}
               </p>
             )}
           </div>
 
+          {/* Form */}
           <div style={{
-            background: "#fff", border: `1px solid ${LINE_STRONG}`,
-            borderRadius: 18, padding: "clamp(1.5rem,3vw,2.5rem)",
+            borderTop: `3px solid ${NEON}`,
+            background: "#fff",
+            padding: "clamp(1.5rem,3vw,2.5rem)",
           }}>
             <IntakeForm source={source} defaultSubject={defaultSubject} />
           </div>

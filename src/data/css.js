@@ -604,7 +604,7 @@ button:focus-visible, a:focus-visible {
   width: 100%;
   background: ${SURFACE};
   border: 1px solid ${LINE_STRONG};
-  border-radius: 10px;
+  border-radius: 0;
   padding: 0.85rem 1rem;
   font-family: ${FONT}; font-size: 0.98rem;
   color: ${INK};
@@ -615,7 +615,7 @@ button:focus-visible, a:focus-visible {
 .field-light select:focus {
   border-color: ${INK};
   background: #FFFEF5;
-  box-shadow: 0 0 0 4px rgba(212,255,0,0.18);
+  box-shadow: 3px 3px 0 0 rgba(212,255,0,0.5);
 }
 .field-light label {
   display: block;
