@@ -57,7 +57,11 @@
           "type": "situations",
           "visible": true,
           "content": {
-            "_bookmark": "what-we-cover"
+            "_bookmark": "what-we-cover",
+            "eyebrow": "We Cover",
+            "title": "The toughest claims",
+            "titleAccent": "on the docket.",
+            "body": "From chapter 11 claims to government refunds and class action settlements to locked digital assets we've got it covered — If there's a path to liquidity, we're on it."
           }
         },
         {
