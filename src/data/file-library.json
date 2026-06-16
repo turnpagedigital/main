@@ -2,6 +2,17 @@
   "_comment": "File library — centralised store for images, logos, favicons, documents, and videos used across the site. Managed via /admin/assets (file list) and /admin/pages (favicon picker). Files live in public/library/ (uploaded) or as external URLs. favicons map { production, preview, admin } → URL from this library or a static path under /. Schema: { files: [{ id, name, url, type, companies, source, addedAt }], favicons: { production, preview, admin } }.",
   "files": [
     {
+      "id": "mqg6gzgm-hvhzm",
+      "name": "giphy",
+      "url": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHg5d2V3bWxzZHQ1Nm9rcHNvaGFmenZrbHNoMGl5Mmk4OGRnMm1rNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JkADkL9786mQBORwCS/giphy.gif",
+      "type": "image",
+      "companies": [
+        "LinkedIn"
+      ],
+      "source": "url",
+      "addedAt": "2026-06-16T05:04:39.814Z"
+    },
+    {
       "id": "mqb5bllu-z2e8r",
       "name": "Yellow logo",
       "url": "/library/yellow-logo.png",
