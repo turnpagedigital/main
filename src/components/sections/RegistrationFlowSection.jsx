@@ -12,6 +12,12 @@ import { getAttribution, trackLead } from "../../lib/analytics.js";
  * base64 (server caps: 8 MB, pdf/png/jpg). Submissions POST to
  * /api/register with the flow id, page key, and ad attribution; a GA4
  * lead event fires on success when analytics is configured.
+ *
+ * Layouts (set in Page Builder → registration-flow section):
+ *   center  — default; narrow card centered on a gray background
+ *   split   — left column heading + right column form card (wide 2-col layout)
+ *   wide    — wider card (880 px) centered on gray background
+ *   dark    — dark background; white heading; white form card
  */
 
 const MAX_FILE_BYTES = 8 * 1024 * 1024;
@@ -21,23 +27,27 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
   const c = (sectionConfig && sectionConfig.content) || {};
   const flow = (formsData.flows || []).find(f => f.id === c.flowId && f.active !== false);
 
-  if (!flow) {
-    // Misconfigured section (no flow picked, or flow deactivated) — render
-    // nothing on the public site rather than a broken wizard.
-    return null;
-  }
-  return <Wizard flow={flow} pageKey={pageKey} eyebrow={c.eyebrow} title={c.title} accent={c.accent} />;
+  if (!flow) return null;
+  return (
+    <Wizard
+      flow={flow}
+      pageKey={pageKey}
+      eyebrow={c.eyebrow}
+      title={c.title}
+      accent={c.accent}
+      layout={c.layout || "center"}
+    />
+  );
 }
 
-function Wizard({ flow, pageKey, eyebrow, title, accent }) {
+function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
   const [answers, setAnswers] = useState({});
-  const [files, setFiles] = useState({});       // fieldId → { name, type, dataBase64 } | null
+  const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
   const [stepError, setStepError] = useState("");
-  const [formState, setFormState] = useState("idle"); // idle | submitting | success | error
+  const [formState, setFormState] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  /* Steps visible given current answers — branching happens here. */
   const visibleSteps = useMemo(
     () => (flow.steps || []).filter(s => stepVisible(s, answers)),
     [flow.steps, answers],
@@ -109,8 +119,6 @@ function Wizard({ flow, pageKey, eyebrow, title, accent }) {
   async function submit() {
     setFormState("submitting");
     setErrorMsg("");
-    // Only submit answers belonging to currently-visible steps — answers
-    // given on a branch the user later backed out of stay behind.
     const visibleFieldIds = new Set(visibleSteps.flatMap(s => (s.fields || []).map(f => f.id)));
     const cleanAnswers = Object.fromEntries(
       Object.entries(answers).filter(([k]) => visibleFieldIds.has(k)),
@@ -142,35 +150,29 @@ function Wizard({ flow, pageKey, eyebrow, title, accent }) {
     }
   }
 
-  if (formState === "success") {
-    return (
-      <Shell eyebrow={eyebrow} title={title} accent={accent}>
-        <div role="status" style={{ textAlign: "center", padding: "3rem 1rem" }}>
-          <div aria-hidden="true" style={{
-            width: 56, height: 56, borderRadius: 50, background: NEON, color: INK,
-            fontWeight: 900, fontSize: "1.5rem", display: "flex",
-            alignItems: "center", justifyContent: "center", margin: "0 auto 1.2rem",
-          }}>✓</div>
-          <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.4rem", color: INK, marginBottom: "0.6rem" }}>
-            {flow.successTitle || "Thanks — you're registered."}
-          </h3>
-          <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60, maxWidth: 480, margin: "0 auto" }}>
-            {flow.successBody || "We'll be in touch shortly."}
-          </p>
-        </div>
-      </Shell>
-    );
-  }
+  const successNode = (
+    <div role="status" style={{ textAlign: "center", padding: "3rem 1rem" }}>
+      <div aria-hidden="true" style={{
+        width: 56, height: 56, borderRadius: 50, background: NEON, color: INK,
+        fontWeight: 900, fontSize: "1.5rem", display: "flex",
+        alignItems: "center", justifyContent: "center", margin: "0 auto 1.2rem",
+      }}>✓</div>
+      <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.4rem", color: INK, marginBottom: "0.6rem" }}>
+        {flow.successTitle || "Thanks — you're registered."}
+      </h3>
+      <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60, maxWidth: 480, margin: "0 auto" }}>
+        {flow.successBody || "We'll be in touch shortly."}
+      </p>
+    </div>
+  );
 
-  return (
-    <Shell eyebrow={eyebrow} title={title} accent={accent}>
+  const formNode = (
+    <>
       {flow.intro && stepIndex === 0 && (
         <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60, marginBottom: "1.6rem", lineHeight: 1.6 }}>
           {flow.intro}
         </p>
       )}
-
-      {/* Progress */}
       <div aria-hidden="true" style={{ display: "flex", gap: 6, marginBottom: "0.7rem" }}>
         {visibleSteps.map((s, i) => (
           <div key={s.id} style={{
@@ -185,20 +187,17 @@ function Wizard({ flow, pageKey, eyebrow, title, accent }) {
       <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.35rem", color: INK, marginBottom: "1.4rem", letterSpacing: "-0.01em" }}>
         {step.title}
       </h3>
-
       <div className="field-light">
         {(step.fields || []).map(f => (
           <FieldControl key={f.id} field={f} value={answers[f.id]} file={files[f.id]}
             onChange={v => setAnswer(f.id, v)} onFile={fl => setFile(f, fl)} />
         ))}
       </div>
-
       {(stepError || formState === "error") && (
         <p role="alert" style={{ fontFamily: FONT, fontSize: "0.9rem", color: "#C03030", marginBottom: "0.9rem" }}>
           {stepError || errorMsg}
         </p>
       )}
-
       <div style={{ display: "flex", gap: "0.8rem", marginTop: "0.4rem" }}>
         {stepIndex > 0 && (
           <button type="button" onClick={back} className="btn-ghost-ink" style={{ flexShrink: 0 }}>
@@ -216,15 +215,139 @@ function Wizard({ flow, pageKey, eyebrow, title, accent }) {
           {formState === "submitting" ? "Sending..." : isLast ? (flow.submitLabel || "Submit") : "Continue →"}
         </button>
       </div>
+    </>
+  );
+
+  return (
+    <Shell
+      eyebrow={eyebrow}
+      title={title}
+      accent={accent}
+      layout={layout}
+      flowIntro={flow.intro}
+    >
+      {formState === "success" ? successNode : formNode}
     </Shell>
   );
 }
 
-/* A step is visible when it has no condition, or the referenced answer
-   matches. yesno answers are stored as "Yes"/"No" strings. */
 function stepVisible(step, answers) {
   if (!step.showIf || !step.showIf.fieldId) return true;
   return answers[step.showIf.fieldId] === step.showIf.equals;
+}
+
+/* ── Layout-aware Shell ─────────────────────────────────────────────────────
+   center  — narrow 660px card, gray bg
+   wide    — wider 880px card, gray bg
+   split   — 2-col: left sticky heading, right form card, gray bg
+   dark    — narrow card, dark bg, white outer text
+   ─────────────────────────────────────────────────────────────────────── */
+function Shell({ eyebrow, title, accent, layout = "center", flowIntro, children }) {
+  const isDark  = layout === "dark";
+  const isSplit = layout === "split";
+  const isWide  = layout === "wide";
+
+  const sectionPad = "clamp(3.5rem,7vw,6rem) clamp(1.5rem,5vw,4rem)";
+  const cardStyle = {
+    background: "#fff",
+    border: `1px solid ${LINE}`,
+    borderRadius: 10,
+    padding: "clamp(1.5rem,3.5vw,2.5rem)",
+  };
+
+  const headingBlock = (eyebrow || title) ? (
+    <div>
+      {eyebrow && (
+        <p style={{
+          fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
+          letterSpacing: "0.2em", textTransform: "uppercase",
+          color: isDark ? "rgba(255,255,255,0.55)" : INK_60,
+          marginBottom: "0.7rem",
+        }}>
+          {eyebrow}
+        </p>
+      )}
+      {title && (
+        <h2 style={{
+          fontFamily: FONT, fontWeight: 900,
+          fontSize: isSplit ? "clamp(2rem,4vw,3.2rem)" : "clamp(1.7rem,3.5vw,2.6rem)",
+          color: isDark ? "#fff" : INK,
+          lineHeight: 1.08, letterSpacing: "-0.02em",
+        }}>
+          {title}{" "}
+          {accent && (
+            <span className={isDark ? "accent-neon" : "accent-light"}>{accent}</span>
+          )}
+        </h2>
+      )}
+    </div>
+  ) : null;
+
+  /* ── Split layout ─────────────────────────────────────────────── */
+  if (isSplit) {
+    return (
+      <section className="surface-paper" style={{ padding: sectionPad }}>
+        <div
+          className="reg-split-grid"
+          style={{
+            maxWidth: 1100, margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "minmax(0,2fr) minmax(0,3fr)",
+            gap: "clamp(3rem,6vw,6rem)",
+            alignItems: "start",
+          }}
+        >
+          {/* Left: sticky heading */}
+          <div style={{ position: "sticky", top: 110 }}>
+            {headingBlock}
+            {flowIntro && (
+              <p style={{
+                fontFamily: FONT, fontSize: "0.95rem", color: INK_60,
+                lineHeight: 1.65, marginTop: "1.2rem",
+              }}>
+                {flowIntro}
+              </p>
+            )}
+          </div>
+          {/* Right: form card */}
+          <div style={cardStyle}>{children}</div>
+        </div>
+        <style>{`
+          @media (max-width: 860px) {
+            .reg-split-grid { grid-template-columns: 1fr !important; }
+            .reg-split-grid > div:first-child { position: relative !important; top: 0 !important; }
+          }
+        `}</style>
+      </section>
+    );
+  }
+
+  /* ── Dark layout ──────────────────────────────────────────────── */
+  if (isDark) {
+    return (
+      <section className="surface-dark" style={{ padding: sectionPad }}>
+        <div className="container" style={{ maxWidth: 660, margin: "0 auto" }}>
+          {headingBlock && (
+            <div style={{ marginBottom: "2rem" }}>{headingBlock}</div>
+          )}
+          <div style={cardStyle}>{children}</div>
+        </div>
+      </section>
+    );
+  }
+
+  /* ── Center (default) + Wide ──────────────────────────────────── */
+  const maxWidth = isWide ? 880 : 660;
+  return (
+    <section className="surface-paper" style={{ padding: sectionPad }}>
+      <div className="container" style={{ maxWidth, margin: "0 auto" }}>
+        {headingBlock && (
+          <div style={{ marginBottom: "2rem" }}>{headingBlock}</div>
+        )}
+        <div style={cardStyle}>{children}</div>
+      </div>
+    </section>
+  );
 }
 
 function FieldControl({ field, value, file, onChange, onFile }) {
@@ -314,7 +437,6 @@ function FieldControl({ field, value, file, onChange, onFile }) {
     );
   }
 
-  // text / email / phone
   const inputType = field.type === "email" ? "email" : field.type === "phone" ? "tel" : "text";
   return (
     <div style={wrap}>
@@ -322,32 +444,5 @@ function FieldControl({ field, value, file, onChange, onFile }) {
       <input id={id} type={inputType} value={value || ""} onChange={e => onChange(e.target.value)}
         aria-required={field.required || undefined} />
     </div>
-  );
-}
-
-/* Section chrome — light card on the page, consistent with IntakeForm pages. */
-function Shell({ eyebrow, title, accent, children }) {
-  return (
-    <section className="surface-paper" style={{ padding: "clamp(3.5rem,7vw,6rem) clamp(1.5rem,5vw,4rem)" }}>
-      <div className="container" style={{ maxWidth: 660, margin: "0 auto" }}>
-        {(eyebrow || title) && (
-          <div style={{ marginBottom: "2rem" }}>
-            {eyebrow && (
-              <p style={{ fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: INK_60, marginBottom: "0.7rem" }}>
-                {eyebrow}
-              </p>
-            )}
-            {title && (
-              <h2 style={{ fontFamily: FONT, fontWeight: 900, fontSize: "clamp(1.7rem,3.5vw,2.6rem)", color: INK, lineHeight: 1.08, letterSpacing: "-0.02em" }}>
-                {title} {accent && <span className="accent-light">{accent}</span>}
-              </h2>
-            )}
-          </div>
-        )}
-        <div style={{ background: "#fff", border: `1px solid ${LINE}`, borderRadius: 10, padding: "clamp(1.5rem,3.5vw,2.5rem)" }}>
-          {children}
-        </div>
-      </div>
-    </section>
   );
 }

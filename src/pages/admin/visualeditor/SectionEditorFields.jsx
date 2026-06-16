@@ -60,6 +60,15 @@ export default function SectionEditorFields({ typeId, form, set }) {
               Flows are built in Content → Flows. An inactive or unpicked flow renders nothing on the public page.
             </p>
           </div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Layout</label>
+            <select style={selectStyle} value={form.layout || "center"} onChange={e => set("layout", e.target.value)}>
+              <option value="center">Center — narrow card on gray (default)</option>
+              <option value="wide">Wide — wider card on gray</option>
+              <option value="split">Split — heading left, form right</option>
+              <option value="dark">Dark — narrow card on black background</option>
+            </select>
+          </div>
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title accent (italic/neon)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FONT, INK, INK_60, LINE } from "../../data/tokens.js";
+import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import { useTabData } from "./useTabData.js";
 
@@ -10,6 +10,10 @@ import { useTabData } from "./useTabData.js";
  * the public wizard branch. Drop the "Registration Flow" section onto any
  * Page Builder page and pick a flow to put it live. Submissions land in the
  * notification inbox (and Attio once ATTIO_API_KEY is configured).
+ *
+ * Includes an AI flow generator (POST /api/admin/flow-generator) that
+ * creates a complete flow from a plain-English description. Requires
+ * ANTHROPIC_API_KEY in Cloudflare environment variables.
  */
 
 const FIELD_TYPES = [
@@ -71,6 +75,12 @@ export default function FlowsTab({ onDirtyChange }) {
   });
   const [openFlow, setOpenFlow] = useState(null);
 
+  // AI generator state
+  const [showGen, setShowGen] = useState(false);
+  const [genPrompt, setGenPrompt] = useState("");
+  const [genPhase, setGenPhase] = useState("idle"); // idle | loading | error
+  const [genError, setGenError] = useState("");
+
   if (phase === "loading" && !data) return <CenteredMessage>Loading flows…</CenteredMessage>;
   if (phase === "error" && !data)   return <CenteredMessage>Couldn't load: {error}</CenteredMessage>;
   if (!data) return null;
@@ -89,24 +99,107 @@ export default function FlowsTab({ onDirtyChange }) {
     setOpenFlow(null);
   }
 
+  async function generateFlow() {
+    if (!genPrompt.trim()) return;
+    setGenPhase("loading");
+    setGenError("");
+    try {
+      const res = await fetch("/api/admin/flow-generator", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: genPrompt }),
+      });
+      const body = await res.json();
+      if (!res.ok || body.error) throw new Error(body.error || "Unknown error");
+      const newFlow = sanitizeFlow({ ...body.flow, active: false });
+      const newFlows = [...flows, newFlow];
+      setFlows(newFlows);
+      setOpenFlow(newFlows.length - 1);
+      setShowGen(false);
+      setGenPrompt("");
+      setGenPhase("idle");
+    } catch (err) {
+      setGenError(err.message || "Something went wrong.");
+      setGenPhase("error");
+    }
+  }
+
   return (
     <div style={{ fontFamily: FONT }}>
+
+      {/* Header bar */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", flexWrap: "wrap", gap: 8 }}>
         <p style={{ fontSize: "0.85rem", color: INK_60, maxWidth: 560 }}>
           Multi-step registration wizards for landing pages. Build the flow here, then add a
           <strong> Registration Flow</strong> section to a page in the Page Builder and pick it.
         </p>
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
           {lastSavedAt && <span style={{ fontSize: "0.75rem", color: INK_60 }}>Saved {formatTime(lastSavedAt)}</span>}
+          <button style={btnStyle} onClick={() => { setShowGen(g => !g); setGenPhase("idle"); setGenError(""); }}>
+            {showGen ? "Cancel" : "✦ Generate with AI"}
+          </button>
           <button style={btnStyle} onClick={addFlow}>+ New flow</button>
           <button style={{ ...btnPrimaryStyle, opacity: dirty ? 1 : 0.5 }} disabled={!dirty || phase === "saving"} onClick={save}>
             {phase === "saving" ? "Saving…" : "Save all"}
           </button>
         </div>
       </div>
-      {error && data && <ErrorBanner message={error} />}
 
-      {flows.length === 0 && <CenteredMessage>No flows yet — create one.</CenteredMessage>}
+      {/* AI generator panel */}
+      {showGen && (
+        <div style={{
+          border: `1.5px solid ${NEON}`,
+          borderRadius: 8,
+          padding: "1.1rem 1.2rem",
+          background: "#FAFFF0",
+          marginBottom: "1.2rem",
+        }}>
+          <p style={{ fontSize: "0.82rem", fontWeight: 700, color: INK, marginBottom: "0.25rem" }}>
+            ✦ Generate a flow with AI
+          </p>
+          <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.75rem", lineHeight: 1.6 }}>
+            Describe what you want to collect and who the registrant is. The AI will draft steps, fields, and branching logic — you review and save.
+          </p>
+          <textarea
+            style={{
+              ...inputStyle,
+              minHeight: 90,
+              marginBottom: "0.6rem",
+              fontSize: "0.9rem",
+              lineHeight: 1.6,
+            }}
+            placeholder="e.g. "3-step intake for crypto claim holders — find out which exchange, claim size range, whether they've already filed, then collect contact info. Branch to an extra step about legal representation if the claim is over $50k.""
+            value={genPrompt}
+            onChange={e => setGenPrompt(e.target.value)}
+            onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) generateFlow(); }}
+          />
+          {genError && (
+            <p style={{ color: "#C03030", fontSize: "0.82rem", marginBottom: "0.5rem" }}>
+              {genError}
+            </p>
+          )}
+          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            <button
+              style={{
+                ...btnPrimaryStyle,
+                opacity: genPhase === "loading" || !genPrompt.trim() ? 0.55 : 1,
+                cursor: genPhase === "loading" || !genPrompt.trim() ? "default" : "pointer",
+              }}
+              disabled={genPhase === "loading" || !genPrompt.trim()}
+              onClick={generateFlow}
+            >
+              {genPhase === "loading" ? "Generating…" : "Generate flow"}
+            </button>
+            <span style={{ fontSize: "0.75rem", color: INK_60 }}>⌘↵ to generate</span>
+            {genPhase === "loading" && (
+              <span style={{ fontSize: "0.78rem", color: INK_60 }}>Calling Claude — usually 5–10 seconds…</span>
+            )}
+          </div>
+        </div>
+      )}
+
+      {error && data && <ErrorBanner message={error} />}
+      {flows.length === 0 && !showGen && <CenteredMessage>No flows yet — create one or generate with AI.</CenteredMessage>}
 
       {flows.map((flow, i) => (
         <FlowCard key={i} flow={flow} open={openFlow === i}
@@ -124,7 +217,6 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
   const label = { display: "block", fontSize: "0.72rem", color: INK_60, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 3 };
   const group = { marginBottom: "0.8rem" };
 
-  /* All choice-like fields from earlier steps — legal showIf targets. */
   function conditionTargets(stepIndex) {
     const out = [];
     flow.steps.slice(0, stepIndex).forEach(s =>
@@ -164,7 +256,7 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
         <span style={{
           fontSize: "0.7rem", fontWeight: 700, padding: "0.2rem 0.6rem", borderRadius: 4,
           background: flow.active ? "#E7F7E2" : "#F3F4F6", color: flow.active ? "#2D8E47" : INK_60,
-        }}>{flow.active ? "ACTIVE" : "INACTIVE"}</span>
+        }}>{flow.active ? "ACTIVE" : "DRAFT"}</span>
         <span style={{ color: INK_60 }}>{open ? "▾" : "▸"}</span>
       </div>
 
@@ -243,6 +335,13 @@ function StepCard({ step, index, total, conditionTargets, onChange, onRemove, on
     if (step.fields.length === 1) return;
     onChange({ fields: step.fields.filter((_, idx) => idx !== k) });
   };
+  function moveField(k, dir) {
+    const next = [...step.fields];
+    const t = k + dir;
+    if (t < 0 || t >= next.length) return;
+    [next[k], next[t]] = [next[t], next[k]];
+    onChange({ fields: next });
+  }
 
   return (
     <div style={{ border: `1px solid ${LINE}`, borderRadius: 6, padding: "0.8rem", marginBottom: "0.7rem", background: "#F9FAFB" }}>
@@ -285,8 +384,11 @@ function StepCard({ step, index, total, conditionTargets, onChange, onRemove, on
 
       {(step.fields || []).map((field, k) => (
         <FieldRow key={k} field={field}
+          index={k}
+          total={step.fields.length}
           onChange={patch => setField(k, patch)}
           onRemove={() => removeField(k)}
+          onMove={dir => moveField(k, dir)}
           removable={step.fields.length > 1} />
       ))}
       <button style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.35rem 0.7rem" }}
@@ -295,11 +397,11 @@ function StepCard({ step, index, total, conditionTargets, onChange, onRemove, on
   );
 }
 
-function FieldRow({ field, onChange, onRemove, removable }) {
+function FieldRow({ field, index, total, onChange, onRemove, onMove, removable }) {
   const hasOptions = field.type === "select" || field.type === "choice";
   return (
     <div style={{ border: `1px solid ${LINE}`, borderRadius: 5, padding: "0.6rem", marginBottom: "0.55rem", background: "#fff" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr auto auto", gap: 8, alignItems: "center" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr auto auto auto auto", gap: 8, alignItems: "center" }}>
         <input style={inputStyle} placeholder="Question / label" value={field.label}
           onChange={e => onChange({ label: e.target.value, id: field.id || slugify(e.target.value).replace(/-/g, "_") })} />
         <select style={selectStyle} value={field.type} onChange={e => onChange({ type: e.target.value })}>
@@ -307,8 +409,10 @@ function FieldRow({ field, onChange, onRemove, removable }) {
         </select>
         <label style={{ display: "flex", alignItems: "center", gap: 5, fontSize: "0.78rem", color: INK_60, cursor: "pointer", whiteSpace: "nowrap" }}>
           <input type="checkbox" checked={field.required} onChange={e => onChange({ required: e.target.checked })} />
-          Required
+          Req
         </label>
+        <button style={iconBtnStyle} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
+        <button style={iconBtnStyle} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
         <button style={{ ...iconBtnStyle, color: "#C03030", visibility: removable ? "visible" : "hidden" }} title="Delete field" onClick={onRemove}>✕</button>
       </div>
       {hasOptions && (

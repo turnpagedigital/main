@@ -694,6 +694,7 @@
       "allowMultiple": false,
       "defaultContent": {
         "flowId": "",
+        "layout": "center",
         "eyebrow": "Register",
         "title": "Start your registration",
         "accent": ""
