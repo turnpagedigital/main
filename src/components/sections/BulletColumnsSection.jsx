@@ -40,7 +40,7 @@ export default function BulletColumnsSection({ sectionConfig }) {
         ? sectionBackground(backgroundImage, imageFilter, imageFilterStrength)
         : s.bg,
       color: s.ink,
-      padding: "clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem)",
+      padding: "clamp(3.5rem, 7vw, 6.5rem) clamp(1.5rem, 5vw, 4rem)",
       position: "relative",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
@@ -56,7 +56,7 @@ export default function BulletColumnsSection({ sectionConfig }) {
         {title && (
           <h2 style={{
             fontFamily: FONT, fontWeight: 800,
-            fontSize: "clamp(1.9rem, 4vw, 3.2rem)",
+            fontSize: "clamp(1.7rem, 3.5vw, 2.8rem)",
             lineHeight: 1.05, letterSpacing: "-0.03em",
             color: s.ink, margin: "0 0 clamp(2.5rem, 5vw, 4rem)",
           }}>

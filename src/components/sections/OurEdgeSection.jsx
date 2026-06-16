@@ -21,7 +21,7 @@ export default function OurEdgeSection({ sectionConfig }) {
   const borderColor = isLightGray ? INK : INK;
 
   return (
-    <section style={{ background: bgColor, padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)" }}>
+    <section style={{ background: bgColor, padding: "clamp(4rem, 10vw, 10rem) clamp(1.5rem, 5vw, 4rem)" }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
         <div className="section-split" style={{ alignItems: "end", marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
           <div>
@@ -34,7 +34,7 @@ export default function OurEdgeSection({ sectionConfig }) {
             </p>
             <h2 style={{
               fontFamily: FONT, fontWeight: 800,
-              fontSize: "clamp(2rem, 4.5vw, 4rem)",
+              fontSize: "clamp(1.8rem, 3.8vw, 3.4rem)",
               lineHeight: 1.02, letterSpacing: "-0.035em", color: INK,
             }}>
               {title}<br />

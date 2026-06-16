@@ -21,8 +21,8 @@ export default function Hero({
       minHeight: isFull ? "calc(100vh - 88px)" : isTall ? "clamp(520px, 70vh, 900px)" : undefined,
       display: "flex", flexDirection: "column", justifyContent: "flex-end",
       padding: isTall || isFull
-        ? "clamp(4rem,9vw,7rem) clamp(1.5rem,5vw,4rem) clamp(4.5rem,8vw,7rem)"
-        : "clamp(3.5rem,7vw,6rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem)",
+        ? "clamp(3rem,7.5vw,6.5rem) clamp(1.5rem,5vw,4rem) clamp(3.5rem,7vw,6.5rem)"
+        : "clamp(3rem,6vw,5.5rem) clamp(1.5rem,5vw,4rem) clamp(2.5rem,5.5vw,5rem)",
       background: "#000",
     }}>
       {/* BG image */}
@@ -98,7 +98,7 @@ export default function Hero({
           </p>
         )}
         <h1 className="hero-title-xl" style={{
-          fontFamily: FONT, fontWeight: 900, fontSize: "clamp(2rem,4.8vw,3.6rem)",
+          fontFamily: FONT, fontWeight: 900, fontSize: "clamp(1.8rem,4vw,3.2rem)",
           lineHeight: 1.06, letterSpacing: "-0.02em", color: "#fff",
           marginBottom: "1.2rem",
         }}>

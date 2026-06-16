@@ -8,7 +8,7 @@ export default function BioSection() {
   return (
     <section id="team" style={{
       background: "#F4F5F7",
-      padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
+      padding: "clamp(4rem, 10vw, 10rem) clamp(1.5rem, 5vw, 4rem)",
       borderTop: `1px solid ${LINE}`,
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
@@ -21,7 +21,7 @@ export default function BioSection() {
         </p>
         <h2 style={{
           fontFamily: FONT, fontWeight: 800,
-          fontSize: "clamp(2.4rem, 6vw, 5rem)",
+          fontSize: "clamp(2rem, 5vw, 4.4rem)",
           lineHeight: 0.98, letterSpacing: "-0.04em",
           color: INK, marginBottom: "clamp(3rem,6vw,5rem)",
         }}>

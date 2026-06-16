@@ -45,7 +45,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
       background: backgroundImage
         ? sectionBackground(backgroundImage, imageFilter, imageFilterStrength)
         : sectionBg,
-      padding: "clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem)",
+      padding: "clamp(3.5rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem)",
       position: "relative",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
@@ -67,7 +67,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
             {title && (
               <h2 style={{
                 fontFamily: FONT, fontWeight: 800,
-                fontSize: "clamp(2rem, 4.5vw, 4rem)",
+                fontSize: "clamp(1.8rem, 3.8vw, 3.4rem)",
                 lineHeight: 1.02, letterSpacing: "-0.035em",
                 color: titleColor, margin: 0,
               }}>

@@ -127,7 +127,7 @@ button:focus-visible, a:focus-visible {
 .reveal-hidden { opacity:0; transform:translateY(20px); }
 .reveal-visible { opacity:1; transform:translateY(0); transition: opacity 0.8s ease, transform 0.8s ease; }
 
-.section-pad { padding: clamp(3rem,7vw,6rem) clamp(1.5rem,5vw,4rem); }
+.section-pad { padding: clamp(2.5rem,6vw,6rem) clamp(1.5rem,5vw,4rem); }
 .section-pad-tight { padding: clamp(2rem,5vw,4rem) clamp(1.5rem,5vw,4rem); }
 .container-narrow { max-width: 760px; margin: 0 auto; }
 .container { max-width: 1180px; margin: 0 auto; }
@@ -181,7 +181,7 @@ button:focus-visible, a:focus-visible {
 /* Section headings */
 .h-section {
   font-family: ${FONT}; font-weight: 800;
-  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
   line-height: 1.15; letter-spacing: -0.02em;
   color: ${INK};
 }
@@ -279,7 +279,7 @@ button:focus-visible, a:focus-visible {
 }
 .stat-strip .stat-value {
   font-family: ${FONT}; font-weight: 900;
-  font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1;
+  font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1;
   letter-spacing: -0.02em; color: ${INK}; margin-bottom: 0.45rem;
 }
 .stat-strip .stat-label {
@@ -311,7 +311,7 @@ button:focus-visible, a:focus-visible {
 }
 .stat-strip-dark .stat-value {
   font-family: ${FONT}; font-weight: 900;
-  font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1;
+  font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1;
   letter-spacing: -0.02em; color: ${NEON}; margin-bottom: 0.45rem;
 }
 .stat-strip-dark .stat-label {

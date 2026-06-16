@@ -49,7 +49,7 @@ export default function RichTextSection({ sectionConfig }) {
   return (
     <section style={{
       background: theme.bg,
-      padding: "clamp(3.5rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem)",
+      padding: "clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)",
       borderTop: theme.border === "none" ? "none" : `1px solid ${theme.border}`,
     }}>
       <div style={{

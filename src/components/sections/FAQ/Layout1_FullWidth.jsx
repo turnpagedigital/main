@@ -14,7 +14,7 @@ export default function FAQLayout1FullWidth({ faqs, title = "Your questions,", a
   return (
     <section style={{
       background: theme.background,
-      padding: "clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem)",
+      padding: "clamp(3.5rem, 8vw, 8rem) clamp(1.5rem, 5vw, 4rem)",
       borderTop: `1px solid ${theme.border}`,
     }}>
       <div style={{ maxWidth: 1080, margin: "0 auto" }}>
@@ -27,7 +27,7 @@ export default function FAQLayout1FullWidth({ faqs, title = "Your questions,", a
         </p>
         <h2 style={{
           fontFamily: FONT, fontWeight: 800,
-          fontSize: "clamp(2.2rem, 5.5vw, 4.5rem)",
+          fontSize: "clamp(1.9rem, 4.5vw, 3.8rem)",
           lineHeight: 1.02, letterSpacing: "-0.035em",
           color: theme.text, marginBottom: "clamp(2.5rem, 5vw, 4rem)", maxWidth: 880,
         }}>

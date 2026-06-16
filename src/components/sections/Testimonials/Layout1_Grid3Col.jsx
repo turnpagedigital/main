@@ -20,7 +20,7 @@ export default function TestimonialsLayout1Grid3Col({
   const theme = getSectionTheme("testimonials", colorScheme, "light");
 
   return (
-    <section style={{ background: theme.background, padding: "clamp(5rem,10vw,9rem) clamp(1.5rem,5vw,4rem)" }}>
+    <section style={{ background: theme.background, padding: "clamp(3.5rem,8vw,8rem) clamp(1.5rem,5vw,4rem)" }}>
       <div className="container">
         <SectionHeader eyebrow={eyebrow} title={title} accent={accent} theme={theme.headerTheme} />
 

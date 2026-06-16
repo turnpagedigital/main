@@ -12,7 +12,7 @@ export default function SituationsSection() {
   return (
     <section id="situations" style={{
       background: "#FFFFFF",
-      padding: "clamp(5rem, 12vw, 11rem) clamp(1.5rem, 5vw, 4rem)",
+      padding: "clamp(4rem, 10vw, 10rem) clamp(1.5rem, 5vw, 4rem)",
     }}>
       <div style={{ maxWidth: 1440, margin: "0 auto" }}>
         <div style={{
@@ -32,7 +32,7 @@ export default function SituationsSection() {
             </p>
             <h2 style={{
               fontFamily: FONT, fontWeight: 800,
-              fontSize: "clamp(2rem, 4.5vw, 4rem)",
+              fontSize: "clamp(1.8rem, 3.8vw, 3.4rem)",
               lineHeight: 1.02, letterSpacing: "-0.035em", color: INK,
             }}>
               The toughest claims<br/>
