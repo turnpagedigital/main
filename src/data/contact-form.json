@@ -103,16 +103,14 @@
       "label": "Telegram",
       "type": "text",
       "required": false,
-      "halfWidth": true,
-      "placeholder": "@username"
+      "halfWidth": true
     },
     {
       "name": "whatsapp",
       "label": "WhatsApp",
       "type": "tel",
       "required": false,
-      "halfWidth": true,
-      "placeholder": "+1 234 567 8900"
+      "halfWidth": true
     },
     {
       "name": "message",
