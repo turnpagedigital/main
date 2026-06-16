@@ -540,10 +540,35 @@ export default function SectionEditorFields({ typeId, form, set }) {
       {/* ── Contact Form ── */}
       {typeId === "contact-form" && (
         <>
-          <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.9rem", lineHeight: 1.6 }}>
-            Contact info (email, WhatsApp, Telegram, sidebar text) is managed in{" "}
-            <strong>Content → Contact Form</strong>.
-          </p>
+          {/* Contact info — inline overrides */}
+          <div style={{ borderBottom: `1px solid ${LINE}`, marginBottom: "0.9rem", paddingBottom: "0.9rem" }}>
+            <p style={{ fontSize: "0.74rem", fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", color: INK_60, marginBottom: "0.6rem" }}>Contact Info</p>
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Email</label>
+              <input style={inputStyle} value={form.email || ""} onChange={e => set("email", e.target.value)} placeholder="info@turnpagedigital.com" />
+            </div>
+            <div style={fieldGroup}>
+              <label style={labelStyle}>WhatsApp number</label>
+              <input style={inputStyle} value={form.whatsapp || ""} onChange={e => set("whatsapp", e.target.value)} placeholder="16468600068 (digits only)" />
+              <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>Digits only — no spaces, dashes, or +. Leave blank to hide.</p>
+            </div>
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Telegram</label>
+              <input style={inputStyle} value={form.telegram || ""} onChange={e => set("telegram", e.target.value)} placeholder="@yourhandle" />
+              <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>@handle or full t.me URL. Leave blank to hide.</p>
+            </div>
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Sidebar heading</label>
+              <input style={inputStyle} value={form.sidebarHeading || ""} onChange={e => set("sidebarHeading", e.target.value)} placeholder="Let's connect." />
+            </div>
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Sidebar intro</label>
+              <textarea style={{ ...inputStyle, minHeight: 64 }} value={form.sidebarIntro || ""} onChange={e => set("sidebarIntro", e.target.value)} placeholder="Talk to us for a quote or to discuss your specific situation." />
+            </div>
+            <p style={{ fontSize: "0.7rem", color: INK_60, lineHeight: 1.5 }}>
+              These override the global defaults in <strong>Content → Contact Form</strong>. Leave any field blank to use the global value.
+            </p>
+          </div>
 
           {/* Section background */}
           <div style={fieldGroup}>

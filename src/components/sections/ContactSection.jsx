@@ -117,9 +117,13 @@ export default function ContactSection({ sectionConfig }) {
   const defaultSubject = SOURCE_SUBJECTS[source] || "";
 
   const cd = contactData;
-  // WhatsApp: prefer new whatsapp field, fall back to social_links for backward compat
-  const waPhone = cd.whatsapp || "";
-  const tgRaw = cd.telegram || "";
+  // Section content overrides take priority over global contact-form.json values
+  const email = c.email || cd.email || "";
+  const sidebarHeading = c.sidebarHeading || cd.sidebarHeading || "Let's connect.";
+  const sidebarIntro = c.sidebarIntro || cd.sidebarIntro || "";
+  // WhatsApp: section override → global field → social_links fallback
+  const waPhone = c.whatsapp || cd.whatsapp || "";
+  const tgRaw = c.telegram || cd.telegram || "";
   const waLinkFallback = Array.isArray(cd.social_links) ? cd.social_links.find(l => l.url?.includes("wa.me"))?.url || "" : "";
   const tgLinkFallback = Array.isArray(cd.social_links) ? cd.social_links.find(l => l.url?.includes("t.me"))?.url || "" : "";
   const waUrl = waPhone ? `https://wa.me/${waPhone.replace(/\D/g, "")}` : waLinkFallback;
@@ -174,29 +178,29 @@ export default function ContactSection({ sectionConfig }) {
             lineHeight: 1.1, letterSpacing: "-0.025em", color: sc.heading,
             marginBottom: "1rem",
           }}>
-            {cd.sidebarHeading || "Let's talk."}
+            {sidebarHeading}
           </h2>
           <p style={{
             fontFamily: FONT, fontSize: "1rem", color: sc.body,
             lineHeight: 1.65, marginBottom: "2rem",
           }}>
-            {cd.sidebarIntro || "Every inquiry is read by a partner. NDA available on request."}
+            {sidebarIntro || "Every inquiry is read by a partner. NDA available on request."}
           </p>
 
           {/* Contact info — flat divider list */}
           <div style={{ borderTop: `1px solid ${sc.divider}` }}>
-            {cd.email && (
+            {email && (
               <div style={{ padding: "1rem 0", borderBottom: `1px solid ${sc.divider}` }}>
                 <p style={{
                   fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
                   letterSpacing: "0.18em", textTransform: "uppercase",
                   color: sc.label, marginBottom: "0.35rem",
                 }}>Email</p>
-                <a href={`mailto:${cd.email}`} style={{
+                <a href={`mailto:${email}`} style={{
                   fontFamily: FONT, fontSize: "0.98rem", fontWeight: 600,
                   color: sc.emailText, borderBottom: `2px solid ${sc.emailUnderline}`, paddingBottom: 1,
                 }}>
-                  {cd.email}
+                  {email}
                 </a>
               </div>
             )}
