@@ -1385,7 +1385,8 @@
           "type": "contact-form",
           "visible": true,
           "content": {
-            "defaultSource": ""
+            "defaultSource": "",
+            "variant": "image"
           }
         }
       ]
