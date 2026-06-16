@@ -57,7 +57,11 @@
           "type": "situations",
           "visible": true,
           "content": {
-            "_bookmark": "what-we-cover"
+            "_bookmark": "what-we-cover",
+            "eyebrow": "We Cover",
+            "title": "The toughest claims",
+            "titleAccent": "on the docket.",
+            "body": "From chapter 11 claims to government refunds and class action settlements to locked digital assets we've got it covered — If there's a path to liquidity, we're on it."
           }
         },
         {
@@ -96,7 +100,7 @@
           "visible": true,
           "content": {
             "_bookmark": "experience",
-            "title": "A track record across the largest claims trades.",
+            "title": "A track record across the largest trades.",
             "body": "From rapid settlement to complex advisory roles, we are proud of our ability to deliver exceptional value for our clients and counterparties.",
             "eyebrow": "Relevant experience"
           }
@@ -113,18 +117,18 @@
             "points": [
               {
                 "id": "edge-1",
-                "h": "Lightening Speed",
+                "h": "Lightning Speed",
                 "b": "If we can't fund it directly, we'll quickly pair you with the right counterparty that can. With 500+ institutions on speed dial, our capital partner network ensures broad coverage across claim sizes, geographies and asset types. "
               },
               {
                 "id": "edge-2",
-                "h": "Next Level Security",
+                "h": "Serious About Security",
                 "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their fair market value. "
               },
               {
                 "id": "edge-3",
                 "h": "Relationships First",
-                "b": "A collaborative, relationship-focused approach helps us drives better outcomes. We structure transactions to meet your needs today and, when the transaction demands, properly align party incentives for the long haul. "
+                "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul.  "
               }
             ],
             "_bookmark": "Our-edge"
@@ -152,9 +156,9 @@
           "layout": "layout-1-getquote",
           "colorScheme": "dark",
           "content": {
-            "eyebrow": "Get compensated",
-            "title": "Ready to learn more?",
-            "titleAccent": "Talk to us.",
+            "eyebrow": "READY TO GET PAID?",
+            "title": "Talk to",
+            "titleAccent": "our team.",
             "body": "Contact us to discuss your funding needs. Private, fast and secure.",
             "cta": {
               "label": "Get in Touch",
@@ -310,28 +314,27 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "Our Edge",
-            "title": "What set us",
-            "titleAccent": "apart",
-            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process. ",
+            "title": "Built to move fast",
+            "titleAccent": "when it counts.",
+            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
             "points": [
               {
                 "id": "edge-1",
-                "h": "Practically unlimited liquidity",
-                "b": "We partner with major asset managers \u2014 over 500 institutions on speed dial."
+                "h": "Lightning Speed",
+                "b": "If we can't fund it directly, we'll quickly pair you with the right counterparty that can. With 500+ institutions on speed dial, our capital partner network ensures broad coverage across claim sizes, geographies and asset types."
               },
               {
                 "id": "edge-2",
-                "h": "Lightning-fast settlement",
-                "b": "Automation accelerates diligence and closing in the largest volume cases."
+                "h": "Serious About Security",
+                "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their fair market value."
               },
               {
                 "id": "edge-3",
-                "h": "Relationship builders, not just dealmakers",
-                "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
+                "h": "Relationships First",
+                "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul."
               }
             ],
-            "colorScheme": "white",
-            "_bookmark": "our-edge"
+            "_bookmark": "Our-edge"
           }
         },
         {
@@ -588,24 +591,25 @@
             "eyebrow": "Our Edge",
             "title": "Built to move fast",
             "titleAccent": "when it counts.",
-            "intro": "Three structural advantages let us close trades that others can't: scale on the buy side, automation in diligence, and counterparty relationships built over a decade in the market.",
+            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
             "points": [
               {
                 "id": "edge-1",
-                "h": "Practically ulimited liquidity",
-                "b": "With 500+ institutions on speed dial, our network of capital partners ensures broad coverage across claim sizes, geographies and asset types. If we can't fund your needs directly, we can quickly pair you with the right partner."
+                "h": "Lightning Speed",
+                "b": "If we can't fund it directly, we'll quickly pair you with the right counterparty that can. With 500+ institutions on speed dial, our capital partner network ensures broad coverage across claim sizes, geographies and asset types."
               },
               {
                 "id": "edge-2",
-                "h": "Lightning-fast settlement",
-                "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their market value. "
+                "h": "Serious About Security",
+                "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their fair market value."
               },
               {
                 "id": "edge-3",
-                "h": "Relationship builders, not just dealmakers",
-                "b": "We go the extra mile to understand your business needs so we can structure the right deal for our clients."
+                "h": "Relationships First",
+                "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul."
               }
-            ]
+            ],
+            "_bookmark": "Our-edge"
           }
         },
         {
