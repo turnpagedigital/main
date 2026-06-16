@@ -1387,8 +1387,7 @@
           "content": {
             "defaultSource": "",
             "variant": "white",
-            "backgroundImage": "/bg-paper.jpg",
-            "formCardStyle": "white"
+            "backgroundImage": "/bg-paper.jpg"
           }
         }
       ]
