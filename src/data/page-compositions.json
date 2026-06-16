@@ -1370,14 +1370,15 @@
           "type": "hero",
           "visible": true,
           "content": {
-            "eyebrow": "Questions?",
-            "title": "Frequently Asked",
-            "accentTitle": "Answers.",
+            "eyebrow": "FAQ",
+            "title": "Your questions,",
+            "accentTitle": "answered.",
             "subtitle": "",
             "size": "short",
-            "mediaType": "default",
+            "mediaType": "image",
             "ctaPrimary": null,
-            "ctaSecondary": null
+            "ctaSecondary": null,
+            "image": "/bg-paper.jpg"
           }
         }
       ]
