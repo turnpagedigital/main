@@ -82,7 +82,8 @@
                 "title": "Direct Acquisition",
                 "body": "Our dedicated capital partners enable us to offer competitive pricing and an efficient closing process in the largest cases.",
                 "cardStyle": "",
-                "subtitle": "Balance sheet capital"
+                "subtitle": "Balance sheet capital",
+                "icon": ""
               },
               {
                 "id": "card-1781609944171",
@@ -112,7 +113,8 @@
             "cardStyle": "light-glass",
             "cardBlur": 12,
             "cardRadius": "rounded",
-            "imageFilter": "light"
+            "imageFilter": "light",
+            "cardBrightness": 120
           }
         },
         {
