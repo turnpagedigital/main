@@ -48,20 +48,17 @@ export default function BioSection() {
               />
             </div>
 
-            {/* Name + title row with social icons right-aligned */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", marginTop: "1.2rem" }}>
-              <div>
-                <p style={{ fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700, color: INK, letterSpacing: "0.01em" }}>
-                  Andrew Glantz
-                </p>
-                <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK_60, marginTop: "0.2rem" }}>
-                  Founder & Managing Partner
-                </p>
-              </div>
-              {Array.isArray(bioData.social_links) && bioData.social_links.length > 0 && (
+            <p style={{ fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700, color: INK, marginTop: "1.2rem", letterSpacing: "0.01em" }}>
+              Andrew Glantz
+            </p>
+            <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK_60, marginTop: "0.2rem" }}>
+              Founder & Managing Partner
+            </p>
+            {Array.isArray(bioData.social_links) && bioData.social_links.length > 0 && (
+              <div style={{ marginTop: "0.85rem" }}>
                 <SocialLinks links={bioData.social_links} dark={false} size={20} gap="0.55rem" />
-              )}
-            </div>
+              </div>
+            )}
 
           </div>
 
