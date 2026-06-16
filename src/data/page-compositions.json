@@ -198,15 +198,15 @@
             "eyebrow": "Copyright Claims",
             "title": "Calling all creators.",
             "accentTitle": "Claim what's yours.",
-            "subtitle": "Open AI and Anthropic trained their models on YOUR WORK. \n\nWe help authors, publishers, artists, record labels and other copyright holders get smart about their rights and track class action compensation opportunities against generative AI companies.",
+            "subtitle": "Anthropic and Open AI trained its models on YOUR WORK. \n\nWe help authors, publishers, artists, record labels and other copyright holders get smart about their rights and track compensation opportunities against generative AI companies.",
             "size": "tall",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
-              "label": "Talk to Us",
+              "label": "Claim My Funds",
               "href": "/contact?source=ai-copyright"
             },
             "ctaSecondary": {
-              "label": "Largest Cases",
+              "label": "Track the Cases",
               "href": "#cases-section"
             }
           }
@@ -215,14 +215,14 @@
           "id": "sec-aic-audience",
           "type": "audience-cards",
           "visible": true,
-          "layout": "list",
+          "layout": "grid-2col",
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "Who We Help",
             "title": "Writers. Publishers.",
             "accent": "Artists.",
             "colorScheme": "light-gray",
-            "layout": "list",
+            "layout": "grid-2col",
             "cards": [
               {
                 "id": "authors-writers",
@@ -250,16 +250,10 @@
               }
             ],
             "_bookmark": "who-we-help",
-            "backgroundImage": "",
-            "cardStyle": "standard"
-          }
-        },
-        {
-          "id": "sec-aic-damages",
-          "type": "damages",
-          "visible": true,
-          "content": {
-            "_spacingTop": "small"
+            "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
+            "cardStyle": "standard",
+            "imageFilter": "light",
+            "imageFilterStrength": 50
           }
         },
         {
@@ -301,6 +295,17 @@
           }
         },
         {
+          "id": "sec-1781587444053-lcuz",
+          "type": "registration-flow",
+          "visible": true,
+          "content": {
+            "flowId": "bartz-registration",
+            "eyebrow": "BARTZ v. ANTHROPIC",
+            "title": "Funding your claims",
+            "accent": "today."
+          }
+        },
+        {
           "id": "sec-aic-experience",
           "type": "experience",
           "visible": true,
@@ -336,6 +341,14 @@
               }
             ],
             "_bookmark": "Our-edge"
+          }
+        },
+        {
+          "id": "sec-aic-damages",
+          "type": "damages",
+          "visible": true,
+          "content": {
+            "_spacingTop": "small"
           }
         },
         {
