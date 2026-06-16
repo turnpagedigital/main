@@ -28,6 +28,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
   const colorScheme      = c.colorScheme || "dark";
   const cardStyle        = c.cardStyle || "standard";
   const cardRadius       = c.cardRadius || "rounded";
+  const cardBlur         = c.cardBlur != null && c.cardBlur !== "" ? Number(c.cardBlur) : undefined;
   const cardTitleColor   = c.cardTitleColor || "default";
   const backgroundImage  = c.backgroundImage || "";
   const imageFilter         = c.imageFilter || "dark";
@@ -99,6 +100,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
                 description={card.body}
                 radius={card.cardRadius || cardRadius}
                 variant={isDark ? "dark" : "light"}
+                blurAmount={cardBlur}
               />
             ))}
           </div>
@@ -108,7 +110,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className="service-grid">
             {cards.map(card => (
-              <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius}>
+              <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur}>
                 <CardInner card={card} titleColor={cardTitleColor === "neon" ? NEON : "var(--card-text-color)"} />
               </Card>
             ))}

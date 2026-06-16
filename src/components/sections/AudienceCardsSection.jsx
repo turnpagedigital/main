@@ -25,6 +25,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
   const colorScheme      = c.colorScheme || "light-gray";
   const cardStyle        = c.cardStyle || "standard";
   const cardRadius       = c.cardRadius || "rounded";
+  const cardBlur         = c.cardBlur != null && c.cardBlur !== "" ? Number(c.cardBlur) : undefined;
   const backgroundImage  = c.backgroundImage || "";
   const imageFilter         = c.imageFilter || "dark";
   const imageFilterStrength = c.imageFilterStrength ?? 30;
@@ -88,6 +89,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
                 subtitle={card.badge && card.badge.trim() ? card.badge : undefined}
                 radius={card.cardRadius || cardRadius}
                 variant={colorScheme === "dark" ? "dark" : "light"}
+                blurAmount={cardBlur}
               />
             ))}
           </div>
@@ -101,7 +103,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
               const { badge } = card;
               const hasBadge = badge && badge.trim().length > 0;
               return (
-                <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius}>
+                <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur}>
                   {hasBadge && (
                     <div style={{
                       display: "inline-block", fontFamily: FONT,

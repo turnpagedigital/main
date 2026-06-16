@@ -29,6 +29,7 @@ export default function LiquidGlassCard({
   icon,
   variant = "light",
   radius = "rounded",
+  blurAmount,
   className = "",
 }) {
   const isDark = variant === "dark";
@@ -95,7 +96,13 @@ export default function LiquidGlassCard({
         <div className="lg-drift" style={{ ...layer, zIndex: 0 }} />
 
         {/* 2 — lens center: light blur, boosted color */}
-        <div className="lg-frost" style={{ ...layer, zIndex: 1, background: colors.tint }} />
+        <div className="lg-frost" style={{
+          ...layer, zIndex: 1, background: colors.tint,
+          ...(blurAmount != null && blurAmount !== "" && {
+            backdropFilter: `blur(${Math.round(Number(blurAmount) * 0.45)}px) saturate(1.7) brightness(1.04)`,
+            WebkitBackdropFilter: `blur(${Math.round(Number(blurAmount) * 0.45)}px) saturate(1.7) brightness(1.04)`,
+          })
+        }} />
 
         {/* 3 — refractive edge ring (masked to the rim) */}
         <div
@@ -103,9 +110,7 @@ export default function LiquidGlassCard({
           style={{
             ...layer,
             zIndex: 2,
-            // Chromium upgrades to displacement; invalid elsewhere, so those
-            // browsers keep the .lg-bend frosted ring from the stylesheet
-            backdropFilter: `blur(5px) saturate(1.8) url(#${filterId})`,
+            backdropFilter: `blur(${(blurAmount != null && blurAmount !== "") ? Number(blurAmount) : 5}px) saturate(1.8) url(#${filterId})`,
           }}
         />
 

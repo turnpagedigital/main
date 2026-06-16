@@ -21,6 +21,31 @@ export const labelStyle = {
 };
 export const fieldGroup = { marginBottom: "0.9rem" };
 
+const BLUR_STYLES = new Set(["dark", "light-glass", "clear-glass", "neon-glass", "liquid-glass"]);
+
+function CardBlurField({ cardStyle, value, onChange }) {
+  if (!BLUR_STYLES.has(cardStyle)) return null;
+  const px = value !== "" && value != null ? Number(value) : "";
+  return (
+    <div style={{ marginBottom: "0.9rem" }}>
+      <label style={labelStyle}>Card blur{px !== "" ? ` — ${px}px` : " (style default)"}</label>
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <input
+          type="range" min={0} max={80} step={1}
+          value={px !== "" ? px : 20}
+          style={{ flex: 1, accentColor: NEON }}
+          onChange={e => onChange(Number(e.target.value))}
+        />
+        <button
+          style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }}
+          onClick={() => onChange("")}
+          title="Reset to style default"
+        >Reset</button>
+      </div>
+    </div>
+  );
+}
+
 export default function SectionEditorFields({ typeId, form, set }) {
   return (
     <>
@@ -310,6 +335,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               </select>
             </div>
           </div>
+          <CardBlurField cardStyle={form.cardStyle || "standard"} value={form.cardBlur ?? ""} onChange={v => set("cardBlur", v)} />
           <ImageField label="Background image" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
             <div><label style={labelStyle}>Image filter</label>
@@ -365,6 +391,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               </select>
             </div>
           </div>
+          <CardBlurField cardStyle={form.cardStyle || "standard"} value={form.cardBlur ?? ""} onChange={v => set("cardBlur", v)} />
           <ImageField label="Background image" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
             <div><label style={labelStyle}>Image filter</label>
@@ -429,6 +456,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               </select>
             </div>
           </div>
+          <CardBlurField cardStyle={form.cardStyle || "standard"} value={form.cardBlur ?? ""} onChange={v => set("cardBlur", v)} />
           <ImageField label="Background image" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
             <div><label style={labelStyle}>Image filter</label>

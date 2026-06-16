@@ -25,11 +25,17 @@ import { INK, INK_60, RADIUS_CARD, RADIUS_CARD_SQUARE } from "../data/tokens.js"
  *   isDarkMode?: boolean      — Adjust text colors for dark backgrounds (default: auto-detect)
  *   className?: string        — Additional CSS classes
  */
+function applyBlurOverride(backdropStr, blurPx) {
+  if (blurPx == null || blurPx === "" || !backdropStr) return backdropStr;
+  return backdropStr.replace(/blur\([\d.]+px\)/, `blur(${Number(blurPx)}px)`);
+}
+
 export default function Card({
   children,
   style = "white",
   radius = "rounded",
   isDarkMode,
+  blurAmount,
   className = "",
 }) {
   // Auto-detect if we need light text (for dark card styles)
@@ -112,7 +118,11 @@ export default function Card({
     },
   };
 
-  const config = styleConfigs[style] || styleConfigs.white;
+  const baseConfig = styleConfigs[style] || styleConfigs.white;
+  const config = {
+    ...baseConfig,
+    backdrop: applyBlurOverride(baseConfig.backdrop, blurAmount),
+  };
 
   // Context-aware text colors for dark backgrounds
   const textColor = needsLightText
