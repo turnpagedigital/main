@@ -184,7 +184,7 @@ export default function PropertyPanel({
             <SectionEditorFields typeId={selectedSection.type} form={form} set={set} />
 
             {/* Fallback for unrecognized types */}
-            {!["hero","home-hero","stats-band","our-edge","photo-break","cta-banner","bottom-cta","get-quote","cta","faq","testimonials","audience-cards","service-cards","comparison","how-it-works"].includes(selectedSection.type) && (
+            {!["hero","home-hero","stats-band","our-edge","photo-break","cta-banner","bottom-cta","get-quote","cta","faq","testimonials","audience-cards","service-cards","comparison","how-it-works","situations","experience","image-text","rich-text","registration-flow","process-flow","bullet-columns"].includes(selectedSection.type) && (
               <div>
                 <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.5rem" }}>Raw content (no custom editor for this type):</p>
                 <textarea

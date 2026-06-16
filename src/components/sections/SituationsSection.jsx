@@ -4,10 +4,18 @@ import homeContent from "../../data/home-content.json";
 
 const SITUATIONS = (homeContent.situations || []).filter(s => s.hidden !== true);
 
-/* Expandable situations list. Content managed in Content → Home Content. */
-export default function SituationsSection() {
+/* Expandable situations list. Content managed in Content → Home Content.
+   Header text (eyebrow, title, titleAccent, body) is overrideable via
+   sectionConfig.content in page-compositions.json. */
+export default function SituationsSection({ sectionConfig }) {
   const [openIdx, setOpenIdx] = useState(null);
   const toggle = idx => setOpenIdx(prev => prev === idx ? null : idx);
+
+  const c = (sectionConfig && sectionConfig.content) || {};
+  const eyebrow     = c.eyebrow     || "What we cover";
+  const title       = c.title       || "The toughest claims";
+  const titleAccent = c.titleAccent || "on the docket.";
+  const body        = c.body        || "We handle every kind of compensation claim — from class action settlements and Chapter 11 customer positions to refund rights and locked digital assets. Whatever the situation, if there's a path to liquidity, we've got it covered.";
 
   return (
     <section id="situations" style={{
@@ -28,22 +36,22 @@ export default function SituationsSection() {
               letterSpacing: "0.22em", textTransform: "uppercase",
               color: INK_60, marginBottom: "1.2rem",
             }}>
-              What we cover
+              {eyebrow}
             </p>
             <h2 style={{
               fontFamily: FONT, fontWeight: 800,
               fontSize: "clamp(1.8rem, 3.8vw, 3.4rem)",
               lineHeight: 1.02, letterSpacing: "-0.035em", color: INK,
             }}>
-              The toughest claims<br/>
-              <span className="accent-light">on the docket.</span>
+              {title}<br/>
+              <span className="accent-light">{titleAccent}</span>
             </h2>
           </div>
           <p style={{
             fontFamily: FONT, fontSize: "clamp(1.05rem, 1.4vw, 1.25rem)",
             color: INK_60, lineHeight: 1.6, maxWidth: 640,
           }}>
-            We handle every kind of compensation claim — from class action settlements and Chapter 11 customer positions to refund rights and locked digital assets. Whatever the situation, if there's a path to liquidity, we've got it covered.
+            {body}
           </p>
         </div>
 

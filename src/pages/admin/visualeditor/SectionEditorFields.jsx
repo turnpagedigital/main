@@ -465,6 +465,19 @@ export default function SectionEditorFields({ typeId, form, set }) {
         </>
       )}
 
+      {/* ── What We Cover (situations) ── */}
+      {typeId === "situations" && (
+        <>
+          <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.9rem" }}>
+            The expandable claim rows are managed in <strong>Content → Home Content</strong>. Edit the section header here.
+          </p>
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} placeholder="What we cover" /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} placeholder="The toughest claims" /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title accent (italic/neon)</label><input style={inputStyle} value={form.titleAccent || ""} onChange={e => set("titleAccent", e.target.value)} placeholder="on the docket." /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Body paragraph</label><textarea style={{ ...inputStyle, minHeight: 100 }} value={form.body || ""} onChange={e => set("body", e.target.value)} placeholder="We handle every kind of compensation claim…" /></div>
+        </>
+      )}
+
       {/* ── Bookmark (optional, all sections) ── */}
       <div style={{ marginTop: "1.2rem", marginBottom: "0.9rem" }}>
         <div style={fieldGroup}>
