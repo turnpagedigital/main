@@ -52,6 +52,21 @@
         "briefings",
         "contact"
       ]
+    },
+    {
+      "active": true,
+      "pill": "Hearing",
+      "text": "Next CIT closed conference regarding the CAPE portal on June 25, 2026",
+      "linkText": "See Order",
+      "href": "https://media.licdn.com/dms/document/media/v2/D561FAQEhE1XZzpCIjQ/feedshare-document-url-metadata-scrapper-pdf/B56Z7RG36WKsA8-/0/1781624701523?e=1782234000&v=beta&t=E_FsuQJCMsEU0Se_AdhNS_TS2vfjGuPPBzCQ83oI7_I",
+      "pages": [
+        "home",
+        "press",
+        "briefings",
+        "litigation-finance",
+        "contact",
+        "team"
+      ]
     }
   ]
 }
