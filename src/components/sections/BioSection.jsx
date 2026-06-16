@@ -47,15 +47,39 @@ export default function BioSection() {
                 style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }}
               />
             </div>
-            <p style={{ fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700, color: INK, marginTop: "1.2rem", letterSpacing: "0.01em" }}>
-              Andrew Glantz
-            </p>
-            <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK_60, marginTop: "0.2rem" }}>
-              Founder & Managing Partner
-            </p>
-            {Array.isArray(bioData.social_links) && bioData.social_links.length > 0 && (
-              <div style={{ marginTop: "0.85rem" }}>
+
+            {/* Name + title row with social icons right-aligned */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", marginTop: "1.2rem" }}>
+              <div>
+                <p style={{ fontFamily: FONT, fontSize: "0.92rem", fontWeight: 700, color: INK, letterSpacing: "0.01em" }}>
+                  Andrew Glantz
+                </p>
+                <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK_60, marginTop: "0.2rem" }}>
+                  Founder & Managing Partner
+                </p>
+              </div>
+              {Array.isArray(bioData.social_links) && bioData.social_links.length > 0 && (
                 <SocialLinks links={bioData.social_links} dark={false} size={20} gap="0.55rem" />
+              )}
+            </div>
+
+            {/* Media logos below the name row */}
+            {Array.isArray(bioData.media_logos) && bioData.media_logos.some(l => l.url) && (
+              <div style={{ marginTop: "1.8rem" }}>
+                <p style={{
+                  fontFamily: FONT, fontSize: "0.68rem", fontWeight: 600,
+                  letterSpacing: "0.2em", textTransform: "uppercase",
+                  color: "rgba(10,10,10,0.55)", marginBottom: "1.1rem",
+                }}>
+                  As seen in
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "clamp(1rem, 2.5vw, 1.8rem)" }}>
+                  {bioData.media_logos.filter(l => l.url).map((logo, i) => (
+                    <img key={i} src={logo.url} alt={logo.name || ""} loading="lazy"
+                      style={{ maxHeight: 24, height: "auto", maxWidth: 120, width: "auto", objectFit: "contain", filter: "grayscale(1)", opacity: 0.42, display: "block", flexShrink: 0 }}
+                    />
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -80,26 +104,6 @@ export default function BioSection() {
                 {para}
               </p>
             ))}
-            {Array.isArray(bioData.media_logos) && bioData.media_logos.some(l => l.url) && (
-              <div style={{ marginTop: "2.2rem" }}>
-                <p style={{
-                  fontFamily: FONT, fontSize: "0.68rem", fontWeight: 600,
-                  letterSpacing: "0.2em", textTransform: "uppercase",
-                  /* 0.4 alpha fails WCAG AA (≈3.9:1) at this size; 0.55 passes
-                     (≈4.9:1) with a near-invisible visual difference. */
-                  color: "rgba(10,10,10,0.55)", marginBottom: "1.2rem",
-                }}>
-                  As seen in
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "clamp(1.4rem, 3vw, 2.4rem)" }}>
-                  {bioData.media_logos.filter(l => l.url).map((logo, i) => (
-                    <img key={i} src={logo.url} alt={logo.name || ""} loading="lazy"
-                      style={{ maxHeight: 30, height: "auto", maxWidth: 160, width: "auto", objectFit: "contain", filter: "grayscale(1)", opacity: 0.42, display: "block", flexShrink: 0 }}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
 
