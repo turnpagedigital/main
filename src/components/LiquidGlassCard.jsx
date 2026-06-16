@@ -67,7 +67,7 @@ export default function LiquidGlassCard({
   };
 
   return (
-    <div className={`liquid-glass-card ${variantClass} ${className}`} style={{ position: "relative" }}>
+    <div className={`liquid-glass-card ${variantClass} ${className}`} style={{ position: "relative", display: "flex", flexDirection: "column", minHeight: "clamp(180px, 18vw, 280px)" }}>
       {/* Displacement filter for the refractive edge ring (Chromium).
           Browsers that can't use SVG filters in backdrop-filter ignore the
           inline declaration and keep the frosted fallback from CSS. */}
@@ -90,6 +90,9 @@ export default function LiquidGlassCard({
           padding: "clamp(1.8rem, 3vw, 2.5rem)",
           transition: "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease",
           boxShadow: `0 2px 8px ${colors.shadow}, 0 14px 34px ${colors.shadow}`,
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         {/* 1 — internal liquid drift (life on flat backgrounds) */}

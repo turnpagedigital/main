@@ -199,6 +199,8 @@ function ServiceCard({ card, dark }) {
       border: `1px solid ${cardBorder}`,
       padding: "clamp(1.5rem, 2.5vw, 2.2rem)",
       position: "relative", overflow: "hidden",
+      display: "flex", flexDirection: "column",
+      minHeight: "clamp(180px, 18vw, 280px)",
     }}>
       <div style={{ position: "relative", zIndex: 1 }}>
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem", marginBottom: "0.85rem" }}>

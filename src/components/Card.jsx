@@ -153,6 +153,9 @@ export default function Card({
         willChange: "transform, box-shadow",
         boxShadow: config.shadow,
         color: textColor,
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "clamp(180px, 18vw, 280px)",
       }}
     >
       {/* Provide color context via CSS variables for children */}

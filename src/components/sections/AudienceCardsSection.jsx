@@ -169,6 +169,8 @@ function AudienceCard({ card, schemeDark }) {
       padding: "clamp(1.5rem, 2.5vw, 2.2rem)",
       position: "relative",
       overflow: "hidden",
+      display: "flex", flexDirection: "column",
+      minHeight: "clamp(180px, 18vw, 280px)",
     }}>
       {hasBadge && (
         <div style={{
