@@ -72,7 +72,7 @@ export default function HomeHeroSection({ sectionConfig }) {
       <div style={{ position: "relative", zIndex: 10, maxWidth: 1440, width: "100%", margin: "0 auto", paddingBottom: "clamp(3rem,6vh,5rem)" }}>
         <h1 style={{
           fontFamily: FONT, fontWeight: 900,
-          fontSize: "clamp(2.2rem, 7vw, 7rem)",
+          fontSize: "clamp(2.6rem, 7vw, 7rem)",
           lineHeight: 0.96, letterSpacing: "-0.04em",
           color: "#FFFFFF", marginBottom: "1.8rem",
           maxWidth: 1200,

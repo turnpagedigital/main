@@ -26,7 +26,7 @@ export default function StatsBandSection({ sectionConfig }) {
           borderLeft: "1px solid rgba(255,255,255,0.08)",
         }} className="stats-band-grid">
           {stats.map((it, i) => (
-            <div key={i} style={{
+            <div key={i} className="stat-band-item" style={{
               padding: "clamp(2rem,4vw,3.5rem) clamp(1.5rem,3vw,2.5rem)",
               borderRight: "1px solid rgba(255,255,255,0.08)",
             }}>
@@ -57,7 +57,17 @@ export default function StatsBandSection({ sectionConfig }) {
         </p>
         <style>{`
           @media (max-width: 720px) {
-            .stats-band-grid { grid-template-columns: 1fr !important; }
+            .stats-band-grid {
+              grid-template-columns: 1fr !important;
+              border-left: none !important;
+            }
+            .stat-band-item {
+              border-right: none !important;
+              border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+            }
+            .stat-band-item:last-child {
+              border-bottom: none !important;
+            }
           }
         `}</style>
       </div>
