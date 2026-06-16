@@ -49,7 +49,7 @@
               }
             ],
             "footnoteKey": "stats.footnote",
-            "footnote": "*Includes experience prior to founding Turnpage"
+            "footnote": "*Includes our principals' experience prior to founding Turnpage"
           }
         },
         {
@@ -61,7 +61,7 @@
             "eyebrow": "We Cover",
             "title": "The toughest claims",
             "titleAccent": "on the docket.",
-            "body": "From chapter 11 claims to government refunds and class action settlements to locked digital assets we've got it covered — If there's a path to liquidity, we're on it."
+            "body": "From chapter 11 claims to class action settlements, from government refunds to locked digital assets, we've your best path to liquidity."
           }
         },
         {
@@ -70,6 +70,50 @@
           "visible": true,
           "content": {
             "_bookmark": "leadership"
+          }
+        },
+        {
+          "id": "sec-1781609842020-dar0",
+          "type": "service-cards",
+          "visible": true,
+          "layout": "grid-3col",
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "What We Offer",
+            "title": "Services.",
+            "accent": "",
+            "colorScheme": "dark",
+            "layout": "grid-3col",
+            "cards": [
+              {
+                "id": "svc-1",
+                "title": "Direct Purchase",
+                "body": "Dedicated capital partners to provide rapid pricing and liquidity."
+              },
+              {
+                "id": "svc-2",
+                "title": "Private Sales",
+                "body": "Describe this service."
+              },
+              {
+                "id": "card-1781609944171",
+                "title": "Auctions",
+                "body": "",
+                "priority": false
+              },
+              {
+                "id": "card-1781609947238",
+                "title": "Advisory",
+                "body": "",
+                "priority": false
+              }
+            ],
+            "backgroundImage": "/bg-paper.jpg",
+            "cardTitleColor": "default",
+            "imageFilterStrength": 60,
+            "cardStyle": "standard",
+            "cardBlur": 35,
+            "cardRadius": "square"
           }
         },
         {
@@ -103,7 +147,7 @@
             "title": "A track record across the largest trades.",
             "body": "From rapid settlement to complex advisory roles, we are proud of our ability to deliver exceptional value for our clients and counterparties.",
             "eyebrow": "Relevant experience",
-            "footnote": "* Includes experience prior to founding Turnpage"
+            "footnote": "* Includes our principals' experience prior to founding Turnpage"
           }
         },
         {
