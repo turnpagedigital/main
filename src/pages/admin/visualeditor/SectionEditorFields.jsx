@@ -465,6 +465,28 @@ export default function SectionEditorFields({ typeId, form, set }) {
         </>
       )}
 
+      {/* ── Contact Form ── */}
+      {typeId === "contact-form" && (
+        <>
+          <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.9rem", lineHeight: 1.6 }}>
+            Contact info (email, phone, WhatsApp, social links, sidebar text) is managed in{" "}
+            <strong>Content → Contact Form</strong>.
+          </p>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Default source / subject context</label>
+            <select style={selectStyle} value={form.defaultSource || ""} onChange={e => set("defaultSource", e.target.value || "")}>
+              <option value="">None — let URL ?source= param decide</option>
+              <option value="ai-copyright">AI Copyright</option>
+              <option value="crypto">Crypto Claims</option>
+              <option value="briefings">Briefings</option>
+            </select>
+            <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 4 }}>
+              Sets the inquiry badge and pre-selects a subject on the form. Useful when embedding this section on a sub-brand page. The URL ?source= param always takes precedence.
+            </p>
+          </div>
+        </>
+      )}
+
       {/* ── What We Cover (situations) ── */}
       {typeId === "situations" && (
         <>
