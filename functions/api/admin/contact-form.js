@@ -58,6 +58,11 @@ export async function onRequestPut({ request, env }) {
     sidebarIntro:   typeof body.sidebarIntro === "string"   ? body.sidebarIntro   : "",
     email:          typeof body.email === "string"          ? body.email          : "",
     phone:          typeof body.phone === "string"          ? body.phone          : "",
+    whatsapp:       typeof body.whatsapp === "string"       ? body.whatsapp       : "",
+    telegram:       typeof body.telegram === "string"       ? body.telegram       : "",
+    social_links:   Array.isArray(body.social_links)
+      ? body.social_links.map(l => ({ url: typeof l.url === "string" ? l.url : "" }))
+      : [],
     disclaimer:     typeof body.disclaimer === "string"     ? body.disclaimer     : "",
     subjects: body.subjects.map(s => ({
       id:     typeof s.id === "string"      ? s.id     : "",

@@ -541,32 +541,56 @@ export default function SectionEditorFields({ typeId, form, set }) {
       {typeId === "contact-form" && (
         <>
           <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.9rem", lineHeight: 1.6 }}>
-            Contact info (email, WhatsApp, social links, sidebar text) is managed in{" "}
+            Contact info (email, WhatsApp, Telegram, sidebar text) is managed in{" "}
             <strong>Content → Contact Form</strong>.
           </p>
+
+          {/* Section background */}
           <div style={fieldGroup}>
-            <label style={labelStyle}>Style variant</label>
+            <label style={labelStyle}>Section style</label>
             <select style={selectStyle} value={form.variant || "paper"} onChange={e => set("variant", e.target.value)}>
-              <option value="paper">Paper (gray background)</option>
-              <option value="white">White (clean white background)</option>
-              <option value="image">Image (photo background, glass form)</option>
-              <option value="glass">Liquid Glass (gray background, glass form)</option>
+              <option value="paper">Paper — cool gray background</option>
+              <option value="white">White — clean white background</option>
+              <option value="image">Image — photo background</option>
+              <option value="glass">Glass — gray background, glass form card</option>
             </select>
           </div>
-          {(form.variant === "image") && (
-            <div style={fieldGroup}>
-              <label style={labelStyle}>Background image URL</label>
-              <input
-                style={inputStyle}
-                value={form.backgroundImage || ""}
-                onChange={e => set("backgroundImage", e.target.value)}
-                placeholder="/your-image.jpg or https://..."
-              />
-              <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 4 }}>
-                Leave blank for a plain dark background. Upload images via Assets first.
-              </p>
+          <ImageField label="Background image" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
+          {form.backgroundImage && (
+            <div style={{ marginBottom: "0.9rem" }}>
+              <label style={labelStyle}>Background brightness — {form.backgroundBrightness != null && form.backgroundBrightness !== "" ? form.backgroundBrightness : 35}%</label>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <input type="range" min={5} max={100} step={5} value={form.backgroundBrightness != null && form.backgroundBrightness !== "" ? form.backgroundBrightness : 35} style={{ flex: 1, accentColor: NEON }} onChange={e => set("backgroundBrightness", Number(e.target.value))} />
+                <button style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("backgroundBrightness", "")}>Reset</button>
+              </div>
             </div>
           )}
+
+          {/* Form card design */}
+          <div style={{ borderTop: `1px solid ${LINE}`, paddingTop: "0.9rem", marginBottom: "0.9rem" }}>
+            <p style={{ fontSize: "0.74rem", fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", color: INK_60, marginBottom: "0.6rem" }}>Form Card Design</p>
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Card style</label>
+              <select style={selectStyle} value={form.formCardStyle || ""} onChange={e => set("formCardStyle", e.target.value)}>
+                <option value="">Auto — follows section style</option>
+                <option value="paper">Paper — white, solid</option>
+                <option value="white">White — white with border</option>
+                <option value="glass">Glass — frosted light</option>
+                <option value="clear">Clear — very transparent</option>
+                <option value="dark">Dark — dark glass</option>
+              </select>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+              <div><label style={labelStyle}>Corner style</label>
+                <select style={{ ...inputStyle, marginTop: 4 }} value={form.formCardRadius || "rounded"} onChange={e => set("formCardRadius", e.target.value)}>
+                  <option value="rounded">Rounded</option>
+                  <option value="square">Square</option>
+                </select>
+              </div>
+            </div>
+            <CardBlurField cardStyle={["glass","clear","dark","light-glass","neon-glass"].includes(form.formCardStyle) ? "dark" : "standard"} value={form.formCardBlur ?? ""} onChange={v => set("formCardBlur", v)} />
+          </div>
+
           <div style={fieldGroup}>
             <label style={labelStyle}>Default source / subject context</label>
             <select style={selectStyle} value={form.defaultSource || ""} onChange={e => set("defaultSource", e.target.value || "")}>

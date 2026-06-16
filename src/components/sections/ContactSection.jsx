@@ -44,46 +44,33 @@ function getSectionClass(variant) {
   return "surface-paper"; // paper + glass both use paper bg
 }
 
-function getFormCardStyle(variant) {
+function buildFormCardStyle(variant, styleOverride, radius, blurAmount) {
+  const r = radius === "square" ? 2 : 12;
+  const blur = blurAmount != null ? blurAmount : null;
   const basePad = { padding: "clamp(1.5rem,3vw,2.5rem)" };
-  if (variant === "glass") {
-    return {
-      ...basePad,
-      background: "rgba(255,255,255,0.38)",
-      backdropFilter: "blur(28px) saturate(180%) brightness(1.08)",
-      WebkitBackdropFilter: "blur(28px) saturate(180%) brightness(1.08)",
-      border: "1px solid rgba(255,255,255,0.72)",
-      borderRadius: 16,
-      boxShadow: "0 8px 40px rgba(0,0,0,0.09), inset 0 1.5px 0 rgba(255,255,255,0.9), inset 0 -1px 0 rgba(0,0,0,0.04)",
-    };
+  const effective = styleOverride || variant;
+
+  if (effective === "glass" || effective === "liquid-glass") {
+    const b = blur != null ? blur : 28;
+    return { ...basePad, background: "rgba(255,255,255,0.38)", backdropFilter: `blur(${b}px) saturate(180%) brightness(1.08)`, WebkitBackdropFilter: `blur(${b}px) saturate(180%) brightness(1.08)`, border: "1px solid rgba(255,255,255,0.72)", borderRadius: r, boxShadow: "0 8px 40px rgba(0,0,0,0.09), inset 0 1.5px 0 rgba(255,255,255,0.9), inset 0 -1px 0 rgba(0,0,0,0.04)" };
   }
-  if (variant === "image") {
-    return {
-      ...basePad,
-      background: "rgba(255,255,255,0.88)",
-      backdropFilter: "blur(24px) saturate(160%)",
-      WebkitBackdropFilter: "blur(24px) saturate(160%)",
-      border: "1px solid rgba(255,255,255,0.6)",
-      borderRadius: 12,
-      boxShadow: "0 12px 48px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.95)",
-    };
+  if (effective === "clear") {
+    const b = blur != null ? blur : 30;
+    return { ...basePad, background: "rgba(255,255,255,0.20)", backdropFilter: `blur(${b}px) saturate(160%)`, WebkitBackdropFilter: `blur(${b}px) saturate(160%)`, border: "1px solid rgba(255,255,255,0.45)", borderRadius: r, boxShadow: "0 8px 32px rgba(0,0,0,0.15)" };
   }
-  if (variant === "white") {
-    return {
-      ...basePad,
-      background: "#fff",
-      border: "1px solid rgba(0,0,0,0.08)",
-      borderRadius: 8,
-      boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-    };
+  if (effective === "dark") {
+    const b = blur != null ? blur : 20;
+    return { ...basePad, background: "rgba(15,15,15,0.82)", backdropFilter: `blur(${b}px) saturate(150%)`, WebkitBackdropFilter: `blur(${b}px) saturate(150%)`, border: "1px solid rgba(255,255,255,0.1)", borderRadius: r, boxShadow: "0 8px 40px rgba(0,0,0,0.4)" };
+  }
+  if (effective === "image") {
+    const b = blur != null ? blur : 24;
+    return { ...basePad, background: "rgba(255,255,255,0.88)", backdropFilter: `blur(${b}px) saturate(160%)`, WebkitBackdropFilter: `blur(${b}px) saturate(160%)`, border: "1px solid rgba(255,255,255,0.6)", borderRadius: r, boxShadow: "0 12px 48px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.95)" };
+  }
+  if (effective === "white") {
+    return { ...basePad, background: "#fff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: r, boxShadow: "0 2px 12px rgba(0,0,0,0.05)" };
   }
   // paper (default)
-  return {
-    ...basePad,
-    background: "#fff",
-    borderRadius: 8,
-    boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
-  };
+  return { ...basePad, background: "#fff", borderRadius: r, boxShadow: "0 2px 16px rgba(0,0,0,0.07)" };
 }
 
 /* Sidebar text colors adapt for dark (image) vs light (all others) */
@@ -114,6 +101,10 @@ export default function ContactSection({ sectionConfig }) {
   const c = (sectionConfig && sectionConfig.content) || {};
   const variant = c.variant || "paper";
   const bgImage = c.backgroundImage || "";
+  const bgBrightness = c.backgroundBrightness != null && c.backgroundBrightness !== "" ? Number(c.backgroundBrightness) / 100 : 0.35;
+  const formCardStyleOverride = c.formCardStyle || "";
+  const formCardRadius = c.formCardRadius || "rounded";
+  const formCardBlur = c.formCardBlur != null && c.formCardBlur !== "" ? Number(c.formCardBlur) : null;
 
   const [urlSource, setUrlSource] = useState(readSourceFromUrl);
   useEffect(() => {
@@ -126,15 +117,16 @@ export default function ContactSection({ sectionConfig }) {
   const defaultSubject = SOURCE_SUBJECTS[source] || "";
 
   const cd = contactData;
-  const tgLink = Array.isArray(cd.social_links)
-    ? cd.social_links.find(l => l.url?.includes("t.me"))
-    : null;
-  const waLink = Array.isArray(cd.social_links)
-    ? cd.social_links.find(l => l.url?.includes("wa.me"))
-    : null;
+  // WhatsApp: prefer new whatsapp field, fall back to social_links for backward compat
+  const waPhone = cd.whatsapp || "";
+  const tgRaw = cd.telegram || "";
+  const waLinkFallback = Array.isArray(cd.social_links) ? cd.social_links.find(l => l.url?.includes("wa.me"))?.url || "" : "";
+  const tgLinkFallback = Array.isArray(cd.social_links) ? cd.social_links.find(l => l.url?.includes("t.me"))?.url || "" : "";
+  const waUrl = waPhone ? `https://wa.me/${waPhone.replace(/\D/g, "")}` : waLinkFallback;
+  const tgUrl = tgRaw ? (tgRaw.startsWith("http") ? tgRaw : `https://t.me/${tgRaw.replace(/^@/, "")}`) : tgLinkFallback;
 
   const sc = getSidebarColors(variant);
-  const formCardStyle = getFormCardStyle(variant);
+  const formCardStyle = buildFormCardStyle(variant, formCardStyleOverride, formCardRadius, formCardBlur);
 
   return (
     <section className={getSectionClass(variant)} style={getSectionStyle(variant, bgImage)}>
@@ -146,7 +138,7 @@ export default function ContactSection({ sectionConfig }) {
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "brightness(0.35) contrast(1.1)",
+          filter: `brightness(${bgBrightness}) contrast(1.1)`,
         }} />
       )}
       {/* Fallback dark overlay when no image is set */}
@@ -208,7 +200,7 @@ export default function ContactSection({ sectionConfig }) {
                 </a>
               </div>
             )}
-            {tgLink?.url && (
+            {tgUrl && (
               <div style={{ padding: "1rem 0", borderBottom: `1px solid ${sc.divider}` }}>
                 <p style={{
                   fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
@@ -216,7 +208,7 @@ export default function ContactSection({ sectionConfig }) {
                   color: sc.label, marginBottom: "0.5rem",
                 }}>Telegram</p>
                 <a
-                  href={tgLink.url}
+                  href={tgUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -232,7 +224,7 @@ export default function ContactSection({ sectionConfig }) {
                 </a>
               </div>
             )}
-            {waLink?.url && (
+            {waUrl && (
               <div style={{ padding: "1rem 0", borderBottom: `1px solid ${sc.divider}` }}>
                 <p style={{
                   fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
@@ -240,7 +232,7 @@ export default function ContactSection({ sectionConfig }) {
                   color: sc.label, marginBottom: "0.5rem",
                 }}>WhatsApp</p>
                 <a
-                  href={waLink.url}
+                  href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

@@ -166,7 +166,7 @@ function CardInner({ card, titleColor, dividerColor = NEON }) {
   const hasExtras = card.subtitle || card.icon;
   return (
     <>
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem" }}>
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem", minHeight: "clamp(3rem, 4.5vw, 4.8rem)" }}>
         <h3 style={{
           fontFamily: FONT, fontWeight: 800,
           fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
@@ -222,7 +222,7 @@ function ServiceCard({ card, dark, brightness }) {
       filter: brightness != null && brightness !== "" ? `brightness(${brightness}%)` : undefined,
     }}>
       <div style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem", marginBottom: "0.85rem" }}>
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem", marginBottom: "0.85rem", minHeight: "clamp(3rem, 4.5vw, 4.8rem)" }}>
           <h3 style={{
             fontFamily: FONT, fontWeight: 800,
             fontSize: "clamp(1.3rem, 2vw, 1.7rem)",

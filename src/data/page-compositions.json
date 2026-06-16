@@ -79,7 +79,7 @@
             "cards": [
               {
                 "id": "svc-1",
-                "title": "Direct Acquisiton",
+                "title": "Direct Acquisition",
                 "body": "Our dedicated capital partners enable us to offer competitive pricing and an efficient closing process in the largest cases.",
                 "cardStyle": "",
                 "subtitle": "Balance sheet capital"
@@ -249,7 +249,7 @@
             "eyebrow": "Copyright Claims",
             "title": "Calling all creators.",
             "accentTitle": "Claim what's yours.",
-            "subtitle": "Anthropic and Open AI trained its models on YOUR WORK. \n\nWe help authors, publishers, artists, record labels and other copyright holders get smart about their rights and track compensation opportunities against generative AI companies.",
+            "subtitle": "Anthropic and OpenAI trained their models on YOUR WORK. \n\nWe help authors, publishers, artists, record labels and other copyright holders get smart about their rights and track compensation opportunities against generative AI companies.",
             "size": "tall",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
@@ -313,7 +313,7 @@
           "visible": true,
           "colorScheme": "dark",
           "content": {
-            "eyebrow": "How we Help",
+            "eyebrow": "How We Help",
             "title": "You own your output. Take home what's yours.",
             "accent": "",
             "kicker": "You worked hard to create something original, but you don't need to create more work for yourself just to get paid. With dozens of active copyright cases, we help you stay on top of compensation opportunities, gather documents and meet filing deadlines. ",
@@ -329,7 +329,7 @@
                 "id": "step-2",
                 "n": "02",
                 "title": "File your claims »",
-                "body": "Who needs all that paperwork? Let our experts help you file you claim to ensure you don't miss a cent. We can help you identify the materials you need to prove what you're owed and reduce the error rate by over 95%. \n\n"
+                "body": "Who needs all that paperwork? Let our experts help you file your claim to ensure you don't miss a cent. We can help you identify the materials you need to prove what you're owed and reduce the error rate by over 95%. \n\n"
               },
               {
                 "id": "step-3",
@@ -512,7 +512,7 @@
           "layout": "list",
           "colorScheme": "white",
           "content": {
-            "eyebrow": "Who we help",
+            "eyebrow": "Who We Help",
             "title": "Crypto loss",
             "accent": "claimants.",
             "colorScheme": "white",
@@ -527,13 +527,13 @@
               {
                 "id": "card-1780956570722",
                 "title": "Digital Asset Lenders",
-                "body": "We help lenders holding defaulted loans or locked on-chain collateral recover against failed borrowers and protocols. When underlying asset swings erodes the benefit of waiting for higher recoveries, it's time to move on and put your capital to a higher and better use.",
+                "body": "We help lenders holding defaulted loans or locked on-chain collateral recover against failed borrowers and protocols. When underlying asset swings erode the benefit of waiting for higher recoveries, it's time to move on and put your capital to a higher and better use.",
                 "priority": false
               },
               {
                 "id": "funds-institutions",
                 "title": "Fund Vehicles",
-                "body": "We help funds with trapped capital unlock value for LPs.  A claim against a collapsed exchange, lender, or counterparty weighs on fund NAV and stalls distributions. Converting claims and other interests to cash lets you  return capital to LPs, who never signed up to be distressed investors.",
+                "body": "We help funds with trapped capital unlock value for LPs. A claim against a collapsed exchange, lender, or counterparty weighs on fund NAV and stalls distributions. Converting claims and other interests to cash lets you return capital to LPs, who never signed up to be distressed investors.",
                 "priority": false
               },
               {
@@ -806,7 +806,7 @@
               },
               {
                 "id": "individual-claimants",
-                "title": "Individual Platiniffs",
+                "title": "Individual Plaintiffs",
                 "body": "Corporate plaintiffs and groups of claimants whose counsel needs funding to take a meritorious case to trial. We work with you or your attorney directly.",
                 "priority": false
               }

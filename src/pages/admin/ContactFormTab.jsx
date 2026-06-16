@@ -21,6 +21,9 @@ function normalize(d) {
     sidebarIntro:   typeof d?.sidebarIntro === "string"   ? d.sidebarIntro   : "",
     email:          typeof d?.email === "string"          ? d.email          : "",
     phone:          typeof d?.phone === "string"          ? d.phone          : "",
+    whatsapp:       typeof d?.whatsapp === "string"       ? d.whatsapp       : "",
+    telegram:       typeof d?.telegram === "string"       ? d.telegram       : "",
+    social_links:   Array.isArray(d?.social_links)        ? d.social_links   : [],
     disclaimer:     typeof d?.disclaimer === "string"     ? d.disclaimer     : "",
     subjects: Array.isArray(d?.subjects) ? d.subjects : [],
     fields:   Array.isArray(d?.fields)   ? d.fields   : [],
@@ -130,6 +133,8 @@ export default function ContactFormTab({ onDirtyChange }) {
           <LabeledInput label="Sidebar intro" value={data.sidebarIntro} onChange={v => patch("sidebarIntro", v)} placeholder="Every inquiry is read by a partner." multiline />
           <LabeledInput label="Email" value={data.email} onChange={v => patch("email", v)} placeholder="info@turnpagedigital.com" />
           <LabeledInput label="Phone" value={data.phone} onChange={v => patch("phone", v)} placeholder="+1 646 860 0068" />
+          <LabeledInput label="WhatsApp number" value={data.whatsapp} onChange={v => patch("whatsapp", v)} placeholder="16468600068" hint="Digits only — no spaces, dashes, or +. E.g. 16468600068 for +1 646 860 0068. Leave blank to hide." />
+          <LabeledInput label="Telegram" value={data.telegram} onChange={v => patch("telegram", v)} placeholder="@yourhandle" hint="Username (with @) or full t.me URL. Leave blank to hide." />
           <LabeledInput label="Disclaimer" value={data.disclaimer} onChange={v => patch("disclaimer", v)} multiline placeholder="All submissions are confidential…" />
         </div>
       </div>
