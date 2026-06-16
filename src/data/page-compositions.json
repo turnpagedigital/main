@@ -711,7 +711,7 @@
         {
           "id": "sec-litfin-audience",
           "type": "audience-cards",
-          "visible": true,
+          "visible": false,
           "layout": "list",
           "colorScheme": "white",
           "content": {
@@ -749,7 +749,7 @@
           "layout": "grid-2col",
           "colorScheme": "light-gray",
           "content": {
-            "eyebrow": "How We Help",
+            "eyebrow": "Our Mandate",
             "title": "Bold cases.",
             "accent": "Big outcomes.",
             "colorScheme": "light-gray",
@@ -846,7 +846,7 @@
         {
           "id": "sec-1781060053803-fmsi",
           "type": "experience",
-          "visible": true,
+          "visible": false,
           "content": {
             "body": "A selection of representative matters showcasing our ability to structure creative funding solutions that power winning outcomes. ",
             "title": "We've been there. "
