@@ -1387,7 +1387,12 @@
           "content": {
             "defaultSource": "",
             "variant": "white",
-            "backgroundImage": "/bg-paper.jpg"
+            "backgroundImage": "",
+            "telegram": "@turnpagedigital",
+            "whatsapp": "8606980033",
+            "formCardRadius": "square",
+            "sidebarHeading": "Connect with us.",
+            "backgroundBrightness": 100
           }
         }
       ]
