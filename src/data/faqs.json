@@ -4,7 +4,7 @@
     {
       "active": true,
       "q": "What types of claims do you cover?",
-      "a": "Bankruptcy claims, litigation claims, class action claims, trade receivables, judgments, locked digital assets, frozen accounts, government refunds, and seized property.",
+      "a": "Bankruptcy claims, litigation claims, class action claims, trade receivables, judgments, locked digital assets, frozen accounts, government refunds including tariff refunds, and other illiquid and distressed assets.",
       "pages": [
         "home"
       ],
@@ -20,7 +20,7 @@
       "featured": true
     },
     {
-      "active": true,
+      "active": false,
       "q": "How fast can you close?",
       "a": "Days on simple matters, longer when the docket requires it. Automation enables lightning-fast settlement in the largest cases.",
       "pages": [
@@ -29,9 +29,9 @@
       "featured": false
     },
     {
-      "active": true,
+      "active": false,
       "q": "How do you price a claim?",
-      "a": "If no market price, diligence to establish range of pricing in consultation with our buyer network.",
+      "a": "If there is no no market price, we diligence to establish range of pricing in consultation with our buyer network.",
       "pages": [
         "home",
         "ai-copyright",
@@ -47,7 +47,7 @@
       "featured": false
     },
     {
-      "active": true,
+      "active": false,
       "q": "What is a claim, exactly?",
       "a": "A legal right to receive money or other consideration from someone — most commonly a company in bankruptcy, a defendant in a class action or judgment, or another counterparty that owes you compensation. Selling the claim assigns that right to a buyer for cash today; the buyer collects whatever the case ultimately pays.",
       "pages": [
@@ -57,7 +57,7 @@
       "featured": true
     },
     {
-      "active": true,
+      "active": false,
       "q": "Who typically sells a claim?",
       "a": "Trade creditors, customers of failed crypto exchanges, plaintiffs and class members, institutional holders of distressed receivables, family offices, trustees, and estates. The common thread is wanting cash today rather than waiting years for an uncertain distribution.",
       "pages": [
@@ -77,7 +77,7 @@
     {
       "active": true,
       "q": "Are you affiliated with the debtor, court, or settlement administrator?",
-      "a": "No. We're independent — not employed by, affiliated with, or acting on behalf of any debtor, plaintiff's counsel, defense counsel, claims agent, or settlement administrator. Our only economic interest is in transacting fairly with you.",
+      "a": "No. Turnpage Digital is not employed by, affiliated with, or acting on behalf of any debtor, plaintiff's counsel, defense counsel, claims agent, or settlement administrator. ",
       "pages": [
         "home",
         "ai-copyright",
@@ -235,7 +235,7 @@
     {
       "active": true,
       "q": "I'm based outside the U.S. — can I still sell?",
-      "a": "Yes. We regularly work with non-U.S. creditors, particularly in crypto bankruptcies and global class actions. KYC and tax documentation are heavier and payment is usually by international wire or stablecoin, but the underlying transaction is the same. We'll outline any additional requirements up front.",
+      "a": "Yes. We regularly work with creditors from all parts of the world. KYC/AML requirements are heavier, but the underlying transaction is the same.",
       "pages": [
         "ai-copyright",
         "crypto",
@@ -246,7 +246,7 @@
     {
       "active": true,
       "q": "Do you work with brokers, attorneys, and referral partners?",
-      "a": "Yes. We work with law firms, financial advisors, trustees, fiduciaries, and other intermediaries on both one-off introductions and formal master referral arrangements. Fast indicative pricing, market-standard documents, prompt referral compensation. [Get in touch](https://turnpagedigital.com/#/contact) and we'll structure it around your practice.",
+      "a": "We regularly work with law firms, financial advisors, trustees, fiduciaries, and other intermediaries on both one-off introductions and formal master referral arrangements. ",
       "pages": [
         "home",
         "contact"
