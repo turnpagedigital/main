@@ -159,12 +159,6 @@
       "active": true
     },
     {
-      "id": "item-1781574685744",
-      "label": "How we work",
-      "href": "/#Our-edge",
-      "active": true
-    },
-    {
       "id": "item-1781198101329",
       "label": "Leadership",
       "href": "/#leadership",
@@ -174,6 +168,12 @@
       "id": "item-1781204786861",
       "label": "Experience",
       "href": "/#experience",
+      "active": true
+    },
+    {
+      "id": "item-1781574685744",
+      "label": "Our Edge",
+      "href": "/#Our-edge",
       "active": true
     },
     {
