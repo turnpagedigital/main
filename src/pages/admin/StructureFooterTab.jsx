@@ -80,12 +80,14 @@ function ColumnCard({
   onUpdateLink, onMoveLinkUp, onMoveLinkDown, onRemoveLink, onAddLink,
 }) {
   const titleEmpty = !col.title.trim();
+  const colHidden = col.hidden === true;
   const colSummary = col.title || <em>Untitled column</em>;
 
   return (
     <div style={{
       border: `1px solid ${LINE}`,
-      background: "#fff",
+      background: colHidden ? "#F9FAFB" : "#fff",
+      opacity: colHidden ? 0.65 : 1,
     }}>
       <div style={{
         display: "flex", alignItems: "center", gap: "0.75rem",
@@ -94,8 +96,14 @@ function ColumnCard({
       }}>
         <div style={{ flex: 1, fontSize: "0.85rem", color: INK_60, fontStyle: "italic", minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
           {colSummary}
+          {colHidden && <span style={{ marginLeft: "0.5em", fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "#9CA3AF", fontStyle: "normal" }}>Hidden</span>}
         </div>
 
+        <button type="button" onClick={() => onUpdateCol({ hidden: !colHidden })}
+          title={colHidden ? "Show column" : "Hide column"}
+          style={{ ...iconBtnStyle(false), fontSize: "0.68rem", padding: "0.15rem 0.4rem", color: colHidden ? "#2563EB" : INK_60 }}>
+          {colHidden ? "Show" : "Hide"}
+        </button>
         <button type="button" onClick={onMoveColUp} disabled={colIndex === 0}
           title="Move column up" style={iconBtnStyle(colIndex === 0)}>↑</button>
         <button type="button" onClick={onMoveColDown} disabled={colIndex === totalCols - 1}

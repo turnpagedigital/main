@@ -46,7 +46,7 @@ export default function Footer() {
         {/* Top row: logo + link columns */}
         <div style={{
           display: "grid",
-          gridTemplateColumns: `minmax(0, 1.6fr) repeat(${footerData.columns.length}, minmax(0, 1fr))`,
+          gridTemplateColumns: `minmax(0, 1.6fr) repeat(${footerData.columns.filter(c => !c.hidden).length}, minmax(0, 1fr))`,
           gap: "clamp(2rem, 4vw, 3.5rem)",
           marginBottom: "clamp(3rem, 5vw, 4rem)",
         }} className="footer-grid">
@@ -62,7 +62,7 @@ export default function Footer() {
             </a>
           </div>
 
-          {footerData.columns.map(col => (
+          {footerData.columns.filter(col => !col.hidden).map(col => (
             <FooterCol
               key={col.id}
               title={tx(col.titleKey, col.title)}
