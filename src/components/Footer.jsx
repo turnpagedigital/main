@@ -3,8 +3,10 @@ import { NEON, FONT, INK, INK_60, LINE } from "../data/tokens.js";
 import { hashHref } from "../lib/router.js";
 import { useI18n } from "../lib/i18n.js";
 import LanguageSelector from "./LanguageSelector.jsx";
+import SocialLinks from "./SocialLinks.jsx";
 import footerData from "../data/footer.json";
 import pageMeta from "../data/page-meta.json";
+import contactData from "../data/contact-form.json";
 
 // Build a Set of paths that are explicitly marked inactive (draft).
 // Only pages listed in page-meta.json with active: false are suppressed;
@@ -87,7 +89,12 @@ export default function Footer() {
               {tx(footerData.copyrightKey, footerData.copyright)}
             </p>
           </div>
-          <LanguageSelector />
+          <div style={{ display: "flex", alignItems: "center", gap: "1.2rem" }}>
+            {Array.isArray(contactData.social_links) && contactData.social_links.some(l => l.url) && (
+              <SocialLinks links={contactData.social_links} dark={false} size={18} gap="0.25rem" />
+            )}
+            <LanguageSelector />
+          </div>
         </div>
       </div>
 

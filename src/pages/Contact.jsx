@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NEON, FONT, INK, INK_60, LINE_STRONG } from "../data/tokens.js";
 import Hero from "../components/Hero.jsx";
 import IntakeForm from "../components/IntakeForm.jsx";
+import SocialLinks from "../components/SocialLinks.jsx";
 import contactData from "../data/contact-form.json";
 
 const SOURCE_SUBJECTS = {
@@ -112,10 +113,15 @@ export default function Contact() {
                 </a>
               </>)}
             </div>
+            {Array.isArray(cd.social_links) && cd.social_links.some(l => l.url) && (
+              <div style={{ marginTop: "1.2rem" }}>
+                <SocialLinks links={cd.social_links} dark={false} size={20} gap="0.4rem" />
+              </div>
+            )}
             {cd.disclaimer && (
               <p style={{
                 fontFamily: FONT, fontSize: "0.85rem", color: INK_60,
-                lineHeight: 1.55,
+                lineHeight: 1.55, marginTop: "1.2rem",
               }}>
                 {cd.disclaimer}
               </p>
