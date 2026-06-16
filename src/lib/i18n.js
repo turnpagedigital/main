@@ -13,7 +13,6 @@ export const LANGUAGES = [
   { code: "fr", nativeLabel: "Français",  englishLabel: "French"     },
   { code: "de", nativeLabel: "Deutsch",   englishLabel: "German"     },
   { code: "it", nativeLabel: "Italiano",  englishLabel: "Italian"    },
-  { code: "pt", nativeLabel: "Português", englishLabel: "Portuguese" },
   { code: "ko", nativeLabel: "한국어",     englishLabel: "Korean"     },
   { code: "zh", nativeLabel: "中文",       englishLabel: "Mandarin"   },
 ];

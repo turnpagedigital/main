@@ -322,67 +322,6 @@ export const TRANSLATIONS = {
     "ctabanner.cta":   "Leggi i briefing",
   },
 
-  /* ─── Portuguese ─── */
-  pt: {
-    "nav.copyright":   "Direitos Autorais",
-    "nav.crypto":      "Cripto Bloqueado",
-    "nav.litigation":  "Financiamento de Litígios",
-    "nav.tariff":      "Reembolsos Tarifários",
-    "nav.briefings":   "Briefings",
-    "nav.press":       "Imprensa e Publicações",
-    "nav.contact":     "Fale Conosco",
-
-    "hero.eyebrow":     "Mesa OTC de Reivindicações",
-    "hero.title_1":     "Orientação estratégica.",
-    "hero.title_2":     "Liquidez chave na mão.",
-    "hero.subtitle":    "Para titulares de direitos a indenização — compramos créditos de litígios, ações coletivas e falências, recebíveis, reembolsos e outros ativos bloqueados.",
-    "hero.cta_primary": "Fale Conosco",
-    "hero.cta_secondary": "O que cobrimos",
-    "hero.scroll":      "Rolar",
-
-    "stats.claims_traded":   "Reivindicações negociadas*",
-    "stats.claims_advised":  "Reivindicações vendidas ou assessoradas*",
-    "stats.institutions":    "Instituições financeiras na agenda",
-    "stats.footnote":        "*Experiência anterior à fundação da Turnpage Digital.",
-
-    "situations.eyebrow":     "O que cobrimos",
-    "situations.title_1":     "As reivindicações mais complexas",
-    "situations.title_2":     "em pauta.",
-    "leadership.eyebrow":     "Liderança",
-    "testimonials.eyebrow":   "O que dizem os clientes",
-    "testimonials.title_1":   "Quando outros desistem,",
-    "testimonials.title_2":   "nós persistimos.",
-    "experience.eyebrow":     "Experiência Relevante",
-    "edge.eyebrow":           "Nossa Vantagem",
-    "edge.title_1":           "Feitos para agir rápido",
-    "edge.title_2":           "quando importa.",
-    "faq.eyebrow":            "FAQ",
-    "faq.title_1":            "Suas perguntas,",
-    "faq.title_2":            "respondidas",
-
-    "closing.eyebrow":  "Solicitar cotação",
-    "closing.title":    "Por que esperar?",
-    "closing.kicker":   "Entre em contato para uma cotação ou mais informações.",
-    "closing.email":    "E-mail",
-    "closing.phone":    "Telefone",
-    "closing.cta":      "Fale Conosco",
-
-    "footer.subscribe_title": "Acompanhe os mais recentes briefings da Turnpage.",
-    "footer.subscribe_cta":   "Inscrever-se",
-    "footer.col.desks":       "Mesas",
-    "footer.col.resources":   "Recursos",
-    "footer.col.firm":        "Empresa",
-    "footer.col.legal":       "Jurídico",
-    "footer.firm.contact":    "Fale Conosco",
-    "footer.legal.privacy":   "Política de Privacidade",
-    "footer.legal.terms":     "Termos de Uso",
-    "footer.copyright":       "Turnpage Digital Markets LLC © 2026 · Todos os direitos reservados",
-    "footer.region_label":    "Global",
-
-    "ctabanner.title": "Acompanhe a pauta.",
-    "ctabanner.cta":   "Ler os briefings",
-  },
-
   /* ─── Korean ─── */
   ko: {
     "nav.copyright":   "저작권 청구",
