@@ -63,25 +63,6 @@ export default function BioSection() {
               )}
             </div>
 
-            {/* Media logos below the name row */}
-            {Array.isArray(bioData.media_logos) && bioData.media_logos.some(l => l.url) && (
-              <div style={{ marginTop: "1.8rem" }}>
-                <p style={{
-                  fontFamily: FONT, fontSize: "0.68rem", fontWeight: 600,
-                  letterSpacing: "0.2em", textTransform: "uppercase",
-                  color: "rgba(10,10,10,0.55)", marginBottom: "1.1rem",
-                }}>
-                  As seen in
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "clamp(1rem, 2.5vw, 1.8rem)" }}>
-                  {bioData.media_logos.filter(l => l.url).map((logo, i) => (
-                    <img key={i} src={logo.url} alt={logo.name || ""} loading="lazy"
-                      style={{ maxHeight: 24, height: "auto", maxWidth: 120, width: "auto", objectFit: "contain", filter: "grayscale(1)", opacity: 0.42, display: "block", flexShrink: 0 }}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
 
           <div>
@@ -106,6 +87,26 @@ export default function BioSection() {
             ))}
           </div>
         </div>
+
+        {/* Media logos — full-width row below the two-column grid */}
+        {Array.isArray(bioData.media_logos) && bioData.media_logos.some(l => l.url) && (
+          <div style={{ marginTop: "clamp(2.5rem, 5vw, 4rem)", borderTop: `1px solid ${LINE}`, paddingTop: "clamp(2rem, 4vw, 3rem)" }}>
+            <p style={{
+              fontFamily: FONT, fontSize: "0.68rem", fontWeight: 600,
+              letterSpacing: "0.2em", textTransform: "uppercase",
+              color: "rgba(10,10,10,0.55)", marginBottom: "1.4rem",
+            }}>
+              As seen in
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "clamp(1.2rem, 3vw, 2.5rem)" }}>
+              {bioData.media_logos.filter(l => l.url).map((logo, i) => (
+                <img key={i} src={logo.url} alt={logo.name || ""} loading="lazy"
+                  style={{ maxHeight: 26, height: "auto", maxWidth: 140, width: "auto", objectFit: "contain", filter: "grayscale(1)", opacity: 0.42, display: "block", flexShrink: 0 }}
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
         <style>{`
           @media (max-width: 880px) {
