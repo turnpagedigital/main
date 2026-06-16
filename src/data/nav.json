@@ -154,13 +154,19 @@
     },
     {
       "id": "item-1781198075347",
-      "label": "Coverage",
+      "label": "What we cover",
       "href": "/#what-we-cover",
       "active": true
     },
     {
+      "id": "item-1781574685744",
+      "label": "How we work",
+      "href": "/#Our-edge",
+      "active": true
+    },
+    {
       "id": "item-1781198101329",
-      "label": "Team",
+      "label": "Leadership",
       "href": "/#leadership",
       "active": true
     },
