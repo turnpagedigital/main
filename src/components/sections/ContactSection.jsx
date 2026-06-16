@@ -22,14 +22,98 @@ function labelForSource(s) {
   return s;
 }
 
-/* Two-column contact section: sticky sidebar with contact info and the intake
-   form on the right. Contact info (email, phone, social links) is managed in
-   Content → Contact Form.
+/* ── Variant definitions ──────────────────────────────────────────────────
+   paper  (default) — cool gray section, white form card
+   white             — white section, white form card with border
+   image             — full-bleed background photo, sidebar text inverted,
+                       form card is frosted-glass (light) so inputs stay readable
+   glass             — cool gray section, form card is liquid glass
+   ─────────────────────────────────────────────────────────────────────── */
 
-   sectionConfig.content.defaultSource — pre-selects a source/subject context
-   when no ?source= URL param is present (useful on sub-brand pages). */
+function getSectionStyle(variant, bgImage) {
+  const base = { padding: "clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem)" };
+  if (variant === "image") {
+    return { ...base, position: "relative", overflow: "hidden", background: "#000" };
+  }
+  return base;
+}
+
+function getSectionClass(variant) {
+  if (variant === "white") return "surface-white";
+  if (variant === "image") return "";
+  return "surface-paper"; // paper + glass both use paper bg
+}
+
+function getFormCardStyle(variant) {
+  const basePad = { padding: "clamp(1.5rem,3vw,2.5rem)" };
+  if (variant === "glass") {
+    return {
+      ...basePad,
+      background: "rgba(255,255,255,0.38)",
+      backdropFilter: "blur(28px) saturate(180%) brightness(1.08)",
+      WebkitBackdropFilter: "blur(28px) saturate(180%) brightness(1.08)",
+      border: "1px solid rgba(255,255,255,0.72)",
+      borderRadius: 16,
+      boxShadow: "0 8px 40px rgba(0,0,0,0.09), inset 0 1.5px 0 rgba(255,255,255,0.9), inset 0 -1px 0 rgba(0,0,0,0.04)",
+    };
+  }
+  if (variant === "image") {
+    return {
+      ...basePad,
+      background: "rgba(255,255,255,0.88)",
+      backdropFilter: "blur(24px) saturate(160%)",
+      WebkitBackdropFilter: "blur(24px) saturate(160%)",
+      border: "1px solid rgba(255,255,255,0.6)",
+      borderRadius: 12,
+      boxShadow: "0 12px 48px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.95)",
+    };
+  }
+  if (variant === "white") {
+    return {
+      ...basePad,
+      background: "#fff",
+      border: "1px solid rgba(0,0,0,0.08)",
+      borderRadius: 8,
+      boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
+    };
+  }
+  // paper (default)
+  return {
+    ...basePad,
+    background: "#fff",
+    borderRadius: 8,
+    boxShadow: "0 2px 16px rgba(0,0,0,0.07)",
+  };
+}
+
+/* Sidebar text colors adapt for dark (image) vs light (all others) */
+function getSidebarColors(variant) {
+  if (variant === "image") {
+    return {
+      heading: "#fff",
+      body: "rgba(255,255,255,0.75)",
+      divider: "rgba(255,255,255,0.15)",
+      label: "rgba(255,255,255,0.55)",
+      emailText: "#fff",
+      emailUnderline: NEON,
+      disclaimer: "rgba(255,255,255,0.5)",
+    };
+  }
+  return {
+    heading: INK,
+    body: INK_60,
+    divider: LINE_STRONG,
+    label: INK_60,
+    emailText: INK,
+    emailUnderline: NEON,
+    disclaimer: INK_60,
+  };
+}
+
 export default function ContactSection({ sectionConfig }) {
   const c = (sectionConfig && sectionConfig.content) || {};
+  const variant = c.variant || "paper";
+  const bgImage = c.backgroundImage || "";
 
   const [urlSource, setUrlSource] = useState(readSourceFromUrl);
   useEffect(() => {
@@ -49,11 +133,29 @@ export default function ContactSection({ sectionConfig }) {
     ? cd.social_links.find(l => l.url?.includes("wa.me"))
     : null;
 
+  const sc = getSidebarColors(variant);
+  const formCardStyle = getFormCardStyle(variant);
+
   return (
-    <section className="surface-paper" style={{
-      padding: "clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem)",
-    }}>
+    <section className={getSectionClass(variant)} style={getSectionStyle(variant, bgImage)}>
+
+      {/* Background image layer (image variant only) */}
+      {variant === "image" && bgImage && (
+        <div style={{
+          position: "absolute", inset: 0, zIndex: 0,
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "brightness(0.35) contrast(1.1)",
+        }} />
+      )}
+      {/* Fallback dark overlay when no image is set */}
+      {variant === "image" && !bgImage && (
+        <div style={{ position: "absolute", inset: 0, zIndex: 0, background: "#111" }} />
+      )}
+
       <div className="container contact-grid" style={{
+        position: "relative", zIndex: 1,
         display: "grid",
         gridTemplateColumns: "minmax(0,1fr) minmax(0,1.6fr)",
         gap: "clamp(3rem,6vw,6rem)",
@@ -77,41 +179,41 @@ export default function ContactSection({ sectionConfig }) {
           <h2 style={{
             fontFamily: FONT, fontWeight: 800,
             fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
-            lineHeight: 1.1, letterSpacing: "-0.025em", color: INK,
+            lineHeight: 1.1, letterSpacing: "-0.025em", color: sc.heading,
             marginBottom: "1rem",
           }}>
             {cd.sidebarHeading || "Let's talk."}
           </h2>
           <p style={{
-            fontFamily: FONT, fontSize: "1rem", color: INK_60,
+            fontFamily: FONT, fontSize: "1rem", color: sc.body,
             lineHeight: 1.65, marginBottom: "2rem",
           }}>
             {cd.sidebarIntro || "Every inquiry is read by a partner. NDA available on request."}
           </p>
 
           {/* Contact info — flat divider list */}
-          <div style={{ borderTop: `1px solid ${LINE_STRONG}` }}>
+          <div style={{ borderTop: `1px solid ${sc.divider}` }}>
             {cd.email && (
-              <div style={{ padding: "1rem 0", borderBottom: `1px solid ${LINE_STRONG}` }}>
+              <div style={{ padding: "1rem 0", borderBottom: `1px solid ${sc.divider}` }}>
                 <p style={{
                   fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
                   letterSpacing: "0.18em", textTransform: "uppercase",
-                  color: INK_60, marginBottom: "0.35rem",
+                  color: sc.label, marginBottom: "0.35rem",
                 }}>Email</p>
                 <a href={`mailto:${cd.email}`} style={{
                   fontFamily: FONT, fontSize: "0.98rem", fontWeight: 600,
-                  color: INK, borderBottom: `2px solid ${NEON}`, paddingBottom: 1,
+                  color: sc.emailText, borderBottom: `2px solid ${sc.emailUnderline}`, paddingBottom: 1,
                 }}>
                   {cd.email}
                 </a>
               </div>
             )}
             {tgLink?.url && (
-              <div style={{ padding: "1rem 0", borderBottom: `1px solid ${LINE_STRONG}` }}>
+              <div style={{ padding: "1rem 0", borderBottom: `1px solid ${sc.divider}` }}>
                 <p style={{
                   fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
                   letterSpacing: "0.18em", textTransform: "uppercase",
-                  color: INK_60, marginBottom: "0.5rem",
+                  color: sc.label, marginBottom: "0.5rem",
                 }}>Telegram</p>
                 <a
                   href={tgLink.url}
@@ -131,11 +233,11 @@ export default function ContactSection({ sectionConfig }) {
               </div>
             )}
             {waLink?.url && (
-              <div style={{ padding: "1rem 0", borderBottom: `1px solid ${LINE_STRONG}` }}>
+              <div style={{ padding: "1rem 0", borderBottom: `1px solid ${sc.divider}` }}>
                 <p style={{
                   fontFamily: FONT, fontSize: "0.7rem", fontWeight: 700,
                   letterSpacing: "0.18em", textTransform: "uppercase",
-                  color: INK_60, marginBottom: "0.5rem",
+                  color: sc.label, marginBottom: "0.5rem",
                 }}>WhatsApp</p>
                 <a
                   href={waLink.url}
@@ -159,7 +261,7 @@ export default function ContactSection({ sectionConfig }) {
 
           {cd.disclaimer && (
             <p style={{
-              fontFamily: FONT, fontSize: "0.82rem", color: INK_60,
+              fontFamily: FONT, fontSize: "0.82rem", color: sc.disclaimer,
               lineHeight: 1.6, marginTop: "1.4rem",
             }}>
               {cd.disclaimer}
@@ -167,15 +269,12 @@ export default function ContactSection({ sectionConfig }) {
           )}
         </div>
 
-        {/* Form */}
-        <div style={{
-          borderTop: `3px solid ${NEON}`,
-          background: "#fff",
-          padding: "clamp(1.5rem,3vw,2.5rem)",
-        }}>
+        {/* Form card */}
+        <div style={formCardStyle}>
           <IntakeForm source={source} defaultSubject={defaultSubject} />
         </div>
       </div>
+
       <style>{`
         @media (max-width: 900px) {
           .contact-grid { grid-template-columns: 1fr !important; }

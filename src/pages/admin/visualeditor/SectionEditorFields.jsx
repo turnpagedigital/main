@@ -477,9 +477,32 @@ export default function SectionEditorFields({ typeId, form, set }) {
       {typeId === "contact-form" && (
         <>
           <p style={{ fontSize: "0.78rem", color: INK_60, marginBottom: "0.9rem", lineHeight: 1.6 }}>
-            Contact info (email, phone, WhatsApp, social links, sidebar text) is managed in{" "}
+            Contact info (email, WhatsApp, social links, sidebar text) is managed in{" "}
             <strong>Content → Contact Form</strong>.
           </p>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Style variant</label>
+            <select style={selectStyle} value={form.variant || "paper"} onChange={e => set("variant", e.target.value)}>
+              <option value="paper">Paper (gray background)</option>
+              <option value="white">White (clean white background)</option>
+              <option value="image">Image (photo background, glass form)</option>
+              <option value="glass">Liquid Glass (gray background, glass form)</option>
+            </select>
+          </div>
+          {(form.variant === "image") && (
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Background image URL</label>
+              <input
+                style={inputStyle}
+                value={form.backgroundImage || ""}
+                onChange={e => set("backgroundImage", e.target.value)}
+                placeholder="/your-image.jpg or https://..."
+              />
+              <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 4 }}>
+                Leave blank for a plain dark background. Upload images via Assets first.
+              </p>
+            </div>
+          )}
           <div style={fieldGroup}>
             <label style={labelStyle}>Default source / subject context</label>
             <select style={selectStyle} value={form.defaultSource || ""} onChange={e => set("defaultSource", e.target.value || "")}>

@@ -702,11 +702,13 @@
     {
       "id": "contact-form",
       "displayName": "Contact Form",
-      "description": "Two-column section: sticky sidebar with contact info (email, phone, WhatsApp, social) and the intake form. Contact info is managed in Content \u2192 Contact Form.",
+      "description": "Two-column section: sticky sidebar with contact info and the intake form. Style variants: paper, white, image, glass. Contact info is managed in Content \u2192 Contact Form.",
       "dataSource": "inline",
       "allowMultiple": false,
       "defaultContent": {
-        "defaultSource": ""
+        "defaultSource": "",
+        "variant": "paper",
+        "backgroundImage": ""
       }
     }
   ]
