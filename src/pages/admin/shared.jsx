@@ -108,6 +108,7 @@ export function CenteredMessage({ children }) {
 }
 
 export function LoginForm({ onSubmit, error }) {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
@@ -115,7 +116,7 @@ export function LoginForm({ onSubmit, error }) {
     e.preventDefault();
     if (!password) return;
     setSubmitting(true);
-    await onSubmit(password);
+    await onSubmit(email.trim(), password);
     setSubmitting(false);
   }
 
@@ -132,15 +133,26 @@ export function LoginForm({ onSubmit, error }) {
           Turnpage Admin
         </h1>
         <p style={{ fontSize: "0.85rem", color: INK_60, marginBottom: "1.5rem" }}>
-          Enter the admin password to continue.
+          Sign in with your email and password, or leave email blank to use the master password.
         </p>
+        <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600, marginBottom: "0.9rem" }}>
+          Email <span style={{ fontWeight: 400 }}>(optional)</span>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoFocus
+            disabled={submitting}
+            placeholder="your@email.com"
+            style={inputStyle}
+          />
+        </label>
         <label style={{ display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 }}>
           Password
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            autoFocus
             disabled={submitting}
             style={inputStyle}
           />

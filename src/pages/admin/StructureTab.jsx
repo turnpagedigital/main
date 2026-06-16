@@ -8,6 +8,7 @@ const StructureSiteMetaTab  = lazy(() => import("./StructureSiteMetaTab.jsx"));
 const StructureNavItemsTab  = lazy(() => import("./StructureNavItemsTab.jsx"));
 const StructureFooterTab    = lazy(() => import("./StructureFooterTab.jsx"));
 const RoutesTab             = lazy(() => import("./RoutesTab.jsx"));
+const UsersTab              = lazy(() => import("./UsersTab.jsx"));
 
 /* ═══════════════════════════════════════════════════════════════════════════
    StructureTab — master wrapper for site-level settings.
@@ -33,6 +34,7 @@ const SUB_TABS = [
   { key: "navigation",  label: "Navigation" },
   { key: "footer",      label: "Footer" },
   { key: "routes",      label: "Routes" },
+  { key: "users",       label: "Users" },
 ];
 const SUB_KEYS = SUB_TABS.map(t => t.key);
 
@@ -62,6 +64,7 @@ export default function StructureTab({ onDirtyChange }) {
         {sub === "navigation" && <StructureNavItemsTab   onDirtyChange={makeDirty("navigation")} />}
         {sub === "footer"     && <StructureFooterTab     onDirtyChange={makeDirty("footer")} />}
         {sub === "routes"     && <RoutesTab              onDirtyChange={makeDirty("routes")} />}
+        {sub === "users"      && <UsersTab               onDirtyChange={makeDirty("users")} />}
       </Suspense>
     </div>
   );

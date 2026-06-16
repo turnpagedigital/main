@@ -5,9 +5,16 @@ import {
   buildSetCookieHeader,
   sessionSecret,
   SESSION_TTL_SECONDS,
+  hashUserPassword,
 } from "./_utils.js";
+import { getFileFromGitHub } from "./_github.js";
 
-/* POST /api/admin/login — verify ADMIN_PASSWORD, set the session cookie.
+/* POST /api/admin/login — verify password, set the session cookie.
+
+   Two auth paths:
+   1. No email provided → compare against master ADMIN_PASSWORD (backward-compatible).
+   2. Email provided → look up user in src/data/admin-users.json, verify their
+      HMAC-SHA256 password hash.
 
    Brute-force protection (best-effort, in-memory):
    - Per-IP sliding window: after MAX_FAILURES failed attempts within
@@ -68,14 +75,34 @@ export async function onRequestPost({ request, env }) {
   }
 
   const provided = String((body && body.password) || "");
+  const email    = String((body && body.email)    || "").trim().toLowerCase();
+
   if (!provided) {
     return jsonResponse({ ok: false, error: "Password required" }, 400);
   }
 
-  if (!constantTimeEqual(provided, env.ADMIN_PASSWORD)) {
+  let authed = false;
+
+  if (!email) {
+    // No email → check master ADMIN_PASSWORD (backward-compatible)
+    authed = constantTimeEqual(provided, env.ADMIN_PASSWORD);
+  } else {
+    // Email → look up user in admin-users.json and verify their password
+    const usersResult = await getFileFromGitHub(env, "src/data/admin-users.json");
+    if (usersResult.ok && usersResult.data) {
+      const users = Array.isArray(usersResult.data.users) ? usersResult.data.users : [];
+      const user = users.find(u => u.email && u.email.toLowerCase() === email);
+      if (user && user.passwordHash && user.salt) {
+        const hash = await hashUserPassword(provided, user.salt, env.ADMIN_SECRET);
+        authed = constantTimeEqual(hash, user.passwordHash);
+      }
+    }
+  }
+
+  if (!authed) {
     recordFailure(ip, now);
     await new Promise(r => setTimeout(r, FAIL_DELAY_MS));
-    return jsonResponse({ ok: false, error: "Invalid password" }, 401);
+    return jsonResponse({ ok: false, error: "Invalid email or password" }, 401);
   }
 
   failures.delete(ip);

@@ -137,4 +137,18 @@ export async function isAuthed(request, env) {
   return verifySessionCookieValue(cookies[COOKIE_NAME], sessionSecret(env));
 }
 
+export function generateSalt() {
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  return Array.from(bytes).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+export async function hashUserPassword(password, salt, adminSecret) {
+  const key = await importHmacKey(adminSecret);
+  const sig = await crypto.subtle.sign(
+    "HMAC", key,
+    new TextEncoder().encode(`${salt}:${password}`),
+  );
+  return bufToBase64Url(sig);
+}
+
 export { SESSION_TTL_SECONDS };

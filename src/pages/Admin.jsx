@@ -98,7 +98,7 @@ export default function Admin() {
   const makeDirtyCallback = useCallback((key) => (isDirty) =>
     setDirtyTabs(prev => prev[key] === isDirty ? prev : ({ ...prev, [key]: isDirty })), []);
 
-  async function handleLogin(password) {
+  async function handleLogin(email, password) {
     setErrorMsg("");
     setPhase("checking");
     try {
@@ -106,7 +106,7 @@ export default function Admin() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ email, password }),
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || "Login failed");
