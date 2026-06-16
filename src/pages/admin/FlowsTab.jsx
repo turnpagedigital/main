@@ -168,7 +168,7 @@ export default function FlowsTab({ onDirtyChange }) {
               fontSize: "0.9rem",
               lineHeight: 1.6,
             }}
-            placeholder="e.g. "3-step intake for crypto claim holders — find out which exchange, claim size range, whether they've already filed, then collect contact info. Branch to an extra step about legal representation if the claim is over $50k.""
+            placeholder={'e.g. “3-step intake for crypto claim holders — find out which exchange, claim size range, whether they’ve already filed, then collect contact info. Branch to an extra step about legal representation if the claim is over $50k.”'}
             value={genPrompt}
             onChange={e => setGenPrompt(e.target.value)}
             onKeyDown={e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) generateFlow(); }}
