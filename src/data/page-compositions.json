@@ -1418,8 +1418,9 @@
             "telegram": "@turnpagedigital",
             "whatsapp": "8606980033",
             "formCardRadius": "square",
-            "sidebarHeading": "Connect with us.",
-            "backgroundBrightness": 100
+            "sidebarHeading": "Talk with our team.",
+            "backgroundBrightness": 100,
+            "sidebarIntro": "Reach out for a quote or to discuss your specific situation."
           }
         }
       ]
