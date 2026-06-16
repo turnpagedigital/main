@@ -9,14 +9,15 @@ const SITUATIONS = (homeContent.situations || []).filter(s => s.hidden !== true)
    Header text (eyebrow, title, titleAccent, body) is overrideable via
    sectionConfig.content in page-compositions.json. */
 export default function SituationsSection({ sectionConfig }) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [openIdx, setOpenIdx] = useState(null);
   const toggle = idx => setOpenIdx(prev => prev === idx ? null : idx);
 
   const c = (sectionConfig && sectionConfig.content) || {};
-  const eyebrow     = c.eyebrow     || t("situations.eyebrow");
-  const title       = c.title       || t("situations.title_1");
-  const titleAccent = c.titleAccent || t("situations.title_2");
+  const en = lang === "en";
+  const eyebrow     = en ? (c.eyebrow     || t("situations.eyebrow")) : t("situations.eyebrow");
+  const title       = en ? (c.title       || t("situations.title_1")) : t("situations.title_1");
+  const titleAccent = en ? (c.titleAccent || t("situations.title_2")) : t("situations.title_2");
   const body        = c.body        || "We handle every kind of compensation claim — from class action settlements and Chapter 11 customer positions to refund rights and locked digital assets. Whatever the situation, if there's a path to liquidity, we've got it covered.";
 
   return (

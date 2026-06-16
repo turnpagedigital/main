@@ -9,7 +9,8 @@ import { useI18n } from "../../lib/i18n.js";
    is editable per page in the page builder via sectionConfig.content; blank
    fields fall back to the built-in per-page copy below. */
 export default function ExperienceSection({ sectionConfig, pageKey }) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const en = lang === "en";
   const deals = (dealsData.deals || []).filter(
     d => Array.isArray(d.pages) && d.pages.includes(pageKey)
   );
@@ -18,17 +19,14 @@ export default function ExperienceSection({ sectionConfig, pageKey }) {
   // Built-in per-page heading copy (fallbacks)
   const headings = {
     home: {
-      eyebrow: t("experience.eyebrow"),
       title: "A track record across the largest claims trades.",
       body: "A representative slice of recent deals across crypto insolvencies, pension claims, antitrust settlements, and complex litigation matters.",
     },
     "ai-copyright": {
-      eyebrow: t("experience.eyebrow"),
       title: "A track record across other class actions.",
       body: "A representative selection of our work advising rights holders, class members, and institutional buyers across the emerging AI copyright landscape.",
     },
     crypto: {
-      eyebrow: t("experience.eyebrow"),
       title: "A track record across digital-asset insolvencies.",
       body: "A representative slice of deals across crypto insolvencies, exchange failures, and digital-asset restructurings.",
     },
@@ -36,7 +34,7 @@ export default function ExperienceSection({ sectionConfig, pageKey }) {
   const fallback = headings[pageKey] || headings.home;
   const c = (sectionConfig && sectionConfig.content) || {};
   const h = {
-    eyebrow: (typeof c.eyebrow === "string" && c.eyebrow.trim()) ? c.eyebrow : fallback.eyebrow,
+    eyebrow: en ? ((typeof c.eyebrow === "string" && c.eyebrow.trim()) ? c.eyebrow : t("experience.eyebrow")) : t("experience.eyebrow"),
     title:   (typeof c.title   === "string" && c.title.trim())   ? c.title   : fallback.title,
     body:    (typeof c.body    === "string" && c.body.trim())    ? c.body    : fallback.body,
   };

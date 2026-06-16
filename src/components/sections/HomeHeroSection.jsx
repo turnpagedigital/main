@@ -6,14 +6,20 @@ import { useI18n } from "../../lib/i18n.js";
    Content driven by sectionConfig.content from page-compositions.json.
    Text fields fall back to translation keys so multi-language support is preserved. */
 export default function HomeHeroSection({ sectionConfig }) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
-  // Use composition content if explicitly set; otherwise fall back to translations
-  const title1      = c.title1      || t("hero.title_1");
-  const title2      = c.title2      || t("hero.title_2");
-  const subtitle    = c.subtitle    || t("hero.subtitle");
-  const ctaPrimary  = c.ctaPrimary  || { label: t("hero.cta_primary"),  href: "/contact" };
-  const ctaSecondary= c.ctaSecondary|| { label: t("hero.cta_secondary"), href: "#situations" };
+  // English: admin content wins so the page builder controls the copy.
+  // Other languages: always use translations so switching language takes effect.
+  const en = lang === "en";
+  const title1       = en ? (c.title1    || t("hero.title_1"))   : t("hero.title_1");
+  const title2       = en ? (c.title2    || t("hero.title_2"))   : t("hero.title_2");
+  const subtitle     = en ? (c.subtitle  || t("hero.subtitle"))  : t("hero.subtitle");
+  const ctaPrimary   = en
+    ? (c.ctaPrimary  || { label: t("hero.cta_primary"),  href: "/contact" })
+    : { ...(c.ctaPrimary  || { href: "/contact"    }), label: t("hero.cta_primary") };
+  const ctaSecondary = en
+    ? (c.ctaSecondary|| { label: t("hero.cta_secondary"), href: "#situations" })
+    : { ...(c.ctaSecondary|| { href: "#situations" }), label: t("hero.cta_secondary") };
   // Background choice: "video", "image", or "default" (plain dark gradient).
   // Older compositions have no mediaType — infer from whether a video was set.
   const mediaType   = c.mediaType   || (c.video ? "video" : "default");

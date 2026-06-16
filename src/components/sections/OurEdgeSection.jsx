@@ -4,11 +4,12 @@ import { useI18n } from "../../lib/i18n.js";
 
 /* Three-point differentiation grid. Content from sectionConfig.content. */
 export default function OurEdgeSection({ sectionConfig }) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
-  const eyebrow    = c.eyebrow    || t("edge.eyebrow");
-  const title      = c.title      || t("edge.title_1");
-  const titleAccent= c.titleAccent|| t("edge.title_2");
+  const en = lang === "en";
+  const eyebrow    = en ? (c.eyebrow     || t("edge.eyebrow")) : t("edge.eyebrow");
+  const title      = en ? (c.title       || t("edge.title_1")) : t("edge.title_1");
+  const titleAccent= en ? (c.titleAccent || t("edge.title_2")) : t("edge.title_2");
   const intro      = c.intro      || "";
   const colorScheme = c.colorScheme || "white";
   const points = c.points || [

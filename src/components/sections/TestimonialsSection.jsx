@@ -10,12 +10,13 @@ import { useI18n } from "../../lib/i18n.js";
    layout-2-singlecol : stacked single column (subpages)
    layout-3-featured  : large centered pull-quote (1 featured + smaller secondary) */
 export default function TestimonialsSection({ sectionConfig, pageKey }) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
   const sc = sectionConfig || {};
-  const eyebrow = c.eyebrow || t("testimonials.eyebrow");
-  const title = c.title || t("testimonials.title_1");
-  const accent = c.accent || t("testimonials.title_2");
+  const en = lang === "en";
+  const eyebrow = en ? (c.eyebrow || t("testimonials.eyebrow")) : t("testimonials.eyebrow");
+  const title   = en ? (c.title   || t("testimonials.title_1")) : t("testimonials.title_1");
+  const accent  = en ? (c.accent  || t("testimonials.title_2")) : t("testimonials.title_2");
   // layout + colorScheme live at section level (or inside content for legacy)
   const layout = sc.layout || c.layout || "layout-1-grid3col";
   const colorScheme = sc.colorScheme || c.colorScheme || "light";

@@ -5,8 +5,9 @@ import { useI18n } from "../../lib/i18n.js";
 /* Three large numbers in a dark horizontal band.
    Uses composition content if provided; falls back to translation keys. */
 export default function StatsBandSection({ sectionConfig }) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
+  const en = lang === "en";
   const stats = c.stats || [
     { value: "$1B+", labelKey: "stats.claims_traded" },
     { value: "5K+",  labelKey: "stats.claims_advised" },
@@ -43,7 +44,7 @@ export default function StatsBandSection({ sectionConfig }) {
                 color: "rgba(255,255,255,0.78)",
                 letterSpacing: "0.01em",
               }}>
-                {it.label || t(it.labelKey)}
+                {en ? (it.label || t(it.labelKey)) : t(it.labelKey)}
               </div>
             </div>
           ))}
@@ -53,7 +54,7 @@ export default function StatsBandSection({ sectionConfig }) {
           padding: "0.9rem clamp(1.5rem,3vw,2.5rem)",
           fontStyle: "italic",
         }}>
-          {c.footnote || t(footnoteKey)}
+          {en ? (c.footnote || t(footnoteKey)) : t(footnoteKey)}
         </p>
         <style>{`
           @media (max-width: 720px) {
