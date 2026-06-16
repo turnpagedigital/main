@@ -18,20 +18,23 @@ export default function PropertyPanel({
   sections,
   selectedSectionId,
   onSelectSection,
-  onUpdateContent,   // (sectionId, newContent) → void
-  onToggleVisible,   // (index) → void
-  onMoveUp,          // (index) → void
-  onMoveDown,        // (index) → void
+  onUpdateContent,      // (sectionId, newContent) → void
+  onApplyToAllPages,    // (sectionId, sectionType, newContent) → void  (optional)
+  onToggleVisible,      // (index) → void
+  onMoveUp,             // (index) → void
+  onMoveDown,           // (index) → void
 }) {
   // Local form state — reset whenever the selected section changes
   const [form, setForm] = useState(() => JSON.parse(JSON.stringify(selectedSection?.content || {})));
   const [dirty, setDirty] = useState(false);
+  const [scopeMenu, setScopeMenu] = useState(false);
 
   const selectedIndex = (sections || []).findIndex(s => s.id === selectedSectionId);
 
   useEffect(() => {
     setForm(JSON.parse(JSON.stringify(selectedSection?.content || {})));
     setDirty(false);
+    setScopeMenu(false);
   }, [selectedSectionId]);
 
   function set(key, value) {
@@ -40,15 +43,36 @@ export default function PropertyPanel({
   }
 
   function apply() {
-    if (selectedSection) {
+    if (!selectedSection || !dirty) return;
+    // If all-pages is available, show scope chooser; otherwise apply immediately
+    if (onApplyToAllPages) {
+      setScopeMenu(true);
+    } else {
       onUpdateContent?.(selectedSection.id, form);
       setDirty(false);
     }
   }
 
+  function applyThisPage() {
+    if (selectedSection) {
+      onUpdateContent?.(selectedSection.id, form);
+      setDirty(false);
+    }
+    setScopeMenu(false);
+  }
+
+  function applyAllPages() {
+    if (selectedSection) {
+      onApplyToAllPages?.(selectedSection.id, selectedSection.type, form);
+      setDirty(false);
+    }
+    setScopeMenu(false);
+  }
+
   function discard() {
     setForm(JSON.parse(JSON.stringify(selectedSection?.content || {})));
     setDirty(false);
+    setScopeMenu(false);
   }
 
   function selectSection(id) {
@@ -174,32 +198,69 @@ export default function PropertyPanel({
         )}
       </div>
 
-      {/* ── Sticky Apply/Discard footer (edit mode only) ── */}
+      {/* ── Sticky footer (edit mode only) ── */}
       {isEditing && (
         <div style={{
           flexShrink: 0,
           padding: "0.75rem 0.95rem",
           borderTop: `2px solid ${dirty ? NEON : LINE}`,
           background: "#FAFAFB",
-          display: "flex", gap: 8, alignItems: "center",
           transition: "border-color 0.15s",
         }}>
-          <button
-            style={{ ...btnPrimaryStyle, flex: 1, opacity: dirty ? 1 : 0.45, cursor: dirty ? "pointer" : "default" }}
-            onClick={apply}
-            disabled={!dirty}
-          >
-            Apply
-          </button>
-          <button
-            style={{ ...btnStyle, opacity: dirty ? 1 : 0.45, cursor: dirty ? "pointer" : "default" }}
-            onClick={discard}
-            disabled={!dirty}
-          >
-            Discard
-          </button>
-          {dirty && (
-            <span style={{ fontSize: "0.68rem", color: "#7a5c00", fontWeight: 700 }}>Unsaved</span>
+          {!scopeMenu ? (
+            /* Normal Apply / Discard row */
+            <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+              <button
+                style={{ ...btnPrimaryStyle, flex: 1, opacity: dirty ? 1 : 0.45, cursor: dirty ? "pointer" : "default" }}
+                onClick={apply}
+                disabled={!dirty}
+              >
+                Apply
+              </button>
+              <button
+                style={{ ...btnStyle, opacity: dirty ? 1 : 0.45, cursor: dirty ? "pointer" : "default" }}
+                onClick={discard}
+                disabled={!dirty}
+              >
+                Discard
+              </button>
+              {dirty && (
+                <span style={{ fontSize: "0.68rem", color: "#7a5c00", fontWeight: 700 }}>Unsaved</span>
+              )}
+            </div>
+          ) : (
+            /* Scope chooser */
+            <div>
+              <p style={{ fontSize: "0.74rem", fontWeight: 700, color: INK_60, marginBottom: "0.55rem", letterSpacing: "0.03em" }}>
+                Apply changes to:
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                <button
+                  style={{ ...btnPrimaryStyle, textAlign: "left", justifyContent: "flex-start" }}
+                  onClick={applyThisPage}
+                >
+                  This page only
+                </button>
+                <button
+                  style={{
+                    ...btnStyle,
+                    textAlign: "left", justifyContent: "flex-start",
+                    borderColor: "rgba(192,57,43,0.4)",
+                    color: "#c0392b",
+                    fontSize: "0.82rem",
+                  }}
+                  onClick={applyAllPages}
+                >
+                  ⚠ All pages where this section appears
+                </button>
+                <button
+                  style={{ ...btnStyle, fontSize: "0.78rem", color: INK_60 }}
+                  onClick={() => setScopeMenu(false)}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
           )}
         </div>
       )}

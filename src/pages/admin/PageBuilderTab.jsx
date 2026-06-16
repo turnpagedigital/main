@@ -255,6 +255,78 @@ export default function PageBuilderTab({ onDirtyChange }) {
     setSections(next);
   }
 
+  async function applyToAllPages(sectionId, sectionType, newContent) {
+    const idx = sections.findIndex(s => s.id === sectionId);
+    if (idx < 0) return;
+
+    const { layout, colorScheme } = newContent || {};
+    function patchSection(s) {
+      return {
+        ...s,
+        content: newContent,
+        ...(layout !== undefined ? { layout } : {}),
+        ...(colorScheme !== undefined ? { colorScheme } : {}),
+      };
+    }
+
+    const updatedCurrentSections = sections.map((s, i) => i === idx ? patchSection(s) : s);
+
+    const otherPages = pages.filter(p =>
+      p.pageKey !== selectedKey &&
+      (p.sections || []).some(s => s.type === sectionType)
+    );
+
+    if (otherPages.length > 0) {
+      const pageList = otherPages.map(p => `  • ${p.title}`).join("\n");
+      const proceed = window.confirm(
+        `⚠ Apply to all ${otherPages.length + 1} pages?\n\n` +
+        `"${sectionTypeLabel(sectionType)}" will also be updated on:\n${pageList}\n\n` +
+        `This overwrites content on those pages and cannot be undone.`
+      );
+      if (!proceed) return;
+    }
+
+    setSaving(true); setError("");
+    try {
+      const res0 = await fetch("/api/admin/page-compositions", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ pageKey: selectedKey, sections: updatedCurrentSections, status: pageStatus }),
+      });
+      const d0 = await res0.json();
+      if (!d0.ok) throw new Error(d0.error || "Failed to save current page");
+
+      for (const page of otherPages) {
+        const updatedSections = (page.sections || []).map(s =>
+          s.type === sectionType ? patchSection(s) : s
+        );
+        const res = await fetch("/api/admin/page-compositions", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ pageKey: page.pageKey, sections: updatedSections, status: page.status || "active" }),
+        });
+        const d = await res.json();
+        if (!d.ok) throw new Error(d.error || `Failed to save ${page.title}`);
+      }
+
+      setSections(updatedCurrentSections);
+      setOriginalSections(JSON.parse(JSON.stringify(updatedCurrentSections)));
+      setOriginalStatus(pageStatus);
+      onDirtyChange?.(false);
+      setToast(otherPages.length > 0
+        ? `Applied to ${otherPages.length + 1} pages`
+        : "Saved to this page"
+      );
+      await load();
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setSaving(false);
+    }
+  }
+
   function sectionTypeLabel(typeId) {
     const st = sectionTypes.find(t => t.id === typeId);
     return st ? st.displayName : typeId;
@@ -544,6 +616,7 @@ export default function PageBuilderTab({ onDirtyChange }) {
               selectedSectionId={selectedSectionId}
               onSelectSection={setSelectedSectionId}
               onUpdateContent={updateSectionContentById}
+              onApplyToAllPages={applyToAllPages}
               onToggleVisible={i => toggleVisible(i)}
               onMoveUp={i => moveUp(i)}
               onMoveDown={i => moveDown(i)}

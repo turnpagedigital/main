@@ -96,8 +96,8 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       <Field label="Email" name="email" type="email" required />
       <div className="form-row-3col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1rem" }}>
         <Field label="Phone" name="phone" type="tel" />
-        <Field label="Telegram" name="telegram" type="text" placeholder="@username" />
-        <Field label="WhatsApp" name="whatsapp" type="tel" placeholder="+1 234 567 8900" />
+        <Field label="Telegram" name="telegram" type="text" />
+        <Field label="WhatsApp" name="whatsapp" type="tel" />
       </div>
       <Select
         label="Subject"
