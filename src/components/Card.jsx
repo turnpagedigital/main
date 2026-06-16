@@ -36,6 +36,7 @@ export default function Card({
   radius = "rounded",
   isDarkMode,
   blurAmount,
+  brightness,
   className = "",
 }) {
   // Auto-detect if we need light text (for dark card styles)
@@ -151,6 +152,7 @@ export default function Card({
         overflow: "hidden",
         transition: "all 0.3s ease-out",
         willChange: "transform, box-shadow",
+        filter: brightness != null && brightness !== "" ? `brightness(${brightness}%)` : undefined,
         boxShadow: config.shadow,
         color: textColor,
         display: "flex",

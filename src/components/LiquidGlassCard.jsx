@@ -30,6 +30,7 @@ export default function LiquidGlassCard({
   variant = "light",
   radius = "rounded",
   blurAmount,
+  brightness,
   className = "",
 }) {
   const isDark = variant === "dark";
@@ -67,7 +68,7 @@ export default function LiquidGlassCard({
   };
 
   return (
-    <div className={`liquid-glass-card ${variantClass} ${className}`} style={{ position: "relative", display: "flex", flexDirection: "column", minHeight: "clamp(180px, 18vw, 280px)" }}>
+    <div className={`liquid-glass-card ${variantClass} ${className}`} style={{ position: "relative", display: "flex", flexDirection: "column", minHeight: "clamp(180px, 18vw, 280px)", filter: brightness != null && brightness !== "" ? `brightness(${brightness}%)` : undefined }}>
       {/* Displacement filter for the refractive edge ring (Chromium).
           Browsers that can't use SVG filters in backdrop-filter ignore the
           inline declaration and keep the frosted fallback from CSS. */}

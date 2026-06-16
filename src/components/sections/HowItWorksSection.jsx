@@ -27,6 +27,7 @@ export default function HowItWorksSection({ sectionConfig }) {
   const cardStyle        = c.cardStyle   || "standard";
   const cardRadius       = c.cardRadius  || "rounded";
   const cardBlur         = c.cardBlur != null && c.cardBlur !== "" ? Number(c.cardBlur) : undefined;
+  const cardBrightness   = c.cardBrightness != null && c.cardBrightness !== "" ? Number(c.cardBrightness) : undefined;
   const backgroundImage  = c.backgroundImage || "";
   const imageFilter         = c.imageFilter || "dark";
   const imageFilterStrength = c.imageFilterStrength ?? 30;
@@ -99,6 +100,7 @@ export default function HowItWorksSection({ sectionConfig }) {
                 title={step.title}
                 description={step.body}
                 blurAmount={cardBlur}
+                brightness={cardBrightness}
                 icon={(
                   <span style={{
                     fontFamily: FONT, fontWeight: 800, letterSpacing: "-0.04em",
@@ -119,7 +121,7 @@ export default function HowItWorksSection({ sectionConfig }) {
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className="steps-grid">
             {steps.map(step => (
-              <Card key={step.n || step.id} style={step.cardStyle || cardStyle} radius={step.cardRadius || cardRadius} blurAmount={cardBlur}>
+              <Card key={step.n || step.id} style={step.cardStyle || cardStyle} radius={step.cardRadius || cardRadius} blurAmount={cardBlur} brightness={cardBrightness}>
                 <p style={{
                   fontFamily: FONT,
                   fontSize: "clamp(2rem, 3.5vw, 3.5rem)",

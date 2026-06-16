@@ -29,6 +29,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
   const cardStyle        = c.cardStyle || "standard";
   const cardRadius       = c.cardRadius || "rounded";
   const cardBlur         = c.cardBlur != null && c.cardBlur !== "" ? Number(c.cardBlur) : undefined;
+  const cardBrightness   = c.cardBrightness != null && c.cardBrightness !== "" ? Number(c.cardBrightness) : undefined;
   const cardTitleColor   = c.cardTitleColor || "default";
   const backgroundImage  = c.backgroundImage || "";
   const imageFilter         = c.imageFilter || "dark";
@@ -36,6 +37,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
 
   const isDark  = colorScheme === "dark";
   const sectionBg = { dark: "#0A0A0A", "light-gray": "#F4F5F7", white: "#fff" }[colorScheme] || "#0A0A0A";
+  const LIGHT_CARD_STYLES = new Set(["white", "light-gray", "clear-glass", "light-glass", "neon"]);
   const eyebrowColor = isDark ? NEON : INK_60;
   const titleColor   = isDark ? "#fff" : INK;
   const isList = layout === "list";
@@ -101,6 +103,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
                 radius={card.cardRadius || cardRadius}
                 variant={isDark ? "dark" : "light"}
                 blurAmount={cardBlur}
+                brightness={cardBrightness}
               />
             ))}
           </div>
@@ -109,23 +112,32 @@ export default function ServiceCardsSection({ sectionConfig }) {
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className={layout === "grid-4col" ? "service-grid service-grid-4col" : "service-grid"}>
-            {cards.map(card => (
-              <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur}>
-                <CardInner card={card} titleColor={cardTitleColor === "neon" ? NEON : "var(--card-text-color)"} />
-              </Card>
-            ))}
+            {cards.map(card => {
+              const effectiveStyle = card.cardStyle || cardStyle;
+              const dividerClr = LIGHT_CARD_STYLES.has(effectiveStyle) ? "rgba(0,0,0,0.18)" : NEON;
+              return (
+                <Card key={card.id} style={effectiveStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur} brightness={cardBrightness}>
+                  <CardInner card={card} titleColor={cardTitleColor === "neon" ? NEON : "var(--card-text-color)"} dividerColor={dividerClr} />
+                </Card>
+              );
+            })}
           </div>
         ) : (
           <div style={{
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className={layout === "grid-4col" ? "service-grid service-grid-4col" : "service-grid"}>
-            {cards.map(card => card.cardStyle
-              ? <Card key={card.id} style={card.cardStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur}>
-                  <CardInner card={card} titleColor={cardTitleColor === "neon" ? NEON : "var(--card-text-color)"} />
-                </Card>
-              : <ServiceCard key={card.id} card={card} dark={isDark} />
-            )}
+            {cards.map(card => {
+              if (card.cardStyle) {
+                const dividerClr = LIGHT_CARD_STYLES.has(card.cardStyle) ? "rgba(0,0,0,0.18)" : NEON;
+                return (
+                  <Card key={card.id} style={card.cardStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur} brightness={cardBrightness}>
+                    <CardInner card={card} titleColor={cardTitleColor === "neon" ? NEON : "var(--card-text-color)"} dividerColor={dividerClr} />
+                  </Card>
+                );
+              }
+              return <ServiceCard key={card.id} card={card} dark={isDark} brightness={cardBrightness} />;
+            })}
           </div>
         )}
       </div>
@@ -150,7 +162,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
 /* Card body shared by the styled-Card grid: title (+ optional icon row),
    then — when a subtitle is set — a neon divider and bold subtitle line,
    then the body copy. Cards without icon/subtitle render exactly as before. */
-function CardInner({ card, titleColor }) {
+function CardInner({ card, titleColor, dividerColor = NEON }) {
   const hasExtras = card.subtitle || card.icon;
   return (
     <>
@@ -169,7 +181,7 @@ function CardInner({ card, titleColor }) {
       </div>
       {card.subtitle && (
         <>
-          <div style={{ height: 1, background: NEON, margin: "1.1rem 0" }} />
+          <div style={{ height: 1, background: dividerColor, margin: "1.1rem 0" }} />
           <p style={{
             fontFamily: FONT, fontWeight: 700, fontSize: "1.08rem",
             color: "var(--card-text-color)", lineHeight: 1.4, margin: 0,
@@ -191,12 +203,13 @@ function CardInner({ card, titleColor }) {
   );
 }
 
-function ServiceCard({ card, dark }) {
+function ServiceCard({ card, dark, brightness }) {
   const { title, body, subtitle, icon } = card;
   const cardBg    = dark ? "rgba(255,255,255,0.03)" : "#fff";
   const cardBorder = dark ? "rgba(255,255,255,0.1)" : LINE;
   const bodyColor = dark ? "rgba(255,255,255,0.72)" : INK_60;
   const titleColor = dark ? NEON : INK;
+  const dividerClr = dark ? NEON : "rgba(0,0,0,0.18)";
 
   return (
     <div style={{
@@ -206,6 +219,7 @@ function ServiceCard({ card, dark }) {
       position: "relative", overflow: "hidden",
       display: "flex", flexDirection: "column",
       minHeight: "clamp(180px, 18vw, 280px)",
+      filter: brightness != null && brightness !== "" ? `brightness(${brightness}%)` : undefined,
     }}>
       <div style={{ position: "relative", zIndex: 1 }}>
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem", marginBottom: "0.85rem" }}>
@@ -223,7 +237,7 @@ function ServiceCard({ card, dark }) {
         </div>
         {subtitle && (
           <>
-            <div style={{ height: 1, background: NEON, margin: "0 0 1.1rem" }} />
+            <div style={{ height: 1, background: dividerClr, margin: "0 0 1.1rem" }} />
             <p style={{
               fontFamily: FONT, fontWeight: 700, fontSize: "1.08rem",
               color: titleColor, lineHeight: 1.4, margin: "0 0 1.1rem",

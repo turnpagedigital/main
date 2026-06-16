@@ -26,6 +26,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
   const cardStyle        = c.cardStyle || "standard";
   const cardRadius       = c.cardRadius || "rounded";
   const cardBlur         = c.cardBlur != null && c.cardBlur !== "" ? Number(c.cardBlur) : undefined;
+  const cardBrightness   = c.cardBrightness != null && c.cardBrightness !== "" ? Number(c.cardBrightness) : undefined;
   const backgroundImage  = c.backgroundImage || "";
   const imageFilter         = c.imageFilter || "dark";
   const imageFilterStrength = c.imageFilterStrength ?? 30;
@@ -90,6 +91,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
                 radius={card.cardRadius || cardRadius}
                 variant={colorScheme === "dark" ? "dark" : "light"}
                 blurAmount={cardBlur}
+                brightness={cardBrightness}
               />
             ))}
           </div>
@@ -103,7 +105,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
               const { badge } = card;
               const hasBadge = badge && badge.trim().length > 0;
               return (
-                <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur}>
+                <Card key={card.id} style={card.cardStyle || cardStyle} radius={card.cardRadius || cardRadius} blurAmount={cardBlur} brightness={cardBrightness}>
                   {hasBadge && (
                     <div style={{
                       display: "inline-block", fontFamily: FONT,
@@ -138,7 +140,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
             gridTemplateColumns: cols,
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className="audience-grid">
-            {cards.map(card => <AudienceCard key={card.id} card={card} schemeDark={colorScheme === "dark"} />)}
+            {cards.map(card => <AudienceCard key={card.id} card={card} schemeDark={colorScheme === "dark"} brightness={cardBrightness} />)}
           </div>
         )}
       </div>
@@ -150,7 +152,7 @@ export default function AudienceCardsSection({ sectionConfig }) {
   );
 }
 
-function AudienceCard({ card, schemeDark }) {
+function AudienceCard({ card, schemeDark, brightness }) {
   const { title, body, badge } = card;
   const hasBadge = badge && badge.trim().length > 0;
   const cardBg = hasBadge
@@ -171,6 +173,7 @@ function AudienceCard({ card, schemeDark }) {
       overflow: "hidden",
       display: "flex", flexDirection: "column",
       minHeight: "clamp(180px, 18vw, 280px)",
+      filter: brightness != null && brightness !== "" ? `brightness(${brightness}%)` : undefined,
     }}>
       {hasBadge && (
         <div style={{
