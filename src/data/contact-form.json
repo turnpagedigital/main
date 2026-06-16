@@ -11,9 +11,15 @@
   "whatsapp": "16468600068",
   "telegram": "",
   "social_links": [
-    { "url": "mailto:info@turnpagedigital.com" },
-    { "url": "" },
-    { "url": "https://wa.me/16468600068" }
+    {
+      "url": "mailto:info@turnpagedigital.com"
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": "https://wa.me/16468600068"
+    }
   ],
   "disclaimer": "All submissions are confidential. Sending us a message or receiving a reply does not create any client relationship or funding obligation. Turnpage Digital Markets LLC is not a law firm, or registered broker-dealer and does not provide legal or financial advice. ",
   "subjects": [
@@ -65,7 +71,7 @@
     {
       "id": "General inquiry",
       "label": "I have a general question about your services",
-      "active": true
+      "active": false
     }
   ],
   "fields": [
