@@ -65,25 +65,17 @@
           }
         },
         {
-          "id": "sec-home-bio",
-          "type": "bio",
-          "visible": true,
-          "content": {
-            "_bookmark": "leadership"
-          }
-        },
-        {
           "id": "sec-1781609842020-dar0",
           "type": "service-cards",
           "visible": true,
-          "layout": "grid-3col",
+          "layout": "grid-2col",
           "colorScheme": "dark",
           "content": {
             "eyebrow": "What We Offer",
             "title": "Services.",
             "accent": "",
             "colorScheme": "dark",
-            "layout": "grid-3col",
+            "layout": "grid-2col",
             "cards": [
               {
                 "id": "svc-1",
@@ -93,17 +85,33 @@
               {
                 "id": "svc-2",
                 "title": "Private Sales",
-                "body": "Describe this service."
+                "body": "Discretely solicit premium bids from the most active and trusted institutions eager to avoid uncertainty of a crowded auction.\n",
+                "subtitle": "Execution without the noise"
               },
               {
                 "id": "card-1781609944171",
-                "title": "Auctions",
-                "body": "",
-                "priority": false
+                "title": "Robust Auctions",
+                "body": "Achieve comprehensive price discovery with broad-reach marketing and a transparent auction process.\n",
+                "priority": false,
+                "subtitle": "Auditable results; board-ready reporting"
               },
               {
                 "id": "card-1781609947238",
-                "title": "Advisory",
+                "title": "Private Pools",
+                "body": "Avoid scrutiny of intra-group trading by transacting with counterparties through a trusted intermediary.\n",
+                "priority": false,
+                "subtitle": "Efficient trading among restricted / ad hoc group members "
+              },
+              {
+                "id": "card-1781610235340",
+                "title": "Structured Portfolios",
+                "body": "Enhance marketability and demand by aggregating related interests into a single portfolio, ready to trade.\n",
+                "priority": false,
+                "subtitle": "Increased pricing power with scale"
+              },
+              {
+                "id": "card-1781610290306",
+                "title": "Advisory Services",
                 "body": "",
                 "priority": false
               }
@@ -114,6 +122,14 @@
             "cardStyle": "standard",
             "cardBlur": 35,
             "cardRadius": "square"
+          }
+        },
+        {
+          "id": "sec-home-bio",
+          "type": "bio",
+          "visible": true,
+          "content": {
+            "_bookmark": "leadership"
           }
         },
         {
