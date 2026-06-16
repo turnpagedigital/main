@@ -49,7 +49,7 @@ export const SECONDARY_BG = "#F4F5F7";
    CARD = the standard Card styles (white/black/glass/…); GLASS = LiquidGlassCard. */
 export const RADIUS_CARD = "clamp(0.2rem, 1.2vw, 0.3125rem)";
 export const RADIUS_CARD_SQUARE = "0.2rem";
-export const RADIUS_GLASS = ".1rem";
+export const RADIUS_GLASS = ".05rem";
 export const RADIUS_GLASS_SQUARE = "1px";
 
 /* Typography */
