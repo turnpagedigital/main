@@ -25,52 +25,47 @@
   "subjects": [
     {
       "id": "Bankruptcy claims",
-      "label": "I have a claim in a bankruptcy case",
+      "label": "bankruptcy claim",
       "active": true
     },
     {
       "id": "Class action claims",
-      "label": "I have a class action membership interest ",
+      "label": "class action membership interest",
       "active": true
     },
     {
       "id": "Copyright claims",
-      "label": "I have a copyright claim against a generative AI company",
+      "label": "copyright claim",
       "active": true
     },
     {
       "id": "Digital asset claims",
-      "label": "I have a claim related to a cryptocurrency loan or deposit account",
+      "label": "cryptocurrency loan or deposit account",
       "active": true
     },
     {
       "id": "Litigation funding",
-      "label": "I am seeking funding for a litigation effort",
+      "label": "litigation funding",
       "active": true
     },
     {
       "id": "Tariff refunds",
-      "label": "I am interested in monetizing tariff refunds and related claims",
-      "active": true
-    },
-    {
-      "id": "Receivables",
-      "label": "I am seeking an advance on receivables",
+      "label": "tariff refunds",
       "active": true
     },
     {
       "id": "Referrals",
-      "label": "I would like to learn about your referral program",
+      "label": "referral program",
       "active": true
     },
     {
       "id": "Partnership",
-      "label": "I have a question about partnerships",
+      "label": "partnerships",
       "active": true
     },
     {
       "id": "General inquiry",
-      "label": "I have a general question about your services",
+      "label": "general inquiry",
       "active": true
     }
   ],
