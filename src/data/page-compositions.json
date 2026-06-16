@@ -68,60 +68,50 @@
           "id": "sec-1781609842020-dar0",
           "type": "service-cards",
           "visible": true,
-          "layout": "grid-2col",
+          "layout": "grid-4col",
           "colorScheme": "white",
           "content": {
             "eyebrow": "How We Help",
             "title": "Our",
             "accent": "Services.",
             "colorScheme": "white",
-            "layout": "grid-2col",
+            "layout": "grid-4col",
             "cards": [
               {
                 "id": "svc-1",
-                "title": "Direct Purchase",
-                "body": "Dedicated capital partners to provide rapid pricing and liquidity."
-              },
-              {
-                "id": "svc-2",
-                "title": "Private Sales",
-                "body": "Discretely solicit premium bids from the most active and trusted institutions eager to avoid uncertainty of a crowded auction.\n",
-                "subtitle": "Execution without the noise"
+                "title": "Direct Acquisiton",
+                "body": "Our dedicated capital partners enable us to offer competitive pricing and an efficient closing process in the largest cases.",
+                "cardStyle": "",
+                "subtitle": "Balance sheet capital"
               },
               {
                 "id": "card-1781609944171",
-                "title": "Robust Auctions",
-                "body": "Achieve comprehensive price discovery with broad-reach marketing and a transparent auction process.\n",
+                "title": "Auctions & Reporting",
+                "body": "Achieve comprehensive price discovery with broad-reach marketing and a robust and transparent auction process.\n",
                 "priority": false,
-                "subtitle": "Auditable results; board-ready reporting"
+                "subtitle": "Auditable, board-ready results"
               },
               {
-                "id": "card-1781609947238",
-                "title": "Private Pools",
-                "body": "Avoid scrutiny of intra-group trading by transacting with counterparties through a trusted intermediary.\n",
-                "priority": false,
-                "subtitle": "Efficient trading among restricted / ad hoc group members "
-              },
-              {
-                "id": "card-1781610235340",
+                "id": "svc-2",
                 "title": "Structured Portfolios",
-                "body": "Enhance marketability and demand by aggregating related interests into a single portfolio, ready to trade.\n",
-                "priority": false,
-                "subtitle": "Increased pricing power with scale"
+                "body": "Enhance marketability and demand by aggregating related interests into a single portfolio, ready to trade.",
+                "subtitle": "Increased pricing power"
               },
               {
                 "id": "card-1781610290306",
                 "title": "Advisory Services",
-                "body": "",
-                "priority": false
+                "body": "We assemble teams of lawyers, experts and advisors to tackle the most complex cross-border claims disputes and recovery strategies. ",
+                "priority": false,
+                "cardStyle": "",
+                "subtitle": "Strategic guidance"
               }
             ],
             "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
             "cardTitleColor": "default",
             "imageFilterStrength": 15,
-            "cardStyle": "white",
-            "cardBlur": 35,
-            "cardRadius": "square",
+            "cardStyle": "light-glass",
+            "cardBlur": 12,
+            "cardRadius": "rounded",
             "imageFilter": "light"
           }
         },
