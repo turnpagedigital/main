@@ -69,12 +69,12 @@
           "type": "service-cards",
           "visible": true,
           "layout": "grid-2col",
-          "colorScheme": "dark",
+          "colorScheme": "white",
           "content": {
-            "eyebrow": "What We Offer",
-            "title": "Services.",
-            "accent": "",
-            "colorScheme": "dark",
+            "eyebrow": "How We Help",
+            "title": "Our",
+            "accent": "Services.",
+            "colorScheme": "white",
             "layout": "grid-2col",
             "cards": [
               {
@@ -116,12 +116,13 @@
                 "priority": false
               }
             ],
-            "backgroundImage": "/bg-paper.jpg",
+            "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
             "cardTitleColor": "default",
-            "imageFilterStrength": 60,
-            "cardStyle": "standard",
+            "imageFilterStrength": 15,
+            "cardStyle": "white",
             "cardBlur": 35,
-            "cardRadius": "square"
+            "cardRadius": "square",
+            "imageFilter": "light"
           }
         },
         {
