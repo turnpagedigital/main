@@ -14,7 +14,7 @@
           "content": {
             "title1": "Strategic guidance.",
             "title2": "Turn-key liquidity.",
-            "subtitle": "For rights holders entitled to compensation \u2014 from litigation, class action and bankruptcy claims, to receivables, tariff refunds and locked digital assets.",
+            "subtitle": "For rights holders entitled to compensation — from litigation, class action and bankruptcy claims, to receivables, tariff refunds and locked digital assets.",
             "video": "/robotpages1.mp4",
             "ctaPrimary": {
               "label": "Get in Touch",
@@ -49,7 +49,7 @@
               }
             ],
             "footnoteKey": "stats.footnote",
-            "footnote": "*Includes experience prior to founding Turnpage Digital"
+            "footnote": "*Includes experience prior to founding Turnpage"
           }
         },
         {
@@ -102,7 +102,8 @@
             "_bookmark": "experience",
             "title": "A track record across the largest trades.",
             "body": "From rapid settlement to complex advisory roles, we are proud of our ability to deliver exceptional value for our clients and counterparties.",
-            "eyebrow": "Relevant experience"
+            "eyebrow": "Relevant experience",
+            "footnote": "* Includes experience prior to founding Turnpage"
           }
         },
         {
@@ -231,13 +232,13 @@
               },
               {
                 "id": "music-publishers",
-                "title": "Music Labels, Publishers & Catalogue Owners",
+                "title": "Musicians, Labels & Catalogues",
                 "body": "With claims in cases including: Concord v. Anthropic | RIAA-coordinated claimants | UMG v. Suno/Udio",
                 "priority": false
               },
               {
                 "id": "visual-artists",
-                "title": "Visual Artists & Stock Image Libraries",
+                "title": "Visual Artists & Image Libraries",
                 "body": "With claims in cases including: Andersen v. Stability | Getty v. Stability (US and UK).",
                 "priority": false
               },
@@ -276,19 +277,19 @@
               {
                 "id": "step-1",
                 "n": "01",
-                "title": "Track open settlements \u00bb",
+                "title": "Track open settlements »",
                 "body": "Did you know you might be eligible to file a claim in one of 60+ cases that are currently on the docket against Generative AI Companies? Subscribe to alerts about claim filing opportunities in the cases that matter to you so you never miss a deadline."
               },
               {
                 "id": "step-2",
                 "n": "02",
-                "title": "File your claims \u00bb",
+                "title": "File your claims »",
                 "body": "Who needs all that paperwork? Let our experts help you file you claim to ensure you don't miss a cent. We can help you identify the materials you need to prove what you're owed and reduce the error rate by over 95%. \n\n"
               },
               {
                 "id": "step-3",
                 "n": "03",
-                "title": "Get paid without the hassle \u00bb",
+                "title": "Get paid without the hassle »",
                 "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you, or buy your claim outright so you can get cash today."
               }
             ],
@@ -345,21 +346,6 @@
           "colorScheme": "light"
         },
         {
-          "id": "sec-aic-faq",
-          "type": "faq",
-          "visible": false,
-          "layout": "layout-2-sidebar",
-          "colorScheme": "light",
-          "content": {
-            "title": "Copyright claims,",
-            "accent": "answered.",
-            "ctaLabel": "Ask our team",
-            "ctaHref": "/contact?source=ai-copyright",
-            "colorScheme": "light",
-            "_bookmark": "faq"
-          }
-        },
-        {
           "id": "sec-1780973311793-kxeo",
           "type": "cta",
           "visible": true,
@@ -408,6 +394,21 @@
               "href": ""
             },
             "_bookmark": "cta"
+          }
+        },
+        {
+          "id": "sec-aic-faq",
+          "type": "faq",
+          "visible": false,
+          "layout": "layout-2-sidebar",
+          "colorScheme": "light-gray",
+          "content": {
+            "title": "Copyright claims,",
+            "accent": "answered.",
+            "ctaLabel": "Ask our team",
+            "ctaHref": "/contact?source=ai-copyright",
+            "colorScheme": "light-gray",
+            "_bookmark": "faq"
           }
         }
       ],
@@ -568,7 +569,7 @@
               "items": [
                 "Cash bid quoted in fiat.",
                 "Tax-basis-aware structuring.",
-                "Single creditor or bulk fund \u2014 same desk."
+                "Single creditor or bulk fund — same desk."
               ]
             }
           }
@@ -701,7 +702,7 @@
             "eyebrow": "Litigation Funding",
             "title": "We help power the cases that",
             "accentTitle": "deserve to win.",
-            "subtitle": "Turnpage helps the best law firms pursue cases on contingency \u2014 structuring flexible capital solutions aligned with your practice, and your bank account.",
+            "subtitle": "Turnpage helps the best law firms pursue cases on contingency — structuring flexible capital solutions aligned with your practice, and your bank account.",
             "size": "tall",
             "video": "/robotobriefcase1.mp4",
             "ctaPrimary": {
@@ -802,7 +803,7 @@
             "oldWay": {
               "title": "Traditional litigation.",
               "items": [
-                "Cases declined \u2014 capital constraints, not merit.",
+                "Cases declined — capital constraints, not merit.",
                 "Settlements driven by client cashflow, not case value.",
                 "Overhead costs limit the size of your docket."
               ]
@@ -832,7 +833,7 @@
                 "id": "submit",
                 "n": "01",
                 "title": "Submit your case",
-                "body": "Share a case summary \u2014 claims, defendants, damages theory, and stage of litigation. NDA available on request."
+                "body": "Share a case summary — claims, defendants, damages theory, and stage of litigation. NDA available on request."
               },
               {
                 "id": "underwriting",
@@ -844,7 +845,7 @@
                 "id": "capital-deployed",
                 "n": "03",
                 "title": "Capital deployed",
-                "body": "Once terms are agreed, capital is available to cover case costs \u2014 experts, discovery, depositions, and trial preparation."
+                "body": "Once terms are agreed, capital is available to cover case costs — experts, discovery, depositions, and trial preparation."
               }
             ]
           }
@@ -872,7 +873,7 @@
               {
                 "id": "edge-1",
                 "h": "Practically unlimited liquidity",
-                "b": "We partner with major asset managers \u2014 over 500 institutions on speed dial."
+                "b": "We partner with major asset managers — over 500 institutions on speed dial."
               },
               {
                 "id": "edge-2",
@@ -1050,7 +1051,7 @@
           "type": "hero",
           "visible": true,
           "content": {
-            "eyebrow": "AI Copyright \u2014 Bartz v. Anthropic",
+            "eyebrow": "AI Copyright — Bartz v. Anthropic",
             "title": "Your claim is worth money.",
             "accentTitle": "Now, not next year.",
             "subtitle": "Authors with works on the Bartz settlement list can register with Turnpage to explore selling their claim for cash today instead of waiting for the payout timeline.",
@@ -1070,7 +1071,7 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "",
-            "markdown": "# Heading goes here\n\nWrite your text in Markdown \u2014 a blank line starts a new paragraph.\n\n## Subheading\n\n- Bullet point one\n- Bullet point two\n\n**Bold**, *italic*, and [links](/contact) are supported.",
+            "markdown": "# Heading goes here\n\nWrite your text in Markdown — a blank line starts a new paragraph.\n\n## Subheading\n\n- Bullet point one\n- Bullet point two\n\n**Bold**, *italic*, and [links](/contact) are supported.",
             "layout": "layout-2-wide",
             "colorScheme": "white"
           }
@@ -1155,7 +1156,7 @@
               {
                 "id": "edge-1",
                 "h": "Practically unlimited liquidity",
-                "b": "We partner with major asset managers \u2014 over 500 institutions on speed dial."
+                "b": "We partner with major asset managers — over 500 institutions on speed dial."
               },
               {
                 "id": "edge-2",
