@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-17-bankruptcy-advisory",
+      "date": "2026-06-17",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 17, 2026",
+      "summary": "Today's two headline events: Sleep Number Corporation's freefall Chapter 11 filing in the Southern District of New York — the largest retail bankruptcy of 2026 so far — enters its first critical week with a compressed 363 sale timeline that will determine whether unsecured creditors see any recovery…",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-17-class-actions-advisory",
+      "date": "2026-06-17",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 17, 2026",
+      "summary": "Today's delta is led by two overnight MDL developments that materially shift recovery timelines. NextEra Energy and a pair of Florida retirement funds filed court papers Monday proposing a $150 million settlement to resolve a securities class action that accused NextEra and its subsidiary Florida Po…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-17-fraud-advisory",
+      "date": "2026-06-17",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 17, 2026",
+      "summary": "Three developments define today's forward look: the Stanford receivership's final distribution is actively disbursing — with a June 1 receiver's response to court disclosing the current distribution status — while a June 30 filing deadline for OneCoin victim petitions is now less than two weeks away…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-17-tariff-advisory",
+      "date": "2026-06-17",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 17, 2026",
+      "summary": "The decisive move this week: on June 11, 2026, the Federal Circuit granted the government's full stay pending appeal in the Section 122 litigation, pausing the CIT's injunction in favor of Burlap and Barrel, Basic Fun, and the State of Washington — and signaling, in writing, that the government is \"…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-17-crypto-advisory",
+      "date": "2026-06-17",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 17, 2026",
+      "summary": "BlockFills § 363 sale approved; FTX trust voluntarily dismisses $1.15B Genesis Digital clawback; Celsius preference defendants lose venue-shift bid — three discrete developments in 72 hours that collectively reshape the near-term creditor landscape across the post-2022 crypto-insolvency wave.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-17-advisory",
+      "date": "2026-06-17",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 17, 2026",
+      "summary": "The controlling development as of today: Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal., Judge Araceli Martínez-Olguín), has cleared its final approval hearing but the written order has not been publicly docketed as of the last confirmed court record.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-16-bankruptcy-advisory",
       "date": "2026-06-16",
       "type": "briefing",
