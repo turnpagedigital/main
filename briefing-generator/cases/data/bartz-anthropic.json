@@ -15,8 +15,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-06-04",
-    "fetched_at": "2026-06-11T15:33:32.841379+00:00",
-    "as_of": "Jun 11, 2026",
+    "fetched_at": "2026-06-17T17:07:29.510080+00:00",
+    "as_of": "Jun 17, 2026",
     "new_in_72h": 0,
     "recent": [
       {
@@ -130,19 +130,19 @@
         "doc_url": ""
       },
       {
-        "entry_number": 664,
+        "entry_number": null,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
-        "description": "ORDER FOLLOWING FINAL APPROVAL HEARING: By no later than May 21, 2026, Anthropic may file a supplemental brief of no more than 2 pages addressing why late opt outs should not be honored. By that date, Plaintiffs shall file a revised proposed order substantively addressing objecti",
+        "description": "",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 666,
+        "entry_number": 664,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
-        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
+        "description": "ORDER FOLLOWING FINAL APPROVAL HEARING: By no later than May 21, 2026, Anthropic may file a supplemental brief of no more than 2 pages addressing why late opt outs should not be honored. By that date, Plaintiffs shall file a revised proposed order substantively addressing objecti",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -157,10 +157,10 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
       },
       {
-        "entry_number": null,
+        "entry_number": 666,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
-        "description": "",
+        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
