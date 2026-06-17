@@ -1,0 +1,239 @@
+{
+  "case": {
+    "slug": "blockfills",
+    "display_name": "BlockFills",
+    "case_name": "Reliz Technology Group Holdings Inc.",
+    "court": "Bankr. D. Del.",
+    "case_number": "26-10371",
+    "judge": "Thomas M. Horan",
+    "docket_id": "72494188",
+    "status": "active",
+    "court_id": ""
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/72494188/",
+    "date_last_filing": "2026-06-16",
+    "fetched_at": "2026-06-16T18:41:55.781782+00:00",
+    "as_of": "Jun 16, 2026",
+    "new_in_72h": 8,
+    "recent": [
+      {
+        "entry_number": 431,
+        "date_filed": "2026-06-16",
+        "date_display": "Jun 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 433,
+        "date_filed": "2026-06-16",
+        "date_display": "Jun 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 434,
+        "date_filed": "2026-06-16",
+        "date_display": "Jun 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 431,
+        "date_filed": "2026-06-16",
+        "date_display": "Jun 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 433,
+        "date_filed": "2026-06-16",
+        "date_display": "Jun 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 434,
+        "date_filed": "2026-06-16",
+        "date_display": "Jun 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 432,
+        "date_filed": "2026-06-16",
+        "date_display": "Jun 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 435,
+        "date_filed": "2026-06-16",
+        "date_display": "Jun 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 428,
+        "date_filed": "2026-06-15",
+        "date_display": "Jun 15, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 429,
+        "date_filed": "2026-06-15",
+        "date_display": "Jun 15, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 430,
+        "date_filed": "2026-06-15",
+        "date_display": "Jun 15, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 425,
+        "date_filed": "2026-06-12",
+        "date_display": "Jun 12, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 427,
+        "date_filed": "2026-06-12",
+        "date_display": "Jun 12, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 426,
+        "date_filed": "2026-06-12",
+        "date_display": "Jun 12, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 424,
+        "date_filed": "2026-06-12",
+        "date_display": "Jun 12, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 420,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 418,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 419,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-11",
+        "date_display": "Jun 11, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 416,
+        "date_filed": "2026-06-10",
+        "date_display": "Jun 10, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 417,
+        "date_filed": "2026-06-10",
+        "date_display": "Jun 10, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 415,
+        "date_filed": "2026-06-10",
+        "date_display": "Jun 10, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 414,
+        "date_filed": "2026-06-10",
+        "date_display": "Jun 10, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ]
+  },
+  "claims_administrator": {
+    "name": "Veritaglobal",
+    "url": "https://veritaglobal.net/blockfills/document/list/6500",
+    "key_dates_url": "https://veritaglobal.net/BlockFills"
+  },
+  "coverage": []
+}
