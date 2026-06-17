@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { NEON, FONT, INK, INK_60, LINE_STRONG } from "../data/tokens.js";
 import { getAttribution, trackLead } from "../lib/analytics.js";
 import contactFormData from "../data/contact-form.json";
+import { useI18n } from "../lib/i18n.js";
 
 function buildSubjectOptions() {
   const active = (contactFormData.subjects || []).filter(s => s.active !== false);
@@ -25,6 +26,7 @@ const SOURCE_SUBJECTS = {
    lead came from (e.g. "ai-copyright"); sent as a hidden field so
    submissions can be attributed to the page that drove them. */
 export default function IntakeForm({ source = "", defaultSubject = "" }) {
+  const { t } = useI18n();
   const [formState, setFormState] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const formRef = useRef(null);
@@ -79,10 +81,10 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
           margin: "0 auto 1.2rem",
         }}>✓</div>
         <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.4rem", color: INK, marginBottom: "0.6rem", letterSpacing: "-0.01em" }}>
-          Message sent.
+          {t("form.success_title")}
         </h3>
         <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60 }}>
-          We'll be in touch within 48 hours. Check your inbox for a confirmation.
+          {t("form.success_body")}
         </p>
       </div>
     );
@@ -99,19 +101,19 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       ))}
 
       <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-        <Field label="First Name" name="firstName" type="text" required />
-        <Field label="Last Name" name="lastName" type="text" required />
+        <Field label={t("form.first_name")} name="firstName" type="text" required />
+        <Field label={t("form.last_name")} name="lastName" type="text" required />
       </div>
-      <Field label="Email" name="email" type="email" required />
-      <ContactMethodSelector />
+      <Field label={t("form.email")} name="email" type="email" required />
+      <ContactMethodSelector t={t} />
       <Select
-        label="Subject"
+        label={t("form.subject")}
         name="subject"
         required
-        options={SUBJECT_OPTIONS}
+        options={[{ value: "", label: t("form.select_subject"), disabled: true }, ...SUBJECT_OPTIONS.slice(1)]}
         defaultValue={resolvedDefault}
       />
-      <Field label="Message" name="message" type="textarea" placeholder="Tell us about your situation. What type of claim, against whom, what stage." required />
+      <Field label={t("form.message")} name="message" type="textarea" placeholder={t("form.message_placeholder")} required />
 
       {formState === "error" && (
         <p id="intake-form-error" role="alert" style={{ fontFamily: FONT, fontSize: "0.9rem", color: "#C03030", marginBottom: "0.8rem" }}>
@@ -131,31 +133,30 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
           cursor: formState === "submitting" ? "wait" : "pointer",
         }}
       >
-        {formState === "submitting" ? "Sending..." : "Send Message →"}
+        {formState === "submitting" ? t("form.submitting") : t("form.submit")}
       </button>
     </form>
   );
 }
 
-const CONTACT_METHODS = [
-  { value: "phone",    label: "Phone / SMS",  inputLabel: "Your phone number",    type: "tel",  placeholder: "+1 234 567 8900" },
-  { value: "telegram", label: "Telegram",     inputLabel: "Your Telegram handle",  type: "text", placeholder: "@username" },
-  { value: "whatsapp", label: "WhatsApp",     inputLabel: "Your WhatsApp number",  type: "tel",  placeholder: "+1 234 567 8900" },
-];
-
-function ContactMethodSelector() {
+function ContactMethodSelector({ t }) {
   const [method, setMethod] = useState("");
   const selectId = React.useId();
   const inputId = React.useId();
   const [inputInvalid, setInputInvalid] = useState(false);
+  const CONTACT_METHODS = [
+    { value: "phone",    label: t("form.phone_label"),    inputLabel: t("form.phone_input_label"),    type: "tel",  placeholder: t("form.phone_placeholder") },
+    { value: "telegram", label: t("form.telegram_label"), inputLabel: t("form.telegram_input_label"), type: "text", placeholder: t("form.telegram_placeholder") },
+    { value: "whatsapp", label: t("form.whatsapp_label"), inputLabel: t("form.whatsapp_input_label"), type: "tel",  placeholder: t("form.whatsapp_placeholder") },
+  ];
   const cfg = CONTACT_METHODS.find(m => m.value === method);
 
   return (
     <div>
       <div style={{ marginBottom: "1rem" }}>
         <label htmlFor={selectId}>
-          How would you like to be contacted?{" "}
-          <span style={{ fontWeight: 400, color: INK_60 }}>(optional)</span>
+          {t("form.contact_method_label")}{" "}
+          <span style={{ fontWeight: 400, color: INK_60 }}>{t("form.contact_optional")}</span>
         </label>
         <select
           id={selectId}
@@ -169,7 +170,7 @@ function ContactMethodSelector() {
             paddingRight: "2.4rem",
           }}
         >
-          <option value="">No preference</option>
+          <option value="">{t("form.no_preference")}</option>
           {CONTACT_METHODS.map(m => (
             <option key={m.value} value={m.value}>{m.label}</option>
           ))}

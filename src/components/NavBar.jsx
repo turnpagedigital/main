@@ -284,7 +284,7 @@ export default function NavBar({ currentPage }) {
                 fontFamily: FONT, fontSize: "0.74rem", fontWeight: 600,
                 letterSpacing: "0.22em", textTransform: "uppercase",
                 color: INK_60, marginBottom: "0.8rem",
-              }}>Overview</p>
+              }}>{t("nav.dropdown.overview")}</p>
               <h3 style={{
                 fontFamily: FONT, fontWeight: 800,
                 fontSize: "clamp(1.4rem, 2vw, 1.75rem)",
@@ -302,7 +302,7 @@ export default function NavBar({ currentPage }) {
                 fontFamily: FONT, fontSize: "0.74rem", fontWeight: 600,
                 letterSpacing: "0.22em", textTransform: "uppercase",
                 color: INK_60, marginBottom: "0.8rem",
-              }}>Quick links</p>
+              }}>{t("nav.dropdown.quicklinks")}</p>
               <ul style={{
                 listStyle: "none", padding: 0, margin: 0,
                 display: "grid",
@@ -459,7 +459,7 @@ export default function NavBar({ currentPage }) {
                 borderRadius: 0, letterSpacing: "0.02em",
               }}
             >
-              {microsite ? microsite.cta.label : "Get in Touch"}
+              {microsite ? microsite.cta.label : t("nav.contact")}
             </a>
           </div>
         </div>
