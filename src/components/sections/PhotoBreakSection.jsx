@@ -1,12 +1,15 @@
 import React from "react";
 import { FONT } from "../../data/tokens.js";
+import { useI18n } from "../../lib/i18n.js";
 
 /* Full-bleed photo with optional overlay headline. */
 export default function PhotoBreakSection({ sectionConfig }) {
+  const { t, lang } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
-  const imageUrl     = c.imageUrl     || "/bg-paper.jpg";
-  const overlayText  = c.overlayText  || "";
-  const overlayAccent= c.overlayAccent|| "";
+  const en = lang === "en";
+  const imageUrl     = c.imageUrl || "/bg-paper.jpg";
+  const overlayText  = en ? (c.overlayText  || t("photobreak.text"))   : t("photobreak.text");
+  const overlayAccent= en ? (c.overlayAccent || t("photobreak.accent")) : t("photobreak.accent");
 
   return (
     <section style={{

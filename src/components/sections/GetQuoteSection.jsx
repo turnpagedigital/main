@@ -1,14 +1,17 @@
 import React from "react";
 import { NEON, FONT } from "../../data/tokens.js";
+import { useI18n } from "../../lib/i18n.js";
 
 /* Home-page "Get a Quote" dark rounded panel. Content from sectionConfig.content. */
 export default function GetQuoteSection({ sectionConfig }) {
+  const { t, lang } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
-  const eyebrow    = c.eyebrow    || "Get a Quote";
-  const title      = c.title      || "Why wait?";
-  const titleAccent= c.titleAccent|| "Talk to us.";
-  const body       = c.body       || "Contact us for a quote or to learn more. 48-hour response. Confidentiality default.";
-  const cta        = c.cta        || { label: "Get in Touch", href: "/contact" };
+  const en = lang === "en";
+  const eyebrow    = en ? (c.eyebrow     || t("getquote.eyebrow")) : t("getquote.eyebrow");
+  const title      = en ? (c.title       || t("getquote.title"))   : t("getquote.title");
+  const titleAccent= en ? (c.titleAccent || t("getquote.accent"))  : t("getquote.accent");
+  const body       = en ? (c.body        || t("getquote.body"))    : t("getquote.body");
+  const cta        = c.cta || { label: t("nav.contact"), href: "/contact" };
 
   return (
     <section style={{

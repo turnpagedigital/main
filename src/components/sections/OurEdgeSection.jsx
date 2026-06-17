@@ -10,7 +10,7 @@ export default function OurEdgeSection({ sectionConfig }) {
   const eyebrow    = en ? (c.eyebrow     || t("edge.eyebrow")) : t("edge.eyebrow");
   const title      = en ? (c.title       || t("edge.title_1")) : t("edge.title_1");
   const titleAccent= en ? (c.titleAccent || t("edge.title_2")) : t("edge.title_2");
-  const intro      = c.intro      || "";
+  const intro      = en ? (c.intro || t("edge.intro")) : t("edge.intro");
   const colorScheme = c.colorScheme || "white";
   const defaultPoints = [
     { id: "e1", h: t("edge.p1.title"), b: t("edge.p1.body") },

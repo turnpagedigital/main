@@ -2,9 +2,18 @@ import React from "react";
 import { FONT, INK, INK_60, LINE, LINE_STRONG } from "../../data/tokens.js";
 import SocialLinks from "../SocialLinks.jsx";
 import bioData from "../../data/bio.json";
+import { useI18n } from "../../lib/i18n.js";
 
 /* Leadership section. Content managed in Content → Bio. */
 export default function BioSection() {
+  const { t, lang } = useI18n();
+  const en = lang === "en";
+  const tr = (!en && bioData.translations?.[lang]) || null;
+  const tagline_before = tr ? tr.tagline_before : bioData.tagline_before;
+  const tagline_accent = tr ? tr.tagline_accent : bioData.tagline_accent;
+  const tagline_after  = tr ? tr.tagline_after  : bioData.tagline_after;
+  const paragraphs     = (tr && Array.isArray(tr.paragraphs)) ? tr.paragraphs : (bioData.paragraphs || []);
+
   return (
     <section id="team" style={{
       background: "#F4F5F7",
@@ -17,7 +26,7 @@ export default function BioSection() {
           letterSpacing: "0.22em", textTransform: "uppercase",
           color: INK_60, marginBottom: "1.5rem",
         }}>
-          Leadership
+          {t("leadership.eyebrow")}
         </p>
         <h2 style={{
           fontFamily: FONT, fontWeight: 800,
@@ -52,7 +61,7 @@ export default function BioSection() {
               Andrew Glantz
             </p>
             <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK_60, marginTop: "0.2rem" }}>
-              Founder & Managing Partner
+              {t("bio.role")}
             </p>
             {Array.isArray(bioData.social_links) && bioData.social_links.length > 0 && (
               <div style={{ marginTop: "0.85rem" }}>
@@ -69,11 +78,11 @@ export default function BioSection() {
               lineHeight: 1.2, letterSpacing: "-0.02em",
               color: INK, marginBottom: "2rem",
             }}>
-              {bioData.tagline_before}{" "}
-              <span className="accent-light">{bioData.tagline_accent}</span>{" "}
-              {bioData.tagline_after}
+              {tagline_before}{" "}
+              <span className="accent-light">{tagline_accent}</span>{" "}
+              {tagline_after}
             </p>
-            {(bioData.paragraphs || []).map((para, i, arr) => (
+            {paragraphs.map((para, i, arr) => (
               <p key={i} style={{
                 fontFamily: FONT, fontSize: "clamp(1rem, 1.3vw, 1.15rem)",
                 color: INK_60, lineHeight: 1.7,
@@ -93,7 +102,7 @@ export default function BioSection() {
               letterSpacing: "0.2em", textTransform: "uppercase",
               color: "rgba(10,10,10,0.55)", marginBottom: "1.4rem",
             }}>
-              As seen in
+              {t("bio.seen_in")}
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "clamp(1.2rem, 3vw, 2.5rem)" }}>
               {bioData.media_logos.filter(l => l.url).map((logo, i) => (

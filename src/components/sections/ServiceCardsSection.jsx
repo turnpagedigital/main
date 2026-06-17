@@ -3,6 +3,7 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import LiquidGlassCard from "../LiquidGlassCard.jsx";
 import Card from "../Card.jsx";
 import { sectionBackground } from "../../lib/section-background.js";
+import { useI18n } from "../../lib/i18n.js";
 
 /* ServiceCardsSection — "What We Offer"
    Inline section: content lives in page-compositions.json sectionConfig.content.
@@ -19,11 +20,20 @@ import { sectionBackground } from "../../lib/section-background.js";
      backgroundImage            — optional image URL for section background
 */
 export default function ServiceCardsSection({ sectionConfig }) {
+  const { t, lang } = useI18n();
   const c = (sectionConfig && sectionConfig.content) || {};
-  const cards            = c.cards  || [];
-  const eyebrow          = c.eyebrow || "What We Offer";
-  const title            = c.title   || "";
-  const accent           = c.accent  || "";
+  const en = lang === "en";
+  const cards   = c.cards || [];
+  const eyebrow = en ? (c.eyebrow || t("service.eyebrow")) : t("service.eyebrow");
+  const title   = en ? (c.title   || t("service.title"))   : t("service.title");
+  const accent  = en ? (c.accent  || t("service.accent"))  : t("service.accent");
+  const localizeCard = (card, idx) => en ? card : {
+    ...card,
+    title:    t(`svc.card${idx}.title`)    || card.title,
+    subtitle: t(`svc.card${idx}.subtitle`) || card.subtitle,
+    body:     t(`svc.card${idx}.body`)     || card.body,
+  };
+  const localizedCards = cards.map(localizeCard);
   const layout           = c.layout  || "grid-3col";
   const colorScheme      = c.colorScheme || "dark";
   const cardStyle        = c.cardStyle || "standard";
@@ -88,14 +98,14 @@ export default function ServiceCardsSection({ sectionConfig }) {
             gap: "1px",
             background: isDark ? "rgba(255,255,255,0.08)" : LINE,
           }}>
-            {cards.map(card => <ServiceListRow key={card.id} card={card} dark={isDark} />)}
+            {localizedCards.map(card => <ServiceListRow key={card.id} card={card} dark={isDark} />)}
           </div>
         ) : cardStyle === "liquid-glass" ? (
           <div style={{
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1.5rem, 2.5vw, 2rem)",
           }} className={layout === "grid-4col" ? "service-grid service-grid-4col" : "service-grid"}>
-            {cards.map(card => (
+            {localizedCards.map(card => (
               <LiquidGlassCard
                 key={card.id}
                 title={card.title}
@@ -112,7 +122,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className={layout === "grid-4col" ? "service-grid service-grid-4col" : "service-grid"}>
-            {cards.map(card => {
+            {localizedCards.map(card => {
               const effectiveStyle = card.cardStyle || cardStyle;
               const dividerClr = LIGHT_CARD_STYLES.has(effectiveStyle) ? "rgba(0,0,0,0.18)" : NEON;
               return (
@@ -127,7 +137,7 @@ export default function ServiceCardsSection({ sectionConfig }) {
             display: "grid", gridTemplateColumns: cols,
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className={layout === "grid-4col" ? "service-grid service-grid-4col" : "service-grid"}>
-            {cards.map(card => {
+            {localizedCards.map(card => {
               if (card.cardStyle) {
                 const dividerClr = LIGHT_CARD_STYLES.has(card.cardStyle) ? "rgba(0,0,0,0.18)" : NEON;
                 return (

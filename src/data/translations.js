@@ -98,6 +98,42 @@ export const TRANSLATIONS = {
 
     // FAQ — more link
     "faq.more": "More Questions? See all FAQs →",
+
+    // Bio section
+    "bio.seen_in": "As seen in",
+    "bio.role":    "Founder & Managing Partner",
+
+    // Service cards — section header
+    "service.eyebrow": "How We Help",
+    "service.title":   "Our",
+    "service.accent":  "Services.",
+
+    // Service cards — card content (4 cards, positional)
+    "svc.card0.title":    "Direct Acquisition",
+    "svc.card0.subtitle": "Balance sheet capital",
+    "svc.card0.body":     "Our dedicated capital partners enable us to offer competitive pricing and an efficient closing process in the largest cases.",
+    "svc.card1.title":    "Auctions & Reporting",
+    "svc.card1.subtitle": "Auditable, board-ready results",
+    "svc.card1.body":     "Achieve comprehensive price discovery with broad-reach marketing and a robust and transparent auction process.",
+    "svc.card2.title":    "Structured Portfolios",
+    "svc.card2.subtitle": "Increased pricing power",
+    "svc.card2.body":     "Enhance marketability and demand by aggregating related interests into a single portfolio, ready to trade.",
+    "svc.card3.title":    "Advisory Services",
+    "svc.card3.subtitle": "Strategic guidance",
+    "svc.card3.body":     "We assemble teams of legal experts and advisors to tackle the most complex cross-border claims disputes and recovery strategies.",
+
+    // Photo break
+    "photobreak.text":   "Too hard? Not in",
+    "photobreak.accent": "our vocabulary.",
+
+    // Our Edge — intro
+    "edge.intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.",
+
+    // Get Quote section
+    "getquote.eyebrow": "Ready to learn more?",
+    "getquote.title":   "Talk with",
+    "getquote.accent":  "our team.",
+    "getquote.body":    "Contact us to discuss your funding needs. Private, fast and secure.",
   },
 
   /* ─── Spanish ─── */
@@ -177,6 +213,36 @@ export const TRANSLATIONS = {
     "experience.crypto.body":       "Una muestra representativa de operaciones en insolvencias cripto, quiebras de exchanges y reestructuraciones de activos digitales.",
 
     "faq.more": "¿Más preguntas? Ver todas las FAQ →",
+
+    "bio.seen_in": "Como aparece en",
+    "bio.role":    "Fundador y Socio Director",
+
+    "service.eyebrow": "Cómo Ayudamos",
+    "service.title":   "Nuestros",
+    "service.accent":  "Servicios.",
+
+    "svc.card0.title":    "Adquisición Directa",
+    "svc.card0.subtitle": "Capital de balance",
+    "svc.card0.body":     "Nuestros socios de capital dedicados nos permiten ofrecer precios competitivos y un proceso de cierre eficiente en los casos más grandes.",
+    "svc.card1.title":    "Subastas e Informes",
+    "svc.card1.subtitle": "Resultados auditables para el directorio",
+    "svc.card1.body":     "Logre un descubrimiento de precios integral con marketing de amplio alcance y un proceso de subasta robusto y transparente.",
+    "svc.card2.title":    "Carteras Estructuradas",
+    "svc.card2.subtitle": "Mayor poder de negociación de precios",
+    "svc.card2.body":     "Mejore la comerciabilidad y la demanda agregando intereses relacionados en una sola cartera lista para negociar.",
+    "svc.card3.title":    "Servicios de Asesoría",
+    "svc.card3.subtitle": "Orientación estratégica",
+    "svc.card3.body":     "Reunimos equipos de expertos legales y asesores para abordar las disputas de reclamaciones transfronterizas más complejas y las estrategias de recuperación.",
+
+    "photobreak.text":   "¿Demasiado difícil?",
+    "photobreak.accent": "No está en nuestro vocabulario.",
+
+    "edge.intro": "La diligencia automatizada y la integración profunda con nuestras fuentes de capital significan una incorporación rápida, precios altamente competitivos y un proceso de cierre eficiente.",
+
+    "getquote.eyebrow": "¿Listo para saber más?",
+    "getquote.title":   "Hable con",
+    "getquote.accent":  "nuestro equipo.",
+    "getquote.body":    "Contáctenos para hablar sobre sus necesidades. Privado, rápido y seguro.",
   },
 
   /* ─── French ─── */
@@ -256,6 +322,36 @@ export const TRANSLATIONS = {
     "experience.crypto.body":       "Un échantillon représentatif d'opérations dans les insolvabilités crypto, les défaillances d'échanges et les restructurations d'actifs numériques.",
 
     "faq.more": "Plus de questions ? Voir toutes les FAQ →",
+
+    "bio.seen_in": "Présenté dans",
+    "bio.role":    "Fondateur et Associé Gérant",
+
+    "service.eyebrow": "Comment nous aidons",
+    "service.title":   "Nos",
+    "service.accent":  "Services.",
+
+    "svc.card0.title":    "Acquisition directe",
+    "svc.card0.subtitle": "Capital de bilan",
+    "svc.card0.body":     "Nos partenaires en capital dédiés nous permettent d'offrir des prix compétitifs et un processus de clôture efficace dans les plus grands dossiers.",
+    "svc.card1.title":    "Enchères et rapports",
+    "svc.card1.subtitle": "Résultats auditables et prêts pour le conseil",
+    "svc.card1.body":     "Réalisez une découverte de prix complète grâce à un marketing à large portée et un processus d'enchères robuste et transparent.",
+    "svc.card2.title":    "Portefeuilles structurés",
+    "svc.card2.subtitle": "Pouvoir de négociation accru",
+    "svc.card2.body":     "Améliorez la commerciabilité et la demande en regroupant des intérêts connexes dans un seul portefeuille, prêt à être négocié.",
+    "svc.card3.title":    "Services de conseil",
+    "svc.card3.subtitle": "Orientation stratégique",
+    "svc.card3.body":     "Nous constituons des équipes d'experts juridiques et de conseillers pour traiter les litiges transfrontaliers les plus complexes et les stratégies de recouvrement.",
+
+    "photobreak.text":   "Trop difficile ?",
+    "photobreak.accent": "Pas dans notre vocabulaire.",
+
+    "edge.intro": "La diligence automatisée et l'intégration profonde avec nos sources de capital permettent un onboarding rapide, des prix très compétitifs et un processus de clôture rationalisé et efficace.",
+
+    "getquote.eyebrow": "Prêt à en savoir plus ?",
+    "getquote.title":   "Parlez à",
+    "getquote.accent":  "notre équipe.",
+    "getquote.body":    "Contactez-nous pour discuter de vos besoins. Privé, rapide et sécurisé.",
   },
 
   /* ─── German ─── */
@@ -335,6 +431,36 @@ export const TRANSLATIONS = {
     "experience.crypto.body":       "Eine repräsentative Auswahl von Transaktionen in Krypto-Insolvenzen, Börsenzusammenbrüchen und Umstrukturierungen digitaler Vermögenswerte.",
 
     "faq.more": "Weitere Fragen? Alle FAQs anzeigen →",
+
+    "bio.seen_in": "Zu sehen in",
+    "bio.role":    "Gründer und Geschäftsführender Gesellschafter",
+
+    "service.eyebrow": "Wie wir helfen",
+    "service.title":   "Unsere",
+    "service.accent":  "Dienstleistungen.",
+
+    "svc.card0.title":    "Direkterwerb",
+    "svc.card0.subtitle": "Bilanzkapital",
+    "svc.card0.body":     "Unsere engagierten Kapitalpartner ermöglichen es uns, in den größten Fällen wettbewerbsfähige Preise und einen effizienten Abschlussprozess anzubieten.",
+    "svc.card1.title":    "Auktionen & Berichterstattung",
+    "svc.card1.subtitle": "Prüfbare, vorstandsreife Ergebnisse",
+    "svc.card1.body":     "Erzielen Sie eine umfassende Preisfindung mit breiter Vermarktung und einem robusten und transparenten Auktionsprozess.",
+    "svc.card2.title":    "Strukturierte Portfolios",
+    "svc.card2.subtitle": "Gestärkte Preismacht",
+    "svc.card2.body":     "Erhöhen Sie die Marktfähigkeit und Nachfrage, indem Sie verwandte Positionen zu einem einzigen, handelsbereiten Portfolio zusammenfassen.",
+    "svc.card3.title":    "Beratungsleistungen",
+    "svc.card3.subtitle": "Strategische Begleitung",
+    "svc.card3.body":     "Wir stellen Teams aus Rechtsexperten und Beratern zusammen, um die komplexesten grenzüberschreitenden Forderungsstreitigkeiten und Einziehungsstrategien zu bewältigen.",
+
+    "photobreak.text":   "Zu schwierig?",
+    "photobreak.accent": "Nicht in unserem Wortschatz.",
+
+    "edge.intro": "Automatisierte Due Diligence und tiefe Integration mit unseren Kapitalquellen ermöglichen schnelles Onboarding, hochkompetitive Preise und einen optimierten, effizienten Abschlussprozess.",
+
+    "getquote.eyebrow": "Bereit, mehr zu erfahren?",
+    "getquote.title":   "Sprechen Sie mit",
+    "getquote.accent":  "unserem Team.",
+    "getquote.body":    "Kontaktieren Sie uns, um Ihre Bedürfnisse zu besprechen. Privat, schnell und sicher.",
   },
 
   /* ─── Italian ─── */
@@ -414,6 +540,36 @@ export const TRANSLATIONS = {
     "experience.crypto.body":       "Un campione rappresentativo di operazioni in insolvenze crypto, fallimenti di exchange e ristrutturazioni di asset digitali.",
 
     "faq.more": "Altre domande? Vedi tutte le FAQ →",
+
+    "bio.seen_in": "Come visto in",
+    "bio.role":    "Fondatore e Socio Amministratore",
+
+    "service.eyebrow": "Come Aiutiamo",
+    "service.title":   "I Nostri",
+    "service.accent":  "Servizi.",
+
+    "svc.card0.title":    "Acquisizione Diretta",
+    "svc.card0.subtitle": "Capitale di bilancio",
+    "svc.card0.body":     "I nostri partner di capitale dedicati ci consentono di offrire prezzi competitivi e un processo di chiusura efficiente nei casi più grandi.",
+    "svc.card1.title":    "Aste e Reporting",
+    "svc.card1.subtitle": "Risultati verificabili e pronti per il CDA",
+    "svc.card1.body":     "Ottieni una scoperta dei prezzi completa con un marketing ad ampia portata e un processo d'asta robusto e trasparente.",
+    "svc.card2.title":    "Portafogli Strutturati",
+    "svc.card2.subtitle": "Maggiore potere di pricing",
+    "svc.card2.body":     "Migliora la commerciabilità e la domanda aggregando interessi correlati in un unico portafoglio pronto per la negoziazione.",
+    "svc.card3.title":    "Servizi di Consulenza",
+    "svc.card3.subtitle": "Guida strategica",
+    "svc.card3.body":     "Assembliamo team di esperti legali e consulenti per affrontare le dispute sui crediti transfrontalieri più complesse e le strategie di recupero.",
+
+    "photobreak.text":   "Troppo difficile?",
+    "photobreak.accent": "Non è nel nostro vocabolario.",
+
+    "edge.intro": "La diligenza automatizzata e la profonda integrazione con le nostre fonti di capitale significano un onboarding rapido, prezzi altamente competitivi e un processo di chiusura semplificato ed efficiente.",
+
+    "getquote.eyebrow": "Pronto a saperne di più?",
+    "getquote.title":   "Parla con",
+    "getquote.accent":  "il nostro team.",
+    "getquote.body":    "Contattaci per discutere le tue esigenze. Privato, veloce e sicuro.",
   },
 
   /* ─── Korean ─── */
@@ -493,6 +649,36 @@ export const TRANSLATIONS = {
     "experience.crypto.body":       "암호화폐 파산, 거래소 실패, 디지털 자산 구조조정에 걸친 대표 거래 샘플입니다.",
 
     "faq.more": "더 궁금하신 점이 있으신가요? 모든 FAQ 보기 →",
+
+    "bio.seen_in": "소개된 매체",
+    "bio.role":    "창업자 및 대표 파트너",
+
+    "service.eyebrow": "지원 방법",
+    "service.title":   "당사의",
+    "service.accent":  "서비스.",
+
+    "svc.card0.title":    "직접 인수",
+    "svc.card0.subtitle": "대차대조표 자본",
+    "svc.card0.body":     "전담 자본 파트너들 덕분에 가장 큰 사건에서 경쟁력 있는 가격과 효율적인 종결 절차를 제공할 수 있습니다.",
+    "svc.card1.title":    "경매 및 보고",
+    "svc.card1.subtitle": "감사 가능한 이사회 보고 결과",
+    "svc.card1.body":     "광범위한 마케팅과 강력하고 투명한 경매 프로세스로 포괄적인 가격 발견을 달성합니다.",
+    "svc.card2.title":    "구조화 포트폴리오",
+    "svc.card2.subtitle": "향상된 가격 협상력",
+    "svc.card2.body":     "관련 이해관계를 단일 포트폴리오로 집계하여 거래 준비를 완료하고 시장성과 수요를 강화합니다.",
+    "svc.card3.title":    "자문 서비스",
+    "svc.card3.subtitle": "전략적 지침",
+    "svc.card3.body":     "가장 복잡한 국경 간 청구 분쟁과 회수 전략을 처리하기 위해 법률 전문가 및 자문가 팀을 구성합니다.",
+
+    "photobreak.text":   "너무 어렵다고요?",
+    "photobreak.accent": "저희 사전에 없는 말입니다.",
+
+    "edge.intro": "자동화된 실사와 자본 출처와의 깊은 통합은 빠른 온보딩, 매우 경쟁력 있는 가격 및 효율적인 종결 프로세스를 의미합니다.",
+
+    "getquote.eyebrow": "더 알고 싶으신가요?",
+    "getquote.title":   "저희 팀과",
+    "getquote.accent":  "상담하세요.",
+    "getquote.body":    "자금 조달 필요에 대해 논의하려면 문의하세요. 비공개, 신속 및 보안.",
   },
 
   /* ─── Mandarin (Simplified) ─── */
@@ -572,5 +758,35 @@ export const TRANSLATIONS = {
     "experience.crypto.body":       "涵盖加密货币破产、交易所倒闭及数字资产重组的代表性交易样本。",
 
     "faq.more": "还有更多问题？查看所有 FAQ →",
+
+    "bio.seen_in": "媒体报道",
+    "bio.role":    "创始人兼常务合伙人",
+
+    "service.eyebrow": "我们的服务方式",
+    "service.title":   "我们的",
+    "service.accent":  "服务。",
+
+    "svc.card0.title":    "直接收购",
+    "svc.card0.subtitle": "资产负债表资本",
+    "svc.card0.body":     "我们专属的资本合作伙伴使我们能够在最大规模的案件中提供具有竞争力的定价和高效的交割流程。",
+    "svc.card1.title":    "拍卖与报告",
+    "svc.card1.subtitle": "可审计、适合董事会的结果",
+    "svc.card1.body":     "通过广泛的市场推广和强大透明的拍卖流程实现全面的价格发现。",
+    "svc.card2.title":    "结构化投资组合",
+    "svc.card2.subtitle": "增强定价能力",
+    "svc.card2.body":     "通过将相关权益汇集到单一投资组合中来提升可市性和需求，随时可交易。",
+    "svc.card3.title":    "顾问服务",
+    "svc.card3.subtitle": "战略指导",
+    "svc.card3.body":     "我们组建法律专家和顾问团队，应对最复杂的跨境索赔纠纷和回收策略。",
+
+    "photobreak.text":   "太难了？这个词",
+    "photobreak.accent": "不在我们的字典里。",
+
+    "edge.intro": "自动化尽职调查和与资本来源的深度整合意味着快速入驻、极具竞争力的定价以及高效流畅的交割流程。",
+
+    "getquote.eyebrow": "准备好了解更多？",
+    "getquote.title":   "与我们的团队",
+    "getquote.accent":  "交流一下。",
+    "getquote.body":    "联系我们讨论您的融资需求。私密、快捷、安全。",
   },
 };
