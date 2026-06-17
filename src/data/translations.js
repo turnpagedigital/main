@@ -76,6 +76,28 @@ export const TRANSLATIONS = {
     // CTA banner
     "ctabanner.title": "Stay current on the docket.",
     "ctabanner.cta":   "Read the briefings",
+
+    // Situations body paragraph
+    "situations.body": "We handle every kind of compensation claim — from class action settlements and Chapter 11 customer positions to refund rights and locked digital assets. Whatever the situation, if there's a path to liquidity, we've got it covered.",
+
+    // Our Edge — three differentiation points
+    "edge.p1.title": "Practically unlimited liquidity",
+    "edge.p1.body":  "We partner with major asset managers — over 500 institutions on speed dial.",
+    "edge.p2.title": "Lightning-fast settlement",
+    "edge.p2.body":  "Automation accelerates diligence and closing in the largest volume cases.",
+    "edge.p3.title": "Relationship builders, not just dealmakers",
+    "edge.p3.body":  "We go the extra mile to understand your business needs so we can structure the right deal for our clients.",
+
+    // Experience section — per-page title + body
+    "experience.home.title":        "A track record across the largest claims trades.",
+    "experience.home.body":         "A representative slice of recent deals across crypto insolvencies, pension claims, antitrust settlements, and complex litigation matters.",
+    "experience.aicopyright.title": "A track record across other class actions.",
+    "experience.aicopyright.body":  "A representative selection of our work advising rights holders, class members, and institutional buyers across the emerging AI copyright landscape.",
+    "experience.crypto.title":      "A track record across digital-asset insolvencies.",
+    "experience.crypto.body":       "A representative slice of deals across crypto insolvencies, exchange failures, and digital-asset restructurings.",
+
+    // FAQ — more link
+    "faq.more": "More Questions? See all FAQs →",
   },
 
   /* ─── Spanish ─── */
@@ -137,6 +159,24 @@ export const TRANSLATIONS = {
 
     "ctabanner.title": "Manténgase al día con el expediente.",
     "ctabanner.cta":   "Leer los informes",
+
+    "situations.body": "Manejamos todo tipo de reclamaciones de compensación — desde acuerdos de demandas colectivas y posiciones de clientes en el Capítulo 11 hasta derechos de reembolso y activos digitales bloqueados. Cualquiera que sea la situación, si hay un camino hacia la liquidez, lo cubrimos.",
+
+    "edge.p1.title": "Liquidez prácticamente ilimitada",
+    "edge.p1.body":  "Nos asociamos con los principales gestores de activos — más de 500 instituciones a disposición inmediata.",
+    "edge.p2.title": "Cierre ultrarrápido",
+    "edge.p2.body":  "La automatización acelera la diligencia y el cierre en los casos de mayor volumen.",
+    "edge.p3.title": "Constructores de relaciones, no solo negociadores",
+    "edge.p3.body":  "Hacemos el esfuerzo adicional para comprender las necesidades de su negocio y estructurar el acuerdo adecuado para nuestros clientes.",
+
+    "experience.home.title":        "Un historial en los mayores negocios de reclamaciones.",
+    "experience.home.body":         "Una muestra representativa de operaciones recientes en insolvencias cripto, reclamaciones de pensiones, acuerdos antimonopolio y litigios complejos.",
+    "experience.aicopyright.title": "Un historial en otras acciones colectivas.",
+    "experience.aicopyright.body":  "Una selección representativa de nuestro trabajo asesorando a titulares de derechos, miembros de clases e inversores institucionales en el emergente panorama de derechos de autor de IA.",
+    "experience.crypto.title":      "Un historial en insolvencias de activos digitales.",
+    "experience.crypto.body":       "Una muestra representativa de operaciones en insolvencias cripto, quiebras de exchanges y reestructuraciones de activos digitales.",
+
+    "faq.more": "¿Más preguntas? Ver todas las FAQ →",
   },
 
   /* ─── French ─── */
@@ -198,6 +238,24 @@ export const TRANSLATIONS = {
 
     "ctabanner.title": "Suivez l'actualité du rôle.",
     "ctabanner.cta":   "Lire les briefings",
+
+    "situations.body": "Nous gérons tous les types de créances — des règlements d'actions collectives et des positions clients en Chapitre 11 aux droits de remboursement et aux actifs numériques bloqués. Quelle que soit la situation, s'il existe une voie vers la liquidité, nous l'avons couverte.",
+
+    "edge.p1.title": "Liquidité pratiquement illimitée",
+    "edge.p1.body":  "Nous collaborons avec les principaux gestionnaires d'actifs — plus de 500 institutions disponibles immédiatement.",
+    "edge.p2.title": "Règlement ultra-rapide",
+    "edge.p2.body":  "L'automatisation accélère la diligence et la clôture dans les dossiers à fort volume.",
+    "edge.p3.title": "Créateurs de relations, pas seulement des négociateurs",
+    "edge.p3.body":  "Nous faisons le nécessaire pour comprendre vos besoins afin de structurer la bonne transaction pour nos clients.",
+
+    "experience.home.title":        "Un historique de performance sur les plus grandes cessions de créances.",
+    "experience.home.body":         "Un échantillon représentatif d'opérations récentes dans les insolvabilités crypto, les créances de retraite, les règlements antitrust et les contentieux complexes.",
+    "experience.aicopyright.title": "Un historique de performance sur d'autres actions collectives.",
+    "experience.aicopyright.body":  "Une sélection représentative de notre travail de conseil auprès des titulaires de droits, des membres des classes et des acheteurs institutionnels dans le paysage émergent du droit d'auteur de l'IA.",
+    "experience.crypto.title":      "Un historique de performance dans les insolvabilités d'actifs numériques.",
+    "experience.crypto.body":       "Un échantillon représentatif d'opérations dans les insolvabilités crypto, les défaillances d'échanges et les restructurations d'actifs numériques.",
+
+    "faq.more": "Plus de questions ? Voir toutes les FAQ →",
   },
 
   /* ─── German ─── */
@@ -259,6 +317,24 @@ export const TRANSLATIONS = {
 
     "ctabanner.title": "Bleiben Sie über das Verfahren informiert.",
     "ctabanner.cta":   "Briefings lesen",
+
+    "situations.body": "Wir bearbeiten alle Arten von Entschädigungsansprüchen — von Vergleichen in Sammelklagen und Kundenpositionen in Chapter-11-Verfahren bis hin zu Rückerstattungsrechten und gesperrten digitalen Vermögenswerten. Was auch immer die Situation ist, wenn es einen Weg zur Liquidität gibt, haben wir ihn abgedeckt.",
+
+    "edge.p1.title": "Praktisch unbegrenzte Liquidität",
+    "edge.p1.body":  "Wir arbeiten mit führenden Vermögensverwaltern zusammen — über 500 Institutionen auf Kurzwahl.",
+    "edge.p2.title": "Blitzschnelle Abwicklung",
+    "edge.p2.body":  "Automatisierung beschleunigt die Due Diligence und den Abschluss in Fällen mit dem größten Volumen.",
+    "edge.p3.title": "Beziehungsaufbauer, nicht nur Dealmaker",
+    "edge.p3.body":  "Wir gehen die Extrameile, um Ihre Geschäftsbedürfnisse zu verstehen und das richtige Geschäft für unsere Kunden zu strukturieren.",
+
+    "experience.home.title":        "Eine Erfolgsbilanz in den größten Forderungsgeschäften.",
+    "experience.home.body":         "Eine repräsentative Auswahl jüngster Transaktionen in Krypto-Insolvenzen, Rentenansprüchen, Kartellvergleichen und komplexen Rechtsstreitigkeiten.",
+    "experience.aicopyright.title": "Eine Erfolgsbilanz in anderen Sammelklagen.",
+    "experience.aicopyright.body":  "Eine repräsentative Auswahl unserer Beratungstätigkeit für Rechteinhaber, Kläger und institutionelle Käufer im aufkommenden KI-Urheberrechtsbereich.",
+    "experience.crypto.title":      "Eine Erfolgsbilanz in digitalen Vermögensinsolvenzen.",
+    "experience.crypto.body":       "Eine repräsentative Auswahl von Transaktionen in Krypto-Insolvenzen, Börsenzusammenbrüchen und Umstrukturierungen digitaler Vermögenswerte.",
+
+    "faq.more": "Weitere Fragen? Alle FAQs anzeigen →",
   },
 
   /* ─── Italian ─── */
@@ -320,6 +396,24 @@ export const TRANSLATIONS = {
 
     "ctabanner.title": "Resta al passo con il ruolo.",
     "ctabanner.cta":   "Leggi i briefing",
+
+    "situations.body": "Gestiamo ogni tipo di credito risarcitorio — dagli accordi di class action e le posizioni dei clienti nel Chapter 11 ai diritti di rimborso e agli asset digitali bloccati. Qualunque sia la situazione, se esiste un percorso verso la liquidità, lo copriamo.",
+
+    "edge.p1.title": "Liquidità praticamente illimitata",
+    "edge.p1.body":  "Collaboriamo con i principali asset manager — oltre 500 istituzioni sempre a portata di mano.",
+    "edge.p2.title": "Regolamento fulmineo",
+    "edge.p2.body":  "L'automazione accelera la due diligence e la chiusura nei casi a maggior volume.",
+    "edge.p3.title": "Costruttori di relazioni, non solo negoziatori",
+    "edge.p3.body":  "Facciamo il passo in più per capire le vostre esigenze aziendali e strutturare l'accordo giusto per i nostri clienti.",
+
+    "experience.home.title":        "Un track record nei più grandi scambi di crediti.",
+    "experience.home.body":         "Un campione rappresentativo di operazioni recenti in insolvenze crypto, crediti pensionistici, accordi antitrust e contenziosi complessi.",
+    "experience.aicopyright.title": "Un track record in altre class action.",
+    "experience.aicopyright.body":  "Una selezione rappresentativa del nostro lavoro di consulenza a titolari di diritti, membri di class action e acquirenti istituzionali nel panorama emergente del diritto d'autore sull'IA.",
+    "experience.crypto.title":      "Un track record nelle insolvenze di asset digitali.",
+    "experience.crypto.body":       "Un campione rappresentativo di operazioni in insolvenze crypto, fallimenti di exchange e ristrutturazioni di asset digitali.",
+
+    "faq.more": "Altre domande? Vedi tutte le FAQ →",
   },
 
   /* ─── Korean ─── */
@@ -381,6 +475,24 @@ export const TRANSLATIONS = {
 
     "ctabanner.title": "최신 동향을 확인하세요.",
     "ctabanner.cta":   "브리핑 읽기",
+
+    "situations.body": "우리는 집단소송 합의금, 챕터 11 고객 지위에서 환급 권리와 잠긴 디지털 자산에 이르기까지 모든 종류의 보상 청구를 처리합니다. 어떠한 상황에서도 유동성으로 가는 길이 있다면, 저희가 해결해 드립니다.",
+
+    "edge.p1.title": "사실상 무제한 유동성",
+    "edge.p1.body":  "당사는 주요 자산운용사와 파트너십을 맺고 있으며 — 500개 이상의 기관과 즉시 연결됩니다.",
+    "edge.p2.title": "번개처럼 빠른 결제",
+    "edge.p2.body":  "자동화가 대규모 사건에서 실사 및 종결 속도를 높입니다.",
+    "edge.p3.title": "단순 딜메이커가 아닌 관계 구축자",
+    "edge.p3.body":  "고객의 비즈니스 요구를 깊이 이해하여 최적의 거래 구조를 제공합니다.",
+
+    "experience.home.title":        "최대 규모 청구권 거래에서의 실적.",
+    "experience.home.body":         "암호화폐 파산, 연금 청구, 반독점 합의, 복잡한 소송 등 최근 거래의 대표적 샘플입니다.",
+    "experience.aicopyright.title": "기타 집단소송에서의 실적.",
+    "experience.aicopyright.body":  "신흥 AI 저작권 분야에서 권리자, 집단소송 참여자, 기관 투자자를 자문한 대표적 사례입니다.",
+    "experience.crypto.title":      "디지털 자산 파산에서의 실적.",
+    "experience.crypto.body":       "암호화폐 파산, 거래소 실패, 디지털 자산 구조조정에 걸친 대표 거래 샘플입니다.",
+
+    "faq.more": "더 궁금하신 점이 있으신가요? 모든 FAQ 보기 →",
   },
 
   /* ─── Mandarin (Simplified) ─── */
@@ -442,5 +554,23 @@ export const TRANSLATIONS = {
 
     "ctabanner.title": "紧跟案件进展。",
     "ctabanner.cta":   "阅读简报",
+
+    "situations.body": "我们处理各类补偿索赔——从集体诉讼和解金、第11章客户权益，到退款权利和锁定数字资产。无论情况如何，只要有流动性的途径，我们都能提供支持。",
+
+    "edge.p1.title": "近乎无限的流动性",
+    "edge.p1.body":  "我们与主要资产管理机构合作——超过500家机构随时待命。",
+    "edge.p2.title": "闪电般快速结算",
+    "edge.p2.body":  "自动化加速了大规模案件的尽职调查和交割。",
+    "edge.p3.title": "关系缔造者，而不仅仅是交易撮合者",
+    "edge.p3.body":  "我们深入了解您的业务需求，为客户构建最合适的交易结构。",
+
+    "experience.home.title":        "在最大规模索赔交易中的业绩记录。",
+    "experience.home.body":         "涵盖加密货币破产、养老金索赔、反垄断和解及复杂诉讼的近期交易代表性样本。",
+    "experience.aicopyright.title": "在其他集体诉讼中的业绩记录。",
+    "experience.aicopyright.body":  "我们在新兴人工智能版权领域为权利人、集体诉讼成员及机构买家提供咨询服务的代表性案例。",
+    "experience.crypto.title":      "在数字资产破产中的业绩记录。",
+    "experience.crypto.body":       "涵盖加密货币破产、交易所倒闭及数字资产重组的代表性交易样本。",
+
+    "faq.more": "还有更多问题？查看所有 FAQ →",
   },
 };

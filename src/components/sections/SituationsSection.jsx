@@ -18,7 +18,13 @@ export default function SituationsSection({ sectionConfig }) {
   const eyebrow     = en ? (c.eyebrow     || t("situations.eyebrow")) : t("situations.eyebrow");
   const title       = en ? (c.title       || t("situations.title_1")) : t("situations.title_1");
   const titleAccent = en ? (c.titleAccent || t("situations.title_2")) : t("situations.title_2");
-  const body        = c.body        || "We handle every kind of compensation claim — from class action settlements and Chapter 11 customer positions to refund rights and locked digital assets. Whatever the situation, if there's a path to liquidity, we've got it covered.";
+  const body        = en ? (c.body || t("situations.body")) : t("situations.body");
+  const localizeItem = s => en ? s : {
+    ...s,
+    title:   s.translations?.[lang]?.title   || s.title,
+    body:    s.translations?.[lang]?.body    || s.body,
+    details: s.translations?.[lang]?.details || s.details,
+  };
 
   return (
     <section id="situations" style={{
@@ -59,7 +65,7 @@ export default function SituationsSection({ sectionConfig }) {
         </div>
 
         <div style={{ borderTop: `1px solid ${LINE_STRONG}` }}>
-          {SITUATIONS.map((s, idx) => {
+          {SITUATIONS.map(localizeItem).map((s, idx) => {
             const isOpen = openIdx === idx;
             const ROW_PAD = "clamp(1.8rem, 3vw, 2.4rem)";
             const rowPb = isOpen ? "0.6rem" : ROW_PAD;

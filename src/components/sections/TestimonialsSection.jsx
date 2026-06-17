@@ -21,9 +21,13 @@ export default function TestimonialsSection({ sectionConfig, pageKey }) {
   const layout = sc.layout || c.layout || "layout-1-grid3col";
   const colorScheme = sc.colorScheme || c.colorScheme || "light";
 
-  const testimonials = (testimonialsData.testimonials || []).filter(
-    t => t.active !== false && Array.isArray(t.tags) && t.tags.includes(pageKey)
-  );
+  const testimonials = (testimonialsData.testimonials || [])
+    .filter(item => item.active !== false && Array.isArray(item.tags) && item.tags.includes(pageKey))
+    .map(item => en ? item : {
+      ...item,
+      quote: item.translations?.[lang]?.quote || item.quote,
+      by:    item.translations?.[lang]?.by    || item.by,
+    });
 
   if (!testimonials || testimonials.length === 0) return null;
 

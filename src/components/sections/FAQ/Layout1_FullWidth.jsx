@@ -2,6 +2,7 @@ import React from "react";
 import { FONT } from "../../../data/tokens.js";
 import { getSectionTheme } from "../../../lib/palette-resolver.js";
 import FAQ from "../../FAQ.jsx";
+import { useI18n } from "../../../lib/i18n.js";
 
 /* FAQ Layout 1 — Full Width (Home page style)
    Single column, large headline, full-width accordion below.
@@ -9,6 +10,7 @@ import FAQ from "../../FAQ.jsx";
    Props: { faqs, title, accent, colorScheme, hasMoreFaqs, pageKey } */
 
 export default function FAQLayout1FullWidth({ faqs, title = "Your questions,", accent = "answered.", colorScheme = "light", hasMoreFaqs = false, pageKey = "" }) {
+  const { t } = useI18n();
   const theme = getSectionTheme("faq", colorScheme, "light");
 
   return (
@@ -43,7 +45,7 @@ export default function FAQLayout1FullWidth({ faqs, title = "Your questions,", a
             }}
             onMouseEnter={e => e.target.style.color = theme.text}
             onMouseLeave={e => e.target.style.color = theme.textSecondary}>
-              More Questions? See all FAQs →
+              {t("faq.more")}
             </a>
           )}
         </div>

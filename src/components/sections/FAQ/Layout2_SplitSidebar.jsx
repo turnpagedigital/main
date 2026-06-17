@@ -2,6 +2,7 @@ import React from "react";
 import { FONT } from "../../../data/tokens.js";
 import { getSectionTheme } from "../../../lib/palette-resolver.js";
 import FAQ from "../../FAQ.jsx";
+import { useI18n } from "../../../lib/i18n.js";
 
 /* FAQ Layout 2 — Split Sidebar (Subpage style)
    Two-column: left side has title and optional CTA button, right side has accordion.
@@ -18,6 +19,7 @@ export default function FAQLayout2SplitSidebar({
   pageKey = "home",
   colorScheme = "light",
 }) {
+  const { t } = useI18n();
   const theme = getSectionTheme("faq", colorScheme, "light");
 
   return (
@@ -45,7 +47,7 @@ export default function FAQLayout2SplitSidebar({
               }}
               onMouseEnter={e => e.target.style.color = theme.text}
               onMouseLeave={e => e.target.style.color = theme.textSecondary}>
-                More Questions? See all FAQs →
+                {t("faq.more")}
               </a>
             )}
           </div>

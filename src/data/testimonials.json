@@ -6,21 +6,99 @@
       "quote": "Andrew is always thinking about how to structure trades in the most elegant way to allocate risk among the parties. When others give up, Andrew digs in.",
       "by": "Locked Crypto Interest Holder",
       "tags": ["home", "crypto"],
-      "active": true
+      "active": true,
+      "translations": {
+        "es": {
+          "quote": "Andrew siempre está pensando en cómo estructurar las operaciones de la manera más elegante para distribuir el riesgo entre las partes. Cuando otros se rinden, Andrew profundiza.",
+          "by": "Titular de Interés en Cripto Bloqueado"
+        },
+        "fr": {
+          "quote": "Andrew pense toujours à la façon la plus élégante de structurer les transactions pour répartir le risque entre les parties. Quand les autres abandonnent, Andrew creuse.",
+          "by": "Titulaire d'intérêts en crypto bloquée"
+        },
+        "de": {
+          "quote": "Andrew denkt immer darüber nach, wie er Trades auf die eleganteste Weise strukturieren kann, um das Risiko unter den Parteien aufzuteilen. Wenn andere aufgeben, macht Andrew weiter.",
+          "by": "Inhaber von gesperrten Krypto-Interessen"
+        },
+        "it": {
+          "quote": "Andrew pensa sempre a come strutturare le operazioni nel modo più elegante per allocare il rischio tra le parti. Quando gli altri si arrendono, Andrew va avanti.",
+          "by": "Titolare di Interessi in Cripto Bloccate"
+        },
+        "ko": {
+          "quote": "Andrew는 항상 당사자들 사이에서 위험을 배분하는 가장 우아한 방법으로 거래를 구조화하는 방법을 생각합니다. 다른 사람들이 포기할 때 Andrew는 파고듭니다.",
+          "by": "잠긴 암호화폐 이해관계 보유자"
+        },
+        "zh": {
+          "quote": "Andrew总是思考如何以最优雅的方式构建交易以在各方之间分配风险。当他人放弃时，Andrew深入钻研。",
+          "by": "锁定加密资产权益持有人"
+        }
+      }
     },
     {
       "id": "test-2",
       "quote": "Andrew is extremely professional and easy to work with. His negotiating style is collaborative rather than confrontational, but he knows how to dial it up for a client when the situation demands.",
       "by": "FTX Trading Ltd. Creditor",
       "tags": ["home", "crypto"],
-      "active": true
+      "active": true,
+      "translations": {
+        "es": {
+          "quote": "Andrew es extremadamente profesional y fácil de trabajar. Su estilo de negociación es colaborativo en lugar de confrontacional, pero sabe cómo intensificarlo para un cliente cuando la situación lo exige.",
+          "by": "Acreedor de FTX Trading Ltd."
+        },
+        "fr": {
+          "quote": "Andrew est extrêmement professionnel et facile à travailler. Son style de négociation est collaboratif plutôt que confrontationnel, mais il sait monter d'un cran pour un client quand la situation l'exige.",
+          "by": "Créancier de FTX Trading Ltd."
+        },
+        "de": {
+          "quote": "Andrew ist äußerst professionell und unkompliziert in der Zusammenarbeit. Sein Verhandlungsstil ist kooperativ statt konfrontativ, aber er weiß, wie er für einen Kunden die Gangart erhöht, wenn die Situation es erfordert.",
+          "by": "Gläubiger von FTX Trading Ltd."
+        },
+        "it": {
+          "quote": "Andrew è estremamente professionale e piacevole con cui lavorare. Il suo stile negoziale è collaborativo piuttosto che confrontazionale, ma sa come intensificarsi per un cliente quando la situazione lo richiede.",
+          "by": "Creditore di FTX Trading Ltd."
+        },
+        "ko": {
+          "quote": "Andrew는 매우 전문적이고 함께 일하기 쉽습니다. 그의 협상 스타일은 대립적이기보다는 협력적이지만, 상황이 요구할 때 고객을 위해 강도를 높일 줄 압니다.",
+          "by": "FTX Trading Ltd. 채권자"
+        },
+        "zh": {
+          "quote": "Andrew极其专业，合作起来得心应手。他的谈判风格合作而非对抗，但在情况需要时，他知道如何为客户提升力度。",
+          "by": "FTX Trading Ltd.债权人"
+        }
+      }
     },
     {
       "id": "test-3",
       "quote": "Andrew has deep knowledge about bankruptcy and restructuring that gives his clients a major advantage in negotiations.",
       "by": "Genesis Global Creditor",
       "tags": ["home", "crypto"],
-      "active": true
+      "active": true,
+      "translations": {
+        "es": {
+          "quote": "Andrew tiene un profundo conocimiento sobre quiebras y reestructuraciones que le da a sus clientes una gran ventaja en las negociaciones.",
+          "by": "Acreedor de Genesis Global"
+        },
+        "fr": {
+          "quote": "Andrew a une connaissance approfondie de la faillite et de la restructuration qui donne à ses clients un avantage majeur dans les négociations.",
+          "by": "Créancier de Genesis Global"
+        },
+        "de": {
+          "quote": "Andrew verfügt über tiefes Wissen über Insolvenz und Restrukturierung, das seinen Kunden einen großen Vorteil bei Verhandlungen verschafft.",
+          "by": "Gläubiger von Genesis Global"
+        },
+        "it": {
+          "quote": "Andrew ha una profonda conoscenza del fallimento e della ristrutturazione che offre ai suoi clienti un vantaggio significativo nelle trattative.",
+          "by": "Creditore di Genesis Global"
+        },
+        "ko": {
+          "quote": "Andrew는 파산 및 구조조정에 대한 깊은 지식을 가지고 있어 협상에서 고객에게 큰 이점을 제공합니다.",
+          "by": "Genesis Global 채권자"
+        },
+        "zh": {
+          "quote": "Andrew对破产和重组有深入了解，这使他的客户在谈判中占据重大优势。",
+          "by": "Genesis Global债权人"
+        }
+      }
     }
   ]
 }

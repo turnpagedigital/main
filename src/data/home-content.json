@@ -6,7 +6,39 @@
       "hidden": false,
       "title": "Bankruptcy Claims",
       "body": "Trade claims, customer claims, and other general unsecured claims and interests in significant insolvency cases globally.",
-      "details": "Turnpage offers efficient execution and highly competitive pricing for creditors seeking to monetize their recovery rights. Our principals have traded hundreds of millions of dollars worth of claims in the largest chapter 11 cases and advised thousands of creditors."
+      "details": "Turnpage offers efficient execution and highly competitive pricing for creditors seeking to monetize their recovery rights. Our principals have traded hundreds of millions of dollars worth of claims in the largest chapter 11 cases and advised thousands of creditors.",
+      "translations": {
+        "es": {
+          "title": "Reclamaciones de Quiebra",
+          "body": "Reclamos comerciales, reclamos de clientes y otros créditos quirografarios e intereses en importantes casos de insolvencia a nivel global.",
+          "details": "Turnpage ofrece ejecución eficiente y precios altamente competitivos para los acreedores que buscan monetizar sus derechos de recuperación. Nuestros directores han negociado cientos de millones de dólares en reclamaciones en los mayores casos del Capítulo 11 y han asesorado a miles de acreedores."
+        },
+        "fr": {
+          "title": "Créances de faillite",
+          "body": "Créances commerciales, créances de clients et autres créances chirographaires dans des procédures d'insolvabilité importantes dans le monde entier.",
+          "details": "Turnpage offre une exécution efficace et des prix très compétitifs aux créanciers souhaitant monétiser leurs droits de recouvrement. Nos dirigeants ont négocié des centaines de millions de dollars de créances dans les plus grandes procédures du Chapitre 11 et ont conseillé des milliers de créanciers."
+        },
+        "de": {
+          "title": "Insolvenzforderungen",
+          "body": "Handelsforderungen, Kundenforderungen und sonstige ungesicherte Forderungen in bedeutenden Insolvenzverfahren weltweit.",
+          "details": "Turnpage bietet Gläubigern, die ihre Erholungsrechte monetarisieren möchten, eine effiziente Abwicklung und äußerst wettbewerbsfähige Preise. Unsere Hauptverantwortlichen haben in den größten Chapter-11-Fällen Forderungen im Wert von Hunderten von Millionen Dollar gehandelt und Tausende von Gläubigern beraten."
+        },
+        "it": {
+          "title": "Crediti da Fallimento",
+          "body": "Crediti commerciali, crediti di clientela e altri crediti chirografari in importanti procedure concorsuali globali.",
+          "details": "Turnpage offre un'esecuzione efficiente e prezzi altamente competitivi ai creditori che desiderano monetizzare i propri diritti di recupero. I nostri dirigenti hanno negoziato crediti per centinaia di milioni di dollari nei maggiori casi del Chapter 11 e hanno assistito migliaia di creditori."
+        },
+        "ko": {
+          "title": "파산 청구",
+          "body": "전 세계 주요 파산 사건에서 무역 채권, 고객 채권 및 기타 일반 무담보 채권과 이해관계.",
+          "details": "Turnpage는 회수 권리를 현금화하려는 채권자에게 효율적인 실행과 매우 경쟁력 있는 가격을 제공합니다. 당사 임원진은 최대 규모의 챕터 11 사건에서 수억 달러 규모의 청구권을 거래했으며 수천 명의 채권자를 자문했습니다."
+        },
+        "zh": {
+          "title": "破产索赔",
+          "body": "全球重大破产案件中的贸易债权、客户债权及其他普通无担保债权和权益。",
+          "details": "Turnpage为希望将回收权货币化的债权人提供高效执行和极具竞争力的定价。我们的主要负责人在最大规模的第11章案件中交易了数亿美元的索赔，并为数千名债权人提供了咨询。"
+        }
+      }
     },
     {
       "id": "sit-02",
@@ -14,7 +46,39 @@
       "hidden": false,
       "title": "Class Action Settlements",
       "body": "Class-member rights in the largest collective actions.",
-      "details": "From antitrust settlements to mass tort claims, Turnpage connects class members to competitive bids. We handle large individual positions as well as portfolios of smaller positions aggregated for efficiency."
+      "details": "From antitrust settlements to mass tort claims, Turnpage connects class members to competitive bids. We handle large individual positions as well as portfolios of smaller positions aggregated for efficiency.",
+      "translations": {
+        "es": {
+          "title": "Acuerdos de Demandas Colectivas",
+          "body": "Derechos de los miembros de clase en las mayores acciones colectivas.",
+          "details": "Desde acuerdos antimonopolio hasta reclamaciones por daños masivos, Turnpage conecta a los miembros de la clase con ofertas competitivas. Gestionamos posiciones individuales grandes, así como carteras de posiciones menores agregadas para mayor eficiencia."
+        },
+        "fr": {
+          "title": "Règlements d'actions collectives",
+          "body": "Droits des membres de la classe dans les plus grandes actions collectives.",
+          "details": "Des règlements antitrust aux recours collectifs pour dommages massifs, Turnpage met en relation les membres de la classe avec des offres compétitives. Nous gérons aussi bien les grandes positions individuelles que les portefeuilles de positions plus petites agrégées pour plus d'efficacité."
+        },
+        "de": {
+          "title": "Sammelklagenvergleiche",
+          "body": "Rechte der Klassenmitglieder in den größten Sammelklagen.",
+          "details": "Von Kartellvergleichen bis hin zu Massenschadensforderungen — Turnpage verbindet Klassenmitglieder mit wettbewerbsfähigen Angeboten. Wir bearbeiten sowohl große Einzelpositionen als auch Portfolios kleinerer, zusammengefasster Positionen."
+        },
+        "it": {
+          "title": "Accordi in Class Action",
+          "body": "Diritti dei membri della classe nelle più grandi azioni collettive.",
+          "details": "Dagli accordi antitrust alle azioni per danni di massa, Turnpage mette in contatto i membri della classe con offerte competitive. Gestiamo grandi posizioni individuali così come portafogli di posizioni minori aggregate per efficienza."
+        },
+        "ko": {
+          "title": "집단소송 합의",
+          "body": "가장 큰 집단소송에서 소송 참여자의 권리.",
+          "details": "반독점 합의부터 대규모 불법행위 청구까지, Turnpage는 소송 참여자와 경쟁력 있는 입찰자를 연결합니다. 대형 개인 포지션과 효율성을 위해 집계된 소규모 포지션 포트폴리오 모두 처리합니다."
+        },
+        "zh": {
+          "title": "集体诉讼和解",
+          "body": "最大规模集体诉讼中的集体成员权益。",
+          "details": "从反垄断和解到大规模侵权索赔，Turnpage将集体成员与竞争性出价方连接。我们处理大型个人仓位以及为效率而汇总的小仓位组合。"
+        }
+      }
     },
     {
       "id": "sit-05",
@@ -22,7 +86,39 @@
       "hidden": false,
       "title": "Government Receivables",
       "body": "IEEPA and Section 122 tariff refund rights, duty drawbacks, surety bond collateral interests and related receivables.",
-      "details": "In February 2026, Turnpage launched standalone platform Rewind Tariffs to serve the $166 billion market for trading IEEPA tariff refund rights and has brokered or advised on over $50 million of refund claims.  We partner seamlessly with importers, customs brokers and trade advisors to augment their services and structure liquidity transactions to efficiently manage counterparty risk."
+      "details": "In February 2026, Turnpage launched standalone platform Rewind Tariffs to serve the $166 billion market for trading IEEPA tariff refund rights and has brokered or advised on over $50 million of refund claims.  We partner seamlessly with importers, customs brokers and trade advisors to augment their services and structure liquidity transactions to efficiently manage counterparty risk.",
+      "translations": {
+        "es": {
+          "title": "Cuentas por Cobrar del Gobierno",
+          "body": "Derechos de reembolso arancelario bajo IEEPA y la Sección 122, devoluciones de derechos de importación, garantías colaterales y cuentas por cobrar relacionadas.",
+          "details": "En febrero de 2026, Turnpage lanzó la plataforma independiente Rewind Tariffs para atender el mercado de $166 mil millones de negociación de derechos de reembolso arancelario IEEPA y ha intermediado o asesorado en más de $50 millones en reclamaciones de reembolso. Nos asociamos con importadores, agentes de aduanas y asesores comerciales para ampliar sus servicios y estructurar transacciones de liquidez para gestionar eficientemente el riesgo de contraparte."
+        },
+        "fr": {
+          "title": "Créances gouvernementales",
+          "body": "Droits de remboursement tarifaire IEEPA et Section 122, ristournes douanières, intérêts sur cautionnement et créances connexes.",
+          "details": "En février 2026, Turnpage a lancé la plateforme Rewind Tariffs pour servir le marché de 166 milliards de dollars de droits de remboursement tarifaire IEEPA et a courtisé ou conseillé plus de 50 millions de dollars de créances de remboursement. Nous collaborons avec des importateurs, des agents en douane et des conseillers commerciaux pour augmenter leurs services et structurer des transactions de liquidité."
+        },
+        "de": {
+          "title": "Staatliche Forderungen",
+          "body": "IEEPA- und Section-122-Zollrückerstattungsrechte, Zollrückvergütungen, Bürgschaftssicherheiten und verwandte Forderungen.",
+          "details": "Im Februar 2026 lancierte Turnpage die eigenständige Plattform Rewind Tariffs für den 166-Milliarden-Dollar-Markt für den Handel mit IEEPA-Zollrückerstattungsrechten und hat über 50 Millionen Dollar an Rückerstattungsansprüchen vermittelt oder beraten. Wir arbeiten nahtlos mit Importeuren, Zollagenten und Handelsberatern zusammen, um deren Dienste zu erweitern und Liquiditätstransaktionen zu strukturieren."
+        },
+        "it": {
+          "title": "Crediti Governativi",
+          "body": "Diritti di rimborso doganale IEEPA e Sezione 122, drawback, interessi su fideiussioni e crediti correlati.",
+          "details": "A febbraio 2026, Turnpage ha lanciato la piattaforma Rewind Tariffs per il mercato da 166 miliardi di dollari dei diritti di rimborso doganale IEEPA e ha intermediato o assistito su oltre 50 milioni di dollari di crediti di rimborso. Collaboriamo con importatori, spedizionieri doganali e consulenti commerciali per ampliare i loro servizi e strutturare transazioni di liquidità."
+        },
+        "ko": {
+          "title": "정부 수취채권",
+          "body": "IEEPA 및 섹션 122 관세 환급 권리, 관세 환급금, 보증채권 담보 이해관계 및 관련 수취채권.",
+          "details": "2026년 2월, Turnpage는 IEEPA 관세 환급권 거래를 위한 1,660억 달러 시장을 겨냥해 독립 플랫폼 Rewind Tariffs를 출시했으며, 5,000만 달러 이상의 환급 청구를 중개하거나 자문했습니다. 수입업자, 관세사, 무역 자문사와 원활히 협력하여 서비스를 강화하고 유동성 거래를 구조화합니다."
+        },
+        "zh": {
+          "title": "政府应收账款",
+          "body": "IEEPA和第122条关税退款权、退税、保证金担保权益及相关应收账款。",
+          "details": "2026年2月，Turnpage推出独立平台Rewind Tariffs，服务于IEEPA关税退款权交易的1660亿美元市场，已中介或顾问超过5000万美元的退款索赔。我们与进口商、报关行和贸易顾问无缝合作，扩展其服务并构建流动性交易以有效管理交易对手风险。"
+        }
+      }
     },
     {
       "id": "sit-01",
@@ -30,7 +126,39 @@
       "hidden": false,
       "title": "Litigation Funding",
       "body": "Adversary proceedings, estate claims, competition claims, complex commercial litigation, group representations and judgments awaiting recovery.",
-      "details": "Together with our network of capital partners and experts, Turnpage arranges and funds complex, binary and speculative litigation at all stages and across many jurisdictions globally. We work with bankruptcy trustees and liquidating trustees that lack the funding to monetize potentially valuable claims for the benefit of creditors and trust beneficiaries."
+      "details": "Together with our network of capital partners and experts, Turnpage arranges and funds complex, binary and speculative litigation at all stages and across many jurisdictions globally. We work with bankruptcy trustees and liquidating trustees that lack the funding to monetize potentially valuable claims for the benefit of creditors and trust beneficiaries.",
+      "translations": {
+        "es": {
+          "title": "Financiación de Litigios",
+          "body": "Procedimientos contenciosos, reclamaciones de patrimonio, reclamaciones de competencia, litigios comerciales complejos, representaciones grupales y sentencias pendientes de recuperación.",
+          "details": "Junto con nuestra red de socios de capital y expertos, Turnpage organiza y financia litigios complejos, binarios y especulativos en todas las etapas y jurisdicciones a nivel global. Trabajamos con síndicos concursales y síndicos de liquidación que carecen de financiación para monetizar reclamaciones potencialmente valiosas en beneficio de acreedores y beneficiarios del fideicomiso."
+        },
+        "fr": {
+          "title": "Financement du contentieux",
+          "body": "Procédures contentieuses, créances de patrimoine, litiges concurrentiels, litiges commerciaux complexes, représentations collectives et jugements en attente de recouvrement.",
+          "details": "En collaboration avec notre réseau de partenaires en capital et d'experts, Turnpage organise et finance des litiges complexes, binaires et spéculatifs à tous les stades et dans de nombreuses juridictions. Nous travaillons avec des administrateurs judiciaires et des liquidateurs qui manquent de financement pour valoriser des créances potentiellement précieuses au profit des créanciers et bénéficiaires de fiducie."
+        },
+        "de": {
+          "title": "Prozessfinanzierung",
+          "body": "Anfechtungsklagen, Nachlassforderungen, Wettbewerbsansprüche, komplexe Handelsstreitigkeiten, Gruppenvertretungen und ausstehende Urteile.",
+          "details": "Gemeinsam mit unserem Netzwerk aus Kapitalpartnern und Experten arrangiert und finanziert Turnpage komplexe, binäre und spekulative Rechtsstreitigkeiten in allen Phasen und über viele Rechtsordnungen hinweg. Wir arbeiten mit Insolvenzverwaltern zusammen, denen die Mittel fehlen, um potenziell wertvolle Ansprüche zum Nutzen von Gläubigern zu monetarisieren."
+        },
+        "it": {
+          "title": "Finanziamento del Contenzioso",
+          "body": "Procedimenti avversari, crediti di massa, azioni concorrenziali, contenzioso commerciale complesso, rappresentanze collettive e sentenze in attesa di esecuzione.",
+          "details": "Insieme alla nostra rete di partner di capitale ed esperti, Turnpage organizza e finanzia contenziosi complessi, binari e speculativi in tutte le fasi e in molte giurisdizioni globali. Lavoriamo con curatori fallimentari e liquidatori che mancano di finanziamenti per monetizzare crediti potenzialmente preziosi a beneficio di creditori e beneficiari di trust."
+        },
+        "ko": {
+          "title": "소송 금융",
+          "body": "적대적 소송, 재단 청구, 경쟁 청구, 복잡한 상업 소송, 집단 대리 및 회수 대기 중인 판결.",
+          "details": "Turnpage는 자본 파트너 및 전문가 네트워크와 함께 전 세계 모든 단계와 다양한 법원에서 복잡하고 이진적이며 투기적인 소송을 주선하고 자금을 지원합니다. 채권자와 신탁 수익자를 위해 잠재적으로 가치 있는 청구를 현금화할 자금이 부족한 파산 관재인과 협력합니다."
+        },
+        "zh": {
+          "title": "诉讼融资",
+          "body": "对抗性诉讼、遗产索赔、竞争索赔、复杂商业诉讼、集体代理及待执行判决。",
+          "details": "Turnpage与资本合作伙伴和专家网络共同安排和资助各阶段、多司法管辖区的复杂、二元和投机性诉讼。我们与缺乏资金将潜在有价值索赔货币化的破产管理人和清算受托人合作，为债权人和信托受益人服务。"
+        }
+      }
     },
     {
       "id": "sit-04",
@@ -38,7 +166,39 @@
       "hidden": false,
       "title": "Locked Digital Assets",
       "body": "Crypto claims arising from smart contract exploits, regulatory freezes, network halts, bridge failures, hacks, exchange bankruptcies and front-end shutdowns in the U.S. and globally.",
-      "details": "Digital assets locked on exchange platforms, frozen bank accounts, and deposits trapped in restructurings. Our team has deep expertise in nearly all of the major crypto estate cases that defined this asset class—BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager and others."
+      "details": "Digital assets locked on exchange platforms, frozen bank accounts, and deposits trapped in restructurings. Our team has deep expertise in nearly all of the major crypto estate cases that defined this asset class—BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager and others.",
+      "translations": {
+        "es": {
+          "title": "Activos Digitales Bloqueados",
+          "body": "Reclamaciones cripto derivadas de exploits de contratos inteligentes, congelaciones regulatorias, interrupciones de red, fallos de puentes, hackeos, quiebras de exchanges y cierres de interfaces en EE.UU. y a nivel global.",
+          "details": "Activos digitales bloqueados en plataformas de intercambio, cuentas bancarias congeladas y depósitos atrapados en reestructuraciones. Nuestro equipo tiene profunda experiencia en casi todos los principales casos de quiebra cripto que definieron esta clase de activos: BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager y otros."
+        },
+        "fr": {
+          "title": "Actifs numériques bloqués",
+          "body": "Créances crypto issues d'exploits de contrats intelligents, gels réglementaires, arrêts de réseau, défaillances de ponts, piratages, faillites d'échanges et fermetures de front-end aux États-Unis et dans le monde.",
+          "details": "Actifs numériques bloqués sur des plateformes d'échange, comptes bancaires gelés et dépôts piégés dans des restructurations. Notre équipe possède une expertise approfondie dans presque toutes les grandes procédures d'insolvabilité crypto qui ont défini cette classe d'actifs — BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager et autres."
+        },
+        "de": {
+          "title": "Gesperrte digitale Vermögenswerte",
+          "body": "Krypto-Forderungen aus Smart-Contract-Exploits, regulatorischen Einfrierungen, Netzwerkstopps, Bridge-Ausfällen, Hacks, Börsenpleiten und Frontend-Abschaltungen in den USA und weltweit.",
+          "details": "Digitale Vermögenswerte auf Exchange-Plattformen blockiert, eingefrorene Bankkonten und in Restrukturierungen gefangene Einlagen. Unser Team verfügt über tiefgreifende Expertise in fast allen wichtigen Krypto-Insolvenzfällen, die diese Anlageklasse geprägt haben — BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager und andere."
+        },
+        "it": {
+          "title": "Asset Digitali Bloccati",
+          "body": "Crediti crypto derivanti da exploit di smart contract, blocchi regolatori, interruzioni di rete, fallimenti di bridge, hacker, fallimenti di exchange e chiusure di front-end negli USA e a livello globale.",
+          "details": "Asset digitali bloccati su piattaforme di scambio, conti bancari congelati e depositi intrappolati in ristrutturazioni. Il nostro team ha profonda esperienza in quasi tutti i principali casi di insolvenza crypto che hanno definito questa classe di asset — BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager e altri."
+        },
+        "ko": {
+          "title": "잠긴 디지털 자산",
+          "body": "스마트 계약 익스플로잇, 규제 동결, 네트워크 중단, 브리지 실패, 해킹, 거래소 파산, 미국 및 전 세계 프론트엔드 종료로 인한 암호화폐 청구권.",
+          "details": "거래소 플랫폼에 잠긴 디지털 자산, 동결된 은행 계좌, 구조조정에 갇힌 예금. 당사 팀은 이 자산 클래스를 정의한 거의 모든 주요 암호화폐 파산 사건에 대한 깊은 전문성을 갖추고 있습니다 — BlockFi, BlockFills, Celsius, CRED, Haru, FTX, Genesis, Mt. Gox, Terraform Labs, Three Arrows Capital, Vauld, Voyager 등."
+        },
+        "zh": {
+          "title": "锁定数字资产",
+          "body": "源自智能合约漏洞、监管冻结、网络中断、跨链桥失败、黑客攻击、交易所破产及美国和全球前端关闭的加密货币索赔。",
+          "details": "锁定在交易所平台的数字资产、冻结的银行账户及陷于重组的存款。我们团队在定义这一资产类别的几乎所有主要加密货币破产案件中拥有深厚专业知识——BlockFi、BlockFills、Celsius、CRED、Haru、FTX、Genesis、Mt. Gox、Terraform Labs、Three Arrows Capital、Vauld、Voyager等。"
+        }
+      }
     },
     {
       "id": "sit-06",
@@ -46,7 +206,39 @@
       "hidden": false,
       "title": "Other Special Situations",
       "body": "Trade receivables, seized property, one-off complex matters and hard to price assets.",
-      "details": "Turnpage thrives on complexity and unique situations. Your fact pattern doesn't fit into any neat category? No problem. Our team has arranged and closed transactions involving novel assets, zero legal precedent and industries facing regulatory uncertainty."
+      "details": "Turnpage thrives on complexity and unique situations. Your fact pattern doesn't fit into any neat category? No problem. Our team has arranged and closed transactions involving novel assets, zero legal precedent and industries facing regulatory uncertainty.",
+      "translations": {
+        "es": {
+          "title": "Otras Situaciones Especiales",
+          "body": "Cuentas por cobrar comerciales, bienes incautados, asuntos complejos únicos y activos difíciles de valorar.",
+          "details": "Turnpage prospera con la complejidad y las situaciones únicas. ¿Su caso no encaja en ninguna categoría definida? No hay problema. Nuestro equipo ha estructurado y cerrado transacciones con activos novedosos, sin precedentes legales e industrias que enfrentan incertidumbre regulatoria."
+        },
+        "fr": {
+          "title": "Autres situations spéciales",
+          "body": "Créances commerciales, biens saisis, affaires complexes ponctuelles et actifs difficiles à valoriser.",
+          "details": "Turnpage prospère dans la complexité et les situations uniques. Votre dossier ne rentre dans aucune catégorie définie ? Aucun problème. Notre équipe a arrangé et finalisé des transactions impliquant des actifs inédits, sans précédent juridique et des secteurs confrontés à une incertitude réglementaire."
+        },
+        "de": {
+          "title": "Sonstige Sondersituationen",
+          "body": "Handelsforderungen, beschlagnahmtes Eigentum, einmalige komplexe Angelegenheiten und schwer zu bewertende Vermögenswerte.",
+          "details": "Turnpage gedeiht mit Komplexität und einzigartigen Situationen. Ihr Fall passt in keine klare Kategorie? Kein Problem. Unser Team hat Transaktionen mit neuartigen Vermögenswerten, ohne Rechtsprechung und in Branchen mit regulatorischer Unsicherheit abgewickelt."
+        },
+        "it": {
+          "title": "Altre Situazioni Speciali",
+          "body": "Crediti commerciali, proprietà sequestrate, questioni complesse una tantum e asset difficili da prezzare.",
+          "details": "Turnpage prospera nella complessità e nelle situazioni uniche. Il vostro caso non rientra in nessuna categoria definita? Nessun problema. Il nostro team ha strutturato e chiuso transazioni con asset inediti, senza precedenti legali e settori in incertezza regolamentare."
+        },
+        "ko": {
+          "title": "기타 특수 상황",
+          "body": "매출채권, 압류 재산, 일회성 복잡한 사안 및 가격 책정이 어려운 자산.",
+          "details": "Turnpage는 복잡성과 고유한 상황에서 뛰어난 역량을 발휘합니다. 귀하의 상황이 어떤 범주에도 맞지 않나요? 문제없습니다. 당사 팀은 새로운 자산, 법적 선례가 없는 경우, 규제 불확실성에 직면한 산업에서의 거래를 주선하고 완료했습니다."
+        },
+        "zh": {
+          "title": "其他特殊情况",
+          "body": "贸易应收账款、查封财产、一次性复杂事项及难以定价的资产。",
+          "details": "Turnpage在复杂性和独特情况中蓬勃发展。您的情况不属于任何明确类别？没问题。我们团队已安排并完成了涉及新型资产、零法律先例及面临监管不确定性行业的交易。"
+        }
+      }
     }
   ],
   "testimonials": [

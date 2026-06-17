@@ -19,10 +19,15 @@ export default function FAQSection({ sectionConfig, pageKey }) {
   const layout      = sc.layout      || c.layout      || (pageKey === "home" ? "layout-1" : "layout-2");
   const colorScheme = sc.colorScheme || c.colorScheme || "light";
 
-  // Filter featured FAQs for this page
-  const faqs = (faqsData.faqs || []).filter(
-    f => f.active !== false && Array.isArray(f.pages) && f.pages.includes(pageKey) && f.featured !== false
-  );
+  // Filter featured FAQs for this page, localized for non-English
+  const localizeItem = f => en ? f : {
+    ...f,
+    q: f.translations?.[lang]?.q || f.q,
+    a: f.translations?.[lang]?.a || f.a,
+  };
+  const faqs = (faqsData.faqs || [])
+    .filter(f => f.active !== false && Array.isArray(f.pages) && f.pages.includes(pageKey) && f.featured !== false)
+    .map(localizeItem);
 
   // Check if there are additional FAQs beyond featured ones
   const allFaqsForPage = (faqsData.faqs || []).filter(

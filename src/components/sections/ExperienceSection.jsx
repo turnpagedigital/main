@@ -33,10 +33,11 @@ export default function ExperienceSection({ sectionConfig, pageKey }) {
   };
   const fallback = headings[pageKey] || headings.home;
   const c = (sectionConfig && sectionConfig.content) || {};
+  const pgKey = pageKey === "ai-copyright" ? "aicopyright" : (pageKey || "home");
   const h = {
     eyebrow: en ? ((typeof c.eyebrow === "string" && c.eyebrow.trim()) ? c.eyebrow : t("experience.eyebrow")) : t("experience.eyebrow"),
-    title:   (typeof c.title   === "string" && c.title.trim())   ? c.title   : fallback.title,
-    body:    (typeof c.body    === "string" && c.body.trim())    ? c.body    : fallback.body,
+    title:   en ? ((typeof c.title === "string" && c.title.trim()) ? c.title : t(`experience.${pgKey}.title`)) : t(`experience.${pgKey}.title`),
+    body:    en ? ((typeof c.body  === "string" && c.body.trim())  ? c.body  : t(`experience.${pgKey}.body`))  : t(`experience.${pgKey}.body`),
   };
   // Footnote: never edited → built-in note; custom text → shown as-is;
   // cleared in the builder ("") → hidden entirely.

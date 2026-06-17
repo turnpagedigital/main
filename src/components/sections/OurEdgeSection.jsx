@@ -12,11 +12,12 @@ export default function OurEdgeSection({ sectionConfig }) {
   const titleAccent= en ? (c.titleAccent || t("edge.title_2")) : t("edge.title_2");
   const intro      = c.intro      || "";
   const colorScheme = c.colorScheme || "white";
-  const points = c.points || [
-    { id: "e1", h: "Practically unlimited liquidity", b: "We partner with major asset managers — over 500 institutions on speed dial." },
-    { id: "e2", h: "Lightning-fast settlement",       b: "Automation accelerates diligence and closing in the largest volume cases." },
-    { id: "e3", h: "Relationship builders, not just dealmakers", b: "We go the extra mile to understand your business needs so we can structure the right deal for our clients." },
+  const defaultPoints = [
+    { id: "e1", h: t("edge.p1.title"), b: t("edge.p1.body") },
+    { id: "e2", h: t("edge.p2.title"), b: t("edge.p2.body") },
+    { id: "e3", h: t("edge.p3.title"), b: t("edge.p3.body") },
   ];
+  const points = en ? (c.points || defaultPoints) : defaultPoints;
 
   const isLightGray = colorScheme === "light-gray";
   const bgColor = isLightGray ? "#F4F5F7" : "#FFFFFF";

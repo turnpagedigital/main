@@ -8,7 +8,15 @@
       "pages": [
         "home"
       ],
-      "featured": true
+      "featured": true,
+      "translations": {
+        "es": { "q": "¿Qué tipos de reclamaciones cubren?", "a": "Reclamaciones de quiebra, reclamaciones de litigios, reclamaciones de demandas colectivas, cuentas por cobrar comerciales, sentencias, activos digitales bloqueados, cuentas congeladas, reembolsos gubernamentales incluyendo reembolsos arancelarios, y otros activos ilíquidos y en dificultades." },
+        "fr": { "q": "Quels types de créances couvrez-vous ?", "a": "Créances de faillite, créances de contentieux, créances d'actions collectives, créances commerciales, jugements, actifs numériques bloqués, comptes gelés, remboursements gouvernementaux y compris les remboursements tarifaires, et autres actifs illiquides et en difficulté." },
+        "de": { "q": "Welche Arten von Forderungen decken Sie ab?", "a": "Insolvenzforderungen, Prozessforderungen, Sammelklagenforderungen, Handelsforderungen, Urteile, gesperrte digitale Vermögenswerte, eingefrorene Konten, staatliche Rückerstattungen einschließlich Zollrückerstattungen und andere illiquide und notleidende Vermögenswerte." },
+        "it": { "q": "Che tipi di crediti coprite?", "a": "Crediti da fallimento, crediti da contenzioso, crediti da class action, crediti commerciali, sentenze, asset digitali bloccati, conti congelati, rimborsi governativi inclusi i rimborsi doganali e altri asset illiquidi e in difficoltà." },
+        "ko": { "q": "어떤 유형의 청구를 취급하나요?", "a": "파산 청구, 소송 청구, 집단소송 청구, 매출채권, 판결, 잠긴 디지털 자산, 동결 계좌, 관세 환급을 포함한 정부 환급금, 기타 비유동성 및 부실 자산." },
+        "zh": { "q": "你们涵盖哪些类型的索赔？", "a": "破产索赔、诉讼索赔、集体诉讼索赔、贸易应收账款、判决、锁定数字资产、冻结账户、包括关税退款在内的政府退款，以及其他非流动性和困境资产。" }
+      }
     },
     {
       "active": true,
@@ -17,7 +25,15 @@
       "pages": [
         "home"
       ],
-      "featured": true
+      "featured": true,
+      "translations": {
+        "es": { "q": "¿Qué servicios ofrecen?", "a": "Soluciones de capital (cesiones, participaciones, financiación de litigios, adelantos, acuerdos contingentes), estrategias de negociación (corretaje OTC, subastas, grupos privados, carteras estructuradas) y asesoría (análisis de reclamaciones, descubrimiento de precios, estrategias complejas de recuperación, testimonio pericial)." },
+        "fr": { "q": "Quels services proposez-vous ?", "a": "Solutions en capital (cessions, participations, financement de contentieux, avances, arrangements conditionnels), stratégies de trading (courtage OTC, enchères, pools privés, portefeuilles structurés) et conseil (analyse de créances, découverte de prix, stratégies de recouvrement complexes, témoignage d'expert)." },
+        "de": { "q": "Welche Dienstleistungen bieten Sie an?", "a": "Kapitallösungen (Abtretungen, Beteiligungen, Prozessfinanzierung, Vorschüsse, Eventualvereinbarungen), Handelsstrategien (OTC-Maklergeschäfte, Auktionen, private Pools, strukturierte Portfolios) und Beratung (Forderungsanalyse, Preisfindung, komplexe Einziehungsstrategien, Sachverständigenaussagen)." },
+        "it": { "q": "Quali servizi offrite?", "a": "Soluzioni di capitale (cessioni, partecipazioni, finanziamento del contenzioso, anticipi, accordi contingenti), strategie di trading (brokeraggio OTC, aste, pool privati, portafogli strutturati) e consulenza (analisi dei crediti, price discovery, strategie di recupero complesse, testimonianza peritale)." },
+        "ko": { "q": "어떤 서비스를 제공하나요?", "a": "자본 솔루션(양도, 참여, 소송 금융, 선급금, 성공 보수 약정), 거래 전략(OTC 중개, 경매, 비공개 풀, 구조화 포트폴리오), 자문(청구 분석, 가격 발견, 복잡한 회수 전략, 전문가 증언)." },
+        "zh": { "q": "你们提供哪些服务？", "a": "资本解决方案（转让、参与、诉讼融资、预付款、或有安排）、交易策略（OTC经纪、拍卖、私人池、结构化投资组合）和咨询（索赔分析、价格发现、复杂回收策略、专家证词）。" }
+      }
     },
     {
       "active": false,
