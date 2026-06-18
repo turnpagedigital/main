@@ -99,6 +99,8 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       {Object.entries(attribution).map(([k, v]) => (
         <input key={k} type="hidden" name={k} value={v} />
       ))}
+      {/* Honeypot — invisible to humans, bots fill it in and get silently rejected */}
+      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }} />
 
       <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
         <Field label={t("form.first_name")} name="firstName" type="text" required />
