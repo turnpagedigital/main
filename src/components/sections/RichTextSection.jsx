@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { marked } from "marked";
+import DOMPurify from "dompurify";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 
 /* RichTextSection — standalone formatted text with real heading structure.
@@ -39,7 +40,7 @@ export default function RichTextSection({ sectionConfig }) {
   const html = useMemo(() => {
     if (!markdown.trim()) return "";
     marked.setOptions({ mangle: false, headerIds: false, breaks: false });
-    return marked.parse(markdown);
+    return DOMPurify.sanitize(marked.parse(markdown));
   }, [markdown]);
 
   const isNarrow = layout === "layout-1-narrow";

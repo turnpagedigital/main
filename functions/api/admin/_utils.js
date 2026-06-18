@@ -11,7 +11,7 @@
      GITHUB_BRANCH    — branch to commit to, e.g. "dev" or "main"
 */
 
-const SESSION_TTL_SECONDS = 24 * 60 * 60; // 24h
+const SESSION_TTL_SECONDS = 8 * 60 * 60; // 8h
 export const COOKIE_NAME = "tpdm_admin";
 
 export function jsonResponse(body, status = 200, extraHeaders) {

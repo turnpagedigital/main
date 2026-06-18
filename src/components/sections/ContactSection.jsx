@@ -25,7 +25,7 @@ function labelForSource(s) {
    glass             — cool gray section, form card is liquid glass
    ─────────────────────────────────────────────────────────────────────── */
 
-function getSectionStyle(variant, bgImage) {
+function getSectionStyle(variant) {
   const base = { padding: "clamp(2.5rem,5vw,4rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem)" };
   if (variant === "image") {
     return { ...base, position: "relative", overflow: "hidden", background: "#000" };
