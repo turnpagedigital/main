@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-18-bankruptcy-advisory",
+      "date": "2026-06-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 18, 2026",
+      "summary": "The week's two defining data points: Sleep Number Corporation filed Chapter 11 in the Southern District of New York on June 12 with a fully backstopped $415 million § 363 sale and a compressed 33-day runway to auction — the fastest-moving major retail bankruptcy of the year.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-18-class-actions-advisory",
+      "date": "2026-06-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 18, 2026",
+      "summary": "Three major MDL and class-action developments landed in a 72-hour window — each materially advancing the litigation posture for claimants and their counsel: Judge Autrey remanded Bayer's $7.25 billion Roundup settlement back to Missouri state court on June 17, eliminating the objectors' federal-foru…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-18-fraud-advisory",
+      "date": "2026-06-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 18, 2026",
+      "summary": "Today's primary delta: The OneCoin DOJ remission petition deadline falls in twelve days — June 30, 2026 — making this the last filing window before the $40 million forfeiture pool closes to new claims.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-18-tariff-advisory",
+      "date": "2026-06-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 18, 2026",
+      "summary": "The critical development since yesterday's briefing is the operational consequence of the DOJ's June 2 appeal to the Federal Circuit and CBP's June 9 show-cause testimony, taken together: the refund pipeline has split into two distinct tracks depending on whether an importer filed its own CIT suit.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-18-crypto-advisory",
+      "date": "2026-06-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 18, 2026",
+      "summary": "BlockFills § 363 Sale Cleared; Plan Confirmation Set for September — The Key Open Question Survives",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-18-advisory",
+      "date": "2026-06-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 18, 2026",
+      "summary": "Bartz final approval order: still outstanding, distribution clock ticking. As of this writing, the most consequential near-term development in the AI copyright docket is a gap, not a filing: Judge Araceli Martínez-Olguín has not yet entered the final approval order in Bartz, et al. v.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-17-bankruptcy-advisory",
       "date": "2026-06-17",
       "type": "briefing",
