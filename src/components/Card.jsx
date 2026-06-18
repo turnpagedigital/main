@@ -1,4 +1,5 @@
 import React from "react";
+import { hasValue } from "../lib/utils.js";
 import { INK, INK_60, RADIUS_CARD, RADIUS_CARD_SQUARE } from "../data/tokens.js";
 
 /**
@@ -152,7 +153,7 @@ export default function Card({
         overflow: "hidden",
         transition: "all 0.3s ease-out",
         willChange: "transform, box-shadow",
-        filter: brightness != null && brightness !== "" ? `brightness(${brightness}%)` : undefined,
+        filter: hasValue(brightness) ? `brightness(${brightness}%)` : undefined,
         boxShadow: config.shadow,
         color: textColor,
         display: "flex",

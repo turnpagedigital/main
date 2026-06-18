@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog, ErrorBanner } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog, ErrorBanner, labelStyle } from "./shared.jsx";
 import { useTabData } from "./useTabData.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -313,10 +313,6 @@ function SituationRow({ sit, index, total, onUpdate, onMoveUp, onMoveDown, onRem
 }
 
 /* ── Small helpers ──────────────────────────────────────────────────────── */
-
-const labelStyle = {
-  display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600,
-};
 
 function SectionHeader({ children }) {
   return (

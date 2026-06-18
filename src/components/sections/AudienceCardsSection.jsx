@@ -1,4 +1,5 @@
 import React from "react";
+import { hasValue } from "../../lib/utils.js";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import Card from "../Card.jsx";
 import { sectionBackground } from "../../lib/section-background.js";
@@ -25,8 +26,8 @@ export default function AudienceCardsSection({ sectionConfig }) {
   const colorScheme      = c.colorScheme || "light-gray";
   const cardStyle        = c.cardStyle || "standard";
   const cardRadius       = c.cardRadius || "rounded";
-  const cardBlur         = c.cardBlur != null && c.cardBlur !== "" ? Number(c.cardBlur) : undefined;
-  const cardBrightness   = c.cardBrightness != null && c.cardBrightness !== "" ? Number(c.cardBrightness) : undefined;
+  const cardBlur         = hasValue(c.cardBlur) ? Number(c.cardBlur) : undefined;
+  const cardBrightness   = hasValue(c.cardBrightness) ? Number(c.cardBrightness) : undefined;
   const backgroundImage  = c.backgroundImage || "";
   const imageFilter         = c.imageFilter || "dark";
   const imageFilterStrength = c.imageFilterStrength ?? 30;
@@ -173,7 +174,7 @@ function AudienceCard({ card, schemeDark, brightness }) {
       overflow: "hidden",
       display: "flex", flexDirection: "column",
       minHeight: "clamp(180px, 18vw, 280px)",
-      filter: brightness != null && brightness !== "" ? `brightness(${brightness}%)` : undefined,
+      filter: hasValue(brightness) ? `brightness(${brightness}%)` : undefined,
     }}>
       {hasBadge && (
         <div style={{

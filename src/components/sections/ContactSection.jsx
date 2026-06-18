@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { hasValue } from "../../lib/utils.js";
 import { NEON, FONT, INK, INK_60, LINE_STRONG } from "../../data/tokens.js";
 import IntakeForm from "../IntakeForm.jsx";
 import contactData from "../../data/contact-form.json";
@@ -98,10 +99,10 @@ export default function ContactSection({ sectionConfig }) {
   const c = (sectionConfig && sectionConfig.content) || {};
   const variant = c.variant || "paper";
   const bgImage = c.backgroundImage || "";
-  const bgBrightness = c.backgroundBrightness != null && c.backgroundBrightness !== "" ? Number(c.backgroundBrightness) / 100 : 0.35;
+  const bgBrightness = hasValue(c.backgroundBrightness) ? Number(c.backgroundBrightness) / 100 : 0.35;
   const formCardStyleOverride = c.formCardStyle || "";
   const formCardRadius = c.formCardRadius || "rounded";
-  const formCardBlur = c.formCardBlur != null && c.formCardBlur !== "" ? Number(c.formCardBlur) : null;
+  const formCardBlur = hasValue(c.formCardBlur) ? Number(c.formCardBlur) : null;
 
   const [urlSource, setUrlSource] = useState(readSourceFromUrl);
   useEffect(() => {

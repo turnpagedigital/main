@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { FONT, INK, INK_60, LINE, SURFACE } from "../../data/tokens.js";
-import { inputStyle, btnPrimaryStyle } from "./shared.jsx";
+import { inputStyle, btnPrimaryStyle, labelStyle } from "./shared.jsx";
 
 /* IntelligenceDefaultsTab — global defaults for the Intelligence engine.
    - Default voice/tone (external/internal reserved for later).
@@ -8,7 +8,6 @@ import { inputStyle, btnPrimaryStyle } from "./shared.jsx";
      adds its own theme-specific trusted sources on top. */
 
 const card = { background: SURFACE, border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1.2rem" };
-const labelStyle = { display: "block", fontSize: "0.74rem", color: INK_60, fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 4 };
 const sectionH = { fontSize: "0.95rem", fontWeight: 800, marginBottom: "0.4rem", color: INK };
 
 const lines = (text) => text.split("\n").map(s => s.trim()).filter(Boolean);

@@ -1,6 +1,6 @@
 import React from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner, labelStyle } from "./shared.jsx";
 import { useTabData } from "./useTabData.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -44,9 +44,6 @@ function emptyLink() {
 }
 
 // ── Shared helpers ─────────────────────────────────────────────────────
-const labelStyle = {
-  display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600,
-};
 
 function SectionHeader({ children, style }) {
   return (
