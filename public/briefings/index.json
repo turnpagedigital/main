@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-19-bankruptcy-advisory",
+      "date": "2026-06-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 19, 2026",
+      "summary": "The dominant development this week sits at the intersection of both KEY FOCUS matters. In BlockFills (Bankr. D. Del. No. 26-10371, J.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-19-class-actions-advisory",
+      "date": "2026-06-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 19, 2026",
+      "summary": "Today's deltas are the Roundup remand, the NextEra $150M preliminary-approval filing, and the Pfizer Depo-Provera MDL settlement-in-principle.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-19-fraud-advisory",
+      "date": "2026-06-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 19, 2026",
+      "summary": "Today's delta is largely a holding pattern. The three largest active recovery processes — BLMIS/Picard, Stanford Financial, and OneCoin — each cleared a material structural milestone in Q1/Q2 2026, and what claims investors are now pricing is the execution tail: how fast remaining distributions clea…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-19-tariff-advisory",
+      "date": "2026-06-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 19, 2026",
+      "summary": "The dominant development this week is the DOJ/Federal Circuit appellate fight over whether the government can permanently retain an estimated $30 billion or more in finally liquidated IEEPA duties — notwithstanding the Supreme Court's February 20, 2026 ruling that those duties were unlawful from inc…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-19-crypto-advisory",
+      "date": "2026-06-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 19, 2026",
+      "summary": "BlockFills § 363 Sale Approved; Plan Confirmation Set for September — The Week's Decisive Move",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-19-advisory",
+      "date": "2026-06-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 19, 2026",
+      "summary": "The central fact as of this morning: Judge Araceli Martínez-Olguín of the Northern District of California has not yet issued a written final-approval order in Bartz v. Anthropic PBC, No. 3:24-cv-05417.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-18-bankruptcy-advisory",
       "date": "2026-06-18",
       "type": "briefing",
