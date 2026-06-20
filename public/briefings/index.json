@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-20-bankruptcy-advisory",
+      "date": "2026-06-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 20, 2026",
+      "summary": "Today's lede: Two cases dominate this morning's advisory. The more time-sensitive is Sleep Number Corporation (Case No. 26-11399, Bankr.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-20-class-actions-advisory",
+      "date": "2026-06-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 20, 2026",
+      "summary": "This edition leads on two live deltas from the past 72 hours: U.S. District Judge Henry Edward Autrey's June 18 remand order in the Bayer Roundup $7.25 billion Missouri state-court settlement, which clears the path to a July final-approval hearing but leaves an active appellate challenge in play; an…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-20-fraud-advisory",
+      "date": "2026-06-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 20, 2026",
+      "summary": "The most time-sensitive item this cycle is the OneCoin DOJ claims window, which closes June 30, 2026 — ten days out. Claims investors holding secondary positions in potential restitution streams should confirm petitions are filed before that hard cutoff.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-20-tariff-advisory",
+      "date": "2026-06-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 20, 2026",
+      "summary": "The most consequential development since last week's advisory is now confirmed: on June 3, the Government filed its appeals in the Federal Circuit, again pressing its universal-injunction argument. The target is Judge Richard K. Eaton's refund order in Euro-Notions Florida, Inc. v.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-20-crypto-advisory",
+      "date": "2026-06-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 20, 2026",
+      "summary": "The controlling delta this week is the BlockFills / Reliz sale hearing. The June 16 courtroom proceeding before Judge Horan was the case's most consequential event since the petition date: a confirmed successful bidder, a $3.25 million purchase price against $100–$500 million in stated liabilities,…",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-20-advisory",
+      "date": "2026-06-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 20, 2026",
+      "summary": "Today's delta: As of this writing, Judge Araceli Martínez-Olguín has not yet issued the final approval order in Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal.), following the May 14 fairness hearing. The docket last registered activity on June 4, 2026 (Entry No.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-19-bankruptcy-advisory",
       "date": "2026-06-19",
       "type": "briefing",
