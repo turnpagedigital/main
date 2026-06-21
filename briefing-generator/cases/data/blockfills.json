@@ -15,9 +15,9 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
     "date_last_filing": "2026-06-19",
-    "fetched_at": "2026-06-20T15:46:00.647430+00:00",
-    "as_of": "Jun 20, 2026",
-    "new_in_72h": 8,
+    "fetched_at": "2026-06-21T16:02:50.798296+00:00",
+    "as_of": "Jun 21, 2026",
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": null,
@@ -42,7 +42,7 @@
         "date_filed": "2026-06-18",
         "date_display": "Jun 18, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -71,7 +71,7 @@
         "date_filed": "2026-06-18",
         "date_display": "Jun 18, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -80,7 +80,7 @@
         "date_filed": "2026-06-18",
         "date_display": "Jun 18, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -89,7 +89,7 @@
         "date_filed": "2026-06-18",
         "date_display": "Jun 18, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -98,7 +98,7 @@
         "date_filed": "2026-06-18",
         "date_display": "Jun 18, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -107,7 +107,7 @@
         "date_filed": "2026-06-18",
         "date_display": "Jun 18, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -116,7 +116,7 @@
         "date_filed": "2026-06-18",
         "date_display": "Jun 18, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
