@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-21-bankruptcy-advisory",
+      "date": "2026-06-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 21, 2026",
+      "summary": "The dominant developments this week are the post-sale-hearing posture of BlockFills in Delaware — where the June 16 Keyrock sale hearing has now passed and confirmation is targeted for July 13 — and the opening act of the Sleep Number chapter 11 in the Southern District of New York, where Judge Kyu…",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-21-class-actions-advisory",
+      "date": "2026-06-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 21, 2026",
+      "summary": "The dominant delta this week is Bartz v. Anthropic's post-hearing silence. As of today, Judge Araceli Martínez-Olguín has not yet issued a final approval order following the May 14, 2026 fairness hearing at the San Francisco Federal Courthouse, Courtroom 12 — 19th Floor.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-21-fraud-advisory",
+      "date": "2026-06-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 21, 2026",
+      "summary": "This week's deltas: The Stanford receivership's 12th distribution entered active payment processing as of early April, with Receiver Ralph Janvey navigating a contested final distribution plan while claimants with Venezuela addresses flag unresolved logistics.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-21-tariff-advisory",
+      "date": "2026-06-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 21, 2026",
+      "summary": "The litigation has crossed a threshold. On June 3, the Government filed its appeals in the Federal Circuit, again pressing its universal-injunction argument. The appeal consolidates the government's challenge to Judge Richard K. Eaton's refund orders in Euro-Notions Florida, Inc. v.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-21-crypto-advisory",
+      "date": "2026-06-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 21, 2026",
+      "summary": "The week's controlling development is Judge Thomas M. Horan's June 16, 2026 approval of the $3.25 million Keyrock sale in Reliz Technology Group Holdings Inc., et al. (BlockFills), Case No. 26-10371 (TMH), Bankr. D. Del.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-21-advisory",
+      "date": "2026-06-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 21, 2026",
+      "summary": "Today's delta: Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal.) has crossed into its decisive post-hearing window. After a 75-minute fairness hearing held May 14 in a San Francisco courtroom, Judge Araceli Martínez-Olguín declined, for now, to approve the $1.5 billion settlement, but given the tone…",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-20-bankruptcy-advisory",
       "date": "2026-06-20",
       "type": "briefing",
