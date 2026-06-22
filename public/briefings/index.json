@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-22-bankruptcy-advisory",
+      "date": "2026-06-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 22, 2026",
+      "summary": "BlockFills (Reliz Technology Group Holdings Inc., et al.) — § 363 Sale Approved, Confirmation Hearing Opens Today",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-22-class-actions-advisory",
+      "date": "2026-06-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 22, 2026",
+      "summary": "Today's primary delta: Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal.), has crossed into a critical post-hearing limbo. Judge Araceli Martínez-Olguín held the final-approval fairness hearing on May 14, 2026, declined to rule from the bench, and issued a post-hearing order requiring Anthropic to fi…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-22-fraud-advisory",
+      "date": "2026-06-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 22, 2026",
+      "summary": "This week's primary delta: The DOJ's OneCoin victim-compensation process, opened in April and administered by Kroll Settlement Administration, is now the most active claimant-action item in the cross-border crypto-fraud recovery space — with a $40 million fund set against $4+ billion in verified los…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-22-tariff-advisory",
+      "date": "2026-06-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 22, 2026",
+      "summary": "Three interlocking developments define the week: the DOJ's Federal Circuit appeal of Judge Eaton's IEEPA refund order is the most immediate threat to the $95B+ CAPE pipeline; the Federal Circuit's June 11 stay-pending-appeal of the Section 122 injunction resets the 19 U.S.C.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-22-crypto-advisory",
+      "date": "2026-06-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 22, 2026",
+      "summary": "BlockFills / Reliz: Sale Approved — Plan Confirmation in Sight, Customer-Property Question Unresolved",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-22-advisory",
+      "date": "2026-06-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 22, 2026",
+      "summary": "The lead this morning is the same as it has been since May 14: Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal.), is awaiting a final approval order that has not yet been entered — and the longer that gap runs, the more consequential it becomes for the rest of the docket.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-21-bankruptcy-advisory",
       "date": "2026-06-21",
       "type": "briefing",
