@@ -15,8 +15,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-06-04",
-    "fetched_at": "2026-06-21T16:02:49.220087+00:00",
-    "as_of": "Jun 21, 2026",
+    "fetched_at": "2026-06-23T16:37:50.018608+00:00",
+    "as_of": "Jun 23, 2026",
     "new_in_72h": 0,
     "recent": [
       {
@@ -76,15 +76,6 @@
         "doc_url": ""
       },
       {
-        "entry_number": 671,
-        "date_filed": "2026-05-21",
-        "date_display": "May 21, 2026",
-        "description": "Supplemental Brief -DEFENDANT ANTHROPIC PBCS SUPPLEMENTAL BRIEF REGARDING LATE OPT OUTS filed byAnthropic PBC. (Farris, Joseph) (Filed on 5/21/2026) (Entered: 05/21/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.671.0.pdf"
-      },
-      {
         "entry_number": 672,
         "date_filed": "2026-05-21",
         "date_display": "May 21, 2026",
@@ -92,6 +83,15 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.672.0_1.pdf"
+      },
+      {
+        "entry_number": 671,
+        "date_filed": "2026-05-21",
+        "date_display": "May 21, 2026",
+        "description": "Supplemental Brief -DEFENDANT ANTHROPIC PBCS SUPPLEMENTAL BRIEF REGARDING LATE OPT OUTS filed byAnthropic PBC. (Farris, Joseph) (Filed on 5/21/2026) (Entered: 05/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.671.0.pdf"
       },
       {
         "entry_number": 670,
@@ -112,15 +112,6 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.669.0.pdf"
       },
       {
-        "entry_number": 667,
-        "date_filed": "2026-05-15",
-        "date_display": "May 15, 2026",
-        "description": "*order not processed. Filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 05/14/2026 before Judge Araceli Martinez-Olguin by Anthropic PBC, for Recorded Proceeding - San Francisco. (Farris, Joseph) (Filed on 5/15/2026) Modified on 5/15/2026 (jaf, COURT STAFF). (Entere",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 668,
         "date_filed": "2026-05-15",
         "date_display": "May 15, 2026",
@@ -130,31 +121,13 @@
         "doc_url": ""
       },
       {
-        "entry_number": null,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "",
+        "entry_number": 667,
+        "date_filed": "2026-05-15",
+        "date_display": "May 15, 2026",
+        "description": "*order not processed. Filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 05/14/2026 before Judge Araceli Martinez-Olguin by Anthropic PBC, for Recorded Proceeding - San Francisco. (Farris, Joseph) (Filed on 5/15/2026) Modified on 5/15/2026 (jaf, COURT STAFF). (Entere",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 664,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "ORDER FOLLOWING FINAL APPROVAL HEARING: By no later than May 21, 2026, Anthropic may file a supplemental brief of no more than 2 pages addressing why late opt outs should not be honored. By that date, Plaintiffs shall file a revised proposed order substantively addressing objecti",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 661,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Letter from Victoria Pinder dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
       },
       {
         "entry_number": 666,
@@ -173,6 +146,33 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.662.0_1.pdf"
+      },
+      {
+        "entry_number": 661,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Letter from Victoria Pinder dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
+      },
+      {
+        "entry_number": 664,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "ORDER FOLLOWING FINAL APPROVAL HEARING: By no later than May 21, 2026, Anthropic may file a supplemental brief of no more than 2 pages addressing why late opt outs should not be honored. By that date, Plaintiffs shall file a revised proposed order substantively addressing objecti",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       },
       {
         "entry_number": null,
@@ -202,24 +202,6 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.663.0.pdf"
       },
       {
-        "entry_number": null,
-        "date_filed": "2026-05-12",
-        "date_display": "May 12, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-05-12",
-        "date_display": "May 12, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 660,
         "date_filed": "2026-05-12",
         "date_display": "May 12, 2026",
@@ -227,6 +209,24 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.660.0_1.pdf"
+      },
+      {
+        "entry_number": 658,
+        "date_filed": "2026-05-12",
+        "date_display": "May 12, 2026",
+        "description": "CLERKS NOTICE REGARDING LOCATION CHANGE FOR JUDGE ARACELI MARTÍNEZ-OLGUÍNEffective May 26, 2026:Judge Araceli Martínez-Olguín's courtroom and chambers will be located at the Ronald V. Dellums Federal Building and United States Courthouse, 1301 Clay Street, Oakland, CA 94612.On or",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-12",
+        "date_display": "May 12, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ]
   },
