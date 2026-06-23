@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-23-bankruptcy-advisory",
+      "date": "2026-06-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 23, 2026",
+      "summary": "The week's controlling development: Judge Horan approved the BlockFills § 363 sale on June 16 and the case now pivots to plan confirmation, with a hearing date set for September 11, 2026 — the single most consequential near-term date for roughly $145 million in unsecured institutional creditor claim…",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-23-class-actions-advisory",
+      "date": "2026-06-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 23, 2026",
+      "summary": "Today's delta: Hut 8 Corp. filed a preliminary settlement motion yesterday in the Southern District of New York seeking approval of a $2.35 million securities class action settlement tied to its 2023 USBTC merger — a small-cap securities matter, but one with structurally instructive features on trac…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-23-fraud-advisory",
+      "date": "2026-06-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 23, 2026",
+      "summary": "The near-term actionable items this week are two deadlines that run out within days: the OneCoin DOJ remission petition window closes June 30, 2026, and Power Block Coin (Bankr. D. Utah, No. 24-23041, Judge Cathleen D.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-23-tariff-advisory",
+      "date": "2026-06-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 23, 2026",
+      "summary": "The dominant operational development in the IEEPA refund landscape as of this week is not in the courts of appeals — it is back in front of Judge Richard K. Eaton at the CIT, where the question of whether finally liquidated entries will ever reach the CAPE pipeline is coming to a head.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-23-crypto-advisory",
+      "date": "2026-06-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 23, 2026",
+      "summary": "BlockFills / Reliz — the sale hearing has passed; plan solicitation is live; confirmation is now the critical path. The most consequential near-term development in this portfolio is the evolution of In re Reliz Technology Group Holdings Inc., et al. (Bankr. D. Del., Case No.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-23-advisory",
+      "date": "2026-06-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 23, 2026",
+      "summary": "After a 75-minute fairness hearing on May 14, Judge Araceli Martínez-Olguín declined to approve the $1.5 billion settlement from the bench in Bartz, et al. v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal., Courtroom 12 – 19th Floor, 450 Golden Gate Ave., San Francisco).",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-22-bankruptcy-advisory",
       "date": "2026-06-22",
       "type": "briefing",
