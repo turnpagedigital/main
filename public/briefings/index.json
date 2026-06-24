@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-24-bankruptcy-advisory",
+      "date": "2026-06-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 24, 2026",
+      "summary": "The week's material deltas: BlockFills (Bankr. D. Del. No. 26-10371) has crossed the sale-order threshold with the June 16 hearing now in the rear view, and the case is driving hard toward a July 13 confirmation hearing — the most consequential near-term event for approximately $145 million in unsec…",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-24-class-actions-advisory",
+      "date": "2026-06-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 24, 2026",
+      "summary": "Today's primary delta: A new securities class action settlement entered the preliminary approval queue Monday when Hut 8 Corp.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-24-fraud-advisory",
+      "date": "2026-06-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 24, 2026",
+      "summary": "The most time-sensitive item across the tracked docket right now sits in the OneCoin remission proceeding: the DOJ's victim petition deadline is June 30, 2026 — six days from today.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-24-tariff-advisory",
+      "date": "2026-06-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 24, 2026",
+      "summary": "The single most consequential development this week is the government's June 3, 2026 appeal to the Federal Circuit challenging Judge Richard K. Eaton's universal IEEPA refund orders as impermissible injunctions — and the practical consequence now cascades through the entire CAPE pipeline.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-24-crypto-advisory",
+      "date": "2026-06-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 24, 2026",
+      "summary": "BlockFills / Reliz Technology — Confirmation Window Opens; Sale Proceeds; Customer-Property Question Remains Live",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-24-advisory",
+      "date": "2026-06-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 24, 2026",
+      "summary": "The two controlling Anthropic matters have entered their most consequential posture of the litigation cycle simultaneously. In Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-23-bankruptcy-advisory",
       "date": "2026-06-23",
       "type": "briefing",
