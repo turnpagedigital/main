@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-25-bankruptcy-advisory",
+      "date": "2026-06-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 25, 2026",
+      "summary": "Today's delta across the two key-focus matters: Sleep Number Corporation (In re Sleep Number Corporation, et al., Case No. 26-11399 (KYP), Bankr.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-25-class-actions-advisory",
+      "date": "2026-06-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 25, 2026",
+      "summary": "Today's deltas in brief: Three material developments landed in the last 24–48 hours. (1) The Bayer/Monsanto $7.25 billion Roundup class settlement enters its final pre-hearing posture — the July 9 final-approval hearing before the 22nd Judicial Circuit Court in St.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-25-fraud-advisory",
+      "date": "2026-06-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 25, 2026",
+      "summary": "Today's primary delta: The OneCoin DOJ remission petition window closes in five days — June 30, 2026 — making this the single most time-sensitive deadline across the tracked dockets this week. Separately, Power Block Coin / SmartFi (Bankr. D. Utah, No. 24-23041, Judge Cathleen D.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-25-tariff-advisory",
+      "date": "2026-06-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 25, 2026",
+      "summary": "On June 23, 2026 — two days ago — CBP published CSMS #69035485 confirming that Phase 2 of the IEEPA tariff refund process will be deployed in the ACE Portal on June 29, 2026. That is the single most consequential near-term date for importers with outstanding IEEPA refund exposure.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-25-crypto-advisory",
+      "date": "2026-06-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 25, 2026",
+      "summary": "BlockFills / Reliz — Keyrock sale is past its June 16 hearing date; confirmation now the critical path. The most consequential open question in the BlockFills case is what happened at and after the June 16 sale hearing.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-25-advisory",
+      "date": "2026-06-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 25, 2026",
+      "summary": "Today's lede is a two-track story. The most consequential new filing in the past 72 hours is Jamendo's copyright complaint against Nvidia — a structurally distinct suit that tests dataset-governance and Creative Commons licensing constraints rather than the shadow-library piracy theory that drove Ba…",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-24-bankruptcy-advisory",
       "date": "2026-06-24",
       "type": "briefing",
