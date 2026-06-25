@@ -14,11 +14,29 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-06-04",
-    "fetched_at": "2026-06-24T16:26:02.244702+00:00",
-    "as_of": "Jun 24, 2026",
-    "new_in_72h": 0,
+    "date_last_filing": "2026-06-25",
+    "fetched_at": "2026-06-25T16:32:31.419767+00:00",
+    "as_of": "Jun 25, 2026",
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-25",
+        "date_display": "Jun 25, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 675,
+        "date_filed": "2026-06-25",
+        "date_display": "Jun 25, 2026",
+        "description": "NOTICE of Withdrawal filed by Mark Alan Lemley, no longer appearing on behalf of Anthropic PBC in this case (Lemley, Mark) (Filed on 6/25/2026) (Entered: 06/25/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 674,
         "date_filed": "2026-06-04",
@@ -27,27 +45,27 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.674.0_1.pdf"
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-05-29",
-        "date_display": "May 29, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 673,
-        "date_filed": "2026-05-29",
-        "date_display": "May 29, 2026",
-        "description": "NOTICE of Withdrawal filed by Molly Alana Karlin, no longer appearing on behalf of Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson in this case (Karlin, Molly) (Filed on 5/29/2026) (Entered: 05/29/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-25",
+        "date_display": "Jun 25, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 675,
+        "date_filed": "2026-06-25",
+        "date_display": "Jun 25, 2026",
+        "description": "NOTICE of Withdrawal filed by Mark Alan Lemley, no longer appearing on behalf of Anthropic PBC in this case (Lemley, Mark) (Filed on 6/25/2026) (Entered: 06/25/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 674,
         "date_filed": "2026-06-04",
@@ -112,15 +130,6 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.669.0.pdf"
       },
       {
-        "entry_number": 668,
-        "date_filed": "2026-05-15",
-        "date_display": "May 15, 2026",
-        "description": "Transcript of Proceedings held on 5-14-26, before Judge Martinez-Olguin. Court Reporter/Transcriber Andrea Bluedorn, telephone number Phone: 715-965-2298. Email: andrea_bluedorn@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be vie",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 667,
         "date_filed": "2026-05-15",
         "date_display": "May 15, 2026",
@@ -130,46 +139,19 @@
         "doc_url": ""
       },
       {
-        "entry_number": 666,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
+        "entry_number": 668,
+        "date_filed": "2026-05-15",
+        "date_display": "May 15, 2026",
+        "description": "Transcript of Proceedings held on 5-14-26, before Judge Martinez-Olguin. Court Reporter/Transcriber Andrea Bluedorn, telephone number Phone: 715-965-2298. Email: andrea_bluedorn@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be vie",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 662,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Letter from Robert Jacobson dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.662.0_1.pdf"
-      },
-      {
-        "entry_number": 661,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Letter from Victoria Pinder dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
       },
       {
         "entry_number": 664,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
         "description": "ORDER FOLLOWING FINAL APPROVAL HEARING: By no later than May 21, 2026, Anthropic may file a supplemental brief of no more than 2 pages addressing why late opt outs should not be honored. By that date, Plaintiffs shall file a revised proposed order substantively addressing objecti",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -193,6 +175,42 @@
         "doc_url": ""
       },
       {
+        "entry_number": 662,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Letter from Robert Jacobson dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.662.0_1.pdf"
+      },
+      {
+        "entry_number": 666,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 661,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Letter from Victoria Pinder dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
+      },
+      {
         "entry_number": 663,
         "date_filed": "2026-05-13",
         "date_display": "May 13, 2026",
@@ -200,24 +218,6 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.663.0.pdf"
-      },
-      {
-        "entry_number": 660,
-        "date_filed": "2026-05-12",
-        "date_display": "May 12, 2026",
-        "description": "OPPOSITION/RESPONSE (re 656 ADMINISTRATIVE MOTION to Consider Whether Cases Should be Related ) filed byCognella, Inc.. (Rigali, Christopher) (Filed on 5/12/2026) (Entered: 05/12/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.660.0_1.pdf"
-      },
-      {
-        "entry_number": 658,
-        "date_filed": "2026-05-12",
-        "date_display": "May 12, 2026",
-        "description": "CLERKS NOTICE REGARDING LOCATION CHANGE FOR JUDGE ARACELI MARTÍNEZ-OLGUÍNEffective May 26, 2026:Judge Araceli Martínez-Olguín's courtroom and chambers will be located at the Ronald V. Dellums Federal Building and United States Courthouse, 1301 Clay Street, Oakland, CA 94612.On or",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       },
       {
         "entry_number": null,
