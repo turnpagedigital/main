@@ -15,8 +15,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-06-25",
-    "fetched_at": "2026-06-25T16:32:31.419767+00:00",
-    "as_of": "Jun 25, 2026",
+    "fetched_at": "2026-06-26T16:24:25.810540+00:00",
+    "as_of": "Jun 26, 2026",
     "new_in_72h": 2,
     "recent": [
       {
@@ -130,15 +130,6 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.669.0.pdf"
       },
       {
-        "entry_number": 667,
-        "date_filed": "2026-05-15",
-        "date_display": "May 15, 2026",
-        "description": "*order not processed. Filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 05/14/2026 before Judge Araceli Martinez-Olguin by Anthropic PBC, for Recorded Proceeding - San Francisco. (Farris, Joseph) (Filed on 5/15/2026) Modified on 5/15/2026 (jaf, COURT STAFF). (Entere",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 668,
         "date_filed": "2026-05-15",
         "date_display": "May 15, 2026",
@@ -148,19 +139,10 @@
         "doc_url": ""
       },
       {
-        "entry_number": 664,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "ORDER FOLLOWING FINAL APPROVAL HEARING: By no later than May 21, 2026, Anthropic may file a supplemental brief of no more than 2 pages addressing why late opt outs should not be honored. By that date, Plaintiffs shall file a revised proposed order substantively addressing objecti",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "",
+        "entry_number": 667,
+        "date_filed": "2026-05-15",
+        "date_display": "May 15, 2026",
+        "description": "*order not processed. Filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 05/14/2026 before Judge Araceli Martinez-Olguin by Anthropic PBC, for Recorded Proceeding - San Francisco. (Farris, Joseph) (Filed on 5/15/2026) Modified on 5/15/2026 (jaf, COURT STAFF). (Entere",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -175,28 +157,28 @@
         "doc_url": ""
       },
       {
-        "entry_number": 662,
+        "entry_number": null,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
-        "description": "Letter from Robert Jacobson dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
+        "description": "",
         "is_new": false,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.662.0_1.pdf"
+        "doc_url": ""
+      },
+      {
+        "entry_number": 664,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "ORDER FOLLOWING FINAL APPROVAL HEARING: By no later than May 21, 2026, Anthropic may file a supplemental brief of no more than 2 pages addressing why late opt outs should not be honored. By that date, Plaintiffs shall file a revised proposed order substantively addressing objecti",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       },
       {
         "entry_number": 666,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
         "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -209,6 +191,24 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
+      },
+      {
+        "entry_number": 662,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Letter from Robert Jacobson dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.662.0_1.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       },
       {
         "entry_number": 663,
