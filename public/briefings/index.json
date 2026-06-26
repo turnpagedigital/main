@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-26-bankruptcy-advisory",
+      "date": "2026-06-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 26, 2026",
+      "summary": "The next three weeks are binary for creditors in both tracked key-focus matters. In Wilmington, In re Reliz Technology Group Holdings Inc., et al. (Bankr. D. Del., No.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-26-class-actions-advisory",
+      "date": "2026-06-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 26, 2026",
+      "summary": "Today's deltas: Monsanto v. Durnell, No. 24-1068 (U.S. Supreme Court, decided June 25, 2026) — a 7-2 ruling writing FIFRA preemption into every pending Roundup failure-to-warn claim — lands the morning after Bayer's $7.25 billion class settlement is squarely in a Missouri state court's approval pipe…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-26-fraud-advisory",
+      "date": "2026-06-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 26, 2026",
+      "summary": "The clearest distribution event of the past week sits in the Stanford receivership, where Receiver Ralph S. Janvey's final-distribution machinery is actively running — payments commenced April 3, 2026 — while a contested $8.1 million Swiss tranche and a June 1 court filing by Janvey responding to a…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-26-tariff-advisory",
+      "date": "2026-06-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 26, 2026",
+      "summary": "The single most consequential number on the board today is 28 days. Presidential Proclamation No. 11012 — the 10% universal import surcharge imposed under 19 U.S.C. § 2132 (Section 122 of the Trade Act of 1974) — is set to expire at 12:01 a.m.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-26-crypto-advisory",
+      "date": "2026-06-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 26, 2026",
+      "summary": "The controlling delta this week: the Keyrock/BlockFills § 363 sale is done. Judge Thomas M. Horan of the U.S. Bankruptcy Court for the District of Delaware approved the $3.25 million sale of substantially all assets of Reliz Technology Group Holdings Inc.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-26-advisory",
+      "date": "2026-06-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 26, 2026",
+      "summary": "The controlling question today in Bartz is whether the final approval order has been entered — and what that means for the distribution clock and the opt-out-filed parallel dockets. The fairness hearing closed May 14.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-25-bankruptcy-advisory",
       "date": "2026-06-25",
       "type": "briefing",
