@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-27-bankruptcy-advisory",
+      "date": "2026-06-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 27, 2026",
+      "summary": "The most consequential near-term event on this beat is the July 13, 2026 confirmation hearing in In re Reliz Technology Group Holdings Inc., et al. (dba BlockFills), Bankr. D. Del., Case No. 26-10371, before the Honorable Thomas M. Horan.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-27-class-actions-advisory",
+      "date": "2026-06-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 27, 2026",
+      "summary": "The Roundup ecosystem shifted materially in the last 48 hours. Two events — the Supreme Court's June 25 preemption ruling in Monsanto v.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-27-fraud-advisory",
+      "date": "2026-06-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 27, 2026",
+      "summary": "Today's signal event is a $20 million SEC whistleblower award — the program's largest payout of 2026 to date — tied to a securities manipulation scheme that generated more than $75 million in sanctions.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-27-tariff-advisory",
+      "date": "2026-06-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 27, 2026",
+      "summary": "Three forces are converging this weekend. First, the government's June 2, 2026 appeal of Judge Eaton's universal-refund orders has split the IEEPA reimbursement pipeline into two tracks — one moving, one frozen — and CBP's own position on final-liquidated entries has hardened in a way that directly…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-27-crypto-advisory",
+      "date": "2026-06-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 27, 2026",
+      "summary": "The dominant development of the past week in this beat is the resolution of the BlockFills § 363 sale process. On June 16, 2026, a Delaware bankruptcy judge agreed to approve the $3.25 million sale of cryptocurrency financial technology firm BlockFills to a Belgian digital asset investment group, as…",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-27-advisory",
+      "date": "2026-06-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 27, 2026",
+      "summary": "This week's delta: The CourtListener docket for Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.), reflects two new filings on June 25, 2026 — the most recent activity since the case was last updated June 22, 2026 — but the content of those entries is not publicly available through RECAP as of t…",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-26-bankruptcy-advisory",
       "date": "2026-06-26",
       "type": "briefing",
