@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-28-bankruptcy-advisory",
+      "date": "2026-06-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 28, 2026",
+      "summary": "This Week's Deltas — Sleep Number Enters Critical Auction Window; BlockFills Post-Sale Hearing Docket Active",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-28-class-actions-advisory",
+      "date": "2026-06-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 28, 2026",
+      "summary": "MDL 3047 — Social Media Adolescent Addiction — Breathitt County Pre-Trial Settlement and State AG Track Acceleration",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-28-fraud-advisory",
+      "date": "2026-06-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 28, 2026",
+      "summary": "Today's deltas: The SEC issued a ~$20 million whistleblower award on June 25 tied to a securities manipulation scheme — a signal event for enforcement pipeline visibility. The OneCoin DOJ victim claims window is two days from closing (deadline: June 30, 2026). Power Block Coin, LLC (Bankr. D.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-28-tariff-advisory",
+      "date": "2026-06-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 28, 2026",
+      "summary": "The single most time-sensitive variable in the IEEPA refund landscape right now is the Section 122 sunset. The Section 122 surcharge — Proclamation 11012's 10% ad valorem levy — is currently set to expire on July 24, 2026.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-28-crypto-advisory",
+      "date": "2026-06-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 28, 2026",
+      "summary": "BlockFills / Reliz Technology Group — Confirmation Week: The $3.25M Keyrock Sale Has Cleared the June 16 Hearing; Plan Vote Closes Tuesday",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-28-advisory",
+      "date": "2026-06-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 28, 2026",
+      "summary": "The controlling delta this week is suspension: Bartz v. Anthropic is under submission with no final approval order yet issued, the Concord I cross-MSJ briefing closed June 8 and awaits Judge Lee's ruling, and the OpenAI MDL discovery engine churned through its last known filing on June 26.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-27-bankruptcy-advisory",
       "date": "2026-06-27",
       "type": "briefing",
