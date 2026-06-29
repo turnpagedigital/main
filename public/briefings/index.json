@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-29-bankruptcy-advisory",
+      "date": "2026-06-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 29, 2026",
+      "summary": "Sleep Number Corporation (In re Sleep Number Corporation, et al., No. 26-11399 (KYP), Bankr. S.D.N.Y., Judge Kyu Young Paek) is now eleven days from its July 8 qualified-bid deadline, with a July 13 auction and July 15 sale-approval hearing producing a hard binary for creditor recovery.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-29-class-actions-advisory",
+      "date": "2026-06-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 29, 2026",
+      "summary": "The headline delta since Friday: the Social Media MDL's first federal school-district bellwether — Breathitt County Board of Education v. Meta, Snap, TikTok, and YouTube — quietly died before opening statements, with all four defendants settling on the eve of trial.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-29-fraud-advisory",
+      "date": "2026-06-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 29, 2026",
+      "summary": "The lede this morning is twofold. The SEC issued a ~$20 million whistleblower award on June 25, 2026 — tied to a securities manipulation scheme where total sanctions exceeded $75 million — while the Stanford receivership's Final Distribution Plan payments continue in irregular fashion, with a live d…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-29-tariff-advisory",
+      "date": "2026-06-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 29, 2026",
+      "summary": "Today, June 29, 2026, CBP's CAPE Phase 2 launches. Phase 2 covers reconciliation entries where the entry remains unliquidated or was liquidated within 80 days of the Phase 2 filing date, and where the reconciliation (Type 09) entry has not yet been filed — both conditions must be met.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-29-crypto-advisory",
+      "date": "2026-06-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 29, 2026",
+      "summary": "The controlling delta this morning is the post-hearing posture of In re Reliz Technology Group Holdings Inc. (BlockFills), Case No. 26-10371 (TMH), Bankr. D. Del. The June 16, 2026 § 363 sale hearing — the dispositive event we have been tracking — has now closed.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-29-advisory",
+      "date": "2026-06-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 29, 2026",
+      "summary": "Where things stand this morning. The dominant posture across the AI-copyright docket has not shifted structurally since last week, but two threads demand attention today. First, Bartz v. Anthropic, No. 3:24-cv-05417 (N.D.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-28-bankruptcy-advisory",
       "date": "2026-06-28",
       "type": "briefing",
