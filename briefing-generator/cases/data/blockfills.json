@@ -15,16 +15,16 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
     "date_last_filing": "2026-06-26",
-    "fetched_at": "2026-06-28T15:28:23.726192+00:00",
-    "as_of": "Jun 28, 2026",
-    "new_in_72h": 5,
+    "fetched_at": "2026-06-29T17:07:33.661616+00:00",
+    "as_of": "Jun 29, 2026",
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 467,
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -33,7 +33,7 @@
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -42,7 +42,7 @@
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -53,7 +53,7 @@
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -62,7 +62,7 @@
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -71,7 +71,7 @@
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -80,7 +80,7 @@
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -89,7 +89,7 @@
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
