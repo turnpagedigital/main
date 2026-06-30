@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-06-30-bankruptcy-advisory",
+      "date": "2026-06-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — June 30, 2026",
+      "summary": "The BlockFills case is now in the window between the June 16 sale hearing and the September 11 governmental bar date — a period that will shape how much, if anything, general unsecured creditors ultimately recover from the liquidating trust contemplated in the Joint Chapter 11 Plan.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-30-class-actions-advisory",
+      "date": "2026-06-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — June 30, 2026",
+      "summary": "Today's headline delta: Bartz v. Anthropic is in the distribution-pending window as of this writing — the fairness hearing concluded May 14 with the court taking the matter under submission, supplemental briefs closed May 21, and the settlement administrator's distribution calculation was targeted f…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-30-fraud-advisory",
+      "date": "2026-06-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — June 30, 2026",
+      "summary": "Lead delta — today is the hard close of the DOJ's OneCoin remission petition window. The DOJ's victim compensation program for the $4 billion OneCoin scheme expires at midnight tonight (June 30, 2026), making this the most time-sensitive action item across the recovery desk this morning.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-30-tariff-advisory",
+      "date": "2026-06-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — June 30, 2026",
+      "summary": "The single most operationally consequential development today: CBP confirmed via CSMS #69035485 on June 23, 2026 that Phase 2 of the IEEPA CAPE refund process deployed in the ACE Portal on June 29, 2026.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-30-crypto-advisory",
+      "date": "2026-06-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — June 30, 2026",
+      "summary": "BlockFills (In re Reliz Technology Group Holdings Inc., et al., No. 26-10371 (TMH), Bankr. D. Del.) — confirmation clock now at 13 days. The operative delta since yesterday's advisory: the voting deadline and confirmation objection deadline are both tomorrow — July 1, 2026 at 4:00 p.m.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-06-30-advisory",
+      "date": "2026-06-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — June 30, 2026",
+      "summary": "The central posture as of today: Bartz v. Anthropic remains the dominant pending event in AI-copyright — Judge Martínez-Olguín has the case under submission following the May 14 fairness hearing; no final approval order has issued as of the last docket sync (June 25, 2026).",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-29-bankruptcy-advisory",
       "date": "2026-06-29",
       "type": "briefing",
