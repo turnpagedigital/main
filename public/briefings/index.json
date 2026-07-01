@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-01-bankruptcy-advisory",
+      "date": "2026-07-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 1, 2026",
+      "summary": "Sleep Number Corporation (Bankr. S.D.N.Y. No. 26-11399, Judge Kyu Young Paek) hits a critical procedural gateway tomorrow — the July 2 bidding procedures hearing — with $672 million in debt, a $415 million stalking horse, and a July 31 hard-close deadline built into the DIP covenants.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-01-class-actions-advisory",
+      "date": "2026-07-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 1, 2026",
+      "summary": "Today's delta: The most actionable development entering July is the unresolved final approval order in Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal.). The fairness hearing closed May 14; the judge took the matter under submission.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-01-fraud-advisory",
+      "date": "2026-07-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 1, 2026",
+      "summary": "EYEBROW — FRAUD RECOVERY ADVISORY",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-01-tariff-advisory",
+      "date": "2026-07-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 1, 2026",
+      "summary": "Today's lede: Three intersecting developments demand immediate attention as of July 1. First, a Seattle federal judge consolidated competing Amazon consumer class actions on June 29, sharpening a litigation theory that could loop retailers who did not file for IEEPA refunds into liability for the sa…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-01-crypto-advisory",
+      "date": "2026-07-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 1, 2026",
+      "summary": "The dominant near-term event on this docket is today's trajectory toward the July 13, 2026 confirmation hearing. The Bankruptcy Court for the District of Delaware has the confirmation hearing calendared for July 13, 2026, at 10:00 a.m. ET — twelve days out. On May 28, 2026, Judge Thomas M.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-01-advisory",
+      "date": "2026-07-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 1, 2026",
+      "summary": "The central question this week: when does Bartz close, and what does Concord I's summary judgment ruling mean for every other AI-training case in the system?",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-06-30-bankruptcy-advisory",
       "date": "2026-06-30",
       "type": "briefing",
