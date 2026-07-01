@@ -14,11 +14,20 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-06-25",
-    "fetched_at": "2026-06-29T17:07:32.348851+00:00",
-    "as_of": "Jun 29, 2026",
-    "new_in_72h": 0,
+    "date_last_filing": "2026-06-30",
+    "fetched_at": "2026-07-01T16:33:01.641924+00:00",
+    "as_of": "Jul 1, 2026",
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 676,
+        "date_filed": "2026-06-30",
+        "date_display": "Jun 30, 2026",
+        "description": "OBJECTIONS to re 632 Order,,, Set Deadlines/Hearings,, 672 Response ( Non Motion ), 671 Supplemental Brief APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT; AND IN THE ALTERNATIVE, CONDITIONAL OBJECTION TO F",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.676.0.pdf"
+      },
       {
         "entry_number": null,
         "date_filed": "2026-06-25",
@@ -36,19 +45,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 674,
-        "date_filed": "2026-06-04",
-        "date_display": "Jun 4, 2026",
-        "description": "ORDER TO WITHDRAW AS ATTORNEY GRANTING 669 Motion to Withdraw as Attorney. Signed by Judge Araceli Martinez-Olguin on 6/4/2026. (jlg, COURT STAFF) (Filed on 6/4/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice o",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.674.0_1.pdf"
       }
     ],
     "entries": [
       {
+        "entry_number": 676,
+        "date_filed": "2026-06-30",
+        "date_display": "Jun 30, 2026",
+        "description": "OBJECTIONS to re 632 Order,,, Set Deadlines/Hearings,, 672 Response ( Non Motion ), 671 Supplemental Brief APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT; AND IN THE ALTERNATIVE, CONDITIONAL OBJECTION TO F",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.676.0.pdf"
+      },
+      {
         "entry_number": null,
         "date_filed": "2026-06-25",
         "date_display": "Jun 25, 2026",
@@ -74,15 +83,6 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.674.0_1.pdf"
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-05-29",
-        "date_display": "May 29, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       },
       {
         "entry_number": 673,
@@ -94,13 +94,13 @@
         "doc_url": ""
       },
       {
-        "entry_number": 672,
-        "date_filed": "2026-05-21",
-        "date_display": "May 21, 2026",
-        "description": "RESPONSE re 664 Order,,, Class Counsel's Response to Court's Order Regarding Second Supplemental Proposed Order by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Attachments: # 1 Exhibit 1 - Clean Second Supplemental Proposed Order, # 2 E",
+        "entry_number": null,
+        "date_filed": "2026-05-29",
+        "date_display": "May 29, 2026",
+        "description": "",
         "is_new": false,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.672.0_1.pdf"
+        "doc_url": ""
       },
       {
         "entry_number": 671,
@@ -110,6 +110,15 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.671.0.pdf"
+      },
+      {
+        "entry_number": 672,
+        "date_filed": "2026-05-21",
+        "date_display": "May 21, 2026",
+        "description": "RESPONSE re 664 Order,,, Class Counsel's Response to Court's Order Regarding Second Supplemental Proposed Order by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Attachments: # 1 Exhibit 1 - Clean Second Supplemental Proposed Order, # 2 E",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.672.0_1.pdf"
       },
       {
         "entry_number": 670,
@@ -157,6 +166,33 @@
         "doc_url": ""
       },
       {
+        "entry_number": 661,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Letter from Victoria Pinder dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
+      },
+      {
+        "entry_number": 666,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": null,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
@@ -175,24 +211,6 @@
         "doc_url": ""
       },
       {
-        "entry_number": 666,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 661,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Letter from Victoria Pinder dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
-      },
-      {
         "entry_number": 662,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
@@ -202,15 +220,6 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.662.0_1.pdf"
       },
       {
-        "entry_number": null,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 663,
         "date_filed": "2026-05-13",
         "date_display": "May 13, 2026",
@@ -218,15 +227,6 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.663.0.pdf"
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-05-12",
-        "date_display": "May 12, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ]
   },

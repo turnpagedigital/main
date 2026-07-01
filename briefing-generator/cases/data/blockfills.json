@@ -14,11 +14,20 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
-    "date_last_filing": "2026-06-30",
-    "fetched_at": "2026-06-30T16:33:04.931522+00:00",
-    "as_of": "Jun 30, 2026",
-    "new_in_72h": 6,
+    "date_last_filing": "2026-07-01",
+    "fetched_at": "2026-07-01T16:33:07.181414+00:00",
+    "as_of": "Jul 1, 2026",
+    "new_in_72h": 9,
     "recent": [
+      {
+        "entry_number": 482,
+        "date_filed": "2026-07-01",
+        "date_display": "Jul 1, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 478,
         "date_filed": "2026-06-30",
@@ -32,15 +41,6 @@
         "entry_number": 479,
         "date_filed": "2026-06-30",
         "date_display": "Jun 30, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 474,
-        "date_filed": "2026-06-29",
-        "date_display": "Jun 29, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -49,6 +49,15 @@
     ],
     "entries": [
       {
+        "entry_number": 482,
+        "date_filed": "2026-07-01",
+        "date_display": "Jul 1, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 478,
         "date_filed": "2026-06-30",
         "date_display": "Jun 30, 2026",
@@ -59,6 +68,24 @@
       },
       {
         "entry_number": 479,
+        "date_filed": "2026-06-30",
+        "date_display": "Jun 30, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 480,
+        "date_filed": "2026-06-30",
+        "date_display": "Jun 30, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 481,
         "date_filed": "2026-06-30",
         "date_display": "Jun 30, 2026",
         "description": "",
@@ -103,25 +130,16 @@
         "doc_url": ""
       },
       {
-        "entry_number": 467,
-        "date_filed": "2026-06-26",
-        "date_display": "Jun 26, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 468,
-        "date_filed": "2026-06-26",
-        "date_display": "Jun 26, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 472,
+        "date_filed": "2026-06-26",
+        "date_display": "Jun 26, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 470,
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
@@ -139,7 +157,16 @@
         "doc_url": ""
       },
       {
-        "entry_number": 470,
+        "entry_number": 467,
+        "date_filed": "2026-06-26",
+        "date_display": "Jun 26, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 468,
         "date_filed": "2026-06-26",
         "date_display": "Jun 26, 2026",
         "description": "",
@@ -194,33 +221,6 @@
       },
       {
         "entry_number": 462,
-        "date_filed": "2026-06-24",
-        "date_display": "Jun 24, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 461,
-        "date_filed": "2026-06-24",
-        "date_display": "Jun 24, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 463,
-        "date_filed": "2026-06-24",
-        "date_display": "Jun 24, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 457,
         "date_filed": "2026-06-24",
         "date_display": "Jun 24, 2026",
         "description": "",
