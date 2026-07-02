@@ -14,11 +14,20 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-06-30",
-    "fetched_at": "2026-07-01T16:33:01.641924+00:00",
-    "as_of": "Jul 1, 2026",
-    "new_in_72h": 1,
+    "date_last_filing": "2026-07-01",
+    "fetched_at": "2026-07-02T16:17:19.032258+00:00",
+    "as_of": "Jul 2, 2026",
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-01",
+        "date_display": "Jul 1, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 676,
         "date_filed": "2026-06-30",
@@ -27,15 +36,6 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.676.0.pdf"
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-06-25",
-        "date_display": "Jun 25, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       },
       {
         "entry_number": 675,
@@ -49,6 +49,15 @@
     ],
     "entries": [
       {
+        "entry_number": null,
+        "date_filed": "2026-07-01",
+        "date_display": "Jul 1, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 676,
         "date_filed": "2026-06-30",
         "date_display": "Jun 30, 2026",
@@ -58,19 +67,19 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.676.0.pdf"
       },
       {
-        "entry_number": null,
+        "entry_number": 675,
         "date_filed": "2026-06-25",
         "date_display": "Jun 25, 2026",
-        "description": "",
+        "description": "NOTICE of Withdrawal filed by Mark Alan Lemley, no longer appearing on behalf of Anthropic PBC in this case (Lemley, Mark) (Filed on 6/25/2026) (Entered: 06/25/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 675,
+        "entry_number": null,
         "date_filed": "2026-06-25",
         "date_display": "Jun 25, 2026",
-        "description": "NOTICE of Withdrawal filed by Mark Alan Lemley, no longer appearing on behalf of Anthropic PBC in this case (Lemley, Mark) (Filed on 6/25/2026) (Entered: 06/25/2026)",
+        "description": "",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -85,19 +94,19 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.674.0_1.pdf"
       },
       {
-        "entry_number": 673,
+        "entry_number": null,
         "date_filed": "2026-05-29",
         "date_display": "May 29, 2026",
-        "description": "NOTICE of Withdrawal filed by Molly Alana Karlin, no longer appearing on behalf of Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson in this case (Karlin, Molly) (Filed on 5/29/2026) (Entered: 05/29/2026)",
+        "description": "",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": null,
+        "entry_number": 673,
         "date_filed": "2026-05-29",
         "date_display": "May 29, 2026",
-        "description": "",
+        "description": "NOTICE of Withdrawal filed by Molly Alana Karlin, no longer appearing on behalf of Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson in this case (Karlin, Molly) (Filed on 5/29/2026) (Entered: 05/29/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -139,15 +148,6 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.669.0.pdf"
       },
       {
-        "entry_number": 668,
-        "date_filed": "2026-05-15",
-        "date_display": "May 15, 2026",
-        "description": "Transcript of Proceedings held on 5-14-26, before Judge Martinez-Olguin. Court Reporter/Transcriber Andrea Bluedorn, telephone number Phone: 715-965-2298. Email: andrea_bluedorn@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be vie",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 667,
         "date_filed": "2026-05-15",
         "date_display": "May 15, 2026",
@@ -157,37 +157,19 @@
         "doc_url": ""
       },
       {
+        "entry_number": 668,
+        "date_filed": "2026-05-15",
+        "date_display": "May 15, 2026",
+        "description": "Transcript of Proceedings held on 5-14-26, before Judge Martinez-Olguin. Court Reporter/Transcriber Andrea Bluedorn, telephone number Phone: 715-965-2298. Email: andrea_bluedorn@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be vie",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 665,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
         "description": "*order not processed, filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 5/14/2026 before Judge Araceli Martinez-Olguin by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc., for Recorded Proceeding - San Francisco. (Haselkorn, Ame",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 661,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Letter from Victoria Pinder dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
-      },
-      {
-        "entry_number": 666,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -211,6 +193,24 @@
         "doc_url": ""
       },
       {
+        "entry_number": 661,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Letter from Victoria Pinder dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
+      },
+      {
+        "entry_number": 666,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 662,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
@@ -220,13 +220,13 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.662.0_1.pdf"
       },
       {
-        "entry_number": 663,
-        "date_filed": "2026-05-13",
-        "date_display": "May 13, 2026",
-        "description": "NOTICE of Intended Appearance and Request for Leave to be Heard Pending Decisions on Standing and other Relief. (kmg, COURT STAFF) (Filed on 5/13/2026) (Entered: 05/14/2026)",
+        "entry_number": null,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "",
         "is_new": false,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.663.0.pdf"
+        "doc_url": ""
       }
     ]
   },
