@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-02-bankruptcy-advisory",
+      "date": "2026-07-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 2, 2026",
+      "summary": "Today's inflection points: Sleep Number's bidding-procedures hearing is on the docket this morning; BlockFills heads into its July 13 confirmation hearing with the sale approved and votes closed.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-02-class-actions-advisory",
+      "date": "2026-07-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 2, 2026",
+      "summary": "Today's lede: Bartz v. Anthropic sits in the gap between a closed fairness hearing and a still-pending final approval order — distribution clock is live but conditional. BCBS subscriber wave is mid-stream.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-02-fraud-advisory",
+      "date": "2026-07-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 2, 2026",
+      "summary": "Today's deltas: The OneCoin DOJ remission petition window closed yesterday, June 30, 2026 — the single most consequential near-term procedural gate for claims holders in that matter.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-02-tariff-advisory",
+      "date": "2026-07-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 2, 2026",
+      "summary": "Three parallel developments advanced simultaneously this week, each with direct bearing on refund timing and refund math: (1) a Western District of Washington judge consolidated two Amazon IEEPA consumer class actions on June 29; (2) Lululemon drew a fresh consumer-side suit filed July 1; and (3) CA…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-02-crypto-advisory",
+      "date": "2026-07-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 2, 2026",
+      "summary": "The dominant development in this beat today is the post-closing posture of the BlockFills case following the June 16 sale hearing, with plan confirmation now targeted for September 11, 2026. The Veritaglobal docket page for In re Reliz Technology Group Holdings Inc., et al., Case No.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-02-advisory",
+      "date": "2026-07-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 2, 2026",
+      "summary": "Today's delta: The dominant development this week is the post-fairness-hearing posture in Bartz v. Anthropic — the court has not yet issued a final approval order, and a late-breaking docket entry (No.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-01-bankruptcy-advisory",
       "date": "2026-07-01",
       "type": "briefing",
