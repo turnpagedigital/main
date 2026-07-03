@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-03-bankruptcy-advisory",
+      "date": "2026-07-03",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 3, 2026",
+      "summary": "The lede today is Sleep Number. Yesterday's bidding-procedures hearing in In re Sleep Number Corporation, et al., Case No. 26-11399 (KYP) (Bankr. S.D.N.Y.), was the most consequential near-term event for this beat — it sets the competitive-sale rails for a $1.3 billion liability stack.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-03-class-actions-advisory",
+      "date": "2026-07-03",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 3, 2026",
+      "summary": "Today's deltas: The Bartz v. Anthropic docket logged two new filings on July 1, 2026 — the first docket activity in weeks — against a backdrop where the final approval order has been pending since the May 14 fairness hearing.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-03-fraud-advisory",
+      "date": "2026-07-03",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 3, 2026",
+      "summary": "No fresh whitelisted headlines surfaced in the 72-hour news scan. The substantive carry-forward below reflects the current posture of all tracked dockets as of verified primary-source data through this run, with three active developments drawing particular attention this week: (1) the OneCoin / DOJ…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-03-tariff-advisory",
+      "date": "2026-07-03",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 3, 2026",
+      "summary": "Two developments anchor today's briefing. First, a second consumer passthrough class action against Lululemon dropped this week, filed June 30 in the Western District of Washington — this one by Hagens Berman and co-counsel The Miller Law Firm — compounding the earlier action already pending before…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-03-crypto-advisory",
+      "date": "2026-07-03",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 3, 2026",
+      "summary": "The two dominant storylines this week are both in their final miles: In Reliz Technology Group Holdings Inc., et al. (BlockFills), Case No. 26-10371 (TMH) (Bankr. D. Del., Judge Thomas M. Horan), the voting deadline and confirmation-objection deadline both expired at 4:00 p.m.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-03-advisory",
+      "date": "2026-07-03",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 3, 2026",
+      "summary": "The primary delta this week is that Bartz v. Anthropic has crossed into a post-hearing limbo that is now stretching past six weeks. The final fairness hearing was held May 14, 2026, before Judge Martínez-Olguín, who heard class counsel and objectors and took the matter under submission.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-02-bankruptcy-advisory",
       "date": "2026-07-02",
       "type": "briefing",
