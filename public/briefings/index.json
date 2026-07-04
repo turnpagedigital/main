@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-04-bankruptcy-advisory",
+      "date": "2026-07-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 4, 2026",
+      "summary": "The Confirmation Hearing in In re Reliz Technology Group Holdings Inc., et al. (BlockFills), Case No. 26-10371 (TMH), Bankr. D. Del., is set for July 13, 2026, at 10:00 a.m. ET before the Honorable Thomas M. Horan.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-04-class-actions-advisory",
+      "date": "2026-07-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 4, 2026",
+      "summary": "The principal live delta this cycle sits in Bartz v. Anthropic: the docket shows a filing dated July 1, 2026 — the most recent entry — but its description is not yet populated in CourtListener, leaving the content unverified.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-04-fraud-advisory",
+      "date": "2026-07-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 4, 2026",
+      "summary": "Today's operative delta: The OneCoin DOJ remission window closed on June 30, 2026 — the filing deadline has now passed, locking the claims universe against the $40 million forfeiture fund.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-04-tariff-advisory",
+      "date": "2026-07-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 4, 2026",
+      "summary": "Today's single most consequential date is not in a docket — it is statutory. The Section 122 surcharge is set to expire on July 24, 2026. That is twenty days out.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-04-crypto-advisory",
+      "date": "2026-07-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 4, 2026",
+      "summary": "The decisive delta this week: BlockFills enters the 9-day countdown to confirmation. With the voting and objection deadlines having closed on July 1, 2026, Judge Thomas M. Horan's courtroom in Wilmington is the next critical venue. The confirmation hearing is set for July 13, 2026, at 10:00 a.m.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-04-advisory",
+      "date": "2026-07-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 4, 2026",
+      "summary": "The controlling development entering this weekend is that Judge Araceli Martínez-Olguín has taken the $1.5 billion settlement in Bartz, et al. v.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-03-bankruptcy-advisory",
       "date": "2026-07-03",
       "type": "briefing",
