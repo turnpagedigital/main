@@ -15,8 +15,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-07-01",
-    "fetched_at": "2026-07-04T15:23:03.270094+00:00",
-    "as_of": "Jul 4, 2026",
+    "fetched_at": "2026-07-05T15:23:18.309222+00:00",
+    "as_of": "Jul 5, 2026",
     "new_in_72h": 0,
     "recent": [
       {
@@ -112,15 +112,6 @@
         "doc_url": ""
       },
       {
-        "entry_number": 671,
-        "date_filed": "2026-05-21",
-        "date_display": "May 21, 2026",
-        "description": "Supplemental Brief -DEFENDANT ANTHROPIC PBCS SUPPLEMENTAL BRIEF REGARDING LATE OPT OUTS filed byAnthropic PBC. (Farris, Joseph) (Filed on 5/21/2026) (Entered: 05/21/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.671.0.pdf"
-      },
-      {
         "entry_number": 672,
         "date_filed": "2026-05-21",
         "date_display": "May 21, 2026",
@@ -130,10 +121,19 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.672.0_1.pdf"
       },
       {
+        "entry_number": 671,
+        "date_filed": "2026-05-21",
+        "date_display": "May 21, 2026",
+        "description": "Supplemental Brief -DEFENDANT ANTHROPIC PBCS SUPPLEMENTAL BRIEF REGARDING LATE OPT OUTS filed byAnthropic PBC. (Farris, Joseph) (Filed on 5/21/2026) (Entered: 05/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.671.0.pdf"
+      },
+      {
         "entry_number": 670,
         "date_filed": "2026-05-20",
         "date_display": "May 20, 2026",
-        "description": "RELATED CASE ORDER. Signed by Judge Araceli Martinez-Olguin on 5/20/2026. (jlg, COURT STAFF) (Filed on 5/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF) (Entered: 05/20/2026)",
+        "description": "RELATED CASE ORDER. Signed by Judge Araceli Martinez-Olguin on 5/20/2026. (jlg, COURT STAFF) (Filed on 5/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.670.0_1.pdf"
@@ -202,15 +202,6 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
       },
       {
-        "entry_number": 666,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 662,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
@@ -224,6 +215,15 @@
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
         "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 666,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
