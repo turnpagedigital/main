@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-05-bankruptcy-advisory",
+      "date": "2026-07-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 5, 2026",
+      "summary": "The week opening July 7 is the most deadline-dense stretch of this monitoring cycle. Two key-focus cases — BlockFills (Bankr. D. Del. 26-10371) and Sleep Number (Bankr. S.D.N.Y. 26-11399) — are simultaneously approaching confirmation and sale hearings, both calendared for July 13.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-05-class-actions-advisory",
+      "date": "2026-07-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 5, 2026",
+      "summary": "Today's delta is narrow but material. The Lemonade data breach settlement — $10.5 million, In re Lemonade Inc. Data Disclosure Litigation, S.D.N.Y. — entered active claims-filing phase this week, with a September 8, 2026 deadline and a September 10 fairness hearing.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-05-fraud-advisory",
+      "date": "2026-07-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 5, 2026",
+      "summary": "Today's briefing carries three meaningful deltas since Friday: (1) the Stanford Financial receivership has now paid out over $47.5 million under the Final Distribution Plan as of the April 3 first-wave disbursement, with the cumulative payment count crossing 5,600 claimant groups by early May and th…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-05-tariff-advisory",
+      "date": "2026-07-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 5, 2026",
+      "summary": "The nineteen-day countdown begins today. The Section 122 surcharge imposed by Proclamation 11012 — the 10% flat duty on virtually all U.S. imports effective February 24, 2026 under 19 U.S.C. § 2132 — expires by statute on July 24, 2026, nineteen days from this briefing.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-05-crypto-advisory",
+      "date": "2026-07-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 5, 2026",
+      "summary": "This week's decisive event: The BlockFills/Reliz plan confirmation hearing — the critical test of whether customer crypto deposits are estate property or held in trust — is now 8 days out, set for July 13, 2026 at 10:00 a.m. ET before Judge Thomas M. Horan in Courtroom 5 at the U.S.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-05-advisory",
+      "date": "2026-07-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 5, 2026",
+      "summary": "Today's primary delta: the Bartz settlement stands taken under submission — final approval order not yet entered as of the July 1 CourtListener sync, distribution calculations now underway, and the Third Circuit's Thomson Reuters v.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-04-bankruptcy-advisory",
       "date": "2026-07-04",
       "type": "briefing",
