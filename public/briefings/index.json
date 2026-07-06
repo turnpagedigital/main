@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-06-bankruptcy-advisory",
+      "date": "2026-07-06",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 6, 2026",
+      "summary": "This Week's Critical Window: Sleep Number § 363 Auction Runs July 8–15 — Act Now or Lose Standing",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-06-class-actions-advisory",
+      "date": "2026-07-06",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 6, 2026",
+      "summary": "Today's deltas: The Visa/Mastercard interchange MDL crossed a material distribution milestone on June 15, 2026 — the court approved a second initial distribution, with payment waves targeting September 2026. Bartz v. Anthropic (No. 3:24-cv-05417, N.D.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-06-fraud-advisory",
+      "date": "2026-07-06",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 6, 2026",
+      "summary": "The primary deltas since the last advisory are: the OneCoin DOJ remission process has closed its June 30, 2026 claims window — a hard deadline that cut off victims who had not yet filed; the Stanford Financial receivership continues distributing funds under its Final Distribution Plan, with payment…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-06-tariff-advisory",
+      "date": "2026-07-06",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 6, 2026",
+      "summary": "Today's controlling delta: As of today, the Section 122 surcharge is eighteen days from statutory extinction. The Section 122 duties under Presidential Proclamation 11012 — a 10% ad valorem surcharge on virtually all imports effective February 24, 2026 — are scheduled to expire on July 24, 2026.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-06-crypto-advisory",
+      "date": "2026-07-06",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 6, 2026",
+      "summary": "BlockFills / Reliz Technology Group Holdings Inc. — Confirmation Hearing Seven Days Out; Sale Approved; Customer-Property Question Still Controls Recovery Math",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-06-advisory",
+      "date": "2026-07-06",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 6, 2026",
+      "summary": "Bartz et al. v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal., Hon. Araceli Martínez-Olguín) remains the dominant matter on this docket. The fairness hearing concluded May 14, 2026, at the San Francisco Federal Courthouse, Courtroom 12, 19th Floor, 450 Golden Gate Ave.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-05-bankruptcy-advisory",
       "date": "2026-07-05",
       "type": "briefing",
