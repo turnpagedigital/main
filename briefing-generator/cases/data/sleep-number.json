@@ -7,15 +7,228 @@
     "case_number": "26-11399",
     "judge": "NOT ASSIGNED",
     "docket_id": "73476260",
-    "status": "active"
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "date_last_filing": "2026-07-08",
+    "fetched_at": "2026-07-08T16:14:29.454557+00:00",
+    "as_of": "Jul 8, 2026",
+    "new_in_72h": 20,
+    "recent": [
+      {
+        "entry_number": 200,
+        "date_filed": "2026-07-08",
+        "date_display": "Jul 8, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 199,
+        "date_filed": "2026-07-08",
+        "date_display": "Jul 8, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-08",
+        "date_display": "Jul 8, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 200,
+        "date_filed": "2026-07-08",
+        "date_display": "Jul 8, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 199,
+        "date_filed": "2026-07-08",
+        "date_display": "Jul 8, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-08",
+        "date_display": "Jul 8, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-08",
+        "date_display": "Jul 8, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 194,
+        "date_filed": "2026-07-08",
+        "date_display": "Jul 8, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 190,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Certificate of No Objection Pursuant to LR 9013-3 / Certificate of No Objection Regarding Motion of the Debtors for Entry of Interim and Final Orders (I) Establishing Notification and Hearing Procedures for, and Approving Restrictions on, Certain Transfers of and Declarations of ",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 187,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Certificate of No Objection Pursuant to LR 9013-3 / Certificate of No Objection Regarding Motion of the Debtors for Entry of an Order (I) Prohibiting Utilities from Altering, Refusing, or Discontinuing Service, (II) Deeming Utilities Adequately Assured of Future Performance, and ",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 191,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Certificate of No Objection Pursuant to LR 9013-3 / Certificate of No Objection Regarding Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to Pay Certain Prepetition Taxes, Governmental Assessments, and Fees and (II) Financial Institutions t",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 181,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Objection TO CURE AMOUNTS CONTAINED IN THE DEBTORS NOTICE OF POTENTIAL ASSUMPTION AND ASSIGNMENT OF EXECUTORY CONTRACTS OR UNEXPIRED LEASES (related document(s)134) filed by Joseph H. Lemkin on behalf of Tanger Little Rock, LLC. (Attachments: # 1 Exhibit \"1\") (Lemkin, Joseph) (En",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 186,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Application for Pro Hac Vice Admission / Motion for Admission to Practice, Pro Hac Vice filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 07/07/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 185,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Statement / Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors filed by Brian Resnick on behalf of Sleep Number Corporation. with hearing to be held on 7/14/2026 at 01:30 PM at Videoconference (ZoomGov) (KYP) (Resnick, Brian) (Entered: 07/07/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Receipt of Application for Pro Hac Vice Admission( 26-11399-kyp) [motion,122] ( 200.00) Filing Fee. Receipt number A17593301. Fee amount 200.00. (Re: Doc # 186) (U.S. Treasury)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 188,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Certificate of No Objection Pursuant to LR 9013-3 / Certificate of No Objection Regarding Omnibus Motion of the Debtors for Entry of an Order (I) Approving the Rejection of Certain Real Property Lease Agreements, (II) Approving the Abandonment of Certain Excess Property, and (III",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 189,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Certificate of No Objection Pursuant to LR 9013-3 / Certificate of No Objection Regarding Second Omnibus Motion for Entry of an Order (I) Approving the Rejection of Certain Real Property Lease Agreements, (II) Approving the Abandonment of Certain Excess Property, and (III) Granti",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Notice of Continuance of Meeting of Creditors Filed by Andrea Beth Schwartz on behalf of United States Trustee. 341(a) meeting to be held on 7/14/2026 at 01:30 PM at Zoom.us - USTrustee 7: Meeting ID 161 1242 4438, Passcode 8901234678, Phone 1 (202) 793-2740. (Schwartz, Andrea)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 180,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Notice of Appearance filed by Don Stecker on behalf of City of El Paso, Bexar County. (Stecker, Don) (Entered: 07/07/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 183,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Notice of Appearance filed by Richard J. McCord on behalf of James Nogle Trust, dated November 12, 1997 as an undivided 1/6 interest, Gayle M. Nogle Trust, dated November 12, 1997 as an undivided 1/6 interest and Nogle and Black, Inc., as an undivided 2/3 inter. (Attachments: # 1",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 182,
+        "date_filed": "2026-07-07",
+        "date_display": "Jul 7, 2026",
+        "description": "Notice of Withdrawal of Objection of Certain Utility Companies To the Motion of the Debtors For Entry of An Order (I) Prohibiting Utilities From Altering, Refusing, or Discontinuing Service, (II) Deeming Utilities Adequately Assured of Future Performance, and (III) Establishing P",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ]
   },
   "claims_administrator": {
     "name": "Kroll",
