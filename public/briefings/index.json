@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-08-bankruptcy-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 8, 2026",
+      "summary": "Today's pivot point: Sleep Number's bid deadline closed at 4:00 p.m. ET today, making this the most consequential live moment in the advisory. The Sleep Number § 363 process is now at its hinge — the auction, if triggered, runs Monday July 13 at 10:00 a.m.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-class-actions-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 8, 2026",
+      "summary": "(1) Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal.) — final approval remains withheld by Judge Araceli Martínez-Olguín as of late June, with the late opt-out dispute now fully briefed and under submission; the $1.5B fund clock is stopped pending her written order.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-fraud-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 8, 2026",
+      "summary": "Today's delta: The SEC announced a new Retail Fraud Working Group on July 7, 2026 — a structural reorganization of enforcement capacity with direct implications for the next wave of receiver appointments and Ponzi-adjacent enforcement actions. In the Power Block Coin / SmartFi case (Bankr. D.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-tariff-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 8, 2026",
+      "summary": "The dominant development this week is structural, not incremental: the Section 122 surcharge — 10% ad valorem on virtually all imports, imposed under Proclamation 11012 and effective since February 24, 2026 — is scheduled to expire at 12:01 a.m. EDT on July 24, 2026. That is sixteen days away.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-crypto-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 8, 2026",
+      "summary": "The confirmation hearing for BlockFills (Bankr. D. Del. No. 26-10371) is five days away — July 13 is the date that determines whether $145 million in institutional customer claims get resolved through a going-concern sale or a longer wind-down.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 8, 2026",
+      "summary": "The controlling development this week remains the same as last week's close: Judge Araceli Martínez-Olguín has not yet issued a final approval order in Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.), and the settlement now sits in a brief but consequential interregnum.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-07-bankruptcy-advisory",
       "date": "2026-07-07",
       "type": "briefing",
