@@ -667,4 +667,9 @@ button:focus-visible, a:focus-visible {
   .nav-mobile-toggle { display: none !important; }
   .nav-mobile-menu { display: none !important; }
 }
+
+/* Hide the Brevo Conversations chat bubble inside the admin app shell.
+   The .tp-no-chat class is toggled on <html> by App.jsx on route change. */
+html.tp-no-chat #brevo-conversations,
+html.tp-no-chat [class*="brevo-conversations"] { display: none !important; }
 `;

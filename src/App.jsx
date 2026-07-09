@@ -90,6 +90,12 @@ export default function App() {
     document.title = t;
   }, [route.page]);
 
+  // Hide the Brevo chat bubble on admin pages (CSS rule in GLOBAL_CSS keys
+  // off this class, so it applies even if the widget mounts later).
+  useEffect(() => {
+    document.documentElement.classList.toggle("tp-no-chat", route.page === "admin");
+  }, [route.page]);
+
   // Ad-click attribution (utm_*/gclid → sessionStorage) — captured once at
   // boot; runs with or without analytics IDs configured.
   useEffect(() => {
