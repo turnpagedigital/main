@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-09-bankruptcy-advisory",
+      "date": "2026-07-09",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 9, 2026",
+      "summary": "Today's headline: Sleep Number's second-day hearing is on the docket this morning in the Southern District of New York — the same courtroom where the final DIP order, bid deadline receipts, and pre-auction positioning will crystallize within 24 hours.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-09-class-actions-advisory",
+      "date": "2026-07-09",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 9, 2026",
+      "summary": "Today's lede: Bartz v. Anthropic final approval remains outstanding as of July 9; the BCBS $2.67B distribution is in active mid-wave rollout; and the Keller Postman / Google mass arbitration campaign—anchored to dual monopoly findings—has assembled thousands of claimants and is now the largest mass…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-09-fraud-advisory",
+      "date": "2026-07-09",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 9, 2026",
+      "summary": "Today's primary delta: The SEC announced the formation of its Retail Fraud Working Group on July 7, 2026 — the most consequential institutional signal for near-term enforcement pipeline in the fraud-recovery space since Chair Atkins' reorientation of the Division.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-09-tariff-advisory",
+      "date": "2026-07-09",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 9, 2026",
+      "summary": "The trade landscape this morning turns on a single countdown: the 10% global import surcharge that President Trump imposed under Section 122 of the Trade Act of 1974 (19 U.S.C. § 2132) is scheduled to expire by operation of law at 12:01 a.m.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-09-crypto-advisory",
+      "date": "2026-07-09",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 9, 2026",
+      "summary": "The controlling development today is BlockFills: the confirmation hearing is set for Monday, July 13, 2026, at 10:00 a.m. ET before Judge Thomas M. Horan, Bankr. D. Del., Case No. 26-10371 (TMH). The voting deadline and confirmation objection deadline both ran on July 1, 2026 at 4:00 p.m. ET.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-09-advisory",
+      "date": "2026-07-09",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 9, 2026",
+      "summary": "The two-front Anthropic exposure is now fully joined. Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.), carries a $1.5 billion settlement that remains unsigned — Judge Araceli Martínez-Olguín declined, for now, to approve the settlement after the May 14 fairness hearing, and as of the June 2026…",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-08-bankruptcy-advisory",
       "date": "2026-07-08",
       "type": "briefing",
