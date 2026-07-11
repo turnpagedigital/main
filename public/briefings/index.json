@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-11-bankruptcy-advisory",
+      "date": "2026-07-11",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 11, 2026",
+      "summary": "The weekend opens at a pivot point for two key-focus cases. Sleep Number Corporation heads into Monday's auction with its July 31 close target intact but unsecured creditors facing near-certain zero recovery. Separately, in In re Reliz Technology Group Holdings Inc.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-11-class-actions-advisory",
+      "date": "2026-07-11",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 11, 2026",
+      "summary": "Today's deltas: Bartz v. Anthropic (No. 3:24-cv-05417, N.D. Cal.) remains in the gap between fairness hearing and final approval order — the most consequential open docket item in this space.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-11-fraud-advisory",
+      "date": "2026-07-11",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 11, 2026",
+      "summary": "No fresh whitelisted news broke in the 72-hour window ending July 11, 2026. The forward-looking items this morning are the Stanford receivership's Final Distribution Plan — now in active payment execution with the June 1 receiver response to the Escalona court submission — and the closure of the One…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-11-tariff-advisory",
+      "date": "2026-07-11",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 11, 2026",
+      "summary": "The dominant operational fact as of this morning is a hard statutory deadline thirteen days away. The Section 122 surcharge was in effect for the 150-day period beginning February 24, 2026, and terminates on July 24, 2026, absent congressional extension.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-11-crypto-advisory",
+      "date": "2026-07-11",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 11, 2026",
+      "summary": "BlockFills Moves to Confirmation — But Ten New Docket Entries in 72 Hours Signal Unresolved Friction",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-11-advisory",
+      "date": "2026-07-11",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 11, 2026",
+      "summary": "This week's controlling delta: The NYT-led publisher coalition escalated The New York Times Co. v. Microsoft Corp. et al., No. 1:23-cv-11195-SHS (S.D.N.Y.), into sanctions territory on July 9 — the most consequential procedural move in that docket since Judge Sidney H.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-10-bankruptcy-advisory",
       "date": "2026-07-10",
       "type": "briefing",
