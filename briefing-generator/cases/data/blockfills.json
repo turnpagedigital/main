@@ -15,9 +15,9 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
     "date_last_filing": "2026-07-10",
-    "fetched_at": "2026-07-11T15:01:27.741542+00:00",
-    "as_of": "Jul 11, 2026",
-    "new_in_72h": 15,
+    "fetched_at": "2026-07-12T15:04:18.347387+00:00",
+    "as_of": "Jul 12, 2026",
+    "new_in_72h": 14,
     "recent": [
       {
         "entry_number": 515,
@@ -179,7 +179,7 @@
         "date_filed": "2026-07-09",
         "date_display": "Jul 9, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
