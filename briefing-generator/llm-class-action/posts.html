@@ -375,7 +375,7 @@
 
 <div class="page-title">
   <h1>Posts</h1>
-  <div class="stamp">Saturday, July 11, 2026 &middot; LLM / Copyright</div>
+  <div class="stamp">Sunday, July 12, 2026 &middot; LLM / Copyright</div>
 </div>
 
 <main class="posts-grid">
@@ -383,18 +383,27 @@
   <article class="post-card" data-platform="linkedin">
     <div class="post-card-head">
       <div class="post-card-platform">LinkedIn</div>
-      <div class="char-count"><span id="li-count">1663</span> chars &middot; Long-form</div>
+      <div class="char-count"><span id="li-count">2026</span> chars &middot; Long-form</div>
     </div>
     <div class="post-card-body">
-      <textarea class="post-text-editable linkedin" id="linkedin-text" oninput="updateCount('linkedin');autosize(this);">78 million. That's how many de-identified ChatGPT conversations OpenAI allegedly assembled internally — before the NYT lawsuit was even filed — to evaluate its own infringement exposure. The public found out only because a court-ordered deposition of OpenAI data privacy engineer Vinnie Monaco produced it.
+      <textarea class="post-text-editable linkedin" id="linkedin-text" oninput="updateCount('linkedin');autosize(this);">🗂 A deposition broke NYT v. OpenAI wide open last week.
 
-On July 9, the NYT-led publisher coalition filed a sanctions motion in No. 1:23-cv-11195-SHS (S.D.N.Y., Judge Sidney H. Stein / Magistrate Judge Ona T. Wang). The core allegations: OpenAI deleted billions of chat logs after a preservation order took effect, concealed for two years that it could search its training corpus, and produced a 20-million-log sample so heavily redacted the court called it unusable. On top of that, "Project Giraffe" — a Bloom-filter toolset that tracked output regurgitation — allegedly existed and was withheld.
+On July 9, the plaintiff news organizations — NYT, Daily News, Chicago Tribune, and a dozen affiliates — filed a sanctions motion in S.D.N.Y. accusing OpenAI of hiding evidence for two years. The core allegation: OpenAI told the court it lacked tools to search its training corpus and that producing chat logs would be technically burdensome. A court-ordered re-deposition of OpenAI engineer Vinnie Monaco in April told a different story.
 
-The remedy sought is surgical. Plaintiffs want an adverse-inference instruction under Fed. R. Civ. P. 37(e) — a finding, deemed established without trial, that the destroyed logs would have shown systematic reproduction of plaintiffs' journalism. If granted, the litigation pivots entirely to fair use under 17 U.S.C. § 107, with § 504(c) statutory damages up to $150,000 per registered work for willful infringement becoming a live front. The Times has spent $28M in litigation costs to date, including $4.2M in Q1 2026 alone.
+What Monaco allegedly revealed:
+• OpenAI had already run internal searches of its training data for copyrighted journalism
+• Before the NYT suit was filed, OpenAI had assembled a 78-million-conversation database it used to measure its own infringement exposure
+• A post-filing tool called Project Giraffe — including a "Bloom" filter — detected and logged output regurgitation
 
-Takeaway: If you hold registered works and are tracking the MDL (1:25-md-03143), watch for Judge Wang's response deadline order — a spoliation ruling here resets the factual baseline for all 16 consolidated cases.
+The relief sought is surgical. Plaintiffs want the court to bar OpenAI from using its 20-million-log sample as evidence, to accept as established fact that logs would have shown substantial regurgitation of plaintiffs' content, and to instruct jurors that OpenAI deleted billions of conversations after a preservation order took effect — a spoliation inference that tells jurors to presume the destroyed evidence hurt OpenAI.
 
-#AILitigation #CopyrightLaw #OpenAI #LLMPolicy #IntellectualProperty</textarea>
+OpenAI called the allegations "blatantly false" and framed the motion as a user-privacy issue. That framing doesn't address the core claim: that OpenAI misrepresented its own search capabilities to the court.
+
+The § 107(4) stakes extend well beyond this docket. An adverse ruling here — particularly the evidentiary-preclusion request — would migrate directly into the In re OpenAI Copyright MDL, No. 3143 (S.D.N.Y.), and every parallel publisher proceeding.
+
+Practical note: counsel with positions in both the NYT case and the MDL should begin coordinated docket monitoring now. The opposition deadline and any hearing date are the next critical entries to track.
+
+#AILitigation #CopyrightLaw #LLMCopyright #OpenAI #FairUse</textarea>
     </div>
     <div class="post-card-actions">
       <button class="btn-copy-post" onclick="copyPost('linkedin')">Copy LinkedIn Post</button>
@@ -418,10 +427,10 @@ Takeaway: If you hold registered works and are tracking the MDL (1:25-md-03143),
   <article class="post-card" data-platform="x">
     <div class="post-card-head">
       <div class="post-card-platform">X.com</div>
-      <div class="char-count"><span id="x-count">262</span> / 280 chars</div>
+      <div class="char-count"><span id="x-count">237</span> / 280 chars</div>
     </div>
     <div class="post-card-body">
-      <textarea class="post-text-editable x" id="x-text" oninput="updateCount('x');autosize(this);">NYT v. OpenAI (S.D.N.Y.): sanctions motion filed July 9 — 78M-log internal database, Project Giraffe, alleged log deletion post-preservation order. Rule 37(e) adverse inference sought. If granted, reproduction becomes stipulated fact. #AILitigation #CopyrightLaw</textarea>
+      <textarea class="post-text-editable x" id="x-text" oninput="updateCount('x');autosize(this);">NYT v. OpenAI: sanctions motion filed July 9 — OpenAI allegedly hid 78M-conversation pre-litigation database &amp; lied about search capabilities — spoliation instruction + evidentiary preclusion sought — S.D.N.Y. #AILitigation #CopyrightLaw</textarea>
     </div>
     <div class="post-card-actions">
       <button class="btn-copy-post" onclick="copyPost('x')">Copy X.com Post</button>

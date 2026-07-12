@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-12-bankruptcy-advisory",
+      "date": "2026-07-12",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 12, 2026",
+      "summary": "Tomorrow is the day on both key matters. Judge Thomas M. Horan is scheduled to hold the confirmation hearing in In re Reliz Technology Group Holdings Inc. (BlockFills), No. 26-10371 (Bankr. D. Del.), at 10:00 a.m. ET on July 13.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-12-class-actions-advisory",
+      "date": "2026-07-12",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 12, 2026",
+      "summary": "The week's primary delta: Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.), remains the most consequential open data point on this desk.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-12-fraud-advisory",
+      "date": "2026-07-12",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 12, 2026",
+      "summary": "Three developments define this week's posture across the desk's tracked dockets. First, the OneCoin remission window formally closed on June 30, 2026 — the DOJ/SDNY $40 million compensation fund is now in Kroll's processing queue; the next signal event is Kroll's eligibility determinations, which wi…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-12-tariff-advisory",
+      "date": "2026-07-12",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 12, 2026",
+      "summary": "The most consequential near-term date in the entire IEEPA-refund landscape is now twelve days away. Proclamation No. 11012's 10% Section 122 surcharge is set to expire at 12:01 a.m. EST on July 24, 2026, unless suspended, modified, terminated earlier, or extended by an Act of Congress.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-12-crypto-advisory",
+      "date": "2026-07-12",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 12, 2026",
+      "summary": "The single most consequential development across the tracked docket this week is the BlockFills confirmation hearing, which is on the calendar for tomorrow — Monday, July 13, 2026 at 10:00 a.m. ET before Judge Thomas M. Horan in Courtroom No. 5, Wilmington, Delaware.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-12-advisory",
+      "date": "2026-07-12",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 12, 2026",
+      "summary": "The week's controlling development is not a ruling — it is a sanctions motion that, if granted, would structurally cripple OpenAI's fair-use defense at trial.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-11-bankruptcy-advisory",
       "date": "2026-07-11",
       "type": "briefing",
