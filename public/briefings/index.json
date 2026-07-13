@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-13-bankruptcy-advisory",
+      "date": "2026-07-13",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 13, 2026",
+      "summary": "Sleep Number Corporation and four affiliated debtors are before Judge Kyu Young Paek in the U.S. Bankruptcy Court for the Southern District of New York (Case No. 26-11399) , and today's auction — scheduled for 10:00 a.m.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-13-class-actions-advisory",
+      "date": "2026-07-13",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 13, 2026",
+      "summary": "This week's posture in one sentence: Bartz v. Anthropic is the live pressure point — the case has been sub judice since the May 14 fairness hearing and Judge Martínez-Olguín's supplemental-briefing order, with the second Anthropic installment ($450M) scheduled for September 25, 2026 regardless of wh…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-13-fraud-advisory",
+      "date": "2026-07-13",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 13, 2026",
+      "summary": "Today's delta: The Stanford receivership crossed a material disclosure threshold four days ago. On July 9, 2026, Receiver Ralph Janvey filed a Status Report with the U.S.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-13-tariff-advisory",
+      "date": "2026-07-13",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 13, 2026",
+      "summary": "The single most consequential development this morning is the one happening on the calendar rather than in a docket: the 10% global import surcharge President Trump imposed under Section 122 of the Trade Act of 1974, 19 U.S.C. § 2132, is scheduled to expire by operation of law at 12:01 a.m.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-13-crypto-advisory",
+      "date": "2026-07-13",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 13, 2026",
+      "summary": "Today's headline event is happening now. The confirmation hearing for the Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. (BlockFills) is scheduled for July 13, 2026, at 10:00 a.m. ET — before Judge Thomas M. Horan, Courtroom No.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-13-advisory",
+      "date": "2026-07-13",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 13, 2026",
+      "summary": "The dominant question as of this morning is the same one it has been since May 14: when does Judge Martínez-Olguín sign the final approval order in Bartz v. Anthropic? As of the docket's last RECAP sync on July 2, 2026, no final approval order has been entered.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-12-bankruptcy-advisory",
       "date": "2026-07-12",
       "type": "briefing",
