@@ -15,18 +15,18 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-07-10",
-    "fetched_at": "2026-07-12T15:04:13.963547+00:00",
-    "as_of": "Jul 12, 2026",
-    "new_in_72h": 1,
+    "fetched_at": "2026-07-13T16:39:27.725605+00:00",
+    "as_of": "Jul 13, 2026",
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 678,
         "date_filed": "2026-07-10",
         "date_display": "Jul 10, 2026",
-        "description": "",
-        "is_new": true,
+        "description": "Brief re 676 Objection,, re: Passman Late Opt-Out Request and Late Objections filed byAndrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Attachments: # 1 Declaration of Jennifer M. Keough)(Related document(s) 676 ) (Nelson, Justin) (Filed on ",
+        "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.678.0.pdf"
       },
       {
         "entry_number": null,
@@ -38,13 +38,13 @@
         "doc_url": ""
       },
       {
-        "entry_number": 676,
-        "date_filed": "2026-06-30",
-        "date_display": "Jun 30, 2026",
-        "description": "OBJECTIONS to re 632 Order,,, Set Deadlines/Hearings,, 672 Response ( Non Motion ), 671 Supplemental Brief APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT; AND IN THE ALTERNATIVE, CONDITIONAL OBJECTION TO F",
+        "entry_number": 677,
+        "date_filed": "2026-07-01",
+        "date_display": "Jul 1, 2026",
+        "description": "NOTICE of Appearance filed by Kenneth David Freundlich on behalf of Donald S. Passman (Freundlich, Kenneth) (Filed on 7/1/2026) (Entered: 07/01/2026)",
         "is_new": false,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.676.0.pdf"
+        "doc_url": ""
       }
     ],
     "entries": [
@@ -52,16 +52,25 @@
         "entry_number": 678,
         "date_filed": "2026-07-10",
         "date_display": "Jul 10, 2026",
-        "description": "",
-        "is_new": true,
+        "description": "Brief re 676 Objection,, re: Passman Late Opt-Out Request and Late Objections filed byAndrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Attachments: # 1 Declaration of Jennifer M. Keough)(Related document(s) 676 ) (Nelson, Justin) (Filed on ",
+        "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.678.0.pdf"
       },
       {
         "entry_number": null,
         "date_filed": "2026-07-01",
         "date_display": "Jul 1, 2026",
         "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 677,
+        "date_filed": "2026-07-01",
+        "date_display": "Jul 1, 2026",
+        "description": "NOTICE of Appearance filed by Kenneth David Freundlich on behalf of Donald S. Passman (Freundlich, Kenneth) (Filed on 7/1/2026) (Entered: 07/01/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -103,19 +112,19 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.674.0_1.pdf"
       },
       {
-        "entry_number": 673,
+        "entry_number": null,
         "date_filed": "2026-05-29",
         "date_display": "May 29, 2026",
-        "description": "NOTICE of Withdrawal filed by Molly Alana Karlin, no longer appearing on behalf of Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson in this case (Karlin, Molly) (Filed on 5/29/2026) (Entered: 05/29/2026)",
+        "description": "",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": null,
+        "entry_number": 673,
         "date_filed": "2026-05-29",
         "date_display": "May 29, 2026",
-        "description": "",
+        "description": "NOTICE of Withdrawal filed by Molly Alana Karlin, no longer appearing on behalf of Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson in this case (Karlin, Molly) (Filed on 5/29/2026) (Entered: 05/29/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -142,7 +151,7 @@
         "entry_number": 670,
         "date_filed": "2026-05-20",
         "date_display": "May 20, 2026",
-        "description": "RELATED CASE ORDER. Signed by Judge Araceli Martinez-Olguin on 5/20/2026. (jlg, COURT STAFF) (Filed on 5/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF)",
+        "description": "RELATED CASE ORDER. Signed by Judge Araceli Martinez-Olguin on 5/20/2026. (jlg, COURT STAFF) (Filed on 5/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF) (Entered: 05/20/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.670.0_1.pdf"
@@ -175,19 +184,10 @@
         "doc_url": ""
       },
       {
-        "entry_number": 665,
+        "entry_number": 666,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
-        "description": "*order not processed, filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 5/14/2026 before Judge Araceli Martinez-Olguin by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc., for Recorded Proceeding - San Francisco. (Haselkorn, Ame",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "",
+        "description": "Minute Entry for proceedings held before Judge Araceli Martinez-Olguin: Motion Hearing held on 5/14/2026 re 505 Motion for Attorney Fees, 619 Motion for Final Approval of Settlement. Argument on motion for final approval and motion for fees heard. Objectors heard. Order to follow",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -202,13 +202,13 @@
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.661.0.pdf"
       },
       {
-        "entry_number": 662,
+        "entry_number": null,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
-        "description": "Letter from Robert Jacobson dated May 14, 2026. (Geman, Rachel) (Filed on 5/14/2026) (Entered: 05/14/2026)",
+        "description": "",
         "is_new": false,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.662.0_1.pdf"
+        "doc_url": ""
       },
       {
         "entry_number": 664,
@@ -220,10 +220,10 @@
         "doc_url": ""
       },
       {
-        "entry_number": null,
+        "entry_number": 665,
         "date_filed": "2026-05-14",
         "date_display": "May 14, 2026",
-        "description": "",
+        "description": "*order not processed, filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 5/14/2026 before Judge Araceli Martinez-Olguin by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc., for Recorded Proceeding - San Francisco. (Haselkorn, Ame",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
