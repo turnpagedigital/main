@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-14-bankruptcy-advisory",
+      "date": "2026-07-14",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 14, 2026",
+      "summary": "The Sleep Number sale process crossed its most consequential threshold as of this morning's briefing. The July 13, 2026 auction — scheduled for 10:00 a.m. ET at debtor's counsel's offices — has passed, and the post-auction objection deadline falls today, July 14, 2026 at 4:00 p.m.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-14-class-actions-advisory",
+      "date": "2026-07-14",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 14, 2026",
+      "summary": "Today's delta: The most consequential live item across both the class-action and mass-arbitration dockets is the Bartz v. Anthropic final approval posture. As of CourtListener's last sync (July 2, 2026), the docket at No. 3:24-cv-05417 (N.D.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-14-fraud-advisory",
+      "date": "2026-07-14",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 14, 2026",
+      "summary": "Today's deltas: The Stanford Financial receivership pushed a July 9 status report to the N.D. Tex. court on its final distribution, with cumulative payments now well past $112 million; the fee appeal to the Fifth Circuit is fully briefed as of June 12 and awaiting a scheduling decision on oral argum…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-14-tariff-advisory",
+      "date": "2026-07-14",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 14, 2026",
+      "summary": "Yesterday's Treasury release confirmed what practitioners have been watching build in the CAPE pipeline: the June federal budget deficit reached $120 billion — a sharp reversal from the $27 billion surplus in June 2025 — driven by gross customs duty collections of $23.6 billion against refunds of $4…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-14-crypto-advisory",
+      "date": "2026-07-14",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 14, 2026",
+      "summary": "Today's delta: The BlockFills / Reliz docket crossed Docket No. 527 on July 13 — three new entries in 72 hours — against a confirmation hearing deadline the case had been targeting for this window.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-14-advisory",
+      "date": "2026-07-14",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 14, 2026",
+      "summary": "Today's controlling delta: Bartz v. Anthropic final approval remains under submission, with the live question now narrowed to whether Judge Martínez-Olguín will permit five untimely opt-outs — the last discrete dispute standing between class counsel and the distribution clock.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-13-bankruptcy-advisory",
       "date": "2026-07-13",
       "type": "briefing",
