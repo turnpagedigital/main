@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-15-bankruptcy-advisory",
+      "date": "2026-07-15",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 15, 2026",
+      "summary": "The most time-sensitive development on the watch list is happening right now. Sleep Number Corporation and four affiliated debtors initiated a voluntary Chapter 11 sale process in the United States Bankruptcy Court for the Southern District of New York, with the cases jointly administered under Case…",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-15-class-actions-advisory",
+      "date": "2026-07-15",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 15, 2026",
+      "summary": "Today's delta in brief: Bartz v. Anthropic (No. 3:24-cv-05417, N.D. Cal.) has moved from \"under submission\" to active distribution posture — the docket reflects a last entry of July 13, 2026 (Dkt.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-15-fraud-advisory",
+      "date": "2026-07-15",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 15, 2026",
+      "summary": "Today's primary deltas: the SEC's newly constituted Retail Fraud Working Group (announced July 7) signals a structural reorientation of enforcement toward retail-investor Ponzi and offering-fraud cases, with direct implications for near-term receiver appointments; the Stanford receivership's Final D…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-15-tariff-advisory",
+      "date": "2026-07-15",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 15, 2026",
+      "summary": "The refund pipeline is now a macro event — and the Section 122 clock hits zero in nine days.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-15-crypto-advisory",
+      "date": "2026-07-15",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 15, 2026",
+      "summary": "The confirmation window the BlockFills docket has been working toward since March has now closed — or is closing today. The Reliz Technology Group Holdings Inc. (d/b/a BlockFills) matter in the Bankr. D. Del., Case No. 26-10371 (TMH) before Judge Thomas M.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-15-advisory",
+      "date": "2026-07-15",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 15, 2026",
+      "summary": "The dominant near-term event on this beat remains Bartz, et al. v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.), before Hon. Araceli Martínez-Olguín.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-14-bankruptcy-advisory",
       "date": "2026-07-14",
       "type": "briefing",
