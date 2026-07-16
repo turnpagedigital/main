@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-16-bankruptcy-advisory",
+      "date": "2026-07-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 16, 2026",
+      "summary": "The Sleep Number § 363 Sale Hearing Has Slipped — Again. The Adjourned Hearing Is Tomorrow, July 20.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-16-class-actions-advisory",
+      "date": "2026-07-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 16, 2026",
+      "summary": "Today's delta centers on two post-hearing developments in Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal.): Docket Entry 679, filed July 13, 2026, is Anthropic's opposition brief to unresolved objections — the most recent filing in a docket that CourtListener last indexed on July 2, 2026.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-16-fraud-advisory",
+      "date": "2026-07-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 16, 2026",
+      "summary": "Three threads advance in parallel today. The Stanford Financial receivership has entered its final-distribution payment window, with checks issued in late April now facing imminent void deadlines — a live operational risk for claimants who haven't yet cashed.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-16-tariff-advisory",
+      "date": "2026-07-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 16, 2026",
+      "summary": "This morning's picture is simultaneously good news for importers holding IEEPA refund claims and a sharp reminder that the administration's tariff-replacement machine is fully operational.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-16-crypto-advisory",
+      "date": "2026-07-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 16, 2026",
+      "summary": "BlockFills post-confirmation posture; FTX fifth distribution imminent; Genesis/DCG adversary proceedings active heading into July 21 pre-trial.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-16-advisory",
+      "date": "2026-07-16",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 16, 2026",
+      "summary": "Today's delta: Two developments moved the needle since yesterday. First, Bartz v. Anthropic, 3:24-cv-05417 (N.D. Cal., Hon.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-15-bankruptcy-advisory",
       "date": "2026-07-15",
       "type": "briefing",
