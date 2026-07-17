@@ -14,33 +14,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-07-15",
-    "fetched_at": "2026-07-15T15:35:42.304561+00:00",
-    "as_of": "Jul 15, 2026",
+    "date_last_filing": "2026-07-17",
+    "fetched_at": "2026-07-17T15:22:44.314620+00:00",
+    "as_of": "Jul 17, 2026",
     "new_in_72h": 20,
     "recent": [
       {
-        "entry_number": 371,
-        "date_filed": "2026-07-15",
-        "date_display": "Jul 15, 2026",
+        "entry_number": 395,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 361,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
+        "entry_number": null,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 333,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
+        "entry_number": null,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -49,181 +49,181 @@
     ],
     "entries": [
       {
-        "entry_number": 371,
+        "entry_number": 395,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 389,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 391,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 392,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 381,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "Notice of Proposed Order Granting Gumotex Coating, s.r.o.'s Motion for Allowance and Payment of Administrative Expense Claim (related document(s)380) filed by Alex Spizz on behalf of GUMOTEX, a.s./GUMOTEX Coating, s.r.o.. with hearing to be held on 8/6/2026 at 10:00 AM at Courtro",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 385,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 387,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 384,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 379,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "Statement / Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors filed by Brian Resnick on behalf of Sleep Number Corporation. with hearing to be held on 7/24/2026 at 01:00 PM at Videoconference (ZoomGov) (KYP) (Resnick, Brian) (Entered: 07/16/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 390,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 386,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 388,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 382,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "Declaration of John Dempsey in Support of Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) Designation of Kent Percy as Chief Restructuring Officer Effective as of the Petition Date and (II) Granting Related Relief (related ",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 383,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "Declaration / Supplemental Declaration of Kent Percy of AP Services, LLC (related document(s)128) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 07/16/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "Notice of Continuance of Meeting of Creditors Filed by Andrea Beth Schwartz on behalf of United States Trustee. 341(a) meeting to be held on 7/24/2026 at 01:00 PM at Zoom.us - USTrustee 7: Meeting ID 161 1242 4438, Passcode 8901234678, Phone 1 (202) 793-2740. (Schwartz, Andrea)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 380,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "Motion for Payment of Administrative Expenses - Notice of Motion and Motion of Gumotex Coating, s.r.o. For An Order Allowing An Administrative Expense Claim And Requiring Payment. filed by GUMOTEX, a.s./GUMOTEX Coating, s.r.o. with hearing to be held on 8/6/2026 at 10:00 AM at Co",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 377,
         "date_filed": "2026-07-15",
         "date_display": "Jul 15, 2026",
-        "description": "",
+        "description": "Declaration of Disinterestedness of Arthur Yermash in Support of Employment of Campolo, Middleton & McCormick, LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)176) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 361,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 333,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 367,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 335,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 362,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 359,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 356,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 363,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 368,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 332,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 336,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 364,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 360,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 358,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 357,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 334,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 366,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "",
+        "entry_number": 378,
+        "date_filed": "2026-07-15",
+        "date_display": "Jul 15, 2026",
+        "description": "Application for Pro Hac Vice Admission filed by Shane Ramsey on behalf of East Coast/West Coast Logistics, LLC, FGO Delivers, LLC, Lexington Logistics, LLC, Need it Now Delivers, LLC. (Attachments: # 1 Proposed Order) (Ramsey, Shane) (Entered: 07/15/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
