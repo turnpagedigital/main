@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-18-bankruptcy-advisory",
+      "date": "2026-07-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 18, 2026",
+      "summary": "Today's lead delta: Sleep Number's § 363 sale hearing slips to July 20 — adjourned sale hearing is Monday, and the DIP final-order hearing rides with it.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-18-class-actions-advisory",
+      "date": "2026-07-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 18, 2026",
+      "summary": "This morning's two live deltas: class counsel in Hasson v. Comcast Cable Communications, No. 2:23-cv-05039-JMY (E.D. Pa.), filed their fee motion on July 17 seeking one-third of the $117.5 million fund — a request that will test whether a Pennsylvania federal judge endorses an above-median percentag…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-18-fraud-advisory",
+      "date": "2026-07-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 18, 2026",
+      "summary": "The week's operative developments: The Stanford Financial Group receivership has entered its final-check negotiation phase, with an uncashed-check deadline of July 23–26, 2026 now serving as a hard terminal gate.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-18-tariff-advisory",
+      "date": "2026-07-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 18, 2026",
+      "summary": "The operative development entering this weekend is a collision of two hard calendar events: the statutory expiration of the Section 122 global import surcharge at 12:01 a.m.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-18-crypto-advisory",
+      "date": "2026-07-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 18, 2026",
+      "summary": "BlockFills post-confirmation posture; FTX fifth distribution imminent; Genesis/DCG adversary litigation active. The major delta this week is the confirmed sale of BlockFills' assets to Keyrock and the passage of the July 13 confirmation hearing date — the case has now moved past the plan milestone t…",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-18-advisory",
+      "date": "2026-07-18",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 18, 2026",
+      "summary": "Today's delta: Judge Araceli Martínez-Olguín has declined, for now, to approve the $1.5 billion settlement in Bartz v. Anthropic, leaving final approval pending as the court works through post-hearing supplemental filings — the last of which, per the tracked docket, landed July 13 (DE 679).",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-17-bankruptcy-advisory",
       "date": "2026-07-17",
       "type": "briefing",
