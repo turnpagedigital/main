@@ -14,62 +14,24 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-07-17",
-    "fetched_at": "2026-07-18T15:00:22.930526+00:00",
-    "as_of": "Jul 18, 2026",
-    "new_in_72h": 20,
+    "date_last_filing": "2026-07-18",
+    "fetched_at": "2026-07-19T15:04:28.733536+00:00",
+    "as_of": "Jul 19, 2026",
+    "new_in_72h": 11,
     "recent": [
       {
-        "entry_number": 396,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
+        "entry_number": 400,
+        "date_filed": "2026-07-18",
+        "date_display": "Jul 18, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 394,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "Notice of Adjournment of Hearing Re: 210 Objection (related document(s)170); hearing not held and adjourned to 08/03/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) or (ZoomGov-KYP) (Ashmeade, Vanessa). (Entered: 07/17/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 398,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      }
-    ],
-    "entries": [
-      {
-        "entry_number": 396,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 394,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "Notice of Adjournment of Hearing Re: 210 Objection (related document(s)170); hearing not held and adjourned to 08/03/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) or (ZoomGov-KYP) (Ashmeade, Vanessa). (Entered: 07/17/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 398,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
+        "entry_number": 401,
+        "date_filed": "2026-07-18",
+        "date_display": "Jul 18, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -83,36 +45,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 395,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "Notice of Adjournment of Hearing / Notice of Adjournment of Hearing on the Deferred Compensation Trust Motion (related document(s)170) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 07/17/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
+        "entry_number": 400,
+        "date_filed": "2026-07-18",
+        "date_display": "Jul 18, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 393,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "Notice of Adjournment of Hearing Re: 170 Motion to Authorize / Motion of Debtors for an Order (I) Directing the Trustee of the Debtors Non-Qualified Deferred Compensation Plan Trust to Return the Debtors Assets Held in Trust to the Debtors Estates and (II) Granting Related Relief",
+        "entry_number": 401,
+        "date_filed": "2026-07-18",
+        "date_display": "Jul 18, 2026",
+        "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 399,
+        "entry_number": 397,
         "date_filed": "2026-07-17",
         "date_display": "Jul 17, 2026",
         "description": "",
@@ -130,11 +85,74 @@
         "doc_url": ""
       },
       {
+        "entry_number": 396,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 395,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
+        "description": "Notice of Adjournment of Hearing / Notice of Adjournment of Hearing on the Deferred Compensation Trust Motion (related document(s)170) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 07/17/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 399,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 393,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
+        "description": "Notice of Adjournment of Hearing Re: 170 Motion to Authorize / Motion of Debtors for an Order (I) Directing the Trustee of the Debtors Non-Qualified Deferred Compensation Plan Trust to Return the Debtors Assets Held in Trust to the Debtors Estates and (II) Granting Related Relief",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 398,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 394,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
+        "description": "Notice of Adjournment of Hearing Re: 210 Objection (related document(s)170); hearing not held and adjourned to 08/03/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) or (ZoomGov-KYP) (Ashmeade, Vanessa). (Entered: 07/17/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-17",
+        "date_display": "Jul 17, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 382,
         "date_filed": "2026-07-16",
         "date_display": "Jul 16, 2026",
         "description": "Declaration of John Dempsey in Support of Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) Designation of Kent Percy as Chief Restructuring Officer Effective as of the Petition Date and (II) Granting Related Relief (related ",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -143,25 +161,7 @@
         "date_filed": "2026-07-16",
         "date_display": "Jul 16, 2026",
         "description": "Notice of Continuance of Meeting of Creditors Filed by Andrea Beth Schwartz on behalf of United States Trustee. 341(a) meeting to be held on 7/24/2026 at 01:00 PM at Zoom.us - USTrustee 7: Meeting ID 161 1242 4438, Passcode 8901234678, Phone 1 (202) 793-2740. (Schwartz, Andrea)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 392,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Objection to Motion Stord, Inc.'s Limited Objection and Reservation of Rights to the Sale Transaction and Proposed Sale Order (related document(s)17) filed by Erin P. Severini on behalf of Stord, Inc.. (Attachments: # 1 Exhibit A) (Severini, Erin) (Entered: 07/16/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 390,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Filing of Amendment to the Stalking Horse Asset Purchase Agreement, Order (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canad",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -170,7 +170,25 @@
         "date_filed": "2026-07-16",
         "date_display": "Jul 16, 2026",
         "description": "Notice of Proposed Order Granting Gumotex Coating, s.r.o.'s Motion for Allowance and Payment of Administrative Expense Claim (related document(s)380) filed by Alex Spizz on behalf of GUMOTEX, a.s./GUMOTEX Coating, s.r.o.. with hearing to be held on 8/6/2026 at 10:00 AM at Courtro",
-        "is_new": true,
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 392,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "Objection to Motion Stord, Inc.'s Limited Objection and Reservation of Rights to the Sale Transaction and Proposed Sale Order (related document(s)17) filed by Erin P. Severini on behalf of Stord, Inc.. (Attachments: # 1 Exhibit A) (Severini, Erin) (Entered: 07/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 390,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Filing of Amendment to the Stalking Horse Asset Purchase Agreement, Order (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canad",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -179,34 +197,7 @@
         "date_filed": "2026-07-16",
         "date_display": "Jul 16, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Chapter 11 Bankruptcy Case filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/16/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 387,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Order Granting Application for Pro Hac Vice as to Shane Ramsey(Related Doc # 378) signed on 7/16/2026. (DuBois, Linda) (Entered: 07/16/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 379,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Statement / Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors filed by Brian Resnick on behalf of Sleep Number Corporation. with hearing to be held on 7/24/2026 at 01:00 PM at Videoconference (ZoomGov) (KYP) (Resnick, Brian) (Entered: 07/16/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 385,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Order Granting Application for Pro Hac Vice as to Scott Lawrence (Related Doc # 267) signed on 7/16/2026. (DuBois, Linda) (Entered: 07/16/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -215,16 +206,25 @@
         "date_filed": "2026-07-16",
         "date_display": "Jul 16, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 383,
+        "entry_number": 387,
         "date_filed": "2026-07-16",
         "date_display": "Jul 16, 2026",
-        "description": "Declaration / Supplemental Declaration of Kent Percy of AP Services, LLC (related document(s)128) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 07/16/2026)",
-        "is_new": true,
+        "description": "Order Granting Application for Pro Hac Vice as to Shane Ramsey(Related Doc # 378) signed on 7/16/2026. (DuBois, Linda) (Entered: 07/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 379,
+        "date_filed": "2026-07-16",
+        "date_display": "Jul 16, 2026",
+        "description": "Statement / Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors filed by Brian Resnick on behalf of Sleep Number Corporation. with hearing to be held on 7/24/2026 at 01:00 PM at Videoconference (ZoomGov) (KYP) (Resnick, Brian) (Entered: 07/16/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
