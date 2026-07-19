@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-19-bankruptcy-advisory",
+      "date": "2026-07-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 19, 2026",
+      "summary": "The most consequential development in this week's tracked cases is the conclusion of the Sleep Number § 363 sale process. Sleep Number Corporation and four affiliated debtors initiated a voluntary Chapter 11 sale process in the United States Bankruptcy Court for the Southern District of New York, jo…",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-19-class-actions-advisory",
+      "date": "2026-07-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 19, 2026",
+      "summary": "Today's lede covers three active pressure points: (1) the Hasson v. Comcast fee motion now sitting in Judge Younge's queue ahead of the rescheduled August 5 final approval hearing — the $39.2M fee ask is the single largest variable still compressing net recovery for ~35 million class members; (2) Ba…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-19-fraud-advisory",
+      "date": "2026-07-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 19, 2026",
+      "summary": "The week's primary delta is the Stanford receivership's acute final-distribution deadline pressure: checks issued April 24 and April 27, 2026 void on July 23 and July 26 respectively — four to seven days from today — and the fee appeal before the Fifth Circuit has reached the brief stage.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-19-tariff-advisory",
+      "date": "2026-07-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 19, 2026",
+      "summary": "The controlling development this week is the July 15, 2026 order issued by Senior Judge Richard K. Eaton of the U.S. Court of International Trade.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-19-crypto-advisory",
+      "date": "2026-07-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 19, 2026",
+      "summary": "BlockFills (Reliz Technology Group Holdings, Case No. 26-10371 (TMH)) — § 541 customer-property question moves toward resolution. The operative delta this week is the post-sale posture of the case. Judge Thomas M. Horan of the Bankr. D. Del.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-19-advisory",
+      "date": "2026-07-19",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 19, 2026",
+      "summary": "The controlling development this week: Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal., Judge Araceli Martínez-Olguín), remains the most consequential live matter on this beat — and as of this writing, final approval of the $1.5 billion settlement is still outstanding.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-18-bankruptcy-advisory",
       "date": "2026-07-18",
       "type": "briefing",
