@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-20-bankruptcy-advisory",
+      "date": "2026-07-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 20, 2026",
+      "summary": "The week ending July 18 produced meaningful docket activity on both key focus matters. In Sleep Number, eleven new filings hit the docket in the 72 hours before Sunday's data pull — the highest activity rate since first-day motions in June — almost certainly reflecting post-sale-hearing order entry,…",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-20-class-actions-advisory",
+      "date": "2026-07-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 20, 2026",
+      "summary": "Today's leading delta: Two developments cleared over the weekend. In Hasson v. Comcast Cable Communications LLC (E.D. Pa.), class counsel filed a fee petition Thursday asking a Pennsylvania federal judge to award one-third of the $117.5 million settlement fund — approximately $39 million — for the w…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-20-fraud-advisory",
+      "date": "2026-07-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 20, 2026",
+      "summary": "Today's deltas are two. The OneCoin / DOJ remission process reached its June 30 petition deadline last month, moving that matter from open-claims posture into administration — the fund now shifts to review and pro-rata distribution against a $40 million pool against $4+ billion in victim losses.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-20-tariff-advisory",
+      "date": "2026-07-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 20, 2026",
+      "summary": "The single most consequential event on this week's calendar is not a court ruling — it is a statutory clock. The Trump administration's Section 122 tariff expires by operation of law at 12:01 a.m. EDT on July 24, 2026, exactly 150 days after it took effect on February 24.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-20-crypto-advisory",
+      "date": "2026-07-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 20, 2026",
+      "summary": "The dominant development this week is the close of the Keyrock/BlockFills sale. Keyrock SA formally completed its acquisition of BlockFills' institutional trading and brokerage assets on July 16, 2026 — four months and one day after Reliz Technology Group Holdings Inc.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-20-advisory",
+      "date": "2026-07-20",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 20, 2026",
+      "summary": "The controlling development entering this week: Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal.), remains under submission with final approval still withheld — a last-minute objector filing on June 30, 2026 added another procedural layer to the already-contested approval posture, while the OpenAI M…",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-19-bankruptcy-advisory",
       "date": "2026-07-19",
       "type": "briefing",
