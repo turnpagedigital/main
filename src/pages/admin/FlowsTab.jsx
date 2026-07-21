@@ -20,11 +20,14 @@ const FIELD_TYPES = [
   { value: "text",     label: "Text" },
   { value: "email",    label: "Email" },
   { value: "phone",    label: "Phone" },
+  { value: "number",   label: "Number" },
   { value: "textarea", label: "Long text" },
   { value: "select",   label: "Dropdown" },
   { value: "choice",   label: "Multiple choice (buttons)" },
   { value: "yesno",    label: "Yes / No" },
   { value: "file",     label: "File upload" },
+  { value: "computed", label: "Computed price" },
+  { value: "works-summary", label: "Works summary (from claim form)" },
 ];
 
 const slugify = (s) =>
@@ -61,6 +64,19 @@ function sanitizeFlow(f) {
         ...(fl.options ? { options: fl.options } : {}),
         ...(fl.accept ? { accept: fl.accept } : {}),
         ...(fl.help ? { help: fl.help } : {}),
+        ...(fl.type === "file" && fl.extract ? { extract: fl.extract } : {}),
+        ...(fl.type === "file" && fl.extractMap && typeof fl.extractMap === "object" ? { extractMap: fl.extractMap } : {}),
+        ...(fl.type === "number" && fl.placeholder ? { placeholder: fl.placeholder } : {}),
+        ...(fl.type === "computed" ? {
+          ...(fl.priced ? { priced: true } : {}),
+          ...(fl.selfField ? { selfField: fl.selfField } : {}),
+          ...(fl.publisherField ? { publisherField: fl.publisherField } : {}),
+          ...(!fl.priced && fl.rate != null ? { rate: typeof fl.rate === "number" ? fl.rate : Number(fl.rate) || 0 } : {}),
+          ...(!fl.priced && Array.isArray(fl.terms) ? { terms: fl.terms.map(t => ({ field: t.field || "", factor: typeof t.factor === "number" ? t.factor : Number(t.factor) || 0 })) } : {}),
+          ...(fl.prefix != null ? { prefix: fl.prefix } : {}),
+          ...(fl.suffix != null ? { suffix: fl.suffix } : {}),
+          ...(fl.gateOn ? { gateOn: fl.gateOn } : {}),
+        } : {}),
       })) : [],
     })) : [],
   };
@@ -307,6 +323,7 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
           {flow.steps.map((step, j) => (
             <StepCard key={j} step={step} index={j} total={flow.steps.length}
               conditionTargets={conditionTargets(j)}
+              priorStepFields={flow.steps.slice(0, j).flatMap(s => s.fields || [])}
               onChange={patch => setStep(j, patch)}
               onRemove={() => removeStep(j)}
               onMove={dir => moveStep(j, dir)} />
@@ -321,7 +338,7 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
   );
 }
 
-function StepCard({ step, index, total, conditionTargets, onChange, onRemove, onMove }) {
+function StepCard({ step, index, total, conditionTargets, priorStepFields = [], onChange, onRemove, onMove }) {
   const label = { display: "block", fontSize: "0.72rem", color: INK_60, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 3 };
   const conditioned = Boolean(step.showIf && step.showIf.fieldId);
   const target = conditioned ? conditionTargets.find(f => f.id === step.showIf.fieldId) : null;
@@ -386,6 +403,7 @@ function StepCard({ step, index, total, conditionTargets, onChange, onRemove, on
         <FieldRow key={k} field={field}
           index={k}
           total={step.fields.length}
+          priorFields={[...priorStepFields, ...step.fields.slice(0, k)]}
           onChange={patch => setField(k, patch)}
           onRemove={() => removeField(k)}
           onMove={dir => moveField(k, dir)}
@@ -397,8 +415,16 @@ function StepCard({ step, index, total, conditionTargets, onChange, onRemove, on
   );
 }
 
-function FieldRow({ field, index, total, onChange, onRemove, onMove, removable }) {
+function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, onMove, removable }) {
   const hasOptions = field.type === "select" || field.type === "choice";
+  const isComputed = field.type === "computed";
+  const isNumber = field.type === "number";
+  const miniLabel = { display: "block", fontSize: "0.68rem", color: INK_60, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: 3 };
+  const smallInput = { ...inputStyle, fontSize: "0.82rem" };
+
+  // Number fields the server-priced offer can use as its work counts.
+  const numberFields = priorFields.filter(f => f.type === "number" && f.id);
+
   return (
     <div style={{ border: `1px solid ${LINE}`, borderRadius: 5, padding: "0.6rem", marginBottom: "0.55rem", background: "#fff" }}>
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr auto auto auto auto", gap: 8, alignItems: "center" }}>
@@ -407,25 +433,99 @@ function FieldRow({ field, index, total, onChange, onRemove, onMove, removable }
         <select style={selectStyle} value={field.type} onChange={e => onChange({ type: e.target.value })}>
           {FIELD_TYPES.map(t => <option key={t.value} value={t.value}>{t.label}</option>)}
         </select>
-        <label style={{ display: "flex", alignItems: "center", gap: 5, fontSize: "0.78rem", color: INK_60, cursor: "pointer", whiteSpace: "nowrap" }}>
-          <input type="checkbox" checked={field.required} onChange={e => onChange({ required: e.target.checked })} />
+        <label style={{ display: "flex", alignItems: "center", gap: 5, fontSize: "0.78rem", color: INK_60, cursor: isComputed ? "not-allowed" : "pointer", whiteSpace: "nowrap", opacity: isComputed ? 0.4 : 1 }}>
+          <input type="checkbox" checked={field.required} disabled={isComputed} onChange={e => onChange({ required: e.target.checked })} />
           Req
         </label>
         <button style={iconBtnStyle} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
         <button style={iconBtnStyle} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
         <button style={{ ...iconBtnStyle, color: "#C03030", visibility: removable ? "visible" : "hidden" }} title="Delete field" onClick={onRemove}>✕</button>
       </div>
+
       {hasOptions && (
         <textarea style={{ ...inputStyle, minHeight: 56, marginTop: 6, fontSize: "0.82rem" }}
           placeholder={"One option per line"}
           value={(field.options || []).join("\n")}
           onChange={e => onChange({ options: e.target.value.split("\n").map(s => s.trim()).filter(Boolean) })} />
       )}
+
       {field.type === "file" && (
-        <input style={{ ...inputStyle, marginTop: 6, fontSize: "0.82rem" }}
-          placeholder="Helper text, e.g. PDF or image, up to 8 MB"
-          value={field.help || ""}
-          onChange={e => onChange({ help: e.target.value })} />
+        <div style={{ marginTop: 6 }}>
+          <input style={{ ...inputStyle, fontSize: "0.82rem" }}
+            placeholder="Helper text, e.g. PDF or image, up to 8 MB"
+            value={field.help || ""}
+            onChange={e => onChange({ help: e.target.value })} />
+          <div style={{ display: "flex", gap: 6, alignItems: "center", marginTop: 6 }}>
+            <label style={{ fontSize: "0.72rem", color: INK_60, fontWeight: 700, whiteSpace: "nowrap" }}>Auto-read</label>
+            <input style={{ ...inputStyle, fontSize: "0.82rem" }}
+              placeholder="Extractor name (e.g. bartz-claim) — leave blank for a plain upload"
+              value={field.extract || ""}
+              onChange={e => onChange({ extract: e.target.value.trim() })} />
+          </div>
+          {field.extract && (
+            <p style={{ fontSize: "0.72rem", color: INK_60, margin: "4px 0 0", lineHeight: 1.5 }}>
+              On upload, this file is read by the <strong>{field.extract}</strong> reader and auto-fills{" "}
+              {field.extractMap ? Object.keys(field.extractMap).join(", ") : "no fields yet"}.
+            </p>
+          )}
+        </div>
+      )}
+
+      {isNumber && (
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginTop: 6 }}>
+          <input style={smallInput} placeholder="Placeholder, e.g. 0"
+            value={field.placeholder || ""} onChange={e => onChange({ placeholder: e.target.value })} />
+          <input style={smallInput} placeholder="Helper text (optional)"
+            value={field.help || ""} onChange={e => onChange({ help: e.target.value })} />
+        </div>
+      )}
+
+      {isComputed && (
+        <div style={{ marginTop: 8, padding: "0.7rem 0.8rem", border: `1px dashed ${LINE}`, borderRadius: 6, background: "#FAFAF7" }}>
+          <p style={{ fontSize: "0.72rem", color: "#2D8E47", margin: "0 0 0.7rem", lineHeight: 1.5 }}>
+            🔒 <strong>Priced on the server.</strong> The dollar amounts and payout % live in the{" "}
+            <strong>Pricing</strong> tab (Admin → Content → Pricing) and never ship to the browser. Here you only
+            choose which Number fields hold the two work counts. This field is display-only.
+          </p>
+
+          {numberFields.length === 0 && (
+            <p style={{ fontSize: "0.75rem", color: "#B4700F", margin: "2px 0 6px" }}>
+              Add <strong>Number</strong> fields for the work counts on an earlier step first.
+            </p>
+          )}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 8 }}>
+            <div>
+              <label style={miniLabel}>Self-published count field</label>
+              <select style={selectStyle} value={field.selfField || ""} onChange={e => onChange({ selfField: e.target.value, priced: true })}>
+                <option value="" disabled>Select a number field…</option>
+                {numberFields.map(nf => <option key={nf.id} value={nf.id}>{nf.label || nf.id}</option>)}
+              </select>
+            </div>
+            <div>
+              <label style={miniLabel}>Works-with-publisher count field</label>
+              <select style={selectStyle} value={field.publisherField || ""} onChange={e => onChange({ publisherField: e.target.value, priced: true })}>
+                <option value="" disabled>Select a number field…</option>
+                {numberFields.map(nf => <option key={nf.id} value={nf.id}>{nf.label || nf.id}</option>)}
+              </select>
+            </div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "auto auto 1fr", gap: 8, marginBottom: 8, alignItems: "end" }}>
+            <div>
+              <label style={miniLabel}>Prefix</label>
+              <input style={{ ...smallInput, width: 60 }} placeholder="$" value={field.prefix ?? "$"} onChange={e => onChange({ prefix: e.target.value })} />
+            </div>
+            <div>
+              <label style={miniLabel}>Suffix</label>
+              <input style={{ ...smallInput, width: 60 }} placeholder="(none)" value={field.suffix ?? ""} onChange={e => onChange({ suffix: e.target.value })} />
+            </div>
+            <div>
+              <label style={miniLabel}>Note under the price</label>
+              <input style={smallInput} placeholder="e.g. Estimate — confirmed after review"
+                value={field.help || ""} onChange={e => onChange({ help: e.target.value })} />
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

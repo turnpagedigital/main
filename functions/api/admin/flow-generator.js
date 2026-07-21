@@ -17,11 +17,13 @@ FIELD TYPES:
   text      — single-line text input
   email     — email address (auto-validated on submit)
   phone     — phone number
+  number    — numeric input (use for exact counts you want to add up in a price)
   textarea  — paragraph / longer freeform answer
   select    — dropdown (best for 5+ choices); needs "options" array
   choice    — pill-button group (best for 2–5 choices, more scannable than a dropdown); needs "options" array
   yesno     — Yes / No buttons; no options needed
   file      — file upload; add "accept": ["pdf","png","jpg"] and "help": "hint text shown under the label"
+  computed  — a live, display-only price. Not a question. Add "rate": <number>, "terms": [{ "field": "<id of an earlier number field>", "factor": <number> }] (price = rate × Σ factor×count), optional "prefix" (default "$"), "suffix", "gateOn": "<earlier field id>" to hide it until that field is filled, and "help" for a note under the price. Never mark computed fields required.
 
 BRANCHING: Any step (except the first) may include "showIf": { "fieldId": "<id of an earlier field>", "equals": "<exact option text>" } to only appear when that earlier answer matches. Only choice / select / yesno fields from strictly earlier steps are valid targets.
 

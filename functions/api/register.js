@@ -21,6 +21,9 @@
  */
 
 import formsData from "../../src/data/forms.json";
+import pricing from "./_pricing-config.json";
+import { formatOffer } from "../../src/lib/flow-compute.js";
+import { classifyWork, summarizeWorks, amazonSearchUrl, settlementLookupUrl } from "./_claim-links.js";
 
 const ALLOWED_ORIGINS = [
   "https://turnpagedigital.com",
@@ -125,6 +128,15 @@ export async function onRequestPost(context) {
       if (!visibleFieldIds.has(k)) delete answers[k];
     }
 
+    // Fill in computed fields server-side from the number answers, so the
+    // value we email is authoritative regardless of what the browser sent.
+    // Pricing inputs come from the private config — never from the client.
+    for (const step of steps) {
+      for (const f of step.fields || []) {
+        if (f.type === "computed") answers[f.id] = formatOffer(f, answers, pricing);
+      }
+    }
+
     // Validate files
     const attachments = [];
     for (const file of files) {
@@ -169,6 +181,35 @@ export async function onRequestPost(context) {
       .map(([k, v]) => `<tr><td style="padding:4px 8px 4px 0;color:#666;">${escapeHtml(k)}</td><td style="padding:4px 0;font-family:monospace;font-size:12px;">${escapeHtml(v)}</td></tr>`)
       .join("");
 
+    // Extracted claim-form works (authors) — re-classified here, with one-click
+    // verification links for pre-payout due diligence.
+    const CAT_LABEL = { self: "Self (full)", publisher: "Publisher (½)", excluded: "Multi-author (excluded)" };
+    const claimWorks = (Array.isArray(body.claimWorks) ? body.claimWorks : [])
+      .slice(0, 300)
+      .filter((w) => w && typeof w === "object")
+      .map((w) => {
+        const work = {
+          title: String(w.title || "").slice(0, 300),
+          author: String(w.author || "").slice(0, 200),
+          publisher: String(w.publisher || "").slice(0, 200),
+          isbn: String(w.isbn || "").slice(0, 60),
+          soleOwner: w.soleOwner === true,
+          hasCoAuthor: w.hasCoAuthor === true,
+        };
+        work.category = classifyWork(work);
+        return work;
+      })
+      .filter((w) => w.title || w.isbn);
+    const worksCounts = summarizeWorks(claimWorks);
+    const worksRows = claimWorks
+      .map((w) =>
+        `<tr>` +
+        `<td style="padding:5px 8px 5px 0;vertical-align:top;">${escapeHtml(w.title || "—")}${w.isbn ? `<br><span style="color:#999;font-size:12px;">${escapeHtml(w.isbn)}</span>` : ""}</td>` +
+        `<td style="padding:5px 8px;color:#666;vertical-align:top;white-space:nowrap;">${escapeHtml(CAT_LABEL[w.category] || "")}</td>` +
+        `<td style="padding:5px 0;vertical-align:top;white-space:nowrap;"><a href="${amazonSearchUrl(w)}">Amazon</a> · <a href="${settlementLookupUrl(w)}">Works List</a></td>` +
+        `</tr>`)
+      .join("");
+
     const html = `
       <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:640px;margin:0 auto;">
         <div style="background:#1a1a1a;padding:24px 32px;border-radius:12px 12px 0 0;">
@@ -177,6 +218,11 @@ export async function onRequestPost(context) {
         </div>
         <div style="background:#fff;padding:32px;border:1px solid #e5e5e5;border-top:none;border-radius:0 0 12px 12px;">
           <table style="width:100%;border-collapse:collapse;font-size:14px;">${answerRows}</table>
+          ${worksRows ? `
+          <hr style="border:none;border-top:1px solid #e5e5e5;margin:16px 0;" />
+          <strong style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Claimed works — ${worksCounts.self} full · ${worksCounts.publisher} half · ${worksCounts.excluded} excluded</strong>
+          <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;">${worksRows}</table>
+          <p style="font-size:11px;color:#999;margin:6px 0 0;">Verify each work against the Works List and Amazon before payout. Claim-form PDF attached.</p>` : ""}
           ${attributionRows ? `
           <hr style="border:none;border-top:1px solid #e5e5e5;margin:16px 0;" />
           <strong style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Attribution</strong>

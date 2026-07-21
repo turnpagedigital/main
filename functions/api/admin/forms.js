@@ -10,7 +10,9 @@ import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
 const FORMS_PATH = "src/data/forms.json";
 
-const FIELD_TYPES = new Set(["text", "email", "phone", "textarea", "select", "choice", "yesno", "file"]);
+const FIELD_TYPES = new Set(["text", "email", "phone", "textarea", "select", "choice", "yesno", "file", "number", "computed", "works-summary"]);
+const MAX_TERMS = 10;
+const MAX_EXTRACT_MAP = 20;
 const FILE_ACCEPT = new Set(["pdf", "png", "jpg"]);
 const MAX_FLOWS = 30;
 const MAX_STEPS = 12;
@@ -91,6 +93,7 @@ function validateFlows(flows) {
     if (f.steps.length > MAX_STEPS) return `flows[${i}]: at most ${MAX_STEPS} steps`;
 
     const fieldIds = new Set();
+    const fieldTypes = {}; // id -> type, for validating computed-field references
     for (let j = 0; j < f.steps.length; j++) {
       const s = f.steps[j];
       if (!s || typeof s !== "object") return `flows[${i}].steps[${j}] is not an object`;
@@ -111,7 +114,6 @@ function validateFlows(flows) {
         if (!fld || typeof fld !== "object") return `flows[${i}].steps[${j}].fields[${k}] is not an object`;
         if (!slugOk(fld.id)) return `flows[${i}].steps[${j}].fields[${k}].id must be a lowercase slug`;
         if (fieldIds.has(fld.id)) return `duplicate field id "${fld.id}" in flow "${f.id}"`;
-        fieldIds.add(fld.id);
         if (typeof fld.label !== "string" || !fld.label.trim()) return `field "${fld.id}" needs a label`;
         if (!FIELD_TYPES.has(fld.type)) return `field "${fld.id}": unknown type "${fld.type}"`;
         if ((fld.type === "select" || fld.type === "choice")) {
@@ -124,6 +126,40 @@ function validateFlows(flows) {
             return `field "${fld.id}": accept may only contain ${[...FILE_ACCEPT].join(", ")}`;
           }
         }
+        if (fld.type === "file" && fld.extractMap !== undefined) {
+          if (typeof fld.extractMap !== "object" || fld.extractMap === null || Array.isArray(fld.extractMap)) {
+            return `field "${fld.id}": extractMap must be an object of { fieldId: path }`;
+          }
+          if (Object.keys(fld.extractMap).length > MAX_EXTRACT_MAP) return `field "${fld.id}": too many extractMap entries`;
+          if (!Object.values(fld.extractMap).every(v => typeof v === "string")) return `field "${fld.id}": extractMap values must be strings`;
+        }
+        if (fld.type === "computed") {
+          if (fld.priced !== undefined && typeof fld.priced !== "boolean") {
+            return `field "${fld.id}": priced must be true/false`;
+          }
+          for (const key of ["selfField", "publisherField"]) {
+            if (fld[key] !== undefined && fld[key] !== "" && fieldTypes[fld[key]] !== "number") {
+              return `field "${fld.id}": ${key} must reference a Number field defined on an earlier step`;
+            }
+          }
+          if (fld.rate !== undefined && (typeof fld.rate !== "number" || !Number.isFinite(fld.rate) || fld.rate < 0)) {
+            return `field "${fld.id}": rate must be a non-negative number`;
+          }
+          if (fld.terms !== undefined) {
+            if (!Array.isArray(fld.terms)) return `field "${fld.id}": terms must be an array`;
+            if (fld.terms.length > MAX_TERMS) return `field "${fld.id}": at most ${MAX_TERMS} terms`;
+            for (const t of fld.terms) {
+              if (!t || typeof t !== "object" || typeof t.field !== "string" || !t.field) return `field "${fld.id}": each term needs a field`;
+              if (fieldTypes[t.field] !== "number") return `field "${fld.id}": term "${t.field}" must be a Number field defined on an earlier step`;
+              if (t.factor !== undefined && (typeof t.factor !== "number" || !Number.isFinite(t.factor))) return `field "${fld.id}": term factor must be a number`;
+            }
+          }
+          if (fld.gateOn !== undefined && fld.gateOn !== "" && !fieldTypes[fld.gateOn]) {
+            return `field "${fld.id}": gateOn references "${fld.gateOn}" which is not an earlier field`;
+          }
+        }
+        fieldIds.add(fld.id);
+        fieldTypes[fld.id] = fld.type;
       }
     }
   }
@@ -161,9 +197,38 @@ function normalizeField(fld) {
   if (fld.type === "select" || fld.type === "choice") {
     out.options = fld.options.map(o => String(o).trim().slice(0, SHORT));
   }
+  if (fld.type === "number" && fld.placeholder) {
+    out.placeholder = String(fld.placeholder).trim().slice(0, SHORT);
+  }
+  if (fld.type === "computed") {
+    if (fld.priced) {
+      out.priced = true;
+      if (fld.selfField) out.selfField = String(fld.selfField).slice(0, 60);
+      if (fld.publisherField) out.publisherField = String(fld.publisherField).slice(0, 60);
+    } else {
+      out.rate = typeof fld.rate === "number" && Number.isFinite(fld.rate) ? fld.rate : 0;
+      out.terms = Array.isArray(fld.terms)
+        ? fld.terms
+            .filter(t => t && typeof t.field === "string" && t.field)
+            .slice(0, MAX_TERMS)
+            .map(t => ({ field: String(t.field), factor: typeof t.factor === "number" && Number.isFinite(t.factor) ? t.factor : 0 }))
+        : [];
+    }
+    if (typeof fld.prefix === "string") out.prefix = fld.prefix.slice(0, 8);
+    if (typeof fld.suffix === "string") out.suffix = fld.suffix.slice(0, 8);
+    if (fld.gateOn) out.gateOn = String(fld.gateOn).slice(0, 80);
+  }
   if (fld.type === "file") {
     out.accept = Array.isArray(fld.accept) && fld.accept.length ? fld.accept : ["pdf", "png", "jpg"];
     if (fld.help) out.help = String(fld.help).trim().slice(0, SHORT);
+    if (fld.extract) out.extract = String(fld.extract).trim().slice(0, 60);
+    if (fld.extractMap && typeof fld.extractMap === "object" && !Array.isArray(fld.extractMap)) {
+      const map = {};
+      for (const [k, v] of Object.entries(fld.extractMap).slice(0, MAX_EXTRACT_MAP)) {
+        if (typeof v === "string" && v.trim()) map[String(k).slice(0, 60)] = v.trim().slice(0, 120);
+      }
+      if (Object.keys(map).length) out.extractMap = map;
+    }
   } else if (fld.help) {
     out.help = String(fld.help).trim().slice(0, SHORT);
   }

@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { NEON, FONT, INK, INK_60, LINE, LINE_STRONG } from "../../data/tokens.js";
 import formsData from "../../data/forms.json";
 import { getAttribution, trackLead } from "../../lib/analytics.js";
+import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js";
 
 /* Registration Flow — multi-step wizard section for marketing landing pages.
  *
@@ -47,6 +48,10 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
   const [stepError, setStepError] = useState("");
   const [formState, setFormState] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [extraction, setExtraction] = useState(null);   // claim-form read result
+  const [extracting, setExtracting] = useState(false);
+  const [extractError, setExtractError] = useState("");
+  const [quotes, setQuotes] = useState({});             // fieldId -> server-priced string
 
   const visibleSteps = useMemo(
     () => (flow.steps || []).filter(s => stepVisible(s, answers)),
@@ -55,13 +60,44 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
   const step = visibleSteps[Math.min(stepIndex, visibleSteps.length - 1)];
   const isLast = stepIndex >= visibleSteps.length - 1;
 
+  // Server-priced computed fields (field.priced) can't be priced in the
+  // browser — the pricing inputs live only on the server. Fetch the finished
+  // price from /api/quote whenever the counts on the current step change.
+  const privateComputed = (step && step.fields || []).filter(f => f.type === "computed" && f.priced);
+  const quoteInputs = JSON.stringify(
+    privateComputed.map(f => [answers[f.selfField] ?? "", answers[f.publisherField] ?? ""]),
+  );
+  useEffect(() => {
+    if (!privateComputed.length) return;
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => {
+      privateComputed.forEach(f => {
+        fetch("/api/quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ flowId: flow.id, fieldId: f.id, answers }),
+          signal: ctrl.signal,
+        })
+          .then(r => (r.ok ? r.json() : null))
+          .then(data => { if (data && data.display != null) setQuotes(prev => ({ ...prev, [f.id]: data.display })); })
+          .catch(() => {});
+      });
+    }, 300);
+    return () => { clearTimeout(timer); ctrl.abort(); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [quoteInputs, flow.id]);
+
   function setAnswer(fieldId, value) {
     setAnswers(prev => ({ ...prev, [fieldId]: value }));
     setStepError("");
   }
 
   async function setFile(field, fileObj) {
-    if (!fileObj) { setFiles(prev => ({ ...prev, [field.id]: null })); return; }
+    if (!fileObj) {
+      setFiles(prev => ({ ...prev, [field.id]: null }));
+      if (field.extract) { setExtraction(null); setExtractError(""); }
+      return;
+    }
     const ext = (fileObj.name.split(".").pop() || "").toLowerCase();
     const allowed = (field.accept || ["pdf", "png", "jpg"]).map(a => a.toLowerCase());
     if (!allowed.includes(ext === "jpeg" ? "jpg" : ext)) {
@@ -78,26 +114,61 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
       r.onerror = reject;
       r.readAsDataURL(fileObj);
     });
-    setFiles(prev => ({
-      ...prev,
-      [field.id]: { name: fileObj.name.slice(0, 200), type: FILE_MIME[ext] || fileObj.type, dataBase64 },
-    }));
+    const meta = { name: fileObj.name.slice(0, 200), type: FILE_MIME[ext] || fileObj.type, dataBase64 };
+    setFiles(prev => ({ ...prev, [field.id]: meta }));
     setStepError("");
+    if (field.extract) runExtraction(field, meta);
+  }
+
+  /* Send an uploaded claim form to /api/extract-claim, then auto-fill the
+     fields named in field.extractMap ({ flowFieldId: "path.into.result" }). */
+  async function runExtraction(field, meta) {
+    setExtracting(true);
+    setExtractError("");
+    setExtraction(null);
+    try {
+      const res = await fetch("/api/extract-claim", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ dataBase64: meta.dataBase64, type: meta.type, extractor: field.extract }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Couldn't read the claim form.");
+      setExtraction(data);
+      const map = field.extractMap || {};
+      setAnswers(prev => {
+        const next = { ...prev };
+        for (const [target, path] of Object.entries(map)) {
+          const val = resolvePath(data, path);
+          if (val !== undefined && val !== null && val !== "") next[target] = String(val);
+        }
+        return next;
+      });
+    } catch (err) {
+      setExtractError(err.message || "Couldn't read the claim form — you can enter your details manually below.");
+    } finally {
+      setExtracting(false);
+    }
   }
 
   function validateStep() {
     for (const f of step.fields || []) {
-      if (!f.required) continue;
-      if (f.type === "file") {
-        if (!files[f.id]) return `Please attach: ${f.label}`;
-        continue;
-      }
+      if (f.type === "computed") continue; // display-only, never blocks
       const v = answers[f.id];
-      if (v === undefined || v === null || String(v).trim() === "") {
-        return `Please answer: ${f.label}`;
+      const empty = v === undefined || v === null || String(v).trim() === "";
+      if (f.required) {
+        if (f.type === "file") {
+          if (!files[f.id]) return `Please attach: ${f.label}`;
+        } else if (empty) {
+          return `Please answer: ${f.label}`;
+        }
       }
-      if (f.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v))) {
+      if (f.type === "email" && !empty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v))) {
         return "That email address doesn't look right.";
+      }
+      if (f.type === "number" && !empty) {
+        const n = parseFloat(v);
+        if (!Number.isFinite(n) || n < 0) return `Please enter a valid number for: ${f.label}`;
       }
     }
     return "";
@@ -135,6 +206,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
           pageKey: pageKey || "",
           answers: cleanAnswers,
           files: cleanFiles,
+          claimWorks: extraction && Array.isArray(extraction.works) ? extraction.works : undefined,
           ...getAttribution(),
         }),
       });
@@ -190,6 +262,8 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
       <div className="field-light">
         {(step.fields || []).map(f => (
           <FieldControl key={f.id} field={f} value={answers[f.id]} file={files[f.id]}
+            answers={answers} quote={quotes[f.id]}
+            extraction={extraction} extracting={extracting} extractError={extractError}
             onChange={v => setAnswer(f.id, v)} onFile={fl => setFile(f, fl)} />
         ))}
       </div>
@@ -207,12 +281,12 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
         <button
           type="button"
           onClick={next}
-          disabled={formState === "submitting"}
-          aria-busy={formState === "submitting"}
+          disabled={formState === "submitting" || extracting}
+          aria-busy={formState === "submitting" || extracting}
           className="btn-neon"
-          style={{ flex: 1, opacity: formState === "submitting" ? 0.65 : 1, cursor: formState === "submitting" ? "wait" : "pointer" }}
+          style={{ flex: 1, opacity: (formState === "submitting" || extracting) ? 0.65 : 1, cursor: (formState === "submitting" || extracting) ? "wait" : "pointer" }}
         >
-          {formState === "submitting" ? "Sending..." : isLast ? (flow.submitLabel || "Submit") : "Continue →"}
+          {extracting ? "Reading your claim form…" : formState === "submitting" ? "Sending..." : isLast ? (flow.submitLabel || "Submit") : "Continue →"}
         </button>
       </div>
     </>
@@ -234,6 +308,11 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
 function stepVisible(step, answers) {
   if (!step.showIf || !step.showIf.fieldId) return true;
   return answers[step.showIf.fieldId] === step.showIf.equals;
+}
+
+/* Read "counts.self" style dot-paths out of an extraction result. */
+function resolvePath(obj, path) {
+  return String(path).split(".").reduce((o, k) => (o == null ? undefined : o[k]), obj);
 }
 
 /* ── Layout-aware Shell ─────────────────────────────────────────────────────
@@ -350,7 +429,7 @@ function Shell({ eyebrow, title, accent, layout = "center", flowIntro, children 
   );
 }
 
-function FieldControl({ field, value, file, onChange, onFile }) {
+function FieldControl({ field, value, file, answers = {}, quote, extraction = null, extracting = false, extractError = "", onChange, onFile }) {
   const id = React.useId();
   const label = (
     <label htmlFor={id} style={{ display: "block" }}>
@@ -359,6 +438,62 @@ function FieldControl({ field, value, file, onChange, onFile }) {
     </label>
   );
   const wrap = { marginBottom: "1.1rem" };
+  const helpText = (field.help
+    ? <p style={{ fontFamily: FONT, fontSize: "0.78rem", color: INK_60, margin: "0.25rem 0 0.45rem", lineHeight: 1.5 }}>{field.help}</p>
+    : null);
+
+  if (field.type === "number") {
+    return (
+      <div style={wrap}>
+        {label}
+        {helpText}
+        <input id={id} type="number" inputMode="numeric" min="0" step="1"
+          value={value ?? ""} placeholder={field.placeholder || ""}
+          onChange={e => onChange(e.target.value)}
+          aria-required={field.required || undefined} />
+      </div>
+    );
+  }
+
+  if (field.type === "computed") {
+    const revealed = computedGateSatisfied(field, answers);
+    // Server-priced (field.priced): the price is fetched from /api/quote and
+    // arrives via `quote`. Otherwise (public rate): compute in the browser.
+    const priceStr = field.priced ? (quote != null ? quote : "…") : formatComputed(field, answers);
+    return (
+      <div style={wrap}>
+        <div style={{
+          background: revealed ? INK : "#F4F5F0",
+          border: `1px solid ${revealed ? INK : LINE}`,
+          borderRadius: 10, padding: "1.2rem 1.4rem",
+        }}>
+          <p style={{
+            fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
+            letterSpacing: "0.14em", textTransform: "uppercase",
+            color: revealed ? "rgba(255,255,255,0.6)" : INK_60, margin: 0,
+          }}>
+            {field.label}
+          </p>
+          {revealed ? (
+            <>
+              <p style={{ fontFamily: FONT, fontWeight: 900, fontSize: "clamp(2rem,5vw,2.8rem)", color: NEON, lineHeight: 1.1, margin: "0.35rem 0 0", letterSpacing: "-0.02em" }}>
+                {priceStr}
+              </p>
+              {field.help && (
+                <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: "rgba(255,255,255,0.65)", margin: "0.55rem 0 0", lineHeight: 1.5 }}>
+                  {field.help}
+                </p>
+              )}
+            </>
+          ) : (
+            <p style={{ fontFamily: FONT, fontSize: "0.9rem", color: INK_60, margin: "0.5rem 0 0", lineHeight: 1.5 }}>
+              {field.help || "Complete the fields above to see your estimate."}
+            </p>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   if (field.type === "choice" || field.type === "yesno") {
     const options = field.type === "yesno" ? ["Yes", "No"] : (field.options || []);
@@ -422,6 +557,57 @@ function FieldControl({ field, value, file, onChange, onFile }) {
               remove
             </button>
           </p>
+        )}
+        {field.extract && extracting && (
+          <p role="status" style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK, marginTop: "0.5rem", fontWeight: 600 }}>
+            ⏳ Reading your claim form — this takes a few seconds…
+          </p>
+        )}
+        {field.extract && !extracting && extraction && (
+          <p role="status" style={{ fontFamily: FONT, fontSize: "0.85rem", color: "#2D8E47", marginTop: "0.5rem", fontWeight: 600 }}>
+            ✓ Read {extraction.counts?.total || 0} work{(extraction.counts?.total || 0) === 1 ? "" : "s"} from your claim form.
+          </p>
+        )}
+        {field.extract && !extracting && extractError && (
+          <p role="alert" style={{ fontFamily: FONT, fontSize: "0.85rem", color: "#C03030", marginTop: "0.5rem" }}>
+            {extractError}
+          </p>
+        )}
+      </div>
+    );
+  }
+
+  if (field.type === "works-summary") {
+    const works = (extraction && Array.isArray(extraction.works)) ? extraction.works : [];
+    const catMeta = {
+      self:      { label: "Self-published — full rate", color: "#2D8E47", bg: "#E7F7E2" },
+      publisher: { label: "With a publisher — half rate", color: "#8A6D00", bg: "#FBF3D0" },
+      excluded:  { label: "Multi-author — not purchased", color: "#8A8A8A", bg: "#F0F0F0" },
+    };
+    return (
+      <div style={wrap}>
+        {label}
+        {field.help && <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: INK_60, margin: "0.25rem 0 0.6rem", lineHeight: 1.5 }}>{field.help}</p>}
+        {works.length === 0 ? (
+          <p style={{ fontFamily: FONT, fontSize: "0.9rem", color: INK_60 }}>
+            Upload your claim form above and we'll list your works here.
+          </p>
+        ) : (
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, border: `1px solid ${LINE}`, borderRadius: 8, overflow: "hidden" }}>
+            {works.map((w, i) => {
+              const m = catMeta[w.category] || catMeta.excluded;
+              return (
+                <li key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.8rem", padding: "0.6rem 0.85rem", borderTop: i ? `1px solid ${LINE}` : "none" }}>
+                  <span style={{ fontFamily: FONT, fontSize: "0.88rem", color: INK, fontWeight: 600, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    {w.title || "Untitled work"}
+                  </span>
+                  <span style={{ flexShrink: 0, fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, color: m.color, background: m.bg, padding: "0.2rem 0.55rem", borderRadius: 20 }}>
+                    {m.label}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         )}
       </div>
     );

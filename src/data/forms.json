@@ -1,92 +1,101 @@
 {
-  "_comment": "Multi-step registration flows. Edited via /admin/content/flows; rendered on landing pages by the 'registration-flow' section (pick a flow in the Page Builder). Field types: text, email, phone, textarea, select, choice (button group), yesno, file. A step with showIf only appears when the named earlier field equals the given value. Submissions POST to /api/register → notification email (+ Google Sheet, + Attio when ATTIO_API_KEY is configured, labeled with attioLabel).",
+  "_comment": "Multi-step registration flows. Edited via /admin/content/flows; rendered on landing pages by the 'registration-flow' section (pick a flow in the Page Builder). Field types: text, email, phone, number, textarea, select, choice (button group), yesno, file, computed (a live display-only price. When 'priced': true it is calculated SERVER-SIDE from the private pricing config (functions/api/_pricing-config.json, edited in the admin Pricing tab): names a 'selfField' and 'publisherField' number field, and offer = (payoutRatePct/100) × (selfRecovery × self + publisherRecovery × publisher). Supports prefix/suffix and gateOn to hide until a field is filled), works-summary (display-only list of works read from an uploaded claim form). A file field may carry 'extract' (a server extractor name, e.g. 'bartz-claim') plus 'extractMap' ({ flowFieldId: 'path.into.result' }) — on upload the file is POSTed to /api/extract-claim and the named fields auto-fill. A step with showIf only appears when the named earlier field equals the given value. Submissions POST to /api/register → notification email (+ Google Sheet, + Attio when ATTIO_API_KEY is configured, labeled with attioLabel).",
   "flows": [
     {
       "id": "bartz-registration",
       "name": "AI Copyright — Bartz Registration",
       "active": true,
       "attioLabel": "bartz-landing",
-      "intro": "Tell us about your claim. Takes about two minutes — we'll come back with next steps within 48 hours.",
-      "submitLabel": "Submit registration",
+      "intro": "Tell us who you are. Authors upload their claim form and get an instant estimate; publishers just leave an email and we'll be in touch.",
+      "submitLabel": "Submit",
       "successTitle": "You're registered.",
-      "successBody": "We've received your details and will be in touch within 48 hours. Check your inbox for a confirmation.",
+      "successBody": "We've received your details and will be in touch within 48 hours with your offer and next steps.",
       "steps": [
         {
-          "id": "claim-status",
-          "title": "Your claim",
+          "id": "role",
+          "title": "First, who are you?",
           "fields": [
             {
-              "id": "class_member",
+              "id": "role",
               "type": "choice",
-              "label": "Are you a Bartz v. Anthropic class member?",
+              "label": "Are you the author, or a publisher?",
               "required": true,
-              "options": [
-                "Yes — I received a notice",
-                "I believe so, but no notice yet",
-                "Not sure"
-              ]
-            },
-            {
-              "id": "works_count",
-              "type": "select",
-              "label": "How many of your works are on the settlement works list?",
-              "required": true,
-              "options": ["1–2", "3–10", "11–50", "50+", "I don't know yet"]
+              "options": ["Author / creator", "Publisher"]
             }
           ]
         },
         {
-          "id": "notice-details",
-          "title": "Your notice",
-          "showIf": { "fieldId": "class_member", "equals": "Yes — I received a notice" },
+          "id": "author-upload",
+          "title": "Upload your claim form",
+          "showIf": { "fieldId": "role", "equals": "Author / creator" },
           "fields": [
             {
-              "id": "claim_filed",
-              "type": "yesno",
-              "label": "Have you already filed through the settlement portal?",
-              "required": true
-            },
-            {
-              "id": "notice_file",
+              "id": "claim_form",
               "type": "file",
-              "label": "Upload your notice or claim confirmation (optional)",
-              "required": false,
-              "accept": ["pdf", "png", "jpg"],
-              "help": "PDF or image, up to 8 MB. Speeds up our review."
-            }
-          ]
-        },
-        {
-          "id": "goals",
-          "title": "What you're looking for",
-          "fields": [
-            {
-              "id": "interest",
-              "type": "choice",
-              "label": "What brings you to Turnpage?",
+              "label": "Upload your claim form",
               "required": true,
-              "options": [
-                "Sell my claim for cash now",
-                "Understand what my claim is worth",
-                "Guidance on the settlement process"
-              ]
-            },
-            {
-              "id": "details",
-              "type": "textarea",
-              "label": "Anything else we should know?",
-              "required": false
+              "accept": ["pdf", "png", "jpg"],
+              "help": "Upload your completed Bartz settlement claim form (PDF or image). We'll read it and fill in the rest for you — no typing needed.",
+              "extract": "bartz-claim",
+              "extractMap": {
+                "firstName": "contact.firstName",
+                "lastName": "contact.lastName",
+                "email": "contact.email",
+                "self_pub_count": "counts.self",
+                "publisher_count": "counts.publisher"
+              }
             }
           ]
         },
         {
           "id": "contact",
-          "title": "Contact details",
+          "title": "Your details",
           "fields": [
-            { "id": "firstName", "type": "text", "label": "First name", "required": true },
-            { "id": "lastName", "type": "text", "label": "Last name", "required": true },
-            { "id": "email", "type": "email", "label": "Email", "required": true },
-            { "id": "phone", "type": "phone", "label": "Phone (optional)", "required": false }
+            { "id": "firstName", "type": "text", "label": "First name", "required": false },
+            { "id": "lastName", "type": "text", "label": "Last name", "required": false },
+            { "id": "email", "type": "email", "label": "Email", "required": true }
+          ]
+        },
+        {
+          "id": "author-confirm",
+          "title": "Your works & estimate",
+          "showIf": { "fieldId": "role", "equals": "Author / creator" },
+          "fields": [
+            {
+              "id": "works_summary",
+              "type": "works-summary",
+              "label": "Works we found on your claim form",
+              "required": false,
+              "help": "Self-published works count at the full rate, works with a publisher at half rate. Multi-author works aren't purchased."
+            },
+            {
+              "id": "self_pub_count",
+              "type": "number",
+              "label": "Self-published works",
+              "required": true,
+              "placeholder": "0",
+              "help": "Auto-filled from your claim form — edit if needed."
+            },
+            {
+              "id": "publisher_count",
+              "type": "number",
+              "label": "Works with a publisher",
+              "required": true,
+              "placeholder": "0",
+              "help": "Auto-filled from your claim form — edit if needed."
+            },
+            {
+              "id": "estimated_offer",
+              "type": "computed",
+              "label": "Your estimated offer",
+              "required": false,
+              "priced": true,
+              "selfField": "self_pub_count",
+              "publisherField": "publisher_count",
+              "prefix": "$",
+              "suffix": "",
+              "help": "Estimate only — we confirm your final offer after reviewing your claim form."
+            }
           ]
         }
       ]
