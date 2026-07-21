@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-21-bankruptcy-advisory",
+      "date": "2026-07-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 21, 2026",
+      "summary": "The headline today is Sleep Number. Judge Kyu Young Paek approved the § 363 sale yesterday — a compressed, 39-day petition-to-approval sprint that produced a meaningful auction premium over the stalking-horse floor.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-21-class-actions-advisory",
+      "date": "2026-07-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 21, 2026",
+      "summary": "Today's delta is singular and consequential: the U.S. District Court for the Northern District of California granted final approval of the class settlement of certain infringement claims in Bartz v.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-21-fraud-advisory",
+      "date": "2026-07-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 21, 2026",
+      "summary": "Today's deltas: The Stanford Financial receivership crosses a critical operational threshold this week — distribution checks dated April 24 and April 27, 2026, void on July 23 and July 26, respectively, and the Receiver's July 9, 2026 status report confirms the distribution machine is still running…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-21-tariff-advisory",
+      "date": "2026-07-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 21, 2026",
+      "summary": "The week of July 21 compresses more rate-change and refund-pipeline risk into a single calendar than any prior week since the Supreme Court's February 20 ruling. Three developments demand attention now.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-21-crypto-advisory",
+      "date": "2026-07-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 21, 2026",
+      "summary": "Reliz Technology Group Holdings Inc. and three affiliated entities — operating under the trade name \"BlockFills\" — filed for Chapter 11 in the U.S. Bankruptcy Court for the District of Delaware on March 15, 2026 (Case No. 26-10371 (TMH)).",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-21-advisory",
+      "date": "2026-07-21",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 21, 2026",
+      "summary": "Today's delta: the Bartz final-approval order landed yesterday. On July 20, 2026, the U.S. District Court for the Northern District of California granted final approval of the class settlement in Bartz, et al. v.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-20-bankruptcy-advisory",
       "date": "2026-07-20",
       "type": "briefing",
