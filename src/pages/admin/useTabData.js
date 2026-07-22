@@ -62,7 +62,11 @@ export function useTabData({ endpoint, parse, serialize, method = "PUT", onDirty
     try {
       const r = await fetch(endpoint, { credentials: "include" });
       if (r.status === 401) return;
-      const body = await r.json();
+      // A non-JSON body (usually the SPA's index.html) means the API route
+      // isn't live yet — most often a deploy still propagating.
+      const body = await r.json().catch(() => {
+        throw new Error("The server returned an unexpected response — a deploy may still be rolling out. Wait a minute and reload.");
+      });
       if (!r.ok || !body.ok) throw new Error(body.error || `HTTP ${r.status}`);
       const fresh = parseRef.current(body);
       setData(fresh);

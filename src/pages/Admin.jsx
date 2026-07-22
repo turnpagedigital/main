@@ -10,6 +10,7 @@ const StructureTab      = lazy(() => import("./admin/StructureTab.jsx"));
 const IntelligenceHubTab = lazy(() => import("./admin/IntelligenceHubTab.jsx"));
 const PagesHubTab        = lazy(() => import("./admin/PagesHubTab.jsx"));
 const CSSTab             = lazy(() => import("./admin/CSSTab.jsx"));
+const RegistrationHubTab = lazy(() => import("./admin/RegistrationHubTab.jsx"));
 
 /* Admin panel — auth shell + tab navigation.
    Each tab owns its own fetch/save/state lifecycle (see src/pages/admin/).
@@ -25,7 +26,7 @@ const CSSTab             = lazy(() => import("./admin/CSSTab.jsx"));
    driven by src/data/file-library.json. The favicon picker lives in the
    Structure → Metadata sub-tab. */
 
-const VALID_TABS = ["content", "page-builder", "assets", "structure", "intelligence", "css"];
+const VALID_TABS = ["content", "page-builder", "registration", "assets", "structure", "intelligence", "css"];
 
 function getTabFromPath() {
   if (typeof window === "undefined") return "content";
@@ -151,6 +152,7 @@ export default function Admin() {
   const TAB_DEFS = [
     { key: "content",      label: "Content",      dirty: dirtyTabs.content      ?? false },
     { key: "page-builder", label: "Pages",         dirty: dirtyTabs["page-builder"] ?? false },
+    { key: "registration", label: "Registration",  dirty: dirtyTabs.registration ?? false },
     { key: "assets",       label: "Assets",        dirty: dirtyTabs.assets       ?? false },
     { key: "structure",    label: "Structure",     dirty: dirtyTabs.structure    ?? false },
     { key: "intelligence", label: "Intelligence",  dirty: dirtyTabs.intelligence ?? false },
@@ -307,6 +309,7 @@ export default function Admin() {
       <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
         {tab === "content"      && <SharedContentTab  onDirtyChange={makeDirtyCallback("content")} />}
         {tab === "page-builder" && <PagesHubTab       onDirtyChange={makeDirtyCallback("page-builder")} />}
+        {tab === "registration" && <RegistrationHubTab onDirtyChange={makeDirtyCallback("registration")} />}
         {tab === "assets"       && <AssetsTab         onDirtyChange={makeDirtyCallback("assets")} />}
         {tab === "structure"    && <StructureTab      onDirtyChange={makeDirtyCallback("structure")} />}
         {tab === "intelligence" && <IntelligenceHubTab onDirtyChange={makeDirtyCallback("intelligence")} />}

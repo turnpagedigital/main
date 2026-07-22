@@ -484,7 +484,7 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
         <div style={{ marginTop: 8, padding: "0.7rem 0.8rem", border: `1px dashed ${LINE}`, borderRadius: 6, background: "#FAFAF7" }}>
           <p style={{ fontSize: "0.72rem", color: "#2D8E47", margin: "0 0 0.7rem", lineHeight: 1.5 }}>
             🔒 <strong>Priced on the server.</strong> The dollar amounts and payout % live in the{" "}
-            <strong>Pricing</strong> tab (Admin → Content → Pricing) and never ship to the browser. Here you only
+            <strong>Pricing</strong> tab (Admin → Registration → Pricing) and never ship to the browser. Here you only
             choose which Number fields hold the two work counts. This field is display-only.
           </p>
 
