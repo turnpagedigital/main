@@ -265,6 +265,17 @@
           }
         },
         {
+          "id": "sec-1781587444053-lcuz",
+          "type": "registration-flow",
+          "visible": true,
+          "content": {
+            "flowId": "bartz-registration",
+            "eyebrow": "BARTZ v. ANTHROPIC",
+            "title": "Sell your claim",
+            "accent": "today."
+          }
+        },
+        {
           "id": "sec-aic-audience",
           "type": "audience-cards",
           "visible": true,
@@ -345,17 +356,6 @@
             "_bookmark": "how-we-help",
             "backgroundImage": "/library/data-center-2.jpg",
             "imageFilterStrength": 30
-          }
-        },
-        {
-          "id": "sec-1781587444053-lcuz",
-          "type": "registration-flow",
-          "visible": true,
-          "content": {
-            "flowId": "bartz-registration",
-            "eyebrow": "BARTZ v. ANTHROPIC",
-            "title": "Funding your claims",
-            "accent": "today."
           }
         },
         {
