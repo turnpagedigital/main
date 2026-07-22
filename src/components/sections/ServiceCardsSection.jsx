@@ -1,4 +1,5 @@
 import React from "react";
+import { hasValue } from "../../lib/utils.js";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import LiquidGlassCard from "../LiquidGlassCard.jsx";
 import Card from "../Card.jsx";
@@ -38,8 +39,8 @@ export default function ServiceCardsSection({ sectionConfig }) {
   const colorScheme      = c.colorScheme || "dark";
   const cardStyle        = c.cardStyle || "standard";
   const cardRadius       = c.cardRadius || "rounded";
-  const cardBlur         = c.cardBlur != null && c.cardBlur !== "" ? Number(c.cardBlur) : undefined;
-  const cardBrightness   = c.cardBrightness != null && c.cardBrightness !== "" ? Number(c.cardBrightness) : undefined;
+  const cardBlur         = hasValue(c.cardBlur) ? Number(c.cardBlur) : undefined;
+  const cardBrightness   = hasValue(c.cardBrightness) ? Number(c.cardBrightness) : undefined;
   const cardTitleColor   = c.cardTitleColor || "default";
   const backgroundImage  = c.backgroundImage || "";
   const imageFilter         = c.imageFilter || "dark";
@@ -229,7 +230,7 @@ function ServiceCard({ card, dark, brightness }) {
       position: "relative", overflow: "hidden",
       display: "flex", flexDirection: "column",
       minHeight: "clamp(180px, 18vw, 280px)",
-      filter: brightness != null && brightness !== "" ? `brightness(${brightness}%)` : undefined,
+      filter: hasValue(brightness) ? `brightness(${brightness}%)` : undefined,
     }}>
       <div style={{ position: "relative", zIndex: 1 }}>
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "0.8rem", marginBottom: "0.85rem", minHeight: "clamp(3rem, 4.5vw, 4.8rem)" }}>

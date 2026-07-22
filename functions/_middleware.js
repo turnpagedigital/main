@@ -60,6 +60,12 @@ export async function onRequest(context) {
   const contentType = response.headers.get("content-type") || "";
   if (!contentType.includes("text/html")) return response;
 
+  // Draft briefings (active: false) should never be indexed
+  const briefingSlugMatch = url.pathname.match(/^\/briefings\/([^/]+)\/?$/);
+  const isDraftBriefing = briefingSlugMatch
+    ? (briefingsIndex.items.find(b => b.slug === briefingSlugMatch[1])?.active === false)
+    : false;
+
   const meta = resolveMeta(url.pathname, META_DATA);
 
   const fullImageUrl = `${url.origin}/og/${meta.og}?v=${OG_VERSION}`;
@@ -94,7 +100,7 @@ export async function onRequest(context) {
     },
   });
 
-  return new HTMLRewriter()
+  const transformed = new HTMLRewriter()
     .on("title", {
       element(el) {
         el.setInnerContent(meta.title);
@@ -123,6 +129,13 @@ export async function onRequest(context) {
     .on('meta[name="twitter:description"]', setContent(meta.description))
     .on('meta[name="twitter:image"]', setContent(fullImageUrl))
     .transform(response);
+
+  if (isDraftBriefing) {
+    const noindexed = new Response(transformed.body, transformed);
+    noindexed.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return noindexed;
+  }
+  return transformed;
 }
 
 function escapeAttr(s) {

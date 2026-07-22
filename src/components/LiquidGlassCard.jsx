@@ -1,4 +1,5 @@
 import React, { useId } from "react";
+import { hasValue } from "../lib/utils.js";
 import { FONT, INK, INK_60, RADIUS_GLASS, RADIUS_GLASS_SQUARE } from "../data/tokens.js";
 
 /**
@@ -68,7 +69,7 @@ export default function LiquidGlassCard({
   };
 
   return (
-    <div className={`liquid-glass-card ${variantClass} ${className}`} style={{ position: "relative", display: "flex", flexDirection: "column", minHeight: "clamp(180px, 18vw, 280px)", filter: brightness != null && brightness !== "" ? `brightness(${brightness}%)` : undefined }}>
+    <div className={`liquid-glass-card ${variantClass} ${className}`} style={{ position: "relative", display: "flex", flexDirection: "column", minHeight: "clamp(180px, 18vw, 280px)", filter: hasValue(brightness) ? `brightness(${brightness}%)` : undefined }}>
       {/* Displacement filter for the refractive edge ring (Chromium).
           Browsers that can't use SVG filters in backdrop-filter ignore the
           inline declaration and keep the frosted fallback from CSS. */}
@@ -102,7 +103,7 @@ export default function LiquidGlassCard({
         {/* 2 — lens center: light blur, boosted color */}
         <div className="lg-frost" style={{
           ...layer, zIndex: 1, background: colors.tint,
-          ...(blurAmount != null && blurAmount !== "" && {
+          ...(hasValue(blurAmount) && {
             backdropFilter: `blur(${Math.round(Number(blurAmount) * 0.45)}px) saturate(1.7) brightness(1.04)`,
             WebkitBackdropFilter: `blur(${Math.round(Number(blurAmount) * 0.45)}px) saturate(1.7) brightness(1.04)`,
           })
@@ -114,7 +115,7 @@ export default function LiquidGlassCard({
           style={{
             ...layer,
             zIndex: 2,
-            backdropFilter: `blur(${(blurAmount != null && blurAmount !== "") ? Number(blurAmount) : 5}px) saturate(1.8) url(#${filterId})`,
+            backdropFilter: `blur(${(hasValue(blurAmount)) ? Number(blurAmount) : 5}px) saturate(1.8) url(#${filterId})`,
           }}
         />
 

@@ -111,16 +111,6 @@ export default function HomeHeroSection({ sectionConfig }) {
         </div>
       </div>
 
-      <div style={{
-        position: "absolute", right: "clamp(1.5rem,5vw,4rem)", bottom: "2rem", zIndex: 10,
-        fontFamily: FONT, fontSize: "0.7rem", fontWeight: 600,
-        letterSpacing: "0.22em", textTransform: "uppercase",
-        color: "rgba(255,255,255,0.5)",
-        display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem",
-      }} className="hide-on-mobile">
-        <span>{t("hero.scroll")}</span>
-        <span style={{ width: 1, height: 36, background: "linear-gradient(180deg, rgba(255,255,255,0.6), transparent)" }} />
-      </div>
 
       <style>{`
         /* Desktop: fill the fold, but never balloon past 920px — on tall or

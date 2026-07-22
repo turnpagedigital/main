@@ -1,4 +1,5 @@
 import React from "react";
+import { hasValue } from "../../lib/utils.js";
 import { NEON, FONT, INK, INK_60 } from "../../data/tokens.js";
 import Card from "../Card.jsx";
 import { sectionBackground } from "../../lib/section-background.js";
@@ -26,8 +27,8 @@ export default function HowItWorksSection({ sectionConfig }) {
   const colorScheme      = c.colorScheme || "dark";
   const cardStyle        = c.cardStyle   || "standard";
   const cardRadius       = c.cardRadius  || "rounded";
-  const cardBlur         = c.cardBlur != null && c.cardBlur !== "" ? Number(c.cardBlur) : undefined;
-  const cardBrightness   = c.cardBrightness != null && c.cardBrightness !== "" ? Number(c.cardBrightness) : undefined;
+  const cardBlur         = hasValue(c.cardBlur) ? Number(c.cardBlur) : undefined;
+  const cardBrightness   = hasValue(c.cardBrightness) ? Number(c.cardBrightness) : undefined;
   const backgroundImage  = c.backgroundImage || "";
   const imageFilter         = c.imageFilter || "dark";
   const imageFilterStrength = c.imageFilterStrength ?? 30;

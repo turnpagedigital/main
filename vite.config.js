@@ -35,7 +35,6 @@ export default defineConfig({
           if (id.includes('src/pages/admin/StructureFaviconsTab')) return 'admin-favicons';
           if (id.includes('src/pages/admin/StructureSiteMetaTab')) return 'admin-site-meta';
           if (id.includes('src/pages/admin/StructureNavItemsTab')) return 'admin-navigation';
-          if (id.includes('src/pages/admin/StructureMicrositesTab')) return 'admin-microsites';
           if (id.includes('src/pages/admin/StructureFooterTab')) return 'admin-footer';
           if (id.includes('src/pages/admin/RoutesTab')) return 'admin-routes';
           if (id.includes('src/pages/admin/AssetsTab')) return 'admin-assets';

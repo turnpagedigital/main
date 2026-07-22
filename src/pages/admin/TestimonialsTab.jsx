@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog, ErrorBanner } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ConfirmDialog, ErrorBanner, labelStyle } from "./shared.jsx";
 import { useTabData } from "./useTabData.js";
 import { MARKETING_PAGES } from "../../data/page-keys.js";
 
@@ -307,6 +307,3 @@ function TestimonialRow({ test, index, total, onUpdate, onMoveUp, onMoveDown, on
   );
 }
 
-const labelStyle = {
-  display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600,
-};

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { INK, INK_60, LINE, NEON } from "../../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle } from "../shared.jsx";
+import { inputStyle, selectStyle, btnStyle, labelStyle } from "../shared.jsx";
+import { hasValue } from "../../../lib/utils.js";
+export { labelStyle };
 import sectionTypesData from "../../../data/section-types.json";
 import formsData from "../../../data/forms.json";
 import SectionThumb from "../SectionThumb.jsx";
@@ -15,10 +17,6 @@ import { getSchemeVisual } from "./scheme-visuals.js";
      set(key, val)    fn      — update a top-level key in form
 */
 
-export const labelStyle = {
-  display: "block", fontSize: "0.74rem", color: INK_60,
-  fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 4,
-};
 export const fieldGroup = { marginBottom: "0.9rem" };
 
 const BLUR_STYLES = new Set(["dark", "light-glass", "clear-glass", "neon-glass", "liquid-glass"]);
@@ -583,9 +581,9 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <ImageField label="Background image" value={form.backgroundImage || ""} onChange={v => set("backgroundImage", v)} placeholder="https://…" />
           {form.backgroundImage && (
             <div style={{ marginBottom: "0.9rem" }}>
-              <label style={labelStyle}>Background brightness — {form.backgroundBrightness != null && form.backgroundBrightness !== "" ? form.backgroundBrightness : 35}%</label>
+              <label style={labelStyle}>Background brightness — {hasValue(form.backgroundBrightness) ? form.backgroundBrightness : 35}%</label>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <input type="range" min={5} max={100} step={5} value={form.backgroundBrightness != null && form.backgroundBrightness !== "" ? form.backgroundBrightness : 35} style={{ flex: 1, accentColor: NEON }} onChange={e => set("backgroundBrightness", Number(e.target.value))} />
+                <input type="range" min={5} max={100} step={5} value={hasValue(form.backgroundBrightness) ? form.backgroundBrightness : 35} style={{ flex: 1, accentColor: NEON }} onChange={e => set("backgroundBrightness", Number(e.target.value))} />
                 <button style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("backgroundBrightness", "")}>Reset</button>
               </div>
             </div>

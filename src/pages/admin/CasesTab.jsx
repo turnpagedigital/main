@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { FONT, INK, INK_60, LINE, SURFACE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, labelStyle } from "./shared.jsx";
 
 /* CasesTab — manage tracked cases/situations (stored in the briefing repo as
    cases/<slug>.md + cases/data/<slug>.json). A case can be tagged to multiple
@@ -34,7 +34,6 @@ const DEFAULT_CASE = {
 };
 
 const card = { background: SURFACE, border: `1px solid ${LINE}`, padding: "1.2rem", marginBottom: "1.2rem" };
-const labelStyle = { display: "block", fontSize: "0.74rem", color: INK_60, fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 4 };
 const sectionH = { fontSize: "0.95rem", fontWeight: 800, marginBottom: "0.9rem", color: INK };
 const hint = { fontSize: "0.72rem", color: INK_60, marginTop: 4 };
 

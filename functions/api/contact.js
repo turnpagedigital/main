@@ -55,6 +55,7 @@ const FIELD_LIMITS = {
   subject: 200, message: 5000, source: 80,
   utm_source: 200, utm_medium: 200, utm_campaign: 200,
   utm_term: 200, utm_content: 200, gclid: 200,
+  website: 200,
 };
 
 /* Ad-click attribution fields (optional, sent as hidden form fields when the
@@ -82,6 +83,37 @@ export async function onRequestPost(context) {
 
     const body = await request.json();
     const { firstName, lastName, email, contactMethod, contactHandle, subject, message, source } = body;
+
+    // Turnstile verification — only enforced when secret key is configured
+    if (env.TURNSTILE_SECRET_KEY) {
+      const token = body.turnstileToken || "";
+      if (!token) {
+        return new Response(
+          JSON.stringify({ error: "Security check required. Please complete the verification and try again." }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v1/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ secret: env.TURNSTILE_SECRET_KEY, response: token }),
+      });
+      const verifyData = await verifyRes.json().catch(() => ({}));
+      if (!verifyData.success) {
+        return new Response(
+          JSON.stringify({ error: "Security check failed. Please refresh and try again." }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+    }
+
+    // Honeypot — real users never fill this field; bots do
+    if (body.website) {
+      return new Response(
+        JSON.stringify({ success: true }),
+        { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
 
     if (!firstName || !lastName || !email || !subject || !message) {
       return new Response(

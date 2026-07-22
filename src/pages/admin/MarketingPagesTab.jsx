@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
-import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
+import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner, labelStyle } from "./shared.jsx";
 import { useTabData } from "./useTabData.js";
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -363,8 +363,7 @@ function DamagesRow({ item, index, total, onUpdate, onMoveUp, onMoveDown, onRemo
   );
 }
 
-const labelStyle = { display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600 };
-const reqStyle   = { color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" };
+const reqStyle = { color: "#c44", fontSize: "0.72rem", margin: "0.2rem 0 0" };
 
 function SectionHeader({ children }) {
   return (

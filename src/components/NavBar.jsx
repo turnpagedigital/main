@@ -57,8 +57,7 @@ const MICROSITE_NAVS = navData.microsites || {};
 
 /* ─── NavBar ────────────────────────────────────────────────────────────── */
 
-export default function NavBar({ currentPage }) {
-  const [open, setOpen] = useState(false);
+export default function NavBar({ currentPage, open, onOpenChange }) {
   const [activeDrop, setActiveDrop] = useState(null);
   const closeTimer = useRef(null);
   const { t } = useI18n();
@@ -71,13 +70,13 @@ export default function NavBar({ currentPage }) {
     sessionStorage.setItem('activeMicrosite', currentPage);
   }
 
-  function close() { setOpen(false); }
+  function close() { onOpenChange(false); }
 
   // Escape closes the mobile menu and any open desktop dropdown.
   useEffect(() => {
     function onKeyDown(e) {
       if (e.key !== "Escape") return;
-      setOpen(false);
+      onOpenChange(false);
       setActiveDrop(null);
     }
     document.addEventListener("keydown", onKeyDown);
@@ -237,7 +236,7 @@ export default function NavBar({ currentPage }) {
         {/* Mobile toggle */}
         <button
           className="nav-mobile-toggle"
-          onClick={() => setOpen(o => !o)}
+          onClick={() => onOpenChange(o => !o)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="nav-mobile-menu"

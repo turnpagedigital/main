@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FONT, INK, INK_60, LINE, SURFACE } from "../../data/tokens.js";
-import { inputStyle, btnStyle, btnPrimaryStyle, ConfirmDialog } from "./shared.jsx";
+import { inputStyle, btnStyle, btnPrimaryStyle, ConfirmDialog, labelStyle } from "./shared.jsx";
 
 const API = "/api/admin/users";
 
@@ -93,14 +93,6 @@ function UserForm({ initial, requirePassword, onSave, onCancel, saving, error })
     </form>
   );
 }
-
-const labelStyle = {
-  display: "block",
-  fontSize: "0.78rem",
-  color: INK_60,
-  fontWeight: 600,
-  fontFamily: FONT,
-};
 
 export default function UsersTab() {
   const [users, setUsers]     = useState([]);

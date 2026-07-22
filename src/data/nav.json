@@ -19,7 +19,7 @@
       "id": "ai-copyright",
       "label": "Copyright Claims",
       "href": "/copyright",
-      "active": false,
+      "active": true,
       "labelKey": "nav.copyright",
       "dropdown": {
         "title": "Copyright Claims",

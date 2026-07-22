@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NEON, FONT, INK, INK_60, LINE_STRONG } from "../data/tokens.js";
 import { getAttribution, trackLead } from "../lib/analytics.js";
 import contactFormData from "../data/contact-form.json";
@@ -25,11 +25,36 @@ const SOURCE_SUBJECTS = {
 /* Reusable contact form, light-theme styled. `source` is the sub-brand the
    lead came from (e.g. "ai-copyright"); sent as a hidden field so
    submissions can be attributed to the page that drove them. */
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || "";
+
 export default function IntakeForm({ source = "", defaultSubject = "" }) {
   const { t } = useI18n();
   const [formState, setFormState] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
   const formRef = useRef(null);
+  const turnstileRef = useRef(null);
+  const turnstileWidgetId = useRef(null);
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY || !turnstileRef.current) return;
+    const tryRender = () => {
+      if (!window.turnstile) return;
+      turnstileWidgetId.current = window.turnstile.render(turnstileRef.current, {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: (token) => setTurnstileToken(token),
+        "expired-callback": () => setTurnstileToken(""),
+        "error-callback": () => setTurnstileToken(""),
+        theme: "light",
+      });
+    };
+    // Script may still be loading — retry until turnstile is available
+    if (window.turnstile) { tryRender(); } else {
+      const interval = setInterval(() => { if (window.turnstile) { clearInterval(interval); tryRender(); } }, 200);
+      return () => clearInterval(interval);
+    }
+    return () => { if (turnstileWidgetId.current != null) window.turnstile?.remove(turnstileWidgetId.current); };
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -45,6 +70,7 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       subject: fd.get("subject"),
       message: fd.get("message"),
       source: fd.get("source") || "",
+      turnstileToken,
       // Ad-click attribution captured from the landing URL (hidden fields)
       utm_source: fd.get("utm_source") || "",
       utm_medium: fd.get("utm_medium") || "",
@@ -99,6 +125,8 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       {Object.entries(attribution).map(([k, v]) => (
         <input key={k} type="hidden" name={k} value={v} />
       ))}
+      {/* Honeypot — invisible to humans, bots fill it in and get silently rejected */}
+      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }} />
 
       <div className="form-row-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
         <Field label={t("form.first_name")} name="firstName" type="text" required />
@@ -115,6 +143,10 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       />
       <Field label={t("form.message")} name="message" type="textarea" placeholder={t("form.message_placeholder")} required />
 
+      {TURNSTILE_SITE_KEY && (
+        <div ref={turnstileRef} style={{ margin: "0.5rem 0" }} />
+      )}
+
       {formState === "error" && (
         <p id="intake-form-error" role="alert" style={{ fontFamily: FONT, fontSize: "0.9rem", color: "#C03030", marginBottom: "0.8rem" }}>
           {errorMsg}
@@ -123,7 +155,7 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
 
       <button
         type="submit"
-        disabled={formState === "submitting"}
+        disabled={formState === "submitting" || (TURNSTILE_SITE_KEY && !turnstileToken)}
         aria-busy={formState === "submitting"}
         aria-describedby={formState === "error" ? "intake-form-error" : undefined}
         className="btn-neon"

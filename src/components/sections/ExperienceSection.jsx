@@ -16,22 +16,6 @@ export default function ExperienceSection({ sectionConfig, pageKey }) {
   );
   if (!deals.length) return null;
 
-  // Built-in per-page heading copy (fallbacks)
-  const headings = {
-    home: {
-      title: "A track record across the largest claims trades.",
-      body: "A representative slice of recent deals across crypto insolvencies, pension claims, antitrust settlements, and complex litigation matters.",
-    },
-    "ai-copyright": {
-      title: "A track record across other class actions.",
-      body: "A representative selection of our work advising rights holders, class members, and institutional buyers across the emerging AI copyright landscape.",
-    },
-    crypto: {
-      title: "A track record across digital-asset insolvencies.",
-      body: "A representative slice of deals across crypto insolvencies, exchange failures, and digital-asset restructurings.",
-    },
-  };
-  const fallback = headings[pageKey] || headings.home;
   const c = (sectionConfig && sectionConfig.content) || {};
   const pgKey = pageKey === "ai-copyright" ? "aicopyright" : (pageKey || "home");
   const h = {

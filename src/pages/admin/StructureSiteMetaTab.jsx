@@ -436,6 +436,3 @@ function LabeledField({ label, hint, children }) {
   );
 }
 
-const _labelStyle = {
-  display: "block", fontSize: "0.78rem", color: INK_60, fontWeight: 600,
-};
