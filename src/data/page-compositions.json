@@ -1200,6 +1200,26 @@
             "title": "Start your registration",
             "accent": ""
           }
+        },
+        {
+          "id": "sec-1784761453910-n2x2",
+          "type": "hero",
+          "visible": true,
+          "content": {
+            "eyebrow": "",
+            "title": "Get Paid Now on Your",
+            "accentTitle": "Anthropic Claim",
+            "subtitle": "",
+            "size": "tall",
+            "mediaType": "image",
+            "video": null,
+            "image": "/library/scanning-books.jpg",
+            "ctaPrimary": {
+              "label": "Get in Touch",
+              "href": "/contact"
+            },
+            "ctaSecondary": null
+          }
         }
       ]
     },
