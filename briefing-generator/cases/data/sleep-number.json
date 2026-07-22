@@ -14,33 +14,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-07-18",
-    "fetched_at": "2026-07-19T15:04:28.733536+00:00",
-    "as_of": "Jul 19, 2026",
-    "new_in_72h": 11,
+    "date_last_filing": "2026-07-21",
+    "fetched_at": "2026-07-22T15:42:41.390615+00:00",
+    "as_of": "Jul 22, 2026",
+    "new_in_72h": 15,
     "recent": [
       {
-        "entry_number": 400,
-        "date_filed": "2026-07-18",
-        "date_display": "Jul 18, 2026",
+        "entry_number": 430,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 401,
-        "date_filed": "2026-07-18",
-        "date_display": "Jul 18, 2026",
+        "entry_number": 429,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 397,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
+        "entry_number": 431,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -49,27 +49,45 @@
     ],
     "entries": [
       {
-        "entry_number": 400,
-        "date_filed": "2026-07-18",
-        "date_display": "Jul 18, 2026",
+        "entry_number": 430,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 401,
-        "date_filed": "2026-07-18",
-        "date_display": "Jul 18, 2026",
+        "entry_number": 429,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 397,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
+        "entry_number": 431,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 428,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 432,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -77,156 +95,138 @@
       },
       {
         "entry_number": null,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "Receipt of Amended Schedules( 26-11399-kyp) [misc,schaja] ( 34.00) Filing Fee. Receipt number A17607783. Fee amount 34.00. (Re: Doc # 388) (U.S. Treasury)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 396,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
         "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 395,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "Notice of Adjournment of Hearing / Notice of Adjournment of Hearing on the Deferred Compensation Trust Motion (related document(s)170) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 07/17/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 399,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 393,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "Notice of Adjournment of Hearing Re: 170 Motion to Authorize / Motion of Debtors for an Order (I) Directing the Trustee of the Debtors Non-Qualified Deferred Compensation Plan Trust to Return the Debtors Assets Held in Trust to the Debtors Estates and (II) Granting Related Relief",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 398,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 394,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
-        "description": "Notice of Adjournment of Hearing Re: 210 Objection (related document(s)170); hearing not held and adjourned to 08/03/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) or (ZoomGov-KYP) (Ashmeade, Vanessa). (Entered: 07/17/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
         "entry_number": null,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
+        "description": "Pending Deadlines Terminated RE: Motion to Authorize / Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the Stalking Horse Bidder fo",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 425,
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 382,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Declaration of John Dempsey in Support of Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) Designation of Kent Percy as Chief Restructuring Officer Effective as of the Petition Date and (II) Granting Related Relief (related ",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Notice of Continuance of Meeting of Creditors Filed by Andrea Beth Schwartz on behalf of United States Trustee. 341(a) meeting to be held on 7/24/2026 at 01:00 PM at Zoom.us - USTrustee 7: Meeting ID 161 1242 4438, Passcode 8901234678, Phone 1 (202) 793-2740. (Schwartz, Andrea)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 381,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Notice of Proposed Order Granting Gumotex Coating, s.r.o.'s Motion for Allowance and Payment of Administrative Expense Claim (related document(s)380) filed by Alex Spizz on behalf of GUMOTEX, a.s./GUMOTEX Coating, s.r.o.. with hearing to be held on 8/6/2026 at 10:00 AM at Courtro",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 392,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Objection to Motion Stord, Inc.'s Limited Objection and Reservation of Rights to the Sale Transaction and Proposed Sale Order (related document(s)17) filed by Erin P. Severini on behalf of Stord, Inc.. (Attachments: # 1 Exhibit A) (Severini, Erin) (Entered: 07/16/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 390,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Filing of Amendment to the Stalking Horse Asset Purchase Agreement, Order (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canad",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 384,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Chapter 11 Bankruptcy Case filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/16/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
+        "entry_number": 426,
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
         "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 410,
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
+        "description": "Notice of Adjournment of Hearing RE: Proposed Order / Notice of Revised Proposed Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, ",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
+        "description": "Pending Deadlines Terminated RE: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders, Pursuant to 11 U.S.C. Sections 105, 361, 362, 363, 364, 503, 506, 507 and 552 (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Fi",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 408,
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
+        "description": "Notice of Adjournment of Hearing Re: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Ad",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 409,
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
+        "description": "Notice of Adjournment of Hearing RE: Objection to Motion UNITED STATES TRUSTEES OBJECTION TO MOTION OF THE DEBTORS FOR ENTRY OF INTERIM AND FINAL ORDERS AUTHORIZING (I) THE DEBTORS TO (A) HONOR PREPETITION EMPLOYEE OBLIGATIONS AND DIRECTOR OBLIGATIONS AND (B) MAINTAIN EMPLOYEE BE",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 427,
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 402,
+        "date_filed": "2026-07-19",
+        "date_display": "Jul 19, 2026",
+        "description": "Notice of Proposed Order / Notice of Revised Proposed Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Current and Former Emp",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.402.0.pdf"
+      },
+      {
+        "entry_number": 404,
+        "date_filed": "2026-07-19",
+        "date_display": "Jul 19, 2026",
+        "description": "Statement of the Official Committee of Unsecured Creditors in Support of the Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs ",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 387,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Order Granting Application for Pro Hac Vice as to Shane Ramsey(Related Doc # 378) signed on 7/16/2026. (DuBois, Linda) (Entered: 07/16/2026)",
+        "entry_number": 405,
+        "date_filed": "2026-07-19",
+        "date_display": "Jul 19, 2026",
+        "description": "Statement of the Official Committee of Unsecured Creditors' in Support of the Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the S",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 379,
-        "date_filed": "2026-07-16",
-        "date_display": "Jul 16, 2026",
-        "description": "Statement / Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors filed by Brian Resnick on behalf of Sleep Number Corporation. with hearing to be held on 7/24/2026 at 01:00 PM at Videoconference (ZoomGov) (KYP) (Resnick, Brian) (Entered: 07/16/2026)",
+        "entry_number": 406,
+        "date_filed": "2026-07-19",
+        "date_display": "Jul 19, 2026",
+        "description": "Notice of Proposed Order / Notice of (A) Revised Proposed Order (I) Approving Sale of Debtors Assets Free and Clear of Liens, Claims, Interests and Encumbrances, (II) Authorizing Assumption and Assignment of Executory Contracts and Unexpired Leases, and (III) Granting Related Rel",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.406.0.pdf"
+      },
+      {
+        "entry_number": 403,
+        "date_filed": "2026-07-19",
+        "date_display": "Jul 19, 2026",
+        "description": "Reply to Motion / Reply in Support of the Debtors Motion for Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Cu",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.403.0.pdf"
       }
     ]
   },
