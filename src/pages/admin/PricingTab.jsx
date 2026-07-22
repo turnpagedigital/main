@@ -85,7 +85,8 @@ export default function PricingTab({ onDirtyChange }) {
   const example = Math.max(0, Math.round(premiumApplies ? base * (1 + premiumPct / 100) : base));
 
   return (
-    <div style={{ fontFamily: FONT, maxWidth: 620 }}>
+    <div style={{ fontFamily: FONT, maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
+      <div style={{ maxWidth: 620 }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8, marginBottom: "0.4rem" }}>
         <p style={{ fontSize: "0.85rem", color: INK_60, maxWidth: 460, margin: 0 }}>
           The private inputs behind the Bartz author estimate. These are stored on the server and{" "}
@@ -143,6 +144,7 @@ export default function PricingTab({ onDirtyChange }) {
       >
         {phase === "saving" ? "Saving…" : "Save pricing"}
       </button>
+      </div>
     </div>
   );
 }

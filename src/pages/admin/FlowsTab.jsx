@@ -141,7 +141,7 @@ export default function FlowsTab({ onDirtyChange }) {
   }
 
   return (
-    <div style={{ fontFamily: FONT }}>
+    <div style={{ fontFamily: FONT, maxWidth: 1080, margin: "0 auto", padding: "2rem clamp(1rem, 3vw, 2rem)" }}>
 
       {/* Header bar */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem", flexWrap: "wrap", gap: 8 }}>
@@ -368,9 +368,9 @@ function StepCard({ step, index, total, conditionTargets, priorStepFields = [], 
           <input style={inputStyle} value={step.title}
             onChange={e => onChange({ title: e.target.value, id: step.id || slugify(e.target.value) })} />
         </div>
-        <button style={iconBtnStyle} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
-        <button style={iconBtnStyle} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
-        <button style={{ ...iconBtnStyle, color: "#C03030" }} title="Delete step" disabled={total === 1} onClick={onRemove}>✕</button>
+        <button style={iconBtnStyle(index === 0)} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
+        <button style={iconBtnStyle(index === total - 1)} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
+        <button style={{ ...iconBtnStyle(total === 1), color: "#C03030" }} title="Delete step" disabled={total === 1} onClick={onRemove}>✕</button>
       </div>
 
       {/* Branching condition */}
@@ -437,9 +437,9 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
           <input type="checkbox" checked={field.required} disabled={isComputed} onChange={e => onChange({ required: e.target.checked })} />
           Req
         </label>
-        <button style={iconBtnStyle} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
-        <button style={iconBtnStyle} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
-        <button style={{ ...iconBtnStyle, color: "#C03030", visibility: removable ? "visible" : "hidden" }} title="Delete field" onClick={onRemove}>✕</button>
+        <button style={iconBtnStyle(index === 0)} title="Move up" disabled={index === 0} onClick={() => onMove(-1)}>↑</button>
+        <button style={iconBtnStyle(index === total - 1)} title="Move down" disabled={index === total - 1} onClick={() => onMove(1)}>↓</button>
+        <button style={{ ...iconBtnStyle(false), color: "#C03030", visibility: removable ? "visible" : "hidden" }} title="Delete field" onClick={onRemove}>✕</button>
       </div>
 
       {hasOptions && (
