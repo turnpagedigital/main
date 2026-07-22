@@ -5,7 +5,7 @@
 - **Pattern**: Same as rewind-tariffs site
 - **Deploy**: Push to GitHub → Cloudflare Pages auto-builds and deploys (NO wrangler)
 - **Repo**: https://github.com/turnpagedigital/main.git
-- **Branch**: main
+- **Branch**: `dev` — ALL work (Claude sessions, briefing runs, admin saves, overnight automation) commits to `dev`. `main` is production and only ever changes by promoting dev (the admin's "Deploy to Production" button, or the git merge in Deploy Command below). Never commit directly to main — that's what caused the dev/main merge conflicts of July 2026.
 
 ## Local Paths (Mac)
 - **turnpagedigital.com**: `/Users/waquoitcapital/Library/CloudStorage/Dropbox/Career/Current Roles/Turnpage/Development/turnpagedigital.com`
@@ -13,10 +13,17 @@
 - **turnpage-crypto**: separate folder, static HTML site for crypto claims
 
 ## Deploy Command
+
+Step 1 — commit work to `dev` (the repo checkout lives on dev):
 ```bash
-cd "/Users/waquoitcapital/Library/CloudStorage/Dropbox/Career/Current Roles/Turnpage/Development/turnpagedigital.com" && git add -A && git commit -m "description here" && git push
+cd "/Users/waquoitcapital/Library/CloudStorage/Dropbox-Personal/Professional/Development/turnpagedigital.com" && git add -A && git commit -m "description here" && git push origin dev
 ```
-Note: After push, changes take ~1-2 min. User may need Cmd+Shift+R to clear cache.
+
+Step 2 — put it LIVE on turnpagedigital.com (promotes EVERYTHING currently on dev, including any admin edits and queued drafts sitting there):
+```bash
+git fetch origin && git checkout main && git merge --ff-only origin/main && git merge origin/dev --no-edit && git push origin main && git checkout dev
+```
+Andrew can do Step 2 himself with the admin's "Deploy to Production" button — for briefings and routine site updates, run Step 2 in-session so changes are live same-day. After the main push, Cloudflare builds in ~1–2 min; Cmd+Shift+R to clear cache.
 
 ## Checks (run before pushing)
 ```bash
@@ -113,7 +120,7 @@ index.html                 — Vite entry, meta + OG tags
      "tags": ["Bartz", "Anthropic"]
    }
    ```
-3. `git add -A && git commit -m "Briefing: Bartz fairness hearing" && git push`. Cloudflare auto-deploys in ~1–2 min.
+3. Commit and push to `dev`, then promote to `main` (both steps of the Deploy Command) so the briefing is live same-day.
 
 ## Contact Form
 - Fields: First Name, Last Name (required), Email (required), Subject (required), Message (required)
@@ -133,7 +140,7 @@ index.html                 — Vite entry, meta + OG tags
 - `ADMIN_SECRET` — random 32+ char string, signs session cookies
 - `GITHUB_TOKEN` — fine-grained PAT scoped to this repo with "Contents: Read and write"
 - `GITHUB_REPO` — `turnpagedigital/main`
-- `GITHUB_BRANCH` — the branch the admin API reads/writes (**`dev` on the admin Andrew uses**; "Deploy to Production" merges it into `main`). IMPORTANT: when pushing admin-editable data files (anything under `src/data/`, `public/briefings/`, `functions/api/_pricing-config.json`) directly to `main` via git, ALSO commit them to `dev` — otherwise the matching admin tab 404s ("File or repo not found") or shows stale data, because the admin reads from `dev`.
+- `GITHUB_BRANCH` — the branch the admin API reads/writes (`dev`; "Deploy to Production" merges it into `main`). Since ALL git work also happens on `dev` (see Deploy Command), the admin and git always see the same data. Do not push directly to main.
 
 ## Admin Panel (`/admin`)
 
