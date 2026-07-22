@@ -95,7 +95,7 @@ export default function PricingTab({ onDirtyChange }) {
       </div>
 
       <p style={{ fontSize: "0.72rem", color: "#2D8E47", fontWeight: 700, margin: "0 0 1.2rem" }}>
-        🔒 Login-only — safe to change as often as you like. Live in ~1–2 minutes after saving.
+        🔒 Login-only — safe to change as often as you like. Saves like other admin content: it goes live with your next deploy.
       </p>
 
       {error && data && <ErrorBanner message={error} />}

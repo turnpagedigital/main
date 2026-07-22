@@ -11,7 +11,6 @@ const AlertsTab        = lazy(() => import("./AlertsTab.jsx"));
 const FAQsTab          = lazy(() => import("./FAQsTab.jsx"));
 const TestimonialsTab  = lazy(() => import("./TestimonialsTab.jsx"));
 const ContactFormTab   = lazy(() => import("./ContactFormTab.jsx"));
-const FlowsTab         = lazy(() => import("./FlowsTab.jsx"));
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SharedContentTab — master wrapper for Bio, Posts, Deals, Press, Alerts,
@@ -34,12 +33,12 @@ const SUB_TABS = [
   { key: "faqs",          label: "FAQs" },
   { key: "testimonials",  label: "Testimonials" },
   { key: "contact-form",  label: "Contact Form" },
-  { key: "flows",         label: "Flows" },
 ];
 const SUB_KEYS = SUB_TABS.map(t => t.key);
 
 // The former Briefings sub-tab merged into Posts (June 2026) — old
-// /admin/content/briefings URLs land on the combined tab.
+// /admin/content/briefings URLs land on the combined tab. Flows moved to
+// the Registration master tab (July 2026); old links land on Bio by default.
 const SUB_ALIASES = { briefings: "posts" };
 
 export default function SharedContentTab({ onDirtyChange }) {
@@ -72,7 +71,6 @@ export default function SharedContentTab({ onDirtyChange }) {
         {sub === "faqs"          && <FAQsTab         onDirtyChange={makeDirty("faqs")} />}
         {sub === "testimonials"  && <TestimonialsTab onDirtyChange={makeDirty("testimonials")} />}
         {sub === "contact-form"  && <ContactFormTab  onDirtyChange={makeDirty("contact-form")} />}
-        {sub === "flows"         && <FlowsTab        onDirtyChange={makeDirty("flows")} />}
       </Suspense>
     </div>
   );

@@ -105,7 +105,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               ))}
             </select>
             <p style={{ fontSize: "0.74rem", color: INK_60, marginTop: 4 }}>
-              Flows are built in Content → Flows. An inactive or unpicked flow renders nothing on the public page.
+              Flows are built in Registration → Flows. An inactive or unpicked flow renders nothing on the public page.
             </p>
           </div>
           <div style={fieldGroup}>

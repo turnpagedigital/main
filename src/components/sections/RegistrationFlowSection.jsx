@@ -7,7 +7,7 @@ import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js
 /* Registration Flow — multi-step wizard section for marketing landing pages.
  *
  * Drop onto any Page Builder page and pick a flow (defined in
- * src/data/forms.json, edited via /admin/content/flows). Steps with a
+ * src/data/forms.json, edited via /admin/registration/flows). Steps with a
  * showIf condition only appear when the named earlier answer matches, so
  * the wizard branches. File fields are read client-side and submitted as
  * base64 (server caps: 8 MB, pdf/png/jpg). Submissions POST to

@@ -133,7 +133,7 @@ index.html                 — Vite entry, meta + OG tags
 - `ADMIN_SECRET` — random 32+ char string, signs session cookies
 - `GITHUB_TOKEN` — fine-grained PAT scoped to this repo with "Contents: Read and write"
 - `GITHUB_REPO` — `turnpagedigital/main`
-- `GITHUB_BRANCH` — `dev` on the dev environment, `main` on production
+- `GITHUB_BRANCH` — the branch the admin API reads/writes (**`dev` on the admin Andrew uses**; "Deploy to Production" merges it into `main`). IMPORTANT: when pushing admin-editable data files (anything under `src/data/`, `public/briefings/`, `functions/api/_pricing-config.json`) directly to `main` via git, ALSO commit them to `dev` — otherwise the matching admin tab 404s ("File or repo not found") or shows stale data, because the admin reads from `dev`.
 
 ## Admin Panel (`/admin`)
 
@@ -149,6 +149,7 @@ Both paths write to the same files. Git enforces ordering — latest commit wins
 |---|---|---|
 | `/admin/content` | Bio, Posts, Briefings, Deals, Press, Alerts, FAQs, Testimonials, Contact Form | `bio.json`, `public/briefings/*`, `deals.json`, `press.json`, `alerts.json`, `faqs.json`, `testimonials.json`, `contact-form.json` |
 | `/admin/page-builder` | Builder, Section Types | `page-compositions.json` (+ registers routes in `routes.json` on page create/delete; changes page URLs via `/api/admin/page-path` cascade) |
+| `/admin/registration` | Flows, Pricing | `forms.json` (multi-step registration wizards rendered by the `registration-flow` section) + `functions/api/_pricing-config.json` (PRIVATE Bartz offer inputs — recovery $ per self-pub/publisher work, payout %, volume premium % + threshold; served only to logged-in admins via `/api/admin/pricing`, priced server-side by `/api/quote` and `/api/register`) |
 | `/admin/assets` | — | `file-library.json` — archive, rename cascade, permanent delete cascade |
 | `/admin/structure` | Favicons, Site Meta, Navigation, Footer, Routes | `file-library.json` (favicons), `page-meta.json`, `nav.json`, `footer.json`, `routes.json` |
 | `/admin/intelligence` | Themes, Cases, Defaults | Briefing-system config (`themes.json`, cases, intelligence settings) |
