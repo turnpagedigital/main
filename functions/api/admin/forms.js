@@ -78,7 +78,10 @@ async function fetchFile(env) {
   return { ok: true, data: r.data, sha: r.sha };
 }
 
-const slugOk = (s) => typeof s === "string" && /^[a-z0-9][a-z0-9-_]{0,79}$/.test(s);
+// Letters (either case), digits, dashes, underscores. Uppercase must stay legal:
+// the contact fields are camelCase ("firstName") and the email/CRM pipeline
+// keys on those exact ids.
+const slugOk = (s) => typeof s === "string" && /^[a-zA-Z0-9][a-zA-Z0-9-_]{0,79}$/.test(s);
 
 function validateFlows(flows) {
   const seen = new Set();
