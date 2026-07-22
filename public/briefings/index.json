@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-22-bankruptcy-advisory",
+      "date": "2026-07-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 22, 2026",
+      "summary": "The dispositive event on this beat since yesterday: Judge Kyu Y. (Mike) Paek of the United States Bankruptcy Court for the Southern District of New York entered the sale approval order in In re Sleep Number Corporation, et al., Case No. 26-11399, at the July 20 hearing.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-22-class-actions-advisory",
+      "date": "2026-07-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 22, 2026",
+      "summary": "Today's headline: The single most consequential development of the past 72 hours is the entry of final approval in Bartz v. Anthropic, the largest copyright class action settlement in U.S. history. That order resolves the primary litigation risk in the case and opens the distribution pipeline.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-22-fraud-advisory",
+      "date": "2026-07-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 22, 2026",
+      "summary": "Today's briefing has two concrete deltas from prior coverage: the Stanford receivership fee appeal is now fully briefed in the Fifth Circuit as of June 12, 2026, creating an oral-argument overhang with no scheduled date, and Stanford Final Distribution checks dated April 24 expire tomorrow — July 23…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-22-tariff-advisory",
+      "date": "2026-07-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 22, 2026",
+      "summary": "Today's Deltas: Three things happen at once this morning. First, at 12:01 a.m. ET on July 22, a 25% ad valorem tariff took effect on many goods originating in Brazil under Section 301 of the Trade Act of 1974 — the administration's most significant new tariff action since the IEEPA regime fell in Fe…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-22-crypto-advisory",
+      "date": "2026-07-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 22, 2026",
+      "summary": "Today's lede carries two new filings and one imminent distribution. The most consequential delta is a fresh Chapter 11 petition filed yesterday afternoon by MVMT Labs, Inc. — the original developer of the Movement blockchain — in the same courthouse and before the same judge overseeing BlockFills.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-22-advisory",
+      "date": "2026-07-22",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 22, 2026",
+      "summary": "Delta this morning: The settlement clock in Bartz v. Anthropic has run. Judge Araceli Martínez-Olguín issued a 23-page order on July 20 granting final approval of the class action settlement, resolving several outstanding administrative details, and ruling on attorneys' fees.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-21-bankruptcy-advisory",
       "date": "2026-07-21",
       "type": "briefing",
