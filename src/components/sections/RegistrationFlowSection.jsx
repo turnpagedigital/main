@@ -4,6 +4,7 @@ import { sectionBackground } from "../../lib/section-background.js";
 import formsData from "../../data/forms.json";
 import { getAttribution, trackLead } from "../../lib/analytics.js";
 import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js";
+import QRCode from "qrcode";
 
 /* Registration Flow — multi-step wizard section for marketing landing pages.
  *
@@ -367,6 +368,55 @@ function resolvePath(obj, path) {
    split   — 2-col: left sticky heading, right form card, gray bg
    dark    — narrow card, dark bg, white outer text
    ─────────────────────────────────────────────────────────────────────── */
+/* LinkConfirmField — an external-verification step (e.g. Sumsub KYC):
+   a button link, a QR code encoding the same URL for phone hand-off, and a
+   required confirmation checkbox. Value is "Yes" once checked. */
+function LinkConfirmField({ field, value, onChange, wrap, label }) {
+  const [qr, setQr] = useState("");
+  const url = (field.url || "").trim();
+  useEffect(() => {
+    let alive = true;
+    if (!url) { setQr(""); return; }
+    QRCode.toDataURL(url, { width: 176, margin: 1, color: { dark: "#0A0A0A", light: "#FFFFFF" } })
+      .then(d => { if (alive) setQr(d); })
+      .catch(() => { if (alive) setQr(""); });
+    return () => { alive = false; };
+  }, [url]);
+  const checked = value === "Yes";
+  return (
+    <div style={wrap}>
+      {label}
+      {field.help && <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: INK_60, margin: "0.25rem 0 0.8rem", lineHeight: 1.55 }}>{field.help}</p>}
+      {url ? (
+        <div style={{ display: "flex", gap: "1.2rem", alignItems: "center", flexWrap: "wrap", marginBottom: "0.9rem" }}>
+          <div>
+            <a href={url} target="_blank" rel="noopener noreferrer" className="btn-neon" style={{ display: "inline-block" }}>
+              {field.linkText || "Open verification"} ↗
+            </a>
+            <p style={{ fontFamily: FONT, fontSize: "0.74rem", color: INK_60, margin: "0.6rem 0 0" }}>
+              or scan with your phone:
+            </p>
+          </div>
+          {qr && (
+            <img src={qr} alt={`QR code for ${field.linkText || "verification"}`} width={88} height={88}
+              style={{ border: `1px solid ${LINE}`, display: "block" }} />
+          )}
+        </div>
+      ) : (
+        <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: INK_60, margin: "0 0 0.8rem" }}>
+          The verification link isn't set up yet — you can continue and we'll email it to you.
+        </p>
+      )}
+      <label style={{ display: "flex", alignItems: "flex-start", gap: "0.6rem", cursor: "pointer", fontFamily: FONT, fontSize: "0.92rem", color: INK, lineHeight: 1.5 }}>
+        <input type="checkbox" checked={checked}
+          onChange={e => onChange(e.target.checked ? "Yes" : "")}
+          style={{ accentColor: NEON, width: 18, height: 18, marginTop: 2, flexShrink: 0 }} />
+        <span>{field.confirmLabel || "I have completed this step"}{field.required && <span aria-hidden="true" style={{ fontWeight: 800 }}> *</span>}</span>
+      </label>
+    </div>
+  );
+}
+
 const SHELL_SCHEMES = {
   paper:        { bg: PAPER,     dark: false },
   white:        { bg: SURFACE,      dark: false },
@@ -588,6 +638,12 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
           )}
         </div>
       </div>
+    );
+  }
+
+  if (field.type === "link-confirm") {
+    return (
+      <LinkConfirmField field={field} value={value} onChange={onChange} wrap={wrap} label={label} />
     );
   }
 

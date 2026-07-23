@@ -10,7 +10,7 @@ import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
 const FORMS_PATH = "src/data/forms.json";
 
-const FIELD_TYPES = new Set(["text", "email", "phone", "textarea", "select", "choice", "yesno", "file", "number", "computed", "works-summary"]);
+const FIELD_TYPES = new Set(["text", "email", "phone", "textarea", "select", "choice", "yesno", "file", "number", "computed", "works-summary", "link-confirm"]);
 const MAX_TERMS = 10;
 const MAX_EXTRACT_MAP = 20;
 const FILE_ACCEPT = new Set(["pdf", "png", "jpg"]);
@@ -234,6 +234,11 @@ function normalizeField(fld) {
     }
   } else if (fld.help) {
     out.help = String(fld.help).trim().slice(0, SHORT);
+  }
+  if (fld.type === "link-confirm") {
+    if (fld.url) out.url = String(fld.url).trim().slice(0, 300);
+    if (fld.linkText) out.linkText = String(fld.linkText).trim().slice(0, SHORT);
+    if (fld.confirmLabel) out.confirmLabel = String(fld.confirmLabel).trim().slice(0, SHORT);
   }
   // Optional expandable explainer under the field (label + body text)
   if (fld.moreInfo && typeof fld.moreInfo === "object" && String(fld.moreInfo.body || "").trim()) {

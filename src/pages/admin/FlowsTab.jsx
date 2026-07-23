@@ -28,6 +28,7 @@ const FIELD_TYPES = [
   { value: "file",     label: "File upload" },
   { value: "computed", label: "Computed price" },
   { value: "works-summary", label: "Works summary (from claim form)" },
+  { value: "link-confirm", label: "External link + QR + confirm checkbox (e.g. KYC)" },
 ];
 
 const slugify = (s) =>
@@ -65,6 +66,11 @@ function sanitizeFlow(f) {
         ...(fl.accept ? { accept: fl.accept } : {}),
         ...(fl.help ? { help: fl.help } : {}),
         ...(fl.moreInfo && fl.moreInfo.body ? { moreInfo: { label: fl.moreInfo.label || "More info", body: fl.moreInfo.body } } : {}),
+        ...(fl.type === "link-confirm" ? {
+          ...(fl.url ? { url: fl.url } : {}),
+          ...(fl.linkText ? { linkText: fl.linkText } : {}),
+          ...(fl.confirmLabel ? { confirmLabel: fl.confirmLabel } : {}),
+        } : {}),
         ...(fl.type === "file" && fl.extract ? { extract: fl.extract } : {}),
         ...(fl.type === "file" && fl.extractMap && typeof fl.extractMap === "object" ? { extractMap: fl.extractMap } : {}),
         ...(fl.type === "number" && fl.placeholder ? { placeholder: fl.placeholder } : {}),
@@ -477,6 +483,29 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
             placeholder="Expandable explainer — body text shown when opened"
             value={(field.moreInfo && field.moreInfo.body) || ""}
             onChange={e => onChange({ moreInfo: { ...(field.moreInfo || {}), body: e.target.value } })} />
+        </div>
+      )}
+
+      {field.type === "link-confirm" && (
+        <div style={{ marginTop: 6 }}>
+          <input style={{ ...inputStyle, fontSize: "0.82rem" }}
+            placeholder="Verification URL (e.g. your Sumsub link) — shown as button + QR code"
+            value={field.url || ""}
+            onChange={e => onChange({ url: e.target.value.trim() })} />
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginTop: 6 }}>
+            <input style={{ ...inputStyle, fontSize: "0.82rem" }}
+              placeholder='Button text (e.g. "Start verification")'
+              value={field.linkText || ""}
+              onChange={e => onChange({ linkText: e.target.value })} />
+            <input style={{ ...inputStyle, fontSize: "0.82rem" }}
+              placeholder='Checkbox label (e.g. "I completed verification")'
+              value={field.confirmLabel || ""}
+              onChange={e => onChange({ confirmLabel: e.target.value })} />
+          </div>
+          <input style={{ ...inputStyle, fontSize: "0.82rem", marginTop: 6 }}
+            placeholder="Helper text shown above the link (optional)"
+            value={field.help || ""}
+            onChange={e => onChange({ help: e.target.value })} />
         </div>
       )}
 
