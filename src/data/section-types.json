@@ -52,7 +52,7 @@
     {
       "id": "stats-band",
       "displayName": "Stats Band",
-      "description": "Three large numbers in a dark horizontal band. Home page credential strip.",
+      "description": "Large numbers in a horizontal strip. Layouts: flush band with dividers, boxed cards, or open minimal. Dark, neon, white, gray, or paper background; optional neon numbers; left or centered.",
       "dataSource": "inline",
       "allowMultiple": false,
       "defaultContent": {
@@ -70,8 +70,20 @@
             "labelKey": "stats.institutions"
           }
         ],
-        "footnoteKey": "stats.footnote"
-      }
+        "footnoteKey": "stats.footnote",
+        "colorScheme": "dark",
+        "layout": "band",
+        "align": "left",
+        "valueColor": "auto"
+      },
+      "supportedColorSchemes": [
+        "dark",
+        "neon",
+        "white",
+        "light-gray",
+        "paper"
+      ],
+      "defaultColorScheme": "dark"
     },
     {
       "id": "situations",
@@ -422,7 +434,7 @@
     {
       "id": "how-it-works",
       "displayName": "How It Works",
-      "description": "Dark numbered step sequence. Inline content — editable per page.",
+      "description": "Dark numbered step sequence. Inline content — editable per page. Steps layout: auto, 2-5 across, or vertical list.",
       "dataSource": "inline",
       "allowMultiple": false,
       "supportedColorSchemes": [
@@ -455,7 +467,8 @@
             "title": "Step three",
             "body": "Describe this step."
           }
-        ]
+        ],
+        "stepsLayout": "auto"
       }
     },
     {

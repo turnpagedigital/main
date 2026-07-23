@@ -12,6 +12,9 @@ import LiquidGlassCard from "../LiquidGlassCard.jsx";
      title, accent          — section heading (left column)
      kicker                 — subtitle text (right column)
      steps[]                — { id, n, title, body }
+     stepsLayout            — "auto" (default, up to 3 across) | "2".."5"
+                              (fixed columns) | "vertical" (stacked list,
+                              number beside the text)
      colorScheme            — "dark" (default) | "light-gray" | "white"
      cardStyle              — "standard" (default) | "white" | "black" | "light-gray" | "dark" | "light-glass" | "clear-glass"
      cardRadius             — "rounded" (default) | "square"
@@ -34,6 +37,12 @@ export default function HowItWorksSection({ sectionConfig }) {
   const imageFilterStrength = c.imageFilterStrength ?? 30;
 
   if (!steps.length) return null;
+
+  const stepsLayout = c.stepsLayout || "auto";
+  const isVertical  = stepsLayout === "vertical";
+  const stepCols    = isVertical ? 1
+    : stepsLayout === "auto" ? Math.min(steps.length, 3)
+    : Math.max(2, Math.min(5, parseInt(stepsLayout, 10) || 3));
 
   const isDark    = colorScheme === "dark";
   const isWhite   = colorScheme === "white";
@@ -92,7 +101,7 @@ export default function HowItWorksSection({ sectionConfig }) {
         {cardStyle === "liquid-glass" ? (
           <div style={{
             display: "grid",
-            gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,
+            gridTemplateColumns: `repeat(${stepCols}, 1fr)`,
             gap: "clamp(1.5rem, 2.5vw, 2rem)",
           }} className="steps-grid">
             {steps.map(step => (
@@ -118,41 +127,47 @@ export default function HowItWorksSection({ sectionConfig }) {
         ) : ["white", "black", "light-gray", "dark", "light-glass", "clear-glass", "neon", "neon-glass"].includes(cardStyle) ? (
           <div style={{
             display: "grid",
-            gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,
+            gridTemplateColumns: `repeat(${stepCols}, 1fr)`,
             gap: "clamp(1rem, 2vw, 1.5rem)",
           }} className="steps-grid">
             {steps.map(step => (
               <Card key={step.n || step.id} style={step.cardStyle || cardStyle} radius={step.cardRadius || cardRadius} blurAmount={cardBlur} brightness={cardBrightness}>
-                <p style={{
-                  fontFamily: FONT,
-                  fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
-                  fontWeight: 800, letterSpacing: "-0.04em",
-                  color: NEON, lineHeight: 1, margin: "0 0 1.2rem",
-                }}>
-                  {step.n}
-                </p>
-                <h3 style={{
-                  fontFamily: FONT, fontWeight: 800,
-                  fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
-                  letterSpacing: "-0.01em", lineHeight: 1.2,
-                  color: "var(--card-text-color)", margin: "0 0 0.65rem",
-                }}>
-                  {step.title}
-                </h3>
-                <p style={{
-                  fontFamily: FONT, fontSize: "0.95rem",
-                  color: "var(--card-secondary-text)",
-                  lineHeight: 1.65, margin: 0,
-                }}>
-                  {step.body}
-                </p>
+                <div style={isVertical ? { display: "flex", gap: "clamp(1.2rem,2.5vw,2rem)", alignItems: "flex-start" } : undefined}>
+                  <p style={{
+                    fontFamily: FONT,
+                    fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
+                    fontWeight: 800, letterSpacing: "-0.04em",
+                    color: NEON, lineHeight: 1,
+                    margin: isVertical ? 0 : "0 0 1.2rem",
+                    ...(isVertical ? { minWidth: "4.5rem" } : {}),
+                  }}>
+                    {step.n}
+                  </p>
+                  <div>
+                    <h3 style={{
+                      fontFamily: FONT, fontWeight: 800,
+                      fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
+                      letterSpacing: "-0.01em", lineHeight: 1.2,
+                      color: "var(--card-text-color)", margin: "0 0 0.65rem",
+                    }}>
+                      {step.title}
+                    </h3>
+                    <p style={{
+                      fontFamily: FONT, fontSize: "0.95rem",
+                      color: "var(--card-secondary-text)",
+                      lineHeight: 1.65, margin: 0,
+                    }}>
+                      {step.body}
+                    </p>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
         ) : (
           <div style={{
             display: "grid",
-            gridTemplateColumns: `repeat(${Math.min(steps.length, 3)}, 1fr)`,
+            gridTemplateColumns: `repeat(${stepCols}, 1fr)`,
             gap: "1px",
             background: isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.1)",
             border: isDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(0,0,0,0.1)",
@@ -161,30 +176,35 @@ export default function HowItWorksSection({ sectionConfig }) {
               <div key={step.n || step.id} style={{
                 padding: "clamp(1.8rem, 3vw, 2.6rem)",
                 background: isDark ? "rgba(255,255,255,0.02)" : "#fff",
+                ...(isVertical ? { display: "flex", gap: "clamp(1.2rem,2.5vw,2rem)", alignItems: "flex-start" } : {}),
               }}>
                 <p style={{
                   fontFamily: FONT,
                   fontSize: "clamp(2rem, 3.5vw, 3.5rem)",
                   fontWeight: 800, letterSpacing: "-0.04em",
-                  color: NEON, marginBottom: "1.2rem", lineHeight: 1,
+                  color: NEON, lineHeight: 1,
+                  marginBottom: isVertical ? 0 : "1.2rem",
+                  ...(isVertical ? { minWidth: "4.5rem" } : {}),
                 }}>
                   {step.n}
                 </p>
-                <h3 style={{
-                  fontFamily: FONT, fontWeight: 800,
-                  fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
-                  letterSpacing: "-0.01em", lineHeight: 1.2,
-                  color: textColor, marginBottom: "0.65rem",
-                }}>
-                  {step.title}
-                </h3>
-                <p style={{
-                  fontFamily: FONT, fontSize: "0.95rem",
-                  color: isDark ? "rgba(255,255,255,0.6)" : "rgba(10,10,10,0.6)",
-                  lineHeight: 1.65, margin: 0,
-                }}>
-                  {step.body}
-                </p>
+                <div>
+                  <h3 style={{
+                    fontFamily: FONT, fontWeight: 800,
+                    fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
+                    letterSpacing: "-0.01em", lineHeight: 1.2,
+                    color: textColor, marginBottom: "0.65rem",
+                  }}>
+                    {step.title}
+                  </h3>
+                  <p style={{
+                    fontFamily: FONT, fontSize: "0.95rem",
+                    color: isDark ? "rgba(255,255,255,0.6)" : "rgba(10,10,10,0.6)",
+                    lineHeight: 1.65, margin: 0,
+                  }}>
+                    {step.body}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

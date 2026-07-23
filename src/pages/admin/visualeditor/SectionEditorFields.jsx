@@ -163,13 +163,39 @@ export default function SectionEditorFields({ typeId, form, set }) {
       {/* ── Stats Band ── */}
       {typeId === "stats-band" && (
         <>
+          <ColorSchemePicker typeId="stats-band" value={form.colorScheme} onChange={v => set("colorScheme", v)} schemes={["dark","neon","white","light-gray","paper"]} />
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div><label style={labelStyle}>Layout</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.layout || "band"} onChange={e => set("layout", e.target.value)}>
+                <option value="band">Band — flush, dividers</option>
+                <option value="cards">Cards — boxed</option>
+                <option value="minimal">Minimal — open</option>
+              </select>
+            </div>
+            <div><label style={labelStyle}>Alignment</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.align || "left"} onChange={e => set("align", e.target.value)}>
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+              </select>
+            </div>
+            <div><label style={labelStyle}>Number color</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.valueColor || "auto"} onChange={e => set("valueColor", e.target.value)}>
+                <option value="auto">Auto</option>
+                <option value="neon">Neon</option>
+              </select>
+            </div>
+          </div>
           <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.9rem" }}>Leave a label blank to use the built-in translated wording.</p>
           {(form.stats || []).map((s, i) => (
-            <div key={i} style={{ ...fieldGroup, display: "grid", gridTemplateColumns: "1fr 2fr", gap: 8 }}>
+            <div key={i} style={{ ...fieldGroup, display: "grid", gridTemplateColumns: "1fr 2fr auto auto auto", gap: 8, alignItems: "end" }}>
               <div><label style={labelStyle}>Value</label><input style={inputStyle} value={s.value || ""} onChange={e => { const next=[...(form.stats||[])]; next[i]={...next[i],value:e.target.value}; set("stats",next); }} /></div>
               <div><label style={labelStyle}>Label</label><input style={inputStyle} value={s.label || ""} onChange={e => { const next=[...(form.stats||[])]; next[i]={...next[i],label:e.target.value}; set("stats",next); }} placeholder="e.g. in claims traded" /></div>
+              <button type="button" aria-label="Move up" disabled={i === 0} onClick={() => { const next=[...(form.stats||[])]; [next[i-1],next[i]]=[next[i],next[i-1]]; set("stats",next); }} style={{ ...btnStyle, padding: "0.45rem 0.5rem", opacity: i === 0 ? 0.5 : 1 }}>↑</button>
+              <button type="button" aria-label="Move down" disabled={i === (form.stats||[]).length-1} onClick={() => { const next=[...(form.stats||[])]; [next[i],next[i+1]]=[next[i+1],next[i]]; set("stats",next); }} style={{ ...btnStyle, padding: "0.45rem 0.5rem", opacity: i === (form.stats||[]).length-1 ? 0.5 : 1 }}>↓</button>
+              <button type="button" aria-label="Remove" onClick={() => set("stats", (form.stats||[]).filter((_, idx) => idx !== i))} style={{ ...btnStyle, padding: "0.45rem 0.5rem" }}>✕</button>
             </div>
           ))}
+          <button type="button" onClick={() => set("stats", [...(form.stats||[]), { value: "", label: "" }])} style={{ ...btnStyle, fontSize: "0.72rem", padding: "0.3rem 0.5rem", marginBottom: "0.9rem" }}>+ Add stat</button>
           <div style={fieldGroup}><label style={labelStyle}>Footnote</label><input style={inputStyle} value={form.footnote || ""} onChange={e => set("footnote", e.target.value)} /></div>
         </>
       )}
@@ -525,6 +551,17 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Kicker (right column subtitle)</label><textarea style={{ ...inputStyle, minHeight: 60 }} value={form.kicker || ""} onChange={e => set("kicker", e.target.value)} /></div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Steps layout</label>
+            <select style={selectStyle} value={form.stepsLayout || "auto"} onChange={e => set("stepsLayout", e.target.value)}>
+              <option value="auto">Auto — up to 3 across, extra steps wrap</option>
+              <option value="2">2 across</option>
+              <option value="3">3 across</option>
+              <option value="4">4 across</option>
+              <option value="5">5 across</option>
+              <option value="vertical">Vertical list — number beside the text</option>
+            </select>
+          </div>
           <StepsArrayEditor steps={form.steps || []} onChange={v => set("steps", v)} />
         </>
       )}
