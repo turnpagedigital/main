@@ -1220,6 +1220,40 @@
             },
             "ctaSecondary": null
           }
+        },
+        {
+          "id": "sec-1784768815347-f1cd",
+          "type": "how-it-works",
+          "visible": true,
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "How It Works",
+            "title": "Three steps to close.",
+            "accent": "",
+            "kicker": "",
+            "colorScheme": "dark",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Step one",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "Step two",
+                "body": "Describe this step."
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Step three",
+                "body": "Describe this step."
+              }
+            ],
+            "backgroundImage": "/library/data-center-2.jpg"
+          }
         }
       ]
     },
