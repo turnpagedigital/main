@@ -317,7 +317,7 @@
             },
             "layout": "layout-2-image-left",
             "colorScheme": "white",
-            "imageTone": "paper",
+            "imageTone": "none",
             "imageOverlay": "light",
             "imageOverlayStrength": 10
           }
