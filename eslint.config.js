@@ -73,6 +73,9 @@ export default [
     rules: {
       "no-empty": ["error", { allowEmptyCatch: true }],
       "no-unused-vars": ["error", { varsIgnorePattern: "^_", argsIgnorePattern: "^_", caughtErrors: "none" }],
+      // A missing import in a Pages Function only surfaces as a 1101 crash in
+      // production — catch undefined identifiers at lint time instead.
+      "no-undef": "error",
     },
   },
 

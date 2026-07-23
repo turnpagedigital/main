@@ -6,6 +6,7 @@
  * the same file. */
 
 import { jsonResponse, isAuthed } from "./_utils.js";
+import { sectionsFingerprint } from "../../../src/lib/section-fingerprint.js";
 import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
 const FORMS_PATH = "src/data/forms.json";
