@@ -86,6 +86,29 @@
           ]
         },
         {
+          "id": "step-5",
+          "title": "Your Details",
+          "showIf": {
+            "fieldId": "role",
+            "equals": "Publisher"
+          },
+          "fields": [
+            {
+              "id": "p",
+              "type": "text",
+              "label": "Company Name",
+              "required": true
+            },
+            {
+              "id": "e",
+              "type": "number",
+              "label": "Number of Covered Works",
+              "required": false,
+              "help": "Provide an estimate if unknown"
+            }
+          ]
+        },
+        {
           "id": "author-confirm",
           "title": "Your Offer",
           "showIf": {
@@ -127,29 +150,6 @@
               "prefix": "$",
               "suffix": "",
               "help": "Estimate only — we confirm your final offer after reviewing your claim form."
-            }
-          ]
-        },
-        {
-          "id": "step-5",
-          "title": "Your Details",
-          "showIf": {
-            "fieldId": "role",
-            "equals": "Publisher"
-          },
-          "fields": [
-            {
-              "id": "p",
-              "type": "text",
-              "label": "Company Name",
-              "required": true
-            },
-            {
-              "id": "e",
-              "type": "number",
-              "label": "Number of Covered Works",
-              "required": false,
-              "help": "Provide an estimate if unknown"
             }
           ]
         }
