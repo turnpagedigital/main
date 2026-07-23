@@ -13,9 +13,21 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
      eyebrow, title, accent — header text (accent renders neon/italic)
      body                   — paragraph
      image, imageAlt        — the image
+     imageTone              — "none" (default) | "mono" (black & white)
+                              | "neon" (ink-to-neon duotone) | "paper" (soft
+                              ink-to-paper mono) — on-brand image treatments
+     imageOverlay           — "none" (default) | "dark" | "light" scrim
+     imageOverlayStrength   — scrim opacity 0-100 (default 30)
      cta                    — optional { label, href }
      colorScheme            — "white" (default) | "light-gray" | "dark"
 */
+
+/* Duotone: image goes grayscale, then a brand color multiplies over it —
+   highlights take the color, shadows stay ink. */
+const TONES = {
+  neon:  "#D4FF00",
+  paper: "#E5E7EB",
+};
 
 const SCHEMES = {
   "white":      { bg: "#FFFFFF", title: INK,    body: INK_60,                    eyebrow: INK_60, accentClass: "accent-light", border: LINE },
@@ -36,6 +48,13 @@ export default function ImageTextSection({ sectionConfig }) {
   const body     = c.body     || "";
   const image    = c.image    || "";
   const imageAlt = c.imageAlt || "";
+  const tone     = c.imageTone && c.imageTone !== "none" ? c.imageTone : "";
+  const toneColor = TONES[tone] || "";
+  const overlay  = c.imageOverlay && c.imageOverlay !== "none" ? c.imageOverlay : "";
+  const overlayStrength = (() => {
+    const n = Number(c.imageOverlayStrength);
+    return Math.max(0, Math.min(100, Number.isFinite(n) ? n : 30)) / 100;
+  })();
   const cta      = c.cta && c.cta.label && c.cta.href ? c.cta : null;
 
   const isTop  = layout === "layout-3-image-top";
@@ -83,21 +102,41 @@ export default function ImageTextSection({ sectionConfig }) {
   );
 
   const imageBlock = image ? (
-    <img
-      src={image}
-      alt={imageAlt}
-      loading="lazy"
-      style={{
-        width: "100%",
-        aspectRatio: isTop ? "21 / 9" : "4 / 3",
-        objectFit: "cover",
-        borderRadius: 8,
-        display: "block",
-        boxShadow: colorScheme === "dark"
-          ? "0 14px 34px rgba(0,0,0,0.45)"
-          : "0 10px 28px rgba(10,10,30,0.14)",
-      }}
-    />
+    <div className="imgtext-media" style={{
+      position: "relative",
+      aspectRatio: isTop ? "21 / 9" : "4 / 3",
+      borderRadius: 8,
+      overflow: "hidden",
+      boxShadow: colorScheme === "dark"
+        ? "0 14px 34px rgba(0,0,0,0.45)"
+        : "0 10px 28px rgba(10,10,30,0.14)",
+    }}>
+      <img
+        src={image}
+        alt={imageAlt}
+        loading="lazy"
+        style={{
+          width: "100%", height: "100%",
+          objectFit: "cover",
+          display: "block",
+          ...(tone ? { filter: "grayscale(1) contrast(1.05)" } : {}),
+        }}
+      />
+      {toneColor && (
+        <div aria-hidden="true" style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: toneColor, mixBlendMode: "multiply",
+        }} />
+      )}
+      {overlay && overlayStrength > 0 && (
+        <div aria-hidden="true" style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: overlay === "light"
+            ? `rgba(255,255,255,${overlayStrength})`
+            : `rgba(0,0,0,${overlayStrength})`,
+        }} />
+      )}
+    </div>
   ) : null;
 
   return (
@@ -130,7 +169,7 @@ export default function ImageTextSection({ sectionConfig }) {
       <style>{`
         @media (max-width: 880px) {
           .imgtext-split { grid-template-columns: 1fr !important; }
-          .imgtext-split > img { order: -1; }
+          .imgtext-split > .imgtext-media { order: -1; }
         }
       `}</style>
     </section>
