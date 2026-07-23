@@ -594,6 +594,7 @@
         "accent": "",
         "kicker": "Scenario",
         "showKicker": true,
+        "cardRadius": 14,
         "colorScheme": "paper-2",
         "cards": [
           {
@@ -603,7 +604,8 @@
             "title": "Best case description",
             "note": "Supporting note*",
             "highlight": false,
-            "kicker": ""
+            "kicker": "",
+            "cardStyle": "white"
           },
           {
             "id": "sc-2",
@@ -612,7 +614,8 @@
             "title": "Most likely description",
             "note": "Supporting note*",
             "highlight": true,
-            "kicker": ""
+            "kicker": "",
+            "cardStyle": "dark"
           },
           {
             "id": "sc-3",
@@ -621,7 +624,8 @@
             "title": "Slow case description",
             "note": "Supporting note*",
             "highlight": false,
-            "kicker": ""
+            "kicker": "",
+            "cardStyle": "white"
           }
         ],
         "footnote": "*Small-print footnote and sources go here."
