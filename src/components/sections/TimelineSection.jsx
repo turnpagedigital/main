@@ -10,7 +10,10 @@ import { NEON, NEON_SOFT, FONT, PAPER, PAPER_2, INK, INK_60, INK_40, INK_20 } fr
                                     on light schemes, neon italic on dark)
      steps[]                      — { id, when, heading, body, state, pillLabel, pillStyle }
                                     state: "" | "here" (neon dot) | "done" (filled dot)
-                                    pillStyle: "neon" | "ink"
+                                    pillStyle: "neon" | "ink" | "white" | "light-gray"
+                                    (white reads best on gray/dark schemes,
+                                     light-gray on the white scheme; ink flips
+                                     to a white pill on the dark scheme)
      colorScheme                  — "paper" (default) | "paper-2" | "white" | "light-gray" | "dark"
 */
 
@@ -102,15 +105,21 @@ export default function TimelineSection({ sectionConfig }) {
                   textTransform: "uppercase", color: body,
                 }}>{step.when}</div>
               )}
-              {step.pillLabel && (
-                <div><span style={{
-                  display: "inline-block", fontSize: "0.6rem", fontWeight: 800,
-                  letterSpacing: "0.16em", textTransform: "uppercase",
-                  padding: "0.28rem 0.6rem", borderRadius: 4, marginTop: "0.5rem",
-                  background: step.pillStyle === "ink" ? (s.dark ? "#fff" : INK) : NEON,
-                  color: step.pillStyle === "ink" ? (s.dark ? INK : "#fff") : INK,
-                }}>{step.pillLabel}</span></div>
-              )}
+              {step.pillLabel && (() => {
+                const pill =
+                  step.pillStyle === "ink"        ? (s.dark ? { bg: "#fff", color: INK } : { bg: INK, color: "#fff" })
+                  : step.pillStyle === "white"      ? { bg: "#fff", color: INK }
+                  : step.pillStyle === "light-gray" ? { bg: "#F4F5F7", color: INK }
+                  : { bg: NEON, color: INK };
+                return (
+                  <div><span style={{
+                    display: "inline-block", fontSize: "0.6rem", fontWeight: 800,
+                    letterSpacing: "0.16em", textTransform: "uppercase",
+                    padding: "0.28rem 0.6rem", borderRadius: 4, marginTop: "0.5rem",
+                    background: pill.bg, color: pill.color,
+                  }}>{step.pillLabel}</span></div>
+                );
+              })()}
               {step.heading && (
                 <h3 style={{
                   margin: "0.7rem 0 0", fontSize: "1.06rem", fontWeight: 700,

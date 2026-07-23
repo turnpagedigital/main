@@ -1028,6 +1028,8 @@ function TimelineStepsEditor({ steps, onChange }) {
             <select style={{ ...selectStyle, flex: 1 }} value={s.pillStyle || "neon"} onChange={e => handleChange(i, "pillStyle", e.target.value)}>
               <option value="neon">Neon pill</option>
               <option value="ink">Black pill</option>
+              <option value="white">White pill (for gray/dark backgrounds)</option>
+              <option value="light-gray">Light gray pill (for white background)</option>
             </select>
           </div>
           <button type="button" onClick={() => onChange((steps || []).filter((_, idx) => idx !== i))} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem" }}>Remove</button>
