@@ -50,7 +50,7 @@ const FIELDS = [
 ];
 
 export default function PricingTab({ onDirtyChange }) {
-  const { data, setData, phase, error, dirty, lastSavedAt, save } = useTabData({
+  const { data, setData, phase, error, dirty, lastSavedAt, save, load, conflict } = useTabData({
     endpoint: "/api/admin/pricing",
     parse: (body) => ({
       selfRecovery: num(body.data.selfRecovery),
@@ -99,7 +99,7 @@ export default function PricingTab({ onDirtyChange }) {
         🔒 Login-only — safe to change as often as you like. Saves like other admin content: it goes live with your next deploy.
       </p>
 
-      {error && data && <ErrorBanner message={error} />}
+      {error && data && <ErrorBanner message={error} action={conflict ? { label: "Load latest version", onClick: load } : undefined} />}
 
       {FIELDS.map((f) => (
         <div key={f.key} style={{ marginBottom: "1.2rem" }}>

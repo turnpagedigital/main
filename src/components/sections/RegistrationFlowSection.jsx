@@ -80,6 +80,10 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
   const [extractError, setExtractError] = useState("");
   const [quotes, setQuotes] = useState({});             // fieldId -> /api/quote payload { display, recoveryDisplay, pct }
 
+  // On a neon card, neon-on-neon elements (progress bar, Continue button,
+  // success check) flip to ink so everything stays visible.
+  const onNeonCard = (cardStyle || "card") === "card" && cardColor === "neon";
+
   const visibleSteps = useMemo(
     () => (flow.steps || []).filter(s => stepVisible(s, answers)),
     [flow.steps, answers],
@@ -252,7 +256,8 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
   const successNode = (
     <div role="status" style={{ textAlign: "center", padding: "3rem 1rem" }}>
       <div aria-hidden="true" style={{
-        width: 56, height: 56, borderRadius: 50, background: NEON, color: INK,
+        width: 56, height: 56, borderRadius: 50,
+        background: onNeonCard ? INK : NEON, color: onNeonCard ? NEON : INK,
         fontWeight: 900, fontSize: "1.5rem", display: "flex",
         alignItems: "center", justifyContent: "center", margin: "0 auto 1.2rem",
       }}>✓</div>
@@ -328,7 +333,12 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
           disabled={formState === "submitting" || extracting}
           aria-busy={formState === "submitting" || extracting}
           className="btn-neon"
-          style={{ flex: 1, opacity: (formState === "submitting" || extracting) ? 0.65 : 1, cursor: (formState === "submitting" || extracting) ? "wait" : "pointer" }}
+          style={{
+            flex: 1,
+            opacity: (formState === "submitting" || extracting) ? 0.65 : 1,
+            cursor: (formState === "submitting" || extracting) ? "wait" : "pointer",
+            ...(onNeonCard ? { background: INK, color: NEON } : {}),
+          }}
         >
           {extracting ? "Reading your claim form…" : formState === "submitting" ? "Sending..." : isLast ? (flow.submitLabel || "Submit") : "Continue →"}
         </button>

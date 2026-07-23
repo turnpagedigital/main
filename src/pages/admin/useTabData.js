@@ -37,6 +37,8 @@ export function useTabData({ endpoint, parse, serialize, method = "PUT", onDirty
   const [phase, setPhase]         = useState("loading"); // loading | ready | saving | error
   const [error, setError]         = useState("");
   const [lastSavedAt, setLastSavedAt] = useState(null);
+  const [conflict, setConflict]   = useState(false); // save refused: newer version on server
+  const lastLoadRef = useRef(0);
 
   // Keep the latest callbacks/data without retriggering load/save identity.
   // Synced in an effect (post-render) per react-hooks/refs; save/load only
@@ -74,6 +76,8 @@ export function useTabData({ endpoint, parse, serialize, method = "PUT", onDirty
       setData(fresh);
       setOriginal(JSON.parse(JSON.stringify(fresh)));
       setPhase("ready");
+      setConflict(false);
+      lastLoadRef.current = Date.now();
     } catch (e) { setError(e.message); setPhase("error"); }
   }, [endpoint]);
 
@@ -89,7 +93,10 @@ export function useTabData({ endpoint, parse, serialize, method = "PUT", onDirty
         body: JSON.stringify(serializeRef.current(current)),
       });
       const body = await r.json().catch(() => ({}));
-      if (!r.ok || !body.ok) throw new Error(body.error || "Save failed");
+      if (!r.ok || !body.ok) {
+        if (r.status === 409) setConflict(true); // stale-tab guard refused the save
+        throw new Error(body.error || "Save failed");
+      }
       await load();
       setLastSavedAt(new Date());
     } catch (e) { setError(e.message); setPhase("ready"); }
@@ -97,5 +104,26 @@ export function useTabData({ endpoint, parse, serialize, method = "PUT", onDirty
 
   useEffect(() => { load(); }, [load]);
 
-  return { data, setData, phase, error, dirty, lastSavedAt, load, save };
+  // Auto-resync: when the user returns to the tab with no unsaved edits,
+  // silently refetch so a save from another door (another tab, or a git push)
+  // can't leave this tab stale. Throttled to once per 15s.
+  const dirtyRef = useRef(dirty);
+  const phaseRef = useRef(phase);
+  useEffect(() => { dirtyRef.current = dirty; phaseRef.current = phase; });
+  useEffect(() => {
+    const maybeReload = () => {
+      if (document.visibilityState !== "visible") return;
+      if (dirtyRef.current || phaseRef.current === "saving" || phaseRef.current === "loading") return;
+      if (Date.now() - lastLoadRef.current < 15000) return;
+      load();
+    };
+    window.addEventListener("focus", maybeReload);
+    document.addEventListener("visibilitychange", maybeReload);
+    return () => {
+      window.removeEventListener("focus", maybeReload);
+      document.removeEventListener("visibilitychange", maybeReload);
+    };
+  }, [load]);
+
+  return { data, setData, phase, error, dirty, lastSavedAt, load, save, conflict };
 }

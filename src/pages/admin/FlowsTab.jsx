@@ -91,7 +91,7 @@ function sanitizeFlow(f) {
 }
 
 export default function FlowsTab({ onDirtyChange }) {
-  const { data, setData, phase, error, dirty, lastSavedAt, save } = useTabData({
+  const { data, setData, phase, error, dirty, lastSavedAt, save, load, conflict } = useTabData({
     endpoint: "/api/admin/forms",
     parse: body => ({ flows: (body.data.flows || []).map(sanitizeFlow), _baseVersion: sectionsFingerprint(body.data.flows || []) }),
     serialize: data => ({ flows: data.flows, baseVersion: data._baseVersion }),
@@ -222,7 +222,7 @@ export default function FlowsTab({ onDirtyChange }) {
         </div>
       )}
 
-      {error && data && <ErrorBanner message={error} />}
+      {error && data && <ErrorBanner message={error} action={conflict ? { label: "Load latest version", onClick: load } : undefined} />}
       {flows.length === 0 && !showGen && <CenteredMessage>No flows yet — create one or generate with AI.</CenteredMessage>}
 
       {flows.map((flow, i) => (
