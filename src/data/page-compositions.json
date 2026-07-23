@@ -255,7 +255,7 @@
             "size": "tall",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
-              "label": "Sell My Claim Now",
+              "label": "Sell My Claim",
               "href": "#register"
             },
             "ctaSecondary": {
@@ -357,9 +357,9 @@
           "colorScheme": "white",
           "content": {
             "eyebrow": "",
-            "title": "We pay faster than",
-            "accent": "pirates.",
-            "body": "Anthropic trained its models on pirated works — YOUR WORKS.  We help authors and publishers with rights to payment from the Bartz v. Anthropic class action settlement get compensated faster and easier.",
+            "title": "Anthropic trained its models on",
+            "accent": "your work.",
+            "body": "We help authors and publishers with rights to payment from the Bartz v. Anthropic class action settlement get compensated faster and easier.",
             "image": "/library/scanning-books.jpg",
             "imageAlt": "",
             "cta": {
@@ -368,6 +368,32 @@
             },
             "layout": "layout-2-image-left",
             "colorScheme": "white"
+          }
+        },
+        {
+          "id": "sec-1784779074962-jtdv",
+          "type": "stats-band",
+          "visible": true,
+          "content": {
+            "stats": [
+              {
+                "value": "$1.5B+",
+                "labelKey": "stats.claims_traded",
+                "label": "Settlement fund"
+              },
+              {
+                "value": "$3.1K",
+                "labelKey": "stats.claims_advised",
+                "label": "Payout per work"
+              },
+              {
+                "value": "482K",
+                "labelKey": "stats.institutions",
+                "label": "Covered works"
+              }
+            ],
+            "footnoteKey": "stats.footnote",
+            "footnote": " "
           }
         },
         {
