@@ -282,7 +282,7 @@ export async function onRequestPost(context) {
     // Attio (best-effort, only when configured)
     if (env.ATTIO_API_KEY) {
       try {
-        await pushToAttio(env, { flow, answers, email, fullName, pageKey, attribution, steps });
+        await pushToAttio(env, { flow, answers, email, fullName, pageKey, attribution, steps, offerBreakdown });
       } catch (err) {
         console.error("Attio error:", err.message);
       }
@@ -371,7 +371,12 @@ export async function onRequestPost(context) {
    attioLabel. Uses Attio's standard People object; the label travels in the
    note title + content so it works in any workspace without custom-attribute
    setup. */
-async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attribution, steps }) {
+/* Default owner for auto-created deals: Andrew's Attio workspace membership.
+   Override with the ATTIO_DEAL_OWNER env var (a workspace_member_id) if the
+   owner should ever change without a code deploy. */
+const ATTIO_DEFAULT_DEAL_OWNER = "4802a3c8-c7d8-46fb-9384-b7c4effc8f3c";
+
+async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attribution, steps, offerBreakdown }) {
   const headers = {
     Authorization: `Bearer ${env.ATTIO_API_KEY}`,
     "Content-Type": "application/json",
@@ -423,6 +428,37 @@ async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attri
   });
   if (!noteRes.ok) {
     throw new Error(`note ${noteRes.status}: ${(await noteRes.text()).slice(0, 200)}`);
+  }
+
+  // One Deal per submission, pre-filled for the claim-purchase pipeline:
+  // stage Lead, Asset = class-action claim, Deal type = Buying, the person as
+  // Seller, and (when the flow priced an offer) Face Amount = estimated
+  // recovery, Deal value = our offer, Purchase rate = payout %.
+  const personRef = [{ target_object: "people", target_record_id: recordId }];
+  const dealValues = {
+    name: `${flow.name || flow.id} — ${fullName}`,
+    stage: "Lead",
+    matter_type: "Claim (Class Action)",
+    transaction_type: "Buying",
+    owner: [{
+      referenced_actor_type: "workspace-member",
+      referenced_actor_id: env.ATTIO_DEAL_OWNER || ATTIO_DEFAULT_DEAL_OWNER,
+    }],
+    seller: personRef,
+    associated_people: personRef,
+  };
+  if (offerBreakdown && offerBreakdown.offer > 0) {
+    dealValues.headline_amount = offerBreakdown.recovery; // face = est. recovery
+    dealValues.value = offerBreakdown.offer;              // what we'd pay now
+    dealValues.purchase_rate = offerBreakdown.pct;        // payout %
+  }
+  const dealRes = await fetch("https://api.attio.com/v2/objects/deals/records", {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ data: { values: dealValues } }),
+  });
+  if (!dealRes.ok) {
+    throw new Error(`deal ${dealRes.status}: ${(await dealRes.text()).slice(0, 200)}`);
   }
 }
 
