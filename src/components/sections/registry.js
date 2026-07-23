@@ -27,6 +27,7 @@ import HowItWorksSection    from "./HowItWorksSection.jsx";
 import ImageTextSection     from "./ImageTextSection.jsx";
 import ProcessFlowSection   from "./ProcessFlowSection.jsx";
 import TimelineSection      from "./TimelineSection.jsx";
+import ScenarioCardsSection from "./ScenarioCardsSection.jsx";
 import BulletColumnsSection from "./BulletColumnsSection.jsx";
 import RichTextSection      from "./RichTextSection.jsx";
 import DamagesSection       from "./DamagesSection.jsx";
@@ -56,6 +57,7 @@ export const SECTION_MAP = {
   "image-text":     ImageTextSection,
   "process-flow":   ProcessFlowSection,
   "timeline":       TimelineSection,
+  "scenario-cards": ScenarioCardsSection,
   "bullet-columns": BulletColumnsSection,
   "rich-text":      RichTextSection,
   "damages":        DamagesSection,

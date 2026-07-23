@@ -1,5 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
-import { NEON, FONT, INK, INK_60, LINE, LINE_STRONG } from "../../data/tokens.js";
+import { NEON, FONT, INK, INK_60, LINE, LINE_STRONG, PAPER } from "../../data/tokens.js";
+import { sectionBackground } from "../../lib/section-background.js";
 import formsData from "../../data/forms.json";
 import { getAttribution, trackLead } from "../../lib/analytics.js";
 import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js";
@@ -15,10 +16,15 @@ import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js
  * lead event fires on success when analytics is configured.
  *
  * Layouts (set in Page Builder → registration-flow section):
- *   center  — default; narrow card centered on a gray background
+ *   center  — default; narrow card centered
  *   split   — left column heading + right column form card (wide 2-col layout)
- *   wide    — wider card (880 px) centered on gray background
- *   dark    — dark background; white heading; white form card
+ *   wide    — wider card (880 px) centered
+ *   dark    — legacy alias for colorScheme "dark" on the center layout
+ *
+ * Styling (set in Page Builder → registration-flow section):
+ *   colorScheme     — "paper" (default) | "white" | "light-gray" | "neon" | "dark"
+ *   backgroundImage + imageFilter + imageFilterStrength — optional photo
+ *     background; a "dark" filter switches the outer text to white
  */
 
 const MAX_FILE_BYTES = 8 * 1024 * 1024;
@@ -37,11 +43,15 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
       title={c.title}
       accent={c.accent}
       layout={c.layout || "center"}
+      colorScheme={c.colorScheme}
+      backgroundImage={c.backgroundImage}
+      imageFilter={c.imageFilter}
+      imageFilterStrength={c.imageFilterStrength}
     />
   );
 }
 
-function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
+function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength }) {
   const [answers, setAnswers] = useState({});
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
@@ -298,6 +308,10 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout }) {
       title={title}
       accent={accent}
       layout={layout}
+      colorScheme={colorScheme}
+      backgroundImage={backgroundImage}
+      imageFilter={imageFilter}
+      imageFilterStrength={imageFilterStrength}
       flowIntro={flow.intro}
     >
       {formState === "success" ? successNode : formNode}
@@ -321,11 +335,29 @@ function resolvePath(obj, path) {
    split   — 2-col: left sticky heading, right form card, gray bg
    dark    — narrow card, dark bg, white outer text
    ─────────────────────────────────────────────────────────────────────── */
-function Shell({ eyebrow, title, accent, layout = "center", flowIntro, children }) {
-  const isDark  = layout === "dark";
+const SHELL_SCHEMES = {
+  paper:        { bg: PAPER,     dark: false },
+  white:        { bg: "#fff",    dark: false },
+  "light-gray": { bg: "#F4F5F7", dark: false },
+  neon:         { bg: NEON,      dark: false },
+  dark:         { bg: "#000",    dark: true },
+};
+
+function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, flowIntro, children }) {
+  // layout "dark" predates colorScheme and acts as its alias
+  const scheme  = SHELL_SCHEMES[colorScheme] || (layout === "dark" ? SHELL_SCHEMES.dark : SHELL_SCHEMES.paper);
+  // On a photo background, a darkening filter implies white outer text
+  const isDark  = backgroundImage ? (imageFilter || "dark") === "dark" : scheme.dark;
   const isSplit = layout === "split";
   const isWide  = layout === "wide";
 
+  // Keep the surface-* class for its focus-outline rules; inline bg overrides it
+  const surfaceClass = isDark ? "surface-dark" : "surface-paper";
+  const sectionStyle = {
+    background: backgroundImage
+      ? sectionBackground(backgroundImage, imageFilter, imageFilterStrength)
+      : scheme.bg,
+  };
   const sectionPad = "clamp(3.5rem,7vw,6rem) clamp(1.5rem,5vw,4rem)";
   const cardStyle = {
     background: "#fff",
@@ -365,7 +397,7 @@ function Shell({ eyebrow, title, accent, layout = "center", flowIntro, children 
   /* ── Split layout ─────────────────────────────────────────────── */
   if (isSplit) {
     return (
-      <section className="surface-paper" style={{ padding: sectionPad }}>
+      <section className={surfaceClass} style={{ ...sectionStyle, padding: sectionPad }}>
         <div
           className="reg-split-grid"
           style={{
@@ -381,7 +413,8 @@ function Shell({ eyebrow, title, accent, layout = "center", flowIntro, children 
             {headingBlock}
             {flowIntro && (
               <p style={{
-                fontFamily: FONT, fontSize: "0.95rem", color: INK_60,
+                fontFamily: FONT, fontSize: "0.95rem",
+                color: isDark ? "rgba(255,255,255,0.65)" : INK_60,
                 lineHeight: 1.65, marginTop: "1.2rem",
               }}>
                 {flowIntro}
@@ -401,24 +434,10 @@ function Shell({ eyebrow, title, accent, layout = "center", flowIntro, children 
     );
   }
 
-  /* ── Dark layout ──────────────────────────────────────────────── */
-  if (isDark) {
-    return (
-      <section className="surface-dark" style={{ padding: sectionPad }}>
-        <div className="container" style={{ maxWidth: 660, margin: "0 auto" }}>
-          {headingBlock && (
-            <div style={{ marginBottom: "2rem" }}>{headingBlock}</div>
-          )}
-          <div style={cardStyle}>{children}</div>
-        </div>
-      </section>
-    );
-  }
-
-  /* ── Center (default) + Wide ──────────────────────────────────── */
+  /* ── Center (default) + Wide (+ legacy "dark" = center on dark bg) ── */
   const maxWidth = isWide ? 880 : 660;
   return (
-    <section className="surface-paper" style={{ padding: sectionPad }}>
+    <section className={surfaceClass} style={{ ...sectionStyle, padding: sectionPad }}>
       <div className="container" style={{ maxWidth, margin: "0 auto" }}>
         {headingBlock && (
           <div style={{ marginBottom: "2rem" }}>{headingBlock}</div>

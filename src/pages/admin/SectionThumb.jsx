@@ -781,6 +781,33 @@ function TimelineThumb() {
   );
 }
 
+function ScenarioCardsThumb() {
+  const cards = [
+    { figure: "2026",  dark: false },
+    { figure: "2027",  dark: true },
+    { figure: "2028+", dark: false },
+  ];
+  return (
+    <div style={{ width: W, height: H, background: "#D5D9DF", padding: "44px 60px" }}>
+      <div style={{ width: 90, height: 8, background: NEON, borderRadius: 2, marginBottom: 36 }} />
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        {cards.map((c, i) => (
+          <div key={i} style={{
+            background: c.dark ? "#0A0A0A" : "#fff", borderRadius: 14, padding: "26px 24px",
+            border: `1px solid ${c.dark ? "rgba(255,255,255,0.12)" : "rgba(10,10,10,0.08)"}` }}>
+            {c.dark && <div style={{ display: "inline-block", background: NEON, borderRadius: 4, padding: "4px 10px", fontFamily: FONT, fontSize: 12, fontWeight: 800, color: "#000", textTransform: "uppercase", letterSpacing: "0.14em", marginBottom: 12 }}>Most likely</div>}
+            <div style={{ width: "45%", height: 8, background: c.dark ? "rgba(255,255,255,0.5)" : INK_30, borderRadius: 2, marginBottom: 16 }} />
+            <div style={{ fontFamily: FONT, fontSize: 44, fontWeight: 900, letterSpacing: "-0.02em", color: c.dark ? NEON : INK, marginBottom: 14 }}>{c.figure}</div>
+            {[0, 1, 2].map(j => (
+              <div key={j} style={{ width: `${88 - j * 14}%`, height: 8, background: c.dark ? "#fff" : INK, opacity: c.dark ? 0.65 : 0.5, marginBottom: 8, borderRadius: 2 }} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Fallback ─────────────────────────────────────────────────────────────────
 function DefaultThumb() {
   return (
@@ -817,6 +844,7 @@ const THUMBS = {
   "how-it-works":                    HowItWorksThumb,
   "process-flow":                    ProcessFlowThumb,
   "timeline":                        TimelineThumb,
+  "scenario-cards":                  ScenarioCardsThumb,
   "bullet-columns":                  BulletColumnsThumb,
   "image-text":                          ImageTextRightThumb,
   "image-text/layout-1-image-right":     ImageTextRightThumb,
