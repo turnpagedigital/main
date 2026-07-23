@@ -269,7 +269,7 @@
           "type": "registration-flow",
           "visible": true,
           "layout": "wide",
-          "colorScheme": "light-gray",
+          "colorScheme": "white",
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "BARTZ v. ANTHROPIC",
@@ -277,7 +277,8 @@
             "accent": "today.",
             "layout": "wide",
             "cardRadius": 0,
-            "colorScheme": "light-gray"
+            "colorScheme": "white",
+            "backgroundImage": ""
           }
         },
         {
