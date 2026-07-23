@@ -273,6 +273,34 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Paragraph</label><textarea style={{ ...inputStyle, minHeight: 110 }} value={form.body || ""} onChange={e => set("body", e.target.value)} /></div>
           <ImageField label="Image" value={form.image || ""} onChange={v => set("image", v)} placeholder="/bg-paper.jpg or https://…" />
           <div style={fieldGroup}><label style={labelStyle}>Image alt text</label><input style={inputStyle} value={form.imageAlt || ""} onChange={e => set("imageAlt", e.target.value)} placeholder="Describe the image for accessibility" /></div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div>
+              <label style={labelStyle}>Image treatment</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.imageTone || "none"} onChange={e => set("imageTone", e.target.value)}>
+                <option value="none">Original colors</option>
+                <option value="mono">Black &amp; white</option>
+                <option value="neon">Neon duotone (ink → neon)</option>
+                <option value="paper">Paper mono (ink → paper gray)</option>
+              </select>
+            </div>
+            <div>
+              <label style={labelStyle}>Overlay</label>
+              <select style={{ ...inputStyle, marginTop: 4 }} value={form.imageOverlay || "none"} onChange={e => set("imageOverlay", e.target.value)}>
+                <option value="none">None</option>
+                <option value="dark">Darken</option>
+                <option value="light">Lighten</option>
+              </select>
+            </div>
+          </div>
+          {(form.imageOverlay || "none") !== "none" && (
+            <div style={{ marginBottom: "0.9rem" }}>
+              <label style={labelStyle}>Overlay strength — {hasValue(form.imageOverlayStrength) ? form.imageOverlayStrength : 30}%</label>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <input type="range" min={0} max={100} step={5} value={hasValue(form.imageOverlayStrength) ? form.imageOverlayStrength : 30} style={{ flex: 1, accentColor: NEON }} onChange={e => set("imageOverlayStrength", Number(e.target.value))} />
+                <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("imageOverlayStrength", "")}>Reset</button>
+              </div>
+            </div>
+          )}
           <CTAField label="Button (optional)" value={form.cta} onChange={v => set("cta", v || null)} nullable />
         </>
       )}

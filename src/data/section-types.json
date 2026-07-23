@@ -754,7 +754,10 @@
         "body": "Add a paragraph of supporting text that sits next to the image.",
         "image": "/bg-paper.jpg",
         "imageAlt": "",
-        "cta": null
+        "cta": null,
+        "imageTone": "none",
+        "imageOverlay": "none",
+        "imageOverlayStrength": 30
       }
     },
     {
