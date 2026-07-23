@@ -17,6 +17,7 @@ export default function HeroSection({ sectionConfig }) {
       accentTitle={c.accentTitle || ""}
       subtitle={c.subtitle || ""}
       size={c.size || "tall"}
+      titleSize={c.titleSize || "xl"}
       video={mediaType === "video" ? (c.video || null) : null}
       image={mediaType === "image" ? (c.image || null) : null}
     >

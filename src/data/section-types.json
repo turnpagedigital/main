@@ -46,7 +46,8 @@
           "label": "Get in Touch",
           "href": "/contact"
         },
-        "ctaSecondary": null
+        "ctaSecondary": null,
+        "titleSize": "xl"
       }
     },
     {
