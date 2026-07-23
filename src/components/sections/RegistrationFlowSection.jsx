@@ -256,6 +256,14 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
     </div>
   );
 
+  // The step count is misleading while a branching answer is still unset
+  // (picking Author vs Publisher changes which steps exist), so hide the
+  // progress bar and "Step X of Y" until every branch driver is answered.
+  const stepCountKnown = (flow.steps || [])
+    .map(st => st.showIf && st.showIf.fieldId)
+    .filter(Boolean)
+    .every(fieldId => answers[fieldId]);
+
   const formNode = (
     <>
       {flow.intro && stepIndex === 0 && (
@@ -263,17 +271,21 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
           {flow.intro}
         </p>
       )}
-      <div aria-hidden="true" style={{ display: "flex", gap: 6, marginBottom: "0.7rem" }}>
-        {visibleSteps.map((s, i) => (
-          <div key={s.id} style={{
-            flex: 1, height: 4, borderRadius: 2,
-            background: i <= stepIndex ? NEON : LINE,
-          }} />
-        ))}
-      </div>
-      <p style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: INK_60, marginBottom: "0.5rem" }}>
-        Step {stepIndex + 1} of {visibleSteps.length}
-      </p>
+      {stepCountKnown && (
+        <>
+          <div aria-hidden="true" style={{ display: "flex", gap: 6, marginBottom: "0.7rem" }}>
+            {visibleSteps.map((s, i) => (
+              <div key={s.id} style={{
+                flex: 1, height: 4, borderRadius: 2,
+                background: i <= stepIndex ? NEON : LINE,
+              }} />
+            ))}
+          </div>
+          <p style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: INK_60, marginBottom: "0.5rem" }}>
+            Step {stepIndex + 1} of {visibleSteps.length}
+          </p>
+        </>
+      )}
       <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.35rem", color: INK, marginBottom: "1.4rem", letterSpacing: "-0.01em" }}>
         {step.title}
       </h3>
