@@ -4,7 +4,7 @@
     "name": "Turnpage Digital Markets",
     "defaultTitle": "Turnpage Digital Markets — For Rights Holders Entitled to Compensation",
     "defaultDescription": "Turnpage offers strategic guidance and turn-key liquidity solutions for rights holders entitled to compensation. Our experts have helped customers, creditors and other claimants liquidate over $1 billion in claims across the largest class actions, bankruptcies and complex litigation matters. We partner with leading asset managers to offer competitive rates and frictionless solutions. If we can't fund it ourself, with over 500 financial institutions on speed dial, we save you countless hours identifying the right counterparty to meet your needs.",
-    "twitterHandle": "@andreweglantz"
+    "twitterHandle": ""
   },
   "pages": [
     {
@@ -23,8 +23,8 @@
     },
     {
       "path": "/copyright",
-      "title": "Copyright Claimants — Turnpage Digital",
-      "description": "Capital and advisory for creators and rights holders with claims against generative AI companies",
+      "title": "Sell your Bartz v. Anthropic Settlement Claim - Turnpage Digital",
+      "description": "Capital and advisory for creators and rights holders with claims against generative AI companies, including Anthropic, OpenAI, Meta and others. Authors, Publishers, Artists, Producers, Studios, Music Labels and Catalogue Owners.",
       "og": "ai-copyright",
       "active": true
     },
