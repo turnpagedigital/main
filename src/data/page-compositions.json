@@ -266,6 +266,53 @@
           }
         },
         {
+          "id": "sec-1784779074962-jtdv",
+          "type": "stats-band",
+          "visible": true,
+          "content": {
+            "stats": [
+              {
+                "value": "$1.5B+",
+                "labelKey": "stats.claims_traded",
+                "label": "Settlement fund"
+              },
+              {
+                "value": "$3.1K",
+                "labelKey": "stats.claims_advised",
+                "label": "Payout per work"
+              },
+              {
+                "value": "482K",
+                "labelKey": "stats.institutions",
+                "label": "Covered works"
+              }
+            ],
+            "footnoteKey": "stats.footnote",
+            "footnote": " "
+          }
+        },
+        {
+          "id": "sec-1784774482623-y9al",
+          "type": "image-text",
+          "visible": true,
+          "layout": "layout-2-image-left",
+          "colorScheme": "white",
+          "content": {
+            "eyebrow": "",
+            "title": "Anthropic trained its models on",
+            "accent": "your work.",
+            "body": "We help authors and publishers with rights to payment from the Bartz v. Anthropic class action settlement get compensated faster and easier.",
+            "image": "/library/scanning-books.jpg",
+            "imageAlt": "",
+            "cta": {
+              "label": "Get an Instant Quote",
+              "href": "#register"
+            },
+            "layout": "layout-2-image-left",
+            "colorScheme": "white"
+          }
+        },
+        {
           "id": "sec-aic-payout-timeline",
           "type": "timeline",
           "visible": true,
@@ -347,53 +394,6 @@
             "kicker": "",
             "cardRadius": 0,
             "footnote": "These estimates are based on experience from other class action cases and are not intended to be relied upon exclusively by claim holders. You are encouraged to conduct your own analysis and/or discuss with competent counsel if you have questions about the timeline. "
-          }
-        },
-        {
-          "id": "sec-1784774482623-y9al",
-          "type": "image-text",
-          "visible": true,
-          "layout": "layout-2-image-left",
-          "colorScheme": "white",
-          "content": {
-            "eyebrow": "",
-            "title": "Anthropic trained its models on",
-            "accent": "your work.",
-            "body": "We help authors and publishers with rights to payment from the Bartz v. Anthropic class action settlement get compensated faster and easier.",
-            "image": "/library/scanning-books.jpg",
-            "imageAlt": "",
-            "cta": {
-              "label": "Get an Instant Quote",
-              "href": "#register"
-            },
-            "layout": "layout-2-image-left",
-            "colorScheme": "white"
-          }
-        },
-        {
-          "id": "sec-1784779074962-jtdv",
-          "type": "stats-band",
-          "visible": true,
-          "content": {
-            "stats": [
-              {
-                "value": "$1.5B+",
-                "labelKey": "stats.claims_traded",
-                "label": "Settlement fund"
-              },
-              {
-                "value": "$3.1K",
-                "labelKey": "stats.claims_advised",
-                "label": "Payout per work"
-              },
-              {
-                "value": "482K",
-                "labelKey": "stats.institutions",
-                "label": "Covered works"
-              }
-            ],
-            "footnoteKey": "stats.footnote",
-            "footnote": " "
           }
         },
         {
