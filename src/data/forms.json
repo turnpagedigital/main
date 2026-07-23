@@ -45,7 +45,7 @@
                 "png",
                 "jpg"
               ],
-              "help": "Upload your completed Bartz settlement claim form (PDF or image).  Don't have it handy? Skip this step and enter your details manually.",
+              "help": "Upload your completed Bartz settlement claim form (PDF or image).  Don't have it handy? Click \"Continue\" to enter your details manually.",
               "extract": "bartz-claim",
               "extractMap": {
                 "firstName": "contact.firstName",
