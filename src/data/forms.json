@@ -45,7 +45,7 @@
                 "png",
                 "jpg"
               ],
-              "help": "Upload your completed Bartz settlement claim form (PDF or image). We'll read it and fill in the rest for you — no typing needed.",
+              "help": "Upload your completed Bartz settlement claim form (PDF or image). We'll read it and fill in the rest for you — no typing needed. We take your privacy seriously and protect your data as if it were our ",
               "extract": "bartz-claim",
               "extractMap": {
                 "firstName": "contact.firstName",
