@@ -436,7 +436,7 @@ async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attri
   // recovery, Deal value = our offer, Purchase rate = payout %.
   const personRef = [{ target_object: "people", target_record_id: recordId }];
   const dealValues = {
-    name: `${flow.name || flow.id} | ${fullName}`,
+    name: `${flow.attioProject || flow.name || flow.id} | ${fullName}`,
     stage: "Lead",
     matter_type: "Claim (Class Action)",
     transaction_type: "Buying",
