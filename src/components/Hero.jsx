@@ -90,7 +90,7 @@ export default function Hero({
       }} />
 
       {/* Content */}
-      <div className="container" style={{ position: "relative", zIndex: 10, maxWidth: 920 }}>
+      <div className="container" style={{ position: "relative", zIndex: 10, maxWidth: 1440, width: "100%" }}>
         {eyebrow && (
           <p style={{
             fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
@@ -101,9 +101,9 @@ export default function Hero({
           </p>
         )}
         <h1 className="hero-title-xl" style={{
-          fontFamily: FONT, fontWeight: 900, fontSize: "clamp(1.8rem,4vw,3.2rem)",
-          lineHeight: 1.06, letterSpacing: "-0.02em", color: "#fff",
-          marginBottom: "1.2rem",
+          fontFamily: FONT, fontWeight: 900, fontSize: "clamp(2.6rem, 7vw, 7rem)",
+          lineHeight: 1.02, letterSpacing: "-0.035em", color: "#fff",
+          marginBottom: "1.2rem", maxWidth: 1200,
         }}>
           {title}
           {accentTitle && (
