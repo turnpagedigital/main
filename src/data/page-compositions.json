@@ -262,7 +262,8 @@
               "label": "See How It Works",
               "href": "#how-it-works"
             },
-            "_spacingBottom": "none"
+            "_spacingBottom": "none",
+            "titleSize": "large"
           }
         },
         {

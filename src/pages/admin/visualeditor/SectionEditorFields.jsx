@@ -91,6 +91,7 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <select style={{ ...selectStyle, marginTop: 4 }} value={form.titleSize || "xl"} onChange={e => set("titleSize", e.target.value)}>
                 <option value="xl">XL — home-page scale</option>
                 <option value="large">Large</option>
+                <option value="medium">Medium</option>
                 <option value="standard">Standard</option>
               </select>
             </div>

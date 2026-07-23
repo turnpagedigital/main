@@ -104,6 +104,7 @@ export default function Hero({
         <h1 className="hero-title-xl" style={{
           fontFamily: FONT, fontWeight: 900,
           fontSize: titleSize === "standard" ? "clamp(1.8rem, 4vw, 3.2rem)"
+            : titleSize === "medium" ? "clamp(2rem, 4.75vw, 4rem)"
             : titleSize === "large" ? "clamp(2.2rem, 5.5vw, 4.8rem)"
             : "clamp(2.6rem, 7vw, 7rem)",
           lineHeight: titleSize === "standard" ? 1.06 : 1.02,
