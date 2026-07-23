@@ -146,12 +146,8 @@ export default function ScenarioCardsSection({ sectionConfig }) {
           <p style={{
             fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.22em",
             textTransform: "uppercase", color: s.dark ? NEON : INK,
-            display: "flex", alignItems: "center", gap: "0.6em", margin: 0,
+            margin: 0,
           }}>
-            {!s.dark && <span aria-hidden="true" style={{
-              display: "inline-block", width: "1.6em", height: "0.18em",
-              background: NEON, borderRadius: 2, flexShrink: 0,
-            }} />}
             {eyebrow}
           </p>
         )}

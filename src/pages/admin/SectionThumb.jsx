@@ -755,7 +755,7 @@ function TimelineThumb() {
   ];
   return (
     <div style={{ width: W, height: H, background: PAPER, padding: "40px 60px" }}>
-      <div style={{ width: 90, height: 8, background: NEON, borderRadius: 2, marginBottom: 18 }} />
+      <div style={{ width: 90, height: 8, background: INK_30, borderRadius: 2, marginBottom: 18 }} />
       <h2 style={{ fontFamily: FONT, fontSize: 40, fontWeight: 800, letterSpacing: "-0.02em",
         color: INK, margin: "0 0 44px" }}>
         Five steps to <span style={{ fontStyle: "italic", background: NEON, padding: "0 6px" }}>the payout.</span>
@@ -789,7 +789,7 @@ function ScenarioCardsThumb() {
   ];
   return (
     <div style={{ width: W, height: H, background: "#D5D9DF", padding: "44px 60px" }}>
-      <div style={{ width: 90, height: 8, background: NEON, borderRadius: 2, marginBottom: 36 }} />
+      <div style={{ width: 90, height: 8, background: INK_30, borderRadius: 2, marginBottom: 36 }} />
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
         {cards.map((c, i) => (
           <div key={i} style={{
