@@ -15,7 +15,7 @@
       ]
     },
     {
-      "active": true,
+      "active": false,
       "pill": "Latest",
       "text": "Bartz v. Anthropic Fairness Hearing",
       "linkText": "Read the briefing",
@@ -76,7 +76,7 @@
       "active": true,
       "pill": "Latest",
       "text": "Bartz v. Anthropic Settlement Approved",
-      "linkText": "Read briefing",
+      "linkText": "",
       "href": "/briefings/2026-07-22-the-anthropic-15b-settlement-just-got-the-green-li",
       "pages": [
         "home",
