@@ -96,13 +96,30 @@ export default function SectionEditorFields({ typeId, form, set }) {
         <>
           <ColorSchemePicker typeId="registration-flow" value={form.colorScheme} onChange={v => set("colorScheme", v)} />
           <BackgroundImageFields form={form} set={set} />
-          <div style={{ marginBottom: "0.9rem" }}>
-            <label style={labelStyle}>Card corner radius — {hasValue(form.cardRadius) ? form.cardRadius : 10}px</label>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <input type="range" min={0} max={40} step={1} value={hasValue(form.cardRadius) ? form.cardRadius : 10} style={{ flex: 1, accentColor: NEON }} onChange={e => set("cardRadius", Number(e.target.value))} />
-              <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardRadius", "")}>Reset</button>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Form card</label>
+            <select style={selectStyle} value={form.cardStyle || "card"} onChange={e => set("cardStyle", e.target.value)}>
+              <option value="card">White card</option>
+              <option value="float">No card — form floats on the section background</option>
+            </select>
+          </div>
+          {(form.cardStyle || "card") === "card" && (
+            <div style={{ marginBottom: "0.9rem" }}>
+              <label style={labelStyle}>Card corner radius — {hasValue(form.cardRadius) ? form.cardRadius : 10}px</label>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <input type="range" min={0} max={40} step={1} value={hasValue(form.cardRadius) ? form.cardRadius : 10} style={{ flex: 1, accentColor: NEON }} onChange={e => set("cardRadius", Number(e.target.value))} />
+                <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardRadius", "")}>Reset</button>
+              </div>
+              <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>0 = square corners. Default 10.</p>
             </div>
-            <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>0 = square corners. Default 10.</p>
+          )}
+          <div style={{ marginBottom: "0.9rem" }}>
+            <label style={labelStyle}>Form size — {hasValue(form.formScale) ? form.formScale : 100}%</label>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <input type="range" min={100} max={150} step={5} value={hasValue(form.formScale) ? form.formScale : 100} style={{ flex: 1, accentColor: NEON }} onChange={e => set("formScale", Number(e.target.value))} />
+              <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("formScale", "")}>Reset</button>
+            </div>
+            <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>Scales the whole form up for easier reading. Default 100%.</p>
           </div>
           <div style={fieldGroup}>
             <label style={labelStyle}>Flow</label>
@@ -541,6 +558,28 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Accent (italic, neon highlight)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
           <TimelineStepsEditor steps={form.steps || []} onChange={v => set("steps", v)} />
+          <p style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.03em", textTransform: "uppercase", color: INK_60, margin: "1rem 0 0.5rem" }}>Scenario cards below the timeline (optional)</p>
+          <div style={fieldGroup}>
+            <label style={{ fontSize: "0.74rem", color: INK_60, display: "flex", alignItems: "center", gap: 6 }}>
+              <input type="checkbox" checked={form.showKicker !== false} onChange={e => set("showKicker", e.target.checked)} style={{ accentColor: NEON }} />
+              Show card kickers (the small label at the top of each card)
+            </label>
+          </div>
+          {form.showKicker !== false && (
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Default kicker</label>
+              <input style={inputStyle} value={form.kicker ?? "Scenario"} onChange={e => set("kicker", e.target.value)} />
+            </div>
+          )}
+          <div style={{ marginBottom: "0.9rem" }}>
+            <label style={labelStyle}>Card corner radius — {hasValue(form.cardRadius) ? form.cardRadius : 14}px</label>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <input type="range" min={0} max={40} step={1} value={hasValue(form.cardRadius) ? form.cardRadius : 14} style={{ flex: 1, accentColor: NEON }} onChange={e => set("cardRadius", Number(e.target.value))} />
+              <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardRadius", "")}>Reset</button>
+            </div>
+          </div>
+          <ScenarioCardsEditor cards={form.cards || []} onChange={v => set("cards", v)} />
+          <div style={fieldGroup}><label style={labelStyle}>Footnote (small print under the cards)</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.footnote || ""} onChange={e => set("footnote", e.target.value)} /></div>
         </>
       )}
 

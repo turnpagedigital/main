@@ -29,6 +29,97 @@ const SCHEMES = {
   dark:         { bg: "#0A0A0A", dark: true },
 };
 
+/* Shared renderer for the cards grid + footnote — also used by the timeline
+   section when its content includes cards, so one section can carry the full
+   header → timeline → scenarios → footnote flow. */
+export function ScenarioCardsGrid({ cards, kicker = "Scenario", showKicker = true, cardRadius = 14, footnote = "", darkSection = false }) {
+  const radius = Number.isFinite(Number(cardRadius)) && cardRadius !== "" && cardRadius !== null
+    ? Math.max(0, Math.min(40, Number(cardRadius)))
+    : 14;
+  return (
+    <>
+      <div className="sccards-grid" style={{
+        display: "grid",
+        gridTemplateColumns: `repeat(${Math.max(cards.length, 1)}, 1fr)`,
+        gap: "clamp(1rem, 2vw, 1.5rem)",
+      }}>
+        {cards.map((card, i) => {
+          const style = card.cardStyle || (card.highlight ? "dark" : "white");
+          const featured = style === "dark";
+          const cardBg = featured ? DARK_CARD : style === "light-gray" ? "#F4F5F7" : SURFACE;
+          const cardKicker = showKicker ? (card.kicker || kicker) : "";
+          return (
+            <div key={card.id || i} style={{
+              background: cardBg,
+              color: featured ? "#fff" : INK,
+              border: `1px solid ${featured ? DARK_BORDER : LINE}`,
+              borderRadius: radius, padding: "1.9rem 1.7rem",
+              display: "flex", flexDirection: "column",
+              position: "relative", overflow: "hidden",
+            }}>
+              {featured && (
+                <span aria-hidden="true" style={{
+                  position: "absolute", inset: 0, pointerEvents: "none",
+                  background: "radial-gradient(120% 70% at 0% 0%, rgba(212,255,0,0.10), transparent 50%)",
+                }} />
+              )}
+              {card.tag && (
+                <span style={{
+                  position: "relative", alignSelf: "flex-start",
+                  fontSize: "0.66rem", fontWeight: 800, letterSpacing: "0.18em",
+                  textTransform: "uppercase", padding: "0.25rem 0.6rem",
+                  borderRadius: 4, marginBottom: "0.9rem",
+                  background: NEON, color: "#000",
+                }}>{card.tag}</span>
+              )}
+              {cardKicker && (
+                <div style={{
+                  position: "relative", fontSize: "0.66rem", fontWeight: 800,
+                  letterSpacing: "0.18em", textTransform: "uppercase",
+                  color: featured ? "rgba(255,255,255,0.5)" : INK_40,
+                }}>{cardKicker}</div>
+              )}
+              {card.figure && (
+                <div style={{
+                  position: "relative", marginTop: "1.1rem", fontWeight: 900,
+                  fontSize: "clamp(2rem, 3.6vw, 2.9rem)", lineHeight: 1,
+                  letterSpacing: "-0.02em", color: featured ? NEON : INK,
+                }}>{card.figure}</div>
+              )}
+              {card.title && (
+                <div style={{
+                  position: "relative", marginTop: "0.9rem", fontSize: "0.98rem",
+                  fontWeight: 600, lineHeight: 1.5,
+                  color: featured ? "rgba(255,255,255,0.92)" : INK,
+                }}>{card.title}</div>
+              )}
+              {card.note && (
+                <div style={{
+                  position: "relative", marginTop: "0.6rem", fontSize: "0.82rem",
+                  lineHeight: 1.5, color: featured ? "rgba(255,255,255,0.6)" : INK_60,
+                }}>{card.note}</div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+      {footnote && (
+        <p style={{
+          marginTop: "2rem", fontSize: "0.76rem", lineHeight: 1.6,
+          color: darkSection ? "rgba(255,255,255,0.45)" : INK_40, maxWidth: 860,
+        }}>
+          {footnote}
+        </p>
+      )}
+      <style>{`
+        @media (max-width: 980px) {
+          .sccards-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </>
+  );
+}
+
 export default function ScenarioCardsSection({ sectionConfig }) {
   const c = (sectionConfig && sectionConfig.content) || {};
   const eyebrow  = c.eyebrow || "";
@@ -82,88 +173,17 @@ export default function ScenarioCardsSection({ sectionConfig }) {
           </h2>
         )}
 
-        <div className="sccards-grid" style={{
-          display: "grid",
-          gridTemplateColumns: `repeat(${Math.max(cards.length, 1)}, 1fr)`,
-          gap: "clamp(1rem, 2vw, 1.5rem)",
-          marginTop: (eyebrow || title) ? "clamp(2rem, 4vw, 3rem)" : 0,
-        }}>
-          {cards.map((card, i) => {
-            const style = card.cardStyle || (card.highlight ? "dark" : "white");
-            const featured = style === "dark";
-            const cardBg = featured ? DARK_CARD : style === "light-gray" ? "#F4F5F7" : SURFACE;
-            const cardKicker = showKicker ? (card.kicker || kicker) : "";
-            return (
-              <div key={card.id || i} style={{
-                background: cardBg,
-                color: featured ? "#fff" : INK,
-                border: `1px solid ${featured ? DARK_BORDER : LINE}`,
-                borderRadius: cardRadius, padding: "1.9rem 1.7rem",
-                display: "flex", flexDirection: "column",
-                position: "relative", overflow: "hidden",
-              }}>
-                {featured && (
-                  <span aria-hidden="true" style={{
-                    position: "absolute", inset: 0, pointerEvents: "none",
-                    background: "radial-gradient(120% 70% at 0% 0%, rgba(212,255,0,0.10), transparent 50%)",
-                  }} />
-                )}
-                {card.tag && (
-                  <span style={{
-                    position: "relative", alignSelf: "flex-start",
-                    fontSize: "0.66rem", fontWeight: 800, letterSpacing: "0.18em",
-                    textTransform: "uppercase", padding: "0.25rem 0.6rem",
-                    borderRadius: 4, marginBottom: "0.9rem",
-                    background: NEON, color: "#000",
-                  }}>{card.tag}</span>
-                )}
-                {cardKicker && (
-                  <div style={{
-                    position: "relative", fontSize: "0.66rem", fontWeight: 800,
-                    letterSpacing: "0.18em", textTransform: "uppercase",
-                    color: featured ? "rgba(255,255,255,0.5)" : INK_40,
-                  }}>{cardKicker}</div>
-                )}
-                {card.figure && (
-                  <div style={{
-                    position: "relative", marginTop: "1.1rem", fontWeight: 900,
-                    fontSize: "clamp(2rem, 3.6vw, 2.9rem)", lineHeight: 1,
-                    letterSpacing: "-0.02em", color: featured ? NEON : INK,
-                  }}>{card.figure}</div>
-                )}
-                {card.title && (
-                  <div style={{
-                    position: "relative", marginTop: "0.9rem", fontSize: "0.98rem",
-                    fontWeight: 600, lineHeight: 1.5,
-                    color: featured ? "rgba(255,255,255,0.92)" : INK,
-                  }}>{card.title}</div>
-                )}
-                {card.note && (
-                  <div style={{
-                    position: "relative", marginTop: "0.6rem", fontSize: "0.82rem",
-                    lineHeight: 1.5, color: featured ? "rgba(255,255,255,0.6)" : INK_60,
-                  }}>{card.note}</div>
-                )}
-              </div>
-            );
-          })}
+        <div style={{ marginTop: (eyebrow || title) ? "clamp(2rem, 4vw, 3rem)" : 0 }}>
+          <ScenarioCardsGrid
+            cards={cards}
+            kicker={kicker}
+            showKicker={showKicker}
+            cardRadius={cardRadius}
+            footnote={footnote}
+            darkSection={s.dark}
+          />
         </div>
-
-        {footnote && (
-          <p style={{
-            marginTop: "2rem", fontSize: "0.76rem", lineHeight: 1.6,
-            color: s.dark ? "rgba(255,255,255,0.45)" : INK_40, maxWidth: 860,
-          }}>
-            {footnote}
-          </p>
-        )}
       </div>
-
-      <style>{`
-        @media (max-width: 980px) {
-          .sccards-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

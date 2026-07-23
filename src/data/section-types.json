@@ -806,7 +806,9 @@
         "title": "Start your registration",
         "accent": "",
         "colorScheme": "paper",
-        "cardRadius": 10
+        "cardRadius": 10,
+        "cardStyle": "card",
+        "formScale": 100
       },
       "supportedColorSchemes": [
         "paper",
