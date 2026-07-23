@@ -276,7 +276,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
           <div aria-hidden="true" style={{ display: "flex", gap: 6, marginBottom: "0.7rem" }}>
             {visibleSteps.map((s, i) => (
               <div key={s.id} style={{
-                flex: 1, height: 4, borderRadius: 2,
+                flex: 1, height: 4,
                 background: i <= stepIndex ? NEON : LINE,
               }} />
             ))}
@@ -517,7 +517,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
         <div style={{
           background: revealed ? INK : "#F4F5F0",
           border: `1px solid ${revealed ? INK : LINE}`,
-          borderRadius: 10, padding: "1.2rem 1.4rem",
+          padding: "1.2rem 1.4rem",
         }}>
           <p style={{
             fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
@@ -560,7 +560,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
                 onClick={() => onChange(opt)}
                 style={{
                   fontFamily: FONT, fontSize: "0.88rem", fontWeight: 600,
-                  padding: "0.6rem 1.05rem", borderRadius: 6, cursor: "pointer",
+                  padding: "0.6rem 1.05rem", cursor: "pointer",
                   border: `1px solid ${selected ? INK : LINE_STRONG}`,
                   background: selected ? INK : "#fff",
                   color: selected ? NEON : INK,
@@ -645,7 +645,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
             Upload your claim form above and we'll list your works here.
           </p>
         ) : (
-          <ul style={{ listStyle: "none", margin: 0, padding: 0, border: `1px solid ${LINE}`, borderRadius: 8, overflow: "hidden" }}>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, border: `1px solid ${LINE}`, overflow: "hidden" }}>
             {works.map((w, i) => {
               const m = catMeta[w.category] || catMeta.excluded;
               return (
@@ -653,7 +653,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
                   <span style={{ fontFamily: FONT, fontSize: "0.88rem", color: INK, fontWeight: 600, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                     {w.title || "Untitled work"}
                   </span>
-                  <span style={{ flexShrink: 0, fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, color: m.color, background: m.bg, padding: "0.2rem 0.55rem", borderRadius: 20 }}>
+                  <span style={{ flexShrink: 0, fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, color: m.color, background: m.bg, padding: "0.2rem 0.55rem" }}>
                     {m.label}
                   </span>
                 </li>
