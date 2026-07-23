@@ -188,6 +188,7 @@ function normalizeFlow(f) {
     name: String(f.name).trim().slice(0, SHORT),
     active: Boolean(f.active ?? true),
     attioLabel: String(f.attioLabel || "").trim().slice(0, SHORT),
+    attioProject: String(f.attioProject || "").trim().slice(0, SHORT),
     intro: String(f.intro || "").trim().slice(0, LONG),
     submitLabel: String(f.submitLabel || "Submit").trim().slice(0, SHORT),
     successTitle: String(f.successTitle || "Thanks — you're registered.").trim().slice(0, SHORT),

@@ -43,7 +43,7 @@ function blankStep(n) {
 }
 function blankFlow() {
   return {
-    id: "", name: "", active: false, attioLabel: "", intro: "",
+    id: "", name: "", active: false, attioLabel: "", attioProject: "", intro: "",
     submitLabel: "Submit registration",
     successTitle: "Thanks — you're registered.",
     successBody: "We'll be in touch within 48 hours.",
@@ -54,7 +54,7 @@ function blankFlow() {
 function sanitizeFlow(f) {
   return {
     id: f.id || "", name: f.name || "", active: f.active !== false,
-    attioLabel: f.attioLabel || "", intro: f.intro || "",
+    attioLabel: f.attioLabel || "", attioProject: f.attioProject || "", intro: f.intro || "",
     submitLabel: f.submitLabel || "Submit",
     successTitle: f.successTitle || "", successBody: f.successBody || "",
     steps: Array.isArray(f.steps) ? f.steps.map(s => ({
@@ -286,7 +286,7 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
 
       {open && (
         <div style={{ padding: "0 1rem 1rem", borderTop: `1px solid ${LINE}` }}>
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 10, marginTop: "0.9rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 10, marginTop: "0.9rem" }}>
             <div style={group}>
               <label style={label}>Flow name</label>
               <input style={inputStyle} value={flow.name}
@@ -300,6 +300,11 @@ function FlowCard({ flow, open, onToggle, onChange, onRemove }) {
               <label style={label}>Attio / source label</label>
               <input style={inputStyle} value={flow.attioLabel} placeholder="e.g. bartz-landing"
                 onChange={e => onChange({ attioLabel: e.target.value })} />
+            </div>
+            <div style={group}>
+              <label style={label}>Attio project (deal prefix)</label>
+              <input style={inputStyle} value={flow.attioProject || ""} placeholder="e.g. Bartz"
+                onChange={e => onChange({ attioProject: e.target.value })} />
             </div>
           </div>
 
