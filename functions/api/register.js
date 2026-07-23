@@ -430,6 +430,29 @@ async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attri
     throw new Error(`note ${noteRes.status}: ${(await noteRes.text()).slice(0, 200)}`);
   }
 
+  // Resolve the flow's Attio project (e.g. "Bartz") to a record in the
+  // custom Projects object so the deal's Project field links automatically.
+  // Best-effort: an unmatched name just leaves Project unset.
+  let projectRef = null;
+  if (flow.attioProject) {
+    try {
+      const q = await fetch("https://api.attio.com/v2/objects/project/records/query", {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ filter: { project_name: flow.attioProject }, limit: 1 }),
+      });
+      if (q.ok) {
+        const qb = await q.json();
+        const rid = qb?.data?.[0]?.id?.record_id;
+        if (rid) projectRef = [{ target_object: "project", target_record_id: rid }];
+      } else {
+        console.error("Attio project lookup:", q.status, (await q.text()).slice(0, 150));
+      }
+    } catch (err) {
+      console.error("Attio project lookup error:", err.message);
+    }
+  }
+
   // One Deal per submission, pre-filled for the claim-purchase pipeline:
   // stage Lead, Asset = class-action claim, Deal type = Buying, the person as
   // Seller, and (when the flow priced an offer) Face Amount = estimated
@@ -446,6 +469,7 @@ async function pushToAttio(env, { flow, answers, email, fullName, pageKey, attri
     }],
     seller: personRef,
     associated_people: personRef,
+    ...(projectRef ? { project: projectRef } : {}),
   };
   if (offerBreakdown && offerBreakdown.offer > 0) {
     dealValues.headline_amount = offerBreakdown.recovery; // face = est. recovery
