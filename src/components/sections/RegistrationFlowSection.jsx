@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
-import { NEON, FONT, INK, INK_60, LINE, LINE_STRONG, PAPER } from "../../data/tokens.js";
+import { NEON, FONT, INK, INK_40, INK_60, LINE, LINE_STRONG, PAPER, SURFACE, DARK, TEXT, SECONDARY_BG, MUTED, ERROR, SUCCESS, SUCCESS_BG, WARNING, WARNING_BG } from "../../data/tokens.js";
 import { sectionBackground } from "../../lib/section-background.js";
 import formsData from "../../data/forms.json";
 import { getAttribution, trackLead } from "../../lib/analytics.js";
@@ -266,7 +266,9 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
 
   const formNode = (
     <>
-      {flow.intro && stepIndex === 0 && (
+      {/* Split layout already shows the intro under the left-column heading —
+          don't repeat it inside the form card. */}
+      {flow.intro && stepIndex === 0 && layout !== "split" && (
         <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60, marginBottom: "1.6rem", lineHeight: 1.6 }}>
           {flow.intro}
         </p>
@@ -298,7 +300,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
         ))}
       </div>
       {(stepError || formState === "error") && (
-        <p role="alert" style={{ fontFamily: FONT, fontSize: "0.9rem", color: "#C03030", marginBottom: "0.9rem" }}>
+        <p role="alert" style={{ fontFamily: FONT, fontSize: "0.9rem", color: ERROR, marginBottom: "0.9rem" }}>
           {stepError || errorMsg}
         </p>
       )}
@@ -360,10 +362,10 @@ function resolvePath(obj, path) {
    ─────────────────────────────────────────────────────────────────────── */
 const SHELL_SCHEMES = {
   paper:        { bg: PAPER,     dark: false },
-  white:        { bg: "#fff",    dark: false },
-  "light-gray": { bg: "#F4F5F7", dark: false },
+  white:        { bg: SURFACE,      dark: false },
+  "light-gray": { bg: SECONDARY_BG, dark: false },
   neon:         { bg: NEON,      dark: false },
-  dark:         { bg: "#000",    dark: true },
+  dark:         { bg: DARK,         dark: true },
 };
 
 function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, formScale, flowIntro, children }) {
@@ -392,7 +394,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
   const cardStyle = floating
     ? { ...(scale !== 100 ? { zoom: scale / 100 } : {}) }
     : {
-        background: "#fff",
+        background: SURFACE,
         border: `1px solid ${LINE}`,
         borderRadius: radius,
         padding: "clamp(1.5rem,3.5vw,2.5rem)",
@@ -405,7 +407,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
         <p style={{
           fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700,
           letterSpacing: "0.2em", textTransform: "uppercase",
-          color: isDark ? "rgba(255,255,255,0.55)" : INK_60,
+          color: isDark ? MUTED : INK_60,
           marginBottom: "0.7rem",
         }}>
           {eyebrow}
@@ -415,7 +417,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
         <h2 style={{
           fontFamily: FONT, fontWeight: 900,
           fontSize: isSplit ? "clamp(2rem,4vw,3.2rem)" : "clamp(1.7rem,3.5vw,2.6rem)",
-          color: isDark ? "#fff" : INK,
+          color: isDark ? TEXT : INK,
           lineHeight: 1.08, letterSpacing: "-0.02em",
         }}>
           {title}{" "}
@@ -447,7 +449,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
             {flowIntro && (
               <p style={{
                 fontFamily: FONT, fontSize: "0.95rem",
-                color: isDark ? "rgba(255,255,255,0.65)" : INK_60,
+                color: isDark ? MUTED : INK_60,
                 lineHeight: 1.65, marginTop: "1.2rem",
               }}>
                 {flowIntro}
@@ -515,14 +517,14 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
     return (
       <div style={wrap}>
         <div style={{
-          background: revealed ? INK : "#F4F5F0",
+          background: revealed ? INK : SECONDARY_BG,
           border: `1px solid ${revealed ? INK : LINE}`,
           padding: "1.2rem 1.4rem",
         }}>
           <p style={{
             fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700,
             letterSpacing: "0.14em", textTransform: "uppercase",
-            color: revealed ? "rgba(255,255,255,0.6)" : INK_60, margin: 0,
+            color: revealed ? MUTED : INK_60, margin: 0,
           }}>
             {field.label}
           </p>
@@ -532,7 +534,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
                 {priceStr}
               </p>
               {field.help && (
-                <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: "rgba(255,255,255,0.65)", margin: "0.55rem 0 0", lineHeight: 1.5 }}>
+                <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: MUTED, margin: "0.55rem 0 0", lineHeight: 1.5 }}>
                   {field.help}
                 </p>
               )}
@@ -562,7 +564,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
                   fontFamily: FONT, fontSize: "0.88rem", fontWeight: 600,
                   padding: "0.6rem 1.05rem", cursor: "pointer",
                   border: `1px solid ${selected ? INK : LINE_STRONG}`,
-                  background: selected ? INK : "#fff",
+                  background: selected ? INK : SURFACE,
                   color: selected ? NEON : INK,
                   transition: "all 0.15s",
                 }}>
@@ -584,7 +586,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
           style={{ appearance: "none", cursor: "pointer", paddingRight: "2.4rem" }}>
           <option value="" disabled>Select…</option>
           {(field.options || []).map(opt => (
-            <option key={opt} value={opt} style={{ background: "#fff", color: INK }}>{opt}</option>
+            <option key={opt} value={opt} style={{ background: SURFACE, color: INK }}>{opt}</option>
           ))}
         </select>
       </div>
@@ -596,6 +598,23 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
       <div style={wrap}>
         {label}
         {field.help && <p style={{ fontFamily: FONT, fontSize: "0.78rem", color: INK_60, margin: "0.25rem 0 0.45rem" }}>{field.help}</p>}
+        {field.moreInfo && field.moreInfo.body && (
+          <details style={{ margin: "0.15rem 0 0.55rem" }}>
+            <summary style={{
+              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700, color: INK,
+              cursor: "pointer", textDecoration: "underline", textDecorationColor: NEON,
+              textDecorationThickness: 2, textUnderlineOffset: 3,
+            }}>
+              {field.moreInfo.label || "More info"}
+            </summary>
+            <p style={{
+              fontFamily: FONT, fontSize: "0.8rem", color: INK_60, lineHeight: 1.6,
+              margin: "0.45rem 0 0", padding: "0.7rem 0.9rem", background: SECONDARY_BG,
+            }}>
+              {field.moreInfo.body}
+            </p>
+          </details>
+        )}
         <input id={id} type="file"
           accept={(field.accept || ["pdf", "png", "jpg"]).map(a => "." + a).join(",")}
           onChange={e => onFile(e.target.files && e.target.files[0])}
@@ -605,7 +624,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
           <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: INK_60, marginTop: "0.3rem" }}>
             Attached: {file.name}{" "}
             <button type="button" onClick={() => onFile(null)}
-              style={{ background: "none", border: "none", color: "#C03030", cursor: "pointer", fontFamily: FONT, fontSize: "0.8rem", textDecoration: "underline", padding: 0 }}>
+              style={{ background: "none", border: "none", color: ERROR, cursor: "pointer", fontFamily: FONT, fontSize: "0.8rem", textDecoration: "underline", padding: 0 }}>
               remove
             </button>
           </p>
@@ -616,12 +635,12 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
           </p>
         )}
         {field.extract && !extracting && extraction && (
-          <p role="status" style={{ fontFamily: FONT, fontSize: "0.85rem", color: "#2D8E47", marginTop: "0.5rem", fontWeight: 600 }}>
+          <p role="status" style={{ fontFamily: FONT, fontSize: "0.85rem", color: SUCCESS, marginTop: "0.5rem", fontWeight: 600 }}>
             ✓ Read {extraction.counts?.total || 0} work{(extraction.counts?.total || 0) === 1 ? "" : "s"} from your claim form.
           </p>
         )}
         {field.extract && !extracting && extractError && (
-          <p role="alert" style={{ fontFamily: FONT, fontSize: "0.85rem", color: "#C03030", marginTop: "0.5rem" }}>
+          <p role="alert" style={{ fontFamily: FONT, fontSize: "0.85rem", color: ERROR, marginTop: "0.5rem" }}>
             {extractError}
           </p>
         )}
@@ -632,9 +651,9 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
   if (field.type === "works-summary") {
     const works = (extraction && Array.isArray(extraction.works)) ? extraction.works : [];
     const catMeta = {
-      self:      { label: "Self-published — full rate", color: "#2D8E47", bg: "#E7F7E2" },
-      publisher: { label: "With a publisher — half rate", color: "#8A6D00", bg: "#FBF3D0" },
-      excluded:  { label: "Multi-author — not purchased", color: "#8A8A8A", bg: "#F0F0F0" },
+      self:      { label: "Self-published — full rate", color: SUCCESS, bg: SUCCESS_BG },
+      publisher: { label: "With a publisher — half rate", color: WARNING, bg: WARNING_BG },
+      excluded:  { label: "Multi-author — not purchased", color: INK_40, bg: SECONDARY_BG },
     };
     return (
       <div style={wrap}>

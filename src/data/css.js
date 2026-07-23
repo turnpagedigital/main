@@ -617,6 +617,17 @@ button:focus-visible, a:focus-visible {
   background: #FFFEF5;
   box-shadow: 3px 3px 0 0 rgba(212,255,0,0.5);
 }
+/* File inputs render as a native button + filename — no box around them */
+.field-light input[type="file"] {
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0;
+}
+.field-light input[type="file"]:focus {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
 .field-light label {
   display: block;
   font-family: ${FONT}; font-size: 0.74rem; font-weight: 700;
