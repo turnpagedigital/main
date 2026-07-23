@@ -266,33 +266,33 @@
           }
         },
         {
-          "id": "sec-1781587444053-lcuz",
-          "type": "registration-flow",
+          "id": "sec-1784774482623-y9al",
+          "type": "image-text",
           "visible": true,
-          "layout": "split",
-          "colorScheme": "light-gray",
+          "layout": "layout-2-image-left",
+          "colorScheme": "white",
           "content": {
-            "flowId": "bartz-registration",
             "eyebrow": "",
-            "title": "Register your ",
-            "accent": "claim details.",
-            "layout": "split",
-            "cardRadius": 0,
-            "colorScheme": "light-gray",
-            "backgroundImage": "",
-            "_bookmark": "register"
+            "title": "Headline goes here.",
+            "accent": "",
+            "body": "Add a paragraph of supporting text that sits next to the image.",
+            "image": "/bg-paper.jpg",
+            "imageAlt": "",
+            "cta": null,
+            "layout": "layout-2-image-left",
+            "colorScheme": "white"
           }
         },
         {
           "id": "sec-aic-payout-timeline",
           "type": "timeline",
           "visible": true,
-          "colorScheme": "paper",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "The road to distribution",
             "title": "Five steps between the order",
             "accent": "and your check.",
-            "colorScheme": "paper",
+            "colorScheme": "light-gray",
             "steps": [
               {
                 "id": "tl-1",
@@ -436,6 +436,24 @@
           }
         },
         {
+          "id": "sec-1781587444053-lcuz",
+          "type": "registration-flow",
+          "visible": true,
+          "layout": "split",
+          "colorScheme": "light-gray",
+          "content": {
+            "flowId": "bartz-registration",
+            "eyebrow": "",
+            "title": "Register your ",
+            "accent": "claim details.",
+            "layout": "split",
+            "cardRadius": 0,
+            "colorScheme": "light-gray",
+            "backgroundImage": "",
+            "_bookmark": "register"
+          }
+        },
+        {
           "id": "sec-1780975716723-79i5",
           "type": "how-it-works",
           "visible": false,
@@ -471,6 +489,52 @@
             "_bookmark": "how-we-help",
             "backgroundImage": "/library/data-center-2.jpg",
             "imageFilterStrength": 30
+          }
+        },
+        {
+          "id": "sec-aic-experience",
+          "type": "experience",
+          "visible": true,
+          "content": {
+            "_bookmark": "experience"
+          }
+        },
+        {
+          "id": "sec-aic-damages",
+          "type": "damages",
+          "visible": false,
+          "content": {
+            "_spacingTop": "small"
+          }
+        },
+        {
+          "id": "sec-1780698362997-64wf",
+          "type": "our-edge",
+          "visible": false,
+          "colorScheme": "white",
+          "content": {
+            "eyebrow": "Our Edge",
+            "title": "Built to move fast",
+            "titleAccent": "when it counts.",
+            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
+            "points": [
+              {
+                "id": "edge-1",
+                "h": "Lightning Fast",
+                "b": "If our dedicated capital partners can't fund it, we'll quickly pair you with the right counterparty that can. With 500+ institutions on speed dial, our capital partner network ensures broad coverage across claim sizes, geographies and asset types. "
+              },
+              {
+                "id": "edge-2",
+                "h": "Always Confidential",
+                "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their fair market value. "
+              },
+              {
+                "id": "edge-3",
+                "h": "Relationships First",
+                "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul.  "
+              }
+            ],
+            "_bookmark": "Our-edge"
           }
         },
         {
@@ -519,70 +583,6 @@
           }
         },
         {
-          "id": "sec-aic-experience",
-          "type": "experience",
-          "visible": true,
-          "content": {
-            "_bookmark": "experience"
-          }
-        },
-        {
-          "id": "sec-1780698362997-64wf",
-          "type": "our-edge",
-          "visible": true,
-          "colorScheme": "white",
-          "content": {
-            "eyebrow": "Our Edge",
-            "title": "Built to move fast",
-            "titleAccent": "when it counts.",
-            "intro": "Automated diligence and deep integration with our capital sources means rapid onboarding, highly competitive pricing and a streamlined and efficient closing process.  ",
-            "points": [
-              {
-                "id": "edge-1",
-                "h": "Lightning Fast",
-                "b": "If our dedicated capital partners can't fund it, we'll quickly pair you with the right counterparty that can. With 500+ institutions on speed dial, our capital partner network ensures broad coverage across claim sizes, geographies and asset types. "
-              },
-              {
-                "id": "edge-2",
-                "h": "Always Confidential",
-                "b": "We take your privacy seriously and protect your data as if it were our own. We only ask for the information we absolutely need to provide an accurate assessment of your rights and their fair market value. "
-              },
-              {
-                "id": "edge-3",
-                "h": "Relationships First",
-                "b": "Our collaborative, relationship-focused approach delivers superior outcomes. We structure transactions to not only meet your needs now, but to properly align party incentives for the long haul.  "
-              }
-            ],
-            "_bookmark": "Our-edge"
-          }
-        },
-        {
-          "id": "sec-aic-damages",
-          "type": "damages",
-          "visible": false,
-          "content": {
-            "_spacingTop": "small"
-          }
-        },
-        {
-          "id": "sec-1784774482623-y9al",
-          "type": "image-text",
-          "visible": true,
-          "layout": "layout-3-image-top",
-          "colorScheme": "white",
-          "content": {
-            "eyebrow": "",
-            "title": "Headline goes here.",
-            "accent": "",
-            "body": "Add a paragraph of supporting text that sits next to the image.",
-            "image": "/bg-paper.jpg",
-            "imageAlt": "",
-            "cta": null,
-            "layout": "layout-3-image-top",
-            "colorScheme": "white"
-          }
-        },
-        {
           "id": "sec-aic-testimonials",
           "type": "testimonials",
           "visible": true,
@@ -622,8 +622,8 @@
           "content": {
             "layout": "layout-1-getquote",
             "colorScheme": "dark",
-            "eyebrow": "Get Compensated",
-            "title": "Have a claim?",
+            "eyebrow": "Questions",
+            "title": "Ask our team",
             "accent": "Talk to us.",
             "kicker": "Confidentiality assured. We respond to every inquiry within 48 hours.",
             "primary": {
@@ -631,7 +631,7 @@
               "href": "/contact"
             },
             "secondary": null,
-            "titleAccent": "Talk to us.",
+            "titleAccent": "for help.",
             "body": "Contact us to discuss your rights. Private, fast and secure.",
             "cta": {
               "label": "Get in Touch",
