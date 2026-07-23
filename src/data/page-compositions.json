@@ -278,45 +278,8 @@
             "layout": "wide",
             "cardRadius": 0,
             "colorScheme": "white",
-            "backgroundImage": ""
-          }
-        },
-        {
-          "id": "sec-1780975716723-79i5",
-          "type": "how-it-works",
-          "visible": true,
-          "colorScheme": "dark",
-          "content": {
-            "eyebrow": "How We Help",
-            "title": "You own your output. Take home what's yours.",
-            "accent": "",
-            "kicker": "You worked hard to create something original, but you don't need to create more work for yourself just to get paid. With dozens of active copyright cases, we help you stay on top of compensation opportunities, gather documents and meet filing deadlines. ",
-            "colorScheme": "dark",
-            "steps": [
-              {
-                "id": "step-1",
-                "n": "01",
-                "title": "Track open settlements »",
-                "body": "Did you know you might be eligible to file a claim in one of 60+ cases that are currently on the docket against Generative AI Companies? Subscribe to alerts about claim filing opportunities in the cases that matter to you so you never miss a deadline."
-              },
-              {
-                "id": "step-2",
-                "n": "02",
-                "title": "File your claims »",
-                "body": "Who needs all that paperwork? Let our experts help you file your claim to ensure you don't miss a cent. We can help you identify the materials you need to prove what you're owed and reduce the error rate by over 95%. \n\n"
-              },
-              {
-                "id": "step-3",
-                "n": "03",
-                "title": "Get paid without the hassle »",
-                "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you, or buy your claim outright so you can get cash today."
-              }
-            ],
-            "cardStyle": "standard",
-            "cardRadius": "square",
-            "_bookmark": "how-we-help",
-            "backgroundImage": "/library/data-center-2.jpg",
-            "imageFilterStrength": 30
+            "backgroundImage": "",
+            "_bookmark": "how-it-works"
           }
         },
         {
@@ -370,6 +333,44 @@
             "imageFilter": "light",
             "cardBrightness": 100,
             "cardBlur": 43
+          }
+        },
+        {
+          "id": "sec-1780975716723-79i5",
+          "type": "how-it-works",
+          "visible": false,
+          "colorScheme": "dark",
+          "content": {
+            "eyebrow": "How We Help",
+            "title": "You own your output. Take home what's yours.",
+            "accent": "",
+            "kicker": "You worked hard to create something original, but you don't need to create more work for yourself just to get paid. With dozens of active copyright cases, we help you stay on top of compensation opportunities, gather documents and meet filing deadlines. ",
+            "colorScheme": "dark",
+            "steps": [
+              {
+                "id": "step-1",
+                "n": "01",
+                "title": "Track open settlements »",
+                "body": "Did you know you might be eligible to file a claim in one of 60+ cases that are currently on the docket against Generative AI Companies? Subscribe to alerts about claim filing opportunities in the cases that matter to you so you never miss a deadline."
+              },
+              {
+                "id": "step-2",
+                "n": "02",
+                "title": "File your claims »",
+                "body": "Who needs all that paperwork? Let our experts help you file your claim to ensure you don't miss a cent. We can help you identify the materials you need to prove what you're owed and reduce the error rate by over 95%. \n\n"
+              },
+              {
+                "id": "step-3",
+                "n": "03",
+                "title": "Get paid without the hassle »",
+                "body": "Filing your claim is just the start. Working through procedural delays, appeals, claim reconciliation and distribution can be painful. We're here to manage it all for you, or buy your claim outright so you can get cash today."
+              }
+            ],
+            "cardStyle": "standard",
+            "cardRadius": "square",
+            "_bookmark": "how-we-help",
+            "backgroundImage": "/library/data-center-2.jpg",
+            "imageFilterStrength": 30
           }
         },
         {
