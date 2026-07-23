@@ -45,7 +45,7 @@
                 "png",
                 "jpg"
               ],
-              "help": "Upload your completed Bartz settlement claim form (PDF or image). We'll read it and fill in the rest for you — no typing needed. Don't have it handy? Skip this step and enter your details manually.",
+              "help": "Upload your completed Bartz settlement claim form (PDF or image).  Don't have it handy? Click \"Continue\" to enter your details manually.",
               "extract": "bartz-claim",
               "extractMap": {
                 "firstName": "contact.firstName",
@@ -167,7 +167,6 @@
               "label": "Verify your identity",
               "required": true,
               "help": "We use Sumsub for a quick identity check (KYC). Open the link below — or scan the QR code with your phone — complete the verification, then confirm here.",
-              "url": "",
               "linkText": "Start verification",
               "confirmLabel": "I have completed identity verification"
             }
