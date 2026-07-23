@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-23-bankruptcy-advisory",
+      "date": "2026-07-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 23, 2026",
+      "summary": "The dominant development this week is the court-approved, $701 million Section 363 sale of Sleep Number Corporation — a 69% auction premium over the stalking-horse floor that now sets the terms for the wind-down and determines what, if anything, reaches unsecured creditors.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-23-class-actions-advisory",
+      "date": "2026-07-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 23, 2026",
+      "summary": "Today's dominant development is the July 20 final approval order in Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.), cementing a $1.5 billion non-reversionary fund as the largest copyright class action settlement in U.S. history.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-23-fraud-advisory",
+      "date": "2026-07-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 23, 2026",
+      "summary": "The three dominant distribution machines in the fraud-recovery universe each moved — or failed to move — in ways that carry direct pricing implications for secondary claims buyers this week.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-23-tariff-advisory",
+      "date": "2026-07-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 23, 2026",
+      "summary": "The 10 percent global import surcharge that President Trump imposed under Section 122 of the Trade Act of 1974, 19 U.S.C. § 2132, expires by operation of law at 12:01 a.m. EDT on July 24, 2026 — 150 days after it took effect on February 24.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-23-crypto-advisory",
+      "date": "2026-07-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 23, 2026",
+      "summary": "Today's primary development is the MVMT Labs filing in Delaware — the corporate entity behind Movement blockchain — which arrived on July 15 and went public July 21. That case lands in a docket already occupied by BlockFills (Case No. 26-10371), making Judge Thomas M.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-23-advisory",
+      "date": "2026-07-23",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 23, 2026",
+      "summary": "The controlling development across this beat is the entry of final judgment in Bartz, et al. v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.). On July 20, 2026, Judge Araceli Martínez-Olguín of the U.S.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-22-bankruptcy-advisory",
       "date": "2026-07-22",
       "type": "briefing",
