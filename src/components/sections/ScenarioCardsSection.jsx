@@ -1,0 +1,157 @@
+import React from "react";
+import { NEON, FONT, PAPER, PAPER_2, SURFACE, INK, INK_60, INK_40, LINE, DARK_CARD, DARK_BORDER } from "../../data/tokens.js";
+
+/* ScenarioCardsSection — a row of outcome/scenario cards, each with a small
+   kicker, a big headline figure (year, amount, …), a title, and a note. One
+   card can be highlighted as the dark featured card with a neon tag. Generic
+   template section; pairs naturally with the timeline section.
+   Inline section: content lives in page-compositions.json sectionConfig.content.
+   Schema:
+     eyebrow, title, accent — section header (all optional; accent gets the
+                              neon underline on light schemes, neon italic on dark)
+     kicker                 — small label inside each card (default "Scenario")
+     cards[]                — { id, tag, figure, title, note, highlight }
+                              highlight: true renders the dark featured card
+     footnote               — small print under the cards
+     colorScheme            — "paper-2" (default) | "paper" | "white" | "light-gray" | "dark"
+*/
+
+const SCHEMES = {
+  "paper-2":    { bg: PAPER_2,   dark: false },
+  paper:        { bg: PAPER,     dark: false },
+  white:        { bg: "#fff",    dark: false },
+  "light-gray": { bg: "#F4F5F7", dark: false },
+  dark:         { bg: "#0A0A0A", dark: true },
+};
+
+export default function ScenarioCardsSection({ sectionConfig }) {
+  const c = (sectionConfig && sectionConfig.content) || {};
+  const eyebrow  = c.eyebrow || "";
+  const title    = c.title || "";
+  const accent   = c.accent || "";
+  const kicker   = c.kicker || "Scenario";
+  const cards    = c.cards || [];
+  const footnote = c.footnote || "";
+
+  const s = SCHEMES[c.colorScheme] || SCHEMES["paper-2"];
+  const ink = s.dark ? "#fff" : INK;
+
+  return (
+    <section style={{
+      fontFamily: FONT, color: ink, background: s.bg,
+      padding: "clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)",
+    }}>
+      <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+        {eyebrow && (
+          <p style={{
+            fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.22em",
+            textTransform: "uppercase", color: s.dark ? NEON : INK,
+            display: "flex", alignItems: "center", gap: "0.6em", margin: 0,
+          }}>
+            {!s.dark && <span aria-hidden="true" style={{
+              display: "inline-block", width: "1.6em", height: "0.18em",
+              background: NEON, borderRadius: 2, flexShrink: 0,
+            }} />}
+            {eyebrow}
+          </p>
+        )}
+        {title && (
+          <h2 style={{
+            fontWeight: 800, fontSize: "clamp(1.7rem, 3.4vw, 2.6rem)",
+            lineHeight: 1.15, letterSpacing: "-0.02em", color: ink,
+            margin: "0.9rem 0 0",
+          }}>
+            {title}
+            {accent && <> <span style={s.dark
+              ? { fontStyle: "italic", color: NEON }
+              : {
+                  fontStyle: "italic",
+                  backgroundImage: `linear-gradient(180deg, transparent 58%, ${NEON} 58%, ${NEON} 94%, transparent 94%)`,
+                  padding: "0 0.12em",
+                  WebkitBoxDecorationBreak: "clone", boxDecorationBreak: "clone",
+                }}>{accent}</span></>}
+          </h2>
+        )}
+
+        <div className="sccards-grid" style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${Math.max(cards.length, 1)}, 1fr)`,
+          gap: "clamp(1rem, 2vw, 1.5rem)",
+          marginTop: (eyebrow || title) ? "clamp(2rem, 4vw, 3rem)" : 0,
+        }}>
+          {cards.map((card, i) => {
+            const featured = !!card.highlight;
+            return (
+              <div key={card.id || i} style={{
+                background: featured ? DARK_CARD : SURFACE,
+                color: featured ? "#fff" : INK,
+                border: `1px solid ${featured ? DARK_BORDER : LINE}`,
+                borderRadius: 14, padding: "1.9rem 1.7rem",
+                display: "flex", flexDirection: "column",
+                position: "relative", overflow: "hidden",
+              }}>
+                {featured && (
+                  <span aria-hidden="true" style={{
+                    position: "absolute", inset: 0, pointerEvents: "none",
+                    background: "radial-gradient(120% 70% at 0% 0%, rgba(212,255,0,0.10), transparent 50%)",
+                  }} />
+                )}
+                {card.tag && (
+                  <span style={{
+                    position: "relative", alignSelf: "flex-start",
+                    fontSize: "0.66rem", fontWeight: 800, letterSpacing: "0.18em",
+                    textTransform: "uppercase", padding: "0.25rem 0.6rem",
+                    borderRadius: 4, marginBottom: "0.9rem",
+                    background: NEON, color: "#000",
+                  }}>{card.tag}</span>
+                )}
+                {kicker && (
+                  <div style={{
+                    position: "relative", fontSize: "0.66rem", fontWeight: 800,
+                    letterSpacing: "0.18em", textTransform: "uppercase",
+                    color: featured ? "rgba(255,255,255,0.5)" : INK_40,
+                  }}>{kicker}</div>
+                )}
+                {card.figure && (
+                  <div style={{
+                    position: "relative", marginTop: "1.1rem", fontWeight: 900,
+                    fontSize: "clamp(2rem, 3.6vw, 2.9rem)", lineHeight: 1,
+                    letterSpacing: "-0.02em", color: featured ? NEON : INK,
+                  }}>{card.figure}</div>
+                )}
+                {card.title && (
+                  <div style={{
+                    position: "relative", marginTop: "0.9rem", fontSize: "0.98rem",
+                    fontWeight: 600, lineHeight: 1.5,
+                    color: featured ? "rgba(255,255,255,0.92)" : INK,
+                  }}>{card.title}</div>
+                )}
+                {card.note && (
+                  <div style={{
+                    position: "relative", marginTop: "0.6rem", fontSize: "0.82rem",
+                    lineHeight: 1.5, color: featured ? "rgba(255,255,255,0.6)" : INK_60,
+                  }}>{card.note}</div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {footnote && (
+          <p style={{
+            marginTop: "2rem", fontSize: "0.76rem", lineHeight: 1.6,
+            color: s.dark ? "rgba(255,255,255,0.45)" : INK_40, maxWidth: 860,
+          }}>
+            {footnote}
+          </p>
+        )}
+      </div>
+
+      <style>{`
+        @media (max-width: 980px) {
+          .sccards-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
+  );
+}

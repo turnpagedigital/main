@@ -527,13 +527,14 @@
     {
       "id": "timeline",
       "displayName": "Milestone Timeline",
-      "description": "Milestone timeline with status dots (done / you-are-here / upcoming), date labels, and optional status pills, followed by an optional row of outcome scenario cards and a footnote. Light paper background.",
+      "description": "Milestone timeline with status dots (done / you-are-here / upcoming), date labels, and optional status pills per step. Pairs with Scenario Cards for outcome scenarios.",
       "dataSource": "inline",
       "allowMultiple": true,
       "defaultContent": {
         "eyebrow": "The road ahead",
         "title": "Section title goes here",
         "accent": "with accent.",
+        "colorScheme": "paper",
         "steps": [
           {
             "id": "tl-1",
@@ -562,30 +563,59 @@
             "pillLabel": "Most realistic",
             "pillStyle": "ink"
           }
-        ],
-        "scenariosEyebrow": "Potential outcomes",
-        "scenarios": [
+        ]
+      },
+      "supportedColorSchemes": [
+        "paper",
+        "paper-2",
+        "white",
+        "light-gray",
+        "dark"
+      ],
+      "defaultColorScheme": "paper"
+    },
+    {
+      "id": "scenario-cards",
+      "displayName": "Scenario Cards",
+      "description": "Row of outcome cards, each with a big figure (year, amount), title, and note. One card can be a dark featured card with a neon tag. Pairs with the Milestone Timeline.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "supportedColorSchemes": [
+        "paper-2",
+        "paper",
+        "white",
+        "light-gray",
+        "dark"
+      ],
+      "defaultColorScheme": "paper-2",
+      "defaultContent": {
+        "eyebrow": "Potential outcomes",
+        "title": "",
+        "accent": "",
+        "kicker": "Scenario",
+        "colorScheme": "paper-2",
+        "cards": [
           {
             "id": "sc-1",
             "tag": "",
-            "year": "2026",
-            "title": "Best case scenario description",
+            "figure": "2026",
+            "title": "Best case description",
             "note": "Supporting note*",
             "highlight": false
           },
           {
             "id": "sc-2",
             "tag": "Most likely",
-            "year": "2027",
-            "title": "Most likely scenario description",
+            "figure": "2027",
+            "title": "Most likely description",
             "note": "Supporting note*",
             "highlight": true
           },
           {
             "id": "sc-3",
             "tag": "",
-            "year": "2028+",
-            "title": "Slow case scenario description",
+            "figure": "2028+",
+            "title": "Slow case description",
             "note": "Supporting note*",
             "highlight": false
           }
@@ -766,8 +796,17 @@
         "layout": "center",
         "eyebrow": "Register",
         "title": "Start your registration",
-        "accent": ""
-      }
+        "accent": "",
+        "colorScheme": "paper"
+      },
+      "supportedColorSchemes": [
+        "paper",
+        "white",
+        "light-gray",
+        "neon",
+        "dark"
+      ],
+      "defaultColorScheme": "paper"
     },
     {
       "id": "contact-form",
