@@ -25,6 +25,7 @@ function pdfString(bytes, key) {
     const hex = m[1];
     for (let i = 0; i + 1 < hex.length; i += 2) out += String.fromCharCode(parseInt(hex.slice(i, i + 2), 16));
     // strip UTF-16 BOM/NULs commonly present in hex-encoded info strings
+    // eslint-disable-next-line no-control-regex
     return out.replace(/^\xFE\xFF/, "").replace(/\x00/g, "");
   }
   return "";

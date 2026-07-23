@@ -13,7 +13,7 @@
 
 import formsData from "../../src/data/forms.json";
 import pricing from "./_pricing-config.json";
-import { formatOffer, computeOffer, computeOfferBreakdown } from "../../src/lib/flow-compute.js";
+import { computeOfferBreakdown } from "../../src/lib/flow-compute.js";
 
 const ALLOWED_ORIGINS = [
   "https://turnpagedigital.com",
