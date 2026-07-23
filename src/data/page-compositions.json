@@ -364,7 +364,7 @@
             "imageAlt": "",
             "cta": {
               "label": "Get an Instant Quote",
-              "href": "register"
+              "href": "#register"
             },
             "layout": "layout-2-image-left",
             "colorScheme": "white"
