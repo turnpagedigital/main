@@ -125,6 +125,13 @@ export default function SectionEditorFields({ typeId, form, set }) {
             </div>
           )}
           <div style={fieldGroup}>
+            <label style={labelStyle}>Text alignment</label>
+            <select style={selectStyle} value={form.align || "left"} onChange={e => set("align", e.target.value)}>
+              <option value="left">Left</option>
+              <option value="center">Centered — heading, intro, step titles, choices, disclosure</option>
+            </select>
+          </div>
+          <div style={fieldGroup}>
             <label style={labelStyle}>Disclosure (small print below the form)</label>
             <textarea style={{ ...inputStyle, minHeight: 90 }} value={form.disclosure || ""} onChange={e => set("disclosure", e.target.value)} placeholder="e.g. Turnpage is not affiliated with Anthropic, JND (the claims administrator)…" />
           </div>

@@ -29,6 +29,8 @@ import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js
  *   cardStyle       — "card" (default, white form card) | "float" (no card —
  *     the form sits directly on the section background)
  *   disclosure      — small-print paragraph rendered below the form
+ *   align           — "left" (default) | "center": centers the heading,
+ *     intro, step titles, choice buttons, and disclosure
  *   formScale       — form zoom in % (100–150, default 100) for a bigger,
  *     easier-to-read form
  */
@@ -57,11 +59,12 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
       cardStyle={c.cardStyle}
       formScale={c.formScale}
       disclosure={c.disclosure}
+      align={c.align}
     />
   );
 }
 
-function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, formScale, disclosure }) {
+function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, formScale, disclosure, align }) {
   const [answers, setAnswers] = useState({});
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
@@ -340,6 +343,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       cardStyle={cardStyle}
       formScale={formScale}
       disclosure={disclosure}
+      align={align}
       flowIntro={flow.intro}
     >
       {formState === "success" ? successNode : formNode}
@@ -371,7 +375,7 @@ const SHELL_SCHEMES = {
   dark:         { bg: DARK,         dark: true },
 };
 
-function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, formScale, disclosure, flowIntro, children }) {
+function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, formScale, disclosure, align, flowIntro, children }) {
   // layout "dark" predates colorScheme and acts as its alias
   const scheme  = SHELL_SCHEMES[colorScheme] || (layout === "dark" ? SHELL_SCHEMES.dark : SHELL_SCHEMES.paper);
   // On a photo background, a darkening filter implies white outer text
@@ -404,8 +408,17 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
         ...(scale !== 100 ? { zoom: scale / 100 } : {}),
       };
 
+  const centered = align === "center";
+  const centerCss = centered ? (
+    <style>{`
+      .regflow-centered h2, .regflow-centered h3, .regflow-centered p { text-align: center; }
+      .regflow-centered .field-light label { text-align: center; }
+      .regflow-centered .regflow-choices { justify-content: center; }
+      .regflow-centered .regflow-disclosure { margin-left: auto; margin-right: auto; }
+    `}</style>
+  ) : null;
   const disclosureNode = disclosure ? (
-    <p style={{
+    <p className="regflow-disclosure" style={{
       fontFamily: FONT, fontSize: "0.74rem", lineHeight: 1.6,
       color: isDark ? "rgba(255,255,255,0.45)" : "rgba(10,10,10,0.45)",
       marginTop: "1.4rem", maxWidth: 860,
@@ -445,7 +458,8 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
   /* ── Split layout ─────────────────────────────────────────────── */
   if (isSplit) {
     return (
-      <section className={surfaceClass} style={{ ...sectionStyle, padding: sectionPad }}>
+      <section className={centered ? `${surfaceClass} regflow-centered` : surfaceClass} style={{ ...sectionStyle, padding: sectionPad }}>
+        {centerCss}
         <div
           className="reg-split-grid"
           style={{
@@ -488,7 +502,8 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
   /* ── Center (default) + Wide (+ legacy "dark" = center on dark bg) ── */
   const maxWidth = isWide ? 880 : 660;
   return (
-    <section className={surfaceClass} style={{ ...sectionStyle, padding: sectionPad }}>
+    <section className={centered ? `${surfaceClass} regflow-centered` : surfaceClass} style={{ ...sectionStyle, padding: sectionPad }}>
+      {centerCss}
       <div className="container" style={{ maxWidth, margin: "0 auto" }}>
         {headingBlock && (
           <div style={{ marginBottom: "2rem" }}>{headingBlock}</div>
@@ -571,7 +586,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
     return (
       <div style={wrap} role="radiogroup" aria-label={field.label}>
         {label}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.55rem", marginTop: "0.45rem" }}>
+        <div className="regflow-choices" style={{ display: "flex", flexWrap: "wrap", gap: "0.55rem", marginTop: "0.45rem" }}>
           {options.map(opt => {
             const selected = value === opt;
             return (

@@ -287,6 +287,53 @@ export async function onRequestPost(context) {
       throw new Error("Failed to send email");
     }
 
+    // Confirmation email to the registrant with their submitted info and quote.
+    // Best-effort: the registration already succeeded, so a failure here only logs.
+    try {
+      const quote = answers.estimated_offer || "";
+      const confirmHtml = `
+        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:640px;margin:0 auto;">
+          <div style="background:#1a1a1a;padding:24px 32px;border-radius:12px 12px 0 0;">
+            <h2 style="color:#D4FF00;margin:0;font-size:18px;">We received your registration</h2>
+            <p style="color:rgba(255,255,255,0.65);margin:6px 0 0;font-size:12px;">${escapeHtml(flow.name)} · Turnpage Digital Markets</p>
+          </div>
+          <div style="background:#fff;padding:32px;border:1px solid #e5e5e5;border-top:none;border-radius:0 0 12px 12px;">
+            <p style="font-size:14px;line-height:1.6;margin:0 0 16px;">Hi ${escapeHtml(answers.firstName || "there")},</p>
+            <p style="font-size:14px;line-height:1.6;margin:0 0 16px;">Thanks for registering. Here's a copy of what you submitted${attachments.length ? " (we also received your claim form)" : ""}:</p>
+            <table style="width:100%;border-collapse:collapse;font-size:14px;">${answerRows}</table>
+            ${worksCounts.total ? `
+            <p style="font-size:13px;color:#666;margin:16px 0 0;">Claimed works we read from your claim form: <strong>${worksCounts.self}</strong> at the full rate, <strong>${worksCounts.publisher}</strong> at the half rate, <strong>${worksCounts.excluded}</strong> not purchased.</p>` : ""}
+            ${quote ? `
+            <div style="background:#1a1a1a;border-radius:10px;padding:20px 24px;margin:20px 0 0;">
+              <p style="color:rgba(255,255,255,0.6);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 6px;">Your estimated offer</p>
+              <p style="color:#D4FF00;font-size:30px;font-weight:800;margin:0;">${escapeHtml(quote)}</p>
+            </div>` : ""}
+            <p style="font-size:14px;line-height:1.6;margin:20px 0 0;">We'll review everything and get back to you shortly with next steps. Just reply to this email if anything above needs correcting.</p>
+            <p style="font-size:11px;color:#999;line-height:1.6;margin:20px 0 0;">Any figure shown is a preliminary estimate, not a final offer — we confirm your final offer after reviewing your claim details. Turnpage Digital Markets is not affiliated with Anthropic, the claims administrator, class counsel, or the Court, and does not provide legal or financial advice.</p>
+          </div>
+          <p style="font-size:11px;color:#999;margin-top:16px;text-align:center;">Sent by turnpagedigital.com because you registered on our site</p>
+        </div>`;
+      const confirmRes = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: fromEmail,
+          to: [email],
+          reply_to: notifyEmail,
+          subject: `We received your registration — Turnpage Digital Markets`,
+          html: confirmHtml,
+        }),
+      });
+      if (!confirmRes.ok) {
+        console.error("Confirmation email error:", confirmRes.status, (await confirmRes.text()).slice(0, 300));
+      }
+    } catch (err) {
+      console.error("Confirmation email error:", err.message);
+    }
+
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
