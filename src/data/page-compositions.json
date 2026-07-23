@@ -270,15 +270,15 @@
           "type": "registration-flow",
           "visible": true,
           "layout": "wide",
-          "colorScheme": "white",
+          "colorScheme": "light-gray",
           "content": {
             "flowId": "bartz-registration",
-            "eyebrow": "GET STARTED",
+            "eyebrow": "",
             "title": "Register your ",
             "accent": "claim details.",
             "layout": "wide",
             "cardRadius": 0,
-            "colorScheme": "white",
+            "colorScheme": "light-gray",
             "backgroundImage": "",
             "_bookmark": "register"
           }
