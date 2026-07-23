@@ -142,6 +142,7 @@ index.html                 — Vite entry, meta + OG tags
 - `GITHUB_REPO` — `turnpagedigital/main`
 - `GITHUB_BRANCH` — the branch the admin API reads/writes (`dev`; "Deploy to Production" merges it into `main`). Since ALL git work also happens on `dev` (see Deploy Command), the admin and git always see the same data. Do not push directly to main.
 - `ANTHROPIC_API_KEY` — Anthropic API key (console key name: `tpdm-site`). Powers `/api/extract-claim` (claim-form reading in registration flows) and `/api/admin/flow-generator` (admin Flows generator). Added July 2026; env var changes only take effect on the next deployment (Deployments → ⋯ → Retry deployment).
+- `ATTIO_API_KEY` — OPTIONAL Attio access token (record + note read-write scopes). When set, `/api/register` asserts a Person by email and attaches a "Registration [label] — flow name" note per submission. Unset = Attio push silently skipped (email + Sheet still work).
 
 ## Admin Panel (`/admin`)
 
