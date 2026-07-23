@@ -261,7 +261,8 @@
             "ctaSecondary": {
               "label": "How It Works",
               "href": "#how-it-works"
-            }
+            },
+            "_spacingBottom": "large"
           }
         },
         {
@@ -286,13 +287,13 @@
           "id": "sec-1784772646246-qv8s",
           "type": "how-it-works",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "dark",
           "content": {
             "eyebrow": "HOW IT WORKS",
             "title": "Five Simple Steps to Payment",
             "accent": "",
             "kicker": "We take care of everything in just a few steps so you can collect your cash and move on to creating your next great work of art.",
-            "colorScheme": "light-gray",
+            "colorScheme": "dark",
             "steps": [
               {
                 "id": "step-1",
@@ -321,16 +322,16 @@
               {
                 "id": "step-1784772930126",
                 "n": "05",
-                "title": "Closing call »",
+                "title": "Book closing call »",
                 "body": "We'll confirm everything you need to close over zoom and issue payment right away. "
               }
             ],
-            "cardStyle": "black",
+            "cardStyle": "standard",
             "cardRadius": "square",
             "_bookmark": "how-it-works",
-            "backgroundImage": "/pawel-czerwinski-T5VUBvCYqKk-unsplash.jpg",
+            "backgroundImage": "/library/data-center-2.jpg",
             "imageFilterStrength": 30,
-            "imageFilter": "light",
+            "imageFilter": "dark",
             "cardBrightness": 100,
             "cardBlur": 43
           }
@@ -338,7 +339,7 @@
         {
           "id": "sec-1780975716723-79i5",
           "type": "how-it-works",
-          "visible": true,
+          "visible": false,
           "colorScheme": "dark",
           "content": {
             "eyebrow": "How We Help",
