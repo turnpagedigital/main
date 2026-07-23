@@ -10,7 +10,7 @@ import { getFileFromGitHub, commitFileToGitHub } from "./_github.js";
 
 const FORMS_PATH = "src/data/forms.json";
 
-const FIELD_TYPES = new Set(["text", "email", "phone", "textarea", "select", "choice", "yesno", "file", "number", "computed", "works-summary"]);
+const FIELD_TYPES = new Set(["text", "email", "phone", "textarea", "select", "choice", "yesno", "file", "number", "computed", "works-summary", "link-confirm"]);
 const MAX_TERMS = 10;
 const MAX_EXTRACT_MAP = 20;
 const FILE_ACCEPT = new Set(["pdf", "png", "jpg"]);
@@ -58,6 +58,18 @@ export async function onRequestPut({ request, env }) {
 
   const current = await fetchFile(env);
   if (!current.ok) return jsonResponse({ ok: false, error: current.error }, 502);
+
+  // Stale-tab guard (same pattern as page-compositions): refuse to overwrite
+  // flows that changed since this tab loaded them.
+  if (typeof body.baseVersion === "string" && body.baseVersion) {
+    const currentVersion = sectionsFingerprint((current.data && current.data.flows) || []);
+    if (currentVersion !== body.baseVersion) {
+      return jsonResponse({
+        ok: false,
+        error: "The flows changed after you opened this tab (another tab, or an update pushed via git). Your save was NOT applied. Reload the Flows tab to get the latest, then re-apply your edits.",
+      }, 409);
+    }
+  }
 
   const merged = {
     _comment: (current.data && current.data._comment) || undefined,
@@ -234,6 +246,11 @@ function normalizeField(fld) {
     }
   } else if (fld.help) {
     out.help = String(fld.help).trim().slice(0, SHORT);
+  }
+  if (fld.type === "link-confirm") {
+    if (fld.url) out.url = String(fld.url).trim().slice(0, 300);
+    if (fld.linkText) out.linkText = String(fld.linkText).trim().slice(0, SHORT);
+    if (fld.confirmLabel) out.confirmLabel = String(fld.confirmLabel).trim().slice(0, SHORT);
   }
   // Optional expandable explainer under the field (label + body text)
   if (fld.moreInfo && typeof fld.moreInfo === "object" && String(fld.moreInfo.body || "").trim()) {
