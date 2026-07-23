@@ -251,7 +251,7 @@
             "eyebrow": "AUTHORS & PUBLISHERS",
             "title": "Turn your Anthropic settlement claim into",
             "accentTitle": "instant cash.",
-            "subtitle": "Anthropic trained its models on YOUR WORK. \n\nWe help authors, artists, publishers, music labels, studios and other rights holders track cases against generative AI companies and get compensated faster.",
+            "subtitle": "                                                                                                                     \n                                                                                                                     \n\n                                                                                                                     \n",
             "size": "tall",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
@@ -262,7 +262,7 @@
               "label": "How It Works",
               "href": "#how-it-works"
             },
-            "_spacingBottom": "large"
+            "_spacingBottom": "none"
           }
         },
         {
@@ -273,9 +273,9 @@
           "colorScheme": "white",
           "content": {
             "flowId": "bartz-registration",
-            "eyebrow": "Get AN INSTANT QUOTE",
-            "title": "Register your claim to",
-            "accent": "get started.",
+            "eyebrow": "GET STARTED",
+            "title": "Register your ",
+            "accent": "claim details.",
             "layout": "wide",
             "cardRadius": 0,
             "colorScheme": "white",
@@ -463,6 +463,24 @@
           "visible": false,
           "content": {
             "_spacingTop": "small"
+          }
+        },
+        {
+          "id": "sec-1784774482623-y9al",
+          "type": "image-text",
+          "visible": true,
+          "layout": "layout-3-image-top",
+          "colorScheme": "white",
+          "content": {
+            "eyebrow": "",
+            "title": "Headline goes here.",
+            "accent": "",
+            "body": "Add a paragraph of supporting text that sits next to the image.",
+            "image": "/bg-paper.jpg",
+            "imageAlt": "",
+            "cta": null,
+            "layout": "layout-3-image-top",
+            "colorScheme": "white"
           }
         },
         {
