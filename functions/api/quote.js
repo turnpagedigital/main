@@ -8,12 +8,12 @@
  * string — never the underlying rates.
  *
  * Body: { flowId, fieldId, answers: { <selfField>: "3", <publisherField>: "2" } }
- * Reply: { display: "$6,000", value: 6000 }
+ * Reply: { display: "$6,000", value: 6000, recoveryDisplay: "$15,000", pct: 40 }
  */
 
 import formsData from "../../src/data/forms.json";
 import pricing from "./_pricing-config.json";
-import { formatOffer, computeOffer } from "../../src/lib/flow-compute.js";
+import { formatOffer, computeOffer, computeOfferBreakdown } from "../../src/lib/flow-compute.js";
 
 const ALLOWED_ORIGINS = [
   "https://turnpagedigital.com",
@@ -62,7 +62,13 @@ export async function onRequestPost(context) {
     }
   }
 
-  return json({ display: formatOffer(field, answers, pricing), value: computeOffer(field, answers, pricing) });
+  const breakdown = computeOfferBreakdown(field, answers, pricing);
+  return json({
+    display: breakdown.offerDisplay,
+    value: breakdown.offer,
+    recoveryDisplay: breakdown.recoveryDisplay,
+    pct: breakdown.pct,
+  });
 }
 
 export async function onRequestOptions(context) {

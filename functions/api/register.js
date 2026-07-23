@@ -22,7 +22,7 @@
 
 import formsData from "../../src/data/forms.json";
 import pricing from "./_pricing-config.json";
-import { formatOffer } from "../../src/lib/flow-compute.js";
+import { formatOffer, computeOfferBreakdown } from "../../src/lib/flow-compute.js";
 import { classifyWork, summarizeWorks, amazonSearchUrl, settlementLookupUrl } from "./_claim-links.js";
 
 const ALLOWED_ORIGINS = [
@@ -131,9 +131,13 @@ export async function onRequestPost(context) {
     // Fill in computed fields server-side from the number answers, so the
     // value we email is authoritative regardless of what the browser sent.
     // Pricing inputs come from the private config — never from the client.
+    let offerBreakdown = null;
     for (const step of steps) {
       for (const f of step.fields || []) {
-        if (f.type === "computed") answers[f.id] = formatOffer(f, answers, pricing);
+        if (f.type === "computed") {
+          answers[f.id] = formatOffer(f, answers, pricing);
+          if (f.priced) offerBreakdown = computeOfferBreakdown(f, answers, pricing);
+        }
       }
     }
 
@@ -307,6 +311,8 @@ export async function onRequestPost(context) {
             <div style="background:#1a1a1a;border-radius:10px;padding:20px 24px;margin:20px 0 0;">
               <p style="color:rgba(255,255,255,0.6);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 6px;">Your estimated offer</p>
               <p style="color:#D4FF00;font-size:30px;font-weight:800;margin:0;">${escapeHtml(quote)}</p>
+              ${offerBreakdown && offerBreakdown.pct > 0 ? `
+              <p style="color:rgba(255,255,255,0.75);font-size:13px;line-height:1.6;margin:10px 0 0;">Based on an estimated recovery of <strong style="color:#fff;">${escapeHtml(offerBreakdown.recoveryDisplay)}</strong> — this offer is <strong style="color:#fff;">${offerBreakdown.pct}%</strong> of that, paid now.</p>` : ""}
             </div>` : ""}
             <p style="font-size:14px;line-height:1.6;margin:20px 0 0;">We'll review everything and get back to you shortly with next steps. Just reply to this email if anything above needs correcting.</p>
             <p style="font-size:11px;color:#999;line-height:1.6;margin:20px 0 0;">Any figure shown is a preliminary estimate, not a final offer — we confirm your final offer after reviewing your claim details. Turnpage Digital Markets is not affiliated with Anthropic, the claims administrator, class counsel, or the Court, and does not provide legal or financial advice.</p>
