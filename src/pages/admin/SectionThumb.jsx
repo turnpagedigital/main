@@ -11,6 +11,7 @@ const FONT   = "'Archivo', sans-serif";
 const INK    = "#0A0A0A";
 const INK_60 = "rgba(10,10,10,0.6)";
 const INK_30 = "rgba(10,10,10,0.3)";
+const PAPER  = "#E5E7EB";
 const W = 900;
 const H = 500;
 
@@ -744,6 +745,42 @@ function BulletColumnsThumb() {
   );
 }
 
+function TimelineThumb() {
+  const steps = [
+    { state: "here", lines: 3 },
+    { state: "",     lines: 3 },
+    { state: "",     lines: 2 },
+    { state: "",     lines: 3 },
+    { state: "",     lines: 2 },
+  ];
+  return (
+    <div style={{ width: W, height: H, background: PAPER, padding: "40px 60px" }}>
+      <div style={{ width: 90, height: 8, background: NEON, borderRadius: 2, marginBottom: 18 }} />
+      <h2 style={{ fontFamily: FONT, fontSize: 40, fontWeight: 800, letterSpacing: "-0.02em",
+        color: INK, margin: "0 0 44px" }}>
+        Five steps to <span style={{ fontStyle: "italic", background: NEON, padding: "0 6px" }}>the payout.</span>
+      </h2>
+      <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 24 }}>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 9, height: 3, background: "rgba(10,10,10,0.18)" }} />
+        {steps.map((s, i) => (
+          <div key={i} style={{ position: "relative", paddingTop: 36 }}>
+            <span style={{ position: "absolute", top: 0, left: 0, width: 20, height: 20, borderRadius: "50%",
+              boxSizing: "border-box",
+              background: s.state === "here" ? NEON : PAPER,
+              border: `3px solid ${s.state === "here" ? INK : "rgba(10,10,10,0.4)"}`,
+              boxShadow: s.state === "here" ? "0 0 0 7px rgba(212,255,0,0.25)" : "none" }} />
+            <div style={{ width: "70%", height: 8, background: INK, opacity: 0.5, marginBottom: 12, borderRadius: 2 }} />
+            <div style={{ width: "92%", height: 11, background: INK, opacity: 0.85, marginBottom: 12, borderRadius: 2 }} />
+            {Array.from({ length: s.lines }).map((_, j) => (
+              <div key={j} style={{ width: `${84 - j * 10}%`, height: 7, background: INK, opacity: 0.4, marginBottom: 8, borderRadius: 2 }} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Fallback ─────────────────────────────────────────────────────────────────
 function DefaultThumb() {
   return (
@@ -779,6 +816,7 @@ const THUMBS = {
   "comparison":                      ComparisonThumb,
   "how-it-works":                    HowItWorksThumb,
   "process-flow":                    ProcessFlowThumb,
+  "timeline":                        TimelineThumb,
   "bullet-columns":                  BulletColumnsThumb,
   "image-text":                          ImageTextRightThumb,
   "image-text/layout-1-image-right":     ImageTextRightThumb,
