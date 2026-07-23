@@ -29,6 +29,8 @@ import QRCode from "qrcode";
  *   cardRadius      — form-card corner radius in px (0–40, default 10)
  *   cardStyle       — "card" (default, white form card) | "float" (no card —
  *     the form sits directly on the section background)
+ *   cardColor       — "white" (default) | "light-gray" | "paper" | "neon"
+ *     background of the form card (card style only)
  *   disclosure      — small-print paragraph rendered below the form
  *   align           — "left" (default) | "center": centers the heading,
  *     intro, step titles, choice buttons, and disclosure
@@ -58,6 +60,7 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
       imageFilterStrength={c.imageFilterStrength}
       cardRadius={c.cardRadius}
       cardStyle={c.cardStyle}
+      cardColor={c.cardColor}
       formScale={c.formScale}
       disclosure={c.disclosure}
       align={c.align}
@@ -65,7 +68,7 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
   );
 }
 
-function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, formScale, disclosure, align }) {
+function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, cardColor, formScale, disclosure, align }) {
   const [answers, setAnswers] = useState({});
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
@@ -346,6 +349,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       imageFilterStrength={imageFilterStrength}
       cardRadius={cardRadius}
       cardStyle={cardStyle}
+      cardColor={cardColor}
       formScale={formScale}
       disclosure={disclosure}
       align={align}
@@ -429,7 +433,7 @@ const SHELL_SCHEMES = {
   dark:         { bg: DARK,         dark: true },
 };
 
-function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, formScale, disclosure, align, flowIntro, children }) {
+function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, cardColor, formScale, disclosure, align, flowIntro, children }) {
   // layout "dark" predates colorScheme and acts as its alias
   const scheme  = SHELL_SCHEMES[colorScheme] || (layout === "dark" ? SHELL_SCHEMES.dark : SHELL_SCHEMES.paper);
   // On a photo background, a darkening filter implies white outer text
@@ -455,7 +459,10 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
   const cardStyle = floating
     ? { ...(scale !== 100 ? { zoom: scale / 100 } : {}) }
     : {
-        background: SURFACE,
+        background: cardColor === "light-gray" ? SECONDARY_BG
+          : cardColor === "paper" ? PAPER
+          : cardColor === "neon" ? NEON
+          : SURFACE,
         border: `1px solid ${LINE}`,
         borderRadius: radius,
         padding: "clamp(1.5rem,3.5vw,2.5rem)",

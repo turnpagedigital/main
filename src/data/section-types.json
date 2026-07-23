@@ -830,7 +830,8 @@
         "cardStyle": "card",
         "formScale": 100,
         "disclosure": "",
-        "align": "left"
+        "align": "left",
+        "cardColor": "white"
       },
       "supportedColorSchemes": [
         "paper",

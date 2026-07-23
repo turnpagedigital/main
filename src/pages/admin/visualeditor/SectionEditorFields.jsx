@@ -115,6 +115,17 @@ export default function SectionEditorFields({ typeId, form, set }) {
             </select>
           </div>
           {(form.cardStyle || "card") === "card" && (
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Card color</label>
+              <select style={selectStyle} value={form.cardColor || "white"} onChange={e => set("cardColor", e.target.value)}>
+                <option value="white">White</option>
+                <option value="light-gray">Light gray</option>
+                <option value="paper">Paper</option>
+                <option value="neon">Neon</option>
+              </select>
+            </div>
+          )}
+          {(form.cardStyle || "card") === "card" && (
             <div style={{ marginBottom: "0.9rem" }}>
               <label style={labelStyle}>Card corner radius — {hasValue(form.cardRadius) ? form.cardRadius : 10}px</label>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>

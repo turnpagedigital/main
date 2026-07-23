@@ -113,7 +113,7 @@ export default function PricingTab({ onDirtyChange }) {
               type="number" min="0" step="any"
               max={f.max}
               value={data[f.key] ?? ""}
-              onChange={(e) => set(f.key, e.target.value === "" ? 0 : Number(e.target.value))}
+              onChange={(e) => set(f.key, e.target.value)}
             />
             {f.suffix && <span style={{ fontSize: "1rem", color: INK_60 }}>{f.suffix}</span>}
           </div>

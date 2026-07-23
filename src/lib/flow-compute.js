@@ -120,8 +120,8 @@ export function computeOfferBreakdown(field, answers = {}, pricing = {}) {
   const recovery = Math.max(0, Math.round(selfR * selfCount + pubR * pubCount));
   const offer = computeOffer(field, answers, pricing);
   const pct = recovery > 0
-    ? Math.round((offer / recovery) * 100)
-    : Math.round(Number(pricing.payoutRatePct) || 0);
+    ? Math.round((offer / recovery) * 10000) / 100
+    : Math.round((Number(pricing.payoutRatePct) || 0) * 100) / 100;
   const prefix = field && field.prefix != null ? field.prefix : "$";
   const suffix = field && field.suffix != null ? field.suffix : "";
   return {
