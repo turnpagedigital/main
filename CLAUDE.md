@@ -141,6 +141,7 @@ index.html                 — Vite entry, meta + OG tags
 - `GITHUB_TOKEN` — fine-grained PAT scoped to this repo with "Contents: Read and write"
 - `GITHUB_REPO` — `turnpagedigital/main`
 - `GITHUB_BRANCH` — the branch the admin API reads/writes (`dev`; "Deploy to Production" merges it into `main`). Since ALL git work also happens on `dev` (see Deploy Command), the admin and git always see the same data. Do not push directly to main.
+- `ANTHROPIC_API_KEY` — Anthropic API key (console key name: `tpdm-site`). Powers `/api/extract-claim` (claim-form reading in registration flows) and `/api/admin/flow-generator` (admin Flows generator). Added July 2026; env var changes only take effect on the next deployment (Deployments → ⋯ → Retry deployment).
 
 ## Admin Panel (`/admin`)
 
