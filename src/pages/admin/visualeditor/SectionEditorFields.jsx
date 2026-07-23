@@ -551,7 +551,19 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Title (optional)</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Accent (italic, neon highlight)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
-          <div style={fieldGroup}><label style={labelStyle}>Card kicker (small label inside each card)</label><input style={inputStyle} value={form.kicker ?? "Scenario"} onChange={e => set("kicker", e.target.value)} /></div>
+          <div style={fieldGroup}>
+            <label style={{ fontSize: "0.74rem", color: INK_60, display: "flex", alignItems: "center", gap: 6 }}>
+              <input type="checkbox" checked={form.showKicker !== false} onChange={e => set("showKicker", e.target.checked)} style={{ accentColor: NEON }} />
+              Show card kickers (the small label at the top of each card)
+            </label>
+          </div>
+          {form.showKicker !== false && (
+            <div style={fieldGroup}>
+              <label style={labelStyle}>Default kicker</label>
+              <input style={inputStyle} value={form.kicker ?? "Scenario"} onChange={e => set("kicker", e.target.value)} />
+              <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>Used for every card unless a card sets its own kicker below.</p>
+            </div>
+          )}
           <ScenarioCardsEditor cards={form.cards || []} onChange={v => set("cards", v)} />
           <div style={fieldGroup}><label style={labelStyle}>Footnote (small print under the cards)</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.footnote || ""} onChange={e => set("footnote", e.target.value)} /></div>
         </>
@@ -1051,6 +1063,7 @@ function ScenarioCardsEditor({ cards, onChange }) {
             <button type="button" onClick={() => move(i, -1)} disabled={i === 0} aria-label="Move up" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === 0 ? 0.5 : 1 }}>↑</button>
             <button type="button" onClick={() => move(i, 1)} disabled={i === (cards || []).length - 1} aria-label="Move down" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === (cards || []).length - 1 ? 0.5 : 1 }}>↓</button>
           </div>
+          <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Kicker (optional — overrides the default kicker)" value={sc.kicker || ""} onChange={e => handleChange(i, "kicker", e.target.value)} />
           <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={sc.title || ""} onChange={e => handleChange(i, "title", e.target.value)} />
           <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Note (small text under the title)" value={sc.note || ""} onChange={e => handleChange(i, "note", e.target.value)} />
           <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 4 }}>

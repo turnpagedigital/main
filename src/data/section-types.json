@@ -593,6 +593,7 @@
         "title": "",
         "accent": "",
         "kicker": "Scenario",
+        "showKicker": true,
         "colorScheme": "paper-2",
         "cards": [
           {
@@ -601,7 +602,8 @@
             "figure": "2026",
             "title": "Best case description",
             "note": "Supporting note*",
-            "highlight": false
+            "highlight": false,
+            "kicker": ""
           },
           {
             "id": "sc-2",
@@ -609,7 +611,8 @@
             "figure": "2027",
             "title": "Most likely description",
             "note": "Supporting note*",
-            "highlight": true
+            "highlight": true,
+            "kicker": ""
           },
           {
             "id": "sc-3",
@@ -617,7 +620,8 @@
             "figure": "2028+",
             "title": "Slow case description",
             "note": "Supporting note*",
-            "highlight": false
+            "highlight": false,
+            "kicker": ""
           }
         ],
         "footnote": "*Small-print footnote and sources go here."
