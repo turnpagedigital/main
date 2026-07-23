@@ -829,7 +829,8 @@
         "cardRadius": 10,
         "cardStyle": "card",
         "formScale": 100,
-        "disclosure": ""
+        "disclosure": "",
+        "align": "left"
       },
       "supportedColorSchemes": [
         "paper",
