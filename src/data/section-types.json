@@ -76,7 +76,7 @@
     {
       "id": "situations",
       "displayName": "What We Cover",
-      "description": "Expandable list of situation types. Content managed in Content \u2192 Home Content.",
+      "description": "Expandable list of situation types. Content managed in Content → Home Content.",
       "dataSource": "shared:situations",
       "allowMultiple": false,
       "defaultContent": null
@@ -84,7 +84,7 @@
     {
       "id": "bio",
       "displayName": "Leadership",
-      "description": "Andrew Glantz bio, photo, tagline, social links, and press logos. Content managed in Content \u2192 Bio.",
+      "description": "Andrew Glantz bio, photo, tagline, social links, and press logos. Content managed in Content → Bio.",
       "dataSource": "shared:bio",
       "allowMultiple": false,
       "defaultContent": null
@@ -92,7 +92,7 @@
     {
       "id": "testimonials",
       "displayName": "Testimonials",
-      "description": "Client testimonials filtered by the current page tag. Content managed in Content \u2192 Testimonials.",
+      "description": "Client testimonials filtered by the current page tag. Content managed in Content → Testimonials.",
       "dataSource": "shared:testimonials",
       "allowMultiple": false,
       "defaultContent": null,
@@ -110,7 +110,7 @@
         {
           "id": "layout-2-singlecol",
           "displayName": "Single Column",
-          "description": "Stacked single column, best for 2\u20134 longer quotes.",
+          "description": "Stacked single column, best for 2–4 longer quotes.",
           "supportedColorSchemes": [
             "light",
             "light-gray",
@@ -146,7 +146,7 @@
     {
       "id": "experience",
       "displayName": "Relevant Experience",
-      "description": "Deal cards filtered for the current page. Content managed in Content \u2192 Deals.",
+      "description": "Deal cards filtered for the current page. Content managed in Content → Deals.",
       "dataSource": "shared:deals",
       "allowMultiple": false,
       "defaultContent": null
@@ -166,7 +166,7 @@
           {
             "id": "edge-1",
             "h": "Practically unlimited liquidity",
-            "b": "We partner with major asset managers \u2014 over 500 institutions on speed dial."
+            "b": "We partner with major asset managers — over 500 institutions on speed dial."
           },
           {
             "id": "edge-2",
@@ -184,7 +184,7 @@
     {
       "id": "faq",
       "displayName": "FAQ",
-      "description": "FAQ items filtered for the current page. Content managed in Content \u2192 FAQs.",
+      "description": "FAQ items filtered for the current page. Content managed in Content → FAQs.",
       "dataSource": "shared:faq",
       "allowMultiple": false,
       "defaultContent": null,
@@ -321,7 +321,7 @@
     {
       "id": "audience-cards",
       "displayName": "Who We Help",
-      "description": "Audience cards with priority/standard variants. Inline content \u2014 editable per page.",
+      "description": "Audience cards with priority/standard variants. Inline content — editable per page.",
       "dataSource": "inline",
       "allowMultiple": false,
       "supportedColorSchemes": [
@@ -355,7 +355,7 @@
     {
       "id": "service-cards",
       "displayName": "What We Offer",
-      "description": "Dark service cards with neon titles. Inline content \u2014 editable per page.",
+      "description": "Dark service cards with neon titles. Inline content — editable per page.",
       "dataSource": "inline",
       "allowMultiple": false,
       "supportedColorSchemes": [
@@ -387,7 +387,7 @@
     {
       "id": "comparison",
       "displayName": "Why Turnpage",
-      "description": "Two-column old-way vs. new-way comparison. Inline content \u2014 editable per page.",
+      "description": "Two-column old-way vs. new-way comparison. Inline content — editable per page.",
       "dataSource": "inline",
       "allowMultiple": false,
       "supportedColorSchemes": [
@@ -422,7 +422,7 @@
     {
       "id": "how-it-works",
       "displayName": "How It Works",
-      "description": "Dark numbered step sequence. Inline content \u2014 editable per page.",
+      "description": "Dark numbered step sequence. Inline content — editable per page.",
       "dataSource": "inline",
       "allowMultiple": false,
       "supportedColorSchemes": [
@@ -525,9 +525,78 @@
       }
     },
     {
+      "id": "timeline",
+      "displayName": "Milestone Timeline",
+      "description": "Milestone timeline with status dots (done / you-are-here / upcoming), date labels, and optional status pills, followed by an optional row of outcome scenario cards and a footnote. Light paper background.",
+      "dataSource": "inline",
+      "allowMultiple": true,
+      "defaultContent": {
+        "eyebrow": "The road ahead",
+        "title": "Section title goes here",
+        "accent": "with accent.",
+        "steps": [
+          {
+            "id": "tl-1",
+            "when": "Now",
+            "heading": "First milestone",
+            "body": "Describe what just happened.",
+            "state": "here",
+            "pillLabel": "You are here",
+            "pillStyle": "neon"
+          },
+          {
+            "id": "tl-2",
+            "when": "Next month",
+            "heading": "Second milestone",
+            "body": "Describe what happens next.",
+            "state": "",
+            "pillLabel": "",
+            "pillStyle": "neon"
+          },
+          {
+            "id": "tl-3",
+            "when": "Later",
+            "heading": "Third milestone",
+            "body": "Describe the end state.",
+            "state": "",
+            "pillLabel": "Most realistic",
+            "pillStyle": "ink"
+          }
+        ],
+        "scenariosEyebrow": "Potential outcomes",
+        "scenarios": [
+          {
+            "id": "sc-1",
+            "tag": "",
+            "year": "2026",
+            "title": "Best case scenario description",
+            "note": "Supporting note*",
+            "highlight": false
+          },
+          {
+            "id": "sc-2",
+            "tag": "Most likely",
+            "year": "2027",
+            "title": "Most likely scenario description",
+            "note": "Supporting note*",
+            "highlight": true
+          },
+          {
+            "id": "sc-3",
+            "tag": "",
+            "year": "2028+",
+            "title": "Slow case scenario description",
+            "note": "Supporting note*",
+            "highlight": false
+          }
+        ],
+        "footnote": "*Small-print footnote and sources go here."
+      }
+    },
+    {
       "id": "bullet-columns",
       "displayName": "Bullet Columns",
-      "description": "Title with 2\u20134 columns of bold headings and bullet lists (e.g. a services overview). Neon, white, gray, or dark background; optional background image.",
+      "description": "Title with 2–4 columns of bold headings and bullet lists (e.g. a services overview). Neon, white, gray, or dark background; optional background image.",
       "dataSource": "inline",
       "allowMultiple": true,
       "supportedColorSchemes": [
@@ -636,14 +705,14 @@
     {
       "id": "rich-text",
       "displayName": "Text Block",
-      "description": "Standalone formatted text \u2014 headings (H1/H2/H3), paragraphs, bullet lists, links \u2014 written in simple Markdown. Narrow reading column, full width, or two-column flow.",
+      "description": "Standalone formatted text — headings (H1/H2/H3), paragraphs, bullet lists, links — written in simple Markdown. Narrow reading column, full width, or two-column flow.",
       "dataSource": "inline",
       "allowMultiple": true,
       "layouts": [
         {
           "id": "layout-1-narrow",
           "displayName": "Narrow",
-          "description": "Centered reading column \u2014 best for essays and long copy.",
+          "description": "Centered reading column — best for essays and long copy.",
           "supportedColorSchemes": [
             "white",
             "light-gray",
@@ -675,13 +744,13 @@
       "defaultColorScheme": "white",
       "defaultContent": {
         "eyebrow": "",
-        "markdown": "# Heading goes here\n\nWrite your text in Markdown \u2014 a blank line starts a new paragraph.\n\n## Subheading\n\n- Bullet point one\n- Bullet point two\n\n**Bold**, *italic*, and [links](/contact) are supported."
+        "markdown": "# Heading goes here\n\nWrite your text in Markdown — a blank line starts a new paragraph.\n\n## Subheading\n\n- Bullet point one\n- Bullet point two\n\n**Bold**, *italic*, and [links](/contact) are supported."
       }
     },
     {
       "id": "damages",
       "displayName": "Case Values",
-      "description": "Animated horizontal bar chart of case damages data. Content managed in Pages \u2192 Marketing Pages.",
+      "description": "Animated horizontal bar chart of case damages data. Content managed in Pages → Marketing Pages.",
       "dataSource": "page:damagesData",
       "allowMultiple": false,
       "defaultContent": null
@@ -689,7 +758,7 @@
     {
       "id": "registration-flow",
       "displayName": "Registration Flow",
-      "description": "Multi-step registration wizard. Pick a flow built in Content \u2192 Flows; supports branching steps and file upload. Submits to /api/register with landing-page + ad attribution.",
+      "description": "Multi-step registration wizard. Pick a flow built in Content → Flows; supports branching steps and file upload. Submits to /api/register with landing-page + ad attribution.",
       "dataSource": "forms.json",
       "allowMultiple": false,
       "defaultContent": {
@@ -703,7 +772,7 @@
     {
       "id": "contact-form",
       "displayName": "Contact Form",
-      "description": "Two-column section: sticky sidebar with contact info and the intake form. Style variants: paper, white, image, glass. Contact info is managed in Content \u2192 Contact Form.",
+      "description": "Two-column section: sticky sidebar with contact info and the intake form. Style variants: paper, white, image, glass. Contact info is managed in Content → Contact Form.",
       "dataSource": "inline",
       "allowMultiple": false,
       "defaultContent": {

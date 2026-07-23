@@ -523,6 +523,19 @@ export default function SectionEditorFields({ typeId, form, set }) {
         </>
       )}
 
+      {/* ── Timeline ── */}
+      {typeId === "timeline" && (
+        <>
+          <div style={fieldGroup}><label style={labelStyle}>Eyebrow</label><input style={inputStyle} value={form.eyebrow || ""} onChange={e => set("eyebrow", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
+          <div style={fieldGroup}><label style={labelStyle}>Accent (italic, neon highlight)</label><input style={inputStyle} value={form.accent || ""} onChange={e => set("accent", e.target.value)} /></div>
+          <TimelineStepsEditor steps={form.steps || []} onChange={v => set("steps", v)} />
+          <div style={fieldGroup}><label style={labelStyle}>Scenarios eyebrow</label><input style={inputStyle} value={form.scenariosEyebrow || ""} onChange={e => set("scenariosEyebrow", e.target.value)} /></div>
+          <TimelineScenariosEditor scenarios={form.scenarios || []} onChange={v => set("scenarios", v)} />
+          <div style={fieldGroup}><label style={labelStyle}>Footnote (small print under the cards)</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.footnote || ""} onChange={e => set("footnote", e.target.value)} /></div>
+        </>
+      )}
+
       {/* ── Bullet Columns ── */}
       {typeId === "bullet-columns" && (
         <>
@@ -941,6 +954,95 @@ function ProcessStepsEditor({ steps, onChange }) {
         </div>
       ))}
       <button type="button" onClick={() => onChange([...(steps || []), { id: `step-${(steps || []).length + 1}-${(steps || []).length}`, label: "", heading: "", bullets: [] }])} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}>+ Add step</button>
+    </div>
+  );
+}
+
+/* TimelineStepsEditor — milestones for the Timeline section. Each step has a
+   date label, heading, body text, a dot state, and an optional status pill. */
+function TimelineStepsEditor({ steps, onChange }) {
+  const handleChange = (i, field, val) => {
+    const next = [...(steps || [])];
+    next[i] = { ...next[i], [field]: val };
+    onChange(next);
+  };
+  const move = (i, dir) => {
+    const j = i + dir;
+    if (j < 0 || j >= (steps || []).length) return;
+    const next = [...(steps || [])];
+    [next[i], next[j]] = [next[j], next[i]];
+    onChange(next);
+  };
+  return (
+    <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+      <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 8 }}>Timeline steps</div>
+      {(steps || []).map((s, i) => (
+        <div key={s.id || i} style={{ marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid ${LINE}` }}>
+          <div style={{ display: "flex", gap: 4, marginBottom: 4 }}>
+            <input style={{ ...inputStyle, flex: 1 }} placeholder="Date label (e.g. August 2026)" value={s.when || ""} onChange={e => handleChange(i, "when", e.target.value)} />
+            <button type="button" onClick={() => move(i, -1)} disabled={i === 0} aria-label="Move up" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === 0 ? 0.5 : 1 }}>↑</button>
+            <button type="button" onClick={() => move(i, 1)} disabled={i === (steps || []).length - 1} aria-label="Move down" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === (steps || []).length - 1 ? 0.5 : 1 }}>↓</button>
+          </div>
+          <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Heading" value={s.heading || ""} onChange={e => handleChange(i, "heading", e.target.value)} />
+          <textarea style={{ ...inputStyle, minHeight: 70, marginBottom: 4 }} placeholder="Body text" value={s.body || ""} onChange={e => handleChange(i, "body", e.target.value)} />
+          <div style={{ display: "flex", gap: 4, marginBottom: 4 }}>
+            <select style={{ ...selectStyle, flex: 1 }} value={s.state || ""} onChange={e => handleChange(i, "state", e.target.value)}>
+              <option value="">Upcoming (hollow dot)</option>
+              <option value="here">Current — neon dot with glow</option>
+              <option value="done">Done (filled dot)</option>
+            </select>
+            <input style={{ ...inputStyle, flex: 1 }} placeholder="Pill label (optional)" value={s.pillLabel || ""} onChange={e => handleChange(i, "pillLabel", e.target.value)} />
+            <select style={{ ...selectStyle, flex: 1 }} value={s.pillStyle || "neon"} onChange={e => handleChange(i, "pillStyle", e.target.value)}>
+              <option value="neon">Neon pill</option>
+              <option value="ink">Black pill</option>
+            </select>
+          </div>
+          <button type="button" onClick={() => onChange((steps || []).filter((_, idx) => idx !== i))} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem" }}>Remove</button>
+        </div>
+      ))}
+      <button type="button" onClick={() => onChange([...(steps || []), { id: `tl-${Date.now().toString(36)}`, when: "", heading: "", body: "", state: "", pillLabel: "", pillStyle: "neon" }])} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}>+ Add step</button>
+    </div>
+  );
+}
+
+/* TimelineScenariosEditor — outcome cards under the Timeline section. Each has
+   a big year, title, note, optional neon tag, and a featured (dark) variant. */
+function TimelineScenariosEditor({ scenarios, onChange }) {
+  const handleChange = (i, field, val) => {
+    const next = [...(scenarios || [])];
+    next[i] = { ...next[i], [field]: val };
+    onChange(next);
+  };
+  const move = (i, dir) => {
+    const j = i + dir;
+    if (j < 0 || j >= (scenarios || []).length) return;
+    const next = [...(scenarios || [])];
+    [next[i], next[j]] = [next[j], next[i]];
+    onChange(next);
+  };
+  return (
+    <div style={{ marginBottom: "0.9rem", padding: "0.6rem 0.7rem", border: `1px solid ${LINE}`, background: "#F9FAFB" }}>
+      <div style={{ fontSize: "0.7rem", fontWeight: 700, color: INK_60, letterSpacing: "0.03em", textTransform: "uppercase", marginBottom: 8 }}>Scenario cards</div>
+      {(scenarios || []).map((sc, i) => (
+        <div key={sc.id || i} style={{ marginBottom: 8, paddingBottom: 8, borderBottom: `1px solid ${LINE}` }}>
+          <div style={{ display: "flex", gap: 4, marginBottom: 4 }}>
+            <input style={{ ...inputStyle, flex: 1 }} placeholder="Big year (e.g. Sept 2026)" value={sc.year || ""} onChange={e => handleChange(i, "year", e.target.value)} />
+            <button type="button" onClick={() => move(i, -1)} disabled={i === 0} aria-label="Move up" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === 0 ? 0.5 : 1 }}>↑</button>
+            <button type="button" onClick={() => move(i, 1)} disabled={i === (scenarios || []).length - 1} aria-label="Move down" style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem", opacity: i === (scenarios || []).length - 1 ? 0.5 : 1 }}>↓</button>
+          </div>
+          <input style={{ ...inputStyle, marginBottom: 4 }} placeholder="Title" value={sc.title || ""} onChange={e => handleChange(i, "title", e.target.value)} />
+          <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Note (small text under the title)" value={sc.note || ""} onChange={e => handleChange(i, "note", e.target.value)} />
+          <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 4 }}>
+            <input style={{ ...inputStyle, flex: 1 }} placeholder="Neon tag (optional, e.g. Most likely)" value={sc.tag || ""} onChange={e => handleChange(i, "tag", e.target.value)} />
+            <label style={{ fontSize: "0.74rem", color: INK_60, display: "flex", alignItems: "center", gap: 4, whiteSpace: "nowrap" }}>
+              <input type="checkbox" checked={!!sc.highlight} onChange={e => handleChange(i, "highlight", e.target.checked)} style={{ accentColor: NEON }} />
+              Featured (dark card)
+            </label>
+          </div>
+          <button type="button" onClick={() => onChange((scenarios || []).filter((_, idx) => idx !== i))} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem" }}>Remove</button>
+        </div>
+      ))}
+      <button type="button" onClick={() => onChange([...(scenarios || []), { id: `sc-${Date.now().toString(36)}`, tag: "", year: "", title: "", note: "", highlight: false }])} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.3rem 0.5rem" }}>+ Add scenario</button>
     </div>
   );
 }
