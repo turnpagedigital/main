@@ -185,6 +185,25 @@ export default function SectionEditorFields({ typeId, form, set }) {
               </select>
             </div>
           </div>
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Vertical spacing</label>
+            <select style={selectStyle} value={form.density || "normal"} onChange={e => set("density", e.target.value)}>
+              <option value="normal">Normal (current height)</option>
+              <option value="compact">Compact — about 60% of normal</option>
+              <option value="tight">Tight — slim strip</option>
+            </select>
+          </div>
+          {(form.layout || "band") === "cards" && (
+            <div style={{ marginBottom: "0.9rem" }}>
+              <label style={labelStyle}>Card corner radius — {hasValue(form.cardRadius) ? form.cardRadius : 0}px</label>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <input type="range" min={0} max={40} step={1} value={hasValue(form.cardRadius) ? form.cardRadius : 0} style={{ flex: 1, accentColor: NEON }} onChange={e => set("cardRadius", Number(e.target.value))} />
+                <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardRadius", "")}>Reset</button>
+              </div>
+              <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>0 = square corners.</p>
+            </div>
+          )}
+          <BackgroundImageFields form={form} set={set} />
           <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.9rem" }}>Leave a label blank to use the built-in translated wording.</p>
           {(form.stats || []).map((s, i) => (
             <div key={i} style={{ ...fieldGroup, display: "grid", gridTemplateColumns: "1fr 2fr auto auto auto", gap: 8, alignItems: "end" }}>

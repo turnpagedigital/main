@@ -1,6 +1,7 @@
 import React from "react";
 import { NEON, FONT, PAPER, INK, INK_60, INK_40, LINE, SURFACE, SECONDARY_BG } from "../../data/tokens.js";
 import { useI18n } from "../../lib/i18n.js";
+import { sectionBackground } from "../../lib/section-background.js";
 
 /* Stats Band — large numbers in a horizontal strip.
    Uses composition content if provided; falls back to translation keys.
@@ -12,7 +13,17 @@ import { useI18n } from "../../lib/i18n.js";
                    | "minimal" (open, no dividers)
      align       — "left" (default) | "center"
      valueColor  — "auto" (white on dark / ink on light) | "neon"
+     cardRadius  — cards-layout corner radius in px (0–40, default 0)
+     density     — "normal" (default) | "compact" | "tight" vertical spacing
+     backgroundImage + imageFilter + imageFilterStrength — optional photo
+       background behind the band/cards (colorScheme still drives text colors)
 */
+
+const DENSITY = {
+  normal:  { band: "clamp(2rem,4vw,3.5rem) clamp(1.5rem,3vw,2.5rem)", outer: "clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)", card: "clamp(1.6rem,3vw,2.4rem) clamp(1.2rem,2.5vw,1.8rem)" },
+  compact: { band: "clamp(1.2rem,2.5vw,2rem) clamp(1.5rem,3vw,2.5rem)", outer: "clamp(1.2rem,2.5vw,1.8rem) clamp(1.5rem,3vw,2.5rem)", card: "clamp(1rem,2vw,1.5rem) clamp(1rem,2vw,1.5rem)" },
+  tight:   { band: "clamp(0.8rem,1.5vw,1.2rem) clamp(1.5rem,3vw,2.5rem)", outer: "clamp(0.8rem,1.5vw,1.2rem) clamp(1.5rem,3vw,2.5rem)", card: "clamp(0.8rem,1.5vw,1.1rem) clamp(0.9rem,1.8vw,1.3rem)" },
+};
 
 const SCHEMES = {
   dark:         { bg: "#0A0B0E",    ink: "#fff", body: "rgba(255,255,255,0.78)", faint: "rgba(255,255,255,0.5)", line: "rgba(255,255,255,0.08)", card: "rgba(255,255,255,0.04)" },
@@ -42,10 +53,17 @@ export default function StatsBandSection({ sectionConfig }) {
 
   const cols = Math.max(stats.length, 1);
   const footnoteText = en ? (c.footnote ?? t(footnoteKey)) : t(footnoteKey);
+  const d = DENSITY[c.density] || DENSITY.normal;
+  const cardRadius = Number.isFinite(Number(c.cardRadius)) && c.cardRadius !== "" && c.cardRadius !== null
+    ? Math.max(0, Math.min(40, Number(c.cardRadius)))
+    : 0;
+  const sectionBg = c.backgroundImage
+    ? sectionBackground(c.backgroundImage, c.imageFilter, c.imageFilterStrength)
+    : s.bg;
 
   return (
     <section style={{
-      background: s.bg, color: s.ink,
+      background: sectionBg, color: s.ink,
       ...(isBand ? {
         borderTop: `1px solid ${s.line}`,
         borderBottom: `1px solid ${s.line}`,
@@ -53,7 +71,7 @@ export default function StatsBandSection({ sectionConfig }) {
     }}>
       <div style={{
         maxWidth: 1440, margin: "0 auto",
-        padding: isBand ? 0 : "clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)",
+        padding: isBand ? 0 : d.outer,
       }}>
         <div style={{
           display: "grid", gridTemplateColumns: `repeat(${cols}, 1fr)`,
@@ -63,11 +81,9 @@ export default function StatsBandSection({ sectionConfig }) {
         }} className="stats-band-grid">
           {stats.map((it, i) => (
             <div key={i} className="stat-band-item" style={{
-              padding: isBand
-                ? "clamp(2rem,4vw,3.5rem) clamp(1.5rem,3vw,2.5rem)"
-                : isCards ? "clamp(1.6rem,3vw,2.4rem) clamp(1.2rem,2.5vw,1.8rem)" : 0,
+              padding: isBand ? d.band : isCards ? d.card : 0,
               ...(isBand ? { borderRight: `1px solid ${s.line}` } : {}),
-              ...(isCards ? { background: s.card, border: `1px solid ${s.line}` } : {}),
+              ...(isCards ? { background: s.card, border: `1px solid ${s.line}`, borderRadius: cardRadius } : {}),
               textAlign: center ? "center" : "left",
             }}>
               <div style={{
