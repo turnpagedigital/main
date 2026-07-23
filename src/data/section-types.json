@@ -828,7 +828,8 @@
         "colorScheme": "paper",
         "cardRadius": 10,
         "cardStyle": "card",
-        "formScale": 100
+        "formScale": 100,
+        "disclosure": ""
       },
       "supportedColorSchemes": [
         "paper",
