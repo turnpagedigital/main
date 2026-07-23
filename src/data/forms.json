@@ -13,15 +13,15 @@
       "steps": [
         {
           "id": "role",
-          "title": "First, who are you?",
+          "title": "Your Rights",
           "fields": [
             {
               "id": "role",
               "type": "choice",
-              "label": "Are you the author, or a publisher?",
+              "label": "I am a",
               "required": true,
               "options": [
-                "Author / creator",
+                "Author",
                 "Publisher"
               ]
             }
