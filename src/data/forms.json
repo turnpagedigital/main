@@ -29,7 +29,7 @@
         },
         {
           "id": "author-upload",
-          "title": "Upload your claim form",
+          "title": "Claim Form",
           "showIf": {
             "fieldId": "role",
             "equals": "Author / creator"
@@ -59,7 +59,7 @@
         },
         {
           "id": "contact",
-          "title": "Your details",
+          "title": "Your Details",
           "fields": [
             {
               "id": "firstName",
@@ -83,7 +83,7 @@
         },
         {
           "id": "author-confirm",
-          "title": "Your works & estimate",
+          "title": "Your Offer",
           "showIf": {
             "fieldId": "role",
             "equals": "Author / creator"
