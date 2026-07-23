@@ -28,6 +28,7 @@ import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js
  *   cardRadius      — form-card corner radius in px (0–40, default 10)
  *   cardStyle       — "card" (default, white form card) | "float" (no card —
  *     the form sits directly on the section background)
+ *   disclosure      — small-print paragraph rendered below the form
  *   formScale       — form zoom in % (100–150, default 100) for a bigger,
  *     easier-to-read form
  */
@@ -55,11 +56,12 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
       cardRadius={c.cardRadius}
       cardStyle={c.cardStyle}
       formScale={c.formScale}
+      disclosure={c.disclosure}
     />
   );
 }
 
-function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, formScale }) {
+function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, formScale, disclosure }) {
   const [answers, setAnswers] = useState({});
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
@@ -337,6 +339,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       cardRadius={cardRadius}
       cardStyle={cardStyle}
       formScale={formScale}
+      disclosure={disclosure}
       flowIntro={flow.intro}
     >
       {formState === "success" ? successNode : formNode}
@@ -368,7 +371,7 @@ const SHELL_SCHEMES = {
   dark:         { bg: DARK,         dark: true },
 };
 
-function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, formScale, flowIntro, children }) {
+function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, formScale, disclosure, flowIntro, children }) {
   // layout "dark" predates colorScheme and acts as its alias
   const scheme  = SHELL_SCHEMES[colorScheme] || (layout === "dark" ? SHELL_SCHEMES.dark : SHELL_SCHEMES.paper);
   // On a photo background, a darkening filter implies white outer text
@@ -400,6 +403,16 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
         padding: "clamp(1.5rem,3.5vw,2.5rem)",
         ...(scale !== 100 ? { zoom: scale / 100 } : {}),
       };
+
+  const disclosureNode = disclosure ? (
+    <p style={{
+      fontFamily: FONT, fontSize: "0.74rem", lineHeight: 1.6,
+      color: isDark ? "rgba(255,255,255,0.45)" : "rgba(10,10,10,0.45)",
+      marginTop: "1.4rem", maxWidth: 860,
+    }}>
+      {disclosure}
+    </p>
+  ) : null;
 
   const headingBlock = (eyebrow || title) ? (
     <div>
@@ -457,7 +470,10 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
             )}
           </div>
           {/* Right: form card */}
-          <div style={cardStyle}>{children}</div>
+          <div>
+            <div style={cardStyle}>{children}</div>
+            {disclosureNode}
+          </div>
         </div>
         <style>{`
           @media (max-width: 860px) {
@@ -478,6 +494,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
           <div style={{ marginBottom: "2rem" }}>{headingBlock}</div>
         )}
         <div style={cardStyle}>{children}</div>
+        {disclosureNode}
       </div>
     </section>
   );

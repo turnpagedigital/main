@@ -124,6 +124,10 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>0 = square corners. Default 10.</p>
             </div>
           )}
+          <div style={fieldGroup}>
+            <label style={labelStyle}>Disclosure (small print below the form)</label>
+            <textarea style={{ ...inputStyle, minHeight: 90 }} value={form.disclosure || ""} onChange={e => set("disclosure", e.target.value)} placeholder="e.g. Turnpage is not affiliated with Anthropic, JND (the claims administrator)…" />
+          </div>
           <div style={{ marginBottom: "0.9rem" }}>
             <label style={labelStyle}>Form size — {hasValue(form.formScale) ? form.formScale : 100}%</label>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
