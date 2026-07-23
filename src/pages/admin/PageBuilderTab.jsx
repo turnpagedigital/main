@@ -6,6 +6,7 @@ import PagePreviewOverlay from "./PagePreviewOverlay.jsx";
 import TemplatePicker from "./TemplatePicker.jsx";
 import CenterPreview from "./visualeditor/CenterPreview.jsx";
 import PropertyPanel from "./visualeditor/PropertyPanel.jsx";
+import { sectionsFingerprint } from "../../lib/section-fingerprint.js";
 
 /* PageBuilderTab — view and manage the section composition of every page.
 
@@ -160,7 +161,14 @@ export default function PageBuilderTab({ onDirtyChange }) {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify({ pageKey: selectedKey, sections, status: pageStatus }),
+        body: JSON.stringify({
+          pageKey: selectedKey,
+          sections,
+          status: pageStatus,
+          // Layout version this tab loaded — lets the server refuse the save
+          // (409) if the stored layout changed since, instead of overwriting.
+          baseVersion: sectionsFingerprint(originalSections),
+        }),
       });
       const data = await res.json();
       if (!data.ok) throw new Error(data.error || "Save failed");

@@ -17,6 +17,7 @@
 
 import { isAuthed, jsonResponse } from "./_utils.js";
 import { getFileFromGitHub, commitFileToGitHub, commitFilesToGitHub } from "./_github.js";
+import { sectionsFingerprint } from "../../../src/lib/section-fingerprint.js";
 
 const COMPOSITIONS_PATH = "src/data/page-compositions.json";
 const ROUTES_PATH        = "src/data/routes.json";
@@ -111,6 +112,19 @@ export async function onRequest({ request, env }) {
     const idx   = pages.findIndex(p => p.pageKey === body.pageKey);
     if (idx === -1) {
       return jsonResponse({ ok: false, error: `Page "${body.pageKey}" not found` }, 404);
+    }
+
+    // Stale-tab guard: if the client says which layout version it loaded and
+    // the stored layout has since changed (another tab, or a git-side edit),
+    // refuse rather than silently overwrite the newer layout.
+    if (typeof body.baseVersion === "string" && body.baseVersion) {
+      const current = sectionsFingerprint(pages[idx].sections || []);
+      if (current !== body.baseVersion) {
+        return jsonResponse({
+          ok: false,
+          error: "This page's layout changed after you opened it (another tab, or an update pushed via git). Your save was NOT applied. Reload the Page Builder to get the latest layout, then re-apply your edits.",
+        }, 409);
+      }
     }
 
     // Optionally update title
