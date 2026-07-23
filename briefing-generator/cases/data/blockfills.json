@@ -14,40 +14,94 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
-    "date_last_filing": "2026-07-17",
-    "fetched_at": "2026-07-22T15:42:38.884502+00:00",
-    "as_of": "Jul 22, 2026",
-    "new_in_72h": 0,
+    "date_last_filing": "2026-07-23",
+    "fetched_at": "2026-07-23T16:04:38.875258+00:00",
+    "as_of": "Jul 23, 2026",
+    "new_in_72h": 6,
     "recent": [
       {
-        "entry_number": null,
-        "date_filed": "2026-07-17",
-        "date_display": "Jul 17, 2026",
+        "entry_number": 533,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
         "description": "",
-        "is_new": false,
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 530,
-        "date_filed": "2026-07-15",
-        "date_display": "Jul 15, 2026",
-        "description": "Certificate of Service re: Second Monthly Fee Application of Cole Schotz P.C., Counsel to the Debtors at the Sole Direction of the Disinterested Director, for Allowance of Compensation and Reimbursement of Expenses for the Period from May 1, 2026 Through May 31, 2026 (related doc",
-        "is_new": false,
+        "entry_number": 537,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 529,
-        "date_filed": "2026-07-14",
-        "date_display": "Jul 14, 2026",
-        "description": "Certificate of Service re: Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates (related document(s)527) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (",
-        "is_new": false,
+        "entry_number": 534,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 533,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 537,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 534,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 536,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 535,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 532,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": null,
         "date_filed": "2026-07-17",
@@ -85,15 +139,6 @@
         "doc_url": ""
       },
       {
-        "entry_number": 525,
-        "date_filed": "2026-07-13",
-        "date_display": "Jul 13, 2026",
-        "description": "Court Date & Time [07/13/2026 09:59:23 AM]. File Size [ 1414 KB ]. Run Time [ 00:05:51 ]. (admin). (Entered: 07/13/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 526,
         "date_filed": "2026-07-13",
         "date_display": "Jul 13, 2026",
@@ -103,10 +148,28 @@
         "doc_url": ""
       },
       {
+        "entry_number": 525,
+        "date_filed": "2026-07-13",
+        "date_display": "Jul 13, 2026",
+        "description": "Court Date & Time [07/13/2026 09:59:23 AM]. File Size [ 1414 KB ]. Run Time [ 00:05:51 ]. (admin). (Entered: 07/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 527,
         "date_filed": "2026-07-13",
         "date_display": "Jul 13, 2026",
         "description": "Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates (related document(s)488, 502, 503, 504, 510) Order Signed on 7/13/2026. (Attachments: # 1 Exhibit A # 2 Exhibit B)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 515,
+        "date_filed": "2026-07-10",
+        "date_display": "Jul 10, 2026",
+        "description": "Exhibit(s) // Notice of Filing of (I) Revised Proposed Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates and (II) Redline Thereof (related document(s)505, 510) File",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -148,69 +211,6 @@
         "doc_url": ""
       },
       {
-        "entry_number": 522,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Certificate of Service re: Documents Served on July 8, 2026 (related document(s)500, 501, 502, 503, 504, 505) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (Kass, Albert) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 514,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 26-10371-TMH) [claims,trclm11] ( 28.00). Receipt Number A12739006, amount $ 28.00. (U.S. Treasury) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 515,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Exhibit(s) // Notice of Filing of (I) Revised Proposed Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates and (II) Redline Thereof (related document(s)505, 510) File",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 524,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Certificate of Service re: Documents Served on July 10, 2026 (related document(s)510, 515, 516, 517, 518, 519, 520, 521) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (Kass, Albert) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 510,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Exhibit(s) // Notice of Filing of (I) Modified Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates; and (II) Redline Thereof (related document(s)128, 391, 488) Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 Exhi",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 519,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Chapter 11 Monthly Operating Report for Case Number 26-10374 (Reliz CI LTD) for the Month Ending: 05/31/2026 Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 May MOR Support Schedules) (Hurst, David) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 513,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: EdgeIn Inc (Amount $4,995.99) To Bradford Capital Holdings LP. Filed by Bradford Capital Management, LLC. (Brager, Brian) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 520,
         "date_filed": "2026-07-10",
         "date_display": "Jul 10, 2026",
@@ -220,10 +220,10 @@
         "doc_url": ""
       },
       {
-        "entry_number": null,
+        "entry_number": 522,
         "date_filed": "2026-07-10",
         "date_display": "Jul 10, 2026",
-        "description": "",
+        "description": "Certificate of Service re: Documents Served on July 8, 2026 (related document(s)500, 501, 502, 503, 504, 505) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (Kass, Albert) (Entered: 07/10/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""

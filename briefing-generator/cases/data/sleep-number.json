@@ -14,33 +14,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-07-21",
-    "fetched_at": "2026-07-22T15:42:41.390615+00:00",
-    "as_of": "Jul 22, 2026",
-    "new_in_72h": 15,
+    "date_last_filing": "2026-07-22",
+    "fetched_at": "2026-07-23T16:04:46.195296+00:00",
+    "as_of": "Jul 23, 2026",
+    "new_in_72h": 11,
     "recent": [
       {
-        "entry_number": 430,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
+        "entry_number": 437,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 429,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
+        "entry_number": 436,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 431,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
+        "entry_number": null,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -49,27 +49,54 @@
     ],
     "entries": [
       {
-        "entry_number": 430,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
+        "entry_number": 437,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 429,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
+        "entry_number": 436,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 431,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
+        "entry_number": null,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 433,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 438,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 435,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -94,9 +121,27 @@
         "doc_url": ""
       },
       {
-        "entry_number": null,
-        "date_filed": "2026-07-20",
-        "date_display": "Jul 20, 2026",
+        "entry_number": 429,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 430,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 431,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -106,8 +151,8 @@
         "entry_number": null,
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
-        "description": "Pending Deadlines Terminated RE: Motion to Authorize / Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the Stalking Horse Bidder fo",
-        "is_new": true,
+        "description": "",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -116,7 +161,7 @@
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -125,7 +170,7 @@
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -133,8 +178,8 @@
         "entry_number": null,
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
-        "description": "",
-        "is_new": true,
+        "description": "Pending Deadlines Terminated RE: Motion to Authorize / Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the Stalking Horse Bidder fo",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -143,7 +188,7 @@
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
         "description": "Notice of Adjournment of Hearing RE: Proposed Order / Notice of Revised Proposed Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, ",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -152,16 +197,7 @@
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
         "description": "Pending Deadlines Terminated RE: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders, Pursuant to 11 U.S.C. Sections 105, 361, 362, 363, 364, 503, 506, 507 and 552 (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Fi",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 408,
-        "date_filed": "2026-07-20",
-        "date_display": "Jul 20, 2026",
-        "description": "Notice of Adjournment of Hearing Re: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Ad",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -170,63 +206,27 @@
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
         "description": "Notice of Adjournment of Hearing RE: Objection to Motion UNITED STATES TRUSTEES OBJECTION TO MOTION OF THE DEBTORS FOR ENTRY OF INTERIM AND FINAL ORDERS AUTHORIZING (I) THE DEBTORS TO (A) HONOR PREPETITION EMPLOYEE OBLIGATIONS AND DIRECTOR OBLIGATIONS AND (B) MAINTAIN EMPLOYEE BE",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 427,
+        "entry_number": null,
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
         "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 402,
-        "date_filed": "2026-07-19",
-        "date_display": "Jul 19, 2026",
-        "description": "Notice of Proposed Order / Notice of Revised Proposed Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Current and Former Emp",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.402.0.pdf"
-      },
-      {
-        "entry_number": 404,
-        "date_filed": "2026-07-19",
-        "date_display": "Jul 19, 2026",
-        "description": "Statement of the Official Committee of Unsecured Creditors in Support of the Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs ",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 405,
-        "date_filed": "2026-07-19",
-        "date_display": "Jul 19, 2026",
-        "description": "Statement of the Official Committee of Unsecured Creditors' in Support of the Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the S",
+        "entry_number": 408,
+        "date_filed": "2026-07-20",
+        "date_display": "Jul 20, 2026",
+        "description": "Notice of Adjournment of Hearing Re: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Ad",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 406,
-        "date_filed": "2026-07-19",
-        "date_display": "Jul 19, 2026",
-        "description": "Notice of Proposed Order / Notice of (A) Revised Proposed Order (I) Approving Sale of Debtors Assets Free and Clear of Liens, Claims, Interests and Encumbrances, (II) Authorizing Assumption and Assignment of Executory Contracts and Unexpired Leases, and (III) Granting Related Rel",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.406.0.pdf"
-      },
-      {
-        "entry_number": 403,
-        "date_filed": "2026-07-19",
-        "date_display": "Jul 19, 2026",
-        "description": "Reply to Motion / Reply in Support of the Debtors Motion for Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Cu",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.403.0.pdf"
       }
     ]
   },
