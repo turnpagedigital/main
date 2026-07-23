@@ -316,7 +316,10 @@
               "href": "#register"
             },
             "layout": "layout-2-image-left",
-            "colorScheme": "white"
+            "colorScheme": "white",
+            "imageTone": "paper",
+            "imageOverlay": "light",
+            "imageOverlayStrength": 10
           }
         },
         {
@@ -431,7 +434,7 @@
                 "id": "step-3",
                 "n": "03",
                 "title": "Confirm payment details »",
-                "body": "Connect your bank account via plaid to get paid via direct deposit; or select USDC."
+                "body": "Provide your bank account details for ACH payment, or select USDC."
               },
               {
                 "id": "step-1784772902396",
@@ -443,7 +446,7 @@
                 "id": "step-1784772930126",
                 "n": "05",
                 "title": "Book closing call »",
-                "body": "We'll confirm everything you need to close over zoom and issue payment right away. "
+                "body": "We'll confirm everything you need to close over zoom and issue payment within 48 hours. "
               }
             ],
             "cardStyle": "standard",
