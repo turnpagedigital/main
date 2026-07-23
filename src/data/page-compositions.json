@@ -269,13 +269,13 @@
           "id": "sec-aic-payout-scenarios",
           "type": "scenario-cards",
           "visible": true,
-          "colorScheme": "white",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "",
             "title": "$3000 per work? Sounds great, but ",
             "accent": "when do I get the check?",
             "kicker": "",
-            "colorScheme": "white",
+            "colorScheme": "light-gray",
             "cards": [
               {
                 "id": "sc-2",
@@ -301,12 +301,12 @@
           "id": "sec-aic-payout-timeline",
           "type": "timeline",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "",
             "title": "How are things likely to",
             "accent": "play out?",
-            "colorScheme": "light-gray",
+            "colorScheme": "white",
             "steps": [
               {
                 "id": "tl-1",
@@ -361,7 +361,7 @@
           "type": "image-text",
           "visible": true,
           "layout": "layout-2-image-left",
-          "colorScheme": "white",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "",
             "title": "We pay faster than",
@@ -371,7 +371,7 @@
             "imageAlt": "",
             "cta": null,
             "layout": "layout-2-image-left",
-            "colorScheme": "white"
+            "colorScheme": "light-gray"
           }
         },
         {
