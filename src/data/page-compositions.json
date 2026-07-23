@@ -416,8 +416,8 @@
             "cardStyle": "standard",
             "cardRadius": "square",
             "_bookmark": "how-it-works",
-            "backgroundImage": "/library/data-center-2.jpg",
-            "imageFilterStrength": 30,
+            "backgroundImage": "/bg-paper.jpg",
+            "imageFilterStrength": 50,
             "imageFilter": "dark",
             "cardBrightness": 100,
             "cardBlur": 43
