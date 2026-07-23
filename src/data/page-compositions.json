@@ -432,8 +432,8 @@
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "",
-            "title": "Register your ",
-            "accent": "claim details.",
+            "title": "Register to ",
+            "accent": "sell your claim.",
             "layout": "split",
             "cardRadius": 0,
             "colorScheme": "white",
@@ -441,8 +441,8 @@
             "_bookmark": "register",
             "formScale": 110,
             "cardStyle": "float",
-            "_spacingTop": "xlarge",
-            "_spacingBottom": "xlarge"
+            "_spacingTop": "large",
+            "_spacingBottom": "large"
           }
         },
         {
