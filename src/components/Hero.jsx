@@ -114,7 +114,10 @@ export default function Hero({
           {accentTitle && (
             <>
               {" "}
-              <span style={{ color: NEON, fontStyle: "italic", fontWeight: 800 }}>{accentTitle}</span>
+              {/* inline-block makes the accent wrap as one unit: the line breaks
+                  before it when it doesn't fit, keeping the accent words together
+                  (it still wraps internally if longer than a full line) */}
+              <span style={{ color: NEON, fontStyle: "italic", fontWeight: 800, display: "inline-block" }}>{accentTitle}</span>
             </>
           )}
         </h1>
