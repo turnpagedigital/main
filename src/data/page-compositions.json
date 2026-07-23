@@ -453,7 +453,8 @@
             "imageFilterStrength": 50,
             "imageFilter": "dark",
             "cardBrightness": 100,
-            "cardBlur": 43
+            "cardBlur": 43,
+            "stepsLayout": "5"
           }
         },
         {
