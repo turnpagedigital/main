@@ -255,11 +255,11 @@
             "size": "tall",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
-              "label": "Sell My Bartz v. Anthropic Settlement Claim",
-              "href": "/contact?source=ai-copyright"
+              "label": "Sell My Claim Now",
+              "href": "#register"
             },
             "ctaSecondary": {
-              "label": "How It Works",
+              "label": "See How It Works",
               "href": "#how-it-works"
             },
             "_spacingBottom": "none"
@@ -276,7 +276,7 @@
             "title": "Headline goes here.",
             "accent": "",
             "body": "Add a paragraph of supporting text that sits next to the image.",
-            "image": "/bg-paper.jpg",
+            "image": "/library/scanning-books.jpg",
             "imageAlt": "",
             "cta": null,
             "layout": "layout-2-image-left",
@@ -287,12 +287,12 @@
           "id": "sec-aic-payout-timeline",
           "type": "timeline",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "paper",
           "content": {
-            "eyebrow": "The road to distribution",
+            "eyebrow": "TIMELINE",
             "title": "Five steps between the order",
             "accent": "and your check.",
-            "colorScheme": "light-gray",
+            "colorScheme": "paper",
             "steps": [
               {
                 "id": "tl-1",
@@ -346,40 +346,32 @@
           "id": "sec-aic-payout-scenarios",
           "type": "scenario-cards",
           "visible": true,
-          "colorScheme": "paper-2",
+          "colorScheme": "light-gray",
           "content": {
-            "eyebrow": "Potential payout timelines",
-            "title": "When will the settlement check come?",
-            "accent": "",
+            "eyebrow": "",
+            "title": "When will I get my",
+            "accent": "settlement check?",
             "kicker": "",
-            "colorScheme": "paper-2",
+            "colorScheme": "light-gray",
             "cards": [
               {
-                "id": "sc-1",
-                "tag": "BEST CASE",
-                "figure": "Sept 2026",
-                "title": "Best case: no appeal filed, payments begin one business day after the Effective Date",
-                "note": "First installment lands within weeks; later tranches follow Anthropic’s funding schedule*",
-                "highlight": false
-              },
-              {
                 "id": "sc-2",
-                "tag": "",
+                "tag": "Best Case",
                 "figure": "2027",
                 "title": "Class-member objector appeals to the Ninth Circuit, freezing the Effective Date until affirmance",
-                "note": "Fund is fully funded by September 25, 2027 — first checks follow the mandate*",
+                "note": "Fund is fully funded by September 25, 2027 — first checks follow the mandate",
                 "highlight": false
               },
               {
                 "id": "sc-3",
-                "tag": "VERY POSSIBLE",
+                "tag": "Most Likely",
                 "figure": "2028+",
                 "title": "Extended review: en banc rehearing or a Supreme Court cert petition after the panel rules",
-                "note": "Each layer of further review adds months to a year before distribution*",
+                "note": "Each layer of further review adds months to a year before distribution",
                 "highlight": true
               }
             ],
-            "footnote": "*Per-work amounts are gross figures before deduction of court-approved fees ($101.6M), costs, and administration. Default split for trade and university-press titles is 50/50 between the author side and the publisher side; self-published and rights-reverted authors who are sole copyright owners keep the full award. Sources: final approval order of July 20, 2026 (Dkt., N.D. Cal. 3:24-cv-05417); Authors Guild and Authors Alliance settlement guidance; settlement administrator claims data."
+            "footnote": "These estimates are based on experience from other class action cases and are not intended to be relied upon exclusively by claim holders. You are encouraged to conduct your own analysis and/or discuss with competent counsel if you have questions about the timeline. "
           }
         },
         {
