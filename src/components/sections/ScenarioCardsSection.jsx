@@ -9,9 +9,11 @@ import { NEON, FONT, PAPER, PAPER_2, SURFACE, INK, INK_60, INK_40, LINE, DARK_CA
    Schema:
      eyebrow, title, accent — section header (all optional; accent gets the
                               neon underline on light schemes, neon italic on dark)
-     kicker                 — small label inside each card (default "Scenario")
-     cards[]                — { id, tag, figure, title, note, highlight }
+     showKicker             — false hides the small in-card labels entirely (default true)
+     kicker                 — default small label inside each card ("Scenario")
+     cards[]                — { id, tag, figure, title, note, highlight, kicker }
                               highlight: true renders the dark featured card
+                              kicker: per-card override of the default kicker
      footnote               — small print under the cards
      colorScheme            — "paper-2" (default) | "paper" | "white" | "light-gray" | "dark"
 */
@@ -29,8 +31,9 @@ export default function ScenarioCardsSection({ sectionConfig }) {
   const eyebrow  = c.eyebrow || "";
   const title    = c.title || "";
   const accent   = c.accent || "";
-  const kicker   = c.kicker || "Scenario";
-  const cards    = c.cards || [];
+  const showKicker = c.showKicker !== false;
+  const kicker     = c.kicker ?? "Scenario";
+  const cards      = c.cards || [];
   const footnote = c.footnote || "";
 
   const s = SCHEMES[c.colorScheme] || SCHEMES["paper-2"];
@@ -81,6 +84,7 @@ export default function ScenarioCardsSection({ sectionConfig }) {
         }}>
           {cards.map((card, i) => {
             const featured = !!card.highlight;
+            const cardKicker = showKicker ? (card.kicker || kicker) : "";
             return (
               <div key={card.id || i} style={{
                 background: featured ? DARK_CARD : SURFACE,
@@ -105,12 +109,12 @@ export default function ScenarioCardsSection({ sectionConfig }) {
                     background: NEON, color: "#000",
                   }}>{card.tag}</span>
                 )}
-                {kicker && (
+                {cardKicker && (
                   <div style={{
                     position: "relative", fontSize: "0.66rem", fontWeight: 800,
                     letterSpacing: "0.18em", textTransform: "uppercase",
                     color: featured ? "rgba(255,255,255,0.5)" : INK_40,
-                  }}>{kicker}</div>
+                  }}>{cardKicker}</div>
                 )}
                 {card.figure && (
                   <div style={{
