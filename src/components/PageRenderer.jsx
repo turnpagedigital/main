@@ -29,11 +29,43 @@ function buildWrapStyle(c) {
   const hasSpacing = mt || mb;
   const hasHeight  = mh;
   if (!hasSpacing && !hasHeight) return null;
+  // Padding (not margin) so the added space stays inside the wrapper, which
+  // adopts the section's own background below — expanded space matches the
+  // section instead of exposing the black page body.
   return {
-    ...(mt  ? { marginTop:    mt  } : {}),
-    ...(mb  ? { marginBottom: mb  } : {}),
-    ...(mh  ? { minHeight:    mh  } : {}),
+    ...(mt  ? { paddingTop:    mt  } : {}),
+    ...(mb  ? { paddingBottom: mb  } : {}),
+    ...(mh  ? { minHeight:     mh  } : {}),
   };
+}
+
+/* Wrapper for a section with spacing/height overrides: after mount, copy the
+   section's rendered background onto the wrapper so the padded area is
+   indistinguishable from the section itself. */
+function SpacedSection({ id, wrapStyle, children }) {
+  const ref = React.useRef(null);
+  const [bg, setBg] = React.useState(null);
+  React.useLayoutEffect(() => {
+    const first = ref.current && ref.current.firstElementChild;
+    if (!first) return;
+    const cs = getComputedStyle(first);
+    const style = {};
+    if (cs.backgroundColor && cs.backgroundColor !== "rgba(0, 0, 0, 0)") {
+      style.backgroundColor = cs.backgroundColor;
+    }
+    if (cs.backgroundImage && cs.backgroundImage !== "none") {
+      style.backgroundImage    = cs.backgroundImage;
+      style.backgroundSize     = cs.backgroundSize;
+      style.backgroundPosition = cs.backgroundPosition;
+      style.backgroundRepeat   = cs.backgroundRepeat;
+    }
+    if (Object.keys(style).length) setBg(style);
+  }, []);
+  return (
+    <div ref={ref} id={id} style={{ scrollMarginTop: "98px", ...wrapStyle, ...(bg || {}) }}>
+      {children}
+    </div>
+  );
 }
 
 /* PageRenderer — renders a page by its composition.
@@ -63,8 +95,15 @@ export default function PageRenderer({ pageKey }) {
         // scrollMarginTop keeps anchored sections clear of the fixed nav
         // when a #bookmark link scrolls to them.
         const sectionId = (c._bookmark && c._bookmark.trim()) || section.id;
+        if (wrapStyle) {
+          return (
+            <SpacedSection key={section.id} id={sectionId} wrapStyle={wrapStyle}>
+              <Component sectionConfig={section} pageKey={pageKey} />
+            </SpacedSection>
+          );
+        }
         return (
-          <div key={section.id} id={sectionId} style={{ scrollMarginTop: "98px", ...(wrapStyle || {}) }}>
+          <div key={section.id} id={sectionId} style={{ scrollMarginTop: "98px" }}>
             <Component sectionConfig={section} pageKey={pageKey} />
           </div>
         );
