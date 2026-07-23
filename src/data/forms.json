@@ -3,7 +3,7 @@
   "flows": [
     {
       "id": "bartz-registration",
-      "name": "AI Copyright — Bartz Registration",
+      "name": "Anthropic_Bartz",
       "active": true,
       "attioLabel": "bartz-landing",
       "intro": "Provide basic information about your claim.",
@@ -13,12 +13,12 @@
       "steps": [
         {
           "id": "role",
-          "title": "Your Rights",
+          "title": "I am a—",
           "fields": [
             {
               "id": "role",
               "type": "choice",
-              "label": "I am a",
+              "label": "Select one",
               "required": true,
               "options": [
                 "Author",
@@ -53,10 +53,6 @@
                 "email": "contact.email",
                 "self_pub_count": "counts.self",
                 "publisher_count": "counts.publisher"
-              },
-              "moreInfo": {
-                "label": "Where do I get my claim form?",
-                "body": "Your claim form comes from JND Legal Administration, the court-appointed settlement administrator, by email. Search your inbox (including spam) for an email from JND or the Anthropic copyright settlement — the confirmation you received when you submitted your claim includes the form listing your claimed works. If you can't find it, you can request a copy from the settlement administrator through the official settlement website."
               }
             }
           ]
