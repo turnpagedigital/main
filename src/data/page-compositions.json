@@ -437,7 +437,7 @@
           "type": "registration-flow",
           "visible": true,
           "layout": "split",
-          "colorScheme": "light-gray",
+          "colorScheme": "neon",
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "",
@@ -445,7 +445,7 @@
             "accent": "claim details.",
             "layout": "split",
             "cardRadius": 0,
-            "colorScheme": "light-gray",
+            "colorScheme": "neon",
             "backgroundImage": "",
             "_bookmark": "register"
           }
