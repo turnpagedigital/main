@@ -269,13 +269,13 @@
           "id": "sec-aic-payout-scenarios",
           "type": "scenario-cards",
           "visible": true,
-          "colorScheme": "light-gray",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "",
             "title": "$3000 per work? Sounds great, but ",
             "accent": "when do I get the check?",
             "kicker": "",
-            "colorScheme": "light-gray",
+            "colorScheme": "white",
             "cards": [
               {
                 "id": "sc-2",
@@ -298,33 +298,15 @@
           }
         },
         {
-          "id": "sec-1784774482623-y9al",
-          "type": "image-text",
-          "visible": true,
-          "layout": "layout-2-image-left",
-          "colorScheme": "white",
-          "content": {
-            "eyebrow": "",
-            "title": "We pay faster than",
-            "accent": "pirates.",
-            "body": "Anthropic trained its models on pirated works — YOUR WORKS.  We help authors and publishers with rights to payment from the Bartz v. Anthropic class action settlement get compensated faster and easier.",
-            "image": "/library/scanning-books.jpg",
-            "imageAlt": "",
-            "cta": null,
-            "layout": "layout-2-image-left",
-            "colorScheme": "white"
-          }
-        },
-        {
           "id": "sec-aic-payout-timeline",
           "type": "timeline",
           "visible": true,
-          "colorScheme": "paper",
+          "colorScheme": "light-gray",
           "content": {
             "eyebrow": "",
             "title": "How are things likely to",
             "accent": "play out?",
-            "colorScheme": "paper",
+            "colorScheme": "light-gray",
             "steps": [
               {
                 "id": "tl-1",
@@ -367,11 +349,29 @@
                 "when": "2028+",
                 "heading": "First payment arrives",
                 "body": "After affirmance and the mandate, distribution begins: $3,000 gross per claimed work before fees and costs, split 50/50 between author and publisher on most trade titles, paid in up to three installments.",
-                "state": "",
+                "state": "done",
                 "pillLabel": "Most Realistic",
                 "pillStyle": "ink"
               }
             ]
+          }
+        },
+        {
+          "id": "sec-1784774482623-y9al",
+          "type": "image-text",
+          "visible": true,
+          "layout": "layout-2-image-left",
+          "colorScheme": "white",
+          "content": {
+            "eyebrow": "",
+            "title": "We pay faster than",
+            "accent": "pirates.",
+            "body": "Anthropic trained its models on pirated works — YOUR WORKS.  We help authors and publishers with rights to payment from the Bartz v. Anthropic class action settlement get compensated faster and easier.",
+            "image": "/library/scanning-books.jpg",
+            "imageAlt": "",
+            "cta": null,
+            "layout": "layout-2-image-left",
+            "colorScheme": "white"
           }
         },
         {
