@@ -283,13 +283,13 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       {/* Split layout already shows the intro under the left-column heading —
           don't repeat it inside the form card. */}
       {flow.intro && stepIndex === 0 && layout !== "split" && (
-        <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60, marginBottom: "1.6rem", lineHeight: 1.6 }}>
+        <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60, marginBottom: "2rem", lineHeight: 1.6 }}>
           {flow.intro}
         </p>
       )}
       {stepCountKnown && (
         <>
-          <div aria-hidden="true" style={{ display: "flex", gap: 6, marginBottom: "0.7rem" }}>
+          <div aria-hidden="true" style={{ display: "flex", gap: 6, marginBottom: "1.1rem" }}>
             {visibleSteps.map((s, i) => (
               <div key={s.id} style={{
                 flex: 1, height: 4,
@@ -297,12 +297,12 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
               }} />
             ))}
           </div>
-          <p style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: INK_60, marginBottom: "0.5rem" }}>
+          <p style={{ fontFamily: FONT, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: INK_60, marginBottom: "0.8rem" }}>
             Step {stepIndex + 1} of {visibleSteps.length}
           </p>
         </>
       )}
-      <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.35rem", color: INK, marginBottom: "1.4rem", letterSpacing: "-0.01em" }}>
+      <h3 style={{ fontFamily: FONT, fontWeight: 800, fontSize: "1.35rem", color: INK, marginBottom: "1.9rem", letterSpacing: "-0.01em" }}>
         {step.title}
       </h3>
       <div className="field-light">
@@ -318,7 +318,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
           {stepError || errorMsg}
         </p>
       )}
-      <div style={{ display: "flex", gap: "0.8rem", marginTop: "0.4rem" }}>
+      <div style={{ display: "flex", gap: "0.8rem", marginTop: "1.3rem" }}>
         {stepIndex > 0 && (
           <button type="button" onClick={back} className="btn-ghost-ink" style={{ flexShrink: 0 }}>
             ← Back
@@ -595,9 +595,9 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
       {field.required && <span aria-hidden="true" style={{ color: INK, marginLeft: 4, fontWeight: 800 }}>*</span>}
     </label>
   );
-  const wrap = { marginBottom: "1.1rem" };
+  const wrap = { marginBottom: "1.7rem" };
   const helpText = (field.help
-    ? <p style={{ fontFamily: FONT, fontSize: "0.78rem", color: INK_60, margin: "0.25rem 0 0.45rem", lineHeight: 1.5 }}>{field.help}</p>
+    ? <p style={{ fontFamily: FONT, fontSize: "0.78rem", color: INK_60, margin: "0.4rem 0 0.7rem", lineHeight: 1.6 }}>{field.help}</p>
     : null);
 
   if (field.type === "number") {
@@ -716,9 +716,9 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
     return (
       <div style={wrap}>
         {label}
-        {field.help && <p style={{ fontFamily: FONT, fontSize: "0.78rem", color: INK_60, margin: "0.25rem 0 0.45rem" }}>{field.help}</p>}
+        {field.help && <p style={{ fontFamily: FONT, fontSize: "0.78rem", color: INK_60, margin: "0.4rem 0 0.7rem", lineHeight: 1.6 }}>{field.help}</p>}
         {field.moreInfo && field.moreInfo.body && (
-          <details style={{ margin: "0.15rem 0 0.55rem" }}>
+          <details style={{ margin: "0.35rem 0 0.9rem" }}>
             <summary style={{
               fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700, color: INK,
               cursor: "pointer", textDecoration: "underline", textDecorationColor: NEON,
@@ -738,7 +738,7 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
           accept={(field.accept || ["pdf", "png", "jpg"]).map(a => "." + a).join(",")}
           onChange={e => onFile(e.target.files && e.target.files[0])}
           aria-required={field.required || undefined}
-          style={{ fontFamily: FONT, fontSize: "0.88rem", padding: "0.5rem 0" }} />
+          style={{ fontFamily: FONT, fontSize: "0.88rem", padding: "0.8rem 0" }} />
         {file && (
           <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: INK_60, marginTop: "0.3rem" }}>
             Attached: {file.name}{" "}
