@@ -249,7 +249,7 @@
           "visible": true,
           "content": {
             "eyebrow": "AUTHORS & PUBLISHERS",
-            "title": "Turn your Anthropic settlement claim into",
+            "title": "Turn your Anthropic settlement claim to",
             "accentTitle": "instant cash.",
             "subtitle": "                                                                                                                     \n                                                                                                                     \n\n                                                                                                                     \n",
             "size": "tall",
@@ -279,11 +279,13 @@
             "cards": [
               {
                 "id": "sc-2",
-                "tag": "Best Case",
+                "tag": "",
                 "figure": "2027",
                 "title": "Class-member objector appeals to the Ninth Circuit, freezing the Effective Date until affirmance",
                 "note": "Fund is fully funded by September 25, 2027 — first checks follow the mandate",
-                "highlight": false
+                "highlight": false,
+                "cardStyle": "white",
+                "kicker": " Best Case"
               },
               {
                 "id": "sc-3",
@@ -291,10 +293,13 @@
                 "figure": "2028+",
                 "title": "Extended review: en banc rehearing or a Supreme Court cert petition after the panel rules",
                 "note": "Each layer of further review adds months to a year before distribution",
-                "highlight": true
+                "highlight": true,
+                "cardStyle": "dark",
+                "kicker": ""
               }
             ],
-            "footnote": "These estimates are based on experience from other class action cases and are not intended to be relied upon exclusively by claim holders. You are encouraged to conduct your own analysis and/or discuss with competent counsel if you have questions about the timeline. "
+            "footnote": "These estimates are based on experience from other class action cases and are not intended to be relied upon exclusively by claim holders. You are encouraged to conduct your own analysis and/or discuss with competent counsel if you have questions about the timeline. ",
+            "cardRadius": 0
           }
         },
         {
@@ -432,7 +437,7 @@
           "type": "registration-flow",
           "visible": true,
           "layout": "split",
-          "colorScheme": "light-gray",
+          "colorScheme": "neon",
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "",
@@ -440,7 +445,7 @@
             "accent": "claim details.",
             "layout": "split",
             "cardRadius": 0,
-            "colorScheme": "light-gray",
+            "colorScheme": "neon",
             "backgroundImage": "",
             "_bookmark": "register"
           }
