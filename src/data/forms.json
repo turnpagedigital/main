@@ -6,7 +6,7 @@
       "name": "AI Copyright — Bartz Registration",
       "active": true,
       "attioLabel": "bartz-landing",
-      "intro": "Tell us who you are. Authors upload their claim form and get an instant estimate; publishers just leave an email and we'll be in touch.",
+      "intro": "Anthropic trained its models on YOUR WORK. We help authors, artists, publishers, music labels, studios and other rights holders track cases against generative AI companies and get compensated faster.",
       "submitLabel": "Submit",
       "successTitle": "You're registered.",
       "successBody": "We've received your details and will be in touch within 48 hours with your offer and next steps.",
@@ -20,21 +20,31 @@
               "type": "choice",
               "label": "Are you the author, or a publisher?",
               "required": true,
-              "options": ["Author / creator", "Publisher"]
+              "options": [
+                "Author / creator",
+                "Publisher"
+              ]
             }
           ]
         },
         {
           "id": "author-upload",
           "title": "Upload your claim form",
-          "showIf": { "fieldId": "role", "equals": "Author / creator" },
+          "showIf": {
+            "fieldId": "role",
+            "equals": "Author / creator"
+          },
           "fields": [
             {
               "id": "claim_form",
               "type": "file",
               "label": "Upload your claim form",
               "required": true,
-              "accept": ["pdf", "png", "jpg"],
+              "accept": [
+                "pdf",
+                "png",
+                "jpg"
+              ],
               "help": "Upload your completed Bartz settlement claim form (PDF or image). We'll read it and fill in the rest for you — no typing needed.",
               "extract": "bartz-claim",
               "extractMap": {
@@ -51,15 +61,33 @@
           "id": "contact",
           "title": "Your details",
           "fields": [
-            { "id": "firstName", "type": "text", "label": "First name", "required": false },
-            { "id": "lastName", "type": "text", "label": "Last name", "required": false },
-            { "id": "email", "type": "email", "label": "Email", "required": true }
+            {
+              "id": "firstName",
+              "type": "text",
+              "label": "First name",
+              "required": false
+            },
+            {
+              "id": "lastName",
+              "type": "text",
+              "label": "Last name",
+              "required": false
+            },
+            {
+              "id": "email",
+              "type": "email",
+              "label": "Email",
+              "required": true
+            }
           ]
         },
         {
           "id": "author-confirm",
           "title": "Your works & estimate",
-          "showIf": { "fieldId": "role", "equals": "Author / creator" },
+          "showIf": {
+            "fieldId": "role",
+            "equals": "Author / creator"
+          },
           "fields": [
             {
               "id": "works_summary",
