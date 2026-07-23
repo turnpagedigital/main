@@ -349,14 +349,14 @@
           "colorScheme": "paper-2",
           "content": {
             "eyebrow": "Potential payout timelines",
-            "title": "",
+            "title": "When will the settlement check come?",
             "accent": "",
-            "kicker": "Scenario",
+            "kicker": "",
             "colorScheme": "paper-2",
             "cards": [
               {
                 "id": "sc-1",
-                "tag": "",
+                "tag": "BEST CASE",
                 "figure": "Sept 2026",
                 "title": "Best case: no appeal filed, payments begin one business day after the Effective Date",
                 "note": "First installment lands within weeks; later tranches follow Anthropic’s funding schedule*",
@@ -364,19 +364,19 @@
               },
               {
                 "id": "sc-2",
-                "tag": "Most likely",
+                "tag": "",
                 "figure": "2027",
                 "title": "Class-member objector appeals to the Ninth Circuit, freezing the Effective Date until affirmance",
                 "note": "Fund is fully funded by September 25, 2027 — first checks follow the mandate*",
-                "highlight": true
+                "highlight": false
               },
               {
                 "id": "sc-3",
-                "tag": "",
+                "tag": "VERY POSSIBLE",
                 "figure": "2028+",
                 "title": "Extended review: en banc rehearing or a Supreme Court cert petition after the panel rules",
                 "note": "Each layer of further review adds months to a year before distribution*",
-                "highlight": false
+                "highlight": true
               }
             ],
             "footnote": "*Per-work amounts are gross figures before deduction of court-approved fees ($101.6M), costs, and administration. Default split for trade and university-press titles is 50/50 between the author side and the publisher side; self-published and rights-reverted authors who are sole copyright owners keep the full award. Sources: final approval order of July 20, 2026 (Dkt., N.D. Cal. 3:24-cv-05417); Authors Guild and Authors Alliance settlement guidance; settlement administrator claims data."
