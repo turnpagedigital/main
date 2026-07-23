@@ -261,7 +261,8 @@
             "ctaSecondary": {
               "label": "How It Works",
               "href": "#how-it-works"
-            }
+            },
+            "_spacingBottom": "large"
           }
         },
         {
