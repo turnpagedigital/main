@@ -68,6 +68,33 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
   );
 }
 
+/* Flow intro with a lead/secondary split: the FIRST line renders large and
+   bold, any following lines render as smaller muted text. Line breaks come
+   straight from the Intro textarea in Registration -> Flows. */
+function IntroText({ text, dark = false, style = {} }) {
+  const lines = String(text).split("\n").map(l => l.trim()).filter(Boolean);
+  if (!lines.length) return null;
+  const [lead, ...rest] = lines;
+  return (
+    <div style={style}>
+      <p style={{
+        fontFamily: FONT, fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)", fontWeight: 700,
+        color: dark ? "#fff" : INK, lineHeight: 1.5, margin: 0,
+      }}>
+        {lead}
+      </p>
+      {rest.map((line, i) => (
+        <p key={i} style={{
+          fontFamily: FONT, fontSize: "0.92rem",
+          color: dark ? MUTED : INK_60, lineHeight: 1.65, margin: "0.7rem 0 0",
+        }}>
+          {line}
+        </p>
+      ))}
+    </div>
+  );
+}
+
 function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, cardColor, formScale, disclosure, align }) {
   const [answers, setAnswers] = useState({});
   const [files, setFiles] = useState({});
@@ -283,9 +310,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       {/* Split layout already shows the intro under the left-column heading —
           don't repeat it inside the form card. */}
       {flow.intro && stepIndex === 0 && layout !== "split" && (
-        <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60, marginBottom: "2rem", lineHeight: 1.6 }}>
-          {flow.intro}
-        </p>
+        <IntroText text={flow.intro} style={{ marginBottom: "2rem" }} />
       )}
       {stepCountKnown && (
         <>
@@ -546,13 +571,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
           <div style={{ position: "sticky", top: 110 }}>
             {headingBlock}
             {flowIntro && (
-              <p style={{
-                fontFamily: FONT, fontSize: "0.95rem",
-                color: isDark ? MUTED : INK_60,
-                lineHeight: 1.65, marginTop: "1.2rem",
-              }}>
-                {flowIntro}
-              </p>
+              <IntroText text={flowIntro} dark={isDark} style={{ marginTop: "1.2rem" }} />
             )}
           </div>
           {/* Right: form card */}
