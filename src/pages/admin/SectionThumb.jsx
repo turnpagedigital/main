@@ -761,7 +761,7 @@ function TimelineThumb() {
         Five steps to <span style={{ fontStyle: "italic", background: NEON, padding: "0 6px" }}>the payout.</span>
       </h2>
       <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 24 }}>
-        <div style={{ position: "absolute", left: 0, right: 0, top: 9, height: 3, background: "rgba(10,10,10,0.18)" }} />
+        <div style={{ position: "absolute", left: 0, right: 127, top: 9, height: 3, background: "rgba(10,10,10,0.18)" }} />
         {steps.map((s, i) => (
           <div key={i} style={{ position: "relative", paddingTop: 36 }}>
             <span style={{ position: "absolute", top: 0, left: 0, width: 20, height: 20, borderRadius: "50%",
