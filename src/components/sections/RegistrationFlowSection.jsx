@@ -316,6 +316,9 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
             ← Back
           </button>
         )}
+        {/* On steps driven by a required choice (e.g. Author/Publisher), the
+            Continue bar stays hidden until an option is picked. */}
+        {!(step.fields || []).some(f => (f.type === "choice" || f.type === "yesno") && f.required && !answers[f.id]) && (
         <button
           type="button"
           onClick={next}
@@ -326,6 +329,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
         >
           {extracting ? "Reading your claim form…" : formState === "submitting" ? "Sending..." : isLast ? (flow.submitLabel || "Submit") : "Continue →"}
         </button>
+        )}
       </div>
     </>
   );
