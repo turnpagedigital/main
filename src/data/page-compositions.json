@@ -271,8 +271,8 @@
           "visible": true,
           "colorScheme": "light-gray",
           "content": {
-            "eyebrow": "",
-            "title": "$3000 per work? Sounds great, but ",
+            "eyebrow": "OKAY SHAKESPEARE—",
+            "title": "$3,000 sounds great, but ",
             "accent": "when do I get the check?",
             "colorScheme": "light-gray",
             "steps": [
@@ -335,7 +335,7 @@
               },
               {
                 "id": "sc-3",
-                "tag": "Most Likely",
+                "tag": "Most Realistic",
                 "figure": "2028+",
                 "title": "Extended review: en banc rehearing or a Supreme Court cert petition after the panel rules",
                 "note": "Each layer of further review adds months to a year before distribution",
@@ -354,7 +354,7 @@
           "type": "image-text",
           "visible": true,
           "layout": "layout-2-image-left",
-          "colorScheme": "light-gray",
+          "colorScheme": "white",
           "content": {
             "eyebrow": "",
             "title": "We pay faster than",
@@ -362,9 +362,12 @@
             "body": "Anthropic trained its models on pirated works — YOUR WORKS.  We help authors and publishers with rights to payment from the Bartz v. Anthropic class action settlement get compensated faster and easier.",
             "image": "/library/scanning-books.jpg",
             "imageAlt": "",
-            "cta": null,
+            "cta": {
+              "label": "Get an Instant Quote",
+              "href": "register"
+            },
             "layout": "layout-2-image-left",
-            "colorScheme": "light-gray"
+            "colorScheme": "white"
           }
         },
         {
@@ -425,7 +428,7 @@
           "type": "registration-flow",
           "visible": true,
           "layout": "split",
-          "colorScheme": "neon",
+          "colorScheme": "white",
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "",
@@ -433,9 +436,11 @@
             "accent": "claim details.",
             "layout": "split",
             "cardRadius": 0,
-            "colorScheme": "neon",
+            "colorScheme": "white",
             "backgroundImage": "",
-            "_bookmark": "register"
+            "_bookmark": "register",
+            "formScale": 110,
+            "cardStyle": "float"
           }
         },
         {
