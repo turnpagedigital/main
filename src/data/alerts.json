@@ -71,6 +71,22 @@
         "contact",
         "team"
       ]
+    },
+    {
+      "active": true,
+      "pill": "Latest",
+      "text": "Bartz v. Anthropic Settlement Approved",
+      "linkText": "",
+      "href": "",
+      "pages": [
+        "home",
+        "bartz-registration",
+        "ai-copyright",
+        "press",
+        "briefings",
+        "team",
+        "contact"
+      ]
     }
   ]
 }
