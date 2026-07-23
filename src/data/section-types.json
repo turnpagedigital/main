@@ -52,7 +52,7 @@
     {
       "id": "stats-band",
       "displayName": "Stats Band",
-      "description": "Large numbers in a horizontal strip. Layouts: flush band with dividers, boxed cards, or open minimal. Dark, neon, white, gray, or paper background; optional neon numbers; left or centered.",
+      "description": "Large numbers in a horizontal strip. Layouts: flush band, boxed cards (optional rounded corners), or open minimal. Color schemes, optional photo background, neon numbers, left/center, and normal/compact/tight vertical spacing.",
       "dataSource": "inline",
       "allowMultiple": false,
       "defaultContent": {
@@ -74,7 +74,10 @@
         "colorScheme": "dark",
         "layout": "band",
         "align": "left",
-        "valueColor": "auto"
+        "valueColor": "auto",
+        "density": "normal",
+        "cardRadius": 0,
+        "backgroundImage": ""
       },
       "supportedColorSchemes": [
         "dark",
