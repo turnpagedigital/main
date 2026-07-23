@@ -564,6 +564,14 @@ export default function SectionEditorFields({ typeId, form, set }) {
               <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>Used for every card unless a card sets its own kicker below.</p>
             </div>
           )}
+          <div style={{ marginBottom: "0.9rem" }}>
+            <label style={labelStyle}>Card corner radius — {hasValue(form.cardRadius) ? form.cardRadius : 14}px</label>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <input type="range" min={0} max={40} step={1} value={hasValue(form.cardRadius) ? form.cardRadius : 14} style={{ flex: 1, accentColor: NEON }} onChange={e => set("cardRadius", Number(e.target.value))} />
+              <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardRadius", "")}>Reset</button>
+            </div>
+            <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>0 = square corners. Default 14.</p>
+          </div>
           <ScenarioCardsEditor cards={form.cards || []} onChange={v => set("cards", v)} />
           <div style={fieldGroup}><label style={labelStyle}>Footnote (small print under the cards)</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.footnote || ""} onChange={e => set("footnote", e.target.value)} /></div>
         </>
@@ -1070,10 +1078,20 @@ function ScenarioCardsEditor({ cards, onChange }) {
           <textarea style={{ ...inputStyle, minHeight: 50, marginBottom: 4 }} placeholder="Note (small text under the title)" value={sc.note || ""} onChange={e => handleChange(i, "note", e.target.value)} />
           <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 4 }}>
             <input style={{ ...inputStyle, flex: 1 }} placeholder="Neon tag (optional, e.g. Most likely)" value={sc.tag || ""} onChange={e => handleChange(i, "tag", e.target.value)} />
-            <label style={{ fontSize: "0.74rem", color: INK_60, display: "flex", alignItems: "center", gap: 4, whiteSpace: "nowrap" }}>
-              <input type="checkbox" checked={!!sc.highlight} onChange={e => handleChange(i, "highlight", e.target.checked)} style={{ accentColor: NEON }} />
-              Featured (dark card)
-            </label>
+            <select
+              style={{ ...selectStyle, flex: 1 }}
+              value={sc.cardStyle || (sc.highlight ? "dark" : "white")}
+              onChange={e => {
+                const v = e.target.value;
+                const next = [...(cards || [])];
+                next[i] = { ...next[i], cardStyle: v, highlight: v === "dark" };
+                onChange(next);
+              }}
+            >
+              <option value="white">White card</option>
+              <option value="light-gray">Light gray card</option>
+              <option value="dark">Dark featured card (neon figure)</option>
+            </select>
           </div>
           <button type="button" onClick={() => onChange((cards || []).filter((_, idx) => idx !== i))} style={{ ...btnStyle, fontSize: "0.7rem", padding: "0.2rem 0.4rem" }}>Remove</button>
         </div>

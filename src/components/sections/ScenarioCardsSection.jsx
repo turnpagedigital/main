@@ -11,9 +11,12 @@ import { NEON, FONT, PAPER, PAPER_2, SURFACE, INK, INK_60, INK_40, LINE, DARK_CA
                               neon underline on light schemes, neon italic on dark)
      showKicker             — false hides the small in-card labels entirely (default true)
      kicker                 — default small label inside each card ("Scenario")
-     cards[]                — { id, tag, figure, title, note, highlight, kicker }
-                              highlight: true renders the dark featured card
+     cards[]                — { id, tag, figure, title, note, highlight, kicker, cardStyle }
+                              cardStyle: "white" (default) | "light-gray" | "dark"
+                              (dark is the featured card with the neon figure;
+                               highlight: true is the legacy alias for it)
                               kicker: per-card override of the default kicker
+     cardRadius             — card corner radius in px (0–40, default 14; 0 = square)
      footnote               — small print under the cards
      colorScheme            — "paper-2" (default) | "paper" | "white" | "light-gray" | "dark"
 */
@@ -38,6 +41,9 @@ export default function ScenarioCardsSection({ sectionConfig }) {
 
   const s = SCHEMES[c.colorScheme] || SCHEMES["paper-2"];
   const ink = s.dark ? "#fff" : INK;
+  const cardRadius = Number.isFinite(Number(c.cardRadius)) && c.cardRadius !== "" && c.cardRadius !== null
+    ? Math.max(0, Math.min(40, Number(c.cardRadius)))
+    : 14;
 
   return (
     <section style={{
@@ -83,14 +89,16 @@ export default function ScenarioCardsSection({ sectionConfig }) {
           marginTop: (eyebrow || title) ? "clamp(2rem, 4vw, 3rem)" : 0,
         }}>
           {cards.map((card, i) => {
-            const featured = !!card.highlight;
+            const style = card.cardStyle || (card.highlight ? "dark" : "white");
+            const featured = style === "dark";
+            const cardBg = featured ? DARK_CARD : style === "light-gray" ? "#F4F5F7" : SURFACE;
             const cardKicker = showKicker ? (card.kicker || kicker) : "";
             return (
               <div key={card.id || i} style={{
-                background: featured ? DARK_CARD : SURFACE,
+                background: cardBg,
                 color: featured ? "#fff" : INK,
                 border: `1px solid ${featured ? DARK_BORDER : LINE}`,
-                borderRadius: 14, padding: "1.9rem 1.7rem",
+                borderRadius: cardRadius, padding: "1.9rem 1.7rem",
                 display: "flex", flexDirection: "column",
                 position: "relative", overflow: "hidden",
               }}>
