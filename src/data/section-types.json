@@ -797,7 +797,8 @@
         "eyebrow": "Register",
         "title": "Start your registration",
         "accent": "",
-        "colorScheme": "paper"
+        "colorScheme": "paper",
+        "cardRadius": 10
       },
       "supportedColorSchemes": [
         "paper",

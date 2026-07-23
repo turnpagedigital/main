@@ -96,6 +96,14 @@ export default function SectionEditorFields({ typeId, form, set }) {
         <>
           <ColorSchemePicker typeId="registration-flow" value={form.colorScheme} onChange={v => set("colorScheme", v)} />
           <BackgroundImageFields form={form} set={set} />
+          <div style={{ marginBottom: "0.9rem" }}>
+            <label style={labelStyle}>Card corner radius — {hasValue(form.cardRadius) ? form.cardRadius : 10}px</label>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <input type="range" min={0} max={40} step={1} value={hasValue(form.cardRadius) ? form.cardRadius : 10} style={{ flex: 1, accentColor: NEON }} onChange={e => set("cardRadius", Number(e.target.value))} />
+              <button type="button" style={{ fontSize: "0.72rem", color: INK_60, background: "none", border: `1px solid ${INK_60}`, borderRadius: 4, padding: "0.15rem 0.5rem", cursor: "pointer", whiteSpace: "nowrap" }} onClick={() => set("cardRadius", "")}>Reset</button>
+            </div>
+            <p style={{ fontSize: "0.7rem", color: INK_60, marginTop: 3 }}>0 = square corners. Default 10.</p>
+          </div>
           <div style={fieldGroup}>
             <label style={labelStyle}>Flow</label>
             <select style={selectStyle} value={form.flowId || ""} onChange={e => set("flowId", e.target.value)}>

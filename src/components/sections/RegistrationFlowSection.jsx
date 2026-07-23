@@ -25,6 +25,7 @@ import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js
  *   colorScheme     — "paper" (default) | "white" | "light-gray" | "neon" | "dark"
  *   backgroundImage + imageFilter + imageFilterStrength — optional photo
  *     background; a "dark" filter switches the outer text to white
+ *   cardRadius      — form-card corner radius in px (0–40, default 10)
  */
 
 const MAX_FILE_BYTES = 8 * 1024 * 1024;
@@ -47,11 +48,12 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
       backgroundImage={c.backgroundImage}
       imageFilter={c.imageFilter}
       imageFilterStrength={c.imageFilterStrength}
+      cardRadius={c.cardRadius}
     />
   );
 }
 
-function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength }) {
+function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius }) {
   const [answers, setAnswers] = useState({});
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
@@ -312,6 +314,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       backgroundImage={backgroundImage}
       imageFilter={imageFilter}
       imageFilterStrength={imageFilterStrength}
+      cardRadius={cardRadius}
       flowIntro={flow.intro}
     >
       {formState === "success" ? successNode : formNode}
@@ -343,7 +346,7 @@ const SHELL_SCHEMES = {
   dark:         { bg: "#000",    dark: true },
 };
 
-function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, flowIntro, children }) {
+function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, flowIntro, children }) {
   // layout "dark" predates colorScheme and acts as its alias
   const scheme  = SHELL_SCHEMES[colorScheme] || (layout === "dark" ? SHELL_SCHEMES.dark : SHELL_SCHEMES.paper);
   // On a photo background, a darkening filter implies white outer text
@@ -359,10 +362,13 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
       : scheme.bg,
   };
   const sectionPad = "clamp(3.5rem,7vw,6rem) clamp(1.5rem,5vw,4rem)";
+  const radius = Number.isFinite(Number(cardRadius)) && cardRadius !== "" && cardRadius !== null
+    ? Math.max(0, Math.min(40, Number(cardRadius)))
+    : 10;
   const cardStyle = {
     background: "#fff",
     border: `1px solid ${LINE}`,
-    borderRadius: 10,
+    borderRadius: radius,
     padding: "clamp(1.5rem,3.5vw,2.5rem)",
   };
 
