@@ -26,6 +26,10 @@ import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js
  *   backgroundImage + imageFilter + imageFilterStrength — optional photo
  *     background; a "dark" filter switches the outer text to white
  *   cardRadius      — form-card corner radius in px (0–40, default 10)
+ *   cardStyle       — "card" (default, white form card) | "float" (no card —
+ *     the form sits directly on the section background)
+ *   formScale       — form zoom in % (100–150, default 100) for a bigger,
+ *     easier-to-read form
  */
 
 const MAX_FILE_BYTES = 8 * 1024 * 1024;
@@ -49,11 +53,13 @@ export default function RegistrationFlowSection({ sectionConfig, pageKey }) {
       imageFilter={c.imageFilter}
       imageFilterStrength={c.imageFilterStrength}
       cardRadius={c.cardRadius}
+      cardStyle={c.cardStyle}
+      formScale={c.formScale}
     />
   );
 }
 
-function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius }) {
+function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle, formScale }) {
   const [answers, setAnswers] = useState({});
   const [files, setFiles] = useState({});
   const [stepIndex, setStepIndex] = useState(0);
@@ -315,6 +321,8 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
       imageFilter={imageFilter}
       imageFilterStrength={imageFilterStrength}
       cardRadius={cardRadius}
+      cardStyle={cardStyle}
+      formScale={formScale}
       flowIntro={flow.intro}
     >
       {formState === "success" ? successNode : formNode}
@@ -346,7 +354,7 @@ const SHELL_SCHEMES = {
   dark:         { bg: "#000",    dark: true },
 };
 
-function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, flowIntro, children }) {
+function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgroundImage, imageFilter, imageFilterStrength, cardRadius, cardStyle: cardStyleOpt, formScale, flowIntro, children }) {
   // layout "dark" predates colorScheme and acts as its alias
   const scheme  = SHELL_SCHEMES[colorScheme] || (layout === "dark" ? SHELL_SCHEMES.dark : SHELL_SCHEMES.paper);
   // On a photo background, a darkening filter implies white outer text
@@ -365,12 +373,19 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
   const radius = Number.isFinite(Number(cardRadius)) && cardRadius !== "" && cardRadius !== null
     ? Math.max(0, Math.min(40, Number(cardRadius)))
     : 10;
-  const cardStyle = {
-    background: "#fff",
-    border: `1px solid ${LINE}`,
-    borderRadius: radius,
-    padding: "clamp(1.5rem,3.5vw,2.5rem)",
-  };
+  const floating = cardStyleOpt === "float";
+  const scale = Number.isFinite(Number(formScale)) && formScale !== "" && formScale !== null
+    ? Math.max(100, Math.min(150, Number(formScale)))
+    : 100;
+  const cardStyle = floating
+    ? { ...(scale !== 100 ? { zoom: scale / 100 } : {}) }
+    : {
+        background: "#fff",
+        border: `1px solid ${LINE}`,
+        borderRadius: radius,
+        padding: "clamp(1.5rem,3.5vw,2.5rem)",
+        ...(scale !== 100 ? { zoom: scale / 100 } : {}),
+      };
 
   const headingBlock = (eyebrow || title) ? (
     <div>

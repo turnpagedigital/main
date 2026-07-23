@@ -266,52 +266,15 @@
           }
         },
         {
-          "id": "sec-aic-payout-scenarios",
-          "type": "scenario-cards",
+          "id": "sec-aic-payout-timeline",
+          "type": "timeline",
           "visible": true,
           "colorScheme": "light-gray",
           "content": {
             "eyebrow": "",
             "title": "$3000 per work? Sounds great, but ",
             "accent": "when do I get the check?",
-            "kicker": "",
             "colorScheme": "light-gray",
-            "cards": [
-              {
-                "id": "sc-2",
-                "tag": "",
-                "figure": "2027",
-                "title": "Class-member objector appeals to the Ninth Circuit, freezing the Effective Date until affirmance",
-                "note": "Fund is fully funded by September 25, 2027 — first checks follow the mandate",
-                "highlight": false,
-                "cardStyle": "white",
-                "kicker": " Best Case"
-              },
-              {
-                "id": "sc-3",
-                "tag": "Most Likely",
-                "figure": "2028+",
-                "title": "Extended review: en banc rehearing or a Supreme Court cert petition after the panel rules",
-                "note": "Each layer of further review adds months to a year before distribution",
-                "highlight": true,
-                "cardStyle": "dark",
-                "kicker": ""
-              }
-            ],
-            "footnote": "These estimates are based on experience from other class action cases and are not intended to be relied upon exclusively by claim holders. You are encouraged to conduct your own analysis and/or discuss with competent counsel if you have questions about the timeline. ",
-            "cardRadius": 0
-          }
-        },
-        {
-          "id": "sec-aic-payout-timeline",
-          "type": "timeline",
-          "visible": true,
-          "colorScheme": "white",
-          "content": {
-            "eyebrow": "",
-            "title": "How are things likely to",
-            "accent": "play out?",
-            "colorScheme": "white",
             "steps": [
               {
                 "id": "tl-1",
@@ -358,7 +321,32 @@
                 "pillLabel": "Most Realistic",
                 "pillStyle": "ink"
               }
-            ]
+            ],
+            "cards": [
+              {
+                "id": "sc-2",
+                "tag": "",
+                "figure": "2027",
+                "title": "Class-member objector appeals to the Ninth Circuit, freezing the Effective Date until affirmance",
+                "note": "Fund is fully funded by September 25, 2027 — first checks follow the mandate",
+                "highlight": false,
+                "cardStyle": "white",
+                "kicker": " Best Case"
+              },
+              {
+                "id": "sc-3",
+                "tag": "Most Likely",
+                "figure": "2028+",
+                "title": "Extended review: en banc rehearing or a Supreme Court cert petition after the panel rules",
+                "note": "Each layer of further review adds months to a year before distribution",
+                "highlight": true,
+                "cardStyle": "dark",
+                "kicker": ""
+              }
+            ],
+            "kicker": "",
+            "cardRadius": 0,
+            "footnote": "These estimates are based on experience from other class action cases and are not intended to be relied upon exclusively by claim holders. You are encouraged to conduct your own analysis and/or discuss with competent counsel if you have questions about the timeline. "
           }
         },
         {
@@ -1376,20 +1364,7 @@
                 "pillLabel": "Most realistic",
                 "pillStyle": "ink"
               }
-            ]
-          }
-        },
-        {
-          "id": "sec-bartz-payout-scenarios",
-          "type": "scenario-cards",
-          "visible": true,
-          "colorScheme": "paper-2",
-          "content": {
-            "eyebrow": "Potential payout timelines",
-            "title": "",
-            "accent": "",
-            "kicker": "Scenario",
-            "colorScheme": "paper-2",
+            ],
             "cards": [
               {
                 "id": "sc-1",
@@ -1416,6 +1391,7 @@
                 "highlight": false
               }
             ],
+            "kicker": "Scenario",
             "footnote": "*Per-work amounts are gross figures before deduction of court-approved fees ($101.6M), costs, and administration. Default split for trade and university-press titles is 50/50 between the author side and the publisher side; self-published and rights-reverted authors who are sole copyright owners keep the full award. Sources: final approval order of July 20, 2026 (Dkt., N.D. Cal. 3:24-cv-05417); Authors Guild and Authors Alliance settlement guidance; settlement administrator claims data."
           }
         },

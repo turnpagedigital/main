@@ -1,5 +1,6 @@
 import React from "react";
 import { NEON, NEON_SOFT, FONT, PAPER, PAPER_2, INK, INK_60, INK_40, INK_20 } from "../../data/tokens.js";
+import { ScenarioCardsGrid } from "./ScenarioCardsSection.jsx";
 
 /* TimelineSection — milestone timeline with status dots ("You are here"),
    date labels, and optional status pills per step. Generic template section;
@@ -15,6 +16,11 @@ import { NEON, NEON_SOFT, FONT, PAPER, PAPER_2, INK, INK_60, INK_40, INK_20 } fr
                                      light-gray on the white scheme; ink flips
                                      to a white pill on the dark scheme)
      colorScheme                  — "paper" (default) | "paper-2" | "white" | "light-gray" | "dark"
+     cards[] + kicker + showKicker + cardRadius + footnote
+                                  — optional scenario cards rendered below the
+                                    timeline (same schema as the scenario-cards
+                                    section), so one section carries the full
+                                    header → timeline → scenarios → footnote flow
 */
 
 const SCHEMES = {
@@ -31,6 +37,7 @@ export default function TimelineSection({ sectionConfig }) {
   const title   = c.title || "";
   const accent  = c.accent || "";
   const steps   = c.steps || [];
+  const cards   = c.cards || [];
 
   const s = SCHEMES[c.colorScheme] || SCHEMES.paper;
   const ink    = s.dark ? "#fff" : INK;
@@ -134,6 +141,19 @@ export default function TimelineSection({ sectionConfig }) {
             </div>
           ))}
         </div>
+
+        {cards.length > 0 && (
+          <div style={{ marginTop: "clamp(2.5rem, 5vw, 4rem)" }}>
+            <ScenarioCardsGrid
+              cards={cards}
+              kicker={c.kicker ?? "Scenario"}
+              showKicker={c.showKicker !== false}
+              cardRadius={c.cardRadius}
+              footnote={c.footnote || ""}
+              darkSection={s.dark}
+            />
+          </div>
+        )}
       </div>
 
       <style>{`

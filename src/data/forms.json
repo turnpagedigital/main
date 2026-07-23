@@ -32,7 +32,7 @@
           "title": "Claim Form",
           "showIf": {
             "fieldId": "role",
-            "equals": "Author / creator"
+            "equals": "Author"
           },
           "fields": [
             {
@@ -86,7 +86,7 @@
           "title": "Your Offer",
           "showIf": {
             "fieldId": "role",
-            "equals": "Author / creator"
+            "equals": "Author"
           },
           "fields": [
             {
