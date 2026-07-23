@@ -269,12 +269,15 @@
           "type": "registration-flow",
           "visible": true,
           "layout": "wide",
+          "colorScheme": "light-gray",
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "BARTZ v. ANTHROPIC",
             "title": "Sell your Anthropic claim",
             "accent": "today.",
-            "layout": "wide"
+            "layout": "wide",
+            "cardRadius": 0,
+            "colorScheme": "light-gray"
           }
         },
         {
