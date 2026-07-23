@@ -59,6 +59,18 @@ export async function onRequestPut({ request, env }) {
   const current = await fetchFile(env);
   if (!current.ok) return jsonResponse({ ok: false, error: current.error }, 502);
 
+  // Stale-tab guard (same pattern as page-compositions): refuse to overwrite
+  // flows that changed since this tab loaded them.
+  if (typeof body.baseVersion === "string" && body.baseVersion) {
+    const currentVersion = sectionsFingerprint((current.data && current.data.flows) || []);
+    if (currentVersion !== body.baseVersion) {
+      return jsonResponse({
+        ok: false,
+        error: "The flows changed after you opened this tab (another tab, or an update pushed via git). Your save was NOT applied. Reload the Flows tab to get the latest, then re-apply your edits.",
+      }, 409);
+    }
+  }
+
   const merged = {
     _comment: (current.data && current.data._comment) || undefined,
     flows: flows.map(normalizeFlow),

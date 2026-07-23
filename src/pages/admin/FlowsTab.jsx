@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FONT, INK, INK_60, LINE, NEON } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import { useTabData } from "./useTabData.js";
+import { sectionsFingerprint } from "../../lib/section-fingerprint.js";
 
 /* FlowsTab — build multi-step registration flows (src/data/forms.json).
  *
@@ -92,8 +93,8 @@ function sanitizeFlow(f) {
 export default function FlowsTab({ onDirtyChange }) {
   const { data, setData, phase, error, dirty, lastSavedAt, save } = useTabData({
     endpoint: "/api/admin/forms",
-    parse: body => ({ flows: (body.data.flows || []).map(sanitizeFlow) }),
-    serialize: data => ({ flows: data.flows }),
+    parse: body => ({ flows: (body.data.flows || []).map(sanitizeFlow), _baseVersion: sectionsFingerprint(body.data.flows || []) }),
+    serialize: data => ({ flows: data.flows, baseVersion: data._baseVersion }),
     onDirtyChange,
   });
   const [openFlow, setOpenFlow] = useState(null);
