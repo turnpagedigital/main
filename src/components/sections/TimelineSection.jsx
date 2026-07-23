@@ -39,6 +39,8 @@ export default function TimelineSection({ sectionConfig }) {
     <section style={{
       fontFamily: FONT, color: ink, background: s.bg,
       padding: "clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)",
+      "--tl-line": line,
+      "--tl-gap": "clamp(1rem, 2vw, 1.5rem)",
     }}>
       <div style={{ maxWidth: 1180, margin: "0 auto" }}>
         {eyebrow && (
@@ -75,16 +77,18 @@ export default function TimelineSection({ sectionConfig }) {
         <div className="tlsec-grid" style={{
           display: "grid",
           gridTemplateColumns: `repeat(${Math.max(steps.length, 1)}, 1fr)`,
-          gap: "clamp(1rem, 2vw, 1.5rem)",
+          gap: "var(--tl-gap)",
           position: "relative",
           marginTop: "clamp(2.5rem, 5vw, 4rem)",
         }}>
-          <span className="tlsec-line" aria-hidden="true" style={{
-            position: "absolute", left: 0, right: 0, top: 7,
-            height: 2, background: line,
-          }} />
           {steps.map((step, i) => (
             <div key={step.id || i} className="tlsec-step" style={{ position: "relative", paddingTop: "2rem" }}>
+              {i < steps.length - 1 && (
+                <span className="tlsec-conn" aria-hidden="true">
+                  <span className="tlsec-connbar" />
+                  <span className="tlsec-arrow" />
+                </span>
+              )}
               <span className="tlsec-dot" style={{
                 position: "absolute", top: 0, left: 0,
                 width: 16, height: 16, borderRadius: "50%", boxSizing: "border-box",
@@ -124,12 +128,38 @@ export default function TimelineSection({ sectionConfig }) {
       </div>
 
       <style>{`
+        /* Connector: line + arrowhead pointing at the next step's dot.
+           Rendered per step (except the last), overflowing the grid gap so it
+           ends just short of the following dot. */
+        .tlsec-conn {
+          position: absolute; top: 0; height: 16px;
+          left: 24px; right: calc(-1 * var(--tl-gap) + 5px);
+          display: flex; align-items: center; pointer-events: none;
+        }
+        .tlsec-connbar { flex: 1; height: 2px; background: var(--tl-line); }
+        .tlsec-arrow {
+          width: 0; height: 0; flex-shrink: 0;
+          border-top: 4px solid transparent;
+          border-bottom: 4px solid transparent;
+          border-left: 6px solid var(--tl-line);
+        }
         @media (max-width: 980px) {
           .tlsec-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
-          .tlsec-line { top: 0 !important; bottom: 0 !important; left: 7px !important; right: auto !important; width: 2px !important; height: auto !important; }
           .tlsec-step { padding: 0 0 2.2rem 2.4rem !important; }
           .tlsec-step:last-child { padding-bottom: 0.4rem !important; }
           .tlsec-dot { top: 2px !important; }
+          .tlsec-conn {
+            top: 24px; bottom: 5px; height: auto; left: 7px; right: auto; width: 2px;
+            flex-direction: column;
+          }
+          .tlsec-connbar { flex: 1; width: 2px; height: auto; }
+          .tlsec-arrow {
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 6px solid var(--tl-line);
+            border-bottom: none;
+            margin-left: -3px;
+          }
         }
       `}</style>
     </section>
