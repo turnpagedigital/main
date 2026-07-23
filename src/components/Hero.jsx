@@ -10,6 +10,7 @@ export default function Hero({
   accentTitle,
   children,
   size = "default", // "default" | "short" | "tall" | "full"
+  titleSize = "xl", // "xl" (home-scale) | "large" | "standard"
   video = null,
   image = null, // custom photo background — gets the video layer's treatment, not the crushed paper-base filter
 }) {
@@ -101,9 +102,13 @@ export default function Hero({
           </p>
         )}
         <h1 className="hero-title-xl" style={{
-          fontFamily: FONT, fontWeight: 900, fontSize: "clamp(2.6rem, 7vw, 7rem)",
-          lineHeight: 1.02, letterSpacing: "-0.035em", color: "#fff",
-          marginBottom: "1.2rem", maxWidth: 1200,
+          fontFamily: FONT, fontWeight: 900,
+          fontSize: titleSize === "standard" ? "clamp(1.8rem, 4vw, 3.2rem)"
+            : titleSize === "large" ? "clamp(2.2rem, 5.5vw, 4.8rem)"
+            : "clamp(2.6rem, 7vw, 7rem)",
+          lineHeight: titleSize === "standard" ? 1.06 : 1.02,
+          letterSpacing: titleSize === "standard" ? "-0.02em" : "-0.035em",
+          color: "#fff", marginBottom: "1.2rem", maxWidth: 1200,
         }}>
           {title}
           {accentTitle && (

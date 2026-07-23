@@ -77,13 +77,23 @@ export default function SectionEditorFields({ typeId, form, set }) {
           <div style={fieldGroup}><label style={labelStyle}>Title</label><input style={inputStyle} value={form.title || ""} onChange={e => set("title", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Accent title (italic/neon)</label><input style={inputStyle} value={form.accentTitle || ""} onChange={e => set("accentTitle", e.target.value)} /></div>
           <div style={fieldGroup}><label style={labelStyle}>Subtitle</label><textarea style={{ ...inputStyle, minHeight: 80 }} value={form.subtitle || ""} onChange={e => set("subtitle", e.target.value)} /></div>
-          <div style={fieldGroup}>
-            <label style={labelStyle}>Height</label>
-            <select style={selectStyle} value={form.size || "tall"} onChange={e => set("size", e.target.value)}>
-              <option value="short">Short (half-height)</option>
-              <option value="tall">Tall (default)</option>
-              <option value="full">Full viewport</option>
-            </select>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", marginBottom: "0.9rem" }}>
+            <div>
+              <label style={labelStyle}>Height</label>
+              <select style={{ ...selectStyle, marginTop: 4 }} value={form.size || "tall"} onChange={e => set("size", e.target.value)}>
+                <option value="short">Short (half-height)</option>
+                <option value="tall">Tall (default)</option>
+                <option value="full">Full viewport</option>
+              </select>
+            </div>
+            <div>
+              <label style={labelStyle}>Headline size</label>
+              <select style={{ ...selectStyle, marginTop: 4 }} value={form.titleSize || "xl"} onChange={e => set("titleSize", e.target.value)}>
+                <option value="xl">XL — home-page scale</option>
+                <option value="large">Large</option>
+                <option value="standard">Standard</option>
+              </select>
+            </div>
           </div>
           <HeroMediaFields form={form} set={set} defaultLabel="Black paper texture (default)" />
           <CTAField label="Primary CTA" value={form.ctaPrimary} onChange={v => set("ctaPrimary", v)} />
