@@ -269,6 +269,7 @@
           "id": "sec-1784779074962-jtdv",
           "type": "stats-band",
           "visible": true,
+          "colorScheme": "dark",
           "content": {
             "stats": [
               {
@@ -288,7 +289,8 @@
               }
             ],
             "footnoteKey": "stats.footnote",
-            "footnote": " "
+            "footnote": " ",
+            "colorScheme": "dark"
           }
         },
         {
