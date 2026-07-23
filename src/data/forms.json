@@ -166,7 +166,8 @@
               "type": "link-confirm",
               "label": "Verify your identity",
               "required": true,
-              "help": "We use Sumsub for a quick identity check (KYC). Open the link below — or scan the QR code with your phone — complete the verification, then confirm here.",
+              "help": "Click the link below — or scan the QR code with your phone — to complete identity verification (KYC), then confirm here.",
+              "url": "https://in.sumsub.com/websdk/p/uni_9wj7aWAdtUJ2JBSs",
               "linkText": "Start verification",
               "confirmLabel": "I have completed identity verification"
             }
