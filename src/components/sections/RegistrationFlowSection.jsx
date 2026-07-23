@@ -266,7 +266,9 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
 
   const formNode = (
     <>
-      {flow.intro && stepIndex === 0 && (
+      {/* Split layout already shows the intro under the left-column heading —
+          don't repeat it inside the form card. */}
+      {flow.intro && stepIndex === 0 && layout !== "split" && (
         <p style={{ fontFamily: FONT, fontSize: "0.95rem", color: INK_60, marginBottom: "1.6rem", lineHeight: 1.6 }}>
           {flow.intro}
         </p>
@@ -596,6 +598,23 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
       <div style={wrap}>
         {label}
         {field.help && <p style={{ fontFamily: FONT, fontSize: "0.78rem", color: INK_60, margin: "0.25rem 0 0.45rem" }}>{field.help}</p>}
+        {field.moreInfo && field.moreInfo.body && (
+          <details style={{ margin: "0.15rem 0 0.55rem" }}>
+            <summary style={{
+              fontFamily: FONT, fontSize: "0.78rem", fontWeight: 700, color: INK,
+              cursor: "pointer", textDecoration: "underline", textDecorationColor: NEON,
+              textDecorationThickness: 2, textUnderlineOffset: 3,
+            }}>
+              {field.moreInfo.label || "More info"}
+            </summary>
+            <p style={{
+              fontFamily: FONT, fontSize: "0.8rem", color: INK_60, lineHeight: 1.6,
+              margin: "0.45rem 0 0", padding: "0.7rem 0.9rem", background: SECONDARY_BG,
+            }}>
+              {field.moreInfo.body}
+            </p>
+          </details>
+        )}
         <input id={id} type="file"
           accept={(field.accept || ["pdf", "png", "jpg"]).map(a => "." + a).join(",")}
           onChange={e => onFile(e.target.files && e.target.files[0])}

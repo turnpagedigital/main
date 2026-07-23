@@ -235,5 +235,12 @@ function normalizeField(fld) {
   } else if (fld.help) {
     out.help = String(fld.help).trim().slice(0, SHORT);
   }
+  // Optional expandable explainer under the field (label + body text)
+  if (fld.moreInfo && typeof fld.moreInfo === "object" && String(fld.moreInfo.body || "").trim()) {
+    out.moreInfo = {
+      label: String(fld.moreInfo.label || "More info").trim().slice(0, SHORT),
+      body: String(fld.moreInfo.body).trim().slice(0, 1000),
+    };
+  }
   return out;
 }

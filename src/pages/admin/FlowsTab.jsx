@@ -64,6 +64,7 @@ function sanitizeFlow(f) {
         ...(fl.options ? { options: fl.options } : {}),
         ...(fl.accept ? { accept: fl.accept } : {}),
         ...(fl.help ? { help: fl.help } : {}),
+        ...(fl.moreInfo && fl.moreInfo.body ? { moreInfo: { label: fl.moreInfo.label || "More info", body: fl.moreInfo.body } } : {}),
         ...(fl.type === "file" && fl.extract ? { extract: fl.extract } : {}),
         ...(fl.type === "file" && fl.extractMap && typeof fl.extractMap === "object" ? { extractMap: fl.extractMap } : {}),
         ...(fl.type === "number" && fl.placeholder ? { placeholder: fl.placeholder } : {}),
@@ -468,6 +469,14 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
               {field.extractMap ? Object.keys(field.extractMap).join(", ") : "no fields yet"}.
             </p>
           )}
+          <input style={{ ...inputStyle, fontSize: "0.82rem", marginTop: 6 }}
+            placeholder='Expandable explainer — link text (e.g. "Where do I get my claim form?")'
+            value={(field.moreInfo && field.moreInfo.label) || ""}
+            onChange={e => onChange({ moreInfo: { ...(field.moreInfo || {}), label: e.target.value } })} />
+          <textarea style={{ ...inputStyle, fontSize: "0.82rem", marginTop: 6, minHeight: 60 }}
+            placeholder="Expandable explainer — body text shown when opened"
+            value={(field.moreInfo && field.moreInfo.body) || ""}
+            onChange={e => onChange({ moreInfo: { ...(field.moreInfo || {}), body: e.target.value } })} />
         </div>
       )}
 
