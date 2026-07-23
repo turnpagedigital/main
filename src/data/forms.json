@@ -6,7 +6,7 @@
       "name": "Anthropic_Bartz",
       "active": true,
       "attioLabel": "bartz-landing",
-      "intro": "",
+      "intro": "Enter your claim information to get an instant quote and fast payment if you elect to sell.",
       "submitLabel": "Submit",
       "successTitle": "You're registered.",
       "successBody": "We've received your details and will be in touch within 48 hours with your offer and next steps.",
@@ -127,30 +127,6 @@
               "prefix": "$",
               "suffix": "",
               "help": "Estimate only — we confirm your final offer after reviewing your claim form."
-            }
-          ]
-        },
-        {
-          "id": "publisher-info",
-          "title": "Your Publishing House",
-          "showIf": {
-            "fieldId": "role",
-            "equals": "Publisher"
-          },
-          "fields": [
-            {
-              "id": "publisherName",
-              "type": "text",
-              "label": "Publisher name",
-              "required": true
-            },
-            {
-              "id": "coveredWorksEstimate",
-              "type": "number",
-              "label": "Estimated number of covered works",
-              "required": true,
-              "placeholder": "e.g. 120",
-              "help": "How many of your titles you believe are on the settlement's Works List — your best estimate is fine."
             }
           ]
         }
