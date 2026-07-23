@@ -248,10 +248,10 @@
           "type": "hero",
           "visible": true,
           "content": {
-            "eyebrow": "",
-            "title": "Authors and artists — why wait to",
-            "accentTitle": "claim what's yours.",
-            "subtitle": "Anthropic and OpenAI trained their models on YOUR WORK. \n\nWe help authors, artists, publishers, music labels, studios and other rights holders track cases against generative AI companies and get compensated faster.",
+            "eyebrow": "Bartz v. Anthropic",
+            "title": "Authors— turn your settlement claim into",
+            "accentTitle": "instant cash.",
+            "subtitle": "Anthropic trained its models on YOUR WORK. \n\nWe help authors, artists, publishers, music labels, studios and other rights holders track cases against generative AI companies and get compensated faster.",
             "size": "tall",
             "video": "/robottypes1.mp4",
             "ctaPrimary": {
@@ -259,8 +259,8 @@
               "href": "/contact?source=ai-copyright"
             },
             "ctaSecondary": {
-              "label": "See Other Cases",
-              "href": "#cases-section"
+              "label": "How It Works",
+              "href": "#how-it-works"
             }
           }
         },
