@@ -67,8 +67,31 @@ export default function PageBuilderTab({ onDirtyChange }) {
   const [newPageForm, setNewPageForm]       = useState(null);   // null | { title, pageKey, path }
   const [deleteConfirm, setDeleteConfirm]   = useState(null);   // pageKey to delete
   const [previewOpen, setPreviewOpen]       = useState(false);  // live preview overlay
+  const [conflict, setConflict]             = useState(false);  // save refused: newer layout on server
 
   useEffect(() => { load(); }, []);
+
+  // Auto-resync on return to the tab when there are no unsaved edits, so a
+  // save from another door (other tab, git push) can't leave this tab stale.
+  const dirtyRef = React.useRef(false);
+  const lastLoadRef = React.useRef(0);
+  useEffect(() => { dirtyRef.current = dirty; });
+  useEffect(() => {
+    const maybeReload = () => {
+      if (document.visibilityState !== "visible") return;
+      if (dirtyRef.current) return;
+      if (Date.now() - lastLoadRef.current < 15000) return;
+      lastLoadRef.current = Date.now();
+      load();
+    };
+    window.addEventListener("focus", maybeReload);
+    document.addEventListener("visibilitychange", maybeReload);
+    return () => {
+      window.removeEventListener("focus", maybeReload);
+      document.removeEventListener("visibilitychange", maybeReload);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const dirty = useMemo(() =>
     JSON.stringify(sections) !== JSON.stringify(originalSections) ||
@@ -171,7 +194,11 @@ export default function PageBuilderTab({ onDirtyChange }) {
         }),
       });
       const data = await res.json();
-      if (!data.ok) throw new Error(data.error || "Save failed");
+      if (!data.ok) {
+        if (res.status === 409) setConflict(true);
+        throw new Error(data.error || "Save failed");
+      }
+      setConflict(false);
       setOriginalSections(JSON.parse(JSON.stringify(sections)));
       setOriginalStatus(pageStatus);
       onDirtyChange?.(false);
@@ -450,7 +477,20 @@ export default function PageBuilderTab({ onDirtyChange }) {
           </button>
         </div>
 
-        {error && <Banner kind="error">{error}</Banner>}
+        {error && (
+          <Banner kind="error">
+            {error}
+            {conflict && (
+              <button type="button" onClick={() => { setConflict(false); load(); }} style={{
+                marginLeft: 12, fontFamily: "inherit", fontSize: "0.82rem", fontWeight: 700,
+                background: "#7a1a1a", color: "#fff", border: "none", borderRadius: 4,
+                padding: "0.35rem 0.8rem", cursor: "pointer",
+              }}>
+                Load latest version
+              </button>
+            )}
+          </Banner>
+        )}
         {toast && <Banner kind="ok">{toast}</Banner>}
         {loading && <p style={{ color: INK_60 }}>Loading…</p>}
 

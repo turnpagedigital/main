@@ -224,11 +224,21 @@ export function ConfirmDialog({ open, title, message, confirmLabel, onConfirm, o
 /* ErrorBanner — the standard red error strip used across admin tabs.
    Renders nothing when children is falsy, so callers can pass the error
    string directly without an outer guard. */
-export function ErrorBanner({ children }) {
-  if (!children) return null;
+export function ErrorBanner({ children, message, action }) {
+  const content = children || message;
+  if (!content) return null;
   return (
-    <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem" }}>
-      {children}
+    <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem", display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+      <span style={{ flex: 1, minWidth: 200, lineHeight: 1.5 }}>{content}</span>
+      {action && (
+        <button type="button" onClick={action.onClick} style={{
+          flexShrink: 0, fontFamily: "inherit", fontSize: "0.82rem", fontWeight: 700,
+          background: "#7a1a1a", color: "#fff", border: "none", borderRadius: 4,
+          padding: "0.45rem 0.9rem", cursor: "pointer",
+        }}>
+          {action.label}
+        </button>
+      )}
     </div>
   );
 }
