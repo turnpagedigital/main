@@ -24,6 +24,7 @@ import formsData from "../../src/data/forms.json";
 import pricing from "./_pricing-config.json";
 import { formatOffer, computeOfferBreakdown } from "../../src/lib/flow-compute.js";
 import { classifyWork, summarizeWorks, amazonSearchUrl, settlementLookupUrl } from "./_claim-links.js";
+import { checkClaimPdf } from "./_pdf-checks.js";
 
 const ALLOWED_ORIGINS = [
   "https://turnpagedigital.com",
@@ -158,6 +159,15 @@ export async function onRequestPost(context) {
       });
     }
 
+    // Advisory tamper checks on uploaded PDFs (internal email only)
+    let pdfChecks = null;
+    try {
+      const pdfFile = files.find((x) => x && x.type === "application/pdf" && typeof x.dataBase64 === "string");
+      if (pdfFile) pdfChecks = checkClaimPdf(atob(pdfFile.dataBase64));
+    } catch (err) {
+      console.error("pdf-checks error:", err.message);
+    }
+
     const email = answers.email || "";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail("A valid email is required");
 
@@ -227,6 +237,14 @@ export async function onRequestPost(context) {
           <strong style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Claimed works — ${worksCounts.self} full · ${worksCounts.publisher} half · ${worksCounts.excluded} excluded</strong>
           <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;">${worksRows}</table>
           <p style="font-size:11px;color:#999;margin:6px 0 0;">Verify each work against the Works List and Amazon before payout. Claim-form PDF attached.</p>` : ""}
+          ${pdfChecks ? `
+          <hr style="border:none;border-top:1px solid #e5e5e5;margin:16px 0;" />
+          <strong style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Claim PDF checks (advisory)</strong>
+          ${pdfChecks.flags.length
+            ? `<ul style="font-size:13px;color:#B00020;margin:6px 0 0;padding-left:18px;">${pdfChecks.flags.map((f) => `<li style="margin-bottom:4px;">⚠️ ${escapeHtml(f)}</li>`).join("")}</ul>`
+            : `<p style="font-size:13px;color:#2D8E47;margin:6px 0 0;">✓ No tamper flags detected.</p>`}
+          <p style="font-size:12px;color:#999;margin:6px 0 0;">Producer: ${escapeHtml(pdfChecks.info.producer || "—")} · Creator: ${escapeHtml(pdfChecks.info.creator || "—")} · Created: ${escapeHtml(pdfChecks.info.created || "—")}${pdfChecks.info.modified && pdfChecks.info.modified !== pdfChecks.info.created ? ` · Modified: ${escapeHtml(pdfChecks.info.modified)}` : ""}${pdfChecks.info.signed ? " · Digitally signed" : ""}</p>
+          <p style="font-size:11px;color:#999;margin:4px 0 0;">Note: claimants print these PDFs from their own browser, so metadata can't prove origin — flags are hints for manual review, absence of flags is not proof of authenticity.</p>` : ""}
           ${attributionRows ? `
           <hr style="border:none;border-top:1px solid #e5e5e5;margin:16px 0;" />
           <strong style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Attribution</strong>
