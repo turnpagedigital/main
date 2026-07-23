@@ -464,14 +464,14 @@
           "id": "sec-1781587444053-lcuz",
           "type": "registration-flow",
           "visible": true,
-          "layout": "center",
+          "layout": "wide",
           "colorScheme": "white",
           "content": {
             "flowId": "bartz-registration",
             "eyebrow": "GET A QUOTE",
             "title": "Register ",
             "accent": "your claim.",
-            "layout": "center",
+            "layout": "wide",
             "cardRadius": 0,
             "colorScheme": "white",
             "backgroundImage": "",
@@ -482,7 +482,7 @@
             "_spacingBottom": "large",
             "disclosure": "Turnpage is not affiliated with Anthropic, JND (the claims administrator), class counsel or the District Court for the Northern District of California. Turnpage does not provide legal or financial advice and does not undertake to represent claimholders in any way. The information you submit will only be used to calculate your expected payout and provide a buyout offer.",
             "align": "center",
-            "cardColor": "white"
+            "cardColor": "neon"
           }
         },
         {
