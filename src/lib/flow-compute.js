@@ -108,6 +108,31 @@ export function computeOffer(field, answers = {}, pricing = {}) {
   return Math.max(0, Math.round(offer));
 }
 
+/* Offer + the numbers behind it, for display to the registrant:
+   recovery = gross estimated recovery (before the payout rate);
+   pct = the effective share of recovery the offer represents (payout rate,
+   including any volume premium), rounded to a whole percent. */
+export function computeOfferBreakdown(field, answers = {}, pricing = {}) {
+  const selfR = Number(pricing.selfRecovery) || 0;
+  const pubR = Number(pricing.publisherRecovery) || 0;
+  const selfCount = toCount(answers[field && field.selfField]);
+  const pubCount = toCount(answers[field && field.publisherField]);
+  const recovery = Math.max(0, Math.round(selfR * selfCount + pubR * pubCount));
+  const offer = computeOffer(field, answers, pricing);
+  const pct = recovery > 0
+    ? Math.round((offer / recovery) * 100)
+    : Math.round(Number(pricing.payoutRatePct) || 0);
+  const prefix = field && field.prefix != null ? field.prefix : "$";
+  const suffix = field && field.suffix != null ? field.suffix : "";
+  return {
+    offer,
+    recovery,
+    pct,
+    offerDisplay: `${prefix}${withCommas(offer)}${suffix}`,
+    recoveryDisplay: `${prefix}${withCommas(recovery)}${suffix}`,
+  };
+}
+
 export function formatOffer(field, answers = {}, pricing = {}) {
   const prefix = field && field.prefix != null ? field.prefix : "$";
   const suffix = field && field.suffix != null ? field.suffix : "";

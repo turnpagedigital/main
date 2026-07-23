@@ -74,7 +74,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
   const [extraction, setExtraction] = useState(null);   // claim-form read result
   const [extracting, setExtracting] = useState(false);
   const [extractError, setExtractError] = useState("");
-  const [quotes, setQuotes] = useState({});             // fieldId -> server-priced string
+  const [quotes, setQuotes] = useState({});             // fieldId -> /api/quote payload { display, recoveryDisplay, pct }
 
   const visibleSteps = useMemo(
     () => (flow.steps || []).filter(s => stepVisible(s, answers)),
@@ -102,7 +102,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
           signal: ctrl.signal,
         })
           .then(r => (r.ok ? r.json() : null))
-          .then(data => { if (data && data.display != null) setQuotes(prev => ({ ...prev, [f.id]: data.display })); })
+          .then(data => { if (data && data.display != null) setQuotes(prev => ({ ...prev, [f.id]: data })); })
           .catch(() => {});
       });
     }, 300);
@@ -405,6 +405,7 @@ function Shell({ eyebrow, title, accent, layout = "center", colorScheme, backgro
         border: `1px solid ${LINE}`,
         borderRadius: radius,
         padding: "clamp(1.5rem,3.5vw,2.5rem)",
+        boxShadow: "0 2px 16px rgba(0,0,0,0.07)", // matches the contact form card
         ...(scale !== 100 ? { zoom: scale / 100 } : {}),
       };
 
@@ -544,8 +545,12 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
   if (field.type === "computed") {
     const revealed = computedGateSatisfied(field, answers);
     // Server-priced (field.priced): the price is fetched from /api/quote and
-    // arrives via `quote`. Otherwise (public rate): compute in the browser.
-    const priceStr = field.priced ? (quote != null ? quote : "…") : formatComputed(field, answers);
+    // arrives via `quote` ({ display, recoveryDisplay, pct }). Otherwise
+    // (public rate): compute in the browser.
+    const q = field.priced && quote && typeof quote === "object" ? quote : null;
+    const priceStr = field.priced
+      ? (q && q.display != null ? q.display : (typeof quote === "string" ? quote : "…"))
+      : formatComputed(field, answers);
     return (
       <div style={wrap}>
         <div style={{
@@ -565,6 +570,11 @@ function FieldControl({ field, value, file, answers = {}, quote, extraction = nu
               <p style={{ fontFamily: FONT, fontWeight: 900, fontSize: "clamp(2rem,5vw,2.8rem)", color: NEON, lineHeight: 1.1, margin: "0.35rem 0 0", letterSpacing: "-0.02em" }}>
                 {priceStr}
               </p>
+              {q && q.recoveryDisplay && q.pct > 0 && (
+                <p style={{ fontFamily: FONT, fontSize: "0.85rem", color: "rgba(255,255,255,0.78)", margin: "0.55rem 0 0", lineHeight: 1.5 }}>
+                  Based on an estimated recovery of <strong style={{ color: "#fff" }}>{q.recoveryDisplay}</strong> — this offer is <strong style={{ color: "#fff" }}>{q.pct}%</strong> of that, paid now.
+                </p>
+              )}
               {field.help && (
                 <p style={{ fontFamily: FONT, fontSize: "0.8rem", color: MUTED, margin: "0.55rem 0 0", lineHeight: 1.5 }}>
                   {field.help}
