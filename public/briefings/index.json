@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-24-bankruptcy-advisory",
+      "date": "2026-07-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 24, 2026",
+      "summary": "Today's principal delta: Sleep Number's §363 sale closed for $701M — $286M above its stalking-horse floor — while the BlockFills plan track enters its terminal stretch with a confirmation hearing scheduled for September 11, 2026 and Keyrock's operational close announced July 16.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-24-class-actions-advisory",
+      "date": "2026-07-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 24, 2026",
+      "summary": "The week's defining event is the July 20 final approval in Bartz v. Anthropic — the largest copyright class action settlement in U.S. history, at $1.5 billion.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-24-fraud-advisory",
+      "date": "2026-07-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 24, 2026",
+      "summary": "The principal developments this cycle are: (1) the Stanford Financial receivership is in its final-distribution endgame, with check-void deadlines this week creating a live recovery risk for claimants who have not acted; (2) the OneCoin DOJ remission window closed June 30, leaving open the question…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-24-tariff-advisory",
+      "date": "2026-07-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 24, 2026",
+      "summary": "Today is the most consequential single-day tariff reset since the Supreme Court's February 20 ruling in Learning Resources, Inc. v. Trump, 6-3. The 10% global import surcharge that President Trump imposed under Section 122 of the Trade Act of 1974 (19 U.S.C.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-24-crypto-advisory",
+      "date": "2026-07-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 24, 2026",
+      "summary": "Today's primary deltas: Poolin Technology's Chapter 11 filing in New Jersey (July 22) — the most structurally significant new crypto-mining insolvency since Core Scientific — lands as the dominant new development.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-24-advisory",
+      "date": "2026-07-24",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 24, 2026",
+      "summary": "The headline this cycle is final approval in Bartz v. Anthropic — the largest copyright settlement in U.S. history, now a closed judgment. The 30-day objector-appeal window opened July 20 and runs to August 19, making the next three weeks the critical exposure period for claim-recovery investors.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-23-bankruptcy-advisory",
       "date": "2026-07-23",
       "type": "briefing",
