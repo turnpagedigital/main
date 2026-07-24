@@ -14,34 +14,34 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-07-22",
-    "fetched_at": "2026-07-23T16:04:46.195296+00:00",
-    "as_of": "Jul 23, 2026",
-    "new_in_72h": 11,
+    "date_last_filing": "2026-07-23",
+    "fetched_at": "2026-07-24T15:37:27.210137+00:00",
+    "as_of": "Jul 24, 2026",
+    "new_in_72h": 12,
     "recent": [
       {
-        "entry_number": 437,
-        "date_filed": "2026-07-22",
-        "date_display": "Jul 22, 2026",
-        "description": "",
+        "entry_number": 442,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Declaration of Disinterestedness of Arthur Yermash in Support of Employment of Campolo, Middleton & McCormick, LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)377) filed by Kroll Restructuring ",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 436,
-        "date_filed": "2026-07-22",
-        "date_display": "Jul 22, 2026",
-        "description": "",
+        "entry_number": 443,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors, Declaration of John Dempsey in Support of Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) D",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": null,
-        "date_filed": "2026-07-22",
-        "date_display": "Jul 22, 2026",
-        "description": "",
+        "entry_number": 439,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "Notice of Appearance filed by Peter S. Russ on behalf of Vector Security. (Russ, Peter) (Entered: 07/23/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -49,10 +49,55 @@
     ],
     "entries": [
       {
-        "entry_number": 437,
+        "entry_number": 442,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Declaration of Disinterestedness of Arthur Yermash in Support of Employment of Campolo, Middleton & McCormick, LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)377) filed by Kroll Restructuring ",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 443,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors, Declaration of John Dempsey in Support of Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) D",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 439,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "Notice of Appearance filed by Peter S. Russ on behalf of Vector Security. (Russ, Peter) (Entered: 07/23/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 441,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Motion of Debtors for an Order (I) Directing the Trustee of the Debtors' Non-Qualified Deferred Compensation Plan Trust to Return the Debtors' Assets Held in Trust to the Debtors' Estates and (II) Granting Related Relief, Motion of",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 440,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Second Interim Order (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Financing and (B) Use Cash Collateral, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Stat",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 434,
         "date_filed": "2026-07-22",
         "date_display": "Jul 22, 2026",
-        "description": "",
+        "description": "Transcript regarding Hearing Held on 07/09/2026 At 10:07 AM RE: Statement / Motion of the Debtors for Entry of an Order Establishing Procedures for Interim Compensation and Reimbursement of Expenses for Retained Professionals.; Motion to Authorize / Motion of the Debtors for Entr",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -61,25 +106,7 @@
         "entry_number": 436,
         "date_filed": "2026-07-22",
         "date_display": "Jul 22, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-07-22",
-        "date_display": "Jul 22, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 433,
-        "date_filed": "2026-07-22",
-        "date_display": "Jul 22, 2026",
-        "description": "",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Potential Assumption and Assignment of Executory Contracts or Unexpired Leases and Cure Amount, Order (I)(A) Approving Bidding Procedures for Sale of the Debtors' Assets, (B) Approving the Designation of SNBR Inc., an Aff",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -88,7 +115,16 @@
         "entry_number": 438,
         "date_filed": "2026-07-22",
         "date_display": "Jul 22, 2026",
-        "description": "",
+        "description": "Motion to File Under Seal / Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information filed by Brian Resnick on behalf of Sleep Number Corporation with hearing to be held on 7/28/2026 at 10:00 AM at Videoconference (",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 433,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
+        "description": "Letter Re: Payment history Filed by Modesto Irrigation District. (Vargas, Ana) (Entered: 07/22/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -97,42 +133,24 @@
         "entry_number": 435,
         "date_filed": "2026-07-22",
         "date_display": "Jul 22, 2026",
-        "description": "",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors (related document(s)185) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/22/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 428,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
-        "description": "",
+        "entry_number": 437,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
+        "description": "Affidavit of Service - Declaration of Service of Notice of Motion and Motion of Gumotex Coating, s.r.o. For An Order Allowing An Administrative Expense Claim And Requiring Payment (related document(s)380, 381) Filed by Alex Spizz on behalf of GUMOTEX, a.s./GUMOTEX Coating, s.r.o.",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 432,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 429,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 430,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
+        "entry_number": null,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -142,25 +160,43 @@
         "entry_number": 431,
         "date_filed": "2026-07-21",
         "date_display": "Jul 21, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-07-20",
-        "date_display": "Jul 20, 2026",
-        "description": "",
+        "description": "Declaration of Disinterestedness of Stuart A. Nelson in Support of Employment of Norton Rose Fulbright US LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)176) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Ent",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 425,
-        "date_filed": "2026-07-20",
-        "date_display": "Jul 20, 2026",
-        "description": "",
+        "entry_number": 430,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
+        "description": "Order (I) Approving Sale Of Debtors Assets Free And Clear Of Liens, Claims, Interests And Encumbrances, (II) Authorizing Assumption And Assignment Of Executory Contracts And Unexpired Leases And (III) Granting Related Relief (Related Doc # 17) signed on 7/21/2026. (Kinchen, Gwen)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 428,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
+        "description": "Order signed on 7/21/2026 scheduling initial case conference with hearing to be held on 8/3/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) (Kinchen, Gwen) (Entered: 07/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.428.0.pdf"
+      },
+      {
+        "entry_number": 432,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
+        "description": "Notice of Hearing / Notice of Continued Hearing Regarding Motion of Debtors for Entry of an Order (I)(A) Approving the Sale of the Debtors' Assets Free and Clear of Liens, Claims, Interests, and Encumbrances and (B) Authorizing Assumption and Assignment of Executory Contracts and",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.432.0.pdf"
+      },
+      {
+        "entry_number": 429,
+        "date_filed": "2026-07-21",
+        "date_display": "Jul 21, 2026",
+        "description": "Final Order Signed On 7/21/2026 (I) Authorizing The Debtors To (A) Obtain Senior Secured Superpriority Postpetition Financing And (B) Use Cash Collateral, (II) Granting Liens And Providing Claims With Superpriority Administrative Expense Status, (III) Granting Adequate Protection",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -169,25 +205,7 @@
         "entry_number": 426,
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-07-20",
-        "date_display": "Jul 20, 2026",
-        "description": "Pending Deadlines Terminated RE: Motion to Authorize / Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the Stalking Horse Bidder fo",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 410,
-        "date_filed": "2026-07-20",
-        "date_display": "Jul 20, 2026",
-        "description": "Notice of Adjournment of Hearing RE: Proposed Order / Notice of Revised Proposed Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, ",
+        "description": "Notice of Hearing / Notice of Adjourned Hearing Regarding Motions of the Debtors for Entry of an Order Authorizing Employment and Retention of (I) Kroll Restructuring Administration LLC, (II) Vinson & Elkins LLP, (III) AP Services, LLC, (IV) Davis Polk & Wardwell LLP, (V) A&G Rea",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -202,28 +220,10 @@
         "doc_url": ""
       },
       {
-        "entry_number": 409,
-        "date_filed": "2026-07-20",
-        "date_display": "Jul 20, 2026",
-        "description": "Notice of Adjournment of Hearing RE: Objection to Motion UNITED STATES TRUSTEES OBJECTION TO MOTION OF THE DEBTORS FOR ENTRY OF INTERIM AND FINAL ORDERS AUTHORIZING (I) THE DEBTORS TO (A) HONOR PREPETITION EMPLOYEE OBLIGATIONS AND DIRECTOR OBLIGATIONS AND (B) MAINTAIN EMPLOYEE BE",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": null,
         "date_filed": "2026-07-20",
         "date_display": "Jul 20, 2026",
         "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 408,
-        "date_filed": "2026-07-20",
-        "date_display": "Jul 20, 2026",
-        "description": "Notice of Adjournment of Hearing Re: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Ad",
         "is_new": false,
         "landmark": "",
         "doc_url": ""

@@ -14,17 +14,17 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
-    "date_last_filing": "2026-07-06",
-    "fetched_at": "2026-07-23T16:04:42.653745+00:00",
-    "as_of": "Jul 23, 2026",
-    "new_in_72h": 0,
+    "date_last_filing": "2026-07-23",
+    "fetched_at": "2026-07-24T15:37:25.523859+00:00",
+    "as_of": "Jul 24, 2026",
+    "new_in_72h": 1,
     "recent": [
       {
-        "entry_number": 531,
-        "date_filed": "2026-07-06",
-        "date_display": "Jul 6, 2026",
+        "entry_number": 532,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
         "description": "",
-        "is_new": false,
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
@@ -49,11 +49,11 @@
     ],
     "entries": [
       {
-        "entry_number": 531,
-        "date_filed": "2026-07-06",
-        "date_display": "Jul 6, 2026",
+        "entry_number": 532,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
         "description": "",
-        "is_new": false,
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
@@ -76,7 +76,16 @@
         "doc_url": ""
       },
       {
-        "entry_number": 528,
+        "entry_number": 531,
+        "date_filed": "2026-07-06",
+        "date_display": "Jul 6, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 527,
         "date_filed": "2026-07-01",
         "date_display": "Jul 1, 2026",
         "description": "",
@@ -85,7 +94,7 @@
         "doc_url": ""
       },
       {
-        "entry_number": 527,
+        "entry_number": 528,
         "date_filed": "2026-07-01",
         "date_display": "Jul 1, 2026",
         "description": "",
@@ -103,15 +112,6 @@
         "doc_url": ""
       },
       {
-        "entry_number": 526,
-        "date_filed": "2026-06-24",
-        "date_display": "Jun 24, 2026",
-        "description": "Adversary Proceeding 26-02122. Complaint by Angela Somers against Coinbase Global, Inc. Coinbase Inc. Coinbase Financial Markets, Aaron Tilton, Brad Jones. Fee Amount $350. Payment Not Due at this Time: Fee Deferred. Nature of Suit(s): [14 (Recovery of money/property - other)]. (",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.526.0.pdf"
-      },
-      {
         "entry_number": 524,
         "date_filed": "2026-06-24",
         "date_display": "Jun 24, 2026",
@@ -119,6 +119,15 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 526,
+        "date_filed": "2026-06-24",
+        "date_display": "Jun 24, 2026",
+        "description": "Adversary Proceeding 26-02122. Complaint by Angela Somers against Coinbase Global, Inc. Coinbase Inc. Coinbase Financial Markets, Aaron Tilton, Brad Jones. Fee Amount $350. Payment Not Due at this Time: Fee Deferred. Nature of Suit(s): [14 (Recovery of money/property - other)]. (",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.526.0.pdf"
       },
       {
         "entry_number": 525,
@@ -218,15 +227,6 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.517.0_1.pdf"
-      },
-      {
-        "entry_number": 511,
-        "date_filed": "2026-05-24",
-        "date_display": "May 24, 2026",
-        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 05/24/2026. (Admin.) (EOD: 05/24/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ]
   },
