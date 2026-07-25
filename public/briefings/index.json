@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-25-bankruptcy-advisory",
+      "date": "2026-07-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 25, 2026",
+      "summary": "The week's defining development is the Sleep Number § 363 sale order — a $701 million auction outcome that arrived after a competitive bid process and now sits days from closing.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-25-class-actions-advisory",
+      "date": "2026-07-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 25, 2026",
+      "summary": "The week's headline is a closed one: Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.), has its final-approval order in hand as of Monday.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-25-fraud-advisory",
+      "date": "2026-07-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 25, 2026",
+      "summary": "The three live deltas this morning: (1) the Stanford Final Distribution faces a narrow check-cashing cliff — April 27 checks must be negotiated by tomorrow, July 26; (2) Power Block Coin / SmartFi (Bankr. D. Utah, No. 24-23041, Judge Cathleen D.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-25-tariff-advisory",
+      "date": "2026-07-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 25, 2026",
+      "summary": "Section 122 Is Gone — Replaced Overnight by Section 301 Forced-Labor Duties",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-25-crypto-advisory",
+      "date": "2026-07-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 25, 2026",
+      "summary": "The week's dominant new filing — Poolin Technology in D.N.J. — arrives alongside the BlockFills confirmation runway entering its final seven weeks, a cluster of late-July docket activity in the Reliz matter, and the continuing post-distribution overhang from the Genesis/DCG avoidance litigation.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-25-advisory",
+      "date": "2026-07-25",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 25, 2026",
+      "summary": "The dominant development this week is final closure of Bartz v. Anthropic. On July 20, 2026, Judge Araceli Martínez-Olguín of the U.S. District Court for the Northern District of California entered final judgment in Bartz et al. v. Anthropic PBC, No.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-24-bankruptcy-advisory",
       "date": "2026-07-24",
       "type": "briefing",
