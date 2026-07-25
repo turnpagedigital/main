@@ -14,13 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
-    "date_last_filing": "2026-07-23",
-    "fetched_at": "2026-07-24T15:37:25.068449+00:00",
-    "as_of": "Jul 24, 2026",
+    "date_last_filing": "2026-07-24",
+    "fetched_at": "2026-07-25T15:11:07.602221+00:00",
+    "as_of": "Jul 25, 2026",
     "new_in_72h": 6,
     "recent": [
       {
-        "entry_number": 533,
+        "entry_number": 538,
+        "date_filed": "2026-07-24",
+        "date_display": "Jul 24, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 536,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -30,15 +39,6 @@
       },
       {
         "entry_number": 537,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 534,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -49,7 +49,16 @@
     ],
     "entries": [
       {
-        "entry_number": 533,
+        "entry_number": 538,
+        "date_filed": "2026-07-24",
+        "date_display": "Jul 24, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 536,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -59,24 +68,6 @@
       },
       {
         "entry_number": 537,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 534,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 536,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -94,11 +85,29 @@
         "doc_url": ""
       },
       {
+        "entry_number": 534,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 533,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 532,
         "date_filed": "2026-07-22",
         "date_display": "Jul 22, 2026",
         "description": "",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -215,15 +224,6 @@
         "date_filed": "2026-07-10",
         "date_display": "Jul 10, 2026",
         "description": "Chapter 11 Monthly Operating Report for Case Number 26-10375 (Reliz LTD) for the Month Ending: 05/31/2026 Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 May MOR Support Schedules) (Hurst, David) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 522,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Certificate of Service re: Documents Served on July 8, 2026 (related document(s)500, 501, 502, 503, 504, 505) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (Kass, Albert) (Entered: 07/10/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
