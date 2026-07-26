@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-26-bankruptcy-advisory",
+      "date": "2026-07-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 26, 2026",
+      "summary": "The dominant development this week is the closure of the Sleep Number § 363 sale process. On July 20, 2026, Judge Kyu Young Paek of the U.S. Bankruptcy Court for the Southern District of New York approved the sale of substantially all assets of In re Sleep Number Corporation, et al., Case No.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-26-class-actions-advisory",
+      "date": "2026-07-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 26, 2026",
+      "summary": "Lead delta this cycle: The most material development since the last advisory is final resolution of Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.).",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-26-fraud-advisory",
+      "date": "2026-07-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 26, 2026",
+      "summary": "Today's delta: The Stanford Financial Receivership's final distribution clock has run to its terminal edge — checks dated April 27, 2026 void today, July 26, 2026. Separately, Power Block Coin, LLC (Bankr. D. Utah, No. 24-23041, Judge Cathleen D.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-26-tariff-advisory",
+      "date": "2026-07-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 26, 2026",
+      "summary": "The Section 122 surcharge is now dead; the Section 301 regime is live; and the IEEPA refund pipeline has entered Phase 3 territory — all within the last 72 hours. Three separate tracks, each with distinct consequences for importer recovery and compliance exposure, moved simultaneously this week.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-26-crypto-advisory",
+      "date": "2026-07-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 26, 2026",
+      "summary": "The dominant new filing this week is Poolin Technology's Chapter 11 in New Jersey — a liquidating case carrying $163.7 million in frozen wallet IOUs against a $52 million stalking-horse bid, making recoveries for 11,700 retail claimants contingent entirely on auction competition.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-26-advisory",
+      "date": "2026-07-26",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 26, 2026",
+      "summary": "The week's defining event is the entry of final judgment in Bartz v. Anthropic. The settlement — previously in the \"final approval pending\" posture tracked here — is now closed.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-25-bankruptcy-advisory",
       "date": "2026-07-25",
       "type": "briefing",
