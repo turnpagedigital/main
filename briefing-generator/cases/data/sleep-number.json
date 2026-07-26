@@ -15,9 +15,9 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
     "date_last_filing": "2026-07-24",
-    "fetched_at": "2026-07-25T15:11:09.832206+00:00",
-    "as_of": "Jul 25, 2026",
-    "new_in_72h": 10,
+    "fetched_at": "2026-07-26T15:13:43.912227+00:00",
+    "as_of": "Jul 26, 2026",
+    "new_in_72h": 5,
     "recent": [
       {
         "entry_number": 448,
@@ -98,7 +98,7 @@
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Motion of Debtors for an Order (I) Directing the Trustee of the Debtors' Non-Qualified Deferred Compensation Plan Trust to Return the Debtors' Assets Held in Trust to the Debtors' Estates and (II) Granting Related Relief, Motion of",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -107,7 +107,7 @@
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "Notice of Appearance filed by Peter S. Russ on behalf of Vector Security. (Russ, Peter) (Entered: 07/23/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -116,7 +116,7 @@
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Second Interim Order (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Financing and (B) Use Cash Collateral, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Stat",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -125,7 +125,7 @@
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors, Declaration of John Dempsey in Support of Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) D",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -134,7 +134,7 @@
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Declaration of Disinterestedness of Arthur Yermash in Support of Employment of Campolo, Middleton & McCormick, LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)377) filed by Kroll Restructuring ",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
