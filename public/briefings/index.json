@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-27-bankruptcy-advisory",
+      "date": "2026-07-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 27, 2026",
+      "summary": "The week's pivotal development on this desk is the Sleep Number § 363 sale, which moved from auction to court approval in less than a week. After a competitive auction, the U.S.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-27-class-actions-advisory",
+      "date": "2026-07-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 27, 2026",
+      "summary": "The dominant development since last week's advisory: On July 20, 2026, Judge Araceli Martínez-Olguín of the U.S. District Court for the Northern District of California granted final approval of the landmark $1.5 billion class action settlement in Bartz v.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-27-fraud-advisory",
+      "date": "2026-07-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 27, 2026",
+      "summary": "The primary delta this week sits across two fronts: the Stanford receivership has crossed into final-distribution execution — checks issued in late April are now at or past their void deadlines — and the OneCoin DOJ remission window closed on June 30, shifting that matter from claims-filing posture…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-27-tariff-advisory",
+      "date": "2026-07-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 27, 2026",
+      "summary": "The dominant development this week is the administration's seamless tariff handoff: the Section 122 global surcharge hard-expired at 12:01 a.m. EDT on July 24, 2026, and USTR simultaneously activated new Section 301 forced-labor tariffs of 10–12.5% on imports from 60 economies.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-27-crypto-advisory",
+      "date": "2026-07-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 27, 2026",
+      "summary": "The week just closed with two new Chapter 11 filings — Storj Labs (July 26) and MVMT Labs/Movement (July 15) — both in Delaware or West Virginia federal courts, against a background of 95 crypto project shutdowns year-to-date and the BlockFills plan confirmation already in Judge Horan's rearview.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-27-advisory",
+      "date": "2026-07-27",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 27, 2026",
+      "summary": "The week's controlling development: Bartz v. Anthropic reaches final judgment. Last Monday's order closes the pleadings phase of the largest copyright settlement in U.S. history and opens a distribution window with real near-term milestones.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-26-bankruptcy-advisory",
       "date": "2026-07-26",
       "type": "briefing",
