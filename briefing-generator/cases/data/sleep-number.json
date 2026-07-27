@@ -14,25 +14,25 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-07-24",
-    "fetched_at": "2026-07-26T15:13:43.912227+00:00",
-    "as_of": "Jul 26, 2026",
-    "new_in_72h": 5,
+    "date_last_filing": "2026-07-27",
+    "fetched_at": "2026-07-27T16:24:25.262654+00:00",
+    "as_of": "Jul 27, 2026",
+    "new_in_72h": 2,
     "recent": [
       {
-        "entry_number": 448,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Adjournment of Hearing on the Deferred Compensation Trust Motion (related document(s)395) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/24/2026)",
+        "entry_number": 450,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 445,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Schedules of Assets and Liabilities for Sleep Number Corporation, Statement of Financial Affairs for Sleep Number Corporation, Schedules of Assets and Liabilities for Select Comfort Canada Holding Inc. [Case No. 26-11398, Docket No",
+        "entry_number": 449,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -42,26 +42,26 @@
         "date_filed": "2026-07-24",
         "date_display": "Jul 24, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information. Hearing Scheduled for July 28, 2026 at 10:00 a.m. (ET) (related document(s)438) filed by Kroll Restructuring",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
-        "entry_number": 448,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Adjournment of Hearing on the Deferred Compensation Trust Motion (related document(s)395) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/24/2026)",
+        "entry_number": 450,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 445,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Schedules of Assets and Liabilities for Sleep Number Corporation, Statement of Financial Affairs for Sleep Number Corporation, Schedules of Assets and Liabilities for Select Comfort Canada Holding Inc. [Case No. 26-11398, Docket No",
+        "entry_number": 449,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -71,7 +71,16 @@
         "date_filed": "2026-07-24",
         "date_display": "Jul 24, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information. Hearing Scheduled for July 28, 2026 at 10:00 a.m. (ET) (related document(s)438) filed by Kroll Restructuring",
-        "is_new": true,
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 445,
+        "date_filed": "2026-07-24",
+        "date_display": "Jul 24, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Schedules of Assets and Liabilities for Sleep Number Corporation, Statement of Financial Affairs for Sleep Number Corporation, Schedules of Assets and Liabilities for Select Comfort Canada Holding Inc. [Case No. 26-11398, Docket No",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -80,7 +89,16 @@
         "date_filed": "2026-07-24",
         "date_display": "Jul 24, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Order Scheduling Initial Case Conference, and Final Order (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Financing and (B) Use Cash Collateral, (II) Granting Liens and Providing Claims with Supe",
-        "is_new": true,
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 448,
+        "date_filed": "2026-07-24",
+        "date_display": "Jul 24, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Adjournment of Hearing on the Deferred Compensation Trust Motion (related document(s)395) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/24/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -89,7 +107,7 @@
         "date_filed": "2026-07-24",
         "date_display": "Jul 24, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Application of the Official Committee of Unsecured Creditors for Entry of an Order Authorizing the Employment and Retention of Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors Effective ",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -98,6 +116,15 @@
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Motion of Debtors for an Order (I) Directing the Trustee of the Debtors' Non-Qualified Deferred Compensation Plan Trust to Return the Debtors' Assets Held in Trust to the Debtors' Estates and (II) Granting Related Relief, Motion of",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 442,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Declaration of Disinterestedness of Arthur Yermash in Support of Employment of Campolo, Middleton & McCormick, LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)377) filed by Kroll Restructuring ",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -125,24 +152,6 @@
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors, Declaration of John Dempsey in Support of Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) D",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 442,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Declaration of Disinterestedness of Arthur Yermash in Support of Employment of Campolo, Middleton & McCormick, LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)377) filed by Kroll Restructuring ",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 433,
-        "date_filed": "2026-07-22",
-        "date_display": "Jul 22, 2026",
-        "description": "Letter Re: Payment history Filed by Modesto Irrigation District. (Vargas, Ana) (Entered: 07/22/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -202,6 +211,15 @@
         "doc_url": ""
       },
       {
+        "entry_number": 433,
+        "date_filed": "2026-07-22",
+        "date_display": "Jul 22, 2026",
+        "description": "Letter Re: Payment history Filed by Modesto Irrigation District. (Vargas, Ana) (Entered: 07/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 431,
         "date_filed": "2026-07-21",
         "date_display": "Jul 21, 2026",
@@ -209,24 +227,6 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 430,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
-        "description": "Order (I) Approving Sale Of Debtors Assets Free And Clear Of Liens, Claims, Interests And Encumbrances, (II) Authorizing Assumption And Assignment Of Executory Contracts And Unexpired Leases And (III) Granting Related Relief (Related Doc # 17) signed on 7/21/2026. (Kinchen, Gwen)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 428,
-        "date_filed": "2026-07-21",
-        "date_display": "Jul 21, 2026",
-        "description": "Order signed on 7/21/2026 scheduling initial case conference with hearing to be held on 8/3/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) (Kinchen, Gwen) (Entered: 07/21/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.428.0.pdf"
       }
     ]
   },
