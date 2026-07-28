@@ -14,41 +14,68 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
-    "date_last_filing": "2026-07-24",
-    "fetched_at": "2026-07-27T16:23:53.891040+00:00",
-    "as_of": "Jul 27, 2026",
-    "new_in_72h": 0,
+    "date_last_filing": "2026-07-27",
+    "fetched_at": "2026-07-28T16:15:09.340709+00:00",
+    "as_of": "Jul 28, 2026",
+    "new_in_72h": 3,
     "recent": [
       {
-        "entry_number": 538,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
+        "entry_number": 541,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
         "description": "",
-        "is_new": false,
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 536,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
+        "entry_number": 539,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
         "description": "",
-        "is_new": false,
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 537,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
+        "entry_number": 540,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
         "description": "",
-        "is_new": false,
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 541,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 539,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 540,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 538,
         "date_filed": "2026-07-24",
         "date_display": "Jul 24, 2026",
@@ -58,16 +85,7 @@
         "doc_url": ""
       },
       {
-        "entry_number": 536,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 537,
+        "entry_number": 534,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -85,7 +103,7 @@
         "doc_url": ""
       },
       {
-        "entry_number": 534,
+        "entry_number": 537,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -95,6 +113,15 @@
       },
       {
         "entry_number": 533,
+        "date_filed": "2026-07-23",
+        "date_display": "Jul 23, 2026",
+        "description": "",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 536,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -197,33 +224,6 @@
         "date_filed": "2026-07-10",
         "date_display": "Jul 10, 2026",
         "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by Reliz Technology Group Holdings Inc.. Hearing scheduled for 7/13/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 5th Fl., Courtroom #5, Wilmington, Delaware. (Hurst, David) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 518,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Chapter 11 Monthly Operating Report for Case Number 26-10373 (Reliz Technologies LLC) for the Month Ending: 05/31/2026 Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 May MOR Support Schedules) (Hurst, David) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 511,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: Deus X Pay Europe UAB (Amount $39,057.67) To Bradford Capital Holdings LP. Filed by Bradford Capital Management, LLC. (Brager, Brian) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 520,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Chapter 11 Monthly Operating Report for Case Number 26-10375 (Reliz LTD) for the Month Ending: 05/31/2026 Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 May MOR Support Schedules) (Hurst, David) (Entered: 07/10/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
