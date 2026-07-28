@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-28-bankruptcy-advisory",
+      "date": "2026-07-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 28, 2026",
+      "summary": "The central creditor-rights development this week is not the §363 sale itself — that cleared — but what happens to the estate immediately after it closes.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-28-class-actions-advisory",
+      "date": "2026-07-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 28, 2026",
+      "summary": "The dominant event this cycle is the closure of Bartz v. Anthropic — final approval entered July 20, now in active distribution posture. The BCBS subscriber fund is mid-distribution, with a second wave of Visa/Mastercard interchange payments calendared for September.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-28-fraud-advisory",
+      "date": "2026-07-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 28, 2026",
+      "summary": "Three developments define the current posture of the fraud-recovery landscape this week. First, the Stanford receivership's Final Distribution Plan has now crossed its most immediate check-cashing deadlines, with material reversion risk crystallizing for uncollected payments — a timing event with di…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-28-tariff-advisory",
+      "date": "2026-07-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 28, 2026",
+      "summary": "The Section 122 global surcharge expired at 12:01 a.m. EDT on July 24, 2026, exactly 150 days after the Supreme Court's February 20 IEEPA ruling — its statutory maximum under 19 U.S.C. § 2132.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-28-crypto-advisory",
+      "date": "2026-07-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 28, 2026",
+      "summary": "The past week produced the most concentrated burst of crypto-sector insolvency activity since the 2022 collapse wave. Movement Labs and Storj Labs filed for Chapter 11 bankruptcy, marking the third and fourth crypto-related company failures, respectively, in seven days as investor capital shifts hea…",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-28-advisory",
+      "date": "2026-07-28",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 28, 2026",
+      "summary": "The dominant development since last advisory: final approval entered. On July 20, 2026, Judge Araceli Martínez-Olguín of the U.S. District Court for the Northern District of California granted final approval of the landmark $1.5 billion class action settlement in Bartz v.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-27-bankruptcy-advisory",
       "date": "2026-07-27",
       "type": "briefing",
