@@ -201,9 +201,11 @@ def case_box_fragment(case):
     recent = (d.get("recent") or [])[:3]
     for e in recent:
         newp = '<span class="tc-new">NEW</span>' if e.get("is_new") else ""
+        raw_desc = (e.get("description") or "").strip()
+        fdesc = html_escape(raw_desc) if raw_desc else '<span style="color:var(--ink-40)">—</span>'
         rows.append(
             f'<li><span class="tc-fdate">{html_escape(filing_date_short(e))}</span>'
-            f'<span class="tc-fdesc">{html_escape(e.get("description",""))}{newp}</span></li>'
+            f'<span class="tc-fdesc">{fdesc}{newp}</span></li>'
         )
     filings = ("<ul class=\"tc-filings\">" + "".join(rows) + "</ul>") if rows else \
               '<div class="tc-empty">No filings on record yet.</div>'
@@ -265,7 +267,8 @@ def render_docket_rows(entries):
         dkt = e.get("entry_number")
         dkt = str(dkt) if dkt not in (None, "") else "—"
         date = html_escape(e.get("date_display") or pretty_date(e.get("date_filed",""), "—"))
-        desc = html_escape(e.get("description", ""))
+        raw_desc = (e.get("description") or "").strip()
+        desc = html_escape(raw_desc) if raw_desc else '<span style="color:var(--ink-40)">—</span>'
         if e.get("is_new"):
             desc += '<span class="new-pill">NEW</span>'
         if e.get("landmark"):
