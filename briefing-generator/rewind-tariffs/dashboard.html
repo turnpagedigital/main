@@ -795,6 +795,81 @@ h3.advisory-h3 strong {
   box-sizing: border-box !important;
 }
 /* NAV ALIGNMENT END */
+.subtab-strip{max-width:1440px;margin:0 auto;padding:10px 32px 0;display:flex;gap:0;border-bottom:2px solid var(--ink);}
+.subtab{background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;padding:8px 20px;font-family:'Archivo',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-60);cursor:pointer;}
+.subtab:hover{color:var(--ink);}
+.subtab.active{color:var(--ink);border-bottom-color:var(--neon);font-weight:700;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.posts-grid{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;grid-template-columns:1fr;gap:28px;}
+@media(min-width:980px){.posts-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+.post-card{background:var(--bg);border:1px solid var(--line-strong);}
+[data-theme="dark"] .post-card{background:#0A0A0A;border-color:rgba(255,255,255,0.18);}
+.post-card-head{display:flex;align-items:center;justify-content:space-between;padding:18px 24px 14px;border-bottom:1px solid var(--line-strong);gap:12px;}
+[data-theme="dark"] .post-card-head{border-bottom-color:rgba(255,255,255,0.18);}
+.post-card-platform{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);}
+.char-count{font-size:11.5px;color:var(--ink-60);font-style:italic;}
+.char-count .over{color:#ef4444;font-weight:700;}
+.post-card-body{padding:22px 26px 18px;}
+.post-text-editable{width:100%;padding:18px;border:1px solid var(--line-strong);font-family:'Archivo',sans-serif;font-size:14.5px;line-height:1.7;resize:vertical;background:var(--bg);color:var(--ink);box-sizing:border-box;overflow:hidden;}
+.post-text-editable.linkedin{min-height:560px;}
+.post-text-editable.x{min-height:240px;}
+.post-text-editable:focus{outline:none;border-color:var(--neon);box-shadow:0 0 0 3px rgba(212,255,0,0.25);}
+[data-theme="dark"] .post-text-editable{background:#16161B;color:#FFFFFF;border-color:rgba(255,255,255,0.18);}
+.post-card-actions{display:flex;align-items:center;justify-content:space-between;padding:14px 26px 18px;gap:10px;flex-wrap:wrap;}
+.btn-copy-post{font-size:12.5px;padding:10px 18px;border:1px solid var(--neon);background:var(--neon);color:var(--ink);cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;}
+.btn-copy-post:hover{background:#E2FF4D;}
+.copied-msg{color:var(--ink);font-size:11.5px;font-weight:700;display:none;letter-spacing:0.04em;text-transform:uppercase;}
+.copied-msg.visible{display:inline;}
+[data-theme="dark"] .copied-msg{color:var(--neon);}
+.adjust-block{padding:18px 26px;border-top:1px solid var(--line);}
+.adjust-label{font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);margin-bottom:8px;}
+.adjust-row{display:flex;gap:10px;align-items:flex-start;}
+.adjust-input{flex:1;min-width:0;font-size:13px;padding:10px 12px;border:1px solid var(--line-strong);font-family:'Archivo',sans-serif;resize:vertical;background:var(--bg);color:var(--ink);min-height:64px;box-sizing:border-box;}
+.adjust-input:focus{outline:none;border-color:var(--neon);}
+[data-theme="dark"] .adjust-input{background:#16161B;color:#FFFFFF;border-color:rgba(255,255,255,0.18);}
+.btn-adjust{font-size:11.5px;padding:10px 16px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;white-space:nowrap;}
+.btn-adjust:hover{background:rgba(10,10,10,0.04);}
+[data-theme="dark"] .btn-adjust{color:#FFFFFF;border-color:rgba(255,255,255,0.6);}
+.adjust-status{font-size:11px;color:var(--ink-60);margin-top:8px;display:none;}
+.adjust-status.visible{display:block;}
+.used-row{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;margin:14px 26px 22px;background:var(--paper-2);border-left:3px solid var(--neon);cursor:pointer;user-select:none;}
+[data-theme="dark"] .used-row{background:#16161B;}
+.used-row:hover{background:rgba(212,255,0,0.10);}
+.used-row input[type="checkbox"]{width:16px;height:16px;cursor:pointer;margin-top:2px;flex-shrink:0;accent-color:#0A0A0A;}
+[data-theme="dark"] .used-row input[type="checkbox"]{accent-color:#D4FF00;}
+.used-text{font-size:13px;line-height:1.5;color:var(--ink);}
+.used-text strong{font-weight:700;}
+.used-text .sub{display:block;font-size:11.5px;color:var(--ink-60);margin-top:3px;}
+[data-theme="dark"] .used-text{color:#FFFFFF;}
+.used-learn{display:none;font-size:11.5px;color:#0A0A0A;background:var(--neon);padding:8px 14px;margin:0 26px 22px;font-weight:600;}
+.used-learn.visible{display:block;}
+footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border-top:1px solid var(--line);color:var(--ink-60);font-size:12px;font-style:italic;}
+.refine-panel-wrap{max-width:760px;margin:0 auto;padding:40px 20px 60px;}
+.refine-panel-wrap .eyebrow-label{font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);margin-bottom:12px;}
+.refine-panel-wrap h2{font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:800;letter-spacing:-0.02em;margin:0 0 8px;}
+.refine-panel-wrap .subtitle{font-size:14px;color:var(--ink-60);line-height:1.6;margin-bottom:28px;}
+.refine-box-inner{background:var(--surface);border:1px solid var(--line-strong);padding:24px 28px;}
+.refine-sub{font-size:13px;color:var(--ink-60);line-height:1.6;margin-bottom:16px;}
+.refine-box-inner textarea{width:100%;min-height:120px;padding:14px 16px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;font-size:14px;line-height:1.6;resize:vertical;box-sizing:border-box;}
+.refine-box-inner textarea:focus{outline:none;border-color:var(--neon);}
+[data-theme="dark"] .refine-box-inner textarea{background:#16161B;color:#FFFFFF;border-color:rgba(255,255,255,0.18);}
+.refine-row{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.btn-refine{background:#D4FF00;color:#0A0A0A;border:1px solid #D4FF00;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;padding:10px 18px;cursor:pointer;}
+.btn-refine:hover{background:#E2FF4D;}
+.btn-refine-secondary{background:transparent;color:var(--ink-60);border:1px solid var(--line-strong);font-family:'Archivo',sans-serif;font-size:12px;padding:10px 14px;cursor:pointer;}
+.refine-status{font-size:12px;color:var(--neon);display:none;}
+[data-theme="light"] .refine-status{color:#0A0A0A;}
+.refine-status.visible{display:inline;}
+.refine-history{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;}
+.refine-history-label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-60);margin-bottom:10px;}
+.refine-history-list{list-style:none;padding:0;margin:0;}
+.refine-history-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;}
+.refine-history-list li:last-child{border-bottom:none;}
+.refine-history-list .empty{color:var(--ink-60);font-style:italic;}
+.refine-history-list .ts{display:block;font-size:11px;color:var(--ink-40);margin-bottom:4px;}
+.refine-history-list .msg{color:var(--ink);}
+.refine-footer-note{font-size:12px;color:var(--ink-60);font-style:italic;border-top:1px solid var(--line);padding-top:16px;margin-top:16px;}
 </style>
   <!-- AUTH GATE START -->
   <script src="/auth/config.js"></script>
@@ -821,10 +896,8 @@ h3.advisory-h3 strong {
           <div class="tn-dd-col tn-dd-col-links">
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
-              <li><a class="tn-dd-link" href="../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
           <div class="tn-dd-col tn-dd-col-cta">
@@ -846,8 +919,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -870,8 +943,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -894,8 +967,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -918,8 +991,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -942,8 +1015,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -961,6 +1034,13 @@ h3.advisory-h3 strong {
   <div class="stamp">10:16 AM ET &middot; FRIDAY, JUNE 12, 2026</div>
 </div>
 
+<div class="subtab-strip">
+  <button class="subtab active" onclick="switchTab('briefing')" id="subtab-briefing">Briefing</button>
+  <button class="subtab" onclick="switchTab('posts')" id="subtab-posts">Posts</button>
+  <button class="subtab" onclick="switchTab('refine')" id="subtab-refine">Refine</button>
+</div>
+
+<div id="tab-briefing" class="tab-panel active">
 <main class="three-col">
 
   <aside class="col-left">
@@ -1101,39 +1181,8 @@ h3.advisory-h3 strong {
 
 
 
-<<<<<<< HEAD
-<h3 class="advisory-h3">II. CAPE Phase 3 — CIT Orders Reliquidation for Finally Liquidated Entries; August 4 Report Due</h3>
-<p>On July 17, 2026, CIT Senior Judge Richard Eaton issued an order directing CBP to "reliquidate, without regard to IEEPA duties, any and all of Plaintiffs' entries that have been liquidated for more than 80 days and on which Plaintiffs made estimated deposits pursuant to IEEPA." The order follows the transfer to Judge Eaton's docket of more than 3,700 cases filed at the CIT seeking refunds of amounts deposited as IEEPA duties.</p>
-<p>CBP will issue instructions to plaintiffs' counsel describing how to make the required submission; once received and followed, plaintiffs may submit a CAPE declaration. CBP is next required to file a progress report on Phase 3 entries on August 4, 2026.</p>
-<p>The August 4 report is the next hard checkpoint for the Phase 3 refund track. On the aggregate pipeline: as of CBP's July 10, 2026 court declaration, $86.3 billion has been repaid to importers (including statutory interest) out of roughly $166 billion in IEEPA duties collected across approximately 330,000 importers and 53 million entries.</p>
-<p>$121.75 billion in claims had been accepted for processing as of July 10, up from approximately $90 billion in mid-June; $104.29 billion had been authorized as of the June 29 filing; and $86.3 billion had actually been repaid.</p>
-<p>June 2026 alone saw $49.1 billion in refund payments — the largest single month in the program's history.</p>
-<p>Approximately $80 billion remains unpaid.</p>
-<p>Phase 3 is the complicating layer. Phase 3 covers finally liquidated entries — those liquidated more than 80 days before the refund period — and critically, the government has stated that Phase 3 refunds will be processed only for importers who have filed lawsuits at the CIT.</p>
-<p>The federal government continues to contest the legal basis for refunds on finally liquidated entries; as a result, it remains unclear whether refunds will actually flow once technical capability is in place. Counsel representing importers with finally liquidated entries who are not already plaintiffs in a CIT action should treat that gap as urgent. The July 17 order, in <em>V.O.S. Selections, Inc. v. United States</em> (Court No. 25-00066) before Senior Judge Eaton, directed that CBP be ordered to reliquidate certain finally liquidated entries ahead of CAPE Phase 3 across roughly 3,700 IEEPA cases before the court.</p>
-<p>---</p>
-<h3 class="advisory-h3">III. <em>State of Oregon v. Trump</em> (Fed. Cir. Nos. 2026-1804, 2026-1805) — Section 122 Appeal, Merits Briefing Active</h3>
-<p>Section 122 (19 U.S.C. § 2132) is now moot as a prospective collection matter — the 150-day surcharge expired July 24 — but the Federal Circuit appeal carries significant backward-looking stakes for every importer that paid the 10% surcharge under Proclamation 11012 between February and July 24, 2026.</p>
-<p>On June 11, 2026, the Federal Circuit granted the government's motions for a stay pending appeal in <em>State of Oregon v. Trump</em> (Nos. 2026-1804, 2026-1805), consolidated appeals from two CIT decisions that had enjoined enforcement of tariffs under Proclamation No. 11012 and Section 122 of the Trade Act of 1974.</p>
-<p>While the appeal proceeds on the merits, the government may continue to collect the Section 122 duties as to the parties covered by the underlying injunctions — the State of Washington, Burlap and Barrel, Inc., and Basic Fun, Inc. — pending further order of the Federal Circuit.</p>
-<p>The consolidated appeals will address the proper interpretation of "balance-of-payments deficit" under Section 122, the nondelegation arguments raised by private plaintiffs, and whether Proclamation No. 11012 was validly issued.</p>
-<p>The core legal dispute is the interpretation of "balance-of-payments deficits": the CIT ruled that the government's reliance on modern trade-deficit and current-account data exceeded the narrow, historically rooted scope of the statute.</p>
-<p>The Federal Circuit, in granting the stay, stated that it did not "state a final conclusion as to the correctness of the CIT's judgment" but that "the federal government has made a sufficient showing that it is likely to succeed on the merits." That language is a meaningful signal; it should temper expectations for a swift affirmance of the CIT's May 7 ruling on appeal.</p>
-<p>The standing truncation from the CIT phase also limits the downstream refund class. The CIT's ruling did not result in a universal injunction but applied only to named plaintiffs; the majority of plaintiff states were dismissed for lack of standing entirely, and only the direct importer plaintiffs (Burlap and Barrel, Basic Fun) and the State of Washington as an importer had Article III standing. Importers who were not parties to the CIT action and have not filed § 1514 protests or CIT complaints under 28 U.S.C. § 1581(i) should assess their preservation posture now, before the Federal Circuit issues its merits decision and any attendant window for protective filings closes.</p>
-<p>---</p>
-<h3 class="advisory-h3">IV. USTR's Section 301 Industrial-Overcapacity Investigation — Next Tariff Tranche in Formation</h3>
-<p>USTR Greer confirmed on July 27 that USTR is continuing a separate Section 301 investigation targeting excess industrial capacity in 16 key trading partners, including China, Vietnam, Mexico, and the European Union.</p>
-<p>Greer stated, "We're going to finish up that investigation hopefully soon, and we'll make a proposal," adding that this could lead to additional tariffs.</p>
-<p>Greer also said the Section 301 forced-labor duties — the tranche already in place — will "likely not have an economic impact" in part because the rates of 10% or 12.5% are similar to prior global tariff actions.</p>
-<p>On the question of whether the new duties would affect Federal Reserve monetary policy, Greer stated: "Well, I don't think it has an impact at all."</p>
-<p>That framing is worth registering for refund claimants: if the administration's litigation posture is that the Section 301 rates are economically equivalent to what was previously in place, it correspondingly reinforces plaintiffs' "same policy, different statute" argument. The process for refunds on IEEPA tariffs, meanwhile, was only recently standardized, and some businesses are still waiting for their money back. A second Section 301 wave aimed at overcapacity — covering China, Vietnam, Mexico, and the EU — would substantially expand the universe of duty exposure for clients with sourcing in those jurisdictions and could dwarf the forced-labor tranche in revenue terms if rates are set higher. No rates have been proposed; the investigation is ongoing. Monitor USTR's Federal Register notices for notice of proposed action and comment periods.</p>
-<p>---</p>
-<h2>Recommended Actions</h2>
-<p>GCs and compliance officers with IEEPA refund exposure should immediately confirm their status in CAPE Phase 1 and Phase 2, then determine whether any of their entries fall into the "finally liquidated" category covered by Phase 3 — and if so, verify that they are named plaintiffs in one of the 3,700-plus cases consolidated before Senior Judge Eaton, since the government's current position is that Phase 3 refunds flow only to litigants; file a protective CIT complaint under 28 U.S.C. § 1581(i) now if you are not, and flag the August 4, 2026 CBP progress report as the next read-through event for Phase 3 mechanics. For Section 122 exposure, file § 1514 protests to toll liquidation finality and preserve the right to benefit from any Federal Circuit affirmance in <em>State of Oregon v. Trump</em> (Nos. 2026-1804, 2026-1805); note that the Federal Circuit's stay-grant language — "likely to succeed on the merits" — means the probability of refunds in that track is lower than the IEEPA track and should be modeled with a meaningful discount. On the new Section 301 front (<em>Burlap & Barrel, Inc. v. Greer</em>, CIT, filed July 24, 2026), monitor docket assignment and any government motion for consolidation with the Learning Resources/hand2mind suit; the threshold question — whether Section 301 permits a uniform global rate set at the President's direction — will be litigated on a timeline that will likely take 12–18 months before any appellate resolution, with the government's emergency stay machinery likely to compress any injunctive relief window further. Model Section 301 duties as durable for at least the medium term. For clients with sourcing in China, Vietnam, Mexico, or the EU, flag the forthcoming industrial-overcapacity Section 301 proposal from USTR as a material, unquantified risk event; initiate supply-chain mapping now so that any comment-period filing is specific and evidentiary rather than generic.</p>
-=======
 <h2>Recommended Actions</h2>
 <p>Importers whose IEEPA refund entries were accepted under CAPE Phase 1 should verify issuance status against CBP's ACE portal immediately — the $86.3 billion repaid figure as of July 10 suggests a meaningful number of accepted entries are still awaiting check or ACH disbursement, and the July 13 court filing deadline may have triggered updated CBP reporting that changes that figure. Importers in the 18% of entries not covered by Phase 1 should file 19 U.S.C. § 1514 protests at their servicing port before the 180-day liquidation clock runs — protest rights run independently of the CAPE portal and are unaffected by the pending Federal Circuit appeal; missing this window forfeits refund rights with no cure. Counsel tracking the new Section 301 challenges (<em>Burlap & Barrel v. Greer</em> and <em>Learning Resources v. United States</em>, both filed July 24 at the CIT) should prepare for an early government motion to dismiss or transfer based on the jurisdictional and standing arguments already tested in the IEEPA cycle, and should file protective motions to suspend liquidation of Section 301 entries now — even absent a TRO, a suspended-liquidation order from the CIT preserves the refund corpus if the new challenges ultimately succeed. Importers with Brazil-origin goods face independent analysis given the July 22 Section 232-adjacent 25% Brazil tariff layered on top of the new Section 301 rates; product exclusion petitions filed at USTR now may be the fastest path to rate relief pending litigation outcome. Finally, for any importer not yet enrolled in the class certification proceeding in <em>Atmus Filtration</em>, monitor the CIT's ruling on class certification — a favorable ruling would automatically include eligible importers and may be the only refund path if Phase 2 CAPE coverage is narrower than the full entry universe.</p>
->>>>>>> 7769ae9 (Daily briefing 2026-07-29)
 <p>---</p>
       </div>
 
@@ -1201,6 +1250,269 @@ h3.advisory-h3 strong {
   </div>
   <p class="disclaimer">Not legal advice. Voice: trade-law-grade. Verify all docket items against PACER / CourtListener / agency releases before acting. Knowledge baseline: <a href="references/background.html" style="color:inherit;text-decoration-color:rgba(212,255,0,0.5);">references/background.html</a>.</p>
 </footer>
+</div>
+
+<div id="tab-posts" class="tab-panel">
+
+<main class="posts-grid">
+
+  <article class="post-card" data-platform="linkedin">
+    <div class="post-card-head">
+      <div class="post-card-platform">LinkedIn</div>
+      <div class="char-count"><span id="li-count">1437</span> chars &middot; Long-form</div>
+    </div>
+    <div class="post-card-body">
+      <textarea class="post-text-editable linkedin" id="linkedin-text" oninput="updateCount('linkedin');autosize(this);">🚢 IEEPA Tariff Refunds - The money is actually moving
+
+$35.46 billion. That's the number CBP reported to Judge Eaton this week for IEEPA refunds processed through the CAPE system since its April 20 launch. And the first checks are landing — VOS Selections, one of the plaintiffs in the state AG action, confirmed receiving $110,000. For a government system built in under two months, that's a remarkable throughput number. There are still 1,880 refunds stuck because importers haven't registered ACH details, which feels like the kind of problem you want to have.
+
+Meanwhile, the Section 122 replacement tariff is living on borrowed time. The CIT ruled it unlawful on May 7, but the Federal Circuit stayed the ruling within five days. Expedited briefing wraps by May 22, and the underlying tariff sunsets July 24 regardless. So the real question isn't whether Section 122 survives — it's whether anyone in Congress is willing to extend it.
+
+The underreported angle? Eight state comptrollers are now demanding consumer pass-through protections on IEEPA refunds. If you passed tariff costs to customers, the class action risk just got louder.
+
+Christina Santucci at Spectrum News has good reporting on the $35B figure and the state officials' letter: https://spectrumlocalnews.com/us/snplus/business/2026/05/14/tariff-refunds-ieepa-customs-import-duties-businesses-consumers-
+
+#IEEPA #TradePolicy #ImportDuties #TariffRefund
+Rewind Tariffs</textarea>
+    </div>
+    <div class="post-card-actions">
+      <button class="btn-copy-post" onclick="copyPost('linkedin')">Copy LinkedIn Post</button>
+      <span class="copied-msg" id="li-copied">&#10003; Copied</span>
+    </div>
+    <div class="adjust-block">
+      <div class="adjust-label">Adjust This Post</div>
+      <div class="adjust-row">
+        <textarea class="adjust-input" id="li-adjust" placeholder='e.g. "Make it shorter", "More urgent tone", "Add a stat about small businesses"...' rows="2"></textarea>
+        <button class="btn-adjust" onclick="sendAdjust('linkedin')">Copy to Claude</button>
+      </div>
+      <div class="adjust-status" id="li-adjust-status">&#10003; Adjustment block copied &mdash; paste into Claude to apply.</div>
+    </div>
+    <div class="used-row" onclick="toggleUsed('linkedin', event)">
+      <input type="checkbox" id="li-used-cb" onclick="event.stopPropagation();toggleUsed('linkedin');">
+      <div class="used-text"><strong>I used this post</strong> &mdash; teach the skill my preferences<span class="sub">When checked, "Copy LinkedIn Post" will also copy a preference signal for Claude to save.</span></div>
+    </div>
+    <div class="used-learn" id="li-used-learn">&#10003; Preference signal included &mdash; paste into Claude to save your "I'd post this" signal.</div>
+  </article>
+
+  <article class="post-card" data-platform="x">
+    <div class="post-card-head">
+      <div class="post-card-platform">X.com</div>
+      <div class="char-count"><span id="x-count">333</span> / 280 chars</div>
+    </div>
+    <div class="post-card-body">
+      <textarea class="post-text-editable x" id="x-text" oninput="updateCount('x');autosize(this);">$35.46B in IEEPA tariff refunds now processing per CBP's May 12 report. First check landed: VOS Selections, $110K.
+
+Federal Circuit just stayed CIT's Section 122 ruling — briefing closes May 22. 8 state comptrollers now demanding consumer pass-through protections.
+
+The pass-through angle is the one to watch.
+
+#Tariffs #IEEPA #Trade</textarea>
+    </div>
+    <div class="post-card-actions">
+      <button class="btn-copy-post" onclick="copyPost('x')">Copy X.com Post</button>
+      <span class="copied-msg" id="x-copied">&#10003; Copied</span>
+    </div>
+    <div class="adjust-block">
+      <div class="adjust-label">Adjust This Post</div>
+      <div class="adjust-row">
+        <textarea class="adjust-input" id="x-adjust" placeholder='e.g. "Tighter", "Drop the hashtags", "Make it a thread"...' rows="2"></textarea>
+        <button class="btn-adjust" onclick="sendAdjust('x')">Copy to Claude</button>
+      </div>
+      <div class="adjust-status" id="x-adjust-status">&#10003; Adjustment block copied &mdash; paste into Claude to apply.</div>
+    </div>
+    <div class="used-row" onclick="toggleUsed('x', event)">
+      <input type="checkbox" id="x-used-cb" onclick="event.stopPropagation();toggleUsed('x');">
+      <div class="used-text"><strong>I used this post</strong> &mdash; teach the skill my preferences<span class="sub">When checked, "Copy X.com Post" will also copy a preference signal for Claude to save.</span></div>
+    </div>
+    <div class="used-learn" id="x-used-learn">&#10003; Preference signal included &mdash; paste into Claude to save your "I'd post this" signal.</div>
+  </article>
+
+</main>
+
+<footer class="posts-footer">
+  Edits to the post text are session-local. Use Copy to grab the current draft. For permanent voice changes apply to the <a href="#refine" onclick="switchTab('refine');return false;" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(212,255,0,0.7);">Refine</a> tab.
+</footer>
+
+<script>
+var SLUG = "rewind-tariffs";
+var DISPLAY = "Tariffs / Trade";
+
+function autosize(ta){
+  ta.style.height = 'auto';
+  ta.style.height = (ta.scrollHeight + 4) + 'px';
+}
+
+function updateCount(which) {
+  if (which === 'linkedin') {
+    var t = document.getElementById('linkedin-text').value;
+    document.getElementById('li-count').textContent = t.length;
+  } else {
+    var t2 = document.getElementById('x-text').value;
+    var count = t2.length;
+    var el = document.getElementById('x-count');
+    el.textContent = count;
+    el.className = count > 280 ? 'over' : '';
+  }
+}
+
+function copyPost(which) {
+  var textareaId = (which === 'linkedin') ? 'linkedin-text' : 'x-text';
+  var msgId = (which === 'linkedin') ? 'li-copied' : 'x-copied';
+  var usedId = (which === 'linkedin') ? 'li-used-cb' : 'x-used-cb';
+  var text = document.getElementById(textareaId).value;
+  var used = document.getElementById(usedId).checked;
+  var payload = text;
+  if (used) {
+    payload = text + "\n\n---\nPREFERENCE SIGNAL\n----------------\nTab: " + SLUG + " (" + DISPLAY + ")\nPlatform: " + which + "\nDate: " + new Date().toISOString().slice(0,10) + "\nSignal: User indicated they used this post (or a close variant). Treat this as positive training signal for voice/style/topic priority on the " + which + " channel.\nAction: Update the tab editorial_notes in daily-briefing/tabs/*.md to reflect this preference for future runs.";
+  }
+  navigator.clipboard.writeText(payload).then(function() {
+    var m = document.getElementById(msgId);
+    m.classList.add('visible');
+    setTimeout(function(){ m.classList.remove('visible'); }, 2400);
+  });
+}
+
+function sendAdjust(which) {
+  var adjId = (which === 'linkedin') ? 'li-adjust' : 'x-adjust';
+  var stId  = (which === 'linkedin') ? 'li-adjust-status' : 'x-adjust-status';
+  var adj = document.getElementById(adjId).value.trim();
+  if (!adj) { document.getElementById(adjId).focus(); return; }
+  var textareaId = (which === 'linkedin') ? 'linkedin-text' : 'x-text';
+  var currentDraft = document.getElementById(textareaId).value;
+  var block = [
+    "POST ADJUSTMENT",
+    "----------------",
+    "Tab: " + SLUG + " (" + DISPLAY + ")",
+    "Platform: " + which,
+    "Date: " + new Date().toISOString().slice(0,10),
+    "",
+    "Adjustment request:",
+    adj,
+    "",
+    "Current draft:",
+    "```",
+    currentDraft,
+    "```",
+    "",
+    "Action: Rewrite the post applying the adjustment. Preserve all facts and source citations. Return the updated post in a code block."
+  ].join("\n");
+  navigator.clipboard.writeText(block).then(function() {
+    var s = document.getElementById(stId);
+    s.classList.add('visible');
+    setTimeout(function(){ s.classList.remove('visible'); }, 3000);
+  });
+}
+
+function toggleUsed(which, ev) {
+  var cbId = (which === 'linkedin') ? 'li-used-cb' : 'x-used-cb';
+  var learnId = (which === 'linkedin') ? 'li-used-learn' : 'x-used-learn';
+  if (ev && ev.target && ev.target.tagName !== 'INPUT') {
+    var cb = document.getElementById(cbId);
+    cb.checked = !cb.checked;
+  }
+  var cb2 = document.getElementById(cbId);
+  var learn = document.getElementById(learnId);
+  if (cb2.checked) learn.classList.add('visible');
+  else learn.classList.remove('visible');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  updateCount('linkedin');
+  updateCount('x');
+});
+</script>
+
+</div>
+
+<div id="tab-refine" class="tab-panel">
+<div class="refine-panel-wrap">
+  <div class="eyebrow-label">Refine This Tab</div>
+  <h2>Tariffs / Trade &mdash; <span style="font-style:italic;background-image:linear-gradient(180deg,transparent 58%,#D4FF00 58%,#D4FF00 94%,transparent 94%);padding:0 0.12em;color:#0A0A0A;">refinement.</span></h2>
+  <div class="subtitle">Shape what tomorrow&rsquo;s daily run focuses on. Your instructions update the tab config (<code style="font-family:monospace;font-size:12px;">daily-briefing/tabs/01-tariffs-trade.md</code>) and apply going forward.</div>
+  <div class="refine-box-inner">
+    <div class="refine-sub">Content-level refinement instructions for <strong>Tariffs / Trade</strong> (this tab only). Write a focus instruction in plain English &mdash; e.g., &ldquo;Focus more on Section 232 going forward,&rdquo; &ldquo;De-emphasize state AG amicus filings,&rdquo; &ldquo;Track foreign analogues more aggressively.&rdquo; Save below, then paste the copied <code style="font-family:monospace;font-size:12px;">TAB INSTRUCTION</code> block into Claude. Claude will update the tab config and apply on the next daily run.</div>
+    <textarea id="refine-input-rewind-tariffs" placeholder="e.g., Prioritize anti-circumvention DOC determinations over USTR docket maintenance. De-emphasize state AG amicus filings unless tied to a Federal Circuit case."></textarea>
+    <div class="refine-row">
+      <button class="btn-refine" onclick="saveRefine_rewind_tariffs()">Save &amp; Copy Refinement Block</button>
+      <button class="btn-refine-secondary" onclick="clearRefineHistory_rewind_tariffs()">Clear history</button>
+      <span class="refine-status" id="refine-status-rewind-tariffs">&#10003; Saved &amp; copied &mdash; paste into Claude to apply</span>
+    </div>
+    <div class="refine-history">
+      <div class="refine-history-label">Saved Refinements</div>
+      <ul class="refine-history-list" id="refine-history-rewind-tariffs"><li class="empty">No refinements saved yet.</li></ul>
+    </div>
+    <div class="refine-footer-note">Refinement instructions saved here apply to future daily runs of the <code style="font-family:monospace;font-size:12px;">rewind-tariffs-briefing</code> skill. Local-only history &mdash; paste the copied <code style="font-family:monospace;font-size:12px;">TAB INSTRUCTION</code> block into Claude to apply changes to the tab config.</div>
+  </div>
+</div>
+<script>
+(function(){
+  var SLUG='rewind-tariffs';
+  var DISPLAY='Tariffs / Trade';
+  var KEY='tab-instructions-'+SLUG;
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
+  function save(arr){localStorage.setItem(KEY,JSON.stringify(arr));}
+  function render(){
+    var list=document.getElementById('refine-history-'+SLUG);
+    var items=load();
+    if(!items.length){list.innerHTML='<li class="empty">No refinements saved yet.</li>';return;}
+    list.innerHTML=items.slice().reverse().map(function(it){
+      var ts=new Date(it.ts).toLocaleString();
+      var safe=(it.msg||'').replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+      return '<li><span class="ts">'+ts+'</span><span class="msg">'+safe+'</span></li>';
+    }).join('');
+  }
+  function block(msg){
+    return ['TAB INSTRUCTION','----------------','Tab: '+SLUG+' ('+DISPLAY+')','Config file: daily-briefing/tabs/01-tariffs-trade.md','Date: '+new Date().toISOString().slice(0,10),'','Content refinement instruction (apply to future daily runs):',msg,'','Action requested: Update the tab config file editorial_notes/themes to reflect the above. Apply starting next daily run.'].join('\n');
+  }
+  window['saveRefine_'+SLUG.replace(/-/g,'_')]=function(){
+    var ta=document.getElementById('refine-input-'+SLUG);
+    var msg=(ta.value||'').trim();
+    if(!msg){ta.focus();return;}
+    var items=load();
+    items.push({ts:Date.now(),msg:msg});
+    save(items);
+    var b=block(msg);
+    var done=function(){
+      var s=document.getElementById('refine-status-'+SLUG);
+      s.classList.add('visible');
+      setTimeout(function(){s.classList.remove('visible');},5000);
+    };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(b).then(done).catch(function(){
+        var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
+      });
+    }else{
+      var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
+    }
+    ta.value='';
+    render();
+  };
+  window['clearRefineHistory_'+SLUG.replace(/-/g,'_')]=function(){
+    if(!confirm('Clear all saved refinements for this tab? (Local only.)'))return;
+    localStorage.removeItem(KEY);
+    render();
+  };
+  if(document.readyState!=='loading')render();
+  else document.addEventListener('DOMContentLoaded',render);
+})();
+</script>
+</div>
+
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.subtab').forEach(function(b){b.classList.remove('active');});
+  var panel=document.getElementById('tab-'+name);
+  var btn=document.getElementById('subtab-'+name);
+  if(panel)panel.classList.add('active');
+  if(btn)btn.classList.add('active');
+  history.replaceState(null,'',location.pathname+(name==='briefing'?'':'#'+name));
+}
+(function(){
+  var hash=location.hash.replace('#','');
+  if(hash==='posts'||hash==='refine')switchTab(hash);
+})();
+</script>
 
 </body>
 </html>
