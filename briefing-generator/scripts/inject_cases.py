@@ -18,7 +18,7 @@ The case pages live at cases/<slug>.html — the same directory depth as <topic>
 — so they reuse identical relative asset paths (../daily-briefing/assets/...) and brand chrome.
 Stdlib only.
 """
-import re, sys
+import re, sys, json
 from pathlib import Path
 
 from cases_common import load_cases, REPO_ROOT, CASES_DIR, TOPIC_META, pretty_date, html_escape
@@ -433,6 +433,200 @@ def render_case_page(case):
 """
 
 
+# ── 3) unified docket page ────────────────────────────────────────────────────
+
+# Distinct pill colors: (bg-light, fg-light, bg-dark, fg-dark)
+_PILL_PALETTE = [
+    ("#D4FF00", "#0A0A0A", "#5D7A00", "#FFFFFF"),
+    ("#60A5FA", "#0A0A0A", "#1D4ED8", "#FFFFFF"),
+    ("#FB923C", "#0A0A0A", "#C2410C", "#FFFFFF"),
+    ("#C084FC", "#0A0A0A", "#7E22CE", "#FFFFFF"),
+    ("#34D399", "#0A0A0A", "#065F46", "#FFFFFF"),
+    ("#F87171", "#0A0A0A", "#B91C1C", "#FFFFFF"),
+]
+
+
+def _short_name(display_name):
+    """'Bartz v. Anthropic' → 'Bartz'; 'BlockFills v. X' → 'BlockFills'."""
+    parts = re.split(r'\s+v[s]?\.\s+', display_name, maxsplit=1)
+    n = parts[0].strip()
+    words = n.split()
+    return " ".join(words[:2]) if len(words) > 2 else n
+
+
+def render_unified_docket(cases):
+    """Generate briefing-generator/unified-docket.html from all live case data."""
+    live = [c for c in cases if c["data"] and not _docket(c["data"]).get("awaiting_sync")]
+    if not live:
+        print("  · unified-docket: no live cases — skipping")
+        return
+
+    # Build JSON payload for the embedded data tag
+    payload = []
+    for c in live:
+        d = _docket(c["data"])
+        payload.append({
+            "slug": c["slug"],
+            "display_name": c["config"]["display_name"],
+            "short_name": _short_name(c["config"]["display_name"]),
+            "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
+            "entries": d.get("entries") or [],
+        })
+
+    total_entries = sum(len(p["entries"]) for p in payload)
+    json_data = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+
+    # Per-case pill CSS
+    pill_parts = []
+    for i, p in enumerate(payload):
+        bl, fl, bd, fd = _PILL_PALETTE[i % len(_PILL_PALETTE)]
+        cls = f'.ud-pill-{p["slug"]}'
+        pill_parts.append(
+            f'{cls}{{background:{bl};color:{fl};}}'
+            f'[data-theme="dark"] {cls}{{background:{bd};color:{fd};}}'
+        )
+    pill_css = "\n    ".join(pill_parts)
+
+    # Sidebar: case checkboxes
+    cb_rows = []
+    for i, p in enumerate(payload):
+        bl, fl, _, _ = _PILL_PALETTE[i % len(_PILL_PALETTE)]
+        swatch = f'<span class="ud-pill ud-pill-{html_escape(p["slug"])}">{html_escape(p["short_name"])}</span>'
+        n = len(p["entries"])
+        cb_rows.append(
+            f'<label class="ud-cb-row">'
+            f'<input type="checkbox" class="ud-case-cb" value="{html_escape(p["slug"])}" checked>'
+            f'{swatch} <span style="color:var(--ink-60);font-size:11px">({n})</span></label>'
+        )
+
+    # Sidebar: entry type radios
+    type_options = [
+        ("all",        "All entries"),
+        ("substantive","Substantive only"),
+        ("hide-admin", "Hide administrative"),
+        ("orders",     "Orders only"),
+        ("transfers",  "Transfers only"),
+    ]
+    radio_rows = []
+    for val, label in type_options:
+        checked = ' checked' if val == "all" else ""
+        radio_rows.append(
+            f'<label class="ud-radio-row">'
+            f'<input type="radio" class="ud-type-radio" name="ud-type" value="{val}"{checked}>'
+            f'{html_escape(label)}</label>'
+        )
+
+    page = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unified Docket — Turnpage Daily Briefing</title>
+{THEME_SCRIPT}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+{PAGE_CSS}
+<style>
+  .ud-shell{{max-width:1180px;margin:0 auto;padding:24px 32px 60px;display:grid;gap:24px;grid-template-columns:220px 1fr;align-items:start;}}
+  @media(max-width:740px){{.ud-shell{{grid-template-columns:1fr;}}}}
+  .ud-sidebar{{background:var(--surface);border:1px solid var(--line-strong);padding:18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:58px;}}
+  .ud-section-head{{font-size:10px;text-transform:uppercase;letter-spacing:0.22em;font-weight:700;color:var(--ink-40);margin-bottom:8px;}}
+  .ud-cb-row,.ud-radio-row{{display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;padding:3px 0;}}
+  .ud-cb-row input,.ud-radio-row input{{cursor:pointer;accent-color:var(--neon);}}
+  .ud-pill{{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:0.04em;padding:2px 7px;white-space:nowrap;border-radius:2px;}}
+  {pill_css}
+  .ud-toolbar{{display:flex;align-items:center;gap:12px;margin-bottom:14px;}}
+  #ud-count{{font-size:12px;color:var(--ink-60);flex:1;}}
+  #ud-sort-btn{{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:12px;font-weight:700;padding:5px 12px;cursor:pointer;font-family:inherit;}}
+  #ud-sort-btn:hover{{border-color:var(--ink-40);}}
+  .ud-table{{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);}}
+  .ud-table th{{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:10px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}}
+  .ud-table td{{padding:11px 14px;font-size:12.5px;border-bottom:1px solid var(--line);vertical-align:top;}}
+  .ud-table tr:last-child td{{border-bottom:none;}}
+  .ud-row-new td{{background:rgba(212,255,0,0.05);}}
+  [data-theme="dark"] .ud-row-new td{{background:rgba(93,122,0,0.12);}}
+  .ud-date{{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;min-width:80px;}}
+  .ud-case{{white-space:nowrap;min-width:120px;}}
+  .ud-desc{{color:var(--ink);}}
+  .ud-desc-empty{{color:var(--ink-40);}}
+  .ud-new{{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:1px 5px;margin-left:6px;vertical-align:middle;}}
+  .ud-landmark{{display:inline-block;font-size:9px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 5px;margin-left:6px;vertical-align:middle;}}
+  .ud-link{{display:inline-block;margin-left:8px;font-size:10.5px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;white-space:nowrap;}}
+  .ud-link-docket{{border-bottom-color:var(--line-strong);}}
+  .ud-empty{{font-size:13px;color:var(--ink-60);font-style:italic;padding:24px 14px;text-align:center;}}
+</style>
+<!-- AUTH GATE START -->
+<script src="/auth/config.js"></script>
+<script type="module" src="/auth/auth.js"></script>
+<!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{LOGO_SRC}"></a>
+      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+    </div>
+    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+  </div>
+</nav>
+
+<div class="page-title">
+  <div class="eyebrow">Intelligence · Live Docket Monitor</div>
+  <h1>⚖️ Unified Docket</h1>
+  <div class="case-meta">
+    <span><strong>{len(live)}</strong> tracked cases &nbsp;·&nbsp; <strong>{total_entries}</strong> total entries</span>
+  </div>
+</div>
+
+<div class="ud-shell">
+  <aside class="ud-sidebar">
+    <div>
+      <div class="ud-section-head">Cases</div>
+      {"".join(cb_rows)}
+    </div>
+    <div>
+      <div class="ud-section-head">Entry Type</div>
+      {"".join(radio_rows)}
+    </div>
+    <div>
+      <label class="ud-cb-row">
+        <input type="checkbox" id="ud-new-only"> New only (72h)
+      </label>
+    </div>
+  </aside>
+
+  <main>
+    <div class="ud-toolbar">
+      <span id="ud-count"></span>
+      <button id="ud-sort-btn">Date ↓</button>
+    </div>
+    <table class="ud-table">
+      <thead><tr>
+        <th style="width:96px">Date</th>
+        <th style="width:140px">Case</th>
+        <th>Entry</th>
+      </tr></thead>
+      <tbody id="ud-tbody">
+        <tr><td colspan="3" class="ud-empty">Loading…</td></tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+
+<script type="application/json" id="docket-data">{json_data}</script>
+<script src="unified-docket.js"></script>
+
+</body>
+</html>
+"""
+
+    out = REPO_ROOT / "unified-docket.html"
+    out.write_text(page, encoding="utf-8")
+    print(f"  ✓ unified-docket.html: {len(live)} cases, {total_entries} entries")
+
+
 # ── main ─────────────────────────────────────────────────────────────────────
 def main():
     cases = load_cases()
@@ -458,6 +652,10 @@ def main():
         tagged = [c for c in cases if topic_slug in c["config"].get("topics", []) and c["data"]]
         block = render_box(tagged) if tagged else None
         inject_into_dashboard(topic_slug, block)
+
+    # 3) unified docket page
+    print("=== Rendering unified docket page ===")
+    render_unified_docket(cases)
 
     print("=== Cases injection done. ===")
 
