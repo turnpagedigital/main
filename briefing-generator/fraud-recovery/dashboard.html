@@ -278,14 +278,8 @@ h3.advisory-h3 strong {
 .subtab { text-decoration: none; display: inline-block; }
 .tab-panel:target { display: block; }
 html:has(#tab-posts:target) #tab-briefing,
-html:has(#tab-refine:target) #tab-briefing { display: none; }
-html:not(:has(#tab-posts:target)):not(:has(#tab-refine:target)) .subtab-briefing,
-html:has(#tab-posts:target) .subtab-posts,
-html:has(#tab-refine:target) .subtab-refine {
-  color: var(--ink);
-  border-bottom-color: var(--neon);
-  font-weight: 700;
-}
+html:not(:has(#tab-posts:target)) .subtab-briefing,
+html:has(#tab-posts:target) .subtab-posts;
 
 .tab-panel{display:none;}
 .tab-panel.active{display:block;}
@@ -407,7 +401,6 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 <div class="subtab-strip">
   <a class="subtab subtab-briefing" href="#tab-briefing">Briefing</a>
   <a class="subtab subtab-posts" href="#tab-posts">Posts</a>
-  <a class="subtab subtab-refine" href="#tab-refine">Refine</a>
 </div>
 
 <div id="tab-briefing" class="tab-panel active">
@@ -440,7 +433,7 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 </style>
 <section class="box tracked-cases">
   <h2>Tracked Cases</h2>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/power-block-coin.html">Power Block Coin, LLC</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Utah · 24-23041</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 23</span><span class="tc-fdesc"></span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"></span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"></span></li></ul><a class="tc-open" href="../cases/power-block-coin.html">Open case docket →</a></div>
+<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/power-block-coin.html">Power Block Coin, LLC</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Utah · 24-23041</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li></ul><a class="tc-open" href="../cases/power-block-coin.html">Open case docket →</a></div>
 </section>
 <!-- TRACKED-CASES END -->
     <section class="box">
@@ -733,9 +726,6 @@ Receiver Budwick (Meland Budwick) signaling investor pop materially larger than 
   </article>
 
 </main>
-<footer class="posts-footer">
-  Edits to the post text are session-local. Use Copy to grab the current draft. For permanent voice changes apply to the <a href="refine.html" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(212,255,0,0.7);">Refine</a> tab.
-</footer>
 </div>
 <script>
 var SLUG = "fraud-recovery";
@@ -828,169 +818,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<div id="tab-refine" class="tab-panel">
-  <div class="refine-panel-wrap">
-    <div class="eyebrow-label">Refine This Tab</div>
-    <h2>Ponzi / Fraud Recovery — refinement.</h2>
-    <div class="subtitle">Shape what tomorrow's daily run focuses on. Your instructions update the tab config and apply going forward.</div>
-    <div class="refine-box-inner">
-<div class="refine-sub">Content-level refinement instructions for <strong>Ponzi / Fraud Recovery</strong> (this tab only). Write a focus instruction in plain English — e.g., "Focus more on Section 232 going forward," "De-emphasize state AG amicus filings," "Track foreign analogues more aggressively." Save below, then paste the copied <code>TAB INSTRUCTION</code> block into Claude. Claude will update the tab config and apply on the next daily run.</div>
-<textarea id="refine-input-fraud-recovery" placeholder="e.g., Prioritize anti-circumvention DOC determinations over USTR docket maintenance. De-emphasize state AG amicus filings unless tied to a Federal Circuit case."></textarea>
-<div class="refine-row">
-  <button class="btn-refine" onclick="saveRefine_fraud_recovery()">Save &amp; Copy Refinement Block</button>
-  <button class="btn-refine-secondary" onclick="clearRefineHistory_fraud_recovery()">Clear history</button>
-  <span class="refine-status" id="refine-status-fraud-recovery">✓ Saved &amp; copied — paste into Claude to apply</span>
-</div>
-<div class="refine-history">
-  <div class="refine-history-label">Saved Refinements</div>
-  <ul class="refine-history-list" id="refine-history-fraud-recovery"><li class="empty">No refinements saved yet.</li></ul>
-</div>
-<script>
-(function(){
-  var SLUG='fraud-recovery';
-  var DISPLAY='Ponzi / Fraud Recovery';
-  var KEY='tab-instructions-'+SLUG;
-  function load(){
-    try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}
-  }
-  function save(arr){ localStorage.setItem(KEY,JSON.stringify(arr)); }
-  function render(){
-    var list=document.getElementById('refine-history-'+SLUG);
-    var items=load();
-    if(!items.length){ list.innerHTML='<li class="empty">No refinements saved yet.</li>'; return; }
-    list.innerHTML=items.slice().reverse().map(function(it){
-      var ts=new Date(it.ts).toLocaleString();
-      var safe=(it.msg||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
-      return '<li><span class="ts">'+ts+'</span><span class="msg">'+safe+'</span></li>';
-    }).join('');
-  }
-  function block(msg){
-    return [
-      'TAB INSTRUCTION',
-      '----------------',
-      'Tab: '+SLUG+' ('+DISPLAY+')',
-      'Config file: daily-briefing/tabs/04-ponzi-fraud-recovery.md',
-      'Date: '+new Date().toISOString().slice(0,10),
-      '',
-      'Content refinement instruction (apply to future daily runs):',
-      msg,
-      '',
-      'Action requested: Update the tab config file editorial_notes/themes to reflect the above. Apply starting next daily run.'
-    ].join('\n');
-  }
-  window['saveRefine_'+SLUG.replace(/-/g,'_')]=function(){
-    var ta=document.getElementById('refine-input-'+SLUG);
-    var msg=(ta.value||'').trim();
-    if(!msg){ ta.focus(); return; }
-    var items=load();
-    items.push({ts:Date.now(), msg:msg});
-    save(items);
-    var b=block(msg);
-    var done=function(){
-      var s=document.getElementById('refine-status-'+SLUG);
-      s.classList.add('visible');
-      setTimeout(function(){s.classList.remove('visible');},5000);
-    };
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(b).then(done).catch(function(){
-        var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
-      });
-    }else{
-      var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
-    }
-    ta.value='';
-    render();
-  };
-  window['clearRefineHistory_'+SLUG.replace(/-/g,'_')]=function(){
-    if(!confirm('Clear all saved refinements for this tab? (Local only.)')) return;
-    localStorage.removeItem(KEY);
-    render();
-  };
-  if(document.readyState!=='loading') render();
-  else document.addEventListener('DOMContentLoaded',render);
-})();
-</script>
-</section>
-
-</main>
-
-<footer>
-<div style="max-width:760px;margin:0 auto;padding:0 20px;">
-<div>Refinement instructions saved here apply to future daily runs of the <code>fraud-recovery-briefing</code> skill.</div>
-<div class="disclaimer">Local-only history. Paste the copied <code>TAB INSTRUCTION</code> block into Claude to apply changes to the tab config.</div>
-</div>
-
-    </div>
-    <div class="refine-footer-note">Refinement instructions saved here apply to future daily runs. Local-only history.</div>
-  </div>
-</div>
-<script>
-(function(){
-  var SLUG='fraud-recovery';
-  var DISPLAY='Ponzi / Fraud Recovery';
-  var KEY='tab-instructions-'+SLUG;
-  function load(){
-    try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}
-  }
-  function save(arr){ localStorage.setItem(KEY,JSON.stringify(arr)); }
-  function render(){
-    var list=document.getElementById('refine-history-'+SLUG);
-    var items=load();
-    if(!items.length){ list.innerHTML='<li class="empty">No refinements saved yet.</li>'; return; }
-    list.innerHTML=items.slice().reverse().map(function(it){
-      var ts=new Date(it.ts).toLocaleString();
-      var safe=(it.msg||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
-      return '<li><span class="ts">'+ts+'</span><span class="msg">'+safe+'</span></li>';
-    }).join('');
-  }
-  function block(msg){
-    return [
-      'TAB INSTRUCTION',
-      '----------------',
-      'Tab: '+SLUG+' ('+DISPLAY+')',
-      'Config file: daily-briefing/tabs/04-ponzi-fraud-recovery.md',
-      'Date: '+new Date().toISOString().slice(0,10),
-      '',
-      'Content refinement instruction (apply to future daily runs):',
-      msg,
-      '',
-      'Action requested: Update the tab config file editorial_notes/themes to reflect the above. Apply starting next daily run.'
-    ].join('\n');
-  }
-  window['saveRefine_'+SLUG.replace(/-/g,'_')]=function(){
-    var ta=document.getElementById('refine-input-'+SLUG);
-    var msg=(ta.value||'').trim();
-    if(!msg){ ta.focus(); return; }
-    var items=load();
-    items.push({ts:Date.now(), msg:msg});
-    save(items);
-    var b=block(msg);
-    var done=function(){
-      var s=document.getElementById('refine-status-'+SLUG);
-      s.classList.add('visible');
-      setTimeout(function(){s.classList.remove('visible');},5000);
-    };
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(b).then(done).catch(function(){
-        var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
-      });
-    }else{
-      var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
-    }
-    ta.value='';
-    render();
-  };
-  window['clearRefineHistory_'+SLUG.replace(/-/g,'_')]=function(){
-    if(!confirm('Clear all saved refinements for this tab? (Local only.)')) return;
-    localStorage.removeItem(KEY);
-    render();
-  };
-  if(document.readyState!=='loading') render();
-  else document.addEventListener('DOMContentLoaded',render);
-})();
-</script>
-
-</body>
-</div>
 
 </html>
