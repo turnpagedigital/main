@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-29-bankruptcy-advisory",
+      "date": "2026-07-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 29, 2026",
+      "summary": "Today's lede: Sleep Number, In re Sleep Number Corporation, et al., No. 26-11399 (Bankr. S.D.N.Y.), stands at the doorstep of a court-approved § 363 closing that was scheduled to occur by July 31 — two days from now.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-29-class-actions-advisory",
+      "date": "2026-07-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 29, 2026",
+      "summary": "Today's Deltas: Two major settlements crossed final-approval and distribution milestones in the past ten days. The most consequential is Bartz v. Anthropic, where Judge Martínez-Olguín issued her final-approval order on July 20, closing the largest copyright class action in U.S.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-29-fraud-advisory",
+      "date": "2026-07-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 29, 2026",
+      "summary": "The two dominant recovery tracks this week remain on divergent trajectories: the Stanford receivership has entered its final-distribution wind-down phase, with a hard check-cashing deadline having passed July 26 and uncashed checks now voiding back to the estate — a timing hazard for claims investor…",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-29-tariff-advisory",
+      "date": "2026-07-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 29, 2026",
+      "summary": "The Section 122 chapter closes; the Section 301 chapter opens on the same day. The 150-day Section 122 surcharge under Proclamation 11012 expired at 12:01 a.m.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-29-crypto-advisory",
+      "date": "2026-07-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 29, 2026",
+      "summary": "The crypto insolvency landscape accelerated sharply this week. The filing of Storj Labs capped a week in which BitMEX and BitMart announced solvent wind-downs, and Movement Labs sought Chapter 11 protection — four crypto companies in seven days announcing failures or wind-downs as investor attention…",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-29-advisory",
+      "date": "2026-07-29",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 29, 2026",
+      "summary": "The principal development in this system for the week is no longer prospective. On July 20, 2026, Judge Araceli Martínez-Olguín of the U.S. District Court for the Northern District of California granted final approval of the $1.5 billion class action settlement in Bartz v.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-28-bankruptcy-advisory",
       "date": "2026-07-28",
       "type": "briefing",
