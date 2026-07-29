@@ -6,6 +6,9 @@
 # loader in index.html. If that snippet changes AT ALL (even whitespace),
 # recompute: python3 -c "import re,hashlib,base64;s=re.search(r'<!-- Brevo.*?<script>(.*?)</script>',open('index.html').read(),re.DOTALL).group(1);print('sha256-'+base64.b64encode(hashlib.sha256(s.encode()).digest()).decode())"
 
+
+/intel/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 /*
   Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-IAi1pLQE5+KAIuArgNXn6zyVZNw3AXpIN96yYUJWAu4=' https://conversations-widget.brevo.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://conversations-widget.brevo.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://*.brevo.com wss://*.brevo.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://*.brevo.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   X-Content-Type-Options: nosniff
