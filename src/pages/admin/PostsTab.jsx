@@ -252,27 +252,38 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   }
 
   // ── Bulk delete ──────────────────────────────────────────────────────────
+  const [bulkProgress, setBulkProgress] = useState(null); // "3/6" or null
+
   async function bulkDelete() {
     const slugs = [...selected];
     if (slugs.length === 0) return;
     if (!confirm(`Permanently delete ${slugs.length} post${slugs.length !== 1 ? "s" : ""}? This cannot be undone.`)) return;
     setBulkDeleting(true);
     setBulkError("");
+    setBulkProgress(null);
+    const CHUNK = 20;
+    const total = Math.ceil(slugs.length / CHUNK);
     try {
-      const r = await fetch("/api/admin/posts", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ action: "bulk-delete", slugs }),
-      });
-      const body = await r.json().catch(() => ({}));
-      if (!r.ok || !body.ok) throw new Error(body.error || "Bulk delete failed");
+      for (let i = 0; i < slugs.length; i += CHUNK) {
+        const batch = slugs.slice(i, i + CHUNK);
+        const batchNum = Math.floor(i / CHUNK) + 1;
+        if (total > 1) setBulkProgress(`${batchNum}/${total}`);
+        const r = await fetch("/api/admin/posts", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ action: "bulk-delete", slugs: batch }),
+        });
+        const body = await r.json().catch(() => ({}));
+        if (!r.ok || !body.ok) throw new Error(body.error || `Batch ${batchNum} failed`);
+      }
       setSelected(new Set());
       await loadPosts();
     } catch (e) {
       setBulkError(e.message);
     } finally {
       setBulkDeleting(false);
+      setBulkProgress(null);
     }
   }
 
@@ -423,7 +434,7 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
                 cursor: bulkDeleting ? "default" : "pointer",
               }}
             >
-              {bulkDeleting ? "Deleting…" : `Delete ${selected.size}`}
+              {bulkDeleting ? (bulkProgress ? `Deleting… ${bulkProgress}` : "Deleting…") : `Delete ${selected.size}`}
             </button>
           </div>
         )}
