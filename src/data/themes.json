@@ -112,10 +112,8 @@
           "fticonsulting.com"
         ]
       },
-      "key_focus_cases": [
-        "blockfills"
-      ],
-      "guidance_prompt": "Covers the post-2022 crypto-insolvency wave and emerging 2025-26 cases, focused on creditor-rights and customer-property issues. Key open dockets: BlockFills (Ch. 11, customer-rights echoing Celsius), Synapse/Mercury/Evolve embedded-fintech failures, the FTX claim-trading aftermarket, Prime Trust receivership, Genesis/DCG appellate posture, and Three Arrows Capital (Hong Kong / BVI / Singapore liquidator coordination). The central question across cases: are customer crypto deposits property of the estate or held in trust/bailment (Celsius's contested TOS litigation; Gatecoin, HKCFI 914). Also track claim-valuation-date disputes (in-kind vs. fiat, petition-date vs. distribution-date), token/asset tracing, fraudulent-transfer claims against insiders (FTX/Alameda model), and plan/distribution mechanics. Statutory anchors: 11 U.S.C. § 541 (property of estate), § 363 (sales), § 1129 (confirmation); offshore: HK CWUMPO, Cayman Companies Act Part V, BVI Insolvency Act 2003. Voice: restructuring-grade — a Paul Hastings / Akin Gump alert. Pattern recognition across dockets matters more than depth on any single case."
+      "key_focus_cases": [],
+      "guidance_prompt": "Covers the post-2022 crypto-insolvency wave and emerging 2025-26 cases, focused on creditor-rights and customer-property issues. Also track claim-valuation-date disputes (in-kind vs. fiat, petition-date vs. distribution-date), token/asset tracing, fraudulent-transfer claims against insiders, and plan/distribution mechanics. Voice: restructuring-grade — a Paul Hastings / Akin Gump alert. Pattern recognition across dockets matters more than depth on any single case."
     },
     {
       "slug": "fraud-recovery",
