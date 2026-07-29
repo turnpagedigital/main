@@ -795,6 +795,83 @@ h3.advisory-h3 strong {
   box-sizing: border-box !important;
 }
 /* NAV ALIGNMENT END */
+
+/* === In-page sub-tabs === */
+.subtab-strip{max-width:1440px;margin:0 auto;padding:10px 32px 0;display:flex;gap:0;border-bottom:2px solid var(--ink);}
+.subtab{background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;padding:8px 20px;font-family:'Archivo',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-60);cursor:pointer;}
+.subtab:hover{color:var(--ink);}
+.subtab.active{color:var(--ink);border-bottom-color:var(--neon);font-weight:700;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.posts-grid{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;grid-template-columns:1fr;gap:28px;}
+@media(min-width:980px){.posts-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+.post-card{background:var(--bg);border:1px solid var(--line-strong);}
+[data-theme="dark"] .post-card{background:#0A0A0A;border-color:rgba(255,255,255,0.18);}
+.post-card-head{display:flex;align-items:center;justify-content:space-between;padding:18px 24px 14px;border-bottom:1px solid var(--line-strong);gap:12px;}
+.post-card-platform{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);}
+.char-count{font-size:11.5px;color:var(--ink-60);font-style:italic;}
+.char-count .over{color:#ef4444;font-weight:700;}
+.post-card-body{padding:22px 26px 18px;}
+.post-text-editable{width:100%;padding:18px;border:1px solid var(--line-strong);font-family:'Archivo',sans-serif;font-size:14.5px;line-height:1.7;resize:vertical;background:var(--bg);color:var(--ink);box-sizing:border-box;overflow:hidden;}
+.post-text-editable.linkedin{min-height:560px;}
+.post-text-editable.x{min-height:240px;}
+.post-text-editable:focus{outline:none;border-color:var(--neon);box-shadow:0 0 0 3px rgba(212,255,0,0.25);}
+[data-theme="dark"] .post-text-editable{background:#16161B;color:#FFFFFF;border-color:rgba(255,255,255,0.18);}
+.post-card-actions{display:flex;align-items:center;justify-content:space-between;padding:14px 26px 18px;gap:10px;flex-wrap:wrap;}
+.btn-copy-post{font-size:12.5px;padding:10px 18px;border:1px solid var(--neon);background:var(--neon);color:var(--ink);cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;}
+.btn-copy-post:hover{background:#E2FF4D;}
+.copied-msg{color:var(--ink);font-size:11.5px;font-weight:700;display:none;letter-spacing:0.04em;text-transform:uppercase;}
+.copied-msg.visible{display:inline;}
+.adjust-block{padding:18px 26px;border-top:1px solid var(--line);}
+.adjust-label{font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);margin-bottom:8px;}
+.adjust-row{display:flex;gap:10px;align-items:flex-start;}
+.adjust-input{flex:1;min-width:0;font-size:13px;padding:10px 12px;border:1px solid var(--line-strong);font-family:'Archivo',sans-serif;resize:vertical;background:var(--bg);color:var(--ink);min-height:64px;box-sizing:border-box;}
+.adjust-input:focus{outline:none;border-color:var(--neon);}
+[data-theme="dark"] .adjust-input{background:#16161B;color:#FFFFFF;border-color:rgba(255,255,255,0.18);}
+.btn-adjust{font-size:11.5px;padding:10px 16px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;white-space:nowrap;}
+.btn-adjust:hover{background:rgba(10,10,10,0.04);}
+.adjust-status{font-size:11px;color:var(--ink-60);margin-top:8px;display:none;}
+.adjust-status.visible{display:block;}
+.used-row{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;margin:14px 26px 22px;background:var(--paper-2);border-left:3px solid var(--neon);cursor:pointer;user-select:none;}
+[data-theme="dark"] .used-row{background:#16161B;}
+.used-row:hover{background:rgba(212,255,0,0.10);}
+.used-row input[type="checkbox"]{width:16px;height:16px;cursor:pointer;margin-top:2px;flex-shrink:0;accent-color:#0A0A0A;}
+[data-theme="dark"] .used-row input[type="checkbox"]{accent-color:#D4FF00;}
+.used-text{font-size:13px;line-height:1.5;color:var(--ink);}
+.used-text strong{font-weight:700;}
+.used-text .sub{display:block;font-size:11.5px;color:var(--ink-60);margin-top:3px;}
+[data-theme="dark"] .used-text{color:#FFFFFF;}
+.used-learn{display:none;font-size:11.5px;color:#0A0A0A;background:var(--neon);padding:8px 14px;margin:0 26px 22px;font-weight:600;}
+.used-learn.visible{display:block;}
+footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border-top:1px solid var(--line);color:var(--ink-60);font-size:12px;font-style:italic;}
+[data-theme="dark"] footer.posts-footer{color:rgba(255,255,255,0.5);border-top-color:rgba(255,255,255,0.12);}
+.refine-panel-wrap{max-width:760px;margin:0 auto;padding:40px 20px 60px;}
+.refine-panel-wrap .eyebrow-label{font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);margin-bottom:12px;}
+.refine-panel-wrap h2{font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:800;letter-spacing:-0.02em;margin:0 0 8px;}
+.refine-panel-wrap .subtitle{font-size:14px;color:var(--ink-60);line-height:1.6;margin-bottom:28px;}
+.refine-box-inner{background:var(--surface);border:1px solid var(--line-strong);padding:24px 28px;}
+.refine-sub{font-size:13px;color:var(--ink-60);line-height:1.6;margin-bottom:16px;}
+.refine-box-inner textarea{width:100%;min-height:120px;padding:14px 16px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;font-size:14px;line-height:1.6;resize:vertical;box-sizing:border-box;}
+.refine-box-inner textarea:focus{outline:none;border-color:var(--neon);}
+[data-theme="dark"] .refine-box-inner textarea{background:#16161B;color:#FFFFFF;border-color:rgba(255,255,255,0.18);}
+.refine-row{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.btn-refine{background:#D4FF00;color:#0A0A0A;border:1px solid #D4FF00;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;padding:10px 18px;cursor:pointer;}
+.btn-refine:hover{background:#E2FF4D;}
+.btn-refine-secondary{background:transparent;color:var(--ink-60);border:1px solid var(--line-strong);font-family:'Archivo',sans-serif;font-size:12px;padding:10px 14px;cursor:pointer;}
+.btn-refine-secondary:hover{color:var(--ink);border-color:var(--ink);}
+.refine-status{font-size:12px;color:var(--neon);display:none;}
+[data-theme="light"] .refine-status{color:#0A0A0A;}
+.refine-status.visible{display:inline;}
+.refine-history{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;}
+.refine-history-label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-60);margin-bottom:10px;}
+.refine-history-list{list-style:none;padding:0;margin:0;}
+.refine-history-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;}
+.refine-history-list li:last-child{border-bottom:none;}
+.refine-history-list .empty{color:var(--ink-60);font-style:italic;}
+.refine-history-list .ts{display:block;font-size:11px;color:var(--ink-40);margin-bottom:4px;}
+.refine-history-list .msg{color:var(--ink);}
+.refine-footer-note{font-size:12px;color:var(--ink-60);font-style:italic;border-top:1px solid var(--line);padding-top:16px;margin-top:16px;}
+
 </style>
   <!-- AUTH GATE START -->
   <script src="/auth/config.js"></script>
@@ -822,8 +899,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -846,8 +923,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -870,8 +947,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -894,8 +971,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -918,8 +995,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -942,8 +1019,8 @@ h3.advisory-h3 strong {
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
               <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
               <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
@@ -959,7 +1036,15 @@ h3.advisory-h3 strong {
 <div class="page-title">
   <h1><span class="topic-emoji">🪙</span>Crypto Insolvency</h1>
   <div class="stamp">10:16 AM ET &middot; FRIDAY, JUNE 12, 2026</div>
+
+<div class="subtab-strip">
+  <button class="subtab" id="subtab-briefing" onclick="switchTab('briefing',this)">Briefing</button>
+  <button class="subtab" id="subtab-posts" onclick="switchTab('posts',this)">Posts</button>
+  <button class="subtab" id="subtab-refine" onclick="switchTab('refine',this)">Refine</button>
 </div>
+</div>
+
+<div id="tab-briefing" class="tab-panel">
 
 <main class="three-col">
 
@@ -1128,6 +1213,7 @@ h3.advisory-h3 strong {
 
 
 
+<<<<<<< HEAD
 <h3 class="advisory-h3">BlockFills (Reliz Technology Group Holdings, Inc.) — Post-Confirmation Posture, Dkt. No. 26-10371 (Bankr. D. Del., Judge Horan)</h3>
 <p>BlockFills remains the priority matter for claim-holders with institutional exposure, and the case has moved materially since the initial filing. On March 15, 2026, each of the four debtors filed voluntary petitions for relief under Chapter 11. The cases are jointly administered under Case No. 26-10371 before the Honorable Judge Thomas M. Horan in the United States Bankruptcy Court for the District of Delaware.</p>
 <p>The capital structure presents a severe recovery problem for unsecured creditors. The capital structure is concentrated in customer and trade exposure rather than traditional funded debt. The first-day record identifies roughly $145 million of general unsecured customer and trade obligations and about $4.8 million outstanding under Celsius secured promissory notes, with Celsius asserting first-priority liens. The liquidity trigger was a series of compounding shocks: the company attributes its liquidity crisis to cascading exposure from several counterparty defaults — specifically an $8.5 million impairment in the Babel Finance bankruptcy and a $12 million settlement stemming from the AEXA bankruptcy — alongside an adverse arbitration obligation requiring payments to Celsius, compounded by stranded capital from a failed 2022 mining hardware deployment and delayed 2024 financials.</p>
@@ -1151,6 +1237,45 @@ h3.advisory-h3 strong {
 <p>---</p>
 <h2>Recommended Actions</h2>
 <p>Creditors and claim-holders across the BlockFills, Storj, Movement Labs, and BitMart matters should take the following steps without delay. In <strong>BlockFills</strong> (Case No. 26-10371, Bankr. D. Del., Judge Horan): pull docket entries 539 and 541 (filed July 27) from PACER immediately to determine whether a confirmation order was entered following the July 13 hearing; if confirmed, the § 1141 vesting date and plan-effective-date mechanics will govern when and how distributions to the ~$145 million unsecured creditor pool are made, and any appeal window under Fed. R. Bankr. P. 8002 will have begun running. In <strong>Storj</strong> (Case No. 5:26-bk-00512, Bk N.D. W.Va.): file a proof of claim as soon as the claims bar date is published; do not rely on management's equity-conversion proposal as a substitute for a timely filed unsecured claim, since token-to-equity conversion mechanics are entirely undisclosed and the § 726 priority waterfall places unsecured creditors ahead of any equity interests. In <strong>Movement Labs</strong> (Subchapter V, Bankr. D. Del., filed July 15): contact the Subchapter V trustee to confirm creditor-meeting scheduling under 11 U.S.C. § 341 and assess whether the plan will be consensual or non-consensual under § 1191; given the minimal asset base ($100,001–$500,000 declared), recovery prospects are limited and claim preservation matters. For <strong>BitMart</strong> customers: do not wait for the August 26 trading halt — initiate withdrawals now, document all positions and on-chain transaction hashes, and monitor on-chain analytics for fund-movement anomalies; the Celsius and BlockFills precedents both show that the interval between deposit suspension and formal filing can be compressed to days.</p>
+=======
+<h3 class="advisory-h3">Storj Labs — New Filing, N.D. W. Va. Case No. 5:26-bk-00512</h3>
+<p>Storj Labs filed for Chapter 11 bankruptcy on July 26, 2026, in the U.S. Bankruptcy Court for the Northern District of West Virginia, under case number 5:26-bk-00512.</p>
+<p>Storj is a decentralized cloud storage company that once raised $35 million and ran a landmark crypto token offering.</p>
+<p>The filing addresses legacy debt from earlier operations rather than current operational failure; Inveniam, which announced its acquisition of Storj in October 2025, is backing the restructuring.</p>
+<p>The filing raises two creditor-rights issues that are structurally identical to patterns seen in the post-2022 crypto wave. First, node-operator payment exposure: pre-petition obligations to node operators are being handled via a claims agent, with Storj's restructuring FAQ stating that employees and ordinary-course obligations arising during the process are expected to be paid, subject to customary court approvals, while pre-process amounts are handled within the process via the claims agent. That language draws the standard bright line at the petition date and converts years of pre-petition operator compensation into unsecured claims — a material recovery impairment for operators holding large accumulated balances. That is standard Chapter 11 language, and it draws a hard line at the petition date.</p>
+<p>Second, the token-equity proposal: the restructuring plan proposes sharing ownership of the reorganized company among management, investors, and token holders, who typically receive nothing in a Chapter 11 process.</p>
+<p>The announcement described this as a plan, not a completed arrangement, and did not state how many token holders could qualify or how ownership would be allocated. Under the absolute-priority rule (11 U.S.C. § 1129(b)), equity (including any equity-equivalent token interest) cannot receive value unless all senior classes are paid in full or consent. The important part for STORJ holders is not the equity idea — it is the bankruptcy priority line sitting in front of it. Until Storj files schedules and a disclosure statement revealing the quantum of secured and unsecured obligations, the token-equity proposal is aspirational.</p>
+<p>The STORJ token held near $0.074 through the July 26 announcement window before falling approximately 14% in 24 hours to $0.06334 by midday July 27.</p>
+<p>As part of the restructuring, Storj has also said it will divest previous acquisitions and non-core business units. No judge assignment or claims-agent designation has been publicly confirmed as of this briefing.</p>
+<p>---</p>
+<h3 class="advisory-h3">Poolin Technology — D.N.J. Case No. 26-18325, $173.1M in Liabilities Against $52M Stalking-Horse</h3>
+<p>The filing was made on July 22, 2026, in the U.S. Bankruptcy Court for the District of New Jersey under Case No. 26-18325.</p>
+<p>Poolin Technology Pte. Ltd., the Singapore-based parent of what was once one of the world's largest Bitcoin mining pools, filed along with two U.S. affiliates, Lonestar Dream Inc. and Lonestar Taproot LLC.</p>
+<p>The numbers are stark. Poolin's prepetition liabilities stand at $173.1 million, including $163.7 million in unsecured IOUs owed to roughly 11,700 Poolin Wallet users after withdrawals were frozen in 2022.</p>
+<p>The filing details a $52 million stalking-horse bid from Thor CALAP LLC for the company's Pyote and Tarbush mining sites in West Texas.</p>
+<p>That $52 million covers Texas mining assets only — not wallet cash — and equals just 31.8% of the IOUs before costs.</p>
+<p>Poolin permanently halted all mining and hosting operations on July 10, 2026, retaining only a minimal workforce to secure equipment and facilitate the asset sale process; the company stated it has no plans to resume operations and will use proceeds from the bankruptcy sale to satisfy creditor claims under a liquidating plan.</p>
+<p>The pre-petition marketing process generated 28 NDAs, seven LOIs, and three additional indications of interest.</p>
+<p>A court-supervised auction is proposed, with a bid deadline reported as September 8, 2026 — confirm against the filed docket before drawing final conclusions.</p>
+<p>The recovery math for the 11,700 IOU holders is structurally unfavorable. Poolin transferred substantially all collateral to Antalpha and borrowed approximately $213 million against collateral then valued at approximately $355.8 million. Any Antalpha secured claim asserted against Lonestar assets would prime the unsecured IOU pool, further compressing distributions. The current process is expected to yield some recovery for unsecured creditors, including wallet holders, though the precise amount will hinge on final auction results, associated costs, and court authorization of a liquidation plan.</p>
+<p>---</p>
+<h3 class="advisory-h3">MVMT Labs (Movement Labs) — D. Del. Subchapter V, July 15, 2026</h3>
+<p>MVMT Labs, Inc., the Delaware corporation associated with the Movement blockchain, filed for Chapter 11 bankruptcy protection on July 15, 2026, in the U.S. Bankruptcy Court for the District of Delaware.</p>
+<p>The voluntary petition was filed under Subchapter V, a restructuring process designed for qualifying small businesses.</p>
+<p>A company that was reportedly on the cusp of a $3 billion valuation in early 2025 now lists estimated assets of just $100,001 to $500,000, against liabilities of between $1 million and $10 million.</p>
+<p>The precipitating event was a token-market-making controversy: Binance said the market maker rapidly sold 66 million MOVE tokens, or about 5% of the total supply, contributing to a sharp decline in the token's price.</p>
+<p>Former co-founder and CEO Rushikesh "Rushi" Manche holds the largest unsecured claim, at more than $1.6 million; despite his ouster, Manche still owns a 34.25% equity stake in the company and previously sued it in the Delaware Court of Chancery, securing payment of legal expenses tied to a U.S. DOJ grand jury investigation into the MOVE token launch.</p>
+<p>Creditors have until September 14, 2026 to file claims, and the court expects a Movement Labs restructuring plan by October 13, 2026.</p>
+<p>The MOVE token hit an all-time low of $0.0104, down 94% over the year. The Subchapter V election is noteworthy: the expedited timeline and trustee-mediation mechanics mean creditors have limited time for adversarial discovery into the MOVE token launch conduct and the interplay between MVMT Labs and the separate Move Industries entity. Claim-holders with DOJ-related information rights should act quickly.</p>
+<p>---</p>
+<h3 class="advisory-h3">Macro Context — Forty-Eight Hours That Framed the Wave</h3>
+<p>The Storj filing capped a week that saw BitMEX and BitMart announce solvent wind-downs and Movement Labs seek Chapter 11 protection, with Storj Labs becoming the fourth crypto company in seven days to announce a failure or wind-down as investor interest switches to AI.</p>
+<p>More than 60 cryptocurrency companies, blockchains, and DeFi protocols shut down or filed for bankruptcy between January and July 2026, a pace that accelerated sharply in the final weeks of July.</p>
+<p>The structural pattern is consistent across BlockFills, Poolin, Storj, and MVMT Labs: legacy obligations incurred during the 2021–2022 cycle that management could not service once the 2026 AI-rotation drew investor capital and attention away from the sector. Each case also presents the same creditor-rights tension: frozen customer funds or token balances converted to unsecured general claims, with estate assets that cover a fraction of the exposure. The Celsius-era § 541 property-of-the-estate question has not been resolved by binding Circuit authority; BlockFills remains the most live vehicle for testing that issue in the current cycle.</p>
+<p>---</p>
+<h2>Recommended Actions</h2>
+<p>Institutional creditors holding claims in the BlockFills (Case No. 26-10371, Bankr. D. Del.) should immediately pull Dkt. Nos. 539 and 541 (filed July 27) directly from CourtListener Docket ID 72494188 to determine whether those filings affect the plan effective date or distribution schedule ahead of the September 11, 2026 calendar deadline; counsel should also assess whether the TRO plaintiffs in <em>Dominion Capital LLC v. Reliz Ltd.</em> (S.D.N.Y. 1:26-cv-01672) and <em>1548199 Alberta Ltd. v. Reliz</em> (N.D. Ill. 26-cv-02451) secured preferential treatment in the confirmed plan that is unavailable to general unsecured claimants. Poolin Wallet holders (Case No. 26-18325, D.N.J.) should file protective proofs of claim promptly — the $52 million Thor CALAP stalking-horse against $163.7 million in IOU obligations implies a distribution of 31.8 cents on the dollar before administrative costs and any Antalpha secured-claim priority, so claim documentation and participation in the auction-outcome hearing are the only levers available. Storj node operators with pre-petition earned balances should treat those balances as general unsecured claims subject to the bar date to be set in Case No. 5:26-bk-00512 (N.D. W. Va.) and should not rely on the company's operational-continuity representations as a basis for deferring claim filing. MVMT Labs creditors (D. Del. Subchapter V, petition date July 15, 2026) face a September 14, 2026 claims bar date and an October 13, 2026 plan deadline; given the DOJ grand jury background and the insider-equity complexity created by Manche's 34.25% stake and $1.6M unsecured claim, counsel should evaluate whether Subchapter V's compressed adversarial timeline adequately protects creditors' rights to challenge pre-petition token-launch transfers before the plan is confirmed.</p>
+>>>>>>> 7769ae9 (Daily briefing 2026-07-29)
 <p>---</p>
       </div>
 
@@ -1215,5 +1340,379 @@ h3.advisory-h3 strong {
   <p class="disclaimer">Not legal advice. Voice: restructuring-grade. Verify all docket items against PACER / CourtListener / agency releases before acting. Knowledge baseline: <a href="references/background.html" style="color:inherit;text-decoration-color:rgba(212,255,0,0.5);">references/background.html</a>.</p>
 </footer>
 
+
+<div id="tab-posts" class="tab-panel">
+<main class="posts-grid">
+
+  <article class="post-card" data-platform="linkedin">
+    <div class="post-card-head">
+      <div class="post-card-platform">LinkedIn</div>
+<<<<<<< HEAD
+      <div class="char-count"><span id="li-count">1843</span> chars &middot; Long-form</div>
+    </div>
+    <div class="post-card-body">
+      <textarea class="post-text-editable linkedin" id="linkedin-text" oninput="updateCount('linkedin');autosize(this);">Four crypto companies announced failures or wind-downs in seven days. The one demanding immediate creditor action is Storj Labs.
+
+Storj Labs, Inc. filed Chapter 11 on July 26, 2026 — Case No. 5:26-bk-00512, Bankr. N.D. W.Va. Parent Inveniam supports the reorganization. The company says it will continue operating. Management has floated a framework letting STORJ token holders convert to equity in the reorganized entity.
+
+That proposal does not replace a proof of claim. It should not be treated as one.
+
+• **Storj Labs** (5:26-bk-00512, N.D. W.Va.) — Ch. 11 filed July 26; earliest docket stage; bar date not yet published; plan documents, first-day motions, and creditor matrix not yet public
+• **BlockFills / Reliz** (26-10371, Bankr. D. Del., Judge Horan) — Keyrock SA confirmed successful bidder at $3.25M; confirmation hearing was July 13; dkt. entries 539 and 541 filed July 27 with descriptions unpopulated in CourtListener — pull from PACER now
+• **Movement Labs** (Subchapter V, Bankr. D. Del., filed July 15) — declared assets $100,001–$500,000 against liabilities up to $10M; recovery prospects limited
+• **BitMart** — solvent wind-down stated; on-chain analysts flagged withdrawal issues post-announcement; trading halts August 26
+
+The Storj token-to-equity path sits behind the full § 726 priority waterfall. Unsecured creditors come before equity. Token holders offered equity are, by definition, behind unsecured creditors. The eligibility criteria, snapshot date, lockup terms, and equity percentage are all undisclosed.
+
+Practical takeaway: File a proof of claim in Storj the moment the bar date posts. Do not wait on the equity conversion framework — it may never materialize in a form that benefits token holders, and a missed bar date is unrecoverable.
+
+#CryptoInsolvency #StorjLabs #BlockFills #Chapter11 #BankruptcyLaw</textarea>
+=======
+      <div class="char-count"><span id="li-count">1753</span> chars &middot; Long-form</div>
+    </div>
+    <div class="post-card-body">
+      <textarea class="post-text-editable linkedin" id="linkedin-text" oninput="updateCount('linkedin');autosize(this);">⚖️ $173.1M in liabilities. $52M stalking-horse. That gap is the Poolin story.
+
+Poolin Technology (D.N.J. 26-18325, filed July 22) owes roughly 11,700 wallet holders $163.7M in frozen IOUs. The stalking-horse bid from Thor CALAP LLC covers Texas mining assets only — no wallet cash — and lands at 31.8 cents on the dollar before administrative costs and any Antalpha secured-claim priority. Antalpha holds liens on collateral transferred pre-petition, and a secured claim against Lonestar assets would prime the unsecured IOU pool further.
+
+Poolin is one of four crypto filings in seven days. The others:
+
+• Storj Labs — N.D. W. Va. 5:26-bk-00512 (filed July 26). Pre-petition node-operator balances are general unsecured claims. Token-to-equity proposal is aspirational until schedules and a disclosure statement reveal the full claims stack.
+• MVMT Labs — D. Del. Subchapter V (filed July 15). Claims bar date: Sept. 14. Plan deadline: Oct. 13. DOJ grand jury background and Manche's 34.25% insider stake compress the adversarial window.
+• BlockFills (Reliz, 26-10371, Bankr. D. Del.) — Post-confirmation. Dkt. Nos. 539 and 541 filed July 27; descriptions not yet populated. September 11 deadline on calendar; nature unconfirmed. Pull from CourtListener Docket ID 72494188 before advising on timing.
+
+The structural pattern across all four: frozen customer balances converted to unsecured general claims, estate assets covering a fraction of exposure, token holders behind every priority creditor in the § 1129 waterfall.
+
+Practical takeaway: Poolin wallet holders should file protective proofs of claim now. Waiting on auction results does not preserve your position — the bar date does.
+
+#CryptoInsolvency #Chapter11 #Poolin #Creditors #BankruptcyLaw</textarea>
+>>>>>>> 7769ae9 (Daily briefing 2026-07-29)
+    </div>
+    <div class="post-card-actions">
+      <button class="btn-copy-post" onclick="copyPost('linkedin')">Copy LinkedIn Post</button>
+      <span class="copied-msg" id="li-copied">✓ Copied</span>
+    </div>
+    <div class="adjust-block">
+      <div class="adjust-label">Adjust This Post</div>
+      <div class="adjust-row">
+        <textarea class="adjust-input" id="li-adjust" placeholder='e.g. "Make it shorter", "More urgent tone", "Add a stat about small businesses"...' rows="2"></textarea>
+        <button class="btn-adjust" onclick="sendAdjust('linkedin')">Copy to Claude</button>
+      </div>
+      <div class="adjust-status" id="li-adjust-status">✓ Adjustment block copied — paste into Claude to apply.</div>
+    </div>
+    <div class="used-row" onclick="toggleUsed('linkedin', event)">
+      <input type="checkbox" id="li-used-cb" onclick="event.stopPropagation();toggleUsed('linkedin');">
+      <div class="used-text"><strong>I used this post</strong> &mdash; teach the skill my preferences<span class="sub">When checked, "Copy LinkedIn Post" will also copy a preference signal for Claude to save.</span></div>
+    </div>
+    <div class="used-learn" id="li-used-learn">✓ Preference signal included — paste into Claude to save your "I'd post this" signal.</div>
+  </article>
+
+  <article class="post-card" data-platform="x">
+    <div class="post-card-head">
+      <div class="post-card-platform">X.com</div>
+<<<<<<< HEAD
+      <div class="char-count"><span id="x-count">218</span> / 280 chars</div>
+    </div>
+    <div class="post-card-body">
+      <textarea class="post-text-editable x" id="x-text" oninput="updateCount('x');autosize(this);">Storj Labs: Ch. 11 filed July 26 (5:26-bk-00512, N.D. W.Va.) — token-to-equity proposal disclosed, mechanics undisclosed, bar date not yet set. File a claim. Don't wait on the equity offer. #CryptoInsolvency #StorjLabs</textarea>
+=======
+      <div class="char-count"><span id="x-count">208</span> / 280 chars</div>
+    </div>
+    <div class="post-card-body">
+      <textarea class="post-text-editable x" id="x-text" oninput="updateCount('x');autosize(this);">Poolin (D.N.J. 26-18325): $52M stalking-horse vs. $163.7M in frozen wallet IOUs — 31.8¢/$ before costs &amp; Antalpha lien priority. 4 crypto Ch.11 filings in 7 days. File your claim. #CryptoInsolvency #Chapter11</textarea>
+>>>>>>> 7769ae9 (Daily briefing 2026-07-29)
+    </div>
+    <div class="post-card-actions">
+      <button class="btn-copy-post" onclick="copyPost('x')">Copy X.com Post</button>
+      <span class="copied-msg" id="x-copied">✓ Copied</span>
+    </div>
+    <div class="adjust-block">
+      <div class="adjust-label">Adjust This Post</div>
+      <div class="adjust-row">
+        <textarea class="adjust-input" id="x-adjust" placeholder='e.g. "Tighter", "Drop the hashtags", "Make it a thread"...' rows="2"></textarea>
+        <button class="btn-adjust" onclick="sendAdjust('x')">Copy to Claude</button>
+      </div>
+      <div class="adjust-status" id="x-adjust-status">✓ Adjustment block copied — paste into Claude to apply.</div>
+    </div>
+    <div class="used-row" onclick="toggleUsed('x', event)">
+      <input type="checkbox" id="x-used-cb" onclick="event.stopPropagation();toggleUsed('x');">
+      <div class="used-text"><strong>I used this post</strong> &mdash; teach the skill my preferences<span class="sub">When checked, "Copy X.com Post" will also copy a preference signal for Claude to save.</span></div>
+    </div>
+    <div class="used-learn" id="x-used-learn">✓ Preference signal included — paste into Claude to save your "I'd post this" signal.</div>
+  </article>
+
+</main>
+<footer class="posts-footer">
+  Edits to the post text are session-local. Use Copy to grab the current draft. For permanent voice changes apply to the <a href="refine.html" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(212,255,0,0.7);">Refine</a> tab.
+</footer>
+</div>
+<script>
+var SLUG = "crypto-insolvency";
+var DISPLAY = "Crypto Insolvency";
+
+function autosize(ta){
+  ta.style.height = 'auto';
+  ta.style.height = (ta.scrollHeight + 4) + 'px';
+}
+
+function updateCount(which) {
+  if (which === 'linkedin') {
+    var t = document.getElementById('linkedin-text').value;
+    document.getElementById('li-count').textContent = t.length;
+  } else {
+    var t = document.getElementById('x-text').value;
+    var count = t.length;
+    var el = document.getElementById('x-count');
+    el.textContent = count;
+    el.className = count > 280 ? 'over' : '';
+  }
+}
+
+function copyPost(which) {
+  var textareaId = (which === 'linkedin') ? 'linkedin-text' : 'x-text';
+  var msgId = (which === 'linkedin') ? 'li-copied' : 'x-copied';
+  var usedId = (which === 'linkedin') ? 'li-used-cb' : 'x-used-cb';
+  var text = document.getElementById(textareaId).value;
+  var used = document.getElementById(usedId).checked;
+  var payload = text;
+  if (used) {
+    payload = text + "\n\n---\nPREFERENCE SIGNAL\n----------------\nTab: " + SLUG + " (" + DISPLAY + ")\nPlatform: " + which + "\nDate: " + new Date().toISOString().slice(0,10) + "\nSignal: User indicated they used this post (or a close variant). Treat this as positive training signal for voice/style/topic priority on the " + which + " channel.\nAction: Update the tab editorial_notes in daily-briefing/tabs/*.md to reflect this preference for future runs.";
+  }
+  navigator.clipboard.writeText(payload).then(function() {
+    var m = document.getElementById(msgId);
+    m.classList.add('visible');
+    setTimeout(function(){ m.classList.remove('visible'); }, 2400);
+  });
+}
+
+function sendAdjust(which) {
+  var adjId = (which === 'linkedin') ? 'li-adjust' : 'x-adjust';
+  var stId  = (which === 'linkedin') ? 'li-adjust-status' : 'x-adjust-status';
+  var adj = document.getElementById(adjId).value.trim();
+  if (!adj) { document.getElementById(adjId).focus(); return; }
+  var textareaId = (which === 'linkedin') ? 'linkedin-text' : 'x-text';
+  var currentDraft = document.getElementById(textareaId).value;
+  var block = [
+    "POST ADJUSTMENT",
+    "----------------",
+    "Tab: " + SLUG + " (" + DISPLAY + ")",
+    "Platform: " + which,
+    "Date: " + new Date().toISOString().slice(0,10),
+    "",
+    "Adjustment request:",
+    adj,
+    "",
+    "Current draft:",
+    "```",
+    currentDraft,
+    "```",
+    "",
+    "Action: Rewrite the post applying the adjustment. Preserve all facts and source citations. Return the updated post in a code block."
+  ].join("\n");
+  navigator.clipboard.writeText(block).then(function() {
+    var s = document.getElementById(stId);
+    s.classList.add('visible');
+    setTimeout(function(){ s.classList.remove('visible'); }, 3000);
+  });
+}
+
+function toggleUsed(which, ev) {
+  var cbId = (which === 'linkedin') ? 'li-used-cb' : 'x-used-cb';
+  var learnId = (which === 'linkedin') ? 'li-used-learn' : 'x-used-learn';
+  if (ev && ev.target && ev.target.tagName !== 'INPUT') {
+    var cb = document.getElementById(cbId);
+    cb.checked = !cb.checked;
+  }
+  var cb = document.getElementById(cbId);
+  var learn = document.getElementById(learnId);
+  if (cb.checked) learn.classList.add('visible');
+  else learn.classList.remove('visible');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  updateCount('linkedin');
+  updateCount('x');
+  autosize(document.getElementById('linkedin-text'));
+  autosize(document.getElementById('x-text'));
+});
+</script>
+
+<div id="tab-refine" class="tab-panel">
+  <div class="refine-panel-wrap">
+    <div class="eyebrow-label">Refine This Tab</div>
+    <h2>Crypto Insolvency — refinement.</h2>
+    <div class="subtitle">Shape what tomorrow's daily run focuses on. Your instructions update the tab config and apply going forward.</div>
+    <div class="refine-box-inner">
+<div class="refine-sub">Content-level refinement instructions for <strong>Crypto Insolvency</strong> (this tab only). Write a focus instruction in plain English — e.g., "Focus more on Section 232 going forward," "De-emphasize state AG amicus filings," "Track foreign analogues more aggressively." Save below, then paste the copied <code>TAB INSTRUCTION</code> block into Claude. Claude will update the tab config and apply on the next daily run.</div>
+<textarea id="refine-input-crypto-insolvency" placeholder="e.g., Prioritize anti-circumvention DOC determinations over USTR docket maintenance. De-emphasize state AG amicus filings unless tied to a Federal Circuit case."></textarea>
+<div class="refine-row">
+  <button class="btn-refine" onclick="saveRefine_crypto_insolvency()">Save &amp; Copy Refinement Block</button>
+  <button class="btn-refine-secondary" onclick="clearRefineHistory_crypto_insolvency()">Clear history</button>
+  <span class="refine-status" id="refine-status-crypto-insolvency">✓ Saved &amp; copied — paste into Claude to apply</span>
+</div>
+<div class="refine-history">
+  <div class="refine-history-label">Saved Refinements</div>
+  <ul class="refine-history-list" id="refine-history-crypto-insolvency"><li class="empty">No refinements saved yet.</li></ul>
+</div>
+<script>
+(function(){
+  var SLUG='crypto-insolvency';
+  var DISPLAY='Crypto Insolvency';
+  var KEY='tab-instructions-'+SLUG;
+  function load(){
+    try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}
+  }
+  function save(arr){ localStorage.setItem(KEY,JSON.stringify(arr)); }
+  function render(){
+    var list=document.getElementById('refine-history-'+SLUG);
+    var items=load();
+    if(!items.length){ list.innerHTML='<li class="empty">No refinements saved yet.</li>'; return; }
+    list.innerHTML=items.slice().reverse().map(function(it){
+      var ts=new Date(it.ts).toLocaleString();
+      var safe=(it.msg||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+      return '<li><span class="ts">'+ts+'</span><span class="msg">'+safe+'</span></li>';
+    }).join('');
+  }
+  function block(msg){
+    return [
+      'TAB INSTRUCTION',
+      '----------------',
+      'Tab: '+SLUG+' ('+DISPLAY+')',
+      'Config file: daily-briefing/tabs/03-crypto-insolvency.md',
+      'Date: '+new Date().toISOString().slice(0,10),
+      '',
+      'Content refinement instruction (apply to future daily runs):',
+      msg,
+      '',
+      'Action requested: Update the tab config file editorial_notes/themes to reflect the above. Apply starting next daily run.'
+    ].join('\n');
+  }
+  window['saveRefine_'+SLUG.replace(/-/g,'_')]=function(){
+    var ta=document.getElementById('refine-input-'+SLUG);
+    var msg=(ta.value||'').trim();
+    if(!msg){ ta.focus(); return; }
+    var items=load();
+    items.push({ts:Date.now(), msg:msg});
+    save(items);
+    var b=block(msg);
+    var done=function(){
+      var s=document.getElementById('refine-status-'+SLUG);
+      s.classList.add('visible');
+      setTimeout(function(){s.classList.remove('visible');},5000);
+    };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(b).then(done).catch(function(){
+        var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
+      });
+    }else{
+      var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
+    }
+    ta.value='';
+    render();
+  };
+  window['clearRefineHistory_'+SLUG.replace(/-/g,'_')]=function(){
+    if(!confirm('Clear all saved refinements for this tab? (Local only.)')) return;
+    localStorage.removeItem(KEY);
+    render();
+  };
+  if(document.readyState!=='loading') render();
+  else document.addEventListener('DOMContentLoaded',render);
+})();
+</script>
+</section>
+
+</main>
+
+<footer>
+<div style="max-width:760px;margin:0 auto;padding:0 20px;">
+<div>Refinement instructions saved here apply to future daily runs of the <code>crypto-insolvency-briefing</code> skill.</div>
+<div class="disclaimer">Local-only history. Paste the copied <code>TAB INSTRUCTION</code> block into Claude to apply changes to the tab config.</div>
+</div>
+
+    </div>
+    <div class="refine-footer-note">Refinement instructions saved here apply to future daily runs. Local-only history.</div>
+  </div>
+</div>
+<script>
+(function(){
+  var SLUG='crypto-insolvency';
+  var DISPLAY='Crypto Insolvency';
+  var KEY='tab-instructions-'+SLUG;
+  function load(){
+    try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}
+  }
+  function save(arr){ localStorage.setItem(KEY,JSON.stringify(arr)); }
+  function render(){
+    var list=document.getElementById('refine-history-'+SLUG);
+    var items=load();
+    if(!items.length){ list.innerHTML='<li class="empty">No refinements saved yet.</li>'; return; }
+    list.innerHTML=items.slice().reverse().map(function(it){
+      var ts=new Date(it.ts).toLocaleString();
+      var safe=(it.msg||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+      return '<li><span class="ts">'+ts+'</span><span class="msg">'+safe+'</span></li>';
+    }).join('');
+  }
+  function block(msg){
+    return [
+      'TAB INSTRUCTION',
+      '----------------',
+      'Tab: '+SLUG+' ('+DISPLAY+')',
+      'Config file: daily-briefing/tabs/03-crypto-insolvency.md',
+      'Date: '+new Date().toISOString().slice(0,10),
+      '',
+      'Content refinement instruction (apply to future daily runs):',
+      msg,
+      '',
+      'Action requested: Update the tab config file editorial_notes/themes to reflect the above. Apply starting next daily run.'
+    ].join('\n');
+  }
+  window['saveRefine_'+SLUG.replace(/-/g,'_')]=function(){
+    var ta=document.getElementById('refine-input-'+SLUG);
+    var msg=(ta.value||'').trim();
+    if(!msg){ ta.focus(); return; }
+    var items=load();
+    items.push({ts:Date.now(), msg:msg});
+    save(items);
+    var b=block(msg);
+    var done=function(){
+      var s=document.getElementById('refine-status-'+SLUG);
+      s.classList.add('visible');
+      setTimeout(function(){s.classList.remove('visible');},5000);
+    };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(b).then(done).catch(function(){
+        var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
+      });
+    }else{
+      var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
+    }
+    ta.value='';
+    render();
+  };
+  window['clearRefineHistory_'+SLUG.replace(/-/g,'_')]=function(){
+    if(!confirm('Clear all saved refinements for this tab? (Local only.)')) return;
+    localStorage.removeItem(KEY);
+    render();
+  };
+  if(document.readyState!=='loading') render();
+  else document.addEventListener('DOMContentLoaded',render);
+})();
+</script>
+
+<script>
+function switchTab(name,btn){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  var panel=document.getElementById('tab-'+name);if(panel)panel.classList.add('active');
+  document.querySelectorAll('.subtab').forEach(function(b){b.classList.remove('active');});
+  var ab=btn||document.getElementById('subtab-'+name);if(ab)ab.classList.add('active');
+  history.replaceState(null,'','#'+name);
+}
+(function(){
+  var h=(location.hash||'').replace('#','');
+  if(h==='posts'||h==='refine'){switchTab(h);}else{switchTab('briefing');}
+})();
+</script>
 </body>
+</div>
+
 </html>

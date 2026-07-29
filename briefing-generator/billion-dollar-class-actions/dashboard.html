@@ -795,6 +795,81 @@ h3.advisory-h3 strong {
   box-sizing: border-box !important;
 }
 /* NAV ALIGNMENT END */
+.subtab-strip{max-width:1440px;margin:0 auto;padding:10px 32px 0;display:flex;gap:0;border-bottom:2px solid var(--ink);}
+.subtab{background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;padding:8px 20px;font-family:'Archivo',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-60);cursor:pointer;}
+.subtab:hover{color:var(--ink);}
+.subtab.active{color:var(--ink);border-bottom-color:var(--neon);font-weight:700;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.posts-grid{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;grid-template-columns:1fr;gap:28px;}
+@media(min-width:980px){.posts-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+.post-card{background:var(--bg);border:1px solid var(--line-strong);}
+[data-theme="dark"] .post-card{background:#0A0A0A;border-color:rgba(255,255,255,0.18);}
+.post-card-head{display:flex;align-items:center;justify-content:space-between;padding:18px 24px 14px;border-bottom:1px solid var(--line-strong);gap:12px;}
+[data-theme="dark"] .post-card-head{border-bottom-color:rgba(255,255,255,0.18);}
+.post-card-platform{font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);}
+.char-count{font-size:11.5px;color:var(--ink-60);font-style:italic;}
+.char-count .over{color:#ef4444;font-weight:700;}
+.post-card-body{padding:22px 26px 18px;}
+.post-text-editable{width:100%;padding:18px;border:1px solid var(--line-strong);font-family:'Archivo',sans-serif;font-size:14.5px;line-height:1.7;resize:vertical;background:var(--bg);color:var(--ink);box-sizing:border-box;overflow:hidden;}
+.post-text-editable.linkedin{min-height:560px;}
+.post-text-editable.x{min-height:240px;}
+.post-text-editable:focus{outline:none;border-color:var(--neon);box-shadow:0 0 0 3px rgba(212,255,0,0.25);}
+[data-theme="dark"] .post-text-editable{background:#16161B;color:#FFFFFF;border-color:rgba(255,255,255,0.18);}
+.post-card-actions{display:flex;align-items:center;justify-content:space-between;padding:14px 26px 18px;gap:10px;flex-wrap:wrap;}
+.btn-copy-post{font-size:12.5px;padding:10px 18px;border:1px solid var(--neon);background:var(--neon);color:var(--ink);cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;}
+.btn-copy-post:hover{background:#E2FF4D;}
+.copied-msg{color:var(--ink);font-size:11.5px;font-weight:700;display:none;letter-spacing:0.04em;text-transform:uppercase;}
+.copied-msg.visible{display:inline;}
+[data-theme="dark"] .copied-msg{color:var(--neon);}
+.adjust-block{padding:18px 26px;border-top:1px solid var(--line);}
+.adjust-label{font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);margin-bottom:8px;}
+.adjust-row{display:flex;gap:10px;align-items:flex-start;}
+.adjust-input{flex:1;min-width:0;font-size:13px;padding:10px 12px;border:1px solid var(--line-strong);font-family:'Archivo',sans-serif;resize:vertical;background:var(--bg);color:var(--ink);min-height:64px;box-sizing:border-box;}
+.adjust-input:focus{outline:none;border-color:var(--neon);}
+[data-theme="dark"] .adjust-input{background:#16161B;color:#FFFFFF;border-color:rgba(255,255,255,0.18);}
+.btn-adjust{font-size:11.5px;padding:10px 16px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;font-family:'Archivo',sans-serif;font-weight:700;white-space:nowrap;}
+.btn-adjust:hover{background:rgba(10,10,10,0.04);}
+[data-theme="dark"] .btn-adjust{color:#FFFFFF;border-color:rgba(255,255,255,0.6);}
+.adjust-status{font-size:11px;color:var(--ink-60);margin-top:8px;display:none;}
+.adjust-status.visible{display:block;}
+.used-row{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;margin:14px 26px 22px;background:var(--paper-2);border-left:3px solid var(--neon);cursor:pointer;user-select:none;}
+[data-theme="dark"] .used-row{background:#16161B;}
+.used-row:hover{background:rgba(212,255,0,0.10);}
+.used-row input[type="checkbox"]{width:16px;height:16px;cursor:pointer;margin-top:2px;flex-shrink:0;accent-color:#0A0A0A;}
+[data-theme="dark"] .used-row input[type="checkbox"]{accent-color:#D4FF00;}
+.used-text{font-size:13px;line-height:1.5;color:var(--ink);}
+.used-text strong{font-weight:700;}
+.used-text .sub{display:block;font-size:11.5px;color:var(--ink-60);margin-top:3px;}
+[data-theme="dark"] .used-text{color:#FFFFFF;}
+.used-learn{display:none;font-size:11.5px;color:#0A0A0A;background:var(--neon);padding:8px 14px;margin:0 26px 22px;font-weight:600;}
+.used-learn.visible{display:block;}
+footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border-top:1px solid var(--line);color:var(--ink-60);font-size:12px;font-style:italic;}
+.refine-panel-wrap{max-width:760px;margin:0 auto;padding:40px 20px 60px;}
+.refine-panel-wrap .eyebrow-label{font-size:0.74rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);margin-bottom:12px;}
+.refine-panel-wrap h2{font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:800;letter-spacing:-0.02em;margin:0 0 8px;}
+.refine-panel-wrap .subtitle{font-size:14px;color:var(--ink-60);line-height:1.6;margin-bottom:28px;}
+.refine-box-inner{background:var(--surface);border:1px solid var(--line-strong);padding:24px 28px;}
+.refine-sub{font-size:13px;color:var(--ink-60);line-height:1.6;margin-bottom:16px;}
+.refine-box-inner textarea{width:100%;min-height:120px;padding:14px 16px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;font-size:14px;line-height:1.6;resize:vertical;box-sizing:border-box;}
+.refine-box-inner textarea:focus{outline:none;border-color:var(--neon);}
+[data-theme="dark"] .refine-box-inner textarea{background:#16161B;color:#FFFFFF;border-color:rgba(255,255,255,0.18);}
+.refine-row{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.btn-refine{background:#D4FF00;color:#0A0A0A;border:1px solid #D4FF00;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;padding:10px 18px;cursor:pointer;}
+.btn-refine:hover{background:#E2FF4D;}
+.btn-refine-secondary{background:transparent;color:var(--ink-60);border:1px solid var(--line-strong);font-family:'Archivo',sans-serif;font-size:12px;padding:10px 14px;cursor:pointer;}
+.refine-status{font-size:12px;color:var(--neon);display:none;}
+[data-theme="light"] .refine-status{color:#0A0A0A;}
+.refine-status.visible{display:inline;}
+.refine-history{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;}
+.refine-history-label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-60);margin-bottom:10px;}
+.refine-history-list{list-style:none;padding:0;margin:0;}
+.refine-history-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;}
+.refine-history-list li:last-child{border-bottom:none;}
+.refine-history-list .empty{color:var(--ink-60);font-style:italic;}
+.refine-history-list .ts{display:block;font-size:11px;color:var(--ink-40);margin-bottom:4px;}
+.refine-history-list .msg{color:var(--ink);}
+.refine-footer-note{font-size:12px;color:var(--ink-60);font-style:italic;border-top:1px solid var(--line);padding-top:16px;margin-top:16px;}
 </style>
   <!-- AUTH GATE START -->
   <script src="/auth/config.js"></script>
@@ -821,10 +896,8 @@ h3.advisory-h3 strong {
           <div class="tn-dd-col tn-dd-col-links">
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
-              <li><a class="tn-dd-link" href="../rewind-tariffs/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../rewind-tariffs/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../rewind-tariffs/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../rewind-tariffs/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../rewind-tariffs/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
           <div class="tn-dd-col tn-dd-col-cta">
@@ -845,10 +918,8 @@ h3.advisory-h3 strong {
           <div class="tn-dd-col tn-dd-col-links">
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
-              <li><a class="tn-dd-link" href="../llm-class-action/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../llm-class-action/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../llm-class-action/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../llm-class-action/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../llm-class-action/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
           <div class="tn-dd-col tn-dd-col-cta">
@@ -869,10 +940,8 @@ h3.advisory-h3 strong {
           <div class="tn-dd-col tn-dd-col-links">
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
-              <li><a class="tn-dd-link" href="../crypto-insolvency/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../crypto-insolvency/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../crypto-insolvency/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../crypto-insolvency/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../crypto-insolvency/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
           <div class="tn-dd-col tn-dd-col-cta">
@@ -893,10 +962,8 @@ h3.advisory-h3 strong {
           <div class="tn-dd-col tn-dd-col-links">
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
-              <li><a class="tn-dd-link" href="../fraud-recovery/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../fraud-recovery/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../fraud-recovery/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../fraud-recovery/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../fraud-recovery/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
           <div class="tn-dd-col tn-dd-col-cta">
@@ -917,10 +984,8 @@ h3.advisory-h3 strong {
           <div class="tn-dd-col tn-dd-col-links">
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
-              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../billion-dollar-class-actions/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
           <div class="tn-dd-col tn-dd-col-cta">
@@ -941,10 +1006,8 @@ h3.advisory-h3 strong {
           <div class="tn-dd-col tn-dd-col-links">
             <p class="tn-dd-eyebrow">Quick Links</p>
             <ul class="tn-dd-list">
-              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/advisory-approval-2026-05-15.html"><span>Website Updates</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/posts.html"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/refine.html"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
-              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/references/background.html"><span>Background</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/dashboard.html#posts"><span>Posts</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
+              <li><a class="tn-dd-link" href="../bankruptcy-creditor-rights/dashboard.html#refine"><span>Refine</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.55;margin-left:6px;flex-shrink:0;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></li>
             </ul>
           </div>
           <div class="tn-dd-col tn-dd-col-cta">
@@ -961,6 +1024,13 @@ h3.advisory-h3 strong {
   <div class="stamp">10:16 AM ET &middot; FRIDAY, JUNE 12, 2026</div>
 </div>
 
+<div class="subtab-strip">
+  <button class="subtab active" onclick="switchTab('briefing')" data-tab="briefing">Briefing</button>
+  <button class="subtab" onclick="switchTab('posts')" data-tab="posts">Posts</button>
+  <button class="subtab" onclick="switchTab('refine')" data-tab="refine">Refine</button>
+</div>
+
+<div id="tab-briefing" class="tab-panel active">
 <main class="three-col">
 
   <aside class="col-left">
@@ -1129,38 +1199,31 @@ h3.advisory-h3 strong {
 
 
 
-<h3 class="advisory-h3">II. <em>In re: Johnson & Johnson Talc Products Liability Litigation</em>, MDL No. 2738 (D.N.J.) — $5.5 Billion Uncapped Settlement; 95% Threshold; First Payment 2027</h3>
-<p>The Plaintiffs' Negotiation Committee in the Johnson & Johnson talcum powder multidistrict litigation announced an uncapped settlement expected to provide at least $5.5 billion to approximately 70,000 plaintiffs in MDL No. 2738 and related state court proceedings. As of July 2026, there are 68,435 lawsuits in the talcum powder MDL, which is being tried in the U.S. District Court for New Jersey, presided over by District Judge Michael A. Shipp.</p>
-<p>This resolution ends a decade-long series of failed bankruptcy maneuvers. The settlement comes after several previous failed attempts by J&J to settle the litigation via bankruptcy; J&J subsidiary Red River Talc LLC filed for Chapter 11 in September 2024 in what was its third attempt to use bankruptcy to address talc-related claims, as courts had previously dismissed both earlier attempts.</p>
-<p>A federal judge in Houston dismissed Red River Talc's bankruptcy in March 2025, ending that settlement attempt and forcing J&J back into the civil MDL track.</p>
-<p>The structural terms of the settlement carry specific conditionality: J&J has agreed to pay up to $5.5 billion to resolve remaining U.S. talc-ovarian cancer lawsuits, but the deal requires at least 95% of remaining claimants to participate before it takes effect, with a first payment of up to $3 billion scheduled for 2027 and no further payments before 2028. The 95% threshold is J&J's leverage mechanism — it ensures near-complete resolution before J&J releases any funds, in contrast to the trust-based, percentage-of-vote mechanics of a Chapter 11 plan.</p>
-<p>The causation picture contributed to J&J's improved negotiating posture: a pivotal MDL court ruling on causation shifted the balance — finding that plaintiffs were unable to prove specific causation — and J&J is betting that most plaintiffs will take the deal rather than fight on weakened legal ground.</p>
-<p>A significant development in July 2026 was the federal MDL court questioning whether plaintiffs could present admissible expert evidence showing that talc use caused each claimant's ovarian cancer, ordering plaintiffs to explain why the remaining claims should not be dismissed for lack of specific causation evidence; the ruling did not immediately dismiss cases, but created additional pressure as the parties negotiated.</p>
-<p>No figures have been released yet on what individual payouts could look like for people who have filed talc lawsuits. Independent estimates range from $100,000 to $1 million per case depending on disease type and severity, but those ranges are unverified by the settlement administrator at this stage. If approved, the settlement could bring payouts to families as soon as 2027. The deal is not yet filed for court approval; claimants and their counsel should watch the MDL 2738 docket for a formal settlement agreement submission and Judge Shipp's scheduling of a fairness hearing.</p>
+<h3 class="advisory-h3">J&J Talc MDL-2738 — $5.5 Billion Settlement Announced; Structural Approval Process Ahead</h3>
+<p>This is the largest new development in the mass-tort space since the prior advisory. The procedural trigger matters: the settlement follows a July 22 ruling by U.S. Magistrate Judge Rukhsanah Singh in the multidistrict litigation in New Jersey, granting Johnson & Johnson's motion to show cause why all the talc cases shouldn't be dismissed, after lead plaintiffs' lawyers withdrew their two key specific causation experts from the bellwether cases. That ruling — a show-cause order covering the entire docket — created maximum settlement pressure on the plaintiffs' bar within days, and the deal emerged publicly on July 27.</p>
+<p>Johnson & Johnson said it would pay an estimated $5.5 billion to resolve tens of thousands of lawsuits alleging its baby powder and other talc products cause ovarian cancer, in a deal that could end a legal battle that has dogged the company for a decade.</p>
+<p>The settlement resolves 99.75% of the talcum powder litigation in federal and state courts, coming 15 years after the first suits alleged J&J's baby powder caused ovarian cancer.</p>
+<p>Chris Seeger, an attorney who represents approximately 2,500 clients with talc claims and helped negotiate the agreement, said J&J could ultimately pay $7 billion or more.</p>
+<p>$3 billion is set to be paid out as soon as 2027.</p>
+<p>The MDL sits before Chief Judge Michael A. Shipp and Magistrate Judge Rukhsanah L. Singh in the U.S. District Court for the District of New Jersey. As of July 2026, there are 68,435 pending cases in MDL No. 2738, up from 68,029 cases in June — more than 400 additional lawsuits added in a single month.</p>
+<p>The talc litigation featured dozens of verdicts for both sides and three failed bankruptcies by J&J's subsidiaries.</p>
+<p>The move comes after three failed attempts by J&J to settle the litigation through the Texas Two-Step bankruptcy procedure.</p>
+<p>The settlement is not yet before the court for approval. The deal is structured as a direct MDL resolution rather than a bankruptcy plan — a structural choice forced on J&J after its third Texas Two-Step attempt (Red River Talc LLC, Chapter 11) was also rejected. This matters for claims-rate mechanics: unlike a bankruptcy trust, an MDL global settlement typically requires individualized claimant sign-offs via plaintiffs' counsel, meaning the 99.75% resolution figure is a participation target, not a confirmed opt-in rate. Watch for: (a) a Case Management Order from Judge Shipp setting a settlement approval schedule; (b) plaintiffs' counsel submission of evidence of aggregate claimant authorization; and (c) any motion to stay the show-cause response deadline (currently running at 120 days from July 22) pending formalization of the settlement agreement. Plaintiffs have 120 days to respond to the show-cause order and identify admissible expert evidence supporting specific causation. The leverage dynamic is clear: without a settlement framework filed before that deadline, unrepresented plaintiffs face potential mass dismissal.</p>
 <p>---</p>
-<h3 class="advisory-h3">III. <em>In re: Blue Cross Blue Shield Antitrust Litigation</em>, MDL 2406, No. 2:13-cv-20000-RDP (N.D. Ala.) — $2.67 Billion Distribution Now Live; ~7.8 Million Claimants</h3>
-<p>The BCBS subscriber settlement is now in active distribution. The initial distribution of payments to Damages Class Members with valid claims began on May 11, 2026, arising from the antitrust class action <em>In re: Blue Cross Blue Shield Antitrust Litigation</em>, MDL 2406, N.D. Ala. Master File No. 2:13-cv-20000-RDP, which was reached on behalf of individuals and companies that purchased or received health insurance provided or administered by a Blue Cross Blue Shield company.</p>
-<p>Under the oversight of U.S. District Judge R. David Proctor in the Northern District of Alabama, the court cleared the final hurdles for distribution.</p>
-<p>The $2.67 billion antitrust class action settlement sees approximately 6 million claimants sharing roughly $1.9 billion after fees, for an average payout of approximately $333.</p>
-<p>On April 23, 2026, subscriber plaintiffs filed a motion in the U.S. District Court for the Northern District of Alabama asking the court to approve a distribution plan for nearly 7.8 million claimants.</p>
-<p>The path to distribution was extended by objector campaigns. A judge granted final approval in August 2022, but the settlement was delayed for years by appeals through the Eleventh Circuit and the U.S. Supreme Court.</p>
-<p>The Supreme Court-level objection was filed by David Behenna, who argued that the $667 million in legal fees and costs was too high, contending the fee should be no more than $194 million based on a lodestar calculation.</p>
-<p>Attorneys for Home Depot also filed a challenge at the Supreme Court level, arguing that the settlement terms are too sweeping and will harm the ability of future private parties to sue BCBS over alleged violations of competition law. Those challenges have now been resolved; distribution is underway.</p>
-<p>For practitioners tracking distribution mechanics: claimants who selected electronic payment methods such as Venmo, PayPal, or electronic debit card were among the first to receive payments; claimants who originally chose mailed checks may be able to switch to electronic debit card through a button in their claim determination notice.</p>
+<h3 class="advisory-h3">Keller Postman / Google Mass Arbitration — Campaign Architecture; Google ToS Response</h3>
+<p>No new forum ruling or remedies decision issued in the 72-hour window. The structural picture, updated from the prior advisory: following two landmark federal antitrust rulings finding that Google engaged in monopolistic and anticompetitive conduct, Keller Postman is representing U.S. businesses in a coordinated mass arbitration seeking recovery for alleged advertising overcharges.</p>
+<p>According to Alphabet's public filings, U.S. businesses spent roughly $728 billion on Google search and display ads over the past decade.</p>
+<p>The $218 billion figure is an estimate, not a filed demand amount; in mass arbitration, the leverage comes from the volume of individual filings and the per-claim fee obligations they trigger — but the scale signals that every business purchasing Google search ads or display advertising during the monopoly period is a potential claimant.</p>
+<p>The firm represents approximately 10,000 clients with total spend exceeding $20 billion since 2016, and has commenced arbitration proceedings for the majority of those claimants; the recovery period spans from 2016 onward, with potential damages ranging from 15% to 30% of total spend, requiring individual arbitration for each client.</p>
+<p>The firm operates on a contingency fee basis of 40% with no upfront costs to clients.</p>
+<p>The development worth flagging: Google revised its advertiser Terms of Service in July 2026. In May 2026, Keller Postman commenced mass arbitration after 2016, pointing to antitrust and the $728 billion in U.S. ad spend; Google's updating of the framework — and in some places, dropping the clause — is described by Google as being proactive about how it settles things with advertisers.</p>
+<p>Google's advertiser contracts specify a particular arbitration forum — likely AAA or JAMS, both of which have mass arbitration rules triggered at 25 or more simultaneous coordinated claims. The ToS revision does not affect the vested claims of existing Keller Postman clients whose arbitration demands were filed before the amendment became effective, but it is worth verifying whether the revised terms include a 30-day opt-out window giving new advertisers the ability to elect court instead of arbitration. The FAA's <em>Concepcion</em> / <em>Epic Systems</em> framework preserves pre-amendment rights; post-amendment claimants will need independent analysis. The Google mass arbitration may be the first to seek to represent corporate plaintiffs, as most group legal proceedings to date have sought to arbitrate consumer or labor-related claims. Judge Brinkema's remedies ruling in the ad tech antitrust case (<em>United States v. Google</em>, E.D. Va.) — expected in 2026 — remains the downstream liability anchor for this campaign.</p>
 <p>---</p>
-<h3 class="advisory-h3">IV. Keller Postman v. Google (Mass Arbitration) — $218B+ Campaign; Filing Wave Underway; Judge Brinkema Remedies Opinion Pending</h3>
-<p>The Keller Postman Google advertiser mass arbitration campaign — the largest by claimed dollar value ever mounted — is now in active filing phase. Keller Postman announced on May 11, 2026 that it is representing thousands of U.S. businesses in individual arbitration proceedings against Google, following two landmark federal antitrust rulings; the firm is targeting companies of all sizes that spent money on Google search or display advertising on or after August 2016.</p>
-<p>Google faces billions in potential damage claims as part of mass arbitration tied to its online search and advertising technology businesses, which courts have ruled were illegal monopolies; advertisers are banding together to seek payouts through mass arbitration proceedings, because many companies that displayed ads purchased through Google — including USA Today Co. and Advance Publications Inc. — have sued for damages since the 2024 rulings, but advertiser contracts require mandatory arbitration over legal disputes.</p>
-<p>Keller estimates potential claims for online search and display ads could reach $218 billion or more, based on calculations from an economist his firm has hired; similar mass arbitrations have lasted 12 to 24 months between the filing of claims and resolution.</p>
-<p>According to Alphabet's public filings, U.S. businesses spent roughly $728 billion on Google search and display ads over the past decade; experts in the federal antitrust cases have estimated that anticompetitive conduct may have significantly inflated those costs, creating potential for substantial recovery under federal antitrust law.</p>
-<p>The structural mechanics matter for assessing this campaign's leverage. Arbitration clauses in Google's advertiser contracts prevent damages via class action; instead, advertisers can join together in mass arbitration, which is usually handled by a single law firm and gives them more leverage in settlement negotiations. The historical analog is instructive: Ashley Keller is the architect of prior mass arbitration campaigns including the Amazon Alexa campaign that prompted Amazon to remove its mandatory arbitration clause entirely after 75,000 demands, and the TurboTax campaign that resolved in a confidential settlement alongside a $141 million FTC fund.</p>
-<p>The remedies phase in the underlying antitrust case provides the critical near-term catalyst. Judge Brinkema's remedies ruling is expected in 2026; Keller Postman is actively filing advertiser compensation claims ahead of state filing deadlines. Closing arguments concluded in the remedies phase on November 21, 2025, with DOJ arguing for divestiture of Google's ad exchange (AdX) and Google proposing behavioral remedies only. Judge Brinkema's opinion — once issued — will either sharpen or complicate the damages quantum underpinning the $218 billion estimate, particularly on ad tech-side claims vs. search-side claims. Watch for that ruling as the critical trigger for Keller Postman's next acceleration.</p>
-<p>---</p>
-<h3 class="advisory-h3">V. Visa/Mastercard Interchange MDL — Injunctive Relief Settlement; $500M Escrow Posted</h3>
-<p>On November 10, 2025, Visa entered into a superseding and amended settlement agreement to resolve the interchange MDL injunctive relief class claims, subject to court approval; on December 23, 2025, Visa deposited $500 million into its litigation escrow account, which was previously established under the company's U.S. retrospective responsibility plan to insulate the company and Class A common stockholders from financial liability. The injunctive relief class — distinct from the damages class that received an earlier $5.54 billion payout — remains the live contested track. Court approval of the superseding settlement agreement has not been reported as confirmed as of this advisory.</p>
+<h3 class="advisory-h3">MDL Landscape — Supporting Data Points</h3>
+<p>AAA closed 26 mass arbitrations with 37,648-plus claimants in H1 2025 alone; the 9th Circuit upheld JAMS consolidation of 7,300 Starz claims in <em>Jones v. Starz Entertainment</em>. The pipeline of BIPA, VPPA, and CIPA privacy claims is accelerating independent of the Big Tech campaigns and warrants continued monitoring under this tab. Separately, on June 29, 2026, a Minnesota judge denied J&J's request for a new trial after a jury awarded $65.5 million to a 37-year-old plaintiff who alleged that exposure to asbestos-contaminated Johnson's Baby Powder caused her mesothelioma, following the court's earlier decision upholding the verdict based on sufficient evidence. That verdict — now twice-sustained — is one of the pressure-point data points driving the economics of the July 27 MDL settlement.</p>
 <p>---</p>
 <h2>Recommended Actions</h2>
-<p>Claims-holders and recovery counsel should move on three fronts in the next 30 days. In <em>Bartz v. Anthropic</em> (No. 3:24-cv-05417), track the August 19, 2026 appellate deadline following Judge Martínez-Olguín's July 20 final judgment; any notice of appeal filed before that date would expose the distribution to stay risk, and rights-holders who have not yet confirmed their claim status with the Anthropic Copyright Settlement Administrator (877-206-2310 / info@AnthropicCopyrightSettlement.com) should do so now, as distribution timing post-final-approval has not yet been formally announced. In the J&J Talc MDL (MDL 2738, D.N.J., Judge Shipp), counsel representing the approximately 68,435 pending claimants should evaluate individual case facts against the 95% threshold mechanic — that structure means late holdouts have effective veto power over the entire deal, and claimants with strong specific-causation records may warrant individualized analysis before tendering consent; watch the MDL 2738 docket for a formal plan document filing. In the Keller Postman/Google mass arbitration, any U.S. business that spent on Google Search or display ads after August 2016 should assess claim eligibility before state-law limitations deadlines close the window; the 12-to-24-month timeline to resolution means filing now — not after Judge Brinkema's remedies opinion — preserves optionality.</p>
+<p><strong>For claimants in settled matters:</strong> In <em>Bartz v. Anthropic</em> (No. 3:24-cv-05417), the claims deadline has passed (March 30, 2026) and the appeal window runs through approximately August 19, 2026 — monitor the CourtListener docket for any Ninth Circuit notice of appeal before assuming distribution is clear; if you filed a timely claim, verify your claim status with the Anthropic Copyright Settlement Administrator (877-206-2310; info@AnthropicCopyrightSettlement.com) and ensure your payment information is current before the Special Master dispute window opens. In the J&J Talc MDL (MDL-2738, D.N.J.), <strong>do not assume the July 27 announcement converts automatically to finality</strong> — the deal still requires court formalization, and the 120-day show-cause response clock runs from July 22; counsel representing individual claimants should confirm their client's inclusion in the 99.75% participation figure and preserve the option to respond to the show-cause order if settlement documentation is not filed before the deadline lapses. For businesses that purchased Google advertising since August 2016 and have not yet engaged Keller Postman or comparable counsel, the July 2026 ToS revision creates a narrow window of ambiguity: consult antitrust/arbitration counsel before executing any updated Google advertiser agreement to assess whether the amendment contains a waiver of pre-amendment claims or whether the 30-day opt-out to judicial forum is preferable given the firm's current arbitration posture.</p>
 <p>---</p>
       </div>
 
@@ -1217,6 +1280,288 @@ h3.advisory-h3 strong {
   </div>
   <p class="disclaimer">Not legal advice. Voice: litigation-grade. Verify all docket items against PACER / CourtListener / agency releases before acting. Knowledge baseline: <a href="references/background.html" style="color:inherit;text-decoration-color:rgba(212,255,0,0.5);">references/background.html</a>.</p>
 </footer>
+</div><!-- end tab-briefing -->
+
+<div id="tab-posts" class="tab-panel">
+<main class="posts-grid">
+
+  <article class="post-card" data-platform="linkedin">
+    <div class="post-card-head">
+      <div class="post-card-platform">LinkedIn</div>
+      <div class="char-count"><span id="li-count">1528</span> chars &middot; Long-form</div>
+    </div>
+    <div class="post-card-body">
+      <textarea class="post-text-editable linkedin" id="linkedin-text" oninput="updateCount('linkedin');autosize(this);">Today's mega-class action calibration — three deals are moving simultaneously and the structural story isn't the dollars, it's the claims rates.
+
+• BCBS Subscriber ($2.67B antitrust): JND began distributing on May 11 to ~7.8M claimants. Net distributable ~$1.9B after fees/admin. Pro rata with $5 floor + 10% holdback on ≥$200. The mechanics are textbook — it's the second-distribution timing that will define the cycle.
+
+• Bartz v. Anthropic ($1.5B copyright): Fairness hearing held yesterday before Judge Martínez-Olguín. 91.3% claims rate (440,490 of 500,000 works). For context: consumer mega-classes routinely settle below 5%. Bartz is now the high-water benchmark for Rule 23(e)(2)(C)(ii) fairness — and the implicit floor for any pirated-corpus settlement going forward.
+
+• Purdue/Sackler ($7.4B): Plan effective May 1. Initial $1.5B Sacklers + $900M Purdue at effectiveness. Knoa Pharma takes the operating assets. Subsequent tranches scheduled through 2029.
+
+Duane Morris pegs the 2025 top-10 aggregate at $79B (third consecutive year above $40B). Defense bar already pushing back that the figure is inflated by forward-looking deal-valuation methodology — particularly the Visa/Mastercard interchange relief valued on projected forgone fees.
+
+Watch the fee-multiplier ruling and the foreign-works objection on Bartz. Watch the lawyer-fee-to-class-recovery ratio in the Roundup fairness brief (hearing July 9). The objectors are getting better organized.
+
+#ClassAction #Settlement #Antitrust #MegaSettlement #Securities</textarea>
+    </div>
+    <div class="post-card-actions">
+      <button class="btn-copy-post" onclick="copyPost('linkedin')">Copy LinkedIn Post</button>
+      <span class="copied-msg" id="li-copied">✓ Copied</span>
+    </div>
+    <div class="adjust-block">
+      <div class="adjust-label">Adjust This Post</div>
+      <div class="adjust-row">
+        <textarea class="adjust-input" id="li-adjust" placeholder='e.g. "Make it shorter", "More urgent tone", "Add a stat about small businesses"...' rows="2"></textarea>
+        <button class="btn-adjust" onclick="sendAdjust('linkedin')">Copy to Claude</button>
+      </div>
+      <div class="adjust-status" id="li-adjust-status">✓ Adjustment block copied — paste into Claude to apply.</div>
+    </div>
+    <div class="used-row" onclick="toggleUsed('linkedin', event)">
+      <input type="checkbox" id="li-used-cb" onclick="event.stopPropagation();toggleUsed('linkedin');">
+      <div class="used-text"><strong>I used this post</strong> &mdash; teach the skill my preferences<span class="sub">When checked, "Copy LinkedIn Post" will also copy a preference signal for Claude to save.</span></div>
+    </div>
+    <div class="used-learn" id="li-used-learn">✓ Preference signal included — paste into Claude to save your "I'd post this" signal.</div>
+  </article>
+
+  <article class="post-card" data-platform="x">
+    <div class="post-card-head">
+      <div class="post-card-platform">X.com</div>
+      <div class="char-count"><span id="x-count">340</span> / 280 chars</div>
+    </div>
+    <div class="post-card-body">
+      <textarea class="post-text-editable x" id="x-text" oninput="updateCount('x');autosize(this);">Mega-class action calibration this morning — three deals moving:
+
+• BCBS Subscriber $2.67B: distribution started May 11 to ~7.8M claimants
+• Bartz v. Anthropic $1.5B: fairness hearing yesterday, 91.3% claims rate
+• Purdue/Sackler $7.4B: plan effective May 1
+
+Duane Morris pegs 2025 top-10 at $79B.
+
+#ClassAction #MegaSettlement #BCBS #Bartz</textarea>
+    </div>
+    <div class="post-card-actions">
+      <button class="btn-copy-post" onclick="copyPost('x')">Copy X.com Post</button>
+      <span class="copied-msg" id="x-copied">✓ Copied</span>
+    </div>
+    <div class="adjust-block">
+      <div class="adjust-label">Adjust This Post</div>
+      <div class="adjust-row">
+        <textarea class="adjust-input" id="x-adjust" placeholder='e.g. "Tighter", "Drop the hashtags", "Make it a thread"...' rows="2"></textarea>
+        <button class="btn-adjust" onclick="sendAdjust('x')">Copy to Claude</button>
+      </div>
+      <div class="adjust-status" id="x-adjust-status">✓ Adjustment block copied — paste into Claude to apply.</div>
+    </div>
+    <div class="used-row" onclick="toggleUsed('x', event)">
+      <input type="checkbox" id="x-used-cb" onclick="event.stopPropagation();toggleUsed('x');">
+      <div class="used-text"><strong>I used this post</strong> &mdash; teach the skill my preferences<span class="sub">When checked, "Copy X.com Post" will also copy a preference signal for Claude to save.</span></div>
+    </div>
+    <div class="used-learn" id="x-used-learn">✓ Preference signal included — paste into Claude to save your "I'd post this" signal.</div>
+  </article>
+
+</main>
+
+<footer class="posts-footer">
+  Edits to the post text are session-local. Use Copy to grab the current draft. For permanent voice changes apply to the <a href="#refine" onclick="switchTab('refine');return false;" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(212,255,0,0.7);">Refine</a> tab.
+</footer>
+
+<script>
+var SLUG = "billion-dollar-class-actions";
+var DISPLAY = "$1B+ Class Actions";
+
+function autosize(ta){
+  ta.style.height = 'auto';
+  ta.style.height = (ta.scrollHeight + 4) + 'px';
+}
+
+function updateCount(which) {
+  if (which === 'linkedin') {
+    var t = document.getElementById('linkedin-text').value;
+    document.getElementById('li-count').textContent = t.length;
+  } else {
+    var t = document.getElementById('x-text').value;
+    var count = t.length;
+    var el = document.getElementById('x-count');
+    el.textContent = count;
+    el.className = count > 280 ? 'over' : '';
+  }
+}
+
+function copyPost(which) {
+  var textareaId = (which === 'linkedin') ? 'linkedin-text' : 'x-text';
+  var msgId = (which === 'linkedin') ? 'li-copied' : 'x-copied';
+  var usedId = (which === 'linkedin') ? 'li-used-cb' : 'x-used-cb';
+  var text = document.getElementById(textareaId).value;
+  var used = document.getElementById(usedId).checked;
+  var payload = text;
+  if (used) {
+    payload = text + "\n\n---\nPREFERENCE SIGNAL\n----------------\nTab: " + SLUG + " (" + DISPLAY + ")\nPlatform: " + which + "\nDate: " + new Date().toISOString().slice(0,10) + "\nSignal: User indicated they used this post (or a close variant). Treat this as positive training signal for voice/style/topic priority on the " + which + " channel.\nAction: Update the tab editorial_notes in daily-briefing/tabs/*.md to reflect this preference for future runs.";
+  }
+  navigator.clipboard.writeText(payload).then(function() {
+    var m = document.getElementById(msgId);
+    m.classList.add('visible');
+    setTimeout(function(){ m.classList.remove('visible'); }, 2400);
+  });
+}
+
+function sendAdjust(which) {
+  var adjId = (which === 'linkedin') ? 'li-adjust' : 'x-adjust';
+  var stId  = (which === 'linkedin') ? 'li-adjust-status' : 'x-adjust-status';
+  var adj = document.getElementById(adjId).value.trim();
+  if (!adj) { document.getElementById(adjId).focus(); return; }
+  var textareaId = (which === 'linkedin') ? 'linkedin-text' : 'x-text';
+  var currentDraft = document.getElementById(textareaId).value;
+  var block = [
+    "POST ADJUSTMENT",
+    "----------------",
+    "Tab: " + SLUG + " (" + DISPLAY + ")",
+    "Platform: " + which,
+    "Date: " + new Date().toISOString().slice(0,10),
+    "",
+    "Adjustment request:",
+    adj,
+    "",
+    "Current draft:",
+    "```",
+    currentDraft,
+    "```",
+    "",
+    "Action: Rewrite the post applying the adjustment. Preserve all facts and source citations. Return the updated post in a code block."
+  ].join("\n");
+  navigator.clipboard.writeText(block).then(function() {
+    var s = document.getElementById(stId);
+    s.classList.add('visible');
+    setTimeout(function(){ s.classList.remove('visible'); }, 3000);
+  });
+}
+
+function toggleUsed(which, ev) {
+  var cbId = (which === 'linkedin') ? 'li-used-cb' : 'x-used-cb';
+  var learnId = (which === 'linkedin') ? 'li-used-learn' : 'x-used-learn';
+  if (ev && ev.target && ev.target.tagName !== 'INPUT') {
+    var cb = document.getElementById(cbId);
+    cb.checked = !cb.checked;
+  }
+  var cb = document.getElementById(cbId);
+  var learn = document.getElementById(learnId);
+  if (cb.checked) learn.classList.add('visible');
+  else learn.classList.remove('visible');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  updateCount('linkedin');
+  updateCount('x');
+});
+</script>
+</div><!-- end tab-posts -->
+
+<div id="tab-refine" class="tab-panel">
+  <div class="refine-panel-wrap">
+    <div class="eyebrow-label">Refine This Tab</div>
+    <h2>$1B+ Class Actions <span style="font-style:italic;font-weight:800;background-image:linear-gradient(180deg, transparent 58%, #D4FF00 58%, #D4FF00 94%, transparent 94%);padding:0 0.12em;color:#0A0A0A;">refinement.</span></h2>
+    <p class="subtitle">Shape what tomorrow's daily run focuses on. Your instructions update the tab config (<code>daily-briefing/tabs/06-billion-dollar-class-actions.md</code>) and apply going forward.</p>
+    <div class="refine-box-inner">
+      <div class="refine-sub">Content-level refinement instructions for <strong>$1B+ Class Actions</strong> (this tab only). Write a focus instruction in plain English — e.g., "Focus more on Section 232 going forward," "De-emphasize state AG amicus filings," "Track foreign analogues more aggressively." Save below, then paste the copied <code>TAB INSTRUCTION</code> block into Claude. Claude will update the tab config and apply on the next daily run.</div>
+      <textarea id="refine-input-billion-dollar-class-actions" placeholder="e.g., Prioritize anti-circumvention DOC determinations over USTR docket maintenance. De-emphasize state AG amicus filings unless tied to a Federal Circuit case."></textarea>
+      <div class="refine-row">
+        <button class="btn-refine" onclick="saveRefine_billion_dollar_class_actions()">Save &amp; Copy Refinement Block</button>
+        <button class="btn-refine-secondary" onclick="clearRefineHistory_billion_dollar_class_actions()">Clear history</button>
+        <span class="refine-status" id="refine-status-billion-dollar-class-actions">✓ Saved &amp; copied — paste into Claude to apply</span>
+      </div>
+      <div class="refine-history">
+        <div class="refine-history-label">Saved Refinements</div>
+        <ul class="refine-history-list" id="refine-history-billion-dollar-class-actions"><li class="empty">No refinements saved yet.</li></ul>
+      </div>
+      <div class="refine-footer-note">Refinement instructions saved here apply to future daily runs of the <code>billion-dollar-class-actions-briefing</code> skill. Local-only history. Paste the copied <code>TAB INSTRUCTION</code> block into Claude to apply changes to the tab config.</div>
+    </div>
+  </div>
+<script>
+(function(){
+  var SLUG='billion-dollar-class-actions';
+  var DISPLAY='$1B+ Class Actions';
+  var KEY='tab-instructions-'+SLUG;
+  function load(){
+    try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}
+  }
+  function save(arr){ localStorage.setItem(KEY,JSON.stringify(arr)); }
+  function render(){
+    var list=document.getElementById('refine-history-'+SLUG);
+    var items=load();
+    if(!items.length){ list.innerHTML='<li class="empty">No refinements saved yet.</li>'; return; }
+    list.innerHTML=items.slice().reverse().map(function(it){
+      var ts=new Date(it.ts).toLocaleString();
+      var safe=(it.msg||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+      return '<li><span class="ts">'+ts+'</span><span class="msg">'+safe+'</span></li>';
+    }).join('');
+  }
+  function block(msg){
+    return [
+      'TAB INSTRUCTION',
+      '----------------',
+      'Tab: '+SLUG+' ('+DISPLAY+')',
+      'Config file: daily-briefing/tabs/06-billion-dollar-class-actions.md',
+      'Date: '+new Date().toISOString().slice(0,10),
+      '',
+      'Content refinement instruction (apply to future daily runs):',
+      msg,
+      '',
+      'Action requested: Update the tab config file editorial_notes/themes to reflect the above. Apply starting next daily run.'
+    ].join('\n');
+  }
+  window['saveRefine_'+SLUG.replace(/-/g,'_')]=function(){
+    var ta=document.getElementById('refine-input-'+SLUG);
+    var msg=(ta.value||'').trim();
+    if(!msg){ ta.focus(); return; }
+    var items=load();
+    items.push({ts:Date.now(), msg:msg});
+    save(items);
+    var b=block(msg);
+    var done=function(){
+      var s=document.getElementById('refine-status-'+SLUG);
+      s.classList.add('visible');
+      setTimeout(function(){s.classList.remove('visible');},5000);
+    };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(b).then(done).catch(function(){
+        var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
+      });
+    }else{
+      var t=document.createElement('textarea');t.value=b;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);done();
+    }
+    ta.value='';
+    render();
+  };
+  window['clearRefineHistory_'+SLUG.replace(/-/g,'_')]=function(){
+    if(!confirm('Clear all saved refinements for this tab? (Local only.)')) return;
+    localStorage.removeItem(KEY);
+    render();
+  };
+  if(document.readyState!=='loading') render();
+  else document.addEventListener('DOMContentLoaded',render);
+})();
+</script>
+</div><!-- end tab-refine -->
+
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.subtab').forEach(function(b){ b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + name);
+  if (panel) panel.classList.add('active');
+  var btn = document.querySelector('.subtab[data-tab="' + name + '"]');
+  if (btn) btn.classList.add('active');
+  if (name !== 'briefing') { location.hash = name; } else { history.replaceState(null, '', location.pathname); }
+  if (name === 'posts') {
+    updateCount('linkedin');
+    updateCount('x');
+    document.querySelectorAll('.post-text-editable').forEach(function(ta){ autosize(ta); });
+  }
+}
+(function(){
+  var h = location.hash.replace('#','');
+  if (h === 'posts' || h === 'refine') { switchTab(h); }
+})();
+</script>
 
 </body>
 </html>
