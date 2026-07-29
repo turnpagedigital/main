@@ -15,10 +15,75 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
     "date_last_filing": "2026-07-28",
-    "fetched_at": "2026-07-28T16:15:14.719193+00:00",
-    "as_of": "Jul 28, 2026",
-    "new_in_72h": 7,
+    "fetched_at": "2026-07-29T16:01:35.326640+00:00",
+    "as_of": "Jul 29, 2026",
+    "new_in_72h": 12,
     "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 457,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 458,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 457,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 458,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 459,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 454,
         "date_filed": "2026-07-28",
@@ -29,7 +94,16 @@
         "doc_url": ""
       },
       {
-        "entry_number": null,
+        "entry_number": 456,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 455,
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
         "description": "",
@@ -45,29 +119,9 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      }
-    ],
-    "entries": [
-      {
-        "entry_number": 454,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       },
       {
-        "entry_number": null,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 449,
+        "entry_number": 450,
         "date_filed": "2026-07-27",
         "date_display": "Jul 27, 2026",
         "description": "",
@@ -103,19 +157,19 @@
         "doc_url": ""
       },
       {
-        "entry_number": 450,
-        "date_filed": "2026-07-27",
-        "date_display": "Jul 27, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 446,
         "date_filed": "2026-07-24",
         "date_display": "Jul 24, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Application of the Official Committee of Unsecured Creditors for Entry of an Order Authorizing the Employment and Retention of Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors Effective ",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 444,
+        "date_filed": "2026-07-24",
+        "date_display": "Jul 24, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information. Hearing Scheduled for July 28, 2026 at 10:00 a.m. (ET) (related document(s)438) filed by Kroll Restructuring",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -148,15 +202,6 @@
         "doc_url": ""
       },
       {
-        "entry_number": 444,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information. Hearing Scheduled for July 28, 2026 at 10:00 a.m. (ET) (related document(s)438) filed by Kroll Restructuring",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 440,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
@@ -179,51 +224,6 @@
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "Affidavit of Service of Nelson Crespin Regarding Declaration of Disinterestedness of Arthur Yermash in Support of Employment of Campolo, Middleton & McCormick, LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)377) filed by Kroll Restructuring ",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 439,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "Notice of Appearance filed by Peter S. Russ on behalf of Vector Security. (Russ, Peter) (Entered: 07/23/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 443,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors, Declaration of John Dempsey in Support of Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) D",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 435,
-        "date_filed": "2026-07-22",
-        "date_display": "Jul 22, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Notice and Instructions for Continued Telephonic Section 341 Meeting of Creditors (related document(s)185) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/22/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 433,
-        "date_filed": "2026-07-22",
-        "date_display": "Jul 22, 2026",
-        "description": "Letter Re: Payment history Filed by Modesto Irrigation District. (Vargas, Ana) (Entered: 07/22/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 434,
-        "date_filed": "2026-07-22",
-        "date_display": "Jul 22, 2026",
-        "description": "Transcript regarding Hearing Held on 07/09/2026 At 10:07 AM RE: Statement / Motion of the Debtors for Entry of an Order Establishing Procedures for Interim Compensation and Reimbursement of Expenses for Retained Professionals.; Motion to Authorize / Motion of the Debtors for Entr",
         "is_new": false,
         "landmark": "",
         "doc_url": ""

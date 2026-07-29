@@ -14,33 +14,33 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
-    "date_last_filing": "2026-07-27",
-    "fetched_at": "2026-07-28T16:15:09.340709+00:00",
-    "as_of": "Jul 28, 2026",
-    "new_in_72h": 3,
+    "date_last_filing": "2026-07-28",
+    "fetched_at": "2026-07-29T16:01:05.287520+00:00",
+    "as_of": "Jul 29, 2026",
+    "new_in_72h": 6,
     "recent": [
       {
-        "entry_number": 541,
-        "date_filed": "2026-07-27",
-        "date_display": "Jul 27, 2026",
+        "entry_number": 542,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 539,
-        "date_filed": "2026-07-27",
-        "date_display": "Jul 27, 2026",
+        "entry_number": 544,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 540,
-        "date_filed": "2026-07-27",
-        "date_display": "Jul 27, 2026",
+        "entry_number": 543,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
         "description": "",
         "is_new": true,
         "landmark": "",
@@ -49,6 +49,42 @@
     ],
     "entries": [
       {
+        "entry_number": 542,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 544,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 543,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 540,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 541,
         "date_filed": "2026-07-27",
         "date_display": "Jul 27, 2026",
@@ -59,15 +95,6 @@
       },
       {
         "entry_number": 539,
-        "date_filed": "2026-07-27",
-        "date_display": "Jul 27, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 540,
         "date_filed": "2026-07-27",
         "date_display": "Jul 27, 2026",
         "description": "",
@@ -85,7 +112,7 @@
         "doc_url": ""
       },
       {
-        "entry_number": 534,
+        "entry_number": 536,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -103,7 +130,7 @@
         "doc_url": ""
       },
       {
-        "entry_number": 537,
+        "entry_number": 534,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -121,7 +148,7 @@
         "doc_url": ""
       },
       {
-        "entry_number": 536,
+        "entry_number": 537,
         "date_filed": "2026-07-23",
         "date_display": "Jul 23, 2026",
         "description": "",
@@ -197,33 +224,6 @@
         "date_filed": "2026-07-13",
         "date_display": "Jul 13, 2026",
         "description": "Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates (related document(s)488, 502, 503, 504, 510) Order Signed on 7/13/2026. (Attachments: # 1 Exhibit A # 2 Exhibit B)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 515,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Exhibit(s) // Notice of Filing of (I) Revised Proposed Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates and (II) Redline Thereof (related document(s)505, 510) File",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 517,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Chapter 11 Monthly Operating Report for the Month Ending: 05/31/2026 Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 May MOR Support Schedules) (Hurst, David) (Entered: 07/10/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 516,
-        "date_filed": "2026-07-10",
-        "date_display": "Jul 10, 2026",
-        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by Reliz Technology Group Holdings Inc.. Hearing scheduled for 7/13/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 5th Fl., Courtroom #5, Wilmington, Delaware. (Hurst, David) (Entered: 07/10/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
