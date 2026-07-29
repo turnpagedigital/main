@@ -272,6 +272,19 @@ h3.advisory-h3 strong {
 .subtab{background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;padding:8px 20px;font-family:'Archivo',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-60);cursor:pointer;}
 .subtab:hover{color:var(--ink);}
 .subtab.active{color:var(--ink);border-bottom-color:var(--neon);font-weight:700;}
+/* ── CSS-only tab switching ──────────────────────────────────── */
+.subtab { text-decoration: none; display: inline-block; }
+.tab-panel:target { display: block; }
+html:has(#tab-posts:target) #tab-briefing,
+html:has(#tab-refine:target) #tab-briefing { display: none; }
+html:not(:has(#tab-posts:target)):not(:has(#tab-refine:target)) .subtab-briefing,
+html:has(#tab-posts:target) .subtab-posts,
+html:has(#tab-refine:target) .subtab-refine {
+  color: var(--ink);
+  border-bottom-color: var(--neon);
+  font-weight: 700;
+}
+
 .tab-panel{display:none;}
 .tab-panel.active{display:block;}
 .posts-grid{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;grid-template-columns:1fr;gap:28px;}
@@ -390,9 +403,9 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 </div>
 
 <div class="subtab-strip">
-  <button class="subtab active" onclick="switchTab('briefing')" id="subtab-briefing">Briefing</button>
-  <button class="subtab" onclick="switchTab('posts')" id="subtab-posts">Posts</button>
-  <button class="subtab" onclick="switchTab('refine')" id="subtab-refine">Refine</button>
+  <a class="subtab subtab-briefing" href="#tab-briefing">Briefing</a>
+  <a class="subtab subtab-posts" href="#tab-posts">Posts</a>
+  <a class="subtab subtab-refine" href="#tab-refine">Refine</a>
 </div>
 
 <div id="tab-briefing" class="tab-panel active">
@@ -685,7 +698,7 @@ The pass-through angle is the one to watch.
 </main>
 
 <footer class="posts-footer">
-  Edits to the post text are session-local. Use Copy to grab the current draft. For permanent voice changes apply to the <a href="#refine" onclick="switchTab('refine');return false;" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(212,255,0,0.7);">Refine</a> tab.
+  Edits to the post text are session-local. Use Copy to grab the current draft. For permanent voice changes apply to the <a href="#tab-refine" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(212,255,0,0.7);">Refine</a> tab.
 </footer>
 
 <script>
@@ -853,21 +866,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </div>
 
-<script>
-function switchTab(name) {
-  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
-  document.querySelectorAll('.subtab').forEach(function(b){b.classList.remove('active');});
-  var panel=document.getElementById('tab-'+name);
-  var btn=document.getElementById('subtab-'+name);
-  if(panel)panel.classList.add('active');
-  if(btn)btn.classList.add('active');
-  history.replaceState(null,'',location.pathname+(name==='briefing'?'':'#'+name));
-}
-(function(){
-  var hash=location.hash.replace('#','');
-  if(hash==='posts'||hash==='refine')switchTab(hash);
-})();
-</script>
 
 </body>
 </html>
