@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "tpdm-worktree-dev",
-      "runtimeExecutable": "sh",
-      "runtimeArgs": ["-c", "cd '/Users/waquoitcapital/Library/CloudStorage/Dropbox/Career/Current Roles/Turnpage/Development/turnpagedigital.com/.claude/worktrees/heuristic-hugle-c98d9f' && npm run dev -- --port 5176 --strictPort"],
-      "port": 5176
+      "name": "tpdm-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "--port", "5175", "--strictPort"],
+      "port": 5175
     }
   ]
 }
