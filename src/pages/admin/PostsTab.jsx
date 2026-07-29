@@ -76,6 +76,9 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   const [editorError, setEditorError] = useState("");
   const [savedAt, setSavedAt]      = useState(null);
   const [togglingSlug, setTogglingSlug] = useState(null); // slug currently being toggled
+  const [selected, setSelected]         = useState(new Set()); // slugs checked for bulk ops
+  const [bulkDeleting, setBulkDeleting] = useState(false);
+  const [bulkError, setBulkError]       = useState("");
 
   // ── Load post list ──────────────────────────────────────────────────────
   const loadPosts = useCallback(async () => {
@@ -241,9 +244,54 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
       });
       const body = await r.json().catch(() => ({}));
       if (!r.ok || !body.ok) throw new Error(body.error || "Delete failed");
+      setSelected(prev => { const next = new Set(prev); next.delete(slug); return next; });
       await loadPosts();
     } catch (e) {
       alert("Delete failed: " + e.message);
+    }
+  }
+
+  // ── Bulk delete ──────────────────────────────────────────────────────────
+  async function bulkDelete() {
+    const slugs = [...selected];
+    if (slugs.length === 0) return;
+    if (!confirm(`Permanently delete ${slugs.length} post${slugs.length !== 1 ? "s" : ""}? This cannot be undone.`)) return;
+    setBulkDeleting(true);
+    setBulkError("");
+    try {
+      const r = await fetch("/api/admin/posts", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ action: "bulk-delete", slugs }),
+      });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok || !body.ok) throw new Error(body.error || "Bulk delete failed");
+      setSelected(new Set());
+      await loadPosts();
+    } catch (e) {
+      setBulkError(e.message);
+    } finally {
+      setBulkDeleting(false);
+    }
+  }
+
+  // ── Selection helpers ────────────────────────────────────────────────────
+  function toggleOne(slug) {
+    setSelected(prev => {
+      const next = new Set(prev);
+      next.has(slug) ? next.delete(slug) : next.add(slug);
+      return next;
+    });
+  }
+
+  function toggleAllVisible() {
+    const visibleSlugs = visiblePosts.map(p => p.slug);
+    const allChecked = visibleSlugs.length > 0 && visibleSlugs.every(s => selected.has(s));
+    if (allChecked) {
+      setSelected(prev => { const next = new Set(prev); visibleSlugs.forEach(s => next.delete(s)); return next; });
+    } else {
+      setSelected(prev => { const next = new Set(prev); visibleSlugs.forEach(s => next.add(s)); return next; });
     }
   }
 
@@ -253,6 +301,8 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
   const visiblePosts = filter === "queue"     ? posts.filter(p => p.active === false)
                      : filter === "published" ? posts.filter(p => p.active !== false)
                      : posts;
+  const allVisibleSelected = visiblePosts.length > 0 && visiblePosts.every(p => selected.has(p.slug));
+  const someVisibleSelected = visiblePosts.some(p => selected.has(p.slug));
 
   if (view === "list") {
     return (
@@ -307,8 +357,8 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
           </div>
         )}
 
-        {/* Status filter pills */}
-        <div style={{ display: "flex", gap: "0.4rem", marginBottom: "1rem", alignItems: "center", flexWrap: "wrap" }}>
+        {/* Status filter pills + select-all */}
+        <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.5rem", alignItems: "center", flexWrap: "wrap" }}>
           {[["all", `All (${posts.length})`], ["queue", `Queue (${queueCount})`], ["published", `Published (${publishedCount})`]].map(([key, label]) => (
             <button
               key={key}
@@ -326,10 +376,57 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
               {label}
             </button>
           ))}
-          <span style={{ fontSize: "0.75rem", color: INK_60, marginLeft: "0.5rem" }}>
+          {/* Select-all for visible rows */}
+          {visiblePosts.length > 0 && (
+            <label style={{ display: "flex", alignItems: "center", gap: "0.35rem", marginLeft: "0.4rem", cursor: "pointer", userSelect: "none", fontSize: "0.78rem", color: INK_60 }}>
+              <input
+                type="checkbox"
+                checked={allVisibleSelected}
+                ref={el => { if (el) el.indeterminate = !allVisibleSelected && someVisibleSelected; }}
+                onChange={toggleAllVisible}
+                style={{ accentColor: INK, width: 14, height: 14, cursor: "pointer" }}
+              />
+              Select all
+            </label>
+          )}
+          <span style={{ fontSize: "0.75rem", color: INK_60, marginLeft: "0.25rem" }}>
             Daily briefings land in the Queue as drafts — review or edit, then flip to ● Live to publish.
           </span>
         </div>
+
+        {/* Bulk-actions bar */}
+        {selected.size > 0 && (
+          <div style={{
+            display: "flex", alignItems: "center", gap: "0.75rem",
+            background: "#fff8e6", border: `1px solid #e8cc6a`,
+            padding: "0.6rem 1rem", marginBottom: "0.75rem", borderRadius: 4,
+          }}>
+            <span style={{ fontSize: "0.85rem", fontWeight: 700, color: INK, flex: 1 }}>
+              {selected.size} selected
+            </span>
+            {bulkError && (
+              <span style={{ fontSize: "0.82rem", color: "#c44" }}>{bulkError}</span>
+            )}
+            <button
+              onClick={() => setSelected(new Set())}
+              style={{ ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.7rem" }}
+            >
+              Clear
+            </button>
+            <button
+              onClick={bulkDelete}
+              disabled={bulkDeleting}
+              style={{
+                ...btnStyle, fontSize: "0.78rem", padding: "0.3rem 0.8rem",
+                color: "#c44", borderColor: "#f4caca",
+                opacity: bulkDeleting ? 0.5 : 1,
+                cursor: bulkDeleting ? "default" : "pointer",
+              }}
+            >
+              {bulkDeleting ? "Deleting…" : `Delete ${selected.size}`}
+            </button>
+          </div>
+        )}
 
         {listError && (
           <div style={{ background: "#fce8e8", color: "#7a1a1a", padding: "0.75rem", marginBottom: "1rem", fontSize: "0.9rem", display: "flex", gap: "1rem", alignItems: "center" }}>
@@ -358,14 +455,22 @@ export default function PostsTab({ onDirtyChange: _onDirtyChange }) {
             {visiblePosts.map(post => {
               const isLive    = post.active !== false;
               const toggling  = togglingSlug === post.slug;
+              const isSelected = selected.has(post.slug);
               return (
                 <div key={post.slug} style={{
-                  background: "#fff",
-                  border: `1px solid ${isLive ? LINE : "#e8e0d0"}`,
+                  background: isSelected ? "#fffbee" : "#fff",
+                  border: `1px solid ${isSelected ? "#e8cc6a" : isLive ? LINE : "#e8e0d0"}`,
                   padding: "0.85rem 1rem",
                   display: "flex", alignItems: "center", gap: "0.7rem", flexWrap: "wrap",
                   opacity: isLive ? 1 : 0.75,
                 }}>
+                  <input
+                    type="checkbox"
+                    checked={isSelected}
+                    onChange={() => toggleOne(post.slug)}
+                    style={{ accentColor: INK, width: 14, height: 14, flexShrink: 0, cursor: "pointer" }}
+                    aria-label={`Select ${post.title || post.slug}`}
+                  />
                   <PostTypeBadge type={post.type || "briefing"} />
                   <AuthorChip author={post.author || "Turnpage Intelligence"} />
                   <div style={{ flex: 1, minWidth: 0 }}>

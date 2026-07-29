@@ -112,10 +112,8 @@
           "fticonsulting.com"
         ]
       },
-      "key_focus_cases": [
-        "blockfills"
-      ],
-      "guidance_prompt": "Covers the post-2022 crypto-insolvency wave and emerging 2025-26 cases, focused on creditor-rights and customer-property issues. Key open dockets: BlockFills (Ch. 11, customer-rights echoing Celsius), Synapse/Mercury/Evolve embedded-fintech failures, the FTX claim-trading aftermarket, Prime Trust receivership, Genesis/DCG appellate posture, and Three Arrows Capital (Hong Kong / BVI / Singapore liquidator coordination). The central question across cases: are customer crypto deposits property of the estate or held in trust/bailment (Celsius's contested TOS litigation; Gatecoin, HKCFI 914). Also track claim-valuation-date disputes (in-kind vs. fiat, petition-date vs. distribution-date), token/asset tracing, fraudulent-transfer claims against insiders (FTX/Alameda model), and plan/distribution mechanics. Statutory anchors: 11 U.S.C. § 541 (property of estate), § 363 (sales), § 1129 (confirmation); offshore: HK CWUMPO, Cayman Companies Act Part V, BVI Insolvency Act 2003. Voice: restructuring-grade — a Paul Hastings / Akin Gump alert. Pattern recognition across dockets matters more than depth on any single case."
+      "key_focus_cases": [],
+      "guidance_prompt": "Covers the post-2022 crypto-insolvency wave and emerging 2025-26 cases, focused on creditor-rights and customer-property issues. Also track claim-valuation-date disputes (in-kind vs. fiat, petition-date vs. distribution-date), token/asset tracing, fraudulent-transfer claims against insiders, and plan/distribution mechanics. Voice: restructuring-grade — a Paul Hastings / Akin Gump alert. Pattern recognition across dockets matters more than depth on any single case."
     },
     {
       "slug": "fraud-recovery",
@@ -123,19 +121,12 @@
       "emoji": "🕵️",
       "active": true,
       "page": null,
-      "schedule": "daily",
+      "schedule": "weekly",
       "keywords": [
         "SEC Ponzi scheme charges receiver",
         "federal equity receiver appointment",
         "clawback fraudulent transfer net winner",
-        "Madoff Picard distribution",
-        "Stanford receiver recovery",
         "SEC asset freeze fraud",
-        "Mareva injunction asset tracing",
-        "28 USC 1782 discovery fraud",
-        "OneCoin Ruja Ignatova",
-        "auditor malpractice Ponzi",
-        "crypto asset tracing forfeiture victim",
         "SEC whistleblower award"
       ],
       "sources": {
@@ -153,8 +144,8 @@
           "fticonsulting.com"
         ]
       },
-      "guidance_prompt": "Tracks active receiverships, clawback litigation, and cross-border asset recovery from the claims-buying perspective — recovery trajectory, distribution timing, and clawback risk for net winners. Key ongoing dockets: Madoff / Picard SIPC trustee (16+ years distributing; fee disputes continue), Stanford receiver (US/UK/Antigua coordination), BitConnect international tracing, OneCoin / Ruja Ignatova, and SEC-enforcement-driven receiverships. Recurring themes: clawback exposure under 11 U.S.C. § 548 and state UFTA/UVTA (net winners face real risk; Ponzi-presumption rulings); multi-jurisdictional distribution timing (cases routinely take 5-15 years; claim trading prices the time value); and fee creep (major receiver/counsel fee orders are signal events for claim pricing). Watch new SEC/DOJ enforcement + receiver appointments, whistleblower awards (an early signal of the next wave, often months before charges), cross-border tracing tools (Mareva injunctions, Norwich Pharmacal / Bankers Trust orders, 28 U.S.C. § 1782, MLAT requests), and crypto/digital-asset tracing with victim-restitution components. Anchors: § 548, state UFTA/UVTA, SEC Act § 21, FRCP 66; UK § 423 Insolvency Act 1986, CPR 25 (Mareva). Voice: recovery-grade — between a Kobre & Kim asset-recovery alert and a Quinn Emanuel distressed memo; audience is sophisticated claims investors and fund LPs.",
-      "key_focus_cases": []
+      "key_focus_cases": [],
+      "guidance_prompt": "Tracks active receiverships, clawback litigation, and cross-border asset recovery from the claims-buying perspective — recovery trajectory, distribution timing, and clawback risk for net winners. Key ongoing dockets: Madoff / Picard SIPC trustee (16+ years distributing; fee disputes continue), Stanford receiver (US/UK/Antigua coordination), BitConnect international tracing, OneCoin / Ruja Ignatova, and SEC-enforcement-driven receiverships. Recurring themes: clawback exposure under 11 U.S.C. § 548 and state UFTA/UVTA (net winners face real risk; Ponzi-presumption rulings); multi-jurisdictional distribution timing (cases routinely take 5-15 years; claim trading prices the time value); and fee creep (major receiver/counsel fee orders are signal events for claim pricing). Watch new SEC/DOJ enforcement + receiver appointments, whistleblower awards (an early signal of the next wave, often months before charges), cross-border tracing tools (Mareva injunctions, Norwich Pharmacal / Bankers Trust orders, 28 U.S.C. § 1782, MLAT requests), and crypto/digital-asset tracing with victim-restitution components. Anchors: § 548, state UFTA/UVTA, SEC Act § 21, FRCP 66; UK § 423 Insolvency Act 1986, CPR 25 (Mareva). Voice: recovery-grade — between a Kobre & Kim asset-recovery alert and a Quinn Emanuel distressed memo; audience is sophisticated claims investors and fund LPs."
     },
     {
       "slug": "billion-dollar-class-actions",
@@ -162,7 +153,7 @@
       "emoji": "💰",
       "active": true,
       "page": null,
-      "schedule": "daily",
+      "schedule": "weekly",
       "keywords": [
         "class action settlement billion approval",
         "securities class action settlement",
@@ -191,7 +182,7 @@
         ]
       },
       "key_focus_cases": [],
-      "guidance_prompt": "Tracks mega-settlements (>$1B) across all class-action verticals plus mass arbitration, mass torts and major multi-district litigation. Settlement lenses: notice & claims rate (lower filing rates = higher per-claim recovery for filers), objector campaigns and appellate exposure, fee-award trajectory (percentage-of-fund vs. lodestar cross-check), distribution timing, and opt-out vs. claims-made structure (the denominator math for valuing tradeable claims). Catch pre-settlement signals (mediator appointments, stayed trial dates, joint status reports), watch the AAA Mass Arbitration Supplementary Rules, bellwether/batching rulings, and the pivot from fighting every claim to global settlement. Anchors: FRCP 23, CAFA, PSLRA; Sherman Act §§ 1-2, Clayton Act § 4 (treble), FAA (Concepcion, Monitor Cornerstone/NERA reports and the Stanford Securities Class Action Clearinghouse. "
+      "guidance_prompt": "Track mega-settlements (>$1B) across all class-action verticals plus mass arbitration, mass torts and major multi-district litigation. Settlement lenses: notice & claims rate (lower filing rates = higher per-claim recovery for filers), objector campaigns and appellate exposure, fee-award trajectory (percentage-of-fund vs. lodestar cross-check), distribution timing, and opt-out vs. claims-made structure (the denominator math for valuing tradeable claims). Catch pre-settlement signals (mediator appointments, stayed trial dates, joint status reports), watch the AAA Mass Arbitration Supplementary Rules, bellwether/batching rulings, and the pivot from fighting every claim to global settlement. Anchors: FRCP 23, CAFA, PSLRA; Sherman Act §§ 1-2, Clayton Act § 4 (treble), FAA (Concepcion, Monitor Cornerstone/NERA reports and the Stanford Securities Class Action Clearinghouse. "
     },
     {
       "slug": "bankruptcy-creditor-rights",
@@ -238,11 +229,8 @@
           "https://www.jdsupra.com/law-news/bankruptcy-law/vd"
         ]
       },
-      "key_focus_cases": [
-        "blockfills",
-        "sleep-number"
-      ],
-      "guidance_prompt": "You are a journalist focused on covering the most interesting and exciting bankruptcy and insolvency matters in the U.S. and globally. Monitor new bankruptcy filings with over $100 million in liabilities and track appellate-level bankruptcy cases that have the potential to remake the chapter 11 landscape, with a particular focus if there is a circuit split. Track SCOTUS interest. Consider developments in law and practice that impact jurisdictional issues, economics, burden shifting, customer property, procedural and other practical issues that could have bearing on distressed investments and creditor recoveries. Key areas of interest include ad hoc groups, cases with 10,000+ creditors, free-fall bankruptcies, bankruptcies with delays or busted plans, interesting 363 sales, bankruptcies where valuation is based on volatile assets or binary risks. Other areas of interest include group representation dynamics (creditors in the same class with divergent interests) and pro se representation by creditors and the impact of AI. Consider also international developments in restructuring law and cross-border cases. Audience is distressed investors looking for opportunities. When you write briefings and updates, you're never starting from scratch. You always assume that your reader had read what you wrote the day before. "
+      "key_focus_cases": [],
+      "guidance_prompt": "You are a journalist focused on covering the most interesting and exciting bankruptcy and insolvency matters in the U.S. and globally. Monitor new bankruptcy filings with over $100 million in liabilities and track appellate-level bankruptcy cases that have the potential to remake the chapter 11 landscape, with a particular focus if there is a circuit split. Track SCOTUS interest. Consider developments in law and practice that impact jurisdictional issues, economics, burden shifting, customer property, procedural and other practical issues that could have bearing on distressed investments and creditor recoveries. Key areas of interest include ad hoc groups, cases with 10,000+ creditors, free-fall bankruptcies, bankruptcies with delays or busted plans, interesting 363 sales, bankruptcies where valuation is based on volatile assets or binary risks. Other areas of interest include group representation dynamics (creditors in the same class with divergent interests) and pro se representation by creditors and the impact of AI. Consider also international developments in restructuring law and cross-border cases. Audience is distressed investors looking for opportunities. When you write briefings and updates, you're never starting from scratch. You always assume that your reader had read what you wrote the day before. Start each briefing focused on new mega case filings if any. Then go to critical hearings. Then major decisions. Then "
     }
   ]
 }

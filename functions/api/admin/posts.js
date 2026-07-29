@@ -146,6 +146,40 @@ export async function onRequest({ request, env }) {
       return jsonResponse({ ok: true });
     }
 
+    /* ── bulk-delete: remove multiple slugs in ONE atomic commit ─────────── */
+    if (action === "bulk-delete") {
+      const { slugs } = body;
+      if (!Array.isArray(slugs) || slugs.length === 0) {
+        return jsonResponse({ ok: false, error: "Missing slugs array" }, 400);
+      }
+      const slugSet = new Set(slugs.map(String));
+
+      // 1 — Fetch index and remove all targeted slugs
+      const indexResult = await getFileFromGitHub(env, INDEX_PATH);
+      if (!indexResult.ok) return jsonResponse({ ok: false, error: indexResult.error }, 502);
+
+      const items = (Array.isArray(indexResult.data?.items) ? indexResult.data.items : [])
+        .filter(x => !slugSet.has(x.slug));
+
+      const newIndexText = JSON.stringify({ items }, null, 2) + "\n";
+      const files = [{ path: INDEX_PATH, content: newIndexText, sha: indexResult.sha }];
+
+      // 2 — Fetch markdown SHAs in parallel, then add deletions
+      const mdResults = await Promise.all(
+        [...slugSet].map(s => getFileFromGitHub(env, `public/briefings/${s}.md`))
+      );
+      [...slugSet].forEach((s, i) => {
+        if (mdResults[i].ok) {
+          files.push({ path: `public/briefings/${s}.md`, content: null, sha: mdResults[i].sha });
+        }
+      });
+
+      const saved = await commitFilesToGitHub(env, files, `Posts: bulk delete ${slugs.length} post${slugs.length !== 1 ? "s" : ""}`);
+      if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 502);
+
+      return jsonResponse({ ok: true, deleted: slugs.length });
+    }
+
     return jsonResponse({ ok: false, error: "Unknown action" }, 400);
   }
 
