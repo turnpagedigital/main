@@ -274,6 +274,19 @@ h3.advisory-h3 strong {
 .subtab{background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;padding:8px 20px;font-family:'Archivo',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-60);cursor:pointer;}
 .subtab:hover{color:var(--ink);}
 .subtab.active{color:var(--ink);border-bottom-color:var(--neon);font-weight:700;}
+/* ── CSS-only tab switching ──────────────────────────────────── */
+.subtab { text-decoration: none; display: inline-block; }
+.tab-panel:target { display: block; }
+html:has(#tab-posts:target) #tab-briefing,
+html:has(#tab-refine:target) #tab-briefing { display: none; }
+html:not(:has(#tab-posts:target)):not(:has(#tab-refine:target)) .subtab-briefing,
+html:has(#tab-posts:target) .subtab-posts,
+html:has(#tab-refine:target) .subtab-refine {
+  color: var(--ink);
+  border-bottom-color: var(--neon);
+  font-weight: 700;
+}
+
 .tab-panel{display:none;}
 .tab-panel.active{display:block;}
 .posts-grid{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;grid-template-columns:1fr;gap:28px;}
@@ -391,9 +404,9 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
   <div class="stamp">WEDNESDAY, JULY 29, 2026</div>
 
 <div class="subtab-strip">
-  <button class="subtab" id="subtab-briefing" onclick="switchTab('briefing',this)">Briefing</button>
-  <button class="subtab" id="subtab-posts" onclick="switchTab('posts',this)">Posts</button>
-  <button class="subtab" id="subtab-refine" onclick="switchTab('refine',this)">Refine</button>
+  <a class="subtab subtab-briefing" href="#tab-briefing">Briefing</a>
+  <a class="subtab subtab-posts" href="#tab-posts">Posts</a>
+  <a class="subtab subtab-refine" href="#tab-refine">Refine</a>
 </div>
 </div>
 
@@ -977,19 +990,6 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
-<script>
-function switchTab(name,btn){
-  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
-  var panel=document.getElementById('tab-'+name);if(panel)panel.classList.add('active');
-  document.querySelectorAll('.subtab').forEach(function(b){b.classList.remove('active');});
-  var ab=btn||document.getElementById('subtab-'+name);if(ab)ab.classList.add('active');
-  history.replaceState(null,'','#'+name);
-}
-(function(){
-  var h=(location.hash||'').replace('#','');
-  if(h==='posts'||h==='refine'){switchTab(h);}else{switchTab('briefing');}
-})();
-</script>
 </body>
 </div>
 
