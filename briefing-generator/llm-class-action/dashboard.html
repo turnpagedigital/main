@@ -278,14 +278,8 @@ h3.advisory-h3 strong {
 .subtab { text-decoration: none; display: inline-block; }
 .tab-panel:target { display: block; }
 html:has(#tab-posts:target) #tab-briefing,
-html:has(#tab-refine:target) #tab-briefing { display: none; }
-html:not(:has(#tab-posts:target)):not(:has(#tab-refine:target)) .subtab-briefing,
-html:has(#tab-posts:target) .subtab-posts,
-html:has(#tab-refine:target) .subtab-refine {
-  color: var(--ink);
-  border-bottom-color: var(--neon);
-  font-weight: 700;
-}
+html:not(:has(#tab-posts:target)) .subtab-briefing,
+html:has(#tab-posts:target) .subtab-posts;
 
 .tab-panel{display:none;}
 .tab-panel.active{display:block;}
@@ -417,7 +411,6 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 <div class="subtab-strip">
   <a class="subtab subtab-briefing" href="#tab-briefing">Briefing</a>
   <a class="subtab subtab-posts" href="#tab-posts">Posts</a>
-  <a class="subtab subtab-refine" href="#tab-refine">Refine</a>
 </div>
 
 <div id="tab-briefing" class="tab-panel active">
@@ -450,7 +443,7 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 </style>
 <section class="box tracked-cases">
   <h2>Tracked Cases</h2>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/bartz-anthropic.html">Bartz v. Anthropic</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">U.S. District Court, N.D. Cal. (San Francisco) · 3:24-cv-05417</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 21</span><span class="tc-fdesc">REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)</span></li><li><span class="tc-fdate">Jul 20</span><span class="tc-fdesc">ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/</span></li><li><span class="tc-fdate">Jul 13</span><span class="tc-fdesc">Brief re 676 Objection,, -DEFENDANT ANTHROPIC PBCS OPPOSITION TO APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT filed byAnthropic PBC. (Related document(s) 676 ) (Winthrop, Douglas) (Filed on 7/13/2026) (E</span></li></ul><a class="tc-open" href="../cases/bartz-anthropic.html">Open case docket →</a></div>
+<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/bartz-anthropic.html">Bartz v. Anthropic</a><span class="tc-counter active"><span class="tc-pip"></span>2 new · 72h</span></div><div class="tc-sub">U.S. District Court, N.D. Cal. (San Francisco) · 3:24-cv-05417</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 21</span><span class="tc-fdesc">REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 20</span><span class="tc-fdesc">ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 13</span><span class="tc-fdesc">Brief re 676 Objection,, -DEFENDANT ANTHROPIC PBCS OPPOSITION TO APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT filed byAnthropic PBC. (Related document(s) 676 ) (Winthrop, Douglas) (Filed on 7/13/2026) (E</span></li></ul><a class="tc-open" href="../cases/bartz-anthropic.html">Open case docket →</a></div>
 <div class="tc-case"><div class="tc-top"><span class="tc-name">Concord Music Group v. Anthropic</span><span class="tc-counter quiet"><span class="tc-pip"></span>awaiting sync</span></div><div class="tc-sub">M.D. Tenn. → N.D. Cal. · (music-publisher parallel docket)</div><ul class="tc-filings"><li><span class="tc-fdate">Apr 22</span><span class="tc-fdesc">Last known public filing — Anthropic cross-motion for summary judgment (fair use).</span></li></ul><div class="tc-empty">No new filings in the last 72h. Full history + the live counter populate on first sync.</div><span class="tc-open disabled">Awaiting docket sync</span><div class="tc-note">Tagged to this topic — pulls live once a CourtListener docket id + token are added.</div></div>
 </section>
 <!-- TRACKED-CASES END -->
@@ -751,33 +744,9 @@ Takeaway: If you submitted a timely claim, confirm your work appears in the Anth
 
 </main>
 
-<footer class="posts-footer">
-  Edits to the post text are session-local. Use Copy to grab the current draft. For permanent voice changes apply to the <a href="#tab-refine" style="color:inherit;text-decoration:underline;text-decoration-color:rgba(212,255,0,0.7);">Refine</a> tab.
-</footer>
 
 </div><!-- /tab-posts -->
 
-<div id="tab-refine" class="tab-panel">
-  <div class="refine-panel-wrap">
-    <div class="eyebrow-label">Refine This Tab</div>
-    <h2>LLM / Copyright &mdash; refinement.</h2>
-    <div class="subtitle">Shape what tomorrow's daily run focuses on. Your instructions update the tab config and apply going forward.</div>
-    <div class="refine-box-inner">
-      <div class="refine-sub">Content-level refinement instructions for <strong>LLM / Copyright</strong> (this tab only). Write a focus instruction in plain English — e.g., "Focus more on Section 232 going forward," "De-emphasize state AG amicus filings," "Track foreign analogues more aggressively." Save below, then paste the copied <code>TAB INSTRUCTION</code> block into Claude.</div>
-      <textarea id="refine-input-llm-class-action" placeholder="e.g., Prioritize anti-circumvention DOC determinations over USTR docket maintenance. De-emphasize state AG amicus filings unless tied to a Federal Circuit case."></textarea>
-      <div class="refine-row">
-        <button class="btn-refine" onclick="saveRefine_llm_class_action()">Save &amp; Copy Refinement Block</button>
-        <button class="btn-refine-secondary" onclick="clearRefineHistory_llm_class_action()">Clear history</button>
-        <span class="refine-status" id="refine-status-llm-class-action">✓ Saved &amp; copied — paste into Claude to apply</span>
-      </div>
-      <div class="refine-history">
-        <div class="refine-history-label">Saved Refinements</div>
-        <ul class="refine-history-list" id="refine-history-llm-class-action"><li class="empty">No refinements saved yet.</li></ul>
-      </div>
-    </div>
-    <div class="refine-footer-note">Refinement instructions saved here apply to future daily runs. Local-only history. Paste the copied TAB INSTRUCTION block into Claude to apply changes to the tab config.</div>
-  </div>
-</div><!-- /tab-refine -->
 
 <script>
 var SLUG = "llm-class-action";
