@@ -1,5 +1,6 @@
 # 🪙 Crypto Insolvency | Wednesday, July 29, 2026
 
+<<<<<<< HEAD
 ---
 
 ## Analysis & Developments
@@ -95,12 +96,145 @@ Storj's decentralized storage model — in which the company proposes that token
  The specific mechanism by which STORJ tokens are converted to reorganized-entity equity, and whether token holders are treated as equity interests (subordinated under § 510(b)) or as creditors with a contractual claim, will be a defining confirmation issue.
 
 The Storj structure also implicates the valuation-date problem familiar from Celsius and Genesis. If token holders assert a claim denominated in STORJ, the conversion rate between STORJ and the reorganized-entity equity must be fixed as of some reference date. The petition date (July 26, 2026) is the default under § 502(b), but courts have discretion to adopt distribution-date values where post-petition appreciation would otherwise produce a windfall. The plan's current silence on "eligibility criteria, potential token snapshot requirements, lockup provisions, or the percentage of equity allocated" — as noted above — means that critical valuation mechanics are unresolved at this stage.
+=======
+## Analysis & Developments
+
+**This week's dominant development is a cluster of four crypto insolvency filings in seven days, adding fresh mass to a 2026 restructuring wave that has already consumed more than sixty projects.** The new entrants — Storj Labs (N.D. W. Va.), Poolin Technology (D.N.J.), and MVMT Labs (D. Del.) — each carry the distinctive features that define this wave: frozen customer balances treated as unsecured general claims, stalking-horse sales that fall materially short of aggregate creditor exposure, and token-holder constituencies that rank behind every secured and priority creditor in the § 1129 waterfall. Against that backdrop, *In re Reliz Technology Group Holdings Inc.* (BlockFills), Case No. 26-10371 (Bankr. D. Del., Judge Thomas M. Horan), remains the most consequential open docket for institutional creditors, with three new filings logged on July 27 and a next major deadline already on the calendar.
+
+---
+
+### BlockFills (Reliz Technology Group Holdings Inc.) — Post-Confirmation Window, Dkt. 541 Activity
+
+
+The four BlockFills debtors filed voluntary Chapter 11 petitions on March 15, 2026, jointly administered under Case No. 26-10371 before Judge Thomas M. Horan in the Bankr. D. Del.
+ The case has now passed all of its major pre-distribution milestones: disclosure-statement approval (May 28, Dkt. No. 388), a July 1 voting and objection deadline, 
+and a July 13 confirmation hearing.
+ 
+The capital structure is concentrated in customer and trade exposure rather than traditional funded debt; the first-day record identifies roughly $145 million of general unsecured customer and trade obligations and approximately $4.8 million outstanding under Celsius secured promissory notes, with Celsius asserting first-priority liens.
+
+
+The tracked-case docket shows three new entries filed July 27 (Dkt. Nos. 539 and 541 confirmed as of July 28), with descriptions not yet populated in the claims-agent feed as of the last sync at 16:15 UTC on July 28. 
+The next major calendared deadline in Veritaglobal's key-dates register is September 11, 2026 (4:00 p.m. ET).
+ The nature of that deadline — whether it is a plan effective date, a distribution trigger, or an administrative-expense bar — is not yet reflected in the publicly available docket description fields; counsel should pull the underlying document directly from CourtListener Docket ID 72494188 before advising creditors on timing.
+
+Two structural questions continue to shadow the recovery posture. 
+The central question of whether customer digital assets constitute estate property remains contested
+ — the same § 541 property-of-the-estate issue that drove litigation throughout the Celsius case. 
+In the weeks immediately preceding the Chapter 11 filing, two customer lawsuits alleged misappropriation of customer funds, conversion, breach of contract, and other fraud-based claims, including *Dominion Capital LLC v. Reliz Ltd.*, Case No. 1:26-cv-01672 (S.D.N.Y., Feb. 27, 2026).
+ 
+The second action, *1548199 Alberta Ltd. and Robert J. Bertram v. Reliz Technology Group Holdings Inc.*, Case No. 26-cv-02451 (N.D. Ill., Mar. 5, 2026), resulted in temporary restraining orders that significantly restricted the debtors pre-petition.
+ Whether those pre-petition TRO plaintiffs will receive differential treatment or are swept into the general unsecured pool is the distribution-mechanics question that matters most for institutional claim-holders at this stage.
+
+---
+
+### Storj Labs — New Filing, N.D. W. Va. Case No. 5:26-bk-00512
+
+
+Storj Labs filed for Chapter 11 bankruptcy on July 26, 2026, in the U.S. Bankruptcy Court for the Northern District of West Virginia, under case number 5:26-bk-00512.
+ 
+Storj is a decentralized cloud storage company that once raised $35 million and ran a landmark crypto token offering.
+ 
+The filing addresses legacy debt from earlier operations rather than current operational failure; Inveniam, which announced its acquisition of Storj in October 2025, is backing the restructuring.
+
+
+The filing raises two creditor-rights issues that are structurally identical to patterns seen in the post-2022 crypto wave. First, node-operator payment exposure: 
+pre-petition obligations to node operators are being handled via a claims agent, with Storj's restructuring FAQ stating that employees and ordinary-course obligations arising during the process are expected to be paid, subject to customary court approvals, while pre-process amounts are handled within the process via the claims agent.
+ That language draws the standard bright line at the petition date and converts years of pre-petition operator compensation into unsecured claims — a material recovery impairment for operators holding large accumulated balances. 
+That is standard Chapter 11 language, and it draws a hard line at the petition date.
+
+
+Second, the token-equity proposal: 
+the restructuring plan proposes sharing ownership of the reorganized company among management, investors, and token holders, who typically receive nothing in a Chapter 11 process.
+ 
+The announcement described this as a plan, not a completed arrangement, and did not state how many token holders could qualify or how ownership would be allocated.
+ Under the absolute-priority rule (11 U.S.C. § 1129(b)), equity (including any equity-equivalent token interest) cannot receive value unless all senior classes are paid in full or consent. 
+The important part for STORJ holders is not the equity idea — it is the bankruptcy priority line sitting in front of it.
+ Until Storj files schedules and a disclosure statement revealing the quantum of secured and unsecured obligations, the token-equity proposal is aspirational.
+
+
+The STORJ token held near $0.074 through the July 26 announcement window before falling approximately 14% in 24 hours to $0.06334 by midday July 27.
+ 
+As part of the restructuring, Storj has also said it will divest previous acquisitions and non-core business units.
+ No judge assignment or claims-agent designation has been publicly confirmed as of this briefing.
+
+---
+
+### Poolin Technology — D.N.J. Case No. 26-18325, $173.1M in Liabilities Against $52M Stalking-Horse
+
+
+The filing was made on July 22, 2026, in the U.S. Bankruptcy Court for the District of New Jersey under Case No. 26-18325.
+ 
+Poolin Technology Pte. Ltd., the Singapore-based parent of what was once one of the world's largest Bitcoin mining pools, filed along with two U.S. affiliates, Lonestar Dream Inc. and Lonestar Taproot LLC.
+
+
+The numbers are stark. 
+Poolin's prepetition liabilities stand at $173.1 million, including $163.7 million in unsecured IOUs owed to roughly 11,700 Poolin Wallet users after withdrawals were frozen in 2022.
+ 
+The filing details a $52 million stalking-horse bid from Thor CALAP LLC for the company's Pyote and Tarbush mining sites in West Texas.
+ 
+That $52 million covers Texas mining assets only — not wallet cash — and equals just 31.8% of the IOUs before costs.
+
+
+
+Poolin permanently halted all mining and hosting operations on July 10, 2026, retaining only a minimal workforce to secure equipment and facilitate the asset sale process; the company stated it has no plans to resume operations and will use proceeds from the bankruptcy sale to satisfy creditor claims under a liquidating plan.
+ 
+The pre-petition marketing process generated 28 NDAs, seven LOIs, and three additional indications of interest.
+ 
+A court-supervised auction is proposed, with a bid deadline reported as September 8, 2026 — confirm against the filed docket before drawing final conclusions.
+
+
+The recovery math for the 11,700 IOU holders is structurally unfavorable. 
+Poolin transferred substantially all collateral to Antalpha and borrowed approximately $213 million against collateral then valued at approximately $355.8 million.
+ Any Antalpha secured claim asserted against Lonestar assets would prime the unsecured IOU pool, further compressing distributions. 
+The current process is expected to yield some recovery for unsecured creditors, including wallet holders, though the precise amount will hinge on final auction results, associated costs, and court authorization of a liquidation plan.
+
+
+---
+
+### MVMT Labs (Movement Labs) — D. Del. Subchapter V, July 15, 2026
+
+
+MVMT Labs, Inc., the Delaware corporation associated with the Movement blockchain, filed for Chapter 11 bankruptcy protection on July 15, 2026, in the U.S. Bankruptcy Court for the District of Delaware.
+ 
+The voluntary petition was filed under Subchapter V, a restructuring process designed for qualifying small businesses.
+ 
+A company that was reportedly on the cusp of a $3 billion valuation in early 2025 now lists estimated assets of just $100,001 to $500,000, against liabilities of between $1 million and $10 million.
+
+
+The precipitating event was a token-market-making controversy: 
+Binance said the market maker rapidly sold 66 million MOVE tokens, or about 5% of the total supply, contributing to a sharp decline in the token's price.
+ 
+Former co-founder and CEO Rushikesh "Rushi" Manche holds the largest unsecured claim, at more than $1.6 million; despite his ouster, Manche still owns a 34.25% equity stake in the company and previously sued it in the Delaware Court of Chancery, securing payment of legal expenses tied to a U.S. DOJ grand jury investigation into the MOVE token launch.
+
+
+
+Creditors have until September 14, 2026 to file claims, and the court expects a Movement Labs restructuring plan by October 13, 2026.
+ 
+The MOVE token hit an all-time low of $0.0104, down 94% over the year.
+ The Subchapter V election is noteworthy: the expedited timeline and trustee-mediation mechanics mean creditors have limited time for adversarial discovery into the MOVE token launch conduct and the interplay between MVMT Labs and the separate Move Industries entity. Claim-holders with DOJ-related information rights should act quickly.
+
+---
+
+### Macro Context — Forty-Eight Hours That Framed the Wave
+
+
+The Storj filing capped a week that saw BitMEX and BitMart announce solvent wind-downs and Movement Labs seek Chapter 11 protection, with Storj Labs becoming the fourth crypto company in seven days to announce a failure or wind-down as investor interest switches to AI.
+ 
+More than 60 cryptocurrency companies, blockchains, and DeFi protocols shut down or filed for bankruptcy between January and July 2026, a pace that accelerated sharply in the final weeks of July.
+
+
+The structural pattern is consistent across BlockFills, Poolin, Storj, and MVMT Labs: legacy obligations incurred during the 2021–2022 cycle that management could not service once the 2026 AI-rotation drew investor capital and attention away from the sector. Each case also presents the same creditor-rights tension: frozen customer funds or token balances converted to unsecured general claims, with estate assets that cover a fraction of the exposure. The Celsius-era § 541 property-of-the-estate question has not been resolved by binding Circuit authority; BlockFills remains the most live vehicle for testing that issue in the current cycle.
+>>>>>>> 7769ae9 (Daily briefing 2026-07-29)
 
 ---
 
 ## Recommended Actions
 
+<<<<<<< HEAD
 Creditors and claim-holders across the BlockFills, Storj, Movement Labs, and BitMart matters should take the following steps without delay. In **BlockFills** (Case No. 26-10371, Bankr. D. Del., Judge Horan): pull docket entries 539 and 541 (filed July 27) from PACER immediately to determine whether a confirmation order was entered following the July 13 hearing; if confirmed, the § 1141 vesting date and plan-effective-date mechanics will govern when and how distributions to the ~$145 million unsecured creditor pool are made, and any appeal window under Fed. R. Bankr. P. 8002 will have begun running. In **Storj** (Case No. 5:26-bk-00512, Bk N.D. W.Va.): file a proof of claim as soon as the claims bar date is published; do not rely on management's equity-conversion proposal as a substitute for a timely filed unsecured claim, since token-to-equity conversion mechanics are entirely undisclosed and the § 726 priority waterfall places unsecured creditors ahead of any equity interests. In **Movement Labs** (Subchapter V, Bankr. D. Del., filed July 15): contact the Subchapter V trustee to confirm creditor-meeting scheduling under 11 U.S.C. § 341 and assess whether the plan will be consensual or non-consensual under § 1191; given the minimal asset base ($100,001–$500,000 declared), recovery prospects are limited and claim preservation matters. For **BitMart** customers: do not wait for the August 26 trading halt — initiate withdrawals now, document all positions and on-chain transaction hashes, and monitor on-chain analytics for fund-movement anomalies; the Celsius and BlockFills precedents both show that the interval between deposit suspension and formal filing can be compressed to days.
+=======
+Institutional creditors holding claims in the BlockFills (Case No. 26-10371, Bankr. D. Del.) should immediately pull Dkt. Nos. 539 and 541 (filed July 27) directly from CourtListener Docket ID 72494188 to determine whether those filings affect the plan effective date or distribution schedule ahead of the September 11, 2026 calendar deadline; counsel should also assess whether the TRO plaintiffs in *Dominion Capital LLC v. Reliz Ltd.* (S.D.N.Y. 1:26-cv-01672) and *1548199 Alberta Ltd. v. Reliz* (N.D. Ill. 26-cv-02451) secured preferential treatment in the confirmed plan that is unavailable to general unsecured claimants. Poolin Wallet holders (Case No. 26-18325, D.N.J.) should file protective proofs of claim promptly — the $52 million Thor CALAP stalking-horse against $163.7 million in IOU obligations implies a distribution of 31.8 cents on the dollar before administrative costs and any Antalpha secured-claim priority, so claim documentation and participation in the auction-outcome hearing are the only levers available. Storj node operators with pre-petition earned balances should treat those balances as general unsecured claims subject to the bar date to be set in Case No. 5:26-bk-00512 (N.D. W. Va.) and should not rely on the company's operational-continuity representations as a basis for deferring claim filing. MVMT Labs creditors (D. Del. Subchapter V, petition date July 15, 2026) face a September 14, 2026 claims bar date and an October 13, 2026 plan deadline; given the DOJ grand jury background and the insider-equity complexity created by Manche's 34.25% stake and $1.6M unsecured claim, counsel should evaluate whether Subchapter V's compressed adversarial timeline adequately protects creditors' rights to challenge pre-petition token-launch transfers before the plan is confirmed.
+>>>>>>> 7769ae9 (Daily briefing 2026-07-29)
 
 ---
 
@@ -108,6 +242,7 @@ Creditors and claim-holders across the BlockFills, Storj, Movement Labs, and Bit
 
 - **Cloud data firm Storj files for Chapter 11, extending a week of crypto failures. Token slides 16%** — CoinDesk, July 27, 2026
   - https://www.coindesk.com/business/2026/07/27/cloud-data-firm-storj-files-for-chapter-11-extending-a-week-of-crypto-failures-token-slides-16
+<<<<<<< HEAD
   - Primary coverage of the Storj Labs Ch. 11 filing (Case No. 5:26-bk-00512, N.D. W.Va.); covers the token-to-equity proposal and the broader seven-day sector failure cluster.
 
 - **Storj Announces Voluntary Financial Restructuring to Resolve Legacy Liabilities** — GlobeNewswire (Storj Labs), July 26, 2026
@@ -125,11 +260,31 @@ Creditors and claim-holders across the BlockFills, Storj, Movement Labs, and Bit
 - **Digital asset firm Keyrock plans to acquire BlockFills out of bankruptcy** — CoinDesk, June 1, 2026
   - https://www.coindesk.com/business/2026/06/01/crypto-investment-firm-keyrock-is-acquiring-bankrupt-lender-blockfills
   - Documents Keyrock SA's $3.25 million winning bid for substantially all BlockFills assets (declared successful bidder May 26, 2026); anchors the asset-sale track of the Reliz restructuring.
+=======
+  - Primary coverage of the Storj Labs Ch. 11 filing (N.D. W. Va. 5:26-bk-00512), including the token-to-equity proposal and the AI-capital-rotation context for the July 2026 crypto failure wave.
+
+- **Storj Files for Chapter 11, Pre-Filing Node Operator Payments in Limbo** — CryptoTimes, July 27, 2026
+  - https://www.cryptotimes.io/2026/07/27/storj-files-for-chapter-11-pre-filing-node-operator-payments-in-limbo/
+  - Detailed analysis of the claims-agent language drawing the pre-petition / post-petition payment line, directly relevant to node-operator creditor recovery strategy.
+
+- **Former Bitcoin Miner Poolin Files Chapter 11, Sets $52 Million Floor Bid for Texas Operations** — The Block, July 24, 2026
+  - https://www.theblock.co/post/409587/former-bitcoin-miner-poolin-files-chapter-11-sets-52-million-floor-bid-for-texas-operations
+  - Authoritative primary-source summary of Case No. 26-18325 (D.N.J.), stalking-horse mechanics, and $163.7M IOU-holder exposure.
+
+- **From a $3B Valuation to Bankruptcy: Movement Labs Files Chapter 11** — CryptoTimes, July 22, 2026
+  - https://www.cryptotimes.io/2026/07/22/from-a-3b-valuation-to-bankruptcy-movement-labs-files-chapter-11/
+  - Covers MVMT Labs Subchapter V filing in D. Del. (petition July 15, 2026), Manche insider-claim dynamics, claims bar date (Sept. 14), and plan deadline (Oct. 13).
+
+- **Over 60 Crypto Firms and Projects Fold in 2026 as Bankruptcies, Bear Market and Hacks Rip Industry Apart** — Bitcoin.com News, July 28, 2026
+  - https://news.bitcoin.com/featured/over-60-crypto-firms-and-projects-fold-in-2026-as-bankruptcies-bear-market-and-hacks-rip-industry-apart/
+  - Macro context tracking the full 2026 failure wave through July, including BlockFills, Poolin, Storj, Movement, BitMEX, and BitMart in a single analytical frame.
+>>>>>>> 7769ae9 (Daily briefing 2026-07-29)
 
 ---
 
 ## Sources
 
+<<<<<<< HEAD
 - [Storj Announces Voluntary Financial Restructuring](https://www.globenewswire.com/news-release/2026/07/26/3333224/0/en/Storj-Announces-Voluntary-Financial-Restructuring-to-Resolve-Legacy-Liabilities-and-Position-the-Business-for-Growth.html) — GlobeNewswire / Storj Labs, July 26, 2026
 - [Cloud data firm Storj files for Chapter 11](https://www.coindesk.com/business/2026/07/27/cloud-data-firm-storj-files-for-chapter-11-extending-a-week-of-crypto-failures-token-slides-16) — CoinDesk, July 27, 2026
 - [Storj Labs Bankruptcy: Chapter 11 Restructuring Strategy](https://en.cryptonomist.ch/2026/07/27/storj-labs-bankruptcy/) — Cryptonomist, July 27, 2026
@@ -146,8 +301,31 @@ Creditors and claim-holders across the BlockFills, Storj, Movement Labs, and Bit
 - [BitMart processed just 63 withdrawals after closure announcement](https://protos.com/bitmart-processed-just-63-withdrawals-after-closure-announcement/) — Protos, July 27, 2026
 - [Movement Labs files for Chapter 11 months after token scandal](https://www.coindesk.com/policy/2026/07/21/movement-labs-files-for-chapter-11-months-after-token-scandal-and-strategic-overhaul) — CoinDesk, July 21, 2026
 - [Movement Labs Files for Chapter 11 Bankruptcy as MOVE Token Collapses 99%](https://cryip.co/movement-labs-files-for-chapter-11-bankruptcy-as-move-token-collapses-99/) — Cryip, July 21, 2026
+=======
+- [Cloud data firm Storj files for Chapter 11, extending a week of crypto failures](https://www.coindesk.com/business/2026/07/27/cloud-data-firm-storj-files-for-chapter-11-extending-a-week-of-crypto-failures-token-slides-16) — CoinDesk, July 27, 2026
+- [Storj Labs Bankruptcy: Chapter 11 Restructuring Strategy](https://en.cryptonomist.ch/2026/07/27/storj-labs-bankruptcy/) — CryptoNomist, July 27, 2026
+- [Storj Labs Declares Chapter 11 Bankruptcy Despite $35M in Prior Funding](https://blockonomi.com/storj-labs-declares-chapter-11-bankruptcy-despite-35m-in-prior-funding) — Blockonomi, July 27, 2026
+- [Storj Labs filed for Chapter 11 bankruptcy and token holders are last in line](https://startupfortune.com/storj-labs-filed-for-chapter-11-bankruptcy-and-token-holders-are-last-in-line/) — Startup Fortune, July 27, 2026
+- [Storj Files for Chapter 11, Pre-Filing Node Operator Payments in Limbo](https://www.cryptotimes.io/2026/07/27/storj-files-for-chapter-11-pre-filing-node-operator-payments-in-limbo/) — CryptoTimes, July 27, 2026
+- [Storj Labs files Chapter 11 after raising $35 million](https://crypto.news/storj-labs-files-chapter-11-after-raising-35-million/) — Crypto.news, July 27, 2026
+- [Reliz Technology Group Holdings Inc. (BlockFills) — Claims Agent Key Dates](https://www.veritaglobal.net/BlockFills) — Veritaglobal (Verita Global / KCC), ongoing
+- [BlockFills Crypto Brokerage Pursues Dual-Track Restructuring in Delaware](https://chapter11cases.com/blogs/news/blockfills-crypto-brokerage-pursues-dual-track-restructuring-in-delaware) — Stretto Research Suite, April 2026
+- [Reliz Technology Group Holdings Inc. Bankruptcy Case Summary](https://elevenflo.com/cases/5378) — ElevenFlo, continuously updated
+- [BlockFills — Chapter 11 Case Summary](https://app.bondoro.com/preview/cases/Reliz_Technology_Group_Holdings_Inc/case-summary) — Bondoro, continuously updated
+- [Former Bitcoin Miner Poolin Files Chapter 11, Sets $52 Million Floor Bid for Texas Operations](https://www.theblock.co/post/409587/former-bitcoin-miner-poolin-files-chapter-11-sets-52-million-floor-bid-for-texas-operations) — The Block, July 24, 2026
+- [Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million](https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/) — CryptoSlate, July 24, 2026
+- [Poolin Files Chapter 11 With $52M Asset Sale and $163M in Debt](https://www.tftc.io/poolin-chapter-11-bankruptcy-52-million-west-texas-sale) — TFTC, July 24, 2026
+- [Bitcoin Miner Poolin Technology Files Chapter 11 With $173M Debt](https://news.bitcoin.com/bitcoin-miner-poolin-technology-files-chapter-11-with-173m-debt-as-52m-asset-sale-moves-forward/) — Bitcoin.com News, July 24, 2026
+- [Movement Labs files for Chapter 11 months after token scandal](https://www.coindesk.com/policy/2026/07/21/movement-labs-files-for-chapter-11-months-after-token-scandal-and-strategic-overhaul) — CoinDesk, July 21, 2026
+- [From a $3B Valuation to Bankruptcy: Movement Labs Files Chapter 11](https://www.cryptotimes.io/2026/07/22/from-a-3b-valuation-to-bankruptcy-movement-labs-files-chapter-11/) — CryptoTimes, July 22, 2026
+- [Movement Labs Bankruptcy: How a $141.4M Bet Ended in Collapse](https://www.coingabbar.com/en/crypto-currency-news/movement-labs-bankruptcy-how-a-1414m-bet-ended-in-collapse) — CoinGabbar, July 22, 2026
+>>>>>>> 7769ae9 (Daily briefing 2026-07-29)
 - [Over 60 Crypto Firms and Projects Fold in 2026](https://news.bitcoin.com/featured/over-60-crypto-firms-and-projects-fold-in-2026-as-bankruptcies-bear-market-and-hacks-rip-industry-apart/) — Bitcoin.com News, July 28, 2026
 
 ---
 
+<<<<<<< HEAD
 *This briefing is provided for informational purposes only and does not constitute legal, financial, or investment advice. Verify all docket entries and case developments directly through PACER or the applicable claims administrator before taking any action.*
+=======
+*This briefing is produced for informational purposes only and does not constitute legal advice. Case postures, docket entries, and dollar figures are based on publicly available sources as of the run date; creditors and claimants should verify all primary-source filings before taking action.*
+>>>>>>> 7769ae9 (Daily briefing 2026-07-29)
