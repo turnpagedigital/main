@@ -183,6 +183,14 @@
     });
     list.sort(function (a, b) {
       var cmp = a.date_filed < b.date_filed ? -1 : a.date_filed > b.date_filed ? 1 : 0;
+      if (cmp === 0 && a.slug === b.slug) {
+        // Same day, same case → docket number decides (filing order within the day)
+        var an = a.entry_number == null ? -Infinity : Number(a.entry_number);
+        var bn = b.entry_number == null ? -Infinity : Number(b.entry_number);
+        if (isNaN(an)) an = -Infinity;
+        if (isNaN(bn)) bn = -Infinity;
+        cmp = an < bn ? -1 : an > bn ? 1 : 0;
+      }
       return sortDir === "desc" ? -cmp : cmp;
     });
     return list;
