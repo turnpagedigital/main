@@ -106,56 +106,70 @@
   .foot{max-width:1180px;margin:28px auto 0;padding:24px 32px 50px;border-top:2px solid var(--ink);font-size:11px;color:var(--ink-60);line-height:1.7;}
 </style>
 <style>
-  /* Widen page-title beyond the case-page default */
   .page-title{max-width:1680px;}
-  /* Shell: sidebar + main, expands with viewport */
-  .ud-shell{max-width:1680px;margin:0 auto;padding:24px 32px 60px;display:grid;gap:24px;grid-template-columns:240px 1fr;align-items:start;}
-  @media(max-width:780px){.ud-shell{grid-template-columns:1fr;}}
-  /* Sidebar */
-  .ud-sidebar{background:var(--surface);border:1px solid var(--line-strong);padding:18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:58px;}
-  .ud-section-head{font-size:10px;text-transform:uppercase;letter-spacing:0.22em;font-weight:700;color:var(--ink-40);margin-bottom:8px;}
-  .ud-cb-row,.ud-radio-row{display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;padding:3px 0;}
-  .ud-cb-row input[type="checkbox"],.ud-radio-row input{cursor:pointer;accent-color:var(--neon);flex-shrink:0;}
-  .ud-cb-count{color:var(--ink-60);font-size:11px;flex:1;}
-  /* Color picker swatch + fg toggle */
-  .ud-color-picker{width:20px;height:20px;padding:0;border:1px solid var(--line-strong);cursor:pointer;border-radius:50%;overflow:hidden;background:transparent;flex-shrink:0;}
-  .ud-color-picker::-webkit-color-swatch-wrapper{padding:0;border-radius:50%;}
-  .ud-color-picker::-webkit-color-swatch{border:none;border-radius:50%;}
-  .ud-fg-btn{width:20px;height:20px;padding:0;border:1px solid var(--line-strong);cursor:pointer;border-radius:50%;font-size:9px;font-weight:800;font-family:inherit;line-height:1;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;}
-  .ud-cases-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
-  .ud-cases-head .ud-section-head{margin-bottom:0;}
-  #ud-toggle-all{background:none;border:none;color:var(--ink-60);font-size:10px;cursor:pointer;padding:0;font-family:inherit;text-decoration:underline;letter-spacing:0.02em;}
-  #ud-toggle-all:hover{color:var(--ink);}
-  /* Pills — rounded */
-  .ud-pill{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:0.03em;padding:2px 8px;white-space:nowrap;border-radius:99px;}
-  .ud-pill-bartz-anthropic{background:#D4FF00;color:#0A0A0A;}[data-theme="dark"] .ud-pill-bartz-anthropic{background:#5D7A00;color:#FFFFFF;}
-  .ud-pill-blockfills{background:#60A5FA;color:#0A0A0A;}[data-theme="dark"] .ud-pill-blockfills{background:#1D4ED8;color:#FFFFFF;}
-  .ud-pill-power-block-coin{background:#FB923C;color:#0A0A0A;}[data-theme="dark"] .ud-pill-power-block-coin{background:#C2410C;color:#FFFFFF;}
-  .ud-pill-sleep-number{background:#C084FC;color:#0A0A0A;}[data-theme="dark"] .ud-pill-sleep-number{background:#7E22CE;color:#FFFFFF;}
+  /* Main page area — no sidebar */
+  .ud-page{max-width:1680px;margin:0 auto;padding:20px 32px 60px;}
+  /* Controls bar */
+  .ud-controls{background:var(--surface);border:1px solid var(--line-strong);padding:16px 20px;margin-bottom:16px;display:flex;flex-direction:column;gap:12px;}
+  .ud-search-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .ud-search-wrap{flex:1;min-width:200px;position:relative;}
+  .ud-search-input{width:100%;padding:8px 12px;font-size:15px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
+  .ud-search-input:focus{border-color:var(--neon);}
+  .ud-date-range{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .ud-date-label{font-size:12px;color:var(--ink-60);font-weight:700;letter-spacing:0.04em;white-space:nowrap;}
+  .ud-date-input{padding:7px 10px;font-size:13px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}
+  .ud-date-input:focus{border-color:var(--neon);}
+  .ud-date-sep{color:var(--ink-40);font-size:14px;}
+  .ud-clear-btn{padding:7px 14px;font-size:13px;font-weight:700;font-family:inherit;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;white-space:nowrap;}
+  .ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
+  /* Case chips + filters row */
+  .ud-filter-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .ud-case-chips{display:flex;align-items:center;gap:5px;flex-wrap:wrap;flex:1;}
+  .ud-chip-wrap{display:inline-flex;align-items:center;gap:2px;}
+  .ud-case-chip{display:inline-flex;align-items:center;padding:5px 12px;border-radius:99px;border:2px solid transparent;font-size:13px;font-weight:700;letter-spacing:0.02em;cursor:pointer;font-family:inherit;line-height:1.3;}
+  .ud-case-chip:not(.ud-chip-active){opacity:0.45;filter:grayscale(0.3);}
+  .ud-gear-btn{background:none;border:none;cursor:pointer;font-size:14px;padding:1px 5px;color:var(--ink-60);line-height:1;flex-shrink:0;}
+  .ud-gear-btn:hover{color:var(--ink);}
+  .ud-filter-right{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;}
+  .ud-type-select{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}
+  .ud-type-select:focus{border-color:var(--neon);}
+  .ud-new-label{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;color:var(--ink);}
+  .ud-new-label input{accent-color:var(--neon);cursor:pointer;}
+  /* Color popover */
+  .ud-color-pop{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:220px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}
+  .ud-pop-title{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ud-pop-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;gap:8px;font-size:14px;color:var(--ink-60);cursor:pointer;}
+  .ud-pop-row input[type="color"]{width:40px;height:30px;padding:0;border:1px solid var(--line-strong);cursor:pointer;background:transparent;flex-shrink:0;}
+  .ud-pop-row input[type="color"]::-webkit-color-swatch-wrapper{padding:0;}
+  .ud-pop-row input[type="color"]::-webkit-color-swatch{border:none;}
+  .ud-pop-reset{width:100%;padding:7px;font-size:12px;font-weight:700;font-family:inherit;background:none;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;margin-top:4px;}
+  .ud-pop-reset:hover{border-color:var(--ink-40);color:var(--ink);}
   /* Toolbar */
-  .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
-  #ud-count{font-size:12px;color:var(--ink-60);flex:1;}
-  #ud-sort-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:12px;font-weight:700;padding:5px 12px;cursor:pointer;font-family:inherit;}
+  .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
+  #ud-sort-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;}
   #ud-sort-btn:hover{border-color:var(--ink-40);}
+  /* Pills */
+  .ud-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;padding:2px 10px;white-space:nowrap;border-radius:99px;}
   /* Table */
   .ud-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);table-layout:fixed;}
-  .ud-table th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:10px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}
-  .ud-table td{padding:11px 14px;font-size:12.5px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .ud-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}
+  .ud-table td{padding:12px 14px;font-size:15px;border-bottom:1px solid var(--line);vertical-align:top;}
   .ud-table tr:last-child td{border-bottom:none;}
+  .ud-row-new td{font-weight:700;}
   .ud-date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;overflow:hidden;}
   .ud-case{white-space:nowrap;overflow:hidden;}
-  .ud-party{color:var(--ink-60);font-size:12px;overflow:hidden;}
+  .ud-party{color:var(--ink-60);font-size:13px;overflow:hidden;}
   .ud-party-empty{color:var(--ink-40);}
   .ud-entry{word-break:break-word;}
   .ud-desc{color:var(--ink);}
   .ud-desc-empty{color:var(--ink-40);}
   .ud-doc{white-space:nowrap;text-align:right;overflow:hidden;}
-  .ud-new{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:1px 5px;margin-right:4px;vertical-align:middle;border-radius:3px;}
-  .ud-landmark{display:inline-block;font-size:9px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 5px;margin-right:4px;vertical-align:middle;border-radius:3px;}
-  .ud-link{display:inline-block;font-size:11px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}
+  .ud-landmark{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}
+  .ud-link{display:inline-block;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}
   .ud-link-docket{border-bottom-color:var(--line-strong);}
-  .ud-link-empty{color:var(--ink-40);font-size:11px;}
-  .ud-empty{font-size:13px;color:var(--ink-60);font-style:italic;padding:24px 14px;text-align:center;}
+  .ud-link-empty{color:var(--ink-40);font-size:13px;}
+  .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -178,51 +192,78 @@
   <div class="eyebrow">Intelligence · Live Docket Monitor</div>
   <h1>⚖️ Unified Docket</h1>
   <div class="case-meta">
-    <span><strong>4</strong> tracked cases &nbsp;·&nbsp; <strong>80</strong> total entries</span>
+    <span id="ud-meta">Loading…</span>
   </div>
 </div>
 
-<div class="ud-shell">
-  <aside class="ud-sidebar">
-    <div>
-      <div class="ud-cases-head">
-        <div class="ud-section-head">Cases</div>
-        <button id="ud-toggle-all">Deselect all</button>
-      </div>
-      <label class="ud-cb-row"><input type="checkbox" class="ud-case-cb" value="bartz-anthropic" checked><span class="ud-pill ud-pill-bartz-anthropic">Bartz</span><span class="ud-cb-count">(20)</span><input type="color" id="ud-color-bartz-anthropic" class="ud-color-picker" value="#D4FF00" title="Pick background color for Bartz v. Anthropic"><button id="ud-fg-bartz-anthropic" class="ud-fg-btn" title="Cycle text color: · auto / W white / B black">·</button></label><label class="ud-cb-row"><input type="checkbox" class="ud-case-cb" value="blockfills" checked><span class="ud-pill ud-pill-blockfills">BlockFills</span><span class="ud-cb-count">(20)</span><input type="color" id="ud-color-blockfills" class="ud-color-picker" value="#60A5FA" title="Pick background color for BlockFills"><button id="ud-fg-blockfills" class="ud-fg-btn" title="Cycle text color: · auto / W white / B black">·</button></label><label class="ud-cb-row"><input type="checkbox" class="ud-case-cb" value="power-block-coin" checked><span class="ud-pill ud-pill-power-block-coin">Power Block</span><span class="ud-cb-count">(20)</span><input type="color" id="ud-color-power-block-coin" class="ud-color-picker" value="#FB923C" title="Pick background color for Power Block Coin, LLC"><button id="ud-fg-power-block-coin" class="ud-fg-btn" title="Cycle text color: · auto / W white / B black">·</button></label><label class="ud-cb-row"><input type="checkbox" class="ud-case-cb" value="sleep-number" checked><span class="ud-pill ud-pill-sleep-number">Sleep Number</span><span class="ud-cb-count">(20)</span><input type="color" id="ud-color-sleep-number" class="ud-color-picker" value="#C084FC" title="Pick background color for Sleep Number"><button id="ud-fg-sleep-number" class="ud-fg-btn" title="Cycle text color: · auto / W white / B black">·</button></label>
-    </div>
-    <div>
-      <div class="ud-section-head">Entry Type</div>
-      <label class="ud-radio-row"><input type="radio" class="ud-type-radio" name="ud-type" value="all" checked>All entries</label><label class="ud-radio-row"><input type="radio" class="ud-type-radio" name="ud-type" value="substantive">Substantive only</label><label class="ud-radio-row"><input type="radio" class="ud-type-radio" name="ud-type" value="orders">Orders only</label><label class="ud-radio-row"><input type="radio" class="ud-type-radio" name="ud-type" value="transfers">Transfers only</label>
-    </div>
-    <div>
-      <label class="ud-cb-row">
-        <input type="checkbox" id="ud-new-only"> New only (72h)
-      </label>
-    </div>
-  </aside>
-
-  <main>
-    <div class="ud-toolbar">
-      <span id="ud-count"></span>
-      <button id="ud-sort-btn">Date ↓</button>
-    </div>
-    <table class="ud-table">
-      <thead><tr>
-        <th style="width:90px">Date</th>
-        <th style="width:130px">Case</th>
-        <th style="width:140px">Party</th>
-        <th>Entry</th>
-        <th style="width:80px;text-align:right">Doc</th>
-      </tr></thead>
-      <tbody id="ud-tbody">
-        <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
-      </tbody>
-    </table>
-  </main>
+<!-- Color popover (shared, repositioned by JS) -->
+<div id="ud-color-pop" class="ud-color-pop" style="display:none;">
+  <div class="ud-pop-title" id="ud-pop-slug"></div>
+  <label class="ud-pop-row">
+    <span>Background</span>
+    <input type="color" id="ud-pop-bg" value="#888888">
+  </label>
+  <label class="ud-pop-row">
+    <span>Text</span>
+    <input type="color" id="ud-pop-fg" value="#ffffff">
+  </label>
+  <button id="ud-pop-reset" class="ud-pop-reset">Reset to default</button>
 </div>
 
-<script type="application/json" id="docket-data">[{"slug":"bartz-anthropic","display_name":"Bartz v. Anthropic","short_name":"Bartz","docket_url":"https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/","default_color":"#D4FF00","entries":[{"entry_number":681,"date_filed":"2026-07-21","date_display":"Jul 21, 2026","description":"REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)","is_new":true,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.681.0.pdf"},{"entry_number":680,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/","is_new":true,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_5.pdf"},{"entry_number":679,"date_filed":"2026-07-13","date_display":"Jul 13, 2026","description":"Brief re 676 Objection,, -DEFENDANT ANTHROPIC PBCS OPPOSITION TO APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT filed byAnthropic PBC. (Related document(s) 676 ) (Winthrop, Douglas) (Filed on 7/13/2026) (E","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.679.0.pdf"},{"entry_number":678,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Brief re 676 Objection,, re: Passman Late Opt-Out Request and Late Objections filed byAndrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Attachments: # 1 Declaration of Jennifer M. Keough)(Related document(s) 676 ) (Nelson, Justin) (Filed on ","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.678.0.pdf"},{"entry_number":null,"date_filed":"2026-07-01","date_display":"Jul 1, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":677,"date_filed":"2026-07-01","date_display":"Jul 1, 2026","description":"NOTICE of Appearance filed by Kenneth David Freundlich on behalf of Donald S. Passman (Freundlich, Kenneth) (Filed on 7/1/2026) (Entered: 07/01/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":676,"date_filed":"2026-06-30","date_display":"Jun 30, 2026","description":"OBJECTIONS to re 632 Order,,, Set Deadlines/Hearings,, 672 Response ( Non Motion ), 671 Supplemental Brief APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT; AND IN THE ALTERNATIVE, CONDITIONAL OBJECTION TO F","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.676.0.pdf"},{"entry_number":675,"date_filed":"2026-06-25","date_display":"Jun 25, 2026","description":"NOTICE of Withdrawal filed by Mark Alan Lemley, no longer appearing on behalf of Anthropic PBC in this case (Lemley, Mark) (Filed on 6/25/2026) (Entered: 06/25/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":null,"date_filed":"2026-06-25","date_display":"Jun 25, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":674,"date_filed":"2026-06-04","date_display":"Jun 4, 2026","description":"ORDER TO WITHDRAW AS ATTORNEY GRANTING 669 Motion to Withdraw as Attorney. Signed by Judge Araceli Martinez-Olguin on 6/4/2026. (jlg, COURT STAFF) (Filed on 6/4/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice o","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.674.0_1.pdf"},{"entry_number":null,"date_filed":"2026-05-29","date_display":"May 29, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":673,"date_filed":"2026-05-29","date_display":"May 29, 2026","description":"NOTICE of Withdrawal filed by Molly Alana Karlin, no longer appearing on behalf of Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson in this case (Karlin, Molly) (Filed on 5/29/2026) (Entered: 05/29/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":672,"date_filed":"2026-05-21","date_display":"May 21, 2026","description":"RESPONSE re 664 Order,,, Class Counsel's Response to Court's Order Regarding Second Supplemental Proposed Order by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Attachments: # 1 Exhibit 1 - Clean Second Supplemental Proposed Order, # 2 E","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.672.0_1.pdf"},{"entry_number":671,"date_filed":"2026-05-21","date_display":"May 21, 2026","description":"Supplemental Brief -DEFENDANT ANTHROPIC PBCS SUPPLEMENTAL BRIEF REGARDING LATE OPT OUTS filed byAnthropic PBC. (Farris, Joseph) (Filed on 5/21/2026) (Entered: 05/21/2026)","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.671.0.pdf"},{"entry_number":670,"date_filed":"2026-05-20","date_display":"May 20, 2026","description":"RELATED CASE ORDER. Signed by Judge Araceli Martinez-Olguin on 5/20/2026. (jlg, COURT STAFF) (Filed on 5/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF) (Entered: 05/20/2026)","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.670.0_1.pdf"},{"entry_number":669,"date_filed":"2026-05-19","date_display":"May 19, 2026","description":"MOTION to Withdraw as Attorney filed by Fairmark Partners LLP. Responses due by 6/2/2026. Replies due by 6/9/2026. (Attachments: # 1 Proposed Order)(Onayemi, Yinka) (Filed on 5/19/2026) (Entered: 05/19/2026)","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.669.0.pdf"},{"entry_number":667,"date_filed":"2026-05-15","date_display":"May 15, 2026","description":"*order not processed. Filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 05/14/2026 before Judge Araceli Martinez-Olguin by Anthropic PBC, for Recorded Proceeding - San Francisco. (Farris, Joseph) (Filed on 5/15/2026) Modified on 5/15/2026 (jaf, COURT STAFF). (Entere","is_new":false,"landmark":"","doc_url":""},{"entry_number":668,"date_filed":"2026-05-15","date_display":"May 15, 2026","description":"Transcript of Proceedings held on 5-14-26, before Judge Martinez-Olguin. Court Reporter/Transcriber Andrea Bluedorn, telephone number Phone: 715-965-2298. Email: andrea_bluedorn@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be vie","is_new":false,"landmark":"","doc_url":""},{"entry_number":null,"date_filed":"2026-05-14","date_display":"May 14, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":665,"date_filed":"2026-05-14","date_display":"May 14, 2026","description":"*order not processed, filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 5/14/2026 before Judge Araceli Martinez-Olguin by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc., for Recorded Proceeding - San Francisco. (Haselkorn, Ame","is_new":false,"landmark":"","doc_url":""}]},{"slug":"blockfills","display_name":"BlockFills","short_name":"BlockFills","docket_url":"https://www.courtlistener.com/docket/72494188/","default_color":"#60A5FA","entries":[{"entry_number":null,"date_filed":"2026-07-17","date_display":"Jul 17, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":530,"date_filed":"2026-07-15","date_display":"Jul 15, 2026","description":"Certificate of Service re: Second Monthly Fee Application of Cole Schotz P.C., Counsel to the Debtors at the Sole Direction of the Disinterested Director, for Allowance of Compensation and Reimbursement of Expenses for the Period from May 1, 2026 Through May 31, 2026 (related doc","is_new":false,"landmark":"","doc_url":""},{"entry_number":529,"date_filed":"2026-07-14","date_display":"Jul 14, 2026","description":"Certificate of Service re: Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates (related document(s)527) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (","is_new":false,"landmark":"","doc_url":""},{"entry_number":528,"date_filed":"2026-07-14","date_display":"Jul 14, 2026","description":"Monthly Application for Compensation and Reimbursement of Expenses of Cole Schotz P.C., Counsel to the Debtors at the Sole Direction of the Disinterested Director for the period May 1, 2026 to May 31, 2026 Filed by Reliz Technology Group Holdings Inc.. Objections due by 8/4/2026.","is_new":false,"landmark":"","doc_url":""},{"entry_number":525,"date_filed":"2026-07-13","date_display":"Jul 13, 2026","description":"Court Date & Time [07/13/2026 09:59:23 AM]. File Size [ 1414 KB ]. Run Time [ 00:05:51 ]. (admin). (Entered: 07/13/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":526,"date_filed":"2026-07-13","date_display":"Jul 13, 2026","description":"Hearing Held/Court Sign-In Sheet (related document(s)509, 516) (IJW) (Entered: 07/13/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":527,"date_filed":"2026-07-13","date_display":"Jul 13, 2026","description":"Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates (related document(s)488, 502, 503, 504, 510) Order Signed on 7/13/2026. (Attachments: # 1 Exhibit A # 2 Exhibit B)","is_new":false,"landmark":"","doc_url":""},{"entry_number":517,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Chapter 11 Monthly Operating Report for the Month Ending: 05/31/2026 Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 May MOR Support Schedules) (Hurst, David) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":516,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Amended Notice of Agenda of Matters Scheduled for Hearing Filed by Reliz Technology Group Holdings Inc.. Hearing scheduled for 7/13/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 5th Fl., Courtroom #5, Wilmington, Delaware. (Hurst, David) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":518,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Chapter 11 Monthly Operating Report for Case Number 26-10373 (Reliz Technologies LLC) for the Month Ending: 05/31/2026 Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 May MOR Support Schedules) (Hurst, David) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":511,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: Deus X Pay Europe UAB (Amount $39,057.67) To Bradford Capital Holdings LP. Filed by Bradford Capital Management, LLC. (Brager, Brian) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":522,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Certificate of Service re: Documents Served on July 8, 2026 (related document(s)500, 501, 502, 503, 504, 505) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (Kass, Albert) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":514,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 26-10371-TMH) [claims,trclm11] ( 28.00). Receipt Number A12739006, amount $ 28.00. (U.S. Treasury) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":515,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Exhibit(s) // Notice of Filing of (I) Revised Proposed Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates and (II) Redline Thereof (related document(s)505, 510) File","is_new":false,"landmark":"","doc_url":""},{"entry_number":524,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Certificate of Service re: Documents Served on July 10, 2026 (related document(s)510, 515, 516, 517, 518, 519, 520, 521) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (Kass, Albert) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":510,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Exhibit(s) // Notice of Filing of (I) Modified Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates; and (II) Redline Thereof (related document(s)128, 391, 488) Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 Exhi","is_new":false,"landmark":"","doc_url":""},{"entry_number":519,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Chapter 11 Monthly Operating Report for Case Number 26-10374 (Reliz CI LTD) for the Month Ending: 05/31/2026 Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 May MOR Support Schedules) (Hurst, David) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":513,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: EdgeIn Inc (Amount $4,995.99) To Bradford Capital Holdings LP. Filed by Bradford Capital Management, LLC. (Brager, Brian) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":520,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"Chapter 11 Monthly Operating Report for Case Number 26-10375 (Reliz LTD) for the Month Ending: 05/31/2026 Filed by Reliz Technology Group Holdings Inc.. (Attachments: # 1 May MOR Support Schedules) (Hurst, David) (Entered: 07/10/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":null,"date_filed":"2026-07-10","date_display":"Jul 10, 2026","description":"","is_new":false,"landmark":"","doc_url":""}]},{"slug":"power-block-coin","display_name":"Power Block Coin, LLC","short_name":"Power Block","docket_url":"https://www.courtlistener.com/docket/68873409/power-block-coin-llc/","default_color":"#FB923C","entries":[{"entry_number":531,"date_filed":"2026-07-06","date_display":"Jul 6, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":529,"date_filed":"2026-07-06","date_display":"Jul 6, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":530,"date_filed":"2026-07-06","date_display":"Jul 6, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":528,"date_filed":"2026-07-01","date_display":"Jul 1, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":527,"date_filed":"2026-07-01","date_display":"Jul 1, 2026","description":"","is_new":false,"landmark":"","doc_url":""},{"entry_number":523,"date_filed":"2026-06-24","date_display":"Jun 24, 2026","description":"Reply to (related document(s):514 Application to Employ Attorney) Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/24/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":526,"date_filed":"2026-06-24","date_display":"Jun 24, 2026","description":"Adversary Proceeding 26-02122. Complaint by Angela Somers against Coinbase Global, Inc. Coinbase Inc. Coinbase Financial Markets, Aaron Tilton, Brad Jones. Fee Amount $350. Payment Not Due at this Time: Fee Deferred. Nature of Suit(s): [14 (Recovery of money/property - other)]. (","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.526.0.pdf"},{"entry_number":524,"date_filed":"2026-06-24","date_display":"Jun 24, 2026","description":"Response to (related document(s):514 Application to Employ Attorney) Supplement to Application to Employ HLH Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/24/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":525,"date_filed":"2026-06-24","date_display":"Jun 24, 2026","description":"Pending Order Re: 524 Response. (Lee, Trevor) [Order# 479287] (EOD: 06/24/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":522,"date_filed":"2026-06-22","date_display":"Jun 22, 2026","description":"Pending Order Re: 521 Motion Extend Time. (Lee, Trevor) [Order# 479115] (EOD: 06/22/2026)","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.522.0.pdf"},{"entry_number":521,"date_filed":"2026-06-22","date_display":"Jun 22, 2026","description":"Motion to Extend Time to File Monthly Operating Reports Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/22/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":520,"date_filed":"2026-06-17","date_display":"Jun 17, 2026","description":"Objection to (related document(s):514 Application to Employ Attorney) Filed by Parsons Behle & Latimer. (Rothschild, Brian) (EOD: 06/17/2026)","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.520.0.pdf"},{"entry_number":519,"date_filed":"2026-06-09","date_display":"Jun 9, 2026","description":"Supplemental Declaration re: (related document(s):496 USTR Appointment of Chapter 11 Trustee) Supplemental Declaration in Support of Appointment as Chapter 11 Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/09/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":518,"date_filed":"2026-06-04","date_display":"Jun 4, 2026","description":"Notice of Change of Address of Chapter 11 Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/04/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":514,"date_filed":"2026-06-02","date_display":"Jun 2, 2026","description":"Ex Parte Application to Employ Hoggan Lee Hutchinson as Attorney for Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/02/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":515,"date_filed":"2026-06-02","date_display":"Jun 2, 2026","description":"Pending Order Re: 514 Application to Employ Attorney. (Lee, Trevor) [Order# 478400] (EOD: 06/02/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":516,"date_filed":"2026-06-02","date_display":"Jun 2, 2026","description":"Ex Parte Application to Employ J.S. Held as Financial Advisor to Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/02/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":513,"date_filed":"2026-06-02","date_display":"Jun 2, 2026","description":"Notice of Rescheduled Hearing Re: 506 Application for Compensation. Hearing scheduled for 7/8/2026 at 02:30 PM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. Deadline for filing objections: 6/1/2026. (mfr) (EOD: 06/02/2026)","is_new":false,"landmark":"","doc_url":""},{"entry_number":517,"date_filed":"2026-06-02","date_display":"Jun 2, 2026","description":"Pending Order Re: 516 Application to Employ (Professional). (Lee, Trevor) [Order# 478401] (EOD: 06/02/2026)","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.517.0_1.pdf"},{"entry_number":511,"date_filed":"2026-05-24","date_display":"May 24, 2026","description":"Certificate of Service Re: Miscellaneous Pleadings Notice Date 05/24/2026. (Admin.) (EOD: 05/24/2026)","is_new":false,"landmark":"","doc_url":""}]},{"slug":"sleep-number","display_name":"Sleep Number","short_name":"Sleep Number","docket_url":"https://www.courtlistener.com/docket/73476260/sleep-number-corporation/","default_color":"#C084FC","entries":[{"entry_number":430,"date_filed":"2026-07-21","date_display":"Jul 21, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":429,"date_filed":"2026-07-21","date_display":"Jul 21, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":431,"date_filed":"2026-07-21","date_display":"Jul 21, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":428,"date_filed":"2026-07-21","date_display":"Jul 21, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":432,"date_filed":"2026-07-21","date_display":"Jul 21, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":null,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":null,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"Pending Deadlines Terminated RE: Motion to Authorize / Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the Stalking Horse Bidder fo","is_new":true,"landmark":"","doc_url":""},{"entry_number":425,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":426,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":null,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":410,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"Notice of Adjournment of Hearing RE: Proposed Order / Notice of Revised Proposed Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, ","is_new":true,"landmark":"","doc_url":""},{"entry_number":null,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"Pending Deadlines Terminated RE: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders, Pursuant to 11 U.S.C. Sections 105, 361, 362, 363, 364, 503, 506, 507 and 552 (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Fi","is_new":true,"landmark":"","doc_url":""},{"entry_number":408,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"Notice of Adjournment of Hearing Re: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Ad","is_new":true,"landmark":"","doc_url":""},{"entry_number":409,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"Notice of Adjournment of Hearing RE: Objection to Motion UNITED STATES TRUSTEES OBJECTION TO MOTION OF THE DEBTORS FOR ENTRY OF INTERIM AND FINAL ORDERS AUTHORIZING (I) THE DEBTORS TO (A) HONOR PREPETITION EMPLOYEE OBLIGATIONS AND DIRECTOR OBLIGATIONS AND (B) MAINTAIN EMPLOYEE BE","is_new":true,"landmark":"","doc_url":""},{"entry_number":427,"date_filed":"2026-07-20","date_display":"Jul 20, 2026","description":"","is_new":true,"landmark":"","doc_url":""},{"entry_number":402,"date_filed":"2026-07-19","date_display":"Jul 19, 2026","description":"Notice of Proposed Order / Notice of Revised Proposed Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Current and Former Emp","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.402.0.pdf"},{"entry_number":404,"date_filed":"2026-07-19","date_display":"Jul 19, 2026","description":"Statement of the Official Committee of Unsecured Creditors in Support of the Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs ","is_new":false,"landmark":"","doc_url":""},{"entry_number":405,"date_filed":"2026-07-19","date_display":"Jul 19, 2026","description":"Statement of the Official Committee of Unsecured Creditors' in Support of the Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the S","is_new":false,"landmark":"","doc_url":""},{"entry_number":406,"date_filed":"2026-07-19","date_display":"Jul 19, 2026","description":"Notice of Proposed Order / Notice of (A) Revised Proposed Order (I) Approving Sale of Debtors Assets Free and Clear of Liens, Claims, Interests and Encumbrances, (II) Authorizing Assumption and Assignment of Executory Contracts and Unexpired Leases, and (III) Granting Related Rel","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.406.0.pdf"},{"entry_number":403,"date_filed":"2026-07-19","date_display":"Jul 19, 2026","description":"Reply to Motion / Reply in Support of the Debtors Motion for Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Cu","is_new":false,"landmark":"","doc_url":"https://www.courtlistener.comrecap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.403.0.pdf"}]}]</script>
+<div class="ud-page">
+
+  <div class="ud-controls">
+    <div class="ud-search-row">
+      <div class="ud-search-wrap">
+        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search entries, parties, dates…">
+      </div>
+      <div class="ud-date-range">
+        <span class="ud-date-label">From</span>
+        <input type="date" id="ud-date-from" class="ud-date-input">
+        <span class="ud-date-sep">–</span>
+        <span class="ud-date-label">To</span>
+        <input type="date" id="ud-date-to" class="ud-date-input">
+        <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
+      </div>
+    </div>
+    <div class="ud-filter-row">
+      <div id="ud-case-chips" class="ud-case-chips">
+        <span style="font-size:13px;color:var(--ink-40)">Loading cases…</span>
+      </div>
+      <div class="ud-filter-right">
+        <select id="ud-entry-type" class="ud-type-select">
+          <option value="all">All entries</option>
+          <option value="substantive">Substantive only</option>
+          <option value="orders">Orders only</option>
+          <option value="transfers">Transfers only</option>
+        </select>
+        <label class="ud-new-label">
+          <input type="checkbox" id="ud-new-only"> New only (72h)
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="ud-toolbar">
+    <span id="ud-count"></span>
+    <button id="ud-sort-btn">Date ↓</button>
+  </div>
+
+  <table class="ud-table">
+    <thead><tr>
+      <th style="width:96px">Date</th>
+      <th style="width:140px">Case</th>
+      <th style="width:150px">Party</th>
+      <th>Entry</th>
+      <th style="width:86px;text-align:right">Doc</th>
+    </tr></thead>
+    <tbody id="ud-tbody">
+      <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
 <script src="unified-docket.js"></script>
 
 </body>

@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "bartz-anthropic",
+    "display_name": "Bartz v. Anthropic",
+    "short_name": "Bartz",
+    "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
+    "default_color": "#D4FF00"
+  },
+  {
+    "slug": "blockfills",
+    "display_name": "BlockFills",
+    "short_name": "BlockFills",
+    "docket_url": "https://www.courtlistener.com/docket/72494188/",
+    "default_color": "#60A5FA"
+  },
+  {
+    "slug": "power-block-coin",
+    "display_name": "Power Block Coin, LLC",
+    "short_name": "Power Block",
+    "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
+    "default_color": "#FB923C"
+  },
+  {
+    "slug": "sleep-number",
+    "display_name": "Sleep Number",
+    "short_name": "Sleep Number",
+    "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
+    "default_color": "#C084FC"
+  }
+]
