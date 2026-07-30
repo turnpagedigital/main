@@ -129,6 +129,12 @@
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  function isNewEntry(dateFiled) {
+    if (!dateFiled) return false;
+    var cutoff = new Date(Date.now() - 24 * 3600 * 1000).toISOString().slice(0, 10);
+    return dateFiled >= cutoff;
+  }
+
   // ── Build flat entry list from loaded cases ────────────────────────────────
   function buildAllEntries() {
     ALL = [];
@@ -145,7 +151,7 @@
           date_filed:    e.date_filed || "",
           date_display:  e.date_display || e.date_filed || "",
           description:   (e.description || "").trim(),
-          is_new:        !!e.is_new,
+          is_new:        isNewEntry(e.date_filed),
           doc_url:       e.doc_url || "",
           landmark:      e.landmark || "",
           type:          classifyEntry(e.description),
@@ -160,6 +166,7 @@
     var sq = searchText.toLowerCase().trim();
     var list = ALL.filter(function (e) {
       if (!activeCases[e.slug]) return false;
+      if (!e.description && e.entry_number == null && !e.doc_url) return false;
       if (categoryFilter !== "all" && e.category !== categoryFilter) return false;
       if (newOnly && !e.is_new) return false;
       if (entryFilter === "substantive" && !SUBSTANTIVE[e.type]) return false;
@@ -357,22 +364,32 @@
       if (e.landmark) {
         badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span> ";
       }
+      var newPill = e.is_new ? ' <span class="ud-new-pill">NEW</span>' : "";
       var descHtml = e.description
-        ? badges + '<span class="ud-desc">' + esc(e.description) + "</span>"
-        : badges + '<span class="ud-desc ud-desc-empty">—</span>';
+        ? badges + '<span class="ud-desc">' + esc(e.description) + "</span>" + newPill
+        : badges + '<span class="ud-desc ud-desc-empty">—</span>' + newPill;
       var partyHtml = e.party
         ? esc(e.party)
         : '<span class="ud-party-empty">—</span>';
-      var dktLabel = "Dkt. " + (e.entry_number != null ? String(e.entry_number) : "—");
+      var entryNum = e.entry_number != null ? String(e.entry_number) : null;
+      var dktLabel = "Dkt. " + entryNum;
       var linkHtml;
-      if (e.doc_url) {
+      if (entryNum && e.docket_url && e.docket_url.indexOf("courtlistener.com") !== -1) {
+        var entryUrl = e.docket_url.replace(/\/+$/, "") +
+          "/?filed_after=&filed_before=&entry_gte=" + entryNum +
+          "&entry_lte=" + entryNum + "&order_by=asc";
+        linkHtml = '<a class="ud-link" href="' + esc(entryUrl) + '" target="_blank" rel="noopener">' +
+          esc(dktLabel) + " ↗</a>";
+      } else if (entryNum && e.doc_url) {
         linkHtml = '<a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">' +
           esc(dktLabel) + " ↗</a>";
-      } else if (e.docket_url) {
+      } else if (entryNum && e.docket_url) {
         linkHtml = '<a class="ud-link ud-link-docket" href="' + esc(e.docket_url) + '" target="_blank" rel="noopener">' +
           esc(dktLabel) + " ↗</a>";
-      } else {
+      } else if (entryNum) {
         linkHtml = '<span class="ud-link-empty">' + esc(dktLabel) + "</span>";
+      } else {
+        linkHtml = '<span class="ud-link-empty">—</span>';
       }
       var rowCls = e.is_new ? ' class="ud-row-new"' : "";
       return (
@@ -403,7 +420,7 @@
             slug:          m.slug,
             display_name:  m.display_name,
             short_name:    m.short_name,
-            docket_url:    m.docket_url || "",
+            docket_url:    (caseData.docket && caseData.docket.docket_url) || m.docket_url || "",
             default_color: m.default_color || "#888888",
             category:      m.category || "other",
             entries:       (caseData.docket && caseData.docket.entries) || [],

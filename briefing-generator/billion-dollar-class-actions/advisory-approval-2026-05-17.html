@@ -5,29 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>$1B+ Class Actions — Advisory Approval | May 17, 2026</title>
 
-<script>
-(function(){
-  var K='daily-briefing-theme';
-  var ST=['system','light','dark'];
-  var IC={light:'☀️',dark:'🌙',system:'🖥️'};
-  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
-  function apply(){
-    var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
-    var b=document.getElementById('theme-toggle');
-    if(b){b.textContent=IC[t];b.title='Theme: '+t;}
-  }
-  window.cycleTheme=function(){
-    var c=localStorage.getItem(K)||'system';
-    var n=ST[(ST.indexOf(c)+1)%ST.length];
-    localStorage.setItem(K,n);apply();
-  };
-  apply();
-  if(document.readyState!=='loading') apply();
-  else document.addEventListener('DOMContentLoaded',apply);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
-})();
-</script>
+<script src="../theme.js"></script>
 
 <style>
 :root{color-scheme:light dark;}
@@ -480,7 +458,7 @@ body{font-family:'Archivo',-apple-system,BlinkMacSystemFont,Arial,sans-serif;bac
 <nav class="tn">
   <div class="tn-row brand">
     <a class="tn-brand" href="../rewind-tariffs/dashboard.html"><img class="tn-brand-logo" alt="Turnpage" src="/assets/turnpage-logo.jpeg"></a>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
   <div class="tn-row tn-tabs-row">
     <div class="tn-tab">

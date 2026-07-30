@@ -4,36 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bartz v. Anthropic — Case Docket | Turnpage Daily Briefing</title>
-<script>
-(function(){
-  var K='daily-briefing-theme';
-  var ST=['system','dark','light'];
-  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
-  var LB={dark:'Dark',light:'Light',system:'System'};
-  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
-  function apply(){
-    var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
-    document.documentElement.setAttribute('data-theme-pref',t);
-    var b=document.getElementById('theme-toggle');
-    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
-  }
-  window.cycleTheme=function(){
-    var c=localStorage.getItem(K)||'system';
-    var n=ST[(ST.indexOf(c)+1)%ST.length];
-    localStorage.setItem(K,n);apply();
-  };
-  apply();
-  if(document.readyState!=='loading') apply();
-  else document.addEventListener('DOMContentLoaded',apply);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
-})();
-</script>
+<script src="../theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
-  [data-theme="dark"]{--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
+  :root{color-scheme:light;--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
+  [data-theme="dark"]{color-scheme:dark;--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
   a{color:var(--ink);}
@@ -115,10 +91,10 @@
 <nav class="tn">
   <div class="tn-row">
     <div class="tn-left">
-      <a class="tn-brand" href="/index.html"><img class="tn-brand-logo" alt="Turnpage" src="/assets/turnpage-logo.jpeg"></a>
+      <a class="tn-brand" href="../index.html"><img class="tn-brand-logo" alt="Turnpage" src="../assets/turnpage-logo.jpeg"></a>
       <a class="tn-back" href="../llm-class-action/dashboard.html">← 🤖 LLM / Copyright briefing</a>
     </div>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -137,21 +113,21 @@
 
 
 <main class="wrap">
-  <div class="panel"><div class="panel-head"><h2>Docket</h2><div class="meta"><span class="tc-counter active"><span class="tc-pip"></span>2 new · 72h</span><span class="src">via CourtListener</span></div></div><table><thead><tr><th style="width:54px;">Dkt.</th><th style="width:104px;">Filed</th><th>Entry</th></tr></thead><tbody>
-<tr class="is-new"><td class="dkt">681</td><td class="date">Jul 21, 2026</td><td>REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)<span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">680</td><td class="date">Jul 20, 2026</td><td>ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/<span class="new-pill">NEW</span></td></tr>
+  <div class="panel"><div class="panel-head"><h2>Docket</h2><div class="meta"><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span><span class="src">via CourtListener</span></div></div><table><thead><tr><th style="width:54px;">Dkt.</th><th style="width:104px;">Filed</th><th>Entry</th></tr></thead><tbody>
+<tr><td class="dkt">681</td><td class="date">Jul 21, 2026</td><td>REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)</td></tr>
+<tr><td class="dkt">680</td><td class="date">Jul 20, 2026</td><td>ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/</td></tr>
 <tr><td class="dkt">679</td><td class="date">Jul 13, 2026</td><td>Brief re 676 Objection,, -DEFENDANT ANTHROPIC PBCS OPPOSITION TO APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT filed byAnthropic PBC. (Related document(s) 676 ) (Winthrop, Douglas) (Filed on 7/13/2026) (E</td></tr>
 <tr><td class="dkt">678</td><td class="date">Jul 10, 2026</td><td>Brief re 676 Objection,, re: Passman Late Opt-Out Request and Late Objections filed byAndrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Attachments: # 1 Declaration of Jennifer M. Keough)(Related document(s) 676 ) (Nelson, Justin) (Filed on</td></tr>
-<tr><td class="dkt">—</td><td class="date">Jul 1, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
 <tr><td class="dkt">677</td><td class="date">Jul 1, 2026</td><td>NOTICE of Appearance filed by Kenneth David Freundlich on behalf of Donald S. Passman (Freundlich, Kenneth) (Filed on 7/1/2026) (Entered: 07/01/2026)</td></tr>
+<tr><td class="dkt">—</td><td class="date">Jul 1, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
 <tr><td class="dkt">676</td><td class="date">Jun 30, 2026</td><td>OBJECTIONS to re 632 Order,,, Set Deadlines/Hearings,, 672 Response ( Non Motion ), 671 Supplemental Brief APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT; AND IN THE ALTERNATIVE, CONDITIONAL OBJECTION TO F</td></tr>
-<tr><td class="dkt">675</td><td class="date">Jun 25, 2026</td><td>NOTICE of Withdrawal filed by Mark Alan Lemley, no longer appearing on behalf of Anthropic PBC in this case (Lemley, Mark) (Filed on 6/25/2026) (Entered: 06/25/2026)</td></tr>
 <tr><td class="dkt">—</td><td class="date">Jun 25, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
+<tr><td class="dkt">675</td><td class="date">Jun 25, 2026</td><td>NOTICE of Withdrawal filed by Mark Alan Lemley, no longer appearing on behalf of Anthropic PBC in this case (Lemley, Mark) (Filed on 6/25/2026) (Entered: 06/25/2026)</td></tr>
 <tr><td class="dkt">674</td><td class="date">Jun 4, 2026</td><td>ORDER TO WITHDRAW AS ATTORNEY GRANTING 669 Motion to Withdraw as Attorney. Signed by Judge Araceli Martinez-Olguin on 6/4/2026. (jlg, COURT STAFF) (Filed on 6/4/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice o</td></tr>
-<tr><td class="dkt">—</td><td class="date">May 29, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
 <tr><td class="dkt">673</td><td class="date">May 29, 2026</td><td>NOTICE of Withdrawal filed by Molly Alana Karlin, no longer appearing on behalf of Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson in this case (Karlin, Molly) (Filed on 5/29/2026) (Entered: 05/29/2026)</td></tr>
-<tr><td class="dkt">672</td><td class="date">May 21, 2026</td><td>RESPONSE re 664 Order,,, Class Counsel's Response to Court's Order Regarding Second Supplemental Proposed Order by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Attachments: # 1 Exhibit 1 - Clean Second Supplemental Proposed Order, # 2 E</td></tr>
+<tr><td class="dkt">—</td><td class="date">May 29, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
 <tr><td class="dkt">671</td><td class="date">May 21, 2026</td><td>Supplemental Brief -DEFENDANT ANTHROPIC PBCS SUPPLEMENTAL BRIEF REGARDING LATE OPT OUTS filed byAnthropic PBC. (Farris, Joseph) (Filed on 5/21/2026) (Entered: 05/21/2026)</td></tr>
+<tr><td class="dkt">672</td><td class="date">May 21, 2026</td><td>RESPONSE re 664 Order,,, Class Counsel's Response to Court's Order Regarding Second Supplemental Proposed Order by Andrea Bartz, Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, MJ + KJ, Inc.. (Attachments: # 1 Exhibit 1 - Clean Second Supplemental Proposed Order, # 2 E</td></tr>
 <tr><td class="dkt">670</td><td class="date">May 20, 2026</td><td>RELATED CASE ORDER. Signed by Judge Araceli Martinez-Olguin on 5/20/2026. (jlg, COURT STAFF) (Filed on 5/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF) (Entered: 05/20/2026)</td></tr>
 <tr><td class="dkt">669</td><td class="date">May 19, 2026</td><td>MOTION to Withdraw as Attorney filed by Fairmark Partners LLP. Responses due by 6/2/2026. Replies due by 6/9/2026. (Attachments: # 1 Proposed Order)(Onayemi, Yinka) (Filed on 5/19/2026) (Entered: 05/19/2026)</td></tr>
 <tr><td class="dkt">667</td><td class="date">May 15, 2026</td><td>*order not processed. Filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 05/14/2026 before Judge Araceli Martinez-Olguin by Anthropic PBC, for Recorded Proceeding - San Francisco. (Farris, Joseph) (Filed on 5/15/2026) Modified on 5/15/2026 (jaf, COURT STAFF). (Entere</td></tr>

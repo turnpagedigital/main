@@ -4,31 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>$1B+ Class Actions — Refine This Tab</title>
-<script>
-(function(){
-  var K='daily-briefing-theme';
-  var ST=['system','dark','light'];
-  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
-  var LB={dark:'Dark',light:'Light',system:'System'};
-  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
-  function apply(){
-    var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
-    document.documentElement.setAttribute('data-theme-pref',t);
-    var b=document.getElementById('theme-toggle');
-    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
-  }
-  window.cycleTheme=function(){
-    var c=localStorage.getItem(K)||'system';
-    var n=ST[(ST.indexOf(c)+1)%ST.length];
-    localStorage.setItem(K,n);apply();
-  };
-  apply();
-  if(document.readyState!=='loading') apply();
-  else document.addEventListener('DOMContentLoaded',apply);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
-})();
-</script>
+<script src="../theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
 <style>
   :root { --bg:#000000; --surface:#0A0A0A; --surface-2:#16161B; --border:rgba(255,255,255,0.12); --text:#FFFFFF; --text-dim:rgba(255,255,255,0.6); --text-muted:rgba(255,255,255,0.4); --accent:#D4FF00; --accent-dim:#A8CC00; --good:#D4FF00; }
@@ -376,7 +352,7 @@
 <nav class="tn">
   <div class="tn-row brand">
     <a class="tn-brand" href="../daily-briefing/dashboard-latest.html"><img class="tn-brand-logo" alt="Turnpage" src="/assets/turnpage-logo.jpeg"></a>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
   <div class="tn-row tn-tabs-row">
     <div class="tn-tab">

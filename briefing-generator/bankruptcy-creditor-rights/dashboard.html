@@ -4,31 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>📜 Bankruptcy Creditor Rights | Turnpage Daily Briefing</title>
-<script>
-(function(){
-  var K='daily-briefing-theme';
-  var ST=['system','dark','light'];
-  var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f'};
-  var LB={dark:'Dark',light:'Light',system:'System'};
-  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
-  function apply(){
-    var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
-    document.documentElement.setAttribute('data-theme-pref',t);
-    var b=document.getElementById('theme-toggle');
-    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
-  }
-  window.cycleTheme=function(){
-    var c=localStorage.getItem(K)||'system';
-    var n=ST[(ST.indexOf(c)+1)%ST.length];
-    localStorage.setItem(K,n);apply();
-  };
-  apply();
-  if(document.readyState!=='loading') apply();
-  else document.addEventListener('DOMContentLoaded',apply);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
-})();
-</script>
+<script src="../theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
@@ -370,7 +346,7 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 <nav class="tn">
   <div class="tn-row brand">
     <a class="tn-brand" href="../daily-briefing/index.html"><img class="tn-brand-logo" alt="Turnpage" src="../daily-briefing/assets/turnpage-logo.jpeg"></a>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
   <div class="tn-row tn-tabs-row">
     <div class="tn-tab">
@@ -439,9 +415,10 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 </style>
 <section class="box tracked-cases">
   <h2>Tracked Cases</h2>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/blockfills.html">BlockFills</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Del. · 26-10371</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 17</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li><li><span class="tc-fdate">Jul 15</span><span class="tc-fdesc">Certificate of Service re: Second Monthly Fee Application of Cole Schotz P.C., Counsel to the Debtors at the Sole Direction of the Disinterested Director, for Allowance of Compensation and Reimbursement of Expenses for the Period from May 1, 2026 Through May 31, 2026 (related doc</span></li><li><span class="tc-fdate">Jul 14</span><span class="tc-fdesc">Certificate of Service re: Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates (related document(s)527) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (</span></li></ul><a class="tc-open" href="../cases/blockfills.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/power-block-coin.html">Power Block Coin, LLC</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Utah · 24-23041</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li></ul><a class="tc-open" href="../cases/power-block-coin.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/sleep-number.html">Sleep Number</a><span class="tc-counter active"><span class="tc-pip"></span>15 new · 72h</span></div><div class="tc-sub">United States Bankruptcy Court, S.D. New York · 26-11399</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 21</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span><span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 21</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span><span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 21</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span><span class="tc-new">NEW</span></span></li></ul><a class="tc-open" href="../cases/sleep-number.html">Open case docket →</a></div>
+<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/blockfills.html">BlockFills</a><span class="tc-counter active"><span class="tc-pip"></span>6 new · 72h</span></div><div class="tc-sub">Bankr. D. Del. · 26-10371</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span><span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span><span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span><span class="tc-new">NEW</span></span></li></ul><a class="tc-open" href="../cases/blockfills.html">Open case docket →</a></div>
+<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/power-block-coin.html">Power Block Coin, LLC</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Utah · 24-23041</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 23</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span></span></li></ul><a class="tc-open" href="../cases/power-block-coin.html">Open case docket →</a></div>
+<div class="tc-case"><div class="tc-top"><span class="tc-name">RNDC</span><span class="tc-counter quiet"><span class="tc-pip"></span>awaiting sync</span></div><div class="tc-sub">Bankr. S.D.Tx. · 26-90737</div><div class="tc-empty">No filings on record yet.</div><div class="tc-empty">No new filings in the last 72h. Full history + the live counter populate on first sync.</div><span class="tc-open disabled">Awaiting docket sync</span><div class="tc-note">Tagged to this topic — pulls live once a CourtListener docket id + token are added.</div></div>
+<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/sleep-number.html">Sleep Number</a><span class="tc-counter active"><span class="tc-pip"></span>12 new · 72h</span></div><div class="tc-sub">United States Bankruptcy Court, S.D. New York · 26-11399</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span><span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span><span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc"><span style="color:var(--ink-40)">—</span><span class="tc-new">NEW</span></span></li></ul><a class="tc-open" href="../cases/sleep-number.html">Open case docket →</a></div>
 </section>
 <!-- TRACKED-CASES END -->
     <section class="box">

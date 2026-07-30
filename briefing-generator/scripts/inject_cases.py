@@ -26,38 +26,17 @@ from cases_common import load_cases, REPO_ROOT, CASES_DIR, DATA_DIR, TOPIC_META,
 # Root-absolute paths: Cloudflare Pages serves this repo at the domain root (see DEPLOY.md
 # "output dir /"), and _headers/auth both use /assets and /auth. Case pages live at
 # /cases/<slug>.html, so a sibling link to a topic is ../<topic>/dashboard.html.
-LOGO_SRC = "/assets/turnpage-logo.jpeg"
-HOME_HREF = "/index.html"
+LOGO_SRC = "../assets/turnpage-logo.jpeg"  # relative: case pages live in cases/
+# Relative so the link stays inside the /intel/ mount in production
+HOME_HREF = "index.html"          # from root-level pages
+HOME_HREF_SUBDIR = "../index.html" # from cases/ pages
 BOX_START = "<!-- TRACKED-CASES START -->"
 BOX_END = "<!-- TRACKED-CASES END -->"
 
-# Verbatim theme cycler from the topic dashboards (shared localStorage key → theme pref
-# carries across the whole site). Raw string so the \u escapes stay literal.
-THEME_SCRIPT = r"""<script>
-(function(){
-  var K='daily-briefing-theme';
-  var ST=['system','dark','light'];
-  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
-  var LB={dark:'Dark',light:'Light',system:'System'};
-  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
-  function apply(){
-    var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
-    document.documentElement.setAttribute('data-theme-pref',t);
-    var b=document.getElementById('theme-toggle');
-    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
-  }
-  window.cycleTheme=function(){
-    var c=localStorage.getItem(K)||'system';
-    var n=ST[(ST.indexOf(c)+1)%ST.length];
-    localStorage.setItem(K,n);apply();
-  };
-  apply();
-  if(document.readyState!=='loading') apply();
-  else document.addEventListener('DOMContentLoaded',apply);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
-})();
-</script>"""
+# Theme cycler lives in an external file (theme.js): the /intel/* CSP stacks with
+# the site-wide /* CSP (no unsafe-inline), so inline scripts are blocked in prod.
+THEME_SCRIPT = '<script src="theme.js"></script>'          # root-level pages
+THEME_SCRIPT_SUBDIR = '<script src="../theme.js"></script>' # cases/ pages
 
 # ── full case-page stylesheet (brand tokens; no f-string — CSS braces) ───────
 PAGE_CSS = """<style>
@@ -331,7 +310,7 @@ def render_case_page(case):
     primary = topics[0] if topics else None
     back = (f'<a class="tn-back" href="../{primary}/dashboard.html">← '
             f'{TOPIC_META[primary]["emoji"]} {html_escape(TOPIC_META[primary]["display"])} briefing</a>'
-            if primary else f'<a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>')
+            if primary else f'<a class="tn-back" href="{HOME_HREF_SUBDIR}">← Daily Briefing</a>')
     also = ""
     if len(topics) > 1:
         links = ", ".join(f'<a href="../{t}/dashboard.html">{html_escape(TOPIC_META[t]["display"])}</a>'
@@ -383,7 +362,7 @@ def render_case_page(case):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{name} — Case Docket | Turnpage Daily Briefing</title>
-{THEME_SCRIPT}
+{THEME_SCRIPT_SUBDIR}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}
@@ -397,10 +376,10 @@ def render_case_page(case):
 <nav class="tn">
   <div class="tn-row">
     <div class="tn-left">
-      <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{LOGO_SRC}"></a>
+      <a class="tn-brand" href="{HOME_HREF_SUBDIR}"><img class="tn-brand-logo" alt="Turnpage" src="{LOGO_SRC}"></a>
       {back}
     </div>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -571,6 +550,7 @@ def render_unified_docket(cases):
   .ud-desc-empty{{color:var(--ink-40);}}
   .ud-doc{{white-space:nowrap;text-align:right;overflow:hidden;}}
   .ud-landmark{{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}}
+  .ud-new-pill{{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#0A0A0A;background:var(--neon);padding:1px 7px;margin-left:6px;vertical-align:middle;}}
   .ud-link{{display:inline-block;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}}
   .ud-link-docket{{border-bottom-color:var(--line-strong);}}
   .ud-link-empty{{color:var(--ink-40);font-size:13px;}}
@@ -589,7 +569,7 @@ def render_unified_docket(cases):
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
     </div>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -650,7 +630,7 @@ def render_unified_docket(cases):
           <option value="transfers">Transfers only</option>
         </select>
         <label class="ud-new-label">
-          <input type="checkbox" id="ud-new-only"> New only (72h)
+          <input type="checkbox" id="ud-new-only"> New only (24h)
         </label>
       </div>
     </div>

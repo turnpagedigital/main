@@ -169,7 +169,7 @@
   <!-- Brand strip -->
   <div class="tn-row brand">
     <a href="../rewind-tariffs/dashboard.html" style="text-decoration:none;color:inherit"><img class="tn-brand-logo" alt="Turnpage" src="assets/turnpage-logo.jpeg"></a>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
 </div>
   </div>
@@ -423,16 +423,6 @@
 
   </div>
 
-<script>
-    function cycleTheme() {
-      const html = document.documentElement;
-      const current = html.getAttribute('data-theme') || 'light';
-      const next = current === 'light' ? 'dark' : 'light';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    }
-    const saved = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', saved);
-  </script>
+<script src="theme.js"></script>
 </body>
 </html>

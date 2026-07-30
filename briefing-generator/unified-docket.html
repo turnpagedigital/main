@@ -4,31 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unified Docket — Turnpage Daily Briefing</title>
-<script>
-(function(){
-  var K='daily-briefing-theme';
-  var ST=['system','dark','light'];
-  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
-  var LB={dark:'Dark',light:'Light',system:'System'};
-  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
-  function apply(){
-    var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
-    document.documentElement.setAttribute('data-theme-pref',t);
-    var b=document.getElementById('theme-toggle');
-    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
-  }
-  window.cycleTheme=function(){
-    var c=localStorage.getItem(K)||'system';
-    var n=ST[(ST.indexOf(c)+1)%ST.length];
-    localStorage.setItem(K,n);apply();
-  };
-  apply();
-  if(document.readyState!=='loading') apply();
-  else document.addEventListener('DOMContentLoaded',apply);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
-})();
-</script>
+<script src="theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
@@ -171,6 +147,7 @@
   .ud-desc-empty{color:var(--ink-40);}
   .ud-doc{white-space:nowrap;text-align:right;overflow:hidden;}
   .ud-landmark{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}
+  .ud-new-pill{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#0A0A0A;background:var(--neon);padding:1px 7px;margin-left:6px;vertical-align:middle;}
   .ud-link{display:inline-block;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}
   .ud-link-docket{border-bottom-color:var(--line-strong);}
   .ud-link-empty{color:var(--ink-40);font-size:13px;}
@@ -186,10 +163,10 @@
 <nav class="tn">
   <div class="tn-row">
     <div class="tn-left">
-      <a class="tn-brand" href="/index.html"><img class="tn-brand-logo" alt="Turnpage" src="assets/turnpage-logo.jpeg"></a>
-      <a class="tn-back" href="/index.html">← Daily Briefing</a>
+      <a class="tn-brand" href="index.html"><img class="tn-brand-logo" alt="Turnpage" src="assets/turnpage-logo.jpeg"></a>
+      <a class="tn-back" href="index.html">← Daily Briefing</a>
     </div>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -250,7 +227,7 @@
           <option value="transfers">Transfers only</option>
         </select>
         <label class="ud-new-label">
-          <input type="checkbox" id="ud-new-only"> New only (72h)
+          <input type="checkbox" id="ud-new-only"> New only (24h)
         </label>
       </div>
     </div>
