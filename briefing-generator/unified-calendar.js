@@ -721,10 +721,11 @@
         setSyncStatus("Live · synced " +
           t.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }), true);
       } else {
-        setSyncStatus("Static data (live sync unavailable)", false);
+        var reason = payload && payload.error ? payload.error : "live sync unavailable";
+        setSyncStatus("Static data \u2014 " + reason, false);
       }
     }).catch(function () {
-      setSyncStatus("Static data (live sync unavailable)", false);
+      setSyncStatus("Static data \u2014 endpoint unreachable", false);
     });
   }
 
