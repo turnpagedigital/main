@@ -116,7 +116,7 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   /* Table */
   .ud-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);table-layout:fixed;}
   .ud-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}
-  .ud-table td{padding:12px 14px;font-size:15px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .ud-table td{padding:12px 14px;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top;}
   .ud-table tr:last-child td{border-bottom:none;}
   .ud-row-new td{font-weight:700;}
   .ud-row-article td{background:var(--paper-2);}
@@ -146,7 +146,8 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-th-menu-item:hover{background:var(--paper-2);}
   .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
-  .ud-link-agent{margin-left:7px;font-size:12px;border-bottom-color:var(--line-strong);}
+  .ud-link-agent{border-bottom-color:var(--line-strong);}
+  .ud-sep{color:var(--ink-40);padding:0 5px;}
   .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
   .uc-gcal:hover{opacity:1;}
   .uc-curate-cell{text-align:center;white-space:nowrap;}
@@ -173,9 +174,9 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-sync-live{color:var(--ink-60);}
   .ud-sync-live::before{content:"\25CF";color:var(--neon);margin-right:5px;font-size:10px;}
   .ud-sync-static{color:var(--ink-40);}
-  .ud-link{display:inline-block;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}
+  .ud-link{display:inline-block;font-size:inherit;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:1px;}
   .ud-link-docket{border-bottom-color:var(--line-strong);}
-  .ud-link-empty{color:var(--ink-40);font-size:13px;}
+  .ud-link-empty{color:var(--ink-40);font-size:inherit;}
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}"""
 
 
@@ -784,7 +785,7 @@ def render_unified_calendar(cases):
   .uc-rel-cell{{white-space:nowrap;}}
   .uc-rel{{font-size:12px;font-weight:700;color:var(--ink-60);}}
   .uc-kind{{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:2px 8px;margin-right:6px;vertical-align:middle;white-space:nowrap;}}
-  .uc-snippet{{color:var(--ink-60);font-size:13px;}}
+  .uc-snippet{{color:var(--ink-60);font-size:inherit;}}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -911,9 +912,9 @@ def render_unified_notes(cases):
 {PAGE_CSS}
 <style>
 {UD_CSS}
-  .uc-snippet{{color:var(--ink-60);font-size:13px;}}
+  .uc-snippet{{color:var(--ink-60);font-size:inherit;}}
   .un-note-cell{{max-width:420px;}}
-  .un-note-text{{white-space:pre-wrap;font-size:14px;line-height:1.5;}}
+  .un-note-text{{white-space:pre-wrap;font-size:inherit;line-height:1.5;}}
   .un-export{{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}}
 </style>
 <!-- AUTH GATE START -->

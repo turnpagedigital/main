@@ -576,11 +576,19 @@
     return first ? first.slice(0, 12) : "Agent";
   }
 
+  function joinLinks(linkHtml, agent) {
+    // "Dkt. 546 | Verita" — and when there is no docket link, just the agent.
+    var hasDocketLink = linkHtml.indexOf("<a ") !== -1;
+    if (!agent) return linkHtml;
+    if (!hasDocketLink) return agent;
+    return linkHtml + '<span class="ud-sep">|</span>' + agent;
+  }
+
   function agentLink(e) {
     if (!e.claims_url) return "";
-    return ' <a class="ud-link ud-link-agent" href="' + esc(e.claims_url) +
+    return '<a class="ud-link ud-link-agent" href="' + esc(e.claims_url) +
       '" target="_blank" rel="noopener" title="Claims agent docket (' + esc(e.claims_name || "agent") + ')">' +
-      esc(agentLabel(e.claims_name)) + " \u2197</a>";
+      esc(agentLabel(e.claims_name)) + "</a>";
   }
 
   function markCells(e) {
@@ -634,7 +642,7 @@
             '<td class="ud-case">' + pill + "</td>" +
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
             '<td class="ud-entry">' + descHtml + "</td>" +
-            '<td class="ud-doc"><a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read \u2197</a></td>' +
+            '<td class="ud-doc"><a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read</a></td>' +
             markCells(e) +
           "</tr>"
         );
@@ -647,13 +655,13 @@
           "/?filed_after=&filed_before=&entry_gte=" + entryNum +
           "&entry_lte=" + entryNum + "&order_by=asc";
         linkHtml = '<a class="ud-link" href="' + esc(entryUrl) + '" target="_blank" rel="noopener">' +
-          esc(dktLabel) + " ↗</a>";
+          esc(dktLabel) + "</a>";
       } else if (entryNum && e.doc_url) {
         linkHtml = '<a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">' +
-          esc(dktLabel) + " ↗</a>";
+          esc(dktLabel) + "</a>";
       } else if (entryNum && e.docket_url) {
         linkHtml = '<a class="ud-link ud-link-docket" href="' + esc(e.docket_url) + '" target="_blank" rel="noopener">' +
-          esc(dktLabel) + " ↗</a>";
+          esc(dktLabel) + "</a>";
       } else if (entryNum) {
         linkHtml = '<span class="ud-link-empty">' + esc(dktLabel) + "</span>";
       } else {
@@ -666,7 +674,7 @@
           '<td class="ud-case">' + pill + "</td>" +
           '<td class="ud-party">' + partyHtml + "</td>" +
           '<td class="ud-entry">' + descHtml + "</td>" +
-          '<td class="ud-doc">' + linkHtml + agentLink(e) + "</td>" +
+          '<td class="ud-doc">' + joinLinks(linkHtml, agentLink(e)) + "</td>" +
           markCells(e) +
         "</tr>"
       );
