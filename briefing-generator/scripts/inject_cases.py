@@ -61,8 +61,8 @@ THEME_SCRIPT = r"""<script>
 
 # ── full case-page stylesheet (brand tokens; no f-string — CSS braces) ───────
 PAGE_CSS = """<style>
-  :root{--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
-  [data-theme="dark"]{--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
+  :root{color-scheme:light;--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
+  [data-theme="dark"]{color-scheme:dark;--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
   a{color:var(--ink);}
@@ -454,6 +454,16 @@ def _short_name(display_name):
     return " ".join(words[:2]) if len(words) > 2 else n
 
 
+_CLASS_ACTION_TOPICS = {"llm-class-action", "billion-dollar-class-actions"}
+_BANKRUPTCY_TOPICS   = {"bankruptcy-creditor-rights", "crypto-insolvency", "fraud-recovery"}
+
+def _case_category(topics):
+    ts = set(topics or [])
+    if ts & _CLASS_ACTION_TOPICS:  return "class-action"
+    if ts & _BANKRUPTCY_TOPICS:    return "bankruptcy"
+    return "other"
+
+
 def render_unified_docket(cases):
     """Generate briefing-generator/unified-docket.html (shell) + cases/data/_manifest.json."""
     live = [c for c in cases if c["data"] and not _docket(c["data"]).get("awaiting_sync")]
@@ -472,6 +482,7 @@ def render_unified_docket(cases):
             "short_name": _short_name(c["config"]["display_name"]),
             "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
             "default_color": bl,
+            "category": _case_category(c["config"].get("topics") or []),
         })
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -551,7 +562,7 @@ def render_unified_docket(cases):
   .ud-table td{{padding:12px 14px;font-size:15px;border-bottom:1px solid var(--line);vertical-align:top;}}
   .ud-table tr:last-child td{{border-bottom:none;}}
   .ud-row-new td{{font-weight:700;}}
-  .ud-date{{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;overflow:hidden;}}
+  .ud-date{{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}}
   .ud-case{{white-space:nowrap;overflow:hidden;}}
   .ud-party{{color:var(--ink-60);font-size:13px;overflow:hidden;}}
   .ud-party-empty{{color:var(--ink-40);}}
@@ -626,6 +637,12 @@ def render_unified_docket(cases):
         <span style="font-size:13px;color:var(--ink-40)">Loading cases…</span>
       </div>
       <div class="ud-filter-right">
+        <select id="ud-category" class="ud-type-select">
+          <option value="all">All types</option>
+          <option value="class-action">Class Action</option>
+          <option value="bankruptcy">Bankruptcy</option>
+          <option value="other">Other</option>
+        </select>
         <select id="ud-entry-type" class="ud-type-select">
           <option value="all">All entries</option>
           <option value="substantive">Substantive only</option>
@@ -646,11 +663,11 @@ def render_unified_docket(cases):
 
   <table class="ud-table">
     <thead><tr>
-      <th style="width:96px">Date</th>
-      <th style="width:140px">Case</th>
+      <th style="width:116px">Date</th>
+      <th style="width:130px">Case</th>
       <th style="width:150px">Party</th>
       <th>Entry</th>
-      <th style="width:86px;text-align:right">Doc</th>
+      <th style="width:100px;text-align:right">Dkt.</th>
     </tr></thead>
     <tbody id="ud-tbody">
       <tr><td colspan="5" class="ud-empty">Loading…</td></tr>

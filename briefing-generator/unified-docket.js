@@ -37,10 +37,20 @@
     return "";
   }
 
-  // ── Preset palette (12 colors — existing 6 + 6 complementary) ────────────
+  // ── Preset palette — pastel bg + darker same-hue text ────────────────────
   var PRESETS = [
-    "#D4FF00", "#60A5FA", "#FB923C", "#C084FC", "#34D399", "#F87171",
-    "#FBBF24", "#2DD4BF", "#F472B6", "#818CF8", "#E879F9", "#38BDF8",
+    {bg:"#ECFCCB", fg:"#3f6212"},
+    {bg:"#DBEAFE", fg:"#1e40af"},
+    {bg:"#FFEDD5", fg:"#9a3412"},
+    {bg:"#F3E8FF", fg:"#6b21a8"},
+    {bg:"#D1FAE5", fg:"#065f46"},
+    {bg:"#FEE2E2", fg:"#991b1b"},
+    {bg:"#FEF3C7", fg:"#92400e"},
+    {bg:"#CCFBF1", fg:"#134e4a"},
+    {bg:"#FCE7F3", fg:"#9d174d"},
+    {bg:"#E0E7FF", fg:"#3730a3"},
+    {bg:"#FAE8FF", fg:"#86198f"},
+    {bg:"#E0F2FE", fg:"#075985"},
   ];
 
   // ── Color helpers ──────────────────────────────────────────────────────────
@@ -77,12 +87,40 @@
   var ALL = [];
   var activeCases = {};
   var entryFilter = "all";
+  var categoryFilter = "all";
   var newOnly = false;
   var sortDir = "desc";
   var searchText = "";
   var dateFrom = "";
   var dateTo = "";
   var activeGearSlug = null;
+  var _savedState = null;
+
+  // ── Filter-state persistence (localStorage) ────────────────────────────────
+  var FILTER_KEY = "ud-filter-state";
+
+  function loadFilterState() {
+    try {
+      var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
+      if (s.entryFilter)   entryFilter   = s.entryFilter;
+      if (s.categoryFilter) categoryFilter = s.categoryFilter;
+      if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
+      if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
+      _savedState = s;
+    } catch (e) {}
+  }
+
+  function saveFilterState() {
+    try {
+      localStorage.setItem(FILTER_KEY, JSON.stringify({
+        entryFilter:    entryFilter,
+        categoryFilter: categoryFilter,
+        newOnly:        newOnly,
+        sortDir:        sortDir,
+        activeCases:    activeCases,
+      }));
+    } catch (e) {}
+  }
 
   // ── Helpers ────────────────────────────────────────────────────────────────
   function esc(s) {
@@ -102,6 +140,7 @@
           short:         c.short_name,
           default_color: c.default_color,
           docket_url:    c.docket_url || "",
+          category:      c.category || "other",
           entry_number:  e.entry_number,
           date_filed:    e.date_filed || "",
           date_display:  e.date_display || e.date_filed || "",
@@ -121,6 +160,7 @@
     var sq = searchText.toLowerCase().trim();
     var list = ALL.filter(function (e) {
       if (!activeCases[e.slug]) return false;
+      if (categoryFilter !== "all" && e.category !== categoryFilter) return false;
       if (newOnly && !e.is_new) return false;
       if (entryFilter === "substantive" && !SUBSTANTIVE[e.type]) return false;
       if (entryFilter === "orders" && e.type !== "order") return false;
@@ -179,6 +219,7 @@
         var slug = btn.getAttribute("data-slug");
         activeCases[slug] = !activeCases[slug];
         if (!activeCases[slug] && activeGearSlug === slug) closePopover();
+        saveFilterState();
         renderCaseChips();
         render();
       });
@@ -201,22 +242,23 @@
   function renderSwatches(activeBg) {
     var container = document.getElementById("ud-pop-swatches");
     if (!container) return;
-    container.innerHTML = PRESETS.map(function (color) {
-      var isActive = color.toLowerCase() === (activeBg || "").toLowerCase();
+    container.innerHTML = PRESETS.map(function (preset) {
+      var isActive = preset.bg.toLowerCase() === (activeBg || "").toLowerCase();
       return (
         '<button class="ud-pop-swatch' + (isActive ? " ud-swatch-active" : "") + '" ' +
-          'data-color="' + color + '" ' +
-          'style="background:' + color + '" ' +
-          'title="' + color + '"></button>'
+          'data-bg="' + preset.bg + '" data-fg="' + preset.fg + '" ' +
+          'style="background:' + preset.bg + '" ' +
+          'title="' + preset.bg + '"></button>'
       );
     }).join("");
     container.querySelectorAll(".ud-pop-swatch").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        var color = btn.getAttribute("data-color");
+        var bg = btn.getAttribute("data-bg");
+        var fg = btn.getAttribute("data-fg");
         var bgEl = document.getElementById("ud-pop-bg");
         var fgEl = document.getElementById("ud-pop-fg");
-        if (bgEl) bgEl.value = color;
-        if (fgEl) fgEl.value = autoFg(color);
+        if (bgEl) bgEl.value = bg;
+        if (fgEl) fgEl.value = fg;
         applyPopoverColors();
         container.querySelectorAll(".ud-pop-swatch").forEach(function (b) {
           b.classList.toggle("ud-swatch-active", b === btn);
@@ -307,11 +349,10 @@
       return;
     }
     tbody.innerHTML = entries.map(function (e) {
-      var dkt = e.entry_number != null ? String(e.entry_number) : "—";
       var bg = getBg(e.slug, e.default_color);
       var fg = getFg(e.slug, bg);
       var pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' +
-        esc(e.short) + " · " + esc(dkt) + "</span>";
+        esc(e.short) + "</span>";
       var badges = "";
       if (e.landmark) {
         badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span> ";
@@ -322,11 +363,16 @@
       var partyHtml = e.party
         ? esc(e.party)
         : '<span class="ud-party-empty">—</span>';
+      var dktLabel = e.entry_number != null ? "Dkt. " + String(e.entry_number) : null;
       var linkHtml;
       if (e.doc_url) {
-        linkHtml = '<a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">PDF ↗</a>';
+        linkHtml = '<a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">' +
+          esc(dktLabel || "PDF") + " ↗</a>";
       } else if (e.docket_url) {
-        linkHtml = '<a class="ud-link ud-link-docket" href="' + esc(e.docket_url) + '" target="_blank" rel="noopener">Docket ↗</a>';
+        linkHtml = '<a class="ud-link ud-link-docket" href="' + esc(e.docket_url) + '" target="_blank" rel="noopener">' +
+          esc(dktLabel || "Docket") + " ↗</a>";
+      } else if (dktLabel) {
+        linkHtml = '<span class="ud-link-empty">' + esc(dktLabel) + "</span>";
       } else {
         linkHtml = '<span class="ud-link-empty">—</span>';
       }
@@ -361,6 +407,7 @@
             short_name:    m.short_name,
             docket_url:    m.docket_url || "",
             default_color: m.default_color || "#888888",
+            category:      m.category || "other",
             entries:       (caseData.docket && caseData.docket.entries) || [],
           };
         }).catch(function () {
@@ -370,13 +417,17 @@
             short_name:    m.short_name,
             docket_url:    m.docket_url || "",
             default_color: m.default_color || "#888888",
+            category:      m.category || "other",
             entries:       [],
           };
         });
       }));
     }).then(function (cases) {
       CASES = cases;
-      CASES.forEach(function (c) { activeCases[c.slug] = true; });
+      var savedAC = _savedState && _savedState.activeCases;
+      CASES.forEach(function (c) {
+        activeCases[c.slug] = savedAC ? !!savedAC[c.slug] : true;
+      });
       buildAllEntries();
 
       var meta = document.getElementById("ud-meta");
@@ -402,6 +453,9 @@
 
   // ── Wire DOM events ────────────────────────────────────────────────────────
   document.addEventListener("DOMContentLoaded", function () {
+    // Restore saved filter state before wiring controls
+    loadFilterState();
+
     // Popover color pickers
     var popBg = document.getElementById("ud-pop-bg");
     var popFg = document.getElementById("ud-pop-fg");
@@ -423,11 +477,24 @@
       }
     });
 
+    // Category filter
+    var catSelect = document.getElementById("ud-category");
+    if (catSelect) {
+      catSelect.value = categoryFilter;
+      catSelect.addEventListener("change", function () {
+        categoryFilter = catSelect.value;
+        saveFilterState();
+        render();
+      });
+    }
+
     // Entry type filter
     var typeSelect = document.getElementById("ud-entry-type");
     if (typeSelect) {
+      typeSelect.value = entryFilter;
       typeSelect.addEventListener("change", function () {
         entryFilter = typeSelect.value;
+        saveFilterState();
         render();
       });
     }
@@ -435,13 +502,15 @@
     // New-only checkbox
     var newCb = document.getElementById("ud-new-only");
     if (newCb) {
+      newCb.checked = newOnly;
       newCb.addEventListener("change", function () {
         newOnly = newCb.checked;
+        saveFilterState();
         render();
       });
     }
 
-    // Search input
+    // Search input (not persisted — too transient)
     var searchInput = document.getElementById("ud-search");
     if (searchInput) {
       searchInput.addEventListener("input", function () {
@@ -450,7 +519,7 @@
       });
     }
 
-    // Date range
+    // Date range (not persisted)
     var dateFromEl = document.getElementById("ud-date-from");
     var dateToEl = document.getElementById("ud-date-to");
     if (dateFromEl) {
@@ -480,12 +549,14 @@
       });
     }
 
-    // Sort button
+    // Sort button — restore saved direction
     var sortBtn = document.getElementById("ud-sort-btn");
     if (sortBtn) {
+      sortBtn.textContent = sortDir === "desc" ? "Date ↓" : "Date ↑";
       sortBtn.addEventListener("click", function () {
         sortDir = sortDir === "desc" ? "asc" : "desc";
         sortBtn.textContent = sortDir === "desc" ? "Date ↓" : "Date ↑";
+        saveFilterState();
         render();
       });
     }
