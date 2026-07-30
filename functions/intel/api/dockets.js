@@ -3,7 +3,7 @@
  * The static JSON under /intel/cases/data/ is a build-time snapshot; this
  * endpoint serves the same shape fetched live from CourtListener so the page
  * can refresh itself every minute while open (see startLiveSync in
- * unified-docket.js). Gated by functions/intel/_middleware.js like every
+ * docket.js). Gated by functions/intel/_middleware.js like every
  * other /intel route, so only signed-in admins can reach CourtListener
  * through it.
  *

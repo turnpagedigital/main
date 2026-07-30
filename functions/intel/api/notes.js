@@ -59,7 +59,7 @@ function renderMarkdown(map) {
     "# Intel Docket Notes",
     "",
     `_Updated ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC · ` +
-    `auto-generated from the unified docket — edit on /intel/unified-docket.html_`,
+    `auto-generated from the unified docket — edit on /intel/docket.html_`,
     "",
   ];
   for (const name of Object.keys(byCase).sort()) {

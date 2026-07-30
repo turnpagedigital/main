@@ -7,3 +7,6 @@
 # so /api/* etc. continue to route to their handlers.
 
 /*    /index.html   200
+/intel/unified-docket.html /intel/docket.html 301
+/intel/unified-calendar.html /intel/calendar.html 301
+/intel/unified-notes.html /intel/notes.html 301
