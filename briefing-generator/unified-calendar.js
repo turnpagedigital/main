@@ -531,6 +531,34 @@
     return '<span class="ud-link-empty">—</span>';
   }
 
+  function gcalUrl(ev) {
+    var d = (ev.date || "").replace(/-/g, "");
+    if (d.length !== 8) return "";
+    // All-day event (court time zones vary by district — the time stays in
+    // the title/details rather than risking a wrong-hour calendar block).
+    var next = new Date(ev.date + "T00:00:00");
+    next.setDate(next.getDate() + 1);
+    var d2 = next.getFullYear() +
+      (next.getMonth() < 9 ? "0" : "") + (next.getMonth() + 1) +
+      (next.getDate() < 10 ? "0" : "") + next.getDate();
+    var title = ev.short + ": " + ev.kind + (ev.time ? " " + ev.time : "");
+    var srcUrl = ev.event_url || "";
+    if (!srcUrl && ev.entry_number != null && (ev.docket_url || "").indexOf("courtlistener.com") !== -1) {
+      srcUrl = ev.docket_url.replace(/\/+$/, "") +
+        "/?filed_after=&filed_before=&entry_gte=" + ev.entry_number +
+        "&entry_lte=" + ev.entry_number + "&order_by=asc";
+    }
+    var details = ev.kind + (ev.time ? " at " + ev.time : "") +
+      "\nCase: " + ev.name +
+      (ev.snippet ? "\n\n" + ev.snippet : "") +
+      (srcUrl ? "\n\nSource: " + srcUrl : "") +
+      "\n\n(from Turnpage Unified Calendar)";
+    return "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+      "&text=" + encodeURIComponent(title) +
+      "&dates=" + d + "/" + d2 +
+      "&details=" + encodeURIComponent(details);
+  }
+
   function render() {
     var list = filtered();
     var tbody = document.getElementById("uc-tbody");
@@ -541,7 +569,7 @@
     }
     if (!tbody) return;
     if (!list.length) {
-      tbody.innerHTML = '<tr><td colspan="5" class="ud-empty">' +
+      tbody.innerHTML = '<tr><td colspan="6" class="ud-empty">' +
         (scope === "upcoming"
           ? "No upcoming dates found in the tracked dockets yet. New filings that schedule hearings or deadlines will appear here automatically."
           : "No events match the current filters.") + "</td></tr>";
@@ -566,6 +594,11 @@
           '<td class="ud-case">' + pill + "</td>" +
           '<td class="ud-entry">' + kindHtml + ' <span class="ud-desc uc-snippet">' + esc(ev.snippet) + "</span></td>" +
           '<td class="ud-doc">' + entryLink(ev) + "</td>" +
+          '<td class="ud-mark-cell">' +
+            (gcalUrl(ev)
+              ? '<a class="uc-gcal" href="' + esc(gcalUrl(ev)) + '" target="_blank" rel="noopener" title="Add to Google Calendar">\ud83d\udcc6</a>'
+              : "") +
+          "</td>" +
         "</tr>"
       );
     }).join("");
@@ -627,7 +660,7 @@
       var tbody = document.getElementById("uc-tbody");
       if (tbody) {
         tbody.innerHTML =
-          '<tr><td colspan="5" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
+          '<tr><td colspan="6" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
       }
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
