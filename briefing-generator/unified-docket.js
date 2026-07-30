@@ -363,18 +363,16 @@
       var partyHtml = e.party
         ? esc(e.party)
         : '<span class="ud-party-empty">—</span>';
-      var dktLabel = e.entry_number != null ? "Dkt. " + String(e.entry_number) : null;
+      var dktLabel = "Dkt. " + (e.entry_number != null ? String(e.entry_number) : "—");
       var linkHtml;
       if (e.doc_url) {
         linkHtml = '<a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">' +
-          esc(dktLabel || "PDF") + " ↗</a>";
+          esc(dktLabel) + " ↗</a>";
       } else if (e.docket_url) {
         linkHtml = '<a class="ud-link ud-link-docket" href="' + esc(e.docket_url) + '" target="_blank" rel="noopener">' +
-          esc(dktLabel || "Docket") + " ↗</a>";
-      } else if (dktLabel) {
-        linkHtml = '<span class="ud-link-empty">' + esc(dktLabel) + "</span>";
+          esc(dktLabel) + " ↗</a>";
       } else {
-        linkHtml = '<span class="ud-link-empty">—</span>';
+        linkHtml = '<span class="ud-link-empty">' + esc(dktLabel) + "</span>";
       }
       var rowCls = e.is_new ? ' class="ud-row-new"' : "";
       return (
