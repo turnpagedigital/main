@@ -60,5 +60,12 @@
     "short_name": "Terraform Labs",
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc",
     "default_color": "#60A5FA"
+  },
+  {
+    "slug": "goliath",
+    "display_name": "Goliath",
+    "short_name": "Goliath",
+    "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
+    "default_color": "#FB923C"
   }
 ]
