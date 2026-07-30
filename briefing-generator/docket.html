@@ -189,11 +189,15 @@
   .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
   .ud-sep{color:var(--ink-40);padding:0 5px;}
+  .ud-table .ud-row-bondoro td{background:rgba(212,255,0,0.10);}
+  [data-theme="dark"] .ud-table .ud-row-bondoro td{background:rgba(212,255,0,0.07);}
   .ud-pill-assign{border:1px dashed var(--ink-40);cursor:pointer;font-family:inherit;}
   .ud-pill-assign:hover{border-style:solid;}
   .ud-snz-btn{background:none;border:none;cursor:pointer;font-size:14px;padding:2px 4px;line-height:1;filter:grayscale(1);opacity:0.45;}
   .ud-snz-btn:hover{opacity:1;}
   .ud-snz-btn.ud-snz-on{filter:none;opacity:1;}
+  .ud-del-btn{background:none;border:none;cursor:pointer;font-size:13px;padding:2px 4px;line-height:1;color:var(--ink-40);}
+  .ud-del-btn:hover{color:#C84141;}
   .ud-due{background:var(--surface);border:2px solid var(--neon);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
   .ud-due-head{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
   .ud-due-card{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-top:1px solid var(--line);}
@@ -378,6 +382,7 @@
 
   <div class="ud-toolbar">
     <span id="ud-count"></span>
+    <span id="ud-hidden-info" class="uc-curation-info"></span>
     <button id="ud-sort-btn">Date ↓</button>
   </div>
 
@@ -390,10 +395,11 @@
       <th style="width:132px;text-align:right">Dkt.</th>
       <th id="ud-th-bm" class="ud-th-toggle" style="width:40px;text-align:center" title="Show bookmarked only">★</th>
       <th style="width:44px;text-align:center" title="Snoozed reminders">💤</th>
+      <th style="width:40px;text-align:center" title="Delete rows">🗑</th>
       <th id="ud-th-note" class="ud-th-toggle" style="width:44px;text-align:center" title="Show entries with notes only">📝</th>
     </tr></thead>
     <tbody id="ud-tbody">
-      <tr><td colspan="8" class="ud-empty">Loading…</td></tr>
+      <tr><td colspan="9" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 

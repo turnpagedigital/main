@@ -58,7 +58,7 @@
   /* THREE-COL GRID */
   .three-col{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;gap:32px;grid-template-columns:1fr;}
   @media (min-width:1080px){
-    .three-col{grid-template-columns:260px 1fr 290px;grid-template-areas:"left center right";gap:36px;}
+    .three-col{grid-template-columns:260px 1fr;grid-template-areas:"left center";gap:36px;}
     .col-left{grid-area:left;} .col-center{grid-area:center;} .col-right{grid-area:right;}
   }
   .col-center{min-width:0;}
@@ -384,70 +384,6 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 <main class="three-col">
 
   <aside class="col-left">
-    <!-- TRACKED-CASES START -->
-<style>
-  .tracked-cases .tc-case{padding:12px 0;border-bottom:1px solid var(--line);}
-  .tracked-cases .tc-case:first-of-type{padding-top:2px;}
-  .tracked-cases .tc-case:last-of-type{border-bottom:none;padding-bottom:0;}
-  .tracked-cases .tc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
-  .tracked-cases .tc-name{font-size:13.5px;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.25;}
-  .tracked-cases a.tc-name:hover{box-shadow:inset 0 -0.32em 0 var(--neon);}
-  .tracked-cases .tc-counter{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0;}
-  .tracked-cases .tc-counter.active{background:rgba(239,68,68,0.14);color:#ef4444;}
-  .tracked-cases .tc-counter.quiet{background:var(--paper-2);color:var(--ink-60);}
-  .tracked-cases .tc-pip{width:6px;height:6px;border-radius:50%;background:currentColor;}
-  .tracked-cases .tc-sub{font-size:11px;color:var(--ink-60);margin:3px 0 8px;font-variant-numeric:tabular-nums;}
-  .tracked-cases ul.tc-filings{list-style:none;margin:0;padding:0;}
-  .tracked-cases .tc-filings li{padding:5px 0;border-bottom:none;display:flex;gap:8px;font-size:11.5px;line-height:1.45;}
-  .tracked-cases .tc-fdate{color:var(--ink-60);white-space:nowrap;font-variant-numeric:tabular-nums;min-width:46px;flex-shrink:0;}
-  .tracked-cases .tc-fdesc{color:var(--ink);}
-  .tracked-cases .tc-new{display:inline-block;font-size:8px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:0 4px;margin-left:4px;vertical-align:middle;}
-  .tracked-cases .tc-empty{font-size:11px;color:var(--ink-60);font-style:italic;padding:4px 0 0;}
-  .tracked-cases .tc-open{display:inline-block;margin-top:9px;font-size:10.5px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--neon);padding-bottom:1px;}
-  .tracked-cases .tc-open.disabled{color:var(--ink-40);border-bottom-color:var(--line-strong);pointer-events:none;}
-  .tracked-cases .tc-note{font-size:10px;color:var(--ink-40);margin-top:7px;line-height:1.4;}
-</style>
-<section class="box tracked-cases">
-  <h2>Tracked Cases</h2>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/goliath.html">Goliath</a><span class="tc-counter active"><span class="tc-pip"></span>3 new · 72h</span></div><div class="tc-sub">S.D. Fl. · 26-13174-RAM</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc">Disclosure of Compensation<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc">Schedules/Statements or Amended Schedules/Statements<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc">Auto-Docket of Credit Card<span class="tc-new">NEW</span></span></li></ul><a class="tc-open" href="../cases/goliath.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/power-block-coin.html">Power Block Coin, LLC</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Utah · 24-23041</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 23</span><span class="tc-fdesc">Complaint</span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc">Notice of Rescheduled Hearing (Chambers)</span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc">Notice of Rescheduled Hearing (Chambers)</span></li></ul><a class="tc-open" href="../cases/power-block-coin.html">Open case docket →</a></div>
-</section>
-<!-- TRACKED-CASES END -->
-    <section class="box">
-      <h2>Key Dates &middot; 60 days</h2>
-      <ul>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">28</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Goliath Ventures status conference</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/goliath-ventures-bar-date" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Status conference on receivership progress and turnover actions.</span></span></div>
-            <div class="kd-sub">M.D. Fla. · Receiver Budwick</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">15</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Paramount/Prestige turnover hearings</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/paramount-heller-ponzi" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Initial round of turnover hearings in the $400M Heller Ponzi receivership.</span></span></div>
-            <div class="kd-sub">Receivership court</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUL</span><span class="cal-day">31</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>SEC Enforcement Director appointment</strong><span class="src-tip"><a class="src-arrow" href="https://www.sec.gov/press/2026/woodcock-transition" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">SEC</span>Replacement search for Woodcock expected to conclude; new appointment may reset enforcement priorities.</span></span></div>
-            <div class="kd-sub">SEC Chair's office</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">SEP</span><span class="cal-day">30</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Goliath extended bar date</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/goliath-ventures-bar-date" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Final extended bar date for Goliath Ventures investor claims.</span></span></div>
-            <div class="kd-sub">M.D. Fla.</div>
-</div>
-        </li>
-
-      </ul>
-    </section>
-
     <section class="box actions-box">
       <h2>What to do this week</h2>
       <div class="actions-content">
@@ -569,48 +505,7 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
     </div>
     </article>
 
-  <aside class="col-right">
-    
-      <section class="box">
-      <h2>Storylines</h2>
-
-
-      <details class="storyline" open>
-        <summary class="storyline-title">Goliath Ventures ($328M)</summary>
-        <ul>
-          <li><div class="item-text"><strong>Bar date extended to September 30</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/goliath-ventures-bar-date" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Goliath Ventures bar date extended May 26 → September 30, 2026.</span></span><em>The bar date was extended this week from May 26 to September 30, 2026, a strong signal that Receiver Budwick of Meland Budwick expects the actual investor population to be materially larger than the 2,000 publicly reported claimants.</em></div></li>
-          <li><div class="item-text"><strong>Wealth MD $141K clawback</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/goliath-ventures-wealth-md" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Wealth MD turnover recovery of $141K first publicly reported clawback.</span></span><em>The Wealth MD turnover for $141,000 is the first publicly reported clawback in the receivership and likely signals a cascade of similar recoveries as the asset-tracing work matures.</em></div></li>
-          <li><div class="item-text"><strong>Delgado apology</strong><span class="src-tip"><a class="src-arrow" href="https://www.reuters.com/legal/goliath-delgado-apology" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Reuters</span>Goliath principal Delgado May 12 apology letter.</span></span><em>Principal Delgado's May 12 apology letter to creditors does not affect the receiver's independent posture in pursuing additional avoidance actions against insiders and net winners.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Paramount/Prestige (Heller)</summary>
-        <ul>
-          <li><div class="item-text"><strong>$400M Ponzi advancing</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/paramount-heller-ponzi" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Paramount/Prestige (Heller) $400M Ponzi receivership advancing through asset-tracing.</span></span><em>On a parallel track, the Paramount/Prestige (Heller) $400 million Ponzi receivership is advancing through its own asset-tracing phase, with the doctrinal landscape favoring the receiver on traditional avoidance and unjust-enrichment theories.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Federal Enforcement</summary>
-        <ul>
-          <li><div class="item-text"><strong>Woodcock transition May 4</strong><span class="src-tip"><a class="src-arrow" href="https://www.sec.gov/press/2026/woodcock-transition" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">SEC</span>SEC Enforcement Director Woodcock transition announced May 4.</span></span><em>SEC Enforcement Director Woodcock's departure announcement on May 4 introduces a leadership-uncertainty period of perhaps thirty to sixty days while the replacement search runs.</em></div></li>
-          <li><div class="item-text"><strong>Five new May filings</strong><span class="src-tip"><a class="src-arrow" href="https://www.sec.gov/litigation/2026/may-enforcement-actions" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">SEC</span>May 2026: five new SEC fraud cases filed.</span></span><em>Despite the leadership transition, May saw five new SEC fraud cases filed, with the agency emphasizing crypto Ponzi schemes and small-cap pump-and-dump operations as enforcement priorities.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Cross-Border Recovery</summary>
-        <ul>
-          <li><div class="item-text"><strong>Standard playbook holding</strong><span class="src-tip"><a class="src-arrow" href="https://www.octus.com/cross-border-recovery-2026" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Octus</span>Cross-border recovery: Mareva injunctions in Cayman; BVI; HK arbitration.</span></span><em>Mareva injunctions in the Cayman Islands, BVI insolvency proceedings, and Hong Kong arbitration awards continue as the standard playbook for cross-border asset recovery and remain the highest-value practice area.</em></div></li>
-          <li><div class="item-text"><strong>FTX distributions ahead of plan</strong><span class="src-tip"><a class="src-arrow" href="https://www.reorg-research.com/ftx-2026-distributions" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Reorg Research</span>FTX 2026 customer distributions tracking ahead of plan.</span></span><em>Separately, FTX's 2026 customer distribution cycle is tracking ahead of plan, making it the largest sustained recovery cycle in crypto fraud history.</em></div></li>
-        </ul>
-      </details>
-
-    </section>
-  </aside>
-
-</main>
+  </main>
 
 <footer class="sources">
   <h2>Sources</h2>

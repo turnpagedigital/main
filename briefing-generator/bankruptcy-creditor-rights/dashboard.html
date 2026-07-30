@@ -58,7 +58,7 @@
   /* THREE-COL GRID */
   .three-col{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;gap:32px;grid-template-columns:1fr;}
   @media (min-width:1080px){
-    .three-col{grid-template-columns:260px 1fr 290px;grid-template-areas:"left center right";gap:36px;}
+    .three-col{grid-template-columns:260px 1fr;grid-template-areas:"left center";gap:36px;}
     .col-left{grid-area:left;} .col-center{grid-area:center;} .col-right{grid-area:right;}
   }
   .col-center{min-width:0;}
@@ -390,75 +390,6 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 <main class="three-col">
 
   <aside class="col-left">
-    <!-- TRACKED-CASES START -->
-<style>
-  .tracked-cases .tc-case{padding:12px 0;border-bottom:1px solid var(--line);}
-  .tracked-cases .tc-case:first-of-type{padding-top:2px;}
-  .tracked-cases .tc-case:last-of-type{border-bottom:none;padding-bottom:0;}
-  .tracked-cases .tc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
-  .tracked-cases .tc-name{font-size:13.5px;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.25;}
-  .tracked-cases a.tc-name:hover{box-shadow:inset 0 -0.32em 0 var(--neon);}
-  .tracked-cases .tc-counter{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0;}
-  .tracked-cases .tc-counter.active{background:rgba(239,68,68,0.14);color:#ef4444;}
-  .tracked-cases .tc-counter.quiet{background:var(--paper-2);color:var(--ink-60);}
-  .tracked-cases .tc-pip{width:6px;height:6px;border-radius:50%;background:currentColor;}
-  .tracked-cases .tc-sub{font-size:11px;color:var(--ink-60);margin:3px 0 8px;font-variant-numeric:tabular-nums;}
-  .tracked-cases ul.tc-filings{list-style:none;margin:0;padding:0;}
-  .tracked-cases .tc-filings li{padding:5px 0;border-bottom:none;display:flex;gap:8px;font-size:11.5px;line-height:1.45;}
-  .tracked-cases .tc-fdate{color:var(--ink-60);white-space:nowrap;font-variant-numeric:tabular-nums;min-width:46px;flex-shrink:0;}
-  .tracked-cases .tc-fdesc{color:var(--ink);}
-  .tracked-cases .tc-new{display:inline-block;font-size:8px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:0 4px;margin-left:4px;vertical-align:middle;}
-  .tracked-cases .tc-empty{font-size:11px;color:var(--ink-60);font-style:italic;padding:4px 0 0;}
-  .tracked-cases .tc-open{display:inline-block;margin-top:9px;font-size:10.5px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--neon);padding-bottom:1px;}
-  .tracked-cases .tc-open.disabled{color:var(--ink-40);border-bottom-color:var(--line-strong);pointer-events:none;}
-  .tracked-cases .tc-note{font-size:10px;color:var(--ink-40);margin-top:7px;line-height:1.4;}
-</style>
-<section class="box tracked-cases">
-  <h2>Tracked Cases</h2>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/blockfills.html">BlockFills</a><span class="tc-counter active"><span class="tc-pip"></span>6 new · 72h</span></div><div class="tc-sub">Bankr. D. Del. · 26-10371</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">none<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Address Change - Notice<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned<span class="tc-new">NEW</span></span></li></ul><a class="tc-open" href="../cases/blockfills.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/harvest-sherwood.html">Harvest Sherwood</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">N.D. Tex. · 25-80109</div><div class="tc-empty">No filings on record yet.</div><a class="tc-open" href="../cases/harvest-sherwood.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/kahan.html">Kahan</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Mass · 24-11592</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 27</span><span class="tc-fdesc">Statement of Issues</span></li><li><span class="tc-fdate">Jul 17</span><span class="tc-fdesc">Order on Motion To Stay Pending Appeal</span></li><li><span class="tc-fdate">Jul 17</span><span class="tc-fdesc">Notice</span></li></ul><a class="tc-open" href="../cases/kahan.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/power-block-coin.html">Power Block Coin, LLC</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Utah · 24-23041</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 23</span><span class="tc-fdesc">Complaint</span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc">Notice of Rescheduled Hearing (Chambers)</span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc">Notice of Rescheduled Hearing (Chambers)</span></li></ul><a class="tc-open" href="../cases/power-block-coin.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/rndc.html">RNDC</a><span class="tc-counter active"><span class="tc-pip"></span>20 new · 72h</span></div><div class="tc-sub">Bankr. S.D.Tx. · 26-90737</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by John F. Higgins. This is to order a transcript of 7/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/29/2026)<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Notice of Appearance and Request for Notice<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Notice of Appearance and Request for Notice<span class="tc-new">NEW</span></span></li></ul><a class="tc-open" href="../cases/rndc.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/sleep-number.html">Sleep Number</a><span class="tc-counter active"><span class="tc-pip"></span>19 new · 72h</span></div><div class="tc-sub">United States Bankruptcy Court, S.D. New York · 26-11399</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Notice, Proposed Order/Presentment<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Statement<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Affidavit of Service of Engels Medina Regarding Notice of Adjourned Hearing Regarding Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information (related document(s)452) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/29/2026)<span class="tc-new">NEW</span></span></li></ul><a class="tc-open" href="../cases/sleep-number.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><span class="tc-name">Terraform Labs</span><span class="tc-counter quiet"><span class="tc-pip"></span>awaiting sync</span></div><div class="tc-sub">Bankr. D. Del. · 24-10070-BLS</div><div class="tc-empty">No filings on record yet.</div><div class="tc-empty">No new filings in the last 72h. Full history + the live counter populate on first sync.</div><span class="tc-open disabled">Awaiting docket sync</span><div class="tc-note">Tagged to this topic — pulls live once a CourtListener docket id + token are added.</div></div>
-</section>
-<!-- TRACKED-CASES END -->
-    <section class="box">
-      <h2>Key Dates &middot; 60 days</h2>
-      <ul>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">27</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Purdue Sackler tranche 1</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-7-4b-effective" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>First scheduled Sackler tranche payment under the reorganized Purdue plan.</span></span></div>
-            <div class="kd-sub">S.D.N.Y. · trust funding milestone</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">15</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Cook v. Trustee en banc petition deadline</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/cook-chapter-13-trustee-4th-cir" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Trustee's deadline to seek en banc reconsideration; if denied, cert clock starts.</span></span></div>
-            <div class="kd-sub">4th Cir.</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUL</span><span class="cal-day">15</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Red River Talc oral argument calendar</strong><span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/red-river-talc-5th-cir-appeal" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>Calendar entry expected for J&amp;J third Texas Two-Step appeal.</span></span></div>
-            <div class="kd-sub">5th Cir.</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">AUG</span><span class="cal-day">31</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Serta trial slide watch</strong><span class="src-tip"><a class="src-arrow" href="https://www.weil.com/insights/serta-trial-update" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Weil</span>Watch for resetting of Serta Simmons trial date; if it proceeds, damages judgment triggers second appellate cycle.</span></span></div>
-            <div class="kd-sub">Bankr. S.D. Tex.</div>
-</div>
-        </li>
-
-      </ul>
-    </section>
-
     <section class="box actions-box">
       <h2>What to do this week</h2>
       <div class="actions-content">
@@ -586,48 +517,7 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
     </div>
     </article>
 
-  <aside class="col-right">
-    
-      <section class="box">
-      <h2>Storylines</h2>
-
-
-      <details class="storyline" open>
-        <summary class="storyline-title">Equitable Mootness Drift</summary>
-        <ul>
-          <li><div class="item-text"><strong>Cook v. Chapter 13 Trustee</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/cook-chapter-13-trustee-4th-cir" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Cook v. Chapter 13 Trustee (4th Cir. Apr. 27, 2026): equitable mootness 'narrow, pragmatic.'</span></span><em>The Fourth Circuit's published April 27, 2026 decision narrowed equitable mootness sharply, calling it a 'narrow, pragmatic doctrine' that should not function as a routine post-confirmation shield in single-debtor Chapter 13 cases.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Releases and Exculpation</summary>
-        <ul>
-          <li><div class="item-text"><strong>SDNY Chapter 15 workaround</strong><span class="src-tip"><a class="src-arrow" href="https://www.mayerbrown.com/insights/chapter-15-third-party-release-comity" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Mayer Brown</span>SDNY May 2026: nonconsensual third-party releases survive Purdue via Chapter 15 comity.</span></span><em>A May 2026 SDNY decision opened a meaningful workaround to Harrington v. Purdue Pharma by holding that nonconsensual third-party releases can survive when imposed through foreign restructuring proceedings recognized via Chapter 15, applying comity rather than Section 1129.</em></div></li>
-          <li><div class="item-text"><strong>Delaware gatekeeper rejected</strong><span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/delaware-gatekeeper-rejection" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>Delaware bankr. ct. December 2025 rejected broad gatekeeper provision.</span></span><em>The Delaware Bankruptcy Court rejected a broad gatekeeper provision in December 2025, citing Highland Capital and Purdue, which signals that drafters cannot back-door exculpation through gatekeeper language.</em></div></li>
-          <li><div class="item-text"><strong>9th v. 5th Cir. split widens</strong><span class="src-tip"><a class="src-arrow" href="https://www.tonkon.com/exculpation-circuit-split-2026" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Tonkon Torp</span>9th Cir. (Blixseth) v. 5th Cir. (Highland) exculpation circuit split widens.</span></span><em>The exculpation circuit split between the Ninth Circuit's Blixseth approach (permitting narrow exculpation for plan participants) and the Fifth Circuit's Highland approach (limiting exculpation to estate fiduciaries only) continues to widen.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Purdue Implementation</summary>
-        <ul>
-          <li><div class="item-text"><strong>Plan effective May 1</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-7-4b-effective" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Purdue plan effective May 1, 2026; Knoa Pharma takes assets.</span></span><em>Purdue Pharma's plan went effective on May 1 with the initial tranches of $1.5 billion from the Sacklers and $900 million from Purdue funded, and the operating assets have transferred to Knoa Pharma.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Texas Two-Step and Subchapter V</summary>
-        <ul>
-          <li><div class="item-text"><strong>Red River Talc on appeal</strong><span class="src-tip"><a class="src-arrow" href="https://www.jonesday.com/insights/red-river-talc-5th-cir-appeal" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Jones Day</span>J&amp;J Red River Talc dismissal on appeal to 5th Cir.; DOJ UST opposed.</span></span><em>Johnson & Johnson's third Texas Two-Step attempt, Red River Talc, is on appeal at the Fifth Circuit, with the DOJ U.S. Trustee aggressively opposed and oral argument expected in the summer or fall.</em></div></li>
-          <li><div class="item-text"><strong>Serta trial sliding</strong><span class="src-tip"><a class="src-arrow" href="https://www.weil.com/insights/serta-trial-update" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Weil</span>Serta trial set February 2026; likely sliding.</span></span><em>The Serta Simmons trial in the Southern District of Texas was set for February 2026 but is likely sliding, and any movement there will be the next major trigger for the appellate cycle.</em></div></li>
-          <li><div class="item-text"><strong>S. 3977 in Senate Judiciary</strong><span class="src-tip"><a class="src-arrow" href="https://www.abi.org/news/s-3977-subchapter-v-threshold" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">ABI</span>S. 3977 seeks to restore Subchapter V debt limit to $7.5M; ABI backing.</span></span><em>S. 3977, the bipartisan effort to restore the Subchapter V debt limit to $7.5 million, sits in Senate Judiciary with American Bankruptcy Institute backing and may receive a markup this summer.</em></div></li>
-        </ul>
-      </details>
-
-    </section>
-  </aside>
-
-</main>
+  </main>
 
 <footer class="sources">
   <h2>Sources</h2>
