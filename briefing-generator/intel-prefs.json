@@ -27,6 +27,10 @@
     "sleep-number": {
       "bg": "#fef3c7",
       "fg": "#92400e"
+    },
+    "kahan": {
+      "bg": "#f3e8ff",
+      "fg": "#6b21a8"
     }
   },
   "groups": []
