@@ -29,7 +29,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 25   # a full-history backfill walks every docket page
+    timeout-minutes: 45   # a full-history backfill walks every docket page; 429 backoffs stretch it
 
     steps:
       - name: Checkout main
