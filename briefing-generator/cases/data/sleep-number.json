@@ -235,5 +235,58 @@
     "url": "https://restructuring.ra.kroll.com/SleepNumber",
     "key_dates_url": "https://restructuring.ra.kroll.com/SleepNumber"
   },
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Meet The Attys Guiding Sleep Number Creditor Group",
+      "url": "https://www.law360.com/bankruptcy-authority/articles/2504362/meet-the-attys-guiding-sleep-number-creditor-group",
+      "source": "Law360",
+      "date": "2026-07-22",
+      "summary": "The official unsecured creditors committee in the Sleep Number Chapter 11 case has retained Pachulski Stang Ziehl & Jones LLP as its counsel. The article profiles the legal team guiding the committee as the case progresses post-sale approval."
+    },
+    {
+      "headline": "Sleep Number Gets OK For $702M Sale To Canadian Co.",
+      "url": "https://www.law360.com/bankruptcy-authority/large-cap/articles/2503197/sleep-number-gets-ok-for-702m-sale-to-canadian-co-",
+      "source": "Law360",
+      "date": "2026-07-20",
+      "summary": "A New York bankruptcy judge approved the nearly $702 million sale of Sleep Number to Sleep Country Canada, following a competitive auction that raised the stalking-horse bid substantially. The approval came after an agreement to postpone potential future severance payments pending further court determination."
+    },
+    {
+      "headline": "Mattress company Sleep Number sells assets for $700 million in bankruptcy",
+      "url": "https://www.tradingview.com/news/reuters.com,2026:newsml_L1N43M0Q7:0-mattress-company-sleep-number-sells-assets-for-700-million-in-bankruptcy/",
+      "source": "Reuters",
+      "date": "2026-07-20",
+      "summary": "Reuters reported that Sleep Number received bankruptcy court approval to sell its assets to Sleep Country Canada for $701 million in total value, up from the original $415 million stalking-horse bid. U.S. Bankruptcy Judge Kyu Young Paek approved the sale at a Manhattan hearing, describing it as a 'remarkable' success on a quick timeframe, with closing expected by July 31."
+    },
+    {
+      "headline": "Sleep Number Cleared To Hold July Chapter 11 Auction",
+      "url": "https://www.law360.com/bankruptcy-authority/articles/2496627",
+      "source": "Law360",
+      "date": "2026-07-02",
+      "summary": "A New York bankruptcy judge signed off on Sleep Number's sale procedures, clearing the company to hold a mid-July Chapter 11 auction backed by a $415 million stalking-horse offer from Sleep Country Canada. The bidding procedures set a July 8 bid deadline and a July 13 auction date."
+    },
+    {
+      "headline": "Mattress company Sleep Number plans $415 million bankruptcy sale",
+      "url": "https://www.cnbc.com/2026/06/12/mattress-company-sleep-number-bankruptcy-sale.html",
+      "source": "CNBC",
+      "date": "2026-06-12",
+      "summary": "Sleep Number filed for Chapter 11 bankruptcy and announced plans to sell its assets for $415 million to Sleep Country Canada, entering bankruptcy with $672 million in debt. The company cited tariffs and inflation as key drivers of its financial troubles."
+    },
+    {
+      "headline": "Sleep Number Plunges 70% Ahead of a Potential Bankruptcy Filing",
+      "url": "https://news.bloomberglaw.com/bankruptcy-law/sleep-number-readies-potential-bankruptcy-filing-to-tackle-debt",
+      "source": "Bloomberg Law",
+      "date": "2026-06-04",
+      "summary": "Bloomberg Law reported that Sleep Number's stock dropped 70% as the company laid groundwork for a bankruptcy filing, approaching lenders for new financing that could be structured as a bankruptcy loan. The firm's banker, Guggenheim Partners, declined to comment."
+    }
+  ],
+  "events": [
+    {
+      "title": "Omnibus Hearing (August 3)",
+      "date": "2026-08-03",
+      "time": "10:00 AM ET",
+      "kind": "Deadline",
+      "url": "https://restructuring.ra.kroll.com/SleepNumber/",
+      "source": "U.S. Bankruptcy Court, S.D. New York / Kroll Restructuring Administration"
+    }
+  ]
 }

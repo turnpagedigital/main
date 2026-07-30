@@ -235,5 +235,72 @@
     "url": "https://cases.omniagentsolutions.com/?clientId=3793",
     "key_dates_url": "https://cases.omniagentsolutions.com/calendar?clientId=3793"
   },
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "New Chapter 11 Bankruptcy Filing – Republic National Distributing Company LLC",
+      "url": "https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing",
+      "source": "Petition (petition11.com)",
+      "date": "2026-07-29",
+      "summary": "Detailed legal-trade analysis of the RNDC Chapter 11 filing, covering the prepetition debt history, the first day hearing on July 27 (at which all relief was granted over U.S. Trustee objections), and the second day hearing scheduled for August 24, 2026 at 1 p.m. CT. The debtors are represented by Kirkland & Ellis and Porter Hedges, with AlixPartners as financial advisor/CRO and Lazard as investment banker."
+    },
+    {
+      "headline": "RNDC Files for Chapter 11 Bankruptcy, Seeks Buyers for Remaining Operations",
+      "url": "https://vinepair.com/booze-news/rndc-files-for-bankruptcy/",
+      "source": "VinePair",
+      "date": "2026-07-28",
+      "summary": "VinePair reported that RNDC, formerly the second-largest wine and spirits distributor in the U.S., filed voluntary Chapter 11 proceedings in the Southern District of Texas to wind down residual operations and pursue court-supervised asset sales. The filing excludes RNDC's joint ventures in Illinois, Indiana, Kentucky, Michigan, Ohio, and New York."
+    },
+    {
+      "headline": "RNDC begins bankruptcy process",
+      "url": "https://www.thespiritsbusiness.com/2026/07/rndc-begins-bankruptcy-process/",
+      "source": "The Spirits Business",
+      "date": "2026-07-28",
+      "summary": "The Spirits Business reported that RNDC filed Chapter 11 with over 100,000 creditors and more than $400 million in general unsecured claims, with Proximo Spirits listed as the largest unsecured creditor at $93.9 million, followed by Edrington and Pernod Ricard. The court filing noted that no alcohol distributor of its size had previously filed for Chapter 11."
+    },
+    {
+      "headline": "'Parties have expressed an interest': RNDC seeks buyers as Chapter 11 begins",
+      "url": "https://www.thedrinksbusiness.com/2026/07/rndc-files-for-bankruptcy-as-distributor-seeks-buyers-for-remaining-business/",
+      "source": "The Drinks Business",
+      "date": "2026-07-28",
+      "summary": "The Drinks Business reported that RNDC confirmed prospective buyers have already expressed interest in acquiring parts of its remaining business, and that the court-supervised Chapter 11 process will allow the company to continue those discussions while winding down other operations."
+    },
+    {
+      "headline": "RNDC Winding Down With Bankruptcy Filing",
+      "url": "https://www.shankennewsdaily.com/2026/07/28/40463/rndc-winding-down-with-bankruptcy-filing/",
+      "source": "Shanken News Daily",
+      "date": "2026-07-28",
+      "summary": "Follow-up coverage confirming that National Distributing Company (Georgia and New Mexico operations) is excluded from the filing, and that only the Alaska joint venture is included among RNDC's regional partnerships."
+    },
+    {
+      "headline": "Wine And Spirit Distributor Hits Ch. 11 With $540M Of Debt",
+      "url": "https://www.law360.com/bankruptcy-authority/large-cap/articles/2506169/wine-and-spirit-distributor-hits-ch-11-with-540m-of-debt",
+      "source": "Law360",
+      "date": "2026-07-27",
+      "summary": "Republic National Distributing Co., a more than century-old alcohol distributor, filed for Chapter 11 protection in the Southern District of Texas with approximately $540 million in funded debt, planning to sell its remaining assets. The case is being tracked under Law360's Bankruptcy Authority Large Cap docket."
+    },
+    {
+      "headline": "Republic National Distributing Company Files for Ch. 11 in Texas",
+      "url": "https://news.bloomberglaw.com/bankruptcy-law/republic-national-distributing-company-files-for-ch-11-in-texas",
+      "source": "Bloomberg Law",
+      "date": "2026-07-27",
+      "summary": "Bloomberg Law reported that Republic National Distributing Company filed for Chapter 11 bankruptcy protection in the Southern District of Texas, citing the court filing as the source."
+    },
+    {
+      "headline": "News Alert: With Bankruptcy Filing, RNDC Is Officially Winding Down",
+      "url": "https://www.shankennewsdaily.com/2026/07/27/40442/news-alert-with-bankruptcy-filing-rndc-is-officially-winding-down/",
+      "source": "Shanken News Daily",
+      "date": "2026-07-27",
+      "summary": "Shanken News Daily reported that RNDC filed for Chapter 11 in Texas with liabilities between $1 billion and $10 billion owed to over 100,000 creditors, following the sale of the majority of its markets to Reyes Beverage Group, Martignetti, Breakthru, Quality Brands, Columbia Distributing, and Manhattan Beverage."
+    }
+  ],
+  "events": [
+    {
+      "title": "RNDC Chapter 11 Second Day Hearing (Judge Christopher M. Lopez)",
+      "date": "2026-08-24",
+      "time": "01:00 PM CT",
+      "kind": "Deadline",
+      "url": "https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing",
+      "source": "Bankr. S.D. Tex. / Petition"
+    }
+  ]
 }

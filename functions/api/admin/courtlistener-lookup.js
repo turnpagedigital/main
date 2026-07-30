@@ -46,6 +46,14 @@ export async function onRequest({ request, env }) {
     if (dr.status === 404) {
       return jsonResponse({ ok: false, error: "No CourtListener docket found for that ID." }, 200);
     }
+    if (dr.status === 429) {
+      return jsonResponse({
+        ok: false,
+        error: env.COURTLISTENER_TOKEN
+          ? "CourtListener is rate-limiting right now — wait a minute and retry, or fill the fields in manually."
+          : "CourtListener throttles anonymous lookups. Add COURTLISTENER_TOKEN in Cloudflare (Settings → Environment variables), retry the deployment, and this will work — or fill the fields in manually.",
+      }, 200);
+    }
     if (!dr.ok) {
       return jsonResponse({ ok: false, error: `CourtListener returned ${dr.status}. Fill the fields in manually.` }, 200);
     }
