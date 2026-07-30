@@ -1,0 +1,22 @@
+{
+  "case": {
+    "slug": "harvest-sherwood",
+    "display_name": "Harvest Sherwood",
+    "case_name": "Harvest Sherwood Food Distributors",
+    "court": "N.D. Tex.",
+    "case_number": "25-80109",
+    "judge": "Stacey G.C. Jernigan",
+    "docket_id": "70143231",
+    "status": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
