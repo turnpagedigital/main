@@ -148,6 +148,10 @@
   .ud-doc{white-space:nowrap;text-align:right;overflow:hidden;}
   .ud-landmark{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}
   .ud-new-pill{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#0A0A0A;background:var(--neon);padding:1px 7px;margin-left:6px;vertical-align:middle;}
+  #ud-sync{margin-left:10px;font-size:12px;}
+  .ud-sync-live{color:var(--ink-60);}
+  .ud-sync-live::before{content:"CF";color:var(--neon);margin-right:5px;font-size:10px;}
+  .ud-sync-static{color:var(--ink-40);}
   .ud-link{display:inline-block;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}
   .ud-link-docket{border-bottom-color:var(--line-strong);}
   .ud-link-empty{color:var(--ink-40);font-size:13px;}
@@ -175,6 +179,7 @@
   <h1>⚖️ Unified Docket</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
+    <span id="ud-sync"></span>
   </div>
 </div>
 

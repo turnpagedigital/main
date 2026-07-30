@@ -455,6 +455,7 @@
 
       renderCaseChips();
       render();
+      startLiveSync();
     }).catch(function (err) {
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
@@ -463,6 +464,67 @@
       }
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
+    });
+  }
+
+  // ── Live sync (CourtListener via /intel/api/dockets) ───────────────────────
+  // Refreshes entries every minute while the tab is visible. The endpoint
+  // edge-caches upstream calls, so extra tabs cost nothing. Any failure just
+  // leaves the build-time static data in place.
+  var LIVE_SYNC_MS = 60000;
+
+  function setSyncStatus(text, isLive) {
+    var el = document.getElementById("ud-sync");
+    if (!el) return;
+    el.textContent = text;
+    el.className = isLive ? "ud-sync-live" : "ud-sync-static";
+  }
+
+  function applyLive(payload) {
+    if (!payload || !payload.ok || !payload.cases || !payload.cases.length) return false;
+    var bySlug = {};
+    payload.cases.forEach(function (c) { bySlug[c.slug] = c; });
+    var touched = false;
+    CASES.forEach(function (c) {
+      var live = bySlug[c.slug];
+      if (!live || !live.entries) return;
+      c.entries = live.entries;
+      if (live.docket_url) c.docket_url = live.docket_url;
+      touched = true;
+    });
+    if (!touched) return false;
+    buildAllEntries();
+    var meta = document.getElementById("ud-meta");
+    if (meta) {
+      meta.textContent =
+        CASES.length + " tracked case" + (CASES.length === 1 ? "" : "s") +
+        " · " + ALL.length + " total entr" + (ALL.length === 1 ? "y" : "ies");
+    }
+    render();
+    return true;
+  }
+
+  function syncLive() {
+    fetchJson("api/dockets").then(function (payload) {
+      if (applyLive(payload)) {
+        var t = new Date();
+        setSyncStatus("Live · synced " +
+          t.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }), true);
+      } else {
+        setSyncStatus("Static data (live sync unavailable)", false);
+      }
+    }).catch(function () {
+      setSyncStatus("Static data (live sync unavailable)", false);
+    });
+  }
+
+  function startLiveSync() {
+    syncLive();
+    setInterval(function () {
+      if (!document.hidden) syncLive();
+    }, LIVE_SYNC_MS);
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) syncLive();
     });
   }
 

@@ -1,0 +1,110 @@
+name: Hourly Docket Sync
+
+# Keeps the tracked-case docket data fresh when nobody has the page open.
+# (While the page IS open it self-refreshes every minute via
+# /intel/api/dockets — this cron is the "not loaded" half.)
+#
+# Pulls CourtListener entries for every live case, regenerates the case
+# pages + unified docket + manifest, and commits — but ONLY when the docket
+# content actually changed (fetch timestamps alone don't count), so quiet
+# hours produce no commits and no rebuilds.
+
+on:
+  schedule:
+    - cron: '23 * * * *'   # hourly at :23
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: docket-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+        # fetch_dockets.py + inject_cases.py are stdlib-only — no pip install
+
+      - name: Fetch dockets + regenerate case pages
+        working-directory: briefing-generator
+        env:
+          COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+        run: |
+          python scripts/fetch_dockets.py
+          python scripts/inject_cases.py
+
+      - name: Commit to main only if docket content changed
+        run: |
+          # Ignore lines that change on every fetch (timestamps); if nothing
+          # else changed in the data files, this run was a no-op.
+          if git diff -I '"fetched_at":' -I '"as_of":' --exit-code -- briefing-generator/cases/data > /dev/null; then
+            echo "No docket changes this hour — skipping commit"
+            git checkout -- briefing-generator
+            echo "CHANGED=0" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          echo "CHANGED=1" >> "$GITHUB_ENV"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Docket Sync Bot"
+          git add briefing-generator
+          git commit -m "Docket sync $(date -u +'%Y-%m-%d %H:%M UTC')"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then
+              echo "pushed to main on attempt ${attempt}"; break
+            fi
+            echo "main push attempt ${attempt} failed; retrying in 5s"; sleep 5
+          done
+
+      # ── Mirror the refreshed artifacts to dev (same pattern as the daily
+      # briefing workflow: artifacts only, never scripts/configs, so dev keeps
+      # its own pipeline code which may be ahead of main). ──────────────────
+      - name: Checkout dev branch
+        if: env.CHANGED == '1'
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: dev-site
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy refreshed docket artifacts into dev
+        if: env.CHANGED == '1'
+        run: |
+          mkdir -p dev-site/briefing-generator/cases/data
+          cp -f briefing-generator/cases/data/*.json dev-site/briefing-generator/cases/data/ 2>/dev/null || true
+          cp -f briefing-generator/cases/*.html dev-site/briefing-generator/cases/ 2>/dev/null || true
+          cp -f briefing-generator/unified-docket.html dev-site/briefing-generator/ 2>/dev/null || true
+          for slug in rewind-tariffs llm-class-action crypto-insolvency fraud-recovery billion-dollar-class-actions bankruptcy-creditor-rights; do
+            cp -f "briefing-generator/$slug/dashboard.html" "dev-site/briefing-generator/$slug/dashboard.html" 2>/dev/null || true
+          done
+
+      - name: Commit to dev
+        if: env.CHANGED == '1'
+        working-directory: dev-site
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Docket Sync Bot"
+          git add briefing-generator
+          if git diff --staged --quiet; then
+            echo "Nothing new for dev"
+          else
+            git commit -m "Docket sync $(date -u +'%Y-%m-%d %H:%M UTC'): refresh dev"
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin dev && git push origin HEAD:dev; then
+                echo "pushed to dev on attempt ${attempt}"; break
+              fi
+              echo "dev push attempt ${attempt} failed; retrying in 5s"; sleep 5
+            done
+          fi
