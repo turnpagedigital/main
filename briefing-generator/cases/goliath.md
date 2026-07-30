@@ -2,7 +2,7 @@
 slug: goliath
 display_name: Goliath
 type: case
-status: draft
+status: active
 topics:
   - fraud-recovery
   - crypto-insolvency
