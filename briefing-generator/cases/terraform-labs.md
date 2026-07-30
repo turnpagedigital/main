@@ -14,8 +14,7 @@ case:
 docket_source:
   type: courtlistener
   docket_id: 68180454
-  url: "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc"
-  awaiting_sync: true
+  url: "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/"
 claims_administrator:
   name: "Epiq11"
   url: "https://dm.epiq11.com/case/terraform/dockets"
