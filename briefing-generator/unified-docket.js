@@ -7,7 +7,6 @@
     if (/notice of (electronic )?appearance|notice of appearance/.test(d)) return "appearance";
     if (/certificate of service/.test(d)) return "service";
     if (/notice of (transfer|removal|reassignment)/.test(d)) return "transfer";
-    if (/\bpending order\b/.test(d)) return "order";
     if (/\border\b/.test(d)) return "order";
     if (/\bmotion\b/.test(d)) return "motion";
     if (/\bobjection\b|\bopposition\b/.test(d)) return "objection";
@@ -24,11 +23,56 @@
                       complaint: 1, declaration: 1, stipulation: 1, order: 1 };
   var ADMINISTRATIVE = { appearance: 1, service: 1, notice: 1, other: 1 };
 
+  // ── Filing party extractor ─────────────────────────────────────────────────
+  function extractParty(desc) {
+    if (!desc) return "";
+    var d = desc.trim();
+    // Court-authored entries
+    if (/^(ORDER|JUDGMENT|REPORT|MINUTE|SCHEDULING|TRANSCRIPT)\b/i.test(d)) return "Court";
+    if (/Signed by Judge|COURT STAFF|Court Staff/i.test(d)) return "Court";
+    // "filed by [Party]" — sometimes PACER omits the space: "filed byAnthropic"
+    var m = d.match(/\bfiled\s+by\s*([A-Z][^()\n]{1,60}?)(?:\s*[.(,]|$)/i);
+    if (m) { var p = m[1].replace(/\s+/g, " ").trim(); if (p.length > 1) return p; }
+    // "submitted by [Party]"
+    m = d.match(/\bsubmitted\s+by\s+([A-Z][^()\n]{1,40}?)(?:\s*[.(,]|$)/i);
+    if (m) return m[1].replace(/\s+/g, " ").trim();
+    return "";
+  }
+
+  // ── Color management ───────────────────────────────────────────────────────
+  var COLOR_KEY = "ud-case-colors";
+
+  function loadColors() {
+    try { return JSON.parse(localStorage.getItem(COLOR_KEY) || "{}"); }
+    catch (e) { return {}; }
+  }
+
+  function saveColors(map) {
+    try { localStorage.setItem(COLOR_KEY, JSON.stringify(map)); } catch (e) {}
+  }
+
   // ── Load embedded data ─────────────────────────────────────────────────────
   var raw = document.getElementById("docket-data");
   if (!raw) return;
   var CASES;
   try { CASES = JSON.parse(raw.textContent); } catch (e) { return; }
+
+  // Build default color map from embedded data (set by Python from _PILL_PALETTE)
+  var DEFAULT_BG = {};
+  CASES.forEach(function (c) { DEFAULT_BG[c.slug] = c.default_color || "#888888"; });
+
+  var savedColors = loadColors();
+
+  function getBg(slug) {
+    return (savedColors[slug] && savedColors[slug].bg) || DEFAULT_BG[slug] || "#888888";
+  }
+
+  function getFg(bg) {
+    var r = parseInt(bg.slice(1, 3), 16) || 136;
+    var g = parseInt(bg.slice(3, 5), 16) || 136;
+    var b = parseInt(bg.slice(5, 7), 16) || 136;
+    return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.55 ? "#0A0A0A" : "#FFFFFF";
+  }
 
   // ── Flatten all entries ────────────────────────────────────────────────────
   var ALL = [];
@@ -47,6 +91,7 @@
         doc_url:      e.doc_url || "",
         landmark:     e.landmark || "",
         type:         classifyEntry(e.description),
+        party:        extractParty(e.description || ""),
       });
     });
   });
@@ -54,9 +99,9 @@
   // ── State ──────────────────────────────────────────────────────────────────
   var activeCases = {};
   CASES.forEach(function (c) { activeCases[c.slug] = true; });
-  var entryFilter = "all";   // all | substantive | hide-admin | orders | transfers
+  var entryFilter = "all";
   var newOnly = false;
-  var sortDir = "desc";      // desc | asc
+  var sortDir = "desc";
 
   // ── Escape helper ──────────────────────────────────────────────────────────
   function esc(s) {
@@ -83,6 +128,20 @@
     return list;
   }
 
+  // ── Apply pill colors (inline style wins over static CSS) ──────────────────
+  function applyPillColors() {
+    CASES.forEach(function (c) {
+      var bg = getBg(c.slug);
+      var fg = getFg(bg);
+      document.querySelectorAll(".ud-pill-" + c.slug).forEach(function (el) {
+        el.style.background = bg;
+        el.style.color = fg;
+      });
+      var picker = document.getElementById("ud-color-" + c.slug);
+      if (picker) picker.value = bg;
+    });
+  }
+
   // ── Render ─────────────────────────────────────────────────────────────────
   function render() {
     var entries = filtered();
@@ -91,33 +150,45 @@
     if (countEl) countEl.textContent = entries.length + " entr" + (entries.length === 1 ? "y" : "ies");
 
     if (!entries.length) {
-      tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">No entries match the current filters.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="5" class="ud-empty">No entries match the current filters.</td></tr>';
+      applyPillColors();
       return;
     }
 
     tbody.innerHTML = entries.map(function (e) {
       var dkt = e.entry_number != null ? String(e.entry_number) : "—";
-      var pill = '<span class="ud-pill ud-pill-' + esc(e.slug) + '">' +
-                 esc(e.short) + " #" + esc(dkt) + "</span>";
+      var bg = getBg(e.slug);
+      var fg = getFg(bg);
+      var pill = '<span class="ud-pill ud-pill-' + esc(e.slug) + '" style="background:' + bg + ';color:' + fg + '">' +
+                 esc(e.short) + " · " + esc(dkt) + "</span>";
       var badges = "";
-      if (e.is_new) badges += '<span class="ud-new">NEW</span>';
-      if (e.landmark) badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span>";
+      if (e.is_new) badges += '<span class="ud-new">NEW</span> ';
+      if (e.landmark) badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span> ";
       var descHtml = e.description
-        ? '<span class="ud-desc">' + esc(e.description) + "</span>"
-        : '<span class="ud-desc ud-desc-empty">—</span>';
-      var link = "";
+        ? badges + '<span class="ud-desc">' + esc(e.description) + "</span>"
+        : badges + '<span class="ud-desc ud-desc-empty">—</span>';
+      var partyHtml = e.party
+        ? esc(e.party)
+        : '<span class="ud-party-empty">—</span>';
+      var linkHtml;
       if (e.doc_url) {
-        link = ' <a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">PDF ↗</a>';
+        linkHtml = '<a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">PDF ↗</a>';
       } else if (e.docket_url) {
-        link = ' <a class="ud-link ud-link-docket" href="' + esc(e.docket_url) + '" target="_blank" rel="noopener">Docket ↗</a>';
+        linkHtml = '<a class="ud-link ud-link-docket" href="' + esc(e.docket_url) + '" target="_blank" rel="noopener">Docket ↗</a>';
+      } else {
+        linkHtml = '<span class="ud-link-empty">—</span>';
       }
       var rowCls = e.is_new ? ' class="ud-row-new"' : "";
       return "<tr" + rowCls + ">" +
         '<td class="ud-date">' + esc(e.date_display) + "</td>" +
         '<td class="ud-case">' + pill + "</td>" +
-        '<td class="ud-entry">' + badges + descHtml + link + "</td>" +
+        '<td class="ud-party">' + partyHtml + "</td>" +
+        '<td class="ud-entry">' + descHtml + "</td>" +
+        '<td class="ud-doc">' + linkHtml + "</td>" +
         "</tr>";
     }).join("");
+
+    applyPillColors();
   }
 
   // ── Wire controls ──────────────────────────────────────────────────────────
@@ -126,6 +197,18 @@
     document.querySelectorAll(".ud-case-cb").forEach(function (cb) {
       cb.addEventListener("change", function () {
         activeCases[cb.value] = cb.checked;
+        render();
+      });
+    });
+
+    // Color pickers
+    CASES.forEach(function (c) {
+      var picker = document.getElementById("ud-color-" + c.slug);
+      if (!picker) return;
+      picker.addEventListener("input", function () {
+        if (!savedColors[c.slug]) savedColors[c.slug] = {};
+        savedColors[c.slug].bg = picker.value;
+        saveColors(savedColors);
         render();
       });
     });

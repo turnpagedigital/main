@@ -461,22 +461,24 @@ def render_unified_docket(cases):
         print("  · unified-docket: no live cases — skipping")
         return
 
-    # Build JSON payload for the embedded data tag
+    # Build JSON payload — include default_color so JS doesn't need to hardcode slugs
     payload = []
-    for c in live:
+    for i, c in enumerate(live):
         d = _docket(c["data"])
+        bl = _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
         payload.append({
             "slug": c["slug"],
             "display_name": c["config"]["display_name"],
             "short_name": _short_name(c["config"]["display_name"]),
             "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
+            "default_color": bl,
             "entries": d.get("entries") or [],
         })
 
     total_entries = sum(len(p["entries"]) for p in payload)
     json_data = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
-    # Per-case pill CSS
+    # Per-case pill CSS — initial colors only; JS overrides with inline style after load
     pill_parts = []
     for i, p in enumerate(payload):
         bl, fl, bd, fd = _PILL_PALETTE[i % len(_PILL_PALETTE)]
@@ -485,27 +487,33 @@ def render_unified_docket(cases):
             f'{cls}{{background:{bl};color:{fl};}}'
             f'[data-theme="dark"] {cls}{{background:{bd};color:{fd};}}'
         )
-    pill_css = "\n    ".join(pill_parts)
+    pill_css = "\n  ".join(pill_parts)
 
-    # Sidebar: case checkboxes
+    # Sidebar: case checkboxes + color picker
     cb_rows = []
     for i, p in enumerate(payload):
-        bl, fl, _, _ = _PILL_PALETTE[i % len(_PILL_PALETTE)]
-        swatch = f'<span class="ud-pill ud-pill-{html_escape(p["slug"])}">{html_escape(p["short_name"])}</span>'
+        bl = _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
+        slug_e = html_escape(p["slug"])
+        name_e = html_escape(p["short_name"])
+        dname_e = html_escape(p["display_name"])
         n = len(p["entries"])
         cb_rows.append(
             f'<label class="ud-cb-row">'
-            f'<input type="checkbox" class="ud-case-cb" value="{html_escape(p["slug"])}" checked>'
-            f'{swatch} <span style="color:var(--ink-60);font-size:11px">({n})</span></label>'
+            f'<input type="checkbox" class="ud-case-cb" value="{slug_e}" checked>'
+            f'<span class="ud-pill ud-pill-{slug_e}">{name_e}</span>'
+            f'<span class="ud-cb-count">({n})</span>'
+            f'<input type="color" id="ud-color-{slug_e}" class="ud-color-picker"'
+            f' value="{html_escape(bl)}" title="Pick color for {dname_e}">'
+            f'</label>'
         )
 
     # Sidebar: entry type radios
     type_options = [
-        ("all",        "All entries"),
-        ("substantive","Substantive only"),
-        ("hide-admin", "Hide administrative"),
-        ("orders",     "Orders only"),
-        ("transfers",  "Transfers only"),
+        ("all",         "All entries"),
+        ("substantive", "Substantive only"),
+        ("hide-admin",  "Hide administrative"),
+        ("orders",      "Orders only"),
+        ("transfers",   "Transfers only"),
     ]
     radio_rows = []
     for val, label in type_options:
@@ -527,32 +535,49 @@ def render_unified_docket(cases):
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}
 <style>
-  .ud-shell{{max-width:1180px;margin:0 auto;padding:24px 32px 60px;display:grid;gap:24px;grid-template-columns:220px 1fr;align-items:start;}}
-  @media(max-width:740px){{.ud-shell{{grid-template-columns:1fr;}}}}
+  /* Widen page-title beyond the case-page default */
+  .page-title{{max-width:1680px;}}
+  /* Shell: sidebar + main, expands with viewport */
+  .ud-shell{{max-width:1680px;margin:0 auto;padding:24px 32px 60px;display:grid;gap:24px;grid-template-columns:240px 1fr;align-items:start;}}
+  @media(max-width:780px){{.ud-shell{{grid-template-columns:1fr;}}}}
+  /* Sidebar */
   .ud-sidebar{{background:var(--surface);border:1px solid var(--line-strong);padding:18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:58px;}}
   .ud-section-head{{font-size:10px;text-transform:uppercase;letter-spacing:0.22em;font-weight:700;color:var(--ink-40);margin-bottom:8px;}}
-  .ud-cb-row,.ud-radio-row{{display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;padding:3px 0;}}
-  .ud-cb-row input,.ud-radio-row input{{cursor:pointer;accent-color:var(--neon);}}
-  .ud-pill{{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:0.04em;padding:2px 7px;white-space:nowrap;border-radius:2px;}}
+  .ud-cb-row,.ud-radio-row{{display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;padding:3px 0;}}
+  .ud-cb-row input[type="checkbox"],.ud-radio-row input{{cursor:pointer;accent-color:var(--neon);flex-shrink:0;}}
+  .ud-cb-count{{color:var(--ink-60);font-size:11px;flex:1;}}
+  /* Color picker swatch */
+  .ud-color-picker{{width:20px;height:20px;padding:0;border:1px solid var(--line-strong);cursor:pointer;border-radius:50%;overflow:hidden;background:transparent;flex-shrink:0;}}
+  .ud-color-picker::-webkit-color-swatch-wrapper{{padding:0;border-radius:50%;}}
+  .ud-color-picker::-webkit-color-swatch{{border:none;border-radius:50%;}}
+  /* Pills — rounded */
+  .ud-pill{{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:0.03em;padding:2px 8px;white-space:nowrap;border-radius:99px;}}
   {pill_css}
+  /* Toolbar */
   .ud-toolbar{{display:flex;align-items:center;gap:12px;margin-bottom:14px;}}
   #ud-count{{font-size:12px;color:var(--ink-60);flex:1;}}
   #ud-sort-btn{{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:12px;font-weight:700;padding:5px 12px;cursor:pointer;font-family:inherit;}}
   #ud-sort-btn:hover{{border-color:var(--ink-40);}}
-  .ud-table{{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);}}
+  /* Table */
+  .ud-table{{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);table-layout:fixed;}}
   .ud-table th{{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:10px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}}
   .ud-table td{{padding:11px 14px;font-size:12.5px;border-bottom:1px solid var(--line);vertical-align:top;}}
   .ud-table tr:last-child td{{border-bottom:none;}}
   .ud-row-new td{{background:rgba(212,255,0,0.05);}}
   [data-theme="dark"] .ud-row-new td{{background:rgba(93,122,0,0.12);}}
-  .ud-date{{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;min-width:80px;}}
-  .ud-case{{white-space:nowrap;min-width:120px;}}
+  .ud-date{{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;overflow:hidden;}}
+  .ud-case{{white-space:nowrap;overflow:hidden;}}
+  .ud-party{{color:var(--ink-60);font-size:12px;overflow:hidden;}}
+  .ud-party-empty{{color:var(--ink-40);}}
+  .ud-entry{{word-break:break-word;}}
   .ud-desc{{color:var(--ink);}}
   .ud-desc-empty{{color:var(--ink-40);}}
-  .ud-new{{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:1px 5px;margin-left:6px;vertical-align:middle;}}
-  .ud-landmark{{display:inline-block;font-size:9px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 5px;margin-left:6px;vertical-align:middle;}}
-  .ud-link{{display:inline-block;margin-left:8px;font-size:10.5px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;white-space:nowrap;}}
+  .ud-doc{{white-space:nowrap;text-align:right;overflow:hidden;}}
+  .ud-new{{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:1px 5px;margin-right:4px;vertical-align:middle;border-radius:3px;}}
+  .ud-landmark{{display:inline-block;font-size:9px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 5px;margin-right:4px;vertical-align:middle;border-radius:3px;}}
+  .ud-link{{display:inline-block;font-size:11px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}}
   .ud-link-docket{{border-bottom-color:var(--line-strong);}}
+  .ud-link-empty{{color:var(--ink-40);font-size:11px;}}
   .ud-empty{{font-size:13px;color:var(--ink-60);font-style:italic;padding:24px 14px;text-align:center;}}
 </style>
 <!-- AUTH GATE START -->
@@ -604,12 +629,14 @@ def render_unified_docket(cases):
     </div>
     <table class="ud-table">
       <thead><tr>
-        <th style="width:96px">Date</th>
-        <th style="width:140px">Case</th>
+        <th style="width:90px">Date</th>
+        <th style="width:130px">Case</th>
+        <th style="width:140px">Party</th>
         <th>Entry</th>
+        <th style="width:80px;text-align:right">Doc</th>
       </tr></thead>
       <tbody id="ud-tbody">
-        <tr><td colspan="3" class="ud-empty">Loading…</td></tr>
+        <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
       </tbody>
     </table>
   </main>
