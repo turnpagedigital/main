@@ -207,6 +207,7 @@
       (c.entries || []).forEach(function (e) {
         ALL.push({
           claims_url:    c.claims_url || "",
+          claims_name:   c.claims_name || "",
           slug:          c.slug,
           name:          c.display_name,
           short:         c.short_name,
@@ -559,10 +560,27 @@
     render();
   }
 
+  // Raw administrator names are clunky ("Omniagentsolutions", "Epiq11") —
+  // show the familiar short brand as the link text.
+  function agentLabel(name) {
+    var n = (name || "").toLowerCase();
+    if (n.indexOf("verita") !== -1) return "Verita";
+    if (n.indexOf("omni") !== -1) return "Omni";
+    if (n.indexOf("epiq") !== -1) return "Epiq";
+    if (n.indexOf("kroll") !== -1) return "Kroll";
+    if (n.indexOf("kurtzman") !== -1 || n.indexOf("kcc") !== -1) return "KCC";
+    if (n.indexOf("stretto") !== -1) return "Stretto";
+    if (n.indexOf("prime clerk") !== -1) return "Prime Clerk";
+    if (n.indexOf("donlin") !== -1) return "Donlin";
+    var first = (name || "").trim().split(/\s+/)[0];
+    return first ? first.slice(0, 12) : "Agent";
+  }
+
   function agentLink(e) {
     if (!e.claims_url) return "";
     return ' <a class="ud-link ud-link-agent" href="' + esc(e.claims_url) +
-      '" target="_blank" rel="noopener" title="Claims agent docket">Agent \u2197</a>';
+      '" target="_blank" rel="noopener" title="Claims agent docket (' + esc(e.claims_name || "agent") + ')">' +
+      esc(agentLabel(e.claims_name)) + " \u2197</a>";
   }
 
   function markCells(e) {
@@ -677,6 +695,7 @@
             entries:       (caseData.docket && caseData.docket.entries) || [],
             articles:      caseData.coverage || [],
             claims_url:    (caseData.claims_administrator && caseData.claims_administrator.url) || "",
+            claims_name:   (caseData.claims_administrator && caseData.claims_administrator.name) || "",
           };
         }).catch(function () {
           return {
@@ -689,6 +708,7 @@
             entries:       [],
             articles:      [],
             claims_url:    "",
+            claims_name:   "",
           };
         });
       }));
