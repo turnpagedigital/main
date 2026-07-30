@@ -48,6 +48,9 @@ jobs:
         env:
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
           DOCKET_BACKFILL: ${{ github.event.inputs.backfill == 'true' && '1' || '' }}
+          # Stop STARTING heavy backfills after this many minutes — finished
+          # cases commit and the remainder resumes on the next hourly run.
+          DOCKET_TIME_BUDGET_MIN: "12"
         run: |
           python scripts/fetch_dockets.py
           python scripts/inject_cases.py
