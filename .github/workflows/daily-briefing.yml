@@ -105,6 +105,7 @@ jobs:
           # landing) — never scripts/cases/config, so dev keeps its own
           # pipeline code (which may be ahead of main).
           cp -f briefing-generator/index.html dev-site/briefing-generator/index.html 2>/dev/null || true
+          cp -f briefing-generator/briefings.json dev-site/briefing-generator/briefings.json 2>/dev/null || true
           for slug in rewind-tariffs llm-class-action crypto-insolvency fraud-recovery billion-dollar-class-actions bankruptcy-creditor-rights; do
             d="dev-site/briefing-generator/$slug"
             mkdir -p "$d/public" "$d/posts"

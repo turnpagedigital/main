@@ -265,6 +265,15 @@
     }
   }
 
+  function syncSelAll(visible) {
+    var head = document.getElementById("uc-sel-all");
+    if (!head) return;
+    var list = visible || filtered();
+    var n = list.filter(function (ev) { return selectedKeys[ev.key]; }).length;
+    head.checked = list.length > 0 && n === list.length;
+    head.indeterminate = n > 0 && n < list.length;
+  }
+
   function updateMergeBar() {
     var bar = document.getElementById("uc-merge-bar");
     var count = document.getElementById("uc-merge-count");
@@ -759,6 +768,7 @@
         "</tr>"
       );
     }).join("");
+    syncSelAll(list);
   }
 
   // ── Data loading ───────────────────────────────────────────────────────────
@@ -970,6 +980,20 @@
         if (pop && pop.contains(ev.target)) return;
         ddPanel.style.display = "none";
         closePopover();
+      });
+    }
+
+    // Select-all header checkbox
+    var selAll = document.getElementById("uc-sel-all");
+    if (selAll) {
+      selAll.addEventListener("change", function () {
+        if (selAll.checked) {
+          filtered().forEach(function (ev) { selectedKeys[ev.key] = true; });
+        } else {
+          selectedKeys = {};
+        }
+        updateMergeBar();
+        render();
       });
     }
 
