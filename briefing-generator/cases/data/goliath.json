@@ -18,5 +18,30 @@
     "entries": []
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Goliath Ventures CEO Pleads Guilty To Crypto Ponzi Scheme",
+      "url": "https://www.law360.com/articles/2496036/goliath-ventures-ceo-pleads-guilty-to-crypto-ponzi-scheme",
+      "source": "Law360",
+      "date": "2026-07-01",
+      "summary": "Goliath Ventures CEO Christopher Alexander Delgado pleaded guilty to wire fraud and money laundering charges connected to an alleged $400 million crypto Ponzi scheme. His sentencing hearing is scheduled for October 8, while the related bankruptcy cases remain pending before Judge Robert A. Mark."
+    },
+    {
+      "headline": "Goliath Ventures CEO pleads guilty in $400 million crypto Ponzi case",
+      "url": "https://www.coindesk.com/policy/2026/07/01/goliath-ventures-ceo-pleads-guilty-in-usd400-million-crypto-ponzi-case",
+      "source": "CoinDesk",
+      "date": "2026-07-01",
+      "summary": "Christopher Alexander Delgado pleaded guilty to conspiracy to commit wire fraud, wire fraud, and money laundering, admitting to causing at least $250 million in losses and agreeing to forfeit luxury assets. The bankruptcy cases remain pending before Judge Robert A. Mark, with Delgado's sentencing set for October 8."
+    }
+  ],
+  "events": [
+    {
+      "title": "Proof of Claim Bar Date — Goliath Ventures Chapter 11 (Case No. 26-13174-RAM)",
+      "date": "2026-09-30",
+      "time": "05:00 PM ET",
+      "kind": "Deadline",
+      "url": "https://goliathventuresbk.com/",
+      "source": "Meland Budwick, P.A. / Goliath Ventures Bankruptcy Case Website"
+    }
+  ]
 }
