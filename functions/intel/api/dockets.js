@@ -17,6 +17,8 @@
 const API = "https://www.courtlistener.com/api/rest/v4";
 const CACHE_SECONDS = 55;
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -74,7 +76,7 @@ async function fetchDocket(target, token, waitUntil) {
   const hit = await cache.match(cacheKey);
   if (hit) {
     const data = await hit.json();
-    return { slug: target.slug, docket_url: target.docket_url, entries: data.entries };
+    return { slug: target.slug, docket_url: target.docket_url, entries: data.entries, cached: true };
   }
 
   const res = await fetch(upstream, {
@@ -120,13 +122,23 @@ export async function onRequestGet(context) {
     })
     .filter(Boolean);
 
-  const settled = await Promise.allSettled(
-    targets.map((t) => fetchDocket(t, token, waitUntil))
-  );
-  const cases = settled
-    .filter((s) => s.status === "fulfilled" && s.value)
-    .map((s) => s.value);
+  // Sequential with a small gap — CourtListener's burst limiter 429s
+  // simultaneous call volleys even with a token. Cached dockets return
+  // instantly, so a warm pass costs no upstream calls at all.
+  const cases = [];
+  const failed = [];
+  for (const t of targets) {
+    try {
+      const r = await fetchDocket(t, token, waitUntil);
+      if (r) { cases.push(r); if (!r.cached) await sleep(300); }
+      else failed.push(t.slug);
+    } catch {
+      failed.push(t.slug);
+    }
+  }
 
-  if (!cases.length) return json({ ok: false, error: "CourtListener unreachable" });
-  return json({ ok: true, fetched_at: new Date().toISOString(), cases });
+  if (!cases.length) {
+    return json({ ok: false, error: "CourtListener refused every request (rate-limited?) — retrying next minute" });
+  }
+  return json({ ok: true, fetched_at: new Date().toISOString(), cases, failed });
 }
