@@ -31,6 +31,10 @@
     "kahan": {
       "bg": "#f3e8ff",
       "fg": "#6b21a8"
+    },
+    "goliath": {
+      "bg": "#e0f2fe",
+      "fg": "#075985"
     }
   },
   "groups": []
