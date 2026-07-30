@@ -11,7 +11,7 @@ name: Docket Sync
 
 on:
   schedule:
-    - cron: '23 */3 * * *'   # every 3h — CourtListener free tier is 250 req/DAY
+    - cron: '23 * * * *'   # hourly — CL Individual membership tier (2026-07-30)
   workflow_dispatch:
     inputs:
       backfill:
@@ -51,7 +51,7 @@ jobs:
           # History trickle: each run walks this many older pages per case and
           # stores a resume cursor — full history accumulates across hourly
           # runs without ever tripping CourtListener's sustained-throttle wall.
-          DOCKET_HISTORY_PAGES: "1"
+          DOCKET_HISTORY_PAGES: "6"
         run: |
           python scripts/fetch_dockets.py
           python scripts/inject_cases.py
