@@ -618,6 +618,7 @@ def render_unified_docket(cases):
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
       <a class="tn-back" href="unified-calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="unified-notes.html">🗒️ Notes</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -776,6 +777,7 @@ def render_unified_calendar(cases):
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
       <a class="tn-back" href="unified-docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="unified-notes.html">🗒️ Notes</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -860,6 +862,148 @@ def render_unified_calendar(cases):
     print("  \u2713 unified-calendar.html: shell written")
 
 
+def render_unified_notes(cases):
+    """Generate briefing-generator/unified-notes.html — all bookmarks + notes,
+    sorted by last edit, exportable. Same shell family as docket/calendar."""
+    logo_src = "assets/turnpage-logo.jpeg"
+
+    page = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unified Notes — Turnpage Daily Briefing</title>
+{THEME_SCRIPT}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+{PAGE_CSS}
+<style>
+{UD_CSS}
+  .uc-snippet{{color:var(--ink-60);font-size:13px;}}
+  .un-note-cell{{max-width:420px;}}
+  .un-note-text{{white-space:pre-wrap;font-size:14px;line-height:1.5;}}
+  .un-export{{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}}
+</style>
+<!-- AUTH GATE START -->
+<script src="/auth/config.js"></script>
+<script type="module" src="/auth/auth.js"></script>
+<!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
+      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="unified-docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="unified-calendar.html">📅 Calendar</a>
+    </div>
+    <button id="theme-toggle">🖥️</button>
+  </div>
+</nav>
+
+<div class="page-title">
+  <div class="eyebrow">Intelligence · Docket Notes</div>
+  <h1>🗒️ Unified Notes</h1>
+  <div class="case-meta">
+    <span id="ud-meta">Loading…</span>
+    <span id="ud-sync"></span>
+  </div>
+</div>
+
+<!-- Color popover (shared, repositioned by JS) -->
+<div id="ud-color-pop" class="ud-color-pop" style="display:none;">
+  <div class="ud-pop-title" id="ud-pop-slug"></div>
+  <div id="ud-pop-swatches" class="ud-pop-swatches"></div>
+  <label class="ud-pop-row">
+    <span>Background</span>
+    <input type="color" id="ud-pop-bg" value="#888888">
+  </label>
+  <label class="ud-pop-row">
+    <span>Text</span>
+    <input type="color" id="ud-pop-fg" value="#ffffff">
+  </label>
+  <button id="ud-pop-reset" class="ud-pop-reset">Reset to default</button>
+</div>
+
+<!-- Note modal -->
+<div id="ud-note-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box">
+    <div class="ud-note-title" id="ud-note-title"></div>
+    <div class="ud-note-meta" id="ud-note-meta"></div>
+    <textarea id="ud-note-text" class="ud-note-text" placeholder="Notes for this entry…"></textarea>
+    <div class="ud-note-actions">
+      <button type="button" id="ud-note-delete" class="ud-clear-btn">Delete note</button>
+      <span style="flex:1"></span>
+      <span id="ud-note-status" class="ud-note-status"></span>
+      <button type="button" id="ud-note-cancel" class="ud-clear-btn">Cancel</button>
+      <button type="button" id="ud-note-save" class="ud-dd-save-btn">Save note</button>
+    </div>
+  </div>
+</div>
+
+<div class="ud-page">
+
+  <div class="ud-controls">
+    <div class="ud-search-row">
+      <div class="ud-search-wrap">
+        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search notes, entries, cases…">
+      </div>
+      <div class="ud-date-range">
+        <span class="ud-date-label">Edited from</span>
+        <input type="date" id="ud-date-from" class="ud-date-input">
+        <span class="ud-date-sep">–</span>
+        <span class="ud-date-label">to</span>
+        <input type="date" id="ud-date-to" class="ud-date-input">
+        <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
+      </div>
+    </div>
+    <div class="ud-filter-row">
+      <div class="ud-case-dd" id="ud-case-dd">
+        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
+        <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
+      </div>
+      <div class="ud-filter-right un-export">
+        <button type="button" id="un-copy-md" class="ud-clear-btn" title="Copy all visible notes as formatted text">Copy for Docs</button>
+        <button type="button" id="un-export-md" class="ud-clear-btn">Download .md</button>
+        <button type="button" id="un-export-csv" class="ud-clear-btn">Download .csv</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ud-toolbar">
+    <span id="ud-count"></span>
+    <button id="ud-sort-btn">Edited ↓</button>
+  </div>
+
+  <table class="ud-table">
+    <thead><tr>
+      <th style="width:170px">Last edited</th>
+      <th style="width:130px">Case</th>
+      <th style="width:260px">Entry</th>
+      <th>Note</th>
+      <th style="width:90px;text-align:right">Source</th>
+      <th style="width:76px;text-align:center">★ 📝</th>
+    </tr></thead>
+    <tbody id="un-tbody">
+      <tr><td colspan="6" class="ud-empty">Loading…</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<script src="unified-notes.js"></script>
+
+</body>
+</html>
+"""
+
+    out = REPO_ROOT / "unified-notes.html"
+    out.write_text(page, encoding="utf-8")
+    print("  \u2713 unified-notes.html: shell written")
+
+
 # ── main ─────────────────────────────────────────────────────────────────────
 def main():
     cases = load_cases()
@@ -893,6 +1037,10 @@ def main():
     # 4) unified calendar page
     print("=== Rendering unified calendar page ===")
     render_unified_calendar(cases)
+
+    # 5) unified notes page
+    print("=== Rendering unified notes page ===")
+    render_unified_notes(cases)
 
     print("=== Cases injection done. ===")
 

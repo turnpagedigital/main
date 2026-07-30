@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unified Docket — Turnpage Daily Briefing</title>
+<title>Unified Notes — Turnpage Daily Briefing</title>
 <script src="theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -197,6 +197,10 @@
   .ud-link-docket{border-bottom-color:var(--line-strong);}
   .ud-link-empty{color:var(--ink-40);font-size:13px;}
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
+  .uc-snippet{color:var(--ink-60);font-size:13px;}
+  .un-note-cell{max-width:420px;}
+  .un-note-text{white-space:pre-wrap;font-size:14px;line-height:1.5;}
+  .un-export{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -210,16 +214,16 @@
     <div class="tn-left">
       <a class="tn-brand" href="index.html"><img class="tn-brand-logo" alt="Turnpage" src="assets/turnpage-logo.jpeg"></a>
       <a class="tn-back" href="index.html">← Daily Briefing</a>
+      <a class="tn-back" href="unified-docket.html">⚖️ Docket</a>
       <a class="tn-back" href="unified-calendar.html">📅 Calendar</a>
-      <a class="tn-back" href="unified-notes.html">🗒️ Notes</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · Live Docket Monitor</div>
-  <h1>⚖️ Unified Docket</h1>
+  <div class="eyebrow">Intelligence · Docket Notes</div>
+  <h1>🗒️ Unified Notes</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
     <span id="ud-sync"></span>
@@ -262,13 +266,13 @@
   <div class="ud-controls">
     <div class="ud-search-row">
       <div class="ud-search-wrap">
-        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search entries, parties, dates…">
+        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search notes, entries, cases…">
       </div>
       <div class="ud-date-range">
-        <span class="ud-date-label">From</span>
+        <span class="ud-date-label">Edited from</span>
         <input type="date" id="ud-date-from" class="ud-date-input">
         <span class="ud-date-sep">–</span>
-        <span class="ud-date-label">To</span>
+        <span class="ud-date-label">to</span>
         <input type="date" id="ud-date-to" class="ud-date-input">
         <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
       </div>
@@ -278,52 +282,36 @@
         <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
-      <div class="ud-filter-right">
-        <select id="ud-entry-type" class="ud-type-select">
-          <option value="all">All entries</option>
-          <option value="substantive">Substantive only</option>
-          <option value="orders">Orders only</option>
-          <option value="transfers">Transfers only</option>
-        </select>
-        <select id="ud-marked" class="ud-type-select">
-          <option value="all">All rows</option>
-          <option value="bookmarked">★ Bookmarked</option>
-          <option value="noted">📝 With notes</option>
-          <option value="either">★ or 📝</option>
-        </select>
-        <label class="ud-new-label">
-          <input type="checkbox" id="ud-articles" checked> Articles
-        </label>
-        <label class="ud-new-label">
-          <input type="checkbox" id="ud-new-only"> New only (24h)
-        </label>
+      <div class="ud-filter-right un-export">
+        <button type="button" id="un-copy-md" class="ud-clear-btn" title="Copy all visible notes as formatted text">Copy for Docs</button>
+        <button type="button" id="un-export-md" class="ud-clear-btn">Download .md</button>
+        <button type="button" id="un-export-csv" class="ud-clear-btn">Download .csv</button>
       </div>
     </div>
   </div>
 
   <div class="ud-toolbar">
     <span id="ud-count"></span>
-    <button id="ud-sort-btn">Date ↓</button>
+    <button id="ud-sort-btn">Edited ↓</button>
   </div>
 
   <table class="ud-table">
     <thead><tr>
-      <th style="width:116px">Date</th>
+      <th style="width:170px">Last edited</th>
       <th style="width:130px">Case</th>
-      <th style="width:150px">Party</th>
-      <th>Entry</th>
-      <th style="width:100px;text-align:right">Dkt.</th>
-      <th style="width:40px;text-align:center" title="Bookmarked">★</th>
-      <th style="width:44px;text-align:center" title="Notes">📝</th>
+      <th style="width:260px">Entry</th>
+      <th>Note</th>
+      <th style="width:90px;text-align:right">Source</th>
+      <th style="width:76px;text-align:center">★ 📝</th>
     </tr></thead>
-    <tbody id="ud-tbody">
-      <tr><td colspan="7" class="ud-empty">Loading…</td></tr>
+    <tbody id="un-tbody">
+      <tr><td colspan="6" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 
 </div>
 
-<script src="unified-docket.js"></script>
+<script src="unified-notes.js"></script>
 
 </body>
 </html>
