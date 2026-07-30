@@ -16,7 +16,7 @@ docket_source:
   url: "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/"
 claims_administrator:
   name: "Omniagentsolutions"
-  url: "https://cases.omniagentsolutions.com/?clientId=3793"
+  url: "https://cases.omniagentsolutions.com/documents/index?clientid=3793&tagid=1281"
   key_dates_url: "https://cases.omniagentsolutions.com/calendar?clientId=3793"
 scan_guidance: "Focus on asset sale activity and unsecured creditor-related news."
 ---
