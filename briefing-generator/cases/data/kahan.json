@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "kahan",
+    "display_name": "Kahan",
+    "case_name": "Jason M. Kahan",
+    "court": "Bankr. D. Mass",
+    "case_number": "24-11592",
+    "judge": "Bostwick",
+    "docket_id": "69021491",
+    "status": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": [],
+  "events": []
+}

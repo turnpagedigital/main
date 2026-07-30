@@ -235,5 +235,30 @@
     "url": "https://veritaglobal.net/blockfills/document/list/6500",
     "key_dates_url": "https://veritaglobal.net/BlockFills"
   },
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Keyrock acquires BlockFills trading assets in institutional crypto expansion",
+      "url": "https://www.coindesk.com/business/2026/07/16/keyrock-acquires-blockfills-trading-assets-to-expand-institutional-crypto-business",
+      "source": "CoinDesk",
+      "date": "2026-07-16",
+      "summary": "Keyrock completed its acquisition of BlockFills' institutional trading and brokerage assets for $3.25 million following court approval of the Chapter 11 sale. The deal adds institutional client relationships, derivatives trading technology, regulatory licenses (CIMA/Cayman, pending FCA/UK), and several senior BlockFills executives to Keyrock."
+    },
+    {
+      "headline": "Crypto Firm BlockFills Gets OK For $3.25M Ch. 11 Sale",
+      "url": "https://www.law360.com/bankruptcy-authority/articles/2490218/crypto-firm-blockfills-gets-ok-for-3-25m-ch-11-sale",
+      "source": "Law360",
+      "date": "2026-06-16",
+      "summary": "A Delaware bankruptcy judge approved the $3.25 million sale of BlockFills' assets to Belgian digital asset firm Keyrock as the debtor simultaneously prepared for a Chapter 11 plan confirmation hearing."
+    }
+  ],
+  "events": [
+    {
+      "title": "BlockFills Governmental Bar Date — Deadline to File Proofs of Claim for Government Units",
+      "date": "2026-09-11",
+      "time": "04:00 PM ET",
+      "kind": "Deadline",
+      "url": "https://www.veritaglobal.net/BLOCKFILLS",
+      "source": "Verita Global (Claims Agent)"
+    }
+  ]
 }
