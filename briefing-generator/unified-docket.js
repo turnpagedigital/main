@@ -87,7 +87,6 @@
   var ALL = [];
   var activeCases = {};
   var entryFilter = "all";
-  var categoryFilter = "all";
   var newOnly = false;
   var sortDir = "desc";
   var searchText = "";
@@ -103,7 +102,6 @@
     try {
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.entryFilter)   entryFilter   = s.entryFilter;
-      if (s.categoryFilter) categoryFilter = s.categoryFilter;
       if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
       _savedState = s;
@@ -114,7 +112,6 @@
     try {
       localStorage.setItem(FILTER_KEY, JSON.stringify({
         entryFilter:    entryFilter,
-        categoryFilter: categoryFilter,
         newOnly:        newOnly,
         sortDir:        sortDir,
         activeCases:    activeCases,
@@ -167,7 +164,6 @@
     var list = ALL.filter(function (e) {
       if (!activeCases[e.slug]) return false;
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
-      if (categoryFilter !== "all" && e.category !== categoryFilter) return false;
       if (newOnly && !e.is_new) return false;
       if (entryFilter === "substantive" && !SUBSTANTIVE[e.type]) return false;
       if (entryFilter === "orders" && e.type !== "order") return false;
@@ -192,57 +188,187 @@
     return list;
   }
 
-  // ── Case chip bar ──────────────────────────────────────────────────────────
-  function renderCaseChips() {
-    var container = document.getElementById("ud-case-chips");
-    if (!container) return;
+  // ── Case filter dropdown + custom groups ───────────────────────────────────────
+  var GROUPS_KEY = "ud-case-groups";
+
+  function loadGroups() {
+    try {
+      var g = JSON.parse(localStorage.getItem(GROUPS_KEY) || "[]");
+      return Array.isArray(g) ? g : [];
+    } catch (e) { return []; }
+  }
+
+  function saveGroups(groups) {
+    try { localStorage.setItem(GROUPS_KEY, JSON.stringify(groups)); } catch (e) {}
+  }
+
+  function validGroupSlugs(group) {
+    var known = {};
+    CASES.forEach(function (c) { known[c.slug] = true; });
+    return (group.slugs || []).filter(function (s) { return known[s]; });
+  }
+
+  function caseFilterLabel() {
+    var total = CASES.length;
+    if (!total) return "Cases";
+    var on = CASES.filter(function (c) { return !!activeCases[c.slug]; }).length;
+    if (on === total) return "Cases: All (" + total + ")";
+    if (!on) return "Cases: None";
+    return "Cases: " + on + " of " + total;
+  }
+
+  function setAllCases(on) {
+    CASES.forEach(function (c) { activeCases[c.slug] = on; });
+    if (!on) closePopover();
+    saveFilterState();
+    renderCaseFilter();
+    render();
+  }
+
+  function renderCaseFilter() {
+    var btn = document.getElementById("ud-case-dd-btn");
+    var panel = document.getElementById("ud-case-dd-panel");
+    if (!btn || !panel) return;
+    btn.innerHTML = esc(caseFilterLabel()) + ' <span class="ud-dd-caret">▾</span>';
     if (!CASES.length) {
-      container.innerHTML = '<span style="font-size:13px;color:var(--ink-40)">No cases loaded.</span>';
+      panel.innerHTML = '<div class="ud-dd-empty">No cases loaded.</div>';
       return;
     }
-    container.innerHTML = CASES.map(function (c) {
+
+    var head =
+      '<div class="ud-dd-head">' +
+        '<button type="button" class="ud-dd-quick" data-act="all">Select all</button>' +
+        '<button type="button" class="ud-dd-quick" data-act="none">Deselect all</button>' +
+      "</div>";
+
+    var rows = CASES.map(function (c) {
       var bg = getBg(c.slug, c.default_color);
       var fg = getFg(c.slug, bg);
       var active = !!activeCases[c.slug];
-      var chipStyle = active
-        ? "background:" + bg + ";color:" + fg + ";border-color:" + bg + ";"
-        : "background:var(--paper-2);color:var(--ink-40);border-color:var(--line);";
       return (
-        '<span class="ud-chip-wrap">' +
-          '<button class="ud-case-chip' + (active ? " ud-chip-active" : "") + '" ' +
-            'data-slug="' + esc(c.slug) + '" ' +
-            'style="' + chipStyle + '">' +
-            esc(c.short_name) +
-          '</button>' +
-          (active
-            ? '<button class="ud-gear-btn" data-slug="' + esc(c.slug) + '" title="Color settings for ' + esc(c.display_name) + '">⚙</button>'
-            : "") +
-        "</span>"
+        '<label class="ud-dd-row" title="' + esc(c.display_name) + '">' +
+          '<input type="checkbox" data-slug="' + esc(c.slug) + '"' + (active ? " checked" : "") + ">" +
+          '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(c.short_name) + "</span>" +
+          '<span class="ud-dd-spacer"></span>' +
+          '<button type="button" class="ud-gear-btn" data-slug="' + esc(c.slug) + '" title="Color settings for ' + esc(c.display_name) + '">⚙</button>' +
+        "</label>"
       );
     }).join("");
 
-    container.querySelectorAll(".ud-case-chip").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var slug = btn.getAttribute("data-slug");
-        activeCases[slug] = !activeCases[slug];
-        if (!activeCases[slug] && activeGearSlug === slug) closePopover();
+    var groups = loadGroups();
+    var groupRows = groups.map(function (g, i) {
+      var n = validGroupSlugs(g).length;
+      return (
+        '<div class="ud-dd-group-row">' +
+          '<button type="button" class="ud-dd-group-name" data-idx="' + i + '" title="Show only these cases">' +
+            esc(g.name) + '<span class="ud-dd-group-n">(' + n + ")</span>" +
+          "</button>" +
+          '<button type="button" class="ud-dd-group-act" data-act="show" data-idx="' + i + '" title="Show only these cases">Show</button>' +
+          '<button type="button" class="ud-dd-group-act" data-act="hide" data-idx="' + i + '" title="Hide these cases">Hide</button>' +
+          '<button type="button" class="ud-dd-group-del" data-idx="' + i + '" title="Delete group">×</button>' +
+        "</div>"
+      );
+    }).join("");
+
+    var groupsHtml =
+      '<div class="ud-dd-groups">' +
+        '<div class="ud-dd-groups-title">Groups</div>' +
+        (groupRows || '<div class="ud-dd-empty">No groups yet — tick some cases, name the group below, hit Save.</div>') +
+        '<div class="ud-dd-save-row">' +
+          '<input type="text" id="ud-dd-group-input" class="ud-dd-save-input" placeholder="Name current selection…" maxlength="40">' +
+          '<button type="button" id="ud-dd-group-save" class="ud-dd-save-btn">Save group</button>' +
+        "</div>" +
+      "</div>";
+
+    panel.innerHTML = head + rows + groupsHtml;
+
+    panel.querySelectorAll(".ud-dd-quick").forEach(function (q) {
+      q.addEventListener("click", function () {
+        setAllCases(q.getAttribute("data-act") === "all");
+      });
+    });
+
+    panel.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var slug = cb.getAttribute("data-slug");
+        activeCases[slug] = cb.checked;
+        if (!cb.checked && activeGearSlug === slug) closePopover();
         saveFilterState();
-        renderCaseChips();
+        renderCaseFilter();
         render();
       });
     });
 
-    container.querySelectorAll(".ud-gear-btn").forEach(function (btn) {
-      btn.addEventListener("click", function (ev) {
+    panel.querySelectorAll(".ud-gear-btn").forEach(function (g) {
+      g.addEventListener("click", function (ev) {
+        ev.preventDefault();
         ev.stopPropagation();
-        var slug = btn.getAttribute("data-slug");
-        if (activeGearSlug === slug) {
-          closePopover();
-        } else {
-          openPopover(slug, btn);
-        }
+        var slug = g.getAttribute("data-slug");
+        if (activeGearSlug === slug) closePopover();
+        else openPopover(slug, g);
       });
     });
+
+    function applyGroup(idx, mode) {
+      var g = loadGroups()[idx];
+      if (!g) return;
+      var slugs = {};
+      validGroupSlugs(g).forEach(function (s) { slugs[s] = true; });
+      CASES.forEach(function (c) {
+        if (mode === "show") activeCases[c.slug] = !!slugs[c.slug];
+        else if (slugs[c.slug]) activeCases[c.slug] = false;
+      });
+      if (activeGearSlug && !activeCases[activeGearSlug]) closePopover();
+      saveFilterState();
+      renderCaseFilter();
+      render();
+    }
+
+    panel.querySelectorAll(".ud-dd-group-name").forEach(function (b) {
+      b.addEventListener("click", function () {
+        applyGroup(Number(b.getAttribute("data-idx")), "show");
+      });
+    });
+    panel.querySelectorAll(".ud-dd-group-act").forEach(function (b) {
+      b.addEventListener("click", function () {
+        applyGroup(Number(b.getAttribute("data-idx")), b.getAttribute("data-act"));
+      });
+    });
+    panel.querySelectorAll(".ud-dd-group-del").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var groups2 = loadGroups();
+        groups2.splice(Number(b.getAttribute("data-idx")), 1);
+        saveGroups(groups2);
+        renderCaseFilter();
+      });
+    });
+
+    function saveCurrentAsGroup() {
+      var input = document.getElementById("ud-dd-group-input");
+      if (!input) return;
+      var name = input.value.trim();
+      var slugs = CASES.filter(function (c) { return !!activeCases[c.slug]; })
+        .map(function (c) { return c.slug; });
+      if (!name || !slugs.length) return;
+      var groups2 = loadGroups();
+      var existing = null;
+      for (var i = 0; i < groups2.length; i++) {
+        if (groups2[i].name.toLowerCase() === name.toLowerCase()) { existing = groups2[i]; break; }
+      }
+      if (existing) { existing.slugs = slugs; }
+      else { groups2.push({ name: name, slugs: slugs }); }
+      saveGroups(groups2);
+      renderCaseFilter();
+    }
+
+    var saveBtn = document.getElementById("ud-dd-group-save");
+    if (saveBtn) saveBtn.addEventListener("click", saveCurrentAsGroup);
+    var nameInput = document.getElementById("ud-dd-group-input");
+    if (nameInput) {
+      nameInput.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter") { ev.preventDefault(); saveCurrentAsGroup(); }
+      });
+    }
   }
 
   // ── Color popover ──────────────────────────────────────────────────────────
@@ -320,7 +446,7 @@
     if (bg) savedColors[activeGearSlug].bg = bg;
     if (fg) savedColors[activeGearSlug].fg = fg;
     saveColors(savedColors);
-    renderCaseChips();
+    renderCaseFilter();
     render();
   }
 
@@ -339,7 +465,7 @@
       if (fgEl) fgEl.value = defaultFg;
       renderSwatches(defaultBg);
     }
-    renderCaseChips();
+    renderCaseFilter();
     render();
   }
 
@@ -453,7 +579,7 @@
           " · " + total + " total entr" + (total === 1 ? "y" : "ies");
       }
 
-      renderCaseChips();
+      renderCaseFilter();
       render();
       startLiveSync();
     }).catch(function (err) {
@@ -554,14 +680,23 @@
       }
     });
 
-    // Category filter
-    var catSelect = document.getElementById("ud-category");
-    if (catSelect) {
-      catSelect.value = categoryFilter;
-      catSelect.addEventListener("change", function () {
-        categoryFilter = catSelect.value;
-        saveFilterState();
-        render();
+    // Case dropdown open/close
+    var ddBtn = document.getElementById("ud-case-dd-btn");
+    var ddPanel = document.getElementById("ud-case-dd-panel");
+    if (ddBtn && ddPanel) {
+      ddBtn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = ddPanel.style.display !== "none";
+        ddPanel.style.display = open ? "none" : "block";
+        if (open) closePopover();
+      });
+      document.addEventListener("click", function (ev) {
+        if (ddPanel.style.display === "none") return;
+        if (ddPanel.contains(ev.target) || ddBtn.contains(ev.target)) return;
+        var pop = document.getElementById("ud-color-pop");
+        if (pop && pop.contains(ev.target)) return;
+        ddPanel.style.display = "none";
+        closePopover();
       });
     }
 

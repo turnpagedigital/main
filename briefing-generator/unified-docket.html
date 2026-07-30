@@ -98,14 +98,38 @@
   .ud-date-sep{color:var(--ink-40);font-size:14px;}
   .ud-clear-btn{padding:7px 14px;font-size:13px;font-weight:700;font-family:inherit;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;white-space:nowrap;}
   .ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
-  /* Case chips + filters row */
+  /* Case dropdown + filters row */
   .ud-filter-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-  .ud-case-chips{display:flex;align-items:center;gap:5px;flex-wrap:wrap;flex:1;}
-  .ud-chip-wrap{display:inline-flex;align-items:center;gap:2px;}
-  .ud-case-chip{display:inline-flex;align-items:center;padding:5px 12px;border-radius:99px;border:2px solid transparent;font-size:13px;font-weight:700;letter-spacing:0.02em;cursor:pointer;font-family:inherit;line-height:1.3;}
-  .ud-case-chip:not(.ud-chip-active){opacity:0.45;filter:grayscale(0.3);}
+  .ud-case-dd{position:relative;margin-right:auto;}
+  .ud-case-dd-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;}
+  .ud-dd-caret{font-size:11px;color:var(--ink-60);}
+  .ud-case-dd-panel{position:absolute;top:calc(100% + 6px);left:0;z-index:900;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:270px;padding:8px;}
+  .ud-dd-head{display:flex;align-items:center;gap:10px;padding:2px 8px 8px;border-bottom:1px solid var(--line);margin-bottom:6px;}
+  .ud-dd-quick{background:none;border:none;color:var(--ink-60);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:2px 4px;letter-spacing:0.03em;}
+  .ud-dd-quick:hover{color:var(--ink);}
+  .ud-dd-row{display:flex;align-items:center;gap:10px;padding:7px 8px;cursor:pointer;}
+  .ud-dd-row:hover{background:var(--paper-2);}
+  .ud-dd-row input{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}
+  .ud-dd-spacer{flex:1;}
+  .ud-dd-empty{padding:8px;font-size:13px;color:var(--ink-40);}
+  .ud-dd-groups{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;}
+  .ud-dd-groups-title{font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-40);padding:2px 8px 4px;}
+  .ud-dd-group-row{display:flex;align-items:center;gap:6px;padding:6px 8px;}
+  .ud-dd-group-row:hover{background:var(--paper-2);}
+  .ud-dd-group-name{flex:1;background:none;border:none;font-family:inherit;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;text-align:left;padding:0;}
+  .ud-dd-group-name:hover{color:var(--ink);text-decoration:underline;}
+  .ud-dd-group-n{font-size:11px;color:var(--ink-40);font-weight:400;margin-left:4px;}
+  .ud-dd-group-act{background:none;border:1px solid var(--line-strong);color:var(--ink-60);font-family:inherit;font-size:10px;font-weight:700;letter-spacing:0.04em;cursor:pointer;padding:2px 7px;text-transform:uppercase;}
+  .ud-dd-group-act:hover{border-color:var(--ink-40);color:var(--ink);}
+  .ud-dd-group-del{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;line-height:1;}
+  .ud-dd-group-del:hover{color:#C84141;}
+  .ud-dd-save-row{display:flex;align-items:center;gap:6px;padding:8px 8px 4px;}
+  .ud-dd-save-input{flex:1;min-width:0;padding:6px 8px;font-size:12px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}
+  .ud-dd-save-input:focus{border-color:var(--neon);}
+  .ud-dd-save-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;padding:6px 10px;letter-spacing:0.03em;white-space:nowrap;}
+  .ud-dd-save-btn:hover{border-color:var(--ink-40);}
   .ud-gear-btn{background:none;border:none;cursor:pointer;font-size:16px;padding:1px 5px;color:var(--ink-60);line-height:1;flex-shrink:0;opacity:0;transition:opacity 0.15s;}
-  .ud-chip-wrap:hover .ud-gear-btn,.ud-gear-btn:focus{opacity:1;}
+  .ud-dd-row:hover .ud-gear-btn,.ud-gear-btn:focus{opacity:1;}
   .ud-gear-btn:hover{color:var(--ink);}
   .ud-filter-right{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;}
   .ud-type-select{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}
@@ -215,16 +239,11 @@
       </div>
     </div>
     <div class="ud-filter-row">
-      <div id="ud-case-chips" class="ud-case-chips">
-        <span style="font-size:13px;color:var(--ink-40)">Loading cases…</span>
+      <div class="ud-case-dd" id="ud-case-dd">
+        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
+        <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
-        <select id="ud-category" class="ud-type-select">
-          <option value="all">All types</option>
-          <option value="class-action">Class Action</option>
-          <option value="bankruptcy">Bankruptcy</option>
-          <option value="other">Other</option>
-        </select>
         <select id="ud-entry-type" class="ud-type-select">
           <option value="all">All entries</option>
           <option value="substantive">Substantive only</option>
