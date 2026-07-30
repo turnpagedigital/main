@@ -585,7 +585,7 @@ def _case_category(topics):
 
 
 def render_unified_docket(cases):
-    """Generate briefing-generator/unified-docket.html (shell) + cases/data/_manifest.json."""
+    """Generate briefing-generator/docket.html (shell) + cases/data/_manifest.json."""
     live = [c for c in cases if c["data"] and not _docket(c["data"]).get("awaiting_sync")]
     # Manifest includes ALL cases that have a data file, so awaiting-sync cases
     # appear as chip options in the UI immediately after admin creates them.
@@ -612,7 +612,7 @@ def render_unified_docket(cases):
     print(f"  ✓ cases/data/_manifest.json: {len(manifest)} cases ({len(live)} live, {len(all_with_data)-len(live)} awaiting sync)")
 
     if not live:
-        print("  · unified-docket.html: no live cases — writing empty shell")
+        print("  · docket.html: no live cases — writing empty shell")
 
     logo_src = "assets/turnpage-logo.jpeg"
 
@@ -641,8 +641,8 @@ def render_unified_docket(cases):
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
-      <a class="tn-back" href="unified-calendar.html">📅 Calendar</a>
-      <a class="tn-back" href="unified-notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="notes.html">🗒️ Notes</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -752,15 +752,15 @@ def render_unified_docket(cases):
 
 </div>
 
-<script src="unified-docket.js"></script>
+<script src="docket.js"></script>
 
 </body>
 </html>
 """
 
-    out = REPO_ROOT / "unified-docket.html"
+    out = REPO_ROOT / "docket.html"
     out.write_text(page, encoding="utf-8")
-    print(f"  ✓ unified-docket.html: shell written ({len(live)} live cases in manifest)")
+    print(f"  ✓ docket.html: shell written ({len(live)} live cases in manifest)")
 
 
 def render_unified_calendar(cases):
@@ -798,8 +798,8 @@ def render_unified_calendar(cases):
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
-      <a class="tn-back" href="unified-docket.html">⚖️ Docket</a>
-      <a class="tn-back" href="unified-notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="notes.html">🗒️ Notes</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -883,15 +883,15 @@ def render_unified_calendar(cases):
 
 </div>
 
-<script src="unified-calendar.js"></script>
+<script src="calendar.js"></script>
 
 </body>
 </html>
 """
 
-    out = REPO_ROOT / "unified-calendar.html"
+    out = REPO_ROOT / "calendar.html"
     out.write_text(page, encoding="utf-8")
-    print("  \u2713 unified-calendar.html: shell written")
+    print("  \u2713 calendar.html: shell written")
 
 
 def render_unified_notes(cases):
@@ -928,8 +928,8 @@ def render_unified_notes(cases):
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
-      <a class="tn-back" href="unified-docket.html">⚖️ Docket</a>
-      <a class="tn-back" href="unified-calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -1025,15 +1025,15 @@ def render_unified_notes(cases):
 
 </div>
 
-<script src="unified-notes.js"></script>
+<script src="notes.js"></script>
 
 </body>
 </html>
 """
 
-    out = REPO_ROOT / "unified-notes.html"
+    out = REPO_ROOT / "notes.html"
     out.write_text(page, encoding="utf-8")
-    print("  \u2713 unified-notes.html: shell written")
+    print("  \u2713 notes.html: shell written")
 
 
 # ── main ─────────────────────────────────────────────────────────────────────

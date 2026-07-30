@@ -83,8 +83,8 @@ jobs:
           mkdir -p dev-site/briefing-generator/cases/data
           cp -f briefing-generator/cases/data/*.json dev-site/briefing-generator/cases/data/ 2>/dev/null || true
           cp -f briefing-generator/cases/*.html dev-site/briefing-generator/cases/ 2>/dev/null || true
-          cp -f briefing-generator/unified-docket.html dev-site/briefing-generator/ 2>/dev/null || true
-          cp -f briefing-generator/unified-calendar.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/docket.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/calendar.html dev-site/briefing-generator/ 2>/dev/null || true
           for slug in rewind-tariffs llm-class-action crypto-insolvency fraud-recovery billion-dollar-class-actions bankruptcy-creditor-rights; do
             cp -f "briefing-generator/$slug/dashboard.html" "dev-site/briefing-generator/$slug/dashboard.html" 2>/dev/null || true
           done

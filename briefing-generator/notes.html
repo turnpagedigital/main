@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calendar — Turnpage Daily Briefing</title>
+<title>Notes — Turnpage Daily Briefing</title>
 <script src="theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -220,10 +220,10 @@
 
   .ud-link-empty{color:var(--ink-40);font-size:inherit;}
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
-  .uc-rel-cell{white-space:nowrap;}
-  .uc-rel{font-size:12px;font-weight:700;color:var(--ink-60);}
-  .uc-kind{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:2px 8px;margin-right:6px;vertical-align:middle;white-space:nowrap;}
   .uc-snippet{color:var(--ink-60);font-size:inherit;}
+  .un-note-cell{max-width:420px;}
+  .un-note-text{white-space:pre-wrap;font-size:inherit;line-height:1.5;}
+  .un-export{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -237,16 +237,16 @@
     <div class="tn-left">
       <a class="tn-brand" href="index.html"><img class="tn-brand-logo" alt="Turnpage" src="assets/turnpage-logo.jpeg"></a>
       <a class="tn-back" href="index.html">← Daily Briefing</a>
-      <a class="tn-back" href="unified-docket.html">⚖️ Docket</a>
-      <a class="tn-back" href="unified-notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · Hearings &amp; Deadlines</div>
-  <h1>📅 Calendar</h1>
+  <div class="eyebrow">Intelligence · Docket Notes</div>
+  <h1>🗒️ Notes</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
     <span id="ud-sync"></span>
@@ -268,61 +268,73 @@
   <button id="ud-pop-reset" class="ud-pop-reset">Reset to default</button>
 </div>
 
+<!-- Note modal -->
+<div id="ud-note-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box">
+    <div class="ud-note-title" id="ud-note-title"></div>
+    <div class="ud-note-meta" id="ud-note-meta"></div>
+    <textarea id="ud-note-text" class="ud-note-text" placeholder="Notes for this entry…"></textarea>
+    <div class="ud-note-actions">
+      <button type="button" id="ud-note-delete" class="ud-clear-btn">Delete note</button>
+      <span style="flex:1"></span>
+      <span id="ud-note-status" class="ud-note-status"></span>
+      <button type="button" id="ud-note-cancel" class="ud-clear-btn">Cancel</button>
+      <button type="button" id="ud-note-save" class="ud-dd-save-btn">Save note</button>
+    </div>
+  </div>
+</div>
+
 <div class="ud-page">
 
   <div class="ud-controls">
     <div class="ud-search-row">
       <div class="ud-search-wrap">
-        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search events, cases, dates…">
+        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search notes, entries, cases…">
       </div>
-      <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
+      <div class="ud-date-range">
+        <span class="ud-date-label">Edited from</span>
+        <input type="date" id="ud-date-from" class="ud-date-input">
+        <span class="ud-date-sep">–</span>
+        <span class="ud-date-label">to</span>
+        <input type="date" id="ud-date-to" class="ud-date-input">
+        <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
+      </div>
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
         <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
-      <div class="ud-filter-right">
-        <select id="uc-scope" class="ud-type-select">
-          <option value="upcoming">Upcoming only</option>
-          <option value="all">All dates</option>
-          <option value="past">Past only</option>
-        </select>
+      <div class="ud-filter-right un-export">
+        <button type="button" id="un-copy-md" class="ud-clear-btn" title="Copy all visible notes as formatted text">Copy for Docs</button>
+        <button type="button" id="un-export-md" class="ud-clear-btn">Download .md</button>
+        <button type="button" id="un-export-csv" class="ud-clear-btn">Download .csv</button>
       </div>
     </div>
   </div>
 
   <div class="ud-toolbar">
     <span id="ud-count"></span>
-    <span id="uc-curation-info" class="uc-curation-info"></span>
-    <button id="ud-sort-btn">Date ↑</button>
-  </div>
-
-  <div id="uc-merge-bar" class="uc-merge-bar" style="display:none;">
-    <span id="uc-merge-count"></span>
-    <button type="button" id="uc-merge-btn" class="ud-dd-save-btn">Merge into one event</button>
-    <button type="button" id="uc-dismiss-btn" class="ud-clear-btn">Dismiss selected</button>
-    <button type="button" id="uc-clear-sel" class="ud-clear-btn">Clear</button>
+    <button id="ud-sort-btn">Edited ↓</button>
   </div>
 
   <table class="ud-table">
     <thead><tr>
-      <th style="width:150px">Date</th>
-      <th style="width:100px">When</th>
+      <th style="width:170px">Last edited</th>
       <th style="width:130px">Case</th>
-      <th>Event</th>
-      <th style="width:100px;text-align:right">Source</th>
-      <th style="width:52px;text-align:center" title="Add to Google Calendar">📆</th>
-      <th style="width:66px;text-align:center" title="Select to merge / dismiss">Curate</th>
+      <th style="width:260px">Entry</th>
+      <th>Note</th>
+      <th style="width:90px;text-align:right">Source</th>
+      <th style="width:76px;text-align:center">★ 📝</th>
     </tr></thead>
-    <tbody id="uc-tbody">
-      <tr><td colspan="7" class="ud-empty">Loading…</td></tr>
+    <tbody id="un-tbody">
+      <tr><td colspan="6" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 
 </div>
 
-<script src="unified-calendar.js"></script>
+<script src="notes.js"></script>
 
 </body>
 </html>

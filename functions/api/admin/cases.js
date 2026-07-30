@@ -42,7 +42,7 @@ function shortName(displayName) {
   return words.slice(0, 2).join(" ");
 }
 
-// Updates cases/data/_manifest.json (lightweight case index consumed by unified-docket.js).
+// Updates cases/data/_manifest.json (lightweight case index consumed by docket.js).
 // Non-fatal: if this fails the main case write already succeeded; manifest refreshes on next pipeline run.
 async function updateManifest(env, action, c) {
   try {
