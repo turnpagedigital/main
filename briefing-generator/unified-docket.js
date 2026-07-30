@@ -4,6 +4,12 @@
   // ── Entry-type classifier ──────────────────────────────────────────────────
   function classifyEntry(desc) {
     var d = (desc || "").toLowerCase();
+    // Housekeeping filings first — these contain "motion"/"order" wording but are
+    // not substantive: PHV admissions (and orders granting them), transcript
+    // order forms, and Rule 3001(e) claim-transfer notices.
+    if (/pro hac vice/.test(d)) return "appearance";
+    if (/transcript order form|\bao 435\b/.test(d)) return "transcript";
+    if (/rule 3001|3001\s*\(e\)|transfer of claim|transfer\/assignment of claim|assignment of claim/.test(d)) return "transfer";
     if (/notice of (electronic )?appearance|notice of appearance/.test(d)) return "appearance";
     if (/certificate of service/.test(d)) return "service";
     if (/notice of (transfer|removal|reassignment)/.test(d)) return "transfer";
