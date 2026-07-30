@@ -106,51 +106,49 @@ That passage — case caption with full docket, courtroom number, Judge name, sp
 
 - 4 to 6 substantive sections (`## I.`, `## II.`, etc.), each 2-4 paragraphs
 - 1 `## Recommended Actions` section, focused on **creditors / claimants / rights-holders** (not general counsel guidance)
-- 1 `## Proposed Articles for the Briefing Site (5 Selections)` block listing the 5 most relevant 48-hour sources
+- 1 `## Proposed Articles for the Briefing Site (up to 5)` block listing up to 5 relevant 48-hour sources (fewer on light days; zero on quiet days)
 - 1 `## Sources` block at the bottom (full citation list)
 
-Target total length: **1,500 to 2,500 words per topic. This is a hard floor.** The output is the full rich advisory regardless of whether today's news is heavy or light. The savings from incremental focus (below) come out of research effort, not out of output length.
+Target total length: **proportional to the last 24 hours.** A heavy day may run 1,500–2,500 words; a normal day 400–900; a genuinely quiet day can be under 150 words. There is NO length floor — never pad a light day with background, recap, or restatement. The reader follows these matters daily and is charged by the word in attention: every sentence must contain something that happened, changed, or newly matters in the last 24 hours.
 
 ---
 
-## Incremental focus — carry yesterday's advisory forward as today's starting draft
+## 24-hour focus — write only what moved
 
-The daily run is an **incremental desk**. The tone, voice, structure, length, and density of the advisory do not change day to day. What changes is the **process**: yesterday's advisory is your starting draft, not a blank page. The token savings come from not re-researching case backgrounds, settlement mechanics, regulatory landscapes, and adjacent-matter discussions that are already on the record.
+The daily run is a **delta desk for a close-following reader**. Assume the audience read yesterday's briefing and every briefing before it. They do not need the backdrop re-set, the settlement mechanics re-explained, or the case posture re-described. Each day's advisory covers **events and developments from the last 24 hours** and nothing else.
 
 ### Workflow rule
 
-Before composing today's advisory, **read the most recent prior advisory** for that topic — the most-recent `.md` file in the topic's `<project-dir>/public/advisory-*.md` directory, excluding today's. Treat it as a working draft. Today's task layers today's news on top of yesterday's analytical content:
+Before composing today's advisory, **read the most recent prior advisory** for that topic — the most-recent `.md` file in the topic's `<project-dir>/public/advisory-*.md` directory, excluding today's. Use it to know what the reader already knows (so you don't repeat it), not as a draft to carry forward. Classify each candidate development:
 
-1. **Carry forward** the prior advisory's analytical prose substantially intact. Case backgrounds, settlement mechanics, statutory framing, adjacent-matter context, and Recommended Actions guidance are durable — re-using them is the entire point. Light editorial polish is fine; rebuilding from scratch is wasted effort.
-2. **Run targeted searches on deltas only.** Search effort goes to (a) what's new on each named matter in the prior advisory in the last 24 hours, and (b) genuinely new matters surfacing in the tab's `themes[]`. Apply the 48-hour freshness rule to article proposals. Classify each candidate development:
-   - **NEW** — not in prior advisory → add as a new section in full rich format (case caption, docket, judge, party-specific detail, dollar figures, percentages, citations).
-   - **DELTA** — already in prior advisory, but moved today → revise the corresponding section to lead with today's update, then carry forward the prior analytical content beneath.
-   - **STALE** — already in prior advisory, no update today → leave the prior section in place. Do not strip it. Continuity matters; readers expect the running coverage to persist.
-3. **Re-open the lede.** The `## Analysis & Developments` opening paragraph rebuilds each day to surface today's most consequential developments first. Below the lede, the body carries forward prior depth with today's deltas integrated in place.
+1. **NEW** — not previously covered → full rich treatment (case caption, docket, judge, dollar figures, percentages, citations). One or two sentences of connective tissue tying it to the coverage theme is fine; a backgrounder is not.
+2. **DELTA** — previously covered matter that moved today → report the movement and its implication. Reference the prior posture in a clause ("following last week's stay denial…"), never a paragraph.
+3. **STALE** — previously covered, no movement today → **omit entirely.** Do not restate it, do not summarize it, do not keep its section. The prior briefings are the record; the reader has them.
 
-### What this saves
+### The connective-tissue rule
 
-Tokens spent searching, fetching, and re-summarizing material that is already on the record. The output stays at full law-firm density and length; the agent spends its effort on the news that actually moved.
-
-### What this does NOT change
-
-- The 1,500–2,500 word floor.
-- The Bartz-passage density requirement (full case caption, docket number, judge name, courtroom, dollar figures, percentages, statutory citations).
-- The section structure (`## Analysis & Developments` → `## Recommended Actions` → `## Proposed Articles for the Briefing Site` → `## Sources`).
-- The voice rules (complete sentences, em-dash discipline, no hedging, creditor/claimant orientation in Recommended Actions).
-- The citation format and inline source-arrow density.
+Each development should read as part of the running coverage — a clause locating it in the arc ("the third such transfer notice this month", "the first substantive ruling since the July 8 hearing") — without rebuilding the arc. If a sentence would be at home in last week's briefing, it does not belong in today's.
 
 ### Lede pattern
 
-Open `## Analysis & Developments` with one paragraph naming today's most consequential developments in a single sweep:
+Open `## Analysis & Developments` with one paragraph naming today's developments in a single sweep:
 
 > Three developments today: the Federal Circuit granted the government's stay motion in *Burlap & Barrel v. United States* (Dkt. 26), CBP confirmed a second $230,000 CAPE refund disbursement, and the CIT issued a scheduling order in the consolidated reciprocal-tariff dockets (Slip Op. 26-58).
 
-Below the lede, the full body carries forward — every matter previously covered keeps its section, with today's deltas threaded in where the matter sits.
-
 ### When the day is genuinely quiet
 
-If no qualifying developments surfaced in the last 24 hours, the lede paragraph acknowledges this directly ("No new procedural movement in the last 24 hours; the prior 48-hour record stands.") and the body carries forward intact. Length and density do not drop. Readers still get the full state of the docket.
+Say so in two or three sentences and stop. Pattern:
+
+> No qualifying developments in the last 24 hours across the tracked dockets. The next scheduled milestone is the August 24 second-day hearing in *RNDC* (Bankr. S.D. Tex.). Yesterday's briefing remains the current state of play.
+
+A quiet-day briefing under 150 words is correct output, not a failure. Recommended Actions may be omitted on quiet days; Proposed Articles and Sources shrink to whatever the day actually produced (zero is acceptable).
+
+### What this does NOT change
+
+- The Bartz-passage density requirement **for what is covered** (full case caption, docket number, judge name, dollar figures, percentages, statutory citations).
+- The section structure when sections have content (`## Analysis & Developments` → `## Recommended Actions` → `## Proposed Articles for the Briefing Site` → `## Sources`).
+- The voice rules (complete sentences, em-dash discipline, no hedging, creditor/claimant orientation in Recommended Actions).
+- The citation format and inline source-arrow density.
 
 ---
 
@@ -177,7 +175,7 @@ Save as `<project-dir>/public/advisory-YYYY-MM-DD.md`. Markdown structure:
 
 [One dense paragraph addressing what creditors / claimants / rights-holders should do this week. Specific actions tied to specific deadlines and specific procedural mechanisms. Avoid generic advice.]
 
-## Proposed Articles for the Briefing Site (5 Selections)
+## Proposed Articles for the Briefing Site (up to 5)
 
 - **<Title 1>** — <Publisher> (<Tier>), <Date>
   - <URL>
