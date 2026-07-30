@@ -67,5 +67,12 @@
     "short_name": "Goliath",
     "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
     "default_color": "#FB923C"
+  },
+  {
+    "slug": "harvest-sherwood",
+    "display_name": "Harvest Sherwood",
+    "short_name": "Harvest Sherwood",
+    "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
+    "default_color": "#C084FC"
   }
 ]
