@@ -477,6 +477,8 @@ def render_unified_docket(cases):
 
     total_entries = sum(len(p["entries"]) for p in payload)
     json_data = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    # relative path — unified-docket.html sits at intel root next to assets/
+    logo_src = "assets/turnpage-logo.jpeg"
 
     # Per-case pill CSS — initial colors only; JS overrides with inline style after load
     pill_parts = []
@@ -503,7 +505,8 @@ def render_unified_docket(cases):
             f'<span class="ud-pill ud-pill-{slug_e}">{name_e}</span>'
             f'<span class="ud-cb-count">({n})</span>'
             f'<input type="color" id="ud-color-{slug_e}" class="ud-color-picker"'
-            f' value="{html_escape(bl)}" title="Pick color for {dname_e}">'
+            f' value="{html_escape(bl)}" title="Pick background color for {dname_e}">'
+            f'<button id="ud-fg-{slug_e}" class="ud-fg-btn" title="Cycle text color: · auto / W white / B black">·</button>'
             f'</label>'
         )
 
@@ -511,7 +514,6 @@ def render_unified_docket(cases):
     type_options = [
         ("all",         "All entries"),
         ("substantive", "Substantive only"),
-        ("hide-admin",  "Hide administrative"),
         ("orders",      "Orders only"),
         ("transfers",   "Transfers only"),
     ]
@@ -546,10 +548,15 @@ def render_unified_docket(cases):
   .ud-cb-row,.ud-radio-row{{display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;padding:3px 0;}}
   .ud-cb-row input[type="checkbox"],.ud-radio-row input{{cursor:pointer;accent-color:var(--neon);flex-shrink:0;}}
   .ud-cb-count{{color:var(--ink-60);font-size:11px;flex:1;}}
-  /* Color picker swatch */
+  /* Color picker swatch + fg toggle */
   .ud-color-picker{{width:20px;height:20px;padding:0;border:1px solid var(--line-strong);cursor:pointer;border-radius:50%;overflow:hidden;background:transparent;flex-shrink:0;}}
   .ud-color-picker::-webkit-color-swatch-wrapper{{padding:0;border-radius:50%;}}
   .ud-color-picker::-webkit-color-swatch{{border:none;border-radius:50%;}}
+  .ud-fg-btn{{width:20px;height:20px;padding:0;border:1px solid var(--line-strong);cursor:pointer;border-radius:50%;font-size:9px;font-weight:800;font-family:inherit;line-height:1;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;}}
+  .ud-cases-head{{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}}
+  .ud-cases-head .ud-section-head{{margin-bottom:0;}}
+  #ud-toggle-all{{background:none;border:none;color:var(--ink-60);font-size:10px;cursor:pointer;padding:0;font-family:inherit;text-decoration:underline;letter-spacing:0.02em;}}
+  #ud-toggle-all:hover{{color:var(--ink);}}
   /* Pills — rounded */
   .ud-pill{{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:0.03em;padding:2px 8px;white-space:nowrap;border-radius:99px;}}
   {pill_css}
@@ -563,8 +570,6 @@ def render_unified_docket(cases):
   .ud-table th{{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:10px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}}
   .ud-table td{{padding:11px 14px;font-size:12.5px;border-bottom:1px solid var(--line);vertical-align:top;}}
   .ud-table tr:last-child td{{border-bottom:none;}}
-  .ud-row-new td{{background:rgba(212,255,0,0.05);}}
-  [data-theme="dark"] .ud-row-new td{{background:rgba(93,122,0,0.12);}}
   .ud-date{{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;overflow:hidden;}}
   .ud-case{{white-space:nowrap;overflow:hidden;}}
   .ud-party{{color:var(--ink-60);font-size:12px;overflow:hidden;}}
@@ -590,7 +595,7 @@ def render_unified_docket(cases):
 <nav class="tn">
   <div class="tn-row">
     <div class="tn-left">
-      <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{LOGO_SRC}"></a>
+      <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
     </div>
     <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
@@ -608,7 +613,10 @@ def render_unified_docket(cases):
 <div class="ud-shell">
   <aside class="ud-sidebar">
     <div>
-      <div class="ud-section-head">Cases</div>
+      <div class="ud-cases-head">
+        <div class="ud-section-head">Cases</div>
+        <button id="ud-toggle-all">Deselect all</button>
+      </div>
       {"".join(cb_rows)}
     </div>
     <div>
