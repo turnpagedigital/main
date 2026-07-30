@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-30 16:45 UTC · auto-generated from the unified docket — edit on /intel/unified-docket.html_
+_Updated 2026-07-30 20:09 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -17,4 +17,10 @@ hi
 > Objection to confirmation of plan 11/12/13
 
 Ciao
+
+## New Filing
+
+### (no docket number) — 2026-07-30
+
+> Case Summary: Alkegen Chapter 11 — Alkegen, the Clearlake-backed specialty materials maker formed in Unifrax's debt-funded 2021 acquisition of Lydall, filed a prepackaged Chapter 11 to shed roughly $3
 
