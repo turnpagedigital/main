@@ -67,11 +67,18 @@
     return (savedColors[slug] && savedColors[slug].bg) || DEFAULT_BG[slug] || "#888888";
   }
 
-  function getFg(bg) {
+  function autoFg(bg) {
     var r = parseInt(bg.slice(1, 3), 16) || 136;
     var g = parseInt(bg.slice(3, 5), 16) || 136;
     var b = parseInt(bg.slice(5, 7), 16) || 136;
     return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.55 ? "#0A0A0A" : "#FFFFFF";
+  }
+
+  function getFg(slug, bg) {
+    var stored = savedColors[slug] && savedColors[slug].fg;
+    if (stored === "white") return "#FFFFFF";
+    if (stored === "black") return "#0A0A0A";
+    return autoFg(bg);
   }
 
   // ── Flatten all entries ────────────────────────────────────────────────────
@@ -128,17 +135,38 @@
     return list;
   }
 
+  // FG_STATES: undefined = auto, "white", "black"
+  var FG_CYCLE = [undefined, "white", "black"];
+  var FG_LABEL = { undefined: "·", white: "W", black: "B" };
+
+  function cycleFg(slug) {
+    var cur = savedColors[slug] && savedColors[slug].fg;
+    var idx = FG_CYCLE.indexOf(cur);
+    var next = FG_CYCLE[(idx + 1) % FG_CYCLE.length];
+    if (!savedColors[slug]) savedColors[slug] = {};
+    if (next === undefined) { delete savedColors[slug].fg; }
+    else { savedColors[slug].fg = next; }
+    saveColors(savedColors);
+  }
+
   // ── Apply pill colors (inline style wins over static CSS) ──────────────────
   function applyPillColors() {
     CASES.forEach(function (c) {
       var bg = getBg(c.slug);
-      var fg = getFg(bg);
+      var fg = getFg(c.slug, bg);
       document.querySelectorAll(".ud-pill-" + c.slug).forEach(function (el) {
         el.style.background = bg;
         el.style.color = fg;
       });
       var picker = document.getElementById("ud-color-" + c.slug);
       if (picker) picker.value = bg;
+      var fgBtn = document.getElementById("ud-fg-" + c.slug);
+      if (fgBtn) {
+        var state = savedColors[c.slug] && savedColors[c.slug].fg;
+        fgBtn.textContent = state === "white" ? "W" : state === "black" ? "B" : "·";
+        fgBtn.style.background = fg;
+        fgBtn.style.color = bg;
+      }
     });
   }
 
@@ -158,7 +186,7 @@
     tbody.innerHTML = entries.map(function (e) {
       var dkt = e.entry_number != null ? String(e.entry_number) : "—";
       var bg = getBg(e.slug);
-      var fg = getFg(bg);
+      var fg = getFg(e.slug, bg);
       var pill = '<span class="ud-pill ud-pill-' + esc(e.slug) + '" style="background:' + bg + ';color:' + fg + '">' +
                  esc(e.short) + " · " + esc(dkt) + "</span>";
       var badges = "";
@@ -192,25 +220,55 @@
   }
 
   // ── Wire controls ──────────────────────────────────────────────────────────
+  function syncToggleAllBtn() {
+    var btn = document.getElementById("ud-toggle-all");
+    if (!btn) return;
+    var allOn = CASES.every(function (c) { return activeCases[c.slug]; });
+    btn.textContent = allOn ? "Deselect all" : "Select all";
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    // Select / deselect all
+    var toggleAllBtn = document.getElementById("ud-toggle-all");
+    if (toggleAllBtn) {
+      toggleAllBtn.addEventListener("click", function () {
+        var allOn = CASES.every(function (c) { return activeCases[c.slug]; });
+        CASES.forEach(function (c) { activeCases[c.slug] = !allOn; });
+        document.querySelectorAll(".ud-case-cb").forEach(function (cb) {
+          cb.checked = !allOn;
+        });
+        syncToggleAllBtn();
+        render();
+      });
+    }
+
     // Case checkboxes
     document.querySelectorAll(".ud-case-cb").forEach(function (cb) {
       cb.addEventListener("change", function () {
         activeCases[cb.value] = cb.checked;
+        syncToggleAllBtn();
         render();
       });
     });
 
-    // Color pickers
+    // Color pickers + fg toggles
     CASES.forEach(function (c) {
       var picker = document.getElementById("ud-color-" + c.slug);
-      if (!picker) return;
-      picker.addEventListener("input", function () {
-        if (!savedColors[c.slug]) savedColors[c.slug] = {};
-        savedColors[c.slug].bg = picker.value;
-        saveColors(savedColors);
-        render();
-      });
+      if (picker) {
+        picker.addEventListener("input", function () {
+          if (!savedColors[c.slug]) savedColors[c.slug] = {};
+          savedColors[c.slug].bg = picker.value;
+          saveColors(savedColors);
+          render();
+        });
+      }
+      var fgBtn = document.getElementById("ud-fg-" + c.slug);
+      if (fgBtn) {
+        fgBtn.addEventListener("click", function () {
+          cycleFg(c.slug);
+          render();
+        });
+      }
     });
 
     // Entry-type radios
