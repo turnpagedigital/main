@@ -733,30 +733,91 @@
     }).catch(function () {});
   }
 
-  function pushNote(nk, entry) {
+  // Single-flight save queue: one PUT at a time, latest state per key wins,
+  // failures retry with backoff. The sync bots commit to the repo constantly,
+  // so individual writes can lose a race — the queue absorbs that.
+  var noteQueue = {};        // key → true (dirty)
+  var notePushing = false;
+  var noteToastTimer = null;
+
+  function noteToast(text, isError) {
+    var el = document.getElementById("ud-sync");
+    if (!el) return;
+    clearTimeout(noteToastTimer);
+    var prevText = el.textContent;
+    var prevCls = el.className;
+    el.textContent = text;
+    el.className = isError ? "ud-sync-static" : "ud-sync-live";
+    noteToastTimer = setTimeout(function () {
+      el.textContent = prevText;
+      el.className = prevCls;
+    }, isError ? 6000 : 2000);
+  }
+
+  function queueNotePush(nk) {
+    noteQueue[nk] = true;
+    drainNoteQueue();
+  }
+
+  function drainNoteQueue() {
+    if (notePushing) return;
+    var keys = Object.keys(noteQueue);
+    if (!keys.length) return;
+    var nk = keys[0];
+    delete noteQueue[nk];
+    notePushing = true;
+
     var rec = NOTES[nk] || {};
-    fetch("api/notes", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        key: nk,
-        bookmarked: !!rec.bookmarked,
-        note: rec.note || "",
-        context: entry ? {
-          case_slug: entry.slug,
-          case_name: entry.name,
-          entry_number: entry.entry_number,
-          date_filed: entry.date_filed,
-          snippet: (entry.description || "").slice(0, 200),
-        } : {},
-      }),
-    }).then(function (r) { return r.json(); }).then(function (p) {
-      var st = document.getElementById("ud-note-status");
-      if (st) st.textContent = p && p.ok ? "Saved" : "Save failed";
-    }).catch(function () {
-      var st = document.getElementById("ud-note-status");
-      if (st) st.textContent = "Save failed \u2014 offline?";
+    var entry = findEntryByKey(nk);
+    var body = JSON.stringify({
+      key: nk,
+      bookmarked: !!rec.bookmarked,
+      note: rec.note || "",
+      context: entry ? {
+        case_slug: entry.slug,
+        case_name: entry.name,
+        entry_number: entry.entry_number,
+        date_filed: entry.date_filed,
+        snippet: (entry.description || "").slice(0, 200),
+      } : {},
     });
+
+    function attempt(n) {
+      fetch("api/notes", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: body,
+      }).then(function (r) { return r.json(); }).then(function (p) {
+        if (p && p.ok) {
+          noteToast("Saved", false);
+          finish();
+        } else {
+          retry(n);
+        }
+      }).catch(function () { retry(n); });
+    }
+
+    function retry(n) {
+      if (n >= 3) {
+        noteToast("Save failed \u2014 check connection and try again", true);
+        finish();
+        return;
+      }
+      noteToast("Saving\u2026 (retry " + (n + 1) + ")", false);
+      setTimeout(function () { attempt(n + 1); }, 1500 * (n + 1));
+    }
+
+    function finish() {
+      notePushing = false;
+      drainNoteQueue();
+    }
+
+    noteToast("Saving\u2026", false);
+    attempt(0);
+  }
+
+  function pushNote(nk) {
+    queueNotePush(nk);
   }
 
   function toggleBookmark(nk) {
@@ -764,7 +825,7 @@
     rec.bookmarked = !rec.bookmarked;
     if (!rec.bookmarked && !(rec.note || "").trim()) delete NOTES[nk];
     else NOTES[nk] = rec;
-    pushNote(nk, findEntryByKey(nk));
+    pushNote(nk);
     render();
   }
 
@@ -807,7 +868,7 @@
     rec.note = val;
     if (!(val || "").trim() && !rec.bookmarked) delete NOTES[nk];
     else NOTES[nk] = rec;
-    pushNote(nk, findEntryByKey(nk));
+    pushNote(nk);
     closeNoteModal();
     render();
   }
