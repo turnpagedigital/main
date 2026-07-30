@@ -15,10 +15,8 @@
  */
 
 const API = "https://www.courtlistener.com/api/rest/v4";
-// CourtListener free tier allows only 250 requests/DAY — a 30-minute
-// edge cache keeps a full day of viewing within budget. (A paid CL
-// membership would allow dropping this back toward one minute.)
-const CACHE_SECONDS = 1800;
+// CL Individual membership (2026-07-30) — minute-level freshness is back.
+const CACHE_SECONDS = 55;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
