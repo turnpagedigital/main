@@ -69,10 +69,12 @@
       var after = desc.slice(m.index + raw.length, m.index + raw.length + 40);
       var tm = after.match(TIME_RE);
       events.push({
+        key: caseInfo.slug + "|" + iso + "|" + kind + "|e" + (entry.entry_number != null ? entry.entry_number : "x"),
         slug: caseInfo.slug,
         short: caseInfo.short_name,
         name: caseInfo.display_name,
         default_color: caseInfo.default_color,
+        court: caseInfo.court || "",
         docket_url: caseInfo.docket_url || "",
         date: iso,
         time: tm ? tm[1].replace(/\s+/g, " ").toUpperCase().replace(/\./g, "") : "",
@@ -132,6 +134,10 @@
   var sortDir = "asc";
   var searchText = "";
   var activeGearSlug = null;
+  var dismissed = {};       // event key → true
+  var mergedInto = {};      // event key → primary key
+  var mergeGroups = [];     // [{keys, primary}]
+  var selectedKeys = {};    // key → true (merge/dismiss selection)
   var _savedState = null;
 
   var FILTER_KEY = "uc-filter-state";
@@ -165,10 +171,12 @@
       (c.events || []).forEach(function (evt) {
         if (!evt.date || !evt.title) return;
         EVENTS.push({
+          key: c.slug + "|" + evt.date + "|" + (evt.kind || "Event") + "|u" + (evt.url || evt.title).slice(0, 80),
           slug: c.slug,
           short: c.short_name,
           name: c.display_name,
           default_color: c.default_color,
+          court: c.court || "",
           docket_url: "",
           date: evt.date,
           time: (evt.time || "").toUpperCase(),
@@ -197,11 +205,89 @@
     });
   }
 
+  // ── Curation (dismiss/merge) — repo-backed via /intel/api/calendar-prefs ──
+  var curTimer = null;
+
+  function applyCuration(prefs) {
+    dismissed = {};
+    (prefs.dismissed || []).forEach(function (k) { dismissed[k] = true; });
+    mergeGroups = prefs.merges || [];
+    mergedInto = {};
+    mergeGroups.forEach(function (g) {
+      g.keys.forEach(function (k) {
+        if (k !== g.primary) mergedInto[k] = g.primary;
+      });
+    });
+  }
+
+  function loadCuration() {
+    fetchJson("api/calendar-prefs").then(function (p) {
+      if (p && p.ok) { applyCuration(p); render(); updateCurationInfo(); }
+    }).catch(function () {
+      fetchJson("intel-calendar.json").then(function (f) {
+        applyCuration(f || {}); render(); updateCurationInfo();
+      }).catch(function () {});
+    });
+  }
+
+  function pushCuration() {
+    clearTimeout(curTimer);
+    curTimer = setTimeout(function () {
+      fetch("api/calendar-prefs", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          dismissed: Object.keys(dismissed),
+          merges: mergeGroups,
+        }),
+      }).catch(function () {});
+    }, 1200);
+  }
+
+  function updateCurationInfo() {
+    var el = document.getElementById("uc-curation-info");
+    if (!el) return;
+    var nD = Object.keys(dismissed).length;
+    var nM = mergeGroups.length;
+    if (!nD && !nM) { el.innerHTML = ""; return; }
+    el.innerHTML = nD + " dismissed \u00b7 " + nM + " merge" + (nM === 1 ? "" : "s") +
+      ' <button type="button" id="uc-curation-reset">Reset</button>';
+    var btn = document.getElementById("uc-curation-reset");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        dismissed = {};
+        mergeGroups = [];
+        mergedInto = {};
+        pushCuration();
+        render();
+        updateCurationInfo();
+      });
+    }
+  }
+
+  function updateMergeBar() {
+    var bar = document.getElementById("uc-merge-bar");
+    var count = document.getElementById("uc-merge-count");
+    if (!bar) return;
+    var n = Object.keys(selectedKeys).length;
+    bar.style.display = n >= 1 ? "flex" : "none";
+    if (count) count.textContent = n + " selected";
+    var mergeBtn = document.getElementById("uc-merge-btn");
+    if (mergeBtn) mergeBtn.style.display = n >= 2 ? "" : "none";
+  }
+
   // ── Filter + sort ──────────────────────────────────────────────────────────
   function filtered() {
     var sq = searchText.toLowerCase().trim();
     var today = todayISO();
+    var mergedExtras = {};
+    EVENTS.forEach(function (ev) {
+      var prim = mergedInto[ev.key];
+      if (prim) (mergedExtras[prim] = mergedExtras[prim] || []).push(ev);
+    });
     var list = EVENTS.filter(function (ev) {
+      if (dismissed[ev.key]) return false;
+      if (mergedInto[ev.key]) return false;
       if (!activeCases[ev.slug]) return false;
       if (scope === "upcoming" && ev.date < today) return false;
       if (scope === "past" && ev.date >= today) return false;
@@ -211,6 +297,7 @@
       }
       return true;
     });
+    list.forEach(function (ev) { ev.merged = mergedExtras[ev.key] || null; });
     list.sort(function (a, b) {
       var cmp = a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
       if (cmp === 0 && a.slug === b.slug) {
@@ -531,16 +618,52 @@
     return '<span class="ud-link-empty">—</span>';
   }
 
+  // Court → IANA time zone. Explicit zone tokens in the time string win.
+  function courtTz(ev) {
+    var t = (ev.time || "").toUpperCase();
+    if (/\b(ET|EST|EDT)\b/.test(t)) return "America/New_York";
+    if (/\b(CT|CST|CDT)\b/.test(t)) return "America/Chicago";
+    if (/\b(MT|MST|MDT)\b/.test(t)) return "America/Denver";
+    if (/\b(PT|PST|PDT)\b/.test(t)) return "America/Los_Angeles";
+    var c = (ev.court || "").toLowerCase();
+    if (!c) return null;
+    if (/cal(ifornia)?\.?($|[^a-z])|c\.d\.|n\.d\. cal|9th/.test(c) || c.indexOf("cal") !== -1) return "America/Los_Angeles";
+    if (/tex|tx/.test(c)) return "America/Chicago";
+    if (/del|fla|york|n\.?y|jersey|penn|mass|conn|md|maryland|virginia|d\.c|georgia/.test(c)) return "America/New_York";
+    if (/ill|minn|wis|mo|kan|la\.|miss|tenn/.test(c)) return "America/Chicago";
+    if (/colo|ariz|utah|mont|n\.?m/.test(c)) return "America/Denver";
+    if (/wash|ore|nev/.test(c)) return "America/Los_Angeles";
+    return null;
+  }
+
+  function parseTime(t) {
+    var m = /(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(t || "");
+    if (!m) return null;
+    var h = Number(m[1]) % 12;
+    if (/pm/i.test(m[3])) h += 12;
+    return { h: h, m: Number(m[2]) };
+  }
+
+  // Pull attendance details (Zoom/Teams links, courtroom, dial-ins) from text
+  function attendanceInfo(text) {
+    var found = [];
+    var m;
+    var re = /(https?:\/\/)?(zoomgov\.com|zoom\.us|teams\.microsoft\.com)[^\s,)]*/gi;
+    while ((m = re.exec(text)) !== null) found.push(m[0]);
+    m = /courtroom\s*#?\s*[\w-]+/i.exec(text);
+    if (m) found.push(m[0]);
+    m = /at\s+(US|U\.S\.)\s+(Bankruptcy\s+)?Court[^.(]{0,80}/i.exec(text);
+    if (m) found.push(m[0].trim());
+    m = /(\(\d{3}\)\s*|\d{3}[-.])\d{3}[-.]\d{4}/.exec(text);
+    if (m) found.push("Dial-in: " + m[0]);
+    return found;
+  }
+
+  function pad2n(n) { return (n < 10 ? "0" : "") + n; }
+
   function gcalUrl(ev) {
     var d = (ev.date || "").replace(/-/g, "");
     if (d.length !== 8) return "";
-    // All-day event (court time zones vary by district — the time stays in
-    // the title/details rather than risking a wrong-hour calendar block).
-    var next = new Date(ev.date + "T00:00:00");
-    next.setDate(next.getDate() + 1);
-    var d2 = next.getFullYear() +
-      (next.getMonth() < 9 ? "0" : "") + (next.getMonth() + 1) +
-      (next.getDate() < 10 ? "0" : "") + next.getDate();
     var title = ev.short + ": " + ev.kind + (ev.time ? " " + ev.time : "");
     var srcUrl = ev.event_url || "";
     if (!srcUrl && ev.entry_number != null && (ev.docket_url || "").indexOf("courtlistener.com") !== -1) {
@@ -548,14 +671,41 @@
         "/?filed_after=&filed_before=&entry_gte=" + ev.entry_number +
         "&entry_lte=" + ev.entry_number + "&order_by=asc";
     }
+
+    var allText = ev.snippet || "";
+    (ev.merged || []).forEach(function (x) { allText += "\n" + (x.snippet || ""); });
+    var attendance = attendanceInfo(allText);
+
     var details = ev.kind + (ev.time ? " at " + ev.time : "") +
       "\nCase: " + ev.name +
-      (ev.snippet ? "\n\n" + ev.snippet : "") +
-      (srcUrl ? "\n\nSource: " + srcUrl : "") +
+      (attendance.length ? "\n\nAttendance: " + attendance.join(" \u00b7 ") : "") +
+      (ev.snippet ? "\n\n" + ev.snippet : "");
+    (ev.merged || []).forEach(function (x) {
+      details += "\n\nAlso: " + (x.snippet || x.kind);
+    });
+    details += (srcUrl ? "\n\nSource: " + srcUrl : "") +
       "\n\n(from Turnpage Unified Calendar)";
+
+    var dates;
+    var tzParam = "";
+    var tm = parseTime(ev.time);
+    var tz = courtTz(ev);
+    if (tm && tz) {
+      // Real scheduled block in the court's time zone (1 hour)
+      var start = d + "T" + pad2n(tm.h) + pad2n(tm.m) + "00";
+      var endH = tm.h + 1;
+      var end = d + "T" + pad2n(endH) + pad2n(tm.m) + "00";
+      dates = start + "/" + end;
+      tzParam = "&ctz=" + encodeURIComponent(tz);
+    } else {
+      var next = new Date(ev.date + "T00:00:00");
+      next.setDate(next.getDate() + 1);
+      var d2 = next.getFullYear() + pad2n(next.getMonth() + 1) + pad2n(next.getDate());
+      dates = d + "/" + d2;
+    }
     return "https://calendar.google.com/calendar/render?action=TEMPLATE" +
       "&text=" + encodeURIComponent(title) +
-      "&dates=" + d + "/" + d2 +
+      "&dates=" + dates + tzParam +
       "&details=" + encodeURIComponent(details);
   }
 
@@ -569,7 +719,7 @@
     }
     if (!tbody) return;
     if (!list.length) {
-      tbody.innerHTML = '<tr><td colspan="6" class="ud-empty">' +
+      tbody.innerHTML = '<tr><td colspan="7" class="ud-empty">' +
         (scope === "upcoming"
           ? "No upcoming dates found in the tracked dockets yet. New filings that schedule hearings or deadlines will appear here automatically."
           : "No events match the current filters.") + "</td></tr>";
@@ -585,7 +735,10 @@
       var relHtml = ev.date === today
         ? '<span class="ud-new-pill">TODAY</span>'
         : '<span class="uc-rel">' + esc(rel) + "</span>";
-      var kindHtml = '<span class="uc-kind">' + esc(ev.kind) + (ev.time ? " · " + esc(ev.time) : "") + "</span>";
+      var kindHtml = '<span class="uc-kind">' + esc(ev.kind) + (ev.time ? " · " + esc(ev.time) : "") + "</span>" +
+        (ev.merged && ev.merged.length
+          ? '<span class="uc-merged-chip" title="' + esc(ev.merged.map(function (x) { return x.snippet; }).join("\n")) + '">+' + ev.merged.length + " merged</span>"
+          : "");
       var rowCls = ev.date === today ? ' class="ud-row-new"' : "";
       return (
         "<tr" + rowCls + ">" +
@@ -598,6 +751,10 @@
             (gcalUrl(ev)
               ? '<a class="uc-gcal" href="' + esc(gcalUrl(ev)) + '" target="_blank" rel="noopener" title="Add to Google Calendar">\ud83d\udcc6</a>'
               : "") +
+          "</td>" +
+          '<td class="uc-curate-cell">' +
+            '<input type="checkbox" class="uc-sel" data-key="' + esc(ev.key) + '"' + (selectedKeys[ev.key] ? " checked" : "") + ' title="Select for merge/dismiss">' +
+            '<button type="button" class="uc-x" data-key="' + esc(ev.key) + '" title="Dismiss this event">×</button>' +
           "</td>" +
         "</tr>"
       );
@@ -633,6 +790,7 @@
             short_name:    m.short_name,
             docket_url:    (caseData.docket && caseData.docket.docket_url) || m.docket_url || "",
             default_color: m.default_color || "#888888",
+            court:         m.court || "",
             entries:       (caseData.docket && caseData.docket.entries) || [],
             events:        caseData.events || [],
           };
@@ -640,7 +798,7 @@
           return {
             slug: m.slug, display_name: m.display_name, short_name: m.short_name,
             docket_url: m.docket_url || "", default_color: m.default_color || "#888888",
-            entries: [], events: [],
+            court: m.court || "", entries: [], events: [],
           };
         });
       }));
@@ -656,11 +814,12 @@
       render();
       startLiveSync();
       loadServerPrefs();
+      loadCuration();
     }).catch(function (err) {
       var tbody = document.getElementById("uc-tbody");
       if (tbody) {
         tbody.innerHTML =
-          '<tr><td colspan="6" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
+          '<tr><td colspan="7" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
       }
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
@@ -811,6 +970,71 @@
         if (pop && pop.contains(ev.target)) return;
         ddPanel.style.display = "none";
         closePopover();
+      });
+    }
+
+    // Curation: select / dismiss / merge
+    var ucTbody = document.getElementById("uc-tbody");
+    if (ucTbody) {
+      ucTbody.addEventListener("change", function (ev) {
+        var cb = ev.target.closest(".uc-sel");
+        if (!cb) return;
+        var k = cb.getAttribute("data-key");
+        if (cb.checked) selectedKeys[k] = true;
+        else delete selectedKeys[k];
+        updateMergeBar();
+      });
+      ucTbody.addEventListener("click", function (ev) {
+        var x = ev.target.closest(".uc-x");
+        if (!x) return;
+        dismissed[x.getAttribute("data-key")] = true;
+        pushCuration();
+        render();
+        updateCurationInfo();
+      });
+    }
+    var mergeBtn = document.getElementById("uc-merge-btn");
+    var dismissBtn = document.getElementById("uc-dismiss-btn");
+    var clearSel = document.getElementById("uc-clear-sel");
+    if (mergeBtn) {
+      mergeBtn.addEventListener("click", function () {
+        var keys = Object.keys(selectedKeys);
+        if (keys.length < 2) return;
+        // Primary = the selected event with the most information (time, then
+        // link, then longest text) so the merged row keeps the best headline.
+        var evs = EVENTS.filter(function (e) { return selectedKeys[e.key]; });
+        evs.sort(function (a, b) {
+          var sa = (a.time ? 4 : 0) + ((a.event_url || a.entry_number != null) ? 2 : 0) + Math.min(1, (a.snippet || "").length / 200);
+          var sb = (b.time ? 4 : 0) + ((b.event_url || b.entry_number != null) ? 2 : 0) + Math.min(1, (b.snippet || "").length / 200);
+          return sb - sa;
+        });
+        var primary = evs.length ? evs[0].key : keys[0];
+        mergeGroups.push({ keys: keys, primary: primary });
+        mergeGroups.forEach(function (g) {
+          g.keys.forEach(function (k) { if (k !== g.primary) mergedInto[k] = g.primary; });
+        });
+        selectedKeys = {};
+        pushCuration();
+        updateMergeBar();
+        render();
+        updateCurationInfo();
+      });
+    }
+    if (dismissBtn) {
+      dismissBtn.addEventListener("click", function () {
+        Object.keys(selectedKeys).forEach(function (k) { dismissed[k] = true; });
+        selectedKeys = {};
+        pushCuration();
+        updateMergeBar();
+        render();
+        updateCurationInfo();
+      });
+    }
+    if (clearSel) {
+      clearSel.addEventListener("click", function () {
+        selectedKeys = {};
+        updateMergeBar();
+        render();
       });
     }
 

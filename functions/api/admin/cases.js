@@ -62,6 +62,7 @@ async function updateManifest(env, action, c) {
         display_name: c.display_name,
         short_name: shortName(c.display_name),
         docket_url: (c.docket_source && c.docket_source.url) || "",
+        court: (c.case && c.case.court) || "",
         default_color: idx >= 0
           ? (manifest[idx].default_color || PILL_PALETTE[colorIdx % PILL_PALETTE.length])
           : PILL_PALETTE[colorIdx % PILL_PALETTE.length],

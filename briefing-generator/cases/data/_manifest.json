@@ -5,7 +5,8 @@
     "short_name": "Bartz",
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "default_color": "#D4FF00",
-    "category": "class-action"
+    "category": "class-action",
+    "court": "U.S. District Court, N.D. Cal. (San Francisco)"
   },
   {
     "slug": "blockfills",
@@ -13,7 +14,8 @@
     "short_name": "BlockFills",
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
     "default_color": "#60A5FA",
-    "category": "bankruptcy"
+    "category": "bankruptcy",
+    "court": "Bankr. D. Del."
   },
   {
     "slug": "concord-anthropic",
@@ -21,7 +23,8 @@
     "short_name": "Concord Music",
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
     "default_color": "#FB923C",
-    "category": "class-action"
+    "category": "class-action",
+    "court": "District Court, N.D. California"
   },
   {
     "slug": "goliath",
@@ -29,7 +32,8 @@
     "short_name": "Goliath",
     "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
     "default_color": "#C084FC",
-    "category": "bankruptcy"
+    "category": "bankruptcy",
+    "court": "S.D. Fl."
   },
   {
     "slug": "harvest-sherwood",
@@ -37,7 +41,8 @@
     "short_name": "Harvest Sherwood",
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "default_color": "#34D399",
-    "category": "bankruptcy"
+    "category": "bankruptcy",
+    "court": "N.D. Tex."
   },
   {
     "slug": "kahan",
@@ -45,7 +50,8 @@
     "short_name": "Kahan",
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "default_color": "#F87171",
-    "category": "bankruptcy"
+    "category": "bankruptcy",
+    "court": "Bankr. D. Mass"
   },
   {
     "slug": "power-block-coin",
@@ -53,7 +59,8 @@
     "short_name": "Power Block",
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "default_color": "#D4FF00",
-    "category": "bankruptcy"
+    "category": "bankruptcy",
+    "court": "Bankr. D. Utah"
   },
   {
     "slug": "rndc",
@@ -61,7 +68,8 @@
     "short_name": "RNDC",
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
     "default_color": "#60A5FA",
-    "category": "bankruptcy"
+    "category": "bankruptcy",
+    "court": "Bankr. S.D.Tx."
   },
   {
     "slug": "sleep-number",
@@ -69,7 +77,8 @@
     "short_name": "Sleep Number",
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
     "default_color": "#FB923C",
-    "category": "bankruptcy"
+    "category": "bankruptcy",
+    "court": "United States Bankruptcy Court, S.D. New York"
   },
   {
     "slug": "terraform-labs",
@@ -77,6 +86,7 @@
     "short_name": "Terraform Labs",
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc",
     "default_color": "#C084FC",
-    "category": "bankruptcy"
+    "category": "bankruptcy",
+    "court": "Bankr. D. Del."
   }
 ]
