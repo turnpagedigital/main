@@ -27,10 +27,13 @@ function cleanEntry(raw) {
   if (!raw || typeof raw !== "object") return null;
   const note = typeof raw.note === "string" ? raw.note.slice(0, 20000) : "";
   const bookmarked = !!raw.bookmarked;
-  if (!note.trim() && !bookmarked) return null;
+  const snooze = typeof raw.snooze_until === "string" && /^\d{4}-\d{2}-\d{2}T/.test(raw.snooze_until)
+    ? raw.snooze_until.slice(0, 30) : "";
+  if (!note.trim() && !bookmarked && !snooze) return null;
   return {
     bookmarked,
     note,
+    snooze_until: snooze,
     updated_at: typeof raw.updated_at === "string" ? raw.updated_at.slice(0, 40) : "",
     case_slug: String(raw.case_slug || "").slice(0, 60),
     case_name: String(raw.case_name || "").slice(0, 120),
@@ -100,6 +103,7 @@ export async function onRequestPut(context) {
     ...(body.context || {}),
     bookmarked: body.bookmarked,
     note: body.note,
+    snooze_until: body.snooze_until,
     updated_at: new Date().toISOString(),
   });
   if (entry) map.entries[key] = entry;
