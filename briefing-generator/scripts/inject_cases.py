@@ -38,6 +38,107 @@ BOX_END = "<!-- TRACKED-CASES END -->"
 THEME_SCRIPT = '<script src="theme.js"></script>'          # root-level pages
 THEME_SCRIPT_SUBDIR = '<script src="../theme.js"></script>' # cases/ pages
 
+# Shared stylesheet for the unified docket + unified calendar shells
+UD_CSS = r"""  .page-title{max-width:1680px;}
+  /* Main page area — no sidebar */
+  .ud-page{max-width:1680px;margin:0 auto;padding:20px 32px 60px;}
+  /* Controls bar */
+  .ud-controls{background:var(--surface);border:1px solid var(--line-strong);padding:16px 20px;margin-bottom:16px;display:flex;flex-direction:column;gap:12px;}
+  .ud-search-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .ud-search-wrap{flex:1;min-width:200px;position:relative;}
+  .ud-search-input{width:100%;padding:8px 12px;font-size:15px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
+  .ud-search-input:focus{border-color:var(--neon);}
+  .ud-date-range{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .ud-date-label{font-size:12px;color:var(--ink-60);font-weight:700;letter-spacing:0.04em;white-space:nowrap;}
+  .ud-date-input{padding:7px 10px;font-size:13px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}
+  .ud-date-input:focus{border-color:var(--neon);}
+  .ud-date-sep{color:var(--ink-40);font-size:14px;}
+  .ud-clear-btn{padding:7px 14px;font-size:13px;font-weight:700;font-family:inherit;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;white-space:nowrap;}
+  .ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
+  /* Case dropdown + filters row */
+  .ud-filter-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .ud-case-dd{position:relative;margin-right:auto;}
+  .ud-case-dd-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;}
+  .ud-dd-caret{font-size:11px;color:var(--ink-60);}
+  .ud-case-dd-panel{position:absolute;top:calc(100% + 6px);left:0;z-index:900;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:270px;padding:8px;}
+  .ud-dd-head{display:flex;align-items:center;gap:10px;padding:2px 8px 8px;border-bottom:1px solid var(--line);margin-bottom:6px;}
+  .ud-dd-quick{background:none;border:none;color:var(--ink-60);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:2px 4px;letter-spacing:0.03em;}
+  .ud-dd-quick:hover{color:var(--ink);}
+  .ud-dd-row{display:flex;align-items:center;gap:10px;padding:7px 8px;cursor:pointer;}
+  .ud-dd-row:hover{background:var(--paper-2);}
+  .ud-dd-row input{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}
+  .ud-dd-spacer{flex:1;}
+  .ud-dd-empty{padding:8px;font-size:13px;color:var(--ink-40);}
+  .ud-dd-groups{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;}
+  .ud-dd-groups-title{font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-40);padding:2px 8px 4px;}
+  .ud-dd-group-row{display:flex;align-items:center;gap:6px;padding:6px 8px;}
+  .ud-dd-group-row:hover{background:var(--paper-2);}
+  .ud-dd-group-name{flex:1;background:none;border:none;font-family:inherit;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;text-align:left;padding:0;}
+  .ud-dd-group-name:hover{color:var(--ink);text-decoration:underline;}
+  .ud-dd-group-n{font-size:11px;color:var(--ink-40);font-weight:400;margin-left:4px;}
+  .ud-dd-group-act{background:none;border:1px solid var(--line-strong);color:var(--ink-60);font-family:inherit;font-size:10px;font-weight:700;letter-spacing:0.04em;cursor:pointer;padding:2px 7px;text-transform:uppercase;}
+  .ud-dd-group-act:hover{border-color:var(--ink-40);color:var(--ink);}
+  .ud-dd-group-del{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;line-height:1;}
+  .ud-dd-group-del:hover{color:#C84141;}
+  .ud-dd-save-row{display:flex;align-items:center;gap:6px;padding:8px 8px 4px;}
+  .ud-dd-save-input{flex:1;min-width:0;padding:6px 8px;font-size:12px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}
+  .ud-dd-save-input:focus{border-color:var(--neon);}
+  .ud-dd-save-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;padding:6px 10px;letter-spacing:0.03em;white-space:nowrap;}
+  .ud-dd-save-btn:hover{border-color:var(--ink-40);}
+  .ud-gear-btn{background:none;border:none;cursor:pointer;font-size:16px;padding:1px 5px;color:var(--ink-60);line-height:1;flex-shrink:0;opacity:0;transition:opacity 0.15s;}
+  .ud-dd-row:hover .ud-gear-btn,.ud-gear-btn:focus{opacity:1;}
+  .ud-gear-btn:hover{color:var(--ink);}
+  .ud-filter-right{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;}
+  .ud-type-select{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}
+  .ud-type-select:focus{border-color:var(--neon);}
+  .ud-new-label{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;color:var(--ink);}
+  .ud-new-label input{accent-color:var(--neon);cursor:pointer;}
+  /* Color popover */
+  .ud-color-pop{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:232px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}
+  .ud-pop-title{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ud-pop-swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:14px;}
+  .ud-pop-swatch{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;padding:0;outline:none;}
+  .ud-pop-swatch:hover{transform:scale(1.15);}
+  .ud-pop-swatch.ud-swatch-active{border-color:var(--ink);}
+  .ud-pop-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;gap:8px;font-size:14px;color:var(--ink-60);cursor:pointer;}
+  .ud-pop-row input[type="color"]{width:40px;height:30px;padding:0;border:1px solid var(--line-strong);cursor:pointer;background:transparent;flex-shrink:0;}
+  .ud-pop-row input[type="color"]::-webkit-color-swatch-wrapper{padding:0;}
+  .ud-pop-row input[type="color"]::-webkit-color-swatch{border:none;}
+  .ud-pop-reset{width:100%;padding:7px;font-size:12px;font-weight:700;font-family:inherit;background:none;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;margin-top:4px;}
+  .ud-pop-reset:hover{border-color:var(--ink-40);color:var(--ink);}
+  /* Toolbar */
+  .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
+  #ud-sort-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;}
+  #ud-sort-btn:hover{border-color:var(--ink-40);}
+  /* Pills */
+  .ud-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;padding:2px 10px;white-space:nowrap;border-radius:99px;}
+  /* Table */
+  .ud-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);table-layout:fixed;}
+  .ud-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}
+  .ud-table td{padding:12px 14px;font-size:15px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .ud-table tr:last-child td{border-bottom:none;}
+  .ud-row-new td{font-weight:700;}
+  .ud-date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
+  .ud-case{white-space:nowrap;overflow:hidden;}
+  .ud-party{color:var(--ink-60);font-size:13px;overflow:hidden;}
+  .ud-party-empty{color:var(--ink-40);}
+  .ud-entry{word-break:break-word;}
+  .ud-desc{color:var(--ink);}
+  .ud-desc-empty{color:var(--ink-40);}
+  .ud-doc{white-space:nowrap;text-align:right;overflow:hidden;}
+  .ud-landmark{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}
+  .ud-new-pill{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#0A0A0A;background:var(--neon);padding:1px 7px;margin-left:6px;vertical-align:middle;}
+  #ud-sync{margin-left:10px;font-size:12px;}
+  .ud-sync-live{color:var(--ink-60);}
+  .ud-sync-live::before{content:"\25CF";color:var(--neon);margin-right:5px;font-size:10px;}
+  .ud-sync-static{color:var(--ink-40);}
+  .ud-link{display:inline-block;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}
+  .ud-link-docket{border-bottom-color:var(--line-strong);}
+  .ud-link-empty{color:var(--ink-40);font-size:13px;}
+  .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}"""
+
+
 # ── full case-page stylesheet (brand tokens; no f-string — CSS braces) ───────
 PAGE_CSS = """<style>
   :root{color-scheme:light;--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
@@ -485,104 +586,7 @@ def render_unified_docket(cases):
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}
 <style>
-  .page-title{{max-width:1680px;}}
-  /* Main page area — no sidebar */
-  .ud-page{{max-width:1680px;margin:0 auto;padding:20px 32px 60px;}}
-  /* Controls bar */
-  .ud-controls{{background:var(--surface);border:1px solid var(--line-strong);padding:16px 20px;margin-bottom:16px;display:flex;flex-direction:column;gap:12px;}}
-  .ud-search-row{{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}}
-  .ud-search-wrap{{flex:1;min-width:200px;position:relative;}}
-  .ud-search-input{{width:100%;padding:8px 12px;font-size:15px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}}
-  .ud-search-input:focus{{border-color:var(--neon);}}
-  .ud-date-range{{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}}
-  .ud-date-label{{font-size:12px;color:var(--ink-60);font-weight:700;letter-spacing:0.04em;white-space:nowrap;}}
-  .ud-date-input{{padding:7px 10px;font-size:13px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}}
-  .ud-date-input:focus{{border-color:var(--neon);}}
-  .ud-date-sep{{color:var(--ink-40);font-size:14px;}}
-  .ud-clear-btn{{padding:7px 14px;font-size:13px;font-weight:700;font-family:inherit;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;white-space:nowrap;}}
-  .ud-clear-btn:hover{{border-color:var(--ink-40);color:var(--ink);}}
-  /* Case dropdown + filters row */
-  .ud-filter-row{{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}}
-  .ud-case-dd{{position:relative;margin-right:auto;}}
-  .ud-case-dd-btn{{display:inline-flex;align-items:center;gap:8px;font-weight:700;}}
-  .ud-dd-caret{{font-size:11px;color:var(--ink-60);}}
-  .ud-case-dd-panel{{position:absolute;top:calc(100% + 6px);left:0;z-index:900;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:270px;padding:8px;}}
-  .ud-dd-head{{display:flex;align-items:center;gap:10px;padding:2px 8px 8px;border-bottom:1px solid var(--line);margin-bottom:6px;}}
-  .ud-dd-quick{{background:none;border:none;color:var(--ink-60);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:2px 4px;letter-spacing:0.03em;}}
-  .ud-dd-quick:hover{{color:var(--ink);}}
-  .ud-dd-row{{display:flex;align-items:center;gap:10px;padding:7px 8px;cursor:pointer;}}
-  .ud-dd-row:hover{{background:var(--paper-2);}}
-  .ud-dd-row input{{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}}
-  .ud-dd-spacer{{flex:1;}}
-  .ud-dd-empty{{padding:8px;font-size:13px;color:var(--ink-40);}}
-  .ud-dd-groups{{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;}}
-  .ud-dd-groups-title{{font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-40);padding:2px 8px 4px;}}
-  .ud-dd-group-row{{display:flex;align-items:center;gap:6px;padding:6px 8px;}}
-  .ud-dd-group-row:hover{{background:var(--paper-2);}}
-  .ud-dd-group-name{{flex:1;background:none;border:none;font-family:inherit;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;text-align:left;padding:0;}}
-  .ud-dd-group-name:hover{{color:var(--ink);text-decoration:underline;}}
-  .ud-dd-group-n{{font-size:11px;color:var(--ink-40);font-weight:400;margin-left:4px;}}
-  .ud-dd-group-act{{background:none;border:1px solid var(--line-strong);color:var(--ink-60);font-family:inherit;font-size:10px;font-weight:700;letter-spacing:0.04em;cursor:pointer;padding:2px 7px;text-transform:uppercase;}}
-  .ud-dd-group-act:hover{{border-color:var(--ink-40);color:var(--ink);}}
-  .ud-dd-group-del{{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;line-height:1;}}
-  .ud-dd-group-del:hover{{color:#C84141;}}
-  .ud-dd-save-row{{display:flex;align-items:center;gap:6px;padding:8px 8px 4px;}}
-  .ud-dd-save-input{{flex:1;min-width:0;padding:6px 8px;font-size:12px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}}
-  .ud-dd-save-input:focus{{border-color:var(--neon);}}
-  .ud-dd-save-btn{{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;padding:6px 10px;letter-spacing:0.03em;white-space:nowrap;}}
-  .ud-dd-save-btn:hover{{border-color:var(--ink-40);}}
-  .ud-gear-btn{{background:none;border:none;cursor:pointer;font-size:16px;padding:1px 5px;color:var(--ink-60);line-height:1;flex-shrink:0;opacity:0;transition:opacity 0.15s;}}
-  .ud-dd-row:hover .ud-gear-btn,.ud-gear-btn:focus{{opacity:1;}}
-  .ud-gear-btn:hover{{color:var(--ink);}}
-  .ud-filter-right{{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;}}
-  .ud-type-select{{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}}
-  .ud-type-select:focus{{border-color:var(--neon);}}
-  .ud-new-label{{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;color:var(--ink);}}
-  .ud-new-label input{{accent-color:var(--neon);cursor:pointer;}}
-  /* Color popover */
-  .ud-color-pop{{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:232px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}}
-  .ud-pop-title{{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}}
-  .ud-pop-swatches{{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:14px;}}
-  .ud-pop-swatch{{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;padding:0;outline:none;}}
-  .ud-pop-swatch:hover{{transform:scale(1.15);}}
-  .ud-pop-swatch.ud-swatch-active{{border-color:var(--ink);}}
-  .ud-pop-row{{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;gap:8px;font-size:14px;color:var(--ink-60);cursor:pointer;}}
-  .ud-pop-row input[type="color"]{{width:40px;height:30px;padding:0;border:1px solid var(--line-strong);cursor:pointer;background:transparent;flex-shrink:0;}}
-  .ud-pop-row input[type="color"]::-webkit-color-swatch-wrapper{{padding:0;}}
-  .ud-pop-row input[type="color"]::-webkit-color-swatch{{border:none;}}
-  .ud-pop-reset{{width:100%;padding:7px;font-size:12px;font-weight:700;font-family:inherit;background:none;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;margin-top:4px;}}
-  .ud-pop-reset:hover{{border-color:var(--ink-40);color:var(--ink);}}
-  /* Toolbar */
-  .ud-toolbar{{display:flex;align-items:center;gap:12px;margin-bottom:12px;}}
-  #ud-count{{font-size:14px;color:var(--ink-60);flex:1;}}
-  #ud-sort-btn{{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;}}
-  #ud-sort-btn:hover{{border-color:var(--ink-40);}}
-  /* Pills */
-  .ud-pill{{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;padding:2px 10px;white-space:nowrap;border-radius:99px;}}
-  /* Table */
-  .ud-table{{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);table-layout:fixed;}}
-  .ud-table th{{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}}
-  .ud-table td{{padding:12px 14px;font-size:15px;border-bottom:1px solid var(--line);vertical-align:top;}}
-  .ud-table tr:last-child td{{border-bottom:none;}}
-  .ud-row-new td{{font-weight:700;}}
-  .ud-date{{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}}
-  .ud-case{{white-space:nowrap;overflow:hidden;}}
-  .ud-party{{color:var(--ink-60);font-size:13px;overflow:hidden;}}
-  .ud-party-empty{{color:var(--ink-40);}}
-  .ud-entry{{word-break:break-word;}}
-  .ud-desc{{color:var(--ink);}}
-  .ud-desc-empty{{color:var(--ink-40);}}
-  .ud-doc{{white-space:nowrap;text-align:right;overflow:hidden;}}
-  .ud-landmark{{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}}
-  .ud-new-pill{{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#0A0A0A;background:var(--neon);padding:1px 7px;margin-left:6px;vertical-align:middle;}}
-  #ud-sync{{margin-left:10px;font-size:12px;}}
-  .ud-sync-live{{color:var(--ink-60);}}
-  .ud-sync-live::before{{content:"\25CF";color:var(--neon);margin-right:5px;font-size:10px;}}
-  .ud-sync-static{{color:var(--ink-40);}}
-  .ud-link{{display:inline-block;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}}
-  .ud-link-docket{{border-bottom-color:var(--line-strong);}}
-  .ud-link-empty{{color:var(--ink-40);font-size:13px;}}
-  .ud-empty{{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}}
+{UD_CSS}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -596,6 +600,7 @@ def render_unified_docket(cases):
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="unified-calendar.html">📅 Calendar</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -691,6 +696,126 @@ def render_unified_docket(cases):
     print(f"  ✓ unified-docket.html: shell written ({len(live)} live cases in manifest)")
 
 
+def render_unified_calendar(cases):
+    """Generate briefing-generator/unified-calendar.html — hearings & deadlines
+    parsed client-side (unified-calendar.js) from the same case data the
+    unified docket uses. Shares UD_CSS, theme.js, colors, and saved groups."""
+    logo_src = "assets/turnpage-logo.jpeg"
+
+    page = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unified Calendar — Turnpage Daily Briefing</title>
+{THEME_SCRIPT}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+{PAGE_CSS}
+<style>
+{UD_CSS}
+  .uc-rel-cell{{white-space:nowrap;}}
+  .uc-rel{{font-size:12px;font-weight:700;color:var(--ink-60);}}
+  .uc-kind{{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:2px 8px;margin-right:6px;vertical-align:middle;white-space:nowrap;}}
+  .uc-snippet{{color:var(--ink-60);font-size:13px;}}
+</style>
+<!-- AUTH GATE START -->
+<script src="/auth/config.js"></script>
+<script type="module" src="/auth/auth.js"></script>
+<!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
+      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="unified-docket.html">⚖️ Docket</a>
+    </div>
+    <button id="theme-toggle">🖥️</button>
+  </div>
+</nav>
+
+<div class="page-title">
+  <div class="eyebrow">Intelligence · Hearings &amp; Deadlines</div>
+  <h1>📅 Unified Calendar</h1>
+  <div class="case-meta">
+    <span id="ud-meta">Loading…</span>
+    <span id="ud-sync"></span>
+  </div>
+</div>
+
+<!-- Color popover (shared, repositioned by JS) -->
+<div id="ud-color-pop" class="ud-color-pop" style="display:none;">
+  <div class="ud-pop-title" id="ud-pop-slug"></div>
+  <div id="ud-pop-swatches" class="ud-pop-swatches"></div>
+  <label class="ud-pop-row">
+    <span>Background</span>
+    <input type="color" id="ud-pop-bg" value="#888888">
+  </label>
+  <label class="ud-pop-row">
+    <span>Text</span>
+    <input type="color" id="ud-pop-fg" value="#ffffff">
+  </label>
+  <button id="ud-pop-reset" class="ud-pop-reset">Reset to default</button>
+</div>
+
+<div class="ud-page">
+
+  <div class="ud-controls">
+    <div class="ud-search-row">
+      <div class="ud-search-wrap">
+        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search events, cases, dates…">
+      </div>
+      <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
+    </div>
+    <div class="ud-filter-row">
+      <div class="ud-case-dd" id="ud-case-dd">
+        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
+        <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
+      </div>
+      <div class="ud-filter-right">
+        <select id="uc-scope" class="ud-type-select">
+          <option value="upcoming">Upcoming only</option>
+          <option value="all">All dates</option>
+          <option value="past">Past only</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="ud-toolbar">
+    <span id="ud-count"></span>
+    <button id="ud-sort-btn">Date ↑</button>
+  </div>
+
+  <table class="ud-table">
+    <thead><tr>
+      <th style="width:150px">Date</th>
+      <th style="width:100px">When</th>
+      <th style="width:130px">Case</th>
+      <th>Event</th>
+      <th style="width:100px;text-align:right">Source</th>
+    </tr></thead>
+    <tbody id="uc-tbody">
+      <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<script src="unified-calendar.js"></script>
+
+</body>
+</html>
+"""
+
+    out = REPO_ROOT / "unified-calendar.html"
+    out.write_text(page, encoding="utf-8")
+    print("  \u2713 unified-calendar.html: shell written")
+
+
 # ── main ─────────────────────────────────────────────────────────────────────
 def main():
     cases = load_cases()
@@ -720,6 +845,10 @@ def main():
     # 3) unified docket page
     print("=== Rendering unified docket page ===")
     render_unified_docket(cases)
+
+    # 4) unified calendar page
+    print("=== Rendering unified calendar page ===")
+    render_unified_calendar(cases)
 
     print("=== Cases injection done. ===")
 

@@ -14,7 +14,7 @@ case:
 docket_source:
   type: courtlistener
   docket_id: 72494188
-  url: "https://veritaglobal.net/blockfills/document/list/6500"
+  url: "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/"
 claims_administrator:
   name: "Veritaglobal"
   url: "https://veritaglobal.net/blockfills/document/list/6500"
