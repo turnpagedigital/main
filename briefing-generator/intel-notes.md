@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-30 16:45 UTC · auto-generated from the unified docket — edit on /intel/unified-docket.html_
+_Updated 2026-07-30 20:10 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -17,4 +17,28 @@ hi
 > Objection to confirmation of plan 11/12/13
 
 Ciao
+
+## New Filing
+
+### (no docket number) — 2026-07-30
+
+> Case Summary: Alkegen Chapter 11 — Alkegen, the Clearlake-backed specialty materials maker formed in Unifrax's debt-funded 2021 acquisition of Lydall, filed a prepackaged Chapter 11 to shed roughly $3
+
+### (no docket number) — 2026-07-29
+
+> Filing Alert: YSA Investments 1 Chapter 11 — YSA Investments 1 Files Chapter 11 in District of Delaware
+
+### (no docket number) — 2026-07-29
+
+> Filing Alert: Jackson Brown Court Apartments Chapter 11 — Jackson Brown Court Apartments Files Chapter 11 in Northern District of Georgia
+
+### (no docket number) — 2026-07-29
+
+> Filing Alert: South Bay Contractors Chapter 11 — South Bay Contractors Files Chapter 11 in Central District of California
+
+## RNDC
+
+### (no docket number) — 2026-07-29
+
+> One of America's Biggest Liquor Distributors Just Filed for Bankruptcy. An Expert Warns a Massive Ripple Effect Could Follow — Inc. covers RNDC's Chapter 11 filing, noting the distributor is pursuing 
 
