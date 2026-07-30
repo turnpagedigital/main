@@ -96,48 +96,57 @@ def _normalize_entry(e, now):
     }
 
 
-def fetch_entry_pages(docket_id, existing_keys, backfill, max_pages=25):
-    """Walk /docket-entries/ newest-first. Incremental mode stops at the first
-    page that overlaps entries we already have; backfill mode walks the whole
-    docket (capped at max_pages ~= 500 entries as a runaway guard)."""
-    url = (f"{API}/docket-entries/?docket={docket_id}&order_by=-date_filed"
-           f"&fields=entry_number,date_filed,description,recap_documents")
+def first_page_url(docket_id):
+    return (f"{API}/docket-entries/?docket={docket_id}&order_by=-date_filed"
+            f"&fields=entry_number,date_filed,description,recap_documents")
+
+
+def fetch_entry_pages(docket_id, existing_keys, max_pages=3):
+    """Freshness pass: newest pages, stopping at the first overlap with
+    entries we already hold. Fail-fast on throttling (retries=1)."""
+    url = first_page_url(docket_id)
     raw, pages = [], 0
     while url and pages < max_pages:
-        resp = get_json(url)
+        resp = get_json(url, retries=1)
         results = resp.get("results") or []
         raw.extend(results)
         pages += 1
         overlap = any(_entry_key(r) in existing_keys for r in results)
         url = resp.get("next")
-        if not backfill and (overlap or not results):
+        if overlap or not results:
             break
         if url:
-            time.sleep(3.0)  # CL burst ceiling is low — stay well under it
-    return raw, pages
+            time.sleep(3.0)
+    return raw
 
 
-def build_docket_block(docket_id, docket_url, existing_entries=None, backfill=False):
-    """Hit CourtListener and return the normalized `docket` sub-object.
-    Existing entries are preserved and merged so the stored docket keeps its
-    full history; fresh data wins when the same entry appears in both."""
+def crawl_history(cursor_url, page_budget):
+    """Trickle backfill: walk up to page_budget older pages from the stored
+    cursor. Returns (raw_entries, next_cursor_or_None, done_bool).
+    A 429 that survives one retry just ends this run's crawl — the cursor
+    stays put and the next hourly run resumes from the same spot."""
+    raw = []
+    url = cursor_url
+    for _ in range(page_budget):
+        if not url:
+            return raw, None, True
+        try:
+            resp = get_json(url, retries=1)
+        except Exception as ex:
+            print(f"    · history crawl paused ({ex}) — resuming next run")
+            return raw, url, False
+        raw.extend(resp.get("results") or [])
+        url = resp.get("next")
+        time.sleep(5.0)
+    return raw, url, url is None
+
+
+def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next, now):
+    """Assemble the normalized `docket` sub-object from merged entries."""
     meta = get_json(
-        f"{API}/dockets/{docket_id}/?fields=id,case_name,docket_number,court_id,date_filed,date_last_filing"
+        f"{API}/dockets/{docket_id}/?fields=id,case_name,docket_number,court_id,date_filed,date_last_filing",
+        retries=1,
     )
-    now = dt.datetime.now(dt.timezone.utc)
-    existing_entries = existing_entries or []
-    existing_keys = {_entry_key(e) for e in existing_entries}
-
-    raw, pages = fetch_entry_pages(docket_id, existing_keys, backfill)
-
-    merged = {}
-    for e in existing_entries:
-        merged[_entry_key(e)] = e
-    for r in raw:
-        # Normalize BEFORE keying: unnumbered entries key on their description,
-        # which the normalizer may fill from the document short description.
-        ne = _normalize_entry(r, now)
-        merged[_entry_key(ne)] = ne
     for e in merged.values():
         if e.get("is_new") and e.get("date_filed"):
             try:
@@ -151,8 +160,7 @@ def build_docket_block(docket_id, docket_url, existing_entries=None, backfill=Fa
         return (e.get("date_filed") or "", n if n is not None else -1)
     entries = sorted(merged.values(), key=sort_key, reverse=True)
 
-    new_in_72h = sum(1 for e in entries if e["is_new"])
-    return {
+    block = {
         "source": "courtlistener",
         "awaiting_sync": False,
         # Entry links need the CourtListener docket URL — a claims-agent URL
@@ -163,14 +171,17 @@ def build_docket_block(docket_id, docket_url, existing_entries=None, backfill=Fa
         "date_last_filing": meta.get("date_last_filing") or "",
         "fetched_at": now.isoformat(),
         "as_of": pretty_date(now.date().isoformat()),
-        "backfilled": backfill or bool(existing_entries),
-        "new_in_72h": new_in_72h,
+        "backfilled": bool(backfilled),
+        "new_in_72h": sum(1 for e in entries if e["is_new"]),
         "recent": entries[:3],
         "entries": entries,
     }
+    if backfill_next:
+        block["backfill_next"] = backfill_next
+    return block
 
 
-def refresh_case(case):
+def refresh_case(case, history_pages=0):
     cfg = case["config"]
     slug = case["slug"]
     ds = cfg["docket_source"]
@@ -180,23 +191,45 @@ def refresh_case(case):
     if not TOKEN:
         print(f"  · {slug}: COURTLISTENER_TOKEN not set — seed kept")
         return False
-    prior = ((case["data"] or {}).get("docket") or {})
-    existing_entries = prior.get("entries") or []
-    # Full-history backfill: first sync of a case, any case that has never been
-    # backfilled, or an explicit DOCKET_BACKFILL=1 run.
-    backfill = (not existing_entries
-                or not prior.get("backfilled")
-                or os.environ.get("DOCKET_BACKFILL") == "1")
+
+    now = dt.datetime.now(dt.timezone.utc)
+    data = case["data"] or {}
+    prior = (data.get("docket") or {})
+    existing = prior.get("entries") or []
+    merged = {_entry_key(e): e for e in existing}
+
+    force = os.environ.get("DOCKET_BACKFILL") == "1"
+    backfilled = bool(prior.get("backfilled")) and not force
+    cursor = None if force else prior.get("backfill_next")
+
+    # 1) Freshness: newest entries (cheap, keeps the page current)
     try:
-        block = build_docket_block(ds["docket_id"], ds.get("url"),
-                                   existing_entries=existing_entries,
-                                   backfill=backfill)
+        raw = fetch_entry_pages(ds["docket_id"], set(merged.keys()))
+        for r in raw:
+            ne = _normalize_entry(r, now)
+            merged[_entry_key(ne)] = ne
     except Exception as ex:
         print(f"  ! {slug}: fetch failed ({ex}); seed kept", file=sys.stderr)
         return False
 
+    # 2) History trickle: a few older pages per run until the docket is walked
+    crawled = 0
+    if not backfilled and history_pages > 0:
+        url = cursor or first_page_url(ds["docket_id"])
+        raw, cursor, backfilled = crawl_history(url, history_pages)
+        crawled = len(raw)
+        for r in raw:
+            ne = _normalize_entry(r, now)
+            merged.setdefault(_entry_key(ne), ne)  # never clobber fresher data
+
+    try:
+        block = build_docket_block(ds["docket_id"], ds.get("url"), merged,
+                                   backfilled, None if backfilled else cursor, now)
+    except Exception as ex:
+        print(f"  ! {slug}: metadata fetch failed ({ex}); seed kept", file=sys.stderr)
+        return False
+
     # Merge: replace `docket`, preserve everything else (claims_administrator, coverage, case).
-    data = case["data"] or {}
     data.setdefault("case", {}).update({
         "slug": slug,
         "display_name": cfg["display_name"],
@@ -214,8 +247,9 @@ def refresh_case(case):
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     case["data_path"].write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  ✓ {slug}: {len(block['entries'])} entries{' (backfilled)' if backfill else ''}, "
-          f"{block['new_in_72h']} new in 72h → data/{slug}.json")
+    tail = "complete" if block["backfilled"] else "in progress"
+    print(f"  ✓ {slug}: {len(block['entries'])} entries "
+          f"(+{crawled} history, backfill {tail}), {block['new_in_72h']} new in 72h")
     return True
 
 
@@ -228,20 +262,13 @@ def main():
     if not TOKEN:
         print("COURTLISTENER_TOKEN not set — running in seed-only mode "
               "(no live docket pulls; seeded JSON is left as-is).")
-    budget_min = float(os.environ.get("DOCKET_TIME_BUDGET_MIN", "0") or 0)
-    start = time.monotonic()
-    print(f"=== Refreshing {len(cases)} tracked case(s) ===")
+    history_pages = int(os.environ.get("DOCKET_HISTORY_PAGES", "4") or 0)
+    print(f"=== Refreshing {len(cases)} tracked case(s) "
+          f"(history trickle: {history_pages} page(s)/case/run) ===")
     for i, c in enumerate(cases):
         if i and TOKEN:
-            time.sleep(2)  # CourtListener burst limit: 12 back-to-back calls trips a 429
-        prior = ((c["data"] or {}).get("docket") or {})
-        needs_backfill = not (prior.get("entries") and prior.get("backfilled"))
-        over_budget = budget_min and (time.monotonic() - start) > budget_min * 60
-        if needs_backfill and over_budget:
-            # Commit what we have; this case's full history continues next run.
-            print(f"  · {c['slug']}: time budget spent — backfill deferred to next run")
-            continue
-        refresh_case(c)
+            time.sleep(5)
+        refresh_case(c, history_pages=history_pages)
     print("=== Docket refresh done. ===")
 
 
