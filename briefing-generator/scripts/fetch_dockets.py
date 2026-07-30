@@ -77,6 +77,8 @@ def _normalize_entry(e, now):
         fp = docs[0]["filepath_local"]
         doc_url = "https://www.courtlistener.com/" + fp.lstrip("/")
     desc = " ".join((e.get("description") or "").split())
+    if desc.lower() == "none":
+        desc = ""  # some court RSS feeds literally say "none"
     if not desc:
         # RSS-sourced entries leave the docket text empty; the short
         # description lives on the attached document record instead.

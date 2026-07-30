@@ -96,6 +96,8 @@
   var entryFilter = "all";
   var newOnly = false;
   var showArticles = true;
+  var markedFilter = "all";
+  var NOTES = {};
   var sortDir = "desc";
   var searchText = "";
   var dateFrom = "";
@@ -112,6 +114,7 @@
       if (s.entryFilter)   entryFilter   = s.entryFilter;
       if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
       if (typeof s.showArticles === "boolean") showArticles = s.showArticles;
+      if (s.markedFilter) markedFilter = s.markedFilter;
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
       _savedState = s;
     } catch (e) {}
@@ -123,6 +126,7 @@
         entryFilter:    entryFilter,
         newOnly:        newOnly,
         showArticles:   showArticles,
+        markedFilter:   markedFilter,
         sortDir:        sortDir,
         activeCases:    activeCases,
       }));
@@ -222,6 +226,14 @@
       if (!activeCases[e.slug]) return false;
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
       if (e.is_article && !showArticles) return false;
+      if (markedFilter !== "all") {
+        var mrec = NOTES[entryNoteKey(e)];
+        var hasB = !!(mrec && mrec.bookmarked);
+        var hasN = !!(mrec && (mrec.note || "").trim());
+        if (markedFilter === "bookmarked" && !hasB) return false;
+        if (markedFilter === "noted" && !hasN) return false;
+        if (markedFilter === "either" && !hasB && !hasN) return false;
+      }
       if (newOnly && !e.is_new) return false;
       // Entry-type filters only apply to docket entries — the Articles
       // checkbox is the sole gate for news rows.
@@ -541,6 +553,19 @@
     render();
   }
 
+  function markCells(e) {
+    var nk = entryNoteKey(e);
+    var rec = NOTES[nk];
+    var bm = !!(rec && rec.bookmarked);
+    var hasNote = !!(rec && (rec.note || "").trim());
+    return (
+      '<td class="ud-mark-cell"><button type="button" class="ud-bm-btn' + (bm ? " ud-bm-on" : "") + '" ' +
+        'data-nk="' + esc(nk) + '" title="' + (bm ? "Remove bookmark" : "Bookmark") + '">' + (bm ? "\u2605" : "\u2606") + "</button></td>" +
+      '<td class="ud-mark-cell"><button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
+        'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '">\ud83d\udcdd</button></td>'
+    );
+  }
+
   // ── Render table ───────────────────────────────────────────────────────────
   function render() {
     var entries = filtered();
@@ -550,7 +575,7 @@
       countEl.textContent = entries.length + " entr" + (entries.length === 1 ? "y" : "ies");
     }
     if (!entries.length) {
-      tbody.innerHTML = '<tr><td colspan="5" class="ud-empty">No entries match the current filters.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="7" class="ud-empty">No entries match the current filters.</td></tr>';
       return;
     }
     tbody.innerHTML = entries.map(function (e) {
@@ -580,6 +605,7 @@
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
             '<td class="ud-entry">' + descHtml + "</td>" +
             '<td class="ud-doc"><a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read \u2197</a></td>' +
+            markCells(e) +
           "</tr>"
         );
       }
@@ -611,6 +637,7 @@
           '<td class="ud-party">' + partyHtml + "</td>" +
           '<td class="ud-entry">' + descHtml + "</td>" +
           '<td class="ud-doc">' + linkHtml + "</td>" +
+          markCells(e) +
         "</tr>"
       );
     }).join("");
@@ -671,15 +698,118 @@
       render();
       startLiveSync();
       loadServerPrefs();
+      loadNotes();
     }).catch(function (err) {
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
         tbody.innerHTML =
-          '<tr><td colspan="5" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
+          '<tr><td colspan="7" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
       }
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
     });
+  }
+
+  // ── Bookmarks + notes (stored in the repo via /intel/api/notes) ────────────
+  var activeNoteKey = null;
+
+  function entryNoteKey(e) {
+    return e.slug + "|" + liveEntryKey(e);
+  }
+
+  function findEntryByKey(nk) {
+    for (var i = 0; i < ALL.length; i++) {
+      if (entryNoteKey(ALL[i]) === nk) return ALL[i];
+    }
+    return null;
+  }
+
+  function loadNotes() {
+    fetchJson("api/notes").then(function (p) {
+      if (p && p.ok && p.entries) {
+        NOTES = p.entries;
+        render();
+      }
+    }).catch(function () {});
+  }
+
+  function pushNote(nk, entry) {
+    var rec = NOTES[nk] || {};
+    fetch("api/notes", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        key: nk,
+        bookmarked: !!rec.bookmarked,
+        note: rec.note || "",
+        context: entry ? {
+          case_slug: entry.slug,
+          case_name: entry.name,
+          entry_number: entry.entry_number,
+          date_filed: entry.date_filed,
+          snippet: (entry.description || "").slice(0, 200),
+        } : {},
+      }),
+    }).then(function (r) { return r.json(); }).then(function (p) {
+      var st = document.getElementById("ud-note-status");
+      if (st) st.textContent = p && p.ok ? "Saved" : "Save failed";
+    }).catch(function () {
+      var st = document.getElementById("ud-note-status");
+      if (st) st.textContent = "Save failed \u2014 offline?";
+    });
+  }
+
+  function toggleBookmark(nk) {
+    var rec = NOTES[nk] || {};
+    rec.bookmarked = !rec.bookmarked;
+    if (!rec.bookmarked && !(rec.note || "").trim()) delete NOTES[nk];
+    else NOTES[nk] = rec;
+    pushNote(nk, findEntryByKey(nk));
+    render();
+  }
+
+  function openNoteModal(nk) {
+    var e = findEntryByKey(nk);
+    if (!e) return;
+    activeNoteKey = nk;
+    var rec = NOTES[nk] || {};
+    var title = document.getElementById("ud-note-title");
+    var meta = document.getElementById("ud-note-meta");
+    var text = document.getElementById("ud-note-text");
+    var status = document.getElementById("ud-note-status");
+    if (title) {
+      title.textContent = e.short + " \u2014 " +
+        (e.entry_number != null ? "Dkt. " + e.entry_number : (e.is_article ? "Article" : "Entry"));
+    }
+    if (meta) {
+      meta.textContent = (e.date_display || e.date_filed || "") + " \u00b7 " +
+        (e.description || "").slice(0, 180);
+    }
+    if (text) text.value = rec.note || "";
+    if (status) status.textContent = "";
+    var overlay = document.getElementById("ud-note-overlay");
+    if (overlay) overlay.style.display = "flex";
+    if (text) text.focus();
+  }
+
+  function closeNoteModal() {
+    activeNoteKey = null;
+    var overlay = document.getElementById("ud-note-overlay");
+    if (overlay) overlay.style.display = "none";
+  }
+
+  function saveNoteFromModal(deleteNote) {
+    if (!activeNoteKey) return;
+    var nk = activeNoteKey;
+    var text = document.getElementById("ud-note-text");
+    var val = deleteNote ? "" : (text ? text.value : "");
+    var rec = NOTES[nk] || {};
+    rec.note = val;
+    if (!(val || "").trim() && !rec.bookmarked) delete NOTES[nk];
+    else NOTES[nk] = rec;
+    pushNote(nk, findEntryByKey(nk));
+    closeNoteModal();
+    render();
   }
 
   // ── Server-side prefs (colors + groups roam across devices) ────────────────
@@ -847,6 +977,45 @@
       typeSelect.value = entryFilter;
       typeSelect.addEventListener("change", function () {
         entryFilter = typeSelect.value;
+        saveFilterState();
+        render();
+      });
+    }
+
+    // Bookmark / note clicks (delegated — rows re-render constantly)
+    var tbodyEl = document.getElementById("ud-tbody");
+    if (tbodyEl) {
+      tbodyEl.addEventListener("click", function (ev) {
+        var bm = ev.target.closest(".ud-bm-btn");
+        if (bm) { toggleBookmark(bm.getAttribute("data-nk")); return; }
+        var nb = ev.target.closest(".ud-note-btn");
+        if (nb) { openNoteModal(nb.getAttribute("data-nk")); }
+      });
+    }
+
+    // Note modal buttons
+    var noteSave = document.getElementById("ud-note-save");
+    var noteCancel = document.getElementById("ud-note-cancel");
+    var noteDelete = document.getElementById("ud-note-delete");
+    var noteOverlay = document.getElementById("ud-note-overlay");
+    if (noteSave) noteSave.addEventListener("click", function () { saveNoteFromModal(false); });
+    if (noteCancel) noteCancel.addEventListener("click", closeNoteModal);
+    if (noteDelete) noteDelete.addEventListener("click", function () { saveNoteFromModal(true); });
+    if (noteOverlay) {
+      noteOverlay.addEventListener("click", function (ev) {
+        if (ev.target === noteOverlay) closeNoteModal();
+      });
+    }
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && activeNoteKey) closeNoteModal();
+    });
+
+    // Marked filter
+    var markedSel = document.getElementById("ud-marked");
+    if (markedSel) {
+      markedSel.value = markedFilter;
+      markedSel.addEventListener("change", function () {
+        markedFilter = markedSel.value;
         saveFilterState();
         render();
       });
