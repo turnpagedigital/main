@@ -612,10 +612,21 @@ def render_unified_docket(cases):
     all_with_data = [c for c in cases if c["data"] is not None]
 
     # Write _manifest.json — lightweight case metadata consumed by JS at runtime.
+    # Existing default_color values are preserved (they're editable from the
+    # docket page's color popover) — the palette only seeds new cases.
+    prior_colors = {}
+    manifest_path_prev = DATA_DIR / "_manifest.json"
+    if manifest_path_prev.exists():
+        try:
+            for entry in json.loads(manifest_path_prev.read_text(encoding="utf-8")):
+                if entry.get("slug") and entry.get("default_color"):
+                    prior_colors[entry["slug"]] = entry["default_color"]
+        except Exception:
+            pass
     manifest = []
     for i, c in enumerate(all_with_data):
         d = _docket(c["data"])
-        bl = _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
+        bl = prior_colors.get(c["slug"]) or _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
         manifest.append({
             "slug": c["slug"],
             "display_name": c["config"]["display_name"],
@@ -691,6 +702,7 @@ def render_unified_docket(cases):
     <input type="color" id="ud-pop-fg" value="#ffffff">
   </label>
   <button id="ud-pop-reset" class="ud-pop-reset">Reset to default</button>
+  <button id="ud-pop-default" class="ud-pop-reset" style="margin-top:8px;">Set as default color</button>
   <button id="ud-pop-edit" class="ud-pop-reset" style="margin-top:8px;">Edit case details…</button>
 </div>
 

@@ -1425,6 +1425,35 @@
     if (popBg) popBg.addEventListener("input", applyPopoverColors);
     if (popFg) popFg.addEventListener("input", applyPopoverColors);
 
+    var defaultBtn = document.getElementById("ud-pop-default");
+    if (defaultBtn) {
+      defaultBtn.addEventListener("click", function () {
+        if (!activeGearSlug) return;
+        var slug = activeGearSlug;
+        var bgEl = document.getElementById("ud-pop-bg");
+        var bg = bgEl ? bgEl.value : null;
+        if (!bg) return;
+        noteToast("Saving default color\u2026", false);
+        fetch("api/case-color", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ slug: slug, bg: bg }),
+        }).then(function (r) { return r.json(); }).then(function (p) {
+          if (!p || !p.ok) {
+            noteToast("Default color save failed \u2014 " + ((p && p.error) || "try again"), true);
+            return;
+          }
+          var c = caseBySlug(slug);
+          if (c) c.default_color = bg;
+          // The default IS the choice now — drop the per-view override
+          if (savedColors[slug]) { delete savedColors[slug]; saveColors(savedColors); }
+          renderCaseFilter();
+          render();
+          noteToast("Default color saved for every view", false);
+        }).catch(function () { noteToast("Default color save failed \u2014 network error", true); });
+      });
+    }
+
     var resetBtn = document.getElementById("ud-pop-reset");
     if (resetBtn) {
       resetBtn.addEventListener("click", function () {
