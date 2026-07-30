@@ -101,7 +101,10 @@ def build_docket_block(docket_id, docket_url):
     return {
         "source": "courtlistener",
         "awaiting_sync": False,
-        "docket_url": docket_url or f"https://www.courtlistener.com/docket/{docket_id}/",
+        # Entry links need the CourtListener docket URL — a claims-agent URL
+        # in the config must not leak in here (it lives in claims_administrator).
+        "docket_url": (docket_url if docket_url and "courtlistener.com" in docket_url
+                       else f"https://www.courtlistener.com/docket/{docket_id}/"),
         "case_name_api": meta.get("case_name") or "",
         "date_last_filing": meta.get("date_last_filing") or "",
         "fetched_at": now.isoformat(),

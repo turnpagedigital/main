@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unified Docket — Turnpage Daily Briefing</title>
+<title>Unified Calendar — Turnpage Daily Briefing</title>
 <script src="theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -180,6 +180,10 @@
   .ud-link-docket{border-bottom-color:var(--line-strong);}
   .ud-link-empty{color:var(--ink-40);font-size:13px;}
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
+  .uc-rel-cell{white-space:nowrap;}
+  .uc-rel{font-size:12px;font-weight:700;color:var(--ink-60);}
+  .uc-kind{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:2px 8px;margin-right:6px;vertical-align:middle;white-space:nowrap;}
+  .uc-snippet{color:var(--ink-60);font-size:13px;}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -193,15 +197,15 @@
     <div class="tn-left">
       <a class="tn-brand" href="index.html"><img class="tn-brand-logo" alt="Turnpage" src="assets/turnpage-logo.jpeg"></a>
       <a class="tn-back" href="index.html">← Daily Briefing</a>
-      <a class="tn-back" href="unified-calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="unified-docket.html">⚖️ Docket</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · Live Docket Monitor</div>
-  <h1>⚖️ Unified Docket</h1>
+  <div class="eyebrow">Intelligence · Hearings &amp; Deadlines</div>
+  <h1>📅 Unified Calendar</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
     <span id="ud-sync"></span>
@@ -228,16 +232,9 @@
   <div class="ud-controls">
     <div class="ud-search-row">
       <div class="ud-search-wrap">
-        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search entries, parties, dates…">
+        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search events, cases, dates…">
       </div>
-      <div class="ud-date-range">
-        <span class="ud-date-label">From</span>
-        <input type="date" id="ud-date-from" class="ud-date-input">
-        <span class="ud-date-sep">–</span>
-        <span class="ud-date-label">To</span>
-        <input type="date" id="ud-date-to" class="ud-date-input">
-        <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
-      </div>
+      <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
@@ -245,40 +242,36 @@
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
-        <select id="ud-entry-type" class="ud-type-select">
-          <option value="all">All entries</option>
-          <option value="substantive">Substantive only</option>
-          <option value="orders">Orders only</option>
-          <option value="transfers">Transfers only</option>
+        <select id="uc-scope" class="ud-type-select">
+          <option value="upcoming">Upcoming only</option>
+          <option value="all">All dates</option>
+          <option value="past">Past only</option>
         </select>
-        <label class="ud-new-label">
-          <input type="checkbox" id="ud-new-only"> New only (24h)
-        </label>
       </div>
     </div>
   </div>
 
   <div class="ud-toolbar">
     <span id="ud-count"></span>
-    <button id="ud-sort-btn">Date ↓</button>
+    <button id="ud-sort-btn">Date ↑</button>
   </div>
 
   <table class="ud-table">
     <thead><tr>
-      <th style="width:116px">Date</th>
+      <th style="width:150px">Date</th>
+      <th style="width:100px">When</th>
       <th style="width:130px">Case</th>
-      <th style="width:150px">Party</th>
-      <th>Entry</th>
-      <th style="width:100px;text-align:right">Dkt.</th>
+      <th>Event</th>
+      <th style="width:100px;text-align:right">Source</th>
     </tr></thead>
-    <tbody id="ud-tbody">
+    <tbody id="uc-tbody">
       <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 
 </div>
 
-<script src="unified-docket.js"></script>
+<script src="unified-calendar.js"></script>
 
 </body>
 </html>
