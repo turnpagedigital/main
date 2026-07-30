@@ -29,7 +29,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 45   # a full-history backfill walks every docket page; 429 backoffs stretch it
+    timeout-minutes: 20
 
     steps:
       - name: Checkout main
@@ -48,9 +48,10 @@ jobs:
         env:
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
           DOCKET_BACKFILL: ${{ github.event.inputs.backfill == 'true' && '1' || '' }}
-          # Stop STARTING heavy backfills after this many minutes — finished
-          # cases commit and the remainder resumes on the next hourly run.
-          DOCKET_TIME_BUDGET_MIN: "12"
+          # History trickle: each run walks this many older pages per case and
+          # stores a resume cursor — full history accumulates across hourly
+          # runs without ever tripping CourtListener's sustained-throttle wall.
+          DOCKET_HISTORY_PAGES: "4"
         run: |
           python scripts/fetch_dockets.py
           python scripts/inject_cases.py
