@@ -146,7 +146,6 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-th-menu-item:hover{background:var(--paper-2);}
   .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
-  .ud-link-agent{border-bottom-color:var(--line-strong);}
   .ud-sep{color:var(--ink-40);padding:0 5px;}
   .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
   .uc-gcal:hover{opacity:1;}
@@ -174,8 +173,8 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-sync-live{color:var(--ink-60);}
   .ud-sync-live::before{content:"\25CF";color:var(--neon);margin-right:5px;font-size:10px;}
   .ud-sync-static{color:var(--ink-40);}
-  .ud-link{display:inline-block;font-size:inherit;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:1px;}
-  .ud-link-docket{border-bottom-color:var(--line-strong);}
+  .ud-link{color:var(--ink);font-weight:400;text-decoration:underline;}
+
   .ud-link-empty{color:var(--ink-40);font-size:inherit;}
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}"""
 
