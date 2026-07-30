@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-07-30-bankruptcy-advisory",
+      "date": "2026-07-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 30, 2026",
+      "summary": "Today's lead is Alkegen. The largest new mega-case of the week — a prepackaged Chapter 11 by ASP Unifrax Holdings, Inc. (operating as Alkegen) filed July 26 in the Northern District of Texas — is now in its first-day phase after clearing interim DIP financing on July 28.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-30-class-actions-advisory",
+      "date": "2026-07-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 30, 2026",
+      "summary": "Two seismic developments landed in the last 72 hours. Johnson & Johnson announced a $5.5 billion talc settlement on Monday — the company's fourth attempt to close out MDL 2738 in as many years, this time outside bankruptcy court — while Judge Araceli Martínez-Olguín entered final judgment in Bartz v…",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-30-fraud-advisory",
+      "date": "2026-07-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 30, 2026",
+      "summary": "Today's picture is consolidation without resolution. The two anchor cases in this desk's portfolio — In re Goliath Ventures, Inc.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-30-tariff-advisory",
+      "date": "2026-07-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 30, 2026",
+      "summary": "Today's principal delta: The Section 122 surcharge hard-expired at 12:01 a.m. ET on July 24, 2026, exactly as the statute required, and the administration moved simultaneously — without a single day's gap — to replace it with a new global tariff regime under Section 301 of the Trade Act of 1974.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-30-crypto-advisory",
+      "date": "2026-07-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 30, 2026",
+      "summary": "Today's lead delta: Two developments closed out the week with material implications for crypto-creditor recovery posture. First, Ionic Digital (Nasdaq: IOND) — the Bitcoin miner assembled from Celsius Network's mining assets — completed its Nasdaq direct listing on July 28, giving former Celsius cla…",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-30-advisory",
+      "date": "2026-07-30",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 30, 2026",
+      "summary": "The lede today is closure on the headline matter and fresh aggression on the docket beside it. On July 20, 2026, Judge Araceli Martínez-Olguín of the U.S. District Court for the Northern District of California granted final approval of the landmark $1.5 billion class action settlement in Bartz v.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-09-tariff-advisory",
       "date": "2026-07-09",
       "type": "briefing",

@@ -13,9 +13,303 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "date_last_filing": "2026-07-28",
+    "fetched_at": "2026-07-30T16:21:36.841188+00:00",
+    "as_of": "Jul 30, 2026",
+    "backfilled": false,
+    "new_in_72h": 3,
+    "recent": [
+      {
+        "entry_number": 22,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Disclosure of Compensation",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Schedules/Statements or Amended Schedules/Statements",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Auto-Docket of Credit Card",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 22,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Disclosure of Compensation",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Schedules/Statements or Amended Schedules/Statements",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Auto-Docket of Credit Card",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2026-07-15",
+        "date_display": "Jul 15, 2026",
+        "description": "Order Granting Motion for Authority to Use a Single Debtor-In-Possession Operating Account for Both Jointly Administered Estates (Re: # 188) [Original Order docketed in Lead Case 26-13174-RAM ECF No.252] (Covington, Katrinka) (Entered: 07/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2026-07-15",
+        "date_display": "Jul 15, 2026",
+        "description": "Order Granting Motion to Extend Exclusivity Period for Filing a Chapter 11 Plan and Disclosure Statement (Re: # 187) [Original Order docketed in Lead Case 26-13174-RAM ECF No.251] (Covington, Katrinka) (Entered: 07/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2026-06-26",
+        "date_display": "Jun 26, 2026",
+        "description": "Meeting of Creditors Held and Concluded. Filed by U.S. Trustee Office of the US Trustee. (Schneiderman, Steven) (Entered: 06/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-26",
+        "date_display": "Jun 26, 2026",
+        "description": "Meeting of Creditors Held and Concluded [PAPERLESS",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2026-06-23",
+        "date_display": "Jun 23, 2026",
+        "description": "Notice of Appearance and Request for Service by Daniel M Coyle Filed by Debtor Goliath Ventures Inc.. (Coyle, Daniel) (Entered: 06/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2026-06-02",
+        "date_display": "Jun 2, 2026",
+        "description": "Second Order Extending Debtors' Deadline to File Schedules, Statement of Financial Affairs and Other Items. (Valencia, Yamileth) (Entered: 06/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2026-04-28",
+        "date_display": "Apr 28, 2026",
+        "description": "Certificate of Service by Attorney Solomon B Genet (Re: 14 Order (Generic)). (Genet, Solomon) (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2026-04-28",
+        "date_display": "Apr 28, 2026",
+        "description": "Order Granting Motion to Extend and Reset the Claims Bar Date to September 30, 2026 (Docketed as ECF #89 in LEAD Case) (Cohen, Diana) (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.flsb.844048/gov.uscourts.flsb.844048.14.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-28",
+        "date_display": "Apr 28, 2026",
+        "description": "Utility - Update Proof of Claim Deadline",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-28",
+        "date_display": "Apr 28, 2026",
+        "description": "Proof of Claim Deadline Updated per ECF #14. Proofs of Claim due by 9/30/2026. (Cohen, Diana)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2026-04-22",
+        "date_display": "Apr 22, 2026",
+        "description": "Statement Adjourning Meeting of Creditors Filed by U.S. Trustee Office of the US Trustee. Section 341(a) Meeting of Creditors Continued on 6/26/2026 at 12:00 PM BY TELEPHONE. Call 888 330-1716 and enter Passcode 3205723. (Schneiderman, Steven) (Entered: 04/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-22",
+        "date_display": "Apr 22, 2026",
+        "description": "Statement Adjourning Meeting of Creditors [PAPERLESS",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2026-04-02",
+        "date_display": "Apr 2, 2026",
+        "description": "Certificate of Service by Attorney Alexander E. Brody (Re: 11 Order (Generic)). (Brody, Alexander) (Entered: 04/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2026-04-01",
+        "date_display": "Apr 1, 2026",
+        "description": "Amended Order Extending Debtors' Deadline to File Schedules, Statement of Financial Affairs and Other Items. List of Equity Security Holders due 5/30/2026. Summary of Your Assets and Liabilities and Certain Statistical Information due 5/30/2026. Schedule A/B due 5/30/2026. Schedule D due 5/30/2026. Schedule E/F due 5/30/2026. Schedule G due 5/30/2026. Schedule H due 5/30/2026.Statement of Financial Affairs Due 5/30/2026.Declaration Concerning Debtors Schedules Due: 5/30/2026. [Incomplete Filings due by 5/30/2026]. (Cohen, Diana) (Entered: 04/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2026-03-19",
+        "date_display": "Mar 19, 2026",
+        "description": "BNC Certificate of Mailing (Re: 4 Notice of Incomplete Filings Due Required Chapter 11 Case Management Summary. Chapter 11 debtors (other than individuals not engaged in business) must file Local Form \"Chapter 11 Case Management Summary\" on the earlier of three business days after the petition date, or one business day before the first scheduled hearing on any motion. [See Local Rule 2081-1(B)]. List of Equity Security Holders due 3/30/2026. Summary of Your Assets and Liabilities and Certain Statistical Information due 3/30/2026. Schedule A/B due 3/30/2026. Schedule D due 3/30/2026. Schedule E/F due 3/30/2026. Schedule G due 3/30/2026. Schedule H due 3/30/2026.Statement of Financial Affairs Due 3/30/2026.Declaration Concerning Debtors Schedules Due: 3/30/2026. [Incomplete Filings due by 3/30/2026].) Notice Date 03/19/2026. (Admin.) (Entered: 03/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2026-03-19",
+        "date_display": "Mar 19, 2026",
+        "description": "BNC Certificate of Mailing (Re: 5 Order Authorizing Debtor in Possession to Continue Operation of its Business, Close Pre-Petition Bank Accounts, and Open Debtor in Possession Bank Accounts . (Leonard, Jahshima) ) Notice Date 03/19/2026. (Admin.) (Entered: 03/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2026-03-19",
+        "date_display": "Mar 19, 2026",
+        "description": "BNC Certificate of Mailing (Re: 7 Notice of Meeting of Creditors. Meeting of Creditors to be Held on 4/22/2026 at 12:00 PM by TELEPHONE [See Meeting Notice for details]. Deadline to File a Complaint to Determine Dischargeability of Certain Debts is 6/22/2026. Proofs of Claim due by 5/26/2026.) Notice Date 03/19/2026. (Admin.) (Entered: 03/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2026-03-17",
+        "date_display": "Mar 17, 2026",
+        "description": "Notice of Meeting of Creditors. Meeting of Creditors to be Held on 4/22/2026 at 12:00 PM by TELEPHONE [See Meeting Notice for details]. Deadline to File a Complaint to Determine Dischargeability of Certain Debts is 6/22/2026. Proofs of Claim due by 5/26/2026. (Cohen, Diana) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2026-03-17",
+        "date_display": "Mar 17, 2026",
+        "description": "Order Granting Motion For Joint Administration of Lead Case 26-13174-LMI [Goliath Ventures Inc. (FL)] with Member Case 26-13176-RAM [Goliath Ventures Inc (WY)], and Granting Motion to Transfer 26-13174-LMI to the Honorable Robert A. Mark. [*DOCKETED AS ECF #7 IN 26-13174-RAM*] (Cohen, Diana) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2026-03-17",
+        "date_display": "Mar 17, 2026",
+        "description": "Order Authorizing Debtor in Possession to Continue Operation of its Business, Close Pre-Petition Bank Accounts, and Open Debtor in Possession Bank Accounts . (Leonard, Jahshima) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2026-03-17",
+        "date_display": "Mar 17, 2026",
+        "description": "Notice of Incomplete Filings Due Required Chapter 11 Case Management Summary. Chapter 11 debtors (other than individuals not engaged in business) must file Local Form \"Chapter 11 Case Management Summary\" on the earlier of three business days after the petition date, or one business day before the first scheduled hearing on any motion. [See Local Rule 2081-1(B)]. List of Equity Security Holders due 3/30/2026. Summary of Your Assets and Liabilities and Certain Statistical Information due 3/30/2026. Schedule A/B due 3/30/2026. Schedule D due 3/30/2026. Schedule E/F due 3/30/2026. Schedule G due 3/30/2026. Schedule H due 3/30/2026.Statement of Financial Affairs Due 3/30/2026.Declaration Concerning Debtors Schedules Due: 3/30/2026. [Incomplete Filings due by 3/30/2026]. (Leonard, Jahshima) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2026-03-16",
+        "date_display": "Mar 16, 2026",
+        "description": "Ex Parte Motion to Transfer Case To Miami Division To The Honorable Laurel M. Isicoff Filed by Debtor Goliath Ventures Inc. (Genet, Solomon) (Entered: 03/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2026-03-16",
+        "date_display": "Mar 16, 2026",
+        "description": "Corporate Ownership Statement Filed by Debtor Goliath Ventures Inc.. (Genet, Solomon) (Entered: 03/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2026-03-16",
+        "date_display": "Mar 16, 2026",
+        "description": "Chapter 11 Voluntary Petition . [Fee Amount $1738] Proofs of Claim due by 05/26/2026. (Genet, Solomon) (Entered: 03/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.flsb.844048/gov.uscourts.flsb.844048.1.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "date_display": "Mar 16, 2026",
+        "description": "Auto-Docket of Credit Card",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "date_display": "Mar 16, 2026",
+        "description": "Receipt of Voluntary Petition (Chapter 11)( 26-13176) [misc,volp11a] (1738.00) Filing Fee. Receipt number A47723072. Fee amount 1738.00. (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ]
   },
   "claims_administrator": null,
   "coverage": [
