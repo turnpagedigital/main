@@ -4,41 +4,47 @@
     "display_name": "Bartz v. Anthropic",
     "short_name": "Bartz",
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "default_color": "#D4FF00"
+    "default_color": "#D4FF00",
+    "category": "class-action"
   },
   {
     "slug": "blockfills",
     "display_name": "BlockFills",
     "short_name": "BlockFills",
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
-    "default_color": "#60A5FA"
+    "default_color": "#60A5FA",
+    "category": "bankruptcy"
   },
   {
     "slug": "concord-anthropic",
     "display_name": "Concord Music Group v. Anthropic",
     "short_name": "Concord Music",
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
-    "default_color": "#FB923C"
+    "default_color": "#FB923C",
+    "category": "class-action"
   },
   {
     "slug": "power-block-coin",
     "display_name": "Power Block Coin, LLC",
     "short_name": "Power Block",
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
-    "default_color": "#C084FC"
+    "default_color": "#C084FC",
+    "category": "bankruptcy"
   },
   {
     "slug": "rndc",
     "display_name": "RNDC",
     "short_name": "RNDC",
     "docket_url": "",
-    "default_color": "#34D399"
+    "default_color": "#34D399",
+    "category": "bankruptcy"
   },
   {
     "slug": "sleep-number",
     "display_name": "Sleep Number",
     "short_name": "Sleep Number",
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "default_color": "#F87171"
+    "default_color": "#F87171",
+    "category": "bankruptcy"
   }
 ]
