@@ -67,8 +67,9 @@
     "display_name": "RNDC",
     "short_name": "RNDC",
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "court": "Bankr. S.D.Tx.",
-    "default_color": "#60A5FA"
+    "default_color": "#60A5FA",
+    "category": "bankruptcy",
+    "court": "Bankr. S.D.Tx."
   },
   {
     "slug": "sleep-number",
