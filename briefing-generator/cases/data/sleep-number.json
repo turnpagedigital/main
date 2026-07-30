@@ -14,34 +14,34 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-07-28",
-    "fetched_at": "2026-07-29T16:01:35.326640+00:00",
-    "as_of": "Jul 29, 2026",
-    "new_in_72h": 12,
+    "date_last_filing": "2026-07-29",
+    "fetched_at": "2026-07-30T04:47:54.330366+00:00",
+    "as_of": "Jul 30, 2026",
+    "new_in_72h": 19,
     "recent": [
       {
-        "entry_number": null,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "",
+        "entry_number": 463,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Notice, Proposed Order/Presentment",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 457,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "",
+        "entry_number": 468,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Statement",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 458,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "",
+        "entry_number": 460,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Affidavit of Service of Engels Medina Regarding Notice of Adjourned Hearing Regarding Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information (related document(s)452) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/29/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -49,10 +49,100 @@
     ],
     "entries": [
       {
+        "entry_number": 463,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Notice, Proposed Order/Presentment",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 468,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 460,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Affidavit of Service of Engels Medina Regarding Notice of Adjourned Hearing Regarding Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information (related document(s)452) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/29/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 465,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 469,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Certificate of No Objection Pursuant to LR 9013-3",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 467,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Notice, Adjournment of Hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": null,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "",
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Receipt of Application for Pro Hac Vice Admission( 26-11399-kyp) [motion,122] ( 200.00) Filing Fee. Receipt number A17621957. Fee amount 200.00. (Re: Doc # 461) (U.S. Treasury)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Auto - docket of credit card",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 464,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Motion, File Under Seal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 461,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "Application for Pro Hac Vice Admission filed by Jaclyn Carr on behalf of Genecov Investments, Ltd.. (Attachments: # 1 Proposed Order Granting Admission to Practice Pro Hac Vice) (Carr, Jaclyn) (Entered: 07/29/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -61,34 +151,7 @@
         "entry_number": 457,
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 458,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 459,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 454,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "",
+        "description": "Statement / Notice of Proposed Assumption and Assignment of Executory Contracts or Unexpired Leases and Cure Amount filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 07/28/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -97,7 +160,52 @@
         "entry_number": 456,
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
-        "description": "",
+        "description": "Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Current and Former Employees to Proceed with Outstanding Workers' Compensation Claims, and (III) Financial Institutions to Honor and Process Related Checks and Transfers (Related Doc # 5) signed on 7/28/2026. (Fredericks, Frances) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 458,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Hearing Agenda for Second-Day Hearing on July 9, 2026 at 10:00 a.m. (ET), and Notice of Adjournment of (I) Final Hearing on the Debtors DIP Motion and (II) Hearing on the Deferred Compensation Trust Motion (related document(s)199, 194) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 454,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Memorandum Decision Overruling Objection Of United States Trustee To Debtors Payments Under Non-Insider Retention Plan Signed On 7/28/2026. (Kinchen, Gwen) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 459,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Affidavit of Service of Nelson Crespin Regarding Final Order (I) Authorizing the Debtors to Satisfy Prepetition Claims of (A) Critical Vendors, (B) Foreign Vendors, (C) Lien Claimants, and (D) 503(b)(9) Claimants, (II) Authorizing Financial Institutions to Honor and Process Related Checks and Transfers, and (III) Granting Related Relief, Final Order (I) Authorizing (A) the Debtors to Maintain Their Existing Cash Management System, Bank Accounts, and Business Forms, (B) the Debtors to Open and Close Bank Accounts, and (C) Financial Institutions to Administer the Bank Accounts and Honor and Process Related Checks and Transfers, and (II) Allowing Intercompany Transactions and Affording Administrative Expense Priority to Post-Petition Intercompany Claims, Final Order Authorizing (I) the Debtors to Honor Prepetition Obligations to Customers and Related Third Parties and to Otherwise Continue Customer Practices and (II) Financial Institutions to Honor and Process Related Checks and Transfers, Final Order Authorizing (I) the Debtors to Pay Certain Prepetition Taxes, Governmental Assessments, and Fees and (II) Financial Institutions to Honor and Process Related Checks and Transfers, Order Authorizing Parties to Redact Personal Identifying Information, Order Authorizing the Retention and Compensation of Professionals Utilized in the Ordinary Course of Business, Order (I) Approving the Rejection of Certain Real Property Lease Agreements and, (II) Approving the Abandonment of Certain Excess Property, and (III) Granting Related Relief, Order (I) Approving the Rejection of Certain Real Property Lease Agreements and, (II) Approving the Abandonment of Certain Excess Property, and (III) Granting Related Relief, and Order (I) Prohibiting Utilities from Altering, Refusing, or Discontinuing Service, (II) Deeming Utilities Adequately Assured of Future Performance, and (III) Establishing Procedures for Determining Requests for Additional Adequate Assurance (related document(s)274, 273, 278, 280, 276, 282, 275, 281, 272) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Terminate Pending Deadlines",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Pending Deadlines Terminated Re: Motion to Authorize/Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Current and Former Employees to Proceed With Outstanding Workers' Compensation Claims, and (III) Financial Institutions to Honor and Process Related Checks and Transfers filed by Brian Resnick on behalf of Sleep Number Corporation (Related Documents #5); Hearing held, Written Decision to be issued. Objection to motion filed by the UST (Related Document 366) - Overruled. Reply in support filed by Brian Resnick and Supplemental Reply in Support filed by Brian Resnick - Moot (Related Documents #403 and #449). (Fredericks, Frances).",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -106,16 +214,7 @@
         "entry_number": 455,
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 449,
-        "date_filed": "2026-07-27",
-        "date_display": "Jul 27, 2026",
-        "description": "",
+        "description": "Master Service List Pursuant to LR 2002-5 as of July 28, 2026 filed by Adam M. Adler on behalf of Kroll Restructuring Administration LLC. (Adler, Adam) (Entered: 07/28/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -124,106 +223,7 @@
         "entry_number": 450,
         "date_filed": "2026-07-27",
         "date_display": "Jul 27, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 453,
-        "date_filed": "2026-07-27",
-        "date_display": "Jul 27, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-07-27",
-        "date_display": "Jul 27, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 452,
-        "date_filed": "2026-07-27",
-        "date_display": "Jul 27, 2026",
-        "description": "",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 446,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Application of the Official Committee of Unsecured Creditors for Entry of an Order Authorizing the Employment and Retention of Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors Effective ",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 444,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information. Hearing Scheduled for July 28, 2026 at 10:00 a.m. (ET) (related document(s)438) filed by Kroll Restructuring",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 448,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Notice of Adjournment of Hearing on the Deferred Compensation Trust Motion (related document(s)395) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/24/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 445,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Schedules of Assets and Liabilities for Sleep Number Corporation, Statement of Financial Affairs for Sleep Number Corporation, Schedules of Assets and Liabilities for Select Comfort Canada Holding Inc. [Case No. 26-11398, Docket No",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 447,
-        "date_filed": "2026-07-24",
-        "date_display": "Jul 24, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Order Scheduling Initial Case Conference, and Final Order (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Financing and (B) Use Cash Collateral, (II) Granting Liens and Providing Claims with Supe",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 440,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Second Interim Order (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Financing and (B) Use Cash Collateral, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Stat",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 441,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Motion of Debtors for an Order (I) Directing the Trustee of the Debtors' Non-Qualified Deferred Compensation Plan Trust to Return the Debtors' Assets Held in Trust to the Debtors' Estates and (II) Granting Related Relief, Motion of",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 442,
-        "date_filed": "2026-07-23",
-        "date_display": "Jul 23, 2026",
-        "description": "Affidavit of Service of Nelson Crespin Regarding Declaration of Disinterestedness of Arthur Yermash in Support of Employment of Campolo, Middleton & McCormick, LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)377) filed by Kroll Restructuring ",
+        "description": "Statement //Supplement in Support of United States Trustees Objection to Debtors Request for Approval of Key Employee Retention Plan (related document(s)5) filed by Daniel Rudewicz on behalf of United States Trustee. (Attachments: # 1 Exhibit # 2 Exhibit) (Rudewicz, Daniel) (Entered: 07/27/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
