@@ -419,7 +419,7 @@
       tbody.innerHTML = '<tr><td colspan="6" class="ud-empty">' +
         (Object.keys(NOTES).length
           ? "No notes match the current filters."
-          : "No notes yet — star or annotate entries on the unified docket and they collect here.") +
+          : "No notes yet — star or annotate entries on the docket and they collect here.") +
         "</td></tr>";
       return;
     }
