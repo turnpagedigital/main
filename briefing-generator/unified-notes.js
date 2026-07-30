@@ -400,7 +400,7 @@
         "/?filed_after=&filed_before=&entry_gte=" + n.entry_number +
         "&entry_lte=" + n.entry_number + "&order_by=asc";
       return '<a class="ud-link" href="' + esc(url) + '" target="_blank" rel="noopener">Dkt. ' +
-        esc(String(n.entry_number)) + " ↗</a>";
+        esc(String(n.entry_number)) + "</a>";
     }
     if (n.entry_number != null) return '<span class="ud-link-empty">Dkt. ' + esc(String(n.entry_number)) + "</span>";
     return '<span class="ud-link-empty">—</span>';

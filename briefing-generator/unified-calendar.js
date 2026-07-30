@@ -599,7 +599,7 @@
 
   function entryLink(ev) {
     if (ev.event_url) {
-      return '<a class="ud-link" href="' + esc(ev.event_url) + '" target="_blank" rel="noopener">Details \u2197</a>';
+      return '<a class="ud-link" href="' + esc(ev.event_url) + '" target="_blank" rel="noopener">Details</a>';
     }
     var entryNum = ev.entry_number != null ? String(ev.entry_number) : null;
     var dktLabel = "Dkt. " + entryNum;
@@ -608,11 +608,11 @@
         "/?filed_after=&filed_before=&entry_gte=" + entryNum +
         "&entry_lte=" + entryNum + "&order_by=asc";
       return '<a class="ud-link" href="' + esc(entryUrl) + '" target="_blank" rel="noopener">' +
-        esc(dktLabel) + " ↗</a>";
+        esc(dktLabel) + "</a>";
     }
     if (entryNum && ev.doc_url) {
       return '<a class="ud-link" href="' + esc(ev.doc_url) + '" target="_blank" rel="noopener">' +
-        esc(dktLabel) + " ↗</a>";
+        esc(dktLabel) + "</a>";
     }
     if (entryNum) return '<span class="ud-link-empty">' + esc(dktLabel) + "</span>";
     return '<span class="ud-link-empty">—</span>';
