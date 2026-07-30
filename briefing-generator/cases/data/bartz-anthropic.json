@@ -14,9 +14,10 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-07-21",
-    "fetched_at": "2026-07-30T04:46:54.256445+00:00",
+    "date_last_filing": "",
+    "fetched_at": "2026-07-30T16:02:10.082841+00:00",
     "as_of": "Jul 30, 2026",
+    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
@@ -112,19 +113,19 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.676.0.pdf"
       },
       {
-        "entry_number": null,
+        "entry_number": 675,
         "date_filed": "2026-06-25",
         "date_display": "Jun 25, 2026",
-        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "description": "NOTICE of Withdrawal filed by Mark Alan Lemley, no longer appearing on behalf of Anthropic PBC in this case (Lemley, Mark) (Filed on 6/25/2026) (Entered: 06/25/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 675,
+        "entry_number": null,
         "date_filed": "2026-06-25",
         "date_display": "Jun 25, 2026",
-        "description": "NOTICE of Withdrawal filed by Mark Alan Lemley, no longer appearing on behalf of Anthropic PBC in this case (Lemley, Mark) (Filed on 6/25/2026) (Entered: 06/25/2026)",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -157,15 +158,6 @@
         "doc_url": ""
       },
       {
-        "entry_number": 671,
-        "date_filed": "2026-05-21",
-        "date_display": "May 21, 2026",
-        "description": "Supplemental Brief -DEFENDANT ANTHROPIC PBCS SUPPLEMENTAL BRIEF REGARDING LATE OPT OUTS filed byAnthropic PBC. (Farris, Joseph) (Filed on 5/21/2026) (Entered: 05/21/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.671.0.pdf"
-      },
-      {
         "entry_number": 672,
         "date_filed": "2026-05-21",
         "date_display": "May 21, 2026",
@@ -173,6 +165,15 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.672.0_1.pdf"
+      },
+      {
+        "entry_number": 671,
+        "date_filed": "2026-05-21",
+        "date_display": "May 21, 2026",
+        "description": "Supplemental Brief -DEFENDANT ANTHROPIC PBCS SUPPLEMENTAL BRIEF REGARDING LATE OPT OUTS filed byAnthropic PBC. (Farris, Joseph) (Filed on 5/21/2026) (Entered: 05/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.671.0.pdf"
       },
       {
         "entry_number": 670,
@@ -193,15 +194,6 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.669.0.pdf"
       },
       {
-        "entry_number": 667,
-        "date_filed": "2026-05-15",
-        "date_display": "May 15, 2026",
-        "description": "*order not processed. Filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 05/14/2026 before Judge Araceli Martinez-Olguin by Anthropic PBC, for Recorded Proceeding - San Francisco. (Farris, Joseph) (Filed on 5/15/2026) Modified on 5/15/2026 (jaf, COURT STAFF). (Entered: 05/15/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
         "entry_number": 668,
         "date_filed": "2026-05-15",
         "date_display": "May 15, 2026",
@@ -211,10 +203,10 @@
         "doc_url": ""
       },
       {
-        "entry_number": null,
-        "date_filed": "2026-05-14",
-        "date_display": "May 14, 2026",
-        "description": "Motion Hearing",
+        "entry_number": 667,
+        "date_filed": "2026-05-15",
+        "date_display": "May 15, 2026",
+        "description": "*order not processed. Filer notified by CRD* TRANSCRIPT ORDER for proceedings held on 05/14/2026 before Judge Araceli Martinez-Olguin by Anthropic PBC, for Recorded Proceeding - San Francisco. (Farris, Joseph) (Filed on 5/15/2026) Modified on 5/15/2026 (jaf, COURT STAFF). (Entered: 05/15/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -227,8 +219,18 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-14",
+        "date_display": "May 14, 2026",
+        "description": "Motion Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=2"
   },
   "claims_administrator": {
     "name": "Anthropic Copyright Settlement Administrator",
