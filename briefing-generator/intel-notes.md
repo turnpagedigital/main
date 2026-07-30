@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-30 20:09 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-07-30 20:10 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -35,4 +35,10 @@ Ciao
 ### (no docket number) — 2026-07-29
 
 > Filing Alert: South Bay Contractors Chapter 11 — South Bay Contractors Files Chapter 11 in Central District of California
+
+## RNDC
+
+### (no docket number) — 2026-07-29
+
+> One of America's Biggest Liquor Distributors Just Filed for Bankruptcy. An Expert Warns a Massive Ripple Effect Could Follow — Inc. covers RNDC's Chapter 11 filing, noting the distributor is pursuing 
 
