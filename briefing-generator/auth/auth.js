@@ -42,7 +42,7 @@ if (!cfg || !cfg.url || cfg.url.startsWith("__")) {
     // Add a tiny "Sign out" pill in the top-right corner
     const btn = document.createElement("button");
     btn.textContent = "Sign out";
-    btn.style.cssText = "position:fixed;top:14px;right:14px;z-index:9999;background:transparent;border:1px solid currentColor;color:inherit;padding:6px 12px;font-family:Archivo,sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:0;opacity:0.55;";
+    btn.style.cssText = "position:fixed;top:55px;right:14px;z-index:9999;background:transparent;border:1px solid currentColor;color:inherit;padding:6px 12px;font-family:Archivo,sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:0;opacity:0.55;";
     btn.onmouseover = () => btn.style.opacity = "1";
     btn.onmouseout = () => btn.style.opacity = "0.55";
     btn.onclick = async () => {
