@@ -15,6 +15,10 @@
     "concord-anthropic": {
       "bg": "#ffedd5",
       "fg": "#9a3412"
+    },
+    "power-block-coin": {
+      "bg": "#fee2e2",
+      "fg": "#991b1b"
     }
   },
   "groups": []
