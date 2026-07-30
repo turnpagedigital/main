@@ -12,7 +12,12 @@ name: Hourly Docket Sync
 on:
   schedule:
     - cron: '23 * * * *'   # hourly at :23
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Re-pull FULL docket history for every case (not just new entries)"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -24,7 +29,7 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25   # a full-history backfill walks every docket page
 
     steps:
       - name: Checkout main
@@ -42,6 +47,7 @@ jobs:
         working-directory: briefing-generator
         env:
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+          DOCKET_BACKFILL: ${{ github.event.inputs.backfill == 'true' && '1' || '' }}
         run: |
           python scripts/fetch_dockets.py
           python scripts/inject_cases.py

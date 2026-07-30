@@ -54,49 +54,103 @@ def get_json(url, retries=3):
             raise
 
 
-def build_docket_block(docket_id, docket_url):
-    """Hit CourtListener and return the normalized `docket` sub-object."""
+def _entry_key(e):
+    """Stable identity for merging: docket number when present, else date+text."""
+    n = e.get("entry_number")
+    if n is not None:
+        return "n%s" % n
+    return "d%s|%s" % (e.get("date_filed") or "", (e.get("description") or "")[:60])
+
+
+def _normalize_entry(e, now):
+    date_filed = e.get("date_filed") or ""
+    is_new = False
+    if date_filed:
+        try:
+            d = dt.datetime.strptime(date_filed[:10], "%Y-%m-%d").replace(tzinfo=dt.timezone.utc)
+            is_new = (now - d) <= WINDOW_72H
+        except Exception:
+            pass
+    docs = e.get("recap_documents") or []
+    doc_url = ""
+    if docs and docs[0].get("filepath_local"):
+        fp = docs[0]["filepath_local"]
+        doc_url = "https://www.courtlistener.com/" + fp.lstrip("/")
+    desc = " ".join((e.get("description") or "").split())
+    if not desc:
+        # RSS-sourced entries leave the docket text empty; the short
+        # description lives on the attached document record instead.
+        for d in docs:
+            short = " ".join((d.get("description") or "").split())
+            if short:
+                desc = short
+                break
+    return {
+        "entry_number": e.get("entry_number"),
+        "date_filed": date_filed,
+        "date_display": pretty_date(date_filed, fallback=date_filed),
+        "description": desc,
+        "is_new": is_new,
+        "landmark": "",
+        "doc_url": doc_url,
+    }
+
+
+def fetch_entry_pages(docket_id, existing_keys, backfill, max_pages=60):
+    """Walk /docket-entries/ newest-first. Incremental mode stops at the first
+    page that overlaps entries we already have; backfill mode walks the whole
+    docket (capped at max_pages ~= 1200 entries as a runaway guard)."""
+    url = (f"{API}/docket-entries/?docket={docket_id}&order_by=-date_filed"
+           f"&fields=entry_number,date_filed,description,recap_documents")
+    raw, pages = [], 0
+    while url and pages < max_pages:
+        resp = get_json(url)
+        results = resp.get("results") or []
+        raw.extend(results)
+        pages += 1
+        overlap = any(_entry_key(r) in existing_keys for r in results)
+        url = resp.get("next")
+        if not backfill and (overlap or not results):
+            break
+        if url:
+            time.sleep(1.0)  # be polite across pages
+    return raw, pages
+
+
+def build_docket_block(docket_id, docket_url, existing_entries=None, backfill=False):
+    """Hit CourtListener and return the normalized `docket` sub-object.
+    Existing entries are preserved and merged so the stored docket keeps its
+    full history; fresh data wins when the same entry appears in both."""
     meta = get_json(
         f"{API}/dockets/{docket_id}/?fields=id,case_name,docket_number,court_id,date_filed,date_last_filing"
     )
-    resp = get_json(
-        f"{API}/docket-entries/?docket={docket_id}&order_by=-date_filed"
-        f"&fields=entry_number,date_filed,description,recap_documents"
-    )
     now = dt.datetime.now(dt.timezone.utc)
-    entries = []
-    for e in (resp.get("results") or []):
-        date_filed = e.get("date_filed") or ""
-        is_new = False
-        if date_filed:
+    existing_entries = existing_entries or []
+    existing_keys = {_entry_key(e) for e in existing_entries}
+
+    raw, pages = fetch_entry_pages(docket_id, existing_keys, backfill)
+
+    merged = {}
+    for e in existing_entries:
+        merged[_entry_key(e)] = e
+    for r in raw:
+        # Normalize BEFORE keying: unnumbered entries key on their description,
+        # which the normalizer may fill from the document short description.
+        ne = _normalize_entry(r, now)
+        merged[_entry_key(ne)] = ne
+    for e in merged.values():
+        if e.get("is_new") and e.get("date_filed"):
             try:
-                d = dt.datetime.strptime(date_filed[:10], "%Y-%m-%d").replace(tzinfo=dt.timezone.utc)
-                is_new = (now - d) <= WINDOW_72H
+                d = dt.datetime.strptime(e["date_filed"][:10], "%Y-%m-%d").replace(tzinfo=dt.timezone.utc)
+                e["is_new"] = (now - d) <= WINDOW_72H
             except Exception:
-                pass
-        docs = e.get("recap_documents") or []
-        doc_url = ""
-        if docs and docs[0].get("filepath_local"):
-            fp = docs[0]["filepath_local"]
-            doc_url = "https://www.courtlistener.com/" + fp.lstrip("/")
-        desc = " ".join((e.get("description") or "").split())
-        if not desc:
-            # RSS-sourced entries leave the docket text empty; the short
-            # description lives on the attached document record instead.
-            for d in docs:
-                short = " ".join((d.get("description") or "").split())
-                if short:
-                    desc = short
-                    break
-        entries.append({
-            "entry_number": e.get("entry_number"),
-            "date_filed": date_filed,
-            "date_display": pretty_date(date_filed, fallback=date_filed),
-            "description": desc,
-            "is_new": is_new,
-            "landmark": "",
-            "doc_url": doc_url,
-        })
+                e["is_new"] = False
+
+    def sort_key(e):
+        n = e.get("entry_number")
+        return (e.get("date_filed") or "", n if n is not None else -1)
+    entries = sorted(merged.values(), key=sort_key, reverse=True)
+
     new_in_72h = sum(1 for e in entries if e["is_new"])
     return {
         "source": "courtlistener",
@@ -109,6 +163,7 @@ def build_docket_block(docket_id, docket_url):
         "date_last_filing": meta.get("date_last_filing") or "",
         "fetched_at": now.isoformat(),
         "as_of": pretty_date(now.date().isoformat()),
+        "backfilled": backfill or bool(existing_entries),
         "new_in_72h": new_in_72h,
         "recent": entries[:3],
         "entries": entries,
@@ -125,8 +180,17 @@ def refresh_case(case):
     if not TOKEN:
         print(f"  · {slug}: COURTLISTENER_TOKEN not set — seed kept")
         return False
+    prior = ((case["data"] or {}).get("docket") or {})
+    existing_entries = prior.get("entries") or []
+    # Full-history backfill: first sync of a case, any case that has never been
+    # backfilled, or an explicit DOCKET_BACKFILL=1 run.
+    backfill = (not existing_entries
+                or not prior.get("backfilled")
+                or os.environ.get("DOCKET_BACKFILL") == "1")
     try:
-        block = build_docket_block(ds["docket_id"], ds.get("url"))
+        block = build_docket_block(ds["docket_id"], ds.get("url"),
+                                   existing_entries=existing_entries,
+                                   backfill=backfill)
     except Exception as ex:
         print(f"  ! {slug}: fetch failed ({ex}); seed kept", file=sys.stderr)
         return False
@@ -150,8 +214,8 @@ def refresh_case(case):
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     case["data_path"].write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"  ✓ {slug}: {len(block['entries'])} entries, {block['new_in_72h']} new in 72h "
-          f"→ data/{slug}.json")
+    print(f"  ✓ {slug}: {len(block['entries'])} entries{' (backfilled)' if backfill else ''}, "
+          f"{block['new_in_72h']} new in 72h → data/{slug}.json")
     return True
 
 
