@@ -1,4 +1,45 @@
 {
-  "colors": {},
+  "colors": {
+    "terraform-labs": {
+      "bg": "#ccfbf1",
+      "fg": "#134e4a"
+    },
+    "bartz-anthropic": {
+      "bg": "#ecfccb",
+      "fg": "#3f6212"
+    },
+    "blockfills": {
+      "bg": "#dbeafe",
+      "fg": "#1e40af"
+    },
+    "concord-anthropic": {
+      "bg": "#ffedd5",
+      "fg": "#9a3412"
+    },
+    "power-block-coin": {
+      "bg": "#fee2e2",
+      "fg": "#991b1b"
+    },
+    "rndc": {
+      "bg": "#fce7f3",
+      "fg": "#9d174d"
+    },
+    "sleep-number": {
+      "bg": "#fef3c7",
+      "fg": "#92400e"
+    },
+    "kahan": {
+      "bg": "#f3e8ff",
+      "fg": "#6b21a8"
+    },
+    "goliath": {
+      "bg": "#e0f2fe",
+      "fg": "#075985"
+    },
+    "harvest-sherwood": {
+      "bg": "#dbeafe",
+      "fg": "#1e40af"
+    }
+  },
   "groups": []
 }
