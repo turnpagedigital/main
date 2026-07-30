@@ -269,10 +269,22 @@ def main():
     history_pages = int(os.environ.get("DOCKET_HISTORY_PAGES", "4") or 0)
     print(f"=== Refreshing {len(cases)} tracked case(s) "
           f"(history trickle: {history_pages} page(s)/case/run) ===")
+    throttled_streak = 0
     for i, c in enumerate(cases):
         if i and TOKEN:
             time.sleep(5)
-        refresh_case(c, history_pages=history_pages)
+        ds = c["config"].get("docket_source") or {}
+        is_live = (ds.get("type") == "courtlistener" and not ds.get("awaiting_sync")
+                   and ds.get("docket_id") and TOKEN)
+        ok = refresh_case(c, history_pages=history_pages)
+        if is_live:
+            throttled_streak = 0 if ok else throttled_streak + 1
+            if throttled_streak >= 3:
+                # Circuit breaker: CourtListener is stonewalling — burning the
+                # remaining cases just feeds the cool-down and wastes CI time.
+                print("  ! CourtListener fully throttled — aborting this run; "
+                      "the next hourly run resumes where the cursors left off.")
+                break
     print("=== Docket refresh done. ===")
 
 
