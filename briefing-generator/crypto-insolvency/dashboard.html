@@ -58,7 +58,7 @@
   /* THREE-COL GRID */
   .three-col{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;gap:32px;grid-template-columns:1fr;}
   @media (min-width:1080px){
-    .three-col{grid-template-columns:260px 1fr 290px;grid-template-areas:"left center right";gap:36px;}
+    .three-col{grid-template-columns:260px 1fr;grid-template-areas:"left center";gap:36px;}
     .col-left{grid-area:left;} .col-center{grid-area:center;} .col-right{grid-area:right;}
   }
   .col-center{min-width:0;}
@@ -384,73 +384,6 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 <main class="three-col">
 
   <aside class="col-left">
-    <!-- TRACKED-CASES START -->
-<style>
-  .tracked-cases .tc-case{padding:12px 0;border-bottom:1px solid var(--line);}
-  .tracked-cases .tc-case:first-of-type{padding-top:2px;}
-  .tracked-cases .tc-case:last-of-type{border-bottom:none;padding-bottom:0;}
-  .tracked-cases .tc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
-  .tracked-cases .tc-name{font-size:13.5px;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.25;}
-  .tracked-cases a.tc-name:hover{box-shadow:inset 0 -0.32em 0 var(--neon);}
-  .tracked-cases .tc-counter{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0;}
-  .tracked-cases .tc-counter.active{background:rgba(239,68,68,0.14);color:#ef4444;}
-  .tracked-cases .tc-counter.quiet{background:var(--paper-2);color:var(--ink-60);}
-  .tracked-cases .tc-pip{width:6px;height:6px;border-radius:50%;background:currentColor;}
-  .tracked-cases .tc-sub{font-size:11px;color:var(--ink-60);margin:3px 0 8px;font-variant-numeric:tabular-nums;}
-  .tracked-cases ul.tc-filings{list-style:none;margin:0;padding:0;}
-  .tracked-cases .tc-filings li{padding:5px 0;border-bottom:none;display:flex;gap:8px;font-size:11.5px;line-height:1.45;}
-  .tracked-cases .tc-fdate{color:var(--ink-60);white-space:nowrap;font-variant-numeric:tabular-nums;min-width:46px;flex-shrink:0;}
-  .tracked-cases .tc-fdesc{color:var(--ink);}
-  .tracked-cases .tc-new{display:inline-block;font-size:8px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:0 4px;margin-left:4px;vertical-align:middle;}
-  .tracked-cases .tc-empty{font-size:11px;color:var(--ink-60);font-style:italic;padding:4px 0 0;}
-  .tracked-cases .tc-open{display:inline-block;margin-top:9px;font-size:10.5px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--neon);padding-bottom:1px;}
-  .tracked-cases .tc-open.disabled{color:var(--ink-40);border-bottom-color:var(--line-strong);pointer-events:none;}
-  .tracked-cases .tc-note{font-size:10px;color:var(--ink-40);margin-top:7px;line-height:1.4;}
-</style>
-<section class="box tracked-cases">
-  <h2>Tracked Cases</h2>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/blockfills.html">BlockFills</a><span class="tc-counter active"><span class="tc-pip"></span>6 new · 72h</span></div><div class="tc-sub">Bankr. D. Del. · 26-10371</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">none<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Address Change - Notice<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned<span class="tc-new">NEW</span></span></li></ul><a class="tc-open" href="../cases/blockfills.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/goliath.html">Goliath</a><span class="tc-counter active"><span class="tc-pip"></span>3 new · 72h</span></div><div class="tc-sub">S.D. Fl. · 26-13174-RAM</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc">Disclosure of Compensation<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc">Schedules/Statements or Amended Schedules/Statements<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 28</span><span class="tc-fdesc">Auto-Docket of Credit Card<span class="tc-new">NEW</span></span></li></ul><a class="tc-open" href="../cases/goliath.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/kahan.html">Kahan</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Mass · 24-11592</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 27</span><span class="tc-fdesc">Statement of Issues</span></li><li><span class="tc-fdate">Jul 17</span><span class="tc-fdesc">Order on Motion To Stay Pending Appeal</span></li><li><span class="tc-fdate">Jul 17</span><span class="tc-fdesc">Notice</span></li></ul><a class="tc-open" href="../cases/kahan.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/power-block-coin.html">Power Block Coin, LLC</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">Bankr. D. Utah · 24-23041</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 23</span><span class="tc-fdesc">Complaint</span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc">Notice of Rescheduled Hearing (Chambers)</span></li><li><span class="tc-fdate">Jul 6</span><span class="tc-fdesc">Notice of Rescheduled Hearing (Chambers)</span></li></ul><a class="tc-open" href="../cases/power-block-coin.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><span class="tc-name">Terraform Labs</span><span class="tc-counter quiet"><span class="tc-pip"></span>awaiting sync</span></div><div class="tc-sub">Bankr. D. Del. · 24-10070-BLS</div><div class="tc-empty">No filings on record yet.</div><div class="tc-empty">No new filings in the last 72h. Full history + the live counter populate on first sync.</div><span class="tc-open disabled">Awaiting docket sync</span><div class="tc-note">Tagged to this topic — pulls live once a CourtListener docket id + token are added.</div></div>
-</section>
-<!-- TRACKED-CASES END -->
-    <section class="box">
-      <h2>Key Dates &middot; 60 days</h2>
-      <ul>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">28</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>BlockFills FTI retention hearing</strong><span class="src-tip"><a class="src-arrow" href="https://www.reorg-research.com/blockfills-ucc-formed" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Reorg Research</span>Hearing on FTI Consulting retention as financial advisor for BlockFills UCC.</span></span></div>
-            <div class="kd-sub">Bankr. D. Del. · UCC professional retention</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">15</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>BlockFills plan exclusivity watch</strong><span class="src-tip"><a class="src-arrow" href="https://www.octus.com/blockfills-cleary-ahc" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Octus</span>Plan exclusivity period expires; Cleary's ad-hoc group expected to surface term sheet.</span></span></div>
-            <div class="kd-sub">Plan term-sheet expected</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">30</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Prince Group Chapter 15 recognition</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/prince-group-ch15" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Section 1517 recognition hearing for Cayman-seated Prince Group estate.</span></span></div>
-            <div class="kd-sub">SDNY · Cayman cross-border</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUL</span><span class="cal-day">10</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Genesis LOC v. DCG discovery cutoff</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/genesis-loc-dcg-3-2b" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Fact-discovery cutoff in the $3.2B Genesis LOC v. DCG litigation.</span></span></div>
-            <div class="kd-sub">SDNY</div>
-</div>
-        </li>
-
-      </ul>
-    </section>
-
     <section class="box actions-box">
       <h2>What to do this week</h2>
       <div class="actions-content">
@@ -582,48 +515,7 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
     </div>
     </article>
 
-  <aside class="col-right">
-    
-      <section class="box">
-      <h2>Storylines</h2>
-
-
-      <details class="storyline" open>
-        <summary class="storyline-title">BlockFills (D. Del.)</summary>
-        <ul>
-          <li><div class="item-text"><strong>"Always commingled" conceded</strong><span class="src-tip"><a class="src-arrow" href="https://www.reorg-research.com/blockfills-customer-property" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Reorg Research</span>BlockFills debtors conceded customer funds were 'always commingled.'</span></span><em>At first-day hearings, the debtors stipulated that customer funds were always commingled with general estate assets, which carries dispositive consequences for customer classification.</em></div></li>
-          <li><div class="item-text"><strong>Customers go unsecured</strong><span class="src-tip"><a class="src-arrow" href="https://www.lexology.com/celsius-earn-framework-2023" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Lexology</span>Celsius Earn framework: commingled funds = estate property; customers unsecured.</span></span><em>Under the Celsius Earn framework that Judge Glenn adopted in 2023, that commingling concession places customers squarely in the unsecured creditor class rather than as customer-property claimants.</em></div></li>
-          <li><div class="item-text"><strong>UCC seated, FTI retention May 28</strong><span class="src-tip"><a class="src-arrow" href="https://www.reorg-research.com/blockfills-ucc-formed" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Reorg Research</span>BlockFills UCC seated; SBI VC Trade, Dominion Capital; FTI retention May 28.</span></span><em>The Unsecured Creditors' Committee is now seated and anchored by SBI VC Trade and Dominion Capital, and the FTI Consulting retention application is set for hearing on May 28.</em></div></li>
-          <li><div class="item-text"><strong>Cleary ad-hoc group quiet</strong><span class="src-tip"><a class="src-arrow" href="https://www.octus.com/blockfills-cleary-ahc" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Octus</span>Cleary ad-hoc creditor group has not filed plan term sheet; exclusivity expires soon.</span></span><em>Cleary's ad-hoc creditor group has not yet filed a plan term sheet, and plan exclusivity for the debtors expires within weeks.</em></div></li>
-          <li><div class="item-text"><strong>Examiner question live</strong><span class="src-tip"><a class="src-arrow" href="https://www.reorg-research.com/ftx-examiner-third-circuit" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Reorg Research</span>Under Third Circuit In re FTX, examiner may be appointed in customer-property cases.</span></span><em>Under the Third Circuit's In re FTX ruling, an examiner may be appointed when customer-property issues warrant independent investigation, and the BlockFills facts arguably do.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Genesis LOC v. DCG</summary>
-        <ul>
-          <li><div class="item-text"><strong>$3.2B aggregate exposure</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/genesis-loc-dcg-3-2b" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Genesis LOC v. DCG: $3.2B aggregate exposure across litigation tracks; SDNY.</span></span><em>Genesis LOC's litigation against Digital Currency Group at the Southern District of New York carries approximately $3.2 billion in aggregate exposure across the various tracks, with settlement signals remaining quiet.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Cross-Border (Chapter 15)</summary>
-        <ul>
-          <li><div class="item-text"><strong>Prince Group recognition pending</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/prince-group-ch15" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Prince Group Chapter 15 recognition pending; Cayman-seated.</span></span><em>The Prince Group Chapter 15 recognition petition is pending at the SDNY and will test how U.S. courts handle Cayman-seated crypto entities under the comity doctrine.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Cascade Watch</summary>
-        <ul>
-          <li><div class="item-text"><strong>Four names on 2026 watchlist</strong><span class="src-tip"><a class="src-arrow" href="https://www.octus.com/crypto-distress-watchlist-2026" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Octus</span>DAppRadar, NFN8, BitRiver, Archblock on Octus 2026 cascade-risk watchlist.</span></span><em>Octus's 2026 distress watchlist flags DAppRadar, NFN8, BitRiver, and Archblock as cascade-risk names whose first-day filings would immediately reset the docket calendar for the rest of the year.</em></div></li>
-        </ul>
-      </details>
-
-    </section>
-  </aside>
-
-</main>
+  </main>
 
 <footer class="sources">
   <h2>Sources</h2>

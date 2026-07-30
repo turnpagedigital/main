@@ -58,7 +58,7 @@
   /* THREE-COL GRID */
   .three-col{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;gap:32px;grid-template-columns:1fr;}
   @media (min-width:1080px){
-    .three-col{grid-template-columns:260px 1fr 290px;grid-template-areas:"left center right";gap:36px;}
+    .three-col{grid-template-columns:260px 1fr;grid-template-areas:"left center";gap:36px;}
     .col-left{grid-area:left;} .col-center{grid-area:center;} .col-right{grid-area:right;}
   }
   .col-center{min-width:0;}
@@ -394,70 +394,6 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 <main class="three-col">
 
   <aside class="col-left">
-    <!-- TRACKED-CASES START -->
-<style>
-  .tracked-cases .tc-case{padding:12px 0;border-bottom:1px solid var(--line);}
-  .tracked-cases .tc-case:first-of-type{padding-top:2px;}
-  .tracked-cases .tc-case:last-of-type{border-bottom:none;padding-bottom:0;}
-  .tracked-cases .tc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
-  .tracked-cases .tc-name{font-size:13.5px;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.25;}
-  .tracked-cases a.tc-name:hover{box-shadow:inset 0 -0.32em 0 var(--neon);}
-  .tracked-cases .tc-counter{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0;}
-  .tracked-cases .tc-counter.active{background:rgba(239,68,68,0.14);color:#ef4444;}
-  .tracked-cases .tc-counter.quiet{background:var(--paper-2);color:var(--ink-60);}
-  .tracked-cases .tc-pip{width:6px;height:6px;border-radius:50%;background:currentColor;}
-  .tracked-cases .tc-sub{font-size:11px;color:var(--ink-60);margin:3px 0 8px;font-variant-numeric:tabular-nums;}
-  .tracked-cases ul.tc-filings{list-style:none;margin:0;padding:0;}
-  .tracked-cases .tc-filings li{padding:5px 0;border-bottom:none;display:flex;gap:8px;font-size:11.5px;line-height:1.45;}
-  .tracked-cases .tc-fdate{color:var(--ink-60);white-space:nowrap;font-variant-numeric:tabular-nums;min-width:46px;flex-shrink:0;}
-  .tracked-cases .tc-fdesc{color:var(--ink);}
-  .tracked-cases .tc-new{display:inline-block;font-size:8px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:0 4px;margin-left:4px;vertical-align:middle;}
-  .tracked-cases .tc-empty{font-size:11px;color:var(--ink-60);font-style:italic;padding:4px 0 0;}
-  .tracked-cases .tc-open{display:inline-block;margin-top:9px;font-size:10.5px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--neon);padding-bottom:1px;}
-  .tracked-cases .tc-open.disabled{color:var(--ink-40);border-bottom-color:var(--line-strong);pointer-events:none;}
-  .tracked-cases .tc-note{font-size:10px;color:var(--ink-40);margin-top:7px;line-height:1.4;}
-</style>
-<section class="box tracked-cases">
-  <h2>Tracked Cases</h2>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/bartz-anthropic.html">Bartz v. Anthropic</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">U.S. District Court, N.D. Cal. (San Francisco) · 3:24-cv-05417</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 21</span><span class="tc-fdesc">REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)</span></li><li><span class="tc-fdate">Jul 20</span><span class="tc-fdesc">ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF) (Entered: 07/20/2026)</span></li><li><span class="tc-fdate">Jul 13</span><span class="tc-fdesc">Brief re 676 Objection,, -DEFENDANT ANTHROPIC PBCS OPPOSITION TO APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT filed byAnthropic PBC. (Related document(s) 676 ) (Winthrop, Douglas) (Filed on 7/13/2026) (Entered: 07/13/2026)</span></li></ul><a class="tc-open" href="../cases/bartz-anthropic.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/concord-anthropic.html">Concord Music Group v. Anthropic</a><span class="tc-counter active"><span class="tc-pip"></span>1 new · 72h</span></div><div class="tc-sub">District Court, N.D. California · 5:24-cv-03811</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 29</span><span class="tc-fdesc">Order on Administrative Motion per Civil Local Rule 7-11<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 27</span><span class="tc-fdesc">DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Plaintiffs' Motion to Partially Exclude the Opinions of Julie Davis by Anthropic PBC. (Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)</span></li><li><span class="tc-fdate">Jul 27</span><span class="tc-fdesc">OPPOSITION/RESPONSE (re 650 MOTION in Limine to Partially Exclude the Opinions of Dr. Abhishek Nagaraj ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Robin Burrell in Support, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)</span></li></ul><a class="tc-open" href="../cases/concord-anthropic.html">Open case docket →</a></div>
-</section>
-<!-- TRACKED-CASES END -->
-    <section class="box">
-      <h2>Key Dates &middot; 60 days</h2>
-      <ul>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">14</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Bartz fairness hearing</strong><span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Bartz v. Anthropic Rule 23(e) fairness hearing held; ruling under submission.</span></span></div>
-            <div class="kd-sub">N.D. Cal. · Judge Martínez-Olguín · under submission</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">11</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Thomson Reuters v. ROSS argument</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/ai-fair-use-appellate-thomson-ross" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>First appellate oral argument on AI training-data fair use lands in the Third Circuit.</span></span></div>
-            <div class="kd-sub">3d Cir. · first appellate AI fair-use argument</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUN</span><span class="cal-day">30</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Disney v. Midjourney cert briefing</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/disney-midjourney-class-cert" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Class certification briefing pending; tests whether Bartz $3K-per-work benchmark ports to image training.</span></span></div>
-            <div class="kd-sub">C.D. Cal. · image-training corollary</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUL</span><span class="cal-day">15</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>OpenAI MDL scheduling order</strong><span class="src-tip"><a class="src-arrow" href="https://www.lawfaremedia.org/article/openai-mdl-update" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Lawfare</span>Scheduling order anticipated in the consolidated OpenAI Copyright Litigation.</span></span></div>
-            <div class="kd-sub">S.D.N.Y. · Judge Stein</div>
-</div>
-        </li>
-
-      </ul>
-    </section>
-
     <section class="box actions-box">
       <h2>What to do this week</h2>
       <div class="actions-content">
@@ -596,43 +532,7 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
     </div>
   </article>
 
-  <aside class="col-right">
-    
-      <section class="box">
-      <h2>Storylines</h2>
-
-
-      <details class="storyline" open>
-        <summary class="storyline-title">Bartz v. Anthropic</summary>
-        <ul>
-          <li><div class="item-text"><strong>Fairness hearing held May 14</strong><span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Bartz fairness hearing held May 14; ruling under submission.</span></span><em>Judge Martínez-Olguín convened the Rule 23(e) fairness hearing for the largest copyright settlement in U.S. history on May 14, and the court has the matter under submission.</em></div></li>
-          <li><div class="item-text"><strong>91.3% claims rate</strong><span class="src-tip"><a class="src-arrow" href="https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/95412-bartz-claims-rate.html" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Publishers Weekly</span>91.3% claims rate (440,490 of approximately 500,000 covered works); per-work ~$3,000.</span></span><em>Claimants filed for 440,490 of approximately 500,000 covered works, producing a claims rate that sets a new high-water benchmark for class-action fairness review.</em></div></li>
-          <li><div class="item-text"><strong>Fee cut to 12.5%</strong><span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Class counsel reduced fee request from 15% to 12.5% ($187.5M).</span></span><em>Class counsel voluntarily reduced its fee request from 15% to 12.5%, bringing the total fee to $187.5 million.</em></div></li>
-          <li><div class="item-text"><strong>Three reply objections</strong><span class="src-tip"><a class="src-arrow" href="https://authorsalliance.org/2026/05/14/bartz-anthropic-fairness-hearing/" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Authors Alliance</span>Three reply objections: Pinder, Chakanga, Esquivel.</span></span><em>Pinder challenged group-registration undercounting, Chakanga raised opt-out due process concerns, and Esquivel objected on co-owner consent grounds, preserving appellate exposure on each issue.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Appellate AI Fair-Use</summary>
-        <ul>
-          <li><div class="item-text"><strong>Thomson Reuters v. ROSS</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/ai-fair-use-appellate-thomson-ross" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Thomson Reuters v. ROSS — first appellate AI fair-use oral argument June 11 at 3d Cir.</span></span><em>The Third Circuit will hear the first appellate AI fair-use oral argument on June 11 in Thomson Reuters v. ROSS Intelligence, which will produce the first appellate precedent on training-data fair use.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Adjacent Matters</summary>
-        <ul>
-          <li><div class="item-text"><strong>Elsevier v. Meta</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/X1234-elsevier-meta" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Elsevier v. Meta: Zuckerberg personal-liability theory advancing through discovery.</span></span><em>The Zuckerberg personal-liability theory in Elsevier v. Meta continues to advance through discovery, testing corporate-veil piercing on AI training-data acquisition decisions.</em></div></li>
-          <li><div class="item-text"><strong>Disney v. Midjourney</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/disney-midjourney-class-cert" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Disney v. Midjourney class certification briefing pending; image-training corollary.</span></span><em>Disney v. Midjourney class certification briefing is pending and will determine whether the Bartz $3,000-per-work compensation benchmark ports from text-training to image-generation corpora.</em></div></li>
-          <li><div class="item-text"><strong>OpenAI MDL</strong><span class="src-tip"><a class="src-arrow" href="https://www.lawfaremedia.org/article/openai-mdl-update" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Lawfare</span>OpenAI MDL consolidated S.D.N.Y. Judge Stein.</span></span><em>The consolidated OpenAI MDL in the Southern District of New York before Judge Stein treats the Bartz per-work figure as the implied negotiation floor for any future settlement.</em></div></li>
-          <li><div class="item-text"><strong>Concord v. Anthropic</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/X5678-concord-anthropic" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>Concord v. Anthropic music-publisher lyrics-corpus case advancing.</span></span><em>Concord Music's copyright case against Anthropic over song lyrics continues on a separate music-publisher track and is testing the lyrics-corpus liability theory.</em></div></li>
-        </ul>
-      </details>
-
-    </section>
-  </aside>
-
-</main>
+  </main>
 
 <footer class="sources">
   <h2>Sources</h2>

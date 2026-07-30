@@ -58,7 +58,7 @@
   /* THREE-COL GRID */
   .three-col{max-width:1440px;margin:0 auto;padding:28px 32px 60px;display:grid;gap:32px;grid-template-columns:1fr;}
   @media (min-width:1080px){
-    .three-col{grid-template-columns:260px 1fr 290px;grid-template-areas:"left center right";gap:36px;}
+    .three-col{grid-template-columns:260px 1fr;grid-template-areas:"left center";gap:36px;}
     .col-left{grid-area:left;} .col-center{grid-area:center;} .col-right{grid-area:right;}
   }
   .col-center{min-width:0;}
@@ -381,76 +381,6 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 <main class="three-col">
 
   <aside class="col-left">
-    <!-- TRACKED-CASES START -->
-<style>
-  .tracked-cases .tc-case{padding:12px 0;border-bottom:1px solid var(--line);}
-  .tracked-cases .tc-case:first-of-type{padding-top:2px;}
-  .tracked-cases .tc-case:last-of-type{border-bottom:none;padding-bottom:0;}
-  .tracked-cases .tc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
-  .tracked-cases .tc-name{font-size:13.5px;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.25;}
-  .tracked-cases a.tc-name:hover{box-shadow:inset 0 -0.32em 0 var(--neon);}
-  .tracked-cases .tc-counter{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0;}
-  .tracked-cases .tc-counter.active{background:rgba(239,68,68,0.14);color:#ef4444;}
-  .tracked-cases .tc-counter.quiet{background:var(--paper-2);color:var(--ink-60);}
-  .tracked-cases .tc-pip{width:6px;height:6px;border-radius:50%;background:currentColor;}
-  .tracked-cases .tc-sub{font-size:11px;color:var(--ink-60);margin:3px 0 8px;font-variant-numeric:tabular-nums;}
-  .tracked-cases ul.tc-filings{list-style:none;margin:0;padding:0;}
-  .tracked-cases .tc-filings li{padding:5px 0;border-bottom:none;display:flex;gap:8px;font-size:11.5px;line-height:1.45;}
-  .tracked-cases .tc-fdate{color:var(--ink-60);white-space:nowrap;font-variant-numeric:tabular-nums;min-width:46px;flex-shrink:0;}
-  .tracked-cases .tc-fdesc{color:var(--ink);}
-  .tracked-cases .tc-new{display:inline-block;font-size:8px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:0 4px;margin-left:4px;vertical-align:middle;}
-  .tracked-cases .tc-empty{font-size:11px;color:var(--ink-60);font-style:italic;padding:4px 0 0;}
-  .tracked-cases .tc-open{display:inline-block;margin-top:9px;font-size:10.5px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--neon);padding-bottom:1px;}
-  .tracked-cases .tc-open.disabled{color:var(--ink-40);border-bottom-color:var(--line-strong);pointer-events:none;}
-  .tracked-cases .tc-note{font-size:10px;color:var(--ink-40);margin-top:7px;line-height:1.4;}
-</style>
-<section class="box tracked-cases">
-  <h2>Tracked Cases</h2>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/bartz-anthropic.html">Bartz v. Anthropic</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">U.S. District Court, N.D. Cal. (San Francisco) · 3:24-cv-05417</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 21</span><span class="tc-fdesc">REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)</span></li><li><span class="tc-fdate">Jul 20</span><span class="tc-fdesc">ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/ECF Participants have been served by First Class Mail to the addresses of record listed on the Notice of Electronic Filing (NEF) (Entered: 07/20/2026)</span></li><li><span class="tc-fdate">Jul 13</span><span class="tc-fdesc">Brief re 676 Objection,, -DEFENDANT ANTHROPIC PBCS OPPOSITION TO APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT filed byAnthropic PBC. (Related document(s) 676 ) (Winthrop, Douglas) (Filed on 7/13/2026) (Entered: 07/13/2026)</span></li></ul><a class="tc-open" href="../cases/bartz-anthropic.html">Open case docket →</a></div>
-</section>
-<!-- TRACKED-CASES END -->
-    <section class="box">
-      <h2>Key Dates &middot; 60 days</h2>
-      <ul>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">27</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Purdue Sackler tranche 1</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-sackler-7-4b-effective-may1" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>First scheduled $500M Sackler tranche payment under the reorganized Purdue plan.</span></span></div>
-            <div class="kd-sub">S.D.N.Y. · $500M</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">28</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Purdue Sackler tranche 2</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-sackler-7-4b-effective-may1" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Second $500M Sackler tranche payment.</span></span></div>
-            <div class="kd-sub">S.D.N.Y. · $500M</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">MAY</span><span class="cal-day">29</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Purdue Sackler tranche 3</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-sackler-7-4b-effective-may1" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Third $400M Sackler tranche payment.</span></span></div>
-            <div class="kd-sub">S.D.N.Y. · $400M</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">JUL</span><span class="cal-day">9</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Bayer Roundup class fairness hearing</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/bayer-roundup-class-7-25b" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Rule 23(e) fairness hearing for Bayer's Roundup class settlement.</span></span></div>
-            <div class="kd-sub">N.D. Cal. · $7.25B / 21 years</div>
-</div>
-        </li>
-        <li class="kd-row">
-          <div class="cal-square"><span class="cal-month">DEC</span><span class="cal-day">31</span></div>
-          <div class="kd-content">
-            <div class="kd-event"><strong>Visa/Mastercard final approval target</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/visa-mc-revised-interchange-38b" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Final approval window opens for the ~$38B revised interchange settlement.</span></span></div>
-            <div class="kd-sub">E.D.N.Y. · Brodie</div>
-</div>
-        </li>
-
-      </ul>
-    </section>
-
     <section class="box actions-box">
       <h2>What to do this week</h2>
       <div class="actions-content">
@@ -574,41 +504,7 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
     </div>
     </article>
 
-  <aside class="col-right">
-    
-      <section class="box">
-      <h2>Storylines</h2>
-
-
-      <details class="storyline" open>
-        <summary class="storyline-title">Active Mega-Payouts</summary>
-        <ul>
-          <li><div class="item-text"><strong>BCBS Subscriber $2.67B</strong><span class="src-tip"><a class="src-arrow" href="https://www.bloomberglaw.com/document/bcbs-subscriber-jnd" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Bloomberg Law</span>BCBS Subscriber Antitrust $2.67B; JND distributing May 11 to ~7.8M claimants.</span></span><em>The BCBS Subscriber Antitrust settlement entered distribution on May 11 with JND issuing payments to approximately 7.8 million claimants, and the net distributable amount is approximately $1.9 billion after fees and administrative costs.</em></div></li>
-          <li><div class="item-text"><strong>Bartz $1.5B fairness hearing</strong><span class="src-tip"><a class="src-arrow" href="https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/95412-bartz-claims-rate.html" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Publishers Weekly</span>Bartz $1.5B fairness hearing May 14; 91.3% claims rate.</span></span><em>Bartz v. Anthropic had its Rule 23(e) fairness hearing on May 14 before Judge Martínez-Olguín, and the 91.3% claims rate sets a new high-water benchmark for fairness analysis under Rule 23(e)(2)(C)(ii).</em></div></li>
-          <li><div class="item-text"><strong>Purdue/Sackler $7.4B effective</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/purdue-sackler-7-4b-effective-may1" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Purdue/Sackler $7.4B plan effective May 1, 2026.</span></span><em>Purdue Pharma's reorganization became effective on May 1 with the initial tranche of $1.5 billion from the Sacklers and $900 million from Purdue paid at effectiveness, and the operating assets have transferred to a new non-profit, Knoa Pharma.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">Pending Fairness</summary>
-        <ul>
-          <li><div class="item-text"><strong>Visa/Mastercard ~$38B</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/visa-mc-revised-interchange-38b" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Visa/Mastercard revised interchange ~$38B; final approval late 2026/early 2027.</span></span><em>The Visa/Mastercard revised interchange settlement is heading toward final approval in late 2026 or early 2027, with Judge Brodie still the bottleneck at the Eastern District of New York.</em></div></li>
-          <li><div class="item-text"><strong>Bayer Roundup $7.25B</strong><span class="src-tip"><a class="src-arrow" href="https://www.law360.com/articles/bayer-roundup-class-7-25b" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Law360</span>Bayer Roundup class $7.25B over 21 years; fairness July 9, 2026.</span></span><em>Bayer's Roundup class settlement, structured at $7.25 billion over 21 years, has a fairness hearing scheduled for July 9, 2026, with objector pressure likely centered on the lawyer-fee-to-class-recovery ratio.</em></div></li>
-        </ul>
-      </details>
-
-      <details class="storyline">
-        <summary class="storyline-title">2025 Aggregate Snapshot</summary>
-        <ul>
-          <li><div class="item-text"><strong>Duane Morris top-10 at $79B</strong><span class="src-tip"><a class="src-arrow" href="https://www.duanemorris.com/articles/class-action-review-2026" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Duane Morris</span>2025 top-10 settlements $79B (up from $42B 2024).</span></span><em>According to Duane Morris's 2026 Class Action Review, the top ten class-action settlements aggregated to $79 billion in 2025, nearly doubling the $42 billion total from 2024.</em></div></li>
-          <li><div class="item-text"><strong>Cornerstone median high</strong><span class="src-tip"><a class="src-arrow" href="https://www.cornerstone.com/insights/securities-class-action-2025" target="_blank" rel="noopener"><svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="src-tooltip"><span class="src-tooltip-label">Cornerstone Research</span>2025: 74 securities settlements $3.0B; median $17.3M three-decade high.</span></span><em>Cornerstone Research's 2025 review found 74 securities class-action settlements totaling $3.0 billion, with the median settlement amount reaching a three-decade high of $17.3 million.</em></div></li>
-        </ul>
-      </details>
-
-    </section>
-  </aside>
-
-</main>
+  </main>
 
 <footer class="sources">
   <h2>Sources</h2>

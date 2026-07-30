@@ -238,6 +238,8 @@
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
       if (rowKind === "filings" && e.is_article) return false;
       if (rowKind === "articles" && !e.is_article) return false;
+      var hrec = NOTES[entryNoteKey(e)];
+      if (hrec && hrec.hidden) return false;
       if (bmOnly || noteOnly) {
         var mrec = NOTES[entryNoteKey(e)];
         if (bmOnly && !(mrec && mrec.bookmarked)) return false;
@@ -611,6 +613,8 @@
         'data-nk="' + esc(nk) + '" title="' + (bm ? "Remove bookmark" : "Bookmark") + '">' + (bm ? "\u2605" : "\u2606") + "</button></td>" +
       '<td class="ud-mark-cell"><button type="button" class="ud-snz-btn' + (snz ? " ud-snz-on" : "") + '" ' +
         'data-nk="' + esc(nk) + '" title="' + esc(snzTitle) + '">\ud83d\udca4</button></td>' +
+      '<td class="ud-mark-cell"><button type="button" class="ud-del-btn" ' +
+        'data-nk="' + esc(nk) + '" title="Delete this row (restorable from the toolbar)">\ud83d\uddd1</button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
         'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '">\ud83d\udcdd</button></td>'
     );
@@ -625,7 +629,7 @@
       countEl.textContent = entries.length + " entr" + (entries.length === 1 ? "y" : "ies");
     }
     if (!entries.length) {
-      tbody.innerHTML = '<tr><td colspan="8" class="ud-empty">No entries match the current filters.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="9" class="ud-empty">No entries match the current filters.</td></tr>';
       return;
     }
     tbody.innerHTML = entries.map(function (e) {
@@ -657,8 +661,11 @@
         ? esc(e.party)
         : '<span class="ud-party-empty">—</span>';
       if (e.is_article) {
+        var artRowCls = "ud-row-article" +
+          (e.is_bondoro && e.unassigned ? " ud-row-bondoro" : "") +
+          (e.is_new ? " ud-row-new" : "");
         return (
-          '<tr class="ud-row-article' + (e.is_new ? " ud-row-new" : "") + '">' +
+          '<tr class="' + artRowCls + '">' +
             '<td class="ud-date">' + esc(e.date_display) + "</td>" +
             '<td class="ud-case">' + pill + "</td>" +
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
@@ -767,7 +774,7 @@
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
         tbody.innerHTML =
-          '<tr><td colspan="8" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
+          '<tr><td colspan="9" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
       }
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
@@ -799,7 +806,7 @@
         slug:          c ? c.slug : "",
         name:          c ? c.display_name : "New Filing",
         short:         c ? c.short_name : "New Filing",
-        default_color: c ? c.default_color : "#FDE047",
+        default_color: c ? c.default_color : "#0A0A0A",
         docket_url:    "",
         category:      c ? (c.category || "other") : "other",
         entry_number:  null,
@@ -897,6 +904,7 @@
         NOTES = p.entries;
         render();
         renderDue();
+        updateHiddenInfo();
       }
     }).catch(function () {});
   }
@@ -942,6 +950,7 @@
       bookmarked: !!rec.bookmarked,
       note: rec.note || "",
       snooze_until: rec.snooze_until || "",
+      hidden: !!rec.hidden,
       context: entry ? {
         case_slug: entry.slug,
         case_name: entry.name,
@@ -992,7 +1001,7 @@
   function toggleBookmark(nk) {
     var rec = NOTES[nk] || {};
     rec.bookmarked = !rec.bookmarked;
-    if (!rec.bookmarked && !(rec.note || "").trim() && !rec.snooze_until) delete NOTES[nk];
+    if (!rec.bookmarked && !(rec.note || "").trim() && !rec.snooze_until && !rec.hidden) delete NOTES[nk];
     else NOTES[nk] = rec;
     pushNote(nk);
     render();
@@ -1255,6 +1264,37 @@
     pushNote(nk);
     render();
     renderDue();
+  }
+
+  function hideRow(nk) {
+    var rec = NOTES[nk] || {};
+    rec.hidden = true;
+    NOTES[nk] = rec;
+    pushNote(nk);
+    render();
+    updateHiddenInfo();
+    noteToast("Row deleted \u2014 restore from the toolbar", false);
+  }
+
+  function updateHiddenInfo() {
+    var el = document.getElementById("ud-hidden-info");
+    if (!el) return;
+    var hidden = Object.keys(NOTES).filter(function (nk) { return NOTES[nk] && NOTES[nk].hidden; });
+    if (!hidden.length) { el.innerHTML = ""; return; }
+    el.innerHTML = hidden.length + " deleted <button type=\"button\" id=\"ud-hidden-restore\">Restore all</button>";
+    var btn = document.getElementById("ud-hidden-restore");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        hidden.forEach(function (nk) {
+          var rec = NOTES[nk];
+          rec.hidden = false;
+          if (!rec.bookmarked && !(rec.note || "").trim() && !rec.snooze_until && !rec.hidden) delete NOTES[nk];
+          pushNote(nk);
+        });
+        render();
+        updateHiddenInfo();
+      });
+    }
   }
 
   function renderDue() {
@@ -1606,6 +1646,8 @@
         if (bm) { toggleBookmark(bm.getAttribute("data-nk")); return; }
         var sz = ev.target.closest(".ud-snz-btn");
         if (sz) { ev.stopPropagation(); openSnoozeMenu(sz.getAttribute("data-nk"), sz); return; }
+        var del = ev.target.closest(".ud-del-btn");
+        if (del) { hideRow(del.getAttribute("data-nk")); return; }
         var nb = ev.target.closest(".ud-note-btn");
         if (nb) { openNoteModal(nb.getAttribute("data-nk")); }
       });
