@@ -23,6 +23,10 @@
     "rndc": {
       "bg": "#fce7f3",
       "fg": "#9d174d"
+    },
+    "sleep-number": {
+      "bg": "#fef3c7",
+      "fg": "#92400e"
     }
   },
   "groups": []
