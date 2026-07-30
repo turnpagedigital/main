@@ -621,7 +621,7 @@ def render_unified_docket(cases):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unified Docket — Turnpage Daily Briefing</title>
+<title>Docket — Turnpage Daily Briefing</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -650,7 +650,7 @@ def render_unified_docket(cases):
 
 <div class="page-title">
   <div class="eyebrow">Intelligence · Live Docket Monitor</div>
-  <h1>⚖️ Unified Docket</h1>
+  <h1>⚖️ Docket</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
     <span id="ud-sync"></span>
@@ -774,7 +774,7 @@ def render_unified_calendar(cases):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unified Calendar — Turnpage Daily Briefing</title>
+<title>Calendar — Turnpage Daily Briefing</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -807,7 +807,7 @@ def render_unified_calendar(cases):
 
 <div class="page-title">
   <div class="eyebrow">Intelligence · Hearings &amp; Deadlines</div>
-  <h1>📅 Unified Calendar</h1>
+  <h1>📅 Calendar</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
     <span id="ud-sync"></span>
@@ -904,7 +904,7 @@ def render_unified_notes(cases):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unified Notes — Turnpage Daily Briefing</title>
+<title>Notes — Turnpage Daily Briefing</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -937,7 +937,7 @@ def render_unified_notes(cases):
 
 <div class="page-title">
   <div class="eyebrow">Intelligence · Docket Notes</div>
-  <h1>🗒️ Unified Notes</h1>
+  <h1>🗒️ Notes</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
     <span id="ud-sync"></span>

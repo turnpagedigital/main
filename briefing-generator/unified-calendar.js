@@ -684,7 +684,7 @@
       details += "\n\nAlso: " + (x.snippet || x.kind);
     });
     details += (srcUrl ? "\n\nSource: " + srcUrl : "") +
-      "\n\n(from Turnpage Unified Calendar)";
+      "\n\n(from Turnpage Calendar)";
 
     var dates;
     var tzParam = "";
