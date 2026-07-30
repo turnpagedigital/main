@@ -35,6 +35,10 @@
     "goliath": {
       "bg": "#e0f2fe",
       "fg": "#075985"
+    },
+    "harvest-sherwood": {
+      "bg": "#dbeafe",
+      "fg": "#1e40af"
     }
   },
   "groups": []
