@@ -143,10 +143,13 @@ def crawl_history(cursor_url, page_budget):
 
 def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next, now):
     """Assemble the normalized `docket` sub-object from merged entries."""
-    meta = get_json(
-        f"{API}/dockets/{docket_id}/?fields=id,case_name,docket_number,court_id,date_filed,date_last_filing",
-        retries=1,
-    )
+    try:
+        meta = get_json(
+            f"{API}/dockets/{docket_id}/?fields=id,case_name,docket_number,court_id,date_filed,date_last_filing",
+            retries=1,
+        )
+    except Exception:
+        meta = {}  # cosmetic fields only — never discard a successful crawl over these
     for e in merged.values():
         if e.get("is_new") and e.get("date_filed"):
             try:
@@ -165,7 +168,8 @@ def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next,
         "awaiting_sync": False,
         # Entry links need the CourtListener docket URL — a claims-agent URL
         # in the config must not leak in here (it lives in claims_administrator).
-        "docket_url": (docket_url if docket_url and "courtlistener.com" in docket_url
+        "docket_url": ((docket_url or "").split("?")[0]
+                       if docket_url and "courtlistener.com" in docket_url
                        else f"https://www.courtlistener.com/docket/{docket_id}/"),
         "case_name_api": meta.get("case_name") or "",
         "date_last_filing": meta.get("date_last_filing") or "",

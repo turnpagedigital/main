@@ -14,5 +14,5 @@ case:
 docket_source:
   type: courtlistener
   docket_id: 69021491
-  url: "https://www.courtlistener.com/docket/69021491/jason-m-kahan/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc"
+  url: "https://www.courtlistener.com/docket/69021491/jason-m-kahan/"
 ---
