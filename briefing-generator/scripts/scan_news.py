@@ -17,6 +17,7 @@ without the key — it never breaks the pipeline.
 """
 import os, sys, json, re, time
 import datetime as dt
+import urllib.error, urllib.request
 
 from cases_common import load_cases, DATA_DIR
 
@@ -105,6 +106,46 @@ def parse_json_response(text):
     return None
 
 
+VERIFY_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+             "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
+
+def verify_url(url, timeout=10):
+    """True if the URL resolves to a live page. Paywalls and bot walls answer
+    401/403/429 — those pages exist, so they pass. Dead links (404/410/5xx,
+    DNS failures, timeouts) fail."""
+    if not (url or "").startswith("http"):
+        return False
+    for method in ("HEAD", "GET"):
+        req = urllib.request.Request(url, method=method, headers={"User-Agent": VERIFY_UA})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                if 200 <= r.status < 400:
+                    return True
+        except urllib.error.HTTPError as ex:
+            if ex.code in (401, 403, 429):
+                return True          # exists but gated
+            if ex.code == 405 and method == "HEAD":
+                continue             # server dislikes HEAD — retry with GET
+            return False
+        except Exception:
+            if method == "HEAD":
+                continue             # some servers reset on HEAD — try GET
+            return False
+    return False
+
+
+def prune_dead(items, label, slug):
+    """Drop stored items whose URLs have died since we saved them."""
+    kept = []
+    for it in items:
+        u = (it.get("url") or "").strip()
+        if not u or verify_url(u):
+            kept.append(it)
+        else:
+            print(f"    - {slug}: pruned dead {label}: {u[:80]}")
+    return kept
+
+
 def _norm_url(u):
     return (u or "").strip().rstrip("/").lower()
 
@@ -121,13 +162,16 @@ def merge_articles(existing, fresh):
         headline = (a.get("headline") or a.get("title") or "").strip()
         if not url or not headline or _norm_url(url) in seen:
             continue
-        if not url.startswith("http"):
+        if not _valid_date(a.get("date")):
+            continue  # undated articles can't sort — skip
+        if not verify_url(url):
+            print(f"    - unreachable article dropped: {url[:80]}")
             continue
         entry = {
             "headline": headline,
             "url": url,
             "source": (a.get("source") or "").strip(),
-            "date": a.get("date") if _valid_date(a.get("date")) else "",
+            "date": a.get("date"),
             "summary": (a.get("summary") or "").strip(),
         }
         existing.append(entry)
@@ -157,6 +201,9 @@ def merge_events(existing, fresh):
             "source": (e.get("source") or "").strip(),
         }
         if key(entry) in seen:
+            continue
+        if entry["url"] and not verify_url(entry["url"]):
+            print(f"    - unreachable event dropped: {entry['url'][:80]}")
             continue
         existing.append(entry)
         seen.add(key(entry))
@@ -204,6 +251,8 @@ def scan_case(client, case):
     events = parsed.get("events") or []
     coverage = data.setdefault("coverage", [])
     ev_list = data.setdefault("events", [])
+    coverage[:] = prune_dead(coverage, "article", slug)
+    ev_list[:] = prune_dead(ev_list, "event", slug)
     a_added = merge_articles(coverage, articles)
     e_added = merge_events(ev_list, events)
 

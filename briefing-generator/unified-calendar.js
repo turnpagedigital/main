@@ -108,6 +108,7 @@
   }
   function saveColors(map) {
     try { localStorage.setItem(COLOR_KEY, JSON.stringify(map)); } catch (e) {}
+    schedulePrefsPush();
   }
   function autoFg(bg) {
     var r = parseInt(bg.slice(1, 3), 16) || 136;
@@ -232,6 +233,7 @@
   }
   function saveGroups(groups) {
     try { localStorage.setItem(GROUPS_KEY, JSON.stringify(groups)); } catch (e) {}
+    schedulePrefsPush();
   }
   function validGroupSlugs(group) {
     var known = {};
@@ -620,6 +622,7 @@
       renderCaseFilter();
       render();
       startLiveSync();
+      loadServerPrefs();
     }).catch(function (err) {
       var tbody = document.getElementById("uc-tbody");
       if (tbody) {
@@ -629,6 +632,40 @@
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
     });
+  }
+
+  // ── Server-side prefs (colors + groups roam across devices) ────────────────
+  var prefsAvailable = false;
+  var prefsTimer = null;
+
+  function schedulePrefsPush() {
+    if (!prefsAvailable) return;
+    clearTimeout(prefsTimer);
+    prefsTimer = setTimeout(function () {
+      fetch("api/prefs", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ colors: savedColors, groups: loadGroups() }),
+      }).catch(function () {});
+    }, 2000);
+  }
+
+  function loadServerPrefs() {
+    fetchJson("api/prefs").then(function (p) {
+      if (!p || !p.ok) return;
+      prefsAvailable = true;
+      var changed = false;
+      if (p.colors && Object.keys(p.colors).length) {
+        savedColors = p.colors;
+        try { localStorage.setItem(COLOR_KEY, JSON.stringify(savedColors)); } catch (e) {}
+        changed = true;
+      }
+      if (Array.isArray(p.groups) && p.groups.length) {
+        try { localStorage.setItem(GROUPS_KEY, JSON.stringify(p.groups)); } catch (e) {}
+        changed = true;
+      }
+      if (changed) { renderCaseFilter(); render(); }
+    }).catch(function () {});
   }
 
   // ── Live sync (same endpoint as the docket page) ───────────────────────────

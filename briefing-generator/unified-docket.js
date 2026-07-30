@@ -69,6 +69,7 @@
 
   function saveColors(map) {
     try { localStorage.setItem(COLOR_KEY, JSON.stringify(map)); } catch (e) {}
+    schedulePrefsPush();
   }
 
   function autoFg(bg) {
@@ -142,6 +143,24 @@
   }
 
   // ── Build flat entry list from loaded cases ────────────────────────────────
+  var MONTH_NAMES = ["january", "february", "march", "april", "may", "june",
+    "july", "august", "september", "october", "november", "december"];
+
+  function articleISO(raw) {
+    raw = (raw || "").trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
+    var m = raw.toLowerCase().match(/^([a-z]{3,9})\.?\s+(\d{1,2}),?\s+(\d{4})$/);
+    if (m) {
+      for (var i = 0; i < MONTH_NAMES.length; i++) {
+        if (MONTH_NAMES[i].indexOf(m[1]) === 0) {
+          var mm = i + 1, dd = Number(m[2]);
+          return m[3] + "-" + (mm < 10 ? "0" : "") + mm + "-" + (dd < 10 ? "0" : "") + dd;
+        }
+      }
+    }
+    return "";
+  }
+
   function fmtDisplayDate(iso) {
     var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
     if (!m) return iso || "";
@@ -154,6 +173,7 @@
     CASES.forEach(function (c) {
       (c.articles || []).forEach(function (a) {
         if (!a.url || !a.headline) return;
+        var iso = articleISO(a.date);
         ALL.push({
           slug:          c.slug,
           name:          c.display_name,
@@ -162,10 +182,10 @@
           docket_url:    "",
           category:      c.category || "other",
           entry_number:  null,
-          date_filed:    a.date || "",
-          date_display:  fmtDisplayDate(a.date),
+          date_filed:    iso,
+          date_display:  iso ? fmtDisplayDate(iso) : (a.date || ""),
           description:   a.headline + (a.summary ? " \u2014 " + a.summary : ""),
-          is_new:        isNewEntry(a.date),
+          is_new:        isNewEntry(iso),
           doc_url:       a.url,
           landmark:      "",
           type:          "article",
@@ -201,11 +221,15 @@
     var list = ALL.filter(function (e) {
       if (!activeCases[e.slug]) return false;
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
-      if (e.is_article && (!showArticles || entryFilter !== "all")) return false;
+      if (e.is_article && !showArticles) return false;
       if (newOnly && !e.is_new) return false;
-      if (entryFilter === "substantive" && !SUBSTANTIVE[e.type]) return false;
-      if (entryFilter === "orders" && e.type !== "order") return false;
-      if (entryFilter === "transfers" && e.type !== "transfer") return false;
+      // Entry-type filters only apply to docket entries — the Articles
+      // checkbox is the sole gate for news rows.
+      if (!e.is_article) {
+        if (entryFilter === "substantive" && !SUBSTANTIVE[e.type]) return false;
+        if (entryFilter === "orders" && e.type !== "order") return false;
+        if (entryFilter === "transfers" && e.type !== "transfer") return false;
+      }
       if (dateFrom && e.date_filed && e.date_filed < dateFrom) return false;
       if (dateTo && e.date_filed && e.date_filed > dateTo) return false;
       if (sq) {
@@ -220,6 +244,7 @@
       return true;
     });
     list.sort(function (a, b) {
+      if (!a.date_filed !== !b.date_filed) return a.date_filed ? -1 : 1;
       var cmp = a.date_filed < b.date_filed ? -1 : a.date_filed > b.date_filed ? 1 : 0;
       if (cmp === 0 && a.slug === b.slug) {
         // Same day, same case → docket number decides (filing order within the day)
@@ -246,6 +271,7 @@
 
   function saveGroups(groups) {
     try { localStorage.setItem(GROUPS_KEY, JSON.stringify(groups)); } catch (e) {}
+    schedulePrefsPush();
   }
 
   function validGroupSlugs(group) {
@@ -548,7 +574,7 @@
         : '<span class="ud-party-empty">—</span>';
       if (e.is_article) {
         return (
-          "<tr" + (e.is_new ? ' class="ud-row-new"' : "") + ">" +
+          '<tr class="ud-row-article' + (e.is_new ? " ud-row-new" : "") + '">' +
             '<td class="ud-date">' + esc(e.date_display) + "</td>" +
             '<td class="ud-case">' + pill + "</td>" +
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
@@ -644,6 +670,7 @@
       renderCaseFilter();
       render();
       startLiveSync();
+      loadServerPrefs();
     }).catch(function (err) {
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
@@ -653,6 +680,40 @@
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
     });
+  }
+
+  // ── Server-side prefs (colors + groups roam across devices) ────────────────
+  var prefsAvailable = false;
+  var prefsTimer = null;
+
+  function schedulePrefsPush() {
+    if (!prefsAvailable) return;
+    clearTimeout(prefsTimer);
+    prefsTimer = setTimeout(function () {
+      fetch("api/prefs", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ colors: savedColors, groups: loadGroups() }),
+      }).catch(function () {});
+    }, 2000);
+  }
+
+  function loadServerPrefs() {
+    fetchJson("api/prefs").then(function (p) {
+      if (!p || !p.ok) return;
+      prefsAvailable = true;
+      var changed = false;
+      if (p.colors && Object.keys(p.colors).length) {
+        savedColors = p.colors;
+        try { localStorage.setItem(COLOR_KEY, JSON.stringify(savedColors)); } catch (e) {}
+        changed = true;
+      }
+      if (Array.isArray(p.groups) && p.groups.length) {
+        try { localStorage.setItem(GROUPS_KEY, JSON.stringify(p.groups)); } catch (e) {}
+        changed = true;
+      }
+      if (changed) { renderCaseFilter(); render(); }
+    }).catch(function () {});
   }
 
   // ── Live sync (CourtListener via /intel/api/dockets) ───────────────────────
