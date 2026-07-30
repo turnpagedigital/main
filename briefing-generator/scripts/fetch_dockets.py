@@ -69,6 +69,14 @@ def build_docket_block(docket_id, docket_url):
             fp = docs[0]["filepath_local"]
             doc_url = "https://www.courtlistener.com/" + fp.lstrip("/")
         desc = " ".join((e.get("description") or "").split())
+        if not desc:
+            # RSS-sourced entries leave the docket text empty; the short
+            # description lives on the attached document record instead.
+            for d in docs:
+                short = " ".join((d.get("description") or "").split())
+                if short:
+                    desc = short
+                    break
         entries.append({
             "entry_number": e.get("entry_number"),
             "date_filed": date_filed,
