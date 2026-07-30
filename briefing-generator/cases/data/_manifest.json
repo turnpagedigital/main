@@ -53,5 +53,12 @@
     "short_name": "Kahan",
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc",
     "default_color": "#D4FF00"
+  },
+  {
+    "slug": "terraform-labs",
+    "display_name": "Terraform Labs",
+    "short_name": "Terraform Labs",
+    "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc",
+    "default_color": "#60A5FA"
   }
 ]
