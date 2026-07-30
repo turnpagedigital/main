@@ -18,7 +18,7 @@ DEGRADES GRACEFULLY: with no token (or on any per-case error) it leaves the seed
 untouched and prints a note — it never crashes the daily run. Federal & bankruptcy only.
 Requires Python 3.8+ (stdlib only — urllib).
 """
-import os, sys, json
+import os, sys, json, time
 import datetime as dt
 import urllib.parse, urllib.request
 
@@ -143,7 +143,9 @@ def main():
         print("COURTLISTENER_TOKEN not set — running in seed-only mode "
               "(no live docket pulls; seeded JSON is left as-is).")
     print(f"=== Refreshing {len(cases)} tracked case(s) ===")
-    for c in cases:
+    for i, c in enumerate(cases):
+        if i and TOKEN:
+            time.sleep(2)  # CourtListener burst limit: 12 back-to-back calls trips a 429
         refresh_case(c)
     print("=== Docket refresh done. ===")
 
