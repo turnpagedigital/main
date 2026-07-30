@@ -99,6 +99,7 @@
   var bmOnly = false;
   var noteOnly = false;
   var NOTES = {};
+  var BONDORO = [];
   var sortDir = "desc";
   var searchText = "";
   var dateFrom = "";
@@ -226,13 +227,14 @@
         });
       });
     });
+    bondoroEntries().forEach(function (e) { ALL.push(e); });
   }
 
   // ── Filter + sort ──────────────────────────────────────────────────────────
   function filtered() {
     var sq = searchText.toLowerCase().trim();
     var list = ALL.filter(function (e) {
-      if (!activeCases[e.slug]) return false;
+      if (!(e.is_bondoro && e.unassigned) && !activeCases[e.slug]) return false;
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
       if (rowKind === "filings" && e.is_article) return false;
       if (rowKind === "articles" && !e.is_article) return false;
@@ -619,10 +621,19 @@
     tbody.innerHTML = entries.map(function (e) {
       var bg = getBg(e.slug, e.default_color);
       var fg = getFg(e.slug, bg);
-      var pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' +
-        esc(e.short) + "</span>";
+      var pill;
+      if (e.is_bondoro) {
+        pill = '<button type="button" class="ud-pill ud-pill-assign" data-bondoro="' + esc(e.bondoro_url) + '" ' +
+          'style="background:' + bg + ";color:" + fg + '" title="Click to assign to a case">' +
+          esc(e.short) + "</button>";
+      } else {
+        pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' +
+          esc(e.short) + "</span>";
+      }
       var badges = "";
-      if (e.is_article) {
+      if (e.is_bondoro) {
+        badges += '<span class="ud-news-tag">' + esc(e.bondoro_kind) + "</span> ";
+      } else if (e.is_article) {
         badges += '<span class="ud-news-tag">News</span> ';
       }
       if (e.landmark) {
@@ -741,6 +752,7 @@
       startLiveSync();
       loadServerPrefs();
       loadNotes();
+      loadBondoro();
     }).catch(function (err) {
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
@@ -750,6 +762,109 @@
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
     });
+  }
+
+  // ── Bondoro filing alerts & case summaries (bondoro.json, daily scrape) ────
+  function loadBondoro() {
+    fetchJson("api/bondoro")
+      .then(function (p) { return (p && p.ok && p.items) || []; })
+      .catch(function () {
+        return fetchJson("bondoro.json")
+          .then(function (f) { return (f && f.items) || []; })
+          .catch(function () { return []; });
+      })
+      .then(function (items) {
+        BONDORO = items;
+        buildAllEntries();
+        render();
+      });
+  }
+
+  function bondoroEntries() {
+    var out = [];
+    BONDORO.forEach(function (b) {
+      if (!b.url || !b.title) return;
+      var c = b.case_slug ? caseBySlug(b.case_slug) : null;
+      out.push({
+        slug:          c ? c.slug : "",
+        name:          c ? c.display_name : "New Filing",
+        short:         c ? c.short_name : "New Filing",
+        default_color: c ? c.default_color : "#9CA3AF",
+        docket_url:    "",
+        category:      c ? (c.category || "other") : "other",
+        entry_number:  null,
+        date_filed:    b.date || "",
+        date_display:  b.date ? fmtDisplayDate(b.date) : "",
+        description:   b.title + (b.excerpt ? " \u2014 " + b.excerpt : ""),
+        is_new:        isNewEntry(b.date),
+        doc_url:       b.url,
+        landmark:      "",
+        type:          "article",
+        party:         "Bondoro",
+        is_article:    true,
+        is_bondoro:    true,
+        bondoro_kind:  b.kind === "summary" ? "Summary" : "Alert",
+        bondoro_url:   b.url,
+        unassigned:    !c,
+      });
+    });
+    return out;
+  }
+
+  function caseBySlug(slug) {
+    for (var i = 0; i < CASES.length; i++) {
+      if (CASES[i].slug === slug) return CASES[i];
+    }
+    return null;
+  }
+
+  var assignMenuEl = null;
+  function openAssignMenu(url, anchor) {
+    closeAssignMenu();
+    var menu = document.createElement("div");
+    menu.className = "ud-th-menu";
+    menu.id = "ud-assign-menu";
+    var options = [{ slug: null, label: "New Filing (unassigned)" }];
+    CASES.forEach(function (c) {
+      options.push({ slug: c.slug, label: c.display_name });
+    });
+    options.forEach(function (o) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ud-th-menu-item";
+      b.textContent = o.label;
+      b.addEventListener("click", function () {
+        assignBondoro(url, o.slug);
+        closeAssignMenu();
+      });
+      menu.appendChild(b);
+    });
+    document.body.appendChild(menu);
+    var rect = anchor.getBoundingClientRect();
+    menu.style.top = (rect.bottom + window.scrollY + 4) + "px";
+    menu.style.left = (rect.left + window.scrollX) + "px";
+    assignMenuEl = menu;
+  }
+
+  function closeAssignMenu() {
+    if (assignMenuEl && assignMenuEl.parentNode) assignMenuEl.parentNode.removeChild(assignMenuEl);
+    assignMenuEl = null;
+  }
+
+  function assignBondoro(url, slug) {
+    for (var i = 0; i < BONDORO.length; i++) {
+      if (BONDORO[i].url === url) BONDORO[i].case_slug = slug;
+    }
+    buildAllEntries();
+    render();
+    noteToast("Saving assignment\u2026", false);
+    fetch("api/bondoro", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: url, case_slug: slug }),
+    }).then(function (r) { return r.json(); }).then(function (p) {
+      noteToast(p && p.ok ? "Assignment saved" : "Save failed \u2014 " + ((p && p.error) || "try again"), !(p && p.ok));
+    }).catch(function () { noteToast("Save failed \u2014 network error", true); });
   }
 
   // ── Bookmarks + notes (stored in the repo via /intel/api/notes) ────────────
@@ -1319,6 +1434,12 @@
     var tbodyEl = document.getElementById("ud-tbody");
     if (tbodyEl) {
       tbodyEl.addEventListener("click", function (ev) {
+        var ap = ev.target.closest(".ud-pill-assign");
+        if (ap) {
+          ev.stopPropagation();
+          openAssignMenu(ap.getAttribute("data-bondoro"), ap);
+          return;
+        }
         var bm = ev.target.closest(".ud-bm-btn");
         if (bm) { toggleBookmark(bm.getAttribute("data-nk")); return; }
         var nb = ev.target.closest(".ud-note-btn");
@@ -1341,6 +1462,10 @@
     }
     document.addEventListener("keydown", function (ev) {
       if (ev.key === "Escape" && activeNoteKey) closeNoteModal();
+      if (ev.key === "Escape") closeAssignMenu();
+    });
+    document.addEventListener("click", function (ev) {
+      if (assignMenuEl && !assignMenuEl.contains(ev.target)) closeAssignMenu();
     });
 
     // Row-kind view: filings, articles, or both
