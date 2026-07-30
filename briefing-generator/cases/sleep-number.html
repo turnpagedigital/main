@@ -4,36 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sleep Number — Case Docket | Turnpage Daily Briefing</title>
-<script>
-(function(){
-  var K='daily-briefing-theme';
-  var ST=['system','dark','light'];
-  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
-  var LB={dark:'Dark',light:'Light',system:'System'};
-  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
-  function apply(){
-    var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
-    document.documentElement.setAttribute('data-theme-pref',t);
-    var b=document.getElementById('theme-toggle');
-    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
-  }
-  window.cycleTheme=function(){
-    var c=localStorage.getItem(K)||'system';
-    var n=ST[(ST.indexOf(c)+1)%ST.length];
-    localStorage.setItem(K,n);apply();
-  };
-  apply();
-  if(document.readyState!=='loading') apply();
-  else document.addEventListener('DOMContentLoaded',apply);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
-})();
-</script>
+<script src="../theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
-  [data-theme="dark"]{--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
+  :root{color-scheme:light;--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
+  [data-theme="dark"]{color-scheme:dark;--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
   a{color:var(--ink);}
@@ -115,10 +91,10 @@
 <nav class="tn">
   <div class="tn-row">
     <div class="tn-left">
-      <a class="tn-brand" href="/index.html"><img class="tn-brand-logo" alt="Turnpage" src="/assets/turnpage-logo.jpeg"></a>
+      <a class="tn-brand" href="../index.html"><img class="tn-brand-logo" alt="Turnpage" src="../assets/turnpage-logo.jpeg"></a>
       <a class="tn-back" href="../bankruptcy-creditor-rights/dashboard.html">← 📜 Bankruptcy Creditor Rights briefing</a>
     </div>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -137,27 +113,27 @@
 
 
 <main class="wrap">
-  <div class="panel"><div class="panel-head"><h2>Docket</h2><div class="meta"><span class="tc-counter active"><span class="tc-pip"></span>15 new · 72h</span><span class="src">via CourtListener</span></div></div><table><thead><tr><th style="width:54px;">Dkt.</th><th style="width:104px;">Filed</th><th>Entry</th></tr></thead><tbody>
-<tr class="is-new"><td class="dkt">430</td><td class="date">Jul 21, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">429</td><td class="date">Jul 21, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">431</td><td class="date">Jul 21, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">428</td><td class="date">Jul 21, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">432</td><td class="date">Jul 21, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">—</td><td class="date">Jul 20, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">—</td><td class="date">Jul 20, 2026</td><td>Pending Deadlines Terminated RE: Motion to Authorize / Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the Stalking Horse Bidder fo<span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">425</td><td class="date">Jul 20, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">426</td><td class="date">Jul 20, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">—</td><td class="date">Jul 20, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">410</td><td class="date">Jul 20, 2026</td><td>Notice of Adjournment of Hearing RE: Proposed Order / Notice of Revised Proposed Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations,<span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">—</td><td class="date">Jul 20, 2026</td><td>Pending Deadlines Terminated RE: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders, Pursuant to 11 U.S.C. Sections 105, 361, 362, 363, 364, 503, 506, 507 and 552 (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Fi<span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">408</td><td class="date">Jul 20, 2026</td><td>Notice of Adjournment of Hearing Re: Motion to Authorize / Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Ad<span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">409</td><td class="date">Jul 20, 2026</td><td>Notice of Adjournment of Hearing RE: Objection to Motion UNITED STATES TRUSTEES OBJECTION TO MOTION OF THE DEBTORS FOR ENTRY OF INTERIM AND FINAL ORDERS AUTHORIZING (I) THE DEBTORS TO (A) HONOR PREPETITION EMPLOYEE OBLIGATIONS AND DIRECTOR OBLIGATIONS AND (B) MAINTAIN EMPLOYEE BE<span class="new-pill">NEW</span></td></tr>
-<tr class="is-new"><td class="dkt">427</td><td class="date">Jul 20, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
-<tr><td class="dkt">402</td><td class="date">Jul 19, 2026</td><td>Notice of Proposed Order / Notice of Revised Proposed Final Order Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Current and Former Emp</td></tr>
-<tr><td class="dkt">404</td><td class="date">Jul 19, 2026</td><td>Statement of the Official Committee of Unsecured Creditors in Support of the Motion of the Debtors for Entry of Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs</td></tr>
-<tr><td class="dkt">405</td><td class="date">Jul 19, 2026</td><td>Statement of the Official Committee of Unsecured Creditors' in Support of the Motion of Debtors for Entry of Orders (I)(A) Approving Bidding Procedures for Sale of the Debtors Assets, (B) Approving the Designation of SNBR Inc., an Affiliate of Sleep Country Canada, Inc., as the S</td></tr>
-<tr><td class="dkt">406</td><td class="date">Jul 19, 2026</td><td>Notice of Proposed Order / Notice of (A) Revised Proposed Order (I) Approving Sale of Debtors Assets Free and Clear of Liens, Claims, Interests and Encumbrances, (II) Authorizing Assumption and Assignment of Executory Contracts and Unexpired Leases, and (III) Granting Related Rel</td></tr>
-<tr><td class="dkt">403</td><td class="date">Jul 19, 2026</td><td>Reply to Motion / Reply in Support of the Debtors Motion for Interim and Final Orders Authorizing (I) the Debtors to (A) Honor Prepetition Employee Obligations and Director Obligations and (B) Maintain Employee Benefits Programs and Pay Related Administrative Obligations, (II) Cu</td></tr>
+  <div class="panel"><div class="panel-head"><h2>Docket</h2><div class="meta"><span class="tc-counter active"><span class="tc-pip"></span>12 new · 72h</span><span class="src">via CourtListener</span></div></div><table><thead><tr><th style="width:54px;">Dkt.</th><th style="width:104px;">Filed</th><th>Entry</th></tr></thead><tbody>
+<tr class="is-new"><td class="dkt">—</td><td class="date">Jul 28, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">457</td><td class="date">Jul 28, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">458</td><td class="date">Jul 28, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">459</td><td class="date">Jul 28, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">454</td><td class="date">Jul 28, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">456</td><td class="date">Jul 28, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">455</td><td class="date">Jul 28, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">449</td><td class="date">Jul 27, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">450</td><td class="date">Jul 27, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">453</td><td class="date">Jul 27, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">—</td><td class="date">Jul 27, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr class="is-new"><td class="dkt">452</td><td class="date">Jul 27, 2026</td><td><span style="color:var(--ink-40)">—</span><span class="new-pill">NEW</span></td></tr>
+<tr><td class="dkt">446</td><td class="date">Jul 24, 2026</td><td>Affidavit of Service of Nelson Crespin Regarding Application of the Official Committee of Unsecured Creditors for Entry of an Order Authorizing the Employment and Retention of Pachulski Stang Ziehl &amp; Jones LLP as Counsel to the Official Committee of Unsecured Creditors Effective</td></tr>
+<tr><td class="dkt">444</td><td class="date">Jul 24, 2026</td><td>Affidavit of Service of Nelson Crespin Regarding Motion of the Debtors for Entry of an Order Authorizing the Debtors to Redact and Seal Commercially Sensitive Information. Hearing Scheduled for July 28, 2026 at 10:00 a.m. (ET) (related document(s)438) filed by Kroll Restructuring</td></tr>
+<tr><td class="dkt">448</td><td class="date">Jul 24, 2026</td><td>Affidavit of Service of Nelson Crespin Regarding Notice of Adjournment of Hearing on the Deferred Compensation Trust Motion (related document(s)395) filed by Kroll Restructuring Administration LLC.(Steele, Benjamin) (Entered: 07/24/2026)</td></tr>
+<tr><td class="dkt">445</td><td class="date">Jul 24, 2026</td><td>Affidavit of Service of Nelson Crespin Regarding Schedules of Assets and Liabilities for Sleep Number Corporation, Statement of Financial Affairs for Sleep Number Corporation, Schedules of Assets and Liabilities for Select Comfort Canada Holding Inc. [Case No. 26-11398, Docket No</td></tr>
+<tr><td class="dkt">447</td><td class="date">Jul 24, 2026</td><td>Affidavit of Service of Nelson Crespin Regarding Order Scheduling Initial Case Conference, and Final Order (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Financing and (B) Use Cash Collateral, (II) Granting Liens and Providing Claims with Supe</td></tr>
+<tr><td class="dkt">440</td><td class="date">Jul 23, 2026</td><td>Affidavit of Service of Nelson Crespin Regarding Second Interim Order (I) Authorizing the Debtors to (A) Obtain Senior Secured Superpriority Postpetition Financing and (B) Use Cash Collateral, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Stat</td></tr>
+<tr><td class="dkt">441</td><td class="date">Jul 23, 2026</td><td>Affidavit of Service of Nelson Crespin Regarding Motion of Debtors for an Order (I) Directing the Trustee of the Debtors' Non-Qualified Deferred Compensation Plan Trust to Return the Debtors' Assets Held in Trust to the Debtors' Estates and (II) Granting Related Relief, Motion of</td></tr>
+<tr><td class="dkt">442</td><td class="date">Jul 23, 2026</td><td>Affidavit of Service of Nelson Crespin Regarding Declaration of Disinterestedness of Arthur Yermash in Support of Employment of Campolo, Middleton &amp; McCormick, LLP as a Professional Utilized in the Ordinary Course of Business (related document(s)377) filed by Kroll Restructuring</td></tr>
 </tbody></table><div class="panel-foot"><a href="https://www.courtlistener.com/docket/73476260/sleep-number-corporation/" target="_blank" rel="noopener">View full docket on CourtListener →</a></div></div>
   <div class="panel"><div class="panel-head"><h2>Claims Administrator</h2><span class="src">settlement site</span></div><div class="panel-foot"><a href="https://restructuring.ra.kroll.com/SleepNumber" target="_blank" rel="noopener">restructuring.ra.kroll.com/SleepNumber →</a></div></div>
 </main>

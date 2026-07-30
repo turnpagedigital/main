@@ -4,36 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Power Block Coin, LLC — Case Docket | Turnpage Daily Briefing</title>
-<script>
-(function(){
-  var K='daily-briefing-theme';
-  var ST=['system','dark','light'];
-  var IC={dark:'🌙',light:'☀️',system:'🖥️'};
-  var LB={dark:'Dark',light:'Light',system:'System'};
-  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
-  function apply(){
-    var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
-    document.documentElement.setAttribute('data-theme-pref',t);
-    var b=document.getElementById('theme-toggle');
-    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
-  }
-  window.cycleTheme=function(){
-    var c=localStorage.getItem(K)||'system';
-    var n=ST[(ST.indexOf(c)+1)%ST.length];
-    localStorage.setItem(K,n);apply();
-  };
-  apply();
-  if(document.readyState!=='loading') apply();
-  else document.addEventListener('DOMContentLoaded',apply);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
-})();
-</script>
+<script src="../theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
-  [data-theme="dark"]{--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
+  :root{color-scheme:light;--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
+  [data-theme="dark"]{color-scheme:dark;--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
   a{color:var(--ink);}
@@ -115,10 +91,10 @@
 <nav class="tn">
   <div class="tn-row">
     <div class="tn-left">
-      <a class="tn-brand" href="/index.html"><img class="tn-brand-logo" alt="Turnpage" src="/assets/turnpage-logo.jpeg"></a>
+      <a class="tn-brand" href="../index.html"><img class="tn-brand-logo" alt="Turnpage" src="../assets/turnpage-logo.jpeg"></a>
       <a class="tn-back" href="../fraud-recovery/dashboard.html">← 🕵️ Ponzi / Fraud Recovery briefing</a>
     </div>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -138,14 +114,15 @@
 
 <main class="wrap">
   <div class="panel"><div class="panel-head"><h2>Docket</h2><div class="meta"><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span><span class="src">via CourtListener</span></div></div><table><thead><tr><th style="width:54px;">Dkt.</th><th style="width:104px;">Filed</th><th>Entry</th></tr></thead><tbody>
-<tr><td class="dkt">531</td><td class="date">Jul 6, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
+<tr><td class="dkt">532</td><td class="date">Jul 23, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
 <tr><td class="dkt">529</td><td class="date">Jul 6, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
 <tr><td class="dkt">530</td><td class="date">Jul 6, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
-<tr><td class="dkt">528</td><td class="date">Jul 1, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
+<tr><td class="dkt">531</td><td class="date">Jul 6, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
 <tr><td class="dkt">527</td><td class="date">Jul 1, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
+<tr><td class="dkt">528</td><td class="date">Jul 1, 2026</td><td><span style="color:var(--ink-40)">—</span></td></tr>
 <tr><td class="dkt">523</td><td class="date">Jun 24, 2026</td><td>Reply to (related document(s):514 Application to Employ Attorney) Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/24/2026)</td></tr>
-<tr><td class="dkt">526</td><td class="date">Jun 24, 2026</td><td>Adversary Proceeding 26-02122. Complaint by Angela Somers against Coinbase Global, Inc. Coinbase Inc. Coinbase Financial Markets, Aaron Tilton, Brad Jones. Fee Amount $350. Payment Not Due at this Time: Fee Deferred. Nature of Suit(s): [14 (Recovery of money/property - other)]. (</td></tr>
 <tr><td class="dkt">524</td><td class="date">Jun 24, 2026</td><td>Response to (related document(s):514 Application to Employ Attorney) Supplement to Application to Employ HLH Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/24/2026)</td></tr>
+<tr><td class="dkt">526</td><td class="date">Jun 24, 2026</td><td>Adversary Proceeding 26-02122. Complaint by Angela Somers against Coinbase Global, Inc. Coinbase Inc. Coinbase Financial Markets, Aaron Tilton, Brad Jones. Fee Amount $350. Payment Not Due at this Time: Fee Deferred. Nature of Suit(s): [14 (Recovery of money/property - other)]. (</td></tr>
 <tr><td class="dkt">525</td><td class="date">Jun 24, 2026</td><td>Pending Order Re: 524 Response. (Lee, Trevor) [Order# 479287] (EOD: 06/24/2026)</td></tr>
 <tr><td class="dkt">522</td><td class="date">Jun 22, 2026</td><td>Pending Order Re: 521 Motion Extend Time. (Lee, Trevor) [Order# 479115] (EOD: 06/22/2026)</td></tr>
 <tr><td class="dkt">521</td><td class="date">Jun 22, 2026</td><td>Motion to Extend Time to File Monthly Operating Reports Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/22/2026)</td></tr>
@@ -157,7 +134,6 @@
 <tr><td class="dkt">516</td><td class="date">Jun 2, 2026</td><td>Ex Parte Application to Employ J.S. Held as Financial Advisor to Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/02/2026)</td></tr>
 <tr><td class="dkt">513</td><td class="date">Jun 2, 2026</td><td>Notice of Rescheduled Hearing Re: 506 Application for Compensation. Hearing scheduled for 7/8/2026 at 02:30 PM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. Deadline for filing objections: 6/1/2026. (mfr) (EOD: 06/02/2026)</td></tr>
 <tr><td class="dkt">517</td><td class="date">Jun 2, 2026</td><td>Pending Order Re: 516 Application to Employ (Professional). (Lee, Trevor) [Order# 478401] (EOD: 06/02/2026)</td></tr>
-<tr><td class="dkt">511</td><td class="date">May 24, 2026</td><td>Certificate of Service Re: Miscellaneous Pleadings Notice Date 05/24/2026. (Admin.) (EOD: 05/24/2026)</td></tr>
 </tbody></table><div class="panel-foot"><a href="https://www.courtlistener.com/docket/68873409/power-block-coin-llc/" target="_blank" rel="noopener">View full docket on CourtListener →</a></div></div>
   <div class="panel"><div class="panel-head"><h2>Claims Administrator</h2></div><div class="empty">No claims administrator — active litigation docket. This panel populates for settlements and bankruptcy estates.</div></div>
 </main>

@@ -4,31 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🤖 LLM / Copyright | Turnpage Daily Briefing</title>
-<script>
-(function(){
-  var K='daily-briefing-theme';
-  var ST=['system','dark','light'];
-  var IC={dark:'\ud83c\udf19',light:'\u2600\ufe0f',system:'\ud83d\udda5\ufe0f'};
-  var LB={dark:'Dark',light:'Light',system:'System'};
-  function eff(t){return t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;}
-  function apply(){
-    var t=localStorage.getItem(K)||'system';
-    document.documentElement.setAttribute('data-theme',eff(t));
-    document.documentElement.setAttribute('data-theme-pref',t);
-    var b=document.getElementById('theme-toggle');
-    if(b){b.textContent=IC[t];b.title='Theme: '+LB[t]+' (click to cycle)';}
-  }
-  window.cycleTheme=function(){
-    var c=localStorage.getItem(K)||'system';
-    var n=ST[(ST.indexOf(c)+1)%ST.length];
-    localStorage.setItem(K,n);apply();
-  };
-  apply();
-  if(document.readyState!=='loading') apply();
-  else document.addEventListener('DOMContentLoaded',apply);
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',apply);
-})();
-</script>
+<script src="../theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
@@ -373,7 +349,7 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 <nav class="tn">
   <div class="tn-row brand">
     <a class="tn-brand" href="../daily-briefing/index.html"><img class="tn-brand-logo" alt="Turnpage" src="../daily-briefing/assets/turnpage-logo.jpeg"></a>
-    <button id="theme-toggle" onclick="cycleTheme()">🖥️</button>
+    <button id="theme-toggle">🖥️</button>
   </div>
   <div class="tn-row tn-tabs-row">
     <div class="tn-tab">
@@ -443,8 +419,8 @@ footer.posts-footer{max-width:1440px;margin:0 auto;padding:28px 32px 60px;border
 </style>
 <section class="box tracked-cases">
   <h2>Tracked Cases</h2>
-<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/bartz-anthropic.html">Bartz v. Anthropic</a><span class="tc-counter active"><span class="tc-pip"></span>2 new · 72h</span></div><div class="tc-sub">U.S. District Court, N.D. Cal. (San Francisco) · 3:24-cv-05417</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 21</span><span class="tc-fdesc">REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 20</span><span class="tc-fdesc">ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/<span class="tc-new">NEW</span></span></li><li><span class="tc-fdate">Jul 13</span><span class="tc-fdesc">Brief re 676 Objection,, -DEFENDANT ANTHROPIC PBCS OPPOSITION TO APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT filed byAnthropic PBC. (Related document(s) 676 ) (Winthrop, Douglas) (Filed on 7/13/2026) (E</span></li></ul><a class="tc-open" href="../cases/bartz-anthropic.html">Open case docket →</a></div>
-<div class="tc-case"><div class="tc-top"><span class="tc-name">Concord Music Group v. Anthropic</span><span class="tc-counter quiet"><span class="tc-pip"></span>awaiting sync</span></div><div class="tc-sub">M.D. Tenn. → N.D. Cal. · (music-publisher parallel docket)</div><ul class="tc-filings"><li><span class="tc-fdate">Apr 22</span><span class="tc-fdesc">Last known public filing — Anthropic cross-motion for summary judgment (fair use).</span></li></ul><div class="tc-empty">No new filings in the last 72h. Full history + the live counter populate on first sync.</div><span class="tc-open disabled">Awaiting docket sync</span><div class="tc-note">Tagged to this topic — pulls live once a CourtListener docket id + token are added.</div></div>
+<div class="tc-case"><div class="tc-top"><a class="tc-name" href="../cases/bartz-anthropic.html">Bartz v. Anthropic</a><span class="tc-counter quiet"><span class="tc-pip"></span>0 new · 72h</span></div><div class="tc-sub">U.S. District Court, N.D. Cal. (San Francisco) · 3:24-cv-05417</div><ul class="tc-filings"><li><span class="tc-fdate">Jul 21</span><span class="tc-fdesc">REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)</span></li><li><span class="tc-fdate">Jul 20</span><span class="tc-fdesc">ORDER GRANTING FINAL APPROVAL OF CLASS ACTION SETTLEMENT; GRANTING IN PART MOTION FOR ATTORNEY'S FEES, REIMBURSEMENT OF EXPENSES, AND PLAINTIFF SERVICE AWARDS; JUDGMENT. Signed by Judge Araceli Martinez-Olguin on July 20, 2026. (amolc1, COURTSTAFF) (Filed on 7/20/2026)Any non-CM/</span></li><li><span class="tc-fdate">Jul 13</span><span class="tc-fdesc">Brief re 676 Objection,, -DEFENDANT ANTHROPIC PBCS OPPOSITION TO APPLICATION OF CLASS MEMBER DONALD S. PASSMAN FOR LEAVE TO SUBMIT LATE REQUEST FOR EXCLUSION FROM CLASS ACTION SETTLEMENT filed byAnthropic PBC. (Related document(s) 676 ) (Winthrop, Douglas) (Filed on 7/13/2026) (E</span></li></ul><a class="tc-open" href="../cases/bartz-anthropic.html">Open case docket →</a></div>
+<div class="tc-case"><div class="tc-top"><span class="tc-name">Concord Music Group v. Anthropic</span><span class="tc-counter quiet"><span class="tc-pip"></span>awaiting sync</span></div><div class="tc-sub">District Court, N.D. California · 5:24-cv-03811</div><div class="tc-empty">No filings on record yet.</div><div class="tc-empty">No new filings in the last 72h. Full history + the live counter populate on first sync.</div><span class="tc-open disabled">Awaiting docket sync</span><div class="tc-note">Tagged to this topic — pulls live once a CourtListener docket id + token are added.</div></div>
 </section>
 <!-- TRACKED-CASES END -->
     <section class="box">
