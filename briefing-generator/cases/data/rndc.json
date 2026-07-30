@@ -2,20 +2,233 @@
   "case": {
     "slug": "rndc",
     "display_name": "RNDC",
-    "case_name": "Republic National Distributing Company LLC",
+    "case_name": "Republic National Distributing Company, LLC",
     "court": "Bankr. S.D.Tx.",
     "case_number": "26-90737",
     "judge": "Hon. Christopher M. Lopez",
-    "docket_id": null,
-    "status": "active"
+    "docket_id": "73673083",
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
-    "source": "seed",
-    "awaiting_sync": true,
-    "docket_url": null,
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
+    "date_last_filing": "2026-07-29",
+    "fetched_at": "2026-07-30T04:28:57.993158+00:00",
+    "as_of": "Jul 30, 2026",
+    "new_in_72h": 20,
+    "recent": [
+      {
+        "entry_number": 74,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by John F. Higgins. This is to order a transcript of 7/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/29/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 77,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 74,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by John F. Higgins. This is to order a transcript of 7/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/29/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 77,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 75,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 78,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 58,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for John R. Ashmead (Fee Paid: $100, receipt number 27423019) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 61,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Thomas Ross Hooper (Fee Paid: $100, receipt number A27423085) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 57,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Notice of Appearance and Request for Notice Filed by John R Ashmead Filed by on behalf of Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 66,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Maddison Levine To Appear pro hac vice (Related Doc # 33) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 63,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Justin Rawlins To Appear pro hac vice (Related Doc # 30) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 62,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Kwame O. Akuffo (Fee Paid: $100, receipt number A27423147) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 60,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Interim Order (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief. Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 59,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Robert J. Gayda (Fee Paid: $100, receipt number A27423070) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 67,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Lindsey Henrikson To Appear pro hac vice (Related Doc # 34) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 65,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Geoffrey M. King To Appear pro hac vice (Related Doc # 32) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 71,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Notice of Demonstrative. Filed by Republic National Distributing Company, LLC (Attachments: # 1 Presentation) (Higgins, John) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 72,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Notice of Appearance and Request for Notice Filed by Steven J. Reisman Filed by on behalf of New BG Distribution Partners, LLC (Reisman, Steven) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 68,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Christopher Marcus To Appear pro hac vice (Related Doc # 35) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 70,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Joshua A. Sussberg To Appear pro hac vice (Related Doc # 37) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ]
   },
   "claims_administrator": {
     "name": "Omniagentsolutions",
