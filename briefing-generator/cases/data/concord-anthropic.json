@@ -7,15 +7,228 @@
     "case_number": "5:24-cv-03811",
     "judge": "Eumi K. Lee",
     "docket_id": "68889092",
-    "status": "active"
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
-    "source": "seed",
-    "awaiting_sync": true,
+    "source": "courtlistener",
+    "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "date_last_filing": "2026-07-29",
+    "fetched_at": "2026-07-30T04:28:56.135298+00:00",
+    "as_of": "Jul 30, 2026",
+    "new_in_72h": 1,
+    "recent": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 745,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Plaintiffs' Motion to Partially Exclude the Opinions of Julie Davis by Anthropic PBC. (Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 752,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 650 MOTION in Limine to Partially Exclude the Opinions of Dr. Abhishek Nagaraj ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Robin Burrell in Support, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.752.0.pdf"
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-29",
+        "date_display": "Jul 29, 2026",
+        "description": "",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 745,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Plaintiffs' Motion to Partially Exclude the Opinions of Julie Davis by Anthropic PBC. (Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 752,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 650 MOTION in Limine to Partially Exclude the Opinions of Dr. Abhishek Nagaraj ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Robin Burrell in Support, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.752.0.pdf"
+      },
+      {
+        "entry_number": 742,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 648 MOTION in Limine to Exclude the Opinions of Dr. Ethan Lustig ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Robin Burrell in Support, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6, # 8 Exhibit 7, # 9 Exhibit 8, # 10 Exhibit 9, # 11 Exhibit 10, # 12 Exhibit 11, # 13 Exhibit 12)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.742.0.pdf"
+      },
+      {
+        "entry_number": 740,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 652 MOTION in Limine to Exclude the Opinions of Colin E. Stokes ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Robin Burrell in Support, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6, # 8 Exhibit 7, # 9 Exhibit 8)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.740.0.pdf"
+      },
+      {
+        "entry_number": 751,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Plaintiffs' Motion to Partially Exclude Opinions of Dr. Andrew Bray by Anthropic PBC. (Attachments: # 1 Exhibit 1, # 2 Exhibit 3, # 3 Exhibit 6, # 4 Exhibit 7)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 753,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Publishers' Motion to Exclude Expert Testimony of Dr. Abhishek Nagaraj by Anthropic PBC. (Attachments: # 1 Exhibit 2, # 2 Exhibit 3, # 3 Exhibit 4, # 4 Exhibit 5)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 735,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 664 MOTION in Limine to Exclude Expert Testimony and Opinions of Joshua Dennis ) filed byAbkco Music Inc, Capitol CMG, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Attachments: # 1 Declaration of Keith Howell, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3)(Chung, Timothy) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.735.0.pdf"
+      },
+      {
+        "entry_number": 741,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Publishers' Motion to Exclude Expert Testimony of Colin Stokes by Anthropic PBC. (Attachments: # 1 Exhibit 3, # 2 Exhibit 5, # 3 Exhibit 6, # 4 Exhibit 7)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 738,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal re Plaintiffs' Opposition to Motion to Exclude Joshua Dennis by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Attachments: # 1 Declaration of Keith Howell)(Chung, Timothy) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 750,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 644 MOTION in Limine to Exclude the Opinions of Dr. Andrew Bray ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Robin Burrell in Support, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6, # 8 Exhibit 7, # 9 Exhibit 8)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.750.0.pdf"
+      },
+      {
+        "entry_number": 744,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 646 MOTION in Limine to Partially Exclude the Opinions of Julie Davis ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Robin Burrell in Support, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.744.0.pdf"
+      },
+      {
+        "entry_number": 737,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal re Plaintiffs' Opposition to Motion to Exclude Dr. Zhao by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Chung, Timothy) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 736,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 680 MOTION to Exclude the Expert Testimony and Opinions of Michael D. Smith ) filed byAbkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Attachments: # 1 Declaration of Bret Matera, # 2 Exhibit A)(Chung, Timothy) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.736.0.pdf"
+      },
+      {
+        "entry_number": 743,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Publishers' Motion to Partially Exclude Expert Testimony of Ethan Lustig by Anthropic PBC. (Attachments: # 1 Exhibit 2, # 2 Exhibit 3, # 3 Exhibit 4, # 4 Exhibit 5, # 5 Exhibit 6, # 6 Exhibit 7, # 7 Exhibit 8, # 8 Exhibit 10, # 9 Exhibit 11)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 734,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 661 MOTION in Limine to Exclude Expert Testimony and Opinions of Ben Zhao ) filed byAbkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Attachments: # 1 Declaration of Timothy Chung, # 2 Exhibit A)(Chung, Timothy) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.734.0.pdf"
+      },
+      {
+        "entry_number": 733,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "Response re 732 Response ( Non Motion ) by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Hailey, Nicholas) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 739,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal re Plaintiffs' Opposition to Motion to Exclude Dr. Smith by Abkco Music Inc, Capitol CMG, Inc., Concord Music Group, Inc., Polygram Publishing, Inc., Songs of Universal Inc., Universal Music - MGB NA LLC, Universal Music - Z Tunes LLC, Universal Music Corp.. (Chung, Timothy) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 746,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "OPPOSITION/RESPONSE (re 640 MOTION in Limine to Exclude the Opinions of Dr. Russ Altman ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Robin Burrell in Support, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6, # 8 Exhibit 7, # 9 Exhibit 8, # 10 Exhibit 9)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.431519/gov.uscourts.cand.431519.746.0.pdf"
+      },
+      {
+        "entry_number": 747,
+        "date_filed": "2026-07-27",
+        "date_display": "Jul 27, 2026",
+        "description": "DOCUMENT E-FILED UNDER SEAL re 590 Order Granting Motion to File Under Seal Opposition to Publishers' Motion to Exclude Expert Testimony of Dr. Russ Altman by Anthropic PBC. (Attachments: # 1 Exhibit 1, # 2 Exhibit 3, # 3 Exhibit 4, # 4 Exhibit 5, # 5 Exhibit 6, # 6 Exhibit 7, # 7 Exhibit 8)(Mehta, Sonal) (Filed on 7/27/2026) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ]
   },
   "claims_administrator": null,
   "coverage": []
