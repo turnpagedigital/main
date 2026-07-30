@@ -95,7 +95,7 @@
   var activeCases = {};
   var entryFilter = "all";
   var newOnly = false;
-  var showArticles = true;
+  var rowKind = "both";  // both | filings | articles
   var bmOnly = false;
   var noteOnly = false;
   var NOTES = {};
@@ -114,7 +114,8 @@
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.entryFilter)   entryFilter   = s.entryFilter;
       if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
-      if (typeof s.showArticles === "boolean") showArticles = s.showArticles;
+      if (s.rowKind === "both" || s.rowKind === "filings" || s.rowKind === "articles") rowKind = s.rowKind;
+      else if (s.showArticles === false) rowKind = "filings";  // migrate the retired checkbox
       if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
       if (typeof s.noteOnly === "boolean") noteOnly = s.noteOnly;
       // migrate the retired select-based filter
@@ -130,7 +131,7 @@
       localStorage.setItem(FILTER_KEY, JSON.stringify({
         entryFilter:    entryFilter,
         newOnly:        newOnly,
-        showArticles:   showArticles,
+        rowKind:        rowKind,
         bmOnly:         bmOnly,
         noteOnly:       noteOnly,
         sortDir:        sortDir,
@@ -232,7 +233,8 @@
     var list = ALL.filter(function (e) {
       if (!activeCases[e.slug]) return false;
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
-      if (e.is_article && !showArticles) return false;
+      if (rowKind === "filings" && e.is_article) return false;
+      if (rowKind === "articles" && !e.is_article) return false;
       if (bmOnly || noteOnly) {
         var mrec = NOTES[entryNoteKey(e)];
         if (bmOnly && !(mrec && mrec.bookmarked)) return false;
@@ -1141,12 +1143,12 @@
       if (ev.key === "Escape" && activeNoteKey) closeNoteModal();
     });
 
-    // Articles toggle
-    var artCb = document.getElementById("ud-articles");
-    if (artCb) {
-      artCb.checked = showArticles;
-      artCb.addEventListener("change", function () {
-        showArticles = artCb.checked;
+    // Row-kind view: filings, articles, or both
+    var rowKindSel = document.getElementById("ud-rowkind");
+    if (rowKindSel) {
+      rowKindSel.value = rowKind;
+      rowKindSel.addEventListener("change", function () {
+        rowKind = rowKindSel.value;
         saveFilterState();
         render();
       });

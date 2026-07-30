@@ -709,9 +709,11 @@ def render_unified_docket(cases):
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
-        <label class="ud-new-label">
-          <input type="checkbox" id="ud-articles" checked> Articles
-        </label>
+        <select id="ud-rowkind" class="ud-type-select" title="What to show">
+          <option value="both">Filings + Articles</option>
+          <option value="filings">Court filings only</option>
+          <option value="articles">Articles only</option>
+        </select>
         <label class="ud-new-label">
           <input type="checkbox" id="ud-new-only"> New only (24h)
         </label>
