@@ -298,13 +298,13 @@ Produce the FULL rich advisory in markdown format per the SKILL.md output spec. 
 
 [lede paragraph naming today's deltas]
 
-[2-4 more substantive sections in prose, each with case captions, docket numbers, judges, dollar figures, percentages, statutory citations]
+[one section per development that occurred in the LAST 24 HOURS — case captions, docket numbers, judges, dollar figures, percentages, statutory citations; omit matters with no movement]
 
 ## Recommended Actions
 
 [one dense paragraph for creditors/claimants/rights-holders]
 
-## Proposed Articles for the Briefing Site (5 Selections)
+## Proposed Articles for the Briefing Site (up to 5)
 
 - **Title 1** — Publisher, Date
   - URL
@@ -316,7 +316,7 @@ Produce the FULL rich advisory in markdown format per the SKILL.md output spec. 
 - (one entry per inline citation)
 ```
 
-Inline citations must use the format `(__[Source Name](https://url)__)` for every factual proposition. Voice: {voice_line}. Length: 1,500–2,500 words. Density at the Bartz-passage level (full case caption + docket + judge + courtroom + dollar figures + percentages + statutory citations). Apply incremental-focus rules from SKILL.md — carry forward prior advisory's analytical content; today's lede surfaces NEW + DELTA matters; STALE matters stay in body, do not strip.
+Inline citations must use the format `(__[Source Name](https://url)__)` for every factual proposition. Voice: {voice_line}. Length: proportional to the last 24 hours — heavy day 1,500–2,500 words, normal day 400–900, quiet day under 150; NO padding, NO length floor. Density at the Bartz-passage level for whatever IS covered (full case caption + docket + judge + dollar figures + percentages + statutory citations). Apply the 24-hour-focus rules from SKILL.md: the reader follows this desk daily and needs no backdrop — cover only NEW and DELTA matters from the last 24 hours, tie them to the running coverage in a clause (not a paragraph), and OMIT stale matters entirely. If nothing qualifying happened, say so in 2–3 sentences, name the next scheduled milestone, and stop.
 
 VERIFICATION RULES (hard requirements):
 - You have a web_search tool. USE IT to verify every case posture, docket number, judge, dollar figure, percentage, and date before asserting it, and to find the specific article or primary-source page for each citation.
