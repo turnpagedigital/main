@@ -1,4 +1,9 @@
 {
-  "colors": {},
+  "colors": {
+    "terraform-labs": {
+      "bg": "#ccfbf1",
+      "fg": "#134e4a"
+    }
+  },
   "groups": []
 }
