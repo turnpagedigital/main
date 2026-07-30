@@ -2,21 +2,17 @@
   "case": {
     "slug": "blockfills",
     "display_name": "BlockFills",
-    "case_name": "Reliz Technology Group Holdings Inc.",
+    "case_name": "Reliz Technology Group Holdings Inc., et al. (BlockFills)",
     "court": "Bankr. D. Del.",
     "case_number": "26-10371",
     "judge": "Thomas M. Horan",
     "docket_id": "72494188",
-    "status": "active",
-    "court_id": ""
+    "status": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/",
-    "date_last_filing": "2026-07-28",
-    "fetched_at": "2026-07-29T16:01:05.287520+00:00",
-    "as_of": "Jul 29, 2026",
     "new_in_72h": 6,
     "recent": [
       {
@@ -228,7 +224,10 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-07-28",
+    "fetched_at": "2026-07-29T16:01:05.287520+00:00",
+    "as_of": "Jul 29, 2026"
   },
   "claims_administrator": {
     "name": "Veritaglobal",
