@@ -11,7 +11,9 @@ case:
   case_number: "26-90737"
   judge: "Hon. Christopher M. Lopez"
 docket_source:
-  type: claims_agent
+  type: courtlistener
+  docket_id: 73673083
+  url: "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/"
 claims_administrator:
   name: "Omniagentsolutions"
   url: "https://cases.omniagentsolutions.com/?clientId=3793"
