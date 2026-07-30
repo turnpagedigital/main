@@ -457,11 +457,13 @@ def _short_name(display_name):
 def render_unified_docket(cases):
     """Generate briefing-generator/unified-docket.html (shell) + cases/data/_manifest.json."""
     live = [c for c in cases if c["data"] and not _docket(c["data"]).get("awaiting_sync")]
+    # Manifest includes ALL cases that have a data file, so awaiting-sync cases
+    # appear as chip options in the UI immediately after admin creates them.
+    all_with_data = [c for c in cases if c["data"] is not None]
 
     # Write _manifest.json — lightweight case metadata consumed by JS at runtime.
-    # All cases with data are included (even awaiting_sync skipped above for the page stat).
     manifest = []
-    for i, c in enumerate(live):
+    for i, c in enumerate(all_with_data):
         d = _docket(c["data"])
         bl = _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
         manifest.append({
@@ -475,7 +477,7 @@ def render_unified_docket(cases):
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     manifest_path = DATA_DIR / "_manifest.json"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"  ✓ cases/data/_manifest.json: {len(manifest)} cases")
+    print(f"  ✓ cases/data/_manifest.json: {len(manifest)} cases ({len(live)} live, {len(all_with_data)-len(live)} awaiting sync)")
 
     if not live:
         print("  · unified-docket.html: no live cases — writing empty shell")
@@ -524,8 +526,12 @@ def render_unified_docket(cases):
   .ud-new-label{{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;color:var(--ink);}}
   .ud-new-label input{{accent-color:var(--neon);cursor:pointer;}}
   /* Color popover */
-  .ud-color-pop{{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:220px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}}
-  .ud-pop-title{{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}}
+  .ud-color-pop{{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:232px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}}
+  .ud-pop-title{{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}}
+  .ud-pop-swatches{{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:14px;}}
+  .ud-pop-swatch{{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;padding:0;outline:none;}}
+  .ud-pop-swatch:hover{{transform:scale(1.15);}}
+  .ud-pop-swatch.ud-swatch-active{{border-color:var(--ink);}}
   .ud-pop-row{{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;gap:8px;font-size:14px;color:var(--ink-60);cursor:pointer;}}
   .ud-pop-row input[type="color"]{{width:40px;height:30px;padding:0;border:1px solid var(--line-strong);cursor:pointer;background:transparent;flex-shrink:0;}}
   .ud-pop-row input[type="color"]::-webkit-color-swatch-wrapper{{padding:0;}}
@@ -587,6 +593,7 @@ def render_unified_docket(cases):
 <!-- Color popover (shared, repositioned by JS) -->
 <div id="ud-color-pop" class="ud-color-pop" style="display:none;">
   <div class="ud-pop-title" id="ud-pop-slug"></div>
+  <div id="ud-pop-swatches" class="ud-pop-swatches"></div>
   <label class="ud-pop-row">
     <span>Background</span>
     <input type="color" id="ud-pop-bg" value="#888888">

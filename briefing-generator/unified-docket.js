@@ -37,6 +37,12 @@
     return "";
   }
 
+  // ── Preset palette (12 colors — existing 6 + 6 complementary) ────────────
+  var PRESETS = [
+    "#D4FF00", "#60A5FA", "#FB923C", "#C084FC", "#34D399", "#F87171",
+    "#FBBF24", "#2DD4BF", "#F472B6", "#818CF8", "#E879F9", "#38BDF8",
+  ];
+
   // ── Color helpers ──────────────────────────────────────────────────────────
   var COLOR_KEY = "ud-case-colors";
 
@@ -192,6 +198,33 @@
   }
 
   // ── Color popover ──────────────────────────────────────────────────────────
+  function renderSwatches(activeBg) {
+    var container = document.getElementById("ud-pop-swatches");
+    if (!container) return;
+    container.innerHTML = PRESETS.map(function (color) {
+      var isActive = color.toLowerCase() === (activeBg || "").toLowerCase();
+      return (
+        '<button class="ud-pop-swatch' + (isActive ? " ud-swatch-active" : "") + '" ' +
+          'data-color="' + color + '" ' +
+          'style="background:' + color + '" ' +
+          'title="' + color + '"></button>'
+      );
+    }).join("");
+    container.querySelectorAll(".ud-pop-swatch").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var color = btn.getAttribute("data-color");
+        var bgEl = document.getElementById("ud-pop-bg");
+        var fgEl = document.getElementById("ud-pop-fg");
+        if (bgEl) bgEl.value = color;
+        if (fgEl) fgEl.value = autoFg(color);
+        applyPopoverColors();
+        container.querySelectorAll(".ud-pop-swatch").forEach(function (b) {
+          b.classList.toggle("ud-swatch-active", b === btn);
+        });
+      });
+    });
+  }
+
   function openPopover(slug, anchor) {
     activeGearSlug = slug;
     var pop = document.getElementById("ud-color-pop");
@@ -211,6 +244,8 @@
     var fgEl = document.getElementById("ud-pop-fg");
     if (bgEl) bgEl.value = bg;
     if (fgEl) fgEl.value = fg;
+
+    renderSwatches(bg);
 
     var rect = anchor.getBoundingClientRect();
     pop.style.display = "block";
@@ -253,6 +288,7 @@
       var fgEl = document.getElementById("ud-pop-fg");
       if (bgEl) bgEl.value = defaultBg;
       if (fgEl) fgEl.value = defaultFg;
+      renderSwatches(defaultBg);
     }
     renderCaseChips();
     render();

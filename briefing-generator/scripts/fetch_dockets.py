@@ -68,7 +68,7 @@ def build_docket_block(docket_id, docket_url):
         if docs and docs[0].get("filepath_local"):
             fp = docs[0]["filepath_local"]
             doc_url = "https://www.courtlistener.com/" + fp.lstrip("/")
-        desc = " ".join((e.get("description") or "").split())[:280]
+        desc = " ".join((e.get("description") or "").split())
         entries.append({
             "entry_number": e.get("entry_number"),
             "date_filed": date_filed,

@@ -14,17 +14,31 @@
     "default_color": "#60A5FA"
   },
   {
+    "slug": "concord-anthropic",
+    "display_name": "Concord Music Group v. Anthropic",
+    "short_name": "Concord Music",
+    "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
+    "default_color": "#FB923C"
+  },
+  {
     "slug": "power-block-coin",
     "display_name": "Power Block Coin, LLC",
     "short_name": "Power Block",
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
-    "default_color": "#FB923C"
+    "default_color": "#C084FC"
+  },
+  {
+    "slug": "rndc",
+    "display_name": "RNDC",
+    "short_name": "RNDC",
+    "docket_url": "",
+    "default_color": "#34D399"
   },
   {
     "slug": "sleep-number",
     "display_name": "Sleep Number",
     "short_name": "Sleep Number",
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "default_color": "#C084FC"
+    "default_color": "#F87171"
   }
 ]
