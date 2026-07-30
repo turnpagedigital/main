@@ -618,6 +618,21 @@
     el.className = isLive ? "ud-sync-live" : "ud-sync-static";
   }
 
+  function liveEntryKey(e) {
+    return e.entry_number != null
+      ? "n" + e.entry_number
+      : "d" + (e.date_filed || "") + "|" + (e.description || "").slice(0, 60);
+  }
+
+  function mergeEntries(existing, fresh) {
+    // The live endpoint only carries the newest page — union it with what we
+    // already have (backfilled history) instead of replacing it.
+    var map = {};
+    (existing || []).forEach(function (e) { map[liveEntryKey(e)] = e; });
+    (fresh || []).forEach(function (e) { map[liveEntryKey(e)] = e; });
+    return Object.keys(map).map(function (k) { return map[k]; });
+  }
+
   function applyLive(payload) {
     if (!payload || !payload.ok || !payload.cases || !payload.cases.length) return false;
     var bySlug = {};
@@ -626,8 +641,10 @@
     CASES.forEach(function (c) {
       var live = bySlug[c.slug];
       if (!live || !live.entries) return;
-      c.entries = live.entries;
-      if (live.docket_url) c.docket_url = live.docket_url;
+      c.entries = mergeEntries(c.entries, live.entries);
+      if (live.docket_url && live.docket_url.indexOf("courtlistener.com") !== -1) {
+        c.docket_url = live.docket_url;
+      }
       touched = true;
     });
     if (!touched) return false;
