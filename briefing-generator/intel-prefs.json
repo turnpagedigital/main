@@ -41,5 +41,13 @@
       "fg": "#92400e"
     }
   },
-  "groups": []
+  "groups": [
+    {
+      "name": "AI Copyright",
+      "slugs": [
+        "bartz-anthropic",
+        "concord-anthropic"
+      ]
+    }
+  ]
 }
