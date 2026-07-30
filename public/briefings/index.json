@@ -1,26 +1,222 @@
 {
   "items": [
     {
-      "slug": "2026-07-06-advisory",
+      "slug": "2026-07-09-tariff-advisory",
+      "date": "2026-07-09",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 9, 2026",
+      "summary": "The trade landscape this morning turns on a single countdown: the 10% global import surcharge that President Trump imposed under Section 122 of the Trade Act of 1974 (19 U.S.C. § 2132) is scheduled to expire by operation of law at 12:01 a.m.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-09-crypto-advisory",
+      "date": "2026-07-09",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 9, 2026",
+      "summary": "The controlling development today is BlockFills: the confirmation hearing is set for Monday, July 13, 2026, at 10:00 a.m. ET before Judge Thomas M. Horan, Bankr. D. Del., Case No. 26-10371 (TMH). The voting deadline and confirmation objection deadline both ran on July 1, 2026 at 4:00 p.m. ET.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-09-advisory",
+      "date": "2026-07-09",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 9, 2026",
+      "summary": "The two-front Anthropic exposure is now fully joined. Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.), carries a $1.5 billion settlement that remains unsigned — Judge Araceli Martínez-Olguín declined, for now, to approve the settlement after the May 14 fairness hearing, and as of the June 2026…",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-bankruptcy-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 8, 2026",
+      "summary": "Today's pivot point: Sleep Number's bid deadline closed at 4:00 p.m. ET today, making this the most consequential live moment in the advisory. The Sleep Number § 363 process is now at its hinge — the auction, if triggered, runs Monday July 13 at 10:00 a.m.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-class-actions-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 8, 2026",
+      "summary": "(1) Bartz v. Anthropic, No. 3:24-cv-05417 (N.D. Cal.) — final approval remains withheld by Judge Araceli Martínez-Olguín as of late June, with the late opt-out dispute now fully briefed and under submission; the $1.5B fund clock is stopped pending her written order.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-fraud-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 8, 2026",
+      "summary": "Today's delta: The SEC announced a new Retail Fraud Working Group on July 7, 2026 — a structural reorganization of enforcement capacity with direct implications for the next wave of receiver appointments and Ponzi-adjacent enforcement actions. In the Power Block Coin / SmartFi case (Bankr. D.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-tariff-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 8, 2026",
+      "summary": "The dominant development this week is structural, not incremental: the Section 122 surcharge — 10% ad valorem on virtually all imports, imposed under Proclamation 11012 and effective since February 24, 2026 — is scheduled to expire at 12:01 a.m. EDT on July 24, 2026. That is sixteen days away.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-crypto-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 8, 2026",
+      "summary": "The confirmation hearing for BlockFills (Bankr. D. Del. No. 26-10371) is five days away — July 13 is the date that determines whether $145 million in institutional customer claims get resolved through a going-concern sale or a longer wind-down.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-08-advisory",
+      "date": "2026-07-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 8, 2026",
+      "summary": "The controlling development this week remains the same as last week's close: Judge Araceli Martínez-Olguín has not yet issued a final approval order in Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal.), and the settlement now sits in a brief but consequential interregnum.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-07-bankruptcy-advisory",
+      "date": "2026-07-07",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — July 7, 2026",
+      "summary": "Sleep Number (26-11399, Bankr. S.D.N.Y., Judge Kyu Young Paek) — Bid Deadline Tomorrow; Auction Sunday; Sale Hearing July 15. The most time-sensitive matter in the portfolio is In re Sleep Number Corporation, et al., No.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-07-class-actions-advisory",
+      "date": "2026-07-07",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — July 7, 2026",
+      "summary": "Today's delta in two sentences: In Bartz v. Anthropic, final approval of the $1.5 billion settlement remains pending before Hon. Araceli Martínez-Olguín (N.D. Cal., Case No.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-07-fraud-advisory",
+      "date": "2026-07-07",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — July 7, 2026",
+      "summary": "Today's principal delta: Power Block Coin, LLC (Bankr. D. Utah, No. 24-23041, Judge Cathleen D. Parker) logged three new docket entries on July 6, 2026 — the most recent activity since the case's last material filings in May.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-07-tariff-advisory",
+      "date": "2026-07-07",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — July 7, 2026",
+      "summary": "The single most time-sensitive development in the tariff-refund landscape is the imminent hard expiration of the Section 122 surcharge. The 10% ad valorem surcharge imposed under Section 122 of the Trade Act of 1974 (19 U.S.C. § 2132) is scheduled to expire on July 24, 2026 — 17 days from today.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-07-crypto-advisory",
+      "date": "2026-07-07",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — July 7, 2026",
+      "summary": "Today's Delta: The BlockFills / Reliz Technology Group matter (Case No. 26-10371, Bankr. D. Del., Judge Thomas M. Horan) has moved past its critical § 363 sale milestone and is now in the final runway toward plan confirmation.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-07-advisory",
+      "date": "2026-07-07",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — July 7, 2026",
+      "summary": "The controlling delta today is settlement administration, not new litigation. In Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-07-06-bankruptcy-advisory",
       "date": "2026-07-06",
       "type": "briefing",
       "author": "Turnpage Intelligence",
-      "title": "LLM / Copyright Advisory — July 6, 2026",
-      "summary": "Bartz et al. v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal., Hon. Araceli Martínez-Olguín) remains the dominant matter on this docket. The fairness hearing concluded May 14, 2026, at the San Francisco Federal Courthouse, Courtroom 12, 19th Floor, 450 Golden Gate Ave.",
-      "tags": [
-        "LLM",
-        "Copyright",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-05-bankruptcy-advisory",
-      "date": "2026-07-05",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Bankruptcy Creditor Rights Advisory — July 5, 2026",
-      "summary": "The week opening July 7 is the most deadline-dense stretch of this monitoring cycle. Two key-focus cases — BlockFills (Bankr. D. Del. 26-10371) and Sleep Number (Bankr. S.D.N.Y. 26-11399) — are simultaneously approaching confirmation and sale hearings, both calendared for July 13.",
+      "title": "Bankruptcy Creditor Rights Advisory — July 6, 2026",
+      "summary": "This Week's Critical Window: Sleep Number § 363 Auction Runs July 8–15 — Act Now or Lose Standing",
       "tags": [
         "Bankruptcy",
         "Creditor Rights",
@@ -29,12 +225,12 @@
       "active": false
     },
     {
-      "slug": "2026-07-05-class-actions-advisory",
-      "date": "2026-07-05",
+      "slug": "2026-07-06-class-actions-advisory",
+      "date": "2026-07-06",
       "type": "briefing",
       "author": "Turnpage Intelligence",
-      "title": "$1B+ Class Actions Advisory — July 5, 2026",
-      "summary": "Today's delta is narrow but material. The Lemonade data breach settlement — $10.5 million, In re Lemonade Inc. Data Disclosure Litigation, S.D.N.Y. — entered active claims-filing phase this week, with a September 8, 2026 deadline and a September 10 fairness hearing.",
+      "title": "$1B+ Class Actions Advisory — July 6, 2026",
+      "summary": "Today's deltas: The Visa/Mastercard interchange MDL crossed a material distribution milestone on June 15, 2026 — the court approved a second initial distribution, with payment waves targeting September 2026. Bartz v. Anthropic (No. 3:24-cv-05417, N.D.",
       "tags": [
         "Class Actions",
         "Settlements",
@@ -43,12 +239,12 @@
       "active": false
     },
     {
-      "slug": "2026-07-05-fraud-advisory",
-      "date": "2026-07-05",
+      "slug": "2026-07-06-fraud-advisory",
+      "date": "2026-07-06",
       "type": "briefing",
       "author": "Turnpage Intelligence",
-      "title": "Fraud Recovery Advisory — July 5, 2026",
-      "summary": "Today's briefing carries three meaningful deltas since Friday: (1) the Stanford Financial receivership has now paid out over $47.5 million under the Final Distribution Plan as of the April 3 first-wave disbursement, with the cumulative payment count crossing 5,600 claimant groups by early May and th…",
+      "title": "Fraud Recovery Advisory — July 6, 2026",
+      "summary": "The primary deltas since the last advisory are: the OneCoin DOJ remission process has closed its June 30, 2026 claims window — a hard deadline that cut off victims who had not yet filed; the Stanford Financial receivership continues distributing funds under its Final Distribution Plan, with payment…",
       "tags": [
         "Fraud",
         "Recovery",
@@ -57,12 +253,12 @@
       "active": false
     },
     {
-      "slug": "2026-07-05-tariff-advisory",
-      "date": "2026-07-05",
+      "slug": "2026-07-06-tariff-advisory",
+      "date": "2026-07-06",
       "type": "briefing",
       "author": "Turnpage Intelligence",
-      "title": "Tariffs / Trade Advisory — July 5, 2026",
-      "summary": "The nineteen-day countdown begins today. The Section 122 surcharge imposed by Proclamation 11012 — the 10% flat duty on virtually all U.S. imports effective February 24, 2026 under 19 U.S.C. § 2132 — expires by statute on July 24, 2026, nineteen days from this briefing.",
+      "title": "Tariffs / Trade Advisory — July 6, 2026",
+      "summary": "Today's controlling delta: As of today, the Section 122 surcharge is eighteen days from statutory extinction. The Section 122 duties under Presidential Proclamation 11012 — a 10% ad valorem surcharge on virtually all imports effective February 24, 2026 — are scheduled to expire on July 24, 2026.",
       "tags": [
         "Tariffs",
         "IEEPA",
@@ -71,211 +267,15 @@
       "active": false
     },
     {
-      "slug": "2026-07-05-crypto-advisory",
-      "date": "2026-07-05",
+      "slug": "2026-07-06-crypto-advisory",
+      "date": "2026-07-06",
       "type": "briefing",
       "author": "Turnpage Intelligence",
-      "title": "Crypto Insolvency Advisory — July 5, 2026",
-      "summary": "This week's decisive event: The BlockFills/Reliz plan confirmation hearing — the critical test of whether customer crypto deposits are estate property or held in trust — is now 8 days out, set for July 13, 2026 at 10:00 a.m. ET before Judge Thomas M. Horan in Courtroom 5 at the U.S.",
+      "title": "Crypto Insolvency Advisory — July 6, 2026",
+      "summary": "BlockFills / Reliz Technology Group Holdings Inc. — Confirmation Hearing Seven Days Out; Sale Approved; Customer-Property Question Still Controls Recovery Math",
       "tags": [
         "Crypto",
         "Insolvency",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-05-advisory",
-      "date": "2026-07-05",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "LLM / Copyright Advisory — July 5, 2026",
-      "summary": "Today's primary delta: the Bartz settlement stands taken under submission — final approval order not yet entered as of the July 1 CourtListener sync, distribution calculations now underway, and the Third Circuit's Thomson Reuters v.",
-      "tags": [
-        "LLM",
-        "Copyright",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-04-bankruptcy-advisory",
-      "date": "2026-07-04",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Bankruptcy Creditor Rights Advisory — July 4, 2026",
-      "summary": "The Confirmation Hearing in In re Reliz Technology Group Holdings Inc., et al. (BlockFills), Case No. 26-10371 (TMH), Bankr. D. Del., is set for July 13, 2026, at 10:00 a.m. ET before the Honorable Thomas M. Horan.",
-      "tags": [
-        "Bankruptcy",
-        "Creditor Rights",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-04-class-actions-advisory",
-      "date": "2026-07-04",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "$1B+ Class Actions Advisory — July 4, 2026",
-      "summary": "The principal live delta this cycle sits in Bartz v. Anthropic: the docket shows a filing dated July 1, 2026 — the most recent entry — but its description is not yet populated in CourtListener, leaving the content unverified.",
-      "tags": [
-        "Class Actions",
-        "Settlements",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-04-fraud-advisory",
-      "date": "2026-07-04",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Fraud Recovery Advisory — July 4, 2026",
-      "summary": "Today's operative delta: The OneCoin DOJ remission window closed on June 30, 2026 — the filing deadline has now passed, locking the claims universe against the $40 million forfeiture fund.",
-      "tags": [
-        "Fraud",
-        "Recovery",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-04-tariff-advisory",
-      "date": "2026-07-04",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Tariffs / Trade Advisory — July 4, 2026",
-      "summary": "Today's single most consequential date is not in a docket — it is statutory. The Section 122 surcharge is set to expire on July 24, 2026. That is twenty days out.",
-      "tags": [
-        "Tariffs",
-        "IEEPA",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-04-crypto-advisory",
-      "date": "2026-07-04",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Crypto Insolvency Advisory — July 4, 2026",
-      "summary": "The decisive delta this week: BlockFills enters the 9-day countdown to confirmation. With the voting and objection deadlines having closed on July 1, 2026, Judge Thomas M. Horan's courtroom in Wilmington is the next critical venue. The confirmation hearing is set for July 13, 2026, at 10:00 a.m.",
-      "tags": [
-        "Crypto",
-        "Insolvency",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-04-advisory",
-      "date": "2026-07-04",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "LLM / Copyright Advisory — July 4, 2026",
-      "summary": "The controlling development entering this weekend is that Judge Araceli Martínez-Olguín has taken the $1.5 billion settlement in Bartz, et al. v.",
-      "tags": [
-        "LLM",
-        "Copyright",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-03-bankruptcy-advisory",
-      "date": "2026-07-03",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Bankruptcy Creditor Rights Advisory — July 3, 2026",
-      "summary": "The lede today is Sleep Number. Yesterday's bidding-procedures hearing in In re Sleep Number Corporation, et al., Case No. 26-11399 (KYP) (Bankr. S.D.N.Y.), was the most consequential near-term event for this beat — it sets the competitive-sale rails for a $1.3 billion liability stack.",
-      "tags": [
-        "Bankruptcy",
-        "Creditor Rights",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-03-class-actions-advisory",
-      "date": "2026-07-03",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "$1B+ Class Actions Advisory — July 3, 2026",
-      "summary": "Today's deltas: The Bartz v. Anthropic docket logged two new filings on July 1, 2026 — the first docket activity in weeks — against a backdrop where the final approval order has been pending since the May 14 fairness hearing.",
-      "tags": [
-        "Class Actions",
-        "Settlements",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-03-fraud-advisory",
-      "date": "2026-07-03",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Fraud Recovery Advisory — July 3, 2026",
-      "summary": "No fresh whitelisted headlines surfaced in the 72-hour news scan. The substantive carry-forward below reflects the current posture of all tracked dockets as of verified primary-source data through this run, with three active developments drawing particular attention this week: (1) the OneCoin / DOJ…",
-      "tags": [
-        "Fraud",
-        "Recovery",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-03-tariff-advisory",
-      "date": "2026-07-03",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Tariffs / Trade Advisory — July 3, 2026",
-      "summary": "Two developments anchor today's briefing. First, a second consumer passthrough class action against Lululemon dropped this week, filed June 30 in the Western District of Washington — this one by Hagens Berman and co-counsel The Miller Law Firm — compounding the earlier action already pending before…",
-      "tags": [
-        "Tariffs",
-        "IEEPA",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-03-crypto-advisory",
-      "date": "2026-07-03",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Crypto Insolvency Advisory — July 3, 2026",
-      "summary": "The two dominant storylines this week are both in their final miles: In Reliz Technology Group Holdings Inc., et al. (BlockFills), Case No. 26-10371 (TMH) (Bankr. D. Del., Judge Thomas M. Horan), the voting deadline and confirmation-objection deadline both expired at 4:00 p.m.",
-      "tags": [
-        "Crypto",
-        "Insolvency",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-03-advisory",
-      "date": "2026-07-03",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "LLM / Copyright Advisory — July 3, 2026",
-      "summary": "The primary delta this week is that Bartz v. Anthropic has crossed into a post-hearing limbo that is now stretching past six weeks. The final fairness hearing was held May 14, 2026, before Judge Martínez-Olguín, who heard class counsel and objectors and took the matter under submission.",
-      "tags": [
-        "LLM",
-        "Copyright",
-        "Advisory"
-      ],
-      "active": false
-    },
-    {
-      "slug": "2026-07-02-bankruptcy-advisory",
-      "date": "2026-07-02",
-      "type": "briefing",
-      "author": "Turnpage Intelligence",
-      "title": "Bankruptcy Creditor Rights Advisory — July 2, 2026",
-      "summary": "Today's inflection points: Sleep Number's bidding-procedures hearing is on the docket this morning; BlockFills heads into its July 13 confirmation hearing with the sale approved and votes closed.",
-      "tags": [
-        "Bankruptcy",
-        "Creditor Rights",
         "Advisory"
       ],
       "active": false
