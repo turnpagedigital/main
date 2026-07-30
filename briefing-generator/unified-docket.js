@@ -94,6 +94,7 @@
   var activeCases = {};
   var entryFilter = "all";
   var newOnly = false;
+  var showArticles = true;
   var sortDir = "desc";
   var searchText = "";
   var dateFrom = "";
@@ -109,6 +110,7 @@
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.entryFilter)   entryFilter   = s.entryFilter;
       if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
+      if (typeof s.showArticles === "boolean") showArticles = s.showArticles;
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
       _savedState = s;
     } catch (e) {}
@@ -119,6 +121,7 @@
       localStorage.setItem(FILTER_KEY, JSON.stringify({
         entryFilter:    entryFilter,
         newOnly:        newOnly,
+        showArticles:   showArticles,
         sortDir:        sortDir,
         activeCases:    activeCases,
       }));
@@ -139,9 +142,37 @@
   }
 
   // ── Build flat entry list from loaded cases ────────────────────────────────
+  function fmtDisplayDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
+    if (!m) return iso || "";
+    var names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return names[Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1];
+  }
+
   function buildAllEntries() {
     ALL = [];
     CASES.forEach(function (c) {
+      (c.articles || []).forEach(function (a) {
+        if (!a.url || !a.headline) return;
+        ALL.push({
+          slug:          c.slug,
+          name:          c.display_name,
+          short:         c.short_name,
+          default_color: c.default_color,
+          docket_url:    "",
+          category:      c.category || "other",
+          entry_number:  null,
+          date_filed:    a.date || "",
+          date_display:  fmtDisplayDate(a.date),
+          description:   a.headline + (a.summary ? " \u2014 " + a.summary : ""),
+          is_new:        isNewEntry(a.date),
+          doc_url:       a.url,
+          landmark:      "",
+          type:          "article",
+          party:         a.source || "",
+          is_article:    true,
+        });
+      });
       (c.entries || []).forEach(function (e) {
         ALL.push({
           slug:          c.slug,
@@ -170,6 +201,7 @@
     var list = ALL.filter(function (e) {
       if (!activeCases[e.slug]) return false;
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
+      if (e.is_article && (!showArticles || entryFilter !== "all")) return false;
       if (newOnly && !e.is_new) return false;
       if (entryFilter === "substantive" && !SUBSTANTIVE[e.type]) return false;
       if (entryFilter === "orders" && e.type !== "order") return false;
@@ -501,6 +533,9 @@
       var pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' +
         esc(e.short) + "</span>";
       var badges = "";
+      if (e.is_article) {
+        badges += '<span class="ud-news-tag">News</span> ';
+      }
       if (e.landmark) {
         badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span> ";
       }
@@ -511,6 +546,17 @@
       var partyHtml = e.party
         ? esc(e.party)
         : '<span class="ud-party-empty">—</span>';
+      if (e.is_article) {
+        return (
+          "<tr" + (e.is_new ? ' class="ud-row-new"' : "") + ">" +
+            '<td class="ud-date">' + esc(e.date_display) + "</td>" +
+            '<td class="ud-case">' + pill + "</td>" +
+            '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
+            '<td class="ud-entry">' + descHtml + "</td>" +
+            '<td class="ud-doc"><a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read \u2197</a></td>' +
+          "</tr>"
+        );
+      }
       var entryNum = e.entry_number != null ? String(e.entry_number) : null;
       var dktLabel = "Dkt. " + entryNum;
       var linkHtml;
@@ -564,6 +610,7 @@
             default_color: m.default_color || "#888888",
             category:      m.category || "other",
             entries:       (caseData.docket && caseData.docket.entries) || [],
+            articles:      caseData.coverage || [],
           };
         }).catch(function () {
           return {
@@ -574,6 +621,7 @@
             default_color: m.default_color || "#888888",
             category:      m.category || "other",
             entries:       [],
+            articles:      [],
           };
         });
       }));
@@ -737,6 +785,17 @@
       typeSelect.value = entryFilter;
       typeSelect.addEventListener("change", function () {
         entryFilter = typeSelect.value;
+        saveFilterState();
+        render();
+      });
+    }
+
+    // Articles toggle
+    var artCb = document.getElementById("ud-articles");
+    if (artCb) {
+      artCb.checked = showArticles;
+      artCb.addEventListener("change", function () {
+        showArticles = artCb.checked;
         saveFilterState();
         render();
       });

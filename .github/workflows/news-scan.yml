@@ -1,0 +1,109 @@
+name: Daily News & Events Scan
+
+# Finds reputable-press articles and upcoming webinars/events for every
+# tracked case (scripts/scan_news.py) and merges them into the case data:
+# articles surface on the unified docket (toggleable) and case pages,
+# events land on the unified calendar. Runs before the daily briefing so
+# the briefing can lean on fresh coverage too.
+
+on:
+  schedule:
+    - cron: '40 12 * * *'   # daily 12:40 UTC (before the 14:00 briefing run)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: news-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: briefing-generator/scripts/requirements.txt
+
+      - name: Install dependencies
+        working-directory: briefing-generator
+        run: |
+          pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Scan news + regenerate case pages
+        working-directory: briefing-generator
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/scan_news.py
+          python scripts/inject_cases.py
+
+      - name: Commit to main if anything changed
+        run: |
+          if git diff --exit-code -- briefing-generator > /dev/null; then
+            echo "No news changes today"
+            echo "CHANGED=0" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          echo "CHANGED=1" >> "$GITHUB_ENV"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "News Scan Bot"
+          git add briefing-generator
+          git commit -m "News scan $(date -u +'%Y-%m-%d')"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then
+              echo "pushed to main on attempt ${attempt}"; break
+            fi
+            echo "main push attempt ${attempt} failed; retrying in 5s"; sleep 5
+          done
+
+      - name: Checkout dev branch
+        if: env.CHANGED == '1'
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: dev-site
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy refreshed artifacts into dev
+        if: env.CHANGED == '1'
+        run: |
+          mkdir -p dev-site/briefing-generator/cases/data
+          cp -f briefing-generator/cases/data/*.json dev-site/briefing-generator/cases/data/ 2>/dev/null || true
+          cp -f briefing-generator/cases/*.html dev-site/briefing-generator/cases/ 2>/dev/null || true
+          cp -f briefing-generator/unified-docket.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/unified-calendar.html dev-site/briefing-generator/ 2>/dev/null || true
+          for slug in rewind-tariffs llm-class-action crypto-insolvency fraud-recovery billion-dollar-class-actions bankruptcy-creditor-rights; do
+            cp -f "briefing-generator/$slug/dashboard.html" "dev-site/briefing-generator/$slug/dashboard.html" 2>/dev/null || true
+          done
+
+      - name: Commit to dev
+        if: env.CHANGED == '1'
+        working-directory: dev-site
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "News Scan Bot"
+          git add briefing-generator
+          if git diff --staged --quiet; then
+            echo "Nothing new for dev"
+          else
+            git commit -m "News scan $(date -u +'%Y-%m-%d'): refresh dev"
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin dev && git push origin HEAD:dev; then
+                echo "pushed to dev on attempt ${attempt}"; break
+              fi
+              echo "dev push attempt ${attempt} failed; retrying in 5s"; sleep 5
+            done
+          fi

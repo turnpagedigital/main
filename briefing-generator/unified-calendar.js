@@ -159,6 +159,25 @@
     EVENTS = [];
     var seen = {};
     CASES.forEach(function (c) {
+      // Scanned events (webinars, CLE, panels, deadline reminders) — already
+      // deduped in the data by scan_news.py, so they go straight in.
+      (c.events || []).forEach(function (evt) {
+        if (!evt.date || !evt.title) return;
+        EVENTS.push({
+          slug: c.slug,
+          short: c.short_name,
+          name: c.display_name,
+          default_color: c.default_color,
+          docket_url: "",
+          date: evt.date,
+          time: (evt.time || "").toUpperCase(),
+          kind: evt.kind || "Event",
+          entry_number: null,
+          doc_url: "",
+          event_url: evt.url || "",
+          snippet: evt.title + (evt.source ? " \u2014 " + evt.source : ""),
+        });
+      });
       (c.entries || []).forEach(function (e) {
         extractEvents(e, c).forEach(function (ev) {
           // Same case + date + kind → keep the mention from the latest filing
@@ -490,6 +509,9 @@
   }
 
   function entryLink(ev) {
+    if (ev.event_url) {
+      return '<a class="ud-link" href="' + esc(ev.event_url) + '" target="_blank" rel="noopener">Details \u2197</a>';
+    }
     var entryNum = ev.entry_number != null ? String(ev.entry_number) : null;
     var dktLabel = "Dkt. " + entryNum;
     if (entryNum && ev.docket_url && ev.docket_url.indexOf("courtlistener.com") !== -1) {
@@ -577,12 +599,13 @@
             docket_url:    (caseData.docket && caseData.docket.docket_url) || m.docket_url || "",
             default_color: m.default_color || "#888888",
             entries:       (caseData.docket && caseData.docket.entries) || [],
+            events:        caseData.events || [],
           };
         }).catch(function () {
           return {
             slug: m.slug, display_name: m.display_name, short_name: m.short_name,
             docket_url: m.docket_url || "", default_color: m.default_color || "#888888",
-            entries: [],
+            entries: [], events: [],
           };
         });
       }));
