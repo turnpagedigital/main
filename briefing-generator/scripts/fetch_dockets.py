@@ -96,10 +96,10 @@ def _normalize_entry(e, now):
     }
 
 
-def fetch_entry_pages(docket_id, existing_keys, backfill, max_pages=60):
+def fetch_entry_pages(docket_id, existing_keys, backfill, max_pages=40):
     """Walk /docket-entries/ newest-first. Incremental mode stops at the first
     page that overlaps entries we already have; backfill mode walks the whole
-    docket (capped at max_pages ~= 1200 entries as a runaway guard)."""
+    docket (capped at max_pages ~= 800 entries as a runaway guard)."""
     url = (f"{API}/docket-entries/?docket={docket_id}&order_by=-date_filed"
            f"&fields=entry_number,date_filed,description,recap_documents")
     raw, pages = [], 0
