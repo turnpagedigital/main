@@ -96,10 +96,10 @@ def _normalize_entry(e, now):
     }
 
 
-def fetch_entry_pages(docket_id, existing_keys, backfill, max_pages=40):
+def fetch_entry_pages(docket_id, existing_keys, backfill, max_pages=25):
     """Walk /docket-entries/ newest-first. Incremental mode stops at the first
     page that overlaps entries we already have; backfill mode walks the whole
-    docket (capped at max_pages ~= 800 entries as a runaway guard)."""
+    docket (capped at max_pages ~= 500 entries as a runaway guard)."""
     url = (f"{API}/docket-entries/?docket={docket_id}&order_by=-date_filed"
            f"&fields=entry_number,date_filed,description,recap_documents")
     raw, pages = [], 0
@@ -228,10 +228,19 @@ def main():
     if not TOKEN:
         print("COURTLISTENER_TOKEN not set — running in seed-only mode "
               "(no live docket pulls; seeded JSON is left as-is).")
+    budget_min = float(os.environ.get("DOCKET_TIME_BUDGET_MIN", "0") or 0)
+    start = time.monotonic()
     print(f"=== Refreshing {len(cases)} tracked case(s) ===")
     for i, c in enumerate(cases):
         if i and TOKEN:
             time.sleep(2)  # CourtListener burst limit: 12 back-to-back calls trips a 429
+        prior = ((c["data"] or {}).get("docket") or {})
+        needs_backfill = not (prior.get("entries") and prior.get("backfilled"))
+        over_budget = budget_min and (time.monotonic() - start) > budget_min * 60
+        if needs_backfill and over_budget:
+            # Commit what we have; this case's full history continues next run.
+            print(f"  · {c['slug']}: time budget spent — backfill deferred to next run")
+            continue
         refresh_case(c)
     print("=== Docket refresh done. ===")
 
