@@ -96,7 +96,8 @@
   var entryFilter = "all";
   var newOnly = false;
   var showArticles = true;
-  var markedFilter = "all";
+  var bmOnly = false;
+  var noteOnly = false;
   var NOTES = {};
   var sortDir = "desc";
   var searchText = "";
@@ -114,7 +115,11 @@
       if (s.entryFilter)   entryFilter   = s.entryFilter;
       if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
       if (typeof s.showArticles === "boolean") showArticles = s.showArticles;
-      if (s.markedFilter) markedFilter = s.markedFilter;
+      if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
+      if (typeof s.noteOnly === "boolean") noteOnly = s.noteOnly;
+      // migrate the retired select-based filter
+      if (s.markedFilter === "bookmarked" || s.markedFilter === "either") bmOnly = true;
+      if (s.markedFilter === "noted") noteOnly = true;
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
       _savedState = s;
     } catch (e) {}
@@ -126,7 +131,8 @@
         entryFilter:    entryFilter,
         newOnly:        newOnly,
         showArticles:   showArticles,
-        markedFilter:   markedFilter,
+        bmOnly:         bmOnly,
+        noteOnly:       noteOnly,
         sortDir:        sortDir,
         activeCases:    activeCases,
       }));
@@ -199,6 +205,7 @@
       });
       (c.entries || []).forEach(function (e) {
         ALL.push({
+          claims_url:    c.claims_url || "",
           slug:          c.slug,
           name:          c.display_name,
           short:         c.short_name,
@@ -226,13 +233,10 @@
       if (!activeCases[e.slug]) return false;
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
       if (e.is_article && !showArticles) return false;
-      if (markedFilter !== "all") {
+      if (bmOnly || noteOnly) {
         var mrec = NOTES[entryNoteKey(e)];
-        var hasB = !!(mrec && mrec.bookmarked);
-        var hasN = !!(mrec && (mrec.note || "").trim());
-        if (markedFilter === "bookmarked" && !hasB) return false;
-        if (markedFilter === "noted" && !hasN) return false;
-        if (markedFilter === "either" && !hasB && !hasN) return false;
+        if (bmOnly && !(mrec && mrec.bookmarked)) return false;
+        if (noteOnly && !(mrec && (mrec.note || "").trim())) return false;
       }
       if (newOnly && !e.is_new) return false;
       // Entry-type filters only apply to docket entries — the Articles
@@ -553,6 +557,12 @@
     render();
   }
 
+  function agentLink(e) {
+    if (!e.claims_url) return "";
+    return ' <a class="ud-link ud-link-agent" href="' + esc(e.claims_url) +
+      '" target="_blank" rel="noopener" title="Claims agent docket">Agent \u2197</a>';
+  }
+
   function markCells(e) {
     var nk = entryNoteKey(e);
     var rec = NOTES[nk];
@@ -636,7 +646,7 @@
           '<td class="ud-case">' + pill + "</td>" +
           '<td class="ud-party">' + partyHtml + "</td>" +
           '<td class="ud-entry">' + descHtml + "</td>" +
-          '<td class="ud-doc">' + linkHtml + "</td>" +
+          '<td class="ud-doc">' + linkHtml + agentLink(e) + "</td>" +
           markCells(e) +
         "</tr>"
       );
@@ -664,6 +674,7 @@
             category:      m.category || "other",
             entries:       (caseData.docket && caseData.docket.entries) || [],
             articles:      caseData.coverage || [],
+            claims_url:    (caseData.claims_administrator && caseData.claims_administrator.url) || "",
           };
         }).catch(function () {
           return {
@@ -675,6 +686,7 @@
             category:      m.category || "other",
             entries:       [],
             articles:      [],
+            claims_url:    "",
           };
         });
       }));
@@ -1032,16 +1044,74 @@
       });
     }
 
-    // Entry type filter
-    var typeSelect = document.getElementById("ud-entry-type");
-    if (typeSelect) {
-      typeSelect.value = entryFilter;
-      typeSelect.addEventListener("change", function () {
-        entryFilter = typeSelect.value;
+    // Column-header filters
+    var ENTRY_LABELS = { all: "Entry", substantive: "Entry \u00b7 Substantive",
+      orders: "Entry \u00b7 Orders", transfers: "Entry \u00b7 Transfers" };
+    var thEntry = document.getElementById("ud-th-entry");
+    var thMenu = document.getElementById("ud-th-menu");
+
+    function syncHeaderStates() {
+      if (thEntry) {
+        var lbl = thEntry.querySelector(".ud-th-label");
+        if (lbl) lbl.textContent = ENTRY_LABELS[entryFilter] || "Entry";
+        thEntry.classList.toggle("ud-th-on", entryFilter !== "all");
+      }
+      var thBm = document.getElementById("ud-th-bm");
+      var thNote = document.getElementById("ud-th-note");
+      if (thBm) thBm.classList.toggle("ud-th-on", bmOnly);
+      if (thNote) thNote.classList.toggle("ud-th-on", noteOnly);
+      if (thMenu) {
+        thMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+          b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === entryFilter);
+        });
+      }
+    }
+
+    if (thEntry && thMenu) {
+      thEntry.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = thMenu.style.display !== "none";
+        if (open) { thMenu.style.display = "none"; return; }
+        var rect = thEntry.getBoundingClientRect();
+        thMenu.style.display = "block";
+        thMenu.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        thMenu.style.left = (rect.left + window.scrollX) + "px";
+        syncHeaderStates();
+      });
+      thMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.addEventListener("click", function () {
+          entryFilter = b.getAttribute("data-val");
+          thMenu.style.display = "none";
+          saveFilterState();
+          syncHeaderStates();
+          render();
+        });
+      });
+      document.addEventListener("click", function (ev) {
+        if (thMenu.style.display !== "none" && !thMenu.contains(ev.target)) {
+          thMenu.style.display = "none";
+        }
+      });
+    }
+    var thBmEl = document.getElementById("ud-th-bm");
+    if (thBmEl) {
+      thBmEl.addEventListener("click", function () {
+        bmOnly = !bmOnly;
         saveFilterState();
+        syncHeaderStates();
         render();
       });
     }
+    var thNoteEl = document.getElementById("ud-th-note");
+    if (thNoteEl) {
+      thNoteEl.addEventListener("click", function () {
+        noteOnly = !noteOnly;
+        saveFilterState();
+        syncHeaderStates();
+        render();
+      });
+    }
+    syncHeaderStates();
 
     // Bookmark / note clicks (delegated — rows re-render constantly)
     var tbodyEl = document.getElementById("ud-tbody");
@@ -1070,17 +1140,6 @@
     document.addEventListener("keydown", function (ev) {
       if (ev.key === "Escape" && activeNoteKey) closeNoteModal();
     });
-
-    // Marked filter
-    var markedSel = document.getElementById("ud-marked");
-    if (markedSel) {
-      markedSel.value = markedFilter;
-      markedSel.addEventListener("change", function () {
-        markedFilter = markedSel.value;
-        saveFilterState();
-        render();
-      });
-    }
 
     // Articles toggle
     var artCb = document.getElementById("ud-articles");

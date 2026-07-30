@@ -134,6 +134,19 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-note-text:focus{border-color:var(--neon);}
   .ud-note-actions{display:flex;align-items:center;gap:8px;}
   .ud-note-status{font-size:12px;color:var(--ink-40);}
+  .ud-th-filter{cursor:pointer;user-select:none;}
+  .ud-th-filter:hover,.ud-th-filter.ud-th-on{color:var(--ink);}
+  .ud-th-filter.ud-th-on .ud-th-label{border-bottom:2px solid var(--neon);padding-bottom:1px;}
+  .ud-th-caret{font-size:9px;}
+  .ud-th-toggle{cursor:pointer;user-select:none;}
+  .ud-th-toggle:hover{color:var(--ink);}
+  .ud-th-toggle.ud-th-on{color:#EAB308;}
+  .ud-th-menu{position:absolute;z-index:950;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:180px;padding:6px;}
+  .ud-th-menu-item{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:13px;color:var(--ink);cursor:pointer;padding:8px 10px;}
+  .ud-th-menu-item:hover{background:var(--paper-2);}
+  .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
+  .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
+  .ud-link-agent{margin-left:7px;font-size:12px;border-bottom-color:var(--line-strong);}
   [data-theme="dark"] .ud-row-article td{background:rgba(229,231,235,0.05);}
   .ud-date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
   .ud-case{white-space:nowrap;overflow:hidden;}
@@ -664,6 +677,14 @@ def render_unified_docket(cases):
   </div>
 </div>
 
+<!-- Entry-type header menu (positioned under the Entry column header) -->
+<div id="ud-th-menu" class="ud-th-menu" style="display:none;">
+  <button type="button" class="ud-th-menu-item" data-val="all">All entries</button>
+  <button type="button" class="ud-th-menu-item" data-val="substantive">Substantive only</button>
+  <button type="button" class="ud-th-menu-item" data-val="orders">Orders only</button>
+  <button type="button" class="ud-th-menu-item" data-val="transfers">Transfers only</button>
+</div>
+
 <div class="ud-page">
 
   <div class="ud-controls">
@@ -686,18 +707,6 @@ def render_unified_docket(cases):
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
-        <select id="ud-entry-type" class="ud-type-select">
-          <option value="all">All entries</option>
-          <option value="substantive">Substantive only</option>
-          <option value="orders">Orders only</option>
-          <option value="transfers">Transfers only</option>
-        </select>
-        <select id="ud-marked" class="ud-type-select">
-          <option value="all">All rows</option>
-          <option value="bookmarked">★ Bookmarked</option>
-          <option value="noted">📝 With notes</option>
-          <option value="either">★ or 📝</option>
-        </select>
         <label class="ud-new-label">
           <input type="checkbox" id="ud-articles" checked> Articles
         </label>
@@ -718,10 +727,10 @@ def render_unified_docket(cases):
       <th style="width:116px">Date</th>
       <th style="width:130px">Case</th>
       <th style="width:150px">Party</th>
-      <th>Entry</th>
-      <th style="width:100px;text-align:right">Dkt.</th>
-      <th style="width:40px;text-align:center" title="Bookmarked">★</th>
-      <th style="width:44px;text-align:center" title="Notes">📝</th>
+      <th id="ud-th-entry" class="ud-th-filter" title="Filter by entry type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
+      <th style="width:132px;text-align:right">Dkt.</th>
+      <th id="ud-th-bm" class="ud-th-toggle" style="width:40px;text-align:center" title="Show bookmarked only">★</th>
+      <th id="ud-th-note" class="ud-th-toggle" style="width:44px;text-align:center" title="Show entries with notes only">📝</th>
     </tr></thead>
     <tbody id="ud-tbody">
       <tr><td colspan="7" class="ud-empty">Loading…</td></tr>
