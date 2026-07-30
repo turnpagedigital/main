@@ -46,5 +46,12 @@
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
     "default_color": "#F87171",
     "category": "bankruptcy"
+  },
+  {
+    "slug": "kahan",
+    "display_name": "Kahan",
+    "short_name": "Kahan",
+    "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc",
+    "default_color": "#D4FF00"
   }
 ]
