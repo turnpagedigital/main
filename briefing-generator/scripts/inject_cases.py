@@ -652,6 +652,7 @@ def render_unified_docket(cases):
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="briefings.html">📰 Briefings</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -840,6 +841,7 @@ def render_unified_calendar(cases):
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="briefings.html">📰 Briefings</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -914,7 +916,7 @@ def render_unified_calendar(cases):
       <th>Event</th>
       <th style="width:100px;text-align:right">Source</th>
       <th style="width:52px;text-align:center" title="Add to Google Calendar">📆</th>
-      <th style="width:66px;text-align:center" title="Select to merge / dismiss">Curate</th>
+      <th style="width:66px;text-align:center" title="Select all / deselect all visible"><input type="checkbox" id="uc-sel-all" class="uc-sel" style="margin:0;"></th>
     </tr></thead>
     <tbody id="uc-tbody">
       <tr><td colspan="7" class="ud-empty">Loading…</td></tr>
@@ -970,6 +972,7 @@ def render_unified_notes(cases):
       <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="briefings.html">📰 Briefings</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -1076,6 +1079,92 @@ def render_unified_notes(cases):
     print("  \u2713 notes.html: shell written")
 
 
+def render_briefings(cases):
+    """Generate briefing-generator/briefings.html — daily briefing ledes per
+    theme, filterable by theme. Data: briefings.json (upserted by generate.py)."""
+    logo_src = "assets/turnpage-logo.jpeg"
+
+    page = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Briefings — Turnpage Daily Briefing</title>
+{THEME_SCRIPT}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+{PAGE_CSS}
+<style>
+{UD_CSS}
+</style>
+<!-- AUTH GATE START -->
+<script src="/auth/config.js"></script>
+<script type="module" src="/auth/auth.js"></script>
+<!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo" alt="Turnpage" src="{logo_src}"></a>
+      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="notes.html">🗒️ Notes</a>
+    </div>
+    <button id="theme-toggle">🖥️</button>
+  </div>
+</nav>
+
+<div class="page-title">
+  <div class="eyebrow">Intelligence · Daily Theme Briefings</div>
+  <h1>📰 Briefings</h1>
+  <div class="case-meta">
+    <span id="ud-meta">Loading…</span>
+  </div>
+</div>
+
+<div class="ud-page">
+
+  <div class="ud-controls">
+    <div class="ud-filter-row">
+      <div class="ud-case-dd" id="ud-case-dd">
+        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Themes <span class="ud-dd-caret">▾</span></button>
+        <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ud-toolbar">
+    <span id="ud-count"></span>
+  </div>
+
+  <table class="ud-table">
+    <thead><tr>
+      <th style="width:116px">Updated</th>
+      <th style="width:250px">Theme</th>
+      <th>Today's briefing</th>
+      <th style="width:120px;text-align:right">Open</th>
+    </tr></thead>
+    <tbody id="ub-tbody">
+      <tr><td colspan="4" class="ud-empty">Loading…</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<script src="briefings.js"></script>
+
+</body>
+</html>
+"""
+
+    out = REPO_ROOT / "briefings.html"
+    out.write_text(page, encoding="utf-8")
+    print("  \u2713 briefings.html: shell written")
+
+
 # ── main ─────────────────────────────────────────────────────────────────────
 def main():
     cases = load_cases()
@@ -1113,6 +1202,10 @@ def main():
     # 5) unified notes page
     print("=== Rendering unified notes page ===")
     render_unified_notes(cases)
+
+    # 6) briefings page
+    print("=== Rendering briefings page ===")
+    render_briefings(cases)
 
     print("=== Cases injection done. ===")
 

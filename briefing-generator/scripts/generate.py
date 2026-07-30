@@ -432,8 +432,25 @@ def generate_social_posts(create_with_retry, topic, advisory_md):
     if inject_posts_html(topic, li_text, x_text):
         print(f"  ✓ injected drafts into {topic['slug']}/posts.html")
 
+def update_briefings_json(slug, card_stat, card_body):
+    """Upsert the topic's lede into briefings.json (feeds /intel/briefings.html)."""
+    import datetime as _dt
+    path = REPO_ROOT / "briefings.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"items": []}
+    except Exception:
+        data = {"items": []}
+    items = [i for i in data.get("items", []) if i.get("slug") != slug]
+    items.append({"slug": slug, "stat": card_stat, "body": card_body,
+                  "updated": _dt.date.today().isoformat()})
+    data["items"] = items
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"  \u2713 briefings.json updated for {slug}")
+
+
 def update_card_in_landing(slug, card_stat, card_body):
     """Update the .card-stat and .card-body for a topic on the landing page."""
+    update_briefings_json(slug, card_stat, card_body)
     if not INDEX_HTML.exists():
         print(f"  ! index.html missing — skipping landing update for {slug}")
         return
