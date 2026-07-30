@@ -168,7 +168,7 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-desc-empty{color:var(--ink-40);}
   .ud-doc{white-space:nowrap;text-align:right;overflow:hidden;}
   .ud-landmark{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}
-  .ud-news-tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--neon);padding:1px 7px;margin-right:5px;vertical-align:middle;}
+  .ud-news-tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--ink);padding:1px 7px;margin-right:5px;vertical-align:middle;}
   .ud-new-pill{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#0A0A0A;background:var(--neon);padding:1px 7px;margin-left:6px;vertical-align:middle;}
   #ud-sync{margin-left:10px;font-size:12px;}
   .ud-sync-live{color:var(--ink-60);}
