@@ -2,21 +2,17 @@
   "case": {
     "slug": "rndc",
     "display_name": "RNDC",
-    "case_name": "Republic National Distributing Company, LLC",
+    "case_name": "Republic National Distributing Company LLC",
     "court": "Bankr. S.D.Tx.",
     "case_number": "26-90737",
     "judge": "Hon. Christopher M. Lopez",
     "docket_id": "73673083",
-    "status": "active",
-    "court_id": ""
+    "status": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-07-30T04:47:04.569884+00:00",
-    "as_of": "Jul 30, 2026",
     "new_in_72h": 20,
     "recent": [
       {
@@ -228,11 +224,14 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-07-29",
+    "fetched_at": "2026-07-30T04:47:04.569884+00:00",
+    "as_of": "Jul 30, 2026"
   },
   "claims_administrator": {
     "name": "Omniagentsolutions",
-    "url": "https://cases.omniagentsolutions.com/?clientId=3793",
+    "url": "https://cases.omniagentsolutions.com/documents/index?clientid=3793&tagid=1281",
     "key_dates_url": "https://cases.omniagentsolutions.com/calendar?clientId=3793"
   },
   "coverage": [
@@ -305,16 +304,6 @@
       "source": "Shanken News Daily",
       "date": "2026-07-27",
       "summary": "Shanken News Daily reported that RNDC filed for Chapter 11 in Texas with liabilities between $1 billion and $10 billion owed to over 100,000 creditors, following the sale of the majority of its markets to Reyes Beverage Group, Martignetti, Breakthru, Quality Brands, Columbia Distributing, and Manhattan Beverage."
-    }
-  ],
-  "events": [
-    {
-      "title": "RNDC Chapter 11 Second Day Hearing (Judge Christopher M. Lopez)",
-      "date": "2026-08-24",
-      "time": "01:00 PM CT",
-      "kind": "Deadline",
-      "url": "https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing",
-      "source": "Bankr. S.D. Tex. / Petition"
     }
   ]
 }
