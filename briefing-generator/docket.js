@@ -319,10 +319,16 @@
   }
 
   function renderCaseFilter() {
-    var btn = document.getElementById("ud-case-dd-btn");
+    var th = document.getElementById("ud-th-case");
     var panel = document.getElementById("ud-case-dd-panel");
-    if (!btn || !panel) return;
-    btn.innerHTML = esc(caseFilterLabel()) + ' <span class="ud-dd-caret">▾</span>';
+    if (!panel) return;
+    if (th) {
+      var lbl = th.querySelector(".ud-th-label");
+      var total = CASES.length;
+      var on = CASES.filter(function (c) { return !!activeCases[c.slug]; }).length;
+      if (lbl) lbl.textContent = total && on < total ? "Case \u00b7 " + on + "/" + total : "Case";
+      th.classList.toggle("ud-th-on", total > 0 && on < total);
+    }
     if (!CASES.length) {
       panel.innerHTML = '<div class="ud-dd-empty">No cases loaded.</div>';
       return;
@@ -598,9 +604,13 @@
     var rec = NOTES[nk];
     var bm = !!(rec && rec.bookmarked);
     var hasNote = !!(rec && (rec.note || "").trim());
+    var snz = rec && rec.snooze_until;
+    var snzTitle = snz ? "Snoozed until " + new Date(snz).toLocaleString() + " \u2014 click to change" : "Snooze \u2014 remind me later";
     return (
       '<td class="ud-mark-cell"><button type="button" class="ud-bm-btn' + (bm ? " ud-bm-on" : "") + '" ' +
         'data-nk="' + esc(nk) + '" title="' + (bm ? "Remove bookmark" : "Bookmark") + '">' + (bm ? "\u2605" : "\u2606") + "</button></td>" +
+      '<td class="ud-mark-cell"><button type="button" class="ud-snz-btn' + (snz ? " ud-snz-on" : "") + '" ' +
+        'data-nk="' + esc(nk) + '" title="' + esc(snzTitle) + '">\ud83d\udca4</button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
         'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '">\ud83d\udcdd</button></td>'
     );
@@ -615,7 +625,7 @@
       countEl.textContent = entries.length + " entr" + (entries.length === 1 ? "y" : "ies");
     }
     if (!entries.length) {
-      tbody.innerHTML = '<tr><td colspan="7" class="ud-empty">No entries match the current filters.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="8" class="ud-empty">No entries match the current filters.</td></tr>';
       return;
     }
     tbody.innerHTML = entries.map(function (e) {
@@ -757,7 +767,7 @@
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
         tbody.innerHTML =
-          '<tr><td colspan="7" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
+          '<tr><td colspan="8" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
       }
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
@@ -789,7 +799,7 @@
         slug:          c ? c.slug : "",
         name:          c ? c.display_name : "New Filing",
         short:         c ? c.short_name : "New Filing",
-        default_color: c ? c.default_color : "#9CA3AF",
+        default_color: c ? c.default_color : "#FDE047",
         docket_url:    "",
         category:      c ? (c.category || "other") : "other",
         entry_number:  null,
@@ -886,6 +896,7 @@
       if (p && p.ok && p.entries) {
         NOTES = p.entries;
         render();
+        renderDue();
       }
     }).catch(function () {});
   }
@@ -930,6 +941,7 @@
       key: nk,
       bookmarked: !!rec.bookmarked,
       note: rec.note || "",
+      snooze_until: rec.snooze_until || "",
       context: entry ? {
         case_slug: entry.slug,
         case_name: entry.name,
@@ -980,7 +992,7 @@
   function toggleBookmark(nk) {
     var rec = NOTES[nk] || {};
     rec.bookmarked = !rec.bookmarked;
-    if (!rec.bookmarked && !(rec.note || "").trim()) delete NOTES[nk];
+    if (!rec.bookmarked && !(rec.note || "").trim() && !rec.snooze_until) delete NOTES[nk];
     else NOTES[nk] = rec;
     pushNote(nk);
     render();
@@ -1023,7 +1035,7 @@
     var val = deleteNote ? "" : (text ? text.value : "");
     var rec = NOTES[nk] || {};
     rec.note = val;
-    if (!(val || "").trim() && !rec.bookmarked) delete NOTES[nk];
+    if (!(val || "").trim() && !rec.bookmarked && !rec.snooze_until) delete NOTES[nk];
     else NOTES[nk] = rec;
     pushNote(nk);
     closeNoteModal();
@@ -1175,6 +1187,118 @@
         }
       }
     }).catch(function () { cfStatus("Save failed \u2014 network error", true); });
+  }
+
+  // ── Snooze reminders ───────────────────────────────────────────────────────
+  var snoozeMenuEl = null;
+
+  function snoozeOptions() {
+    var now = new Date();
+    function at(d, h) { var x = new Date(d); x.setHours(h, 0, 0, 0); return x; }
+    var opts = [
+      { label: "In 1 hour", when: new Date(now.getTime() + 3600e3) },
+      { label: "In 3 hours", when: new Date(now.getTime() + 3 * 3600e3) },
+    ];
+    var evening = at(now, 18);
+    if (evening > now) opts.push({ label: "This evening (6 PM)", when: evening });
+    opts.push({ label: "Tomorrow morning (9 AM)", when: at(new Date(now.getTime() + 86400e3), 9) });
+    opts.push({ label: "In 3 days (9 AM)", when: at(new Date(now.getTime() + 3 * 86400e3), 9) });
+    opts.push({ label: "Next week (9 AM)", when: at(new Date(now.getTime() + 7 * 86400e3), 9) });
+    return opts;
+  }
+
+  function openSnoozeMenu(nk, anchor) {
+    closeSnoozeMenu();
+    var menu = document.createElement("div");
+    menu.className = "ud-th-menu";
+    menu.id = "ud-snooze-menu";
+    var rec = NOTES[nk] || {};
+    snoozeOptions().forEach(function (o) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ud-th-menu-item";
+      b.textContent = o.label;
+      b.addEventListener("click", function () {
+        setSnooze(nk, o.when.toISOString());
+        closeSnoozeMenu();
+      });
+      menu.appendChild(b);
+    });
+    if (rec.snooze_until) {
+      var clear = document.createElement("button");
+      clear.type = "button";
+      clear.className = "ud-th-menu-item";
+      clear.textContent = "Clear snooze";
+      clear.addEventListener("click", function () {
+        setSnooze(nk, "");
+        closeSnoozeMenu();
+      });
+      menu.appendChild(clear);
+    }
+    document.body.appendChild(menu);
+    var rect = anchor.getBoundingClientRect();
+    menu.style.top = (rect.bottom + window.scrollY + 4) + "px";
+    menu.style.left = Math.max(4, rect.left + window.scrollX - 120) + "px";
+    snoozeMenuEl = menu;
+  }
+
+  function closeSnoozeMenu() {
+    if (snoozeMenuEl && snoozeMenuEl.parentNode) snoozeMenuEl.parentNode.removeChild(snoozeMenuEl);
+    snoozeMenuEl = null;
+  }
+
+  function setSnooze(nk, iso) {
+    var rec = NOTES[nk] || {};
+    rec.snooze_until = iso || "";
+    if (!rec.snooze_until && !rec.bookmarked && !(rec.note || "").trim()) delete NOTES[nk];
+    else NOTES[nk] = rec;
+    pushNote(nk);
+    render();
+    renderDue();
+  }
+
+  function renderDue() {
+    var box = document.getElementById("ud-due");
+    if (!box) return;
+    var now = new Date().toISOString();
+    var due = [];
+    Object.keys(NOTES).forEach(function (nk) {
+      var rec = NOTES[nk];
+      if (rec && rec.snooze_until && rec.snooze_until <= now) due.push({ nk: nk, rec: rec });
+    });
+    if (!due.length) { box.style.display = "none"; box.innerHTML = ""; return; }
+
+    var html = ['<div class="ud-due-head">\u23f0 Snoozed reminders \u2014 ' + due.length + " due</div>"];
+    due.forEach(function (d) {
+      var e = findEntryByKey(d.nk);
+      var label = e
+        ? e.short + " \u00b7 " + (e.date_display || "") + " \u2014 " + (e.description || "").slice(0, 180)
+        : (d.rec.case_name || d.rec.case_slug || "Entry") + " \u2014 " + (d.rec.snippet || "");
+      html.push(
+        '<div class="ud-due-card">' +
+          '<div class="ud-due-body">' +
+            '<div class="ud-due-meta">Due ' + esc(new Date(d.rec.snooze_until).toLocaleString()) + "</div>" +
+            esc(label) +
+            (e && e.doc_url ? ' \u00b7 <a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read</a>' : "") +
+          "</div>" +
+          '<div class="ud-due-actions">' +
+            '<button type="button" class="ud-clear-btn ud-due-resnooze" data-nk="' + esc(d.nk) + '">Snooze again</button>' +
+            '<button type="button" class="ud-dd-save-btn ud-due-dismiss" data-nk="' + esc(d.nk) + '">Dismiss</button>' +
+          "</div>" +
+        "</div>"
+      );
+    });
+    box.innerHTML = html.join("");
+    box.style.display = "flex";
+    box.querySelectorAll(".ud-due-dismiss").forEach(function (b) {
+      b.addEventListener("click", function () { setSnooze(b.getAttribute("data-nk"), ""); });
+    });
+    box.querySelectorAll(".ud-due-resnooze").forEach(function (b) {
+      b.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        openSnoozeMenu(b.getAttribute("data-nk"), b);
+      });
+    });
   }
 
   // ── Server-side prefs (colors + groups roam across devices) ────────────────
@@ -1341,19 +1465,28 @@
       });
     }
 
-    // Case dropdown open/close
-    var ddBtn = document.getElementById("ud-case-dd-btn");
+    // Case dropdown — anchored to the Case column header
+    var thCase = document.getElementById("ud-th-case");
     var ddPanel = document.getElementById("ud-case-dd-panel");
-    if (ddBtn && ddPanel) {
-      ddBtn.addEventListener("click", function (ev) {
+    if (thCase && ddPanel) {
+      document.body.appendChild(ddPanel);  // page-level positioning
+      thCase.addEventListener("click", function (ev) {
         ev.stopPropagation();
         var open = ddPanel.style.display !== "none";
-        ddPanel.style.display = open ? "none" : "block";
-        if (open) closePopover();
+        if (open) {
+          ddPanel.style.display = "none";
+          closePopover();
+          return;
+        }
+        var rect = thCase.getBoundingClientRect();
+        ddPanel.style.position = "absolute";
+        ddPanel.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        ddPanel.style.left = (rect.left + window.scrollX) + "px";
+        ddPanel.style.display = "block";
       });
       document.addEventListener("click", function (ev) {
         if (ddPanel.style.display === "none") return;
-        if (ddPanel.contains(ev.target) || ddBtn.contains(ev.target)) return;
+        if (ddPanel.contains(ev.target) || thCase.contains(ev.target)) return;
         var pop = document.getElementById("ud-color-pop");
         if (pop && pop.contains(ev.target)) return;
         ddPanel.style.display = "none";
@@ -1442,6 +1575,8 @@
         }
         var bm = ev.target.closest(".ud-bm-btn");
         if (bm) { toggleBookmark(bm.getAttribute("data-nk")); return; }
+        var sz = ev.target.closest(".ud-snz-btn");
+        if (sz) { ev.stopPropagation(); openSnoozeMenu(sz.getAttribute("data-nk"), sz); return; }
         var nb = ev.target.closest(".ud-note-btn");
         if (nb) { openNoteModal(nb.getAttribute("data-nk")); }
       });
@@ -1462,11 +1597,13 @@
     }
     document.addEventListener("keydown", function (ev) {
       if (ev.key === "Escape" && activeNoteKey) closeNoteModal();
-      if (ev.key === "Escape") closeAssignMenu();
+      if (ev.key === "Escape") { closeAssignMenu(); closeSnoozeMenu(); }
     });
     document.addEventListener("click", function (ev) {
       if (assignMenuEl && !assignMenuEl.contains(ev.target)) closeAssignMenu();
+      if (snoozeMenuEl && !snoozeMenuEl.contains(ev.target)) closeSnoozeMenu();
     });
+    setInterval(renderDue, 60000);
 
     // Row-kind view: filings, articles, or both
     var rowKindSel = document.getElementById("ud-rowkind");

@@ -43,20 +43,19 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   /* Main page area — no sidebar */
   .ud-page{max-width:1680px;margin:0 auto;padding:20px 32px 60px;}
   /* Controls bar */
-  .ud-controls{background:var(--surface);border:1px solid var(--line-strong);padding:16px 20px;margin-bottom:16px;display:flex;flex-direction:column;gap:12px;}
-  .ud-search-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
-  .ud-search-wrap{flex:1;min-width:200px;position:relative;}
+  .ud-controls{background:var(--surface);border:1px solid var(--line-strong);padding:14px 20px;margin-bottom:16px;display:flex;flex-direction:row;align-items:center;gap:12px;flex-wrap:wrap;}
+  .ud-search-row,.ud-filter-row{display:contents;}
+  .ud-search-wrap{flex:1 1 220px;min-width:180px;max-width:420px;position:relative;}
   .ud-search-input{width:100%;padding:8px 12px;font-size:15px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
   .ud-search-input:focus{border-color:var(--neon);}
   .ud-date-range{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
   .ud-date-label{font-size:12px;color:var(--ink-60);font-weight:700;letter-spacing:0.04em;white-space:nowrap;}
-  .ud-date-input{padding:7px 10px;font-size:13px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}
+  .ud-date-input{padding:7px 8px;font-size:13px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;width:132px;}
   .ud-date-input:focus{border-color:var(--neon);}
   .ud-date-sep{color:var(--ink-40);font-size:14px;}
   .ud-clear-btn{padding:7px 14px;font-size:13px;font-weight:700;font-family:inherit;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;white-space:nowrap;}
   .ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
   /* Case dropdown + filters row */
-  .ud-filter-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
   .ud-case-dd{position:relative;margin-right:auto;}
   .ud-case-dd-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;}
   .ud-dd-caret{font-size:11px;color:var(--ink-60);}
@@ -149,6 +148,16 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-sep{color:var(--ink-40);padding:0 5px;}
   .ud-pill-assign{border:1px dashed var(--ink-40);cursor:pointer;font-family:inherit;}
   .ud-pill-assign:hover{border-style:solid;}
+  .ud-snz-btn{background:none;border:none;cursor:pointer;font-size:14px;padding:2px 4px;line-height:1;filter:grayscale(1);opacity:0.45;}
+  .ud-snz-btn:hover{opacity:1;}
+  .ud-snz-btn.ud-snz-on{filter:none;opacity:1;}
+  .ud-due{background:var(--surface);border:2px solid var(--neon);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
+  .ud-due-head{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
+  .ud-due-card{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-top:1px solid var(--line);}
+  .ud-due-card:first-of-type{border-top:none;}
+  .ud-due-body{flex:1;font-size:13.5px;line-height:1.5;}
+  .ud-due-meta{font-size:12px;color:var(--ink-60);margin-bottom:3px;}
+  .ud-due-actions{display:flex;gap:8px;flex-shrink:0;align-items:center;}
   .ud-case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
   .ud-case-grid label{display:flex;flex-direction:column;gap:4px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);}
   .ud-case-grid input,.ud-case-grid textarea{font-size:13.5px;}
@@ -756,7 +765,6 @@ def render_unified_docket(cases):
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
-        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
         <button type="button" id="ud-case-add" class="ud-type-select" title="Add a tracked case">＋ Case</button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
@@ -773,6 +781,8 @@ def render_unified_docket(cases):
     </div>
   </div>
 
+  <div id="ud-due" class="ud-due" style="display:none;"></div>
+
   <div class="ud-toolbar">
     <span id="ud-count"></span>
     <button id="ud-sort-btn">Date ↓</button>
@@ -781,15 +791,16 @@ def render_unified_docket(cases):
   <table class="ud-table">
     <thead><tr>
       <th style="width:116px">Date</th>
-      <th style="width:130px">Case</th>
-      <th style="width:150px">Party</th>
+      <th id="ud-th-case" class="ud-th-filter" style="width:150px" title="Select cases"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
+      <th style="width:150px">Author</th>
       <th id="ud-th-entry" class="ud-th-filter" title="Filter by entry type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
       <th style="width:132px;text-align:right">Dkt.</th>
       <th id="ud-th-bm" class="ud-th-toggle" style="width:40px;text-align:center" title="Show bookmarked only">★</th>
+      <th style="width:44px;text-align:center" title="Snoozed reminders">💤</th>
       <th id="ud-th-note" class="ud-th-toggle" style="width:44px;text-align:center" title="Show entries with notes only">📝</th>
     </tr></thead>
     <tbody id="ud-tbody">
-      <tr><td colspan="7" class="ud-empty">Loading…</td></tr>
+      <tr><td colspan="8" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 
