@@ -147,6 +147,15 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
   .ud-sep{color:var(--ink-40);padding:0 5px;}
+  .ud-case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
+  .ud-case-grid label{display:flex;flex-direction:column;gap:4px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);}
+  .ud-case-grid input,.ud-case-grid textarea{font-size:13.5px;}
+  .ud-case-wide{grid-column:1 / -1;}
+  .ud-case-lookup-row{display:flex;gap:6px;}
+  .ud-case-lookup-row input{flex:1;}
+  .ud-case-topics{display:flex;flex-wrap:wrap;gap:8px;}
+  .ud-case-topics label{display:flex;flex-direction:row;align-items:center;gap:5px;font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink);cursor:pointer;}
+  .ud-case-topics input{accent-color:var(--neon);}
   .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
   .uc-gcal:hover{opacity:1;}
   .uc-curate-cell{text-align:center;white-space:nowrap;}
@@ -670,6 +679,7 @@ def render_unified_docket(cases):
     <input type="color" id="ud-pop-fg" value="#ffffff">
   </label>
   <button id="ud-pop-reset" class="ud-pop-reset">Reset to default</button>
+  <button id="ud-pop-edit" class="ud-pop-reset" style="margin-top:8px;">Edit case details…</button>
 </div>
 
 <!-- Note modal -->
@@ -684,6 +694,35 @@ def render_unified_docket(cases):
       <span id="ud-note-status" class="ud-note-status"></span>
       <button type="button" id="ud-note-cancel" class="ud-clear-btn">Cancel</button>
       <button type="button" id="ud-note-save" class="ud-dd-save-btn">Save note</button>
+    </div>
+  </div>
+</div>
+
+<!-- Case editor modal -->
+<div id="ud-case-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box" style="width:min(720px,100%);">
+    <div class="ud-note-title" id="ud-case-title">Add a case</div>
+    <div class="ud-case-grid">
+      <label>Display name<input type="text" id="cf-name" class="ud-dd-save-input" placeholder="e.g. Terraform Labs"></label>
+      <label>CourtListener docket ID
+        <span class="ud-case-lookup-row">
+          <input type="text" id="cf-docket-id" class="ud-dd-save-input" placeholder="e.g. 68180454">
+          <button type="button" id="cf-lookup" class="ud-dd-save-btn">Look up</button>
+        </span>
+      </label>
+      <label>Parties<input type="text" id="cf-parties" class="ud-dd-save-input"></label>
+      <label>Court<input type="text" id="cf-court" class="ud-dd-save-input"></label>
+      <label>Case number<input type="text" id="cf-number" class="ud-dd-save-input"></label>
+      <label>Judge<input type="text" id="cf-judge" class="ud-dd-save-input"></label>
+      <label class="ud-case-wide">Claims agent URL (optional)<input type="text" id="cf-claims" class="ud-dd-save-input" placeholder="https://cases.omniagentsolutions.com/…"></label>
+      <label class="ud-case-wide">Themes<span id="cf-topics" class="ud-case-topics"></span></label>
+      <label class="ud-case-wide">Scan guidance (optional)<textarea id="cf-guidance" class="ud-note-text" style="min-height:64px;" placeholder="What should the news scan and briefings focus on?"></textarea></label>
+    </div>
+    <div class="ud-note-actions">
+      <span id="cf-status" class="ud-note-status"></span>
+      <span style="flex:1"></span>
+      <button type="button" id="cf-cancel" class="ud-clear-btn">Cancel</button>
+      <button type="button" id="cf-save" class="ud-dd-save-btn">Save case</button>
     </div>
   </div>
 </div>
@@ -715,6 +754,7 @@ def render_unified_docket(cases):
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
         <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
+        <button type="button" id="ud-case-add" class="ud-type-select" title="Add a tracked case">＋ Case</button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">

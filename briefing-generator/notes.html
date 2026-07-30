@@ -190,6 +190,15 @@
   .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
   .ud-sep{color:var(--ink-40);padding:0 5px;}
+  .ud-case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
+  .ud-case-grid label{display:flex;flex-direction:column;gap:4px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);}
+  .ud-case-grid input,.ud-case-grid textarea{font-size:13.5px;}
+  .ud-case-wide{grid-column:1 / -1;}
+  .ud-case-lookup-row{display:flex;gap:6px;}
+  .ud-case-lookup-row input{flex:1;}
+  .ud-case-topics{display:flex;flex-wrap:wrap;gap:8px;}
+  .ud-case-topics label{display:flex;flex-direction:row;align-items:center;gap:5px;font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink);cursor:pointer;}
+  .ud-case-topics input{accent-color:var(--neon);}
   .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
   .uc-gcal:hover{opacity:1;}
   .uc-curate-cell{text-align:center;white-space:nowrap;}

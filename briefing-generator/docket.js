@@ -915,6 +915,153 @@
     render();
   }
 
+  // ── In-page case editor — talks to the same /api/admin/cases the admin uses
+  // (the intel session IS the admin session, so the cookie just works) ──────
+  var editingSlug = null;   // null = creating
+  var adminTopics = [];
+  var adminCases = null;
+
+  function slugify(name) {
+    return (name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
+  }
+
+  function cfEl(id) { return document.getElementById(id); }
+
+  function cfStatus(text, isError) {
+    var el = cfEl("cf-status");
+    if (el) {
+      el.textContent = text;
+      el.style.color = isError ? "#C84141" : "";
+    }
+  }
+
+  function loadAdminCases() {
+    return fetchJson("/api/admin/cases").then(function (p) {
+      adminTopics = (p && p.topics) || [];
+      adminCases = (p && p.cases) || [];
+      return p;
+    });
+  }
+
+  function renderTopicChecks(selected) {
+    var box = cfEl("cf-topics");
+    if (!box) return;
+    var sel = {};
+    (selected || []).forEach(function (t) { sel[t] = true; });
+    box.innerHTML = adminTopics.map(function (t) {
+      var slug = typeof t === "string" ? t : t.slug;
+      var label = typeof t === "string" ? t : (t.display || t.slug);
+      return '<label><input type="checkbox" value="' + esc(slug) + '"' +
+        (sel[slug] ? " checked" : "") + ">" + esc(label) + "</label>";
+    }).join("");
+  }
+
+  function openCaseEditor(slug) {
+    editingSlug = slug || null;
+    var overlay = cfEl("ud-case-overlay");
+    var title = cfEl("ud-case-title");
+    if (title) title.textContent = slug ? "Edit case details" : "Add a case";
+    cfStatus(slug ? "Loading case\u2026" : "");
+    ["cf-name", "cf-docket-id", "cf-parties", "cf-court", "cf-number", "cf-judge", "cf-claims", "cf-guidance"]
+      .forEach(function (id) { if (cfEl(id)) cfEl(id).value = ""; });
+    if (overlay) overlay.style.display = "flex";
+    loadAdminCases().then(function () {
+      if (!editingSlug) { renderTopicChecks([]); cfStatus(""); return; }
+      var c = null;
+      for (var i = 0; i < adminCases.length; i++) {
+        if (adminCases[i].slug === editingSlug) { c = adminCases[i]; break; }
+      }
+      if (!c) { cfStatus("Could not load this case from admin", true); renderTopicChecks([]); return; }
+      cfEl("cf-name").value = c.display_name || "";
+      cfEl("cf-docket-id").value = (c.docket_source && c.docket_source.docket_id) || "";
+      cfEl("cf-parties").value = (c.case && c.case.parties) || "";
+      cfEl("cf-court").value = (c.case && c.case.court) || "";
+      cfEl("cf-number").value = (c.case && c.case.case_number) || "";
+      cfEl("cf-judge").value = (c.case && c.case.judge) || "";
+      cfEl("cf-claims").value = (c.claims_administrator && c.claims_administrator.url) || "";
+      cfEl("cf-guidance").value = c.scan_guidance || "";
+      renderTopicChecks(c.topics || []);
+      cfStatus("");
+    }).catch(function () {
+      cfStatus("Admin API unreachable \u2014 are you signed in?", true);
+      renderTopicChecks([]);
+    });
+  }
+
+  function closeCaseEditor() {
+    editingSlug = null;
+    var overlay = cfEl("ud-case-overlay");
+    if (overlay) overlay.style.display = "none";
+  }
+
+  function caseLookup() {
+    var id = (cfEl("cf-docket-id").value || "").trim();
+    if (!/^\d+$/.test(id)) { cfStatus("Enter a numeric docket ID first", true); return; }
+    cfStatus("Looking up docket " + id + "\u2026");
+    fetchJson("/api/admin/courtlistener-lookup?docket_id=" + id).then(function (p) {
+      if (!p || !p.ok) { cfStatus((p && p.error) || "Lookup failed", true); return; }
+      if (p.case_name && !cfEl("cf-parties").value) cfEl("cf-parties").value = p.case_name;
+      if (p.case_name && !cfEl("cf-name").value) cfEl("cf-name").value = p.case_name.split(" v.")[0].slice(0, 60);
+      if (p.court) cfEl("cf-court").value = p.court;
+      if (p.docket_number) cfEl("cf-number").value = p.docket_number;
+      if (p.judge) cfEl("cf-judge").value = p.judge;
+      cfStatus("Found \u2014 review the fields and save");
+    }).catch(function () { cfStatus("Lookup failed \u2014 network error", true); });
+  }
+
+  function saveCase() {
+    var name = (cfEl("cf-name").value || "").trim();
+    var slug = editingSlug || slugify(name);
+    var topics = [];
+    document.querySelectorAll("#cf-topics input:checked").forEach(function (cb) {
+      topics.push(cb.value);
+    });
+    var claimsUrl = (cfEl("cf-claims").value || "").trim();
+    var body = {
+      slug: slug,
+      display_name: name,
+      status: "active",
+      topics: topics,
+      case: {
+        parties: (cfEl("cf-parties").value || "").trim(),
+        court: (cfEl("cf-court").value || "").trim(),
+        case_number: (cfEl("cf-number").value || "").trim(),
+        judge: (cfEl("cf-judge").value || "").trim(),
+      },
+      docket_source: {
+        type: "courtlistener",
+        docket_id: (cfEl("cf-docket-id").value || "").trim() || null,
+        url: "",
+        awaiting_sync: false,
+      },
+      claims_administrator: claimsUrl ? { url: claimsUrl } : null,
+      scan_guidance: (cfEl("cf-guidance").value || "").trim(),
+    };
+    cfStatus("Saving\u2026");
+    fetch("/api/admin/cases", {
+      method: editingSlug ? "PUT" : "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    }).then(function (r) { return r.json(); }).then(function (p) {
+      if (!p || !p.ok) { cfStatus((p && p.error) || "Save failed", true); return; }
+      closeCaseEditor();
+      noteToast("Case saved \u2014 it appears everywhere after the next build (\u22482 min)", false);
+      // Optimistic chip so the dropdown reflects it immediately
+      if (!editingSlug) {
+        var exists = CASES.some(function (c) { return c.slug === slug; });
+        if (!exists) {
+          CASES.push({
+            slug: slug, display_name: name, short_name: name.split(/\s+/).slice(0, 2).join(" "),
+            docket_url: "", default_color: "#888888", category: "other",
+            entries: [], articles: [], claims_url: claimsUrl, claims_name: "",
+          });
+          activeCases[slug] = true;
+          renderCaseFilter();
+        }
+      }
+    }).catch(function () { cfStatus("Save failed \u2014 network error", true); });
+  }
+
   // ── Server-side prefs (colors + groups roam across devices) ────────────────
   var prefsAvailable = false;
   var prefsTimer = null;
@@ -1053,6 +1200,31 @@
         closePopover();
       }
     });
+
+    // Case editor
+    var caseAdd = document.getElementById("ud-case-add");
+    if (caseAdd) caseAdd.addEventListener("click", function () { openCaseEditor(null); });
+    var popEdit = document.getElementById("ud-pop-edit");
+    if (popEdit) {
+      popEdit.addEventListener("click", function () {
+        if (!activeGearSlug) return;
+        var s = activeGearSlug;
+        closePopover();
+        openCaseEditor(s);
+      });
+    }
+    var cfSave = document.getElementById("cf-save");
+    var cfCancel = document.getElementById("cf-cancel");
+    var cfLookupBtn = document.getElementById("cf-lookup");
+    var cfOverlay = document.getElementById("ud-case-overlay");
+    if (cfSave) cfSave.addEventListener("click", saveCase);
+    if (cfCancel) cfCancel.addEventListener("click", closeCaseEditor);
+    if (cfLookupBtn) cfLookupBtn.addEventListener("click", caseLookup);
+    if (cfOverlay) {
+      cfOverlay.addEventListener("click", function (ev) {
+        if (ev.target === cfOverlay) closeCaseEditor();
+      });
+    }
 
     // Case dropdown open/close
     var ddBtn = document.getElementById("ud-case-dd-btn");
