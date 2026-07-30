@@ -120,6 +120,20 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-table tr:last-child td{border-bottom:none;}
   .ud-row-new td{font-weight:700;}
   .ud-row-article td{background:var(--paper-2);}
+  .ud-mark-cell{text-align:center;white-space:nowrap;}
+  .ud-bm-btn,.ud-note-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
+  .ud-bm-btn:hover,.ud-note-btn:hover{color:var(--ink);}
+  .ud-bm-btn.ud-bm-on{color:#EAB308;}
+  .ud-note-btn{filter:grayscale(1);opacity:0.45;}
+  .ud-note-btn.ud-note-on{filter:none;opacity:1;}
+  .ud-note-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;padding:20px;}
+  .ud-note-box{background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 10px 40px rgba(0,0,0,0.35);width:min(640px,100%);padding:22px;display:flex;flex-direction:column;gap:10px;}
+  .ud-note-title{font-size:15px;font-weight:800;color:var(--ink);}
+  .ud-note-meta{font-size:12px;color:var(--ink-60);line-height:1.5;border-bottom:1px solid var(--line);padding-bottom:10px;}
+  .ud-note-text{width:100%;min-height:180px;resize:vertical;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.55;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
+  .ud-note-text:focus{border-color:var(--neon);}
+  .ud-note-actions{display:flex;align-items:center;gap:8px;}
+  .ud-note-status{font-size:12px;color:var(--ink-40);}
   [data-theme="dark"] .ud-row-article td{background:rgba(229,231,235,0.05);}
   .ud-date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
   .ud-case{white-space:nowrap;overflow:hidden;}
@@ -633,6 +647,22 @@ def render_unified_docket(cases):
   <button id="ud-pop-reset" class="ud-pop-reset">Reset to default</button>
 </div>
 
+<!-- Note modal -->
+<div id="ud-note-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box">
+    <div class="ud-note-title" id="ud-note-title"></div>
+    <div class="ud-note-meta" id="ud-note-meta"></div>
+    <textarea id="ud-note-text" class="ud-note-text" placeholder="Notes for this entry…"></textarea>
+    <div class="ud-note-actions">
+      <button type="button" id="ud-note-delete" class="ud-clear-btn">Delete note</button>
+      <span style="flex:1"></span>
+      <span id="ud-note-status" class="ud-note-status"></span>
+      <button type="button" id="ud-note-cancel" class="ud-clear-btn">Cancel</button>
+      <button type="button" id="ud-note-save" class="ud-dd-save-btn">Save note</button>
+    </div>
+  </div>
+</div>
+
 <div class="ud-page">
 
   <div class="ud-controls">
@@ -661,6 +691,12 @@ def render_unified_docket(cases):
           <option value="orders">Orders only</option>
           <option value="transfers">Transfers only</option>
         </select>
+        <select id="ud-marked" class="ud-type-select">
+          <option value="all">All rows</option>
+          <option value="bookmarked">★ Bookmarked</option>
+          <option value="noted">📝 With notes</option>
+          <option value="either">★ or 📝</option>
+        </select>
         <label class="ud-new-label">
           <input type="checkbox" id="ud-articles" checked> Articles
         </label>
@@ -683,9 +719,11 @@ def render_unified_docket(cases):
       <th style="width:150px">Party</th>
       <th>Entry</th>
       <th style="width:100px;text-align:right">Dkt.</th>
+      <th style="width:40px;text-align:center" title="Bookmarked">★</th>
+      <th style="width:44px;text-align:center" title="Notes">📝</th>
     </tr></thead>
     <tbody id="ud-tbody">
-      <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
+      <tr><td colspan="7" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 
