@@ -19,27 +19,25 @@
     return "other";
   }
 
-  var SUBSTANTIVE = { motion: 1, objection: 1, response: 1, application: 1,
-                      complaint: 1, declaration: 1, stipulation: 1, order: 1 };
-  var ADMINISTRATIVE = { appearance: 1, service: 1, notice: 1, other: 1 };
+  var SUBSTANTIVE = {
+    motion: 1, objection: 1, response: 1, application: 1,
+    complaint: 1, declaration: 1, stipulation: 1, order: 1,
+  };
 
   // ── Filing party extractor ─────────────────────────────────────────────────
   function extractParty(desc) {
     if (!desc) return "";
     var d = desc.trim();
-    // Court-authored entries
     if (/^(ORDER|JUDGMENT|REPORT|MINUTE|SCHEDULING|TRANSCRIPT)\b/i.test(d)) return "Court";
     if (/Signed by Judge|COURT STAFF|Court Staff/i.test(d)) return "Court";
-    // "filed by [Party]" — sometimes PACER omits the space: "filed byAnthropic"
     var m = d.match(/\bfiled\s+by\s*([A-Z][^()\n]{1,60}?)(?:\s*[.(,]|$)/i);
     if (m) { var p = m[1].replace(/\s+/g, " ").trim(); if (p.length > 1) return p; }
-    // "submitted by [Party]"
     m = d.match(/\bsubmitted\s+by\s+([A-Z][^()\n]{1,40}?)(?:\s*[.(,]|$)/i);
     if (m) return m[1].replace(/\s+/g, " ").trim();
     return "";
   }
 
-  // ── Color management ───────────────────────────────────────────────────────
+  // ── Color helpers ──────────────────────────────────────────────────────────
   var COLOR_KEY = "ud-case-colors";
 
   function loadColors() {
@@ -51,22 +49,6 @@
     try { localStorage.setItem(COLOR_KEY, JSON.stringify(map)); } catch (e) {}
   }
 
-  // ── Load embedded data ─────────────────────────────────────────────────────
-  var raw = document.getElementById("docket-data");
-  if (!raw) return;
-  var CASES;
-  try { CASES = JSON.parse(raw.textContent); } catch (e) { return; }
-
-  // Build default color map from embedded data (set by Python from _PILL_PALETTE)
-  var DEFAULT_BG = {};
-  CASES.forEach(function (c) { DEFAULT_BG[c.slug] = c.default_color || "#888888"; });
-
-  var savedColors = loadColors();
-
-  function getBg(slug) {
-    return (savedColors[slug] && savedColors[slug].bg) || DEFAULT_BG[slug] || "#888888";
-  }
-
   function autoFg(bg) {
     var r = parseInt(bg.slice(1, 3), 16) || 136;
     var g = parseInt(bg.slice(3, 5), 16) || 136;
@@ -74,58 +56,80 @@
     return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.55 ? "#0A0A0A" : "#FFFFFF";
   }
 
-  function getFg(slug, bg) {
-    var stored = savedColors[slug] && savedColors[slug].fg;
-    if (stored === "white") return "#FFFFFF";
-    if (stored === "black") return "#0A0A0A";
-    return autoFg(bg);
+  var savedColors = loadColors();
+
+  function getBg(slug, defaultColor) {
+    return (savedColors[slug] && savedColors[slug].bg) || defaultColor || "#888888";
   }
 
-  // ── Flatten all entries ────────────────────────────────────────────────────
-  var ALL = [];
-  CASES.forEach(function (c) {
-    (c.entries || []).forEach(function (e) {
-      ALL.push({
-        slug:         c.slug,
-        name:         c.display_name,
-        short:        c.short_name,
-        docket_url:   c.docket_url || "",
-        entry_number: e.entry_number,
-        date_filed:   e.date_filed || "",
-        date_display: e.date_display || e.date_filed || "",
-        description:  (e.description || "").trim(),
-        is_new:       !!e.is_new,
-        doc_url:      e.doc_url || "",
-        landmark:     e.landmark || "",
-        type:         classifyEntry(e.description),
-        party:        extractParty(e.description || ""),
-      });
-    });
-  });
+  function getFg(slug, bg) {
+    return (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
+  }
 
   // ── State ──────────────────────────────────────────────────────────────────
+  var CASES = [];
+  var ALL = [];
   var activeCases = {};
-  CASES.forEach(function (c) { activeCases[c.slug] = true; });
   var entryFilter = "all";
   var newOnly = false;
   var sortDir = "desc";
+  var searchText = "";
+  var dateFrom = "";
+  var dateTo = "";
+  var activeGearSlug = null;
 
-  // ── Escape helper ──────────────────────────────────────────────────────────
+  // ── Helpers ────────────────────────────────────────────────────────────────
   function esc(s) {
     return String(s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  // ── Build flat entry list from loaded cases ────────────────────────────────
+  function buildAllEntries() {
+    ALL = [];
+    CASES.forEach(function (c) {
+      (c.entries || []).forEach(function (e) {
+        ALL.push({
+          slug:          c.slug,
+          name:          c.display_name,
+          short:         c.short_name,
+          default_color: c.default_color,
+          docket_url:    c.docket_url || "",
+          entry_number:  e.entry_number,
+          date_filed:    e.date_filed || "",
+          date_display:  e.date_display || e.date_filed || "",
+          description:   (e.description || "").trim(),
+          is_new:        !!e.is_new,
+          doc_url:       e.doc_url || "",
+          landmark:      e.landmark || "",
+          type:          classifyEntry(e.description),
+          party:         extractParty(e.description || ""),
+        });
+      });
+    });
+  }
+
   // ── Filter + sort ──────────────────────────────────────────────────────────
   function filtered() {
+    var sq = searchText.toLowerCase().trim();
     var list = ALL.filter(function (e) {
       if (!activeCases[e.slug]) return false;
       if (newOnly && !e.is_new) return false;
       if (entryFilter === "substantive" && !SUBSTANTIVE[e.type]) return false;
-      if (entryFilter === "hide-admin"  &&  ADMINISTRATIVE[e.type]) return false;
-      if (entryFilter === "orders"      && e.type !== "order") return false;
-      if (entryFilter === "transfers"   && e.type !== "transfer") return false;
+      if (entryFilter === "orders" && e.type !== "order") return false;
+      if (entryFilter === "transfers" && e.type !== "transfer") return false;
+      if (dateFrom && e.date_filed && e.date_filed < dateFrom) return false;
+      if (dateTo && e.date_filed && e.date_filed > dateTo) return false;
+      if (sq) {
+        var haystack = [
+          e.date_filed, e.date_display,
+          e.name, e.short,
+          e.party,
+          e.description,
+        ].join(" ").toLowerCase();
+        if (haystack.indexOf(sq) === -1) return false;
+      }
       return true;
     });
     list.sort(function (a, b) {
@@ -135,63 +139,147 @@
     return list;
   }
 
-  // FG_STATES: undefined = auto, "white", "black"
-  var FG_CYCLE = [undefined, "white", "black"];
-  var FG_LABEL = { undefined: "·", white: "W", black: "B" };
-
-  function cycleFg(slug) {
-    var cur = savedColors[slug] && savedColors[slug].fg;
-    var idx = FG_CYCLE.indexOf(cur);
-    var next = FG_CYCLE[(idx + 1) % FG_CYCLE.length];
-    if (!savedColors[slug]) savedColors[slug] = {};
-    if (next === undefined) { delete savedColors[slug].fg; }
-    else { savedColors[slug].fg = next; }
-    saveColors(savedColors);
-  }
-
-  // ── Apply pill colors (inline style wins over static CSS) ──────────────────
-  function applyPillColors() {
-    CASES.forEach(function (c) {
-      var bg = getBg(c.slug);
+  // ── Case chip bar ──────────────────────────────────────────────────────────
+  function renderCaseChips() {
+    var container = document.getElementById("ud-case-chips");
+    if (!container) return;
+    if (!CASES.length) {
+      container.innerHTML = '<span style="font-size:13px;color:var(--ink-40)">No cases loaded.</span>';
+      return;
+    }
+    container.innerHTML = CASES.map(function (c) {
+      var bg = getBg(c.slug, c.default_color);
       var fg = getFg(c.slug, bg);
-      document.querySelectorAll(".ud-pill-" + c.slug).forEach(function (el) {
-        el.style.background = bg;
-        el.style.color = fg;
+      var active = !!activeCases[c.slug];
+      var chipStyle = active
+        ? "background:" + bg + ";color:" + fg + ";border-color:" + bg + ";"
+        : "background:var(--paper-2);color:var(--ink-40);border-color:var(--line);";
+      return (
+        '<span class="ud-chip-wrap">' +
+          '<button class="ud-case-chip' + (active ? " ud-chip-active" : "") + '" ' +
+            'data-slug="' + esc(c.slug) + '" ' +
+            'style="' + chipStyle + '">' +
+            esc(c.short_name) +
+          '</button>' +
+          (active
+            ? '<button class="ud-gear-btn" data-slug="' + esc(c.slug) + '" title="Color settings for ' + esc(c.display_name) + '">⚙</button>'
+            : "") +
+        "</span>"
+      );
+    }).join("");
+
+    container.querySelectorAll(".ud-case-chip").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var slug = btn.getAttribute("data-slug");
+        activeCases[slug] = !activeCases[slug];
+        if (!activeCases[slug] && activeGearSlug === slug) closePopover();
+        renderCaseChips();
+        render();
       });
-      var picker = document.getElementById("ud-color-" + c.slug);
-      if (picker) picker.value = bg;
-      var fgBtn = document.getElementById("ud-fg-" + c.slug);
-      if (fgBtn) {
-        var state = savedColors[c.slug] && savedColors[c.slug].fg;
-        fgBtn.textContent = state === "white" ? "W" : state === "black" ? "B" : "·";
-        fgBtn.style.background = fg;
-        fgBtn.style.color = bg;
-      }
+    });
+
+    container.querySelectorAll(".ud-gear-btn").forEach(function (btn) {
+      btn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var slug = btn.getAttribute("data-slug");
+        if (activeGearSlug === slug) {
+          closePopover();
+        } else {
+          openPopover(slug, btn);
+        }
+      });
     });
   }
 
-  // ── Render ─────────────────────────────────────────────────────────────────
+  // ── Color popover ──────────────────────────────────────────────────────────
+  function openPopover(slug, anchor) {
+    activeGearSlug = slug;
+    var pop = document.getElementById("ud-color-pop");
+    if (!pop) return;
+
+    var c = null;
+    for (var i = 0; i < CASES.length; i++) {
+      if (CASES[i].slug === slug) { c = CASES[i]; break; }
+    }
+    var bg = getBg(slug, c ? c.default_color : "#888888");
+    var fg = getFg(slug, bg);
+
+    var titleEl = document.getElementById("ud-pop-slug");
+    if (titleEl) titleEl.textContent = c ? c.display_name : slug;
+
+    var bgEl = document.getElementById("ud-pop-bg");
+    var fgEl = document.getElementById("ud-pop-fg");
+    if (bgEl) bgEl.value = bg;
+    if (fgEl) fgEl.value = fg;
+
+    var rect = anchor.getBoundingClientRect();
+    pop.style.display = "block";
+    var top = rect.bottom + window.scrollY + 6;
+    var left = Math.min(rect.left + window.scrollX, window.innerWidth - 240);
+    pop.style.top = top + "px";
+    pop.style.left = Math.max(4, left) + "px";
+  }
+
+  function closePopover() {
+    activeGearSlug = null;
+    var pop = document.getElementById("ud-color-pop");
+    if (pop) pop.style.display = "none";
+  }
+
+  function applyPopoverColors() {
+    if (!activeGearSlug) return;
+    var bgEl = document.getElementById("ud-pop-bg");
+    var fgEl = document.getElementById("ud-pop-fg");
+    var bg = bgEl ? bgEl.value : null;
+    var fg = fgEl ? fgEl.value : null;
+    if (!savedColors[activeGearSlug]) savedColors[activeGearSlug] = {};
+    if (bg) savedColors[activeGearSlug].bg = bg;
+    if (fg) savedColors[activeGearSlug].fg = fg;
+    saveColors(savedColors);
+    renderCaseChips();
+    render();
+  }
+
+  function resetColors(slug) {
+    if (savedColors[slug]) { delete savedColors[slug]; saveColors(savedColors); }
+    var c = null;
+    for (var i = 0; i < CASES.length; i++) {
+      if (CASES[i].slug === slug) { c = CASES[i]; break; }
+    }
+    if (c) {
+      var defaultBg = c.default_color || "#888888";
+      var defaultFg = autoFg(defaultBg);
+      var bgEl = document.getElementById("ud-pop-bg");
+      var fgEl = document.getElementById("ud-pop-fg");
+      if (bgEl) bgEl.value = defaultBg;
+      if (fgEl) fgEl.value = defaultFg;
+    }
+    renderCaseChips();
+    render();
+  }
+
+  // ── Render table ───────────────────────────────────────────────────────────
   function render() {
     var entries = filtered();
     var tbody = document.getElementById("ud-tbody");
     var countEl = document.getElementById("ud-count");
-    if (countEl) countEl.textContent = entries.length + " entr" + (entries.length === 1 ? "y" : "ies");
-
+    if (countEl) {
+      countEl.textContent = entries.length + " entr" + (entries.length === 1 ? "y" : "ies");
+    }
     if (!entries.length) {
       tbody.innerHTML = '<tr><td colspan="5" class="ud-empty">No entries match the current filters.</td></tr>';
-      applyPillColors();
       return;
     }
-
     tbody.innerHTML = entries.map(function (e) {
       var dkt = e.entry_number != null ? String(e.entry_number) : "—";
-      var bg = getBg(e.slug);
+      var bg = getBg(e.slug, e.default_color);
       var fg = getFg(e.slug, bg);
-      var pill = '<span class="ud-pill ud-pill-' + esc(e.slug) + '" style="background:' + bg + ';color:' + fg + '">' +
-                 esc(e.short) + " · " + esc(dkt) + "</span>";
+      var pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' +
+        esc(e.short) + " · " + esc(dkt) + "</span>";
       var badges = "";
-      if (e.is_new) badges += '<span class="ud-new">NEW</span> ';
-      if (e.landmark) badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span> ";
+      if (e.landmark) {
+        badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span> ";
+      }
       var descHtml = e.description
         ? badges + '<span class="ud-desc">' + esc(e.description) + "</span>"
         : badges + '<span class="ud-desc ud-desc-empty">—</span>';
@@ -207,89 +295,165 @@
         linkHtml = '<span class="ud-link-empty">—</span>';
       }
       var rowCls = e.is_new ? ' class="ud-row-new"' : "";
-      return "<tr" + rowCls + ">" +
-        '<td class="ud-date">' + esc(e.date_display) + "</td>" +
-        '<td class="ud-case">' + pill + "</td>" +
-        '<td class="ud-party">' + partyHtml + "</td>" +
-        '<td class="ud-entry">' + descHtml + "</td>" +
-        '<td class="ud-doc">' + linkHtml + "</td>" +
-        "</tr>";
+      return (
+        "<tr" + rowCls + ">" +
+          '<td class="ud-date">' + esc(e.date_display) + "</td>" +
+          '<td class="ud-case">' + pill + "</td>" +
+          '<td class="ud-party">' + partyHtml + "</td>" +
+          '<td class="ud-entry">' + descHtml + "</td>" +
+          '<td class="ud-doc">' + linkHtml + "</td>" +
+        "</tr>"
+      );
     }).join("");
-
-    applyPillColors();
   }
 
-  // ── Wire controls ──────────────────────────────────────────────────────────
-  function syncToggleAllBtn() {
-    var btn = document.getElementById("ud-toggle-all");
-    if (!btn) return;
-    var allOn = CASES.every(function (c) { return activeCases[c.slug]; });
-    btn.textContent = allOn ? "Deselect all" : "Select all";
+  // ── Dynamic data loading ───────────────────────────────────────────────────
+  function fetchJson(url) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status + " for " + url);
+      return r.json();
+    });
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Select / deselect all
-    var toggleAllBtn = document.getElementById("ud-toggle-all");
-    if (toggleAllBtn) {
-      toggleAllBtn.addEventListener("click", function () {
-        var allOn = CASES.every(function (c) { return activeCases[c.slug]; });
-        CASES.forEach(function (c) { activeCases[c.slug] = !allOn; });
-        document.querySelectorAll(".ud-case-cb").forEach(function (cb) {
-          cb.checked = !allOn;
+  function init() {
+    fetchJson("cases/data/_manifest.json").then(function (manifest) {
+      return Promise.all(manifest.map(function (m) {
+        return fetchJson("cases/data/" + m.slug + ".json").then(function (caseData) {
+          return {
+            slug:          m.slug,
+            display_name:  m.display_name,
+            short_name:    m.short_name,
+            docket_url:    m.docket_url || "",
+            default_color: m.default_color || "#888888",
+            entries:       (caseData.docket && caseData.docket.entries) || [],
+          };
+        }).catch(function () {
+          return {
+            slug:          m.slug,
+            display_name:  m.display_name,
+            short_name:    m.short_name,
+            docket_url:    m.docket_url || "",
+            default_color: m.default_color || "#888888",
+            entries:       [],
+          };
         });
-        syncToggleAllBtn();
+      }));
+    }).then(function (cases) {
+      CASES = cases;
+      CASES.forEach(function (c) { activeCases[c.slug] = true; });
+      buildAllEntries();
+
+      var meta = document.getElementById("ud-meta");
+      if (meta) {
+        var total = ALL.length;
+        meta.textContent =
+          CASES.length + " tracked case" + (CASES.length === 1 ? "" : "s") +
+          " · " + total + " total entr" + (total === 1 ? "y" : "ies");
+      }
+
+      renderCaseChips();
+      render();
+    }).catch(function (err) {
+      var tbody = document.getElementById("ud-tbody");
+      if (tbody) {
+        tbody.innerHTML =
+          '<tr><td colspan="5" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
+      }
+      var meta = document.getElementById("ud-meta");
+      if (meta) meta.textContent = "Failed to load";
+    });
+  }
+
+  // ── Wire DOM events ────────────────────────────────────────────────────────
+  document.addEventListener("DOMContentLoaded", function () {
+    // Popover color pickers
+    var popBg = document.getElementById("ud-pop-bg");
+    var popFg = document.getElementById("ud-pop-fg");
+    if (popBg) popBg.addEventListener("input", applyPopoverColors);
+    if (popFg) popFg.addEventListener("input", applyPopoverColors);
+
+    var resetBtn = document.getElementById("ud-pop-reset");
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        if (activeGearSlug) resetColors(activeGearSlug);
+      });
+    }
+
+    // Close popover on outside click
+    document.addEventListener("click", function (ev) {
+      var pop = document.getElementById("ud-color-pop");
+      if (pop && pop.style.display !== "none" && !pop.contains(ev.target)) {
+        closePopover();
+      }
+    });
+
+    // Entry type filter
+    var typeSelect = document.getElementById("ud-entry-type");
+    if (typeSelect) {
+      typeSelect.addEventListener("change", function () {
+        entryFilter = typeSelect.value;
         render();
       });
     }
 
-    // Case checkboxes
-    document.querySelectorAll(".ud-case-cb").forEach(function (cb) {
-      cb.addEventListener("change", function () {
-        activeCases[cb.value] = cb.checked;
-        syncToggleAllBtn();
-        render();
-      });
-    });
-
-    // Color pickers + fg toggles
-    CASES.forEach(function (c) {
-      var picker = document.getElementById("ud-color-" + c.slug);
-      if (picker) {
-        picker.addEventListener("input", function () {
-          if (!savedColors[c.slug]) savedColors[c.slug] = {};
-          savedColors[c.slug].bg = picker.value;
-          saveColors(savedColors);
-          render();
-        });
-      }
-      var fgBtn = document.getElementById("ud-fg-" + c.slug);
-      if (fgBtn) {
-        fgBtn.addEventListener("click", function () {
-          cycleFg(c.slug);
-          render();
-        });
-      }
-    });
-
-    // Entry-type radios
-    document.querySelectorAll(".ud-type-radio").forEach(function (r) {
-      r.addEventListener("change", function () {
-        if (r.checked) { entryFilter = r.value; render(); }
-      });
-    });
-
     // New-only checkbox
     var newCb = document.getElementById("ud-new-only");
-    if (newCb) newCb.addEventListener("change", function () { newOnly = newCb.checked; render(); });
+    if (newCb) {
+      newCb.addEventListener("change", function () {
+        newOnly = newCb.checked;
+        render();
+      });
+    }
 
-    // Sort toggle
+    // Search input
+    var searchInput = document.getElementById("ud-search");
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        searchText = searchInput.value;
+        render();
+      });
+    }
+
+    // Date range
+    var dateFromEl = document.getElementById("ud-date-from");
+    var dateToEl = document.getElementById("ud-date-to");
+    if (dateFromEl) {
+      dateFromEl.addEventListener("change", function () {
+        dateFrom = dateFromEl.value;
+        render();
+      });
+    }
+    if (dateToEl) {
+      dateToEl.addEventListener("change", function () {
+        dateTo = dateToEl.value;
+        render();
+      });
+    }
+
+    // Clear button
+    var clearBtn = document.getElementById("ud-clear-search");
+    if (clearBtn) {
+      clearBtn.addEventListener("click", function () {
+        searchText = "";
+        dateFrom = "";
+        dateTo = "";
+        if (searchInput) searchInput.value = "";
+        if (dateFromEl) dateFromEl.value = "";
+        if (dateToEl) dateToEl.value = "";
+        render();
+      });
+    }
+
+    // Sort button
     var sortBtn = document.getElementById("ud-sort-btn");
-    if (sortBtn) sortBtn.addEventListener("click", function () {
-      sortDir = sortDir === "desc" ? "asc" : "desc";
-      sortBtn.textContent = sortDir === "desc" ? "Date ↓" : "Date ↑";
-      render();
-    });
+    if (sortBtn) {
+      sortBtn.addEventListener("click", function () {
+        sortDir = sortDir === "desc" ? "asc" : "desc";
+        sortBtn.textContent = sortDir === "desc" ? "Date ↓" : "Date ↑";
+        render();
+      });
+    }
 
-    render();
+    init();
   });
 })();

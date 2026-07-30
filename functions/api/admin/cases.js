@@ -29,6 +29,59 @@ function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO 
 function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
 const CASES_DIR = "briefing-generator/cases";
 
+// Pill palette — matches inject_cases.py _PILL_PALETTE (bg colors only)
+const PILL_PALETTE = ["#D4FF00", "#60A5FA", "#FB923C", "#C084FC", "#34D399", "#F87171"];
+
+function shortName(displayName) {
+  const m = (displayName || "").match(/^(.+?)\s+vs?\.\s+/i);
+  if (m) {
+    const words = m[1].trim().split(/\s+/);
+    return words.slice(0, 2).join(" ");
+  }
+  const words = (displayName || "").trim().split(/\s+/);
+  return words.slice(0, 2).join(" ");
+}
+
+// Updates cases/data/_manifest.json (lightweight case index consumed by unified-docket.js).
+// Non-fatal: if this fails the main case write already succeeded; manifest refreshes on next pipeline run.
+async function updateManifest(env, action, c) {
+  try {
+    const branch = briefingBranch(env);
+    const repo = briefingRepo(env);
+    const manifestPath = `${CASES_DIR}/data/_manifest.json`;
+    const cur = await getFileFromGitHub(env, manifestPath, null, repo, branch);
+    let manifest = (cur.ok && Array.isArray(cur.data)) ? cur.data : [];
+
+    if (action === "remove") {
+      manifest = manifest.filter(m => m.slug !== c.slug);
+    } else {
+      const idx = manifest.findIndex(m => m.slug === c.slug);
+      const colorIdx = idx >= 0 ? idx : manifest.length;
+      const entry = {
+        slug: c.slug,
+        display_name: c.display_name,
+        short_name: shortName(c.display_name),
+        docket_url: (c.docket_source && c.docket_source.url) || "",
+        default_color: idx >= 0
+          ? (manifest[idx].default_color || PILL_PALETTE[colorIdx % PILL_PALETTE.length])
+          : PILL_PALETTE[colorIdx % PILL_PALETTE.length],
+      };
+      if (idx >= 0) manifest[idx] = entry;
+      else manifest.push(entry);
+    }
+
+    await commitFileToGitHub(
+      env, manifestPath,
+      JSON.stringify(manifest, null, 2) + "\n",
+      cur.ok ? cur.sha : null,
+      (action === "remove" ? "Remove from" : "Update") + " case manifest: " + c.slug,
+      repo, branch
+    );
+  } catch (e) {
+    console.error("cases: manifest update non-fatal error:", String(e));
+  }
+}
+
 // 6 default themes — returned for convenience; the UI prefers /api/admin/themes.
 const TOPICS = [
   { slug: "rewind-tariffs", display: "Tariffs / Trade", emoji: "⚖️" },
@@ -373,6 +426,7 @@ export async function onRequest({ request, env }) {
     );
     if (!jsonRes.ok) return jsonResponse({ ok: false, error: `Failed to create case data: ${jsonRes.error}` }, 500);
 
+    await updateManifest(env, "add", c);
     return jsonResponse({ ok: true, slug: c.slug });
   }
 
@@ -407,6 +461,7 @@ export async function onRequest({ request, env }) {
       if (!jr.ok) return jsonResponse({ ok: false, error: `Failed to update case data: ${jr.error}` }, 500);
     }
 
+    await updateManifest(env, "update", c);
     return jsonResponse({ ok: true, slug: c.slug });
   }
 
@@ -427,6 +482,7 @@ export async function onRequest({ request, env }) {
     if (jsonSha) {
       await deleteFileFromGitHub(env, jsonPath, jsonSha, `Remove case data: ${slug}`, briefingRepo(env), branch);
     }
+    await updateManifest(env, "remove", { slug });
     return jsonResponse({ ok: true });
   }
 

@@ -21,7 +21,7 @@ Stdlib only.
 import re, sys, json
 from pathlib import Path
 
-from cases_common import load_cases, REPO_ROOT, CASES_DIR, TOPIC_META, pretty_date, html_escape
+from cases_common import load_cases, REPO_ROOT, CASES_DIR, DATA_DIR, TOPIC_META, pretty_date, html_escape
 
 # Root-absolute paths: Cloudflare Pages serves this repo at the domain root (see DEPLOY.md
 # "output dir /"), and _headers/auth both use /assets and /auth. Case pages live at
@@ -455,76 +455,32 @@ def _short_name(display_name):
 
 
 def render_unified_docket(cases):
-    """Generate briefing-generator/unified-docket.html from all live case data."""
+    """Generate briefing-generator/unified-docket.html (shell) + cases/data/_manifest.json."""
     live = [c for c in cases if c["data"] and not _docket(c["data"]).get("awaiting_sync")]
-    if not live:
-        print("  · unified-docket: no live cases — skipping")
-        return
 
-    # Build JSON payload — include default_color so JS doesn't need to hardcode slugs
-    payload = []
+    # Write _manifest.json — lightweight case metadata consumed by JS at runtime.
+    # All cases with data are included (even awaiting_sync skipped above for the page stat).
+    manifest = []
     for i, c in enumerate(live):
         d = _docket(c["data"])
         bl = _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
-        payload.append({
+        manifest.append({
             "slug": c["slug"],
             "display_name": c["config"]["display_name"],
             "short_name": _short_name(c["config"]["display_name"]),
             "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
             "default_color": bl,
-            "entries": d.get("entries") or [],
         })
 
-    total_entries = sum(len(p["entries"]) for p in payload)
-    json_data = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
-    # relative path — unified-docket.html sits at intel root next to assets/
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    manifest_path = DATA_DIR / "_manifest.json"
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  ✓ cases/data/_manifest.json: {len(manifest)} cases")
+
+    if not live:
+        print("  · unified-docket.html: no live cases — writing empty shell")
+
     logo_src = "assets/turnpage-logo.jpeg"
-
-    # Per-case pill CSS — initial colors only; JS overrides with inline style after load
-    pill_parts = []
-    for i, p in enumerate(payload):
-        bl, fl, bd, fd = _PILL_PALETTE[i % len(_PILL_PALETTE)]
-        cls = f'.ud-pill-{p["slug"]}'
-        pill_parts.append(
-            f'{cls}{{background:{bl};color:{fl};}}'
-            f'[data-theme="dark"] {cls}{{background:{bd};color:{fd};}}'
-        )
-    pill_css = "\n  ".join(pill_parts)
-
-    # Sidebar: case checkboxes + color picker
-    cb_rows = []
-    for i, p in enumerate(payload):
-        bl = _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
-        slug_e = html_escape(p["slug"])
-        name_e = html_escape(p["short_name"])
-        dname_e = html_escape(p["display_name"])
-        n = len(p["entries"])
-        cb_rows.append(
-            f'<label class="ud-cb-row">'
-            f'<input type="checkbox" class="ud-case-cb" value="{slug_e}" checked>'
-            f'<span class="ud-pill ud-pill-{slug_e}">{name_e}</span>'
-            f'<span class="ud-cb-count">({n})</span>'
-            f'<input type="color" id="ud-color-{slug_e}" class="ud-color-picker"'
-            f' value="{html_escape(bl)}" title="Pick background color for {dname_e}">'
-            f'<button id="ud-fg-{slug_e}" class="ud-fg-btn" title="Cycle text color: · auto / W white / B black">·</button>'
-            f'</label>'
-        )
-
-    # Sidebar: entry type radios
-    type_options = [
-        ("all",         "All entries"),
-        ("substantive", "Substantive only"),
-        ("orders",      "Orders only"),
-        ("transfers",   "Transfers only"),
-    ]
-    radio_rows = []
-    for val, label in type_options:
-        checked = ' checked' if val == "all" else ""
-        radio_rows.append(
-            f'<label class="ud-radio-row">'
-            f'<input type="radio" class="ud-type-radio" name="ud-type" value="{val}"{checked}>'
-            f'{html_escape(label)}</label>'
-        )
 
     page = f"""<!DOCTYPE html>
 <html lang="en">
@@ -537,53 +493,70 @@ def render_unified_docket(cases):
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}
 <style>
-  /* Widen page-title beyond the case-page default */
   .page-title{{max-width:1680px;}}
-  /* Shell: sidebar + main, expands with viewport */
-  .ud-shell{{max-width:1680px;margin:0 auto;padding:24px 32px 60px;display:grid;gap:24px;grid-template-columns:240px 1fr;align-items:start;}}
-  @media(max-width:780px){{.ud-shell{{grid-template-columns:1fr;}}}}
-  /* Sidebar */
-  .ud-sidebar{{background:var(--surface);border:1px solid var(--line-strong);padding:18px;display:flex;flex-direction:column;gap:18px;position:sticky;top:58px;}}
-  .ud-section-head{{font-size:10px;text-transform:uppercase;letter-spacing:0.22em;font-weight:700;color:var(--ink-40);margin-bottom:8px;}}
-  .ud-cb-row,.ud-radio-row{{display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;padding:3px 0;}}
-  .ud-cb-row input[type="checkbox"],.ud-radio-row input{{cursor:pointer;accent-color:var(--neon);flex-shrink:0;}}
-  .ud-cb-count{{color:var(--ink-60);font-size:11px;flex:1;}}
-  /* Color picker swatch + fg toggle */
-  .ud-color-picker{{width:20px;height:20px;padding:0;border:1px solid var(--line-strong);cursor:pointer;border-radius:50%;overflow:hidden;background:transparent;flex-shrink:0;}}
-  .ud-color-picker::-webkit-color-swatch-wrapper{{padding:0;border-radius:50%;}}
-  .ud-color-picker::-webkit-color-swatch{{border:none;border-radius:50%;}}
-  .ud-fg-btn{{width:20px;height:20px;padding:0;border:1px solid var(--line-strong);cursor:pointer;border-radius:50%;font-size:9px;font-weight:800;font-family:inherit;line-height:1;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;}}
-  .ud-cases-head{{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}}
-  .ud-cases-head .ud-section-head{{margin-bottom:0;}}
-  #ud-toggle-all{{background:none;border:none;color:var(--ink-60);font-size:10px;cursor:pointer;padding:0;font-family:inherit;text-decoration:underline;letter-spacing:0.02em;}}
-  #ud-toggle-all:hover{{color:var(--ink);}}
-  /* Pills — rounded */
-  .ud-pill{{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:0.03em;padding:2px 8px;white-space:nowrap;border-radius:99px;}}
-  {pill_css}
+  /* Main page area — no sidebar */
+  .ud-page{{max-width:1680px;margin:0 auto;padding:20px 32px 60px;}}
+  /* Controls bar */
+  .ud-controls{{background:var(--surface);border:1px solid var(--line-strong);padding:16px 20px;margin-bottom:16px;display:flex;flex-direction:column;gap:12px;}}
+  .ud-search-row{{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}}
+  .ud-search-wrap{{flex:1;min-width:200px;position:relative;}}
+  .ud-search-input{{width:100%;padding:8px 12px;font-size:15px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}}
+  .ud-search-input:focus{{border-color:var(--neon);}}
+  .ud-date-range{{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}}
+  .ud-date-label{{font-size:12px;color:var(--ink-60);font-weight:700;letter-spacing:0.04em;white-space:nowrap;}}
+  .ud-date-input{{padding:7px 10px;font-size:13px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}}
+  .ud-date-input:focus{{border-color:var(--neon);}}
+  .ud-date-sep{{color:var(--ink-40);font-size:14px;}}
+  .ud-clear-btn{{padding:7px 14px;font-size:13px;font-weight:700;font-family:inherit;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;white-space:nowrap;}}
+  .ud-clear-btn:hover{{border-color:var(--ink-40);color:var(--ink);}}
+  /* Case chips + filters row */
+  .ud-filter-row{{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}}
+  .ud-case-chips{{display:flex;align-items:center;gap:5px;flex-wrap:wrap;flex:1;}}
+  .ud-chip-wrap{{display:inline-flex;align-items:center;gap:2px;}}
+  .ud-case-chip{{display:inline-flex;align-items:center;padding:5px 12px;border-radius:99px;border:2px solid transparent;font-size:13px;font-weight:700;letter-spacing:0.02em;cursor:pointer;font-family:inherit;line-height:1.3;}}
+  .ud-case-chip:not(.ud-chip-active){{opacity:0.45;filter:grayscale(0.3);}}
+  .ud-gear-btn{{background:none;border:none;cursor:pointer;font-size:14px;padding:1px 5px;color:var(--ink-60);line-height:1;flex-shrink:0;}}
+  .ud-gear-btn:hover{{color:var(--ink);}}
+  .ud-filter-right{{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;}}
+  .ud-type-select{{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}}
+  .ud-type-select:focus{{border-color:var(--neon);}}
+  .ud-new-label{{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;color:var(--ink);}}
+  .ud-new-label input{{accent-color:var(--neon);cursor:pointer;}}
+  /* Color popover */
+  .ud-color-pop{{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:220px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}}
+  .ud-pop-title{{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}}
+  .ud-pop-row{{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;gap:8px;font-size:14px;color:var(--ink-60);cursor:pointer;}}
+  .ud-pop-row input[type="color"]{{width:40px;height:30px;padding:0;border:1px solid var(--line-strong);cursor:pointer;background:transparent;flex-shrink:0;}}
+  .ud-pop-row input[type="color"]::-webkit-color-swatch-wrapper{{padding:0;}}
+  .ud-pop-row input[type="color"]::-webkit-color-swatch{{border:none;}}
+  .ud-pop-reset{{width:100%;padding:7px;font-size:12px;font-weight:700;font-family:inherit;background:none;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;margin-top:4px;}}
+  .ud-pop-reset:hover{{border-color:var(--ink-40);color:var(--ink);}}
   /* Toolbar */
-  .ud-toolbar{{display:flex;align-items:center;gap:12px;margin-bottom:14px;}}
-  #ud-count{{font-size:12px;color:var(--ink-60);flex:1;}}
-  #ud-sort-btn{{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:12px;font-weight:700;padding:5px 12px;cursor:pointer;font-family:inherit;}}
+  .ud-toolbar{{display:flex;align-items:center;gap:12px;margin-bottom:12px;}}
+  #ud-count{{font-size:14px;color:var(--ink-60);flex:1;}}
+  #ud-sort-btn{{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;}}
   #ud-sort-btn:hover{{border-color:var(--ink-40);}}
+  /* Pills */
+  .ud-pill{{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;padding:2px 10px;white-space:nowrap;border-radius:99px;}}
   /* Table */
   .ud-table{{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);table-layout:fixed;}}
-  .ud-table th{{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:10px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}}
-  .ud-table td{{padding:11px 14px;font-size:12.5px;border-bottom:1px solid var(--line);vertical-align:top;}}
+  .ud-table th{{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}}
+  .ud-table td{{padding:12px 14px;font-size:15px;border-bottom:1px solid var(--line);vertical-align:top;}}
   .ud-table tr:last-child td{{border-bottom:none;}}
+  .ud-row-new td{{font-weight:700;}}
   .ud-date{{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;overflow:hidden;}}
   .ud-case{{white-space:nowrap;overflow:hidden;}}
-  .ud-party{{color:var(--ink-60);font-size:12px;overflow:hidden;}}
+  .ud-party{{color:var(--ink-60);font-size:13px;overflow:hidden;}}
   .ud-party-empty{{color:var(--ink-40);}}
   .ud-entry{{word-break:break-word;}}
   .ud-desc{{color:var(--ink);}}
   .ud-desc-empty{{color:var(--ink-40);}}
   .ud-doc{{white-space:nowrap;text-align:right;overflow:hidden;}}
-  .ud-new{{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.04em;color:#0A0A0A;background:var(--neon);padding:1px 5px;margin-right:4px;vertical-align:middle;border-radius:3px;}}
-  .ud-landmark{{display:inline-block;font-size:9px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 5px;margin-right:4px;vertical-align:middle;border-radius:3px;}}
-  .ud-link{{display:inline-block;font-size:11px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}}
+  .ud-landmark{{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}}
+  .ud-link{{display:inline-block;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--neon);padding-bottom:1px;}}
   .ud-link-docket{{border-bottom-color:var(--line-strong);}}
-  .ud-link-empty{{color:var(--ink-40);font-size:11px;}}
-  .ud-empty{{font-size:13px;color:var(--ink-60);font-style:italic;padding:24px 14px;text-align:center;}}
+  .ud-link-empty{{color:var(--ink-40);font-size:13px;}}
+  .ud-empty{{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -606,51 +579,78 @@ def render_unified_docket(cases):
   <div class="eyebrow">Intelligence · Live Docket Monitor</div>
   <h1>⚖️ Unified Docket</h1>
   <div class="case-meta">
-    <span><strong>{len(live)}</strong> tracked cases &nbsp;·&nbsp; <strong>{total_entries}</strong> total entries</span>
+    <span id="ud-meta">Loading…</span>
   </div>
 </div>
 
-<div class="ud-shell">
-  <aside class="ud-sidebar">
-    <div>
-      <div class="ud-cases-head">
-        <div class="ud-section-head">Cases</div>
-        <button id="ud-toggle-all">Deselect all</button>
-      </div>
-      {"".join(cb_rows)}
-    </div>
-    <div>
-      <div class="ud-section-head">Entry Type</div>
-      {"".join(radio_rows)}
-    </div>
-    <div>
-      <label class="ud-cb-row">
-        <input type="checkbox" id="ud-new-only"> New only (72h)
-      </label>
-    </div>
-  </aside>
-
-  <main>
-    <div class="ud-toolbar">
-      <span id="ud-count"></span>
-      <button id="ud-sort-btn">Date ↓</button>
-    </div>
-    <table class="ud-table">
-      <thead><tr>
-        <th style="width:90px">Date</th>
-        <th style="width:130px">Case</th>
-        <th style="width:140px">Party</th>
-        <th>Entry</th>
-        <th style="width:80px;text-align:right">Doc</th>
-      </tr></thead>
-      <tbody id="ud-tbody">
-        <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
-      </tbody>
-    </table>
-  </main>
+<!-- Color popover (shared, repositioned by JS) -->
+<div id="ud-color-pop" class="ud-color-pop" style="display:none;">
+  <div class="ud-pop-title" id="ud-pop-slug"></div>
+  <label class="ud-pop-row">
+    <span>Background</span>
+    <input type="color" id="ud-pop-bg" value="#888888">
+  </label>
+  <label class="ud-pop-row">
+    <span>Text</span>
+    <input type="color" id="ud-pop-fg" value="#ffffff">
+  </label>
+  <button id="ud-pop-reset" class="ud-pop-reset">Reset to default</button>
 </div>
 
-<script type="application/json" id="docket-data">{json_data}</script>
+<div class="ud-page">
+
+  <div class="ud-controls">
+    <div class="ud-search-row">
+      <div class="ud-search-wrap">
+        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search entries, parties, dates…">
+      </div>
+      <div class="ud-date-range">
+        <span class="ud-date-label">From</span>
+        <input type="date" id="ud-date-from" class="ud-date-input">
+        <span class="ud-date-sep">–</span>
+        <span class="ud-date-label">To</span>
+        <input type="date" id="ud-date-to" class="ud-date-input">
+        <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
+      </div>
+    </div>
+    <div class="ud-filter-row">
+      <div id="ud-case-chips" class="ud-case-chips">
+        <span style="font-size:13px;color:var(--ink-40)">Loading cases…</span>
+      </div>
+      <div class="ud-filter-right">
+        <select id="ud-entry-type" class="ud-type-select">
+          <option value="all">All entries</option>
+          <option value="substantive">Substantive only</option>
+          <option value="orders">Orders only</option>
+          <option value="transfers">Transfers only</option>
+        </select>
+        <label class="ud-new-label">
+          <input type="checkbox" id="ud-new-only"> New only (72h)
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="ud-toolbar">
+    <span id="ud-count"></span>
+    <button id="ud-sort-btn">Date ↓</button>
+  </div>
+
+  <table class="ud-table">
+    <thead><tr>
+      <th style="width:96px">Date</th>
+      <th style="width:140px">Case</th>
+      <th style="width:150px">Party</th>
+      <th>Entry</th>
+      <th style="width:86px;text-align:right">Doc</th>
+    </tr></thead>
+    <tbody id="ud-tbody">
+      <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
 <script src="unified-docket.js"></script>
 
 </body>
@@ -659,7 +659,7 @@ def render_unified_docket(cases):
 
     out = REPO_ROOT / "unified-docket.html"
     out.write_text(page, encoding="utf-8")
-    print(f"  ✓ unified-docket.html: {len(live)} cases, {total_entries} entries")
+    print(f"  ✓ unified-docket.html: shell written ({len(live)} live cases in manifest)")
 
 
 # ── main ─────────────────────────────────────────────────────────────────────
