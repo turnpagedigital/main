@@ -43,11 +43,20 @@ function normalizeEntries(results) {
     if (docs.length && docs[0].filepath_local) {
       docUrl = "https://www.courtlistener.com/" + String(docs[0].filepath_local).replace(/^\/+/, "");
     }
+    let desc = String(e.description || "").split(/\s+/).join(" ").trim();
+    if (!desc) {
+      // RSS-sourced entries leave the docket text empty; the short
+      // description lives on the attached document record instead.
+      for (const d of docs) {
+        const short = String(d.description || "").split(/\s+/).join(" ").trim();
+        if (short) { desc = short; break; }
+      }
+    }
     return {
       entry_number: e.entry_number ?? null,
       date_filed: e.date_filed || "",
       date_display: prettyDate(e.date_filed || ""),
-      description: String(e.description || "").split(/\s+/).join(" ").trim(),
+      description: desc,
       landmark: "",
       doc_url: docUrl,
     };
