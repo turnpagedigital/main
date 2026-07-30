@@ -24,19 +24,11 @@
     "category": "class-action"
   },
   {
-    "slug": "kahan",
-    "display_name": "Kahan",
-    "short_name": "Kahan",
-    "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc",
-    "default_color": "#C084FC",
-    "category": "bankruptcy"
-  },
-  {
     "slug": "power-block-coin",
     "display_name": "Power Block Coin, LLC",
     "short_name": "Power Block",
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
-    "default_color": "#34D399",
+    "default_color": "#C084FC",
     "category": "bankruptcy"
   },
   {
@@ -44,7 +36,7 @@
     "display_name": "RNDC",
     "short_name": "RNDC",
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "default_color": "#F87171",
+    "default_color": "#34D399",
     "category": "bankruptcy"
   },
   {
@@ -52,9 +44,8 @@
     "display_name": "Sleep Number",
     "short_name": "Sleep Number",
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "default_color": "#D4FF00",
+    "default_color": "#F87171",
     "category": "bankruptcy"
-<<<<<<< HEAD
   },
   {
     "slug": "kahan",
@@ -69,7 +60,19 @@
     "short_name": "Terraform Labs",
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc",
     "default_color": "#60A5FA"
-=======
->>>>>>> b91b36f (News scan 2026-07-30)
+  },
+  {
+    "slug": "goliath",
+    "display_name": "Goliath",
+    "short_name": "Goliath",
+    "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
+    "default_color": "#FB923C"
+  },
+  {
+    "slug": "harvest-sherwood",
+    "display_name": "Harvest Sherwood",
+    "short_name": "Harvest Sherwood",
+    "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
+    "default_color": "#C084FC"
   }
 ]
