@@ -20,7 +20,7 @@ Requires Python 3.8+ (stdlib only — urllib).
 """
 import os, sys, json, time
 import datetime as dt
-import urllib.parse, urllib.request
+import urllib.error, urllib.parse, urllib.request
 
 from cases_common import load_cases, DATA_DIR, pretty_date
 
@@ -34,13 +34,24 @@ def _arg(name, default=None):
     return a[a.index("--" + name) + 1] if ("--" + name) in a and a.index("--" + name) + 1 < len(a) else default
 
 
-def get_json(url):
-    req = urllib.request.Request(url, headers={
-        "Authorization": "Token " + TOKEN,
-        "User-Agent": "turnpage-daily-briefing/1.0",
-    })
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.loads(r.read().decode("utf-8", "replace"))
+def get_json(url, retries=3):
+    for attempt in range(retries + 1):
+        req = urllib.request.Request(url, headers={
+            "Authorization": "Token " + TOKEN,
+            "User-Agent": "turnpage-daily-briefing/1.0",
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.loads(r.read().decode("utf-8", "replace"))
+        except urllib.error.HTTPError as ex:
+            # CourtListener throttles bursts (and shared CI egress IPs) with
+            # 429s — wait out Retry-After and try again instead of giving up.
+            if ex.code == 429 and attempt < retries:
+                ra = ex.headers.get("Retry-After", "")
+                wait = int(ra) if ra.isdigit() else 15 * (attempt + 1)
+                time.sleep(min(wait, 120))
+                continue
+            raise
 
 
 def build_docket_block(docket_id, docket_url):
