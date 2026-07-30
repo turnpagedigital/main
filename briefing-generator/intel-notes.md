@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-30 16:30 UTC · auto-generated from the unified docket — edit on /intel/unified-docket.html_
+_Updated 2026-07-30 16:45 UTC · auto-generated from the unified docket — edit on /intel/unified-docket.html_
 
 ## Concord Music Group v. Anthropic
 
