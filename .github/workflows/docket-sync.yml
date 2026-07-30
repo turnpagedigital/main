@@ -1,4 +1,4 @@
-name: Hourly Docket Sync
+name: Docket Sync
 
 # Keeps the tracked-case docket data fresh when nobody has the page open.
 # (While the page IS open it self-refreshes every minute via
@@ -11,7 +11,7 @@ name: Hourly Docket Sync
 
 on:
   schedule:
-    - cron: '23 * * * *'   # hourly at :23
+    - cron: '23 */3 * * *'   # every 3h — CourtListener free tier is 250 req/DAY
   workflow_dispatch:
     inputs:
       backfill:
@@ -51,7 +51,7 @@ jobs:
           # History trickle: each run walks this many older pages per case and
           # stores a resume cursor — full history accumulates across hourly
           # runs without ever tripping CourtListener's sustained-throttle wall.
-          DOCKET_HISTORY_PAGES: "4"
+          DOCKET_HISTORY_PAGES: "1"
         run: |
           python scripts/fetch_dockets.py
           python scripts/inject_cases.py

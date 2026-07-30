@@ -22,5 +22,14 @@
     "url": "https://dm.epiq11.com/case/terraform/dockets",
     "key_dates_url": ""
   },
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Under The Radar: Bankruptcy News You May Have Missed (Terraform plan administrator asks Delaware judge to toss adversary suit)",
+      "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2504885",
+      "source": "Law360",
+      "date": "2026-07-20",
+      "summary": "Terraform's plan administrator moved a Delaware judge to dismiss an adversary proceeding (Chang v. Terraform Labs PTE. Ltd. Wind Down Trust), as part of ongoing post-confirmation administration of the Chapter 11 wind-down trust."
+    }
+  ],
+  "events": []
 }
