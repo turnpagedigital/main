@@ -34,7 +34,7 @@ def _arg(name, default=None):
     return a[a.index("--" + name) + 1] if ("--" + name) in a and a.index("--" + name) + 1 < len(a) else default
 
 
-def get_json(url, retries=3):
+def get_json(url, retries=5):
     for attempt in range(retries + 1):
         req = urllib.request.Request(url, headers={
             "Authorization": "Token " + TOKEN,
@@ -48,7 +48,7 @@ def get_json(url, retries=3):
             # 429s — wait out Retry-After and try again instead of giving up.
             if ex.code == 429 and attempt < retries:
                 ra = ex.headers.get("Retry-After", "")
-                wait = int(ra) if ra.isdigit() else 15 * (attempt + 1)
+                wait = int(ra) if ra.isdigit() else 20 * (attempt + 1)
                 time.sleep(min(wait, 120))
                 continue
             raise
@@ -113,7 +113,7 @@ def fetch_entry_pages(docket_id, existing_keys, backfill, max_pages=60):
         if not backfill and (overlap or not results):
             break
         if url:
-            time.sleep(1.0)  # be polite across pages
+            time.sleep(3.0)  # CL burst ceiling is low — stay well under it
     return raw, pages
 
 
