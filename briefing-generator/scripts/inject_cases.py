@@ -147,6 +147,8 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
   .ud-link-agent{margin-left:7px;font-size:12px;border-bottom-color:var(--line-strong);}
+  .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
+  .uc-gcal:hover{opacity:1;}
   [data-theme="dark"] .ud-row-article td{background:rgba(229,231,235,0.05);}
   .ud-date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
   .ud-case{white-space:nowrap;overflow:hidden;}
@@ -852,9 +854,10 @@ def render_unified_calendar(cases):
       <th style="width:130px">Case</th>
       <th>Event</th>
       <th style="width:100px;text-align:right">Source</th>
+      <th style="width:52px;text-align:center" title="Add to Google Calendar">📆</th>
     </tr></thead>
     <tbody id="uc-tbody">
-      <tr><td colspan="5" class="ud-empty">Loading…</td></tr>
+      <tr><td colspan="6" class="ud-empty">Loading…</td></tr>
     </tbody>
   </table>
 
