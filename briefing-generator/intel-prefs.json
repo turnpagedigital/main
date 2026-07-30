@@ -19,6 +19,10 @@
     "power-block-coin": {
       "bg": "#fee2e2",
       "fg": "#991b1b"
+    },
+    "rndc": {
+      "bg": "#fce7f3",
+      "fg": "#9d174d"
     }
   },
   "groups": []
