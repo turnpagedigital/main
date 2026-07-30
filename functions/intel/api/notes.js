@@ -105,16 +105,23 @@ export async function onRequestPut(context) {
   if (entry) map.entries[key] = entry;
   else delete map.entries[key];
 
-  const res = await commitFilesToGitHub(
-    env,
-    [
-      { path: JSON_PATH, content: JSON.stringify(map, null, 2) + "\n" },
-      { path: MD_PATH, content: renderMarkdown(map) },
-    ],
-    entry ? `Intel notes: ${key}` : `Intel notes: clear ${key}`,
-    briefingRepo(env),
-    briefingBranch(env)
-  );
+  // The sync bots commit to this branch constantly — retry the write a few
+  // times so a ref race never silently swallows a bookmark.
+  let res = null;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    res = await commitFilesToGitHub(
+      env,
+      [
+        { path: JSON_PATH, content: JSON.stringify(map, null, 2) + "\n" },
+        { path: MD_PATH, content: renderMarkdown(map) },
+      ],
+      entry ? `Intel notes: ${key}` : `Intel notes: clear ${key}`,
+      briefingRepo(env),
+      briefingBranch(env)
+    );
+    if (res.ok) break;
+    await new Promise((r) => setTimeout(r, 800 * (attempt + 1)));
+  }
   if (!res.ok) return jsonResponse({ ok: false, error: res.error || "commit failed" }, 502);
   return jsonResponse({ ok: true, entries: map.entries });
 }
