@@ -7,6 +7,14 @@
     "bartz-anthropic": {
       "bg": "#ecfccb",
       "fg": "#3f6212"
+    },
+    "blockfills": {
+      "bg": "#dbeafe",
+      "fg": "#1e40af"
+    },
+    "concord-anthropic": {
+      "bg": "#ffedd5",
+      "fg": "#9a3412"
     }
   },
   "groups": []
