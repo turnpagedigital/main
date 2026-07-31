@@ -151,6 +151,12 @@
   }
 
   // ── Helpers ────────────────────────────────────────────────────────────────
+
+  function clampMenuLeft(el, left) {
+    var w = el.offsetWidth || 200;
+    return Math.max(4, Math.min(left, window.innerWidth - w - 8));
+  }
+
   function esc(s) {
     return String(s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
@@ -921,7 +927,7 @@
     document.body.appendChild(menu);
     var rect = anchor.getBoundingClientRect();
     menu.style.top = (rect.bottom + window.scrollY + 4) + "px";
-    menu.style.left = (rect.left + window.scrollX) + "px";
+    menu.style.left = clampMenuLeft(menu, rect.left + window.scrollX) + "px";
     assignMenuEl = menu;
   }
 
@@ -1406,7 +1412,7 @@
     document.body.appendChild(menu);
     var rect = anchor.getBoundingClientRect();
     menu.style.top = (rect.bottom + window.scrollY + 4) + "px";
-    menu.style.left = Math.max(4, rect.left + window.scrollX - 120) + "px";
+    menu.style.left = clampMenuLeft(menu, rect.left + window.scrollX - 120) + "px";
     snoozeMenuEl = menu;
   }
 
@@ -1466,7 +1472,7 @@
     document.body.appendChild(menu);
     var rect = anchor.getBoundingClientRect();
     menu.style.top = (rect.bottom + window.scrollY + 4) + "px";
-    menu.style.left = Math.max(4, rect.left + window.scrollX - 140) + "px";
+    menu.style.left = clampMenuLeft(menu, rect.left + window.scrollX - 140) + "px";
     trashMenuEl = menu;
   }
 
@@ -1779,7 +1785,7 @@
         var rect = thCase.getBoundingClientRect();
         ddPanel.style.position = "absolute";
         ddPanel.style.top = (rect.bottom + window.scrollY + 4) + "px";
-        ddPanel.style.left = (rect.left + window.scrollX) + "px";
+        ddPanel.style.left = clampMenuLeft(ddPanel, rect.left + window.scrollX) + "px";
         ddPanel.style.display = "block";
       });
       document.addEventListener("click", function (ev) {
@@ -1824,7 +1830,7 @@
         var rect = thEntry.getBoundingClientRect();
         thMenu.style.display = "block";
         thMenu.style.top = (rect.bottom + window.scrollY + 4) + "px";
-        thMenu.style.left = (rect.left + window.scrollX) + "px";
+        thMenu.style.left = clampMenuLeft(thMenu, rect.left + window.scrollX) + "px";
         syncHeaderStates();
       });
       thMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
