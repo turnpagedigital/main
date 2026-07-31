@@ -593,6 +593,7 @@ def render_case_page(case):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>{name} — Case Docket | Turnpage Daily Briefing</title>
 {THEME_SCRIPT_SUBDIR}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -723,6 +724,7 @@ def render_unified_docket(cases):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>Docket — Turnpage Daily Briefing</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -945,6 +947,7 @@ def render_unified_calendar(cases):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>Calendar — Turnpage Daily Briefing</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1076,6 +1079,7 @@ def render_unified_notes(cases):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>Notes — Turnpage Daily Briefing</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1227,6 +1231,7 @@ def render_briefings(cases):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
 <title>Briefings — Turnpage Daily Briefing</title>
 {THEME_SCRIPT}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
