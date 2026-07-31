@@ -77,9 +77,5 @@ $100-$500M liabilities = 2-10c recoveries
 
 ### (no docket number) — 2026-07-31
 
-> Big Oil Is Reaping Rewards From the Chaos in Energy Markets — ExxonMobil’s earnings doubled and Chevron posted its highest quarterly earnings on record as energy prices soared during the prolonged clo
-
-### (no docket number) — 2026-07-31
-
 > New York Alleges Kalshi Is Running Illegal Gambling Operation — New York Attorney General Letitia James’s office said Kalshi’s prediction market meets the legal definition of gambling because users ar
 
