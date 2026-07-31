@@ -55,3 +55,7 @@ $100-$500M liabilities = 2-10c recoveries
 
 > Westinghouse Electric Files Confidentially for IPO — Nuclear technology and services supplier Westinghouse Electric has confidentially filed a draft registration statement with the Securities and Exch
 
+### (no docket number) — 2026-07-31
+
+> Stock Market Today: Apple Slump Drags on Tech — Stocks are reversing their early gains
+
