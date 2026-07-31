@@ -108,6 +108,8 @@
   var noteOnly = false;
   var NOTES = {};
   var BONDORO = [];
+  var VOTES = {};
+  var showMuted = false;
   var UNASSIGNED_KEY = "__unassigned__";
   var sortDir = "desc";
   var searchText = "";
@@ -276,6 +278,7 @@
       var hrec = NOTES[entryNoteKey(e)];
       if (hrec && hrec.deleted_at) return false;
       if (hrec && hrec.hidden && !searchText.trim()) return false;
+      if (!showMuted && !searchText.trim() && isMutedSource(e)) return false;
       if (bmOnly || noteOnly) {
         var mrec = NOTES[entryNoteKey(e)];
         if (bmOnly && !(mrec && mrec.bookmarked)) return false;
@@ -770,7 +773,7 @@
             '<td class="ud-case">' + pill + "</td>" +
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
             '<td class="ud-entry">' + descHtml + "</td>" +
-            '<td class="ud-doc"><a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read</a></td>' +
+            '<td class="ud-doc"><a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read</a>' + voteButtons(e) + "</td>" +
             markCells(e) +
           "</tr>"
         );
@@ -872,6 +875,7 @@
       loadServerPrefs();
       loadNotes();
       loadBondoro();
+      loadVotes();
     }).catch(function (err) {
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
@@ -985,6 +989,85 @@
     }).then(function (r) { return r.json(); }).then(function (p) {
       noteToast(p && p.ok ? "Assignment saved" : "Save failed \u2014 " + ((p && p.error) || "try again"), !(p && p.ok));
     }).catch(function () { noteToast("Save failed \u2014 network error", true); });
+  }
+
+  // ── Up/down votes on news items — teaches which sources to surface ────────
+  var MUTE_THRESHOLD = -3;
+
+  function loadVotes() {
+    fetchJson("api/votes")
+      .then(function (p) { return (p && p.ok && p.votes) || {}; })
+      .catch(function () {
+        return fetchJson("intel-votes.json")
+          .then(function (f) { return (f && f.votes) || {}; })
+          .catch(function () { return {}; });
+      })
+      .then(function (v) {
+        VOTES = v;
+        render();
+        updateMutedInfo();
+      });
+  }
+
+  function sourceScore(name) {
+    if (!name) return 0;
+    var n = name.toLowerCase();
+    var score = 0;
+    Object.keys(VOTES).forEach(function (u) {
+      var v = VOTES[u];
+      if (v && (v.source || "").toLowerCase() === n) score += v.v;
+    });
+    return score;
+  }
+
+  function isMutedSource(e) {
+    if (!e.is_article || !e.party) return false;
+    var v = VOTES[e.doc_url];
+    if (v && v.v === 1) return false;  // an upvoted item always shows
+    return sourceScore(e.party) <= MUTE_THRESHOLD;
+  }
+
+  function castVote(e, dir) {
+    var cur = VOTES[e.doc_url];
+    var next = cur && cur.v === dir ? 0 : dir;  // click again to clear
+    if (next === 0) delete VOTES[e.doc_url];
+    else VOTES[e.doc_url] = { v: next, source: e.party || "", at: new Date().toISOString() };
+    render();
+    updateMutedInfo();
+    noteToast(next === 0 ? "Vote cleared" : (next > 0 ? "Upvoted \u2014 more like this" : "Downvoted \u2014 " + (e.party || "this source") + " loses standing"), false);
+    fetch("api/votes", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: e.doc_url, vote: next, source: e.party || "" }),
+    }).catch(function () {});
+  }
+
+  function updateMutedInfo() {
+    var el = document.getElementById("ud-muted-info");
+    if (!el) return;
+    var muted = ALL.filter(isMutedSource).length;
+    if (!muted) { el.innerHTML = ""; showMuted = false; return; }
+    el.innerHTML = muted + " muted by your votes " +
+      '<button type="button" id="ud-muted-toggle">' + (showMuted ? "Hide" : "Show") + "</button>";
+    var btn = document.getElementById("ud-muted-toggle");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        showMuted = !showMuted;
+        render();
+        updateMutedInfo();
+      });
+    }
+  }
+
+  function voteButtons(e) {
+    if (!e.is_article) return "";
+    var v = VOTES[e.doc_url];
+    var up = v && v.v === 1;
+    var dn = v && v.v === -1;
+    return (
+      ' <button type="button" class="ud-vote' + (up ? " ud-vote-up-on" : "") + '" data-vote="1" data-url="' + esc(e.doc_url) + '" title="More from ' + esc(e.party || "this source") + '">\u25b2</button>' +
+      '<button type="button" class="ud-vote' + (dn ? " ud-vote-dn-on" : "") + '" data-vote="-1" data-url="' + esc(e.doc_url) + '" title="Less from ' + esc(e.party || "this source") + '">\u25bc</button>'
+    );
   }
 
   // ── News feed sources manager (feed-sources.json via /intel/api/feed-sources)
@@ -1933,6 +2016,16 @@
         if (bm) { toggleBookmark(bm.getAttribute("data-nk")); return; }
         var sz = ev.target.closest(".ud-snz-btn");
         if (sz) { ev.stopPropagation(); openSnoozeMenu(sz.getAttribute("data-nk"), sz); return; }
+        var vt = ev.target.closest(".ud-vote");
+        if (vt) {
+          var vurl = vt.getAttribute("data-url");
+          var ventry = null;
+          for (var vi = 0; vi < ALL.length; vi++) {
+            if (ALL[vi].is_article && ALL[vi].doc_url === vurl) { ventry = ALL[vi]; break; }
+          }
+          if (ventry) castVote(ventry, Number(vt.getAttribute("data-vote")));
+          return;
+        }
         var del = ev.target.closest(".ud-del-btn");
         if (del) { ev.stopPropagation(); openTrashMenu(del.getAttribute("data-nk"), del); return; }
         var nb = ev.target.closest(".ud-note-btn");
