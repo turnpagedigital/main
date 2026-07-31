@@ -5,6 +5,10 @@
      from Briefings, Docket, Calendar, and Notes. Row clicks land on the full
      section pages. Calendar parsing mirrors calendar.js (trimmed copy). */
 
+  // Served at /intel/ in production and in local previews of dist; when the
+  // generator repo is previewed standalone the pages sit at the root.
+  var BASE = location.pathname.indexOf("/intel") === 0 ? "/intel/" : "/";
+
   function esc(s) {
     return String(s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
@@ -49,14 +53,14 @@
     "bankruptcy-creditor-rights":   { name: "Bankruptcy Creditor Rights",    emoji: "📜" },
   };
 
-  fetchJson("briefings.json").then(function (d) {
+  fetchJson(BASE + "briefings.json").then(function (d) {
     var items = ((d && d.items) || []).slice()
       .sort(function (a, b) { return (b.updated || "").localeCompare(a.updated || ""); })
       .slice(0, 7);
     fill("ih-briefings", items.map(function (i) {
       var t = THEMES[i.slug] || { name: i.slug, emoji: "📰" };
       var lede = (i.body || i.stat || "").trim();
-      return row("briefings.html", fmtDate(i.updated) + " · " + t.emoji + " " + t.name, lede.slice(0, 120));
+      return row(BASE + "briefings.html", fmtDate(i.updated) + " · " + t.emoji + " " + t.name, lede.slice(0, 120));
     }).join(""));
   }).catch(function () { fill("ih-briefings", ""); });
 
@@ -113,9 +117,9 @@
   }
 
   // ── Docket + Calendar (shared case fetch) ──────────────────────────────────
-  fetchJson("cases/data/_manifest.json").then(function (man) {
+  fetchJson(BASE + "cases/data/_manifest.json").then(function (man) {
     return Promise.all((man || []).map(function (m) {
-      return fetchJson("cases/data/" + m.slug + ".json")
+      return fetchJson(BASE + "cases/data/" + m.slug + ".json")
         .then(function (c) { return { m: m, c: c }; })
         .catch(function () { return null; });
     }));
@@ -135,7 +139,7 @@
       return (b.num || 0) - (a.num || 0);
     });
     fill("ih-docket", entries.slice(0, 7).map(function (e) {
-      return row("docket.html",
+      return row(BASE + "docket.html",
         fmtDate(e.date) + " · " + e.short + (e.num != null ? " · Dkt. " + e.num : ""),
         e.desc.slice(0, 130));
     }).join(""));
@@ -165,7 +169,7 @@
     });
     events.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
     fill("ih-calendar", events.slice(0, 7).map(function (ev) {
-      return row("calendar.html",
+      return row(BASE + "calendar.html",
         fmtDate(ev.date) + " · " + ev.short + " · " + ev.kind,
         ev.title);
     }).join(""));
@@ -175,10 +179,10 @@
   });
 
   // ── Notes ──────────────────────────────────────────────────────────────────
-  fetchJson("api/notes")
+  fetchJson(BASE + "api/notes")
     .then(function (p) { return (p && p.ok && p.entries) || {}; })
     .catch(function () {
-      return fetchJson("intel-notes.json")
+      return fetchJson(BASE + "intel-notes.json")
         .then(function (f) { return (f && f.entries) || {}; })
         .catch(function () { return {}; });
     })
@@ -189,7 +193,7 @@
         .slice(0, 7);
       fill("ih-notes", list.map(function (n) {
         var body = (n.note || "").trim() || n.snippet || "(bookmark)";
-        return row("notes.html",
+        return row(BASE + "notes.html",
           (n.case_name || n.case_slug || "Uncategorized") +
             (n.entry_number != null ? " · Dkt. " + n.entry_number : "") +
             (n.bookmarked ? " ★" : ""),
