@@ -272,9 +272,10 @@
       "url": "https://bondoro.com/poolin-filing-alert/",
       "date": "2026-07-23",
       "excerpt": "Poolin Files Chapter 11 in District of New Jersey",
-      "case_slug": null,
+      "case_slug": "poolin",
       "source": "Bondoro",
-      "published_at": "2026-07-23T05:25:13+00:00"
+      "published_at": "2026-07-23T05:25:13+00:00",
+      "group_name": null
     },
     {
       "id": "magellan-aerospace-middletown-filing-alert",
