@@ -120,12 +120,22 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   /* Pills */
   .ud-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;padding:2px 10px;white-space:nowrap;border-radius:99px;}
   /* Table */
-  .ud-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);table-layout:fixed;}
+  .ud-table{width:100%;border-collapse:collapse;background:transparent;border:none;table-layout:fixed;}
+  /* Frame lives on the cells (not the table) so day-separator rows can sit
+     outside the box: transparent, no vertical borders. */
+  .ud-table thead th{background:var(--surface);border-top:1px solid var(--line-strong);}
+  .ud-table thead th:first-child{border-left:1px solid var(--line-strong);}
+  .ud-table thead th:last-child{border-right:1px solid var(--line-strong);}
+  .ud-table tbody tr{background:var(--surface);}
+  .ud-table tbody tr:not(.ud-day-row) td:first-child{border-left:1px solid var(--line-strong);}
+  .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right:1px solid var(--line-strong);}
+  .ud-table tbody tr:last-child td{border-bottom:1px solid var(--line-strong);}
   .ud-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}
   .ud-table td{padding:12px 14px;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top;}
   .ud-table tr:last-child td{border-bottom:none;}
   .ud-row-new .ud-entry{font-weight:700;}  /* highlight new rows via the entry text only — dates and parties stay regular */
-  .ud-day-row td{background:var(--paper-2);border-top:2px solid var(--line-strong);border-bottom:1px solid var(--line-strong);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-60);padding:7px 14px;}
+  .ud-table tr.ud-day-row{background:transparent;}
+  .ud-day-row td{background:transparent;border-left:none;border-right:none;border-top:2px solid var(--line-strong);border-bottom:1px solid var(--line-strong);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-60);padding:7px 14px;}
   .ud-row-article td{background:var(--paper-2);}
   .ud-mark-cell{text-align:center;white-space:nowrap;}
   .ud-bm-btn,.ud-note-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
@@ -215,6 +225,9 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
     .ud-date-range{gap:6px;}
     .ud-toolbar{flex-wrap:wrap;gap:8px;}
     .ud-table, .ud-table tbody{display:block;width:100%;}
+    .ud-table{border:1px solid var(--line-strong);background:var(--surface);}
+    .ud-table tbody tr:not(.ud-day-row) td:first-child{border-left:none;}
+    .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right:none;}
     .ud-table thead{display:none;}
     .ud-table tr{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 10px;padding:12px 10px;border-bottom:1px solid var(--line);}
     .ud-table td{display:inline-block;border-bottom:none;padding:0;width:auto !important;}
