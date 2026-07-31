@@ -104,8 +104,8 @@ That passage — case caption with full docket, courtroom number, Judge name, sp
 
 ### Length per topic
 
-- 4 to 6 substantive sections (`## I.`, `## II.`, etc.), each 2-4 paragraphs
-- 1 `## Recommended Actions` section, focused on **creditors / claimants / rights-holders** (not general counsel guidance)
+- ONE law-firm-style client briefing under `## Analysis & Developments` — as many or as few `## I.` / `## II.` subsections as the last 24 hours warrant, each 2-4 paragraphs
+- NO action-items sections of any kind (no "Recommended Actions", no "What to do this week" — the briefing itself is the whole deliverable)
 - 1 `## Proposed Articles for the Briefing Site (up to 5)` block listing up to 5 relevant 48-hour sources (fewer on light days; zero on quiet days)
 - 1 `## Sources` block at the bottom (full citation list)
 
@@ -141,13 +141,13 @@ Say so in two or three sentences and stop. Pattern:
 
 > No qualifying developments in the last 24 hours across the tracked dockets. The next scheduled milestone is the August 24 second-day hearing in *RNDC* (Bankr. S.D. Tex.). Yesterday's briefing remains the current state of play.
 
-A quiet-day briefing under 150 words is correct output, not a failure. Recommended Actions may be omitted on quiet days; Proposed Articles and Sources shrink to whatever the day actually produced (zero is acceptable).
+A quiet-day briefing under 150 words is correct output, not a failure. Proposed Articles and Sources shrink to whatever the day actually produced (zero is acceptable).
 
 ### What this does NOT change
 
 - The Bartz-passage density requirement **for what is covered** (full case caption, docket number, judge name, dollar figures, percentages, statutory citations).
-- The section structure when sections have content (`## Analysis & Developments` → `## Recommended Actions` → `## Proposed Articles for the Briefing Site` → `## Sources`).
-- The voice rules (complete sentences, em-dash discipline, no hedging, creditor/claimant orientation in Recommended Actions).
+- The section structure when sections have content (`## Analysis & Developments` → `## Proposed Articles for the Briefing Site` → `## Sources`).
+- The voice rules (complete sentences, em-dash discipline, no hedging, creditor/claimant orientation).
 - The citation format and inline source-arrow density.
 
 ---

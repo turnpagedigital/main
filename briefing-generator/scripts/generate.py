@@ -289,7 +289,7 @@ You must follow the SKILL.md spec verbatim (provided above). The output is **MAR
 
 {guidance_block}{case_truth_block}{news_block}# Your task
 
-Produce the FULL rich advisory in markdown format per the SKILL.md output spec. Sections:
+Produce ONE law-firm-style client briefing in markdown per the SKILL.md output spec — the briefing is the entire deliverable (no action-items sections). Sections:
 
 ```
 # {topic['emoji']} {topic['display']} | {DATE_PRETTY}
@@ -299,10 +299,6 @@ Produce the FULL rich advisory in markdown format per the SKILL.md output spec. 
 [lede paragraph naming today's deltas]
 
 [one section per development that occurred in the LAST 24 HOURS — case captions, docket numbers, judges, dollar figures, percentages, statutory citations; omit matters with no movement]
-
-## Recommended Actions
-
-[one dense paragraph for creditors/claimants/rights-holders]
 
 ## Proposed Articles for the Briefing Site (up to 5)
 
