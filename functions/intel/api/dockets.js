@@ -47,13 +47,11 @@ function normalizeEntries(results) {
       docUrl = "https://www.courtlistener.com/" + String(docs[0].filepath_local).replace(/^\/+/, "");
     }
     let desc = String(e.description || "").split(/\s+/).join(" ").trim();
-    if (!desc) {
-      // RSS-sourced entries leave the docket text empty; the short
-      // description lives on the attached document record instead.
-      for (const d of docs) {
-        const short = String(d.description || "").split(/\s+/).join(" ").trim();
-        if (short) { desc = short; break; }
-      }
+    // Bankruptcy/BNC entries often carry a stub docket text while the
+    // document record holds the real PACER name — richest wins.
+    for (const d of docs) {
+      const docDesc = String(d.description || "").split(/\s+/).join(" ").trim();
+      if (docDesc.length > desc.length) desc = docDesc;
     }
     return {
       entry_number: e.entry_number ?? null,
