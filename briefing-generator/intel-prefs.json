@@ -21,7 +21,7 @@
       "fg": "#92400e"
     },
     "kahan": {
-      "bg": "#ffe08a",
+      "bg": "#ffe5f1",
       "fg": "#0a0a0a"
     },
     "goliath": {
@@ -79,43 +79,43 @@
       "fg": "#0A0A0A"
     },
     {
-      "bg": "#e2f1fd",
+      "bg": "#faebff",
       "fg": "#0A0A0A"
     },
     {
-      "bg": "#F3E8FF",
-      "fg": "#6b21a8"
-    },
-    {
-      "bg": "#D1FAE5",
-      "fg": "#065f46"
-    },
-    {
-      "bg": "#ffe5e9",
+      "bg": "#eae5ff",
       "fg": "#0A0A0A"
     },
     {
-      "bg": "#dfffb8",
+      "bg": "#dbffed",
       "fg": "#0A0A0A"
     },
     {
-      "bg": "#8df7e0",
+      "bg": "#ffe5f1",
       "fg": "#0A0A0A"
     },
     {
-      "bg": "#a8d9ff",
+      "bg": "#e8fdce",
       "fg": "#0A0A0A"
     },
     {
-      "bg": "#d3b8f5",
+      "bg": "#ffeedb",
       "fg": "#0A0A0A"
     },
     {
-      "bg": "#66f0a9",
+      "bg": "#e5eeff",
       "fg": "#0A0A0A"
     },
     {
-      "bg": "#ffc2e5",
+      "bg": "#ffebeb",
+      "fg": "#0A0A0A"
+    },
+    {
+      "bg": "#f5ffe0",
+      "fg": "#0A0A0A"
+    },
+    {
+      "bg": "#e6e6e6",
       "fg": "#0A0A0A"
     }
   ]

@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-31 17:56 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-07-31 18:01 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -68,10 +68,6 @@ $100-$500M liabilities = 2-10c recoveries
 ### (no docket number) — 2026-07-31
 
 > Stock Market Today: Apple Slump Drags on Tech — Stocks are reversing their early gains
-
-### (no docket number) — 2026-07-31
-
-> Korea’s Kospi Logs Record Daily Gain, Defying Efforts to Tame Wild Swings — The country’s regulators have imposed increasingly stringent restrictions on single-stock leveraged exchange-traded funds tr
 
 ### (no docket number) — 2026-07-31
 
