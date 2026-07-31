@@ -4,7 +4,9 @@
    scripts/scan_feeds.py pulls every enabled source's RSS daily into the
    docket feed. Gated by the intel middleware.
 
-   GET → { ok, sources: [{id, name, url, kind, enabled}] }
+   GET → { ok, sources: [{id, name, url, kind, mode, enabled}] }
+   mode: "all" shows every feed item on the docket; "case-only" shows a
+   feed's items only once tied to a tracked case (auto-match or manual).
    PUT → { sources: [...] } (whole list, sanitized) */
 
 import { jsonResponse } from "../../api/admin/_utils.js";
@@ -31,6 +33,7 @@ function sanitize(body) {
       name,
       url,
       kind: (String(s.kind || "News").trim() || "News").slice(0, 20),
+      mode: s.mode === "case-only" ? "case-only" : "all",
       enabled: s.enabled !== false,
     });
   }

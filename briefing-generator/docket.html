@@ -263,6 +263,7 @@
   .ud-src-del{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;}
   .ud-src-del:hover{color:#C84141;}
   .ud-src-add{display:flex;gap:6px;align-items:center;border-top:1px solid var(--line);padding-top:10px;}
+  .ud-src-mode{font-family:inherit;font-size:11.5px;padding:3px 4px;background:var(--surface);color:var(--ink);border:1px solid var(--line-strong);}
   /* ── Mobile (≤720px): tables become stacked cards ─────────────────────── */
   @media (max-width: 720px) {
     .tn-left{flex-wrap:wrap;gap:8px 14px;}
@@ -434,7 +435,7 @@
 <div id="ud-src-overlay" class="ud-note-overlay" style="display:none;">
   <div class="ud-note-box" style="width:min(680px,100%);">
     <div class="ud-note-title">News feed sources</div>
-    <div class="ud-note-meta">Each source's RSS feed is pulled once a day into the docket feed. Rows appear tagged with the source's label, unassigned until you tie them to a case.</div>
+    <div class="ud-note-meta">Each source's RSS feed is pulled once a day. “All entries” puts every item on the docket (unassigned until tied to a case). “Case matches only” shows a feed's items solely when they match a tracked case — matching runs automatically on each pull, and you can still assign by hand.</div>
     <div id="ud-src-list" class="ud-src-list"></div>
     <div class="ud-src-add">
       <input type="text" id="ud-src-name" class="ud-dd-save-input" placeholder="Name (e.g. PETITION)" style="flex:0 0 140px;">

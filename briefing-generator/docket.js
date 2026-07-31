@@ -1081,6 +1081,7 @@
       loadBondoro();
       loadVotes();
       loadUploads();
+      loadFeedSourcesForRender();
     }).catch(function (err) {
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
@@ -1108,12 +1109,24 @@
       });
   }
 
+  function feedSourceMode(item) {
+    if (!FEED_SOURCES.length) return "all";
+    var matches = FEED_SOURCES.filter(function (s) {
+      if (item.source_id && s.id) return s.id === item.source_id;
+      return (s.name || "").toLowerCase() === (item.source || "").toLowerCase();
+    });
+    if (!matches.length) return "all";
+    // Same-named feeds (the two Bondoro tags): case-only only if ALL agree
+    return matches.every(function (s) { return s.mode === "case-only"; }) ? "case-only" : "all";
+  }
+
   function bondoroEntries() {
     var out = [];
     BONDORO.forEach(function (b) {
       if (!b.url || !b.title) return;
       var c = b.case_slug ? caseBySlug(b.case_slug) : null;
       var grp = !c && b.group_name ? findGroup(b.group_name) : null;
+      if (!c && !grp && feedSourceMode(b) === "case-only") return;
       out.push({
         slug:          c ? c.slug : "",
         name:          c ? c.display_name : (grp ? grp.name : "Uncategorized"),
@@ -1386,6 +1399,10 @@
           '<input type="checkbox" data-idx="' + i + '"' + (s.enabled !== false ? " checked" : "") + ' title="Enabled">' +
           '<span class="ud-src-name">' + esc(s.name) + "</span>" +
           '<span class="ud-src-url" title="' + esc(s.url) + '">' + esc(s.url) + "</span>" +
+          '<select class="ud-src-mode" data-mode-idx="' + i + '" title="All entries: every item appears on the docket. Case matches only: items appear once tied to a tracked case (auto-matched daily or assigned by hand).">' +
+            '<option value="all"' + (s.mode !== "case-only" ? " selected" : "") + ">All entries</option>" +
+            '<option value="case-only"' + (s.mode === "case-only" ? " selected" : "") + ">Case matches only</option>" +
+          "</select>" +
           '<span class="ud-src-kind">' + esc(s.kind || "News") + "</span>" +
           '<button type="button" class="ud-src-del" data-idx="' + i + '" title="Remove source">\u00d7</button>' +
         "</div>"
@@ -1394,6 +1411,11 @@
     list.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
       cb.addEventListener("change", function () {
         FEED_SOURCES[Number(cb.getAttribute("data-idx"))].enabled = cb.checked;
+      });
+    });
+    list.querySelectorAll(".ud-src-mode").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        FEED_SOURCES[Number(sel.getAttribute("data-mode-idx"))].mode = sel.value;
       });
     });
     list.querySelectorAll(".ud-src-del").forEach(function (b) {
@@ -1410,6 +1432,24 @@
       el.textContent = text;
       el.style.color = isError ? "#C84141" : "";
     }
+  }
+
+  function loadFeedSourcesForRender() {
+    fetchJson("api/feed-sources")
+      .then(function (p) { return (p && p.ok && p.sources) || null; })
+      .catch(function () { return null; })
+      .then(function (sources) {
+        if (sources) return sources;
+        return fetchJson("feed-sources.json")
+          .then(function (f) { return (f && f.sources) || []; })
+          .catch(function () { return []; });
+      })
+      .then(function (sources) {
+        if (sources && sources.length) {
+          FEED_SOURCES = sources;
+          render();
+        }
+      });
   }
 
   function openSourcesModal() {
@@ -1443,7 +1483,7 @@
       srcStatus("Name and a valid feed URL are required", true);
       return;
     }
-    FEED_SOURCES.push({ name: name, url: url, kind: kind, enabled: true });
+    FEED_SOURCES.push({ name: name, url: url, kind: kind, mode: "all", enabled: true });
     document.getElementById("ud-src-name").value = "";
     document.getElementById("ud-src-url").value = "";
     document.getElementById("ud-src-kind").value = "";
