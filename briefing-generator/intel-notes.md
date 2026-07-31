@@ -59,9 +59,5 @@ $100-$500M liabilities = 2-10c recoveries
 
 ### (no docket number) — 2026-07-31
 
-> AI Startup Apologizes for Offering Job Interviews in Exchange for Company Tattoos — The co-founder of LemonLime set off an uproar after offering attendees at a networking party a dare of sorts.
-
-### (no docket number) — 2026-07-31
-
 > New York Alleges Kalshi Is Running Illegal Gambling Operation — New York Attorney General Letitia James’s office said Kalshi’s prediction market meets the legal definition of gambling because users ar
 
