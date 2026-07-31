@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-31 17:12 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-07-31 17:19 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -45,6 +45,16 @@ $100-$500M liabilities = 2-10c recoveries
 
 > The Preference Wave Is Coming- What Vendors Should Do Now — If you sold goods or services to a customer that filed Chapter 11 in the last two years, the window to prepare is right now. It closes the d
 
+## Terraform Labs
+
+### Dkt. 1305 — 2026-07-30 ★
+
+> Chapter 11 Post-Confirmation Report
+
+### Dkt. 1307 — 2026-07-30 ★
+
+> Chapter 11 Post-Confirmation Report
+
 ## Uncategorized
 
 ### (no docket number) — 2026-07-31
@@ -66,4 +76,12 @@ $100-$500M liabilities = 2-10c recoveries
 ### (no docket number) — 2026-07-31
 
 > Richard D. Wood Jr., Who Built Wawa Into a Cult-Favorite Convenience Giant, Dies at 88 — To keep executives grounded, the CEO insisted that every executive spend a day each year working in one of the 
+
+### (no docket number) — 2026-07-31
+
+> Fauci Faces a Test to His Legacy — Plus, an AI startup offers job interviews to candidates who get tattooed, and Kevin Warsh’s honeymoon with the bond market is already over.
+
+### (no docket number) — 2026-07-31
+
+> AI Startup Apologizes for Offering Job Interviews in Exchange for Company Tattoos — The co-founder of LemonLime set off an uproar after offering attendees at a networking party a dare of sorts.
 
