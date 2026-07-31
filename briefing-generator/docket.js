@@ -271,6 +271,15 @@
     var list = ALL.filter(function (e) {
       if (e.is_bondoro && e.unassigned) {
         if (!activeCases[UNASSIGNED_KEY]) return false;
+      } else if (e.is_bondoro && e.group_name) {
+        var grpF = findGroup(e.group_name);
+        var members = grpF ? validGroupSlugs(grpF) : [];
+        var anyOn = false;
+        for (var mi = 0; mi < members.length; mi++) {
+          if (activeCases[members[mi]]) { anyOn = true; break; }
+        }
+        if (members.length && !anyOn) return false;
+        if (!members.length && !activeCases[UNASSIGNED_KEY]) return false;
       } else if (!activeCases[e.slug]) return false;
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
       if (rowKind === "filings" && e.is_article) return false;
@@ -397,9 +406,9 @@
     }).join("");
 
     rows += (
-      '<label class="ud-dd-row" title="Bondoro filing alerts and summaries not yet assigned to a case">' +
+      '<label class="ud-dd-row" title="Feed items not yet assigned to a case">' +
         '<input type="checkbox" data-slug="' + UNASSIGNED_KEY + '"' + (activeCases[UNASSIGNED_KEY] ? " checked" : "") + ">" +
-        '<span class="ud-pill" style="background:#0A0A0A;color:#FFFFFF;border:1px dashed rgba(255,255,255,0.4)">New Filing</span>' +
+        '<span class="ud-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-40)">Uncategorized</span>' +
         '<span class="ud-dd-spacer"></span>' +
       "</label>"
     );
@@ -739,8 +748,12 @@
       var fg = getFg(e.slug, bg);
       var pill;
       if (e.is_bondoro) {
+        var pillStyle;
+        if (e.unassigned) pillStyle = "background:transparent;color:var(--ink-60);border-color:var(--ink-40)";
+        else if (e.group_name) pillStyle = "background:var(--paper-2);color:var(--ink);border-color:var(--ink-40)";
+        else pillStyle = "background:" + bg + ";color:" + fg;
         pill = '<button type="button" class="ud-pill ud-pill-assign" data-bondoro="' + esc(e.bondoro_url) + '" ' +
-          'style="background:' + bg + ";color:" + fg + '" title="Click to assign to a case">' +
+          'style="' + pillStyle + '" title="Click to assign to a case">' +
           esc(e.short) + "</button>";
       } else {
         pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' +
@@ -908,11 +921,13 @@
     BONDORO.forEach(function (b) {
       if (!b.url || !b.title) return;
       var c = b.case_slug ? caseBySlug(b.case_slug) : null;
+      var grp = !c && b.group_name ? findGroup(b.group_name) : null;
       out.push({
         slug:          c ? c.slug : "",
-        name:          c ? c.display_name : "New Filing",
-        short:         c ? c.short_name : "New Filing",
-        default_color: c ? c.default_color : "#0A0A0A",
+        name:          c ? c.display_name : (grp ? grp.name : "Uncategorized"),
+        short:         c ? c.short_name : (grp ? grp.name : "Uncategorized"),
+        default_color: c ? c.default_color : "#9CA3AF",
+        group_name:    grp ? grp.name : "",
         docket_url:    "",
         category:      c ? (c.category || "other") : "other",
         entry_number:  null,
@@ -929,10 +944,19 @@
         is_bondoro:    true,
         bondoro_kind:  (b.kind || "news").charAt(0).toUpperCase() + (b.kind || "news").slice(1),
         bondoro_url:   b.url,
-        unassigned:    !c,
+        unassigned:    !c && !grp,
       });
     });
     return out;
+  }
+
+  function findGroup(name) {
+    if (!name) return null;
+    var groups = loadGroups();
+    for (var i = 0; i < groups.length; i++) {
+      if (groups[i].name.toLowerCase() === name.toLowerCase()) return groups[i];
+    }
+    return null;
   }
 
   function caseBySlug(slug) {
@@ -948,9 +972,12 @@
     var menu = document.createElement("div");
     menu.className = "ud-th-menu";
     menu.id = "ud-assign-menu";
-    var options = [{ slug: null, label: "New Filing (unassigned)" }];
+    var options = [{ slug: null, group: null, label: "Uncategorized (no case)" }];
     CASES.forEach(function (c) {
-      options.push({ slug: c.slug, label: c.display_name });
+      options.push({ slug: c.slug, group: null, label: c.display_name });
+    });
+    loadGroups().forEach(function (g) {
+      options.push({ slug: null, group: g.name, label: "Group: " + g.name });
     });
     options.forEach(function (o) {
       var b = document.createElement("button");
@@ -958,7 +985,7 @@
       b.className = "ud-th-menu-item";
       b.textContent = o.label;
       b.addEventListener("click", function () {
-        assignBondoro(url, o.slug);
+        assignBondoro(url, o.slug, o.group);
         closeAssignMenu();
       });
       menu.appendChild(b);
@@ -975,9 +1002,12 @@
     assignMenuEl = null;
   }
 
-  function assignBondoro(url, slug) {
+  function assignBondoro(url, slug, group) {
     for (var i = 0; i < BONDORO.length; i++) {
-      if (BONDORO[i].url === url) BONDORO[i].case_slug = slug;
+      if (BONDORO[i].url === url) {
+        BONDORO[i].case_slug = slug;
+        BONDORO[i].group_name = slug ? null : (group || null);
+      }
     }
     buildAllEntries();
     render();
@@ -985,7 +1015,7 @@
     fetch("api/bondoro", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: url, case_slug: slug }),
+      body: JSON.stringify({ url: url, case_slug: slug, group_name: slug ? null : (group || null) }),
     }).then(function (r) { return r.json(); }).then(function (p) {
       noteToast(p && p.ok ? "Assignment saved" : "Save failed \u2014 " + ((p && p.error) || "try again"), !(p && p.ok));
     }).catch(function () { noteToast("Save failed \u2014 network error", true); });

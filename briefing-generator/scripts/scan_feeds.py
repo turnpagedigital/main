@@ -113,6 +113,7 @@ def main():
                     cur[k] = f[k]
             else:
                 f["case_slug"] = None
+                f["group_name"] = None
                 existing[f["url"]] = f
                 added += 1
         print(f"  ✓ {label}: {len(fresh)} item(s) in feed")
