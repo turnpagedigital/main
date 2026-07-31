@@ -7,16 +7,12 @@
     "case_number": "26-11399",
     "judge": "NOT ASSIGNED",
     "docket_id": "73476260",
-    "status": "active",
-    "court_id": ""
+    "status": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-07-30T04:47:54.330366+00:00",
-    "as_of": "Jul 30, 2026",
     "new_in_72h": 19,
     "recent": [
       {
@@ -228,12 +224,15 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-07-29",
+    "fetched_at": "2026-07-30T04:47:54.330366+00:00",
+    "as_of": "Jul 30, 2026"
   },
   "claims_administrator": {
     "name": "Kroll",
-    "url": "https://restructuring.ra.kroll.com/SleepNumber",
-    "key_dates_url": "https://restructuring.ra.kroll.com/SleepNumber"
+    "url": "https://restructuring.ra.kroll.com/SleepNumber/Home-DocketInfo",
+    "key_dates_url": ""
   },
   "coverage": [
     {
@@ -298,16 +297,6 @@
       "source": "Bloomberg Law",
       "date": "2026-06-04",
       "summary": "Bloomberg Law reported that Sleep Number's stock dropped 70% as the company laid groundwork for a bankruptcy filing, approaching lenders for new financing that could be structured as a bankruptcy loan. The firm's banker, Guggenheim Partners, declined to comment."
-    }
-  ],
-  "events": [
-    {
-      "title": "Omnibus Hearing (August 3)",
-      "date": "2026-08-03",
-      "time": "10:00 AM ET",
-      "kind": "Deadline",
-      "url": "https://restructuring.ra.kroll.com/SleepNumber/",
-      "source": "U.S. Bankruptcy Court, S.D. New York / Kroll Restructuring Administration"
     }
   ]
 }
