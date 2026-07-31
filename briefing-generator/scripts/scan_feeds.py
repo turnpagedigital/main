@@ -65,6 +65,7 @@ def parse_feed(xml_text, source):
             "id": url.rstrip("/").rsplit("/", 1)[-1][:80],
             "kind": kind,
             "source": source.get("name") or "",
+            "source_id": source.get("id") or "",
             "title": title,
             "url": url,
             "date": date,
@@ -90,6 +91,45 @@ def load_sources():
     ]
 
 
+def load_case_names():
+    """[(slug, [name variants])] from the generated manifest — for auto-matching
+    feed items to tracked cases by name."""
+    try:
+        manifest = json.loads((SOURCES.parent / "cases" / "data" / "_manifest.json")
+                              .read_text(encoding="utf-8"))
+    except Exception:
+        return []
+    out = []
+    for m in manifest:
+        names = set()
+        for key in ("display_name", "short_name"):
+            n = (m.get(key) or "").strip().lower()
+            if len(n) >= 4:
+                names.add(n)
+        if m.get("slug") and names:
+            out.append((m["slug"], sorted(names)))
+    return out
+
+
+def auto_match_cases(items):
+    """Assign case_slug to unassigned items whose text names exactly ONE
+    tracked case. Manual assignments are never touched."""
+    cases = load_case_names()
+    if not cases:
+        return 0
+    matched = 0
+    for it in items:
+        if it.get("case_slug") or it.get("group_name"):
+            continue
+        hay = ((it.get("title") or "") + " " + (it.get("excerpt") or "")).lower()
+        hits = [slug for slug, names in cases if any(n in hay for n in names)]
+        if len(hits) == 1:
+            it["case_slug"] = hits[0]
+            it["auto_matched"] = True
+            matched += 1
+    return matched
+
+
 def main():
     try:
         data = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"items": []}
@@ -109,7 +149,7 @@ def main():
         for f in fresh:
             cur = existing.get(f["url"])
             if cur:
-                for k in ("title", "date", "published_at", "excerpt", "kind", "source", "id"):
+                for k in ("title", "date", "published_at", "excerpt", "kind", "source", "source_id", "id"):
                     cur[k] = f[k]
             else:
                 f["case_slug"] = None
@@ -120,6 +160,9 @@ def main():
 
     items = sorted(existing.values(), key=lambda i: i.get("date") or "", reverse=True)
     del items[MAX_STORED:]
+    matched = auto_match_cases(items)
+    if matched:
+        print(f"  ✓ auto-matched {matched} item(s) to tracked cases")
     OUT.write_text(json.dumps({"items": items}, indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8")
     print(f"=== Feed scan done: +{added} new, {len(items)} stored ===")
