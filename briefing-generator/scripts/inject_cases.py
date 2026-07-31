@@ -42,6 +42,9 @@ THEME_SCRIPT_SUBDIR = '<script src="../theme.js"></script>' # cases/ pages
 UD_CSS = r"""  .page-title{max-width:1680px;}
   /* Main page area — no sidebar */
   .ud-page{max-width:1680px;margin:0 auto;padding:20px 32px 60px;}
+  /* Nav shares the content grid so left/right margins match the page */
+  .tn{padding:10px 0;}
+  .tn-row{max-width:1680px;padding:0 32px;}
   /* Controls bar */
   .ud-controls{background:var(--surface);border:1px solid var(--line-strong);padding:14px 20px;margin-bottom:16px;display:flex;flex-direction:row;align-items:center;gap:12px;flex-wrap:wrap;}
   .ud-search-row,.ud-filter-row{display:contents;}
@@ -201,7 +204,8 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   /* ── Mobile (≤720px): tables become stacked cards ─────────────────────── */
   @media (max-width: 720px) {
     .tn-left{flex-wrap:wrap;gap:8px 14px;}
-    .tn{padding:8px 12px;}
+    .tn{padding:8px 0;}
+    .tn-row{padding:0 12px;}
     body{overflow-x:hidden;}
     .ud-party-empty{display:none;}
     .ud-page{padding:12px 12px 48px;}
@@ -281,7 +285,7 @@ PAGE_CSS = """<style>
   .tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1180px;margin:0 auto;}
   .tn-left{display:flex;align-items:center;gap:16px;}
   .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
-  .tn-brand-logo{height:26px;width:auto;filter:invert(1);}
+  .tn-brand-logo{height:34px;width:auto;filter:invert(1);}
   [data-theme="light"] .tn-brand-logo{filter:none;}
   .tn-back{color:rgba(255,255,255,0.72);font-size:12px;text-decoration:none;border-left:1px solid rgba(255,255,255,0.18);padding-left:16px;}
   .tn-back:hover{color:#fff;}
