@@ -111,6 +111,8 @@
   var VOTES = {};
   var UPLOADS = {};
   var UNASSIGNED_KEY = "__unassigned__";
+  var RENDERED = [];
+  var cursorIdx = -1;
   var sortDir = "desc";
   var searchText = "";
   var dateFrom = "";
@@ -818,8 +820,10 @@
         'data-nk="' + esc(nk) + '" title="' + (bm ? "Remove bookmark" : "Bookmark") + '">' + (bm ? "\u2605" : "\u2606") + "</button></td>" +
       '<td class="ud-mark-cell"><button type="button" class="ud-snz-btn' + (snz ? " ud-snz-on" : "") + '" ' +
         'data-nk="' + esc(nk) + '" title="' + esc(snzTitle) + '"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" style=\"vertical-align:middle\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg></button></td>' +
+      '<td class="ud-mark-cell"><button type="button" class="ud-hide-btn' + (rec && rec.hidden ? " ud-hide-on" : "") + '" ' +
+        'data-nk="' + esc(nk) + '" title="' + (rec && rec.hidden ? "Unhide this row" : "Hide this row (H) \u2014 still appears in search") + '"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94\"/><path d=\"M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19\"/><path d=\"M14.12 14.12a3 3 0 1 1-4.24-4.24\"/><line x1=\"1\" y1=\"1\" x2=\"23\" y2=\"23\"/></svg></button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-del-btn" ' +
-        'data-nk="' + esc(nk) + '" title="Delete this row (restorable from the toolbar)"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M3 6h18\"/><path d=\"M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2\"/><path d=\"M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6\"/><path d=\"M10 11v6\"/><path d=\"M14 11v6\"/></svg></button></td>' +
+        'data-nk="' + esc(nk) + '" title="Delete this row (X) \u2014 restorable for 30 days"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M3 6h18\"/><path d=\"M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2\"/><path d=\"M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6\"/><path d=\"M10 11v6\"/><path d=\"M14 11v6\"/></svg></button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
         'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button></td>'
     );
@@ -835,7 +839,7 @@
       countEl.textContent = entries.length + " entr" + (entries.length === 1 ? "y" : "ies");
     }
     if (!entries.length) {
-      tbody.innerHTML = '<tr><td colspan="9" class="ud-empty">No entries match the current filters.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="10" class="ud-empty">No entries match the current filters.</td></tr>';
       return;
     }
     var prevDay = null;
@@ -849,9 +853,10 @@
         var wd = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][new Date(d + "T00:00:00").getDay()];
         label = wd + " \u00b7 " + (e.date_display || d);
       }
-      return '<tr class="ud-day-row"><td colspan="9">' + esc(label) + "</td></tr>";
+      return '<tr class="ud-day-row"><td colspan="10">' + esc(label) + "</td></tr>";
     }
-    tbody.innerHTML = entries.map(function (e) {
+    RENDERED = entries;
+    tbody.innerHTML = entries.map(function (e, ridx) {
       var header = dayHeader(e);
       var bg = getBg(e.slug, e.default_color);
       var fg = getFg(e.slug, bg);
@@ -890,7 +895,7 @@
           (e.is_new ? " ud-row-new" : "");
         return (
           header +
-          '<tr class="' + artRowCls + '">' +
+          '<tr class="' + artRowCls + '" data-ridx="' + ridx + '">' +
             '<td class="ud-date">' + esc(fmtTime(e)) + "</td>" +
             '<td class="ud-case">' + pill + "</td>" +
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
@@ -923,7 +928,7 @@
       var rowCls = e.is_new ? ' class="ud-row-new"' : "";
       return (
         header +
-        "<tr" + rowCls + ">" +
+        "<tr" + rowCls + ' data-ridx="' + ridx + '">' +
           '<td class="ud-date">' + esc(fmtTime(e)) + "</td>" +
           '<td class="ud-case">' + pill + "</td>" +
           '<td class="ud-party">' + partyHtml + "</td>" +
@@ -933,6 +938,82 @@
         "</tr>"
       );
     }).join("");
+    applyCursor(false);
+  }
+
+  // ── Keyboard navigation: arrows move a row cursor, letters act on it ──────
+  function cursorRowEl() {
+    return document.querySelector('#ud-tbody tr[data-ridx="' + cursorIdx + '"]');
+  }
+
+  function applyCursor(scroll) {
+    document.querySelectorAll("#ud-tbody tr.ud-row-cursor").forEach(function (r) {
+      r.classList.remove("ud-row-cursor");
+    });
+    if (cursorIdx < 0) return;
+    if (cursorIdx >= RENDERED.length) cursorIdx = RENDERED.length - 1;
+    var row = cursorRowEl();
+    if (row) {
+      row.classList.add("ud-row-cursor");
+      if (scroll) row.scrollIntoView({ block: "nearest" });
+    }
+  }
+
+  function moveCursor(delta) {
+    if (!RENDERED.length) return;
+    cursorIdx = cursorIdx < 0 ? (delta > 0 ? 0 : RENDERED.length - 1)
+      : Math.max(0, Math.min(RENDERED.length - 1, cursorIdx + delta));
+    applyCursor(true);
+  }
+
+  function handleShortcut(ev) {
+    if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+    var t = ev.target || {};
+    var tag = (t.tagName || "").toLowerCase();
+    if (tag === "input" || tag === "textarea" || tag === "select" || t.isContentEditable) return;
+    if (activeNoteKey) return;  // note modal open — let it have the keyboard
+    if (ev.key === "ArrowDown" || ev.key === "ArrowUp") {
+      ev.preventDefault();
+      moveCursor(ev.key === "ArrowDown" ? 1 : -1);
+      return;
+    }
+    if (cursorIdx < 0 || !RENDERED[cursorIdx]) return;
+    var e = RENDERED[cursorIdx];
+    var nk = entryNoteKey(e);
+    var row = cursorRowEl();
+    switch (ev.key.toLowerCase()) {
+      case "x":
+        setRowState(nk, { deleted_at: new Date().toISOString() }, "Deleted \u2014 restorable from the toolbar for 30 days");
+        break;
+      case "h":
+        var hid = !!(NOTES[nk] && NOTES[nk].hidden);
+        setRowState(nk, { hidden: !hid }, hid ? "Row unhidden" : "Hidden \u2014 still findable via search");
+        break;
+      case "r":
+        var link = row && (row.querySelector(".ud-file-btn") || row.querySelector(".ud-doc a.ud-link"));
+        if (link) link.click();
+        else noteToast("No link on this row", true);
+        break;
+      case "n":
+        openNoteModal(nk);
+        break;
+      case "z":
+        var sb = row && row.querySelector(".ud-snz-btn");
+        if (sb) openSnoozeMenu(nk, sb);
+        break;
+      case "u":
+        pendingUploadKey = nk;
+        ensureUploadInput().click();
+        break;
+      case "d":
+        var dl = row && row.querySelector(".ud-file-dl");
+        if (dl) dl.click();
+        else noteToast("No uploaded document on this row", true);
+        break;
+      default:
+        return;
+    }
+    ev.preventDefault();
   }
 
   // ── Dynamic data loading ───────────────────────────────────────────────────
@@ -1004,7 +1085,7 @@
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
         tbody.innerHTML =
-          '<tr><td colspan="9" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
+          '<tr><td colspan="10" class="ud-empty">Failed to load docket data: ' + esc(String(err)) + "</td></tr>";
       }
       var meta = document.getElementById("ud-meta");
       if (meta) meta.textContent = "Failed to load";
@@ -1769,7 +1850,6 @@
     renderDue();
   }
 
-  var trashMenuEl = null;
 
   function setRowState(nk, changes, toast) {
     var rec = NOTES[nk] || {};
@@ -1783,56 +1863,6 @@
     render();
     updateHiddenInfo();
     if (toast) noteToast(toast, false);
-  }
-
-  function openTrashMenu(nk, anchor) {
-    closeTrashMenu();
-    var rec = NOTES[nk] || {};
-    var menu = document.createElement("div");
-    menu.className = "ud-th-menu";
-    menu.id = "ud-trash-menu";
-    var options = [];
-    if (rec.hidden) {
-      options.push({ title: "Unhide row", sub: "Bring it back into the feed",
-        act: { hidden: false }, toast: "Row unhidden" });
-    } else {
-      options.push({ title: "Hide row", sub: "Leaves the feed \u2014 still appears in search results",
-        act: { hidden: true }, toast: "Hidden \u2014 still findable via search" });
-    }
-    if (rec.deleted_at) {
-      options.push({ title: "Restore row", sub: "Undo the deletion",
-        act: { deleted_at: "" }, toast: "Row restored" });
-    } else {
-      options.push({ title: "Delete row", sub: "Removed everywhere \u2014 restorable for 30 days",
-        act: { deleted_at: new Date().toISOString() }, toast: "Deleted \u2014 restorable from the toolbar for 30 days" });
-    }
-    options.forEach(function (o) {
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "ud-th-menu-item";
-      var t = document.createElement("div");
-      t.textContent = o.title;
-      var s = document.createElement("div");
-      s.className = "ud-mi-sub";
-      s.textContent = o.sub;
-      b.appendChild(t);
-      b.appendChild(s);
-      b.addEventListener("click", function () {
-        setRowState(nk, o.act, o.toast);
-        closeTrashMenu();
-      });
-      menu.appendChild(b);
-    });
-    document.body.appendChild(menu);
-    var rect = anchor.getBoundingClientRect();
-    menu.style.top = (rect.bottom + window.scrollY + 4) + "px";
-    menu.style.left = clampMenuLeft(menu, rect.left + window.scrollX - 140) + "px";
-    trashMenuEl = menu;
-  }
-
-  function closeTrashMenu() {
-    if (trashMenuEl && trashMenuEl.parentNode) trashMenuEl.parentNode.removeChild(trashMenuEl);
-    trashMenuEl = null;
   }
 
   function updateHiddenInfo() {
@@ -2286,8 +2316,19 @@
           removeUpload(ud.getAttribute("data-updel-nk"), Number(ud.getAttribute("data-updel-i")));
           return;
         }
+        var hd = ev.target.closest(".ud-hide-btn");
+        if (hd) {
+          var hnk = hd.getAttribute("data-nk");
+          var hidNow = !!(NOTES[hnk] && NOTES[hnk].hidden);
+          setRowState(hnk, { hidden: !hidNow }, hidNow ? "Row unhidden" : "Hidden \u2014 still findable via search");
+          return;
+        }
         var del = ev.target.closest(".ud-del-btn");
-        if (del) { ev.stopPropagation(); openTrashMenu(del.getAttribute("data-nk"), del); return; }
+        if (del) {
+          setRowState(del.getAttribute("data-nk"), { deleted_at: new Date().toISOString() },
+            "Deleted \u2014 restorable from the toolbar for 30 days");
+          return;
+        }
         var nb = ev.target.closest(".ud-note-btn");
         if (nb) { openNoteModal(nb.getAttribute("data-nk")); }
       });
@@ -2306,14 +2347,15 @@
         if (ev.target === noteOverlay) closeNoteModal();
       });
     }
+    document.addEventListener("keydown", handleShortcut);
+
     document.addEventListener("keydown", function (ev) {
       if (ev.key === "Escape" && activeNoteKey) closeNoteModal();
-      if (ev.key === "Escape") { closeAssignMenu(); closeSnoozeMenu(); closeTrashMenu(); }
+      if (ev.key === "Escape") { closeAssignMenu(); closeSnoozeMenu(); }
     });
     document.addEventListener("click", function (ev) {
       if (assignMenuEl && !assignMenuEl.contains(ev.target)) closeAssignMenu();
       if (snoozeMenuEl && !snoozeMenuEl.contains(ev.target)) closeSnoozeMenu();
-      if (trashMenuEl && !trashMenuEl.contains(ev.target)) closeTrashMenu();
     });
     setInterval(renderDue, 60000);
 
