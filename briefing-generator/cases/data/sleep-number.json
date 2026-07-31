@@ -1190,6 +1190,20 @@
   },
   "coverage": [
     {
+      "headline": "Sleep Number Can Keep $1.8M Employee Retention Promise",
+      "url": "https://www.law360.com/bankruptcy-authority/large-cap/articles/2506863/sleep-number-can-keep-1-8m-employee-retention-promise",
+      "source": "Law360",
+      "date": "2026-07-30",
+      "summary": "A New York bankruptcy judge overruled the U.S. Trustee's objection to Sleep Number's employee retention plan, finding that vice president and director-level employees are not insiders and that the risk of departure was real."
+    },
+    {
+      "headline": "Sleep Number Employees Deemed Non-Insiders, Clearing $1.8M Retention Plan",
+      "url": "https://www.law.com/newyorklawjournal/2026/07/30/sleep-number-employees-deemed-non-insiders-clearing-18m-retention-plan/",
+      "source": "New York Law Journal (Law.com)",
+      "date": "2026-07-30",
+      "summary": "A Manhattan bankruptcy judge ruled that VP and director titles alone did not make Sleep Number employees insiders, allowing the $1.8 million retention plan to be evaluated under a more flexible Bankruptcy Code standard."
+    },
+    {
       "headline": "Meet The Attys Guiding Sleep Number Creditor Group",
       "url": "https://www.law360.com/bankruptcy-authority/articles/2504362/meet-the-attys-guiding-sleep-number-creditor-group",
       "source": "Law360",
@@ -1251,6 +1265,16 @@
       "source": "Bloomberg Law",
       "date": "2026-06-04",
       "summary": "Bloomberg Law reported that Sleep Number's stock dropped 70% as the company laid groundwork for a bankruptcy filing, approaching lenders for new financing that could be structured as a bankruptcy loan. The firm's banker, Guggenheim Partners, declined to comment."
+    }
+  ],
+  "events": [
+    {
+      "title": "General Claims Bar Date — Sleep Number Corporation (Case No. 26-11399)",
+      "date": "2026-09-10",
+      "time": "11:59 PM ET",
+      "kind": "Deadline",
+      "url": "https://restructuring.ra.kroll.com/SleepNumber/",
+      "source": "Kroll Restructuring Administration"
     }
   ]
 }

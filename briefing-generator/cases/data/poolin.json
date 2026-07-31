@@ -829,5 +829,44 @@
     "url": "https://www.veritaglobal.net/poolin/document/list/6554",
     "key_dates_url": ""
   },
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Poolin Was Bitcoin's Biggest Mining Pool and Now It's Filing for Bankruptcy",
+      "url": "https://www.coindesk.com/markets/2026/07/24/poolin-was-bitcoin-s-biggest-mining-pool-and-now-it-s-filing-for-bankruptcy",
+      "source": "CoinDesk",
+      "date": "2026-07-24",
+      "summary": "CoinDesk covers Poolin's Chapter 11 filing in New Jersey, detailing how the firm once held an 18–20% share of global Bitcoin hashrate before a 2022 liquidity crisis left 11,700 customers holding $163.7 million in frozen funds, with a $52 million stalking-horse bid from Thor CALAP LLC now the primary creditor recovery vehicle."
+    },
+    {
+      "headline": "Poolin, Once One of Bitcoin's Biggest Mining Pools, Files for Bankruptcy",
+      "url": "https://finance.yahoo.com/markets/crypto/articles/poolin-once-one-bitcoins-biggest-174448133.html",
+      "source": "Yahoo Finance",
+      "date": "2026-07-24",
+      "summary": "Poolin Technology Pte. Ltd. and its U.S. affiliates Lonestar Dream Inc. and Lonestar Taproot LLC filed voluntary Chapter 11 petitions in the U.S. Bankruptcy Court for the District of New Jersey, with court documents listing over $100 million in prepetition obligations against less than $10 million in assets."
+    },
+    {
+      "headline": "Bitcoin mining giant Poolin files for bankruptcy owing 11,700 users $164 million",
+      "url": "https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/",
+      "source": "CryptoSlate",
+      "date": "2026-07-24",
+      "summary": "CryptoSlate reports that Poolin's first-day declaration lists $163,723,500 in unsecured wallet-holder IOUs and a proposed sale process including a September 8 qualified-offer deadline, a September 10 auction if multiple qualified bids emerge, a sale hearing no later than September 16, and a November 30 closing deadline."
+    },
+    {
+      "headline": "Crypto Miner Poolin Hits Ch. 11 After China Ban, Market Slump",
+      "url": "https://www.law360.com/bankruptcy/articles/2504929",
+      "source": "Law360",
+      "date": "2026-07-23",
+      "summary": "Law360 reports that Bitcoin miner Poolin Technology filed for Chapter 11 in New Jersey bankruptcy court with more than $173 million in liabilities, citing price volatility and China's ban on cryptocurrency mining, alongside plans for an asset sale."
+    }
+  ],
+  "events": [
+    {
+      "title": "Poolin Asset Sale — Qualified Bid Deadline",
+      "date": "2026-09-08",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/",
+      "source": "U.S. Bankruptcy Court, D. N.J. (Case No. 26-18325)"
+    }
+  ]
 }
