@@ -30,7 +30,7 @@ function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
 const CASES_DIR = "briefing-generator/cases";
 
 // Pill palette — matches inject_cases.py _PILL_PALETTE (bg colors only)
-const PILL_PALETTE = ["#D4FF00", "#60A5FA", "#FB923C", "#C084FC", "#34D399", "#F87171"];
+const PILL_PALETTE = ["#D4FF00", "#94C6F8", "#B3A8F0", "#7EF4C2", "#F2AAEC", "#1B3A4B"];
 
 function shortName(displayName) {
   const m = (displayName || "").match(/^(.+?)\s+vs?\.\s+/i);
