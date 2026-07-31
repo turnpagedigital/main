@@ -50,9 +50,13 @@ def parse_feed(xml_text, source):
                 date = dt.datetime.strptime(pub[:16], "%a, %d %b %Y").date().isoformat()
             except ValueError:
                 pass
+        kind = (source.get("kind") or "News").lower()
+        # Title-based reclassification: sale notices get their own tag
+        if re.search(r"ucc\s+article\s*9\s+sale|notice\s+of\s+public\s+sale", title, re.I):
+            kind = "Asset Sale"
         items.append({
             "id": url.rstrip("/").rsplit("/", 1)[-1][:80],
-            "kind": (source.get("kind") or "News").lower(),
+            "kind": kind,
             "source": source.get("name") or "",
             "title": title,
             "url": url,
