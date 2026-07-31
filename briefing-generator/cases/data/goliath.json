@@ -7,24 +7,25 @@
     "case_number": "26-13174-RAM",
     "judge": "Robert Mark",
     "docket_id": "72497647",
-    "status": "active"
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
-    "date_last_filing": "2026-07-28",
-    "fetched_at": "2026-07-30T16:21:36.841188+00:00",
-    "as_of": "Jul 30, 2026",
+    "date_last_filing": "",
+    "fetched_at": "2026-07-31T03:56:11.732902+00:00",
+    "as_of": "Jul 31, 2026",
     "backfilled": false,
-    "new_in_72h": 3,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 22,
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
         "description": "Disclosure of Compensation",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -33,7 +34,7 @@
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
         "description": "Schedules/Statements or Amended Schedules/Statements",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -42,7 +43,7 @@
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
         "description": "Auto-Docket of Credit Card",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -53,7 +54,7 @@
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
         "description": "Disclosure of Compensation",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -62,7 +63,7 @@
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
         "description": "Schedules/Statements or Amended Schedules/Statements",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -71,7 +72,7 @@
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
         "description": "Auto-Docket of Credit Card",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -309,7 +310,8 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=72497647&fields=entry_number%2Cdate_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=2"
   },
   "claims_administrator": null,
   "coverage": [

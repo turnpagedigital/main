@@ -39,9 +39,10 @@
     "slug": "harvest-sherwood",
     "display_name": "Harvest Sherwood",
     "short_name": "Harvest Sherwood",
-    "docket_url": "",
-    "court": "N.D. Tex.",
-    "default_color": "#34D399"
+    "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
+    "default_color": "#34D399",
+    "category": "bankruptcy",
+    "court": "N.D. Tex."
   },
   {
     "slug": "kahan",
