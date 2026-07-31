@@ -55,7 +55,7 @@ $100-$500M liabilities = 2-10c recoveries
 
 ### (no docket number) — 2026-07-31
 
-> Richard D. Wood Jr., Who Built Wawa Into a Cult-Favorite Convenience Giant, Dies at 88 — To keep executives grounded, the CEO insisted that every executive spend a day each year working in one of the 
+> Stock Market Today: Apple Slump Drags on Tech — Stocks are reversing their early gains
 
 ### (no docket number) — 2026-07-31
 
