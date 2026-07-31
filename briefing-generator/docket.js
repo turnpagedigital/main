@@ -1270,6 +1270,7 @@
         entry_number: entry.entry_number,
         date_filed: entry.date_filed,
         snippet: (entry.description || "").slice(0, 200),
+        url: entry.is_article ? (entry.doc_url || "") : "",
       } : {},
     });
 
