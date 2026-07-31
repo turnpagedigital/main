@@ -226,12 +226,8 @@ def patch(slug):
     return
   head, body, tail = body_m.group(1), body_m.group(2), body_m.group(3)
 
-  # Preserve "Today at a Glance" overview section + recommended actions area
-  glance_m = re.search(r'<h2>Today at a Glance</h2>\s*<p>.*?</p>\s*', body, re.DOTALL)
-  glance_html = glance_m.group(0) if glance_m else ""
-
-  # Reconstruct the body with glance + new advisory content
-  new_body = "\n" + glance_html + "\n" + body_html + "\n      "
+  # The briefing body IS the whole panel now
+  new_body = "\n" + body_html + "\n      "
   new_html = html.replace(head + body + tail, head + new_body + tail, 1)
 
   if new_html != original:
