@@ -1,6 +1,12 @@
 # Intel Docket Notes
 
-_Updated 2026-07-31 04:36 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-07-31 04:39 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+
+## BlockFills
+
+### Dkt. 549 — 2026-07-30
+
+> Compensation - Application (Attorney)
 
 ## Concord Music Group v. Anthropic
 
