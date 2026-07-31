@@ -57,7 +57,7 @@ $100-$500M liabilities = 2-10c recoveries
 
 ### (no docket number) — 2026-07-31
 
-> Westinghouse Electric Files Confidentially for IPO — Nuclear technology and services supplier Westinghouse Electric has confidentially filed a draft registration statement with the Securities and Exch
+> Situational Awareness Down 67% in July in AI Stock Rout — “We let you down this month,” Leopold Aschenbrenner’s hedge-fund firm told investors after selling the bulk of its stocks to Citadel.
 
 ### (no docket number) — 2026-07-31
 
