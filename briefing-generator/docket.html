@@ -181,6 +181,14 @@
   .ud-note-text:focus{border-color:var(--neon);}
   .ud-note-actions{display:flex;align-items:center;gap:8px;}
   .ud-note-status{font-size:12px;color:var(--ink-40);}
+  .ud-attach{border-top:1px solid var(--line);padding-top:10px;display:flex;flex-direction:column;gap:8px;}
+  .ud-attach-head{font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-40);}
+  .ud-attach-list{display:flex;flex-direction:column;gap:5px;font-size:13px;}
+  .ud-attach-item{display:flex;align-items:center;gap:8px;}
+  .ud-attach-item .ud-src-del{margin-left:auto;}
+  .ud-attach-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+  .ud-attach-row input[type="file"]{font-size:12px;color:var(--ink-60);flex:1;min-width:180px;}
+  .ud-clip{margin-left:6px;color:var(--ink-40);vertical-align:middle;}
   .ud-th-filter{cursor:pointer;user-select:none;}
   .ud-th-filter:hover,.ud-th-filter.ud-th-on{color:var(--ink);}
   .ud-th-caret{font-size:9px;}
@@ -357,6 +365,14 @@
     <div class="ud-note-title" id="ud-note-title"></div>
     <div class="ud-note-meta" id="ud-note-meta"></div>
     <textarea id="ud-note-text" class="ud-note-text" placeholder="Notes for this entry…"></textarea>
+    <div class="ud-attach">
+      <div class="ud-attach-head">Attached documents</div>
+      <div id="ud-attach-list" class="ud-attach-list"></div>
+      <div class="ud-attach-row">
+        <input type="file" id="ud-attach-file" accept="application/pdf">
+        <button type="button" id="ud-attach-upload" class="ud-dd-save-btn">Upload PDF</button>
+      </div>
+    </div>
     <div class="ud-note-actions">
       <button type="button" id="ud-note-delete" class="ud-clear-btn">Delete note</button>
       <span style="flex:1"></span>

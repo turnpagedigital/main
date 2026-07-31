@@ -109,6 +109,7 @@
   var NOTES = {};
   var BONDORO = [];
   var VOTES = {};
+  var UPLOADS = {};
   var showMuted = false;
   var UNASSIGNED_KEY = "__unassigned__";
   var sortDir = "desc";
@@ -304,8 +305,11 @@
       if (dateFrom && e.date_filed && e.date_filed < dateFrom) return false;
       if (dateTo && e.date_filed && e.date_filed > dateTo) return false;
       if (sq) {
+        var docText = docsFor(entryNoteKey(e)).map(function (d) {
+          return (d.name || "") + " " + (d.text || "");
+        }).join(" ");
         var haystack = [
-          e.date_filed, e.date_display, fmtTime(e),
+          docText, e.date_filed, e.date_display, fmtTime(e),
           e.name, e.short,
           e.party,
           e.description,
@@ -712,7 +716,7 @@
         'data-nk="' + esc(nk) + '" title="' + esc(snzTitle) + '"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" style=\"vertical-align:middle\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg></button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-del-btn" ' +
         'data-nk="' + esc(nk) + '" title="Delete this row (restorable from the toolbar)"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M3 6h18\"/><path d=\"M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2\"/><path d=\"M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6\"/><path d=\"M10 11v6\"/><path d=\"M14 11v6\"/></svg></button></td>' +
-      '<td class="ud-mark-cell"><button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
+      '<td class="ud-mark-cell">' + (docsFor(nk).length ? '<span class="ud-clip" title="' + docsFor(nk).length + ' attached document(s)">\ud83d\udcce</span>' : "") + '<button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
         'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button></td>'
     );
   }
@@ -890,6 +894,7 @@
       loadNotes();
       loadBondoro();
       loadVotes();
+      loadUploads();
     }).catch(function (err) {
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
@@ -1020,6 +1025,100 @@
     }).then(function (r) { return r.json(); }).then(function (p) {
       noteToast(p && p.ok ? "Assignment saved" : "Save failed \u2014 " + ((p && p.error) || "try again"), !(p && p.ok));
     }).catch(function () { noteToast("Save failed \u2014 network error", true); });
+  }
+
+  // ── Attached documents (uploads.json via /intel/api/upload) ───────────────
+  function loadUploads() {
+    fetchJson("api/upload")
+      .then(function (p) { return (p && p.ok && p.docs) || {}; })
+      .catch(function () {
+        return fetchJson("uploads.json")
+          .then(function (f) { return (f && f.docs) || {}; })
+          .catch(function () { return {}; });
+      })
+      .then(function (d) {
+        UPLOADS = d;
+        render();
+      });
+  }
+
+  function docsFor(nk) {
+    return UPLOADS[nk] || [];
+  }
+
+  function renderAttachList(nk) {
+    var list = document.getElementById("ud-attach-list");
+    if (!list) return;
+    var docs = docsFor(nk);
+    if (!docs.length) {
+      list.innerHTML = '<div class="ud-dd-empty">No documents attached.</div>';
+      return;
+    }
+    list.innerHTML = docs.map(function (d, i) {
+      var href = "/" + d.path.replace(/^briefing-generator\//, "intel/");
+      return (
+        '<div class="ud-attach-item">' +
+          '<a class="ud-link" href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(d.name) + "</a>" +
+          '<span class="uc-snippet">' + Math.round((d.size || 0) / 1024) + " KB" +
+            (d.text ? " \u00b7 searchable" : " \u00b7 text pending") + "</span>" +
+          '<button type="button" class="ud-src-del" data-attach-idx="' + i + '" title="Remove document">\u00d7</button>' +
+        "</div>"
+      );
+    }).join("");
+    list.querySelectorAll("[data-attach-idx]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var d = docsFor(nk)[Number(b.getAttribute("data-attach-idx"))];
+        if (!d) return;
+        noteToast("Removing document\u2026", false);
+        fetch("api/upload", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: nk, path: d.path }),
+        }).then(function (r) { return r.json(); }).then(function (p) {
+          if (p && p.ok) {
+            UPLOADS[nk] = docsFor(nk).filter(function (x) { return x.path !== d.path; });
+            if (!UPLOADS[nk].length) delete UPLOADS[nk];
+            renderAttachList(nk);
+            render();
+            noteToast("Document removed", false);
+          } else {
+            noteToast("Remove failed \u2014 " + ((p && p.error) || "try again"), true);
+          }
+        }).catch(function () { noteToast("Remove failed \u2014 network error", true); });
+      });
+    });
+  }
+
+  function uploadAttachment(nk) {
+    var input = document.getElementById("ud-attach-file");
+    var file = input && input.files && input.files[0];
+    if (!file) { noteToast("Choose a PDF first", true); return; }
+    if (!/\.pdf$/i.test(file.name)) { noteToast("PDF files only", true); return; }
+    if (file.size > 15 * 1024 * 1024) { noteToast("File too large (15MB max)", true); return; }
+    noteToast("Uploading " + file.name + "\u2026", false);
+    var reader = new FileReader();
+    reader.onload = function () {
+      var b64 = String(reader.result).split(",")[1] || "";
+      fetch("api/upload", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key: nk, filename: file.name, content_base64: b64 }),
+      }).then(function (r) { return r.json(); }).then(function (p) {
+        if (p && p.ok) {
+          (UPLOADS[nk] = UPLOADS[nk] || []).push({
+            name: file.name, path: p.path, size: file.size,
+            uploaded_at: new Date().toISOString(), text: "",
+          });
+          input.value = "";
+          renderAttachList(nk);
+          render();
+          noteToast("Uploaded \u2014 searchable after the next hourly sync", false);
+        } else {
+          noteToast("Upload failed \u2014 " + ((p && p.error) || "try again"), true);
+        }
+      }).catch(function () { noteToast("Upload failed \u2014 network error", true); });
+    };
+    reader.readAsDataURL(file);
   }
 
   // ── Up/down votes on news items — teaches which sources to surface ────────
@@ -1341,6 +1440,7 @@
     }
     if (text) text.value = rec.note || "";
     if (status) status.textContent = "";
+    renderAttachList(nk);
     var overlay = document.getElementById("ud-note-overlay");
     if (overlay) overlay.style.display = "flex";
     if (text) text.focus();
@@ -2066,6 +2166,13 @@
     }
 
     // Note modal buttons
+    var attachBtn = document.getElementById("ud-attach-upload");
+    if (attachBtn) {
+      attachBtn.addEventListener("click", function () {
+        if (activeNoteKey) uploadAttachment(activeNoteKey);
+      });
+    }
+
     var noteSave = document.getElementById("ud-note-save");
     var noteCancel = document.getElementById("ud-note-cancel");
     var noteDelete = document.getElementById("ud-note-delete");
