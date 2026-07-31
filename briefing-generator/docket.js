@@ -250,7 +250,8 @@
       if (rowKind === "filings" && e.is_article) return false;
       if (rowKind === "articles" && !e.is_article) return false;
       var hrec = NOTES[entryNoteKey(e)];
-      if (hrec && hrec.hidden) return false;
+      if (hrec && hrec.deleted_at) return false;
+      if (hrec && hrec.hidden && !searchText.trim()) return false;
       if (bmOnly || noteOnly) {
         var mrec = NOTES[entryNoteKey(e)];
         if (bmOnly && !(mrec && mrec.bookmarked)) return false;
@@ -878,10 +879,10 @@
         doc_url:       b.url,
         landmark:      "",
         type:          "article",
-        party:         "Bondoro",
+        party:         b.source || "Bondoro",
         is_article:    true,
         is_bondoro:    true,
-        bondoro_kind:  b.kind === "summary" ? "Summary" : "Alert",
+        bondoro_kind:  (b.kind || "news").charAt(0).toUpperCase() + (b.kind || "news").slice(1),
         bondoro_url:   b.url,
         unassigned:    !c,
       });
@@ -943,6 +944,102 @@
     }).then(function (r) { return r.json(); }).then(function (p) {
       noteToast(p && p.ok ? "Assignment saved" : "Save failed \u2014 " + ((p && p.error) || "try again"), !(p && p.ok));
     }).catch(function () { noteToast("Save failed \u2014 network error", true); });
+  }
+
+  // ── News feed sources manager (feed-sources.json via /intel/api/feed-sources)
+  var FEED_SOURCES = [];
+
+  function renderSourceList() {
+    var list = document.getElementById("ud-src-list");
+    if (!list) return;
+    if (!FEED_SOURCES.length) {
+      list.innerHTML = '<div class="ud-dd-empty">No sources configured.</div>';
+      return;
+    }
+    list.innerHTML = FEED_SOURCES.map(function (s, i) {
+      return (
+        '<div class="ud-src-row">' +
+          '<input type="checkbox" data-idx="' + i + '"' + (s.enabled !== false ? " checked" : "") + ' title="Enabled">' +
+          '<span class="ud-src-name">' + esc(s.name) + "</span>" +
+          '<span class="ud-src-url" title="' + esc(s.url) + '">' + esc(s.url) + "</span>" +
+          '<span class="ud-src-kind">' + esc(s.kind || "News") + "</span>" +
+          '<button type="button" class="ud-src-del" data-idx="' + i + '" title="Remove source">\u00d7</button>' +
+        "</div>"
+      );
+    }).join("");
+    list.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        FEED_SOURCES[Number(cb.getAttribute("data-idx"))].enabled = cb.checked;
+      });
+    });
+    list.querySelectorAll(".ud-src-del").forEach(function (b) {
+      b.addEventListener("click", function () {
+        FEED_SOURCES.splice(Number(b.getAttribute("data-idx")), 1);
+        renderSourceList();
+      });
+    });
+  }
+
+  function srcStatus(text, isError) {
+    var el = document.getElementById("ud-src-status");
+    if (el) {
+      el.textContent = text;
+      el.style.color = isError ? "#C84141" : "";
+    }
+  }
+
+  function openSourcesModal() {
+    var overlay = document.getElementById("ud-src-overlay");
+    if (overlay) overlay.style.display = "flex";
+    srcStatus("Loading\u2026");
+    fetchJson("api/feed-sources")
+      .then(function (p) { return (p && p.ok && p.sources) || null; })
+      .catch(function () {
+        return fetchJson("feed-sources.json")
+          .then(function (f) { return (f && f.sources) || []; })
+          .catch(function () { return []; });
+      })
+      .then(function (sources) {
+        FEED_SOURCES = sources || [];
+        renderSourceList();
+        srcStatus("");
+      });
+  }
+
+  function closeSourcesModal() {
+    var overlay = document.getElementById("ud-src-overlay");
+    if (overlay) overlay.style.display = "none";
+  }
+
+  function addSourceFromForm() {
+    var name = (document.getElementById("ud-src-name").value || "").trim();
+    var url = (document.getElementById("ud-src-url").value || "").trim();
+    var kind = (document.getElementById("ud-src-kind").value || "").trim() || "News";
+    if (!name || !/^https?:\/\//.test(url)) {
+      srcStatus("Name and a valid feed URL are required", true);
+      return;
+    }
+    FEED_SOURCES.push({ name: name, url: url, kind: kind, enabled: true });
+    document.getElementById("ud-src-name").value = "";
+    document.getElementById("ud-src-url").value = "";
+    document.getElementById("ud-src-kind").value = "";
+    srcStatus("");
+    renderSourceList();
+  }
+
+  function saveSources() {
+    srcStatus("Saving\u2026");
+    fetch("api/feed-sources", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sources: FEED_SOURCES }),
+    }).then(function (r) { return r.json(); }).then(function (p) {
+      if (p && p.ok) {
+        srcStatus("Saved \u2014 new sources pull on the next daily scan");
+      } else {
+        srcStatus((p && p.error) || "Save failed", true);
+      }
+    }).catch(function () { srcStatus("Save failed \u2014 network error", true); });
   }
 
   // ── Bookmarks + notes (stored in the repo via /intel/api/notes) ────────────
@@ -1012,6 +1109,7 @@
       note: rec.note || "",
       snooze_until: rec.snooze_until || "",
       hidden: !!rec.hidden,
+      deleted_at: rec.deleted_at || "",
       context: entry ? {
         case_slug: entry.slug,
         case_name: entry.name,
@@ -1327,33 +1425,79 @@
     renderDue();
   }
 
-  function hideRow(nk) {
+  var trashMenuEl = null;
+
+  function setRowState(nk, changes, toast) {
     var rec = NOTES[nk] || {};
-    rec.hidden = true;
-    NOTES[nk] = rec;
+    Object.keys(changes).forEach(function (k) { rec[k] = changes[k]; });
+    if (!rec.bookmarked && !(rec.note || "").trim() && !rec.snooze_until && !rec.hidden && !rec.deleted_at) {
+      delete NOTES[nk];
+    } else {
+      NOTES[nk] = rec;
+    }
     pushNote(nk);
     render();
     updateHiddenInfo();
-    noteToast("Row deleted \u2014 restore from the toolbar", false);
+    if (toast) noteToast(toast, false);
+  }
+
+  function openTrashMenu(nk, anchor) {
+    closeTrashMenu();
+    var rec = NOTES[nk] || {};
+    var menu = document.createElement("div");
+    menu.className = "ud-th-menu";
+    menu.id = "ud-trash-menu";
+    var options = [];
+    if (rec.hidden) options.push({ label: "Unhide", act: { hidden: false }, toast: "Row unhidden" });
+    else options.push({ label: "Hide \u2014 stays searchable", act: { hidden: true }, toast: "Hidden \u2014 still findable via search" });
+    if (rec.deleted_at) options.push({ label: "Restore", act: { deleted_at: "" }, toast: "Row restored" });
+    else options.push({ label: "Delete \u2014 restorable for 30 days", act: { deleted_at: new Date().toISOString() }, toast: "Deleted \u2014 restorable from the toolbar for 30 days" });
+    options.forEach(function (o) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ud-th-menu-item";
+      b.textContent = o.label;
+      b.addEventListener("click", function () {
+        setRowState(nk, o.act, o.toast);
+        closeTrashMenu();
+      });
+      menu.appendChild(b);
+    });
+    document.body.appendChild(menu);
+    var rect = anchor.getBoundingClientRect();
+    menu.style.top = (rect.bottom + window.scrollY + 4) + "px";
+    menu.style.left = Math.max(4, rect.left + window.scrollX - 140) + "px";
+    trashMenuEl = menu;
+  }
+
+  function closeTrashMenu() {
+    if (trashMenuEl && trashMenuEl.parentNode) trashMenuEl.parentNode.removeChild(trashMenuEl);
+    trashMenuEl = null;
   }
 
   function updateHiddenInfo() {
     var el = document.getElementById("ud-hidden-info");
     if (!el) return;
-    var hidden = Object.keys(NOTES).filter(function (nk) { return NOTES[nk] && NOTES[nk].hidden; });
-    if (!hidden.length) { el.innerHTML = ""; return; }
-    el.innerHTML = hidden.length + " deleted <button type=\"button\" id=\"ud-hidden-restore\">Restore all</button>";
+    var cutoff = new Date(Date.now() - 30 * 86400e3).toISOString();
+    var hidden = [], restorable = [];
+    Object.keys(NOTES).forEach(function (nk) {
+      var rec = NOTES[nk];
+      if (!rec) return;
+      if (rec.hidden) hidden.push(nk);
+      if (rec.deleted_at && rec.deleted_at >= cutoff) restorable.push(nk);
+    });
+    if (!hidden.length && !restorable.length) { el.innerHTML = ""; return; }
+    var parts = [];
+    if (hidden.length) parts.push(hidden.length + " hidden");
+    if (restorable.length) parts.push(restorable.length + " deleted");
+    el.innerHTML = parts.join(" \u00b7 ") + ' <button type="button" id="ud-hidden-restore">Restore all</button>';
     var btn = document.getElementById("ud-hidden-restore");
     if (btn) {
       btn.addEventListener("click", function () {
-        hidden.forEach(function (nk) {
-          var rec = NOTES[nk];
-          rec.hidden = false;
-          if (!rec.bookmarked && !(rec.note || "").trim() && !rec.snooze_until && !rec.hidden) delete NOTES[nk];
-          pushNote(nk);
+        hidden.concat(restorable).forEach(function (nk) {
+          setRowState(nk, { hidden: false, deleted_at: "" });
         });
-        render();
-        updateHiddenInfo();
+        noteToast("All hidden and deleted rows restored", false);
       });
     }
   }
@@ -1591,6 +1735,21 @@
         openCaseEditor(s);
       });
     }
+    var srcBtn = document.getElementById("ud-sources-btn");
+    if (srcBtn) srcBtn.addEventListener("click", openSourcesModal);
+    var srcClose = document.getElementById("ud-src-close");
+    if (srcClose) srcClose.addEventListener("click", closeSourcesModal);
+    var srcSave = document.getElementById("ud-src-save");
+    if (srcSave) srcSave.addEventListener("click", saveSources);
+    var srcAdd = document.getElementById("ud-src-add-btn");
+    if (srcAdd) srcAdd.addEventListener("click", addSourceFromForm);
+    var srcOverlay = document.getElementById("ud-src-overlay");
+    if (srcOverlay) {
+      srcOverlay.addEventListener("click", function (ev) {
+        if (ev.target === srcOverlay) closeSourcesModal();
+      });
+    }
+
     var cfSave = document.getElementById("cf-save");
     var cfCancel = document.getElementById("cf-cancel");
     var cfLookupBtn = document.getElementById("cf-lookup");
@@ -1718,7 +1877,7 @@
         var sz = ev.target.closest(".ud-snz-btn");
         if (sz) { ev.stopPropagation(); openSnoozeMenu(sz.getAttribute("data-nk"), sz); return; }
         var del = ev.target.closest(".ud-del-btn");
-        if (del) { hideRow(del.getAttribute("data-nk")); return; }
+        if (del) { ev.stopPropagation(); openTrashMenu(del.getAttribute("data-nk"), del); return; }
         var nb = ev.target.closest(".ud-note-btn");
         if (nb) { openNoteModal(nb.getAttribute("data-nk")); }
       });
@@ -1739,11 +1898,12 @@
     }
     document.addEventListener("keydown", function (ev) {
       if (ev.key === "Escape" && activeNoteKey) closeNoteModal();
-      if (ev.key === "Escape") { closeAssignMenu(); closeSnoozeMenu(); }
+      if (ev.key === "Escape") { closeAssignMenu(); closeSnoozeMenu(); closeTrashMenu(); }
     });
     document.addEventListener("click", function (ev) {
       if (assignMenuEl && !assignMenuEl.contains(ev.target)) closeAssignMenu();
       if (snoozeMenuEl && !snoozeMenuEl.contains(ev.target)) closeSnoozeMenu();
+      if (trashMenuEl && !trashMenuEl.contains(ev.target)) closeTrashMenu();
     });
     setInterval(renderDue, 60000);
 

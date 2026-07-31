@@ -32,8 +32,8 @@ export async function onRequestPut(context) {
   }
   const url = typeof body.url === "string" ? body.url.trim() : "";
   const caseSlug = body.case_slug == null ? null : String(body.case_slug).trim();
-  if (!url.startsWith("https://bondoro.com/")) {
-    return jsonResponse({ ok: false, error: "a bondoro.com item url is required" }, 400);
+  if (!/^https?:\/\/[^\s]+$/.test(url)) {
+    return jsonResponse({ ok: false, error: "a feed item url is required" }, 400);
   }
   if (caseSlug !== null && !/^[a-z0-9-]{1,60}$/.test(caseSlug)) {
     return jsonResponse({ ok: false, error: "invalid case slug" }, 400);

@@ -1,0 +1,32 @@
+{
+  "sources": [
+    {
+      "id": "bondoro-alerts",
+      "name": "Bondoro",
+      "url": "https://bondoro.com/tag/chapter-11-filing-alerts/rss/",
+      "kind": "Alert",
+      "enabled": true
+    },
+    {
+      "id": "bondoro-summaries",
+      "name": "Bondoro",
+      "url": "https://bondoro.com/tag/case-summaries/rss/",
+      "kind": "Summary",
+      "enabled": true
+    },
+    {
+      "id": "petition",
+      "name": "PETITION",
+      "url": "https://petition.substack.com/feed",
+      "kind": "News",
+      "enabled": true
+    },
+    {
+      "id": "dailydac",
+      "name": "DailyDAC",
+      "url": "https://www.dailydac.com/feed/",
+      "kind": "News",
+      "enabled": true
+    }
+  ]
+}

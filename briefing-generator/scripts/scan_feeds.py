@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """
-scan_bondoro.py — pull Chapter 11 filing alerts and case summaries from
-Bondoro's RSS feeds into briefing-generator/bondoro.json.
+scan_feeds.py — pull general news-source RSS feeds into the docket feed.
 
-Feeds (Ghost, stable RSS):
-    https://bondoro.com/tag/chapter-11-filing-alerts/rss/   → kind "alert"
-    https://bondoro.com/tag/case-summaries/rss/             → kind "summary"
+Sources are managed from the docket page (Sources button → feed-sources.json):
+each has a name, an RSS url, a tag label (Alert / Summary / News / anything),
+and an enabled flag. Items merge into bondoro.json (the general feed-item
+store — name kept for continuity) by URL; existing entries keep their fields,
+in particular the case_slug assignment made on the docket page.
 
-Items merge by URL; existing entries keep their fields — in particular the
-case_slug assignment made on the docket page survives every re-scrape.
 Runs daily from .github/workflows/news-scan.yml. Stdlib only.
 """
 import json, re, sys
@@ -18,15 +17,11 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+SOURCES = REPO_ROOT / "feed-sources.json"
 OUT = REPO_ROOT / "bondoro.json"
 
-FEEDS = [
-    ("alert", "https://bondoro.com/tag/chapter-11-filing-alerts/rss/"),
-    ("summary", "https://bondoro.com/tag/case-summaries/rss/"),
-]
-
 UA = "turnpage-daily-briefing/1.0 (+https://turnpagedigital.com)"
-MAX_STORED = 200
+MAX_STORED = 300
 
 
 def fetch(url):
@@ -35,7 +30,7 @@ def fetch(url):
         return r.read().decode("utf-8", "replace")
 
 
-def parse_feed(xml_text, kind):
+def parse_feed(xml_text, source):
     items = []
     root = ET.fromstring(xml_text)
     for item in root.iter("item"):
@@ -57,13 +52,30 @@ def parse_feed(xml_text, kind):
                 pass
         items.append({
             "id": url.rstrip("/").rsplit("/", 1)[-1][:80],
-            "kind": kind,
+            "kind": (source.get("kind") or "News").lower(),
+            "source": source.get("name") or "",
             "title": title,
             "url": url,
             "date": date,
             "excerpt": desc[:300],
         })
     return items
+
+
+def load_sources():
+    try:
+        data = json.loads(SOURCES.read_text(encoding="utf-8"))
+        srcs = [s for s in data.get("sources", [])
+                if s.get("url", "").startswith("http") and s.get("enabled", True)]
+        if srcs:
+            return srcs
+    except Exception:
+        pass
+    # Fallback: the built-in Bondoro pair
+    return [
+        {"name": "Bondoro", "url": "https://bondoro.com/tag/chapter-11-filing-alerts/rss/", "kind": "Alert"},
+        {"name": "Bondoro", "url": "https://bondoro.com/tag/case-summaries/rss/", "kind": "Summary"},
+    ]
 
 
 def main():
@@ -74,34 +86,30 @@ def main():
     existing = {i.get("url"): i for i in data.get("items", []) if i.get("url")}
 
     added = 0
-    for kind, feed in FEEDS:
+    for source in load_sources():
+        label = f"{source.get('name', '?')} ({source.get('kind', 'News')})"
         try:
-            xml_text = fetch(feed)
+            xml_text = fetch(source["url"])
+            fresh = parse_feed(xml_text, source)
         except Exception as ex:
-            print(f"  ! {kind} feed failed ({ex}) — keeping stored items", file=sys.stderr)
-            continue
-        try:
-            fresh = parse_feed(xml_text, kind)
-        except ET.ParseError as ex:
-            print(f"  ! {kind} feed unparseable ({ex})", file=sys.stderr)
+            print(f"  ! {label}: feed failed ({ex}) — keeping stored items", file=sys.stderr)
             continue
         for f in fresh:
             cur = existing.get(f["url"])
             if cur:
-                # Refresh scraped fields; keep the docket-page case assignment
-                for k in ("title", "date", "excerpt", "kind", "id"):
+                for k in ("title", "date", "excerpt", "kind", "source", "id"):
                     cur[k] = f[k]
             else:
                 f["case_slug"] = None
                 existing[f["url"]] = f
                 added += 1
-        print(f"  ✓ {kind}: {len(fresh)} item(s) in feed")
+        print(f"  ✓ {label}: {len(fresh)} item(s) in feed")
 
     items = sorted(existing.values(), key=lambda i: i.get("date") or "", reverse=True)
     del items[MAX_STORED:]
     OUT.write_text(json.dumps({"items": items}, indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8")
-    print(f"=== Bondoro scan done: +{added} new, {len(items)} stored ===")
+    print(f"=== Feed scan done: +{added} new, {len(items)} stored ===")
 
 
 if __name__ == "__main__":
