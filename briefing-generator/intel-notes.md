@@ -45,6 +45,12 @@ $100-$500M liabilities = 2-10c recoveries
 
 > The Preference Wave Is Coming- What Vendors Should Do Now — If you sold goods or services to a customer that filed Chapter 11 in the last two years, the window to prepare is right now. It closes the d
 
+## Terraform Labs
+
+### Dkt. 1305 — 2026-07-30 ★
+
+> Chapter 11 Post-Confirmation Report
+
 ## Uncategorized
 
 ### (no docket number) — 2026-07-31
