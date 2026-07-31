@@ -911,7 +911,6 @@ def render_unified_docket(cases):
   <div class="ud-toolbar">
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
-    <span id="ud-muted-info" class="uc-curation-info"></span>
     <button id="ud-sort-btn">Date ↓</button>
   </div>
 

@@ -110,7 +110,6 @@
   var BONDORO = [];
   var VOTES = {};
   var UPLOADS = {};
-  var showMuted = false;
   var UNASSIGNED_KEY = "__unassigned__";
   var sortDir = "desc";
   var searchText = "";
@@ -290,7 +289,6 @@
       var hrec = NOTES[entryNoteKey(e)];
       if (hrec && hrec.deleted_at) return false;
       if (hrec && hrec.hidden && !searchText.trim()) return false;
-      if (!showMuted && !searchText.trim() && isMutedSource(e)) return false;
       if (e.is_article && !sourceOn(e.party)) return false;
       if (bmOnly || noteOnly) {
         var mrec = NOTES[entryNoteKey(e)];
@@ -1249,8 +1247,6 @@
   }
 
   // ── Up/down votes on news items — teaches which sources to surface ────────
-  var MUTE_THRESHOLD = -3;
-
   function loadVotes() {
     fetchJson("api/votes")
       .then(function (p) { return (p && p.ok && p.votes) || {}; })
@@ -1262,58 +1258,24 @@
       .then(function (v) {
         VOTES = v;
         render();
-        updateMutedInfo();
       });
-  }
-
-  function sourceScore(name) {
-    if (!name) return 0;
-    var n = name.toLowerCase();
-    var score = 0;
-    Object.keys(VOTES).forEach(function (u) {
-      var v = VOTES[u];
-      if (v && (v.source || "").toLowerCase() === n) score += v.v;
-    });
-    return score;
-  }
-
-  function isMutedSource(e) {
-    if (!e.is_article || !e.party) return false;
-    var v = VOTES[e.doc_url];
-    if (v && v.v === 1) return false;  // an upvoted item always shows
-    return sourceScore(e.party) <= MUTE_THRESHOLD;
   }
 
   function castVote(e, dir) {
     var cur = VOTES[e.doc_url];
     var next = cur && cur.v === dir ? 0 : dir;  // click again to clear
+    // Votes are TOPIC feedback — the daily scan reads the voted headlines to
+    // steer what it covers. They say nothing about the outlet.
+    var title = (e.description || "").split(" \u2014 ")[0].slice(0, 140);
     if (next === 0) delete VOTES[e.doc_url];
-    else VOTES[e.doc_url] = { v: next, source: e.party || "", at: new Date().toISOString() };
+    else VOTES[e.doc_url] = { v: next, source: e.party || "", title: title, case_slug: e.slug || e.group_name || "", at: new Date().toISOString() };
     render();
-    updateMutedInfo();
-    noteToast(next === 0 ? "Vote cleared" : (next > 0 ? "Upvoted \u2014 more like this" : "Downvoted \u2014 " + (e.party || "this source") + " loses standing"), false);
+    noteToast(next === 0 ? "Vote cleared" : (next > 0 ? "Upvoted \u2014 more on this topic" : "Downvoted \u2014 less of this topic"), false);
     fetch("api/votes", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: e.doc_url, vote: next, source: e.party || "" }),
+      body: JSON.stringify({ url: e.doc_url, vote: next, source: e.party || "", title: title, case_slug: e.slug || e.group_name || "" }),
     }).catch(function () {});
-  }
-
-  function updateMutedInfo() {
-    var el = document.getElementById("ud-muted-info");
-    if (!el) return;
-    var muted = ALL.filter(isMutedSource).length;
-    if (!muted) { el.innerHTML = ""; showMuted = false; return; }
-    el.innerHTML = muted + " muted by your votes " +
-      '<button type="button" id="ud-muted-toggle">' + (showMuted ? "Hide" : "Show") + "</button>";
-    var btn = document.getElementById("ud-muted-toggle");
-    if (btn) {
-      btn.addEventListener("click", function () {
-        showMuted = !showMuted;
-        render();
-        updateMutedInfo();
-      });
-    }
   }
 
   function voteButtons(e) {
@@ -1322,8 +1284,8 @@
     var up = v && v.v === 1;
     var dn = v && v.v === -1;
     return (
-      ' <button type="button" class="ud-vote' + (up ? " ud-vote-up-on" : "") + '" data-vote="1" data-url="' + esc(e.doc_url) + '" title="More from ' + esc(e.party || "this source") + '"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M7 10v12\"/><path d=\"M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z\"/></svg></button>' +
-      '<button type="button" class="ud-vote' + (dn ? " ud-vote-dn-on" : "") + '" data-vote="-1" data-url="' + esc(e.doc_url) + '" title="Less from ' + esc(e.party || "this source") + '"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M17 14V2\"/><path d=\"M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z\"/></svg></button>'
+      ' <button type="button" class="ud-vote' + (up ? " ud-vote-up-on" : "") + '" data-vote="1" data-url="' + esc(e.doc_url) + '" title="More about this topic"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M7 10v12\"/><path d=\"M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z\"/></svg></button>' +
+      '<button type="button" class="ud-vote' + (dn ? " ud-vote-dn-on" : "") + '" data-vote="-1" data-url="' + esc(e.doc_url) + '" title="Less about this topic"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M17 14V2\"/><path d=\"M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z\"/></svg></button>'
     );
   }
 
