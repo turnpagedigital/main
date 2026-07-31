@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-31 17:00 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-07-31 17:12 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -62,4 +62,8 @@ $100-$500M liabilities = 2-10c recoveries
 ### (no docket number) — 2026-07-31
 
 > Korea’s Kospi Logs Record Daily Gain, Defying Efforts to Tame Wild Swings — The country’s regulators have imposed increasingly stringent restrictions on single-stock leveraged exchange-traded funds tr
+
+### (no docket number) — 2026-07-31
+
+> Richard D. Wood Jr., Who Built Wawa Into a Cult-Favorite Convenience Giant, Dies at 88 — To keep executives grounded, the CEO insisted that every executive spend a day each year working in one of the 
 
