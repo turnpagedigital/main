@@ -54,15 +54,6 @@
     "court": "Bankr. D. Mass"
   },
   {
-    "slug": "poolin",
-    "display_name": "Poolin",
-    "short_name": "Poolin",
-    "docket_url": "https://www.courtlistener.com/docket/73657689/",
-    "default_color": "#F2AAEC",
-    "category": "bankruptcy",
-    "court": "Bankr. D. N.J."
-  },
-  {
     "slug": "power-block-coin",
     "display_name": "Power Block Coin, LLC",
     "short_name": "Power Block",

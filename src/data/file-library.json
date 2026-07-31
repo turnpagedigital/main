@@ -291,24 +291,6 @@
       "addedAt": "2026-05-27T03:13:48.811Z"
     },
     {
-      "id": "mig-mpnhpe6u-lpwvh",
-      "name": "TPDM Logo Full color on Black",
-      "url": "/TPDM Logo_Full color on Black.png",
-      "type": "logo",
-      "companies": [],
-      "source": "url",
-      "addedAt": "2026-05-27T03:13:48.811Z"
-    },
-    {
-      "id": "mig-mpnhpe6u-kfc62",
-      "name": "TPDM Logo No bkgd",
-      "url": "/TPDM Logo_No bkgd.png",
-      "type": "logo",
-      "companies": [],
-      "source": "url",
-      "addedAt": "2026-05-27T03:13:48.811Z"
-    },
-    {
       "id": "mig-mpnhpe6u-7bbd5",
       "name": "a-chosen-soul-Q gpG90dW7c-unsplash",
       "url": "/a-chosen-soul-Q_gpG90dW7c-unsplash.jpg",
@@ -807,6 +789,18 @@
       ],
       "source": "url",
       "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "turnpage-logo-standard",
+      "name": "Turnpage Logo (standard)",
+      "url": "/turnpage-logo.png",
+      "type": "logo",
+      "companies": [
+        "Turnpage"
+      ],
+      "source": "upload",
+      "archived": false,
+      "addedAt": "2026-07-31"
     }
   ],
   "favicons": {
