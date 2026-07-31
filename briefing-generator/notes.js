@@ -64,6 +64,7 @@
   var CASES = [];             // from manifest (pills, colors, docket links)
   var NOTES = {};             // key → record
   var activeCases = {};
+  var UNASSIGNED_KEY = "__unassigned__";
   var sortDir = "desc";       // by last edit
   var searchText = "";
   var dateFrom = "";
@@ -121,6 +122,7 @@
   }
   function setAllCases(on) {
     CASES.forEach(function (c) { activeCases[c.slug] = on; });
+    activeCases[UNASSIGNED_KEY] = on;
     if (!on) closePopover();
     saveFilterState();
     renderCaseFilter();
@@ -154,6 +156,14 @@
         "</label>"
       );
     }).join("");
+    rows += (
+      '<label class="ud-dd-row" title="Notes on articles and alerts not assigned to a case">' +
+        '<input type="checkbox" data-slug="' + UNASSIGNED_KEY + '"' + (activeCases[UNASSIGNED_KEY] ? " checked" : "") + ">" +
+        '<span class="ud-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-40)">Uncategorized</span>' +
+        '<span class="ud-dd-spacer"></span>' +
+      "</label>"
+    );
+
     var groups = loadGroups();
     var groupRows = groups.map(function (g, i) {
       var n = validGroupSlugs(g).length;
@@ -379,6 +389,7 @@
         note: r.note || "",
         bookmarked: !!r.bookmarked,
         updated_at: r.updated_at || "",
+        url: r.url || "",
       };
     });
   }
@@ -386,7 +397,12 @@
   function filtered() {
     var sq = searchText.toLowerCase().trim();
     var list = noteList().filter(function (n) {
-      if (CASES.length && !activeCases[n.slug]) return false;
+      var known = caseOf(n.slug);
+      if (CASES.length) {
+        if (known) {
+          if (!activeCases[n.slug]) return false;
+        } else if (!activeCases[UNASSIGNED_KEY]) return false;
+      }
       var edited = (n.updated_at || "").slice(0, 10);
       if (dateFrom && edited && edited < dateFrom) return false;
       if (dateTo && edited && edited > dateTo) return false;
@@ -416,6 +432,9 @@
   }
 
   function entryLink(n) {
+    if (n.url) {
+      return '<a class="ud-link" href="' + esc(n.url) + '" target="_blank" rel="noopener">Read</a>';
+    }
     var c = caseOf(n.slug);
     if (n.entry_number != null && c && (c.docket_url || "").indexOf("courtlistener.com") !== -1) {
       var url = c.docket_url.replace(/\/+$/, "") +
@@ -447,10 +466,15 @@
     }
     tbody.innerHTML = list.map(function (n) {
       var c = caseOf(n.slug);
-      var bg = getBg(n.slug, c ? c.default_color : "#888888");
-      var fg = getFg(n.slug, bg);
-      var pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' +
-        esc(c ? c.short_name : n.slug) + "</span>";
+      var pill;
+      if (c) {
+        var bg = getBg(n.slug, c.default_color);
+        var fg = getFg(n.slug, bg);
+        pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(c.short_name) + "</span>";
+      } else {
+        var uLabel = n.case_name && n.case_name !== "Uncategorized" ? n.case_name : "Uncategorized";
+        pill = '<span class="ud-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-40)">' + esc(uLabel) + "</span>";
+      }
       var entryMeta = (n.date_filed ? esc(n.date_filed) + " · " : "") +
         '<span class="uc-snippet">' + esc(n.snippet || "") + "</span>";
       var noteHtml = n.note
@@ -598,6 +622,7 @@
       CASES.forEach(function (c) {
         activeCases[c.slug] = savedAC ? !!savedAC[c.slug] : true;
       });
+      activeCases[UNASSIGNED_KEY] = savedAC ? savedAC[UNASSIGNED_KEY] !== false : true;
       var meta = document.getElementById("ud-meta");
       if (meta) {
         var total = Object.keys(NOTES).length;

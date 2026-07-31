@@ -46,6 +46,7 @@ function cleanEntry(raw) {
       ? Number(raw.entry_number) : null,
     date_filed: String(raw.date_filed || "").slice(0, 10),
     snippet: String(raw.snippet || "").slice(0, 220),
+    url: /^https?:\/\//.test(String(raw.url || "")) ? String(raw.url).slice(0, 300) : "",
   };
 }
 
