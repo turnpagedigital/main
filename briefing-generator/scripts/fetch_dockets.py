@@ -79,14 +79,13 @@ def _normalize_entry(e, now):
     desc = " ".join((e.get("description") or "").split())
     if desc.lower() == "none":
         desc = ""  # some court RSS feeds literally say "none"
-    if not desc:
-        # RSS-sourced entries leave the docket text empty; the short
-        # description lives on the attached document record instead.
-        for d in docs:
-            short = " ".join((d.get("description") or "").split())
-            if short:
-                desc = short
-                break
+    # Bankruptcy/BNC entries often carry a stub docket text ("BNC Certificate
+    # of Notice - Order") while the attached document record holds the real
+    # PACER document name — take the richest description available.
+    for d in docs:
+        doc_desc = " ".join((d.get("description") or "").split())
+        if len(doc_desc) > len(desc):
+            desc = doc_desc
     return {
         "entry_number": e.get("entry_number"),
         "date_filed": date_filed,
@@ -227,7 +226,14 @@ def refresh_case(case, history_pages=0):
         crawled = len(raw)
         for r in raw:
             ne = _normalize_entry(r, now)
-            merged.setdefault(_entry_key(ne), ne)  # never clobber fresher data
+            key = _entry_key(ne)
+            cur = merged.get(key)
+            # Adopt the crawled copy when it's new OR carries a richer
+            # description (the doc-name upgrade) — never downgrade.
+            if cur is None or len(ne.get("description") or "") > len(cur.get("description") or ""):
+                if cur is not None:
+                    ne["is_new"] = cur.get("is_new", ne.get("is_new"))
+                merged[key] = ne
 
     try:
         block = build_docket_block(ds["docket_id"], ds.get("url"), merged,
