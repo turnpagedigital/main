@@ -699,7 +699,21 @@
       tbody.innerHTML = '<tr><td colspan="9" class="ud-empty">No entries match the current filters.</td></tr>';
       return;
     }
+    var prevDay = null;
+    function dayHeader(e) {
+      var d = e.date_filed || "";
+      if (d === prevDay) return "";
+      prevDay = d;
+      var label;
+      if (!d) label = "Undated";
+      else {
+        var wd = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][new Date(d + "T00:00:00").getDay()];
+        label = wd + " \u00b7 " + (e.date_display || d);
+      }
+      return '<tr class="ud-day-row"><td colspan="9">' + esc(label) + "</td></tr>";
+    }
     tbody.innerHTML = entries.map(function (e) {
+      var header = dayHeader(e);
       var bg = getBg(e.slug, e.default_color);
       var fg = getFg(e.slug, bg);
       var pill;
@@ -732,6 +746,7 @@
           (e.is_bondoro && e.unassigned ? " ud-row-bondoro" : "") +
           (e.is_new ? " ud-row-new" : "");
         return (
+          header +
           '<tr class="' + artRowCls + '">' +
             '<td class="ud-date">' + esc(e.date_display) + "</td>" +
             '<td class="ud-case">' + pill + "</td>" +
@@ -764,6 +779,7 @@
       }
       var rowCls = e.is_new ? ' class="ud-row-new"' : "";
       return (
+        header +
         "<tr" + rowCls + ">" +
           '<td class="ud-date">' + esc(e.date_display) + "</td>" +
           '<td class="ud-case">' + pill + "</td>" +
