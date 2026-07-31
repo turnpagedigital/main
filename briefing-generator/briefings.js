@@ -68,8 +68,12 @@
         "</label>"
       );
     }).join("");
-    panel.innerHTML = head + rows;
+    panel.innerHTML = head + rows + '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
+    var saveView = panel.querySelector("[data-close-panel]");
+    if (saveView) {
+      saveView.addEventListener("click", function () { panel.style.display = "none"; });
+    }
     panel.querySelectorAll(".ud-dd-quick").forEach(function (q) {
       q.addEventListener("click", function () {
         var on = q.getAttribute("data-act") === "all";
@@ -161,6 +165,7 @@
       });
       document.addEventListener("click", function (ev) {
         if (ddPanel.style.display === "none") return;
+        if (ev.target && !ev.target.isConnected) return;  // click landed on re-rendered UI inside the panel
         if (ddPanel.contains(ev.target) || ddBtn.contains(ev.target)) return;
         ddPanel.style.display = "none";
       });

@@ -83,6 +83,7 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-dd-save-input{flex:1;min-width:0;padding:6px 8px;font-size:12px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}
   .ud-dd-save-input:focus{border-color:var(--neon);}
   .ud-dd-save-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;padding:6px 10px;letter-spacing:0.03em;white-space:nowrap;}
+  .ud-dd-saveview{display:block;width:100%;margin-top:8px;padding:9px;background:var(--neon);border-color:var(--neon);color:#0A0A0A;}
   .ud-dd-save-btn:hover{border-color:var(--ink-40);}
   .ud-gear-btn{background:none;border:none;cursor:pointer;font-size:16px;padding:1px 5px;color:var(--ink-60);line-height:1;flex-shrink:0;opacity:0;transition:opacity 0.15s;}
   .ud-dd-row:hover .ud-gear-btn,.ud-gear-btn:focus{opacity:1;}
@@ -138,7 +139,6 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-note-status{font-size:12px;color:var(--ink-40);}
   .ud-th-filter{cursor:pointer;user-select:none;}
   .ud-th-filter:hover,.ud-th-filter.ud-th-on{color:var(--ink);}
-  .ud-th-filter.ud-th-on .ud-th-label{border-bottom:2px solid var(--neon);padding-bottom:1px;}
   .ud-th-caret{font-size:9px;}
   .ud-th-toggle{cursor:pointer;user-select:none;}
   .ud-th-toggle:hover{color:var(--ink);}
