@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
-  <title>Daily Briefing — June 12, 2026</title>
+  <title>Dashboard — Turnpage Intelligence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -107,6 +107,24 @@
     .tk-down { color: #C84141; }
     [data-theme="dark"] .tk-up { color: #54C277; }
     [data-theme="dark"] .tk-down { color: #E07474; }
+    /* Dashboard columns */
+    .ih-grid { max-width: 1440px; margin: 0 auto 48px; padding: 0 32px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: start; }
+    @media (max-width: 1080px) { .ih-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .ih-grid { grid-template-columns: 1fr; } }
+    .ih-col { background: var(--surface); border: 2px solid var(--neon-block); display: flex; flex-direction: column; }
+    .ih-head { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 2px solid var(--neon-block); text-decoration: none; color: inherit; }
+    .ih-emoji { font-size: 17px; }
+    .ih-name { font-size: 14px; font-weight: 800; }
+    .ih-more { margin-left: auto; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .ih-list { display: flex; flex-direction: column; }
+    .ih-row { display: block; padding: 9px 14px; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; }
+    .ih-row:last-child { border-bottom: none; }
+    .ih-row:hover { background: rgba(10,10,10,0.03); }
+    [data-theme="dark"] .ih-row:hover { background: rgba(229,231,235,0.05); }
+    .ih-date { font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; color: var(--ink-60); text-transform: uppercase; margin-bottom: 2px; }
+    .ih-text { font-size: 12.5px; line-height: 1.45; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .ih-empty { padding: 12px 14px; font-size: 12px; color: var(--ink-60); }
+
   /* DARK-MODE HIGHLIGHTER START */
 :root {
   --neon-block: #D4FF00;
@@ -139,30 +157,13 @@
 
     /* Unified 60-day calendar strip */
     .unified-calendar { max-width: 1440px; margin: 0 auto 24px; padding: 0 32px; }
-    .ucal-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
-    .ucal-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); }
-    .ucal-hint { font-size: 11px; color: var(--ink-40); font-style: italic; letter-spacing: 0.04em; }
-    .ucal-scroll { display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; padding-bottom: 14px; scrollbar-width: thin; }
-    .ucal-scroll::-webkit-scrollbar { height: 6px; }
-    .ucal-scroll::-webkit-scrollbar-thumb { background: var(--ink-20); }
-    .ucal-item { flex: 0 0 auto; width: 240px; background: var(--surface); border: 1px solid var(--line-strong);
       padding: 12px 14px; text-decoration: none; color: inherit; display: flex; gap: 12px; align-items: center;
       transition: background 0.15s, border-color 0.15s, transform 0.15s; }
-    .ucal-item:hover { background: var(--paper-2); border-color: var(--ink); transform: translateY(-1px); }
-    .ucal-square { display: inline-flex; flex-direction: column; align-items: center; justify-content: flex-start;
       width: 50px; height: 50px; background: #FFFFFF; border: 1px solid rgba(10,10,10,0.14);
       padding-top: 4px; flex-shrink: 0; box-sizing: border-box; }
-    [data-theme="dark"] .ucal-square { background: #0A0A0A; border-color: rgba(229,231,235,0.22); }
-    .ucal-square .ucal-month { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; color: var(--ink-60); line-height: 1; }
-    .ucal-square .ucal-day { font-size: 18px; font-weight: 900; line-height: 1.2;
       background: linear-gradient(180deg, transparent 0 65%, var(--neon-block) 65% 95%, transparent 95%);
       color: var(--ink); padding: 0 3px; }
-    [data-theme="dark"] .ucal-square .ucal-day { color: #FFFFFF; }
-    .ucal-content { flex: 1; min-width: 0; }
-    .ucal-event { font-size: 12.5px; font-weight: 700; line-height: 1.3; margin-bottom: 3px;
       display: flex; gap: 6px; align-items: baseline; }
-    .ucal-emoji { font-size: 14px; }
-    .ucal-sub { font-size: 11px; font-style: italic; color: var(--ink-60); line-height: 1.4; }
 
 </style>
   <!-- AUTH GATE START -->
@@ -181,217 +182,33 @@
 
   <!-- Page title -->
   <div class="page-title">
-    <h1>Daily Briefing</h1>
+    <h1>Dashboard</h1>
     <div class="stamp">3:45 PM ET · THURSDAY, JULY 30, 2026</div>
   </div>
 
-  <!-- Calendar strip -->
-  <section class="unified-calendar">
-  <div class="ucal-header">
-    <div class="ucal-title">Calendar · Next 60+ days</div>
-    <div class="ucal-hint">Scroll →</div>
-  </div>
-  <div class="ucal-scroll">
-    <a class="ucal-item" href="../fraud-recovery/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">12</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🕵️</span>Myers wire-fraud arraignment</div>
-        <div class="ucal-sub">Sterling Capital Ponzi · N.D. Ill. · Judge Chang, 10am</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../bankruptcy-creditor-rights/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">15</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">📜</span>Cook en banc petition deadline</div>
-        <div class="ucal-sub">4th Cir. · Ch. 13 trustee retention-fee dispute</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../crypto-insolvency/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">16</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🪙</span>FTX Recovery Trust record date</div>
-        <div class="ucal-sub">In re FTX · Bankr. D. Del. · 5th distribution eligibility</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../billion-dollar-class-actions/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">16</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">💰</span>BCBS final claims distribution wave</div>
-        <div class="ucal-sub">N.D. Ala. · $2.67B antitrust · subscriber + provider classes</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../crypto-insolvency/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">18</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🪙</span>Genesis LOC distribution vote</div>
-        <div class="ucal-sub">S.D.N.Y. · creditor vote on $3.2B DCG claims plan</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../crypto-insolvency/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">18</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🪙</span>FTX adversary pretrial conference</div>
-        <div class="ucal-sub">In re FTX · Bankr. D. Del. · Kroll-calendared adversary</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../billion-dollar-class-actions/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">23</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">💰</span>Google mass-arb first AAA wave</div>
-        <div class="ucal-sub">Keller Postman · $218B advertiser-overcharge campaign opens</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../rewind-tariffs/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">26</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">⚖️</span>CBP CAPE Phase 2 progress watch</div>
-        <div class="ucal-sub">CIT · Judge Eaton · next IEEPA refund disbursement report</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../crypto-insolvency/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">30</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🪙</span>FTX NFT claim distribution opens</div>
-        <div class="ucal-sub">In re FTX · Bankr. D. Del. · NFT customer entitlements</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../llm-class-action/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUN</span><span class="ucal-day">30</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🤖</span>Disney v. Midjourney class-cert briefing</div>
-        <div class="ucal-sub">C.D. Cal. · image-model training-data certification</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../llm-class-action/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUL</span><span class="ucal-day">8</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🤖</span>Concord v. Anthropic settlement notice</div>
-        <div class="ucal-sub">C.D. Cal. · music-publisher class notice issued</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../crypto-insolvency/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUL</span><span class="ucal-day">12</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🪙</span>FTX final customer distribution</div>
-        <div class="ucal-sub">D. Del. · last customer-property payment wave</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../bankruptcy-creditor-rights/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUL</span><span class="ucal-day">15</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">📜</span>Red River Talc oral argument</div>
-        <div class="ucal-sub">5th Cir. · J&J third Texas Two-Step challenge</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../billion-dollar-class-actions/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUL</span><span class="ucal-day">20</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">💰</span>Apple App Store mass-arb wave</div>
-        <div class="ucal-sub">AAA · developer-overcharge claims · parallel Google track</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../rewind-tariffs/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUL</span><span class="ucal-day">24</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">⚖️</span>Sec 122 statutory sunset</div>
-        <div class="ucal-sub">19 U.S.C. §2132 · 10% global tariff expires by law</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../fraud-recovery/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUL</span><span class="ucal-day">28</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🕵️</span>Stanford receiver final distribution</div>
-        <div class="ucal-sub">N.D. Tex. · last $2B+ victim-fund payment</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../crypto-insolvency/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">JUL</span><span class="ucal-day">31</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🪙</span>FTX fifth distribution payment date</div>
-        <div class="ucal-sub">In re FTX · Bankr. D. Del. · creditor + preferred equity</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../billion-dollar-class-actions/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">AUG</span><span class="ucal-day">5</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">💰</span>Visa/Mastercard interchange final approval</div>
-        <div class="ucal-sub">E.D.N.Y. · ~$38B merchant antitrust settlement</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../billion-dollar-class-actions/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">AUG</span><span class="ucal-day">12</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">💰</span>Meta advertiser mass-arb tranche 1</div>
-        <div class="ucal-sub">AAA · advertiser-waiver track · pro se filing wave</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../billion-dollar-class-actions/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">AUG</span><span class="ucal-day">18</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">💰</span>Roundup MDL global resolution</div>
-        <div class="ucal-sub">N.D. Cal. · Bayer glyphosate ~$20B proposal</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../fraud-recovery/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">AUG</span><span class="ucal-day">25</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🕵️</span>Madoff residual disgorgement deadline</div>
-        <div class="ucal-sub">S.D.N.Y. · trustee tail-claim filing cutoff</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../bankruptcy-creditor-rights/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">AUG</span><span class="ucal-day">31</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">📜</span>Serta Simmons trial-date watch</div>
-        <div class="ucal-sub">Bankr. S.D. Tex. · uptier-exchange trial resetting</div>
-      </div>
-    </a>
-    <a class="ucal-item" href="../llm-class-action/dashboard.html">
-      <div class="ucal-square"><span class="ucal-month">SEP</span><span class="ucal-day">25</span></div>
-      <div class="ucal-content">
-        <div class="ucal-event"><span class="ucal-emoji">🤖</span>Anthropic third settlement installment</div>
-        <div class="ucal-sub">Bartz · N.D. Cal. · $1.5B fund scheduled payment</div>
-      </div>
-    </a>
-  </div>
-</section>
 
-  <!-- Unified docket + calendar links -->
-  <div style="max-width:1440px;margin:0 auto 48px;padding:0 32px;display:flex;flex-direction:column;gap:12px;">
-    <a href="../briefings.html" style="display:flex;align-items:center;gap:16px;background:var(--surface);border:2px solid var(--neon-block);padding:18px 24px;text-decoration:none;color:inherit;">
-      <span style="font-size:26px;">📰</span>
-      <div>
-        <div style="font-size:15px;font-weight:700;color:var(--ink);">Briefings</div>
-        <div style="font-size:12px;color:var(--ink-60);margin-top:2px;">Today's briefing for every theme · filter by theme</div>
-      </div>
-      <span style="margin-left:auto;font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap;">Read briefings →</span>
-    </a>
-    <a href="../docket.html" style="display:flex;align-items:center;gap:16px;background:var(--surface);border:2px solid var(--neon-block);padding:18px 24px;text-decoration:none;color:inherit;">
-      <span style="font-size:26px;">⚖️</span>
-      <div>
-        <div style="font-size:15px;font-weight:700;color:var(--ink);">Docket</div>
-        <div style="font-size:12px;color:var(--ink-60);margin-top:2px;">All tracked cases · filterable by case, entry type, and date · sortable by filing date</div>
-      </div>
-      <span style="margin-left:auto;font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap;">View all docket entries →</span>
-    </a>
-    <a href="../calendar.html" style="display:flex;align-items:center;gap:16px;background:var(--surface);border:2px solid var(--neon-block);padding:18px 24px;text-decoration:none;color:inherit;">
-      <span style="font-size:26px;">📅</span>
-      <div>
-        <div style="font-size:15px;font-weight:700;color:var(--ink);">Calendar</div>
-        <div style="font-size:12px;color:var(--ink-60);margin-top:2px;">Upcoming hearings and deadlines parsed from every tracked docket · live-synced</div>
-      </div>
-      <span style="margin-left:auto;font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap;">View calendar →</span>
-    </a>
-    <a href="../notes.html" style="display:flex;align-items:center;gap:16px;background:var(--surface);border:2px solid var(--neon-block);padding:18px 24px;text-decoration:none;color:inherit;">
-      <span style="font-size:26px;">🗒️</span>
-      <div>
-        <div style="font-size:15px;font-weight:700;color:var(--ink);">Notes</div>
-        <div style="font-size:12px;color:var(--ink-60);margin-top:2px;">Your bookmarks and notes across every case · sorted by last edit · export to Docs</div>
-      </div>
-      <span style="margin-left:auto;font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap;">View notes →</span>
-    </a>
+
+  <!-- Dashboard: top 7 from each section, four columns -->
+  <div class="ih-grid">
+    <section class="ih-col">
+      <a class="ih-head" href="../briefings.html"><span class="ih-emoji">📰</span><span class="ih-name">Briefings</span><span class="ih-more">View all →</span></a>
+      <div class="ih-list" id="ih-briefings"><div class="ih-empty">Loading…</div></div>
+    </section>
+    <section class="ih-col">
+      <a class="ih-head" href="../docket.html"><span class="ih-emoji">⚖️</span><span class="ih-name">Docket</span><span class="ih-more">View all →</span></a>
+      <div class="ih-list" id="ih-docket"><div class="ih-empty">Loading…</div></div>
+    </section>
+    <section class="ih-col">
+      <a class="ih-head" href="../calendar.html"><span class="ih-emoji">📅</span><span class="ih-name">Calendar</span><span class="ih-more">View all →</span></a>
+      <div class="ih-list" id="ih-calendar"><div class="ih-empty">Loading…</div></div>
+    </section>
+    <section class="ih-col">
+      <a class="ih-head" href="../notes.html"><span class="ih-emoji">🗒️</span><span class="ih-name">Notes</span><span class="ih-more">View all →</span></a>
+      <div class="ih-list" id="ih-notes"><div class="ih-empty">Loading…</div></div>
+    </section>
   </div>
 
+<script src="intel-home.js"></script>
 <script src="theme.js"></script>
 </body>
 </html>
