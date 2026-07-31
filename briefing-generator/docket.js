@@ -672,7 +672,7 @@
       '<td class="ud-mark-cell"><button type="button" class="ud-bm-btn' + (bm ? " ud-bm-on" : "") + '" ' +
         'data-nk="' + esc(nk) + '" title="' + (bm ? "Remove bookmark" : "Bookmark") + '">' + (bm ? "\u2605" : "\u2606") + "</button></td>" +
       '<td class="ud-mark-cell"><button type="button" class="ud-snz-btn' + (snz ? " ud-snz-on" : "") + '" ' +
-        'data-nk="' + esc(nk) + '" title="' + esc(snzTitle) + '">\ud83d\udca4</button></td>' +
+        'data-nk="' + esc(nk) + '" title="' + esc(snzTitle) + '"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" style=\"vertical-align:middle\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg></button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-del-btn" ' +
         'data-nk="' + esc(nk) + '" title="Delete this row (restorable from the toolbar)">\ud83d\uddd1</button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
@@ -1369,7 +1369,7 @@
     });
     if (!due.length) { box.style.display = "none"; box.innerHTML = ""; return; }
 
-    var html = ['<div class="ud-due-head">\u23f0 Snoozed reminders \u2014 ' + due.length + " due</div>"];
+    var html = ['<div class="ud-due-head"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" style=\"vertical-align:middle\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg> Snoozed reminders \u2014 ' + due.length + " due</div>"];
     due.forEach(function (d) {
       var e = findEntryByKey(d.nk);
       var label = e
