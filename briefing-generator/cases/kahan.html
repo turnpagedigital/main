@@ -19,6 +19,9 @@
   .tn-left{display:flex;align-items:center;gap:16px;}
   .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
   .tn-brand-logo{height:34px;width:auto;}
+  .tn-logo-dark{display:none;}
+  [data-theme="dark"] .tn-logo-light{display:none;}
+  [data-theme="dark"] .tn-logo-dark{display:block;}
   .tn-back{color:rgba(255,255,255,0.72);font-size:12px;text-decoration:none;border-left:1px solid rgba(255,255,255,0.18);padding-left:16px;}
   .tn-back:hover{color:#fff;}
   [data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
@@ -91,7 +94,7 @@
 <nav class="tn">
   <div class="tn-row">
     <div class="tn-left">
-      <a class="tn-brand" href="../index.html"><img class="tn-brand-logo" alt="Turnpage" src="../assets/turnpage-intel-logo.png"></a>
+      <a class="tn-brand" href="../index.html"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="../assets/turnpage-intel-logo.png"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="../assets/turnpage-intel-logo-dark.png"></a>
       <a class="tn-back" href="../bankruptcy-creditor-rights/dashboard.html">← 📜 Bankruptcy Creditor Rights briefing</a>
     </div>
     <button id="theme-toggle">🖥️</button>
