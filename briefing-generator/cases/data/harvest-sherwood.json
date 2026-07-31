@@ -17,7 +17,11 @@
     "recent": [],
     "entries": []
   },
-  "claims_administrator": null,
+  "claims_administrator": {
+    "name": "Epiq11",
+    "url": "https://dm.epiq11.com/case/hvs/dockets/859?debtorId=15015",
+    "key_dates_url": ""
+  },
   "coverage": [
     {
       "headline": "U.S. Trustee Objects to Plan Confirmation Over Opt-Out Third-Party Releases and Proposed Charitable Donation of Residual Trust Funds",
@@ -39,24 +43,6 @@
       "source": "Law360",
       "date": "2026-06-12",
       "summary": "Harvest Sherwood received court clearance for an August confirmation hearing for its Chapter 11 liquidation plan after the Texas bankruptcy judge found the plan disclosure statement, with some tweaks, contained sufficient information for creditors."
-    }
-  ],
-  "events": [
-    {
-      "title": "Plan Confirmation Hearing – Harvest Sherwood Third Amended Chapter 11 Plan",
-      "date": "2026-08-05",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://www.bankruptcydata.com/article/harvest-sherwood-food-distributors-inc-a-us-trustee-objects-to-plan-confirmation-over-optout-thirdparty-releases-and-proposed-charitable-donation-of-residual-trust-funds",
-      "source": "U.S. Bankruptcy Court, N.D. Texas (Judge Jernigan)"
-    },
-    {
-      "title": "Trial – Harvest Sherwood v. Sprouts Farmers Market (Adv. Proc. 25-08002)",
-      "date": "2026-09-21",
-      "time": "09:30 AM CT",
-      "kind": "Deadline",
-      "url": "https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030",
-      "source": "U.S. Bankruptcy Court, N.D. Texas (Judge Jernigan)"
     }
   ]
 }
