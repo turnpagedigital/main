@@ -86,5 +86,13 @@
     "default_color": "#C084FC",
     "category": "bankruptcy",
     "court": "Bankr. D. Del."
+  },
+  {
+    "slug": "poolin",
+    "display_name": "Poolin",
+    "short_name": "Poolin",
+    "docket_url": "",
+    "court": "Bankr. D. N.J.",
+    "default_color": "#F2AAEC"
   }
 ]
