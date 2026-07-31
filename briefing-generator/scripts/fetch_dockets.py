@@ -90,6 +90,7 @@ def _normalize_entry(e, now):
     return {
         "entry_number": e.get("entry_number"),
         "date_filed": date_filed,
+        "time_filed": (e.get("time_filed") or "")[:8],
         "date_display": pretty_date(date_filed, fallback=date_filed),
         "description": desc,
         "is_new": is_new,
@@ -100,7 +101,7 @@ def _normalize_entry(e, now):
 
 def first_page_url(docket_id):
     return (f"{API}/docket-entries/?docket={docket_id}&order_by=-date_filed"
-            f"&fields=entry_number,date_filed,description,recap_documents")
+            f"&fields=entry_number,date_filed,time_filed,description,recap_documents")
 
 
 def fetch_entry_pages(docket_id, existing_keys, max_pages=3):

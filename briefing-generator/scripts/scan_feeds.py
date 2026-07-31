@@ -44,15 +44,22 @@ def parse_feed(xml_text, source):
         desc = re.sub(r"<[^>]+>", " ", text("description"))
         desc = " ".join(desc.split())
         date = ""
+        published_at = ""
         pub = text("pubDate")
         if pub:
             try:
-                date = dt.datetime.strptime(pub[:16], "%a, %d %b %Y").date().isoformat()
-            except ValueError:
-                pass
+                from email.utils import parsedate_to_datetime
+                pdt = parsedate_to_datetime(pub)
+                date = pdt.date().isoformat()
+                published_at = pdt.isoformat()
+            except Exception:
+                try:
+                    date = dt.datetime.strptime(pub[:16], "%a, %d %b %Y").date().isoformat()
+                except ValueError:
+                    pass
         kind = (source.get("kind") or "News").lower()
         # Title-based reclassification: sale notices get their own tag
-        if re.search(r"ucc\s+article\s*9\s+sale|notice\s+of\s+public\s+sale", title, re.I):
+        if re.search(r"ucc\s+article\s*9\s+sale|notice\s+of\s+public\s+sale|public\s+notice\s+of\s+.{0,20}?sale", title, re.I):
             kind = "Asset Sale"
         items.append({
             "id": url.rstrip("/").rsplit("/", 1)[-1][:80],
@@ -61,6 +68,7 @@ def parse_feed(xml_text, source):
             "title": title,
             "url": url,
             "date": date,
+            "published_at": published_at,
             "excerpt": desc[:300],
         })
     return items
@@ -101,7 +109,7 @@ def main():
         for f in fresh:
             cur = existing.get(f["url"])
             if cur:
-                for k in ("title", "date", "excerpt", "kind", "source", "id"):
+                for k in ("title", "date", "published_at", "excerpt", "kind", "source", "id"):
                     cur[k] = f[k]
             else:
                 f["case_slug"] = None

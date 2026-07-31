@@ -58,6 +58,7 @@ function normalizeEntries(results) {
     return {
       entry_number: e.entry_number ?? null,
       date_filed: e.date_filed || "",
+      time_filed: (e.time_filed || "").slice(0, 8),
       date_display: prettyDate(e.date_filed || ""),
       description: desc,
       landmark: "",
@@ -69,7 +70,7 @@ function normalizeEntries(results) {
 async function fetchDocket(target, token, waitUntil) {
   const upstream =
     `${API}/docket-entries/?docket=${target.id}&order_by=-date_filed` +
-    `&fields=entry_number,date_filed,description,recap_documents`;
+    `&fields=entry_number,date_filed,time_filed,description,recap_documents`;
   // Synthetic same-key URL so all viewers share one cached copy per docket
   const cacheKey = new Request(`https://intel-docket-cache.invalid/${target.id}`);
   const cache = caches.default;
