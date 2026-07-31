@@ -39,7 +39,7 @@
     "slug": "harvest-sherwood",
     "display_name": "Harvest Sherwood",
     "short_name": "Harvest Sherwood",
-    "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
+    "docket_url": "https://www.courtlistener.com/docket/70143231/",
     "default_color": "#34D399",
     "category": "bankruptcy",
     "court": "N.D. Tex."
@@ -52,6 +52,15 @@
     "default_color": "#F87171",
     "category": "bankruptcy",
     "court": "Bankr. D. Mass"
+  },
+  {
+    "slug": "poolin",
+    "display_name": "Poolin",
+    "short_name": "Poolin",
+    "docket_url": "https://www.courtlistener.com/docket/73657689/",
+    "default_color": "#F2AAEC",
+    "category": "bankruptcy",
+    "court": "Bankr. D. N.J."
   },
   {
     "slug": "power-block-coin",
@@ -67,7 +76,7 @@
     "display_name": "RNDC",
     "short_name": "RNDC",
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "default_color": "#60A5FA",
+    "default_color": "#ffb8e0",
     "category": "bankruptcy",
     "court": "Bankr. S.D.Tx."
   },
@@ -75,7 +84,7 @@
     "slug": "sleep-number",
     "display_name": "Sleep Number",
     "short_name": "Sleep Number",
-    "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
+    "docket_url": "https://www.courtlistener.com/docket/73476260/",
     "default_color": "#FB923C",
     "category": "bankruptcy",
     "court": "United States Bankruptcy Court, S.D. New York"
@@ -84,7 +93,7 @@
     "slug": "terraform-labs",
     "display_name": "Terraform Labs",
     "short_name": "Terraform Labs",
-    "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/?filed_after=&filed_before=&entry_gte=&entry_lte=&order_by=desc",
+    "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "default_color": "#C084FC",
     "category": "bankruptcy",
     "court": "Bankr. D. Del."
