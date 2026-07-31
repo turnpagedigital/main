@@ -34,11 +34,20 @@ const NAV_ITEMS = navData.items
     _href:        i.href,
   }));
 
-/* Resolve a nav item's display label: prefer the admin-editable plain `label`,
- * fall back to the i18n translation by labelKey. This way edits made in the
- * admin Navigation tab actually show up on the site. */
-function navLabel(t, item) {
-  if (item.label && item.label.trim()) return item.label;
+/* Resolve a nav item's display label. In English the admin-editable plain
+ * `label` wins so Navigation-tab edits show up. In any other language the
+ * translation wins: labelKey first, then the data-text table keyed by the
+ * English label, then the label as-is. */
+function navLabel(t, td, lang, item) {
+  const plain = (item.label || "").trim();
+  if (lang !== "en") {
+    if (item.labelKey) {
+      const viaKey = t(item.labelKey);
+      if (viaKey !== item.labelKey) return viaKey;
+    }
+    if (plain) return td("nav", plain);
+  }
+  if (plain) return plain;
   if (item.labelKey) return t(item.labelKey);
   return "";
 }
@@ -60,7 +69,7 @@ const MICROSITE_NAVS = navData.microsites || {};
 export default function NavBar({ currentPage, open, onOpenChange }) {
   const [activeDrop, setActiveDrop] = useState(null);
   const closeTimer = useRef(null);
-  const { t } = useI18n();
+  const { t, td, lang } = useI18n();
 
   // Persist microsite context in sessionStorage so we keep the microsite nav
   // when navigating away from a microsite (to Team, Publications, etc.)
@@ -206,7 +215,7 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
                     borderBottom: activeDrop === item.key ? `2px solid ${INK}` : "2px solid transparent",
                   }}
                 >
-                  {navLabel(t, item)}
+                  {navLabel(t, td, lang, item)}
                   {isExternal && (
                     <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
                       <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />
@@ -289,11 +298,11 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
                 fontSize: "clamp(1.4rem, 2vw, 1.75rem)",
                 lineHeight: 1.15, letterSpacing: "-0.02em",
                 color: INK, marginBottom: "0.9rem",
-              }}>{dropContent.title}</h3>
+              }}>{td("nav", dropContent.title)}</h3>
               <p style={{
                 fontFamily: FONT, fontSize: "0.98rem",
                 color: INK_60, lineHeight: 1.55, maxWidth: 460,
-              }}>{dropContent.body}</p>
+              }}>{td("nav", dropContent.body)}</p>
             </div>
 
             <div>
@@ -353,7 +362,7 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
                 onMouseEnter={e => { e.currentTarget.style.background = "#222"; e.currentTarget.style.gap = "1em"; }}
                 onMouseLeave={e => { e.currentTarget.style.background = INK; e.currentTarget.style.gap = "0.7em"; }}
               >
-                <span>{dropContent.cta.label}</span>
+                <span>{td("nav", dropContent.cta.label)}</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={NEON} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
@@ -437,7 +446,7 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
                       display: "flex", alignItems: "center", justifyContent: "space-between",
                     }}
                   >
-                    <span>{navLabel(t, item)}</span>
+                    <span>{navLabel(t, td, lang, item)}</span>
                     {isExternal && (
                       <svg width="14" height="14" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" style={{ opacity: 0.55 }}>
                         <path d="M4 2h6v6M10 2l-7 7" strokeLinecap="round" />

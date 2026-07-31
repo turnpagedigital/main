@@ -30,7 +30,7 @@ const INACTIVE_NAV_IDS = new Set(
    labelKey / titleKey fields are used for i18n lookup; plain label/title
    is the English fallback shown in the admin. */
 export default function Footer() {
-  const { t } = useI18n();
+  const { t, td } = useI18n();
 
   // Resolve a label: admin-editable plain text wins so edits in the Footer
   // admin tab take effect on the site. Fall back to the i18n key only when
@@ -93,7 +93,7 @@ export default function Footer() {
         }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem 2rem", alignItems: "center" }}>
             <p style={{ fontFamily: FONT, fontSize: "0.82rem", color: INK_60 }}>
-              {tx(footerData.copyrightKey, footerData.copyright)}
+              {td("footer", tx(footerData.copyrightKey, footerData.copyright))}
             </p>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "1.2rem" }}>
