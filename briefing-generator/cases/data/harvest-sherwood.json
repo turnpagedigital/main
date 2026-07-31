@@ -2,20 +2,1168 @@
   "case": {
     "slug": "harvest-sherwood",
     "display_name": "Harvest Sherwood",
-    "case_name": "Harvest Sherwood Food Distributors",
+    "case_name": "Harvest Sherwood Food Distributors, Inc.",
     "court": "N.D. Tex.",
     "case_number": "25-80109",
     "judge": "Stacey G.C. Jernigan",
     "docket_id": "70143231",
-    "status": "active"
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "docket_url": "https://www.courtlistener.com/docket/70143231/",
+    "date_last_filing": "2026-07-29",
+    "fetched_at": "2026-07-31T07:19:57.034695+00:00",
+    "as_of": "Jul 31, 2026",
+    "backfilled": false,
+    "new_in_72h": 10,
+    "recent": [
+      {
+        "entry_number": 1123,
+        "date_filed": "2026-07-29",
+        "time_filed": "23:27:27",
+        "date_display": "Jul 29, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1122,
+        "date_filed": "2026-07-29",
+        "time_filed": "17:27:21",
+        "date_display": "Jul 29, 2026",
+        "description": "Certificate of service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1121,
+        "date_filed": "2026-07-29",
+        "time_filed": "15:31:26",
+        "date_display": "Jul 29, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 1123,
+        "date_filed": "2026-07-29",
+        "time_filed": "23:27:27",
+        "date_display": "Jul 29, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1122,
+        "date_filed": "2026-07-29",
+        "time_filed": "17:27:21",
+        "date_display": "Jul 29, 2026",
+        "description": "Certificate of service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1121,
+        "date_filed": "2026-07-29",
+        "time_filed": "15:31:26",
+        "date_display": "Jul 29, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1120,
+        "date_filed": "2026-07-29",
+        "time_filed": "15:30:45",
+        "date_display": "Jul 29, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1119,
+        "date_filed": "2026-07-29",
+        "time_filed": "15:16:01",
+        "date_display": "Jul 29, 2026",
+        "description": "Objection to confirmation of plan 11/12/13",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1118,
+        "date_filed": "2026-07-29",
+        "time_filed": "12:09:42",
+        "date_display": "Jul 29, 2026",
+        "description": "Objection to confirmation of plan 11/12/13",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1117,
+        "date_filed": "2026-07-29",
+        "time_filed": "11:39:45",
+        "date_display": "Jul 29, 2026",
+        "description": "Notice of appearance and request for notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1116,
+        "date_filed": "2026-07-29",
+        "time_filed": "11:22:43",
+        "date_display": "Jul 29, 2026",
+        "description": "Objection to confirmation of plan 11/12/13",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1115,
+        "date_filed": "2026-07-29",
+        "time_filed": "09:01:56",
+        "date_display": "Jul 29, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-29",
+        "time_filed": "15:32:58",
+        "date_display": "Jul 29, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1114,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:25:40",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1111,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:19:23",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1110,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:15:59",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1109,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:14:43",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1108,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:13:26",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1107,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:11:42",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1106,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:09:51",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1105,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:05:08",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1104,
+        "date_filed": "2026-07-28",
+        "time_filed": "16:38:45",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1103,
+        "date_filed": "2026-07-28",
+        "time_filed": "16:27:15",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1101,
+        "date_filed": "2026-07-28",
+        "time_filed": "08:54:00",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1100,
+        "date_filed": "2026-07-28",
+        "time_filed": "08:52:57",
+        "date_display": "Jul 28, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:28:59",
+        "date_display": "Jul 28, 2026",
+        "description": "none AND none AND none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "time_filed": "17:28:58",
+        "date_display": "Jul 28, 2026",
+        "description": "none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1099,
+        "date_filed": "2026-07-27",
+        "time_filed": "15:37:06",
+        "date_display": "Jul 27, 2026",
+        "description": "Compromise controversy",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1098,
+        "date_filed": "2026-07-27",
+        "time_filed": "14:06:15",
+        "date_display": "Jul 27, 2026",
+        "description": "Withdrawal of claim",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1097,
+        "date_filed": "2026-07-24",
+        "time_filed": "23:23:36",
+        "date_display": "Jul 24, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1096,
+        "date_filed": "2026-07-24",
+        "time_filed": "22:00:41",
+        "date_display": "Jul 24, 2026",
+        "description": "Extend/Shorten time",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1095,
+        "date_filed": "2026-07-24",
+        "time_filed": "21:57:37",
+        "date_display": "Jul 24, 2026",
+        "description": "Leave (Not for Appeal use)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1094,
+        "date_filed": "2026-07-24",
+        "time_filed": "19:20:26",
+        "date_display": "Jul 24, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1093,
+        "date_filed": "2026-07-24",
+        "time_filed": "19:17:04",
+        "date_display": "Jul 24, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1092,
+        "date_filed": "2026-07-24",
+        "time_filed": "19:13:52",
+        "date_display": "Jul 24, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1091,
+        "date_filed": "2026-07-24",
+        "time_filed": "15:13:17",
+        "date_display": "Jul 24, 2026",
+        "description": "Certificate of no objection",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1090,
+        "date_filed": "2026-07-24",
+        "time_filed": "09:49:35",
+        "date_display": "Jul 24, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-24",
+        "time_filed": "09:51:06",
+        "date_display": "Jul 24, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1089,
+        "date_filed": "2026-07-22",
+        "time_filed": "23:05:09",
+        "date_display": "Jul 22, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1088,
+        "date_filed": "2026-07-22",
+        "time_filed": "15:00:45",
+        "date_display": "Jul 22, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1087,
+        "date_filed": "2026-07-22",
+        "time_filed": "13:35:12",
+        "date_display": "Jul 22, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1086,
+        "date_filed": "2026-07-22",
+        "time_filed": "13:26:12",
+        "date_display": "Jul 22, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1085,
+        "date_filed": "2026-07-22",
+        "time_filed": "08:32:56",
+        "date_display": "Jul 22, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-22",
+        "time_filed": "08:34:27",
+        "date_display": "Jul 22, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1084,
+        "date_filed": "2026-07-21",
+        "time_filed": "19:58:09",
+        "date_display": "Jul 21, 2026",
+        "description": "Employ",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1082,
+        "date_filed": "2026-07-21",
+        "time_filed": "18:34:50",
+        "date_display": "Jul 21, 2026",
+        "description": "Withdrawal",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1081,
+        "date_filed": "2026-07-21",
+        "time_filed": "12:22:30",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1080,
+        "date_filed": "2026-07-21",
+        "time_filed": "12:19:54",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1079,
+        "date_filed": "2026-07-21",
+        "time_filed": "12:16:35",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1078,
+        "date_filed": "2026-07-21",
+        "time_filed": "12:12:14",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1077,
+        "date_filed": "2026-07-21",
+        "time_filed": "11:51:52",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1076,
+        "date_filed": "2026-07-21",
+        "time_filed": "11:49:57",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1075,
+        "date_filed": "2026-07-21",
+        "time_filed": "11:47:11",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1074,
+        "date_filed": "2026-07-21",
+        "time_filed": "11:42:54",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1073,
+        "date_filed": "2026-07-21",
+        "time_filed": "11:39:20",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1071,
+        "date_filed": "2026-07-21",
+        "time_filed": "11:34:20",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1070,
+        "date_filed": "2026-07-21",
+        "time_filed": "11:24:15",
+        "date_display": "Jul 21, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-21",
+        "time_filed": "11:52:25",
+        "date_display": "Jul 21, 2026",
+        "description": "none AND none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-21",
+        "time_filed": "18:45:06",
+        "date_display": "Jul 21, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-21",
+        "time_filed": "12:23:29",
+        "date_display": "Jul 21, 2026",
+        "description": "none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1068,
+        "date_filed": "2026-07-20",
+        "time_filed": "15:59:42",
+        "date_display": "Jul 20, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1067,
+        "date_filed": "2026-07-20",
+        "time_filed": "15:42:58",
+        "date_display": "Jul 20, 2026",
+        "description": "Compensation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1066,
+        "date_filed": "2026-07-20",
+        "time_filed": "15:17:44",
+        "date_display": "Jul 20, 2026",
+        "description": "Chapter 11 Monthly Operating Report UST Form 11-MOR",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1065,
+        "date_filed": "2026-07-20",
+        "time_filed": "15:16:22",
+        "date_display": "Jul 20, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1064,
+        "date_filed": "2026-07-20",
+        "time_filed": "15:09:06",
+        "date_display": "Jul 20, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1063,
+        "date_filed": "2026-07-20",
+        "time_filed": "10:55:29",
+        "date_display": "Jul 20, 2026",
+        "description": "Objection to confirmation of plan 11/12/13",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1062,
+        "date_filed": "2026-07-20",
+        "time_filed": "10:15:55",
+        "date_display": "Jul 20, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1061,
+        "date_filed": "2026-07-20",
+        "time_filed": "10:11:04",
+        "date_display": "Jul 20, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1060,
+        "date_filed": "2026-07-20",
+        "time_filed": "09:53:22",
+        "date_display": "Jul 20, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1059,
+        "date_filed": "2026-07-20",
+        "time_filed": "09:36:53",
+        "date_display": "Jul 20, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1058,
+        "date_filed": "2026-07-20",
+        "time_filed": "09:31:46",
+        "date_display": "Jul 20, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-20",
+        "time_filed": "10:11:29",
+        "date_display": "Jul 20, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-20",
+        "time_filed": "22:03:10",
+        "date_display": "Jul 20, 2026",
+        "description": "Transcript",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1057,
+        "date_filed": "2026-07-18",
+        "time_filed": "23:23:18",
+        "date_display": "Jul 18, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1056,
+        "date_filed": "2026-07-17",
+        "time_filed": "19:59:59",
+        "date_display": "Jul 17, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1055,
+        "date_filed": "2026-07-17",
+        "time_filed": "11:42:33",
+        "date_display": "Jul 17, 2026",
+        "description": "Request for transcript/audio",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1054,
+        "date_filed": "2026-07-17",
+        "time_filed": "10:45:10",
+        "date_display": "Jul 17, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-17",
+        "time_filed": "10:46:43",
+        "date_display": "Jul 17, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1053,
+        "date_filed": "2026-07-16",
+        "time_filed": "23:24:52",
+        "date_display": "Jul 16, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1052,
+        "date_filed": "2026-07-16",
+        "time_filed": "23:24:52",
+        "date_display": "Jul 16, 2026",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1051,
+        "date_filed": "2026-07-16",
+        "time_filed": "17:17:13",
+        "date_display": "Jul 16, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1050,
+        "date_filed": "2026-07-16",
+        "time_filed": "16:34:12",
+        "date_display": "Jul 16, 2026",
+        "description": "Request for transcript/audio",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1048,
+        "date_filed": "2026-07-16",
+        "time_filed": "15:05:48",
+        "date_display": "Jul 16, 2026",
+        "description": "Employ",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1047,
+        "date_filed": "2026-07-16",
+        "time_filed": "15:00:00",
+        "date_display": "Jul 16, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1046,
+        "date_filed": "2026-07-16",
+        "time_filed": "14:54:48",
+        "date_display": "Jul 16, 2026",
+        "description": "Order (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1045,
+        "date_filed": "2026-07-16",
+        "time_filed": "14:52:28",
+        "date_display": "Jul 16, 2026",
+        "description": "Certificate of no objection",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1044,
+        "date_filed": "2026-07-16",
+        "time_filed": "14:51:07",
+        "date_display": "Jul 16, 2026",
+        "description": "Request for transcript/audio",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-16",
+        "time_filed": "15:10:39",
+        "date_display": "Jul 16, 2026",
+        "description": "Hearing held",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1043,
+        "date_filed": "2026-07-15",
+        "time_filed": "17:21:39",
+        "date_display": "Jul 15, 2026",
+        "description": "Objection to confirmation of plan 11/12/13",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1042,
+        "date_filed": "2026-07-15",
+        "time_filed": "15:10:15",
+        "date_display": "Jul 15, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1041,
+        "date_filed": "2026-07-15",
+        "time_filed": "14:42:53",
+        "date_display": "Jul 15, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1040,
+        "date_filed": "2026-07-15",
+        "time_filed": "11:09:13",
+        "date_display": "Jul 15, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1039,
+        "date_filed": "2026-07-15",
+        "time_filed": "11:07:07",
+        "date_display": "Jul 15, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-15",
+        "time_filed": "11:10:01",
+        "date_display": "Jul 15, 2026",
+        "description": "none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1038,
+        "date_filed": "2026-07-14",
+        "time_filed": "16:01:18",
+        "date_display": "Jul 14, 2026",
+        "description": "List (witness/exhibit/generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1037,
+        "date_filed": "2026-07-14",
+        "time_filed": "15:11:19",
+        "date_display": "Jul 14, 2026",
+        "description": "Compensation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1036,
+        "date_filed": "2026-07-14",
+        "time_filed": "12:29:51",
+        "date_display": "Jul 14, 2026",
+        "description": "Compensation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1034,
+        "date_filed": "2026-07-14",
+        "time_filed": "12:00:46",
+        "date_display": "Jul 14, 2026",
+        "description": "Agenda for Complex Chapter 11",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1032,
+        "date_filed": "2026-07-14",
+        "time_filed": "11:01:08",
+        "date_display": "Jul 14, 2026",
+        "description": "Order (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1031,
+        "date_filed": "2026-07-13",
+        "time_filed": "20:46:56",
+        "date_display": "Jul 13, 2026",
+        "description": "Joinder",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1030,
+        "date_filed": "2026-07-13",
+        "time_filed": "18:52:11",
+        "date_display": "Jul 13, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1029,
+        "date_filed": "2026-07-13",
+        "time_filed": "18:37:31",
+        "date_display": "Jul 13, 2026",
+        "description": "Response to objection to claim",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1028,
+        "date_filed": "2026-07-13",
+        "time_filed": "18:05:10",
+        "date_display": "Jul 13, 2026",
+        "description": "Certificate of no objection",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1027,
+        "date_filed": "2026-07-13",
+        "time_filed": "14:39:04",
+        "date_display": "Jul 13, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1026,
+        "date_filed": "2026-07-13",
+        "time_filed": "13:31:39",
+        "date_display": "Jul 13, 2026",
+        "description": "Certificate of no objection",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-13",
+        "time_filed": "09:12:38",
+        "date_display": "Jul 13, 2026",
+        "description": "District court re: appeal",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1024,
+        "date_filed": "2026-07-12",
+        "time_filed": "18:48:38",
+        "date_display": "Jul 12, 2026",
+        "description": "Clerk's correspondence",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1023,
+        "date_filed": "2026-07-10",
+        "time_filed": "17:18:37",
+        "date_display": "Jul 10, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1022,
+        "date_filed": "2026-07-10",
+        "time_filed": "15:54:31",
+        "date_display": "Jul 10, 2026",
+        "description": "Compensation",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1021,
+        "date_filed": "2026-07-09",
+        "time_filed": "22:15:54",
+        "date_display": "Jul 9, 2026",
+        "description": "Withdrawal of claim",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1020,
+        "date_filed": "2026-07-09",
+        "time_filed": "22:14:04",
+        "date_display": "Jul 9, 2026",
+        "description": "Withdrawal of claim",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1019,
+        "date_filed": "2026-07-09",
+        "time_filed": "22:05:59",
+        "date_display": "Jul 9, 2026",
+        "description": "Certificate of service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1018,
+        "date_filed": "2026-07-09",
+        "time_filed": "11:30:02",
+        "date_display": "Jul 9, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1016,
+        "date_filed": "2026-07-08",
+        "time_filed": "17:27:53",
+        "date_display": "Jul 8, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Epiq11",

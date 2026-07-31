@@ -2,26 +2,28 @@
   "case": {
     "slug": "kahan",
     "display_name": "Kahan",
-    "case_name": "Jason M. Kahan",
+    "case_name": "Jason M Kahan",
     "court": "Bankr. D. Mass",
     "case_number": "24-11592",
     "judge": "Bostwick",
     "docket_id": "69021491",
-    "status": "active"
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-07-27",
-    "fetched_at": "2026-07-30T16:21:20.806325+00:00",
-    "as_of": "Jul 30, 2026",
+    "fetched_at": "2026-07-31T07:20:55.539080+00:00",
+    "as_of": "Jul 31, 2026",
     "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 353,
         "date_filed": "2026-07-27",
+        "time_filed": "23:35:11",
         "date_display": "Jul 27, 2026",
         "description": "Statement of Issues",
         "is_new": false,
@@ -31,6 +33,7 @@
       {
         "entry_number": 348,
         "date_filed": "2026-07-17",
+        "time_filed": "15:30:07",
         "date_display": "Jul 17, 2026",
         "description": "Order on Motion To Stay Pending Appeal",
         "is_new": false,
@@ -40,6 +43,7 @@
       {
         "entry_number": 347,
         "date_filed": "2026-07-17",
+        "time_filed": "15:22:14",
         "date_display": "Jul 17, 2026",
         "description": "Notice",
         "is_new": false,
@@ -51,6 +55,7 @@
       {
         "entry_number": 353,
         "date_filed": "2026-07-27",
+        "time_filed": "23:35:11",
         "date_display": "Jul 27, 2026",
         "description": "Statement of Issues",
         "is_new": false,
@@ -60,6 +65,7 @@
       {
         "entry_number": 348,
         "date_filed": "2026-07-17",
+        "time_filed": "15:30:07",
         "date_display": "Jul 17, 2026",
         "description": "Order on Motion To Stay Pending Appeal",
         "is_new": false,
@@ -69,6 +75,7 @@
       {
         "entry_number": 347,
         "date_filed": "2026-07-17",
+        "time_filed": "15:22:14",
         "date_display": "Jul 17, 2026",
         "description": "Notice",
         "is_new": false,
@@ -78,6 +85,7 @@
       {
         "entry_number": 346,
         "date_filed": "2026-07-17",
+        "time_filed": "14:07:37",
         "date_display": "Jul 17, 2026",
         "description": "Stay Pending Appeal",
         "is_new": false,
@@ -87,6 +95,7 @@
       {
         "entry_number": 345,
         "date_filed": "2026-07-17",
+        "time_filed": "13:36:40",
         "date_display": "Jul 17, 2026",
         "description": "Order on Motion for Emergency/Expedited Determination",
         "is_new": false,
@@ -96,6 +105,7 @@
       {
         "entry_number": 344,
         "date_filed": "2026-07-17",
+        "time_filed": "13:34:26",
         "date_display": "Jul 17, 2026",
         "description": "Order on Motion To Stay Pending Appeal",
         "is_new": false,
@@ -105,6 +115,7 @@
       {
         "entry_number": 343,
         "date_filed": "2026-07-17",
+        "time_filed": "10:46:09",
         "date_display": "Jul 17, 2026",
         "description": "Order on Motion To Sell",
         "is_new": false,
@@ -114,6 +125,7 @@
       {
         "entry_number": 340,
         "date_filed": "2026-07-15",
+        "time_filed": "14:53:12",
         "date_display": "Jul 15, 2026",
         "description": "Initial Transmittal to (BAP)/District Court",
         "is_new": false,
@@ -123,6 +135,7 @@
       {
         "entry_number": 339,
         "date_filed": "2026-07-15",
+        "time_filed": "14:50:35",
         "date_display": "Jul 15, 2026",
         "description": "Notice to District Court",
         "is_new": false,
@@ -132,6 +145,7 @@
       {
         "entry_number": null,
         "date_filed": "2026-07-15",
+        "time_filed": "16:00:37",
         "date_display": "Jul 15, 2026",
         "description": "Notice of Docketing Record on Appeal",
         "is_new": false,
@@ -141,6 +155,7 @@
       {
         "entry_number": 338,
         "date_filed": "2026-07-14",
+        "time_filed": "17:30:11",
         "date_display": "Jul 14, 2026",
         "description": "Notice of Withdrawal of Appearance/Representation",
         "is_new": false,
@@ -150,6 +165,7 @@
       {
         "entry_number": 336,
         "date_filed": "2026-07-14",
+        "time_filed": "09:49:41",
         "date_display": "Jul 14, 2026",
         "description": "Notice of Appearance and Request for Notice",
         "is_new": false,
@@ -159,6 +175,7 @@
       {
         "entry_number": 335,
         "date_filed": "2026-07-14",
+        "time_filed": "06:20:18",
         "date_display": "Jul 14, 2026",
         "description": "** Not Used ** Notice of Filing of Official Transcript",
         "is_new": false,
@@ -168,6 +185,7 @@
       {
         "entry_number": null,
         "date_filed": "2026-07-14",
+        "time_filed": "06:20:18",
         "date_display": "Jul 14, 2026",
         "description": "** Not Used ** Notice of Filing of Official Transcript",
         "is_new": false,
@@ -177,6 +195,7 @@
       {
         "entry_number": 334,
         "date_filed": "2026-07-13",
+        "time_filed": "17:25:33",
         "date_display": "Jul 13, 2026",
         "description": "Emergency/Expedited Determination",
         "is_new": false,
@@ -186,6 +205,7 @@
       {
         "entry_number": 333,
         "date_filed": "2026-07-13",
+        "time_filed": "16:22:53",
         "date_display": "Jul 13, 2026",
         "description": "Notice of Appearance and Request for Notice",
         "is_new": false,
@@ -195,6 +215,7 @@
       {
         "entry_number": 332,
         "date_filed": "2026-07-13",
+        "time_filed": "12:25:47",
         "date_display": "Jul 13, 2026",
         "description": "Stay Pending Appeal",
         "is_new": false,
@@ -204,6 +225,7 @@
       {
         "entry_number": 331,
         "date_filed": "2026-07-13",
+        "time_filed": "12:08:14",
         "date_display": "Jul 13, 2026",
         "description": "Notice of Appeal and Statement of Election",
         "is_new": false,
@@ -213,6 +235,7 @@
       {
         "entry_number": 329,
         "date_filed": "2026-07-13",
+        "time_filed": "05:35:07",
         "date_display": "Jul 13, 2026",
         "description": "** Not Used ** Notice of Filing of Official Transcript",
         "is_new": false,
@@ -267,6 +290,7 @@
       {
         "entry_number": 321,
         "date_filed": "2026-07-10",
+        "time_filed": "01:37:39",
         "date_display": "Jul 10, 2026",
         "description": "Emergency Motion filed by Interested Party Samara CR Holdings, LLC to Schedule Status Conference (Re: 260 Motion to Sell) with certificate of service. (Azman, Darren) (Entered: 07/10/2026)",
         "is_new": false,
@@ -920,8 +944,209 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 249,
+        "date_filed": "2026-04-07",
+        "time_filed": "13:29:36",
+        "date_display": "Apr 7, 2026",
+        "description": "Certificate of Service (Re: 248 Order To Set Hearing) filed by Trustee Donald Lassman (Gregoricus, Zachary) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 248,
+        "date_filed": "2026-04-07",
+        "time_filed": "11:12:30",
+        "date_display": "Apr 7, 2026",
+        "description": "Order dated 04/07/2026 Setting Hearing (Re: 137 Order dated February 19, 2025, 118 Application filed by Trustee Donald Lassman to Employ Kenneth T. Cuccinelli, II as Special Counsel). See Order for Full Text. (skeating, usbc) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.248.0_1.pdf"
+      },
+      {
+        "entry_number": 247,
+        "date_filed": "2026-04-07",
+        "time_filed": "10:57:28",
+        "date_display": "Apr 7, 2026",
+        "description": "Order dated 4/7/2026 Re: 226 Motion filed by Creditor Commonwealth Real Estate Holdings, LLC to File Late Proof of Claim, HAVING REVIEWED THE MOTION, THE TRUSTEE HAVING WITHDRAWN HIS RESPONSE, AND GOOD CAUSE BEING SHOWN, THE MOTION IS GRANTED AS FOLLOWS. THE DEADLINE FOR COMMONWEALTH REAL ESTATE HOLDINGS, LLC, TO FILE A PROOF OF CLAIM IS EXTENDED TO MAY 7, 2026. THE HEARING SCHEDULED FOR APRIL 21, 2026, ON THE ABOVE MOTION IS CANCELED. (skeating, usbc) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 246,
+        "date_filed": "2026-04-07",
+        "time_filed": "09:07:13",
+        "date_display": "Apr 7, 2026",
+        "description": "Endorsed Order dated 4/07/2026 (Re: 231 Response filed by Trustee Donald Lassman). Withdrawn. (skeating, usbc) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 245,
+        "date_filed": "2026-04-02",
+        "time_filed": "10:34:19",
+        "date_display": "Apr 2, 2026",
+        "description": "Notice of Withdrawal of Objection and Request to Cancel Hearing with certificate of service (Re: 231 Response) filed by Trustee Donald Lassman (Gregoricus, Zachary) (Entered: 04/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 244,
+        "date_filed": "2026-03-31",
+        "time_filed": "15:45:15",
+        "date_display": "Mar 31, 2026",
+        "description": "Certificate of Service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 243,
+        "date_filed": "2026-03-31",
+        "time_filed": "15:06:31",
+        "date_display": "Mar 31, 2026",
+        "description": "Supplemental Document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 242,
+        "date_filed": "2026-03-30",
+        "time_filed": "17:53:06",
+        "date_display": "Mar 30, 2026",
+        "description": "Affidavit",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 237,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:42:48",
+        "date_display": "Mar 26, 2026",
+        "description": "Certificate of Service of Notice of Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 236,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:12:43",
+        "date_display": "Mar 26, 2026",
+        "description": "Order on Motion to File Late",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 235,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:09:11",
+        "date_display": "Mar 26, 2026",
+        "description": "Order on Motion to File Late",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 234,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:06:35",
+        "date_display": "Mar 26, 2026",
+        "description": "Order on Motion Determine",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 233,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:03:07",
+        "date_display": "Mar 26, 2026",
+        "description": "Order on Motion for Approval",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 232,
+        "date_filed": "2026-03-23",
+        "time_filed": "16:42:03",
+        "date_display": "Mar 23, 2026",
+        "description": "Certificate of Service of Notice of Hearing (Re: 226 Motion to File Late) filed by Creditor Commonwealth Real Estate Holdings, LLC (Attachments: # 1 Copy of Notice of Hearing) (Johnson, Jay) (Entered: 03/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 231,
+        "date_filed": "2026-03-23",
+        "time_filed": "15:13:49",
+        "date_display": "Mar 23, 2026",
+        "description": "Response with certificate of service filed by Trustee Donald Lassman Re: 226 Motion filed by Creditor Commonwealth Real Estate Holdings, LLC to File Late Proof of Claim, with certificate of service. (Gregoricus, Zachary) (Entered: 03/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 230,
+        "date_filed": "2026-03-23",
+        "time_filed": "10:03:52",
+        "date_display": "Mar 23, 2026",
+        "description": "Affidavit of Mark M. Newberg and Alexis G. Malkin, Individually and as Trustees of the 5 Wigglesworth Condominium Trust In Support (Re: 220 Motion to File Late) filed by Creditor Mark M. Newberg and Alexis G. Malkin, Individually and as Trustees of the 5 Wigglesworth Condominium Trust (Attachments: # 1 Certificate of Service) (Gottlieb, Richard) (Entered: 03/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 229,
+        "date_filed": "2026-03-18",
+        "time_filed": "11:55:23",
+        "date_display": "Mar 18, 2026",
+        "description": "Response with certificate of service filed by Trustee Donald Lassman Re: 220 Motion filed by Creditor Mark M. Newberg and Alexis G. Malkin, Individually and as Trustees of the 5 Wigglesworth Condominium Trust to File Late Proof of Claim, with certificate of service. (Gregoricus, Zachary) (Entered: 03/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 226,
+        "date_filed": "2026-03-05",
+        "time_filed": "16:53:08",
+        "date_display": "Mar 5, 2026",
+        "description": "File Late",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 225,
+        "date_filed": "2026-03-05",
+        "time_filed": "13:44:57",
+        "date_display": "Mar 5, 2026",
+        "description": "Certificate of Service of Notice of Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 223,
+        "date_filed": "2026-03-03",
+        "time_filed": "12:49:21",
+        "date_display": "Mar 3, 2026",
+        "description": "Emergency/Expedited Determination",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69021491&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": null,
   "coverage": [],

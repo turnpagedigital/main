@@ -2,42 +2,50 @@
   "case": {
     "slug": "rndc",
     "display_name": "RNDC",
-    "case_name": "Republic National Distributing Company LLC",
+    "case_name": "Republic National Distributing Company, LLC",
     "court": "Bankr. S.D.Tx.",
     "case_number": "26-90737",
     "judge": "Hon. Christopher M. Lopez",
     "docket_id": "73673083",
-    "status": "active"
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "new_in_72h": 20,
+    "date_last_filing": "2026-07-30",
+    "fetched_at": "2026-07-31T07:23:13.123945+00:00",
+    "as_of": "Jul 31, 2026",
+    "backfilled": true,
+    "new_in_72h": 16,
     "recent": [
       {
-        "entry_number": 74,
-        "date_filed": "2026-07-29",
-        "date_display": "Jul 29, 2026",
-        "description": "AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by John F. Higgins. This is to order a transcript of 7/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/29/2026)",
+        "entry_number": 88,
+        "date_filed": "2026-07-30",
+        "time_filed": "14:37:38",
+        "date_display": "Jul 30, 2026",
+        "description": "Transcript",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 76,
-        "date_filed": "2026-07-29",
-        "date_display": "Jul 29, 2026",
+        "entry_number": 87,
+        "date_filed": "2026-07-30",
+        "time_filed": "12:07:27",
+        "date_display": "Jul 30, 2026",
         "description": "Notice of Appearance and Request for Notice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 77,
-        "date_filed": "2026-07-29",
-        "date_display": "Jul 29, 2026",
-        "description": "Notice of Appearance and Request for Notice",
+        "entry_number": 86,
+        "date_filed": "2026-07-30",
+        "time_filed": "10:52:10",
+        "date_display": "Jul 30, 2026",
+        "description": "Order to Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -45,19 +53,121 @@
     ],
     "entries": [
       {
-        "entry_number": 74,
-        "date_filed": "2026-07-29",
-        "date_display": "Jul 29, 2026",
-        "description": "AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by John F. Higgins. This is to order a transcript of 7/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/29/2026)",
+        "entry_number": 88,
+        "date_filed": "2026-07-30",
+        "time_filed": "14:37:38",
+        "date_display": "Jul 30, 2026",
+        "description": "Transcript",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 76,
-        "date_filed": "2026-07-29",
-        "date_display": "Jul 29, 2026",
+        "entry_number": 87,
+        "date_filed": "2026-07-30",
+        "time_filed": "12:07:27",
+        "date_display": "Jul 30, 2026",
         "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 86,
+        "date_filed": "2026-07-30",
+        "time_filed": "10:52:10",
+        "date_display": "Jul 30, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 85,
+        "date_filed": "2026-07-30",
+        "time_filed": "10:51:11",
+        "date_display": "Jul 30, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 84,
+        "date_filed": "2026-07-30",
+        "time_filed": "10:49:48",
+        "date_display": "Jul 30, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 83,
+        "date_filed": "2026-07-30",
+        "time_filed": "10:46:40",
+        "date_display": "Jul 30, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 82,
+        "date_filed": "2026-07-30",
+        "time_filed": "10:44:49",
+        "date_display": "Jul 30, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 81,
+        "date_filed": "2026-07-30",
+        "time_filed": "09:11:48",
+        "date_display": "Jul 30, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 80,
+        "date_filed": "2026-07-30",
+        "time_filed": "09:11:14",
+        "date_display": "Jul 30, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-30",
+        "time_filed": "14:37:38",
+        "date_display": "Jul 30, 2026",
+        "description": "Transcript",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2026-07-29",
+        "time_filed": "13:30:15",
+        "date_display": "Jul 29, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 78,
+        "date_filed": "2026-07-29",
+        "time_filed": "13:18:13",
+        "date_display": "Jul 29, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -65,6 +175,17 @@
       {
         "entry_number": 77,
         "date_filed": "2026-07-29",
+        "time_filed": "13:17:15",
+        "date_display": "Jul 29, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2026-07-29",
+        "time_filed": "12:08:28",
         "date_display": "Jul 29, 2026",
         "description": "Notice of Appearance and Request for Notice",
         "is_new": true,
@@ -74,6 +195,7 @@
       {
         "entry_number": 75,
         "date_filed": "2026-07-29",
+        "time_filed": "11:41:17",
         "date_display": "Jul 29, 2026",
         "description": "Notice of Appearance and Request for Notice",
         "is_new": true,
@@ -81,119 +203,22 @@
         "doc_url": ""
       },
       {
-        "entry_number": 78,
+        "entry_number": 74,
         "date_filed": "2026-07-29",
+        "time_filed": "09:40:42",
         "date_display": "Jul 29, 2026",
-        "description": "Appear pro hac vice",
+        "description": "AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by John F. Higgins. This is to order a transcript of 7/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/29/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 79,
-        "date_filed": "2026-07-29",
-        "date_display": "Jul 29, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 58,
+        "entry_number": 73,
         "date_filed": "2026-07-28",
+        "time_filed": "18:34:30",
         "date_display": "Jul 28, 2026",
-        "description": "MOTION to Appear Pro Hac Vice for John R. Ashmead (Fee Paid: $100, receipt number 27423019) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 61,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "MOTION to Appear Pro Hac Vice for Thomas Ross Hooper (Fee Paid: $100, receipt number A27423085) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 57,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "Notice of Appearance and Request for Notice Filed by John R Ashmead Filed by on behalf of Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 66,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "Order Granting Motion for Maddison Levine To Appear pro hac vice (Related Doc # 33) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 63,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "Order Granting Motion for Justin Rawlins To Appear pro hac vice (Related Doc # 30) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 62,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "MOTION to Appear Pro Hac Vice for Kwame O. Akuffo (Fee Paid: $100, receipt number A27423147) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 60,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "Interim Order (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief. Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 59,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "MOTION to Appear Pro Hac Vice for Robert J. Gayda (Fee Paid: $100, receipt number A27423070) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 67,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "Order Granting Motion for Lindsey Henrikson To Appear pro hac vice (Related Doc # 34) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 65,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "Order Granting Motion for Geoffrey M. King To Appear pro hac vice (Related Doc # 32) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 71,
-        "date_filed": "2026-07-28",
-        "date_display": "Jul 28, 2026",
-        "description": "Notice of Demonstrative. Filed by Republic National Distributing Company, LLC (Attachments: # 1 Presentation) (Higgins, John) (Entered: 07/28/2026)",
-        "is_new": true,
+        "description": "MOTION to Appear Pro Hac Vice for Stephen Rochester (Fee Paid: $100, receipt number A27424900) Filed by Interested Party New BG Distribution Partners, LLC (Reisman, Steven) (Entered: 07/28/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -202,16 +227,16 @@
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
         "description": "Notice of Appearance and Request for Notice Filed by Steven J. Reisman Filed by on behalf of New BG Distribution Partners, LLC (Reisman, Steven) (Entered: 07/28/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 68,
+        "entry_number": 71,
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
-        "description": "Order Granting Motion for Christopher Marcus To Appear pro hac vice (Related Doc # 35) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
-        "is_new": true,
+        "description": "Notice of Demonstrative. Filed by Republic National Distributing Company, LLC (Attachments: # 1 Presentation) (Higgins, John) (Entered: 07/28/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -220,14 +245,654 @@
         "date_filed": "2026-07-28",
         "date_display": "Jul 28, 2026",
         "description": "Order Granting Motion for Joshua A. Sussberg To Appear pro hac vice (Related Doc # 37) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
-        "is_new": true,
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 69,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:29:19",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Joshua Raphael To Appear pro hac vice (Related Doc # 36) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 68,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Christopher Marcus To Appear pro hac vice (Related Doc # 35) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 67,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Lindsey Henrikson To Appear pro hac vice (Related Doc # 34) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 66,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Maddison Levine To Appear pro hac vice (Related Doc # 33) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 65,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Geoffrey M. King To Appear pro hac vice (Related Doc # 32) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 64,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:19:19",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Rachel Golden To Appear pro hac vice (Related Doc # 31) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 63,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Justin Rawlins To Appear pro hac vice (Related Doc # 30) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 62,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:02:49",
+        "date_display": "Jul 28, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Kwame O. Akuffo (Fee Paid: $100, receipt number A27423147) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 61,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Thomas Ross Hooper (Fee Paid: $100, receipt number A27423085) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 60,
+        "date_filed": "2026-07-28",
+        "time_filed": "12:52:29",
+        "date_display": "Jul 28, 2026",
+        "description": "Interim Order (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief. Signed on 7/28/2026. (rgs4) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 59,
+        "date_filed": "2026-07-28",
+        "time_filed": "12:51:20",
+        "date_display": "Jul 28, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Robert J. Gayda (Fee Paid: $100, receipt number A27423070) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 58,
+        "date_filed": "2026-07-28",
+        "time_filed": "12:46:23",
+        "date_display": "Jul 28, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for John R. Ashmead (Fee Paid: $100, receipt number 27423019) Filed by Interested Parties Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 57,
+        "date_filed": "2026-07-28",
+        "date_display": "Jul 28, 2026",
+        "description": "Notice of Appearance and Request for Notice Filed by John R Ashmead Filed by on behalf of Atlanta Wines International, Inc., NDC Leasing Company, LLC, NDC Partners, LLC, National Distributing Company, Inc. (Ashmead, John) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 56,
+        "date_filed": "2026-07-28",
+        "time_filed": "",
+        "date_display": "Jul 28, 2026",
+        "description": "Notice of Appearance and Request for Notice Filed by John Kendrick Turner Filed by on behalf of Gregg County (Turner, John) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 55,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Notice of Filing of Revised Proposed Interim Order (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief. (Related document(s):19 Emergency Motion (with hearing date)) Filed by Republic National Distributing Company, LLC (Attachments: # 1 Proposed Order - Interim Order # 2 Exhibit 1) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 54,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Notice of Non-Insider Key Employee Retention Program Payments. (Related document(s):52 Order on Emergency Motion) Filed by Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 53,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Proposed Order Submission After Hearing (Filed By Republic National Distributing Company, LLC ).(Related document(s):19 Emergency Motion (with hearing date)) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 52,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order (I) Authorizing the Debtors to (A) Pay Prepetition Wages, Salaries, Other Compensation, and Reimbursable Expenses and (B) Continue Employee Benefit Programs, and (II) Granting Related Relief (Related Doc # 14). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 51,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "PDF with attached Audio File. Court Date & Time [07/27/2026 02:01:37 PM]. File Size [ 38284 KB ]. Run Time [ 01:21:48 ]. (Hearing held July 27, 2026 at PM). (admin). (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 50,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Courtroom Minutes. Time Hearing Held: 2:00 PM. Appearances: PLEASE SEE ATTACHED. ERO\\Courtroom Deputy: Y. Lila. (Related document(s):5,6,7,8,9,10,11,12,14) Hearing held. For the reasons stated on the record, Motions Granted. Orders Signed. (Related document(s):15,16) Motions Granted on Interim Basis. Orders Signed. (Related document(s):19) Motion Granted on Interim Basis. Parties to upload revised form of Order. Second Day Hearing scheduled for 8/24/2026 at 01:00 PM at Houston, Courtroom 402 (CML). (yml4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 49,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order Granting Motion for Jennifer Davis To Appear pro hac vice (Related Doc # 29) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 48,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order (I) Approving Notification and Hearing Procedures for Certain Transfers of and Declarations of Worthlessness with Respect to Common Stock, (II) Directing that Any Such Transfer or Declaration of Worthlessness in Violations of Such Procedures Be Null and Void AB Initio, and (III) Granting Related Relief (Related Doc # 7). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 47,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order (I) Authorizing the Debtors to (A) Pay Certain Taxes and Fees and (B) Undertake Certain Tax Planning Activities, and (II) Granting Related Relief (Related Doc # 6). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 46,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order (I) Authorizing the Debtors to (A) Maintain Insurance Coverage, Surety Bond Program, and Letters of Credit Entered into Prepetition and Satisfy Prepetition Obligations Related Thereto, (B) Continue to Pay Certain Claims Processing Fees, and (C) Renew, Amend, Supplement, Extend, Purchase, Cancel, and Enter into New Insurance Policies, Letters of Credit, and Surety Bonds, and (II) Granting Related Relief (Related Doc # 5). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 45,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order (I) Authorizing the Debtors to (A) File a Consolidated Creditor Matrix, (B) Redact or Withhold Certain Confidential Information of Customers, and (C) Redact Certain Personally Identifiable Information of Natural Persons, (II) Approving the Form and Manner of Notifying Creditors of the Commencement of the Chapter 11 Cases and Other Information, and (III) Granting Related Relief (Related Doc # 10). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 44,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order (I) Authorizing the Debtors to (A) Maintain and Administer Their Existing Supplier and Customer Programs and Honor Certain Prepetition Obligations Related Thereto and (II) Granting Related Relief (Related Doc # 8). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 43,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Interim Order (I) Authorizing the Debtors to (A) Pay Certain Prepetition of Claims of Critical Vendors, 503(b)(9) Claimants, Lien Claimants, and Foreign Vendors and (B) Honor Their Obligations Under the Supplier Agreements in the Ordinary Course of Business, (II) Confirming Administrative Expense Priority of Outstanding Orders, and (III) Granting Related Relief (Related document(s): 15). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 42,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order (I) Extending Time to File (A) Schedules and Statements and (B) Rule 2015.3 Financial Reports, (II) Modifying the Requirements of Bankruptcy Local Rule 2015-3, and (III) Granting Related Relief (Related Doc # 11). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Christopher Marcus (Fee Paid: $100, receipt number A27418972) Filed by Debtor Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 34,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Lindsey Henrikson (Fee Paid: $100, receipt number A27418967) Filed by Creditor Wells Fargo Bank, N.A., as Prepetition Agent and DIP Agent (Persons, Charles) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 33,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Maddison Levine (Fee Paid: $100, receipt number A27418957) Filed by Debtor Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 32,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Geoffrey M. King (Fee Paid: $100, receipt number A27418949) Filed by Creditor Wells Fargo Bank, N.A., as Prepetition Agent and DIP Agent (Persons, Charles) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 31,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Rachel Golden (Fee Paid: $100, receipt number A27418947) Filed by Debtor Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 30,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Justin Rawlins (Fee Paid: $100, receipt number A27418925) Filed by Creditor Wells Fargo Bank, N.A., as Prepetition Agent and DIP Agent (Persons, Charles) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 29,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "MOTION to Appear Pro Hac Vice for Jennifer Davis (Fee Paid: $100, receipt number A27418941) Filed by Debtor Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 28,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Notice of Appearance and Request for Notice Filed by Charles Martin Persons Filed by on behalf of Wells Fargo Bank, N.A., as Prepetition Agent and DIP Agent (Persons, Charles) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 27,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Agenda for Hearing on 7/27/2026 (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 26,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order Authorizing the Employment and Retention of Omni Agent Solutions, Inc. as Claims, Noticing, and Solicitation Agent (Related Doc # 4). Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 25,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order Granting Complex Chapter 11 Bankruptcy Case Treatment. Signed on 7/27/2026. (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 24,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Notice of Telephonic amd Video Conference Hearing on Emergency Motions. Filed by Republic National Distributing Company, LLC (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 23,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Witness List, Exhibit List (Filed By Republic National Distributing Company, LLC ). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12 # 13 Exhibit 13 # 14 Exhibit 14 # 15 Exhibit 15) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.23.0.pdf"
+      },
+      {
+        "entry_number": 22,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Order for Joint Administration Signed on 7/27/2026 (Related Doc # 2). (rgs4) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Declaration re: Declaration of Christian Tempke In Support of the Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Declaration re: Declaration of John R. Castellano In Support of the Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.20.0.pdf"
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash Collateral, (IV) Modifying the Automatic Stay, (V) Scheduling a Final Hearing, and (VI) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Declaration re: / Declaration of John R. Castellano, Chief Restructuring Officer of Republic National Distributing Company, LLC and its Debtor Affiliates, in Support of the Debtors' Chapter 11 Petitions and First Day Motions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.18.0.pdf"
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Motion / Debtors' Motion for Entry of Interim and Final Orders (I) Authorizing and Approving the Reyes Settlement Process, (II) Approving the Form of Reyes Settlement Notice, (III) Authorizing and Approving the Reyes Settlement Upon Satisfaction of the Settlement Conditions, and (IV) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 proposed Interim Order # 2 proposed Final Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.17.0.pdf"
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to (A) Continue to Operate the Cash Management System, (B) Maintain Existing Bank Accounts, Business Forms, and Books and Records, and (C) Continue Intercompany Transactions, (II) Granting Administrative Expense Status to Certain Postpetition Intercompany Transactions, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Proposed Order - Interim # 4 Proposed Order - Final) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing the Debtors to (A) Pay Certain Prepetition of Claims of Critical Vendors, 503(b)(9) Claimants, Lien Claimants, and Foreign Vendors and (B) Honor Their Obligations Under the Supplier Agreements in the Ordinary Course of Business, (II) Confirming Administrative Expense Priority of Outstanding Orders, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order - Interim # 2 Proposed Order - Final) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Pay Prepetition Wages, Salaries, Other Compensation, and Reimbursable Expenses and (B) Continue Employee Benefit Programs, and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Motion - Debtors' First Omnibus Motion for Entry of an Order (I) Authorizing, Effective Nunc Pro Tunc to the Petition Date, the (A) Rejection of Certain Unexpired Leases and (B) Abandonment of Certain Personal Property, if any, Each Effective as of the Rejection Date and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to Continue to Provide All TSA Services and Honor All Obligations Related Thereto and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Extending Time to File (A) Schedules and Statements and (B) Rule 2015.3 Financial Reports, (II) Modifying the Requirements of Bankruptcy Local Rule 2015-3, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) File a Consolidated Creditor Matrix, (B) Redact or Withhold Certain Confidential Information of Customers, and (C) Redact Certain Personally Identifiable Information of Natural Persons, (II) Approving the Form and Manner of Notifying Creditors of the Commencement of the Chapter 11 Cases and Other Information, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.10.0_1.pdf"
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Approving the Debtors' Proposed Adequate Assurance of Payment for Future Utility Services, (II) Prohibiting Utility Providers from Altering, Refusing, or Discontinuing Services, (III) Approving the Debtors' Proposed Procedures for Resolving Adequate Assurance Requests, and (IV) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.9.0.pdf"
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Maintain and Administer Their Existing Supplier and Customer Programs and Honor Certain Prepetition Obligations Related Thereto and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.8.0.pdf"
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Approving Notification and Hearing Procedures for Certain Transfers of and Declarations of Worthlessness with Respect to Common Stock, (II) Directing that Any Such Transfer or Declaration of Worthlessness in Violations of Such Procedures Be Null and Void AB Initio, and (III) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.7.0.pdf"
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Pay Certain Taxes and Fees and (B) Undertake Certain Tax Planning Activities, and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Exhibit A # 2 Proposed Order) (Higgins, John) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.6.0_2.pdf"
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Maintain Insurance Coverage, Surety Bond Program, and Letters of Credit Entered into Prepetition and Satisfy Prepetition Obligations Related Thereto, (B) Continue to Pay Certain Claims Processing Fees, and (C) Renew, Amend, Supplement, Extend, Purchase, Cancel, and Enter into New Insurance Policies, Letters of Credit, and Surety Bonds, and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC Hearing scheduled for 7/27/2026 at 02:00 PM at telephone and video conference. (Attachments: # 1 Proposed Order) (Johnson, Michael) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.5.0.pdf"
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Emergency Motion - Debtors' Emergency Ex Parte Application for Entry of an Order Authorizing the Employment and Retention of Omni Agent Solutions, Inc. as Claims, Noticing, and Solicitation Agent Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Proposed Order) (Young-John, Megan) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.4.0_2.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Notice of Appearance and Request for Notice Filed by Jana Smith Whitworth (Whitworth, Jana)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2026-07-26",
+        "time_filed": "",
+        "date_display": "Jul 26, 2026",
+        "description": "Designation of Complex Chapter 11 Bankruptcy Case (Filed By Republic National Distributing Company, LLC ). (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2026-07-26",
+        "time_filed": "",
+        "date_display": "Jul 26, 2026",
+        "description": "Motion for Joint Administration Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 Proposed Order) (Higgins, John) (Entered: 07/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.2.0.pdf"
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2026-07-26",
+        "time_filed": "",
+        "date_display": "Jul 26, 2026",
+        "description": "Chapter 11 Voluntary Petition Non-Individual Fee Amount $1738 Filed by Republic National Distributing Company, LLC. (Higgins, John) (Entered: 07/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.1.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-26",
+        "time_filed": "",
+        "date_display": "Jul 26, 2026",
+        "description": "Receipt of Voluntary Petition (Chapter 11)( 26-90737) [misc,volp11] (1738.00) Filing Fee. Receipt number A27416552. Fee amount $1738.00. (U.S. Treasury)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-07-30T04:47:04.569884+00:00",
-    "as_of": "Jul 30, 2026"
+    ]
   },
   "claims_administrator": {
     "name": "Omniagentsolutions",

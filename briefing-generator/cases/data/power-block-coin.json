@@ -15,13 +15,15 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "date_last_filing": "2026-07-23",
-    "fetched_at": "2026-07-30T04:47:01.990180+00:00",
-    "as_of": "Jul 30, 2026",
+    "fetched_at": "2026-07-31T07:22:18.249896+00:00",
+    "as_of": "Jul 31, 2026",
+    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 532,
         "date_filed": "2026-07-23",
+        "time_filed": "18:36:46",
         "date_display": "Jul 23, 2026",
         "description": "Complaint",
         "is_new": false,
@@ -29,8 +31,9 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.532.0.pdf"
       },
       {
-        "entry_number": 529,
+        "entry_number": 531,
         "date_filed": "2026-07-06",
+        "time_filed": "09:08:46",
         "date_display": "Jul 6, 2026",
         "description": "Notice of Rescheduled Hearing (Chambers)",
         "is_new": false,
@@ -40,6 +43,7 @@
       {
         "entry_number": 530,
         "date_filed": "2026-07-06",
+        "time_filed": "09:07:15",
         "date_display": "Jul 6, 2026",
         "description": "Notice of Rescheduled Hearing (Chambers)",
         "is_new": false,
@@ -51,6 +55,7 @@
       {
         "entry_number": 532,
         "date_filed": "2026-07-23",
+        "time_filed": "18:36:46",
         "date_display": "Jul 23, 2026",
         "description": "Complaint",
         "is_new": false,
@@ -58,8 +63,9 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.532.0.pdf"
       },
       {
-        "entry_number": 529,
+        "entry_number": 531,
         "date_filed": "2026-07-06",
+        "time_filed": "09:08:46",
         "date_display": "Jul 6, 2026",
         "description": "Notice of Rescheduled Hearing (Chambers)",
         "is_new": false,
@@ -69,6 +75,7 @@
       {
         "entry_number": 530,
         "date_filed": "2026-07-06",
+        "time_filed": "09:07:15",
         "date_display": "Jul 6, 2026",
         "description": "Notice of Rescheduled Hearing (Chambers)",
         "is_new": false,
@@ -76,19 +83,11 @@
         "doc_url": ""
       },
       {
-        "entry_number": 531,
+        "entry_number": 529,
         "date_filed": "2026-07-06",
+        "time_filed": "09:04:54",
         "date_display": "Jul 6, 2026",
         "description": "Notice of Rescheduled Hearing (Chambers)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 527,
-        "date_filed": "2026-07-01",
-        "date_display": "Jul 1, 2026",
-        "description": "Employ Attorney (Motion)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -96,6 +95,7 @@
       {
         "entry_number": 528,
         "date_filed": "2026-07-01",
+        "time_filed": "15:32:53",
         "date_display": "Jul 1, 2026",
         "description": "Pending Order",
         "is_new": false,
@@ -103,19 +103,11 @@
         "doc_url": ""
       },
       {
-        "entry_number": 523,
-        "date_filed": "2026-06-24",
-        "date_display": "Jun 24, 2026",
-        "description": "Reply to (related document(s):514 Application to Employ Attorney) Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/24/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 524,
-        "date_filed": "2026-06-24",
-        "date_display": "Jun 24, 2026",
-        "description": "Response to (related document(s):514 Application to Employ Attorney) Supplement to Application to Employ HLH Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/24/2026)",
+        "entry_number": 527,
+        "date_filed": "2026-07-01",
+        "time_filed": "14:07:32",
+        "date_display": "Jul 1, 2026",
+        "description": "Employ Attorney (Motion)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -123,6 +115,7 @@
       {
         "entry_number": 526,
         "date_filed": "2026-06-24",
+        "time_filed": "21:02:01",
         "date_display": "Jun 24, 2026",
         "description": "Adversary Proceeding 26-02122. Complaint by Angela Somers against Coinbase Global, Inc. Coinbase Inc. Coinbase Financial Markets, Aaron Tilton, Brad Jones. Fee Amount $350. Payment Not Due at this Time: Fee Deferred. Nature of Suit(s): [14 (Recovery of money/property - other)]. (Lee, Trevor) (EOD: 06/24/2026)",
         "is_new": false,
@@ -132,6 +125,7 @@
       {
         "entry_number": 525,
         "date_filed": "2026-06-24",
+        "time_filed": "20:28:03",
         "date_display": "Jun 24, 2026",
         "description": "Pending Order Re: 524 Response. (Lee, Trevor) [Order# 479287] (EOD: 06/24/2026)",
         "is_new": false,
@@ -139,8 +133,29 @@
         "doc_url": ""
       },
       {
+        "entry_number": 524,
+        "date_filed": "2026-06-24",
+        "time_filed": "20:26:00",
+        "date_display": "Jun 24, 2026",
+        "description": "Response to (related document(s):514 Application to Employ Attorney) Supplement to Application to Employ HLH Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 523,
+        "date_filed": "2026-06-24",
+        "time_filed": "20:21:49",
+        "date_display": "Jun 24, 2026",
+        "description": "Reply to (related document(s):514 Application to Employ Attorney) Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 522,
         "date_filed": "2026-06-22",
+        "time_filed": "17:23:17",
         "date_display": "Jun 22, 2026",
         "description": "Pending Order Re: 521 Motion Extend Time. (Lee, Trevor) [Order# 479115] (EOD: 06/22/2026)",
         "is_new": false,
@@ -150,6 +165,7 @@
       {
         "entry_number": 521,
         "date_filed": "2026-06-22",
+        "time_filed": "17:21:59",
         "date_display": "Jun 22, 2026",
         "description": "Motion to Extend Time to File Monthly Operating Reports Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/22/2026)",
         "is_new": false,
@@ -159,6 +175,7 @@
       {
         "entry_number": 520,
         "date_filed": "2026-06-17",
+        "time_filed": "14:18:04",
         "date_display": "Jun 17, 2026",
         "description": "Objection to (related document(s):514 Application to Employ Attorney) Filed by Parsons Behle & Latimer. (Rothschild, Brian) (EOD: 06/17/2026)",
         "is_new": false,
@@ -168,6 +185,7 @@
       {
         "entry_number": 519,
         "date_filed": "2026-06-09",
+        "time_filed": "15:44:58",
         "date_display": "Jun 9, 2026",
         "description": "Supplemental Declaration re: (related document(s):496 USTR Appointment of Chapter 11 Trustee) Supplemental Declaration in Support of Appointment as Chapter 11 Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/09/2026)",
         "is_new": false,
@@ -177,6 +195,7 @@
       {
         "entry_number": 518,
         "date_filed": "2026-06-04",
+        "time_filed": "15:01:30",
         "date_display": "Jun 4, 2026",
         "description": "Notice of Change of Address of Chapter 11 Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/04/2026)",
         "is_new": false,
@@ -184,26 +203,19 @@
         "doc_url": ""
       },
       {
-        "entry_number": 514,
+        "entry_number": 517,
         "date_filed": "2026-06-02",
+        "time_filed": "17:39:18",
         "date_display": "Jun 2, 2026",
-        "description": "Ex Parte Application to Employ Hoggan Lee Hutchinson as Attorney for Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/02/2026)",
+        "description": "Pending Order Re: 516 Application to Employ (Professional). (Lee, Trevor) [Order# 478401] (EOD: 06/02/2026)",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 515,
-        "date_filed": "2026-06-02",
-        "date_display": "Jun 2, 2026",
-        "description": "Pending Order Re: 514 Application to Employ Attorney. (Lee, Trevor) [Order# 478400] (EOD: 06/02/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.517.0_1.pdf"
       },
       {
         "entry_number": 516,
         "date_filed": "2026-06-02",
+        "time_filed": "17:38:14",
         "date_display": "Jun 2, 2026",
         "description": "Ex Parte Application to Employ J.S. Held as Financial Advisor to Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/02/2026)",
         "is_new": false,
@@ -211,8 +223,29 @@
         "doc_url": ""
       },
       {
+        "entry_number": 515,
+        "date_filed": "2026-06-02",
+        "time_filed": "17:36:25",
+        "date_display": "Jun 2, 2026",
+        "description": "Pending Order Re: 514 Application to Employ Attorney. (Lee, Trevor) [Order# 478400] (EOD: 06/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 514,
+        "date_filed": "2026-06-02",
+        "time_filed": "17:35:03",
+        "date_display": "Jun 2, 2026",
+        "description": "Ex Parte Application to Employ Hoggan Lee Hutchinson as Attorney for Trustee Filed by Angela J. Somers. (Lee, Trevor) (EOD: 06/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 513,
         "date_filed": "2026-06-02",
+        "time_filed": "16:18:00",
         "date_display": "Jun 2, 2026",
         "description": "Notice of Rescheduled Hearing Re: 506 Application for Compensation. Hearing scheduled for 7/8/2026 at 02:30 PM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. Deadline for filing objections: 6/1/2026. (mfr) (EOD: 06/02/2026)",
         "is_new": false,
@@ -220,15 +253,407 @@
         "doc_url": ""
       },
       {
-        "entry_number": 517,
-        "date_filed": "2026-06-02",
-        "date_display": "Jun 2, 2026",
-        "description": "Pending Order Re: 516 Application to Employ (Professional). (Lee, Trevor) [Order# 478401] (EOD: 06/02/2026)",
+        "entry_number": 512,
+        "date_filed": "2026-05-24",
+        "time_filed": "22:21:55",
+        "date_display": "May 24, 2026",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 05/24/2026. (Admin.) (EOD: 05/24/2026)",
         "is_new": false,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.517.0_1.pdf"
+        "doc_url": ""
+      },
+      {
+        "entry_number": 511,
+        "date_filed": "2026-05-24",
+        "time_filed": "22:21:55",
+        "date_display": "May 24, 2026",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 05/24/2026. (Admin.) (EOD: 05/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 510,
+        "date_filed": "2026-05-22",
+        "time_filed": "12:43:28",
+        "date_display": "May 22, 2026",
+        "description": "Notice of Rescheduled Hearing Re: 472 Motion to Pay. Hearing scheduled for 7/8/2026 at 02:30 PM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. (skr) (EOD: 05/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 509,
+        "date_filed": "2026-05-22",
+        "time_filed": "12:41:02",
+        "date_display": "May 22, 2026",
+        "description": "Notice of Rescheduled Hearing Re: 428 Motion for Relief From Stay. Hearing scheduled for 7/8/2026 at 02:30 PM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. (skr) (EOD: 05/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 508,
+        "date_filed": "2026-05-15",
+        "time_filed": "13:06:24",
+        "date_display": "May 15, 2026",
+        "description": "Notice of Bond of Trustee Filed by United States Trustee. (Kuhn, Peter) (EOD: 05/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 507,
+        "date_filed": "2026-05-14",
+        "time_filed": "11:27:47",
+        "date_display": "May 14, 2026",
+        "description": "Notice of Hearing (related document(s):506 Application for Compensation) Third and Final Application for Allowance of Compensation of Ampleo, Financial Advisor to the Debtor Filed by CFO Solutions, LLC dba Amplo. Hearing scheduled for 6/9/2026 at 09:30 AM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. Deadline for filing objections: 6/1/2026. (Rothschild, Brian) (EOD: 05/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 506,
+        "date_filed": "2026-05-14",
+        "time_filed": "11:04:17",
+        "date_display": "May 14, 2026",
+        "description": "Application for Compensation for CFO Solutions, LLC dba Amplo, Accountant, fee: $10,436.50, expenses: $. Dates of Service: April 1, 2025 through April 22, 2026 Third and Final Application for Allowance of Compensation of Ampleo, Financial Advisor to the Debtor Filed by Brian M. Rothschild. (Rothschild, Brian) (EOD: 05/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 505,
+        "date_filed": "2026-05-10",
+        "time_filed": "22:20:37",
+        "date_display": "May 10, 2026",
+        "description": "Certificate of Service Re: Order. (related document(s):504 Order Appointing Trustee) Notice Date 05/10/2026. (Admin.) (EOD: 05/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 504,
+        "date_filed": "2026-05-08",
+        "time_filed": "16:13:44",
+        "date_display": "May 8, 2026",
+        "description": "Order Approving Appointment of Chapter 11 Trustee Angela J. Somers. (als) (EOD: 05/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 503,
+        "date_filed": "2026-05-07",
+        "time_filed": "22:22:17",
+        "date_display": "May 7, 2026",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 05/07/2026. (Admin.) (EOD: 05/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 502,
+        "date_filed": "2026-05-07",
+        "time_filed": "22:22:17",
+        "date_display": "May 7, 2026",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 05/07/2026. (Admin.) (EOD: 05/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 501,
+        "date_filed": "2026-05-05",
+        "time_filed": "15:58:48",
+        "date_display": "May 5, 2026",
+        "description": "Pending Order Re: 496 USTR Appointment of Chapter 11 Trustee. (Kuhn, Peter) [Order# 477311] (EOD: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 500,
+        "date_filed": "2026-05-05",
+        "time_filed": "15:58:14",
+        "date_display": "May 5, 2026",
+        "description": "Application for Entry of Order/Judgment (related document(s):496 USTR Appointment of Chapter 11 Trustee) Filed by United States Trustee. (Kuhn, Peter) (EOD: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 499,
+        "date_filed": "2026-05-05",
+        "time_filed": "15:57:16",
+        "date_display": "May 5, 2026",
+        "description": "Verified Statement of Angela J. Somers Filed by United States Trustee. (Kuhn, Peter) (EOD: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 498,
+        "date_filed": "2026-05-05",
+        "time_filed": "15:56:22",
+        "date_display": "May 5, 2026",
+        "description": "Affidavit/Declaration (related document(s):497 Notice) of Angela J. Somers Filed by United States Trustee. (Kuhn, Peter) (EOD: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 497,
+        "date_filed": "2026-05-05",
+        "time_filed": "15:55:19",
+        "date_display": "May 5, 2026",
+        "description": "Notice (related document(s):496 USTR Appointment of Chapter 11 Trustee) of Acceptance of Appointment Filed by United States Trustee. (Kuhn, Peter) (EOD: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 496,
+        "date_filed": "2026-05-05",
+        "time_filed": "15:54:31",
+        "date_display": "May 5, 2026",
+        "description": "USTR Appointment of Chapter 11 Trustee, Angela J. Somers filed by USTR. (Kuhn, Peter) (EOD: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.496.0.pdf"
+      },
+      {
+        "entry_number": 495,
+        "date_filed": "2026-05-05",
+        "time_filed": "12:23:04",
+        "date_display": "May 5, 2026",
+        "description": "Notice of Rescheduled Hearing Re: 472 Motion to Pay. Hearing scheduled for 5/26/2026 at 10:00 AM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. (mfr) (EOD: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 494,
+        "date_filed": "2026-05-05",
+        "time_filed": "12:21:14",
+        "date_display": "May 5, 2026",
+        "description": "Notice of Rescheduled Hearing Re: 428 Motion for Relief From Stay. Hearing scheduled for 5/26/2026 at 10:00 AM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. (mfr) (EOD: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 493,
+        "date_filed": "2026-04-21",
+        "time_filed": "17:49:19",
+        "date_display": "Apr 21, 2026",
+        "description": "Debtor-In-Possession Monthly Operating Report for Filing Period March 1, 2026 through March 31, 2026 Filed by Power Block Coin, LLC. (Attachments: # 1 Combined Balance Sheet # 2 Income Statement # 3 Report of Cash Sources and Uses # 4 Notes Receivables & Inventory # 5 BCH Hillcrest Bank Statement # 6 BCH Reconciliation Detail) (Rothschild, Brian) (EOD: 04/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 492,
+        "date_filed": "2026-04-13",
+        "time_filed": "15:12:53",
+        "date_display": "Apr 13, 2026",
+        "description": "Notice of Substitution of Counsel with Consent. Old Attorney: Abigail Stone. New Attorney: Annette W. Jarvis Filed by Official Committee of Unsecured Creditors. (Jarvis, Annette) (EOD: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 491,
+        "date_filed": "2026-04-10",
+        "time_filed": "14:50:20",
+        "date_display": "Apr 10, 2026",
+        "description": "Notice of Change of Address Filed by Nissa Gay. (gci) (EOD: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-10",
+        "time_filed": "",
+        "date_display": "Apr 10, 2026",
+        "description": "Unsigned Order (related document(s):423 Pending Order filed by Brian M. Rothschild). Reason Order Was Unsigned: The Debtor's Motion to Convert was denied pursuant to the Court's Order at Dkt. No. 481. (jtt) (EOD: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-10",
+        "time_filed": "16:44:32",
+        "date_display": "Apr 10, 2026",
+        "description": "Unsigned Order (order)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-10",
+        "time_filed": "",
+        "date_display": "Apr 10, 2026",
+        "description": "Unsigned Order (related document(s):420 Pending Order filed by Brian M. Rothschild). Reason Order Was Unsigned: The Debtor's Motion to Convert was denied pursuant to the Court's Order at Dkt. No. 481. (jtt) (EOD: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 490,
+        "date_filed": "2026-04-09",
+        "time_filed": "22:23:26",
+        "date_display": "Apr 9, 2026",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 04/09/2026. (Admin.) (EOD: 04/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 489,
+        "date_filed": "2026-04-09",
+        "time_filed": "22:23:26",
+        "date_display": "Apr 9, 2026",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 04/09/2026. (Admin.) (EOD: 04/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 488,
+        "date_filed": "2026-04-07",
+        "time_filed": "11:10:19",
+        "date_display": "Apr 7, 2026",
+        "description": "Notice of Rescheduled Hearing Re: 472 Motion to Pay. Hearing scheduled for 5/6/2026 at 10:30 AM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. (jst) (EOD: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 487,
+        "date_filed": "2026-04-07",
+        "time_filed": "11:00:41",
+        "date_display": "Apr 7, 2026",
+        "description": "Notice of Rescheduled Hearing. Hearing scheduled for 5/6/2026 at 10:30 AM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. Related document(s) 428 Motion for Relief From Stay . (jst). (EOD: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 486,
+        "date_filed": "2026-04-06",
+        "time_filed": "21:03:25",
+        "date_display": "Apr 6, 2026",
+        "description": "Amended Schedules A/B, E/F. Amended Summary of Your Assets and Liabilities and Statistical Information. Amended Statement of Financial Affairs. Fee Amount $34. Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 04/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.486.0_1.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-06",
+        "time_filed": "21:04:01",
+        "date_display": "Apr 6, 2026",
+        "description": "PayGov Receipt of Fee Due",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-06",
+        "time_filed": "",
+        "date_display": "Apr 6, 2026",
+        "description": "Receipt of Filing Fee for Amended Schedules/List of Creditors/Statements( 24-23041) [misc,amdsch] ( 34.00). Receipt Number A29210804, Amount $ 34.00 (Re: Doc# 486). (U.S. Treasury) (EOD: 04/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 485,
+        "date_filed": "2026-04-03",
+        "time_filed": "22:38:40",
+        "date_display": "Apr 3, 2026",
+        "description": "Certificate of Service Re: Order. (related document(s):482 Memorandum Decision/Opinion and Order) Notice Date 04/03/2026. (Admin.) (EOD: 04/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 484,
+        "date_filed": "2026-04-03",
+        "time_filed": "22:38:40",
+        "date_display": "Apr 3, 2026",
+        "description": "Certificate of Service Re: Order. (related document(s):481 Order on Motion to Approve Adequacy of Disclosure Statement) Notice Date 04/03/2026. (Admin.) (EOD: 04/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 483,
+        "date_filed": "2026-04-01",
+        "time_filed": "22:27:01",
+        "date_display": "Apr 1, 2026",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 04/01/2026. (Admin.) (EOD: 04/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 482,
+        "date_filed": "2026-03-31",
+        "time_filed": "18:00:39",
+        "date_display": "Mar 31, 2026",
+        "description": "Memorandum Decision. (jtt) (EOD: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.482.0.pdf"
+      },
+      {
+        "entry_number": 481,
+        "date_filed": "2026-03-31",
+        "time_filed": "17:55:35",
+        "date_display": "Mar 31, 2026",
+        "description": "Order and Judgment Granting Motion to Appoint Trustee. (Related Doc # 413). Denying Motion to Convert Case to Chapter 7 (Related Doc # 422) The Motion of the Committee for Entry of an Order (I) Approve Adequacy of Disclosure Statement, (II) Approving Solicitation and Notice Procedures for Confirmation of the Committees Plan, (III) Approving Ballot and Notice Forms in Connection Therewith, (IV) Scheduling Certain Dates With Respect Thereto, and (V) Granting Related Relief (Dkt. No. 277) is DENIED WITHOUT PREJUDICE. (jtt) (EOD: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.481.0.pdf"
+      },
+      {
+        "entry_number": 480,
+        "date_filed": "2026-03-30",
+        "time_filed": "16:25:30",
+        "date_display": "Mar 30, 2026",
+        "description": "Notice of Rescheduled Hearing Re: 458 Order to Continue Hearing, 428 Motion for Relief from Stay. Hearing scheduled for 4/7/2026 at 09:30 AM at ZoomGov.com/join - CDP: Meeting ID: 160 4196 1337, Passcode: 055360, Phone 1-669-254-5252. (mfr) (EOD: 03/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 479,
+        "date_filed": "2026-03-30",
+        "time_filed": "15:04:34",
+        "date_display": "Mar 30, 2026",
+        "description": "Creditor Request for Notices. Filed by Song Brewer. (at) (EOD: 03/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 478,
+        "date_filed": "2026-03-26",
+        "time_filed": "",
+        "date_display": "Mar 26, 2026",
+        "description": "Correspondence. Letter to the Judge from Adam and Kylie Brewer. (gci) (EOD: 03/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68873409&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=4"
   },
   "claims_administrator": null,
   "coverage": [],
