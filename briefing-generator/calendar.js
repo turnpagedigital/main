@@ -837,7 +837,8 @@
       CASES = cases;
       var savedAC = _savedState && _savedState.activeCases;
       CASES.forEach(function (c) {
-        activeCases[c.slug] = savedAC ? !!savedAC[c.slug] : true;
+        // Unknown slug = a case added since the state was saved → default ON
+        activeCases[c.slug] = savedAC ? savedAC[c.slug] !== false : true;
       });
       rebuildEvents();
       updateMeta();
