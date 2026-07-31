@@ -401,8 +401,15 @@
         "</div>" +
       "</div>";
 
-    panel.innerHTML = head + rows + groupsHtml;
+    panel.innerHTML = head + rows + groupsHtml + '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
 
+    var saveView = panel.querySelector("[data-close-panel]");
+    if (saveView) {
+      saveView.addEventListener("click", function () {
+        panel.style.display = "none";
+        if (typeof closePopover === "function") closePopover();
+      });
+    }
     panel.querySelectorAll(".ud-dd-quick").forEach(function (q) {
       q.addEventListener("click", function () {
         setAllCases(q.getAttribute("data-act") === "all");
@@ -1618,6 +1625,7 @@
       });
       document.addEventListener("click", function (ev) {
         if (ddPanel.style.display === "none") return;
+        if (ev.target && !ev.target.isConnected) return;  // click landed on re-rendered UI inside the panel
         if (ddPanel.contains(ev.target) || thCase.contains(ev.target)) return;
         var pop = document.getElementById("ud-color-pop");
         if (pop && pop.contains(ev.target)) return;
