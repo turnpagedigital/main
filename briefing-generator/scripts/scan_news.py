@@ -38,19 +38,20 @@ def _arg(name, default=None):
 
 
 def load_vote_bias():
-    """Aggregate up/down votes by source → (preferred, excluded) outlet lists."""
+    """Votes are topic feedback, not source feedback: return the recent
+    up/down-voted HEADLINES so the scan can steer toward or away from those
+    topics regardless of which outlet covers them."""
     try:
         raw = json.loads((DATA_DIR.parent.parent / "intel-votes.json").read_text(encoding="utf-8"))
     except Exception:
         return [], []
-    scores = {}
-    for v in (raw.get("votes") or {}).values():
-        src_name = (v.get("source") or "").strip()
-        if src_name:
-            scores[src_name] = scores.get(src_name, 0) + (1 if v.get("v") == 1 else -1)
-    preferred = sorted([n for n, sc in scores.items() if sc >= 2])
-    excluded = sorted([n for n, sc in scores.items() if sc <= -2])
-    return preferred, excluded
+    votes = sorted(
+        (raw.get("votes") or {}).values(),
+        key=lambda v: v.get("at") or "", reverse=True,
+    )[:60]
+    more = [v["title"].strip() for v in votes if v.get("v") == 1 and (v.get("title") or "").strip()]
+    less = [v["title"].strip() for v in votes if v.get("v") == -1 and (v.get("title") or "").strip()]
+    return more[:10], less[:10]
 
 
 def build_prompt(case):
@@ -83,9 +84,12 @@ def build_prompt(case):
         "(e.g. Reuters, Bloomberg/Bloomberg Law, Law360, The Wall Street Journal, "
         "Financial Times, Reorg, The American Lawyer)."
         + (f" Preferred sources for this case: {', '.join(trusted)}." if trusted else "")
-        + (f" The reader has upvoted these outlets — favor them: {', '.join(vote_pref)}." if vote_pref else "")
         + (f" NEVER include: {', '.join(excluded)}." if excluded else "")
-        + (f" The reader has downvoted these outlets — exclude them: {', '.join(vote_excl)}." if vote_excl else "")
+        + (" The reader upvoted these recent headlines — find MORE coverage on topics like these: "
+           + "; ".join('"' + h + '"' for h in vote_pref) + "." if vote_pref else "")
+        + (" The reader downvoted these recent headlines — steer AWAY from topics like these "
+           "(the outlet does not matter, only the topic): "
+           + "; ".join('"' + h + '"' for h in vote_excl) + "." if vote_excl else "")
         + " No press releases, no SEO content farms, no anonymous blogs.",
         "2. UPCOMING EVENTS tied to the case: webinars, CLE sessions, conference panels, "
         "claims-deadline reminders, creditor calls. Only events with a specific future date.",

@@ -1,11 +1,11 @@
 /* functions/intel/api/votes.js — up/down votes on news items.
 
-   Votes teach the system which sources to favor: the docket page auto-mutes
-   sources whose aggregate score drops low, and scan_news.py reads the same
-   file to prefer/exclude outlets in the daily article hunt.
+   Votes are TOPIC feedback (more/less coverage like this) — they say nothing
+   about the outlet. scan_news.py feeds the voted headlines to the daily
+   article hunt as steer-toward / steer-away topic lists.
 
-   GET → { ok, votes: {url: {v: 1|-1, source, at}} }
-   PUT → { url, vote: 1|-1|0, source }   (0 clears the vote)
+   GET → { ok, votes: {url: {v: 1|-1, source, title, case_slug, at}} }
+   PUT → { url, vote: 1|-1|0, source, title, case_slug }   (0 clears the vote)
 
    Storage: briefing-generator/intel-votes.json. Gated by the intel middleware. */
 
@@ -27,6 +27,8 @@ function cleanVotes(raw) {
     out[url] = {
       v: val,
       source: String(v.source || "").slice(0, 60),
+      title: String(v.title || "").slice(0, 140),
+      case_slug: String(v.case_slug || "").slice(0, 60),
       at: String(v.at || "").slice(0, 30),
     };
   }
@@ -58,7 +60,13 @@ export async function onRequestPut(context) {
     const cur = await getFileFromGitHub(env, PATH, null, repo, branch);
     const votes = cur.ok && cur.data ? cleanVotes(cur.data) : {};
     if (vote === 0) delete votes[url];
-    else votes[url] = { v: vote, source: String(body.source || "").slice(0, 60), at: new Date().toISOString() };
+    else votes[url] = {
+      v: vote,
+      source: String(body.source || "").slice(0, 60),
+      title: String(body.title || "").slice(0, 140),
+      case_slug: String(body.case_slug || "").slice(0, 60),
+      at: new Date().toISOString(),
+    };
     res = await commitFileToGitHub(
       env, PATH, JSON.stringify({ votes }, null, 2) + "\n", cur.ok ? cur.sha : null,
       `Vote: ${vote === 0 ? "clear" : vote > 0 ? "up" : "down"} ${url.split("/").filter(Boolean).pop()}`.slice(0, 72),
