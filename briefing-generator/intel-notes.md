@@ -71,3 +71,7 @@ $100-$500M liabilities = 2-10c recoveries
 
 > Fauci Faces a Test to His Legacy — Plus, an AI startup offers job interviews to candidates who get tattooed, and Kevin Warsh’s honeymoon with the bond market is already over.
 
+### (no docket number) — 2026-07-31
+
+> AI Startup Apologizes for Offering Job Interviews in Exchange for Company Tattoos — The co-founder of LemonLime set off an uproar after offering attendees at a networking party a dare of sorts.
+
