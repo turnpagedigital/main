@@ -34,6 +34,13 @@
       "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
       "kind": "News",
       "enabled": true
+    },
+    {
+      "id": "wsj-business",
+      "name": "WSJ Business",
+      "url": "https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness",
+      "kind": "News",
+      "enabled": true
     }
   ]
 }
