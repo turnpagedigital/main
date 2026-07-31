@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-31 06:13 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-07-31 17:00 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -44,4 +44,22 @@ $100-$500M liabilities = 2-10c recoveries
 ### (no docket number) — 2026-07-23 ★
 
 > The Preference Wave Is Coming- What Vendors Should Do Now — If you sold goods or services to a customer that filed Chapter 11 in the last two years, the window to prepare is right now. It closes the d
+
+## Uncategorized
+
+### (no docket number) — 2026-07-31
+
+> Situational Awareness Down 67% in July in AI Stock Rout — “We let you down this month,” Leopold Aschenbrenner’s hedge-fund firm told investors after selling the bulk of its stocks to Citadel.
+
+### (no docket number) — 2026-07-31
+
+> Westinghouse Electric Files Confidentially for IPO — Nuclear technology and services supplier Westinghouse Electric has confidentially filed a draft registration statement with the Securities and Exch
+
+### (no docket number) — 2026-07-31
+
+> Stock Market Today: Apple Slump Drags on Tech — Stocks are reversing their early gains
+
+### (no docket number) — 2026-07-31
+
+> Korea’s Kospi Logs Record Daily Gain, Defying Efforts to Tame Wild Swings — The country’s regulators have imposed increasingly stringent restrictions on single-stock leveraged exchange-traded funds tr
 
