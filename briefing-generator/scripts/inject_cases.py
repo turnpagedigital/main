@@ -151,6 +151,10 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-th-menu-item.ud-th-menu-on{font-weight:800;}
   .ud-th-menu-item.ud-th-menu-on::after{content:" \2713";color:var(--ink-60);}
   .ud-sep{color:var(--ink-40);padding:0 5px;}
+  .ud-vote{background:none;border:none;cursor:pointer;font-size:11px;padding:2px 3px;line-height:1;color:var(--ink-40);vertical-align:middle;}
+  .ud-vote:hover{color:var(--ink);}
+  .ud-vote.ud-vote-up-on{color:#3FA07A;}
+  .ud-vote.ud-vote-dn-on{color:#C84141;}
   .ud-table .ud-row-bondoro td{background:rgba(212,255,0,0.10);}
   [data-theme="dark"] .ud-table .ud-row-bondoro td{background:rgba(212,255,0,0.07);}
   .ud-pill-assign{border:1px dashed var(--ink-40);cursor:pointer;font-family:inherit;}
@@ -880,6 +884,7 @@ def render_unified_docket(cases):
   <div class="ud-toolbar">
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
+    <span id="ud-muted-info" class="uc-curation-info"></span>
     <button id="ud-sort-btn">Date ↓</button>
   </div>
 

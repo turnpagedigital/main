@@ -37,6 +37,22 @@ def _arg(name, default=None):
     return a[a.index("--" + name) + 1] if ("--" + name) in a and a.index("--" + name) + 1 < len(a) else default
 
 
+def load_vote_bias():
+    """Aggregate up/down votes by source → (preferred, excluded) outlet lists."""
+    try:
+        raw = json.loads((DATA_DIR.parent.parent / "intel-votes.json").read_text(encoding="utf-8"))
+    except Exception:
+        return [], []
+    scores = {}
+    for v in (raw.get("votes") or {}).values():
+        src_name = (v.get("source") or "").strip()
+        if src_name:
+            scores[src_name] = scores.get(src_name, 0) + (1 if v.get("v") == 1 else -1)
+    preferred = sorted([n for n, sc in scores.items() if sc >= 2])
+    excluded = sorted([n for n, sc in scores.items() if sc <= -2])
+    return preferred, excluded
+
+
 def build_prompt(case):
     cfg = case["config"]
     c = cfg.get("case", {}) or {}
@@ -47,6 +63,7 @@ def build_prompt(case):
         trusted += [str(s) for s in (tiers.get(k) or [])]
     excluded = [str(s) for s in (tiers.get("exclude") or [])]
     guidance = (cfg.get("scan_guidance") or "").strip()
+    vote_pref, vote_excl = load_vote_bias()
     today = dt.date.today().isoformat()
 
     lines = [
@@ -66,7 +83,9 @@ def build_prompt(case):
         "(e.g. Reuters, Bloomberg/Bloomberg Law, Law360, The Wall Street Journal, "
         "Financial Times, Reorg, The American Lawyer)."
         + (f" Preferred sources for this case: {', '.join(trusted)}." if trusted else "")
+        + (f" The reader has upvoted these outlets — favor them: {', '.join(vote_pref)}." if vote_pref else "")
         + (f" NEVER include: {', '.join(excluded)}." if excluded else "")
+        + (f" The reader has downvoted these outlets — exclude them: {', '.join(vote_excl)}." if vote_excl else "")
         + " No press releases, no SEO content farms, no anonymous blogs.",
         "2. UPCOMING EVENTS tied to the case: webinars, CLE sessions, conference panels, "
         "claims-deadline reminders, creditor calls. Only events with a specific future date.",
