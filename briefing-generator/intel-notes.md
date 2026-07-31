@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-31 06:04 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-07-31 06:05 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## BlockFills
 
@@ -57,6 +57,11 @@ Ciao
 ### (no docket number) — 2026-07-24
 
 > Case Summary: Poolin Chapter 11 — Poolin, once the world's largest Bitcoin mining pool, and affiliates filed for Chapter 11 after a 2022 liquidity crisis froze customer withdrawals and left ~$163.7M i
+
+$60M in proceeds
+$10M admin
+$50M net 
+$100-$500M liabilities = 2-10c recoveries
 
 ### (no docket number) — 2026-07-23
 
