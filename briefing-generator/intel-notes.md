@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-31 17:19 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-07-31 17:55 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -84,4 +84,8 @@ $100-$500M liabilities = 2-10c recoveries
 ### (no docket number) — 2026-07-31
 
 > AI Startup Apologizes for Offering Job Interviews in Exchange for Company Tattoos — The co-founder of LemonLime set off an uproar after offering attendees at a networking party a dare of sorts.
+
+### (no docket number) — 2026-07-31
+
+> Big Oil Is Reaping Rewards From the Chaos in Energy Markets — ExxonMobil’s earnings doubled and Chevron posted its highest quarterly earnings on record as energy prices soared during the prolonged clo
 
