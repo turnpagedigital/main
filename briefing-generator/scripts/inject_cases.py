@@ -158,7 +158,8 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-snz-btn.ud-snz-on{filter:none;opacity:1;}
   .ud-del-btn{background:none;border:none;cursor:pointer;font-size:13px;padding:2px 4px;line-height:1;color:var(--ink-40);}
   .ud-del-btn:hover{color:#C84141;}
-  .ud-due{background:var(--surface);border:2px solid var(--neon);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
+  .ud-due{background:rgba(212,255,0,0.22);border:1px solid var(--line-strong);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
+  [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.13);}
   .ud-due-head{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
   .ud-due-card{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-top:1px solid var(--line);}
   .ud-due-card:first-of-type{border-top:none;}
@@ -585,11 +586,11 @@ def render_case_page(case):
 # Distinct pill colors: (bg-light, fg-light, bg-dark, fg-dark)
 _PILL_PALETTE = [
     ("#D4FF00", "#0A0A0A", "#5D7A00", "#FFFFFF"),
-    ("#60A5FA", "#0A0A0A", "#1D4ED8", "#FFFFFF"),
-    ("#FB923C", "#0A0A0A", "#C2410C", "#FFFFFF"),
-    ("#C084FC", "#0A0A0A", "#7E22CE", "#FFFFFF"),
-    ("#34D399", "#0A0A0A", "#065F46", "#FFFFFF"),
-    ("#F87171", "#0A0A0A", "#B91C1C", "#FFFFFF"),
+    ("#94C6F8", "#0A0A0A", "#3B78D8", "#FFFFFF"),
+    ("#B3A8F0", "#0A0A0A", "#4A3DE0", "#FFFFFF"),
+    ("#7EF4C2", "#0A0A0A", "#3FA07A", "#FFFFFF"),
+    ("#F2AAEC", "#0A0A0A", "#CC33CC", "#FFFFFF"),
+    ("#1B3A4B", "#FFFFFF", "#1B3A4B", "#FFFFFF"),
 ]
 
 

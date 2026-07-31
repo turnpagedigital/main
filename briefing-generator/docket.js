@@ -45,12 +45,12 @@
 
   // ── Preset palette — pastel bg + darker same-hue text ────────────────────
   var DEFAULT_PRESETS = [
-    {bg:"#ECFCCB", fg:"#3f6212"}, {bg:"#DBEAFE", fg:"#1e40af"},
-    {bg:"#FFEDD5", fg:"#9a3412"}, {bg:"#F3E8FF", fg:"#6b21a8"},
-    {bg:"#D1FAE5", fg:"#065f46"}, {bg:"#FEE2E2", fg:"#991b1b"},
-    {bg:"#FEF3C7", fg:"#92400e"}, {bg:"#CCFBF1", fg:"#134e4a"},
-    {bg:"#FCE7F3", fg:"#9d174d"}, {bg:"#E0E7FF", fg:"#3730a3"},
-    {bg:"#FAE8FF", fg:"#86198f"}, {bg:"#E0F2FE", fg:"#075985"},
+    {bg:"#D4FF00", fg:"#0A0A0A"}, {bg:"#E9F98A", fg:"#4A5500"},
+    {bg:"#1B3A4B", fg:"#FFFFFF"}, {bg:"#94C6F8", fg:"#123A66"},
+    {bg:"#3B78D8", fg:"#FFFFFF"}, {bg:"#B3A8F0", fg:"#2A1E6E"},
+    {bg:"#4A3DE0", fg:"#FFFFFF"}, {bg:"#7EF4C2", fg:"#0B4A32"},
+    {bg:"#3FA07A", fg:"#FFFFFF"}, {bg:"#F2AAEC", fg:"#6E1466"},
+    {bg:"#CC33CC", fg:"#FFFFFF"}, {bg:"#3A3A3A", fg:"#FFFFFF"},
   ];
   var PRESETS_KEY = "ud-swatch-presets";
   function loadPresets() {
