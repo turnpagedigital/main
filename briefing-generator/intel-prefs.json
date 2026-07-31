@@ -35,6 +35,10 @@
     "rndc": {
       "bg": "#fee2e2",
       "fg": "#991b1b"
+    },
+    "poolin": {
+      "bg": "#a8d9ff",
+      "fg": "#0a0a0a"
     }
   },
   "groups": [
