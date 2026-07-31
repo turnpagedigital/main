@@ -8,10 +8,6 @@ _Updated 2026-07-31 06:13 UTC · auto-generated from the unified docket — edit
 
 > Compensation - Application (Attorney)
 
-### Dkt. 550 — 2026-07-30 ★
-
-> Compensation - Application (Attorney)
-
 ### Dkt. 552 — 2026-07-30 ★
 
 > Certificate of No Objection - No Order Required
