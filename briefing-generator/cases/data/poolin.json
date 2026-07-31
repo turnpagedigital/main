@@ -1,0 +1,26 @@
+{
+  "case": {
+    "slug": "poolin",
+    "display_name": "Poolin",
+    "case_name": "Poolin Technology PTE",
+    "court": "Bankr. D. N.J.",
+    "case_number": "26-18325",
+    "judge": "O'Hagan",
+    "docket_id": "73657689",
+    "status": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": null,
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": {
+    "name": "Veritaglobal",
+    "url": "https://www.veritaglobal.net/poolin/document/list/6554",
+    "key_dates_url": ""
+  },
+  "coverage": []
+}
