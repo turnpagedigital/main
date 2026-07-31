@@ -127,8 +127,8 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-bm-btn,.ud-note-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
   .ud-bm-btn:hover,.ud-note-btn:hover{color:var(--ink);}
   .ud-bm-btn.ud-bm-on{color:#EAB308;}
-  .ud-note-btn{filter:grayscale(1);opacity:0.45;}
-  .ud-note-btn.ud-note-on{filter:none;opacity:1;}
+  .ud-note-btn{color:var(--ink-40);}
+  .ud-note-btn.ud-note-on{color:#3FA07A;}
   .ud-note-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;padding:20px;}
   .ud-note-box{background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 10px 40px rgba(0,0,0,0.35);width:min(640px,100%);padding:22px;display:flex;flex-direction:column;gap:10px;}
   .ud-note-title{font-size:15px;font-weight:800;color:var(--ink);}
@@ -156,7 +156,7 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-snz-btn{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:var(--ink-40);}
   .ud-snz-btn:hover{color:var(--ink);}
   .ud-snz-btn.ud-snz-on{color:#3B78D8;}
-  .ud-del-btn{background:none;border:none;cursor:pointer;font-size:13px;padding:2px 4px;line-height:1;color:var(--ink-40);}
+  .ud-del-btn{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:var(--ink-40);}
   .ud-del-btn:hover{color:#C84141;}
   .ud-due{background:rgba(212,255,0,0.5);border:1px solid var(--line-strong);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
   [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.22);color:#F4F5F7;}
@@ -819,8 +819,8 @@ def render_unified_docket(cases):
       <th style="width:132px;text-align:right">Dkt.</th>
       <th id="ud-th-bm" class="ud-th-toggle" style="width:40px;text-align:center" title="Show bookmarked only">★</th>
       <th style="width:44px;text-align:center" title="Snoozed reminders"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></th>
-      <th style="width:40px;text-align:center" title="Delete rows">🗑</th>
-      <th id="ud-th-note" class="ud-th-toggle" style="width:44px;text-align:center" title="Show entries with notes only">📝</th>
+      <th style="width:40px;text-align:center" title="Delete rows"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></th>
+      <th id="ud-th-note" class="ud-th-toggle" style="width:44px;text-align:center" title="Show entries with notes only"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></th>
     </tr></thead>
     <tbody id="ud-tbody">
       <tr><td colspan="9" class="ud-empty">Loading…</td></tr>
@@ -1095,7 +1095,7 @@ def render_unified_notes(cases):
       <th style="width:260px">Entry</th>
       <th>Note</th>
       <th style="width:90px;text-align:right">Source</th>
-      <th style="width:76px;text-align:center">★ 📝</th>
+      <th style="width:76px;text-align:center">★ <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></th>
     </tr></thead>
     <tbody id="un-tbody">
       <tr><td colspan="6" class="ud-empty">Loading…</td></tr>
