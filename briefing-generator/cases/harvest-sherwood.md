@@ -15,7 +15,7 @@ docket_source:
   docket_id: 70143231
 claims_administrator:
   name: "Epiq11"
-  url: "https://dm.epiq11.com/case/hvs/dockets/859?debtorId=15015"
+  url: "https://dm.epiq11.com/case/hvs/dockets"
   key_dates_url: ""
 scan_guidance: "Focus on litigation recoveries and expected payouts to unsecured creditors."
 ---
