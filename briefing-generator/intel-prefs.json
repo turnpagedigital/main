@@ -35,6 +35,10 @@
     "rndc": {
       "bg": "#fee2e2",
       "fg": "#991b1b"
+    },
+    "poolin": {
+      "bg": "#ffb8cd",
+      "fg": "#b80000"
     }
   },
   "groups": [
@@ -43,6 +47,25 @@
       "slugs": [
         "bartz-anthropic",
         "concord-anthropic"
+      ]
+    },
+    {
+      "name": "Crypto Distress",
+      "slugs": [
+        "blockfills",
+        "goliath",
+        "kahan",
+        "power-block-coin",
+        "terraform-labs",
+        "poolin"
+      ]
+    },
+    {
+      "name": "Chapter 11",
+      "slugs": [
+        "harvest-sherwood",
+        "rndc",
+        "sleep-number"
       ]
     }
   ],

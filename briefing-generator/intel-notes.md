@@ -2,12 +2,6 @@
 
 _Updated 2026-07-31 06:13 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
-## BlockFills
-
-### Dkt. 549 — 2026-07-30
-
-> Compensation - Application (Attorney)
-
 ## Concord Music Group v. Anthropic
 
 ### (no docket number) — 2026-07-29
@@ -38,10 +32,6 @@ Ciao
 
 > Filing Alert: Jackson Brown Court Apartments Chapter 11 — Jackson Brown Court Apartments Files Chapter 11 in Northern District of Georgia
 
-### (no docket number) — 2026-07-29
-
-> Filing Alert: South Bay Contractors Chapter 11 — South Bay Contractors Files Chapter 11 in Central District of California
-
 ### (no docket number) — 2026-07-24
 
 > Case Summary: Poolin Chapter 11 — Poolin, once the world's largest Bitcoin mining pool, and affiliates filed for Chapter 11 after a 2022 liquidity crisis froze customer withdrawals and left ~$163.7M i
@@ -50,10 +40,6 @@ $60M in proceeds
 $10M admin
 $50M net 
 $100-$500M liabilities = 2-10c recoveries
-
-### (no docket number) — 2026-07-23
-
-> Filing Alert: Poolin Chapter 11 — Poolin Files Chapter 11 in District of New Jersey
 
 ### (no docket number) — 2026-07-23 ★
 
