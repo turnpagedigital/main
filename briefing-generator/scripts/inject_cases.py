@@ -26,7 +26,7 @@ from cases_common import load_cases, REPO_ROOT, CASES_DIR, DATA_DIR, TOPIC_META,
 # Root-absolute paths: Cloudflare Pages serves this repo at the domain root (see DEPLOY.md
 # "output dir /"), and _headers/auth both use /assets and /auth. Case pages live at
 # /cases/<slug>.html, so a sibling link to a topic is ../<topic>/dashboard.html.
-LOGO_SRC = "../assets/turnpage-logo.jpeg"  # relative: case pages live in cases/
+LOGO_SRC = "../assets/turnpage-logo.png"  # relative: case pages live in cases/
 # Relative so the link stays inside the /intel/ mount in production
 HOME_HREF = "index.html"          # from root-level pages
 HOME_HREF_SUBDIR = "../index.html" # from cases/ pages
@@ -708,7 +708,7 @@ def render_unified_docket(cases):
     if not live:
         print("  · docket.html: no live cases — writing empty shell")
 
-    logo_src = "assets/turnpage-logo.jpeg"
+    logo_src = "assets/turnpage-logo.png"
 
     page = f"""<!DOCTYPE html>
 <html lang="en">
@@ -922,7 +922,7 @@ def render_unified_calendar(cases):
     """Generate briefing-generator/unified-calendar.html — hearings & deadlines
     parsed client-side (unified-calendar.js) from the same case data the
     unified docket uses. Shares UD_CSS, theme.js, colors, and saved groups."""
-    logo_src = "assets/turnpage-logo.jpeg"
+    logo_src = "assets/turnpage-logo.png"
 
     page = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1053,7 +1053,7 @@ def render_unified_calendar(cases):
 def render_unified_notes(cases):
     """Generate briefing-generator/unified-notes.html — all bookmarks + notes,
     sorted by last edit, exportable. Same shell family as docket/calendar."""
-    logo_src = "assets/turnpage-logo.jpeg"
+    logo_src = "assets/turnpage-logo.png"
 
     page = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1196,7 +1196,7 @@ def render_unified_notes(cases):
 def render_briefings(cases):
     """Generate briefing-generator/briefings.html — daily briefing ledes per
     theme, filterable by theme. Data: briefings.json (upserted by generate.py)."""
-    logo_src = "assets/turnpage-logo.jpeg"
+    logo_src = "assets/turnpage-logo.png"
 
     page = f"""<!DOCTYPE html>
 <html lang="en">

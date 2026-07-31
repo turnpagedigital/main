@@ -807,6 +807,18 @@
       ],
       "source": "url",
       "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "turnpage-logo-standard",
+      "name": "Turnpage Logo (standard)",
+      "url": "/turnpage-logo.png",
+      "type": "logo",
+      "companies": [
+        "Turnpage"
+      ],
+      "source": "upload",
+      "archived": false,
+      "addedAt": "2026-07-31"
     }
   ],
   "favicons": {
