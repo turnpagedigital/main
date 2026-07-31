@@ -188,6 +188,23 @@
     return "";
   }
 
+  function fmtTime(e) {
+    // Docket entries: court-local time_filed "HH:MM:SS". Feed items: ISO
+    // published_at rendered in the viewer's local time.
+    if (e.published_at) {
+      var d = new Date(e.published_at);
+      if (!isNaN(d)) return d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    }
+    var m = /^(\d{2}):(\d{2})/.exec(e.time_filed || "");
+    if (m) {
+      var h = Number(m[1]);
+      var ampm = h >= 12 ? "PM" : "AM";
+      h = h % 12 || 12;
+      return h + ":" + m[2] + " " + ampm;
+    }
+    return "";
+  }
+
   function fmtDisplayDate(iso) {
     var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
     if (!m) return iso || "";
@@ -232,6 +249,7 @@
           category:      c.category || "other",
           entry_number:  e.entry_number,
           date_filed:    e.date_filed || "",
+          time_filed:    e.time_filed || "",
           date_display:  e.date_display || e.date_filed || "",
           description:   (e.description || "").trim(),
           is_new:        isNewEntry(e.date_filed),
@@ -275,7 +293,7 @@
       if (dateTo && e.date_filed && e.date_filed > dateTo) return false;
       if (sq) {
         var haystack = [
-          e.date_filed, e.date_display,
+          e.date_filed, e.date_display, fmtTime(e),
           e.name, e.short,
           e.party,
           e.description,
@@ -748,7 +766,7 @@
         return (
           header +
           '<tr class="' + artRowCls + '">' +
-            '<td class="ud-date">' + esc(e.date_display) + "</td>" +
+            '<td class="ud-date">' + esc(fmtTime(e)) + "</td>" +
             '<td class="ud-case">' + pill + "</td>" +
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
             '<td class="ud-entry">' + descHtml + "</td>" +
@@ -781,7 +799,7 @@
       return (
         header +
         "<tr" + rowCls + ">" +
-          '<td class="ud-date">' + esc(e.date_display) + "</td>" +
+          '<td class="ud-date">' + esc(fmtTime(e)) + "</td>" +
           '<td class="ud-case">' + pill + "</td>" +
           '<td class="ud-party">' + partyHtml + "</td>" +
           '<td class="ud-entry">' + descHtml + "</td>" +
@@ -895,6 +913,7 @@
         category:      c ? (c.category || "other") : "other",
         entry_number:  null,
         date_filed:    b.date || "",
+        published_at:  b.published_at || "",
         date_display:  b.date ? fmtDisplayDate(b.date) : "",
         description:   b.title + (b.excerpt ? " \u2014 " + b.excerpt : ""),
         is_new:        isNewEntry(b.date),
@@ -1470,15 +1489,31 @@
     menu.className = "ud-th-menu";
     menu.id = "ud-trash-menu";
     var options = [];
-    if (rec.hidden) options.push({ label: "Unhide", act: { hidden: false }, toast: "Row unhidden" });
-    else options.push({ label: "Hide \u2014 stays searchable", act: { hidden: true }, toast: "Hidden \u2014 still findable via search" });
-    if (rec.deleted_at) options.push({ label: "Restore", act: { deleted_at: "" }, toast: "Row restored" });
-    else options.push({ label: "Delete \u2014 restorable for 30 days", act: { deleted_at: new Date().toISOString() }, toast: "Deleted \u2014 restorable from the toolbar for 30 days" });
+    if (rec.hidden) {
+      options.push({ title: "Unhide row", sub: "Bring it back into the feed",
+        act: { hidden: false }, toast: "Row unhidden" });
+    } else {
+      options.push({ title: "Hide row", sub: "Leaves the feed \u2014 still appears in search results",
+        act: { hidden: true }, toast: "Hidden \u2014 still findable via search" });
+    }
+    if (rec.deleted_at) {
+      options.push({ title: "Restore row", sub: "Undo the deletion",
+        act: { deleted_at: "" }, toast: "Row restored" });
+    } else {
+      options.push({ title: "Delete row", sub: "Removed everywhere \u2014 restorable for 30 days",
+        act: { deleted_at: new Date().toISOString() }, toast: "Deleted \u2014 restorable from the toolbar for 30 days" });
+    }
     options.forEach(function (o) {
       var b = document.createElement("button");
       b.type = "button";
       b.className = "ud-th-menu-item";
-      b.textContent = o.label;
+      var t = document.createElement("div");
+      t.textContent = o.title;
+      var s = document.createElement("div");
+      s.className = "ud-mi-sub";
+      s.textContent = o.sub;
+      b.appendChild(t);
+      b.appendChild(s);
       b.addEventListener("click", function () {
         setRowState(nk, o.act, o.toast);
         closeTrashMenu();
