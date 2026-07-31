@@ -218,6 +218,15 @@
   .ud-case-topics{display:flex;flex-wrap:wrap;gap:8px;}
   .ud-case-topics label{display:flex;flex-direction:row;align-items:center;gap:5px;font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink);cursor:pointer;}
   .ud-case-topics input{accent-color:var(--neon);}
+  .ud-src-list{display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto;}
+  .ud-src-row{display:flex;align-items:center;gap:10px;padding:7px 8px;background:var(--paper-2);border:1px solid var(--line);}
+  .ud-src-row input[type="checkbox"]{accent-color:var(--neon);margin:0;flex-shrink:0;}
+  .ud-src-name{font-weight:700;flex:0 0 120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ud-src-url{flex:1;font-size:12px;color:var(--ink-60);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ud-src-kind{font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--ink);padding:1px 7px;flex-shrink:0;}
+  .ud-src-del{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;}
+  .ud-src-del:hover{color:#C84141;}
+  .ud-src-add{display:flex;gap:6px;align-items:center;border-top:1px solid var(--line);padding-top:10px;}
   .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
   .uc-gcal:hover{opacity:1;}
   .uc-curate-cell{text-align:center;white-space:nowrap;}

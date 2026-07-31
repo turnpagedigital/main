@@ -218,6 +218,15 @@
   .ud-case-topics{display:flex;flex-wrap:wrap;gap:8px;}
   .ud-case-topics label{display:flex;flex-direction:row;align-items:center;gap:5px;font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink);cursor:pointer;}
   .ud-case-topics input{accent-color:var(--neon);}
+  .ud-src-list{display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto;}
+  .ud-src-row{display:flex;align-items:center;gap:10px;padding:7px 8px;background:var(--paper-2);border:1px solid var(--line);}
+  .ud-src-row input[type="checkbox"]{accent-color:var(--neon);margin:0;flex-shrink:0;}
+  .ud-src-name{font-weight:700;flex:0 0 120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ud-src-url{flex:1;font-size:12px;color:var(--ink-60);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ud-src-kind{font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--ink);padding:1px 7px;flex-shrink:0;}
+  .ud-src-del{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;}
+  .ud-src-del:hover{color:#C84141;}
+  .ud-src-add{display:flex;gap:6px;align-items:center;border-top:1px solid var(--line);padding-top:10px;}
   .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
   .uc-gcal:hover{opacity:1;}
   .uc-curate-cell{text-align:center;white-space:nowrap;}
@@ -341,6 +350,27 @@
   </div>
 </div>
 
+<!-- Feed sources modal -->
+<div id="ud-src-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box" style="width:min(680px,100%);">
+    <div class="ud-note-title">News feed sources</div>
+    <div class="ud-note-meta">Each source's RSS feed is pulled once a day into the docket feed. Rows appear tagged with the source's label, unassigned until you tie them to a case.</div>
+    <div id="ud-src-list" class="ud-src-list"></div>
+    <div class="ud-src-add">
+      <input type="text" id="ud-src-name" class="ud-dd-save-input" placeholder="Name (e.g. PETITION)" style="flex:0 0 140px;">
+      <input type="text" id="ud-src-url" class="ud-dd-save-input" placeholder="RSS feed URL (https://…/rss)" style="flex:1;">
+      <input type="text" id="ud-src-kind" class="ud-dd-save-input" placeholder="Tag (News)" style="flex:0 0 90px;">
+      <button type="button" id="ud-src-add-btn" class="ud-dd-save-btn">Add</button>
+    </div>
+    <div class="ud-note-actions">
+      <span id="ud-src-status" class="ud-note-status"></span>
+      <span style="flex:1"></span>
+      <button type="button" id="ud-src-close" class="ud-clear-btn">Close</button>
+      <button type="button" id="ud-src-save" class="ud-dd-save-btn">Save sources</button>
+    </div>
+  </div>
+</div>
+
 <!-- Entry-type header menu (positioned under the Entry column header) -->
 <div id="ud-th-menu" class="ud-th-menu" style="display:none;">
   <button type="button" class="ud-th-menu-item" data-val="all">All entries</button>
@@ -370,6 +400,7 @@
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
         <button type="button" id="ud-case-add" class="ud-type-select" title="Add a tracked case">＋ Case</button>
+        <button type="button" id="ud-sources-btn" class="ud-type-select" title="Manage news feed sources">Sources</button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
