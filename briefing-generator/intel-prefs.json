@@ -59,6 +59,14 @@
         "terraform-labs",
         "poolin"
       ]
+    },
+    {
+      "name": "Chapter 11",
+      "slugs": [
+        "harvest-sherwood",
+        "rndc",
+        "sleep-number"
+      ]
     }
   ],
   "presets": [
