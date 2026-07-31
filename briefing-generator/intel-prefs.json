@@ -48,6 +48,17 @@
         "bartz-anthropic",
         "concord-anthropic"
       ]
+    },
+    {
+      "name": "Crypto Distress",
+      "slugs": [
+        "blockfills",
+        "goliath",
+        "kahan",
+        "power-block-coin",
+        "terraform-labs",
+        "poolin"
+      ]
     }
   ],
   "presets": [
