@@ -59,3 +59,7 @@ $100-$500M liabilities = 2-10c recoveries
 
 > Stock Market Today: Apple Slump Drags on Tech — Stocks are reversing their early gains
 
+### (no docket number) — 2026-07-31
+
+> Korea’s Kospi Logs Record Daily Gain, Defying Efforts to Tame Wild Swings — The country’s regulators have imposed increasingly stringent restrictions on single-stock leveraged exchange-traded funds tr
+
