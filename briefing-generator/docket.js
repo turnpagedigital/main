@@ -836,7 +836,25 @@
     var tbody = document.getElementById("ud-tbody");
     var countEl = document.getElementById("ud-count");
     if (countEl) {
-      countEl.textContent = entries.length + " entr" + (entries.length === 1 ? "y" : "ies");
+      // If the Sources filter is suppressing article rows, say so right where
+      // the count is — an all-deselected saved view otherwise looks like a bug.
+      var srcHidden = 0;
+      if (rowKind !== "filings") {
+        ALL.forEach(function (e) {
+          if (e.is_article && !sourceOn(e.party)) srcHidden++;
+        });
+      }
+      countEl.innerHTML = entries.length + " entr" + (entries.length === 1 ? "y" : "ies") +
+        (srcHidden ? " · <button type=\"button\" id=\"ud-srcfilter-note\" style=\"background:none;border:none;padding:0;font:inherit;color:var(--ink-60);text-decoration:underline;cursor:pointer;\">" + srcHidden + " article" + (srcHidden === 1 ? "" : "s") + " hidden by the Author filter — show all</button>" : "");
+      var srcNote = document.getElementById("ud-srcfilter-note");
+      if (srcNote) {
+        srcNote.addEventListener("click", function () {
+          allSources().forEach(function (s) { activeSources[s.key] = true; });
+          saveFilterState();
+          renderSourceFilter();
+          render();
+        });
+      }
     }
     if (!entries.length) {
       tbody.innerHTML = '<tr><td colspan="10" class="ud-empty">No entries match the current filters.</td></tr>';
