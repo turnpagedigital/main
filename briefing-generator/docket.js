@@ -822,7 +822,7 @@
         'data-nk="' + esc(nk) + '" title="' + esc(snzTitle) + '"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" style=\"vertical-align:middle\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg></button></td>' +
       '<td class="ud-mark-cell"><button type="button" class="ud-del-btn" ' +
         'data-nk="' + esc(nk) + '" title="Delete this row (restorable from the toolbar)"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M3 6h18\"/><path d=\"M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2\"/><path d=\"M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6\"/><path d=\"M10 11v6\"/><path d=\"M14 11v6\"/></svg></button></td>' +
-      '<td class="ud-mark-cell">' + (docsFor(nk).length ? '<span class="ud-clip" title="' + docsFor(nk).length + ' attached document(s)">\ud83d\udcce</span>' : "") + '<button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
+      '<td class="ud-mark-cell"><button type="button" class="ud-note-btn' + (hasNote ? " ud-note-on" : "") + '" ' +
         'data-nk="' + esc(nk) + '" title="' + (hasNote ? "Edit note" : "Add note") + '"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button></td>'
     );
   }
@@ -897,7 +897,7 @@
             '<td class="ud-case">' + pill + "</td>" +
             '<td class="ud-party">' + (e.party ? esc(e.party) : '<span class="ud-party-empty">\u2014</span>') + "</td>" +
             '<td class="ud-entry">' + descHtml + "</td>" +
-            '<td class="ud-doc"><a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read</a>' + voteButtons(e) + "</td>" +
+            '<td class="ud-doc">' + docCell(e, '<a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read</a>') + voteButtons(e) + "</td>" +
             markCells(e) +
           "</tr>"
         );
@@ -930,7 +930,7 @@
           '<td class="ud-case">' + pill + "</td>" +
           '<td class="ud-party">' + partyHtml + "</td>" +
           '<td class="ud-entry">' + descHtml + "</td>" +
-          '<td class="ud-doc">' + joinLinks(linkHtml, agentLink(e)) + "</td>" +
+          '<td class="ud-doc">' + docCell(e, joinLinks(linkHtml, agentLink(e))) + "</td>" +
           markCells(e) +
         "</tr>"
       );
@@ -1153,53 +1153,36 @@
     return UPLOADS[nk] || [];
   }
 
-  function renderAttachList(nk) {
-    var list = document.getElementById("ud-attach-list");
-    if (!list) return;
-    var docs = docsFor(nk);
-    if (!docs.length) {
-      list.innerHTML = '<div class="ud-dd-empty">No documents attached.</div>';
-      return;
-    }
-    list.innerHTML = docs.map(function (d, i) {
-      var href = "/" + d.path.replace(/^briefing-generator\//, "intel/");
-      return (
-        '<div class="ud-attach-item">' +
-          '<a class="ud-link" href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(d.name) + "</a>" +
-          '<span class="uc-snippet">' + Math.round((d.size || 0) / 1024) + " KB" +
-            (d.text ? " \u00b7 searchable" : " \u00b7 text pending") + "</span>" +
-          '<button type="button" class="ud-src-del" data-attach-idx="' + i + '" title="Remove document">\u00d7</button>' +
-        "</div>"
-      );
-    }).join("");
-    list.querySelectorAll("[data-attach-idx]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var d = docsFor(nk)[Number(b.getAttribute("data-attach-idx"))];
-        if (!d) return;
-        noteToast("Removing document\u2026", false);
-        fetch("api/upload", {
-          method: "DELETE",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ key: nk, path: d.path }),
-        }).then(function (r) { return r.json(); }).then(function (p) {
-          if (p && p.ok) {
-            UPLOADS[nk] = docsFor(nk).filter(function (x) { return x.path !== d.path; });
-            if (!UPLOADS[nk].length) delete UPLOADS[nk];
-            renderAttachList(nk);
-            render();
-            noteToast("Document removed", false);
-          } else {
-            noteToast("Remove failed \u2014 " + ((p && p.error) || "try again"), true);
-          }
-        }).catch(function () { noteToast("Remove failed \u2014 network error", true); });
-      });
-    });
+  var SVG_UPLOAD = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></svg>';
+  var SVG_FILE = '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6z"/><path d="M14 2v6h6" fill="none" stroke="var(--surface)" stroke-width="1.6"/></svg>';
+  var SVG_DOWNLOAD = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>';
+
+  function uploadHref(d) {
+    return "/" + String(d.path || "").replace(/^briefing-generator\//, "intel/");
   }
 
-  function uploadAttachment(nk) {
-    var input = document.getElementById("ud-attach-file");
-    var file = input && input.files && input.files[0];
-    if (!file) { noteToast("Choose a PDF first", true); return; }
+  // The Dkt. cell: links + an upload button normally; once a document is
+  // uploaded, a black file icon (open / download / remove) replaces the links.
+  function docCell(e, linksHtml) {
+    var nk = entryNoteKey(e);
+    var docs = docsFor(nk);
+    if (docs.length) {
+      return docs.map(function (d, i) {
+        return (
+          '<span class="ud-file-group">' +
+            '<a class="ud-file-btn" href="' + esc(uploadHref(d)) + '" target="_blank" rel="noopener" title="Open ' + esc(d.name) + '">' + SVG_FILE + "</a>" +
+            '<a class="ud-file-dl" href="' + esc(uploadHref(d)) + '" download title="Download ' + esc(d.name) + '">' + SVG_DOWNLOAD + "</a>" +
+            '<button type="button" class="ud-file-del" data-updel-nk="' + esc(nk) + '" data-updel-i="' + i + '" title="Remove ' + esc(d.name) + '">\u00d7</button>' +
+          "</span>"
+        );
+      }).join(" ");
+    }
+    return linksHtml +
+      ' <button type="button" class="ud-upload-btn" data-upload-nk="' + esc(nk) + '" title="Upload the document (PDF) \u2014 replaces these links">' + SVG_UPLOAD + "</button>";
+  }
+
+  function uploadFile(nk, file) {
+    if (!file) return;
     if (!/\.pdf$/i.test(file.name)) { noteToast("PDF files only", true); return; }
     if (file.size > 15 * 1024 * 1024) { noteToast("File too large (15MB max)", true); return; }
     noteToast("Uploading " + file.name + "\u2026", false);
@@ -1216,8 +1199,6 @@
             name: file.name, path: p.path, size: file.size,
             uploaded_at: new Date().toISOString(), text: "",
           });
-          input.value = "";
-          renderAttachList(nk);
           render();
           noteToast("Uploaded \u2014 searchable after the next hourly sync", false);
         } else {
@@ -1226,6 +1207,45 @@
       }).catch(function () { noteToast("Upload failed \u2014 network error", true); });
     };
     reader.readAsDataURL(file);
+  }
+
+  function removeUpload(nk, idx) {
+    var d = docsFor(nk)[idx];
+    if (!d) return;
+    if (!window.confirm("Remove " + d.name + "? The row's links come back.")) return;
+    noteToast("Removing document\u2026", false);
+    fetch("api/upload", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ key: nk, path: d.path }),
+    }).then(function (r) { return r.json(); }).then(function (p) {
+      if (p && p.ok) {
+        UPLOADS[nk] = docsFor(nk).filter(function (x) { return x.path !== d.path; });
+        if (!UPLOADS[nk].length) delete UPLOADS[nk];
+        render();
+        noteToast("Document removed", false);
+      } else {
+        noteToast("Remove failed \u2014 " + ((p && p.error) || "try again"), true);
+      }
+    }).catch(function () { noteToast("Remove failed \u2014 network error", true); });
+  }
+
+  var pendingUploadKey = null;
+  var uploadInputEl = null;
+  function ensureUploadInput() {
+    if (uploadInputEl) return uploadInputEl;
+    uploadInputEl = document.createElement("input");
+    uploadInputEl.type = "file";
+    uploadInputEl.accept = "application/pdf";
+    uploadInputEl.style.display = "none";
+    uploadInputEl.addEventListener("change", function () {
+      var f = uploadInputEl.files && uploadInputEl.files[0];
+      if (f && pendingUploadKey) uploadFile(pendingUploadKey, f);
+      uploadInputEl.value = "";
+      pendingUploadKey = null;
+    });
+    document.body.appendChild(uploadInputEl);
+    return uploadInputEl;
   }
 
   // ── Up/down votes on news items — teaches which sources to surface ────────
@@ -1547,7 +1567,6 @@
     }
     if (text) text.value = rec.note || "";
     if (status) status.textContent = "";
-    renderAttachList(nk);
     var overlay = document.getElementById("ud-note-overlay");
     if (overlay) overlay.style.display = "flex";
     if (text) text.focus();
@@ -2292,6 +2311,19 @@
           if (ventry) castVote(ventry, Number(vt.getAttribute("data-vote")));
           return;
         }
+        var up = ev.target.closest(".ud-upload-btn");
+        if (up) {
+          ev.stopPropagation();
+          pendingUploadKey = up.getAttribute("data-upload-nk");
+          ensureUploadInput().click();
+          return;
+        }
+        var ud = ev.target.closest(".ud-file-del");
+        if (ud) {
+          ev.stopPropagation();
+          removeUpload(ud.getAttribute("data-updel-nk"), Number(ud.getAttribute("data-updel-i")));
+          return;
+        }
         var del = ev.target.closest(".ud-del-btn");
         if (del) { ev.stopPropagation(); openTrashMenu(del.getAttribute("data-nk"), del); return; }
         var nb = ev.target.closest(".ud-note-btn");
@@ -2300,13 +2332,6 @@
     }
 
     // Note modal buttons
-    var attachBtn = document.getElementById("ud-attach-upload");
-    if (attachBtn) {
-      attachBtn.addEventListener("click", function () {
-        if (activeNoteKey) uploadAttachment(activeNoteKey);
-      });
-    }
-
     var noteSave = document.getElementById("ud-note-save");
     var noteCancel = document.getElementById("ud-note-cancel");
     var noteDelete = document.getElementById("ud-note-delete");

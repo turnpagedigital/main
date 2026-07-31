@@ -432,7 +432,22 @@
       d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
   }
 
+  var SVG_FILE = '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6z"/><path d="M14 2v6h6" fill="none" stroke="var(--surface)" stroke-width="1.6"/></svg>';
+  var SVG_DOWNLOAD = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>';
+
   function entryLink(n) {
+    var docs = docsFor(n.key);
+    if (docs.length) {
+      return docs.map(function (d) {
+        var href = "/" + String(d.path || "").replace(/^briefing-generator\//, "intel/");
+        return (
+          '<span class="ud-file-group">' +
+            '<a class="ud-file-btn" href="' + esc(href) + '" target="_blank" rel="noopener" title="Open ' + esc(d.name) + '">' + SVG_FILE + "</a>" +
+            '<a class="ud-file-dl" href="' + esc(href) + '" download title="Download ' + esc(d.name) + '">' + SVG_DOWNLOAD + "</a>" +
+          "</span>"
+        );
+      }).join(" ");
+    }
     if (n.url) {
       return '<a class="ud-link" href="' + esc(n.url) + '" target="_blank" rel="noopener">Read</a>';
     }
@@ -488,7 +503,7 @@
           '<td class="ud-entry">' + entryMeta + "</td>" +
           '<td class="un-note-cell">' + noteHtml + "</td>" +
           '<td class="ud-doc">' + entryLink(n) + "</td>" +
-          '<td class="ud-mark-cell">' + (docsFor(n.key).length ? '<span class="ud-clip" title="' + docsFor(n.key).length + ' attached document(s)">\ud83d\udcce</span>' : "") +
+          '<td class="ud-mark-cell">' +
             '<button type="button" class="ud-bm-btn' + (n.bookmarked ? " ud-bm-on" : "") + '" data-nk="' + esc(n.key) + '" title="Toggle bookmark">' + (n.bookmarked ? "★" : "☆") + "</button>" +
             '<button type="button" class="ud-note-btn ud-note-on" data-nk="' + esc(n.key) + '" title="Edit note"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button>' +
           "</td>" +
@@ -516,81 +531,6 @@
     return UPLOADS[nk] || [];
   }
 
-  function renderAttachList(nk) {
-    var list = document.getElementById("ud-attach-list");
-    if (!list) return;
-    var docs = docsFor(nk);
-    if (!docs.length) {
-      list.innerHTML = '<div class="ud-dd-empty">No documents attached.</div>';
-      return;
-    }
-    list.innerHTML = docs.map(function (d, i) {
-      var href = "/" + d.path.replace(/^briefing-generator\//, "intel/");
-      return (
-        '<div class="ud-attach-item">' +
-          '<a class="ud-link" href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(d.name) + "</a>" +
-          '<span class="uc-snippet">' + Math.round((d.size || 0) / 1024) + " KB" +
-            (d.text ? " \u00b7 searchable" : " \u00b7 text pending") + "</span>" +
-          '<button type="button" class="ud-src-del" data-attach-idx="' + i + '" title="Remove document">\u00d7</button>' +
-        "</div>"
-      );
-    }).join("");
-    list.querySelectorAll("[data-attach-idx]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var d = docsFor(nk)[Number(b.getAttribute("data-attach-idx"))];
-        if (!d) return;
-        noteToast("Removing document\u2026", false);
-        fetch("api/upload", {
-          method: "DELETE",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ key: nk, path: d.path }),
-        }).then(function (r) { return r.json(); }).then(function (p) {
-          if (p && p.ok) {
-            UPLOADS[nk] = docsFor(nk).filter(function (x) { return x.path !== d.path; });
-            if (!UPLOADS[nk].length) delete UPLOADS[nk];
-            renderAttachList(nk);
-            render();
-            noteToast("Document removed", false);
-          } else {
-            noteToast("Remove failed \u2014 " + ((p && p.error) || "try again"), true);
-          }
-        }).catch(function () { noteToast("Remove failed \u2014 network error", true); });
-      });
-    });
-  }
-
-  function uploadAttachment(nk) {
-    var input = document.getElementById("ud-attach-file");
-    var file = input && input.files && input.files[0];
-    if (!file) { noteToast("Choose a PDF first", true); return; }
-    if (!/\.pdf$/i.test(file.name)) { noteToast("PDF files only", true); return; }
-    if (file.size > 15 * 1024 * 1024) { noteToast("File too large (15MB max)", true); return; }
-    noteToast("Uploading " + file.name + "\u2026", false);
-    var reader = new FileReader();
-    reader.onload = function () {
-      var b64 = String(reader.result).split(",")[1] || "";
-      fetch("api/upload", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key: nk, filename: file.name, content_base64: b64 }),
-      }).then(function (r) { return r.json(); }).then(function (p) {
-        if (p && p.ok) {
-          (UPLOADS[nk] = UPLOADS[nk] || []).push({
-            name: file.name, path: p.path, size: file.size,
-            uploaded_at: new Date().toISOString(), text: "",
-          });
-          input.value = "";
-          renderAttachList(nk);
-          render();
-          noteToast("Uploaded \u2014 searchable after the next hourly sync", false);
-        } else {
-          noteToast("Upload failed \u2014 " + ((p && p.error) || "try again"), true);
-        }
-      }).catch(function () { noteToast("Upload failed \u2014 network error", true); });
-    };
-    reader.readAsDataURL(file);
-  }
-
   // ── Modal (edit in place) ──────────────────────────────────────────────────
   function openNoteModal(nk) {
     var rec = NOTES[nk];
@@ -606,7 +546,6 @@
     }
     if (meta) meta.textContent = (rec.date_filed || "") + " · " + (rec.snippet || "");
     if (text) text.value = rec.note || "";
-    renderAttachList(nk);
     var overlay = document.getElementById("ud-note-overlay");
     if (overlay) overlay.style.display = "flex";
     if (text) text.focus();
@@ -778,13 +717,6 @@
         if (bm) { toggleBookmark(bm.getAttribute("data-nk")); return; }
         var nb = ev.target.closest(".ud-note-btn");
         if (nb) openNoteModal(nb.getAttribute("data-nk"));
-      });
-    }
-
-    var attachBtn = document.getElementById("ud-attach-upload");
-    if (attachBtn) {
-      attachBtn.addEventListener("click", function () {
-        if (activeNoteKey) uploadAttachment(activeNoteKey);
       });
     }
 
