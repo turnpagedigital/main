@@ -117,6 +117,7 @@
   var dateFrom = "";
   var dateTo = "";
   var activeGearSlug = null;
+  var activeSources = {};
   var _savedState = null;
 
   // ── Filter-state persistence (localStorage) ────────────────────────────────
@@ -149,6 +150,7 @@
         noteOnly:       noteOnly,
         sortDir:        sortDir,
         activeCases:    activeCases,
+        activeSources:  activeSources,
       }));
     } catch (e) {}
   }
@@ -289,6 +291,7 @@
       if (hrec && hrec.deleted_at) return false;
       if (hrec && hrec.hidden && !searchText.trim()) return false;
       if (!showMuted && !searchText.trim() && isMutedSource(e)) return false;
+      if (e.is_article && !sourceOn(e.party)) return false;
       if (bmOnly || noteOnly) {
         var mrec = NOTES[entryNoteKey(e)];
         if (bmOnly && !(mrec && mrec.bookmarked)) return false;
@@ -371,6 +374,109 @@
     saveFilterState();
     renderCaseFilter();
     render();
+  }
+
+  // ── Source show/hide (news outlets + feeds, like the case filter) ─────────
+  function sourceKey(name) {
+    return String(name || "Unknown").toLowerCase();
+  }
+
+  function sourceOn(name) {
+    var k = sourceKey(name);
+    if (!(k in activeSources)) {
+      var sv = _savedState && _savedState.activeSources;
+      // Unknown source = one that appeared since the view was saved → default ON
+      activeSources[k] = sv ? sv[k] !== false : true;
+    }
+    return activeSources[k];
+  }
+
+  function allSources() {
+    var seen = {};
+    var out = [];
+    ALL.forEach(function (e) {
+      if (!e.is_article) return;
+      var name = e.party || "Unknown";
+      var k = sourceKey(name);
+      if (seen[k]) return;
+      seen[k] = true;
+      out.push({ key: k, name: name, feed: !!e.is_bondoro });
+    });
+    out.sort(function (a, b) {
+      if (a.feed !== b.feed) return a.feed ? -1 : 1;
+      return a.name.localeCompare(b.name);
+    });
+    return out;
+  }
+
+  function renderSourceFilter() {
+    var th = document.getElementById("ud-th-source");
+    var panel = document.getElementById("ud-source-dd-panel");
+    if (!th || !panel) return;
+    var list = allSources();
+    var on = list.filter(function (s) { return sourceOn(s.name); }).length;
+    var lbl = th.querySelector(".ud-th-label");
+    if (lbl) lbl.textContent = list.length && on < list.length ? "Author \u00b7 " + on + "/" + list.length : "Author";
+    th.classList.toggle("ud-th-on", list.length > 0 && on < list.length);
+    if (panel.style.display === "none" && panel.childNodes.length) return;  // rebuild only when open
+    if (!list.length) {
+      panel.innerHTML = '<div class="ud-dd-empty">No news rows loaded yet.</div>';
+      return;
+    }
+
+    function section(title, grp, items) {
+      if (!items.length) return "";
+      return (
+        '<div class="ud-dd-groups-title">' + title +
+          ' <button type="button" class="ud-dd-quick" data-gact="all" data-grp="' + grp + '">All</button>' +
+          '<button type="button" class="ud-dd-quick" data-gact="none" data-grp="' + grp + '">None</button>' +
+        "</div>" +
+        items.map(function (s) {
+          return (
+            '<label class="ud-dd-row" title="' + esc(s.name) + '">' +
+              '<input type="checkbox" data-src="' + esc(s.key) + '"' + (sourceOn(s.name) ? " checked" : "") + ">" +
+              "<span>" + esc(s.name) + "</span>" +
+            "</label>"
+          );
+        }).join("")
+      );
+    }
+
+    var feeds = list.filter(function (s) { return s.feed; });
+    var press = list.filter(function (s) { return !s.feed; });
+    panel.innerHTML =
+      '<div class="ud-dd-head">' +
+        '<button type="button" class="ud-dd-quick" data-act="all">Select all</button>' +
+        '<button type="button" class="ud-dd-quick" data-act="none">Deselect all</button>' +
+      "</div>" +
+      section("Feeds", "feed", feeds) +
+      section("News outlets", "press", press) +
+      '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
+
+    var saveView = panel.querySelector("[data-close-panel]");
+    if (saveView) {
+      saveView.addEventListener("click", function () { panel.style.display = "none"; });
+    }
+    panel.querySelectorAll(".ud-dd-quick").forEach(function (q) {
+      q.addEventListener("click", function () {
+        var grp = q.getAttribute("data-grp");
+        var onAll = (q.getAttribute("data-act") || q.getAttribute("data-gact")) === "all";
+        list.forEach(function (s) {
+          if (!grp || (grp === "feed") === s.feed) activeSources[s.key] = onAll;
+        });
+        saveFilterState();
+        renderSourceFilter();
+        render();
+      });
+    });
+    panel.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        activeSources[cb.getAttribute("data-src")] = cb.checked;
+        saveFilterState();
+        renderSourceFilter();
+        render();
+      });
+    });
   }
 
   function renderCaseFilter() {
@@ -723,6 +829,7 @@
 
   // ── Render table ───────────────────────────────────────────────────────────
   function render() {
+    renderSourceFilter();
     var entries = filtered();
     var tbody = document.getElementById("ud-tbody");
     var countEl = document.getElementById("ud-count");
@@ -2062,6 +2169,33 @@
         if (pop && pop.contains(ev.target)) return;
         ddPanel.style.display = "none";
         closePopover();
+      });
+    }
+
+    // Sources dropdown — anchored to the Author column header
+    var thSource = document.getElementById("ud-th-source");
+    if (thSource) {
+      var srcPanel = document.createElement("div");
+      srcPanel.id = "ud-source-dd-panel";
+      srcPanel.className = "ud-case-dd-panel";
+      srcPanel.style.display = "none";
+      document.body.appendChild(srcPanel);
+      thSource.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = srcPanel.style.display !== "none";
+        if (open) { srcPanel.style.display = "none"; return; }
+        var rect = thSource.getBoundingClientRect();
+        srcPanel.style.position = "absolute";
+        srcPanel.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        srcPanel.style.left = clampMenuLeft(srcPanel, rect.left + window.scrollX) + "px";
+        srcPanel.style.display = "block";
+        renderSourceFilter();
+      });
+      document.addEventListener("click", function (ev) {
+        if (srcPanel.style.display === "none") return;
+        if (ev.target && !ev.target.isConnected) return;  // click landed on re-rendered UI inside the panel
+        if (srcPanel.contains(ev.target) || thSource.contains(ev.target)) return;
+        srcPanel.style.display = "none";
       });
     }
 
