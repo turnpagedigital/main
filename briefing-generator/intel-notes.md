@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-31 18:01 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-07-31 18:42 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -44,6 +44,12 @@ $100-$500M liabilities = 2-10c recoveries
 ### (no docket number) — 2026-07-23 ★
 
 > The Preference Wave Is Coming- What Vendors Should Do Now — If you sold goods or services to a customer that filed Chapter 11 in the last two years, the window to prepare is right now. It closes the d
+
+## RNDC
+
+### Dkt. 60 — 2026-07-28
+
+> Interim Order (I) Authorizing the Debtors to Obtain Postpetition Financing, (II) Granting Liens and Providing Claims with Superpriority Administrative Expense Status, (III) Authorizing the Use of Cash
 
 ## Terraform Labs
 
