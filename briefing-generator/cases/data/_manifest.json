@@ -4,7 +4,7 @@
     "display_name": "Bartz v. Anthropic",
     "short_name": "Bartz",
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "default_color": "#D4FF00",
+    "default_color": "#c8f967",
     "category": "class-action",
     "court": "U.S. District Court, N.D. Cal. (San Francisco)"
   },
@@ -39,10 +39,9 @@
     "slug": "harvest-sherwood",
     "display_name": "Harvest Sherwood",
     "short_name": "Harvest Sherwood",
-    "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "default_color": "#34D399",
-    "category": "bankruptcy",
-    "court": "N.D. Tex."
+    "docket_url": "",
+    "court": "N.D. Tex.",
+    "default_color": "#34D399"
   },
   {
     "slug": "kahan",
