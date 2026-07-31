@@ -100,6 +100,7 @@
   var noteOnly = false;
   var NOTES = {};
   var BONDORO = [];
+  var UNASSIGNED_KEY = "__unassigned__";
   var sortDir = "desc";
   var searchText = "";
   var dateFrom = "";
@@ -234,7 +235,9 @@
   function filtered() {
     var sq = searchText.toLowerCase().trim();
     var list = ALL.filter(function (e) {
-      if (!(e.is_bondoro && e.unassigned) && !activeCases[e.slug]) return false;
+      if (e.is_bondoro && e.unassigned) {
+        if (!activeCases[UNASSIGNED_KEY]) return false;
+      } else if (!activeCases[e.slug]) return false;
       if (!e.description && e.entry_number == null && !e.doc_url) return false;
       if (rowKind === "filings" && e.is_article) return false;
       if (rowKind === "articles" && !e.is_article) return false;
@@ -314,6 +317,7 @@
 
   function setAllCases(on) {
     CASES.forEach(function (c) { activeCases[c.slug] = on; });
+    activeCases[UNASSIGNED_KEY] = on;
     if (!on) closePopover();
     saveFilterState();
     renderCaseFilter();
@@ -355,6 +359,14 @@
         "</label>"
       );
     }).join("");
+
+    rows += (
+      '<label class="ud-dd-row" title="Bondoro filing alerts and summaries not yet assigned to a case">' +
+        '<input type="checkbox" data-slug="' + UNASSIGNED_KEY + '"' + (activeCases[UNASSIGNED_KEY] ? " checked" : "") + ">" +
+        '<span class="ud-pill" style="background:#0A0A0A;color:#FFFFFF;border:1px dashed rgba(255,255,255,0.4)">New Filing</span>' +
+        '<span class="ud-dd-spacer"></span>' +
+      "</label>"
+    );
 
     var groups = loadGroups();
     var groupRows = groups.map(function (g, i) {
@@ -419,6 +431,7 @@
         if (mode === "show") activeCases[c.slug] = !!slugs[c.slug];
         else if (slugs[c.slug]) activeCases[c.slug] = false;
       });
+      if (mode === "show") activeCases[UNASSIGNED_KEY] = false;
       if (activeGearSlug && !activeCases[activeGearSlug]) closePopover();
       saveFilterState();
       renderCaseFilter();
@@ -754,6 +767,7 @@
       CASES.forEach(function (c) {
         activeCases[c.slug] = savedAC ? !!savedAC[c.slug] : true;
       });
+      activeCases[UNASSIGNED_KEY] = savedAC ? savedAC[UNASSIGNED_KEY] !== false : true;
       buildAllEntries();
 
       var meta = document.getElementById("ud-meta");
