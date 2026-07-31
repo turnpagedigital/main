@@ -44,20 +44,28 @@
   }
 
   // ── Preset palette — pastel bg + darker same-hue text ────────────────────
-  var PRESETS = [
-    {bg:"#ECFCCB", fg:"#3f6212"},
-    {bg:"#DBEAFE", fg:"#1e40af"},
-    {bg:"#FFEDD5", fg:"#9a3412"},
-    {bg:"#F3E8FF", fg:"#6b21a8"},
-    {bg:"#D1FAE5", fg:"#065f46"},
-    {bg:"#FEE2E2", fg:"#991b1b"},
-    {bg:"#FEF3C7", fg:"#92400e"},
-    {bg:"#CCFBF1", fg:"#134e4a"},
-    {bg:"#FCE7F3", fg:"#9d174d"},
-    {bg:"#E0E7FF", fg:"#3730a3"},
-    {bg:"#FAE8FF", fg:"#86198f"},
-    {bg:"#E0F2FE", fg:"#075985"},
+  var DEFAULT_PRESETS = [
+    {bg:"#ECFCCB", fg:"#3f6212"}, {bg:"#DBEAFE", fg:"#1e40af"},
+    {bg:"#FFEDD5", fg:"#9a3412"}, {bg:"#F3E8FF", fg:"#6b21a8"},
+    {bg:"#D1FAE5", fg:"#065f46"}, {bg:"#FEE2E2", fg:"#991b1b"},
+    {bg:"#FEF3C7", fg:"#92400e"}, {bg:"#CCFBF1", fg:"#134e4a"},
+    {bg:"#FCE7F3", fg:"#9d174d"}, {bg:"#E0E7FF", fg:"#3730a3"},
+    {bg:"#FAE8FF", fg:"#86198f"}, {bg:"#E0F2FE", fg:"#075985"},
   ];
+  var PRESETS_KEY = "ud-swatch-presets";
+  function loadPresets() {
+    try {
+      var p = JSON.parse(localStorage.getItem(PRESETS_KEY) || "null");
+      if (Array.isArray(p) && p.length === 12 && p.every(function (x) { return x && /^#[0-9a-fA-F]{6}$/.test(x.bg); })) {
+        return p;
+      }
+    } catch (e) {}
+    return DEFAULT_PRESETS.map(function (x) { return { bg: x.bg, fg: x.fg }; });
+  }
+  function savePresets() {
+    try { localStorage.setItem(PRESETS_KEY, JSON.stringify(PRESETS)); } catch (e) {}
+  }
+  var PRESETS = loadPresets();
 
   // ── Color helpers ──────────────────────────────────────────────────────────
   var COLOR_KEY = "ud-case-colors";
@@ -514,6 +522,35 @@
     });
   }
 
+  var paletteEditing = false;
+
+  function renderSwatchEditors() {
+    var container = document.getElementById("ud-pop-swatches");
+    if (!container) return;
+    container.innerHTML = PRESETS.map(function (p, i) {
+      return '<input type="color" class="ud-swatch-edit" data-idx="' + i + '" value="' + p.bg + '" title="Palette color ' + (i + 1) + '">';
+    }).join("");
+    container.querySelectorAll(".ud-swatch-edit").forEach(function (inp) {
+      inp.addEventListener("input", function () {
+        var i = Number(inp.getAttribute("data-idx"));
+        PRESETS[i] = { bg: inp.value, fg: autoFg(inp.value) };
+        savePresets();
+        schedulePrefsPush();
+      });
+    });
+  }
+
+  function setPaletteEditing(on) {
+    paletteEditing = on;
+    var btn = document.getElementById("ud-pop-palette");
+    if (btn) btn.textContent = on ? "Done editing palette" : "Edit palette\u2026";
+    if (on) renderSwatchEditors();
+    else {
+      var bgEl = document.getElementById("ud-pop-bg");
+      renderSwatches(bgEl ? bgEl.value : "");
+    }
+  }
+
   function openPopover(slug, anchor) {
     activeGearSlug = slug;
     var pop = document.getElementById("ud-color-pop");
@@ -534,6 +571,9 @@
     if (bgEl) bgEl.value = bg;
     if (fgEl) fgEl.value = fg;
 
+    paletteEditing = false;
+    var palBtn = document.getElementById("ud-pop-palette");
+    if (palBtn) palBtn.textContent = "Edit palette\u2026";
     renderSwatches(bg);
 
     var rect = anchor.getBoundingClientRect();
@@ -1366,7 +1406,7 @@
       fetch("api/prefs", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ colors: savedColors, groups: loadGroups() }),
+        body: JSON.stringify({ colors: savedColors, groups: loadGroups(), presets: PRESETS }),
       }).catch(function () {});
     }, 2000);
   }
@@ -1384,6 +1424,10 @@
       if (Array.isArray(p.groups) && p.groups.length) {
         try { localStorage.setItem(GROUPS_KEY, JSON.stringify(p.groups)); } catch (e) {}
         changed = true;
+      }
+      if (Array.isArray(p.presets) && p.presets.length === 12) {
+        PRESETS = p.presets.map(function (x) { return { bg: x.bg, fg: x.fg || autoFg(x.bg) }; });
+        savePresets();
       }
       if (changed) { renderCaseFilter(); render(); }
     }).catch(function () {});
@@ -1478,6 +1522,11 @@
     var popFg = document.getElementById("ud-pop-fg");
     if (popBg) popBg.addEventListener("input", applyPopoverColors);
     if (popFg) popFg.addEventListener("input", applyPopoverColors);
+
+    var palToggle = document.getElementById("ud-pop-palette");
+    if (palToggle) {
+      palToggle.addEventListener("click", function () { setPaletteEditing(!paletteEditing); });
+    }
 
     var defaultBtn = document.getElementById("ud-pop-default");
     if (defaultBtn) {

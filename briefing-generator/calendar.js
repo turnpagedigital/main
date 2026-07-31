@@ -94,7 +94,7 @@
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
-  var PRESETS = [
+  var DEFAULT_PRESETS = [
     {bg:"#ECFCCB", fg:"#3f6212"}, {bg:"#DBEAFE", fg:"#1e40af"},
     {bg:"#FFEDD5", fg:"#9a3412"}, {bg:"#F3E8FF", fg:"#6b21a8"},
     {bg:"#D1FAE5", fg:"#065f46"}, {bg:"#FEE2E2", fg:"#991b1b"},
@@ -102,6 +102,20 @@
     {bg:"#FCE7F3", fg:"#9d174d"}, {bg:"#E0E7FF", fg:"#3730a3"},
     {bg:"#FAE8FF", fg:"#86198f"}, {bg:"#E0F2FE", fg:"#075985"},
   ];
+  var PRESETS_KEY = "ud-swatch-presets";
+  function loadPresets() {
+    try {
+      var p = JSON.parse(localStorage.getItem(PRESETS_KEY) || "null");
+      if (Array.isArray(p) && p.length === 12 && p.every(function (x) { return x && /^#[0-9a-fA-F]{6}$/.test(x.bg); })) {
+        return p;
+      }
+    } catch (e) {}
+    return DEFAULT_PRESETS.map(function (x) { return { bg: x.bg, fg: x.fg }; });
+  }
+  function savePresets() {
+    try { localStorage.setItem(PRESETS_KEY, JSON.stringify(PRESETS)); } catch (e) {}
+  }
+  var PRESETS = loadPresets();
 
   var COLOR_KEY = "ud-case-colors";
   function loadColors() {
@@ -865,6 +879,10 @@
       if (Array.isArray(p.groups) && p.groups.length) {
         try { localStorage.setItem(GROUPS_KEY, JSON.stringify(p.groups)); } catch (e) {}
         changed = true;
+      }
+      if (Array.isArray(p.presets) && p.presets.length === 12) {
+        PRESETS = p.presets.map(function (x) { return { bg: x.bg, fg: x.fg || autoFg(x.bg) }; });
+        savePresets();
       }
       if (changed) { renderCaseFilter(); render(); }
     }).catch(function () {});

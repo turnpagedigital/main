@@ -6,7 +6,8 @@
    (briefing-generator/intel-prefs.json on the briefing branch) like every
    other piece of site state. Gated by functions/intel/_middleware.js.
 
-   GET  → { ok, colors: {slug: {bg, fg}}, groups: [{name, slugs: []}] }
+   GET  → { ok, colors: {slug: {bg, fg}}, groups: [{name, slugs: []}],
+            presets: [{bg, fg}] }   (the 12 swatches in the color popover)
    PUT  → same shape in; sanitized, committed via the GitHub Contents API.
 */
 
@@ -40,17 +41,24 @@ function sanitize(body) {
       .slice(0, 50);
     if (name && slugs.length) groups.push({ name, slugs });
   }
-  return { colors, groups };
+  const presets = [];
+  const rawPresets = Array.isArray(body && body.presets) ? body.presets : [];
+  for (const p of rawPresets.slice(0, 12)) {
+    if (p && typeof p.bg === "string" && HEX.test(p.bg)) {
+      presets.push({ bg: p.bg, fg: typeof p.fg === "string" && HEX.test(p.fg) ? p.fg : "" });
+    }
+  }
+  return { colors, groups, presets: presets.length === 12 ? presets : [] };
 }
 
 export async function onRequestGet(context) {
   const { env } = context;
   const res = await getFileFromGitHub(env, PREFS_PATH, null, briefingRepo(env), briefingBranch(env));
   if (!res.ok || !res.data || typeof res.data !== "object") {
-    return jsonResponse({ ok: true, colors: {}, groups: [] });
+    return jsonResponse({ ok: true, colors: {}, groups: [], presets: [] });
   }
   const clean = sanitize(res.data);
-  return jsonResponse({ ok: true, colors: clean.colors, groups: clean.groups });
+  return jsonResponse({ ok: true, colors: clean.colors, groups: clean.groups, presets: clean.presets });
 }
 
 export async function onRequestPut(context) {
