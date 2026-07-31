@@ -184,6 +184,44 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-src-del{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;}
   .ud-src-del:hover{color:#C84141;}
   .ud-src-add{display:flex;gap:6px;align-items:center;border-top:1px solid var(--line);padding-top:10px;}
+  /* ── Mobile (≤720px): tables become stacked cards ─────────────────────── */
+  @media (max-width: 720px) {
+    .tn-left{flex-wrap:wrap;gap:8px 14px;}
+    .tn{padding:8px 12px;}
+    body{overflow-x:hidden;}
+    .ud-party-empty{display:none;}
+    .ud-page{padding:12px 12px 48px;}
+    .page-title{padding-left:14px;padding-right:14px;}
+    .ud-controls{padding:12px;gap:8px;}
+    .ud-search-wrap{flex:1 1 100%;max-width:none;}
+    .ud-date-range{gap:6px;}
+    .ud-toolbar{flex-wrap:wrap;gap:8px;}
+    .ud-table, .ud-table tbody{display:block;width:100%;}
+    .ud-table thead{display:none;}
+    .ud-table tr{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 10px;padding:12px 10px;border-bottom:1px solid var(--line);}
+    .ud-table td{display:inline-block;border-bottom:none;padding:0;width:auto !important;}
+    .ud-date{order:1;font-size:12px;color:var(--ink-60);}
+    .uc-rel-cell{order:2;}
+    .ud-case{order:3;overflow:visible;}
+    .ud-party{order:4;font-size:12px;color:var(--ink-60);}
+    .ud-entry, .un-note-cell{order:5;flex-basis:100%;max-width:none;}
+    .ud-doc{order:6;text-align:left;}
+    .ud-mark-cell, .uc-curate-cell{order:7;margin-left:auto;}
+    .ud-mark-cell button{font-size:16px;padding:4px 6px;}
+    .ud-row-article td, .ud-table .ud-row-bondoro td{background:transparent;}
+    .ud-row-article{background:var(--paper-2);}
+    .ud-table .ud-row-bondoro{background:rgba(212,255,0,0.10);}
+    [data-theme="dark"] .ud-table .ud-row-bondoro{background:rgba(212,255,0,0.07);}
+    .ud-case-dd-panel{max-width:calc(100vw - 16px);min-width:240px;}
+    .ud-th-menu{max-width:calc(100vw - 16px);}
+    .ud-case-grid{grid-template-columns:1fr;}
+    .ud-src-add{flex-wrap:wrap;}
+    .ud-src-add input{flex:1 1 100% !important;}
+    .ud-due{padding:12px;}
+    .ud-due-card{flex-direction:column;gap:8px;}
+    .ud-note-box{padding:16px;}
+    .uc-merge-bar{flex-wrap:wrap;}
+  }
   .uc-gcal{font-size:16px;text-decoration:none;opacity:0.55;}
   .uc-gcal:hover{opacity:1;}
   .uc-curate-cell{text-align:center;white-space:nowrap;}
