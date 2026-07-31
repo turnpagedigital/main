@@ -32,6 +32,7 @@ export async function onRequestPut(context) {
   }
   const url = typeof body.url === "string" ? body.url.trim() : "";
   const caseSlug = body.case_slug == null ? null : String(body.case_slug).trim();
+  const groupName = body.group_name == null ? null : String(body.group_name).trim().slice(0, 40);
   if (!/^https?:\/\/[^\s]+$/.test(url)) {
     return jsonResponse({ ok: false, error: "a feed item url is required" }, 400);
   }
@@ -49,11 +50,14 @@ export async function onRequestPut(context) {
     }
     const item = cur.data.items.find((i) => i.url === url);
     if (!item) return jsonResponse({ ok: false, error: "item not found" }, 404);
-    if ((item.case_slug || null) === caseSlug) return jsonResponse({ ok: true, unchanged: true });
+    if ((item.case_slug || null) === caseSlug && (item.group_name || null) === groupName) {
+      return jsonResponse({ ok: true, unchanged: true });
+    }
     item.case_slug = caseSlug;
+    item.group_name = caseSlug ? null : groupName;  // one or the other
     res = await commitFileToGitHub(
       env, PATH, JSON.stringify(cur.data, null, 2) + "\n", cur.sha,
-      `Bondoro: ${caseSlug ? "assign " + url.split("/").filter(Boolean).pop() + " → " + caseSlug : "unassign " + url.split("/").filter(Boolean).pop()}`,
+      `Feed item: ${caseSlug || groupName ? "assign " + url.split("/").filter(Boolean).pop() + " → " + (caseSlug || "group:" + groupName) : "unassign " + url.split("/").filter(Boolean).pop()}`,
       repo, branch
     );
     if (res.ok) break;
