@@ -74,10 +74,9 @@
     "slug": "sleep-number",
     "display_name": "Sleep Number",
     "short_name": "Sleep Number",
-    "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "default_color": "#FB923C",
-    "category": "bankruptcy",
-    "court": "United States Bankruptcy Court, S.D. New York"
+    "docket_url": "",
+    "court": "United States Bankruptcy Court, S.D. New York",
+    "default_color": "#FB923C"
   },
   {
     "slug": "terraform-labs",
