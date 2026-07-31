@@ -153,13 +153,13 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   [data-theme="dark"] .ud-table .ud-row-bondoro td{background:rgba(212,255,0,0.07);}
   .ud-pill-assign{border:1px dashed var(--ink-40);cursor:pointer;font-family:inherit;}
   .ud-pill-assign:hover{border-style:solid;}
-  .ud-snz-btn{background:none;border:none;cursor:pointer;font-size:14px;padding:2px 4px;line-height:1;filter:grayscale(1);opacity:0.45;}
-  .ud-snz-btn:hover{opacity:1;}
-  .ud-snz-btn.ud-snz-on{filter:none;opacity:1;}
+  .ud-snz-btn{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:var(--ink-40);}
+  .ud-snz-btn:hover{color:var(--ink);}
+  .ud-snz-btn.ud-snz-on{color:#3B78D8;}
   .ud-del-btn{background:none;border:none;cursor:pointer;font-size:13px;padding:2px 4px;line-height:1;color:var(--ink-40);}
   .ud-del-btn:hover{color:#C84141;}
-  .ud-due{background:rgba(212,255,0,0.22);border:1px solid var(--line-strong);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
-  [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.13);}
+  .ud-due{background:rgba(212,255,0,0.5);border:1px solid var(--line-strong);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
+  [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.22);color:#F4F5F7;}
   .ud-due-head{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
   .ud-due-card{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-top:1px solid var(--line);}
   .ud-due-card:first-of-type{border-top:none;}
@@ -770,6 +770,8 @@ def render_unified_docket(cases):
 
 <div class="ud-page">
 
+  <div id="ud-due" class="ud-due" style="display:none;"></div>
+
   <div class="ud-controls">
     <div class="ud-search-row">
       <div class="ud-search-wrap">
@@ -802,8 +804,6 @@ def render_unified_docket(cases):
     </div>
   </div>
 
-  <div id="ud-due" class="ud-due" style="display:none;"></div>
-
   <div class="ud-toolbar">
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
@@ -818,7 +818,7 @@ def render_unified_docket(cases):
       <th id="ud-th-entry" class="ud-th-filter" title="Filter by entry type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
       <th style="width:132px;text-align:right">Dkt.</th>
       <th id="ud-th-bm" class="ud-th-toggle" style="width:40px;text-align:center" title="Show bookmarked only">★</th>
-      <th style="width:44px;text-align:center" title="Snoozed reminders">💤</th>
+      <th style="width:44px;text-align:center" title="Snoozed reminders"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></th>
       <th style="width:40px;text-align:center" title="Delete rows">🗑</th>
       <th id="ud-th-note" class="ud-th-toggle" style="width:44px;text-align:center" title="Show entries with notes only">📝</th>
     </tr></thead>
