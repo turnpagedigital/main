@@ -123,7 +123,7 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
           <img
             src="/turnpage-logo.png"
             alt="Turnpage Digital Markets"
-            style={{ height: 26, width: "auto", display: "block" }}
+            style={{ height: 36, width: "auto", display: "block" }}
           />
         </a>
 

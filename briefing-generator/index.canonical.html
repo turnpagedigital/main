@@ -26,9 +26,10 @@
 
     /* Brand strip */
     .tn-row.brand { max-width: 1440px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
-    .tn-brand-logo { height: 36px; }
-    [data-theme="light"] .tn-brand-logo { filter: none; }
-    [data-theme="dark"] .tn-brand-logo { filter: invert(1); }
+    .tn-brand-logo { height: 36px; width: auto; }
+    .tn-logo-dark { display: none; }
+    [data-theme="dark"] .tn-logo-light { display: none; }
+    [data-theme="dark"] .tn-logo-dark { display: block; }
     #theme-toggle { background: none; border: none; font-size: 20px; cursor: pointer; padding: 4px; }
 
     /* Topic tabs row */
