@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LanguageSelector from "./LanguageSelector.jsx";
 import alertsData from "../data/alerts.json";
+import { useI18n } from "../lib/i18n.js";
 
 /* Thin promo bar above the nav.
    Reads from src/data/alerts.json — edit via /admin → Alerts tab.
@@ -20,6 +21,7 @@ const ROTATE_MS  = 10_000; // time each alert is shown
 const FADE_MS    = 300;    // fade-out duration before swapping
 
 export default function AnnouncementBanner({ page = "home" }) {
+  const { td } = useI18n();
   const alerts = (alertsData.alerts || []).filter(
     a => a.active && Array.isArray(a.pages) && a.pages.includes(page)
   );
@@ -52,10 +54,10 @@ export default function AnnouncementBanner({ page = "home" }) {
             style={{ opacity: fading ? 0 : 1, transition: `opacity ${FADE_MS}ms ease` }}
           >
             {alert.pill && <span className="ann-banner-pill">{alert.pill}</span>}
-            <span>{alert.text}</span>
+            <span>{td("alert", alert.text)}</span>
             {alert.href && alert.linkText && (
               <a href={normalizeHref(alert.href)} aria-label={alert.linkText}>
-                {alert.linkText} →
+                {td("cta", alert.linkText)} →
               </a>
             )}
           </div>

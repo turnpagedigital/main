@@ -9,7 +9,7 @@ import { useI18n } from "../../lib/i18n.js";
    is editable per page in the page builder via sectionConfig.content; blank
    fields fall back to the built-in per-page copy below. */
 export default function ExperienceSection({ sectionConfig, pageKey }) {
-  const { t, lang } = useI18n();
+  const { t, td, lang } = useI18n();
   const en = lang === "en";
   const deals = (dealsData.deals || []).filter(
     d => Array.isArray(d.pages) && d.pages.includes(pageKey)
@@ -81,7 +81,7 @@ export default function ExperienceSection({ sectionConfig, pageKey }) {
             fontFamily: FONT, fontSize: "0.78rem",
             color: "rgba(255,255,255,0.4)", marginTop: "1.2rem", fontStyle: "italic",
           }}>
-            {footnote}
+            {td("stats", footnote)}
           </p>
         )}
 

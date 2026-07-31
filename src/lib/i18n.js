@@ -18,7 +18,7 @@ export const LANGUAGES = [
 ];
 
 const STORAGE_KEY = "tpdm-lang";
-const I18nCtx = createContext({ lang: "en", setLang: () => {}, t: (k) => k });
+const I18nCtx = createContext({ lang: "en", setLang: () => {}, t: (k) => k, td: (p, x) => x });
 
 function readInitialLang() {
   if (typeof window === "undefined") return "en";
@@ -45,6 +45,17 @@ export function I18nProvider({ children }) {
     if (LANGUAGES.find(l => l.code === code)) setLangState(code);
   }
 
+  // Data-text translation: admin-authored strings (nav labels, subjects,
+  // banner text, …) translate by exact English text under "@prefix:text"
+  // keys. English (or a missing key) returns the text unchanged, so admin
+  // edits always show even before a translation exists.
+  function td(prefix, text) {
+    if (!text || lang === "en") return text;
+    const key = "@" + prefix + ":" + String(text).replace(/\s+/g, " ").trim();
+    const dict = TRANSLATIONS[lang] || {};
+    return dict[key] != null ? dict[key] : text;
+  }
+
   function t(key) {
     const dict = TRANSLATIONS[lang] || TRANSLATIONS.en;
     if (dict[key] != null) return dict[key];
@@ -52,7 +63,7 @@ export function I18nProvider({ children }) {
     return key;
   }
 
-  return React.createElement(I18nCtx.Provider, { value: { lang, setLang, t } }, children);
+  return React.createElement(I18nCtx.Provider, { value: { lang, setLang, t, td } }, children);
 }
 
 export function useI18n() { return useContext(I18nCtx); }

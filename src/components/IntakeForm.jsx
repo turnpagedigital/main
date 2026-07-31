@@ -28,7 +28,8 @@ const SOURCE_SUBJECTS = {
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || "";
 
 export default function IntakeForm({ source = "", defaultSubject = "" }) {
-  const { t } = useI18n();
+  const { t, td } = useI18n();
+  const subjectOptions = SUBJECT_OPTIONS.slice(1).map(o => ({ ...o, label: td("subject", o.label) }));
   const [formState, setFormState] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
@@ -138,7 +139,7 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
         label={t("form.subject")}
         name="subject"
         required
-        options={[{ value: "", label: t("form.select_subject"), disabled: true }, ...SUBJECT_OPTIONS.slice(1)]}
+        options={[{ value: "", label: t("form.select_subject"), disabled: true }, ...subjectOptions]}
         defaultValue={resolvedDefault}
       />
       <Field label={t("form.message")} name="message" type="textarea" placeholder={t("form.message_placeholder")} required />
