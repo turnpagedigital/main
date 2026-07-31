@@ -31,6 +31,10 @@
     "harvest-sherwood": {
       "bg": "#fef3c7",
       "fg": "#92400e"
+    },
+    "rndc": {
+      "bg": "#fee2e2",
+      "fg": "#991b1b"
     }
   },
   "groups": [
