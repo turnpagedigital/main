@@ -15,9 +15,9 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "date_last_filing": "2026-07-23",
-    "fetched_at": "2026-08-01T14:00:52.860471+00:00",
+    "fetched_at": "2026-08-01T15:31:43.743512+00:00",
     "as_of": "Aug 1, 2026",
-    "backfilled": false,
+    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -6473,6 +6473,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 6,
+        "date_filed": "2024-06-20",
+        "time_filed": "21:54:32",
+        "date_display": "Jun 20, 2024",
+        "description": "Declaration re: (related document(s):5 Application to Employ (Professional)) of Cheryl Adams in Support of Application to Employ CFO Solutions L.L.C. d/b/a Amplo Filed by Power Block Coin LLC. (Rothschild, Brian) (EOD: 06/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 5,
         "date_filed": "2024-06-20",
         "time_filed": "21:49:43",
@@ -6488,6 +6498,26 @@
         "time_filed": "21:38:42",
         "date_display": "Jun 20, 2024",
         "description": "Motion to Limit Notice and Establish Noticing Procedures Filed by Power Block Coin LLC. (Rothschild, Brian) (EOD: 06/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2024-06-20",
+        "time_filed": "21:33:49",
+        "date_display": "Jun 20, 2024",
+        "description": "Declaration re: (related document(s):2 Application to Employ Attorney) of Brian M. Rothschild in Support of Application to Employ Parsons Behle & Latimer as Attorneys for the Debtor Filed by Power Block Coin LLC. (Rothschild, Brian) (EOD: 06/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2024-06-20",
+        "time_filed": "21:32:24",
+        "date_display": "Jun 20, 2024",
+        "description": "Application to Employ Parsons Behle & Latimer as Attorney Filed by Power Block Coin LLC. (Rothschild, Brian) (EOD: 06/20/2024)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -6511,9 +6541,18 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-06-20",
+        "time_filed": "",
+        "date_display": "Jun 20, 2024",
+        "description": "Receipt of Filing Fee for Voluntary Petition (Chapter 11)( 24-23041) [misc,volp11a] (1738.00). Receipt Number A27393474, Amount $1738.00 (Re: Doc# 1). (U.S. Treasury) (EOD: 06/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68873409&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=34"
+    ]
   },
   "claims_administrator": null,
   "coverage": [],
