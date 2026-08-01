@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
-    "date_last_filing": "2026-07-30",
-    "fetched_at": "2026-07-31T07:24:46.324043+00:00",
-    "as_of": "Jul 31, 2026",
+    "date_last_filing": "2026-07-31",
+    "fetched_at": "2026-08-01T03:59:38.111956+00:00",
+    "as_of": "Aug 1, 2026",
     "backfilled": false,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 1308,
+        "date_filed": "2026-07-31",
+        "time_filed": "09:11:45",
+        "date_display": "Jul 31, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1307,
         "date_filed": "2026-07-30",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1305,
-        "date_filed": "2026-07-30",
-        "time_filed": "17:37:36",
-        "date_display": "Jul 30, 2026",
-        "description": "Chapter 11 Post-Confirmation Report",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1308,
+        "date_filed": "2026-07-31",
+        "time_filed": "09:11:45",
+        "date_display": "Jul 31, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1307,
         "date_filed": "2026-07-30",
@@ -1211,9 +1221,1179 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 1198,
+        "date_filed": "2026-04-02",
+        "time_filed": "12:01:33",
+        "date_display": "Apr 2, 2026",
+        "description": "Notice of Hearing (related document(s)1113, 1179, 1182, 1184, 1186, 1187, 1188) Filed by Todd R. Snyder. Hearing scheduled for 4/15/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 4/8/2026. (Shapiro, Zachary) (Entered: 04/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1197,
+        "date_filed": "2026-04-02",
+        "time_filed": "10:53:08",
+        "date_display": "Apr 2, 2026",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Withdrawal of Plan Administrator's Motion for Entry of an Order to Conduct Discovery from Dentons US LLP Pursuant to 11 U.S.C. 542(e), Fed. R. Bank. P. 2004, and Local Rule 2004-1; Notice of Filing of January 2026 Statement of Fees Paid to BitGo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions; Notice of Filing of February 2026 Statement of Fees Paid to BitGo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1192, 1193, 1194) (Mailloux, Kathryn) (Entered: 04/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1196,
+        "date_filed": "2026-04-02",
+        "time_filed": "10:19:27",
+        "date_display": "Apr 2, 2026",
+        "description": "Order Granting Ninth Monthly, Third Interim, and Final Fee Application of Dentons Us LLP, Special Counsel to Debtors, For (A) Allowance of Compensation For Services Rendered and Reimbursement Of Expenses Incurred From October 1, 2024 Through and Including October 1, 2024; (B) Interim Allowance of Compensation For Services Rendered and Reimbursement of Expenses Incurred From July 1, 2024 Through and Including October 1, 2024; and (C) Final Allowance of Compensation and Reimbursement of Expenses For the Period From January 21, 2024 Through and Including October 1, 2024 (related document(s)860) Order Signed on 4/2/2026. (REB) (Entered: 04/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1195,
+        "date_filed": "2026-04-01",
+        "time_filed": "23:31:26",
+        "date_display": "Apr 1, 2026",
+        "description": "Certification of Counsel Regarding Order Granting Ninth Monthly, Third Interim, and Final Fee Application of Dentons Us LLP, Special Counsel to Debtors, For (A) Allowance of Compensation For Services Rendered and Reimbursement Of Expenses Incurred From October 1, 2024 Through and Including October 1, 2024; (B) Interim Allowance of Compensation For Services Rendered and Reimbursement of Expenses Incurred From July 1, 2024 Through and Including October 1, 2024; and (C) Final Allowance of Compensation and Reimbursement of Expenses For the Period From January 21, 2024 Through and Including October 1, 2024 (related document(s)860) Filed by Dentons US LLP. (Attachments: # 1 Exhibit A - Proposed Order) (Jones, Laura Davis) (Entered: 04/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1194,
+        "date_filed": "2026-03-31",
+        "time_filed": "18:31:11",
+        "date_display": "Mar 31, 2026",
+        "description": "Exhibit(s) (Notice of Filing of February 2026 Statement of Fees Paid to BitGo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions) Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1193,
+        "date_filed": "2026-03-31",
+        "time_filed": "18:27:07",
+        "date_display": "Mar 31, 2026",
+        "description": "Exhibit(s) (Notice of Filing of January 2026 Statement of Fees Paid to BitGo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions) Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1192,
+        "date_filed": "2026-03-31",
+        "time_filed": "13:30:20",
+        "date_display": "Mar 31, 2026",
+        "description": "Notice of Withdrawal of Plan Administrator's Motion for Entry of an Order to Conduct Discovery from Dentons US LLP Pursuant to 11 U.S.C. 542(e), Fed. R. Bank. P. 2004, and Local Rule 2004-1 (related document(s)1032, 1141) Filed by Todd R. Snyder. (Zeldin, Jessica) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1191,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 24-10070-BLS) [claims,trclm11] ( 28.00). Receipt Number A12616426, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-31",
+        "time_filed": "11:25:41",
+        "date_display": "Mar 31, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1190,
+        "date_filed": "2026-03-30",
+        "time_filed": "16:07:46",
+        "date_display": "Mar 30, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: BARRET-PINEAUX Matthieu (Amount $38,110.57) To BOMER Finn. Filed by TerraClaim LLC. (Barret-Pineaux, Matthieu) (Entered: 03/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1189,
+        "date_filed": "2026-03-04",
+        "time_filed": "11:12:41",
+        "date_display": "Mar 4, 2026",
+        "description": "Certificate of Mailing of Claims Agent re HEARING CANCELLED. Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Todd R. Snyder. Hearing scheduled for 3/4/2026 at 10:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1185) (Mailloux, Kathryn) (Entered: 03/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1188,
+        "date_filed": "2026-03-02",
+        "time_filed": "",
+        "date_display": "Mar 2, 2026",
+        "description": "Motion to File Claim After Claims Bar Date Filed by William Wu. Hearing scheduled for 4/15/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. The case judge is Brendan Linehan Shannon. (NWW) (Entered: 03/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1185,
+        "date_filed": "2026-03-02",
+        "time_filed": "11:04:16",
+        "date_display": "Mar 2, 2026",
+        "description": "HEARING CANCELLED. Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Todd R. Snyder. Hearing scheduled for 3/4/2026 at 10:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Steiger, Alexander) (Entered: 03/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1184,
+        "date_filed": "2026-02-26",
+        "time_filed": "16:55:58",
+        "date_display": "Feb 26, 2026",
+        "description": "Motion to File Claim After Claims Bar Date. Filed by Pavlo Grytsenko. (Attachments: # 1 Supplement) (Grytsenko, Pavlo) (Entered: 02/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1187,
+        "date_filed": "2026-02-25",
+        "time_filed": "",
+        "date_display": "Feb 25, 2026",
+        "description": "Motion to File Claim After Claims Bar Date Filed by Romuald Pierre Francois Tendille. Hearing scheduled for 4/15/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. The case judge is Brendan Linehan Shannon. (NWW) (Entered: 03/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1183,
+        "date_filed": "2026-02-25",
+        "time_filed": "",
+        "date_display": "Feb 25, 2026",
+        "description": "Transcript regarding Hearing Held 2/18/26 RE: Omnibus. Remote electronic access to the transcript is restricted until 5/26/2026. The transcript may be viewed at the Bankruptcy Court Clerk's Office. For information about how to obtain a transcript, Contact the Court Reporter/Transcriber, Reliable, at Telephone number 302-654-8080. Filed by . Notice of Intent to Request Redaction Deadline Due By 3/4/2026. Redaction Request Due By 3/18/2026. Redacted Transcript Submission Due By 3/30/2026. Transcript access will be restricted through 5/26/2026. (ASA) (Entered: 02/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.1183.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-02-25",
+        "time_filed": "11:50:10",
+        "date_display": "Feb 25, 2026",
+        "description": "Transcript",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1186,
+        "date_filed": "2026-02-24",
+        "time_filed": "",
+        "date_display": "Feb 24, 2026",
+        "description": "Motion to File Claim After Claims Bar Date Filed by Timothy Michael Gill. Hearing scheduled for 4/15/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. The Modified on 3/3/2026 (NWW). (Entered: 03/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1182,
+        "date_filed": "2026-02-24",
+        "time_filed": "16:32:45",
+        "date_display": "Feb 24, 2026",
+        "description": "Letter Requesting an Order of the Court to File a Late Proof of Claim. Filed by Timothy Michael Gill . (NWW) (Entered: 02/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1181,
+        "date_filed": "2026-02-20",
+        "time_filed": "09:34:57",
+        "date_display": "Feb 20, 2026",
+        "description": "Certificate of Mailing of Claims Agent re Status Report (Plan Administrator's Third Status Update); Amended HEARING RESCHEDULED. Notice of Agenda of Matters Scheduled for Hearing. Hearing Originally Scheduled for 2/18/2026 at 2:00 p.m. has been rescheduled. Filed by Todd R. Snyder. Hearing scheduled for 2/18/2026 at 01:30 PM at Virtual Hearing: Refer to Notice of Zoom Hearing. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1177, 1178) (Mailloux, Kathryn) (Entered: 02/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1180,
+        "date_filed": "2026-02-20",
+        "time_filed": "09:32:28",
+        "date_display": "Feb 20, 2026",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Agenda of Matters Scheduled for Hearing Filed by Todd R. Snyder. Hearing scheduled for 2/18/2026 at 02:00 PM at Virtual Hearing: Refer to Notice of Zoom Hearing. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1176) (Mailloux, Kathryn) (Entered: 02/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1179,
+        "date_filed": "2026-02-19",
+        "time_filed": "19:52:38",
+        "date_display": "Feb 19, 2026",
+        "description": "Motion to File Claim After Claims Bar Date. Filed by Olga Igorivna Ilina. (Attachments: # 1 Supplement Account transactions records) (Ilina, Olga) (Entered: 02/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1178,
+        "date_filed": "2026-02-17",
+        "time_filed": "19:31:09",
+        "date_display": "Feb 17, 2026",
+        "description": "Amended HEARING RESCHEDULED. Notice of Agenda of Matters Scheduled for Hearing. Hearing Originally Scheduled for 2/18/2026 at 2:00 p.m. has been rescheduled. Filed by Todd R. Snyder. Hearing scheduled for 2/18/2026 at 01:30 PM at Virtual Hearing: Refer to Notice of Zoom Hearing. (Shapiro, Zachary) (Entered: 02/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1177,
+        "date_filed": "2026-02-17",
+        "time_filed": "18:54:07",
+        "date_display": "Feb 17, 2026",
+        "description": "Status Report (Plan Administrator's Third Status Update) Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 02/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1176,
+        "date_filed": "2026-02-13",
+        "time_filed": "11:19:19",
+        "date_display": "Feb 13, 2026",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by Todd R. Snyder. Hearing scheduled for 2/18/2026 at 02:00 PM at Virtual Hearing: Refer to Notice of Zoom Hearing. (Steiger, Alexander) (Entered: 02/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1175,
+        "date_filed": "2026-02-09",
+        "time_filed": "10:39:38",
+        "date_display": "Feb 9, 2026",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Filing of December Statement of Fees Paid to Bitgo in Connection With Order Approving Implementation Steps in Compliance With TFL Consent and Final Judgment in SEC Enforcement Actions. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1174) (Mailloux, Kathryn) (Entered: 02/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1174,
+        "date_filed": "2026-02-04",
+        "time_filed": "17:23:33",
+        "date_display": "Feb 4, 2026",
+        "description": "Exhibit(s) (Notice of Filing of December Statement of Fees Paid to Bitgo in Connection With Order Approving Implementation Steps in Compliance With TFL Consent and Final Judgment in SEC Enforcement Actions) Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 02/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1173,
+        "date_filed": "2026-01-28",
+        "time_filed": "08:46:23",
+        "date_display": "Jan 28, 2026",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Todd R. Snyder. Hearing scheduled for 1/26/2026 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1169) (Mailloux, Kathryn) (Entered: 01/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1172,
+        "date_filed": "2026-01-27",
+        "time_filed": "11:38:35",
+        "date_display": "Jan 27, 2026",
+        "description": "Letter Requesting Status of Motion to Reconsider Order Sustaining Plan Administrator's Fifth Omnibus (Non-Substantive) Objection to Claims. (related document(s)1113) Filed by Bradley Young . (LCN) (Entered: 01/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1171,
+        "date_filed": "2026-01-26",
+        "time_filed": "11:05:53",
+        "date_display": "Jan 26, 2026",
+        "description": "Certificate of Mailing of Claims Agent re Plan Administrator's Omnibus Response to Additional Motions for Leave to File Late Crypto Loss Claims. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1159) (Mailloux, Kathryn) (Entered: 01/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1170,
+        "date_filed": "2026-01-23",
+        "time_filed": "09:29:51",
+        "date_display": "Jan 23, 2026",
+        "description": "Certificate of Mailing of Claims Agent re Order Sustaining Plan Administrator's Sixth Omnibus (Non-Substantive) Objection to Claims; Order Sustaining Plan Administrator's Seventh Omnibus (Non-Substantive) Objection to Claims; Order Approving Motion of the Plan Administrator Seeking Entry of an Order Extending the Deadline to Dissolve the Post-Effective Date Debtors. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1163, 1164, 1165) (Mailloux, Kathryn) (Entered: 01/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1169,
+        "date_filed": "2026-01-22",
+        "time_filed": "11:59:47",
+        "date_display": "Jan 22, 2026",
+        "description": "HEARING CANCELLED. Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Todd R. Snyder. Hearing scheduled for 1/26/2026 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Steiger, Alexander) (Entered: 01/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1168,
+        "date_filed": "2026-01-21",
+        "time_filed": "18:17:29",
+        "date_display": "Jan 21, 2026",
+        "description": "Chapter 11 Post-Confirmation Report for the Quarter Ending: 12/31/2025 (Terraform Wind Down Trust) Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 01/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1167,
+        "date_filed": "2026-01-21",
+        "time_filed": "18:12:32",
+        "date_display": "Jan 21, 2026",
+        "description": "Chapter 11 Post-Confirmation Report for Case Number 24-11481 for the Quarter Ending: 12/31/2025 Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 01/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1166,
+        "date_filed": "2026-01-21",
+        "time_filed": "18:09:43",
+        "date_display": "Jan 21, 2026",
+        "description": "Chapter 11 Post-Confirmation Report for the Quarter Ending: 12/31/2025 (Post-Effective Date Debtors) Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 01/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1165,
+        "date_filed": "2026-01-21",
+        "time_filed": "09:06:07",
+        "date_display": "Jan 21, 2026",
+        "description": "Order Approving Motion of the Plan Administrator Seeking Entry of an Order Extending the Deadline to Dissolve the Post-Effective Date Debtors) (Related Doc # 1151, 1160) Order Signed on 1/21/2026. (JMW) (Entered: 01/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1164,
+        "date_filed": "2026-01-21",
+        "time_filed": "08:57:09",
+        "date_display": "Jan 21, 2026",
+        "description": "Order Sustaining Plan Administrator's Seventh Omnibus (Non-Substantive) Objection to Claims (related document(s)1153, 1162) Signed on 1/21/2026. (Attachments: # 1 Schedule 1) (JMW) (Entered: 01/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1163,
+        "date_filed": "2026-01-21",
+        "time_filed": "08:55:32",
+        "date_display": "Jan 21, 2026",
+        "description": "Order Sustaining Plan Administrator's Sixth Omnibus (Non-Substantive) Objection to Claims (related document(s) 1152, 1161) Signed on 1/21/2026. (Attachments: # 1 Schedule 1) (JMW) (Entered: 01/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1162,
+        "date_filed": "2026-01-20",
+        "time_filed": "16:10:08",
+        "date_display": "Jan 20, 2026",
+        "description": "Certificate of No Objection Regarding Plan Administrator's Seventh Omnibus (Non-Substantive) Objection to Claims Pursuant to Section 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1 (related document(s)1153) Filed by Todd R. Snyder. (Attachments: # 1 Exhibit A) (Steiger, Alexander) (Entered: 01/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1161,
+        "date_filed": "2026-01-20",
+        "time_filed": "16:06:05",
+        "date_display": "Jan 20, 2026",
+        "description": "Certificate of No Objection Regarding Plan Administrator's Sixth Omnibus (Non-Substantive) Objection to Claims Pursuant to Sections 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1 (related document(s)1152) Filed by Todd R. Snyder. (Attachments: # 1 Exhibit A) (Steiger, Alexander) (Entered: 01/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1160,
+        "date_filed": "2026-01-20",
+        "time_filed": "16:00:24",
+        "date_display": "Jan 20, 2026",
+        "description": "Certificate of No Objection Regarding Motion of the Plan Administrator Seeking Entry of an Order Extending the Deadline to Dissolve the Post-Effective Date Debtors (related document(s)1151) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A) (Steiger, Alexander) (Entered: 01/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1158,
+        "date_filed": "2026-01-16",
+        "time_filed": "11:34:06",
+        "date_display": "Jan 16, 2026",
+        "description": "Motion for Leave to file Lake Crypto Loss Claim Filed by Fiona Carlin. Hearing scheduled for 3/4/2026 at 10:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. The case judge is Brendan Linehan Shannon. (LCN) (Entered: 01/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1157,
+        "date_filed": "2026-01-13",
+        "time_filed": "09:11:55",
+        "date_display": "Jan 13, 2026",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Submission of Copies of Proofs of Claim Regarding Plan Administrator's Seventh Omnibus (Non-Substantive) Objection to Claims Pursuant to Section 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1156) (Mailloux, Kathryn) (Entered: 01/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1156,
+        "date_filed": "2026-01-12",
+        "time_filed": "09:42:57",
+        "date_display": "Jan 12, 2026",
+        "description": "Notice of Submission of Proof of Claim (Notice of Submission of Copies of Proofs of Claim Regarding Plan Administrator's Seventh Omnibus (Non-Substantive) Objection to Claims Pursuant to Section 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1) (related document(s)1153) Filed by Todd R. Snyder. (Steiger, Alexander) (Entered: 01/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1155,
+        "date_filed": "2026-01-08",
+        "time_filed": "10:59:33",
+        "date_display": "Jan 8, 2026",
+        "description": "Motion to Allow Late-Filed Crypto Loss Claim Filed by David Anthony Alexander Parkinson. Hearing scheduled for 1/26/2026 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. The case judge is Brendan Linehan Shannon. (LCN) (Entered: 01/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1154,
+        "date_filed": "2025-12-30",
+        "time_filed": "12:41:31",
+        "date_display": "Dec 30, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Motion of the Plan Administrator Seeking Entry of an Order Extending the Deadline to Dissolve the Post-Effective Date Debtors; Plan Administrator's Sixth Omnibus (Non-Substantive) Objection to Claims Pursuant to Sections 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1; Plan Administrator's Seventh Omnibus (Non-Substantive) Objection to Claims Pursuant to Section 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1151, 1152, 1153) (Mailloux, Kathryn) (Entered: 12/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1153,
+        "date_filed": "2025-12-26",
+        "time_filed": "19:36:26",
+        "date_display": "Dec 26, 2025",
+        "description": "Omnibus Objection to Claims (Plan Administrator's Seventh Omnibus (Non-Substantive) Objection to Claims Pursuant to Section 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1). Filed by Todd R. Snyder. Hearing scheduled for 1/26/2026 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 1/16/2026. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B) (Shapiro, Zachary) (Entered: 12/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1152,
+        "date_filed": "2025-12-26",
+        "time_filed": "19:15:45",
+        "date_display": "Dec 26, 2025",
+        "description": "Omnibus Objection to Claims (Plan Administrator's Sixth Omnibus (Non-Substantive) Objection to Claims Pursuant to Sections 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1). Filed by Todd R. Snyder. Hearing scheduled for 1/26/2026 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 1/16/2026. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B) (Shapiro, Zachary) (Entered: 12/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1151,
+        "date_filed": "2025-12-26",
+        "time_filed": "19:05:19",
+        "date_display": "Dec 26, 2025",
+        "description": "Motion to Extend (Motion of the Plan Administrator Seeking Entry of an Order Extending the Deadline to Dissolve the Post-Effective Date Debtors) Filed by Todd R. Snyder. Hearing scheduled for 1/26/2026 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 1/16/2026. (Attachments: # 1 Notice # 2 Exhibit A) (Steiger, Alexander) (Entered: 12/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1150,
+        "date_filed": "2025-12-26",
+        "time_filed": "10:52:50",
+        "date_display": "Dec 26, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Filing of November Statement of Fees Paid to BitGo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1149) (Mailloux, Kathryn) (Entered: 12/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1149,
+        "date_filed": "2025-12-19",
+        "time_filed": "11:14:37",
+        "date_display": "Dec 19, 2025",
+        "description": "Exhibit(s) (Notice of Filing of November Statement of Fees Paid to BitGo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions) Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 12/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1148,
+        "date_filed": "2025-12-17",
+        "time_filed": "12:21:38",
+        "date_display": "Dec 17, 2025",
+        "description": "Motion to Allow Late Filed Claim Filed by Ashishbhai Prameshkumar Gandhi. Hearing scheduled for 1/26/2026 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. The case judge is Brendan Linehan Shannon. (LCN) (Entered: 12/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1147,
+        "date_filed": "2025-12-17",
+        "time_filed": "12:18:29",
+        "date_display": "Dec 17, 2025",
+        "description": "Motion to Allow Late Filed Claim Filed by Daniel Finkelstein. Hearing scheduled for 1/26/2026 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. The case judge is Brendan Linehan Shannon. (LCN) (Entered: 12/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1146,
+        "date_filed": "2025-12-16",
+        "time_filed": "13:49:07",
+        "date_display": "Dec 16, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Todd R. Snyder. Hearing scheduled for 12/17/2025 at 01:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1145) (Mailloux, Kathryn) (Entered: 12/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1145,
+        "date_filed": "2025-12-15",
+        "time_filed": "11:24:27",
+        "date_display": "Dec 15, 2025",
+        "description": "HEARING CANCELLED. Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Todd R. Snyder. Hearing scheduled for 12/17/2025 at 01:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Steiger, Alexander) (Entered: 12/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1144,
+        "date_filed": "2025-12-15",
+        "time_filed": "09:42:15",
+        "date_display": "Dec 15, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Filing of October Statement of Fees Paid to Bitgo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1140) (Mailloux, Kathryn) (Entered: 12/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1143,
+        "date_filed": "2025-12-15",
+        "time_filed": "09:39:48",
+        "date_display": "Dec 15, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Sentencing of Do Hyeong Kwon on December 11, 2025, at 11:00 a.m. (Prevailing Eastern Time. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1139) (Mailloux, Kathryn) (Entered: 12/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1142,
+        "date_filed": "2025-12-11",
+        "time_filed": "15:35:19",
+        "date_display": "Dec 11, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Adjournment of Hearing Regarding Plan Administrators Motion for Entry of an Order to Conduct Discovery from Dentons US LLP Pursuant to 11 U.S.C. § 542(e), Fed. R. Bank. P. 2004, and Local Rule 2004-1. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1141) (Mailloux, Kathryn) (Entered: 12/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1141,
+        "date_filed": "2025-12-10",
+        "time_filed": "10:38:14",
+        "date_display": "Dec 10, 2025",
+        "description": "Notice of Hearing Notice of Adjournment of Hearing Regarding Plan Administrators Motion for Entry of an Order to Conduct Discovery from Dentons US LLP Pursuant to 11 U.S.C. § 542(e), Fed. R. Bank. P. 2004, and Local Rule 2004-1 (related document(s)1032, 1126) Filed by Todd R. Snyder. Hearing scheduled for 4/15/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 4/6/2026. (Zeldin, Jessica) (Entered: 12/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1140,
+        "date_filed": "2025-12-09",
+        "time_filed": "14:42:33",
+        "date_display": "Dec 9, 2025",
+        "description": "Exhibit(s) (Notice of Filing of October Statement of Fees Paid to Bitgo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions) Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 12/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1139,
+        "date_filed": "2025-12-08",
+        "time_filed": "15:00:25",
+        "date_display": "Dec 8, 2025",
+        "description": "Exhibit(s) (Notice of Sentencing of Do Hyeong Kwon on December 11, 2025, at 11:00 a.m. (Prevailing Eastern Time)) Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 12/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1138,
+        "date_filed": "2025-12-08",
+        "time_filed": "11:48:01",
+        "date_display": "Dec 8, 2025",
+        "description": "Order Granting Third Interim and Final Fee Application for Compensation and Reimbursement of Genesis Credit Partners LLC, as Financial Advisor to the Official Committee of Unsecured Creditors, for (I) the Interim Period from July 1, 2024 through October 1, 2024; (II) the Case Period from March 29, 2024 through October 1, 2024; and (III) the Post-Effective Date Period from October 2, 2024 through November 18, 2024. (Related Doc # 838, 927, 937, 938, 1137) Order Signed on 12/8/2025. (JMW) (Entered: 12/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1137,
+        "date_filed": "2025-12-05",
+        "time_filed": "15:05:21",
+        "date_display": "Dec 5, 2025",
+        "description": "Certification of Counsel Submitting Order Granting Third Interim and Final Fee Application for Compensation and Reimbursement of Genesis Credit Partners LLC, as Financial Advisor to the Official Committee of Unsecured Creditors, for (I) the Interim Period from July 1, 2024 through October 1, 2024; (II) the Case Period from March 29, 2024 through October 1, 2024; and (III) the Post-Effective Date Period from October 2, 2024 through November 18, 2024 (related document(s)838, 927, 937, 938) Filed by Genesis Credit Partners LLC. (Attachments: # 1 Exhibit A) (Weiss, John) (Entered: 12/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1136,
+        "date_filed": "2025-11-28",
+        "time_filed": "09:57:44",
+        "date_display": "Nov 28, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Second Amended Notice of Depositions for Jorge Gonzalez, Edward Kim and Andre Artidiello. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1135) (Mailloux, Kathryn) (Entered: 11/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1135,
+        "date_filed": "2025-11-25",
+        "time_filed": "09:24:22",
+        "date_display": "Nov 25, 2025",
+        "description": "Second Notice of Deposition Second Amended Notice of Depositions for Jorge Gonzalez, Edward Kim and Andre Artidiello (related document(s)1120) Filed by Todd R. Snyder. (Zeldin, Jessica) (Entered: 11/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1134,
+        "date_filed": "2025-11-20",
+        "time_filed": "10:52:59",
+        "date_display": "Nov 20, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Order Approving Third Omnibus Motion of the Plan Administrator Seeking Entry of an Order Extending the Period to File and Serve Objections to Administrative Expense Claims. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1133) (Mailloux, Kathryn) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1133,
+        "date_filed": "2025-11-13",
+        "time_filed": "08:58:02",
+        "date_display": "Nov 13, 2025",
+        "description": "Order Approving Third Omnibus Motion of the Plan Administrator Seeking Entry of an Order Extending the Period to File and Serve Objections to Administrative Expense Claims (Related Doc # 1125, 1132) Order Signed on 11/13/2025. (JMW) (Entered: 11/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1132,
+        "date_filed": "2025-11-12",
+        "time_filed": "16:24:42",
+        "date_display": "Nov 12, 2025",
+        "description": "Certificate of No Objection Regarding Third Omnibus Motion of the Plan Administrator Seeking Entry of an Order Extending the Period to File and Serve Objections to Administrative Expense Claims (related document(s)1125) Filed by Todd R. Snyder. (Attachments: # 1 Exhibit A) (Shapiro, Zachary) (Entered: 11/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1131,
+        "date_filed": "2025-11-04",
+        "time_filed": "15:45:54",
+        "date_display": "Nov 4, 2025",
+        "description": "Certificate of Mailing of Claims Agent re HEARING CANCELLED. Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Todd R. Snyder. Hearing scheduled for 11/5/2025 at 11:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1129) (Garabato, Sid) (Entered: 11/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1130,
+        "date_filed": "2025-11-04",
+        "time_filed": "08:53:05",
+        "date_display": "Nov 4, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Filing of September Statement of Fees Paid to Bitgo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1128) (Garabato, Sid) (Entered: 11/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1129,
+        "date_filed": "2025-11-03",
+        "time_filed": "11:26:50",
+        "date_display": "Nov 3, 2025",
+        "description": "HEARING CANCELLED. Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Todd R. Snyder. Hearing scheduled for 11/5/2025 at 11:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Milana, Matthew) (Entered: 11/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1128,
+        "date_filed": "2025-10-31",
+        "time_filed": "11:12:02",
+        "date_display": "Oct 31, 2025",
+        "description": "Exhibit(s) (Notice of Filing of September Statement of Fees Paid to Bitgo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions) Filed by Todd R. Snyder. (Milana, Matthew) (Entered: 10/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1127,
+        "date_filed": "2025-10-30",
+        "time_filed": "09:17:00",
+        "date_display": "Oct 30, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Third Omnibus Motion of the Plan Administrator Seeking Entry of an Order Extending the Period to File and Serve Objections to Administrative Expense Claims; HEARING CANCELLED- Notice of Adjourned Hearing. The following original hearing has been adjourned. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1125, 1126) (Garabato, Sid) (Entered: 10/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1126,
+        "date_filed": "2025-10-28",
+        "time_filed": "15:40:52",
+        "date_display": "Oct 28, 2025",
+        "description": "HEARING CANCELLED- Notice of Adjourned Hearing. The following original hearing has been adjourned. Filed by Todd R. Snyder. Hearing scheduled for 11/5/2025 at 11:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Zeldin, Jessica) (Entered: 10/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1125,
+        "date_filed": "2025-10-27",
+        "time_filed": "23:38:10",
+        "date_display": "Oct 27, 2025",
+        "description": "Motion to Extend // Third Omnibus Motion of the Plan Administrator Seeking Entry of an Order Extending the Period to File and Serve Objections to Administrative Expense Claims Filed by Terraform Labs Pte. Ltd.. Objections due by 11/10/2025. (Attachments: # 1 Notice # 2 Exhibit A) (Shapiro, Zachary) (Entered: 10/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1124,
+        "date_filed": "2025-10-21",
+        "time_filed": "15:45:50",
+        "date_display": "Oct 21, 2025",
+        "description": "Certificate of Service (related document(s)1121, 1122, 1123) Filed by Todd R. Snyder. (Milana, Matthew) (Entered: 10/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1123,
+        "date_filed": "2025-10-21",
+        "time_filed": "15:32:58",
+        "date_display": "Oct 21, 2025",
+        "description": "Chapter 11 Post-Confirmation Report for the Quarter Ending: 09/30/2025 Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 10/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1122,
+        "date_filed": "2025-10-21",
+        "time_filed": "15:31:20",
+        "date_display": "Oct 21, 2025",
+        "description": "Chapter 11 Post-Confirmation Report for Case Number 24-11481 for the Quarter Ending: 09/30/2025 Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 10/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1121,
+        "date_filed": "2025-10-21",
+        "time_filed": "15:29:27",
+        "date_display": "Oct 21, 2025",
+        "description": "Chapter 11 Post-Confirmation Report for the Quarter Ending: 09/30/2025 Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 10/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1120,
+        "date_filed": "2025-10-15",
+        "time_filed": "12:46:57",
+        "date_display": "Oct 15, 2025",
+        "description": "Amended Notice of Deposition for Edward Kim, Andre Artidiello, Jorge Gonzalez (related document(s)1099, 1100, 1101) Filed by Todd R. Snyder. (Zeldin, Jessica) (Entered: 10/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1119,
+        "date_filed": "2025-10-13",
+        "time_filed": "10:05:30",
+        "date_display": "Oct 13, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Certification of Counsel Regarding Joint Stipulation by and Among the Plan Administrator and the Foreign Representatives of Three Arrows Capital Ltd.; Order Approving Joint Stipulation by and Among the Plan Administrator and the Foreign Representatives of Three Arrows Capital Ltd.. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1116, 1117) (Garabato, Sid) (Entered: 10/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1118,
+        "date_filed": "2025-10-07",
+        "time_filed": "15:43:11",
+        "date_display": "Oct 7, 2025",
+        "description": "Order Granting Motion for Admission pro hac vice of Warren E. Gluck. (Related Doc # 1018) Order Signed on 10/7/2025. (REB) (Entered: 10/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1117,
+        "date_filed": "2025-10-07",
+        "time_filed": "12:13:22",
+        "date_display": "Oct 7, 2025",
+        "description": "Order Approving Joint Stipulation by and Among the Plan Administrator and the Foreign Representatives of Three Arrows Capital Ltd. (related document(s)1116) Order Signed on 10/7/2025. (Attachments: # 1 Exhibit 1) (REB) (Entered: 10/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1116,
+        "date_filed": "2025-10-06",
+        "time_filed": "13:56:12",
+        "date_display": "Oct 6, 2025",
+        "description": "Certification of Counsel Regarding Joint Stipulation by and Among the Plan Administrator and the Foreign Representatives of Three Arrows Capital Ltd. Filed by Todd R. Snyder. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 10/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1115,
+        "date_filed": "2025-10-06",
+        "time_filed": "12:46:41",
+        "date_display": "Oct 6, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Certification of Counsel Regarding Order Allowing Certain Claimants to File a Crypto Loss Claim After the Crypto Loss Claim Bar Date; ORDER ALLOWING CERTAIN CLAIMANTS TO FILE A CRYPTO LOSS CLAIM AFTER THE CRYPTO LOSS CLAIM BAR DATE. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1108, 1112) (Garabato, Sid) (Entered: 10/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1114,
+        "date_filed": "2025-10-03",
+        "time_filed": "16:06:22",
+        "date_display": "Oct 3, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Filing of August Statement of Fees Paid to Bitgo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1111) (Garabato, Sid) (Entered: 10/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1113,
+        "date_filed": "2025-10-02",
+        "time_filed": "11:22:38",
+        "date_display": "Oct 2, 2025",
+        "description": "Motion to Reconsider Order Sustaining Plan Administrator's Fifth Omnibus (Non-Substantive) Objection to Claims (related document(s)1060, 1091) Filed by Bradley Young. Hearing scheduled for 11/5/2025 at 11:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. The case judge is Brendan Linehan Shannon. (LCN) (Entered: 10/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1112,
+        "date_filed": "2025-10-01",
+        "time_filed": "10:28:27",
+        "date_display": "Oct 1, 2025",
+        "description": "ORDER ALLOWING CERTAIN CLAIMANTS TO FILE A CRYPTO LOSS CLAIM AFTER THE CRYPTO LOSS CLAIM BAR DATE (related document(s)1021, 1029, 1065, 1076, 1087) Order Signed on 10/1/2025. (REB) (Entered: 10/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1111,
+        "date_filed": "2025-09-30",
+        "time_filed": "11:20:21",
+        "date_display": "Sep 30, 2025",
+        "description": "Exhibit(s) (Notice of Filing of August Statement of Fees Paid to Bitgo in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Actions) Filed by Todd R. Snyder. (Milana, Matthew) (Entered: 09/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1110,
+        "date_filed": "2025-09-30",
+        "time_filed": "09:21:01",
+        "date_display": "Sep 30, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Deposition of Edward Kim; Notice of Deposition of Jorge Gonzalez; Notice of Deposition of Andrew Artidiello. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1099, 1100, 1101) (Garabato, Sid) (Entered: 09/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1109,
+        "date_filed": "2025-09-30",
+        "time_filed": "09:18:29",
+        "date_display": "Sep 30, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Filing of Plan Administrator's Demonstrative Exhibit for Hearing on September 24, 2025; Amended Notice of Agenda of Matters Scheduled for Hearing Filed by Todd R. Snyder. Hearing scheduled for 9/24/2025 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1093, 1094) (Garabato, Sid) (Entered: 09/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1108,
+        "date_filed": "2025-09-29",
+        "time_filed": "14:29:42",
+        "date_display": "Sep 29, 2025",
+        "description": "Certification of Counsel Regarding Order Allowing Certain Claimants to File a Crypto Loss Claim After the Crypto Loss Claim Bar Date (related document(s)1021, 1029, 1065, 1070, 1087) Filed by Todd R. Snyder. (Attachments: # 1 Exhibit A) (Shapiro, Zachary) (Entered: 09/29/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1107,
+        "date_filed": "2025-09-29",
+        "time_filed": "13:26:16",
+        "date_display": "Sep 29, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Order Approving (Plan Administrator's Third Omnibus (Non-Substantive) Objection to Claims Pursuant to Bankruptcy Code Sections 502(B) and 503(B), Bankruptcy Rules 3001, 3003, and 3007, and Local Rules 3007-1; Order Approving (Plan Administrator's Fourth Omnibus (Non-Substantive) Objection to Claims Pursuant to Bankruptcy Code Sections 502(B) and 503(B), Bankruptcy Rules 3001, 3003, and 3007, and Local Rules 3007-1. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1104, 1105) (Garabato, Sid) (Entered: 09/29/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1106,
+        "date_filed": "2025-09-25",
+        "time_filed": "10:56:13",
+        "date_display": "Sep 25, 2025",
+        "description": "Order Approving Motion for Admission pro hac vice of Tarek Saad (Related Doc # 1102) Order Signed on 9/25/2025. (REB) (Entered: 09/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1105,
+        "date_filed": "2025-09-25",
+        "time_filed": "10:54:52",
+        "date_display": "Sep 25, 2025",
+        "description": "Order Approving (Plan Administrator's Fourth Omnibus (Non-Substantive) Objection to Claims Pursuant to Bankruptcy Code Sections 502(B) and 503(B), Bankruptcy Rules 3001, 3003, and 3007, and Local Rules 3007-1) (related document(s)1059) Order Signed on 9/25/2025. (Attachments: # 1 Schedule 1) (REB) (Entered: 09/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1104,
+        "date_filed": "2025-09-25",
+        "time_filed": "10:52:40",
+        "date_display": "Sep 25, 2025",
+        "description": "Order Approving (Plan Administrator's Third Omnibus (Non-Substantive) Objection to Claims Pursuant to Bankruptcy Code Sections 502(B) and 503(B), Bankruptcy Rules 3001, 3003, and 3007, and Local Rules 3007-1). (related document(s)1058) Order Signed on 9/25/2025. (Attachments: # 1 Schedule 1) (REB) (Entered: 09/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1103,
+        "date_filed": "2025-09-25",
+        "time_filed": "08:59:45",
+        "date_display": "Sep 25, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Adjournment of Hearing Regarding Plan Administrators Motion for Entry of an Order to Conduct Discovery from Dentons US LLP Pursuant to 11 U.S.C. § 542(e), Fed. R. Bank. P. 2004, and Local Rule 2004-1. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1078) (Garabato, Sid) (Entered: 09/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1102,
+        "date_filed": "2025-09-24",
+        "time_filed": "15:45:37",
+        "date_display": "Sep 24, 2025",
+        "description": "Motion to Appear pro hac vice of Tarek Saad of Reid Collins & Tsai LLP. Receipt Number 4797114, Filed by Todd R. Snyder. (Zeldin, Jessica) (Entered: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1101,
+        "date_filed": "2025-09-24",
+        "time_filed": "13:51:48",
+        "date_display": "Sep 24, 2025",
+        "description": "Notice of Deposition of Andrew Artidiello Filed by Todd R. Snyder. (Zeldin, Jessica) (Entered: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1100,
+        "date_filed": "2025-09-24",
+        "time_filed": "13:51:01",
+        "date_display": "Sep 24, 2025",
+        "description": "Notice of Deposition of Jorge Gonazalez Filed by Todd R. Snyder. (Zeldin, Jessica) (Entered: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1097,
+        "date_filed": "2025-09-24",
+        "time_filed": "09:37:51",
+        "date_display": "Sep 24, 2025",
+        "description": "Order Approving Motion for Admission pro hac vice of Victoria Giorgio (Related Doc # 1092) Order Signed on 9/24/2025. (JMW) (Entered: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1096,
+        "date_filed": "2025-09-24",
+        "time_filed": "08:47:13",
+        "date_display": "Sep 24, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Agenda of Matters Scheduled for Hearing Filed by Todd R. Snyder. Hearing scheduled for 9/24/2025 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1088) (Garabato, Sid) (Entered: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1095,
+        "date_filed": "2025-09-24",
+        "time_filed": "08:40:07",
+        "date_display": "Sep 24, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Reply in Support of (I) Plan Administrator's Third Omnibus (Non-Substantive) Objection to Claims Pursuant to Sections 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1 and (II) Plan Administrator's Fourth Omnibus (Non-Substantive) Objection to Claims Pursuant to Sections 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1; Plan Administrator's Second Status Update; Order Sustaining Plain Administrator's First Omnibus (Non-Substantive) Objection to Claims; Order Sustaining Plan Administrator's Second Omnibus (Non-Substantive) Objection to Claims; Order Sustaining Plan Administrator's Fifth Omnibus (Non-Substantive) Objection to Claims. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1085, 1086, 1089, 1090, 1091) (Garabato, Sid) (Entered: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-24",
+        "time_filed": "",
+        "date_display": "Sep 24, 2025",
+        "description": "Attorney Tarek Saad and Jessica Zeldin for Todd R. Snyder added to case Filed by Todd R. Snyder. (Zeldin, Jessica)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-24",
+        "time_filed": "15:47:11",
+        "date_display": "Sep 24, 2025",
+        "description": "Add Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1098,
+        "date_filed": "2025-09-23",
+        "time_filed": "",
+        "date_display": "Sep 23, 2025",
+        "description": "Reply to Plan Administrator's Omnibus Response to Motions for Leave to File Late Crypto Loss Claims (related document(s)1080) Filed by Laurence Wiener (LCN) (Entered: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1094,
+        "date_filed": "2025-09-23",
+        "time_filed": "20:38:36",
+        "date_display": "Sep 23, 2025",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by Todd R. Snyder. Hearing scheduled for 9/24/2025 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1093,
+        "date_filed": "2025-09-23",
+        "time_filed": "18:14:46",
+        "date_display": "Sep 23, 2025",
+        "description": "Exhibit(s) (Notice of Filing of Plan Administrator's Demonstrative Exhibit for Hearing on September 24, 2025) Filed by Todd R. Snyder. (Attachments: # 1 Exhibit 1) (Milana, Matthew) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1092,
+        "date_filed": "2025-09-23",
+        "time_filed": "18:08:16",
+        "date_display": "Sep 23, 2025",
+        "description": "Motion to Appear pro hac vice of Victoria Giorgio of Kirkland & Ellis LLP and Kirkland & Ellis International LLP. Receipt Number 4796173, Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1091,
+        "date_filed": "2025-09-22",
+        "time_filed": "13:32:29",
+        "date_display": "Sep 22, 2025",
+        "description": "Order Sustaining Plan Administrator's Fifth Omnibus (Non-Substantive) Objection to Claims (related document(s)1060, 1084) Signed on 9/22/2025. (Attachments: # 1 Schedule 1) (JMW) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1090,
+        "date_filed": "2025-09-22",
+        "time_filed": "13:19:07",
+        "date_display": "Sep 22, 2025",
+        "description": "Order Sustaining Plan Administrator's Second Omnibus (Non-Substantive) Objection to Claims (related document(s)1057, 1083) Signed on 9/22/2025. (Attachments: # 1 Schedule 1) (JMW) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1089,
+        "date_filed": "2025-09-22",
+        "time_filed": "13:17:26",
+        "date_display": "Sep 22, 2025",
+        "description": "Order Sustaining Plain Administrator's First Omnibus (Non-Substantive) Objection to Claims (related document(s)1056, 1082) Signed on 9/22/2025. (Attachments: # 1 Schedule 1) (JMW) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1088,
+        "date_filed": "2025-09-22",
+        "time_filed": "11:57:43",
+        "date_display": "Sep 22, 2025",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by Todd R. Snyder. Hearing scheduled for 9/24/2025 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1087,
+        "date_filed": "2025-09-22",
+        "time_filed": "11:19:16",
+        "date_display": "Sep 22, 2025",
+        "description": "Motion to Allow Late-Filed Crypto Loss Claim Filed by Solal De Potter. The case judge is Brendan Linehan Shannon. (LCN) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1086,
+        "date_filed": "2025-09-21",
+        "time_filed": "15:49:24",
+        "date_display": "Sep 21, 2025",
+        "description": "Status Report (Plan Administrator's Second Status Update) Re: Docket No. 983 Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 09/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1085,
+        "date_filed": "2025-09-21",
+        "time_filed": "15:42:02",
+        "date_display": "Sep 21, 2025",
+        "description": "Reply (Reply in Support of (I) Plan Administrator's Third Omnibus (Non-Substantive) Objection to Claims Pursuant to Sections 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1 and (II) Plan Administrator's Fourth Omnibus (Non-Substantive) Objection to Claims Pursuant to Sections 502(b) and 503(b) of the Bankruptcy Code, Bankruptcy Rules 3001, 3003, and 3007, and Local Rule 3007-1) (related document(s)1058, 1059) Filed by Terraform Labs Pte. Ltd. (Shapiro, Zachary) (Entered: 09/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1081,
+        "date_filed": "2025-09-19",
+        "time_filed": "09:15:28",
+        "date_display": "Sep 19, 2025",
+        "description": "Certificate of Mailing of Claims Agent re Plan Administrator's Omnibus Response to Motions for Leave to File Late Crypto Loss Claims. Filed by Epiq Corporate Restructuring, LLC. (related document(s)1080) (Garabato, Sid) (Entered: 09/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
   },
   "claims_administrator": {
     "name": "Epiq11",

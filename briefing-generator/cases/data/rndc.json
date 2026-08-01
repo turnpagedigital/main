@@ -14,44 +14,194 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "date_last_filing": "2026-07-30",
-    "fetched_at": "2026-07-31T07:23:13.123945+00:00",
-    "as_of": "Jul 31, 2026",
+    "date_last_filing": "2026-07-31",
+    "fetched_at": "2026-08-01T03:58:37.493338+00:00",
+    "as_of": "Aug 1, 2026",
     "backfilled": true,
-    "new_in_72h": 16,
+    "new_in_72h": 25,
     "recent": [
       {
-        "entry_number": 88,
-        "date_filed": "2026-07-30",
-        "time_filed": "14:37:38",
-        "date_display": "Jul 30, 2026",
-        "description": "Transcript",
+        "entry_number": 102,
+        "date_filed": "2026-07-31",
+        "time_filed": "17:36:34",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 87,
-        "date_filed": "2026-07-30",
-        "time_filed": "12:07:27",
-        "date_display": "Jul 30, 2026",
-        "description": "Notice of Appearance and Request for Notice",
+        "entry_number": 101,
+        "date_filed": "2026-07-31",
+        "time_filed": "17:00:17",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 86,
-        "date_filed": "2026-07-30",
-        "time_filed": "10:52:10",
-        "date_display": "Jul 30, 2026",
-        "description": "Order to Appear pro hac vice",
+        "entry_number": 100,
+        "date_filed": "2026-07-31",
+        "time_filed": "16:41:21",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 102,
+        "date_filed": "2026-07-31",
+        "time_filed": "17:36:34",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 101,
+        "date_filed": "2026-07-31",
+        "time_filed": "17:00:17",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 100,
+        "date_filed": "2026-07-31",
+        "time_filed": "16:41:21",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 99,
+        "date_filed": "2026-07-31",
+        "time_filed": "16:13:59",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 98,
+        "date_filed": "2026-07-31",
+        "time_filed": "15:30:00",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 97,
+        "date_filed": "2026-07-31",
+        "time_filed": "13:10:48",
+        "date_display": "Jul 31, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 96,
+        "date_filed": "2026-07-31",
+        "time_filed": "13:09:26",
+        "date_display": "Jul 31, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 95,
+        "date_filed": "2026-07-31",
+        "time_filed": "13:08:06",
+        "date_display": "Jul 31, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 94,
+        "date_filed": "2026-07-31",
+        "time_filed": "13:02:36",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 93,
+        "date_filed": "2026-07-31",
+        "time_filed": "12:57:28",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 92,
+        "date_filed": "2026-07-31",
+        "time_filed": "12:53:39",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 91,
+        "date_filed": "2026-07-31",
+        "time_filed": "11:29:36",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90,
+        "date_filed": "2026-07-31",
+        "time_filed": "10:14:51",
+        "date_display": "Jul 31, 2026",
+        "description": "Certificate of No Objection (Complex 11 ONLY)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 89,
+        "date_filed": "2026-07-31",
+        "time_filed": "09:57:34",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-31",
+        "time_filed": "16:17:29",
+        "date_display": "Jul 31, 2026",
+        "description": "Cash Register Receipt",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 88,
         "date_filed": "2026-07-30",
@@ -158,7 +308,7 @@
         "time_filed": "13:30:15",
         "date_display": "Jul 29, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -168,7 +318,7 @@
         "time_filed": "13:18:13",
         "date_display": "Jul 29, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -178,7 +328,7 @@
         "time_filed": "13:17:15",
         "date_display": "Jul 29, 2026",
         "description": "Notice of Appearance and Request for Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -188,7 +338,7 @@
         "time_filed": "12:08:28",
         "date_display": "Jul 29, 2026",
         "description": "Notice of Appearance and Request for Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -198,7 +348,7 @@
         "time_filed": "11:41:17",
         "date_display": "Jul 29, 2026",
         "description": "Notice of Appearance and Request for Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -208,7 +358,7 @@
         "time_filed": "09:40:42",
         "date_display": "Jul 29, 2026",
         "description": "AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by John F. Higgins. This is to order a transcript of 7/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Republic National Distributing Company, LLC ). (Higgins, John) (Entered: 07/29/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
