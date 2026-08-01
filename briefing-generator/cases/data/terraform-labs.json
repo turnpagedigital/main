@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-08-01T11:41:11.263552+00:00",
+    "fetched_at": "2026-08-01T14:02:25.402470+00:00",
     "as_of": "Aug 1, 2026",
     "backfilled": false,
     "new_in_72h": 4,
@@ -5911,9 +5911,1179 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 735,
+        "date_filed": "2024-09-20",
+        "time_filed": "09:11:32",
+        "date_display": "Sep 20, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Order (I) Authorizing the Retention and Employment of PGP Capital Advisors, LLC as Investment Banker to the Debtors Effective as of July 30, 2024, (II) Waiving Certain Information Requirements Pursuant to Local Rule 2016-2, and (III) Granting Related Relief. Filed by Epiq Corporate Restructuring, LLC. (related document(s)692) (Garabato, Sid) (Entered: 09/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 734,
+        "date_filed": "2024-09-20",
+        "time_filed": "08:02:45",
+        "date_display": "Sep 20, 2024",
+        "description": "ORDER CONFIRMING SECOND AMENDED CHAPTER 11 PLAN OF LIQUIDATION OF TERRAFORM LABS PTE. LTD. AND TERRAFORM LABS LIMITED (related document(s)717, 733) Signed on 9/20/2024. (Attachments: # 1 Exhibit A # 2 Exhibit B) (JMW) (Entered: 09/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.734.0.pdf"
+      },
+      {
+        "entry_number": 733,
+        "date_filed": "2024-09-19",
+        "time_filed": "17:20:58",
+        "date_display": "Sep 19, 2024",
+        "description": "Certification of Counsel Regarding Revised Confirmation Order (related document(s)702, 717) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Milana, Matthew) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 732,
+        "date_filed": "2024-09-19",
+        "time_filed": "16:07:38",
+        "date_display": "Sep 19, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Sixth Monthly Application of Richards, Layton & Finger, P.A. for Allowance of Compensation for Services Rendered and for Reimbursement of Expenses as Co- Counsel to the Debtors for the period from July 1, 2024 to July 31, 2024 (related document(s)643) Filed by Terraform Labs Pte. Ltd.. (Steiger, Alexander) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 731,
+        "date_filed": "2024-09-19",
+        "time_filed": "11:32:54",
+        "date_display": "Sep 19, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Jimmy Ryan (Related Doc # 724) Order Signed on 9/19/2024. (JMW) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 730,
+        "date_filed": "2024-09-19",
+        "time_filed": "11:32:18",
+        "date_display": "Sep 19, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Elizabeth Helen Jones (Related Doc # 723) Order Signed on 9/19/2024. (JMW) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 729,
+        "date_filed": "2024-09-19",
+        "time_filed": "11:31:41",
+        "date_display": "Sep 19, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Christopher T. Greco (Related Doc # 722) Order Signed on 9/19/2024. (JMW) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 728,
+        "date_filed": "2024-09-19",
+        "time_filed": "11:31:03",
+        "date_display": "Sep 19, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Jesse Kitnick (Related Doc # 715) Order Signed on 9/19/2024. (JMW) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 727,
+        "date_filed": "2024-09-19",
+        "time_filed": "11:30:27",
+        "date_display": "Sep 19, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Ryan Fink, Esq. (Related Doc # 712) Order Signed on 9/19/2024. (JMW) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 726,
+        "date_filed": "2024-09-19",
+        "time_filed": "11:29:46",
+        "date_display": "Sep 19, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Dennis Twomey, Esq. (Related Doc # 711) Order Signed on 9/19/2024. (JMW) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 725,
+        "date_filed": "2024-09-19",
+        "time_filed": "11:15:02",
+        "date_display": "Sep 19, 2024",
+        "description": "Court Date & Time [09/19/2024 10:04:12 AM]. File Size [ 30046 KB ]. Run Time [ 01:03:22 ]. (admin). (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.725.0.pdf"
+      },
+      {
+        "entry_number": 724,
+        "date_filed": "2024-09-19",
+        "time_filed": "09:26:48",
+        "date_display": "Sep 19, 2024",
+        "description": "Motion to Appear pro hac vice of Jimmy Ryan of Kirkland & Ellis LLP and Kirkland & Ellis International LLP. Receipt Number 4501755, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 723,
+        "date_filed": "2024-09-19",
+        "time_filed": "09:23:26",
+        "date_display": "Sep 19, 2024",
+        "description": "Motion to Appear pro hac vice of Elizabeth Helen Jones of Kirkland & Ellis LLP and Kirkland & Ellis International LLP. Receipt Number 4501755, Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 722,
+        "date_filed": "2024-09-19",
+        "time_filed": "09:20:19",
+        "date_display": "Sep 19, 2024",
+        "description": "Motion to Appear pro hac vice of Christopher T. Greco of Kirkland & Ellis LLP and Kirkland & Ellis International LLP. Receipt Number 4501755, Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.722.0.pdf"
+      },
+      {
+        "entry_number": 721,
+        "date_filed": "2024-09-19",
+        "time_filed": "09:07:24",
+        "date_display": "Sep 19, 2024",
+        "description": "Notice of Appearance. Filed by Todd R. Snyder. (Shapiro, Zachary) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-19",
+        "time_filed": "09:17:55",
+        "date_display": "Sep 19, 2024",
+        "description": "Add Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-19",
+        "time_filed": "",
+        "date_display": "Sep 19, 2024",
+        "description": "Attorney Christopher T. Greco and Zachary I Shapiro for Todd R. Snyder, Elizabeth Helen Jones and Zachary I Shapiro for Todd R. Snyder, Jimmy Ryan and Zachary I Shapiro for Todd R. Snyder added to case Filed by Todd R. Snyder. (Shapiro, Zachary)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 720,
+        "date_filed": "2024-09-18",
+        "time_filed": "23:26:47",
+        "date_display": "Sep 18, 2024",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 9/19/2024 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Milana, Matthew) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.720.0.pdf"
+      },
+      {
+        "entry_number": 719,
+        "date_filed": "2024-09-18",
+        "time_filed": "23:18:33",
+        "date_display": "Sep 18, 2024",
+        "description": "Plan Supplement(Notice of Filing of Fourth Plan Supplement in Connection with Second Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited) (related document(s)568, 653, 664, 684, 700, 717) Filed by Terraform Labs Pte. Ltd. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (Milana, Matthew) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 718,
+        "date_filed": "2024-09-18",
+        "time_filed": "22:54:55",
+        "date_display": "Sep 18, 2024",
+        "description": "Exhibit(s) (Notice of Blackline of Revised Second Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited) (related document(s)416, 501, 555, 568, 700, 717) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit 1) (Milana, Matthew) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 717,
+        "date_filed": "2024-09-18",
+        "time_filed": "22:44:30",
+        "date_display": "Sep 18, 2024",
+        "description": "Amended Chapter 11 Plan of Liquidation (Second Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited) Filed by Terraform Labs Pte. Ltd. (Milana, Matthew) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.717.0.pdf"
+      },
+      {
+        "entry_number": 715,
+        "date_filed": "2024-09-18",
+        "time_filed": "18:00:23",
+        "date_display": "Sep 18, 2024",
+        "description": "Motion to Appear pro hac vice of Jesse Kitnick of Weil, Gotshal & Manges LLP. Receipt Number 4501637, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 712,
+        "date_filed": "2024-09-18",
+        "time_filed": "13:05:39",
+        "date_display": "Sep 18, 2024",
+        "description": "Motion to Appear pro hac vice of Ryan Fink, Esq. of Sidley Austin LLP. Receipt Number 4501040, Filed by Avalanche (BVI), Inc.. (Pakrouh, Tara) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 711,
+        "date_filed": "2024-09-18",
+        "time_filed": "13:01:35",
+        "date_display": "Sep 18, 2024",
+        "description": "Motion to Appear pro hac vice of Dennis Twomey, Esq. of Sidley Austin LLP. Receipt Number 4501040, Filed by Avalanche (BVI), Inc.. (Pakrouh, Tara) (Entered: 09/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 710,
+        "date_filed": "2024-09-17",
+        "time_filed": "21:12:59",
+        "date_display": "Sep 17, 2024",
+        "description": "RESPONSE TO DEBTORS MEMORANDUM OF LAW IN SUPPORT OF CONFIRMATION OF SECOND AMENDED CHAPTER 11 PLAN OF LIQUIDATION OF TERRAFORM LABS PTE. LTD. AND TERRAFORM LABS LIMITED. Filed by Rex Wu. (related doc(s) 703) (Wu, Rex) Modified on 9/18/2024 (SJM). (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.710.0.pdf"
+      },
+      {
+        "entry_number": 709,
+        "date_filed": "2024-09-17",
+        "time_filed": "21:10:06",
+        "date_display": "Sep 17, 2024",
+        "description": "Notice of Objection Notice of Errata. Filed by Rex Wu. (Wu, Rex) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 708,
+        "date_filed": "2024-09-17",
+        "time_filed": "21:00:29",
+        "date_display": "Sep 17, 2024",
+        "description": "Motion to Extend Exclusivity Period for Filing a Chapter 11 Plan and Disclosure Statement Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 10/2/2024 at 11:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 9/25/2024. (Attachments: # 1 Notice # 2 Exhibit A) (Milana, Matthew) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 707,
+        "date_filed": "2024-09-17",
+        "time_filed": "15:51:58",
+        "date_display": "Sep 17, 2024",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 9/19/2024 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Milana, Matthew) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.707.0.pdf"
+      },
+      {
+        "entry_number": 706,
+        "date_filed": "2024-09-17",
+        "time_filed": "15:31:06",
+        "date_display": "Sep 17, 2024",
+        "description": "Declaration of Michael Leto in Support of Confirmation of Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. and Terraform Labs Limited (related document(s)568, 700) Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 705,
+        "date_filed": "2024-09-17",
+        "time_filed": "14:32:26",
+        "date_display": "Sep 17, 2024",
+        "description": "Order Authorizing the Debtors to Exceed the Page Limit Requirement with Respect to the Debtors' Confirmation Brief (Related Doc # 704) Order Signed on 9/17/2024. (JMW) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 704,
+        "date_filed": "2024-09-17",
+        "time_filed": "14:05:41",
+        "date_display": "Sep 17, 2024",
+        "description": "Motion for Leave (Motion of Debtors for Entry of an Order Authorizing the Debtors to Exceed the Page Limit Requirement with Respect to the Debtors' Confirmation Brief) (related document(s)700, 703) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 703,
+        "date_filed": "2024-09-17",
+        "time_filed": "13:55:46",
+        "date_display": "Sep 17, 2024",
+        "description": "Memorandum/Brief (Debtors' Memorandum of Law in Support of Confirmation of Second Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited) Filed by Terraform Labs Pte. Ltd. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.703.0.pdf"
+      },
+      {
+        "entry_number": 702,
+        "date_filed": "2024-09-17",
+        "time_filed": "13:22:54",
+        "date_display": "Sep 17, 2024",
+        "description": "Exhibit(s) (Notice of Filing of Proposed Confirmation Order) (related document(s)568, 569, 572) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit 1) (Milana, Matthew) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 701,
+        "date_filed": "2024-09-17",
+        "time_filed": "13:05:15",
+        "date_display": "Sep 17, 2024",
+        "description": "Exhibit(s) (Notice of Blackline of Second Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited) (related document(s)416, 501, 555, 568, 700) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit 1) (Milana, Matthew) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 700,
+        "date_filed": "2024-09-17",
+        "time_filed": "12:55:07",
+        "date_display": "Sep 17, 2024",
+        "description": "Amended Chapter 11 Plan of Liquidation (related document(s)568) (Second Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited) Filed by Terraform Labs Pte. Ltd. (Milana, Matthew) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.700.0.pdf"
+      },
+      {
+        "entry_number": 699,
+        "date_filed": "2024-09-17",
+        "time_filed": "11:12:01",
+        "date_display": "Sep 17, 2024",
+        "description": "Certification of Ballots (related document(s)568, 572, 638) Filed by Terraform Labs Pte. Ltd. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Milana, Matthew) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 698,
+        "date_filed": "2024-09-17",
+        "time_filed": "11:10:11",
+        "date_display": "Sep 17, 2024",
+        "description": "Notice of Appearance. Filed by United States of America. (Shapiro, Seth) (Entered: 09/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 697,
+        "date_filed": "2024-09-16",
+        "time_filed": "16:32:59",
+        "date_display": "Sep 16, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Seventh Monthly Fee Statement of Weil, Gotshal & Manges LLP for Payment of Compensation And Reimbursement of Expenses for the period July 1, 2024 to July 31, 2024 (related document(s)630) Filed by Terraform Labs Pte. Ltd.. (Steiger, Alexander) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 696,
+        "date_filed": "2024-09-16",
+        "time_filed": "15:18:00",
+        "date_display": "Sep 16, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Plan Supplement (Notice of Filing of Plan Supplement in Connection With Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited); Notice of Assumption of Lease/Executory Contract (Notice of Potential Assumption and Assignment and Cure Amounts in Connection With Contracts and Leases). Filed by Epiq Corporate Restructuring, LLC. (related document(s)653, 654) (Garabato, Sid) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 695,
+        "date_filed": "2024-09-16",
+        "time_filed": "14:14:07",
+        "date_display": "Sep 16, 2024",
+        "description": "Objection to Confirmation of Plan Filed by Rex Wu (related document(s)568). (Attachments: # 1 Certificate of Service) (LCN) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.695.0.pdf"
+      },
+      {
+        "entry_number": 694,
+        "date_filed": "2024-09-16",
+        "time_filed": "12:40:42",
+        "date_display": "Sep 16, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Assumption of Lease/Executory Contract (Supplemental Notice of Potential Assumption and Assignment and Cure Amounts in Connection with Contracts and Leases); Plan Supplement(Notice of Filing of Third Plan Supplement in Connection with Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited). Filed by Epiq Corporate Restructuring, LLC. (related document(s)683, 684) (Garabato, Sid) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 693,
+        "date_filed": "2024-09-16",
+        "time_filed": "12:38:06",
+        "date_display": "Sep 16, 2024",
+        "description": "Certificate of Publication of Notice of Confirmation Hearing (Notice of (I) Approval of Disclosure Statement, (II) Establishment of Voting Record Date, (III) Hearing on Confirmation of the Proposed Plan, (IV) Procedures for Objection to Confirmation of the Proposed Plan, and (V) Procedures and Deadline for Voting on the Proposed Plan (related document(s)584). Filed by Epiq Corporate Restructuring, LLC. (related document(s)584) (Garabato, Sid) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 692,
+        "date_filed": "2024-09-16",
+        "time_filed": "11:00:27",
+        "date_display": "Sep 16, 2024",
+        "description": "Order (I) Authorizing the Retention and Employment of PGP Capital Advisors, LLC as Investment Banker to the Debtors Effective as of July 30, 2024, (II) Waiving Certain Information Requirements Pursuant to Local Rule 2016-2, and (III) Granting Related Relief (Related Doc # 639, 682) Order Signed on 9/16/2024. (JMW) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 691,
+        "date_filed": "2024-09-16",
+        "time_filed": "10:03:00",
+        "date_display": "Sep 16, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Sixth Monthly Fee Statement of Rahman Ravelli for Payment of Compensation and Reimbursement of Expenses for the period July 1, 2024 to July 31, 2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)680) (Garabato, Sid) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 690,
+        "date_filed": "2024-09-16",
+        "time_filed": "09:09:06",
+        "date_display": "Sep 16, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Seventh Monthly Fee Statement of Services Rendered and Expenses Incurred by Alvarez & Marsal North America, LLC as Financial Advisors to Debtors, for Compensation and Reimbursement of Expenses for the period from July 1, 2024 to July 31, 2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)672) (Garabato, Sid) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 689,
+        "date_filed": "2024-09-14",
+        "time_filed": "00:23:43",
+        "date_display": "Sep 14, 2024",
+        "description": "Notice of Objection . Filed by Raminder Singh Balbir Hora. Hearing scheduled for 9/19/2024 at 10:30 AM at Zoom - Waterman: Meeting ID 503 796 7663, Passcode 4545941595, Phone 1 (484) 309-8709. (Attachments: # 1 Supplement) (related document(s)31, 46, 52, 53, 54, 64, 67, 68, 74, 75, 80, 85, 91, 110, 111, 112, 113, 154, 181, 182, 184, 186, 195, 196, 198, 294, 295, 297, 309, 323, 324, 327, 334, 338, 345, 348, 350, 376, 381, 534, 535, 634, 638, 648, 650, 651, 652, 655, 656, 666, 667, 668, 669, 670, 671, 673, 675, 677, 678, 679) (Hora, Raminder Singh B) (Entered: 09/14/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 688,
+        "date_filed": "2024-09-13",
+        "time_filed": "16:35:25",
+        "date_display": "Sep 13, 2024",
+        "description": "Motion for Leave to File Objection Out of Time (related document(s)675) Filed by Xavier Mattern. The case judge is Brendan Linehan Shannon. (SH) (Entered: 09/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 687,
+        "date_filed": "2024-09-13",
+        "time_filed": "16:34:05",
+        "date_display": "Sep 13, 2024",
+        "description": "Motion for Leave to File Objection Out of Time (related document(s)679) Filed by Thomas Pierre Blanc. The case judge is Brendan Linehan Shannon. (SH) (Entered: 09/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 686,
+        "date_filed": "2024-09-13",
+        "time_filed": "16:32:38",
+        "date_display": "Sep 13, 2024",
+        "description": "Motion for Leave to File Objection Out of Time (related document(s)678) Filed by Maxim S Kalmykov. The case judge is Brendan Linehan Shannon. (SH) (Entered: 09/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 685,
+        "date_filed": "2024-09-13",
+        "time_filed": "14:07:36",
+        "date_display": "Sep 13, 2024",
+        "description": "Objection to Confirmation of Plan Filed by Thomas Pierre Blanc (related document(s)568). (LCN) (Entered: 09/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.685.0.pdf"
+      },
+      {
+        "entry_number": 684,
+        "date_filed": "2024-09-12",
+        "time_filed": "22:09:03",
+        "date_display": "Sep 12, 2024",
+        "description": "Plan Supplement(Notice of Filing of Third Plan Supplement in Connection with Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited) (related document(s)568, 653, 664) Filed by Terraform Labs Pte. Ltd. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Milana, Matthew) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 683,
+        "date_filed": "2024-09-12",
+        "time_filed": "21:42:32",
+        "date_display": "Sep 12, 2024",
+        "description": "Notice of Assumption of Lease/Executory Contract (Supplemental Notice of Potential Assumption and Assignment and Cure Amounts in Connection with Contracts and Leases) (related document(s)654). Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A) (Shapiro, Zachary) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 682,
+        "date_filed": "2024-09-12",
+        "time_filed": "16:01:08",
+        "date_display": "Sep 12, 2024",
+        "description": "Certificate of No Objection Regarding Application of Debtors for Entry of an Order (I) Authorizing the Retention and Employment of PGP Capital Advisors, LLC as Investment Banker to the Debtors Effective as of July 30, 2024, (II) Waiving Certain Information Requirements Pursuant to Local Rule 2016-2, and (III) Granting Related Relief (related document(s)639) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 681,
+        "date_filed": "2024-09-12",
+        "time_filed": "15:28:29",
+        "date_display": "Sep 12, 2024",
+        "description": "Objection to Confirmation of Plan United States Trustee's Objection to Confirmation of Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited Filed by U.S. Trustee (related document(s)568). (Leamy, Jane) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.681.0.pdf"
+      },
+      {
+        "entry_number": 680,
+        "date_filed": "2024-09-12",
+        "time_filed": "10:46:10",
+        "date_display": "Sep 12, 2024",
+        "description": "Monthly Application for Compensation // Sixth Monthly Fee Statement of Rahman Ravelli for Payment of Compensation and Reimbursement of Expenses for the period July 1, 2024 to July 31, 2024 Filed by Rahman Ravelli. Objections due by 10/3/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B) (Milana, Matthew) Modified to terminate fee application on 10/7/2024 (ASA). (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 679,
+        "date_filed": "2024-09-12",
+        "time_filed": "09:02:41",
+        "date_display": "Sep 12, 2024",
+        "description": "Notice of Objection (Amended) to the Proposed Plan of Liquidation dated September 12, 2024, regarding prioritization of UST and non-institutional investors for compensation. Filed by Thomas Pierre Blanc. (related document(s)671) (Blanc, Thomas) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 678,
+        "date_filed": "2024-09-12",
+        "time_filed": "08:31:18",
+        "date_display": "Sep 12, 2024",
+        "description": "Notice of Objection the Debtors Proposed Recovery Plan. Filed by Maxim S Kalmykov. (Kalmykov, Maxim) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.678.0.pdf"
+      },
+      {
+        "entry_number": 677,
+        "date_filed": "2024-09-11",
+        "time_filed": "16:30:53",
+        "date_display": "Sep 11, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Certification of Counsel Regarding Order Approving Amended Stipulation Between Debtors and Singapore Action Claimants Regarding Relief from the Automatic Stay; Order Approving Stipulation Between Debtor and Singapore Action Claimants Regarding Relief from the Automatic Stay; Notice of Filing of Second Plan Supplement in Connection With Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited. Filed by Epiq Corporate Restructuring, LLC. (related document(s)657, 661, 664) (Garabato, Sid) (Entered: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 676,
+        "date_filed": "2024-09-11",
+        "time_filed": "13:51:00",
+        "date_display": "Sep 11, 2024",
+        "description": "Objection to Confirmation of Plan Filed by Anna Spigiel (related document(s)568). (LCN) (Entered: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.676.0.pdf"
+      },
+      {
+        "entry_number": 675,
+        "date_filed": "2024-09-11",
+        "time_filed": "05:29:32",
+        "date_display": "Sep 11, 2024",
+        "description": "Notice of Objection to the Proposed Plan of Liquidation dated September 11, 2024 : Addressing the Unfair Prioritization of Large Claimants and Ensuring Compensation for UST Investors Only. Filed by Xavier Mattern. (Mattern, Xavier) (Entered: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.675.0.pdf"
+      },
+      {
+        "entry_number": 674,
+        "date_filed": "2024-09-10",
+        "time_filed": "14:36:58",
+        "date_display": "Sep 10, 2024",
+        "description": "Certificate of Publication re Notice of Deadline to File Preliminary Crypto Loss Proofs of Claim Solely for Purposes of Voting on the Chapter 11 Plan (related document(s)492). Filed by Epiq Corporate Restructuring, LLC. (related document(s)492) (Garabato, Sid) (Entered: 09/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 673,
+        "date_filed": "2024-09-10",
+        "time_filed": "09:57:52",
+        "date_display": "Sep 10, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Filing of Plan Supplement in Connection With Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited; Notice of Potential Assumption and Assignment and Cure Amounts in Connection With Contracts and Leases. Filed by Epiq Corporate Restructuring, LLC. (related document(s)653, 654) (Garabato, Sid) (Entered: 09/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 672,
+        "date_filed": "2024-09-09",
+        "time_filed": "19:41:17",
+        "date_display": "Sep 9, 2024",
+        "description": "Monthly Application for Compensation // Seventh Monthly Fee Statement of Services Rendered and Expenses Incurred by Alvarez & Marsal North America, LLC as Financial Advisors to Debtors, for Compensation and Reimbursement of Expenses for the period from July 1, 2024 to July 31, 2024 Filed by Alvarez & Marsal North America, LLC. Objections due by 9/30/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C # 5 Exhibit D) (Milana, Matthew) Modified to terminate fee application on 10/2/2024 (ASA). (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 671,
+        "date_filed": "2024-09-09",
+        "time_filed": "17:22:05",
+        "date_display": "Sep 9, 2024",
+        "description": "Notice of Objection to the Proposed Plan of Liquidation dated September 9, 2024, regarding prioritization of UST and non-institutional investors for compensation. Filed by Thomas Pierre Blanc. (Blanc, Thomas) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 670,
+        "date_filed": "2024-09-09",
+        "time_filed": "15:08:12",
+        "date_display": "Sep 9, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Seventh Monthly Fee Statement of Weil, Gotshal & Manges LLP for Payment of Compensation And Reimbursement of Expenses for the period July 1, 2024 to July 31, 2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)630) (Garabato, Sid) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 669,
+        "date_filed": "2024-09-09",
+        "time_filed": "14:34:17",
+        "date_display": "Sep 9, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Filing of Agreements in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Action; Third Supplemental Declaration of Ronit Berkovich in Support of Application of Debtors for Authority to Retain and Employ Weil, Gotshal & Manges LLP as Attorneys for Debtors Effective as of Petition Date. Filed by Epiq Corporate Restructuring, LLC. (related document(s)623, 624) (Garabato, Sid) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 668,
+        "date_filed": "2024-09-09",
+        "time_filed": "14:30:34",
+        "date_display": "Sep 9, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Application/Motion to Employ/Retain Cavu Securities, LLC as Investment Banker to the Debtors Effective as of June 5, 2024, (II) Waiving Certain Information Requirements Pursuant to Local Rule 2016-2, and (III) Granting Related Relief. Filed by Epiq Corporate Restructuring, LLC. (related document(s)609) (Garabato, Sid) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 667,
+        "date_filed": "2024-09-09",
+        "time_filed": "14:27:42",
+        "date_display": "Sep 9, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Certification of Counsel Regarding Scheduling of Omnibus Hearing Date; Order Scheduling Omnibus Hearings. Omnibus Hearings scheduled for 10/30/2024 at 10:00 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Signed on 8/13/2024; Notice of Filing of Additional Detail in Connection with Debtors' Proposed Modified Severance Program. Filed by Epiq Corporate Restructuring, LLC. (related document(s)585, 587, 592) (Garabato, Sid) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 666,
+        "date_filed": "2024-09-09",
+        "time_filed": "14:17:49",
+        "date_display": "Sep 9, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Certification of Counsel Regarding First Omnibus Order Awarding Interim Allowance of Compensation for Services Rendered and for Reimbursement of Expenses; Certification of Counsel Regarding Order Approving Stipulation Extending Governmental Bar Date for the U.S. Securities and Exchange Commission; Order Shortening Notice and Objection Periods With Respect to the Motion of Debtors for Entry of an Order Authorizing Debtors to Pay Severance to Non-Insider Employees; Order Awarding First Interim Applications for Compensation for Services Rendered and for Reimbursement of Expenses; Order Approving Stipulation Extending Governmental Bar Date for the U.S. Securities and Exchange Commission; Notice of (I) Approval of Disclosure Statement, (II) Establishment of Voting Record Date, (III) Hearing on Confirmation of the Proposed Plan, (IV) Procedures for Objection to Confirmation of the Proposed Plan, and (V) Procedures and Deadline for Voting on the Proposed Plan. Filed by Epiq Corporate Restructuring, LLC. (related document(s)566, 573, 581, 582, 583, 584) (Garabato, Sid) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.666.0.pdf"
+      },
+      {
+        "entry_number": 665,
+        "date_filed": "2024-09-06",
+        "time_filed": "09:55:28",
+        "date_display": "Sep 6, 2024",
+        "description": "Monthly Application for Compensation // Fifth Monthly Fee Application of McDermott Will & Emery LLP, Counsel to the Official Committee of Unsecured Creditors, for Allowance of Compensation and Reimbursement of Expenses for the period July 1, 2024 to July 31, 2024 Filed by The Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd.. Objections due by 9/27/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B) (Hurst, David) (Entered: 09/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 664,
+        "date_filed": "2024-09-05",
+        "time_filed": "22:40:08",
+        "date_display": "Sep 5, 2024",
+        "description": "Plan Supplement (Notice of Filing of Second Plan Supplement in Connection With Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited) (related document(s)568, 569, 653) Filed by Terraform Labs Pte. Ltd. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (Steiger, Alexander) (Entered: 09/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 663,
+        "date_filed": "2024-09-05",
+        "time_filed": "17:34:28",
+        "date_display": "Sep 5, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Sixth Monthly Fee Statement of Services Rendered and Expenses Incurred by Alvarez & Marsal North America, LLC as Financial Advisors to Debtors, for Compensation and Reimbursement of Expenses for the period from June 1, 2024 to June 30, 2024 (related document(s)594) Filed by Terraform Labs Pte. Ltd.. (Steiger, Alexander) (Entered: 09/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 662,
+        "date_filed": "2024-09-04",
+        "time_filed": "16:25:09",
+        "date_display": "Sep 4, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Third Combined Monthly Fee Application of Genesis Credit Partners LLC, Financial Advisor to the Official Committee of Unsecured Creditors, for Allowance of Compensation and Reimbursement of Expenses for the Period from May 1, 2024 through June 30, 2024 (related document(s)590) Filed by The Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd.. (Hurst, David) (Entered: 09/04/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 661,
+        "date_filed": "2024-09-04",
+        "time_filed": "11:56:26",
+        "date_display": "Sep 4, 2024",
+        "description": "Order Approving Stipulation Between Debtor and Singapore Action Claimants Regarding Relief from the Automatic Stay (Related Doc # 344, 657) Order Signed on 9/4/2024. (Attachments: # 1 Exhibit 1) (JMW) (Entered: 09/04/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.661.0.pdf"
+      },
+      {
+        "entry_number": 660,
+        "date_filed": "2024-09-03",
+        "time_filed": "16:05:50",
+        "date_display": "Sep 3, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Fifth Monthly Fee Application of Dentons US LLP as Special Counsel for the Debtors and Debtors in Possession for Allowance of Compensation and Reimbursement of Expenses for the period June 1, 2024 to June 30, 2024 (related document(s)578) Filed by Terraform Labs Pte. Ltd.. (Steiger, Alexander) (Entered: 09/03/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 659,
+        "date_filed": "2024-09-03",
+        "time_filed": "16:02:16",
+        "date_display": "Sep 3, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Fifth Monthly Fee Statement of Rahman Ravelli for Payment of Compensation and Reimbursement of Expenses for the period June 1, 2024 to June 30, 2024 (related document(s)574) Filed by Rahman Ravelli. (Steiger, Alexander) (Entered: 09/03/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 658,
+        "date_filed": "2024-09-03",
+        "time_filed": "11:19:21",
+        "date_display": "Sep 3, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Fourth Monthly Fee Application of McDermott Will & Emery LLP, Counsel to the Official Committee of Unsecured Creditors, for Allowance of Compensation and Reimbursement of Expenses for the Period from June 1, 2024 Through June 30, 2024 (related document(s)548) Filed by The Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd.. (Hurst, David) (Entered: 09/03/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 657,
+        "date_filed": "2024-08-30",
+        "time_filed": "16:44:33",
+        "date_display": "Aug 30, 2024",
+        "description": "Certification of Counsel Regarding Order Approving Amended Stipulation Between Debtors and Singapore Action Claimants Regarding Relief from the Automatic Stay (related document(s)344) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit 1 # 2 Exhibit 2) (Milana, Matthew) (Entered: 08/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 656,
+        "date_filed": "2024-08-30",
+        "time_filed": "13:12:50",
+        "date_display": "Aug 30, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Sixth Monthly Application of Richards, Layton & Finger, P.A. for Allowance of Compensation for Services Rendered and for Reimbursement of Expenses as Co- Counsel to the Debtors for the period from July 1, 2024 to July 31, 2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)643) (Garabato, Sid) (Entered: 08/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 655,
+        "date_filed": "2024-08-30",
+        "time_filed": "13:08:38",
+        "date_display": "Aug 30, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Address Change for the Debtors; Supplemental Declaration of Mark G. Califano, Pursuant to Rule 2014 of the Federal Rules of Bankruptcy Procedure in Connection with the Application of Debtors for Entry of an Order Authorizing the Retention and Employment of Dentons US LLP as Special Counsel to the Debtors and Debtors in Possession, Effective as of the Petition Date; Motion of Debtors for Entry of an Order Authorizing the Debtors to File Under Seal the Supplemental Declaration of Mark G. Califano, Pursuant to Rule 2014 of the Federal Rules of Bankruptcy Procedure in Connection with the Application of Debtors for Entry of an Order Authorizing the Retention and Employment of Dentons US LLP as Special Counsel to the Debtors and Debtors in Possession, Effective as of the Petition Date (Re: Docket No. 646). Filed by Epiq Corporate Restructuring, LLC. (related document(s)642, 647, 649) (Garabato, Sid) (Entered: 08/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 654,
+        "date_filed": "2024-08-29",
+        "time_filed": "21:49:59",
+        "date_display": "Aug 29, 2024",
+        "description": "Notice of Assumption of Lease/Executory Contract (Notice of Potential Assumption and Assignment and Cure Amounts in Connection With Contracts and Leases). Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 08/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 653,
+        "date_filed": "2024-08-29",
+        "time_filed": "21:35:13",
+        "date_display": "Aug 29, 2024",
+        "description": "Plan Supplement (Notice of Filing of Plan Supplement in Connection With Amended Chapter 11 Plan of Liquidation of Terraform Labs Pte. Ltd. and Terraform Labs Limited) Filed by Terraform Labs Pte. Ltd. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Milana, Matthew) (Entered: 08/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 652,
+        "date_filed": "2024-08-29",
+        "time_filed": "17:08:27",
+        "date_display": "Aug 29, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Certification of Counsel Regarding Scheduling of Omnibus Hearing Date; Order Scheduling Omnibus Hearings. Omnibus Hearings scheduled for 10/2/2024 at 11:00 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Signed on 8/27/2024; Application/Motion to Employ/Retain PGP Capital Advisors, LLC as Investment Banker to the Debtors Effective as of July 30, 2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)626, 637, 639) (Garabato, Sid) (Entered: 08/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 651,
+        "date_filed": "2024-08-29",
+        "time_filed": "09:56:59",
+        "date_display": "Aug 29, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Certification of Counsel Regarding Order Approving Stipulation by and Between the Debtors and the Foreign Representatives of Three Arrows Capital, Ltd. Regarding Treatment of Claim Solely for Voting Purposes; Order Approving Stipulation by and Between the Debtors and the Foreign Representatives of Three Arrows Capital, Ltd. Regarding Treatment of Claim Solely for Voting Purposes; Periodic Report Regarding Value, Operations and Profitability of Entities in Which the Debtors' Estates Hold a Substantial or Controlling Interest as of 06/30/2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)616, 621, 622) (Garabato, Sid) (Entered: 08/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 650,
+        "date_filed": "2024-08-29",
+        "time_filed": "09:52:34",
+        "date_display": "Aug 29, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Debtors' First Omnibus Objection (Substantive) for Reclassification of Certain Disputed Claims as Crypto Loss Claims Solely for Voting Purposes; Debtors' Second Omnibus Objection (Substantive) for Temporary Reduction or Disallowance of Certain Disputed Claims Solely for Voting Purposes. Filed by Epiq Corporate Restructuring, LLC. (related document(s)619, 620) (Garabato, Sid) (Entered: 08/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 649,
+        "date_filed": "2024-08-28",
+        "time_filed": "21:46:53",
+        "date_display": "Aug 28, 2024",
+        "description": "Motion to File Under Seal// Motion of Debtors for Entry of an Order Authorizing the Debtors to File Under Seal the Supplemental Declaration of Mark G. Califano, Pursuant to Rule 2014 of the Federal Rules of Bankruptcy Procedure in Connection with the Application of Debtors for Entry of an Order Authorizing the Retention and Employment of Dentons US LLP as Special Counsel to the Debtors and Debtors in Possession, Effective as of the Petition Date (Re: Docket No. 646) Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 10/2/2024 at 11:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 9/11/2024. (Attachments: # 1 Exhibit # 2 Notice) (Milana, Matthew) (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 648,
+        "date_filed": "2024-08-28",
+        "time_filed": "21:43:54",
+        "date_display": "Aug 28, 2024",
+        "description": "Certificate of Mailing . Filed by The Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd.. (related document(s)645) (Matthews, Gene) (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 647,
+        "date_filed": "2024-08-28",
+        "time_filed": "21:04:24",
+        "date_display": "Aug 28, 2024",
+        "description": "(REDACTED)Supplemental Declaration // Supplemental Declaration of Mark G. Califano, Pursuant to Rule 2014 of the Federal Rules of Bankruptcy Procedure in Connection with the Application of Debtors for Entry of an Order Authorizing the Retention and Employment of Dentons US LLP as Special Counsel to the Debtors and Debtors in Possession, Effective as of the Petition Date Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) Modified on 8/29/2024 (COH). (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 646,
+        "date_filed": "2024-08-28",
+        "time_filed": "",
+        "date_display": "Aug 28, 2024",
+        "description": "[SEALED] Supplemental Declaration // Supplemental Declaration of Mark G. Califano, Pursuant to Rule 2014 of the Federal Rules of Bankruptcy Procedure in Connection with the Application of Debtors for Entry of an Order Authorizing the Retention and Employment of Dentons US LLP as Special Counsel to the Debtors and Debtors in Possession, Effective as of the Petition Date Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 645,
+        "date_filed": "2024-08-28",
+        "time_filed": "17:51:30",
+        "date_display": "Aug 28, 2024",
+        "description": "Declaration in Support // Supplemental Declaration of Darren Azman in Support of the Retention and Employment of McDermott Will & Emery LLP as Counsel to the Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd., et al. (related document(s)240) Filed by The Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd.. (Hurst, David) (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 644,
+        "date_filed": "2024-08-28",
+        "time_filed": "16:00:48",
+        "date_display": "Aug 28, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Fifth Monthly Fee Statement of Services Rendered and Expenses Incurred by Alvarez & Marsal North America, LLC as Financial Advisors to Debtors, for Compensation and Reimbursement of Expenses for the period May 1, 2024 to May 31, 2024 (related document(s)560) Filed by Terraform Labs Pte. Ltd.. (Steiger, Alexander) (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 643,
+        "date_filed": "2024-08-28",
+        "time_filed": "13:04:49",
+        "date_display": "Aug 28, 2024",
+        "description": "Monthly Application for Compensation // Sixth Monthly Application of Richards, Layton & Finger, P.A. for Allowance of Compensation for Services Rendered and for Reimbursement of Expenses as Co- Counsel to the Debtors for the period from July 1, 2024 to July 31, 2024 Filed by Richards, Layton & Finger, P.A.. Objections due by 9/18/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B) (Shapiro, Zachary) Modified to terminate fee application on 9/20/2024 (ASA). (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 642,
+        "date_filed": "2024-08-28",
+        "time_filed": "12:30:24",
+        "date_display": "Aug 28, 2024",
+        "description": "Notice of Address Change for the Debtors Filed by Terraform Labs Pte. Ltd.. (Steiger, Alexander) (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 641,
+        "date_filed": "2024-08-28",
+        "time_filed": "11:48:25",
+        "date_display": "Aug 28, 2024",
+        "description": "Certificate of Mailing . Filed by The Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd.. (related document(s)635) (Matthews, Gene) (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 640,
+        "date_filed": "2024-08-28",
+        "time_filed": "08:53:42",
+        "date_display": "Aug 28, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Fifth Monthly Application of WongPartnership LLP for Allowance of Compensation for Services Rendered and for Reimbursement of Expenses as Special Foreign Counsel to the Debtors for the period June 1, 2024 to June 30, 2024 (related document(s)547) Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-28",
+        "time_filed": "20:54:50",
+        "date_display": "Aug 28, 2024",
+        "description": "Declaration",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 639,
+        "date_filed": "2024-08-27",
+        "time_filed": "20:17:40",
+        "date_display": "Aug 27, 2024",
+        "description": "Application/Motion to Employ/Retain PGP Capital Advisors, LLC as Investment Banker to the Debtors Effective as of July 30, 2024 Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 9/19/2024 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 9/10/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C) (Milana, Matthew) (Entered: 08/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 638,
+        "date_filed": "2024-08-27",
+        "time_filed": "16:17:06",
+        "date_display": "Aug 27, 2024",
+        "description": "Certificate of Mailing of Solicitation Materials. Filed by Epiq Corporate Restructuring, LLC. (related document(s)568, 569, 572, 584) (Garabato, Sid) (Entered: 08/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 637,
+        "date_filed": "2024-08-27",
+        "time_filed": "12:06:42",
+        "date_display": "Aug 27, 2024",
+        "description": "Order Scheduling Omnibus Hearings. Omnibus Hearings scheduled for 10/2/2024 at 11:00 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Signed on 8/27/2024. (JMW) (Entered: 08/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 636,
+        "date_filed": "2024-08-27",
+        "time_filed": "10:23:42",
+        "date_display": "Aug 27, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Fourth Monthly Application of WongPartnership LLP for Allowance of Compensation for Services Rendered and for Reimbursement of Expenses as Special Foreign Counsel to the Debtors for the period May 1, 2024 to May 31, 2024 (related document(s)539) Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 08/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 635,
+        "date_filed": "2024-08-27",
+        "time_filed": "09:31:09",
+        "date_display": "Aug 27, 2024",
+        "description": "Notice of Hearing Regarding Fee Applications filed by Committee Professionals (related document(s)586, 591, 595) Filed by The Official Committee of Unsecured Creditors of Terraform Labs Pte. Ltd.. Hearing scheduled for 10/30/2024 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Hurst, David) (Entered: 08/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 634,
+        "date_filed": "2024-08-27",
+        "time_filed": "09:17:22",
+        "date_display": "Aug 27, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Certification of Counsel Regarding Revised Order Authorizing Debtors to Pay Severance to Non-Insider Employees; Notice of Agenda of Matters Scheduled for Hearing Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 8/21/2024 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware; Amended HEARING CANCELLED. Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 8/21/2024 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware; Order Granting Motion To Authorize. Filed by Epiq Corporate Restructuring, LLC. (related document(s)610, 612, 613, 614) (Garabato, Sid) (Entered: 08/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 633,
+        "date_filed": "2024-08-26",
+        "time_filed": "14:41:13",
+        "date_display": "Aug 26, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Second Interim Fee Application of Rahman Ravelli, Special Foreign Counsel to Debtors for the period from April 1, 2024 to June 30, 2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)611) (Garabato, Sid) (Entered: 08/26/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 632,
+        "date_filed": "2024-08-23",
+        "time_filed": "15:21:10",
+        "date_display": "Aug 23, 2024",
+        "description": "Chapter 11 Monthly Operating Report for Case Number 24-11481 for the Month Ending: 07/31/2024 Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit) (Shapiro, Zachary) (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 631,
+        "date_filed": "2024-08-23",
+        "time_filed": "15:16:31",
+        "date_display": "Aug 23, 2024",
+        "description": "Chapter 11 Monthly Operating Report for the Month Ending: 07/31/2024 Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit) (Shapiro, Zachary) (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 630,
+        "date_filed": "2024-08-23",
+        "time_filed": "11:52:48",
+        "date_display": "Aug 23, 2024",
+        "description": "Application for Compensation Seventh Monthly Fee Statement of Weil, Gotshal & Manges LLP for Payment of Compensation And Reimbursement of Expenses for the period July 1, 2024 to July 31, 2024 Filed by Weil, Gotshal & Manges LLP. Objections due by 9/13/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B) (Milana, Matthew) Modified to terminate fee application on 9/17/2024 (ASA). (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 629,
+        "date_filed": "2024-08-23",
+        "time_filed": "10:46:47",
+        "date_display": "Aug 23, 2024",
+        "description": "Certificate of No Objection - No Order Required // Certificate of No Objection Regarding Third Combined Monthly Application of WongPartnership LLP for Allowance of Compensation for Services Rendered and for Reimbursement of Expenses as Special Foreign Counsel to the Debtors for the Period From April 1, 2024 Through April 30, 2024 (No Order Required) (related document(s)533) Filed by WongPartnership LLP. (Steiger, Alexander) (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 628,
+        "date_filed": "2024-08-23",
+        "time_filed": "10:42:15",
+        "date_display": "Aug 23, 2024",
+        "description": "Certificate of No Objection - No Order Required // Certificate of No Objection Regarding Second Combined Monthly Application of WongPartnership LLP for Allowance of Compensation for Services Rendered and for Reimbursement of Expenses as Special Foreign Counsel to the Debtors for the Period From March 1, 2024 Through March 31, 2024 (No Order Required) (related document(s)530) Filed by WongPartnership LLP. (Steiger, Alexander) (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 627,
+        "date_filed": "2024-08-23",
+        "time_filed": "10:36:43",
+        "date_display": "Aug 23, 2024",
+        "description": "Certificate of No Objection - No Order Required // Certificate of No Objection Regarding First Combined Monthly Application of WongPartnership LLP for Allowance of Compensation for Services Rendered and for Reimbursement of Expenses as Special Foreign Counsel to the Debtors for the Period From January 21, 2024 Through February 29, 2024 (No Order Required) (related document(s)529) Filed by WongPartnership LLP. (Steiger, Alexander) (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 626,
+        "date_filed": "2024-08-23",
+        "time_filed": "09:52:44",
+        "date_display": "Aug 23, 2024",
+        "description": "Certification of Counsel Regarding Scheduling of Omnibus Hearing Date Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 625,
+        "date_filed": "2024-08-22",
+        "time_filed": "17:10:24",
+        "date_display": "Aug 22, 2024",
+        "description": "Certificate of No Objection - No Order Required Regarding Fifth Monthly Application of Richards, Layton & Finger, P.A. for Allowance of Compensation for Services Rendered and for Reimbursement of Expenses as Co- Counsel to the Debtors for the period from June 1, 2024 to June 30, 2024 (related document(s)531) Filed by Terraform Labs Pte. Ltd.. (Steiger, Alexander) (Entered: 08/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 624,
+        "date_filed": "2024-08-22",
+        "time_filed": "15:54:29",
+        "date_display": "Aug 22, 2024",
+        "description": "Declaration (Third Supplemental Declaration of Ronit Berkovich in Support of Application of Debtors for Authority to Retain and Employ Weil, Gotshal & Manges LLP as Attorneys for Debtors Effective as of Petition Date) (related document(s)57, 97, 320, 478, 500) Filed by Weil, Gotshal & Manges LLP. (Milana, Matthew) (Entered: 08/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 623,
+        "date_filed": "2024-08-22",
+        "time_filed": "12:08:02",
+        "date_display": "Aug 22, 2024",
+        "description": "Exhibit(s) (Notice of Filing of Agreements in Connection with Order Approving Implementation Steps in Compliance with TFL Consent and Final Judgment in SEC Enforcement Action) (related document(s)479) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Milana, Matthew) (Entered: 08/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 622,
+        "date_filed": "2024-08-21",
+        "time_filed": "20:00:22",
+        "date_display": "Aug 21, 2024",
+        "description": "Periodic Report Regarding Value, Operations and Profitability of Entities in Which the Debtors' Estates Hold a Substantial or Controlling Interest as of 06/30/2024 Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 08/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 621,
+        "date_filed": "2024-08-21",
+        "time_filed": "08:57:51",
+        "date_display": "Aug 21, 2024",
+        "description": "Order Approving Stipulation by and Between the Debtors and the Foreign Representatives of Three Arrows Capital, Ltd. Regarding Treatment of Claim Solely for Voting Purposes. Order Signed on 8/21/2024. (Attachments: # 1 Exhibit 1) (JMW) (Entered: 08/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 620,
+        "date_filed": "2024-08-20",
+        "time_filed": "22:42:32",
+        "date_display": "Aug 20, 2024",
+        "description": "Omnibus Objection to Claims (Debtors' Second Omnibus Objection (Substantive) for Temporary Reduction or Disallowance of Certain Disputed Claims Solely for Voting Purposes). Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Notice # 2 Schedule 1 # 3 Schedule 2 # 4 Exhibit A) (Milana, Matthew) (Entered: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 618,
+        "date_filed": "2024-08-20",
+        "time_filed": "10:06:26",
+        "date_display": "Aug 20, 2024",
+        "description": "Certificate of Mailing of Claims Agent re First Interim Fee Application of WongPartnership LLP for Payment of Compensation and Reimbursement of Expenses for the period January 21, 2024 to June 30, 2024; Sixth Monthly Fee Statement of Services Rendered and Expenses Incurred by Alvarez & Marsal North America, LLC as Financial Advisors to Debtors, for Compensation and Reimbursement of Expenses for the period from June 1, 2024 to June 30, 2024; First Interim Application of David M. Klauder for Compensation for Services Rendered and Reimbursement of Expenses as Fee Examiner, for the Period From April 29, 2024 Through June 30, 2024; First Interim Application of Bielli & Klauder, LLC for Compensation for Services Rendered and Reimbursement of Expenses as Counsel to Fee Examiner, for the Period From April 29, 2024 Through June 30, 2024; Second Interim Application of Weil, Gotshal & Manges LLP for Payment of Compensation and Reimbursement of Expenses for the period April 1, 2024 to and Including June 30, 2024; Notice of Second Interim Fee Application Request of Richards, Layton & Finger, P.A., Co-Counsel to Debtors for the period April 1, 2024 to June 30, 2024; Supplemental Declaration (Third) of Michael S. Leto in Connection with Debtors' Retention of Alvarez & Marsal North America, LLC as Financial Advisor; Second Interim Fee Application of Alvarez & Marsal North America, LLC for Payment of Compensation and Reimbursement of Expenses as Financial Advisors to the Debtor and Debtor in Possesion for the period from April 1, 2024 to June 30, 2024; econd Interim Fee Application of Dentons US LLP, Special Counsel to Debtors, for the period from April 1, 2024 to June 30, 2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)593, 594, 596, 597, 598, 599, 600, 601, 602) (Garabato, Sid) (Entered: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=31"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=37"
   },
   "claims_administrator": {
     "name": "Epiq11",

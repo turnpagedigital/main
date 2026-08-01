@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/",
     "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-08-01T11:38:29.706734+00:00",
+    "fetched_at": "2026-08-01T14:00:00.617356+00:00",
     "as_of": "Aug 1, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -6401,9 +6401,999 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 565,
+        "date_filed": "2025-12-02",
+        "time_filed": "18:28:33",
+        "date_display": "Dec 2, 2025",
+        "description": "Certificate of service re: Monthly Operating Report and Notice of Extension by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)554 Chapter 11 Monthly Operating Report UST Form 11-MOR, 558 Notice (generic)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 564,
+        "date_filed": "2025-12-02",
+        "time_filed": "18:23:29",
+        "date_display": "Dec 2, 2025",
+        "description": "Certificate of service re: Notice of Transfer by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)532 Assignment/Transfer of claim (Claims Agent), 533 Assignment/Transfer of claim (Claims Agent), 534 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 563,
+        "date_filed": "2025-12-02",
+        "time_filed": "15:39:20",
+        "date_display": "Dec 2, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: KB Foods LLC (Claim No. 10743, Amount $22,646.40) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 562,
+        "date_filed": "2025-12-02",
+        "time_filed": "15:36:17",
+        "date_display": "Dec 2, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: KB Foods LLC (Amount $22,646.40) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 561,
+        "date_filed": "2025-12-02",
+        "time_filed": "15:32:29",
+        "date_display": "Dec 2, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: Englemans Bakery (Amount $20,574.72) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 560,
+        "date_filed": "2025-12-02",
+        "time_filed": "15:30:36",
+        "date_display": "Dec 2, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: Englemans Bakery (Amount $34,222.08) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 559,
+        "date_filed": "2025-12-02",
+        "time_filed": "15:25:30",
+        "date_display": "Dec 2, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: FIA Trade Company (Amount $84,740.90) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-02",
+        "time_filed": "15:40:11",
+        "date_display": "Dec 2, 2025",
+        "description": "none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-02",
+        "time_filed": "15:40:13",
+        "date_display": "Dec 2, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-02",
+        "time_filed": "",
+        "date_display": "Dec 2, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33177228, amount $ 28.00 (re: Doc# 563). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 558,
+        "date_filed": "2025-12-01",
+        "time_filed": "17:05:15",
+        "date_display": "Dec 1, 2025",
+        "description": "Notice of Extension of Debtors Exclusivity Periods to File A Chapter 11 Plan and Solicit Acceptances Thereof filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)490 Order Extending Debtors' Exclusivity Periods to File a Chapter 11 Plan and Solicit Acceptances Thereof (re: 455 Motion to extend or limit the exclusivity period.) The Exclusive Filing Period to file a chapter 11 plan is extended to December 1, 2025. The Exclusive Solicitation Period to solicit acceptance of a chapter 11 plan is extended to January 30, 2026. Entered on 9/25/2025. (Okafor, M.) MODIFIED text on 9/25/2025 (mdo).). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 557,
+        "date_filed": "2025-11-26",
+        "time_filed": "12:48:55",
+        "date_display": "Nov 26, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: JT Site Services Inc. (Amount $12,387.00) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 556,
+        "date_filed": "2025-11-26",
+        "time_filed": "12:47:24",
+        "date_display": "Nov 26, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: JT Site Services Inc. (Claim No. 10764, Amount $13,015.00) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 555,
+        "date_filed": "2025-11-26",
+        "time_filed": "11:45:00",
+        "date_display": "Nov 26, 2025",
+        "description": "Complex Service List filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)68 Order granting complex chapter 11 treatment). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 554,
+        "date_filed": "2025-11-26",
+        "time_filed": "11:03:00",
+        "date_display": "Nov 26, 2025",
+        "description": "Chapter 11 Monthly Operating Report for the Month Ending: 10/31/2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33163340, amount $ 28.00 (re: Doc# 557). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-26",
+        "time_filed": "12:49:34",
+        "date_display": "Nov 26, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 553,
+        "date_filed": "2025-11-25",
+        "time_filed": "14:25:29",
+        "date_display": "Nov 25, 2025",
+        "description": "Amended U.S. Trustee's appointment of committee (Young, Elizabeth)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 552,
+        "date_filed": "2025-11-24",
+        "time_filed": "12:07:48",
+        "date_display": "Nov 24, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Nebraska Beef, LTD (Claim No. 10166, Amount $28,310.44) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 551,
+        "date_filed": "2025-11-24",
+        "time_filed": "12:05:56",
+        "date_display": "Nov 24, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Nebraska Beef, LTD (Claim No. 10165, Amount $1,887,799.93) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-24",
+        "time_filed": "12:08:26",
+        "date_display": "Nov 24, 2025",
+        "description": "none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-24",
+        "time_filed": "",
+        "date_display": "Nov 24, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33153500, amount $ 28.00 (re: Doc# 552). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 550,
+        "date_filed": "2025-11-21",
+        "time_filed": "12:11:58",
+        "date_display": "Nov 21, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: A&R Provisions (Amount $46,625.43) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 549,
+        "date_filed": "2025-11-21",
+        "time_filed": "12:04:43",
+        "date_display": "Nov 21, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Lawrence Wholesale (Claim No. 10416, Amount $146,658.60) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 548,
+        "date_filed": "2025-11-21",
+        "time_filed": "12:00:52",
+        "date_display": "Nov 21, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Lawrence Wholesale (Claim No. 10417, Amount $26,617.85) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 547,
+        "date_filed": "2025-11-21",
+        "time_filed": "11:57:20",
+        "date_display": "Nov 21, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Lawrence Wholesale (Claim No. 10415, Amount $20,007.58) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-21",
+        "time_filed": "",
+        "date_display": "Nov 21, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33145258, amount $ 28.00 (re: Doc# 550). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-21",
+        "time_filed": "12:13:08",
+        "date_display": "Nov 21, 2025",
+        "description": "none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-21",
+        "time_filed": "12:13:07",
+        "date_display": "Nov 21, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 546,
+        "date_filed": "2025-11-20",
+        "time_filed": "16:02:21",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Toufayan Bakery of Florida (Claim No. 10514, Amount $51,338.32) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 545,
+        "date_filed": "2025-11-20",
+        "time_filed": "14:44:50",
+        "date_display": "Nov 20, 2025",
+        "description": "Withdrawal of claim(s): No. 10758 by City Foods Inc. Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 544,
+        "date_filed": "2025-11-20",
+        "time_filed": "11:15:23",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: City Foods Inc. (Amount $96,281.30) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 543,
+        "date_filed": "2025-11-20",
+        "time_filed": "11:09:54",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: Beas Best Corned Beef (Amount $9,435.00) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 542,
+        "date_filed": "2025-11-20",
+        "time_filed": "11:07:23",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: City Foods Inc. (Claim No. 10759, Amount $87,491.00) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 541,
+        "date_filed": "2025-11-20",
+        "time_filed": "10:40:46",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Dutch Farms, Inc (Claim No. 10617, Amount $35,344.84) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 540,
+        "date_filed": "2025-11-20",
+        "time_filed": "10:37:28",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Dutch Farms, Inc (Claim No. 10614, Amount $3,637,407.14) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 539,
+        "date_filed": "2025-11-20",
+        "time_filed": "10:32:33",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Dutch Farms, Inc. (Claim No. 10615, Amount $244,053.33) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 538,
+        "date_filed": "2025-11-20",
+        "time_filed": "10:28:44",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Cofoods, Inc. (Claim No. 10082, Amount $121,000.00) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 537,
+        "date_filed": "2025-11-20",
+        "time_filed": "10:22:12",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: Reliable Transportation Solutions LLC (Amount $38,195.00) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 536,
+        "date_filed": "2025-11-20",
+        "time_filed": "10:20:16",
+        "date_display": "Nov 20, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: Reliable Transportation Solutions LLC (Amount $698,033.51) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-20",
+        "time_filed": "",
+        "date_display": "Nov 20, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33139152, amount $ 28.00 (re: Doc# 540). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-20",
+        "time_filed": "10:54:23",
+        "date_display": "Nov 20, 2025",
+        "description": "none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-20",
+        "time_filed": "11:21:44",
+        "date_display": "Nov 20, 2025",
+        "description": "none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-20",
+        "time_filed": "16:04:05",
+        "date_display": "Nov 20, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 535,
+        "date_filed": "2025-11-19",
+        "time_filed": "17:27:54",
+        "date_display": "Nov 19, 2025",
+        "description": "Withdrawal of claim(s): No. 307 by JT SITE SERVICES INC Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 534,
+        "date_filed": "2025-11-18",
+        "time_filed": "10:04:55",
+        "date_display": "Nov 18, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Rantoul Foods, LLC To Hain Capital Investors Master Fund, LTD. Filed by Creditor Hain Capital Group, LLC. (Austin, Keenan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 533,
+        "date_filed": "2025-11-18",
+        "time_filed": "10:02:48",
+        "date_display": "Nov 18, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: MegaCorp Logistics, LLC To Hain Capital Investors Master Fund, LTD. Filed by Creditor Hain Capital Group, LLC. (Austin, Keenan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 532,
+        "date_filed": "2025-11-18",
+        "time_filed": "09:56:47",
+        "date_display": "Nov 18, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: One Star Group INC To Hain Capital Investors Master Fund LTD. Filed by Creditor Hain Capital Group, LLC. (Austin, Keenan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-18",
+        "time_filed": "10:08:49",
+        "date_display": "Nov 18, 2025",
+        "description": "none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-18",
+        "time_filed": "10:08:50",
+        "date_display": "Nov 18, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-18",
+        "time_filed": "",
+        "date_display": "Nov 18, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33127247, amount $ 28.00 (re: Doc# 532). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 531,
+        "date_filed": "2025-11-13",
+        "time_filed": "11:34:14",
+        "date_display": "Nov 13, 2025",
+        "description": "Certificate of service re: Fee Apps by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)527 Notice (generic), 528 Notice (generic)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 530,
+        "date_filed": "2025-11-05",
+        "time_filed": "23:26:21",
+        "date_display": "Nov 5, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)525 Order granting motion to appear pro hac vice adding Norman M. Hobbie for Del Mar Holding LLC; Hamilton Meat, LLC; Harvest Meat Company, Inc.; Harvest Sherwood Food Distributors, Inc.; LAMCP Capital, LLC; SFD Company LLC; SFD Transportation Corp.; Sherwood Food Distributors, L.L.C.; Surfliner Holdings, Inc; Western Boxed Meats Distribution, Inc; Cascade Food Brokers, Inc. and Del Mar Acquisition Inc. (related document 519) Entered on 11/3/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 11/05/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 529,
+        "date_filed": "2025-11-05",
+        "time_filed": "23:26:21",
+        "date_display": "Nov 5, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)524 Order granting motion to appear pro hac vice adding Francesca E. Brody for Del Mar Holding LLC; Hamilton Meat, LLC; Harvest Meat Company, Inc.; Harvest Sherwood Food Distributors, Inc.; LAMCP Capital, LLC; SFD Company LLC; SFD Transportation Corp.; Sherwood Food Distributors, L.L.C.; Surfliner Holdings, Inc; Western Boxed Meats Distribution, Inc; Cascade Food Brokers, Inc. and Del Mar Acquisition Inc. (related document 518) Entered on 11/3/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 11/05/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 528,
+        "date_filed": "2025-11-04",
+        "time_filed": "14:04:13",
+        "date_display": "Nov 4, 2025",
+        "description": "Notice First Monthly Fee Statement of Meru, LLC for Allowance of Compensation and Reimbursement of Expenses for the Period from May 5, 2025 Through and Including September 30, 2025 filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)335 Order (I) Establishing Procedures for Interim Compensation and Reimbursement of Expenses for Retained Professionals and (II) Granting Related Relief (related document 137) Entered on 6/27/2025. (Okafor, M.)). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 527,
+        "date_filed": "2025-11-03",
+        "time_filed": "16:59:21",
+        "date_display": "Nov 3, 2025",
+        "description": "Notice Third Monthly Fee Statement of Sidley Austin LLP for Allowance of Compensation and Reimbursement of Expenses for the Period from September 1, 2025 Through and Including September 30, 2025 filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)335 Order (I) Establishing Procedures for Interim Compensation and Reimbursement of Expenses for Retained Professionals and (II) Granting Related Relief (related document 137) Entered on 6/27/2025. (Okafor, M.)). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 526,
+        "date_filed": "2025-11-03",
+        "time_filed": "16:41:12",
+        "date_display": "Nov 3, 2025",
+        "description": "Certificate of service re: Retention Orders by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)520 Order on application to employ, 521 Order on application to employ). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 525,
+        "date_filed": "2025-11-03",
+        "time_filed": "14:35:50",
+        "date_display": "Nov 3, 2025",
+        "description": "Order granting motion to appear pro hac vice adding Norman M. Hobbie for Del Mar Holding LLC; Hamilton Meat, LLC; Harvest Meat Company, Inc.; Harvest Sherwood Food Distributors, Inc.; LAMCP Capital, LLC; SFD Company LLC; SFD Transportation Corp.; Sherwood Food Distributors, L.L.C.; Surfliner Holdings, Inc; Western Boxed Meats Distribution, Inc; Cascade Food Brokers, Inc. and Del Mar Acquisition Inc. (related document # 519) Entered on 11/3/2025. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 524,
+        "date_filed": "2025-11-03",
+        "time_filed": "14:09:08",
+        "date_display": "Nov 3, 2025",
+        "description": "Order granting motion to appear pro hac vice adding Francesca E. Brody for Del Mar Holding LLC; Hamilton Meat, LLC; Harvest Meat Company, Inc.; Harvest Sherwood Food Distributors, Inc.; LAMCP Capital, LLC; SFD Company LLC; SFD Transportation Corp.; Sherwood Food Distributors, L.L.C.; Surfliner Holdings, Inc; Western Boxed Meats Distribution, Inc; Cascade Food Brokers, Inc. and Del Mar Acquisition Inc. (related document # 518) Entered on 11/3/2025. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 523,
+        "date_filed": "2025-10-30",
+        "time_filed": "21:47:14",
+        "date_display": "Oct 30, 2025",
+        "description": "Notice // Third Monthly Fee Statement for Compensation and Reimbursement of Expenses of Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors for the Period from August 1, 2025 through August 31, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 522,
+        "date_filed": "2025-10-30",
+        "time_filed": "21:39:32",
+        "date_display": "Oct 30, 2025",
+        "description": "Notice // Third Monthly Fee Statement of McDermott Will & Schulte LLP, as Counsel to the Official Committee of Unsecured Creditors, for Compensation for Services Rendered and Reimbursement of Expenses Incurred for the Period August 1, 2025 through August 31, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 521,
+        "date_filed": "2025-10-30",
+        "time_filed": "10:19:43",
+        "date_display": "Oct 30, 2025",
+        "description": "Order Authorizing the Retention and Employment of Meru, LLC as Financial Advisor to the Debtors, Effective as of the Petition Date (related document # 196) (Attachments: # 1 Exhibit 1 # 2 Exhibit 2) Entered on 10/30/2025. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 520,
+        "date_filed": "2025-10-30",
+        "time_filed": "10:12:29",
+        "date_display": "Oct 30, 2025",
+        "description": "Order (I) Authorizing (A) the Retention of Hilco Commercial Industrial, LLC and Hilco Receivables, LLC, to Provide Restructuring Management Services and (B) the Designation of Eric Kaup as Chief Restructuring Officer to the Debtors Effective as of the Petition Date, and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (related document # 195) Entered on 10/30/2025. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 519,
+        "date_filed": "2025-10-30",
+        "time_filed": "09:22:08",
+        "date_display": "Oct 30, 2025",
+        "description": "Motion to appear pro hac vice for Norman M. Hobbie. Fee Amount $100 Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 518,
+        "date_filed": "2025-10-30",
+        "time_filed": "09:19:40",
+        "date_display": "Oct 30, 2025",
+        "description": "Motion to appear pro hac vice for Francesca E. Brody. Fee Amount $100 Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-30",
+        "time_filed": "",
+        "date_display": "Oct 30, 2025",
+        "description": "Receipt of filing fee for Motion to Appear pro hac vice( 25-80109-sgj11) [motion,mprohac] ( 100.00). Receipt number A33064368, amount $ 100.00 (re: Doc# 519). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-30",
+        "time_filed": "09:57:33",
+        "date_display": "Oct 30, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 517,
+        "date_filed": "2025-10-29",
+        "time_filed": "13:42:48",
+        "date_display": "Oct 29, 2025",
+        "description": "Notice of Change of Law Firm filed by Interested Party 1970 Group, Inc.. (Smith, Frances)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 516,
+        "date_filed": "2025-10-28",
+        "time_filed": "08:37:16",
+        "date_display": "Oct 28, 2025",
+        "description": "Withdrawal of claim(s): No. 10280 by TN Dept of Revenue Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 515,
+        "date_filed": "2025-10-27",
+        "time_filed": "18:55:30",
+        "date_display": "Oct 27, 2025",
+        "description": "Certificate of service re: Supplemental Application by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)509 Application to employ Cadwalader, Wickersham & Taft LLP as Special Counsel ). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 514,
+        "date_filed": "2025-10-26",
+        "time_filed": "23:22:07",
+        "date_display": "Oct 26, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)513 Order granting motion for relief from stay by Creditor FORD MOTOR CREDIT COMPANY LLC (related document 497) Entered on 10/24/2025.) No. of Notices: 1. Notice Date 10/26/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 513,
+        "date_filed": "2025-10-24",
+        "time_filed": "13:42:01",
+        "date_display": "Oct 24, 2025",
+        "description": "Order granting motion for relief from stay by Creditor FORD MOTOR CREDIT COMPANY LLC (related document # 497) Entered on 10/24/2025. (Almaraz, Jeanette)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 512,
+        "date_filed": "2025-10-24",
+        "time_filed": "11:23:51",
+        "date_display": "Oct 24, 2025",
+        "description": "Certificate of Counsel Regarding Meru Retention Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 511,
+        "date_filed": "2025-10-24",
+        "time_filed": "11:21:44",
+        "date_display": "Oct 24, 2025",
+        "description": "Certificate of Counsel Regarding HILCO Retention Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 510,
+        "date_filed": "2025-10-23",
+        "time_filed": "16:01:08",
+        "date_display": "Oct 23, 2025",
+        "description": "Certificate of service re: Monthly Operating Report by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)507 Chapter 11 Monthly Operating Report UST Form 11-MOR). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 509,
+        "date_filed": "2025-10-21",
+        "time_filed": "21:47:18",
+        "date_display": "Oct 21, 2025",
+        "description": "Application to employ Cadwalader, Wickersham & Taft LLP as Special Counsel Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 508,
+        "date_filed": "2025-10-21",
+        "time_filed": "14:41:15",
+        "date_display": "Oct 21, 2025",
+        "description": "Certificate of no objection filed by Creditor FORD MOTOR CREDIT COMPANY LLC (RE: related document(s)497 Motion for relief from stay 2024 Ford F-150 VIN 1FTEW1LP7RKF14190 Fee amount $199,). (Johnson, Kelli)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-21",
+        "time_filed": "14:45:38",
+        "date_display": "Oct 21, 2025",
+        "description": "Notice of Announcement Regarding Lift Stay Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-21",
+        "time_filed": "",
+        "date_display": "Oct 21, 2025",
+        "description": "Announcement of DEFAULT ORDER regarding hearing scheduled for 10/30/2025. No response filed. Movant to upload default order per Kelli Lavas Johnson, filed by Creditor FORD MOTOR CREDIT COMPANY LLC (RE: related document(s)497 Motion for relief from stay 2024 Ford F-150 VIN 1FTEW1LP7RKF14190 Fee amount $199, Filed by Creditor FORD MOTOR CREDIT COMPANY LLC Objections due by 10/15/2025. (Attachments: # 1 Affidavit # 2 Supplement # 3 Proposed Order)). (Johnson, Kelli)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 507,
+        "date_filed": "2025-10-20",
+        "time_filed": "12:27:31",
+        "date_display": "Oct 20, 2025",
+        "description": "Chapter 11 Monthly Operating Report for the Month Ending: 09/30/2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 506,
+        "date_filed": "2025-10-13",
+        "time_filed": "17:16:41",
+        "date_display": "Oct 13, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)423 Order granting motion for relief from stay by Interested Party BMO Bank N.A. (related document 369) Entered on 7/28/2025.) No. of Notices: 1. Notice Date 07/30/2025. (Admin.) (Filed: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 505,
+        "date_filed": "2025-10-11",
+        "time_filed": "18:34:36",
+        "date_display": "Oct 11, 2025",
+        "description": "Notice // Second Monthly Fee Statement for Compensation and Reimbursement of Expenses of Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors for the Period from July 1, 2025 through July 31, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 504,
+        "date_filed": "2025-10-11",
+        "time_filed": "18:31:05",
+        "date_display": "Oct 11, 2025",
+        "description": "Notice // Second Monthly Fee Statement of McDermott Will & Schulte LLP, as Counsel to the Official Committee of Unsecured Creditors, for Compensation for Services Rendered and Reimbursement of Expenses Incurred for the Period July 1, 2025 through July 31, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 503,
+        "date_filed": "2025-10-10",
+        "time_filed": "16:55:06",
+        "date_display": "Oct 10, 2025",
+        "description": "Withdrawal of claim(s): No. 10393 by HOJ Innovations, LLC Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 502,
+        "date_filed": "2025-10-10",
+        "time_filed": "13:12:49",
+        "date_display": "Oct 10, 2025",
+        "description": "Motion to withdraw as attorney (Elizabeth H. Lawrence) Filed by Interested Party BMO Bank N.A. (Attachments: # 1 Proposed Order) (Lawrence, Elizabeth)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 501,
+        "date_filed": "2025-10-10",
+        "time_filed": "10:17:00",
+        "date_display": "Oct 10, 2025",
+        "description": "Certificate of service re: Canc Hrg by Panagiota Manatakis filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)491 Notice (generic)). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 500,
+        "date_filed": "2025-10-03",
+        "time_filed": "13:09:23",
+        "date_display": "Oct 3, 2025",
+        "description": "Certificate of service re: Second Monthly Fee Statement by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)494 Notice (generic)). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 499,
+        "date_filed": "2025-10-02",
+        "time_filed": "12:51:33",
+        "date_display": "Oct 2, 2025",
+        "description": "Stipulation and Order Granting Premier Foods Inc.'s Motion for Relief From Stay (RE: related document(s)467 Stipulation filed by Creditor PREMIER FOODS INC.). Entered on 10/2/2025 (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 498,
+        "date_filed": "2025-10-01",
+        "time_filed": "17:51:52",
+        "date_display": "Oct 1, 2025",
+        "description": "Notice of hearing filed by Creditor FORD MOTOR CREDIT COMPANY LLC (RE: related document(s)497 Motion for relief from stay 2024 Ford F-150 VIN 1FTEW1LP7RKF14190 Fee amount $199, Filed by Creditor FORD MOTOR CREDIT COMPANY LLC Objections due by 10/15/2025. (Attachments: # 1 Affidavit # 2 Supplement # 3 Proposed Order)). Preliminary hearing to be held on 10/30/2025 at 01:30 PM at https://us-courts.webex.com/meet/jerniga. (Johnson, Kelli)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 497,
+        "date_filed": "2025-10-01",
+        "time_filed": "17:49:53",
+        "date_display": "Oct 1, 2025",
+        "description": "Motion for relief from stay 2024 Ford F-150 VIN 1FTEW1LP7RKF14190 Fee amount $199, Filed by Creditor FORD MOTOR CREDIT COMPANY LLC Objections due by 10/15/2025. (Attachments: # 1 Affidavit # 2 Supplement # 3 Proposed Order) (Johnson, Kelli)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 496,
+        "date_filed": "2025-10-01",
+        "time_filed": "14:55:57",
+        "date_display": "Oct 1, 2025",
+        "description": "***INCORRECT ENTRY***Stipulation by PREMIER FOODS INC. and Harvest Sherwood Food Distributors, Inc. filed by Creditor PREMIER FOODS INC. (RE: related document(s)1 Voluntary petition (chapter 11), 467 Stipulation). (Kennedy, Iain) Modified TEXT on 10/1/2025 (hsj).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txnb.527729/gov.uscourts.txnb.527729.496.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-01",
+        "time_filed": "17:53:48",
+        "date_display": "Oct 1, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-01",
+        "time_filed": "",
+        "date_display": "Oct 1, 2025",
+        "description": "Receipt of filing fee for Motion for relief from stay( 25-80109-sgj11) [motion,mrlfsty] ( 199.00). Receipt number A32967966, amount $ 199.00 (re: Doc# 497). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 495,
+        "date_filed": "2025-09-30",
+        "time_filed": "17:23:06",
+        "date_display": "Sep 30, 2025",
+        "description": "Certificate of service re: Order Extending by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)490 Order on motion to extend/shorten time). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 494,
+        "date_filed": "2025-09-30",
+        "time_filed": "16:21:12",
+        "date_display": "Sep 30, 2025",
+        "description": "Notice Second Monthly Fee Statement of Sidley Austin LLP for Allowance of Compensation and Reimbursement of Expenses for the Period from August 1, 2025 through and including August 31, 2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 493,
+        "date_filed": "2025-09-26",
+        "time_filed": "15:51:09",
+        "date_display": "Sep 26, 2025",
+        "description": "Complex Service List filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)68 Order granting complex chapter 11 treatment). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 492,
+        "date_filed": "2025-09-26",
+        "time_filed": "15:40:22",
+        "date_display": "Sep 26, 2025",
+        "description": "Certificate of service re: Monthly Report, Notice of Hearing, Order by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)486 Chapter 11 Monthly Operating Report UST Form 11-MOR, 487 Notice of hearing, 488 Order on motion to compromise controversy). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 491,
+        "date_filed": "2025-09-26",
+        "time_filed": "09:33:00",
+        "date_display": "Sep 26, 2025",
+        "description": "Notice of Cancellation of Hearing Scheduled for October 2, 2025 at 9:30 A.M. (Prevailing Central Time) filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)455 Motion to extend or limit the exclusivity period Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 9/16/2025. (Attachments: # 1 Exhibit A - Proposed Order), 487 Notice of hearing for October 2, 2025 Setting filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)445 Declaration re: Eric Kaup in Support of the Debtors Pilgrims 9019 Motion filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)444 Motion to compromise controversy with Debtors Motion Seeking Entry of an Order (A) Approving A Settlement Agreement with Pilgrims Pride Corporation Pursuant to Federal Rule of Bankruptcy Procedure 9019 and (B) Granting Related Relief. )., 455 Motion to extend or limit the exclusivity period Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 9/16/2025. (Attachments: # 1 Exhibit A - Proposed Order)). Hearing to be held on 10/2/2025 at 09:30 AM Dallas Judge Jernigan Ctrm for 455 and for 445,). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 490,
+        "date_filed": "2025-09-25",
+        "time_filed": "17:12:45",
+        "date_display": "Sep 25, 2025",
+        "description": "Order Extending Debtors' Exclusivity Periods to File a Chapter 11 Plan and Solicit Acceptances Thereof (re: 455 Motion to extend or limit the exclusivity period.) The Exclusive Filing Period to file a chapter 11 plan is extended to December 1, 2025. The Exclusive Solicitation Period to solicit acceptance of a chapter 11 plan is extended to January 30, 2026. Entered on 9/25/2025. (Okafor, M.) MODIFIED text on 9/25/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=37"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=43"
   },
   "claims_administrator": {
     "name": "Epiq11",
