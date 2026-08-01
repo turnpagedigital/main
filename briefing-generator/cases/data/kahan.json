@@ -15,9 +15,9 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-08-01T06:46:05.642399+00:00",
+    "fetched_at": "2026-08-01T09:26:32.709871+00:00",
     "as_of": "Aug 1, 2026",
-    "backfilled": false,
+    "backfilled": true,
     "new_in_72h": 1,
     "recent": [
       {
@@ -3534,9 +3534,218 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-13",
+        "time_filed": "",
+        "date_display": "Aug 13, 2024",
+        "description": "Trustee's Request for Bar Date",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-12",
+        "time_filed": "",
+        "date_display": "Aug 12, 2024",
+        "description": "Telephonic Meeting Information for Section 341 Meeting of Creditors: Dial-in Number: 877-775-2015 Participant Code: 6246289#. For International Call Information Please Contact the Trustee. . (Desmond, John)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-12",
+        "time_filed": "",
+        "date_display": "Aug 12, 2024",
+        "description": "Statement of Dial-In Information",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2024-08-10",
+        "time_filed": "",
+        "date_display": "Aug 10, 2024",
+        "description": "BNC Certificate of Mailing - Notice (Re: 9 Clerk's Evidence of Repeat Filings) Notice Date 08/10/2024. (Admin.) (Entered: 08/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2024-08-10",
+        "time_filed": "",
+        "date_display": "Aug 10, 2024",
+        "description": "BNC Certificate of Mailing - PDF Document. (Re: 11 Order on Motion to Extend) Notice Date 08/10/2024. (Admin.) (Entered: 08/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2024-08-09",
+        "time_filed": "",
+        "date_display": "Aug 9, 2024",
+        "description": "BNC Certificate of Mailing. (Re: 6 Order to Update) Notice Date 08/09/2024. (Admin.) (Entered: 08/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2024-08-09",
+        "time_filed": "",
+        "date_display": "Aug 9, 2024",
+        "description": "BNC Certificate of Mailing - Meeting of Creditors. (Re: 5 Meeting (Chapter 7)) Notice Date 08/09/2024. (Admin.) (Entered: 08/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2024-08-08",
+        "time_filed": "15:09:58",
+        "date_display": "Aug 8, 2024",
+        "description": "Order dated 8/8/2024 Re: 10 Motion filed by Debtor Jason M Kahan to Extend Time to File Documents 6 Order to Update] GRANTED. THE DEADLINE IS EXTENDED TO AND INCLUDING AUGUST 27, 2024.IF THE DEBTOR FAILS TO TIMELY FILE THE DOCUMENTS, THE CASE MAY BE DISMISSED WITHOUT FURTHER NOTICE.(skeating, usbc) (Entered: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2024-08-08",
+        "time_filed": "07:29:27",
+        "date_display": "Aug 8, 2024",
+        "description": "Motion filed by Debtor Jason M Kahan to Extend Time to File Documents [Re: 6 Order to Update] with certificate of service. (Levine, Barry) (Entered: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2024-08-08",
+        "time_filed": "",
+        "date_display": "Aug 8, 2024",
+        "description": "Notice is given that it appears from the records of the court that the debtor(s) has/have filed a bankruptcy case previously. Please note that 11 U.S.C. Section 362(c)(3) and/or (4) as well as Local Rule 4001-1(d)(2) may be applicable. Previous case: MA Chapter 13 Case No. 23-11830(jeb) filed 11/07/2023 by Kahan, Jason( ) (ADI) (Entered: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2024-08-08",
+        "time_filed": "",
+        "date_display": "Aug 8, 2024",
+        "description": "Certificate of Appointment and Acceptance of Trustee and Fixing of Bond. (ADI) (Entered: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2024-08-07",
+        "time_filed": "12:41:04",
+        "date_display": "Aug 7, 2024",
+        "description": "Notice of Appearance and Request for Notice by Robert F. Tenney with certificate of service filed by Creditor Enterprise Bank and Trust Company (Tenney, Robert) (Entered: 08/07/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2024-08-07",
+        "time_filed": "12:14:20",
+        "date_display": "Aug 7, 2024",
+        "description": "Order to Update (Re:1 Chapter 7 Voluntary Petition). Statement of Intent due 9/6/2024. Atty Disclosure Statement, Schedules A/B-J, Statement of Financial Affairs, Summary of Assets and Liabilities and Chapter 7 Statement of Your Current Monthly Income Form 122A-1 Due: 8/21/2024 Incomplete Filings due by 8/21/2024. (skeating, usbc) (Entered: 08/07/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2024-08-07",
+        "time_filed": "",
+        "date_display": "Aug 7, 2024",
+        "description": "Meeting of Creditors scheduled on 9/3/2024 at 11:30 AM as a Telephonic Meeting. Deadline to object to debtor`s discharge or challenge dischargeability of certain debts is 11/4/2024. (Scheduled Automatic Assignment, shared account) (Entered: 08/07/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2024-08-07",
+        "time_filed": "09:56:37",
+        "date_display": "Aug 7, 2024",
+        "description": "Declaration Re: Electronic Filing filed by Debtor Jason M Kahan (Levine, Barry) (Entered: 08/07/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2024-08-07",
+        "time_filed": "09:55:51",
+        "date_display": "Aug 7, 2024",
+        "description": "Certificate of Credit Counseling filed by Debtor Jason M Kahan (Levine, Barry) (Entered: 08/07/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2024-08-07",
+        "time_filed": "",
+        "date_display": "Aug 7, 2024",
+        "description": "Statement of Social Security Number(s) filed by Debtor Jason M Kahan (Levine, Barry) (Entered: 08/07/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2024-08-07",
+        "time_filed": "09:54:11",
+        "date_display": "Aug 7, 2024",
+        "description": "Chapter 7 Voluntary Petition for Individuals Filing Fee in the Amount of $338 Filed by Jason M Kahan. (Levine, Barry) (Entered: 08/07/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.1.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-07",
+        "time_filed": "",
+        "date_display": "Aug 7, 2024",
+        "description": "Receipt of filing fee for Voluntary Petition (Chapter 7)( 24-11592) [misc,volp7] ( 338.00). Receipt Number A20591327, amount $ 338.00 (re: Doc# 1) (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-07",
+        "time_filed": "09:55:06",
+        "date_display": "Aug 7, 2024",
+        "description": "Statement of Social Security Number",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-07",
+        "time_filed": "",
+        "date_display": "Aug 7, 2024",
+        "description": "Internet Payment Made",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69021491&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=19"
+    ]
   },
   "claims_administrator": null,
   "coverage": [],
