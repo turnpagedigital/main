@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-08-01-bankruptcy-advisory",
+      "date": "2026-08-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — August 1, 2026",
+      "summary": "A quiet Saturday on the dockets. No verified mega-case filings landed in the last 24 hours. The RNDC case — covered in depth yesterday — logged no material new filings overnight.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-01-class-actions-advisory",
+      "date": "2026-08-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — August 1, 2026",
+      "summary": "Two developments broke in the last 48 hours worth tracking. The Second Circuit issued its opinion in the phenylephrine MDL on July 30, delivering a partial revival that narrows — but does not extinguish — consumer claims against CVS, Walgreens, Target, Procter & Gamble, and Walmart.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-01-fraud-advisory",
+      "date": "2026-08-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — August 1, 2026",
+      "summary": "Both tracked dockets closed the week without 24-hour movement. The last activity in In re Goliath Ventures, Inc., No. 26-13174-RAM (Bankr. S.D. Fla.), before Judge Robert A.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-01-tariff-advisory",
+      "date": "2026-08-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — August 1, 2026",
+      "summary": "The dominant development this week is the completion of the IEEPA-to-Section-301 handoff: the new Section 301 forced-labor duties took effect at 12:01 a.m.",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-01-crypto-advisory",
+      "date": "2026-08-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — August 1, 2026",
+      "summary": "One trackable development landed in the last 24 hours: BlockFills/Reliz filed a routine post-confirmation procedural document (Dkt. 552, July 30) that signals the case is in the quiet early stages of its effective-date/distribution wind-down.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-01-advisory",
+      "date": "2026-08-01",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — August 1, 2026",
+      "summary": "No new docket entries materialized on either key-focus matter in the last 24 hours. The desk carries two consequential developments forward from the past two weeks — both warrant tracking into the distribution and trial phases respectively — and flags a significant secondary filing from the parallel…",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-07-31-bankruptcy-advisory",
       "date": "2026-07-31",
       "type": "briefing",
