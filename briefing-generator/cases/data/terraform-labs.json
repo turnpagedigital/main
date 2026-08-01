@@ -15,9 +15,9 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-08-01T19:38:59.741246+00:00",
+    "fetched_at": "2026-08-01T21:13:42.834194+00:00",
     "as_of": "Aug 1, 2026",
-    "backfilled": false,
+    "backfilled": true,
     "new_in_72h": 4,
     "recent": [
       {
@@ -12673,6 +12673,16 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.85.0.pdf"
       },
       {
+        "entry_number": 84,
+        "date_filed": "2024-02-27",
+        "time_filed": "12:39:06",
+        "date_display": "Feb 27, 2024",
+        "description": "Amended HEARING CANCELLED. Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 2/28/2024 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Milana, Matthew) (Entered: 02/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.84.0.pdf"
+      },
+      {
         "entry_number": 83,
         "date_filed": "2024-02-27",
         "time_filed": "11:55:51",
@@ -12681,9 +12691,928 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.83.0.pdf"
+      },
+      {
+        "entry_number": 82,
+        "date_filed": "2024-02-26",
+        "time_filed": "16:07:07",
+        "date_display": "Feb 26, 2024",
+        "description": "Certification of Counsel Regarding Revised Proposed Order Pursuant to Bankruptcy Code Section 363 Authorizing Debtor to Pay (I) Wintermute Costs and (II) Granting Related Relief (related document(s)61, 63) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit 1 # 2 Exhibit 2) (Milana, Matthew) (Entered: 02/26/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.82.0.pdf"
+      },
+      {
+        "entry_number": 81,
+        "date_filed": "2024-02-26",
+        "time_filed": "12:58:57",
+        "date_display": "Feb 26, 2024",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 2/28/2024 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Milana, Matthew) (Entered: 02/26/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.81.0.pdf"
+      },
+      {
+        "entry_number": 80,
+        "date_filed": "2024-02-26",
+        "time_filed": "09:11:44",
+        "date_display": "Feb 26, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Motion for Order Establishing Procedures for Interim Compensation and Reimbursement of Expenses of Professionals Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/27/2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)69) (Garabato, Sid) (Entered: 02/26/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.80.0.pdf"
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2024-02-23",
+        "time_filed": "13:58:08",
+        "date_display": "Feb 23, 2024",
+        "description": "Order Scheduling Omnibus Hearings. Omnibus Hearings scheduled for 4/18/2024 at 10:00 AM US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Signed on 2/23/2024. (JMW) (Entered: 02/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.79.0.pdf"
+      },
+      {
+        "entry_number": 78,
+        "date_filed": "2024-02-23",
+        "time_filed": "13:57:03",
+        "date_display": "Feb 23, 2024",
+        "description": "Order Approving Motion to Shorten Notice and Objection Periods with Respect to the Motion of Debtor for Entry of an Order Authorizing Terraform Labs Pte. Ltd. to Act on Behalf of Debtor's Estate (Related Doc # 76, 77) Order Signed on 2/23/2024. (JMW) (Entered: 02/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.78.0.pdf"
+      },
+      {
+        "entry_number": 77,
+        "date_filed": "2024-02-22",
+        "time_filed": "22:24:27",
+        "date_display": "Feb 22, 2024",
+        "description": "Motion to Shorten // Motion of Debtor to Shorten Notice and Objection Periods with Respect to the Motion of Debtor for Entry of an Order Authorizing Terraform Labs Pte. Ltd. to Act on Behalf of Debtor's Estate Pursuant to 11 U.S.C. § 1505 (related document(s)76) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 02/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.77.0.pdf"
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2024-02-22",
+        "time_filed": "22:16:45",
+        "date_display": "Feb 22, 2024",
+        "description": "Motion to Authorize // Motion of Debtor for Entry of an Order Authorizing Terraform Labs Pte. Ltd. to Act on Behalf of Debtor's Estate Pursuant to 11 U.S.C. § 1505 Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 3/1/2024. (Attachments: # 1 Notice # 2 Exhibit A) (Milana, Matthew) (Entered: 02/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.76.0.pdf"
+      },
+      {
+        "entry_number": 75,
+        "date_filed": "2024-02-22",
+        "time_filed": "09:44:55",
+        "date_display": "Feb 22, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Order Approving Motion of Debtor to Shorten Notice and Objections Periods Solely with Respect to the Wintermute Order Sought in Motion of Debtor for Entry of Orders Pursuant to Sections 363, 503(b), and 105(a) of the Bankruptcy Code Authorizing Debtor to Pay Certain Amounts in Furtherance of Litigation and Granting Related Relief. Filed by Epiq Corporate Restructuring, LLC. (related document(s)63) (Garabato, Sid) (Entered: 02/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.75.0.pdf"
+      },
+      {
+        "entry_number": 74,
+        "date_filed": "2024-02-22",
+        "time_filed": "09:35:48",
+        "date_display": "Feb 22, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Motion of Debtor for Entry of Orders Pursuant to Sections 363, 503(b), and 105(a) of the Bankruptcy Code Authorizing Debtor to Pay Certain Amounts in Furtherance of Litigation and Granting Related Relief; Motion of Debtor to Shorten Notice and Objections Periods Solely with Respect to the Wintermute Order Sought in Motion of Debtor for Entry of Orders Pursuant to Sections 363, 503(b), and 105(a) of the Bankruptcy Code Authorizing Debtor to Pay Certain Amounts in Furtherance of Litigation and Granting Related Relief. Filed by Epiq Corporate Restructuring, LLC. (related document(s)61, 62) (Garabato, Sid) (Entered: 02/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.74.0.pdf"
+      },
+      {
+        "entry_number": 73,
+        "date_filed": "2024-02-21",
+        "time_filed": "14:32:25",
+        "date_display": "Feb 21, 2024",
+        "description": "Notice of Appearance. Filed by Three Arrows Fund, Ltd (in Liquidation). (McDonald, Hugh) (Entered: 02/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.73.0.pdf"
+      },
+      {
+        "entry_number": 72,
+        "date_filed": "2024-02-21",
+        "time_filed": "14:28:23",
+        "date_display": "Feb 21, 2024",
+        "description": "Notice of Appearance. Filed by Three Arrows Fund, Ltd (in Liquidation). (Fitzmaurice, Patrick) (Entered: 02/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.72.0.pdf"
+      },
+      {
+        "entry_number": 71,
+        "date_filed": "2024-02-21",
+        "time_filed": "14:24:43",
+        "date_display": "Feb 21, 2024",
+        "description": "Notice of Appearance. Filed by Three Arrows Fund, Ltd (in Liquidation). (Lyman, Alana) (Entered: 02/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.71.0.pdf"
+      },
+      {
+        "entry_number": 70,
+        "date_filed": "2024-02-21",
+        "time_filed": "14:19:27",
+        "date_display": "Feb 21, 2024",
+        "description": "Notice of Appearance. Filed by Three Arrows Fund, Ltd (in Liquidation). (Pintarelli, John) (Entered: 02/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.70.0.pdf"
+      },
+      {
+        "entry_number": 69,
+        "date_filed": "2024-02-20",
+        "time_filed": "21:29:14",
+        "date_display": "Feb 20, 2024",
+        "description": "Motion for Order Establishing Procedures for Interim Compensation and Reimbursement of Expenses of Professionals Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/27/2024. (Attachments: # 1 Notice # 2 Exhibit A) (Milana, Matthew) (Entered: 02/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.69.0.pdf"
+      },
+      {
+        "entry_number": 68,
+        "date_filed": "2024-02-20",
+        "time_filed": "11:24:11",
+        "date_display": "Feb 20, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Meeting of Creditors/Commencement of Case Filed by Terraform Labs Pte. Ltd.. 341(a) meeting to be held on 2/28/2024 at 12:00 PM at J. Caleb Boggs Federal Building, 844 King St., Room 6118, Wilmington, Delaware. Objection 523 due by 4/29/2024. Filed by Epiq Corporate Restructuring, LLC. (related document(s)47) (Garabato, Sid) (Entered: 02/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.68.0.pdf"
+      },
+      {
+        "entry_number": 67,
+        "date_filed": "2024-02-19",
+        "time_filed": "17:41:00",
+        "date_display": "Feb 19, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Application/Motion to Employ/Retain Richards, Layton & Finger, P.A. as Co-Counsel to the Debtor Effective as of Petition Date; Application/Motion to Employ/Retain Weil, Gotshal & Manges LLP as Attorneys for Debtor Effective as of Petition Date; Application/Motion to Employ/Retain Alvarez & Marsal North America, LLC as Financial Advisor to the Debtor Effective as of the Petition Date; Application/Motion to Employ/Retain Epiq Corporate Restructuring, LLC as Administrative Advisor Effective as of Petition Date; Application/Motion to Employ/Retain Dentons US LLP as Special Counsel to the Debtor and Debtor in Possession Effective as of the Petition Date. Filed by Epiq Corporate Restructuring, LLC. (related document(s)55, 57, 58, 59, 60) (Garabato, Sid) (Entered: 02/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.67.0.pdf"
+      },
+      {
+        "entry_number": 66,
+        "date_filed": "2024-02-16",
+        "time_filed": "16:25:50",
+        "date_display": "Feb 16, 2024",
+        "description": "Certification of Counsel Regarding Scheduling of Omnibus Hearing Date Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 02/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.66.0.pdf"
+      },
+      {
+        "entry_number": 65,
+        "date_filed": "2024-02-15",
+        "time_filed": "16:59:03",
+        "date_display": "Feb 15, 2024",
+        "description": "Notice of Service of First Request for Production of Documents (related document(s)21) Filed by US Securities and Exchange Commission. (Scheuer, Therese) (Entered: 02/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.65.0.pdf"
+      },
+      {
+        "entry_number": 64,
+        "date_filed": "2024-02-15",
+        "time_filed": "11:12:59",
+        "date_display": "Feb 15, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Erratum Regarding Declaration of Chris Amani in Support of the Debtor's Chapter 11 Petition and First Day Relief. Filed by Epiq Corporate Restructuring, LLC. (related document(s)49) (Garabato, Sid) (Entered: 02/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.64.0.pdf"
+      },
+      {
+        "entry_number": 63,
+        "date_filed": "2024-02-15",
+        "time_filed": "10:15:19",
+        "date_display": "Feb 15, 2024",
+        "description": "Order Approving Motion of Debtor to Shorten Notice and Objections Periods Solely with Respect to the Wintermute Order Sought in Motion of Debtor for Entry of Orders Pursuant to Sections 363, 503(b), and 105(a) of the Bankruptcy Code Authorizing Debtor to Pay Certain Amounts in Furtherance of Litigation and Granting Related Relief (Related Doc # 61, 62) Order Signed on 2/15/2024. (JMW) (Entered: 02/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.63.0.pdf"
+      },
+      {
+        "entry_number": 62,
+        "date_filed": "2024-02-14",
+        "time_filed": "00:27:19",
+        "date_display": "Feb 14, 2024",
+        "description": "Motion to Shorten // Motion of Debtor to Shorten Notice and Objections Periods Solely with Respect to the Wintermute Order Sought in Motion of Debtor for Entry of Orders Pursuant to Sections 363, 503(b), and 105(a) of the Bankruptcy Code Authorizing Debtor to Pay Certain Amounts in Furtherance of Litigation and Granting Related Relief (related document(s)61) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 02/14/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.62.0.pdf"
+      },
+      {
+        "entry_number": 61,
+        "date_filed": "2024-02-14",
+        "time_filed": "00:22:18",
+        "date_display": "Feb 14, 2024",
+        "description": "Motion to Authorize // Motion of Debtor for Entry of Orders Pursuant to Sections 363, 503(b), and 105(a) of the Bankruptcy Code Authorizing Debtor to Pay Certain Amounts in Furtherance of Litigation and Granting Related Relief Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 2/28/2024 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/23/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C) (Milana, Matthew) (Entered: 02/14/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.61.0.pdf"
+      },
+      {
+        "entry_number": 60,
+        "date_filed": "2024-02-13",
+        "time_filed": "23:43:35",
+        "date_display": "Feb 13, 2024",
+        "description": "Application/Motion to Employ/Retain Dentons US LLP as Special Counsel to the Debtor and Debtor in Possession Effective as of the Petition Date Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/27/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C # 5 Exhibit D # 6 Exhibit E) (Milana, Matthew) (Entered: 02/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.60.0.pdf"
+      },
+      {
+        "entry_number": 59,
+        "date_filed": "2024-02-13",
+        "time_filed": "23:33:26",
+        "date_display": "Feb 13, 2024",
+        "description": "Application/Motion to Employ/Retain Epiq Corporate Restructuring, LLC as Administrative Advisor Effective as of Petition Date Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/27/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C) (Milana, Matthew) (Entered: 02/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.59.0.pdf"
+      },
+      {
+        "entry_number": 58,
+        "date_filed": "2024-02-13",
+        "time_filed": "23:12:15",
+        "date_display": "Feb 13, 2024",
+        "description": "Application/Motion to Employ/Retain Alvarez & Marsal North America, LLC as Financial Advisor to the Debtor Effective as of the Petition Date Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/27/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C) (Milana, Matthew) (Entered: 02/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.58.0.pdf"
+      },
+      {
+        "entry_number": 57,
+        "date_filed": "2024-02-13",
+        "time_filed": "22:30:49",
+        "date_display": "Feb 13, 2024",
+        "description": "Application/Motion to Employ/Retain Weil, Gotshal & Manges LLP as Attorneys for Debtor Effective as of Petition Date Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/27/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C) (Milana, Matthew) (Entered: 02/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.57.0.pdf"
+      },
+      {
+        "entry_number": 56,
+        "date_filed": "2024-02-13",
+        "time_filed": "21:40:12",
+        "date_display": "Feb 13, 2024",
+        "description": "Exhibit(s) // Notice of Filing of Second Amended List of Creditors Holding Largest Unsecured Claims (related document(s)1, 50) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 02/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.56.0.pdf"
+      },
+      {
+        "entry_number": 55,
+        "date_filed": "2024-02-13",
+        "time_filed": "21:33:47",
+        "date_display": "Feb 13, 2024",
+        "description": "Application/Motion to Employ/Retain Richards, Layton & Finger, P.A. as Co-Counsel to the Debtor Effective as of Petition Date Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/27/2024. (Attachments: # 1 Notice # 2 Exhibit A # 3 Exhibit B # 4 Exhibit C) (Shapiro, Zachary) (Entered: 02/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.55.0.pdf"
+      },
+      {
+        "entry_number": 54,
+        "date_filed": "2024-02-13",
+        "time_filed": "12:21:19",
+        "date_display": "Feb 13, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Meeting of Creditors/Commencement of Case Filed by Terraform Labs Pte. Ltd.. 341(a) meeting to be held on 2/28/2024 at 12:00 PM at J. Caleb Boggs Federal Building, 844 King St., Room 6118, Wilmington, Delaware. Objection 523 due by 4/29/2024; Notice of Rescheduled Hearing (Notice of Rescheduled Omnibus Hearing) Hearing Originally Scheduled for 3/4/2024 at 2:30 p.m. has been rescheduled. Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Filed by Epiq Corporate Restructuring, LLC. (related document(s)47, 48) (Garabato, Sid) (Entered: 02/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.54.0.pdf"
+      },
+      {
+        "entry_number": 53,
+        "date_filed": "2024-02-12",
+        "time_filed": "13:21:48",
+        "date_display": "Feb 12, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Motion to Extend Deadline to File Schedules or Provide Required Information. Filed by Epiq Corporate Restructuring, LLC. (related document(s)45) (Garabato, Sid) (Entered: 02/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.53.0.pdf"
+      },
+      {
+        "entry_number": 52,
+        "date_filed": "2024-02-08",
+        "time_filed": "17:21:43",
+        "date_display": "Feb 8, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Motion of Debtor for Entry of Order (I) Authorizing the Debtor to File Under Seal (A) Portions of the Creditor Matrix and (B) the Personal Information in Other and Future Filings, and (II) Granting Related Relief; Application to Appoint Claims/Noticing Agent EPIQ CORPORATE RESTRUCTURING, LLC; Declaration of Chris Amani in Support of the Debtor's Chapter 11 Petition and First Day Relief; Declaration of Michael Leto in Support of the Debtor's First Day Motions; Order (I) Authorizing the Debtor to File Under Seal (A) Portions of the Creditor Matrix and (B) the Personal Information in Other and Future Filings, and (II) Granting Related Relief; Order Approving Application Appointing EPIQ CORPORATE RESTRUCTURING, LLC as Claims and Noticing Agent for the Debtors; Certification of Counsel Regarding Revised Interim Order (I) Authorizing Debtor to Use Treasury Management System, (II) Authorizing Continuation of Intracompany and Intercompany Transactions, (III) Extending Time to Comply with Requirements of 11 U.S.C. § 345(b), and (IV) Granting Related Relief; Notice of (A) Entry of Interim Order (I) Authorizing Debtor to (A) Pay Prepetition Workforce Obligations and (B) Maintain Employee Benefit Programs, and (II) Granting Related Relief; and (B) Final Hearing Thereon; Notice of (A) Entry of Interim Order (I) Authorizing Debtor to Use Treasury Management System, (II) Authorizing Continuation of Intracompany and Intercompany Transactions, (III) Extending Time to Comply with Requirements of 11 U.S.C. § 345(b), and (IV) Granting Related Relief; and (B) Final Hearing Thereon. Filed by Epiq Corporate Restructuring, LLC. (related document(s)11, 17, 18, 22, 33, 34, 38, 39, 41) (Garabato, Sid) (Entered: 02/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.52.0.pdf"
+      },
+      {
+        "entry_number": 51,
+        "date_filed": "2024-02-07",
+        "time_filed": "",
+        "date_display": "Feb 7, 2024",
+        "description": "BNC Certificate of Mailing. (related document(s)44) Notice Date 02/07/2024. (Admin.) (Entered: 02/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.51.0.pdf"
+      },
+      {
+        "entry_number": 50,
+        "date_filed": "2024-02-07",
+        "time_filed": "09:54:42",
+        "date_display": "Feb 7, 2024",
+        "description": "Exhibit(s) // Notice of Filing of Amended List of Creditors Holding Largest Unsecured Claims (related document(s)1) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit A) (Milana, Matthew) (Entered: 02/07/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.50.0.pdf"
+      },
+      {
+        "entry_number": 49,
+        "date_filed": "2024-02-07",
+        "time_filed": "09:47:11",
+        "date_display": "Feb 7, 2024",
+        "description": "Exhibit(s) // Notice of Erratum Regarding Declaration of Chris Amani in Support of the Debtor's Chapter 11 Petition and First Day Relief (related document(s)18) Filed by Terraform Labs Pte. Ltd.. (Milana, Matthew) (Entered: 02/07/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.49.0.pdf"
+      },
+      {
+        "entry_number": 48,
+        "date_filed": "2024-02-06",
+        "time_filed": "18:30:04",
+        "date_display": "Feb 6, 2024",
+        "description": "Notice of Rescheduled Hearing (Notice of Rescheduled Omnibus Hearing) Hearing Originally Scheduled for 3/4/2024 at 2:30 p.m. has been rescheduled. Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/5/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Milana, Matthew) (Entered: 02/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.48.0.pdf"
+      },
+      {
+        "entry_number": 47,
+        "date_filed": "2024-02-06",
+        "time_filed": "14:06:23",
+        "date_display": "Feb 6, 2024",
+        "description": "Notice of Meeting of Creditors/Commencement of Case Filed by Terraform Labs Pte. Ltd.. 341(a) meeting to be held on 2/28/2024 at 12:00 PM at J. Caleb Boggs Federal Building, 844 King St., Room 6118, Wilmington, Delaware. Objection 523 due by 4/29/2024. (Milana, Matthew) (Entered: 02/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.47.0.pdf"
+      },
+      {
+        "entry_number": 46,
+        "date_filed": "2024-02-06",
+        "time_filed": "13:19:18",
+        "date_display": "Feb 6, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Amended Notice of Agenda of Matters Scheduled for Hearing Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 1/31/2024 at 02:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Filed by Epiq Corporate Restructuring, LLC. (related document(s)32) (Garabato, Sid) (Entered: 02/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.46.0.pdf"
+      },
+      {
+        "entry_number": 45,
+        "date_filed": "2024-02-05",
+        "time_filed": "12:26:57",
+        "date_display": "Feb 5, 2024",
+        "description": "Motion to Extend Deadline to File Schedules or Provide Required Information Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/4/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/26/2024. (Attachments: # 1 Notice # 2 Exhibit A) (Milana, Matthew) (Entered: 02/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.45.0.pdf"
+      },
+      {
+        "entry_number": 44,
+        "date_filed": "2024-02-05",
+        "time_filed": "10:31:14",
+        "date_display": "Feb 5, 2024",
+        "description": "Notice to Counsel Regarding Scheduling of 341 Meeting (related document(s)42) (NWW) (Entered: 02/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.44.0.pdf"
+      },
+      {
+        "entry_number": 43,
+        "date_filed": "2024-02-02",
+        "time_filed": "19:22:29",
+        "date_display": "Feb 2, 2024",
+        "description": "The upcoming 341(a) meeting is scheduled to be held by phone. Please call 866-621-1355 and use access code 7178157# to join the meeting. Filed by U.S. Trustee. (Leamy, Jane) (Entered: 02/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.43.0_1.pdf"
+      },
+      {
+        "entry_number": 42,
+        "date_filed": "2024-02-02",
+        "time_filed": "19:20:21",
+        "date_display": "Feb 2, 2024",
+        "description": "Request of US Trustee to Schedule Section 341 Meeting of Creditors on February 28, 2024 at 12:00 p.m. ET Filed by U.S. Trustee. (Leamy, Jane) (Entered: 02/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.42.0.pdf"
+      },
+      {
+        "entry_number": 41,
+        "date_filed": "2024-02-02",
+        "time_filed": "15:31:08",
+        "date_display": "Feb 2, 2024",
+        "description": "Notice of Hearing // Notice of (A) Entry of Interim Order (I) Authorizing Debtor to Use Treasury Management System, (II) Authorizing Continuation of Intracompany and Intercompany Transactions, (III) Extending Time to Comply with Requirements of 11 U.S.C. § 345(b), and (IV) Granting Related Relief; and (B) Final Hearing Thereon (related document(s)21, 40) Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/4/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/26/2024. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Steiger, Alexander) (Entered: 02/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.41.0.pdf"
+      },
+      {
+        "entry_number": 40,
+        "date_filed": "2024-02-02",
+        "time_filed": "15:09:43",
+        "date_display": "Feb 2, 2024",
+        "description": "Interim Order (I) Authorizing Debtor to Use Treasury Management System, (II) Authorizing Continuation of Intracompany and Intercompany Transactions, (III) Extending Time to Comply with Requirements of 11 U.S.C. § 345(b), and (IV) Granting Related Relief (Related Doc # 21, 39) Order Signed on 2/2/2024. (JMW) (Entered: 02/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.40.0.pdf"
+      },
+      {
+        "entry_number": 39,
+        "date_filed": "2024-02-02",
+        "time_filed": "13:34:13",
+        "date_display": "Feb 2, 2024",
+        "description": "Notice of Hearing // Notice of (A) Entry of Interim Order (I) Authorizing Debtor to (A) Pay Prepetition Workforce Obligations and (B) Maintain Employee Benefit Programs, and (II) Granting Related Relief; and (B) Final Hearing Thereon (related document(s)20, 35) Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 3/4/2024 at 02:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Objections due by 2/26/2024. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Steiger, Alexander) (Entered: 02/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.39.0.pdf"
+      },
+      {
+        "entry_number": 38,
+        "date_filed": "2024-02-02",
+        "time_filed": "10:06:56",
+        "date_display": "Feb 2, 2024",
+        "description": "Certification of Counsel Regarding Revised Interim Order (I) Authorizing Debtor to Use Treasury Management System, (II) Authorizing Continuation of Intracompany and Intercompany Transactions, (III) Extending Time to Comply with Requirements of 11 U.S.C. § 345(b), and (IV) Granting Related Relief (related document(s)21) Filed by Terraform Labs Pte. Ltd.. (Attachments: # 1 Exhibit 1 # 2 Exhibit 2) (Milana, Matthew) (Entered: 02/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.38.0.pdf"
+      },
+      {
+        "entry_number": 37,
+        "date_filed": "2024-02-02",
+        "time_filed": "",
+        "date_display": "Feb 2, 2024",
+        "description": "Transcript regarding Hearing Held 01/31/2024 RE: First Day Motions. Remote electronic access to the transcript is restricted until 5/2/2024. The transcript may be viewed at the Bankruptcy Court Clerk's Office. For information about how to obtain a transcript, call the Clerk's Office or Contact the Court Reporter/Transcriber, Reliable, at Telephone number (302) 654-8080. Notice of Intent to Request Redaction Deadline Due By 2/9/2024. Redaction Request Due By 2/23/2024. Redacted Transcript Submission Due By 3/4/2024. Transcript access will be restricted through 5/2/2024. (IJW) (Entered: 02/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.37.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-02-02",
+        "time_filed": "09:55:09",
+        "date_display": "Feb 2, 2024",
+        "description": "Transcript",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36,
+        "date_filed": "2024-01-31",
+        "time_filed": "16:10:03",
+        "date_display": "Jan 31, 2024",
+        "description": "PDF with attached Audio File. Court Date & Time [01/31/2024 02:12:12 PM]. File Size [ 25527 KB ]. Run Time [ 01:48:55 ]. (admin). (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.36.0.pdf"
+      },
+      {
+        "entry_number": 35,
+        "date_filed": "2024-01-31",
+        "time_filed": "15:42:35",
+        "date_display": "Jan 31, 2024",
+        "description": "Order Approving Motion to Pay Employee Wages. (Related Doc # 20) Order Signed on 1/31/2024. (JMW) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.35.0.pdf"
+      },
+      {
+        "entry_number": 34,
+        "date_filed": "2024-01-31",
+        "time_filed": "15:41:29",
+        "date_display": "Jan 31, 2024",
+        "description": "Order Approving Application Appointing EPIQ CORPORATE RESTRUCTURING, LLC as Claims and Noticing Agent for the Debtors Pursuant to 28 U.S.C. 156(c) (Related Doc # 17) Order Signed on 1/31/2024. (JMW) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.34.0.pdf"
+      },
+      {
+        "entry_number": 33,
+        "date_filed": "2024-01-31",
+        "time_filed": "15:40:26",
+        "date_display": "Jan 31, 2024",
+        "description": "Order (I) Authorizing the Debtor to File Under Seal (A) Portions of the Creditor Matrix and (B) the Personal Information in Other and Future Filings, and (II) Granting Related Relief (Related Doc # 11) Order Signed on 1/31/2024. (JMW) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.33.0.pdf"
+      },
+      {
+        "entry_number": 32,
+        "date_filed": "2024-01-31",
+        "time_filed": "12:41:49",
+        "date_display": "Jan 31, 2024",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 1/31/2024 at 02:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Milana, Matthew) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.32.0.pdf"
+      },
+      {
+        "entry_number": 31,
+        "date_filed": "2024-01-31",
+        "time_filed": "11:00:14",
+        "date_display": "Jan 31, 2024",
+        "description": "Certificate of Mailing of Claims Agent re Notice of Agenda of Matters Scheduled for Hearing Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 1/31/2024 at 01:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. Filed by Epiq Corporate Restructuring, LLC. (related document(s)23) (Garabato, Sid) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.31.0.pdf"
+      },
+      {
+        "entry_number": 30,
+        "date_filed": "2024-01-31",
+        "time_filed": "09:15:28",
+        "date_display": "Jan 31, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Douglas W. Henkin (Related Doc # 25) Order Signed on 1/31/2024. (JMW) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.30.0.pdf"
+      },
+      {
+        "entry_number": 29,
+        "date_filed": "2024-01-31",
+        "time_filed": "09:14:53",
+        "date_display": "Jan 31, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Mark G. Califano (Related Doc # 24) Order Signed on 1/31/2024. (JMW) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.29.0.pdf"
+      },
+      {
+        "entry_number": 28,
+        "date_filed": "2024-01-31",
+        "time_filed": "09:14:12",
+        "date_display": "Jan 31, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Taylor Jones (Related Doc # 16) Order Signed on 1/31/2024. (JMW) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.28.0.pdf"
+      },
+      {
+        "entry_number": 27,
+        "date_filed": "2024-01-31",
+        "time_filed": "09:13:37",
+        "date_display": "Jan 31, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Christine Calabrese (Related Doc # 15) Order Signed on 1/31/2024. (JMW) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.27.0.pdf"
+      },
+      {
+        "entry_number": 26,
+        "date_filed": "2024-01-31",
+        "time_filed": "09:10:45",
+        "date_display": "Jan 31, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Jared R. Friedmann (Related Doc # 14) Order Signed on 1/31/2024. (JMW) (Entered: 01/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.26.0.pdf"
+      },
+      {
+        "entry_number": 25,
+        "date_filed": "2024-01-30",
+        "time_filed": "17:28:46",
+        "date_display": "Jan 30, 2024",
+        "description": "Motion to Appear pro hac vice of Douglas W. Henkin of Dentons US LLP. Receipt Number 4326207, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.25.0.pdf"
+      },
+      {
+        "entry_number": 24,
+        "date_filed": "2024-01-30",
+        "time_filed": "17:23:50",
+        "date_display": "Jan 30, 2024",
+        "description": "Motion to Appear pro hac vice of Mark G. Califano of Dentons US LLP. Receipt Number 4326207, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.24.0.pdf"
+      },
+      {
+        "entry_number": 23,
+        "date_filed": "2024-01-30",
+        "time_filed": "11:31:31",
+        "date_display": "Jan 30, 2024",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by Terraform Labs Pte. Ltd.. Hearing scheduled for 1/31/2024 at 01:30 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #1, Wilmington, Delaware. (Milana, Matthew) (Entered: 01/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.23.0.pdf"
+      },
+      {
+        "entry_number": 22,
+        "date_filed": "2024-01-30",
+        "time_filed": "10:29:32",
+        "date_display": "Jan 30, 2024",
+        "description": "Affidavit/Declaration in Support of First Day Motion // Declaration of Michael Leto in Support of the Debtor's First Day Motions Filed By Terraform Labs Pte. Ltd. (Milana, Matthew) (Entered: 01/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.22.0.pdf"
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2024-01-30",
+        "time_filed": "10:15:50",
+        "date_display": "Jan 30, 2024",
+        "description": "Motion to Maintain Bank Accounts // Motion of Debtor for Entry of Interim and Final Orders (I) Authorizing Debtor to Use Treasury Management System, (II) Authorizing Continuation of Intracompany and Intercompany Transactions, (III) Extending Time to Comply with Requirements of 11 U.S.C. § 345(b), and (IV) Granting Related Relief Filed By Terraform Labs Pte. Ltd. (Milana, Matthew) (Entered: 01/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.21.0.pdf"
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2024-01-30",
+        "time_filed": "10:00:28",
+        "date_display": "Jan 30, 2024",
+        "description": "Motion to Pay Employee Wages // Motion of Debtor for Entry of Interim and Final Orders (I) Authorizing Debtor to (A) Pay Prepetition Workforce Obligations and (B) Maintain Employee Benefit Programs, and (II) Granting Related Relief Filed By Terraform Labs Pte. Ltd. (Milana, Matthew) (Entered: 01/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.20.0.pdf"
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2024-01-30",
+        "time_filed": "",
+        "date_display": "Jan 30, 2024",
+        "description": "The transcriber has requested a standing order for all hearings in this case. To obtain a copy of a transcript contact the transcriber Reliable Companies. Telephone number 302-654-8080.. (Reliable Companies) (Entered: 01/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2024-01-30",
+        "time_filed": "09:22:19",
+        "date_display": "Jan 30, 2024",
+        "description": "Affidavit/Declaration in Support of First Day Motion // Declaration of Chris Amani in Support of the Debtor's Chapter 11 Petition and First Day Relief Filed By Terraform Labs Pte. Ltd. (Milana, Matthew) (Entered: 01/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.18.0_13.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-01-30",
+        "time_filed": "10:00:14",
+        "date_display": "Jan 30, 2024",
+        "description": "Standing Order/Transcripts",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2024-01-29",
+        "time_filed": "23:35:23",
+        "date_display": "Jan 29, 2024",
+        "description": "Application to Appoint Claims/Noticing Agent EPIQ CORPORATE RESTRUCTURING, LLC Filed By Terraform Labs Pte. Ltd. (Shapiro, Zachary) (Entered: 01/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.17.0.pdf"
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2024-01-29",
+        "time_filed": "22:54:04",
+        "date_display": "Jan 29, 2024",
+        "description": "Motion to Appear pro hac vice of Taylor Jones of Weil, Gotshal & Manges LLP. Receipt Number 4325197, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.16.0.pdf"
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2024-01-29",
+        "time_filed": "22:52:01",
+        "date_display": "Jan 29, 2024",
+        "description": "Motion to Appear pro hac vice of Christine Calabrese of Weil, Gotshal & Manges LLP. Receipt Number 4325197, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.15.0.pdf"
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2024-01-29",
+        "time_filed": "22:50:01",
+        "date_display": "Jan 29, 2024",
+        "description": "Motion to Appear pro hac vice f Jared R. Friedmann of Weil, Gotshal & Manges LLP. Receipt Number 4325197, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.14.0.pdf"
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2024-01-26",
+        "time_filed": "13:09:07",
+        "date_display": "Jan 26, 2024",
+        "description": "Certification of Counsel Pursuant to Local Rule 9010-1(e) Filed by US Securities and Exchange Commission. (Uptegrove, William) (Entered: 01/26/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.13.0.pdf"
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2024-01-26",
+        "time_filed": "12:29:26",
+        "date_display": "Jan 26, 2024",
+        "description": "Certification of Counsel Pursuant to Local Rule 9010-1(e) Filed by US Securities and Exchange Commission. (Scheuer, Therese) (Entered: 01/26/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.12.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-01-25",
+        "time_filed": "",
+        "date_display": "Jan 25, 2024",
+        "description": "Filed by U.S. Trustee. (Leamy, Jane)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-01-25",
+        "time_filed": "18:38:41",
+        "date_display": "Jan 25, 2024",
+        "description": "Add Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2024-01-24",
+        "time_filed": "17:51:38",
+        "date_display": "Jan 24, 2024",
+        "description": "Motion Regarding Chapter 11 First Day Motions (Motion of Debtor for Entry of Order (I) Authorizing the Debtor to File Under Seal (A) Portions of the Creditor Matrix and (B) the Personal Information in Other and Future Filings, and (II) Granting Related Relief) Filed By Terraform Labs Pte. Ltd. (Shapiro, Zachary) (Entered: 01/24/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.11.0.pdf"
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2024-01-22",
+        "time_filed": "15:27:43",
+        "date_display": "Jan 22, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice F. Gavin Andrews (Related Doc # 7) Order Signed on 1/22/2024. (JMW) (Entered: 01/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.10.0.pdf"
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2024-01-22",
+        "time_filed": "15:27:08",
+        "date_display": "Jan 22, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Jessica Liou (Related Doc # 6) Order Signed on 1/22/2024. (JMW) (Entered: 01/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.9.0.pdf"
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2024-01-22",
+        "time_filed": "15:26:34",
+        "date_display": "Jan 22, 2024",
+        "description": "Order Approving Motion for Admission pro hac vice of Ronit J. Berkovich (Related Doc # 5) Order Signed on 1/22/2024. (JMW) (Entered: 01/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.8.0.pdf"
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2024-01-22",
+        "time_filed": "14:33:51",
+        "date_display": "Jan 22, 2024",
+        "description": "Motion to Appear pro hac vice of F. Gavin Andrews of Weil, Gotshal & Manges LLP. Receipt Number 4319228, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.7.0.pdf"
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2024-01-22",
+        "time_filed": "14:30:46",
+        "date_display": "Jan 22, 2024",
+        "description": "Motion to Appear pro hac vice of Jessica Liou of Weil, Gotshal & Manges LLP. Receipt Number 4319228, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.6.0.pdf"
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2024-01-22",
+        "time_filed": "14:27:32",
+        "date_display": "Jan 22, 2024",
+        "description": "Motion to Appear pro hac vice of Ronit J. Berkovich of Weil, Gotshal & Manges LLP. Receipt Number 4319228, Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.5.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-01-22",
+        "time_filed": "",
+        "date_display": "Jan 22, 2024",
+        "description": "Filed by U.S. Trustee. (Richenderfer, Linda)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-01-22",
+        "time_filed": "09:22:46",
+        "date_display": "Jan 22, 2024",
+        "description": "Add Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-01-22",
+        "time_filed": "08:16:47",
+        "date_display": "Jan 22, 2024",
+        "description": "Case Assigned",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-01-22",
+        "time_filed": "",
+        "date_display": "Jan 22, 2024",
+        "description": "Judge Brendan Linehan Shannon added to case (SH)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2024-01-21",
+        "time_filed": "",
+        "date_display": "Jan 21, 2024",
+        "description": "Receipt of filing fee for Voluntary Petition (Chapter 11)( 24-10070) [misc,volp11a] (1738.00). Receipt Number A11422636, amount $1738.00. (U.S. Treasury) (Entered: 01/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2024-01-21",
+        "time_filed": "20:41:39",
+        "date_display": "Jan 21, 2024",
+        "description": "(REDACTED) Creditor Matrix (related document(s)2) Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.3.0.pdf"
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2024-01-21",
+        "time_filed": "",
+        "date_display": "Jan 21, 2024",
+        "description": "[SEALED] List of Creditors (Creditor Matrix) Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2024-01-21",
+        "time_filed": "20:31:40",
+        "date_display": "Jan 21, 2024",
+        "description": "Chapter 11 Voluntary Petition . Fee Amount $1738. Filed by Terraform Labs Pte. Ltd.. (Shapiro, Zachary) (Entered: 01/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.191957/gov.uscourts.deb.191957.1.0_1.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-01-21",
+        "time_filed": "20:39:34",
+        "date_display": "Jan 21, 2024",
+        "description": "List of Creditors",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-01-21",
+        "time_filed": "20:44:49",
+        "date_display": "Jan 21, 2024",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68180454&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=65"
+    ]
   },
   "claims_administrator": {
     "name": "Epiq11",
