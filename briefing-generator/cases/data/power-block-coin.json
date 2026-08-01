@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "date_last_filing": "2026-07-23",
-    "fetched_at": "2026-08-01T09:26:57.403239+00:00",
+    "fetched_at": "2026-08-01T11:39:45.453980+00:00",
     "as_of": "Aug 1, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -4151,9 +4151,1199 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-12",
+        "time_filed": "",
+        "date_display": "Sep 12, 2024",
+        "description": "Trustee/USTR's Notice of Endorsement filed by Trustee/USTR. (related document(s):176 Pending Order Re: 7 Motion to Modify. (Rothschild, Brian) [Order# 454153]). Endorsed with no objection. (Willden tr, Melinda) (EOD: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 174,
+        "date_filed": "2024-09-11",
+        "time_filed": "19:31:29",
+        "date_display": "Sep 11, 2024",
+        "description": "The Objecting Creditors Joint Witness and Exhibit List For The September 17,2024 Hearing (related document(s):88 Objection filed by Creditor Mason Song, Creditor Blockchain Recovery Investment Consortium, LLC, Creditor Litigation Administrator and Complex Asset Recovery Manager, 92 Motion to Appoint Creditors' Committee filed by Creditor Mason Song, Creditor Blockchain Recovery Investment Consortium, LLC, Creditor Litigation Administrator and Complex Asset Recovery Manager) Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji, Mason Song. (Heninger, Carson) (EOD: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 173,
+        "date_filed": "2024-09-11",
+        "time_filed": "12:25:32",
+        "date_display": "Sep 11, 2024",
+        "description": "Order Granting Motion for Attorney Nikita Ash for Litigation Administrator and Complex Asset Recovery Manager; Mohsin Y. Meghji; Blockchain Recovery Investment Consortium, LLC and Celsius Network LLC To Appear Pro Hac Vice (Related Doc # 171) (tdg) (EOD: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 172,
+        "date_filed": "2024-09-11",
+        "time_filed": "11:50:42",
+        "date_display": "Sep 11, 2024",
+        "description": "Pending Order Re: 171 Motion to Appear pro hac vice. (Jarvis, Annette) [Order# 454080] (EOD: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 171,
+        "date_filed": "2024-09-11",
+        "time_filed": "11:49:57",
+        "date_display": "Sep 11, 2024",
+        "description": "Motion Requesting Admission of Attorney Nikita Ash to Practice Pro Hac Vice. Fee Amount: $50. Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji. (Jarvis, Annette) (EOD: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-11",
+        "time_filed": "11:52:35",
+        "date_display": "Sep 11, 2024",
+        "description": "PayGov Receipt of Fee Due",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-11",
+        "time_filed": "",
+        "date_display": "Sep 11, 2024",
+        "description": "Receipt of Filing Fee for Motion to Appear pro hac vice( 24-23041) [motion,mprohac] ( 50.00). Receipt Number A27606345, Amount $ 50.00 (Re: Doc# 171). (U.S. Treasury) (EOD: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-09",
+        "time_filed": "08:26:53",
+        "date_display": "Sep 9, 2024",
+        "description": "PayGov Receipt of Fee Due",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2024",
+        "description": "Receipt of Filing Fee for Motion to Appear pro hac vice( 24-23041) [motion,mprohac] ( 50.00). Receipt Number A27597558, Amount $ 50.00 (Re: Doc# 168). (U.S. Treasury) (EOD: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 170,
+        "date_filed": "2024-09-06",
+        "time_filed": "16:09:06",
+        "date_display": "Sep 6, 2024",
+        "description": "Order Granting Motion for Attorney Kyle Ferrier for Litigation Administrator and Complex Asset Recovery Manager; Mohsin Y. Meghji; Blockchain Recovery Investment Consortium, LLC and Celsius Network LLC To Appear Pro Hac Vice (Related Doc # 168) (tdg) (EOD: 09/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 169,
+        "date_filed": "2024-09-06",
+        "time_filed": "15:25:03",
+        "date_display": "Sep 6, 2024",
+        "description": "Pending Order Re: 168 Motion to Appear pro hac vice. (Jarvis, Annette) [Order# 453908] (EOD: 09/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 168,
+        "date_filed": "2024-09-06",
+        "time_filed": "15:23:48",
+        "date_display": "Sep 6, 2024",
+        "description": "Motion Requesting Admission of Attorney Kyle Ferrier to Practice Pro Hac Vice. Fee Amount: $50. Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji. (Jarvis, Annette) (EOD: 09/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 167,
+        "date_filed": "2024-09-05",
+        "time_filed": "22:26:32",
+        "date_display": "Sep 5, 2024",
+        "description": "Certificate of Service Re: Order. (related document(s):165 Order on Motion to Seal) Notice Date 09/05/2024. (Admin.) (EOD: 09/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 166,
+        "date_filed": "2024-09-04",
+        "time_filed": "21:03:15",
+        "date_display": "Sep 4, 2024",
+        "description": "Objection to (related document(s):7 Motion to Modify, 152 Memorandum in Support, 157 Memorandum) Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji, Mason Song. (Jarvis, Annette) (EOD: 09/04/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 165,
+        "date_filed": "2024-09-03",
+        "time_filed": "10:21:00",
+        "date_display": "Sep 3, 2024",
+        "description": "Order Granting Objecting Creditor's Ex Parte Motion To File Certain Exhibits Under Seal Relating To The Response To Debtor's July 2024 Monthly Operating Report (Related Doc # 162) (tdg) (EOD: 09/03/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 164,
+        "date_filed": "2024-08-30",
+        "time_filed": "20:07:15",
+        "date_display": "Aug 30, 2024",
+        "description": "Objection to (related document(s):129 Motion for Contempt/Sanctions) Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji. (Jarvis, Annette) (EOD: 08/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 163,
+        "date_filed": "2024-08-30",
+        "time_filed": "13:43:42",
+        "date_display": "Aug 30, 2024",
+        "description": "Pending Order Re: 162 Motion to Seal. (Heninger, Carson) [Order# 453736] (EOD: 08/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 162,
+        "date_filed": "2024-08-30",
+        "time_filed": "13:41:56",
+        "date_display": "Aug 30, 2024",
+        "description": "Ex Parte Motion to Seal (RE: related document(s)158 Response, 159 Sealed Document). Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji, Mason Song. (Heninger, Carson) (EOD: 08/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 161,
+        "date_filed": "2024-08-30",
+        "time_filed": "12:00:07",
+        "date_display": "Aug 30, 2024",
+        "description": "Order Granting Motion for Attorney Elliott D. McGill for Power Block Coin, LLC To Appear Pro Hac Vice (Related Doc # 153) (tdg) (EOD: 08/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 160,
+        "date_filed": "2024-08-30",
+        "time_filed": "10:44:37",
+        "date_display": "Aug 30, 2024",
+        "description": "Pending Order Re: 153 Motion to Appear pro hac vice. (Rothschild, Brian) [Order# 453718] (EOD: 08/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 159,
+        "date_filed": "2024-08-30",
+        "time_filed": "",
+        "date_display": "Aug 30, 2024",
+        "description": "Sealed Document (related document(s):158 Response) Sealed Exhibits A and B Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji, Mason Song. (Heninger, Carson) (EOD: 08/30/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-30",
+        "time_filed": "10:29:13",
+        "date_display": "Aug 30, 2024",
+        "description": "Sealed Document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 158,
+        "date_filed": "2024-08-29",
+        "time_filed": "21:34:58",
+        "date_display": "Aug 29, 2024",
+        "description": "Response to (related document(s):145 Chapter 11 Monthly Operating Report) Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji, Mason Song. (Jarvis, Annette) (EOD: 08/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.158.0.pdf"
+      },
+      {
+        "entry_number": 157,
+        "date_filed": "2024-08-29",
+        "time_filed": "19:56:49",
+        "date_display": "Aug 29, 2024",
+        "description": "Supplemental Memorandum (related document(s):7 Motion to Modify) Supplemental Status Report on Cash Management Systems Motion with Revised Proposed Order Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 08/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 156,
+        "date_filed": "2024-08-29",
+        "time_filed": "14:27:09",
+        "date_display": "Aug 29, 2024",
+        "description": "Scheduling Order (related document(s):85 Objection to Debtor's Election to Proceed Under Subchapter V, 92 Motion to Appoint Creditors' Committee) Evidentiary hearing scheduled for 9/17/2024 at 10:00 AM at Courtroom 7.400 (USDC). (tdg) (EOD: 08/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 155,
+        "date_filed": "2024-08-29",
+        "time_filed": "09:14:40",
+        "date_display": "Aug 29, 2024",
+        "description": "Transcript regarding Hearing Held 08/20/24 RE: Application to Employ Counsel, Debtor's Motion for an Order (1) Authorizing Continued Use of Debtor's Payment System Through Services Agreement with Blue Castle Holding, Inc., (2) Waiving Certain Investment and Deposit Guidelines, and (3) Granting Related Relief Filed by Power Block Coin, LLC, and Status Conference. THIS TRANSCRIPT WILL BE MADE ELECTRONICALLY AVAILABLE TO THE GENERAL PUBLIC 90 DAYS AFTER THE DATE OF FILING, TRANSCRIPT RELEASE DATE IS 11/27/2024. Until that time the transcript may be viewed at the Bankruptcy Court or a copy may be obtained from the official court transcriber. Court Reporter/Transcriber Lauren Shields, Telephone number 801-746-5080.(related document(s):2 Application to Employ Attorney filed by Debtor Power Block Coin, LLC, 7 Debtor's Motion for an Order (1) Authorizing Continued Use of Debtor's Payment System Through Services Agreement with Blue Castle Holding, Inc., (2) Waiving Certain Investment and Deposit Guidelines, and (3) Granting Related Relief Filed by Power Block Coin, LLC, 18 Order Setting Status Conference) Notice of Intent to Request Redaction Deadline Due By 9/5/2024. Redaction Request Due By 9/19/2024. Redacted Transcript Submission Due By 9/30/2024. Transcript access will be restricted through 11/27/2024. (mfr) (EOD: 08/29/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.155.0_1.pdf"
+      },
+      {
+        "entry_number": 154,
+        "date_filed": "2024-08-28",
+        "time_filed": "18:25:11",
+        "date_display": "Aug 28, 2024",
+        "description": "Amended Transcript regarding Hearing Held 08/19/24 RE: Scheduling Conference. THIS TRANSCRIPT WILL BE MADE ELECTRONICALLY AVAILABLE TO THE GENERAL PUBLIC 90 DAYS AFTER THE DATE OF FILING, TRANSCRIPT RELEASE DATE IS 11/26/2024. Until that time the transcript may be viewed at the Bankruptcy Court or a copy may be obtained from the official court transcriber. Court Reporter/Transcriber Lauren Shields, Telephone number 801-746-5080. Notice of Intent to Request Redaction Deadline Due By 9/4/2024. Redaction Request Due By 9/18/2024. Redacted Transcript Submission Due By 9/30/2024. Transcript access will be restricted through 11/26/2024. (mfr) (EOD: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 153,
+        "date_filed": "2024-08-28",
+        "time_filed": "16:08:40",
+        "date_display": "Aug 28, 2024",
+        "description": "Motion Requesting Admission of Attorney Elliott D. McGill to Practice Pro Hac Vice. Fee Amount: $50. Filed by Power Block Coin, LLC. (Attachments: # 1 Exhibit Application) (Rothschild, Brian) (EOD: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 152,
+        "date_filed": "2024-08-28",
+        "time_filed": "10:57:46",
+        "date_display": "Aug 28, 2024",
+        "description": "Supplemental Memorandum in Support (related document(s):7 Motion to Modify) and Status Update on Cash Management Motion with Proposed Order Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 151,
+        "date_filed": "2024-08-28",
+        "time_filed": "09:50:38",
+        "date_display": "Aug 28, 2024",
+        "description": "(PLEASE NOTE: This transcript has been amended, see Docket #154) Transcript regarding Hearing Held 08/19/24 RE: Scheduling Conference. THIS TRANSCRIPT WILL BE MADE ELECTRONICALLY AVAILABLE TO THE GENERAL PUBLIC 90 DAYS AFTER THE DATE OF FILING, TRANSCRIPT RELEASE DATE IS 11/26/2024. Until that time the transcript may be viewed at the Bankruptcy Court or a copy may be obtained from the official court transcriber. Court Reporter/Transcriber Lauren Shields, Telephone number 801-746-5080. Notice of Intent to Request Redaction Deadline Due By 9/4/2024. Redaction Request Due By 9/18/2024. Redacted Transcript Submission Due By 9/30/2024. Transcript access will be restricted through 11/26/2024. (mfr) Modified on 8/28/2024 (mfr). (EOD: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-28",
+        "time_filed": "15:50:41",
+        "date_display": "Aug 28, 2024",
+        "description": "Hearing Set(Motion)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-28",
+        "time_filed": "16:10:48",
+        "date_display": "Aug 28, 2024",
+        "description": "PayGov Receipt of Fee Due",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-28",
+        "time_filed": "",
+        "date_display": "Aug 28, 2024",
+        "description": "Receipt of Filing Fee for Motion to Appear pro hac vice( 24-23041) [motion,mprohac] ( 50.00). Receipt Number A27572694, Amount $ 50.00 (Re: Doc# 153). (U.S. Treasury) (EOD: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-28",
+        "time_filed": "",
+        "date_display": "Aug 28, 2024",
+        "description": "Hearing Set(related document(s):152 Debtor's Amended Motion for an Order (1) Authorizing Continued Use of Debtor's Payment System Through Services Agreement with Blue Castle Holdings, Inc., (2) Waiving Certain Investment and Deposit Guidelines, and (3) Granting Related Relief) Hearing scheduled for 9/12/2024 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 9/4/2024. (mfr) (EOD: 08/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 150,
+        "date_filed": "2024-08-27",
+        "time_filed": "21:14:32",
+        "date_display": "Aug 27, 2024",
+        "description": "Declaration of Matt McKinlay Correcting Declaration of Cheryl Parker Adams re: (related document(s):6 Declaration) Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 08/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 149,
+        "date_filed": "2024-08-26",
+        "time_filed": "11:49:43",
+        "date_display": "Aug 26, 2024",
+        "description": "Request for Transcript Transcript re: Scheduling Conference held on 8/19/2024. Due by 9/25/2024. (mfr) (EOD: 08/26/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 148,
+        "date_filed": "2024-08-23",
+        "time_filed": "22:28:15",
+        "date_display": "Aug 23, 2024",
+        "description": "Certificate of Service Re: Order. (related document(s):143 Order on Application to Employ Attorney) Notice Date 08/23/2024. (Admin.) (EOD: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 147,
+        "date_filed": "2024-08-22",
+        "time_filed": "",
+        "date_display": "Aug 22, 2024",
+        "description": "Certificate of Service Re: Order. (related document(s):138 Order on Motion to Appear Pro Hac Vice) Notice Date 08/22/2024. (Admin.) (EOD: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 146,
+        "date_filed": "2024-08-22",
+        "time_filed": "13:48:11",
+        "date_display": "Aug 22, 2024",
+        "description": "Support Document (related document(s):20 USTR Appointment of Chapter 11 Trustee) Filed by Joli A. Lofstedt. (Lofstedt, Joli) (EOD: 08/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 145,
+        "date_filed": "2024-08-21",
+        "time_filed": "20:52:07",
+        "date_display": "Aug 21, 2024",
+        "description": "Debtor-In-Possession Monthly Operating Report for Filing Period July 2024 Filed by Power Block Coin, LLC. (Neilson, Darren) (EOD: 08/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 144,
+        "date_filed": "2024-08-21",
+        "time_filed": "12:47:45",
+        "date_display": "Aug 21, 2024",
+        "description": "Request for Transcript. Hearing held on 8/20/2024 (related document(s):2 Application to Employ Attorney, 7 Debtor's Motion for an Order (1) Authorizing Continued Use of Debtor's Payment System Through Services Agreement with Blue Castle Holding, Inc., (2) Waiving Certain Investment and Deposit Guidelines, and (3) Granting Related Relief) Transcript Due by 9/20/2024. (mfr) (EOD: 08/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 143,
+        "date_filed": "2024-08-21",
+        "time_filed": "08:50:35",
+        "date_display": "Aug 21, 2024",
+        "description": "Order Granting Application to Employ Attorney Parsons Behle & Latmer. (Related Doc # 2) (tdg) (EOD: 08/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 142,
+        "date_filed": "2024-08-20",
+        "time_filed": "22:28:48",
+        "date_display": "Aug 20, 2024",
+        "description": "Reply to (related document(s):92 Motion to Appoint Creditors' Committee) Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji, Mason Song. (Jarvis, Annette) (EOD: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 141,
+        "date_filed": "2024-08-20",
+        "time_filed": "22:27:39",
+        "date_display": "Aug 20, 2024",
+        "description": "Reply to (related document(s):88 Objection) Debtor's Subchapter V Election Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji, Mason Song. (Jarvis, Annette) (EOD: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 140,
+        "date_filed": "2024-08-20",
+        "time_filed": "18:00:03",
+        "date_display": "Aug 20, 2024",
+        "description": "PDF with attached Audio File. Court Date & Time [ 8/20/2024 1:01:28 PM ]. File Size [ 106761 KB ]. Run Time [ 03:42:25 ]. (Application to Employ Parsons Behle & Latimer as Counsel to the Debtor [docket #2]). (admin). (EOD: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 139,
+        "date_filed": "2024-08-20",
+        "time_filed": "17:23:29",
+        "date_display": "Aug 20, 2024",
+        "description": "Pending Order Re: 2 Application to Employ Attorney. (Rothschild, Brian) [Order# 453361] (EOD: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 138,
+        "date_filed": "2024-08-20",
+        "time_filed": "09:24:53",
+        "date_display": "Aug 20, 2024",
+        "description": "Order Granting Motion for Attorney Mark D. Bloom for Mason Song To Appear Pro Hac Vice (Related Doc # 131) (jtt) (EOD: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "Minute Entry Re: 7 Debtor's Motion for an Order (1) Authorizing Continued Use of Debtor's Payment System Through Services Agreement with Blue Castle Holding, Inc., (2) Waiving Certain Investment and Deposit Guidelines, and (3) Granting Related Relief Filed by Power Block Coin, LLC. Appearances: Brian Rothschild, Darren Neilson, Elliott McGill (DB); Annette Jarvis, Carson Heninger, Samuel Hershey (Mason Song and Celsius Litigation Administrators); Mark Bloom (Mason Song); Michael Johnson (Blue Castle Holdings et al.); Melinda Willden, Matthew Burne (UST); Joli Lofstedt (TR). Debtor's exhibits 1-34 received. Mason Song and Celsius Litigation Administrators' exhibits 1-23 received. U.S. Trustee's exhibits A-M received. Witnesses called: Brad Jones and Aaron Tilton. Motion is not granted at this time per the reasons stated on the record. Amended motion may be filed by noon on 08/26/2024. Hearing to be tentatively held on 08/28/2024 at 2:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. OTF-DB (mfr) (EOD: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "Minute Entry Re: 18 Order Setting Status Conference. Appearances: Brian Rothschild, Darren Neilson, Elliott McGill (DB); Annette Jarvis, Carson Heninger, Samuel Hershey (Mason Song and Celsius Litigation Administrators); Mark Bloom (Mason Song); Michael Johnson (Blue Castle Holdings et al.); Melinda Willden, Matthew Burne (UST); Joli Lofstedt (TR). Status conference held. (mfr) (EOD: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "Minute Entry Re: 2 Application to Employ Attorney Filed by Power Block Coin, LLC. Appearances: Brian Rothschild, Darren Neilson, Elliott McGill (DB); Annette Jarvis, Carson Heninger, Samuel Hershey (Mason Song and Celsius Litigation Administrators); Mark Bloom (Mason Song); Michael Johnson (Blue Castle Holdings et al.); Melinda Willden, Matthew Burne (UST); Joli Lofstedt (TR). Debtor's exhibits 1-34 received. Mason Song and Celsius Litigation Administrators' exhibits 1-23 received. U.S. Trustee's exhibits A-M received. Witnesses called: Brad Jones and Aaron Tilton. Objections are overruled per the reasons stated on the record. Application is granted. OTF-DB Pending Order Deadline due by 09/03/2024. (mfr) (EOD: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-20",
+        "time_filed": "17:46:16",
+        "date_display": "Aug 20, 2024",
+        "description": "Minute Entry",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 137,
+        "date_filed": "2024-08-19",
+        "time_filed": "23:34:42",
+        "date_display": "Aug 19, 2024",
+        "description": "Response to (related document(s):2 Application to Employ Attorney, 124 Objection) United States Trustee's Supplemental Objection to Debtor's Application for Order Authorizing Employment of Parsons Behle & Latimer as Counsel to the Debtor Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 136,
+        "date_filed": "2024-08-19",
+        "time_filed": "18:57:43",
+        "date_display": "Aug 19, 2024",
+        "description": "Notice of Exhibit List - Revised for the hearing to be held August 20, 2024, at 1:00 p.m. on the Debtors Application to Employ Parsons Behle & Latimer and the Motion to Use the Debtors Existing Cash Management System Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 135,
+        "date_filed": "2024-08-19",
+        "time_filed": "15:29:52",
+        "date_display": "Aug 19, 2024",
+        "description": "Stipulation Stipulated facts for 8-20-24 hearing Filed by United States Trustee. (Willden tr, Melinda) (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 134,
+        "date_filed": "2024-08-19",
+        "time_filed": "15:18:40",
+        "date_display": "Aug 19, 2024",
+        "description": "Notice Of Issuance of Subpoenas Filed by United States Trustee. (Willden tr, Melinda) (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 133,
+        "date_filed": "2024-08-19",
+        "time_filed": "14:00:03",
+        "date_display": "Aug 19, 2024",
+        "description": "PDF with attached Audio File. Court Date & Time [ 8/19/2024 11:00:30 AM ]. File Size [ 12374 KB ]. Run Time [ 00:25:47 ]. (Scheduling Conference). (admin). (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 132,
+        "date_filed": "2024-08-19",
+        "time_filed": "13:04:27",
+        "date_display": "Aug 19, 2024",
+        "description": "Pending Order Re: 131 Motion to Appear pro hac vice. (Jarvis, Annette) [Order# 453289] (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 131,
+        "date_filed": "2024-08-19",
+        "time_filed": "13:03:24",
+        "date_display": "Aug 19, 2024",
+        "description": "Motion Requesting Admission of Attorney Mark D. Bloom to Practice Pro Hac Vice. Fee Amount: $50. Filed by Mason Song. (Jarvis, Annette) (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 130,
+        "date_filed": "2024-08-19",
+        "time_filed": "08:20:53",
+        "date_display": "Aug 19, 2024",
+        "description": "Response to (related document(s):75 Pre-Status Conference Report (SubChV)) Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji, Mason Song. (Jarvis, Annette) (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2024",
+        "description": "Notice of Endorsement(related document(s):135 Stipulation Stipulated facts for 8-20-24 hearing Filed by United States Trustee. (Willden tr, Melinda)). Endorsed with no objection Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2024",
+        "description": "Minute Entry Re: Scheduling Conference. Appearances: Brian Rothschild, Darren Neilson (DB); Annette Jarvis, Carson Heninger, Samuel Hershey (Mason Song and Celsius Litigation Administrators); Michael Johnson (Blue Castle Holdings et al.); Melinda Willden, Matthew Burne (UST). Status Conference, Application to Employ Parsons Behle & Latimer as Counsel to the Debtor, and Debtor's Motion for an Order (1) Authorizing Continued Use of Debtor's Payment System Through Services Agreement with Blue Castle Holdings, Inc., (2) Waiving Certain Investment and Deposit Guidelines, and (3) Granting Related Relief to be held on 08/20/2024 at 1:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. United States Trustee's Objection to Debtor's Election to Proceed Under Subchapter V and Objecting Creditors' Motion for Immediate Appointment of Official Committee of Unsecured Creditors to be tentatively held on 09/17/2024 at the Orrin G. Hatch Courthouse, time and courtroom to be determined. (mfr) Modified on 8/19/2024 (msc). (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2024",
+        "description": "Receipt of Filing Fee for Motion to Appear pro hac vice( 24-23041) [motion,mprohac] ( 50.00). Receipt Number A27545748, Amount $ 50.00 (Re: Doc# 131). (U.S. Treasury) (EOD: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-19",
+        "time_filed": "13:46:45",
+        "date_display": "Aug 19, 2024",
+        "description": "Minute Entry",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-19",
+        "time_filed": "15:34:08",
+        "date_display": "Aug 19, 2024",
+        "description": "Notice of Endorsement (NO IMAGE)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-19",
+        "time_filed": "13:06:27",
+        "date_display": "Aug 19, 2024",
+        "description": "PayGov Receipt of Fee Due",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 129,
+        "date_filed": "2024-08-16",
+        "time_filed": "21:09:05",
+        "date_display": "Aug 16, 2024",
+        "description": "Motion For Contempt/Sanctions Against Mohsin Y. Meghji, Litigation Administrator, as Representative for the Post-Effective Date Celsius Debtors, Celsius Network LLC and the affiliated post-effective date debtors of Celsius for Violations of the Automatic Stay Filed by Power Block Coin, LLC. (Neilson, Darren) (EOD: 08/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.129.0_1.pdf"
+      },
+      {
+        "entry_number": 128,
+        "date_filed": "2024-08-16",
+        "time_filed": "14:24:49",
+        "date_display": "Aug 16, 2024",
+        "description": "U.S. Trustee's Amended Witness and Exhibit List For Evidentiary Hearing To Be Held on August 20, 2024 Regarding Amended Objection To Debtor's Application To Employ Parsons Behle & Latimer as Counsel(related document(s):119 Notice filed by U.S. Trustee United States Trustee) Filed by United States Trustee. (Willden tr, Melinda) (EOD: 08/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 127,
+        "date_filed": "2024-08-16",
+        "time_filed": "12:37:33",
+        "date_display": "Aug 16, 2024",
+        "description": "The Litigation Administrator's Witness and Exhibit List For The August 20, 2024 Hearing. (related document(s):67 Joinder filed by Creditor Celsius Network LLC, Creditor Blockchain Recovery Investment Consortium, LLC, Creditor Litigation Administrator and Complex Asset Recovery Manager, Creditor Mohsin Y. Meghji, 88 Objection filed by Creditor Mason Song, Creditor Blockchain Recovery Investment Consortium, LLC, Creditor Litigation Administrator and Complex Asset Recovery Manager, 92 Motion to Appoint Creditors' Committee filed by Creditor Mason Song, Creditor Blockchain Recovery Investment Consortium, LLC, Creditor Litigation Administrator and Complex Asset Recovery Manager) Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji. (Heninger, Carson) Modified on 8/16/2024 (tdg). (EOD: 08/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 126,
+        "date_filed": "2024-08-16",
+        "time_filed": "00:01:55",
+        "date_display": "Aug 16, 2024",
+        "description": "Objection to (related document(s):92 Motion to Appoint Creditors' Committee) Filed by Power Block Coin, LLC. (Neilson, Darren) (EOD: 08/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-16",
+        "time_filed": "",
+        "date_display": "Aug 16, 2024",
+        "description": "Hearing Set. Scheduling Conference scheduled for 8/19/2024 at 11:00 AM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. (mfr) (EOD: 08/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-16",
+        "time_filed": "15:05:47",
+        "date_display": "Aug 16, 2024",
+        "description": "Hearing Set(Motion)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 125,
+        "date_filed": "2024-08-15",
+        "time_filed": "23:18:08",
+        "date_display": "Aug 15, 2024",
+        "description": "Response to (related document(s):85 Objection, 88 Objection) Filed by Power Block Coin, LLC. (Attachments: # 1 Declaration of Aaron Tilton in Support of Debtor's Response to Objection to Subchapter V Election) (Rothschild, Brian) (EOD: 08/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 124,
+        "date_filed": "2024-08-15",
+        "time_filed": "18:00:32",
+        "date_display": "Aug 15, 2024",
+        "description": "Supplemental Objection to (related document(s):66 Objection) to Application to Employ Parsons Behle Filed by United States Trustee. (Willden tr, Melinda) (EOD: 08/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 123,
+        "date_filed": "2024-08-15",
+        "time_filed": "15:27:33",
+        "date_display": "Aug 15, 2024",
+        "description": "Order Granting Motion Requesting Approval to File a Supplemental Objection to Debtor's Application for Order Authorizing Employment of Parsons Behle & Latimer. (Related Doc # 121) (jtt) (EOD: 08/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 122,
+        "date_filed": "2024-08-15",
+        "time_filed": "12:24:57",
+        "date_display": "Aug 15, 2024",
+        "description": "Pending Order Re: 121 Motion for Leave TO FILE A SUPPLEMENTAL OBJECTION TO DEBTORS APPLICATION FOR ORDER AUTHORIZING EMPLOYMENT OF PARSONS BEHLE & LATIMER. (Willden tr, Melinda) [Order# 453209] (EOD: 08/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 121,
+        "date_filed": "2024-08-15",
+        "time_filed": "12:23:50",
+        "date_display": "Aug 15, 2024",
+        "description": "Ex Parte Motion for Leave to File to File Supplemental Objection to Debtor's Application for Order Authorizing Employment of Parsons Behle & Latimer Filed by United States Trustee. (Willden tr, Melinda) (EOD: 08/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 120,
+        "date_filed": "2024-08-14",
+        "time_filed": "22:59:07",
+        "date_display": "Aug 14, 2024",
+        "description": "Notice of Exhibit List for Evidentiary Hearing to be Held on Pending Motions and Subchapter V Election on August 20, 2024, at 2:00 p.m. MT Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 08/14/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 119,
+        "date_filed": "2024-08-14",
+        "time_filed": "18:58:42",
+        "date_display": "Aug 14, 2024",
+        "description": "Notice of Witness and Exhibit List (related document(s):66 Objection filed by U.S. Trustee United States Trustee) Filed by United States Trustee. (Willden tr, Melinda) (EOD: 08/14/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 118,
+        "date_filed": "2024-08-13",
+        "time_filed": "09:20:12",
+        "date_display": "Aug 13, 2024",
+        "description": "Notice to Take Deposition of Power Block Coin, LLC Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji. (Heninger, Carson) (EOD: 08/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 117,
+        "date_filed": "2024-08-13",
+        "time_filed": "09:18:40",
+        "date_display": "Aug 13, 2024",
+        "description": "Notice to Take Deposition of Brad Jones Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji. (Heninger, Carson) (EOD: 08/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 116,
+        "date_filed": "2024-08-13",
+        "time_filed": "09:17:43",
+        "date_display": "Aug 13, 2024",
+        "description": "Notice to Take Deposition of Aaron Tilton Filed by Blockchain Recovery Investment Consortium, LLC, Mohsin Y. Meghji. (Heninger, Carson) (EOD: 08/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.116.0.pdf"
+      },
+      {
+        "entry_number": 115,
+        "date_filed": "2024-08-08",
+        "time_filed": "22:25:36",
+        "date_display": "Aug 8, 2024",
+        "description": "Certificate of Service Re: Order. (related document(s):105 Order on Motion to Shorten Time) Notice Date 08/08/2024. (Admin.) (EOD: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 114,
+        "date_filed": "2024-08-08",
+        "time_filed": "22:25:36",
+        "date_display": "Aug 8, 2024",
+        "description": "Certificate of Service Re: Order. (related document(s):104 Order on Motion to Shorten Time) Notice Date 08/08/2024. (Admin.) (EOD: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 113,
+        "date_filed": "2024-08-08",
+        "time_filed": "22:25:36",
+        "date_display": "Aug 8, 2024",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 08/08/2024. (Admin.) (EOD: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 112,
+        "date_filed": "2024-08-08",
+        "time_filed": "22:25:36",
+        "date_display": "Aug 8, 2024",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 08/08/2024. (Admin.) (EOD: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 111,
+        "date_filed": "2024-08-08",
+        "time_filed": "22:25:36",
+        "date_display": "Aug 8, 2024",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 08/08/2024. (Admin.) (EOD: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 110,
+        "date_filed": "2024-08-08",
+        "time_filed": "22:25:36",
+        "date_display": "Aug 8, 2024",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 08/08/2024. (Admin.) (EOD: 08/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 109,
+        "date_filed": "2024-08-06",
+        "time_filed": "16:05:40",
+        "date_display": "Aug 6, 2024",
+        "description": "Notice of Appearance of Counsel and Request for Notice (With Image)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 108,
+        "date_filed": "2024-08-06",
+        "time_filed": "15:26:21",
+        "date_display": "Aug 6, 2024",
+        "description": "Notice of Rescheduled Hearing (Re: 7 Debtor's Motion for an Order (1) Authorizing Continued Use of Debtor's Payment System Through Services Agreement with Blue Castle Holding, Inc., (2) Waiving Certain Investment and Deposit Guidelines, and (3) Granting Related Relief). Hearing scheduled for 8/20/2024 at 01:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. (mfr) (EOD: 08/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 107,
+        "date_filed": "2024-08-06",
+        "time_filed": "15:23:50",
+        "date_display": "Aug 6, 2024",
+        "description": "Notice of Rescheduled Hearing (Re: 2 Application to Employ Attorney). Hearing scheduled for 8/20/2024 at 01:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. (mfr) (EOD: 08/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 106,
+        "date_filed": "2024-08-06",
+        "time_filed": "15:21:13",
+        "date_display": "Aug 6, 2024",
+        "description": "Notice of Rescheduled Hearing (Re: 18 Order Setting Status Conference and Deadline. Status Conference scheduled for 8/20/2024 at 01:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. (mfr) (EOD: 08/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 105,
+        "date_filed": "2024-08-06",
+        "time_filed": "11:39:20",
+        "date_display": "Aug 6, 2024",
+        "description": "Order Granting Exparte Motion for Order Shortening Time for Notice and Hearing on United States Trustee's Objection to Debtor's Election to Proceed Under Subchapter V (Related Doc # 102) (tdg) (EOD: 08/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 104,
+        "date_filed": "2024-08-06",
+        "time_filed": "11:35:59",
+        "date_display": "Aug 6, 2024",
+        "description": "Order Granting Exparte Motion to Shorten Notice and Grant Leave to File Late Reply Memorandum in Support of Objecting Creditor's (1) Objection to Debtor's Subchapter V Election and (11) Motion to Appoint Committee. (Related Doc # 100) (tdg) (EOD: 08/06/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 103,
+        "date_filed": "2024-08-05",
+        "time_filed": "15:05:30",
+        "date_display": "Aug 5, 2024",
+        "description": "Pending Order Re: 102 Motion to Shorten Time. (Willden tr, Melinda) [Order# 452814] (EOD: 08/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 102,
+        "date_filed": "2024-08-05",
+        "time_filed": "15:03:42",
+        "date_display": "Aug 5, 2024",
+        "description": "Motion to Shorten Time (related document(s):85 Objection filed by U.S. Trustee United States Trustee, 86 Notice of Hearing filed by U.S. Trustee United States Trustee) Shortening time for Notice and Hearing Filed by United States Trustee. (Willden tr, Melinda) (EOD: 08/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 101,
+        "date_filed": "2024-08-05",
+        "time_filed": "14:29:39",
+        "date_display": "Aug 5, 2024",
+        "description": "Pending Order Re: 100 Motion to Shorten Time. (Heninger, Carson) [Order# 452810] (EOD: 08/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 100,
+        "date_filed": "2024-08-05",
+        "time_filed": "14:28:48",
+        "date_display": "Aug 5, 2024",
+        "description": "Ex Parte Motion to Shorten Time (related document(s):88 Objection filed by Creditor Mason Song, Creditor Blockchain Recovery Investment Consortium, LLC, Creditor Litigation Administrator and Complex Asset Recovery Manager, 92 Motion to Appoint Creditors' Committee filed by Creditor Mason Song, Creditor Blockchain Recovery Investment Consortium, LLC, Creditor Litigation Administrator and Complex Asset Recovery Manager) Filed by Blockchain Recovery Investment Consortium, LLC, Litigation Administrator and Complex Asset Recovery Manager, Mason Song. (Heninger, Carson) (EOD: 08/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 99,
+        "date_filed": "2024-08-04",
+        "time_filed": "22:19:11",
+        "date_display": "Aug 4, 2024",
+        "description": "Certificate of Service Re: Order. (related document(s):95 Order on Motion to File Overlength Memorandum) Notice Date 08/04/2024. (Admin.) (EOD: 08/04/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 98,
+        "date_filed": "2024-08-03",
+        "time_filed": "22:20:05",
+        "date_display": "Aug 3, 2024",
+        "description": "BNC Certificate of Service - Trustee's Request. (related document(s):87 Clerk's Noticing Re: Trustee's Request) Notice Date 08/03/2024. (Admin.) (EOD: 08/03/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 97,
+        "date_filed": "2024-08-02",
+        "time_filed": "22:25:39",
+        "date_display": "Aug 2, 2024",
+        "description": "Certificate of Service Re: Order. (related document(s):83 Order on Application to Employ) Notice Date 08/02/2024. (Admin.) (EOD: 08/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 96,
+        "date_filed": "2024-08-02",
+        "time_filed": "14:16:47",
+        "date_display": "Aug 2, 2024",
+        "description": "Transcript regarding Hearing Held 07/30/24. THIS TRANSCRIPT WILL BE MADE ELECTRONICALLY AVAILABLE TO THE GENERAL PUBLIC 90 DAYS AFTER THE DATE OF FILING, TRANSCRIPT RELEASE DATE IS 10/31/2024. Until that time the transcript may be viewed at the Bankruptcy Court or a copy may be obtained from the official court transcriber. Court Reporter/Transcriber Heidi Morrison, Telephone number 801-746-5080. (related document(s):2 Application to Employ Attorney, 5 Application to Employ (Professional), 7 Debtor's Motion for an Order (1) Authorizing Continued Use of Debtor's Payment System Through Services Agreement with Blue Castle Holding, Inc., (2) Waiving Certain Investment and Deposit Guidelines, and (3) Granting Related Relief)) Notice of Intent to Request Redaction Deadline Due By 8/9/2024. Redaction Request Due By 8/23/2024. Redacted Transcript Submission Due By 9/3/2024. Transcript access will be restricted through 10/31/2024. (mfr) (EOD: 08/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 95,
+        "date_filed": "2024-08-02",
+        "time_filed": "12:49:08",
+        "date_display": "Aug 2, 2024",
+        "description": "Order Granting Motion to File Overlength Memorandum. (Related Doc # 89) (gci) (EOD: 08/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-02",
+        "time_filed": "11:24:04",
+        "date_display": "Aug 2, 2024",
+        "description": "Hearing Set(Motion)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-02",
+        "time_filed": "",
+        "date_display": "Aug 2, 2024",
+        "description": "Hearing Set(related document(s):92 Motion to Appoint Creditors' Committee) Hearing scheduled for 8/20/2024 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 8/15/2024. (mfr) (EOD: 08/02/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 94,
+        "date_filed": "2024-08-01",
+        "time_filed": "22:23:42",
+        "date_display": "Aug 1, 2024",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 08/01/2024. (Admin.) (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 93,
+        "date_filed": "2024-08-01",
+        "time_filed": "21:52:04",
+        "date_display": "Aug 1, 2024",
+        "description": "Notice of Hearing (related document(s):92 Motion to Appoint Creditors' Committee) Filed by Blockchain Recovery Investment Consortium, LLC, Litigation Administrator and Complex Asset Recovery Manager, Mason Song. Hearing scheduled for 8/20/2024 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 8/15/2024. (Heninger, Carson) Modified on 8/2/2024 (mfr). (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 92,
+        "date_filed": "2024-08-01",
+        "time_filed": "21:49:26",
+        "date_display": "Aug 1, 2024",
+        "description": "Motion to Appoint Creditors' Committee Filed by Blockchain Recovery Investment Consortium, LLC, Litigation Administrator and Complex Asset Recovery Manager, Mason Song. (Jarvis, Annette) (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.92.0_1.pdf"
+      },
+      {
+        "entry_number": 91,
+        "date_filed": "2024-08-01",
+        "time_filed": "20:54:35",
+        "date_display": "Aug 1, 2024",
+        "description": "Notice of Hearing (related document(s):88 Objecting Creditors' (I) Joinder to the United States Trustee's Objection and (II) Objection to Debtor's Election to Proceed Under Subchapter V) Filed by Blockchain Recovery Investment Consortium, LLC, Litigation Administrator and Complex Asset Recovery Manager, Mason Song. Hearing scheduled for 8/20/2024 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 8/15/2024. (Heninger, Carson) Modified on 8/2/2024 (mfr). (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90,
+        "date_filed": "2024-08-01",
+        "time_filed": "20:52:10",
+        "date_display": "Aug 1, 2024",
+        "description": "Pending Order Re: 89 Motion to File Overlength Memorandum. (Heninger, Carson) [Order# 452743] (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 89,
+        "date_filed": "2024-08-01",
+        "time_filed": "20:50:03",
+        "date_display": "Aug 1, 2024",
+        "description": "Ex Parte Motion to File Overlength Memorandum Objection to Debtor's Election to Proceed Under Subchapter V Filed by Blockchain Recovery Investment Consortium, LLC, Litigation Administrator and Complex Asset Recovery Manager, Mason Song. (Heninger, Carson) (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 88,
+        "date_filed": "2024-08-01",
+        "time_filed": "20:48:00",
+        "date_display": "Aug 1, 2024",
+        "description": "Objecting Creditors' (I) Joinder to the United States Trustee's Objection and (II) Objection to Debtor's Election to Proceed Under Subchapter V Filed by Blockchain Recovery Investment Consortium, LLC, Litigation Administrator and Complex Asset Recovery Manager, Mason Song. (Attachments: # 1 Exhibit 341 Transcript Excerpts) (Jarvis, Annette) Modified on 8/2/2024 (mfr). (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 87,
+        "date_filed": "2024-08-01",
+        "time_filed": "16:08:18",
+        "date_display": "Aug 1, 2024",
+        "description": "Clerk's Noticing Re: Trustee's Request (related document(s):86 Notice of Hearing) (skr) (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 86,
+        "date_filed": "2024-08-01",
+        "time_filed": "15:33:02",
+        "date_display": "Aug 1, 2024",
+        "description": "Notice of Hearing (related document(s):85 Objection) To Debtor's Election To Proceed Under SubChapter V Filed by United States Trustee. Hearing scheduled for 8/20/2024 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 8/15/2024. (Willden tr, Melinda) (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 85,
+        "date_filed": "2024-08-01",
+        "time_filed": "14:20:48",
+        "date_display": "Aug 1, 2024",
+        "description": "Objection to Debtor's Election to Proceed Under Subchapter V Election Filed by United States Trustee. (Willden tr, Melinda) Modified on 8/2/2024 (gci). (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 84,
+        "date_filed": "2024-08-01",
+        "time_filed": "12:55:30",
+        "date_display": "Aug 1, 2024",
+        "description": "Request for Transcript. Hearing held on 07/30/2024 (related document(s):2 Application to Employ Attorney, 5 Application to Employ (Professional), 7 Debtor's Motion for an Order (1) Authorizing Continued Use of Debtor's Payment System Through Services Agreement with Blue Castle Holding, Inc., (2) Waiving Certain Investment and Deposit Guidelines, and (3) Granting Related Relief) Transcript Due by 9/3/2024. (mfr) (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-01",
+        "time_filed": "",
+        "date_display": "Aug 1, 2024",
+        "description": "The trustee (or USTR) requests that the previously filed (related document(s):86)be noticed to all creditors to the BNC. (Willden tr, Melinda) (EOD: 08/01/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-01",
+        "time_filed": "15:33:50",
+        "date_display": "Aug 1, 2024",
+        "description": "Trustee/USTR's Request Re: BNC Noticing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 83,
+        "date_filed": "2024-07-31",
+        "time_filed": "12:14:33",
+        "date_display": "Jul 31, 2024",
+        "description": "Order Granting Application to Employ Ampleo as Accountant and Financial Advisors (Related Doc # 5) (skr) (EOD: 07/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2024-07-31",
+        "time_filed": "08:17:44",
+        "date_display": "Jul 31, 2024",
+        "description": "Motion for Examination Under Rule 2004 of Aaron Tilton Filed by United States Trustee. (Willden tr, Melinda) (EOD: 07/31/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.76.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68873409&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=22"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68873409&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=28"
   },
   "claims_administrator": null,
   "coverage": [],
