@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/",
     "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-08-01T15:30:46.797006+00:00",
+    "fetched_at": "2026-08-01T17:18:42.369652+00:00",
     "as_of": "Aug 1, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -9303,6 +9303,66 @@
         "doc_url": ""
       },
       {
+        "entry_number": 315,
+        "date_filed": "2025-06-25",
+        "time_filed": "23:22:52",
+        "date_display": "Jun 25, 2025",
+        "description": "Objection to (related document(s): 301 Emergency Motion to strike (related document(s): 277 Declaration filed by Debtor Harvest Sherwood Food Distributors, Inc.) of Eric Kaup on Support of Debtors' Venue Transfer Objection filed by Creditor Sprouts Farmers Market, Inc., Creditor SFM, LLC) filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 314,
+        "date_filed": "2025-06-25",
+        "time_filed": "23:13:11",
+        "date_display": "Jun 25, 2025",
+        "description": "Reply to (related document(s): 153 Objection filed by U.S. Trustee United States Trustee, 158 Objection filed by Creditor Sprouts Farmers Market, Inc., 312 Reply filed by Debtor Harvest Sherwood Food Distributors, Inc.) and Joinder of DIP Agent in Support of Debtors' DIP Financing Motion filed by Creditor JPMorgan Chase Bank, N.A., as Prepetition Agent and DIP Agent. (Davidson, Timothy)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 313,
+        "date_filed": "2025-06-25",
+        "time_filed": "23:08:35",
+        "date_display": "Jun 25, 2025",
+        "description": "Notice of Proposed Final DIP Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 312,
+        "date_filed": "2025-06-25",
+        "time_filed": "22:59:58",
+        "date_display": "Jun 25, 2025",
+        "description": "Omnibus Reply to (related document(s): 153 Objection filed by U.S. Trustee United States Trustee, 155 Objection filed by Creditor Miceli Dairy Products Co., 157 Objection filed by Creditor Blakemore Investments, LLC, Creditor Milwaukee Investments, LP, 158 Objection filed by Creditor Sprouts Farmers Market, Inc.) in Further Support of Debtors' PostPetition Financing and Use of Cash Collateral filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 311,
+        "date_filed": "2025-06-25",
+        "time_filed": "22:44:03",
+        "date_display": "Jun 25, 2025",
+        "description": "Declaration re: Samir Saleem in Support of the Debtors' Postpetition Financing filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)12 Motion for DIP financing. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to (A) Obtain Post-petition Financing, (B) Use Cash Collateral, (C) Grant Senior Secured Liens and provide Claims with Superpriori, 13 Declaration, 108 Order on first day motion). (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 310,
+        "date_filed": "2025-06-25",
+        "time_filed": "22:38:03",
+        "date_display": "Jun 25, 2025",
+        "description": "Declaration re: Eric Kaup in Support of the Debtors' Postpetition Financing filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)12 Motion for DIP financing. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to (A) Obtain Post-petition Financing, (B) Use Cash Collateral, (C) Grant Senior Secured Liens and provide Claims with Superpriori, 14 Declaration, 108 Order on first day motion). (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 309,
         "date_filed": "2025-06-25",
         "time_filed": "18:06:35",
@@ -9363,6 +9423,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 303,
+        "date_filed": "2025-06-25",
+        "time_filed": "10:36:10",
+        "date_display": "Jun 25, 2025",
+        "description": "Certificate of Counsel Regarding Revised Proposed De Minimis Assets Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)136 Motion to sell property free and clear of liens under Section 363(f) Fee amount $199,, 218 Notice (generic)). (Attachments: # 1 Exhibit A) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 302,
         "date_filed": "2025-06-25",
         "time_filed": "08:54:04",
@@ -9371,9 +9441,1129 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 301,
+        "date_filed": "2025-06-24",
+        "time_filed": "21:12:53",
+        "date_display": "Jun 24, 2025",
+        "description": "Emergency Motion to strike (related document(s): 277 Declaration filed by Debtor Harvest Sherwood Food Distributors, Inc.) of Eric Kaup on Support of Debtors' Venue Transfer Objection Filed by SFM, LLC, Sprouts Farmers Market, Inc. Objections due by 6/26/2025. (Attachments: # 1 Exhibit A - Excerpts (Redacted) from Depo. Tr. # 2 Affidavit LBR 9007-1(f) Certification # 3 Affidavit Certificate of Service) (Werkheiser, Gregory)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 300,
+        "date_filed": "2025-06-24",
+        "time_filed": "19:42:54",
+        "date_display": "Jun 24, 2025",
+        "description": "Objection to (related document(s): 197 Application to employ Cadwalader, Wickersham & Taft LLP as Special Counsel for the Debtors, Effective as of the Petition Date, and (II) Granting Related Relief filed by Debtor Harvest Sherwood Food Distributors, Inc.) filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 299,
+        "date_filed": "2025-06-24",
+        "time_filed": "18:58:30",
+        "date_display": "Jun 24, 2025",
+        "description": "Certificate of Counsel regarding Revised Proposed Final Critical Vendor Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)8 Motion regarding pre-petition claims of Critical Vendors. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Pay Certain Prepetition Claims of Critical Vendors; and (II) Granting Related Relief, 215 Notice (generic)). (Attachments: # 1 Exhibit A) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 298,
+        "date_filed": "2025-06-24",
+        "time_filed": "18:56:28",
+        "date_display": "Jun 24, 2025",
+        "description": "Certificate of Counsel Regarding Revised Proposed Final Contractor Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)9 Motion regarding pre-petition claims Contractor Obligations. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Satisfy Certain Prepetition Contractor Obligations; and (II) Granting Related Relief, 214 Notice (generic)). (Attachments: # 1 Exhibit A) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 297,
+        "date_filed": "2025-06-24",
+        "time_filed": "18:53:15",
+        "date_display": "Jun 24, 2025",
+        "description": "Certificate of Counsel Regarding Revised Proposed Final Taxes Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)10 Motion regarding pre-petition claims. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Pay Certain Prepetition Taxes and Fees; and (II) Granting Related Relief, 216 Notice (generic)). (Attachments: # 1 Exhibit A) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 296,
+        "date_filed": "2025-06-24",
+        "time_filed": "18:49:19",
+        "date_display": "Jun 24, 2025",
+        "description": "Certificate of Counsel Regarding Revised Proposed Final Utilities Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)11 Motion regarding utilities. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Continue Use of LC Facility; and (II) Granting Related Relief, 217 Notice (generic)). (Attachments: # 1 Exhibit A) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 295,
+        "date_filed": "2025-06-24",
+        "time_filed": "18:43:54",
+        "date_display": "Jun 24, 2025",
+        "description": "Certificate of Counsel Regarding Revised Proposed Final Cash Management Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)7 Motion to maintain bank accounts. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Continue to Operate their Existing Cash Management System; and (II) granting Related Relief, 213 Notice (generic)). (Attachments: # 1 Exhibit A) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 294,
+        "date_filed": "2025-06-24",
+        "time_filed": "18:19:10",
+        "date_display": "Jun 24, 2025",
+        "description": "Support/supplemental documentReply in Support of Sprouts Farmers Market's Motion Pursuant to 28 USC §§ 1408 & 1412 and Rule 1014 of the Federal Rules of Bankruptcy Procedure to Transfer Venue filed by SFM, LLC, Sprouts Farmers Market, Inc. (RE: related document(s)162 Motion to transfer case to the Southern District of California, division. ). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2) (Gabriel, Isaac)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 293,
+        "date_filed": "2025-06-24",
+        "time_filed": "16:39:55",
+        "date_display": "Jun 24, 2025",
+        "description": "Witness and Exhibit List for Hearing on Sprouts Farmers Market's Emergency Motion to Continue Final Hearing on Debtors' DIP Financing Hearing Pending Final Adjudication of its Motion to Transfer Venue of these Chapter 11 Cases and Related Matters and Proceedings Scheduled for June 26, 2025 at 10:30 A.M. (CT) filed by Creditor Sprouts Farmers Market, Inc. (RE: related document(s)162 Motion to transfer case to the Southern District of California, division. ). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12 # 13 Exhibit 13 # 14 Exhibit 14 # 15 Exhibit 15 # 16 Exhibit 16 # 17 Exhibit 17 # 18 Exhibit 18 # 19 Exhibit 19 # 20 Exhibit 20 # 21 Exhibit 21 # 22 Exhibit 22 # 23 Exhibit 23 # 24 Exhibit 24 # 25 Exhibit 25 # 26 Exhibit 26 # 27 Exhibit 27 # 28 Exhibit 28 # 29 Exhibit 29 # 30 Exhibit 30 # 31 Exhibit 31 # 32 Exhibit 32 # 33 Exhibit 33 # 34 Exhibit 34 # 35 Exhibit 35 # 36 Exhibit 36 # 37 Exhibit 37 # 38 Exhibit 38 # 39 Exhibit 39 # 40 Exhibit 40 # 41 Exhibit 41 # 42 Exhibit 42 # 43 Exhibit 43 # 44 Exhibit 44 # 45 Exhibit 45) (Gabriel, Isaac)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 292,
+        "date_filed": "2025-06-24",
+        "time_filed": "12:59:06",
+        "date_display": "Jun 24, 2025",
+        "description": "Witness and Exhibit List filed by Creditor Sprouts Farmers Market, Inc. (RE: related document(s)12 Motion for DIP financing. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to (A) Obtain Post-petition Financing, (B) Use Cash Collateral, (C) Grant Senior Secured Liens and provide Claims with Superpriori). (Attachments: # 1 Affidavit Certificate of Service) (Werkheiser, Gregory)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 291,
+        "date_filed": "2025-06-24",
+        "time_filed": "12:33:05",
+        "date_display": "Jun 24, 2025",
+        "description": "Notice of Appearance and Request for Notice by Jessica Nicole Alt filed by Creditor PNC Equipment Finance, LLC. (Alt, Jessica)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 290,
+        "date_filed": "2025-06-24",
+        "time_filed": "12:29:57",
+        "date_display": "Jun 24, 2025",
+        "description": "Notice of Appearance and Request for Notice by Christopher V. Arisco filed by Creditor PNC Equipment Finance, LLC. (Arisco, Christopher)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 289,
+        "date_filed": "2025-06-24",
+        "time_filed": "11:23:24",
+        "date_display": "Jun 24, 2025",
+        "description": "Witness and Exhibit List of the Official Committee of Unsecured Creditors for Hearing Scheduled on June 26, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors (RE: related document(s)162 Motion to transfer case to the Southern District of California, division. ). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7) (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 288,
+        "date_filed": "2025-06-24",
+        "time_filed": "10:49:47",
+        "date_display": "Jun 24, 2025",
+        "description": "Certificate of service re: Appointment of the Official Unsecured Creditors Committee filed by U.S. Trustee United States Trustee (RE: related document(s)148 UST appointment of committee). (Young, Elizabeth)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 287,
+        "date_filed": "2025-06-24",
+        "time_filed": "10:40:54",
+        "date_display": "Jun 24, 2025",
+        "description": "Witness and Exhibit List for Hearing filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)7 Motion to maintain bank accounts. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Continue to Operate their Existing Cash Management System; and (II) granting Related Relief, 8 Motion regarding pre-petition claims of Critical Vendors. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Pay Certain Prepetition Claims of Critical Vendors; and (II) Granting Related Relief, 9 Motion regarding pre-petition claims Contractor Obligations. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Satisfy Certain Prepetition Contractor Obligations; and (II) Granting Related Relief, 11 Motion regarding utilities. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Continue Use of LC Facility; and (II) Granting Related Relief, 12 Motion for DIP financing. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to (A) Obtain Post-petition Financing, (B) Use Cash Collateral, (C) Grant Senior Secured Liens and provide Claims with Superpriori, 135 Motion to reject executory contract or unexpired lease, 136 Motion to sell property free and clear of liens under Section 363(f) Fee amount $199,, 137 Motion to pay Debtors' Motion for Entry of an Order (I) Establishing Proceduers for Interim Compensation and Reimbursement of Expenses for Retained Professionals and (II) Granting Related Relief, 160 Emergency Motion to continue hearing on (related documents 12 First Day Motion), 162 Motion to transfer case to the Southern District of California, division., 198 Motion to compromise controversy with (I) Approving Procedures for the Settlement of Certain Accounts Receivable, (II) Approving Form of Potential Turnover Action Notice and (III) Granting Related Relieff., 199 Motion to sell property free and clear of liens under Section 363(f) Debtors' Motion for Entry of an Order (I) Authorizing (A) the Sale of the Dallas Facility and (B) Entry into the Lease Termination Agreement; (II) Granting the Purchaser th). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12 # 13 Exhibit 13 # 14 Exhibit 14 # 15 Exhibit 15 # 16 Exhibit 16 # 17 Exhibit 17 # 18 Exhibit 18 # 19 Exhibit 19 # 20 Exhibit 20 # 21 Exhibit 21 # 22 Exhibit 22 # 23 Exhibit 23 # 24 Exhibit 24 # 25 Exhibit 25 # 26 Exhibit 26 # 27 Exhibit 27 # 28 Exhibit 28 # 29 Exhibit 29 # 30 Exhibit 30 # 31 Exhibit 31 # 32 Exhibit 32) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 286,
+        "date_filed": "2025-06-24",
+        "time_filed": "08:49:06",
+        "date_display": "Jun 24, 2025",
+        "description": "Notice of Appearance and Request for Notice by Matthew Breen filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Breen, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 285,
+        "date_filed": "2025-06-24",
+        "time_filed": "08:47:55",
+        "date_display": "Jun 24, 2025",
+        "description": "Notice of Appearance and Request for Notice by James Drew filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Drew, James)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 284,
+        "date_filed": "2025-06-23",
+        "time_filed": "14:32:22",
+        "date_display": "Jun 23, 2025",
+        "description": "Objection to (related document(s): 192 Motion to compromise controversy with JBS USA Food Company, JBS USA Food Company Holdings, and Swift Pork Company. Debtors Motion Seeking Entry of an Order (A) Approving a Settlement Agreement with JBS USA Food Company, JBS USA Food Company Holdin filed by Debtor Harvest Sherwood Food Distributors, Inc.) filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Attachments: # 1 Exhibit - Service List) (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 283,
+        "date_filed": "2025-06-23",
+        "time_filed": "13:32:04",
+        "date_display": "Jun 23, 2025",
+        "description": "Notice of hearing filed by Blakemore Investments, LLC, Milwaukee Investments, LP (RE: related document(s)188 Emergency Motion to file document under seal. Filed by Blakemore Investments, LLC, Milwaukee Investments, LP (Attachments: # 1 Proposed Order # 2 Complex Service List)). Hearing to be held on 6/26/2025 at 10:30 AM Dallas Judge Jernigan Ctrm for 188, (Attachments: # 1 Exhibit - Webex instructions # 2 Exhibit - Service List) (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 282,
+        "date_filed": "2025-06-23",
+        "time_filed": "07:32:40",
+        "date_display": "Jun 23, 2025",
+        "description": "Notice of Appearance and Request for Notice,Pleadings, Orders and Other Papers by Adam C. Silverstein filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Silverstein, Adam)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 281,
+        "date_filed": "2025-06-23",
+        "time_filed": "07:29:00",
+        "date_display": "Jun 23, 2025",
+        "description": "Notice of Appearance and Request for Notice,Pleadings, Orders and Other Papers by Melanie Louise Cyganowski filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Cyganowski, Melanie)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 280,
+        "date_filed": "2025-06-20",
+        "time_filed": "19:43:17",
+        "date_display": "Jun 20, 2025",
+        "description": "Support/supplemental document (SUPPLEMENT TO LIMITED OBJECTION AND RESERVATION OF RIGHTS OF BLAKEMORE INVESTMENTS LLC AND MILWAUKEE INVESTMENTS LP TO DEBTORS MOTION FOR DEBTOR IN POSSESSION FINANCING) filed by Blakemore Investments, LLC, Milwaukee Investments, LP (RE: related document(s)157 Objection). (Attachments: # 1 Exhibit A) (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 279,
+        "date_filed": "2025-06-20",
+        "time_filed": "17:03:32",
+        "date_display": "Jun 20, 2025",
+        "description": "Joinder by // Joinder and Limited Objection of DIP Agent in Support of Debtors' Objection to Sprouts Farmers Market's Motion Pursuant to 28 U.S.C. §§ 1408 & 1412 and Rule 1014 of the Federal Rules of Bankruptcy Procedure to Transfer Venue filed by Creditor JPMorgan Chase Bank, N.A., as Prepetition Agent and DIP Agent (RE: related document(s)162 Motion to transfer case to the Southern District of California, division., 276 Objection). (Davidson, Timothy)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 278,
+        "date_filed": "2025-06-20",
+        "time_filed": "16:42:56",
+        "date_display": "Jun 20, 2025",
+        "description": "Joinder by // The Official Committee of Unsecured Creditors' Objection, and Joinder in Support of the Debtors' Objection, to Sprouts Farmers Market's Motion Pursuant to 28 U.S.C. §§ 1408 & 1412 and Rule 1014 of the Federal Rules of Bankruptcy Procedure to Transfer Venue filed by Creditor Committee The Official Committee of Unsecured Creditors (RE: related document(s)162 Motion to transfer case to the Southern District of California, division., 276 Objection). (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 277,
+        "date_filed": "2025-06-20",
+        "time_filed": "15:38:23",
+        "date_display": "Jun 20, 2025",
+        "description": "Declaration re: Eric Kaup in Support of Debtors' Venue Transfer Objection filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)276 Objection). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 276,
+        "date_filed": "2025-06-20",
+        "time_filed": "15:33:03",
+        "date_display": "Jun 20, 2025",
+        "description": "Objection to (related document(s): 162 Motion to transfer case to the Southern District of California, division. filed by Creditor Sprouts Farmers Market, Inc.) filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 275,
+        "date_filed": "2025-06-20",
+        "time_filed": "13:35:07",
+        "date_display": "Jun 20, 2025",
+        "description": "Notice of hearingfor June 26, 2025 Setting filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)7 Motion to maintain bank accounts. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Continue to Operate their Existing Cash Management System; and (II) granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 8 Motion regarding pre-petition claims of Critical Vendors. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Pay Certain Prepetition Claims of Critical Vendors; and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 9 Motion regarding pre-petition claims Contractor Obligations. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Satisfy Certain Prepetition Contractor Obligations; and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 10 Motion regarding pre-petition claims. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Pay Certain Prepetition Taxes and Fees; and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 11 Motion regarding utilities. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Continue Use of LC Facility; and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 12 Motion for DIP financing. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to (A) Obtain Post-petition Financing, (B) Use Cash Collateral, (C) Grant Senior Secured Liens and provide Claims with Superpriority Administrative Expense Status, and (D) Grant Adequate Protection to the Prepetition Secured Parties; (II) Modifying the Automatic Stay; (III) Scheduling a Final Hearing, and (IV) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 135 Motion to reject executory contract or unexpired lease Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 136 Motion to sell property free and clear of liens under Section 363(f) Fee amount $199, Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/30/2025. (Attachments: # 1 Exhibit A), 137 Motion to pay Debtors' Motion for Entry of an Order (I) Establishing Proceduers for Interim Compensation and Reimbursement of Expenses for Retained Professionals and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 160 Emergency Motion to continue hearing on (related documents 12 First Day Motion) Filed by Creditor Sprouts Farmers Market, Inc. (Attachments: # 1 Proposed Order Ex. A - Proposed Order # 2 Affidavit Certificate of Service), 162 Motion to transfer case to the Southern District of California, division. Filed by Creditor Sprouts Farmers Market, Inc., 198 Motion to compromise controversy with (I) Approving Procedures for the Settlement of Certain Accounts Receivable, (II) Approving Form of Potential Turnover Action Notice and (III) Granting Related Relieff. Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 6/23/2025. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C), 199 Motion to sell property free and clear of liens under Section 363(f) Debtors' Motion for Entry of an Order (I) Authorizing (A) the Sale of the Dallas Facility and (B) Entry into the Lease Termination Agreement; (II) Granting the Purchaser the Protections Afforded to a Good Faith Purchaser, and (III) Granting Related Relief Fee amount $199, Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 6/23/2025. (Attachments: # 1 Exhibit A)). Hearing to be held on 6/26/2025 at 10:30 AM at https://us-courts.webex.com/meet/jerniga for 12 and for 136 and for 9 and for 11 and for 8 and for 162 and for 7 and for 137 and for 135 and for 198 and for 199 and for 10 and for 160, (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 274,
+        "date_filed": "2025-06-20",
+        "time_filed": "12:57:28",
+        "date_display": "Jun 20, 2025",
+        "description": "Chapter 11 Monthly Operating Report for Case Number 25-80109 for the Month Ending: 05/31/2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 273,
+        "date_filed": "2025-06-19",
+        "time_filed": "23:22:14",
+        "date_display": "Jun 19, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)272 Order granting motion to appear pro hac vice adding Geremy W. Gregory for Wayne-Sanderson Farms; Sanderson Farms, LLC and Wayne Farms, LLC (related document 268) Entered on 6/17/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 06/19/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 272,
+        "date_filed": "2025-06-17",
+        "time_filed": "10:09:58",
+        "date_display": "Jun 17, 2025",
+        "description": "Order granting motion to appear pro hac vice adding Geremy W. Gregory for Wayne-Sanderson Farms; Sanderson Farms, LLC and Wayne Farms, LLC (related document # 268) Entered on 6/17/2025. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 271,
+        "date_filed": "2025-06-16",
+        "time_filed": "18:30:07",
+        "date_display": "Jun 16, 2025",
+        "description": "Certificate of service re: Sprouts Farmers Market's Notice of Rule 30(b)(6) Deposition of the Debtors filed by Creditor Sprouts Farmers Market, Inc. (RE: related document(s)162 Motion to transfer case to the Southern District of California, division. ). (Brady, Clarissa)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 270,
+        "date_filed": "2025-06-16",
+        "time_filed": "15:14:12",
+        "date_display": "Jun 16, 2025",
+        "description": "Notice of Appearance and Request for Notice by Rachel L Steinlage filed by Creditor Miceli Dairy Products Co.. (Steinlage, Rachel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 269,
+        "date_filed": "2025-06-16",
+        "time_filed": "09:54:25",
+        "date_display": "Jun 16, 2025",
+        "description": "Notice of Appearance and Request for Notice by Mark Stromberg filed by Creditor Ateeco, Inc. dba Mrs. T's Pierogies. (Stromberg, Mark)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-16",
+        "time_filed": "11:24:48",
+        "date_display": "Jun 16, 2025",
+        "description": "Meeting of creditors held",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-16",
+        "time_filed": "",
+        "date_display": "Jun 16, 2025",
+        "description": "Trustee's initial report of meeting of creditors held on 6/16/2025 (RE: related document(s)25 Meeting of creditors Chapter 11) (Young, Elizabeth)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 268,
+        "date_filed": "2025-06-12",
+        "time_filed": "10:30:29",
+        "date_display": "Jun 12, 2025",
+        "description": "Motion to appear pro hac vice for Geremy W. Gregory. Fee Amount $100 Filed by Wayne Farms, LLC, WAYNE-sANDERSON FARMS, LLC (McKaughan, Dane)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 267,
+        "date_filed": "2025-06-12",
+        "time_filed": "10:21:28",
+        "date_display": "Jun 12, 2025",
+        "description": "Certificate of service re: NOA, Ret Mtns filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)191 Notice (generic), 192 Motion to compromise controversy with JBS USA Food Company, JBS USA Food Company Holdings, and Swift Pork Company. Debtors Motion Seeking Entry of an Order (A) Approving a Settlement Agreement with JBS USA Food Company, JBS USA Food Company Holdin, 193 Declaration, 194 Application to employ Sidley Austin LLP as Attorney for the Debtors and the Debtors in Possession Effective as of the Petition Date, 195 Application to employ Hilco Commercial Industrial, LLC and Hilco Receivables, LLC as Other Professional to provide Restructuring Management Services and (B) the Designation of Eric Kaup as Chief Restructuring Officer to the Debtors Effective as of t, 196 Application to employ Meru, LLC as Financial Advisor to the Debtors Effective as of the Petition Date, 197 Application to employ Cadwalader, Wickersham & Taft LLP as Special Counsel for the Debtors, Effective as of the Petition Date, and (II) Granting Related Relief, 198 Motion to compromise controversy with (I) Approving Procedures for the Settlement of Certain Accounts Receivable, (II) Approving Form of Potential Turnover Action Notice and (III) Granting Related Relieff., 199 Motion to sell property free and clear of liens under Section 363(f) Debtors' Motion for Entry of an Order (I) Authorizing (A) the Sale of the Dallas Facility and (B) Entry into the Lease Termination Agreement; (II) Granting the Purchaser th, 200 Declaration). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-12",
+        "time_filed": "",
+        "date_display": "Jun 12, 2025",
+        "description": "Receipt of filing fee for Motion to Appear pro hac vice( 25-80109-sgj11) [motion,mprohac] ( 100.00). Receipt number A32606439, amount $ 100.00 (re: Doc# 268). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-12",
+        "time_filed": "10:33:57",
+        "date_display": "Jun 12, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 266,
+        "date_filed": "2025-06-11",
+        "time_filed": "23:23:26",
+        "date_display": "Jun 11, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)263 Order granting motion to appear pro hac vice adding Lisa Ann Gerson for The Official Committee of Unsecured Creditors (related document 233) Entered on 6/9/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 06/11/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 265,
+        "date_filed": "2025-06-09",
+        "time_filed": "16:15:59",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,). (LAMCP Capital, LLC 25-80115) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 264,
+        "date_filed": "2025-06-09",
+        "time_filed": "16:01:03",
+        "date_display": "Jun 9, 2025",
+        "description": "Order granting motion to appear pro hac vice adding Jason Z Brainer for Superior Foods Company (related document # 235) Entered on 6/9/2025. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 263,
+        "date_filed": "2025-06-09",
+        "time_filed": "15:57:32",
+        "date_display": "Jun 9, 2025",
+        "description": "Order granting motion to appear pro hac vice adding Lisa Ann Gerson for The Official Committee of Unsecured Creditors (related document # 233) Entered on 6/9/2025. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 262,
+        "date_filed": "2025-06-09",
+        "time_filed": "15:12:16",
+        "date_display": "Jun 9, 2025",
+        "description": "Notice Periodic Report Regarding Value, Operations, and Profitability of Entities in Which the Debtors Estate Holds a Substantial or Controlling Interest filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 261,
+        "date_filed": "2025-06-09",
+        "time_filed": "14:17:34",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (Western Boxed Meats Distributors, Inc. 25-80120) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txnb.527729/gov.uscourts.txnb.527729.261.0.pdf"
+      },
+      {
+        "entry_number": 260,
+        "date_filed": "2025-06-09",
+        "time_filed": "14:15:48",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (Surfliner Holdings, Inc. 25-80119)) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txnb.527729/gov.uscourts.txnb.527729.260.0.pdf"
+      },
+      {
+        "entry_number": 259,
+        "date_filed": "2025-06-09",
+        "time_filed": "14:14:16",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (Sherwood Food Distributors, L.L.C. 25-80110) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 258,
+        "date_filed": "2025-06-09",
+        "time_filed": "14:10:19",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (SFD Transportation Corp. 25-80118) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 257,
+        "date_filed": "2025-06-09",
+        "time_filed": "14:08:36",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (SFD Company LLC 25-80117) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 256,
+        "date_filed": "2025-06-09",
+        "time_filed": "14:06:55",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS.(SFD Acquisition 25-80116) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 255,
+        "date_filed": "2025-06-09",
+        "time_filed": "14:05:17",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS.(LAMCP Capital, LLC 25-80115) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 254,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:59:08",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (Harvest Sherwood Food Distributors 25-80109) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea)Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 253,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:57:28",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (Harvest Meat Company, Inc. 25-80108) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 252,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:55:43",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (Hamilton Meat, LLC 25-80114) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 251,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:53:48",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (Del Mar Holding LLC 25-80113) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 250,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:52:07",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (Del Mar Acquisitions Inc. 25-80112) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 249,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:49:56",
+        "date_display": "Jun 9, 2025",
+        "description": "Statement of financial affairs for a non-individual GLOBAL NOTES AND STATEMENT OF LIMITATIONS, METHODOLOGY, DISCLAIMER, AND SPECIFIC DISCLOSURES REGARDING THE DEBTORS SCHEDULES OF ASSETS AND LIABILITIES AND STATEMENTS OF FINANCIAL AFFAIRS. (Cascade Food Brokers 25-80111) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)29 Notice of deficiency). (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 248,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:38:55",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (Western Boxed Meats 25-80120). Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 247,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:35:48",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (Surfliner Holdings, Inc. 25-80119) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 246,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:31:54",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (Sherwood Food Distributors, L.L.C. 25-80110) Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 245,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:28:12",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (SFD Transportation Corp. 25-80118). Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea )Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 244,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:22:46",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (SFD Company LLC 25-80117). Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 243,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:20:15",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (SFD Acquisitions LLC 25-80116). Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 242,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:17:17",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors and Summary of Assets and Liabilities) (Harvest Sherwood Food Distributors, Inc. 25-80109). Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 241,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:13:32",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (Harvest Meat Company, Inc. 25-80108). Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 240,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:09:51",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (Hamilton Meat, LLC 25-80114). Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea) Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 239,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:05:52",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (Del Mar Holding LLC 25-80113). Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea)Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 238,
+        "date_filed": "2025-06-09",
+        "time_filed": "13:02:07",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (Del Mar Acquistions, Inc. 25-80112). Filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea)Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 237,
+        "date_filed": "2025-06-09",
+        "time_filed": "12:54:10",
+        "date_display": "Jun 9, 2025",
+        "description": "Schedules: Schedules A-B and D-H (with Declaration Under Penalty of Perjury for Non-Individual Debtors,) (Cascade Food Brokers, Inc. 25-80111) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)29 Notice of deficiency). (McManus, Chelsea)Modified on 6/10/2025 (mdo).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90173,
+        "date_filed": "2025-06-06",
+        "time_filed": "09:21:27",
+        "date_display": "Jun 6, 2025",
+        "description": "Appear pro hac vice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90172,
+        "date_filed": "2025-06-06",
+        "time_filed": "09:18:04",
+        "date_display": "Jun 6, 2025",
+        "description": "Notice of appearance and request for notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 236,
+        "date_filed": "2025-06-06",
+        "time_filed": "16:05:01",
+        "date_display": "Jun 6, 2025",
+        "description": "Notice of Appearance and Request for Notice by Stephen R. Butler filed by Creditor TN Dept of Revenue. (Butler, Stephen)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 235,
+        "date_filed": "2025-06-06",
+        "time_filed": "09:21:27",
+        "date_display": "Jun 6, 2025",
+        "description": "Motion to appear pro hac vice for Jason Z. Brainer. Fee Amount $100 Filed by Creditor Superior Foods Company (Brainer, Jason)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 234,
+        "date_filed": "2025-06-06",
+        "time_filed": "09:18:04",
+        "date_display": "Jun 6, 2025",
+        "description": "Notice of Appearance and Request for Notice by John Robert Nelson filed by Creditor Superior Foods Company. (Nelson, John)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-06",
+        "time_filed": "",
+        "date_display": "Jun 6, 2025",
+        "description": "Receipt of filing fee for Motion to Appear pro hac vice( 25-80109-sgj11) [motion,mprohac] ( 100.00). Receipt number A32587037, amount $ 100.00 (re: Doc# 90173). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-06",
+        "time_filed": "09:22:23",
+        "date_display": "Jun 6, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90171,
+        "date_filed": "2025-06-05",
+        "time_filed": "16:07:44",
+        "date_display": "Jun 5, 2025",
+        "description": "Appear pro hac vice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90170,
+        "date_filed": "2025-06-05",
+        "time_filed": "12:17:36",
+        "date_display": "Jun 5, 2025",
+        "description": "Notice of appearance and request for notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 233,
+        "date_filed": "2025-06-05",
+        "time_filed": "16:07:44",
+        "date_display": "Jun 5, 2025",
+        "description": "Motion to appear pro hac vice for Lisa Ann Gerson. Fee Amount $100 Filed by Creditor Committee The Official Committee of Unsecured Creditors (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 232,
+        "date_filed": "2025-06-05",
+        "time_filed": "12:17:36",
+        "date_display": "Jun 5, 2025",
+        "description": "Notice of Appearance and Request for Notice by Paul M. Lopez filed by Creditor COLLIN COUNTY TAX ASSESSOR-COLLECTOR. (Lopez, Paul)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-05",
+        "time_filed": "16:09:05",
+        "date_display": "Jun 5, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-05",
+        "time_filed": "",
+        "date_display": "Jun 5, 2025",
+        "description": "Receipt of filing fee for Motion to Appear pro hac vice( 25-80109-sgj11) [motion,mprohac] ( 100.00). Receipt number A32585085, amount $ 100.00 (re: Doc# 90171). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90169,
+        "date_filed": "2025-06-04",
+        "time_filed": "23:28:05",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90168,
+        "date_filed": "2025-06-04",
+        "time_filed": "23:28:05",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90167,
+        "date_filed": "2025-06-04",
+        "time_filed": "23:28:05",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90166,
+        "date_filed": "2025-06-04",
+        "time_filed": "23:28:05",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90165,
+        "date_filed": "2025-06-04",
+        "time_filed": "23:28:05",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90164,
+        "date_filed": "2025-06-04",
+        "time_filed": "23:28:05",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90163,
+        "date_filed": "2025-06-04",
+        "time_filed": "23:28:05",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90162,
+        "date_filed": "2025-06-04",
+        "time_filed": "23:28:05",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 231,
+        "date_filed": "2025-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)208 Order granting motion to appear pro hac vice adding Matthew V. Breen for Blakemore Investments, LLC and Milwaukee Investments, LP (related document 173) Entered on 6/1/2025. (Okafor, M.)Modified on 6/1/2025 (mdo).) No. of Notices: 1. Notice Date 06/04/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 230,
+        "date_filed": "2025-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)207 Order granting motion to appear pro hac vice adding Melanie L Cyganowski for Blakemore Investments, LLC and Milwaukee Investments, LP (related document 172) Entered on 6/1/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 06/04/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 229,
+        "date_filed": "2025-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)206 Order granting motion to appear pro hac vice adding James V. Drew for Blakemore Investments, LLC and Milwaukee Investments, LP (related document 171) Entered on 6/1/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 06/04/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 228,
+        "date_filed": "2025-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)205 Order granting motion to appear pro hac vice adding Adam C Silverstein for Blakemore Investments, LLC and Milwaukee Investments, LP (related document 170) Entered on 6/1/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 06/04/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 227,
+        "date_filed": "2025-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)204 Order granting motion to appear pro hac vice adding Robert Ethan Dover for The Official Committee of Unsecured Creditors (related document 169) Entered on 6/1/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 06/04/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 226,
+        "date_filed": "2025-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)203 Order granting motion to appear pro hac vice adding Steven Z. Szanzer for The Official Committee of Unsecured Creditors (related document 168) Entered on 6/1/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 06/04/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 225,
+        "date_filed": "2025-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)202 Order granting motion to appear pro hac vice adding Darren T. Azman for The Official Committee of Unsecured Creditors (related document 167) Entered on 6/1/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 06/04/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 224,
+        "date_filed": "2025-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2025",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)201 Order granting motion to appear pro hac vice adding Rachel L. Steinlage for Miceli Dairy Products Co. (related document 156) Entered on 6/1/2025. (Okafor, M.)) No. of Notices: 1. Notice Date 06/04/2025. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 223,
+        "date_filed": "2025-06-04",
+        "time_filed": "19:29:30",
+        "date_display": "Jun 4, 2025",
+        "description": "Order granting motion to appear pro hac vice adding Isaac M. Gabriel for Sprouts Farmers Market, Inc. (related document 210) Entered on 6/4/2025. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 222,
+        "date_filed": "2025-06-03",
+        "time_filed": "19:57:00",
+        "date_display": "Jun 3, 2025",
+        "description": "Certificate of service re: Debtors Witness and Exhibit List by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)180 List (witness/exhibit/generic)). (Garabato, Sid)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 221,
+        "date_filed": "2025-06-03",
+        "time_filed": "14:55:28",
+        "date_display": "Jun 3, 2025",
+        "description": "Withdrawal of Objection [DKT. 185] filed by Creditor LIT GATEWAY PORTFOLIO, LLC (RE: related document(s)185 Objection). (Callahan, Daniel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 220,
+        "date_filed": "2025-06-03",
+        "time_filed": "13:16:41",
+        "date_display": "Jun 3, 2025",
+        "description": "Notice of Adjournment of June 4, 2025 Hearing filed by Debtor Harvest Sherwood Food Distributors, Inc.. (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 219,
+        "date_filed": "2025-06-03",
+        "time_filed": "11:37:28",
+        "date_display": "Jun 3, 2025",
+        "description": "Notice of Revised Proposed Lease Rejection Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 218,
+        "date_filed": "2025-06-03",
+        "time_filed": "11:35:37",
+        "date_display": "Jun 3, 2025",
+        "description": "Notice of Revised Proposed De Minimis Assets Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 217,
+        "date_filed": "2025-06-03",
+        "time_filed": "11:26:29",
+        "date_display": "Jun 3, 2025",
+        "description": "Notice of Revised Proposed Final Utilities Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 216,
+        "date_filed": "2025-06-03",
+        "time_filed": "11:23:37",
+        "date_display": "Jun 3, 2025",
+        "description": "Notice of Revised Proposed Final Taxes Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 215,
+        "date_filed": "2025-06-03",
+        "time_filed": "11:20:47",
+        "date_display": "Jun 3, 2025",
+        "description": "Notice of Revised Proposed Final Critical Vendor Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 214,
+        "date_filed": "2025-06-03",
+        "time_filed": "11:18:26",
+        "date_display": "Jun 3, 2025",
+        "description": "Notice of Revised Proposed Final Contractor Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 213,
+        "date_filed": "2025-06-03",
+        "time_filed": "11:10:23",
+        "date_display": "Jun 3, 2025",
+        "description": "Notice of Revised Proposed Final Cash Management Order filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (McManus, Chelsea)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 211,
+        "date_filed": "2025-06-02",
+        "time_filed": "14:28:20",
+        "date_display": "Jun 2, 2025",
+        "description": "Notice of continued hearing filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)7 Motion to maintain bank accounts. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Continue to Operate their Existing Cash Management System; and (II) granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 8 Motion regarding pre-petition claims of Critical Vendors. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Pay Certain Prepetition Claims of Critical Vendors; and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 9 Motion regarding pre-petition claims Contractor Obligations. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Satisfy Certain Prepetition Contractor Obligations; and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 10 Motion regarding pre-petition claims. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Pay Certain Prepetition Taxes and Fees; and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 11 Motion regarding utilities. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to Continue Use of LC Facility; and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F), 12 Motion for DIP financing. Debtors' Emergency Motion for Entry of Interim and Final Orders (I) Authorizing Debtors to (A) Obtain Post-petition Financing, (B) Use Cash Collateral, (C) Grant Senior Secured Liens and provide Claims with Superpriority Administrative Expense Status, and (D) Grant Adequate Protection to the Prepetition Secured Parties; (II) Modifying the Automatic Stay; (III) Scheduling a Final Hearing, and (IV) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 135 Motion to reject executory contract or unexpired lease Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 136 Motion to sell property free and clear of liens under Section 363(f) Fee amount $199, Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/30/2025. (Attachments: # 1 Exhibit A), 137 Motion to pay Debtors' Motion for Entry of an Order (I) Establishing Proceduers for Interim Compensation and Reimbursement of Expenses for Retained Professionals and (II) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 160 Emergency Motion to continue hearing on (related documents 12 First Day Motion) Filed by Creditor Sprouts Farmers Market, Inc. (Attachments: # 1 Proposed Order Ex. A - Proposed Order # 2 Affidavit Certificate of Service)). Hearing to be held on 6/4/2025 at 01:30 PM at https://us-courts.webex.com/meet/jerniga for 12 and for 136 and for 9 and for 11 and for 8 and for 7 and for 137 and for 135 and for 10 and for 160, (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 209,
+        "date_filed": "2025-06-02",
+        "time_filed": "10:59:31",
+        "date_display": "Jun 2, 2025",
+        "description": "Notice of Appearance and Request for Notice by Daniel P. Callahan filed by Creditor LIT GATEWAY PORTFOLIO, LLC. (Callahan, Daniel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-02",
+        "time_filed": "",
+        "date_display": "Jun 2, 2025",
+        "description": "Receipt of filing fee for Motion to Appear pro hac vice( 25-80109-sgj11) [motion,mprohac] ( 100.00). Receipt number A32570250, amount $ 100.00 (re: Doc# 210). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=53"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=59"
   },
   "claims_administrator": {
     "name": "Epiq11",
