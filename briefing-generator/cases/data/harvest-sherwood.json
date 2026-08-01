@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/",
     "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-08-01T09:25:46.181147+00:00",
+    "fetched_at": "2026-08-01T11:38:29.706734+00:00",
     "as_of": "Aug 1, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -5461,9 +5461,949 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 633,
+        "date_filed": "2026-01-20",
+        "time_filed": "11:39:17",
+        "date_display": "Jan 20, 2026",
+        "description": "Withdrawal of claim(s): Number 0000010783 filed by JBS USA Food Company Filed by Creditor JBS USA Food Company. (Tomasco, Patricia)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 632,
+        "date_filed": "2026-01-16",
+        "time_filed": "18:08:08",
+        "date_display": "Jan 16, 2026",
+        "description": "Order granting Motion to Restrict From Public View (Related Doc # 628) Entered on 1/16/2026. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 631,
+        "date_filed": "2026-01-16",
+        "time_filed": "18:03:56",
+        "date_display": "Jan 16, 2026",
+        "description": "Notice Fourth Monthly Fee Statement of Meru, LLC for Allowance of Compensation and Reimbursement of Expenses for the Period from December 1, 2025, Through and Including December 31, 2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 630,
+        "date_filed": "2026-01-16",
+        "time_filed": "17:46:20",
+        "date_display": "Jan 16, 2026",
+        "description": "Chapter 11 Monthly Operating Report for the Month Ending: 12/31/2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 629,
+        "date_filed": "2026-01-16",
+        "time_filed": "16:51:00",
+        "date_display": "Jan 16, 2026",
+        "description": "Certificate of service re: Notice of Transfer of Claim by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)623 Assignment/Transfer of claim (Claims Agent), 624 Assignment/Transfer of claim (Claims Agent), 625 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 628,
+        "date_filed": "2026-01-16",
+        "time_filed": "",
+        "date_display": "Jan 16, 2026",
+        "description": "Motion to redact/restrict Restrict From Public View (Fee Amount $28) Filed by Interested Party 1970 Group, Inc. (Attachments: # 1 Proposed Order) (Smith, Frances)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-16",
+        "time_filed": "14:55:19",
+        "date_display": "Jan 16, 2026",
+        "description": "Redact/Restrict From Public View",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-16",
+        "time_filed": "14:55:59",
+        "date_display": "Jan 16, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-16",
+        "time_filed": "",
+        "date_display": "Jan 16, 2026",
+        "description": "Receipt of filing fee for Motion to Redact/Restrict From Public View( 25-80109-sgj11) [motion,mredact] ( 28.00). Receipt number A33322121, amount $ 28.00 (re: Doc# 628). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 627,
+        "date_filed": "2026-01-15",
+        "time_filed": "22:34:16",
+        "date_display": "Jan 15, 2026",
+        "description": "Notice // Seventh Monthly Fee Statement of McDermott Will & Schulte LLP, as Counsel to the Official Committee of Unsecured Creditors, for Compensation for Services Rendered and Reimbursement of Expenses Incurred for the Period December 1, 2025 through December 31, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 626,
+        "date_filed": "2026-01-15",
+        "time_filed": "14:43:51",
+        "date_display": "Jan 15, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Schreiber Foods Inc (Claim No. 10143, Amount $21,843.00) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-15",
+        "time_filed": "14:45:04",
+        "date_display": "Jan 15, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-15",
+        "time_filed": "",
+        "date_display": "Jan 15, 2026",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33317757, amount $ 28.00 (re: Doc# 626). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 625,
+        "date_filed": "2026-01-13",
+        "time_filed": "14:41:59",
+        "date_display": "Jan 13, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: MIDWEST INDEPENDENT RETAILERS ASSOC (Claim No. 217, Amount $13,600.00) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 624,
+        "date_filed": "2026-01-13",
+        "time_filed": "13:18:40",
+        "date_display": "Jan 13, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: PANAPESCA USA LLC (Claim No. 10484, Amount $12,193.50) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 622,
+        "date_filed": "2026-01-13",
+        "time_filed": "09:03:39",
+        "date_display": "Jan 13, 2026",
+        "description": "Certificate of service re: Notice of Transfer of Claim by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)599 Assignment/Transfer of claim (Claims Agent), 618 Assignment/Transfer of claim (Claims Agent), 619 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2026",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33308616, amount $ 28.00 (re: Doc# 625). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-13",
+        "time_filed": "14:45:25",
+        "date_display": "Jan 13, 2026",
+        "description": "none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 621,
+        "date_filed": "2026-01-09",
+        "time_filed": "19:54:00",
+        "date_display": "Jan 9, 2026",
+        "description": "Notice // Sixth Monthly Fee Statement of McDermott Will & Schulte LLP, as Counsel to the Official Committee of Unsecured Creditors, for Compensation for Services Rendered and Reimbursement of Expenses Incurred for the Period November 1, 2025 through November 30, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 620,
+        "date_filed": "2026-01-09",
+        "time_filed": "15:55:30",
+        "date_display": "Jan 9, 2026",
+        "description": "Certificate of service re: Notice of Transfer of Claim by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)596 Assignment/Transfer of claim (Claims Agent), 597 Assignment/Transfer of claim (Claims Agent), 598 Assignment/Transfer of claim (Claims Agent), 602 Assignment/Transfer of claim (Claims Agent), 603 Assignment/Transfer of claim (Claims Agent), 604 Assignment/Transfer of claim (Claims Agent), 605 Assignment/Transfer of claim (Claims Agent), 606 Assignment/Transfer of claim (Claims Agent), 607 Assignment/Transfer of claim (Claims Agent), 609 Assignment/Transfer of claim (Claims Agent), 610 Assignment/Transfer of claim (Claims Agent), 611 Assignment/Transfer of claim (Claims Agent), 612 Assignment/Transfer of claim (Claims Agent), 613 Assignment/Transfer of claim (Claims Agent), 615 Assignment/Transfer of claim (Claims Agent), 617 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 619,
+        "date_filed": "2026-01-08",
+        "time_filed": "14:20:04",
+        "date_display": "Jan 8, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: San Diego Seafood (Amount $30,334.19) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 618,
+        "date_filed": "2026-01-08",
+        "time_filed": "14:18:02",
+        "date_display": "Jan 8, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: San Diego Seafood Inc. (Claim No. 415, Amount $30,334.19) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-08",
+        "time_filed": "14:20:46",
+        "date_display": "Jan 8, 2026",
+        "description": "none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-08",
+        "time_filed": "",
+        "date_display": "Jan 8, 2026",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33293544, amount $ 28.00 (re: Doc# 618). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 617,
+        "date_filed": "2026-01-06",
+        "time_filed": "14:30:12",
+        "date_display": "Jan 6, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Culver Duck Farms, Inc. (Claim No. 10249, Amount $23,645.08) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 616,
+        "date_filed": "2026-01-06",
+        "time_filed": "14:04:26",
+        "date_display": "Jan 6, 2026",
+        "description": "Certificate of service re: MOR by Sharna Wilson Filed by Claims Agent Epiq Corporate Restructuring, LLC (related document(s)593 Chapter 11 Monthly Operating Report for the Month Ending: 11/30/2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. filed by Debtor Harvest Sherwood Food Distributors, Inc.). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 615,
+        "date_filed": "2026-01-06",
+        "time_filed": "13:52:40",
+        "date_display": "Jan 6, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: HIGH SUMMIT DISTRIBUTION INC (Claim No. 204, Amount $9,900.00) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 614,
+        "date_filed": "2026-01-06",
+        "time_filed": "12:36:45",
+        "date_display": "Jan 6, 2026",
+        "description": "Certificate of service re: Notice of Transfers by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)589 Assignment/Transfer of claim (Claims Agent), 592 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-06",
+        "time_filed": "15:42:06",
+        "date_display": "Jan 6, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-06",
+        "time_filed": "",
+        "date_display": "Jan 6, 2026",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33284695, amount $ 28.00 (re: Doc# 615). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 612,
+        "date_filed": "2025-12-31",
+        "time_filed": "11:11:32",
+        "date_display": "Dec 31, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: O.K. Foods, Inc. To Hain Capital Investors Masterfund, LTD. Filed by Creditor Hain Capital Group, LLC. (Austin, Keenan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 611,
+        "date_filed": "2025-12-31",
+        "time_filed": "11:09:50",
+        "date_display": "Dec 31, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: SASA Inc. (Claim No. 318, Amount $126,643.94) To Hain Capital Investors Masterfund, LTD. Filed by Creditor Hain Capital Group, LLC. (Austin, Keenan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 610,
+        "date_filed": "2025-12-31",
+        "time_filed": "11:06:47",
+        "date_display": "Dec 31, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: New Specialty Products, Inc dba Barbeque Select (Claim No. 10031, Amount $118,321.30) To Hain Capital Investors Master Fund, LTD. Filed by Creditor Hain Capital Group, LLC. (Austin, Keenan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 609,
+        "date_filed": "2025-12-31",
+        "time_filed": "10:59:08",
+        "date_display": "Dec 31, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: L. Grant & Sons, Inc (Claim No. 176, Amount $59,291.78) To Hain Capital Investors Master Fund, LTD. Filed by Creditor Hain Capital Group, LLC. (Austin, Keenan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 608,
+        "date_filed": "2025-12-31",
+        "time_filed": "10:53:41",
+        "date_display": "Dec 31, 2025",
+        "description": "Order granting motion for relief from stay by Creditor Johnny Smith (related document # 568) Entered on 12/31/2025. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 607,
+        "date_filed": "2025-12-31",
+        "time_filed": "08:12:17",
+        "date_display": "Dec 31, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: ATLANTIC VEAL & LAMB INC (Amount $17,053.61) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 606,
+        "date_filed": "2025-12-31",
+        "time_filed": "07:57:37",
+        "date_display": "Dec 31, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: FLAGSHIP FOOD GROUP LLC (Amount $132,999.46) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 605,
+        "date_filed": "2025-12-31",
+        "time_filed": "07:50:24",
+        "date_display": "Dec 31, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: ATLANTIC VEAL & LAMB INC (Amount $26,534.86) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 604,
+        "date_filed": "2025-12-31",
+        "time_filed": "07:35:34",
+        "date_display": "Dec 31, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: ZAST-FOODS CORPORATION (Claim No. 10215, Amount $19,242.30) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-31",
+        "time_filed": "",
+        "date_display": "Dec 31, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33266378, amount $ 28.00 (re: Doc# 606). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-31",
+        "time_filed": "08:19:04",
+        "date_display": "Dec 31, 2025",
+        "description": "none AND none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-31",
+        "time_filed": "11:18:17",
+        "date_display": "Dec 31, 2025",
+        "description": "none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-31",
+        "time_filed": "11:18:18",
+        "date_display": "Dec 31, 2025",
+        "description": "none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 603,
+        "date_filed": "2025-12-29",
+        "time_filed": "16:08:04",
+        "date_display": "Dec 29, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: MIDWEST PREMIER FOODS (Amount $10,150.00) To VonWin Trust LP. Filed by Creditor VonWin Trust LP. (Wilson, Charmaine)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-29",
+        "time_filed": "16:03:57",
+        "date_display": "Dec 29, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-29",
+        "time_filed": "",
+        "date_display": "Dec 29, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 196.00). Receipt number A33260308, amount $ 196.00 (re: Doc# 602). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 601,
+        "date_filed": "2025-12-23",
+        "time_filed": "19:58:32",
+        "date_display": "Dec 23, 2025",
+        "description": "Notice // Fifth Monthly Fee Statement for Compensation and Reimbursement of Expenses of Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors for the Period from October 1, 2025 through October 31, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 600,
+        "date_filed": "2025-12-23",
+        "time_filed": "19:52:41",
+        "date_display": "Dec 23, 2025",
+        "description": "Notice // Fifth Monthly Fee Statement of McDermott Will & Schulte LLP, as Counsel to the Official Committee of Unsecured Creditors, for Compensation for Services Rendered and Reimbursement of Expenses Incurred for the Period October 1, 2025 through October 31, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 599,
+        "date_filed": "2025-12-23",
+        "time_filed": "14:24:46",
+        "date_display": "Dec 23, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: COMPANION BAKING CO. (Amount $22,275.40) To ARGO PARTNERS. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 598,
+        "date_filed": "2025-12-23",
+        "time_filed": "14:13:35",
+        "date_display": "Dec 23, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: PRECISION LIFT GATE INC (Amount $12,133.43) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 597,
+        "date_filed": "2025-12-23",
+        "time_filed": "14:05:22",
+        "date_display": "Dec 23, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: NORTH KEE TRADING (Amount $19,800.00) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 596,
+        "date_filed": "2025-12-23",
+        "time_filed": "11:47:05",
+        "date_display": "Dec 23, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: NORTH COUNTRY SMOKEHOUSE (Amount $12,553.72) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-23",
+        "time_filed": "",
+        "date_display": "Dec 23, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33250064, amount $ 28.00 (re: Doc# 598). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-23",
+        "time_filed": "15:30:48",
+        "date_display": "Dec 23, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-23",
+        "time_filed": "15:31:12",
+        "date_display": "Dec 23, 2025",
+        "description": "none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 595,
+        "date_filed": "2025-12-22",
+        "time_filed": "10:20:36",
+        "date_display": "Dec 22, 2025",
+        "description": "Notice Fifth Monthly Fee Statement of Sidley Austin LLP for Allowance of Compensation and Reimbursement of Expenses for the Period from November 1, 2025 Through and Including November 30, 2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-22",
+        "time_filed": "",
+        "date_display": "Dec 22, 2025",
+        "description": "Announcement of DEFAULT ORDER regarding hearing scheduled for 12/30/2025. No response filed. Movant to upload default order per Robert C. Newark III, filed by Creditor Johnny Smith (RE: related document(s)568 Motion for relief from stay Fee amount $199, Filed by Creditor Johnny Smith Objections due by 12/19/2025.). (Newark, Robert)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-22",
+        "time_filed": "12:19:08",
+        "date_display": "Dec 22, 2025",
+        "description": "Notice of Announcement Regarding Lift Stay Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 594,
+        "date_filed": "2025-12-19",
+        "time_filed": "19:50:55",
+        "date_display": "Dec 19, 2025",
+        "description": "Certificate of service re: Notice of Transfer of Claim by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)587 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 593,
+        "date_filed": "2025-12-19",
+        "time_filed": "12:15:49",
+        "date_display": "Dec 19, 2025",
+        "description": "Chapter 11 Monthly Operating Report for the Month Ending: 11/30/2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 592,
+        "date_filed": "2025-12-18",
+        "time_filed": "09:32:33",
+        "date_display": "Dec 18, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: RIND INTERNATIONAL (Claim No. 10486, Amount $137,232.60) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-18",
+        "time_filed": "09:35:55",
+        "date_display": "Dec 18, 2025",
+        "description": "none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-18",
+        "time_filed": "",
+        "date_display": "Dec 18, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33233132, amount $ 28.00 (re: Doc# 592). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 591,
+        "date_filed": "2025-12-17",
+        "time_filed": "17:26:49",
+        "date_display": "Dec 17, 2025",
+        "description": "Certificate of service re: Third Monthly Fee Statement of MERU by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)584 Notice (generic)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 590,
+        "date_filed": "2025-12-17",
+        "time_filed": "17:22:13",
+        "date_display": "Dec 17, 2025",
+        "description": "Certificate of service re: Notice of Transfer of Claim by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)579 Assignment/Transfer of claim (Claims Agent), 581 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 589,
+        "date_filed": "2025-12-17",
+        "time_filed": "14:01:36",
+        "date_display": "Dec 17, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: BARGAINXCHANGE INC. (Amount $10,835.05) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 588,
+        "date_filed": "2025-12-16",
+        "time_filed": "05:52:54",
+        "date_display": "Dec 16, 2025",
+        "description": "Notice of Appearance and Request for Notice Filed by Creditor Ford Motor Credit Company LLC, c/o AIS Portfolio Services, LLC. (Sharma, Amitkumar)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 587,
+        "date_filed": "2025-12-15",
+        "time_filed": "11:11:05",
+        "date_display": "Dec 15, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: KADYL LOGISTICS INC (Claim No. 10207, Amount $41,751.00) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-15",
+        "time_filed": "12:25:47",
+        "date_display": "Dec 15, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-15",
+        "time_filed": "",
+        "date_display": "Dec 15, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33220288, amount $ 28.00 (re: Doc# 587). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 586,
+        "date_filed": "2025-12-12",
+        "time_filed": "19:16:46",
+        "date_display": "Dec 12, 2025",
+        "description": "Certificate of service re: Second Monthly Fee Statement by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)580 Notice (generic)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 585,
+        "date_filed": "2025-12-12",
+        "time_filed": "19:07:48",
+        "date_display": "Dec 12, 2025",
+        "description": "Certificate of service re: Notice of Transfer by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)577 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 584,
+        "date_filed": "2025-12-12",
+        "time_filed": "12:20:16",
+        "date_display": "Dec 12, 2025",
+        "description": "Notice Third Monthly Fee Statement of Meru, LLC For Allowance of Compensation and Reimbursement of Expenses for the Period from November 1, 2025, Through and Including November 30, 2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 582,
+        "date_filed": "2025-12-11",
+        "time_filed": "18:29:33",
+        "date_display": "Dec 11, 2025",
+        "description": "Declaration re: // Fourth Supplemental Declaration of Marcus A. Helt in Support of the Retention and Employment of McDermott Will & Emery LLP as Counsel for the Official Committee of Unsecured Creditors filed by Creditor Committee The Official Committee of Unsecured Creditors (RE: related document(s)320 Application to employ McDermott Will & Emery LLP as Attorney // Application for Entry of an Order Authorizing the Retention and Employment of McDermott Will & Emery LLP as Counsel for the Official Committee of Unsecured Creditors Effective as of May, 381 Declaration, 426 Order on application to employ, 438 Declaration, 476 Declaration). (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 581,
+        "date_filed": "2025-12-11",
+        "time_filed": "15:52:46",
+        "date_display": "Dec 11, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: BLOUNT FINE FOODS CORP (Claim No. 10142, Amount $70,536.27) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 579,
+        "date_filed": "2025-12-11",
+        "time_filed": "09:06:57",
+        "date_display": "Dec 11, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: GREAT LAKES SMOKED MEATS LLC (Amount $105,553.31) To Argo Partners. Filed by Creditor Argo Partners. (Singer, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-11",
+        "time_filed": "",
+        "date_display": "Dec 11, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33209720, amount $ 28.00 (re: Doc# 579). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 578,
+        "date_filed": "2025-12-08",
+        "time_filed": "15:45:55",
+        "date_display": "Dec 8, 2025",
+        "description": "Certificate of service re: Monthly Fee Statement by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)567 Notice (generic)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 577,
+        "date_filed": "2025-12-08",
+        "time_filed": "14:19:13",
+        "date_display": "Dec 8, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Kari-Out (Claim No. 156, Amount $25,012.24) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 576,
+        "date_filed": "2025-12-08",
+        "time_filed": "13:59:41",
+        "date_display": "Dec 8, 2025",
+        "description": "Withdrawal of claim(s): No. 10713 by Tecumseh Poultry, LLC Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 575,
+        "date_filed": "2025-12-08",
+        "time_filed": "13:54:24",
+        "date_display": "Dec 8, 2025",
+        "description": "Withdrawal of claim(s): No.10509 by Southwind Foods, LLC Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 574,
+        "date_filed": "2025-12-08",
+        "time_filed": "13:50:33",
+        "date_display": "Dec 8, 2025",
+        "description": "Withdrawal of claim(s): No. 10506 by Southwind Foods, LLC Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 573,
+        "date_filed": "2025-12-08",
+        "time_filed": "13:45:30",
+        "date_display": "Dec 8, 2025",
+        "description": "Certificate of service re: Notice of Transfer of Claim by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)556 Assignment/Transfer of claim (Claims Agent), 557 Assignment/Transfer of claim (Claims Agent), 559 Assignment/Transfer of claim (Claims Agent), 560 Assignment/Transfer of claim (Claims Agent), 561 Assignment/Transfer of claim (Claims Agent), 562 Assignment/Transfer of claim (Claims Agent), 563 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 572,
+        "date_filed": "2025-12-08",
+        "time_filed": "12:28:18",
+        "date_display": "Dec 8, 2025",
+        "description": "Notice // Fourth Monthly Fee Statement for Compensation and Reimbursement of Expenses of Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors for the Period from September 1, 2025 through September 30, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 571,
+        "date_filed": "2025-12-08",
+        "time_filed": "12:26:24",
+        "date_display": "Dec 8, 2025",
+        "description": "Notice // Fourth Monthly Fee Statement of McDermott Will & Schulte LLP, as Counsel to the Official Committee of Unsecured Creditors, for Compensation for Services Rendered and Reimbursement of Expenses Incurred for the Period September 1, 2025 through September 30, 2025 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 570,
+        "date_filed": "2025-12-08",
+        "time_filed": "11:05:33",
+        "date_display": "Dec 8, 2025",
+        "description": "Certificate of service re: Defective Transfers by Panagiota Manatakis filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)463 Assignment/Transfer of claim (Claims Agent), 464 Assignment/Transfer of claim (Claims Agent), 465 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-08",
+        "time_filed": "14:20:28",
+        "date_display": "Dec 8, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-08",
+        "time_filed": "",
+        "date_display": "Dec 8, 2025",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33197366, amount $ 28.00 (re: Doc# 577). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 569,
+        "date_filed": "2025-12-05",
+        "time_filed": "09:04:08",
+        "date_display": "Dec 5, 2025",
+        "description": "Notice of hearing filed by Creditor Johnny Smith (RE: related document(s)568 Motion for relief from stay Fee amount $199, Filed by Creditor Johnny Smith Objections due by 12/19/2025.). Preliminary hearing to be held on 12/30/2025 at 01:30 PM at https://us-courts.webex.com/meet/jerniga. (Newark, Robert)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 568,
+        "date_filed": "2025-12-05",
+        "time_filed": "09:02:20",
+        "date_display": "Dec 5, 2025",
+        "description": "Motion for relief from stay Fee amount $199, Filed by Creditor Johnny Smith Objections due by 12/19/2025. (Newark, Robert)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-05",
+        "time_filed": "09:04:41",
+        "date_display": "Dec 5, 2025",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-05",
+        "time_filed": "",
+        "date_display": "Dec 5, 2025",
+        "description": "Receipt of filing fee for Motion for relief from stay( 25-80109-sgj11) [motion,mrlfsty] ( 199.00). Receipt number B33189770, amount $ 199.00 (re: Doc# 568). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 567,
+        "date_filed": "2025-12-04",
+        "time_filed": "14:20:44",
+        "date_display": "Dec 4, 2025",
+        "description": "Notice Fourth Monthly Fee Statement of Sidley Austin LLP for Allowance Of Compensation and Reimbursement of Expenses for the Period from October 1, 2025 Through and Including October 31, 2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 566,
+        "date_filed": "2025-12-03",
+        "time_filed": "09:30:05",
+        "date_display": "Dec 3, 2025",
+        "description": "Certificate of service re: Notice of Transfer by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)536 Assignment/Transfer of claim (Claims Agent), 537 Assignment/Transfer of claim (Claims Agent), 538 Assignment/Transfer of claim (Claims Agent), 539 Assignment/Transfer of claim (Claims Agent), 540 Assignment/Transfer of claim (Claims Agent), 541 Assignment/Transfer of claim (Claims Agent), 542 Assignment/Transfer of claim (Claims Agent), 543 Assignment/Transfer of claim (Claims Agent), 544 Assignment/Transfer of claim (Claims Agent), 546 Assignment/Transfer of claim (Claims Agent), 547 Assignment/Transfer of claim (Claims Agent), 548 Assignment/Transfer of claim (Claims Agent), 549 Assignment/Transfer of claim (Claims Agent), 550 Assignment/Transfer of claim (Claims Agent), 551 Assignment/Transfer of claim (Claims Agent), 552 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=31"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=37"
   },
   "claims_administrator": {
     "name": "Epiq11",
