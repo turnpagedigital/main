@@ -15,43 +15,103 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/",
     "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-07-31T07:21:40.101934+00:00",
-    "as_of": "Jul 31, 2026",
+    "fetched_at": "2026-08-01T03:57:51.151375+00:00",
+    "as_of": "Aug 1, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 20,
     "recent": [
       {
-        "entry_number": 73,
+        "entry_number": 79,
         "date_filed": "2026-07-31",
-        "time_filed": "00:15:13",
+        "time_filed": "17:04:20",
         "date_display": "Jul 31, 2026",
-        "description": "BNC Certificate of Notice - Order",
+        "description": "Amended Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 72,
+        "entry_number": 78,
         "date_filed": "2026-07-31",
-        "time_filed": "00:15:13",
+        "time_filed": "11:22:48",
         "date_display": "Jul 31, 2026",
-        "description": "BNC Certificate of Notice - Order",
+        "description": "Exhibit",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 71,
+        "entry_number": 77,
         "date_filed": "2026-07-31",
-        "time_filed": "00:15:13",
+        "time_filed": "10:29:30",
         "date_display": "Jul 31, 2026",
-        "description": "BNC Certificate of Notice - Order",
+        "description": "Appear Pro Hac Vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 79,
+        "date_filed": "2026-07-31",
+        "time_filed": "17:04:20",
+        "date_display": "Jul 31, 2026",
+        "description": "Amended Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 78,
+        "date_filed": "2026-07-31",
+        "time_filed": "11:22:48",
+        "date_display": "Jul 31, 2026",
+        "description": "Exhibit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 77,
+        "date_filed": "2026-07-31",
+        "time_filed": "10:29:30",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2026-07-31",
+        "time_filed": "09:18:10",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 75,
+        "date_filed": "2026-07-31",
+        "time_filed": "09:10:04",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 74,
+        "date_filed": "2026-07-31",
+        "time_filed": "09:02:09",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice of Appearance and Request",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 73,
         "date_filed": "2026-07-31",
@@ -198,7 +258,7 @@
         "time_filed": "13:22:56",
         "date_display": "Jul 29, 2026",
         "description": "Master Service List",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

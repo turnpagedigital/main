@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/",
     "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-07-31T10:03:14.339734+00:00",
-    "as_of": "Jul 31, 2026",
+    "fetched_at": "2026-08-01T03:56:27.522752+00:00",
+    "as_of": "Aug 1, 2026",
     "backfilled": false,
-    "new_in_72h": 10,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 1123,
@@ -26,7 +26,7 @@
         "time_filed": "23:27:27",
         "date_display": "Jul 29, 2026",
         "description": "BNC certificate of mailing - PDF document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -36,7 +36,7 @@
         "time_filed": "17:27:21",
         "date_display": "Jul 29, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -46,7 +46,7 @@
         "time_filed": "15:31:26",
         "date_display": "Jul 29, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -58,7 +58,7 @@
         "time_filed": "23:27:27",
         "date_display": "Jul 29, 2026",
         "description": "BNC certificate of mailing - PDF document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -68,7 +68,7 @@
         "time_filed": "17:27:21",
         "date_display": "Jul 29, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -78,7 +78,7 @@
         "time_filed": "15:31:26",
         "date_display": "Jul 29, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -88,7 +88,7 @@
         "time_filed": "15:30:45",
         "date_display": "Jul 29, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -98,7 +98,7 @@
         "time_filed": "15:16:01",
         "date_display": "Jul 29, 2026",
         "description": "Objection to confirmation of plan 11/12/13",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -108,7 +108,7 @@
         "time_filed": "12:09:42",
         "date_display": "Jul 29, 2026",
         "description": "Objection to confirmation of plan 11/12/13",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -118,7 +118,7 @@
         "time_filed": "11:39:45",
         "date_display": "Jul 29, 2026",
         "description": "Notice of appearance and request for notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -128,7 +128,7 @@
         "time_filed": "11:22:43",
         "date_display": "Jul 29, 2026",
         "description": "Objection to confirmation of plan 11/12/13",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -138,7 +138,7 @@
         "time_filed": "09:01:56",
         "date_display": "Jul 29, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -148,7 +148,7 @@
         "time_filed": "15:32:58",
         "date_display": "Jul 29, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -2321,9 +2321,1149 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 901,
+        "date_filed": "2026-06-05",
+        "time_filed": "19:41:19",
+        "date_display": "Jun 5, 2026",
+        "description": "Application for compensation Second Interim Fee Application of Meru, LLC for Allowance of Compensation and Reimbursement of Expenses for the Period from January 1, 2026, Through and Including March 31, 2026 for Harvest Sherwood Food Distributors, Inc., Financial Advisor, Period: 1/1/2026 to 3/31/2026, Fee: $570,232.50, Expenses: $. Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 6/29/2026. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 900,
+        "date_filed": "2026-06-05",
+        "time_filed": "19:24:56",
+        "date_display": "Jun 5, 2026",
+        "description": "Notice Eighth Monthly Fee Statement of Meru, LLC for Allowance of Compensation and Reimbursement of Expenses for the Period from April 1, 2026, Through and Including April 30, 2026 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 899,
+        "date_filed": "2026-06-05",
+        "time_filed": "19:21:11",
+        "date_display": "Jun 5, 2026",
+        "description": "Notice Notice of Tenth Additional Extension of Debtors Exclusive Right to File and Solicit Acceptance of a Plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)666 Motion to extend or limit the exclusivity period Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 3/23/2026. (Attachments: # 1 Exhibit A)). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 898,
+        "date_filed": "2026-06-05",
+        "time_filed": "16:53:26",
+        "date_display": "Jun 5, 2026",
+        "description": "Certificate of service re: Notices by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)889 Notice of hearing, 890 Notice (generic)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 897,
+        "date_filed": "2026-06-05",
+        "time_filed": "15:58:33",
+        "date_display": "Jun 5, 2026",
+        "description": "Objection to (related document(s): 865 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri filed by Debtor Harvest Sherwood Food Distributors, Inc.) filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (King, Jacob)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 896,
+        "date_filed": "2026-06-05",
+        "time_filed": "12:36:58",
+        "date_display": "Jun 5, 2026",
+        "description": "Application for compensation Third Interim Fee Application of Sidley Austin LLP for Compensation and Reimbursement of Expenses for the Period from January 1, 2026 Through and Including March 31, 2026 for Harvest Sherwood Food Distributors, Inc., Debtor's Attorney, Period: 1/1/2026 to 3/31/2026, Fee: $3,618,806.00, Expenses: $279,915.66. Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 6/29/2026. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E # 6 Exhibit F) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 895,
+        "date_filed": "2026-06-05",
+        "time_filed": "",
+        "date_display": "Jun 5, 2026",
+        "description": "Transcript regarding Hearing Held 5/27/2026 RE: 801, Amended disclosure statement; 802, Motion for conditional approval of disclosure statement; 803, Motion to borrow and incur debt; 804, Motion for cash collateral; 812, Emergency motion to continue hearing. THIS TRANSCRIPT WILL BE MADE ELECTRONICALLY AVAILABLE TO THE GENERAL PUBLIC 90 DAYS AFTER THE DATE OF FILING. TRANSCRIPT RELEASE DATE IS 09/3/2026. Until that time the transcript may be viewed at the Clerk's Office or a copy may be obtained from the official court transcriber. Court Reporter/Transcriber Cindy Sumner, Telephone number 2148027196. (RE: related document(s) 851 Hearing held on 5/27/2026. (RE: related document(s) 801 Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s) 760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD).), 852 Hearing held on 5/27/2026. (RE: related document(s)802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A)) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD)., 853 Hearing held on 5/27/2026. (RE: related document(s) 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A)) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD)., 854 Hearing held on 5/27/2026. (RE: related document(s)804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpriority Administrative Expense Status; (II) Modifying the Automatic Stay; and (III) Granting Related Relief filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A)) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD).), 855 Hearing held on 5/27/2026. (RE: related document(s) 812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc.) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD).). Transcript to be made available to the public on 09/3/2026. (Sumner, Cindy)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-05",
+        "time_filed": "05:21:29",
+        "date_display": "Jun 5, 2026",
+        "description": "Transcript",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 894,
+        "date_filed": "2026-06-04",
+        "time_filed": "19:35:55",
+        "date_display": "Jun 4, 2026",
+        "description": "Certificate of service re: Notices by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)859 Notice (generic), 866 Notice (generic), 884 Order on motion to borrow, 885 Notice of hearing). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 893,
+        "date_filed": "2026-06-04",
+        "time_filed": "18:54:47",
+        "date_display": "Jun 4, 2026",
+        "description": "Notice of Presentation Used at June 2, 2026 Hearing filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Attachments: # 1 PowerPoint Presentation) (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 892,
+        "date_filed": "2026-06-04",
+        "time_filed": "12:16:23",
+        "date_display": "Jun 4, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: Culinarte (Amount $86,490.57) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 891,
+        "date_filed": "2026-06-04",
+        "time_filed": "10:34:21",
+        "date_display": "Jun 4, 2026",
+        "description": "Motion to appear pro hac vice for Corbin Houston. Fee Amount $100 Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Hicks, Andrew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 890,
+        "date_filed": "2026-06-04",
+        "time_filed": "10:27:15",
+        "date_display": "Jun 4, 2026",
+        "description": "Notice Notice of Filing Presentation for June 2, 2026 Hearing filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)850 Notice of hearing for June 2, 2026, hearing filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A)). Hearing to be held on 6/2/2026 at 09:30 AM Dallas Judge Jernigan Ctrm for 761,). (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 889,
+        "date_filed": "2026-06-04",
+        "time_filed": "09:07:04",
+        "date_display": "Jun 4, 2026",
+        "description": "Notice of hearing for June 17, 2026 Setting filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)865 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpriority Administrative Expense Status; (II) Modifying the Automatic Stay; and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A)). Hearing to be held on 6/17/2026 at 11:00 AM Dallas Judge Jernigan Ctrm for 865, (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-04",
+        "time_filed": "12:17:07",
+        "date_display": "Jun 4, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2026",
+        "description": "Receipt of filing fee for Motion to Appear pro hac vice( 25-80109-sgj11) [motion,mprohac] ( 100.00). Receipt number A33800059, amount $ 100.00 (re: Doc# 891). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2026",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33800931, amount $ 28.00 (re: Doc# 892). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 888,
+        "date_filed": "2026-06-03",
+        "time_filed": "18:29:07",
+        "date_display": "Jun 3, 2026",
+        "description": "Certificate of service re: Notices by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)858 Chapter 11 plan, 859 Notice (generic), 860 Notice (generic), 865 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri, 866 Notice (generic), 867 Declaration, 868 Agenda for Complex Chapter 11, 869 List (witness/exhibit/generic), 871 Notice (generic), 872 Notice (generic)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 887,
+        "date_filed": "2026-06-03",
+        "time_filed": "17:55:05",
+        "date_display": "Jun 3, 2026",
+        "description": "PDF with attached Audio File. Court Date & Time [06/02/2026 09:40:15 AM]. File Size [ 75567 KB ]. Run Time [ 05:24:37 ]. (admin).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 886,
+        "date_filed": "2026-06-03",
+        "time_filed": "12:49:24",
+        "date_display": "Jun 3, 2026",
+        "description": "Certificate of no objection filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)778 Motion to withdraw as attorney ( Cadwalader, Wickersham & Taft LLP to Withdraw as Special Counsel for the Debtors)). (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 884,
+        "date_filed": "2026-06-02",
+        "time_filed": "18:59:54",
+        "date_display": "Jun 2, 2026",
+        "description": "Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief (related document # 761) (Attachments: # 1 Exhibit 1) Entered on 6/2/2026. (Okafor, M.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 883,
+        "date_filed": "2026-06-02",
+        "time_filed": "17:40:44",
+        "date_display": "Jun 2, 2026",
+        "description": "Notice // Eleventh Monthly Fee Statement of McDermott Will & Schulte LLP, as Counsel to the Official Committee of Unsecured Creditors, for Compensation for Services Rendered and Reimbursement of Expenses Incurred for the Period April 1, 2026 through April 30, 2026 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Wombacher, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 882,
+        "date_filed": "2026-06-02",
+        "time_filed": "16:49:31",
+        "date_display": "Jun 2, 2026",
+        "description": "Request for Transcript regarding a hearing held on 6/2/2026. The requested turn-around time is daily. filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 881,
+        "date_filed": "2026-06-02",
+        "time_filed": "16:39:13",
+        "date_display": "Jun 2, 2026",
+        "description": "Court admitted exhibits date of hearing June 2, 2026 (RE: related document(s) 761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc.) (Court admitted Exhibits #1, #2 & #12 all found on Debtors Exhibit & Witness List at doc. #869 and all are Declaration of Scott Webb; offered into evidence by attorney Jon Muenz.) (Edmond, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 880,
+        "date_filed": "2026-06-02",
+        "time_filed": "16:34:04",
+        "date_display": "Jun 2, 2026",
+        "description": "Request for Transcript regarding a hearing held on 6/2/2026. The requested turn-around time is daily. filed by Creditor JPMorgan Chase Bank, N.A., as DIP Agent. (Bailey, Kaleb)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 879,
+        "date_filed": "2026-06-02",
+        "time_filed": "16:08:09",
+        "date_display": "Jun 2, 2026",
+        "description": "Request for Transcript regarding a hearing held on 6/2/2026. The requested turn-around time is 3-day expedited. filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 878,
+        "date_filed": "2026-06-02",
+        "time_filed": "15:34:43",
+        "date_display": "Jun 2, 2026",
+        "description": "Request for Transcript regarding a hearing held on 6/2/2026. The requested turn-around time is daily. filed by Interested Party Atlas Grove Management, LLC. (Schultz, Sarah)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 877,
+        "date_filed": "2026-06-02",
+        "time_filed": "13:06:14",
+        "date_display": "Jun 2, 2026",
+        "description": "Certificate of service re: Notice of Hearing by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)850 Notice of hearing). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 876,
+        "date_filed": "2026-06-02",
+        "time_filed": "11:02:46",
+        "date_display": "Jun 2, 2026",
+        "description": "Withdrawal of claim(s): No. 10262 by Oregon Department of Revenue Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 875,
+        "date_filed": "2026-06-02",
+        "time_filed": "09:34:27",
+        "date_display": "Jun 2, 2026",
+        "description": "Notice of Appearance and Request for Notice Service of Papers by Andrew S. Hicks filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Hicks, Andrew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 874,
+        "date_filed": "2026-06-02",
+        "time_filed": "08:20:14",
+        "date_display": "Jun 2, 2026",
+        "description": "Witness and Exhibit List / Atlas Grove Management, LLC's Witness and Exhibit List for Hearing Scheduled for June 2, 2026, at 9:30 A.M. (Prevailing Central Time) filed by Interested Party Atlas Grove Management, LLC (RE: related document(s)865 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri). (Schultz, Sarah)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 873,
+        "date_filed": "2026-06-02",
+        "time_filed": "08:18:14",
+        "date_display": "Jun 2, 2026",
+        "description": "Witness and Exhibit List JPMorgan Chase Bank, N.A.'s Witness and Exhibit List for Hearing Scheduled for June 2, 2026 at 9:30 AM (prevailing Central Time) filed by Creditor JPMorgan Chase Bank, N.A., as DIP Agent (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap, 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment, 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri, 865 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri). (Harper, Ashley)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 872,
+        "date_filed": "2026-06-02",
+        "time_filed": "07:55:04",
+        "date_display": "Jun 2, 2026",
+        "description": "Notice Notice of Filing of Replacement DIP Financing Letter of Credit filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 871,
+        "date_filed": "2026-06-02",
+        "time_filed": "07:38:09",
+        "date_display": "Jun 2, 2026",
+        "description": "Notice Notice of Stalking Horse Auction Transcript filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 870,
+        "date_filed": "2026-06-02",
+        "time_filed": "01:37:29",
+        "date_display": "Jun 2, 2026",
+        "description": "Witness and Exhibit List of the Official Committee of Unsecured Creditors for Hearing Scheduled on June 2, 2026 filed by Creditor Committee The Official Committee of Unsecured Creditors (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap, 812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral), 865 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri). (Wombacher, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-02",
+        "time_filed": "",
+        "date_display": "Jun 2, 2026",
+        "description": "Receipt of filing fee for Motion to Appear pro hac vice( 25-80109-sgj11) [motion,mprohac] ( 100.00). Receipt number A33790407, amount $ 100.00 (re: Doc# 862). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-02",
+        "time_filed": "10:44:32",
+        "date_display": "Jun 2, 2026",
+        "description": "none AND none AND none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 869,
+        "date_filed": "2026-06-01",
+        "time_filed": "22:51:09",
+        "date_display": "Jun 1, 2026",
+        "description": "Witness and Exhibit List Debtors Witness and Exhibit List for Hearing Scheduled for June 2, 2026, at 9:30 A.M. filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)865 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 868,
+        "date_filed": "2026-06-01",
+        "time_filed": "22:31:12",
+        "date_display": "Jun 1, 2026",
+        "description": "Agenda for Hearing scheduled on 6/2/2026 at 9:30 A.M. filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpriority Administrative Expense Status; (II) Modifying the Automatic Stay; and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) Filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc.). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 867,
+        "date_filed": "2026-06-01",
+        "time_filed": "22:23:30",
+        "date_display": "Jun 1, 2026",
+        "description": "Declaration re: Supplemental Declaration of Scott Webb in Support of Exit Capital Commitment Agreement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment). (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 866,
+        "date_filed": "2026-06-01",
+        "time_filed": "22:14:31",
+        "date_display": "Jun 1, 2026",
+        "description": "Notice Notice of Filing of Replacement DIP Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)865 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpriority Administrative Expense Status; (II) Modifying the Automatic Stay; and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A)). (Attachments: # 1 Exhibit A # 2 Exhibit B) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 865,
+        "date_filed": "2026-06-01",
+        "time_filed": "22:10:34",
+        "date_display": "Jun 1, 2026",
+        "description": "Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpriority Administrative Expense Status; (II) Modifying the Automatic Stay; and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 864,
+        "date_filed": "2026-06-01",
+        "time_filed": "22:05:31",
+        "date_display": "Jun 1, 2026",
+        "description": "Motion to appear pro hac vice for Andrew J. Matott. Fee Amount $100 Filed by Creditor Committee The Official Committee of Unsecured Creditors (Wombacher, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 863,
+        "date_filed": "2026-06-01",
+        "time_filed": "21:58:34",
+        "date_display": "Jun 1, 2026",
+        "description": "Motion to appear pro hac vice for James S. Carr. Fee Amount $100 Filed by Creditor Committee The Official Committee of Unsecured Creditors (Wombacher, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 862,
+        "date_filed": "2026-06-01",
+        "time_filed": "21:48:20",
+        "date_display": "Jun 1, 2026",
+        "description": "Motion to appear pro hac vice for Jason R. Adams. Fee Amount $100 Filed by Creditor Committee The Official Committee of Unsecured Creditors (Wombacher, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 861,
+        "date_filed": "2026-06-01",
+        "time_filed": "21:40:55",
+        "date_display": "Jun 1, 2026",
+        "description": "Notice of Appearance and Request for Notice by Kelley Drye & Warren LLP by Michael Davis Wombacher filed by Creditor Committee The Official Committee of Unsecured Creditors. (Wombacher, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 860,
+        "date_filed": "2026-06-01",
+        "time_filed": "21:29:17",
+        "date_display": "Jun 1, 2026",
+        "description": "Notice Notice of Filing of Revised Proposed Exit Capital Commitment Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A)). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 858,
+        "date_filed": "2026-06-01",
+        "time_filed": "21:03:28",
+        "date_display": "Jun 1, 2026",
+        "description": "Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan, 800 Chapter 11 plan, 819 Chapter 11 plan). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txnb.527729/gov.uscourts.txnb.527729.858.0.pdf"
+      },
+      {
+        "entry_number": 857,
+        "date_filed": "2026-06-01",
+        "time_filed": "15:40:38",
+        "date_display": "Jun 1, 2026",
+        "description": "Certificate of service re: Notice of Adjournment, Notice of Ninth Additional Extension by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)844 Notice (generic), 845 Notice (generic)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 856,
+        "date_filed": "2026-06-01",
+        "time_filed": "14:54:15",
+        "date_display": "Jun 1, 2026",
+        "description": "Notice of hearing filed by Blakemore Investments, LLC, Milwaukee Investments, LP (RE: related document(s)812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) Filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc.). Hearing to be held on 6/2/2026 at 09:30 AM at https://us-courts.webex.com/meet/jerniga for 812, (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 855,
+        "date_filed": "2026-06-01",
+        "time_filed": "",
+        "date_display": "Jun 1, 2026",
+        "description": "Hearing held on 5/27/2026. (RE: related document(s) 812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc.) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD). (Edmond, Michael) (Filed: 05/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 854,
+        "date_filed": "2026-06-01",
+        "time_filed": "",
+        "date_display": "Jun 1, 2026",
+        "description": "Hearing held on 5/27/2026. (RE: related document(s)804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpriority Administrative Expense Status; (II) Modifying the Automatic Stay; and (III) Granting Related Relief filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A)) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD).) (Edmond, Michael) (Filed: 05/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 853,
+        "date_filed": "2026-06-01",
+        "time_filed": "",
+        "date_display": "Jun 1, 2026",
+        "description": "Hearing held on 5/27/2026. (RE: related document(s) 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A)) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD). (Edmond, Michael) (Filed: 05/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 852,
+        "date_filed": "2026-06-01",
+        "time_filed": "",
+        "date_display": "Jun 1, 2026",
+        "description": "Hearing held on 5/27/2026. (RE: related document(s)802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A)) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD). (Edmond, Michael) (Filed: 05/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 851,
+        "date_filed": "2026-06-01",
+        "time_filed": "",
+        "date_display": "Jun 1, 2026",
+        "description": "Hearing held on 5/27/2026. (RE: related document(s) 801 Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s) 760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (Appearances: A. Grossi for Debtor; S. Schultz for alternative exit commitment funder; M. Kippes for UST; M. Hayward for Sprouts; see sign-in sheet for others. Nonevidentiary status conference. Debtors counsel reported ongoing auction for exit loan stalking horse status. Matter continued for a few days (TBD).) (Edmond, Michael) (Filed: 05/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 850,
+        "date_filed": "2026-06-01",
+        "time_filed": "09:05:30",
+        "date_display": "Jun 1, 2026",
+        "description": "Notice of hearing for June 2, 2026, hearing filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A)). Hearing to be held on 6/2/2026 at 09:30 AM Dallas Judge Jernigan Ctrm for 761, (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-01",
+        "time_filed": "09:31:04",
+        "date_display": "Jun 1, 2026",
+        "description": "Hearing held",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 849,
+        "date_filed": "2026-05-29",
+        "time_filed": "23:25:50",
+        "date_display": "May 29, 2026",
+        "description": "BNC certificate of mailing - PDF document. (RE: related document(s)841 Order granting motion to appear pro hac vice adding Mitchell P. Hurley for Atlas Grove Management, LLC (related document 810) Entered on 5/27/2026. (Gotay, C.)) No. of Notices: 1. Notice Date 05/29/2026. (Admin.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 848,
+        "date_filed": "2026-05-29",
+        "time_filed": "11:54:15",
+        "date_display": "May 29, 2026",
+        "description": "Request for Transcript regarding a hearing held on 5/27/2026. The requested turn-around time is hourly. filed by Interested Party Atlas Grove Management, LLC. (Schultz, Sarah)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 847,
+        "date_filed": "2026-05-28",
+        "time_filed": "22:00:45",
+        "date_display": "May 28, 2026",
+        "description": "Certificate of service re: Amended Notices for Joint Chapter 11 Plan by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)819 Chapter 11 plan, 820 Disclosure statement, 821 Notice (generic), 822 Notice of hearing, 823 Notice (generic), 826 Reply, 827 List (witness/exhibit/generic), 828 Agenda for Complex Chapter 11). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 846,
+        "date_filed": "2026-05-28",
+        "time_filed": "21:07:18",
+        "date_display": "May 28, 2026",
+        "description": "Certificate of service re: Notices by Panagiota Manatakis filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)800 Chapter 11 plan, 801 Disclosure statement, 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment, 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri, 805 Declaration, 806 Notice (generic), 807 Notice of hearing). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 845,
+        "date_filed": "2026-05-28",
+        "time_filed": "11:00:38",
+        "date_display": "May 28, 2026",
+        "description": "Notice Notice of Ninth Additional Extension of Debtors Exclusive Right to File and Solicit Acceptance of a Plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)666 Motion to extend or limit the exclusivity period Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 3/23/2026. (Attachments: # 1 Exhibit A)). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 844,
+        "date_filed": "2026-05-27",
+        "time_filed": "20:47:02",
+        "date_display": "May 27, 2026",
+        "description": "Notice Notice of Adjournment of May 28, 2026 Hearing filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 843,
+        "date_filed": "2026-05-27",
+        "time_filed": "16:22:56",
+        "date_display": "May 27, 2026",
+        "description": "Request for Transcript regarding a hearing held on 5/27/2026. The requested turn-around time is daily. filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 842,
+        "date_filed": "2026-05-27",
+        "time_filed": "15:23:06",
+        "date_display": "May 27, 2026",
+        "description": "Request for Transcript regarding a hearing held on 5/27/2026. The requested turn-around time is hourly. filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (King, Jacob)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 841,
+        "date_filed": "2026-05-27",
+        "time_filed": "11:04:56",
+        "date_display": "May 27, 2026",
+        "description": "Order granting motion to appear pro hac vice adding Mitchell P. Hurley for Atlas Grove Management, LLC (related document # 810) Entered on 5/27/2026. (Gotay, C.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 840,
+        "date_filed": "2026-05-27",
+        "time_filed": "10:05:37",
+        "date_display": "May 27, 2026",
+        "description": "Order granting motion to appear pro hac vice adding Kevin M. Eide for Atlas Grove Management, LLC (related document # 809) Entered on 5/27/2026. (Gotay, C.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 839,
+        "date_filed": "2026-05-26",
+        "time_filed": "16:58:10",
+        "date_display": "May 26, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Snider Fleet Solutions (Claim No. 10, Amount $15,317.00) To Atlas Grove Management, LLC. Filed by Interested Party Atlas Grove Management, LLC. (Schultz, Sarah)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 837,
+        "date_filed": "2026-05-26",
+        "time_filed": "14:46:28",
+        "date_display": "May 26, 2026",
+        "description": "Witness and Exhibit List filed by Blakemore Investments, LLC, Milwaukee Investments, LP (RE: related document(s)802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment, 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri, 812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral)). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12 # 13 Exhibit 13 # 14 Exhibit 14 # 15 Exhibit 15 # 16 Exhibit 16 # 17 Exhibit 17 # 18 Exhibit 18 # 19 Exhibit 19 # 20 Exhibit 20 # 21 Exhibit 21 # 22 Exhibit 22 # 23 Exhibit 23 # 24 Exhibit 24 # 25 Exhibit 25 # 26 Exhibit 26 # 27 Exhibit 27 # 28 Exhibit 28 # 29 Exhibit 29) (King, Jacob)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 836,
+        "date_filed": "2026-05-26",
+        "time_filed": "14:22:53",
+        "date_display": "May 26, 2026",
+        "description": "Complex Service List filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)68 Order granting complex chapter 11 treatment). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 835,
+        "date_filed": "2026-05-26",
+        "time_filed": "14:08:12",
+        "date_display": "May 26, 2026",
+        "description": "Withdrawal of claim(s): No. 429 by Employment Development Dept. of the State of California Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 834,
+        "date_filed": "2026-05-26",
+        "time_filed": "13:47:56",
+        "date_display": "May 26, 2026",
+        "description": "Witness and Exhibit List / Atlas Grove Management, LLC's Witness and Exhibit List for Hearing Scheduled for May 27, 2026, at 1:30 P.M. (Prevailing Central Time) filed by Interested Party Atlas Grove Management, LLC (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap, 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement)). (Schultz, Sarah)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 833,
+        "date_filed": "2026-05-26",
+        "time_filed": "12:41:11",
+        "date_display": "May 26, 2026",
+        "description": "Witness and Exhibit List filed by SFM, LLC, Sprouts Farmers Market, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap, 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement)). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Affidavit Certificate of Service) (Werkheiser, Gregory)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 832,
+        "date_filed": "2026-05-26",
+        "time_filed": "12:25:32",
+        "date_display": "May 26, 2026",
+        "description": "Objection to (related document(s): 761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap filed by Debtor Harvest Sherwood Food Distributors, Inc., 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment filed by Debtor Harvest Sherwood Food Distributors, Inc.) filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 831,
+        "date_filed": "2026-05-26",
+        "time_filed": "12:22:58",
+        "date_display": "May 26, 2026",
+        "description": "Objection to (related document(s): 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement) filed by Debtor Harvest Sherwood Food Distributors, Inc., 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) filed by Debtor Harvest Sherwood Food Distributors, Inc.) filed by Blakemore Investments, LLC, Milwaukee Investments, LP. (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 830,
+        "date_filed": "2026-05-26",
+        "time_filed": "12:19:46",
+        "date_display": "May 26, 2026",
+        "description": "Witness and Exhibit List of the AVH Group for Hearing Scheduled for May 27. 2026, at 1:30 p.m. (prevailing Central Time) filed by Creditor AVH Group (RE: related document(s)802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement)). (Lozano, Jonathan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 829,
+        "date_filed": "2026-05-26",
+        "time_filed": "11:59:38",
+        "date_display": "May 26, 2026",
+        "description": "Omnibus Objection to (related document(s): 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) filed by Debtor Harvest Sherwood Food Distributors, Inc., 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment filed by Debtor Harvest Sherwood Food Distributors, Inc.) filed by Creditor Sprouts Farmers Market, Inc.. (Attachments: # 1 Exhibit # 2 Exhibit # 3 Exhibit # 4 Exhibit # 5 Exhibit # 6 Affidavit Certificate of Service) (Werkheiser, Gregory)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 828,
+        "date_filed": "2026-05-26",
+        "time_filed": "11:51:52",
+        "date_display": "May 26, 2026",
+        "description": "Agenda for Hearing scheduled on 5/27/2026 at 1:30 P.M. filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 762 Declaration re: Scott Webb in Support of the Debtors Exit Capital Commitment Agreement Motion filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap)., 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 786 Certificate of service re: Various Notices by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)758 Notice (generic), 759 Chapter 11 plan, 760 Disclosure statement, 761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap, 762 Declaration, 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement), 764 Notice (generic), 765 Notice of hearing)., 797 Objection to (related document(s): 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement) filed by Debtor Harvest Sherwood Food Distributors, Inc.)United States Trustees Objection to (A) Debtors Motion for Entry of an Order (I) Conditionally Approving the Adequacy of the Disclosure Statement; (II) Approving the Solicitation Procedures in Connection with Confirmation of the Plan; (III) Approving the Forms of Ballots and Notices in Connection Therewith; (IV) Scheduling Certain Dates with Respect Thereto; and (V) Granting Related Relief and (B) Conditional Approval of Disclosure Statement for the Joint Chapter 11 Plan of Harvest Sherwood Food Distributors, Inc. and Its Debtor Affiliates [related to dkt. nos. 760 and 763] filed by U.S. Trustee United States Trustee., 805 Declaration re: Scott Webb in Support of Entry into Replacement DIP Financing and Related Exit Capital Commitment Agreement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment, 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri)., 811 Objection to (related document(s): 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) filed by Debtor Harvest Sherwood Food Distributors, Inc., 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment filed by Debtor Harvest Sherwood Food Distributors, Inc., 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri filed by Debtor Harvest Sherwood Food Distributors, Inc.)// The DIP Lenders' Preliminary Objection in Response to the Debtors' Alternative Bid Motions filed by Creditor JPMorgan Chase Bank, N.A., as Prepetition Agent and DIP Agent., 812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) Filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc., 813 Witness and Exhibit List of the Official Committee of Unsecured Creditors for Hearing Scheduled on May 27, 2026 filed by Creditor Committee The Official Committee of Unsecured Creditors (RE: related document(s)802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment, 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri)., 814 Notice of hearing filed by Blakemore Investments, LLC, Milwaukee Investments, LP (RE: related document(s)812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) Filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc.). Hearing to be held on 5/27/2026 at 01:30 PM at https://us-courts.webex.com/meet/jerniga for 812,, 817 Objection to (related document(s): 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) filed by Debtor Harvest Sherwood Food Distributors, Inc.)Objection of the AVH Group to (A) Debtors' First Amended Motion for Entry of an Order (I) Conditionally Approving the Adequacy of the Disclosure Statement; (II) Approving the Solicitation Procedures in Connection with Confirmation of the Plan; (III) Approving the Forms of Ballots and Notices in Connection Therewith; (IV) Scheduling Certain Dates with Respect Thereto; and (V) Granting Related Relief and (B) Conditional Approval of the First Amended Disclosure Statement for the Joint Chapter 11 Plan of Harvest Sherwood Food Distributors, Inc. and Its Debtor Affiliates filed by Creditor AVH Group., 818 Joinder by AVH Group to Emergency Motion to Continue Hearings and Extend Objection Deadlines for Amended Solicitation Procedures Motion [Dkt. No. 802], Amended Exit Facility Motion [Dkt. No. 803] and Replacement DIP Financing Motion [Dkt. No. 804] filed by Creditor AVH Group (RE: related document(s)812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral))., 820 Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C), 821 Notice Notice of (I) Filing Revised Initial Chapter 11 Plan and Disclosure Statement and (II) Withdrawal of Alternative Transaction Documents filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc.., 760 Disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1 Voluntary petition (chapter 11)). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C), 800 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan)., 801 Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C), 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 819 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan)., 820 Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C)). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C), 822 Amended Notice of hearing For May 27, 2026 Setting filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) Filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc.). Hearing to be held on 5/27/2026 at 01:30 PM Dallas Judge Jernigan Ctrm for 763 and for 812 and for 761,, 823 Notice Notice of Stalking Horse Auction filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A), 824 Objection to (related document(s): 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment filed by Debtor Harvest Sherwood Food Distributors, Inc., 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri filed by Debtor Harvest Sherwood Food Distributors, Inc.)// The DIP Agent's Reservation of Rights filed by Creditor JPMorgan Chase Bank, N.A., as Prepetition Agent and DIP Agent., 825 Witness and Exhibit List of JPMorgan Chase Bank, N.A., as DIP Agent, for Hearing Scheduled on May 27, 2026 filed by Creditor JPMorgan Chase Bank, N.A., as DIP Agent (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap, 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement), 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment, 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri)., 826 Reply to (related document(s): 797 Objection filed by U.S. Trustee United States Trustee, 811 Objection filed by Creditor JPMorgan Chase Bank, N.A., as Prepetition Agent and DIP Agent, 817 Objection filed by Creditor AVH Group) filed by Debtor Harvest Sherwood Food Distributors, Inc.., 827 Witness and Exhibit List Debtors Witness and Exhibit List for Hearing Scheduled for May 27, 2026, at 1:30 P.M. filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap, 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement)). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12 # 13 Exhibit 13 # 14 Exhibit 14 # 15 Exhibit 15 # 16 Exhibit 16 # 17 Exhibit 17 # 18 Exhibit 18 # 19 Exhibit 19 # 20 Exhibit 20 # 21 Exhibit 21 # 22 Exhibit 22)). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 827,
+        "date_filed": "2026-05-26",
+        "time_filed": "11:46:33",
+        "date_display": "May 26, 2026",
+        "description": "Witness and Exhibit List Debtors Witness and Exhibit List for Hearing Scheduled for May 27, 2026, at 1:30 P.M. filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap, 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement)). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12 # 13 Exhibit 13 # 14 Exhibit 14 # 15 Exhibit 15 # 16 Exhibit 16 # 17 Exhibit 17 # 18 Exhibit 18 # 19 Exhibit 19 # 20 Exhibit 20 # 21 Exhibit 21 # 22 Exhibit 22) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 826,
+        "date_filed": "2026-05-26",
+        "time_filed": "11:22:12",
+        "date_display": "May 26, 2026",
+        "description": "Reply to (related document(s): 797 Objection filed by U.S. Trustee United States Trustee, 811 Objection filed by Creditor JPMorgan Chase Bank, N.A., as Prepetition Agent and DIP Agent, 817 Objection filed by Creditor AVH Group) filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 825,
+        "date_filed": "2026-05-26",
+        "time_filed": "09:59:24",
+        "date_display": "May 26, 2026",
+        "description": "Witness and Exhibit List of JPMorgan Chase Bank, N.A., as DIP Agent, for Hearing Scheduled on May 27, 2026 filed by Creditor JPMorgan Chase Bank, N.A., as DIP Agent (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Ap, 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement), 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment, 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri). (Davidson, Timothy)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-26",
+        "time_filed": "",
+        "date_display": "May 26, 2026",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33763456, amount $ 28.00 (re: Doc# 839). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-26",
+        "time_filed": "17:01:14",
+        "date_display": "May 26, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 824,
+        "date_filed": "2026-05-25",
+        "time_filed": "17:39:19",
+        "date_display": "May 25, 2026",
+        "description": "Objection to (related document(s): 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment filed by Debtor Harvest Sherwood Food Distributors, Inc., 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri filed by Debtor Harvest Sherwood Food Distributors, Inc.)// The DIP Agent's Reservation of Rights filed by Creditor JPMorgan Chase Bank, N.A., as Prepetition Agent and DIP Agent. (Davidson, Timothy)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 823,
+        "date_filed": "2026-05-25",
+        "time_filed": "10:11:25",
+        "date_display": "May 25, 2026",
+        "description": "Notice Notice of Stalking Horse Auction filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 822,
+        "date_filed": "2026-05-22",
+        "time_filed": "19:55:28",
+        "date_display": "May 22, 2026",
+        "description": "Amended Notice of hearing For May 27, 2026 Setting filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) Filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc.). Hearing to be held on 5/27/2026 at 01:30 PM Dallas Judge Jernigan Ctrm for 763 and for 812 and for 761, (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 821,
+        "date_filed": "2026-05-22",
+        "time_filed": "19:42:42",
+        "date_display": "May 22, 2026",
+        "description": "Notice Notice of (I) Filing Revised Initial Chapter 11 Plan and Disclosure Statement and (II) Withdrawal of Alternative Transaction Documents filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc.., 760 Disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1 Voluntary petition (chapter 11)). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C), 800 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan)., 801 Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C), 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 819 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan)., 820 Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C)). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 820,
+        "date_filed": "2026-05-22",
+        "time_filed": "19:12:59",
+        "date_display": "May 22, 2026",
+        "description": "Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C)(Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txnb.527729/gov.uscourts.txnb.527729.820.0.pdf"
+      },
+      {
+        "entry_number": 819,
+        "date_filed": "2026-05-22",
+        "time_filed": "18:49:06",
+        "date_display": "May 22, 2026",
+        "description": "Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txnb.527729/gov.uscourts.txnb.527729.819.0.pdf"
+      },
+      {
+        "entry_number": 818,
+        "date_filed": "2026-05-22",
+        "time_filed": "16:35:27",
+        "date_display": "May 22, 2026",
+        "description": "Joinder by AVH Group to Emergency Motion to Continue Hearings and Extend Objection Deadlines for Amended Solicitation Procedures Motion [Dkt. No. 802], Amended Exit Facility Motion [Dkt. No. 803] and Replacement DIP Financing Motion [Dkt. No. 804] filed by Creditor AVH Group (RE: related document(s)812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral)). (Lozano, Jonathan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 817,
+        "date_filed": "2026-05-22",
+        "time_filed": "16:08:02",
+        "date_display": "May 22, 2026",
+        "description": "Objection to (related document(s): 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) filed by Debtor Harvest Sherwood Food Distributors, Inc.)Objection of the AVH Group to (A) Debtors' First Amended Motion for Entry of an Order (I) Conditionally Approving the Adequacy of the Disclosure Statement; (II) Approving the Solicitation Procedures in Connection with Confirmation of the Plan; (III) Approving the Forms of Ballots and Notices in Connection Therewith; (IV) Scheduling Certain Dates with Respect Thereto; and (V) Granting Related Relief and (B) Conditional Approval of the First Amended Disclosure Statement for the Joint Chapter 11 Plan of Harvest Sherwood Food Distributors, Inc. and Its Debtor Affiliates filed by Creditor AVH Group. (Lozano, Jonathan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 816,
+        "date_filed": "2026-05-22",
+        "time_filed": "15:54:52",
+        "date_display": "May 22, 2026",
+        "description": "Verified statement pursuant to Rule 2019 filed by Creditor AVH Group. (Lozano, Jonathan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 815,
+        "date_filed": "2026-05-22",
+        "time_filed": "14:32:17",
+        "date_display": "May 22, 2026",
+        "description": "Certificate of service re: Monthly Operating Report by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)798 Chapter 11 Monthly Operating Report UST Form 11-MOR). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 814,
+        "date_filed": "2026-05-22",
+        "time_filed": "13:02:17",
+        "date_display": "May 22, 2026",
+        "description": "Notice of hearing filed by Blakemore Investments, LLC, Milwaukee Investments, LP (RE: related document(s)812 Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) Filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc.). Hearing to be held on 5/27/2026 at 01:30 PM at https://us-courts.webex.com/meet/jerniga for 812, (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 813,
+        "date_filed": "2026-05-22",
+        "time_filed": "11:47:22",
+        "date_display": "May 22, 2026",
+        "description": "Witness and Exhibit List of the Official Committee of Unsecured Creditors for Hearing Scheduled on May 27, 2026 filed by Creditor Committee The Official Committee of Unsecured Creditors (RE: related document(s)802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment, 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri). (Wombacher, Michael)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 812,
+        "date_filed": "2026-05-21",
+        "time_filed": "20:45:52",
+        "date_display": "May 21, 2026",
+        "description": "Emergency Motion to continue hearing on (related documents 802 Motion for conditional approval of disclosure statement, 803 Motion to borrow/incur debt, 804 Motion to use cash collateral) Filed by Blakemore Investments, LLC, Milwaukee Investments, LP, SFM, LLC, Sprouts Farmers Market, Inc. (Vasek, Julian)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 811,
+        "date_filed": "2026-05-21",
+        "time_filed": "16:26:15",
+        "date_display": "May 21, 2026",
+        "description": "Objection to (related document(s): 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) filed by Debtor Harvest Sherwood Food Distributors, Inc., 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment filed by Debtor Harvest Sherwood Food Distributors, Inc., 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri filed by Debtor Harvest Sherwood Food Distributors, Inc.)// The DIP Lenders' Preliminary Objection in Response to the Debtors' Alternative Bid Motions filed by Creditor JPMorgan Chase Bank, N.A., as Prepetition Agent and DIP Agent. (Davidson, Timothy)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 810,
+        "date_filed": "2026-05-21",
+        "time_filed": "14:56:20",
+        "date_display": "May 21, 2026",
+        "description": "Motion to appear pro hac vice for Mitchell P. Hurley. Fee Amount $100 Filed by Interested Party Atlas Grove Management, LLC (Schultz, Sarah)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 809,
+        "date_filed": "2026-05-21",
+        "time_filed": "14:26:59",
+        "date_display": "May 21, 2026",
+        "description": "Motion to appear pro hac vice for Kevin M. Eide. Fee Amount $100 Filed by Interested Party Atlas Grove Management, LLC (Schultz, Sarah)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 808,
+        "date_filed": "2026-05-21",
+        "time_filed": "10:16:33",
+        "date_display": "May 21, 2026",
+        "description": "Notice of Appearance and Request for Notice by Sarah A. Schultz filed by Interested Party Atlas Grove Management, LLC. (Schultz, Sarah)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-21",
+        "time_filed": "",
+        "date_display": "May 21, 2026",
+        "description": "Receipt of filing fee for Motion to Appear pro hac vice( 25-80109-sgj11) [motion,mprohac] ( 100.00). Receipt number A33752276, amount $ 100.00 (re: Doc# 809). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-21",
+        "time_filed": "14:31:19",
+        "date_display": "May 21, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 807,
+        "date_filed": "2026-05-20",
+        "time_filed": "22:53:46",
+        "date_display": "May 20, 2026",
+        "description": "Amended Notice of hearing for May 27, 2026 Setting filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpriority Administrative Expense Status; (II) Modifying the Automatic Stay; and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A)). Hearing to be held on 5/27/2026 at 01:30 PM Dallas Judge Jernigan Ctrm for 803 and for 804 and for 802, (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 806,
+        "date_filed": "2026-05-20",
+        "time_filed": "22:47:02",
+        "date_display": "May 20, 2026",
+        "description": "Notice Notice of Filing Amended Chapter 11 Plan and Related Transaction Documents filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)800 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan)., 801 Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C), 802 Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A), 803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A)). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 805,
+        "date_filed": "2026-05-20",
+        "time_filed": "22:32:41",
+        "date_display": "May 20, 2026",
+        "description": "Declaration re: Scott Webb in Support of Entry into Replacement DIP Financing and Related Exit Capital Commitment Agreement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)803 Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment, 804 Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpri). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 804,
+        "date_filed": "2026-05-20",
+        "time_filed": "22:30:29",
+        "date_display": "May 20, 2026",
+        "description": "Motion to use cash collateral Debtors Emergency Motion for Entry of an Order (I) Authorizing the Debtors to (A) Obtain Replacement Postpetition Financing, (B) Use Cash Collateral, and (C) Grant Senior Secured Liens and Provide Claims with Superpriority Administrative Expense Status; (II) Modifying the Automatic Stay; and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 803,
+        "date_filed": "2026-05-20",
+        "time_filed": "22:21:14",
+        "date_display": "May 20, 2026",
+        "description": "Motion to borrow/incur debt The Debtors Emergency Amended Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 802,
+        "date_filed": "2026-05-20",
+        "time_filed": "22:09:54",
+        "date_display": "May 20, 2026",
+        "description": "Motion for conditional approval of disclosure statement. (related documents 801 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txnb.527729/gov.uscourts.txnb.527729.802.0.pdf"
+      },
+      {
+        "entry_number": 801,
+        "date_filed": "2026-05-20",
+        "time_filed": "22:04:12",
+        "date_display": "May 20, 2026",
+        "description": "Amended disclosure statement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)760 Disclosure statement). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C)(Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 800,
+        "date_filed": "2026-05-20",
+        "time_filed": "22:01:23",
+        "date_display": "May 20, 2026",
+        "description": "Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan). (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 799,
+        "date_filed": "2026-05-20",
+        "time_filed": "17:37:47",
+        "date_display": "May 20, 2026",
+        "description": "Certificate of service re: Notice of Defective Transfer of Claim by Sharna Wilson filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)776 Assignment/Transfer of claim (Claims Agent), 777 Assignment/Transfer of claim (Claims Agent)). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 798,
+        "date_filed": "2026-05-20",
+        "time_filed": "15:50:22",
+        "date_display": "May 20, 2026",
+        "description": "Chapter 11 Monthly Operating Report for the Month Ending: 04/30/2026 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 797,
+        "date_filed": "2026-05-20",
+        "time_filed": "10:39:19",
+        "date_display": "May 20, 2026",
+        "description": "Objection to (related document(s): 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement) filed by Debtor Harvest Sherwood Food Distributors, Inc.)United States Trustees Objection to (A) Debtors Motion for Entry of an Order (I) Conditionally Approving the Adequacy of the Disclosure Statement; (II) Approving the Solicitation Procedures in Connection with Confirmation of the Plan; (III) Approving the Forms of Ballots and Notices in Connection Therewith; (IV) Scheduling Certain Dates with Respect Thereto; and (V) Granting Related Relief and (B) Conditional Approval of Disclosure Statement for the Joint Chapter 11 Plan of Harvest Sherwood Food Distributors, Inc. and Its Debtor Affiliates [related to dkt. nos. 760 and 763] filed by U.S. Trustee United States Trustee. (Kippes, Meredyth)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 796,
+        "date_filed": "2026-05-19",
+        "time_filed": "10:14:26",
+        "date_display": "May 19, 2026",
+        "description": "Certificate of service re: Mtn, NOW of App filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)778 Motion to withdraw as attorney ( Cadwalader, Wickersham & Taft LLP to Withdraw as Special Counsel for the Debtors), 779 Withdrawal). (Mailloux, Kathryn)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=19"
   },
   "claims_administrator": {
     "name": "Epiq11",
