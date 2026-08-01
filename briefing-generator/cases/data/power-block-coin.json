@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "date_last_filing": "2026-07-23",
-    "fetched_at": "2026-08-01T03:57:57.090405+00:00",
+    "fetched_at": "2026-08-01T06:46:56.201425+00:00",
     "as_of": "Aug 1, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -1783,6 +1783,26 @@
         "doc_url": ""
       },
       {
+        "entry_number": 377,
+        "date_filed": "2025-09-26",
+        "time_filed": "17:43:36",
+        "date_display": "Sep 26, 2025",
+        "description": "Pending Order Re: 376 Motion for Examination Under Rule 2004. (Stone, Abigail) [Order# 468498] (EOD: 09/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 376,
+        "date_filed": "2025-09-26",
+        "time_filed": "17:42:44",
+        "date_display": "Sep 26, 2025",
+        "description": "Ex Parte Motion for Examination Under Rule 2004 of Blue Castle Holdings Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 09/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 374,
         "date_filed": "2025-09-26",
         "time_filed": "17:40:13",
@@ -1831,9 +1851,1119 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-26",
+        "time_filed": "11:14:02",
+        "date_display": "Sep 26, 2025",
+        "description": "Unsigned Order (order)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 369,
+        "date_filed": "2025-09-25",
+        "time_filed": "16:14:21",
+        "date_display": "Sep 25, 2025",
+        "description": "Debtor-In-Possession Monthly Operating Report for Filing Period August 31, 2025 Filed by Power Block Coin, LLC. (Attachments: # 1 BCH Hillcrest Bank 8.31.25 Reconciliation # 2 BCH Hillcrest Bank Stmt 8.31.25 # 3 BCH Hillcrest Bank Stmt 8.31.25 # 4 Exhibit C & D -Cash Receipts and Disbursements Power Block Coin August 31, 2025 # 5 Exhibit C & D -Cash Receipts and Disbursements Power Block Coin August 31, 2025 # 6 Parson, Behle, Latimer Trust Report 08.31.2025 # 7 Power Block Coin AP Aging 08.31.2025 # 8 Power Block Coin Balance Sheet as of August 31, 2025 # 9 Power Block Coin Income Statement August 31, 2025) (Rothschild, Brian) (EOD: 09/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-25",
+        "time_filed": "12:50:48",
+        "date_display": "Sep 25, 2025",
+        "description": "Withdrawal of Incorrectly Filed Document (no image)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-25",
+        "time_filed": "",
+        "date_display": "Sep 25, 2025",
+        "description": "Notice of Withdrawal of Incorrectly Filed Document (related document(s):367 Chapter 11 Monthly Operating Report) Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 09/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 368,
+        "date_filed": "2025-09-24",
+        "time_filed": "15:00:05",
+        "date_display": "Sep 24, 2025",
+        "description": "PDF with attached Audio File. Court Date & Time [ 9/24/2025 1:00:43 PM ]. File Size [ 36481 KB ]. Run Time [ 01:16:00 ]. (Motion to Compel Accounting). (admin). (EOD: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-24",
+        "time_filed": "",
+        "date_display": "Sep 24, 2025",
+        "description": "Minute Entry Re: 353 Motion to Compel Filed by Official Committee of Unsecured Creditors. Appearances: Brian M. Rothschild (DB), Annette Jarvis and Abigail Stone (Unsecured Creditor's Committee); Robert Loh (Financial Advisor); Melinda Willden (USTR); Michael Johnson (Blue Castle Holdings, Inc.); Mark D. Bloom (Mark Song); Christopher Perkins and James W. Anderson (Jason Brown and Daniel Stadelmann ). Motion granted in part and denied in part based on the record. Pending Order Deadline due by 10/08/2025. OTF-Stone (jst) (EOD: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-24",
+        "time_filed": "16:27:16",
+        "date_display": "Sep 24, 2025",
+        "description": "Minute Entry",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 367,
+        "date_filed": "2025-09-22",
+        "time_filed": "19:46:35",
+        "date_display": "Sep 22, 2025",
+        "description": "(WITHDRAWN) Debtor-In-Possession Monthly Operating Report for Filing Period August 1, 2025 through August 31, 2025 Filed by Power Block Coin, LLC. (Attachments: # 1 Balance Sheet # 2 Income Statement # 3 AP Aging # 4 Exhibits C & D - Cash Receipts and Disbursements # 5 Hillcrest Bank Statement # 6 Bank Account Reconciliation # 7 Parsons Behle & Latimer Trust Report # 8 Exhibit F - Notes Receivable and Crypto Holdings Report and Reconciliation) (Rothschild, Brian) Modified on 9/25/2025 (als). (EOD: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 366,
+        "date_filed": "2025-09-22",
+        "time_filed": "16:39:15",
+        "date_display": "Sep 22, 2025",
+        "description": "Pending Order Re: 365 Motion Extend Time. (Stone, Abigail) [Order# 468274] (EOD: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 365,
+        "date_filed": "2025-09-22",
+        "time_filed": "16:32:21",
+        "date_display": "Sep 22, 2025",
+        "description": "Ex Parte Motion to Extend Time to File Late Reply Memorandum in Support of Motion to Compel Accounting -- Filed by Official Committee of Unsecured Creditors. (Attachments: # 1 Exhibit A - Reply in Support of Motion to Compel Accounting) (Stone, Abigail). Related document(s) 353 Motion to Compel Accounting filed by Creditor Committee Official Committee of Unsecured Creditors. (EOD: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 364,
+        "date_filed": "2025-09-22",
+        "time_filed": "15:13:41",
+        "date_display": "Sep 22, 2025",
+        "description": "Joinder of Mason Song in Creditors Committee's Motion to Compel Accounting, And Limited Reply in Support Thereof. (related document(s):353 Motion to Compel) Filed by Mason Song. (Egan, Austin) (EOD: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 363,
+        "date_filed": "2025-09-22",
+        "time_filed": "13:52:21",
+        "date_display": "Sep 22, 2025",
+        "description": "Pending Order Re: 350 Motion to Approve Settlement/Compromise. (Rothschild, Brian) [Order# 468264] (EOD: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-22",
+        "time_filed": "",
+        "date_display": "Sep 22, 2025",
+        "description": "Notice of Appearance of Counsel and Request for Notice. Filed by Mason Song. (Egan, Austin) (EOD: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-22",
+        "time_filed": "14:51:45",
+        "date_display": "Sep 22, 2025",
+        "description": "Notice of Appearance of Counsel and Request for Notice (No Image)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 362,
+        "date_filed": "2025-09-19",
+        "time_filed": "16:03:30",
+        "date_display": "Sep 19, 2025",
+        "description": "Response to (related document(s):353 Motion to Compel) Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 09/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 361,
+        "date_filed": "2025-09-19",
+        "time_filed": "10:24:29",
+        "date_display": "Sep 19, 2025",
+        "description": "Objection to (related document(s):353 Motion to Compel) - Objection of Non-Debtor Blue Castle Holdings, Inc. to Motion of The Official Committee of Unsecured Creditors to Compel Accounting - Filed by Blue Castle Holdings, Inc. (Johnson, Michael) (EOD: 09/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 360,
+        "date_filed": "2025-09-10",
+        "time_filed": "11:43:30",
+        "date_display": "Sep 10, 2025",
+        "description": "Pending Order Re: 359 Motion for Examination Under Rule 2004. (Willden tr, Melinda) [Order# 467872] (EOD: 09/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 359,
+        "date_filed": "2025-09-10",
+        "time_filed": "11:42:33",
+        "date_display": "Sep 10, 2025",
+        "description": "Motion for Examination Under Rule 2004 of Wells Fargo Bank seeking Blue Castle Holding's bank statements Filed by United States Trustee. (Willden tr, Melinda) (EOD: 09/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 358,
+        "date_filed": "2025-09-07",
+        "time_filed": "22:28:52",
+        "date_display": "Sep 7, 2025",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 09/07/2025. (Admin.) (EOD: 09/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 357,
+        "date_filed": "2025-09-05",
+        "time_filed": "14:20:58",
+        "date_display": "Sep 5, 2025",
+        "description": "Order of Reassignment. The Court hereby reassigns the above captioned case and any associated open adversary proceeding to the Honorable Cathleen D. Parker. (jtt) (EOD: 09/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 356,
+        "date_filed": "2025-09-03",
+        "time_filed": "09:29:39",
+        "date_display": "Sep 3, 2025",
+        "description": "Certificate of Service (related document(s):355 Amended Notice of Hearing) MOTION OF THE COMMITTEE FOR ENTRY OF AN ORDER (I) APPROVING ADEQUACY OF DISCLOSURE STATEMENT, (II) APPROVING SOLICITATION AND NOTICE PROCEDURES FOR CONFIRMATION OF THE COMMITTEES PLAN, (III) APPROVING BALLOT AND NOTICE FORMS IN CONNECTION THEREWITH, (IV) SCHEDULING CERTAIN DATES WITH RESPECT THERETO, AND (V) GRANTING RELATED RELIEF Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 09/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 355,
+        "date_filed": "2025-09-03",
+        "time_filed": "09:22:29",
+        "date_display": "Sep 3, 2025",
+        "description": "Amended Notice of Hearing (related document(s):277 Motion to Approve Adequacy of Disclosure Statement) Filed by Official Committee of Unsecured Creditors. Hearing scheduled for 11/18/2025 at 10:00 AM at ZoomGov.com/join - KRA: Meeting ID: 160 3007 6397, Passcode: 6001201, Phone 1-669-254-5252. Deadline for filing objections: 11/11/2025. (Stone, Abigail) (EOD: 09/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 354,
+        "date_filed": "2025-09-02",
+        "time_filed": "11:57:14",
+        "date_display": "Sep 2, 2025",
+        "description": "Notice of Hearing (related document(s):353 Motion to Compel) Notice of Motion to Compel Accounting and Notice of Hearing Filed by Official Committee of Unsecured Creditors. Hearing scheduled for 9/24/2025 at 01:00 PM at ZoomGov.com/join - KRA: Meeting ID: 160 3007 6397, Passcode: 6001201, Phone 1-669-254-5252. Deadline for filing objections: 9/19/2025. (Stone, Abigail) (EOD: 09/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 353,
+        "date_filed": "2025-08-29",
+        "time_filed": "22:19:37",
+        "date_display": "Aug 29, 2025",
+        "description": "Motion to Compel Accounting Filed by Official Committee of Unsecured Creditors. (Attachments: # 1 Exhibit Proposed Order) (Stone, Abigail) (EOD: 08/29/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 352,
+        "date_filed": "2025-08-22",
+        "time_filed": "18:29:45",
+        "date_display": "Aug 22, 2025",
+        "description": "Debtor-In-Possession Monthly Operating Report for Filing Period July 1, 2025 through July 31, 2025 Filed by Power Block Coin, LLC. (Attachments: # 1 AP Aging # 2 Balance Sheet # 3 Income Statement # 4 Exhibit C & D - Cash Receipts and Disbursements # 5 Exhibit F - Notes Receivables Calculations # 6 BCH Hillcrest Bank Stmt 7.31.25 Acct 8922 # 7 Hillcrest Bank 7.31.25 Reconcilation) (Rothschild, Brian) (EOD: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 351,
+        "date_filed": "2025-08-18",
+        "time_filed": "16:16:11",
+        "date_display": "Aug 18, 2025",
+        "description": "Notice of Hearing (related document(s):350 Motion to Approve Settlement/Compromise) Filed by Power Block Coin, LLC. Hearing scheduled for 9/24/2025 at 10:00 AM at ZoomGov.com/join - KRA: Meeting ID: 160 3007 6397, Passcode: 6001201, Phone 1-669-254-5252. Deadline for filing objections: 9/4/2025. (Rothschild, Brian) (EOD: 08/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 350,
+        "date_filed": "2025-08-18",
+        "time_filed": "12:02:20",
+        "date_display": "Aug 18, 2025",
+        "description": "Motion to Approve Settlement/Compromise Adversary Number(s): 24-ap-02094, 24-ap-02093 Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 08/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 349,
+        "date_filed": "2025-08-18",
+        "time_filed": "09:12:56",
+        "date_display": "Aug 18, 2025",
+        "description": "Certificate of Service (related document(s):348 Amended Notice of Hearing) Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 08/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 348,
+        "date_filed": "2025-08-18",
+        "time_filed": "09:08:12",
+        "date_display": "Aug 18, 2025",
+        "description": "Amended Notice of Hearing (related document(s):277 Motion to Approve Adequacy of Disclosure Statement) NOTICE OF CONTINUED HEARING ON MOTION OF THE COMMITTEE FOR ENTRY OF AN ORDER (I) APPROVING ADEQUACY OF DISCLOSURE STATEMENT, (II) APPROVING SOLICITATION AND NOTICE PROCEDURES FOR CONFIRMATION OF THE COMMITTEES PLAN, (III) APPROVING BALLOT AND NOTICE FORMS IN CONNECTION THEREWITH, (IV) SCHEDULING CERTAIN DATES WITH RESPECT THERETO, AND (V) GRANTING RELATED RELIEF Filed by Official Committee of Unsecured Creditors. Hearing scheduled for 9/24/2025 at 01:00 PM at ZoomGov.com/join - KRA: Meeting ID: 160 3007 6397, Passcode: 6001201, Phone 1-669-254-5252. Deadline for filing objections: 9/17/2025. (Stone, Abigail) (EOD: 08/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 347,
+        "date_filed": "2025-08-15",
+        "time_filed": "16:03:25",
+        "date_display": "Aug 15, 2025",
+        "description": "Debtor-In-Possession Monthly Operating Report for Filing Period June 30, 2025 Filed by Power Block Coin, LLC. (Attachments: # 1 Hillcrest Bank 6.30.25 8922 Bank Reconciliation # 2 Hillcrest Bank June Statement # 3 Note Receivables Calculation # 4 June Income Statement # 5 June Cash Receipts and Disbursements # 6 June Balance Sheet) (Rothschild, Brian) (EOD: 08/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 346,
+        "date_filed": "2025-07-25",
+        "time_filed": "08:52:24",
+        "date_display": "Jul 25, 2025",
+        "description": "Certificate of Service (related document(s):345 Amended Notice of Hearing) Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 07/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 345,
+        "date_filed": "2025-07-25",
+        "time_filed": "08:48:21",
+        "date_display": "Jul 25, 2025",
+        "description": "Amended Notice of Hearing (related document(s):277 Motion to Approve Adequacy of Disclosure Statement) Filed by Official Committee of Unsecured Creditors. Hearing scheduled for 9/9/2025 at 10:30 AM at ZoomGov.com/join - KRA: Meeting ID: 160 3007 6397, Passcode: 6001201, Phone 1-669-254-5252. (Stone, Abigail) (EOD: 07/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 344,
+        "date_filed": "2025-07-17",
+        "time_filed": "16:41:17",
+        "date_display": "Jul 17, 2025",
+        "description": "PDF with attached Audio File. Court Date & Time [ 7/17/2025 2:00:03 PM ]. File Size [ 30067 KB ]. Run Time [ 01:02:38 ]. (Second Interim Application of Parsons Behle & Latimer, Counsel for the Debtor, for Allowance of Compensation and Reimbursement of Expenses [docket #302]). (admin). (EOD: 07/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-17",
+        "time_filed": "16:13:11",
+        "date_display": "Jul 17, 2025",
+        "description": "Minute Entry",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-17",
+        "time_filed": "",
+        "date_display": "Jul 17, 2025",
+        "description": "Minute Entry Re: 299 Motion for Relief From Stay Filed by Power Block Coin, LLC. Appearances: Brian M. Rothschild (DB), Michael Thomson (Unsecured Creditor's Committee), Chris Perkins and Landon Troester (Jason Brown, et al.), Jeff Shields (Blue Castle Holdings, et al.), Peter J. Kuhn (USTR). Motion granted on a limited basis as stated on the record. OTF-Rothschild (skr) (EOD: 07/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 343,
+        "date_filed": "2025-07-11",
+        "time_filed": "17:09:27",
+        "date_display": "Jul 11, 2025",
+        "description": "Objection to (related document(s):302 Application for Compensation) Limited Objection to Second Interim Fee Application of Parsons Behle & Latimer Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 07/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 342,
+        "date_filed": "2025-07-04",
+        "time_filed": "22:29:28",
+        "date_display": "Jul 4, 2025",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 07/04/2025. (Admin.) (EOD: 07/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 341,
+        "date_filed": "2025-07-04",
+        "time_filed": "22:29:28",
+        "date_display": "Jul 4, 2025",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 07/04/2025. (Admin.) (EOD: 07/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 340,
+        "date_filed": "2025-07-03",
+        "time_filed": "22:30:15",
+        "date_display": "Jul 3, 2025",
+        "description": "Certificate of Service Re: Miscellaneous Pleadings Notice Date 07/03/2025. (Admin.) (EOD: 07/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 339,
+        "date_filed": "2025-07-03",
+        "time_filed": "09:29:12",
+        "date_display": "Jul 3, 2025",
+        "description": "Certificate of Service (related document(s):338 Amended Notice of Hearing) Filed by Official Committee of Unsecured Creditors. (Attachments: # 1 List of 20 Largest Creditors A - Creditor Matrix) (Stone, Abigail) (EOD: 07/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 338,
+        "date_filed": "2025-07-03",
+        "time_filed": "09:14:57",
+        "date_display": "Jul 3, 2025",
+        "description": "Amended Notice of Hearing (related document(s):277 Motion to Approve Adequacy of Disclosure Statement) Filed by Official Committee of Unsecured Creditors. Hearing scheduled for 8/26/2025 at 11:00 AM at ZoomGov.com/join - KRA: Meeting ID: 160 3007 6397, Passcode: 6001201, Phone 1-669-254-5252. Deadline for filing objections: 8/21/2025. (Stone, Abigail) (EOD: 07/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 337,
+        "date_filed": "2025-07-02",
+        "time_filed": "13:37:17",
+        "date_display": "Jul 2, 2025",
+        "description": "Notice of Rescheduled Hearing AS TO JUDGE AND ZOOM LOCATION ONLY Re: 302 Application for Compensation. Hearing scheduled for 7/17/2025 at 02:00 PM at ZoomGov.com/join - KRA: Meeting ID: 160 3007 6397, Passcode: 6001201, Phone 1-669-254-5252. (mfr) (EOD: 07/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 336,
+        "date_filed": "2025-07-02",
+        "time_filed": "13:31:52",
+        "date_display": "Jul 2, 2025",
+        "description": "Notice of Rescheduled Hearing AS TO JUDGE AND ZOOM LOCATION ONLY Re: 299 Motion for Relief From Stay. Hearing scheduled for 7/17/2025 at 02:00 PM at ZoomGov.com/join - KRA: Meeting ID: 160 3007 6397, Passcode: 6001201, Phone 1-669-254-5252. (mfr) (EOD: 07/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 335,
+        "date_filed": "2025-07-01",
+        "time_filed": "16:51:42",
+        "date_display": "Jul 1, 2025",
+        "description": "Order of Reassignment. The Court hereby reassigns the above captioned case, and any associated open adversary proceedings, to Kevin R. Anderson. (jtt) (EOD: 07/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 334,
+        "date_filed": "2025-06-23",
+        "time_filed": "21:55:41",
+        "date_display": "Jun 23, 2025",
+        "description": "Debtor-In-Possession Monthly Operating Report for Filing Period May 1, 2025, through May 31, 2025, Filed by Power Block Coin, LLC. (Attachments: # 1 Income Statement # 2 Balance Sheet # 3 Exhibit C & D -Cash Receipts and Disbursements # 4 Exhibit F - PBC Notes Receivable Calculation # 5 BCH Hillcrest Bank Statement # 6 BCH Hillcrest Bank Reconciliation) (Rothschild, Brian) (EOD: 06/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 333,
+        "date_filed": "2025-06-16",
+        "time_filed": "12:06:46",
+        "date_display": "Jun 16, 2025",
+        "description": "Notice of Change of Address Filed by Blue Castle Holdings, Inc. (Rothschild, Brian) (EOD: 06/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 332,
+        "date_filed": "2025-06-16",
+        "time_filed": "11:58:20",
+        "date_display": "Jun 16, 2025",
+        "description": "Change of Address for Debtor(s). Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 06/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 331,
+        "date_filed": "2025-06-09",
+        "time_filed": "15:16:37",
+        "date_display": "Jun 9, 2025",
+        "description": "Certificate of Service (related document(s):330 Amended Notice of Hearing) -- Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 06/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 330,
+        "date_filed": "2025-06-09",
+        "time_filed": "09:56:24",
+        "date_display": "Jun 9, 2025",
+        "description": "Amended Notice of Hearing (related document(s):277 Motion to Approve Adequacy of Disclosure Statement) -- Notice of Continued Hearing on Motion of the Committee for Entry of an Order -- Filed by Official Committee of Unsecured Creditors. Hearing scheduled for 7/17/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 7/11/2025. (Stone, Abigail) (EOD: 06/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 329,
+        "date_filed": "2025-06-08",
+        "time_filed": "22:19:27",
+        "date_display": "Jun 8, 2025",
+        "description": "Certificate of Service Re: Order. (related document(s):328 Order on Motion to Continue/Reschedule Hearing) Notice Date 06/08/2025. (Admin.) (EOD: 06/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 328,
+        "date_filed": "2025-06-06",
+        "time_filed": "16:53:43",
+        "date_display": "Jun 6, 2025",
+        "description": "Order Granting Motion To Continue/Reschedule Hearings and Appoint Judicial Mediator (Related Docs: 277, 302, 326) Mediation set for 6/27/2025. Hearings scheduled for 7/17/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Signed as modified by the Court. (jtt) Modified on 6/6/2025 (msc). (EOD: 06/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 327,
+        "date_filed": "2025-06-03",
+        "time_filed": "23:18:50",
+        "date_display": "Jun 3, 2025",
+        "description": "Pending Order Re: 326 Motion to Continue/Reschedule Hearing. (Stone, Abigail) [Order# 464052] (EOD: 06/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 326,
+        "date_filed": "2025-06-03",
+        "time_filed": "23:14:28",
+        "date_display": "Jun 3, 2025",
+        "description": "Motion to Continue/Reschedule Hearing (related document(s):322 Amended Notice of Hearing, 324 Amended Notice of Hearing) and Appoint Judicial Mediator Filed by Official Committee of Unsecured Creditors. (Attachments: # 1 Exhibit) (Stone, Abigail) (EOD: 06/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 325,
+        "date_filed": "2025-05-21",
+        "time_filed": "10:22:56",
+        "date_display": "May 21, 2025",
+        "description": "Debtor-In-Possession Monthly Operating Report for Filing Period April 30, 2025 Filed by Power Block Coin, LLC. (Attachments: # 1 Supplement Hillcrest Bank Statement # 2 Supplement Hillcrest Bank Reconciliation # 3 Supplement Power Block Coin Income Statement # 4 Supplement Power Block Coin Balance Sheet # 5 Supplement Power Block Coin Cash Receipts and Disbursements # 6 Supplement Power Block Coin Note Receivables Summary) (Rothschild, Brian) (EOD: 05/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 324,
+        "date_filed": "2025-05-20",
+        "time_filed": "11:46:24",
+        "date_display": "May 20, 2025",
+        "description": "Amended Notice of Hearing (related document(s):302 Application for Compensation) Filed by Power Block Coin, LLC. Hearing scheduled for 6/10/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 6/3/2025. (Rothschild, Brian) (EOD: 05/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 323,
+        "date_filed": "2025-05-16",
+        "time_filed": "13:59:40",
+        "date_display": "May 16, 2025",
+        "description": "Certificate of Service (related document(s):322 Amended Notice of Hearing) Filed by Official Committee of Unsecured Creditors. (Heninger, Carson) (EOD: 05/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 322,
+        "date_filed": "2025-05-16",
+        "time_filed": "11:42:41",
+        "date_display": "May 16, 2025",
+        "description": "Amended Notice of Hearing (related document(s):277 Motion to Approve Adequacy of Disclosure Statement) NOTICE OF CONTINUED HEARING ON MOTION OF THE COMMITTEE FOR ENTRY OF AN ORDER (I) APPROVING ADEQUACY OF DISCLOSURE STATEMENT, (II) APPROVING SOLICITATION AND NOTICE PROCEDURES FOR CONFIRMATION OF THE COMMITTEES PLAN, (III) APPROVING BALLOT AND NOTICE FORMS IN CONNECTION THEREWITH, (IV) SCHEDULING CERTAIN DATES WITH RESPECT THERETO, AND (V) GRANTING RELATED RELIEF Filed by Official Committee of Unsecured Creditors. Hearing scheduled for 6/10/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 6/3/2025. (Heninger, Carson) (EOD: 05/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-16",
+        "time_filed": "15:39:06",
+        "date_display": "May 16, 2025",
+        "description": "Notice of Rescheduled Hearing (Chambers)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-16",
+        "time_filed": "",
+        "date_display": "May 16, 2025",
+        "description": "Notice of Rescheduled Hearing Re: 299 Motion for Relief From Stay. Hearing scheduled for 7/17/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. (msc) (EOD: 05/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 321,
+        "date_filed": "2025-05-14",
+        "time_filed": "21:29:29",
+        "date_display": "May 14, 2025",
+        "description": "Objection to (related document(s):299 Motion for Relief From Stay) Filed by Official Committee of Unsecured Creditors. (Thomson, Michael) (EOD: 05/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 320,
+        "date_filed": "2025-04-30",
+        "time_filed": "22:20:31",
+        "date_display": "Apr 30, 2025",
+        "description": "Certificate of Service Re: Order. (related document(s):318 Order on Application for Compensation) Notice Date 04/30/2025. (Admin.) (EOD: 04/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 319,
+        "date_filed": "2025-04-30",
+        "time_filed": "22:20:31",
+        "date_display": "Apr 30, 2025",
+        "description": "Certificate of Service Re: Order. (related document(s):317 Order on Application for Compensation) Notice Date 04/30/2025. (Admin.) (EOD: 04/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 318,
+        "date_filed": "2025-04-28",
+        "time_filed": "16:13:38",
+        "date_display": "Apr 28, 2025",
+        "description": "Order Granting Application for Compensation (Related Doc 304) Granting for CFO Solutions, LLC dba Amplo, fees awarded: $12,805.00, expenses awarded: $0.00 (gci) (EOD: 04/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 317,
+        "date_filed": "2025-04-28",
+        "time_filed": "16:00:33",
+        "date_display": "Apr 28, 2025",
+        "description": "Order Granting Application for Compensation (Related Doc # 303) Granting for Joli A. Lofstedt, fees awarded: $8,925.00, expenses awarded: $0.00. (gci) (EOD: 04/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 316,
+        "date_filed": "2025-04-28",
+        "time_filed": "15:35:14",
+        "date_display": "Apr 28, 2025",
+        "description": "Pending Order Re: 304 Application for Compensation. (Rothschild, Brian) [Order# 462697] (EOD: 04/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 315,
+        "date_filed": "2025-04-28",
+        "time_filed": "15:23:26",
+        "date_display": "Apr 28, 2025",
+        "description": "Pending Order Re: 303 Application for Compensation. (Rothschild, Brian) [Order# 462692] (EOD: 04/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 314,
+        "date_filed": "2025-04-25",
+        "time_filed": "10:23:51",
+        "date_display": "Apr 25, 2025",
+        "description": "Order Approving Subchapter V Trustee's Final Report and Discharging Subchapter V Trustee (tdg) (EOD: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 313,
+        "date_filed": "2025-04-25",
+        "time_filed": "08:44:30",
+        "date_display": "Apr 25, 2025",
+        "description": "Pending Order Re: 312 Chapter 11 Subchapter V Trustees Report of No Distribution. (Lofstedt, Joli) [Order# 462630] (EOD: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 312,
+        "date_filed": "2025-04-24",
+        "time_filed": "15:58:47",
+        "date_display": "Apr 24, 2025",
+        "description": "Chapter 11 Subchapter V Trustees Report of No Distribution. Funds Collected: $0.00. Key information about this case as reported in schedules filed by the debtor(s) or otherwise found in the case record: This case was pending for 10 months. Assets Abandoned (without deducting any secured claims): Not Applicable, Assets Exempt: Not Applicable, Claims Scheduled: $1679550.68, Claims Asserted: Not Available, Claims scheduled to be discharged without payment (without deducting the value of collateral or debts excepted from discharge): Not Applicable. (Lofstedt, Joli) (EOD: 04/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 311,
+        "date_filed": "2025-04-23",
+        "time_filed": "18:57:22",
+        "date_display": "Apr 23, 2025",
+        "description": "Debtor-In-Possession Monthly Operating Report for Filing Period March 1, 2025, through March 31, 2025 Filed by Power Block Coin, LLC. (Attachments: # 1 Balance SHeet # 2 Income Statement # 3 Cash Receipts and Disbursements # 4 Note Receivables Calculation # 5 Hillcrest Bank Statement) (Rothschild, Brian) (EOD: 04/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 310,
+        "date_filed": "2025-04-18",
+        "time_filed": "13:44:53",
+        "date_display": "Apr 18, 2025",
+        "description": "Objection to (related document(s):299 Motion for Relief From Stay) or to Modify Automatic Stay Filed by Jason Brown, Lynn Brown, Robert L. Brown, Daniel Stadelmann. (Anderson, James) (EOD: 04/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 309,
+        "date_filed": "2025-04-18",
+        "time_filed": "13:05:06",
+        "date_display": "Apr 18, 2025",
+        "description": "Amended Notice of Hearing (related document(s):299 Motion for Relief From Stay, 302 Application for Compensation) Filed by Power Block Coin, LLC. Hearing scheduled for 5/20/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 5/5/2025. (Rothschild, Brian) (EOD: 04/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 308,
+        "date_filed": "2025-04-18",
+        "time_filed": "12:37:10",
+        "date_display": "Apr 18, 2025",
+        "description": "Amended Notice of Hearing (related document(s):277 Motion to Approve Adequacy of Disclosure Statement) NOTICE OF CONTINUED HEARING ON MOTION OF THE COMMITTEE FOR ENTRY OF AN ORDER (I) APPROVING ADEQUACY OF DISCLOSURE STATEMENT, (II) APPROVING SOLICITATION AND NOTICE PROCEDURES FOR CONFIRMATION OF THE COMMITTEES PLAN, (III) APPROVING BALLOT AND NOTICE FORMS IN CONNECTION THEREWITH, (IV) SCHEDULING CERTAIN DATES WITH RESPECT THERETO, AND (V) GRANTING RELATED RELIEF Filed by Official Committee of Unsecured Creditors. Hearing scheduled for 5/20/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 4/14/2025. (Stone, Abigail) (EOD: 04/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 307,
+        "date_filed": "2025-04-08",
+        "time_filed": "14:41:04",
+        "date_display": "Apr 8, 2025",
+        "description": "Notice of Hearing (related document(s):303 Application for Compensation) Filed by Joli A. Lofstedt. Hearing scheduled for 5/1/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 4/25/2025. (Rothschild, Brian) (EOD: 04/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 306,
+        "date_filed": "2025-04-08",
+        "time_filed": "14:40:12",
+        "date_display": "Apr 8, 2025",
+        "description": "Notice of Hearing (related document(s):304 Application for Compensation) Filed by CFO Solutions, LLC dba Amplo. Hearing scheduled for 5/1/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 4/25/2025. (Rothschild, Brian) (EOD: 04/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 305,
+        "date_filed": "2025-04-08",
+        "time_filed": "14:39:16",
+        "date_display": "Apr 8, 2025",
+        "description": "Notice of Hearing (related document(s):302 Application for Compensation) Filed by Power Block Coin, LLC. Hearing scheduled for 5/1/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 4/25/2025. (Rothschild, Brian) (EOD: 04/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 304,
+        "date_filed": "2025-04-08",
+        "time_filed": "13:41:05",
+        "date_display": "Apr 8, 2025",
+        "description": "Second Application for Compensation for CFO Solutions, LLC dba Amplo, Accountant, fee: $12,805.00, expenses: $0. Dates of Service: October 1, 2024, through March 31, 2025 Filed by Brian M. Rothschild. (Rothschild, Brian) (EOD: 04/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 303,
+        "date_filed": "2025-04-08",
+        "time_filed": "13:02:12",
+        "date_display": "Apr 8, 2025",
+        "description": "Final Application for Compensation for Joli A. Lofstedt, Trustee Chapter 11, fee: $8,925.00, expenses: $0.00. Dates of Service: June 26, 2024to October 9, 2024 Filed by Joli A. Lofstedt. (Lofstedt, Joli) (EOD: 04/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 302,
+        "date_filed": "2025-04-08",
+        "time_filed": "11:42:05",
+        "date_display": "Apr 8, 2025",
+        "description": "Second Application for Compensation for Brian M. Rothschild, Attorney, fee: $138,786.50, expenses: $2,548.74. Dates of Service: October 1, 2024, through March 31, 2025, Filed by Brian M. Rothschild. (Rothschild, Brian) (EOD: 04/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 301,
+        "date_filed": "2025-04-04",
+        "time_filed": "13:01:30",
+        "date_display": "Apr 4, 2025",
+        "description": "Objection to Confirmation of Plan. Filed by Michael D Brewer. (tdg) (EOD: 04/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 300,
+        "date_filed": "2025-04-01",
+        "time_filed": "15:52:55",
+        "date_display": "Apr 1, 2025",
+        "description": "Notice of Hearing (related document(s):299 Motion for Relief From Stay) Filed by Power Block Coin, LLC. Hearing scheduled for 5/1/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 4/18/2025. (Rothschild, Brian) (EOD: 04/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 299,
+        "date_filed": "2025-04-01",
+        "time_filed": "15:05:20",
+        "date_display": "Apr 1, 2025",
+        "description": "Motion for Relief From Stay or to Modify Stay. Fee Amount: $199. Payment to be made via Pay.gov. Filed by Power Block Coin, LLC. (Rothschild, Brian) (EOD: 04/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-01",
+        "time_filed": "",
+        "date_display": "Apr 1, 2025",
+        "description": "Receipt of Filing Fee for Motion for Relief From Stay( 24-23041) [motion,mrlfsty] ( 199.00). Receipt Number A28152661, Amount $ 199.00 (Re: Doc# 299). (U.S. Treasury) (EOD: 04/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-01",
+        "time_filed": "15:06:10",
+        "date_display": "Apr 1, 2025",
+        "description": "PayGov Receipt of Fee Due",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 298,
+        "date_filed": "2025-03-28",
+        "time_filed": "22:26:19",
+        "date_display": "Mar 28, 2025",
+        "description": "Certificate of Service Re: Order. (related document(s):293 Order on Motion for Ex Parte Relief) Notice Date 03/28/2025. (Admin.) (EOD: 03/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 297,
+        "date_filed": "2025-03-28",
+        "time_filed": "22:26:19",
+        "date_display": "Mar 28, 2025",
+        "description": "Certificate of Service Re: Order. (related document(s):292 Order on Motion for Ex Parte Relief) Notice Date 03/28/2025. (Admin.) (EOD: 03/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 296,
+        "date_filed": "2025-03-28",
+        "time_filed": "22:26:19",
+        "date_display": "Mar 28, 2025",
+        "description": "Certificate of Service Re: Order. (related document(s):291 Order on Motion for Ex Parte Relief) Notice Date 03/28/2025. (Admin.) (EOD: 03/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 295,
+        "date_filed": "2025-03-28",
+        "time_filed": "22:26:19",
+        "date_display": "Mar 28, 2025",
+        "description": "Certificate of Service Re: Order. (related document(s):290 Order on Motion for Ex Parte Relief) Notice Date 03/28/2025. (Admin.) (EOD: 03/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 294,
+        "date_filed": "2025-03-26",
+        "time_filed": "13:57:12",
+        "date_display": "Mar 26, 2025",
+        "description": "Notice (related document(s):290 Order on Motion for Ex Parte Relief, 291 Order on Motion for Ex Parte Relief, 293 Order on Motion for Ex Parte Relief) NOTICE OF SUBPOENAS Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 293,
+        "date_filed": "2025-03-26",
+        "time_filed": "13:13:24",
+        "date_display": "Mar 26, 2025",
+        "description": "Order Granting Official Committee of Unsecured Creditors' Ex Parte Motion Under Fed.R. Bankr.P.2004 and 9016 and Local Rule 2004-1 (PREMIER AMERICA CREDIT UNION) (Related Doc # 288) (tdg) (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 291,
+        "date_filed": "2025-03-26",
+        "time_filed": "13:10:21",
+        "date_display": "Mar 26, 2025",
+        "description": "Order Granting Official Committee of Unsecured Creditors' Ex Parte Motion Under Fed.R. Bankr.P.2004 and 9016 and Local Rule 2004-1 (ALLOYA CORPORATE FEDERAL CREDIT UNION)(Related Doc # 284) (tdg) (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 290,
+        "date_filed": "2025-03-26",
+        "time_filed": "13:07:38",
+        "date_display": "Mar 26, 2025",
+        "description": "Order Granting Official Committee of Unsecured Creditors' Ex Parte Motion Under Fed.R. Bankr.P.2004 and 9016 and Local Rule 2004-1 (JPMORGAN CHASE BANK) (Related Doc # 282) (tdg) (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 289,
+        "date_filed": "2025-03-26",
+        "time_filed": "11:43:49",
+        "date_display": "Mar 26, 2025",
+        "description": "Pending Order Re: 288 Motion for Ex Parte Relief. (Stone, Abigail) [Order# 461548] (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 288,
+        "date_filed": "2025-03-26",
+        "time_filed": "11:42:26",
+        "date_display": "Mar 26, 2025",
+        "description": "Official Committee of Unsecured Creditors' Ex Parte Motion Under Fed.R. Bankr.P.2004 and 9016 and Local Rule 2004-1 (PREMIER AMERICA CREDIT UNION) Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 287,
+        "date_filed": "2025-03-26",
+        "time_filed": "11:38:15",
+        "date_display": "Mar 26, 2025",
+        "description": "Pending Order Re: 286 Motion for Ex Parte Relief. (Stone, Abigail) [Order# 461546] (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 286,
+        "date_filed": "2025-03-26",
+        "time_filed": "11:37:29",
+        "date_display": "Mar 26, 2025",
+        "description": "Official Committee of Unsecured Creditors' Ex Parte Motion Under Fed.R. Bankr.P.2004 and 9016 and Local Rule 2004-1 (DESERET FIRST CREDIT UNION) Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 285,
+        "date_filed": "2025-03-26",
+        "time_filed": "11:32:25",
+        "date_display": "Mar 26, 2025",
+        "description": "Pending Order Re: 284 Motion for Ex Parte Relief. (Stone, Abigail) [Order# 461545] (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 283,
+        "date_filed": "2025-03-26",
+        "time_filed": "11:27:24",
+        "date_display": "Mar 26, 2025",
+        "description": "Pending Order Re: 282 Motion for Ex Parte Relief. (Stone, Abigail) [Order# 461543] (EOD: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 281,
+        "date_filed": "2025-03-20",
+        "time_filed": "16:39:03",
+        "date_display": "Mar 20, 2025",
+        "description": "Debtor-In-Possession Monthly Operating Report for Filing Period February 2025 Filed by Power Block Coin, LLC. (Attachments: # 1 Income Statement # 2 Income Balance Sheet # 3 Note Receivable Calculation # 4 February Cash Receipts and Disbursements # 5 Questionnaire Report # 6 Statement # 7 Hillcrest Bank Statement) (Rothschild, Brian) (EOD: 03/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 280,
+        "date_filed": "2025-03-14",
+        "time_filed": "14:44:34",
+        "date_display": "Mar 14, 2025",
+        "description": "Support Document (related document(s):277 Motion to Approve Adequacy of Disclosure Statement) Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 03/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 279,
+        "date_filed": "2025-03-14",
+        "time_filed": "13:29:29",
+        "date_display": "Mar 14, 2025",
+        "description": "Notice of Hearing (related document(s):277 Motion to Approve Adequacy of Disclosure Statement) Filed by Official Committee of Unsecured Creditors. Hearing scheduled for 5/1/2025 at 02:00 PM at ZoomGov.com/join - JTM: Meeting ID: 161 5478 8875, Passcode: 3834658, Phone 1-669-254-5252. Deadline for filing objections: 4/14/2025. (Stone, Abigail) (EOD: 03/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 278,
+        "date_filed": "2025-03-14",
+        "time_filed": "13:17:01",
+        "date_display": "Mar 14, 2025",
+        "description": "Pending Order Re: 277 Motion to Approve Adequacy of Disclosure Statement. (Stone, Abigail) [Order# 461086] (EOD: 03/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 277,
+        "date_filed": "2025-03-14",
+        "time_filed": "12:59:44",
+        "date_display": "Mar 14, 2025",
+        "description": "Motion of The Committee For Entry of an Order (I) Approving Adequacy of Disclosure Statement, (II) Approving Solicitation and Notice Procedures For Confirmation of The Committees Plan, (III) Approving Ballot and Notice Forms in Connection Therewith, (IV) Scheduling Certain Dates With Respect Thereto, and (V) Granting Related Relief. Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 03/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 276,
+        "date_filed": "2025-03-14",
+        "time_filed": "12:54:13",
+        "date_display": "Mar 14, 2025",
+        "description": "(WITHDRAWN) Motion to Approve Adequacy of Disclosure Statement MOTION OF THE COMMITTEE FOR ENTRY OF AN ORDER (I) APPROVING ADEQUACY OF DISCLOSURE STATEMENT, (II) APPROVING SOLICITATION AND NOTICE PROCEDURES FOR CONFIRMATION OF THE COMMITTEES PLAN, (III) APPROVING BALLOT AND NOTICE FORMS IN CONNECTION THEREWITH, (IV) SCHEDULING CERTAIN DATES WITH RESPECT THERETO, AND (V) GRANTING RELATED RELIEF Filed by Official Committee of Unsecured Creditors. (Jarvis, Annette) Modified on 3/14/2025 (tdg). (EOD: 03/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-14",
+        "time_filed": "12:58:21",
+        "date_display": "Mar 14, 2025",
+        "description": "Withdrawal of Incorrectly Filed Document (no image)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-14",
+        "time_filed": "13:48:13",
+        "date_display": "Mar 14, 2025",
+        "description": "Unsigned Order (order)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-14",
+        "time_filed": "",
+        "date_display": "Mar 14, 2025",
+        "description": "Notice of Withdrawal of Incorrectly Filed Document (related document(s):276 Motion to Approve Adequacy of Disclosure Statement) Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 03/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-14",
+        "time_filed": "",
+        "date_display": "Mar 14, 2025",
+        "description": "Unsigned Order (related document(s):278 Pending Order filed by Abigail Jennifer Stone). Reason Order Was Unsigned: This proposed order is both incomplete and premature. (tdg) (EOD: 03/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 275,
+        "date_filed": "2025-03-10",
+        "time_filed": "14:47:06",
+        "date_display": "Mar 10, 2025",
+        "description": "Support Document (related document(s):254 Chapter 11 Plan, Disclosure Statement, 273 Amended Chapter 11 Plan) - REDLINE of Chapter 11 Plan between Doc. 254 and Doc. 273) -- Filed by Official Committee of Unsecured Creditors. (Stone, Abigail) (EOD: 03/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 274,
+        "date_filed": "2025-03-07",
+        "time_filed": "14:18:50",
+        "date_display": "Mar 7, 2025",
+        "description": "Disclosure Statement (Ch 11) Filed by Official Committee of Unsecured Creditors. (Jarvis, Annette) (EOD: 03/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.274.0_1.pdf"
+      },
+      {
+        "entry_number": 273,
+        "date_filed": "2025-03-07",
+        "time_filed": "14:16:47",
+        "date_display": "Mar 7, 2025",
+        "description": "Amended Chapter 11 Plan of Reorganization Filed by Official Committee of Unsecured Creditors. (Jarvis, Annette) (EOD: 03/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68873409&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=10"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68873409&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=16"
   },
   "claims_administrator": null,
   "coverage": [],
