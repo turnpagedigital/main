@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/",
     "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-08-01T21:12:51.969541+00:00",
-    "as_of": "Aug 1, 2026",
+    "fetched_at": "2026-08-02T00:16:05.598836+00:00",
+    "as_of": "Aug 2, 2026",
     "backfilled": true,
-    "new_in_72h": 20,
+    "new_in_72h": 12,
     "recent": [
       {
         "entry_number": 79,
@@ -178,7 +178,7 @@
         "time_filed": "10:02:04",
         "date_display": "Jul 30, 2026",
         "description": "Appear Pro Hac Vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -188,7 +188,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -198,7 +198,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -208,7 +208,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -218,7 +218,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -228,7 +228,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -238,7 +238,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -248,7 +248,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
