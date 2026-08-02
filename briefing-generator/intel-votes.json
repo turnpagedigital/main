@@ -3,52 +3,79 @@
     "https://bondoro.com/poolin/": {
       "v": 1,
       "source": "Bondoro",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T06:06:09.448Z"
     },
     "https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing": {
       "v": 1,
       "source": "Petition (petition11.com)",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T06:29:00.789Z"
     },
     "https://www.wsj.com/tech/new-york-alleges-kalshi-running-illegal-gambling-operation-18ae71b0?mod=pls_whats_news_us_business_f": {
       "v": 1,
       "source": "WSJ Business",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T17:40:18.972Z"
     },
     "https://www.wsj.com/business/autos/tesla-weighs-sale-of-china-business-to-pave-way-for-potential-spacex-merger-5ae26026?mod=pls_whats_news_us_business_f": {
       "v": 1,
       "source": "WSJ Business",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T17:40:25.742Z"
     },
     "https://www.wsj.com/business/financial-services-roundup-market-talk-c712a670?mod=pls_whats_news_us_business_f": {
       "v": -1,
       "source": "WSJ Business",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T17:40:28.742Z"
     },
     "https://www.wsj.com/business/when-hpes-antonio-neri-leaves-his-team-alone-3b64571c?mod=pls_whats_news_us_business_f": {
       "v": -1,
       "source": "WSJ Business",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T17:40:32.673Z"
     },
     "https://www.wsj.com/business/deals/couche-tard-plans-to-buy-polands-zabka-for-about-8-7-billion-7fd37bbf?mod=pls_whats_news_us_business_f": {
       "v": -1,
       "source": "WSJ Business",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T17:40:36.702Z"
     },
     "https://www.wsj.com/business/retail/abbvie-lowers-outlook-to-account-for-acquisition-as-profit-jumps-f4e6aec5?mod=pls_whats_news_us_business_f": {
       "v": -1,
       "source": "WSJ Business",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T17:40:40.639Z"
     },
     "https://www.wsj.com/business/earnings/universal-music-shares-plunge-after-subscriptions-streaming-growth-underwhelm-ea138f75?mod=pls_whats_news_us_business_f": {
       "v": 1,
       "source": "WSJ Business",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T17:40:56.005Z"
     },
     "https://www.wsj.com/business/earnings/newell-brands-lifts-fy-profit-view-on-higher-sales-tariff-refund-8f3ef4ae?mod=pls_whats_news_us_business_f": {
       "v": 1,
       "source": "WSJ Business",
+      "title": "",
+      "case_slug": "",
       "at": "2026-07-31T17:41:03.584Z"
+    },
+    "https://www.wsj.com/finance/stocks/stock-market-bubbles-recovery-029d21d0?mod=rss_markets_main": {
+      "v": 1,
+      "source": "WSJ Markets",
+      "title": "America Is Great at Creating Stock Market Bubbles—and Shrugging Them Off",
+      "case_slug": "",
+      "at": "2026-08-02T16:50:55.281Z"
     }
   }
 }
