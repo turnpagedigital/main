@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-08-02-bankruptcy-advisory",
+      "date": "2026-08-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — August 2, 2026",
+      "summary": "Two items moved overnight. The more significant for distressed positioning: Hughes Network Systems (HughesNet), the EchoStar-controlled satellite broadband subsidiary, crossed the August 1 debt maturity without paying — a $1.5 billion note due date that has been the central liquidity tripwire since…",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-02-class-actions-advisory",
+      "date": "2026-08-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — August 2, 2026",
+      "summary": "The dominant development heading into this week is the post-final-approval administration phase in Bartz v. Anthropic PBC, No. 3:24-cv-05417 (N.D. Cal., Hon. Araceli Martínez-Olguín).",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-02-fraud-advisory",
+      "date": "2026-08-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — August 2, 2026",
+      "summary": "Both tracked dockets are quiet entering the weekend. The last 24 hours produced no new filings, court orders, or enforcement actions on this desk that can be verified from primary sources. What follows is a concise status on the two open matters and the next confirmed milestones.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-02-tariff-advisory",
+      "date": "2026-08-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — August 2, 2026",
+      "summary": "The week ending August 2 delivered three discrete shifts on the refund landscape that carry direct implications for recovery strategy: (1) CAPE Phase 3's deployment appears to have landed on schedule as the calendar turned to August, with court-ordered relief now flowing specifically to the ~3,700 i…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-02-crypto-advisory",
+      "date": "2026-08-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — August 2, 2026",
+      "summary": "The desk is quiet over the last 24 hours. No new pleadings, adversary proceedings, or court orders have been filed or entered in any tracked case since the close of business Friday. The most recent docket activity is a Certificate of No Objection filed July 30 in BlockFills (Dkt.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-02-advisory",
+      "date": "2026-08-02",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — August 2, 2026",
+      "summary": "The last 24 hours produced no new filings in either Bartz or Concord, but the distribution clock in Bartz is now running — and in Concord, the music-publisher front continues to expand, with the July 22 Second Amended Complaint marking the most substantive pleading update since summary-judgment brie…",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-08-01-bankruptcy-advisory",
       "date": "2026-08-01",
       "type": "briefing",
