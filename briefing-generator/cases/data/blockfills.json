@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
     "date_last_filing": "2026-07-30",
-    "fetched_at": "2026-08-01T21:11:54.130937+00:00",
-    "as_of": "Aug 1, 2026",
+    "fetched_at": "2026-08-02T00:15:15.617085+00:00",
+    "as_of": "Aug 2, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 552,
@@ -26,7 +26,7 @@
         "time_filed": "16:28:36",
         "date_display": "Jul 30, 2026",
         "description": "Certificate of No Objection - No Order Required",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -36,7 +36,7 @@
         "time_filed": "16:26:00",
         "date_display": "Jul 30, 2026",
         "description": "Certificate of No Objection - No Order Required",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -46,7 +46,7 @@
         "time_filed": "13:02:22",
         "date_display": "Jul 30, 2026",
         "description": "Compensation - Application (Attorney)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -58,7 +58,7 @@
         "time_filed": "16:28:36",
         "date_display": "Jul 30, 2026",
         "description": "Certificate of No Objection - No Order Required",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -68,7 +68,7 @@
         "time_filed": "16:26:00",
         "date_display": "Jul 30, 2026",
         "description": "Certificate of No Objection - No Order Required",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -78,7 +78,7 @@
         "time_filed": "13:02:22",
         "date_display": "Jul 30, 2026",
         "description": "Compensation - Application (Attorney)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -88,7 +88,7 @@
         "time_filed": "12:03:14",
         "date_display": "Jul 30, 2026",
         "description": "Compensation - Application (Attorney)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -98,7 +98,7 @@
         "time_filed": "11:08:27",
         "date_display": "Jul 30, 2026",
         "description": "Withdrawal - Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
     "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-08-01T21:13:05.358179+00:00",
-    "as_of": "Aug 1, 2026",
+    "fetched_at": "2026-08-02T00:16:16.924670+00:00",
+    "as_of": "Aug 2, 2026",
     "backfilled": true,
-    "new_in_72h": 25,
+    "new_in_72h": 15,
     "recent": [
       {
         "entry_number": 102,
@@ -208,7 +208,7 @@
         "time_filed": "14:37:38",
         "date_display": "Jul 30, 2026",
         "description": "Transcript",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -218,7 +218,7 @@
         "time_filed": "12:07:27",
         "date_display": "Jul 30, 2026",
         "description": "Notice of Appearance and Request for Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -228,7 +228,7 @@
         "time_filed": "10:52:10",
         "date_display": "Jul 30, 2026",
         "description": "Order to Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -238,7 +238,7 @@
         "time_filed": "10:51:11",
         "date_display": "Jul 30, 2026",
         "description": "Order to Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -248,7 +248,7 @@
         "time_filed": "10:49:48",
         "date_display": "Jul 30, 2026",
         "description": "Order to Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -258,7 +258,7 @@
         "time_filed": "10:46:40",
         "date_display": "Jul 30, 2026",
         "description": "Order to Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -268,7 +268,7 @@
         "time_filed": "10:44:49",
         "date_display": "Jul 30, 2026",
         "description": "Order to Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -278,7 +278,7 @@
         "time_filed": "09:11:48",
         "date_display": "Jul 30, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -288,7 +288,7 @@
         "time_filed": "09:11:14",
         "date_display": "Jul 30, 2026",
         "description": "Notice of Appearance and Request for Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -298,7 +298,7 @@
         "time_filed": "14:37:38",
         "date_display": "Jul 30, 2026",
         "description": "Transcript",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
