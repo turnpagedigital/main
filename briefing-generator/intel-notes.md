@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-07-31 18:43 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-02 16:35 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -48,6 +48,10 @@ $100-$500M liabilities = 2-10c recoveries
 > Chapter 11 Post-Confirmation Report
 
 ## Uncategorized
+
+### (no docket number) — 2026-08-01
+
+> Filing Alert: Krasnoff Domestic Growth Fund Chapter 11 — Krasnoff Domestic Growth Fund Files Chapter 11 in District of New Jersey
 
 ### (no docket number) — 2026-07-31
 
