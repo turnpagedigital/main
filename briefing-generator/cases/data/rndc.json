@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-08-02T00:16:16.924670+00:00",
+    "date_last_filing": "2026-08-01",
+    "fetched_at": "2026-08-02T06:48:38.495444+00:00",
     "as_of": "Aug 2, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 16,
     "recent": [
+      {
+        "entry_number": 103,
+        "date_filed": "2026-08-01",
+        "time_filed": "23:45:43",
+        "date_display": "Aug 1, 2026",
+        "description": "BNC Certificate of Mailing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 102,
         "date_filed": "2026-07-31",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 100,
-        "date_filed": "2026-07-31",
-        "time_filed": "16:41:21",
-        "date_display": "Jul 31, 2026",
-        "description": "Notice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 103,
+        "date_filed": "2026-08-01",
+        "time_filed": "23:45:43",
+        "date_display": "Aug 1, 2026",
+        "description": "BNC Certificate of Mailing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 102,
         "date_filed": "2026-07-31",
