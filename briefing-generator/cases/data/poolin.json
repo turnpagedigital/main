@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/",
-    "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-08-02T00:16:05.598836+00:00",
+    "date_last_filing": "2026-08-02",
+    "fetched_at": "2026-08-02T06:48:23.559131+00:00",
     "as_of": "Aug 2, 2026",
     "backfilled": true,
-    "new_in_72h": 12,
+    "new_in_72h": 13,
     "recent": [
+      {
+        "entry_number": 80,
+        "date_filed": "2026-08-02",
+        "time_filed": "00:14:40",
+        "date_display": "Aug 2, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 79,
         "date_filed": "2026-07-31",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 77,
-        "date_filed": "2026-07-31",
-        "time_filed": "10:29:30",
-        "date_display": "Jul 31, 2026",
-        "description": "Appear Pro Hac Vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 80,
+        "date_filed": "2026-08-02",
+        "time_filed": "00:14:40",
+        "date_display": "Aug 2, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 79,
         "date_filed": "2026-07-31",
