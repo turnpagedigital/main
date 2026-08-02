@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/",
-    "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-08-02T15:06:20.605510+00:00",
+    "date_last_filing": "2026-08-02",
+    "fetched_at": "2026-08-02T22:14:46.712765+00:00",
     "as_of": "Aug 2, 2026",
     "backfilled": true,
-    "new_in_72h": 19,
+    "new_in_72h": 20,
     "recent": [
+      {
+        "entry_number": 500,
+        "date_filed": "2026-08-02",
+        "time_filed": "17:32:58",
+        "date_display": "Aug 2, 2026",
+        "description": "Declaration",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 495,
         "date_filed": "2026-07-31",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 493,
-        "date_filed": "2026-07-31",
-        "time_filed": "19:45:00",
-        "date_display": "Jul 31, 2026",
-        "description": "Statement Certificate of Counsel to the Application of the Official Committee of Unsecured Creditors for Entry of an Order Authorizing the Employment and Retention of Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors Effective as of June 26, 2026 (related document(s)398) filed by Shirley S Cho on behalf of The Official Committee of Unsecured Creditors. (Cho, Shirley) (Entered: 07/31/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.493.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 500,
+        "date_filed": "2026-08-02",
+        "time_filed": "17:32:58",
+        "date_display": "Aug 2, 2026",
+        "description": "Declaration",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 495,
         "date_filed": "2026-07-31",
