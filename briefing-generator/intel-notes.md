@@ -86,10 +86,6 @@ Ciao
 
 ### (no docket number) — 2026-07-31
 
-> Situational Awareness Down 67% in July in AI Stock Rout — “We let you down this month,” Leopold Aschenbrenner’s hedge-fund firm told investors after selling the bulk of its stocks to Citadel.
-
-### (no docket number) — 2026-07-31
-
 > Stock Market Today: Apple Slump Drags on Tech — Stocks are reversing their early gains
 
 ### (no docket number) — 2026-07-31
