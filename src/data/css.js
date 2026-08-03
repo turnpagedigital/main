@@ -581,6 +581,14 @@ button:focus-visible, a:focus-visible {
 .briefing-body blockquote { border-left: 3px solid ${NEON}; padding: 0.2rem 0 0.2rem 1.2rem; margin: 1.2rem 0; color: ${INK_60}; font-style: italic; }
 .briefing-body code { font-family: ui-monospace, "SF Mono", Menlo, monospace; background: ${LINE}; color: ${INK}; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.92em; }
 .briefing-body hr { border: none; border-top: 1px solid ${LINE}; margin: 2rem 0; }
+.briefing-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+.briefing-body thead th { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: ${INK}; text-align: left; padding: 0.55rem 0.9rem; border-bottom: 2px solid ${INK}; }
+.briefing-body td { padding: 0.65rem 0.9rem; border-bottom: 1px solid ${LINE}; color: ${INK_60}; vertical-align: top; line-height: 1.55; }
+.briefing-body tbody tr:nth-child(even) td { background: rgba(10,10,10,0.03); }
+.briefing-body td strong { color: ${INK}; }
+@media (max-width: 640px) {
+  .briefing-body table { display: block; overflow-x: auto; }
+}
 
 /* ─── Article-body overrides (long-form editorial) ─── */
 /* Applied alongside .briefing-body for type="article" posts */
