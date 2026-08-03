@@ -105,5 +105,13 @@
     "docket_url": "",
     "court": "United States Bankruptcy Court, D. Delaware",
     "default_color": "#1B3A4B"
+  },
+  {
+    "slug": "omnis-pleasants",
+    "display_name": "Omnis Pleasants",
+    "short_name": "Omnis Pleasants",
+    "docket_url": "",
+    "court": "United States Bankruptcy Court, D. Delaware",
+    "default_color": "#D4FF00"
   }
 ]
