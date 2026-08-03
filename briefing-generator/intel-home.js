@@ -605,6 +605,18 @@
       renderNotes();
     });
 
+  // Admin theme names — display follows /admin/intelligence renames
+  fetchJson(BASE + "themes.json").then(function (d) {
+    ((d && d.themes) || []).forEach(function (t) {
+      if (!t || !t.slug) return;
+      var cur = THEMES[t.slug] || { bg: "#E0E7FF", fg: "#3730a3", emoji: "\ud83d\udcf0", name: t.slug };
+      if (t.display_name) cur.name = t.display_name;
+      if (t.emoji) cur.emoji = t.emoji;
+      THEMES[t.slug] = cur;
+    });
+    renderAll();
+  }).catch(function () {});
+
   // Roaming colors: hydrate the shared store so pills match other devices
   fetchJson(BASE + "api/prefs").then(function (p) {
     if (p && p.ok && p.colors) {
