@@ -681,16 +681,29 @@
   function renderSwatchEditors() {
     var container = document.getElementById("ud-pop-swatches");
     if (!container) return;
+    container.classList.add("ud-sw-editing");
     container.innerHTML = PRESETS.map(function (p, i) {
-      return '<input type="color" class="ud-swatch-edit" data-idx="' + i + '" value="' + p.bg + '" title="Palette color ' + (i + 1) + '">';
+      return (
+        '<div class="ud-sw-row" data-row="' + i + '">' +
+          '<span class="ud-sw-preview" style="background:' + p.bg + ";color:" + p.fg + '">Aa</span>' +
+          '<label>Bg <input type="color" class="ud-sw-bg" data-idx="' + i + '" value="' + p.bg + '"></label>' +
+          '<label>Text <input type="color" class="ud-sw-fg" data-idx="' + i + '" value="' + p.fg + '"></label>' +
+        "</div>"
+      );
     }).join("");
-    container.querySelectorAll(".ud-swatch-edit").forEach(function (inp) {
-      inp.addEventListener("input", function () {
-        var i = Number(inp.getAttribute("data-idx"));
-        PRESETS[i] = { bg: inp.value, fg: autoFg(inp.value) };
-        savePresets();
-        schedulePrefsPush();
-      });
+    function commit(i) {
+      var rowEl = container.querySelector('[data-row="' + i + '"]');
+      var bg = rowEl.querySelector(".ud-sw-bg").value;
+      var fg = rowEl.querySelector(".ud-sw-fg").value;
+      PRESETS[i] = { bg: bg, fg: fg };
+      var prev = rowEl.querySelector(".ud-sw-preview");
+      prev.style.background = bg;
+      prev.style.color = fg;
+      savePresets();
+      schedulePrefsPush();
+    }
+    container.querySelectorAll(".ud-sw-bg, .ud-sw-fg").forEach(function (inp) {
+      inp.addEventListener("input", function () { commit(Number(inp.getAttribute("data-idx"))); });
     });
   }
 
@@ -700,6 +713,8 @@
     if (btn) btn.textContent = on ? "Done editing palette" : "Edit palette\u2026";
     if (on) renderSwatchEditors();
     else {
+      var container = document.getElementById("ud-pop-swatches");
+      if (container) container.classList.remove("ud-sw-editing");
       var bgEl = document.getElementById("ud-pop-bg");
       renderSwatches(bgEl ? bgEl.value : "");
     }
