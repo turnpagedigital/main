@@ -61,6 +61,23 @@
   // Roaming: pull the shared prefs store once so a fresh browser sees the
   // same theme colors; pushes merge on the server copy so case groups and
   // palette presets are never clobbered from this page.
+  // Admin theme names (themes.json via /admin/intelligence) override the
+  // built-in labels — the slug and URL stay stable, the display name follows.
+  function loadThemeNames() {
+    fetchJson("themes.json").then(function (d) {
+      var items = (d && d.themes) || [];
+      items.forEach(function (t) {
+        if (!t || !t.slug) return;
+        var cur = THEMES[t.slug] || { bg: "#E0E7FF", fg: "#3730a3", emoji: "\ud83d\udcf0", name: t.slug };
+        if (t.display_name) cur.name = t.display_name;
+        if (t.emoji) cur.emoji = t.emoji;
+        THEMES[t.slug] = cur;
+      });
+      renderThemeFilter();
+      render();
+    }).catch(function () {});
+  }
+
   function hydrateColors() {
     fetchJson("api/prefs").then(function (p) {
       if (p && p.ok && p.colors) {
@@ -376,6 +393,7 @@
     document.addEventListener("keydown", function (ev) {
       if (ev.key === "Escape") closePop();
     });
+    loadThemeNames();
     hydrateColors();
     init();
   });

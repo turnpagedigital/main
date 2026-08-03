@@ -16,7 +16,7 @@
  *    generator pipeline keeps working as-is.
  */
 
-import { cp, rm, readFile, writeFile, readdir } from "node:fs/promises";
+import { cp, rm, copyFile, readFile, writeFile, readdir } from "node:fs/promises";
 import { join, sep } from "node:path";
 
 const SRC = "briefing-generator";
@@ -38,6 +38,10 @@ await cp(SRC, DEST, {
   filter: (src) =>
     !src.split(sep).some((part) => EXCLUDE.has(part) || JUNK.test(part)),
 });
+
+// Admin-managed theme names (display_name/emoji) — the intel pages read
+// this so renames in /admin/intelligence show up after the next build.
+await copyFile("src/data/themes.json", join(DEST, "themes.json"));
 
 async function* walk(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
