@@ -29,6 +29,7 @@ function sanitize(body) {
     const entry = {};
     if (typeof c.bg === "string" && HEX.test(c.bg)) entry.bg = c.bg;
     if (typeof c.fg === "string" && HEX.test(c.fg)) entry.fg = c.fg;
+    if (typeof c.border === "string" && HEX.test(c.border)) entry.border = c.border;
     if (Object.keys(entry).length) colors[slug] = entry;
   }
   const groups = [];
