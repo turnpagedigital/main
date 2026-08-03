@@ -14,38 +14,38 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/",
-    "date_last_filing": "2026-08-02",
-    "fetched_at": "2026-08-03T03:59:21.148137+00:00",
+    "date_last_filing": "2026-08-03",
+    "fetched_at": "2026-08-03T15:21:23.521128+00:00",
     "as_of": "Aug 3, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 11,
     "recent": [
+      {
+        "entry_number": 507,
+        "date_filed": "2026-08-03",
+        "time_filed": "10:01:36",
+        "date_display": "Aug 3, 2026",
+        "description": "Statement Certificate of Counsel to the Application of the Official Committee of Unsecured Creditors for Entry of an Order Authorizing the Employment and Retention of Province, LLC as Financial Advisor Effective as of June 26, 2026 (related document(s)399) filed by Shirley S Cho on behalf of The Official Committee of Unsecured Creditors. (Cho, Shirley) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.507.0_1.pdf"
+      },
+      {
+        "entry_number": 506,
+        "date_filed": "2026-08-03",
+        "time_filed": "09:56:28",
+        "date_display": "Aug 3, 2026",
+        "description": "Supplemental Declaration of Sanjuro Kietlinski of Province, LLC in Support of Application to Retain and Employ Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors of Sleep Number Corporation, et al., Effective June 26, 2026 (related document(s)399) filed by Shirley S Cho on behalf of The Official Committee of Unsecured Creditors. (Cho, Shirley) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.506.0.pdf"
+      },
       {
         "entry_number": 505,
         "date_filed": "2026-08-02",
         "time_filed": "22:08:17",
         "date_display": "Aug 2, 2026",
-        "description": "Order RE: Application, Employ",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 504,
-        "date_filed": "2026-08-02",
-        "time_filed": "21:46:14",
-        "date_display": "Aug 2, 2026",
-        "description": "Order RE: Application, Employ",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 503,
-        "date_filed": "2026-08-02",
-        "time_filed": "21:32:57",
-        "date_display": "Aug 2, 2026",
-        "description": "Notice, Agenda",
+        "description": "Order Authorizing the Employment and Retention of Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors Effective as of June 26, 2026 (Related Doc # 398) signed on 8/2/2026. (Fredericks, Frances) (Entered: 08/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -53,11 +53,31 @@
     ],
     "entries": [
       {
+        "entry_number": 507,
+        "date_filed": "2026-08-03",
+        "time_filed": "10:01:36",
+        "date_display": "Aug 3, 2026",
+        "description": "Statement Certificate of Counsel to the Application of the Official Committee of Unsecured Creditors for Entry of an Order Authorizing the Employment and Retention of Province, LLC as Financial Advisor Effective as of June 26, 2026 (related document(s)399) filed by Shirley S Cho on behalf of The Official Committee of Unsecured Creditors. (Cho, Shirley) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.507.0_1.pdf"
+      },
+      {
+        "entry_number": 506,
+        "date_filed": "2026-08-03",
+        "time_filed": "09:56:28",
+        "date_display": "Aug 3, 2026",
+        "description": "Supplemental Declaration of Sanjuro Kietlinski of Province, LLC in Support of Application to Retain and Employ Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors of Sleep Number Corporation, et al., Effective June 26, 2026 (related document(s)399) filed by Shirley S Cho on behalf of The Official Committee of Unsecured Creditors. (Cho, Shirley) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.506.0.pdf"
+      },
+      {
         "entry_number": 505,
         "date_filed": "2026-08-02",
         "time_filed": "22:08:17",
         "date_display": "Aug 2, 2026",
-        "description": "Order RE: Application, Employ",
+        "description": "Order Authorizing the Employment and Retention of Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors Effective as of June 26, 2026 (Related Doc # 398) signed on 8/2/2026. (Fredericks, Frances) (Entered: 08/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -67,7 +87,7 @@
         "date_filed": "2026-08-02",
         "time_filed": "21:46:14",
         "date_display": "Aug 2, 2026",
-        "description": "Order RE: Application, Employ",
+        "description": "Order (I) Authorizing Debtors To (A) Retain Ap Services, LLC And (B) Designate Kent Percy As Chief Restructuring Officer Effective As Of The Petition Date And (II) Granting Related Relief (Related Doc # 128) signed on 8/2/2026. (Kinchen, Gwen) (Entered: 08/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -77,7 +97,7 @@
         "date_filed": "2026-08-02",
         "time_filed": "21:32:57",
         "date_display": "Aug 2, 2026",
-        "description": "Notice, Agenda",
+        "description": "Amended Notice of Agenda / Amended Hearing Agenda for Hearing on August 3, 2026 filed by Brian Resnick on behalf of Sleep Number Corporation. with hearing to be held on 8/3/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) (Resnick, Brian) (Entered: 08/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -87,7 +107,7 @@
         "date_filed": "2026-08-02",
         "time_filed": "20:02:56",
         "date_display": "Aug 2, 2026",
-        "description": "Notice, Proposed Order/Presentment",
+        "description": "Notice of Proposed Order / Notice of Filing of Revised Proposed Order (A) Authorizing the Debtors to Retain A&G Realty Partners, LLC as a Real Estate Consultant and Advisor Effective as of the Petition Date and (B) Granting Related Relief (related document(s)130) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 08/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -97,7 +117,7 @@
         "date_filed": "2026-08-02",
         "time_filed": "19:19:41",
         "date_display": "Aug 2, 2026",
-        "description": "Certificate of No Objection Pursuant to LR 9013-3",
+        "description": "Certificate of No Objection Pursuant to LR 9013-3 / Certificate of No Objection Regarding Debtors Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) Designation of Kent Percy as Chief Restructuring Officer Effective as of the Petition Date and (II) Granting Related Relief (related document(s)382, 128, 486, 500, 383) Filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 08/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -107,7 +127,7 @@
         "date_filed": "2026-08-02",
         "time_filed": "17:32:58",
         "date_display": "Aug 2, 2026",
-        "description": "Declaration",
+        "description": "Declaration / Third Supplemental Declaration of Kent Percy of AP Services, LLC (related document(s)128, 482, 383) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 08/02/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -118,6 +138,26 @@
         "time_filed": "22:18:49",
         "date_display": "Aug 2, 2026",
         "description": "Terminate Pending Deadlines AND Terminate Pending Documents",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-02",
+        "time_filed": "",
+        "date_display": "Aug 2, 2026",
+        "description": "Pending Deadlines Terminated Re: Application to Employ AP Services, LLC/Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) Designation of Kent Percy as Chief Restructuring Officer Effective as of the Petition Date and (II) Granting Related Relief filed by Brian Resnick on behalf of Sleep Number Corporation (Related Document #128). August 3, 2026 hearing not held. Order entered - See Document #504. (Fredericks, Frances).",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-02",
+        "time_filed": "",
+        "date_display": "Aug 2, 2026",
+        "description": "Pending Deadlines Terminated Re: Application to Employ Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors Effective as of June 26, 2026 filed by Bradford J. Sandler on behalf of The Official Committee of Unsecured Creditors (Related Document #398). August 3, 2026 hearing not held. Order entered - See Document #505. (Fredericks, Frances).",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
