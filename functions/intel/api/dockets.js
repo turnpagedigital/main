@@ -53,6 +53,7 @@ function normalizeEntries(results) {
       const docDesc = String(d.description || "").split(/\s+/).join(" ").trim();
       if (docDesc.length > desc.length) desc = docDesc;
     }
+    if (desc.length > 900) desc = desc.slice(0, 900).replace(/\s+\S*$/, "") + "…";
     return {
       entry_number: e.entry_number ?? null,
       date_filed: e.date_filed || "",

@@ -86,6 +86,10 @@ def _normalize_entry(e, now):
         doc_desc = " ".join((d.get("description") or "").split())
         if len(doc_desc) > len(desc):
             desc = doc_desc
+    # Service affidavits carry entire creditor lists as their description —
+    # cap well above any real pleading title but below layout-breaking size.
+    if len(desc) > 900:
+        desc = desc[:900].rsplit(" ", 1)[0] + "\u2026"
     return {
         "entry_number": e.get("entry_number"),
         "date_filed": date_filed,
