@@ -93,9 +93,8 @@
     "slug": "terraform-labs",
     "display_name": "Terraform Labs",
     "short_name": "Terraform Labs",
-    "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
-    "default_color": "#C084FC",
-    "category": "bankruptcy",
-    "court": "Bankr. D. Del."
+    "docket_url": "",
+    "court": "Bankr. D. Del.",
+    "default_color": "#C084FC"
   }
 ]
