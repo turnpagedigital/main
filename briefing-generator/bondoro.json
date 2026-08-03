@@ -1,6 +1,305 @@
 {
   "items": [
     {
+      "id": "stock-market-bubbles-recovery-029d21d0?mod=rss_markets_main",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "America Is Great at Creating Stock Market Bubbles—and Shrugging Them Off",
+      "url": "https://www.wsj.com/finance/stocks/stock-market-bubbles-recovery-029d21d0?mod=rss_markets_main",
+      "date": "2026-08-02",
+      "published_at": "2026-08-02T02:00:00+00:00",
+      "excerpt": "One day the bust will be the big one. But for now the pullback in AI-related stocks has been almost completely offset by gains elsewhere.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "how-u-s-treasury-is-helping-venezuela-rebuild-3e73241f?mod=rss_markets_main",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Opinion | How U.S. Treasury Is Helping Venezuela Rebuild",
+      "url": "https://www.wsj.com/opinion/how-u-s-treasury-is-helping-venezuela-rebuild-3e73241f?mod=rss_markets_main",
+      "date": "2026-08-02",
+      "published_at": "2026-08-02T13:56:00+00:00",
+      "excerpt": "Washington is opening the way for American investment.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "the-math-on-ai-works-out-well-for-you-eaf0f8c8?mod=rss_markets_main",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Opinion | The Math on AI Works Out Well for You",
+      "url": "https://www.wsj.com/opinion/the-math-on-ai-works-out-well-for-you-eaf0f8c8?mod=rss_markets_main",
+      "date": "2026-08-02",
+      "published_at": "2026-08-02T13:56:00+00:00",
+      "excerpt": "Efforts to curtail data centers risk a potential gold mine for our society.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "homeowners-associations-are-foreclosing-on-more-residents-aba6f027?mod=rss_marke",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Homeowners Associations Are Foreclosing on More Residents",
+      "url": "https://www.wsj.com/real-estate/homeowners-associations-are-foreclosing-on-more-residents-aba6f027?mod=rss_markets_main",
+      "date": "2026-08-02",
+      "published_at": "2026-08-02T00:00:00+00:00",
+      "excerpt": "There has been a sharp rise in HOA foreclosures on properties from suburban condos to luxury homes.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "opec-allies-increase-oil-output-for-sixth-time-in-a-row-e56378d9?mod=pls_whats_n",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "OPEC, Allies Increase Oil Output for Sixth Time in a Row",
+      "url": "https://www.wsj.com/business/energy-oil/opec-allies-increase-oil-output-for-sixth-time-in-a-row-e56378d9?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-02",
+      "published_at": "2026-08-02T11:57:00+00:00",
+      "excerpt": "The cartel nears the end of a cycle of production hikes, while potentially difficult talks over future quotas loom.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "workers-seeking-compensation-for-injuries-face-new-challenge-fewer-lawyers-8a2b4",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Workers Seeking Compensation for Injuries Face New Challenge: Fewer Lawyers",
+      "url": "https://www.wsj.com/us-news/law/workers-seeking-compensation-for-injuries-face-new-challenge-fewer-lawyers-8a2b4b48?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-02",
+      "published_at": "2026-08-02T09:30:00+00:00",
+      "excerpt": "Fewer lawyers pursuing workers’ compensation cases has led to diminished financial prospects for people injured on the job.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "farmers-markets-local-produce-cyclospora-93f537c9?mod=pls_whats_news_us_business",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "America’s Lettuce Crisis Has Shoppers Ditching Supermarkets for Farmers Markets",
+      "url": "https://www.wsj.com/business/retail/farmers-markets-local-produce-cyclospora-93f537c9?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-02",
+      "published_at": "2026-08-02T09:30:00+00:00",
+      "excerpt": "Outbreaks of cyclosporiasis are pushing more shoppers to their local farmers markets.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "the-race-to-build-an-american-alternative-to-cheap-ai-from-china-2e99a28a?mod=pl",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "The Race to Build an American Alternative to Cheap AI From China",
+      "url": "https://www.wsj.com/tech/ai/the-race-to-build-an-american-alternative-to-cheap-ai-from-china-2e99a28a?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-02",
+      "published_at": "2026-08-02T01:00:00+00:00",
+      "excerpt": "Silicon Valley startups are setting up open models, with some operating on shoestring budgets because of limited interest from venture capitalists.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "krasnoff-domestic-growth-fund-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alerts",
+      "title": "Filing Alert: Krasnoff Domestic Growth Fund Chapter 11",
+      "url": "https://bondoro.com/krasnoff-domestic-growth-fund-filing-alert/",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T00:56:12+00:00",
+      "excerpt": "Krasnoff Domestic Growth Fund Files Chapter 11 in District of New Jersey",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "uniroyal-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alerts",
+      "title": "Filing Alert: Uniroyal Chapter 11",
+      "url": "https://bondoro.com/uniroyal-filing-alert/",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T00:53:00+00:00",
+      "excerpt": "Uniroyal Files Chapter 11 in District of New Jersey",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "nobel-st-ives-filing-alert",
+      "kind": "alert",
+      "source": "Bondoro",
+      "source_id": "bondoro-alerts",
+      "title": "Filing Alert: Nobel St. Ives Chapter 11",
+      "url": "https://bondoro.com/nobel-st-ives-filing-alert/",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T00:50:07+00:00",
+      "excerpt": "Nobel St. Ives Files Chapter 11 in Central District of California",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "wall-street-thinks-it-knows-how-tech-giants-will-make-ai-pay-96f76438?mod=rss_ma",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Wall Street Thinks It Knows How Tech Giants Will Make AI Pay",
+      "url": "https://www.wsj.com/tech/ai/wall-street-thinks-it-knows-how-tech-giants-will-make-ai-pay-96f76438?mod=rss_markets_main",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T09:30:00+00:00",
+      "excerpt": "Investors are coming around to the idea that Big Tech spending on AI can make sense—as long as there is a cloud-computing business involved.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "jpmorgans-pitch-to-put-a-value-on-fifa-863e7597?mod=rss_markets_main",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "JPMorgan’s Pitch to Put a Value on FIFA",
+      "url": "https://www.wsj.com/finance/banking/jpmorgans-pitch-to-put-a-value-on-fifa-863e7597?mod=rss_markets_main",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T02:00:00+00:00",
+      "excerpt": "A presentation by the bank said soccer’s global governing body could more than double players and competitions under its now-canceled spinoff plan.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "iran-war-pushes-companies-to-raise-prices-on-beer-paint-fries-and-more-e55d31b2?",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Iran War Pushes Companies to Raise Prices on Beer, Paint, Fries and More",
+      "url": "https://www.wsj.com/business/iran-war-pushes-companies-to-raise-prices-on-beer-paint-fries-and-more-e55d31b2?mod=rss_markets_main",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T02:00:00+00:00",
+      "excerpt": "Sherwin-Williams and the brewer of Samuel Adams are among those facing higher commodity and freight costs.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "the-revolt-that-brought-down-fifas-grand-plan-5d855bf9?mod=pls_whats_news_us_bus",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "The Revolt That Brought Down FIFA’s Grand Plan",
+      "url": "https://www.wsj.com/business/the-revolt-that-brought-down-fifas-grand-plan-5d855bf9?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T10:47:00+00:00",
+      "excerpt": "Plus, Trump orders a fresh attack on Iran, and the law-firm defections shocking the legal world.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "iran-war-pushes-companies-to-raise-prices-on-beer-paint-fries-and-more-e55d31b2?",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Iran War Pushes Companies to Raise Prices on Beer, Paint, Fries and More",
+      "url": "https://www.wsj.com/business/iran-war-pushes-companies-to-raise-prices-on-beer-paint-fries-and-more-e55d31b2?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T02:00:00+00:00",
+      "excerpt": "Sherwin-Williams and the brewer of Samuel Adams are among those facing higher commodity and freight costs.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "how-openai-lost-its-ai-crownand-the-fight-to-win-it-back-7d069695?mod=pls_whats_",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "How OpenAI Lost Its AI Crown—and the Fight to Win It Back",
+      "url": "https://www.wsj.com/tech/ai/how-openai-lost-its-ai-crownand-the-fight-to-win-it-back-7d069695?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T01:00:00+00:00",
+      "excerpt": "Bets on consumer chatbots and flashy side projects overshadowed AI coding opportunity, which rival Anthropic used to capture the lead.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "david-ellison-paramount-warner-strategy-deal-39a4ba62?mod=pls_whats_news_us_busi",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "David Ellison’s Risky Courtroom Strategy to Save His $81 Billion Warner Deal",
+      "url": "https://www.wsj.com/business/media/david-ellison-paramount-warner-strategy-deal-39a4ba62?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T00:30:00+00:00",
+      "excerpt": "After opting to go straight to trial, Ellison’s team adds legal muscle, games out options such as getting states to drop out of the suit to get the Paramount-Warner merger done",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "california-lettuce-growers-skip-harvest-plow-their-crops-back-into-the-ground-f2",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "California Lettuce Growers Skip Harvest, Plow Their Crops Back Into the Ground",
+      "url": "https://www.wsj.com/business/hospitality/california-lettuce-growers-skip-harvest-plow-their-crops-back-into-the-ground-f2020d89?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T00:17:00+00:00",
+      "excerpt": "Federal health authorities haven’t linked U.S. produce to cyclospora, but some consumers are still steering clear.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "ford-cars-suvs-sports-cars-picksups-867a00fc?mod=pls_whats_news_us_business_f",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Ford Made Boring Cars Popular. It Doesn’t Want Them Anymore.",
+      "url": "https://www.wsj.com/business/autos/ford-cars-suvs-sports-cars-picksups-867a00fc?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T00:00:00+00:00",
+      "excerpt": "The maker of the Mustang and Bronco wants a lineup of such ‘passionate’ vehicles. Gone are staid family sedans, cheap hatchbacks or frumpy minivans.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "south-koreas-export-growth-moderates-but-remains-solid-on-chip-demand-267d79d7?m",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "South Korea’s Export Growth Moderates But Remains Solid on Chip Demand",
+      "url": "https://www.wsj.com/economy/trade/south-koreas-export-growth-moderates-but-remains-solid-on-chip-demand-267d79d7?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T00:48:00+00:00",
+      "excerpt": "",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "news-quiz-for-aug-1-2026-2ddf6ce0?mod=pls_whats_news_us_business_f",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "News Quiz for Aug. 1, 2026",
+      "url": "https://www.wsj.com/tech/cybersecurity/news-quiz-for-aug-1-2026-2ddf6ce0?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T10:00:00+00:00",
+      "excerpt": "",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "openai-jacob-tsimerman-fields-medal-ai-safety-391d0f79?mod=pls_whats_news_us_bus",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "The Math Superstar Who’s Terrified of AI—and Just Took a Job at OpenAI",
+      "url": "https://www.wsj.com/tech/ai/openai-jacob-tsimerman-fields-medal-ai-safety-391d0f79?mod=pls_whats_news_us_business_f",
+      "date": "2026-08-01",
+      "published_at": "2026-08-01T01:00:00+00:00",
+      "excerpt": "Jacob Tsimerman won the biggest prize in math. Now he’s working on the most important problem of his career.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
       "id": "stock-market-today-dow-sp-500-nasdaq-07-31-2026?mod=rss_markets_main",
       "kind": "news",
       "source": "WSJ Markets",
@@ -22,7 +321,8 @@
       "published_at": "2026-07-31T13:00:00+00:00",
       "excerpt": "The financial advisers touting these hot funds aren’t always telling you what you need to know.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "kevin-warshs-bear-steepener-is-no-goldilocks-moment-for-stocks-fdd33606?mod=rss_",
@@ -34,7 +334,8 @@
       "published_at": "2026-07-31T10:36:00+00:00",
       "excerpt": "Plus, Microsoft pops, Apple drops",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "ford-and-gm-attempts-to-go-beyond-cars-deserve-skepticism-797a9d87?mod=rss_marke",
@@ -46,7 +347,8 @@
       "published_at": "2026-07-31T09:30:00+00:00",
       "excerpt": "The automakers have a mixed track record on diversification.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "situational-awareness-down-67-in-july-in-ai-stock-rout-cd19901f?mod=rss_markets_",
@@ -58,7 +360,8 @@
       "published_at": "2026-07-31T05:24:00+00:00",
       "excerpt": "“We let you down this month,” Leopold Aschenbrenner’s hedge-fund firm told investors after selling the bulk of its stocks to Citadel.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "kevin-warshs-honeymoon-with-the-bond-market-is-already-over-23bd0c6a?mod=rss_mar",
@@ -70,7 +373,8 @@
       "published_at": "2026-07-31T00:30:00+00:00",
       "excerpt": "Investors warned that the Fed must show commitment to inflation fight after Wednesday’s selloff.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "westinghouse-electric-files-confidentially-for-ipo-3f5c488e?mod=rss_markets_main",
@@ -82,19 +386,21 @@
       "published_at": "2026-07-31T13:30:00+00:00",
       "excerpt": "Nuclear technology and services supplier Westinghouse Electric has confidentially filed a draft registration statement with the Securities and Exchange Commission for a proposed initial public offering of its common stock",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "jgbs-edge-lower-ahead-of-bojs-rate-decision-000cd87a?mod=rss_markets_main",
       "kind": "news",
       "source": "WSJ Markets",
-      "title": "Treasury Yields, Dollar Rise as Oil Resumes Rally",
+      "title": "Treasury Yields Rise in Month That Saw Inflation Fears Revive",
       "url": "https://www.wsj.com/finance/jgbs-edge-lower-ahead-of-bojs-rate-decision-000cd87a?mod=rss_markets_main",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T13:05:00+00:00",
-      "excerpt": "Treasury yields edged higher as Middle East tensions linger and central banks struggle to curb inflation.",
+      "published_at": "2026-07-31T20:00:00+00:00",
+      "excerpt": "Treasurys sold off and yields ended the month higher as renewed geopolitical tensions revived energy-inflation fears.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "a-simple-answer-to-ai-job-loss-tax-capital-not-labor-cb900e62?mod=rss_markets_ma",
@@ -112,13 +418,14 @@
       "id": "u-s-stock-futures-higher-as-ai-rebound-continues-1de16735?mod=rss_markets_main",
       "kind": "news",
       "source": "WSJ Markets",
-      "title": "Apple Slump Drags on Tech",
+      "title": "Apple Falls, But Amazon, Other Stocks Push Nasdaq Composite Higher",
       "url": "https://www.wsj.com/finance/stocks/u-s-stock-futures-higher-as-ai-rebound-continues-1de16735?mod=rss_markets_main",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T14:33:00+00:00",
-      "excerpt": "U.S. tech stocks are slipping along with Apple, with the iPhone maker selling off after its latest forecasts disappointed investors.",
+      "published_at": "2026-07-31T18:58:00+00:00",
+      "excerpt": "The Nasdaq composite climbed, with Apple’s decline offset by Amazon’s rise following its report of accelerating cloud-computing sales.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "nikkei-rises-2-7-led-by-electronics-bank-stocks-d58297ff?mod=rss_markets_main",
@@ -130,7 +437,8 @@
       "published_at": "2026-07-31T08:09:00+00:00",
       "excerpt": "European stock indexes gained in early trade as the continent’s tech stocks followed Asian peers higher.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "koreas-kospi-heads-for-record-daily-gain-defying-efforts-to-tame-wild-swings-2ee",
@@ -154,55 +462,60 @@
       "published_at": "2026-07-31T05:49:00+00:00",
       "excerpt": "Strong U.S. tech earnings revived enthusiasm for artificial-intelligence spending, while the yen weakened further after the Bank of Japan stood pat.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "u-s-natural-gas-futures-slip-in-early-trading-be62ab9b?mod=rss_markets_main",
       "kind": "news",
       "source": "WSJ Markets",
-      "title": "U.S. Natural Gas Futures Slip in Early Trading",
+      "title": "U.S. Natural Gas Futures Settle Modestly Lower",
       "url": "https://www.wsj.com/finance/commodities-futures/u-s-natural-gas-futures-slip-in-early-trading-be62ab9b?mod=rss_markets_main",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T14:22:00+00:00",
-      "excerpt": "U.S. natural gas futures were returning gains that followed a below-estimate weekly storage injection.",
+      "published_at": "2026-07-31T19:44:00+00:00",
+      "excerpt": "U.S. natural gas futures inched down in rangebound trade, with the Nymex front month settling down 0.4% for a 16% monthly loss.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "oil-rises-after-attacks-in-black-sea-a5ce5323?mod=rss_markets_main",
       "kind": "news",
       "source": "WSJ Markets",
-      "title": "Oil Futures on Track for Big Monthly Gains",
+      "title": "Oil Posts Big Monthly Gains on Resumption of Conflict",
       "url": "https://www.wsj.com/finance/commodities-futures/oil-rises-after-attacks-in-black-sea-a5ce5323?mod=rss_markets_main",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T14:10:00+00:00",
-      "excerpt": "Oil futures turned higher in early U.S. trading and were on track for hefty gains for July, which saw the U.S.-Iran Memorandum of Understanding fall apart and Iran resume attacks on shipping in the Strait of Hormuz.",
+      "published_at": "2026-07-31T19:45:00+00:00",
+      "excerpt": "Oil futures settled up on the day and ended July with hefty gains as the month saw renewed Iranian attacks on shipping in a dispute with the U.S. over control of the Strait of Hormuz.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "gold-slips-as-markets-digest-fed-decision-8d03b84b?mod=rss_markets_main",
       "kind": "news",
       "source": "WSJ Markets",
-      "title": "Gold Headed for First Monthly Gain in Months",
+      "title": "Gold Snaps 4-Month Losing Streak",
       "url": "https://www.wsj.com/finance/commodities-futures/gold-slips-as-markets-digest-fed-decision-8d03b84b?mod=rss_markets_main",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T08:14:00+00:00",
-      "excerpt": "Gold prices slipped, but were headed for their first monthly gain in five months as investors closely monitored developments in the Middle East.",
+      "published_at": "2026-07-31T18:41:00+00:00",
+      "excerpt": "Gold futures managed to finish July on a positive note, although today’s slide left gold closer to flat for the month.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "yens-focus-on-boj-gov-uedas-guidance-1917e93b?mod=rss_markets_main",
       "kind": "news",
       "source": "WSJ Markets",
-      "title": "Treasury Yields, Dollar Rise as Oil Resumes Rally",
+      "title": "Yen Strengthens on Signs of Intervention",
       "url": "https://www.wsj.com/finance/currencies/yens-focus-on-boj-gov-uedas-guidance-1917e93b?mod=rss_markets_main",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T13:09:00+00:00",
-      "excerpt": "The WSJ Dollar Index rose as the greenback strengthened against the yen.",
+      "published_at": "2026-07-31T20:47:00+00:00",
+      "excerpt": "The dollar weakened against the yen as authorities signaled that an intervention to support the Japanese currency could be imminent.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "best-financial-advisors?mod=rss_markets_main",
@@ -214,7 +527,8 @@
       "published_at": "2026-07-31T13:12:00+00:00",
       "excerpt": "We analyzed everything from advisor credentials to fees to portfolio options at some of the larger and more well-known registered investment advisor firms to help you select a firm that could best connect you with a fiduciary financial advisor.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "exxonmobil-xom-chevron-cvx-2q-earnings-report-2026-stock-77ca6092?mod=pls_whats_",
@@ -226,7 +540,8 @@
       "published_at": "2026-07-31T14:29:00+00:00",
       "excerpt": "ExxonMobil’s earnings doubled and Chevron posted its highest quarterly earnings on record as energy prices soared during the prolonged closure of the Strait of Hormuz.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "richard-d-wood-jr-dead-wawa-351249fb?mod=pls_whats_news_us_business_f",
@@ -238,19 +553,21 @@
       "published_at": "2026-07-31T14:00:00+00:00",
       "excerpt": "To keep executives grounded, the CEO insisted that every executive spend a day each year working in one of the company’s stores.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "new-york-alleges-kalshi-running-illegal-gambling-operation-18ae71b0?mod=pls_what",
       "kind": "news",
       "source": "WSJ Business",
-      "title": "New York Alleges Kalshi Is Running Illegal Gambling Operation",
+      "title": "New York Sues Kalshi After Talks to Rein In Prediction Market Break Down",
       "url": "https://www.wsj.com/tech/new-york-alleges-kalshi-running-illegal-gambling-operation-18ae71b0?mod=pls_whats_news_us_business_f",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T13:41:00+00:00",
-      "excerpt": "New York Attorney General Letitia James’s office said Kalshi’s prediction market meets the legal definition of gambling because users are betting on events outside of their control in a game of chance.",
+      "published_at": "2026-07-31T15:39:00+00:00",
+      "excerpt": "The suit filed by New York Attorney General Letitia James targeted the biggest prediction market operator in the U.S.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "financial-services-roundup-market-talk-c712a670?mod=pls_whats_news_us_business_f",
@@ -259,10 +576,11 @@
       "title": "Financial Services Roundup: Market Talk",
       "url": "https://www.wsj.com/business/financial-services-roundup-market-talk-c712a670?mod=pls_whats_news_us_business_f",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T11:35:00+00:00",
-      "excerpt": "Find insight on ING Groep, National Australia Bank, Bursa Malaysia and more in the latest Market Talks covering financial services.",
+      "published_at": "2026-07-31T21:06:00+00:00",
+      "excerpt": "Find insight on bitcoin ETFs, large private-equity firms and more in the latest Market Talks covering financial services.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "tesla-weighs-sale-of-china-business-to-pave-way-for-potential-spacex-merger-5ae2",
@@ -274,7 +592,8 @@
       "published_at": "2026-07-31T10:56:00+00:00",
       "excerpt": "The U.S. automaker could sell or spin off the business in its second-largest market over geopolitical concerns.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "when-hpes-antonio-neri-leaves-his-team-alone-3b64571c?mod=pls_whats_news_us_busi",
@@ -286,7 +605,8 @@
       "published_at": "2026-07-31T09:45:00+00:00",
       "excerpt": "Good morning and welcome back to our occasional series where a CEO lets us in on what a typical day looks like.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "westinghouse-electric-files-confidentially-for-ipo-3f5c488e?mod=pls_whats_news_u",
@@ -298,7 +618,8 @@
       "published_at": "2026-07-31T13:30:00+00:00",
       "excerpt": "Nuclear technology and services supplier Westinghouse Electric has confidentially filed a draft registration statement with the Securities and Exchange Commission for a proposed initial public offering of its common stock",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "couche-tard-plans-to-buy-polands-zabka-for-about-8-7-billion-7fd37bbf?mod=pls_wh",
@@ -310,7 +631,8 @@
       "published_at": "2026-07-31T05:57:00+00:00",
       "excerpt": "Canada’s Alimentation Couche-Tard plans to acquire Poland’s largest convenience retailer Zabka for about $8.7 billion.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "situational-awareness-down-67-in-july-in-ai-stock-rout-cd19901f?mod=pls_whats_ne",
@@ -322,7 +644,8 @@
       "published_at": "2026-07-31T05:24:00+00:00",
       "excerpt": "“We let you down this month,” Leopold Aschenbrenner’s hedge-fund firm told investors after selling the bulk of its stocks to Citadel.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "abbvie-lowers-outlook-to-account-for-acquisition-as-profit-jumps-f4e6aec5?mod=pl",
@@ -334,7 +657,8 @@
       "published_at": "2026-07-31T12:36:00+00:00",
       "excerpt": "AbbVie lowered its full-year adjusted earnings outlook to account for its acquisition of Apogee Therapeutics, as the company logged higher profit and revenue in the recent quarter.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "moderna-narrows-loss-says-new-norovirus-vaccine-didnt-meet-expectations-6b405151",
@@ -346,7 +670,8 @@
       "published_at": "2026-07-31T11:52:00+00:00",
       "excerpt": "Moderna narrowed its loss in the recent quarter as revenue climbed, boosted by deliveries made under a government contract in the U.K.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "church-dwight-lifts-outlook-after-2q-organic-sales-jump-5e1bf7ca?mod=pls_whats_n",
@@ -376,13 +701,14 @@
       "id": "universal-music-shares-plunge-after-subscriptions-streaming-growth-underwhelm-ea",
       "kind": "news",
       "source": "WSJ Business",
-      "title": "Universal Music Shares Head for Worst Day Since IPO After Subscription Growth Disappoints",
+      "title": "Universal Music Shares Have Worst Day Since IPO After Subscription Growth Disappoints",
       "url": "https://www.wsj.com/business/earnings/universal-music-shares-plunge-after-subscriptions-streaming-growth-underwhelm-ea138f75?mod=pls_whats_news_us_business_f",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T10:48:00+00:00",
-      "excerpt": "The stock was on track for its steepest decline since the record label behind went public in 2021, after revenue from subscriptions disappointed investors.",
+      "published_at": "2026-07-31T16:28:00+00:00",
+      "excerpt": "The music company’s stock closed 25% lower in Amsterdam after revenue from subscriptions disappointed investors.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "sony-profit-jumps-more-than-expected-raises-guidance-9133f34a?mod=pls_whats_news",
@@ -394,7 +720,8 @@
       "published_at": "2026-07-31T13:39:00+00:00",
       "excerpt": "The strong results come as the company has been boosting its entertainment content, even as its game division remained lackluster.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "newell-brands-lifts-fy-profit-view-on-higher-sales-tariff-refund-8f3ef4ae?mod=pl",
@@ -406,7 +733,8 @@
       "published_at": "2026-07-31T13:20:00+00:00",
       "excerpt": "Newell Brands raised its earnings outlook, as it expects a bump from tariff refunds to help offset the rising cost of supplies.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "natwest-raises-guidance-and-brings-forward-share-buyback-plans-7f220c1f?mod=pls_",
@@ -418,7 +746,8 @@
       "published_at": "2026-07-31T12:28:00+00:00",
       "excerpt": "The lender reported a 29% rise in pretax profit as it completed the acquisition of wealth manager Evelyn Partners.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "autonation-revenue-falls-on-lower-new-vehicle-sales-cbcdcc8d?mod=pls_whats_news_",
@@ -430,7 +759,8 @@
       "published_at": "2026-07-31T11:59:00+00:00",
       "excerpt": "AutoNation logged lower revenue after sales of new vehicles declined in the second quarter.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "schaeffler-shares-slide-after-weak-auto-outlook-drives-guidance-2028-cut-0136941",
@@ -442,7 +772,8 @@
       "published_at": "2026-07-31T10:19:00+00:00",
       "excerpt": "The supplier to major automakers, including BMW, Volkswagen and Ford slashed its medium-term sales expectations against a darkening backdrop for the industry.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "ford-and-gm-attempts-to-go-beyond-cars-deserve-skepticism-797a9d87?mod=pls_whats",
@@ -454,7 +785,8 @@
       "published_at": "2026-07-31T09:30:00+00:00",
       "excerpt": "The automakers have a mixed track record on diversification.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "u-a-e-changes-how-it-prices-its-crude-oil-grades-1e01df9e?mod=pls_whats_news_us_",
@@ -463,10 +795,11 @@
       "title": "U.A.E. Changes How It Prices Its Crude Oil Grades",
       "url": "https://www.wsj.com/business/energy-oil/u-a-e-changes-how-it-prices-its-crude-oil-grades-1e01df9e?mod=pls_whats_news_us_business_f",
       "date": "2026-07-31",
-      "published_at": "2026-07-31T14:02:00+00:00",
+      "published_at": "2026-07-31T15:17:00+00:00",
       "excerpt": "The United Arab Emirates’ state-oil company said that it will base its official selling prices on the prompt-month Platts Dubai benchmark starting from Nov. 1.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "bp-launches-sales-process-for-u-k-north-sea-business-9cc01a59?mod=pls_whats_news",
@@ -478,7 +811,8 @@
       "published_at": "2026-07-31T09:56:00+00:00",
       "excerpt": "The energy major said that it would market the business to potential buyers, paving the way to end oil production in its home country after 60 years.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "british-airways-gets-boost-from-middle-east-crisis-owner-says-ae070f7b?mod=pls_w",
@@ -490,7 +824,8 @@
       "published_at": "2026-07-31T08:29:00+00:00",
       "excerpt": "British Airways benefited from business travelers rerouting to avoid the Middle East, but owner International Airlines Group cut its capacity growth outlook due to the conflict.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "panama-infuriated-china-now-its-paying-the-price-608eea48?mod=pls_whats_news_us_",
@@ -502,7 +837,8 @@
       "published_at": "2026-07-31T02:00:00+00:00",
       "excerpt": "Beijing is pressuring the Central American country with measures that have disrupted its vital shipping industry, thwarting its ambitions to become a global logistics hub.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "fauci-faces-a-test-to-his-legacy-9f428621?mod=pls_whats_news_us_business_f",
@@ -514,7 +850,8 @@
       "published_at": "2026-07-31T09:51:00+00:00",
       "excerpt": "Plus, an AI startup offers job interviews to candidates who get tattooed, and Kevin Warsh’s honeymoon with the bond market is already over.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "the-ai-startup-that-guaranteed-job-interviews-for-people-getting-a-tattoo-768d96",
@@ -525,6 +862,267 @@
       "date": "2026-07-31",
       "published_at": "2026-07-31T00:30:00+00:00",
       "excerpt": "The co-founder of LemonLime set off an uproar after offering attendees at a networking party a dare of sorts.",
+      "case_slug": null,
+      "group_name": null,
+      "source_id": "wsj-business"
+    },
+    {
+      "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-chapter-11-sale-kp-",
+      "kind": "Asset Sale",
+      "source": "DailyDAC",
+      "source_id": "dailydac",
+      "title": "PUBLIC NOTICE OF CHAPTER 11 SALE: KP Engineering Liquidation Trust",
+      "url": "https://www.dailydac.com/public-notice-of-chapter-11-sale-kp-engineering-liquidation-trust/?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-chapter-11-sale-kp-engineering-liquidation-trust",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T20:04:52+00:00",
+      "excerpt": "OPPORTUNITY FOR SALE Final Judgment — $15,073,898.03 In re KP Engineering, LP, et al., Case No. 19-34698 · U.S. Bankruptcy Court, S.D. Tex. (Houston) KP Engineering Liquidation Trust v. Brandon T. Steele &#38; BTS Enterprises, Inc. Adversary No. 23-03145 THE ASSET. The KP Engineering Liquidation Tru",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "amazon-and-apple-deliver-the-drama-to-close-a-turbulent-month-41d82dc9?mod=rss_m",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Amazon and Apple Deliver the Drama to Close a Turbulent Month",
+      "url": "https://www.wsj.com/finance/stocks/amazon-and-apple-deliver-the-drama-to-close-a-turbulent-month-41d82dc9?mod=rss_markets_main",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T21:12:00+00:00",
+      "excerpt": "Record market-cap moves for the tech giants end in a 1% Nasdaq gain.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "amazon-surges-and-apple-falls-on-latest-earnings-9f3f3c8b?mod=rss_markets_main",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Amazon Surges and Apple Falls on Latest Earnings",
+      "url": "https://www.wsj.com/finance/stocks/amazon-surges-and-apple-falls-on-latest-earnings-9f3f3c8b?mod=rss_markets_main",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T20:31:00+00:00",
+      "excerpt": "Plus, Tesla considers sale of China business and Anthropic discloses that its software hacked three companies.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "treasury-warns-banks-it-might-intervene-in-dollar-yen-exchange-rate-4d7f1bba?mod",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Treasury Warns Banks It Might Intervene in Dollar-Yen Exchange Rate",
+      "url": "https://www.wsj.com/finance/currencies/treasury-warns-banks-it-might-intervene-in-dollar-yen-exchange-rate-4d7f1bba?mod=rss_markets_main",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T17:49:00+00:00",
+      "excerpt": "The Japanese currency has weakened substantially against U.S. currency in recent years to near multidecade lows.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "leopold-aschenbrenner-situational-awareness-ai-fund-597633d3?mod=rss_markets_mai",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "His Wedding Guests Were Arriving—Just as His $45 Billion Fund Was Falling Apart",
+      "url": "https://www.wsj.com/finance/leopold-aschenbrenner-situational-awareness-ai-fund-597633d3?mod=rss_markets_main",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T16:41:00+00:00",
+      "excerpt": "Leopold Aschenbrenner was hailed as the ‘Nostradamus of AI.’ But his Situational Awareness hedge fund took on too much leverage, leading to a crash he never saw coming.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "ares-accelerates-fundraising-and-investments-despite-lackluster-market-ea78fa52?",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Ares Accelerates Fundraising and Investments Despite Lackluster Market",
+      "url": "https://www.wsj.com/pro/private-equity/ares-accelerates-fundraising-and-investments-despite-lackluster-market-ea78fa52?mod=rss_markets_main",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T18:07:00+00:00",
+      "excerpt": "Ares Management joins a small but growing number of large private-markets firms defying a market slowdown with quarterly growth both in its fundraising and capital deployment.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "rise-of-bond-e-trading-underpins-nyse-owners-6-billion-marketaxess-deal-07f40706",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Rise of Bond E-Trading Underpins NYSE Owner’s $6 Billion MarketAxess Deal",
+      "url": "https://www.wsj.com/finance/investing/rise-of-bond-e-trading-underpins-nyse-owners-6-billion-marketaxess-deal-07f40706?mod=rss_markets_main",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T16:09:00+00:00",
+      "excerpt": "Intercontinental Exchange is betting on a shift toward electronic fixed-income trading.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "u-s-stocks-rise-as-amazon-earnings-offset-apple-chip-woes-21a670dc?mod=rss_marke",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "U.S. Stocks Rise as Amazon Earnings Offset Apple Chip Woes",
+      "url": "https://www.wsj.com/finance/stocks/u-s-stocks-rise-as-amazon-earnings-offset-apple-chip-woes-21a670dc?mod=rss_markets_main",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T20:40:00+00:00",
+      "excerpt": "U.S. stocks settled higher as Amazon kept the artificial-intelligence recovery rolling.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "universal-music-shares-plunge-after-subscriptions-streaming-growth-underwhelm-ea",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Universal Music Shares Have Worst Day Since IPO After Subscription Growth Disappoints",
+      "url": "https://www.wsj.com/business/earnings/universal-music-shares-plunge-after-subscriptions-streaming-growth-underwhelm-ea138f75?mod=rss_markets_main",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T16:28:00+00:00",
+      "excerpt": "The music company’s stock closed 25% lower in Amsterdam after revenue from subscriptions disappointed investors.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "federal-reserve-markets-guidance-kevin-warsh-03fb4432?mod=rss_markets_main",
+      "kind": "news",
+      "source": "WSJ Markets",
+      "source_id": "wsj-markets",
+      "title": "Opinion | Warsh Makes Markets Do Their Job",
+      "url": "https://www.wsj.com/opinion/federal-reserve-markets-guidance-kevin-warsh-03fb4432?mod=rss_markets_main",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T21:54:00+00:00",
+      "excerpt": "Have they forgotten how to price risk without the Federal Reserve guiding them?",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "kkr-integer-holdings-deal-485461fa?mod=pls_whats_news_us_business_f",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "KKR Near Deal to Buy Integer Holdings",
+      "url": "https://www.wsj.com/business/deals/kkr-integer-holdings-deal-485461fa?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T19:22:00+00:00",
+      "excerpt": "A deal for the medical-device company could be finalized soon.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "auto-transport-roundup-market-talk-f24900eb?mod=pls_whats_news_us_business_f",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Auto & Transport Roundup: Market Talk",
+      "url": "https://www.wsj.com/business/auto-transport-roundup-market-talk-f24900eb?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T21:10:00+00:00",
+      "excerpt": "Find insight on Magna International, Ferrari, Renault and more in the latest Market Talks covering the auto and transport sector.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "our-legislation-is-against-china-not-mercedes-benz-28d66456?mod=pls_whats_news_u",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Opinion | Our Legislation Is Against China, Not Mercedes Benz",
+      "url": "https://www.wsj.com/opinion/our-legislation-is-against-china-not-mercedes-benz-28d66456?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T17:34:00+00:00",
+      "excerpt": "The Connected Vehicle Security Act isn’t hard for the German automaker to comply with and is a vital step to countering Beijing.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "energy-utilities-roundup-market-talk-9b38c525?mod=pls_whats_news_us_business_f",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Energy & Utilities Roundup: Market Talk",
+      "url": "https://www.wsj.com/business/energy-utilities-roundup-market-talk-9b38c525?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T21:06:00+00:00",
+      "excerpt": "Find insight on oil futures, oil rigs, OPEC+ and more in the latest Market Talks covering energy and utilities.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "the-red-hot-book-at-the-center-of-an-ai-mystery-201c4665?mod=pls_whats_news_us_b",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "The Red-Hot Book at the Center of an AI Mystery",
+      "url": "https://www.wsj.com/business/media/the-red-hot-book-at-the-center-of-an-ai-mystery-201c4665?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T22:48:00+00:00",
+      "excerpt": "Fourteen publishers fought over Jerry Falade’s debut novel. After it sold, his agent pulled support over AI concerns.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "newsom-expresses-concerns-about-state-antitrust-suit-against-paramount-1bc20411?",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Newsom Expresses Concerns About State Antitrust Suit Against Paramount",
+      "url": "https://www.wsj.com/business/media/newsom-expresses-concerns-about-state-antitrust-suit-against-paramount-1bc20411?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T16:57:00+00:00",
+      "excerpt": "The California governor has told people involved in the suit that blocking the $81 billion deal could harm Hollywood jobs.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "move-fast-and-regulate-later-the-paradox-of-chinas-economic-dynamism-10caec7f?mo",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Move Fast and Regulate Later: The Paradox of China’s Economic Dynamism",
+      "url": "https://www.wsj.com/tech/move-fast-and-regulate-later-the-paradox-of-chinas-economic-dynamism-10caec7f?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T18:00:00+00:00",
+      "excerpt": "In the U.S., regulation can protect incumbents while discouraging entrepreneurs. China gives fast-moving startups room to grow before exerting state control.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "wachtell-gibson-dunn-william-savitt-506ccab7?mod=pls_whats_news_us_business_f",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Six Lawyers Switched Firms and Big Law Will Never Be the Same",
+      "url": "https://www.wsj.com/business/wachtell-gibson-dunn-william-savitt-506ccab7?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T23:00:00+00:00",
+      "excerpt": "Wachtell defections reflect a broader trend of elite New York firms losing ground to bigger rivals",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "she-never-worked-in-a-steel-mill-now-she-leads-the-united-steelworkers-a58c0fb5?",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "She Never Worked in a Steel Mill. Now She Leads the United Steelworkers.",
+      "url": "https://www.wsj.com/business/she-never-worked-in-a-steel-mill-now-she-leads-the-united-steelworkers-a58c0fb5?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T22:37:00+00:00",
+      "excerpt": "New union leader Roxanne Brown’s first test will be contract negotiations with U.S. Steel under its new Japanese ownership.",
+      "case_slug": null,
+      "group_name": null
+    },
+    {
+      "id": "trump-orders-fresh-strikes-on-iran-to-spur-surrender-ab283c48?mod=pls_whats_news",
+      "kind": "news",
+      "source": "WSJ Business",
+      "source_id": "wsj-business",
+      "title": "Trump Orders Fresh Strikes on Iran to Spur Surrender",
+      "url": "https://www.wsj.com/arts-culture/food-cooking/trump-orders-fresh-strikes-on-iran-to-spur-surrender-ab283c48?mod=pls_whats_news_us_business_f",
+      "date": "2026-07-31",
+      "published_at": "2026-07-31T21:55:00+00:00",
+      "excerpt": "Plus, Spain regains control of Ceuta after migrants overrun it, and we go inside the unraveling of Situational Awareness.",
       "case_slug": null,
       "group_name": null
     },
@@ -537,7 +1135,8 @@
       "excerpt": "Residential Properties Resources Fund II Files Chapter 11 in Eastern District of Wisconsin",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-30T15:16:05+00:00"
+      "published_at": "2026-07-30T15:16:05+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "alkegen",
@@ -548,7 +1147,8 @@
       "excerpt": "Alkegen, the Clearlake-backed specialty materials maker formed in Unifrax's debt-funded 2021 acquisition of Lydall, filed a prepackaged Chapter 11 to shed roughly $3.1B of its $3.5B of funded debt, with first lien creditors taking substantially all of the reorganized equity.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-30T17:11:31+00:00"
+      "published_at": "2026-07-30T17:11:31+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "microsoft-posts-biggest-one-day-market-cap-gain-for-any-u-s-company-b8713761?mod",
@@ -560,7 +1160,8 @@
       "published_at": "2026-07-30T21:49:00+00:00",
       "excerpt": "While the software company gained $450 billion in market value, Meta shares plunged.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "metas-case-for-its-ai-spending-keeps-getting-weaker-aa4b9a5c?mod=rss_markets_mai",
@@ -572,7 +1173,8 @@
       "published_at": "2026-07-30T09:30:00+00:00",
       "excerpt": "The company’s all-out splurge is running into higher costs, borrowing constraints and investor pushback.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "ings-defense-loan-book-could-double-in-next-couple-of-years-ceo-says-cb5401d3?mo",
@@ -584,7 +1186,8 @@
       "published_at": "2026-07-30T12:36:00+00:00",
       "excerpt": "The comments came after the bank earlier on Thursday raised its top-line and profitability guidance for this year and next.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "microsofts-one-day-market-cap-gain-makes-history-2b3a5cb3?mod=rss_markets_main",
@@ -620,7 +1223,8 @@
       "published_at": "2026-07-30T20:36:00+00:00",
       "excerpt": "",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "oil-futures-edge-lower-on-possible-technical-correction-1d26c6b6?mod=rss_markets",
@@ -632,7 +1236,8 @@
       "published_at": "2026-07-30T19:21:00+00:00",
       "excerpt": "Oil futures returned some of the previous session’s gains after the U.S. hit back at Iran, as expected, for an attack on its bases in Jordan.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "u-s-natural-gas-futures-decline-ahead-of-storage-data-e7da0795?mod=rss_markets_m",
@@ -644,7 +1249,8 @@
       "published_at": "2026-07-30T19:19:00+00:00",
       "excerpt": "U.S. natural gas futures rose with September making its debut as the new front month.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "japanese-yen-jumps-to-2-month-high-versus-dollar-in-possible-intervention-dff8cd",
@@ -656,7 +1262,8 @@
       "published_at": "2026-07-30T21:48:00+00:00",
       "excerpt": "The yen gained 3% against the dollar, raising the prospect that the Japanese government has intervened to prop up the currency after officials stepped up verbal warnings against speculative moves that threaten to accelerate inflation in Japan.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "strategy-swings-to-loss-as-bitcoin-price-declines-85b90fcb?mod=rss_markets_main",
@@ -668,7 +1275,8 @@
       "published_at": "2026-07-30T20:51:00+00:00",
       "excerpt": "The bitcoin treasury company reported a loss of $8.22 billion, or $24.45 a share, from a profit of $10.02 billion the year prior.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "foreign-exchange-markets-focusing-on-bojs-forward-guidance-7c6179f2?mod=rss_mark",
@@ -680,7 +1288,8 @@
       "published_at": "2026-07-30T18:10:00+00:00",
       "excerpt": "The dollar weakened, including a 2.3% drop against the yen. While intervention from the BOJ hasn’t been officially confirmed, Insight Investment expects some comment from Japanese officials.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "citadel-buys-situational-awarenesss-stock-portfolio-after-big-losses-in-ai-51171",
@@ -692,7 +1301,8 @@
       "published_at": "2026-07-30T17:30:00+00:00",
       "excerpt": "The highflying hedge fund run by Leopold Aschenbrenner is in crisis mode after AI-related bets sank.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "these-companies-are-cooking-with-gas-028e6992?mod=rss_markets_main",
@@ -728,7 +1338,8 @@
       "published_at": "2026-07-30T12:59:00+00:00",
       "excerpt": "Intercontinental Exchange agreed to acquire MarketAxess, an electronic trading platform for fixed-income markets, for $6 billion.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "rivian-sales-rise-as-new-ev-model-is-launched-6227129f?mod=pls_whats_news_us_bus",
@@ -740,7 +1351,8 @@
       "published_at": "2026-07-30T22:18:00+00:00",
       "excerpt": "The startup automaker narrowed its losses in the second quarter and said it expects to sell more electric vehicles this year than it previously projected.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "amazons-zoox-gets-clearance-to-start-paid-robotaxi-rides-eac7075f?mod=pls_whats_",
@@ -752,7 +1364,8 @@
       "published_at": "2026-07-30T14:51:00+00:00",
       "excerpt": "The move is a first for a purpose-built autonomous vehicle like Zoox, which doesn’t have pedals or a steering wheel.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "driver-assistance-technology-dashboard-ead96bd2?mod=pls_whats_news_us_business_f",
@@ -788,7 +1401,8 @@
       "published_at": "2026-07-30T19:02:00+00:00",
       "excerpt": "Remember who gave Iran nuclear know-how in the first place.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "how-the-media-fame-machine-created-anthony-fauci-a415fd8c?mod=pls_whats_news_us_",
@@ -800,7 +1414,8 @@
       "published_at": "2026-07-30T17:26:00+00:00",
       "excerpt": "He wasn’t always at odds with Trump, but the fawning attention he got fed his antagonism.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "banks-in-talks-to-lend-15-billion-for-anthropic-data-center-backed-by-google-606",
@@ -812,7 +1427,8 @@
       "published_at": "2026-07-30T23:47:00+00:00",
       "excerpt": "Google’s guarantees of power and lease obligations would help the developer secure financing for the 1.6-gigawatt Texas project.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "diesel-back-in-spotlight-as-middle-east-conflict-escalates-0ada37cb?mod=pls_what",
@@ -824,7 +1440,8 @@
       "published_at": "2026-07-30T17:37:00+00:00",
       "excerpt": "A global shortage of diesel, made worse by Ukrainian attacks on Russian refineries and lower Chinese refinery runs, has kept prices rising with implications for economies and inflation.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "latest-perk-for-videogamers-chance-to-crowdfund-a-solar-farm-e1d46598?mod=pls_wh",
@@ -836,7 +1453,8 @@
       "published_at": "2026-07-30T13:58:00+00:00",
       "excerpt": "A new PlayStation service offered by climate-tech startup CleanPlay wants to turn gamers into clean-energy benefactors.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "westjet-flight-attendants-issue-72-hour-strike-notice-b5c9d310?mod=pls_whats_new",
@@ -848,7 +1466,8 @@
       "published_at": "2026-07-30T18:29:00+00:00",
       "excerpt": "Cabin crew represented by the Canadian Union of Public Employees issued a 72-hour strike notice, the union said. The airline said that in response it is issuing a lockout notice.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "taco-bells-plan-to-win-back-customers-after-cyclospora-illness-outbreak-a7ab5ae6",
@@ -860,7 +1479,8 @@
       "published_at": "2026-07-30T23:05:00+00:00",
       "excerpt": "The company is pumping out $1 deals and new food options to recover from a sales slump.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "yum-brands-profit-more-than-doubles-amid-cyclosporiasis-outbreak-linked-to-taco-",
@@ -872,7 +1492,8 @@
       "published_at": "2026-07-30T13:59:00+00:00",
       "excerpt": "Yum Brands said its teams are working quickly and transparently in response to one of the biggest food-safety crises in Taco Bell’s history, after public-health officials linked the shredded lettuce garnishing some of its menu items to a rapidly expanding cyclospora outbreak.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "microsofts-one-day-market-cap-gain-makes-history-2b3a5cb3?mod=pls_whats_news_us_",
@@ -884,7 +1505,8 @@
       "published_at": "2026-07-30T21:56:00+00:00",
       "excerpt": "Plus, banks are in talks to lend $15 billion for a Google-backed Anthropic data center, and Spider-Man’s youngest fans might help make the new movie a hit.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "spider-man-spidey-and-friends-marvel-sony-e6574858?mod=pls_whats_news_us_busines",
@@ -896,7 +1518,8 @@
       "published_at": "2026-07-30T17:00:00+00:00",
       "excerpt": "A new movie this week is expected to have the biggest opening of the year.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "new-york-mets-become-first-mlb-team-to-partner-with-a-prediction-market-b3a43a99",
@@ -968,7 +1591,8 @@
       "published_at": "2026-07-30T22:18:00+00:00",
       "excerpt": "The Army modified its contract with Lockheed Martin to step-up production; the final cost will depend on congressional funding.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "amazon-and-walmarts-shopping-bots-downplay-made-in-usa-data-report-says-26f21aef",
@@ -1027,7 +1651,8 @@
       "excerpt": "YSA Investments 1 Files Chapter 11 in District of Delaware",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-29T01:44:21+00:00"
+      "published_at": "2026-07-29T01:44:21+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "jackson-brown-court-apartments-filing-alert",
@@ -1038,7 +1663,8 @@
       "excerpt": "Jackson Brown Court Apartments Files Chapter 11 in Northern District of Georgia",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-29T01:37:25+00:00"
+      "published_at": "2026-07-29T01:37:25+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "south-bay-contractors-filing-alert",
@@ -1049,7 +1675,8 @@
       "excerpt": "South Bay Contractors Files Chapter 11 in Central District of California",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-29T01:37:08+00:00"
+      "published_at": "2026-07-29T01:37:08+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "republic-national-distributing-company",
@@ -1060,7 +1687,8 @@
       "excerpt": "RNDC, until recently the second-largest U.S. beverage alcohol distributor, filed Chapter 11 after post-pandemic demand declines and supplier losses eroded liquidity. Having sold 11 markets to Reyes, it now seeks to sell the rest and confirm a plan built on a settlement with its founding families.",
       "case_slug": "rndc",
       "source": "Bondoro",
-      "published_at": "2026-07-29T19:39:19+00:00"
+      "published_at": "2026-07-29T19:39:19+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "pour-one-out-for-rndc",
@@ -1105,7 +1733,8 @@
       "published_at": "2026-07-29T09:30:00+00:00",
       "excerpt": "The country’s need for crude is much more flexible than the market thought.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "ubs-plans-new-3-billion-buyback-after-net-profit-rises-d2d4fca9?mod=rss_markets_",
@@ -1117,7 +1746,8 @@
       "published_at": "2026-07-29T09:02:00+00:00",
       "excerpt": "The Swiss banking group said its stock-repurchase program would end by the second quarter of 2027 at the latest and that it plans buybacks of at least $1 billion over the next three months.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "stanchart-posts-profit-beat-announces-1-0-bln-buyback-54606388?mod=rss_markets_m",
@@ -1129,7 +1759,8 @@
       "published_at": "2026-07-29T06:55:00+00:00",
       "excerpt": "The London-based bank reported a second-quarter net profit of $1.71 billion, beating expectations, and announced a $1.0 billion share buyback.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "morgan-stanley-bankers-were-pressured-to-approve-mortgages-for-wealthy-clients-3",
@@ -1141,7 +1772,8 @@
       "published_at": "2026-07-29T01:09:00+00:00",
       "excerpt": "Mortgage employees faced backlash when questioning or rejecting loans. The bank says it hasn’t “compromised its underwriting standards.”",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "kevin-warsh-federal-reserve-fomc-investors-f562d456?mod=rss_markets_main",
@@ -1153,7 +1785,8 @@
       "published_at": "2026-07-29T21:42:00+00:00",
       "excerpt": "He has a hard 2% inflation target and pays attention to what markets are telling the central bank.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "asian-currencies-consolidate-ahead-of-fomc-decision-54e3b760?mod=rss_markets_mai",
@@ -1213,7 +1846,8 @@
       "published_at": "2026-07-29T20:14:00+00:00",
       "excerpt": "The recent hiring rebound demonstrates where artificial intelligence’s real value lies.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "auto-transport-roundup-market-talk-70ed06be?mod=pls_whats_news_us_business_f",
@@ -1225,7 +1859,8 @@
       "published_at": "2026-07-29T16:30:00+00:00",
       "excerpt": "Find insight on Porsche, Aston Martin and more in the latest Market Talks covering Auto and Transport.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "could-the-most-radical-plane-design-since-the-concorde-take-on-boeing-abd9a6ce?m",
@@ -1237,7 +1872,8 @@
       "published_at": "2026-07-29T09:30:00+00:00",
       "excerpt": "JetZero’s blended-wing aircraft, the Z4, just got a boost from Washington: a $3 billion loan commitment to help start production.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "how-p-g-is-trying-to-sell-tide-and-bounty-to-inflation-squeezed-consumers-0755aa",
@@ -1249,7 +1885,8 @@
       "published_at": "2026-07-29T11:00:00+00:00",
       "excerpt": "The consumer-products giants is working “harder than we’ve had to in a long time” to win over shoppers, its CFO says.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "mgm-resorts-posts-higher-profit-and-revenue-driven-by-las-vegas-ae95f35f?mod=pls",
@@ -1261,7 +1898,8 @@
       "published_at": "2026-07-29T21:40:00+00:00",
       "excerpt": "The hotel and casino company said revenue from MGM’s resorts on the Las Vegas Strip rose 3% to $2.2 billion.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "starbucks-next-challenge-making-sure-all-of-its-food-is-available-dcfbe51f?mod=p",
@@ -1273,7 +1911,8 @@
       "published_at": "2026-07-29T21:17:00+00:00",
       "excerpt": "Chief Operating Officer Mike Grams says more cafe labor, scheduling algorithm are speeding up service; now it’s tackling food availability.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "chipotle-mexican-grill-posts-higher-sales-driven-by-new-restaurant-openings-f614",
@@ -1297,7 +1936,8 @@
       "published_at": "2026-07-29T20:41:00+00:00",
       "excerpt": "The railroad operator named Gordon Trafton, board member since 2017, as Isabelle Courville’s replacement.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "doordash-takes-to-the-sky-with-its-own-drones-0cc8658d?mod=pls_whats_news_us_bus",
@@ -1309,7 +1949,8 @@
       "published_at": "2026-07-29T13:00:00+00:00",
       "excerpt": "Delivery provider plans to build its own aircraft and an end-to-end aerial network.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "saudi-arabias-sabic-narrows-loss-on-higher-selling-prices-despite-lower-volumes-",
@@ -1321,7 +1962,8 @@
       "published_at": "2026-07-29T09:07:00+00:00",
       "excerpt": "Sabic—among the world’s largest petrochemicals manufacturers—said its strong balance sheet would help it remain resilient amid supply disruptions and elevated energy prices.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "bnt-services-filing-alert",
@@ -1332,7 +1974,8 @@
       "excerpt": "BNT Services Files Chapter 11 in Southern District of Florida",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-28T01:47:00+00:00"
+      "published_at": "2026-07-28T01:47:00+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=dailydac-market-summary-for-seven-da",
@@ -1343,7 +1986,8 @@
       "date": "2026-07-28",
       "excerpt": "Read this week's DailyDAC Market Summary for insight into current market conditions. The post DailyDAC Market Summary for Seven Day Period Ending July 27, 2026 appeared first on DailyDAC .",
       "case_slug": null,
-      "published_at": "2026-07-28T23:54:03+00:00"
+      "published_at": "2026-07-28T23:54:03+00:00",
+      "source_id": "dailydac"
     },
     {
       "id": "big-tech-stocks-are-pricing-in-a-miracle-on-costs-6d93664f?mod=rss_markets_main",
@@ -1355,7 +1999,8 @@
       "published_at": "2026-07-28T09:30:00+00:00",
       "excerpt": "Analysts’ models are assuming new efficiencies, but some of the numbers look too good to be true.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "banks-want-technophobes-and-late-adopters-to-use-digital-wallets-it-isnt-easy-79",
@@ -1367,7 +2012,8 @@
       "published_at": "2026-07-28T14:42:00+00:00",
       "excerpt": "Paze faces an uphill battle to get people to use its online checkout button over Apple Pay and Google Pay.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "the-paramount-warner-merger-could-save-hollywood-f558ee4b?mod=rss_markets_main",
@@ -1379,7 +2025,8 @@
       "published_at": "2026-07-28T21:09:00+00:00",
       "excerpt": "California’s attorney general ignores the reality of competition in the entertainment business.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "hollywoods-rule-of-lawfare-157b8d8e?mod=pls_whats_news_us_business_f",
@@ -1391,7 +2038,8 @@
       "published_at": "2026-07-28T21:18:00+00:00",
       "excerpt": "Attorneys general wield antitrust law as a weapon against Trump and MAGA.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "thank-you-for-your-success-he-said-807b1b0c?mod=pls_whats_news_us_business_f",
@@ -1403,7 +2051,8 @@
       "published_at": "2026-07-28T21:17:00+00:00",
       "excerpt": "A cabdriver notices that businessmen make the world better.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "the-paramount-warner-merger-could-save-hollywood-f558ee4b?mod=pls_whats_news_us_",
@@ -1427,7 +2076,8 @@
       "published_at": "2026-07-28T21:06:00+00:00",
       "excerpt": "Find insight on GSK, Argenx and more in the latest Market Talks covering Health Care.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "why-chilis-isnt-going-all-in-on-ai-bddef245?mod=pls_whats_news_us_business_f",
@@ -1439,7 +2089,8 @@
       "published_at": "2026-07-28T12:00:00+00:00",
       "excerpt": "In the past few years, the restaurant chain has undergone a turnaround analysts call remarkable. Its CIO credits a reinvestment in basic, foundational tech.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "montana-tunnels-mining-filing-alert",
@@ -1450,7 +2101,8 @@
       "excerpt": "Montana Tunnels Mining Files Chapter 11 in District of Montana",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-27T22:15:33+00:00"
+      "published_at": "2026-07-27T22:15:33+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "future-legends-filing-alert",
@@ -1461,7 +2113,8 @@
       "excerpt": "Future Legends Files Chapter 11 in Central District of California",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-27T22:10:38+00:00"
+      "published_at": "2026-07-27T22:10:38+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "alkegen-filing-alert",
@@ -1472,7 +2125,8 @@
       "excerpt": "Alkegen Files Chapter 11 in Northern District of Texas",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-27T16:58:32+00:00"
+      "published_at": "2026-07-27T16:58:32+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "omnis-pleasants-filing-alert",
@@ -1483,7 +2137,8 @@
       "excerpt": "Omnis Pleasants Files Chapter 11 in District of Delaware",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-27T16:56:23+00:00"
+      "published_at": "2026-07-27T16:56:23+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "republic-national-distributing-company-filing-alert",
@@ -1494,7 +2149,8 @@
       "excerpt": "Republic National Distributing Company Files Chapter 11 in Southern District of Texas",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-27T16:55:53+00:00"
+      "published_at": "2026-07-27T16:55:53+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "eterno-resort-spe-filing-alert",
@@ -1505,7 +2161,8 @@
       "excerpt": "Eterno Resort SPE Files Chapter 11 in District of Nevada",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-27T16:55:30+00:00"
+      "published_at": "2026-07-27T16:55:30+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "magellan-aerospace-middletown",
@@ -1516,7 +2173,8 @@
       "excerpt": "Magellan Aerospace, Middletown filed for Chapter 11 after legacy aircraft programs wound down with no replacements and decades-old environmental liabilities at former California sites triggered mounting cleanup orders and an adverse jury verdict, exploring a standalone restructuring or sale.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-27T20:12:13+00:00"
+      "published_at": "2026-07-27T20:12:13+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-chapter-11-sale-pic",
@@ -1527,7 +2185,8 @@
       "date": "2026-07-27",
       "excerpt": "LEGAL NOTICE OF PROPOSED SALE OF REAL PROPERTY Notice is hereby given that PIC Estate, LLC (“PIC”), which filed a chapter 11 bankruptcy case on March 2, 2026, currently pending in the United States Bankruptcy Court for the Eastern District of Texas (the “Bankruptcy Court”) as Case No. 26-40725 has e",
       "case_slug": null,
-      "published_at": "2026-07-27T16:50:11+00:00"
+      "published_at": "2026-07-27T16:50:11+00:00",
+      "source_id": "dailydac"
     },
     {
       "id": "main-street-banks-are-a-cheaper-way-to-play-the-ai-banking-boom-0df36b9f?mod=rss",
@@ -1539,7 +2198,8 @@
       "published_at": "2026-07-27T09:30:00+00:00",
       "excerpt": "A pivot to the kind of business bolstering Wall Street titans can help regional players weather rising yields.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "ai-shouldnt-require-a-permission-slip-e8502aea?mod=rss_markets_main",
@@ -1551,7 +2211,8 @@
       "published_at": "2026-07-27T20:23:00+00:00",
       "excerpt": "‘Open-weight models’ are rising for users who can’t afford to be surprised by a governmental ‘off’ switch.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "how-the-big-premium-credit-cards-stack-up-against-each-other-13132b90?mod=rss_ma",
@@ -1563,7 +2224,8 @@
       "published_at": "2026-07-27T14:19:00+00:00",
       "excerpt": "The high-end credit card market is more crowded than ever. Here’s a guide to key perks that come with five of the elite cards.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "ex-jpmorgan-banker-alleges-racism-sexual-assault-in-federal-lawsuit-a6a54d0e?mod",
@@ -1575,7 +2237,8 @@
       "published_at": "2026-07-27T17:40:00+00:00",
       "excerpt": "Chirayu Rana accused former colleague Lorna Hajdini of violating his civil rights and named three other leveraged-finance bankers.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "union-pacific-norfolk-southern-file-supplemental-information-to-stb-on-merger-f3",
@@ -1599,7 +2262,8 @@
       "published_at": "2026-07-27T07:10:00+00:00",
       "excerpt": "The telecommunications company said its key earnings metric should come in at the upper end of the new outlook.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "boaters-are-splurging-to-make-fishing-yachts-run-like-supercars-78d33212?mod=pls",
@@ -1621,8 +2285,9 @@
       "url": "https://www.petition11.com/p/sleep-numbers-number-is-7018-million",
       "date": "2026-07-26",
       "excerpt": "Plus: QVC Group Inc. + Sangamo Therapeutics Inc. ($SGMO) + GoldenPeaks Poland Holding Limited + Freedom Forever LLC updates & Central Falls Detention Facility Corporation Files",
-      "case_slug": null,
-      "published_at": "2026-07-26T15:16:19+00:00"
+      "case_slug": "sleep-number",
+      "published_at": "2026-07-26T15:16:19+00:00",
+      "auto_matched": true
     },
     {
       "id": "central-falls-detention-facility-chapter-11-bankruptcy-filing",
@@ -1645,7 +2310,8 @@
       "published_at": "2026-07-26T09:30:00+00:00",
       "excerpt": "Information is the lifeblood of the stock market, but regulators want to let companies provide less of it.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "how-to-beat-china-and-make-ai-safe-d6abde74?mod=rss_markets_main",
@@ -1657,7 +2323,8 @@
       "published_at": "2026-07-26T17:07:00+00:00",
       "excerpt": "The key is ‘alignment,’ which improves capability while cordoning off dangerous knowledge.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "whos-dodging-blame-for-the-great-recession-46276255?mod=rss_markets_main",
@@ -1669,7 +2336,8 @@
       "published_at": "2026-07-26T16:49:00+00:00",
       "excerpt": "The repercussions of the 2008-09 financial crisis are still with us today—as are misconceptions about who caused it.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "federal-probe-into-dodgers-owners-financial-empire-was-sparked-by-whistleblower-",
@@ -1681,7 +2349,8 @@
       "published_at": "2026-07-26T23:24:00+00:00",
       "excerpt": "Authorities are examining about $16 billion in private-credit deals involving Mark Walter’s insurance companies to determine whether fraud occurred.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "wisconsins-warning-on-election-bets-intensifies-fight-with-prediction-markets-b0",
@@ -1693,7 +2362,8 @@
       "published_at": "2026-07-26T17:00:00+00:00",
       "excerpt": "A sprawling legal battle between state regulators and sites like Kalshi is heating up ahead of the midterm elections.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "the-everyday-guide-to-supersizing-your-retirement-account-8e914e8e?mod=rss_marke",
@@ -1705,7 +2375,8 @@
       "published_at": "2026-07-26T00:00:00+00:00",
       "excerpt": "Even those with modest means can grow their nest eggs bigger than they might think.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "see-the-600-million-world-of-executive-perks-e8759807?mod=pls_whats_news_us_busi",
@@ -1717,7 +2388,8 @@
       "published_at": "2026-07-25T09:30:00+00:00",
       "excerpt": "From private ranch vacations to concierge medicine, these are the ultraluxury perks top executives scored last year.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "trajector-filing-alert",
@@ -1728,7 +2400,8 @@
       "excerpt": "Trajector Files Chapter 11 in Middle District of Florida",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-24T04:11:53+00:00"
+      "published_at": "2026-07-24T04:11:53+00:00",
+      "source_id": "bondoro-alerts"
     },
     {
       "id": "poolin",
@@ -1740,7 +2413,8 @@
       "case_slug": "poolin",
       "source": "Bondoro",
       "published_at": "2026-07-24T20:59:43+00:00",
-      "group_name": null
+      "group_name": null,
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
@@ -1751,7 +2425,8 @@
       "date": "2026-07-24",
       "excerpt": "PUBLIC NOTICE OF UCC ARTICLE 9 SALE: Activ Technologies, Inc. NOTICE OF PUBLIC SALE OF BUSINESS ASSETS Pursuant to Article 9 of the Uniform Commercial Code NOTICE IS HEREBY GIVEN that Stephen B. Sherrill, as Investor Representative under the Convertible Note Purchase Agreement dated December 7, 2022",
       "case_slug": null,
-      "published_at": "2026-07-24T19:27:16+00:00"
+      "published_at": "2026-07-24T19:27:16+00:00",
+      "source_id": "dailydac"
     },
     {
       "id": "wise-group-shares-drop-after-u-s-regulator-denies-license-on-shortcomings-b37617",
@@ -1763,7 +2438,8 @@
       "published_at": "2026-07-24T10:21:00+00:00",
       "excerpt": "The company plans to submit a new application for a national trust bank charter under the framework of the Genius Act",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "kpmg-summer-interns-auditing-ai-training-941ad5cc?mod=pls_whats_news_us_business",
@@ -1775,7 +2451,8 @@
       "published_at": "2026-07-24T23:00:00+00:00",
       "excerpt": "The accounting firm put interns through a scavenger hunt and whodunnit fraud exercise as the career path changes",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "wise-group-shares-drop-after-u-s-regulator-denies-license-on-shortcomings-b37617",
@@ -1787,7 +2464,8 @@
       "published_at": "2026-07-24T10:21:00+00:00",
       "excerpt": "The company plans to submit a new application for a national trust bank charter under the framework of the Genius Act",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "verizon-revenue-ticks-down-profit-falls-on-joint-venture-costs-01726dbf?mod=pls_",
@@ -1799,7 +2477,8 @@
       "published_at": "2026-07-24T13:58:00+00:00",
       "excerpt": "The mobile carrier’s profit slid due to costs associated with the BT Group joint venture.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "charter-communications-chtr-q2-earnings-report-stock-2026-4581559c?mod=pls_whats",
@@ -1811,7 +2490,8 @@
       "published_at": "2026-07-24T13:44:00+00:00",
       "excerpt": "Competition from fixed wireless and fiber connection services has been eating into the company’s home-internet subscriber base.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "poolin-filing-alert",
@@ -1856,7 +2536,8 @@
       "excerpt": "CashCall, a subprime consumer lender, filed Chapter 11 after two consumer-finance judgments totaling roughly $402.6M, seeking $4M of financing from an owner-controlled affiliate while evaluating a potential estate claim concerning a 2021 distribution to that same owner.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-23T10:33:08+00:00"
+      "published_at": "2026-07-23T10:33:08+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=the-preference-wave-is-coming-what-v",
@@ -1867,7 +2548,8 @@
       "date": "2026-07-23",
       "excerpt": "If you sold goods or services to a customer that filed Chapter 11 in the last two years, the window to prepare is right now. It closes the day the demand letter arrives. The post The Preference Wave Is Coming- What Vendors Should Do Now appeared first on DailyDAC .",
       "case_slug": null,
-      "published_at": "2026-07-23T23:04:41+00:00"
+      "published_at": "2026-07-23T23:04:41+00:00",
+      "source_id": "dailydac"
     },
     {
       "id": "congress-stocks-investing-stop-insider-trading-act-ad22cb58?mod=rss_markets_main",
@@ -1891,7 +2573,8 @@
       "published_at": "2026-07-23T14:17:00+00:00",
       "excerpt": "T-Mobile US’s profit and revenue grew in the latest quarter boosted by growth in its postpaid business.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "spacex-supplier-stmicroelectronics-hikes-ai-data-center-sales-goal-again-a49e989",
@@ -1903,7 +2586,8 @@
       "published_at": "2026-07-23T10:50:00+00:00",
       "excerpt": "Shares in the European chip maker shed more than 15%, even though the chip maker raised its data-center revenue target for a second time this year.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "another-failed-lme-cubic-corp",
@@ -1925,7 +2609,8 @@
       "date": "2026-07-22",
       "excerpt": "NOTIFICATION OF DISPOSITION OF COLLATERAL To: Interested Members of the Public From: 1Sharpe Opportunity Immediate Trust (“Secured Party” or “Lender”) By and through Quanta Finance, LLC, as Servicer c/o Levenfeld Pearlstein, LLC, Attorney for the Secured Party Attn: Jamie L. Burns 120 S. Riverside P",
       "case_slug": null,
-      "published_at": "2026-07-22T20:59:00+00:00"
+      "published_at": "2026-07-22T20:59:00+00:00",
+      "source_id": "dailydac"
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-abc-sale-3deo-inc",
@@ -1936,7 +2621,8 @@
       "date": "2026-07-22",
       "excerpt": "PUBLIC NOTICE OF ASSET SALE Intellectual Property of 3DEO, Inc. Bid Deadline: AUGUST 12, 2026, at 12:00 PM PST Intellectual Property of 3DEO, Inc. — Sale Pursuant to Assignment for the Benefit of Creditors Insolvency Services Group, as the assignee for the benefit of creditors (the “Assignee”) of 3D",
       "case_slug": null,
-      "published_at": "2026-07-22T20:23:01+00:00"
+      "published_at": "2026-07-22T20:23:01+00:00",
+      "source_id": "dailydac"
     },
     {
       "id": "alea-holdings",
@@ -1947,7 +2633,8 @@
       "excerpt": "Alea Holdings US Company and affiliates, non-operating holdcos in Catalina Holdings' runoff platform, filed Chapter 11 after non-Debtor SPARTA was left holding legacy AEIC liabilities and a TruPS tender fell short, pursuing an RSA-backed plan and 363 sales of equity in two non-Debtor insurers.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-21T20:42:56+00:00"
+      "published_at": "2026-07-21T20:42:56+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
@@ -1958,7 +2645,8 @@
       "date": "2026-07-21",
       "excerpt": "NOTICE OF PUBLIC SALE OF COLLATERAL PURSUANT TO ARTICLE 9 OF THE UNIFORM COMMERCIAL CODE PLEASE TAKE NOTICE that on August 3, 2026, at 1:00 p.m. ET, a public sale (the &#8216;’Public Sale&#8221;) shall be conducted of substantially all of the assets of a New York-based company (the &#8220;Debtor&#82",
       "case_slug": null,
-      "published_at": "2026-07-21T17:58:24+00:00"
+      "published_at": "2026-07-21T17:58:24+00:00",
+      "source_id": "dailydac"
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=dailydac-market-summary-for-seven-da",
@@ -1969,7 +2657,8 @@
       "date": "2026-07-21",
       "excerpt": "Read this week's DailyDAC Market Summary for insight into current market conditions. The post DailyDAC Market Summary for Seven Day Period Ending July 20, 2026 appeared first on DailyDAC .",
       "case_slug": null,
-      "published_at": "2026-07-21T10:02:02+00:00"
+      "published_at": "2026-07-21T10:02:02+00:00",
+      "source_id": "dailydac"
     },
     {
       "id": "insurers-find-workarounds-on-risky-debt-as-regulators-play-whac-a-mole-ef732939?",
@@ -1981,7 +2670,8 @@
       "published_at": "2026-07-21T00:00:00+00:00",
       "excerpt": "It took state insurance commissioners four years to clamp down on one kind of structured debt. Meanwhile, insurers piled into other, equally risky, flavors.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
@@ -1992,7 +2682,8 @@
       "date": "2026-07-20",
       "excerpt": "NOTICE OF AUCTION ADVISORS’ PUBLIC SALE ON BEHALF OF SECURED LENDER OF COMMON STOCK ISSUED BY SIMPLER POSTAGE, INC. UNDER ARTICLE 9 OF THE UNIFORM COMMERCIAL CODE OF THE STATE OF NEW YORK PLEASE TAKE NOTICE that on August 14, 2026, starting at 11:00AM Eastern Time, Auction Advisors, a Florida limite",
       "case_slug": null,
-      "published_at": "2026-07-20T21:11:37+00:00"
+      "published_at": "2026-07-20T21:11:37+00:00",
+      "source_id": "dailydac"
     },
     {
       "id": "?utm_source=rss&utm_medium=rss&utm_campaign=public-notice-of-ucc-article-9-sale-",
@@ -2060,7 +2751,8 @@
       "published_at": "2026-07-15T19:07:00+00:00",
       "excerpt": "We analyzed everything from estate planning to retirement income options at some of the larger registered investment advisor firms to help retirees select a firm that could best connect them with a fiduciary financial advisor.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "the-dish-prepack-aint-prepacking",
@@ -2093,7 +2785,8 @@
       "excerpt": "Pacifica Hospital of the Valley, a Los Angeles safety-net hospital, filed for Chapter 11 to halt a creditor's contested loan-to-own bid for control and a pending receivership, after a liquidity crisis, pandemic costs, seismic-retrofit fines, and delayed government payments eroded operations.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-08T16:43:21+00:00"
+      "published_at": "2026-07-08T16:43:21+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "skillsoft-corp-is-selling-stuff",
@@ -2127,7 +2820,8 @@
       "published_at": "2026-07-08T18:05:00+00:00",
       "excerpt": "The best small-business lenders have flexible business requirements, competitive rates and various loan options.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "business-debt-consolidation-loans?mod=pls_whats_news_us_business_f",
@@ -2139,7 +2833,8 @@
       "published_at": "2026-07-08T19:37:00+00:00",
       "excerpt": "Business debt consolidation can improve your cash flow and repackage your obligations to potentially save you money.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "dish-dbs-wireless",
@@ -2150,7 +2845,8 @@
       "excerpt": "DISH DBS and DISH Wireless, EchoStar subsidiaries, filed dual-track Chapter 11 cases to reorganize the declining DISH/Sling pay-TV business and wind down DISH Wireless via a §363 sale, after the FCC pressed EchoStar to sell the spectrum licenses needed for the 5G network or face license forfeiture.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-07-02T18:09:08+00:00"
+      "published_at": "2026-07-02T18:09:08+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "ustelepacific-chapter-11-bankruptcy-filing",
@@ -2183,7 +2879,8 @@
       "excerpt": "TPx Communications filed for Chapter 11 unable to service roughly $1.1B in debt, pursuing an RSA-backed dual-track restructuring — a Section 363 sale or a lender- and sponsor-led reorganization that would leave the managed IT services provider with about $129M of funded debt and preferred equity.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-06-30T19:50:17+00:00"
+      "published_at": "2026-06-30T19:50:17+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "inflation-and-default-rates-rise",
@@ -2216,7 +2913,8 @@
       "excerpt": "DAMIS Holdings, the real-estate arm of the Shabsels brothers' enterprise, filed a free-fall Chapter 11 with 89 affiliates amid its BVI parent's bond default, acute liquidity distress, and MCA lenders sweeping accounts.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-06-25T19:47:48+00:00"
+      "published_at": "2026-06-25T19:47:48+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "how-to-choose-a-financial-advisor?mod=pls_whats_news_us_business_f",
@@ -2228,7 +2926,8 @@
       "published_at": "2026-06-25T16:05:00+00:00",
       "excerpt": "Navigate the process of selecting a financial advisor by exploring advisor types, fee structures, credentials and essential questions.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-business"
     },
     {
       "id": "sangamo-therapeutics",
@@ -2239,7 +2938,8 @@
       "excerpt": "Sangamo Therapeutics filed for Chapter 11 after losing its major collaboration revenues and exhausting its liquidity, pursuing a court-supervised sale with stalking-horse bids from Lilly for its core platforms and Astellas for its Fabry program.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-06-24T15:05:30+00:00"
+      "published_at": "2026-06-24T15:05:30+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "welcome-to-camp-catastrophe",
@@ -2283,7 +2983,8 @@
       "excerpt": "Hallmark Financial filed Chapter 11 to sell its business or swap controlling creditor Hildene's debt for equity, after reserve failures, a lost reinsurance arbitration, and a ratings collapse gutted its equity—tripping a senior-note covenant Hildene wouldn't waive, foreclosing an out-of-court fix.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-06-18T20:18:57+00:00"
+      "published_at": "2026-06-18T20:18:57+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "searles-valley-minerals",
@@ -2294,7 +2995,8 @@
       "excerpt": "Searles Valley Minerals filed Chapter 11 to pursue a §363 going-concern sale of its business — anchored by its Trona, CA mining complex — after 2019 Ridgecrest earthquake damage, soda ash oversupply and price collapse, and mounting losses left it no viable out-of-court path.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-06-17T17:40:23+00:00"
+      "published_at": "2026-06-17T17:40:23+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "best-wealth-management-firms?mod=rss_markets_main",
@@ -2306,7 +3008,8 @@
       "published_at": "2026-06-17T20:29:00+00:00",
       "excerpt": "We analyzed everything from advisor credentials to portfolio options to fees and customer support at some of the larger and more well-known registered investment advisor firms to help connect you with a fiduciary wealth manager.",
       "case_slug": null,
-      "group_name": null
+      "group_name": null,
+      "source_id": "wsj-markets"
     },
     {
       "id": "simad-holdings",
@@ -2317,7 +3020,8 @@
       "excerpt": "SIMAD Holdings filed Chapter 11 to pursue an expedited financing or sale of its 30-camp portfolio, after missing a May 31 interest payment on $214M in Tel Aviv bonds following a ~$34M owner transfer under investigation and facing cash seizure by merchant cash advance lenders.",
       "case_slug": null,
       "source": "Bondoro",
-      "published_at": "2026-06-16T18:56:09+00:00"
+      "published_at": "2026-06-16T18:56:09+00:00",
+      "source_id": "bondoro-summaries"
     },
     {
       "id": "sleep-number",
@@ -2326,9 +3030,11 @@
       "url": "https://bondoro.com/sleep-number/",
       "date": "2026-06-15",
       "excerpt": "Sleep Number filed Chapter 11 to sell its assets to Fairfax-owned Sleep Country Canada for $415M through a lender-backed Section 363 process, after a multi-year mattress recession and a pandemic-era balance sheet left the smart-bed maker with roughly $672.5M of funded debt it could no longer carry.",
-      "case_slug": null,
+      "case_slug": "sleep-number",
       "source": "Bondoro",
-      "published_at": "2026-06-15T19:31:25+00:00"
+      "published_at": "2026-06-15T19:31:25+00:00",
+      "source_id": "bondoro-summaries",
+      "auto_matched": true
     }
   ]
 }

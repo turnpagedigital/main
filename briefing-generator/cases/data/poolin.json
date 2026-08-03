@@ -14,51 +14,131 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/",
-    "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-07-31T07:21:40.101934+00:00",
-    "as_of": "Jul 31, 2026",
+    "date_last_filing": "2026-08-03",
+    "fetched_at": "2026-08-03T07:51:09.025948+00:00",
+    "as_of": "Aug 3, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 2,
     "recent": [
       {
-        "entry_number": 73,
-        "date_filed": "2026-07-31",
-        "time_filed": "00:15:13",
-        "date_display": "Jul 31, 2026",
+        "entry_number": 81,
+        "date_filed": "2026-08-03",
+        "time_filed": "00:16:35",
+        "date_display": "Aug 3, 2026",
         "description": "BNC Certificate of Notice - Order",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 72,
-        "date_filed": "2026-07-31",
-        "time_filed": "00:15:13",
-        "date_display": "Jul 31, 2026",
+        "entry_number": 80,
+        "date_filed": "2026-08-02",
+        "time_filed": "00:14:40",
+        "date_display": "Aug 2, 2026",
         "description": "BNC Certificate of Notice - Order",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 71,
+        "entry_number": 79,
         "date_filed": "2026-07-31",
-        "time_filed": "00:15:13",
+        "time_filed": "17:04:20",
         "date_display": "Jul 31, 2026",
-        "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "description": "Amended Motion",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 81,
+        "date_filed": "2026-08-03",
+        "time_filed": "00:16:35",
+        "date_display": "Aug 3, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 80,
+        "date_filed": "2026-08-02",
+        "time_filed": "00:14:40",
+        "date_display": "Aug 2, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2026-07-31",
+        "time_filed": "17:04:20",
+        "date_display": "Jul 31, 2026",
+        "description": "Amended Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 78,
+        "date_filed": "2026-07-31",
+        "time_filed": "11:22:48",
+        "date_display": "Jul 31, 2026",
+        "description": "Exhibit",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 77,
+        "date_filed": "2026-07-31",
+        "time_filed": "10:29:30",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear Pro Hac Vice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2026-07-31",
+        "time_filed": "09:18:10",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear Pro Hac Vice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 75,
+        "date_filed": "2026-07-31",
+        "time_filed": "09:10:04",
+        "date_display": "Jul 31, 2026",
+        "description": "Appear Pro Hac Vice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 74,
+        "date_filed": "2026-07-31",
+        "time_filed": "09:02:09",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice of Appearance and Request",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 73,
         "date_filed": "2026-07-31",
         "time_filed": "00:15:13",
         "date_display": "Jul 31, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -68,7 +148,7 @@
         "time_filed": "00:15:13",
         "date_display": "Jul 31, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -78,7 +158,7 @@
         "time_filed": "00:15:13",
         "date_display": "Jul 31, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -88,7 +168,7 @@
         "time_filed": "00:15:13",
         "date_display": "Jul 31, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -98,7 +178,7 @@
         "time_filed": "00:15:13",
         "date_display": "Jul 31, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -108,7 +188,7 @@
         "time_filed": "00:15:13",
         "date_display": "Jul 31, 2026",
         "description": "BNC Certificate of Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -118,7 +198,7 @@
         "time_filed": "10:02:04",
         "date_display": "Jul 30, 2026",
         "description": "Appear Pro Hac Vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -128,7 +208,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -138,7 +218,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -148,7 +228,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -158,7 +238,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -168,7 +248,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -178,7 +258,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -188,7 +268,7 @@
         "time_filed": "00:16:22",
         "date_display": "Jul 30, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -198,7 +278,7 @@
         "time_filed": "13:22:56",
         "date_display": "Jul 29, 2026",
         "description": "Master Service List",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -857,6 +937,27 @@
       "source": "Law360",
       "date": "2026-07-23",
       "summary": "Law360 reports that Bitcoin miner Poolin Technology filed for Chapter 11 in New Jersey bankruptcy court with more than $173 million in liabilities, citing price volatility and China's ban on cryptocurrency mining, alongside plans for an asset sale."
+    },
+    {
+      "headline": "Crypto Miner Poolin Hits Ch. 11 After China Ban, Market Slump",
+      "url": "https://www.law360.com/articles/2504929/crypto-miner-poolin-hits-ch-11-after-china-ban-market-slump",
+      "source": "Law360",
+      "date": "2026-07-23",
+      "summary": "Law360 reports that Bitcoin miner Poolin Technology filed for Chapter 11 protection in New Jersey bankruptcy court with more than $173 million in liabilities and plans for an asset sale, citing price volatility and China's ban on cryptocurrency mining."
+    },
+    {
+      "headline": "Bitcoin mining pool Poolin files for Chapter 11 bankruptcy",
+      "url": "https://cointelegraph.com/news/bitcoin-mining-poolin-chapter-11-bankruptcy",
+      "source": "Cointelegraph",
+      "date": "2026-07-23",
+      "summary": "Cointelegraph reports that Singapore-based Poolin and two U.S. affiliates filed Chapter 11 in New Jersey, listing $100M–$500M in liabilities and seeking court approval to sell two West Texas mining sites to Thor CALAP LLC under a $52 million stalking-horse bid subject to a September 8 auction deadline."
+    },
+    {
+      "headline": "Poolin, Once One of Bitcoin's Biggest Mining Pools, Files for Bankruptcy",
+      "url": "https://decrypt.co/374289/poolin-bitcoin-biggest-mining-pools-files-bankruptcy",
+      "source": "Decrypt",
+      "date": "2026-07-22",
+      "summary": "Poolin Technology Pte. Ltd., the Singapore-based company that once ran one of Bitcoin's largest mining pools, filed for Chapter 11 bankruptcy on July 22 in the U.S. Bankruptcy Court for the District of New Jersey, with Thor CALAP LLC placing a $52 million stalking-horse bid for Poolin's two West Texas mining sites to repay 11,700 IOU-holding users."
     }
   ],
   "events": [
@@ -867,6 +968,22 @@
       "kind": "Deadline",
       "url": "https://cryptoslate.com/bitcoin-mining-giant-poolin-files-for-bankruptcy-owing-11700-users-164-million/",
       "source": "U.S. Bankruptcy Court, D. N.J. (Case No. 26-18325)"
+    },
+    {
+      "title": "Poolin Ch. 11 — Qualified Bid Deadline (proposed)",
+      "date": "2026-09-08",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://cointelegraph.com/news/bitcoin-mining-poolin-chapter-11-bankruptcy",
+      "source": "U.S. Bankruptcy Court, D.N.J."
+    },
+    {
+      "title": "Poolin Ch. 11 – Proposed Bid Deadline for West Texas Asset Auction",
+      "date": "2026-09-08",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://www.tradingview.com/news/cointelegraph:d622b4b2e094b:0-bitcoin-mining-pool-poolin-files-for-chapter-11-bankruptcy/",
+      "source": "U.S. Bankruptcy Court, D.N.J. (via CoinTelegraph/TradingView)"
     }
   ]
 }

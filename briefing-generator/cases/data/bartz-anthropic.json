@@ -14,10 +14,10 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "",
-    "fetched_at": "2026-07-31T17:00:10.239609+00:00",
-    "as_of": "Jul 31, 2026",
-    "backfilled": false,
+    "date_last_filing": "2026-07-21",
+    "fetched_at": "2026-08-03T07:50:23.851121+00:00",
+    "as_of": "Aug 3, 2026",
+    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -4367,6 +4367,36 @@
         "doc_url": ""
       },
       {
+        "entry_number": 264,
+        "date_filed": "2025-07-23",
+        "time_filed": "",
+        "date_display": "Jul 23, 2025",
+        "description": "Administrative Motion to File Under Seal for In-Camera Review filed by Anthropic PBC. (Attachments: # 1 Notice of Submission of Documents Under Seal, # 2 Proposed Order, # 3 Exhibit 1, # 4 Exhibit 2, # 5 Exhibit 3, # 6 Exhibit 4, # 7 Exhibit 5, # 8 Exhibit 6, # 9 Exhibit 7)(Farris, Joseph) (Filed on 7/23/2025) (Entered: 07/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 263,
+        "date_filed": "2025-07-23",
+        "time_filed": "",
+        "date_display": "Jul 23, 2025",
+        "description": "ORDER RE SPECIAL MASTER. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 7/23/2025) (Entered: 07/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.263.0_2.pdf"
+      },
+      {
+        "entry_number": 262,
+        "date_filed": "2025-07-23",
+        "time_filed": "",
+        "date_display": "Jul 23, 2025",
+        "description": "OPPOSITION/RESPONSE (re 260 Discovery Letter Brief ) filed by Anthropic PBC. (Attachments: # 1 Exhibit 1)(Farris, Joseph) (Filed on 7/23/2025) Modified on 7/24/2025 (kmg, COURT STAFF). (Entered: 07/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.262.0_1.pdf"
+      },
+      {
         "entry_number": 261,
         "date_filed": "2025-07-23",
         "time_filed": "",
@@ -4385,9 +4415,2968 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 260,
+        "date_filed": "2025-07-22",
+        "time_filed": "",
+        "date_display": "Jul 22, 2025",
+        "description": "Discovery Letter Brief- Plaintiffs Letter Motion to Compel filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Geman, Rachel) (Filed on 7/22/2025) Modified on 7/24/2025 (kmg, COURT STAFF). (Entered: 07/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.260.0.pdf"
+      },
+      {
+        "entry_number": 259,
+        "date_filed": "2025-07-22",
+        "time_filed": "",
+        "date_display": "Jul 22, 2025",
+        "description": "FURTHER ORDER RE DISCOVERY HEARING. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 7/22/2025) (Entered: 07/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.259.0_3.pdf"
+      },
+      {
+        "entry_number": 258,
+        "date_filed": "2025-07-21",
+        "time_filed": "",
+        "date_display": "Jul 21, 2025",
+        "description": "NOTICE of Appearance filed by Ryan M. Nishimoto on behalf of Anthropic PBC (Nishimoto, Ryan) (Filed on 7/21/2025) (Entered: 07/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-21",
+        "time_filed": "",
+        "date_display": "Jul 21, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 257,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "NOTICE of Appearance filed by Jackson Lane on behalf of Anthropic PBC (Lane, Jackson) (Filed on 7/18/2025) (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 256,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "NOTICE of Appearance filed by Mary Prendergast on behalf of Anthropic PBC (Prendergast, Mary) (Filed on 7/18/2025) (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 255,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "NOTICE of Appearance filed by Aditya Vijay Kamdar on behalf of Anthropic PBC (Kamdar, Aditya) (Filed on 7/18/2025) (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 254,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "NOTICE of Appearance filed by Fitz Beckwith Collings on behalf of Anthropic PBC (Collings, Fitz) (Filed on 7/18/2025) (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 253,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "NOTICE of Appearance filed by Ramsey Fisher on behalf of Anthropic PBC (Fisher, Ramsey) (Filed on 7/18/2025) (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 252,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "NOTICE of Appearance filed by Whitney Rose O'Byrne on behalf of Anthropic PBC (O'Byrne, Whitney) (Filed on 7/18/2025) (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 251,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "NOTICE of Appearance filed by Daralyn J. Durie on behalf of Anthropic PBC (Durie, Daralyn) (Filed on 7/18/2025) (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 250,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "OPPOSITION/RESPONSE (re 239 Discovery Letter Brief ) filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Declaration of Jacob. S. Miller, # 2 Exhibit A to Miller Decl.)(Geman, Rachel) (Filed on 7/18/2025) (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.250.0_3.pdf"
+      },
+      {
+        "entry_number": 249,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "Motion to Compel - OPPOSITION/RESPONSE (re 224 Discovery Letter Brief ) to Plaintiffs' Motion to Compel Non-Party OpenAI to Produce Documents filed byOpenAI Inc.. (Kwun, Michael) (Filed on 7/18/2025) Modified on 7/24/2025 (kmg, COURT STAFF). (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.249.0_1.pdf"
+      },
+      {
+        "entry_number": 248,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "ORDER RE ANY MOTION SEEKING RECONSIDERATION. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 7/18/2025) (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.248.0_2.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 247,
+        "date_filed": "2025-07-17",
+        "time_filed": "",
+        "date_display": "Jul 17, 2025",
+        "description": "ORDER by Judge William Alsup granting 246 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 7/17/2025) (Entered: 07/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.247.0.pdf"
+      },
+      {
+        "entry_number": 246,
+        "date_filed": "2025-07-17",
+        "time_filed": "",
+        "date_display": "Jul 17, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-20905817.) filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing)(Sugar, Betsy) (Filed on 7/17/2025) (Entered: 07/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 245,
+        "date_filed": "2025-07-17",
+        "time_filed": "",
+        "date_display": "Jul 17, 2025",
+        "description": "ORDER RE DISCOVERY HEARING. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 7/17/2025) (Entered: 07/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.245.0_2.pdf"
+      },
+      {
+        "entry_number": 244,
+        "date_filed": "2025-07-17",
+        "time_filed": "",
+        "date_display": "Jul 17, 2025",
+        "description": "ORDER ON 125 CLASS CERTIFICATION. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 7/17/2025) (Entered: 07/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.244.0_4.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-17",
+        "time_filed": "",
+        "date_display": "Jul 17, 2025",
+        "description": "Set/Reset Hearing re 245 Order: Discovery Hearing set for 7/23/2025 12:00 PM in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. (afm, COURT STAFF) (Filed on 7/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 243,
+        "date_filed": "2025-07-15",
+        "time_filed": "",
+        "date_display": "Jul 15, 2025",
+        "description": "ORDER DIRECTING RESPONSE. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 7/15/2025) (Entered: 07/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.243.0_1.pdf"
+      },
+      {
+        "entry_number": 242,
+        "date_filed": "2025-07-15",
+        "time_filed": "",
+        "date_display": "Jul 15, 2025",
+        "description": "NOTICE of Appearance filed by Michael Gervais on behalf of Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson (Gervais, Michael) (Filed on 7/15/2025) (Entered: 07/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-15",
+        "time_filed": "",
+        "date_display": "Jul 15, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 241,
+        "date_filed": "2025-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2025",
+        "description": "MOTION for Leave to Appeal Pursuant to 28 USC 1292(b), or in the Alternative, For Leave to Move for Reconsideration filed by Anthropic PBC. Motion Hearing set for 8/28/2025 08:00 AM in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. Responses due by 7/28/2025. Replies due by 8/4/2025. (Attachments: # 1 Proposed Order Granting Motion for an Order Permitting Interlocutory Appeal or in the Alternative Motion for Leave to File Motion for Reconsideration)(Hartnett, Kathleen) (Filed on 7/14/2025) (Entered: 07/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.241.0_2.pdf"
+      },
+      {
+        "entry_number": 240,
+        "date_filed": "2025-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2025",
+        "description": "ORDER by Judge William Alsup granting 238 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 7/14/2025) (Entered: 07/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 239,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "Discovery Letter Brief Motion to Compel Discovery Response filed by Anthropic PBC. (Attachments: # 1 Declaration Allyson Myers, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C, # 5 Exhibit D)(Winthrop, Douglas) (Filed on 7/11/2025) (Entered: 07/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.239.0.pdf"
+      },
+      {
+        "entry_number": 238,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice by Ephraim McDowell ( Filing fee $ 328, receipt number ACANDC-20883502.) filed by Anthropic PBC. (McDowell, Ephraim) (Filed on 7/11/2025) (Entered: 07/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 237,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "NOTICE of Appearance filed by Alexander J. Kasner on behalf of Anthropic PBC (Kasner, Alexander) (Filed on 7/11/2025) (Entered: 07/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 236,
+        "date_filed": "2025-07-02",
+        "time_filed": "",
+        "date_display": "Jul 2, 2025",
+        "description": "NOTICE of Appearance filed by Kathleen R. Hartnett on behalf of Anthropic PBC (Hartnett, Kathleen) (Filed on 7/2/2025) (Entered: 07/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-02",
+        "time_filed": "",
+        "date_display": "Jul 2, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 235,
+        "date_filed": "2025-07-01",
+        "time_filed": "",
+        "date_display": "Jul 1, 2025",
+        "description": "NOTICE of Withdrawal filed by Collin Fredricks, no longer appearing on behalf of Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson in this case (Fredricks, Collin) (Filed on 7/1/2025) (Entered: 07/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 234,
+        "date_filed": "2025-07-01",
+        "time_filed": "",
+        "date_display": "Jul 1, 2025",
+        "description": "OPPOSITION/RESPONSE (re 227 Discovery Letter Brief ) (Anthropic's Further Response) filed byAnthropic PBC. (Farris, Joseph) (Filed on 7/1/2025) (Entered: 07/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.234.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-01",
+        "time_filed": "",
+        "date_display": "Jul 1, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 233,
+        "date_filed": "2025-06-30",
+        "time_filed": "",
+        "date_display": "Jun 30, 2025",
+        "description": "NOTICE of Appearance filed by Pieter S DE Ganon on behalf of Anthropic PBC (DE Ganon, Pieter) (Filed on 6/30/2025) (Entered: 06/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-30",
+        "time_filed": "",
+        "date_display": "Jun 30, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 232,
+        "date_filed": "2025-06-25",
+        "time_filed": "",
+        "date_display": "Jun 25, 2025",
+        "description": "OPPOSITION/RESPONSE (re 227 Discovery Letter Brief ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Assad H. Rajani)(Farris, Joseph) (Filed on 6/25/2025) (Entered: 06/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.232.0.pdf"
+      },
+      {
+        "entry_number": 231,
+        "date_filed": "2025-06-23",
+        "time_filed": "",
+        "date_display": "Jun 23, 2025",
+        "description": "ORDER ON 122 FAIR USE. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 6/23/2025) (Entered: 06/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.231.0_5.pdf"
+      },
+      {
+        "entry_number": 230,
+        "date_filed": "2025-06-19",
+        "time_filed": "",
+        "date_display": "Jun 19, 2025",
+        "description": "OPPOSITION/RESPONSE (re 223 Discovery Letter Brief (Redacted) ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Assad Rajani, # 2 Declaration of Janel Thamkul, # 3 Declaration of Jennifer Martinez)(Farris, Joseph) (Filed on 6/19/2025) (Entered: 06/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.230.0.pdf"
+      },
+      {
+        "entry_number": 229,
+        "date_filed": "2025-06-18",
+        "time_filed": "",
+        "date_display": "Jun 18, 2025",
+        "description": "NOTICE of Appearance filed by Assad Hussain Rajani on behalf of Anthropic PBC (Rajani, Assad) (Filed on 6/18/2025) (Entered: 06/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-18",
+        "time_filed": "",
+        "date_display": "Jun 18, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 228,
+        "date_filed": "2025-06-13",
+        "time_filed": "",
+        "date_display": "Jun 13, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Anthropic PBC. (Attachments: # 1 Declaration of Jessica L. Gillotte, # 2 Proposed Order, # 3 Unredacted Exhibit 1, # 4 Unredacted Exhibit 2, # 5 Unredacted Exhibit 3)(Winthrop, Douglas) (Filed on 6/13/2025) (Entered: 06/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 227,
+        "date_filed": "2025-06-13",
+        "time_filed": "",
+        "date_display": "Jun 13, 2025",
+        "description": "Discovery Letter Brief filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Nath, Rohit) (Filed on 6/13/2025) (Entered: 06/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.227.0.pdf"
+      },
+      {
+        "entry_number": 226,
+        "date_filed": "2025-06-13",
+        "time_filed": "",
+        "date_display": "Jun 13, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Declaration, # 2 Proposed Order, # 3 Unredacted Version)(Nath, Rohit) (Filed on 6/13/2025) (Entered: 06/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 225,
+        "date_filed": "2025-06-06",
+        "time_filed": "",
+        "date_display": "Jun 6, 2025",
+        "description": "OPPOSITION/RESPONSE (re 190 Discovery Letter Brief (Redacted) ) (Anthropic's Response to Plaintiffs' Letter Motion to Compel) filed byAnthropic PBC. (Farris, Joseph) (Filed on 6/6/2025) (Entered: 06/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.225.0.pdf"
+      },
+      {
+        "entry_number": 224,
+        "date_filed": "2025-06-06",
+        "time_filed": "",
+        "date_display": "Jun 6, 2025",
+        "description": "Discovery Letter Brief filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Declaration of Rachel Geman ISO Motion to Compel, # 2 Exhibit 1 to Decl., # 3 Exhibit 2 to Decl., # 4 Exhibit 3 to Decl., # 5 Exhibit 4 to Decl., # 6 Exhibit 5 to Decl., # 7 Exhibit 6 to Decl.)(Geman, Rachel) (Filed on 6/6/2025) (Entered: 06/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.224.0.pdf"
+      },
+      {
+        "entry_number": 223,
+        "date_filed": "2025-06-06",
+        "time_filed": "",
+        "date_display": "Jun 6, 2025",
+        "description": "Discovery Letter Brief (Redacted) filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Exhibit 1 (filed under seal), # 2 Exhibit 2 (filed under seal), # 3 Exhibit 3 (filed under seal))(Geman, Rachel) (Filed on 6/6/2025) (Entered: 06/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.223.0.pdf"
+      },
+      {
+        "entry_number": 222,
+        "date_filed": "2025-06-06",
+        "time_filed": "",
+        "date_display": "Jun 6, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Declaration of Rohit Nath ISO Motion to Seal, # 2 Unredacted Discovery Letter Brief, # 3 Exhibit 1, # 4 Exhibit 2, # 5 Exhibit 3, # 6 Proposed Order)(Geman, Rachel) (Filed on 6/6/2025) (Entered: 06/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 221,
+        "date_filed": "2025-06-06",
+        "time_filed": "",
+        "date_display": "Jun 6, 2025",
+        "description": "ORDER by Judge William Alsup granting 220 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 6/6/2025) (Entered: 06/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 220,
+        "date_filed": "2025-06-03",
+        "time_filed": "",
+        "date_display": "Jun 3, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-20746476.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Doshi, Samir) (Filed on 6/3/2025) (Entered: 06/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 219,
+        "date_filed": "2025-06-02",
+        "time_filed": "",
+        "date_display": "Jun 2, 2025",
+        "description": "Certificate of Interested Entities by Anthropic PBC identifying Corporate Parent Alphabet Inc., Corporate Parent Amazon.Com, Inc., Other Affiliate Amazon Web Services, Inc., Other Affiliate Google LLC for Anthropic PBC. re 51 Certificate of Interested Entities Defendant Anthropic PBCS Supplement Certification of Interested Entities or Persons (Winthrop, Douglas) (Filed on 6/2/2025) Modified on 6/4/2025 (kmg, COURT STAFF). (Entered: 06/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-06-02",
+        "time_filed": "",
+        "date_display": "Jun 2, 2025",
+        "description": "Electronic filing error. Filer did not add all interested parties when prompted. Re-file this document in its entirety and when prompted, enter all affiliates, interested entities or corporate parents. Instruction page: https://cand.uscourts.gov/cases-e-filing/cm-ecf/support-and-troubleshooting/avoiding-common-errors/how-to-file-certificate-of-interested-entities/ Please re-file in its entirety. Re: 218 Certificate of Interested Entities filed by Anthropic PBC (ecg, COURT STAFF) (Filed on 6/2/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 218,
+        "date_filed": "2025-05-30",
+        "time_filed": "",
+        "date_display": "May 30, 2025",
+        "description": "Certificate of Interested Entities by Anthropic PBC re 51 Certificate of Interested Entities -DEFENDANT ANTHROPIC PBCS SUPPLEMENTAL CERTIFICATION OF INTERESTED ENTITIES OR PERSONS (Winthrop, Douglas) (Filed on 5/30/2025) (Entered: 05/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.218.0.pdf"
+      },
+      {
+        "entry_number": 217,
+        "date_filed": "2025-05-30",
+        "time_filed": "",
+        "date_display": "May 30, 2025",
+        "description": "*** Correction of Docket [205-55]-EXHIBITS re [204-55] Administrative Motion to Consider Whether Another Party's Material Should Be Sealed (CORRECTION OF DOCKET #152-25) filed by Anthropic PBC. (Attachments: # 1 Certificate/Proof of Service)(Related document(s) 152 ) (Winthrop, Douglas) (Filed on 5/30/2025) Modified on 6/3/2025 (kmg, COURT STAFF). Modified on 6/3/2025 (kmg, COURT STAFF). (Entered: 05/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 216,
+        "date_filed": "2025-05-27",
+        "time_filed": "",
+        "date_display": "May 27, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 5/22/2025, before Judge William Alsup for Court Reporter Dani Murray - ordered by Timothy Chung. (knm, COURT STAFF) (Filed on 5/27/2025) (Entered: 05/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 215,
+        "date_filed": "2025-05-23",
+        "time_filed": "",
+        "date_display": "May 23, 2025",
+        "description": "Supplemental Brief Regarding Google Books filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Nelson, Justin) (Filed on 5/23/2025) (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.215.0.pdf"
+      },
+      {
+        "entry_number": 214,
+        "date_filed": "2025-05-23",
+        "time_filed": "",
+        "date_display": "May 23, 2025",
+        "description": "Supplemental Brief in support of Motion for Summary Judgment re 207 Motion Hearing, filed by Anthropic PBC. (Attachments: # 1 Declaration of Joseph Farris, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4)(Related document(s) 207 ) (Farris, Joseph) (Filed on 5/23/2025) Modified on 5/27/2025 (kmg, COURT STAFF). (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.214.0.pdf"
+      },
+      {
+        "entry_number": 213,
+        "date_filed": "2025-05-23",
+        "time_filed": "",
+        "date_display": "May 23, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Anthropic PBC. (Attachments: # 1 Proposed Order, # 2 Declaration of Jessica L. Gillotte, # 3 19 . Miller Declaration Exhibit 12 [ANT_BARTZ_000144504] (SEALED) - PRIVILEGE REDACTED, # 4 26 . Miller Declaration Exhibit 23 [ANT_BARTZ_000006363] (SEALED), # 5 [27.] Miller Declaration Exhibit 25 [ANT _BARTZ_000004936] (SEALED), # 6 47 . CORRECTED Fredricks Declaration Exhibit 2 [ANT_BARTZ_000004915-4920] (SEALED), # 7 48 . Fredricks Declaration Exhibit 4 [ANT_BARTZ_000168435-8443] (SEALED), # 8 51 . CORRECTED Fredricks Declaration Exhibit 20 [ANT_BARTZ_000391435-1443] (SEALED) - PRIVILEGE REDACTED)(Winthrop, Douglas) (Filed on 5/23/2025) Modified on 5/27/2025 (kmg, COURT STAFF). Modified on 5/27/2025 (kmg, COURT STAFF). (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 212,
+        "date_filed": "2025-05-23",
+        "time_filed": "",
+        "date_display": "May 23, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 5/22/2025, before Judge William Alsup for Court Reporter Dani Murray, ordered by Alexander Perry. (knm, COURT STAFF) (Filed on 5/23/2025) (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 211,
+        "date_filed": "2025-05-23",
+        "time_filed": "",
+        "date_display": "May 23, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 5/15/2025 and 5/22/2025 before Judge William Alsup by Joseph Saveri Law Firm, Inc., for Court Reporter April Brott. (Saveri, Joseph) (Filed on 5/23/2025) (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 210,
+        "date_filed": "2025-05-23",
+        "time_filed": "",
+        "date_display": "May 23, 2025",
+        "description": "PERMISSION TO NEGOTIATE CLASS SETTLEMENT. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 5/23/2025) (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.210.0_2.pdf"
+      },
+      {
+        "entry_number": 209,
+        "date_filed": "2025-05-23",
+        "time_filed": "",
+        "date_display": "May 23, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 5/22/2025 before Judge William Alsup by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, for Court Reporter Dani Murray. (Nath, Rohit) (Filed on 5/23/2025) (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.209.0.pdf"
+      },
+      {
+        "entry_number": 208,
+        "date_filed": "2025-05-23",
+        "time_filed": "",
+        "date_display": "May 23, 2025",
+        "description": "Transcript of Proceedings held on 5/22/25, before Judge William H. Alsup. Court Reporter/Transcriber Dani Murray, Dani_Murray@ksd.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. Redaction Request due 6/13/2025. Redacted Transcript Deadline set for 6/23/2025. Release of Transcript Restriction set for 8/21/2025. (Murray, Danielle) (Filed on 5/23/2025) (Entered: 05/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.208.0_1.pdf"
+      },
+      {
+        "entry_number": 207,
+        "date_filed": "2025-05-22",
+        "time_filed": "",
+        "date_display": "May 22, 2025",
+        "description": "Minute Entry for proceedings held before Judge William Alsup: Motion Hearing held on 5/22/2025. re 122 MOTION for Summary Judgment filed by Anthropic PBC The motion having been argued, the Court takes it under submission.The Court orders supplemental briefing re summary judgment, as stated on record. The Court further orders further action re exhibits submitted under seal but with redactions, as stated on record. All ordered filings due May 23, 2025, at 5:00 p.m.Total Time in Court: 1 hour, 35 minutes. Court Reporter: Dani Murray. Plaintiff Attorney: Rohit Nath, Alejandra Salinas, Craig Smyser, Reilly Stoler, Jacob Miller. Defendant Attorney: Joseph Farris, Douglas Winthrop, Jessica Lim Gillotte, Joseph Wetzel, Brian Israel, Devon Hanley Cook. (This is a text-only entry generated by the court. There is no document associated with this entry.) (rfm, COURT USER) (Date Filed: 5/22/2025) (Entered: 05/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 206,
+        "date_filed": "2025-05-22",
+        "time_filed": "",
+        "date_display": "May 22, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on May 22, 2025 before Judge William Alsup by Anthropic PBC, for Court Reporter Dani Murray. (Farris, Joseph) (Filed on 5/22/2025) (Entered: 05/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.206.0.pdf"
+      },
+      {
+        "entry_number": 205,
+        "date_filed": "2025-05-22",
+        "time_filed": "",
+        "date_display": "May 22, 2025",
+        "description": "Administrative Motion to File Under Seal (Pursuant to ECF 196) filed by Anthropic PBC. (Attachments: # 1 Proposed Order, # 2 Declaration of Jessica L. Gillotte, # 3 Declaration of Jared Kaplan, # 4 Declaration of Tom Turvey, # 5 Exhibit 41 Model Data Domain Breakdown Google Sheet [ANT_BARTZ_00 0435165], # 6 Exhibit 45 WTP Valuation Model [ANT_BARTZ_00 0279410], # 7 Kaplan Declaration in Support of Motion for Summary Judgment, # 8 Peterson Declaration in Support of Motion for Summary Judgment, # 9 Anthropic's Notice of Motion and Motion for Summary Judgment, # 10 Turvey Declaration in Support of Motion for Summary Judgment, # 11 Exhibit 1 in support of Plaintiffs Discovery Letter Motion to Compel, # 12 Exhibit 1 in support of Plaintiffs Discovery Letter Motion to Compel, # 13 Ex. A [Proposed redactions to Zhao Decl. Exhibit C], # 14 Miller Decl. Exhibit 2: Anthropic PBCs Second Supplemental Objections and Responses to Plaintiffs Second Set of Interrogatories, # 15 Miller Decl. Exhibit 8: Bates numbered ANT_BARTZ_000 003492-3, # 16 Miller Decl. Exhibit 9: Bates numbered ANT_BARTZ_000 004587-8, # 17 Miller Decl. Exhibit 10: Bates numbered ANT_BARTZ_000 004031-7, # 18 Miller Decl. Exhibit 11: Bates numbered ANT_BARTZ_000 004327, # 19 Miller Decl. Exhibit 12: Bates numbered ANT_BARTZ_000 144504-9, # 20 Miller Decl. Exhibit 13: Bates numbered ANT_BARTZ_000 029063-29171, # 21 Miller Decl. Exhibit 16: Bates numbered ANT_BARTZ_000 003441-2, # 22 Miller Decl. Exhibit 20: Bates numbered ANT_BARTZ_000 391318-20, # 23 Ex. F [proposed redactions to Miller Decl. Exhibit 17: Bates numbered ANT_BARTZ_000 002604], # 24 Miller Decl. Exhibit 19: Bates numbered ANT_BARTZ_000 389773-5, # 25 Miller Decl. Exhibit 22: Bates numbered ANT_BARTZ_000 034918, # 26 Miller Decl. Exhibit 23: Bates numbered ANT_BARTZ_000 006363- 90, # 27 Miller Decl. Exhibit 25: Bates numbered ANT_BARTZ_000 004936- 51, # 28 Miller Decl. Exhibit 26: Bates numbered ANT_BARTZ_000 209219- 235, # 29 Ex. H [proposed redactions to Notice of Motion and Motion for Class Certification], # 30 Ex. I Declaration of Ben Y. Zhao (part 1 of 2), # 31 Ex. I Declaration of Ben Y. Zhao (part 2 of 2), # 32 Ex. J [proposed redactions to Declaration of Jacob S. Miller in Support of Class Certification], # 33 Ex. 35, Report summarizing Anthropic ablation studies, marked as ANT_BARTZ_000 273474-486, # 34 Ex. 41, Excerpts from the April 10, 2025 Transcript of the Deposition of Thomas Turvey, # 35 Declaration of Mycal Tucker in Support of Anthropics Opposition to Plaintiffs Motion for Class Certification, # 36 Anthropics Opposition to Plaintiffs Motion for Class Certification, # 37 Fredricks Decl. Exhibit 12: Bates numbered ANT_BARTZ_000 391318-20, # 38 Fredricks Decl. Exhibit 13: Bates numbered ANT_BARTZ_000 534120-22, # 39 Fredricks Decl. Exhibit 16: Bates numbered ANT_BARTZ_00 0533972-80, # 40 Fredricks Decl. Exhibit 32: Bates numbered ANT_BARTZ_000 139989, # 41 Fredricks Decl. Exhibit 36: Bates numbered ANT_BARTZ_000 006228-6229, # 42 Miller Decl. Exhibit 43: Bates numbered ANT_BARTZ_000 227005-06, # 43 Plaintiffs Opposition to Anthropics Motion for Summary Judgment, # 44 Declaration of Ben Y. Zhao, # 45 Declaration of James E. Malackowski, # 46 Fredricks Decl. Exhibit 1: Bates numbered ANT_BARTZ_000 003439-3440, # 47 Fredricks Decl. Exhibit 2: Bates numbered ANT_BARTZ_000 004915- 4920, # 48 Fredricks Decl. Exhibit 4: Bates numbered ANT_BARTZ_000 168435- 8443, # 49 Fredricks Decl. Exhibit 14: ANT_BARTZ_000 389778- 81, # 50 Fredricks Decl. Exhibit 15: Bates numbered ANT_BARTZ_000 003386- 3414, # 51 Fredricks Decl. Exhibit 20: Bates numbered ANT_BARTZ_000 391435- 1443, # 52 Fredricks Decl. Exhibit 22: excerpts of the Deposition of Tom Turvey, # 53 Fredricks Decl. Exhibit 26: Bates numbered ANT_BARTZ_000 146048, # 54 Fredricks Decl. Exhibit 27: Bates numbered ANT_BARTZ_000 002604, # 55 Fredricks Decl. Exhibit 28: Bates numbered ANT_BARTZ_000 006294-6296, # 56 Fredricks Decl. Exhibit 29: Bates numbered ANT_BARTZ_000 032229-2234, # 57 Fredricks Decl. Exhibit 31: Bates numbered ANT_BARTZ_000 035587- 5591, # 58 Fredricks Decl. Exhibit 35: Bates numbered ANT_BARTZ_000 029063-9171, # 59 Declaration of Jacob S. Miller in Support of Plaintiffs Reply in Support of Class Certification, # 60 Miller Decl. Exhibit 42: Bates numbered ANT_BARTZ_000 184269-8, # 61 Miller Decl. Exhibit 44: Bates numbered ANT_BARTZ_000 389147-205, # 62 Miller Decl. Exhibit 45: Bates numbered ANT_BARTZ_000 365927-366136, # 63 Miller Decl. Exhibit 46: Bates numbered ANT_BARTZ_000 533421-22, # 64 Miller Decl. Exhibit 47: Bates numbered ANT_BARTZ_000 389522-39, # 65 Miller Decl. Exhibit 49: Excerpts of Deposition Mycal Tucker, # 66 Supplemental Declaration of Steven R. Peterson ISO Anthropics Motion for Summary Judgment, # 67 Anthropics Request Regarding Treatment of Confidential Information During Upcoming Hearings, # 68 Declaration of Jessica Gillotte, Exhibit A)(Winthrop, Douglas) (Filed on 5/22/2025) (Entered: 05/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.205.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-22",
+        "time_filed": "",
+        "date_display": "May 22, 2025",
+        "description": "Motion Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 204,
+        "date_filed": "2025-05-21",
+        "time_filed": "",
+        "date_display": "May 21, 2025",
+        "description": "Administrative Motion to File Under Seal re ECF Nos. 147 and 196 filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Declaration of Jacob S. Miller in Support of Plaintiffs' Administrative Motion to Seal, # 2 Exhibit 5 (Sealed Proposed Redactions), # 3 Exhibit 6 (Sealed Proposed Redactions), # 4 Exhibit 7 (Sealed Proposed Redactions), # 5 Exhibit 9 (Sealed Proposed Redactions), # 6 Exhibit 17 (Sealed Proposed Redactions), # 7 Exhibit 18 (Sealed Proposed Redactions), # 8 Exhibit 22 (Sealed Proposed Redactions), # 9 Exhibit 27 (Sealed Proposed Redactions), # 10 Exhibit 28 (Sealed Proposed Redactions), # 11 Exhibit 29 (Sealed Proposed Redactions), # 12 Exhibit 30 (Sealed Proposed Redactions), # 13 Exhibit 31 (Sealed Proposed Redactions), # 14 Exhibit 32 (Sealed Proposed Redactions), # 15 Exhibit 33 (Sealed Proposed Redactions), # 16 Proposed Order)(Geman, Rachel) (Filed on 5/21/2025) Modified on 6/3/2025 (kmg, COURT STAFF). Modified on 6/3/2025 (kmg, COURT STAFF). (Entered: 05/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.204.0.pdf"
+      },
+      {
+        "entry_number": 203,
+        "date_filed": "2025-05-20",
+        "time_filed": "",
+        "date_display": "May 20, 2025",
+        "description": "Supplemental Brief re 199 Order Regarding Class Definition and Notice filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Related document(s) 199 ) (Geman, Rachel) (Filed on 5/20/2025) (Entered: 05/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.203.0.pdf"
+      },
+      {
+        "entry_number": 202,
+        "date_filed": "2025-05-20",
+        "time_filed": "",
+        "date_display": "May 20, 2025",
+        "description": "Supplemental Brief re 199 Order (Anthropic's Response to the Court's Request for Supplemental Briefing Regarding Class Certification) filed byAnthropic PBC. (Related document(s) 199 ) (Winthrop, Douglas) (Filed on 5/20/2025) (Entered: 05/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.202.0.pdf"
+      },
+      {
+        "entry_number": 201,
+        "date_filed": "2025-05-16",
+        "time_filed": "",
+        "date_display": "May 16, 2025",
+        "description": "Supplemental Brief re 148 Opposition/Response to Motion,,,, (Defendant Anthropic's Supplemental Brief in Support of Opposition to Motion for Class Certification) filed byAnthropic PBC. (Related document(s) 148 ) (Winthrop, Douglas) (Filed on 5/16/2025) (Entered: 05/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.201.0.pdf"
+      },
+      {
+        "entry_number": 200,
+        "date_filed": "2025-05-16",
+        "time_filed": "",
+        "date_display": "May 16, 2025",
+        "description": "Letter from Plaintiffs in Response to Court's Request at May 15, 2025 Class Certification Hearing . (Nelson, Justin) (Filed on 5/16/2025) (Entered: 05/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.200.0.pdf"
+      },
+      {
+        "entry_number": 199,
+        "date_filed": "2025-05-16",
+        "time_filed": "",
+        "date_display": "May 16, 2025",
+        "description": "QUESTIONS FOR SUPPLEMENTAL BRIEFING RE CLASS CERTIFICATION. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 5/16/2025) (Entered: 05/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.199.0.pdf"
+      },
+      {
+        "entry_number": 198,
+        "date_filed": "2025-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2025",
+        "description": "Transcript of Proceedings held on May 15, 2025, before Judge William Alsup. Court Reporter/Transcriber April Wood Brott, telephone number 510-225-8350 april_brott@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 192 Transcript Order, 195 Transcript Order ) Release of Transcript Restriction set for 8/13/2025. (Related documents(s) 192, 195 ) (Brott, April) (Filed on 5/15/2025) (Entered: 05/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 197,
+        "date_filed": "2025-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2025",
+        "description": "CLERK'S NOTICE: Motion hearing re: 122 Motion for Summary Judgment is ADVANCED to be heard for oral argument from 5/23/2025 to 5/22/2025 at 12:00pm noon in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Filed on 5/15/2025) (Entered: 05/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 196,
+        "date_filed": "2025-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2025",
+        "description": "Minute Entry for proceedings held before Judge William Alsup: Motion Hearing re: 125 Motion to Certify Class held on 5/15/2025. Parties stated appearances and proffered argument. Court will take the motion under submission. Further, Court ruled all sealing motions will be denied absent omnibus motion(s) renewing and paring down - not patching up, but dramatically paring down - the prior sealing motions. The omnibus motion(s) shall conform to all ordinary requirements as well as indicate what material was previously requested to be redacted (e.g., orange highlight) and what reduced portion is now to be redacted (e.g., in clearly visible red or green outline) and is due to be filed 5/22/2025 at 12:00pm noon. Discovery Letter:Parties discussed relevance of discovery letter to this motion hearing with the Court. Total Time in Court: 7:56 - 9:23 = 1 Hour; 27 Minutes. Court Reporter: April Brott. Plaintiff Attorneys: Justin Nelson, Collin Fredricks, Reilly Stoler, Rohit Nath, Alejandra Salinas, J. Craig Smyser, Jacob Miller, Daniel Hutchinson, Rachel Geman.Also Present: Charles Graber, Kirk Wallace Johnson. Defendant Attorneys: Doug Winthrop, Jessica Gillotte, Joseph Farris, Devon Hanley Cook. Also Present: Aparna Sridhar. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Date Filed: 5/15/2025) (Entered: 05/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 195,
+        "date_filed": "2025-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 05/15/2025 before Judge William Alsup by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, for Court Reporter April Brott. (Nath, Rohit) (Filed on 5/15/2025) (Entered: 05/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.195.0.pdf"
+      },
+      {
+        "entry_number": 194,
+        "date_filed": "2025-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2025",
+        "description": "Administrative Motion to File Under Seal filed by HarperCollins Publishers L.L.C.. (Attachments: # 1 Proposed Order Proposed Order, # 2 Declaration (Redacted), # 3 Declaration (Unredacted))(McCormick, Terence) (Filed on 5/15/2025) (Entered: 05/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.194.0.pdf"
+      },
+      {
+        "entry_number": 193,
+        "date_filed": "2025-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2025",
+        "description": "Declaration of Trina Hunn in Support of 180 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed byHarperCollins Publishers L.L.C.. (Attachments: # 1 Exhibit (April 29, 2025 Kadrey Sealing Order))(Related document(s) 180 ) (McCormick, Terence) (Filed on 5/15/2025) (Entered: 05/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.193.0.pdf"
+      },
+      {
+        "entry_number": 192,
+        "date_filed": "2025-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 05/15/2025 before Judge William Alsup by Anthropic PBC, for Court Reporter April Brott. (Winthrop, Douglas) (Filed on 5/15/2025) (Entered: 05/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.192.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2025",
+        "description": "Motion Hearing AND Order on Motion to Certify Class",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-15",
+        "time_filed": "",
+        "date_display": "May 15, 2025",
+        "description": "Clerk's Notice AND ~Util - Set Motion and Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 191,
+        "date_filed": "2025-05-14",
+        "time_filed": "",
+        "date_display": "May 14, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Discovery Letter Brief [under seal], # 2 Exhibit B to Fredricks Decl. [under seal], # 3 Exhibit C to Fredricks Decl. [under seal], # 4 Proposed Order)(Geman, Rachel) (Filed on 5/14/2025) (Entered: 05/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.191.0.pdf"
+      },
+      {
+        "entry_number": 190,
+        "date_filed": "2025-05-14",
+        "time_filed": "",
+        "date_display": "May 14, 2025",
+        "description": "Discovery Letter Brief (Redacted) filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Declaration of Collin Fredricks, # 2 Exhibit A to Fredricks Decl., # 3 Exhibit B-C to Fredricks Decl. [under seal], # 4 Exhibit D to Fredricks Decl.)(Geman, Rachel) (Filed on 5/14/2025) (Entered: 05/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.190.0.pdf"
+      },
+      {
+        "entry_number": 189,
+        "date_filed": "2025-05-13",
+        "time_filed": "",
+        "date_display": "May 13, 2025",
+        "description": "Letter from Joseph Farris Re: Anthropic's Request Regarding Treatment of Confidential Information During Upcoming Hearings. (Attachments: # 1 Declaration of Jessica L. Gillotte, # 2 Exhibit Redacted Ex. A)(Winthrop, Douglas) (Filed on 5/13/2025) (Entered: 05/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.189.0.pdf"
+      },
+      {
+        "entry_number": 188,
+        "date_filed": "2025-05-13",
+        "time_filed": "",
+        "date_display": "May 13, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Anthropic PBC. (Attachments: # 1 Proposed Order, # 2 Declaration of Jessica Gillotte, # 3 SEALED Anthropic Request re Treatment of Confidential Information, # 4 Exhibit SEALED Ex. A)(Winthrop, Douglas) (Filed on 5/13/2025) (Entered: 05/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.188.0.pdf"
+      },
+      {
+        "entry_number": 187,
+        "date_filed": "2025-05-13",
+        "time_filed": "",
+        "date_display": "May 13, 2025",
+        "description": "Response re 185 Notice (Other), Defendant Anthropic PBC'S Response to Plaintiff's Notice of Supplemental Authority (UNITED STATES COPYRIGHT OFFICE REPORT) by Anthropic PBC. (Winthrop, Douglas) (Filed on 5/13/2025) Modified on 5/13/2025 (kmg, COURT STAFF). (Entered: 05/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.187.0.pdf"
+      },
+      {
+        "entry_number": 186,
+        "date_filed": "2025-05-13",
+        "time_filed": "",
+        "date_display": "May 13, 2025",
+        "description": "CLERK'S NOTICE CHANGING TIME OF MOTION HEARING FROM 8:00AM TO 12:00PM NOON ON 5/23/2025 RE: 122 MOTION FOR SUMMARY JUDGMENT: Time of Motion Hearing re: 122 reset for 5/23/2025 12:00 PM in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Filed on 5/13/2025) (Entered: 05/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-13",
+        "time_filed": "",
+        "date_display": "May 13, 2025",
+        "description": "Clerk's Notice AND ~Util - Set Motion and Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 185,
+        "date_filed": "2025-05-12",
+        "time_filed": "",
+        "date_display": "May 12, 2025",
+        "description": "NOTICE of Supplemental Authority (United States Copyright Office Reort) by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson re 125 MOTION to Certify Class, 158 Opposition/Response to Motion, Supplemental Authority (Attachments: # 1 Attachment A)(Geman, Rachel) (Filed on 5/12/2025) Modified on 5/13/2025 (kmg, COURT STAFF). (Entered: 05/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.185.0.pdf"
+      },
+      {
+        "entry_number": 184,
+        "date_filed": "2025-05-12",
+        "time_filed": "",
+        "date_display": "May 12, 2025",
+        "description": "OPPOSITION/RESPONSE (re 176 Administrative Motion to File Under Seal, 179 Administrative Motion to File Under Seal Anthropic's Reply ISO MSJ ) filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Proposed Order)(Geman, Rachel) (Filed on 5/12/2025) (Entered: 05/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.184.0.pdf"
+      },
+      {
+        "entry_number": 183,
+        "date_filed": "2025-05-11",
+        "time_filed": "",
+        "date_display": "May 11, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Corrected ECF No. [171-13] filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Exhibit 50 Corrected (Under Seal), # 2 Proposed Order)(Geman, Rachel) (Filed on 5/11/2025) (Entered: 05/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 182,
+        "date_filed": "2025-05-09",
+        "time_filed": "",
+        "date_display": "May 9, 2025",
+        "description": "CLERK'S NOTICE: This notice is to clarify the 122 Motion for Summary Judgment on Fair Use will now be heard and specially reset for Friday 5/23 at 12:00 Noon. Hearing re 125 Motion for Class Certification will still be heard Thursday 5/15 at 8:00AM. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Filed on 5/9/2025) (Entered: 05/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-05-09",
+        "time_filed": "",
+        "date_display": "May 9, 2025",
+        "description": "Clerk's Notice AND ~Util - Set Motion and Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 181,
+        "date_filed": "2025-05-08",
+        "time_filed": "",
+        "date_display": "May 8, 2025",
+        "description": "REPLY (re 122 MOTION for Summary Judgment ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Steven R. Peterson, # 2 Declaration of Douglas A. Winthrop, # 3 Exhibit 47 to Winthrop Declaration, # 4 Exhibit 48 to Winthrop Declaration, # 5 Exhibit 49 to Winthrop Declaration)(Winthrop, Douglas) (Filed on 5/8/2025) (Entered: 05/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.181.0_1.pdf"
+      },
+      {
+        "entry_number": 180,
+        "date_filed": "2025-05-08",
+        "time_filed": "",
+        "date_display": "May 8, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Anthropic PBC. (Attachments: # 1 Proposed Order, # 2 SEALED Reply ISO MSJ, # 3 SEALED Peterson Declaration, # 4 SEALED EX. 47 to Peterson Declaration, # 5 SEALED EX. 48 to Peterson Declaration, # 6 SEALED EX. 49 to Peterson Declaration)(Winthrop, Douglas) (Filed on 5/8/2025) (Entered: 05/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.180.0.pdf"
+      },
+      {
+        "entry_number": 179,
+        "date_filed": "2025-05-08",
+        "time_filed": "",
+        "date_display": "May 8, 2025",
+        "description": "Administrative Motion to File Under Seal Anthropic's Reply ISO MSJ filed by Anthropic PBC. (Attachments: # 1 Declaration of Jessica Gillotte, # 2 Proposed Order, # 3 SEALED Reply ISO MSJ, # 4 SEALED Peterson Declaration)(Winthrop, Douglas) (Filed on 5/8/2025) (Entered: 05/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.179.0.pdf"
+      },
+      {
+        "entry_number": 178,
+        "date_filed": "2025-05-08",
+        "time_filed": "",
+        "date_display": "May 8, 2025",
+        "description": "Administrative Motion to File Under Seal filed by HarperCollins Publishers L.L.C.. (Attachments: # 1 Proposed Order, # 2 Exhibit Redacted Version of Hunn Declaration, # 3 Exhibit Unredacted Version of Hunn Declaration)(McCormick, Terence) (Filed on 5/8/2025) (Entered: 05/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.178.0.pdf"
+      },
+      {
+        "entry_number": 177,
+        "date_filed": "2025-05-08",
+        "time_filed": "",
+        "date_display": "May 8, 2025",
+        "description": "Declaration of Trina Hunn in Support of 171 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed byHarperCollins Publishers L.L.C.. (Attachments: # 1 Exhibit April 29, 2025 Kadrey Sealing Order)(Related document(s) 171 ) (McCormick, Terence) (Filed on 5/8/2025) (Entered: 05/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.177.0.pdf"
+      },
+      {
+        "entry_number": 176,
+        "date_filed": "2025-05-07",
+        "time_filed": "",
+        "date_display": "May 7, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Anthropic PBC. (Attachments: # 1 Declaration of Jessica Gillotte, # 2 Proposed Order, # 3 Unredacted Bartz Reply in Support of Class Certification, # 4 Unredacted Miller Declaration, # 5 Unredacted Miller Decl. Ex. 49, # 6 Unredacted Miller Decl. Ex. 50)(Winthrop, Douglas) (Filed on 5/7/2025) (Entered: 05/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.176.0.pdf"
+      },
+      {
+        "entry_number": 175,
+        "date_filed": "2025-05-05",
+        "time_filed": "",
+        "date_display": "May 5, 2025",
+        "description": "Exhibits re 124 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed (ECF 120), 119 Administrative Motion to File Under Seal -Unredacted Peterson Declaration in Support of Anthropics Motion for Summary Judge filed by Anthropic PBC. (Related document(s) 124, 119 ) (Winthrop, Douglas) (Filed on 5/5/2025) (Entered: 05/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 174,
+        "date_filed": "2025-05-02",
+        "time_filed": "",
+        "date_display": "May 2, 2025",
+        "description": "Administrative Motion to File Under Seal filed by HarperCollins Publishers L.L.C.. (Attachments: # 1 Proposed Order April 29, 2025 Kadrey Sealing Order, # 2 Declaration Redacted Version of Hunn Declaration, # 3 Declaration Unredacted Version of Hunn Declaration)(McCormick, Terence) (Filed on 5/2/2025) (Entered: 05/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.174.0.pdf"
+      },
+      {
+        "entry_number": 173,
+        "date_filed": "2025-05-02",
+        "time_filed": "",
+        "date_display": "May 2, 2025",
+        "description": "Declaration of Trina Hunn in Support of 157 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed byHarperCollins Publishers L.L.C.. (Attachments: # 1 Exhibit April 29, 2025 Kadrey Sealing Order)(Related document(s) 157 ) (McCormick, Terence) (Filed on 5/2/2025) (Entered: 05/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.173.0.pdf"
+      },
+      {
+        "entry_number": 172,
+        "date_filed": "2025-05-01",
+        "time_filed": "",
+        "date_display": "May 1, 2025",
+        "description": "Reply (re 125 MOTION to Certify Class ) filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Declaration of Jacob S. Miller, # 2 Exhibit 40-50 to Miller Decl. [under seal], # 3 Exhibit 51 to Miller Decl., # 4 Exhibit 52 to Miller Decl., # 5 Exhibit 53 to Miller Decl., # 6 Exhibit 54 to Miller Decl., # 7 Exhibit 55 to Miller Decl., # 8 Exhibit 56 to Miller Decl., # 9 Exhibit 57 to Miller Decl., # 10 Exhibit 58 to Miller Decl., # 11 Exhibit 59 to Miller Decl., # 12 Exhibit 60 to Miller Decl., # 13 Exhibit 61 to Miller Decl., # 14 Declaration of Charles Graeber)(Geman, Rachel) (Filed on 5/1/2025) Modified on 5/6/2025 (kmg, COURT STAFF). (Entered: 05/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.172.0.pdf"
+      },
+      {
+        "entry_number": 171,
+        "date_filed": "2025-05-01",
+        "time_filed": "",
+        "date_display": "May 1, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Unredacted Reply Brief ISO Plaintiffs Motion for Class Certification, # 2 Unredacted Miller Decl. for Reply, # 3 Exhibit 40 to Miller Decl. [under seal], # 4 Exhibit 41 to Miller Decl. [under seal], # 5 Exhibit 42 to Miller Decl. [under seal], # 6 Exhibit 43 to Miller Decl. [under seal], # 7 Exhibit 44 to Miller Decl. [under seal], # 8 Exhibit 45 to Miller Decl. [under seal], # 9 Exhibit 46 to Miller Decl. [under seal], # 10 Exhibit 47 to Miller Decl. [under seal], # 11 Exhibit 48 to Miller Decl. [under seal], # 12 Exhibit 49 to Miller Decl. [under seal], # 13 Exhibit 50 to Miller Decl. [under seal], # 14 Proposed Order)(Geman, Rachel) (Filed on 5/1/2025) (Entered: 05/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.171.0.pdf"
+      },
+      {
+        "entry_number": 170,
+        "date_filed": "2025-05-01",
+        "time_filed": "",
+        "date_display": "May 1, 2025",
+        "description": "Administrative Motion to File Under Seal (Relating to ECF Nos. 152 & 157) filed by Anthropic PBC. (Attachments: # 1 Declaration of Jessica Gillotte, # 2 Proposed Order, # 3 SEALED Opp. to MSJ, # 4 SEALED Zhao Declaration, # 5 SEALED Malackowski Declaration, # 6 SEALED Fredricks Declaration, # 7 SEALED Exhibit 6, # 8 SEALED Exhibit 27, # 9 SEALED Exhibit 30, # 10 SEALED Exhibit 37)(Winthrop, Douglas) (Filed on 5/1/2025) (Entered: 05/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.170.0.pdf"
+      },
+      {
+        "entry_number": 169,
+        "date_filed": "2025-04-28",
+        "time_filed": "",
+        "date_display": "Apr 28, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed [LINK TO SEALED DOCUMENTS AT DKT. 147] filed by Anthropic PBC. (Attachments: # 1 Proposed Order) (Winthrop, Douglas) (Filed on 4/28/2025) Modified on 4/29/2025 (kmg, COURT STAFF). (Entered: 04/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.169.0.pdf"
+      },
+      {
+        "entry_number": 168,
+        "date_filed": "2025-04-28",
+        "time_filed": "",
+        "date_display": "Apr 28, 2025",
+        "description": "Declaration of Douglas A. Winthrop in Support of 148 Opposition/Response to Motion,(In Support of Anthropic's Opposition to Motion for Class Certification) filed by Anthropic PBC. (Related document(s) 148 ) (Winthrop, Douglas) (Filed on 4/28/2025) Modified on 4/29/2025 (kmg, COURT STAFF). (Entered: 04/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.168.0.pdf"
+      },
+      {
+        "entry_number": 167,
+        "date_filed": "2025-04-28",
+        "time_filed": "",
+        "date_display": "Apr 28, 2025",
+        "description": "MOTION to Remove Incorrectly Filed Document [ECF Dkt. Nos. 147-0, 147-1 & 148-1] filed by Anthropic PBC. (Winthrop, Douglas) (Filed on 4/28/2025) (Entered: 04/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.167.0.pdf"
+      },
+      {
+        "entry_number": 166,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Proposed Order)(Geman, Rachel) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.166.0.pdf"
+      },
+      {
+        "entry_number": 165,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "MOTION to Remove Incorrectly Filed Document Dkt. 153 and 158 filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Proposed Order)(Fredricks, Collin) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.165.0.pdf"
+      },
+      {
+        "entry_number": 164,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Correction of Docket # 158 OPPOSITION/RESPONSE (re 122 MOTION for Summary Judgment )filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Proposed Order)(Fredricks, Collin) (Filed on 4/25/2025) Modified on 4/29/2025 (kmg, COURT STAFF). (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.164.0.pdf"
+      },
+      {
+        "entry_number": 163,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Correction of Docket # 153 Declaration of Collin Fredricks, filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3, # 4 Exhibit 4, # 5 Exhibit 5, # 6 Exhibit 6, # 7 Exhibit 7, # 8 Exhibit 8, # 9 Exhibit 9, # 10 Exhibit 10, # 11 Exhibit 11, # 12 Exhibit 12, # 13 Exhibit 13, # 14 Exhibit 14, # 15 Exhibit 15, # 16 Exhibit 16, # 17 Exhibit 17, # 18 Exhibit 18, # 19 Exhibit 19, # 20 Exhibit 20, # 21 Exhibit 21, # 22 Exhibit 22, # 23 Exhibit 23, # 24 Exhibit 24, # 25 Exhibit 25, # 26 Exhibit 26, # 27 Exhibit 27, # 28 Exhibit 28, # 29 Exhibit 29, # 30 Exhibit 30, # 31 Exhibit 31, # 32 Exhibit 32, # 33 Exhibit 33, # 34 Exhibit 34, # 35 Exhibit 35, # 36 Exhibit 36, # 37 Exhibit 37, # 38 Exhibit 38, # 39 Exhibit 39, # 40 Exhibit 40, # 41 Exhibit 41, # 42 Exhibit 42, # 43 Exhibit 43, # 44 Exhibit 44, # 45 Exhibit 45, # 46 Exhibit 46, # 47 Exhibit 47)(Fredricks, Collin) (Filed on 4/25/2025) Modified on 4/29/2025 (kmg, COURT STAFF). (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.163.0_2.pdf"
+      },
+      {
+        "entry_number": 162,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Certificate of Interested Entities by HarperCollins Publishers L.L.C. identifying Corporate Parent News Corporation, Other Affiliate T. Rowe Price Associates Inc. for HarperCollins Publishers L.L.C.. (McCormick, Terence) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.162.0.pdf"
+      },
+      {
+        "entry_number": 161,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Administrative Motion to File Under Seal filed by HarperCollins Publishers L.L.C.. (Attachments: # 1 Proposed Order, # 2 Declaration (Redacted), # 3 Declaration (Unredacted))(McCormick, Terence) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.161.0_2.pdf"
+      },
+      {
+        "entry_number": 160,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Declaration of ISHA MEHMOOD in Support of 147 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed byHarperCollins Publishers L.L.C.. (Related document(s) 147 ) (McCormick, Terence) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.160.0.pdf"
+      },
+      {
+        "entry_number": 159,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "NOTICE of Appearance filed by Terence William McCormick, I on behalf of HarperCollins Publishers L.L.C. (McCormick, Terence) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 158,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "OPPOSITION/RESPONSE (re 122 MOTION for Summary Judgment ) filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Proposed Order)(Fredricks, Collin) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.158.0.pdf"
+      },
+      {
+        "entry_number": 157,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Proposed Order, # 2 Plaintiffs' Opposition to Anthropic's Motion for Summary Judgment)(Fredricks, Collin) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.157.0.pdf"
+      },
+      {
+        "entry_number": 156,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Declaration (REDACTED) of JAMES E. MALACKOWSKI (REDACTED) filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Fredricks, Collin) (Filed on 4/25/2025) Modified on 4/26/2025 (kmg, COURT STAFF). Modified on 4/26/2025 (kmg, COURT STAFF). (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.156.0.pdf"
+      },
+      {
+        "entry_number": 155,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Declaration of BEN Y. ZHAO, PHD In Support of Plaintiff's Opposition to PANTHROPIC'S MOTION for SUMMARY JUDGMENT (REDACTED) filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Exhibit A, # 2 Exhibit B)(Fredricks, Collin) (Filed on 4/25/2025) **Locked per filer's request. ** Modified on 4/25/2025 (ddk, COURT STAFF). Modified on 4/26/2025 (kmg, COURT STAFF). (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.155.0.pdf"
+      },
+      {
+        "entry_number": 154,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "EXHIBITS re 153 Declaration in Support, Additional EXHIBITS to the Declaration of COLLIN FREDRICKS in Support of Plaintiff's Opposition to ANTHROPIC'S MOTION for SUMMARY JUDGMENT (REDACTED) filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Exhibit 31, # 2 Exhibit 32, # 3 Exhibit 33, # 4 Exhibit 34, # 5 Exhibit 35, # 6 Exhibit 36, # 7 Exhibit 37, # 8 Exhibit 38, # 9 Exhibit 39, # 10 Exhibit 40, # 11 Exhibit 41, # 12 Exhibit 42, # 13 Exhibit 43, # 14 Exhibit 44, # 15 Exhibit 45, # 16 Exhibit 46, # 17 Exhibit 47)(Related document(s) 153 ) (Fredricks, Collin) (Filed on 4/25/2025) Modified on 4/26/2025 (kmg, COURT STAFF). (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.154.0.pdf"
+      },
+      {
+        "entry_number": 153,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Declaration of COLLIN FREDRICKS IN SUPPORT OF PLAINTIFFS' OPPOSITION TO ANTHROPIC'S MOTION FOR SUMMARY JUDGMENT (REDACTED) filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3, # 4 Exhibit 4, # 5 Exhibit 5, # 6 Exhibit 6, # 7 Exhibit 7, # 8 Exhibit 8, # 9 Exhibit 9, # 10 Exhibit 10, # 11 Exhibit 11, # 12 Exhibit 12, # 13 Exhibit 13, # 14 Exhibit 14, # 15 Exhibit 15, # 16 Exhibit 16, # 17 Exhibit 17, # 18 Exhibit 18, # 19 Exhibit 19, # 20 Exhibit 20, # 21 Exhibit 21, # 22 Exhibit 22, # 23 Exhibit 23, # 24 Exhibit 24, # 25 Exhibit 25, # 26 Exhibit 26, # 27 Exhibit 27, # 28 Exhibit 28, # 29 Exhibit 29, # 30 Exhibit 30)(Fredricks, Collin) (Filed on 4/25/2025) (Entered: 04/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.153.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-25",
+        "time_filed": "",
+        "date_display": "Apr 25, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 152,
+        "date_filed": "2025-04-24",
+        "time_filed": "",
+        "date_display": "Apr 24, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Proposed Order, # 2 Declaration of Zhao, # 3 Exhibit A, # 4 Exhibit B, # 5 Declaration of Malackowski, # 6 Declaration of Fredricks, # 7 Exhibit 1, # 8 Exhibit 2, # 9 Exhibit 3, # 10 Exhibit 4, # 11 Exhibit 6, # 12 Exhibit 8, # 13 Exhibit 12, # 14 Exhibit 13, # 15 Exhibit 14, # 16 Exhibit 15, # 17 Exhibit 16, # 18 Exhibit 17, # 19 Exhibit 19, # 20 Exhibit 20, # 21 Exhibit 21, # 22 Exhibit 22, # 23 Exhibit 26, # 24 Exhibit 27, # 25 Exhibit 28, # 26 Exhibit 29, # 27 Exhibit 30, # 28 Exhibit 31, # 29 Exhibit 32, # 30 Exhibit 33, # 31 Exhibit 35, # 32 Exhibit 36, # 33 Exhibit 37, # 34 Exhibit 38, # 35 Exhibit 43, # 36 Exhibit 46)(Fredricks, Collin) (Filed on 4/24/2025) Modified on 4/26/2025 (kmg, COURT STAFF). (Entered: 04/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.152.0.pdf"
+      },
+      {
+        "entry_number": 151,
+        "date_filed": "2025-04-22",
+        "time_filed": "",
+        "date_display": "Apr 22, 2025",
+        "description": "AFFIDAVIT of Service for Administrative Motion to Consider Whether Another Party's Material Should Be Sealed & Supporting Documents served on HarperCollins Publishers LLC on April 18, 2025, filed by Anthropic PBC. (Winthrop, Douglas) (Filed on 4/22/2025) (Entered: 04/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.151.0.pdf"
+      },
+      {
+        "entry_number": 150,
+        "date_filed": "2025-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2025",
+        "description": "Declaration of Mohit Iyyer in Support of 148 Opposition/Response to Motion, filed by Anthropic PBC. (Related document(s) 148 ) (Winthrop, Douglas) (Filed on 4/17/2025) Modified on 4/21/2025 (kmg, COURT STAFF). (Entered: 04/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.150.0_1.pdf"
+      },
+      {
+        "entry_number": 149,
+        "date_filed": "2025-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2025",
+        "description": "Declaration of Mycal Tucker in Support of 148 Opposition/Response to Motion, filed by Anthropic PBC. (Related document(s) 148 ) (Winthrop, Douglas) (Filed on 4/17/2025) Modified on 4/21/2025 (kmg, COURT STAFF). (Entered: 04/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.149.0.pdf"
+      },
+      {
+        "entry_number": 148,
+        "date_filed": "2025-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2025",
+        "description": "OPPOSITION/RESPONSE (re 125 MOTION to Certify Class ) filed byAnthropic PBC. (Attachments: # 1 Declaration of Douglas A. Winthrop, # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6, # 8 Exhibit 7, # 9 Exhibit 8, # 10 Exhibit 9, # 11 Exhibit 10, # 12 Exhibit 11, # 13 Exhibit 12, # 14 Exhibit 13, # 15 Exhibit 14, # 16 Exhibit 15, # 17 Exhibit 16, # 18 Exhibit 17, # 19 Exhibit 18, # 20 Exhibit 19, # 21 Exhibit 20, # 22 Exhibit 21, # 23 Exhibit 22, # 24 Exhibit 23, # 25 Exhibit 24, # 26 Exhibit 25, # 27 Exhibit 26, # 28 Exhibit 27, # 29 Exhibit 28, # 30 Exhibit 29, # 31 Exhibit 30, # 32 Exhibit 31, # 33 Exhibit 32, # 34 Exhibit 33, # 35 Exhibit 34, # 36 Exhibit 35, # 37 Exhibit 36, # 38 Exhibit 37, # 39 Exhibit 38, # 40 Exhibit 39, # 41 Exhibit 40, # 42 Exhibit 41, # 43 Exhibit 42, # 44 Exhibit 43, # 45 Exhibit 44, # 46 Exhibit 45, # 47 Exhibit 46)(Winthrop, Douglas) (Filed on 4/17/2025) **Locked per filer's request. ** Modified on 4/28/2025 (ddk, COURT STAFF). (Entered: 04/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.148.0_1.pdf"
+      },
+      {
+        "entry_number": 147,
+        "date_filed": "2025-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Anthropic PBC. (Attachments: # 1 Proposed Order, # 2 Exhibit 5, # 3 Exhibit 6, # 4 Exhibit 7, # 5 Exhibit 9, # 6 Exhibit 10, # 7 Exhibit 11, # 8 Exhibit 12, # 9 Exhibit 13, # 10 Exhibit 14, # 11 Exhibit 17, # 12 Exhibit 18, # 13 Exhibit 19, # 14 Exhibit 20, # 15 Exhibit 21, # 16 Exhibit 22, # 17 Exhibit 26, # 18 Exhibit 27, # 19 Exhibit 28, # 20 Exhibit 29, # 21 Exhibit 30, # 22 Exhibit 31, # 23 Exhibit 32, # 24 Exhibit 33, # 25 Exhibit 34, # 26 Exhibit 40, # 27 Exhibit 42, # 28 Declaration of Mycal Tucker, # 29 Declaration of Mohit Iyyer, # 30 SEALED Opposition)(Winthrop, Douglas) (Filed on 4/17/2025) **Locked per filer's request.** Modified on 4/28/2025 (ddk, COURT STAFF). (Entered: 04/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.147.0.pdf"
+      },
+      {
+        "entry_number": 146,
+        "date_filed": "2025-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Anthropic PBC. (Attachments: # 1 Declaration of Jared Kaplan, # 2 Proposed Order, # 3 Exhibit 35, # 4 Exhibit 41, # 5 Declaration of Mycal Tucker, # 6 Declaration of Mohit Iyyer, # 7 SEALED Opposition)(Winthrop, Douglas) (Filed on 4/17/2025) (Entered: 04/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.146.0.pdf"
+      },
+      {
+        "entry_number": 145,
+        "date_filed": "2025-04-16",
+        "time_filed": "",
+        "date_display": "Apr 16, 2025",
+        "description": "Administrative Motion to File Under Seal -DEFENDANT ANTHROPIC PBCS NOTICE OF MOTION AND MOTION TO REDACT AND SEAL PORTIONS OF THE MARCH 25, 2025 HEARING TRANSCRIPT filed by Anthropic PBC. (Attachments: # 1 Declaration of Jessica L. Gillotte, # 2 Proposed Order, # 3 Exhibit A - Unredacted Hearing Transcript)(Farris, Joseph) (Filed on 4/16/2025) Modified on 4/21/2025 (kmg, COURT STAFF). (Entered: 04/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.145.0.pdf"
+      },
+      {
+        "entry_number": 144,
+        "date_filed": "2025-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2025",
+        "description": "Transcript of Proceedings held on April 9, 2025, before Judge William Alsup. Stenographic Court Reporter Ana Dub, RDR, CRR, telephone number 415-290-1651/ana_dub@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter until the deadline for the Release of Transcript Restriction. After that date, it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 143 Transcript Order, 142 Transcript Order ) Release of Transcript Restriction set for 7/14/2025. (Related documents(s) 143, 142 ) (amd, COURT STAFF) (Filed on 4/14/2025) (Entered: 04/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.144.0.pdf"
+      },
+      {
+        "entry_number": 143,
+        "date_filed": "2025-04-11",
+        "time_filed": "",
+        "date_display": "Apr 11, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 04/09/2025 before Judge William Alsup by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, for Court Reporter Ana Dub. (Nath, Rohit) (Filed on 4/11/2025) (Entered: 04/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.143.0.pdf"
+      },
+      {
+        "entry_number": 142,
+        "date_filed": "2025-04-10",
+        "time_filed": "",
+        "date_display": "Apr 10, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 04/09/2025 before Judge William Alsup by Anthropic PBC, for Court Reporter Ana Dub. (Winthrop, Douglas) (Filed on 4/10/2025) (Entered: 04/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.142.0.pdf"
+      },
+      {
+        "entry_number": 141,
+        "date_filed": "2025-04-09",
+        "time_filed": "",
+        "date_display": "Apr 9, 2025",
+        "description": "Minute Entry for proceedings held before Judge William Alsup: Discovery Hearing held on 4/9/2025 re: 136 Discovery Letter Brief. Court ruled as stated on the record.Total Time in Court: 12:43 - 1:10 = 27 Minutes. Court Reporter: Ana Dub. Plaintiff Attorneys: Justin Nelson, Collin Fredricks, Daniel Hutchinson, Jacob Miller. Defendant Attorneys: Douglas Winthrop, Devon Hanley Cook, Cameron Klein. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Date Filed: 4/9/2025) (Entered: 04/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-09",
+        "time_filed": "",
+        "date_display": "Apr 9, 2025",
+        "description": "Discovery Hearing AND Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 140,
+        "date_filed": "2025-04-07",
+        "time_filed": "",
+        "date_display": "Apr 7, 2025",
+        "description": "Letter re Court's Order Resetting Discovery Hearing from Plaintiffs' Counsel (Nelson, Justin) (Filed on 4/7/2025) Modified on 4/9/2025 (kmg, COURT STAFF). (Entered: 04/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.140.0.pdf"
+      },
+      {
+        "entry_number": 139,
+        "date_filed": "2025-04-07",
+        "time_filed": "",
+        "date_display": "Apr 7, 2025",
+        "description": "CLERK'S NOTICE RESETTING TIME ON DISCOVERY HEARING. Discovery Hearing set for 4/9/2025 AT 01:00 PM (PREVIOUSLY 11:00 AM) in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. (This is a text-only entry generated by the court. There is no document associated with this entry.) (cl, COURT STAFF) (Filed on 4/7/2025) (Entered: 04/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-07",
+        "time_filed": "",
+        "date_display": "Apr 7, 2025",
+        "description": "Clerk's Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 138,
+        "date_filed": "2025-04-04",
+        "time_filed": "",
+        "date_display": "Apr 4, 2025",
+        "description": "ORDER RE 136 DISCOVERY LETTER SEEKING RECONSIDERATION. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 4/4/2025) (Entered: 04/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.138.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-04-04",
+        "time_filed": "",
+        "date_display": "Apr 4, 2025",
+        "description": "Set/Reset Hearing: Discovery Hearing set for 4/9/2025 at 11:00 AM in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. (cl, COURT STAFF) (Filed on 4/4/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 137,
+        "date_filed": "2025-04-03",
+        "time_filed": "",
+        "date_display": "Apr 3, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Anthropic PBC. (Attachments: # 1 Declaration of Kaplan, # 2 Proposed Order, # 3 Exhibit A unredacted, # 4 Exhibit B unredacted, # 5 Exhibit C unredacted, # 6 Exhibit D unredacted, # 7 Exhibit E unredacted, # 8 Exhibit F unredacted, # 9 Exhibit G unredacted, # 10 Exhibit H unredacted, # 11 Exhibit I unredacted part 1 of 2, # 12 Exhibit I unredacted part 2 of 2, # 13 Exhibit J unredacted)(Winthrop, Douglas) (Filed on 4/3/2025) (Entered: 04/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.137.0.pdf"
+      },
+      {
+        "entry_number": 136,
+        "date_filed": "2025-04-03",
+        "time_filed": "",
+        "date_display": "Apr 3, 2025",
+        "description": "Discovery Letter Briefin Response to Plaintiffs' April 2 Discovery Dispute Letter filed by Anthropic PBC. (Farris, Joseph) (Filed on 4/3/2025) (Entered: 04/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.136.0.pdf"
+      },
+      {
+        "entry_number": 135,
+        "date_filed": "2025-04-03",
+        "time_filed": "",
+        "date_display": "Apr 3, 2025",
+        "description": "QUESTIONS FOR 122 BRIEFING. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 4/3/2025) (Entered: 04/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.135.0.pdf"
+      },
+      {
+        "entry_number": 134,
+        "date_filed": "2025-04-02",
+        "time_filed": "",
+        "date_display": "Apr 2, 2025",
+        "description": "ORDER RE 132 DISCOVERY LETTER. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 4/2/2025) (Entered: 04/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.134.0.pdf"
+      },
+      {
+        "entry_number": 133,
+        "date_filed": "2025-04-02",
+        "time_filed": "",
+        "date_display": "Apr 2, 2025",
+        "description": "NOTICE of Intent to Request Redaction of Transcript by Jessica Lim Gillotte (Gillotte, Jessica) (Filed on 4/2/2025) (Entered: 04/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.133.0.pdf"
+      },
+      {
+        "entry_number": 132,
+        "date_filed": "2025-04-02",
+        "time_filed": "",
+        "date_display": "Apr 2, 2025",
+        "description": "Discovery Letter Brief filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Exhibit A, # 2 Exhibit B)(Fredricks, Collin) (Filed on 4/2/2025) (Entered: 04/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.132.0.pdf"
+      },
+      {
+        "entry_number": 131,
+        "date_filed": "2025-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2025",
+        "description": "Administrative Motion to File Under Seal -PORTIONS OF PLAINTIFFS DISCOVERY LETTER MOTION TO COMPEL filed by Anthropic PBC. (Attachments: # 1 Declaration of Jessica L. Gillotte, # 2 Proposed Order, # 3 Redacted Discovery Letter Brief, # 4 Unredacted Discovery Letter Brief, # 5 Redacted Gillotte Decl. Exhibit 1, # 6 Unredacted Gillotte Decl. Ex. 1, # 7 Redacted Gillotte Decl. Ex. 2, # 8 Unredacted Gillotte Decl. Ex. 2)(Farris, Joseph) (Filed on 3/31/2025) (Entered: 03/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.131.0.pdf"
+      },
+      {
+        "entry_number": 130,
+        "date_filed": "2025-03-28",
+        "time_filed": "",
+        "date_display": "Mar 28, 2025",
+        "description": "NOTICE for Summary Judgment re 122 MOTION -DEFENDANT ANTHROPIC PBCS NOTICE OF MANUAL FILING RE: EXHIBITS 19 AND 21 IN SUPPORT OF MOTION FOR SUMMARY JUDGMENT by Anthropic PBC (Winthrop, Douglas) (Filed on 3/28/2025) Modified on 3/28/2025 (kmg, COURT STAFF). (Entered: 03/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.130.0.pdf"
+      },
+      {
+        "entry_number": 129,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "Declaration of Steven Peterson in Support of 122 MOTION for Summary Judgment filed byAnthropic PBC. (Related document(s) 122 ) (Winthrop, Douglas) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.129.0.pdf"
+      },
+      {
+        "entry_number": 128,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "Declaration of Jared Kaplan in Support of 122 MOTION for Summary Judgment filed byAnthropic PBC. (Related document(s) 122 ) (Winthrop, Douglas) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.128.0.pdf"
+      },
+      {
+        "entry_number": 127,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "Declaration of Thomas Turvey in Support of 122 MOTION for Summary Judgment filed byAnthropic PBC. (Related document(s) 122 ) (Winthrop, Douglas) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.127.0.pdf"
+      },
+      {
+        "entry_number": 126,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "***Corrected Entry. SEE DOCUMENT # 128 __ FOR CORRECT DOCKET ENTRY.*** Declaration of Jared Peterson in Support of 122 MOTION for Summary Judgment filed by Anthropic PBC. (Related document(s) 122 ) (Winthrop, Douglas) (Filed on 3/27/2025) Modified on 3/28/2025 (kmg, COURT STAFF). Modified on 3/31/2025 (kmg, COURT STAFF). Modified on 3/31/2025 (kmg, COURT STAFF). (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.126.0.pdf"
+      },
+      {
+        "entry_number": 125,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "MOTION to Certify Class filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. Motion to Certify Class Hearing set for 5/15/2025 08:00 AM in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. Responses due by 4/17/2025. Replies due by 5/1/2025. (Attachments: # 1 Rule 23(g) Declaration, # 2 Exhibit A to Rule 23(g) Declaration, # 3 Exhibit B to Rule 23(g) Declaration, # 4 Exhibit C to Rule 23(g) Declaration, # 5 Exhibit D to Rule 23(g) Declaration, # 6 Declaration of Ben Y. Zhao [redacted], # 7 Exhibit A to Zhao Declaration, # 8 Exhibit B to Zhao Declaration, # 9 Exhibits C and D to Zhao Declaration [filed under seal], # 10 Declaration of Jacob S. Miller [redacted], # 11 Exhibits 1-26 to Miller Declaration (filed under seal), # 12 Exhibits 27-31 to Miller Declaration, # 13 Exhibits 32-38 to Miller Declaration (filed under seal), # 14 Exhibit 39 to Miller Declaration, # 15 Proposed Order)(Geman, Rachel) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.125.0_1.pdf"
+      },
+      {
+        "entry_number": 124,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed (ECF 120) filed by Anthropic PBC. (Attachments: # 1 Unredacted Peterson Decl., # 2 Unredacted MSJ)(Winthrop, Douglas) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.124.0.pdf"
+      },
+      {
+        "entry_number": 123,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "Administrative Motion to File Under Seal (ECF 119) filed by Anthropic PBC. (Attachments: # 1 Proposed Order, # 2 Unredacted Turvey Decl)(Winthrop, Douglas) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.123.0.pdf"
+      },
+      {
+        "entry_number": 122,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "MOTION for Summary Judgment filed by Anthropic PBC. Motion for Summary Judgment Hearing set for 5/15/2025 08:00 AM in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. Responses due by 4/10/2025. Replies due by 4/17/2025. (Attachments: # 1 Declaration Winthrop Decl., # 2 Exhibit 1, # 3 Exhibit 2, # 4 Exhibit 3, # 5 Exhibit 4, # 6 Exhibit 5, # 7 Exhibit 6, # 8 Exhibit 7, # 9 Exhibit 8, # 10 Exhibit 9, # 11 Exhibit 10, # 12 Exhibit 11, # 13 Exhibit 12, # 14 Exhibit 13, # 15 Exhibit 14, # 16 Exhibit 15, # 17 Exhibit 16, # 18 Exhibit 17, # 19 Exhibit 18, # 20 Exhibit 19, # 21 Exhibit 20, # 22 Exhibit 21, # 23 Exhibit 22, # 24 Exhibit 23, # 25 Exhibit 24, # 26 Exhibit 25, # 27 Exhibit 26, # 28 Exhibit 27, # 29 Exhibit 28, # 30 Exhibit 29, # 31 Exhibit 30, # 32 Exhibit 31, # 33 Exhibit 32, # 34 Exhibit 33, # 35 Exhibit 34, # 36 Exhibit 35, # 37 Exhibit 36, # 38 Exhibit 37, # 39 Exhibit 38, # 40 Exhibit 39, # 41 Exhibit 40, # 42 Exhibit 41, # 43 Exhibit 42, # 44 Exhibit 43, # 45 Exhibit 44, # 46 Exhibit 45, # 47 Exhibit 46, # 48 Exhibit 47, # 49 Exhibit 48, # 50 Exhibit 49, # 51 Exhibit 50, # 52 Proposed Order)(Winthrop, Douglas) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.122.0_2.pdf"
+      },
+      {
+        "entry_number": 121,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Declaration of Rachel Geman [unredacted], # 2 Proposed Order, # 3 Plaintiffs' Notice of Motion and Motion for Class Certification [unredacted], # 4 Declaration of Ben Y. Zhao [unredacted], # 5 Exhibit C to Zhao Declaration [unredacted], # 6 Exhibit D to Zhao Declaration [unredacted], # 7 Declaration of Jacob S. Miller [unredacted], # 8 Exhibits 1-13 to Miller Declaration [unredacted], # 9 Exhibits 14-26 to Miller Declaration [unredacted], # 10 Exhibits 32-38 to Miller Declaration [unredacted])(Geman, Rachel) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.121.0.pdf"
+      },
+      {
+        "entry_number": 120,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Anthropic PBC. (Attachments: # 1 Winthrop Decl., # 2 Proposed Order, # 3 Unredacted Graeder Depo Excerpts, # 4 Unredacted Bartz Depo Excerpts, # 5 Unredacted Johnson Dep Excerpts)(Winthrop, Douglas) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.120.0.pdf"
+      },
+      {
+        "entry_number": 119,
+        "date_filed": "2025-03-27",
+        "time_filed": "",
+        "date_display": "Mar 27, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Anthropic PBC. (Attachments: # 1 Winthrop Decl., # 2 Kaplan Decl, # 3 Unredacted Ex. 41, # 4 Unredacted Ex. 45, # 5 Unredact Kaplan Decl. ISO MSJ, # 6 Unredacted Peterson Decl. ISO MSJ, # 7 Unredacted MSJ)(Winthrop, Douglas) (Filed on 3/27/2025) (Entered: 03/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.119.0.pdf"
+      },
+      {
+        "entry_number": 118,
+        "date_filed": "2025-03-26",
+        "time_filed": "",
+        "date_display": "Mar 26, 2025",
+        "description": "Sealed Transcript of Proceedings held on March 25, 2025, before Judge William H. Alsup. Court Reporter, Marla F. Knox, RPR, CRR, RMR, Telephone number (602) 391-6990/email marla_knox@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy,any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. Redacted Transcript Deadline set for 4/23/2025. (mfk, COURT STAFF) (Filed on 3/26/2025) (Entered: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 117,
+        "date_filed": "2025-03-26",
+        "time_filed": "",
+        "date_display": "Mar 26, 2025",
+        "description": "NOTICE of Appearance filed by Andrew Michael Gass on behalf of Anthropic PBC (Gass, Andrew) (Filed on 3/26/2025) (Entered: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 116,
+        "date_filed": "2025-03-26",
+        "time_filed": "",
+        "date_display": "Mar 26, 2025",
+        "description": "Administrative Motion to File Under Seal filed by Anthropic PBC. (Attachments: # 1 Declaration Jessica Gillotte, # 2 Proposed Order, # 3 Unredacted Version of Gillotte Decl. Ex. 1, # 4 Redacted Version of Gillotte Decl. Ex. 1)(Farris, Joseph) (Filed on 3/26/2025) (Entered: 03/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.116.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-26",
+        "time_filed": "",
+        "date_display": "Mar 26, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 115,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "ORDER RE SEALING. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 3/25/2025) (Entered: 03/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.115.0.pdf"
+      },
+      {
+        "entry_number": 114,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "NOTICE of Appearance filed by Allyson C Myers on behalf of Anthropic PBC (Myers, Allyson) (Filed on 3/25/2025) (Entered: 03/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 113,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 03/25/2025 before Judge William Alsup by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, for Court Reporter Marla Knox. (Hutchinson, Daniel) (Filed on 3/25/2025) (Entered: 03/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.113.0.pdf"
+      },
+      {
+        "entry_number": 112,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 3/25/25 before Judge William Alsup by Anthropic PBC, for Court Reporter Marla Knox. (Gillotte, Jessica) (Filed on 3/25/2025) (Entered: 03/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.112.0.pdf"
+      },
+      {
+        "entry_number": 111,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "Minute Entry for proceedings held before Judge William Alsup: Discovery Hearing held on 3/25/2025 re 102 ; 104 ; 109 ; 110 . Court ruled as stated on the record.Total Time in Court: 11:09-11:56 = 47 Minutes (sealed proceeding 11:33-11:56). Court Reporter: Marla Knox (Remote). Plaintiff Attorneys: Justin Nelson, Colin Fredricks, Daniel Hutchinson. Defendant Attorneys: Joseph Farris, Doug Winthrop, Estayvaine Bragg, Jessica Gillotte, Devon Cool (general counsel). (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Date Filed: 3/25/2025) (Entered: 03/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 110,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "Discovery Letter Brief in Response to Plaintiffs' Letter Brief IECF 109) filed by Anthropic PBC. (Attachments: # 1 Declaration Jessica L. Gillotte, # 2 Exhibit Gillotte Decl. Ex. 1, # 3 Exhibit Gillotte Decl. Ex. 2)(Farris, Joseph) (Filed on 3/25/2025) (Entered: 03/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.110.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "Discovery Hearing AND Order on Discovery Letter Brief AND Order on Discovery Letter Brief AND Order on Discovery Letter Brief AND Order on Discovery Letter Brief",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 109,
+        "date_filed": "2025-03-24",
+        "time_filed": "",
+        "date_display": "Mar 24, 2025",
+        "description": "Discovery Letter Brief (Redacted) filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Exhibit 1 (filed under seal), # 2 Exhibit 2 (filed under seal))(Geman, Rachel) (Filed on 3/24/2025) (Entered: 03/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.109.0.pdf"
+      },
+      {
+        "entry_number": 108,
+        "date_filed": "2025-03-24",
+        "time_filed": "",
+        "date_display": "Mar 24, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Declaration of Rachel Geman in Support, # 2 Proposed Order, # 3 Redacted Version of Discovery Letter re Motion to Compel, # 4 Unredacted Version of Discovery Letter re Motion to Compel, # 5 Redacted Version of Exhibit 1, # 6 Unredacted Version of Exhibit 1, # 7 Redacted Version of Exhibit 2, # 8 Unredacted Version of Exhibit 2)(Geman, Rachel) (Filed on 3/24/2025) (Entered: 03/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.108.0.pdf"
+      },
+      {
+        "entry_number": 107,
+        "date_filed": "2025-03-22",
+        "time_filed": "",
+        "date_display": "Mar 22, 2025",
+        "description": "NOTICE of Appearance filed by Mark Alan Lemley on behalf of Anthropic PBC (Lemley, Mark) (Filed on 3/22/2025) (Entered: 03/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-22",
+        "time_filed": "",
+        "date_display": "Mar 22, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 106,
+        "date_filed": "2025-03-21",
+        "time_filed": "",
+        "date_display": "Mar 21, 2025",
+        "description": "EXHIBITS re 105 Declaration in Support -Exhibit 1 to Declaration of Jessica L. Gillotte filed byAnthropic PBC. (Related document(s) 105 ) (Farris, Joseph) (Filed on 3/21/2025) (Entered: 03/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.106.0.pdf"
+      },
+      {
+        "entry_number": 105,
+        "date_filed": "2025-03-21",
+        "time_filed": "",
+        "date_display": "Mar 21, 2025",
+        "description": "Declaration of Jessica L. Gillotte in Support of 104 Discovery Letter Brief- Opposition to ECF 102 filed byAnthropic PBC. (Related document(s) 104 ) (Farris, Joseph) (Filed on 3/21/2025) (Entered: 03/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.105.0.pdf"
+      },
+      {
+        "entry_number": 104,
+        "date_filed": "2025-03-21",
+        "time_filed": "",
+        "date_display": "Mar 21, 2025",
+        "description": "Discovery Letter Brief- Opposition to ECF 102 filed by Anthropic PBC. (Farris, Joseph) (Filed on 3/21/2025) (Entered: 03/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.104.0.pdf"
+      },
+      {
+        "entry_number": 103,
+        "date_filed": "2025-03-18",
+        "time_filed": "",
+        "date_display": "Mar 18, 2025",
+        "description": "CLERK'S NOTICE SETTING DISCOVERY HEARING RE: 102 DISCOVERY LETTER FOR 3/25/2025 AT 11:00AM: Discovery Hearing set for 3/25/2025 11:00 AM in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. Any response to the discovery letter shall be filed by 10:00 p.m. Friday, March 21, 2025. No reply permitted. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Filed on 3/18/2025) (Entered: 03/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-03-18",
+        "time_filed": "",
+        "date_display": "Mar 18, 2025",
+        "description": "Clerk's Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 102,
+        "date_filed": "2025-03-17",
+        "time_filed": "",
+        "date_display": "Mar 17, 2025",
+        "description": "Discovery Letter Brief filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Geman, Rachel) (Filed on 3/17/2025) (Entered: 03/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.102.0_1.pdf"
+      },
+      {
+        "entry_number": 101,
+        "date_filed": "2025-03-03",
+        "time_filed": "",
+        "date_display": "Mar 3, 2025",
+        "description": "Administrative Motion to File Under Seal PORTIONS OF PLAINTIFFS OPPOSITION TO MOTION TO REQUEST A CASE MANAGEMENT CONFERENCE filed by Anthropic PBC. (Attachments: # 1 Declaration, # 2 Exhibit, # 3 Exhibit, # 4 Exhibit, # 5 Exhibit, # 6 Exhibit, # 7 Proposed Order)(Farris, Joseph) (Filed on 3/3/2025) (Entered: 03/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.101.0.pdf"
+      },
+      {
+        "entry_number": 100,
+        "date_filed": "2025-02-28",
+        "time_filed": "",
+        "date_display": "Feb 28, 2025",
+        "description": "ORDER by Judge William Alsup granting 99 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 2/28/2025) (Entered: 02/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 99,
+        "date_filed": "2025-02-28",
+        "time_filed": "",
+        "date_display": "Feb 28, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-20401706.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing - Danna Elmasry)(Elmasry, Danna) (Filed on 2/28/2025) (Entered: 02/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 98,
+        "date_filed": "2025-02-27",
+        "time_filed": "",
+        "date_display": "Feb 27, 2025",
+        "description": "Transcript of Proceedings held on February 25, 2025, before Judge William H. Alsup. Court Reporter, Marla F. Knox, RPR, CRR, RMR, telephone number (602) 391-6990/email marla_knox@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 96 Transcript Order ) Release of Transcript Restriction set for 5/28/2025. (Related documents(s) 96 ) (mfk, COURT STAFF) (Filed on 2/27/2025) (Entered: 02/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.98.0_1.pdf"
+      },
+      {
+        "entry_number": 97,
+        "date_filed": "2025-02-25",
+        "time_filed": "",
+        "date_display": "Feb 25, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 02/25/2025 before Judge William Alsup by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, for Court Reporter Marla Knox. (Geman, Rachel) (Filed on 2/25/2025) (Entered: 02/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.97.0.pdf"
+      },
+      {
+        "entry_number": 96,
+        "date_filed": "2025-02-25",
+        "time_filed": "",
+        "date_display": "Feb 25, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on February 25, 2025 before Judge William Alsup by Anthropic PBC, for Court Reporter Marla Knox. (Gillotte, Jessica) (Filed on 2/25/2025) (Entered: 02/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.96.0.pdf"
+      },
+      {
+        "entry_number": 95,
+        "date_filed": "2025-02-25",
+        "time_filed": "",
+        "date_display": "Feb 25, 2025",
+        "description": "Minute Entry for proceedings held before Judge William Alsup: Discovery Hearing and Administrative Motion Hearing held on 2/25/2025 re: 90 86 and 88 . Parties stated discovery matters were resolved shortly before this morning's hearing.Court ordered the following deadlines, modifying 49 Case Management Scheduling Order:Motion for Class Certification, opening brief due 3/27/2025 (49-day track);Motion for Summary Judgment (only as to fair use affirmative defense), opening brief due 3/27/2025 (49-day track).Court advised plaintiffs to inform Court if defendant violates their agreement resolving discovery dispute. Any such violation may result in forfeiture of opportunity to bring summary judgment motion on fair use on timeline above. Total Time in Court: 10:33 - 11:00 = 27 Minutes. Court Reporter: Marla Knox (Remote). Plaintiff Attorneys: Collin Fredricks, Rohit Nath, Rachel Geman. Defendant Attorneys: Douglas Winthrop, Estayvaine Bragg, Jessica Gillotte, Joseph Farris, Devon Coon. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Date Filed: 2/25/2025) (Entered: 02/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 94,
+        "date_filed": "2025-02-25",
+        "time_filed": "",
+        "date_display": "Feb 25, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on February 25, 2025 before Judge William Alsup by Anthropic PBC, for Recorded Proceeding - San Francisco. (Gillotte, Jessica) (Filed on 2/25/2025) NOT PROCESSED; Incorrectly filed. Party contacted. Modified on 2/25/2025 (jaf, COURT STAFF). (Entered: 02/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.94.0.pdf"
+      },
+      {
+        "entry_number": 93,
+        "date_filed": "2025-02-25",
+        "time_filed": "",
+        "date_display": "Feb 25, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 2/25/2025 before Judge William Alsup by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, for Recorded Proceeding - San Francisco. (Geman, Rachel) (Filed on 2/25/2025) NOT PROCESSED; Incorrectly filed. Party contacted. Modified on 2/25/2025 (jaf, COURT STAFF). (Entered: 02/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.93.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-02-25",
+        "time_filed": "",
+        "date_display": "Feb 25, 2025",
+        "description": "Discovery Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 92,
+        "date_filed": "2025-02-24",
+        "time_filed": "",
+        "date_display": "Feb 24, 2025",
+        "description": "OPPOSITION/RESPONSE (re 88 ADMINISTRATIVE MOTION TO REQUEST A CASE MANAGEMENT CONFERENCE ON THE ORDERING OF SUMMARY JUDGMENT AND CLASS CERTIFICATION MOTIONS, 91 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed ) filed byAndrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Exhibit A)(Nath, Rohit) (Filed on 2/24/2025) (Entered: 02/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.92.0_1.pdf"
+      },
+      {
+        "entry_number": 91,
+        "date_filed": "2025-02-24",
+        "time_filed": "",
+        "date_display": "Feb 24, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Opposition to Motion to Request CMC - Under seal, # 2 Exhibit B - Under seal, # 3 Exhibit C- Under seal, # 4 Exhibit D - Under seal, # 5 Exhibit E - Under seal)(Nath, Rohit) (Filed on 2/24/2025) (Entered: 02/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.91.0.pdf"
+      },
+      {
+        "entry_number": 90,
+        "date_filed": "2025-02-24",
+        "time_filed": "",
+        "date_display": "Feb 24, 2025",
+        "description": "Discovery Letter Brief-Anthropic's Response to Plaintiffs' Discovery Letter Brief (ECF No. 86) filed by Anthropic PBC. (Farris, Joseph) (Filed on 2/24/2025) (Entered: 02/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.90.0.pdf"
+      },
+      {
+        "entry_number": 89,
+        "date_filed": "2025-02-21",
+        "time_filed": "",
+        "date_display": "Feb 21, 2025",
+        "description": "ORDER RE 88 ADMINISTRATIVE MOTION SEEKING CHANGE IN CASE MANAGEMENT SCHEDULING ORDER. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 2/21/2025) (Entered: 02/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.89.0.pdf"
+      },
+      {
+        "entry_number": 88,
+        "date_filed": "2025-02-20",
+        "time_filed": "",
+        "date_display": "Feb 20, 2025",
+        "description": "ADMINISTRATIVE MOTION TO REQUEST A CASE MANAGEMENT CONFERENCE ON THE ORDERING OF SUMMARY JUDGMENT AND CLASS CERTIFICATION MOTIONS filed by Anthropic PBC. Responses due by 2/24/2025. (Attachments: # 1 Declaration Winthrop, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C, # 5 Exhibit D, # 6 Proposed Order)(Winthrop, Douglas) (Filed on 2/20/2025) (Entered: 02/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.88.0_1.pdf"
+      },
+      {
+        "entry_number": 87,
+        "date_filed": "2025-02-20",
+        "time_filed": "",
+        "date_display": "Feb 20, 2025",
+        "description": "ORDER RE 86 DISCOVERY DISPUTE. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 2/20/2025) (Entered: 02/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.87.0.pdf"
+      },
+      {
+        "entry_number": 86,
+        "date_filed": "2025-02-20",
+        "time_filed": "",
+        "date_display": "Feb 20, 2025",
+        "description": "Discovery Letter Brief filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Geman, Rachel) (Filed on 2/20/2025) (Entered: 02/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.86.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-02-20",
+        "time_filed": "",
+        "date_display": "Feb 20, 2025",
+        "description": "Set/Reset Hearing re 87 Order: Discovery Hearing set for 2/25/2025 10:30 AM in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. (afm, COURT STAFF) (Filed on 2/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 85,
+        "date_filed": "2025-02-19",
+        "time_filed": "",
+        "date_display": "Feb 19, 2025",
+        "description": "ORDER ADOPTING 83 STIPULATED TRAINING DATA AND SOURCE CODE INSPECTION PROTOCOL (WITH PROVISO). Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 2/19/2025) (Entered: 02/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.85.0_7.pdf"
+      },
+      {
+        "entry_number": 84,
+        "date_filed": "2025-02-12",
+        "time_filed": "",
+        "date_display": "Feb 12, 2025",
+        "description": "NOTICE of Appearance filed by Oscar Daniel Ramallo on behalf of Anthropic PBC (Ramallo, Oscar) (Filed on 2/12/2025) (Entered: 02/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-02-12",
+        "time_filed": "",
+        "date_display": "Feb 12, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 83,
+        "date_filed": "2025-02-11",
+        "time_filed": "",
+        "date_display": "Feb 11, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER REGARDING TRAINING DATA AND SOURCE CODE INSPECTION PROTOCOL filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Fredricks, Collin) (Filed on 2/11/2025) (Entered: 02/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.83.0_1.pdf"
+      },
+      {
+        "entry_number": 82,
+        "date_filed": "2025-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 1-30-2025 before Judge William Alsup for Court Reporter Debra Pas (Pas, Debra) (Filed on 2/8/2025) (Entered: 02/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.82.0.pdf"
+      },
+      {
+        "entry_number": 81,
+        "date_filed": "2025-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 1-30-2025 before Judge William Alsup for Court Reporter Debra Pas (Pas, Debra) (Filed on 2/8/2025) (Entered: 02/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.81.0.pdf"
+      },
+      {
+        "entry_number": 80,
+        "date_filed": "2025-02-08",
+        "time_filed": "",
+        "date_display": "Feb 8, 2025",
+        "description": "Transcript of Proceedings, Tutorial held on 1-30-2025, before Judge William H. Alsup. Court Reporter/Transcriber Debra Pas, CRR, telephone number (415) 431-1477/Email: Debra_Pas@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 78 Transcript Order, 77 Transcript Order ) Release of Transcript Restriction set for 5/9/2025. (Related documents(s) 78, 77 ) (Pas, Debra) (Filed on 2/8/2025) (Entered: 02/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.80.0.pdf"
+      },
+      {
+        "entry_number": 79,
+        "date_filed": "2025-02-04",
+        "time_filed": "",
+        "date_display": "Feb 4, 2025",
+        "description": "NOTICE by Anthropic PBC of Defendant's Technology Tutorial Demonstratives (Attachments: # 1 Technology Tutorial Demonstratives)(Winthrop, Douglas) (Filed on 2/4/2025) (Entered: 02/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.79.0_1.pdf"
+      },
+      {
+        "entry_number": 78,
+        "date_filed": "2025-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 01/30/2025 before Judge William Alsup by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson, for Court Reporter Debra Pas. (Nath, Rohit) (Filed on 1/31/2025) (Entered: 01/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.78.0.pdf"
+      },
+      {
+        "entry_number": 77,
+        "date_filed": "2025-01-31",
+        "time_filed": "",
+        "date_display": "Jan 31, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on January 30, 2025 before Judge William Alsup by Anthropic PBC, for Court Reporter Debra Pas. (Winthrop, Douglas) (Filed on 1/31/2025) (Entered: 01/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.77.0.pdf"
+      },
+      {
+        "entry_number": 76,
+        "date_filed": "2025-01-30",
+        "time_filed": "",
+        "date_display": "Jan 30, 2025",
+        "description": "Minute Entry for proceedings held before Judge William Alsup: Tutorial Hearing held on 1/30/2025.Total Time in Court: 10:00 - 11:45 = 1 Hour; 45 Minutes. Court Reporter: Debra Pas. Plaintiff Attorneys: Justin Nelson, J., Collin Fredericks, Craig Smyser, Alejandra Salinas, Daniel Hutchinson, Rachel Geman, Reilly Stoler. Defendant Attorneys: Douglas Winthrop, Joseph Farris, Estayvaine Bragg, Jessica Gillotte, Josseph Wetzel. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Date Filed: 1/30/2025) Modified on 1/30/2025 (afm, COURT STAFF). (Entered: 01/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 75,
+        "date_filed": "2025-01-30",
+        "time_filed": "",
+        "date_display": "Jan 30, 2025",
+        "description": "NOTICE of Plaintiffs' Technology Tutorial Demonstratives by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson (Attachments: # 1 Technology Tutorial Demonstratives)(Fredricks, Collin) (Filed on 1/30/2025) Modified text on 1/30/2025 (krp, COURT STAFF). (Entered: 01/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.75.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-01-30",
+        "time_filed": "",
+        "date_display": "Jan 30, 2025",
+        "description": "Tutorial Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 539,
+        "date_filed": "2025-01-14",
+        "time_filed": "",
+        "date_display": "Jan 14, 2025",
+        "description": "Letter from Richard Paolinelli dated 10/6/2025. (kmg, COURT STAFF) (Filed on 1/14/2025) (Main Document 539 replaced on 5/7/2026) (kmg, COURT STAFF). (Entered: 01/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.539.0_1.pdf"
+      },
+      {
+        "entry_number": 74,
+        "date_filed": "2025-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2025",
+        "description": "ORDER ADOPTING 73 STIPULATION RE PRODUCTION OF ELECTRONICALLY STORED INFORMATION AND HARD-COPY DOCUMENTS (WITH PROVISO). Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 1/13/2025) (Entered: 01/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.74.0.pdf"
+      },
+      {
+        "entry_number": 73,
+        "date_filed": "2025-01-10",
+        "time_filed": "",
+        "date_display": "Jan 10, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER REGARDING THE PRODUCTION OF ELECTRONICALLY STORED INFORMATION (\"ESI\") AND HARD COPY DOCUMENTS filed by Andrea Bartz, MJ + KJ, Inc., Andrea Bartz, Inc., Charles Graeber, Kirk Wallace Johnson. (Stoler, Reilly) (Filed on 1/10/2025) (Entered: 01/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.73.0.pdf"
+      },
+      {
+        "entry_number": 72,
+        "date_filed": "2024-12-18",
+        "time_filed": "",
+        "date_display": "Dec 18, 2024",
+        "description": "Answer to Amended Complaint 70 Amended Complaint, by Anthropic PBC. (Winthrop, Douglas) (Filed on 12/18/2024) (Entered: 12/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.72.0.pdf"
+      },
+      {
+        "entry_number": 71,
+        "date_filed": "2024-12-17",
+        "time_filed": "",
+        "date_display": "Dec 17, 2024",
+        "description": "CLERK'S NOTICE RESCHEDULING TUTORIAL HEARING FROM 1/16/2025 TO 1/30/2025 AT 10:00AM: Tutorial Hearing RESET for 1/30/2025 10:00 AM in San Francisco, Courtroom 12, 19th Floor. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Filed on 12/17/2024) (Entered: 12/17/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-12-17",
+        "time_filed": "",
+        "date_display": "Dec 17, 2024",
+        "description": "Clerk's Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 70,
+        "date_filed": "2024-12-04",
+        "time_filed": "",
+        "date_display": "Dec 4, 2024",
+        "description": "AMENDED COMPLAINT Filed with Defendant's Written Consent against Anthropic PBC, MJ + KJ, Inc., Andrea Bartz, Inc.. Filed by Andrea Bartz, Kirk Wallace Johnson, Charles Graeber, MJ + KJ, Inc., Andrea Bartz, Inc.. (Attachments: # 1 Exhibit A)(Stoler, Reilly) (Filed on 12/4/2024) (Entered: 12/04/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.70.0_1.pdf"
+      },
+      {
+        "entry_number": 69,
+        "date_filed": "2024-12-04",
+        "time_filed": "",
+        "date_display": "Dec 4, 2024",
+        "description": "NOTICE of Appearance filed by Daniel M. Hutchinson on behalf of Andrea Bartz, Charles Graeber, Kirk Wallace Johnson (Hutchinson, Daniel) (Filed on 12/4/2024) (Entered: 12/04/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-12-04",
+        "time_filed": "",
+        "date_display": "Dec 4, 2024",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 68,
+        "date_filed": "2024-11-27",
+        "time_filed": "",
+        "date_display": "Nov 27, 2024",
+        "description": "ORDER by Judge William Alsup granting 67 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 11/27/2024) (Entered: 11/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.68.0.pdf"
+      },
+      {
+        "entry_number": 67,
+        "date_filed": "2024-11-25",
+        "time_filed": "",
+        "date_display": "Nov 25, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-20079527.) Filing fee previously paid on 11/22/2024 filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing)(Connors, Jordan) (Filed on 11/25/2024) (Entered: 11/25/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.67.0.pdf"
+      },
+      {
+        "entry_number": 66,
+        "date_filed": "2024-11-24",
+        "time_filed": "",
+        "date_display": "Nov 24, 2024",
+        "description": "ORDER by Judge William Alsup denying 65 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 11/24/2024) (Entered: 11/24/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.66.0.pdf"
+      },
+      {
+        "entry_number": 65,
+        "date_filed": "2024-11-22",
+        "time_filed": "",
+        "date_display": "Nov 22, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-20079527.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing)(Connors, Jordan) (Filed on 11/22/2024) (Entered: 11/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.65.0.pdf"
+      },
+      {
+        "entry_number": 64,
+        "date_filed": "2024-11-18",
+        "time_filed": "",
+        "date_display": "Nov 18, 2024",
+        "description": "ORDER ADOPTING 61 JOINT STIPULATION AND ORDER REGARDING TECHNOLOGY TUTORIAL. Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 11/18/2024) (Entered: 11/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.64.0.pdf"
+      },
+      {
+        "entry_number": 63,
+        "date_filed": "2024-11-18",
+        "time_filed": "",
+        "date_display": "Nov 18, 2024",
+        "description": "ORDER ADOPTING 62 STIPULATED PROTECTIVE ORDER (WITH CONDITIONS). Signed by Judge Alsup. (whalc2, COURT STAFF) (Filed on 11/18/2024) (Entered: 11/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.63.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-11-18",
+        "time_filed": "",
+        "date_display": "Nov 18, 2024",
+        "description": "Set/Reset Hearing re 64 Order on Stipulation: Tutorial Hearing set for 1/16/2025 10:00 AM in San Francisco, Courtroom 12, 19th Floor. (afm, COURT STAFF) (Filed on 11/18/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 62,
+        "date_filed": "2024-11-15",
+        "time_filed": "",
+        "date_display": "Nov 15, 2024",
+        "description": "STIPULATION WITH PROPOSED ORDER STIPULATED PROTECTIVE ORDER filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Nath, Rohit) (Filed on 11/15/2024) (Entered: 11/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.62.0.pdf"
+      },
+      {
+        "entry_number": 61,
+        "date_filed": "2024-11-15",
+        "time_filed": "",
+        "date_display": "Nov 15, 2024",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Technology Tutorial (Joint Stipulation) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Stoler, Reilly) (Filed on 11/15/2024) (Entered: 11/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.61.0_3.pdf"
+      },
+      {
+        "entry_number": 60,
+        "date_filed": "2024-10-28",
+        "time_filed": "",
+        "date_display": "Oct 28, 2024",
+        "description": "ORDER by Judge William Alsup granting 58 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 10/28/2024) (Entered: 10/28/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.60.0.pdf"
+      },
+      {
+        "entry_number": 59,
+        "date_filed": "2024-10-25",
+        "time_filed": "",
+        "date_display": "Oct 25, 2024",
+        "description": "TRANSCRIPT ORDER for proceedings held on 10/10/2024 before Judge William Alsup for Court Reporter Cathy Jill Taylor, ordered by Maura Rees. (knm, COURT STAFF) (Filed on 10/25/2024) (Entered: 10/25/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.59.0.pdf"
+      },
+      {
+        "entry_number": 58,
+        "date_filed": "2024-10-22",
+        "time_filed": "",
+        "date_display": "Oct 22, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19972441.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate/Proof of Service)(Fredricks, Collin) (Filed on 10/22/2024) (Entered: 10/22/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.58.0.pdf"
+      },
+      {
+        "entry_number": 57,
+        "date_filed": "2024-10-21",
+        "time_filed": "",
+        "date_display": "Oct 21, 2024",
+        "description": "ANSWER to Complaint with Jury Demand by Anthropic PBC. (Winthrop, Douglas) (Filed on 10/21/2024) (Entered: 10/21/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.57.0.pdf"
+      },
+      {
+        "entry_number": 56,
+        "date_filed": "2024-10-16",
+        "time_filed": "",
+        "date_display": "Oct 16, 2024",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options (Kirk Wallace Johnson) (Stoler, Reilly) (Filed on 10/16/2024) (Entered: 10/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.56.0.pdf"
+      },
+      {
+        "entry_number": 55,
+        "date_filed": "2024-10-16",
+        "time_filed": "",
+        "date_display": "Oct 16, 2024",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options (Charles Graeber) (Stoler, Reilly) (Filed on 10/16/2024) (Entered: 10/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.55.0.pdf"
+      },
+      {
+        "entry_number": 54,
+        "date_filed": "2024-10-16",
+        "time_filed": "",
+        "date_display": "Oct 16, 2024",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options (Andrea Bartz) (Stoler, Reilly) (Filed on 10/16/2024) (Entered: 10/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.54.0.pdf"
+      },
+      {
+        "entry_number": 53,
+        "date_filed": "2024-10-16",
+        "time_filed": "",
+        "date_display": "Oct 16, 2024",
+        "description": "TRANSCRIPT ORDER for proceedings held on 10/10/2024 before Judge William Alsup for Court Reporter Cathy Jill Taylor, ordered by Paven Malhotra. (knm, COURT STAFF) (Filed on 10/16/2024) (Entered: 10/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.53.0.pdf"
+      },
+      {
+        "entry_number": 52,
+        "date_filed": "2024-10-15",
+        "time_filed": "",
+        "date_display": "Oct 15, 2024",
+        "description": "ADR Certification (ADR L.R. 3-5 b) of discussion of ADR options (Winthrop, Douglas) (Filed on 10/15/2024) (Entered: 10/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.52.0.pdf"
+      },
+      {
+        "entry_number": 51,
+        "date_filed": "2024-10-15",
+        "time_filed": "",
+        "date_display": "Oct 15, 2024",
+        "description": "Certificate of Interested Entities by Anthropic PBC (Winthrop, Douglas) (Filed on 10/15/2024) (Entered: 10/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.51.0.pdf"
+      },
+      {
+        "entry_number": 50,
+        "date_filed": "2024-10-15",
+        "time_filed": "",
+        "date_display": "Oct 15, 2024",
+        "description": "Transcript of Proceedings held on 10/10/2024, before Judge William H. Alsup. Court Reporter Cathy J. Taylor, RMR, CRR, CRC, telephone number 6023227249. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 47 Transcript Order ) Redaction Request due 11/5/2024. Redacted Transcript Deadline set for 11/15/2024. Release of Transcript Restriction set for 1/13/2025. (Related documents(s) 47 ) (Taylor, Catherine) (Filed on 10/15/2024) (Entered: 10/15/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.50.0.pdf"
+      },
+      {
+        "entry_number": 49,
+        "date_filed": "2024-10-10",
+        "time_filed": "",
+        "date_display": "Oct 10, 2024",
+        "description": "CASE MANAGEMENT SCHEDULING ORDER: Final Pretrial Conference set for 11/19/2025 02:00 PM in San Francisco, Courtroom 12, 19th Floor. Jury Selection/Jury Trial set for 12/1/2025 07:30 AM in San Francisco, Courtroom 12, 19th Floor before Judge William Alsup. Amended Pleadings due by 12/4/2024. Close of Fact Discovery due by 8/29/2025. Motions due by 10/1/2025. Signed by Judge William Alsup on 10/10/2024. (afm, COURT STAFF) (Filed on 10/10/2024) (Entered: 10/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.49.0.pdf"
+      },
+      {
+        "entry_number": 48,
+        "date_filed": "2024-10-10",
+        "time_filed": "",
+        "date_display": "Oct 10, 2024",
+        "description": "TRANSCRIPT ORDER for proceedings held on October 10, 2024 before Judge William Alsup by Anthropic PBC, for Court Reporter Cathy Jill Taylor. (Gillotte, Jessica) (Filed on 10/10/2024) (Entered: 10/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.48.0.pdf"
+      },
+      {
+        "entry_number": 47,
+        "date_filed": "2024-10-10",
+        "time_filed": "",
+        "date_display": "Oct 10, 2024",
+        "description": "TRANSCRIPT ORDER for proceedings held on 10/10/2024 before Judge William Alsup by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson, for Court Reporter Cathy Jill Taylor. (Stoler, Reilly) (Filed on 10/10/2024) (Entered: 10/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.47.0.pdf"
+      },
+      {
+        "entry_number": 46,
+        "date_filed": "2024-10-10",
+        "time_filed": "",
+        "date_display": "Oct 10, 2024",
+        "description": "Minute Entry for proceedings held before Judge William Alsup: Initial Case Management Conference held on 10/10/2024. Court set the following deadlines: initial disclosures due 10/25/2024; amendment of pleadings due 12/4/2024; expert designations/fact discovery due 8/29/2025; final pretrial conference set for 11/19/2025; jury selection/jury trial set for 12/1/2025 at 7:30AM. Motion for Class Certification to be filed by 3/6/2025; to be heard on 49-day track. Tutorial discussed. Court made two orders: Plaintiffs' counsel shall share the foundation for the allegations that the works were \"included in the Books3 dataset, based on public reporting\" with defense counsel by the end of the week. And, plaintiffs' counsel is authorized to take a supplementary Rule 30(b)(6) deposition as soon as tomorrow to ask specifically whether plaintiffs' works are/were in the defendant's training set, or to serve a request on defendant to admit or deny the same, as further stated on the record. Case Management Order to issue.Total Time in Court: 11:32 - 12:05 = 33 Minutes. Court Reporter: Cathy Taylor (Remote). Plaintiff Attorneys: Justin Nelson, Rohit Nath, Rachel Geman, Reilly Stoler. Defendant Attorneys: Doug Winthrop, Estayvaine Bragg, Jessica Gillotte, Joseph Wetzel. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Date Filed: 10/10/2024) Modified on 10/10/2024 (afm, COURT STAFF). (Entered: 10/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-10-10",
+        "time_filed": "",
+        "date_display": "Oct 10, 2024",
+        "description": "Case Management Conference - Initial",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 45,
+        "date_filed": "2024-10-09",
+        "time_filed": "",
+        "date_display": "Oct 9, 2024",
+        "description": "NOTICE of Appearance filed by Angel Tang Nakamura on behalf of Anthropic PBC (Nakamura, Angel) (Filed on 10/9/2024) (Entered: 10/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 44,
+        "date_filed": "2024-10-09",
+        "time_filed": "",
+        "date_display": "Oct 9, 2024",
+        "description": "NOTICE of Appearance filed by Joseph Richard Wetzel on behalf of Anthropic PBC (Wetzel, Joseph) (Filed on 10/9/2024) (Entered: 10/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 43,
+        "date_filed": "2024-10-09",
+        "time_filed": "",
+        "date_display": "Oct 9, 2024",
+        "description": "NOTICE of Appearance filed by Reilly Todd Stoler on behalf of Andrea Bartz, Charles Graeber, Kirk Wallace Johnson (Stoler, Reilly) (Filed on 10/9/2024) (Entered: 10/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 42,
+        "date_filed": "2024-10-09",
+        "time_filed": "",
+        "date_display": "Oct 9, 2024",
+        "description": "NOTICE of Appearance filed by Rohit Dwarka Nath on behalf of Andrea Bartz, Charles Graeber, Kirk Wallace Johnson (Nath, Rohit) (Filed on 10/9/2024) (Entered: 10/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 41,
+        "date_filed": "2024-10-09",
+        "time_filed": "",
+        "date_display": "Oct 9, 2024",
+        "description": "NOTICE of Appearance filed by Estayvaine Bragg on behalf of Anthropic PBC (Bragg, Estayvaine) (Filed on 10/9/2024) (Entered: 10/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 40,
+        "date_filed": "2024-10-09",
+        "time_filed": "",
+        "date_display": "Oct 9, 2024",
+        "description": "NOTICE of Appearance filed by Jessica Lim Gillotte on behalf of Anthropic PBC (Gillotte, Jessica) (Filed on 10/9/2024) (Entered: 10/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 39,
+        "date_filed": "2024-10-09",
+        "time_filed": "",
+        "date_display": "Oct 9, 2024",
+        "description": "NOTICE of Appearance filed by Joseph Richard Farris on behalf of Anthropic PBC (Farris, Joseph) (Filed on 10/9/2024) (Entered: 10/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 38,
+        "date_filed": "2024-10-09",
+        "time_filed": "",
+        "date_display": "Oct 9, 2024",
+        "description": "NOTICE of Appearance filed by Douglas Andrew Winthrop on behalf of Anthropic PBC (Winthrop, Douglas) (Filed on 10/9/2024) (Entered: 10/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-10-09",
+        "time_filed": "",
+        "date_display": "Oct 9, 2024",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 37,
+        "date_filed": "2024-10-08",
+        "time_filed": "",
+        "date_display": "Oct 8, 2024",
+        "description": "JOINT CASE MANAGEMENT STATEMENT filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Stoler, Reilly) (Filed on 10/8/2024) (Entered: 10/08/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.37.0.pdf"
+      },
+      {
+        "entry_number": 36,
+        "date_filed": "2024-09-19",
+        "time_filed": "",
+        "date_display": "Sep 19, 2024",
+        "description": "ORDER by Judge William Alsup granting 32 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 9/19/2024) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.36.0.pdf"
+      },
+      {
+        "entry_number": 35,
+        "date_filed": "2024-09-19",
+        "time_filed": "",
+        "date_display": "Sep 19, 2024",
+        "description": "ORDER by Judge William Alsup granting 31 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 9/19/2024) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.35.0.pdf"
+      },
+      {
+        "entry_number": 34,
+        "date_filed": "2024-09-19",
+        "time_filed": "",
+        "date_display": "Sep 19, 2024",
+        "description": "ORDER by Judge William Alsup granting 33 Motion for Pro Hac Vice. (afm, COURT STAFF) (Filed on 9/19/2024) (Entered: 09/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.34.0.pdf"
+      },
+      {
+        "entry_number": 33,
+        "date_filed": "2024-09-16",
+        "time_filed": "",
+        "date_display": "Sep 16, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19827333.) Filing fee previously paid on 09/10/2024 filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Nelson, Justin) (Filed on 9/16/2024) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.33.0.pdf"
+      },
+      {
+        "entry_number": 32,
+        "date_filed": "2024-09-16",
+        "time_filed": "",
+        "date_display": "Sep 16, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19847336.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate/Proof of Service Certificate of Good Standing)(Cole, CeCe) (Filed on 9/16/2024) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.32.0.pdf"
+      },
+      {
+        "entry_number": 31,
+        "date_filed": "2024-09-16",
+        "time_filed": "",
+        "date_display": "Sep 16, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19847321.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate/Proof of Service Certificate of Good Standing)(Sholder, Scott) (Filed on 9/16/2024) (Entered: 09/16/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.31.0.pdf"
+      },
+      {
+        "entry_number": 30,
+        "date_filed": "2024-09-13",
+        "time_filed": "",
+        "date_display": "Sep 13, 2024",
+        "description": "ORDER granting 27 Motion for Pro Hac Vice - Jacob Miller. Signed by Judge William Alsup on 9/13/2024. (afm, COURT STAFF) (Filed on 9/13/2024) (Entered: 09/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.30.0.pdf"
+      },
+      {
+        "entry_number": 29,
+        "date_filed": "2024-09-13",
+        "time_filed": "",
+        "date_display": "Sep 13, 2024",
+        "description": "ORDER granting 26 Motion for Pro Hac Vice - Rachel Geman. Signed by Judge William Alsup on 9/13/2024. (afm, COURT STAFF) (Filed on 9/13/2024) (Entered: 09/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.29.0.pdf"
+      },
+      {
+        "entry_number": 28,
+        "date_filed": "2024-09-13",
+        "time_filed": "",
+        "date_display": "Sep 13, 2024",
+        "description": "ORDER granting 25 Motion for Pro Hac Vice - Alejandra Salinas. Signed by Judge William Alsup on 9/13/2024. (afm, COURT STAFF) (Filed on 9/13/2024) (Entered: 09/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.28.0.pdf"
+      },
+      {
+        "entry_number": 27,
+        "date_filed": "2024-09-13",
+        "time_filed": "",
+        "date_display": "Sep 13, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19843920.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing - Jacob Miller)(Miller, Jacob) (Filed on 9/13/2024) (Entered: 09/13/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.27.0.pdf"
+      },
+      {
+        "entry_number": 26,
+        "date_filed": "2024-09-12",
+        "time_filed": "",
+        "date_display": "Sep 12, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19840638.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing - Rachel Geman)(Geman, Rachel) (Filed on 9/12/2024) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.26.0.pdf"
+      },
+      {
+        "entry_number": 25,
+        "date_filed": "2024-09-12",
+        "time_filed": "",
+        "date_display": "Sep 12, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19825012.) Filing fee previously paid on 09/09/2024 filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate/Proof of Service Supreme Court of Texas Certificate of Good Standing)(Salinas, Alejandra) (Filed on 9/12/2024) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.25.0.pdf"
+      },
+      {
+        "entry_number": 24,
+        "date_filed": "2024-09-12",
+        "time_filed": "",
+        "date_display": "Sep 12, 2024",
+        "description": "ORDER GRANTING 20 MOTION FOR PRO HAC VICE. Signed by Judge William Alsup on 9/12/2024. (afm, COURT STAFF) (Filed on 9/12/2024) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.24.0.pdf"
+      },
+      {
+        "entry_number": 23,
+        "date_filed": "2024-09-12",
+        "time_filed": "",
+        "date_display": "Sep 12, 2024",
+        "description": "ORDER GRANTING 19 MOTION FOR PRO HAC VICE. Signed by Judge William Alsup on 9/12/2024. (afm, COURT STAFF) (Filed on 9/12/2024) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.23.0.pdf"
+      },
+      {
+        "entry_number": 22,
+        "date_filed": "2024-09-12",
+        "time_filed": "",
+        "date_display": "Sep 12, 2024",
+        "description": "ORDER DENYING 18 MOTION FOR PRO HAC VICE. Signed by Judge William Alsup. (afm, COURT STAFF) (Filed on 9/12/2024) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.22.0.pdf"
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2024-09-12",
+        "time_filed": "",
+        "date_display": "Sep 12, 2024",
+        "description": "ORDER DENYING 17 MOTION FOR PRO HAC VICE. Signed by Judge William Alsup on 9/12/2024.(afm, COURT STAFF) (Filed on 9/12/2024) (Entered: 09/12/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.21.0_1.pdf"
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2024-09-11",
+        "time_filed": "",
+        "date_display": "Sep 11, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19835974.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing - Wesley Dozier)(Dozier, Wesley) (Filed on 9/11/2024) (Entered: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.20.0.pdf"
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2024-09-11",
+        "time_filed": "",
+        "date_display": "Sep 11, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19835735.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing - Anna J. Freymann)(Freymann, Anna) (Filed on 9/11/2024) (Entered: 09/11/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.19.0.pdf"
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2024-09-10",
+        "time_filed": "",
+        "date_display": "Sep 10, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19827333.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Nelson, Justin) (Filed on 9/10/2024) (Entered: 09/10/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.18.0.pdf"
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2024-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19825012.) filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate/Proof of Service Certificate of Good Standing)(Salinas, Alejandra) (Filed on 9/9/2024) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.17.0.pdf"
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2024-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2024",
+        "description": "ORDER GRANTING 15 MOTION FOR PRO HAC VICE. Signed by Judge William Alsup on 9/9/2024. (afm, COURT STAFF) (Filed on 9/9/2024) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.16.0.pdf"
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2024-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice Corrected ( Filing fee $ 328, receipt number ACANDC-19808621.) Filing fee previously paid on 9/4/2024 filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing)(Smyser, James) (Filed on 9/9/2024) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.15.0.pdf"
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2024-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2024",
+        "description": "ORDER DENYING 11 MOTION FOR PRO HAC VICE. Signed by Judge William Alsup on 9/9/2024. (afm, COURT STAFF) (Filed on 9/9/2024) (Entered: 09/09/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.14.0.pdf"
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2024-09-05",
+        "time_filed": "",
+        "date_display": "Sep 5, 2024",
+        "description": "Certificate of Interested Entities by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson Certification of Conflicts and Interested Entities or Persons by Plaintiffs (Nath, Rohit) (Filed on 9/5/2024) (Entered: 09/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.13.0.pdf"
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2024-09-05",
+        "time_filed": "",
+        "date_display": "Sep 5, 2024",
+        "description": "WAIVER OF SERVICE Returned Executed filed by Andrea Bartz, Kirk Wallace Johnson, Charles Graeber. Service waived by Anthropic PBC waiver sent on 8/21/2024, answer due 10/21/2024. (Nath, Rohit) (Filed on 9/5/2024) (Entered: 09/05/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.12.0.pdf"
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2024-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2024",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-19808621.) Filing fee previously paid on 9/4/2024 filed by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson. (Attachments: # 1 Certificate of Good Standing)(Smyser, James) (Filed on 9/4/2024) (Entered: 09/04/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.11.0.pdf"
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2024-08-27",
+        "time_filed": "",
+        "date_display": "Aug 27, 2024",
+        "description": "NOTICE by Andrea Bartz, Charles Graeber, Kirk Wallace Johnson NOTICE OF PENDENCY OF OTHER ACTION OR PROCEEDING (Attachments: # 1 Exhibit 1, # 2 Exhibit 2)(Nath, Rohit) (Filed on 8/27/2024) (Entered: 08/27/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.10.0_2.pdf"
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2024-08-23",
+        "time_filed": "",
+        "date_display": "Aug 23, 2024",
+        "description": "SUPPLEMENTAL ORDER TO ORDER SETTING INITIAL CASE MANAGEMENT CONFERENCE IN CIVIL CASES BEFORE JUDGE WILLIAM ALSUP. (whalc2, COURT STAFF) (Filed on 8/23/2024) (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.9.0.pdf"
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2024-08-23",
+        "time_filed": "",
+        "date_display": "Aug 23, 2024",
+        "description": "NOTICE AND ORDER RE PUTATIVE CLASS ACTIONS AND FACTORS TO BE EVALUATED FOR ANY PROPOSED SETTLEMENT AND PROTOCOL FOR INTERVIEWING PUTATIVE CLASS MEMBERS. SIGNED BY JUDGE ALSUP. (whalc2, COURT STAFF) (Filed on 8/23/2024) Modified on 8/14/2025 (kmg, COURT STAFF). Modified on 8/14/2025 (kmg, COURT STAFF). (Entered: 08/23/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.8.0.pdf"
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "Summons Issued as to Anthropic PBC. (mbc, COURT STAFF) (Filed on 8/20/2024) (Entered: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.7.0.pdf"
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "**DISREGARD SEE ENTRY 5: CLERKS NOTICE** Initial Case Management Scheduling Order with ADR Deadlines: Case Management Statement due by 11/14/2024. Initial Case Management Conference set for 11/21/2024 11:00 AM in San Francisco, Courtroom 12, 19th Floor. (mbc, COURT STAFF) (Filed on 8/20/2024) Modified on 8/20/2024 (as, COURT STAFF). (Entered: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.6.0.pdf"
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "CLERK'S NOTICE SCHEDULING INITIAL CASE MANAGEMENT CONFERENCE ON ASSIGNMENT: Joint Case Management Statement due by 10/3/2024. Initial Case Management Conference set for 10/10/2024 11:00 AM in San Francisco, Courtroom 12, 19th Floor. Parties may download Judge Alsup's standing orders from the Court's webpage: https://cand.uscourts.gov/judges/alsup-william-wha/. (This is a text-only entry generated by the court. There is no document associated with this entry.) (afm, COURT STAFF) (Filed on 8/20/2024) (Entered: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "Case assigned to Judge William Alsup. Counsel for plaintiff or the removing party is responsible for serving the Complaint or Notice of Removal, Summons and the assigned judge's standing orders and all other new case documents upon the opposing parties. For information, visit E-Filing A New Civil Case at http://cand.uscourts.gov/ecf/caseopening.Standing orders can be downloaded from the court's web page at www.cand.uscourts.gov/judges. Upon receipt, the summons will be issued and returned electronically. A scheduling order will be sent by Notice of Electronic Filing (NEF) within two business days. (as, COURT STAFF) (Filed on 8/20/2024) (Entered: 08/20/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "~Util - Case Assigned by Intake",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2024-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2024",
+        "description": "Clerk's Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2024-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2024",
+        "description": "REPORT on the filing or determination of an action regarding a Copyright (AO-121) (cc: form mailed to register). (Nath, Rohit) (Filed on 8/19/2024) (Entered: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.3.0.pdf"
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2024-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2024",
+        "description": "Proposed Summons. (Nath, Rohit) (Filed on 8/19/2024) (Entered: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.2.0.pdf"
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2024-08-19",
+        "time_filed": "",
+        "date_display": "Aug 19, 2024",
+        "description": "COMPLAINT against Anthropic PBC ( Filing fee $ 405, receipt number ACANDC-19744527.). Filed by Andrea Bartz, Kirk Wallace Johnson, Charles Graeber. (Attachments: # 1 Exhibit A, # 2 Civil Cover Sheet)(Nath, Rohit) (Filed on 8/19/2024) (Entered: 08/19/2024)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=24"
+    ]
   },
   "claims_administrator": {
     "name": "Anthropic Copyright Settlement Administrator",
@@ -4437,6 +7426,13 @@
       "url": "https://wordsandmoney.substack.com/"
     },
     {
+      "headline": "Anthropic's $1.5 billion copyright settlement gets final approval but authors aren't cheering",
+      "url": "https://startupfortune.com/anthropics-15-billion-copyright-settlement-gets-final-approval-but-authors-arent-cheering/",
+      "source": "Startup Fortune",
+      "date": "2026-07-28",
+      "summary": "Judge Martínez-Olguín granted final approval of the settlement on July 20, 2026, with authors set to receive approximately $3,100 per work while over $100 million went to lawyers and Anthropic admitted no wrongdoing. The case sets a financial benchmark for AI copyright claims but creates no binding legal precedent on the fair use question."
+    },
+    {
       "headline": "Anthropic AI copyright infringement lawsuit isn't a total win for authors",
       "url": "https://www.npr.org/2026/07/27/nx-s1-5904606/anthropic-vs-bartz-ai-copyright-lawsuit-pros-cons",
       "source": "NPR",
@@ -4458,6 +7454,13 @@
       "summary": "The U.S. District Court for the Northern District of California granted final approval to the $1.5 billion Bartz v. Anthropic settlement on July 20, 2026, resolving allegations that Anthropic used pirated books to train its Claude AI platform; the case had previously seen a key ruling that legally purchased books could be used for AI training but pirated copies could not."
     },
     {
+      "headline": "Anthropic Settlement Receives Final Approval",
+      "url": "https://locusmag.com/2026/07/anthropic-settlement-receives-final-approval/",
+      "source": "Locus Magazine",
+      "date": "2026-07-22",
+      "summary": "Locus reported, citing Bloomberg, that the Bartz v. Anthropic settlement is 'the largest copyright class action settlement in US history,' paying about $3,100 per author across more than 480,000 works, with $122 million going toward attorneys and litigation costs."
+    },
+    {
       "headline": "Anthropic to pay €1.3bn in biggest copyright settlement on record",
       "url": "https://www.euronews.com/next/2026/07/21/anthropic-to-pay-13bn-in-biggest-copyright-settlement-on-record",
       "source": "Euronews",
@@ -4470,6 +7473,13 @@
       "source": "Textbook & Academic Authors Association (TAA Abstract Blog)",
       "date": "2026-07-21",
       "summary": "Judge Martínez-Olguín approved the final settlement calling it 'fair, reasonable, and adequate,' overruling all 53 objections. Class counsel reported a 91.3% claims rate with only 350 valid opt-outs representing 0.03% of total works."
+    },
+    {
+      "headline": "Bartz v. Anthropic Settlement Receives Final Approval",
+      "url": "https://www.authorsalliance.org/2026/07/21/bartz-v-anthropic-settlement-receives-final-approval/",
+      "source": "Authors Alliance",
+      "date": "2026-07-21",
+      "summary": "Authors Alliance reported that Judge Martínez-Olguín issued a 23-page order granting final approval of the class action settlement, resolving outstanding administrative details and ruling on attorneys' fees. The order closes the case and transitions it to the settlement distribution phase."
     },
     {
       "headline": "Bartz et al v. Anthropic PBC – Final Approval Coverage",
@@ -4491,7 +7501,23 @@
       "source": "The Authors Guild",
       "date": "2026-07-20",
       "summary": "Judge Martínez-Olguín granted final approval and entered final judgment in Bartz v. Anthropic, awarding class counsel approximately $101.56 million in fees (roughly 6.8% of the fund) and trimming service awards for the three named plaintiffs to $15,000 each. No specific payout disbursement date has been announced."
+    },
+    {
+      "headline": "AAP Welcomes Court's Final Settlement Approval in Bartz v. Anthropic",
+      "url": "https://publishers.org/news/aap-welcomes-courts-final-settlement-approval-in-bartz-v-anthropic/",
+      "source": "Association of American Publishers (AAP)",
+      "date": "2026-07-20",
+      "summary": "The AAP welcomed the final approval of the settlement, noting that Anthropic must pay $1.5 billion and destroy all original files downloaded from Library Genesis and Pirate Library Mirror. The reported claims rate was 92.77%, marking the largest class action copyright settlement in history."
     }
   ],
-  "events": []
+  "events": [
+    {
+      "title": "Anthropic Settlement Fund – Third Installment Payment Due",
+      "date": "2026-09-25",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://press.princeton.edu/news/bartz-v-anthropic",
+      "source": "Princeton University Press (citing settlement agreement)"
+    }
+  ]
 }
