@@ -24,15 +24,6 @@ Ciao
 
 > Case Summary: Alkegen Chapter 11 — Alkegen, the Clearlake-backed specialty materials maker formed in Unifrax's debt-funded 2021 acquisition of Lydall, filed a prepackaged Chapter 11 to shed roughly $3
 
-### (no docket number) — 2026-07-24
-
-> Case Summary: Poolin Chapter 11 — Poolin, once the world's largest Bitcoin mining pool, and affiliates filed for Chapter 11 after a 2022 liquidity crisis froze customer withdrawals and left ~$163.7M i
-
-$60M in proceeds
-$10M admin
-$50M net 
-$100-$500M liabilities = 2-10c recoveries
-
 ### (no docket number) — 2026-07-23 ★
 
 > The Preference Wave Is Coming- What Vendors Should Do Now — If you sold goods or services to a customer that filed Chapter 11 in the last two years, the window to prepare is right now. It closes the d
@@ -74,4 +65,13 @@ $100-$500M liabilities = 2-10c recoveries
 ### (no docket number) — 2026-07-31
 
 > New York Alleges Kalshi Is Running Illegal Gambling Operation — New York Attorney General Letitia James’s office said Kalshi’s prediction market meets the legal definition of gambling because users ar
+
+## Unknown case
+
+### (no docket number) — undated
+
+$60M in proceeds
+$10M admin
+$50M net 
+$100-$500M liabilities = 2-10c recoveries
 
