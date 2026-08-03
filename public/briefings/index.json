@@ -1,6 +1,148 @@
 {
   "items": [
     {
+      "slug": "2026-08-03-ai-copyright-lawsuit-tracker",
+      "date": "2026-08-03",
+      "title": "Every Major AI Copyright Lawsuit, Tracked (August 2026)",
+      "summary": "Anthropic, OpenAI, Meta, Stability, Midjourney, Suno, Udio — every major AI copyright case on one page: status, stakes, and what each means for rights holders. Updated as the docket moves.",
+      "tags": [
+        "AI Copyright",
+        "Tracker",
+        "Advisory"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-03-anthropic-settlement-payment-timeline",
+      "date": "2026-08-03",
+      "title": "Anthropic Settlement Payment Timeline: When Will You Actually Get Paid?",
+      "summary": "Final approval landed July 20, 2026. Next milestones: August 21 checks, the first $450M installment September 25, and payments running into 2027. The full verified schedule.",
+      "tags": [
+        "Bartz",
+        "Anthropic",
+        "Settlement",
+        "Payments"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-03-anthropic-settlement-how-much-per-book",
+      "date": "2026-08-03",
+      "title": "How Much Is the Anthropic Settlement Per Book? The Real Math",
+      "summary": "The court's estimate is ~$3,000 per work — four times the statutory minimum. What comes out before you're paid, what makes your number bigger, and when the money actually arrives.",
+      "tags": [
+        "Bartz",
+        "Anthropic",
+        "Settlement"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-03-anthropic-settlement-appeal-risk",
+      "date": "2026-08-03",
+      "title": "Will an Appeal Delay Your Anthropic Settlement Payment?",
+      "summary": "The appeal window closes around August 19, 2026, and no appeal has been filed yet. Who could appeal, what it would do to the payment schedule, and how to take the risk off your books.",
+      "tags": [
+        "Bartz",
+        "Anthropic",
+        "Appeal"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-03-sell-your-anthropic-settlement-claim",
+      "date": "2026-08-03",
+      "title": "Can You Sell Your Bartz v. Anthropic Settlement Claim? Yes — Here's How It Works",
+      "summary": "Settlement payment rights can be sold for cash today instead of waiting for installments into 2027. How a claim sale works, what you give up, and the questions to ask any buyer.",
+      "tags": [
+        "Bartz",
+        "Anthropic",
+        "Claims Trading"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-03-anthropic-settlement-cash-advance",
+      "date": "2026-08-03",
+      "title": "Anthropic Settlement Advance: How to Get Cash Before the Checks Arrive",
+      "summary": "Two ways to turn a filed Bartz claim into money now — an outright sale or a non-recourse advance — and the trap terms to watch for in any funding offer.",
+      "tags": [
+        "Bartz",
+        "Anthropic",
+        "Claims Trading"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-03-missed-anthropic-settlement-deadline",
+      "date": "2026-08-03",
+      "title": "Missed the Anthropic Settlement Deadline? Here's What You Can Still Do",
+      "summary": "Claims closed March 30, 2026 — but non-filing claimants are scheduled for checks August 21, and the settlement left output claims and post-2025 conduct wide open. The full map.",
+      "tags": [
+        "Bartz",
+        "Anthropic",
+        "Settlement"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-03-concord-v-anthropic-music-lawsuit",
+      "date": "2026-08-03",
+      "title": "Concord v. Anthropic: The Music Lawsuit the $1.5 Billion Settlement Didn't End",
+      "summary": "The music publishers' lyrics case is in deep discovery, with a motion to defeat fair use pending ahead of trial. Why the book settlement doesn't protect Anthropic here.",
+      "tags": [
+        "Concord",
+        "Anthropic",
+        "Music"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-03-bmg-v-anthropic-lyrics-lawsuits",
+      "date": "2026-08-03",
+      "title": "BMG v. Anthropic: Two Lawsuits, 20,000+ Songs, and $3 Billion on the Line",
+      "summary": "BMG opened a second music front against Anthropic in 2026 — roughly 500 identified works in one suit, 20,000+ songs and a reported $3B+ demand in the other. What the Bartz playbook says happens next.",
+      "tags": [
+        "BMG",
+        "Anthropic",
+        "Music"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
+      "slug": "2026-08-03-openai-copyright-mdl-authors",
+      "date": "2026-08-03",
+      "title": "The OpenAI Copyright MDL: Where Authors' and Publishers' Claims Stand Now",
+      "summary": "Motion to dismiss denied, discovery running, trial expected late 2026 or early 2027 — and the $1.5B Anthropic settlement is now the floor in every negotiation. What authors should do before it resolves.",
+      "tags": [
+        "OpenAI",
+        "NYT",
+        "Authors Guild",
+        "MDL"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "briefing"
+    },
+    {
       "slug": "2026-08-03-bankruptcy-advisory",
       "date": "2026-08-03",
       "type": "briefing",
