@@ -39,6 +39,10 @@
     "poolin": {
       "bg": "#ffb8cd",
       "fg": "#b80000"
+    },
+    "bartz-anthropic": {
+      "bg": "#c9fa67",
+      "fg": "#415719"
     }
   },
   "groups": [
