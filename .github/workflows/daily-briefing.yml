@@ -62,7 +62,10 @@ jobs:
           # Single-topic mode: comma-separated slugs from the manual-run form
           # or the admin "Run Now" dispatch payload. Empty = run all topics.
           BRIEFING_TOPICS: ${{ github.event.inputs.topics || github.event.client_payload.topics || '' }}
+          # Optional: X API bearer (read tier) — followed accounts feed briefings
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: |
+          python scripts/scan_x.py
           python scripts/generate.py
 
       - name: Commit and push if changes
