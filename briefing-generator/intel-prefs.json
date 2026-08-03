@@ -47,6 +47,10 @@
     "bankruptcy-creditor-rights": {
       "bg": "#1B3A4B",
       "fg": "#FFFFFF"
+    },
+    "billion-dollar-class-actions": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
     }
   },
   "groups": [
