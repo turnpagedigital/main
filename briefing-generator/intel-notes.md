@@ -38,10 +38,6 @@ Ciao
 
 ## Terraform Labs
 
-### Dkt. 1309 — 2026-08-03
-
-> Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned
-
 ### Dkt. 1305 — 2026-07-30 ★
 
 > Chapter 11 Post-Confirmation Report
