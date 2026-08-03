@@ -34,7 +34,7 @@ A sale is also not the only mechanism: advances against a claim exist too, and t
 
 ## If you want a number to consider
 
-Turnpage quotes Bartz claims at no cost and with no obligation: you describe your works ([the form is here](/copyright)), we verify and come back with a fixed cash price, and you decide with the number in hand — including deciding that waiting is better. Consider consulting your own counsel before assigning a claim; that is not a formality we say for cover, it is what we would do.
+Turnpage quotes Bartz claims at no cost and with no obligation: you describe your works ([the form is here](/copyright)), we verify and come back with a fixed cash price, and you decide with the number in hand — including deciding that waiting is better. Consider consulting your own counsel before assigning a claim — it is what we would do in your position.
 
 ## Related reading
 

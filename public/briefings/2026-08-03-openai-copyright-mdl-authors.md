@@ -8,15 +8,15 @@ The multidistrict litigation gathers the major copyright actions against OpenAI 
 
 ## The three developments that matter
 
-- **The motion to dismiss failed.** Judge Stein rejected OpenAI's argument that AI training is *inherently* transformative fair use — the defense will be tested on evidence, not presumed. That single ruling is why this case has real settlement gravity.
+- **The motion to dismiss failed.** Judge Stein rejected OpenAI's argument that AI training is *inherently* transformative fair use — the defense will be tested on evidence, not presumed. That single ruling is why settlement talk around this case is taken seriously.
 - **Discovery is underway** (since spring 2026), with trial expected **late 2026 / early 2027**. Discovery is where acquisition facts surface — and acquisition facts (how the books were obtained) are exactly what turned the Anthropic case from "interesting fair-use debate" into a $1.5 billion payment.
 - **The NYT raised the stakes in June 2026**, amending its complaint to allege Microsoft built dedicated supercomputing infrastructure specifically to exploit Times content — a theory that widens who pays if liability lands.
 
 ## The Anthropic comparison every claimant should understand
 
-*Bartz* settled at roughly **$3,000 per work — 4× the statutory minimum — across 482,460 books**, and the court blessed it as fair. That number is now the de facto floor in every negotiation room in this space. OpenAI's alleged corpus and commercial scale are larger than Anthropic's were; its exposure math is correspondingly uglier. None of that guarantees a settlement — OpenAI has fought publicly where Anthropic folded quietly — but with a trial date approaching and the fair-use-by-default argument dead at the pleading stage, the pressure only points one direction.
+*Bartz* settled at roughly **$3,000 per work — 4× the statutory minimum — across 482,460 books**, and the court blessed it as fair. That number is now the reference point in any settlement discussion in this space. OpenAI's alleged corpus and commercial scale are larger than Anthropic's were; its potential exposure is correspondingly larger. None of that guarantees a settlement — OpenAI has litigated publicly where Anthropic chose to settle — but with a trial date approaching and the inherently-transformative argument rejected at the pleading stage, the pressure is unlikely to ease.
 
-The flip side: *Kadrey v. Meta* shows training can win on fair use ([Meta took that round](/briefings/2026-08-03-ai-copyright-lawsuit-tracker), though its piracy claims survived). The law is genuinely unsettled — which is precisely why outcomes here get priced like the probabilistic assets they are.
+The flip side: *Kadrey v. Meta* shows training can win on fair use ([Meta took that round](/briefings/2026-08-03-ai-copyright-lawsuit-tracker), though its piracy claims survived). The law is genuinely unsettled, and any honest read of this case holds both outcomes in view.
 
 ## What authors should do now
 

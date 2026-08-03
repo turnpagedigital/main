@@ -16,11 +16,11 @@ One page, every major case against an LLM or generative-AI provider, current as 
 
 ## Meta
 
-**Kadrey v. Meta (books) — SPLIT.** Judge Chhabria granted Meta summary judgment on fair use for *training* (June 2025) — but claims over Meta's alleged **torrenting/seeding of pirated books remain active** and the case continues through discovery in 2026. The lesson of the year: *how you got the data* matters more than *what you trained*. Follow-on author suits against Meta continue to file.
+**Kadrey v. Meta (books) — SPLIT.** Judge Chhabria granted Meta summary judgment on fair use for *training* (June 2025) — but claims over Meta's alleged **torrenting/seeding of pirated books remain active** and the case continues through discovery in 2026. The pattern of the year: courts have been more forgiving of training itself than of how the material was acquired. Follow-on author suits against Meta continue to file.
 
-## Thomson Reuters v. Ross Intelligence — THE APPELLATE WILDCARD
+## Thomson Reuters v. Ross Intelligence — the pending appellate ruling
 
-The **Third Circuit heard argument June 11, 2026** on the first appellate review of AI training and fair use. District judges have split — Alsup (*Bartz*) and Chhabria (*Kadrey*) for AI companies on training; Bibas (*Ross*) against. The circuit's ruling will move the value of every claim on this page, in one direction or the other, the day it drops.
+The **Third Circuit heard argument June 11, 2026** on the first appellate review of AI training and fair use. District judges have split — Alsup (*Bartz*) and Chhabria (*Kadrey*) for AI companies on training; Bibas (*Ross*) against. Whichever way it goes, the circuit's ruling will bear on the value of every claim on this page.
 
 ## Stability AI, Midjourney, and the image cases
 
@@ -31,7 +31,7 @@ The **Third Circuit heard argument June 11, 2026** on the first appellate review
 ## Music generators
 
 **UMG/WMG/Sony v. Suno — ACTIVE.** All three majors continue against Suno.
-**UMG v. Udio — SETTLED into a partnership**: the lawsuit became a licensed AI music platform launching in 2026 — the second template (after cash settlement) for how these cases end. The musicians' union (AFM) has sued UMG and WMG over whether artists share in those settlements — the "who gets paid" fight is just beginning.
+**UMG v. Udio — SETTLED into a partnership**: the lawsuit became a licensed AI music platform launching in 2026 — the second template (after cash settlement) for how these cases end. The musicians' union (AFM) has sued UMG and WMG over whether artists share in those settlements — the question of who shares in these resolutions is just beginning to be litigated.
 
 ## What this board means if you own rights
 

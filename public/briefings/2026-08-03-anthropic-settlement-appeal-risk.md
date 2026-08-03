@@ -1,6 +1,6 @@
 # Will an Appeal Delay Your Anthropic Settlement Payment?
 
-**The short answer:** the window to appeal the Bartz v. Anthropic final judgment closes on or about **August 19, 2026** — 30 days after the July 20 judgment. As of this writing, **no appeal has been filed**. If that stays true, the distribution schedule proceeds as planned. If an objector does appeal, payments to the class can freeze for months — sometimes a year or more — while the Ninth Circuit sorts it out. Here's how to handicap it.
+**The short answer:** the window to appeal the Bartz v. Anthropic final judgment closes on or about **August 19, 2026** — 30 days after the July 20 judgment. As of this writing, **no appeal has been filed**. If that stays true, the distribution schedule proceeds as planned. If an objector does appeal, payments to the class can pause for months — sometimes a year or more — while the Ninth Circuit reviews. Here is how to weigh the risk.
 
 ## Who could even appeal?
 
@@ -14,7 +14,7 @@ Some settlements distribute to the uncontested portion of the class during an ap
 
 ## The realistic scenario
 
-Handicapping honestly: a fee-award appeal or a serial-objector appeal is always possible in a fund this size, but the court's 23-page order dealt with the objections carefully, the fee award was *cut* to ~$101.5 million (removing the most common appeal target — an oversized fee), and the claims rate was 91.3%. This settlement was built to survive appeal. The window closing on ~August 19 without a notice of appeal is the most likely outcome — and once it closes, the judgment is final and the [payment timeline](/briefings/2026-08-03-anthropic-settlement-payment-timeline) runs clean.
+Weighed honestly: an appeal is always possible in a fund this size, but the court's 23-page order dealt with the objections carefully, the fee award was *cut* to roughly $101.5 million (removing the most common appeal target, an oversized fee), and the claims rate was 91.3%. The order reads like it was written with an appeal in mind. The likeliest outcome is that the window closes on or about August 19 without a notice of appeal — at which point the judgment is final and the [payment timeline](/briefings/2026-08-03-anthropic-settlement-payment-timeline) runs as written.
 
 ## If a delay would genuinely hurt
 

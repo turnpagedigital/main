@@ -8,9 +8,9 @@ Major music publishers — **Concord, Capitol CMG, Universal Music Publishing, a
 
 ## Where it stands now
 
-- **Preliminary injunction denied (March 25, 2025).** Judge Lee declined to halt Anthropic's use of lyrics in training while the case proceeds — a battle lost, but one that decided nothing about final liability.
+- **Preliminary injunction denied (March 25, 2025).** Judge Lee declined to halt Anthropic's use of lyrics in training while the case proceeds — a setback for the publishers, but one that decided nothing about final liability.
 - **Deep in discovery.** In a notable 2025 ruling, the court ordered production of a sample of **5 million Claude prompt–output pairs** — evidence aimed at the key market-harm question: do Claude's outputs substitute for licensed lyric use?
-- **Publishers on offense.** UMG, Concord, and ABKCO have asked the court to rule that Anthropic infringed their copyrights and to reject its fair-use argument before trial, calling the evidence of infringement "overwhelming."
+- **The publishers are pressing.** UMG, Concord, and ABKCO have asked the court to rule that Anthropic infringed their copyrights and to reject its fair-use argument before trial, calling the evidence of infringement "overwhelming."
 - **Recent activity.** The docket last moved July 29, 2026; the case is being actively litigated.
 
 ## Why Bartz doesn't protect Anthropic here

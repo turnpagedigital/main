@@ -1,6 +1,6 @@
 # BMG v. Anthropic: The Lawsuits Over 20,000 Songs
 
-**The short answer:** BMG Rights Management has opened a second music front against Anthropic — separate from [the Concord case](/briefings/2026-08-03-concord-v-anthropic-music-lawsuit) — with two 2026 lawsuits: one targeting roughly **500 identified compositions** (works recorded by artists like Justin Bieber, Bruno Mars, and the Rolling Stones), and a broader action covering **more than 20,000 songs** that reportedly seeks **over $3 billion** for Anthropic's alleged torrenting of lyrics from pirate "shadow libraries." For music rights holders, this is the fastest-growing exposure in the AI copyright system.
+**The short answer:** BMG Rights Management has opened a second music front against Anthropic — separate from [the Concord case](/briefings/2026-08-03-concord-v-anthropic-music-lawsuit) — with two 2026 lawsuits: one targeting roughly **500 identified compositions** (works recorded by artists like Justin Bieber, Bruno Mars, and the Rolling Stones), and a broader action covering **more than 20,000 songs** that reportedly seeks **over $3 billion** for Anthropic's alleged torrenting of lyrics from pirate "shadow libraries." For music rights holders, these are the newest and broadest claims in the system.
 
 ## What BMG alleges
 
@@ -13,7 +13,7 @@ One filing puts the stakes bluntly, alleging Anthropic's massive valuation "was 
 
 ## Why the Bartz playbook matters here
 
-Anthropic already showed what it does when an *acquisition-through-piracy* record hardens: it paid $1.5 billion — roughly **$3,000 per work, four times the statutory minimum** — to settle the authors' claims rather than test them at trial. The BMG suits are engineered to build the same record for songs. And the [Bartz release explicitly left output claims and non-book works untouched](/briefings/2026-08-03-missed-anthropic-settlement-deadline), so nothing about that settlement shields Anthropic from any of this.
+Anthropic already showed what it does when an *acquisition-through-piracy* record hardens: it paid $1.5 billion — roughly **$3,000 per work, four times the statutory minimum** — to settle the authors' claims rather than test them at trial. The BMG suits are built to assemble the same record for songs. And the [Bartz release explicitly left output claims and non-book works untouched](/briefings/2026-08-03-missed-anthropic-settlement-deadline), so nothing about that settlement shields Anthropic from any of this.
 
 Statutory damages arithmetic explains the $3 billion figure: willful infringement can run to $150,000 per work. Twenty thousand songs × even a fraction of that ceiling is a very large number — and BMG's identified-works approach (493 compositions in the narrower suit) is designed to survive the "you can't show which works" defenses that have trimmed other AI cases.
 

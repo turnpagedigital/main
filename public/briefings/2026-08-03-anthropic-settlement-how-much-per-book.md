@@ -8,7 +8,7 @@ The certified class covers **482,460 works** on the settlement's Works List — 
 
 ## What comes out before you're paid
 
-- **Attorneys' fees: ~$101.5 million.** Class counsel originally sought $300 million, trimmed the request to $187.5 million, and the court awarded roughly $101.5 million — about 6.8% of the fund, which is unusually low for a class action (courts often award 25%+). That's good news for claimants: more of the fund survives for distribution.
+- **Attorneys' fees: ~$101.5 million.** Class counsel originally sought $300 million, trimmed the request to $187.5 million, and the court awarded roughly $101.5 million — about 6.8% of the fund, which is unusually low for a class action (courts often award 25% or more), and which leaves more of the fund for distribution.
 - **Administration costs.** Processing 480,000+ claims through JND Legal Administration isn't free; costs come from the fund.
 - **Allocation splits.** Under the Plan of Allocation, the default for most traditionally published books is a **50/50 split between author and publisher**. Self-published authors who own all rights receive the full amount. Textbook and educational works, where contracts vary, can be adjudicated individually — with a special master resolving disputes. (The Authors Guild's settlement guide covers these mechanics in depth.)
 

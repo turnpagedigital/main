@@ -1,6 +1,6 @@
 # Anthropic Settlement Payment Timeline: When Will You Actually Get Paid?
 
-**The short answer:** the Bartz v. Anthropic settlement received final approval on July 20, 2026, and the money now moves on a fixed schedule. The next administrator milestone is **August 21, 2026**, Anthropic's first **$450 million installment is due September 25, 2026**, a second wave of checks is scheduled for **October 9, 2026**, and the final $450 million installment lands **September 25, 2027**. No first-wave distribution date has been formally announced yet — and that's exactly why this page exists. We update it as each milestone hits.
+**The short answer:** the Bartz v. Anthropic settlement received final approval on July 20, 2026, and the money now moves on a fixed schedule. The next administrator milestone is **August 21, 2026**, Anthropic's first **$450 million installment is due September 25, 2026**, a second wave of checks is scheduled for **October 9, 2026**, and the final $450 million installment lands **September 25, 2027**. No first-wave distribution date has been formally announced yet — which is why this page exists; we update it as each milestone passes.
 
 ## The verified schedule, in order
 
