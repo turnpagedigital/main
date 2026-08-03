@@ -999,6 +999,7 @@
       );
     }).join("");
     applyCursor(false);
+    jumpToHash();
   }
 
   // ── Keyboard navigation: arrows move a row cursor, letters act on it ──────
@@ -2355,6 +2356,32 @@
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden) syncLive();
     });
+  }
+
+  // ── Deep links: #e=<noteKey> or #u=<itemUrl> lands on that row ────────────
+  var jumpDone = false;
+  function jumpToHash() {
+    if (jumpDone) return;
+    var h = location.hash || "";
+    var row = null;
+    var mE = /[#&]e=([^&]+)/.exec(h);
+    var mU = /[#&]u=([^&]+)/.exec(h);
+    if (mE) {
+      var el = document.querySelector('#ud-tbody [data-nk="' + CSS.escape(decodeURIComponent(mE[1])) + '"]');
+      row = el && el.closest("tr");
+    } else if (mU) {
+      var vt = document.querySelector('#ud-tbody .ud-vote[data-url="' + CSS.escape(decodeURIComponent(mU[1])) + '"]');
+      row = vt && vt.closest("tr");
+    } else {
+      jumpDone = true;
+      return;
+    }
+    if (!row) return;  // data still loading — retried on the next render
+    jumpDone = true;
+    var ridx = row.getAttribute("data-ridx");
+    if (ridx != null) cursorIdx = Number(ridx);
+    row.classList.add("ud-row-cursor");
+    row.scrollIntoView({ block: "center" });
   }
 
   // ── Wire DOM events ────────────────────────────────────────────────────────

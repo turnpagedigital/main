@@ -986,6 +986,7 @@
       );
     }).join("");
     applyCursor(false);
+    jumpToHash();
   }
 
   // ── Keyboard navigation: arrows move a row cursor, letters act on it ──────
@@ -1396,6 +1397,7 @@
   // through CourtListener's PACER fetch otherwise. Cmd/Ctrl-click still
   // opens CourtListener normally.
   var FETCHING = {};  // noteKey → true while a fetch is in flight
+  var FETCH_BYPASS = {};  // noteKey → true: a prior fetch failed, let the link open
 
   function docketIdOf(e) {
     var m = /courtlistener\.com\/docket\/(\d+)/.exec(e.docket_url || "");
@@ -1411,6 +1413,26 @@
     render();
     noteToast("Fetching Dkt. " + e.entry_number + "\u2026", false);
 
+    // Where the plain Dkt. link points \u2014 the always-works fallback so a
+    // failed fetch is never worse than the link the click replaced.
+    var linkFallback = docketId
+      ? "https://www.courtlistener.com/docket/" + docketId +
+        "/?filed_after=&filed_before=&entry_gte=" + e.entry_number +
+        "&entry_lte=" + e.entry_number + "&order_by=asc"
+      : (e.docket_url || e.doc_url || "");
+
+    function openFallback(url, reason) {
+      delete FETCHING[nk];
+      FETCH_BYPASS[nk] = true;  // next click on this row opens the link directly
+      render();
+      var win = url ? window.open(url, "_blank", "noopener") : null;
+      if (win) {
+        noteToast("Opened CourtListener" + (reason ? " \u2014 " + reason : ""), false);
+      } else {
+        noteToast((reason ? reason + " \u2014 " : "") + "click the Dkt. link again to open CourtListener", true);
+      }
+    }
+
     function done(ok, msg, path) {
       delete FETCHING[nk];
       if (ok) {
@@ -1419,10 +1441,11 @@
           uploaded_at: new Date().toISOString(), text: "",
         });
         noteToast("Document attached \u2014 Dkt. " + e.entry_number, false);
+        render();
       } else {
-        noteToast("Fetch failed \u2014 " + msg, true);
+        // Never dead-end: fall back to the CourtListener page.
+        openFallback(linkFallback, msg);
       }
-      render();
     }
 
     fetch("api/fetch-doc", {
@@ -1431,6 +1454,7 @@
       body: JSON.stringify({ slug: e.slug, entry_number: e.entry_number, docket_id: docketId }),
     }).then(function (r) { return r.json(); }).then(function (p) {
       if (p.status === "ready") { done(true, "", p.path); return; }
+      if (p.status === "open_link") { openFallback(p.url || linkFallback, p.reason); return; }
 
       // Claims agent (free): a GitHub Action fetches and commits the PDF; poll
       // the uploads index until the document lands on this row.
@@ -2344,6 +2368,32 @@
     });
   }
 
+  // ── Deep links: #e=<noteKey> or #u=<itemUrl> lands on that row ────────────
+  var jumpDone = false;
+  function jumpToHash() {
+    if (jumpDone) return;
+    var h = location.hash || "";
+    var row = null;
+    var mE = /[#&]e=([^&]+)/.exec(h);
+    var mU = /[#&]u=([^&]+)/.exec(h);
+    if (mE) {
+      var el = document.querySelector('#ud-tbody [data-nk="' + CSS.escape(decodeURIComponent(mE[1])) + '"]');
+      row = el && el.closest("tr");
+    } else if (mU) {
+      var vt = document.querySelector('#ud-tbody .ud-vote[data-url="' + CSS.escape(decodeURIComponent(mU[1])) + '"]');
+      row = vt && vt.closest("tr");
+    } else {
+      jumpDone = true;
+      return;
+    }
+    if (!row) return;  // data still loading — retried on the next render
+    jumpDone = true;
+    var ridx = row.getAttribute("data-ridx");
+    if (ridx != null) cursorIdx = Number(ridx);
+    row.classList.add("ud-row-cursor");
+    row.scrollIntoView({ block: "center" });
+  }
+
   // ── Wire DOM events ────────────────────────────────────────────────────────
   document.addEventListener("DOMContentLoaded", function () {
     // Restore saved filter state before wiring controls
@@ -2606,7 +2656,9 @@
             (cl.getAttribute("href") || "").indexOf("courtlistener.com") !== -1) {
           var ctr = ev.target.closest("tr[data-ridx]");
           var ce = ctr ? RENDERED[Number(ctr.getAttribute("data-ridx"))] : null;
-          if (ce && !ce.is_article && ce.entry_number != null && docketIdOf(ce)) {
+          // If a prior fetch failed for this row, let the link open normally.
+          if (ce && !FETCH_BYPASS[entryNoteKey(ce)] &&
+              !ce.is_article && ce.entry_number != null && docketIdOf(ce)) {
             ev.preventDefault();
             startDocFetch(ce);
             return;
