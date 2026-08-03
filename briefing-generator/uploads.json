@@ -18,6 +18,16 @@
         "text": "",
         "source": "claims-agent"
       }
+    ],
+    "sleep-number|n511": [
+      {
+        "name": "Dkt-511.pdf",
+        "path": "briefing-generator/uploads/sleep-number-n511/Dkt-511.pdf",
+        "size": 2291591,
+        "uploaded_at": "2026-08-03T23:48:32.872525+00:00",
+        "text": "",
+        "source": "claims-agent"
+      }
     ]
   }
 }
