@@ -1,0 +1,40 @@
+# BMG v. Anthropic: Two Lawsuits, 20,000+ Songs, and $3 Billion on the Line
+
+**The short answer:** BMG Rights Management has opened a second music front against Anthropic — separate from [the Concord case](/briefings/2026-08-03-concord-v-anthropic-music-lawsuit) — with two 2026 lawsuits: one targeting roughly **500 identified compositions** (works recorded by artists like Justin Bieber, Bruno Mars, and the Rolling Stones), and a broader action covering **more than 20,000 songs** that reportedly seeks **over $3 billion** for Anthropic's alleged torrenting of lyrics from pirate "shadow libraries." For music rights holders, this is the fastest-growing exposure in the AI copyright system.
+
+## What BMG alleges
+
+The complaints track the theory that made the book authors' case a $1.5 billion settlement: that Anthropic didn't just learn from lyrics, it **acquired them illegally** — scraping lyrics from the web and downloading pirated songbooks and sheet music through shadow libraries like Library Genesis. BMG adds two aggravators:
+
+- **Copyright management information (CMI) removal** — stripping attribution and rights data from the materials before training, a separate violation under the DMCA
+- **Infringing outputs** — Claude allegedly generating BMG-managed lyrics on request
+
+One filing puts the stakes bluntly, alleging Anthropic's massive valuation "was built on stolen copyrighted works."
+
+## Why the Bartz playbook matters here
+
+Anthropic already showed what it does when an *acquisition-through-piracy* record hardens: it paid $1.5 billion — roughly **$3,000 per work, four times the statutory minimum** — to settle the authors' claims rather than test them at trial. The BMG suits are engineered to build the same record for songs. And the [Bartz release explicitly left output claims and non-book works untouched](/briefings/2026-08-03-missed-anthropic-settlement-deadline), so nothing about that settlement shields Anthropic from any of this.
+
+Statutory damages arithmetic explains the $3 billion figure: willful infringement can run to $150,000 per work. Twenty thousand songs × even a fraction of that ceiling is a very large number — and BMG's identified-works approach (493 compositions in the narrower suit) is designed to survive the "you can't show which works" defenses that have trimmed other AI cases.
+
+## What happens next
+
+Watch three things: (1) whether the BMG actions get related or coordinated with *Concord* before Judge Lee's court, where discovery is already deep; (2) how the publishers' pending motion to defeat fair use in *Concord* lands — a ruling against fair use would put settlement pressure on every music case at once; and (3) the Third Circuit's pending decision in *Thomson Reuters v. Ross*, the first appellate word on AI training and fair use. Our [full case tracker](/briefings/2026-08-03-ai-copyright-lawsuit-tracker) follows all three.
+
+## For rights holders
+
+If these cases resolve the way the book case did, the result is payment rights for catalogs of works — and payment rights are what our desk exists to price and buy. We already [buy Bartz v. Anthropic claims](/briefings/2026-08-03-sell-your-anthropic-settlement-claim) for cash today.
+
+> **Music catalog owner watching these cases?** [Talk to our desk early →](/contact) — understanding what you'd hold is free.
+
+## Sources
+
+- [BMG AI Song Copyright Lawsuit: Music Giant Sues Claude Maker Anthropic](https://www.billboard.com/pro/bmg-ai-song-copyright-lawsuit-sues-claude-maker-anthropic/) — Billboard Pro
+- [BMG sues Anthropic for infringement, alleging AI firm's valuation was built on 'stolen copyrighted works'](https://www.musicbusinessworldwide.com/bmg-sues-anthropic-alleging-ai-giants-380b-valuation-was-built-on-stolen-copyrighted-works/) — Music Business Worldwide
+- [BMG Files Massive Infringement Lawsuit Against Anthropic](https://www.digitalmusicnews.com/2026/03/18/bmg-anthropic-lawsuit/) — Digital Music News, March 2026
+- [Manatt Represents BMG in Copyright Infringement Suit](https://www.manatt.com/insights/news/2026/manatt-represents-bmg-in-copyright-infringement-suit) — Manatt, Phelps & Phillips
+- [BMG sues Anthropic over alleged use of copyrighted lyrics in AI training](https://ra.co/news/84811) — Resident Advisor
+
+---
+
+*Turnpage Digital Markets is an independent claims desk — not a party to, or counsel in, any case discussed. Damages figures are allegations from public filings and reporting, not predictions. This briefing is market intelligence, not legal or financial advice.*

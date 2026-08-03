@@ -1,0 +1,53 @@
+# Every Major AI Copyright Lawsuit, Tracked (August 2026)
+
+One page, every major case against an LLM or generative-AI provider, current as of **August 3, 2026** — who's suing, what's at stake, where it stands, and what it means for rights holders. Bookmark this; we maintain it as the docket moves. For the deep dives, each section links to our full briefing.
+
+## Anthropic
+
+**Bartz v. Anthropic (books) — SETTLED, $1.5 billion.** Final approval July 20, 2026; ~$3,000 per work across 482,460 books; distribution underway with the next milestone August 21 and installments into September 2027. The release covers past acquisition conduct only — outputs and future conduct remain open. → [Payment timeline](/briefings/2026-08-03-anthropic-settlement-payment-timeline) · [Per-book math](/briefings/2026-08-03-anthropic-settlement-how-much-per-book) · [Appeal risk](/briefings/2026-08-03-anthropic-settlement-appeal-risk) · [Sell your claim](/briefings/2026-08-03-sell-your-anthropic-settlement-claim)
+
+**Concord Music Group v. Anthropic (lyrics) — ACTIVE.** Music publishers (Concord, Capitol CMG, UMPG, ABKCO) in deep discovery before Judge Eumi K. Lee (N.D. Cal.); publishers have moved to defeat fair use ahead of trial. → [Full briefing](/briefings/2026-08-03-concord-v-anthropic-music-lawsuit)
+
+**BMG v. Anthropic (lyrics) — ACTIVE, NEW 2026.** Two suits: ~500 identified compositions, plus a 20,000+ song action reportedly seeking $3 billion+ over shadow-library torrenting. → [Full briefing](/briefings/2026-08-03-bmg-v-anthropic-lyrics-lawsuits)
+
+## OpenAI / Microsoft
+
+**In re OpenAI Copyright MDL (S.D.N.Y., Judge Stein) — ACTIVE, trial expected late 2026/early 2027.** NYT, Authors Guild classes, and publisher suits consolidated; motion to dismiss denied (training is not *inherently* transformative); NYT's June 2026 amendment targets Microsoft's dedicated infrastructure. The likeliest candidate for the next Bartz-scale resolution. → [Full briefing](/briefings/2026-08-03-openai-copyright-mdl-authors)
+
+## Meta
+
+**Kadrey v. Meta (books) — SPLIT.** Judge Chhabria granted Meta summary judgment on fair use for *training* (June 2025) — but claims over Meta's alleged **torrenting/seeding of pirated books remain active** and the case continues through discovery in 2026. The lesson of the year: *how you got the data* matters more than *what you trained*. Follow-on author suits against Meta continue to file.
+
+## Thomson Reuters v. Ross Intelligence — THE APPELLATE WILDCARD
+
+The **Third Circuit heard argument June 11, 2026** on the first appellate review of AI training and fair use. District judges have split — Alsup (*Bartz*) and Chhabria (*Kadrey*) for AI companies on training; Bibas (*Ross*) against. The circuit's ruling will move the value of every claim on this page, in one direction or the other, the day it drops.
+
+## Stability AI, Midjourney, and the image cases
+
+**Getty Images v. Stability AI — ACTIVE** (D. Del. and UK). Never settled — even as Getty struck a licensing deal with OpenAI in June 2026. A functioning licensing market is itself evidence *against* fair use on the market-harm factor.
+
+**Disney & Universal v. Midjourney (C.D. Cal.) — ACTIVE.** The studios' character-output case; currently fighting over schedule (Disney wants discovery cut off August 17, 2026).
+
+## Music generators
+
+**UMG/WMG/Sony v. Suno — ACTIVE.** All three majors continue against Suno.
+**UMG v. Udio — SETTLED into a partnership**: the lawsuit became a licensed AI music platform launching in 2026 — the second template (after cash settlement) for how these cases end. The musicians' union (AFM) has sued UMG and WMG over whether artists share in those settlements — the "who gets paid" fight is just beginning.
+
+## What this board means if you own rights
+
+Two exit templates now exist: **cash funds** (Anthropic: $1.5B, per-work checks) and **license conversions** (Udio). Either way, resolved cases mint *payment rights* — and payment rights can be valued, bought, and sold. That's our desk. We [buy Bartz claims today](/briefings/2026-08-03-sell-your-anthropic-settlement-claim), and we price new claim types the day they crystallize.
+
+> **Own works touched by any case on this board?** [Talk to the desk →](/contact) — knowing what you hold costs nothing.
+
+## Sources
+
+- [AI in litigation series: An update on AI copyright cases in 2026](https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026) — Norton Rose Fulbright
+- [Court Grants Final Approval of $1.5 Billion Anthropic Copyright Settlement](https://authorsguild.org/news/court-grants-final-approval-anthropic-copyright-settlement/) — Authors Guild
+- [Universal Music settles Udio lawsuit, strikes deal for licensed AI music platform](https://www.musicbusinessworldwide.com/universal-music-settles-udio-lawsuit-strikes-deal-for-licensed-ai-music-platform/) — Music Business Worldwide
+- [AFM Sues UMG, WMG Over Settlements With Suno and Udio](https://www.hollywoodreporter.com/music/music-industry-news/musicians-union-lawsuit-ai-song-generator-settlement-1236614835/) — The Hollywood Reporter
+- [AI vs. Authors Update: Anthropic Settlement Approved While Meta Litigation Continues](https://natlawreview.com/article/ai-vs-authors-update-court-approves-historic-anthropic-settlement-while-meta) — National Law Review
+- [Kadrey v. Meta case page](https://www.bakerlaw.com/kadrey-v-meta/) — BakerHostetler
+
+---
+
+*Turnpage Digital Markets is an independent claims desk — not a party to, or counsel in, any case above. Case postures change quickly; this page reflects public reporting and filings as of its date. This briefing is market intelligence, not legal or financial advice.*
