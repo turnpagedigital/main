@@ -51,6 +51,10 @@
     "billion-dollar-class-actions": {
       "bg": "#1B3A4B",
       "fg": "#FFFFFF"
+    },
+    "crypto-insolvency": {
+      "bg": "#3A3A3A",
+      "fg": "#FFFFFF"
     }
   },
   "groups": [
