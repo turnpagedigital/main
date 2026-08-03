@@ -67,6 +67,10 @@
     "rewind-tariffs": {
       "bg": "#1B3A4B",
       "fg": "#FFFFFF"
+    },
+    "papaya-gaming": {
+      "bg": "#fff5c7",
+      "fg": "#92410e"
     }
   },
   "groups": [
@@ -146,5 +150,6 @@
       "bg": "#e6e6e6",
       "fg": "#0A0A0A"
     }
-  ]
+  ],
+  "theme_presets": []
 }
