@@ -22,6 +22,24 @@
     });
   }
 
+  // Case pill colors — shared with the docket page: user overrides in
+  // localStorage (ud-case-colors), manifest default_color as the fallback.
+  var savedColors = {};
+  try { savedColors = JSON.parse(localStorage.getItem("ud-case-colors") || "{}"); } catch (e) {}
+
+  function autoFg(bg) {
+    var r = parseInt(String(bg).slice(1, 3), 16) || 136;
+    var g = parseInt(String(bg).slice(3, 5), 16) || 136;
+    var b = parseInt(String(bg).slice(5, 7), 16) || 136;
+    return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.55 ? "#0A0A0A" : "#FFFFFF";
+  }
+
+  function pill(slug, name, defaultColor) {
+    var bg = (savedColors[slug] && savedColors[slug].bg) || defaultColor || "#888888";
+    var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
+    return '<span class="ih-pill" style="background:' + bg + ";color:" + fg + '">' + esc(name) + "</span>";
+  }
+
   var MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   function fmtDate(iso) {
     var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
@@ -34,10 +52,10 @@
     if (n) n.innerHTML = html || '<div class="ih-empty">Nothing here yet.</div>';
   }
 
-  function row(href, meta, text) {
+  function row(href, meta, text, pillHtml) {
     return (
       '<a class="ih-row" href="' + href + '">' +
-        (meta ? '<div class="ih-date">' + esc(meta) + "</div>" : "") +
+        '<div class="ih-date">' + (pillHtml || "") + (meta ? "<span>" + esc(meta) + "</span>" : "") + "</div>" +
         '<div class="ih-text">' + esc(text) + "</div>" +
       "</a>"
     );
@@ -45,12 +63,12 @@
 
   // ── Briefings ──────────────────────────────────────────────────────────────
   var THEMES = {
-    "rewind-tariffs":               { name: "Tariffs / Trade",               emoji: "⚖️" },
-    "llm-class-action":             { name: "LLM / Copyright",               emoji: "🤖" },
-    "crypto-insolvency":            { name: "Crypto Insolvency",             emoji: "🪙" },
-    "fraud-recovery":               { name: "Ponzi / Fraud Recovery",        emoji: "🕵️" },
-    "billion-dollar-class-actions": { name: "$1B+ Class Actions",            emoji: "💰" },
-    "bankruptcy-creditor-rights":   { name: "Bankruptcy Creditor Rights",    emoji: "📜" },
+    "rewind-tariffs":               { name: "Tariffs / Trade",               emoji: "⚖️", bg: "#ECFCCB", fg: "#3f6212" },
+    "llm-class-action":             { name: "LLM / Copyright",               emoji: "🤖", bg: "#DBEAFE", fg: "#1e40af" },
+    "crypto-insolvency":            { name: "Crypto Insolvency",             emoji: "🪙", bg: "#FFEDD5", fg: "#9a3412" },
+    "fraud-recovery":               { name: "Ponzi / Fraud Recovery",        emoji: "🕵️", bg: "#F3E8FF", fg: "#6b21a8" },
+    "billion-dollar-class-actions": { name: "$1B+ Class Actions",            emoji: "💰", bg: "#D1FAE5", fg: "#065f46" },
+    "bankruptcy-creditor-rights":   { name: "Bankruptcy Creditor Rights",    emoji: "📜", bg: "#FEE2E2", fg: "#991b1b" },
   };
 
   fetchJson(BASE + "briefings.json").then(function (d) {
@@ -58,9 +76,10 @@
       .sort(function (a, b) { return (b.updated || "").localeCompare(a.updated || ""); })
       .slice(0, 7);
     fill("ih-briefings", items.map(function (i) {
-      var t = THEMES[i.slug] || { name: i.slug, emoji: "📰" };
+      var t = THEMES[i.slug] || { name: i.slug, emoji: "📰", bg: "#E0E7FF", fg: "#3730a3" };
       var lede = (i.body || i.stat || "").trim();
-      return row(BASE + "briefings.html", fmtDate(i.updated) + " · " + t.emoji + " " + t.name, lede.slice(0, 120));
+      var p = '<span class="ih-pill" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>";
+      return row(BASE + "briefings.html", fmtDate(i.updated), lede.slice(0, 120), p);
     }).join(""));
   }).catch(function () { fill("ih-briefings", ""); });
 
@@ -117,7 +136,9 @@
   }
 
   // ── Docket + Calendar (shared case fetch) ──────────────────────────────────
+  var MANIFEST = [];
   fetchJson(BASE + "cases/data/_manifest.json").then(function (man) {
+    MANIFEST = man || [];
     return Promise.all((man || []).map(function (m) {
       return fetchJson(BASE + "cases/data/" + m.slug + ".json")
         .then(function (c) { return { m: m, c: c }; })
@@ -131,7 +152,8 @@
       var short = x.m.short_name || x.m.display_name || x.m.slug;
       ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
         if (!e.date_filed || !(e.description || "").trim()) return;
-        entries.push({ date: e.date_filed, num: e.entry_number, desc: e.description, short: short });
+        entries.push({ date: e.date_filed, num: e.entry_number, desc: e.description, short: short,
+                       slug: x.m.slug, color: x.m.default_color });
       });
     });
     entries.sort(function (a, b) {
@@ -140,8 +162,9 @@
     });
     fill("ih-docket", entries.slice(0, 7).map(function (e) {
       return row(BASE + "docket.html",
-        fmtDate(e.date) + " · " + e.short + (e.num != null ? " · Dkt. " + e.num : ""),
-        e.desc.slice(0, 130));
+        fmtDate(e.date) + (e.num != null ? " · Dkt. " + e.num : ""),
+        e.desc.slice(0, 130),
+        pill(e.slug, e.short, e.color));
     }).join(""));
 
     var today = new Date();
@@ -151,12 +174,17 @@
       var short = x.m.short_name || x.m.display_name || x.m.slug;
       ((x.c && x.c.events) || []).forEach(function (ev) {
         if (ev.date && ev.date >= today) {
-          events.push({ date: ev.date, kind: ev.kind || "Event", title: ev.title || "", short: short });
+          events.push({ date: ev.date, kind: ev.kind || "Event", title: ev.title || "", short: short,
+                        slug: x.m.slug, color: x.m.default_color });
         }
       });
       ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
         extractEvents(e, short).forEach(function (ev) {
-          if (ev.date >= today) events.push(ev);
+          if (ev.date >= today) {
+            ev.slug = x.m.slug;
+            ev.color = x.m.default_color;
+            events.push(ev);
+          }
         });
       });
     });
@@ -170,8 +198,9 @@
     events.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
     fill("ih-calendar", events.slice(0, 7).map(function (ev) {
       return row(BASE + "calendar.html",
-        fmtDate(ev.date) + " · " + ev.short + " · " + ev.kind,
-        ev.title);
+        fmtDate(ev.date) + " · " + ev.kind,
+        ev.title,
+        pill(ev.slug, ev.short, ev.color));
     }).join(""));
   }).catch(function () {
     fill("ih-docket", "");
@@ -193,11 +222,15 @@
         .slice(0, 7);
       fill("ih-notes", list.map(function (n) {
         var body = (n.note || "").trim() || n.snippet || "(bookmark)";
+        var m = null;
+        for (var i = 0; i < MANIFEST.length; i++) {
+          if (MANIFEST[i].slug === n.case_slug) { m = MANIFEST[i]; break; }
+        }
+        var p = m ? pill(m.slug, m.short_name || m.display_name || m.slug, m.default_color)
+                  : '<span class="ih-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-60)">' + esc(n.case_name || "Uncategorized") + "</span>";
         return row(BASE + "notes.html",
-          (n.case_name || n.case_slug || "Uncategorized") +
-            (n.entry_number != null ? " · Dkt. " + n.entry_number : "") +
-            (n.bookmarked ? " ★" : ""),
-          body.slice(0, 120));
+          (n.entry_number != null ? "Dkt. " + n.entry_number : "") + (n.bookmarked ? " \u2605" : ""),
+          body.slice(0, 120), p);
       }).join(""));
     });
 })();
