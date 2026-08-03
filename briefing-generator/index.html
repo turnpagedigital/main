@@ -108,35 +108,54 @@
     .tk-down { color: #C84141; }
     [data-theme="dark"] .tk-up { color: #54C277; }
     [data-theme="dark"] .tk-down { color: #E07474; }
-    /* Dashboard columns */
-    .ih-grid { max-width: 1560px; margin: 0 auto 48px; padding: 0 32px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; align-items: start; }
-    @media (max-width: 1280px) { .ih-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 1080px) { .ih-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 620px) { .ih-grid { grid-template-columns: 1fr; } }
-    .ih-col { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
-    .ih-head { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line-strong); text-decoration: none; color: inherit; }
-    .ih-emoji { font-size: 17px; }
-    .ih-name { font-size: 14px; font-weight: 800; }
-    .ih-more { margin-left: auto; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    /* Dashboard — support band + equal theme grid (site look: square, thin gray) */
+    .ih-controls { max-width: 1440px; margin: 0 auto 14px; padding: 0 32px; display: flex; gap: 10px; justify-content: flex-end; }
+    .ih-head { display: flex; align-items: center; gap: 8px; padding: 11px 14px; border-bottom: 1px solid var(--line-strong); text-decoration: none; color: inherit; }
+    .ih-emoji { font-size: 16px; }
+    .ih-name { font-size: 13px; font-weight: 800; }
+    .ih-more { margin-left: auto; font-size: 11px; font-weight: 700; white-space: nowrap; color: var(--ink-60); }
     .ih-list { display: flex; flex-direction: column; }
-    .ih-row { display: block; padding: 9px 14px; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; }
+    .ih-row { display: block; padding: 8px 14px; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; }
     .ih-row:last-child { border-bottom: none; }
     .ih-row:hover { background: rgba(10,10,10,0.03); }
     [data-theme="dark"] .ih-row:hover { background: rgba(229,231,235,0.05); }
     .ih-date { font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; color: var(--ink-60); text-transform: uppercase; margin-bottom: 3px; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+    .ih-text { font-size: 12.5px; line-height: 1.45; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .ih-empty { padding: 12px 14px; font-size: 12px; color: var(--ink-60); }
     .ih-pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.03em; padding: 1px 8px; border-radius: 99px; white-space: nowrap; text-transform: none; }
     .ih-pill-sq { border-radius: 0; }
-    .ih-controls { max-width: 1440px; margin: 0 auto 14px; padding: 0 32px; display: flex; gap: 10px; justify-content: flex-end; }
-    .ih-dd-wrap { position: relative; }
-    .ih-dd-btn { font-family: inherit; font-size: 12px; font-weight: 700; padding: 7px 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line-strong); cursor: pointer; }
-    .ih-dd-panel { position: absolute; top: calc(100% + 6px); right: 0; z-index: 900; background: var(--surface); border: 1px solid var(--line-strong); box-shadow: 0 6px 24px rgba(0,0,0,0.22); min-width: 250px; padding: 10px; max-height: 70vh; overflow-y: auto; }
-    .ih-dd-quick-row { display: flex; gap: 8px; margin-bottom: 8px; }
-    .ih-dd-quick-row button, .ih-dd-group { font-family: inherit; font-size: 11.5px; font-weight: 700; background: none; border: none; color: var(--ink-60); cursor: pointer; text-decoration: underline; padding: 2px 0; text-align: left; }
-    .ih-dd-quick-row button:hover, .ih-dd-group:hover { color: var(--ink); }
-    .ih-dd-title { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-60); margin: 10px 0 6px; }
-    .ih-dd-group { display: block; }
-    .ih-dd-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; }
-    .ih-dd-row input { accent-color: var(--neon-block); cursor: pointer; }
+    .ih-band { max-width: 1440px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 10px; align-items: start; }
+    @media (max-width: 900px) { .ih-band { grid-template-columns: 1fr; } }
+    .ih-tile { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
+    .ih-links { max-width: 1440px; margin: 0 auto 10px; padding: 0 32px; display: flex; gap: 18px; font-size: 12px; }
+    .ih-links a { color: var(--ink-60); text-decoration: none; font-weight: 700; }
+    .ih-links a:hover { color: var(--ink); }
+    .ih-theme-grid { max-width: 1440px; margin: 0 auto 48px; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: stretch; }
+    @media (max-width: 900px) { .ih-theme-grid { grid-template-columns: 1fr; } }
+    .ih-theme-card { background: var(--surface); border: 1px solid var(--line-strong); padding: 12px 14px; display: flex; flex-direction: column; }
+    .ih-tc-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
+    .ih-tc-count { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-40); white-space: nowrap; }
+    .ih-tc-lede { font-size: 13px; line-height: 1.55; color: var(--ink); margin-bottom: 8px; }
+    .ih-tc-lede a { color: var(--ink); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--ink); white-space: nowrap; }
+    .ih-tc-lede.ih-quiet { color: var(--ink-60); }
+    .ih-row-coded { display: block; border-left: 3px solid var(--line-strong); padding: 4px 8px; margin-top: 3px; font-size: 11.5px; line-height: 1.45; color: var(--ink-60); text-decoration: none; }
+    .ih-row-coded:hover { background: rgba(10,10,10,0.03); }
+    [data-theme="dark"] .ih-row-coded:hover { background: rgba(229,231,235,0.05); }
+    .ih-code-filing { border-left-color: #1B3A4B; background: var(--paper-2, rgba(10,10,10,0.03)); }
+    .ih-code-news { border-left-style: dashed; border-left-color: #3FA07A; background: transparent; }
+    .ih-code-date { border-left-color: #D4FF00; background: rgba(212,255,0,0.10); }
+    [data-theme="dark"] .ih-code-date { background: rgba(212,255,0,0.07); }
+    .ih-more-rows { font-size: 10.5px; color: var(--ink-40); margin-top: 4px; }
+    .ih-more-rows a { color: var(--ink-60); }
+    .ih-dates { display: flex; gap: 6px; flex-wrap: wrap; padding: 10px 14px; }
+    .ih-date-sq { text-align: center; border: 1px solid var(--line-strong); padding: 2px 7px; text-decoration: none; color: var(--ink); min-width: 34px; }
+    .ih-date-sq .m { display: block; font-size: 8.5px; font-weight: 800; letter-spacing: 0.08em; color: var(--ink-40); }
+    .ih-date-sq .d { display: block; font-size: 15px; font-weight: 800; line-height: 1.15; }
+    .ih-date-sq.today { border-color: #C84141; }
+    .ih-date-sq.today .m { color: #C84141; }
+    .ih-note-sticky { background: rgba(212,255,0,0.10); padding: 6px 9px; margin: 0 14px 8px; font-size: 11.5px; font-style: italic; color: var(--ink-60); line-height: 1.45; text-decoration: none; display: block; }
+    [data-theme="dark"] .ih-note-sticky { background: rgba(212,255,0,0.07); }
+    .ih-note-sticky .who { font-style: normal; font-size: 10px; color: var(--ink-40); }
     .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 14px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
     .ih-color-pop { position: absolute; z-index: 1000; background: var(--surface); border: 1px solid var(--line-strong); padding: 14px; width: 240px; box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
@@ -237,27 +256,31 @@
       <div id="ih-themes-panel" class="ih-dd-panel" style="display:none;"></div>
     </div>
   </div>
-  <div class="ih-grid">
-    <section class="ih-col">
-      <a class="ih-head" href="../briefings.html"><span class="ih-emoji">📰</span><span class="ih-name">Briefings</span><span class="ih-more">View all →</span></a>
-      <div class="ih-list" id="ih-briefings"><div class="ih-empty">Loading…</div></div>
+  <div class="ih-band">
+    <section class="ih-tile">
+      <a class="ih-head" href="../news.html"><span class="ih-emoji">📡</span><span class="ih-name">Unassigned news</span><span class="ih-more" id="ih-unassigned-count">triage →</span></a>
+      <div class="ih-list" id="ih-unassigned"><div class="ih-empty">Loading…</div></div>
     </section>
-    <section class="ih-col">
-      <a class="ih-head" href="../docket.html"><span class="ih-emoji">⚖️</span><span class="ih-name">Docket</span><span class="ih-more">View all →</span></a>
-      <div class="ih-list" id="ih-docket"><div class="ih-empty">Loading…</div></div>
+    <section class="ih-tile">
+      <a class="ih-head" href="../calendar.html"><span class="ih-emoji">📅</span><span class="ih-name">Dates</span><span class="ih-more">View all →</span></a>
+      <div class="ih-dates" id="ih-dates"><div class="ih-empty">Loading…</div></div>
     </section>
-    <section class="ih-col">
-      <a class="ih-head" href="../calendar.html"><span class="ih-emoji">📅</span><span class="ih-name">Calendar</span><span class="ih-more">View all →</span></a>
-      <div class="ih-list" id="ih-calendar"><div class="ih-empty">Loading…</div></div>
-    </section>
-    <section class="ih-col">
+    <section class="ih-tile">
       <a class="ih-head" href="../notes.html"><span class="ih-emoji">🗒️</span><span class="ih-name">Notes</span><span class="ih-more">View all →</span></a>
       <div class="ih-list" id="ih-notes"><div class="ih-empty">Loading…</div></div>
     </section>
-    <section class="ih-col">
-      <a class="ih-head" href="../news.html"><span class="ih-emoji">📡</span><span class="ih-name">News</span><span class="ih-more">View all →</span></a>
-      <div class="ih-list" id="ih-news"><div class="ih-empty">Loading…</div></div>
-    </section>
+  </div>
+
+  <div class="ih-links">
+    <a href="../briefings.html">📰 Briefings</a>
+    <a href="../docket.html">⚖️ Docket</a>
+    <a href="../calendar.html">📅 Calendar</a>
+    <a href="../notes.html">🗒️ Notes</a>
+    <a href="../news.html">📡 News</a>
+  </div>
+
+  <div class="ih-theme-grid" id="ih-theme-grid">
+    <div class="ih-empty">Loading briefings…</div>
   </div>
 
 <script src="intel-home.js"></script>

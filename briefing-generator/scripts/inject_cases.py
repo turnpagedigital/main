@@ -743,6 +743,7 @@ def render_unified_docket(cases):
             "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
             "default_color": bl,
             "category": _case_category(c["config"].get("topics") or []),
+            "topics": c["config"].get("topics") or [],
             "court": (c["config"].get("case") or {}).get("court") or "",
         })
 
@@ -997,6 +998,7 @@ def render_news_page(cases):
             "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
             "default_color": bl,
             "category": _case_category(c["config"].get("topics") or []),
+            "topics": c["config"].get("topics") or [],
             "court": (c["config"].get("case") or {}).get("court") or "",
         })
 
