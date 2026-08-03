@@ -1,38 +1,101 @@
 {
-  "_comment": "Site-level metadata and per-page Open Graph / SEO fields. Managed via /admin/pages (Site Metadata + Per-page Meta sections). _middleware.js imports this at build time. Changes here are committed via the admin API and trigger a Cloudflare Pages rebuild.",
+  "_comment": "Site-level metadata and per-page Open Graph / SEO fields. Managed via /admin/pages (Site Metadata + Per-page Meta sections). _middleware.js imports this at build time. Changes here are committed via the admin API and trigger a Cloudflare Pages rebuild. Titles ≤60 chars, descriptions ≤160 chars. Valid og slugs: home, crypto, ai-copyright, litigation-finance (see functions/og/[slug].js).",
   "site": {
     "name": "Turnpage Digital Markets",
     "defaultTitle": "Turnpage Digital Markets — For Rights Holders Entitled to Compensation",
-    "defaultDescription": "Turnpage offers strategic guidance and turn-key liquidity solutions for rights holders entitled to compensation. Our experts have helped customers, creditors and other claimants liquidate over $1 billion in claims across the largest class actions, bankruptcies and complex litigation matters. We partner with leading asset managers to offer competitive rates and frictionless solutions. If we can't fund it ourself, with over 500 financial institutions on speed dial, we save you countless hours identifying the right counterparty to meet your needs.",
+    "defaultDescription": "Turnpage Digital Markets is the OTC desk for rights holders — we buy claims in the largest class actions, bankruptcies and complex litigation. Over $1B liquidated.",
     "twitterHandle": ""
   },
   "pages": [
     {
       "path": "/",
-      "title": "Turnpage Digital Markets — Capital and advisory solutions for rights holders",
-      "description": "Capital and advisory solutions for rights holders — OTC desk for complex claims, locked assets and creative financing options",
+      "title": "Turnpage Digital Markets — Sell Class Action & AI Copyright Claims",
+      "description": "The OTC desk for rights holders: we buy claims in the largest AI copyright class actions, crypto bankruptcies, and complex litigation. Over $1B liquidated.",
       "og": "home",
       "active": true
     },
     {
-      "path": "/crypto",
-      "title": "Crypto Loss Claimants — Turnpage Digital",
-      "description": "Crypto-native liquidity provider for locked crypto assets — exchange bankruptcies, frozen customer accounts and seized assets",
-      "og": "crypto",
-      "active": true
-    },
-    {
       "path": "/copyright",
-      "title": "Sell your Bartz v. Anthropic Settlement Claim - Turnpage Digital",
-      "description": "Capital and advisory for creators and rights holders with claims against generative AI companies, including Anthropic, OpenAI, Meta and others. Authors, Publishers, Artists, Producers, Studios, Music Labels and Catalogue Owners.",
+      "title": "Sell Your Bartz v. Anthropic Claim — Get Paid Now | Turnpage",
+      "description": "The $1.5B Anthropic settlement pays in installments into 2027. We buy Bartz v. Anthropic author claims for cash today — plus OpenAI, Meta & Getty claims.",
       "og": "ai-copyright",
       "active": true
     },
     {
+      "path": "/crypto",
+      "title": "Sell Locked Crypto Claims — FTX, Celsius, Mt. Gox | Turnpage",
+      "description": "Crypto-native liquidity for locked digital assets: exchange bankruptcies, frozen customer accounts, and seized assets. We quote in fiat and close fast.",
+      "og": "crypto",
+      "active": true
+    },
+    {
+      "path": "/briefings",
+      "title": "AI Copyright & Class Action Briefings | Turnpage Digital",
+      "description": "Daily intelligence on Bartz v. Anthropic, the OpenAI MDL, crypto insolvencies, and the largest class actions — from the desk that buys the claims.",
+      "og": "home",
+      "active": true
+    },
+    {
+      "path": "/faq",
+      "title": "Selling a Legal Claim: How It Works — FAQ | Turnpage",
+      "description": "How claim sales work, what your Bartz v. Anthropic claim is worth, how fast you get paid, and what Turnpage buys. Straight answers for rights holders.",
+      "og": "home",
+      "active": true
+    },
+    {
+      "path": "/press",
+      "title": "Press & Publications — Turnpage Digital Markets",
+      "description": "Coverage, commentary, and publications from Turnpage Digital Markets on AI copyright litigation, crypto insolvency, and the claims market.",
+      "og": "home",
+      "active": true
+    },
+    {
       "path": "/litigation-funding",
-      "title": "Litigation Funding — Turnpage Digital Markets",
-      "description": "Capital and advisory for high stakes, contingency matters",
+      "title": "Litigation Funding for High-Stakes Claims | Turnpage",
+      "description": "Capital and advisory for high-stakes, contingency litigation — funding for plaintiffs and counsel from the OTC desk for rights holders.",
       "og": "litigation-finance",
+      "active": true
+    },
+    {
+      "path": "/contact",
+      "title": "Contact Turnpage — Get a Quote for Your Claim",
+      "description": "Tell us about your claim — Bartz v. Anthropic, crypto bankruptcy, or complex litigation — and get a response within one business day.",
+      "og": "home",
+      "active": true
+    },
+    {
+      "path": "/team",
+      "title": "Our Team — Turnpage Digital Markets",
+      "description": "The team behind the OTC desk for rights holders — backgrounds across claims trading, litigation finance, and distressed assets.",
+      "og": "home",
+      "active": true
+    },
+    {
+      "path": "/bankruptcy-claims",
+      "title": "Sell Bankruptcy Claims — Turnpage Digital Markets",
+      "description": "We buy creditor claims in major bankruptcies — trade claims, customer claims, and rejection damages — for cash now instead of years of distributions.",
+      "og": "home",
+      "active": true
+    },
+    {
+      "path": "/bartz-registration",
+      "title": "Bartz v. Anthropic: Register to Sell Your Claim | Turnpage",
+      "description": "Filed a Bartz v. Anthropic claim? Register in minutes for a cash offer today instead of installments into 2027. Independent buyer — not the administrator.",
+      "og": "ai-copyright",
+      "active": true
+    },
+    {
+      "path": "/privacy",
+      "title": "Privacy Policy — Turnpage Digital Markets",
+      "description": "How Turnpage Digital Markets collects, uses, and protects your information.",
+      "og": "home",
+      "active": true
+    },
+    {
+      "path": "/terms",
+      "title": "Terms of Use — Turnpage Digital Markets",
+      "description": "The terms governing use of turnpagedigital.com and Turnpage Digital Markets services.",
+      "og": "home",
       "active": true
     }
   ]

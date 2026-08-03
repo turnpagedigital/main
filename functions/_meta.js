@@ -63,6 +63,24 @@ export function resolveMeta(pathname, data) {
   };
 }
 
+/* True if the pathname corresponds to a real page: a static route from
+ * routes.json, the admin shell, or a briefing slug present in the index
+ * (drafts included — they serve with noindex for review-by-URL). Anything
+ * else is a soft-404 the middleware must downgrade to a real 404 status. */
+export function isKnownPath(pathname, data, staticPaths) {
+  let p = pathname;
+  if (p.length > 1 && p.endsWith("/")) p = p.slice(0, -1);
+  if (p === "" || p === "/") return true;
+  if (p === "/admin" || p.startsWith("/admin/")) return true;
+  if (staticPaths.includes(p)) return true;
+  const briefingMatch = /^\/briefings\/([^/]+)$/.exec(p);
+  if (briefingMatch) {
+    const slug = decodeURIComponent(briefingMatch[1]);
+    return (data.briefings || []).some((b) => b.slug === slug);
+  }
+  return false;
+}
+
 /* JSON.stringify hardened for inline <script> embedding. */
 export function jsonLdScript(obj) {
   return JSON.stringify(obj).replace(/</g, "\\u003c");
