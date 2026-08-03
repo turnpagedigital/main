@@ -43,6 +43,10 @@
     "power-block-coin": {
       "bg": "#ffca9e",
       "fg": "#683608"
+    },
+    "bankruptcy-creditor-rights": {
+      "bg": "#D4FF00",
+      "fg": "#0A0A0A"
     }
   },
   "groups": [
