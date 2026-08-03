@@ -15,44 +15,84 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/",
     "date_last_filing": "2026-08-02",
-    "fetched_at": "2026-08-03T00:17:09.663408+00:00",
+    "fetched_at": "2026-08-03T03:59:21.148137+00:00",
     "as_of": "Aug 3, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 7,
     "recent": [
       {
-        "entry_number": 501,
+        "entry_number": 505,
         "date_filed": "2026-08-02",
-        "time_filed": "19:19:41",
+        "time_filed": "22:08:17",
         "date_display": "Aug 2, 2026",
-        "description": "Certificate of No Objection Pursuant to LR 9013-3",
+        "description": "Order RE: Application, Employ",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 500,
+        "entry_number": 504,
         "date_filed": "2026-08-02",
-        "time_filed": "17:32:58",
+        "time_filed": "21:46:14",
         "date_display": "Aug 2, 2026",
-        "description": "Declaration",
+        "description": "Order RE: Application, Employ",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 495,
-        "date_filed": "2026-07-31",
-        "time_filed": "20:26:45",
-        "date_display": "Jul 31, 2026",
-        "description": "Chapter 11 Monthly Operating Report for Case Number 26-11398 for the Month Ending: 06/30/2026 Filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 07/31/2026)",
-        "is_new": false,
+        "entry_number": 503,
+        "date_filed": "2026-08-02",
+        "time_filed": "21:32:57",
+        "date_display": "Aug 2, 2026",
+        "description": "Notice, Agenda",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 505,
+        "date_filed": "2026-08-02",
+        "time_filed": "22:08:17",
+        "date_display": "Aug 2, 2026",
+        "description": "Order RE: Application, Employ",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 504,
+        "date_filed": "2026-08-02",
+        "time_filed": "21:46:14",
+        "date_display": "Aug 2, 2026",
+        "description": "Order RE: Application, Employ",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 503,
+        "date_filed": "2026-08-02",
+        "time_filed": "21:32:57",
+        "date_display": "Aug 2, 2026",
+        "description": "Notice, Agenda",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 502,
+        "date_filed": "2026-08-02",
+        "time_filed": "20:02:56",
+        "date_display": "Aug 2, 2026",
+        "description": "Notice, Proposed Order/Presentment",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 501,
         "date_filed": "2026-08-02",
         "time_filed": "19:19:41",
@@ -68,6 +108,16 @@
         "time_filed": "17:32:58",
         "date_display": "Aug 2, 2026",
         "description": "Declaration",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-02",
+        "time_filed": "22:18:49",
+        "date_display": "Aug 2, 2026",
+        "description": "Terminate Pending Deadlines AND Terminate Pending Documents",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
