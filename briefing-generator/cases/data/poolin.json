@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/",
     "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-03T16:26:19.399538+00:00",
+    "fetched_at": "2026-08-03T17:22:36.406510+00:00",
     "as_of": "Aug 3, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 3,
     "recent": [
+      {
+        "entry_number": 82,
+        "date_filed": "2026-08-03",
+        "time_filed": "12:01:32",
+        "date_display": "Aug 3, 2026",
+        "description": "Withdrawal of Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 81,
         "date_filed": "2026-08-03",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 79,
-        "date_filed": "2026-07-31",
-        "time_filed": "17:04:20",
-        "date_display": "Jul 31, 2026",
-        "description": "Amended Motion",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 82,
+        "date_filed": "2026-08-03",
+        "time_filed": "12:01:32",
+        "date_display": "Aug 3, 2026",
+        "description": "Withdrawal of Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 81,
         "date_filed": "2026-08-03",
