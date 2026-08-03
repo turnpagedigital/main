@@ -52,13 +52,29 @@ async function b64(buf) {
 async function lookupRecapDoc(env, docketId, entryNumber) {
   const url = `${CL}/docket-entries/?docket=${docketId}&entry_gte=${entryNumber}&entry_lte=${entryNumber}` +
     `&fields=entry_number,recap_documents`;
-  const res = await fetch(url, { headers: clHeaders(env), signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error(`CourtListener lookup failed (${res.status})`);
-  const data = await res.json();
-  const entry = (data.results || []).find((r) => r.entry_number === entryNumber);
-  const docs = (entry && entry.recap_documents) || [];
-  // The main document (document_number matches, not attachments) or first
-  return docs.find((d) => !d.attachment_number) || docs[0] || null;
+  // CourtListener rate-limits aggressively (the hourly docket sync competes
+  // for the same token) — retry a 429 a couple times, honoring Retry-After.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const res = await fetch(url, { headers: clHeaders(env), signal: AbortSignal.timeout(20000) });
+    if (res.status === 429) {
+      const wait = Math.min(parseInt(res.headers.get("retry-after") || "3", 10) || 3, 8);
+      await new Promise((r) => setTimeout(r, wait * 1000));
+      continue;
+    }
+    if (!res.ok) throw new Error(`CourtListener lookup failed (${res.status})`);
+    const data = await res.json();
+    const entry = (data.results || []).find((r) => r.entry_number === entryNumber);
+    const docs = (entry && entry.recap_documents) || [];
+    return docs.find((d) => !d.attachment_number) || docs[0] || null;
+  }
+  throw new Error("CourtListener rate-limited (429)");
+}
+
+// The plain CourtListener docket-entry link — the always-works fallback the
+// click used to be, so a failed fetch never leaves the user worse off.
+function entryLinkUrl(docketId, entryNumber) {
+  return `https://www.courtlistener.com/docket/${docketId}/` +
+    `?filed_after=&filed_before=&entry_gte=${entryNumber}&entry_lte=${entryNumber}&order_by=asc`;
 }
 
 async function commitPdf(env, slug, entryNumber, pdfBuf) {
@@ -163,42 +179,48 @@ export async function onRequestPost(context) {
     return jsonResponse({ status: "failed", error: "slug, entry_number and docket_id required" }, 400);
   }
 
-  let rd;
+  const openLink = entryLinkUrl(docketId, entryNumber);
+
+  // Step 1 — RECAP (free, instant). A lookup failure (429, etc.) is NOT fatal:
+  // record it and fall through to the agent, which doesn't need CourtListener.
+  let rd = null;
+  let recapDown = false;
   try {
     rd = await lookupRecapDoc(env, docketId, entryNumber);
-  } catch (ex) {
-    return jsonResponse({ status: "failed", error: String(ex.message || ex) });
-  }
-  if (!rd) return jsonResponse({ status: "failed", error: "no document record on this entry yet" });
-
-  // Already in RECAP → free download
-  if (rd.filepath_local) {
-    try {
+    if (rd && rd.filepath_local) {
       const path = await downloadAndCommit(env, slug, entryNumber, rd.filepath_local);
       return jsonResponse({ status: "ready", path });
-    } catch (ex) {
-      return jsonResponse({ status: "failed", error: String(ex.message || ex) });
     }
+  } catch (ex) {
+    recapDown = true;
   }
 
-  // Not in RECAP → does this case have an automatable claims agent? (free)
+  // Step 2 — the case's claims agent (free), if automatable. Needs no CL.
   const agent = await detectAgent(env, slug);
   if (agent) {
     const dispatched = await dispatchAgentFetch(env, slug, entryNumber);
     if (dispatched.ok) {
       return jsonResponse({ status: "agent_pending", agent: agent.kind, key: `${slug}|n${entryNumber}` });
     }
-    // Dispatch failed (e.g. token lacks Actions scope) — fall through to PACER
-    if (!env.PACER_USERNAME || !env.PACER_PASSWORD) {
-      return jsonResponse({ status: "failed", error: dispatched.error || "agent fetch could not start" });
-    }
+    // Dispatch itself failed — open the docket page rather than dead-end.
+    return jsonResponse({
+      status: "open_link", url: openLink,
+      reason: "couldn't start the agent fetch",
+    });
   }
 
-  // No agent (or dispatch failed) → PACER purchase through CourtListener
+  // Step 3 — PACER, only when no agent. Needs the RECAP lookup to have worked.
+  if (recapDown || !rd) {
+    return jsonResponse({
+      status: "open_link", url: openLink,
+      reason: recapDown ? "CourtListener is rate-limited right now"
+                        : "no document record on this entry yet",
+    });
+  }
   if (!env.PACER_USERNAME || !env.PACER_PASSWORD) {
     return jsonResponse({
-      status: "failed",
-      error: "Not in the free RECAP archive; no claims agent for this case and PACER_USERNAME / PACER_PASSWORD not configured",
+      status: "open_link", url: openLink,
+      reason: "not in the free archive and PACER isn't configured",
     });
   }
   const form = new URLSearchParams({
@@ -214,8 +236,7 @@ export async function onRequestPost(context) {
     signal: AbortSignal.timeout(20000),
   });
   if (!res.ok) {
-    const text = (await res.text()).slice(0, 300);
-    return jsonResponse({ status: "failed", error: `PACER fetch request refused (${res.status}): ${text}` });
+    return jsonResponse({ status: "open_link", url: openLink, reason: "PACER purchase couldn't start" });
   }
   const data = await res.json();
   return jsonResponse({ status: "pending", fetch_id: data.id, rd_id: rd.id });

@@ -509,7 +509,8 @@
           "</td>" +
         "</tr>"
       );
-    }).join("");
+    }).join("");    jumpToHash();
+
   }
 
   // ── Attached documents (uploads.json via /intel/api/upload) ───────────────
@@ -577,6 +578,19 @@
     if (!rec.bookmarked && !(rec.note || "").trim()) delete NOTES[nk];
     queuePush(nk);
     render();
+  }
+
+  var jumpDone = false;
+  function jumpToHash() {
+    if (jumpDone) return;
+    var mE = /[#&]e=([^&]+)/.exec(location.hash || "");
+    if (!mE) { jumpDone = true; return; }
+    var el = document.querySelector('#un-tbody [data-nk="' + CSS.escape(decodeURIComponent(mE[1])) + '"], tbody [data-nk="' + CSS.escape(decodeURIComponent(mE[1])) + '"]');
+    var row = el && el.closest("tr");
+    if (!row) return;
+    jumpDone = true;
+    row.classList.add("ud-row-cursor");
+    row.scrollIntoView({ block: "center" });
   }
 
   // ── Export ─────────────────────────────────────────────────────────────────

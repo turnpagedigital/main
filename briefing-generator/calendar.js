@@ -680,6 +680,18 @@
     return joinCalLinks(court, agentLink(ev));
   }
 
+  var jumpDone = false;
+  function jumpToHash() {
+    if (jumpDone) return;
+    var m = /[#&]ev=([^&]+)/.exec(location.hash || "");
+    if (!m) { jumpDone = true; return; }
+    var row = document.querySelector('tr[data-evkey="' + CSS.escape(decodeURIComponent(m[1])) + '"]');
+    if (!row) return;
+    jumpDone = true;
+    row.classList.add("ud-row-cursor");
+    row.scrollIntoView({ block: "center" });
+  }
+
   // Court → IANA time zone. Explicit zone tokens in the time string win.
   function courtTz(ev) {
     var t = (ev.time || "").toUpperCase();
@@ -803,7 +815,7 @@
           : "");
       var rowCls = ev.date === today ? ' class="ud-row-new"' : "";
       return (
-        "<tr" + rowCls + ">" +
+        "<tr" + rowCls + ' data-evkey="' + esc((ev.date || "") + "|" + (ev.short || "")) + '">' +
           '<td class="ud-date">' + esc(prettyDate(ev.date)) + "</td>" +
           '<td class="uc-rel-cell">' + relHtml + "</td>" +
           '<td class="ud-case">' + pill + "</td>" +
@@ -821,6 +833,7 @@
         "</tr>"
       );
     }).join("");
+    jumpToHash();
     syncSelAll(list);
   }
 

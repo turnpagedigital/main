@@ -999,6 +999,7 @@
       );
     }).join("");
     applyCursor(false);
+    jumpToHash();
   }
 
   // ── Keyboard navigation: arrows move a row cursor, letters act on it ──────
@@ -2355,6 +2356,49 @@
     document.addEventListener("visibilitychange", function () {
       if (!document.hidden) syncLive();
     });
+  }
+
+  // ── Deep links: #e=<noteKey> or #u=<itemUrl> lands on that row ────────────
+  var jumpDone = false;
+  var jumpAt = 0;
+  var jumpKeySel = "";
+  function jumpToHash() {
+    // Later data loads reflow the table — keep re-centering the target row
+    // for a few seconds after the first hit.
+    if (jumpDone) {
+      if (jumpKeySel && Date.now() - jumpAt < 6000) {
+        var again = document.querySelector(jumpKeySel);
+        var r = again && again.closest("tr");
+        if (r) {
+          r.classList.add("ud-row-cursor");
+          r.scrollIntoView({ block: "center" });
+        }
+      }
+      return;
+    }
+    var h = location.hash || "";
+    var row = null;
+    var mE = /[#&]e=([^&]+)/.exec(h);
+    var mU = /[#&]u=([^&]+)/.exec(h);
+    if (mE) {
+      jumpKeySel = '#ud-tbody [data-nk="' + CSS.escape(decodeURIComponent(mE[1])) + '"]';
+      var el = document.querySelector(jumpKeySel);
+      row = el && el.closest("tr");
+    } else if (mU) {
+      jumpKeySel = '#ud-tbody .ud-vote[data-url="' + CSS.escape(decodeURIComponent(mU[1])) + '"]';
+      var vt = document.querySelector(jumpKeySel);
+      row = vt && vt.closest("tr");
+    } else {
+      jumpDone = true;
+      return;
+    }
+    if (!row) return;  // data still loading — retried on the next render
+    jumpDone = true;
+    jumpAt = Date.now();
+    var ridx = row.getAttribute("data-ridx");
+    if (ridx != null) cursorIdx = Number(ridx);
+    row.classList.add("ud-row-cursor");
+    row.scrollIntoView({ block: "center" });
   }
 
   // ── Wire DOM events ────────────────────────────────────────────────────────
