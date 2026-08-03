@@ -6,6 +6,7 @@ import { SubTabStrip, useSubTabs } from "./shared.jsx";
 const ThemesTab = lazy(() => import("./ThemesTab.jsx"));
 const CasesTab = lazy(() => import("./CasesTab.jsx"));
 const IntelligenceDefaultsTab = lazy(() => import("./IntelligenceDefaultsTab.jsx"));
+const XSourcesTab = lazy(() => import("./XSourcesTab.jsx"));
 
 /* IntelligenceHubTab — master wrapper for the Intelligence config layer.
    Horizontal sub-tab strip → Themes / Cases / Defaults. Each child keeps its
@@ -18,6 +19,7 @@ const IntelligenceDefaultsTab = lazy(() => import("./IntelligenceDefaultsTab.jsx
 const SUB_TABS = [
   { key: "themes", label: "Themes" },
   { key: "cases", label: "Cases" },
+  { key: "x", label: "X Accounts" },
   { key: "defaults", label: "Defaults" },
 ];
 const SUB_KEYS = SUB_TABS.map(t => t.key);
@@ -44,6 +46,7 @@ export default function IntelligenceHubTab({ onDirtyChange }) {
       <Suspense fallback={<div style={{ padding: "2rem", textAlign: "center", color: INK_60 }}>Loading…</div>}>
         {sub === "themes"   && <ThemesTab               onDirtyChange={makeDirty("themes")} />}
         {sub === "cases"    && <CasesTab                onDirtyChange={makeDirty("cases")} />}
+        {sub === "x"        && <XSourcesTab             onDirtyChange={makeDirty("x")} />}
         {sub === "defaults" && <IntelligenceDefaultsTab onDirtyChange={makeDirty("defaults")} />}
       </Suspense>
     </div>

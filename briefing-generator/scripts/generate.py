@@ -196,6 +196,34 @@ def build_news_block(items):
 def read_text(p):
     return p.read_text(encoding="utf-8") if p.exists() else ""
 
+def build_x_block(topic_slug):
+    """Posts from admin-followed X accounts mapped to this theme (last 24h,
+    pulled by scan_x.py). Empty string when there's nothing."""
+    path = REPO_ROOT / "x-posts.json"
+    if not path.exists():
+        return ""
+    try:
+        posts = json.loads(path.read_text(encoding="utf-8")).get("posts", [])
+    except Exception:
+        return ""
+    mine = [p for p in posts if topic_slug in (p.get("themes") or [])][:30]
+    if not mine:
+        return ""
+    lines = [
+        "# Followed X accounts — posts from the last 24 hours",
+        "",
+        "Treat these as leads from practitioners the reader follows: verify "
+        "anything factual before repeating it, cite the post URL when a post "
+        "itself is the development.",
+        "",
+    ]
+    for p in mine:
+        stamp = (p.get("created_at") or "")[:16].replace("T", " ")
+        lines.append(f"- @{p['handle']} ({p.get('name', '')}) {stamp} UTC — "
+                     f"\"{p['text']}\" ({p['url']})")
+    return "\n".join(lines) + "\n\n"
+
+
 def build_case_truth_block(topic_slug, key_focus_slugs=()):
     """Compact authoritative block from the repo's tracked-case data so the
     model can't drift on cases we already track (e.g. settlement posture).
@@ -710,6 +738,10 @@ def main():
             news_block = build_enriched_news_block(enriched_items)
         else:
             news_block = build_news_block([])  # fallback for no headlines
+        x_block = build_x_block(topic['slug'])
+        if x_block:
+            news_block = news_block + "\n" + x_block
+            print(f"  X posts: {x_block.count(chr(10) + '- @')} folded into the prompt")
         case_truth_block = build_case_truth_block(topic['slug'], topic.get('key_focus_cases', ()))
         if case_truth_block:
             kf = topic.get('key_focus_cases') or []
