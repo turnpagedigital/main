@@ -943,8 +943,10 @@
         badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span> ";
       }
       var newPill = e.is_new ? ' <span class="ud-new-pill">NEW</span>' : "";
+      var descFull = e.description || "";
+      var descShown = descFull.length > 700 ? descFull.slice(0, 700).replace(/\s+\S*$/, "") + "\u2026" : descFull;
       var descHtml = e.description
-        ? badges + '<span class="ud-desc">' + esc(e.description) + "</span>" + newPill
+        ? badges + '<span class="ud-desc">' + esc(descShown) + "</span>" + newPill
         : badges + '<span class="ud-desc ud-desc-empty">—</span>' + newPill;
       var partyHtml = e.party
         ? esc(e.party)
@@ -2395,6 +2397,17 @@
     if (!row) return;  // data still loading — retried on the next render
     jumpDone = true;
     jumpAt = Date.now();
+    // Async sections above the table keep landing for a few seconds and shove
+    // the layout around — re-center on a timer until things settle.
+    var anchorTimer = setInterval(function () {
+      if (Date.now() - jumpAt > 5000) { clearInterval(anchorTimer); return; }
+      var el2 = document.querySelector(jumpKeySel);
+      var r2 = el2 && el2.closest("tr");
+      if (r2) {
+        r2.classList.add("ud-row-cursor");
+        r2.scrollIntoView({ block: "center" });
+      }
+    }, 400);
     var ridx = row.getAttribute("data-ridx");
     if (ridx != null) cursorIdx = Number(ridx);
     row.classList.add("ud-row-cursor");

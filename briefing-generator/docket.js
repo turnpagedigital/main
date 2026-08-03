@@ -139,6 +139,18 @@
   var searchText = "";
   var dateFrom = "";
   var dateTo = "";
+  // Default view loads only the last 90 days for fast rendering; a search or a
+  // date range lifts the window, and "show all" is a one-click escape hatch.
+  var DEFAULT_WINDOW_DAYS = 90;
+  var showAllDates = false;
+  function windowCutoff() {
+    var d = new Date();
+    d.setDate(d.getDate() - DEFAULT_WINDOW_DAYS);
+    return d.toISOString().slice(0, 10);
+  }
+  function windowActive() {
+    return !showAllDates && !searchText.trim() && !dateFrom && !dateTo;
+  }
   var activeGearSlug = null;
   var activeSources = {};
   var _savedState = null;
@@ -294,7 +306,12 @@
   // ── Filter + sort ──────────────────────────────────────────────────────────
   function filtered() {
     var sq = searchText.toLowerCase().trim();
+    var cutoff = windowCutoff();
+    var windowing = windowActive();
     var list = ALL.filter(function (e) {
+      // Default 90-day window (skipped once searching / date-filtering / show-all).
+      // Undated feed items stay visible; only dated rows older than the cutoff drop.
+      if (windowing && e.date_filed && e.date_filed < cutoff) return false;
       if (e.is_bondoro && e.unassigned) {
         if (!activeCases[UNASSIGNED_KEY]) return false;
       } else if (e.is_bondoro && e.group_name) {
@@ -873,8 +890,37 @@
           if (e.is_article && !sourceOn(e.party)) srcHidden++;
         });
       }
-      countEl.innerHTML = entries.length + " entr" + (entries.length === 1 ? "y" : "ies") +
-        (srcHidden ? " · <button type=\"button\" id=\"ud-srcfilter-note\" style=\"background:none;border:none;padding:0;font:inherit;color:var(--ink-60);text-decoration:underline;cursor:pointer;\">" + srcHidden + " article" + (srcHidden === 1 ? "" : "s") + " hidden by the Author filter — show all</button>" : "");
+      // Count how many dated rows the 90-day window is hiding (case filter
+      // applied so the hint tracks the current view; other filters ignored).
+      var olderHidden = 0;
+      if (windowActive()) {
+        var cutoff = windowCutoff();
+        ALL.forEach(function (e) {
+          if (!e.date_filed || e.date_filed >= cutoff) return;
+          var inView = e.is_bondoro
+            ? (e.unassigned ? activeCases[UNASSIGNED_KEY] : true)
+            : activeCases[e.slug];
+          if (inView) olderHidden++;
+        });
+      }
+      var noteHtml = "";
+      if (olderHidden) {
+        noteHtml += " · <span style=\"color:var(--ink-40)\">last 90 days</span> · " +
+          "<button type=\"button\" id=\"ud-window-note\" style=\"background:none;border:none;padding:0;font:inherit;color:var(--ink-60);text-decoration:underline;cursor:pointer;\">" +
+          olderHidden + " older hidden — show all</button>";
+      }
+      if (srcHidden) {
+        noteHtml += " · <button type=\"button\" id=\"ud-srcfilter-note\" style=\"background:none;border:none;padding:0;font:inherit;color:var(--ink-60);text-decoration:underline;cursor:pointer;\">" +
+          srcHidden + " article" + (srcHidden === 1 ? "" : "s") + " hidden by the Author filter — show all</button>";
+      }
+      countEl.innerHTML = entries.length + " entr" + (entries.length === 1 ? "y" : "ies") + noteHtml;
+      var winNote = document.getElementById("ud-window-note");
+      if (winNote) {
+        winNote.addEventListener("click", function () {
+          showAllDates = true;
+          render();
+        });
+      }
       var srcNote = document.getElementById("ud-srcfilter-note");
       if (srcNote) {
         srcNote.addEventListener("click", function () {
@@ -930,8 +976,10 @@
         badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span> ";
       }
       var newPill = e.is_new ? ' <span class="ud-new-pill">NEW</span>' : "";
+      var descFull = e.description || "";
+      var descShown = descFull.length > 700 ? descFull.slice(0, 700).replace(/\s+\S*$/, "") + "\u2026" : descFull;
       var descHtml = e.description
-        ? badges + '<span class="ud-desc">' + esc(e.description) + "</span>" + newPill
+        ? badges + '<span class="ud-desc">' + esc(descShown) + "</span>" + newPill
         : badges + '<span class="ud-desc ud-desc-empty">—</span>' + newPill;
       var partyHtml = e.party
         ? esc(e.party)
@@ -2405,6 +2453,17 @@
     if (!row) return;  // data still loading — retried on the next render
     jumpDone = true;
     jumpAt = Date.now();
+    // Async sections above the table keep landing for a few seconds and shove
+    // the layout around — re-center on a timer until things settle.
+    var anchorTimer = setInterval(function () {
+      if (Date.now() - jumpAt > 5000) { clearInterval(anchorTimer); return; }
+      var el2 = document.querySelector(jumpKeySel);
+      var r2 = el2 && el2.closest("tr");
+      if (r2) {
+        r2.classList.add("ud-row-cursor");
+        r2.scrollIntoView({ block: "center" });
+      }
+    }, 400);
     var ridx = row.getAttribute("data-ridx");
     if (ridx != null) cursorIdx = Number(ridx);
     row.classList.add("ud-row-cursor");
