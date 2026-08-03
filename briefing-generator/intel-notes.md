@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-03 18:37 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-03 18:39 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -45,6 +45,10 @@ Ciao
 > Chapter 11 Post-Confirmation Report
 
 ## Uncategorized
+
+### (no docket number) — 2026-08-03
+
+> Law Firm Jackson Walker to Pay $15 Million to Settle Government Claims Over Ex-Judge’s Romance — The Texas firm didn’t admit fault in its settlement with the civil division of the Justice Department r
 
 ### (no docket number) — 2026-08-01
 
