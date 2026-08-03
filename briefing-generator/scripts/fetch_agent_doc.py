@@ -53,8 +53,9 @@ def agent_kind(name, url):
 
 
 def kroll_fetch(base_url, docket_number):
-    """Drive Kroll's docket search box, find the exact 'Docket # N' row, and
-    download its PDF. Returns (pdf_bytes, document_title)."""
+    """Kroll runs a jqGrid. Load every row at once ('show all' is a built-in
+    page size), find the exact 'Docket # N' row, download its PDF. Returns
+    (pdf_bytes, document_title)."""
     from playwright.sync_api import sync_playwright
 
     parsed = urlparse(base_url)
@@ -74,57 +75,46 @@ def kroll_fetch(base_url, docket_number):
         )
         page = ctx.new_page()
         page.goto(docket_url, wait_until="networkidle", timeout=45000)
-        page.wait_for_timeout(2500)
 
-        box = page.query_selector("#txtCommonSearch")
-        if box:
-            box.fill(str(docket_number))
-            box.press("Enter")
-            page.wait_for_timeout(3500)
+        # Wait for jqGrid to exist, then reload it with every row on one page.
+        page.wait_for_function(
+            "() => window.jQuery && window.jQuery('#results-table').length "
+            "&& window.jQuery('#results-table').jqGrid('getGridParam','records') > 0",
+            timeout=30000,
+        )
+        page.evaluate(
+            "() => window.jQuery('#results-table')"
+            ".jqGrid('setGridParam', {rowNum: 1000000, page: 1}).trigger('reloadGrid')"
+        )
+        # Wait until every record is rendered into the DOM.
+        page.wait_for_function(
+            "() => { var g = window.jQuery('#results-table');"
+            " var recs = g.jqGrid('getGridParam','records');"
+            " return recs > 0 && document.querySelectorAll('#results-table tbody tr').length >= recs; }",
+            timeout=45000,
+        )
+        page.wait_for_timeout(1500)
 
         target_href = None
         title = None
-        grid = page.query_selector("#results-table")
-        content = None
-        if grid:
-            content = page.evaluate_handle(
-                "() => { const t = document.getElementById('results-table');"
-                " return t ? (t.closest('.jqx-grid') || t.parentElement) : null; }"
-            )
-
-        for _ in range(60):
-            rows = page.query_selector_all("#results-table tbody tr")
-            for row in rows:
-                txt = row.inner_text()
-                m = re.search(r"Docket #\s*(\d+)", txt)
-                if not m or int(m.group(1)) != int(docket_number):
-                    continue
-                a = row.query_selector("a[href*='DownloadPDF']")
-                if a:
-                    target_href = a.get_attribute("href")
-                    nm = re.search(r"Document Name\s*(.+?)\s*(?:Date Filed|$)", txt, re.S)
-                    if nm:
-                        title = clean(nm.group(1))[:300]
-                break
-            if target_href:
-                break
-            # jqxGrid virtualizes rows — scroll its content and re-scan
-            page.evaluate(
-                "() => { const c = document.querySelector('.jqx-grid-content')"
-                " || document.querySelector('#results-table').parentElement;"
-                " if (c) c.scrollTop += 600; window.scrollBy(0, 600); }"
-            )
-            page.wait_for_timeout(500)
+        for row in page.query_selector_all("#results-table tbody tr"):
+            txt = row.inner_text()
+            m = re.search(r"Docket #\s*(\d+)", txt)
+            if not m or int(m.group(1)) != int(docket_number):
+                continue
+            a = row.query_selector("a[href*='DownloadPDF']")
+            if a:
+                target_href = a.get_attribute("href")
+                nm = re.search(r"Document Name\s*(.+?)\s*(?:Date Filed|$)", txt, re.S)
+                if nm:
+                    title = clean(nm.group(1))[:300]
+            break
 
         if not target_href:
             browser.close()
             fail(f"Dkt. {docket_number} not found on the Kroll docket for {case_seg[0]}")
 
-        pdf_url = urljoin(case_path + "/", target_href.lstrip("/").split("/", 1)[-1]) \
-            if target_href.startswith("/") else urljoin(docket_url, target_href)
-        # target_href is like /SleepNumber/Home-DownloadPDF?... — resolve on origin
-        if target_href.startswith("/"):
-            pdf_url = origin + target_href
+        pdf_url = (origin + target_href) if target_href.startswith("/") else urljoin(docket_url, target_href)
         resp = ctx.request.get(pdf_url, timeout=60000)
         if not resp.ok:
             browser.close()
