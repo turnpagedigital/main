@@ -213,6 +213,11 @@ def refresh_case(case, history_pages=0):
         raw = fetch_entry_pages(ds["docket_id"], set(merged.keys()))
         for r in raw:
             ne = _normalize_entry(r, now)
+            cur = merged.get(_entry_key(ne))
+            # A title read off an uploaded pleading beats the court stub
+            if cur and cur.get("titled_from_upload"):
+                ne["description"] = cur.get("description") or ne["description"]
+                ne["titled_from_upload"] = True
             merged[_entry_key(ne)] = ne
     except Exception as ex:
         print(f"  ! {slug}: fetch failed ({ex}); seed kept", file=sys.stderr)
@@ -228,6 +233,8 @@ def refresh_case(case, history_pages=0):
             ne = _normalize_entry(r, now)
             key = _entry_key(ne)
             cur = merged.get(key)
+            if cur and cur.get("titled_from_upload"):
+                continue  # uploaded-pleading titles are authoritative
             # Adopt the crawled copy when it's new OR carries a richer
             # description (the doc-name upgrade) — never downgrade.
             if cur is None or len(ne.get("description") or "") > len(cur.get("description") or ""):

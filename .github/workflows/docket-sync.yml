@@ -42,13 +42,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install pypdf (upload text extraction)
-        run: pip install pypdf
+      - name: Install pypdf + anthropic (upload text extraction and titling)
+        run: pip install pypdf anthropic
 
       - name: Fetch dockets + regenerate case pages
         working-directory: briefing-generator
         env:
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DOCKET_BACKFILL: ${{ github.event.inputs.backfill == 'true' && '1' || '' }}
           # History trickle: each run walks this many older pages per case and
           # stores a resume cursor — full history accumulates across hourly
