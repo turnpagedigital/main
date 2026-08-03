@@ -16,11 +16,9 @@ Some settlements distribute to the uncontested portion of the class during an ap
 
 Handicapping honestly: a fee-award appeal or a serial-objector appeal is always possible in a fund this size, but the court's 23-page order dealt with the objections carefully, the fee award was *cut* to ~$101.5 million (removing the most common appeal target — an oversized fee), and the claims rate was 91.3%. This settlement was built to survive appeal. The window closing on ~August 19 without a notice of appeal is the most likely outcome — and once it closes, the judgment is final and the [payment timeline](/briefings/2026-08-03-anthropic-settlement-payment-timeline) runs clean.
 
-## If you can't afford the "what if"
+## If a delay would genuinely hurt
 
-For most claimants, appeal risk is a footnote. But if you're counting on this money — an estate that needs to close, a business that needs working capital, medical bills — a low-probability, high-delay event is exactly the kind of risk worth selling. When Turnpage buys a claim, **delay risk transfers to us**: you get a fixed cash amount now, and if an appeal freezes the fund for 14 months, that's our problem, not yours. [How selling a claim works →](/briefings/2026-08-03-sell-your-anthropic-settlement-claim)
-
-> **Want appeal risk off your books?** [Get a cash quote for your Bartz claim →](/copyright)
+For most claimants, appeal risk is a footnote — a low-probability event worth knowing about and not worth acting on. It matters most to those counting on the money by a particular date: an estate that needs to close, a business planning around it. For that situation, selling the claim or advancing against it moves the delay risk to the buyer in exchange for a discount — [how that works and what to watch for](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Turnpage buys these claims; [quotes are free](/copyright) if a firm number would help you plan.
 
 ## Sources
 

@@ -19,9 +19,7 @@ Two reasons. First, the Bartz class covered **book** copyright owners — music 
 
 ## What a settlement here could look like
 
-Nobody knows the timing — but the pattern is now established. Anthropic settled with the authors at a record number. UMG settled with AI music generator Udio and turned the lawsuit into a licensing partnership. Between a fair-use record that's mixed at best and a $1.5 billion precedent, a negotiated resolution creating payment rights for music rights holders is a live scenario. When claims like that crystallize, Turnpage's desk prices and buys them — as we do today for [Bartz claims](/briefings/2026-08-03-sell-your-anthropic-settlement-claim).
-
-> **Hold music publishing rights and want to understand what these cases mean for you?** [Talk to our desk →](/contact)
+Nobody knows the timing — but the pattern is now established. Anthropic settled with the authors at a record number. UMG settled with AI music generator Udio and turned the lawsuit into a licensing partnership. Between a fair-use record that's mixed at best and a $1.5 billion precedent, a negotiated resolution creating payment rights for music rights holders is a live scenario. If one arrives, this page will say so, and what those rights are worth will become a practical question for every catalog owner — the kind of question [our desk exists to answer](/contact).
 
 ## Related reading
 

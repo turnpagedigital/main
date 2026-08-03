@@ -22,11 +22,9 @@ This is the part most coverage skips. The release covers **only Anthropic's past
 
 Opted out? You're in different — and potentially stronger — territory: the *Chicken Soup for the Soul* and Carreyrou suits show the individual-action path is live. That's a conversation for a copyright litigator.
 
-## If you DID file and are just waiting
+## If you did file and are just waiting
 
-Different problem, better options: your claim is an asset. See [when payments actually arrive](/briefings/2026-08-03-anthropic-settlement-payment-timeline) — or skip the wait entirely and [sell the claim for cash now](/briefings/2026-08-03-sell-your-anthropic-settlement-claim).
-
-> **Filed claim, tired of waiting?** [Get a free cash quote →](/copyright)
+That's a different situation with clearer options: [here is when payments are scheduled to arrive](/briefings/2026-08-03-anthropic-settlement-payment-timeline), and for claimants who'd rather have a fixed amount sooner, [claims can be sold or advanced against](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Turnpage buys these claims; [quotes are free](/copyright) and carry no obligation.
 
 ## Sources
 

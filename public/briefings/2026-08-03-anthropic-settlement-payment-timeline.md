@@ -6,6 +6,7 @@
 
 | Date | What happens |
 |---|---|
+| October 2025 – July 2026 | Anthropic's first two $300 million tranches went into the fund — one last October, one due within a week of final approval (per the Authors Guild's settlement guide) |
 | July 20, 2026 | Judge Araceli Martínez-Olguín granted final approval of the $1.5 billion settlement and entered judgment |
 | ~August 19, 2026 | The window to appeal the judgment (30 days) closes — [what an appeal would mean for your payment](/briefings/2026-08-03-anthropic-settlement-appeal-risk) |
 | August 21, 2026 | The Settlement Administrator sends additional checks to non-filing claimants under the Plan of Allocation |
@@ -23,15 +24,14 @@ Final approval is the legal green light, not the payment itself. The administrat
 
 Unlikely. The fund itself fills in installments — half of the remaining balance arrives September 2026, the rest September 2027 — so payments to claimants are structured in waves rather than one lump sum. If your recovery spans multiple works, expect the money to arrive in stages stretching into late 2027.
 
-## Don't want to wait until 2027?
+## If the schedule doesn't work for you
 
-That's the trade the schedule forces on every claimant: the full amount, eventually — or less than the full amount, now. Turnpage Digital Markets is an independent claims desk that **buys Bartz v. Anthropic claims for cash today**. You assign the claim, we take on the waiting. [How selling a claim works →](/briefings/2026-08-03-sell-your-anthropic-settlement-claim)
-
-> **Own a Bartz v. Anthropic claim?** We'll quote you a cash price for it — free, in minutes. [Get your quote →](/copyright)
+For most claimants, the right move is simply to wait — the money arrives without anyone's help. Claimants who need a fixed amount sooner do have options: claims can be sold or advanced against, [as explained here](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Disclosed plainly: buying claims is Turnpage's business, and a [free quote](/copyright) is available if a number would help you decide.
 
 ## Related reading
 
-- [How much is the Anthropic settlement per book? The real math](/briefings/2026-08-03-anthropic-settlement-how-much-per-book)
+- [The Anthropic settlement: a plain-English guide for authors](/briefings/2026-08-03-anthropic-settlement-author-guide)
+- [How much is the Anthropic settlement per book?](/briefings/2026-08-03-anthropic-settlement-how-much-per-book)
 - [Will an appeal delay your Anthropic settlement payment?](/briefings/2026-08-03-anthropic-settlement-appeal-risk)
 - [Missed the claims deadline? Your options now](/briefings/2026-08-03-missed-anthropic-settlement-deadline)
 - [Every major AI copyright lawsuit, tracked](/briefings/2026-08-03-ai-copyright-lawsuit-tracker)
