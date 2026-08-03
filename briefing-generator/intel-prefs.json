@@ -59,6 +59,10 @@
     "llm-class-action": {
       "bg": "#3B78D8",
       "fg": "#FFFFFF"
+    },
+    "fraud-recovery": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
     }
   },
   "groups": [
