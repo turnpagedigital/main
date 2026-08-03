@@ -122,12 +122,27 @@ def kroll_fetch(base_url, docket_number):
                  f"{case_seg[0]} (scanned {len(rows)} rows)")
 
         pdf_url = (origin + target_href) if target_href.startswith("/") else urljoin(docket_url, target_href)
-        resp = ctx.request.get(pdf_url, timeout=60000)
-        if not resp.ok:
-            browser.close()
-            fail(f"document download failed ({resp.status})")
-        body = resp.body()
+        # Fetch from INSIDE the page so the download carries the exact session,
+        # cookies and same-origin referer the site expects (a plain request
+        # API call gets a captcha/login interstitial instead of the PDF).
+        result = page.evaluate(
+            """async (href) => {
+                const r = await fetch(href, { credentials: 'include' });
+                if (!r.ok) return { ok: false, status: r.status };
+                const buf = await r.arrayBuffer();
+                const bytes = new Uint8Array(buf);
+                let bin = '';
+                for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+                return { ok: true, b64: btoa(bin), type: r.headers.get('content-type') || '' };
+            }""",
+            pdf_url,
+        )
         browser.close()
+
+    if not result or not result.get("ok"):
+        fail(f"document download failed ({(result or {}).get('status', '?')})")
+    import base64 as _b64
+    body = _b64.b64decode(result["b64"])
 
     if len(body) > MAX_BYTES:
         fail("document exceeds 25MB")
