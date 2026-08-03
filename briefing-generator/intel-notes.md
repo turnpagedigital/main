@@ -52,10 +52,6 @@ Ciao
 
 > Law Firm Jackson Walker to Pay $15 Million to Settle Government Claims Over Ex-Judge’s Romance — The Texas firm didn’t admit fault in its settlement with the civil division of the Justice Department r
 
-### (no docket number) — 2026-07-31
-
-> Stock Market Today: Apple Slump Drags on Tech — Stocks are reversing their early gains
-
 ## Unknown case
 
 ### (no docket number) — undated
