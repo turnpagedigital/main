@@ -31,8 +31,14 @@ export async function onRequestPut(context) {
     return jsonResponse({ ok: false, error: "invalid JSON" }, 400);
   }
   const url = typeof body.url === "string" ? body.url.trim() : "";
+  const hasCaseFields = "case_slug" in body || "group_name" in body;
+  const hasTheme = "theme_slug" in body;
   const caseSlug = body.case_slug == null ? null : String(body.case_slug).trim();
   const groupName = body.group_name == null ? null : String(body.group_name).trim().slice(0, 40);
+  const themeSlug = body.theme_slug == null ? null : String(body.theme_slug).trim();
+  if (themeSlug !== null && !/^[a-z0-9-]{1,60}$/.test(themeSlug)) {
+    return jsonResponse({ ok: false, error: "invalid theme slug" }, 400);
+  }
   if (!/^https?:\/\/[^\s]+$/.test(url)) {
     return jsonResponse({ ok: false, error: "a feed item url is required" }, 400);
   }
@@ -50,14 +56,19 @@ export async function onRequestPut(context) {
     }
     const item = cur.data.items.find((i) => i.url === url);
     if (!item) return jsonResponse({ ok: false, error: "item not found" }, 404);
-    if ((item.case_slug || null) === caseSlug && (item.group_name || null) === groupName) {
+    const sameCase = !hasCaseFields || ((item.case_slug || null) === caseSlug && (item.group_name || null) === groupName);
+    const sameTheme = !hasTheme || (item.theme_slug || null) === themeSlug;
+    if (sameCase && sameTheme) {
       return jsonResponse({ ok: true, unchanged: true });
     }
-    item.case_slug = caseSlug;
-    item.group_name = caseSlug ? null : groupName;  // one or the other
+    if (hasCaseFields) {
+      item.case_slug = caseSlug;
+      item.group_name = caseSlug ? null : groupName;  // one or the other
+    }
+    if (hasTheme) item.theme_slug = themeSlug;  // independent: feeds that theme's briefing
     res = await commitFileToGitHub(
       env, PATH, JSON.stringify(cur.data, null, 2) + "\n", cur.sha,
-      `Feed item: ${caseSlug || groupName ? "assign " + url.split("/").filter(Boolean).pop() + " → " + (caseSlug || "group:" + groupName) : "unassign " + url.split("/").filter(Boolean).pop()}`,
+      `Feed item: ${hasTheme && !hasCaseFields ? (themeSlug ? "theme " + url.split("/").filter(Boolean).pop() + " → " + themeSlug : "clear theme " + url.split("/").filter(Boolean).pop()) : caseSlug || groupName ? "assign " + url.split("/").filter(Boolean).pop() + " → " + (caseSlug || "group:" + groupName) : "unassign " + url.split("/").filter(Boolean).pop()}`,
       repo, branch
     );
     if (res.ok) break;

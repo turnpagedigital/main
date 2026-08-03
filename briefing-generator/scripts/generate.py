@@ -224,6 +224,36 @@ def build_x_block(topic_slug):
     return "\n".join(lines) + "\n\n"
 
 
+def build_tagged_articles_block(topic_slug):
+    """Articles Andrew tagged to this theme on the News page (bondoro.json
+    theme_slug) — recent ones join the briefing's source material."""
+    path = REPO_ROOT / "bondoro.json"
+    if not path.exists():
+        return ""
+    try:
+        items = json.loads(path.read_text(encoding="utf-8")).get("items", [])
+    except Exception:
+        return ""
+    cutoff = (dt.date.today() - dt.timedelta(days=4)).isoformat()
+    mine = [i for i in items
+            if i.get("theme_slug") == topic_slug and (i.get("date") or "") >= cutoff][:15]
+    if not mine:
+        return ""
+    lines = [
+        "# Reader-tagged articles for this desk (from the News page)",
+        "",
+        "The reader hand-tagged these to this theme — treat them as priority "
+        "source material for today's briefing where relevant:",
+        "",
+    ]
+    for i in mine:
+        lines.append(f"- [{i.get('kind', 'news').title()}] {i.get('title', '')} "
+                     f"({i.get('source', '')}, {i.get('date', '')}) {i.get('url', '')}")
+        if i.get("excerpt"):
+            lines.append(f"  {i['excerpt'][:200]}")
+    return "\n".join(lines) + "\n\n"
+
+
 def build_case_truth_block(topic_slug, key_focus_slugs=()):
     """Compact authoritative block from the repo's tracked-case data so the
     model can't drift on cases we already track (e.g. settlement posture).
@@ -738,6 +768,10 @@ def main():
             news_block = build_enriched_news_block(enriched_items)
         else:
             news_block = build_news_block([])  # fallback for no headlines
+        tagged_block = build_tagged_articles_block(topic['slug'])
+        if tagged_block:
+            news_block = news_block + "\n" + tagged_block
+            print(f"  reader-tagged articles folded into the prompt")
         x_block = build_x_block(topic['slug'])
         if x_block:
             news_block = news_block + "\n" + x_block

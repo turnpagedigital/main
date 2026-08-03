@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  /* News — every article and feed item in one view (the docket keeps court
+     filings plus case-tagged articles). Same machinery as docket.js: filters,
+     votes, notes, snooze, hide/delete, uploads, keyboard nav. */
+
   // ── Entry-type classifier ──────────────────────────────────────────────────
   function classifyEntry(desc) {
     var d = (desc || "").toLowerCase();
@@ -103,7 +107,7 @@
   var activeCases = {};
   var entryFilter = "all";
   var newOnly = false;
-  var rowKind = "both";  // both | filings | articles
+  var rowKind = "articles";  // pinned — this page is the news side of the split
   var bmOnly = false;
   var noteOnly = false;
   var NOTES = {};
@@ -144,15 +148,14 @@
   var _savedState = null;
 
   // ── Filter-state persistence (localStorage) ────────────────────────────────
-  var FILTER_KEY = "ud-filter-state";
+  var FILTER_KEY = "un-news-filter-state";
 
   function loadFilterState() {
     try {
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.entryFilter)   entryFilter   = s.entryFilter;
       if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
-      if (s.rowKind === "both" || s.rowKind === "filings" || s.rowKind === "articles") rowKind = s.rowKind;
-      else if (s.showArticles === false) rowKind = "filings";  // migrate the retired checkbox
+      rowKind = "articles";
       if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
       if (typeof s.noteOnly === "boolean") noteOnly = s.noteOnly;
       // migrate the retired select-based filter
@@ -265,7 +268,7 @@
           is_article:    true,
         });
       });
-      (c.entries || []).forEach(function (e) {
+      (rowKind === "__never__" ? c.entries || [] : []).forEach(function (e) {
         ALL.push({
           claims_url:    c.claims_url || "",
           claims_name:   c.claims_name || "",
@@ -322,10 +325,12 @@
       if (newOnly && !e.is_new) return false;
       // Entry-type filters only apply to docket entries — the Articles
       // checkbox is the sole gate for news rows.
-      if (!e.is_article) {
-        if (entryFilter === "substantive" && !SUBSTANTIVE[e.type]) return false;
-        if (entryFilter === "orders" && e.type !== "order") return false;
-        if (entryFilter === "transfers" && e.type !== "transfer") return false;
+      if (entryFilter !== "all") {
+        var kind = (e.bondoro_kind || "News").toLowerCase();
+        if (entryFilter === "alerts" && kind !== "alert") return false;
+        if (entryFilter === "summaries" && kind !== "summary") return false;
+        if (entryFilter === "news" && kind !== "news") return false;
+        if (entryFilter === "sales" && kind !== "asset sale") return false;
       }
       if (dateFrom && e.date_filed && e.date_filed < dateFrom) return false;
       if (dateTo && e.date_filed && e.date_filed > dateTo) return false;
@@ -536,6 +541,14 @@
         "</label>"
       );
     }).join("");
+
+    rows += (
+      '<label class="ud-dd-row" title="Feed items not yet assigned to a case">' +
+        '<input type="checkbox" data-slug="' + UNASSIGNED_KEY + '"' + (activeCases[UNASSIGNED_KEY] ? " checked" : "") + ">" +
+        '<span class="ud-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-40)">Uncategorized</span>' +
+        '<span class="ud-dd-spacer"></span>' +
+      "</label>"
+    );
 
     var groups = loadGroups();
     var groupRows = groups.map(function (g, i) {
@@ -1245,8 +1258,6 @@
       var c = b.case_slug ? caseBySlug(b.case_slug) : null;
       var grp = !c && b.group_name ? findGroup(b.group_name) : null;
       var themeSlug = b.theme_slug || "";
-      if (!c && !grp) return;  // untagged articles live on the News page now
-      if (!c && !grp && feedSourceMode(b) === "case-only") return;
       out.push({
         slug:          c ? c.slug : "",
         theme_slug:    themeSlug,
@@ -2265,7 +2276,7 @@
     }).catch(function () {});
   }
 
-  // ── Live sync (CourtListener via /intel/api/dockets) ───────────────────────
+  // ── Live refresh (feed store) ───────────────────────
   // Refreshes entries every minute while the tab is visible. The endpoint
   // edge-caches upstream calls, so extra tabs cost nothing. Any failure just
   // leaves the build-time static data in place.
@@ -2320,17 +2331,19 @@
   }
 
   function syncLive() {
-    fetchJson("api/dockets").then(function (payload) {
-      if (applyLive(payload)) {
+    // Articles refresh from the repo-backed feed store — no CourtListener
+    // quota is spent from this page (the docket page owns that).
+    fetchJson("bondoro.json").then(function (d) {
+      if (d && d.items) {
+        BONDORO = d.items;
+        buildAllEntries();
+        render();
         var t = new Date();
-        setSyncStatus("Live · synced " +
+        setSyncStatus("Feeds \u00b7 refreshed " +
           t.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }), true);
-      } else {
-        var reason = payload && payload.error ? payload.error : "live sync unavailable";
-        setSyncStatus("Static data \u2014 " + reason, false);
       }
     }).catch(function () {
-      setSyncStatus("Static data \u2014 endpoint unreachable", false);
+      setSyncStatus("Feeds \u2014 refresh unavailable", false);
     });
   }
 
@@ -2502,8 +2515,8 @@
     }
 
     // Column-header filters
-    var ENTRY_LABELS = { all: "Entry", substantive: "Entry \u00b7 Substantive",
-      orders: "Entry \u00b7 Orders", transfers: "Entry \u00b7 Transfers" };
+    var ENTRY_LABELS = { all: "Story", alerts: "Story \u00b7 Alerts",
+      summaries: "Story \u00b7 Summaries", news: "Story \u00b7 News", sales: "Story \u00b7 Asset Sales" };
     var thEntry = document.getElementById("ud-th-entry");
     var thMenu = document.getElementById("ud-th-menu");
 

@@ -270,6 +270,7 @@
   var CASE_DATA = [];       // [{m, c}]
   var BRIEFING_ITEMS = [];
   var NOTES_LIST = [];
+  var FEED_ITEMS = [];
 
   function fill(id, html) {
     var n = document.getElementById(id);
@@ -406,6 +407,23 @@
     }).join(""));
   }
 
+  function renderNews() {
+    var items = FEED_ITEMS.filter(function (b) { return b.url && b.title; }).slice(0, 7);
+    fill("ih-news", items.map(function (b) {
+      var p;
+      var m = null;
+      for (var i = 0; i < MANIFEST.length; i++) {
+        if (MANIFEST[i].slug === b.case_slug) { m = MANIFEST[i]; break; }
+      }
+      if (m) p = casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color);
+      else if (b.theme_slug) p = themePill(b.theme_slug);
+      else p = '<span class="ih-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-60)">' + esc(b.group_name || "Uncategorized") + "</span>";
+      return row(BASE + "news.html",
+        fmtDate(b.date) + " · " + (b.source || "") + " · " + (b.kind || "news").replace(/^\w/, function (c) { return c.toUpperCase(); }),
+        b.title, p);
+    }).join(""));
+  }
+
   function renderNotes() {
     var list = NOTES_LIST.filter(function (n) {
       if (!n.case_slug) return caseOn("__unassigned__");
@@ -431,6 +449,7 @@
     renderDocket();
     renderCalendar();
     renderNotes();
+    renderNews();
     updateFilterButtons();
   }
 
@@ -590,6 +609,12 @@
     fill("ih-docket", "");
     fill("ih-calendar", "");
   });
+
+  fetchJson(BASE + "bondoro.json").then(function (d) {
+    FEED_ITEMS = ((d && d.items) || []).slice()
+      .sort(function (a, b) { return (b.published_at || b.date || "").localeCompare(a.published_at || a.date || ""); });
+    renderNews();
+  }).catch(function () { fill("ih-news", ""); });
 
   fetchJson(BASE + "api/notes")
     .then(function (p) { return (p && p.ok && p.entries) || {}; })

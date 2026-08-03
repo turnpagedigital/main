@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
-<title>Docket — Turnpage Daily Briefing</title>
+<title>News — Turnpage Daily Briefing</title>
 <script src="theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
@@ -364,15 +364,15 @@
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
-      <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · Live Docket Monitor</div>
-  <h1>⚖️ Docket</h1>
+  <div class="eyebrow">Intelligence · News Monitor</div>
+  <h1>📡 News</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
     <span id="ud-sync"></span>
@@ -496,11 +496,6 @@
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
-        <select id="ud-rowkind" class="ud-type-select" title="What to show">
-          <option value="both">Filings + Articles</option>
-          <option value="filings">Court filings only</option>
-          <option value="articles">Articles only</option>
-        </select>
         <label class="ud-new-label">
           <input type="checkbox" id="ud-new-only"> New only (24h)
         </label>
@@ -519,7 +514,7 @@
       <th style="width:82px">Time</th>
       <th id="ud-th-case" class="ud-th-filter" style="width:150px" title="Select cases"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-source" class="ud-th-filter" style="width:150px" title="Show or hide news sources"><span class="ud-th-label">Author</span> <span class="ud-th-caret">▾</span></th>
-      <th id="ud-th-entry" class="ud-th-filter" title="Filter by entry type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
+      <th id="ud-th-entry" class="ud-th-filter" title="Filter by story type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
       <th style="width:132px;text-align:right">Dkt.</th>
       <th id="ud-th-bm" class="ud-th-toggle ud-th-icon" style="width:26px;text-align:center" title="Show bookmarked only">★</th>
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Snoozed reminders"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></th>
@@ -534,7 +529,7 @@
 
 </div>
 
-<script src="docket.js"></script>
+<script src="news.js"></script>
 
 </body>
 </html>

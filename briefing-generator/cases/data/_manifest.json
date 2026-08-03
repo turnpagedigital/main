@@ -54,6 +54,24 @@
     "court": "Bankr. D. Mass"
   },
   {
+    "slug": "omnis-pleasants",
+    "display_name": "Omnis Pleasants",
+    "short_name": "Omnis Pleasants",
+    "docket_url": "",
+    "default_color": "#D4FF00",
+    "category": "bankruptcy",
+    "court": "United States Bankruptcy Court, D. Delaware"
+  },
+  {
+    "slug": "papaya-gaming",
+    "display_name": "Papaya Gaming",
+    "short_name": "Papaya Gaming",
+    "docket_url": "",
+    "default_color": "#1B3A4B",
+    "category": "bankruptcy",
+    "court": "United States Bankruptcy Court, D. Delaware"
+  },
+  {
     "slug": "poolin",
     "display_name": "Poolin",
     "short_name": "Poolin",
@@ -97,21 +115,5 @@
     "default_color": "#C084FC",
     "category": "bankruptcy",
     "court": "Bankr. D. Del."
-  },
-  {
-    "slug": "papaya-gaming",
-    "display_name": "Papaya Gaming",
-    "short_name": "Papaya Gaming",
-    "docket_url": "",
-    "court": "United States Bankruptcy Court, D. Delaware",
-    "default_color": "#1B3A4B"
-  },
-  {
-    "slug": "omnis-pleasants",
-    "display_name": "Omnis Pleasants",
-    "short_name": "Omnis Pleasants",
-    "docket_url": "",
-    "court": "United States Bankruptcy Court, D. Delaware",
-    "default_color": "#D4FF00"
   }
 ]

@@ -154,6 +154,7 @@ def main():
             else:
                 f["case_slug"] = None
                 f["group_name"] = None
+                f["theme_slug"] = None
                 existing[f["url"]] = f
                 added += 1
         print(f"  ✓ {label}: {len(fresh)} item(s) in feed")

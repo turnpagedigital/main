@@ -786,6 +786,7 @@ def render_unified_docket(cases):
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
+      <a class="tn-back" href="news.html">📡 News</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -966,6 +967,257 @@ def render_unified_docket(cases):
     print(f"  ✓ docket.html: shell written ({len(live)} live cases in manifest)")
 
 
+def render_news_page(cases):
+    """Generate briefing-generator/docket.html (shell) + cases/data/_manifest.json."""
+    live = [c for c in cases if c["data"] and not _docket(c["data"]).get("awaiting_sync")]
+    # Manifest includes ALL cases that have a data file, so awaiting-sync cases
+    # appear as chip options in the UI immediately after admin creates them.
+    all_with_data = [c for c in cases if c["data"] is not None]
+
+    # Write _manifest.json — lightweight case metadata consumed by JS at runtime.
+    # Existing default_color values are preserved (they're editable from the
+    # docket page's color popover) — the palette only seeds new cases.
+    prior_colors = {}
+    manifest_path_prev = DATA_DIR / "_manifest.json"
+    if manifest_path_prev.exists():
+        try:
+            for entry in json.loads(manifest_path_prev.read_text(encoding="utf-8")):
+                if entry.get("slug") and entry.get("default_color"):
+                    prior_colors[entry["slug"]] = entry["default_color"]
+        except Exception:
+            pass
+    manifest = []
+    for i, c in enumerate(all_with_data):
+        d = _docket(c["data"])
+        bl = prior_colors.get(c["slug"]) or _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
+        manifest.append({
+            "slug": c["slug"],
+            "display_name": c["config"]["display_name"],
+            "short_name": _short_name(c["config"]["display_name"]),
+            "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
+            "default_color": bl,
+            "category": _case_category(c["config"].get("topics") or []),
+            "court": (c["config"].get("case") or {}).get("court") or "",
+        })
+
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    manifest_path = DATA_DIR / "_manifest.json"
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  ✓ cases/data/_manifest.json: {len(manifest)} cases ({len(live)} live, {len(all_with_data)-len(live)} awaiting sync)")
+
+    if not live:
+        print("  · docket.html: no live cases — writing empty shell")
+
+    logo_src = "assets/turnpage-intel-logo.png"
+    logo_src_dark = "assets/turnpage-intel-logo-dark.png"
+
+    page = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+<title>News — Turnpage Daily Briefing</title>
+{THEME_SCRIPT}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+{PAGE_CSS}
+<style>
+{UD_CSS}
+</style>
+<!-- AUTH GATE START -->
+<script src="/auth/config.js"></script>
+<script type="module" src="/auth/auth.js"></script>
+<!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="{logo_src}"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="{logo_src_dark}"></a>
+      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="briefings.html">📰 Briefings</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+    </div>
+    <button id="theme-toggle">🖥️</button>
+  </div>
+</nav>
+
+<div class="page-title">
+  <div class="eyebrow">Intelligence · News Monitor</div>
+  <h1>📡 News</h1>
+  <div class="case-meta">
+    <span id="ud-meta">Loading…</span>
+    <span id="ud-sync"></span>
+  </div>
+</div>
+
+<!-- Color popover (shared, repositioned by JS) -->
+<div id="ud-color-pop" class="ud-color-pop" style="display:none;">
+  <div class="ud-pop-title" id="ud-pop-slug"></div>
+  <div id="ud-pop-swatches" class="ud-pop-swatches"></div>
+  <label class="ud-pop-row">
+    <span>Background</span>
+    <input type="color" id="ud-pop-bg" value="#888888">
+  </label>
+  <label class="ud-pop-row">
+    <span>Text</span>
+    <input type="color" id="ud-pop-fg" value="#ffffff">
+  </label>
+  <button id="ud-pop-reset" class="ud-pop-reset">Reset to default</button>
+  <button id="ud-pop-default" class="ud-pop-reset" style="margin-top:8px;">Set as default color</button>
+  <button id="ud-pop-palette" class="ud-pop-reset" style="margin-top:8px;">Edit palette…</button>
+  <button id="ud-pop-edit" class="ud-pop-reset" style="margin-top:8px;">Edit case details…</button>
+</div>
+
+<!-- Note modal -->
+<div id="ud-note-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box">
+    <div class="ud-note-title" id="ud-note-title"></div>
+    <div class="ud-note-meta" id="ud-note-meta"></div>
+    <textarea id="ud-note-text" class="ud-note-text" placeholder="Notes for this entry…"></textarea>
+    <div class="ud-note-actions">
+      <button type="button" id="ud-note-delete" class="ud-clear-btn">Delete note</button>
+      <span style="flex:1"></span>
+      <span id="ud-note-status" class="ud-note-status"></span>
+      <button type="button" id="ud-note-cancel" class="ud-clear-btn">Cancel</button>
+      <button type="button" id="ud-note-save" class="ud-dd-save-btn">Save note</button>
+    </div>
+  </div>
+</div>
+
+<!-- Case editor modal -->
+<div id="ud-case-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box" style="width:min(720px,100%);">
+    <div class="ud-note-title" id="ud-case-title">Add a case</div>
+    <div class="ud-case-grid">
+      <label>Display name<input type="text" id="cf-name" class="ud-dd-save-input" placeholder="e.g. Terraform Labs"></label>
+      <label>CourtListener docket ID
+        <span class="ud-case-lookup-row">
+          <input type="text" id="cf-docket-id" class="ud-dd-save-input" placeholder="e.g. 68180454">
+          <button type="button" id="cf-lookup" class="ud-dd-save-btn">Look up</button>
+        </span>
+      </label>
+      <label>Parties<input type="text" id="cf-parties" class="ud-dd-save-input"></label>
+      <label>Court<input type="text" id="cf-court" class="ud-dd-save-input"></label>
+      <label>Case number<input type="text" id="cf-number" class="ud-dd-save-input"></label>
+      <label>Judge<input type="text" id="cf-judge" class="ud-dd-save-input"></label>
+      <label class="ud-case-wide">Claims agent URL (optional)<input type="text" id="cf-claims" class="ud-dd-save-input" placeholder="https://cases.omniagentsolutions.com/…"></label>
+      <label class="ud-case-wide">Themes<span id="cf-topics" class="ud-case-topics"></span></label>
+      <label class="ud-case-wide">Scan guidance (optional)<textarea id="cf-guidance" class="ud-note-text" style="min-height:64px;" placeholder="What should the news scan and briefings focus on?"></textarea></label>
+    </div>
+    <div class="ud-note-actions">
+      <span id="cf-status" class="ud-note-status"></span>
+      <span style="flex:1"></span>
+      <button type="button" id="cf-cancel" class="ud-clear-btn">Cancel</button>
+      <button type="button" id="cf-save" class="ud-dd-save-btn">Save case</button>
+    </div>
+  </div>
+</div>
+
+<!-- Feed sources modal -->
+<div id="ud-src-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box" style="width:min(680px,100%);">
+    <div class="ud-note-title">News feed sources</div>
+    <div class="ud-note-meta">Each source's RSS feed is pulled once a day. “All entries” puts every item on the docket (unassigned until tied to a case). “Case matches only” shows a feed's items solely when they match a tracked case — matching runs automatically on each pull, and you can still assign by hand.</div>
+    <div id="ud-src-list" class="ud-src-list"></div>
+    <div class="ud-src-add">
+      <input type="text" id="ud-src-name" class="ud-dd-save-input" placeholder="Name (e.g. PETITION)" style="flex:0 0 140px;">
+      <input type="text" id="ud-src-url" class="ud-dd-save-input" placeholder="RSS feed URL (https://…/rss)" style="flex:1;">
+      <input type="text" id="ud-src-kind" class="ud-dd-save-input" placeholder="Tag (News)" style="flex:0 0 90px;">
+      <button type="button" id="ud-src-add-btn" class="ud-dd-save-btn">Add</button>
+    </div>
+    <div class="ud-note-actions">
+      <span id="ud-src-status" class="ud-note-status"></span>
+      <span style="flex:1"></span>
+      <button type="button" id="ud-src-close" class="ud-clear-btn">Close</button>
+      <button type="button" id="ud-src-save" class="ud-dd-save-btn">Save sources</button>
+    </div>
+  </div>
+</div>
+
+<!-- Entry-type header menu (positioned under the Entry column header) -->
+<div id="ud-th-menu" class="ud-th-menu" style="display:none;">
+  <button type="button" class="ud-th-menu-item" data-val="all">All entries</button>
+  <button type="button" class="ud-th-menu-item" data-val="substantive">Substantive only</button>
+  <button type="button" class="ud-th-menu-item" data-val="orders">Orders only</button>
+  <button type="button" class="ud-th-menu-item" data-val="transfers">Transfers only</button>
+</div>
+
+<div class="ud-page">
+
+  <div id="ud-due" class="ud-due" style="display:none;"></div>
+
+  <div class="ud-controls">
+    <div class="ud-search-row">
+      <div class="ud-search-wrap">
+        <input type="text" id="ud-search" class="ud-search-input" placeholder="Search entries, parties, dates…">
+      </div>
+      <div class="ud-date-range">
+        <span class="ud-date-label">From</span>
+        <input type="date" id="ud-date-from" class="ud-date-input">
+        <span class="ud-date-sep">–</span>
+        <span class="ud-date-label">To</span>
+        <input type="date" id="ud-date-to" class="ud-date-input">
+        <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
+      </div>
+    </div>
+    <div class="ud-filter-row">
+      <div class="ud-case-dd" id="ud-case-dd">
+        <button type="button" id="ud-case-add" class="ud-type-select" title="Add a tracked case">＋ Case</button>
+        <button type="button" id="ud-sources-btn" class="ud-type-select" title="Manage news feed sources">Sources</button>
+        <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
+      </div>
+      <div class="ud-filter-right">
+        <label class="ud-new-label">
+          <input type="checkbox" id="ud-new-only"> New only (24h)
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="ud-toolbar">
+    <span id="ud-count"></span>
+    <span id="ud-hidden-info" class="uc-curation-info"></span>
+    <button id="ud-sort-btn">Date ↓</button>
+  </div>
+
+  <table class="ud-table">
+    <thead><tr>
+      <th style="width:82px">Time</th>
+      <th id="ud-th-case" class="ud-th-filter" style="width:150px" title="Select cases"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
+      <th id="ud-th-source" class="ud-th-filter" style="width:150px" title="Show or hide news sources"><span class="ud-th-label">Author</span> <span class="ud-th-caret">▾</span></th>
+      <th id="ud-th-entry" class="ud-th-filter" title="Filter by story type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
+      <th style="width:132px;text-align:right">Dkt.</th>
+      <th id="ud-th-bm" class="ud-th-toggle ud-th-icon" style="width:26px;text-align:center" title="Show bookmarked only">★</th>
+      <th class="ud-th-icon" style="width:26px;text-align:center" title="Snoozed reminders"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></th>
+      <th class="ud-th-icon" style="width:26px;text-align:center" title="Hide rows (H)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></th>
+      <th class="ud-th-icon" style="width:26px;text-align:center" title="Delete rows (X)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></th>
+      <th id="ud-th-note" class="ud-th-toggle ud-th-icon" style="width:44px;text-align:center" title="Show entries with notes only"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></th>
+    </tr></thead>
+    <tbody id="ud-tbody">
+      <tr><td colspan="10" class="ud-empty">Loading…</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<script src="news.js"></script>
+
+</body>
+</html>
+"""
+
+    out = REPO_ROOT / "news.html"
+    out.write_text(page, encoding="utf-8")
+    print(f"  ✓ news.html: shell written")
+
+
+
+
 def render_unified_calendar(cases):
     """Generate briefing-generator/unified-calendar.html — hearings & deadlines
     parsed client-side (unified-calendar.js) from the same case data the
@@ -1006,6 +1258,7 @@ def render_unified_calendar(cases):
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
+      <a class="tn-back" href="news.html">📡 News</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -1139,6 +1392,7 @@ def render_unified_notes(cases):
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
+      <a class="tn-back" href="news.html">📡 News</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -1280,6 +1534,7 @@ def render_briefings(cases):
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="news.html">📡 News</a>
     </div>
     <button id="theme-toggle">🖥️</button>
   </div>
@@ -1361,6 +1616,7 @@ def main():
     # 3) unified docket page
     print("=== Rendering unified docket page ===")
     render_unified_docket(cases)
+    render_news_page(cases)
 
     # 4) unified calendar page
     print("=== Rendering unified calendar page ===")
