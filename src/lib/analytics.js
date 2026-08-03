@@ -54,10 +54,14 @@ export function initAnalytics() {
   if (ADS_ID) gtag("config", ADS_ID);
 }
 
-/* Fire a page_view for the current location. Safe to call unconfigured. */
+/* Fire a page_view for the current location. Safe to call unconfigured.
+ * Always inits the tag first: with an Ads-only config the tag still must
+ * load on landing so it captures the gclid into Google's cookie —
+ * otherwise conversions can't be attributed to the ad click. */
 export function trackPageView() {
-  if (!GA4_ID) return;
+  if (!TAG_ID) return;
   initAnalytics();
+  if (!GA4_ID) return; // page_view is a GA4 event; Ads-only configs stop here
   gtag("event", "page_view", {
     page_location: window.location.href,
     page_path: window.location.pathname,
