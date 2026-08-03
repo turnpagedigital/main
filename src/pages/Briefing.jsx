@@ -88,6 +88,7 @@ export default function Briefing({ slug }) {
   const [meta,     setMeta]     = useState(null);
   const [bodyHtml, setBodyHtml] = useState(null);
   const [error,    setError]    = useState(null);
+  const [isDraft,  setIsDraft]  = useState(false);
 
   /* Sync the browser tab + history entry with the loaded post. Crawlers get
      the same values server-side from functions/_middleware.js; this is for
@@ -105,21 +106,27 @@ export default function Briefing({ slug }) {
 
   useEffect(() => {
     let cancelled = false;
-    setMeta(null); setBodyHtml(null); setError(null);
+    setMeta(null); setBodyHtml(null); setError(null); setIsDraft(false);
 
     Promise.all([
       fetch("/briefings/index.json").then(r => r.ok ? r.json() : Promise.reject("index missing")),
       fetch("/briefings/" + slug + ".md").then(r => r.ok ? r.text() : Promise.reject("post not found")),
     ])
-      .then(([idx, md]) => {
+      .then(async ([idx, md]) => {
         if (cancelled) return;
         const list = Array.isArray(idx) ? idx : (idx.items || []);
         const m = list.find(x => x.slug === slug);
         if (m && m.active === false) {
-          // Direct hit on a draft slug — treat as not-found for the public.
-          // Admins still reach the markdown via the editor, not this page.
-          setError("post not found");
-          return;
+          // Draft slug — render only for a logged-in admin (review-by-URL,
+          // with a DRAFT banner); everyone else gets not-found. The server
+          // already sends X-Robots-Tag: noindex for draft paths.
+          const authed = await fetch("/api/admin/session").then(r => r.ok).catch(() => false);
+          if (cancelled) return;
+          if (!authed) {
+            setError("post not found");
+            return;
+          }
+          setIsDraft(true);
         }
         setMeta(m || { slug, title: slug, date: null, summary: null });
         marked.setOptions({ mangle: false, headerIds: false, breaks: false });
@@ -150,9 +157,30 @@ export default function Briefing({ slug }) {
   }
 
   const type = (meta.type || "briefing").toLowerCase();
-  if (type === "article")      return <ArticleTemplate      meta={meta} bodyHtml={bodyHtml} />;
-  if (type === "announcement") return <AnnouncementTemplate meta={meta} bodyHtml={bodyHtml} />;
-  return <BriefingTemplate meta={meta} bodyHtml={bodyHtml} />;
+  const post =
+    type === "article"      ? <ArticleTemplate      meta={meta} bodyHtml={bodyHtml} /> :
+    type === "announcement" ? <AnnouncementTemplate meta={meta} bodyHtml={bodyHtml} /> :
+    <BriefingTemplate meta={meta} bodyHtml={bodyHtml} />;
+
+  return (
+    <>
+      {isDraft && <DraftBanner />}
+      {post}
+    </>
+  );
+}
+
+/* ── Draft banner — shown above draft posts for logged-in admins ─────────── */
+function DraftBanner() {
+  return (
+    <div style={{
+      background: NEON, color: "#000", fontFamily: FONT,
+      fontSize: "0.72rem", fontWeight: 800, letterSpacing: "0.18em",
+      textTransform: "uppercase", textAlign: "center", padding: "0.55rem 1rem",
+    }}>
+      Draft — visible to logged-in admins only · publish in Admin → Content → Posts
+    </div>
+  );
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
