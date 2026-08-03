@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/",
-    "date_last_filing": "2026-08-02",
-    "fetched_at": "2026-08-03T03:59:04.525144+00:00",
+    "date_last_filing": "2026-08-03",
+    "fetched_at": "2026-08-03T07:51:09.025948+00:00",
     "as_of": "Aug 3, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 81,
+        "date_filed": "2026-08-03",
+        "time_filed": "00:16:35",
+        "date_display": "Aug 3, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 80,
         "date_filed": "2026-08-02",
@@ -39,19 +49,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 78,
-        "date_filed": "2026-07-31",
-        "time_filed": "11:22:48",
-        "date_display": "Jul 31, 2026",
-        "description": "Exhibit",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 81,
+        "date_filed": "2026-08-03",
+        "time_filed": "00:16:35",
+        "date_display": "Aug 3, 2026",
+        "description": "BNC Certificate of Notice - Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 80,
         "date_filed": "2026-08-02",
