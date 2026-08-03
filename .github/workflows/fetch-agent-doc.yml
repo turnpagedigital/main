@@ -1,0 +1,88 @@
+name: Fetch Agent Document
+
+# Triggered by a docket-page click (/intel/api/fetch-doc) when a document
+# isn't in the free RECAP archive but the case has an automatable claims
+# agent (currently Kroll). Downloads the PDF with headless Chromium and
+# commits it to the row's uploads — free, no PACER.
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Case slug"
+        required: true
+      entry_number:
+        description: "Docket entry number"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-agent-doc-${{ github.event.inputs.slug }}-${{ github.event.inputs.entry_number }}
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Fetch the document
+        working-directory: briefing-generator
+        env:
+          SLUG: ${{ github.event.inputs.slug }}
+          ENTRY_NUMBER: ${{ github.event.inputs.entry_number }}
+        run: python scripts/fetch_agent_doc.py
+
+      - name: Commit to main if anything changed
+        run: |
+          if git diff --quiet -- briefing-generator; then
+            echo "Nothing fetched"; exit 0
+          fi
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Agent Fetch Bot"
+          git add briefing-generator/uploads briefing-generator/uploads.json briefing-generator/cases/data
+          git commit -m "Agent fetch: Dkt. ${{ github.event.inputs.entry_number }} (${{ github.event.inputs.slug }})"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then
+              echo "pushed on attempt ${attempt}"; break
+            fi
+            echo "push attempt ${attempt} failed; retrying"; sleep 5
+          done
+
+      - name: Mirror uploads to dev
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: dev-site
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Copy uploads into dev
+        run: |
+          cp -f briefing-generator/uploads.json dev-site/briefing-generator/ 2>/dev/null || true
+          cp -rf briefing-generator/uploads dev-site/briefing-generator/ 2>/dev/null || true
+          cd dev-site
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Agent Fetch Bot"
+          git add briefing-generator
+          if ! git diff --staged --quiet; then
+            git commit -m "Agent fetch: mirror uploads to dev"
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin dev && git push origin HEAD:dev; then break; fi
+              sleep 5
+            done
+          fi

@@ -111,6 +111,40 @@ async function downloadAndCommit(env, slug, entryNumber, filepathLocal) {
   return commitPdf(env, slug, entryNumber, buf);
 }
 
+const AUTOMATABLE_AGENTS = /kroll|ra\.kroll/i;
+
+async function detectAgent(env, slug) {
+  const res = await getFileFromGitHub(env, `briefing-generator/cases/data/${slug}.json`, null,
+    briefingRepo(env), briefingBranch(env));
+  if (!res.ok || !res.data) return null;
+  const ca = res.data.claims_administrator || {};
+  const hay = `${ca.name || ""} ${ca.url || ""}`;
+  if (ca.url && AUTOMATABLE_AGENTS.test(hay)) return { kind: "kroll", url: ca.url };
+  return null;
+}
+
+async function dispatchAgentFetch(env, slug, entryNumber) {
+  const token = env.GITHUB_TOKEN;
+  if (!token) return { ok: false, error: "GITHUB_TOKEN not configured" };
+  const repo = briefingRepo(env);
+  const url = `https://api.github.com/repos/${repo}/actions/workflows/fetch-agent-doc.yml/dispatches`;
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: "application/vnd.github+json",
+      "User-Agent": "tpdm-intel",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ref: briefingBranch(env), inputs: { slug, entry_number: String(entryNumber) } }),
+    signal: AbortSignal.timeout(15000),
+  });
+  if (res.status === 204) return { ok: true };
+  const text = (await res.text()).slice(0, 200);
+  // 403 here usually means the PAT lacks "Actions: read and write"
+  return { ok: false, error: `workflow dispatch failed (${res.status}): ${text}` };
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   if (!env.COURTLISTENER_TOKEN) {
@@ -147,11 +181,24 @@ export async function onRequestPost(context) {
     }
   }
 
-  // Not in RECAP → queue a PACER purchase through CourtListener
+  // Not in RECAP → does this case have an automatable claims agent? (free)
+  const agent = await detectAgent(env, slug);
+  if (agent) {
+    const dispatched = await dispatchAgentFetch(env, slug, entryNumber);
+    if (dispatched.ok) {
+      return jsonResponse({ status: "agent_pending", agent: agent.kind, key: `${slug}|n${entryNumber}` });
+    }
+    // Dispatch failed (e.g. token lacks Actions scope) — fall through to PACER
+    if (!env.PACER_USERNAME || !env.PACER_PASSWORD) {
+      return jsonResponse({ status: "failed", error: dispatched.error || "agent fetch could not start" });
+    }
+  }
+
+  // No agent (or dispatch failed) → PACER purchase through CourtListener
   if (!env.PACER_USERNAME || !env.PACER_PASSWORD) {
     return jsonResponse({
       status: "failed",
-      error: "Not in the free RECAP archive; PACER_USERNAME / PACER_PASSWORD not configured for automatic purchase",
+      error: "Not in the free RECAP archive; no claims agent for this case and PACER_USERNAME / PACER_PASSWORD not configured",
     });
   }
   const form = new URLSearchParams({
