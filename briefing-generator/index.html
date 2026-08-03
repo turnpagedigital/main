@@ -124,6 +124,18 @@
     [data-theme="dark"] .ih-row:hover { background: rgba(229,231,235,0.05); }
     .ih-date { font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; color: var(--ink-60); text-transform: uppercase; margin-bottom: 3px; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
     .ih-pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.03em; padding: 1px 8px; border-radius: 99px; white-space: nowrap; text-transform: none; }
+    .ih-pill-sq { border-radius: 0; }
+    .ih-controls { max-width: 1440px; margin: 0 auto 14px; padding: 0 32px; display: flex; gap: 10px; justify-content: flex-end; }
+    .ih-dd-wrap { position: relative; }
+    .ih-dd-btn { font-family: inherit; font-size: 12px; font-weight: 700; padding: 7px 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line-strong); cursor: pointer; }
+    .ih-dd-panel { position: absolute; top: calc(100% + 6px); right: 0; z-index: 900; background: var(--surface); border: 1px solid var(--line-strong); box-shadow: 0 6px 24px rgba(0,0,0,0.22); min-width: 250px; padding: 10px; max-height: 70vh; overflow-y: auto; }
+    .ih-dd-quick-row { display: flex; gap: 8px; margin-bottom: 8px; }
+    .ih-dd-quick-row button, .ih-dd-group { font-family: inherit; font-size: 11.5px; font-weight: 700; background: none; border: none; color: var(--ink-60); cursor: pointer; text-decoration: underline; padding: 2px 0; text-align: left; }
+    .ih-dd-quick-row button:hover, .ih-dd-group:hover { color: var(--ink); }
+    .ih-dd-title { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-60); margin: 10px 0 6px; }
+    .ih-dd-group { display: block; }
+    .ih-dd-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; }
+    .ih-dd-row input { accent-color: var(--neon-block); cursor: pointer; }
     .ih-text { font-size: 12.5px; line-height: 1.45; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .ih-empty { padding: 12px 14px; font-size: 12px; color: var(--ink-60); }
 
@@ -191,6 +203,16 @@
 
 
   <!-- Dashboard: top 7 from each section, four columns -->
+  <div class="ih-controls">
+    <div class="ih-dd-wrap">
+      <button type="button" id="ih-cases-btn" class="ih-dd-btn">Cases: All</button>
+      <div id="ih-cases-panel" class="ih-dd-panel" style="display:none;"></div>
+    </div>
+    <div class="ih-dd-wrap">
+      <button type="button" id="ih-themes-btn" class="ih-dd-btn">Themes: All</button>
+      <div id="ih-themes-panel" class="ih-dd-panel" style="display:none;"></div>
+    </div>
+  </div>
   <div class="ih-grid">
     <section class="ih-col">
       <a class="ih-head" href="../briefings.html"><span class="ih-emoji">📰</span><span class="ih-name">Briefings</span><span class="ih-more">View all →</span></a>

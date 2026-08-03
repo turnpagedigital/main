@@ -2,11 +2,15 @@
   "use strict";
 
   /* Intel dashboard (landing) — four side-by-side columns previewing the top 7
-     from Briefings, Docket, Calendar, and Notes. Row clicks land on the full
-     section pages. Calendar parsing mirrors calendar.js (trimmed copy). */
+     from Briefings, Docket, Calendar, and Notes.
 
-  // Served at /intel/ in production and in local previews of dist; when the
-  // generator repo is previewed standalone the pages sit at the root.
+     - Case pills use the shared color store (ud-case-colors + intel-prefs).
+     - Theme pills are SQUARE to distinguish themes from cases, and honor the
+       same store (theme slugs never collide with case slugs).
+     - The Cases and Themes dropdowns choose what appears here; selections
+       persist in localStorage (ih-filter-state) as this browser's default.
+     - Calendar parsing mirrors calendar.js (trimmed copy). */
+
   var BASE = location.pathname.indexOf("/intel") === 0 ? "/intel/" : "/";
 
   function esc(s) {
@@ -22,8 +26,14 @@
     });
   }
 
-  // Case pill colors — shared with the docket page: user overrides in
-  // localStorage (ud-case-colors), manifest default_color as the fallback.
+  var MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function fmtDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
+    if (!m) return iso || "";
+    return MONTH_ABBR[Number(m[2]) - 1] + " " + Number(m[3]);
+  }
+
+  // ── Shared pill colors ─────────────────────────────────────────────────────
   var savedColors = {};
   try { savedColors = JSON.parse(localStorage.getItem("ud-case-colors") || "{}"); } catch (e) {}
 
@@ -34,18 +44,63 @@
     return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.55 ? "#0A0A0A" : "#FFFFFF";
   }
 
-  function pill(slug, name, defaultColor) {
+  function casePill(slug, name, defaultColor) {
     var bg = (savedColors[slug] && savedColors[slug].bg) || defaultColor || "#888888";
     var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
     return '<span class="ih-pill" style="background:' + bg + ";color:" + fg + '">' + esc(name) + "</span>";
   }
 
-  var MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  function fmtDate(iso) {
-    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
-    if (!m) return iso || "";
-    return MONTH_ABBR[Number(m[2]) - 1] + " " + Number(m[3]);
+  var THEMES = {
+    "rewind-tariffs":               { name: "Tariffs / Trade",            emoji: "⚖️", bg: "#ECFCCB", fg: "#3f6212" },
+    "llm-class-action":             { name: "LLM / Copyright",            emoji: "🤖", bg: "#DBEAFE", fg: "#1e40af" },
+    "crypto-insolvency":            { name: "Crypto Insolvency",          emoji: "🪙", bg: "#FFEDD5", fg: "#9a3412" },
+    "fraud-recovery":               { name: "Ponzi / Fraud Recovery",     emoji: "🕵️", bg: "#F3E8FF", fg: "#6b21a8" },
+    "billion-dollar-class-actions": { name: "$1B+ Class Actions",         emoji: "💰", bg: "#D1FAE5", fg: "#065f46" },
+    "bankruptcy-creditor-rights":   { name: "Bankruptcy Creditor Rights", emoji: "📜", bg: "#FEE2E2", fg: "#991b1b" },
+  };
+
+  function themeOf(slug) {
+    var base = THEMES[slug] || { name: slug, emoji: "📰", bg: "#E0E7FF", fg: "#3730a3" };
+    var ov = savedColors[slug];
+    var bg = (ov && ov.bg) || base.bg;
+    var fg = (ov && ov.fg) || base.fg;
+    return { name: base.name, emoji: base.emoji, bg: bg, fg: fg };
   }
+
+  function themePill(slug) {
+    var t = themeOf(slug);
+    return '<span class="ih-pill ih-pill-sq" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>";
+  }
+
+  // ── Show/hide preferences (persisted as this browser's default) ───────────
+  var FILTER_KEY = "ih-filter-state";
+  var activeCases = {};
+  var activeThemes = {};
+  try {
+    var st = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
+    activeCases = st.activeCases || {};
+    activeThemes = st.activeThemes || {};
+  } catch (e) {}
+
+  function saveFilters() {
+    try {
+      localStorage.setItem(FILTER_KEY, JSON.stringify({ activeCases: activeCases, activeThemes: activeThemes }));
+    } catch (e) {}
+  }
+
+  // Unknown (new) cases and themes default to visible
+  function caseOn(slug) { return activeCases[slug] !== false; }
+  function themeOn(slug) { return activeThemes[slug] !== false; }
+
+  function loadGroups() {
+    try { return JSON.parse(localStorage.getItem("ud-case-groups") || "[]"); } catch (e) { return []; }
+  }
+
+  // ── Data stores + render-on-demand ────────────────────────────────────────
+  var MANIFEST = [];
+  var CASE_DATA = [];       // [{m, c}]
+  var BRIEFING_ITEMS = [];
+  var NOTES_LIST = [];
 
   function fill(id, html) {
     var n = document.getElementById(id);
@@ -61,29 +116,38 @@
     );
   }
 
-  // ── Briefings ──────────────────────────────────────────────────────────────
-  var THEMES = {
-    "rewind-tariffs":               { name: "Tariffs / Trade",               emoji: "⚖️", bg: "#ECFCCB", fg: "#3f6212" },
-    "llm-class-action":             { name: "LLM / Copyright",               emoji: "🤖", bg: "#DBEAFE", fg: "#1e40af" },
-    "crypto-insolvency":            { name: "Crypto Insolvency",             emoji: "🪙", bg: "#FFEDD5", fg: "#9a3412" },
-    "fraud-recovery":               { name: "Ponzi / Fraud Recovery",        emoji: "🕵️", bg: "#F3E8FF", fg: "#6b21a8" },
-    "billion-dollar-class-actions": { name: "$1B+ Class Actions",            emoji: "💰", bg: "#D1FAE5", fg: "#065f46" },
-    "bankruptcy-creditor-rights":   { name: "Bankruptcy Creditor Rights",    emoji: "📜", bg: "#FEE2E2", fg: "#991b1b" },
-  };
-
-  fetchJson(BASE + "briefings.json").then(function (d) {
-    var items = ((d && d.items) || []).slice()
-      .sort(function (a, b) { return (b.updated || "").localeCompare(a.updated || ""); })
-      .slice(0, 7);
-    fill("ih-briefings", items.map(function (i) {
-      var t = THEMES[i.slug] || { name: i.slug, emoji: "📰", bg: "#E0E7FF", fg: "#3730a3" };
+  function renderBriefings() {
+    var items = BRIEFING_ITEMS.filter(function (i) { return themeOn(i.slug); });
+    fill("ih-briefings", items.slice(0, 7).map(function (i) {
       var lede = (i.body || i.stat || "").trim();
-      var p = '<span class="ih-pill" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>";
-      return row(BASE + "briefings.html", fmtDate(i.updated), lede.slice(0, 120), p);
+      return row(BASE + "briefings.html", fmtDate(i.updated), lede.slice(0, 120), themePill(i.slug));
     }).join(""));
-  }).catch(function () { fill("ih-briefings", ""); });
+  }
 
-  // ── Calendar extraction (trimmed copy of calendar.js) ──────────────────────
+  function renderDocket() {
+    var entries = [];
+    CASE_DATA.forEach(function (x) {
+      if (!caseOn(x.m.slug)) return;
+      var short = x.m.short_name || x.m.display_name || x.m.slug;
+      ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
+        if (!e.date_filed || !(e.description || "").trim()) return;
+        entries.push({ date: e.date_filed, num: e.entry_number, desc: e.description,
+                       short: short, slug: x.m.slug, color: x.m.default_color });
+      });
+    });
+    entries.sort(function (a, b) {
+      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+      return (b.num || 0) - (a.num || 0);
+    });
+    fill("ih-docket", entries.slice(0, 7).map(function (e) {
+      return row(BASE + "docket.html",
+        fmtDate(e.date) + (e.num != null ? " · Dkt. " + e.num : ""),
+        e.desc.slice(0, 130),
+        casePill(e.slug, e.short, e.color));
+    }).join(""));
+  }
+
+  // Calendar extraction (trimmed copy of calendar.js)
   var MONTHS = ["january", "february", "march", "april", "may", "june",
     "july", "august", "september", "october", "november", "december"];
   var DATE_RE = new RegExp(
@@ -118,7 +182,6 @@
     if (/\bdue\b/.test(d)) return "Due date";
     return null;
   }
-
   function extractEvents(entry, short) {
     var desc = entry.description || "";
     if (!desc) return [];
@@ -135,47 +198,17 @@
     return out;
   }
 
-  // ── Docket + Calendar (shared case fetch) ──────────────────────────────────
-  var MANIFEST = [];
-  fetchJson(BASE + "cases/data/_manifest.json").then(function (man) {
-    MANIFEST = man || [];
-    return Promise.all((man || []).map(function (m) {
-      return fetchJson(BASE + "cases/data/" + m.slug + ".json")
-        .then(function (c) { return { m: m, c: c }; })
-        .catch(function () { return null; });
-    }));
-  }).then(function (cases) {
-    cases = cases.filter(Boolean);
-
-    var entries = [];
-    cases.forEach(function (x) {
-      var short = x.m.short_name || x.m.display_name || x.m.slug;
-      ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
-        if (!e.date_filed || !(e.description || "").trim()) return;
-        entries.push({ date: e.date_filed, num: e.entry_number, desc: e.description, short: short,
-                       slug: x.m.slug, color: x.m.default_color });
-      });
-    });
-    entries.sort(function (a, b) {
-      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
-      return (b.num || 0) - (a.num || 0);
-    });
-    fill("ih-docket", entries.slice(0, 7).map(function (e) {
-      return row(BASE + "docket.html",
-        fmtDate(e.date) + (e.num != null ? " · Dkt. " + e.num : ""),
-        e.desc.slice(0, 130),
-        pill(e.slug, e.short, e.color));
-    }).join(""));
-
+  function renderCalendar() {
     var today = new Date();
     today = today.getFullYear() + "-" + pad2(today.getMonth() + 1) + "-" + pad2(today.getDate());
     var events = [];
-    cases.forEach(function (x) {
+    CASE_DATA.forEach(function (x) {
+      if (!caseOn(x.m.slug)) return;
       var short = x.m.short_name || x.m.display_name || x.m.slug;
       ((x.c && x.c.events) || []).forEach(function (ev) {
         if (ev.date && ev.date >= today) {
-          events.push({ date: ev.date, kind: ev.kind || "Event", title: ev.title || "", short: short,
-                        slug: x.m.slug, color: x.m.default_color });
+          events.push({ date: ev.date, kind: ev.kind || "Event", title: ev.title || "",
+                        short: short, slug: x.m.slug, color: x.m.default_color });
         }
       });
       ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
@@ -200,14 +233,187 @@
       return row(BASE + "calendar.html",
         fmtDate(ev.date) + " · " + ev.kind,
         ev.title,
-        pill(ev.slug, ev.short, ev.color));
+        casePill(ev.slug, ev.short, ev.color));
     }).join(""));
+  }
+
+  function renderNotes() {
+    var list = NOTES_LIST.filter(function (n) {
+      if (!n.case_slug) return caseOn("__unassigned__");
+      var known = MANIFEST.some(function (m) { return m.slug === n.case_slug; });
+      return known ? caseOn(n.case_slug) : true;
+    });
+    fill("ih-notes", list.slice(0, 7).map(function (n) {
+      var body = (n.note || "").trim() || n.snippet || "(bookmark)";
+      var m = null;
+      for (var i = 0; i < MANIFEST.length; i++) {
+        if (MANIFEST[i].slug === n.case_slug) { m = MANIFEST[i]; break; }
+      }
+      var p = m ? casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color)
+                : '<span class="ih-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-60)">' + esc(n.case_name || "Uncategorized") + "</span>";
+      return row(BASE + "notes.html",
+        (n.entry_number != null ? "Dkt. " + n.entry_number : "") + (n.bookmarked ? " ★" : ""),
+        body.slice(0, 120), p);
+    }).join(""));
+  }
+
+  function renderAll() {
+    renderBriefings();
+    renderDocket();
+    renderCalendar();
+    renderNotes();
+    updateFilterButtons();
+  }
+
+  // ── Filter dropdowns ──────────────────────────────────────────────────────
+  function updateFilterButtons() {
+    var cb = document.getElementById("ih-cases-btn");
+    if (cb && MANIFEST.length) {
+      var on = MANIFEST.filter(function (m) { return caseOn(m.slug); }).length;
+      cb.textContent = on === MANIFEST.length ? "Cases: All" : "Cases: " + on + "/" + MANIFEST.length;
+    }
+    var tb = document.getElementById("ih-themes-btn");
+    if (tb) {
+      var slugs = Object.keys(THEMES);
+      var tOn = slugs.filter(themeOn).length;
+      tb.textContent = tOn === slugs.length ? "Themes: All" : "Themes: " + tOn + "/" + slugs.length;
+    }
+  }
+
+  function buildCasesPanel(panel) {
+    var groups = loadGroups();
+    var html =
+      '<div class="ih-dd-quick-row">' +
+        '<button type="button" data-all="1">Select all</button>' +
+        '<button type="button" data-none="1">Deselect all</button>' +
+      "</div>";
+    if (groups.length) {
+      html += '<div class="ih-dd-title">Groups</div>';
+      groups.forEach(function (g, i) {
+        html += '<button type="button" class="ih-dd-group" data-grp="' + i + '">' + esc(g.name) + " only</button>";
+      });
+    }
+    html += '<div class="ih-dd-title">Cases</div>';
+    MANIFEST.forEach(function (m) {
+      html +=
+        '<label class="ih-dd-row">' +
+          '<input type="checkbox" data-case="' + esc(m.slug) + '"' + (caseOn(m.slug) ? " checked" : "") + ">" +
+          casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) +
+        "</label>";
+    });
+    html +=
+      '<label class="ih-dd-row">' +
+        '<input type="checkbox" data-case="__unassigned__"' + (caseOn("__unassigned__") ? " checked" : "") + ">" +
+        '<span class="ih-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-60)">Uncategorized notes</span>' +
+      "</label>";
+    panel.innerHTML = html;
+
+    panel.querySelector("[data-all]").addEventListener("click", function () {
+      MANIFEST.forEach(function (m) { activeCases[m.slug] = true; });
+      activeCases.__unassigned__ = true;
+      saveFilters(); buildCasesPanel(panel); renderAll();
+    });
+    panel.querySelector("[data-none]").addEventListener("click", function () {
+      MANIFEST.forEach(function (m) { activeCases[m.slug] = false; });
+      activeCases.__unassigned__ = false;
+      saveFilters(); buildCasesPanel(panel); renderAll();
+    });
+    panel.querySelectorAll("[data-grp]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var g = loadGroups()[Number(b.getAttribute("data-grp"))];
+        if (!g) return;
+        var members = {};
+        (g.slugs || []).forEach(function (s) { members[s] = true; });
+        MANIFEST.forEach(function (m) { activeCases[m.slug] = !!members[m.slug]; });
+        activeCases.__unassigned__ = false;
+        saveFilters(); buildCasesPanel(panel); renderAll();
+      });
+    });
+    panel.querySelectorAll("[data-case]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        activeCases[cb.getAttribute("data-case")] = cb.checked;
+        saveFilters(); renderAll();
+      });
+    });
+  }
+
+  function buildThemesPanel(panel) {
+    var html =
+      '<div class="ih-dd-quick-row">' +
+        '<button type="button" data-all="1">Select all</button>' +
+        '<button type="button" data-none="1">Deselect all</button>' +
+      "</div>";
+    Object.keys(THEMES).forEach(function (slug) {
+      html +=
+        '<label class="ih-dd-row">' +
+          '<input type="checkbox" data-theme="' + slug + '"' + (themeOn(slug) ? " checked" : "") + ">" +
+          themePill(slug) +
+        "</label>";
+    });
+    panel.innerHTML = html;
+    panel.querySelector("[data-all]").addEventListener("click", function () {
+      Object.keys(THEMES).forEach(function (s) { activeThemes[s] = true; });
+      saveFilters(); buildThemesPanel(panel); renderAll();
+    });
+    panel.querySelector("[data-none]").addEventListener("click", function () {
+      Object.keys(THEMES).forEach(function (s) { activeThemes[s] = false; });
+      saveFilters(); buildThemesPanel(panel); renderAll();
+    });
+    panel.querySelectorAll("[data-theme]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        activeThemes[cb.getAttribute("data-theme")] = cb.checked;
+        saveFilters(); renderAll();
+      });
+    });
+  }
+
+  function wireDropdown(btnId, panelId, builder) {
+    var btn = document.getElementById(btnId);
+    var panel = document.getElementById(panelId);
+    if (!btn || !panel) return;
+    btn.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      var open = panel.style.display !== "none";
+      document.querySelectorAll(".ih-dd-panel").forEach(function (p) { p.style.display = "none"; });
+      if (!open) {
+        builder(panel);
+        panel.style.display = "block";
+      }
+    });
+    document.addEventListener("click", function (ev) {
+      if (panel.style.display === "none") return;
+      if (ev.target && !ev.target.isConnected) return;
+      if (panel.contains(ev.target) || btn.contains(ev.target)) return;
+      panel.style.display = "none";
+    });
+  }
+
+  // ── Loads ─────────────────────────────────────────────────────────────────
+  fetchJson(BASE + "briefings.json").then(function (d) {
+    BRIEFING_ITEMS = ((d && d.items) || []).slice()
+      .sort(function (a, b) { return (b.updated || "").localeCompare(a.updated || ""); });
+    renderBriefings();
+    updateFilterButtons();
+  }).catch(function () { fill("ih-briefings", ""); });
+
+  fetchJson(BASE + "cases/data/_manifest.json").then(function (man) {
+    MANIFEST = man || [];
+    return Promise.all(MANIFEST.map(function (m) {
+      return fetchJson(BASE + "cases/data/" + m.slug + ".json")
+        .then(function (c) { return { m: m, c: c }; })
+        .catch(function () { return null; });
+    }));
+  }).then(function (cases) {
+    CASE_DATA = cases.filter(Boolean);
+    renderDocket();
+    renderCalendar();
+    renderNotes();
+    updateFilterButtons();
   }).catch(function () {
     fill("ih-docket", "");
     fill("ih-calendar", "");
   });
 
-  // ── Notes ──────────────────────────────────────────────────────────────────
   fetchJson(BASE + "api/notes")
     .then(function (p) { return (p && p.ok && p.entries) || {}; })
     .catch(function () {
@@ -216,21 +422,24 @@
         .catch(function () { return {}; });
     })
     .then(function (en) {
-      var list = Object.keys(en).map(function (k) { return en[k]; })
+      NOTES_LIST = Object.keys(en).map(function (k) { return en[k]; })
         .filter(function (n) { return !n.deleted_at && ((n.note || "").trim() || n.bookmarked); })
-        .sort(function (a, b) { return (b.updated_at || "").localeCompare(a.updated_at || ""); })
-        .slice(0, 7);
-      fill("ih-notes", list.map(function (n) {
-        var body = (n.note || "").trim() || n.snippet || "(bookmark)";
-        var m = null;
-        for (var i = 0; i < MANIFEST.length; i++) {
-          if (MANIFEST[i].slug === n.case_slug) { m = MANIFEST[i]; break; }
-        }
-        var p = m ? pill(m.slug, m.short_name || m.display_name || m.slug, m.default_color)
-                  : '<span class="ih-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-60)">' + esc(n.case_name || "Uncategorized") + "</span>";
-        return row(BASE + "notes.html",
-          (n.entry_number != null ? "Dkt. " + n.entry_number : "") + (n.bookmarked ? " \u2605" : ""),
-          body.slice(0, 120), p);
-      }).join(""));
+        .sort(function (a, b) { return (b.updated_at || "").localeCompare(a.updated_at || ""); });
+      renderNotes();
     });
+
+  // Roaming colors: hydrate the shared store so pills match other devices
+  fetchJson(BASE + "api/prefs").then(function (p) {
+    if (p && p.ok && p.colors) {
+      Object.keys(p.colors).forEach(function (k) { savedColors[k] = p.colors[k]; });
+      try { localStorage.setItem("ud-case-colors", JSON.stringify(savedColors)); } catch (e) {}
+      renderAll();
+    }
+  }).catch(function () {});
+
+  document.addEventListener("DOMContentLoaded", function () {
+    wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
+    wireDropdown("ih-themes-btn", "ih-themes-panel", buildThemesPanel);
+    updateFilterButtons();
+  });
 })();

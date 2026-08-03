@@ -19,11 +19,121 @@
     "bankruptcy-creditor-rights":   { name: "Bankruptcy Creditor Rights",    emoji: "📜", bg: "#FEE2E2", fg: "#991b1b" },
   };
 
+  // Theme colors share the case-color store (localStorage + intel-prefs
+  // roaming) — theme slugs and case slugs never collide.
+  var COLOR_KEY = "ud-case-colors";
+  var savedColors = {};
+  try { savedColors = JSON.parse(localStorage.getItem(COLOR_KEY) || "{}"); } catch (e) {}
+
+  function persistColors() {
+    try { localStorage.setItem(COLOR_KEY, JSON.stringify(savedColors)); } catch (e) {}
+  }
+
+  var DEFAULT_SWATCHES = [
+    { bg: "#D4FF00", fg: "#0A0A0A" }, { bg: "#E9F98A", fg: "#4A5500" },
+    { bg: "#1B3A4B", fg: "#FFFFFF" }, { bg: "#94C6F8", fg: "#123A66" },
+    { bg: "#3B78D8", fg: "#FFFFFF" }, { bg: "#B3A8F0", fg: "#2A1E6E" },
+    { bg: "#4A3DE0", fg: "#FFFFFF" }, { bg: "#7EF4C2", fg: "#0B4A32" },
+    { bg: "#3FA07A", fg: "#FFFFFF" }, { bg: "#F2AAEC", fg: "#6E1466" },
+    { bg: "#CC33CC", fg: "#FFFFFF" }, { bg: "#3A3A3A", fg: "#FFFFFF" },
+  ];
+
   function themeOf(slug) {
-    return THEMES[slug] || {
+    var base = THEMES[slug] || {
       name: slug.replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); }),
-      emoji: "📰", bg: "#E0E7FF", fg: "#3730a3",
+      emoji: "\ud83d\udcf0", bg: "#E0E7FF", fg: "#3730a3",
     };
+    var ov = savedColors[slug];
+    if (!ov) return base;
+    return { name: base.name, emoji: base.emoji, bg: ov.bg || base.bg, fg: ov.fg || base.fg };
+  }
+
+  // Roaming: pull the shared prefs store once so a fresh browser sees the
+  // same theme colors; pushes merge on the server copy so case groups and
+  // palette presets are never clobbered from this page.
+  function hydrateColors() {
+    fetchJson("api/prefs").then(function (p) {
+      if (p && p.ok && p.colors) {
+        Object.keys(p.colors).forEach(function (k) { savedColors[k] = p.colors[k]; });
+        persistColors();
+        renderThemeFilter();
+        render();
+      }
+    }).catch(function () {});
+  }
+
+  function pushThemeColor() {
+    fetchJson("api/prefs").then(function (p) {
+      var colors = (p && p.ok && p.colors) || {};
+      Object.keys(savedColors).forEach(function (k) { colors[k] = savedColors[k]; });
+      Object.keys(colors).forEach(function (k) { if (savedColors[k] === undefined && THEMES[k]) delete colors[k]; });
+      return fetch("api/prefs", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          colors: colors,
+          groups: (p && p.groups) || [],
+          presets: (p && p.presets) || [],
+        }),
+      });
+    }).catch(function () {});
+  }
+
+  var popEl = null;
+  function closePop() {
+    if (popEl && popEl.parentNode) popEl.parentNode.removeChild(popEl);
+    popEl = null;
+  }
+
+  function openThemePopover(slug, anchor) {
+    closePop();
+    var t = themeOf(slug);
+    var pop = document.createElement("div");
+    pop.className = "ud-color-pop";
+    pop.innerHTML =
+      '<div style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-60);margin-bottom:10px;">' + esc(t.name) + " colors</div>" +
+      '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px;">' +
+      DEFAULT_SWATCHES.map(function (s, i) {
+        return '<button type="button" data-sw="' + i + '" title="' + s.bg + '" style="width:26px;height:26px;border:1px solid var(--line-strong);cursor:pointer;background:' + s.bg + ';"></button>';
+      }).join("") +
+      "</div>" +
+      '<div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;font-size:11.5px;color:var(--ink-60);">' +
+        '<label style="display:flex;gap:4px;align-items:center;">Bg <input type="color" id="ub-cust-bg" value="' + (t.bg || "#E0E7FF") + '" style="width:30px;height:24px;padding:0;border:1px solid var(--line-strong);background:none;cursor:pointer;"></label>' +
+        '<label style="display:flex;gap:4px;align-items:center;">Text <input type="color" id="ub-cust-fg" value="' + (t.fg || "#3730a3") + '" style="width:30px;height:24px;padding:0;border:1px solid var(--line-strong);background:none;cursor:pointer;"></label>' +
+        '<button type="button" id="ub-cust-apply" class="ud-dd-save-btn" style="margin-left:auto;">Apply</button>' +
+      "</div>" +
+      '<button type="button" id="ub-color-reset" class="ud-dd-quick">Reset to default</button>';
+    document.body.appendChild(pop);
+    var rect = anchor.getBoundingClientRect();
+    pop.style.top = (rect.bottom + window.scrollY + 6) + "px";
+    pop.style.left = Math.max(8, Math.min(rect.left + window.scrollX - 90, window.innerWidth - 250)) + "px";
+    popEl = pop;
+
+    function setColor(bg, fg) {
+      savedColors[slug] = { bg: bg, fg: fg };
+      persistColors();
+      pushThemeColor();
+      renderThemeFilter();
+      render();
+      closePop();
+    }
+    pop.querySelectorAll("[data-sw]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var s = DEFAULT_SWATCHES[Number(b.getAttribute("data-sw"))];
+        setColor(s.bg, s.fg);
+      });
+    });
+    pop.querySelector("#ub-cust-apply").addEventListener("click", function () {
+      setColor(pop.querySelector("#ub-cust-bg").value, pop.querySelector("#ub-cust-fg").value);
+    });
+    pop.querySelector("#ub-color-reset").addEventListener("click", function () {
+      delete savedColors[slug];
+      persistColors();
+      pushThemeColor();
+      renderThemeFilter();
+      render();
+      closePop();
+    });
   }
 
   var ITEMS = [];
@@ -64,7 +174,9 @@
       return (
         '<label class="ud-dd-row" title="' + esc(t.name) + '">' +
           '<input type="checkbox" data-slug="' + esc(i.slug) + '"' + (activeThemes[i.slug] ? " checked" : "") + ">" +
-          '<span class="ud-pill" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>" +
+          '<span class="ud-pill ud-pill-sq" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>" +
+          '<span class="ud-dd-spacer"></span>' +
+          '<button type="button" class="ud-gear-btn" data-gear="' + esc(i.slug) + '" title="Colors for ' + esc(t.name) + '">\u2699</button>' +
         "</label>"
       );
     }).join("");
@@ -81,6 +193,13 @@
         saveFilterState();
         renderThemeFilter();
         render();
+      });
+    });
+    panel.querySelectorAll(".ud-gear-btn").forEach(function (g) {
+      g.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        openThemePopover(g.getAttribute("data-gear"), g);
       });
     });
     panel.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
@@ -112,7 +231,7 @@
     }
     tbody.innerHTML = list.map(function (i) {
       var t = themeOf(i.slug);
-      var pill = '<span class="ud-pill" style="background:' + t.bg + ";color:" + t.fg + '">' +
+      var pill = '<span class="ud-pill ud-pill-sq" style="background:' + t.bg + ";color:" + t.fg + '">' +
         t.emoji + " " + esc(t.name) + "</span>";
       var lede = (i.body || i.stat || "").trim();
       return (
@@ -170,6 +289,13 @@
         ddPanel.style.display = "none";
       });
     }
+    document.addEventListener("click", function (ev) {
+      if (popEl && !popEl.contains(ev.target) && !ev.target.closest(".ud-gear-btn")) closePop();
+    });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape") closePop();
+    });
+    hydrateColors();
     init();
   });
 })();

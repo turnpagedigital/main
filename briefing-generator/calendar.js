@@ -76,6 +76,8 @@
         default_color: caseInfo.default_color,
         court: caseInfo.court || "",
         docket_url: caseInfo.docket_url || "",
+        claims_url: caseInfo.claims_url || "",
+        claims_name: caseInfo.claims_name || "",
         date: iso,
         time: tm ? tm[1].replace(/\s+/g, " ").toUpperCase().replace(/\./g, "") : "",
         kind: kind,
@@ -192,6 +194,8 @@
           default_color: c.default_color,
           court: c.court || "",
           docket_url: "",
+          claims_url: c.claims_url || "",
+          claims_name: c.claims_name || "",
           date: evt.date,
           time: (evt.time || "").toUpperCase(),
           kind: evt.kind || "Event",
@@ -627,25 +631,53 @@
     return wd + ", " + names[Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1];
   }
 
+  function agentLabel(name) {
+    var n = (name || "").toLowerCase();
+    if (n.indexOf("verita") !== -1) return "Verita";
+    if (n.indexOf("omni") !== -1) return "Omni";
+    if (n.indexOf("epiq") !== -1) return "Epiq";
+    if (n.indexOf("kroll") !== -1) return "Kroll";
+    if (n.indexOf("kurtzman") !== -1 || n.indexOf("kcc") !== -1) return "KCC";
+    if (n.indexOf("stretto") !== -1) return "Stretto";
+    if (n.indexOf("prime clerk") !== -1) return "Prime Clerk";
+    if (n.indexOf("donlin") !== -1) return "Donlin";
+    var first = (name || "").trim().split(/\s+/)[0];
+    return first ? first.slice(0, 12) : "Agent";
+  }
+
+  function agentLink(ev) {
+    if (!ev.claims_url) return "";
+    return '<a class="ud-link ud-link-agent" href="' + esc(ev.claims_url) +
+      '" target="_blank" rel="noopener" title="Claims agent calendar (' + esc(ev.claims_name || "agent") + ')">' +
+      esc(agentLabel(ev.claims_name)) + "</a>";
+  }
+
+  function joinCalLinks(a, b) {
+    if (a && b) return a + ' <span class="ud-link-empty">|</span> ' + b;
+    return a || b || '<span class="ud-link-empty">\u2014</span>';
+  }
+
   function entryLink(ev) {
+    var court = "";
     if (ev.event_url) {
-      return '<a class="ud-link" href="' + esc(ev.event_url) + '" target="_blank" rel="noopener">Details</a>';
+      court = '<a class="ud-link" href="' + esc(ev.event_url) + '" target="_blank" rel="noopener">Details</a>';
+    } else {
+      var entryNum = ev.entry_number != null ? String(ev.entry_number) : null;
+      var dktLabel = "Dkt. " + entryNum;
+      if (entryNum && ev.docket_url && ev.docket_url.indexOf("courtlistener.com") !== -1) {
+        var entryUrl = ev.docket_url.replace(/\/+$/, "") +
+          "/?filed_after=&filed_before=&entry_gte=" + entryNum +
+          "&entry_lte=" + entryNum + "&order_by=asc";
+        court = '<a class="ud-link" href="' + esc(entryUrl) + '" target="_blank" rel="noopener">' +
+          esc(dktLabel) + "</a>";
+      } else if (entryNum && ev.doc_url) {
+        court = '<a class="ud-link" href="' + esc(ev.doc_url) + '" target="_blank" rel="noopener">' +
+          esc(dktLabel) + "</a>";
+      } else if (entryNum) {
+        court = '<span class="ud-link-empty">' + esc(dktLabel) + "</span>";
+      }
     }
-    var entryNum = ev.entry_number != null ? String(ev.entry_number) : null;
-    var dktLabel = "Dkt. " + entryNum;
-    if (entryNum && ev.docket_url && ev.docket_url.indexOf("courtlistener.com") !== -1) {
-      var entryUrl = ev.docket_url.replace(/\/+$/, "") +
-        "/?filed_after=&filed_before=&entry_gte=" + entryNum +
-        "&entry_lte=" + entryNum + "&order_by=asc";
-      return '<a class="ud-link" href="' + esc(entryUrl) + '" target="_blank" rel="noopener">' +
-        esc(dktLabel) + "</a>";
-    }
-    if (entryNum && ev.doc_url) {
-      return '<a class="ud-link" href="' + esc(ev.doc_url) + '" target="_blank" rel="noopener">' +
-        esc(dktLabel) + "</a>";
-    }
-    if (entryNum) return '<span class="ud-link-empty">' + esc(dktLabel) + "</span>";
-    return '<span class="ud-link-empty">—</span>';
+    return joinCalLinks(court, agentLink(ev));
   }
 
   // Court → IANA time zone. Explicit zone tokens in the time string win.
@@ -820,6 +852,8 @@
             display_name:  m.display_name,
             short_name:    m.short_name,
             docket_url:    (caseData.docket && caseData.docket.docket_url) || m.docket_url || "",
+            claims_url:    (caseData.claims_administrator && (caseData.claims_administrator.key_dates_url || caseData.claims_administrator.url)) || "",
+            claims_name:   (caseData.claims_administrator && caseData.claims_administrator.name) || "",
             default_color: m.default_color || "#888888",
             court:         m.court || "",
             entries:       (caseData.docket && caseData.docket.entries) || [],
@@ -828,7 +862,8 @@
         }).catch(function () {
           return {
             slug: m.slug, display_name: m.display_name, short_name: m.short_name,
-            docket_url: m.docket_url || "", default_color: m.default_color || "#888888",
+            docket_url: m.docket_url || "", claims_url: "", claims_name: "",
+            default_color: m.default_color || "#888888",
             court: m.court || "", entries: [], events: [],
           };
         });
