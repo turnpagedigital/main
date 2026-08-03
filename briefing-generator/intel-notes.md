@@ -38,10 +38,6 @@ Ciao
 
 ## Terraform Labs
 
-### (no docket number) — 2026-08-03
-
-> none
-
 ### Dkt. 1313 — 2026-08-03
 
 > Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned
