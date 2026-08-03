@@ -1,13 +1,23 @@
-# SPA fallback for Cloudflare Pages.
-# Serves index.html (with 200 status) for any path that isn't a static file
-# or a Pages Function. Required for HTML5 history-mode routing so deep links
-# like https://turnpagedigital.com/crypto work on initial load.
-#
-# Cloudflare Pages applies functions in /functions/* with higher priority,
-# so /api/* etc. continue to route to their handlers.
+# Cloudflare Pages evaluates this file top-down, first match wins — so all
+# 301s must sit ABOVE the SPA fallback or they never fire.
 
-/*    /index.html   200
+# Canonical host: www → apex. One host in Google's index, not two competing
+# duplicates. (Both hosts are attached to this Pages project.)
+https://www.turnpagedigital.com/* https://turnpagedigital.com/:splat 301
+
+# Legacy paths from the pre-May-2026 site structure.
+/ai-copyright /copyright 301
+/litigation-finance /litigation-funding 301
+/legal /privacy 301
+
+# Legacy intel filenames.
 /intel/unified-docket.html /intel/docket.html 301
 /intel/unified-calendar.html /intel/calendar.html 301
 /intel/unified-notes.html /intel/notes.html 301
 /intel /intel/ 301
+
+# SPA fallback: serves index.html (200 status) for any path that isn't a
+# static file or a Pages Function. Required for HTML5 history-mode routing so
+# deep links like https://turnpagedigital.com/crypto work on initial load.
+# functions/_middleware.js downgrades unknown routes to a real 404 status.
+/*    /index.html   200

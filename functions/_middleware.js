@@ -19,13 +19,25 @@
 import pageMeta from "../src/data/page-meta.json";
 import briefingsIndex from "../public/briefings/index.json";
 import faqs from "../src/data/faqs.json";
+import routesData from "../src/data/routes.json";
 import {
   resolveMeta,
   jsonLdScript,
   buildArticleJsonLd,
   buildBreadcrumbJsonLd,
   buildFaqJsonLd,
+  isKnownPath,
 } from "./_meta.js";
+
+/* Canonical/OG URLs always point at the apex host, so www and preview
+ * deployments never compete with production in Google's index. A www→apex
+ * 301 also exists in public/_redirects; this is the belt to that suspender. */
+const CANONICAL_ORIGIN = "https://turnpagedigital.com";
+
+/* Static (non-dynamic) routes — the set of paths that really exist. */
+const STATIC_PATHS = routesData.routes
+  .filter((r) => !r.dynamic && !r.path.includes(":"))
+  .map((r) => r.path);
 
 const SITE_NAME = pageMeta.site.name;
 /* Optional "@handle" in page-meta.json's site block; empty → tag not emitted. */
@@ -66,10 +78,18 @@ export async function onRequest(context) {
     ? (briefingsIndex.items.find(b => b.slug === briefingSlugMatch[1])?.active === false)
     : false;
 
-  const meta = resolveMeta(url.pathname, META_DATA);
+  const isKnown = isKnownPath(url.pathname, META_DATA, STATIC_PATHS);
+  const meta = isKnown
+    ? resolveMeta(url.pathname, META_DATA)
+    : {
+        title: `Page Not Found — ${SITE_NAME}`,
+        description: pageMeta.site.defaultDescription,
+        og: "home",
+        type: "website",
+      };
 
-  const fullImageUrl = `${url.origin}/og/${meta.og}?v=${OG_VERSION}`;
-  const fullPageUrl = `${url.origin}${url.pathname}`;
+  const fullImageUrl = `${CANONICAL_ORIGIN}/og/${meta.og}?v=${OG_VERSION}`;
+  const fullPageUrl = `${CANONICAL_ORIGIN}${url.pathname}`;
 
   /* Tags that have no placeholder in index.html get appended to <head>. */
   const headExtras = [];
@@ -83,8 +103,8 @@ export async function onRequest(context) {
     headExtras.push(
       `<meta property="article:published_time" content="${escapeAttr(meta.publishedTime)}">`,
       `<meta property="article:author" content="${escapeAttr(meta.briefing.author || "Turnpage Intelligence")}">`,
-      `<script type="application/ld+json">${jsonLdScript(buildArticleJsonLd(meta.briefing, url.origin, pageMeta.site))}</script>`,
-      `<script type="application/ld+json">${jsonLdScript(buildBreadcrumbJsonLd(meta.briefing, url.origin))}</script>`,
+      `<script type="application/ld+json">${jsonLdScript(buildArticleJsonLd(meta.briefing, CANONICAL_ORIGIN, pageMeta.site))}</script>`,
+      `<script type="application/ld+json">${jsonLdScript(buildBreadcrumbJsonLd(meta.briefing, CANONICAL_ORIGIN))}</script>`,
     );
   }
   if (url.pathname === "/faq" || url.pathname === "/faq/") {
@@ -130,7 +150,19 @@ export async function onRequest(context) {
     .on('meta[name="twitter:image"]', setContent(fullImageUrl))
     .transform(response);
 
-  if (isDraftBriefing) {
+  /* Unknown routes: same SPA shell (the client renders the NotFound page),
+   * but with a real 404 status so crawlers drop the URL instead of indexing
+   * an infinite space of soft-404 duplicates. */
+  if (!isKnown) {
+    const notFound = new Response(transformed.body, {
+      status: 404,
+      headers: transformed.headers,
+    });
+    notFound.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return notFound;
+  }
+
+  if (isDraftBriefing || url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
     const noindexed = new Response(transformed.body, transformed);
     noindexed.headers.set("X-Robots-Tag", "noindex, nofollow");
     return noindexed;
