@@ -1,6 +1,7 @@
 {
-  "_comment": "Analytics configuration. Everything ships INERT: gtag.js only loads when ga4MeasurementId is non-empty. Paste the GA4 measurement ID (G-XXXXXXXXXX) and, once Google Ads is set up, the conversion ID (AW-XXXXXXXXX) + label to activate. See docs/marketing/setup-checklists.md for the exact click-paths.",
+  "_comment": "Analytics configuration. gtag.js loads when ga4MeasurementId OR adsConversionId is set. adsConversionId + labels created 2026-08-03 in the Google Ads account (Goals -> Conversions): adsRegistrationLabel = 'TPDM Registration' (PRIMARY, fired on registration-flow completion, what the Bartz campaign bids on); adsConversionLabel = 'TPDM Contact Form' (fired on contact-form submit). ga4MeasurementId stays empty until Checklist A in docs/marketing/setup-checklists.md is done.",
   "ga4MeasurementId": "",
-  "adsConversionId": "",
-  "adsConversionLabel": ""
+  "adsConversionId": "AW-17998252123",
+  "adsConversionLabel": "4QwNCK6uw9scENuQnoZD",
+  "adsRegistrationLabel": "xqrECKuuw9scENuQnoZD"
 }
