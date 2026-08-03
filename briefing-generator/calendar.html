@@ -190,6 +190,7 @@
   .ud-day-row td{background:transparent;border-left:none;border-right:none;border-top:2px solid var(--line-strong);border-bottom:1px solid var(--line-strong);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-60);padding:7px 14px;}
   .ud-row-article td{background:var(--paper-2);}
   .ud-mark-cell{text-align:center;white-space:nowrap;padding-left:1px;padding-right:1px;}
+  .ud-table thead th:last-child,.ud-table tbody tr:not(.ud-day-row) td:last-child{padding-right:14px;}
   .ud-th-icon{padding-left:1px;padding-right:1px;}
   .ud-mark-cell button{padding-left:2px;padding-right:2px;}
   .ud-bm-btn,.ud-note-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
@@ -243,6 +244,9 @@
   .ud-hide-btn:hover{color:var(--ink);}
   .ud-hide-btn.ud-hide-on{color:var(--ink);}
   .ud-table tbody tr.ud-row-cursor{outline:2px solid var(--neon);outline-offset:-2px;}
+  .ud-fetch-spin{display:inline-block;width:15px;height:15px;border:2px solid var(--line-strong);border-top-color:var(--ink);border-radius:50%;animation:udspin 0.8s linear infinite;vertical-align:middle;}
+  @keyframes udspin{to{transform:rotate(360deg);}}
+  .ud-rename-input{width:100%;font-family:inherit;font-size:13px;padding:5px 7px;border:1.5px solid var(--neon);background:var(--surface);color:var(--ink);box-sizing:border-box;}
   .ud-due{background:rgba(212,255,0,0.5);border:1px solid var(--line-strong);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
   [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.22);color:#F4F5F7;}
   .ud-due-head{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
