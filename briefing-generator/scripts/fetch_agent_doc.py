@@ -107,6 +107,7 @@ def kroll_fetch(base_url, docket_number):
         # title is the download link's own text.
         target_href = None
         title = None
+        link_handle = None
         rows = page.query_selector_all("#results-table tbody tr")
         for row in rows:
             tds = row.query_selector_all("td")
@@ -115,10 +116,11 @@ def kroll_fetch(base_url, docket_number):
             first = re.sub(r"(?i)docket\s*#|dkt\.?", "", tds[0].inner_text()).strip()
             if not first.isdigit() or int(first) != int(docket_number):
                 continue
-            a = row.query_selector("a[href*='DownloadPDF']")
-            if a:
-                target_href = a.get_attribute("href")
-                title = clean(a.inner_text())[:300] or None
+            link = row.query_selector("a[href*='DownloadPDF']")
+            if link:
+                target_href = link.get_attribute("href")
+                title = clean(link.inner_text())[:300] or None
+                link_handle = link
             break
 
         if not target_href:
@@ -127,39 +129,43 @@ def kroll_fetch(base_url, docket_number):
                  f"{case_seg[0]} (scanned {len(rows)} rows)")
 
         pdf_url = (origin + target_href) if target_href.startswith("/") else urljoin(docket_url, target_href)
-        # Navigate to the PDF like a user clicking the link — real navigation
-        # headers (Referer, Sec-Fetch-Mode: navigate) that the site's download
-        # guard checks; a bare fetch/request gets the captcha interstitial.
         body = b""
-        ctype = ""
+
+        # Primary: click the real link and capture the browser's own download.
+        # Headless Chromium has no PDF viewer, so a PDF navigation fires a
+        # download event — and the browser handles the site's 202 bot-challenge
+        # (which a raw fetch can't), then delivers the actual file.
         try:
-            resp = page.goto(pdf_url, wait_until="commit", timeout=60000)
-            if resp:
-                ctype = (resp.headers or {}).get("content-type", "")
-                body = resp.body()
+            with page.expect_download(timeout=60000) as dl_info:
+                link_handle.click()
+            body = Path(dl_info.value.path()).read_bytes()
         except Exception as ex:
-            # A PDF navigation can abort as "download" — fall back to in-page fetch
-            print(f"  · navigation route failed ({ex}); trying in-page fetch", file=sys.stderr)
+            print(f"  · click-download route failed ({ex}); retrying via fetch", file=sys.stderr)
+
+        # Fallback: the 202 challenge often clears on retry once the browser
+        # holds the challenge cookie — poll the in-page fetch a few times.
         if not body[:5].startswith(b"%PDF"):
-            result = page.evaluate(
-                """async (href) => {
-                    const r = await fetch(href, { credentials: 'include' });
-                    const buf = await r.arrayBuffer();
-                    const bytes = new Uint8Array(buf);
-                    let bin = '';
-                    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
-                    return { status: r.status, type: r.headers.get('content-type') || '',
-                             head: bin.slice(0, 300), b64: btoa(bin) };
-                }""",
-                pdf_url,
-            )
             import base64 as _b64
-            fetched = _b64.b64decode(result["b64"])
-            if fetched[:5].startswith(b"%PDF"):
-                body, ctype = fetched, result["type"]
-            else:
-                print(f"  · download not a PDF — status={result['status']} type={result['type']}", file=sys.stderr)
-                print(f"  · first bytes: {result['head'][:200]!r}", file=sys.stderr)
+            for attempt in range(6):
+                result = page.evaluate(
+                    """async (href) => {
+                        const r = await fetch(href, { credentials: 'include' });
+                        const buf = await r.arrayBuffer();
+                        const bytes = new Uint8Array(buf);
+                        let bin = '';
+                        for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+                        return { status: r.status, type: r.headers.get('content-type') || '',
+                                 head: bin.slice(0, 200), b64: btoa(bin) };
+                    }""",
+                    pdf_url,
+                )
+                fetched = _b64.b64decode(result["b64"])
+                if fetched[:5].startswith(b"%PDF"):
+                    body = fetched
+                    break
+                print(f"  · fetch attempt {attempt + 1}: status={result['status']} "
+                      f"type={result['type']} head={result['head'][:80]!r}", file=sys.stderr)
+                page.wait_for_timeout(2500)
         browser.close()
 
     if len(body) > MAX_BYTES:
