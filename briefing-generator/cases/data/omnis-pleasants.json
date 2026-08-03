@@ -1,0 +1,26 @@
+{
+  "case": {
+    "slug": "omnis-pleasants",
+    "display_name": "Omnis Pleasants",
+    "case_name": "Omnis Pleasants, LLC",
+    "court": "United States Bankruptcy Court, D. Delaware",
+    "case_number": "26-11169",
+    "judge": "Karen Owens",
+    "docket_id": "73673073",
+    "status": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": null,
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": {
+    "name": "Stretto",
+    "url": "https://cases.stretto.com/pleasantspowerstation/",
+    "key_dates_url": ""
+  },
+  "coverage": []
+}
