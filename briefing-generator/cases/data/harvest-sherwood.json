@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/",
     "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-03T20:40:36.187964+00:00",
+    "fetched_at": "2026-08-03T22:28:37.248633+00:00",
     "as_of": "Aug 3, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 7,
     "recent": [
+      {
+        "entry_number": 1130,
+        "date_filed": "2026-08-03",
+        "time_filed": "16:20:12",
+        "date_display": "Aug 3, 2026",
+        "description": "List (witness/exhibit/generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1129,
         "date_filed": "2026-08-03",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1127,
-        "date_filed": "2026-08-03",
-        "time_filed": "13:02:06",
-        "date_display": "Aug 3, 2026",
-        "description": "Certificate of service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1130,
+        "date_filed": "2026-08-03",
+        "time_filed": "16:20:12",
+        "date_display": "Aug 3, 2026",
+        "description": "List (witness/exhibit/generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1129,
         "date_filed": "2026-08-03",

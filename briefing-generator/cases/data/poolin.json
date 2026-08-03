@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/",
     "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-03T20:40:48.805984+00:00",
+    "fetched_at": "2026-08-03T22:28:48.319278+00:00",
     "as_of": "Aug 3, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 83,
+        "date_filed": "2026-08-03",
+        "time_filed": "16:39:53",
+        "date_display": "Aug 3, 2026",
+        "description": "Missing Document(s) Filed",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 82,
         "date_filed": "2026-08-03",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 80,
-        "date_filed": "2026-08-02",
-        "time_filed": "00:14:40",
-        "date_display": "Aug 2, 2026",
-        "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 83,
+        "date_filed": "2026-08-03",
+        "time_filed": "16:39:53",
+        "date_display": "Aug 3, 2026",
+        "description": "Missing Document(s) Filed",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 82,
         "date_filed": "2026-08-03",
