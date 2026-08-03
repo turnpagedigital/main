@@ -61,6 +61,13 @@ const META_DATA = {
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
+  /* www → apex, 301. Lives here because Cloudflare Pages _redirects rules
+   * match paths only — they cannot match on hostname. */
+  if (url.hostname === "www.turnpagedigital.com") {
+    url.hostname = "turnpagedigital.com";
+    return Response.redirect(url.toString(), 301);
+  }
+
   /* The /intel mount (briefing dashboards + their login gate) carries its
    * own titles and is noindex by robots.txt — never rewrite it. */
   if (url.pathname === "/intel" || url.pathname.startsWith("/intel/")) {

@@ -1,9 +1,9 @@
 # Cloudflare Pages evaluates this file top-down, first match wins — so all
 # 301s must sit ABOVE the SPA fallback or they never fire.
 
-# Canonical host: www → apex. One host in Google's index, not two competing
-# duplicates. (Both hosts are attached to this Pages project.)
-https://www.turnpagedigital.com/* https://turnpagedigital.com/:splat 301
+# NOTE: the www→apex canonical redirect is NOT here — Pages _redirects rules
+# match paths only (hostname matching is unsupported), so it lives at the top
+# of functions/_middleware.js instead.
 
 # Legacy paths from the pre-May-2026 site structure.
 /ai-copyright /copyright 301
