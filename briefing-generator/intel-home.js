@@ -286,37 +286,6 @@
     );
   }
 
-  function renderBriefings() {
-    var items = BRIEFING_ITEMS.filter(function (i) { return themeOn(i.slug); });
-    fill("ih-briefings", items.slice(0, 7).map(function (i) {
-      var lede = (i.body || i.stat || "").trim();
-      return row(BASE + "briefings.html", fmtDate(i.updated), lede.slice(0, 120), themePill(i.slug));
-    }).join(""));
-  }
-
-  function renderDocket() {
-    var entries = [];
-    CASE_DATA.forEach(function (x) {
-      if (!caseOn(x.m.slug)) return;
-      var short = x.m.short_name || x.m.display_name || x.m.slug;
-      ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
-        if (!e.date_filed || !(e.description || "").trim()) return;
-        entries.push({ date: e.date_filed, num: e.entry_number, desc: e.description,
-                       short: short, slug: x.m.slug, color: x.m.default_color });
-      });
-    });
-    entries.sort(function (a, b) {
-      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
-      return (b.num || 0) - (a.num || 0);
-    });
-    fill("ih-docket", entries.slice(0, 7).map(function (e) {
-      return row(BASE + "docket.html",
-        fmtDate(e.date) + (e.num != null ? " · Dkt. " + e.num : ""),
-        e.desc.slice(0, 130),
-        casePill(e.slug, e.short, e.color));
-    }).join(""));
-  }
-
   // Calendar extraction (trimmed copy of calendar.js)
   var MONTHS = ["january", "february", "march", "april", "may", "june",
     "july", "august", "september", "october", "november", "december"];
@@ -368,60 +337,209 @@
     return out;
   }
 
-  function renderCalendar() {
-    var today = new Date();
-    today = today.getFullYear() + "-" + pad2(today.getMonth() + 1) + "-" + pad2(today.getDate());
+  function isoNow() {
+    return new Date().toISOString();
+  }
+
+  function hoursAgoIso(h) {
+    return new Date(Date.now() - h * 3600 * 1000).toISOString();
+  }
+
+  function caseThemes(slug) {
+    for (var i = 0; i < MANIFEST.length; i++) {
+      if (MANIFEST[i].slug === slug) return MANIFEST[i].topics || [];
+    }
+    return [];
+  }
+
+  function todayIso() {
+    var t = new Date();
+    return t.getFullYear() + "-" + pad2(t.getMonth() + 1) + "-" + pad2(t.getDate());
+  }
+
+  // ── Per-theme joins: filings, news, and dates that belong to a theme ──────
+  function themeFilings(slug, sinceIso) {
+    var out = [];
+    CASE_DATA.forEach(function (x) {
+      if (!caseOn(x.m.slug)) return;
+      if ((x.m.topics || []).indexOf(slug) === -1) return;
+      var short = x.m.short_name || x.m.display_name || x.m.slug;
+      ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
+        if (!e.date_filed || !(e.description || "").trim()) return;
+        if (e.date_filed < sinceIso.slice(0, 10)) return;
+        out.push({ kind: "filing", date: e.date_filed, num: e.entry_number,
+                   text: e.description, caseSlug: x.m.slug, caseShort: short,
+                   color: x.m.default_color });
+      });
+    });
+    out.sort(function (a, b) {
+      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+      return (b.num || 0) - (a.num || 0);
+    });
+    return out;
+  }
+
+  function themeNews(slug, sinceIso) {
+    var out = [];
+    FEED_ITEMS.forEach(function (b) {
+      if (!b.url || !b.title) return;
+      var mine = b.theme_slug === slug ||
+        (b.case_slug && caseThemes(b.case_slug).indexOf(slug) !== -1);
+      if (!mine) return;
+      if (b.case_slug && !caseOn(b.case_slug)) return;
+      var when = b.published_at || (b.date ? b.date + "T00:00:00Z" : "");
+      if (!when || when < sinceIso) return;
+      out.push({ kind: "news", date: b.date || "", text: b.title,
+                 source: b.source || "", bkind: (b.kind || "news"), url: b.url,
+                 caseSlug: b.case_slug || "" });
+    });
+    return out;
+  }
+
+  function themeNextDate(slug) {
+    var today = todayIso();
+    var best = null;
+    CASE_DATA.forEach(function (x) {
+      if (!caseOn(x.m.slug)) return;
+      if ((x.m.topics || []).indexOf(slug) === -1) return;
+      var short = x.m.short_name || x.m.display_name || x.m.slug;
+      ((x.c && x.c.events) || []).forEach(function (ev) {
+        if (!ev.date || ev.date < today) return;
+        if (!best || ev.date < best.date) {
+          best = { kind: "date", date: ev.date, text: (ev.kind ? ev.kind + ": " : "") + (ev.title || ""), caseShort: short };
+        }
+      });
+      ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
+        extractEvents(e, short).forEach(function (ev) {
+          if (ev.date < today) return;
+          if (!best || ev.date < best.date) {
+            best = { kind: "date", date: ev.date, text: ev.kind + " \u2014 " + ev.title.slice(0, 80), caseShort: short };
+          }
+        });
+      });
+    });
+    return best;
+  }
+
+  function daysUntil(iso) {
+    var d = Math.round((new Date(iso + "T12:00:00Z") - Date.now()) / 86400000);
+    if (d <= 0) return "today";
+    return "in " + d + "d";
+  }
+
+  function codedRow(item) {
+    if (item.kind === "filing") {
+      var pillHtml = casePill(item.caseSlug, item.caseShort, item.color);
+      return '<a class="ih-row-coded ih-code-filing" href="' + BASE + 'docket.html">\u2696 ' + pillHtml +
+        " Dkt. " + (item.num != null ? item.num : "\u2014") + " \u00b7 " + esc(item.text.slice(0, 95)) + "</a>";
+    }
+    if (item.kind === "news") {
+      return '<a class="ih-row-coded ih-code-news" href="' + BASE + 'news.html">\ud83d\udce1 ' +
+        esc(item.source) + " \u2014 " + esc(item.text.slice(0, 95)) + "</a>";
+    }
+    return '<a class="ih-row-coded ih-code-date" href="' + BASE + 'calendar.html">\ud83d\udcc5 ' +
+      esc(fmtDate(item.date)) + " \u2014 " + esc(item.caseShort) + " \u00b7 " + esc(item.text.slice(0, 70)) +
+      ' <span style="color:var(--ink-40)">\u00b7 ' + daysUntil(item.date) + "</span></a>";
+  }
+
+  function renderThemeGrid() {
+    var grid = document.getElementById("ih-theme-grid");
+    if (!grid) return;
+    var slugs = Object.keys(THEMES).filter(themeOn);
+    if (!slugs.length) {
+      grid.innerHTML = '<div class="ih-empty">No themes selected.</div>';
+      return;
+    }
+    var since = hoursAgoIso(26);
+    grid.innerHTML = slugs.map(function (slug) {
+      var brief = null;
+      for (var i = 0; i < BRIEFING_ITEMS.length; i++) {
+        if (BRIEFING_ITEMS[i].slug === slug) { brief = BRIEFING_ITEMS[i]; break; }
+      }
+      var filings = themeFilings(slug, since);
+      var news = themeNews(slug, since);
+      var nextDate = themeNextDate(slug);
+      var devCount = filings.length + news.length;
+
+      var rows = [];
+      filings.slice(0, 2).forEach(function (f) { rows.push(codedRow(f)); });
+      news.slice(0, 2).forEach(function (n) { rows.push(codedRow(n)); });
+      rows = rows.slice(0, 3);
+      if (nextDate) rows.push(codedRow(nextDate));
+      var hidden = devCount - Math.min(devCount, 3);
+
+      var lede = brief ? (brief.body || brief.stat || "").trim() : "";
+      var quiet = devCount === 0;
+      var ledeHtml = lede
+        ? '<div class="ih-tc-lede' + (quiet ? " ih-quiet" : "") + '">' + esc(lede.slice(0, 220)) +
+          (lede.length > 220 ? "\u2026" : "") + ' <a href="' + BASE + slug + '/dashboard.html">Read \u2192</a></div>'
+        : '<div class="ih-tc-lede ih-quiet">No briefing yet for this theme. <a href="' + BASE + slug + '/dashboard.html">Open \u2192</a></div>';
+
+      return (
+        '<section class="ih-theme-card">' +
+          '<div class="ih-tc-head">' + themePill(slug) +
+            '<span class="ih-tc-count">' + (quiet ? "quiet" : devCount + " today") + "</span>" +
+          "</div>" +
+          ledeHtml +
+          rows.join("") +
+          (hidden > 0 ? '<div class="ih-more-rows">+' + hidden + ' more \u00b7 <a href="' + BASE + 'docket.html">docket</a> / <a href="' + BASE + 'news.html">news</a></div>' : "") +
+        "</section>"
+      );
+    }).join("");
+  }
+
+  // ── Top band: unassigned news, date strip, latest notes ───────────────────
+  function renderUnassigned() {
+    var items = FEED_ITEMS.filter(function (b) {
+      return b.url && b.title && !b.case_slug && !b.group_name && !b.theme_slug;
+    });
+    var countEl = document.getElementById("ih-unassigned-count");
+    if (countEl) countEl.textContent = items.length ? items.length + " to triage \u2192" : "triage \u2192";
+    fill("ih-unassigned", items.slice(0, 3).map(function (b) {
+      return row(BASE + "news.html",
+        fmtDate(b.date) + " \u00b7 " + (b.source || "") + " \u00b7 " + (b.kind || "news"),
+        b.title,
+        '<span class="ih-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-60)">Uncategorized</span>');
+    }).join(""));
+  }
+
+  function renderDates() {
+    var box = document.getElementById("ih-dates");
+    if (!box) return;
+    var today = todayIso();
     var events = [];
     CASE_DATA.forEach(function (x) {
       if (!caseOn(x.m.slug)) return;
       var short = x.m.short_name || x.m.display_name || x.m.slug;
       ((x.c && x.c.events) || []).forEach(function (ev) {
-        if (ev.date && ev.date >= today) {
-          events.push({ date: ev.date, kind: ev.kind || "Event", title: ev.title || "",
-                        short: short, slug: x.m.slug, color: x.m.default_color });
-        }
+        if (ev.date && ev.date >= today) events.push({ date: ev.date, short: short, title: ev.title || ev.kind || "" });
       });
       ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
         extractEvents(e, short).forEach(function (ev) {
-          if (ev.date >= today) {
-            ev.slug = x.m.slug;
-            ev.color = x.m.default_color;
-            events.push(ev);
-          }
+          if (ev.date >= today) events.push({ date: ev.date, short: short, title: ev.kind });
         });
       });
     });
     var seen = {};
     events = events.filter(function (ev) {
-      var k = ev.date + "|" + ev.short + "|" + ev.kind;
+      var k = ev.date + "|" + ev.short;
       if (seen[k]) return false;
       seen[k] = true;
       return true;
     });
     events.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
-    fill("ih-calendar", events.slice(0, 7).map(function (ev) {
-      return row(BASE + "calendar.html",
-        fmtDate(ev.date) + " · " + ev.kind,
-        ev.title,
-        casePill(ev.slug, ev.short, ev.color));
-    }).join(""));
-  }
-
-  function renderNews() {
-    var items = FEED_ITEMS.filter(function (b) { return b.url && b.title; }).slice(0, 7);
-    fill("ih-news", items.map(function (b) {
-      var p;
-      var m = null;
-      for (var i = 0; i < MANIFEST.length; i++) {
-        if (MANIFEST[i].slug === b.case_slug) { m = MANIFEST[i]; break; }
-      }
-      if (m) p = casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color);
-      else if (b.theme_slug) p = themePill(b.theme_slug);
-      else p = '<span class="ih-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-60)">' + esc(b.group_name || "Uncategorized") + "</span>";
-      return row(BASE + "news.html",
-        fmtDate(b.date) + " · " + (b.source || "") + " · " + (b.kind || "news").replace(/^\w/, function (c) { return c.toUpperCase(); }),
-        b.title, p);
-    }).join(""));
+    if (!events.length) {
+      box.innerHTML = '<div class="ih-empty">No upcoming dates.</div>';
+      return;
+    }
+    var MONTH = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    box.innerHTML = events.slice(0, 8).map(function (ev) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(ev.date);
+      var isToday = ev.date === today;
+      return '<a class="ih-date-sq' + (isToday ? " today" : "") + '" href="' + BASE + 'calendar.html" title="' +
+        esc(ev.short + " \u2014 " + ev.title + " (" + ev.date + ")") + '">' +
+        '<span class="m">' + MONTH[Number(m[2]) - 1] + '</span><span class="d">' + Number(m[3]) + "</span></a>";
+    }).join("");
   }
 
   function renderNotes() {
@@ -430,26 +548,25 @@
       var known = MANIFEST.some(function (m) { return m.slug === n.case_slug; });
       return known ? caseOn(n.case_slug) : true;
     });
-    fill("ih-notes", list.slice(0, 7).map(function (n) {
+    var box = document.getElementById("ih-notes");
+    if (!box) return;
+    if (!list.length) {
+      box.innerHTML = '<div class="ih-empty">No notes yet.</div>';
+      return;
+    }
+    box.innerHTML = '<div style="height:8px"></div>' + list.slice(0, 2).map(function (n) {
       var body = (n.note || "").trim() || n.snippet || "(bookmark)";
-      var m = null;
-      for (var i = 0; i < MANIFEST.length; i++) {
-        if (MANIFEST[i].slug === n.case_slug) { m = MANIFEST[i]; break; }
-      }
-      var p = m ? casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color)
-                : '<span class="ih-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-60)">' + esc(n.case_name || "Uncategorized") + "</span>";
-      return row(BASE + "notes.html",
-        (n.entry_number != null ? "Dkt. " + n.entry_number : "") + (n.bookmarked ? " ★" : ""),
-        body.slice(0, 120), p);
-    }).join(""));
+      return '<a class="ih-note-sticky" href="' + BASE + 'notes.html">\u201c' + esc(body.slice(0, 90)) + '\u201d ' +
+        '<span class="who">\u2014 ' + esc(n.case_name || n.case_slug || "Uncategorized") +
+        (n.bookmarked ? " \u2605" : "") + "</span></a>";
+    }).join("");
   }
 
   function renderAll() {
-    renderBriefings();
-    renderDocket();
-    renderCalendar();
+    renderThemeGrid();
+    renderUnassigned();
+    renderDates();
     renderNotes();
-    renderNews();
     updateFilterButtons();
   }
 
@@ -588,7 +705,7 @@
   fetchJson(BASE + "briefings.json").then(function (d) {
     BRIEFING_ITEMS = ((d && d.items) || []).slice()
       .sort(function (a, b) { return (b.updated || "").localeCompare(a.updated || ""); });
-    renderBriefings();
+    renderThemeGrid();
     updateFilterButtons();
   }).catch(function () { fill("ih-briefings", ""); });
 
@@ -601,8 +718,8 @@
     }));
   }).then(function (cases) {
     CASE_DATA = cases.filter(Boolean);
-    renderDocket();
-    renderCalendar();
+    renderThemeGrid();
+    renderDates();
     renderNotes();
     updateFilterButtons();
   }).catch(function () {
@@ -613,8 +730,9 @@
   fetchJson(BASE + "bondoro.json").then(function (d) {
     FEED_ITEMS = ((d && d.items) || []).slice()
       .sort(function (a, b) { return (b.published_at || b.date || "").localeCompare(a.published_at || a.date || ""); });
-    renderNews();
-  }).catch(function () { fill("ih-news", ""); });
+    renderThemeGrid();
+    renderUnassigned();
+  }).catch(function () { fill("ih-unassigned", ""); });
 
   fetchJson(BASE + "api/notes")
     .then(function (p) { return (p && p.ok && p.entries) || {}; })

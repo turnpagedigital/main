@@ -6,6 +6,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "default_color": "#c8f967",
     "category": "class-action",
+    "topics": [
+      "llm-class-action",
+      "billion-dollar-class-actions"
+    ],
     "court": "U.S. District Court, N.D. Cal. (San Francisco)"
   },
   {
@@ -15,6 +19,10 @@
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
     "default_color": "#60A5FA",
     "category": "bankruptcy",
+    "topics": [
+      "crypto-insolvency",
+      "bankruptcy-creditor-rights"
+    ],
     "court": "Bankr. D. Del."
   },
   {
@@ -24,6 +32,9 @@
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
     "default_color": "#FB923C",
     "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
     "court": "District Court, N.D. California"
   },
   {
@@ -33,6 +44,10 @@
     "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
     "default_color": "#C084FC",
     "category": "bankruptcy",
+    "topics": [
+      "fraud-recovery",
+      "crypto-insolvency"
+    ],
     "court": "S.D. Fl."
   },
   {
@@ -42,6 +57,9 @@
     "docket_url": "https://www.courtlistener.com/docket/70143231/",
     "default_color": "#34D399",
     "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights"
+    ],
     "court": "N.D. Tex."
   },
   {
@@ -51,6 +69,10 @@
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "default_color": "#F87171",
     "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights",
+      "crypto-insolvency"
+    ],
     "court": "Bankr. D. Mass"
   },
   {
@@ -60,6 +82,9 @@
     "docket_url": "",
     "default_color": "#D4FF00",
     "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights"
+    ],
     "court": "United States Bankruptcy Court, D. Delaware"
   },
   {
@@ -69,6 +94,9 @@
     "docket_url": "",
     "default_color": "#1B3A4B",
     "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights"
+    ],
     "court": "United States Bankruptcy Court, D. Delaware"
   },
   {
@@ -78,6 +106,10 @@
     "docket_url": "https://www.courtlistener.com/docket/73657689/",
     "default_color": "#D4FF00",
     "category": "bankruptcy",
+    "topics": [
+      "crypto-insolvency",
+      "bankruptcy-creditor-rights"
+    ],
     "court": "Bankr. D. N.J."
   },
   {
@@ -87,6 +119,11 @@
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "default_color": "#fff7d1",
     "category": "bankruptcy",
+    "topics": [
+      "fraud-recovery",
+      "crypto-insolvency",
+      "bankruptcy-creditor-rights"
+    ],
     "court": "Bankr. D. Utah"
   },
   {
@@ -96,6 +133,9 @@
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
     "default_color": "#ffb8e0",
     "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights"
+    ],
     "court": "Bankr. S.D.Tx."
   },
   {
@@ -105,6 +145,9 @@
     "docket_url": "https://www.courtlistener.com/docket/73476260/",
     "default_color": "#FB923C",
     "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights"
+    ],
     "court": "United States Bankruptcy Court, S.D. New York"
   },
   {
@@ -114,6 +157,10 @@
     "docket_url": "https://www.courtlistener.com/docket/68180454/",
     "default_color": "#C084FC",
     "category": "bankruptcy",
+    "topics": [
+      "crypto-insolvency",
+      "bankruptcy-creditor-rights"
+    ],
     "court": "Bankr. D. Del."
   }
 ]
