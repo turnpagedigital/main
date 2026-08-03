@@ -54,6 +54,15 @@
     "court": "Bankr. D. Mass"
   },
   {
+    "slug": "poolin",
+    "display_name": "Poolin",
+    "short_name": "Poolin",
+    "docket_url": "https://www.courtlistener.com/docket/73657689/",
+    "default_color": "#D4FF00",
+    "category": "bankruptcy",
+    "court": "Bankr. D. N.J."
+  },
+  {
     "slug": "power-block-coin",
     "display_name": "Power Block Coin, LLC",
     "short_name": "Power Block",
@@ -84,8 +93,9 @@
     "slug": "terraform-labs",
     "display_name": "Terraform Labs",
     "short_name": "Terraform Labs",
-    "docket_url": "",
-    "court": "Bankr. D. Del.",
-    "default_color": "#C084FC"
+    "docket_url": "https://www.courtlistener.com/docket/68180454/",
+    "default_color": "#C084FC",
+    "category": "bankruptcy",
+    "court": "Bankr. D. Del."
   }
 ]
