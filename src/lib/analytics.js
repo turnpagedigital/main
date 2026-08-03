@@ -19,6 +19,11 @@ import config from "../data/analytics.json";
 const GA4_ID = (config.ga4MeasurementId || "").trim();
 const ADS_ID = (config.adsConversionId || "").trim();
 const ADS_LABEL = (config.adsConversionLabel || "").trim();
+const ADS_REG_LABEL = (config.adsRegistrationLabel || "").trim();
+
+/* gtag loads when EITHER product is configured — Google Ads conversion
+ * tracking must work before GA4 is ever set up. */
+const TAG_ID = GA4_ID || ADS_ID;
 
 const ATTRIBUTION_KEY = "tpdm-attribution";
 const ATTRIBUTION_FIELDS = [
@@ -35,17 +40,17 @@ function gtag(...args) {
 
 /* Load gtag.js once — only when an ID is configured. */
 export function initAnalytics() {
-  if (!GA4_ID || loaded) return;
+  if (!TAG_ID || loaded) return;
   loaded = true;
 
   const script = document.createElement("script");
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA4_ID)}`;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(TAG_ID)}`;
   document.head.appendChild(script);
 
   gtag("js", new Date());
   // SPA: we fire page_view manually on route changes via trackPageView.
-  gtag("config", GA4_ID, { send_page_view: false });
+  if (GA4_ID) gtag("config", GA4_ID, { send_page_view: false });
   if (ADS_ID) gtag("config", ADS_ID);
 }
 
@@ -60,13 +65,25 @@ export function trackPageView() {
   });
 }
 
-/* Successful contact-form submit: GA4 lead event + Google Ads conversion. */
+/* Successful contact-form submit: GA4 lead event + Google Ads conversion
+ * ("TPDM Contact Form" action, secondary — observed, not bid against). */
 export function trackLead(source = "") {
-  if (!GA4_ID) return;
+  if (!TAG_ID) return;
   initAnalytics();
-  gtag("event", "generate_lead", { lead_source: source || "contact" });
+  if (GA4_ID) gtag("event", "generate_lead", { lead_source: source || "contact" });
   if (ADS_ID && ADS_LABEL) {
     gtag("event", "conversion", { send_to: `${ADS_ID}/${ADS_LABEL}` });
+  }
+}
+
+/* Completed registration flow: the PRIMARY Google Ads conversion ("TPDM
+ * Registration") — the number the Bartz campaign optimizes and bids on. */
+export function trackRegistration(source = "") {
+  if (!TAG_ID) return;
+  initAnalytics();
+  if (GA4_ID) gtag("event", "generate_lead", { lead_source: source || "registration" });
+  if (ADS_ID && ADS_REG_LABEL) {
+    gtag("event", "conversion", { send_to: `${ADS_ID}/${ADS_REG_LABEL}` });
   }
 }
 

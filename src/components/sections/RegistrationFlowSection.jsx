@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { NEON, FONT, INK, INK_40, INK_60, LINE, LINE_STRONG, PAPER, SURFACE, DARK, TEXT, SECONDARY_BG, MUTED, ERROR, SUCCESS, SUCCESS_BG, WARNING, WARNING_BG } from "../../data/tokens.js";
 import { sectionBackground } from "../../lib/section-background.js";
 import formsData from "../../data/forms.json";
-import { getAttribution, trackLead } from "../../lib/analytics.js";
+import { getAttribution, trackRegistration } from "../../lib/analytics.js";
 import { formatComputed, computedGateSatisfied } from "../../lib/flow-compute.js";
 import QRCode from "qrcode";
 
@@ -273,7 +273,7 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
         throw new Error(body.error || "Something went wrong. Please try again.");
       }
       setFormState("success");
-      trackLead(flow.attioLabel || flow.id);
+      trackRegistration(flow.attioLabel || flow.id);
     } catch (err) {
       setErrorMsg(err.message);
       setFormState("error");
