@@ -223,7 +223,8 @@
         "LLM",
         "Copyright",
         "Advisory"
-      ]
+      ],
+      "active": false
     },
     {
       "slug": "2026-08-02-bankruptcy-advisory",
