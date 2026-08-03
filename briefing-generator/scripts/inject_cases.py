@@ -145,6 +145,7 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-day-row td{background:transparent;border-left:none;border-right:none;border-top:2px solid var(--line-strong);border-bottom:1px solid var(--line-strong);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-60);padding:7px 14px;}
   .ud-row-article td{background:var(--paper-2);}
   .ud-mark-cell{text-align:center;white-space:nowrap;padding-left:1px;padding-right:1px;}
+  .ud-table thead th:last-child,.ud-table tbody tr:not(.ud-day-row) td:last-child{padding-right:14px;}
   .ud-th-icon{padding-left:1px;padding-right:1px;}
   .ud-mark-cell button{padding-left:2px;padding-right:2px;}
   .ud-bm-btn,.ud-note-btn{background:none;border:none;cursor:pointer;font-size:15px;padding:2px 4px;line-height:1;color:var(--ink-40);}
@@ -198,6 +199,9 @@ UD_CSS = r"""  .page-title{max-width:1680px;}
   .ud-hide-btn:hover{color:var(--ink);}
   .ud-hide-btn.ud-hide-on{color:var(--ink);}
   .ud-table tbody tr.ud-row-cursor{outline:2px solid var(--neon);outline-offset:-2px;}
+  .ud-fetch-spin{display:inline-block;width:15px;height:15px;border:2px solid var(--line-strong);border-top-color:var(--ink);border-radius:50%;animation:udspin 0.8s linear infinite;vertical-align:middle;}
+  @keyframes udspin{to{transform:rotate(360deg);}}
+  .ud-rename-input{width:100%;font-family:inherit;font-size:13px;padding:5px 7px;border:1.5px solid var(--neon);background:var(--surface);color:var(--ink);box-sizing:border-box;}
   .ud-due{background:rgba(212,255,0,0.5);border:1px solid var(--line-strong);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
   [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.22);color:#F4F5F7;}
   .ud-due-head{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
@@ -942,7 +946,7 @@ def render_unified_docket(cases):
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Snoozed reminders"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></th>
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Hide rows (H)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></th>
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Delete rows (X)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></th>
-      <th id="ud-th-note" class="ud-th-toggle ud-th-icon" style="width:30px;text-align:center" title="Show entries with notes only"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></th>
+      <th id="ud-th-note" class="ud-th-toggle ud-th-icon" style="width:44px;text-align:center" title="Show entries with notes only"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></th>
     </tr></thead>
     <tbody id="ud-tbody">
       <tr><td colspan="10" class="ud-empty">Loading…</td></tr>

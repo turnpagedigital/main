@@ -112,6 +112,8 @@
   var UPLOADS = {};
   var UNASSIGNED_KEY = "__unassigned__";
   var RENDERED = [];
+  var RENAMED = {};  // "slug|nNN" → manual title (case JSON is canonical)
+  var PROTECTED_TITLES = {};  // from case JSON entries flagged titled_from_upload
   var cursorIdx = -1;
   var sortDir = "desc";
   var searchText = "";
@@ -257,7 +259,7 @@
           date_filed:    e.date_filed || "",
           time_filed:    e.time_filed || "",
           date_display:  e.date_display || e.date_filed || "",
-          description:   (e.description || "").trim(),
+          description:   (RENAMED[c.slug + "|n" + e.entry_number] || PROTECTED_TITLES[c.slug + "|n" + e.entry_number] || e.description || "").trim(),
           is_new:        isNewEntry(e.date_filed),
           doc_url:       e.doc_url || "",
           landmark:      e.landmark || "",
@@ -999,6 +1001,65 @@
     applyCursor(true);
   }
 
+  // ── Inline rename (double-click the entry text, or E on the cursor row) ──
+  function startRename(ridx) {
+    var e = RENDERED[ridx];
+    if (!e || e.is_article || e.entry_number == null || !e.slug) {
+      noteToast("Only numbered docket entries can be renamed", true);
+      return;
+    }
+    var rowEl = document.querySelector('#ud-tbody tr[data-ridx="' + ridx + '"]');
+    var cell = rowEl && rowEl.querySelector(".ud-entry");
+    if (!cell) return;
+    var old = e.description || "";
+    cell.innerHTML = '<input type="text" class="ud-rename-input" maxlength="300">';
+    var inp = cell.querySelector("input");
+    inp.value = old;
+    inp.focus();
+    inp.select();
+    var done = false;
+    function finish(save) {
+      if (done) return;
+      done = true;
+      var val = inp.value.replace(/\s+/g, " ").trim();
+      if (!save || val === old || val.length < 3) {
+        render();
+        if (save && val.length < 3 && val !== old) noteToast("Title too short \u2014 not saved", true);
+        return;
+      }
+      var key = e.slug + "|n" + e.entry_number;
+      RENAMED[key] = val;
+      for (var i = 0; i < CASES.length; i++) {
+        if (CASES[i].slug !== e.slug) continue;
+        (CASES[i].entries || []).forEach(function (en) {
+          if (en.entry_number === e.entry_number) {
+            en.description = val;
+            en.titled_from_upload = true;
+          }
+        });
+      }
+      buildAllEntries();
+      render();
+      noteToast("Renaming\u2026", false);
+      fetch("api/rename-entry", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slug: e.slug, entry_number: e.entry_number, title: val }),
+      }).then(function (r) { return r.json(); }).then(function (p) {
+        noteToast(p && p.ok
+          ? "Renamed \u2014 the court sync will never overwrite it"
+          : "Rename failed \u2014 " + ((p && p.error) || "try again"), !(p && p.ok));
+      }).catch(function () { noteToast("Rename failed \u2014 network error", true); });
+    }
+    inp.addEventListener("keydown", function (ev) {
+      ev.stopPropagation();
+      if (ev.key === "Enter") finish(true);
+      if (ev.key === "Escape") finish(false);
+    });
+    inp.addEventListener("blur", function () { finish(true); });
+    inp.addEventListener("click", function (ev) { ev.stopPropagation(); });
+  }
+
   function handleShortcut(ev) {
     if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
     var t = ev.target || {};
@@ -1029,6 +1090,9 @@
         break;
       case "n":
         openNoteModal(nk);
+        break;
+      case "e":
+        startRename(cursorIdx);
         break;
       case "z":
         var sb = row && row.querySelector(".ud-snz-btn");
@@ -1068,7 +1132,15 @@
             docket_url:    (caseData.docket && caseData.docket.docket_url) || m.docket_url || "",
             default_color: m.default_color || "#888888",
             category:      m.category || "other",
-            entries:       (caseData.docket && caseData.docket.entries) || [],
+            entries:       (function () {
+              var ens = (caseData.docket && caseData.docket.entries) || [];
+              ens.forEach(function (en) {
+                if (en.titled_from_upload && en.entry_number != null) {
+                  PROTECTED_TITLES[m.slug + "|n" + en.entry_number] = en.description || "";
+                }
+              });
+              return ens;
+            })(),
             articles:      caseData.coverage || [],
             claims_url:    (caseData.claims_administrator && caseData.claims_administrator.url) || "",
             claims_name:   (caseData.claims_administrator && caseData.claims_administrator.name) || "",
@@ -1259,6 +1331,65 @@
     }).catch(function () { noteToast("Save failed \u2014 network error", true); });
   }
 
+  // ── One-click document acquisition ────────────────────────────────────────
+  // Clicking a Dkt. link fetches the PDF into the row instead of opening
+  // CourtListener: free when the document is already in RECAP, purchased
+  // through CourtListener's PACER fetch otherwise. Cmd/Ctrl-click still
+  // opens CourtListener normally.
+  var FETCHING = {};  // noteKey → true while a fetch is in flight
+
+  function docketIdOf(e) {
+    var m = /courtlistener\.com\/docket\/(\d+)/.exec(e.docket_url || "");
+    return m ? m[1] : "";
+  }
+
+  function startDocFetch(e) {
+    var nk = entryNoteKey(e);
+    if (FETCHING[nk]) return;
+    var docketId = docketIdOf(e);
+    if (!docketId || e.entry_number == null || !e.slug) return;
+    FETCHING[nk] = true;
+    render();
+    noteToast("Fetching Dkt. " + e.entry_number + "\u2026", false);
+
+    function done(ok, msg, path) {
+      delete FETCHING[nk];
+      if (ok) {
+        (UPLOADS[nk] = UPLOADS[nk] || []).push({
+          name: "Dkt-" + e.entry_number + ".pdf", path: path, size: 0,
+          uploaded_at: new Date().toISOString(), text: "",
+        });
+        noteToast("Document attached \u2014 Dkt. " + e.entry_number, false);
+      } else {
+        noteToast("Fetch failed \u2014 " + msg, true);
+      }
+      render();
+    }
+
+    fetch("api/fetch-doc", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug: e.slug, entry_number: e.entry_number, docket_id: docketId }),
+    }).then(function (r) { return r.json(); }).then(function (p) {
+      if (p.status === "ready") { done(true, "", p.path); return; }
+      if (p.status !== "pending") { done(false, p.error || "unknown error"); return; }
+      noteToast("Buying Dkt. " + e.entry_number + " from PACER\u2026", false);
+      var tries = 0;
+      var timer = setInterval(function () {
+        tries++;
+        if (tries > 30) { clearInterval(timer); done(false, "timed out \u2014 check back in a minute"); return; }
+        fetch("api/fetch-doc?fetch_id=" + p.fetch_id + "&rd_id=" + p.rd_id +
+              "&slug=" + encodeURIComponent(e.slug) + "&entry_number=" + e.entry_number)
+          .then(function (r) { return r.json(); })
+          .then(function (s) {
+            if (s.status === "ready") { clearInterval(timer); done(true, "", s.path); }
+            else if (s.status === "failed") { clearInterval(timer); done(false, s.error || "PACER fetch failed"); }
+          })
+          .catch(function () {});
+      }, 3000);
+    }).catch(function () { done(false, "network error"); });
+  }
+
   // ── Attached documents (uploads.json via /intel/api/upload) ───────────────
   function loadUploads() {
     fetchJson("api/upload")
@@ -1292,6 +1423,9 @@
   // uploaded, a black file icon (open / download / remove) replaces the links.
   function docCell(e, linksHtml) {
     var nk = entryNoteKey(e);
+    if (FETCHING[nk]) {
+      return '<span class="ud-fetch-spin" title="Fetching the document\u2026"></span>';
+    }
     var docs = docsFor(nk);
     if (docs.length) {
       return docs.map(function (d, i) {
@@ -2357,6 +2491,13 @@
     // Bookmark / note clicks (delegated — rows re-render constantly)
     var tbodyEl = document.getElementById("ud-tbody");
     if (tbodyEl) {
+      tbodyEl.addEventListener("dblclick", function (ev) {
+        var cell = ev.target.closest(".ud-entry");
+        var tr = ev.target.closest("tr[data-ridx]");
+        if (!cell || !tr || ev.target.tagName === "INPUT") return;
+        ev.preventDefault();
+        startRename(Number(tr.getAttribute("data-ridx")));
+      });
       tbodyEl.addEventListener("click", function (ev) {
         var ap = ev.target.closest(".ud-pill-assign");
         if (ap) {
@@ -2377,6 +2518,17 @@
           }
           if (ventry) castVote(ventry, Number(vt.getAttribute("data-vote")));
           return;
+        }
+        var cl = ev.target.closest(".ud-doc a.ud-link:not(.ud-link-agent):not(.ud-file-btn):not(.ud-file-dl)");
+        if (cl && !ev.metaKey && !ev.ctrlKey && !ev.shiftKey &&
+            (cl.getAttribute("href") || "").indexOf("courtlistener.com") !== -1) {
+          var ctr = ev.target.closest("tr[data-ridx]");
+          var ce = ctr ? RENDERED[Number(ctr.getAttribute("data-ridx"))] : null;
+          if (ce && !ce.is_article && ce.entry_number != null && docketIdOf(ce)) {
+            ev.preventDefault();
+            startDocFetch(ce);
+            return;
+          }
         }
         var up = ev.target.closest(".ud-upload-btn");
         if (up) {
