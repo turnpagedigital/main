@@ -4,8 +4,8 @@ display_name: Terraform Labs
 type: case
 status: active
 topics:
-  - bankruptcy-creditor-rights
   - crypto-insolvency
+  - bankruptcy-creditor-rights
 case:
   parties: "Terraform Labs Pte. Ltd."
   court: "Bankr. D. Del."
@@ -14,7 +14,6 @@ case:
 docket_source:
   type: courtlistener
   docket_id: 68180454
-  url: "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/"
 claims_administrator:
   name: "Epiq11"
   url: "https://dm.epiq11.com/case/terraform/dockets"
