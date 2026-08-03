@@ -1,4 +1,4 @@
-# BMG v. Anthropic: Two Lawsuits, 20,000+ Songs, and $3 Billion on the Line
+# BMG v. Anthropic: The Lawsuits Over 20,000 Songs
 
 **The short answer:** BMG Rights Management has opened a second music front against Anthropic — separate from [the Concord case](/briefings/2026-08-03-concord-v-anthropic-music-lawsuit) — with two 2026 lawsuits: one targeting roughly **500 identified compositions** (works recorded by artists like Justin Bieber, Bruno Mars, and the Rolling Stones), and a broader action covering **more than 20,000 songs** that reportedly seeks **over $3 billion** for Anthropic's alleged torrenting of lyrics from pirate "shadow libraries." For music rights holders, this is the fastest-growing exposure in the AI copyright system.
 
@@ -23,9 +23,7 @@ Watch three things: (1) whether the BMG actions get related or coordinated with 
 
 ## For rights holders
 
-If these cases resolve the way the book case did, the result is payment rights for catalogs of works — and payment rights are what our desk exists to price and buy. We already [buy Bartz v. Anthropic claims](/briefings/2026-08-03-sell-your-anthropic-settlement-claim) for cash today.
-
-> **Music catalog owner watching these cases?** [Talk to our desk early →](/contact) — understanding what you'd hold is free.
+If these cases resolve the way the book case did, the result would be payment rights attached to catalogs of works — the same kind of rights the Bartz settlement created for authors, [which can already be sold or advanced against](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Catalog owners who want to understand their potential exposure and position early can [reach our desk here](/contact); the conversation costs nothing.
 
 ## Sources
 

@@ -4,7 +4,7 @@ One page, every major case against an LLM or generative-AI provider, current as 
 
 ## Anthropic
 
-**Bartz v. Anthropic (books) — SETTLED, $1.5 billion.** Final approval July 20, 2026; ~$3,000 per work across 482,460 books; distribution underway with the next milestone August 21 and installments into September 2027. The release covers past acquisition conduct only — outputs and future conduct remain open. → [Payment timeline](/briefings/2026-08-03-anthropic-settlement-payment-timeline) · [Per-book math](/briefings/2026-08-03-anthropic-settlement-how-much-per-book) · [Appeal risk](/briefings/2026-08-03-anthropic-settlement-appeal-risk) · [Sell your claim](/briefings/2026-08-03-sell-your-anthropic-settlement-claim)
+**Bartz v. Anthropic (books) — SETTLED, $1.5 billion.** Final approval July 20, 2026; at least ~$3,000 per work across 482,460 books; distribution underway with the next milestone August 21 and installments into September 2027. The release covers past acquisition conduct only — outputs and future conduct remain open. → [Plain-English author guide](/briefings/2026-08-03-anthropic-settlement-author-guide) · [Payment timeline](/briefings/2026-08-03-anthropic-settlement-payment-timeline) · [Per-book amounts](/briefings/2026-08-03-anthropic-settlement-how-much-per-book) · [Appeal risk](/briefings/2026-08-03-anthropic-settlement-appeal-risk)
 
 **Concord Music Group v. Anthropic (lyrics) — ACTIVE.** Music publishers (Concord, Capitol CMG, UMPG, ABKCO) in deep discovery before Judge Eumi K. Lee (N.D. Cal.); publishers have moved to defeat fair use ahead of trial. → [Full briefing](/briefings/2026-08-03-concord-v-anthropic-music-lawsuit)
 
@@ -35,9 +35,7 @@ The **Third Circuit heard argument June 11, 2026** on the first appellate review
 
 ## What this board means if you own rights
 
-Two exit templates now exist: **cash funds** (Anthropic: $1.5B, per-work checks) and **license conversions** (Udio). Either way, resolved cases mint *payment rights* — and payment rights can be valued, bought, and sold. That's our desk. We [buy Bartz claims today](/briefings/2026-08-03-sell-your-anthropic-settlement-claim), and we price new claim types the day they crystallize.
-
-> **Own works touched by any case on this board?** [Talk to the desk →](/contact) — knowing what you hold costs nothing.
+Two resolution templates now exist: **cash funds** (Anthropic: $1.5 billion, per-work checks) and **license conversions** (Udio). Either way, resolved cases turn into *payment rights* — which can be valued, and where a settlement's terms allow, sold or advanced against, [as Bartz claims can be today](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). Rights holders with works touched by any case on this board can [reach our desk here](/contact) to understand what they hold; Turnpage's business is buying such claims, which is worth knowing when you weigh anything we publish.
 
 ## Sources
 

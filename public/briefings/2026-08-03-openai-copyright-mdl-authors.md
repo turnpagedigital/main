@@ -22,9 +22,7 @@ The flip side: *Kadrey v. Meta* shows training can win on fair use ([Meta took t
 
 1. **Inventory your works** — registrations, ISBNs, publisher splits. Every AI settlement so far has paid per *registered work*; the Works List problem in Bartz taught everyone that clean records = paid claims.
 2. **Watch the docket, not the headlines.** Our [tracker post](/briefings/2026-08-03-ai-copyright-lawsuit-tracker) and daily briefings follow the filings.
-3. **Know what a claim is worth before you need to.** If an OpenAI settlement creates payment rights on Bartz's model, a resale market for those rights will exist the next morning — ours. We already [buy Bartz claims today](/briefings/2026-08-03-sell-your-anthropic-settlement-claim), and we'll price OpenAI claims the day they exist.
-
-> **Want to be first in line when OpenAI claims become sellable?** [Register with our desk →](/contact) and we'll contact you when it happens.
+3. **Understand how settlement rights behave before you hold any.** The Bartz settlement showed the full life cycle: a fund, a works list, per-work payments on a multi-year schedule — and a market for claimants who [prefer cash sooner](/briefings/2026-08-03-sell-your-anthropic-settlement-claim). If this litigation resolves similarly, the same mechanics will apply to a much larger class. Authors who want to be notified if OpenAI claims reach that stage can [leave their details with our desk](/contact).
 
 ## Sources
 

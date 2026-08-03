@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "slug": "2026-08-03-anthropic-settlement-author-guide",
+      "date": "2026-08-03",
+      "title": "The Anthropic Settlement: A Plain-English Guide for Authors",
+      "summary": "Who's in the class, how much each book pays and how it's split, when checks arrive, what an appeal would change, and what rights authors kept — in plain language, updated as the settlement moves.",
+      "tags": [
+        "Bartz",
+        "Anthropic",
+        "Settlement",
+        "Guide"
+      ],
+      "author": "Turnpage Intelligence",
+      "active": false,
+      "type": "article"
+    },
+    {
       "slug": "2026-08-03-ai-copyright-lawsuit-tracker",
       "date": "2026-08-03",
       "title": "Every Major AI Copyright Lawsuit, Tracked (August 2026)",
@@ -32,7 +47,7 @@
     {
       "slug": "2026-08-03-anthropic-settlement-how-much-per-book",
       "date": "2026-08-03",
-      "title": "How Much Is the Anthropic Settlement Per Book? The Real Math",
+      "title": "How Much Is the Anthropic Settlement Per Book?",
       "summary": "The court's estimate is ~$3,000 per work — four times the statutory minimum. What comes out before you're paid, what makes your number bigger, and when the money actually arrives.",
       "tags": [
         "Bartz",
@@ -60,8 +75,8 @@
     {
       "slug": "2026-08-03-sell-your-anthropic-settlement-claim",
       "date": "2026-08-03",
-      "title": "Can You Sell Your Bartz v. Anthropic Settlement Claim? Yes — Here's How It Works",
-      "summary": "Settlement payment rights can be sold for cash today instead of waiting for installments into 2027. How a claim sale works, what you give up, and the questions to ask any buyer.",
+      "title": "Can You Sell Your Bartz v. Anthropic Settlement Claim?",
+      "summary": "A settlement payment right is property and can generally be sold. How a claim sale works, what the discount costs you, and the questions to ask any buyer — including us.",
       "tags": [
         "Bartz",
         "Anthropic",
@@ -74,8 +89,8 @@
     {
       "slug": "2026-08-03-anthropic-settlement-cash-advance",
       "date": "2026-08-03",
-      "title": "Anthropic Settlement Advance: How to Get Cash Before the Checks Arrive",
-      "summary": "Two ways to turn a filed Bartz claim into money now — an outright sale or a non-recourse advance — and the trap terms to watch for in any funding offer.",
+      "title": "Anthropic Settlement Advances: What They Are and How They Work",
+      "summary": "Advances convert part of a pending settlement payment into cash now. How they differ from selling a claim outright, why non-recourse is the term that matters, and where costs hide.",
       "tags": [
         "Bartz",
         "Anthropic",
@@ -116,8 +131,8 @@
     {
       "slug": "2026-08-03-bmg-v-anthropic-lyrics-lawsuits",
       "date": "2026-08-03",
-      "title": "BMG v. Anthropic: Two Lawsuits, 20,000+ Songs, and $3 Billion on the Line",
-      "summary": "BMG opened a second music front against Anthropic in 2026 — roughly 500 identified works in one suit, 20,000+ songs and a reported $3B+ demand in the other. What the Bartz playbook says happens next.",
+      "title": "BMG v. Anthropic: The Lawsuits Over 20,000 Songs",
+      "summary": "BMG opened a second music front against Anthropic in 2026: one suit over roughly 500 identified works, another covering 20,000+ songs with a reported $3 billion-plus demand.",
       "tags": [
         "BMG",
         "Anthropic",
