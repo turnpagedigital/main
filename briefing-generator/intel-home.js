@@ -83,7 +83,7 @@
 
   function currentSwatches() {
     try {
-      var p = JSON.parse(localStorage.getItem("ud-swatch-presets") || "null");
+      var p = JSON.parse(localStorage.getItem("ud-theme-presets") || "null");
       if (Array.isArray(p) && p.length === 12) return p;
     } catch (e) {}
     return FALLBACK_SWATCHES;
@@ -98,15 +98,15 @@
       var colors = (p && p.ok && p.colors) || {};
       Object.keys(savedColors).forEach(function (k) { colors[k] = savedColors[k]; });
       Object.keys(colors).forEach(function (k) { if (savedColors[k] === undefined && THEMES[k]) delete colors[k]; });
-      var presets = (p && p.presets) || [];
+      var themePresets = (p && p.theme_presets) || [];
       try {
-        var lp = JSON.parse(localStorage.getItem("ud-swatch-presets") || "null");
-        if (Array.isArray(lp) && lp.length === 12) presets = lp;
+        var lp = JSON.parse(localStorage.getItem("ud-theme-presets") || "null");
+        if (Array.isArray(lp) && lp.length === 12) themePresets = lp;
       } catch (e) {}
       return fetch(BASE + "api/prefs", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ colors: colors, groups: (p && p.groups) || [], presets: presets }),
+        body: JSON.stringify({ colors: colors, groups: (p && p.groups) || [], presets: (p && p.presets) || [], theme_presets: themePresets }),
       });
     }).catch(function () {});
   }
@@ -174,7 +174,7 @@
       var prev = rowEl.querySelector(".ud-sw-preview");
       prev.style.background = presets[i].bg;
       prev.style.color = presets[i].fg;
-      try { localStorage.setItem("ud-swatch-presets", JSON.stringify(presets)); } catch (e) {}
+      try { localStorage.setItem("ud-theme-presets", JSON.stringify(presets)); } catch (e) {}
       pushPrefs();
     }
     box.querySelectorAll(".ud-sw-bg, .ud-sw-fg").forEach(function (inp) {
@@ -613,6 +613,9 @@
     }
     if (p && p.ok && Array.isArray(p.presets) && p.presets.length === 12) {
       try { localStorage.setItem("ud-swatch-presets", JSON.stringify(p.presets)); } catch (e) {}
+    }
+    if (p && p.ok && Array.isArray(p.theme_presets) && p.theme_presets.length === 12) {
+      try { localStorage.setItem("ud-theme-presets", JSON.stringify(p.theme_presets)); } catch (e) {}
     }
     if (p && p.ok) renderAll();
   }).catch(function () {});

@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-07-31",
-    "fetched_at": "2026-08-03T15:20:58.438052+00:00",
+    "fetched_at": "2026-08-03T17:22:27.331265+00:00",
     "as_of": "Aug 3, 2026",
     "backfilled": true,
     "new_in_72h": 0,
@@ -25,10 +25,11 @@
         "date_filed": "2026-07-31",
         "time_filed": "15:19:43",
         "date_display": "Jul 31, 2026",
-        "description": "Notice",
+        "description": "Amended Notice Of Appeal",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 353,

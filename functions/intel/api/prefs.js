@@ -42,24 +42,28 @@ function sanitize(body) {
       .slice(0, 50);
     if (name && slugs.length) groups.push({ name, slugs });
   }
-  const presets = [];
-  const rawPresets = Array.isArray(body && body.presets) ? body.presets : [];
-  for (const p of rawPresets.slice(0, 12)) {
-    if (p && typeof p.bg === "string" && HEX.test(p.bg)) {
-      presets.push({ bg: p.bg, fg: typeof p.fg === "string" && HEX.test(p.fg) ? p.fg : "" });
+  function cleanPresets(raw) {
+    const out = [];
+    for (const p of (Array.isArray(raw) ? raw : []).slice(0, 12)) {
+      if (p && typeof p.bg === "string" && HEX.test(p.bg)) {
+        out.push({ bg: p.bg, fg: typeof p.fg === "string" && HEX.test(p.fg) ? p.fg : "" });
+      }
     }
+    return out.length === 12 ? out : [];
   }
-  return { colors, groups, presets: presets.length === 12 ? presets : [] };
+  const presets = cleanPresets(body && body.presets);
+  const themePresets = cleanPresets(body && body.theme_presets);
+  return { colors, groups, presets, theme_presets: themePresets };
 }
 
 export async function onRequestGet(context) {
   const { env } = context;
   const res = await getFileFromGitHub(env, PREFS_PATH, null, briefingRepo(env), briefingBranch(env));
   if (!res.ok || !res.data || typeof res.data !== "object") {
-    return jsonResponse({ ok: true, colors: {}, groups: [], presets: [] });
+    return jsonResponse({ ok: true, colors: {}, groups: [], presets: [], theme_presets: [] });
   }
   const clean = sanitize(res.data);
-  return jsonResponse({ ok: true, colors: clean.colors, groups: clean.groups, presets: clean.presets });
+  return jsonResponse({ ok: true, colors: clean.colors, groups: clean.groups, presets: clean.presets, theme_presets: clean.theme_presets });
 }
 
 export async function onRequestPut(context) {
@@ -71,13 +75,22 @@ export async function onRequestPut(context) {
     return jsonResponse({ ok: false, error: "invalid JSON" }, 400);
   }
   const clean = sanitize(body);
-  const content = JSON.stringify(clean, null, 2) + "\n";
   const repo = briefingRepo(env);
   const branch = briefingBranch(env);
 
   // Two attempts: a bot may advance the branch between sha read and commit
   for (let attempt = 0; attempt < 2; attempt++) {
     const cur = await getFileFromGitHub(env, PREFS_PATH, null, repo, branch);
+    // Pages send only the fields they manage — absent fields keep their
+    // stored value (a docket save must not wipe the theme palette).
+    const stored = cur.ok && cur.data && typeof cur.data === "object" ? sanitize(cur.data) : sanitize({});
+    const merged = {
+      colors: body.colors === undefined ? stored.colors : clean.colors,
+      groups: body.groups === undefined ? stored.groups : clean.groups,
+      presets: body.presets === undefined ? stored.presets : clean.presets,
+      theme_presets: body.theme_presets === undefined ? stored.theme_presets : clean.theme_presets,
+    };
+    const content = JSON.stringify(merged, null, 2) + "\n";
     if (cur.ok && cur.text === content) {
       return jsonResponse({ ok: true, unchanged: true });
     }
