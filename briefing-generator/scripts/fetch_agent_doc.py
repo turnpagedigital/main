@@ -74,6 +74,7 @@ def kroll_fetch(base_url, docket_number):
             accept_downloads=True,
         )
         page = ctx.new_page()
+        page.set_viewport_size({"width": 1600, "height": 1200})  # desktop tablesaw layout
         page.goto(docket_url, wait_until="networkidle", timeout=45000)
 
         # Wait for jqGrid to exist, then reload it with every row on one page.
@@ -95,24 +96,30 @@ def kroll_fetch(base_url, docket_number):
         )
         page.wait_for_timeout(1500)
 
+        # The docket number is the first cell. Tablesaw shows it bare ("505")
+        # on desktop and label-prefixed ("Docket # 505") when stacked — strip
+        # the optional label and match the integer either way. The document's
+        # title is the download link's own text.
         target_href = None
         title = None
-        for row in page.query_selector_all("#results-table tbody tr"):
-            txt = row.inner_text()
-            m = re.search(r"Docket #\s*(\d+)", txt)
-            if not m or int(m.group(1)) != int(docket_number):
+        rows = page.query_selector_all("#results-table tbody tr")
+        for row in rows:
+            tds = row.query_selector_all("td")
+            if not tds:
+                continue
+            first = re.sub(r"(?i)docket\s*#|dkt\.?", "", tds[0].inner_text()).strip()
+            if not first.isdigit() or int(first) != int(docket_number):
                 continue
             a = row.query_selector("a[href*='DownloadPDF']")
             if a:
                 target_href = a.get_attribute("href")
-                nm = re.search(r"Document Name\s*(.+?)\s*(?:Date Filed|$)", txt, re.S)
-                if nm:
-                    title = clean(nm.group(1))[:300]
+                title = clean(a.inner_text())[:300] or None
             break
 
         if not target_href:
             browser.close()
-            fail(f"Dkt. {docket_number} not found on the Kroll docket for {case_seg[0]}")
+            fail(f"Dkt. {docket_number} not found on the Kroll docket for "
+                 f"{case_seg[0]} (scanned {len(rows)} rows)")
 
         pdf_url = (origin + target_href) if target_href.startswith("/") else urljoin(docket_url, target_href)
         resp = ctx.request.get(pdf_url, timeout=60000)
