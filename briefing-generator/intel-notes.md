@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-03 22:24 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-03 23:18 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Concord Music Group v. Anthropic
 
@@ -43,6 +43,10 @@ Ciao
 ### (no docket number) — 2026-08-03
 
 > none
+
+### Dkt. 1313 — 2026-08-03
+
+> Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned
 
 ### Dkt. 1308 — 2026-07-31
 
