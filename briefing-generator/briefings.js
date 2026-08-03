@@ -29,7 +29,7 @@
     try { localStorage.setItem(COLOR_KEY, JSON.stringify(savedColors)); } catch (e) {}
   }
 
-  var DEFAULT_SWATCHES = [
+  var FALLBACK_SWATCHES = [
     { bg: "#D4FF00", fg: "#0A0A0A" }, { bg: "#E9F98A", fg: "#4A5500" },
     { bg: "#1B3A4B", fg: "#FFFFFF" }, { bg: "#94C6F8", fg: "#123A66" },
     { bg: "#3B78D8", fg: "#FFFFFF" }, { bg: "#B3A8F0", fg: "#2A1E6E" },
@@ -37,6 +37,16 @@
     { bg: "#3FA07A", fg: "#FFFFFF" }, { bg: "#F2AAEC", fg: "#6E1466" },
     { bg: "#CC33CC", fg: "#FFFFFF" }, { bg: "#3A3A3A", fg: "#FFFFFF" },
   ];
+
+  // The edited default palette (docket gear → "Edit palette…") applies to
+  // themes too — read the shared store, fall back to the brand set.
+  function currentSwatches() {
+    try {
+      var p = JSON.parse(localStorage.getItem("ud-swatch-presets") || "null");
+      if (Array.isArray(p) && p.length === 12) return p;
+    } catch (e) {}
+    return FALLBACK_SWATCHES;
+  }
 
   function themeOf(slug) {
     var base = THEMES[slug] || {
@@ -56,9 +66,12 @@
       if (p && p.ok && p.colors) {
         Object.keys(p.colors).forEach(function (k) { savedColors[k] = p.colors[k]; });
         persistColors();
-        renderThemeFilter();
-        render();
       }
+      if (p && p.ok && Array.isArray(p.presets) && p.presets.length === 12) {
+        try { localStorage.setItem("ud-swatch-presets", JSON.stringify(p.presets)); } catch (e) {}
+      }
+      renderThemeFilter();
+      render();
     }).catch(function () {});
   }
 
@@ -93,7 +106,7 @@
     pop.innerHTML =
       '<div style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-60);margin-bottom:10px;">' + esc(t.name) + " colors</div>" +
       '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px;">' +
-      DEFAULT_SWATCHES.map(function (s, i) {
+      currentSwatches().map(function (s, i) {
         return '<button type="button" data-sw="' + i + '" title="' + s.bg + '" style="width:26px;height:26px;border:1px solid var(--line-strong);cursor:pointer;background:' + s.bg + ';"></button>';
       }).join("") +
       "</div>" +
@@ -119,7 +132,7 @@
     }
     pop.querySelectorAll("[data-sw]").forEach(function (b) {
       b.addEventListener("click", function () {
-        var s = DEFAULT_SWATCHES[Number(b.getAttribute("data-sw"))];
+        var s = currentSwatches()[Number(b.getAttribute("data-sw"))];
         setColor(s.bg, s.fg);
       });
     });

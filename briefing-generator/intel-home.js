@@ -72,7 +72,7 @@
     return '<span class="ih-pill ih-pill-sq" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>";
   }
 
-  var DEFAULT_SWATCHES = [
+  var FALLBACK_SWATCHES = [
     { bg: "#D4FF00", fg: "#0A0A0A" }, { bg: "#E9F98A", fg: "#4A5500" },
     { bg: "#1B3A4B", fg: "#FFFFFF" }, { bg: "#94C6F8", fg: "#123A66" },
     { bg: "#3B78D8", fg: "#FFFFFF" }, { bg: "#B3A8F0", fg: "#2A1E6E" },
@@ -80,6 +80,14 @@
     { bg: "#3FA07A", fg: "#FFFFFF" }, { bg: "#F2AAEC", fg: "#6E1466" },
     { bg: "#CC33CC", fg: "#FFFFFF" }, { bg: "#3A3A3A", fg: "#FFFFFF" },
   ];
+
+  function currentSwatches() {
+    try {
+      var p = JSON.parse(localStorage.getItem("ud-swatch-presets") || "null");
+      if (Array.isArray(p) && p.length === 12) return p;
+    } catch (e) {}
+    return FALLBACK_SWATCHES;
+  }
 
   function persistColors() {
     try { localStorage.setItem("ud-case-colors", JSON.stringify(savedColors)); } catch (e) {}
@@ -118,7 +126,7 @@
     pop.innerHTML =
       '<div class="ih-pop-title">' + esc(t.name) + " colors</div>" +
       '<div class="ih-pop-swatches">' +
-      DEFAULT_SWATCHES.map(function (s, i) {
+      currentSwatches().map(function (s, i) {
         return '<button type="button" data-sw="' + i + '" title="' + s.bg + '" style="background:' + s.bg + ';"></button>';
       }).join("") +
       "</div>" +
@@ -145,7 +153,7 @@
     }
     pop.querySelectorAll("[data-sw]").forEach(function (b) {
       b.addEventListener("click", function () {
-        var s = DEFAULT_SWATCHES[Number(b.getAttribute("data-sw"))];
+        var s = currentSwatches()[Number(b.getAttribute("data-sw"))];
         setColor({ bg: s.bg, fg: s.fg });
       });
     });
@@ -528,8 +536,11 @@
     if (p && p.ok && p.colors) {
       Object.keys(p.colors).forEach(function (k) { savedColors[k] = p.colors[k]; });
       try { localStorage.setItem("ud-case-colors", JSON.stringify(savedColors)); } catch (e) {}
-      renderAll();
     }
+    if (p && p.ok && Array.isArray(p.presets) && p.presets.length === 12) {
+      try { localStorage.setItem("ud-swatch-presets", JSON.stringify(p.presets)); } catch (e) {}
+    }
+    if (p && p.ok) renderAll();
   }).catch(function () {});
 
   document.addEventListener("DOMContentLoaded", function () {
