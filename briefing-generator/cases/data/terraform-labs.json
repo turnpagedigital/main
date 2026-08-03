@@ -13635,6 +13635,13 @@
       "summary": "A bankruptcy judge authorized Terraform's plan administrator to use Jump Trading documents in the $4 billion-plus lawsuit against Jump, while simultaneously rejecting four late-filed crypto-loss claims. The evidence ruling removes a key barrier to pursuing Jump, but Jump's liability and any creditor payout remain unresolved."
     },
     {
+      "headline": "Jane Street Used Tips To Dodge Losses, Terraform Says",
+      "url": "https://www.law360.com/bankruptcy/articles/2489043",
+      "source": "Law360",
+      "date": "2026-06-12",
+      "summary": "The Terraform Labs bankruptcy administrator urged a New York federal court to deny Jane Street's motion to dismiss, arguing the trading firm is liable as an insider and tippee for using confidential information to profit from Terraform's collapse. The case is part of the Wind Down Trust's broader litigation strategy to recover assets for creditors."
+    },
+    {
       "headline": "Jane Street Seeks Dismissal of Terraform Insider-Trading Lawsuit in Court Filing",
       "url": "https://www.bloomberg.com/news/articles/2026-04-23/jane-street-seeks-dismissal-of-terraform-insider-trading-suit",
       "source": "Bloomberg",
@@ -13676,5 +13683,6 @@
       "date": "2025-12-19",
       "summary": "The administrator overseeing the wind-down of Terraform Labs filed a lawsuit against Jump Trading, alleging the Chicago-based firm illegally profited from and helped accelerate its 2022 collapse. The suit seeks $4 billion in damages from Jump Trading and its executives."
     }
-  ]
+  ],
+  "events": []
 }

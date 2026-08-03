@@ -62,14 +62,14 @@
   function themeOf(slug) {
     var base = THEMES[slug] || { name: slug, emoji: "📰", bg: "#E0E7FF", fg: "#3730a3" };
     var ov = savedColors[slug];
-    var bg = (ov && ov.bg) || base.bg;
-    var fg = (ov && ov.fg) || base.fg;
-    return { name: base.name, emoji: base.emoji, bg: bg, fg: fg };
+    return { name: base.name, emoji: base.emoji,
+             bg: (ov && ov.bg) || base.bg, fg: (ov && ov.fg) || base.fg,
+             border: (ov && ov.border) || "" };
   }
 
   function themePill(slug) {
     var t = themeOf(slug);
-    return '<span class="ih-pill ih-pill-sq" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>";
+    return '<span class="ih-pill ih-pill-sq" style="background:' + t.bg + ";color:" + t.fg + (t.border ? ";border:1.5px solid " + t.border : "") + '">' + t.emoji + " " + esc(t.name) + "</span>";
   }
 
   var FALLBACK_SWATCHES = [
@@ -93,74 +93,148 @@
     try { localStorage.setItem("ud-case-colors", JSON.stringify(savedColors)); } catch (e) {}
   }
 
-  function pushColors() {
+  function pushPrefs() {
     fetchJson(BASE + "api/prefs").then(function (p) {
       var colors = (p && p.ok && p.colors) || {};
       Object.keys(savedColors).forEach(function (k) { colors[k] = savedColors[k]; });
-      Object.keys(colors).forEach(function (k) {
-        if (savedColors[k] === undefined && THEMES[k]) delete colors[k];
-      });
+      Object.keys(colors).forEach(function (k) { if (savedColors[k] === undefined && THEMES[k]) delete colors[k]; });
+      var presets = (p && p.presets) || [];
+      try {
+        var lp = JSON.parse(localStorage.getItem("ud-swatch-presets") || "null");
+        if (Array.isArray(lp) && lp.length === 12) presets = lp;
+      } catch (e) {}
       return fetch(BASE + "api/prefs", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          colors: colors,
-          groups: (p && p.groups) || [],
-          presets: (p && p.presets) || [],
-        }),
+        body: JSON.stringify({ colors: colors, groups: (p && p.groups) || [], presets: presets }),
       });
     }).catch(function () {});
   }
 
   var popEl = null;
+  var popSlug = null;
+  var popEditingPalette = false;
   function closePop() {
     if (popEl && popEl.parentNode) popEl.parentNode.removeChild(popEl);
     popEl = null;
+    popSlug = null;
+    popEditingPalette = false;
   }
 
-  function openThemePopover(slug, anchor, onDone) {
-    closePop();
-    var t = themeOf(slug);
-    var pop = document.createElement("div");
-    pop.className = "ih-color-pop";
-    pop.innerHTML =
-      '<div class="ih-pop-title">' + esc(t.name) + " colors</div>" +
-      '<div class="ih-pop-swatches">' +
-      currentSwatches().map(function (s, i) {
-        return '<button type="button" data-sw="' + i + '" title="' + s.bg + '" style="background:' + s.bg + ';"></button>';
-      }).join("") +
-      "</div>" +
-      '<div class="ih-pop-custom">' +
-        '<label>Bg <input type="color" data-cust-bg value="' + (t.bg || "#E0E7FF") + '"></label>' +
-        '<label>Text <input type="color" data-cust-fg value="' + (t.fg || "#3730a3") + '"></label>' +
-        '<button type="button" data-cust-apply>Apply</button>' +
-      "</div>" +
-      '<button type="button" data-reset>Reset to default</button>';
-    document.body.appendChild(pop);
-    var rect = anchor.getBoundingClientRect();
-    pop.style.top = (rect.bottom + window.scrollY + 6) + "px";
-    pop.style.left = Math.max(8, Math.min(rect.left + window.scrollX - 90, window.innerWidth - 250)) + "px";
-    popEl = pop;
+  function popApply() {
+    if (!popEl || !popSlug) return;
+    var bg = popEl.querySelector("[data-in-bg]").value;
+    var fg = popEl.querySelector("[data-in-fg]").value;
+    var useBorder = popEl.querySelector("[data-in-border-on]").checked;
+    var border = popEl.querySelector("[data-in-border]").value;
+    var entry = { bg: bg, fg: fg };
+    if (useBorder) entry.border = border;
+    savedColors[popSlug] = entry;
+    persistColors();
+    pushPrefs();
+    renderAll();
+    rebuildThemesPanelIfOpen();
+  }
 
-    function setColor(entry) {
-      if (entry) savedColors[slug] = entry;
-      else delete savedColors[slug];
-      persistColors();
-      pushColors();
-      closePop();
-      renderAll();
-      if (onDone) onDone();
-    }
-    pop.querySelectorAll("[data-sw]").forEach(function (b) {
+  function popRenderSwatches() {
+    var box = popEl.querySelector("[data-role-swatches]");
+    var cur = (savedColors[popSlug] && savedColors[popSlug].bg) || themeOf(popSlug).bg;
+    box.className = "ud-pop-swatches";
+    box.innerHTML = currentSwatches().map(function (s, i) {
+      var on = s.bg.toLowerCase() === (cur || "").toLowerCase();
+      return '<button type="button" class="ud-pop-swatch' + (on ? " ud-swatch-active" : "") + '" data-sw="' + i + '" style="background:' + s.bg + '" title="' + s.bg + '"></button>';
+    }).join("");
+    box.querySelectorAll("[data-sw]").forEach(function (b) {
       b.addEventListener("click", function () {
         var s = currentSwatches()[Number(b.getAttribute("data-sw"))];
-        setColor({ bg: s.bg, fg: s.fg });
+        popEl.querySelector("[data-in-bg]").value = s.bg;
+        popEl.querySelector("[data-in-fg]").value = s.fg || "#0A0A0A";
+        popApply();
+        popRenderSwatches();
       });
     });
-    pop.querySelector("[data-cust-apply]").addEventListener("click", function () {
-      setColor({ bg: pop.querySelector("[data-cust-bg]").value, fg: pop.querySelector("[data-cust-fg]").value });
+  }
+
+  function popRenderPaletteEditor() {
+    var box = popEl.querySelector("[data-role-swatches]");
+    var presets = currentSwatches().map(function (x) { return { bg: x.bg, fg: x.fg }; });
+    box.className = "ud-pop-swatches ud-sw-editing";
+    box.innerHTML = presets.map(function (p, i) {
+      return (
+        '<div class="ud-sw-row" data-row="' + i + '">' +
+          '<span class="ud-sw-preview" style="background:' + p.bg + ";color:" + (p.fg || "#0A0A0A") + '">Aa</span>' +
+          '<label>Bg <input type="color" class="ud-sw-bg" data-idx="' + i + '" value="' + p.bg + '"></label>' +
+          '<label>Text <input type="color" class="ud-sw-fg" data-idx="' + i + '" value="' + (p.fg || "#0A0A0A") + '"></label>' +
+        "</div>"
+      );
+    }).join("");
+    function commit(i) {
+      var rowEl = box.querySelector('[data-row="' + i + '"]');
+      presets[i] = { bg: rowEl.querySelector(".ud-sw-bg").value, fg: rowEl.querySelector(".ud-sw-fg").value };
+      var prev = rowEl.querySelector(".ud-sw-preview");
+      prev.style.background = presets[i].bg;
+      prev.style.color = presets[i].fg;
+      try { localStorage.setItem("ud-swatch-presets", JSON.stringify(presets)); } catch (e) {}
+      pushPrefs();
+    }
+    box.querySelectorAll(".ud-sw-bg, .ud-sw-fg").forEach(function (inp) {
+      inp.addEventListener("input", function () { commit(Number(inp.getAttribute("data-idx"))); });
     });
-    pop.querySelector("[data-reset]").addEventListener("click", function () { setColor(null); });
+  }
+
+  function openThemePopover(slug, anchor) {
+    closePop();
+    popSlug = slug;
+    var t = themeOf(slug);
+    var hasBorder = !!(savedColors[slug] && savedColors[slug].border);
+    var pop = document.createElement("div");
+    pop.className = "ih-color-pop";
+    pop.style.display = "block";
+    pop.innerHTML =
+      '<div class="ud-pop-title">' + esc(t.name) + "</div>" +
+      '<div data-role-swatches></div>' +
+      '<div class="ud-sw-row" style="margin-bottom:6px;"><label>Bg <input type="color" data-in-bg value="' + t.bg + '"></label>' +
+        '<label>Text <input type="color" data-in-fg value="' + t.fg + '"></label></div>' +
+      '<div class="ud-sw-row" style="margin-bottom:10px;"><label><input type="checkbox" data-in-border-on' + (hasBorder ? " checked" : "") + "> Border</label>" +
+        '<label><input type="color" data-in-border value="' + ((savedColors[slug] && savedColors[slug].border) || t.fg) + '"></label></div>' +
+      '<div style="display:flex;gap:10px;align-items:center;">' +
+        '<button type="button" class="ud-dd-quick" data-palette>Edit palette…</button>' +
+        '<button type="button" class="ud-dd-quick" data-reset style="margin-left:auto;">Reset to default</button>' +
+      "</div>";
+    document.body.appendChild(pop);
+    var rect = anchor.getBoundingClientRect();
+    pop.style.position = "absolute";
+    pop.style.top = (rect.bottom + window.scrollY + 6) + "px";
+    pop.style.left = Math.max(8, Math.min(rect.left + window.scrollX - 90, window.innerWidth - 260)) + "px";
+    popEl = pop;
+    popRenderSwatches();
+
+    pop.querySelectorAll("[data-in-bg], [data-in-fg], [data-in-border]").forEach(function (inp) {
+      inp.addEventListener("input", function () {
+        if (inp.hasAttribute("data-in-border")) pop.querySelector("[data-in-border-on]").checked = true;
+        popApply();
+      });
+    });
+    pop.querySelector("[data-in-border-on]").addEventListener("change", popApply);
+    pop.querySelector("[data-palette]").addEventListener("click", function () {
+      popEditingPalette = !popEditingPalette;
+      pop.querySelector("[data-palette]").textContent = popEditingPalette ? "Done editing palette" : "Edit palette…";
+      if (popEditingPalette) popRenderPaletteEditor();
+      else popRenderSwatches();
+    });
+    pop.querySelector("[data-reset]").addEventListener("click", function () {
+      delete savedColors[slug];
+      persistColors();
+      pushPrefs();
+      renderAll();
+      rebuildThemesPanelIfOpen();
+      closePop();
+    });
+  }
+
+  function rebuildThemesPanelIfOpen() {
+    var p = document.getElementById("ih-themes-panel");
+    if (p && p.style.display !== "none") buildThemesPanel(p);
   }
 
   document.addEventListener("click", function (ev) {
@@ -465,7 +539,7 @@
       g.addEventListener("click", function (ev) {
         ev.preventDefault();
         ev.stopPropagation();
-        openThemePopover(g.getAttribute("data-gear"), g, function () { buildThemesPanel(panel); });
+        openThemePopover(g.getAttribute("data-gear"), g);
       });
     });
   }

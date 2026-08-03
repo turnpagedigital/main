@@ -138,7 +138,18 @@
     .ih-dd-row input { accent-color: var(--neon-block); cursor: pointer; }
     .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 14px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
-    .ih-color-pop { position: absolute; z-index: 1000; background: var(--surface); border: 1px solid var(--line-strong); padding: 14px; width: 230px; box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
+    .ih-color-pop { position: absolute; z-index: 1000; background: var(--surface); border: 1px solid var(--line-strong); padding: 14px; width: 240px; box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
+    .ih-color-pop .ud-pop-title { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+    .ih-color-pop .ud-pop-swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
+    .ih-color-pop .ud-pop-swatch { width: 26px; height: 26px; border: 1px solid var(--line-strong); cursor: pointer; }
+    .ih-color-pop .ud-swatch-active { outline: 2px solid var(--ink); outline-offset: 1px; }
+    .ih-color-pop .ud-pop-swatches.ud-sw-editing { display: flex; flex-direction: column; gap: 6px; max-height: 280px; overflow-y: auto; }
+    .ih-color-pop .ud-sw-row { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--ink-60); }
+    .ih-color-pop .ud-sw-row label { display: flex; align-items: center; gap: 4px; }
+    .ih-color-pop .ud-sw-row input[type="color"] { width: 30px; height: 22px; padding: 0; border: 1px solid var(--line-strong); background: none; cursor: pointer; }
+    .ih-color-pop .ud-sw-preview { display: inline-block; width: 34px; text-align: center; font-size: 11px; font-weight: 800; padding: 2px 0; border-radius: 99px; border: 1px solid var(--line); }
+    .ih-color-pop .ud-dd-quick { font-family: inherit; font-size: 11.5px; font-weight: 700; background: none; border: none; color: var(--ink-60); cursor: pointer; text-decoration: underline; padding: 0; }
+    .ih-color-pop .ud-dd-quick:hover { color: var(--ink); }
     .ih-pop-title { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-60); margin-bottom: 10px; }
     .ih-pop-swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
     .ih-pop-swatches button { width: 26px; height: 26px; border: 1px solid var(--line-strong); cursor: pointer; }
