@@ -13,5 +13,9 @@ case:
 docket_source:
   type: courtlistener
   docket_id: 70143231
-  url: "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/"
+claims_administrator:
+  name: "Epiq11"
+  url: "https://dm.epiq11.com/case/hvs/dockets"
+  key_dates_url: ""
+scan_guidance: "Focus on litigation recoveries and expected payouts to unsecured creditors."
 ---

@@ -1,4 +1,151 @@
 {
-  "colors": {},
-  "groups": []
+  "colors": {
+    "terraform-labs": {
+      "bg": "#8df7e0",
+      "fg": "#334d46"
+    },
+    "blockfills": {
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
+    },
+    "concord-anthropic": {
+      "bg": "#d6ccff",
+      "fg": "#380e77"
+    },
+    "sleep-number": {
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
+    },
+    "kahan": {
+      "bg": "#ffc2c8",
+      "fg": "#74070c"
+    },
+    "goliath": {
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
+    },
+    "harvest-sherwood": {
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
+    },
+    "rndc": {
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
+    },
+    "poolin": {
+      "bg": "#ffb8cd",
+      "fg": "#b80000"
+    },
+    "bartz-anthropic": {
+      "bg": "#c9fa67",
+      "fg": "#415719"
+    },
+    "power-block-coin": {
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
+    },
+    "bankruptcy-creditor-rights": {
+      "bg": "#fff5c7",
+      "fg": "#92410e"
+    },
+    "billion-dollar-class-actions": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "crypto-insolvency": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "llm-class-action": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "fraud-recovery": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "rewind-tariffs": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "papaya-gaming": {
+      "bg": "#fff5c7",
+      "fg": "#92410e"
+    },
+    "omnis-pleasants": {
+      "bg": "#fff5c7",
+      "fg": "#92410e"
+    }
+  },
+  "groups": [
+    {
+      "name": "AI Copyright",
+      "slugs": [
+        "bartz-anthropic",
+        "concord-anthropic"
+      ]
+    },
+    {
+      "name": "Crypto Distress",
+      "slugs": [
+        "blockfills",
+        "goliath",
+        "kahan",
+        "power-block-coin",
+        "terraform-labs",
+        "poolin"
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "bg": "#fff5c7",
+      "fg": "#92410e"
+    },
+    {
+      "bg": "#fde864",
+      "fg": "#5f3306"
+    },
+    {
+      "bg": "#cafb67",
+      "fg": "#415819"
+    },
+    {
+      "bg": "#8df7e0",
+      "fg": "#124f51"
+    },
+    {
+      "bg": "#ffca9e",
+      "fg": "#683608"
+    },
+    {
+      "bg": "#ffc2c8",
+      "fg": "#74070c"
+    },
+    {
+      "bg": "#ffc2c9",
+      "fg": "#75070c"
+    },
+    {
+      "bg": "#d7cdff",
+      "fg": "#380e77"
+    },
+    {
+      "bg": "#c2d7ff",
+      "fg": "#1c469c"
+    },
+    {
+      "bg": "#a9e2ff",
+      "fg": "#04496c"
+    },
+    {
+      "bg": "#ffc2e7",
+      "fg": "#8b1387"
+    },
+    {
+      "bg": "#e6e6e6",
+      "fg": "#0A0A0A"
+    }
+  ],
+  "theme_presets": []
 }

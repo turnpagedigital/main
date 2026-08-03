@@ -13,10 +13,9 @@ case:
 docket_source:
   type: courtlistener
   docket_id: 73476260
-  url: "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/"
 claims_administrator:
   name: "Kroll"
-  url: "https://restructuring.ra.kroll.com/SleepNumber"
-  key_dates_url: "https://restructuring.ra.kroll.com/SleepNumber"
+  url: "https://restructuring.ra.kroll.com/SleepNumber/Home-DocketInfo"
+  key_dates_url: ""
 scan_guidance: "Watch the docket for all information on the capital structure, DIP financing, cash collateral, first day motions, objections, creditor recoveries."
 ---
