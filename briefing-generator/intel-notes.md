@@ -88,10 +88,6 @@ Ciao
 
 > Stock Market Today: Apple Slump Drags on Tech — Stocks are reversing their early gains
 
-### (no docket number) — 2026-07-31
-
-> New York Alleges Kalshi Is Running Illegal Gambling Operation — New York Attorney General Letitia James’s office said Kalshi’s prediction market meets the legal definition of gambling because users ar
-
 ## Unknown case
 
 ### (no docket number) — undated
@@ -100,4 +96,6 @@ $60M in proceeds
 $10M admin
 $50M net 
 $100-$500M liabilities = 2-10c recoveries
+
+### (no docket number) — undated
 
