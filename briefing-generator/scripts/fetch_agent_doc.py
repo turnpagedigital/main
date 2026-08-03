@@ -67,12 +67,17 @@ def kroll_fetch(base_url, docket_number):
     docket_url = f"{case_path}/Home-DocketInfo"
 
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(args=["--no-sandbox"])
+        browser = pw.chromium.launch(args=[
+            "--no-sandbox", "--disable-blink-features=AutomationControlled",
+        ])
         ctx = browser.new_context(
             user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
                        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 Safari/537.36",
+            locale="en-US", timezone_id="America/New_York",
             accept_downloads=True,
         )
+        # Hide the headless automation tell most bot checks look for.
+        ctx.add_init_script("Object.defineProperty(navigator,'webdriver',{get:()=>undefined});")
         page = ctx.new_page()
         page.set_viewport_size({"width": 1600, "height": 1200})  # desktop tablesaw layout
         page.goto(docket_url, wait_until="networkidle", timeout=45000)
@@ -122,27 +127,40 @@ def kroll_fetch(base_url, docket_number):
                  f"{case_seg[0]} (scanned {len(rows)} rows)")
 
         pdf_url = (origin + target_href) if target_href.startswith("/") else urljoin(docket_url, target_href)
-        # Fetch from INSIDE the page so the download carries the exact session,
-        # cookies and same-origin referer the site expects (a plain request
-        # API call gets a captcha/login interstitial instead of the PDF).
-        result = page.evaluate(
-            """async (href) => {
-                const r = await fetch(href, { credentials: 'include' });
-                if (!r.ok) return { ok: false, status: r.status };
-                const buf = await r.arrayBuffer();
-                const bytes = new Uint8Array(buf);
-                let bin = '';
-                for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
-                return { ok: true, b64: btoa(bin), type: r.headers.get('content-type') || '' };
-            }""",
-            pdf_url,
-        )
+        # Navigate to the PDF like a user clicking the link — real navigation
+        # headers (Referer, Sec-Fetch-Mode: navigate) that the site's download
+        # guard checks; a bare fetch/request gets the captcha interstitial.
+        body = b""
+        ctype = ""
+        try:
+            resp = page.goto(pdf_url, wait_until="commit", timeout=60000)
+            if resp:
+                ctype = (resp.headers or {}).get("content-type", "")
+                body = resp.body()
+        except Exception as ex:
+            # A PDF navigation can abort as "download" — fall back to in-page fetch
+            print(f"  · navigation route failed ({ex}); trying in-page fetch", file=sys.stderr)
+        if not body[:5].startswith(b"%PDF"):
+            result = page.evaluate(
+                """async (href) => {
+                    const r = await fetch(href, { credentials: 'include' });
+                    const buf = await r.arrayBuffer();
+                    const bytes = new Uint8Array(buf);
+                    let bin = '';
+                    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+                    return { status: r.status, type: r.headers.get('content-type') || '',
+                             head: bin.slice(0, 300), b64: btoa(bin) };
+                }""",
+                pdf_url,
+            )
+            import base64 as _b64
+            fetched = _b64.b64decode(result["b64"])
+            if fetched[:5].startswith(b"%PDF"):
+                body, ctype = fetched, result["type"]
+            else:
+                print(f"  · download not a PDF — status={result['status']} type={result['type']}", file=sys.stderr)
+                print(f"  · first bytes: {result['head'][:200]!r}", file=sys.stderr)
         browser.close()
-
-    if not result or not result.get("ok"):
-        fail(f"document download failed ({(result or {}).get('status', '?')})")
-    import base64 as _b64
-    body = _b64.b64decode(result["b64"])
 
     if len(body) > MAX_BYTES:
         fail("document exceeds 25MB")
