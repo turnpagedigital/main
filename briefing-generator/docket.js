@@ -1372,6 +1372,29 @@
       body: JSON.stringify({ slug: e.slug, entry_number: e.entry_number, docket_id: docketId }),
     }).then(function (r) { return r.json(); }).then(function (p) {
       if (p.status === "ready") { done(true, "", p.path); return; }
+
+      // Claims agent (free): a GitHub Action fetches and commits the PDF; poll
+      // the uploads index until the document lands on this row.
+      if (p.status === "agent_pending") {
+        noteToast("Fetching Dkt. " + e.entry_number + " from the claims agent\u2026", false);
+        var atries = 0;
+        var atimer = setInterval(function () {
+          atries++;
+          if (atries > 60) { clearInterval(atimer); done(false, "agent fetch timed out \u2014 try again shortly"); return; }
+          fetchJson("api/upload").then(function (u) {
+            var docs = (u && u.ok && u.docs && u.docs[p.key]) || [];
+            if (docs.length) {
+              clearInterval(atimer);
+              delete FETCHING[nk];
+              UPLOADS[nk] = docs;
+              render();
+              noteToast("Document attached \u2014 Dkt. " + e.entry_number, false);
+            }
+          }).catch(function () {});
+        }, 4000);
+        return;
+      }
+
       if (p.status !== "pending") { done(false, p.error || "unknown error"); return; }
       noteToast("Buying Dkt. " + e.entry_number + " from PACER\u2026", false);
       var tries = 0;
