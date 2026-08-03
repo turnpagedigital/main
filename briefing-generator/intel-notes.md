@@ -34,6 +34,12 @@ Ciao
 
 > New Chapter 11 Bankruptcy Filing — Poolin Technology PTE LTD — Petition's legal trade newsletter covers the July 22 Chapter 11 filing before Judge O'Hagan in the District of New Jersey, noting that Po
 
+## Sleep Number
+
+### (no docket number) — 2026-08-03
+
+> Notice of Adjournment of Hearing
+
 ## Terraform Labs
 
 ### (no docket number) — 2026-08-03
