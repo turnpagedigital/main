@@ -5,40 +5,68 @@
       "fg": "#334d46"
     },
     "blockfills": {
-      "bg": "#e5eeff",
+      "bg": "#e6e6e6",
       "fg": "#0a0a0a"
     },
     "concord-anthropic": {
-      "bg": "#dfc2ff",
-      "fg": "#6b21a8"
-    },
-    "power-block-coin": {
-      "bg": "#dbffed",
-      "fg": "#04866c"
+      "bg": "#d6ccff",
+      "fg": "#380e77"
     },
     "sleep-number": {
-      "bg": "#fef3c7",
-      "fg": "#92400e"
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
     },
     "kahan": {
-      "bg": "#ffe5f1",
-      "fg": "#a413ae"
+      "bg": "#ffc2c8",
+      "fg": "#74070c"
     },
     "goliath": {
-      "bg": "#a8e2ff",
-      "fg": "#075985"
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
     },
     "harvest-sherwood": {
-      "bg": "#fef3c7",
-      "fg": "#92400e"
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
     },
     "rndc": {
-      "bg": "#fee2e2",
-      "fg": "#991b1b"
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
     },
     "poolin": {
       "bg": "#ffb8cd",
       "fg": "#b80000"
+    },
+    "bartz-anthropic": {
+      "bg": "#c9fa67",
+      "fg": "#415719"
+    },
+    "power-block-coin": {
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
+    },
+    "bankruptcy-creditor-rights": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "billion-dollar-class-actions": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "crypto-insolvency": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "llm-class-action": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "fraud-recovery": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    "rewind-tariffs": {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
     }
   },
   "groups": [
@@ -71,36 +99,36 @@
   ],
   "presets": [
     {
-      "bg": "#fff7d1",
-      "fg": "#0A0A0A"
+      "bg": "#fff5c7",
+      "fg": "#92410e"
     },
     {
-      "bg": "#d1fff6",
-      "fg": "#0A0A0A"
+      "bg": "#fde864",
+      "fg": "#5f3306"
     },
     {
-      "bg": "#e9e6d3",
-      "fg": "#544f31"
-    },
-    {
-      "bg": "#d6ccff",
-      "fg": "#4f11ac"
+      "bg": "#cafb67",
+      "fg": "#415819"
     },
     {
       "bg": "#8df7e0",
-      "fg": "#114f50"
+      "fg": "#124f51"
+    },
+    {
+      "bg": "#ffca9e",
+      "fg": "#683608"
     },
     {
       "bg": "#ffc2c8",
-      "fg": "#a2020a"
+      "fg": "#74070c"
     },
     {
-      "bg": "#c9fa67",
-      "fg": "#415719"
+      "bg": "#ffc2c9",
+      "fg": "#75070c"
     },
     {
-      "bg": "#fff4c7",
-      "fg": "#92410e"
+      "bg": "#d7cdff",
+      "fg": "#380e77"
     },
     {
       "bg": "#c2d7ff",
@@ -108,11 +136,11 @@
     },
     {
       "bg": "#a9e2ff",
-      "fg": "#0a0a0a"
+      "fg": "#04496c"
     },
     {
-      "bg": "#f5ffe0",
-      "fg": "#0A0A0A"
+      "bg": "#ffc2e7",
+      "fg": "#8b1387"
     },
     {
       "bg": "#e6e6e6",
