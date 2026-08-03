@@ -1282,8 +1282,10 @@
   var SVG_FILE = '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6z"/><path d="M14 2v6h6" fill="none" stroke="var(--surface)" stroke-width="1.6"/></svg>';
   var SVG_DOWNLOAD = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>';
 
-  function uploadHref(d) {
-    return "/" + String(d.path || "").replace(/^briefing-generator\//, "intel/");
+  function uploadHref(d, download) {
+    // Served through the API so a fresh upload opens immediately — the static
+    // copy only exists after the next site build.
+    return "api/file?path=" + encodeURIComponent(String(d.path || "")) + (download ? "&dl=1" : "");
   }
 
   // The Dkt. cell: links + an upload button normally; once a document is
@@ -1296,7 +1298,7 @@
         return (
           '<span class="ud-file-group">' +
             '<a class="ud-file-btn" href="' + esc(uploadHref(d)) + '" target="_blank" rel="noopener" title="Open ' + esc(d.name) + '">' + SVG_FILE + "</a>" +
-            '<a class="ud-file-dl" href="' + esc(uploadHref(d)) + '" download title="Download ' + esc(d.name) + '">' + SVG_DOWNLOAD + "</a>" +
+            '<a class="ud-file-dl" href="' + esc(uploadHref(d, true)) + '" title="Download ' + esc(d.name) + '">' + SVG_DOWNLOAD + "</a>" +
             '<button type="button" class="ud-file-del" data-updel-nk="' + esc(nk) + '" data-updel-i="' + i + '" title="Remove ' + esc(d.name) + '">\u00d7</button>' +
           "</span>"
         );

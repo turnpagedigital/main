@@ -439,11 +439,11 @@
     var docs = docsFor(n.key);
     if (docs.length) {
       return docs.map(function (d) {
-        var href = "/" + String(d.path || "").replace(/^briefing-generator\//, "intel/");
+        var href = "api/file?path=" + encodeURIComponent(String(d.path || ""));
         return (
           '<span class="ud-file-group">' +
             '<a class="ud-file-btn" href="' + esc(href) + '" target="_blank" rel="noopener" title="Open ' + esc(d.name) + '">' + SVG_FILE + "</a>" +
-            '<a class="ud-file-dl" href="' + esc(href) + '" download title="Download ' + esc(d.name) + '">' + SVG_DOWNLOAD + "</a>" +
+            '<a class="ud-file-dl" href="' + esc(href + "&dl=1") + '" title="Download ' + esc(d.name) + '">' + SVG_DOWNLOAD + "</a>" +
           "</span>"
         );
       }).join(" ");
