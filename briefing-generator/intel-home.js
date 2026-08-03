@@ -72,6 +72,93 @@
     return '<span class="ih-pill ih-pill-sq" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>";
   }
 
+  var DEFAULT_SWATCHES = [
+    { bg: "#D4FF00", fg: "#0A0A0A" }, { bg: "#E9F98A", fg: "#4A5500" },
+    { bg: "#1B3A4B", fg: "#FFFFFF" }, { bg: "#94C6F8", fg: "#123A66" },
+    { bg: "#3B78D8", fg: "#FFFFFF" }, { bg: "#B3A8F0", fg: "#2A1E6E" },
+    { bg: "#4A3DE0", fg: "#FFFFFF" }, { bg: "#7EF4C2", fg: "#0B4A32" },
+    { bg: "#3FA07A", fg: "#FFFFFF" }, { bg: "#F2AAEC", fg: "#6E1466" },
+    { bg: "#CC33CC", fg: "#FFFFFF" }, { bg: "#3A3A3A", fg: "#FFFFFF" },
+  ];
+
+  function persistColors() {
+    try { localStorage.setItem("ud-case-colors", JSON.stringify(savedColors)); } catch (e) {}
+  }
+
+  function pushColors() {
+    fetchJson(BASE + "api/prefs").then(function (p) {
+      var colors = (p && p.ok && p.colors) || {};
+      Object.keys(savedColors).forEach(function (k) { colors[k] = savedColors[k]; });
+      Object.keys(colors).forEach(function (k) {
+        if (savedColors[k] === undefined && THEMES[k]) delete colors[k];
+      });
+      return fetch(BASE + "api/prefs", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          colors: colors,
+          groups: (p && p.groups) || [],
+          presets: (p && p.presets) || [],
+        }),
+      });
+    }).catch(function () {});
+  }
+
+  var popEl = null;
+  function closePop() {
+    if (popEl && popEl.parentNode) popEl.parentNode.removeChild(popEl);
+    popEl = null;
+  }
+
+  function openThemePopover(slug, anchor, onDone) {
+    closePop();
+    var t = themeOf(slug);
+    var pop = document.createElement("div");
+    pop.className = "ih-color-pop";
+    pop.innerHTML =
+      '<div class="ih-pop-title">' + esc(t.name) + " colors</div>" +
+      '<div class="ih-pop-swatches">' +
+      DEFAULT_SWATCHES.map(function (s, i) {
+        return '<button type="button" data-sw="' + i + '" title="' + s.bg + '" style="background:' + s.bg + ';"></button>';
+      }).join("") +
+      "</div>" +
+      '<div class="ih-pop-custom">' +
+        '<label>Bg <input type="color" data-cust-bg value="' + (t.bg || "#E0E7FF") + '"></label>' +
+        '<label>Text <input type="color" data-cust-fg value="' + (t.fg || "#3730a3") + '"></label>' +
+        '<button type="button" data-cust-apply>Apply</button>' +
+      "</div>" +
+      '<button type="button" data-reset>Reset to default</button>';
+    document.body.appendChild(pop);
+    var rect = anchor.getBoundingClientRect();
+    pop.style.top = (rect.bottom + window.scrollY + 6) + "px";
+    pop.style.left = Math.max(8, Math.min(rect.left + window.scrollX - 90, window.innerWidth - 250)) + "px";
+    popEl = pop;
+
+    function setColor(entry) {
+      if (entry) savedColors[slug] = entry;
+      else delete savedColors[slug];
+      persistColors();
+      pushColors();
+      closePop();
+      renderAll();
+      if (onDone) onDone();
+    }
+    pop.querySelectorAll("[data-sw]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var s = DEFAULT_SWATCHES[Number(b.getAttribute("data-sw"))];
+        setColor({ bg: s.bg, fg: s.fg });
+      });
+    });
+    pop.querySelector("[data-cust-apply]").addEventListener("click", function () {
+      setColor({ bg: pop.querySelector("[data-cust-bg]").value, fg: pop.querySelector("[data-cust-fg]").value });
+    });
+    pop.querySelector("[data-reset]").addEventListener("click", function () { setColor(null); });
+  }
+
+  document.addEventListener("click", function (ev) {
+    if (popEl && !popEl.contains(ev.target) && !ev.target.closest("[data-gear]")) closePop();
+  });
+
   // ── Show/hide preferences (persisted as this browser's default) ───────────
   var FILTER_KEY = "ih-filter-state";
   var activeCases = {};
@@ -348,6 +435,7 @@
         '<label class="ih-dd-row">' +
           '<input type="checkbox" data-theme="' + slug + '"' + (themeOn(slug) ? " checked" : "") + ">" +
           themePill(slug) +
+          '<button type="button" class="ih-gear" data-gear="' + slug + '" title="Colors">\u2699</button>' +
         "</label>";
     });
     panel.innerHTML = html;
@@ -363,6 +451,13 @@
       cb.addEventListener("change", function () {
         activeThemes[cb.getAttribute("data-theme")] = cb.checked;
         saveFilters(); renderAll();
+      });
+    });
+    panel.querySelectorAll("[data-gear]").forEach(function (g) {
+      g.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        openThemePopover(g.getAttribute("data-gear"), g, function () { buildThemesPanel(panel); });
       });
     });
   }
