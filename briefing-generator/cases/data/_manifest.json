@@ -1,5 +1,43 @@
 [
   {
+    "slug": "bartz-anthropic",
+    "display_name": "Bartz v. Anthropic",
+    "short_name": "Bartz",
+    "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
+    "default_color": "#D4FF00",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action",
+      "billion-dollar-class-actions"
+    ],
+    "court": "U.S. District Court, N.D. Cal. (San Francisco)"
+  },
+  {
+    "slug": "blockfills",
+    "display_name": "BlockFills",
+    "short_name": "BlockFills",
+    "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
+    "default_color": "#94C6F8",
+    "category": "bankruptcy",
+    "topics": [
+      "crypto-insolvency",
+      "bankruptcy-creditor-rights"
+    ],
+    "court": "Bankr. D. Del."
+  },
+  {
+    "slug": "concord-anthropic",
+    "display_name": "Concord Music Group v. Anthropic",
+    "short_name": "Concord Music",
+    "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
+    "default_color": "#B3A8F0",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "District Court, N.D. California"
+  },
+  {
     "slug": "goliath",
     "display_name": "Goliath",
     "short_name": "Goliath",
@@ -11,6 +49,31 @@
       "crypto-insolvency"
     ],
     "court": "S.D. Fl."
+  },
+  {
+    "slug": "harvest-sherwood",
+    "display_name": "Harvest Sherwood",
+    "short_name": "Harvest Sherwood",
+    "docket_url": "https://www.courtlistener.com/docket/70143231/",
+    "default_color": "#F2AAEC",
+    "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights"
+    ],
+    "court": "N.D. Tex."
+  },
+  {
+    "slug": "kahan",
+    "display_name": "Kahan",
+    "short_name": "Kahan",
+    "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
+    "default_color": "#1B3A4B",
+    "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights",
+      "crypto-insolvency"
+    ],
+    "court": "Bankr. D. Mass"
   },
   {
     "slug": "omnis-pleasants",
