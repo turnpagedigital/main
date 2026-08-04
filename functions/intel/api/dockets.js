@@ -7,16 +7,19 @@
  * other /intel route, so only signed-in admins can reach CourtListener
  * through it.
  *
- * Each docket's CourtListener response is edge-cached for ~55s via the Cache
- * API, so any number of open tabs costs at most one upstream call per docket
- * per minute. Requires the COURTLISTENER_TOKEN env var (same token as the
- * GitHub Actions secret) — without it the endpoint answers ok:false and the
- * page silently keeps its static data.
+ * Each docket's CourtListener response is edge-cached for ~10 min via the
+ * Cache API, so any number of open tabs costs at most ~6 upstream calls per
+ * docket per hour. Requires the COURTLISTENER_TOKEN env var (same token as
+ * the GitHub Actions secret) — without it the endpoint answers ok:false and
+ * the page silently keeps its static data.
  */
 
 const API = "https://www.courtlistener.com/api/rest/v4";
-// CL Individual membership (2026-07-30) — minute-level freshness is back.
-const CACHE_SECONDS = 55;
+// The token's budget is 600 requests per rolling 24h (CL 429 message,
+// 2026-08-04). At the old 55s cache, 13 dockets burned ~780 requests per
+// browsing hour — the whole day's budget in <1h of open tabs. 10 minutes
+// keeps rows fresh enough for court filings at ~13% of budget per hour.
+const CACHE_SECONDS = 600;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

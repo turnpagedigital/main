@@ -14,13 +14,8 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-<<<<<<< HEAD
-    "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-04T14:45:31.899794+00:00",
-=======
     "date_last_filing": "",
     "fetched_at": "2026-08-04T14:51:08.431589+00:00",
->>>>>>> 61e99b4 (Docket sync 2026-08-04 15:02 UTC)
     "as_of": "Aug 4, 2026",
     "backfilled": false,
     "new_in_72h": 1,
