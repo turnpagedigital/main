@@ -10,7 +10,8 @@
       "llm-class-action",
       "billion-dollar-class-actions"
     ],
-    "court": "U.S. District Court, N.D. Cal. (San Francisco)"
+    "court": "U.S. District Court, N.D. Cal. (San Francisco)",
+    "sync": "active"
   },
   {
     "slug": "blockfills",
@@ -23,7 +24,8 @@
       "crypto-insolvency",
       "bankruptcy-creditor-rights"
     ],
-    "court": "Bankr. D. Del."
+    "court": "Bankr. D. Del.",
+    "sync": "active"
   },
   {
     "slug": "concord-anthropic",
@@ -35,7 +37,8 @@
     "topics": [
       "llm-class-action"
     ],
-    "court": "District Court, N.D. California"
+    "court": "District Court, N.D. California",
+    "sync": "active"
   },
   {
     "slug": "goliath",
@@ -48,7 +51,8 @@
       "fraud-recovery",
       "crypto-insolvency"
     ],
-    "court": "S.D. Fl."
+    "court": "S.D. Fl.",
+    "sync": "active"
   },
   {
     "slug": "harvest-sherwood",
@@ -60,7 +64,8 @@
     "topics": [
       "bankruptcy-creditor-rights"
     ],
-    "court": "N.D. Tex."
+    "court": "N.D. Tex.",
+    "sync": "active"
   },
   {
     "slug": "kahan",
@@ -73,7 +78,8 @@
       "bankruptcy-creditor-rights",
       "crypto-insolvency"
     ],
-    "court": "Bankr. D. Mass"
+    "court": "Bankr. D. Mass",
+    "sync": "active"
   },
   {
     "slug": "omnis-pleasants",
@@ -85,7 +91,8 @@
     "topics": [
       "bankruptcy-creditor-rights"
     ],
-    "court": "United States Bankruptcy Court, D. Delaware"
+    "court": "United States Bankruptcy Court, D. Delaware",
+    "sync": "active"
   },
   {
     "slug": "papaya-gaming",
@@ -97,7 +104,8 @@
     "topics": [
       "bankruptcy-creditor-rights"
     ],
-    "court": "United States Bankruptcy Court, D. Delaware"
+    "court": "United States Bankruptcy Court, D. Delaware",
+    "sync": "active"
   },
   {
     "slug": "poolin",
@@ -110,7 +118,8 @@
       "crypto-insolvency",
       "bankruptcy-creditor-rights"
     ],
-    "court": "Bankr. D. N.J."
+    "court": "Bankr. D. N.J.",
+    "sync": "active"
   },
   {
     "slug": "power-block-coin",
@@ -124,7 +133,8 @@
       "crypto-insolvency",
       "bankruptcy-creditor-rights"
     ],
-    "court": "Bankr. D. Utah"
+    "court": "Bankr. D. Utah",
+    "sync": "active"
   },
   {
     "slug": "rndc",
@@ -136,7 +146,8 @@
     "topics": [
       "bankruptcy-creditor-rights"
     ],
-    "court": "Bankr. S.D.Tx."
+    "court": "Bankr. S.D.Tx.",
+    "sync": "active"
   },
   {
     "slug": "sleep-number",
@@ -148,7 +159,8 @@
     "topics": [
       "bankruptcy-creditor-rights"
     ],
-    "court": "United States Bankruptcy Court, S.D. New York"
+    "court": "United States Bankruptcy Court, S.D. New York",
+    "sync": "active"
   },
   {
     "slug": "terraform-labs",
@@ -161,6 +173,7 @@
       "crypto-insolvency",
       "bankruptcy-creditor-rights"
     ],
-    "court": "Bankr. D. Del."
+    "court": "Bankr. D. Del.",
+    "sync": "active"
   }
 ]
