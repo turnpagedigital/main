@@ -15,37 +15,37 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-04T14:46:03.433907+00:00",
+    "fetched_at": "2026-08-04T16:22:07.619026+00:00",
     "as_of": "Aug 4, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 19,
     "recent": [
       {
-        "entry_number": 118,
+        "entry_number": 122,
         "date_filed": "2026-08-04",
-        "time_filed": "00:09:10",
+        "time_filed": "10:37:21",
         "date_display": "Aug 4, 2026",
-        "description": "Disclosure Statement Filed by Republic National Distributing Company, LLC. (Higgins, John) (Entered: 08/04/2026)",
+        "description": "Order to Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 117,
-        "date_filed": "2026-08-03",
-        "time_filed": "23:28:58",
-        "date_display": "Aug 3, 2026",
-        "description": "Chapter 11 Plan of Reorganization Filed by Republic National Distributing Company, LLC. (Higgins, John) (Entered: 08/03/2026)",
+        "entry_number": 121,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:36:01",
+        "date_display": "Aug 4, 2026",
+        "description": "Order to Appear pro hac vice",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.txsb.498599/gov.uscourts.txsb.498599.117.0.pdf"
+        "doc_url": ""
       },
       {
-        "entry_number": 116,
-        "date_filed": "2026-08-03",
-        "time_filed": "17:24:18",
-        "date_display": "Aug 3, 2026",
-        "description": "MOTION to Appear Pro Hac Vice for Eric D. Goldberg (Fee Paid: $100, receipt number A27447573) Filed by Interested Party USLP Tracy IV, LP (Muenker, James) (Entered: 08/03/2026)",
+        "entry_number": 120,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:34:37",
+        "date_display": "Aug 4, 2026",
+        "description": "Order to Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -53,14 +53,55 @@
     ],
     "entries": [
       {
+        "entry_number": 122,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:37:21",
+        "date_display": "Aug 4, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 121,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:36:01",
+        "date_display": "Aug 4, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 120,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:34:37",
+        "date_display": "Aug 4, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 119,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:33:24",
+        "date_display": "Aug 4, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 118,
         "date_filed": "2026-08-04",
         "time_filed": "00:09:10",
         "date_display": "Aug 4, 2026",
-        "description": "Disclosure Statement Filed by Republic National Distributing Company, LLC. (Higgins, John) (Entered: 08/04/2026)",
+        "description": "Disclosure Statement To The Joint Chapter 11 Plan Of Republic National Distributing Company, LLC And Its Debtor Subsidiaries",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 117,
@@ -1211,6 +1252,13 @@
   },
   "coverage": [
     {
+      "headline": "RNDC court filings reveal scale of distributor's financial collapse",
+      "url": "https://www.thedrinksbusiness.com/2026/08/rndc-court-filings-reveal-scale-of-distributors-financial-collapse/",
+      "source": "The Drinks Business",
+      "date": "2026-08-03",
+      "summary": "Court documents show RNDC had been sinking into financial difficulty for several years, with the COVID-19 pandemic and its aftermath ultimately triggering the collapse. The company owes more than $400 million to approximately 100,000 unsecured creditors, with many smaller creditors at risk of being pushed into financial difficulty themselves."
+    },
+    {
       "headline": "New Chapter 11 Bankruptcy Filing – Republic National Distributing Company LLC",
       "url": "https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing",
       "source": "Petition (petition11.com)",
@@ -1279,6 +1327,13 @@
       "source": "WOOD-TV (NBC Grand Rapids)",
       "date": "2026-07-28",
       "summary": "WOOD-TV reports that RNDC issued conditional WARN Act notices to 641 workers across five Michigan sites even though the Michigan joint venture is excluded from the Chapter 11 filing, with the company saying no final employment decisions have been made."
+    },
+    {
+      "headline": "National beer and wine distributor files Chapter 11 bankruptcy",
+      "url": "https://www.thestreet.com/retail/republic-national-distributing-company-files-chapter-11-bankruptcy",
+      "source": "TheStreet",
+      "date": "2026-07-28",
+      "summary": "TheStreet reported that 128-year-old RNDC filed for Chapter 11 citing a historic decline in U.S. alcohol consumption, with adults reporting regular alcohol use at its lowest level in nearly 90 years. The company seeks going-concern sales of remaining assets, a wind-down, and approval of an equity-holder settlement."
     },
     {
       "headline": "Wine And Spirit Distributor Hits Ch. 11 With $540M Of Debt",

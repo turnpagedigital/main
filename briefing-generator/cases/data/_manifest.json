@@ -4,7 +4,7 @@
     "display_name": "Bartz v. Anthropic",
     "short_name": "Bartz",
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "default_color": "#c8f967",
+    "default_color": "#D4FF00",
     "category": "class-action",
     "topics": [
       "llm-class-action",
@@ -17,7 +17,7 @@
     "display_name": "BlockFills",
     "short_name": "BlockFills",
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
-    "default_color": "#60A5FA",
+    "default_color": "#94C6F8",
     "category": "bankruptcy",
     "topics": [
       "crypto-insolvency",
@@ -30,7 +30,7 @@
     "display_name": "Concord Music Group v. Anthropic",
     "short_name": "Concord Music",
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
-    "default_color": "#FB923C",
+    "default_color": "#B3A8F0",
     "category": "class-action",
     "topics": [
       "llm-class-action"
@@ -55,7 +55,7 @@
     "display_name": "Harvest Sherwood",
     "short_name": "Harvest Sherwood",
     "docket_url": "https://www.courtlistener.com/docket/70143231/",
-    "default_color": "#34D399",
+    "default_color": "#F2AAEC",
     "category": "bankruptcy",
     "topics": [
       "bankruptcy-creditor-rights"
@@ -67,7 +67,7 @@
     "display_name": "Kahan",
     "short_name": "Kahan",
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-    "default_color": "#F87171",
+    "default_color": "#1B3A4B",
     "category": "bankruptcy",
     "topics": [
       "bankruptcy-creditor-rights",

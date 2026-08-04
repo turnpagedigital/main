@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
+    "case_name": "Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -15,43 +15,103 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-04T14:45:45.131250+00:00",
+    "fetched_at": "2026-08-04T16:21:46.625669+00:00",
     "as_of": "Aug 4, 2026",
     "backfilled": true,
-    "new_in_72h": 31,
+    "new_in_72h": 37,
     "recent": [
       {
-        "entry_number": 26,
+        "entry_number": 32,
         "date_filed": "2026-08-04",
-        "time_filed": "10:23:34",
+        "time_filed": "10:58:42",
         "date_display": "Aug 4, 2026",
-        "description": "Motion to Appear pro hac vice of Christopher K. Coleman of King & Spalding LLP. Receipt Number 5032762, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/04/2026)",
+        "description": "Order Approving Motion for Admission pro hac vice of Christopher K. Coleman (Related Doc # 26) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 25,
+        "entry_number": 31,
         "date_filed": "2026-08-04",
-        "time_filed": "10:02:25",
+        "time_filed": "10:58:14",
         "date_display": "Aug 4, 2026",
-        "description": "Motion to Appear pro hac vice of Lazar P. Raynal of King & Spalding LLP. Receipt Number 5032762, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/04/2026)",
+        "description": "Order Approving Motion for Admission pro hac vice of Lazar P. Raynal (Related Doc # 25) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 24,
+        "entry_number": 30,
         "date_filed": "2026-08-04",
-        "time_filed": "09:59:38",
+        "time_filed": "10:57:44",
         "date_display": "Aug 4, 2026",
-        "description": "Motion to Appear pro hac vice of Craig Carpenito of King & Spalding LLP. Receipt Number 5032762, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/04/2026)",
+        "description": "Order Approving Motion for Admission pro hac vice of Craig Carpenito (Related Doc # 24) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 32,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:58:42",
+        "date_display": "Aug 4, 2026",
+        "description": "Order Approving Motion for Admission pro hac vice of Christopher K. Coleman (Related Doc # 26) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 31,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:58:14",
+        "date_display": "Aug 4, 2026",
+        "description": "Order Approving Motion for Admission pro hac vice of Lazar P. Raynal (Related Doc # 25) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 30,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:57:44",
+        "date_display": "Aug 4, 2026",
+        "description": "Order Approving Motion for Admission pro hac vice of Craig Carpenito (Related Doc # 24) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 29,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:57:12",
+        "date_display": "Aug 4, 2026",
+        "description": "Order Approving Motion for Admission pro hac vice of Scott Davidson (Related Doc # 22) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 28,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:56:41",
+        "date_display": "Aug 4, 2026",
+        "description": "Order Approving Motion for Admission pro hac vice of Michael Lombardo (Related Doc # 21) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 27,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:56:11",
+        "date_display": "Aug 4, 2026",
+        "description": "Order Approving Motion for Admission pro hac vice of Jeffrey R. Dutson (Related Doc # 20) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 26,
         "date_filed": "2026-08-04",
@@ -127,7 +187,7 @@
         "date_filed": "2026-08-03",
         "time_filed": "19:11:48",
         "date_display": "Aug 3, 2026",
-        "description": "Certificate of Service",
+        "description": "Certificate of Service (related document(s)1, 4, 5, 6, 7, 9, 10) Filed by Oriel Bachar. (Attachments: # 1 Service List) (Malow, Jennifer) (Entered: 08/03/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -137,7 +197,7 @@
         "date_filed": "2026-08-03",
         "time_filed": "15:35:06",
         "date_display": "Aug 3, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Approving Motion for Admission pro hac vice of Evan J. Zucker (Related Doc # 14) Signed on 8/3/2026. (LMC) (Entered: 08/03/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -147,7 +207,7 @@
         "date_filed": "2026-08-03",
         "time_filed": "15:34:28",
         "date_display": "Aug 3, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Approving Motion for Admission pro hac vice of Michael Klein (Related Doc # 13) Signed on 8/3/2026. (LMC) (Entered: 08/03/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -365,5 +425,42 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Papaya Gaming Files Ch. 15 To Shield Against $719M Verdict",
+      "url": "https://www.law360.com/bankruptcy/articles/2508851",
+      "source": "Law360",
+      "date": "2026-08-03",
+      "summary": "Israeli mobile gaming company Papaya Gaming filed a Chapter 15 bankruptcy petition in Delaware's U.S. Bankruptcy Court after being hit with a $719 million judgment in New York federal court over false advertising claims. The filing is designed to block rival Skillz from collecting the judgment while Papaya appeals the ruling."
+    },
+    {
+      "headline": "Papaya Gaming seeks U.S. recognition of Israeli insolvency proceeding to stay $729M New York judgment",
+      "url": "https://www.offshorealert.com/israeli-firm-papaya-gaming-seeks-u-s-bankruptcy-recognition-to-stay-729m-new-york-judgment/",
+      "source": "OffshoreAlert",
+      "date": "2026-08-03",
+      "summary": "Papaya Gaming applied for U.S. recognition of an Israeli insolvency proceeding in an attempt to stay the $729 million final judgment entered in New York, which it intends to appeal. The filing involves multiple Papaya entities globally, including Papaya Gaming Ltd., Papaya Gaming Inc., and affiliated international subsidiaries."
+    },
+    {
+      "headline": "Papaya Files Chapter 15, Concedes It Can't Pay $719 Million Judgment",
+      "url": "https://www.casino.org/news/papaya-files-chapter-15-bankruptcy-concedes-it-cant-pay-719m-judgment/",
+      "source": "Casino.org",
+      "date": "2026-08-03",
+      "summary": "Papaya Gaming filed for Chapter 15 protection in Delaware and secured a temporary stay in Tel Aviv to prevent rival Skillz from collecting a $719 million verdict while it appeals. A federal judge found Papaya liable for using computer bots in its real-money games while misleading consumers and violating false advertising laws."
+    },
+    {
+      "headline": "Papaya Owes $719M, Atty Fees In Gaming False Ad Case",
+      "url": "https://www.law360.com/articles/2506436/papaya-owes-719m-atty-fees-in-gaming-false-ad-case",
+      "source": "Law360",
+      "date": "2026-07-28",
+      "summary": "A New York federal judge ordered Papaya Gaming Ltd. to disgorge $719 million and pay $10.1 million in attorney fees to Firy Inc. (formerly Skillz) following a false advertising trial. The judgment, entered July 27, directly precipitated Papaya's subsequent Chapter 15 filing."
+    },
+    {
+      "headline": "Skillz Locks Up $719 Million Payout from Gaming Rival Papaya",
+      "url": "https://news.bloomberglaw.com/litigation/papaya-gaming-must-pay-719-million-to-skillz-for-unjust-profits",
+      "source": "Bloomberg Law",
+      "date": "2026-07-28",
+      "summary": "Bloomberg Law reported that Papaya Gaming Ltd. must pay more than $700 million in profits and attorneys' fees to mobile gaming rival Skillz Platform Inc. following a Manhattan federal judge's order. The ruling set the stage for Papaya's cross-border insolvency strategy."
+    }
+  ],
+  "events": []
 }
