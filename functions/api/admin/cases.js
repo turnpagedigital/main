@@ -20,7 +20,7 @@ import { isAuthed, jsonResponse } from "./_utils.js";
 import {
   getFileFromGitHub,
   commitFileToGitHub,
-  deleteFileFromGitHub,
+  commitFilesToGitHub,
   getFileSha,
   listDirFromGitHub,
 } from "./_github.js";
@@ -57,15 +57,24 @@ async function updateManifest(env, action, c) {
     } else {
       const idx = manifest.findIndex(m => m.slug === c.slug);
       const colorIdx = idx >= 0 ? idx : manifest.length;
+      // Spread the existing entry first so pipeline-written fields the admin
+      // doesn't model (category, healed sluged docket_url, …) survive a save.
+      const prev = idx >= 0 ? manifest[idx] : {};
+      // Keep the pipeline's healed (sluged) URL unless the admin actually
+      // pointed the case at a DIFFERENT docket id.
+      const adminUrl = (c.docket_source && c.docket_source.url) || "";
+      const prevId = (/\/docket\/(\d+)\//.exec(prev.docket_url || "") || [])[1];
+      const adminId = (/\/docket\/(\d+)\//.exec(adminUrl) || [])[1];
       const entry = {
+        ...prev,
         slug: c.slug,
         display_name: c.display_name,
         short_name: shortName(c.display_name),
-        docket_url: (c.docket_source && c.docket_source.url) || "",
+        docket_url: (adminId && adminId !== prevId) ? adminUrl : (prev.docket_url || adminUrl),
         court: (c.case && c.case.court) || "",
-        default_color: idx >= 0
-          ? (manifest[idx].default_color || PILL_PALETTE[colorIdx % PILL_PALETTE.length])
-          : PILL_PALETTE[colorIdx % PILL_PALETTE.length],
+        topics: c.topics || prev.topics || [],
+        sync: c.sync || "active",
+        default_color: prev.default_color || PILL_PALETTE[colorIdx % PILL_PALETTE.length],
       };
       if (idx >= 0) manifest[idx] = entry;
       else manifest.push(entry);
@@ -94,13 +103,23 @@ const TOPICS = [
 ];
 
 const MODELED_KEYS = new Set([
-  "slug", "display_name", "type", "status", "topics",
+  "slug", "display_name", "type", "status", "sync", "topics",
   "case", "docket_source", "claims_administrator", "scan_guidance",
 ]);
 
-const CASE_STATES = ["active", "draft", "archived"];
+// `status` is a free-text display badge on the case page ("Settlement — final
+// approval pending"); never coerce it to an enum or admin saves wipe it.
 function coerceStatus(s) {
-  return CASE_STATES.includes(s) ? s : "active"; // legacy free-text posture → treat as active
+  const v = String(s || "").trim();
+  return v || "active";
+}
+
+// `sync` is the lifecycle enum: active = scheduled syncing + live polling;
+// manual = updates only via the Sync-now button; archived = docket kept,
+// never searched again.
+const SYNC_MODES = ["active", "manual", "archived"];
+function coerceSync(s) {
+  return SYNC_MODES.includes(s) ? s : "active";
 }
 
 // Derive a human-ish administrator name from a URL host (best-effort).
@@ -133,6 +152,7 @@ function normalizeCase(raw) {
     display_name: (c.display_name || "").trim(),
     type: c.type || "case",
     status: coerceStatus(c.status),
+    sync: coerceSync(c.sync),
     topics: Array.isArray(c.topics)
       ? c.topics.map(t => String(t).trim()).filter(Boolean)
       : [],
@@ -191,7 +211,8 @@ function frontMatterBody(c) {
   y += `slug: ${c.slug}\n`;
   y += `display_name: ${c.display_name}\n`;
   y += `type: ${c.type}\n`;
-  y += `status: ${c.status}\n`;
+  y += /^[a-z0-9-]+$/.test(c.status) ? `status: ${c.status}\n` : `status: ${dq(c.status)}\n`;
+  y += `sync: ${c.sync}\n`;
   y += "topics:\n";
   for (const t of c.topics) y += `  - ${t}\n`;
   y += "case:\n";
@@ -315,6 +336,7 @@ function parseCaseMd(md, fallbackSlug) {
     display_name: top("display_name") || fallbackSlug,
     type: top("type") || "case",
     status: coerceStatus(top("status") || ""),
+    sync: coerceSync(top("sync") || ""),
     topics: byKey["topics"] ? listItems(byKey["topics"]) : [],
     case: {
       parties: caseB ? (subScalar(caseB, "parties") || "") : "",
@@ -350,6 +372,7 @@ function generateSeedJson(c) {
       judge: c.case.judge,
       docket_id: docketId || null,
       status: c.status,
+      sync: c.sync,
     },
     docket: {
       source: awaiting ? "seed" : "courtlistener",
@@ -471,20 +494,42 @@ export async function onRequest({ request, env }) {
     if (!slug || !isValidSlug(slug)) {
       return jsonResponse({ ok: false, error: "Invalid slug parameter" }, 400);
     }
+    const repo = briefingRepo(env);
     const mdPath = `${CASES_DIR}/${slug}.md`;
-    const jsonPath = `${CASES_DIR}/data/${slug}.json`;
-    const mdSha = await getFileSha(env, mdPath, briefingRepo(env), branch);
+    const mdSha = await getFileSha(env, mdPath, repo, branch);
     if (!mdSha) return jsonResponse({ ok: false, error: "Case not found" }, 404);
 
-    const del = await deleteFileFromGitHub(env, mdPath, mdSha, `Remove case: ${slug}`, briefingRepo(env), branch);
-    if (!del.ok) return jsonResponse({ ok: false, error: "Failed to delete case file" }, 500);
-
-    const jsonSha = await getFileSha(env, jsonPath, briefingRepo(env), branch);
-    if (jsonSha) {
-      await deleteFileFromGitHub(env, jsonPath, jsonSha, `Remove case data: ${slug}`, briefingRepo(env), branch);
+    // One atomic commit: case config + data + rendered page + the case's
+    // uploaded documents, with uploads.json pruned in the same commit.
+    const files = [{ path: mdPath, content: null }];
+    for (const p of [`${CASES_DIR}/data/${slug}.json`, `${CASES_DIR}/${slug}.html`]) {
+      if (await getFileSha(env, p, repo, branch)) files.push({ path: p, content: null });
     }
+    const upPath = "briefing-generator/uploads.json";
+    const up = await getFileFromGitHub(env, upPath, null, repo, branch);
+    if (up.ok && up.data && up.data.docs) {
+      const docs = up.data.docs;
+      const mine = Object.keys(docs).filter(k => k === slug || k.startsWith(slug + "|"));
+      if (mine.length) {
+        for (const k of mine) {
+          for (const d of docs[k] || []) {
+            if (d && d.path && d.path.startsWith("briefing-generator/uploads/")) {
+              files.push({ path: d.path, content: null });
+            }
+          }
+          delete docs[k];
+        }
+        files.push({
+          path: upPath, sha: up.sha,
+          content: JSON.stringify(up.data, null, 2) + "\n",
+        });
+      }
+    }
+    const del = await commitFilesToGitHub(env, files, `Remove case: ${slug} (config, data, page, uploads)`, repo, branch);
+    if (!del.ok) return jsonResponse({ ok: false, error: `Failed to delete case: ${del.error}` }, 500);
+
     await updateManifest(env, "remove", { slug });
-    return jsonResponse({ ok: true });
+    return jsonResponse({ ok: true, removed: files.length });
   }
 
   return jsonResponse({ ok: false, error: "Method not allowed" }, 405);

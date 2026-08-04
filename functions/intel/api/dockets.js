@@ -119,6 +119,10 @@ export async function onRequestGet(context) {
 
   const targets = manifest
     .map((m) => {
+      // Only sync=active cases are live-polled — "manual" cases update via
+      // the admin Sync-now button and "archived" ones keep their saved
+      // docket; both fall back to build-time data on the pages.
+      if ((m.sync || "active") !== "active") return null;
       const idMatch = /\/docket\/(\d+)\//.exec(String(m.docket_url || ""));
       return idMatch
         ? { slug: m.slug, id: idMatch[1], docket_url: m.docket_url }

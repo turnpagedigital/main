@@ -60,12 +60,17 @@ def parse_case_config(text):
     case_sub = _subblock(fm, "case")
     ds_sub = _subblock(fm, "docket_source")
     ca_sub = _subblock(fm, "claims_administrator")
+    sync = (_scalar(fm, "sync") or "active").lower()
     return {
         "slug": _scalar(fm, "slug"),
         "display_name": _scalar(fm, "display_name"),
         "type": _scalar(fm, "type"),
         "emoji": _scalar(fm, "emoji") or "⚖️",
         "status": _scalar(fm, "status") or "",
+        # Sync lifecycle: "active" (scheduled syncing + live polling),
+        # "manual" (updates only via the admin Sync-now button), "archived"
+        # (docket kept, never searched again). Absent → active.
+        "sync": sync if sync in ("active", "manual", "archived") else "active",
         "topics": _list(fm, "topics"),
         "case": {
             "parties": _scalar(case_sub, "parties") or "",
