@@ -15,9 +15,13 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
     "date_last_filing": "2026-07-21",
+<<<<<<< HEAD
     "fetched_at": "2026-08-04T14:44:34.169463+00:00",
+=======
+    "fetched_at": "2026-08-04T14:47:22.484758+00:00",
+>>>>>>> 61e99b4 (Docket sync 2026-08-04 15:02 UTC)
     "as_of": "Aug 4, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
@@ -345,8 +349,9 @@
       {
         "entry_number": null,
         "date_filed": "2026-05-11",
+        "time_filed": "",
         "date_display": "May 11, 2026",
-        "description": "Electronic filing error. Incorrect event used. The correct event is Statement of Recent Decision. The correct event can be found at: Civil Events > Motions and Related Filings > Other Supporting Documents > Statement of Recent Decision. Please use correct event on future filings. Corrected by Clerk's Office. No further action is necessary. Re:657 Statement filed by Anthropic PBC (jml, COURT STAFF) (Filed on 5/11/2026)",
+        "description": "Electronic filing error. Incorrect event used. The correct event is Statement of Recent Decision. The correct event can be found at: Civil Events > Motions and Related Filings > Other Supporting Documents > Statement of Recent Decision. Please use correct event on future filings. Corrected by Clerk's Office. No further action is necessary. Re: 657 Statement filed by Anthropic PBC (jml, COURT STAFF) (Filed on 5/11/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -7376,7 +7381,8 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69058235&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Anthropic Copyright Settlement Administrator",
