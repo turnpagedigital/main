@@ -18,7 +18,7 @@ DEGRADES GRACEFULLY: with no token (or on any per-case error) it leaves the seed
 untouched and prints a note — it never crashes the daily run. Federal & bankruptcy only.
 Requires Python 3.8+ (stdlib only — urllib).
 """
-import os, sys, json, time
+import os, re, sys, json, time
 import datetime as dt
 import urllib.error, urllib.parse, urllib.request
 
@@ -151,7 +151,7 @@ def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next,
     """Assemble the normalized `docket` sub-object from merged entries."""
     try:
         meta = get_json(
-            f"{API}/dockets/{docket_id}/?fields=id,case_name,docket_number,court_id,date_filed,date_last_filing",
+            f"{API}/dockets/{docket_id}/?fields=id,case_name,docket_number,court_id,date_filed,date_last_filing,absolute_url",
             retries=1,
         )
     except Exception:
@@ -169,14 +169,23 @@ def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next,
         return (e.get("date_filed") or "", n if n is not None else -1)
     entries = sorted(merged.values(), key=sort_key, reverse=True)
 
+    # CourtListener web docket pages 404 without the case-name slug — a bare
+    # /docket/<id>/ URL breaks every entry link built from it. Prefer the
+    # API's canonical absolute_url (always sluged); else keep an already-
+    # sluged stored/config URL; the bare form is a last resort for runs
+    # where the metadata fetch was throttled.
+    cl_url = (docket_url or "").split("?")[0]
+    if not ("courtlistener.com" in cl_url):
+        cl_url = ""  # a claims-agent URL in the config must not leak in here
+    if meta.get("absolute_url"):
+        cl_url = "https://www.courtlistener.com" + meta["absolute_url"]
+    elif not re.search(r"/docket/\d+/[^/?#]+", cl_url):
+        cl_url = cl_url or f"https://www.courtlistener.com/docket/{docket_id}/"
+
     block = {
         "source": "courtlistener",
         "awaiting_sync": False,
-        # Entry links need the CourtListener docket URL — a claims-agent URL
-        # in the config must not leak in here (it lives in claims_administrator).
-        "docket_url": ((docket_url or "").split("?")[0]
-                       if docket_url and "courtlistener.com" in docket_url
-                       else f"https://www.courtlistener.com/docket/{docket_id}/"),
+        "docket_url": cl_url,
         "case_name_api": meta.get("case_name") or "",
         "date_last_filing": meta.get("date_last_filing") or "",
         "fetched_at": now.isoformat(),
@@ -191,7 +200,7 @@ def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next,
     return block
 
 
-def refresh_case(case, history_pages=0):
+def refresh_case(case, history_pages=0, force=False):
     cfg = case["config"]
     slug = case["slug"]
     ds = cfg["docket_source"]
@@ -208,7 +217,6 @@ def refresh_case(case, history_pages=0):
     existing = prior.get("entries") or []
     merged = {_entry_key(e): e for e in existing}
 
-    force = os.environ.get("DOCKET_BACKFILL") == "1"
     backfilled = bool(prior.get("backfilled")) and not force
     cursor = None if force else prior.get("backfill_next")
 
@@ -247,7 +255,10 @@ def refresh_case(case, history_pages=0):
                 merged[key] = ne
 
     try:
-        block = build_docket_block(ds["docket_id"], ds.get("url"), merged,
+        # Prefer the previously healed (sluged) URL over the config's, so a
+        # throttled metadata fetch never regresses links to the bare form.
+        block = build_docket_block(ds["docket_id"],
+                                   prior.get("docket_url") or ds.get("url"), merged,
                                    backfilled, None if backfilled else cursor, now)
     except Exception as ex:
         print(f"  ! {slug}: metadata fetch failed ({ex}); seed kept", file=sys.stderr)
@@ -287,14 +298,18 @@ def main():
         print("COURTLISTENER_TOKEN not set — running in seed-only mode "
               "(no live docket pulls; seeded JSON is left as-is).")
     history_pages = int(os.environ.get("DOCKET_HISTORY_PAGES", "4") or 0)
-    if os.environ.get("DOCKET_BACKFILL") == "1" and cases:
-        # Full-history backfills burn CourtListener's sustained-rate budget on
-        # the first big dockets and starve the tail (same manifest order every
-        # run → the same cases starve every run). Rotate the start case by day
-        # so successive nightly backfills give every case a fresh-quota turn.
+    backfill_all = os.environ.get("DOCKET_BACKFILL") == "1"
+    # The token's budget is 600 requests per rolling 24h (CL "600/day" 429s,
+    # 2026-08-04); a full 13-case history re-pull alone nearly drains it and
+    # starves the live endpoint + hourly syncs for the rest of the day. So a
+    # backfill run deep-syncs only the first few cases — rotated daily so
+    # every case gets a turn across nights — and freshness-refreshes the rest.
+    backfill_cap = int(os.environ.get("DOCKET_BACKFILL_CASES", "4") or 0)
+    if backfill_all and cases:
         shift = dt.date.today().toordinal() % len(cases)
         cases = cases[shift:] + cases[:shift]
-        print(f"  backfill order rotated: starting at {cases[0]['slug']}")
+        deep = ", ".join(c["slug"] for c in cases[:backfill_cap])
+        print(f"  backfill rotation: deep-syncing {deep}; freshness pass for the rest")
     print(f"=== Refreshing {len(cases)} tracked case(s) "
           f"(history trickle: {history_pages} page(s)/case/run) ===")
     throttled_streak = 0
@@ -304,7 +319,8 @@ def main():
         ds = c["config"].get("docket_source") or {}
         is_live = (ds.get("type") == "courtlistener" and not ds.get("awaiting_sync")
                    and ds.get("docket_id") and TOKEN)
-        ok = refresh_case(c, history_pages=history_pages)
+        ok = refresh_case(c, history_pages=history_pages,
+                          force=backfill_all and i < backfill_cap)
         if is_live:
             throttled_streak = 0 if ok else throttled_streak + 1
             if throttled_streak >= 3:
