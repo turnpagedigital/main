@@ -14,44 +14,84 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-03T22:28:59.418001+00:00",
-    "as_of": "Aug 3, 2026",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-04T10:01:55.510365+00:00",
+    "as_of": "Aug 4, 2026",
     "backfilled": true,
-    "new_in_72h": 12,
+    "new_in_72h": 15,
     "recent": [
       {
-        "entry_number": 114,
-        "date_filed": "2026-08-03",
-        "time_filed": "15:09:22",
-        "date_display": "Aug 3, 2026",
-        "description": "Appear pro hac vice",
+        "entry_number": 118,
+        "date_filed": "2026-08-04",
+        "time_filed": "00:09:10",
+        "date_display": "Aug 4, 2026",
+        "description": "Disclosure Statement",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 113,
+        "entry_number": 117,
         "date_filed": "2026-08-03",
-        "time_filed": "15:05:41",
+        "time_filed": "23:28:58",
         "date_display": "Aug 3, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Chapter 11 Plan",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 112,
+        "entry_number": 116,
         "date_filed": "2026-08-03",
-        "time_filed": "15:00:22",
+        "time_filed": "17:24:18",
         "date_display": "Aug 3, 2026",
-        "description": "Notice of Appearance and Request for Notice",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 118,
+        "date_filed": "2026-08-04",
+        "time_filed": "00:09:10",
+        "date_display": "Aug 4, 2026",
+        "description": "Disclosure Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 117,
+        "date_filed": "2026-08-03",
+        "time_filed": "23:28:58",
+        "date_display": "Aug 3, 2026",
+        "description": "Chapter 11 Plan",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 116,
+        "date_filed": "2026-08-03",
+        "time_filed": "17:24:18",
+        "date_display": "Aug 3, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 115,
+        "date_filed": "2026-08-03",
+        "time_filed": "17:16:58",
+        "date_display": "Aug 3, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 114,
         "date_filed": "2026-08-03",
@@ -168,7 +208,7 @@
         "time_filed": "23:45:43",
         "date_display": "Aug 1, 2026",
         "description": "BNC Certificate of Mailing",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
