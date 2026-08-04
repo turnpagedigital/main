@@ -15,8 +15,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/",
     "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-03T22:29:04.919006+00:00",
-    "as_of": "Aug 3, 2026",
+    "fetched_at": "2026-08-04T16:22:13.838738+00:00",
+    "as_of": "Aug 4, 2026",
     "backfilled": true,
     "new_in_72h": 14,
     "recent": [
@@ -25,10 +25,11 @@
         "date_filed": "2026-08-03",
         "time_filed": "13:42:15",
         "date_display": "Aug 3, 2026",
-        "description": "Statement",
+        "description": "Notice Of Filing Of Sleep Number Executive Deferral Plan",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 507,
