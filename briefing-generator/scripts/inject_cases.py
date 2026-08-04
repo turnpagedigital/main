@@ -745,6 +745,7 @@ def render_unified_docket(cases):
             "category": _case_category(c["config"].get("topics") or []),
             "topics": c["config"].get("topics") or [],
             "court": (c["config"].get("case") or {}).get("court") or "",
+            "sync": c["config"].get("sync", "active"),
         })
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -1000,6 +1001,7 @@ def render_news_page(cases):
             "category": _case_category(c["config"].get("topics") or []),
             "topics": c["config"].get("topics") or [],
             "court": (c["config"].get("case") or {}).get("court") or "",
+            "sync": c["config"].get("sync", "active"),
         })
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)

@@ -289,8 +289,19 @@ def refresh_case(case, history_pages=0, force=False):
 
 
 def main():
-    only = _arg("slug")
+    # DOCKET_ONLY_CASE (admin "Sync now" workflow dispatch) or --slug: sync
+    # exactly that case regardless of its sync mode — an explicit request.
+    only = _arg("slug") or os.environ.get("DOCKET_ONLY_CASE", "").strip()
     cases = [c for c in load_cases() if (not only or c["slug"] == only)]
+    if not only:
+        # Scheduled runs touch only sync=active cases. "manual" waits for the
+        # button; "archived" keeps its saved docket and is never searched.
+        skipped = [c["slug"] for c in cases if c["config"].get("sync", "active") != "active"]
+        cases = [c for c in cases if c["config"].get("sync", "active") == "active"]
+        if skipped:
+            print(f"  · skipping {len(skipped)} non-active case(s): {', '.join(skipped)}")
+    else:
+        print(f"  single-case sync requested: {only}")
     if not cases:
         print("No cases found in cases/*.md" + (f" matching --slug {only}" if only else ""))
         return

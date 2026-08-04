@@ -24,6 +24,10 @@ on:
         description: "Re-pull FULL docket history for every case (not just new entries)"
         required: false
         default: "false"
+      case:
+        description: "Sync ONLY this case slug (admin Sync-now button; ignores sync mode)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -57,6 +61,7 @@ jobs:
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DOCKET_BACKFILL: ${{ (github.event.inputs.backfill == 'true' || github.event.schedule == '35 7 * * *') && '1' || '' }}
+          DOCKET_ONLY_CASE: ${{ github.event.inputs.case || '' }}
           # History trickle: each run walks this many older pages per case and
           # stores a resume cursor — full history accumulates across hourly
           # runs without ever tripping CourtListener's sustained-throttle wall.

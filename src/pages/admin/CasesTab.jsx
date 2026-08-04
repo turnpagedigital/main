@@ -15,17 +15,18 @@ const FALLBACK_THEMES = [
   { slug: "bankruptcy-creditor-rights", display_name: "Bankruptcy Creditor Rights", emoji: "📜" },
 ];
 
-const CASE_STATES = [
-  { value: "active", label: "Active" },
-  { value: "draft", label: "Draft" },
-  { value: "archived", label: "Archived" },
+const SYNC_MODES = [
+  { value: "active", label: "Active Sync", hint: "Hourly + nightly syncing, live docket polling, daily news search." },
+  { value: "manual", label: "Manual Sync", hint: "Updates only when you press Sync now. No scheduled searching." },
+  { value: "archived", label: "Archived", hint: "Docket entries are kept but the case is never searched again." },
 ];
 
 const DEFAULT_CASE = {
   slug: "",
   display_name: "",
   type: "case",
-  status: "draft",
+  status: "active",
+  sync: "active",
   topics: [],
   case: { parties: "", court: "", case_number: "", judge: "" },
   docket_source: { type: "courtlistener", docket_id: null, url: "", awaiting_sync: false },
@@ -51,7 +52,8 @@ function deriveClaimsName(url) {
   } catch { return ""; }
 }
 
-const STATE_COLORS = { active: "#1a7f37", draft: "#9a6700", archived: INK_60 };
+const SYNC_COLORS = { active: "#1a7f37", manual: "#9a6700", archived: INK_60 };
+const SYNC_LABELS = { active: "Active", manual: "Manual", archived: "Archived" };
 
 export default function CasesTab({ onDirtyChange }) {
   const [phase, setPhase] = useState("list");
@@ -63,6 +65,7 @@ export default function CasesTab({ onDirtyChange }) {
   const [error, setError] = useState("");
   const [toast, setToast] = useState("");
   const [deleteSlug, setDeleteSlug] = useState(null);
+  const [busySlug, setBusySlug] = useState(null);
   const [lookupBusy, setLookupBusy] = useState(false);
   const [lookupMsg, setLookupMsg] = useState("");
 
@@ -218,10 +221,49 @@ export default function CasesTab({ onDirtyChange }) {
       });
       const data = await res.json();
       if (!data.ok) throw new Error(data.error || "Failed to delete");
-      setToast("Case deleted"); setDeleteSlug(null);
+      setToast("Case deleted (config, data, page, and uploads removed)"); setDeleteSlug(null);
       await loadCases();
     } catch (e) { setError(e.message); }
     finally { setLoading(false); }
+  }
+
+  async function syncNow(slug) {
+    setBusySlug(slug); setError(""); setToast("");
+    try {
+      const res = await fetch("/api/admin/sync-case", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ slug }),
+      });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || "Sync dispatch failed");
+      setToast(data.note || "Sync started");
+    } catch (e) { setError(e.message); }
+    finally { setBusySlug(null); }
+  }
+
+  async function exportCase(slug) {
+    setBusySlug(slug); setError("");
+    try {
+      const res = await fetch(`/api/admin/case-export?slug=${encodeURIComponent(slug)}`, { credentials: "include" });
+      if (!res.ok) {
+        let msg = `Export failed (${res.status})`;
+        try { msg = (await res.json()).error || msg; } catch { /* keep msg */ }
+        throw new Error(msg);
+      }
+      const blob = await res.blob();
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      const cd = res.headers.get("Content-Disposition") || "";
+      const m = /filename="([^"]+)"/.exec(cd);
+      a.download = m ? m[1] : `case-${slug}.zip`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(a.href);
+    } catch (e) { setError(e.message); }
+    finally { setBusySlug(null); }
   }
 
   const wrap = { maxWidth: 1080, margin: "0 auto", padding: "1.4rem clamp(1rem,3vw,2rem) 3rem" };
@@ -254,15 +296,23 @@ export default function CasesTab({ onDirtyChange }) {
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.88rem" }}>
                 <thead>
                   <tr style={{ borderBottom: `1px solid ${LINE}`, textAlign: "left" }}>
-                    <Th>Case</Th><Th>Status</Th><Th>Themes</Th><Th right>Actions</Th>
+                    <Th>Case</Th><Th>Sync</Th><Th>Themes</Th><Th right>Actions</Th>
                   </tr>
                 </thead>
                 <tbody>
-                  {cases.map(c => (
-                    <tr key={c.slug} style={{ borderBottom: `1px solid ${LINE}` }}>
+                  {cases.map(c => {
+                    const sync = c.sync || "active";
+                    const busy = busySlug === c.slug;
+                    return (
+                    <tr key={c.slug} style={{ borderBottom: `1px solid ${LINE}`, opacity: sync === "archived" ? 0.6 : 1 }}>
                       <Td>{c.display_name}
                         <div style={{ fontFamily: "monospace", fontSize: "0.72rem", color: INK_60 }}>{c.slug}</div></Td>
-                      <Td><span style={{ color: STATE_COLORS[c.status] || INK_60, fontWeight: 700, textTransform: "capitalize" }}>{c.status || "—"}</span></Td>
+                      <Td>
+                        <span style={{ color: SYNC_COLORS[sync] || INK_60, fontWeight: 700 }}>{SYNC_LABELS[sync] || sync}</span>
+                        {c.status && c.status !== "active" && (
+                          <div style={{ fontSize: "0.7rem", color: INK_60, marginTop: 2 }}>{c.status}</div>
+                        )}
+                      </Td>
                       <Td>{(c.topics || []).map(slug => {
                         const t = themes.find(x => x.slug === slug);
                         return <span key={slug} title={t ? t.display_name : slug} style={{ marginRight: 4 }}>{t ? t.emoji : "🏷️"}</span>;
@@ -278,11 +328,22 @@ export default function CasesTab({ onDirtyChange }) {
                             Docket ↗
                           </a>
                         )}
+                        {sync !== "archived" && (
+                          <button style={{ ...btnStyle, marginRight: 6 }} onClick={() => syncNow(c.slug)} disabled={loading || busy}
+                            title="Run a one-off docket sync for this case now">
+                            {busy ? "…" : "Sync now"}
+                          </button>
+                        )}
+                        <button style={{ ...btnStyle, marginRight: 6 }} onClick={() => exportCase(c.slug)} disabled={loading || busy}
+                          title="Download a ZIP with notes, data, and attached documents">
+                          {busy ? "…" : "Export"}
+                        </button>
                         <button style={{ ...btnStyle, marginRight: 6 }} onClick={() => openEdit(c)} disabled={loading}>Edit</button>
                         <button style={{ ...btnStyle, color: "#c0392b", borderColor: "#e3b7b1" }} onClick={() => setDeleteSlug(c.slug)} disabled={loading}>Delete</button>
                       </Td>
                     </tr>
-                  ))}
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -291,7 +352,11 @@ export default function CasesTab({ onDirtyChange }) {
 
         {deleteSlug && (
           <Modal>
-            <p style={{ marginBottom: "1.1rem" }}>Delete case “<strong>{deleteSlug}</strong>”? This removes its files and can’t be undone.</p>
+            <p style={{ marginBottom: "1.1rem" }}>
+              Delete case “<strong>{deleteSlug}</strong>”? This removes its configuration, docket data,
+              case page, and any uploaded documents — and can’t be undone.
+              Consider <strong>Export</strong> first if you want a copy.
+            </p>
             <div style={{ display: "flex", gap: 10 }}>
               <button style={{ ...btnPrimaryStyle, background: "#c0392b", color: "#fff" }} onClick={() => doDelete(deleteSlug)} disabled={loading}>Delete</button>
               <button style={btnStyle} onClick={() => setDeleteSlug(null)} disabled={loading}>Cancel</button>
@@ -326,11 +391,16 @@ export default function CasesTab({ onDirtyChange }) {
               <input style={{ ...inputStyle, opacity: isNew ? 1 : 0.6 }} value={form.slug} disabled={!isNew} onChange={e => set("slug", e.target.value)} placeholder="bartz-anthropic" />
             </div>
             <div>
-              <label style={labelStyle}>Status</label>
-              <select style={selectStyle} value={form.status} onChange={e => set("status", e.target.value)}>
-                {CASE_STATES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
-              </select>
+              <label style={labelStyle}>Display status (badge on the case page)</label>
+              <input style={inputStyle} value={form.status} onChange={e => set("status", e.target.value)} placeholder='e.g. "Settlement — final approval pending"' />
             </div>
+          </div>
+          <div style={{ marginTop: "0.9rem" }}>
+            <label style={labelStyle}>Sync mode</label>
+            <select style={{ ...selectStyle, maxWidth: 360 }} value={form.sync || "active"} onChange={e => set("sync", e.target.value)}>
+              {SYNC_MODES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+            </select>
+            <p style={hint}>{(SYNC_MODES.find(s => s.value === (form.sync || "active")) || SYNC_MODES[0]).hint}</p>
           </div>
         </div>
 

@@ -293,6 +293,10 @@ def main():
         return
     only = _arg("slug")
     cases = [c for c in load_cases() if (not only or c["slug"] == only)]
+    if not only:
+        # Only sync=active cases are news-searched — manual and archived
+        # cases keep their saved coverage but cost no scan budget.
+        cases = [c for c in cases if c["config"].get("sync", "active") == "active"]
     if not cases:
         print("No cases found in cases/*.md" + (f" matching --slug {only}" if only else ""))
         return
