@@ -7,15 +7,293 @@
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
     "docket_id": "73709081",
-    "status": "active"
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": null,
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "docket_url": "https://www.courtlistener.com/docket/73709081/",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-04T00:18:13.200464+00:00",
+    "as_of": "Aug 4, 2026",
+    "backfilled": false,
+    "new_in_72h": 24,
+    "recent": [
+      {
+        "entry_number": 19,
+        "date_filed": "2026-08-03",
+        "time_filed": "19:11:48",
+        "date_display": "Aug 3, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2026-08-03",
+        "time_filed": "15:35:06",
+        "date_display": "Aug 3, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2026-08-03",
+        "time_filed": "15:34:28",
+        "date_display": "Aug 3, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 19,
+        "date_filed": "2026-08-03",
+        "time_filed": "19:11:48",
+        "date_display": "Aug 3, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2026-08-03",
+        "time_filed": "15:35:06",
+        "date_display": "Aug 3, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2026-08-03",
+        "time_filed": "15:34:28",
+        "date_display": "Aug 3, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2026-08-03",
+        "time_filed": "15:33:55",
+        "date_display": "Aug 3, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2026-08-03",
+        "time_filed": "15:33:18",
+        "date_display": "Aug 3, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2026-08-03",
+        "time_filed": "14:27:07",
+        "date_display": "Aug 3, 2026",
+        "description": "Motion to Appear pro hac vice of Evan J. Zucker. Receipt Number ADEDC-5032, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2026-08-03",
+        "time_filed": "14:25:32",
+        "date_display": "Aug 3, 2026",
+        "description": "Motion to Appear pro hac vice of Michael Klein. Receipt Number ADEDC-5032, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2026-08-03",
+        "time_filed": "14:22:46",
+        "date_display": "Aug 3, 2026",
+        "description": "Motion to Appear pro hac vice of Ben Thomson. Receipt Number ADEDC-5032, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2026-08-03",
+        "time_filed": "14:21:08",
+        "date_display": "Aug 3, 2026",
+        "description": "Motion to Appear pro hac vice of Olya Antle. Receipt Number ADEDC-5032, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2026-08-03",
+        "time_filed": "13:06:57",
+        "date_display": "Aug 3, 2026",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by Oriel Bachar. Hearing scheduled for 8/4/2026 at 11:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. (Malow, Jennifer) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.10.0.pdf"
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2026-08-03",
+        "time_filed": "12:38:18",
+        "date_display": "Aug 3, 2026",
+        "description": "Notice of Hearing to Consider First Day Papers on August 4, 2026 at 11:30 a.m. (Eastern Time) (related document(s)3, 4, 5, 6, 7, 8) Filed by Oriel Bachar. Hearing scheduled for 8/4/2026 at 11:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. (Malow, Jennifer) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2026-08-03",
+        "time_filed": "00:14:01",
+        "date_display": "Aug 3, 2026",
+        "description": "Motion to Approve / Motion for Order (A) Scheduling Hearing on Recognition of Chapter 15 Petition and (B) Specifying Form and Manner of Service of Notice Filed by Oriel Bachar. (Attachments: # 1 Exhibit A - Proposed Order) (Tarr, Stanley) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.8.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-03",
+        "time_filed": "03:13:01",
+        "date_display": "Aug 3, 2026",
+        "description": "Add Attorney",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-03",
+        "time_filed": "",
+        "date_display": "Aug 3, 2026",
+        "description": "Filed by U.S. Trustee. (McMahon, Joseph)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-03",
+        "time_filed": "",
+        "date_display": "Aug 3, 2026",
+        "description": "Judge Mary F. Walrath added to case (SJS)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-03",
+        "time_filed": "09:41:40",
+        "date_display": "Aug 3, 2026",
+        "description": "Case Assigned",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2026-08-02",
+        "time_filed": "23:56:13",
+        "date_display": "Aug 2, 2026",
+        "description": "Motion for Provisional Relief under 11 U.S.C. Section 1519 Filed by Oriel Bachar. (Attachments: # 1 Exhibit A) (Tarr, Stanley) (Entered: 08/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2026-08-02",
+        "time_filed": "23:54:06",
+        "date_display": "Aug 2, 2026",
+        "description": "Declaration of Pinni Yaniv in Support of the (I) Verified Petition Under Chapter 15 for Recognition of the Israeli Proceeding as a Foreign Main Proceeding or, Alternatively, a Foreign Nonmain Proceeding, and (II) Motion for Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D # 5 Exhibit E) (Tarr, Stanley) (Entered: 08/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.6.0.pdf"
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2026-08-02",
+        "time_filed": "23:49:11",
+        "date_display": "Aug 2, 2026",
+        "description": "Declaration of Oriel Bachar in Support of the (I) Verified Petition Under Chapter 15 for Recognition of the Israeli Proceeding as a Foreign Main Proceeding or, Alternatively, a Foreign Nonmain Proceeding, and (II) Motion for Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Tarr, Stanley) (Entered: 08/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.5.0.pdf"
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2026-08-02",
+        "time_filed": "23:45:19",
+        "date_display": "Aug 2, 2026",
+        "description": "Motion to Allow / Verified Petition Under Chapter 15 for Recognition of the Israeli Proceeding as a Foreign Main Proceeding or Alternatively, a Foreign Nonmain Proceeding Filed by Oriel Bachar. (Attachments: # 1 Affidavit Verification of Petition # 2 Exhibit A - Proposed Order) (Tarr, Stanley) (Entered: 08/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.4.0.pdf"
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2026-08-02",
+        "time_filed": "23:38:31",
+        "date_display": "Aug 2, 2026",
+        "description": "Motion for Joint Administration Filed By Oriel Bachar (Attachments: # 1 Exhibit A - Proposed Order)(Tarr, Stanley) (Entered: 08/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2026-08-02",
+        "time_filed": "",
+        "date_display": "Aug 2, 2026",
+        "description": "Receipt of filing fee for Petition Foreign Proceeding (Chapter 15)( 26-11217) [misc,volpfp15] (1738.00). Receipt Number A12767325, amount $1738.00. (U.S. Treasury) (Entered: 08/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2026-08-02",
+        "time_filed": "22:11:30",
+        "date_display": "Aug 2, 2026",
+        "description": "Chapter 15 Petition for Recognition of Foreign Proceeding. Fee Amount $1738 Filed by Oriel Bachar, Papaya Gaming Ltd.. (Tarr, Stanley) (Entered: 08/02/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-02",
+        "time_filed": "22:12:57",
+        "date_display": "Aug 2, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73709081&order_by=-date_filed&fields=entry_number,date_filed,time_filed,description,recap_documents"
   },
   "claims_administrator": null,
   "coverage": []

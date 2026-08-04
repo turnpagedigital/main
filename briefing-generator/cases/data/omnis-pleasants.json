@@ -7,15 +7,742 @@
     "case_number": "26-11169",
     "judge": "Karen Owens",
     "docket_id": "73673073",
-    "status": "active"
+    "status": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": null,
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "docket_url": "https://www.courtlistener.com/docket/73673073/",
+    "date_last_filing": "2026-08-03",
+    "fetched_at": "2026-08-04T00:17:34.019288+00:00",
+    "as_of": "Aug 4, 2026",
+    "backfilled": true,
+    "new_in_72h": 2,
+    "recent": [
+      {
+        "entry_number": 64,
+        "date_filed": "2026-08-03",
+        "time_filed": "16:25:01",
+        "date_display": "Aug 3, 2026",
+        "description": "Affidavit/Declaration of Service re: First-Day Pleadings. Filed by Stretto, Inc.. (related document(s)2, 3, 4, 5, 6, 7, 8, 9, 10, 17, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57) (Betance, Sheryl) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 63,
+        "date_filed": "2026-08-03",
+        "time_filed": "12:29:57",
+        "date_display": "Aug 3, 2026",
+        "description": "Motion to File Under Seal - Debtor's Motion for Entry of an Order (I) Authorizing the Debtor to Redact Certain Personally Identifiable Information from the Creditor Matrix, Schedules and Statements, and Other Similar Pleadings, and (II) Granting Related Relief Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/19/2026. (Attachments: # 1 Notice # 2 Exhibit A) (Diver, James) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 62,
+        "date_filed": "2026-07-31",
+        "time_filed": "14:20:43",
+        "date_display": "Jul 31, 2026",
+        "description": "Order Granting Motion for Application To Appear Pursuant to Local Rule 9010-1(e)(ii) of Jarret P. Hitchings, Esquire (Related Doc # 61) Order Signed on 7/31/2026. (CEB) (Entered: 07/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 64,
+        "date_filed": "2026-08-03",
+        "time_filed": "16:25:01",
+        "date_display": "Aug 3, 2026",
+        "description": "Affidavit/Declaration of Service re: First-Day Pleadings. Filed by Stretto, Inc.. (related document(s)2, 3, 4, 5, 6, 7, 8, 9, 10, 17, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57) (Betance, Sheryl) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 63,
+        "date_filed": "2026-08-03",
+        "time_filed": "12:29:57",
+        "date_display": "Aug 3, 2026",
+        "description": "Motion to File Under Seal - Debtor's Motion for Entry of an Order (I) Authorizing the Debtor to Redact Certain Personally Identifiable Information from the Creditor Matrix, Schedules and Statements, and Other Similar Pleadings, and (II) Granting Related Relief Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/19/2026. (Attachments: # 1 Notice # 2 Exhibit A) (Diver, James) (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 62,
+        "date_filed": "2026-07-31",
+        "time_filed": "14:20:43",
+        "date_display": "Jul 31, 2026",
+        "description": "Order Granting Motion for Application To Appear Pursuant to Local Rule 9010-1(e)(ii) of Jarret P. Hitchings, Esquire (Related Doc # 61) Order Signed on 7/31/2026. (CEB) (Entered: 07/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 61,
+        "date_filed": "2026-07-31",
+        "time_filed": "11:57:17",
+        "date_display": "Jul 31, 2026",
+        "description": "Application To Appear Pursuant to Local Rule 9010-1(e)(ii) Filed by Industrial Accessories Company. (Hitchings, Jarret) (Entered: 07/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 60,
+        "date_filed": "2026-07-31",
+        "time_filed": "11:55:02",
+        "date_display": "Jul 31, 2026",
+        "description": "Notice of Appearance. Filed by Industrial Accessories Company. (Hitchings, Jarret) (Entered: 07/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 59,
+        "date_filed": "2026-07-31",
+        "time_filed": "07:59:59",
+        "date_display": "Jul 31, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Jeffrey K. Garfinkle, Esquire (Related Doc # 58) Order Signed on 7/31/2026. (CEB) (Entered: 07/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 58,
+        "date_filed": "2026-07-30",
+        "time_filed": "15:59:36",
+        "date_display": "Jul 30, 2026",
+        "description": "Motion to Appear pro hac vice (Jeffrey K. Garfinkle, Esquire). Receipt Number 5029851, Filed by Kuro Infrastructure Delaware, Inc.. (Powell, Jason) (Entered: 07/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 57,
+        "date_filed": "2026-07-30",
+        "time_filed": "11:22:59",
+        "date_display": "Jul 30, 2026",
+        "description": "Notice of Hearing - Omnibus Notice of First Day Pleadings and Final Hearing Thereon (related document(s)3, 4, 5, 6, 7, 8, 9, 17, 48, 49, 50, 51, 52, 53, 54, 55) Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/19/2026. (Faris, S. Alexander) (Entered: 07/30/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.57.0.pdf"
+      },
+      {
+        "entry_number": 56,
+        "date_filed": "2026-07-29",
+        "time_filed": "20:13:05",
+        "date_display": "Jul 29, 2026",
+        "description": "Notice of Appearance. Filed by Kuro Infrastructure Delaware, Inc.. (Garfinkle, Jeffrey) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 55,
+        "date_filed": "2026-07-29",
+        "time_filed": "17:29:45",
+        "date_display": "Jul 29, 2026",
+        "description": "Order (Interim) (I) Authorizing the Debtor to Continue Prepetition Hedging Arrangement and Honor Any Obligations Related Thereto, (II) Authorizing the Debtor to Enter Into, and Perform Under, Postpetition Hedging Arrangements, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief (related document(s)9) Order Signed on 7/29/2026. (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 54,
+        "date_filed": "2026-07-29",
+        "time_filed": "17:20:09",
+        "date_display": "Jul 29, 2026",
+        "description": "Order (Interim) (I) Authorizing the Debtor to (A) Continue to Operate Its Cash Management System and Honor Prepetition Obligations Related Thereto, (B) Maintain Existing Bank Accounts, and (C) Maintain Existing Business Forms; (II) Suspending the Time to Comply With 11 U.S.C § 345(b); and (III) Granting Related Relief (related document(s)8, 41) Order Signed on 7/29/2026. (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 53,
+        "date_filed": "2026-07-29",
+        "time_filed": "17:13:50",
+        "date_display": "Jul 29, 2026",
+        "description": "Order (Interim) (I) Authorizing (A) Payment of Prepetition Wages, Salaries and Related Workforce Obligations, and (B) Continuation of Benefits Programs; and (II) Granting Related Relief (related document(s)7) Order Signed on 7/29/2026. (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 52,
+        "date_filed": "2026-07-29",
+        "time_filed": "17:06:58",
+        "date_display": "Jul 29, 2026",
+        "description": "Order (Interim) (I) Authorizing Debtor to Pay Prepetition Claims of Critical Vendors, Lienholders, and 503(b)(9) Claimants; (II) Confirming Administrative Expense Priority of Outstanding Orders; (III) Directing Financial Institutions to Honor and Process Payments in Connection Therewith; and (IV) Granting Related Relief (related document(s)6) Order Signed on 7/29/2026. (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 51,
+        "date_filed": "2026-07-29",
+        "time_filed": "17:01:04",
+        "date_display": "Jul 29, 2026",
+        "description": "Order (Interim) (I) Authorizing Debtor to (A) Maintain Prepetition Insurance Policies and Surety Bonds, and Pay Related Prepetition Obligations Arising Thereunder, and (B) Renew, Replace, Supplement, or Otherwise Modify Such Insurance Policies and Surety Bonds; (II) Modifying the Automatic Stay With Respect to the Workers' Compensation Program; and (III) Granting Related Relief (related document(s)5) Order Signed on 7/29/2026. (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 49,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:29:39",
+        "date_display": "Jul 29, 2026",
+        "description": "Order (Interim) (I) Authorizing the Payment of Certain Prepetition Taxes and Fees and (II) Granting Related Relief (related document(s)4) Order Signed on 7/29/2026. (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 48,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:24:51",
+        "date_display": "Jul 29, 2026",
+        "description": "Order (Interim) (I) Approving Debtor's Proposed Adequate Assurance of Payment for Future Utility Services; (II) Establishing Procedures for Resolving Objections by Utility Providers; (III) Prohibiting Utility Providers From Altering, Refusing, or Discontinuing Services; and (IV) Granting Related Relief (related document(s)3) Order Signed on 7/29/2026. (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 47,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:18:09",
+        "date_display": "Jul 29, 2026",
+        "description": "Order Authorizing the Debtor to Retain Stretto, Inc. as Claims and Noticing Agent, Effective as of the Petition Date (Related Doc 2, 40) Order Signed on 7/29/2026. (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 46,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:12:31",
+        "date_display": "Jul 29, 2026",
+        "description": "Certification of Counsel Regarding Revised Interim Order (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, (IV) Scheduling a Final Hearing, and (V) Granting Related Relief (related document(s)17) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 45,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:06:44",
+        "date_display": "Jul 29, 2026",
+        "description": "Hybrid Hearing Held/Court Sign-In Sheet (related document(s)26) (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.45.0.pdf"
+      },
+      {
+        "entry_number": 44,
+        "date_filed": "2026-07-29",
+        "time_filed": "15:35:05",
+        "date_display": "Jul 29, 2026",
+        "description": "Court Date & Time [07/29/2026 01:30:10 PM]. File Size [ 43165 KB ]. Run Time [ 01:58:06 ]. (admin). (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 41,
+        "date_filed": "2026-07-29",
+        "time_filed": "10:27:49",
+        "date_display": "Jul 29, 2026",
+        "description": "Exhibit(s) - Notice of Filing of Revised Interim Order (I) Authorizing the Debtor to (A) Continue to Operate Its Cash Management System and Honor Prepetition Obligations Related Thereto, (B) Maintain Existing Bank Accounts, and (C) Maintain Existing Business Forms; (II) Suspending the Time to Comply With 11 U.S.C § 345(b); and (III) Granting Related Relief (related document(s)8) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 38,
+        "date_filed": "2026-07-29",
+        "time_filed": "",
+        "date_display": "Jul 29, 2026",
+        "description": "[SEALED] List of Creditors - Certification of Debtor's Creditor Matrix Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-29",
+        "time_filed": "",
+        "date_display": "Jul 29, 2026",
+        "description": "Attorney Kristine Manoukian and R. Craig Martin for RG Energy LLC and TRAG LLC, Erik F. Stier and R. Craig Martin for RG Energy LLC and TRAG LLC added to case Filed by RG Energy LLC, TRAG LLC. (Martin, R.)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-29",
+        "time_filed": "09:53:09",
+        "date_display": "Jul 29, 2026",
+        "description": "List of Creditors",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36,
+        "date_filed": "2026-07-28",
+        "time_filed": "20:35:57",
+        "date_display": "Jul 28, 2026",
+        "description": "Affidavit/Declaration of Service re: Second Amended Notice of (I) Filing of Bankruptcy Petition and Related Documents and (II) Agenda for Hearing on First Day Pleadings Scheduled for July 29, 2026 at 1:00 P.M. (ET) Before the Honorable Karen B. Owens, Chief United States Bankruptcy Judge for the District of Delaware (Docket No. 26). Filed by Stretto, Inc.. (related document(s)26) (Betance, Sheryl) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35,
+        "date_filed": "2026-07-28",
+        "time_filed": "18:47:07",
+        "date_display": "Jul 28, 2026",
+        "description": "Affidavit/Declaration of Service re: Notice of (I) Filing of Bankruptcy Petition and Related Documents and (II) Agenda for Hearing on First Day Pleadings Scheduled for July 29, 2026 at 1:00 P.M. (ET) Before the Honorable Karen B. Owens, Chief United States Bankruptcy Judge for the District of Delaware (Docket No. 14), Amended Notice of (I) Filing of Bankruptcy Petition and Related Documents and (II) Agenda for Hearing on First Day Pleadings Scheduled for July 29, 2026 at 1:00 P.M. (ET) Before the Honorable Karen B. Owens, Chief United States Bankruptcy Judge for the District of Delaware (Docket No. 15). Filed by Stretto, Inc.. (related document(s)14, 15) (Betance, Sheryl) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 34,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:38:00",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Michael C. Blackmon, Esquire (Related Doc # 25) Order Signed on 7/28/2026. (CEB) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 33,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:37:22",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Melissa Mertz, Esquire (Related Doc # 24) Order Signed on 7/28/2026. (CEB) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 32,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:36:46",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Katharine E. Scott, Esquire (Related Doc # 23) Order Signed on 7/28/2026. (CEB) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 31,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:36:09",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Jared C. Borriello, Esquire (Related Doc # 22) Order Signed on 7/28/2026. (CEB) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 30,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:35:24",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Andrew Pollack, Esquire (Related Doc # 21) Order Signed on 7/28/2026. (CEB) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 29,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:34:41",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Brian F. Shaughnessy, Esquire (Related Doc # 20) Order Signed on 7/28/2026. (CEB) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 28,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:34:03",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Kyle J. Ortiz, Esquire (Related Doc # 19) Order Signed on 7/28/2026. (CEB) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 27,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:33:22",
+        "date_display": "Jul 28, 2026",
+        "description": "Order Granting Motion for Admission pro hac vice of Herbert Smith, Esquire (Related Doc # 18) Order Signed on 7/28/2026. (CEB) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 26,
+        "date_filed": "2026-07-28",
+        "time_filed": "14:30:42",
+        "date_display": "Jul 28, 2026",
+        "description": "Notice of Hearing - Second Amended Notice of (I) Filing of Bankruptcy Petition and Related Documents and (II) Agenda for Hearing on First Day Pleadings Scheduled for July 29, 2026 at 1:00 p.m. (ET) Before The Honorable Karen B. Owens, Chief United States Bankruptcy Judge for the District of Delaware (related document(s)14, 15) Filed by Omnis Pleasants, LLC. Hearing scheduled for 7/29/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Magaziner, Andrew) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 25,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:50:23",
+        "date_display": "Jul 28, 2026",
+        "description": "Motion to Appear pro hac vice of Michael C. Blackmon of Herbert Smith Freehills Kramer (US) LLP. Receipt Number 5027527, Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 24,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:48:51",
+        "date_display": "Jul 28, 2026",
+        "description": "Motion to Appear pro hac vice of Melissa Mertz of Herbert Smith Freehills Kramer (US) LLP. Receipt Number 5027527, Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 23,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:47:03",
+        "date_display": "Jul 28, 2026",
+        "description": "Motion to Appear pro hac vice of Katharine E. Scott of Herbet Smith Freehills Kramer (US) LLP. Receipt Number 5027513, Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 22,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:44:58",
+        "date_display": "Jul 28, 2026",
+        "description": "Motion to Appear pro hac vice of Jared C. Borriello of Herbert Smith Freehills Kramer (US) LLP. Receipt Number 5027513, Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:43:15",
+        "date_display": "Jul 28, 2026",
+        "description": "Motion to Appear pro hac vice of Andrew Pollack of Herbet Smith Freehills Kramer (US) LLP. Receipt Number 5027513, Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:41:29",
+        "date_display": "Jul 28, 2026",
+        "description": "Motion to Appear pro hac vice of Brian F. Shaughnessy of Herbert Smith Freehills Kramer (US) LLP. Receipt Number 5027513, Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:39:54",
+        "date_display": "Jul 28, 2026",
+        "description": "Motion to Appear pro hac vice of Kyle J. Ortiz of Herbert Smith Freehills Kramer (US) LLP. Receipt Number 5027527, Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:38:10",
+        "date_display": "Jul 28, 2026",
+        "description": "Motion to Appear pro hac vice of Alexander Woolverton of Herbert Smith Freehills Kramer (US) LLP. Receipt Number 5027513, Filed by Omnis Pleasants, LLC. (Faris, S. Alexander) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2026-07-28",
+        "time_filed": "13:15:42",
+        "date_display": "Jul 28, 2026",
+        "description": "Motion to Approve Use of Cash Collateral - Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, (IV) Scheduling a Final Hearing, and (V) Granting Related Relief Filed By Omnis Pleasants, LLC (Faris, S. Alexander) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2026-07-28",
+        "time_filed": "12:46:40",
+        "date_display": "Jul 28, 2026",
+        "description": "Notice of Appearance. Filed by Quantum Pleasants LLC, Omnis Fuel Technologies, LLC. (Ward, Christopher) (Entered: 07/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "time_filed": "12:48:15",
+        "date_display": "Jul 28, 2026",
+        "description": "Add Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "time_filed": "",
+        "date_display": "Jul 28, 2026",
+        "description": "Attorney Shanti M. Katona and Christopher A. Ward for Omnis Fuel Technologies, LLC and Quantum Pleasants LLC added to case Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC. (Ward, Christopher)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2026-07-27",
+        "time_filed": "17:37:17",
+        "date_display": "Jul 27, 2026",
+        "description": "Notice of Hearing - Amended Notice of (I) Filing of Bankruptcy Petition and Related Documents and (II) Agenda for Hearing on First Day Pleadings Scheduled for July 29, 2026 at 1:00 p.m. (ET) Before The Honorable Karen B. Owens, Chief United States Bankruptcy Judge for the District of Delaware (related document(s)14) Filed by Omnis Pleasants, LLC. Hearing scheduled for 7/29/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2026-07-27",
+        "time_filed": "15:19:49",
+        "date_display": "Jul 27, 2026",
+        "description": "Notice of Hearing - Notice of (I) Filing of Bankruptcy Petition and Related Documents and (II) Agenda for Hearing on First Day Pleadings Scheduled for July 29, 2026 at 1:00 p.m. (ET) Before The Honorable Karen B. Owens, Chief United States Bankruptcy Judge for the District of Delaware Filed by Omnis Pleasants, LLC. Hearing scheduled for 7/29/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.14.0.pdf"
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Judge Karen B Owens added to case. Involvement of Judge Laurie Selber Silverstein Terminated (SJS) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "The transcriber has requested a standing order for all hearings in this case. To obtain a copy of a transcript contact the transcriber Reliable Companies. Telephone number 302-654-8080.. (Reliable Companies) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Receipt of filing fee for Voluntary Petition (Chapter 11)( 26-11169) [misc,volp11a] (1738.00). Receipt Number A12757920, amount $1738.00. (U.S. Treasury) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2026-07-27",
+        "time_filed": "01:42:56",
+        "date_display": "Jul 27, 2026",
+        "description": "Affidavit/Declaration in Support of First Day Motion - Declaration of David Hindman, as Chief Executive Officer of Omnis Pleasants, LLC d/b/a Pleasants Power Station, in Support of Chapter 11 Petition and First Day Motions Filed By Omnis Pleasants, LLC (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.10.0.pdf"
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2026-07-27",
+        "time_filed": "01:41:12",
+        "date_display": "Jul 27, 2026",
+        "description": "Motion Regarding Chapter 11 First Day Motions - Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing the Debtor to Continue Prepetition Hedging Arrangement and Honor Any Obligations Related Thereto, (II) Authorizing the Debtor to Enter Into, and Perform Under, Postpetition Hedging Arrangements, (III) Modifying the Automatic Stay, and (IV) Granting Related Relief Filed By Omnis Pleasants, LLC (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2026-07-27",
+        "time_filed": "01:39:40",
+        "date_display": "Jul 27, 2026",
+        "description": "Motion Regarding Chapter 11 First Day Motions - Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing the Debtor to (A) Continue to Operate Its Cash Management System and Honor Prepetition Obligations Related Thereto, (B) Maintain Existing Bank Accounts, and (C) Maintain Existing Business Forms; (II) Suspending the Time to Comply With 11 U.S.C § 345(b); and (III) Granting Related Relief Filed By Omnis Pleasants, LLC (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2026-07-27",
+        "time_filed": "01:38:04",
+        "date_display": "Jul 27, 2026",
+        "description": "Motion to Pay Employee Wages - Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing (A) Payment of Prepetition Wages, Salaries and Related Workforce Obligations, and (B) Continuation of Benefits Programs; and (II) Granting Related Relief Filed By Omnis Pleasants, LLC (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2026-07-27",
+        "time_filed": "01:27:38",
+        "date_display": "Jul 27, 2026",
+        "description": "Motion to Pay Critical Trade Vendor Claims - Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing Debtor to Pay Prepetition Claims of Critical Vendors, Lienholders, and 503(b)(9) Claimants; (II) Confirming Administrative Expense Priority of Outstanding Orders; (III) Directing Financial Institutions to Honor and Process Payments in Connection Therewith; and (IV) Granting Related Relief Filed By Omnis Pleasants, LLC (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2026-07-27",
+        "time_filed": "01:25:44",
+        "date_display": "Jul 27, 2026",
+        "description": "Motion Regarding Chapter 11 First Day Motions - Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing Debtor to (A) Maintain Prepetition Insurance Policies and Surety Bonds, and Pay Related Prepetition Insurance Policies and Surety Bonds, and Pay Related Prepetition Obligations Arising Thereunder, and (B) Renew, Replace, Supplement, or Otherwise Modify Such Insurance Policies and Surety Bonds; (II) Modifying the Automatic Stay with Respect to the Workers Compensation Program; and (III) Granting Related Relief Filed By Omnis Pleasants, LLC (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2026-07-27",
+        "time_filed": "01:23:08",
+        "date_display": "Jul 27, 2026",
+        "description": "Motion Regarding Chapter 11 First Day Motions - Debtor's Motion for Entry of Interim and Final Orders (I) Authorizing the Payment of Certain Prepetition Taxes and Fees, and (II) Granting Related Relief Filed By Omnis Pleasants, LLC (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2026-07-27",
+        "time_filed": "01:20:30",
+        "date_display": "Jul 27, 2026",
+        "description": "Motion for Continuation of Utility Service and Approval of Adequate Assurance of Payment to Utility Company Under Section 366(b) - Debtor's Motion for Entry of Interim and Final Orders (I) Approving Debtors Proposed Adequate Assurance of Payment for Future Utility Services; (II) Establishing Procedures for Resolving Objections by Utility Providers; (III) Prohibiting Utility Providers from Altering, Refusing, or Discontinuing Services; and (IV) Granting Related Relief Filed By Omnis Pleasants, LLC (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2026-07-27",
+        "time_filed": "01:18:07",
+        "date_display": "Jul 27, 2026",
+        "description": "Application to Appoint Claims/Noticing Agent STRETTO Filed By Omnis Pleasants, LLC (Magaziner, Andrew) (Entered: 07/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Filed by U.S. Trustee. (Hackman, Benjamin)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-27",
+        "time_filed": "16:55:53",
+        "date_display": "Jul 27, 2026",
+        "description": "Add Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-27",
+        "time_filed": "",
+        "date_display": "Jul 27, 2026",
+        "description": "Judge Laurie Selber Silverstein added to case (SJS)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-27",
+        "time_filed": "10:25:54",
+        "date_display": "Jul 27, 2026",
+        "description": "Case Reassigned",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-27",
+        "time_filed": "08:25:05",
+        "date_display": "Jul 27, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-27",
+        "time_filed": "08:30:54",
+        "date_display": "Jul 27, 2026",
+        "description": "Standing Order/Transcripts",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-27",
+        "time_filed": "08:34:21",
+        "date_display": "Jul 27, 2026",
+        "description": "Case Assigned",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2026-07-26",
+        "time_filed": "23:23:18",
+        "date_display": "Jul 26, 2026",
+        "description": "Chapter 11 Voluntary Petition . Fee Amount $1738. Filed by Omnis Pleasants, LLC. (Magaziner, Andrew) (Entered: 07/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202016/gov.uscourts.deb.202016.1.0.pdf"
+      }
+    ]
   },
   "claims_administrator": {
     "name": "Stretto",
