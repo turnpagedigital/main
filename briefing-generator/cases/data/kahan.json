@@ -15,8 +15,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-03T22:28:42.740016+00:00",
-    "as_of": "Aug 3, 2026",
+    "fetched_at": "2026-08-04T00:17:28.043702+00:00",
+    "as_of": "Aug 4, 2026",
     "backfilled": true,
     "new_in_72h": 1,
     "recent": [
@@ -25,10 +25,11 @@
         "date_filed": "2026-08-03",
         "time_filed": "15:04:47",
         "date_display": "Aug 3, 2026",
-        "description": "Appellant Designation",
+        "description": "Statement Of Issues And Designation Of Record On Appeal",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.357.0_1.pdf"
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.357.0_1.pdf",
+        "titled_from_upload": true
       },
       {
         "entry_number": 354,
