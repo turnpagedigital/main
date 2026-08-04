@@ -15,25 +15,25 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-04T14:49:40.977203+00:00",
+    "fetched_at": "2026-08-04T19:01:30.621183+00:00",
     "as_of": "Aug 4, 2026",
     "backfilled": false,
-    "new_in_72h": 15,
+    "new_in_72h": 18,
     "recent": [
       {
-        "entry_number": 1138,
+        "entry_number": 1141,
         "date_filed": "2026-08-04",
-        "time_filed": "00:18:10",
+        "time_filed": "10:23:37",
         "date_display": "Aug 4, 2026",
-        "description": "Agenda for Complex Chapter 11",
+        "description": "Withdrawal",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1137,
+        "entry_number": 1140,
         "date_filed": "2026-08-04",
-        "time_filed": "00:06:44",
+        "time_filed": "10:07:23",
         "date_display": "Aug 4, 2026",
         "description": "Notice (generic)",
         "is_new": true,
@@ -41,17 +41,47 @@
         "doc_url": ""
       },
       {
-        "entry_number": 1136,
-        "date_filed": "2026-08-03",
-        "time_filed": "23:58:52",
-        "date_display": "Aug 3, 2026",
-        "description": "Notice (generic)",
+        "entry_number": 1139,
+        "date_filed": "2026-08-04",
+        "time_filed": "09:49:56",
+        "date_display": "Aug 4, 2026",
+        "description": "Withdrawal of claim",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1141,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:23:37",
+        "date_display": "Aug 4, 2026",
+        "description": "Withdrawal",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1140,
+        "date_filed": "2026-08-04",
+        "time_filed": "10:07:23",
+        "date_display": "Aug 4, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1139,
+        "date_filed": "2026-08-04",
+        "time_filed": "09:49:56",
+        "date_display": "Aug 4, 2026",
+        "description": "Withdrawal of claim",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1138,
         "date_filed": "2026-08-04",
@@ -1387,6 +1417,16 @@
         "date_filed": "2026-07-09",
         "time_filed": "11:30:02",
         "date_display": "Jul 9, 2026",
+        "description": "Notice (generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1017,
+        "date_filed": "2026-07-08",
+        "time_filed": "17:33:42",
+        "date_display": "Jul 8, 2026",
         "description": "Notice (generic)",
         "is_new": false,
         "landmark": "",
@@ -13133,7 +13173,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=10"
   },
   "claims_administrator": {
     "name": "Epiq11",
