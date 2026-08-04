@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-08-04-bankruptcy-advisory",
+      "date": "2026-08-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — August 4, 2026",
+      "summary": "Two developments dominate this morning's read: the largest new mega-case filing in weeks, and the resolution — after nearly three years — of the most consequential judicial-ethics prosecution in modern bankruptcy history. Harvest Sherwood's confirmation hearing, tracked here since the U.S.",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-04-class-actions-advisory",
+      "date": "2026-08-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — August 4, 2026",
+      "summary": "Two data points worth holding together this morning. First, Bartz v. Anthropic (No. 3:24-cv-05417, N.D. Cal.) cleared its last major judicial hurdle on July 20 and is now inside the 30-day appeal window — the clock runs through August 19.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-04-fraud-advisory",
+      "date": "2026-08-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — August 4, 2026",
+      "summary": "Nothing material moved in the last 24 hours across the tracked dockets. The two active cases — In re Goliath Ventures, Inc., No. 26-13174-RAM (Bankr. S.D. Fla., J. Robert A. Mark) and In re Power Block Coin, LLC, No. 24-23041 (Bankr. D. Utah, J. Cathleen D.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-04-tariff-advisory",
+      "date": "2026-08-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — August 4, 2026",
+      "summary": "Two developments broke in the last 24 hours that carry direct implications for the refund pipeline and the durability of the Section 301 replacement tariff regime: (1) a 25-state coalition filed suit at the CIT Monday challenging the July 23 Section 301 forced-labor tariffs as an unlawful attempt to…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-04-crypto-advisory",
+      "date": "2026-08-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — August 4, 2026",
+      "summary": "No docket event across the three tracked cases crossed the 24-hour wire before this run. The meaningful near-term milestone remains BlockFills' post-confirmation transition period, where the September 11, 2026 deadline is the next hard date for creditors.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-04-advisory",
+      "date": "2026-08-04",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — August 4, 2026",
+      "summary": "No new docket entries have landed in Bartz v. Anthropic since July 21 — the day after final judgment — and the 72-hour scan returned no whitelisted headlines.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-08-03-anthropic-settlement-author-guide",
       "date": "2026-08-03",
       "title": "The Anthropic Settlement: A Plain-English Guide for Authors",
