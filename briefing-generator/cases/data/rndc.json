@@ -15,43 +15,93 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-04T16:22:07.619026+00:00",
+    "fetched_at": "2026-08-04T22:35:37.897383+00:00",
     "as_of": "Aug 4, 2026",
     "backfilled": true,
-    "new_in_72h": 19,
+    "new_in_72h": 24,
     "recent": [
       {
-        "entry_number": 122,
+        "entry_number": 127,
         "date_filed": "2026-08-04",
-        "time_filed": "10:37:21",
+        "time_filed": "17:07:51",
         "date_display": "Aug 4, 2026",
-        "description": "Order to Appear pro hac vice",
+        "description": "Notice of Appearance and Request for Notice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 121,
+        "entry_number": 126,
         "date_filed": "2026-08-04",
-        "time_filed": "10:36:01",
+        "time_filed": "16:50:12",
         "date_display": "Aug 4, 2026",
-        "description": "Order to Appear pro hac vice",
+        "description": "Notice of Appearance and Request for Notice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 120,
+        "entry_number": 125,
         "date_filed": "2026-08-04",
-        "time_filed": "10:34:37",
+        "time_filed": "16:23:16",
         "date_display": "Aug 4, 2026",
-        "description": "Order to Appear pro hac vice",
+        "description": "Affidavit",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 127,
+        "date_filed": "2026-08-04",
+        "time_filed": "17:07:51",
+        "date_display": "Aug 4, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 126,
+        "date_filed": "2026-08-04",
+        "time_filed": "16:50:12",
+        "date_display": "Aug 4, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 125,
+        "date_filed": "2026-08-04",
+        "time_filed": "16:23:16",
+        "date_display": "Aug 4, 2026",
+        "description": "Affidavit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 124,
+        "date_filed": "2026-08-04",
+        "time_filed": "15:46:46",
+        "date_display": "Aug 4, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 123,
+        "date_filed": "2026-08-04",
+        "time_filed": "15:08:58",
+        "date_display": "Aug 4, 2026",
+        "description": "Generic Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 122,
         "date_filed": "2026-08-04",

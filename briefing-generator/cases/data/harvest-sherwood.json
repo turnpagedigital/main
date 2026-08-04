@@ -15,25 +15,15 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-04T19:01:30.621183+00:00",
+    "fetched_at": "2026-08-04T22:33:37.401964+00:00",
     "as_of": "Aug 4, 2026",
     "backfilled": false,
-    "new_in_72h": 18,
+    "new_in_72h": 21,
     "recent": [
       {
-        "entry_number": 1141,
+        "entry_number": 1144,
         "date_filed": "2026-08-04",
-        "time_filed": "10:23:37",
-        "date_display": "Aug 4, 2026",
-        "description": "Withdrawal",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1140,
-        "date_filed": "2026-08-04",
-        "time_filed": "10:07:23",
+        "time_filed": "17:17:05",
         "date_display": "Aug 4, 2026",
         "description": "Notice (generic)",
         "is_new": true,
@@ -41,17 +31,57 @@
         "doc_url": ""
       },
       {
-        "entry_number": 1139,
+        "entry_number": 1143,
         "date_filed": "2026-08-04",
-        "time_filed": "09:49:56",
+        "time_filed": "14:48:27",
         "date_display": "Aug 4, 2026",
-        "description": "Withdrawal of claim",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1142,
+        "date_filed": "2026-08-04",
+        "time_filed": "13:51:45",
+        "date_display": "Aug 4, 2026",
+        "description": "List (witness/exhibit/generic)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1144,
+        "date_filed": "2026-08-04",
+        "time_filed": "17:17:05",
+        "date_display": "Aug 4, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1143,
+        "date_filed": "2026-08-04",
+        "time_filed": "14:48:27",
+        "date_display": "Aug 4, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1142,
+        "date_filed": "2026-08-04",
+        "time_filed": "13:51:45",
+        "date_display": "Aug 4, 2026",
+        "description": "List (witness/exhibit/generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1141,
         "date_filed": "2026-08-04",
@@ -2253,6 +2283,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 937,
+        "date_filed": "2026-06-12",
+        "time_filed": "15:45:48",
+        "date_display": "Jun 12, 2026",
+        "description": "Request for transcript/audio",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 936,
         "date_filed": "2026-06-12",
         "time_filed": "14:22:21",
@@ -2343,6 +2383,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 927,
+        "date_filed": "2026-06-10",
+        "time_filed": "23:50:04",
+        "date_display": "Jun 10, 2026",
+        "description": "Support/supplemental document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 926,
         "date_filed": "2026-06-10",
         "time_filed": "21:40:51",
@@ -2398,6 +2448,16 @@
         "time_filed": "11:31:43",
         "date_display": "Jun 10, 2026",
         "description": "Agenda for Complex Chapter 11",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 919,
+        "date_filed": "2026-06-10",
+        "time_filed": "11:30:10",
+        "date_display": "Jun 10, 2026",
+        "description": "List (witness/exhibit/generic)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -2798,6 +2858,16 @@
         "time_filed": "12:49:24",
         "date_display": "Jun 3, 2026",
         "description": "Certificate of no objection filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)778 Motion to withdraw as attorney ( Cadwalader, Wickersham & Taft LLP to Withdraw as Special Counsel for the Debtors)). (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 885,
+        "date_filed": "2026-06-03",
+        "time_filed": "08:17:00",
+        "date_display": "Jun 3, 2026",
+        "description": "Notice of hearing for June 12, 2026 Setting filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A)). Hearing to be held on 6/12/2026 at 10:00 AM Dallas Judge Jernigan Ctrm for 763, (Fink, Ryan)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -13173,7 +13243,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=10"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=16"
   },
   "claims_administrator": {
     "name": "Epiq11",
