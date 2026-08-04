@@ -14,8 +14,8 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-    "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-04T16:20:59.982319+00:00",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-04T17:08:42.820549+00:00",
     "as_of": "Aug 4, 2026",
     "backfilled": false,
     "new_in_72h": 1,
@@ -841,9 +841,399 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 272,
+        "date_filed": "2026-05-28",
+        "time_filed": "17:42:30",
+        "date_display": "May 28, 2026",
+        "description": "Proposed Order (Re: 260 Motion filed by Trustee Donald Lassman for Sale of Property free and clear of liens under Section 363(f) Re: BTC Wallets, Estate Bitcoin, and associated legal and equitable rights, interests, title, and standing) filed by Trustee Donald Lassman (Gregoricus, Zachary). (Entered: 05/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.272.0.pdf"
+      },
+      {
+        "entry_number": 271,
+        "date_filed": "2026-05-27",
+        "time_filed": "16:31:38",
+        "date_display": "May 27, 2026",
+        "description": "Order on Motion To Sell",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 270,
+        "date_filed": "2026-05-27",
+        "time_filed": "12:07:32",
+        "date_display": "May 27, 2026",
+        "description": "Certificate of Service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 269,
+        "date_filed": "2026-05-23",
+        "time_filed": "07:10:11",
+        "date_display": "May 23, 2026",
+        "description": "Objection",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.269.0_1.pdf"
+      },
+      {
+        "entry_number": 268,
+        "date_filed": "2026-05-20",
+        "time_filed": "14:46:24",
+        "date_display": "May 20, 2026",
+        "description": "Certificate of Service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 265,
+        "date_filed": "2026-05-15",
+        "time_filed": "16:27:00",
+        "date_display": "May 15, 2026",
+        "description": "Order Discharging Debtor Ch. 7",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.265.0_1.pdf"
+      },
+      {
+        "entry_number": 264,
+        "date_filed": "2026-05-14",
+        "time_filed": "15:01:37",
+        "date_display": "May 14, 2026",
+        "description": "Certificate of Service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 263,
+        "date_filed": "2026-05-14",
+        "time_filed": "13:57:23",
+        "date_display": "May 14, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.263.0_1.pdf"
+      },
+      {
+        "entry_number": 262,
+        "date_filed": "2026-05-13",
+        "time_filed": "11:01:27",
+        "date_display": "May 13, 2026",
+        "description": "Order To Set Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 260,
+        "date_filed": "2026-05-08",
+        "time_filed": "16:05:55",
+        "date_display": "May 8, 2026",
+        "description": "Sale",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.260.0.pdf"
+      },
+      {
+        "entry_number": 259,
+        "date_filed": "2026-05-08",
+        "time_filed": "10:45:44",
+        "date_display": "May 8, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 258,
+        "date_filed": "2026-05-06",
+        "time_filed": "15:26:00",
+        "date_display": "May 6, 2026",
+        "description": "Order (Generic)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 257,
+        "date_filed": "2026-05-05",
+        "time_filed": "15:59:45",
+        "date_display": "May 5, 2026",
+        "description": "Status Report of Former Special Counsel (RE: 118 Application to Employ filed by Trustee Donald Lassman) filed by Kenneth T. Cuccinelli, II (skeating, usbc) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.257.0_1.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-29",
+        "time_filed": "",
+        "date_display": "Apr 29, 2026",
+        "description": "Disposition of Adversary. Adversary Number 24-01111 Dismissed Complaint (skeating, usbc)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-29",
+        "time_filed": "",
+        "date_display": "Apr 29, 2026",
+        "description": "Adversary Case 1:24-ap-1111 Closed. (skeating, usbc)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 256,
+        "date_filed": "2026-04-28",
+        "time_filed": "11:45:14",
+        "date_display": "Apr 28, 2026",
+        "description": "Chapter 7 Trustees Response To Order Dated April 7, 2026 with certificate of service filed by Trustee Donald Lassman Re: 248 Order dated 04/07/2026 Setting Hearing Re: 137 Order dated February 19, 2025, 118 Application filed by Trustee Donald Lassman to Employ Kenneth T. Cuccinelli, II as Special Counsel. (Gregoricus, Zachary) Modified on 4/28/2026 (sl). (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.256.0_1.pdf"
+      },
+      {
+        "entry_number": 255,
+        "date_filed": "2026-04-27",
+        "time_filed": "",
+        "date_display": "Apr 27, 2026",
+        "description": "Status Report filed by Kenneth T. Cuccinelli, II (RE: 118 Application to Employ filed by Trustee Donald Lassman). (skeating, usbc) (Entered: 04/28/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.255.0.pdf"
+      },
+      {
+        "entry_number": 254,
+        "date_filed": "2026-04-23",
+        "time_filed": "",
+        "date_display": "Apr 23, 2026",
+        "description": "BNC Certificate of Mailing - PDF Document. (Re: 253 Order on Motion for Approval) Notice Date 04/23/2026. (Admin.) (Entered: 04/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 253,
+        "date_filed": "2026-04-21",
+        "time_filed": "16:43:11",
+        "date_display": "Apr 21, 2026",
+        "description": "Proceeding Memorandum and Order dated 4/21/2026 Re: 205 Motion filed by Assistant U.S. Trustee Richard King - B to Approve Stipulation of Dismissal [Re: 102 Complaint]. HEARING HELD ON APRIL 21, 2026. FOR THE REASONS SET FORTH ON THE RECORD, THE MOTION IS GRANTED AND THE STIPULATION OF DISMISSAL IS APPROVED. THE COURT WILL DISMISS ADVERSARY PROCEEDING NO. 24-01111 BY SEPARATE ORDER. (nc) (Entered: 04/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 252,
+        "date_filed": "2026-04-09",
+        "time_filed": "",
+        "date_display": "Apr 9, 2026",
+        "description": "BNC Certificate of Mailing - PDF Document. (Re: 248 Order To Set Hearing) Notice Date 04/09/2026. (Admin.) (Entered: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 251,
+        "date_filed": "2026-04-09",
+        "time_filed": "",
+        "date_display": "Apr 9, 2026",
+        "description": "BNC Certificate of Mailing - PDF Document. (Re: 247 Order on Motion to File Late) Notice Date 04/09/2026. (Admin.) (Entered: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 249,
+        "date_filed": "2026-04-07",
+        "time_filed": "13:29:36",
+        "date_display": "Apr 7, 2026",
+        "description": "Certificate of Service (Re: 248 Order To Set Hearing) filed by Trustee Donald Lassman (Gregoricus, Zachary) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 248,
+        "date_filed": "2026-04-07",
+        "time_filed": "11:12:30",
+        "date_display": "Apr 7, 2026",
+        "description": "Order dated 04/07/2026 Setting Hearing (Re: 137 Order dated February 19, 2025, 118 Application filed by Trustee Donald Lassman to Employ Kenneth T. Cuccinelli, II as Special Counsel). See Order for Full Text. (skeating, usbc) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.248.0_1.pdf"
+      },
+      {
+        "entry_number": 247,
+        "date_filed": "2026-04-07",
+        "time_filed": "10:57:28",
+        "date_display": "Apr 7, 2026",
+        "description": "Order dated 4/7/2026 Re: 226 Motion filed by Creditor Commonwealth Real Estate Holdings, LLC to File Late Proof of Claim, HAVING REVIEWED THE MOTION, THE TRUSTEE HAVING WITHDRAWN HIS RESPONSE, AND GOOD CAUSE BEING SHOWN, THE MOTION IS GRANTED AS FOLLOWS. THE DEADLINE FOR COMMONWEALTH REAL ESTATE HOLDINGS, LLC, TO FILE A PROOF OF CLAIM IS EXTENDED TO MAY 7, 2026. THE HEARING SCHEDULED FOR APRIL 21, 2026, ON THE ABOVE MOTION IS CANCELED. (skeating, usbc) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 246,
+        "date_filed": "2026-04-07",
+        "time_filed": "09:07:13",
+        "date_display": "Apr 7, 2026",
+        "description": "Endorsed Order dated 4/07/2026 (Re: 231 Response filed by Trustee Donald Lassman). Withdrawn. (skeating, usbc) (Entered: 04/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 245,
+        "date_filed": "2026-04-02",
+        "time_filed": "10:34:19",
+        "date_display": "Apr 2, 2026",
+        "description": "Notice of Withdrawal of Objection and Request to Cancel Hearing with certificate of service (Re: 231 Response) filed by Trustee Donald Lassman (Gregoricus, Zachary) (Entered: 04/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 244,
+        "date_filed": "2026-03-31",
+        "time_filed": "15:45:15",
+        "date_display": "Mar 31, 2026",
+        "description": "Certificate of Service",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 243,
+        "date_filed": "2026-03-31",
+        "time_filed": "15:06:31",
+        "date_display": "Mar 31, 2026",
+        "description": "Supplemental Document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 242,
+        "date_filed": "2026-03-30",
+        "time_filed": "17:53:06",
+        "date_display": "Mar 30, 2026",
+        "description": "Affidavit",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 237,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:42:48",
+        "date_display": "Mar 26, 2026",
+        "description": "Certificate of Service of Notice of Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 236,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:12:43",
+        "date_display": "Mar 26, 2026",
+        "description": "Order on Motion to File Late",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 235,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:09:11",
+        "date_display": "Mar 26, 2026",
+        "description": "Order on Motion to File Late",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 234,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:06:35",
+        "date_display": "Mar 26, 2026",
+        "description": "Order on Motion Determine",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 233,
+        "date_filed": "2026-03-26",
+        "time_filed": "09:03:07",
+        "date_display": "Mar 26, 2026",
+        "description": "Order on Motion for Approval",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 232,
+        "date_filed": "2026-03-23",
+        "time_filed": "16:42:03",
+        "date_display": "Mar 23, 2026",
+        "description": "Certificate of Service of Notice of Hearing (Re: 226 Motion to File Late) filed by Creditor Commonwealth Real Estate Holdings, LLC (Attachments: # 1 Copy of Notice of Hearing) (Johnson, Jay) (Entered: 03/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 231,
+        "date_filed": "2026-03-23",
+        "time_filed": "15:13:49",
+        "date_display": "Mar 23, 2026",
+        "description": "Response with certificate of service filed by Trustee Donald Lassman Re: 226 Motion filed by Creditor Commonwealth Real Estate Holdings, LLC to File Late Proof of Claim, with certificate of service. (Gregoricus, Zachary) (Entered: 03/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 230,
+        "date_filed": "2026-03-23",
+        "time_filed": "10:03:52",
+        "date_display": "Mar 23, 2026",
+        "description": "Affidavit of Mark M. Newberg and Alexis G. Malkin, Individually and as Trustees of the 5 Wigglesworth Condominium Trust In Support (Re: 220 Motion to File Late) filed by Creditor Mark M. Newberg and Alexis G. Malkin, Individually and as Trustees of the 5 Wigglesworth Condominium Trust (Attachments: # 1 Certificate of Service) (Gottlieb, Richard) (Entered: 03/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 229,
+        "date_filed": "2026-03-18",
+        "time_filed": "11:55:23",
+        "date_display": "Mar 18, 2026",
+        "description": "Response with certificate of service filed by Trustee Donald Lassman Re: 220 Motion filed by Creditor Mark M. Newberg and Alexis G. Malkin, Individually and as Trustees of the 5 Wigglesworth Condominium Trust to File Late Proof of Claim, with certificate of service. (Gregoricus, Zachary) (Entered: 03/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 225,
+        "date_filed": "2026-03-05",
+        "time_filed": "13:44:57",
+        "date_display": "Mar 5, 2026",
+        "description": "Certificate of Service of Notice of Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69021491&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=5"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69021491&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": null,
   "coverage": []
