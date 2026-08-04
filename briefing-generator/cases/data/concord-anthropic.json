@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
     "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-08-04T19:00:24.094165+00:00",
+    "fetched_at": "2026-08-04T20:47:14.926527+00:00",
     "as_of": "Aug 4, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -8368,7 +8368,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68889092&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=8"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=68889092&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=14"
   },
   "claims_administrator": null,
   "coverage": [
