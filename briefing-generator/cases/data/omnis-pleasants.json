@@ -749,5 +749,42 @@
     "url": "https://cases.stretto.com/pleasantspowerstation/",
     "key_dates_url": ""
   },
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Power Struggle: New Pleasants Power leadership fights with former management in bankruptcy filings",
+      "url": "https://www.newsandsentinel.com/news/business/2026/08/power-struggle-new-pleasants-power-leadership-fights-with-former-management-in-bankruptcy-filings/",
+      "source": "News and Sentinel",
+      "date": "2026-07-31",
+      "summary": "Bankruptcy filings in the Omnis Pleasants case reveal a sharp dispute between current and former management: current CEO Hindman alleges gross misconduct and fund diversion by prior leadership, while former parent Omnis Fuel Technologies claims the filing was made in bad faith after it tendered a $75.6 million payoff check that was rejected."
+    },
+    {
+      "headline": "Power Struggle: New Pleasants Power Leadership Fights With Former Management In Bankruptcy Filings",
+      "url": "https://www.theintelligencer.net/news/top-headlines/2026/08/power-struggle-new-pleasants-power-leadership-fights-with-former-management-in-bankruptcy-filings/",
+      "source": "The Intelligencer",
+      "date": "2026-07-31",
+      "summary": "The Intelligencer covers the competing declarations in the Omnis Pleasants bankruptcy, including allegations that Omnis Fuel Technologies attempted to send a $75.6 million check to regain control of the plant and that Tony Robbins-linked entities hold a first-priority lien securing over $80 million in loans."
+    },
+    {
+      "headline": "Power Plant Can Use Cash In Ch. 11 Amid Governance Fight",
+      "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2507220",
+      "source": "Law360",
+      "date": "2026-07-30",
+      "summary": "A Delaware bankruptcy judge approved Omnis Pleasants LLC's first-day motions, allowing the company to use cash collateral, while rejecting the parent company's bid to dismiss the Chapter 11 as a bad-faith filing amid an ongoing governance dispute."
+    },
+    {
+      "headline": "Pleasants Power Station Owner Files For Bankruptcy",
+      "url": "https://wvpublic.org/story/energy-environment/pleasants-power-station-owner-files-for-bankruptcy/",
+      "source": "West Virginia Public Broadcasting",
+      "date": "2026-07-27",
+      "summary": "WV Public Broadcasting reports Omnis Pleasants LLC filed Chapter 11 to support restructuring negotiations and a possible sale, after its plan to convert the coal plant to run on hydrogen derived from graphite never succeeded and the plant largely remained idle."
+    },
+    {
+      "headline": "W.Va. Coal Plant Hits Ch. 11, Blames Ex-Leaders",
+      "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2506149/w-va-coal-plant-hits-ch-11-blames-ex-leaders",
+      "source": "Law360",
+      "date": "2026-07-26",
+      "summary": "Omnis Pleasants LLC filed for Chapter 11 in Delaware, blaming former executives for alleged fraud and misuse of a state-backed $50 million loan intended for the Pleasants Power Station."
+    }
+  ],
+  "events": []
 }
