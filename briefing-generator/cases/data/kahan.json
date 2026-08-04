@@ -14,10 +14,15 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
+<<<<<<< HEAD
     "date_last_filing": "2026-08-03",
     "fetched_at": "2026-08-04T14:45:31.899794+00:00",
+=======
+    "date_last_filing": "",
+    "fetched_at": "2026-08-04T14:51:08.431589+00:00",
+>>>>>>> 61e99b4 (Docket sync 2026-08-04 15:02 UTC)
     "as_of": "Aug 4, 2026",
-    "backfilled": true,
+    "backfilled": false,
     "new_in_72h": 1,
     "recent": [
       {
@@ -312,6 +317,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 322,
+        "date_filed": "2026-07-10",
+        "time_filed": "02:28:26",
+        "date_display": "Jul 10, 2026",
+        "description": "Supplemental Response in Support of Its Bid (Re: 290 Notice of Bid) with certificate of service filed by Interested Party Samara CR Holdings, LLC. (Attachments: # 1 Exhibit A - Soda Ventures Funding Commitment Letter # 2 Exhibit B - Bitcoin Wallet Statement) (Azman, Darren) Modified on 7/10/2026 (sl). (Entered: 07/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 321,
         "date_filed": "2026-07-10",
         "time_filed": "01:37:39",
@@ -434,6 +449,16 @@
         "date_filed": "2026-07-02",
         "date_display": "Jul 2, 2026",
         "description": "An official transcript (RE: 260 Motion filed by Trustee Donald Lassman for Sale of Property free and clear of liens under Section 363(f) Re: BTC Wallets, Estate Bitcoin, and associated legal and equitable rights, interests, title, and standing . Fee Amount $199, 289 Notice Of Submission Of Bid And Reservation Of Rights (Re: 260 Motion to Sell, 274 Order on Motion To Sell) filed by Interested Party Ironwood Recovery Holdings LLC (Attachments: # 1 Exhibit A), 290 Notice of Bid with certificate of service (Re: 260 Motion filed by Trustee Donald Lassman for Sale of Property free and clear of liens under Section 363(f) Re: BTC Wallets, Estate Bitcoin, and associated legal and equitable rights, interests, title, and standing) filed by Debtor Jason M Kahan., 291 Objection with certificate of service filed by Debtor Jason M Kahan Re: 260 Motion filed by Trustee Donald Lassman for Sale of Property free and clear of liens under Section 363(f) Re: BTC Wallets, Estate Bitcoin, and associated legal and equitable rights, interests, title, and standing . Fee Amount $199, 297 Objection to Designation with certificate of service filed by Interested Party PBTC Recovery Partners, LLC Re: 289 Notice Of Submission Of Bid And Reservation Of Rights (Re: 260 Motion to Sell, 274 Order on Motion To Sell) filed by Interested Party Ironwood Recovery Holdings LLC (Attachments: # 1 Exhibit A), 290 Notice of Bid with certificate of service (Re: 260 Motion filed by Trustee Donald Lassman for Sale of Property free and clear of liens under Section 363(f) Re: BTC Wallets, Estate Bitcoin, and associated legal and equitable rights, interests, title, and standing) filed by Debtor Jason M Kahan., 298 Objection with certificate of service filed by Trustee Donald Lassman Re: 289 Notice Of Submission Of Bid And Reservation Of Rights (Re: 260 Motion to Sell, 274 Order on Motion To Sell) filed by Interested Party Ironwood Recovery Holdings LLC (Attachments: # 1 Exhibit A), 299 Notice of Amount of Expense Reimbursement with certificate of service (Re: 274 Order on Motion To Sell) filed by Interested Party PBTC Recovery Partners, LLC, 302 Supplemental Document: Letter in Support of Ironwood Holdings Bid for Sale of Cryptocurrency Assets (Re: 289 Notice) filed by Creditor Mark M. Newberg and Alexis G. Malkin, Individually and as Trustees of the 5 Wigglesworth Condominium Trust, 304 Response // Ironwood Recovery Holdings LLC's Response in Support of its Bid with certificate of service filed by Interested Party Ironwood Recovery Holdings LLC Re: 289 Notice Of Submission Of Bid And Reservation Of Rights (Re: 260 Motion to Sell, 274 Order on Motion To Sell) filed by Interested Party Ironwood Recovery Holdings LLC (Attachments: # 1 Exhibit A), 297 Objection to Designation with certificate of service filed by Interested Party PBTC Recovery Partners, LLC Re: 289 Notice Of Submission Of Bid And Reservation Of Rights (Re: 260 Motion to Sell, 274 Order on Motion To Sell) filed by Interested Party Ironwood Recovery Holdings LLC (Attachments: # 1 Exhibit A), 290 Notice of Bid with certificate of service (Re: 260 Motion filed by Trustee Donald Lassman for Sale of Property free and clear of liens under Section 363(f) Re: BTC Wallets, Estate Bitcoin, and associated legal and equitable rights, interests, title, and standing) filed by Debtor Jason M Kahan., 298 Objection with certificate of service filed by Trustee Donald Lassman Re: 289 Notice Of Submission Of Bid And Reservation Of Rights (Re: 260 Motion to Sell, 274 Order on Motion To Sell) filed by Interested Party Ironwood Recovery Holdings LLC (Attachments: # 1 Exhibit A)) heard on 07/01/2026 has been filed. Pursuant to Judicial Conference Policy, electronic access to transcripts is restricted for 90 days from the date of filing. The transcript is available for inspection at the Clerk's Office or a copy may be purchased from the transcriber. Contact the ECR Operator for transcriber information. Parties have until 7/23/2026 to file a Request for Redaction with the Court. If no request is filed, the transcript may be made available electronically on 10/1/2026. (sl) (Entered: 07/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 310,
+        "date_filed": "2026-07-01",
+        "time_filed": "",
+        "date_display": "Jul 1, 2026",
+        "description": "Notice of Filing of Official Transcript. Notice is hereby given that an official transcript has been filed. Pursuant to the Judicial Conference policy governing public access to transcripts of federal court proceedings, transcripts are not electronically available(online) until 90 days after filing but may be inspected by clerk's office or purchased from the court transcriber during the 90-day period.(mvr) (Entered: 07/02/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -599,6 +624,16 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 291,
+        "date_filed": "2026-06-26",
+        "time_filed": "15:49:55",
+        "date_display": "Jun 26, 2026",
+        "description": "Objection with certificate of service filed by Debtor Jason M Kahan Re: 260 Motion filed by Trustee Donald Lassman for Sale of Property free and clear of liens under Section 363(f) Re: BTC Wallets, Estate Bitcoin, and associated legal and equitable rights, interests, title, and standing . Fee Amount $199 (Redlener, Jesse) (Entered: 06/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.291.0.pdf"
       },
       {
         "entry_number": 290,
@@ -3759,7 +3794,8 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=69021491&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=6"
   },
   "claims_administrator": null,
   "coverage": [],
