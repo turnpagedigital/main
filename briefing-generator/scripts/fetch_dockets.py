@@ -287,6 +287,14 @@ def main():
         print("COURTLISTENER_TOKEN not set — running in seed-only mode "
               "(no live docket pulls; seeded JSON is left as-is).")
     history_pages = int(os.environ.get("DOCKET_HISTORY_PAGES", "4") or 0)
+    if os.environ.get("DOCKET_BACKFILL") == "1" and cases:
+        # Full-history backfills burn CourtListener's sustained-rate budget on
+        # the first big dockets and starve the tail (same manifest order every
+        # run → the same cases starve every run). Rotate the start case by day
+        # so successive nightly backfills give every case a fresh-quota turn.
+        shift = dt.date.today().toordinal() % len(cases)
+        cases = cases[shift:] + cases[:shift]
+        print(f"  backfill order rotated: starting at {cases[0]['slug']}")
     print(f"=== Refreshing {len(cases)} tracked case(s) "
           f"(history trickle: {history_pages} page(s)/case/run) ===")
     throttled_streak = 0
