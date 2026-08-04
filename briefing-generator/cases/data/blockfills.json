@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
-    "date_last_filing": "2026-07-30",
-    "fetched_at": "2026-08-04T14:48:26.765201+00:00",
+    "date_last_filing": "2026-08-04",
+    "fetched_at": "2026-08-04T18:57:59.223201+00:00",
     "as_of": "Aug 4, 2026",
     "backfilled": false,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 553,
+        "date_filed": "2026-08-04",
+        "time_filed": "13:58:35",
+        "date_display": "Aug 4, 2026",
+        "description": "Staffing Report - Monthly",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 552,
         "date_filed": "2026-07-30",
@@ -39,19 +49,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 550,
-        "date_filed": "2026-07-30",
-        "time_filed": "13:02:22",
-        "date_display": "Jul 30, 2026",
-        "description": "Compensation - Application (Attorney)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 553,
+        "date_filed": "2026-08-04",
+        "time_filed": "13:58:35",
+        "date_display": "Aug 4, 2026",
+        "description": "Staffing Report - Monthly",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 552,
         "date_filed": "2026-07-30",
@@ -1316,6 +1326,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 420,
+        "date_filed": "2026-06-11",
+        "time_filed": "15:11:41",
+        "date_display": "Jun 11, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: Parataxis Absolute Return Fund LP (Amount $20,551.92) To Argo Partners. Filed by Argo Partners. (Singer, Michael) (Entered: 06/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 419,
         "date_filed": "2026-06-11",
         "time_filed": "",
@@ -1706,6 +1726,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 384,
+        "date_filed": "2026-05-27",
+        "time_filed": "21:04:48",
+        "date_display": "May 27, 2026",
+        "description": "Certificate of Service re: Documents Served on May 26, 2026 (related document(s)370, 374, 376, 377) Filed by Kurtzman Carson Consultants, LLC dba Verita Global. (Kass, Albert) (Entered: 05/27/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 383,
         "date_filed": "2026-05-27",
         "time_filed": "",
@@ -1901,6 +1931,16 @@
         "time_filed": "",
         "date_display": "May 22, 2026",
         "description": "Receipt of filing fee for Amended Schedules/Statements( 26-10371-TMH) [misc,amdsch] ( 34.00). Receipt Number A12680899, amount $ 34.00. (U.S. Treasury) (Entered: 05/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 361,
+        "date_filed": "2026-05-22",
+        "time_filed": "",
+        "date_display": "May 22, 2026",
+        "description": "Receipt of filing fee for Amended Schedules/Statements( 26-10371-TMH) [misc,amdsch] ( 34.00). Receipt Number A12680827, amount $ 34.00. (U.S. Treasury) (Entered: 05/22/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -5716,7 +5756,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=72494188&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=72494188&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
   },
   "claims_administrator": {
     "name": "Veritaglobal",
