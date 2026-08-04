@@ -14,10 +14,10 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/",
-    "date_last_filing": "",
-    "fetched_at": "2026-08-04T00:18:13.200464+00:00",
+    "date_last_filing": "2026-08-03",
+    "fetched_at": "2026-08-04T06:44:01.008868+00:00",
     "as_of": "Aug 4, 2026",
-    "backfilled": false,
+    "backfilled": true,
     "new_in_72h": 24,
     "recent": [
       {
@@ -292,8 +292,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73709081&order_by=-date_filed&fields=entry_number,date_filed,time_filed,description,recap_documents"
+    ]
   },
   "claims_administrator": null,
   "coverage": []
