@@ -790,11 +790,22 @@ def main():
             messages=[{
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": docs_block, "cache_control": {"type": "ephemeral"}},
+                    # 1h TTL: the run spans ~20-27 min across six topics, so the
+                    # default 5-min cache expires between topics and every topic
+                    # re-pays full input price for this shared block. One 2× write
+                    # here, then ~0.1× reads for every later topic and every
+                    # web-search iteration within a topic.
+                    {"type": "text", "text": docs_block,
+                     "cache_control": {"type": "ephemeral", "ttl": "1h"}},
                     {"type": "text", "text": prompt},
                 ],
             }],
         )
+        u = getattr(response, "usage", None)
+        if u:
+            print(f"  cache: wrote {getattr(u, 'cache_creation_input_tokens', 0) or 0}, "
+                  f"read {getattr(u, 'cache_read_input_tokens', 0) or 0}, "
+                  f"uncached in {getattr(u, 'input_tokens', 0) or 0}", flush=True)
         # With server-side tools the content list interleaves search blocks
         # with text blocks — join with a newline so a preamble block never
         # fuses onto the advisory's H1 line ("...drafting.# 📜 ...").
