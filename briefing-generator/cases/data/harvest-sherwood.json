@@ -14,8 +14,8 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-05T06:46:06.978210+00:00",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-05T10:02:13.657465+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": false,
     "new_in_72h": 21,
@@ -6373,6 +6373,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 602,
+        "date_filed": "2025-12-29",
+        "time_filed": "16:02:52",
+        "date_display": "Dec 29, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $196. Transfer Agreement 3001 (e) 2 Transferors: KOCH FOODS OF ALABAMA, LLC (Claim No. 103, Amount $250,315.80); KOCH FOODS OF MISSISSIPPI, LLC (Claim No. 106, Amount $475,200.00); KOCH FOODS OF ALABAMA, LLC (Claim No. 107, Amount $46,206.58); KOCH FOODS OF ALABAMA (Amount $46,206.58); KOCH FOODS (Amount $609,732.00); KOCH FOODS OF ALABAMA (Amount $133,485.80); KOCH FOODS, LLC (Amount $591,425.75) To VonWin Trust LP. Filed by Creditor VonWin Trust LP. (Wilson, Charmaine)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": null,
         "date_filed": "2025-12-29",
         "time_filed": "16:03:57",
@@ -6663,6 +6673,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 583,
+        "date_filed": "2025-12-11",
+        "time_filed": "18:35:58",
+        "date_display": "Dec 11, 2025",
+        "description": "Declaration re: // Supplemental Declaration of Sanjuro Kietlinski in Support of the Retention and Employment of Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors filed by Creditor Committee The Official Committee of Unsecured Creditors (RE: related document(s)321 Application to employ Province, LLC as Financial Advisor // Application for Entry of an Order Authorizing the Retention and Employment of Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors Effective May 30, 2025, 427 Order on application to employ). (Helt, Marcus)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 582,
         "date_filed": "2025-12-11",
         "time_filed": "18:29:33",
@@ -6683,6 +6703,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 580,
+        "date_filed": "2025-12-11",
+        "time_filed": "09:46:26",
+        "date_display": "Dec 11, 2025",
+        "description": "Notice Second Monthly Fee Statement of Meru, LLC for Allowance of Compensation and Reimbursement of Expenses for the Period from October 1, 2025, through and including October 31, 2025 filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 579,
         "date_filed": "2025-12-11",
         "time_filed": "09:06:57",
@@ -6698,6 +6728,16 @@
         "time_filed": "",
         "date_display": "Dec 11, 2025",
         "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33209720, amount $ 28.00 (re: Doc# 579). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-11",
+        "time_filed": "15:53:47",
+        "date_display": "Dec 11, 2025",
+        "description": "none",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -13363,7 +13403,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=34"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=40"
   },
   "claims_administrator": {
     "name": "Epiq11",
