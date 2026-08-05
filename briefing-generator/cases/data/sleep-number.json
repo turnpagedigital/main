@@ -15,17 +15,17 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-05T03:41:14.720987+00:00",
+    "fetched_at": "2026-08-05T16:10:02.584350+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 11,
     "recent": [
       {
         "entry_number": 512,
         "date_filed": "2026-08-04",
         "time_filed": "12:26:54",
         "date_display": "Aug 4, 2026",
-        "description": "Declaration of Disinterestedness of Dieter A. Schmitz in Support of Employment of Baker & McKenzie LLP as a Professional Utilized in the Ordinary Course of Business filed by Brian Resnick on behalf of Sleep Number Corporation.",
+        "description": "Declaration Of Disinterestedness Of Dieter A. Schmitz In Support Of Employment Of Baker & McKenzie LLP As A Professional Utilized In The Ordinary Course Of Business",
         "is_new": true,
         "landmark": "",
         "doc_url": "",
@@ -43,14 +43,14 @@
         "titled_from_upload": true
       },
       {
-        "entry_number": 507,
+        "entry_number": 510,
         "date_filed": "2026-08-03",
-        "time_filed": "10:01:36",
+        "time_filed": "",
         "date_display": "Aug 3, 2026",
-        "description": "Statement Certificate of Counsel to the Application of the Official Committee of Unsecured Creditors for Entry of an Order Authorizing the Employment and Retention of Province, LLC as Financial Advisor Effective as of June 26, 2026 (related document(s)399) filed by Shirley S Cho on behalf of The Official Committee of Unsecured Creditors. (Cho, Shirley) (Entered: 08/03/2026)",
+        "description": "Notice of Adjournment of Hearing Re: Application to Employ A&G Realty Partners, LLC as Real Estate Consultant and Advisor/Application of the Debtors for Entry of an Order (A) Authorizing the Debtors to Retain A&G Realty Partners, LLC as a Real Estate Consultant and Advisor Effective as of the Petition Date and (B) Granting Related Relief filed by Brian Resnick on behalf of Sleep Number Corporation (Related Document #130). August 3, 2026 hearing held and adjourned to 8/20/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) (Fredericks, Frances). (Entered: 08/03/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.507.0_1.pdf"
+        "doc_url": ""
       }
     ],
     "entries": [
@@ -75,6 +75,36 @@
         "landmark": "",
         "doc_url": "",
         "titled_from_upload": true
+      },
+      {
+        "entry_number": 510,
+        "date_filed": "2026-08-03",
+        "time_filed": "",
+        "date_display": "Aug 3, 2026",
+        "description": "Notice of Adjournment of Hearing Re: Application to Employ A&G Realty Partners, LLC as Real Estate Consultant and Advisor/Application of the Debtors for Entry of an Order (A) Authorizing the Debtors to Retain A&G Realty Partners, LLC as a Real Estate Consultant and Advisor Effective as of the Petition Date and (B) Granting Related Relief filed by Brian Resnick on behalf of Sleep Number Corporation (Related Document #130). August 3, 2026 hearing held and adjourned to 8/20/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) (Fredericks, Frances). (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 509,
+        "date_filed": "2026-08-03",
+        "time_filed": "",
+        "date_display": "Aug 3, 2026",
+        "description": "Notice of Adjournment of Hearing Re: Application to Employ Guggenheim Securities, LLC as Investment Banker/Debtors' Application for Entry of an Order (I) Authorizing the Debtors to Retain and Employ Guggenheim Securities, LLC as Investment Banker Effective as of the Petition Date, (II) Modifying Certain Timekeeping Requirements, and (III) Granting Related Relief filed by Brian Resnick on behalf of Sleep Number Corporation (Related Document #132), August 3, 2026 hearing held and adjourned to 8/20/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) (Fredericks, Frances). (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 508,
+        "date_filed": "2026-08-03",
+        "time_filed": "",
+        "date_display": "Aug 3, 2026",
+        "description": "Notice of Adjournment of the Case Conference; August 3, 2026 hearing held and adjourned to 8/20/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) (Fredericks, Frances). (Entered: 08/03/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
       },
       {
         "entry_number": 507,
@@ -112,6 +142,26 @@
         "time_filed": "11:08:28",
         "date_display": "Aug 3, 2026",
         "description": "Notice of Adjournment of Hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-03",
+        "time_filed": "",
+        "date_display": "Aug 3, 2026",
+        "description": "Pending Deadlines Terminated Re: Application to Employ Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors Effective as of June 26, 2026 filed by Bradford J. Sandler on behalf of The Official Committee of Unsecured Creditors (Related Document #399). August 3, 2026 hearing held. Motion granted subject to the UST's review. Submit Order as indicated on record. (Fredericks, Frances).",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-03",
+        "time_filed": "",
+        "date_display": "Aug 3, 2026",
+        "description": "Pending Deadlines Terminated Re: Motion to Authorize/Motion of Debtors for an Order (I) Directing the Trustee of the Debtors' Non-Qualified Deferred Compensation Plan Trust to Return the Debtors' Assets Held in Trust to the Debtors' Estates and (II) Granting Related Relief filed by Brian Resnick on behalf of Sleep Number Corporation (Related Document #170) and Objection filed by Faisal Mushtaq (Related Document #210). August 3, 2026 hearing held and adjourned. Matters taken under advisement, written decision to be issued. (Fredericks, Frances).",
         "is_new": true,
         "landmark": "",
         "doc_url": ""

@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
+    "case_name": "Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -13,13 +13,33 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "",
-    "fetched_at": "2026-08-05T12:22:44.942734+00:00",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
+    "date_last_filing": "2026-08-05",
+    "fetched_at": "2026-08-05T16:09:38.751116+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 36,
+    "new_in_72h": 38,
     "recent": [
+      {
+        "entry_number": 40,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:47:41",
+        "date_display": "Aug 5, 2026",
+        "description": "Order (A) Scheduling Hearing on Recognition of Chapter 15 Petition and (B) Specifying Form and Manner of Service of Notice (Related Doc # 8, 38) Signed on 8/5/2026. (Attachments: # 1) (LMC) (Entered: 08/05/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 39,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:46:30",
+        "date_display": "Aug 5, 2026",
+        "description": "Order Granting Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code (Related Doc # 7, 37) Signed on 8/5/2026. (LMC) (Entered: 08/05/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 38,
         "date_filed": "2026-08-04",
@@ -29,29 +49,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 37,
-        "date_filed": "2026-08-04",
-        "time_filed": "20:05:05",
-        "date_display": "Aug 4, 2026",
-        "description": "Certification of Counsel for Agreed Form of Order Granting Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code (related document(s)7). Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B) (related document(s)7) (Malow, Jennifer) (Entered: 08/04/2026)",
+        "entry_number": 40,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:47:41",
+        "date_display": "Aug 5, 2026",
+        "description": "Order (A) Scheduling Hearing on Recognition of Chapter 15 Petition and (B) Specifying Form and Manner of Service of Notice (Related Doc # 8, 38) Signed on 8/5/2026. (Attachments: # 1) (LMC) (Entered: 08/05/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 36,
-        "date_filed": "2026-08-04",
-        "time_filed": "14:54:13",
-        "date_display": "Aug 4, 2026",
-        "description": "MINUTE ENTRY Re: (related document(s): 10 Notice of Agenda of Matters Scheduled for Hearing on 8/4/26) APPEARANCES: See attached sign-in sheet MATTERS: 1) Voluntary Petitions, 2) Petition for Recognition, 3 and 4) Declarations in Support, 5) Order entered, 6) Order due under COC, 7) Order due under COC (lmc) (Entered: 08/04/2026)",
+        "entry_number": 39,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:46:30",
+        "date_display": "Aug 5, 2026",
+        "description": "Order Granting Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code (Related Doc # 7, 37) Signed on 8/5/2026. (LMC) (Entered: 08/05/2026)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.36.0.pdf"
-      }
-    ],
-    "entries": [
+        "doc_url": ""
+      },
       {
         "entry_number": 38,
         "date_filed": "2026-08-04",
