@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-05T03:40:56.741538+00:00",
+    "date_last_filing": "2026-08-05",
+    "fetched_at": "2026-08-05T16:57:04.910126+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 6,
     "recent": [
+      {
+        "entry_number": 87,
+        "date_filed": "2026-08-05",
+        "time_filed": "10:03:16",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice of Appearance and Request",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 85,
         "date_filed": "2026-08-04",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 83,
-        "date_filed": "2026-08-03",
-        "time_filed": "16:39:53",
-        "date_display": "Aug 3, 2026",
-        "description": "Missing Document(s) Filed",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 87,
+        "date_filed": "2026-08-05",
+        "time_filed": "10:03:16",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice of Appearance and Request",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 85,
         "date_filed": "2026-08-04",

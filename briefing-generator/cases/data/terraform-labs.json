@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
-    "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-05T03:41:46.603840+00:00",
+    "date_last_filing": "2026-08-05",
+    "fetched_at": "2026-08-05T16:57:27.852359+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 8,
     "recent": [
+      {
+        "entry_number": 1319,
+        "date_filed": "2026-08-05",
+        "time_filed": "10:43:04",
+        "date_display": "Aug 5, 2026",
+        "description": "Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1313,
         "date_filed": "2026-08-03",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1311,
-        "date_filed": "2026-08-03",
-        "time_filed": "15:09:43",
-        "date_display": "Aug 3, 2026",
-        "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1319,
+        "date_filed": "2026-08-05",
+        "time_filed": "10:43:04",
+        "date_display": "Aug 5, 2026",
+        "description": "Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1313,
         "date_filed": "2026-08-03",

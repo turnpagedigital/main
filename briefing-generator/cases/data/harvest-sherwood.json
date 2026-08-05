@@ -14,44 +14,104 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-05T12:21:45.011306+00:00",
+    "date_last_filing": "2026-08-05",
+    "fetched_at": "2026-08-05T16:56:09.536131+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": false,
-    "new_in_72h": 21,
+    "new_in_72h": 27,
     "recent": [
       {
-        "entry_number": 1144,
-        "date_filed": "2026-08-04",
-        "time_filed": "17:17:05",
-        "date_display": "Aug 4, 2026",
-        "description": "Notice (generic)",
+        "entry_number": 1149,
+        "date_filed": "2026-08-05",
+        "time_filed": "10:15:26",
+        "date_display": "Aug 5, 2026",
+        "description": "Court admitted exhibits",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1143,
-        "date_filed": "2026-08-04",
-        "time_filed": "14:48:27",
-        "date_display": "Aug 4, 2026",
-        "description": "Notice (generic)",
+        "entry_number": 1148,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:02:07",
+        "date_display": "Aug 5, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1142,
-        "date_filed": "2026-08-04",
-        "time_filed": "13:51:45",
-        "date_display": "Aug 4, 2026",
-        "description": "List (witness/exhibit/generic)",
+        "entry_number": 1147,
+        "date_filed": "2026-08-05",
+        "time_filed": "08:59:51",
+        "date_display": "Aug 5, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1149,
+        "date_filed": "2026-08-05",
+        "time_filed": "10:15:26",
+        "date_display": "Aug 5, 2026",
+        "description": "Court admitted exhibits",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1148,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:02:07",
+        "date_display": "Aug 5, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1147,
+        "date_filed": "2026-08-05",
+        "time_filed": "08:59:51",
+        "date_display": "Aug 5, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1146,
+        "date_filed": "2026-08-05",
+        "time_filed": "08:18:55",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1145,
+        "date_filed": "2026-08-05",
+        "time_filed": "07:16:51",
+        "date_display": "Aug 5, 2026",
+        "description": "Certificate of service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:05:03",
+        "date_display": "Aug 5, 2026",
+        "description": "none AND none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1144,
         "date_filed": "2026-08-04",
@@ -13403,7 +13463,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=46"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=56"
   },
   "claims_administrator": {
     "name": "Epiq11",
