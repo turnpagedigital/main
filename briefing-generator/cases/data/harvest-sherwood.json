@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T20:40:59.019896+00:00",
+    "fetched_at": "2026-08-05T22:29:31.394429+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": false,
-    "new_in_72h": 32,
+    "new_in_72h": 33,
     "recent": [
       {
         "entry_number": 1152,
@@ -147,7 +147,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "",
         "date_display": "Aug 5, 2026",
-        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A34023592, amount $ 28.00 (re: Doc# 1148). (U.S. Treasury)",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A34023592, amount $ 28.00 (re: Doc# 1147). (U.S. Treasury)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -158,6 +158,16 @@
         "time_filed": "11:36:17",
         "date_display": "Aug 5, 2026",
         "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-05",
+        "time_filed": "16:27:20",
+        "date_display": "Aug 5, 2026",
+        "description": "Hearing held",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -13513,7 +13523,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=68"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=74"
   },
   "claims_administrator": {
     "name": "Epiq11",

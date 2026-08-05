@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T20:41:47.471034+00:00",
+    "fetched_at": "2026-08-05T22:30:29.084519+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 39,
+    "new_in_72h": 40,
     "recent": [
+      {
+        "entry_number": 42,
+        "date_filed": "2026-08-05",
+        "time_filed": "17:18:11",
+        "date_display": "Aug 5, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 41,
         "date_filed": "2026-08-05",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 39,
-        "date_filed": "2026-08-05",
-        "time_filed": "09:46:30",
-        "date_display": "Aug 5, 2026",
-        "description": "Order Granting Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code (Related Doc # 7, 37) Signed on 8/5/2026. (LMC) (Entered: 08/05/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 42,
+        "date_filed": "2026-08-05",
+        "time_filed": "17:18:11",
+        "date_display": "Aug 5, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 41,
         "date_filed": "2026-08-05",
