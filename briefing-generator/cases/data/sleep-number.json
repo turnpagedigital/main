@@ -15,11 +15,31 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T20:42:09.074934+00:00",
+    "fetched_at": "2026-08-05T22:30:52.649681+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 12,
+    "new_in_72h": 14,
     "recent": [
+      {
+        "entry_number": 515,
+        "date_filed": "2026-08-05",
+        "time_filed": "16:40:35",
+        "date_display": "Aug 5, 2026",
+        "description": "Application, Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 514,
+        "date_filed": "2026-08-05",
+        "time_filed": "16:39:29",
+        "date_display": "Aug 5, 2026",
+        "description": "Application, Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 513,
         "date_filed": "2026-08-05",
@@ -29,31 +49,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 512,
-        "date_filed": "2026-08-04",
-        "time_filed": "12:26:54",
-        "date_display": "Aug 4, 2026",
-        "description": "Declaration Of Disinterestedness Of Dieter A. Schmitz In Support Of Employment Of Baker & McKenzie LLP As A Professional Utilized In The Ordinary Course Of Business",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "",
-        "titled_from_upload": true
-      },
-      {
-        "entry_number": 511,
-        "date_filed": "2026-08-03",
-        "time_filed": "13:42:15",
-        "date_display": "Aug 3, 2026",
-        "description": "Notice Of Filing Of Sleep Number Executive Deferral Plan",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "",
-        "titled_from_upload": true
       }
     ],
     "entries": [
+      {
+        "entry_number": 515,
+        "date_filed": "2026-08-05",
+        "time_filed": "16:40:35",
+        "date_display": "Aug 5, 2026",
+        "description": "Application, Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 514,
+        "date_filed": "2026-08-05",
+        "time_filed": "16:39:29",
+        "date_display": "Aug 5, 2026",
+        "description": "Application, Pro Hac Vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 513,
         "date_filed": "2026-08-05",

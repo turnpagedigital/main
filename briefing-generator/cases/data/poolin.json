@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T20:41:52.936636+00:00",
+    "fetched_at": "2026-08-05T22:30:34.550468+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 9,
     "recent": [
+      {
+        "entry_number": 89,
+        "date_filed": "2026-08-05",
+        "time_filed": "17:13:46",
+        "date_display": "Aug 5, 2026",
+        "description": "Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 88,
         "date_filed": "2026-08-05",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-05",
-        "time_filed": "15:50:08",
-        "date_display": "Aug 5, 2026",
-        "description": "Receipt - Generic - BK - Court Use Only",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 89,
+        "date_filed": "2026-08-05",
+        "time_filed": "17:13:46",
+        "date_display": "Aug 5, 2026",
+        "description": "Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 88,
         "date_filed": "2026-08-05",
