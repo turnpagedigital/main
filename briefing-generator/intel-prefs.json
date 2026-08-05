@@ -70,8 +70,9 @@
       "border": "#7a219e"
     },
     "rewind-tariffs": {
-      "bg": "#1B3A4B",
-      "fg": "#FFFFFF"
+      "bg": "#1b3a4b",
+      "fg": "#ffffff",
+      "border": "#ffffff"
     },
     "papaya-gaming": {
       "bg": "#fff5c7",
