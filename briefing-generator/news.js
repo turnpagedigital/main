@@ -971,7 +971,11 @@
       var dktLabel = "Dkt. " + entryNum;
       var linkHtml;
       if (entryNum && e.docket_url && e.docket_url.indexOf("courtlistener.com") !== -1) {
-        var entryUrl = e.docket_url.replace(/\/+$/, "") +
+        var entryBase = e.docket_url.replace(/\/+$/, "");
+        // CL web pages 404 on slugless /docket/<id> — any slug text works, so
+        // "-" keeps stale bare URLs clickable.
+        if (/\/docket\/\d+$/.test(entryBase)) entryBase += "/-";
+        var entryUrl = entryBase +
           "/?filed_after=&filed_before=&entry_gte=" + entryNum +
           "&entry_lte=" + entryNum + "&order_by=asc";
         linkHtml = '<a class="ud-link" href="' + esc(entryUrl) + '" target="_blank" rel="noopener">' +

@@ -180,7 +180,9 @@ def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next,
     if meta.get("absolute_url"):
         cl_url = "https://www.courtlistener.com" + meta["absolute_url"]
     elif not re.search(r"/docket/\d+/[^/?#]+", cl_url):
-        cl_url = cl_url or f"https://www.courtlistener.com/docket/{docket_id}/"
+        # CL web pages 404 on a slugless docket URL but accept ANY slug text —
+        # "-" keeps links working until the real slug is fetched.
+        cl_url = f"https://www.courtlistener.com/docket/{docket_id}/-/"
 
     block = {
         "source": "courtlistener",
