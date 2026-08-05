@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-05T03:39:30.260270+00:00",
+    "fetched_at": "2026-08-05T06:46:06.978210+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": false,
     "new_in_72h": 21,
@@ -5853,6 +5853,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 637,
+        "date_filed": "2026-01-21",
+        "time_filed": "19:07:33",
+        "date_display": "Jan 21, 2026",
+        "description": "Amended Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: WHOLESTONE PRESTAGE (Amount $711,220.68) To WAUCOBA INVESTORS, LLC. Filed by Broker XCLAIM Inc.. (Sedigh, Matt)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 636,
         "date_filed": "2026-01-21",
         "time_filed": "19:03:50",
@@ -6208,6 +6218,16 @@
         "time_filed": "",
         "date_display": "Jan 6, 2026",
         "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33284695, amount $ 28.00 (re: Doc# 615). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 613,
+        "date_filed": "2025-12-31",
+        "time_filed": "11:13:40",
+        "date_display": "Dec 31, 2025",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Sandridge Food Corp. dba Sandridge Crafted Foods To Hain Capital Investors Master fund, LTD. Filed by Creditor Hain Capital Group, LLC. (Austin, Keenan)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -13343,7 +13363,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=28"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=34"
   },
   "claims_administrator": {
     "name": "Epiq11",
