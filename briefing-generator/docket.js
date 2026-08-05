@@ -1004,13 +1004,7 @@
       var dktLabel = "Dkt. " + entryNum;
       var linkHtml;
       if (entryNum && e.docket_url && e.docket_url.indexOf("courtlistener.com") !== -1) {
-        var entryBase = e.docket_url.replace(/\/+$/, "");
-        // CL web pages 404 on slugless /docket/<id> — any slug text works, so
-        // "-" keeps stale bare URLs clickable.
-        if (/\/docket\/\d+$/.test(entryBase)) entryBase += "/-";
-        var entryUrl = entryBase +
-          "/?filed_after=&filed_before=&entry_gte=" + entryNum +
-          "&entry_lte=" + entryNum + "&order_by=asc";
+        var entryUrl = entryViewUrl(e, entryNum);
         linkHtml = '<a class="ud-link" href="' + esc(entryUrl) + '" target="_blank" rel="noopener">' +
           esc(dktLabel) + "</a>";
       } else if (entryNum && e.doc_url) {
@@ -1460,6 +1454,15 @@
     return m ? m[1] : "";
   }
 
+  // CourtListener's per-entry document page \u2014 the simple direct view for
+  // one docket entry. Works with the real case slug or the "-" placeholder.
+  function entryViewUrl(e, entryNum) {
+    var m = /\/docket\/(\d+)(?:\/([^/?#]+))?/.exec(e.docket_url || "");
+    if (!m || entryNum == null) return "";
+    return "https://www.courtlistener.com/docket/" + m[1] + "/" + entryNum +
+      "/" + (m[2] || "-") + "/";
+  }
+
   function startDocFetch(e) {
     var nk = entryNoteKey(e);
     if (FETCHING[nk]) return;
@@ -1470,14 +1473,10 @@
     render();
 
     // Where the plain Dkt. link points \u2014 the always-works fallback so a
-    // failed fetch is never worse than the link the click replaced.
-    // CL web pages 404 on /docket/<id>/ without a slug segment, but accept
-    // ANY slug text \u2014 "-" keeps the link working when we don't know it.
-    var linkFallback = docketId
-      ? "https://www.courtlistener.com/docket/" + docketId +
-        "/-/?filed_after=&filed_before=&entry_gte=" + e.entry_number +
-        "&entry_lte=" + e.entry_number + "&order_by=asc"
-      : (e.docket_url || e.doc_url || "");
+    // failed fetch is never worse than the link the click replaced. Direct
+    // per-entry document view; the "-" slug placeholder always resolves.
+    var linkFallback = entryViewUrl(e, e.entry_number) ||
+      (e.docket_url || e.doc_url || "");
 
     function openFallback(url, reason) {
       delete FETCHING[nk];
