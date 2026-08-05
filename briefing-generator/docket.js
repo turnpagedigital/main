@@ -1004,7 +1004,11 @@
       var dktLabel = "Dkt. " + entryNum;
       var linkHtml;
       if (entryNum && e.docket_url && e.docket_url.indexOf("courtlistener.com") !== -1) {
-        var entryUrl = e.docket_url.replace(/\/+$/, "") +
+        var entryBase = e.docket_url.replace(/\/+$/, "");
+        // CL web pages 404 on slugless /docket/<id> — any slug text works, so
+        // "-" keeps stale bare URLs clickable.
+        if (/\/docket\/\d+$/.test(entryBase)) entryBase += "/-";
+        var entryUrl = entryBase +
           "/?filed_after=&filed_before=&entry_gte=" + entryNum +
           "&entry_lte=" + entryNum + "&order_by=asc";
         linkHtml = '<a class="ud-link" href="' + esc(entryUrl) + '" target="_blank" rel="noopener">' +
@@ -1463,9 +1467,11 @@
 
     // Where the plain Dkt. link points \u2014 the always-works fallback so a
     // failed fetch is never worse than the link the click replaced.
+    // CL web pages 404 on /docket/<id>/ without a slug segment, but accept
+    // ANY slug text \u2014 "-" keeps the link working when we don't know it.
     var linkFallback = docketId
       ? "https://www.courtlistener.com/docket/" + docketId +
-        "/?filed_after=&filed_before=&entry_gte=" + e.entry_number +
+        "/-/?filed_after=&filed_before=&entry_gte=" + e.entry_number +
         "&entry_lte=" + e.entry_number + "&order_by=asc"
       : (e.docket_url || e.doc_url || "");
 
