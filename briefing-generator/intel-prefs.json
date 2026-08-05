@@ -49,8 +49,9 @@
       "fg": "#92410e"
     },
     "billion-dollar-class-actions": {
-      "bg": "#1B3A4B",
-      "fg": "#FFFFFF"
+      "bg": "#1b3a4b",
+      "fg": "#ffffff",
+      "border": "#000000"
     },
     "crypto-insolvency": {
       "bg": "#1B3A4B",
@@ -150,7 +151,7 @@
   "theme_presets": [
     {
       "bg": "#ffffff",
-      "fg": "#0a0a0a"
+      "fg": "#696969"
     },
     {
       "bg": "#E9F98A",
