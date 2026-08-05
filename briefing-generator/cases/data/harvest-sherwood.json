@@ -15,8 +15,8 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-04T22:33:37.401964+00:00",
-    "as_of": "Aug 4, 2026",
+    "fetched_at": "2026-08-05T00:19:18.916459+00:00",
+    "as_of": "Aug 5, 2026",
     "backfilled": false,
     "new_in_72h": 21,
     "recent": [
@@ -3143,6 +3143,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 859,
+        "date_filed": "2026-06-01",
+        "time_filed": "21:12:12",
+        "date_display": "Jun 1, 2026",
+        "description": "Notice Notice of Filing of Third Amended Chapter 11 Plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)800 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan)., 858 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan, 800 Chapter 11 plan, 819 Chapter 11 plan).). (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 858,
         "date_filed": "2026-06-01",
         "time_filed": "21:03:28",
@@ -3348,6 +3358,16 @@
         "time_filed": "16:58:10",
         "date_display": "May 26, 2026",
         "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Snider Fleet Solutions (Claim No. 10, Amount $15,317.00) To Atlas Grove Management, LLC. Filed by Interested Party Atlas Grove Management, LLC. (Schultz, Sarah)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 838,
+        "date_filed": "2026-05-26",
+        "time_filed": "15:38:35",
+        "date_display": "May 26, 2026",
+        "description": "Notice of hearing filed by Creditor theITSupportCenter, LLC (RE: related document(s)683 Motion to allow claims Filed by Creditor theITSupportCenter, LLC). Hearing to be held on 5/28/2026 at 09:30 AM at https://us-courts.webex.com/meet/jerniga for 683, (Gotay, C.)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -3963,6 +3983,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 780,
+        "date_filed": "2026-05-12",
+        "time_filed": "18:07:24",
+        "date_display": "May 12, 2026",
+        "description": "Notice of Appearance and Request for Notice by Timothy A. Davidson II filed by Creditor JPMorgan Chase Bank, N.A., as Prepetition Agent and DIP Agent. (Davidson, Timothy)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": null,
         "date_filed": "2026-05-12",
         "time_filed": "",
@@ -4148,6 +4178,26 @@
         "time_filed": "15:24:51",
         "date_display": "May 7, 2026",
         "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: Da Yang Seafood Inc. (Amount $9,464.00) To Fair Harbor Capital, LLC. Filed by Creditor Fair Harbor Capital, LLC. (Attachments: # 1 Transfer of Claim) (Glass, Fred)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 765,
+        "date_filed": "2026-05-07",
+        "time_filed": "14:41:55",
+        "date_display": "May 7, 2026",
+        "description": "Notice of hearing Notice of Hearing for May 27, 2026 Setting filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)761 Motion to borrow/incur debt The Debtors Motion Pursuant to 11 U.S.C. §§ 105(a), 363(b), 503, and 507 and Fed. R. Bankr. P. 6004 for Entry of an Order (I) Authorizing the Debtors to Enter into the Exit Capital Commitment Agreement, (II) Approving Performance of All Obligations Thereunder, and (III) Granting Related Relief Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 5/27/2026. (Attachments: # 1 Exhibit A), 763 Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A)). Hearing to be held on 5/27/2026 at 01:30 PM Dallas Judge Jernigan Ctrm for 763 and for 761, (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 764,
+        "date_filed": "2026-05-07",
+        "time_filed": "14:35:39",
+        "date_display": "May 7, 2026",
+        "description": "Notice Notice of Eighth Additional Extension of Debtors Exclusive Right to File and Solicit Acceptance of a Plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)666 Motion to extend or limit the exclusivity period Filed by Debtor Harvest Sherwood Food Distributors, Inc. Objections due by 3/23/2026. (Attachments: # 1 Exhibit A)). (Fink, Ryan)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -13243,7 +13293,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=16"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=22"
   },
   "claims_administrator": {
     "name": "Epiq11",
