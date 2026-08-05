@@ -453,9 +453,7 @@
     }
     var c = caseOf(n.slug);
     if (n.entry_number != null && c && (c.docket_url || "").indexOf("courtlistener.com") !== -1) {
-      var url = c.docket_url.replace(/\/+$/, "") +
-        "/?filed_after=&filed_before=&entry_gte=" + n.entry_number +
-        "&entry_lte=" + n.entry_number + "&order_by=asc";
+      var url = (function (u, n) { var m = /\/docket\/(\d+)(?:\/([^/?#]+))?/.exec(u); return m ? "https://www.courtlistener.com/docket/" + m[1] + "/" + n + "/" + (m[2] || "-") + "/" : u; })(c.docket_url, n.entry_number);
       return '<a class="ud-link" href="' + esc(url) + '" target="_blank" rel="noopener">Dkt. ' +
         esc(String(n.entry_number)) + "</a>";
     }
