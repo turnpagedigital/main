@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-04T22:35:26.542821+00:00",
-    "as_of": "Aug 4, 2026",
+    "fetched_at": "2026-08-05T00:21:02.682057+00:00",
+    "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 5,
     "recent": [
       {
         "entry_number": 85,
@@ -108,7 +108,7 @@
         "time_filed": "00:14:40",
         "date_display": "Aug 2, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
