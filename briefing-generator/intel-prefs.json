@@ -147,5 +147,54 @@
       "fg": "#0A0A0A"
     }
   ],
-  "theme_presets": []
+  "theme_presets": [
+    {
+      "bg": "#637312",
+      "fg": "#0a0a0a"
+    },
+    {
+      "bg": "#E9F98A",
+      "fg": "#4A5500"
+    },
+    {
+      "bg": "#1B3A4B",
+      "fg": "#FFFFFF"
+    },
+    {
+      "bg": "#94C6F8",
+      "fg": "#123A66"
+    },
+    {
+      "bg": "#3B78D8",
+      "fg": "#FFFFFF"
+    },
+    {
+      "bg": "#B3A8F0",
+      "fg": "#2A1E6E"
+    },
+    {
+      "bg": "#4A3DE0",
+      "fg": "#FFFFFF"
+    },
+    {
+      "bg": "#7EF4C2",
+      "fg": "#0B4A32"
+    },
+    {
+      "bg": "#3FA07A",
+      "fg": "#FFFFFF"
+    },
+    {
+      "bg": "#F2AAEC",
+      "fg": "#6E1466"
+    },
+    {
+      "bg": "#CC33CC",
+      "fg": "#FFFFFF"
+    },
+    {
+      "bg": "#3A3A3A",
+      "fg": "#FFFFFF"
+    }
+  ]
 }
