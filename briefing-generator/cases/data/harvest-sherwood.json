@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-05T00:19:18.916459+00:00",
+    "fetched_at": "2026-08-05T03:39:30.260270+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": false,
     "new_in_72h": 21,
@@ -4203,6 +4203,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 763,
+        "date_filed": "2026-05-07",
+        "time_filed": "14:03:45",
+        "date_display": "May 7, 2026",
+        "description": "Motion for conditional approval of disclosure statement. (related documents 760 Disclosure statement) Filed by Debtor Harvest Sherwood Food Distributors, Inc. (Attachments: # 1 Exhibit A) (Fink, Ryan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 762,
         "date_filed": "2026-05-07",
         "time_filed": "14:00:33",
@@ -4823,6 +4833,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 716,
+        "date_filed": "2026-04-01",
+        "time_filed": "10:53:34",
+        "date_display": "Apr 1, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Red Jacket Orchards Inc (Claim No. 10811, Amount $55,079.73) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 715,
         "date_filed": "2026-04-01",
         "time_filed": "10:51:10",
@@ -4833,11 +4853,41 @@
         "doc_url": ""
       },
       {
+        "entry_number": 714,
+        "date_filed": "2026-04-01",
+        "time_filed": "10:48:32",
+        "date_display": "Apr 1, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: Red Jacket Orchards (Amount $228.40) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 713,
+        "date_filed": "2026-04-01",
+        "time_filed": "10:46:39",
+        "date_display": "Apr 1, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 1 Transferors: Berryfield Bottling LLC (Amount $54,373.73) To TRC Master Fund LLC. Filed by Interested Party TR Capital Management, LLC. (Ross, Terrel)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": null,
         "date_filed": "2026-04-01",
         "time_filed": "",
         "date_display": "Apr 1, 2026",
         "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A33576768, amount $ 28.00 (re: Doc# 716). (U.S. Treasury)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-01",
+        "time_filed": "10:58:41",
+        "date_display": "Apr 1, 2026",
+        "description": "none AND none AND none AND none",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
@@ -13293,7 +13343,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=22"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=28"
   },
   "claims_administrator": {
     "name": "Epiq11",

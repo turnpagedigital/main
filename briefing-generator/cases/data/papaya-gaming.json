@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Papaya Gaming Ltd.",
+    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -13,17 +13,27 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-05T00:20:57.201578+00:00",
+    "fetched_at": "2026-08-05T03:40:50.286782+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 35,
+    "new_in_72h": 36,
     "recent": [
+      {
+        "entry_number": 38,
+        "date_filed": "2026-08-04",
+        "time_filed": "20:24:52",
+        "date_display": "Aug 4, 2026",
+        "description": "Certification of Counsel(Aty)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 37,
         "date_filed": "2026-08-04",
-        "time_filed": "",
+        "time_filed": "20:05:05",
         "date_display": "Aug 4, 2026",
         "description": "Certification of Counsel for Agreed Form of Order Granting Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code (related document(s)7). Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B) (related document(s)7) (Malow, Jennifer) (Entered: 08/04/2026)",
         "is_new": true,
@@ -39,23 +49,23 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.36.0.pdf"
-      },
-      {
-        "entry_number": 35,
-        "date_filed": "2026-08-04",
-        "time_filed": "",
-        "date_display": "Aug 4, 2026",
-        "description": "Request for Transcript of hearing held on August 4, 2026 received. To obtain a copy of this transcript, contact the Court Reporter/Transcriber Reliable Companies, Telephone number 3026548080 (RE: related document(s) 10). (Reliable Companies) (Entered: 08/04/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
       {
+        "entry_number": 38,
+        "date_filed": "2026-08-04",
+        "time_filed": "20:24:52",
+        "date_display": "Aug 4, 2026",
+        "description": "Certification of Counsel(Aty)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 37,
         "date_filed": "2026-08-04",
-        "time_filed": "",
+        "time_filed": "20:05:05",
         "date_display": "Aug 4, 2026",
         "description": "Certification of Counsel for Agreed Form of Order Granting Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code (related document(s)7). Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B) (related document(s)7) (Malow, Jennifer) (Entered: 08/04/2026)",
         "is_new": true,
