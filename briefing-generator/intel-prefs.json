@@ -60,8 +60,9 @@
       "border": "#4a3ee0"
     },
     "llm-class-action": {
-      "bg": "#1B3A4B",
-      "fg": "#FFFFFF"
+      "bg": "#1b3a4b",
+      "fg": "#ffffff",
+      "border": "#ffffff"
     },
     "fraud-recovery": {
       "bg": "#1B3A4B",
