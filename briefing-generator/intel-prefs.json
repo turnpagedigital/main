@@ -56,7 +56,8 @@
     },
     "crypto-insolvency": {
       "bg": "#3fa07a",
-      "fg": "#ffffff"
+      "fg": "#ffffff",
+      "border": "#ffffff"
     },
     "llm-class-action": {
       "bg": "#1B3A4B",
