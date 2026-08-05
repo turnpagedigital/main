@@ -9,6 +9,13 @@
 
 /intel/*
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+
+# Intel app code ships fixes several times a day — don't let browsers sit on
+# a 4-hour cached copy (the Pages default). 5 minutes keeps refreshes honest.
+/intel/*.js
+  Cache-Control: public, max-age=300, must-revalidate
+/intel/*.html
+  Cache-Control: public, max-age=60, must-revalidate
 /*
   Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-IAi1pLQE5+KAIuArgNXn6zyVZNw3AXpIN96yYUJWAu4=' https://conversations-widget.brevo.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://conversations-widget.brevo.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://*.brevo.com wss://*.brevo.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.google.com https://*.doubleclick.net; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://*.brevo.com https://td.doubleclick.net https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   X-Content-Type-Options: nosniff
