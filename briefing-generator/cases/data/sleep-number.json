@@ -15,20 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
     "date_last_filing": "2026-08-04",
-    "fetched_at": "2026-08-04T22:35:43.392761+00:00",
-    "as_of": "Aug 4, 2026",
+    "fetched_at": "2026-08-05T03:41:14.720987+00:00",
+    "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 6,
     "recent": [
       {
         "entry_number": 512,
         "date_filed": "2026-08-04",
         "time_filed": "12:26:54",
         "date_display": "Aug 4, 2026",
-        "description": "Declaration",
+        "description": "Declaration of Disinterestedness of Dieter A. Schmitz in Support of Employment of Baker & McKenzie LLP as a Professional Utilized in the Ordinary Course of Business filed by Brian Resnick on behalf of Sleep Number Corporation.",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 511,
@@ -58,7 +59,7 @@
         "date_filed": "2026-08-04",
         "time_filed": "12:26:54",
         "date_display": "Aug 4, 2026",
-        "description": "Declaration of Disinterestedness of Dieter A. Schmitz in Support of Employment of Baker & McKenzie LLP as a Professional Utilized in the Ordinary Course of Business filed by Brian Resnick on behalf of Sleep Number Corporation.",
+        "description": "Declaration Of Disinterestedness Of Dieter A. Schmitz In Support Of Employment Of Baker & McKenzie LLP As A Professional Utilized In The Ordinary Course Of Business",
         "is_new": true,
         "landmark": "",
         "doc_url": "",
@@ -121,7 +122,7 @@
         "time_filed": "22:08:17",
         "date_display": "Aug 2, 2026",
         "description": "Order Authorizing The Employment And Retention Of Pachulski Stang Ziehl & Jones LLP As Counsel To The Official Committee Of Unsecured Creditors Effective As Of June 26, 2026",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "",
         "titled_from_upload": true
@@ -132,7 +133,7 @@
         "time_filed": "21:46:14",
         "date_display": "Aug 2, 2026",
         "description": "Order (I) Authorizing Debtors To (A) Retain Ap Services, LLC And (B) Designate Kent Percy As Chief Restructuring Officer Effective As Of The Petition Date And (II) Granting Related Relief (Related Doc # 128) signed on 8/2/2026. (Kinchen, Gwen) (Entered: 08/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -142,7 +143,7 @@
         "time_filed": "21:32:57",
         "date_display": "Aug 2, 2026",
         "description": "Amended Notice of Agenda / Amended Hearing Agenda for Hearing on August 3, 2026 filed by Brian Resnick on behalf of Sleep Number Corporation. with hearing to be held on 8/3/2026 at 10:00 AM at Courtroom 610 (KYP - NYC) (Resnick, Brian) (Entered: 08/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -152,7 +153,7 @@
         "time_filed": "20:02:56",
         "date_display": "Aug 2, 2026",
         "description": "Notice of Proposed Order / Notice of Filing of Revised Proposed Order (A) Authorizing the Debtors to Retain A&G Realty Partners, LLC as a Real Estate Consultant and Advisor Effective as of the Petition Date and (B) Granting Related Relief (related document(s)130) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 08/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -162,7 +163,7 @@
         "time_filed": "19:19:41",
         "date_display": "Aug 2, 2026",
         "description": "Certificate of No Objection Pursuant to LR 9013-3 / Certificate of No Objection Regarding Debtors Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) Designation of Kent Percy as Chief Restructuring Officer Effective as of the Petition Date and (II) Granting Related Relief (related document(s)382, 128, 486, 500, 383) Filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 08/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -172,7 +173,7 @@
         "time_filed": "17:32:58",
         "date_display": "Aug 2, 2026",
         "description": "Declaration / Third Supplemental Declaration of Kent Percy of AP Services, LLC (related document(s)128, 482, 383) filed by Brian Resnick on behalf of Sleep Number Corporation. (Resnick, Brian) (Entered: 08/02/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -182,7 +183,7 @@
         "time_filed": "22:18:49",
         "date_display": "Aug 2, 2026",
         "description": "Terminate Pending Deadlines AND Terminate Pending Documents",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -192,7 +193,7 @@
         "time_filed": "",
         "date_display": "Aug 2, 2026",
         "description": "Pending Deadlines Terminated Re: Application to Employ AP Services, LLC/Debtors' Application for Entry of an Order (I) Authorizing the (A) Retention of AP Services, LLC and (B) Designation of Kent Percy as Chief Restructuring Officer Effective as of the Petition Date and (II) Granting Related Relief filed by Brian Resnick on behalf of Sleep Number Corporation (Related Document #128). August 3, 2026 hearing not held. Order entered - See Document #504. (Fredericks, Frances).",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -202,7 +203,7 @@
         "time_filed": "",
         "date_display": "Aug 2, 2026",
         "description": "Pending Deadlines Terminated Re: Application to Employ Pachulski Stang Ziehl & Jones LLP as Counsel to the Official Committee of Unsecured Creditors Effective as of June 26, 2026 filed by Bradford J. Sandler on behalf of The Official Committee of Unsecured Creditors (Related Document #398). August 3, 2026 hearing not held. Order entered - See Document #505. (Fredericks, Frances).",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
