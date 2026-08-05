@@ -15,11 +15,31 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T18:57:01.554525+00:00",
+    "fetched_at": "2026-08-05T20:40:59.019896+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": false,
-    "new_in_72h": 30,
+    "new_in_72h": 32,
     "recent": [
+      {
+        "entry_number": 1152,
+        "date_filed": "2026-08-05",
+        "time_filed": "15:25:44",
+        "date_display": "Aug 5, 2026",
+        "description": "Certificate of no objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1151,
+        "date_filed": "2026-08-05",
+        "time_filed": "14:07:47",
+        "date_display": "Aug 5, 2026",
+        "description": "Request for transcript/audio",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1150,
         "date_filed": "2026-08-05",
@@ -29,29 +49,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1149,
-        "date_filed": "2026-08-05",
-        "time_filed": "10:15:26",
-        "date_display": "Aug 5, 2026",
-        "description": "(1 pg) Court admitted exhibits (Declarations), date of hearing August 5, 2026 (RE: related document(s) 1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s) 759 Chapter 11 plan)(Court admitted into evidence as direct testimony, Declarations of Emily Young found at doc. #1134; Declaration of Samir Saleem found at doc. #1135 & Declaration of Eric Kamp Chief Restructuring Officer found at doc #1135, offered into evidence by attorney Ryan Fink.) (Edmond, Michael)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1148,
-        "date_filed": "2026-08-05",
-        "time_filed": "09:02:07",
-        "date_display": "Aug 5, 2026",
-        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Landes Fresh Meats, Inc. (Claim No. 10048, Amount $123,900.23) To Jefferies Leveraged Credit Products, LLC. Filed by Creditor Jefferies Leveraged Credit Products, LLC. (Wooten, Ryan)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1152,
+        "date_filed": "2026-08-05",
+        "time_filed": "15:25:44",
+        "date_display": "Aug 5, 2026",
+        "description": "Certificate of no objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1151,
+        "date_filed": "2026-08-05",
+        "time_filed": "14:07:47",
+        "date_display": "Aug 5, 2026",
+        "description": "Request for transcript/audio",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1150,
         "date_filed": "2026-08-05",
@@ -13493,7 +13513,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=62"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=68"
   },
   "claims_administrator": {
     "name": "Epiq11",

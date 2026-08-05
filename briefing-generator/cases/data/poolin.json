@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T18:58:21.289140+00:00",
+    "fetched_at": "2026-08-05T20:41:52.936636+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 8,
     "recent": [
+      {
+        "entry_number": 88,
+        "date_filed": "2026-08-05",
+        "time_filed": "15:18:23",
+        "date_display": "Aug 5, 2026",
+        "description": "Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 87,
         "date_filed": "2026-08-05",
@@ -31,21 +41,11 @@
         "doc_url": ""
       },
       {
-        "entry_number": 85,
-        "date_filed": "2026-08-04",
-        "time_filed": "13:41:15",
-        "date_display": "Aug 4, 2026",
-        "description": "Extend Time",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 84,
-        "date_filed": "2026-08-03",
-        "time_filed": "19:15:34",
-        "date_display": "Aug 3, 2026",
-        "description": "Notice of Appearance and Request",
+        "entry_number": null,
+        "date_filed": "2026-08-05",
+        "time_filed": "15:50:08",
+        "date_display": "Aug 5, 2026",
+        "description": "Receipt - Generic - BK - Court Use Only",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -53,11 +53,31 @@
     ],
     "entries": [
       {
+        "entry_number": 88,
+        "date_filed": "2026-08-05",
+        "time_filed": "15:18:23",
+        "date_display": "Aug 5, 2026",
+        "description": "Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 87,
         "date_filed": "2026-08-05",
         "time_filed": "10:03:16",
         "date_display": "Aug 5, 2026",
         "description": "Notice of Appearance and Request",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-05",
+        "time_filed": "15:50:08",
+        "date_display": "Aug 5, 2026",
+        "description": "Receipt - Generic - BK - Court Use Only",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
