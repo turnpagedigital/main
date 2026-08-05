@@ -17,7 +17,8 @@
  */
 
 import { cp, rm, copyFile, readFile, writeFile, readdir } from "node:fs/promises";
-import { join, sep } from "node:path";
+import { join, sep, dirname, resolve } from "node:path";
+import { createHash } from "node:crypto";
 
 const SRC = "briefing-generator";
 const DEST = "dist/intel";
@@ -55,6 +56,39 @@ async function* walk(dir) {
 const AUTH_SCRIPT_RE =
   /[ \t]*<script[^>]*src="\/(?:intel\/)?(?:auth\/[^"]+|login\.html)"[^>]*>\s*<\/script>\n?/g;
 
+// Content-hash version stamps for intel app scripts: stale open tabs kept
+// running hours-old JS because /intel/*.js is browser-cached for 4h (Pages
+// asset default; header overrides from _headers/middleware don't stick).
+// The HTML always revalidates (max-age=0), so stamping each <script src>
+// with the file's hash makes every refresh load current code — and makes
+// the 4h asset caching harmless.
+const hashCache = new Map();
+async function versionOf(jsPath) {
+  const key = resolve(jsPath);
+  if (!hashCache.has(key)) {
+    try {
+      const bytes = await readFile(jsPath);
+      hashCache.set(key, createHash("sha1").update(bytes).digest("hex").slice(0, 8));
+    } catch {
+      hashCache.set(key, null); // referenced file not in the copy — leave tag alone
+    }
+  }
+  return hashCache.get(key);
+}
+
+async function stampScripts(html, fileDir) {
+  const tags = [...html.matchAll(/src="((?:\.\.\/|\/intel\/)?[\w-]+\.js)"/g)];
+  for (const m of tags) {
+    const ref = m[1];
+    const local = ref.startsWith("/intel/")
+      ? join(DEST, ref.slice("/intel/".length))
+      : join(fileDir, ref);
+    const v = await versionOf(local);
+    if (v) html = html.replaceAll(`src="${ref}"`, `src="${ref}?v=${v}"`);
+  }
+  return html;
+}
+
 let rewritten = 0;
 for await (const file of walk(DEST)) {
   if (!/\.(html|js)$/.test(file)) continue;
@@ -72,6 +106,9 @@ for await (const file of walk(DEST)) {
     after = after
       .replaceAll('href="../', 'href="/intel/')
       .replaceAll('src="../', 'src="/intel/');
+  }
+  if (file.endsWith(".html")) {
+    after = await stampScripts(after, dirname(file));
   }
   if (after !== before) {
     await writeFile(file, after);
