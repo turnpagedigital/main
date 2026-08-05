@@ -246,6 +246,9 @@
   .ud-table tbody tr.ud-row-cursor{outline:2px solid var(--neon);outline-offset:-2px;}
   .ud-fetch-spin{display:inline-block;width:15px;height:15px;border:2px solid var(--line-strong);border-top-color:var(--ink);border-radius:50%;animation:udspin 0.8s linear infinite;vertical-align:middle;}
   @keyframes udspin{to{transform:rotate(360deg);}}
+  .ud-fetch-wrap{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
+  .ud-fetch-label{font-size:11px;color:var(--ink-60);letter-spacing:0.01em;}
+  .ud-fetch-err{font-size:11px;font-weight:700;color:#B3261E;white-space:nowrap;cursor:help;}
   .ud-rename-input{width:100%;font-family:inherit;font-size:13px;padding:5px 7px;border:1.5px solid var(--neon);background:var(--surface);color:var(--ink);box-sizing:border-box;}
   .ud-due{background:rgba(212,255,0,0.5);border:1px solid var(--line-strong);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
   [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.22);color:#F4F5F7;}

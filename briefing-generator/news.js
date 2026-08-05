@@ -1414,6 +1414,10 @@
   // through CourtListener's PACER fetch otherwise. Cmd/Ctrl-click still
   // opens CourtListener normally.
   var FETCHING = {};  // noteKey → true while a fetch is in flight
+  // noteKey → {kind:"spin"|"err", label, reason} — drives the row's inline
+  // fetch status (spinner + step text, or a warning badge on failure). The
+  // top #ud-sync line stays reserved for page-wide sync state.
+  var FETCH_STATE = {};
 
   function docketIdOf(e) {
     var m = /courtlistener\.com\/docket\/(\d+)/.exec(e.docket_url || "");
@@ -1426,19 +1430,23 @@
     var docketId = docketIdOf(e);
     if (!docketId || e.entry_number == null || !e.slug) return;
     FETCHING[nk] = true;
+    FETCH_STATE[nk] = { kind: "spin", label: "Fetching Dkt. " + e.entry_number + "\u2026" };
     render();
-    noteToast("Fetching Dkt. " + e.entry_number + "\u2026", false);
 
     function done(ok, msg, path) {
       delete FETCHING[nk];
       if (ok) {
+        delete FETCH_STATE[nk];
         (UPLOADS[nk] = UPLOADS[nk] || []).push({
           name: "Dkt-" + e.entry_number + ".pdf", path: path, size: 0,
           uploaded_at: new Date().toISOString(), text: "",
         });
-        noteToast("Document attached \u2014 Dkt. " + e.entry_number, false);
       } else {
-        noteToast("Fetch failed \u2014 " + msg, true);
+        var short = /rate.?limit|429/i.test(msg || "") ? "Rate limited"
+          : /tim(ed)?\s?out/i.test(msg || "") ? "Timed out"
+          : "Fetch failed";
+        FETCH_STATE[nk] = { kind: "err", label: short,
+          reason: (msg || short) + " \u2014 the row's links still open the entry" };
       }
       render();
     }
@@ -1453,7 +1461,8 @@
       // Claims agent (free): a GitHub Action fetches and commits the PDF; poll
       // the uploads index until the document lands on this row.
       if (p.status === "agent_pending") {
-        noteToast("Fetching Dkt. " + e.entry_number + " from the claims agent\u2026", false);
+        FETCH_STATE[nk] = { kind: "spin", label: "Dkt. " + e.entry_number + " \u2014 claims agent\u2026" };
+        render();
         var atries = 0;
         var atimer = setInterval(function () {
           atries++;
@@ -1463,9 +1472,9 @@
             if (docs.length) {
               clearInterval(atimer);
               delete FETCHING[nk];
+              delete FETCH_STATE[nk];
               UPLOADS[nk] = docs;
               render();
-              noteToast("Document attached \u2014 Dkt. " + e.entry_number, false);
             }
           }).catch(function () {});
         }, 4000);
@@ -1473,7 +1482,8 @@
       }
 
       if (p.status !== "pending") { done(false, p.error || "unknown error"); return; }
-      noteToast("Buying Dkt. " + e.entry_number + " from PACER\u2026", false);
+      FETCH_STATE[nk] = { kind: "spin", label: "Dkt. " + e.entry_number + " \u2014 buying from PACER\u2026" };
+      render();
       var tries = 0;
       var timer = setInterval(function () {
         tries++;
@@ -1523,8 +1533,10 @@
   // uploaded, a black file icon (open / download / remove) replaces the links.
   function docCell(e, linksHtml) {
     var nk = entryNoteKey(e);
-    if (FETCHING[nk]) {
-      return '<span class="ud-fetch-spin" title="Fetching the document\u2026"></span>';
+    var st = FETCH_STATE[nk];
+    if (st && st.kind === "spin") {
+      return '<span class="ud-fetch-wrap"><span class="ud-fetch-spin"></span>' +
+        '<span class="ud-fetch-label">' + esc(st.label) + "</span></span>";
     }
     var docs = docsFor(nk);
     if (docs.length) {
@@ -1538,7 +1550,10 @@
         );
       }).join(" ");
     }
-    return linksHtml +
+    var errBadge = (st && st.kind === "err")
+      ? '<span class="ud-fetch-err" title="' + esc(st.reason) + '">\u26a0 ' + esc(st.label) + "</span> "
+      : "";
+    return errBadge + linksHtml +
       ' <button type="button" class="ud-upload-btn" data-upload-nk="' + esc(nk) + '" title="Upload the document (PDF) \u2014 replaces these links">' + SVG_UPLOAD + "</button>";
   }
 
