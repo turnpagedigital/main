@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Papaya Gaming Ltd.",
+    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -13,13 +13,23 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T16:56:59.350775+00:00",
+    "fetched_at": "2026-08-05T18:58:15.640403+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 38,
+    "new_in_72h": 39,
     "recent": [
+      {
+        "entry_number": 41,
+        "date_filed": "2026-08-05",
+        "time_filed": "12:52:49",
+        "date_display": "Aug 5, 2026",
+        "description": "Hearing - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 40,
         "date_filed": "2026-08-05",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 38,
-        "date_filed": "2026-08-04",
-        "time_filed": "20:24:52",
-        "date_display": "Aug 4, 2026",
-        "description": "Certification of Counsel(Aty)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 41,
+        "date_filed": "2026-08-05",
+        "time_filed": "12:52:49",
+        "date_display": "Aug 5, 2026",
+        "description": "Hearing - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 40,
         "date_filed": "2026-08-05",
