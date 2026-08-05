@@ -15,17 +15,27 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T16:56:09.536131+00:00",
+    "fetched_at": "2026-08-05T18:57:01.554525+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": false,
-    "new_in_72h": 27,
+    "new_in_72h": 30,
     "recent": [
+      {
+        "entry_number": 1150,
+        "date_filed": "2026-08-05",
+        "time_filed": "11:34:04",
+        "date_display": "Aug 5, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Highland Farms Ltd. (Claim No. 10324, Amount $433,351.16) To Lake Avenue CS, LLC. Filed by Creditor Lake Avenue CS, LLC. (McLaren, Tyler)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1149,
         "date_filed": "2026-08-05",
         "time_filed": "10:15:26",
         "date_display": "Aug 5, 2026",
-        "description": "Court admitted exhibits",
+        "description": "(1 pg) Court admitted exhibits (Declarations), date of hearing August 5, 2026 (RE: related document(s) 1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s) 759 Chapter 11 plan)(Court admitted into evidence as direct testimony, Declarations of Emily Young found at doc. #1134; Declaration of Samir Saleem found at doc. #1135 & Declaration of Eric Kamp Chief Restructuring Officer found at doc #1135, offered into evidence by attorney Ryan Fink.) (Edmond, Michael)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -35,17 +45,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "09:02:07",
         "date_display": "Aug 5, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1147,
-        "date_filed": "2026-08-05",
-        "time_filed": "08:59:51",
-        "date_display": "Aug 5, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Landes Fresh Meats, Inc. (Claim No. 10048, Amount $123,900.23) To Jefferies Leveraged Credit Products, LLC. Filed by Creditor Jefferies Leveraged Credit Products, LLC. (Wooten, Ryan)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -53,11 +53,21 @@
     ],
     "entries": [
       {
+        "entry_number": 1150,
+        "date_filed": "2026-08-05",
+        "time_filed": "11:34:04",
+        "date_display": "Aug 5, 2026",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Highland Farms Ltd. (Claim No. 10324, Amount $433,351.16) To Lake Avenue CS, LLC. Filed by Creditor Lake Avenue CS, LLC. (McLaren, Tyler)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 1149,
         "date_filed": "2026-08-05",
         "time_filed": "10:15:26",
         "date_display": "Aug 5, 2026",
-        "description": "Court admitted exhibits",
+        "description": "(1 pg) Court admitted exhibits (Declarations), date of hearing August 5, 2026 (RE: related document(s) 1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s) 759 Chapter 11 plan)(Court admitted into evidence as direct testimony, Declarations of Emily Young found at doc. #1134; Declaration of Samir Saleem found at doc. #1135 & Declaration of Eric Kamp Chief Restructuring Officer found at doc #1135, offered into evidence by attorney Ryan Fink.) (Edmond, Michael)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -67,7 +77,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "09:02:07",
         "date_display": "Aug 5, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Landes Fresh Meats, Inc. (Claim No. 10048, Amount $123,900.23) To Jefferies Leveraged Credit Products, LLC. Filed by Creditor Jefferies Leveraged Credit Products, LLC. (Wooten, Ryan)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -77,7 +87,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "08:59:51",
         "date_display": "Aug 5, 2026",
-        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Ace Trailer Repair LLC (Claim No. 10140, Amount $186,408.73) To Jefferies Leveraged Credit Products, LLC. Filed by Creditor Jefferies Leveraged Credit Products, LLC. (Wooten, Ryan)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -87,7 +97,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "08:18:55",
         "date_display": "Aug 5, 2026",
-        "description": "Notice (generic)",
+        "description": "Notice of Stipulation and Agreed Order of Harvest Sherwood Food Distributors, Inc. and Michigan Conference of Teamsters Welfare Fund Regarding Timeliness of Claim filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -97,7 +107,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "07:16:51",
         "date_display": "Aug 5, 2026",
-        "description": "Certificate of service",
+        "description": "Certificate of service re: Debtors Witness and Exhibit List for Hearing Scheduled for August 5, 2026, at 9:30 a.m. (Prevailing Central Time) filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)1126 List (witness/exhibit/generic)). (Mailloux, Kathryn)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -113,11 +123,31 @@
         "doc_url": ""
       },
       {
+        "entry_number": null,
+        "date_filed": "2026-08-05",
+        "time_filed": "",
+        "date_display": "Aug 5, 2026",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A34023592, amount $ 28.00 (re: Doc# 1148). (U.S. Treasury)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-05",
+        "time_filed": "11:36:17",
+        "date_display": "Aug 5, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 1144,
         "date_filed": "2026-08-04",
         "time_filed": "17:17:05",
         "date_display": "Aug 4, 2026",
-        "description": "Notice (generic)",
+        "description": "Notice of Filing of First Amended Plan Supplement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1089 Notice Notice of Filing Plan Supplement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)948 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan).). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D)). (Attachments: # 1 Exhibit A-1 # 2 Exhibit A-2) (Fink, Ryan)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -127,7 +157,7 @@
         "date_filed": "2026-08-04",
         "time_filed": "14:48:27",
         "date_display": "Aug 4, 2026",
-        "description": "Notice (generic)",
+        "description": "Notice // Thirteenth Monthly Fee Statement of McDermott Will & Schulte LLP, as Counsel to the Official Committee of Unsecured Creditors, for Compensation for Services Rendered and Reimbursement of Expenses Incurred for the Period June 1, 2026 through June 30, 2026 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Wombacher, Michael)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -137,7 +167,7 @@
         "date_filed": "2026-08-04",
         "time_filed": "13:51:45",
         "date_display": "Aug 4, 2026",
-        "description": "List (witness/exhibit/generic)",
+        "description": "Amended Witness and Exhibit List filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1126 List (witness/exhibit/generic)). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12 # 13 Exhibit 13) (Fink, Ryan)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -147,7 +177,7 @@
         "date_filed": "2026-08-04",
         "time_filed": "10:23:37",
         "date_display": "Aug 4, 2026",
-        "description": "Withdrawal",
+        "description": "Withdrawal Notice of Withdrawal and Request for Removal from Paper and/or Electronic Services Lists for Laurie Dahl Rea and Rochelle McCullough PLLC filed by Creditor Century Fire Sprinklers, Inc. (RE: related document(s)375 Notice of appearance and request for notice). (Rea, Laurie)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -157,7 +187,7 @@
         "date_filed": "2026-08-04",
         "time_filed": "10:07:23",
         "date_display": "Aug 4, 2026",
-        "description": "Notice (generic)",
+        "description": "Notice // The Official Committee of Unsecured Creditors' Statement in Support of Confirmation of the Debtors' Third Amended Joint Chapter 11 Plan of Harvest Sherwood Food Distributors, Inc. and Its Debtor Affiliates (with Technical and Non-Substantive Modifications) filed by Creditor Committee The Official Committee of Unsecured Creditors (RE: related document(s)1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan).). (Wombacher, Michael)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -167,7 +197,7 @@
         "date_filed": "2026-08-04",
         "time_filed": "09:49:56",
         "date_display": "Aug 4, 2026",
-        "description": "Withdrawal of claim",
+        "description": "Withdrawal of claim(s): No. 10259 Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Mailloux, Kathryn)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -177,7 +207,7 @@
         "date_filed": "2026-08-04",
         "time_filed": "00:18:10",
         "date_display": "Aug 4, 2026",
-        "description": "Agenda for Complex Chapter 11",
+        "description": "Agenda for Hearing scheduled on 8/5/2026 @ 9:30 AM filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan).). (McManus, Chelsea)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -187,7 +217,7 @@
         "date_filed": "2026-08-04",
         "time_filed": "00:06:44",
         "date_display": "Aug 4, 2026",
-        "description": "Notice (generic)",
+        "description": "Notice of Filing of Proposed Confirmation Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan).). (Attachments: # 1 Exhibit 1) (McManus, Chelsea)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -247,7 +277,7 @@
         "date_filed": "2026-08-03",
         "time_filed": "23:07:56",
         "date_display": "Aug 3, 2026",
-        "description": "Chapter 11 plan",
+        "description": "Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan). (McManus, Chelsea)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -13463,7 +13493,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=56"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=62"
   },
   "claims_administrator": {
     "name": "Epiq11",
