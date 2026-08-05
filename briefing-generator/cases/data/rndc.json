@@ -15,11 +15,31 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T18:58:39.328915+00:00",
+    "fetched_at": "2026-08-05T20:42:03.754493+00:00",
     "as_of": "Aug 5, 2026",
     "backfilled": true,
-    "new_in_72h": 27,
+    "new_in_72h": 29,
     "recent": [
+      {
+        "entry_number": 132,
+        "date_filed": "2026-08-05",
+        "time_filed": "14:42:29",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 131,
+        "date_filed": "2026-08-05",
+        "time_filed": "14:36:20",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 130,
         "date_filed": "2026-08-05",
@@ -29,29 +49,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 129,
-        "date_filed": "2026-08-05",
-        "time_filed": "09:22:47",
-        "date_display": "Aug 5, 2026",
-        "description": "AO435 Transcript Request",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 128,
-        "date_filed": "2026-08-05",
-        "time_filed": "00:45:13",
-        "date_display": "Aug 5, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 132,
+        "date_filed": "2026-08-05",
+        "time_filed": "14:42:29",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 131,
+        "date_filed": "2026-08-05",
+        "time_filed": "14:36:20",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 130,
         "date_filed": "2026-08-05",
