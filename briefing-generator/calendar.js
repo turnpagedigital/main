@@ -665,9 +665,7 @@
       var entryNum = ev.entry_number != null ? String(ev.entry_number) : null;
       var dktLabel = "Dkt. " + entryNum;
       if (entryNum && ev.docket_url && ev.docket_url.indexOf("courtlistener.com") !== -1) {
-        var entryUrl = ev.docket_url.replace(/\/+$/, "") +
-          "/?filed_after=&filed_before=&entry_gte=" + entryNum +
-          "&entry_lte=" + entryNum + "&order_by=asc";
+        var entryUrl = (function (u, n) { var m = /\/docket\/(\d+)(?:\/([^/?#]+))?/.exec(u); return m ? "https://www.courtlistener.com/docket/" + m[1] + "/" + n + "/" + (m[2] || "-") + "/" : u; })(ev.docket_url, entryNum);
         court = '<a class="ud-link" href="' + esc(entryUrl) + '" target="_blank" rel="noopener">' +
           esc(dktLabel) + "</a>";
       } else if (entryNum && ev.doc_url) {
@@ -741,9 +739,7 @@
     var title = ev.short + ": " + ev.kind + (ev.time ? " " + ev.time : "");
     var srcUrl = ev.event_url || "";
     if (!srcUrl && ev.entry_number != null && (ev.docket_url || "").indexOf("courtlistener.com") !== -1) {
-      srcUrl = ev.docket_url.replace(/\/+$/, "") +
-        "/?filed_after=&filed_before=&entry_gte=" + ev.entry_number +
-        "&entry_lte=" + ev.entry_number + "&order_by=asc";
+      srcUrl = (function (u, n) { var m = /\/docket\/(\d+)(?:\/([^/?#]+))?/.exec(u); return m ? "https://www.courtlistener.com/docket/" + m[1] + "/" + n + "/" + (m[2] || "-") + "/" : u; })(ev.docket_url, ev.entry_number);
     }
 
     var allText = ev.snippet || "";
