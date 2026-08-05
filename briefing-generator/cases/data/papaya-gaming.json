@@ -497,6 +497,13 @@
   "claims_administrator": null,
   "coverage": [
     {
+      "headline": "Why a popular gaming company filed Chapter 15 bankruptcy",
+      "url": "https://www.thestreet.com/retail/gambling-company-papaya-gaming-files-bankruptcy-after-719-million-verdict",
+      "source": "TheStreet",
+      "date": "2026-08-04",
+      "summary": "TheStreet reports on Papaya Gaming's dual-track legal strategy: a Chapter 15 filing in Delaware and an Israeli court-supervised fund expected to hold approximately $100 million in 2026 as a potential source for settling claims. The company admits in the filing it cannot pay the $719 million judgment."
+    },
+    {
       "headline": "Papaya Gaming Files Ch. 15 To Shield Against $719M Verdict",
       "url": "https://www.law360.com/bankruptcy/articles/2508851",
       "source": "Law360",
@@ -516,6 +523,20 @@
       "source": "Casino.org",
       "date": "2026-08-03",
       "summary": "Papaya Gaming filed for Chapter 15 protection in Delaware and secured a temporary stay in Tel Aviv to prevent rival Skillz from collecting a $719 million verdict while it appeals. A federal judge found Papaya liable for using computer bots in its real-money games while misleading consumers and violating false advertising laws."
+    },
+    {
+      "headline": "Papaya Gaming Files Ch. 15 To Shield Against $719M Verdict",
+      "url": "https://www.law360.com/delaware/articles/2508851",
+      "source": "Law360",
+      "date": "2026-08-03",
+      "summary": "Israeli mobile gaming company Papaya Gaming filed a Chapter 15 bankruptcy petition in Delaware after being hit with a $719 million judgment in New York federal court over false advertising claims. The filing seeks to block collection efforts by rival Skillz (now Firy Inc.) while Papaya pursues its appeal."
+    },
+    {
+      "headline": "Papaya Gaming wins temporary stay after $719 million US judgment",
+      "url": "https://www.jpost.com/israel-news/article-904473",
+      "source": "The Jerusalem Post",
+      "date": "2026-08-03",
+      "summary": "The Tel Aviv District Court under Judge Iris Lushi-Abudi granted Papaya Gaming a temporary stay of proceedings as part of its effort to establish a supervised payment arrangement. The Israeli court acknowledged that if the U.S. appeal fails, Papaya will face insolvency."
     },
     {
       "headline": "Papaya Owes $719M, Atty Fees In Gaming False Ad Case",

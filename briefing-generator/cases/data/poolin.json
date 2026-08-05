@@ -951,6 +951,13 @@
   },
   "coverage": [
     {
+      "headline": "Poolin owes wallet users $163.7M, and its $52M Texas sale can still unravel next week",
+      "url": "https://cryptoslate.com/poolin-owes-wallet-users-163-7m-and-its-52m-texas-sale-can-still-unravel-next-week/",
+      "source": "CryptoSlate",
+      "date": "2026-08-04",
+      "summary": "A fresh docket review finds that stalking-horse buyer Thor CALAP LLC can terminate either purchase agreement over unsatisfactory diligence through August 9, five days before the court's scheduled August 14 bidding-procedures hearing, leaving creditor recovery deeply uncertain for 11,700 IOU holders owed $163.7 million."
+    },
+    {
       "headline": "New Chapter 11 Bankruptcy Filing — Poolin Technology PTE LTD",
       "url": "https://www.petition11.com/p/poolin-chapter-11-bankruptcy-filing",
       "source": "Petition (petition11.com)",
@@ -977,6 +984,13 @@
       "source": "CryptoSlate",
       "date": "2026-07-24",
       "summary": "CryptoSlate reports that Poolin's first-day declaration lists $163,723,500 in unsecured wallet-holder IOUs and a proposed sale process including a September 8 qualified-offer deadline, a September 10 auction if multiple qualified bids emerge, a sale hearing no later than September 16, and a November 30 closing deadline."
+    },
+    {
+      "headline": "Bitcoin Miner Poolin Technology Files Chapter 11 With $173M Debt as $52M Asset Sale Moves Forward",
+      "url": "https://news.bitcoin.com/bitcoin-miner-poolin-technology-files-chapter-11-with-173m-debt-as-52m-asset-sale-moves-forward/",
+      "source": "Bitcoin.com News",
+      "date": "2026-07-24",
+      "summary": "Poolin permanently halted all mining and hosting operations on July 10, 2026, and filed Chapter 11 on July 22 with plans to liquidate its West Texas mining infrastructure through a $52 million floor bid, leaving 11,700 wallet holders with $163.7 million in frozen IOUs."
     },
     {
       "headline": "Crypto Miner Poolin Hits Ch. 11 After China Ban, Market Slump",
@@ -1009,6 +1023,14 @@
   ],
   "events": [
     {
+      "title": "Deadline: Objections to Bidding Procedures and Sale Motion",
+      "date": "2026-08-07",
+      "time": "",
+      "kind": "Deadline",
+      "url": "https://cryptoslate.com/poolin-owes-wallet-users-163-7m-and-its-52m-texas-sale-can-still-unravel-next-week/",
+      "source": "U.S. Bankruptcy Court, D.N.J. (Case 26-18325)"
+    },
+    {
       "title": "Poolin Asset Sale — Qualified Bid Deadline",
       "date": "2026-09-08",
       "time": "",
@@ -1031,6 +1053,14 @@
       "kind": "Deadline",
       "url": "https://www.tradingview.com/news/cointelegraph:d622b4b2e094b:0-bitcoin-mining-pool-poolin-files-for-chapter-11-bankruptcy/",
       "source": "U.S. Bankruptcy Court, D.N.J. (via CoinTelegraph/TradingView)"
+    },
+    {
+      "title": "Auction: Poolin West Texas Mining Assets (Pyote & Tarbush)",
+      "date": "2026-09-10",
+      "time": "",
+      "kind": "Call",
+      "url": "https://bondoro.com/poolin/",
+      "source": "U.S. Bankruptcy Court, D.N.J. (Case 26-18325)"
     }
   ]
 }
