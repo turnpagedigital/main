@@ -13,7 +13,16 @@ import { isAuthed } from "../api/admin/_utils.js";
 export async function onRequest(context) {
   const { request, env, next } = context;
   if (await isAuthed(request, env)) {
-    return next(); // valid admin session — serve the static intel asset
+    const res = await next(); // valid admin session — serve the static intel asset
+    // Intel app code ships fixes several times a day; Pages' default 4h
+    // max-age left stale tabs running hours-old JS. _headers rules don't
+    // modify function-fronted responses, so cap the cache here.
+    if (/\.js(\?|$)/.test(new URL(request.url).pathname)) {
+      const capped = new Response(res.body, res);
+      capped.headers.set("Cache-Control", "public, max-age=300, must-revalidate");
+      return capped;
+    }
+    return res;
   }
   return new Response(GATE_HTML, {
     status: 401,
