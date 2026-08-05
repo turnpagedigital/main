@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-04T16:22:13.838738+00:00",
+    "date_last_filing": "2026-08-04",
+    "fetched_at": "2026-08-04T22:35:43.392761+00:00",
     "as_of": "Aug 4, 2026",
     "backfilled": true,
-    "new_in_72h": 14,
+    "new_in_72h": 15,
     "recent": [
+      {
+        "entry_number": 512,
+        "date_filed": "2026-08-04",
+        "time_filed": "12:26:54",
+        "date_display": "Aug 4, 2026",
+        "description": "Declaration",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 511,
         "date_filed": "2026-08-03",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.507.0_1.pdf"
-      },
-      {
-        "entry_number": 506,
-        "date_filed": "2026-08-03",
-        "time_filed": "09:56:28",
-        "date_display": "Aug 3, 2026",
-        "description": "Supplemental Declaration of Sanjuro Kietlinski of Province, LLC in Support of Application to Retain and Employ Province, LLC as Financial Advisor to the Official Committee of Unsecured Creditors of Sleep Number Corporation, et al., Effective June 26, 2026 (related document(s)399) filed by Shirley S Cho on behalf of The Official Committee of Unsecured Creditors. (Cho, Shirley) (Entered: 08/03/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysb.335734/gov.uscourts.nysb.335734.506.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 512,
+        "date_filed": "2026-08-04",
+        "time_filed": "12:26:54",
+        "date_display": "Aug 4, 2026",
+        "description": "Declaration",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 511,
         "date_filed": "2026-08-03",

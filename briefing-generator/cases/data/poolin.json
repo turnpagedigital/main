@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
-    "date_last_filing": "2026-08-03",
-    "fetched_at": "2026-08-04T16:21:52.977353+00:00",
-    "as_of": "Aug 4, 2026",
+    "date_last_filing": "2026-08-04",
+    "fetched_at": "2026-08-05T00:21:02.682057+00:00",
+    "as_of": "Aug 5, 2026",
     "backfilled": true,
     "new_in_72h": 5,
     "recent": [
+      {
+        "entry_number": 85,
+        "date_filed": "2026-08-04",
+        "time_filed": "13:41:15",
+        "date_display": "Aug 4, 2026",
+        "description": "Extend Time",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 84,
         "date_filed": "2026-08-03",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 82,
-        "date_filed": "2026-08-03",
-        "time_filed": "12:01:32",
-        "date_display": "Aug 3, 2026",
-        "description": "Withdrawal of Document",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 85,
+        "date_filed": "2026-08-04",
+        "time_filed": "13:41:15",
+        "date_display": "Aug 4, 2026",
+        "description": "Extend Time",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 84,
         "date_filed": "2026-08-03",
@@ -98,7 +108,7 @@
         "time_filed": "00:14:40",
         "date_display": "Aug 2, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
