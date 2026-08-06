@@ -1467,6 +1467,24 @@
         openPalette();
       }
     });
+    // S then A (within 600ms) = show all cases — clears the case filter.
+    var chordSAt = 0;
+    document.addEventListener("keydown", function (ev) {
+      if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+      var t = ev.target || {};
+      var tag = (t.tagName || "").toLowerCase();
+      if (tag === "input" || tag === "textarea" || tag === "select" || t.isContentEditable) return;
+      var k = (ev.key || "").toLowerCase();
+      if (k === "s") { chordSAt = Date.now(); return; }
+      if (k === "a" && chordSAt && Date.now() - chordSAt < 600) {
+        ev.preventDefault();
+        chordSAt = 0;
+        paletteApply(null);
+      } else {
+        chordSAt = 0;
+      }
+    });
+
 
     // L / M / W switch the view (ignored while typing in any field)
     document.addEventListener("keydown", function (ev) {
