@@ -1,18 +1,19 @@
 /* Markets tile data — GET returns a small set of case-relevant symbols with
    price, day change, and a ~30-point sparkline. Sources are keyless and free:
-   CoinGecko for crypto (7d sparkline included), Stooq daily CSV for stocks.
+   Coinbase Exchange for crypto (candles + 24h stats), Yahoo chart for stocks
+   (price and day change only — Yahoo gates history for anonymous clients).
    Assembled response is edge-cached for an hour, so a day of dashboard
    visits costs a handful of upstream calls. Symbols that fail to fetch are
    simply omitted — the tile renders whatever came back. */
 
 const SYMBOLS = [
-  { sym: "BTC",  label: "Bitcoin",      kind: "crypto", id: "bitcoin",  href: "crypto-insolvency/dashboard.html" },
-  { sym: "ETH",  label: "Ethereum",     kind: "crypto", id: "ethereum", href: "crypto-insolvency/dashboard.html" },
+  { sym: "BTC",  label: "Bitcoin",      kind: "crypto", id: "BTC-USD", href: "crypto-insolvency/dashboard.html" },
+  { sym: "ETH",  label: "Ethereum",     kind: "crypto", id: "ETH-USD", href: "crypto-insolvency/dashboard.html" },
   { sym: "SKLZ", label: "Skillz",       kind: "stock",  id: "SKLZ",     href: "cases/papaya-gaming.html", case_slug: "papaya-gaming" },
   { sym: "SNBR", label: "Sleep Number", kind: "stock",  id: "SNBR",     href: "cases/sleep-number.html",  case_slug: "sleep-number" },
 ];
 
-const CACHE_KEY = "https://intel-markets-cache.invalid/v2";
+const CACHE_KEY = "https://intel-markets-cache.invalid/v3";
 
 function downsample(arr, n) {
   if (!arr || arr.length <= n) return arr || [];
@@ -22,25 +23,34 @@ function downsample(arr, n) {
 }
 
 async function fetchCrypto(items) {
-  const ids = items.map((s) => s.id).join(",");
-  const res = await fetch(
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=" + ids +
-      "&sparkline=true&price_change_percentage=24h",
-    { headers: { "User-Agent": "tpdm-intel", Accept: "application/json" } }
-  );
-  if (!res.ok) return [];
-  const data = await res.json();
-  return items.map((s) => {
-    const row = data.find((d) => d.id === s.id);
-    if (!row) return null;
-    return {
-      sym: s.sym, label: s.label, kind: s.kind, href: s.href, case_slug: s.case_slug || null,
-      price: row.current_price,
-      chg_pct: row.price_change_percentage_24h,
-      range: "7d",
-      spark: downsample((row.sparkline_in_7d && row.sparkline_in_7d.price) || [], 30),
-    };
-  }).filter(Boolean);
+  // Coinbase Exchange public API — keyless, serves candles and 24h stats.
+  // (CoinGecko throttles shared datacenter IPs; Binance geo-blocks the US.)
+  const out = [];
+  for (const s of items) {
+    try {
+      const [cRes, sRes] = await Promise.all([
+        fetch("https://api.exchange.coinbase.com/products/" + s.id + "/candles?granularity=86400",
+          { headers: { "User-Agent": "tpdm-intel", Accept: "application/json" } }),
+        fetch("https://api.exchange.coinbase.com/products/" + s.id + "/stats",
+          { headers: { "User-Agent": "tpdm-intel", Accept: "application/json" } }),
+      ]);
+      if (!cRes.ok || !sRes.ok) continue;
+      const candles = await cRes.json();   // [[time, low, high, open, close, vol], ...] newest first
+      const stats = await sRes.json();
+      const closes = candles.slice(0, 30).reverse().map((r) => r[4]);
+      const last = Number(stats.last);
+      const open = Number(stats.open);
+      if (!isFinite(last)) continue;
+      out.push({
+        sym: s.sym, label: s.label, kind: s.kind, href: s.href, case_slug: s.case_slug || null,
+        price: last,
+        chg_pct: isFinite(open) && open ? ((last - open) / open) * 100 : 0,
+        range: "30d",
+        spark: closes,
+      });
+    } catch { /* omit this symbol */ }
+  }
+  return out;
 }
 
 async function fetchStock(s) {
