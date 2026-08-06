@@ -532,16 +532,27 @@
 
   // ── Top band: unassigned news, date strip, latest notes ───────────────────
   function renderUnassigned() {
+    // Only case- or theme-related news makes the dashboard; the full feed
+    // lives on the News page under "All news".
     var items = FEED_ITEMS.filter(function (b) {
-      return b.url && b.title && !b.case_slug && !b.group_name && !b.theme_slug;
+      return b.url && b.title && (b.case_slug || b.group_name || b.theme_slug);
     });
     var countEl = document.getElementById("ih-unassigned-count");
-    if (countEl) countEl.textContent = items.length ? items.length + " to triage \u2192" : "triage \u2192";
-    fill("ih-unassigned", items.slice(0, 3).map(function (b) {
+    if (countEl) countEl.textContent = "View all \u2192";
+    fill("ih-unassigned", items.slice(0, 7).map(function (b) {
+      var pill = "";
+      var mc = b.case_slug && MANIFEST.find(function (m) { return m.slug === b.case_slug; });
+      if (mc) {
+        pill = casePill(mc.slug, mc.short_name || mc.display_name || mc.slug, mc.default_color);
+      } else if (b.theme_slug && THEMES[b.theme_slug]) {
+        var th = THEMES[b.theme_slug];
+        pill = '<span class="ih-pill" style="border-radius:0;background:' + th.bg + ";color:" + th.fg + '">' + th.emoji + " " + esc(th.name) + "</span>";
+      } else if (b.group_name) {
+        pill = '<span class="ih-pill" style="background:var(--paper-2);color:var(--ink-60)">' + esc(b.group_name) + "</span>";
+      }
       return row(BASE + "news.html#u=" + encodeURIComponent(b.url),
         fmtDate(b.date) + " \u00b7 " + (b.source || "") + " \u00b7 " + (b.kind || "news"),
-        b.title,
-        '<span class="ih-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-60)">Uncategorized</span>');
+        b.title, pill);
     }).join(""));
   }
 
