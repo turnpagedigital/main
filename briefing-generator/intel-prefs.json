@@ -51,7 +51,8 @@
     },
     "billion-dollar-class-actions": {
       "bg": "#000000",
-      "fg": "#ffffff"
+      "fg": "#ffffff",
+      "border": "#000000"
     },
     "crypto-insolvency": {
       "bg": "#d9ff00",
