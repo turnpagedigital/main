@@ -1464,6 +1464,44 @@
       "/?entry_gte=" + entryNum + "#entry-" + entryNum;
   }
 
+  // Health-check a CourtListener page before sending the reader there — CL
+  // error pages (500s, rate limiting, 404s) divert the click to the
+  // claims-agent mirror when the row has one. Fail-open: an inconclusive
+  // check just opens CourtListener.
+  function openCLGuarded(e, url) {
+    var nk = entryNoteKey(e);
+    var prev = FETCH_STATE[nk] || null;
+    var win = window.open("", "_blank");  // opened inside the click gesture so popups aren't blocked
+    FETCH_STATE[nk] = { kind: "spin", label: "Checking CourtListener\u2026" };
+    render();
+    function settle(state, dest) {
+      if (state) FETCH_STATE[nk] = state;
+      else if (prev) FETCH_STATE[nk] = prev;
+      else delete FETCH_STATE[nk];
+      render();
+      if (dest) {
+        if (win) win.location.href = dest;
+        else window.open(dest, "_blank", "noopener");
+      } else if (win) {
+        win.close();
+      }
+    }
+    fetchJson("api/check-link?url=" + encodeURIComponent(url)).then(function (p) {
+      if (!p || p.ok !== false) { settle(null, url); return; }
+      var why = p.reason === "timeout" ? "CourtListener timed out"
+        : p.reason === "rate-limited" ? "CourtListener is rate-limiting"
+        : p.reason === "not-found" ? "page missing on CourtListener"
+        : "CourtListener server error";
+      if (e.claims_url) {
+        settle({ kind: "err", label: "CL down \u2014 used agent",
+          reason: why + " \u2014 opened the claims-agent copy instead" }, e.claims_url);
+      } else {
+        settle({ kind: "err", label: "CL unavailable",
+          reason: why + " \u2014 no mirror on this row; try again in a few minutes" }, "");
+      }
+    }).catch(function () { settle(null, url); });
+  }
+
   function startDocFetch(e) {
     var nk = entryNoteKey(e);
     if (FETCHING[nk]) return;
@@ -1488,7 +1526,7 @@
       FETCH_STATE[nk] = { kind: "err", label: short,
         reason: (reason || short) + " \u2014 the Dkt. link opens this entry on CourtListener" };
       render();
-      if (url) window.open(url, "_blank", "noopener");
+      if (url) openCLGuarded(e, url);
     }
 
     function done(ok, msg, path) {
@@ -2754,11 +2792,13 @@
             (cl.getAttribute("href") || "").indexOf("courtlistener.com") !== -1) {
           var ctr = ev.target.closest("tr[data-ridx]");
           var ce = ctr ? RENDERED[Number(ctr.getAttribute("data-ridx"))] : null;
-          // If a prior fetch failed for this row, let the link open normally.
-          if (ce && !FETCH_BYPASS[entryNoteKey(ce)] &&
-              !ce.is_article && ce.entry_number != null && docketIdOf(ce)) {
+          if (ce && !ce.is_article && ce.entry_number != null && docketIdOf(ce)) {
             ev.preventDefault();
-            startDocFetch(ce);
+            // After a failed fetch the click opens the link directly — but
+            // health-check CourtListener first so the reader never lands on
+            // an error page (broken CL diverts to the claims-agent mirror).
+            if (FETCH_BYPASS[entryNoteKey(ce)]) openCLGuarded(ce, cl.getAttribute("href"));
+            else startDocFetch(ce);
             return;
           }
         }
