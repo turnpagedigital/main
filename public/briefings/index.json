@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "slug": "2026-08-05-bankruptcy-advisory",
+      "date": "2026-08-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bankruptcy Creditor Rights Advisory — August 5, 2026",
+      "summary": "Two significant developments broke Monday through Tuesday: the free-fall Chapter 11 petition of Hughes Satellite Systems Corporation and eleven affiliated debtors in the Southern District of Texas — the largest new mega-case filing in this cycle — and the filing of a $15 million settlement term shee…",
+      "tags": [
+        "Bankruptcy",
+        "Creditor Rights",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-05-class-actions-advisory",
+      "date": "2026-08-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "$1B+ Class Actions Advisory — August 5, 2026",
+      "summary": "Nothing moved in the last 24 hours that clears the verification threshold for the tracked mega-matters — no new docket entries in Bartz v. Anthropic PBC (No. 3:24-cv-05417, N.D. Cal., Hon. Martínez-Olguín; last filing Jul.",
+      "tags": [
+        "Class Actions",
+        "Settlements",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-05-fraud-advisory",
+      "date": "2026-08-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Fraud Recovery Advisory — August 5, 2026",
+      "summary": "No docket activity on any tracked case in the last 24 hours. The Goliath Ventures receivership (Goliath Ventures Inc., S.D. Fl. No. 26-13174-RAM, J. Mark) is static since the July 28 Disclosure of Compensation filing (Dkt. 22); Power Block Coin (In re Power Block Coin, LLC, Bankr. D. Utah No.",
+      "tags": [
+        "Fraud",
+        "Recovery",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-05-tariff-advisory",
+      "date": "2026-08-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Tariffs / Trade Advisory — August 5, 2026",
+      "summary": "Two developments moved the tape yesterday and this morning. First, CBP disclosed in a CIT status filing Tuesday that cumulative IEEPA refunds have crossed $100 billion — roughly 60% of the ~$166 billion collected — a meaningful throughput milestone that nevertheless leaves the hardest categories of…",
+      "tags": [
+        "Tariffs",
+        "IEEPA",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-05-crypto-advisory",
+      "date": "2026-08-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Crypto Insolvency Advisory — August 5, 2026",
+      "summary": "Yesterday brought one clean ruling and one routine docket step across the tracked cases. The headline item is the S.D. Tex.",
+      "tags": [
+        "Crypto",
+        "Insolvency",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
+      "slug": "2026-08-05-advisory",
+      "date": "2026-08-05",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "LLM / Copyright Advisory — August 5, 2026",
+      "summary": "The docket is quiet in the last 24 hours — no new filings have been confirmed across the tracked matters since yesterday's close.",
+      "tags": [
+        "LLM",
+        "Copyright",
+        "Advisory"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-08-04-bankruptcy-advisory",
       "date": "2026-08-04",
       "type": "briefing",
