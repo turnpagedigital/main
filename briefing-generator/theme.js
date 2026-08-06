@@ -20,6 +20,11 @@
     apply();
     var b=document.getElementById('theme-toggle');
     if(b)b.addEventListener('click',window.cycleTheme);
+    var kw=document.getElementById('tn-kbd'),kb=document.getElementById('tn-kbd-btn');
+    if(kw&&kb){
+      kb.addEventListener('click',function(e){e.stopPropagation();kw.classList.toggle('open');});
+      document.addEventListener('click',function(e){if(!kw.contains(e.target))kw.classList.remove('open');});
+    }
   }
   apply();
   if(document.readyState!=='loading') wire();
