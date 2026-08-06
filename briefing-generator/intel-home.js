@@ -509,6 +509,7 @@
     }).join(""));
   }
 
+  var mmOffset = 0;
   function renderDates() {
     var box = document.getElementById("ih-dates");
     if (!box) return;
@@ -518,11 +519,11 @@
       if (!caseOn(x.m.slug)) return;
       var short = x.m.short_name || x.m.display_name || x.m.slug;
       ((x.c && x.c.events) || []).forEach(function (ev) {
-        if (ev.date && ev.date >= today) events.push({ date: ev.date, short: short, title: ev.title || ev.kind || "" });
+        if (ev.date) events.push({ date: ev.date, short: short, title: ev.title || ev.kind || "", slug: x.m.slug, default_color: x.m.default_color });
       });
       ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
         extractEvents(e, short).forEach(function (ev) {
-          if (ev.date >= today) events.push({ date: ev.date, short: short, title: ev.kind });
+          events.push({ date: ev.date, short: short, title: ev.kind, slug: x.m.slug, default_color: x.m.default_color });
         });
       });
     });
@@ -534,18 +535,50 @@
       return true;
     });
     events.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
-    if (!events.length) {
-      box.innerHTML = '<div class="ih-empty">No upcoming dates.</div>';
-      return;
+    // Mini-month: dots mark event days; click a day to jump the calendar list.
+    var base = new Date();
+    base.setDate(1);
+    base.setMonth(base.getMonth() + mmOffset);
+    var yr = base.getFullYear(), mo = base.getMonth();
+    var ym = yr + "-" + pad2(mo + 1);
+    var byDay = {};
+    events.forEach(function (ev) {
+      if (ev.date.slice(0, 7) === ym) (byDay[ev.date] = byDay[ev.date] || []).push(ev);
+    });
+    var MONTHS = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+    var daysIn = new Date(yr, mo + 1, 0).getDate();
+    var lead = (new Date(yr, mo, 1).getDay() + 6) % 7;
+    var html = '<div class="ih-mm-head">' +
+      '<button type="button" class="ih-mm-nav" data-mm="-1">\u2039</button>' +
+      '<span>' + MONTHS[mo] + " " + yr + '</span>' +
+      '<button type="button" class="ih-mm-nav" data-mm="1">\u203a</button></div>';
+    html += '<div class="ih-mm-grid">' +
+      ["M", "T", "W", "T", "F", "S", "S"].map(function (d) { return '<span class="ih-mm-dow">' + d + "</span>"; }).join("");
+    for (var i = 0; i < lead; i++) html += '<span class="ih-mm-day ih-mm-out"></span>';
+    for (var dnum = 1; dnum <= daysIn; dnum++) {
+      var iso = ym + "-" + pad2(dnum);
+      var evs = byDay[iso] || [];
+      var cls = "ih-mm-day" + (iso === today ? " today" : "") + (evs.length ? " has" : "");
+      var dots = evs.slice(0, 3).map(function (ev) {
+        return '<i class="ih-mm-dot" style="background:' + getBg(ev.slug, ev.default_color) + '"></i>';
+      }).join("");
+      if (evs.length) {
+        html += '<a class="' + cls + '" href="' + BASE + 'calendar.html#d=' + iso + '" title="' +
+          esc(evs.map(function (ev) { return ev.short + " \u2014 " + ev.title; }).join("\n")) + '">' +
+          dnum + '<span class="ih-mm-dots">' + dots + "</span></a>";
+      } else {
+        html += '<span class="' + cls + '">' + dnum + '<span class="ih-mm-dots"></span></span>';
+      }
     }
-    var MONTH = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-    box.innerHTML = events.slice(0, 8).map(function (ev) {
-      var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(ev.date);
-      var isToday = ev.date === today;
-      return '<a class="ih-date-sq' + (isToday ? " today" : "") + '" href="' + BASE + 'calendar.html#ev=' + encodeURIComponent(ev.date + "|" + ev.short) + '" title="' +
-        esc(ev.short + " \u2014 " + ev.title + " (" + ev.date + ")") + '">' +
-        '<span class="m">' + MONTH[Number(m[2]) - 1] + '</span><span class="d">' + Number(m[3]) + "</span></a>";
-    }).join("");
+    html += "</div>";
+    box.innerHTML = html;
+    box.querySelectorAll(".ih-mm-nav").forEach(function (b) {
+      b.addEventListener("click", function () {
+        mmOffset += Number(b.getAttribute("data-mm"));
+        renderDates();
+      });
+    });
   }
 
   function renderNotes() {

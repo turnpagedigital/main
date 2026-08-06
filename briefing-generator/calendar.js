@@ -155,6 +155,8 @@
   var mergeGroups = [];     // [{keys, primary}]
   var selectedKeys = {};    // key → true (merge/dismiss selection)
   var _savedState = null;
+  var calMode = "list";        // "list" | "month" | "week"
+  var calAnchor = null;        // ISO date inside the shown month/week (set at boot)
 
   var FILTER_KEY = "uc-filter-state";
   function loadFilterState() {
@@ -162,13 +164,14 @@
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.scope) scope = s.scope;
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
+      if (s.calMode === "month" || s.calMode === "week" || s.calMode === "list") calMode = s.calMode;
       _savedState = s;
     } catch (e) {}
   }
   function saveFilterState() {
     try {
       localStorage.setItem(FILTER_KEY, JSON.stringify({
-        scope: scope, sortDir: sortDir, activeCases: activeCases,
+        scope: scope, sortDir: sortDir, activeCases: activeCases, calMode: calMode,
       }));
     } catch (e) {}
   }
@@ -304,7 +307,7 @@
   }
 
   // ── Filter + sort ──────────────────────────────────────────────────────────
-  function filtered() {
+  function filtered(ignoreScope) {
     var sq = searchText.toLowerCase().trim();
     var today = todayISO();
     var mergedExtras = {};
@@ -316,8 +319,8 @@
       if (dismissed[ev.key]) return false;
       if (mergedInto[ev.key]) return false;
       if (!activeCases[ev.slug]) return false;
-      if (scope === "upcoming" && ev.date < today) return false;
-      if (scope === "past" && ev.date >= today) return false;
+      if (!ignoreScope && scope === "upcoming" && ev.date < today) return false;
+      if (!ignoreScope && scope === "past" && ev.date >= today) return false;
       if (sq) {
         var hay = [ev.date, ev.kind, ev.name, ev.short, ev.snippet].join(" ").toLowerCase();
         if (hay.indexOf(sq) === -1) return false;
@@ -681,13 +684,30 @@
   var jumpDone = false;
   function jumpToHash() {
     if (jumpDone) return;
+    var row = null;
     var m = /[#&]ev=([^&]+)/.exec(location.hash || "");
-    if (!m) { jumpDone = true; return; }
-    var row = document.querySelector('tr[data-evkey="' + CSS.escape(decodeURIComponent(m[1])) + '"]');
+    var mD = /[#&]d=(\d{4}-\d{2}-\d{2})/.exec(location.hash || "");
+    if (m) {
+      row = document.querySelector('tr[data-evkey="' + CSS.escape(decodeURIComponent(m[1])) + '"]');
+    } else if (mD) {
+      // Dashboard mini-month day click — land on the first event of that day
+      row = document.querySelector('tr[data-evkey^="' + CSS.escape(mD[1]) + '|"]');
+    } else { jumpDone = true; return; }
     if (!row) return;
     jumpDone = true;
     row.classList.add("ud-row-cursor");
     row.scrollIntoView({ block: "center" });
+  }
+
+  function jumpListToEvent(evkey) {
+    calMode = "list";
+    saveFilterState();
+    render();
+    var row = document.querySelector('tr[data-evkey="' + CSS.escape(evkey) + '"]');
+    if (row) {
+      row.classList.add("ud-row-cursor");
+      row.scrollIntoView({ block: "center" });
+    }
   }
 
   // Court → IANA time zone. Explicit zone tokens in the time string win.
@@ -779,7 +799,178 @@
       "&details=" + encodeURIComponent(details);
   }
 
+
+  // ── Month / Week grid views ────────────────────────────────────────────────
+  function addDaysISO(iso, n) {
+    var d = new Date(iso + "T00:00:00");
+    d.setDate(d.getDate() + n);
+    return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+  }
+  function mondayOf(iso) {
+    var d = new Date(iso + "T00:00:00");
+    return addDaysISO(iso, -((d.getDay() + 6) % 7));
+  }
+  var MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  var DOW = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  function eventsByDate() {
+    var map = {};
+    filtered(true).forEach(function (ev) {
+      (map[ev.date] = map[ev.date] || []).push(ev);
+    });
+    return map;
+  }
+
+  function gridContainer() {
+    var g = document.getElementById("uc-grid");
+    if (!g) {
+      g = document.createElement("div");
+      g.id = "uc-grid";
+      var tbl = document.querySelector(".ud-table");
+      tbl.parentNode.insertBefore(g, tbl);
+      g.addEventListener("click", onGridClick);
+    }
+    return g;
+  }
+
+  function setListVisible(on) {
+    var tbl = document.querySelector(".ud-table");
+    if (tbl) tbl.style.display = on ? "" : "none";
+    var sb = document.getElementById("ud-sort-btn");
+    if (sb) sb.style.display = on ? "" : "none";
+    var mb = document.getElementById("uc-merge-bar");
+    if (mb && !on) mb.style.display = "none";
+    var g = document.getElementById("uc-grid");
+    if (g) g.style.display = on ? "none" : "";
+  }
+
+  function updateModeUI() {
+    var seg = document.getElementById("uc-mode");
+    if (!seg) return;
+    seg.querySelectorAll("button[data-mode]").forEach(function (b) {
+      b.className = b.getAttribute("data-mode") === calMode ? "uc-mode-on" : "";
+    });
+  }
+
+  function chipHtml(ev) {
+    var bg = getBg(ev.slug, ev.default_color);
+    var fg = getFg(ev.slug, bg);
+    return '<span class="uc-cal-chip" data-evkey="' + esc((ev.date || "") + "|" + (ev.short || "")) +
+      '" style="background:' + bg + ";color:" + fg + '" title="' +
+      esc(ev.short + " \u2014 " + ev.kind + (ev.time ? " " + ev.time : "") + "\n" + (ev.snippet || "")) + '">' +
+      esc(ev.short + " \u00b7 " + ev.kind) + "</span>";
+  }
+
+  function gridHeader(label) {
+    return '<div class="uc-cal-head">' +
+      '<button type="button" class="uc-cal-nav" data-nav="-1">\u2039</button>' +
+      '<span class="uc-cal-label">' + esc(label) + "</span>" +
+      '<button type="button" class="uc-cal-nav" data-nav="1">\u203a</button>' +
+      '<button type="button" class="uc-cal-nav uc-cal-today" data-nav="0">Today</button>' +
+      '<span class="uc-cal-note">all dates \u00b7 case filter and search apply</span>' +
+      "</div>";
+  }
+
+  function renderGrid() {
+    setListVisible(false);
+    var g = gridContainer();
+    var byDate = eventsByDate();
+    var today = todayISO();
+    var countEl = document.getElementById("ud-count");
+    var html = "";
+    if (calMode === "month") {
+      var ym = calAnchor.slice(0, 7);
+      var first = ym + "-01";
+      var mo = Number(calAnchor.slice(5, 7)) - 1;
+      var yr = Number(calAnchor.slice(0, 4));
+      var daysIn = new Date(yr, mo + 1, 0).getDate();
+      var cur = mondayOf(first);
+      var last = ym + "-" + pad2(daysIn);
+      var visible = 0;
+      html += gridHeader(MONTH_NAMES[mo] + " " + yr);
+      html += '<div class="uc-cal-grid uc-cal-dow">' + DOW.map(function (d) {
+        return "<div>" + d + "</div>";
+      }).join("") + "</div>";
+      html += '<div class="uc-cal-grid">';
+      while (cur <= last || ((new Date(cur + "T00:00:00")).getDay() + 6) % 7 !== 0) {
+        var inMonth = cur.slice(0, 7) === ym;
+        var evs = inMonth ? (byDate[cur] || []) : [];
+        visible += evs.length;
+        html += '<div class="uc-cal-cell' + (inMonth ? "" : " uc-cal-out") +
+          (cur === today ? " uc-cal-today-cell" : "") + '" data-d="' + cur + '">' +
+          '<span class="uc-cal-daynum" data-d="' + cur + '">' + Number(cur.slice(8, 10)) + "</span>" +
+          evs.slice(0, 3).map(chipHtml).join("") +
+          (evs.length > 3 ? '<span class="uc-cal-more" data-d="' + cur + '">+' + (evs.length - 3) + " more</span>" : "") +
+          "</div>";
+        cur = addDaysISO(cur, 1);
+        if (cur > last && ((new Date(cur + "T00:00:00")).getDay() + 6) % 7 === 0) break;
+      }
+      html += "</div>";
+      if (countEl) countEl.textContent = visible + " event" + (visible === 1 ? "" : "s") + " in " + MONTH_NAMES[mo];
+    } else {
+      var wk0 = mondayOf(calAnchor);
+      var wk6 = addDaysISO(wk0, 6);
+      var wkCount = 0;
+      html += gridHeader(prettyDate(wk0) + " \u2013 " + prettyDate(wk6));
+      html += '<div class="uc-week-grid">';
+      for (var i = 0; i < 7; i++) {
+        var day = addDaysISO(wk0, i);
+        var evs2 = byDate[day] || [];
+        wkCount += evs2.length;
+        html += '<div class="uc-week-col' + (day === today ? " uc-cal-today-cell" : "") + '">' +
+          '<div class="uc-week-dow">' + DOW[i] + " " + Number(day.slice(8, 10)) + "</div>" +
+          evs2.map(function (ev) {
+            var bg = getBg(ev.slug, ev.default_color);
+            var fg = getFg(ev.slug, bg);
+            return '<div class="uc-week-card" data-evkey="' + esc((ev.date || "") + "|" + (ev.short || "")) +
+              '" style="border-left-color:' + bg + '">' +
+              '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(ev.short) + "</span>" +
+              '<div class="uc-week-kind">' + esc(ev.kind) + (ev.time ? " \u00b7 " + esc(ev.time) : "") + "</div>" +
+              (ev.snippet ? '<div class="uc-week-snip">' + esc(ev.snippet) + "</div>" : "") +
+              '<div class="uc-week-links">' + entryLink(ev) +
+              (gcalUrl(ev) ? ' <a class="uc-gcal" href="' + esc(gcalUrl(ev)) + '" target="_blank" rel="noopener" title="Add to Google Calendar">\ud83d\udcc6</a>' : "") +
+              "</div></div>";
+          }).join("") +
+          "</div>";
+      }
+      html += "</div>";
+      if (countEl) countEl.textContent = wkCount + " event" + (wkCount === 1 ? "" : "s") + " this week";
+    }
+    g.innerHTML = html;
+  }
+
+  function onGridClick(ev) {
+    if (ev.target.closest("a")) return;  // real links behave normally
+    var nav = ev.target.closest(".uc-cal-nav");
+    if (nav) {
+      var dir = Number(nav.getAttribute("data-nav"));
+      if (dir === 0) calAnchor = todayISO();
+      else if (calMode === "month") {
+        var d = new Date(calAnchor.slice(0, 7) + "-01T00:00:00");
+        d.setMonth(d.getMonth() + dir);
+        calAnchor = d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-01";
+      } else {
+        calAnchor = addDaysISO(calAnchor, dir * 7);
+      }
+      render();
+      return;
+    }
+    var chip = ev.target.closest(".uc-cal-chip, .uc-week-card");
+    if (chip) { jumpListToEvent(chip.getAttribute("data-evkey")); return; }
+    var day = ev.target.closest(".uc-cal-daynum, .uc-cal-more");
+    if (day) {
+      calAnchor = day.getAttribute("data-d");
+      calMode = "week";
+      saveFilterState();
+      render();
+    }
+  }
+
   function render() {
+    updateModeUI();
+    if (calMode !== "list") { renderGrid(); return; }
+    setListVisible(true);
     var list = filtered();
     var tbody = document.getElementById("uc-tbody");
     var countEl = document.getElementById("ud-count");
@@ -1166,6 +1357,28 @@
       sortBtn.addEventListener("click", function () {
         sortDir = sortDir === "asc" ? "desc" : "asc";
         sortBtn.textContent = sortDir === "asc" ? "Date ↑" : "Date ↓";
+        saveFilterState();
+        render();
+      });
+    }
+
+    calAnchor = todayISO();
+    // Deep links (#ev= / #d=) land on list rows — force list for that visit.
+    if (/[#&](ev|d)=/.test(location.hash || "")) calMode = "list";
+    var fr = document.querySelector(".ud-filter-right");
+    if (fr) {
+      var seg = document.createElement("div");
+      seg.id = "uc-mode";
+      seg.className = "uc-mode";
+      seg.innerHTML = '<button type="button" data-mode="list">List</button>' +
+        '<button type="button" data-mode="month">Month</button>' +
+        '<button type="button" data-mode="week">Week</button>';
+      fr.insertBefore(seg, fr.firstChild);
+      seg.addEventListener("click", function (ev) {
+        var b = ev.target.closest("button[data-mode]");
+        if (!b) return;
+        calMode = b.getAttribute("data-mode");
+        calAnchor = todayISO();
         saveFilterState();
         render();
       });
