@@ -2865,6 +2865,13 @@
         startRename(Number(tr.getAttribute("data-ridx")));
       });
       tbodyEl.addEventListener("click", function (ev) {
+        // Any click inside a row moves the keyboard cursor there, so arrows
+        // and row shortcuts continue from the clicked row.
+        var selRow = ev.target.closest("tr[data-ridx]");
+        if (selRow) {
+          var selIdx = Number(selRow.getAttribute("data-ridx"));
+          if (!isNaN(selIdx) && selIdx !== cursorIdx) { cursorIdx = selIdx; applyCursor(false); }
+        }
         var ap = ev.target.closest(".ud-pill-assign");
         if (ap) {
           ev.stopPropagation();

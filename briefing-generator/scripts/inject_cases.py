@@ -41,14 +41,14 @@ THEME_SCRIPT_SUBDIR = '<script src="../theme.js"></script>' # cases/ pages
 
 # Shared stylesheet for the unified docket + unified calendar shells
 UD_CSS = r"""
-  .tn-kbd{position:relative;display:inline-flex;align-items:center;}
-  .tn-kbd-btn{font-family:inherit;font-size:17px;background:transparent;border:0;color:var(--ink-60);cursor:pointer;padding:2px 8px;line-height:1;}
+  .tn-kbd{position:relative;display:inline-flex;align-items:center;margin-left:auto;margin-right:10px;}
+  .tn-kbd-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;padding:5px 10px;line-height:1;white-space:nowrap;}
   .tn-kbd-btn:hover{color:var(--ink);}
   .tn-kbd-panel{display:none;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:12px 14px;min-width:290px;box-shadow:0 10px 30px rgba(0,0,0,0.14);text-align:left;}
   @media (hover:hover){.tn-kbd:hover .tn-kbd-panel{display:block;}}
   .tn-kbd.open .tn-kbd-panel{display:block;}
   .tn-kbd-title{font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:7px;}
-  .tn-kbd-row{font-size:12px;color:var(--ink-60);margin:5px 0;display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+  .tn-kbd-row{font-size:12.5px;color:var(--ink-60);margin:6px 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
   .tn-kbd-row em{font-style:normal;color:var(--ink-40);font-size:10.5px;margin-left:auto;padding-left:10px;}
   .tn-key{display:inline-block;font-size:10.5px;font-weight:800;border:1px solid var(--line-strong);padding:1px 6px;background:var(--paper-2);color:var(--ink);min-width:13px;text-align:center;}
   .page-title{max-width:1680px;}
@@ -355,14 +355,14 @@ PAGE_CSS = """<style>
   .page-title h1{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-0.02em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;}
   .case-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-60);}
   .case-meta strong{color:var(--ink);font-weight:700;}
-  .tn-kbd{position:relative;display:inline-flex;align-items:center;}
-  .tn-kbd-btn{font-family:inherit;font-size:17px;background:transparent;border:0;color:var(--ink-60);cursor:pointer;padding:2px 8px;line-height:1;}
+  .tn-kbd{position:relative;display:inline-flex;align-items:center;margin-left:auto;margin-right:10px;}
+  .tn-kbd-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;padding:5px 10px;line-height:1;white-space:nowrap;}
   .tn-kbd-btn:hover{color:var(--ink);}
   .tn-kbd-panel{display:none;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:12px 14px;min-width:290px;box-shadow:0 10px 30px rgba(0,0,0,0.14);text-align:left;}
   @media (hover:hover){.tn-kbd:hover .tn-kbd-panel{display:block;}}
   .tn-kbd.open .tn-kbd-panel{display:block;}
   .tn-kbd-title{font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:7px;}
-  .tn-kbd-row{font-size:12px;color:var(--ink-60);margin:5px 0;display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+  .tn-kbd-row{font-size:12.5px;color:var(--ink-60);margin:6px 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
   .tn-kbd-row em{font-style:normal;color:var(--ink-40);font-size:10.5px;margin-left:auto;padding-left:10px;}
   .tn-key{display:inline-block;font-size:10.5px;font-weight:800;border:1px solid var(--line-strong);padding:1px 6px;background:var(--paper-2);color:var(--ink);min-width:13px;text-align:center;}
   .status-badge{display:inline-block;margin-top:13px;font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;background:rgba(212,255,0,0.16);color:var(--ink);border:1px solid var(--neon);padding:3px 10px;}
@@ -681,9 +681,14 @@ def render_case_page(case):
   <div class="tn-row">
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF_SUBDIR}"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="{LOGO_SRC}"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="{LOGO_SRC_DARK}"></a>
-      {back}
+      <a class="tn-back" href="{HOME_HREF}">🏠 Dashboard</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="briefings.html">📰 Briefings</a>
+      <a class="tn-back" href="news.html">📡 News</a>
     </div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -818,13 +823,14 @@ def render_unified_docket(cases):
   <div class="tn-row">
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="{logo_src}"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="{logo_src_dark}"></a>
-      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="{HOME_HREF}">🏠 Dashboard</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
     </div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -1074,13 +1080,14 @@ def render_news_page(cases):
   <div class="tn-row">
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="{logo_src}"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="{logo_src_dark}"></a>
-      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="{HOME_HREF}">🏠 Dashboard</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
-      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="news.html">📡 News</a>
     </div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -1322,13 +1329,14 @@ def render_unified_calendar(cases):
   <div class="tn-row">
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="{logo_src}"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="{logo_src_dark}"></a>
-      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="{HOME_HREF}">🏠 Dashboard</a>
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
     </div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -1456,13 +1464,14 @@ def render_unified_notes(cases):
   <div class="tn-row">
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="{logo_src}"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="{logo_src_dark}"></a>
-      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="{HOME_HREF}">🏠 Dashboard</a>
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
     </div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
@@ -1598,13 +1607,14 @@ def render_briefings(cases):
   <div class="tn-row">
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="{logo_src}"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="{logo_src_dark}"></a>
-      <a class="tn-back" href="{HOME_HREF}">← Daily Briefing</a>
+      <a class="tn-back" href="{HOME_HREF}">🏠 Dashboard</a>
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
     </div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
