@@ -3,6 +3,7 @@ slug: terraform-labs
 display_name: Terraform Labs
 type: case
 status: active
+sync: active
 topics:
   - crypto-insolvency
   - bankruptcy-creditor-rights
