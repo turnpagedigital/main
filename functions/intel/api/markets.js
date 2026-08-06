@@ -8,11 +8,11 @@
 const SYMBOLS = [
   { sym: "BTC",  label: "Bitcoin",      kind: "crypto", id: "bitcoin",  href: "crypto-insolvency/dashboard.html" },
   { sym: "ETH",  label: "Ethereum",     kind: "crypto", id: "ethereum", href: "crypto-insolvency/dashboard.html" },
-  { sym: "SKLZ", label: "Skillz",       kind: "stock",  id: "sklz.us",  href: "cases/papaya-gaming.html", case_slug: "papaya-gaming" },
-  { sym: "SNBR", label: "Sleep Number", kind: "stock",  id: "snbr.us",  href: "cases/sleep-number.html",  case_slug: "sleep-number" },
+  { sym: "SKLZ", label: "Skillz",       kind: "stock",  id: "SKLZ",     href: "cases/papaya-gaming.html", case_slug: "papaya-gaming" },
+  { sym: "SNBR", label: "Sleep Number", kind: "stock",  id: "SNBR",     href: "cases/sleep-number.html",  case_slug: "sleep-number" },
 ];
 
-const CACHE_KEY = "https://intel-markets-cache.invalid/v1";
+const CACHE_KEY = "https://intel-markets-cache.invalid/v2";
 
 function downsample(arr, n) {
   if (!arr || arr.length <= n) return arr || [];
@@ -44,22 +44,25 @@ async function fetchCrypto(items) {
 }
 
 async function fetchStock(s) {
-  const res = await fetch("https://stooq.com/q/d/l/?s=" + s.id + "&i=d", {
-    headers: { "User-Agent": "Mozilla/5.0 (Macintosh) tpdm-intel" },
-  });
+  // Yahoo's chart endpoint — keyless JSON. (Stooq's CSV now sits behind a
+  // JavaScript proof-of-work wall, so it can't be fetched server-side.)
+  const res = await fetch(
+    "https://query1.finance.yahoo.com/v8/finance/chart/" + s.id + "?range=3mo&interval=1d",
+    { headers: { "User-Agent": "Mozilla/5.0 (Macintosh) tpdm-intel", Accept: "application/json" } }
+  );
   if (!res.ok) return null;
-  const text = await res.text();
-  const rows = text.trim().split("\n").slice(1)
-    .map((l) => l.split(","))
-    .filter((c) => c.length >= 5 && c[4] && c[4] !== "N/D");
-  if (rows.length < 2) return null;
-  const closes = rows.slice(-30).map((c) => Number(c[4]));
-  const last = closes[closes.length - 1];
-  const prev = closes[closes.length - 2];
+  const j = await res.json();
+  const r0 = j && j.chart && j.chart.result && j.chart.result[0];
+  if (!r0 || !r0.meta) return null;
+  const closes = (((r0.indicators || {}).quote || [{}])[0].close || [])
+    .filter((v) => v != null).slice(-30);
+  const price = r0.meta.regularMarketPrice != null ? r0.meta.regularMarketPrice : closes[closes.length - 1];
+  const prev = r0.meta.chartPreviousClose;
+  if (price == null) return null;
   return {
     sym: s.sym, label: s.label, kind: s.kind, href: s.href, case_slug: s.case_slug || null,
-    price: last,
-    chg_pct: prev ? ((last - prev) / prev) * 100 : 0,
+    price,
+    chg_pct: prev ? ((price - prev) / prev) * 100 : 0,
     range: "30d",
     spark: closes,
   };
