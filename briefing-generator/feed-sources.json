@@ -23,6 +23,22 @@
       "kind": "Alert",
       "mode": "all",
       "enabled": true
+    },
+    {
+      "id": "daily-dac",
+      "name": "Daily DAC",
+      "url": "https://www.dailydac.com/chapter-11-bankruptcy-alert-system/",
+      "kind": "ALERT",
+      "mode": "all",
+      "enabled": true
+    },
+    {
+      "id": "daily-dac",
+      "name": "Daily DAC",
+      "url": "https://www.dailydac.com/latest-articles/",
+      "kind": "ARTICLE",
+      "mode": "all",
+      "enabled": true
     }
   ]
 }
