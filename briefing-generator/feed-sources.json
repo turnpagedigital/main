@@ -1,3 +1,28 @@
 {
-  "sources": []
+  "sources": [
+    {
+      "id": "petition",
+      "name": "Petition",
+      "url": "https://www.petition11.com/",
+      "kind": "News",
+      "mode": "all",
+      "enabled": true
+    },
+    {
+      "id": "bondoro",
+      "name": "Bondoro",
+      "url": "https://bondoro.com/tag/case-summaries/",
+      "kind": "Summaries",
+      "mode": "all",
+      "enabled": true
+    },
+    {
+      "id": "bondoro",
+      "name": "Bondoro",
+      "url": "https://bondoro.com/tag/chapter-11-filing-alerts/",
+      "kind": "Alert",
+      "mode": "all",
+      "enabled": true
+    }
+  ]
 }
