@@ -27,13 +27,17 @@ def refresh_stamps(html):
     at whatever was baked into the chassis. Returns (html, count_replaced)."""
     total = 0
     # Header: <div class="stamp">10:00 AM ET &middot; Tuesday, May 19, 2026</div>
+    # Header stamp is baked bare + UPPERCASE ("WEDNESDAY, JULY 29, 2026") on
+    # these chassis, but "10:00 AM ET &middot; <date>" on others — match either
+    # (optional prefix) and case-insensitively so the header never drifts from
+    # the byline again.
     html, n1 = re.subn(
-        r'(<div class="stamp">[^<]*?&middot;\s*)' + _DATE_PAT + r'(\s*</div>)',
-        lambda m: m.group(1) + DATE_PRETTY + m.group(2), html)
+        r'(<div class="stamp">(?:[^<]*?&middot;\s*)?)' + _DATE_PAT + r'(\s*</div>)',
+        lambda m: m.group(1) + DATE_PRETTY + m.group(2), html, flags=re.IGNORECASE)
     # Byline: <span class="byline-date">Tuesday, May 19, 2026</span>
     html, n2 = re.subn(
         r'(<span class="byline-date">)' + _DATE_PAT + r'(</span>)',
-        lambda m: m.group(1) + DATE_PRETTY + m.group(2), html)
+        lambda m: m.group(1) + DATE_PRETTY + m.group(2), html, flags=re.IGNORECASE)
     return html, n1 + n2
 
 ARROW_SVG = '<svg class="src" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M5 3.5 L8.5 3.5 L8.5 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
