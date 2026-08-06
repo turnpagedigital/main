@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "date_last_filing": "",
-    "fetched_at": "2026-08-06T03:44:26.444716+00:00",
+    "date_last_filing": "2026-08-05",
+    "fetched_at": "2026-08-06T06:49:54.728414+00:00",
     "as_of": "Aug 6, 2026",
     "backfilled": true,
-    "new_in_72h": 18,
+    "new_in_72h": 19,
     "recent": [
+      {
+        "entry_number": 136,
+        "date_filed": "2026-08-05",
+        "time_filed": "22:42:17",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 135,
         "date_filed": "2026-08-05",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 133,
-        "date_filed": "2026-08-05",
-        "time_filed": "19:13:10",
-        "date_display": "Aug 5, 2026",
-        "description": "Notice of Appearance and Request for Notice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 136,
+        "date_filed": "2026-08-05",
+        "time_filed": "22:42:17",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 135,
         "date_filed": "2026-08-05",
