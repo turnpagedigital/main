@@ -1468,14 +1468,29 @@
       }
     });
 
+    // L / M / W switch the view (ignored while typing in any field)
+    document.addEventListener("keydown", function (ev) {
+      if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+      var t = ev.target || {};
+      var tag = (t.tagName || "").toLowerCase();
+      if (tag === "input" || tag === "textarea" || tag === "select" || t.isContentEditable) return;
+      var k = (ev.key || "").toLowerCase();
+      if (k !== "l" && k !== "m" && k !== "w") return;
+      ev.preventDefault();
+      calMode = k === "l" ? "list" : k === "m" ? "month" : "week";
+      calAnchor = todayISO();
+      saveFilterState();
+      render();
+    });
+
     var fr = document.querySelector(".ud-filter-right");
     if (fr) {
       var seg = document.createElement("div");
       seg.id = "uc-mode";
       seg.className = "uc-mode";
-      seg.innerHTML = '<button type="button" data-mode="list">List</button>' +
-        '<button type="button" data-mode="month">Month</button>' +
-        '<button type="button" data-mode="week">Week</button>';
+      seg.innerHTML = '<button type="button" data-mode="list" title="List view (L)">List</button>' +
+        '<button type="button" data-mode="month" title="Month view (M)">Month</button>' +
+        '<button type="button" data-mode="week" title="Week view (W)">Week</button>';
       fr.insertBefore(seg, fr.firstChild);
       seg.addEventListener("click", function (ev) {
         var b = ev.target.closest("button[data-mode]");
