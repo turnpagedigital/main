@@ -148,6 +148,7 @@
   var _savedState = null;
 
   // ── Filter-state persistence (localStorage) ────────────────────────────────
+  var relatedOnly = false;
   var FILTER_KEY = "un-news-filter-state";
 
   function loadFilterState() {
@@ -155,6 +156,7 @@
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.entryFilter)   entryFilter   = s.entryFilter;
       if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
+      if (typeof s.relatedOnly === "boolean") relatedOnly = s.relatedOnly;
       rowKind = "articles";
       if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
       if (typeof s.noteOnly === "boolean") noteOnly = s.noteOnly;
@@ -169,6 +171,7 @@
   function saveFilterState() {
     try {
       localStorage.setItem(FILTER_KEY, JSON.stringify({
+        relatedOnly:    relatedOnly,
         entryFilter:    entryFilter,
         newOnly:        newOnly,
         rowKind:        rowKind,
@@ -323,6 +326,7 @@
         if (noteOnly && !(mrec && (mrec.note || "").trim())) return false;
       }
       if (newOnly && !e.is_new) return false;
+      if (relatedOnly && e.is_article && !e.slug && !e.group_name && !e.theme_slug) return false;
       // Entry-type filters only apply to docket entries — the Articles
       // checkbox is the sole gate for news rows.
       if (entryFilter !== "all") {
@@ -3008,6 +3012,16 @@
     }
 
     // Sort button — restore saved direction
+    var relSel = document.getElementById("ud-related");
+    if (relSel) {
+      relSel.value = relatedOnly ? "related" : "all";
+      relSel.addEventListener("change", function () {
+        relatedOnly = relSel.value === "related";
+        saveFilterState();
+        render();
+      });
+    }
+
     var sortBtn = document.getElementById("ud-sort-btn");
     if (sortBtn) {
       sortBtn.textContent = sortDir === "desc" ? "Date ↓" : "Date ↑";

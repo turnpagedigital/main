@@ -1217,6 +1217,10 @@ def render_news_page(cases):
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
+        <select id="ud-related" class="ud-type-select" title="Show every scanned headline, or only those tagged to a case or theme">
+          <option value="all">All news</option>
+          <option value="related">Cases &amp; themes only</option>
+        </select>
         <label class="ud-new-label">
           <input type="checkbox" id="ud-new-only"> New only (24h)
         </label>
