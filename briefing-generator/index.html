@@ -27,7 +27,7 @@
 
     /* Brand strip */
     .tn-wrap-line { border-bottom: 1px solid var(--line-strong); }
-    .tn-row.brand { max-width: 1440px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .tn-row.brand { max-width: 1680px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
     .tn-brand-logo { height: 36px; width: auto; }
     .tn-logo-dark { display: none; }
     [data-theme="dark"] .tn-logo-light { display: none; }
@@ -35,7 +35,7 @@
     #theme-toggle { background: none; border: none; font-size: 20px; cursor: pointer; padding: 4px; }
 
     /* Topic tabs row */
-    .tn-tabs-row { max-width: 1440px; margin: 0 auto; padding: 0 32px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; }
+    .tn-tabs-row { max-width: 1680px; margin: 0 auto; padding: 0 32px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; }
     .tn-tab { position: relative; }
     .tn-pill { padding: 9px 18px; font-size: 14.5px; font-weight: 600; border: 1px solid transparent; background: transparent; color: var(--ink); cursor: pointer; border-radius: 0; font-family: 'Archivo', sans-serif; }
     .tn-pill.active { background: var(--neon-block); color: var(--neon-on-block); border: 1px solid var(--neon-block); font-weight: 700; pointer-events: none; }
@@ -56,7 +56,7 @@
     .tn-tab:hover .tn-dropdown { opacity: 1; visibility: visible; }
     .tn-tab { padding-bottom: 12px; margin-bottom: -12px; }
 
-    .tn-dd-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; padding: 24px 32px; max-width: 1440px; margin: 0 auto; }
+    .tn-dd-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; padding: 24px 32px; max-width: 1680px; margin: 0 auto; }
     .tn-dd-col-overview { }
     .tn-dd-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 8px; color: inherit; opacity: 0.8; }
     .tn-dd-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
@@ -69,13 +69,13 @@
     .tn-dd-cta:hover { opacity: 0.9; }
 
     /* Page title */
-    .page-title { max-width: 1440px; margin: 32px auto 24px; padding: 0 32px; border-bottom: 2px solid var(--ink); padding-bottom: 24px; }
+    .page-title { max-width: 1680px; margin: 32px auto 24px; padding: 0 32px; border-bottom: 2px solid var(--ink); padding-bottom: 24px; }
     .page-title .eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-60); font-weight: 700; margin-bottom: 6px; }
     .page-title h1 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
     .stamp { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-60); }
 
     /* Calendar strip */
-    .calendar-strip { max-width: 1440px; margin: 0 auto 32px; padding: 0 32px; }
+    .calendar-strip { max-width: 1680px; margin: 0 auto 32px; padding: 0 32px; }
     .cal-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-60); margin-bottom: 16px; }
     .cal-row { display: flex; gap: 12px; flex-wrap: wrap; }
     .cal-square { width: 56px; height: 56px; background: white; border: 1px solid var(--line-strong); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; }
@@ -85,7 +85,7 @@
     .cal-day::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 24px; height: 3px; background: var(--neon-block); }
 
     /* Topic cards grid */
-    .card-grid { max-width: 1440px; margin: 0 auto 48px; padding: 0 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .card-grid { max-width: 1680px; margin: 0 auto 48px; padding: 0 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .card { background: var(--surface); border: 1px solid var(--line-strong); padding: 24px; }
     .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
     .card-emoji { font-size: 32px; }
@@ -96,7 +96,7 @@
     .card-link:hover { background: transparent; color: var(--ink); }
 
     /* Market watch sidebar */
-    .market-watch { max-width: 1440px; margin: 0 auto 48px; padding: 0 32px; }
+    .market-watch { max-width: 1680px; margin: 0 auto 48px; padding: 0 32px; }
     .box { background: var(--surface); border: 1px solid var(--line-strong); padding: 16px 18px; }
     .box h2 { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; border-bottom: 2px solid var(--ink); padding-bottom: 8px; margin-bottom: 12px; color: var(--ink); }
     .tk-list { display: flex; flex-direction: column; gap: 8px; }
@@ -111,7 +111,7 @@
     [data-theme="dark"] .tk-up { color: #54C277; }
     [data-theme="dark"] .tk-down { color: #E07474; }
     /* Dashboard — support band + equal theme grid (site look: square, thin gray) */
-    .ih-controls { max-width: 1440px; margin: 0 auto 14px; padding: 0 32px; display: flex; gap: 10px; justify-content: flex-end; }
+    .ih-controls { max-width: 1680px; margin: 0 auto 14px; padding: 0 32px; display: flex; gap: 10px; justify-content: flex-end; }
     .ih-head { display: flex; align-items: center; gap: 8px; padding: 11px 14px; border-bottom: 1px solid var(--line-strong); text-decoration: none; color: inherit; }
     .ih-emoji { font-size: 16px; }
     .ih-name { font-size: 13px; font-weight: 800; }
@@ -126,13 +126,10 @@
     .ih-empty { padding: 12px 14px; font-size: 12px; color: var(--ink-60); }
     .ih-pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.03em; padding: 1px 8px; border-radius: 99px; white-space: nowrap; text-transform: none; }
     .ih-pill-sq { border-radius: 0; }
-    .ih-band { max-width: 1440px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 10px; align-items: start; }
+    .ih-band { max-width: 1680px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 10px; align-items: start; }
     @media (max-width: 900px) { .ih-band { grid-template-columns: 1fr; } }
     .ih-tile { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
-    .ih-links { max-width: 1440px; margin: 0 auto 10px; padding: 0 32px; display: flex; gap: 18px; font-size: 12px; }
-    .ih-links a { color: var(--ink-60); text-decoration: none; font-weight: 700; }
-    .ih-links a:hover { color: var(--ink); }
-    .ih-theme-grid { max-width: 1440px; margin: 0 auto 48px; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: stretch; }
+    .ih-theme-grid { max-width: 1680px; margin: 0 auto 48px; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: stretch; }
     @media (max-width: 900px) { .ih-theme-grid { grid-template-columns: 1fr; } }
     .ih-theme-card { background: var(--surface); border: 1px solid var(--line-strong); padding: 12px 14px; display: flex; flex-direction: column; }
     .ih-tc-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
@@ -154,6 +151,9 @@
     .ih-mm-nav { font-family: inherit; font-size: 13px; font-weight: 700; padding: 1px 8px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink); cursor: pointer; }
     .ih-mm-nav:hover { background: var(--paper-2); }
     .ih-mm-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
+    .ih-wk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; text-align: center; }
+    .ih-wk-grid .ih-mm-day { min-height: 40px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 5px; font-size: 13px; }
+    .ih-wk-grid .ih-mm-dots { min-height: 6px; }
     .ih-mm-dow { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; color: var(--ink-40); padding-bottom: 2px; }
     .ih-mm-day { font-size: 11px; font-weight: 700; color: var(--ink-60); padding: 2px 0 1px; text-decoration: none; border: 1px solid transparent; min-height: 24px; }
     .ih-mm-day.has { color: var(--ink); }
@@ -235,7 +235,7 @@
 /* DARK-MODE HIGHLIGHTER END */
 
     /* Unified 60-day calendar strip */
-    .unified-calendar { max-width: 1440px; margin: 0 auto 24px; padding: 0 32px; }
+    .unified-calendar { max-width: 1680px; margin: 0 auto 24px; padding: 0 32px; }
       padding: 12px 14px; text-decoration: none; color: inherit; display: flex; gap: 12px; align-items: center;
       transition: background 0.15s, border-color 0.15s, transform 0.15s; }
       width: 50px; height: 50px; background: #FFFFFF; border: 1px solid rgba(10,10,10,0.14);
@@ -294,14 +294,6 @@
       <a class="ih-head" href="../notes.html"><span class="ih-emoji">🗒️</span><span class="ih-name">Notes</span><span class="ih-more">View all →</span></a>
       <div class="ih-list" id="ih-notes"><div class="ih-empty">Loading…</div></div>
     </section>
-  </div>
-
-  <div class="ih-links">
-    <a href="../briefings.html">📰 Briefings</a>
-    <a href="../docket.html">⚖️ Docket</a>
-    <a href="../calendar.html">📅 Calendar</a>
-    <a href="../notes.html">🗒️ Notes</a>
-    <a href="../news.html">📡 News</a>
   </div>
 
   <div class="ih-theme-grid" id="ih-theme-grid">
