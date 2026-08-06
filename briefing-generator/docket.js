@@ -1119,6 +1119,104 @@
     inp.addEventListener("click", function (ev) { ev.stopPropagation(); });
   }
 
+
+  // ── Cmd+K case palette: type to find a case, Enter filters the view to it ──
+  var palEl = null, palEntries = [], palIdx = 0;
+
+  function paletteEntries(q) {
+    q = (q || "").trim().toLowerCase();
+    var out = [{ slug: null, label: "Show all cases", note: "clear filter" }];
+    CASES.forEach(function (c) {
+      if (!q ||
+          (c.display_name || "").toLowerCase().indexOf(q) !== -1 ||
+          (c.short_name || "").toLowerCase().indexOf(q) !== -1 ||
+          (c.slug || "").toLowerCase().indexOf(q) !== -1) {
+        out.push({ slug: c.slug, label: c.display_name || c.slug, note: c.slug });
+      }
+    });
+    return out.slice(0, 14);
+  }
+
+  function paletteApply(slug) {
+    closePalette();
+    CASES.forEach(function (c) {
+      activeCases[c.slug] = (slug === null) ? true : (c.slug === slug);
+    });
+    activeCases[UNASSIGNED_KEY] = (slug === null);
+    saveFilterState();
+    renderCaseFilter();
+    render();
+  }
+
+  function renderPaletteList() {
+    var ul = palEl.querySelector(".ud-pal-list");
+    if (!palEntries.length) {
+      ul.innerHTML = '<li class="ud-pal-empty">No case matches</li>';
+      return;
+    }
+    ul.innerHTML = palEntries.map(function (en, i) {
+      return '<li class="ud-pal-item' + (i === palIdx ? " ud-pal-cur" : "") +
+        '" data-pal-i="' + i + '">' + esc(en.label) +
+        '<span class="ud-pal-slug">' + esc(en.note || "") + "</span></li>";
+    }).join("");
+    var cur = ul.querySelector(".ud-pal-cur");
+    if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest" });
+  }
+
+  function closePalette() {
+    if (palEl && palEl.parentNode) palEl.parentNode.removeChild(palEl);
+    palEl = null;
+  }
+
+  function openPalette() {
+    if (palEl) { palEl.querySelector(".ud-pal-input").focus(); return; }
+    palEl = document.createElement("div");
+    palEl.className = "ud-pal-overlay";
+    palEl.innerHTML =
+      '<div class="ud-pal-box">' +
+        '<input class="ud-pal-input" type="text" placeholder="Filter to a case\u2026" autocomplete="off" spellcheck="false">' +
+        '<ul class="ud-pal-list"></ul>' +
+        '<div class="ud-pal-hint">\u2191\u2193 choose \u00b7 Enter filters the view \u00b7 Esc closes</div>' +
+      "</div>";
+    document.body.appendChild(palEl);
+    var input = palEl.querySelector(".ud-pal-input");
+    palEntries = paletteEntries("");
+    palIdx = 0;
+    renderPaletteList();
+    input.addEventListener("input", function () {
+      palEntries = paletteEntries(input.value);
+      palIdx = palEntries.length ? Math.min(palIdx, palEntries.length - 1) : 0;
+      // With a query, preselect the first real case (index 1) over "Show all"
+      if (input.value.trim() && palEntries.length > 1) palIdx = 1;
+      renderPaletteList();
+    });
+    input.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowDown" || ev.key === "ArrowUp") {
+        ev.preventDefault();
+        if (!palEntries.length) return;
+        palIdx = (palIdx + (ev.key === "ArrowDown" ? 1 : -1) + palEntries.length) % palEntries.length;
+        renderPaletteList();
+      } else if (ev.key === "Enter") {
+        ev.preventDefault();
+        if (palEntries[palIdx]) paletteApply(palEntries[palIdx].slug);
+      } else if (ev.key === "Escape") {
+        ev.preventDefault();
+        closePalette();
+      }
+      ev.stopPropagation();  // keep row shortcuts quiet while typing
+    });
+    palEl.addEventListener("mousedown", function (ev) {
+      if (ev.target === palEl) { closePalette(); return; }
+      var it = ev.target.closest(".ud-pal-item");
+      if (it) {
+        ev.preventDefault();
+        var en = palEntries[Number(it.getAttribute("data-pal-i"))];
+        if (en) paletteApply(en.slug);
+      }
+    });
+    input.focus();
+  }
+
   function handleShortcut(ev) {
     if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
     var t = ev.target || {};
@@ -2847,6 +2945,13 @@
       });
     }
     document.addEventListener("keydown", handleShortcut);
+    document.addEventListener("keydown", function (ev) {
+      if ((ev.metaKey || ev.ctrlKey) && !ev.altKey && !ev.shiftKey &&
+          (ev.key === "k" || ev.key === "K")) {
+        ev.preventDefault();
+        openPalette();
+      }
+    });
 
     document.addEventListener("keydown", function (ev) {
       if (ev.key === "Escape" && activeNoteKey) closeNoteModal();
