@@ -14,44 +14,74 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-06T00:14:06.083823+00:00",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-06T03:44:26.444716+00:00",
     "as_of": "Aug 6, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 18,
     "recent": [
       {
-        "entry_number": 132,
+        "entry_number": 135,
         "date_filed": "2026-08-05",
-        "time_filed": "14:42:29",
+        "time_filed": "21:25:33",
         "date_display": "Aug 5, 2026",
-        "description": "Notice of Appearance and Request for Notice Filed by Melissa T Harris Filed by on behalf of Pension Benefit Guaranty Corporation (Harris, Melissa) (Entered: 08/05/2026)",
+        "description": "Affidavit",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 131,
+        "entry_number": 134,
         "date_filed": "2026-08-05",
-        "time_filed": "14:36:20",
+        "time_filed": "19:14:40",
         "date_display": "Aug 5, 2026",
-        "description": "Notice of Appearance and Request for Notice Filed by Andrea Wong Filed by on behalf of Pension Benefit Guaranty Corporation (Wong, Andrea) (Entered: 08/05/2026)",
+        "description": "Notice of Appearance and Request for Notice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 130,
+        "entry_number": 133,
         "date_filed": "2026-08-05",
-        "time_filed": "11:40:41",
+        "time_filed": "19:13:10",
         "date_display": "Aug 5, 2026",
-        "description": "Order Granting Motion for Dakota Pearce To Appear pro hac vice (Related Doc # 124) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/5/2026. (yml4) (Entered: 08/05/2026)",
+        "description": "Notice of Appearance and Request for Notice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 135,
+        "date_filed": "2026-08-05",
+        "time_filed": "21:25:33",
+        "date_display": "Aug 5, 2026",
+        "description": "Affidavit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 134,
+        "date_filed": "2026-08-05",
+        "time_filed": "19:14:40",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 133,
+        "date_filed": "2026-08-05",
+        "time_filed": "19:13:10",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 132,
         "date_filed": "2026-08-05",

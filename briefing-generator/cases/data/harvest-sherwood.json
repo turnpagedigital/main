@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-06T00:13:11.014637+00:00",
+    "fetched_at": "2026-08-06T03:43:39.528890+00:00",
     "as_of": "Aug 6, 2026",
     "backfilled": true,
-    "new_in_72h": 20,
+    "new_in_72h": 21,
     "recent": [
+      {
+        "entry_number": 1154,
+        "date_filed": "2026-08-05",
+        "time_filed": "20:54:11",
+        "date_display": "Aug 5, 2026",
+        "description": "Clerk's correspondence",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1152,
         "date_filed": "2026-08-05",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1150,
-        "date_filed": "2026-08-05",
-        "time_filed": "11:34:04",
-        "date_display": "Aug 5, 2026",
-        "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Highland Farms Ltd. (Claim No. 10324, Amount $433,351.16) To Lake Avenue CS, LLC. Filed by Creditor Lake Avenue CS, LLC. (McLaren, Tyler)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1154,
+        "date_filed": "2026-08-05",
+        "time_filed": "20:54:11",
+        "date_display": "Aug 5, 2026",
+        "description": "Clerk's correspondence",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1152,
         "date_filed": "2026-08-05",
