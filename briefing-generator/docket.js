@@ -1454,13 +1454,14 @@
     return m ? m[1] : "";
   }
 
-  // CourtListener's per-entry document page \u2014 the simple direct view for
-  // one docket entry. Works with the real case slug or the "-" placeholder.
+  // Deep link to the docket page anchored at one entry \u2014 filtered to it
+  // (?entry_gte) and scrolled to it (#entry-N). Works with the real case
+  // slug or the "-" placeholder.
   function entryViewUrl(e, entryNum) {
     var m = /\/docket\/(\d+)(?:\/([^/?#]+))?/.exec(e.docket_url || "");
     if (!m || entryNum == null) return "";
-    return "https://www.courtlistener.com/docket/" + m[1] + "/" + entryNum +
-      "/" + (m[2] || "-") + "/";
+    return "https://www.courtlistener.com/docket/" + m[1] + "/" + (m[2] || "-") +
+      "/?entry_gte=" + entryNum + "#entry-" + entryNum;
   }
 
   function startDocFetch(e) {
