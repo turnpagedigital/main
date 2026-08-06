@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-06T06:49:33.107752+00:00",
+    "fetched_at": "2026-08-06T10:13:35.607830+00:00",
     "as_of": "Aug 6, 2026",
     "backfilled": true,
     "new_in_72h": 3,
@@ -223,6 +223,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 50,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:45:08",
+        "date_display": "Jul 29, 2026",
+        "description": "Order (Interim) (I) Authorizing Postpetition Use of Prepetition Collateral, Including Cash Collateral, (II) Granting Adequate Protection to the Prepetition Secured Parties, (III) Modifying the Automatic Stay, (IV) Scheduling a Final Hearing, and (V) Granting Related Relief (related document(s)17, 46) Order Signed on 7/29/2026. (Attachments: # 1 Exhibit 1) (Mml) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 49,
         "date_filed": "2026-07-29",
         "time_filed": "16:29:39",
@@ -283,11 +293,31 @@
         "doc_url": ""
       },
       {
+        "entry_number": 42,
+        "date_filed": "2026-07-29",
+        "time_filed": "10:37:07",
+        "date_display": "Jul 29, 2026",
+        "description": "Omnibus Objection and Reservation of Rights of Omnis Fuel Technologies, LLC and Quantum Pleasants, LLC to the Debtor's First Day Motions (related document(s)1, 2, 3, 4, 5, 6, 7, 8, 9, 17) Filed by Omnis Fuel Technologies, LLC, Quantum Pleasants LLC (Ward, Christopher) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 41,
         "date_filed": "2026-07-29",
         "time_filed": "10:27:49",
         "date_display": "Jul 29, 2026",
         "description": "Exhibit(s) - Notice of Filing of Revised Interim Order (I) Authorizing the Debtor to (A) Continue to Operate Its Cash Management System and Honor Prepetition Obligations Related Thereto, (B) Maintain Existing Bank Accounts, and (C) Maintain Existing Business Forms; (II) Suspending the Time to Comply With 11 U.S.C § 345(b); and (III) Granting Related Relief (related document(s)8) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 07/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 40,
+        "date_filed": "2026-07-29",
+        "time_filed": "10:25:10",
+        "date_display": "Jul 29, 2026",
+        "description": "Exhibit(s) - Notice of Filing of Revised Order Authorizing the Debtor to Retain Stretto, Inc. as Claims and Noticing Agent, Effective as of the Petition Date (related document(s)2) Filed by Omnis Pleasants, LLC. (Attachments: # 1 Exhibit A - B) (Faris, S. Alexander) (Entered: 07/29/2026)",
         "is_new": false,
         "landmark": "",
         "doc_url": ""
