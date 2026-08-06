@@ -2911,6 +2911,20 @@
       var tag = (t.tagName || "").toLowerCase();
       if (tag === "input" || tag === "textarea" || tag === "select" || t.isContentEditable) return;
       var k = (ev.key || "").toLowerCase();
+      if (k === "t") {
+        ev.preventDefault();
+        var dT = new Date();
+        var tIso = dT.getFullYear() + "-" + ("0" + (dT.getMonth() + 1)).slice(-2) + "-" + ("0" + dT.getDate()).slice(-2);
+        var onT = (dateFrom === tIso && dateTo === tIso);
+        dateFrom = onT ? "" : tIso;
+        dateTo = onT ? "" : tIso;
+        var fEl2 = document.getElementById("ud-date-from");
+        var tEl2 = document.getElementById("ud-date-to");
+        if (fEl2) fEl2.value = dateFrom;
+        if (tEl2) tEl2.value = dateTo;
+        render();
+        return;
+      }
       if (k === "s") { chordSAt = Date.now(); return; }
       if (k === "a" && chordSAt && Date.now() - chordSAt < 600) {
         ev.preventDefault();
