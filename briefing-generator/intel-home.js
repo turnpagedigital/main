@@ -502,11 +502,11 @@
       var devCount = filings.length + news.length;
 
       var rows = [];
-      filings.slice(0, 2).forEach(function (f) { rows.push(codedRow(f)); });
-      news.slice(0, 2).forEach(function (n) { rows.push(codedRow(n)); });
-      rows = rows.slice(0, 3);
+      filings.slice(0, 5).forEach(function (f) { rows.push(codedRow(f)); });
+      news.slice(0, 5).forEach(function (n) { rows.push(codedRow(n)); });
+      rows = rows.slice(0, 7);
       if (nextDate) rows.push(codedRow(nextDate));
-      var hidden = devCount - Math.min(devCount, 3);
+      var hidden = devCount - Math.min(devCount, 7);
 
       // Full opening paragraph of the advisory (falls back to the short summary).
       var lede = brief ? (brief.lede || brief.body || brief.stat || "").trim() : "";
@@ -621,6 +621,53 @@
     });
   }
 
+
+  function renderMarkets() {
+    var box = document.getElementById("ih-markets");
+    if (!box) return;
+    fetchJson(BASE + "api/markets").then(function (p) {
+      if (!p || !p.ok || !p.symbols || !p.symbols.length) {
+        box.innerHTML = '<div class="ih-empty">Market data unavailable right now.</div>';
+        return;
+      }
+      var upd = document.getElementById("ih-mkt-updated");
+      if (upd && p.updated) {
+        var t = new Date(p.updated);
+        upd.textContent = "as of " + t.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+      }
+      box.innerHTML = p.symbols.map(function (s) {
+        var up = (s.chg_pct || 0) >= 0;
+        var color = up ? "#1a7f37" : "#C84141";
+        var pts = s.spark || [];
+        var svg = "";
+        if (pts.length > 1) {
+          var min = Math.min.apply(null, pts), max = Math.max.apply(null, pts);
+          var span = (max - min) || 1;
+          var W = 84, H = 22;
+          var d = pts.map(function (v, i) {
+            return (i ? "L" : "M") + (i * W / (pts.length - 1)).toFixed(1) + " " +
+              (H - 2 - (v - min) / span * (H - 4)).toFixed(1);
+          }).join("");
+          svg = '<svg class="ih-mkt-spark" viewBox="0 0 ' + W + " " + H +
+            '" preserveAspectRatio="none" aria-hidden="true"><path d="' + d +
+            '" fill="none" stroke="' + color + '" stroke-width="1.6"/></svg>';
+        }
+        var price = s.price >= 1000
+          ? Math.round(s.price).toLocaleString()
+          : (Math.round(s.price * 100) / 100).toLocaleString();
+        var chg = Math.round((s.chg_pct || 0) * 10) / 10;
+        return '<a class="ih-mkt-row" href="' + BASE + esc(s.href || "") +
+          '" title="' + esc(s.label + " \u00b7 " + (s.range || "") + " trend \u00b7 click for the related coverage") + '">' +
+          '<span class="ih-mkt-sym">' + esc(s.sym) + "</span>" + svg +
+          '<span class="ih-mkt-price">$' + price + "</span>" +
+          '<span class="ih-mkt-chg" style="color:' + color + '">' + (up ? "+" : "") + chg + "%</span>" +
+          "</a>";
+      }).join("");
+    }).catch(function () {
+      box.innerHTML = '<div class="ih-empty">Market data unavailable right now.</div>';
+    });
+  }
+
   function renderNotes() {
     var list = NOTES_LIST.filter(function (n) {
       if (!n.case_slug) return caseOn("__unassigned__");
@@ -646,6 +693,7 @@
     renderUnassigned();
     renderDates();
     renderNotes();
+    renderMarkets();
     updateFilterButtons();
   }
 
