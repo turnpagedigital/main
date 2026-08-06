@@ -45,33 +45,33 @@
       "fg": "#0a0a0a"
     },
     "bankruptcy-creditor-rights": {
-      "bg": "#d9ff00",
-      "fg": "#000000",
+      "bg": "#000000",
+      "fg": "#ffffff",
       "border": "#000000"
     },
     "billion-dollar-class-actions": {
-      "bg": "#d9ff00",
-      "fg": "#000000",
+      "bg": "#000000",
+      "fg": "#ffffff",
       "border": "#000000"
     },
     "crypto-insolvency": {
-      "bg": "#d9ff00",
-      "fg": "#000000",
+      "bg": "#000000",
+      "fg": "#ffffff",
       "border": "#000000"
     },
     "llm-class-action": {
-      "bg": "#d9ff00",
-      "fg": "#000000",
+      "bg": "#000000",
+      "fg": "#ffffff",
       "border": "#000000"
     },
     "fraud-recovery": {
-      "bg": "#d9ff00",
-      "fg": "#000000",
+      "bg": "#000000",
+      "fg": "#ffffff",
       "border": "#7a219e"
     },
     "rewind-tariffs": {
-      "bg": "#d9ff00",
-      "fg": "#000000",
+      "bg": "#000000",
+      "fg": "#ffffff",
       "border": "#000000"
     },
     "papaya-gaming": {
@@ -167,8 +167,8 @@
       "fg": "#FFFFFF"
     },
     {
-      "bg": "#94C6F8",
-      "fg": "#123A66"
+      "bg": "#000000",
+      "fg": "#ffffff"
     },
     {
       "bg": "#3B78D8",
