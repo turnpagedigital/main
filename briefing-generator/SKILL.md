@@ -90,9 +90,20 @@ After all per-tab work plus the landing-page update, run these checks. If any fa
 
 ## Critical: voice and length
 
-The advisory body MUST read as if it were published by a major law firm's daily-briefing desk (Greenberg Traurig, Diaz Trade Law, Troutman Pepper, Jones Day, Weil, Latham, etc.) for an audience of GCs, claim-recovery counsel, claimants, and rights-holders.
+Write at the standard of a professional client alert in this field — the register a specialist firm uses when writing to sophisticated clients who pay for **judgment rather than summary**. The reader is senior, busy, and already broadly familiar with the matter; they can get "what happened" anywhere, so earn their attention with read-through they cannot get elsewhere. Model the finished product on a major firm's daily-briefing desk (Greenberg Traurig, Diaz Trade Law, Troutman Pepper, Jones Day, Weil, Latham) writing to GCs, claim-recovery counsel, claimants, and rights-holders.
 
-The single hardest requirement: **density**. Each section must include specific docket numbers, judge names, courtroom designations, dollar figures, percentages, date references, party names, and statute or regulation citations. Generic summaries are unacceptable.
+### Style requirements (these define the deliverable)
+
+- **Pure prose. No bullet points, no numbered lists, no visual breaks, and NO subheadings inside the analysis body.** The briefing is one flowing narrative under a single `## Analysis & Developments` header — not a stack of `## I.` / `## II.` sections. Use dense medium-length paragraphs of five to seven sentences so complex points unfold rather than being chopped into fragments.
+- **Create urgency through factual circumstance, not alarm.** Specific dates, counts, dollar figures, and named mechanisms do the work adjectives cannot. Never reach for hype or a scare hook.
+- **Density is the single hardest requirement.** Every paragraph must carry specific docket numbers, judge names, courtroom designations, dollar figures, percentages, dates, party names, and statute or regulation citations. Generic summaries are unacceptable.
+- **Weave citations into narrative context** rather than listing them — the case captions, docket numbers, statutes, and figures referenced where they bear on the point, each factual sentence closing with its source link.
+- **Separate what happened from what to do about it, but integrate the two fluidly** — implication and consequence belong in the same paragraph as the fact, not quarantined into an action list.
+- **Emphasize unresolved questions, approaching deadlines, and forward-looking implications.** Open on the most consequential development and its practical consequence, progress through the remaining matters in descending order of consequence, and end on the emerging questions nobody has resolved yet.
+
+### Source credibility tiers
+
+Weight and cite sources in this order: **Tier 1** — the primary filing, order, docket entry, or transcript itself, plus major wire and business press (Reuters, Bloomberg / Bloomberg Law, Law360, WSJ, AP, FT); **Tier 2** — established national outlets and the legal/restructuring trade press; **Tier 3** — practitioner commentary (firm alerts, restructuring advisers, agency and claims-agent statements), mined for procedural nuance and forward read-through even though Tier 1 carries the facts; **Tier 4** — everything else, only to corroborate. Never cite a bare outlet homepage or a blacklisted source, even indirectly.
 
 ### Reference exemplar — what "rich" looks like
 
@@ -104,9 +115,9 @@ That passage — case caption with full docket, courtroom number, Judge name, sp
 
 ### Length per topic
 
-- ONE law-firm-style client briefing under `## Analysis & Developments` — as many or as few `## I.` / `## II.` subsections as the last 24 hours warrant, each 2-4 paragraphs
+- ONE flowing client briefing under a single `## Analysis & Developments` header — three to five dense paragraphs on a heavy day, fewer on a light one, and NO subheadings inside it
 - NO action-items sections of any kind (no "Recommended Actions", no "What to do this week" — the briefing itself is the whole deliverable)
-- 1 `## Proposed Articles for the Briefing Site (up to 5)` block listing up to 5 relevant 48-hour sources (fewer on light days; zero on quiet days)
+- 1 `## Proposed Articles for the Briefing Site (up to 5)` block — up to five sources published in the last 48 hours, each with a two-to-three-sentence Key Insight carrying the specific figures/deadlines/counts and a one-word tag; thematic diversity required (five articles on the same development is a failure); fewer on light days, zero on quiet days, and say so explicitly when short
 - 1 `## Sources` block at the bottom (full citation list)
 
 Target total length: **proportional to the last 24 hours.** A heavy day may run 1,500–2,500 words; a normal day 400–900; a genuinely quiet day can be under 150 words. There is NO length floor — never pad a light day with background, recap, or restatement. The reader follows these matters daily and is charged by the word in attention: every sentence must contain something that happened, changed, or newly matters in the last 24 hours.
@@ -163,25 +174,20 @@ Save as `<project-dir>/public/advisory-YYYY-MM-DD.md`. Markdown structure:
 
 [Paragraph 1 — densely cited, opens with the headline development]
 
-[Paragraph 2 — second-order development]
+[Paragraph 2 — the next development in descending order of consequence, its facts and its implication in the same breath]
 
-[Paragraph 3 — adjacent matters / parallel docket / pending appeal]
+[Paragraph 3 — adjacent matters / parallel docket / pending appeal, woven into the arc in a clause, not re-explained]
 
-[Paragraph 4 — legislative / regulatory landscape]
+[Optional Paragraph 4 — the emerging questions, approaching deadlines, and forward read-through the reader can't get elsewhere]
 
-[Optional paragraph 5 — outlook or watchlist]
-
-## Recommended Actions
-
-[One dense paragraph addressing what creditors / claimants / rights-holders should do this week. Specific actions tied to specific deadlines and specific procedural mechanisms. Avoid generic advice.]
+(No subheadings inside the body; no bullets; one flowing narrative. No Recommended Actions or any other action-items section.)
 
 ## Proposed Articles for the Briefing Site (up to 5)
 
-- **<Title 1>** — <Publisher> (<Tier>), <Date>
-  - <URL>
-  - <One-line description of the article and why it matters.>
+- **<Title 1>** — [<clickable link>](<URL>) · <Publisher> (<Tier>), <explicit publication date>
+  - **Key Insight:** <Two-to-three sentences carrying the specific figures, deadlines, or counts that make this worth the reader's click.> `<one-word tag>`
 - **<Title 2>** — ...
-- (Five total.)
+- (Up to five, each on a distinct development. Fewer on light days; if fewer than five qualify in the last 48 hours, say so explicitly.)
 
 ## Sources
 
@@ -209,10 +215,10 @@ Sources cited inline must also appear in the `## Sources` block at the bottom.
 - **Specific docket detail.** Case name in italics, full case number, court abbreviation, judge name. Example: `*Bartz v. Anthropic PBC*, 3:24-cv-05417 (N.D. Cal.) before Judge Araceli Martínez-Olguín`.
 - **Dollar figures and percentages always.** Use round figures sparingly; default to the precise number reported (e.g., `$187.5 million`, not `$187M`; `91.3 percent`, not `91%+`).
 - **Em-dashes are rare.** Reserve em-dashes for moments where no other punctuation conveys the meaning. Aim for 1 em-dash per 100 sentences.
-- **No bullets in the Analysis section.** Bullets are permitted only in Recommended Actions if a single paragraph would be unwieldy, and only when each bullet starts with a directive verb.
+- **No bullets, numbered lists, or subheadings anywhere in the analysis body.** The briefing is pure flowing prose; the only list on the page is the Proposed Articles block.
 - **No hedging adjectives.** Avoid "approximately," "potentially," "likely," "may," "could" unless the underlying uncertainty is itself the point.
 - **No "we are excited to" openers.** No marketing speak. No buzzwords. The desk speaks like a trade-law-grade or restructuring-grade publication, not a consultant deck.
-- **Creditor/claimant orientation in Recommended Actions.** The audience is the claimant, the receiver, the trade creditor, the rights-holder. Not the defendant. Not "general counsel." Specific to the recovery posture.
+- **Creditor/claimant orientation throughout.** The audience is the claimant, the receiver, the trade creditor, the rights-holder. Not the defendant. Not "general counsel." Every implication is framed to the recovery posture.
 
 ---
 
@@ -305,7 +311,7 @@ Do not present advisory `.md` files individually. Do not present a `BRIEFING-RUN
 2. **Density is non-negotiable; length is not.** Whatever the day's developments are, cover them at the Bartz-passage level (full case caption, docket number, judge name, dollar figures, percentages, statutory citations). Word count follows the news — 2,500-word ceiling on heavy days, a few sentences on quiet ones, never padding.
 3. **48-hour freshness rule** for all article proposals.
 4. **Never cite NYT or Al Jazeera.**
-5. **Creditor/claimant orientation** in Recommended Actions.
+5. **Creditor/claimant orientation** throughout the briefing body.
 6. **Tabs run sequentially.** Do not parallelize.
 7. **Failures don't abort the run.** Log the error, render the failed tab in an error state, continue.
 8. **Brand styling.** All HTML output conforms to `BRAND_STYLING.md`.

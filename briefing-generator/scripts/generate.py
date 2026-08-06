@@ -339,7 +339,7 @@ def build_prompt(topic, news_block="", case_truth_block=""):
         if guidance else ""
     )
     voice_line = topic.get("voice") or "house voice per BRAND_STYLING.md"
-    return f"""You are producing today's daily-briefing advisory for {topic['display']} for Andrew at Turnpage Digital Markets.
+    return f"""You are a news curator and client-advisory author producing today's briefing for {topic['display']} for Andrew at Turnpage Digital Markets. Write at the standard of a specialist firm writing to sophisticated clients who pay for judgment rather than summary.
 
 TODAY: {DATE_PRETTY}
 
@@ -347,22 +347,20 @@ You must follow the SKILL.md spec verbatim (provided above). The output is **MAR
 
 {guidance_block}{case_truth_block}{news_block}# Your task
 
-Produce ONE law-firm-style client briefing in markdown per the SKILL.md output spec — the briefing is the entire deliverable (no action-items sections). Sections:
+Produce ONE flowing client advisory in markdown per the SKILL.md spec — the briefing is the entire deliverable (no action-items sections). Sections:
 
 ```
 # {topic['emoji']} {topic['display']} | {DATE_PRETTY}
 
 ## Analysis & Developments
 
-[lede paragraph naming today's deltas]
-
-[one section per development that occurred in the LAST 24 HOURS — case captions, docket numbers, judges, dollar figures, percentages, statutory citations; omit matters with no movement]
+[ONE flowing narrative — three to five dense paragraphs of five to seven sentences on a heavy day, fewer on a light one. NO subheadings inside the body, NO bullets, NO numbered lists. Open with the single most consequential development from the LAST 24 HOURS and its practical consequence, then move through the remaining matters in descending order of consequence, closing on the emerging questions and approaching deadlines. Every paragraph carries full case captions, docket numbers, judges, courtroom designations, dollar figures, percentages, and statutory citations, with each factual sentence closing on its source link. Fact and implication live in the same paragraph — never quarantine "what to do" into a list. Omit any matter that did not move.]
 
 ## Proposed Articles for the Briefing Site (up to 5)
 
-- **Title 1** — Publisher, Date
-  - URL
-  - One-line description
+- **Title 1** — [link](URL) · Publisher (Tier), explicit date
+  - **Key Insight:** two-to-three sentences carrying the specific figures/deadlines/counts that make it worth the click. `tag`
+- (up to five, each on a DISTINCT development; if fewer than five qualify in the last 48 hours, say so explicitly)
 
 ## Sources
 
@@ -370,7 +368,7 @@ Produce ONE law-firm-style client briefing in markdown per the SKILL.md output s
 - (one entry per inline citation)
 ```
 
-Inline citations must use the format `(__[Source Name](https://url)__)` for every factual proposition. Voice: {voice_line}. Length: proportional to the last 24 hours — heavy day 1,500–2,500 words, normal day 400–900, quiet day under 150; NO padding, NO length floor. Density at the Bartz-passage level for whatever IS covered (full case caption + docket + judge + dollar figures + percentages + statutory citations). Apply the 24-hour-focus rules from SKILL.md: the reader follows this desk daily and needs no backdrop — cover only NEW and DELTA matters from the last 24 hours, tie them to the running coverage in a clause (not a paragraph), and OMIT stale matters entirely. If nothing qualifying happened, say so in 2–3 sentences, name the next scheduled milestone, and stop.
+Inline citations must use the format `(__[Source Name](https://url)__)` for every factual proposition — woven into the narrative at the end of the sentence they support, never listed. Weight sources by the SKILL.md tiers (primary filings + major wire first). Create urgency through factual circumstance — dates, counts, dollar figures, named mechanisms — never through alarm or hype adjectives. Voice: {voice_line}. Length: proportional to the last 24 hours — heavy day 1,500–2,500 words, normal day 400–900, quiet day under 150; NO padding, NO length floor. Density at the Bartz-passage level for whatever IS covered. Apply the 24-hour-focus rules from SKILL.md: the reader follows this desk daily and needs no backdrop — cover only NEW and DELTA matters from the last 24 hours, tie them to the running coverage in a clause (not a paragraph), and OMIT stale matters entirely. If nothing qualifying happened, say so in 2–3 sentences, name the next scheduled milestone, and stop.
 
 VERIFICATION RULES (hard requirements):
 - You have a web_search tool. USE IT to verify every case posture, docket number, judge, dollar figure, percentage, and date before asserting it, and to find the specific article or primary-source page for each citation.
