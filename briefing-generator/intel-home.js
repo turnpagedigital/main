@@ -561,7 +561,8 @@
       var evs = byDay[iso] || [];
       var cls = "ih-mm-day" + (iso === today ? " today" : "") + (evs.length ? " has" : "");
       var dots = evs.slice(0, 3).map(function (ev) {
-        return '<i class="ih-mm-dot" style="background:' + getBg(ev.slug, ev.default_color) + '"></i>';
+        var dotBg = (savedColors[ev.slug] && savedColors[ev.slug].bg) || ev.default_color || "#888888";
+        return '<i class="ih-mm-dot" style="background:' + dotBg + '"></i>';
       }).join("");
       if (evs.length) {
         html += '<a class="' + cls + '" href="' + BASE + 'calendar.html#d=' + iso + '" title="' +
