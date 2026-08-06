@@ -124,12 +124,18 @@
 
   var popEl = null;
   var popSlug = null;
+  var popBase = null;   // {name, bg, fg} the popover was opened with
   var popEditingPalette = false;
   function closePop() {
     if (popEl && popEl.parentNode) popEl.parentNode.removeChild(popEl);
     popEl = null;
     popSlug = null;
+    popBase = null;
     popEditingPalette = false;
+  }
+  function rebuildCasesPanelIfOpen() {
+    var p = document.getElementById("ih-cases-panel");
+    if (p && p.style.display !== "none") buildCasesPanel(p);
   }
 
   function popApply() {
@@ -145,11 +151,12 @@
     pushPrefs();
     renderAll();
     rebuildThemesPanelIfOpen();
+    rebuildCasesPanelIfOpen();
   }
 
   function popRenderSwatches() {
     var box = popEl.querySelector("[data-role-swatches]");
-    var cur = (savedColors[popSlug] && savedColors[popSlug].bg) || themeOf(popSlug).bg;
+    var cur = (savedColors[popSlug] && savedColors[popSlug].bg) || (popBase ? popBase.bg : themeOf(popSlug).bg);
     box.className = "ud-pop-swatches";
     box.innerHTML = currentSwatches().map(function (s, i) {
       var on = s.bg.toLowerCase() === (cur || "").toLowerCase();
@@ -193,10 +200,21 @@
     });
   }
 
-  function openThemePopover(slug, anchor) {
+  // Theme gears pass themeOf(slug); case gears pass the case's color base.
+  function openThemePopover(slug, anchor) { openColorPopover(slug, anchor, themeOf(slug)); }
+  function openCasePopover(slug, anchor) {
+    var m = null;
+    for (var i = 0; i < MANIFEST.length; i++) { if (MANIFEST[i].slug === slug) { m = MANIFEST[i]; break; } }
+    var bg = caseColor(slug, m && m.default_color);
+    var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
+    openColorPopover(slug, anchor, { name: (m && (m.short_name || m.display_name)) || slug, bg: bg, fg: fg });
+  }
+
+  function openColorPopover(slug, anchor, base) {
     closePop();
     popSlug = slug;
-    var t = themeOf(slug);
+    popBase = base;
+    var t = base;
     var hasBorder = !!(savedColors[slug] && savedColors[slug].border);
     var pop = document.createElement("div");
     pop.className = "ih-color-pop";
@@ -239,6 +257,7 @@
       pushPrefs();
       renderAll();
       rebuildThemesPanelIfOpen();
+      rebuildCasesPanelIfOpen();
       closePop();
     });
   }
@@ -249,7 +268,7 @@
   }
 
   document.addEventListener("click", function (ev) {
-    if (popEl && !popEl.contains(ev.target) && !ev.target.closest("[data-gear]")) closePop();
+    if (popEl && !popEl.contains(ev.target) && !ev.target.closest("[data-gear],[data-case-gear]")) closePop();
   });
 
   // ── Show/hide preferences (persisted as this browser's default) ───────────
@@ -508,6 +527,7 @@
         "</section>"
       );
     }).join("");
+    _carouselSync();
   }
 
   // ── Top band: unassigned news, date strip, latest notes ───────────────────
@@ -663,6 +683,8 @@
         '<label class="ih-dd-row">' +
           '<input type="checkbox" data-case="' + esc(m.slug) + '"' + (caseOn(m.slug) ? " checked" : "") + ">" +
           casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) +
+          '<span style="flex:1"></span>' +
+          '<button type="button" class="ih-gear" data-case-gear="' + esc(m.slug) + '" title="Colors">⚙</button>' +
         "</label>";
     });
     html +=
@@ -697,6 +719,13 @@
       cb.addEventListener("change", function () {
         activeCases[cb.getAttribute("data-case")] = cb.checked;
         saveFilters(); renderAll();
+      });
+    });
+    panel.querySelectorAll("[data-case-gear]").forEach(function (g) {
+      g.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        openCasePopover(g.getAttribute("data-case-gear"), g);
       });
     });
   }
@@ -834,9 +863,33 @@
     if (p && p.ok) renderAll();
   }).catch(function () {});
 
+  // Briefings carousel — 3 cards visible, arrows scroll one page (≈3 cards).
+  function wireCarousel() {
+    var track = document.getElementById("ih-theme-grid");
+    var prev = document.getElementById("ih-carousel-prev");
+    var next = document.getElementById("ih-carousel-next");
+    if (!track || !prev || !next) return;
+    function step() { return Math.max(track.clientWidth, 240); }
+    prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+    next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
+    function sync() {
+      var overflow = track.scrollWidth - track.clientWidth > 4;
+      prev.style.display = next.style.display = overflow ? "" : "none";
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    }
+    track.addEventListener("scroll", sync);
+    window.addEventListener("resize", sync);
+    // Re-check after each theme render (cards populate asynchronously).
+    _carouselSync = sync;
+    sync();
+  }
+  var _carouselSync = function () {};
+
   document.addEventListener("DOMContentLoaded", function () {
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
     wireDropdown("ih-themes-btn", "ih-themes-panel", buildThemesPanel);
     updateFilterButtons();
+    wireCarousel();
   });
 })();
