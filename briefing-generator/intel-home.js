@@ -548,13 +548,13 @@
     var MONTHS = ["January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"];
     var daysIn = new Date(yr, mo + 1, 0).getDate();
-    var lead = (new Date(yr, mo, 1).getDay() + 6) % 7;
+    var lead = new Date(yr, mo, 1).getDay();  // weeks start on Sunday
     var html = '<div class="ih-mm-head">' +
       '<button type="button" class="ih-mm-nav" data-mm="-1">\u2039</button>' +
       '<span>' + MONTHS[mo] + " " + yr + '</span>' +
       '<button type="button" class="ih-mm-nav" data-mm="1">\u203a</button></div>';
     html += '<div class="ih-mm-grid">' +
-      ["M", "T", "W", "T", "F", "S", "S"].map(function (d) { return '<span class="ih-mm-dow">' + d + "</span>"; }).join("");
+      ["S", "M", "T", "W", "T", "F", "S"].map(function (d) { return '<span class="ih-mm-dow">' + d + "</span>"; }).join("");
     for (var i = 0; i < lead; i++) html += '<span class="ih-mm-day ih-mm-out"></span>';
     for (var dnum = 1; dnum <= daysIn; dnum++) {
       var iso = ym + "-" + pad2(dnum);

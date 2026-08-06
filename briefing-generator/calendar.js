@@ -901,13 +901,13 @@
     d.setDate(d.getDate() + n);
     return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
   }
-  function mondayOf(iso) {
+  function weekStartOf(iso) {
     var d = new Date(iso + "T00:00:00");
-    return addDaysISO(iso, -((d.getDay() + 6) % 7));
+    return addDaysISO(iso, -d.getDay());  // weeks start on Sunday
   }
   var MONTH_NAMES = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
-  var DOW = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  var DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   function eventsByDate() {
     var map = {};
@@ -980,7 +980,7 @@
       var mo = Number(calAnchor.slice(5, 7)) - 1;
       var yr = Number(calAnchor.slice(0, 4));
       var daysIn = new Date(yr, mo + 1, 0).getDate();
-      var cur = mondayOf(first);
+      var cur = weekStartOf(first);
       var last = ym + "-" + pad2(daysIn);
       var visible = 0;
       html += gridHeader(MONTH_NAMES[mo] + " " + yr);
@@ -988,7 +988,7 @@
         return "<div>" + d + "</div>";
       }).join("") + "</div>";
       html += '<div class="uc-cal-grid">';
-      while (cur <= last || ((new Date(cur + "T00:00:00")).getDay() + 6) % 7 !== 0) {
+      while (cur <= last || (new Date(cur + "T00:00:00")).getDay() !== 0) {
         var inMonth = cur.slice(0, 7) === ym;
         var evs = inMonth ? (byDate[cur] || []) : [];
         visible += evs.length;
@@ -999,12 +999,12 @@
           (evs.length > 3 ? '<span class="uc-cal-more" data-d="' + cur + '">+' + (evs.length - 3) + " more</span>" : "") +
           "</div>";
         cur = addDaysISO(cur, 1);
-        if (cur > last && ((new Date(cur + "T00:00:00")).getDay() + 6) % 7 === 0) break;
+        if (cur > last && (new Date(cur + "T00:00:00")).getDay() === 0) break;
       }
       html += "</div>";
       if (countEl) countEl.textContent = visible + " event" + (visible === 1 ? "" : "s") + " in " + MONTH_NAMES[mo];
     } else {
-      var wk0 = mondayOf(calAnchor);
+      var wk0 = weekStartOf(calAnchor);
       var wk6 = addDaysISO(wk0, 6);
       var wkCount = 0;
       html += gridHeader(prettyDate(wk0) + " \u2013 " + prettyDate(wk6));
@@ -1493,6 +1493,25 @@
       var tag = (t.tagName || "").toLowerCase();
       if (tag === "input" || tag === "textarea" || tag === "select" || t.isContentEditable) return;
       var k = (ev.key || "").toLowerCase();
+      if (k === "t") {
+        ev.preventDefault();
+        calAnchor = todayISO();
+        if (calMode === "list") {
+          render();
+          var today = todayISO();
+          var rows = document.querySelectorAll("#uc-tbody tr[data-evkey]");
+          for (var ri = 0; ri < rows.length; ri++) {
+            if ((rows[ri].getAttribute("data-evkey") || "").slice(0, 10) >= today) {
+              rows[ri].classList.add("ud-row-cursor");
+              rows[ri].scrollIntoView({ block: "center" });
+              break;
+            }
+          }
+        } else {
+          render();
+        }
+        return;
+      }
       if (k !== "l" && k !== "m" && k !== "w") return;
       ev.preventDefault();
       calMode = k === "l" ? "list" : k === "m" ? "month" : "week";
