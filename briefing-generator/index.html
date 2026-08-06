@@ -27,7 +27,7 @@
 
     /* Brand strip */
     .tn-wrap-line { border-bottom: 1px solid var(--line-strong); }
-    .tn-row.brand { max-width: 1680px; margin: 0 auto; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+    .tn-row.brand { max-width: 1680px; margin: 0 auto; padding: 10px 32px; display: flex; align-items: center; justify-content: space-between; }
     .tn-brand-logo { height: 36px; width: auto; }
     .tn-logo-dark { display: none; }
     [data-theme="dark"] .tn-logo-light { display: none; }
@@ -126,7 +126,8 @@
     .ih-empty { padding: 12px 14px; font-size: 12px; color: var(--ink-60); }
     .ih-pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.03em; padding: 1px 8px; border-radius: 99px; white-space: nowrap; text-transform: none; }
     .ih-pill-sq { border-radius: 0; }
-    .ih-band { max-width: 1680px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 10px; align-items: start; }
+    .ih-band { max-width: 1680px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: 2fr 1fr; gap: 10px; align-items: start; }
+    .ih-tile-full { grid-column: 1 / -1; }
     @media (max-width: 900px) { .ih-band { grid-template-columns: 1fr; } }
     .ih-tile { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
     .ih-theme-grid { max-width: 1680px; margin: 0 auto 48px; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: stretch; }
@@ -137,6 +138,7 @@
     .ih-tc-lede { font-size: 13px; line-height: 1.55; color: var(--ink); margin-bottom: 8px; }
     .ih-tc-lede a { color: var(--ink); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--ink); white-space: nowrap; }
     .ih-tc-lede.ih-quiet { color: var(--ink-60); }
+    .ih-code-ico { font-size: 1.12em; }
     .ih-row-coded { display: block; border-left: 3px solid var(--line-strong); padding: 4px 8px; margin-top: 3px; font-size: 11.5px; line-height: 1.45; color: var(--ink-60); text-decoration: none; }
     .ih-row-coded:hover { background: rgba(10,10,10,0.03); }
     [data-theme="dark"] .ih-row-coded:hover { background: rgba(229,231,235,0.05); }
@@ -151,9 +153,17 @@
     .ih-mm-nav { font-family: inherit; font-size: 13px; font-weight: 700; padding: 1px 8px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink); cursor: pointer; }
     .ih-mm-nav:hover { background: var(--paper-2); }
     .ih-mm-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
-    .ih-wk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; text-align: center; }
-    .ih-wk-grid .ih-mm-day { min-height: 40px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 5px; font-size: 13px; }
-    .ih-wk-grid .ih-mm-dots { min-height: 6px; }
+    .ih-wk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .ih-wk-col { min-height: 56px; }
+    .ih-wk-dayhd { display: flex; align-items: baseline; gap: 4px; justify-content: center; padding-bottom: 3px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+    .ih-wk-dow { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; color: var(--ink-40); }
+    .ih-wk-num { font-size: 12px; font-weight: 800; color: var(--ink-60); }
+    .ih-wk-col.today .ih-wk-num { color: #C84141; }
+    .ih-wk-col.today .ih-wk-dayhd { border-bottom-color: #C84141; }
+    .ih-wk-ev { display: block; border-left: 3px solid #888; padding: 2px 5px; margin-bottom: 3px; font-size: 10px; line-height: 1.35; color: var(--ink); text-decoration: none; }
+    .ih-wk-ev strong { font-weight: 800; }
+    .ih-wk-ev:hover { filter: brightness(0.96); }
+    .ih-wk-more { display: block; font-size: 9px; color: var(--ink-40); padding-left: 5px; }
     .ih-mm-dow { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; color: var(--ink-40); padding-bottom: 2px; }
     .ih-mm-day { font-size: 11px; font-weight: 700; color: var(--ink-60); padding: 2px 0 1px; text-decoration: none; border: 1px solid transparent; min-height: 24px; }
     .ih-mm-day.has { color: var(--ink); }
@@ -282,7 +292,7 @@
     </div>
   </div>
   <div class="ih-band">
-    <section class="ih-tile">
+    <section class="ih-tile ih-tile-full">
       <a class="ih-head" href="../news.html"><span class="ih-emoji">📡</span><span class="ih-name">Unassigned news</span><span class="ih-more" id="ih-unassigned-count">triage →</span></a>
       <div class="ih-list" id="ih-unassigned"><div class="ih-empty">Loading…</div></div>
     </section>

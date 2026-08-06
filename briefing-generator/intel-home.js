@@ -50,6 +50,17 @@
     return '<span class="ih-pill" style="background:' + bg + ";color:" + fg + '">' + esc(name) + "</span>";
   }
 
+  // The case's pill background color, and a translucent tint of it.
+  function caseColor(slug, defaultColor) {
+    return (savedColors[slug] && savedColors[slug].bg) || defaultColor || "#888888";
+  }
+  function tint(hex, alpha) {
+    var m = /^#?([0-9a-f]{6})$/i.exec(String(hex || ""));
+    if (!m) return "rgba(136,136,136," + alpha + ")";
+    var n = parseInt(m[1], 16);
+    return "rgba(" + (n >> 16 & 255) + "," + (n >> 8 & 255) + "," + (n & 255) + "," + alpha + ")";
+  }
+
   var THEMES = {
     "rewind-tariffs":               { name: "Tariffs / Trade",            emoji: "⚖️", bg: "#ECFCCB", fg: "#3f6212" },
     "llm-class-action":             { name: "LLM / Copyright",            emoji: "🤖", bg: "#DBEAFE", fg: "#1e40af" },
@@ -436,15 +447,18 @@
   function codedRow(item) {
     if (item.kind === "filing") {
       var pillHtml = casePill(item.caseSlug, item.caseShort, item.color);
-      return '<a class="ih-row-coded ih-code-filing" href="' + BASE + 'docket.html#e=' + encodeURIComponent(filingNoteKey(item)) + '">\u2696 ' + pillHtml +
+      return '<a class="ih-row-coded ih-code-filing" href="' + BASE + 'docket.html#e=' + encodeURIComponent(filingNoteKey(item)) + '"><span class="ih-code-ico">\u2696\ufe0f</span> ' + pillHtml +
         " Dkt. " + (item.num != null ? item.num : "\u2014") + " \u00b7 " + esc(item.text.slice(0, 95)) + "</a>";
     }
     if (item.kind === "news") {
-      return '<a class="ih-row-coded ih-code-news" href="' + BASE + 'news.html#u=' + encodeURIComponent(item.url || "") + '">\ud83d\udce1 ' +
+      return '<a class="ih-row-coded ih-code-news" href="' + BASE + 'news.html#u=' + encodeURIComponent(item.url || "") + '"><span class="ih-code-ico">\ud83d\udce1</span> ' +
         esc(item.source) + " \u2014 " + esc(item.text.slice(0, 95)) + "</a>";
     }
-    return '<a class="ih-row-coded ih-code-date" href="' + BASE + 'calendar.html#ev=' + encodeURIComponent((item.date || "") + "|" + (item.caseShort || "")) + '">\ud83d\udcc5 ' +
-      casePill(item.caseSlug, item.caseShort, item.color) + " " +
+    // Calendar event: case name in bold plain text, colored left border +
+    // a lighter tint of the same case color as the row background.
+    var cbg = caseColor(item.caseSlug, item.color);
+    return '<a class="ih-row-coded ih-code-date" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" href="' + BASE + 'calendar.html#ev=' + encodeURIComponent((item.date || "") + "|" + (item.caseShort || "")) + '"><span class="ih-code-ico">\ud83d\udcc5</span> ' +
+      "<strong>" + esc(item.caseShort) + "</strong> \u00b7 " +
       esc(fmtDate(item.date)) + " \u00b7 " + esc(item.text.slice(0, 70)) +
       ' <span style="color:var(--ink-40)">\u00b7 ' + daysUntil(item.date) + "</span></a>";
   }
@@ -475,11 +489,12 @@
       if (nextDate) rows.push(codedRow(nextDate));
       var hidden = devCount - Math.min(devCount, 3);
 
-      var lede = brief ? (brief.body || brief.stat || "").trim() : "";
+      // Full opening paragraph of the advisory (falls back to the short summary).
+      var lede = brief ? (brief.lede || brief.body || brief.stat || "").trim() : "";
       var quiet = devCount === 0;
       var ledeHtml = lede
-        ? '<div class="ih-tc-lede' + (quiet ? " ih-quiet" : "") + '">' + esc(lede.slice(0, 220)) +
-          (lede.length > 220 ? "\u2026" : "") + ' <a href="' + BASE + slug + '/dashboard.html">Read \u2192</a></div>'
+        ? '<div class="ih-tc-lede' + (quiet ? " ih-quiet" : "") + '">' + esc(lede.slice(0, 900)) +
+          (lede.length > 900 ? "\u2026" : "") + ' <a href="' + BASE + slug + '/dashboard.html">Read \u2192</a></div>'
         : '<div class="ih-tc-lede ih-quiet">No briefing yet for this theme. <a href="' + BASE + slug + '/dashboard.html">Open \u2192</a></div>';
 
       return (
@@ -538,13 +553,14 @@
     var byDay = {};
     events.forEach(function (ev) { (byDay[ev.date] = byDay[ev.date] || []).push(ev); });
 
-    // Simplified week view \u2014 the 7-day week containing today (+ weekOffset),
-    // Sunday first. Dots are case-colored; click a day for its calendar list.
+    // Week view \u2014 the 7-day week containing today (+ weekOffset), Sunday first.
+    // Each day lists its events by NAME, color-coded by case (border + tint).
     var start = new Date();
     start.setHours(12, 0, 0, 0);
     start.setDate(start.getDate() - start.getDay() + weekOffset * 7);  // getDay()===0 \u2192 Sunday
     function isoOf(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
     var MABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var DOW = ["S", "M", "T", "W", "T", "F", "S"];
     var days = [];
     for (var i = 0; i < 7; i++) { var d = new Date(start); d.setDate(start.getDate() + i); days.push(d); }
     var a = days[0], b = days[6];
@@ -556,23 +572,24 @@
       '<button type="button" class="ih-mm-nav" data-wk="-1">\u2039</button>' +
       '<span>' + range + '</span>' +
       '<button type="button" class="ih-mm-nav" data-wk="1">\u203a</button></div>';
-    html += '<div class="ih-wk-grid">' +
-      ["S", "M", "T", "W", "T", "F", "S"].map(function (dd) { return '<span class="ih-mm-dow">' + dd + "</span>"; }).join("");
-    days.forEach(function (d) {
+    html += '<div class="ih-wk-grid">';
+    days.forEach(function (d, di) {
       var iso = isoOf(d);
       var evs = byDay[iso] || [];
-      var cls = "ih-mm-day" + (iso === today ? " today" : "") + (evs.length ? " has" : "");
-      var dots = evs.slice(0, 3).map(function (ev) {
-        var dotBg = (savedColors[ev.slug] && savedColors[ev.slug].bg) || ev.default_color || "#888888";
-        return '<i class="ih-mm-dot" style="background:' + dotBg + '"></i>';
+      var isToday = iso === today;
+      var col = '<div class="ih-wk-col' + (isToday ? " today" : "") + '">' +
+        '<div class="ih-wk-dayhd"><span class="ih-wk-dow">' + DOW[di] + '</span>' +
+          '<span class="ih-wk-num">' + d.getDate() + '</span></div>';
+      col += evs.slice(0, 4).map(function (ev) {
+        var cbg = caseColor(ev.slug, ev.default_color);
+        var label = ev.title ? ev.short + " \u2014 " + ev.title : ev.short;
+        return '<a class="ih-wk-ev" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" ' +
+          'href="' + BASE + 'calendar.html#d=' + iso + '" title="' + esc(label) + '">' +
+          "<strong>" + esc(ev.short) + "</strong>" + (ev.title ? " " + esc(ev.title.slice(0, 44)) : "") + "</a>";
       }).join("");
-      if (evs.length) {
-        html += '<a class="' + cls + '" href="' + BASE + 'calendar.html#d=' + iso + '" title="' +
-          esc(evs.map(function (ev) { return ev.short + " \u2014 " + ev.title; }).join("\n")) + '">' +
-          d.getDate() + '<span class="ih-mm-dots">' + dots + "</span></a>";
-      } else {
-        html += '<span class="' + cls + '">' + d.getDate() + '<span class="ih-mm-dots"></span></span>';
-      }
+      if (evs.length > 4) col += '<span class="ih-wk-more">+' + (evs.length - 4) + " more</span>";
+      col += "</div>";
+      html += col;
     });
     html += "</div>";
     box.innerHTML = html;
