@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T22:30:34.550468+00:00",
-    "as_of": "Aug 5, 2026",
+    "fetched_at": "2026-08-06T00:13:50.622837+00:00",
+    "as_of": "Aug 6, 2026",
     "backfilled": true,
-    "new_in_72h": 9,
+    "new_in_72h": 5,
     "recent": [
       {
         "entry_number": 89,
@@ -108,7 +108,7 @@
         "time_filed": "19:15:34",
         "date_display": "Aug 3, 2026",
         "description": "Notice of Appearance and Request",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -118,7 +118,7 @@
         "time_filed": "16:39:53",
         "date_display": "Aug 3, 2026",
         "description": "Missing Document(s) Filed",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -128,7 +128,7 @@
         "time_filed": "12:01:32",
         "date_display": "Aug 3, 2026",
         "description": "Withdrawal of Document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -138,7 +138,7 @@
         "time_filed": "00:16:35",
         "date_display": "Aug 3, 2026",
         "description": "BNC Certificate of Notice - Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

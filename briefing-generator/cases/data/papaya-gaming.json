@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T22:30:29.084519+00:00",
-    "as_of": "Aug 5, 2026",
+    "fetched_at": "2026-08-06T00:13:44.624030+00:00",
+    "as_of": "Aug 6, 2026",
     "backfilled": true,
-    "new_in_72h": 40,
+    "new_in_72h": 24,
     "recent": [
       {
         "entry_number": 42,
@@ -298,7 +298,7 @@
         "time_filed": "19:11:48",
         "date_display": "Aug 3, 2026",
         "description": "Certificate of Service (related document(s)1, 4, 5, 6, 7, 9, 10) Filed by Oriel Bachar. (Attachments: # 1 Service List) (Malow, Jennifer) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -308,7 +308,7 @@
         "time_filed": "15:35:06",
         "date_display": "Aug 3, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Evan J. Zucker (Related Doc # 14) Signed on 8/3/2026. (LMC) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -318,7 +318,7 @@
         "time_filed": "15:34:28",
         "date_display": "Aug 3, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Michael Klein (Related Doc # 13) Signed on 8/3/2026. (LMC) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -328,7 +328,7 @@
         "time_filed": "15:33:55",
         "date_display": "Aug 3, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Ben Thomson (Related Doc # 12) Signed on 8/3/2026. (LMC) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -338,7 +338,7 @@
         "time_filed": "15:33:18",
         "date_display": "Aug 3, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Olya Antle (Related Doc # 11) Signed on 8/3/2026. (LMC) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -348,7 +348,7 @@
         "time_filed": "14:27:07",
         "date_display": "Aug 3, 2026",
         "description": "Motion to Appear pro hac vice of Evan J. Zucker. Receipt Number ADEDC-5032, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -358,7 +358,7 @@
         "time_filed": "14:25:32",
         "date_display": "Aug 3, 2026",
         "description": "Motion to Appear pro hac vice of Michael Klein. Receipt Number ADEDC-5032, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -368,7 +368,7 @@
         "time_filed": "14:22:46",
         "date_display": "Aug 3, 2026",
         "description": "Motion to Appear pro hac vice of Ben Thomson. Receipt Number ADEDC-5032, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -378,7 +378,7 @@
         "time_filed": "14:21:08",
         "date_display": "Aug 3, 2026",
         "description": "Motion to Appear pro hac vice of Olya Antle. Receipt Number ADEDC-5032, Filed by Oriel Bachar. (Malow, Jennifer) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -388,7 +388,7 @@
         "time_filed": "13:06:57",
         "date_display": "Aug 3, 2026",
         "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by Oriel Bachar. Hearing scheduled for 8/4/2026 at 11:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. (Malow, Jennifer) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.10.0.pdf"
       },
@@ -398,7 +398,7 @@
         "time_filed": "12:38:18",
         "date_display": "Aug 3, 2026",
         "description": "Notice of Hearing to Consider First Day Papers on August 4, 2026 at 11:30 a.m. (Eastern Time) (related document(s)3, 4, 5, 6, 7, 8) Filed by Oriel Bachar. Hearing scheduled for 8/4/2026 at 11:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. (Malow, Jennifer) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.9.0.pdf"
       },
@@ -408,7 +408,7 @@
         "time_filed": "00:14:01",
         "date_display": "Aug 3, 2026",
         "description": "Motion to Approve / Motion for Order (A) Scheduling Hearing on Recognition of Chapter 15 Petition and (B) Specifying Form and Manner of Service of Notice Filed by Oriel Bachar. (Attachments: # 1 Exhibit A - Proposed Order) (Tarr, Stanley) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.8.0.pdf"
       },
@@ -418,7 +418,7 @@
         "time_filed": "03:13:01",
         "date_display": "Aug 3, 2026",
         "description": "Add Attorney",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -428,7 +428,7 @@
         "time_filed": "",
         "date_display": "Aug 3, 2026",
         "description": "Filed by U.S. Trustee. (McMahon, Joseph)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -438,7 +438,7 @@
         "time_filed": "",
         "date_display": "Aug 3, 2026",
         "description": "Judge Mary F. Walrath added to case (SJS)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -448,7 +448,7 @@
         "time_filed": "09:41:40",
         "date_display": "Aug 3, 2026",
         "description": "Case Assigned",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
