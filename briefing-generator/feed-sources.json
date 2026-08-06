@@ -1,36 +1,3 @@
 {
-  "sources": [
-    {
-      "id": "bondoro-alerts",
-      "name": "Bondoro",
-      "url": "https://bondoro.com/tag/chapter-11-filing-alerts/rss/",
-      "kind": "Alert",
-      "mode": "all",
-      "enabled": true
-    },
-    {
-      "id": "bondoro-summaries",
-      "name": "Bondoro",
-      "url": "https://bondoro.com/tag/case-summaries/rss/",
-      "kind": "Summary",
-      "mode": "all",
-      "enabled": true
-    },
-    {
-      "id": "petition",
-      "name": "PETITION",
-      "url": "https://petition.substack.com/feed",
-      "kind": "News",
-      "mode": "all",
-      "enabled": true
-    },
-    {
-      "id": "dailydac",
-      "name": "DailyDAC",
-      "url": "https://www.dailydac.com/feed/",
-      "kind": "News",
-      "mode": "all",
-      "enabled": true
-    }
-  ]
+  "sources": []
 }
