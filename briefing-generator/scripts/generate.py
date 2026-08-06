@@ -484,8 +484,10 @@ def generate_social_posts(create_with_retry, topic, advisory_md):
     if inject_posts_html(topic, li_text, x_text):
         print(f"  ✓ injected drafts into {topic['slug']}/posts.html")
 
-def update_briefings_json(slug, card_stat, card_body):
-    """Upsert the topic's lede into briefings.json (feeds /intel/briefings.html)."""
+def update_briefings_json(slug, card_stat, card_body, card_lede=""):
+    """Upsert the topic's lede into briefings.json (feeds /intel/briefings.html
+    and the dashboard). `lede` is the full opening paragraph; `body` stays the
+    one-sentence summary."""
     import datetime as _dt
     path = REPO_ROOT / "briefings.json"
     try:
@@ -494,15 +496,16 @@ def update_briefings_json(slug, card_stat, card_body):
         data = {"items": []}
     items = [i for i in data.get("items", []) if i.get("slug") != slug]
     items.append({"slug": slug, "stat": card_stat, "body": card_body,
+                  "lede": card_lede or card_body,
                   "updated": _dt.date.today().isoformat()})
     data["items"] = items
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"  \u2713 briefings.json updated for {slug}")
 
 
-def update_card_in_landing(slug, card_stat, card_body):
+def update_card_in_landing(slug, card_stat, card_body, card_lede=""):
     """Update the .card-stat and .card-body for a topic on the landing page."""
-    update_briefings_json(slug, card_stat, card_body)
+    update_briefings_json(slug, card_stat, card_body, card_lede)
     if not INDEX_HTML.exists():
         print(f"  ! index.html missing — skipping landing update for {slug}")
         return
@@ -608,7 +611,9 @@ def extract_card_summary(advisory_md, topic):
         stat = _truncate_words(heading, 80)
     else:
         stat = " ".join(first_sentence.split()[:6]) + "…"
-    return _html.escape(stat, quote=False), _html.escape(first_sentence, quote=False)
+    return (_html.escape(stat, quote=False),
+            _html.escape(first_sentence, quote=False),
+            _html.escape(body_text, quote=False))
 
 def load_themes():
     """Load active themes from src/data/themes.json (admin-editable).
@@ -838,8 +843,8 @@ def main():
         print(f"  ✓ wrote {advisory_path.relative_to(REPO_ROOT)} ({len(advisory_md)} chars)")
 
         # Update landing card with the day's delta
-        stat, body = extract_card_summary(advisory_md, topic)
-        update_card_in_landing(topic['slug'], stat, body)
+        stat, body, lede = extract_card_summary(advisory_md, topic)
+        update_card_in_landing(topic['slug'], stat, body, lede)
 
         # LinkedIn/X drafts for the three priority topics — same verified
         # advisory as source, short second generation, paced by the same
