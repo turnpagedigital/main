@@ -130,8 +130,17 @@
     .ih-tile-full { grid-column: 1 / -1; }
     @media (max-width: 900px) { .ih-band { grid-template-columns: 1fr; } }
     .ih-tile { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
-    .ih-theme-grid { max-width: 1680px; margin: 0 auto 48px; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: stretch; }
-    @media (max-width: 900px) { .ih-theme-grid { grid-template-columns: 1fr; } }
+    /* Briefings carousel: 3 cards visible, horizontal scroll for the rest */
+    .ih-carousel { max-width: 1680px; margin: 0 auto 48px; padding: 0 32px; display: flex; align-items: stretch; gap: 6px; }
+    .ih-theme-grid { flex: 1; min-width: 0; display: flex; gap: 10px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 6px; }
+    .ih-theme-grid::-webkit-scrollbar { height: 6px; }
+    .ih-theme-grid::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+    .ih-theme-card { flex: 0 0 calc((100% - 20px) / 3); }
+    .ih-carousel-nav { flex: 0 0 auto; align-self: stretch; width: 34px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); cursor: pointer; font-size: 20px; font-weight: 700; line-height: 1; }
+    .ih-carousel-nav:hover { background: var(--paper-2); }
+    .ih-carousel-nav[disabled] { opacity: 0.3; cursor: default; }
+    @media (max-width: 1100px) { .ih-theme-card { flex-basis: calc((100% - 10px) / 2); } }
+    @media (max-width: 720px) { .ih-theme-card { flex-basis: 100%; } }
     .ih-theme-card { background: var(--surface); border: 1px solid var(--line-strong); padding: 12px 14px; display: flex; flex-direction: column; }
     .ih-tc-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 7px; }
     .ih-tc-count { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-40); white-space: nowrap; }
@@ -306,8 +315,12 @@
     </section>
   </div>
 
-  <div class="ih-theme-grid" id="ih-theme-grid">
-    <div class="ih-empty">Loading briefings…</div>
+  <div class="ih-carousel">
+    <button type="button" class="ih-carousel-nav ih-carousel-prev" id="ih-carousel-prev" aria-label="Previous briefings">‹</button>
+    <div class="ih-theme-grid" id="ih-theme-grid">
+      <div class="ih-empty">Loading briefings…</div>
+    </div>
+    <button type="button" class="ih-carousel-nav ih-carousel-next" id="ih-carousel-next" aria-label="More briefings">›</button>
   </div>
 
 <script src="intel-home.js"></script>
