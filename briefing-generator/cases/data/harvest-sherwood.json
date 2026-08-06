@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T22:29:31.394429+00:00",
-    "as_of": "Aug 5, 2026",
-    "backfilled": false,
-    "new_in_72h": 33,
+    "fetched_at": "2026-08-06T00:13:11.014637+00:00",
+    "as_of": "Aug 6, 2026",
+    "backfilled": true,
+    "new_in_72h": 20,
     "recent": [
       {
         "entry_number": 1152,
@@ -258,7 +258,7 @@
         "time_filed": "23:58:52",
         "date_display": "Aug 3, 2026",
         "description": "Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -268,7 +268,7 @@
         "time_filed": "23:52:08",
         "date_display": "Aug 3, 2026",
         "description": "Declaration",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -278,7 +278,7 @@
         "time_filed": "23:44:27",
         "date_display": "Aug 3, 2026",
         "description": "Declaration",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -288,7 +288,7 @@
         "time_filed": "23:35:21",
         "date_display": "Aug 3, 2026",
         "description": "Declaration",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -298,7 +298,7 @@
         "time_filed": "23:23:49",
         "date_display": "Aug 3, 2026",
         "description": "Brief",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -308,7 +308,7 @@
         "time_filed": "23:07:56",
         "date_display": "Aug 3, 2026",
         "description": "Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan). (McManus, Chelsea)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -318,7 +318,7 @@
         "time_filed": "16:20:12",
         "date_display": "Aug 3, 2026",
         "description": "List (witness/exhibit/generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -328,7 +328,7 @@
         "time_filed": "13:13:05",
         "date_display": "Aug 3, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -338,7 +338,7 @@
         "time_filed": "13:09:38",
         "date_display": "Aug 3, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -348,7 +348,7 @@
         "time_filed": "13:02:06",
         "date_display": "Aug 3, 2026",
         "description": "Certificate of service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -358,7 +358,7 @@
         "time_filed": "12:25:38",
         "date_display": "Aug 3, 2026",
         "description": "List (witness/exhibit/generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -368,7 +368,7 @@
         "time_filed": "11:37:54",
         "date_display": "Aug 3, 2026",
         "description": "List (witness/exhibit/generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -378,7 +378,7 @@
         "time_filed": "09:57:40",
         "date_display": "Aug 3, 2026",
         "description": "Notice (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -13522,8 +13522,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=74"
+    ]
   },
   "claims_administrator": {
     "name": "Epiq11",

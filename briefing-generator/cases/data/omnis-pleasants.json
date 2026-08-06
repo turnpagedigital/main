@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T22:30:22.857748+00:00",
-    "as_of": "Aug 5, 2026",
+    "fetched_at": "2026-08-06T00:13:38.734903+00:00",
+    "as_of": "Aug 6, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 3,
     "recent": [
       {
         "entry_number": 67,
@@ -88,7 +88,7 @@
         "time_filed": "16:25:01",
         "date_display": "Aug 3, 2026",
         "description": "Affidavit/Declaration of Service re: First-Day Pleadings. Filed by Stretto, Inc.. (related document(s)2, 3, 4, 5, 6, 7, 8, 9, 10, 17, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57) (Betance, Sheryl) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -98,7 +98,7 @@
         "time_filed": "12:29:57",
         "date_display": "Aug 3, 2026",
         "description": "Motion to File Under Seal - Debtor's Motion for Entry of an Order (I) Authorizing the Debtor to Redact Certain Personally Identifiable Information from the Creditor Matrix, Schedules and Statements, and Other Similar Pleadings, and (II) Granting Related Relief Filed by Omnis Pleasants, LLC. Hearing scheduled for 9/3/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. Objections due by 8/19/2026. (Attachments: # 1 Notice # 2 Exhibit A) (Diver, James) (Entered: 08/03/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

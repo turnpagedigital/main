@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-05T22:30:58.049889+00:00",
-    "as_of": "Aug 5, 2026",
+    "fetched_at": "2026-08-06T00:14:48.834111+00:00",
+    "as_of": "Aug 6, 2026",
     "backfilled": true,
-    "new_in_72h": 8,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 1319,
@@ -36,7 +36,7 @@
         "time_filed": "15:15:59",
         "date_display": "Aug 3, 2026",
         "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -46,7 +46,7 @@
         "time_filed": "15:12:21",
         "date_display": "Aug 3, 2026",
         "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -68,7 +68,7 @@
         "time_filed": "15:15:59",
         "date_display": "Aug 3, 2026",
         "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -78,7 +78,7 @@
         "time_filed": "15:12:21",
         "date_display": "Aug 3, 2026",
         "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -88,7 +88,7 @@
         "time_filed": "15:09:43",
         "date_display": "Aug 3, 2026",
         "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -98,7 +98,7 @@
         "time_filed": "15:06:32",
         "date_display": "Aug 3, 2026",
         "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -108,7 +108,7 @@
         "time_filed": "15:04:12",
         "date_display": "Aug 3, 2026",
         "description": "Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -118,7 +118,7 @@
         "time_filed": "15:17:36",
         "date_display": "Aug 3, 2026",
         "description": "none AND none AND none AND none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -128,7 +128,7 @@
         "time_filed": "15:17:37",
         "date_display": "Aug 3, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
