@@ -406,14 +406,14 @@
       ((x.c && x.c.events) || []).forEach(function (ev) {
         if (!ev.date || ev.date < today) return;
         if (!best || ev.date < best.date) {
-          best = { kind: "date", date: ev.date, text: (ev.kind ? ev.kind + ": " : "") + (ev.title || ""), caseShort: short };
+          best = { kind: "date", date: ev.date, text: (ev.kind ? ev.kind + ": " : "") + (ev.title || ""), caseShort: short, caseSlug: x.m.slug, color: x.m.default_color };
         }
       });
       ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
         extractEvents(e, short).forEach(function (ev) {
           if (ev.date < today) return;
           if (!best || ev.date < best.date) {
-            best = { kind: "date", date: ev.date, text: ev.kind + " \u2014 " + ev.title.slice(0, 80), caseShort: short };
+            best = { kind: "date", date: ev.date, text: ev.kind + " \u2014 " + ev.title.slice(0, 80), caseShort: short, caseSlug: x.m.slug, color: x.m.default_color };
           }
         });
       });
@@ -444,7 +444,8 @@
         esc(item.source) + " \u2014 " + esc(item.text.slice(0, 95)) + "</a>";
     }
     return '<a class="ih-row-coded ih-code-date" href="' + BASE + 'calendar.html#ev=' + encodeURIComponent((item.date || "") + "|" + (item.caseShort || "")) + '">\ud83d\udcc5 ' +
-      esc(fmtDate(item.date)) + " \u2014 " + esc(item.caseShort) + " \u00b7 " + esc(item.text.slice(0, 70)) +
+      casePill(item.caseSlug, item.caseShort, item.color) + " " +
+      esc(fmtDate(item.date)) + " \u00b7 " + esc(item.text.slice(0, 70)) +
       ' <span style="color:var(--ink-40)">\u00b7 ' + daysUntil(item.date) + "</span></a>";
   }
 
@@ -509,7 +510,7 @@
     }).join(""));
   }
 
-  var mmOffset = 0;
+  var weekOffset = 0;
   function renderDates() {
     var box = document.getElementById("ih-dates");
     if (!box) return;
@@ -534,30 +535,31 @@
       seen[k] = true;
       return true;
     });
-    events.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
-    // Mini-month: dots mark event days; click a day to jump the calendar list.
-    var base = new Date();
-    base.setDate(1);
-    base.setMonth(base.getMonth() + mmOffset);
-    var yr = base.getFullYear(), mo = base.getMonth();
-    var ym = yr + "-" + pad2(mo + 1);
     var byDay = {};
-    events.forEach(function (ev) {
-      if (ev.date.slice(0, 7) === ym) (byDay[ev.date] = byDay[ev.date] || []).push(ev);
-    });
-    var MONTHS = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"];
-    var daysIn = new Date(yr, mo + 1, 0).getDate();
-    var lead = new Date(yr, mo, 1).getDay();  // weeks start on Sunday
+    events.forEach(function (ev) { (byDay[ev.date] = byDay[ev.date] || []).push(ev); });
+
+    // Simplified week view \u2014 the 7-day week containing today (+ weekOffset),
+    // Sunday first. Dots are case-colored; click a day for its calendar list.
+    var start = new Date();
+    start.setHours(12, 0, 0, 0);
+    start.setDate(start.getDate() - start.getDay() + weekOffset * 7);  // getDay()===0 \u2192 Sunday
+    function isoOf(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
+    var MABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var days = [];
+    for (var i = 0; i < 7; i++) { var d = new Date(start); d.setDate(start.getDate() + i); days.push(d); }
+    var a = days[0], b = days[6];
+    var range = a.getMonth() === b.getMonth()
+      ? MABBR[a.getMonth()] + " " + a.getDate() + " \u2013 " + b.getDate()
+      : MABBR[a.getMonth()] + " " + a.getDate() + " \u2013 " + MABBR[b.getMonth()] + " " + b.getDate();
+
     var html = '<div class="ih-mm-head">' +
-      '<button type="button" class="ih-mm-nav" data-mm="-1">\u2039</button>' +
-      '<span>' + MONTHS[mo] + " " + yr + '</span>' +
-      '<button type="button" class="ih-mm-nav" data-mm="1">\u203a</button></div>';
-    html += '<div class="ih-mm-grid">' +
-      ["S", "M", "T", "W", "T", "F", "S"].map(function (d) { return '<span class="ih-mm-dow">' + d + "</span>"; }).join("");
-    for (var i = 0; i < lead; i++) html += '<span class="ih-mm-day ih-mm-out"></span>';
-    for (var dnum = 1; dnum <= daysIn; dnum++) {
-      var iso = ym + "-" + pad2(dnum);
+      '<button type="button" class="ih-mm-nav" data-wk="-1">\u2039</button>' +
+      '<span>' + range + '</span>' +
+      '<button type="button" class="ih-mm-nav" data-wk="1">\u203a</button></div>';
+    html += '<div class="ih-wk-grid">' +
+      ["S", "M", "T", "W", "T", "F", "S"].map(function (dd) { return '<span class="ih-mm-dow">' + dd + "</span>"; }).join("");
+    days.forEach(function (d) {
+      var iso = isoOf(d);
       var evs = byDay[iso] || [];
       var cls = "ih-mm-day" + (iso === today ? " today" : "") + (evs.length ? " has" : "");
       var dots = evs.slice(0, 3).map(function (ev) {
@@ -567,16 +569,16 @@
       if (evs.length) {
         html += '<a class="' + cls + '" href="' + BASE + 'calendar.html#d=' + iso + '" title="' +
           esc(evs.map(function (ev) { return ev.short + " \u2014 " + ev.title; }).join("\n")) + '">' +
-          dnum + '<span class="ih-mm-dots">' + dots + "</span></a>";
+          d.getDate() + '<span class="ih-mm-dots">' + dots + "</span></a>";
       } else {
-        html += '<span class="' + cls + '">' + dnum + '<span class="ih-mm-dots"></span></span>';
+        html += '<span class="' + cls + '">' + d.getDate() + '<span class="ih-mm-dots"></span></span>';
       }
-    }
+    });
     html += "</div>";
     box.innerHTML = html;
-    box.querySelectorAll(".ih-mm-nav").forEach(function (b) {
-      b.addEventListener("click", function () {
-        mmOffset += Number(b.getAttribute("data-mm"));
+    box.querySelectorAll(".ih-mm-nav").forEach(function (bn) {
+      bn.addEventListener("click", function () {
+        weekOffset += Number(bn.getAttribute("data-wk"));
         renderDates();
       });
     });
