@@ -28,6 +28,19 @@
     "sync": "active"
   },
   {
+    "slug": "britannica-merriam-webster-v-openai",
+    "display_name": "Britannica / Merriam-Webster v. OpenAI",
+    "short_name": "Britannica /",
+    "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
+    "default_color": "#7EF4C2",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "U.S. District Court (filed March 2026; district not confirmed in sources)",
+    "sync": "active"
+  },
+  {
     "slug": "concord-anthropic",
     "display_name": "Concord Music Group v. Anthropic",
     "short_name": "Concord Music",
@@ -38,6 +51,19 @@
       "llm-class-action"
     ],
     "court": "District Court, N.D. California",
+    "sync": "active"
+  },
+  {
+    "slug": "getty-images-us-v-stability-ai-nd-cal",
+    "display_name": "Getty Images (US) v. Stability AI (N.D. Cal.)",
+    "short_name": "Getty Images",
+    "docket_url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
+    "default_color": "#B3A8F0",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "U.S. District Court for the Northern District of California",
     "sync": "active"
   },
   {
@@ -55,6 +81,33 @@
     "sync": "active"
   },
   {
+    "slug": "hachette-et-al-v-google-llc-gemini",
+    "display_name": "Hachette et al. v. Google LLC (Gemini)",
+    "short_name": "Hachette et",
+    "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
+    "default_color": "#94C6F8",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "S.D.N.Y.",
+    "sync": "active"
+  },
+  {
+    "slug": "hachette-et-al-v-meta-platforms-llama",
+    "display_name": "Hachette et al. v. Meta Platforms (Llama)",
+    "short_name": "Hachette et",
+    "docket_url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
+    "default_color": "#F2AAEC",
+    "category": "class-action",
+    "topics": [
+      "billion-dollar-class-actions",
+      "llm-class-action"
+    ],
+    "court": "To be confirmed (filed May 5, 2026)",
+    "sync": "active"
+  },
+  {
     "slug": "harvest-sherwood",
     "display_name": "Harvest Sherwood",
     "short_name": "Harvest Sherwood",
@@ -65,6 +118,19 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "N.D. Tex.",
+    "sync": "active"
+  },
+  {
+    "slug": "in-re-cashcall-inc",
+    "display_name": "In re CashCall, Inc.",
+    "short_name": "In re",
+    "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
+    "default_color": "#1B3A4B",
+    "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights"
+    ],
+    "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
     "sync": "active"
   },
   {
@@ -80,6 +146,19 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "United States Bankruptcy Court, D. Delaware",
+    "sync": "active"
+  },
+  {
+    "slug": "kadrey-v-meta-contributory-infringement-amendment",
+    "display_name": "Kadrey v. Meta — Contributory Infringement Amendment",
+    "short_name": "Kadrey",
+    "docket_url": "https://www.courtlistener.com/docket/67569326/-/",
+    "default_color": "#7EF4C2",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "District Court N.D. Cal.",
     "sync": "active"
   },
   {
@@ -152,6 +231,19 @@
     "sync": "active"
   },
   {
+    "slug": "publishers-v-google-llc-gemini-books",
+    "display_name": "Publishers v. Google LLC (Gemini Books)",
+    "short_name": "Publishers",
+    "docket_url": "https://www.courtlistener.com/docket/67599029/-/",
+    "default_color": "#B3A8F0",
+    "category": "class-action",
+    "topics": [
+      "llm-class-action"
+    ],
+    "court": "District Court, N.D. California",
+    "sync": "active"
+  },
+  {
     "slug": "rndc",
     "display_name": "RNDC",
     "short_name": "RNDC",
@@ -176,6 +268,20 @@
     ],
     "court": "United States Bankruptcy Court, S.D. New York",
     "sync": "archived"
+  },
+  {
+    "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
+    "display_name": "State of Oregon v. United States / Burlap and Barrel v. United States (Section 122 — Federal Circuit appeal)",
+    "short_name": "State of",
+    "docket_url": "https://www.courtlistener.com/docket/72381015/-/",
+    "default_color": "#D4FF00",
+    "category": "class-action",
+    "topics": [
+      "billion-dollar-class-actions",
+      "rewind-tariffs"
+    ],
+    "court": "U.S. Court of Appeals for the Federal Circuit (on appeal from CIT)",
+    "sync": "active"
   },
   {
     "slug": "terraform-labs",

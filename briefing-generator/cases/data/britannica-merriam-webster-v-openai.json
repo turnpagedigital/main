@@ -1,0 +1,950 @@
+{
+  "case": {
+    "slug": "britannica-merriam-webster-v-openai",
+    "display_name": "Britannica / Merriam-Webster v. OpenAI",
+    "case_name": "Encyclopaedia Britannica, Inc. v. OpenAI, Inc.",
+    "court": "U.S. District Court (filed March 2026; district not confirmed in sources)",
+    "case_number": "1:26-cv-02097",
+    "judge": "Sidney H. Stein",
+    "docket_id": "72492986",
+    "status": "active",
+    "sync": "active",
+    "court_id": ""
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
+    "date_last_filing": "2026-08-05",
+    "fetched_at": "2026-08-07T22:57:52.876648+00:00",
+    "as_of": "Aug 7, 2026",
+    "backfilled": true,
+    "new_in_72h": 2,
+    "recent": [
+      {
+        "entry_number": 56,
+        "date_filed": "2026-08-05",
+        "time_filed": "17:34:43",
+        "date_display": "Aug 5, 2026",
+        "description": "Proposed Stipulation and Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.56.0.pdf"
+      },
+      {
+        "entry_number": 55,
+        "date_filed": "2026-08-05",
+        "time_filed": "17:23:30",
+        "date_display": "Aug 5, 2026",
+        "description": "Letter",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.55.0.pdf"
+      },
+      {
+        "entry_number": 54,
+        "date_filed": "2026-07-24",
+        "time_filed": "22:12:03",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 56,
+        "date_filed": "2026-08-05",
+        "time_filed": "17:34:43",
+        "date_display": "Aug 5, 2026",
+        "description": "Proposed Stipulation and Order",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.56.0.pdf"
+      },
+      {
+        "entry_number": 55,
+        "date_filed": "2026-08-05",
+        "time_filed": "17:23:30",
+        "date_display": "Aug 5, 2026",
+        "description": "Letter",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.55.0.pdf"
+      },
+      {
+        "entry_number": 54,
+        "date_filed": "2026-07-24",
+        "time_filed": "22:12:03",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 53,
+        "date_filed": "2026-07-24",
+        "time_filed": "22:07:52",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 52,
+        "date_filed": "2026-07-24",
+        "time_filed": "22:05:00",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 51,
+        "date_filed": "2026-07-24",
+        "time_filed": "22:02:12",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 50,
+        "date_filed": "2026-07-24",
+        "time_filed": "21:58:30",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 49,
+        "date_filed": "2026-07-24",
+        "time_filed": "21:52:38",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 48,
+        "date_filed": "2026-07-24",
+        "time_filed": "21:41:56",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 47,
+        "date_filed": "2026-07-24",
+        "time_filed": "21:08:27",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 46,
+        "date_filed": "2026-07-24",
+        "time_filed": "21:02:56",
+        "date_display": "Jul 24, 2026",
+        "description": "Summons Returned Executed",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 45,
+        "date_filed": "2026-07-14",
+        "time_filed": "17:21:39",
+        "date_display": "Jul 14, 2026",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.45.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-14",
+        "time_filed": "11:00:56",
+        "date_display": "Jul 14, 2026",
+        "description": "Order on Motion for Leave to File Document",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-13",
+        "time_filed": "09:49:17",
+        "date_display": "Jul 13, 2026",
+        "description": "Notice Regarding Pro Hac Vice Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 43,
+        "date_filed": "2026-07-10",
+        "time_filed": "17:23:52",
+        "date_display": "Jul 10, 2026",
+        "description": "Proposed Order admitting Johnathan J. Vaknin Pro Hac Vice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 42,
+        "date_filed": "2026-07-01",
+        "time_filed": "22:24:50",
+        "date_display": "Jul 1, 2026",
+        "description": "Notice of Filing Transcript",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 41,
+        "date_filed": "2026-07-01",
+        "time_filed": "22:21:42",
+        "date_display": "Jul 1, 2026",
+        "description": "Transcript",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-23",
+        "time_filed": "",
+        "date_display": "Jun 23, 2026",
+        "description": "***NOTICE TO ATTORNEY REGARDING DEFICIENT REQUEST FOR ISSUANCE OF SUMMONS. Notice to Attorney Yoonhee Gloria Park to RE-FILE Document No. 40 Request for Issuance of Amended Summons. The filing is deficient for the following reason(s): the PDF attached to the docket entry for the issuance of summons is not correct; Caption error, all parties should be listed in caption, if all names do not fit in the space provided, name the first listed defendant on the pleading followed by 'et al'. Re-file the document using the event type Request for Issuance of Summons found under the event list Service of Process - select the correct filer/filers - and attach the correct summons form PDF. (sj)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-06-23",
+        "time_filed": "16:04:42",
+        "date_display": "Jun 23, 2026",
+        "description": "Notice to Attorney Regarding Deficient Request for Issuance of Summons",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 40,
+        "date_filed": "2026-06-19",
+        "time_filed": "16:38:23",
+        "date_display": "Jun 19, 2026",
+        "description": "FILING ERROR - DEFICIENT SUMMONS REQUEST - PDF ERROR REQUEST FOR ISSUANCE OF AMENDED SUMMONS as to OpenAI Foundation (f/k/a OpenAI lnc.), OpenAI LP, OpenAI GP, LLC, OAI International, Inc. (f/k/a OpenAI, LLC), OpenAI OpCo LLC, OpenAI Global LLC, OAI Corporation (f/k/a OAI Corporation, LLC), OpenAI Holdings, LLC, OpenAI Group PBC, re: 12 Complaint. Document filed by Encyclopaedia Britannica, Inc., Merriam-Webster, Inc.. (Park, Yoonhee) Modified on 6/23/2026 (sj). (Entered: 06/19/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 39,
+        "date_filed": "2026-06-02",
+        "time_filed": "18:03:22",
+        "date_display": "Jun 2, 2026",
+        "description": "ORDER terminating (1184) Letter Motion for Discovery in case 1:23-cv-08292-SHS-OTW; terminating (1582) Letter Motion for Discovery in case 1:25-md-03143-SHS-OTW. OpenAI is directed to produce the Exhibits FORTHWITH. If they are not produced by June 3, 2026 at 5pm Eastern, sanctions shall accrue at the rate of $100/day, without prejudice to any future motion or award of sanctions on this or any other issue. So ordered. (Signed by Magistrate Judge Ona T. Wang on 6/2/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (jjc) (Entered: 06/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.39.0.pdf"
+      },
+      {
+        "entry_number": 38,
+        "date_filed": "2026-06-02",
+        "time_filed": "15:40:48",
+        "date_display": "Jun 2, 2026",
+        "description": "MEMO ENDORSEMENT on [1191 in 1:25-md-03143-SHS-OTW] MOTION TO WITHDRAW AS COUNSEL OF RECORD. ENDORSEMENT: SO ORDERED. Motions terminated: (362 in 1:25-cv-04315-SHS-OTW, 303 in 1:25-cv-03297-SHS-OTW, 749 in 1:25-cv-03482-SHS-OTW, 969 in 1:23-cv-08292-SHS-OTW, 360 in 1:24-cv-01514-SHS-OTW, 1191 in 1:25-md-03143-SHS-OTW, 394 in 1:24-cv-01515-SHS-OTW) MOTION for Andrew L. Perito, Brian M. Kramer, Drew Alan Hillier, John R. Lanham, Alexandra Ward, Joyce C. Li, Allyson Bennett, Vera Ranieri, and Max I. Levy to Withdraw as Attorney . filed by OpenAI, Inc., OpenAI GP LLC, OpenAI Startup Fund GP I LLC, OpenAI LP, OAI Corporation LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund I LP, OpenAI GP, LLC, OpenAI Holdings LLC, OpenAI OpCo LLC, OpenAI, LLC, OpenAI Holdings, LLC, OpenAI Global LLC, OpenAI Inc., OpenAI LLC, OpenAI Startup Fund Management LLC, OpenAI Global, L.L.C., OAI Corporation, OAI…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.38.0.pdf"
+      },
+      {
+        "entry_number": 37,
+        "date_filed": "2026-05-29",
+        "time_filed": "",
+        "date_display": "May 29, 2026",
+        "description": "ORDER re: (1574 in 1:25-md-03143-SHS-OTW) Letter, filed by The New York Times Company, (1576 in 1:25-md-03143-SHS-OTW) Letter, filed by Microsoft Corporation. The Court has reviewed ECF 1574 and 1576. If Plaintiffs seek relief, they are directed to file their request as a gaveled motion. (HEREBY ORDERED by Magistrate Judge Ona T. Wang) (Text Only Order) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (Wang, Ona) (Entered: 05/29/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-29",
+        "time_filed": "12:54:51",
+        "date_display": "May 29, 2026",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36,
+        "date_filed": "2026-05-26",
+        "time_filed": "",
+        "date_display": "May 26, 2026",
+        "description": "ORDER in case 1:23-cv-08292-SHS-OTW; denying without prejudice (1568) Letter Motion to Compel in case 1:25-md-03143-SHS-OTW. The Court is in receipt of Microsoft's \"Emergency letter motion\" to compel The New York Times to produce raw brand tracker survey data. (ECF 1570). The parties are directed to continue their meet and confer efforts in accordance with the guidance provided at the May 12, 2026 conference, and to file a joint status letter by Thursday, May 28, 2026. The joint letter shall include any information provided by Kantar. (HEREBY ORDERED by Magistrate Judge Ona T. Wang)(Text Only Order) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (Entered: 05/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-26",
+        "time_filed": "17:06:58",
+        "date_display": "May 26, 2026",
+        "description": "Order on Motion to Compel",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35,
+        "date_filed": "2026-05-22",
+        "time_filed": "14:15:58",
+        "date_display": "May 22, 2026",
+        "description": "ORDER: The Court writes to clarify its written Order dated May 15, 2026, which ordered OpenAI to log evaluations that post-date the litigation. (ECF 1551). As reasoned at the May 12, 2026, Conference, this request is DENIED without prejudice for Plaintiffs to raise at a later date. This Order supersedes the directive to log the evaluations at this time. SO ORDERED. (Signed by Magistrate Judge Ona T. Wang on 5/22/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (rro) (Entered: 05/22/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.35.0.pdf"
+      },
+      {
+        "entry_number": 34,
+        "date_filed": "2026-05-21",
+        "time_filed": "18:12:58",
+        "date_display": "May 21, 2026",
+        "description": "OPINION & ORDER RE: DEPOSITION TRANSCRIPTS FROM MUSK V. ALTMAN (4:24-cv-4722) (YGR) (N.D. CAL.) re: (1449 in 1:25-md-03143-SHS-OTW) (1120 in 1:23-cv-08292-SHS-OTW LETTER MOTION for Discovery re: Supplemental Brief per Court's Dkt. 1428 Order addressed to Magistrate Judge Ona T. Wang from Justin A. Nelson and Davida Brook dated March 20, 2026. filed by Authors Guild, The New York Times Company. Finally, OpenAI's protestation that \"[o]f particular import here, the individual witnesses whose transcripts Plaintiffs seek have already been deposed in this matter,\" is illogical. (ECF 1451 at 2) (emphasis in original). It is precisely because these witnesses were already deposed in this case that Plaintiffs seek their prior inconsistent statements for impeachment purposes. OpenAI cannot shield from discovery relevant evidence that is uniquely in its possession by claiming that the request…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.34.0_1.pdf"
+      },
+      {
+        "entry_number": 33,
+        "date_filed": "2026-05-21",
+        "time_filed": "18:03:32",
+        "date_display": "May 21, 2026",
+        "description": "SEALING ORDER: Accordingly, the Clerk of the Court is respectfully directed to seal the following docket entries to be visible to the Court only, pending Microsoft's motion to seal the privileged documents: ECF 546 in 25-md-3143; ECF 638 in 23-cv-8292; and ECF 495 in 23-cv-10211. Microsoft is directed to file a motion to seal by Friday, June 5, 2026. The public, redacted version of ECF 546 shall remain unsealed and is found at ECF 547. SO ORDERED. ( Motions due by 6/5/2026.) (Signed by Magistrate Judge Ona T. Wang on 5/21/2026) (vfr) (Entered: 05/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.33.0.pdf"
+      },
+      {
+        "entry_number": 32,
+        "date_filed": "2026-05-15",
+        "time_filed": "14:05:45",
+        "date_display": "May 15, 2026",
+        "description": "ORDER: in case 1:23-cv-08292-SHS-OTW; denying without prejudice (1358) Letter Motion to Compel; denying as moot (1364) Letter Motion to Compel; terminating (1368) Letter Motion to Compel; granting (1369) Letter Motion to Compel in case 1:23-cv-11195-SHS-OTW; denying as moot (472) Letter Motion to Compel; terminating (474) Letter Motion to Compel in case 1:24-cv-01515-SHS-OTW; denying as moot (712) Letter Motion to Compel; terminating (714) Letter Motion to Compel in case 1:24-cv-03285-SHS-OTW; denying as moot (586) Letter Motion to Compel; terminating (588) Letter Motion to Compel in case 1:24-cv-04872-SHS-OTW; denying without prejudice (1506) Letter Motion to Compel; denying as moot (1513) Letter Motion to Compel; terminating (1518) Letter Motion to Compel; granting (1520) Letter Motion to Compel in case 1:25-md-03143-SHS-OTW; denying as moot (520) Letter Motion to Compel; terminating…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-13",
+        "time_filed": "11:57:45",
+        "date_display": "May 13, 2026",
+        "description": "Status Conference",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 31,
+        "date_filed": "2026-05-12",
+        "time_filed": "11:22:56",
+        "date_display": "May 12, 2026",
+        "description": "ORDER: The Court has reviewed the parties' briefing concerning OpenAI's clawback and redaction of the document related to the \"Multimodal Data Sources project.\" (ECF Nos. 1517, 1519, 1531). OpenAI is hereby directed to file a letter brief in support of its motion for a protective order, not to exceed three pages, along with the disputed document, and the related document if necessary, for in camera review by Friday, May 15, 2026. Opposition to the motion is due Tuesday, May 19, 2026.If parties are able to resolve this issue, they shall file a joint status letter no later than May 15, 2026, apprising the Court of such resolution.SO ORDERED. ( Responses due by 5/19/2026) (Signed by Magistrate Judge Ona T. Wang on 5/12/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (rro) (Entered: 05/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.31.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-12",
+        "time_filed": "",
+        "date_display": "May 12, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Ona T. Wang: Status Conference held on 5/12/2026. Associated Cases: 1:25-md-03143-SHS-OTW et al.(Quinn, Diane)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-27",
+        "time_filed": "09:20:16",
+        "date_display": "Apr 27, 2026",
+        "description": "Notice Regarding Pro Hac Vice Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-27",
+        "time_filed": "",
+        "date_display": "Apr 27, 2026",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 30 MOTION for IAN BRADFORD CROSBY to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-32752869. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 30,
+        "date_filed": "2026-04-24",
+        "time_filed": "17:55:11",
+        "date_display": "Apr 24, 2026",
+        "description": "MOTION for IAN BRADFORD CROSBY to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-32752869. Motion and supporting papers to be reviewed by Clerk's Office staff. Document filed by Encyclopaedia Britannica, Inc., Merriam-Webster, Inc.. (Attachments: # 1 Affidavit Declaration of I. Crosby, # 2 Exhibit Cert of Good Standing, # 3 Proposed Order Proposed Order).(Crosby, Ian) (Entered: 04/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 29,
+        "date_filed": "2026-04-21",
+        "time_filed": "13:02:03",
+        "date_display": "Apr 21, 2026",
+        "description": "JOINT STIPULATION AND ORDER STAYING ENCYCLOPAEDIA BRITANNICA ACTION: NOW, THEREFORE, IT IS HEREBY STIPULATED BY AND BETWEEN THE PARTIES THAT, subject to the Court's approval, as follows: 1. All proceedings and deadlines in the above-captioned Action are hereby stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. 2. Within 30 days of rulings on such motion(s) in the MDL, the parties shall file a joint status report in this Action to propose a case management conference and any appropriate further proceedings in light of the MDL decision. 3. While this stay is in effect, any party may move to lift the stay for good cause shown. Nothing in this stipulation shall preclude any party from seeking such relief, if necessary, or from seeking any other appropriate relief from the Court. SO ORDERED (Signed by Judge Sidney H. Stein on…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.29.0.pdf"
+      },
+      {
+        "entry_number": 28,
+        "date_filed": "2026-04-15",
+        "time_filed": "17:37:50",
+        "date_display": "Apr 15, 2026",
+        "description": "PROPOSED STIPULATION AND ORDER. Document filed by Encyclopaedia Britannica, Inc., Merriam-Webster, Inc...(Crosby, Ian) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.28.0.pdf"
+      },
+      {
+        "entry_number": 27,
+        "date_filed": "2026-04-07",
+        "time_filed": "18:50:23",
+        "date_display": "Apr 7, 2026",
+        "description": "OPINION AND ORDER RE: MONACO DEPOSITION: Mr. Monaco based his testimony-which should bind the corporation-on his own hazy recollections working on Project Giraffe, a review of source code that he and others wrote (but which he does not remember), and a few other documents: \"part of\" Lampe's deposition transcript, Lilian Weng's notes (which may or may not be the same as the Project Giraffe \"meeting notes\"), and \"some metrics.\" (Jan. 27 Rough Tr. 19-21). He spoke to no other individuals to prepare for his deposition. But when asked even the simplest questions relevant to Plaintiffs' output claims, Mr. Monaco failed to answer or provided incomplete or evasive answers. For example, despite admitting that individuals other than he, Lampe, Weng and Goel and members of the legal team worked on Project Giraffe, he was unable to name a single other person who worked on Project Giraffe. Instead,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.27.0.pdf"
+      },
+      {
+        "entry_number": 26,
+        "date_filed": "2026-04-06",
+        "time_filed": "16:52:14",
+        "date_display": "Apr 6, 2026",
+        "description": "SCHEDULING ORDER: The Court, having received the parties' proposed briefing schedule for an in-person Status Conference (ECF 1490), hereby ORDERS as follows: An in-person Status Conference shall be held on Tuesday, May 12, 2026, at 9:30 AM in Courtroom 20D, 500 Pearl Street, New York, NY 10007. The parties shall adhere to the following briefing schedule in advance of the conference: opening briefs are due by Wednesday, April 29, 2026; opposing briefs are due by Monday, May 4, 2026; and the parties' joint dispute chart is due by Tuesday, May 5, 2026. SO ORDERED. ( Brief due by 4/29/2026., Responses to Brief due by 5/4/2026, Status Conference set for 5/12/2026 at 09:30 AM in Courtroom 20D, 500 Pearl Street, New York, NY 10007 before Magistrate Judge Ona T. Wang.) (Signed by Magistrate Judge Ona T. Wang on 4/6/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (rro) (Entered:…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.26.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-06",
+        "time_filed": "12:51:11",
+        "date_display": "Apr 6, 2026",
+        "description": "Settlement Conference",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 25,
+        "date_filed": "2026-04-01",
+        "time_filed": "15:13:57",
+        "date_display": "Apr 1, 2026",
+        "description": "ORDER:Plaintiffs are ordered to show cause in writing on or before April 15, 2026, why this action should not be stayed pending resolution of summary judgment motions in the other active cases in this multidistrict litigation. Defendants' response, if any, shall be filed by April 29, 2026. SO ORDERED. Show Cause Response due by 4/15/2026. (Signed by Judge Sidney H. Stein on 4/1/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW, 1:26-cv-02097-SHS (jca) (Entered: 04/01/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.25.0.pdf"
+      },
+      {
+        "entry_number": 24,
+        "date_filed": "2026-03-31",
+        "time_filed": "15:11:46",
+        "date_display": "Mar 31, 2026",
+        "description": "MEMO ENDORSEMENT on MOTION TO WITHDRAW AS COUNSEL OF RECORD. ENDORSEMENT: SO ORDERED. Motions terminated: (395 in 1:24-cv-01515-SHS-OTW, 329 in 1:24-cv-00084-SHS-OTW, 970 in 1:23-cv-08292-SHS-OTW, 304 in 1:25-cv-03297-SHS-OTW, 241 in 1:25-cv-03483-SHS-OTW, 1178 in 1:23-cv-11195-SHS-OTW, 87 in 1:25-cv-06286-SHS-OTW, 605 in 1:24-cv-03285-SHS-OTW, 196 in 1:25-cv-03291-SHS-OTW, 57 in 1:25-cv-09912-SHS, 750 in 1:25-cv-03482-SHS-OTW, 643 in 1:23-cv-10211-SHS-OTW, 364 in 1:25-cv-04315-SHS-OTW, 506 in 1:24-cv-04872-SHS-OTW, 1193 in 1:25-md-03143-SHS-OTW, 63 in 1:25-cv-09904-SHS, 361 in 1:24-cv-01514-SHS-OTW) MOTION for Allison L. Stillman, Joseph R. Wetzel, Jr., Rachel R. Blitzer, and Michael A. David to Withdraw as Attorney . filed by OpenAI Holdings, LLC, OpenAI Inc., OpenAI LP, OpenAI Startup Fund GP I LLC, OpenAI LLC, OpenAI Startup Fund Management LLC, OpenAI Global, L.L.C., OpenAI OpCo,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.24.0.pdf"
+      },
+      {
+        "entry_number": 23,
+        "date_filed": "2026-03-31",
+        "time_filed": "14:49:06",
+        "date_display": "Mar 31, 2026",
+        "description": "MEMO ENDORSEMENT in case 1:23-cv-08292-SHS-OTW; granting (1177) Motion to Withdraw as Attorney. in case 1:23-cv-11195-SHS-OTW. ENDORSEMENT: SO ORDERED:Application GRANTED. (Signed by Magistrate Judge Ona T. Wang on 3/31/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (rro) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 22,
+        "date_filed": "2026-03-31",
+        "time_filed": "11:17:54",
+        "date_display": "Mar 31, 2026",
+        "description": "SCHEDULING ORDER: The Court held a confidential discovery settlement conference for all actions in this matter on Monday, March 30, 2026. The Court will conduct another confidential discovery settlement conference on Thursday, April 16, 2026, at 12:00 p.m. ET. The parties shall submit any pre-settlement submissions to Chambers via email no later than Tuesday, April 14, 2026. The parties shall also provide a joint agenda for the conference by emailing it to Chambers by Wednesday, April 15, 2026. Plaintiffs are directed to circulate a Zoom link to all parties in advance of the conference. Parties are directed to meet and confer and propose a briefing schedule and dates for an in-person Status Conference in early May by Friday, April 3, 2026. Settlement Conference set for 4/16/2026 at 12:00 PM before Magistrate Judge Ona T. Wang. (Signed by Magistrate Judge Ona T. Wang on 3/30/2026) Filed…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.22.0.pdf"
+      },
+      {
+        "entry_number": 21,
+        "date_filed": "2026-03-26",
+        "time_filed": "",
+        "date_display": "Mar 26, 2026",
+        "description": "ORDER in case 1:23-cv-08292-SHS-OTW; granting (1385) Motion to Substitute Party. On March 4, 2026, defendant OpenAI Holdings, LLC moved (Dkt. No. 1385) pursuant to Federal Rule of Civil Procedure 25(c) to substitute OpenAI Group PBC in place of OpenAI Holdings, LLC. No party has opposed that motion to date. Accordingly, the motion is granted and OpenAI Group BPC is substituted in the place of defendant OpenAI Holdings, LLC. OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC and OpenAI Group PBC added. OpenAI Holdings, LLC, OpenAI Holdings LLC and OpenAI Holdings LLC terminated in case 1:25-md-03143-SHS-OTW. (Signed by…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.21.0.pdf"
+      },
+      {
+        "entry_number": 20,
+        "date_filed": "2026-03-26",
+        "time_filed": "",
+        "date_display": "Mar 26, 2026",
+        "description": "ORDER in case 1:23-cv-08292-SHS-OTW; granting (1385) Motion to Substitute Party. On March 4, 2026, defendant OpenAI Holdings, LLC moved (Dkt. No. 1385) pursuant to Federal Rule of Civil Procedure 25(c) to substitute OpenAI Group PBC in place of OpenAI Holdings, LLC. No party has opposed that motion to date. Accordingly, the motion is granted and OpenAI Group BPC is substituted in the place of defendant OpenAI Holdings, LLC. OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC, OpenAI Group PBC and OpenAI Group PBC added. OpenAI Holdings, LLC, OpenAI Holdings LLC and OpenAI Holdings LLC terminated in case 1:25-md-03143-SHS-OTW. (Signed by…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2026-03-25",
+        "time_filed": "",
+        "date_display": "Mar 25, 2026",
+        "description": "SEALING ORDER granting (547) Motion to Seal; granting (553) Motion to Seal; granting (555) Motion to Seal in case 1:23-cv-11195-SHS-OTW; granting (23) Motion to Seal; granting (30) Motion to Seal; granting (35) Letter Motion to Seal; granting (37) Letter Motion to Seal; granting (1093) Letter Motion to Seal in case 1:25-md-03143-SHS-OTW. In sum, the parties' motions to seal (ECF Nos. 23, 30, 35, 37) are GRANTED. The Clerk of Court is respectfully directed to close the following ECF Nos. in Case No. 25-MD-3143: 23, 30, 35, 37, 1093; and in Case No. 23-cv-11195: 547, 553, 555. SO ORDERED. (Signed by Magistrate Judge Ona T. Wang on 3/25/2026) Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al. (mml) (Entered: 03/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.19.0.pdf"
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2026-03-23",
+        "time_filed": "",
+        "date_display": "Mar 23, 2026",
+        "description": "ORDER: At the request of the parties (Dkt. No. 1441), the Joint Case Schedule in this multidistrict litigation is modified as follows: The last day to serve opening expert reports is April 24, 2026. The last day to serve rebuttal expert reports is May 29, 2026. The last day to serve reply expert reports is June 26, 2026. The close of expert discovery is August 3, 2026. The last day to file motions for summary judgment and Daubert motions pursuant to Federal Rule of Evidence 702 is September 4, 2026. The last day to file oppositions to motions for summary judgment and Daubert motions is October 9, 2026. The last day to file replies in support of motions for summary judgment and Daubert motions is November 6, 2026. Motions due by 9/4/2026. Responses due by 10/9/2026 Replies due by 11/6/2026. Expert Discovery due by 8/3/2026. (Signed by Judge Sidney H. Stein on 3/23/2026) Filed In…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.18.0.pdf"
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2026-03-23",
+        "time_filed": "22:35:02",
+        "date_display": "Mar 23, 2026",
+        "description": "LETTER addressed to Magistrate Judge Ona T. Wang from Andrew F. Dawson, Herman H. Yue, Rose S. Lee dated March 23, 2026 re: OpenAI's Supplemental Briefing in Opposition to Plaintiffs' Motion to Compel the Production of the Musk Deposition Materials. Document filed by OpenAI GP LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Global, L.L.C., OpenAI Holdings LLC, OpenAI Holdings, LLC, OpenAI Inc., OpenAI LLC, OpenAI LP, OpenAI OpCo LLC(a Delaware limited liability corporation), OpenAI OpCo LLC, OpenAI OpCo, L.L.C., OpenAI Startup Fund GP I LLC, OpenAI Startup Fund GP I LLC(a Delaware limited liability company), OpenAI Startup Fund I LP(a Delaware limited partnership), OpenAI Startup Fund I LP, OpenAI Startup Fund Management LLC(a Delaware limited liability company), OpenAI Startup Fund Management LLC, OpenAI, Inc., OpenAI, Inc.. (Attachments: # 1 Exhibit A to OpenAI's Supplemental Briefing…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-19",
+        "time_filed": "14:01:26",
+        "date_display": "Mar 19, 2026",
+        "description": "Settlement Conference",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-19",
+        "time_filed": "13:52:15",
+        "date_display": "Mar 19, 2026",
+        "description": "Status Conference",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2026-03-18",
+        "time_filed": "13:01:49",
+        "date_display": "Mar 18, 2026",
+        "description": "JOINT LETTER addressed to Judge Sidney H. Stein from Annette L. Hurst, Robert Van Nest, Justin A. Nelson, and Davida Brook dated March 18, 2026 re: Requesting Slight Modification of Case Deadlines. Document filed by Microsoft Corporation.Filed In Associated Cases: 1:25-md-03143-SHS-OTW et al..(Hurst, Annette) (Entered: 03/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.16.0.pdf"
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2026-03-17",
+        "time_filed": "16:40:07",
+        "date_display": "Mar 17, 2026",
+        "description": "ELECTRONIC SUMMONS ISSUED as to OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Group PBC, OpenAI Holdings, LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI, Inc., OpenAI, LLC. (sj) (Entered: 03/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-17",
+        "time_filed": "16:45:11",
+        "date_display": "Mar 17, 2026",
+        "description": "Notice of Case Assignment/Reassignment",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-17",
+        "time_filed": "",
+        "date_display": "Mar 17, 2026",
+        "description": "Magistrate Judge Ona T. Wang is designated to handle matters that may be referred in this case. Pursuant to 28 U.S.C. Section 636(c) and Fed. R. Civ. P. 73(b)(1) parties are notified that they may consent to proceed before a United States Magistrate Judge. Parties who wish to consent may access the necessary form at the following link: https://nysd.uscourts.gov/sites/default/files/2018-06/AO-3.pdf. (tro)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-17",
+        "time_filed": "",
+        "date_display": "Mar 17, 2026",
+        "description": "CASE ACCEPTED AS RELATED. Create association to 1:25-md-03143-SHS-OTW. Notice of Assignment to follow. (tro)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-17",
+        "time_filed": "",
+        "date_display": "Mar 17, 2026",
+        "description": "CONSOLIDATED MDL CASE: Create association to 1:25-md-03143-SHS-OTW.. (tro)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-17",
+        "time_filed": "",
+        "date_display": "Mar 17, 2026",
+        "description": "NOTICE OF CASE REASSIGNMENT to Judge Sidney H. Stein. Judge Unassigned is no longer assigned to the case. (tro)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2026-03-16",
+        "time_filed": "17:22:34",
+        "date_display": "Mar 16, 2026",
+        "description": "REQUEST FOR ISSUANCE OF SUMMONS as to OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Group PBC, OpenAI Holdings, LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI, Inc., OpenAI, LLC, re: 12 Complaint,,. Document filed by Encyclopaedia Britannica, Inc., Merriam-Webster, Inc...(Park, Yoonhee) (Entered: 03/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2026-03-16",
+        "time_filed": "17:13:02",
+        "date_display": "Mar 16, 2026",
+        "description": "CIVIL COVER SHEET filed..(Park, Yoonhee) (Entered: 03/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2026-03-16",
+        "time_filed": "15:30:07",
+        "date_display": "Mar 16, 2026",
+        "description": "COMPLAINT against OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Group PBC, OpenAI Holdings, LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI, Inc., OpenAI, LLC. Document filed by Merriam-Webster, Inc., Encyclopaedia Britannica, Inc.. (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3, # 4 Exhibit 4, # 5 Exhibit 5, # 6 Exhibit 6, # 7 Exhibit 7, # 8 Exhibit 8, # 9 Exhibit 9, # 10 Exhibit 10, # 11 Exhibit 11, # 12 Exhibit 12, # 13 Exhibit 13, # 14 Exhibit 14, # 15 Exhibit 15).(Park, Yoonhee) (Entered: 03/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.12.0.pdf"
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2026-03-16",
+        "time_filed": "10:28:50",
+        "date_display": "Mar 16, 2026",
+        "description": "AO 120 FORM TRADEMARK - CASE OPENING - SUBMITTED. In compliance with the provisions of 15 U.S.C. 1116, the Director of the U.S. Patent and Trademark Office is hereby advised that a court action has been filed on the following trademark(s) in the U.S. District Court Southern District of New York. Director of the U.S. Patent and Trademark Office electronically notified via Notice of Electronic Filing (NEF)..(jgo) (Entered: 03/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2026-03-16",
+        "time_filed": "10:28:23",
+        "date_display": "Mar 16, 2026",
+        "description": "AO 121 FORM COPYRIGHT - CASE OPENING - SUBMITTED. In compliance with the provisions of 17 U.S.C. 508, the Register of Copyrights is hereby advised that a court action has been filed on the following copyright(s) in the U.S. District Court Southern District of New York. Form e-mailed to Register of Copyrights..(jgo) (Entered: 03/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "10:15:31",
+        "date_display": "Mar 16, 2026",
+        "description": "Notice to Attorney Regarding Case Opening Statistical Error Correction",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "",
+        "date_display": "Mar 16, 2026",
+        "description": "CASE OPENING INITIAL ASSIGNMENT NOTICE: The above-entitled action is assigned to Judge Unassigned. .(jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "",
+        "date_display": "Mar 16, 2026",
+        "description": "***NOTICE TO ATTORNEY REGARDING DEFICIENT CIVIL COVER SHEET. Notice to attorney Yoonhee Gloria Park to RE-FILE Document No. 2 Civil Cover Sheet. The filing is deficient for the following reason(s): the PDF attached to the docket entry for the civil cover sheet is not correct; multiple Nature of Suit codes was selected; Jury Demand code was not selected;. Re-file the document using the event type Civil Cover Sheet found under the event list Other Documents and attach the correct PDF. Use civil cover sheet issued by S.D.N.Y. dated December 2025. The S.D.N.Y. Civil Cover Sheet dated December 2025 is located athttp://nysd.uscourts.gov/forms/civil-cover-sheet-2.. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "",
+        "date_display": "Mar 16, 2026",
+        "description": "***NOTICE TO ATTORNEY REGARDING CIVIL CASE OPENING STATISTICAL ERROR CORRECTION: Notice to attorney Yoonhee Gloria Park. The following case opening statistical information was erroneously selected/entered: County code New York;. The following correction(s) have been made to your case entry: the County code has been modified to XX Out of State;. Corrections were updated as per the Civil Cover Sheet. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "",
+        "date_display": "Mar 16, 2026",
+        "description": "***NOTICE TO ATTORNEY REGARDING PARTY MODIFICATION. Notice to attorney Yoonhee Gloria Park. The party information for the following party/parties has been modified: Encyclopedia Britannica, Inc.. The information for the party/parties has been modified for the following reason/reasons: party name contained a typographical error;. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "",
+        "date_display": "Mar 16, 2026",
+        "description": "Case Designated ECF. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "",
+        "date_display": "Mar 16, 2026",
+        "description": "CASE REFERRED to Judge Sidney H. Stein as possibly related to 25-md-3143. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "",
+        "date_display": "Mar 16, 2026",
+        "description": "***NOTICE TO ATTORNEY REGARDING DEFICIENT PLEADING. Notice to Attorney Yoonhee Gloria Park re: Document No. 3 Complaint. The filing is deficient for the following reason(s): Court's leave has not been granted.. File the Exhibit to Pleading event found under the event list Other Documents and attach either opposing party's written consent or Court's leave. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "",
+        "date_display": "Mar 16, 2026",
+        "description": "***NOTICE TO ATTORNEY REGARDING DEFICIENT REQUEST FOR ISSUANCE OF SUMMONS. Notice to Attorney Yoonhee Gloria Park to RE-FILE Document No. 4 Request for Issuance of Summons,. The filing is deficient for the following reason(s): summons request must only be linked to the pleading accepted by the Court. Re-file the document using the event type Request for Issuance of Summons found under the event list Service of Process - select the correct filer/filers - and attach the correct summons form PDF. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "10:10:35",
+        "date_display": "Mar 16, 2026",
+        "description": "Notice to Attorney Regarding Deficient Civil Cover Sheet",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "10:16:22",
+        "date_display": "Mar 16, 2026",
+        "description": "Notice to Attorney Regarding Party Modification",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "10:21:13",
+        "date_display": "Mar 16, 2026",
+        "description": "Case Opening Initial Assignment Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "10:26:12",
+        "date_display": "Mar 16, 2026",
+        "description": "Notice to Attorney Regarding Deficient Pleading",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-16",
+        "time_filed": "10:27:38",
+        "date_display": "Mar 16, 2026",
+        "description": "Notice to Attorney Regarding Deficient Request for Issuance of Summons",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2026-03-13",
+        "time_filed": "23:59:34",
+        "date_display": "Mar 13, 2026",
+        "description": "STATEMENT OF RELATEDNESS re: that this action be filed as related to 1:25-md-03143-SHS-OTW. Document filed by Encyclopedia Britannica, Inc., Merriam-Webster, Inc...(Park, Yoonhee) (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2026-03-13",
+        "time_filed": "23:55:08",
+        "date_display": "Mar 13, 2026",
+        "description": "RULE 7.1 CORPORATE DISCLOSURE STATEMENT. Identifying Corporate Parent Aletheia Holdings, LP, Corporate Parent Encyclopaedia Britannica, Inc. for Merriam-Webster, Inc.. Document filed by Merriam-Webster, Inc...(Park, Yoonhee) (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2026-03-13",
+        "time_filed": "23:50:53",
+        "date_display": "Mar 13, 2026",
+        "description": "RULE 7.1 CORPORATE DISCLOSURE STATEMENT. Identifying Corporate Parent Aletheia Holdings, LP for Encyclopedia Britannica, Inc.. Document filed by Encyclopedia Britannica, Inc...(Park, Yoonhee) (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2026-03-13",
+        "time_filed": "23:46:19",
+        "date_display": "Mar 13, 2026",
+        "description": "AO 120 FORM TRADEMARK - NOTICE OF SUBMISSION BY ATTORNEY. AO 120 Form Patent/Trademark for case opening submitted to court for review..(Park, Yoonhee) (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2026-03-13",
+        "time_filed": "23:43:46",
+        "date_display": "Mar 13, 2026",
+        "description": "AO 121 FORM COPYRIGHT - NOTICE OF SUBMISSION BY ATTORNEY. AO 121 Form Copyright for case opening submitted to court for review..(Park, Yoonhee) (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2026-03-13",
+        "time_filed": "23:40:54",
+        "date_display": "Mar 13, 2026",
+        "description": "FILING ERROR SUMMONS NOT LINKED TO CORRESPONDING PLEADING- REQUEST FOR ISSUANCE OF SUMMONS as to OpenAI lnc.,OpenAI LP, OpenAI GP, LLC, OpenAI, LLC, OpenAI OpCo LLC, OpenAI Global LLC, OAI Corporation, LLC, OpenAI Holdings, LLC, OpenAI Group PBC, re: 1 Complaint, 3 Complaint,,. Document filed by Encyclopedia Britannica, Inc., Merriam-Webster, Inc...(Park, Yoonhee) Modified on 3/16/2026 (jgo). (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2026-03-13",
+        "time_filed": "23:07:19",
+        "date_display": "Mar 13, 2026",
+        "description": "FILING ERROR DEFICIENT PLEADING - PDF ERROR - COMPLAINT against OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Group PBC, OpenAI Holdings, LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI, Inc., OpenAI, LLC. Document filed by Merriam-Webster, Inc., Encyclopedia Britannica, Inc.. (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3, # 4 Exhibit 4, # 5 Exhibit 5, # 6 Exhibit 6, # 7 Exhibit 7, # 8 Exhibit 8, # 9 Exhibit 9, # 10 Exhibit 10, # 11 Exhibit 11, # 12 Exhibit 12, # 13 Exhibit 13, # 14 Exhibit 14, # 15 Exhibit 15).(Park, Yoonhee) Modified on 3/16/2026 (jgo). (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.3.0.pdf"
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2026-03-13",
+        "time_filed": "21:47:18",
+        "date_display": "Mar 13, 2026",
+        "description": "FILING ERROR - PDF ERROR - CIVIL COVER SHEET filed..(Park, Yoonhee) Modified on 3/16/2026 (jgo). (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2026-03-13",
+        "time_filed": "21:43:42",
+        "date_display": "Mar 13, 2026",
+        "description": "FILING ERROR - (see doc #12) COMPLAINT against OAI Corporation, LLC, OpenAI GP, LLC, OpenAI Global LLC, OpenAI Group PBC, OpenAI Holdings, LLC, OpenAI LP, OpenAI OpCo LLC, OpenAI, Inc., OpenAI, LLC. (Filing Fee $ 405.00, Receipt Number CNYSDC-32545488)Document filed by Merriam-Webster, Inc., Encyclopedia Britannica, Inc...(Park, Yoonhee) Modified on 3/17/2026 (gp). (Entered: 03/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.1.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-13",
+        "time_filed": "",
+        "date_display": "Mar 13, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Ona T. Wang: Remote Settlement Conference held on 3/13/2026. Associated Cases: 1:25-md-03143-SHS-OTW et al.(Quinn, Diane)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-10",
+        "time_filed": "",
+        "date_display": "Mar 10, 2026",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Ona T. Wang: Status Conference held on 3/10/2026. Associated Cases: 1:25-md-03143-SHS-OTW et al.(Quinn, Diane)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ]
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
