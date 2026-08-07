@@ -15,43 +15,73 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T16:11:58.514009+00:00",
+    "fetched_at": "2026-08-07T17:12:27.111049+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": false,
-    "new_in_72h": 31,
+    "new_in_72h": 35,
     "recent": [
       {
-        "entry_number": 1169,
+        "entry_number": 1172,
         "date_filed": "2026-08-07",
-        "time_filed": "10:39:30",
+        "time_filed": "11:07:00",
         "date_display": "Aug 7, 2026",
-        "description": "Relief from stay",
+        "description": "Clerk's correspondence",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1168,
+        "entry_number": 1171,
         "date_filed": "2026-08-07",
-        "time_filed": "10:35:32",
+        "time_filed": "11:05:15",
         "date_display": "Aug 7, 2026",
-        "description": "Order (generic)",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1167,
+        "entry_number": 1170,
         "date_filed": "2026-08-07",
-        "time_filed": "10:26:36",
+        "time_filed": "11:03:53",
         "date_display": "Aug 7, 2026",
-        "description": "Confirming chapter 11 plan",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1172,
+        "date_filed": "2026-08-07",
+        "time_filed": "11:07:00",
+        "date_display": "Aug 7, 2026",
+        "description": "Clerk's correspondence",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1171,
+        "date_filed": "2026-08-07",
+        "time_filed": "11:05:15",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1170,
+        "date_filed": "2026-08-07",
+        "time_filed": "11:03:53",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1169,
         "date_filed": "2026-08-07",
@@ -97,7 +127,7 @@
         "date_filed": "2026-08-07",
         "time_filed": "08:37:01",
         "date_display": "Aug 7, 2026",
-        "description": "Transfer of Claim Other Than For Security",
+        "description": "Transfer Of Claim Other Than For Security",
         "is_new": true,
         "landmark": "",
         "doc_url": "",
@@ -119,6 +149,16 @@
         "time_filed": "08:37:44",
         "date_display": "Aug 7, 2026",
         "description": "none AND none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-07",
+        "time_filed": "11:02:06",
+        "date_display": "Aug 7, 2026",
+        "description": "none",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
