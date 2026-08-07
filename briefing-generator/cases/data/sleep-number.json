@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T19:21:15.507554+00:00",
+    "fetched_at": "2026-08-07T20:04:30.387489+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 15,
+    "new_in_72h": 16,
     "recent": [
+      {
+        "entry_number": 528,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:04:33",
+        "date_display": "Aug 7, 2026",
+        "description": "Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 527,
         "date_filed": "2026-08-07",
@@ -40,19 +50,19 @@
         "landmark": "",
         "doc_url": "",
         "titled_from_upload": true
-      },
-      {
-        "entry_number": 525,
-        "date_filed": "2026-08-06",
-        "time_filed": "20:16:59",
-        "date_display": "Aug 6, 2026",
-        "description": "Statement / Notice of Filing of Third Designation Rights Period Rejection Notice filed by Brian Resnick on behalf of Sleep Number Corporation. Objections due by 8/20/2026, (Resnick, Brian) (Entered: 08/06/2026)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 528,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:04:33",
+        "date_display": "Aug 7, 2026",
+        "description": "Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 527,
         "date_filed": "2026-08-07",
