@@ -968,6 +968,9 @@ def render_unified_docket(cases):
         <label class="ud-new-label">
           <input type="checkbox" id="ud-new-only"> New only (24h)
         </label>
+        <label class="ud-new-label">
+          <input type="checkbox" id="ud-doc-only"> Has document
+        </label>
       </div>
     </div>
   </div>
