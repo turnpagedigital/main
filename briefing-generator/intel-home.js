@@ -84,9 +84,10 @@
              border: (ov && ov.border) || "" };
   }
 
+  // Monochrome outline pill — white bg / black outline+text, inverted in dark.
   function themePill(slug) {
     var t = themeOf(slug);
-    return '<span class="ih-pill ih-pill-sq" style="background:' + t.bg + ";color:" + t.fg + (t.border ? ";border:1.5px solid " + t.border : "") + '">' + t.emoji + " " + esc(t.name) + "</span>";
+    return '<span class="ih-pill ih-pill-sq ih-pill-theme">' + t.emoji + " " + esc(t.name) + "</span>";
   }
 
   var FALLBACK_SWATCHES = [
@@ -588,8 +589,7 @@
       if (mc) {
         pill = casePill(mc.slug, mc.short_name || mc.display_name || mc.slug, mc.default_color);
       } else if (b.theme_slug && THEMES[b.theme_slug]) {
-        var th = THEMES[b.theme_slug];
-        pill = '<span class="ih-pill" style="border-radius:0;background:' + th.bg + ";color:" + th.fg + '">' + th.emoji + " " + esc(th.name) + "</span>";
+        pill = themePill(b.theme_slug);
       } else if (b.group_name) {
         pill = '<span class="ih-pill" style="background:var(--paper-2);color:var(--ink-60)">' + esc(b.group_name) + "</span>";
       }
@@ -728,8 +728,12 @@
   function renderProspects() {
     var box = document.getElementById("ih-prospects");
     if (!box) return;
+    var nowIso = new Date().toISOString();
     var fresh = PROSPECT_ITEMS.filter(function (p) {
-      return p && p.status === "new" && (!p.theme || themeOn(p.theme));
+      if (!p || p.status !== "new" || (p.theme && !themeOn(p.theme))) return false;
+      if (p.hidden) return false;
+      if (p.snooze_until && p.snooze_until > nowIso) return false;
+      return true;
     });
     var countEl = document.getElementById("ih-prospects-count");
     if (countEl) countEl.textContent = fresh.length ? fresh.length + " to triage →" : "Triage →";
@@ -738,8 +742,7 @@
       return;
     }
     box.innerHTML = fresh.slice(0, 6).map(function (p) {
-      var t = themeOf(p.theme);
-      var themePillHtml = '<span class="ih-pill ih-pill-sq" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>";
+      var themePillHtml = themePill(p.theme);
       var meta = [p.court, p.case_number].filter(Boolean).join(" · ");
       return (
         '<div class="ih-prospect-row" data-prospect="' + esc(p.id) + '">' +

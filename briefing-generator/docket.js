@@ -123,13 +123,11 @@
     }).catch(function () {});
   }
 
+  // Theme pills are monochrome outline: white bg / black outline+text,
+  // inverted in dark mode (both come from the page's --surface/--ink vars).
   function themePillHtml(slug) {
     var info = THEME_INFO[slug] || { name: slug, emoji: "" };
-    var ov = savedColors[slug] || {};
-    var bg = ov.bg || "#E0E7FF";
-    var fg = ov.fg || "#3730a3";
-    var border = ov.border ? ";border:1.5px solid " + ov.border : "";
-    return '<span class="ud-pill ud-pill-sq" style="background:' + bg + ";color:" + fg + border + '">' +
+    return '<span class="ud-pill ud-pill-sq" style="background:var(--surface);color:var(--ink);border:1px solid var(--ink)">' +
       (info.emoji ? info.emoji + " " : "") + esc(info.name) + "</span>";
   }
   var RENDERED = [];

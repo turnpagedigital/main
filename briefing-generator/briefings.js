@@ -36,9 +36,10 @@
     var c = THEME_COLORS[slug] || { bg: "#E0E7FF", fg: "#3730a3" };
     return { name: slug, emoji: "📰", bg: c.bg, fg: c.fg };
   }
+  // Monochrome outline tag — white bg / black outline+text, inverted in dark.
   function themeTag(slug) {
     var t = themeOf(slug);
-    return '<span class="ub-tag" style="background:' + t.bg + ";color:" + t.fg + '" title="' + esc(t.name) + '">' + t.emoji + " " + esc(t.name) + "</span>";
+    return '<span class="ub-tag" title="' + esc(t.name) + '">' + t.emoji + " " + esc(t.name) + "</span>";
   }
 
   // ── Case pill colors (shared store: ud-case-colors + intel-prefs) ─────────

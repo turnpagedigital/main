@@ -4,10 +4,11 @@
   /* Prospects — triage list for candidate cases surfaced by scan_prospects.py.
 
      Data: api/prospects (live GitHub state; static prospects.json fallback).
-     Track opens a modal prefilled from the prospect and creates the case via
-     the EXISTING /api/admin/cases endpoint (same admin session cookie the
-     intel middleware already validated), then marks the prospect tracked via
-     PUT api/prospects. Dismiss/Restore are one-click status flips.
+     Rows carry the docket-style toolkit: ▲▼ votes (bias the next scan), a
+     note (carried into the Track form's scan guidance), snooze (hidden until
+     a date), and hide. Track opens a modal prefilled from the prospect and
+     creates the case via the EXISTING /api/admin/cases endpoint (same admin
+     session cookie), then marks the prospect tracked via PUT api/prospects.
 
      External file on purpose — the stacked CSPs on /intel/* silently kill
      inline scripts in production. */
@@ -25,27 +26,16 @@
     });
   }
 
-  var THEMES = {};   // slug → {name, emoji, bg, fg} (hydrated from themes.json)
-  var FALLBACK_THEME = { name: "", emoji: "📰", bg: "#E0E7FF", fg: "#3730a3" };
-  var THEME_COLORS = {
-    "rewind-tariffs":               { bg: "#ECFCCB", fg: "#3f6212" },
-    "llm-class-action":             { bg: "#DBEAFE", fg: "#1e40af" },
-    "crypto-insolvency":            { bg: "#FFEDD5", fg: "#9a3412" },
-    "fraud-recovery":               { bg: "#F3E8FF", fg: "#6b21a8" },
-    "billion-dollar-class-actions": { bg: "#D1FAE5", fg: "#065f46" },
-    "bankruptcy-creditor-rights":   { bg: "#FEE2E2", fg: "#991b1b" },
-  };
+  var THEMES = {};   // slug → {name, emoji} (hydrated from themes.json)
 
   function themeOf(slug) {
-    var t = THEMES[slug];
-    if (t) return t;
-    var c = THEME_COLORS[slug] || FALLBACK_THEME;
-    return { name: slug || "untagged", emoji: FALLBACK_THEME.emoji, bg: c.bg, fg: c.fg };
+    return THEMES[slug] || { name: slug || "untagged", emoji: "📰" };
   }
 
+  // Monochrome outline pill — white bg / black outline+text, inverted in dark.
   function themePill(slug) {
     var t = themeOf(slug);
-    return '<span class="ud-pill ud-pill-sq" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>";
+    return '<span class="ud-pill ud-pill-sq ud-pill-theme">' + t.emoji + " " + esc(t.name) + "</span>";
   }
 
   function fmtDate(iso) {
@@ -57,6 +47,7 @@
 
   var ITEMS = [];
   var TAB = "new";
+  var showHidden = false;
   var activeThemes = {};   // theme slug → bool (default all on)
 
   function themeOn(slug) { return activeThemes[slug] !== false; }
@@ -68,19 +59,104 @@
     return Object.keys(set);
   }
 
+  function findItem(id) {
+    for (var i = 0; i < ITEMS.length; i++) if (ITEMS[i].id === id) return ITEMS[i];
+    return null;
+  }
+
+  function isSnoozed(i) {
+    return !!(i.snooze_until && i.snooze_until > new Date().toISOString());
+  }
+  function isBuried(i) {
+    return !!i.hidden || isSnoozed(i);
+  }
+
+  function matchesTab(i) {
+    return TAB === "all" || (i.status || "new") === TAB;
+  }
+
   function visible() {
     return ITEMS.filter(function (i) {
       if (!i || !i.id) return false;
-      if (TAB !== "all" && (i.status || "new") !== TAB) return false;
+      if (!matchesTab(i)) return false;
+      if (!showHidden && (i.status || "new") === "new" && isBuried(i)) return false;
       return !i.theme || themeOn(i.theme);
     });
   }
 
-  // ── Table ─────────────────────────────────────────────────────────────────
+  function buriedCount() {
+    return ITEMS.filter(function (i) {
+      return i && (i.status || "new") === "new" && isBuried(i) && (!i.theme || themeOn(i.theme));
+    }).length;
+  }
+
+  // ── Shared save (partial PUT — note, snooze, hide, vote, status) ──────────
+  function saveFields(id, fields) {
+    return fetch("api/prospects", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(Object.assign({ id: id }, fields)),
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      if (!j || !j.ok) throw new Error((j && j.error) || "save failed");
+      var it = findItem(id);
+      if (it) {
+        Object.keys(fields).forEach(function (k) {
+          if (k === "id") return;
+          if (fields[k] === "" || fields[k] === 0 || fields[k] === false) delete it[k];
+          else it[k] = fields[k];
+        });
+        if (fields.status !== undefined) it.status = fields.status;
+        if (fields.tracked_slug) it.tracked_slug = fields.tracked_slug;
+      }
+      return true;
+    });
+  }
+
+  function setStatus(id, status, btn, extra) {
+    if (btn) { btn.disabled = true; btn.textContent = "…"; }
+    var fields = { status: status };
+    if (extra && extra.tracked_slug) fields.tracked_slug = extra.tracked_slug;
+    return saveFields(id, fields).then(function () {
+      render();
+      return true;
+    }).catch(function (e) {
+      if (btn) { btn.disabled = false; btn.textContent = status === "dismissed" ? "Dismiss" : "Restore"; }
+      alert("Could not save: " + e.message);
+      return false;
+    });
+  }
+
+  // ── Row tools (docket-style icons) ────────────────────────────────────────
+  var SVG_UP = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>';
+  var SVG_DN = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg>';
+  var SVG_NOTE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
+  var SVG_SNZ = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var SVG_EYE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>';
+
+  function toolsHtml(i) {
+    var up = i.vote === 1;
+    var dn = i.vote === -1;
+    var snz = isSnoozed(i);
+    var snzTitle = snz ? "Snoozed until " + new Date(i.snooze_until).toLocaleString() + " — click to change" : "Snooze — resurface later";
+    return (
+      '<span class="pr-tools">' +
+        '<button type="button" class="pr-ico' + (up ? " pr-vote-up-on" : "") + '" data-vote="1" data-id="' + esc(i.id) + '" title="More like this — biases the next scan">' + SVG_UP + "</button>" +
+        '<button type="button" class="pr-ico' + (dn ? " pr-vote-dn-on" : "") + '" data-vote="-1" data-id="' + esc(i.id) + '" title="Less like this — biases the next scan">' + SVG_DN + "</button>" +
+        '<button type="button" class="pr-ico' + ((i.note || "").trim() ? " pr-note-on" : "") + '" data-note="' + esc(i.id) + '" title="' + ((i.note || "").trim() ? "Edit note" : "Add a note") + '">' + SVG_NOTE + "</button>" +
+        '<button type="button" class="pr-ico' + (snz ? " pr-snz-on" : "") + '" data-snooze="' + esc(i.id) + '" title="' + esc(snzTitle) + '">' + SVG_SNZ + "</button>" +
+        '<button type="button" class="pr-ico' + (i.hidden ? " pr-hide-on" : "") + '" data-hide="' + esc(i.id) + '" title="' + (i.hidden ? "Unhide" : "Hide from the triage list") + '">' + SVG_EYE + "</button>" +
+      "</span>"
+    );
+  }
+
   function actionCell(i) {
     var status = i.status || "new";
     if (status === "new") {
-      return '<button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button>' +
+      var chips = "";
+      if (isSnoozed(i)) chips += '<span class="pr-status-chip">Snoozed · ' + esc(fmtDate(i.snooze_until)) + "</span> ";
+      else if (i.hidden) chips += '<span class="pr-status-chip">Hidden</span> ';
+      return chips + toolsHtml(i) +
+        '<button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button>' +
         '<button type="button" class="pr-btn" data-status="dismissed" data-id="' + esc(i.id) + '">Dismiss</button>';
     }
     if (status === "dismissed") {
@@ -98,10 +174,17 @@
     var tbody = document.getElementById("pr-tbody");
     var countEl = document.getElementById("ud-count");
     var list = visible();
+    var buried = buriedCount();
     if (countEl) {
-      var newCount = ITEMS.filter(function (i) { return (i.status || "new") === "new"; }).length;
+      var newCount = ITEMS.filter(function (i) { return (i.status || "new") === "new" && !isBuried(i); }).length;
       countEl.textContent = list.length + " prospect" + (list.length === 1 ? "" : "s") +
         (TAB === "all" ? "" : " · " + TAB) + " — " + newCount + " awaiting triage";
+    }
+    var sh = document.getElementById("pr-showhidden");
+    if (sh) {
+      sh.style.display = TAB === "new" && (buried > 0 || showHidden) ? "" : "none";
+      sh.textContent = showHidden ? "Hide snoozed/hidden" : "Show snoozed/hidden (" + buried + ")";
+      sh.classList.toggle("on", showHidden);
     }
     if (!tbody) return;
     if (!list.length) {
@@ -117,6 +200,9 @@
         ? '<div class="pr-src"><a href="' + esc(i.source_url) + '" target="_blank" rel="noopener">' +
           esc(i.source_name || "source") + (i.date ? " · " + esc(fmtDate(i.date)) : "") + " ↗</a></div>"
         : "";
+      var note = (i.note || "").trim()
+        ? '<div class="pr-note-view">“' + esc(i.note.trim().slice(0, 300)) + (i.note.trim().length > 300 ? "…" : "") + "”</div>"
+        : "";
       return (
         '<tr id="pr-' + esc(i.id) + '">' +
           '<td class="ud-date">' + esc(fmtDate(i.first_seen)) + "</td>" +
@@ -125,7 +211,7 @@
             '<div class="pr-name">' + esc(i.case_name) + "</div>" +
             (meta ? '<div class="pr-meta">' + esc(meta) + "</div>" : "") +
             (i.why ? '<div class="pr-why">' + esc(i.why) + "</div>" : "") +
-            src +
+            note + src +
           "</td>" +
           '<td class="pr-actions">' + actionCell(i) + "</td>" +
         "</tr>"
@@ -142,31 +228,128 @@
         openTrackModal(b.getAttribute("data-track"));
       });
     });
+    tbody.querySelectorAll("[data-vote]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-id");
+        var v = Number(b.getAttribute("data-vote"));
+        var it = findItem(id);
+        var next = it && it.vote === v ? 0 : v;   // click again to clear
+        saveFields(id, { vote: next }).then(render).catch(function (e) { alert("Vote failed: " + e.message); });
+      });
+    });
+    tbody.querySelectorAll("[data-note]").forEach(function (b) {
+      b.addEventListener("click", function () { openNoteModal(b.getAttribute("data-note")); });
+    });
+    tbody.querySelectorAll("[data-snooze]").forEach(function (b) {
+      b.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        openSnoozeMenu(b.getAttribute("data-snooze"), b);
+      });
+    });
+    tbody.querySelectorAll("[data-hide]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-hide");
+        var it = findItem(id);
+        saveFields(id, { hidden: !(it && it.hidden) }).then(render).catch(function (e) { alert("Hide failed: " + e.message); });
+      });
+    });
   }
 
-  function setStatus(id, status, btn, extra) {
-    if (btn) { btn.disabled = true; btn.textContent = "…"; }
-    var body = { id: id, status: status };
-    if (extra && extra.tracked_slug) body.tracked_slug = extra.tracked_slug;
-    return fetch("api/prospects", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    }).then(function (r) { return r.json(); }).then(function (j) {
-      if (!j || !j.ok) throw new Error((j && j.error) || "save failed");
-      ITEMS.forEach(function (p) {
-        if (p.id === id) {
-          p.status = status;
-          if (body.tracked_slug) p.tracked_slug = body.tracked_slug;
-        }
-      });
+  // ── Note modal (docket pattern) ───────────────────────────────────────────
+  var activeNoteId = null;
+
+  function openNoteModal(id) {
+    var i = findItem(id);
+    if (!i) return;
+    activeNoteId = id;
+    var title = document.getElementById("ud-note-title");
+    var meta = document.getElementById("ud-note-meta");
+    var text = document.getElementById("ud-note-text");
+    var status = document.getElementById("ud-note-status");
+    if (title) title.textContent = i.case_name;
+    if (meta) meta.textContent = [i.court, i.case_number, (i.why || "").slice(0, 140)].filter(Boolean).join(" · ");
+    if (text) text.value = i.note || "";
+    if (status) status.textContent = "";
+    var overlay = document.getElementById("ud-note-overlay");
+    if (overlay) overlay.style.display = "flex";
+    if (text) text.focus();
+  }
+
+  function closeNoteModal() {
+    activeNoteId = null;
+    var overlay = document.getElementById("ud-note-overlay");
+    if (overlay) overlay.style.display = "none";
+  }
+
+  function saveNoteFromModal(deleteNote) {
+    if (!activeNoteId) return;
+    var id = activeNoteId;
+    var text = document.getElementById("ud-note-text");
+    var status = document.getElementById("ud-note-status");
+    var val = deleteNote ? "" : (text ? text.value : "");
+    if (status) status.textContent = "Saving…";
+    saveFields(id, { note: val }).then(function () {
+      closeNoteModal();
       render();
-      return true;
     }).catch(function (e) {
-      if (btn) { btn.disabled = false; btn.textContent = status === "dismissed" ? "Dismiss" : "Restore"; }
-      alert("Could not save: " + e.message);
-      return false;
+      if (status) status.textContent = "Save failed: " + e.message;
     });
+  }
+
+  // ── Snooze menu (docket presets) ──────────────────────────────────────────
+  var snoozeMenuEl = null;
+
+  function snoozeOptions() {
+    var now = new Date();
+    function at(d, h) { var x = new Date(d); x.setHours(h, 0, 0, 0); return x; }
+    var opts = [];
+    opts.push({ label: "Tomorrow morning (9 AM)", when: at(new Date(now.getTime() + 86400e3), 9) });
+    opts.push({ label: "In 3 days (9 AM)", when: at(new Date(now.getTime() + 3 * 86400e3), 9) });
+    opts.push({ label: "Next week (9 AM)", when: at(new Date(now.getTime() + 7 * 86400e3), 9) });
+    opts.push({ label: "In 2 weeks (9 AM)", when: at(new Date(now.getTime() + 14 * 86400e3), 9) });
+    return opts;
+  }
+
+  function closeSnoozeMenu() {
+    if (snoozeMenuEl && snoozeMenuEl.parentNode) snoozeMenuEl.parentNode.removeChild(snoozeMenuEl);
+    snoozeMenuEl = null;
+  }
+
+  function openSnoozeMenu(id, anchor) {
+    closeSnoozeMenu();
+    var i = findItem(id);
+    if (!i) return;
+    var menu = document.createElement("div");
+    menu.className = "ud-th-menu";
+    snoozeOptions().forEach(function (o) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ud-th-menu-item";
+      b.textContent = o.label;
+      b.addEventListener("click", function () {
+        closeSnoozeMenu();
+        saveFields(id, { snooze_until: o.when.toISOString() }).then(render)
+          .catch(function (e) { alert("Snooze failed: " + e.message); });
+      });
+      menu.appendChild(b);
+    });
+    if (isSnoozed(i)) {
+      var clear = document.createElement("button");
+      clear.type = "button";
+      clear.className = "ud-th-menu-item";
+      clear.textContent = "Wake now (clear snooze)";
+      clear.addEventListener("click", function () {
+        closeSnoozeMenu();
+        saveFields(id, { snooze_until: "" }).then(render)
+          .catch(function (e) { alert("Wake failed: " + e.message); });
+      });
+      menu.appendChild(clear);
+    }
+    document.body.appendChild(menu);
+    var r = anchor.getBoundingClientRect();
+    menu.style.top = (r.bottom + window.scrollY + 4) + "px";
+    menu.style.left = Math.max(8, Math.min(r.left + window.scrollX - 80, window.innerWidth - 210)) + "px";
+    snoozeMenuEl = menu;
   }
 
   // ── Theme filter dropdown ─────────────────────────────────────────────────
@@ -234,8 +417,7 @@
   }
 
   function openTrackModal(id) {
-    var p = null;
-    ITEMS.forEach(function (i) { if (i.id === id) p = i; });
+    var p = findItem(id);
     if (!p) return;
     closeModal();
 
@@ -244,6 +426,9 @@
       return '<label><input type="checkbox" data-topic="' + esc(s) + '"' +
         (s === p.theme ? " checked" : "") + "> " + t.emoji + " " + esc(t.name) + "</label>";
     }).join("");
+
+    // The reader's own note leads the scan guidance; the scanner's "why" follows.
+    var guidance = [(p.note || "").trim(), (p.why || "").trim()].filter(Boolean).join(" — ");
 
     var wrap = document.createElement("div");
     wrap.className = "pr-overlay";
@@ -264,8 +449,8 @@
           field("Judge", "tk-judge", "") +
           field("Claims-agent URL", "tk-claims", "", { placeholder: "only for claims-agent source" }) +
           '<label class="pr-wide">Themes<div class="pr-topics">' + themeChecks + "</div></label>" +
-          '<label class="pr-wide">Scan guidance <span class="pr-hint">(steers the news scan for this case)</span>' +
-            '<textarea id="tk-guidance" rows="2">' + esc(p.why || "") + "</textarea></label>" +
+          '<label class="pr-wide">Scan guidance <span class="pr-hint">(steers the news scan for this case — prefilled from your note)</span>' +
+            '<textarea id="tk-guidance" rows="2">' + esc(guidance) + "</textarea></label>" +
         "</div>" +
         '<div class="pr-modal-actions">' +
           '<div class="pr-modal-status" id="tk-status"></div>' +
@@ -370,6 +555,13 @@
         render();
       });
     });
+    var sh = document.getElementById("pr-showhidden");
+    if (sh) {
+      sh.addEventListener("click", function () {
+        showHidden = !showHidden;
+        render();
+      });
+    }
   }
 
   function wireDropdown() {
@@ -398,14 +590,30 @@
     wireTabs();
     wireDropdown();
     document.addEventListener("keydown", function (ev) {
-      if (ev.key === "Escape") closeModal();
+      if (ev.key === "Escape") { closeModal(); closeNoteModal(); closeSnoozeMenu(); }
     });
+    document.addEventListener("click", function (ev) {
+      if (snoozeMenuEl && !snoozeMenuEl.contains(ev.target) && !ev.target.closest("[data-snooze]")) {
+        closeSnoozeMenu();
+      }
+    });
+    var noteOverlay = document.getElementById("ud-note-overlay");
+    if (noteOverlay) {
+      noteOverlay.addEventListener("click", function (ev) {
+        if (ev.target === noteOverlay) closeNoteModal();
+      });
+    }
+    var noteSave = document.getElementById("ud-note-save");
+    if (noteSave) noteSave.addEventListener("click", function () { saveNoteFromModal(false); });
+    var noteDelete = document.getElementById("ud-note-delete");
+    if (noteDelete) noteDelete.addEventListener("click", function () { saveNoteFromModal(true); });
+    var noteCancel = document.getElementById("ud-note-cancel");
+    if (noteCancel) noteCancel.addEventListener("click", closeNoteModal);
 
     fetchJson("themes.json").then(function (d) {
       ((d && d.themes) || []).forEach(function (t) {
         if (!t || !t.slug) return;
-        var c = THEME_COLORS[t.slug] || FALLBACK_THEME;
-        THEMES[t.slug] = { name: t.display_name || t.slug, emoji: t.emoji || FALLBACK_THEME.emoji, bg: c.bg, fg: c.fg };
+        THEMES[t.slug] = { name: t.display_name || t.slug, emoji: t.emoji || "📰" };
       });
       render();
     }).catch(function () {});
@@ -424,9 +632,9 @@
         ITEMS = items;
         var meta = document.getElementById("ud-meta");
         if (meta && ITEMS.length) {
-          var newCount = ITEMS.filter(function (i) { return (i.status || "new") === "new"; }).length;
+          var newCount = ITEMS.filter(function (i) { return (i.status || "new") === "new" && !isBuried(i); }).length;
           meta.textContent = newCount + " candidate case" + (newCount === 1 ? "" : "s") +
-            " awaiting triage. Track one to start following its docket; Dismiss buries it for good.";
+            " awaiting triage. Vote to steer the scans, note your thinking, snooze or hide the clutter — Track promotes, Dismiss buries for good.";
         }
         render();
         renderThemePanel();

@@ -7,11 +7,13 @@
 
    GET → { ok, updated, items: [{id, case_name, parties, court, case_number,
            docket_url, why, theme, source_url, source_name, date, first_seen,
-           status, tracked_slug?}] }
-   PUT → { id, status: "dismissed" | "new" | "tracked", tracked_slug? }
-         Flips ONE prospect's status. "tracked" is set by the Track flow AFTER
-         the case was created via /api/admin/cases (the promotion itself goes
-         through that endpoint — this file never creates cases).
+           status, tracked_slug?, note?, snooze_until?, hidden?, vote?}] }
+   PUT → { id, status?, tracked_slug?, note?, snooze_until?, hidden?, vote? }
+         Partial update of ONE prospect — same triage toolkit as docket rows
+         (note, snooze, hide, ±vote; votes bias the next scan). "tracked" is
+         set by the Track flow AFTER the case was created via
+         /api/admin/cases (the promotion itself goes through that endpoint —
+         this file never creates cases).
 
    Dismissed/tracked entries stay in the file as tombstones so the next scan
    never resurfaces them (scan_prospects.py prunes them after 120 days).
@@ -48,11 +50,12 @@ export async function onRequestPut(context) {
     return jsonResponse({ ok: false, error: "invalid JSON" }, 400);
   }
   const id = String(body.id || "");
-  const status = String(body.status || "");
   if (!/^[a-f0-9]{10}$/.test(id)) {
     return jsonResponse({ ok: false, error: "a prospect id is required" }, 400);
   }
-  if (!STATUSES.includes(status)) {
+  const hasStatus = body.status !== undefined;
+  const status = String(body.status || "");
+  if (hasStatus && !STATUSES.includes(status)) {
     return jsonResponse({ ok: false, error: "status must be new, dismissed, or tracked" }, 400);
   }
 
@@ -60,12 +63,40 @@ export async function onRequestPut(context) {
   const item = store.items.find((i) => i && i.id === id);
   if (!item) return jsonResponse({ ok: false, error: "prospect not found" }, 404);
 
-  item.status = status;
-  item.triaged_at = new Date().toISOString();
-  if (status === "tracked" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(String(body.tracked_slug || ""))) {
-    item.tracked_slug = String(body.tracked_slug);
-  } else if (status !== "tracked") {
-    delete item.tracked_slug;
+  let label = "update";
+  if (hasStatus) {
+    item.status = status;
+    item.triaged_at = new Date().toISOString();
+    label = status;
+    if (status === "tracked" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(String(body.tracked_slug || ""))) {
+      item.tracked_slug = String(body.tracked_slug);
+    } else if (status !== "tracked") {
+      delete item.tracked_slug;
+    }
+  }
+  if (body.note !== undefined) {
+    const note = typeof body.note === "string" ? body.note.slice(0, 5000) : "";
+    if (note.trim()) item.note = note;
+    else delete item.note;
+    label = hasStatus ? label : "note";
+  }
+  if (body.snooze_until !== undefined) {
+    const snz = typeof body.snooze_until === "string" && /^\d{4}-\d{2}-\d{2}T/.test(body.snooze_until)
+      ? body.snooze_until.slice(0, 30) : "";
+    if (snz) item.snooze_until = snz;
+    else delete item.snooze_until;
+    label = hasStatus ? label : (snz ? "snooze" : "wake");
+  }
+  if (body.hidden !== undefined) {
+    if (body.hidden) item.hidden = true;
+    else delete item.hidden;
+    label = hasStatus ? label : (body.hidden ? "hide" : "unhide");
+  }
+  if (body.vote !== undefined) {
+    const v = Number(body.vote);
+    if (v === 1 || v === -1) item.vote = v;
+    else delete item.vote;
+    label = hasStatus ? label : "vote";
   }
 
   // The scan bot commits to this branch too — retry so a ref race never
@@ -75,7 +106,7 @@ export async function onRequestPut(context) {
     res = await commitFilesToGitHub(
       env,
       [{ path: JSON_PATH, content: JSON.stringify({ updated: store.updated, items: store.items }, null, 2) + "\n" }],
-      `Prospects: ${status} ${item.case_name || id}`,
+      `Prospects: ${label} ${item.case_name || id}`,
       briefingRepo(env),
       briefingBranch(env)
     );
