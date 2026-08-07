@@ -136,35 +136,33 @@ def stretto_fetch(base_url, docket_number):
             page.wait_for_timeout(1000)
         page.goto(docket_url, wait_until="networkidle", timeout=45000)
         try:
-            page.wait_for_selector("table tbody tr a[href$='.pdf']", timeout=30000)
+            page.wait_for_selector("a[href$='.pdf']", timeout=30000)
         except Exception:
             diag = page.evaluate(
-                "() => ({ title: document.title, tables: document.querySelectorAll('table').length,"
-                " pdfs: document.querySelectorAll(\"a[href$='.pdf']\").length,"
+                "() => ({ title: document.title, pdfs: document.querySelectorAll(\"a[href$='.pdf']\").length,"
                 " waf: document.body.innerText.slice(0,120) })")
             browser.close()
-            fail(f"no PDF rows on the Stretto docket for {case_seg[0]} — "
-                 f"diag={diag}")
+            fail(f"no PDF links on the Stretto docket for {case_seg[0]} — diag={diag}")
         page.wait_for_timeout(1000)
 
+        # PDFs aren't scoped to <tbody><tr> here — walk every PDF link and read
+        # its row's first cell (the docket number). The ?search filter may not
+        # apply on direct load, so we match the number across all rows.
         target_href = title = link_handle = None
-        for row in page.query_selector_all("table tbody tr"):
-            tds = row.query_selector_all("td")
-            if not tds:
+        for link in page.query_selector_all("a[href$='.pdf']"):
+            row = link.evaluate_handle("el => el.closest('tr') || el.closest('[class*=row]')")
+            cells = row.query_selector_all("td") if row else []
+            if not cells:
                 continue
-            first = re.sub(r"(?i)docket\s*(no\.?|#)?", "", tds[0].inner_text()).strip()
-            if not first.isdigit() or int(first) != int(docket_number):
-                continue
-            link = row.query_selector("a[href$='.pdf']")
-            if link:
+            first = re.sub(r"(?i)docket\s*(no\.?|#)?", "", cells[0].inner_text()).strip()
+            if first.isdigit() and int(first) == int(docket_number):
                 target_href = link.get_attribute("href")
                 link_handle = link
-                # Document name is its own column; fall back to the link text.
-                if len(tds) >= 3:
-                    title = clean(tds[2].inner_text())[:300] or None
+                if len(cells) >= 3:
+                    title = clean(cells[2].inner_text())[:300] or None
                 if not title:
                     title = clean(link.inner_text())[:300] or None
-            break
+                break
 
         if not target_href:
             browser.close()
@@ -199,21 +197,25 @@ def epiq_fetch(base_url, docket_number):
 
     with sync_playwright() as pw:
         browser, ctx, page = _launch(pw)
-        # Epiq deep-links a single docket via ?docket=N, which loads that entry
-        # directly (no client-side paging through 1,000+ rows to find it).
-        page.goto(f"{dockets_url}?docket={int(docket_number)}",
-                  wait_until="networkidle", timeout=45000)
+        page.goto(dockets_url, wait_until="networkidle", timeout=45000)
+        # Angular renders the docket list after an API round-trip; nudge any
+        # lazy render with a scroll, then wait for the entry links.
         try:
-            page.wait_for_selector("a[href*='docketId'], a[href*='DownloadDocument']", timeout=35000)
+            page.wait_for_selector("app-search-card, [class*='docket-card'], a[href*='docketId']", timeout=35000)
         except Exception:
+            pass
+        page.mouse.wheel(0, 4000)
+        page.wait_for_timeout(2500)
+        if not page.query_selector("a[href*='docketId']"):
             diag = page.evaluate(
                 "() => ({ title: document.title,"
                 " docketLinks: document.querySelectorAll(\"a[href*='docketId']\").length,"
-                " anchors: document.querySelectorAll('a').length,"
-                " body: document.body.innerText.slice(0,120) })")
+                " viewLinks: Array.from(document.querySelectorAll('a')).filter(a=>/view/i.test(a.textContent)).length,"
+                " hrefs: Array.from(document.querySelectorAll('a')).map(a=>a.getAttribute('href')).filter(h=>h&&h.length>3).slice(0,8),"
+                " body: document.body.innerText.slice(0,160) })")
             browser.close()
             fail(f"Epiq dockets did not render for case {code} — diag={diag}")
-        page.wait_for_timeout(1500)
+        page.wait_for_timeout(1000)
 
         # Match the row whose docket-number text equals N, take its View link.
         # (Docket rows put the number in a bold/label element; scan each row's
