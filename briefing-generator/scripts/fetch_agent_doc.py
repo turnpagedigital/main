@@ -73,38 +73,46 @@ def _launch(pw):
 
 
 def _pdf_via_download_or_fetch(page, link_handle, pdf_url):
-    """The two-step PDF capture Kroll proved: click the link and catch the
-    browser's own download (which clears bot 202/challenge cookies a raw
-    fetch can't), then fall back to polling an in-page fetch. Returns bytes
-    (may be empty / non-PDF — caller validates)."""
-    import base64 as _b64
+    """Capture the PDF three ways, in order: (1) click the link and catch the
+    browser's own download event; (2) if it opens a new tab instead, catch
+    that popup's download; (3) fetch via the context's APIRequestContext — it
+    carries the browser's cookies (incl. any challenge/session token) and,
+    unlike an in-page fetch, isn't blocked when the document sits on a
+    different subdomain (e.g. Epiq's document.epiq11.com). Returns bytes (may
+    be empty / non-PDF — caller validates)."""
     body = b""
-    try:
-        with page.expect_download(timeout=60000) as dl_info:
-            link_handle.click()
-        body = Path(dl_info.value.path()).read_bytes()
-    except Exception as ex:
-        print(f"  · click-download route failed ({ex}); retrying via fetch", file=sys.stderr)
+    if link_handle:
+        try:
+            with page.expect_download(timeout=45000) as dl_info:
+                link_handle.click()
+            body = Path(dl_info.value.path()).read_bytes()
+        except Exception:
+            try:
+                with page.context.expect_page(timeout=8000) as pop_info:
+                    link_handle.click()
+                pop = pop_info.value
+                try:
+                    with pop.expect_download(timeout=20000) as d2:
+                        pass
+                    body = Path(d2.value.path()).read_bytes()
+                except Exception:
+                    pass
+                pop.close()
+            except Exception as ex:
+                print(f"  · click routes failed ({ex}); falling back to request", file=sys.stderr)
+
     if not body[:5].startswith(b"%PDF") and pdf_url:
         for attempt in range(6):
-            result = page.evaluate(
-                """async (href) => {
-                    const r = await fetch(href, { credentials: 'include' });
-                    const buf = await r.arrayBuffer();
-                    const bytes = new Uint8Array(buf);
-                    let bin = '';
-                    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
-                    return { status: r.status, type: r.headers.get('content-type') || '',
-                             head: bin.slice(0, 200), b64: btoa(bin) };
-                }""",
-                pdf_url,
-            )
-            fetched = _b64.b64decode(result["b64"])
-            if fetched[:5].startswith(b"%PDF"):
-                body = fetched
-                break
-            print(f"  · fetch attempt {attempt + 1}: status={result['status']} "
-                  f"type={result['type']} head={result['head'][:80]!r}", file=sys.stderr)
+            try:
+                resp = page.context.request.get(pdf_url, timeout=45000)
+                fetched = resp.body()
+                if fetched[:5].startswith(b"%PDF"):
+                    body = fetched
+                    break
+                print(f"  · request attempt {attempt + 1}: status={resp.status} "
+                      f"type={resp.headers.get('content-type', '')} head={fetched[:60]!r}", file=sys.stderr)
+            except Exception as ex:
+                print(f"  · request attempt {attempt + 1} error: {ex}", file=sys.stderr)
             page.wait_for_timeout(2500)
     return body
 
