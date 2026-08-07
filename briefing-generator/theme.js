@@ -16,6 +16,29 @@
     var n=ST[(ST.indexOf(c)+1)%ST.length];
     localStorage.setItem(K,n);apply();
   };
+  // ── g-then-key section navigation (works on every intel page) ──────────
+  // g+h Dashboard · g+d Docket · g+c Calendar · g+p Prospects · g+n Notes ·
+  // g+r News · g+b Briefings. Registered in the CAPTURE phase so the second
+  // key never leaks into a page's own single-key handlers (h=hide, n=note…).
+  var GOTO={h:'index.html',d:'docket.html',c:'calendar.html',p:'prospects.html',n:'notes.html',r:'news.html',b:'briefings.html'};
+  var gAt=0;
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    var t=e.target||{},tag=(t.tagName||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select'||t.isContentEditable)return;
+    var k=(e.key||'').toLowerCase();
+    var now=Date.now();
+    if(k==='g'){gAt=now;e.stopPropagation();return;}
+    if(gAt&&now-gAt<900&&GOTO[k]){
+      e.preventDefault();e.stopPropagation();
+      gAt=0;
+      var prefix=location.pathname.indexOf('/cases/')!==-1?'../':'';
+      location.href=prefix+GOTO[k];
+      return;
+    }
+    gAt=0;
+  },true);
+
   function wire(){
     apply();
     var b=document.getElementById('theme-toggle');
