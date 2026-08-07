@@ -92,9 +92,42 @@ def load_sources():
     ]
 
 
+_CORP_SUFFIX = {"inc", "llc", "ltd", "co", "corp", "corporation", "lp", "llp",
+                "plc", "pte", "pllc", "holdings", "trust", "sa", "nv", "gmbh",
+                "group", "the"}
+_LEGAL_PREFIX = re.compile(r"(?i)^(in re:?|in the matter of)\s+")
+# Boilerplate that must never become a match token even if a display/short
+# name still carries it (e.g. a not-yet-renamed "In re" short_name → 'in re',
+# which would otherwise hit 'in revenue', 'in recent', …).
+_STOP_TOKENS = {"in re", "in the", "in the matter", "matter of", "in", "re",
+                "matter", "et al", "of"}
+
+
+def _case_tokens(display_name, short_name):
+    """Distinctive match tokens for a case — a multi-word party phrase (e.g.
+    'sleep number', 'power block coin') and/or a single distinctive lead word
+    or acronym ('ftx', 'bartz', 'rndc'). Legal prefixes ('In re') and bare
+    corporate suffixes are dropped, so a case never matches on boilerplate."""
+    toks = set()
+    for raw in (display_name, short_name):
+        s = _LEGAL_PREFIX.sub("", (raw or "").strip())
+        # keep only the party segment (before 'v.', an em-dash, colon, comma, paren, d/b/a)
+        s = re.split(r"\s+vs?\.\s+|\s*[\u2014\u2013:,(]|\bd/b/a\b", s, maxsplit=1)[0]
+        words = [re.sub(r"[.]", "", w) for w in s.split() if w.strip()]
+        sig = [w for w in words if w.lower() not in _CORP_SUFFIX and len(w) >= 2]
+        if not sig:
+            continue
+        if len(sig) >= 2:
+            toks.add(" ".join(sig[:3]).lower())          # distinctive phrase
+        lead = sig[0]
+        if len(sig) == 1 or lead.isupper():              # single name or acronym
+            if len(lead) >= 3:
+                toks.add(lead.lower())
+    return {t for t in toks if len(t) >= 3 and t not in _STOP_TOKENS}
+
+
 def load_case_names():
-    """[(slug, [name variants])] from the generated manifest — for auto-matching
-    feed items to tracked cases by name."""
+    """[(slug, [compiled word-boundary token patterns])] from the manifest."""
     try:
         manifest = json.loads((SOURCES.parent / "cases" / "data" / "_manifest.json")
                               .read_text(encoding="utf-8"))
@@ -102,19 +135,17 @@ def load_case_names():
         return []
     out = []
     for m in manifest:
-        names = set()
-        for key in ("display_name", "short_name"):
-            n = (m.get(key) or "").strip().lower()
-            if len(n) >= 4:
-                names.add(n)
-        if m.get("slug") and names:
-            out.append((m["slug"], sorted(names)))
+        toks = _case_tokens(m.get("display_name"), m.get("short_name"))
+        if m.get("slug") and toks:
+            pats = [re.compile(r"(?<![a-z0-9])" + re.escape(t) + r"(?![a-z0-9])") for t in toks]
+            out.append((m["slug"], pats))
     return out
 
 
 def auto_match_cases(items):
     """Assign case_slug to unassigned items whose text names exactly ONE
-    tracked case. Manual assignments are never touched."""
+    tracked case — matched on distinctive tokens with word boundaries, so
+    'in re' never hits 'in revenue'. Manual assignments are never touched."""
     cases = load_case_names()
     if not cases:
         return 0
@@ -123,7 +154,7 @@ def auto_match_cases(items):
         if it.get("case_slug") or it.get("group_name"):
             continue
         hay = ((it.get("title") or "") + " " + (it.get("excerpt") or "")).lower()
-        hits = [slug for slug, names in cases if any(n in hay for n in names)]
+        hits = [slug for slug, pats in cases if any(p.search(hay) for p in pats)]
         if len(hits) == 1:
             it["case_slug"] = hits[0]
             it["auto_matched"] = True
