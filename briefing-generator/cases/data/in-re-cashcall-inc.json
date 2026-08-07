@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "in-re-cashcall-inc",
+    "display_name": "In re CashCall, Inc.",
+    "case_name": "CashCall, Inc. (debtor); judgment creditors holding $400M+ in adverse litigation awards",
+    "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
+    "case_number": "26-03102",
+    "judge": "Barrett Marum",
+    "docket_id": "73643729",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
