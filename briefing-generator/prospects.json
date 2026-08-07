@@ -176,7 +176,8 @@
       "date": "2026-08-02",
       "first_seen": "2026-08-07",
       "status": "new",
-      "note": "social post"
+      "note": "social post",
+      "hidden": true
     },
     {
       "id": "acb45ff577",
