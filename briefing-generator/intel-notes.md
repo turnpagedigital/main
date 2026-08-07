@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-07 00:23 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-07 00:28 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -17,6 +17,12 @@ Need to research fair use question and write a long-form article about this
 > Order on Administrative Motion per Civil Local Rule 7-11
 
 hi
+
+## Goliath
+
+### (no docket number) — 2026-07-28
+
+> Auto-Docket of Credit Card
 
 ## Harvest Sherwood
 
