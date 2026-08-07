@@ -227,5 +227,17 @@
     ],
     "sync": "active",
     "default_color": "#F2AAEC"
+  },
+  {
+    "slug": "in-re-cashcall-inc",
+    "display_name": "In re CashCall, Inc.",
+    "short_name": "In re",
+    "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
+    "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
+    "topics": [
+      "bankruptcy-creditor-rights"
+    ],
+    "sync": "active",
+    "default_color": "#1B3A4B"
   }
 ]
