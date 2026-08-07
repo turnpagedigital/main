@@ -14,8 +14,8 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-07T00:47:14.993230+00:00",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-07T07:47:20.931538+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
     "new_in_72h": 14,
@@ -25,10 +25,11 @@
         "date_filed": "2026-08-06",
         "time_filed": "20:23:51",
         "date_display": "Aug 6, 2026",
-        "description": "Stipulation",
+        "description": "Second Stipulation With Prepetition Loan Agent Extending Committee Challenge Deadline Pursuant To Final DIP Financing Order",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 525,
