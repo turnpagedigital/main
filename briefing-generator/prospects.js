@@ -46,8 +46,7 @@
   }
 
   var ITEMS = [];
-  var TAB = "new";
-  var showHidden = false;
+  var TAB = "new";         // new | snoozed | hidden | dismissed | tracked | all
   var activeThemes = {};   // theme slug → bool (default all on)
   var cursorId = null;     // keyboard cursor, tracked by prospect id
 
@@ -72,22 +71,29 @@
     return !!i.hidden || isSnoozed(i);
   }
 
-  function matchesTab(i) {
-    return TAB === "all" || (i.status || "new") === TAB;
+  // Snoozed and Hidden are their own surfaces (an item can sit in both).
+  function matchesTab(i, tab) {
+    var status = i.status || "new";
+    if (tab === "all") return true;
+    if (tab === "new") return status === "new" && !isBuried(i);
+    if (tab === "snoozed") return status === "new" && isSnoozed(i);
+    if (tab === "hidden") return status === "new" && !!i.hidden;
+    return status === tab;
+  }
+
+  function themePass(i) {
+    return !i.theme || themeOn(i.theme);
   }
 
   function visible() {
     return ITEMS.filter(function (i) {
-      if (!i || !i.id) return false;
-      if (!matchesTab(i)) return false;
-      if (!showHidden && (i.status || "new") === "new" && isBuried(i)) return false;
-      return !i.theme || themeOn(i.theme);
+      return i && i.id && matchesTab(i, TAB) && themePass(i);
     });
   }
 
-  function buriedCount() {
+  function tabCount(tab) {
     return ITEMS.filter(function (i) {
-      return i && (i.status || "new") === "new" && isBuried(i) && (!i.theme || themeOn(i.theme));
+      return i && i.id && matchesTab(i, tab) && themePass(i);
     }).length;
   }
 
@@ -150,48 +156,58 @@
     );
   }
 
+  // Tab-aware: never repeat the tab's own name as a chip on every row.
   function actionCell(i) {
     var status = i.status || "new";
+    var bits = [];
     if (status === "new") {
-      var chips = "";
-      if (isSnoozed(i)) chips += '<span class="pr-status-chip">Snoozed · ' + esc(fmtDate(i.snooze_until)) + "</span> ";
-      else if (i.hidden) chips += '<span class="pr-status-chip">Hidden</span> ';
-      return chips + toolsHtml(i) +
-        '<button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button>' +
-        '<button type="button" class="pr-btn" data-social="' + esc(i.id) + '" title="Draft a one-off briefing + LinkedIn post from this prospect, without tracking it">Social post</button>' +
-        '<button type="button" class="pr-btn" data-status="dismissed" data-id="' + esc(i.id) + '">Dismiss</button>';
+      if (isSnoozed(i) && TAB !== "hidden") {
+        bits.push('<span class="pr-status-chip">Wakes ' + esc(fmtDate(i.snooze_until)) + "</span>");
+      }
+      if (i.hidden && TAB === "all") {
+        bits.push('<span class="pr-status-chip">Hidden</span>');
+      }
+      bits.push(toolsHtml(i));
+      bits.push('<button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button>');
+      bits.push('<button type="button" class="pr-btn" data-social="' + esc(i.id) + '" title="Draft a one-off briefing + LinkedIn post from this prospect, without tracking it">Social post</button>');
+      bits.push('<button type="button" class="pr-btn" data-status="dismissed" data-id="' + esc(i.id) + '">Dismiss</button>');
+    } else if (status === "dismissed") {
+      if (TAB === "all") bits.push('<span class="pr-status-chip">Dismissed</span>');
+      bits.push('<button type="button" class="pr-btn" data-status="new" data-id="' + esc(i.id) + '">Restore</button>');
+    } else {
+      if (TAB === "all" || !i.tracked_slug) bits.push('<span class="pr-status-chip tracked">Tracked</span>');
+      if (i.tracked_slug) {
+        bits.push('<a class="pr-btn" href="docket.html#case=' + encodeURIComponent(i.tracked_slug) + '">Open docket</a>');
+      }
     }
-    if (status === "dismissed") {
-      return '<span class="pr-status-chip">Dismissed</span> ' +
-        '<button type="button" class="pr-btn" data-status="new" data-id="' + esc(i.id) + '">Restore</button>';
-    }
-    var chip = '<span class="pr-status-chip tracked">Tracked</span>';
-    if (i.tracked_slug) {
-      chip += ' <a class="pr-btn" href="docket.html#case=' + encodeURIComponent(i.tracked_slug) + '">Open docket</a>';
-    }
-    return chip;
+    return '<div class="pr-act-row">' + bits.join("") + "</div>";
   }
+
+  var TAB_LABELS = { new: "New", snoozed: "Snoozed", hidden: "Hidden", dismissed: "Dismissed", tracked: "Tracked", all: "All" };
+  var EMPTY_TEXT = {
+    new: "Nothing to triage — the daily theme scans surface candidate cases here.",
+    snoozed: "Nothing snoozed — Z on a row parks it here until its wake date.",
+    hidden: "Nothing hidden — H on a row tucks it away here.",
+  };
 
   function render() {
     var tbody = document.getElementById("pr-tbody");
     var countEl = document.getElementById("ud-count");
     var list = visible();
-    var buried = buriedCount();
     if (countEl) {
-      var newCount = ITEMS.filter(function (i) { return (i.status || "new") === "new" && !isBuried(i); }).length;
+      var newCount = tabCount("new");
       countEl.textContent = list.length + " prospect" + (list.length === 1 ? "" : "s") +
         (TAB === "all" ? "" : " · " + TAB) + " — " + newCount + " awaiting triage";
     }
-    var sh = document.getElementById("pr-showhidden");
-    if (sh) {
-      sh.style.display = TAB === "new" && (buried > 0 || showHidden) ? "" : "none";
-      sh.textContent = showHidden ? "Hide snoozed/hidden" : "Show snoozed/hidden (" + buried + ")";
-      sh.classList.toggle("on", showHidden);
-    }
+    document.querySelectorAll("#pr-tabs .pr-tab").forEach(function (t) {
+      var tab = t.getAttribute("data-tab");
+      var n = tabCount(tab);
+      t.textContent = TAB_LABELS[tab] + (tab === "all" || !n ? "" : " (" + n + ")");
+    });
     if (!tbody) return;
     if (!list.length) {
       tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">' +
-        (TAB === "new" ? "Nothing to triage — the daily theme scans surface candidate cases here." : "Nothing here.") +
+        (EMPTY_TEXT[TAB] || "Nothing here.") +
         "</td></tr>";
       return;
     }
@@ -822,13 +838,6 @@
         render();
       });
     });
-    var sh = document.getElementById("pr-showhidden");
-    if (sh) {
-      sh.addEventListener("click", function () {
-        showHidden = !showHidden;
-        render();
-      });
-    }
   }
 
   function wireDropdown() {

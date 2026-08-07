@@ -377,8 +377,32 @@
   }
 
   // ── Filter + sort ──────────────────────────────────────────────────────────
+  // Docket/news notes live in the intel-notes store; prospect notes live on
+  // the prospects themselves (prospects.json) and merge in here as rows.
+  var PROSPECTS = [];
+
+  function loadProspects() {
+    fetchJson("api/prospects")
+      .then(function (p) { return (p && p.ok && p.items) || []; })
+      .catch(function () {
+        return fetchJson("prospects.json")
+          .then(function (f) { return (f && f.items) || []; })
+          .catch(function () { return []; });
+      })
+      .then(function (items) {
+        PROSPECTS = items;
+        render();
+      });
+  }
+
+  function prospectByKey(nk) {
+    var id = (nk || "").split("|")[1] || "";
+    for (var i = 0; i < PROSPECTS.length; i++) if (PROSPECTS[i].id === id) return PROSPECTS[i];
+    return null;
+  }
+
   function noteList() {
-    return Object.keys(NOTES).map(function (k) {
+    var out = Object.keys(NOTES).map(function (k) {
       var r = NOTES[k];
       return {
         key: k,
@@ -393,6 +417,23 @@
         url: r.url || "",
       };
     });
+    PROSPECTS.forEach(function (p) {
+      if (!p || !p.id || !(p.note || "").trim()) return;
+      out.push({
+        key: "prospect|" + p.id,
+        kind: "prospect",
+        slug: "",
+        case_name: p.case_name || "",
+        entry_number: null,
+        date_filed: p.date || p.first_seen || "",
+        snippet: p.why || "",
+        note: p.note,
+        bookmarked: false,
+        updated_at: p.triaged_at || ((p.first_seen || "") ? p.first_seen + "T00:00:00Z" : ""),
+        url: p.source_url || "",
+      });
+    });
+    return out;
   }
 
   function filtered() {
@@ -466,13 +507,13 @@
     var tbody = document.getElementById("un-tbody");
     var countEl = document.getElementById("ud-count");
     if (countEl) {
-      var total = Object.keys(NOTES).length;
+      var total = noteList().length;
       countEl.textContent = list.length + " of " + total + " note" + (total === 1 ? "" : "s");
     }
     if (!tbody) return;
     if (!list.length) {
       tbody.innerHTML = '<tr><td colspan="6" class="ud-empty">' +
-        (Object.keys(NOTES).length
+        (noteList().length
           ? "No notes match the current filters."
           : "No notes yet — star or annotate entries on the docket and they collect here.") +
         "</td></tr>";
@@ -481,7 +522,9 @@
     tbody.innerHTML = list.map(function (n) {
       var c = caseOf(n.slug);
       var pill;
-      if (c) {
+      if (n.kind === "prospect") {
+        pill = '<a href="prospects.html" style="text-decoration:none"><span class="ud-pill ud-pill-sq" style="background:var(--surface);color:var(--ink);border:1px solid var(--ink)">🔭 ' + esc(n.case_name || "Prospect") + "</span></a>";
+      } else if (c) {
         var bg = getBg(n.slug, c.default_color);
         var fg = getFg(n.slug, bg);
         pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(c.short_name) + "</span>";
@@ -502,7 +545,8 @@
           '<td class="un-note-cell">' + noteHtml + "</td>" +
           '<td class="ud-doc">' + entryLink(n) + "</td>" +
           '<td class="ud-mark-cell">' +
-            '<button type="button" class="ud-bm-btn' + (n.bookmarked ? " ud-bm-on" : "") + '" data-nk="' + esc(n.key) + '" title="Toggle bookmark">' + (n.bookmarked ? "★" : "☆") + "</button>" +
+            (n.kind === "prospect" ? "" :
+              '<button type="button" class="ud-bm-btn' + (n.bookmarked ? " ud-bm-on" : "") + '" data-nk="' + esc(n.key) + '" title="Toggle bookmark">' + (n.bookmarked ? "★" : "☆") + "</button>") +
             '<button type="button" class="ud-note-btn ud-note-on" data-nk="' + esc(n.key) + '" title="Edit note"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button>' +
           "</td>" +
         "</tr>"
@@ -530,21 +574,30 @@
     return UPLOADS[nk] || [];
   }
 
-  // ── Modal (edit in place) ──────────────────────────────────────────────────
+  // ── Modal (edit in place; prospect notes save to api/prospects) ────────────
   function openNoteModal(nk) {
-    var rec = NOTES[nk];
-    if (!rec) return;
-    activeNoteKey = nk;
-    var c = caseOf(rec.case_slug);
     var title = document.getElementById("ud-note-title");
     var meta = document.getElementById("ud-note-meta");
     var text = document.getElementById("ud-note-text");
-    if (title) {
-      title.textContent = (c ? c.short_name : rec.case_slug) + " — " +
-        (rec.entry_number != null ? "Dkt. " + rec.entry_number : "Entry");
+    if (nk.indexOf("prospect|") === 0) {
+      var p = prospectByKey(nk);
+      if (!p) return;
+      activeNoteKey = nk;
+      if (title) title.textContent = (p.case_name || "Prospect") + " — Prospect";
+      if (meta) meta.textContent = [p.court, p.case_number, (p.why || "").slice(0, 160)].filter(Boolean).join(" · ");
+      if (text) text.value = p.note || "";
+    } else {
+      var rec = NOTES[nk];
+      if (!rec) return;
+      activeNoteKey = nk;
+      var c = caseOf(rec.case_slug);
+      if (title) {
+        title.textContent = (c ? c.short_name : rec.case_slug) + " — " +
+          (rec.entry_number != null ? "Dkt. " + rec.entry_number : "Entry");
+      }
+      if (meta) meta.textContent = (rec.date_filed || "") + " · " + (rec.snippet || "");
+      if (text) text.value = rec.note || "";
     }
-    if (meta) meta.textContent = (rec.date_filed || "") + " · " + (rec.snippet || "");
-    if (text) text.value = rec.note || "";
     var overlay = document.getElementById("ud-note-overlay");
     if (overlay) overlay.style.display = "flex";
     if (text) text.focus();
@@ -559,6 +612,25 @@
     var nk = activeNoteKey;
     var text = document.getElementById("ud-note-text");
     var val = deleteNote ? "" : (text ? text.value : "");
+    if (nk.indexOf("prospect|") === 0) {
+      var p = prospectByKey(nk);
+      if (!p) return;
+      fetch("api/prospects", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: p.id, note: val }),
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        if (!j || !j.ok) throw new Error((j && j.error) || "save failed");
+        p.note = val;
+        p.triaged_at = new Date().toISOString();
+        render();
+      }).catch(function (e) {
+        noteToast("Prospect note failed: " + e.message, true);
+      });
+      closeNoteModal();
+      render();
+      return;
+    }
     var rec = NOTES[nk];
     if (!rec) return;
     rec.note = val;
@@ -663,6 +735,7 @@
           .catch(function () { return {}; });
       });
     loadUploads();
+    loadProspects();
     Promise.all([manifestP, notesP]).then(function (res) {
       CASES = res[0] || [];
       NOTES = res[1] || {};
@@ -674,7 +747,7 @@
       activeCases[UNASSIGNED_KEY] = savedAC ? savedAC[UNASSIGNED_KEY] !== false : true;
       var meta = document.getElementById("ud-meta");
       if (meta) {
-        var total = Object.keys(NOTES).length;
+        var total = noteList().length;
         var bm = noteList().filter(function (n) { return n.bookmarked; }).length;
         meta.textContent = total + " note" + (total === 1 ? "" : "s") + " · " + bm + " bookmarked";
       }

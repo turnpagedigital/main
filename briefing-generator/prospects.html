@@ -78,14 +78,14 @@
   .pr-meta{font-size:12px;color:var(--ink-60);margin-top:2px;}
   .pr-why{margin-top:6px;color:var(--ink);}
   .pr-src a{color:var(--ink-60);font-weight:700;font-size:12px;}
-  .pr-actions{white-space:nowrap;text-align:right;}
+  .pr-actions{text-align:right;}
+  .pr-act-row{display:flex;justify-content:flex-end;align-items:center;gap:7px;flex-wrap:wrap;}
   .pr-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;padding:6px 14px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block;line-height:1.2;}
-  .pr-btn+.pr-btn{margin-left:6px;}
   .pr-btn-track{background:var(--neon);color:#0A0A0A;border-color:var(--neon);}
   .pr-btn-track:hover{filter:brightness(0.94);}
   .pr-btn:hover{background:var(--paper-2);}
   .pr-btn[disabled]{opacity:0.45;cursor:default;}
-  .pr-status-chip{display:inline-block;font-size:10px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;padding:2px 8px;border:1px solid var(--line-strong);color:var(--ink-60);}
+  .pr-status-chip{display:inline-block;font-size:10px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;padding:6px 10px;line-height:1.2;border:1px solid var(--line-strong);color:var(--ink-60);white-space:nowrap;}
   .pr-status-chip.tracked{background:rgba(212,255,0,0.25);border-color:var(--neon);color:var(--ink);}
   /* Docket-style row tools: votes, note, snooze, hide */
   .pr-tools{display:inline-flex;align-items:center;gap:2px;margin-right:8px;vertical-align:middle;}
@@ -196,11 +196,12 @@
     </div>
     <div class="pr-tabs" id="pr-tabs">
       <button type="button" class="pr-tab on" data-tab="new">New</button>
+      <button type="button" class="pr-tab" data-tab="snoozed">Snoozed</button>
+      <button type="button" class="pr-tab" data-tab="hidden">Hidden</button>
       <button type="button" class="pr-tab" data-tab="dismissed">Dismissed</button>
       <button type="button" class="pr-tab" data-tab="tracked">Tracked</button>
       <button type="button" class="pr-tab" data-tab="all">All</button>
     </div>
-    <button type="button" class="pr-showhidden" id="pr-showhidden" style="display:none;">Show hidden</button>
   </div>
 
   <div class="ud-toolbar">
