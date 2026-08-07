@@ -114,6 +114,8 @@
   var activeCases = {};
   var expanded = {};
   var _savedState = null;
+  var ADMIN = {};        // slug -> full editable case (/api/admin/cases)
+  var THEME_LIST = [];   // [{slug,display_name,emoji}] for the editor
   var FILTER_KEY = "ub-case-filter-state";
 
   function loadFilterState() {
@@ -206,9 +208,15 @@
           "</td>" +
           '<td class="ub-open-cell">' +
             (hasBody
-              ? '<button type="button" class="pr-btn" data-toggle="' + esc(i.slug) + '">' + (open ? "Close" : "Read") + "</button>"
+              ? '<button type="button" class="pr-btn" data-toggle="' + esc(i.slug) + '">' + (open ? "Close" : "Read") + "</button> "
               : "") +
-            ' <a class="ud-link" href="docket.html#case=' + encodeURIComponent(i.slug) + '">Docket</a>' +
+            '<a class="ud-link" href="docket.html#case=' + encodeURIComponent(i.slug) + '">Docket</a>' +
+            '<div class="ub-actions" style="margin-top:6px;">' +
+              '<button type="button" class="ub-mini" data-edit="' + esc(i.slug) + '">Edit</button>' +
+              ((i.sync || "active") !== "archived"
+                ? '<button type="button" class="ub-mini" data-syncnow="' + esc(i.slug) + '">Sync</button>' : "") +
+              '<button type="button" class="ub-mini" data-export="' + esc(i.slug) + '">Export</button>' +
+            "</div>" +
           "</td>" +
         "</tr>";
       var detail = "";
@@ -231,6 +239,15 @@
         render();
       });
     });
+    tbody.querySelectorAll("[data-edit]").forEach(function (b) {
+      b.addEventListener("click", function () { openEditor(b.getAttribute("data-edit")); });
+    });
+    tbody.querySelectorAll("[data-syncnow]").forEach(function (b) {
+      b.addEventListener("click", function () { syncNow(b.getAttribute("data-syncnow"), b); });
+    });
+    tbody.querySelectorAll("[data-export]").forEach(function (b) {
+      b.addEventListener("click", function () { exportCase(b.getAttribute("data-export")); });
+    });
   }
 
   function applyHash() {
@@ -245,13 +262,58 @@
     if (row) row.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  var BRIEFS = [];
+  function rebuildItems() {
+    var byBrief = {};
+    BRIEFS.forEach(function (b) { byBrief[b.slug] = b; });
+    var slugs = Object.keys(ADMIN);
+    BRIEFS.forEach(function (b) { if (slugs.indexOf(b.slug) < 0) slugs.push(b.slug); });
+    ITEMS = slugs.map(function (slug) {
+      var a = ADMIN[slug] || {};
+      var b = byBrief[slug] || {};
+      var m = manifestOf(slug) || {};
+      return {
+        slug: slug,
+        case_name: a.display_name || b.case_name || slug,
+        short_name: m.short_name || b.short_name || a.display_name || slug,
+        court: (a.case && a.case.court) || b.court || "",
+        themes: (a.topics && a.topics.length ? a.topics : b.themes) || [],
+        sync: a.sync || "active",
+        emoji: b.emoji || "⚖️",
+        date: b.date || "", updated: b.updated || "",
+        lede: b.lede || "", body_md: b.body_md || "",
+        moved: !!b.moved, no_change_since: b.no_change_since || "",
+      };
+    });
+    ITEMS.sort(function (x, y) {
+      if (x.moved !== y.moved) return x.moved ? -1 : 1;
+      return (y.date || "") < (x.date || "") ? -1 : (y.date || "") > (x.date || "") ? 1
+        : x.case_name.localeCompare(y.case_name);
+    });
+    var saved = _savedState && _savedState.activeCases;
+    ITEMS.forEach(function (i) {
+      if (!(i.slug in activeCases)) activeCases[i.slug] = saved && (i.slug in saved) ? !!saved[i.slug] : true;
+    });
+  }
+
+  function loadAdminCases() {
+    return fetch("/api/admin/cases", { credentials: "include" })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.ok && d.cases) {
+          ADMIN = {};
+          d.cases.forEach(function (c) { ADMIN[c.slug] = c; });
+          if (d.topics || d.themes) THEME_LIST = d.themes || d.topics || THEME_LIST;
+        }
+      }).catch(function () {});
+  }
+
   function init() {
-    fetchJson("case-briefings.json").then(function (d) {
-      ITEMS = (d && d.items) || [];
-      var saved = _savedState && _savedState.activeCases;
-      ITEMS.forEach(function (i) {
-        activeCases[i.slug] = saved && (i.slug in saved) ? !!saved[i.slug] : true;
-      });
+    Promise.all([
+      loadAdminCases(),
+      fetchJson("case-briefings.json").then(function (d) { BRIEFS = (d && d.items) || []; }).catch(function () { BRIEFS = []; }),
+    ]).then(function () {
+      rebuildItems();
       var meta = document.getElementById("ud-meta");
       if (meta) {
         var latest = ITEMS.reduce(function (acc, i) { return (i.updated || "") > acc ? i.updated : acc; }, "");
@@ -262,10 +324,182 @@
       renderCaseFilter();
       render();
       applyHash();
-    }).catch(function () {
-      var tbody = document.getElementById("ub-tbody");
-      if (tbody) tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">No case briefings yet — they generate on the next daily run.</td></tr>';
     });
+  }
+
+
+  // ── Case editor / wizard (writes via /api/admin/cases; same admin session) ──
+  var editingSlug = null;
+  var editingClaims = null;
+
+  function slugify(x) { return (x || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
+  function ceEl(id) { return document.getElementById(id); }
+  function ceErr(msg) { var e = ceEl("ce-err"); if (!e) return; e.textContent = msg || ""; e.style.display = msg ? "block" : "none"; }
+  function ceFootMsg(msg) { var e = ceEl("ce-foot-msg"); if (e) e.textContent = msg || ""; }
+
+  function themesForEditor() {
+    if (THEME_LIST && THEME_LIST.length) return THEME_LIST;
+    return Object.keys(THEMES).map(function (slug) { return { slug: slug, display_name: THEMES[slug].name, emoji: THEMES[slug].emoji }; });
+  }
+  function renderThemeChecks(selected) {
+    var box = ceEl("ce-themes"); if (!box) return;
+    var sel = selected || [], list = themesForEditor();
+    if (!list.length) { box.innerHTML = '<span class="ce-hint">No themes loaded.</span>'; return; }
+    box.innerHTML = list.map(function (t) {
+      var on = sel.indexOf(t.slug) !== -1;
+      return '<label class="ce-theme"><input type="checkbox" value="' + esc(t.slug) + '"' + (on ? " checked" : "") + ">" +
+        (t.emoji ? esc(t.emoji) + " " : "") + esc(t.display_name || t.slug) + "</label>";
+    }).join("");
+  }
+  function checkedThemes() {
+    return Array.prototype.slice.call(document.querySelectorAll("#ce-themes input:checked")).map(function (c) { return c.value; });
+  }
+  function syncTypeVisibility() {
+    var t = ceEl("ce-srctype").value;
+    ceEl("ce-cl-fields").style.display = t === "courtlistener" ? "" : "none";
+    ceEl("ce-agent-fields").style.display = t === "claims_agent" ? "" : "none";
+  }
+
+  function openEditor(slug) {
+    var a = slug ? (ADMIN[slug] || {}) : {};
+    editingSlug = slug || null;
+    editingClaims = a.claims_administrator || null;
+    ceErr(""); ceFootMsg("");
+    ceEl("ce-title").textContent = slug ? ("Edit: " + (a.display_name || slug)) : "New case";
+    ceEl("ce-name").value = a.display_name || "";
+    ceEl("ce-slug").value = a.slug || "";
+    ceEl("ce-slug").disabled = !!slug;
+    ceEl("ce-slug-note").textContent = slug ? "(fixed)" : "(auto from name if blank)";
+    ceEl("ce-status").value = a.status || "";
+    ceEl("ce-sync").value = a.sync || "active";
+    renderThemeChecks(a.topics || []);
+    var ds = a.docket_source || { type: "courtlistener" };
+    ceEl("ce-srctype").value = ds.type === "claims_agent" ? "claims_agent" : "courtlistener";
+    ceEl("ce-docketid").value = ds.docket_id || "";
+    ceEl("ce-docketurl").value = ds.url || "";
+    var ca = a.claims_administrator || {};
+    ceEl("ce-claimsurl").value = (ds.type === "claims_agent" && ca.url) || "";
+    ceEl("ce-keydates").value = (ds.type === "claims_agent" && ca.key_dates_url) || "";
+    var cc = a.case || {};
+    ceEl("ce-parties").value = cc.parties || "";
+    ceEl("ce-court").value = cc.court || "";
+    ceEl("ce-casenum").value = cc.case_number || "";
+    ceEl("ce-judge").value = cc.judge || "";
+    ceEl("ce-guidance").value = a.scan_guidance || "";
+    ceEl("ce-lookup-msg").textContent = "Enter the CourtListener docket ID and click Look up to auto-fill parties, court, case number, and judge.";
+    syncTypeVisibility();
+    ceEl("ce-save").textContent = slug ? "Save changes" : "Create case";
+    ceEl("ce-del").style.display = slug ? "" : "none";
+    ceEl("ce-overlay").style.display = "flex";
+    ceEl("ce-name").focus();
+  }
+  function closeEditor() { ceEl("ce-overlay").style.display = "none"; editingSlug = null; }
+
+  function doLookup() {
+    var id = (ceEl("ce-docketid").value || "").trim();
+    if (!id) { ceEl("ce-lookup-msg").textContent = "Enter a docket ID first."; return; }
+    ceEl("ce-lookup-msg").textContent = "Looking up…";
+    fetch("/api/admin/courtlistener-lookup?docket_id=" + encodeURIComponent(id), { credentials: "include" })
+      .then(function (r) { return r.json(); }).then(function (d) {
+        if (!d || !d.ok) { ceEl("ce-lookup-msg").textContent = (d && d.error) || "Lookup failed"; return; }
+        if (d.case_name) ceEl("ce-parties").value = d.case_name;
+        if (d.court) ceEl("ce-court").value = d.court;
+        if (d.docket_number) ceEl("ce-casenum").value = d.docket_number;
+        if (d.judge) ceEl("ce-judge").value = d.judge;
+        if (d.docket_url) ceEl("ce-docketurl").value = d.docket_url;
+        ceEl("ce-lookup-msg").textContent = "Filled from CourtListener ✓";
+      }).catch(function () { ceEl("ce-lookup-msg").textContent = "Lookup failed — network error"; });
+  }
+
+  function saveCase() {
+    var name = (ceEl("ce-name").value || "").trim();
+    var slug = editingSlug || slugify(ceEl("ce-slug").value || name);
+    var srctype = ceEl("ce-srctype").value;
+    var themes = checkedThemes();
+    if (!name) { ceErr("Display name is required"); return; }
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) { ceErr("Slug must be kebab-case"); return; }
+    if (!editingSlug && ADMIN[slug]) { ceErr("A case with that slug already exists"); return; }
+    if (!themes.length) { ceErr("Tag at least one theme"); return; }
+    if (!(ceEl("ce-parties").value || "").trim()) { ceErr("Parties are required"); return; }
+    if (srctype === "courtlistener" && !(ceEl("ce-docketid").value || "").trim()) { ceErr("Docket ID is required for a CourtListener docket"); return; }
+    if (srctype === "claims_agent" && !(ceEl("ce-claimsurl").value || "").trim()) { ceErr("A claims-agent URL is required"); return; }
+    var claims = srctype === "claims_agent"
+      ? { name: "", url: (ceEl("ce-claimsurl").value || "").trim(), key_dates_url: (ceEl("ce-keydates").value || "").trim() }
+      : editingClaims;
+    var payload = {
+      slug: slug, display_name: name, type: "case",
+      status: (ceEl("ce-status").value || "").trim() || "active",
+      sync: ceEl("ce-sync").value, topics: themes,
+      case: { parties: (ceEl("ce-parties").value || "").trim(), court: (ceEl("ce-court").value || "").trim(),
+              case_number: (ceEl("ce-casenum").value || "").trim(), judge: (ceEl("ce-judge").value || "").trim() },
+      docket_source: srctype === "courtlistener"
+        ? { type: "courtlistener", docket_id: (ceEl("ce-docketid").value || "").trim() || null, url: (ceEl("ce-docketurl").value || "").trim(), awaiting_sync: false }
+        : { type: "claims_agent", docket_id: null, url: "", awaiting_sync: false },
+      claims_administrator: claims || null,
+      scan_guidance: ceEl("ce-guidance").value || "",
+    };
+    ceErr(""); ceFootMsg("Saving…"); ceEl("ce-save").disabled = true;
+    fetch("/api/admin/cases", { method: editingSlug ? "PUT" : "POST", headers: { "Content-Type": "application/json" }, credentials: "include", body: JSON.stringify(payload) })
+      .then(function (r) { return r.json(); }).then(function (d) {
+        ceEl("ce-save").disabled = false;
+        if (!d || !d.ok) { ceErr((d && d.error) || "Failed to save"); ceFootMsg(""); return; }
+        closeEditor(); reloadCases();
+      }).catch(function () { ceEl("ce-save").disabled = false; ceErr("Save failed — network error"); ceFootMsg(""); });
+  }
+
+  function deleteCase() {
+    if (!editingSlug) return;
+    if (!window.confirm("Delete case \"" + editingSlug + "\"? This removes its config, data, page, and uploads and can't be undone. Consider Export first.")) return;
+    ceFootMsg("Deleting…");
+    fetch("/api/admin/cases?slug=" + encodeURIComponent(editingSlug), { method: "DELETE", credentials: "include" })
+      .then(function (r) { return r.json(); }).then(function (d) {
+        if (!d || !d.ok) { ceErr((d && d.error) || "Failed to delete"); ceFootMsg(""); return; }
+        closeEditor(); reloadCases();
+      }).catch(function () { ceErr("Delete failed — network error"); ceFootMsg(""); });
+  }
+
+  function syncNow(slug, btn) {
+    if (btn) { btn.disabled = true; btn.textContent = "…"; }
+    fetch("/api/admin/sync-case", { method: "POST", headers: { "Content-Type": "application/json" }, credentials: "include", body: JSON.stringify({ slug: slug }) })
+      .then(function (r) { return r.json(); }).then(function (d) {
+        if (btn) { btn.disabled = false; btn.textContent = "Sync"; }
+        var meta = document.getElementById("ud-meta");
+        if (meta) meta.textContent = (d && d.ok) ? (d.note || "Sync started for " + slug) : ("Sync failed: " + ((d && d.error) || "error"));
+      }).catch(function () { if (btn) { btn.disabled = false; btn.textContent = "Sync"; } });
+  }
+
+  function exportCase(slug) {
+    fetch("/api/admin/case-export?slug=" + encodeURIComponent(slug), { credentials: "include" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("export failed");
+        var cd = r.headers.get("Content-Disposition") || "", m = /filename="([^"]+)"/.exec(cd);
+        return r.blob().then(function (blob) {
+          var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+          a.download = m ? m[1] : ("case-" + slug + ".zip");
+          document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
+        });
+      }).catch(function () { var meta = document.getElementById("ud-meta"); if (meta) meta.textContent = "Export failed for " + slug; });
+  }
+
+  function reloadCases() {
+    Promise.all([
+      loadAdminCases(),
+      fetchJson("case-briefings.json").then(function (d) { BRIEFS = (d && d.items) || []; }).catch(function () {}),
+      fetchJson("cases/data/_manifest.json").then(function (man) { MANIFEST = man || []; }).catch(function () {}),
+    ]).then(function () { rebuildItems(); renderCaseFilter(); render(); });
+  }
+
+  function wireEditor() {
+    var nb = ceEl("ce-new"); if (nb) nb.addEventListener("click", function () { openEditor(null); });
+    var x = ceEl("ce-close"); if (x) x.addEventListener("click", closeEditor);
+    var c = ceEl("ce-cancel"); if (c) c.addEventListener("click", closeEditor);
+    var sv = ceEl("ce-save"); if (sv) sv.addEventListener("click", saveCase);
+    var dl = ceEl("ce-del"); if (dl) dl.addEventListener("click", deleteCase);
+    var lk = ceEl("ce-lookup"); if (lk) lk.addEventListener("click", doLookup);
+    var st = ceEl("ce-srctype"); if (st) st.addEventListener("change", syncTypeVisibility);
+    var ov = ceEl("ce-overlay");
+    if (ov) ov.addEventListener("mousedown", function (ev) { if (ev.target === ov) closeEditor(); });
+    document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && ceEl("ce-overlay") && ceEl("ce-overlay").style.display !== "none") closeEditor(); });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -288,13 +522,17 @@
 
     // Display names for theme tags follow /admin/intelligence renames.
     fetchJson("themes.json").then(function (d) {
-      ((d && d.themes) || []).forEach(function (t) {
+      var list = (d && d.themes) || [];
+      THEME_LIST = list.filter(function (t) { return t && t.slug; })
+        .map(function (t) { return { slug: t.slug, display_name: t.display_name || t.slug, emoji: t.emoji || "📰" }; });
+      list.forEach(function (t) {
         if (!t || !t.slug) return;
         var c = THEME_COLORS[t.slug] || { bg: "#E0E7FF", fg: "#3730a3" };
         THEMES[t.slug] = { name: t.display_name || t.slug, emoji: t.emoji || "📰", bg: c.bg, fg: c.fg };
       });
       render();
     }).catch(function () {});
+    wireEditor();
 
     // Case pill colors + manifest defaults roam with the shared prefs store.
     fetchJson("cases/data/_manifest.json").then(function (man) {
