@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
+    "display_name": "State of Oregon v. United States / Burlap and Barrel v. United States (Section 122 — Federal Circuit appeal)",
+    "case_name": "State of Oregon, et al. v. United States; Burlap and Barrel, Inc. v. United States",
+    "court": "U.S. Court of Appeals for the Federal Circuit (on appeal from CIT)",
+    "case_number": "1:26-cv-01606",
+    "judge": "Timothy C. Stanceu",
+    "docket_id": "72381015",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/72381015/-/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
