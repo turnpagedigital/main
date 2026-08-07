@@ -461,7 +461,8 @@
       "date": "2026-07-10",
       "first_seen": "2026-08-07",
       "status": "new",
-      "vote": 1
+      "vote": 1,
+      "snooze_until": "2026-08-14T13:00:00.000Z"
     },
     {
       "id": "2f567795e1",
@@ -629,8 +630,7 @@
       "source_name": "Chambers & Partners",
       "date": "2025-12-16",
       "first_seen": "2026-08-07",
-      "status": "new",
-      "snooze_until": "2026-08-14T13:00:00.000Z"
+      "status": "new"
     },
     {
       "id": "d162ca1e3d",
