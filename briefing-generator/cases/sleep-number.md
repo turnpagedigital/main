@@ -3,6 +3,7 @@ slug: sleep-number
 display_name: Sleep Number
 type: case
 status: active
+sync: archived
 topics:
   - bankruptcy-creditor-rights
 case:
