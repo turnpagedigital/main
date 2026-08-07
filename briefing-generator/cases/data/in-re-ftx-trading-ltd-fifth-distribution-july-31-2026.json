@@ -23,5 +23,42 @@
     "url": "https://restructuring.ra.kroll.com/ftx/Home-DocketInfo",
     "key_dates_url": ""
   },
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "FTX begins fifth creditor payout of $900M, total repayments reach $10B",
+      "url": "https://cryptorank.io/news/feed/bc44a-ftx-fifth-creditor-payout-900m",
+      "source": "CryptoRank (sourced from CoinEdition)",
+      "date": "2026-07-31",
+      "summary": "The FTX Recovery Trust initiated its fifth creditor distribution of $900 million on July 31, with verified claimants receiving funds via wire transfers or designated exchanges, bringing cumulative repayments to approximately $10 billion since FTX's Chapter 11 filing in November 2022."
+    },
+    {
+      "headline": "FTX to distribute roughly $900 million to creditors in fifth wave of payouts",
+      "url": "https://www.theblock.co/post/408803/ftx-to-distribute-roughly-900-million-to-creditors-in-fifth-wave-of-payouts",
+      "source": "The Block",
+      "date": "2026-07-17",
+      "summary": "FTX announced it will begin distributing approximately $900 million to creditors on July 31, 2026 — its fifth distribution under its Chapter 11 plan — bringing cumulative repayments to nearly $10 billion since payouts began in 2025. Eligible Convenience and Non-Convenience class claimants who met the June 16 record date will receive funds within three business days via BitGo, Kraken, or Payoneer."
+    },
+    {
+      "headline": "FTX to Distribute $900M to Creditors in Fifth Payment Round",
+      "url": "https://cointelegraph.com/news/ftx-distribute-millions-creditors-fifth-payment-round",
+      "source": "CoinTelegraph",
+      "date": "2026-07-17",
+      "summary": "The FTX Recovery Trust announced its fifth creditor distribution of ~$900 million starting July 31, covering convenience and non-convenience classes with recoveries ranging from 103% to 120% of allowed claim values based on November 2022 petition-date prices. The round follows a $2.2 billion March 2026 distribution, bringing total estate payouts to approximately $10 billion."
+    },
+    {
+      "headline": "FTX to Pay Creditors Another $900M in Fifth Bankruptcy Distribution",
+      "url": "https://finance.yahoo.com/markets/crypto/articles/ftx-pay-creditors-another-900m-202800082.html",
+      "source": "Yahoo Finance",
+      "date": "2026-07-17",
+      "summary": "FTX's fifth distribution of ~$900 million will lift cumulative recoveries to 105% for Dotcom and U.S. customer entitlement claims, and to 103% for general unsecured and digital asset loan claims, calculated against 2022 petition-date valuations. A separate $18 million second payment will also be made to preferred equity holders from the Preferred Shareholder Remission Fund Trust on July 31."
+    },
+    {
+      "headline": "FTX Plans to Pay Creditors $900 Million as Fifth Distribution Starts on July 31",
+      "url": "https://news.bitcoin.com/ftx-plans-to-pay-creditors-900-million-as-fifth-distribution-starts-on-july-31/",
+      "source": "Bitcoin News",
+      "date": "2026-07-17",
+      "summary": "FTX Trading Ltd. and the FTX Recovery Trust will distribute ~$900 million beginning July 31, with Class 7 Convenience Claims reaching a cumulative 120% recovery and other classes hitting 103–105%. The estate has not announced a date for a sixth distribution, and disputed-claims resolution and final wind-down work continue."
+    }
+  ],
+  "events": []
 }

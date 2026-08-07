@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T02:33:55+00:00",
+  "updated": "2026-08-07T14:14:46+00:00",
   "items": [
     {
       "id": "0f27e00816",
@@ -17,6 +17,21 @@
       "status": "new"
     },
     {
+      "id": "6c60e4be59",
+      "case_name": "Hasson v. Comcast Cable Communications (Xfinity Data Breach)",
+      "parties": "Hasson et al. v. Comcast Cable Communications, LLC",
+      "court": "E.D. Pa., Case No. 2:23-cv-05039-JMY",
+      "case_number": "2:23-cv-05039-JMY",
+      "docket_url": "",
+      "why": "The $117.5M claims-made fund has an August 14, 2026 claims deadline — within the next 10 days — covering approximately 36 million impacted Xfinity customers; low participation relative to the class size will drive up per-claim recovery on filed positions, and the desk should monitor final approval timing and fee award against the net fund.",
+      "theme": "billion-dollar-class-actions",
+      "source_url": "https://openclassactions.com/news/comcast-data-breach-class-action-settlement.php",
+      "source_name": "OpenClassActions.com",
+      "date": "2026-08-07",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
       "id": "908ad26544",
       "case_name": "In re MOVEit Transfer Data Breach MDL — Rolling Sub-Fund Approvals (UBT / GRIPA / EY-BOA)",
       "parties": "In re MOVEit Transfer Data Security Breach Litigation (UBT, GRIPA, EY/BOA sub-classes)",
@@ -28,6 +43,36 @@
       "source_url": "https://www.mad.uscourts.gov/caseinfo/multi-district-litigation.htm",
       "source_name": "U.S. District Court, D. Mass. (official court site)",
       "date": "2026-08-06",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "b2a0c32b95",
+      "case_name": "In re Estée Lauder Companies Securities Litigation ($210M Settlement)",
+      "parties": "Lead plaintiff class v. The Estée Lauder Companies Inc. et al.",
+      "court": "S.D.N.Y. (fairness hearing Aug. 20, 2026)",
+      "case_number": "",
+      "docket_url": "",
+      "why": "A $210M PSLRA securities class action settlement — with a claims filing deadline of August 5, 2026 (just passed) and final approval hearing set for August 20, 2026 — is now squarely in the post-claims/pre-distribution window; the desk should evaluate per-share recovery (~$0.68/share pre-fees) against the class period (Feb 2022–Feb 2025) loss pool and watch for any objector filings ahead of the August 20 hearing that could create appellate delay.",
+      "theme": "billion-dollar-class-actions",
+      "source_url": "https://openclassactions.com/securities-class-actions.php",
+      "source_name": "OpenClassActions.com / Levi & Korsinsky",
+      "date": "2026-08-05",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "8edbbca63f",
+      "case_name": "In re Roman Catholic Archbishop of Baltimore (Competing Plans Rejected)",
+      "parties": "Roman Catholic Archbishop of Baltimore (debtor); abuse claimant creditor constituencies",
+      "court": "Bankr. D. Md. (est.)",
+      "case_number": "",
+      "docket_url": "",
+      "why": "On August 5, 2026, the bankruptcy judge rejected competing Ch. 11 plans in the Baltimore Diocese case — a textbook busted-plan scenario with thousands of abuse claimants, creating fresh plan-confirmation/cramdown and absolute-priority-rule questions and reopening creditor recovery strategy for claim traders.",
+      "theme": "bankruptcy-creditor-rights",
+      "source_url": "https://www.law360.com/bankruptcy-authority/articles/2506655/catching-up-with-new-bankruptcy-case-action",
+      "source_name": "Law360 Bankruptcy Authority",
+      "date": "2026-08-05",
       "first_seen": "2026-08-07",
       "status": "new"
     },
@@ -62,6 +107,36 @@
       "status": "new"
     },
     {
+      "id": "278bce75b1",
+      "case_name": "In re Johnson & Johnson Talcum Powder Products Liability MDL",
+      "parties": "In re: Johnson & Johnson Talcum Powder Products Marketing, Sales Practices and Products Liability Litigation",
+      "court": "D.N.J. (Judge Michael A. Shipp), MDL-2738",
+      "case_number": "MDL-2738",
+      "docket_url": "",
+      "why": "The August 3, 2026 JPML docket report shows 68,914 actions still pending (out of 71,601 historical) — the largest active MDL in the country by case count — signaling that the mass-tort resolution process (following failed bankruptcy maneuvers) remains far from complete; any global settlement or batching ruling at this scale would be a watershed claims-trading event.",
+      "theme": "billion-dollar-class-actions",
+      "source_url": "https://www.jpml.uscourts.gov/sites/jpml/files/Pending_MDL_Dockets_By_Actions_Pending-August-3-2026.pdf",
+      "source_name": "U.S. Judicial Panel on Multidistrict Litigation",
+      "date": "2026-08-03",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "7f7e61b75f",
+      "case_name": "In re Uniroyal (Retiree Committee)",
+      "parties": "Uniroyal (debtor); retiree creditor committee; general unsecured creditors",
+      "court": "To be confirmed",
+      "case_number": "",
+      "docket_url": "",
+      "why": "On August 3, 2026, the court approved a retiree committee in the Uniroyal Ch. 11, signaling a contested multi-constituency case likely involving asbestos or mass-tort legacy liabilities where retiree benefit claims and tort claimants will compete for estate assets — a live creditor-recovery and inter-creditor priority battleground.",
+      "theme": "bankruptcy-creditor-rights",
+      "source_url": "https://www.law360.com/bankruptcy-authority/articles/2506655/catching-up-with-new-bankruptcy-case-action",
+      "source_name": "Law360 Bankruptcy Authority",
+      "date": "2026-08-03",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
       "id": "07b2393e6a",
       "case_name": "In re Vi-Jon, LLC",
       "parties": "Vi-Jon, LLC (debtor); Emprise Group, Inc. / Emprise HPC LLC (non-debtor parent/affiliate/RSA party); Ad Hoc Plaintiffs' Group representing 80%+ of talc claimants",
@@ -72,6 +147,36 @@
       "theme": "bankruptcy-creditor-rights",
       "source_url": "https://bondoro.com/vijon/",
       "source_name": "Bondoro",
+      "date": "2026-08-02",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "c48b76cc55",
+      "case_name": "In re Bitcoin Depot Inc. — Lien Challenge Deadline / Asset Sale",
+      "parties": "Bitcoin Depot Inc. (NASDAQ: BTM) and affiliates, as debtors; Silverview Credit Partners LP, as secured lender; unsecured creditors",
+      "court": "Bankr. S.D. Tex.",
+      "case_number": "26-90528",
+      "docket_url": "",
+      "why": "The non-debtor/creditor-committee 75-day challenge window to contest Silverview's lien, priority, and $3.1M exit fee expired around August 2, 2026; any unasserted challenge is now waived. The desk should track whether a committee challenge was filed before the deadline, the disposition of the $17.2M segregated reserve at People First Bank, and the pending 363 asset sale process — a clean creditor-rights and sale-proceeds-allocation play.",
+      "theme": "crypto-insolvency",
+      "source_url": "https://bondoro.com/bitcoin-depot/",
+      "source_name": "Bondoro",
+      "date": "2026-08-02",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "acb45ff577",
+      "case_name": "In re AT&T Data Breach Litigation",
+      "parties": "Consolidated plaintiffs v. AT&T Inc.",
+      "court": "N.D. Tex. (Judge Ada E. Brown)",
+      "case_number": "",
+      "docket_url": "",
+      "why": "Judge Brown held the final approval hearing on January 15, 2026, but as of August 2, 2026 has still not issued a ruling on the $177M combined fund — a live approval-overhang that, once resolved, triggers the distribution clock across ~99M notice recipients with only ~4.38M claims filed, implying a very low claims rate and material per-claim upside for filed positions. Fee-award and Kroll validation math are unresolved denominators.",
+      "theme": "billion-dollar-class-actions",
+      "source_url": "https://www.brightdefense.com/news/att-data-breach/",
+      "source_name": "Bright Defense",
       "date": "2026-08-02",
       "first_seen": "2026-08-07",
       "status": "new"
@@ -122,6 +227,21 @@
       "status": "new"
     },
     {
+      "id": "3f3e5fdc45",
+      "case_name": "In re Social Media Addiction MDL (School-District Bellwether Trials)",
+      "parties": "Various school districts et al. v. Meta Platforms, Inc.; Alphabet Inc.; Snap Inc.; TikTok Inc. et al.",
+      "court": "N.D. Cal. (Judge Yvonne Gonzalez Rogers)",
+      "case_number": "",
+      "docket_url": "",
+      "why": "With summary judgment motions filed and six bellwether trials scheduled for summer 2026, the MDL — comprising over 2,000 lawsuits — is entering the trial-pressure phase that classically pivots defendants toward global settlement; a bellwether outcome (win or loss) would immediately reset settlement-value anchors across the full docket and create claims-trading opportunity at scale.",
+      "theme": "billion-dollar-class-actions",
+      "source_url": "https://www.aei.org/technology-and-innovation/federal-multidistrict-litigation-and-social-media-addiction-onward-to-summary-judgment-and-bellwether-trials/",
+      "source_name": "American Enterprise Institute",
+      "date": "2026-07-28",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
       "id": "591181091a",
       "case_name": "In re Storj Labs, Inc. — Ch. 11 (W.D.W. Va.)",
       "parties": "Storj Labs, Inc. (debtor); STORJ token holders; prepetition investors",
@@ -152,6 +272,21 @@
       "status": "new"
     },
     {
+      "id": "7ffb55ca47",
+      "case_name": "In re BitMart Exchange (Wind-Down / Customer-Fund Watch)",
+      "parties": "BitMart (operator entity unconfirmed); millions of retail users across 180 jurisdictions",
+      "court": "No formal insolvency proceeding filed as of Aug 7, 2026 — monitoring for receivership or Ch. 11 filing",
+      "case_number": "",
+      "docket_url": "",
+      "why": "BitMart announced an abrupt, phased wind-down on July 26, 2026, halting new deposits and trading for ~13M users; post-announcement on-chain data showed depleted ETH and stablecoin wallet balances with only ~$805K in tracked withdrawals, sparking solvency-concern reporting. Futures positions are force-closed Aug 10, and all remaining balances face 'manual liquidation' Aug 26 — a near-term customer-property crystallization event the desk should be positioned ahead of any formal insolvency filing.",
+      "theme": "crypto-insolvency",
+      "source_url": "https://www.cryptotimes.io/2026/07/27/bitmart-exit-sparks-concerns-as-withdrawals-trickle-out-after-shutdown-notice/",
+      "source_name": "CryptoTimes",
+      "date": "2026-07-27",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
       "id": "292ec34e93",
       "case_name": "State of Oregon v. United States / Burlap and Barrel v. United States (Section 122 — Federal Circuit appeal)",
       "parties": "State of Oregon, et al. v. United States; Burlap and Barrel, Inc. v. United States",
@@ -163,6 +298,36 @@
       "source_url": "https://www.tradelawcounsel.com/insights-news/2026/7/4/section-122-surcharge-sunsets-july-24-what-importers-should-do-beforeand-afterthe-150-day-clock-runs-out",
       "source_name": "Nakachi Eckhardt & Jacobson (Trade Law Counsel)",
       "date": "2026-07-24",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "383301202c",
+      "case_name": "In re HDR Global Trading / BitMEX (Solvent Wind-Down)",
+      "parties": "HDR Global Trading Ltd. (BitMEX parent) and affiliates; retail and institutional trading customers",
+      "court": "No U.S. insolvency proceeding; offshore wind-down — monitoring for regulatory receivership or customer-fund claims",
+      "case_number": "",
+      "docket_url": "",
+      "why": "BitMEX announced shutdown on July 23, 2026 after 11 years, citing $200M+ in prior regulatory fines, failed sale process, and daily volume collapse to ~$400K; the parent stated assets exceeded liabilities. The desk should track customer redemption mechanics, any regulator-initiated freeze, and the wind-down's treatment of the BMEX token (down 90%+) — a real-time case study in token/asset tracing and distribution sequencing during an exchange exit marketed as 'solvent.'",
+      "theme": "crypto-insolvency",
+      "source_url": "https://www.coindesk.com/business/2026/07/27/cloud-data-firm-storj-files-for-chapter-11-extending-a-week-of-crypto-failures-token-slides-16",
+      "source_name": "CoinDesk",
+      "date": "2026-07-23",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "0acfc1ac25",
+      "case_name": "In re Trajector Holdings, LLC",
+      "parties": "Trajector Holdings, LLC, et al. (22 debtors); Deutsche Bank AG (secured lender); Aylstock, Witkin, Kreis & Overholtz (class-action plaintiffs)",
+      "court": "Bankr. M.D. Fla. (Jacksonville Div.), Judge Brown",
+      "case_number": "26-03286",
+      "docket_url": "",
+      "why": "Trajector and 21 affiliates filed Ch. 11 on July 23 with $100M–$500M in liabilities and funds projected for unsecured creditors, while a pending nationwide class action alleging deceptive veteran overcharging (potentially thousands of claimants) is now stayed — raising classic mass-claimant channeling and bar-date strategy questions alongside a founder governance dispute that could complicate plan confirmation.",
+      "theme": "bankruptcy-creditor-rights",
+      "source_url": "https://bondoro.com/trajector-filing-alert/",
+      "source_name": "Bondoro",
+      "date": "2026-07-23",
       "first_seen": "2026-08-07",
       "status": "new"
     },
@@ -210,23 +375,6 @@
       "date": "2026-07-21",
       "first_seen": "2026-08-07",
       "status": "new"
-    },
-    {
-      "id": "5e8f973348",
-      "case_name": "In re FTX Trading Ltd. — Fifth Distribution (July 31, 2026)",
-      "parties": "FTX Trading Ltd. d/b/a FTX.com and FTX Recovery Trust",
-      "court": "Bankr. D. Del.",
-      "case_number": "22-11068 (JTD)",
-      "docket_url": "",
-      "why": "The ~$900M Fifth Distribution commenced July 31, 2026, paying incremental percentages across Class 5A Dotcom (105% cumulative), Class 5B U.S. Customer (105%), Class 6A/6B GUC/Digital Asset Loan (103%), and Class 7 Convenience (120%); a ~$0.6B disputed-claims reserve reduction is pending court approval, which, if granted, releases additional cash to allowed-claim holders and reprices the secondary market for remaining disputed FTX paper — directly on-thesis for distribution-mechanics and claim-va",
-      "theme": "crypto-insolvency",
-      "source_url": "https://www.prnewswire.com/news-releases/ftx-announces-fifth-distribution-of-approximately-900-million-to-creditors-on-july-31-2026-302828726.html",
-      "source_name": "PR Newswire / FTX Recovery Trust",
-      "date": "2026-07-17",
-      "first_seen": "2026-08-07",
-      "status": "tracked",
-      "triaged_at": "2026-08-07T02:45:37.631Z",
-      "tracked_slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026"
     },
     {
       "id": "58d48af0fa",
@@ -289,6 +437,36 @@
       "status": "new"
     },
     {
+      "id": "cd969fe577",
+      "case_name": "Publishers v. Google LLC (Gemini Books)",
+      "parties": "Major book publishers v. Google LLC",
+      "court": "Not yet confirmed (filed July 2026)",
+      "case_number": "",
+      "docket_url": "",
+      "why": "Filed July 2026, this is the newest major AI-copyright action: publishers allege Google trained Gemini on books provided to Google Books for search-snippet purposes only; the complaint reportedly cites an internal Google document warning of '$10Bs-$100Bs in potential fines,' making it the highest-pled exposure claim in the book-copyright sub-track and a critical comparator for § 107(4) market-harm analysis across the system.",
+      "theme": "llm-class-action",
+      "source_url": "https://www.troveo.ai/resources/ai-training-data-lawsuits",
+      "source_name": "Troveo AI Lawsuit Tracker",
+      "date": "2026-07-01",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "2a1c0bed44",
+      "case_name": "Thomson Reuters v. Ross Intelligence (3d Cir. No. 25-2153)",
+      "parties": "Thomson Reuters Enterprise Centre GmbH et al. v. Ross Intelligence, Inc.",
+      "court": "U.S. Court of Appeals for the Third Circuit",
+      "case_number": "25-2153",
+      "docket_url": "",
+      "why": "Oral argument was held June 11, 2026, and the panel's ruling — the first federal appellate decision on whether AI training on copyrighted works is fair use — remains pending; the Third Circuit's skepticism that a system serving the same end function as the original can satisfy fair use (factor 1) and its market-harm framing (factor 4) will set the appellate template that every district court in this system, including In re OpenAI MDL 3143 and NYT v. OpenAI, must reckon with, and a reversal could",
+      "theme": "llm-class-action",
+      "source_url": "https://www.bakerbotts.com/thought-leadership/publications/2026/july/third-circuit-hears-oral-argument",
+      "source_name": "Baker Botts (July 2026)",
+      "date": "2026-07-01",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
       "id": "a15c83e1b6",
       "case_name": "DOJ Federal Circuit Appeal of CIT Universal IEEPA Refund Order (Atmus / Euro-Notions line)",
       "parties": "United States v. Atmus Filtration, Inc. et al. / Euro-Notions Florida LLC et al.",
@@ -334,6 +512,51 @@
       "status": "new"
     },
     {
+      "id": "7b40c3be6c",
+      "case_name": "Getty Images (US) v. Stability AI (N.D. Cal.)",
+      "parties": "Getty Images (US), Inc. v. Stability AI, Inc. et al.",
+      "court": "U.S. District Court for the Northern District of California",
+      "case_number": "3:25-cv-06891",
+      "docket_url": "",
+      "why": "On April 24, 2026, Judge Trina Thompson denied Stability AI's motion to dismiss — allowing Getty's copyright infringement, trademark infringement, unfair competition, and trademark dilution claims over 12 million scraped photographs to proceed — and the next case management conference is set for November 5, 2026; this US action is doctrinally independent of the excluded UK Court of Appeal proceeding and will be the primary venue for litigating whether AI image-model training on unlicensed stock ",
+      "theme": "llm-class-action",
+      "source_url": "https://news.bloomberglaw.com/ip-law/gettys-ai-copyright-suit-survives-stabilitys-bid-for-dismissal",
+      "source_name": "Bloomberg Law",
+      "date": "2026-04-24",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "b6ff5d1c32",
+      "case_name": "Penguin Random House v. OpenAI (Munich)",
+      "parties": "Penguin Random House (Verlagsgruppe Random House GmbH) v. OpenAI",
+      "court": "Landgericht München I (Munich Regional Court I)",
+      "case_number": "",
+      "docket_url": "",
+      "why": "Filed March 27, 2026, this is the first major German-language trade-book publisher action against OpenAI, pending before the same Munich court that ruled against OpenAI in GEMA v. OpenAI (November 2025); a second adverse German ruling would deepen the EU / DSM-Directive Art. 4 opt-out pressure on OpenAI's European training posture and provide international comparator precedent relevant to the desk's cross-border fair-use framework analysis.",
+      "theme": "llm-class-action",
+      "source_url": "https://ailawsuittracker.com/copyright/",
+      "source_name": "AI Lawsuit Tracker",
+      "date": "2026-03-27",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
+      "id": "0f43f7caa6",
+      "case_name": "Britannica / Merriam-Webster v. OpenAI",
+      "parties": "Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.",
+      "court": "U.S. District Court (filed March 2026; district not confirmed in sources)",
+      "case_number": "",
+      "docket_url": "",
+      "why": "Filed March 2026, this reference-publisher action is a distinct doctrinal sub-track — reference works (encyclopedias, dictionaries) present a purer market-substitution argument than narrative books because ChatGPT directly replaces look-up queries, strengthening the § 107(4) fourth-factor claim; the case is early-stage and not yet on the desk's tracking list, making it a timely prospect before discovery opens.",
+      "theme": "llm-class-action",
+      "source_url": "https://manuscriptreport.com/data/ai-copyright-lawsuits",
+      "source_name": "Manuscript Report AI Copyright Tracker",
+      "date": "2026-03-01",
+      "first_seen": "2026-08-07",
+      "status": "new"
+    },
+    {
       "id": "f4991afab4",
       "case_name": "Getty Images (US) v. Stability AI — UK Court of Appeal",
       "parties": "Getty Images (US), Inc. & ors v. Stability AI Limited",
@@ -362,6 +585,23 @@
       "date": "2025-12-11",
       "first_seen": "2026-08-07",
       "status": "new"
+    },
+    {
+      "id": "5e8f973348",
+      "case_name": "In re FTX Trading Ltd. — Fifth Distribution (July 31, 2026)",
+      "parties": "FTX Trading Ltd. d/b/a FTX.com and FTX Recovery Trust",
+      "court": "Bankr. D. Del.",
+      "case_number": "22-11068 (JTD)",
+      "docket_url": "",
+      "why": "The ~$900M Fifth Distribution commenced July 31, 2026, paying incremental percentages across Class 5A Dotcom (105% cumulative), Class 5B U.S. Customer (105%), Class 6A/6B GUC/Digital Asset Loan (103%), and Class 7 Convenience (120%); a ~$0.6B disputed-claims reserve reduction is pending court approval, which, if granted, releases additional cash to allowed-claim holders and reprices the secondary market for remaining disputed FTX paper — directly on-thesis for distribution-mechanics and claim-va",
+      "theme": "crypto-insolvency",
+      "source_url": "https://www.prnewswire.com/news-releases/ftx-announces-fifth-distribution-of-approximately-900-million-to-creditors-on-july-31-2026-302828726.html",
+      "source_name": "PR Newswire / FTX Recovery Trust",
+      "date": "2026-07-17",
+      "first_seen": "2026-08-07",
+      "status": "tracked",
+      "triaged_at": "2026-08-07T02:45:37.631Z",
+      "tracked_slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026"
     }
   ]
 }
