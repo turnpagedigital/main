@@ -443,7 +443,14 @@
             '<select id="tk-type"><option value="courtlistener">CourtListener docket</option><option value="claims_agent">Claims agent / no docket</option></select>' +
           "</label>" +
           field("Parties", "tk-parties", p.parties || p.case_name, { wide: true }) +
-          field("CourtListener docket URL or ID", "tk-docket", p.docket_url, { wide: true, placeholder: "https://www.courtlistener.com/docket/12345678/…" }) +
+          '<label class="pr-wide">CourtListener docket URL or ID' +
+            '<span class="pr-cl-row">' +
+              '<input type="text" id="tk-docket" value="' + esc(p.docket_url || "") + '" placeholder="https://www.courtlistener.com/docket/12345678/…">' +
+              '<button type="button" class="pr-btn" id="tk-cl-find">Find</button>' +
+            "</span>" +
+            '<span class="pr-cl-status" id="tk-cl-status"></span>' +
+            '<span id="tk-cl-results"></span>' +
+          "</label>" +
           field("Court", "tk-court", p.court) +
           field("Case number", "tk-number", p.case_number) +
           field("Judge", "tk-judge", "") +
@@ -469,6 +476,91 @@
     wrap.addEventListener("click", function (ev) {
       if (ev.target === wrap) closeModal();
     });
+
+    // ── CourtListener docket finder — search by case number + name, pick a
+    //    result to fill the URL; a detail lookup then fills judge/court/number.
+    function clStatus(msg, isErr) {
+      var el = $("tk-cl-status");
+      if (!el) return;
+      el.textContent = msg || "";
+      el.style.color = isErr ? "#C84141" : "";
+    }
+
+    function fillFromDetail(docketId) {
+      fetchJson("/api/admin/courtlistener-lookup?docket_id=" + encodeURIComponent(docketId))
+        .then(function (d) {
+          if (!d || !d.ok) return;
+          if (d.judge && !$("tk-judge").value.trim()) $("tk-judge").value = d.judge;
+          if (d.court && !$("tk-court").value.trim()) $("tk-court").value = d.court;
+          if (d.docket_number && !$("tk-number").value.trim()) $("tk-number").value = d.docket_number;
+        }).catch(function () {});
+    }
+
+    function pickResult(r) {
+      $("tk-docket").value = r.docket_url || ("https://www.courtlistener.com/docket/" + r.docket_id + "/-/");
+      if (r.court && !$("tk-court").value.trim()) $("tk-court").value = r.court;
+      if (r.docket_number && !$("tk-number").value.trim()) $("tk-number").value = r.docket_number;
+      $("tk-cl-results").innerHTML = "";
+      clStatus("Docket selected — pulling judge/court details…");
+      fillFromDetail(r.docket_id);
+      setTimeout(function () { clStatus(""); }, 2500);
+    }
+
+    function renderClResults(results) {
+      var box = $("tk-cl-results");
+      if (!box) return;
+      if (!results.length) {
+        box.innerHTML = "";
+        clStatus("No dockets found — refine the search or paste the URL manually.", true);
+        return;
+      }
+      box.innerHTML = results.map(function (r, idx) {
+        var bits = [r.court, r.docket_number, r.date_filed ? "filed " + r.date_filed : ""].filter(Boolean).join(" · ");
+        return '<button type="button" class="pr-cl-result" data-cl="' + idx + '">' +
+          "<strong>" + esc(r.case_name || "(unnamed docket)") + "</strong>" +
+          (bits ? '<span class="pr-cl-bits">' + esc(bits) + "</span>" : "") +
+        "</button>";
+      }).join("");
+      box.querySelectorAll("[data-cl]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          pickResult(results[Number(b.getAttribute("data-cl"))]);
+        });
+      });
+    }
+
+    function clSearch() {
+      var q = [$("tk-number").value.trim(), $("tk-name").value.trim()].filter(Boolean).join(" ").trim();
+      if (!q) {
+        clStatus("Enter a case number or name first.", true);
+        return;
+      }
+      clStatus("Searching CourtListener…");
+      $("tk-cl-results").innerHTML = "";
+      fetchJson("/api/admin/courtlistener-lookup?q=" + encodeURIComponent(q))
+        .then(function (d) {
+          if (!d || !d.ok) throw new Error((d && d.error) || "search failed");
+          // One clean hit: fill it straight in; several: let Andrew pick.
+          if ((d.results || []).length === 1) {
+            clStatus("Found one match — filled in.");
+            pickResult(d.results[0]);
+          } else {
+            clStatus((d.results || []).length ? "Pick the right docket:" : "");
+            renderClResults(d.results || []);
+          }
+        })
+        .catch(function (e) {
+          var msg = /Unexpected token|JSON/.test(e.message)
+            ? "Lookup unavailable right now — paste the docket URL manually."
+            : e.message;
+          clStatus(msg, true);
+        });
+    }
+
+    $("tk-cl-find").addEventListener("click", clSearch);
+    // Auto-populate on open when we have something to search with and no URL yet.
+    if (!$("tk-docket").value.trim() && ($("tk-number").value.trim() || $("tk-name").value.trim())) {
+      clSearch();
+    }
 
     $("tk-create").addEventListener("click", function () {
       var status = $("tk-status");
