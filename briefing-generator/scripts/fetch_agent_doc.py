@@ -260,11 +260,12 @@ def epiq_fetch(base_url, docket_number):
         fail("document exceeds 25MB")
     if not body[:5].startswith(b"%PDF"):
         fail("Epiq returned something that is not a PDF (login wall or changed layout?)")
-    # Prefer a clean pleading title if the row text carried one.
-    title = None
-    m = re.search(r"[A-Z][A-Za-z].{8,}", target.get("title") or "")
-    if m:
-        title = clean(m.group(0))[:300]
+    # The card text is "Docket # N Filed <Mon DD YYYY> <document name> …";
+    # strip the docket + filed-date prefix so the entry gets the clean name.
+    raw = clean(target.get("title") or "")
+    raw = re.sub(r"^Docket\s*#?\s*\d+\s*", "", raw, flags=re.I)
+    raw = re.sub(r"^Filed\s+[A-Z][a-z]{2}\s+\d{1,2}\s+\d{4}\s*", "", raw, flags=re.I)
+    title = raw[:300] or None
     return body, title
 
 
