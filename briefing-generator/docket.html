@@ -513,6 +513,14 @@
   <button type="button" class="ud-th-menu-item" data-val="without">No doc only</button>
 </div>
 
+<div id="ud-th-timemenu" class="ud-th-menu" style="display:none;">
+  <button type="button" class="ud-th-menu-item" data-val="24h">Last 24 hours</button>
+  <button type="button" class="ud-th-menu-item" data-val="7d">Last 7 days</button>
+  <button type="button" class="ud-th-menu-item" data-val="30d">Last 30 days</button>
+  <button type="button" class="ud-th-menu-item" data-val="90d">Last 90 days</button>
+  <button type="button" class="ud-th-menu-item" data-val="custom">Set custom date range…</button>
+</div>
+
 <div class="ud-page">
 
   <div id="ud-due" class="ud-due" style="display:none;"></div>
@@ -522,14 +530,14 @@
       <div class="ud-search-wrap">
         <input type="text" id="ud-search" class="ud-search-input" placeholder="Search entries, parties, dates…">
       </div>
-      <div class="ud-date-range">
+      <div class="ud-date-range" id="ud-date-range" style="display:none;">
         <span class="ud-date-label">From</span>
         <input type="date" id="ud-date-from" class="ud-date-input">
         <span class="ud-date-sep">–</span>
         <span class="ud-date-label">To</span>
         <input type="date" id="ud-date-to" class="ud-date-input">
-        <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
       </div>
+      <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
@@ -558,7 +566,7 @@
 
   <table class="ud-table">
     <thead><tr>
-      <th style="width:82px">Time</th>
+      <th id="ud-th-time" class="ud-th-filter" style="width:82px" title="Change the lookback window"><span class="ud-th-label">Time · 90 days</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-case" class="ud-th-filter" style="width:150px" title="Select cases"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-source" class="ud-th-filter" style="width:150px" title="Show or hide news sources"><span class="ud-th-label">Author</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-entry" class="ud-th-filter" title="Filter by entry type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
