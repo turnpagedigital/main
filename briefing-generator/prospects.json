@@ -238,7 +238,8 @@
       "source_name": "Law360 Bankruptcy Authority",
       "date": "2026-07-29",
       "first_seen": "2026-08-07",
-      "status": "new"
+      "status": "new",
+      "snooze_until": "2026-08-14T13:00:00.000Z"
     },
     {
       "id": "3f3e5fdc45",
