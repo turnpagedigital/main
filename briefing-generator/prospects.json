@@ -582,8 +582,10 @@
       "source_name": "Manuscript Report AI Copyright Tracker",
       "date": "2026-03-01",
       "first_seen": "2026-08-07",
-      "status": "new",
-      "vote": 1
+      "status": "tracked",
+      "vote": 1,
+      "triaged_at": "2026-08-07T22:49:35.783Z",
+      "tracked_slug": "britannica-merriam-webster-v-openai"
     },
     {
       "id": "f4991afab4",
