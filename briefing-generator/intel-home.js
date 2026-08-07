@@ -479,12 +479,12 @@
         "Dkt. " + (item.num != null ? item.num : "\u2014") + " \u00b7 " + esc(item.text.slice(0, 95)) + "</a>";
     }
     if (item.kind === "news") {
-      return '<a class="ih-row-coded ih-code-news" href="' + BASE + 'news.html#u=' + encodeURIComponent(item.url || "") + '"><span class="ih-code-ico">\ud83d\udce1</span> ' +
+      return '<a class="ih-row-coded ih-code-news" href="' + BASE + 'news.html#case=' + encodeURIComponent(item.caseSlug) + '&u=' + encodeURIComponent(item.url || "") + '"><span class="ih-code-ico">\ud83d\udce1</span> ' +
         esc(item.source) + " \u2014 " + esc(item.text.slice(0, 95)) + "</a>";
     }
     // Calendar event: colored left border + a lighter tint of the case color.
     var cbg = caseColor(item.caseSlug, item.color);
-    return '<a class="ih-row-coded ih-code-date" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" href="' + BASE + 'calendar.html#ev=' + encodeURIComponent((item.date || "") + "|" + (item.caseShort || "")) + '"><span class="ih-code-ico">\ud83d\udcc5</span> ' +
+    return '<a class="ih-row-coded ih-code-date" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" href="' + BASE + 'calendar.html#case=' + encodeURIComponent(item.caseSlug) + '&ev=' + encodeURIComponent((item.date || "") + "|" + (item.caseShort || "")) + '"><span class="ih-code-ico">\ud83d\udcc5</span> ' +
       esc(fmtDate(item.date)) + " \u00b7 " + esc(item.text.slice(0, 70)) +
       ' <span style="color:var(--ink-40)">\u00b7 ' + daysUntil(item.date) + "</span></a>";
   }
@@ -658,7 +658,7 @@
         var cbg = caseColor(ev.slug, ev.default_color);
         var label = ev.title ? ev.short + " \u2014 " + ev.title : ev.short;
         return '<a class="ih-wk-ev" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" ' +
-          'href="' + BASE + 'calendar.html#d=' + iso + '" title="' + esc(label) + '">' +
+          'href="' + BASE + 'calendar.html#case=' + encodeURIComponent(ev.slug) + '&d=' + iso + '" title="' + esc(label) + '">' +
           "<strong>" + esc(ev.short) + "</strong>" + (ev.title ? " " + esc(ev.title.slice(0, 44)) : "") + "</a>";
       }).join("");
       if (evs.length > 4) col += '<span class="ih-wk-more">+' + (evs.length - 4) + " more</span>";
