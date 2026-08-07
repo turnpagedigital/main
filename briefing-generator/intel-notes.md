@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-07 00:28 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-07 01:47 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -25,6 +25,10 @@ hi
 > Auto-Docket of Credit Card
 
 ## Harvest Sherwood
+
+### (no docket number) — 2026-08-06
+
+> none
 
 ### Dkt. 1119 — 2026-07-29
 
