@@ -1,0 +1,27 @@
+{
+  "case": {
+    "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
+    "display_name": "In re FTX Trading Ltd. — Fifth Distribution (July 31, 2026)",
+    "case_name": "FTX Trading Ltd. d/b/a FTX.com and FTX Recovery Trust",
+    "court": "Bankr. D. Del.",
+    "case_number": "22-11068 (JTD)",
+    "judge": "Owens",
+    "docket_id": null,
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "seed",
+    "awaiting_sync": true,
+    "docket_url": null,
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": {
+    "name": "Kroll",
+    "url": "https://restructuring.ra.kroll.com/ftx/Home-DocketInfo",
+    "key_dates_url": ""
+  },
+  "coverage": []
+}

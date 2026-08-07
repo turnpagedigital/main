@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-07T00:45:28.467460+00:00",
+    "fetched_at": "2026-08-07T04:05:13.405571+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": false,
     "new_in_72h": 24,
@@ -45,10 +45,11 @@
         "date_filed": "2026-08-06",
         "time_filed": "12:53:01",
         "date_display": "Aug 6, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Motion to appear pro hac vice for Irving E. Walker. Fee Amount $100 Filed by Interested Party Perdue Farms, Inc. (Phillips, Ian) Case Number 25-80109 Harvest Sherwood Food Distributors, Inc. VIEW",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       }
     ],
     "entries": [
@@ -77,10 +78,11 @@
         "date_filed": "2026-08-06",
         "time_filed": "12:53:01",
         "date_display": "Aug 6, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Application For Admission Pro Hac Vice",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 1160,
@@ -13693,7 +13695,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=25"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=31"
   },
   "claims_administrator": {
     "name": "Epiq11",

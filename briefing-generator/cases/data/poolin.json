@@ -15,11 +15,31 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-07T00:46:56.243983+00:00",
+    "fetched_at": "2026-08-07T04:06:29.517942+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 9,
+    "new_in_72h": 11,
     "recent": [
+      {
+        "entry_number": 96,
+        "date_filed": "2026-08-06",
+        "time_filed": "20:39:37",
+        "date_display": "Aug 6, 2026",
+        "description": "Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 95,
+        "date_filed": "2026-08-06",
+        "time_filed": "20:31:33",
+        "date_display": "Aug 6, 2026",
+        "description": "Support",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 94,
         "date_filed": "2026-08-06",
@@ -29,29 +49,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 93,
-        "date_filed": "2026-08-06",
-        "time_filed": "20:28:02",
-        "date_display": "Aug 6, 2026",
-        "description": "Support",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 92,
-        "date_filed": "2026-08-06",
-        "time_filed": "20:26:12",
-        "date_display": "Aug 6, 2026",
-        "description": "Support",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 96,
+        "date_filed": "2026-08-06",
+        "time_filed": "20:39:37",
+        "date_display": "Aug 6, 2026",
+        "description": "Document",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 95,
+        "date_filed": "2026-08-06",
+        "time_filed": "20:31:33",
+        "date_display": "Aug 6, 2026",
+        "description": "Support",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 94,
         "date_filed": "2026-08-06",

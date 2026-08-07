@@ -68,6 +68,21 @@
     "sync": "active"
   },
   {
+    "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
+    "display_name": "In re FTX Trading Ltd. — Fifth Distribution (July 31, 2026)",
+    "short_name": "In re",
+    "docket_url": "",
+    "default_color": "#94C6F8",
+    "category": "bankruptcy",
+    "topics": [
+      "bankruptcy-creditor-rights",
+      "crypto-insolvency",
+      "fraud-recovery"
+    ],
+    "court": "Bankr. D. Del.",
+    "sync": "active"
+  },
+  {
     "slug": "kahan",
     "display_name": "Kahan",
     "short_name": "Kahan",
