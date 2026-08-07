@@ -214,17 +214,5 @@
     ],
     "sync": "active",
     "default_color": "#7EF4C2"
-  },
-  {
-    "slug": "zz-test-watch-situation",
-    "display_name": "ZZ Test Watch Situation",
-    "short_name": "ZZ Test",
-    "docket_url": "",
-    "court": "",
-    "topics": [
-      "rewind-tariffs"
-    ],
-    "sync": "active",
-    "default_color": "#F2AAEC"
   }
 ]
