@@ -140,19 +140,23 @@
   var searchText = "";
   var dateFrom = "";
   var dateTo = "";
-  // Default view loads only the last 90 days for fast rendering; a search or a
-  // date range lifts the window, and "show all" is a one-click escape hatch.
-  var DEFAULT_WINDOW_DAYS = 90;
-  var showAllDates = false;
+  // Lookback window, chosen from the Time-column header: 24h / 7d / 30d / 90d,
+  // or "custom" (uses the From/To date inputs). Default 90 days.
+  var lookback = "90d";
+  var showAllDates = false;  // the "N older hidden — show all" escape hatch
+  function lookbackDays() {
+    return lookback === "24h" ? 1 : lookback === "7d" ? 7
+      : lookback === "30d" ? 30 : lookback === "90d" ? 90 : 0;
+  }
   function windowCutoff() {
     var d = new Date();
-    d.setDate(d.getDate() - DEFAULT_WINDOW_DAYS);
+    d.setDate(d.getDate() - lookbackDays());
     return d.toISOString().slice(0, 10);
   }
   function windowActive() {
-    // The has-document filter narrows to a small set — show it across all
-    // dates, since attachments often sit on filings older than 90 days.
-    return !showAllDates && !searchText.trim() && !dateFrom && !dateTo && docFilter !== "with";
+    // Preset lookbacks apply a cutoff; custom uses From/To instead. A search,
+    // the has-document filter, or "show all" lift the preset window.
+    return lookback !== "custom" && !showAllDates && !searchText.trim() && docFilter !== "with";
   }
   var activeGearSlug = null;
   var activeSources = {};
@@ -175,6 +179,7 @@
       // migrate the retired select-based filter
       if (s.markedFilter === "bookmarked" || s.markedFilter === "either") bmOnly = true;
       if (s.markedFilter === "noted") noteOnly = true;
+      if (["24h","7d","30d","90d","custom"].indexOf(s.lookback) !== -1) lookback = s.lookback;
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
       _savedState = s;
     } catch (e) {}
@@ -189,6 +194,7 @@
         bmOnly:         bmOnly,
         noteOnly:       noteOnly,
         docFilter:      docFilter,
+        lookback:       lookback,
         sortDir:        sortDir,
         activeCases:    activeCases,
         activeSources:  activeSources,
@@ -917,7 +923,7 @@
       }
       var noteHtml = "";
       if (olderHidden) {
-        noteHtml += " · <span style=\"color:var(--ink-40)\">last 90 days</span> · " +
+        noteHtml += " · <span style=\"color:var(--ink-40)\">last " + (lookbackDays() || 90) + " days</span> · " +
           "<button type=\"button\" id=\"ud-window-note\" style=\"background:none;border:none;padding:0;font:inherit;color:var(--ink-60);text-decoration:underline;cursor:pointer;\">" +
           olderHidden + " older hidden — show all</button>";
       }
@@ -2811,6 +2817,11 @@
     var thEntry = document.getElementById("ud-th-entry");
     var thMenu = document.getElementById("ud-th-menu");
 
+    function applyCustomVisibility() {
+      var dr = document.getElementById("ud-date-range");
+      if (dr) dr.style.display = lookback === "custom" ? "" : "none";
+    }
+
     function syncHeaderStates() {
       if (thEntry) {
         var lbl = thEntry.querySelector(".ud-th-label");
@@ -2832,6 +2843,19 @@
       if (thDocMenu) {
         thDocMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
           b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === docFilter);
+        });
+      }
+      var LOOKBACK_LABELS = { "24h": "24 hours", "7d": "7 days", "30d": "30 days", "90d": "90 days", custom: "Custom" };
+      var thTime = document.getElementById("ud-th-time");
+      if (thTime) {
+        var tl = thTime.querySelector(".ud-th-label");
+        if (tl) tl.textContent = "Time \u00b7 " + (LOOKBACK_LABELS[lookback] || "90 days");
+        thTime.classList.toggle("ud-th-on", lookback !== "90d");
+      }
+      var thTimeMenu = document.getElementById("ud-th-timemenu");
+      if (thTimeMenu) {
+        thTimeMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+          b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === lookback);
         });
       }
       if (thMenu) {
@@ -2896,6 +2920,48 @@
         }
       });
     }
+
+    var thTimeEl = document.getElementById("ud-th-time");
+    var thTimeMenuEl = document.getElementById("ud-th-timemenu");
+    if (thTimeEl && thTimeMenuEl) {
+      thTimeEl.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = thTimeMenuEl.style.display !== "none";
+        if (open) { thTimeMenuEl.style.display = "none"; return; }
+        var rect = thTimeEl.getBoundingClientRect();
+        thTimeMenuEl.style.display = "block";
+        thTimeMenuEl.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        thTimeMenuEl.style.left = clampMenuLeft(thTimeMenuEl, rect.left + window.scrollX) + "px";
+        syncHeaderStates();
+      });
+      thTimeMenuEl.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.addEventListener("click", function () {
+          lookback = b.getAttribute("data-val");
+          showAllDates = false;
+          if (lookback !== "custom") {
+            dateFrom = ""; dateTo = "";
+            var f = document.getElementById("ud-date-from");
+            var t = document.getElementById("ud-date-to");
+            if (f) f.value = ""; if (t) t.value = "";
+          }
+          thTimeMenuEl.style.display = "none";
+          saveFilterState();
+          syncHeaderStates();
+          applyCustomVisibility();
+          render();
+          if (lookback === "custom") {
+            var f2 = document.getElementById("ud-date-from");
+            if (f2) f2.focus();
+          }
+        });
+      });
+      document.addEventListener("click", function (ev) {
+        if (thTimeMenuEl.style.display !== "none" && !thTimeMenuEl.contains(ev.target)) {
+          thTimeMenuEl.style.display = "none";
+        }
+      });
+    }
+    applyCustomVisibility();
     var thBmEl = document.getElementById("ud-th-bm");
     if (thBmEl) {
       thBmEl.addEventListener("click", function () {
@@ -3033,13 +3099,17 @@
         ev.preventDefault();
         var dT = new Date();
         var tIso = dT.getFullYear() + "-" + ("0" + (dT.getMonth() + 1)).slice(-2) + "-" + ("0" + dT.getDate()).slice(-2);
-        var onT = (dateFrom === tIso && dateTo === tIso);
+        var onT = (lookback === "custom" && dateFrom === tIso && dateTo === tIso);
+        lookback = onT ? "90d" : "custom";
         dateFrom = onT ? "" : tIso;
         dateTo = onT ? "" : tIso;
         var fEl2 = document.getElementById("ud-date-from");
         var tEl2 = document.getElementById("ud-date-to");
         if (fEl2) fEl2.value = dateFrom;
         if (tEl2) tEl2.value = dateTo;
+        saveFilterState();
+        syncHeaderStates();
+        applyCustomVisibility();
         render();
         return;
       }
@@ -3118,9 +3188,13 @@
         searchText = "";
         dateFrom = "";
         dateTo = "";
+        if (lookback === "custom") lookback = "90d";
         if (searchInput) searchInput.value = "";
         if (dateFromEl) dateFromEl.value = "";
         if (dateToEl) dateToEl.value = "";
+        saveFilterState();
+        syncHeaderStates();
+        applyCustomVisibility();
         render();
       });
     }
