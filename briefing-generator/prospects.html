@@ -142,6 +142,19 @@
   .pr-cl-result:hover{border-color:var(--ink-40);}
   .pr-cl-result strong{font-weight:700;display:block;}
   .pr-cl-bits{display:block;font-size:11px;color:var(--ink-60);}
+  /* Social-post draft modal */
+  .pr-social-loading{display:flex;align-items:center;gap:10px;padding:26px 4px;font-size:13.5px;color:var(--ink-60);}
+  .pr-social-spin{width:15px;height:15px;border:2px solid var(--line-strong);border-top-color:var(--neon);border-radius:50%;display:inline-block;animation:pr-social-spin 0.7s linear infinite;}
+  @keyframes pr-social-spin{to{transform:rotate(360deg);}}
+  .pr-social-field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
+  .pr-social-lbl{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);}
+  .pr-social-count{font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink-40);margin-left:6px;}
+  .pr-social-count.over{color:#C84141;}
+  .pr-social-ta{width:100%;box-sizing:border-box;font-size:13.5px;font-family:inherit;line-height:1.5;padding:10px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;resize:vertical;}
+  .pr-social-ta:focus{border-color:var(--neon);}
+  .pr-copy{font-size:10.5px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;padding:3px 11px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;flex:none;}
+  .pr-copy:hover{border-color:var(--neon);}
+  .pr-copy.done{color:#1a7f37;border-color:#1a7f37;}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -219,6 +232,33 @@
       <span id="ud-note-status" class="ud-note-status"></span>
       <button type="button" id="ud-note-cancel" class="ud-clear-btn">Cancel</button>
       <button type="button" id="ud-note-save" class="pr-btn pr-btn-track">Save note</button>
+    </div>
+  </div>
+</div>
+
+<div id="pr-social-overlay" class="pr-overlay" style="display:none;">
+  <div class="pr-box" style="width:min(720px,100%);">
+    <h2 id="pr-social-title">Draft social post</h2>
+    <div class="sub">A one-time briefing plus LinkedIn / X drafts, written from this prospect's verified facts. This does <strong>not</strong> add the case to your tracker.</div>
+    <div id="pr-social-loading" class="pr-social-loading"><span class="pr-social-spin"></span> Drafting from the source facts…</div>
+    <div id="pr-social-content" style="display:none;">
+      <div class="pr-social-field">
+        <div class="pr-social-lbl"><span>Briefing</span><button type="button" class="pr-copy" data-copy="pr-social-briefing">Copy</button></div>
+        <textarea id="pr-social-briefing" class="pr-social-ta" rows="4"></textarea>
+      </div>
+      <div class="pr-social-field">
+        <div class="pr-social-lbl"><span>LinkedIn <span id="pr-social-li-count" class="pr-social-count"></span></span><button type="button" class="pr-copy" data-copy="pr-social-li">Copy</button></div>
+        <textarea id="pr-social-li" class="pr-social-ta" rows="11"></textarea>
+      </div>
+      <div class="pr-social-field">
+        <div class="pr-social-lbl"><span>X / Twitter <span id="pr-social-x-count" class="pr-social-count"></span></span><button type="button" class="pr-copy" data-copy="pr-social-x">Copy</button></div>
+        <textarea id="pr-social-x" class="pr-social-ta" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="pr-modal-actions">
+      <span class="pr-modal-status" id="pr-social-status"></span>
+      <button type="button" class="pr-btn" id="pr-social-regen" style="display:none;">Regenerate</button>
+      <button type="button" class="pr-btn pr-btn-track" id="pr-social-close">Close</button>
     </div>
   </div>
 </div>

@@ -158,6 +158,7 @@
       else if (i.hidden) chips += '<span class="pr-status-chip">Hidden</span> ';
       return chips + toolsHtml(i) +
         '<button type="button" class="pr-btn pr-btn-track" data-track="' + esc(i.id) + '">Track</button>' +
+        '<button type="button" class="pr-btn" data-social="' + esc(i.id) + '" title="Draft a one-off briefing + LinkedIn post from this prospect, without tracking it">Social post</button>' +
         '<button type="button" class="pr-btn" data-status="dismissed" data-id="' + esc(i.id) + '">Dismiss</button>';
     }
     if (status === "dismissed") {
@@ -227,6 +228,11 @@
     tbody.querySelectorAll("[data-track]").forEach(function (b) {
       b.addEventListener("click", function () {
         openTrackModal(b.getAttribute("data-track"));
+      });
+    });
+    tbody.querySelectorAll("[data-social]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        openSocialModal(b.getAttribute("data-social"));
       });
     });
     tbody.querySelectorAll("[data-vote]").forEach(function (b) {
@@ -372,6 +378,97 @@
     }).catch(function (e) {
       if (status) status.textContent = "Save failed: " + e.message;
     });
+  }
+
+  // ── Social post drafting (one-off — does NOT create a tracked case) ───────
+  var activeSocialId = null;
+
+  function sEl(id) { return document.getElementById(id); }
+
+  function openSocialModal(id) {
+    var i = findItem(id);
+    if (!i) return;
+    activeSocialId = id;
+    var overlay = sEl("pr-social-overlay");
+    if (!overlay) return;
+    var title = sEl("pr-social-title");
+    if (title) title.textContent = "Draft social post — " + i.case_name;
+    overlay.style.display = "flex";
+    generateSocial(i);
+  }
+
+  function closeSocialModal() {
+    activeSocialId = null;
+    var overlay = sEl("pr-social-overlay");
+    if (overlay) overlay.style.display = "none";
+  }
+
+  function updateSocialCount(taId, countId, max) {
+    var ta = sEl(taId), c = sEl(countId);
+    if (!ta || !c) return;
+    var n = ta.value.length;
+    c.textContent = n + (max ? " / " + max : "") + " chars";
+    c.classList.toggle("over", !!max && n > max);
+  }
+
+  function generateSocial(i) {
+    var st = sEl("pr-social-status");
+    var loading = sEl("pr-social-loading");
+    var content = sEl("pr-social-content");
+    var regen = sEl("pr-social-regen");
+    if (loading) loading.style.display = "flex";
+    if (content) content.style.display = "none";
+    if (regen) regen.style.display = "none";
+    if (st) { st.textContent = ""; st.className = "pr-modal-status"; }
+    var prospect = {
+      case_name: i.case_name, parties: i.parties, court: i.court,
+      case_number: i.case_number, why: i.why, theme: i.theme,
+      source_url: i.source_url, source_name: i.source_name, date: i.date,
+    };
+    fetch("api/social-draft", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prospect: prospect }),
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      if (!j || !j.ok) throw new Error((j && j.error) || "generation failed");
+      sEl("pr-social-briefing").value = j.briefing || "";
+      sEl("pr-social-li").value = j.linkedin || "";
+      sEl("pr-social-x").value = j.x || "";
+      updateSocialCount("pr-social-li", "pr-social-li-count", 0);
+      updateSocialCount("pr-social-x", "pr-social-x-count", 280);
+      if (loading) loading.style.display = "none";
+      if (content) content.style.display = "";
+      if (regen) regen.style.display = "";
+      if (st) { st.textContent = "Draft only — this prospect stays untracked and awaiting triage."; st.className = "pr-modal-status"; }
+    }).catch(function (e) {
+      if (loading) loading.style.display = "none";
+      if (regen) regen.style.display = "";
+      if (st) { st.textContent = "Couldn’t draft: " + e.message; st.className = "pr-modal-status err"; }
+    });
+  }
+
+  function copyText(text, btn) {
+    function done() {
+      if (!btn) return;
+      var orig = btn.getAttribute("data-label") || btn.textContent;
+      btn.setAttribute("data-label", orig);
+      btn.textContent = "Copied";
+      btn.classList.add("done");
+      setTimeout(function () { btn.textContent = orig; btn.classList.remove("done"); }, 1400);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text); done(); });
+    } else { fallbackCopy(text); done(); }
+  }
+
+  function fallbackCopy(text) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    } catch (e) {}
   }
 
   // ── Snooze menu (docket presets) ──────────────────────────────────────────
@@ -761,7 +858,7 @@
     wireDropdown();
     wireKeys();
     document.addEventListener("keydown", function (ev) {
-      if (ev.key === "Escape") { closeModal(); closeNoteModal(); closeSnoozeMenu(); }
+      if (ev.key === "Escape") { closeModal(); closeNoteModal(); closeSocialModal(); closeSnoozeMenu(); }
     });
     document.addEventListener("click", function (ev) {
       if (snoozeMenuEl && !snoozeMenuEl.contains(ev.target) && !ev.target.closest("[data-snooze]")) {
@@ -780,6 +877,29 @@
     if (noteDelete) noteDelete.addEventListener("click", function () { saveNoteFromModal(true); });
     var noteCancel = document.getElementById("ud-note-cancel");
     if (noteCancel) noteCancel.addEventListener("click", closeNoteModal);
+
+    var socialOverlay = document.getElementById("pr-social-overlay");
+    if (socialOverlay) {
+      socialOverlay.addEventListener("click", function (ev) {
+        if (ev.target === socialOverlay) { closeSocialModal(); return; }
+        var cp = ev.target.closest && ev.target.closest(".pr-copy");
+        if (cp) {
+          var ta = document.getElementById(cp.getAttribute("data-copy"));
+          if (ta) copyText(ta.value, cp);
+        }
+      });
+    }
+    var socialClose = document.getElementById("pr-social-close");
+    if (socialClose) socialClose.addEventListener("click", closeSocialModal);
+    var socialRegen = document.getElementById("pr-social-regen");
+    if (socialRegen) socialRegen.addEventListener("click", function () {
+      var it = findItem(activeSocialId);
+      if (it) generateSocial(it);
+    });
+    var liTa = document.getElementById("pr-social-li");
+    if (liTa) liTa.addEventListener("input", function () { updateSocialCount("pr-social-li", "pr-social-li-count", 0); });
+    var xTa = document.getElementById("pr-social-x");
+    if (xTa) xTa.addEventListener("input", function () { updateSocialCount("pr-social-x", "pr-social-x-count", 280); });
 
     fetchJson("themes.json").then(function (d) {
       ((d && d.themes) || []).forEach(function (t) {
