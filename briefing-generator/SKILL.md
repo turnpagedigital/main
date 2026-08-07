@@ -90,7 +90,7 @@ After all per-tab work plus the landing-page update, run these checks. If any fa
 
 ## Critical: voice and length
 
-Write at the standard of a professional client alert in this field — the register a specialist firm uses when writing to sophisticated clients who pay for **judgment rather than summary**. The reader is senior, busy, and already broadly familiar with the matter; they can get "what happened" anywhere, so earn their attention with read-through they cannot get elsewhere. Model the finished product on a major firm's daily-briefing desk (Greenberg Traurig, Diaz Trade Law, Troutman Pepper, Jones Day, Weil, Latham) writing to GCs, claim-recovery counsel, claimants, and rights-holders.
+**The authoritative voice lives in the admin-managed House Instructions** (`src/data/intelligence-settings.json` → voice.default, editable at Admin → Intelligence → Defaults). Core rules: write like a senior litigation/restructuring partner briefing a sophisticated client — plain, precise, direct; no jargon, euphemisms, or arcane language (a necessary term of art is used correctly and passed over, never explained down); no hype, no marketing adjectives, no hedging filler; short, declarative sentences; never any throat-clearing family phrase ("here's the rub," "here's the thing," "let's dive in," "it's worth noting"). You are an analyst, not a commentator — no editorializing, no opinions, no sweeping generalizations; match tone to the weight of each update (a scheduling order is never a turning point), and when only secondary reporting exists, cite the outlet, flag it as unconfirmed, and say what confirmation would look like. Lookback: 24 hours Tuesday–Friday, 72 hours on Monday.
 
 ### Style requirements (these define the deliverable)
 

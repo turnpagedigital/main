@@ -56,8 +56,11 @@ DATE_ISO = TODAY.isoformat()
 DATE_PRETTY = TODAY.strftime("%A, %B %-d, %Y")
 
 # Activity inside this many days can trigger a briefing (the signature check
-# still prevents re-briefing the same filings two days running).
-LOOKBACK_DAYS = int(os.environ.get("CASE_BRIEFING_LOOKBACK_DAYS", "2"))
+# still prevents re-briefing the same filings two days running). House rule:
+# 24h Tue-Fri, 72h on Monday — the extra day on the default covers date-only
+# docket stamps and late-arriving entries.
+_DEFAULT_LOOKBACK = "3" if TODAY.weekday() == 0 else "2"
+LOOKBACK_DAYS = int(os.environ.get("CASE_BRIEFING_LOOKBACK_DAYS", _DEFAULT_LOOKBACK))
 # Hard cap on model calls per run — cost containment as the case list grows.
 MAX_GENERATIONS = int(os.environ.get("CASE_BRIEFING_MAX_GENERATIONS", "10"))
 
@@ -157,22 +160,38 @@ def activity_of(data):
 
 
 # ── Prompt assembly ──────────────────────────────────────────────────────────
-STYLE_SPEC = """# Style spec (authoritative — the house per-case briefing voice)
+STYLE_SPEC = """# Briefing register (structural spec — the house voice above governs tone)
 
+- You are an analyst, not a commentator: no editorializing, no personal opinions, no
+  sweeping generalizations. Straight, clean, factual analysis of the details that
+  matter to an investor and a legal professional.
 - ONE flowing narrative in markdown. NO bullets, NO numbered lists, NO subheadings
-  inside the body. Dense paragraphs of five to seven sentences.
-- This is a DELTA briefing for a reader who read yesterday's edition: cover ONLY what
-  moved since the previous briefing (docket filings, rulings, coverage, deadlines that
-  newly ripened), tie it to the running arc in a clause — never a backgrounder.
-- Density: full case caption, docket numbers, judge, courtroom, dollar figures,
-  percentages, statutory citations wherever they bear on the point. Precise figures
-  ("$187.5 million", "91.3 percent"), never rounded shorthand.
-- Every factual proposition closes with an inline citation in the exact format
-  (__[Source Name](https://url)__). Chain multiple sources where needed. The docket
-  ground truth below needs no citation; everything from the press or the web does.
-- Urgency through factual circumstance — dates, counts, mechanisms — never alarm
-  adjectives, never hype, never hedging ("may", "could", "likely") unless the
-  uncertainty is itself the point. Complete sentences. Em-dashes rare.
+  inside the body. Dense paragraphs of five to seven sentences. Never open with
+  throat-clearing ("it's worth noting", "here's the thing" and that family).
+- Lead with the latest developments. This is a DELTA briefing for a reader who read
+  yesterday's edition: cover what moved since the previous briefing (docket filings,
+  rulings, coverage, deadlines that newly ripened). Where a development can't be
+  understood without prior context, a short anchoring clause is fine ("the lift-stay
+  motion filed July 30"); a recap paragraph is not.
+- Match tone to the weight of the update: a procedural entry, a status change, and a
+  substantive development each get a different register — never dress up a scheduling
+  order as a turning point. Some updates are just updates; don't manufacture an arc.
+  If the window's movement is thin or purely procedural, say so plainly and, where
+  genuinely relevant, add related context — an analogous case, a parallel proceeding,
+  an agency action in the same area — reported as context, not case news.
+- Precision is non-negotiable: parties, court, judge, docket numbers, dollar figures,
+  percentages, dates. Precise figures ("$187.5 million", "91.3 percent"), never
+  rounded shorthand.
+- Ground every statement in a primary source — docket entry, ruling, agency release —
+  cited inline in the exact format (__[Source Name](https://url)__). Chain multiple
+  sources where needed. The docket ground truth below needs no citation; everything
+  from the press or the web does.
+- When only secondary reporting exists (a wire report of a settlement before anything
+  hits the docket), include it, cite the outlet, state explicitly that it is
+  unconfirmed, and say what confirmation would look like (e.g., a stipulation
+  appearing on the docket). Where anything else is unverified, say so explicitly.
+- Pressure-test before you ship: consider alternative interpretations, check competing
+  sources, and note where reasonable readers could disagree on what a development means.
 - Creditor/claimant orientation: frame every implication to the recovery posture of
   claimants, creditors, and rights-holders — not the defendant.
 - Length proportional to the movement: a single filing of consequence may need only
@@ -250,7 +269,7 @@ def build_prompt(case, prev_item, filings, articles, house_voice):
     voice_block = ""
     if house_voice:
         voice_block = ("# House voice (admin-managed — authoritative for tone; "
-                       "follow it exactly)\n\n" + house_voice[:5000] + "\n\n")
+                       "follow it exactly)\n\n" + house_voice[:9000] + "\n\n")
 
     # Ground truth: config + status + claims stats + upcoming events
     gt = [f"Case: {cfg.get('display_name', case['slug'])}",
