@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "britannica-merriam-webster-v-openai",
+    "display_name": "Britannica / Merriam-Webster v. OpenAI",
+    "case_name": "Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.",
+    "court": "U.S. District Court (filed March 2026; district not confirmed in sources)",
+    "case_number": "1:26-cv-02097",
+    "judge": "Sidney H. Stein",
+    "docket_id": "72492986",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
