@@ -190,5 +190,17 @@
     ],
     "court": "Bankr. D. Del.",
     "sync": "active"
+  },
+  {
+    "slug": "publishers-v-google-llc-gemini-books",
+    "display_name": "Publishers v. Google LLC (Gemini Books)",
+    "short_name": "Publishers",
+    "docket_url": "https://www.courtlistener.com/docket/67599029/-/",
+    "court": "District Court, N.D. California",
+    "topics": [
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "default_color": "#B3A8F0"
   }
 ]
