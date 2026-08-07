@@ -421,7 +421,8 @@
       "first_seen": "2026-08-07",
       "status": "new",
       "vote": 1,
-      "note": "Social post"
+      "note": "Social post",
+      "hidden": true
     },
     {
       "id": "0e0e1bd6cf",
