@@ -141,11 +141,11 @@
     "default_color": "#94C6F8",
     "category": "bankruptcy",
     "topics": [
+      "bankruptcy-creditor-rights",
       "crypto-insolvency",
-      "fraud-recovery",
-      "bankruptcy-creditor-rights"
+      "fraud-recovery"
     ],
-    "court": "United States Bankruptcy Court, D. Delaware",
+    "court": "Bankr. D. Del.",
     "sync": "active"
   },
   {
@@ -267,7 +267,7 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "United States Bankruptcy Court, S.D. New York",
-    "sync": "archived"
+    "sync": "active"
   },
   {
     "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",

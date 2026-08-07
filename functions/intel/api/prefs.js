@@ -7,7 +7,8 @@
    other piece of site state. Gated by functions/intel/_middleware.js.
 
    GET  → { ok, colors: {slug: {bg, fg}}, groups: [{name, slugs: []}],
-            presets: [{bg, fg}] }   (the 12 swatches in the color popover)
+            presets: [{bg, fg}], priorities: {slug: true} }
+            (presets = the 12 swatches; priorities = dashboard high-priority pins)
    PUT  → same shape in; sanitized, committed via the GitHub Contents API.
 */
 
@@ -53,17 +54,22 @@ function sanitize(body) {
   }
   const presets = cleanPresets(body && body.presets);
   const themePresets = cleanPresets(body && body.theme_presets);
-  return { colors, groups, presets, theme_presets: themePresets };
+  const priorities = {};
+  const rawPri = body && typeof body.priorities === "object" && body.priorities ? body.priorities : {};
+  for (const [slug, v] of Object.entries(rawPri).slice(0, 200)) {
+    if (/^[a-z0-9-]{1,60}$/.test(slug) && v) priorities[slug] = true;
+  }
+  return { colors, groups, presets, theme_presets: themePresets, priorities };
 }
 
 export async function onRequestGet(context) {
   const { env } = context;
   const res = await getFileFromGitHub(env, PREFS_PATH, null, briefingRepo(env), briefingBranch(env));
   if (!res.ok || !res.data || typeof res.data !== "object") {
-    return jsonResponse({ ok: true, colors: {}, groups: [], presets: [], theme_presets: [] });
+    return jsonResponse({ ok: true, colors: {}, groups: [], presets: [], theme_presets: [], priorities: {} });
   }
   const clean = sanitize(res.data);
-  return jsonResponse({ ok: true, colors: clean.colors, groups: clean.groups, presets: clean.presets, theme_presets: clean.theme_presets });
+  return jsonResponse({ ok: true, colors: clean.colors, groups: clean.groups, presets: clean.presets, theme_presets: clean.theme_presets, priorities: clean.priorities });
 }
 
 export async function onRequestPut(context) {
@@ -89,6 +95,7 @@ export async function onRequestPut(context) {
       groups: body.groups === undefined ? stored.groups : clean.groups,
       presets: body.presets === undefined ? stored.presets : clean.presets,
       theme_presets: body.theme_presets === undefined ? stored.theme_presets : clean.theme_presets,
+      priorities: body.priorities === undefined ? stored.priorities : clean.priorities,
     };
     const content = JSON.stringify(merged, null, 2) + "\n";
     if (cur.ok && cur.text === content) {
