@@ -8,16 +8,12 @@
     "judge": "NOT ASSIGNED",
     "docket_id": "73476260",
     "status": "active",
-    "court_id": ""
+    "sync": "archived"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T20:04:30.387489+00:00",
-    "as_of": "Aug 7, 2026",
-    "backfilled": true,
     "new_in_72h": 16,
     "recent": [
       {
@@ -5685,7 +5681,11 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-07T20:04:30.387489+00:00",
+    "as_of": "Aug 7, 2026",
+    "backfilled": true
   },
   "claims_administrator": {
     "name": "Kroll",
@@ -5839,16 +5839,6 @@
       "source": "Bloomberg",
       "date": "2026-06-03",
       "summary": "Bloomberg reported that Sleep Number was laying the groundwork for a potential bankruptcy filing as it grappled with an unwieldy debt burden and declining sales."
-    }
-  ],
-  "events": [
-    {
-      "title": "General Claims Bar Date — Sleep Number Corporation (Case No. 26-11399)",
-      "date": "2026-09-10",
-      "time": "11:59 PM ET",
-      "kind": "Deadline",
-      "url": "https://restructuring.ra.kroll.com/SleepNumber/",
-      "source": "Kroll Restructuring Administration"
     }
   ]
 }
