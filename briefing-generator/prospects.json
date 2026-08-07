@@ -256,7 +256,8 @@
       "date": "2026-07-27",
       "first_seen": "2026-08-07",
       "status": "new",
-      "note": "Flag for social post"
+      "note": "Flag for social post",
+      "hidden": true
     },
     {
       "id": "180ee25533",
@@ -272,8 +273,7 @@
       "date": "2026-07-27",
       "first_seen": "2026-08-07",
       "status": "new",
-      "note": "Flag for post",
-      "hidden": true
+      "note": "Flag for post"
     },
     {
       "id": "7ffb55ca47",
