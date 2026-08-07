@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "zz-test-watch-situation",
+    "display_name": "ZZ Test Watch Situation",
+    "case_name": "ZZ Test Watch Situation",
+    "court": "",
+    "case_number": "",
+    "judge": "",
+    "docket_id": null,
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "seed",
+    "awaiting_sync": true,
+    "docket_url": null,
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
