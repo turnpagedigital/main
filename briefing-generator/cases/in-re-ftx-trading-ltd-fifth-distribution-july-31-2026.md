@@ -1,20 +1,21 @@
 ---
 slug: in-re-ftx-trading-ltd-fifth-distribution-july-31-2026
-display_name: In re FTX Trading Ltd. — Fifth Distribution (July 31, 2026)
+display_name: FTX
 type: case
 status: active
 sync: active
 topics:
-  - bankruptcy-creditor-rights
   - crypto-insolvency
   - fraud-recovery
+  - bankruptcy-creditor-rights
 case:
   parties: "FTX Trading Ltd. d/b/a FTX.com and FTX Recovery Trust"
-  court: "Bankr. D. Del."
-  case_number: "22-11068 (JTD)"
-  judge: "Owens"
+  court: "United States Bankruptcy Court, D. Delaware"
+  case_number: "22-11068"
+  judge: "Jud Karen B. Owens"
 docket_source:
-  type: claims_agent
+  type: courtlistener
+  docket_id: 65748821
 claims_administrator:
   name: "Kroll"
   url: "https://restructuring.ra.kroll.com/ftx/Home-DocketInfo"
