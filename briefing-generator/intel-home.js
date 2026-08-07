@@ -600,6 +600,9 @@
   }
 
   var weekOffset = 0;
+  var CAL_DAYS_KEY = "ih-cal-days";
+  var calDays = 7;   // 7 = next 7 days · 5 = next 5 business days
+  try { if (Number(localStorage.getItem(CAL_DAYS_KEY)) === 5) calDays = 5; } catch (e) {}
   function renderDates() {
     var box = document.getElementById("ih-dates");
     if (!box) return;
@@ -627,17 +630,22 @@
     var byDay = {};
     events.forEach(function (ev) { (byDay[ev.date] = byDay[ev.date] || []).push(ev); });
 
-    // Week view \u2014 the 7-day week containing today (+ weekOffset), Sunday first.
-    // Each day lists its events by NAME, color-coded by case (border + tint).
+    // Rolling view \u2014 the NEXT 7 days from today (+ weekOffset windows), or the
+    // next 5 BUSINESS days when the weekday toggle is on. Each day lists its
+    // events by NAME, color-coded by case (border + tint).
     var start = new Date();
     start.setHours(12, 0, 0, 0);
-    start.setDate(start.getDate() - start.getDay() + weekOffset * 7);  // getDay()===0 \u2192 Sunday
+    start.setDate(start.getDate() + weekOffset * 7);
     function isoOf(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
     var MABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    var DOW = ["S", "M", "T", "W", "T", "F", "S"];
+    var DOWL = ["S", "M", "T", "W", "T", "F", "S"];
     var days = [];
-    for (var i = 0; i < 7; i++) { var d = new Date(start); d.setDate(start.getDate() + i); days.push(d); }
-    var a = days[0], b = days[6];
+    var cur = new Date(start);
+    while (days.length < calDays) {
+      if (calDays === 7 || (cur.getDay() !== 0 && cur.getDay() !== 6)) days.push(new Date(cur));
+      cur.setDate(cur.getDate() + 1);
+    }
+    var a = days[0], b = days[days.length - 1];
     var range = a.getMonth() === b.getMonth()
       ? MABBR[a.getMonth()] + " " + a.getDate() + " \u2013 " + b.getDate()
       : MABBR[a.getMonth()] + " " + a.getDate() + " \u2013 " + MABBR[b.getMonth()] + " " + b.getDate();
@@ -645,14 +653,18 @@
     var html = '<div class="ih-mm-head">' +
       '<button type="button" class="ih-mm-nav" data-wk="-1">\u2039</button>' +
       '<span>' + range + '</span>' +
+      '<span class="ih-wk-tgl">' +
+        '<button type="button" data-days="7" class="' + (calDays === 7 ? "on" : "") + '" title="Next 7 days">7d</button>' +
+        '<button type="button" data-days="5" class="' + (calDays === 5 ? "on" : "") + '" title="Next 5 business days">5d</button>' +
+      '</span>' +
       '<button type="button" class="ih-mm-nav" data-wk="1">\u203a</button></div>';
-    html += '<div class="ih-wk-grid">';
-    days.forEach(function (d, di) {
+    html += '<div class="ih-wk-grid" style="grid-template-columns:repeat(' + calDays + ',1fr)">';
+    days.forEach(function (d) {
       var iso = isoOf(d);
       var evs = byDay[iso] || [];
       var isToday = iso === today;
       var col = '<div class="ih-wk-col' + (isToday ? " today" : "") + '">' +
-        '<div class="ih-wk-dayhd"><span class="ih-wk-dow">' + DOW[di] + '</span>' +
+        '<div class="ih-wk-dayhd"><span class="ih-wk-dow">' + DOWL[d.getDay()] + '</span>' +
           '<span class="ih-wk-num">' + d.getDate() + '</span></div>';
       col += evs.slice(0, 5).map(function (ev) {
         var cbg = caseColor(ev.slug, ev.default_color);
@@ -670,6 +682,13 @@
     box.querySelectorAll(".ih-mm-nav").forEach(function (bn) {
       bn.addEventListener("click", function () {
         weekOffset += Number(bn.getAttribute("data-wk"));
+        renderDates();
+      });
+    });
+    box.querySelectorAll(".ih-wk-tgl button").forEach(function (bn) {
+      bn.addEventListener("click", function () {
+        calDays = Number(bn.getAttribute("data-days")) === 5 ? 5 : 7;
+        try { localStorage.setItem(CAL_DAYS_KEY, String(calDays)); } catch (e) {}
         renderDates();
       });
     });
