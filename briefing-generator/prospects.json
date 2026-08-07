@@ -376,8 +376,10 @@
       "source_name": "Law360 Bankruptcy Authority",
       "date": "2026-07-21",
       "first_seen": "2026-08-07",
-      "status": "new",
-      "vote": 1
+      "status": "tracked",
+      "vote": 1,
+      "triaged_at": "2026-08-07T22:40:49.757Z",
+      "tracked_slug": "in-re-cashcall-inc"
     },
     {
       "id": "58d48af0fa",
