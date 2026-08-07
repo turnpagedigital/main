@@ -127,16 +127,23 @@ async function downloadAndCommit(env, slug, entryNumber, filepathLocal) {
   return commitPdf(env, slug, entryNumber, buf);
 }
 
-const AUTOMATABLE_AGENTS = /kroll|ra\.kroll/i;
+// Agents with a built browser adapter in scripts/fetch_agent_doc.py.
+// Order matters only for the kind label; the patterns are mutually exclusive.
+const AUTOMATABLE_AGENTS = [
+  { kind: "kroll", re: /kroll|ra\.kroll/i },
+  { kind: "stretto", re: /stretto/i },
+  { kind: "epiq", re: /epiq/i },
+];
 
 async function detectAgent(env, slug) {
   const res = await getFileFromGitHub(env, `briefing-generator/cases/data/${slug}.json`, null,
     briefingRepo(env), briefingBranch(env));
   if (!res.ok || !res.data) return null;
   const ca = res.data.claims_administrator || {};
+  if (!ca.url) return null;
   const hay = `${ca.name || ""} ${ca.url || ""}`;
-  if (ca.url && AUTOMATABLE_AGENTS.test(hay)) return { kind: "kroll", url: ca.url };
-  return null;
+  const m = AUTOMATABLE_AGENTS.find((a) => a.re.test(hay));
+  return m ? { kind: m.kind, url: ca.url } : null;
 }
 
 async function dispatchAgentFetch(env, slug, entryNumber) {
