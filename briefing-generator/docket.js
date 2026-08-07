@@ -833,6 +833,7 @@
     if (n.indexOf("kroll") !== -1) return "Kroll";
     if (n.indexOf("kurtzman") !== -1 || n.indexOf("kcc") !== -1) return "KCC";
     if (n.indexOf("stretto") !== -1) return "Stretto";
+    if (n.indexOf("jnd") !== -1) return "JND";
     if (n.indexOf("prime clerk") !== -1) return "Prime Clerk";
     if (n.indexOf("donlin") !== -1) return "Donlin";
     var first = (name || "").trim().split(/\s+/)[0];

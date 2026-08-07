@@ -2,20 +2,24 @@
 slug: bartz-anthropic
 display_name: Bartz v. Anthropic
 type: case
-status: active
-sync: active
-topics:
+emoji: ⚖️
+status: "Settlement — final approval pending"
+topics:                           # tag this case to one or more briefing topics (by topic dir slug)
   - llm-class-action
   - billion-dollar-class-actions
 case:
   parties: "Bartz, et al. v. Anthropic PBC"
   court: "U.S. District Court, N.D. Cal. (San Francisco)"
+  court_id: cand                  # CourtListener court code for N.D. Cal.
   case_number: "3:24-cv-05417"
   judge: "Hon. Araceli Martínez-Olguín"
 docket_source:
-  type: courtlistener
-  docket_id: 69058235
-emoji: ⚖️
+  type: courtlistener             # courtlistener | manual
+  docket_id: 69058235             # from courtlistener.com/docket/69058235/
+  url: "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/"
+claims_administrator:             # settlement tracker only — no docket mirror (JND hosts a claims portal, not the court docket)
+  name: "JND Legal Administration"
+  key_dates_url: "https://www.anthropiccopyrightsettlement.com/dates"
 research:
   themes:
     - "Bartz v. Anthropic settlement: final-approval order, objections, appeals"
