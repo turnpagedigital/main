@@ -319,6 +319,9 @@
       var hrec = NOTES[entryNoteKey(e)];
       if (hrec && hrec.deleted_at) return false;
       if (hrec && hrec.hidden && !searchText.trim()) return false;
+      // Archived (>30 days, un-acted-on) stays out of the default view but
+      // returns when searching — the "retain for search" half of retention.
+      if (e.archived && !searchText.trim()) return false;
       if (e.is_article && !sourceOn(e.party)) return false;
       if (bmOnly || noteOnly) {
         var mrec = NOTES[entryNoteKey(e)];
@@ -1382,6 +1385,7 @@
         party:         b.source || "Bondoro",
         is_article:    true,
         is_bondoro:    true,
+        archived:      !!b.archived,
         bondoro_kind:  (b.kind || "news").charAt(0).toUpperCase() + (b.kind || "news").slice(1),
         bondoro_url:   b.url,
         unassigned:    !c && !grp,

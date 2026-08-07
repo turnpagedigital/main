@@ -207,7 +207,7 @@
             (hasBody
               ? '<button type="button" class="pr-btn" data-toggle="' + esc(i.slug) + '">' + (open ? "Close" : "Read") + "</button>"
               : "") +
-            ' <a class="ud-link" href="cases/' + esc(i.slug) + '.html">Docket</a>' +
+            ' <a class="ud-link" href="docket.html#case=' + encodeURIComponent(i.slug) + '">Docket</a>' +
           "</td>" +
         "</tr>";
       var detail = "";

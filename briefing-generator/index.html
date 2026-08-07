@@ -158,8 +158,6 @@
     .ih-more-rows { font-size: 10.5px; color: var(--ink-40); margin-top: 4px; }
     .ih-more-rows a { color: var(--ink-60); }
     /* Per-case briefing cards */
-    .ih-tc-tags { display: inline-flex; gap: 3px; margin-right: auto; }
-    .ih-tag-sq { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; font-size: 11px; border-radius: 0; }
     .ih-tc-date { font-weight: 700; color: var(--ink-60); }
     .ih-card-moved { border-top: 3px solid var(--neon-block); }
     /* Prospects tile */
@@ -197,13 +195,6 @@
     .ih-mm-day.today { border-color: #C84141; }
     .ih-mm-dots { display: flex; gap: 2px; justify-content: center; min-height: 5px; margin-top: 1px; }
     .ih-mm-dot { display: inline-block; width: 4px; height: 4px; border-radius: 50%; }
-    .ih-mkt-row { display: flex; align-items: center; gap: 10px; padding: 7px 14px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line); }
-    .ih-mkt-row:last-child { border-bottom: 0; }
-    .ih-mkt-row:hover { background: var(--paper-2); }
-    .ih-mkt-sym { font-size: 11.5px; font-weight: 800; letter-spacing: 0.04em; min-width: 44px; }
-    .ih-mkt-spark { width: 84px; height: 22px; flex: 1 1 auto; min-width: 40px; }
-    .ih-mkt-price { font-size: 12.5px; font-weight: 700; margin-left: auto; white-space: nowrap; }
-    .ih-mkt-chg { font-size: 11.5px; font-weight: 800; min-width: 48px; text-align: right; }
 
     /* ── Press-page look: gray canvas, white cards, uppercase micro-labels ── */
     body { background: var(--paper-2); }
@@ -216,7 +207,7 @@
     .ih-emoji { font-size: 14px; }
     .ih-name { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-60); }
     .ih-more { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
-    .ih-row, .ih-mkt-row, .ih-empty { padding-left: 18px; padding-right: 18px; }
+    .ih-row, .ih-empty { padding-left: 18px; padding-right: 18px; }
     .ih-dates { padding: 10px 18px 14px; }
     .ih-note-sticky { margin: 0 18px 8px; }
     .ih-carousel { display: block; }
@@ -364,10 +355,6 @@
     <section class="ih-tile">
       <a class="ih-head" href="../notes.html"><span class="ih-emoji">🗒️</span><span class="ih-name">Notes</span><span class="ih-more">View all →</span></a>
       <div class="ih-list" id="ih-notes"><div class="ih-empty">Loading…</div></div>
-    </section>
-    <section class="ih-tile">
-      <div class="ih-head"><span class="ih-emoji">📈</span><span class="ih-name">Markets</span><span class="ih-more" id="ih-mkt-updated"></span></div>
-      <div class="ih-list" id="ih-markets"><div class="ih-empty">Loading…</div></div>
     </section>
   </div>
 

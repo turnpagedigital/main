@@ -471,21 +471,20 @@
       : "d" + (item.date || "") + "|" + (item.text || "").slice(0, 60));
   }
 
+  // Rows live INSIDE a case card whose header already carries the case pill \u2014
+  // no per-row pill or case name.
   function codedRow(item) {
     if (item.kind === "filing") {
-      var pillHtml = casePill(item.caseSlug, item.caseShort, item.color);
-      return '<a class="ih-row-coded ih-code-filing" href="' + BASE + 'docket.html#e=' + encodeURIComponent(filingNoteKey(item)) + '"><span class="ih-code-ico">\u2696\ufe0f</span> ' + pillHtml +
-        " Dkt. " + (item.num != null ? item.num : "\u2014") + " \u00b7 " + esc(item.text.slice(0, 95)) + "</a>";
+      return '<a class="ih-row-coded ih-code-filing" href="' + BASE + 'docket.html#case=' + encodeURIComponent(item.caseSlug) + '&e=' + encodeURIComponent(filingNoteKey(item)) + '"><span class="ih-code-ico">\u2696\ufe0f</span> ' +
+        "Dkt. " + (item.num != null ? item.num : "\u2014") + " \u00b7 " + esc(item.text.slice(0, 95)) + "</a>";
     }
     if (item.kind === "news") {
       return '<a class="ih-row-coded ih-code-news" href="' + BASE + 'news.html#u=' + encodeURIComponent(item.url || "") + '"><span class="ih-code-ico">\ud83d\udce1</span> ' +
         esc(item.source) + " \u2014 " + esc(item.text.slice(0, 95)) + "</a>";
     }
-    // Calendar event: case name in bold plain text, colored left border +
-    // a lighter tint of the same case color as the row background.
+    // Calendar event: colored left border + a lighter tint of the case color.
     var cbg = caseColor(item.caseSlug, item.color);
     return '<a class="ih-row-coded ih-code-date" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" href="' + BASE + 'calendar.html#ev=' + encodeURIComponent((item.date || "") + "|" + (item.caseShort || "")) + '"><span class="ih-code-ico">\ud83d\udcc5</span> ' +
-      "<strong>" + esc(item.caseShort) + "</strong> \u00b7 " +
       esc(fmtDate(item.date)) + " \u00b7 " + esc(item.text.slice(0, 70)) +
       ' <span style="color:var(--ink-40)">\u00b7 ' + daysUntil(item.date) + "</span></a>";
   }
@@ -495,15 +494,6 @@
       if (BRIEFING_ITEMS[i].slug === slug) return BRIEFING_ITEMS[i];
     }
     return null;
-  }
-
-  // Emoji-only square theme tags \u2014 the case pill carries the identity, the
-  // tags just say which prospecting lenses the case belongs to.
-  function themeTags(topics) {
-    return (topics || []).map(function (slug) {
-      var t = themeOf(slug);
-      return '<span class="ih-tag-sq" style="background:' + t.bg + ";color:" + t.fg + '" title="' + esc(t.name) + '">' + t.emoji + "</span>";
-    }).join("");
   }
 
   function renderCaseGrid() {
@@ -553,21 +543,20 @@
           ' <a href="' + readHref + '">Read \u2192</a></div>';
       } else {
         ledeHtml = '<div class="ih-tc-lede ih-quiet">No briefing yet for this case. ' +
-          '<a href="' + BASE + "cases/" + esc(m.slug) + '.html">Docket \u2192</a></div>';
+          '<a href="' + BASE + 'docket.html#case=' + encodeURIComponent(m.slug) + '">Docket \u2192</a></div>';
       }
 
       var head =
         '<div class="ih-tc-head">' +
-          '<a href="' + BASE + "cases/" + esc(m.slug) + '.html" style="text-decoration:none">' +
+          '<a href="' + BASE + 'docket.html#case=' + encodeURIComponent(m.slug) + '" style="text-decoration:none">' +
             casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) + "</a>" +
-          '<span class="ih-tc-tags">' + themeTags(m.topics) + "</span>" +
           '<span class="ih-tc-count">' + esc(count) + "</span>" +
         "</div>";
 
       var html =
         '<section class="ih-theme-card' + (moved ? " ih-card-moved" : "") + '">' +
           head + ledeHtml + rows.join("") +
-          (hidden > 0 ? '<div class="ih-more-rows">+' + hidden + ' more \u00b7 <a href="' + BASE + 'docket.html">docket</a> / <a href="' + BASE + 'news.html">news</a></div>' : "") +
+          (hidden > 0 ? '<div class="ih-more-rows">+' + hidden + ' more \u00b7 <a href="' + BASE + 'docket.html#case=' + encodeURIComponent(m.slug) + '">docket</a> / <a href="' + BASE + 'news.html">news</a></div>' : "") +
         "</section>";
 
       var latest = (brief && brief.activity && brief.activity.latest) || "";
@@ -687,52 +676,6 @@
   }
 
 
-  function renderMarkets() {
-    var box = document.getElementById("ih-markets");
-    if (!box) return;
-    fetchJson(BASE + "api/markets").then(function (p) {
-      if (!p || !p.ok || !p.symbols || !p.symbols.length) {
-        box.innerHTML = '<div class="ih-empty">Market data unavailable right now.</div>';
-        return;
-      }
-      var upd = document.getElementById("ih-mkt-updated");
-      if (upd && p.updated) {
-        var t = new Date(p.updated);
-        upd.textContent = "as of " + t.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
-      }
-      box.innerHTML = p.symbols.map(function (s) {
-        var up = (s.chg_pct || 0) >= 0;
-        var color = up ? "#1a7f37" : "#C84141";
-        var pts = s.spark || [];
-        var svg = "";
-        if (pts.length > 1) {
-          var min = Math.min.apply(null, pts), max = Math.max.apply(null, pts);
-          var span = (max - min) || 1;
-          var W = 84, H = 22;
-          var d = pts.map(function (v, i) {
-            return (i ? "L" : "M") + (i * W / (pts.length - 1)).toFixed(1) + " " +
-              (H - 2 - (v - min) / span * (H - 4)).toFixed(1);
-          }).join("");
-          svg = '<svg class="ih-mkt-spark" viewBox="0 0 ' + W + " " + H +
-            '" preserveAspectRatio="none" aria-hidden="true"><path d="' + d +
-            '" fill="none" stroke="' + color + '" stroke-width="1.6"/></svg>';
-        }
-        var price = s.price >= 1000
-          ? Math.round(s.price).toLocaleString()
-          : (Math.round(s.price * 100) / 100).toLocaleString();
-        var chg = Math.round((s.chg_pct || 0) * 10) / 10;
-        return '<a class="ih-mkt-row" href="' + BASE + esc(s.href || "") +
-          '" title="' + esc(s.label + " \u00b7 " + (s.range || "") + " trend \u00b7 click for the related coverage") + '">' +
-          '<span class="ih-mkt-sym">' + esc(s.sym) + "</span>" + svg +
-          '<span class="ih-mkt-price">$' + price + "</span>" +
-          '<span class="ih-mkt-chg" style="color:' + color + '">' + (up ? "+" : "") + chg + "%</span>" +
-          "</a>";
-      }).join("");
-    }).catch(function () {
-      box.innerHTML = '<div class="ih-empty">Market data unavailable right now.</div>';
-    });
-  }
-
   function renderNotes() {
     var list = NOTES_LIST.filter(function (n) {
       if (!n.case_slug) return caseOn("__unassigned__");
@@ -759,7 +702,6 @@
     renderUnassigned();
     renderDates();
     renderNotes();
-    renderMarkets();
     updateFilterButtons();
   }
 

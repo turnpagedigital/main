@@ -114,11 +114,11 @@ jobs:
           cp -f briefing-generator/cases/data/*.json dev-site/briefing-generator/cases/data/ 2>/dev/null || true
           cp -f briefing-generator/cases/*.html dev-site/briefing-generator/cases/ 2>/dev/null || true
           cp -f briefing-generator/docket.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/calendar.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/news.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/notes.html dev-site/briefing-generator/ 2>/dev/null || true
           cp -f briefing-generator/uploads.json dev-site/briefing-generator/ 2>/dev/null || true
           cp -rf briefing-generator/uploads dev-site/briefing-generator/ 2>/dev/null || true
-          for slug in rewind-tariffs llm-class-action crypto-insolvency fraud-recovery billion-dollar-class-actions bankruptcy-creditor-rights; do
-            cp -f "briefing-generator/$slug/dashboard.html" "dev-site/briefing-generator/$slug/dashboard.html" 2>/dev/null || true
-          done
 
       - name: Commit to dev
         if: env.CHANGED == '1'
