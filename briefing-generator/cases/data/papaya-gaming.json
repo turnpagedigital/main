@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
+    "case_name": "Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -13,9 +13,9 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "",
-    "fetched_at": "2026-08-07T12:02:05.646166+00:00",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
+    "date_last_filing": "2026-08-06",
+    "fetched_at": "2026-08-07T13:43:31.685921+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
     "new_in_72h": 11,
