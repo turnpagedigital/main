@@ -102,7 +102,15 @@ def matches_tracked(name, keys):
     return any(len(t) >= 8 and (t in k or k in t) for t in keys)
 
 
-def build_prompt(theme, tracked_display, existing_names):
+def vote_bias(items):
+    """Reader up/down-votes on prospects steer the next scan's taste — same
+    idea as the news scan's headline votes."""
+    more = [i["case_name"] for i in items if i.get("vote") == 1][:8]
+    less = [i["case_name"] for i in items if i.get("vote") == -1][:8]
+    return more, less
+
+
+def build_prompt(theme, tracked_display, existing_names, vote_more=(), vote_less=()):
     kws = theme.get("keywords") or []
     guidance = (theme.get("guidance_prompt") or "").strip()
     lines = [
@@ -127,6 +135,12 @@ def build_prompt(theme, tracked_display, existing_names):
             "ALREADY SURFACED as prospects — exclude these too:",
             *[f"- {n}" for n in existing_names[:40]],
         ]
+    if vote_more:
+        lines += ["", "The reader UPVOTED these recent candidates — surface MORE matters like them:",
+                  *[f"- {n}" for n in vote_more]]
+    if vote_less:
+        lines += ["", "The reader DOWNVOTED these recent candidates — steer AWAY from matters like them:",
+                  *[f"- {n}" for n in vote_less]]
     lines += [
         "",
         f"Return up to {MAX_PER_THEME} candidates as ONLY a JSON object, no prose, exactly this shape:",
@@ -179,7 +193,8 @@ def clean_candidate(raw, theme_slug):
 def scan_theme(client, theme, tracked, tracked_display, existing):
     slug = theme["slug"]
     existing_names = [i["case_name"] for i in existing]
-    prompt = build_prompt(theme, tracked_display, existing_names)
+    more, less = vote_bias(existing)
+    prompt = build_prompt(theme, tracked_display, existing_names, more, less)
     for attempt in range(4):
         try:
             response = client.messages.create(

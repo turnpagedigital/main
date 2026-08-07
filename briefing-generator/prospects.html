@@ -47,6 +47,8 @@
   .ud-dd-row input{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}
   .ud-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;padding:2px 10px;white-space:nowrap;border-radius:99px;}
   .ud-pill-sq{border-radius:0;}
+  /* Theme pills: monochrome outline — white bg / black outline+text (inverts in dark) */
+  .ud-pill-theme{background:var(--surface);color:var(--ink);border:1px solid var(--ink);}
   .pr-tabs{display:flex;gap:0;}
   .pr-tab{font-family:inherit;font-size:12.5px;font-weight:700;letter-spacing:0.03em;padding:7px 16px;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;margin-left:-1px;}
   .pr-tab:first-child{margin-left:0;}
@@ -72,6 +74,34 @@
   .pr-btn[disabled]{opacity:0.45;cursor:default;}
   .pr-status-chip{display:inline-block;font-size:10px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;padding:2px 8px;border:1px solid var(--line-strong);color:var(--ink-60);}
   .pr-status-chip.tracked{background:rgba(212,255,0,0.25);border-color:var(--neon);color:var(--ink);}
+  /* Docket-style row tools: votes, note, snooze, hide */
+  .pr-tools{display:inline-flex;align-items:center;gap:2px;margin-right:8px;vertical-align:middle;}
+  .pr-ico{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:var(--ink-40);}
+  .pr-ico:hover{color:var(--ink);}
+  .pr-ico.pr-vote-up-on{color:#3FA07A;}
+  .pr-ico.pr-vote-dn-on{color:#C84141;}
+  .pr-ico.pr-note-on{color:#3FA07A;}
+  .pr-ico.pr-snz-on{color:#3B78D8;}
+  .pr-ico.pr-hide-on{color:var(--ink);}
+  .pr-note-view{margin-top:6px;font-size:12px;font-style:italic;color:var(--ink-60);background:rgba(212,255,0,0.10);padding:5px 8px;}
+  [data-theme="dark"] .pr-note-view{background:rgba(212,255,0,0.07);}
+  .pr-showhidden{font-family:inherit;font-size:12px;font-weight:700;padding:7px 14px;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;}
+  .pr-showhidden.on{background:var(--paper-2);color:var(--ink);}
+  /* Note modal (docket pattern) */
+  .ud-note-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;padding:20px;}
+  .ud-note-box{background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 10px 40px rgba(0,0,0,0.35);width:min(640px,100%);padding:22px;display:flex;flex-direction:column;gap:10px;}
+  .ud-note-title{font-size:15px;font-weight:800;color:var(--ink);}
+  .ud-note-meta{font-size:12px;color:var(--ink-60);line-height:1.5;border-bottom:1px solid var(--line);padding-bottom:10px;}
+  .ud-note-text{width:100%;min-height:160px;resize:vertical;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.55;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
+  .ud-note-text:focus{border-color:var(--neon);}
+  .ud-note-actions{display:flex;align-items:center;gap:8px;}
+  .ud-note-status{font-size:12px;color:var(--ink-40);}
+  .ud-clear-btn{padding:7px 14px;font-size:13px;font-weight:700;font-family:inherit;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;white-space:nowrap;}
+  .ud-clear-btn:hover{border-color:var(--ink-40);color:var(--ink);}
+  /* Snooze menu (docket pattern) */
+  .ud-th-menu{position:absolute;z-index:950;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:190px;padding:6px;}
+  .ud-th-menu-item{display:block;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:13px;color:var(--ink);cursor:pointer;padding:8px 10px;}
+  .ud-th-menu-item:hover{background:var(--paper-2);}
   /* Track modal */
   .pr-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,0.45);display:flex;align-items:flex-start;justify-content:center;padding:5vh 20px 20px;overflow-y:auto;}
   .pr-box{background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 10px 40px rgba(0,0,0,0.35);width:min(680px,100%);padding:22px;display:flex;flex-direction:column;gap:12px;}
@@ -136,6 +166,7 @@
       <button type="button" class="pr-tab" data-tab="tracked">Tracked</button>
       <button type="button" class="pr-tab" data-tab="all">All</button>
     </div>
+    <button type="button" class="pr-showhidden" id="pr-showhidden" style="display:none;">Show hidden</button>
   </div>
 
   <div class="ud-toolbar">
@@ -154,6 +185,21 @@
     </tbody>
   </table>
 
+</div>
+
+<div id="ud-note-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box">
+    <div class="ud-note-title" id="ud-note-title"></div>
+    <div class="ud-note-meta" id="ud-note-meta"></div>
+    <textarea id="ud-note-text" class="ud-note-text" placeholder="Notes on this prospect — carried into the Track form's scan guidance…"></textarea>
+    <div class="ud-note-actions">
+      <button type="button" id="ud-note-delete" class="ud-clear-btn">Delete note</button>
+      <span style="flex:1"></span>
+      <span id="ud-note-status" class="ud-note-status"></span>
+      <button type="button" id="ud-note-cancel" class="ud-clear-btn">Cancel</button>
+      <button type="button" id="ud-note-save" class="pr-btn pr-btn-track">Save note</button>
+    </div>
+  </div>
 </div>
 
 <script src="prospects.js"></script>
