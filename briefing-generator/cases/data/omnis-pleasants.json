@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-07T00:46:44.746966+00:00",
+    "fetched_at": "2026-08-07T04:06:16.506433+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
     "new_in_72h": 1,
@@ -25,20 +25,22 @@
         "date_filed": "2026-08-05",
         "time_filed": "16:31:44",
         "date_display": "Aug 5, 2026",
-        "description": "Affidavit/Declaration of Service",
+        "description": "Affidavit Of Service",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 66,
         "date_filed": "2026-08-04",
         "time_filed": "17:31:48",
         "date_display": "Aug 4, 2026",
-        "description": "Statement Committee Has Not Been Appointed",
+        "description": "Statement That Unsecured Creditors' Committee Has Not Been Appointed",
         "is_new": false,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": null,
