@@ -118,6 +118,16 @@
         "source": "claims-agent",
         "title": "Application For Admission Pro Hac Vice"
       }
+    ],
+    "harvest-sherwood|n1165": [
+      {
+        "name": "Dkt-1165.pdf",
+        "path": "briefing-generator/uploads/harvest-sherwood-n1165/Dkt-1165.pdf",
+        "size": 221779,
+        "uploaded_at": "2026-08-07T15:56:40.109762+00:00",
+        "text": "",
+        "source": "claims-agent"
+      }
     ]
   }
 }
