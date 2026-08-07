@@ -12,9 +12,9 @@ Writes:        uploads/<slug>|n<N>/Dkt-<N>.pdf, updates uploads.json, and
                titles the docket entry from the agent's document name.
 The workflow commits whatever this writes.
 
-Adapters:      Kroll (built). Verita is reCAPTCHA-gated — not automatable;
-               the script exits with a clear message so the caller can fall
-               back to PACER or manual download.
+Adapters:      Kroll, Stretto, Epiq (built). Verita is reCAPTCHA-gated —
+               not automatable; the script exits with a clear message so the
+               caller can fall back to PACER or manual download.
 """
 import json
 import os
@@ -43,13 +43,195 @@ def agent_kind(name, url):
     hay = (name + " " + url).lower()
     if "kroll" in hay or "ra.kroll" in hay:
         return "kroll"
+    if "stretto" in hay:
+        return "stretto"
+    if "epiq" in hay:
+        return "epiq"
     if "verita" in hay or "veritaglobal" in hay or "kccllc" in hay:
         return "verita"
     if "omniagent" in hay:
         return "omni"
-    if "epiq" in hay:
-        return "epiq"
     return None
+
+
+def _launch(pw):
+    """Shared headless-Chromium setup — desktop UA, no automation tell, the
+    viewport agent tables lay out for, and download capture enabled."""
+    browser = pw.chromium.launch(args=[
+        "--no-sandbox", "--disable-blink-features=AutomationControlled",
+    ])
+    ctx = browser.new_context(
+        user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                   "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 Safari/537.36",
+        locale="en-US", timezone_id="America/New_York",
+        accept_downloads=True,
+    )
+    ctx.add_init_script("Object.defineProperty(navigator,'webdriver',{get:()=>undefined});")
+    page = ctx.new_page()
+    page.set_viewport_size({"width": 1600, "height": 1200})
+    return browser, ctx, page
+
+
+def _pdf_via_download_or_fetch(page, link_handle, pdf_url):
+    """The two-step PDF capture Kroll proved: click the link and catch the
+    browser's own download (which clears bot 202/challenge cookies a raw
+    fetch can't), then fall back to polling an in-page fetch. Returns bytes
+    (may be empty / non-PDF — caller validates)."""
+    import base64 as _b64
+    body = b""
+    try:
+        with page.expect_download(timeout=60000) as dl_info:
+            link_handle.click()
+        body = Path(dl_info.value.path()).read_bytes()
+    except Exception as ex:
+        print(f"  · click-download route failed ({ex}); retrying via fetch", file=sys.stderr)
+    if not body[:5].startswith(b"%PDF") and pdf_url:
+        for attempt in range(6):
+            result = page.evaluate(
+                """async (href) => {
+                    const r = await fetch(href, { credentials: 'include' });
+                    const buf = await r.arrayBuffer();
+                    const bytes = new Uint8Array(buf);
+                    let bin = '';
+                    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+                    return { status: r.status, type: r.headers.get('content-type') || '',
+                             head: bin.slice(0, 200), b64: btoa(bin) };
+                }""",
+                pdf_url,
+            )
+            fetched = _b64.b64decode(result["b64"])
+            if fetched[:5].startswith(b"%PDF"):
+                body = fetched
+                break
+            print(f"  · fetch attempt {attempt + 1}: status={result['status']} "
+                  f"type={result['type']} head={result['head'][:80]!r}", file=sys.stderr)
+            page.wait_for_timeout(2500)
+    return body
+
+
+def stretto_fetch(base_url, docket_number):
+    """Stretto (WordPress + AWS WAF). The court-docket page filters server-side
+    via ?search_docket_no=N and renders each matching filing as a table row
+    with a direct PDF link. Returns (pdf_bytes, document_title)."""
+    from playwright.sync_api import sync_playwright
+
+    parsed = urlparse(base_url)
+    case_seg = [p for p in parsed.path.split("/") if p]
+    if not case_seg:
+        fail("could not derive the Stretto case path from the agent URL")
+    origin = f"{parsed.scheme}://{parsed.netloc}"
+    docket_url = (f"{origin}/{case_seg[0]}/court-docket/"
+                  f"?search_docket_no={int(docket_number)}")
+
+    with sync_playwright() as pw:
+        browser, ctx, page = _launch(pw)
+        page.goto(docket_url, wait_until="networkidle", timeout=45000)
+        # The WAF challenge resolves in-browser; give the table a moment.
+        try:
+            page.wait_for_selector("table tbody tr a[href$='.pdf']", timeout=30000)
+        except Exception:
+            browser.close()
+            fail(f"no PDF rows rendered on the Stretto docket for {case_seg[0]} "
+                 f"(WAF challenge or Dkt. {docket_number} absent)")
+        page.wait_for_timeout(1000)
+
+        target_href = title = link_handle = None
+        for row in page.query_selector_all("table tbody tr"):
+            tds = row.query_selector_all("td")
+            if not tds:
+                continue
+            first = re.sub(r"(?i)docket\s*(no\.?|#)?", "", tds[0].inner_text()).strip()
+            if not first.isdigit() or int(first) != int(docket_number):
+                continue
+            link = row.query_selector("a[href$='.pdf']")
+            if link:
+                target_href = link.get_attribute("href")
+                link_handle = link
+                # Document name is its own column; fall back to the link text.
+                if len(tds) >= 3:
+                    title = clean(tds[2].inner_text())[:300] or None
+                if not title:
+                    title = clean(link.inner_text())[:300] or None
+            break
+
+        if not target_href:
+            browser.close()
+            fail(f"Dkt. {docket_number} not found on the Stretto docket for {case_seg[0]}")
+
+        pdf_url = target_href if target_href.startswith("http") else urljoin(docket_url, target_href)
+        body = _pdf_via_download_or_fetch(page, link_handle, pdf_url)
+        browser.close()
+
+    if len(body) > MAX_BYTES:
+        fail("document exceeds 25MB")
+    if not body[:5].startswith(b"%PDF"):
+        fail("Stretto returned something that is not a PDF (WAF wall or changed layout?)")
+    return body, title
+
+
+def epiq_fetch(base_url, docket_number):
+    """Epiq (dm.epiq11.com — Angular SPA). The dockets page renders each entry
+    with a 'View' link carrying the docketId; clicking it downloads the PDF.
+    We derive the case code from the agent URL (/case/<code>/dockets) and let
+    the app render, then match the row by its docket number. Returns
+    (pdf_bytes, document_title)."""
+    from playwright.sync_api import sync_playwright
+
+    parsed = urlparse(base_url)
+    segs = [p for p in parsed.path.split("/") if p]
+    code = segs[segs.index("case") + 1] if "case" in segs else (segs[0] if segs else "")
+    if not code:
+        fail("could not derive the Epiq case code from the agent URL")
+    origin = f"{parsed.scheme}://{parsed.netloc}"
+    dockets_url = f"{origin}/case/{code}/dockets"
+
+    with sync_playwright() as pw:
+        browser, ctx, page = _launch(pw)
+        page.goto(dockets_url, wait_until="networkidle", timeout=45000)
+        # Angular renders docket rows after an API round-trip; wait for links.
+        try:
+            page.wait_for_selector("a[href*='docketId']", timeout=35000)
+        except Exception:
+            browser.close()
+            fail(f"Epiq dockets did not render for case {code} (challenge or SPA change)")
+        page.wait_for_timeout(1500)
+
+        # Match the row whose docket-number text equals N, take its View link.
+        # (Docket rows put the number in a bold/label element; scan each row's
+        # text and its View anchor.)
+        target = page.evaluate(
+            """(n) => {
+                const links = Array.from(document.querySelectorAll("a[href*='docketId']"));
+                for (const a of links) {
+                    const u = new URL(a.href);
+                    if (String(u.searchParams.get('docketNumber')) === String(n)) {
+                        return { href: a.href, title: (a.closest('[class*=card],tr,[class*=row]')||a).innerText.replace(/\\s+/g,' ').trim().slice(0,300) };
+                    }
+                }
+                return null;
+            }""",
+            int(docket_number),
+        )
+        if not target:
+            browser.close()
+            fail(f"Dkt. {docket_number} not found on the Epiq docket for {code}")
+
+        link_handle = page.query_selector(
+            f"a[href*='docketNumber={int(docket_number)}']") or \
+            page.query_selector("a[href*='docketId']")
+        body = _pdf_via_download_or_fetch(page, link_handle, target["href"])
+        browser.close()
+
+    if len(body) > MAX_BYTES:
+        fail("document exceeds 25MB")
+    if not body[:5].startswith(b"%PDF"):
+        fail("Epiq returned something that is not a PDF (login wall or changed layout?)")
+    # Prefer a clean pleading title if the row text carried one.
+    title = None
+    m = re.search(r"[A-Z][A-Za-z].{8,}", target.get("title") or "")
+    if m:
+        title = clean(m.group(0))[:300]
+    return body, title
 
 
 def kroll_fetch(base_url, docket_number):
@@ -175,7 +357,7 @@ def kroll_fetch(base_url, docket_number):
     return body, title
 
 
-ADAPTERS = {"kroll": kroll_fetch}
+ADAPTERS = {"kroll": kroll_fetch, "stretto": stretto_fetch, "epiq": epiq_fetch}
 
 
 def commit_locally(slug, entry_number, pdf_bytes, title):
