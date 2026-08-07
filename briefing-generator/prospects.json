@@ -353,7 +353,8 @@
       "source_name": "Bondoro",
       "date": "2026-07-23",
       "first_seen": "2026-08-07",
-      "status": "new"
+      "status": "new",
+      "hidden": true
     },
     {
       "id": "2c6a11f7df",
