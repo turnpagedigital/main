@@ -654,14 +654,14 @@
       var col = '<div class="ih-wk-col' + (isToday ? " today" : "") + '">' +
         '<div class="ih-wk-dayhd"><span class="ih-wk-dow">' + DOW[di] + '</span>' +
           '<span class="ih-wk-num">' + d.getDate() + '</span></div>';
-      col += evs.slice(0, 4).map(function (ev) {
+      col += evs.slice(0, 5).map(function (ev) {
         var cbg = caseColor(ev.slug, ev.default_color);
         var label = ev.title ? ev.short + " \u2014 " + ev.title : ev.short;
         return '<a class="ih-wk-ev" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" ' +
           'href="' + BASE + 'calendar.html#case=' + encodeURIComponent(ev.slug) + '&d=' + iso + '" title="' + esc(label) + '">' +
-          "<strong>" + esc(ev.short) + "</strong>" + (ev.title ? " " + esc(ev.title.slice(0, 44)) : "") + "</a>";
+          "<strong>" + esc(ev.short) + "</strong>" + (ev.title ? " " + esc(ev.title.slice(0, 110)) : "") + "</a>";
       }).join("");
-      if (evs.length > 4) col += '<span class="ih-wk-more">+' + (evs.length - 4) + " more</span>";
+      if (evs.length > 5) col += '<span class="ih-wk-more">+' + (evs.length - 5) + " more</span>";
       col += "</div>";
       html += col;
     });
@@ -688,7 +688,7 @@
       box.innerHTML = '<div class="ih-empty">No notes yet.</div>';
       return;
     }
-    box.innerHTML = '<div style="height:8px"></div>' + list.slice(0, 2).map(function (n) {
+    box.innerHTML = '<div style="height:8px"></div>' + list.slice(0, 4).map(function (n) {
       var body = (n.note || "").trim() || n.snippet || "(bookmark)";
       return '<a class="ih-note-sticky" href="' + BASE + 'notes.html#e=' + encodeURIComponent(n._key || "") + '">\u201c' + esc(body.slice(0, 90)) + '\u201d ' +
         '<span class="who">\u2014 ' + esc(n.case_name || n.case_slug || "Uncategorized") +

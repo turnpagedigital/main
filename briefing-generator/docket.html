@@ -188,6 +188,7 @@
   /* Toolbar */
   .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
   #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
+  .ud-lookback-label{font-size:12px;font-weight:800;letter-spacing:0.03em;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:3px 10px;margin-right:10px;white-space:nowrap;}
   #ud-sort-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;}
   #ud-sort-btn:hover{border-color:var(--ink-40);}
   /* Pills */
@@ -559,6 +560,7 @@
   </div>
 
   <div class="ud-toolbar">
+    <span id="ud-lookback-label" class="ud-lookback-label">Last 90 days</span>
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
     <button id="ud-sort-btn">Date ↓</button>
@@ -566,7 +568,7 @@
 
   <table class="ud-table">
     <thead><tr>
-      <th id="ud-th-time" class="ud-th-filter" style="width:82px" title="Change the lookback window"><span class="ud-th-label">Time · 90 days</span> <span class="ud-th-caret">▾</span></th>
+      <th id="ud-th-time" class="ud-th-filter" style="width:82px" title="Change the lookback window"><span class="ud-th-label">Time</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-case" class="ud-th-filter" style="width:150px" title="Select cases"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-source" class="ud-th-filter" style="width:150px" title="Show or hide news sources"><span class="ud-th-label">Author</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-entry" class="ud-th-filter" title="Filter by entry type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>

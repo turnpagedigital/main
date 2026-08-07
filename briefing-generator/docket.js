@@ -2845,13 +2845,13 @@
           b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === docFilter);
         });
       }
-      var LOOKBACK_LABELS = { "24h": "24 hours", "7d": "7 days", "30d": "30 days", "90d": "90 days", custom: "Custom" };
+      var LOOKBACK_LABELS = { "24h": "Last 24 hours", "7d": "Last 7 days", "30d": "Last 30 days", "90d": "Last 90 days", custom: "Custom range" };
+      // Header text stays "Time" so the column never resizes; the active scale
+      // shows in the toolbar label above instead.
+      var lbLabel = document.getElementById("ud-lookback-label");
+      if (lbLabel) lbLabel.textContent = LOOKBACK_LABELS[lookback] || "Last 90 days";
       var thTime = document.getElementById("ud-th-time");
-      if (thTime) {
-        var tl = thTime.querySelector(".ud-th-label");
-        if (tl) tl.textContent = "Time \u00b7 " + (LOOKBACK_LABELS[lookback] || "90 days");
-        thTime.classList.toggle("ud-th-on", lookback !== "90d");
-      }
+      if (thTime) thTime.classList.toggle("ud-th-on", lookback !== "90d");
       var thTimeMenu = document.getElementById("ud-th-timemenu");
       if (thTimeMenu) {
         thTimeMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {

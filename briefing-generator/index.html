@@ -126,9 +126,13 @@
     .ih-empty { padding: 12px 14px; font-size: 12px; color: var(--ink-60); }
     .ih-pill { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.03em; padding: 1px 8px; border-radius: 99px; white-space: nowrap; text-transform: none; }
     .ih-pill-sq { border-radius: 0; }
-    .ih-band { max-width: 1680px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: 2fr 1fr; gap: 10px; align-items: start; }
+    /* Band: Prospects full-width first, then News (1) · Calendar (2) · Notes (1),
+       all stretched to the same row height. */
+    .ih-band { max-width: 1680px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
     .ih-tile-full { grid-column: 1 / -1; }
-    @media (max-width: 900px) { .ih-band { grid-template-columns: 1fr; } }
+    .ih-span-2 { grid-column: span 2; }
+    @media (max-width: 1100px) { .ih-band { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 720px) { .ih-band { grid-template-columns: 1fr; } .ih-span-2 { grid-column: 1 / -1; } }
     .ih-tile { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
     /* Briefings carousel: 3 cards visible, horizontal scroll for the rest */
     .ih-carousel { max-width: 1680px; margin: 0 auto 48px; padding: 0 32px; display: flex; align-items: stretch; gap: 6px; }
@@ -177,14 +181,14 @@
     .ih-mm-nav { font-family: inherit; font-size: 13px; font-weight: 700; padding: 1px 8px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink); cursor: pointer; }
     .ih-mm-nav:hover { background: var(--paper-2); }
     .ih-mm-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
-    .ih-wk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
-    .ih-wk-col { min-height: 56px; }
+    .ih-wk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+    .ih-wk-col { min-height: 150px; }
     .ih-wk-dayhd { display: flex; align-items: baseline; gap: 4px; justify-content: center; padding-bottom: 3px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
     .ih-wk-dow { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; color: var(--ink-40); }
     .ih-wk-num { font-size: 12px; font-weight: 800; color: var(--ink-60); }
     .ih-wk-col.today .ih-wk-num { color: #C84141; }
     .ih-wk-col.today .ih-wk-dayhd { border-bottom-color: #C84141; }
-    .ih-wk-ev { display: block; border-left: 3px solid #888; padding: 2px 5px; margin-bottom: 3px; font-size: 10px; line-height: 1.35; color: var(--ink); text-decoration: none; }
+    .ih-wk-ev { display: block; border-left: 3px solid #888; padding: 4px 6px; margin-bottom: 4px; font-size: 11px; line-height: 1.45; color: var(--ink); text-decoration: none; }
     .ih-wk-ev strong { font-weight: 800; }
     .ih-wk-ev:hover { filter: brightness(0.96); }
     .ih-wk-more { display: block; font-size: 9px; color: var(--ink-40); padding-left: 5px; }
@@ -212,9 +216,10 @@
     .ih-note-sticky { margin: 0 18px 8px; }
     .ih-carousel { display: block; }
     .ih-carousel-nav, .ih-carousel-prev, .ih-carousel-next { display: none; }
-    .ih-theme-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; overflow: visible; padding-bottom: 0; }
-    @media (max-width: 1100px) { .ih-theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 720px) { .ih-theme-grid { grid-template-columns: 1fr; } }
+    .ih-theme-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; overflow: visible; padding-bottom: 0; }
+    @media (max-width: 1200px) { .ih-theme-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 980px) { .ih-theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 640px) { .ih-theme-grid { grid-template-columns: 1fr; } }
     .ih-theme-card { flex: none; padding: 18px 20px 16px; }
     .ih-tc-head { align-items: baseline; }
     .ih-tc-count { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-60); }
@@ -341,15 +346,15 @@
   </div>
   <div class="ih-band">
     <section class="ih-tile ih-tile-full">
-      <a class="ih-head" href="../news.html"><span class="ih-emoji">📡</span><span class="ih-name">News</span><span class="ih-more" id="ih-unassigned-count">triage →</span></a>
-      <div class="ih-list" id="ih-unassigned"><div class="ih-empty">Loading…</div></div>
-    </section>
-    <section class="ih-tile ih-tile-full">
       <a class="ih-head" href="prospects.html"><span class="ih-emoji">🔭</span><span class="ih-name">Prospects</span><span class="ih-more" id="ih-prospects-count">Triage →</span></a>
       <div class="ih-list" id="ih-prospects"><div class="ih-empty">Loading…</div></div>
     </section>
     <section class="ih-tile">
-      <a class="ih-head" href="../calendar.html"><span class="ih-emoji">📅</span><span class="ih-name">Dates</span><span class="ih-more">View all →</span></a>
+      <a class="ih-head" href="../news.html"><span class="ih-emoji">📡</span><span class="ih-name">News</span><span class="ih-more" id="ih-unassigned-count">triage →</span></a>
+      <div class="ih-list" id="ih-unassigned"><div class="ih-empty">Loading…</div></div>
+    </section>
+    <section class="ih-tile ih-span-2">
+      <a class="ih-head" href="../calendar.html"><span class="ih-emoji">📅</span><span class="ih-name">Calendar</span><span class="ih-more">View all →</span></a>
       <div class="ih-dates" id="ih-dates"><div class="ih-empty">Loading…</div></div>
     </section>
     <section class="ih-tile">
