@@ -276,5 +276,17 @@
     ],
     "sync": "active",
     "default_color": "#B3A8F0"
+  },
+  {
+    "slug": "britannica-merriam-webster-v-openai",
+    "display_name": "Britannica / Merriam-Webster v. OpenAI",
+    "short_name": "Britannica /",
+    "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
+    "court": "U.S. District Court (filed March 2026; district not confirmed in sources)",
+    "topics": [
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "default_color": "#7EF4C2"
   }
 ]
