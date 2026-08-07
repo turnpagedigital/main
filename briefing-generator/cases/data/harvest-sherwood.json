@@ -15,11 +15,31 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T18:05:49.783591+00:00",
+    "fetched_at": "2026-08-07T19:19:38.339834+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 35,
+    "new_in_72h": 37,
     "recent": [
+      {
+        "entry_number": 1174,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:23:39",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1173,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:08:26",
+        "date_display": "Aug 7, 2026",
+        "description": "Relief from stay",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1172,
         "date_filed": "2026-08-07",
@@ -29,29 +49,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1171,
-        "date_filed": "2026-08-07",
-        "time_filed": "11:05:15",
-        "date_display": "Aug 7, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1170,
-        "date_filed": "2026-08-07",
-        "time_filed": "11:03:53",
-        "date_display": "Aug 7, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1174,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:23:39",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1173,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:08:26",
+        "date_display": "Aug 7, 2026",
+        "description": "Relief from stay",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1172,
         "date_filed": "2026-08-07",
@@ -156,7 +176,7 @@
       {
         "entry_number": null,
         "date_filed": "2026-08-07",
-        "time_filed": "11:02:06",
+        "time_filed": "13:10:09",
         "date_display": "Aug 7, 2026",
         "description": "none",
         "is_new": true,
