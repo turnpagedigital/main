@@ -10,8 +10,8 @@ on:
         description: "Override briefing date (YYYY-MM-DD, optional)"
         required: false
         default: ""
-      topics:
-        description: "Run only these topic slugs, comma-separated (e.g. crypto-insolvency). Empty = all topics."
+      case:
+        description: "Run only this case slug (e.g. bartz-anthropic). Empty = all tracked cases."
         required: false
         default: ""
   # Fired by the admin's "Run Now" button via POST /repos/{repo}/dispatches —
@@ -51,22 +51,26 @@ jobs:
           pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Run daily briefing generation
+      - name: Run daily case briefings
         working-directory: briefing-generator
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Optional: free CourtListener API token enables live docket pulls.
+          # Optional: CourtListener API token enables live docket pulls.
           # Without it, the seeded case JSON renders unchanged.
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
           BRIEFING_DATE: ${{ github.event.inputs.date || '' }}
-          # Single-topic mode: comma-separated slugs from the manual-run form
-          # or the admin "Run Now" dispatch payload. Empty = run all topics.
-          BRIEFING_TOPICS: ${{ github.event.inputs.topics || github.event.client_payload.topics || '' }}
+          # Single-case mode from the manual-run form or the admin "Run Now"
+          # dispatch payload. Empty = every tracked case.
+          BRIEFING_CASE: ${{ github.event.inputs.case || github.event.client_payload.case || '' }}
           # Optional: X API bearer (read tier) — followed accounts feed briefings
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: |
+          # Cases-not-themes (Aug 2026): fresh dockets first, then one
+          # 24h-delta briefing per case that moved, then the unified pages.
           python scripts/scan_x.py
-          python scripts/generate.py
+          python scripts/fetch_dockets.py
+          python scripts/generate_case_briefings.py
+          python scripts/inject_cases.py
 
       - name: Commit and push if changes
         run: |

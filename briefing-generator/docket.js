@@ -106,7 +106,7 @@
   var rowKind = "both";  // both | filings | articles
   var bmOnly = false;
   var noteOnly = false;
-  var docOnly = false;
+  var docFilter = "all";  // all | with | without
   var NOTES = {};
   var BONDORO = [];
   var VOTES = {};
@@ -152,7 +152,7 @@
   function windowActive() {
     // The has-document filter narrows to a small set — show it across all
     // dates, since attachments often sit on filings older than 90 days.
-    return !showAllDates && !searchText.trim() && !dateFrom && !dateTo && !docOnly;
+    return !showAllDates && !searchText.trim() && !dateFrom && !dateTo && docFilter !== "with";
   }
   var activeGearSlug = null;
   var activeSources = {};
@@ -170,7 +170,8 @@
       else if (s.showArticles === false) rowKind = "filings";  // migrate the retired checkbox
       if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
       if (typeof s.noteOnly === "boolean") noteOnly = s.noteOnly;
-      if (typeof s.docOnly === "boolean") docOnly = s.docOnly;
+      if (s.docFilter === "with" || s.docFilter === "without" || s.docFilter === "all") docFilter = s.docFilter;
+      else if (s.docOnly === true) docFilter = "with";
       // migrate the retired select-based filter
       if (s.markedFilter === "bookmarked" || s.markedFilter === "either") bmOnly = true;
       if (s.markedFilter === "noted") noteOnly = true;
@@ -187,7 +188,7 @@
         rowKind:        rowKind,
         bmOnly:         bmOnly,
         noteOnly:       noteOnly,
-        docOnly:        docOnly,
+        docFilter:      docFilter,
         sortDir:        sortDir,
         activeCases:    activeCases,
         activeSources:  activeSources,
@@ -341,7 +342,11 @@
         if (bmOnly && !(mrec && mrec.bookmarked)) return false;
         if (noteOnly && !(mrec && (mrec.note || "").trim())) return false;
       }
-      if (docOnly && !docsFor(entryNoteKey(e)).length) return false;
+      if (docFilter !== "all") {
+        var hasDoc = docsFor(entryNoteKey(e)).length > 0;
+        if (docFilter === "with" && !hasDoc) return false;
+        if (docFilter === "without" && hasDoc) return false;
+      }
       if (newOnly && !e.is_new) return false;
       // Entry-type filters only apply to docket entries — the Articles
       // checkbox is the sole gate for news rows.
@@ -2808,6 +2813,19 @@
       var thNote = document.getElementById("ud-th-note");
       if (thBm) thBm.classList.toggle("ud-th-on", bmOnly);
       if (thNote) thNote.classList.toggle("ud-th-on", noteOnly);
+      var thDoc = document.getElementById("ud-th-doc");
+      if (thDoc) {
+        var dlbl = thDoc.querySelector(".ud-th-label");
+        if (dlbl) dlbl.textContent = docFilter === "with" ? "Dkt. \u00b7 Doc"
+          : docFilter === "without" ? "Dkt. \u00b7 No doc" : "Dkt.";
+        thDoc.classList.toggle("ud-th-on", docFilter !== "all");
+      }
+      var thDocMenu = document.getElementById("ud-th-docmenu");
+      if (thDocMenu) {
+        thDocMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+          b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === docFilter);
+        });
+      }
       if (thMenu) {
         thMenu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
           b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === entryFilter);
@@ -2838,6 +2856,35 @@
       document.addEventListener("click", function (ev) {
         if (thMenu.style.display !== "none" && !thMenu.contains(ev.target)) {
           thMenu.style.display = "none";
+        }
+      });
+    }
+
+    var thDocEl = document.getElementById("ud-th-doc");
+    var thDocMenuEl = document.getElementById("ud-th-docmenu");
+    if (thDocEl && thDocMenuEl) {
+      thDocEl.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = thDocMenuEl.style.display !== "none";
+        if (open) { thDocMenuEl.style.display = "none"; return; }
+        var rect = thDocEl.getBoundingClientRect();
+        thDocMenuEl.style.display = "block";
+        thDocMenuEl.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        thDocMenuEl.style.left = clampMenuLeft(thDocMenuEl, rect.left + window.scrollX) + "px";
+        syncHeaderStates();
+      });
+      thDocMenuEl.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.addEventListener("click", function () {
+          docFilter = b.getAttribute("data-val");
+          thDocMenuEl.style.display = "none";
+          saveFilterState();
+          syncHeaderStates();
+          render();
+        });
+      });
+      document.addEventListener("click", function (ev) {
+        if (thDocMenuEl.style.display !== "none" && !thDocMenuEl.contains(ev.target)) {
+          thDocMenuEl.style.display = "none";
         }
       });
     }
@@ -3026,17 +3073,6 @@
       newCb.checked = newOnly;
       newCb.addEventListener("change", function () {
         newOnly = newCb.checked;
-        saveFilterState();
-        render();
-      });
-    }
-
-    // Has-document checkbox
-    var docCb = document.getElementById("ud-doc-only");
-    if (docCb) {
-      docCb.checked = docOnly;
-      docCb.addEventListener("change", function () {
-        docOnly = docCb.checked;
         saveFilterState();
         render();
       });

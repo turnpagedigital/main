@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+<title>Prospects — Turnpage Intelligence</title>
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{color-scheme:light;--bg:#FFFFFF;--surface:#FFFFFF;--paper-2:#F4F5F7;--ink:#0A0A0A;--ink-60:rgba(10,10,10,0.6);--ink-40:rgba(10,10,10,0.4);--line:rgba(10,10,10,0.08);--line-strong:rgba(10,10,10,0.14);--neon:#D4FF00;}
+  [data-theme="dark"]{color-scheme:dark;--bg:#16161B;--surface:#1F1F25;--paper-2:#1F1F25;--ink:#E5E7EB;--ink-60:rgba(229,231,235,0.62);--ink-40:rgba(229,231,235,0.42);--line:rgba(229,231,235,0.1);--line-strong:rgba(229,231,235,0.18);}
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Archivo',Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:var(--ink);}
+  .tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 0;position:sticky;top:0;z-index:100;}
+  .tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1680px;margin:0 auto;padding:0 32px;}
+  .tn-left{display:flex;align-items:center;gap:16px;}
+  .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
+  .tn-brand-logo{height:34px;width:auto;}
+  .tn-logo-dark{display:none;}
+  [data-theme="dark"] .tn-logo-light{display:none;}
+  [data-theme="dark"] .tn-logo-dark{display:block;}
+  .tn-back{color:rgba(255,255,255,0.72);font-size:12px;text-decoration:none;border-left:1px solid rgba(255,255,255,0.18);padding-left:16px;}
+  .tn-back:hover{color:#fff;}
+  [data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
+  [data-theme="light"] .tn-back{color:rgba(10,10,10,0.6);border-left-color:rgba(10,10,10,0.14);}
+  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:#fff;margin-left:auto;}
+  [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}
+  .page-title{max-width:1680px;margin:0 auto;padding:26px 32px 16px;border-bottom:2px solid var(--ink);}
+  .page-title .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
+  .page-title h1{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-0.02em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;}
+  .case-meta{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-60);}
+  .ud-page{max-width:1680px;margin:0 auto;padding:20px 32px 60px;}
+  .ud-controls{background:var(--surface);border:1px solid var(--line-strong);padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .ud-type-select{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}
+  .ud-case-dd{position:relative;margin-right:auto;}
+  .ud-case-dd-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;}
+  .ud-dd-caret{font-size:11px;color:var(--ink-60);}
+  .ud-case-dd-panel{position:absolute;top:calc(100% + 6px);left:0;z-index:900;background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 6px 24px rgba(0,0,0,0.22);min-width:270px;padding:8px;}
+  .ud-dd-head{display:flex;align-items:center;gap:10px;padding:2px 8px 8px;border-bottom:1px solid var(--line);margin-bottom:6px;}
+  .ud-dd-quick{background:none;border:none;color:var(--ink-60);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:2px 4px;letter-spacing:0.03em;}
+  .ud-dd-quick:hover{color:var(--ink);}
+  .ud-dd-row{display:flex;align-items:center;gap:10px;padding:7px 8px;cursor:pointer;}
+  .ud-dd-row:hover{background:var(--paper-2);}
+  .ud-dd-row input{accent-color:var(--neon);cursor:pointer;flex-shrink:0;margin:0;}
+  .ud-pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.03em;padding:2px 10px;white-space:nowrap;border-radius:99px;}
+  .ud-pill-sq{border-radius:0;}
+  .pr-tabs{display:flex;gap:0;}
+  .pr-tab{font-family:inherit;font-size:12.5px;font-weight:700;letter-spacing:0.03em;padding:7px 16px;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;margin-left:-1px;}
+  .pr-tab:first-child{margin-left:0;}
+  .pr-tab.on{background:var(--neon);border-color:var(--neon);color:#0A0A0A;}
+  .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
+  .ud-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line-strong);}
+  .ud-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}
+  .ud-table td{padding:12px 14px;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .ud-table tr:last-child td{border-bottom:none;}
+  .ud-date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
+  .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
+  .pr-name{font-weight:800;font-size:14px;}
+  .pr-meta{font-size:12px;color:var(--ink-60);margin-top:2px;}
+  .pr-why{margin-top:6px;color:var(--ink);}
+  .pr-src a{color:var(--ink-60);font-weight:700;font-size:12px;}
+  .pr-actions{white-space:nowrap;text-align:right;}
+  .pr-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;padding:6px 14px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block;line-height:1.2;}
+  .pr-btn+.pr-btn{margin-left:6px;}
+  .pr-btn-track{background:var(--neon);color:#0A0A0A;border-color:var(--neon);}
+  .pr-btn-track:hover{filter:brightness(0.94);}
+  .pr-btn:hover{background:var(--paper-2);}
+  .pr-btn[disabled]{opacity:0.45;cursor:default;}
+  .pr-status-chip{display:inline-block;font-size:10px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;padding:2px 8px;border:1px solid var(--line-strong);color:var(--ink-60);}
+  .pr-status-chip.tracked{background:rgba(212,255,0,0.25);border-color:var(--neon);color:var(--ink);}
+  /* Track modal */
+  .pr-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,0.45);display:flex;align-items:flex-start;justify-content:center;padding:5vh 20px 20px;overflow-y:auto;}
+  .pr-box{background:var(--surface);border:1px solid var(--line-strong);box-shadow:0 10px 40px rgba(0,0,0,0.35);width:min(680px,100%);padding:22px;display:flex;flex-direction:column;gap:12px;}
+  .pr-box h2{margin:0;font-size:17px;font-weight:800;}
+  .pr-box .sub{font-size:12.5px;color:var(--ink-60);line-height:1.5;border-bottom:1px solid var(--line);padding-bottom:10px;}
+  .pr-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
+  @media(max-width:640px){.pr-grid{grid-template-columns:1fr;}}
+  .pr-grid label{display:flex;flex-direction:column;gap:4px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);}
+  .pr-grid input,.pr-grid select,.pr-grid textarea{font-size:13.5px;font-family:inherit;padding:8px 10px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;}
+  .pr-grid input:focus,.pr-grid textarea:focus{border-color:var(--neon);}
+  .pr-wide{grid-column:1 / -1;}
+  .pr-topics{display:flex;flex-wrap:wrap;gap:8px;}
+  .pr-topics label{display:flex;flex-direction:row;align-items:center;gap:5px;font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink);cursor:pointer;}
+  .pr-topics input{accent-color:var(--neon);}
+  .pr-modal-actions{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:12px;}
+  .pr-modal-status{font-size:12.5px;color:var(--ink-60);flex:1;line-height:1.4;}
+  .pr-modal-status.err{color:#C84141;font-weight:700;}
+  .pr-modal-status.okk{color:#1a7f37;font-weight:700;}
+  .pr-hint{font-size:11px;color:var(--ink-40);font-weight:400;text-transform:none;letter-spacing:0;}
+</style>
+<!-- AUTH GATE START -->
+<script src="/auth/config.js"></script>
+<script type="module" src="/auth/auth.js"></script>
+<!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="index.html"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo.png"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo-dark.png"></a>
+      <a class="tn-back" href="index.html">🏠 Dashboard</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="briefings.html">📰 Briefings</a>
+      <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="prospects.html">🔭 Prospects</a>
+    </div>
+    <button id="theme-toggle">🖥️</button>
+  </div>
+</nav>
+
+<div class="page-title">
+  <div class="eyebrow">Intelligence · Case Prospecting</div>
+  <h1>🔭 Prospects</h1>
+  <div class="case-meta">
+    <span id="ud-meta">Candidate cases surfaced by the daily theme scans — Track one to start following its docket, or Dismiss it for good.</span>
+  </div>
+</div>
+
+<div class="ud-page">
+
+  <div class="ud-controls">
+    <div class="ud-case-dd" id="ud-case-dd">
+      <button type="button" id="pr-theme-btn" class="ud-type-select ud-case-dd-btn">Themes <span class="ud-dd-caret">▾</span></button>
+      <div id="pr-theme-panel" class="ud-case-dd-panel" style="display:none;"></div>
+    </div>
+    <div class="pr-tabs" id="pr-tabs">
+      <button type="button" class="pr-tab on" data-tab="new">New</button>
+      <button type="button" class="pr-tab" data-tab="dismissed">Dismissed</button>
+      <button type="button" class="pr-tab" data-tab="tracked">Tracked</button>
+      <button type="button" class="pr-tab" data-tab="all">All</button>
+    </div>
+  </div>
+
+  <div class="ud-toolbar">
+    <span id="ud-count"></span>
+  </div>
+
+  <table class="ud-table">
+    <thead><tr>
+      <th style="width:96px">Seen</th>
+      <th style="width:210px">Theme</th>
+      <th>Prospect</th>
+      <th style="width:230px;text-align:right">Triage</th>
+    </tr></thead>
+    <tbody id="pr-tbody">
+      <tr><td colspan="4" class="ud-empty">Loading…</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<script src="prospects.js"></script>
+
+</body>
+</html>
