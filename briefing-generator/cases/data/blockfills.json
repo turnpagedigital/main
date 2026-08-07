@@ -14,12 +14,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
-    "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-07T20:02:29.632825+00:00",
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-07T21:02:42.202993+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 5,
     "recent": [
+      {
+        "entry_number": 560,
+        "date_filed": "2026-08-07",
+        "time_filed": "16:01:48",
+        "date_display": "Aug 7, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 559,
         "date_filed": "2026-08-06",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 557,
-        "date_filed": "2026-08-06",
-        "time_filed": "09:22:36",
-        "date_display": "Aug 6, 2026",
-        "description": "Certificate of No Objection - No Order Required",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 560,
+        "date_filed": "2026-08-07",
+        "time_filed": "16:01:48",
+        "date_display": "Aug 7, 2026",
+        "description": "Certificate of No Objection",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 559,
         "date_filed": "2026-08-06",

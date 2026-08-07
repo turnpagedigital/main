@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T20:02:54.628679+00:00",
+    "fetched_at": "2026-08-07T21:03:01.176543+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 37,
+    "new_in_72h": 38,
     "recent": [
+      {
+        "entry_number": 1175,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:09:00",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1174,
         "date_filed": "2026-08-07",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1172,
-        "date_filed": "2026-08-07",
-        "time_filed": "11:07:00",
-        "date_display": "Aug 7, 2026",
-        "description": "Clerk's correspondence",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1175,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:09:00",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1174,
         "date_filed": "2026-08-07",

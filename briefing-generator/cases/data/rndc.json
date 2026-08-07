@@ -2,7 +2,7 @@
   "case": {
     "slug": "rndc",
     "display_name": "RNDC",
-    "case_name": "Republic National Distributing Company, LLC",
+    "case_name": "Republic National Distributing Company, LLC and Official Committee of Unsecured Creditors of Repub",
     "court": "Bankr. S.D.Tx.",
     "case_number": "26-90737",
     "judge": "Hon. Christopher M. Lopez",
@@ -13,13 +13,33 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
+    "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc-and-official-committee-of/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T20:04:02.298570+00:00",
+    "fetched_at": "2026-08-07T21:04:40.770780+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 20,
+    "new_in_72h": 22,
     "recent": [
+      {
+        "entry_number": 148,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:40:41",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 147,
+        "date_filed": "2026-08-07",
+        "time_filed": "14:42:48",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 146,
         "date_filed": "2026-08-07",
@@ -29,29 +49,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-07",
-        "time_filed": "13:52:55",
-        "date_display": "Aug 7, 2026",
-        "description": "none",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 145,
-        "date_filed": "2026-08-06",
-        "time_filed": "20:50:42",
-        "date_display": "Aug 6, 2026",
-        "description": "Emergency Motion",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 148,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:40:41",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 147,
+        "date_filed": "2026-08-07",
+        "time_filed": "14:42:48",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 146,
         "date_filed": "2026-08-07",
