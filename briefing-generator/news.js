@@ -146,7 +146,10 @@
   var _savedState = null;
 
   // ── Filter-state persistence (localStorage) ────────────────────────────────
-  var relatedOnly = false;
+  // Unrelated articles (no case, group, or theme) stay OUT of the feed by
+  // default — stored and searchable, never clutter. relV:2 migrates browsers
+  // that saved the old show-everything default.
+  var relatedOnly = true;
   var FILTER_KEY = "un-news-filter-state";
 
   function loadFilterState() {
@@ -154,7 +157,7 @@
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.entryFilter)   entryFilter   = s.entryFilter;
       if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
-      if (typeof s.relatedOnly === "boolean") relatedOnly = s.relatedOnly;
+      if (typeof s.relatedOnly === "boolean" && s.relV === 2) relatedOnly = s.relatedOnly;
       rowKind = "articles";
       if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
       if (typeof s.noteOnly === "boolean") noteOnly = s.noteOnly;
@@ -169,6 +172,7 @@
   function saveFilterState() {
     try {
       localStorage.setItem(FILTER_KEY, JSON.stringify({
+        relV:           2,
         relatedOnly:    relatedOnly,
         entryFilter:    entryFilter,
         newOnly:        newOnly,
@@ -327,7 +331,8 @@
         if (noteOnly && !(mrec && (mrec.note || "").trim())) return false;
       }
       if (newOnly && !e.is_new) return false;
-      if (relatedOnly && e.is_article && !e.slug && !e.group_name && !e.theme_slug) return false;
+      // Searching reaches the whole store (same rule as archived items).
+      if (relatedOnly && !searchText.trim() && e.is_article && !e.slug && !e.group_name && !e.theme_slug) return false;
       // Entry-type filters only apply to docket entries — the Articles
       // checkbox is the sole gate for news rows.
       if (entryFilter !== "all") {
