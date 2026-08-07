@@ -239,5 +239,18 @@
     ],
     "sync": "active",
     "default_color": "#1B3A4B"
+  },
+  {
+    "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
+    "display_name": "State of Oregon v. United States / Burlap and Barrel v. United States (Section 122 — Federal Circuit appeal)",
+    "short_name": "State of",
+    "docket_url": "https://www.courtlistener.com/docket/72381015/-/",
+    "court": "U.S. Court of Appeals for the Federal Circuit (on appeal from CIT)",
+    "topics": [
+      "billion-dollar-class-actions",
+      "rewind-tariffs"
+    ],
+    "sync": "active",
+    "default_color": "#D4FF00"
   }
 ]
