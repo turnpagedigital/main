@@ -111,7 +111,7 @@
     [data-theme="dark"] .tk-up { color: #54C277; }
     [data-theme="dark"] .tk-down { color: #E07474; }
     /* Dashboard — support band + equal theme grid (site look: square, thin gray) */
-    .ih-controls { max-width: 1680px; margin: 0 auto 14px; padding: 0 32px; display: flex; gap: 10px; justify-content: flex-end; }
+    .ih-controls { max-width: 1680px; margin: 0 auto 14px; padding: 0 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; justify-content: flex-end; }
     .ih-head { display: flex; align-items: center; gap: 8px; padding: 11px 14px; border-bottom: 1px solid var(--line-strong); text-decoration: none; color: inherit; }
     .ih-emoji { font-size: 16px; }
     .ih-name { font-size: 13px; font-weight: 800; }
@@ -166,6 +166,20 @@
     /* Per-case briefing cards */
     .ih-tc-date { font-weight: 700; color: var(--ink-60); }
     .ih-card-moved { border-top: 3px solid var(--neon-block); }
+    /* Card arrangement: sort control, priority star, group headers */
+    .ih-tc-right { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+    .ih-star { background: none; border: none; cursor: pointer; font-size: 15px; line-height: 1; color: var(--ink-40); padding: 0; }
+    .ih-star:hover { color: var(--ink-60); }
+    .ih-star.on { color: #E0A100; }
+    .ih-sort { display: inline-flex; margin-right: auto; }
+    .ih-sort-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; margin-left: -1px; }
+    .ih-sort-btn:first-child { margin-left: 0; }
+    .ih-sort-btn:hover { background: var(--paper-2); }
+    .ih-sort-btn.on { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
+    .ih-grp-head { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 8px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-60); margin: 12px 0 0; padding-bottom: 7px; border-bottom: 1px solid var(--line-strong); }
+    .ih-grp-head:first-child { margin-top: 0; }
+    .ih-grp-head span { font-size: 11px; color: var(--ink-40); font-weight: 700; letter-spacing: 0.04em; }
+    .ih-grp-hint { grid-column: 1 / -1; font-size: 12px; color: var(--ink-40); padding: 4px 0 2px; }
     /* Prospects tile */
     .ih-prospect-row { display: flex; gap: 10px; align-items: center; padding: 8px 18px; border-bottom: 1px solid var(--line); }
     .ih-prospect-row:last-child { border-bottom: none; }
@@ -342,6 +356,12 @@
 
   <!-- Dashboard: top 7 from each section, four columns -->
   <div class="ih-controls">
+    <div class="ih-sort" id="ih-sort" role="group" aria-label="Arrange case cards">
+      <button type="button" class="ih-sort-btn on" data-sort="activity" title="Cases that moved today first, then recent activity">Activity</button>
+      <button type="button" class="ih-sort-btn" data-sort="az" title="Alphabetical by case name">A–Z</button>
+      <button type="button" class="ih-sort-btn" data-sort="priority" title="High-priority cases pinned on top">Priority</button>
+      <button type="button" class="ih-sort-btn" data-sort="theme" title="Grouped by practice area">Theme</button>
+    </div>
     <div class="ih-dd-wrap">
       <button type="button" id="ih-cases-btn" class="ih-dd-btn">Cases: All</button>
       <div id="ih-cases-panel" class="ih-dd-panel" style="display:none;"></div>

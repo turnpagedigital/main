@@ -76,6 +76,21 @@
     "bankruptcy-creditor-rights":   { name: "Bankruptcy Creditor Rights", emoji: "📜", bg: "#FEE2E2", fg: "#991b1b" },
   };
 
+  // Order themes lead with the most active practice areas (used by the
+  // "Theme" card arrangement below).
+  var THEME_ORDER = ["llm-class-action", "crypto-insolvency", "bankruptcy-creditor-rights",
+                     "fraud-recovery", "billion-dollar-class-actions", "rewind-tariffs"];
+
+  // Card arrangement — persisted per-device; high-priority flags roam across
+  // devices via api/prefs (alongside the shared pill colors).
+  var VALID_SORTS = { activity: 1, az: 1, priority: 1, theme: 1 };
+  var sortMode = "activity";
+  try { var _sm = localStorage.getItem("ud-case-sort"); if (VALID_SORTS[_sm]) sortMode = _sm; } catch (e) {}
+  var savedPriorities = {};
+  try { savedPriorities = JSON.parse(localStorage.getItem("ud-case-priorities") || "{}") || {}; } catch (e) { savedPriorities = {}; }
+  function isPriority(slug) { return !!savedPriorities[slug]; }
+  function persistPriorities() { try { localStorage.setItem("ud-case-priorities", JSON.stringify(savedPriorities)); } catch (e) {} }
+
   function themeOf(slug) {
     var base = THEMES[slug] || { name: slug, emoji: "📰", bg: "#E0E7FF", fg: "#3730a3" };
     var ov = savedColors[slug];
@@ -124,7 +139,7 @@
       return fetch(BASE + "api/prefs", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ colors: colors, groups: (p && p.groups) || [], presets: (p && p.presets) || [], theme_presets: themePresets }),
+        body: JSON.stringify({ colors: colors, groups: (p && p.groups) || [], presets: (p && p.presets) || [], theme_presets: themePresets, priorities: savedPriorities }),
       });
     }).catch(function () {});
   }
@@ -547,11 +562,16 @@
           '<a href="' + BASE + 'docket.html#case=' + encodeURIComponent(m.slug) + '">Docket \u2192</a></div>';
       }
 
+      var pri = isPriority(m.slug);
+      var star = '<button type="button" class="ih-star' + (pri ? " on" : "") +
+        '" data-star="' + esc(m.slug) + '" aria-label="' + (pri ? "Remove high priority" : "Mark high priority") +
+        '" title="' + (pri ? "High priority — click to remove" : "Mark as high priority") + '">' +
+        (pri ? "★" : "☆") + "</button>";
       var head =
         '<div class="ih-tc-head">' +
           '<a href="' + BASE + 'docket.html#case=' + encodeURIComponent(m.slug) + '" style="text-decoration:none">' +
             casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) + "</a>" +
-          '<span class="ih-tc-count">' + esc(count) + "</span>" +
+          '<span class="ih-tc-right"><span class="ih-tc-count">' + esc(count) + "</span>" + star + "</span>" +
         "</div>";
 
       var html =
@@ -561,16 +581,61 @@
         "</section>";
 
       var latest = (brief && brief.activity && brief.activity.latest) || "";
-      return { html: html, moved: moved, dev: devCount, latest: latest };
+      return { html: html, moved: moved, dev: devCount, latest: latest,
+               slug: m.slug, name: (m.short_name || m.display_name || m.slug),
+               theme: (m.topics && m.topics[0]) || "" };
     });
 
-    // Moved briefings first, then cases with fresh docket/news, freshest first.
-    cards.sort(function (a, b) {
-      if (a.moved !== b.moved) return a.moved ? -1 : 1;
-      if ((a.dev > 0) !== (b.dev > 0)) return a.dev > 0 ? -1 : 1;
-      return (b.latest || "").localeCompare(a.latest || "");
+    function byName(a, b) { return a.name.localeCompare(b.name); }
+    function grpHead(label, n) {
+      return '<div class="ih-grp-head">' + esc(label) + ' <span>' + n + "</span></div>";
+    }
+    function join(list) { return list.map(function (c) { return c.html; }).join(""); }
+
+    var htmlOut;
+    if (sortMode === "az") {
+      htmlOut = join(cards.slice().sort(byName));
+    } else if (sortMode === "priority") {
+      var hi = cards.filter(function (c) { return isPriority(c.slug); }).sort(byName);
+      var lo = cards.filter(function (c) { return !isPriority(c.slug); }).sort(byName);
+      htmlOut = grpHead("★ High priority", hi.length) +
+        (hi.length ? join(hi)
+          : '<div class="ih-grp-hint">No high-priority cases yet — click the ☆ on any card to pin it here.</div>') +
+        grpHead("Other cases", lo.length) + join(lo);
+    } else if (sortMode === "theme") {
+      htmlOut = "";
+      var seen = {};
+      THEME_ORDER.forEach(function (tk) {
+        var g = cards.filter(function (c) { return c.theme === tk; }).sort(byName);
+        if (!g.length) return;
+        g.forEach(function (c) { seen[c.slug] = 1; });
+        var t = THEMES[tk] || { emoji: "📰", name: tk };
+        htmlOut += grpHead(t.emoji + " " + t.name, g.length) + join(g);
+      });
+      var rest = cards.filter(function (c) { return !seen[c.slug]; }).sort(byName);
+      if (rest.length) htmlOut += grpHead("📰 Other", rest.length) + join(rest);
+    } else {
+      // Activity (default): moved briefings first, then fresh docket/news, freshest first.
+      htmlOut = join(cards.slice().sort(function (a, b) {
+        if (a.moved !== b.moved) return a.moved ? -1 : 1;
+        if ((a.dev > 0) !== (b.dev > 0)) return a.dev > 0 ? -1 : 1;
+        return (b.latest || "").localeCompare(a.latest || "");
+      }));
+    }
+    grid.innerHTML = htmlOut;
+
+    grid.querySelectorAll("[data-star]").forEach(function (b) {
+      b.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        var slug = b.getAttribute("data-star");
+        if (savedPriorities[slug]) delete savedPriorities[slug];
+        else savedPriorities[slug] = true;
+        persistPriorities();
+        pushPrefs();
+        renderCaseGrid();
+      });
     });
-    grid.innerHTML = cards.map(function (c) { return c.html; }).join("");
     _carouselSync();
   }
 
@@ -1004,6 +1069,11 @@
     if (p && p.ok && Array.isArray(p.theme_presets) && p.theme_presets.length === 12) {
       try { localStorage.setItem("ud-theme-presets", JSON.stringify(p.theme_presets)); } catch (e) {}
     }
+    if (p && p.ok && p.priorities && typeof p.priorities === "object") {
+      savedPriorities = {};
+      Object.keys(p.priorities).forEach(function (k) { if (p.priorities[k]) savedPriorities[k] = true; });
+      persistPriorities();
+    }
     if (p && p.ok) renderAll();
   }).catch(function () {});
 
@@ -1030,10 +1100,31 @@
   }
   var _carouselSync = function () {};
 
+  // Card-arrangement control (Activity / A–Z / Priority / Theme).
+  function wireSortBar() {
+    var bar = document.getElementById("ih-sort");
+    if (!bar) return;
+    function paint() {
+      bar.querySelectorAll("[data-sort]").forEach(function (b) {
+        b.classList.toggle("on", b.getAttribute("data-sort") === sortMode);
+      });
+    }
+    bar.querySelectorAll("[data-sort]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        sortMode = b.getAttribute("data-sort");
+        try { localStorage.setItem("ud-case-sort", sortMode); } catch (e) {}
+        paint();
+        renderCaseGrid();
+      });
+    });
+    paint();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
     wireDropdown("ih-themes-btn", "ih-themes-panel", buildThemesPanel);
     updateFilterButtons();
     wireCarousel();
+    wireSortBar();
   });
 })();
