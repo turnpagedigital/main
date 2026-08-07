@@ -46,6 +46,10 @@ hi
 
 > none
 
+### (no docket number) — 2026-08-05
+
+> Hearing held
+
 ### Dkt. 1119 — 2026-07-29
 
 > Objection to confirmation of plan 11/12/13
