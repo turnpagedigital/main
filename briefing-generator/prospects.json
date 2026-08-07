@@ -451,7 +451,9 @@
       "source_name": "Troveo AI Lawsuit Tracker",
       "date": "2026-07-01",
       "first_seen": "2026-08-07",
-      "status": "new"
+      "status": "tracked",
+      "triaged_at": "2026-08-07T22:35:10.280Z",
+      "tracked_slug": "publishers-v-google-llc-gemini-books"
     },
     {
       "id": "2a1c0bed44",
