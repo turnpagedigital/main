@@ -504,8 +504,10 @@
       "source_name": "Baker Botts (July 2026)",
       "date": "2026-07-01",
       "first_seen": "2026-08-07",
-      "status": "new",
-      "vote": 1
+      "status": "tracked",
+      "vote": 1,
+      "triaged_at": "2026-08-07T23:03:27.876Z",
+      "tracked_slug": "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153"
     },
     {
       "id": "a15c83e1b6",
