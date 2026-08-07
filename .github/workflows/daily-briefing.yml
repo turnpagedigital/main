@@ -93,54 +93,41 @@ jobs:
             done
           fi
 
-      # ── Deliver to the dev branch (intel dashboards + site queue) ────────
+      # ── Deliver to the dev branch (per-case briefings + unified pages) ───
       # The dev site is what the admin's "output home" links point to, so it
-      # needs the fresh intel dashboards too — not just main/production. We
-      # also queue today's advisories as DRAFT posts for the Briefings tab
-      # (idempotent — existing slugs skipped). This commit DOES rebuild dev
-      # (no [skip ci]) so /intel/<slug> on dev serves the new dashboards.
-      - name: Checkout dev branch (intel + site queue)
+      # needs the fresh intel artifacts too — not just main/production. This
+      # commit DOES rebuild dev (no [skip ci]) so /intel on dev serves them.
+      - name: Checkout dev branch
         uses: actions/checkout@v4
         with:
           ref: dev
           path: dev-site
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Copy fresh intel dashboards into dev
+      - name: Copy fresh intel artifacts into dev
         run: |
-          # Copy ONLY generated artifacts (dashboards, advisories, posts,
-          # landing) — never scripts/cases/config, so dev keeps its own
-          # pipeline code (which may be ahead of main).
+          # Copy ONLY generated artifacts — never scripts/config, so dev
+          # keeps its own pipeline code (which may be ahead of main).
+          mkdir -p dev-site/briefing-generator/cases/data
           cp -f briefing-generator/index.html dev-site/briefing-generator/index.html 2>/dev/null || true
-          cp -f briefing-generator/briefings.json dev-site/briefing-generator/briefings.json 2>/dev/null || true
-          for slug in rewind-tariffs llm-class-action crypto-insolvency fraud-recovery billion-dollar-class-actions bankruptcy-creditor-rights; do
-            d="dev-site/briefing-generator/$slug"
-            mkdir -p "$d/public" "$d/posts"
-            cp -f "briefing-generator/$slug/dashboard.html" "$d/dashboard.html" 2>/dev/null || true
-            cp -f "briefing-generator/$slug/posts.html"     "$d/posts.html"     2>/dev/null || true
-            cp -f briefing-generator/$slug/public/advisory-*.md "$d/public/" 2>/dev/null || true
-            cp -f briefing-generator/$slug/posts/*.md           "$d/posts/"   2>/dev/null || true
+          cp -f briefing-generator/case-briefings.json dev-site/briefing-generator/case-briefings.json 2>/dev/null || true
+          cp -f briefing-generator/cases/data/*.json dev-site/briefing-generator/cases/data/ 2>/dev/null || true
+          cp -f briefing-generator/cases/*.html dev-site/briefing-generator/cases/ 2>/dev/null || true
+          for page in docket.html calendar.html news.html notes.html; do
+            cp -f "briefing-generator/$page" "dev-site/briefing-generator/$page" 2>/dev/null || true
           done
 
-      - name: Queue site briefing drafts
-        run: |
-          DATE=${BRIEFING_DATE:-$(date -u +"%Y-%m-%d")}
-          python briefing-generator/scripts/queue_site_drafts.py \
-            --source briefing-generator --target dev-site --date "$DATE"
-        env:
-          BRIEFING_DATE: ${{ github.event.inputs.date || '' }}
-
-      - name: Commit intel dashboards + queued drafts to dev
+      - name: Commit intel artifacts to dev
         working-directory: dev-site
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "Daily Briefing Bot"
-          git add briefing-generator public/briefings
+          git add briefing-generator
           if git diff --staged --quiet; then
             echo "Nothing new for dev"
           else
             DATE=$(date -u +"%Y-%m-%d")
-            git commit -m "Daily briefing ${DATE}: refresh dev intel dashboards + queue drafts"
+            git commit -m "Daily briefing ${DATE}: refresh dev case briefings"
             for attempt in 1 2 3 4 5; do
               if git pull --rebase origin dev && git push origin HEAD:dev; then
                 echo "pushed to dev on attempt ${attempt}"; break

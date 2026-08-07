@@ -42,13 +42,14 @@ jobs:
           pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Scan news + regenerate case pages
+      - name: Scan news + prospects, regenerate case pages
         working-directory: briefing-generator
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           python scripts/scan_feeds.py
           python scripts/scan_news.py
+          python scripts/scan_prospects.py
           python scripts/extract_uploads.py
           python scripts/inject_cases.py
 
@@ -86,14 +87,14 @@ jobs:
           cp -f briefing-generator/cases/data/*.json dev-site/briefing-generator/cases/data/ 2>/dev/null || true
           cp -f briefing-generator/cases/*.html dev-site/briefing-generator/cases/ 2>/dev/null || true
           cp -f briefing-generator/docket.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/news.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/notes.html dev-site/briefing-generator/ 2>/dev/null || true
           cp -f briefing-generator/bondoro.json dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/prospects.json dev-site/briefing-generator/ 2>/dev/null || true
           cp -f briefing-generator/feed-sources.json dev-site/briefing-generator/ 2>/dev/null || true
           cp -f briefing-generator/uploads.json dev-site/briefing-generator/ 2>/dev/null || true
           cp -rf briefing-generator/uploads dev-site/briefing-generator/ 2>/dev/null || true
           cp -f briefing-generator/calendar.html dev-site/briefing-generator/ 2>/dev/null || true
-          for slug in rewind-tariffs llm-class-action crypto-insolvency fraud-recovery billion-dollar-class-actions bankruptcy-creditor-rights; do
-            cp -f "briefing-generator/$slug/dashboard.html" "dev-site/briefing-generator/$slug/dashboard.html" 2>/dev/null || true
-          done
 
       - name: Commit to dev
         if: env.CHANGED == '1'

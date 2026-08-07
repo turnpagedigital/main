@@ -89,7 +89,7 @@
     }
     var chip = '<span class="pr-status-chip tracked">Tracked</span>';
     if (i.tracked_slug) {
-      chip += ' <a class="pr-btn" href="cases/' + esc(i.tracked_slug) + '.html">Open case</a>';
+      chip += ' <a class="pr-btn" href="docket.html#case=' + encodeURIComponent(i.tracked_slug) + '">Open docket</a>';
     }
     return chip;
   }
@@ -348,7 +348,7 @@
         return setStatus(p.id, "tracked", null, { tracked_slug: payload.slug }).then(function () {
           status.className = "pr-modal-status okk";
           status.innerHTML = "Tracked. The docket syncs on the next hourly run — " +
-            '<a href="cases/' + esc(payload.slug) + '.html">open the case page</a>.';
+            '<a href="docket.html#case=' + encodeURIComponent(payload.slug) + '">open its docket</a>.';
           btn.style.display = "none";
           $("tk-cancel").textContent = "Done";
         });

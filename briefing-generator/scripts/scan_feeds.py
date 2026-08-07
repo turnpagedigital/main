@@ -21,7 +21,8 @@ SOURCES = REPO_ROOT / "feed-sources.json"
 OUT = REPO_ROOT / "bondoro.json"
 
 UA = "turnpage-daily-briefing/1.0 (+https://turnpagedigital.com)"
-MAX_STORED = 300
+MAX_STORED = 300     # legacy — superseded by time-based retention below
+SAFETY_CAP = 6000    # hard ceiling so a misbehaving feed can't grow bondoro.json unbounded
 
 
 def fetch(url):
@@ -133,6 +134,92 @@ def auto_match_cases(items):
 
 
 
+ARCHIVE_AFTER_DAYS = 30   # hidden from the default news view, kept for search
+DELETE_AFTER_DAYS = 90    # removed from the store entirely
+NOTES_PATH = REPO_ROOT / "intel-notes.json"
+UPLOADS_PATH = REPO_ROOT / "uploads.json"
+
+
+def _protected_index():
+    """Build a {(slug, date): [desc-prefix, …]} index of items a reader has
+    acted on — starred, snoozed, noted, or attached a file to. News.js keys
+    these as '<case_slug>|d<date>|<title+summary>[:60]'; we index the (slug,
+    date) pair plus the description remainder so retention can match an item
+    tolerantly (title prefix), never deleting something the reader kept."""
+    idx = {}
+    def add(key):
+        m = re.match(r"^(.*?)\|d(\d{4}-\d{2}-\d{2})\|(.*)$", key or "")
+        if m:
+            idx.setdefault((m.group(1), m.group(2)), []).append(m.group(3))
+    try:
+        notes = (json.loads(NOTES_PATH.read_text(encoding="utf-8")) or {}).get("entries", {})
+        for k, rec in notes.items():
+            if not isinstance(rec, dict):
+                continue
+            if rec.get("bookmarked") or (rec.get("note") or "").strip() or rec.get("snooze_until"):
+                add(k)
+    except Exception:
+        pass
+    try:
+        docs = (json.loads(UPLOADS_PATH.read_text(encoding="utf-8")) or {}).get("docs", {})
+        for k, lst in docs.items():
+            if lst:
+                add(k)  # any attached file protects
+    except Exception:
+        pass
+    return idx
+
+
+def _item_protected(item, idx):
+    # Tagged to a specific case (or case group) — protected outright.
+    cs, gn = item.get("case_slug"), item.get("group_name")
+    if (cs and cs != "None") or (gn and gn != "None"):
+        return True
+    slug = "" if cs in (None, "None") else cs
+    date = item.get("date") or ""
+    rems = idx.get((slug, date))
+    if not rems:
+        return False
+    title = (item.get("title") or "").strip()
+    excerpt = (item.get("excerpt") or "").strip()
+    dfull = (title + (" — " + excerpt if excerpt else ""))[:60]
+    tprefix = title[:30]
+    for r in rems:
+        if r == dfull or (tprefix and r.startswith(tprefix)) or (r and dfull.startswith(r[:30])):
+            return True
+    return False
+
+
+def apply_retention(items):
+    """Archive unprotected items after 30 days (kept for search), delete after
+    90. Protected items — starred / snoozed / noted / file-attached / case-
+    tagged — are retained indefinitely and never archived."""
+    idx = _protected_index()
+    today = dt.date.today()
+    kept, archived, deleted = [], 0, 0
+    for it in items:
+        try:
+            age = (today - dt.date.fromisoformat((it.get("date") or "")[:10])).days
+        except Exception:
+            age = 0  # undated → treat as fresh, keep visible
+        if _item_protected(it, idx):
+            it.pop("archived", None)
+            kept.append(it)
+            continue
+        if age > DELETE_AFTER_DAYS:
+            deleted += 1
+            continue
+        if age > ARCHIVE_AFTER_DAYS:
+            if not it.get("archived"):
+                archived += 1
+            it["archived"] = True
+        else:
+            it.pop("archived", None)
+        kept.append(it)
+    print(f"  ✓ retention: {archived} newly archived (>30d), {deleted} deleted (>90d), {len(kept)} kept")
+    return kept
+
+
 def main():
     try:
         data = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"items": []}
@@ -163,7 +250,11 @@ def main():
         print(f"  ✓ {label}: {len(fresh)} item(s) in feed")
 
     items = sorted(existing.values(), key=lambda i: i.get("date") or "", reverse=True)
-    del items[MAX_STORED:]
+    # Retention (archive >30d, delete >90d) replaces the blunt count cap;
+    # protected items are exempt, so a high safety ceiling only guards against
+    # runaway growth from a bad feed.
+    items = apply_retention(items)
+    del items[SAFETY_CAP:]
     matched = auto_match_cases(items)
     if matched:
         print(f"  ✓ auto-matched {matched} item(s) to tracked cases")

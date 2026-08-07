@@ -608,11 +608,9 @@ def render_case_page(case):
     name = html_escape(cfg["display_name"])
     emoji = cfg.get("emoji", "⚖️")
 
-    # Backlink to this case's daily briefing; theme tags are plain text now
-    # (theme dashboards are retired — briefings are per-case).
+    # Theme tags are plain text now (theme dashboards are retired — briefings
+    # are per-case; the nav's Briefings link covers navigation).
     topics = [t for t in cfg.get("topics", []) if t in TOPIC_META]
-    back = (f'<a class="tn-back" href="../briefings.html#case={slug}">← '
-            f'📰 {name} briefing</a>')
     also = ""
     if topics:
         labels = ", ".join(f'{TOPIC_META[t]["emoji"]} {html_escape(TOPIC_META[t]["display"])}'
