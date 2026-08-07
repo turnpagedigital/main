@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "publishers-v-google-llc-gemini-books",
+    "display_name": "Publishers v. Google LLC (Gemini Books)",
+    "case_name": "Major book publishers v. Google LLC",
+    "court": "District Court, N.D. California",
+    "case_number": "5:23-cv-03440",
+    "judge": "Eumi K. Lee",
+    "docket_id": "67599029",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/67599029/-/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
