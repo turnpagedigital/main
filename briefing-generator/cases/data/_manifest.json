@@ -252,5 +252,17 @@
     ],
     "sync": "active",
     "default_color": "#D4FF00"
+  },
+  {
+    "slug": "hachette-et-al-v-google-llc-gemini",
+    "display_name": "Hachette et al. v. Google LLC (Gemini)",
+    "short_name": "Hachette et",
+    "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
+    "court": "S.D.N.Y.",
+    "topics": [
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "default_color": "#94C6F8"
   }
 ]
