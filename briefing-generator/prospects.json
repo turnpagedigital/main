@@ -96,7 +96,8 @@
       "source_name": "Pharmaceutical Executive / PharmExec",
       "date": "2026-08-04",
       "first_seen": "2026-08-07",
-      "status": "new"
+      "status": "new",
+      "snooze_until": "2026-08-21T13:00:00.000Z"
     },
     {
       "id": "cbfa47b01f",
