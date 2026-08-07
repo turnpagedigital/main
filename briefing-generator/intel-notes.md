@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-07 02:03 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-07 15:54 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -92,6 +92,4 @@ $60M in proceeds
 $10M admin
 $50M net 
 $100-$500M liabilities = 2-10c recoveries
-
-### (no docket number) — undated
 
