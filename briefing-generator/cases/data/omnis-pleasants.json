@@ -14,46 +14,104 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-07T13:43:26.159149+00:00",
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-07T14:46:45.678699+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 7,
     "recent": [
       {
-        "entry_number": 67,
-        "date_filed": "2026-08-05",
-        "time_filed": "16:31:44",
-        "date_display": "Aug 5, 2026",
-        "description": "Affidavit Of Service",
+        "entry_number": 72,
+        "date_filed": "2026-08-07",
+        "time_filed": "10:16:04",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
-        "doc_url": "",
-        "titled_from_upload": true
+        "doc_url": ""
       },
       {
-        "entry_number": 66,
-        "date_filed": "2026-08-04",
-        "time_filed": "17:31:48",
-        "date_display": "Aug 4, 2026",
-        "description": "Statement That Unsecured Creditors' Committee Has Not Been Appointed",
-        "is_new": false,
+        "entry_number": 71,
+        "date_filed": "2026-08-07",
+        "time_filed": "10:14:53",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
         "landmark": "",
-        "doc_url": "",
-        "titled_from_upload": true
+        "doc_url": ""
       },
       {
-        "entry_number": null,
-        "date_filed": "2026-08-04",
-        "time_filed": "12:11:12",
-        "date_display": "Aug 4, 2026",
-        "description": "Transcript",
-        "is_new": false,
+        "entry_number": 70,
+        "date_filed": "2026-08-07",
+        "time_filed": "09:47:23",
+        "date_display": "Aug 7, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 72,
+        "date_filed": "2026-08-07",
+        "time_filed": "10:16:04",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 71,
+        "date_filed": "2026-08-07",
+        "time_filed": "10:14:53",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 70,
+        "date_filed": "2026-08-07",
+        "time_filed": "09:47:23",
+        "date_display": "Aug 7, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 69,
+        "date_filed": "2026-08-07",
+        "time_filed": "09:45:43",
+        "date_display": "Aug 7, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 68,
+        "date_filed": "2026-08-07",
+        "time_filed": "09:36:58",
+        "date_display": "Aug 7, 2026",
+        "description": "Appearance - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-07",
+        "time_filed": "09:43:47",
+        "date_display": "Aug 7, 2026",
+        "description": "Add Attorney",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 67,
         "date_filed": "2026-08-05",
