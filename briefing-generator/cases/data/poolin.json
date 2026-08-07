@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T15:14:22.842425+00:00",
+    "fetched_at": "2026-08-07T16:13:12.419971+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
     "new_in_72h": 14,
@@ -57,10 +57,11 @@
         "date_filed": "2026-08-07",
         "time_filed": "09:36:18",
         "date_display": "Aug 7, 2026",
-        "description": "Objection",
+        "description": "Letter Brief in Opposition to Debtors' Amended Motion for Entry of Orders Relating to Bidding Procedures and Sale of Assets",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "",
+        "titled_from_upload": true
       },
       {
         "entry_number": 97,
