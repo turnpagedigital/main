@@ -17,9 +17,8 @@ docket_source:
   type: courtlistener             # courtlistener | manual
   docket_id: 69058235             # from courtlistener.com/docket/69058235/
   url: "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/"
-claims_administrator:             # optional second "mirror" for settlement / bankruptcy cases
-  name: "Anthropic Copyright Settlement Administrator"
-  url: "https://www.anthropiccopyrightsettlement.com/"
+claims_administrator:             # settlement tracker only — no docket mirror (JND hosts a claims portal, not the court docket)
+  name: "JND Legal Administration"
   key_dates_url: "https://www.anthropiccopyrightsettlement.com/dates"
 research:
   themes:
