@@ -136,7 +136,10 @@ def stretto_fetch(base_url, docket_number):
             page.wait_for_timeout(1000)
         page.goto(docket_url, wait_until="networkidle", timeout=45000)
         try:
-            page.wait_for_selector("a[href$='.pdf']", timeout=30000)
+            # attached, not visible — the responsive table keeps one cell set
+            # display:none at desktop width, so the anchors exist but a
+            # visibility wait never resolves.
+            page.wait_for_selector("a[href$='.pdf']", state="attached", timeout=30000)
         except Exception:
             diag = page.evaluate(
                 "() => ({ title: document.title, pdfs: document.querySelectorAll(\"a[href$='.pdf']\").length,"
@@ -145,28 +148,32 @@ def stretto_fetch(base_url, docket_number):
             fail(f"no PDF links on the Stretto docket for {case_seg[0]} — diag={diag}")
         page.wait_for_timeout(1000)
 
-        # PDFs aren't scoped to <tbody><tr> here — walk every PDF link and read
-        # its row's first cell (the docket number). The ?search filter may not
-        # apply on direct load, so we match the number across all rows.
-        target_href = title = link_handle = None
-        for link in page.query_selector_all("a[href$='.pdf']"):
-            row = link.evaluate_handle("el => el.closest('tr') || el.closest('[class*=row]')")
-            cells = row.query_selector_all("td") if row else []
-            if not cells:
-                continue
-            first = re.sub(r"(?i)docket\s*(no\.?|#)?", "", cells[0].inner_text()).strip()
-            if first.isdigit() and int(first) == int(docket_number):
-                target_href = link.get_attribute("href")
-                link_handle = link
-                if len(cells) >= 3:
-                    title = clean(cells[2].inner_text())[:300] or None
-                if not title:
-                    title = clean(link.inner_text())[:300] or None
-                break
-
-        if not target_href:
+        # Match in-page: for each PDF link, read its row's docket-number cell.
+        # Returns the href + document-name once the number matches N.
+        match = page.evaluate(
+            """(n) => {
+                const links = Array.from(document.querySelectorAll("a[href$='.pdf']"));
+                for (const a of links) {
+                    const row = a.closest('tr') || a.closest("[class*='row']");
+                    if (!row) continue;
+                    const cells = row.querySelectorAll('td');
+                    if (!cells.length) continue;
+                    const first = cells[0].innerText.replace(/docket\\s*(no\\.?|#)?/i, '').trim();
+                    if (/^\\d+$/.test(first) && parseInt(first, 10) === n) {
+                        return { href: a.href,
+                                 title: (cells[2] ? cells[2].innerText : a.innerText).replace(/\\s+/g,' ').trim().slice(0,300) };
+                    }
+                }
+                return null;
+            }""",
+            int(docket_number),
+        )
+        if not match:
             browser.close()
             fail(f"Dkt. {docket_number} not found on the Stretto docket for {case_seg[0]}")
+        target_href = match["href"]
+        title = clean(match["title"]) or None
+        link_handle = page.query_selector(f"a[href='{target_href}']")
 
         pdf_url = target_href if target_href.startswith("http") else urljoin(docket_url, target_href)
         body = _pdf_via_download_or_fetch(page, link_handle, pdf_url)
@@ -198,49 +205,47 @@ def epiq_fetch(base_url, docket_number):
     with sync_playwright() as pw:
         browser, ctx, page = _launch(pw)
         page.goto(dockets_url, wait_until="networkidle", timeout=45000)
-        # Angular renders the docket list after an API round-trip; nudge any
-        # lazy render with a scroll, then wait for the entry links.
+        # Documents are getdocumentbycode links; the list is newest-first, so
+        # recent dockets sit on the first page. Scroll to pull in more rows.
         try:
-            page.wait_for_selector("app-search-card, [class*='docket-card'], a[href*='docketId']", timeout=35000)
+            page.wait_for_selector("a[href*='getdocumentbycode']", state="attached", timeout=35000)
         except Exception:
-            pass
-        page.mouse.wheel(0, 4000)
-        page.wait_for_timeout(2500)
-        if not page.query_selector("a[href*='docketId']"):
             diag = page.evaluate(
                 "() => ({ title: document.title,"
-                " docketLinks: document.querySelectorAll(\"a[href*='docketId']\").length,"
-                " viewLinks: Array.from(document.querySelectorAll('a')).filter(a=>/view/i.test(a.textContent)).length,"
-                " hrefs: Array.from(document.querySelectorAll('a')).map(a=>a.getAttribute('href')).filter(h=>h&&h.length>3).slice(0,8),"
+                " docLinks: document.querySelectorAll(\"a[href*='getdocumentbycode']\").length,"
                 " body: document.body.innerText.slice(0,160) })")
             browser.close()
             fail(f"Epiq dockets did not render for case {code} — diag={diag}")
-        page.wait_for_timeout(1000)
-
-        # Match the row whose docket-number text equals N, take its View link.
-        # (Docket rows put the number in a bold/label element; scan each row's
-        # text and its View anchor.)
-        target = page.evaluate(
-            """(n) => {
-                const links = Array.from(document.querySelectorAll("a[href*='docketId']"));
-                for (const a of links) {
-                    const u = new URL(a.href);
-                    if (String(u.searchParams.get('docketNumber')) === String(n)) {
-                        return { href: a.href, title: (a.closest('[class*=card],tr,[class*=row]')||a).innerText.replace(/\\s+/g,' ').trim().slice(0,300) };
+        for _ in range(6):
+            hit = page.evaluate(
+                """(n) => {
+                    const cards = Array.from(document.querySelectorAll("[class*='card'],[class*='result'],[class*='row'],tr"));
+                    for (const c of cards) {
+                        const a = c.querySelector("a[href*='getdocumentbycode']");
+                        if (!a) continue;
+                        const txt = c.innerText.replace(/\\s+/g,' ');
+                        const m = txt.match(/docket\\s*#?\\s*(\\d+)/i) || txt.match(/^\\s*(\\d+)\\b/);
+                        if (m && parseInt(m[1],10) === n) {
+                            return { href: a.href, title: txt.trim().slice(0,300) };
+                        }
                     }
-                }
-                return null;
-            }""",
-            int(docket_number),
-        )
-        if not target:
+                    return null;
+                }""",
+                int(docket_number),
+            )
+            if hit:
+                break
+            page.mouse.wheel(0, 6000)
+            page.wait_for_timeout(1500)
+        if not hit:
+            n_rendered = page.evaluate("() => document.querySelectorAll(\"a[href*='getdocumentbycode']\").length")
             browser.close()
-            fail(f"Dkt. {docket_number} not found on the Epiq docket for {code}")
+            fail(f"Dkt. {docket_number} not among the {n_rendered} rendered Epiq rows for {code} "
+                 "(older entries may need the docket search — not yet automated)")
 
-        link_handle = page.query_selector(
-            f"a[href*='docketNumber={int(docket_number)}']") or \
-            page.query_selector("a[href*='docketId']")
-        body = _pdf_via_download_or_fetch(page, link_handle, target["href"])
+        link_handle = page.query_selector(f"a[href='{hit['href']}']")
+        target = hit
+        body = _pdf_via_download_or_fetch(page, link_handle, hit["href"])
         browser.close()
 
     if len(body) > MAX_BYTES:
