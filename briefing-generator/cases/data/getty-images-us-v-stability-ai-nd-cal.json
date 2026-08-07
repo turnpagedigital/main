@@ -1,0 +1,23 @@
+{
+  "case": {
+    "slug": "getty-images-us-v-stability-ai-nd-cal",
+    "display_name": "Getty Images (US) v. Stability AI (N.D. Cal.)",
+    "case_name": "Getty Images (US), Inc. v. Stability AI, Inc. et al.",
+    "court": "U.S. District Court for the Northern District of California",
+    "case_number": "3:25-cv-06891",
+    "judge": "Trina L. Thompson",
+    "docket_id": "71112094",
+    "status": "active",
+    "sync": "active"
+  },
+  "docket": {
+    "source": "courtlistener",
+    "awaiting_sync": false,
+    "docket_url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
+    "new_in_72h": 0,
+    "recent": [],
+    "entries": []
+  },
+  "claims_administrator": null,
+  "coverage": []
+}
