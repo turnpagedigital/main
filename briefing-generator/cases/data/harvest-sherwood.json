@@ -15,7 +15,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T14:45:41.245682+00:00",
+    "fetched_at": "2026-08-07T15:13:14.086158+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": false,
     "new_in_72h": 27,
@@ -13744,7 +13744,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=62"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=68"
   },
   "claims_administrator": {
     "name": "Epiq11",
