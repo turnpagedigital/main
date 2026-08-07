@@ -188,7 +188,10 @@
   /* Toolbar */
   .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
   #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
-  .ud-lookback-label{font-size:12px;font-weight:800;letter-spacing:0.03em;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:3px 10px;margin-right:10px;white-space:nowrap;}
+  .ud-lookback-box{display:inline-flex;align-items:center;gap:8px;background:var(--paper-2);border:1px solid var(--line-strong);padding:3px 10px;margin-right:10px;white-space:nowrap;}
+  .ud-lookback-box #ud-lookback-label{font-size:12px;font-weight:800;letter-spacing:0.03em;color:var(--ink);}
+  .ud-lookback-box .ud-date-range{display:inline-flex;align-items:center;gap:6px;}
+  .ud-lookback-box .ud-date-input{width:130px;padding:2px 6px;font-size:12px;font-family:inherit;background:var(--surface);border:1px solid var(--line-strong);color:var(--ink);}
   #ud-sort-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;}
   #ud-sort-btn:hover{border-color:var(--ink-40);}
   /* Pills */

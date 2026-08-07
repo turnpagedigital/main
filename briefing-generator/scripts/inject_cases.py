@@ -133,7 +133,10 @@ UD_CSS = r"""
   /* Toolbar */
   .ud-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
   #ud-count{font-size:14px;color:var(--ink-60);flex:1;}
-  .ud-lookback-label{font-size:12px;font-weight:800;letter-spacing:0.03em;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:3px 10px;margin-right:10px;white-space:nowrap;}
+  .ud-lookback-box{display:inline-flex;align-items:center;gap:8px;background:var(--paper-2);border:1px solid var(--line-strong);padding:3px 10px;margin-right:10px;white-space:nowrap;}
+  .ud-lookback-box #ud-lookback-label{font-size:12px;font-weight:800;letter-spacing:0.03em;color:var(--ink);}
+  .ud-lookback-box .ud-date-range{display:inline-flex;align-items:center;gap:6px;}
+  .ud-lookback-box .ud-date-input{width:130px;padding:2px 6px;font-size:12px;font-family:inherit;background:var(--surface);border:1px solid var(--line-strong);color:var(--ink);}
   #ud-sort-btn{background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);font-size:14px;font-weight:700;padding:6px 14px;cursor:pointer;font-family:inherit;}
   #ud-sort-btn:hover{border-color:var(--ink-40);}
   /* Pills */
@@ -958,13 +961,6 @@ def render_unified_docket(cases):
       <div class="ud-search-wrap">
         <input type="text" id="ud-search" class="ud-search-input" placeholder="Search entries, parties, dates…">
       </div>
-      <div class="ud-date-range" id="ud-date-range" style="display:none;">
-        <span class="ud-date-label">From</span>
-        <input type="date" id="ud-date-from" class="ud-date-input">
-        <span class="ud-date-sep">–</span>
-        <span class="ud-date-label">To</span>
-        <input type="date" id="ud-date-to" class="ud-date-input">
-      </div>
       <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
     </div>
     <div class="ud-filter-row">
@@ -987,7 +983,15 @@ def render_unified_docket(cases):
   </div>
 
   <div class="ud-toolbar">
-    <span id="ud-lookback-label" class="ud-lookback-label">Last 90 days</span>
+    <span class="ud-lookback-box">
+      <span id="ud-lookback-label">Last 90 days</span>
+      <span class="ud-date-range" id="ud-date-range" style="display:none;">
+        <span class="ud-date-sep">·</span>
+        <input type="date" id="ud-date-from" class="ud-date-input" aria-label="From date">
+        <span class="ud-date-sep">–</span>
+        <input type="date" id="ud-date-to" class="ud-date-input" aria-label="To date">
+      </span>
+    </span>
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
     <button id="ud-sort-btn">Date ↓</button>
