@@ -163,7 +163,7 @@ function normalizeCase(raw) {
       judge: (cs.judge || "").trim(),
     },
     docket_source: {
-      type: ds.type === "claims_agent" ? "claims_agent" : "courtlistener",
+      type: ds.type === "claims_agent" ? "claims_agent" : ds.type === "watch" ? "watch" : "courtlistener",
       docket_id: ds.docket_id ? String(ds.docket_id).trim() : null,
       url: (ds.url || "").trim(),
       awaiting_sync: ds.awaiting_sync === true,
@@ -185,7 +185,9 @@ function validateCase(c) {
   if (!isValidSlug(c.slug)) return "slug must be kebab-case (lowercase, hyphens, alphanumerics only)";
   if (!c.display_name) return "display_name is required";
   if (c.topics.length === 0) return "tag at least one theme";
-  if (!c.case.parties) return "case.parties is required";
+  // A "watch" situation (threatened litigation / distress, no docket yet)
+  // needs only a name + theme; parties/court/case number are all optional.
+  if (!c.case.parties && c.docket_source.type !== "watch") return "case.parties is required";
   if (c.docket_source.type === "courtlistener") {
     if (!c.docket_source.docket_id) return "docket ID is required for a CourtListener docket";
     if (!c.case.court) return "court is required";
@@ -345,7 +347,7 @@ function parseCaseMd(md, fallbackSlug) {
       judge: caseB ? (subScalar(caseB, "judge") || "") : "",
     },
     docket_source: {
-      type: dsType === "claims_agent" ? "claims_agent" : "courtlistener",
+      type: dsType === "claims_agent" ? "claims_agent" : dsType === "watch" ? "watch" : "courtlistener",
       docket_id: dsB ? (subScalar(dsB, "docket_id") || null) : null,
       url: dsB ? (subScalar(dsB, "url") || "") : "",
       awaiting_sync: dsB ? /^(true|yes|1|on)$/i.test(subScalar(dsB, "awaiting_sync") || "") : false,
@@ -366,7 +368,7 @@ function generateSeedJson(c) {
     case: {
       slug: c.slug,
       display_name: c.display_name,
-      case_name: c.case.parties,
+      case_name: c.case.parties || c.display_name,
       court: c.case.court,
       case_number: c.case.case_number,
       judge: c.case.judge,

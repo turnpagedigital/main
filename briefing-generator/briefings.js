@@ -358,6 +358,10 @@
     var t = ceEl("ce-srctype").value;
     ceEl("ce-cl-fields").style.display = t === "courtlistener" ? "" : "none";
     ceEl("ce-agent-fields").style.display = t === "claims_agent" ? "" : "none";
+    var wn = ceEl("ce-watch-note"); if (wn) wn.style.display = t === "watch" ? "" : "none";
+    var pl = document.querySelector('label[for-parties]');
+    var pe = ceEl("ce-parties");
+    if (pe) pe.placeholder = t === "watch" ? "Company or matter name (e.g. Acme Corp — distress watch)" : "e.g. Bartz, et al. v. Anthropic PBC";
   }
 
   function openEditor(slug) {
@@ -420,12 +424,12 @@
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) { ceErr("Slug must be kebab-case"); return; }
     if (!editingSlug && ADMIN[slug]) { ceErr("A case with that slug already exists"); return; }
     if (!themes.length) { ceErr("Tag at least one theme"); return; }
-    if (!(ceEl("ce-parties").value || "").trim()) { ceErr("Parties are required"); return; }
+    if (srctype !== "watch" && !(ceEl("ce-parties").value || "").trim()) { ceErr("Parties are required"); return; }
     if (srctype === "courtlistener" && !(ceEl("ce-docketid").value || "").trim()) { ceErr("Docket ID is required for a CourtListener docket"); return; }
     if (srctype === "claims_agent" && !(ceEl("ce-claimsurl").value || "").trim()) { ceErr("A claims-agent URL is required"); return; }
     var claims = srctype === "claims_agent"
       ? { name: "", url: (ceEl("ce-claimsurl").value || "").trim(), key_dates_url: (ceEl("ce-keydates").value || "").trim() }
-      : editingClaims;
+      : srctype === "watch" ? null : editingClaims;
     var payload = {
       slug: slug, display_name: name, type: "case",
       status: (ceEl("ce-status").value || "").trim() || "active",
@@ -434,6 +438,8 @@
               case_number: (ceEl("ce-casenum").value || "").trim(), judge: (ceEl("ce-judge").value || "").trim() },
       docket_source: srctype === "courtlistener"
         ? { type: "courtlistener", docket_id: (ceEl("ce-docketid").value || "").trim() || null, url: (ceEl("ce-docketurl").value || "").trim(), awaiting_sync: false }
+        : srctype === "watch"
+        ? { type: "watch", docket_id: null, url: "", awaiting_sync: true }
         : { type: "claims_agent", docket_id: null, url: "", awaiting_sync: false },
       claims_administrator: claims || null,
       scan_guidance: ceEl("ce-guidance").value || "",
