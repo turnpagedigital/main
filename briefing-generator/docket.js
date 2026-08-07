@@ -106,6 +106,7 @@
   var rowKind = "both";  // both | filings | articles
   var bmOnly = false;
   var noteOnly = false;
+  var docOnly = false;
   var NOTES = {};
   var BONDORO = [];
   var VOTES = {};
@@ -149,7 +150,9 @@
     return d.toISOString().slice(0, 10);
   }
   function windowActive() {
-    return !showAllDates && !searchText.trim() && !dateFrom && !dateTo;
+    // The has-document filter narrows to a small set — show it across all
+    // dates, since attachments often sit on filings older than 90 days.
+    return !showAllDates && !searchText.trim() && !dateFrom && !dateTo && !docOnly;
   }
   var activeGearSlug = null;
   var activeSources = {};
@@ -167,6 +170,7 @@
       else if (s.showArticles === false) rowKind = "filings";  // migrate the retired checkbox
       if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
       if (typeof s.noteOnly === "boolean") noteOnly = s.noteOnly;
+      if (typeof s.docOnly === "boolean") docOnly = s.docOnly;
       // migrate the retired select-based filter
       if (s.markedFilter === "bookmarked" || s.markedFilter === "either") bmOnly = true;
       if (s.markedFilter === "noted") noteOnly = true;
@@ -183,6 +187,7 @@
         rowKind:        rowKind,
         bmOnly:         bmOnly,
         noteOnly:       noteOnly,
+        docOnly:        docOnly,
         sortDir:        sortDir,
         activeCases:    activeCases,
         activeSources:  activeSources,
@@ -336,6 +341,7 @@
         if (bmOnly && !(mrec && mrec.bookmarked)) return false;
         if (noteOnly && !(mrec && (mrec.note || "").trim())) return false;
       }
+      if (docOnly && !docsFor(entryNoteKey(e)).length) return false;
       if (newOnly && !e.is_new) return false;
       // Entry-type filters only apply to docket entries — the Articles
       // checkbox is the sole gate for news rows.
@@ -3020,6 +3026,17 @@
       newCb.checked = newOnly;
       newCb.addEventListener("change", function () {
         newOnly = newCb.checked;
+        saveFilterState();
+        render();
+      });
+    }
+
+    // Has-document checkbox
+    var docCb = document.getElementById("ud-doc-only");
+    if (docCb) {
+      docCb.checked = docOnly;
+      docCb.addEventListener("change", function () {
+        docOnly = docCb.checked;
         saveFilterState();
         render();
       });
