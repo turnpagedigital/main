@@ -72,6 +72,16 @@
         "text": "",
         "source": "claims-agent"
       }
+    ],
+    "terraform-labs|n1312": [
+      {
+        "name": "Dkt-1312.pdf",
+        "path": "briefing-generator/uploads/terraform-labs-n1312/Dkt-1312.pdf",
+        "size": 264900,
+        "uploaded_at": "2026-08-07T01:25:19.152338+00:00",
+        "text": "",
+        "source": "claims-agent"
+      }
     ]
   }
 }
