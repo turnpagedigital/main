@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-06T14:41:26.048991+00:00",
-    "as_of": "Aug 6, 2026",
+    "fetched_at": "2026-08-07T00:46:44.746966+00:00",
+    "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 67,
@@ -36,7 +36,7 @@
         "time_filed": "17:31:48",
         "date_display": "Aug 4, 2026",
         "description": "Statement Committee Has Not Been Appointed",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -46,7 +46,7 @@
         "time_filed": "12:11:12",
         "date_display": "Aug 4, 2026",
         "description": "Transcript",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -68,7 +68,7 @@
         "time_filed": "17:31:48",
         "date_display": "Aug 4, 2026",
         "description": "Statement Committee Has Not Been Appointed",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -78,7 +78,7 @@
         "time_filed": "12:11:12",
         "date_display": "Aug 4, 2026",
         "description": "Transcript",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

@@ -14,44 +14,134 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-06T14:40:09.970223+00:00",
-    "as_of": "Aug 6, 2026",
+    "date_last_filing": "2026-08-06",
+    "fetched_at": "2026-08-07T00:45:28.467460+00:00",
+    "as_of": "Aug 7, 2026",
     "backfilled": false,
-    "new_in_72h": 23,
+    "new_in_72h": 24,
     "recent": [
       {
-        "entry_number": 1156,
-        "date_filed": "2026-08-05",
-        "time_filed": "23:29:46",
-        "date_display": "Aug 5, 2026",
-        "description": "BNC certificate of mailing - PDF document",
+        "entry_number": 1163,
+        "date_filed": "2026-08-06",
+        "time_filed": "18:45:39",
+        "date_display": "Aug 6, 2026",
+        "description": "Certificate (generic)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1155,
-        "date_filed": "2026-08-05",
-        "time_filed": "23:29:46",
-        "date_display": "Aug 5, 2026",
-        "description": "BNC certificate of mailing - PDF document",
+        "entry_number": 1162,
+        "date_filed": "2026-08-06",
+        "time_filed": "16:29:46",
+        "date_display": "Aug 6, 2026",
+        "description": "Relief from stay",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1154,
-        "date_filed": "2026-08-05",
-        "time_filed": "20:54:11",
-        "date_display": "Aug 5, 2026",
-        "description": "Clerk's correspondence",
+        "entry_number": 1161,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:53:01",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1163,
+        "date_filed": "2026-08-06",
+        "time_filed": "18:45:39",
+        "date_display": "Aug 6, 2026",
+        "description": "Certificate (generic)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1162,
+        "date_filed": "2026-08-06",
+        "time_filed": "16:29:46",
+        "date_display": "Aug 6, 2026",
+        "description": "Relief from stay",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1161,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:53:01",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1160,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:51:47",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1159,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:32:12",
+        "date_display": "Aug 6, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1158,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:22:57",
+        "date_display": "Aug 6, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1157,
+        "date_filed": "2026-08-06",
+        "time_filed": "11:03:01",
+        "date_display": "Aug 6, 2026",
+        "description": "Compensation",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-06",
+        "time_filed": "16:30:53",
+        "date_display": "Aug 6, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:54:52",
+        "date_display": "Aug 6, 2026",
+        "description": "none AND none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1156,
         "date_filed": "2026-08-05",
@@ -208,7 +298,7 @@
         "time_filed": "17:17:05",
         "date_display": "Aug 4, 2026",
         "description": "Notice of Filing of First Amended Plan Supplement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1089 Notice Notice of Filing Plan Supplement filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)948 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan).). (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Exhibit C # 4 Exhibit D)). (Attachments: # 1 Exhibit A-1 # 2 Exhibit A-2) (Fink, Ryan)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -218,7 +308,7 @@
         "time_filed": "14:48:27",
         "date_display": "Aug 4, 2026",
         "description": "Notice // Thirteenth Monthly Fee Statement of McDermott Will & Schulte LLP, as Counsel to the Official Committee of Unsecured Creditors, for Compensation for Services Rendered and Reimbursement of Expenses Incurred for the Period June 1, 2026 through June 30, 2026 filed by Creditor Committee The Official Committee of Unsecured Creditors. (Wombacher, Michael)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -228,7 +318,7 @@
         "time_filed": "13:51:45",
         "date_display": "Aug 4, 2026",
         "description": "Amended Witness and Exhibit List filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1126 List (witness/exhibit/generic)). (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5 # 6 Exhibit 6 # 7 Exhibit 7 # 8 Exhibit 8 # 9 Exhibit 9 # 10 Exhibit 10 # 11 Exhibit 11 # 12 Exhibit 12 # 13 Exhibit 13) (Fink, Ryan)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -238,7 +328,7 @@
         "time_filed": "10:23:37",
         "date_display": "Aug 4, 2026",
         "description": "Withdrawal Notice of Withdrawal and Request for Removal from Paper and/or Electronic Services Lists for Laurie Dahl Rea and Rochelle McCullough PLLC filed by Creditor Century Fire Sprinklers, Inc. (RE: related document(s)375 Notice of appearance and request for notice). (Rea, Laurie)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -248,7 +338,7 @@
         "time_filed": "10:07:23",
         "date_display": "Aug 4, 2026",
         "description": "Notice // The Official Committee of Unsecured Creditors' Statement in Support of Confirmation of the Debtors' Third Amended Joint Chapter 11 Plan of Harvest Sherwood Food Distributors, Inc. and Its Debtor Affiliates (with Technical and Non-Substantive Modifications) filed by Creditor Committee The Official Committee of Unsecured Creditors (RE: related document(s)1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan).). (Wombacher, Michael)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -258,7 +348,7 @@
         "time_filed": "09:49:56",
         "date_display": "Aug 4, 2026",
         "description": "Withdrawal of claim(s): No. 10259 Filed by Claims Agent Epiq Corporate Restructuring, LLC. (Mailloux, Kathryn)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -268,7 +358,7 @@
         "time_filed": "00:18:10",
         "date_display": "Aug 4, 2026",
         "description": "Agenda for Hearing scheduled on 8/5/2026 @ 9:30 AM filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan).). (McManus, Chelsea)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -278,7 +368,7 @@
         "time_filed": "00:06:44",
         "date_display": "Aug 4, 2026",
         "description": "Notice of Filing of Proposed Confirmation Order filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s)759 Chapter 11 plan).). (Attachments: # 1 Exhibit 1) (McManus, Chelsea)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -13603,7 +13693,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=19"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=25"
   },
   "claims_administrator": {
     "name": "Epiq11",

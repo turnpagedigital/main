@@ -14,37 +14,37 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-06T14:41:48.257372+00:00",
-    "as_of": "Aug 6, 2026",
+    "date_last_filing": "2026-08-06",
+    "fetched_at": "2026-08-07T00:47:09.297236+00:00",
+    "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 19,
+    "new_in_72h": 17,
     "recent": [
       {
-        "entry_number": 136,
-        "date_filed": "2026-08-05",
-        "time_filed": "22:42:17",
-        "date_display": "Aug 5, 2026",
-        "description": "Notice",
+        "entry_number": 144,
+        "date_filed": "2026-08-06",
+        "time_filed": "15:33:47",
+        "date_display": "Aug 6, 2026",
+        "description": "Statement",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 135,
-        "date_filed": "2026-08-05",
-        "time_filed": "21:25:33",
-        "date_display": "Aug 5, 2026",
-        "description": "Affidavit",
+        "entry_number": 143,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:27:38",
+        "date_display": "Aug 6, 2026",
+        "description": "Notice of Appearance and Request for Notice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 134,
-        "date_filed": "2026-08-05",
-        "time_filed": "19:14:40",
-        "date_display": "Aug 5, 2026",
+        "entry_number": 142,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:00:33",
+        "date_display": "Aug 6, 2026",
         "description": "Notice of Appearance and Request for Notice",
         "is_new": true,
         "landmark": "",
@@ -52,6 +52,86 @@
       }
     ],
     "entries": [
+      {
+        "entry_number": 144,
+        "date_filed": "2026-08-06",
+        "time_filed": "15:33:47",
+        "date_display": "Aug 6, 2026",
+        "description": "Statement",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 143,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:27:38",
+        "date_display": "Aug 6, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 142,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:00:33",
+        "date_display": "Aug 6, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 141,
+        "date_filed": "2026-08-06",
+        "time_filed": "11:59:44",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 140,
+        "date_filed": "2026-08-06",
+        "time_filed": "11:05:25",
+        "date_display": "Aug 6, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 139,
+        "date_filed": "2026-08-06",
+        "time_filed": "10:31:26",
+        "date_display": "Aug 6, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 138,
+        "date_filed": "2026-08-06",
+        "time_filed": "10:15:28",
+        "date_display": "Aug 6, 2026",
+        "description": "US Trustee's Notice - Generic (BNC NOTICING)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 137,
+        "date_filed": "2026-08-06",
+        "time_filed": "10:12:10",
+        "date_display": "Aug 6, 2026",
+        "description": "Notice of Appointment of Creditors' Committee",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 136,
         "date_filed": "2026-08-05",
@@ -148,7 +228,7 @@
         "time_filed": "17:07:51",
         "date_display": "Aug 4, 2026",
         "description": "Notice of Appearance and Request for Notice Filed by Michael G Colvard Filed by on behalf of Richard Diaz (Colvard, Michael) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -158,7 +238,7 @@
         "time_filed": "16:50:12",
         "date_display": "Aug 4, 2026",
         "description": "Notice of Appearance and Request for Notice Filed by Ross A Plourde Filed by on behalf of Leon Cikota, Mark Moser, Daniel Zeigler, Jay Johnson (Plourde, Ross) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -168,7 +248,7 @@
         "time_filed": "16:23:16",
         "date_display": "Aug 4, 2026",
         "description": "Affidavit Re: Proof of Publication - The New York Times (Filed By Republic National Distributing Company, LLC ).(Related document(s):48 Order on Emergency Motion) (Higgins, John) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -178,7 +258,7 @@
         "time_filed": "15:46:46",
         "date_display": "Aug 4, 2026",
         "description": "MOTION to Appear Pro Hac Vice for Dakota Pearce (Fee Paid: $100, receipt number A27452521) Filed by Creditor Alaskan Brewing Co. (Pearce, Dakota) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -188,7 +268,7 @@
         "time_filed": "15:08:58",
         "date_display": "Aug 4, 2026",
         "description": "Motion / Debtors' Motion for Entry of an Order (I) Authorizing, Effective Nunc Pro Tunc to the Closing Date, Debtor Republic National Distributing Company, LLC's (A) Consent to the Sale of Non-Debtor RNDC New York, LLC and (B) Compliance with Certain Restrictive Covenants Related Thereto and (II) Granting Related Relief Filed by Debtor Republic National Distributing Company, LLC (Attachments: # 1 Exhibit A # 2 Proposed Order) (Higgins, John) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -198,7 +278,7 @@
         "time_filed": "10:37:21",
         "date_display": "Aug 4, 2026",
         "description": "Order Granting Motion for Eric D. Goldberg To Appear pro hac vice (Related Doc # 116) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/4/2026. (yml4) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -208,7 +288,7 @@
         "time_filed": "10:36:01",
         "date_display": "Aug 4, 2026",
         "description": "Order Granting Motion for Nicholas Buchta To Appear pro hac vice (Related Doc # 114) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/4/2026. (yml4) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -218,7 +298,7 @@
         "time_filed": "10:34:37",
         "date_display": "Aug 4, 2026",
         "description": "Order Granting Motion for Jeremy R. Johnson To Appear pro hac vice (Related Doc # 110) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/4/2026. (yml4) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -228,7 +308,7 @@
         "time_filed": "10:33:24",
         "date_display": "Aug 4, 2026",
         "description": "Order Granting Motion for Carl E. Black To Appear pro hac vice (Related Doc # 113) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/4/2026. (yml4) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -238,7 +318,7 @@
         "time_filed": "00:09:10",
         "date_display": "Aug 4, 2026",
         "description": "Disclosure Statement To The Joint Chapter 11 Plan Of Republic National Distributing Company, LLC And Its Debtor Subsidiaries",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "",
         "titled_from_upload": true
