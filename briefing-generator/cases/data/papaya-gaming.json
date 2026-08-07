@@ -14,44 +14,114 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-06T14:41:31.620971+00:00",
-    "as_of": "Aug 6, 2026",
+    "date_last_filing": "2026-08-06",
+    "fetched_at": "2026-08-07T00:46:50.545240+00:00",
+    "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 24,
+    "new_in_72h": 11,
     "recent": [
       {
-        "entry_number": 42,
-        "date_filed": "2026-08-05",
-        "time_filed": "17:18:11",
-        "date_display": "Aug 5, 2026",
-        "description": "Certificate of Service",
+        "entry_number": 49,
+        "date_filed": "2026-08-06",
+        "time_filed": "17:40:31",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 41,
-        "date_filed": "2026-08-05",
-        "time_filed": "12:52:49",
-        "date_display": "Aug 5, 2026",
-        "description": "Hearing - Notice",
+        "entry_number": 48,
+        "date_filed": "2026-08-06",
+        "time_filed": "17:39:51",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 40,
-        "date_filed": "2026-08-05",
-        "time_filed": "09:47:41",
-        "date_display": "Aug 5, 2026",
-        "description": "Order (A) Scheduling Hearing on Recognition of Chapter 15 Petition and (B) Specifying Form and Manner of Service of Notice (Related Doc # 8, 38) Signed on 8/5/2026. (Attachments: # 1) (LMC) (Entered: 08/05/2026)",
+        "entry_number": 47,
+        "date_filed": "2026-08-06",
+        "time_filed": "17:39:10",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 49,
+        "date_filed": "2026-08-06",
+        "time_filed": "17:40:31",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 48,
+        "date_filed": "2026-08-06",
+        "time_filed": "17:39:51",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 47,
+        "date_filed": "2026-08-06",
+        "time_filed": "17:39:10",
+        "date_display": "Aug 6, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 46,
+        "date_filed": "2026-08-06",
+        "time_filed": "16:13:19",
+        "date_display": "Aug 6, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 45,
+        "date_filed": "2026-08-06",
+        "time_filed": "16:12:18",
+        "date_display": "Aug 6, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 44,
+        "date_filed": "2026-08-06",
+        "time_filed": "16:11:16",
+        "date_display": "Aug 6, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 43,
+        "date_filed": "2026-08-06",
+        "time_filed": "16:09:55",
+        "date_display": "Aug 6, 2026",
+        "description": "Appearance - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 42,
         "date_filed": "2026-08-05",
@@ -98,7 +168,7 @@
         "time_filed": "20:24:52",
         "date_display": "Aug 4, 2026",
         "description": "Certification of Counsel(Aty)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -108,7 +178,7 @@
         "time_filed": "20:05:05",
         "date_display": "Aug 4, 2026",
         "description": "Certification of Counsel for Agreed Form of Order Granting Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code (related document(s)7). Filed by Oriel Bachar. (Attachments: # 1 Exhibit A # 2 Exhibit B) (related document(s)7) (Malow, Jennifer) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -118,7 +188,7 @@
         "time_filed": "14:54:13",
         "date_display": "Aug 4, 2026",
         "description": "MINUTE ENTRY Re: (related document(s): 10 Notice of Agenda of Matters Scheduled for Hearing on 8/4/26) APPEARANCES: See attached sign-in sheet MATTERS: 1) Voluntary Petitions, 2) Petition for Recognition, 3 and 4) Declarations in Support, 5) Order entered, 6) Order due under COC, 7) Order due under COC (lmc) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.36.0.pdf"
       },
@@ -128,7 +198,7 @@
         "time_filed": "",
         "date_display": "Aug 4, 2026",
         "description": "Request for Transcript of hearing held on August 4, 2026 received. To obtain a copy of this transcript, contact the Court Reporter/Transcriber Reliable Companies, Telephone number 3026548080 (RE: related document(s) 10). (Reliable Companies) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -138,7 +208,7 @@
         "time_filed": "13:53:35",
         "date_display": "Aug 4, 2026",
         "description": "Order (I) Directing Joint Administration of Cases Under Chapter 15 of the Bankruptcy Code; (II) Authorizing the Filing of a Consolidated List Under Bankruptcy Rule 1007; and (III) Granting Related Relief. An order has been entered in this chapter 15 case in accordance with Rule 1015(b) of the Federal Rules of Bankruptcy Procedure and Rule 1015-1 of the Local Rules of Bankruptcy Practice and Procedure of the United States Bankruptcy Court for the District of Delaware directing the procedural consolidation of and joint administration of the chapter 15 cases of Papaya Gaming Ltd. (2095) and Papaya Gaming Inc. (3649). All further pleadings and other papers shall be filed in, and all further docket entries shall be made in Case No. 26-11217 and such docket should be consulted for all matters concerning these chapter 15 cases. (Related Doc # 3) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -148,7 +218,7 @@
         "time_filed": "13:45:05",
         "date_display": "Aug 4, 2026",
         "description": "Court Date & Time [08/04/2026 11:30:46 AM]. File Size [ 49610 KB ]. Run Time [ 02:07:37 ]. (admin). (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -158,7 +228,7 @@
         "time_filed": "10:58:42",
         "date_display": "Aug 4, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Christopher K. Coleman (Related Doc # 26) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -168,7 +238,7 @@
         "time_filed": "10:58:14",
         "date_display": "Aug 4, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Lazar P. Raynal (Related Doc # 25) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -178,7 +248,7 @@
         "time_filed": "10:57:44",
         "date_display": "Aug 4, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Craig Carpenito (Related Doc # 24) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -188,7 +258,7 @@
         "time_filed": "10:57:12",
         "date_display": "Aug 4, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Scott Davidson (Related Doc # 22) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -198,7 +268,7 @@
         "time_filed": "10:56:41",
         "date_display": "Aug 4, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Michael Lombardo (Related Doc # 21) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -208,7 +278,7 @@
         "time_filed": "10:56:11",
         "date_display": "Aug 4, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Jeffrey R. Dutson (Related Doc # 20) Signed on 8/4/2026. (LMC) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -218,7 +288,7 @@
         "time_filed": "10:23:34",
         "date_display": "Aug 4, 2026",
         "description": "Motion to Appear pro hac vice of Christopher K. Coleman of King & Spalding LLP. Receipt Number 5032762, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -228,7 +298,7 @@
         "time_filed": "10:02:25",
         "date_display": "Aug 4, 2026",
         "description": "Motion to Appear pro hac vice of Lazar P. Raynal of King & Spalding LLP. Receipt Number 5032762, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -238,7 +308,7 @@
         "time_filed": "09:59:38",
         "date_display": "Aug 4, 2026",
         "description": "Motion to Appear pro hac vice of Craig Carpenito of King & Spalding LLP. Receipt Number 5032762, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -248,7 +318,7 @@
         "time_filed": "09:34:07",
         "date_display": "Aug 4, 2026",
         "description": "Objection to Debtors' Motion for Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code (related document(s)7) Filed by Skillz Platform Inc. (Beach, Sean) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.202092/gov.uscourts.deb.202092.23.0.pdf"
       },
@@ -258,7 +328,7 @@
         "time_filed": "09:18:22",
         "date_display": "Aug 4, 2026",
         "description": "Motion to Appear pro hac vice of Scott Davidson of King & Spalding LLP. Receipt Number 5032620, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -268,7 +338,7 @@
         "time_filed": "09:16:39",
         "date_display": "Aug 4, 2026",
         "description": "Motion to Appear pro hac vice of Michael Lombardo of King & Spalding LLP. Receipt Number 5032620, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -278,7 +348,7 @@
         "time_filed": "08:37:55",
         "date_display": "Aug 4, 2026",
         "description": "Motion to Appear pro hac vice of Jeffrey R. Dutson of King & Spalding LLP. Receipt Number 5032620, Filed by Skillz Platform Inc.. (Beach, Sean)Modified on 8/4/2026 (COH). (Entered: 08/04/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -288,7 +358,7 @@
         "time_filed": "14:20:19",
         "date_display": "Aug 4, 2026",
         "description": "Request for Transcript",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

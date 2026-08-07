@@ -15,37 +15,37 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
     "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-06T14:39:53.073066+00:00",
-    "as_of": "Aug 6, 2026",
+    "fetched_at": "2026-08-07T00:44:59.264900+00:00",
+    "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 5,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 559,
+        "date_filed": "2026-08-06",
+        "time_filed": "20:20:36",
+        "date_display": "Aug 6, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 558,
+        "date_filed": "2026-08-06",
+        "time_filed": "20:14:16",
+        "date_display": "Aug 6, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 557,
         "date_filed": "2026-08-06",
         "time_filed": "09:22:36",
         "date_display": "Aug 6, 2026",
         "description": "Certificate of No Objection - No Order Required",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 556,
-        "date_filed": "2026-08-05",
-        "time_filed": "19:33:08",
-        "date_display": "Aug 5, 2026",
-        "description": "Certificate of Service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 555,
-        "date_filed": "2026-08-04",
-        "time_filed": "20:19:39",
-        "date_display": "Aug 4, 2026",
-        "description": "Certificate of Service",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -53,6 +53,26 @@
     ],
     "entries": [
       {
+        "entry_number": 559,
+        "date_filed": "2026-08-06",
+        "time_filed": "20:20:36",
+        "date_display": "Aug 6, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 558,
+        "date_filed": "2026-08-06",
+        "time_filed": "20:14:16",
+        "date_display": "Aug 6, 2026",
+        "description": "Certificate of Service",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 557,
         "date_filed": "2026-08-06",
         "time_filed": "09:22:36",
@@ -78,7 +98,7 @@
         "time_filed": "20:19:39",
         "date_display": "Aug 4, 2026",
         "description": "Certificate of Service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -88,7 +108,7 @@
         "time_filed": "19:57:56",
         "date_display": "Aug 4, 2026",
         "description": "Certificate of Service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -98,7 +118,7 @@
         "time_filed": "13:58:35",
         "date_display": "Aug 4, 2026",
         "description": "Staffing Report - Monthly",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
