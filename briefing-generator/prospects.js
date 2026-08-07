@@ -49,6 +49,7 @@
   var TAB = "new";
   var showHidden = false;
   var activeThemes = {};   // theme slug → bool (default all on)
+  var cursorId = null;     // keyboard cursor, tracked by prospect id
 
   function themeOn(slug) { return activeThemes[slug] !== false; }
 
@@ -204,7 +205,7 @@
         ? '<div class="pr-note-view">“' + esc(i.note.trim().slice(0, 300)) + (i.note.trim().length > 300 ? "…" : "") + "”</div>"
         : "";
       return (
-        '<tr id="pr-' + esc(i.id) + '">' +
+        '<tr id="pr-' + esc(i.id) + '" data-pid="' + esc(i.id) + '"' + (i.id === cursorId ? ' class="pr-row-cursor"' : "") + ">" +
           '<td class="ud-date">' + esc(fmtDate(i.first_seen)) + "</td>" +
           "<td>" + themePill(i.theme) + "</td>" +
           "<td>" +
@@ -252,6 +253,83 @@
         var it = findItem(id);
         saveFields(id, { hidden: !(it && it.hidden) }).then(render).catch(function (e) { alert("Hide failed: " + e.message); });
       });
+    });
+    // Click anywhere on a row selects it for keyboard actions.
+    tbody.querySelectorAll("[data-pid]").forEach(function (tr) {
+      tr.addEventListener("click", function () {
+        setCursor(tr.getAttribute("data-pid"), false);
+      });
+    });
+  }
+
+  // ── Keyboard navigation (same conventions as the docket/news pages) ───────
+  function setCursor(id, scroll) {
+    cursorId = id;
+    document.querySelectorAll("#pr-tbody .pr-row-cursor").forEach(function (r) {
+      r.classList.remove("pr-row-cursor");
+    });
+    var row = id ? document.getElementById("pr-" + id) : null;
+    if (row) {
+      row.classList.add("pr-row-cursor");
+      if (scroll) row.scrollIntoView({ block: "nearest" });
+    }
+  }
+
+  function cursorItem() {
+    return cursorId ? findItem(cursorId) : null;
+  }
+
+  function moveCursor(delta) {
+    var list = visible();
+    if (!list.length) return;
+    var idx = -1;
+    for (var i = 0; i < list.length; i++) if (list[i].id === cursorId) { idx = i; break; }
+    idx = idx === -1 ? (delta > 0 ? 0 : list.length - 1) : Math.max(0, Math.min(list.length - 1, idx + delta));
+    setCursor(list[idx].id, true);
+  }
+
+  function typingInField(ev) {
+    var t = ev.target;
+    var tag = t && t.tagName;
+    return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable);
+  }
+
+  function modalIsOpen() {
+    var note = document.getElementById("ud-note-overlay");
+    return !!modalEl || (note && note.style.display !== "none") || !!snoozeMenuEl;
+  }
+
+  function wireKeys() {
+    document.addEventListener("keydown", function (ev) {
+      if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+      if (typingInField(ev) || modalIsOpen()) return;
+      var k = ev.key;
+      if (k === "ArrowDown" || k === "j") { ev.preventDefault(); moveCursor(1); return; }
+      if (k === "ArrowUp" || k === "k") { ev.preventDefault(); moveCursor(-1); return; }
+      var it = cursorItem();
+      if (!it) return;
+      var status = it.status || "new";
+      if ((k === "Enter" || k === "t" || k === "T") && status === "new") {
+        ev.preventDefault();
+        openTrackModal(it.id);
+      } else if (k === "x" || k === "X") {
+        ev.preventDefault();
+        if (status === "new") setStatus(it.id, "dismissed", null);
+        else if (status === "dismissed") setStatus(it.id, "new", null);
+      } else if ((k === "n" || k === "N") && status === "new") {
+        ev.preventDefault();
+        openNoteModal(it.id);
+      } else if ((k === "z" || k === "Z") && status === "new") {
+        ev.preventDefault();
+        var zb = document.querySelector('#pr-' + it.id + ' [data-snooze]');
+        if (zb) openSnoozeMenu(it.id, zb);
+      } else if ((k === "h" || k === "H") && status === "new") {
+        ev.preventDefault();
+        saveFields(it.id, { hidden: !it.hidden }).then(render).catch(function (e) { alert("Hide failed: " + e.message); });
+      } else if (k === "r" || k === "R") {
+        ev.preventDefault();
+        if (it.source_url) window.open(it.source_url, "_blank", "noopener");
+      }
     });
   }
 
@@ -681,6 +759,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     wireTabs();
     wireDropdown();
+    wireKeys();
     document.addEventListener("keydown", function (ev) {
       if (ev.key === "Escape") { closeModal(); closeNoteModal(); closeSnoozeMenu(); }
     });

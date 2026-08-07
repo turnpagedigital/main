@@ -26,8 +26,19 @@
   .tn-back:hover{color:#fff;}
   [data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
   [data-theme="light"] .tn-back{color:rgba(10,10,10,0.6);border-left-color:rgba(10,10,10,0.14);}
-  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:#fff;margin-left:auto;}
+  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:#fff;}
   [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}
+  .tn-kbd{position:relative;display:inline-flex;align-items:center;margin-left:auto;margin-right:10px;}
+  .tn-kbd-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;background:transparent;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.72);cursor:pointer;padding:5px 10px;line-height:1;white-space:nowrap;}
+  [data-theme="light"] .tn-kbd-btn{border-color:rgba(10,10,10,0.14);color:rgba(10,10,10,0.6);}
+  .tn-kbd-btn:hover{color:#fff;}
+  [data-theme="light"] .tn-kbd-btn:hover{color:#0A0A0A;}
+  .tn-kbd-panel{display:none;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:12px 14px;min-width:270px;box-shadow:0 10px 30px rgba(0,0,0,0.14);text-align:left;}
+  @media (hover:hover){.tn-kbd:hover .tn-kbd-panel{display:block;}}
+  .tn-kbd.open .tn-kbd-panel{display:block;}
+  .tn-kbd-title{font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);margin-bottom:7px;}
+  .tn-kbd-row{font-size:12.5px;color:var(--ink-60);margin:6px 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+  .tn-key{display:inline-block;font-size:10.5px;font-weight:800;border:1px solid var(--line-strong);padding:1px 6px;background:var(--paper-2);color:var(--ink);min-width:13px;text-align:center;}
   .page-title{max-width:1680px;margin:0 auto;padding:26px 32px 16px;border-bottom:2px solid var(--ink);}
   .page-title .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-60);font-weight:700;}
   .page-title h1{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-0.02em;margin:8px 0 12px;display:flex;align-items:center;gap:10px;}
@@ -59,6 +70,8 @@
   .ud-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}
   .ud-table td{padding:12px 14px;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top;}
   .ud-table tr:last-child td{border-bottom:none;}
+  .ud-table tbody tr{cursor:default;}
+  .ud-table tbody tr.pr-row-cursor{outline:2px solid var(--neon);outline-offset:-2px;}
   .ud-date{white-space:nowrap;color:var(--ink-60);font-variant-numeric:tabular-nums;}
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
   .pr-name{font-weight:800;font-size:14px;}
@@ -149,7 +162,7 @@
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
-    <button id="theme-toggle">🖥️</button>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows</div><div class="tn-kbd-row"><span class="tn-key">⏎</span> or <span class="tn-key">T</span> Track the selected prospect</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">Z</span> Snooze · <span class="tn-key">H</span> Hide</div><div class="tn-kbd-row"><span class="tn-key">X</span> Dismiss / Restore</div><div class="tn-kbd-row"><span class="tn-key">R</span> Read the source article</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
