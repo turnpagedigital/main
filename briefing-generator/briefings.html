@@ -403,6 +403,41 @@
   .ub-body li{margin-bottom:6px;}
   .ub-body a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--neon);}
   .ub-body em{font-style:italic;}
+  /* ── Case management (edit/create in place) ─────────────────────────────── */
+  .ce-new-btn{font-weight:800;}
+  .ub-actions{display:inline-flex;gap:6px;align-items:center;}
+  .ub-mini{font-family:inherit;font-size:11px;font-weight:700;letter-spacing:0.02em;padding:3px 8px;background:var(--surface);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;white-space:nowrap;}
+  .ub-mini:hover{background:var(--paper-2);}
+  .ub-mini.ub-mini-danger{color:#B3261E;border-color:#e3b7b1;}
+  .ce-overlay{position:fixed;inset:0;background:rgba(10,10,10,0.45);z-index:1200;display:flex;align-items:flex-start;justify-content:center;padding:5vh 16px;overflow-y:auto;}
+  .ce-box{background:var(--surface);border:1px solid var(--line-strong);width:min(640px,100%);box-shadow:0 16px 50px rgba(0,0,0,0.28);}
+  .ce-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line-strong);}
+  .ce-head h2{font-size:16px;font-weight:800;margin:0;}
+  .ce-x{background:none;border:none;font-size:22px;line-height:1;color:var(--ink-60);cursor:pointer;padding:0 4px;}
+  .ce-body{padding:16px 20px;}
+  .ce-err{background:rgba(179,38,30,0.08);border:1px solid rgba(179,38,30,0.3);color:#B3261E;font-size:13px;padding:8px 11px;margin-bottom:12px;display:none;}
+  .ce-field{margin-bottom:13px;}
+  .ce-label{display:block;font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);margin-bottom:5px;}
+  .ce-input,.ce-select,.ce-textarea{width:100%;font-family:inherit;font-size:14px;padding:8px 10px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);box-sizing:border-box;outline:none;}
+  .ce-input:focus,.ce-select:focus,.ce-textarea:focus{border-color:var(--neon);}
+  .ce-textarea{min-height:96px;resize:vertical;line-height:1.5;}
+  .ce-hint{font-size:11px;color:var(--ink-40);margin-top:4px;}
+  .ce-grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .ce-grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+  @media (max-width:560px){.ce-grid2,.ce-grid3{grid-template-columns:1fr;}}
+  .ce-themes{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;}
+  .ce-theme{display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer;}
+  .ce-row-inline{display:flex;gap:8px;align-items:flex-start;}
+  .ce-lookup{font-family:inherit;font-size:12px;font-weight:700;padding:8px 12px;background:var(--ink);color:var(--surface);border:1px solid var(--ink);cursor:pointer;white-space:nowrap;}
+  .ce-lookup:hover{background:var(--neon);color:var(--ink);border-color:var(--neon);}
+  .ce-foot{display:flex;gap:10px;align-items:center;padding:14px 20px;border-top:1px solid var(--line-strong);}
+  .ce-save{font-family:inherit;font-size:13px;font-weight:800;padding:9px 18px;background:var(--ink);color:var(--surface);border:1px solid var(--ink);cursor:pointer;}
+  .ce-save:hover{background:var(--neon);color:var(--ink);border-color:var(--neon);}
+  .ce-save:disabled{opacity:0.5;cursor:not-allowed;}
+  .ce-cancel{font-family:inherit;font-size:13px;font-weight:700;padding:9px 16px;background:transparent;border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;}
+  .ce-del{margin-left:auto;font-family:inherit;font-size:13px;font-weight:700;padding:9px 16px;background:transparent;border:1px solid #e3b7b1;color:#B3261E;cursor:pointer;}
+  .ce-toast{font-size:12px;color:var(--ink-60);}
+  .ce-section-h{font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-40);margin:18px 0 10px;padding-top:14px;border-top:1px solid var(--line);}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -443,6 +478,7 @@
         <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
+      <button type="button" id="ce-new" class="ud-type-select ce-new-btn">＋ New case</button>
     </div>
   </div>
 
@@ -462,6 +498,101 @@
     </tbody>
   </table>
 
+</div>
+
+<div id="ce-overlay" class="ce-overlay" style="display:none;">
+  <div class="ce-box">
+    <div class="ce-head">
+      <h2 id="ce-title">New case</h2>
+      <button type="button" class="ce-x" id="ce-close">×</button>
+    </div>
+    <div class="ce-body">
+      <div class="ce-err" id="ce-err"></div>
+
+      <div class="ce-field">
+        <label class="ce-label">Display name *</label>
+        <input type="text" class="ce-input" id="ce-name" placeholder="e.g. Bartz v. Anthropic">
+      </div>
+      <div class="ce-grid2">
+        <div class="ce-field">
+          <label class="ce-label">Slug <span id="ce-slug-note" style="text-transform:none;font-weight:400;"></span></label>
+          <input type="text" class="ce-input" id="ce-slug" placeholder="bartz-anthropic">
+        </div>
+        <div class="ce-field">
+          <label class="ce-label">Display status (badge)</label>
+          <input type="text" class="ce-input" id="ce-status" placeholder="e.g. Settlement — final approval pending">
+        </div>
+      </div>
+      <div class="ce-field">
+        <label class="ce-label">Sync mode</label>
+        <select class="ce-select" id="ce-sync">
+          <option value="active">Active — scheduled syncing, live polling, daily news</option>
+          <option value="manual">Manual — updates only on Sync now</option>
+          <option value="archived">Archived — kept, never searched again</option>
+        </select>
+      </div>
+
+      <div class="ce-field">
+        <label class="ce-label">Themes (tag one or more)</label>
+        <div class="ce-themes" id="ce-themes"></div>
+      </div>
+
+      <div class="ce-section-h">Tracking source</div>
+      <div class="ce-field">
+        <label class="ce-label">Source type</label>
+        <select class="ce-select" id="ce-srctype" style="max-width:340px;">
+          <option value="courtlistener">Court docket (CourtListener)</option>
+          <option value="claims_agent">Claims agent</option>
+        </select>
+      </div>
+      <div id="ce-cl-fields">
+        <div class="ce-field">
+          <label class="ce-label">Docket ID *</label>
+          <div class="ce-row-inline">
+            <input type="text" class="ce-input" id="ce-docketid" placeholder="e.g. 69058235">
+            <button type="button" class="ce-lookup" id="ce-lookup">Look up</button>
+          </div>
+          <div class="ce-hint" id="ce-lookup-msg">Enter the CourtListener docket ID and click Look up to auto-fill parties, court, case number, and judge.</div>
+        </div>
+        <div class="ce-field">
+          <label class="ce-label">Docket URL</label>
+          <input type="text" class="ce-input" id="ce-docketurl" placeholder="https://www.courtlistener.com/docket/…">
+        </div>
+      </div>
+      <div id="ce-agent-fields" style="display:none;">
+        <div class="ce-field">
+          <label class="ce-label">Claims-agent URL *</label>
+          <input type="text" class="ce-input" id="ce-claimsurl" placeholder="https://www.examplesettlement.com/">
+        </div>
+        <div class="ce-field">
+          <label class="ce-label">Key dates URL</label>
+          <input type="text" class="ce-input" id="ce-keydates" placeholder="https://…/dates">
+        </div>
+      </div>
+
+      <div class="ce-section-h">Case details</div>
+      <div class="ce-field">
+        <label class="ce-label">Parties *</label>
+        <input type="text" class="ce-input" id="ce-parties" placeholder="e.g. Bartz, et al. v. Anthropic PBC">
+      </div>
+      <div class="ce-grid3">
+        <div class="ce-field"><label class="ce-label">Court</label><input type="text" class="ce-input" id="ce-court" placeholder="N.D. Cal."></div>
+        <div class="ce-field"><label class="ce-label">Case number</label><input type="text" class="ce-input" id="ce-casenum" placeholder="3:24-cv-05417"></div>
+        <div class="ce-field"><label class="ce-label">Judge</label><input type="text" class="ce-input" id="ce-judge" placeholder="Hon. …"></div>
+      </div>
+
+      <div class="ce-section-h">Scan guidance</div>
+      <div class="ce-field">
+        <textarea class="ce-textarea" id="ce-guidance" placeholder="What to watch for on this specific case; what to ignore."></textarea>
+      </div>
+    </div>
+    <div class="ce-foot">
+      <button type="button" class="ce-save" id="ce-save">Create case</button>
+      <button type="button" class="ce-cancel" id="ce-cancel">Cancel</button>
+      <span class="ce-toast" id="ce-foot-msg"></span>
+      <button type="button" class="ce-del" id="ce-del" style="display:none;">Delete case</button>
+    </div>
+  </div>
 </div>
 
 <script src="briefings.js"></script>
