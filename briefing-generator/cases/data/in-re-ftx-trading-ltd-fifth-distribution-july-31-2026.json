@@ -2,21 +2,1219 @@
   "case": {
     "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
     "display_name": "FTX",
-    "case_name": "FTX Trading Ltd. d/b/a FTX.com and FTX Recovery Trust",
+    "case_name": "FTX Trading Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "22-11068",
     "judge": "Jud Karen B. Owens",
     "docket_id": "65748821",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": null,
-    "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-07T21:58:17.769159+00:00",
+    "as_of": "Aug 7, 2026",
+    "backfilled": false,
+    "new_in_72h": 13,
+    "recent": [
+      {
+        "entry_number": 36086,
+        "date_filed": "2026-08-07",
+        "time_filed": "16:04:31",
+        "date_display": "Aug 7, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Redacted To Next Claims Capital Limited. Filed by Next Claims Capital Limited. (Chen, Jinfeng)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36086.0.pdf"
+      },
+      {
+        "entry_number": 36085,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:22:26",
+        "date_display": "Aug 7, 2026",
+        "description": "Transfer/Assignment of Claim.Receipt Number 10096320 Transfer Agreement 3001 (e) 2 Transferors: Cenjun Zhu (Claim No. 03428491) To Peng Xu. Filed by Cenjun Zhu. (Attachments: (1) Receipt) (KR)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36085.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-07",
+        "time_filed": "16:05:19",
+        "date_display": "Aug 7, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 36086,
+        "date_filed": "2026-08-07",
+        "time_filed": "16:04:31",
+        "date_display": "Aug 7, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Redacted To Next Claims Capital Limited. Filed by Next Claims Capital Limited. (Chen, Jinfeng)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36086.0.pdf"
+      },
+      {
+        "entry_number": 36085,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:22:26",
+        "date_display": "Aug 7, 2026",
+        "description": "Transfer/Assignment of Claim.Receipt Number 10096320 Transfer Agreement 3001 (e) 2 Transferors: Cenjun Zhu (Claim No. 03428491) To Peng Xu. Filed by Cenjun Zhu. (Attachments: (1) Receipt) (KR)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36085.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-07",
+        "time_filed": "16:05:19",
+        "date_display": "Aug 7, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36084,
+        "date_filed": "2026-08-06",
+        "time_filed": "15:27:37",
+        "date_display": "Aug 6, 2026",
+        "description": "Examiner's Report (related document(s)[29610], [29611], [29612], [29613], [29801], [29807], [29847]) Filed by Fee Examiner Stadler. (Hancock, Mark)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36084.0.pdf"
+      },
+      {
+        "entry_number": 36083,
+        "date_filed": "2026-08-06",
+        "time_filed": "12:42:22",
+        "date_display": "Aug 6, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[36062], [36063]) (Steele, Benjamin)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36083.0.pdf"
+      },
+      {
+        "entry_number": 36082,
+        "date_filed": "2026-08-06",
+        "time_filed": "11:01:44",
+        "date_display": "Aug 6, 2026",
+        "description": "Amended HEARING CANCELLED. Notice of Agenda of Matters not going forward. The following hearing has been cancelled. Filed by FTX Digital Markets, Ltd., FTX Recovery Trust. Hearing scheduled for 8/7/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. (Maddox, Robert)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36082.0.pdf"
+      },
+      {
+        "entry_number": 36081,
+        "date_filed": "2026-08-05",
+        "time_filed": "20:11:20",
+        "date_display": "Aug 5, 2026",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by FTX Digital Markets, Ltd., FTX Recovery Trust. Hearing scheduled for 8/7/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. (Maddox, Robert)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36081.0.pdf"
+      },
+      {
+        "entry_number": 36080,
+        "date_filed": "2026-08-05",
+        "time_filed": "17:30:28",
+        "date_display": "Aug 5, 2026",
+        "description": "Certificate of Service Filed by FTX Digital Markets, Ltd., FTX Recovery Trust. (Maddox, Robert)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36080.0.pdf"
+      },
+      {
+        "entry_number": 36079,
+        "date_filed": "2026-08-05",
+        "time_filed": "16:38:51",
+        "date_display": "Aug 5, 2026",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by FTX Digital Markets, Ltd., FTX Recovery Trust. Hearing scheduled for 8/7/2026 at 10:00 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. (Maddox, Robert)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36079.0.pdf"
+      },
+      {
+        "entry_number": 36076,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:28:20",
+        "date_display": "Aug 5, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Boway Holdings, LLC (Claim No. 6206) To JPMorgan Chase Funding Inc.. Filed by JPMorgan Chase Funding Inc.. (Janover, Thomas)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36076.0.pdf"
+      },
+      {
+        "entry_number": 36075,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:23:16",
+        "date_display": "Aug 5, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Oaktree London Liquid Value Opportunities Fund (VO (Claim No. 12450) To JPMorgan Chase Funding Inc.. Filed by JPMorgan Chase Funding Inc.. (Janover, Thomas)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36075.0.pdf"
+      },
+      {
+        "entry_number": 36073,
+        "date_filed": "2026-08-05",
+        "time_filed": "06:57:34",
+        "date_display": "Aug 5, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36073.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-05",
+        "time_filed": "09:29:50",
+        "date_display": "Aug 5, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36071,
+        "date_filed": "2026-08-03",
+        "time_filed": "05:52:03",
+        "date_display": "Aug 3, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36071.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-03",
+        "time_filed": "05:53:51",
+        "date_display": "Aug 3, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36070,
+        "date_filed": "2026-08-01",
+        "time_filed": "15:21:30",
+        "date_display": "Aug 1, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[36017], [36018], [36019]) (Steele, Benjamin)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36070.0.pdf"
+      },
+      {
+        "entry_number": 36067,
+        "date_filed": "2026-07-31",
+        "time_filed": "15:40:27",
+        "date_display": "Jul 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36067.0.pdf"
+      },
+      {
+        "entry_number": 36066,
+        "date_filed": "2026-07-31",
+        "time_filed": "15:29:02",
+        "date_display": "Jul 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36066.0.pdf"
+      },
+      {
+        "entry_number": 36065,
+        "date_filed": "2026-07-31",
+        "time_filed": "14:28:31",
+        "date_display": "Jul 31, 2026",
+        "description": "Exhibit(s) (related document(s)[35557]) Filed by FTX Recovery Trust. (Attachments: (1) Exhibit A (2) Exhibit B) (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36065.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-31",
+        "time_filed": "15:45:30",
+        "date_display": "Jul 31, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36064,
+        "date_filed": "2026-07-30",
+        "time_filed": "10:43:13",
+        "date_display": "Jul 30, 2026",
+        "description": "Notice of Change of Address Filed by Folkvang Ltd.. (Attachments: (1) Certificate of Service) (Tryon, Amy)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36064.0.pdf"
+      },
+      {
+        "entry_number": 36063,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:51:41",
+        "date_display": "Jul 29, 2026",
+        "description": "Declaration (related document(s)[36062]) Filed by FTX Recovery Trust. (Attachments: (1) Exhibit A-E) (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36063.0.pdf"
+      },
+      {
+        "entry_number": 36062,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:47:50",
+        "date_display": "Jul 29, 2026",
+        "description": "Motion to Approve Compromise under Rule 9019 Filed by FTX Recovery Trust. Hearing scheduled for 8/19/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. Objections due by 8/12/2026. (Attachments: (1) Notice (2) Exhibit A) (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36062.0.pdf"
+      },
+      {
+        "entry_number": 36061,
+        "date_filed": "2026-07-29",
+        "time_filed": "16:13:56",
+        "date_display": "Jul 29, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[36000], [36001], [36002], [36003], [36004]) (Steele, Benjamin)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36061.0.pdf"
+      },
+      {
+        "entry_number": 36060,
+        "date_filed": "2026-07-29",
+        "time_filed": "15:52:39",
+        "date_display": "Jul 29, 2026",
+        "description": "Order Approving Stipulation (related document(s)[20044], [26404], [29127], [34704], [34994], [35863], [36035], [36058]) Order Signed on 7/29/2026. (Attachments: (1) Exhibit 1) (Mml)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36060.0.pdf"
+      },
+      {
+        "entry_number": 36059,
+        "date_filed": "2026-07-28",
+        "time_filed": "19:10:22",
+        "date_display": "Jul 28, 2026",
+        "description": "Exhibit(s) (related document(s)[35985]) Filed by Argent Liquidation Trust. (Attachments: (1) Exhibit A (2) Exhibit B (3) Certificate of Service) (Sulik, Ethan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36059.0.pdf"
+      },
+      {
+        "entry_number": 36058,
+        "date_filed": "2026-07-28",
+        "time_filed": "18:24:26",
+        "date_display": "Jul 28, 2026",
+        "description": "Certification of Counsel (related document(s)[34994], [36035]) Filed by FTX Recovery Trust. (Attachments: (1) Exhibit A) (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36058.0.pdf"
+      },
+      {
+        "entry_number": 36057,
+        "date_filed": "2026-07-28",
+        "time_filed": "16:33:19",
+        "date_display": "Jul 28, 2026",
+        "description": "Letter Requesting Review and Reinstation of Claim Forfeited Under Section 7.14 of the Confirmed Plan (related document(s)[26404]) Filed by Sophie Cheung . (JMC)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36057.0.pdf"
+      },
+      {
+        "entry_number": 36056,
+        "date_filed": "2026-07-28",
+        "time_filed": "",
+        "date_display": "Jul 28, 2026",
+        "description": "Transcript regarding Hearing Held 7/23/26 RE: Onmibus/Status Conference. Remote electronic access to the transcript is restricted until 10/26/2026. The transcript may be viewed at the Bankruptcy Court Clerk's Office. For information about how to obtain a transcript, Contact the Court Reporter/Transcriber, Reliable, at Telephone number 302-654-8080. Filed by . Notice of Intent to Request Redaction Deadline Due By 8/4/2026. Redaction Request Due By 8/18/2026. Redacted Transcript Submission Due By 8/28/2026. Transcript access will be restricted through 10/26/2026. (ASA)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-28",
+        "time_filed": "10:52:45",
+        "date_display": "Jul 28, 2026",
+        "description": "Transcript",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36054,
+        "date_filed": "2026-07-27",
+        "time_filed": "17:28:02",
+        "date_display": "Jul 27, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: name (redacted) To Phoenix TF, LLC. Filed by Phoenix TF, LLC. (Forsgren, Jonathan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36054.0.pdf"
+      },
+      {
+        "entry_number": 36052,
+        "date_filed": "2026-07-27",
+        "time_filed": "16:24:11",
+        "date_display": "Jul 27, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: Name on File To GreenWulf Master Fund, LP. Filed by Cherokee Acquisition. (Faucher, Lisa)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36052.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-27",
+        "time_filed": "17:29:48",
+        "date_display": "Jul 27, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36050,
+        "date_filed": "2026-07-26",
+        "time_filed": "12:09:40",
+        "date_display": "Jul 26, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36050.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-26",
+        "time_filed": "12:13:28",
+        "date_display": "Jul 26, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36049,
+        "date_filed": "2026-07-23",
+        "time_filed": "16:17:53",
+        "date_display": "Jul 23, 2026",
+        "description": "Order Approving Stipulation (related document(s)[20051], [23170], [26404], [27798], [28643], [29127], [30077], [30364], [30900], [32057], [32058], [34476], [35717], [36040]) Order Signed on 7/23/2026. (Attachments: (1) Exhibit 1) (Mml)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36049.0.pdf"
+      },
+      {
+        "entry_number": 36048,
+        "date_filed": "2026-07-23",
+        "time_filed": "15:19:52",
+        "date_display": "Jul 23, 2026",
+        "description": "In-Person/Zoom Hearing Held/Court Sign-In Sheet (related document(s)[36045], [125], [76], [122]), [18] (Mml)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36048.0.pdf"
+      },
+      {
+        "entry_number": 36047,
+        "date_filed": "2026-07-23",
+        "time_filed": "10:40:06",
+        "date_display": "Jul 23, 2026",
+        "description": "Court Date & Time [07/23/2026 08:51:28 AM]. File Size [ 20059 KB ]. Run Time [ 00:53:37 ]. (admin).",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36047.0.pdf"
+      },
+      {
+        "entry_number": 36046,
+        "date_filed": "2026-07-23",
+        "time_filed": "09:15:16",
+        "date_display": "Jul 23, 2026",
+        "description": "Motion to Join (related document(s)[36038]) Filed by Seth Melamed. (O'Brien, Lawrence)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36046.0.pdf"
+      },
+      {
+        "entry_number": 36045,
+        "date_filed": "2026-07-23",
+        "time_filed": "09:06:40",
+        "date_display": "Jul 23, 2026",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by FTX Recovery Trust. Hearing scheduled for 7/23/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. (Brown, Kimberly)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36045.0.pdf"
+      },
+      {
+        "entry_number": 36043,
+        "date_filed": "2026-07-22",
+        "time_filed": "23:41:32",
+        "date_display": "Jul 22, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[36021], [36025], [36026], [36027], [36028], [36029], [36030], [36031], [36032]) (Steele, Benjamin)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36043.0.pdf"
+      },
+      {
+        "entry_number": 36042,
+        "date_filed": "2026-07-22",
+        "time_filed": "22:11:38",
+        "date_display": "Jul 22, 2026",
+        "description": "Exhibit(s) (related document(s)[35985]) Filed by Argent Liquidation Trust. (Attachments: (1) Exhibit A (2) Certificate of Service) (Sulik, Ethan)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36042.0.pdf"
+      },
+      {
+        "entry_number": 36041,
+        "date_filed": "2026-07-22",
+        "time_filed": "18:45:28",
+        "date_display": "Jul 22, 2026",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by FTX Recovery Trust. Hearing scheduled for 7/23/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36041.0.pdf"
+      },
+      {
+        "entry_number": 36040,
+        "date_filed": "2026-07-22",
+        "time_filed": "18:30:39",
+        "date_display": "Jul 22, 2026",
+        "description": "Certification of Counsel Filed by FTX Recovery Trust. (Attachments: (1) Exhibit A) (McGuire, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36040.0.pdf"
+      },
+      {
+        "entry_number": 36039,
+        "date_filed": "2026-07-22",
+        "time_filed": "17:24:00",
+        "date_display": "Jul 22, 2026",
+        "description": "Notice of Withdrawal of Appearance. terminating Daniel P O'Hara has withdrawn from the case. Filed by FTX Recovery Trust. (Robertson, Howard)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36039.0.pdf"
+      },
+      {
+        "entry_number": 36038,
+        "date_filed": "2026-07-22",
+        "time_filed": "14:25:48",
+        "date_display": "Jul 22, 2026",
+        "description": "Objection (related document(s)[35985], [36017]) Filed by Argent Liquidation Trust (Attachments: (1) Exhibit A (2) Certificate of Service) (Rizvi, Sameen)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36038.0.pdf"
+      },
+      {
+        "entry_number": 36037,
+        "date_filed": "2026-07-22",
+        "time_filed": "14:22:41",
+        "date_display": "Jul 22, 2026",
+        "description": "Notice of Hearing (related document(s)[36017]) Filed by FTX Recovery Trust. Hearing scheduled for 7/23/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. Objections due by 7/23/2026. (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36037.0.pdf"
+      },
+      {
+        "entry_number": 36036,
+        "date_filed": "2026-07-22",
+        "time_filed": "13:54:26",
+        "date_display": "Jul 22, 2026",
+        "description": "Exhibit(s) (related document(s)[35827], [35980]) Filed by Seth Melamed. (Attachments: (1) Exhibit A) (Buck, Kate)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36036.0.pdf"
+      },
+      {
+        "entry_number": 36035,
+        "date_filed": "2026-07-22",
+        "time_filed": "13:16:25",
+        "date_display": "Jul 22, 2026",
+        "description": "Order (I) Extending Time to File Reply in Support of the FTX Recovery Trust's First Amended Objection to Proofs of Claim Filed by Alex Mashinsky, and (II) Granting Related Relief (Related Doc [34994], [35959], [36024]) Order Signed on 7/22/2026. (Mml)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36035.0.pdf"
+      },
+      {
+        "entry_number": 36034,
+        "date_filed": "2026-07-22",
+        "time_filed": "12:51:17",
+        "date_display": "Jul 22, 2026",
+        "description": "Order Granting FTX Recovery Trust's Motion to Shorten Notice and Objection Periods for FTX Recovery Trust's Motion to Strike Argent's Joinder and Statement in Support of Motion of Seth Melamed for Reconsideration of the June 2, 2026 Order (Related Doc [36017], [36019]) Order Signed on 7/22/2026. (Mml)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36034.0.pdf"
+      },
+      {
+        "entry_number": 36033,
+        "date_filed": "2026-07-22",
+        "time_filed": "10:52:46",
+        "date_display": "Jul 22, 2026",
+        "description": "Notice of Withdrawal of Appearance. has withdrawn from the case. Filed by Auros Tech Limited. (Bielli, Thomas)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36033.0.pdf"
+      },
+      {
+        "entry_number": 36032,
+        "date_filed": "2026-07-21",
+        "time_filed": "18:50:27",
+        "date_display": "Jul 21, 2026",
+        "description": "Chapter 11 Post-Confirmation Report for Case Number 22-11158 (LP Successor Entity LLC) for the Quarter Ending: 06/30/2026 Filed by FTX Recovery Trust. (Brown, Kimberly)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36032.0.pdf"
+      },
+      {
+        "entry_number": 36031,
+        "date_filed": "2026-07-21",
+        "time_filed": "18:49:07",
+        "date_display": "Jul 21, 2026",
+        "description": "Chapter 11 Post-Confirmation Report for Case Number 22-11157 (LP Digital Asset Opportunities Master Fund Successor LP) for the Quarter Ending: 06/30/2026 Filed by FTX Recovery Trust. (Brown, Kimberly)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36031.0.pdf"
+      },
+      {
+        "entry_number": 36030,
+        "date_filed": "2026-07-21",
+        "time_filed": "18:47:28",
+        "date_display": "Jul 21, 2026",
+        "description": "Chapter 11 Post-Confirmation Report for Case Number 22-11156 (LP Digital Asset Opportunities Fund Successor, LLC) for the Quarter Ending: 06/30/2026 Filed by FTX Recovery Trust. (Brown, Kimberly)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36030.0.pdf"
+      },
+      {
+        "entry_number": 36029,
+        "date_filed": "2026-07-21",
+        "time_filed": "18:45:26",
+        "date_display": "Jul 21, 2026",
+        "description": "Chapter 11 Post-Confirmation Report for Case Number 22-11073 (LH Successor Inc.) for the Quarter Ending: 06/30/2026 Filed by FTX Recovery Trust. (Brown, Kimberly)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36029.0.pdf"
+      },
+      {
+        "entry_number": 36028,
+        "date_filed": "2026-07-21",
+        "time_filed": "18:43:37",
+        "date_display": "Jul 21, 2026",
+        "description": "Chapter 11 Post-Confirmation Report for Case Number 22-11074 (FTX Japan Holdings K.K.) for the Quarter Ending: 06/30/2026 Filed by FTX Recovery Trust. (Brown, Kimberly)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36028.0.pdf"
+      },
+      {
+        "entry_number": 36026,
+        "date_filed": "2026-07-21",
+        "time_filed": "18:39:17",
+        "date_display": "Jul 21, 2026",
+        "description": "Chapter 11 Post-Confirmation Report for the Quarter Ending: 06/30/2026 Filed by FTX Recovery Trust. (Brown, Kimberly)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36026.0.pdf"
+      },
+      {
+        "entry_number": 36025,
+        "date_filed": "2026-07-21",
+        "time_filed": "17:35:44",
+        "date_display": "Jul 21, 2026",
+        "description": "Notice of Withdrawal of (related document(s)[36018]) Filed by FTX Recovery Trust. (McGuire, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36025.0.pdf"
+      },
+      {
+        "entry_number": 36024,
+        "date_filed": "2026-07-21",
+        "time_filed": "16:41:36",
+        "date_display": "Jul 21, 2026",
+        "description": "Certificate of No Objection (related document(s)[34994], [35959]) Filed by FTX Recovery Trust. (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36024.0.pdf"
+      },
+      {
+        "entry_number": 36021,
+        "date_filed": "2026-07-21",
+        "time_filed": "12:27:42",
+        "date_display": "Jul 21, 2026",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by FTX Recovery Trust. Hearing scheduled for 7/23/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36021.0.pdf"
+      },
+      {
+        "entry_number": 36020,
+        "date_filed": "2026-07-21",
+        "time_filed": "10:14:44",
+        "date_display": "Jul 21, 2026",
+        "description": "Notice of Withdrawal of (related document(s)[35932]) Filed by Qingdao BitJungle Technology Co., Ltd, acting as a representative of Mr. Qiu Weidong. (McMahon, Michelle)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36020.0.pdf"
+      },
+      {
+        "entry_number": 36019,
+        "date_filed": "2026-07-20",
+        "time_filed": "22:25:39",
+        "date_display": "Jul 20, 2026",
+        "description": "Motion to Shorten (related document(s)[36017]) Filed by FTX Recovery Trust. (Attachments: (1) Exhibit A) (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36019.0.pdf"
+      },
+      {
+        "entry_number": 36018,
+        "date_filed": "2026-07-20",
+        "time_filed": "21:00:47",
+        "date_display": "Jul 20, 2026",
+        "description": "Certification of Counsel Filed by FTX Recovery Trust. (Attachments: (1) Exhibit A) (McGuire, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36018.0.pdf"
+      },
+      {
+        "entry_number": 36017,
+        "date_filed": "2026-07-20",
+        "time_filed": "19:26:49",
+        "date_display": "Jul 20, 2026",
+        "description": "Motion to Strike (related document(s)[35985]) Filed by FTX Recovery Trust. Hearing scheduled for 7/23/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. (Attachments: (1) Exhibit A) (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36017.0.pdf"
+      },
+      {
+        "entry_number": 36016,
+        "date_filed": "2026-07-20",
+        "time_filed": "19:25:18",
+        "date_display": "Jul 20, 2026",
+        "description": "Declaration in Support (related document(s)[35827], [35980]) Filed by Seth Melamed. (Attachments: (1) Exhibit (2) Exhibit) (O'Brien, Lawrence)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36016.0.pdf"
+      },
+      {
+        "entry_number": 36015,
+        "date_filed": "2026-07-20",
+        "time_filed": "19:14:16",
+        "date_display": "Jul 20, 2026",
+        "description": "Reply (related document(s)[35827]) Filed by Seth Melamed (Attachments: (1) Declaration) (O'Brien, Lawrence)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36015.0.pdf"
+      },
+      {
+        "entry_number": 36014,
+        "date_filed": "2026-07-20",
+        "time_filed": "15:59:15",
+        "date_display": "Jul 20, 2026",
+        "description": "Reply (related document(s)[35980]) Filed by Seth Melamed (O'Brien, Lawrence)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36014.0.pdf"
+      },
+      {
+        "entry_number": 36012,
+        "date_filed": "2026-07-19",
+        "time_filed": "23:11:27",
+        "date_display": "Jul 19, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36012.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-19",
+        "time_filed": "23:12:54",
+        "date_display": "Jul 19, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36010,
+        "date_filed": "2026-07-18",
+        "time_filed": "12:10:11",
+        "date_display": "Jul 18, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To FTXCREDITOR, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36010.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-18",
+        "time_filed": "12:12:21",
+        "date_display": "Jul 18, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36007,
+        "date_filed": "2026-07-17",
+        "time_filed": "20:48:46",
+        "date_display": "Jul 17, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36007.0.pdf"
+      },
+      {
+        "entry_number": 36006,
+        "date_filed": "2026-07-17",
+        "time_filed": "20:43:36",
+        "date_display": "Jul 17, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36006.0.pdf"
+      },
+      {
+        "entry_number": 36005,
+        "date_filed": "2026-07-17",
+        "time_filed": "15:11:05",
+        "date_display": "Jul 17, 2026",
+        "description": "Order (Tenth) Authorizing the Continued Redaction or Withholding of Certain Confidential Information of Customers (Related Doc [35935], [35998]) Order Signed on 7/17/2026. (Mml)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36005.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-17",
+        "time_filed": "20:50:25",
+        "date_display": "Jul 17, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36004,
+        "date_filed": "2026-07-16",
+        "time_filed": "15:54:12",
+        "date_display": "Jul 16, 2026",
+        "description": "Objection (related document(s)[35980]) Filed by FTX Recovery Trust (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36004.0.pdf"
+      },
+      {
+        "entry_number": 36003,
+        "date_filed": "2026-07-16",
+        "time_filed": "15:51:13",
+        "date_display": "Jul 16, 2026",
+        "description": "Declaration (related document(s)[36002]) Filed by FTX Recovery Trust. (Attachments: (1) Exhibit 1 (2) Exhibit 2 (3) Exhibit 3 (4) Exhibit 4 (5) Exhibit 5 (6) Exhibit 6 (7) Exhibit 7 (8) Exhibit 8) (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36003.0.pdf"
+      },
+      {
+        "entry_number": 36002,
+        "date_filed": "2026-07-16",
+        "time_filed": "15:47:47",
+        "date_display": "Jul 16, 2026",
+        "description": "Objection (related document(s)[35827]) Filed by FTX Recovery Trust (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36002.0.pdf"
+      },
+      {
+        "entry_number": 36001,
+        "date_filed": "2026-07-16",
+        "time_filed": "15:39:36",
+        "date_display": "Jul 16, 2026",
+        "description": "Objection (related document(s)[34975]) Filed by FTX Recovery Trust (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36001.0.pdf"
+      },
+      {
+        "entry_number": 36000,
+        "date_filed": "2026-07-16",
+        "time_filed": "15:20:24",
+        "date_display": "Jul 16, 2026",
+        "description": "Objection (related document(s)[35932]) Filed by FTX Recovery Trust (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36000.0.pdf"
+      },
+      {
+        "entry_number": 35999,
+        "date_filed": "2026-07-16",
+        "time_filed": "14:37:52",
+        "date_display": "Jul 16, 2026",
+        "description": "Letter Regarding FTX/Blockfolio Debacle Filed by Carmen Rowland . (JMC)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35999.0.pdf"
+      },
+      {
+        "entry_number": 35998,
+        "date_filed": "2026-07-16",
+        "time_filed": "13:09:34",
+        "date_display": "Jul 16, 2026",
+        "description": "Certificate of No Objection (related document(s)[35935]) Filed by FTX Recovery Trust. (Pierce, Matthew)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35998.0.pdf"
+      },
+      {
+        "entry_number": 35997,
+        "date_filed": "2026-07-15",
+        "time_filed": "22:38:40",
+        "date_display": "Jul 15, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[35959]) (Steele, Benjamin)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35997.0.pdf"
+      },
+      {
+        "entry_number": 35996,
+        "date_filed": "2026-07-14",
+        "time_filed": "10:40:07",
+        "date_display": "Jul 14, 2026",
+        "description": "Affidavit/Declaration of Mailing of Nelson Crespin Regarding Certification of Counsel. Filed by Kroll Restructuring Administration LLC. (related document(s)35848) (Steele, Benjamin) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35996.0.pdf"
+      },
+      {
+        "entry_number": 35995,
+        "date_filed": "2026-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12741980, amount $ 28.00. (U.S. Treasury) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35994,
+        "date_filed": "2026-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12741980, amount $ 28.00. (U.S. Treasury) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35993,
+        "date_filed": "2026-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12741980, amount $ 28.00. (U.S. Treasury) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35992,
+        "date_filed": "2026-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12741980, amount $ 28.00. (U.S. Treasury) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35991,
+        "date_filed": "2026-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12741980, amount $ 28.00. (U.S. Treasury) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35990,
+        "date_filed": "2026-07-14",
+        "time_filed": "08:53:26",
+        "date_display": "Jul 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35990.0.pdf"
+      },
+      {
+        "entry_number": 35989,
+        "date_filed": "2026-07-14",
+        "time_filed": "08:49:01",
+        "date_display": "Jul 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35989.0.pdf"
+      },
+      {
+        "entry_number": 35988,
+        "date_filed": "2026-07-14",
+        "time_filed": "08:44:09",
+        "date_display": "Jul 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35988.0.pdf"
+      },
+      {
+        "entry_number": 35987,
+        "date_filed": "2026-07-14",
+        "time_filed": "08:39:24",
+        "date_display": "Jul 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35987.0.pdf"
+      },
+      {
+        "entry_number": 35986,
+        "date_filed": "2026-07-14",
+        "time_filed": "08:35:37",
+        "date_display": "Jul 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 07/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35986.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-14",
+        "time_filed": "08:56:43",
+        "date_display": "Jul 14, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35985,
+        "date_filed": "2026-07-13",
+        "time_filed": "19:02:31",
+        "date_display": "Jul 13, 2026",
+        "description": "Joinder //Argent's Joinder and Statement in Support of Motion of Seth Melamed for Reconsideration of the June 2, 2026 Order (related document(s)35768) Filed by Argent Liquidation Trust. (Attachments: # 1 Exhibit A # 2 Exhibit B # 3 Certificate of Service) (Rizvi, Sameen) (Entered: 07/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35985.0.pdf"
+      },
+      {
+        "entry_number": 35984,
+        "date_filed": "2026-07-10",
+        "time_filed": "16:16:29",
+        "date_display": "Jul 10, 2026",
+        "description": "Affidavit/Declaration of Mailing of Nelson Crespin Regarding Motion of the FTX Recovery Trust for an Order Authorizing the Continued Redaction or Withholding of Certain Confidential Information of Customers. Filed by Kroll Restructuring Administration LLC. (related document(s)35935) (Steele, Benjamin) (Entered: 07/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35984.0.pdf"
+      },
+      {
+        "entry_number": 35983,
+        "date_filed": "2026-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12739106, amount $ 28.00. (U.S. Treasury) (Entered: 07/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35982,
+        "date_filed": "2026-07-10",
+        "time_filed": "13:12:42",
+        "date_display": "Jul 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C I, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 07/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35982.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-10",
+        "time_filed": "13:15:20",
+        "date_display": "Jul 10, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35981,
+        "date_filed": "2026-07-09",
+        "time_filed": "23:17:22",
+        "date_display": "Jul 9, 2026",
+        "description": "Declaration in Support Of Motion Determining That The Filing And Prosecution Of The Proposed Request To Amend Description Of Arbitration Is Not Enjoined (related document(s)35980) Filed by Seth Melamed. (O'Brien, Lawrence) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35981.0.pdf"
+      },
+      {
+        "entry_number": 35980,
+        "date_filed": "2026-07-09",
+        "time_filed": "23:13:15",
+        "date_display": "Jul 9, 2026",
+        "description": "Motion for Clarification (related document(s)35768) Filed by Seth Melamed. (Attachments: # 1 Proposed Form of Order # 2 Notice) (O'Brien, Lawrence) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35980.0.pdf"
+      },
+      {
+        "entry_number": 35979,
+        "date_filed": "2026-07-09",
+        "time_filed": "",
+        "date_display": "Jul 9, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12738152, amount $ 28.00. (U.S. Treasury) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35978,
+        "date_filed": "2026-07-09",
+        "time_filed": "19:03:25",
+        "date_display": "Jul 9, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35978.0.pdf"
+      },
+      {
+        "entry_number": 35977,
+        "date_filed": "2026-07-09",
+        "time_filed": "",
+        "date_display": "Jul 9, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12737923, amount $ 28.00. (U.S. Treasury) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35976,
+        "date_filed": "2026-07-09",
+        "time_filed": "16:31:53",
+        "date_display": "Jul 9, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: Name on File To Serrur Investment Partners, LP. Filed by Cherokee Acquisition. (Faucher, Lisa) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35976.0.pdf"
+      },
+      {
+        "entry_number": 35975,
+        "date_filed": "2026-07-09",
+        "time_filed": "",
+        "date_display": "Jul 9, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12737880, amount $ 28.00. (U.S. Treasury) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35974,
+        "date_filed": "2026-07-09",
+        "time_filed": "16:12:07",
+        "date_display": "Jul 9, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: Name on File To Serrur Investment Partners, LP. Filed by Cherokee Acquisition. (Faucher, Lisa) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35974.0.pdf"
+      },
+      {
+        "entry_number": 35973,
+        "date_filed": "2026-07-09",
+        "time_filed": "",
+        "date_display": "Jul 9, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12736989, amount $ 28.00. (U.S. Treasury) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35972,
+        "date_filed": "2026-07-09",
+        "time_filed": "09:18:55",
+        "date_display": "Jul 9, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C I, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 07/09/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35972.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-07-09",
+        "time_filed": "19:06:12",
+        "date_display": "Jul 9, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35970,
+        "date_filed": "2026-07-08",
+        "time_filed": "15:33:44",
+        "date_display": "Jul 8, 2026",
+        "description": "Certificate of Service of FTX Recovery Trust's Motion for Entry of an Order (I) Extending Time to File Reply in Support of the FTX Recovery Trust's First Amended Objection to Proofs of Claim Filed by Alex Mashinsky, and (II) Granting Related Relief (related document(s)35959) Filed by FTX Recovery Trust. (Pierce, Matthew) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35970.0.pdf"
+      },
+      {
+        "entry_number": 35968,
+        "date_filed": "2026-07-08",
+        "time_filed": "13:54:43",
+        "date_display": "Jul 8, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 1 Transferors: Livello Capital Special Opportunities Master Fund To Cherokee Debt Acquisition, LLC. Filed by Cherokee Acquisition. (Faucher, Lisa) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35968.0.pdf"
+      },
+      {
+        "entry_number": 35966,
+        "date_filed": "2026-07-08",
+        "time_filed": "",
+        "date_display": "Jul 8, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12735036, amount $ 28.00. (U.S. Treasury) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35965,
+        "date_filed": "2026-07-08",
+        "time_filed": "",
+        "date_display": "Jul 8, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12735036, amount $ 28.00. (U.S. Treasury) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35962,
+        "date_filed": "2026-07-08",
+        "time_filed": "07:13:11",
+        "date_display": "Jul 8, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To FTXCREDITOR, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 07/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35962.0.pdf"
+      }
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=65748821&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": {
     "name": "Kroll",
