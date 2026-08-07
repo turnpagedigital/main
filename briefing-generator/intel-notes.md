@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-07 01:48 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-07 02:03 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -83,12 +83,6 @@ Ciao
 ### Dkt. 1307 — 2026-07-30 ★
 
 > Chapter 11 Post-Confirmation Report
-
-## Uncategorized
-
-### (no docket number) — 2026-08-03
-
-> Law Firm Jackson Walker to Pay $15 Million to Settle Government Claims Over Ex-Judge’s Romance — The Texas firm didn’t admit fault in its settlement with the civil division of the Justice Department r
 
 ## Unknown case
 
