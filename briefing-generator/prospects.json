@@ -484,7 +484,8 @@
       "source_name": "Jackson Walker LLP",
       "date": "2026-06-22",
       "first_seen": "2026-08-07",
-      "status": "new"
+      "status": "new",
+      "vote": 1
     },
     {
       "id": "eb8a9e13b2",
@@ -533,8 +534,7 @@
       "source_name": "Bloomberg Law",
       "date": "2026-04-24",
       "first_seen": "2026-08-07",
-      "status": "new",
-      "vote": 1
+      "status": "new"
     },
     {
       "id": "b6ff5d1c32",
@@ -549,7 +549,8 @@
       "source_name": "AI Lawsuit Tracker",
       "date": "2026-03-27",
       "first_seen": "2026-08-07",
-      "status": "new"
+      "status": "new",
+      "vote": 1
     },
     {
       "id": "0f43f7caa6",
