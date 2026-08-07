@@ -214,5 +214,18 @@
     ],
     "sync": "active",
     "default_color": "#7EF4C2"
+  },
+  {
+    "slug": "hachette-et-al-v-meta-platforms-llama",
+    "display_name": "Hachette et al. v. Meta Platforms (Llama)",
+    "short_name": "Hachette et",
+    "docket_url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
+    "court": "To be confirmed (filed May 5, 2026)",
+    "topics": [
+      "billion-dollar-class-actions",
+      "llm-class-action"
+    ],
+    "sync": "active",
+    "default_color": "#F2AAEC"
   }
 ]
