@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-07 01:47 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-07 01:48 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -31,6 +31,10 @@ hi
 > none
 
 ### (no docket number) — 2026-08-06
+
+> none AND none
+
+### (no docket number) — 2026-08-05
 
 > none AND none
 
