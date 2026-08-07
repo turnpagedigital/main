@@ -400,6 +400,7 @@
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
     <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
@@ -506,6 +507,12 @@
   <button type="button" class="ud-th-menu-item" data-val="transfers">Transfers only</button>
 </div>
 
+<div id="ud-th-docmenu" class="ud-th-menu" style="display:none;">
+  <button type="button" class="ud-th-menu-item" data-val="all">All</button>
+  <button type="button" class="ud-th-menu-item" data-val="with">Doc only</button>
+  <button type="button" class="ud-th-menu-item" data-val="without">No doc only</button>
+</div>
+
 <div class="ud-page">
 
   <div id="ud-due" class="ud-due" style="display:none;"></div>
@@ -539,9 +546,6 @@
         <label class="ud-new-label">
           <input type="checkbox" id="ud-new-only"> New only (24h)
         </label>
-        <label class="ud-new-label">
-          <input type="checkbox" id="ud-doc-only"> Has document
-        </label>
       </div>
     </div>
   </div>
@@ -558,7 +562,7 @@
       <th id="ud-th-case" class="ud-th-filter" style="width:150px" title="Select cases"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-source" class="ud-th-filter" style="width:150px" title="Show or hide news sources"><span class="ud-th-label">Author</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-entry" class="ud-th-filter" title="Filter by entry type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
-      <th style="width:132px;text-align:right">Dkt.</th>
+      <th id="ud-th-doc" class="ud-th-filter" style="width:132px;text-align:right" title="Filter by attached document"><span class="ud-th-label">Dkt.</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-bm" class="ud-th-toggle ud-th-icon" style="width:26px;text-align:center" title="Show bookmarked only">★</th>
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Snoozed reminders"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></th>
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Hide rows (H)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></th>

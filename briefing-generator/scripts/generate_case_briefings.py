@@ -397,7 +397,7 @@ def main():
         print("ANTHROPIC_API_KEY not set — case briefings skipped.")
         return
 
-    only = _arg_value("slug")
+    only = _arg_value("slug") or os.environ.get("BRIEFING_CASE") or None
     force = _arg("force")
 
     try:

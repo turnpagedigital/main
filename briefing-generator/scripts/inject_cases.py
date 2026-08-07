@@ -608,17 +608,16 @@ def render_case_page(case):
     name = html_escape(cfg["display_name"])
     emoji = cfg.get("emoji", "⚖️")
 
-    # primary topic backlink + "also tracked in" chips
+    # Backlink to this case's daily briefing; theme tags are plain text now
+    # (theme dashboards are retired — briefings are per-case).
     topics = [t for t in cfg.get("topics", []) if t in TOPIC_META]
-    primary = topics[0] if topics else None
-    back = (f'<a class="tn-back" href="../{primary}/dashboard.html">← '
-            f'{TOPIC_META[primary]["emoji"]} {html_escape(TOPIC_META[primary]["display"])} briefing</a>'
-            if primary else f'<a class="tn-back" href="{HOME_HREF_SUBDIR}">← Daily Briefing</a>')
+    back = (f'<a class="tn-back" href="../briefings.html#case={slug}">← '
+            f'📰 {name} briefing</a>')
     also = ""
-    if len(topics) > 1:
-        links = ", ".join(f'<a href="../{t}/dashboard.html">{html_escape(TOPIC_META[t]["display"])}</a>'
-                          for t in topics[1:])
-        also = f'<div class="also">Also tracked in: {links}</div>'
+    if topics:
+        labels = ", ".join(f'{TOPIC_META[t]["emoji"]} {html_escape(TOPIC_META[t]["display"])}'
+                           for t in topics)
+        also = f'<div class="also">Themes: {labels}</div>'
 
     meta_bits = []
     if cfg["case"]["court"]:
@@ -681,12 +680,13 @@ def render_case_page(case):
   <div class="tn-row">
     <div class="tn-left">
       <a class="tn-brand" href="{HOME_HREF_SUBDIR}"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="{LOGO_SRC}"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="{LOGO_SRC_DARK}"></a>
-      <a class="tn-back" href="{HOME_HREF}">🏠 Dashboard</a>
-      <a class="tn-back" href="docket.html">⚖️ Docket</a>
-      <a class="tn-back" href="calendar.html">📅 Calendar</a>
-      <a class="tn-back" href="notes.html">🗒️ Notes</a>
-      <a class="tn-back" href="briefings.html">📰 Briefings</a>
-      <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="{HOME_HREF_SUBDIR}">🏠 Dashboard</a>
+      <a class="tn-back" href="../docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="../calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="../notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="../briefings.html">📰 Briefings</a>
+      <a class="tn-back" href="../news.html">📡 News</a>
+      <a class="tn-back" href="../prospects.html">🔭 Prospects</a>
     </div>
     <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
@@ -829,6 +829,7 @@ def render_unified_docket(cases):
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
     <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
@@ -935,6 +936,12 @@ def render_unified_docket(cases):
   <button type="button" class="ud-th-menu-item" data-val="transfers">Transfers only</button>
 </div>
 
+<div id="ud-th-docmenu" class="ud-th-menu" style="display:none;">
+  <button type="button" class="ud-th-menu-item" data-val="all">All</button>
+  <button type="button" class="ud-th-menu-item" data-val="with">Doc only</button>
+  <button type="button" class="ud-th-menu-item" data-val="without">No doc only</button>
+</div>
+
 <div class="ud-page">
 
   <div id="ud-due" class="ud-due" style="display:none;"></div>
@@ -968,9 +975,6 @@ def render_unified_docket(cases):
         <label class="ud-new-label">
           <input type="checkbox" id="ud-new-only"> New only (24h)
         </label>
-        <label class="ud-new-label">
-          <input type="checkbox" id="ud-doc-only"> Has document
-        </label>
       </div>
     </div>
   </div>
@@ -987,7 +991,7 @@ def render_unified_docket(cases):
       <th id="ud-th-case" class="ud-th-filter" style="width:150px" title="Select cases"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-source" class="ud-th-filter" style="width:150px" title="Show or hide news sources"><span class="ud-th-label">Author</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-entry" class="ud-th-filter" title="Filter by entry type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
-      <th style="width:132px;text-align:right">Dkt.</th>
+      <th id="ud-th-doc" class="ud-th-filter" style="width:132px;text-align:right" title="Filter by attached document"><span class="ud-th-label">Dkt.</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-bm" class="ud-th-toggle ud-th-icon" style="width:26px;text-align:center" title="Show bookmarked only">★</th>
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Snoozed reminders"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></th>
       <th class="ud-th-icon" style="width:26px;text-align:center" title="Hide rows (H)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></th>
@@ -1089,6 +1093,7 @@ def render_news_page(cases):
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
     <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
@@ -1342,6 +1347,7 @@ def render_unified_calendar(cases):
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
     <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
@@ -1477,6 +1483,7 @@ def render_unified_notes(cases):
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
     <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
@@ -1583,97 +1590,6 @@ def render_unified_notes(cases):
     print("  \u2713 notes.html: shell written")
 
 
-def render_briefings(cases):
-    """Generate briefing-generator/briefings.html — daily briefing ledes per
-    theme, filterable by theme. Data: briefings.json (upserted by generate.py)."""
-    logo_src = "assets/turnpage-intel-logo.png"
-    logo_src_dark = "assets/turnpage-intel-logo-dark.png"
-
-    page = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
-<title>Briefings — Turnpage Daily Briefing</title>
-{THEME_SCRIPT}
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-{PAGE_CSS}
-<style>
-{UD_CSS}
-</style>
-<!-- AUTH GATE START -->
-<script src="/auth/config.js"></script>
-<script type="module" src="/auth/auth.js"></script>
-<!-- AUTH GATE END -->
-</head>
-<body>
-
-<nav class="tn">
-  <div class="tn-row">
-    <div class="tn-left">
-      <a class="tn-brand" href="{HOME_HREF}"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="{logo_src}"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="{logo_src_dark}"></a>
-      <a class="tn-back" href="{HOME_HREF}">🏠 Dashboard</a>
-      <a class="tn-back" href="docket.html">⚖️ Docket</a>
-      <a class="tn-back" href="calendar.html">📅 Calendar</a>
-      <a class="tn-back" href="notes.html">🗒️ Notes</a>
-      <a class="tn-back" href="briefings.html">📰 Briefings</a>
-      <a class="tn-back" href="news.html">📡 News</a>
-    </div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
-  </div>
-</nav>
-
-<div class="page-title">
-  <div class="eyebrow">Intelligence · Daily Theme Briefings</div>
-  <h1>📰 Briefings</h1>
-  <div class="case-meta">
-    <span id="ud-meta">Loading…</span>
-  </div>
-</div>
-
-<div class="ud-page">
-
-  <div class="ud-controls">
-    <div class="ud-filter-row">
-      <div class="ud-case-dd" id="ud-case-dd">
-        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Themes <span class="ud-dd-caret">▾</span></button>
-        <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ud-toolbar">
-    <span id="ud-count"></span>
-  </div>
-
-  <table class="ud-table">
-    <thead><tr>
-      <th style="width:116px">Updated</th>
-      <th style="width:250px">Theme</th>
-      <th>Today's briefing</th>
-      <th style="width:120px;text-align:right">Open</th>
-    </tr></thead>
-    <tbody id="ub-tbody">
-      <tr><td colspan="4" class="ud-empty">Loading…</td></tr>
-    </tbody>
-  </table>
-
-</div>
-
-<script src="briefings.js"></script>
-
-</body>
-</html>
-"""
-
-    out = REPO_ROOT / "briefings.html"
-    out.write_text(page, encoding="utf-8")
-    print("  \u2713 briefings.html: shell written")
-
-
-# ── main ─────────────────────────────────────────────────────────────────────
 def main():
     cases = load_cases()
     if not cases:
@@ -1711,9 +1627,8 @@ def main():
     print("=== Rendering unified notes page ===")
     render_unified_notes(cases)
 
-    # 6) briefings page
-    print("=== Rendering briefings page ===")
-    render_briefings(cases)
+    # 6) briefings.html is a static per-case page now (cases-not-themes,
+    #    Aug 2026) — no longer regenerated here.
 
     print("=== Cases injection done. ===")
 

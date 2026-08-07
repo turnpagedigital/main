@@ -382,6 +382,27 @@
 
   .ud-link-empty{color:var(--ink-40);font-size:inherit;}
   .ud-empty{font-size:15px;color:var(--ink-60);font-style:italic;padding:28px 14px;text-align:center;}
+  /* Per-case briefing rows */
+  .ub-case-cell .ud-pill{margin-bottom:4px;}
+  .ub-tags{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 2px;}
+  .ub-tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:0.03em;padding:1px 7px;white-space:nowrap;border-radius:0;}
+  .ub-court{font-size:11px;color:var(--ink-40);line-height:1.35;}
+  .ub-chip{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);border:1px solid var(--line-strong);padding:1px 7px;margin-right:7px;vertical-align:middle;white-space:nowrap;}
+  .ub-chip-moved{background:var(--neon);border-color:var(--neon);color:#0A0A0A;}
+  .ub-row-moved .ud-desc{font-weight:600;}
+  .ub-open-cell{white-space:nowrap;text-align:right;}
+  .pr-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;padding:5px 13px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer;line-height:1.2;}
+  .pr-btn:hover{background:var(--paper-2);}
+  .ub-detail-row td{background:var(--paper-2);padding:0;}
+  .ub-body{max-width:860px;padding:22px 26px 26px;font-size:14.5px;line-height:1.75;}
+  .ub-body-head{font-size:15px;font-weight:800;margin-bottom:10px;}
+  .ub-body-date{font-size:11.5px;font-weight:700;color:var(--ink-60);margin-left:8px;letter-spacing:0.04em;}
+  .ub-body p{margin:0 0 14px;}
+  .ub-body h4{margin:18px 0 8px;font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-60);}
+  .ub-body ul{margin:0 0 14px;padding-left:20px;}
+  .ub-body li{margin-bottom:6px;}
+  .ub-body a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--neon);}
+  .ub-body em{font-style:italic;}
 </style>
 <!-- AUTH GATE START -->
 <script src="/auth/config.js"></script>
@@ -400,13 +421,14 @@
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
       <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
     <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · Daily Theme Briefings</div>
+  <div class="eyebrow">Intelligence · Daily Case Briefings</div>
   <h1>📰 Briefings</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
@@ -418,7 +440,7 @@
   <div class="ud-controls">
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
-        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Themes <span class="ud-dd-caret">▾</span></button>
+        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
     </div>
@@ -430,10 +452,10 @@
 
   <table class="ud-table">
     <thead><tr>
-      <th style="width:116px">Updated</th>
-      <th style="width:250px">Theme</th>
-      <th>Today's briefing</th>
-      <th style="width:120px;text-align:right">Open</th>
+      <th style="width:116px">Briefed</th>
+      <th style="width:250px">Case</th>
+      <th>Latest briefing</th>
+      <th style="width:170px;text-align:right">Open</th>
     </tr></thead>
     <tbody id="ub-tbody">
       <tr><td colspan="4" class="ud-empty">Loading…</td></tr>

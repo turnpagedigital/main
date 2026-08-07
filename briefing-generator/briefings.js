@@ -1,8 +1,11 @@
 (function () {
   "use strict";
 
-  /* Briefings — the daily briefing lede for every theme, filterable by theme.
-     Data: briefings.json, upserted by the daily pipeline (generate.py). */
+  /* Briefings — one row per TRACKED CASE (cases-not-themes model).
+     Data: case-briefings.json, written daily by generate_case_briefings.py.
+     Rows expand in place to the full briefing body; #case=<slug> deep-links
+     from the dashboard cards. Theme tags are labels/filters only — themes no
+     longer have briefings of their own. */
 
   function esc(s) {
     return String(s)
@@ -10,254 +13,125 @@
       .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
-  var THEMES = {
-    "rewind-tariffs":               { name: "Tariffs / Trade",               emoji: "⚖️", bg: "#ECFCCB", fg: "#3f6212" },
-    "llm-class-action":             { name: "LLM / Copyright",               emoji: "🤖", bg: "#DBEAFE", fg: "#1e40af" },
-    "crypto-insolvency":            { name: "Crypto Insolvency",             emoji: "🪙", bg: "#FFEDD5", fg: "#9a3412" },
-    "fraud-recovery":               { name: "Ponzi / Fraud Recovery",        emoji: "🕵️", bg: "#F3E8FF", fg: "#6b21a8" },
-    "billion-dollar-class-actions": { name: "$1B+ Class Actions & Mass Arb", emoji: "💰", bg: "#D1FAE5", fg: "#065f46" },
-    "bankruptcy-creditor-rights":   { name: "Bankruptcy Creditor Rights",    emoji: "📜", bg: "#FEE2E2", fg: "#991b1b" },
+  function fetchJson(url) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    });
+  }
+
+  // ── Theme labels (tags on rows + filter) ──────────────────────────────────
+  var THEMES = {};
+  var THEME_COLORS = {
+    "rewind-tariffs":               { bg: "#ECFCCB", fg: "#3f6212" },
+    "llm-class-action":             { bg: "#DBEAFE", fg: "#1e40af" },
+    "crypto-insolvency":            { bg: "#FFEDD5", fg: "#9a3412" },
+    "fraud-recovery":               { bg: "#F3E8FF", fg: "#6b21a8" },
+    "billion-dollar-class-actions": { bg: "#D1FAE5", fg: "#065f46" },
+    "bankruptcy-creditor-rights":   { bg: "#FEE2E2", fg: "#991b1b" },
   };
-
-  // Theme colors share the case-color store (localStorage + intel-prefs
-  // roaming) — theme slugs and case slugs never collide.
-  var COLOR_KEY = "ud-case-colors";
-  var savedColors = {};
-  try { savedColors = JSON.parse(localStorage.getItem(COLOR_KEY) || "{}"); } catch (e) {}
-
-  function persistColors() {
-    try { localStorage.setItem(COLOR_KEY, JSON.stringify(savedColors)); } catch (e) {}
-  }
-
-  var FALLBACK_SWATCHES = [
-    { bg: "#D4FF00", fg: "#0A0A0A" }, { bg: "#E9F98A", fg: "#4A5500" },
-    { bg: "#1B3A4B", fg: "#FFFFFF" }, { bg: "#94C6F8", fg: "#123A66" },
-    { bg: "#3B78D8", fg: "#FFFFFF" }, { bg: "#B3A8F0", fg: "#2A1E6E" },
-    { bg: "#4A3DE0", fg: "#FFFFFF" }, { bg: "#7EF4C2", fg: "#0B4A32" },
-    { bg: "#3FA07A", fg: "#FFFFFF" }, { bg: "#F2AAEC", fg: "#6E1466" },
-    { bg: "#CC33CC", fg: "#FFFFFF" }, { bg: "#3A3A3A", fg: "#FFFFFF" },
-  ];
-
-  // The edited default palette (docket gear → "Edit palette…") applies to
-  // themes too — read the shared store, fall back to the brand set.
-  function currentSwatches() {
-    try {
-      var p = JSON.parse(localStorage.getItem("ud-theme-presets") || "null");
-      if (Array.isArray(p) && p.length === 12) return p;
-    } catch (e) {}
-    return FALLBACK_SWATCHES;
-  }
-
   function themeOf(slug) {
-    var base = THEMES[slug] || {
-      name: slug.replace(/-/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); }),
-      emoji: "\ud83d\udcf0", bg: "#E0E7FF", fg: "#3730a3",
-    };
-    var ov = savedColors[slug];
-    if (!ov) return base;
-    return { name: base.name, emoji: base.emoji, bg: ov.bg || base.bg, fg: ov.fg || base.fg, border: ov.border || "" };
+    var t = THEMES[slug];
+    if (t) return t;
+    var c = THEME_COLORS[slug] || { bg: "#E0E7FF", fg: "#3730a3" };
+    return { name: slug, emoji: "📰", bg: c.bg, fg: c.fg };
   }
-
-  // Roaming: pull the shared prefs store once so a fresh browser sees the
-  // same theme colors; pushes merge on the server copy so case groups and
-  // palette presets are never clobbered from this page.
-  // Admin theme names (themes.json via /admin/intelligence) override the
-  // built-in labels — the slug and URL stay stable, the display name follows.
-  function loadThemeNames() {
-    fetchJson("themes.json").then(function (d) {
-      var items = (d && d.themes) || [];
-      items.forEach(function (t) {
-        if (!t || !t.slug) return;
-        var cur = THEMES[t.slug] || { bg: "#E0E7FF", fg: "#3730a3", emoji: "\ud83d\udcf0", name: t.slug };
-        if (t.display_name) cur.name = t.display_name;
-        if (t.emoji) cur.emoji = t.emoji;
-        THEMES[t.slug] = cur;
-      });
-      renderThemeFilter();
-      render();
-    }).catch(function () {});
-  }
-
-  function hydrateColors() {
-    fetchJson("api/prefs").then(function (p) {
-      if (p && p.ok && p.colors) {
-        Object.keys(p.colors).forEach(function (k) { savedColors[k] = p.colors[k]; });
-        persistColors();
-      }
-      if (p && p.ok && Array.isArray(p.presets) && p.presets.length === 12) {
-        try { localStorage.setItem("ud-swatch-presets", JSON.stringify(p.presets)); } catch (e) {}
-      }
-      if (p && p.ok && Array.isArray(p.theme_presets) && p.theme_presets.length === 12) {
-        try { localStorage.setItem("ud-theme-presets", JSON.stringify(p.theme_presets)); } catch (e) {}
-      }
-      renderThemeFilter();
-      render();
-    }).catch(function () {});
-  }
-
-  function pushPrefs() {
-    fetchJson("api/prefs").then(function (p) {
-      var colors = (p && p.ok && p.colors) || {};
-      Object.keys(savedColors).forEach(function (k) { colors[k] = savedColors[k]; });
-      Object.keys(colors).forEach(function (k) { if (savedColors[k] === undefined && THEMES[k]) delete colors[k]; });
-      var themePresets = (p && p.theme_presets) || [];
-      try {
-        var lp = JSON.parse(localStorage.getItem("ud-theme-presets") || "null");
-        if (Array.isArray(lp) && lp.length === 12) themePresets = lp;
-      } catch (e) {}
-      return fetch("api/prefs", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ colors: colors, groups: (p && p.groups) || [], presets: (p && p.presets) || [], theme_presets: themePresets }),
-      });
-    }).catch(function () {});
-  }
-
-  var popEl = null;
-  var popSlug = null;
-  var popEditingPalette = false;
-  function closePop() {
-    if (popEl && popEl.parentNode) popEl.parentNode.removeChild(popEl);
-    popEl = null;
-    popSlug = null;
-    popEditingPalette = false;
-  }
-
-  function popApply() {
-    if (!popEl || !popSlug) return;
-    var bg = popEl.querySelector("[data-in-bg]").value;
-    var fg = popEl.querySelector("[data-in-fg]").value;
-    var useBorder = popEl.querySelector("[data-in-border-on]").checked;
-    var border = popEl.querySelector("[data-in-border]").value;
-    var entry = { bg: bg, fg: fg };
-    if (useBorder) entry.border = border;
-    savedColors[popSlug] = entry;
-    persistColors();
-    pushPrefs();
-    renderThemeFilter();
-    render();
-  }
-
-  function popRenderSwatches() {
-    var box = popEl.querySelector("[data-role-swatches]");
-    var cur = (savedColors[popSlug] && savedColors[popSlug].bg) || themeOf(popSlug).bg;
-    box.className = "ud-pop-swatches";
-    box.innerHTML = currentSwatches().map(function (s, i) {
-      var on = s.bg.toLowerCase() === (cur || "").toLowerCase();
-      return '<button type="button" class="ud-pop-swatch' + (on ? " ud-swatch-active" : "") + '" data-sw="' + i + '" style="background:' + s.bg + '" title="' + s.bg + '"></button>';
-    }).join("");
-    box.querySelectorAll("[data-sw]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var s = currentSwatches()[Number(b.getAttribute("data-sw"))];
-        popEl.querySelector("[data-in-bg]").value = s.bg;
-        popEl.querySelector("[data-in-fg]").value = s.fg || "#0A0A0A";
-        popApply();
-        popRenderSwatches();
-      });
-    });
-  }
-
-  function popRenderPaletteEditor() {
-    var box = popEl.querySelector("[data-role-swatches]");
-    var presets = currentSwatches().map(function (x) { return { bg: x.bg, fg: x.fg }; });
-    box.className = "ud-pop-swatches ud-sw-editing";
-    box.innerHTML = presets.map(function (p, i) {
-      return (
-        '<div class="ud-sw-row" data-row="' + i + '">' +
-          '<span class="ud-sw-preview" style="background:' + p.bg + ";color:" + (p.fg || "#0A0A0A") + '">Aa</span>' +
-          '<label>Bg <input type="color" class="ud-sw-bg" data-idx="' + i + '" value="' + p.bg + '"></label>' +
-          '<label>Text <input type="color" class="ud-sw-fg" data-idx="' + i + '" value="' + (p.fg || "#0A0A0A") + '"></label>' +
-        "</div>"
-      );
-    }).join("");
-    function commit(i) {
-      var rowEl = box.querySelector('[data-row="' + i + '"]');
-      presets[i] = { bg: rowEl.querySelector(".ud-sw-bg").value, fg: rowEl.querySelector(".ud-sw-fg").value };
-      var prev = rowEl.querySelector(".ud-sw-preview");
-      prev.style.background = presets[i].bg;
-      prev.style.color = presets[i].fg;
-      try { localStorage.setItem("ud-theme-presets", JSON.stringify(presets)); } catch (e) {}
-      pushPrefs();
-    }
-    box.querySelectorAll(".ud-sw-bg, .ud-sw-fg").forEach(function (inp) {
-      inp.addEventListener("input", function () { commit(Number(inp.getAttribute("data-idx"))); });
-    });
-  }
-
-  function openThemePopover(slug, anchor) {
-    closePop();
-    popSlug = slug;
+  function themeTag(slug) {
     var t = themeOf(slug);
-    var hasBorder = !!(savedColors[slug] && savedColors[slug].border);
-    var pop = document.createElement("div");
-    pop.className = "ud-color-pop";
-    pop.style.display = "block";
-    pop.innerHTML =
-      '<div class="ud-pop-title">' + esc(t.name) + "</div>" +
-      '<div data-role-swatches></div>' +
-      '<div class="ud-sw-row" style="margin-bottom:6px;"><label>Bg <input type="color" data-in-bg value="' + t.bg + '"></label>' +
-        '<label>Text <input type="color" data-in-fg value="' + t.fg + '"></label></div>' +
-      '<div class="ud-sw-row" style="margin-bottom:10px;"><label><input type="checkbox" data-in-border-on' + (hasBorder ? " checked" : "") + "> Border</label>" +
-        '<label><input type="color" data-in-border value="' + ((savedColors[slug] && savedColors[slug].border) || t.fg) + '"></label></div>' +
-      '<div style="display:flex;gap:10px;align-items:center;">' +
-        '<button type="button" class="ud-dd-quick" data-palette>Edit palette…</button>' +
-        '<button type="button" class="ud-dd-quick" data-reset style="margin-left:auto;">Reset to default</button>' +
-      "</div>";
-    document.body.appendChild(pop);
-    var rect = anchor.getBoundingClientRect();
-    pop.style.position = "absolute";
-    pop.style.top = (rect.bottom + window.scrollY + 6) + "px";
-    pop.style.left = Math.max(8, Math.min(rect.left + window.scrollX - 90, window.innerWidth - 260)) + "px";
-    popEl = pop;
-    popRenderSwatches();
-
-    pop.querySelectorAll("[data-in-bg], [data-in-fg], [data-in-border]").forEach(function (inp) {
-      inp.addEventListener("input", function () {
-        if (inp.hasAttribute("data-in-border")) pop.querySelector("[data-in-border-on]").checked = true;
-        popApply();
-      });
-    });
-    pop.querySelector("[data-in-border-on]").addEventListener("change", popApply);
-    pop.querySelector("[data-palette]").addEventListener("click", function () {
-      popEditingPalette = !popEditingPalette;
-      pop.querySelector("[data-palette]").textContent = popEditingPalette ? "Done editing palette" : "Edit palette…";
-      if (popEditingPalette) popRenderPaletteEditor();
-      else popRenderSwatches();
-    });
-    pop.querySelector("[data-reset]").addEventListener("click", function () {
-      delete savedColors[slug];
-      persistColors();
-      pushPrefs();
-      renderThemeFilter();
-      render();
-      closePop();
-    });
+    return '<span class="ub-tag" style="background:' + t.bg + ";color:" + t.fg + '" title="' + esc(t.name) + '">' + t.emoji + " " + esc(t.name) + "</span>";
   }
 
-  var ITEMS = [];
-  var activeThemes = {};
-  var _savedState = null;
+  // ── Case pill colors (shared store: ud-case-colors + intel-prefs) ─────────
+  var savedColors = {};
+  try { savedColors = JSON.parse(localStorage.getItem("ud-case-colors") || "{}"); } catch (e) {}
 
-  var FILTER_KEY = "ub-filter-state";
+  function autoFg(bg) {
+    var r = parseInt(String(bg).slice(1, 3), 16) || 136;
+    var g = parseInt(String(bg).slice(3, 5), 16) || 136;
+    var b = parseInt(String(bg).slice(5, 7), 16) || 136;
+    return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.55 ? "#0A0A0A" : "#FFFFFF";
+  }
+
+  var MANIFEST = [];
+  function manifestOf(slug) {
+    for (var i = 0; i < MANIFEST.length; i++) {
+      if (MANIFEST[i].slug === slug) return MANIFEST[i];
+    }
+    return null;
+  }
+
+  function casePill(slug, name) {
+    var m = manifestOf(slug);
+    var bg = (savedColors[slug] && savedColors[slug].bg) || (m && m.default_color) || "#888888";
+    var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
+    return '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(name) + "</span>";
+  }
+
+  // ── Minimal markdown → HTML for our own generated briefing bodies ─────────
+  function mdToHtml(md) {
+    var out = [];
+    String(md || "").split(/\n\n+/).forEach(function (para) {
+      var p = para.trim();
+      if (!p) return;
+      var h = /^(#{2,4})\s+(.*)$/.exec(p.split("\n")[0]);
+      if (h && p.indexOf("\n") === -1) {
+        out.push("<h4>" + inline(h[2]) + "</h4>");
+        return;
+      }
+      var lines = p.split("\n");
+      var isList = lines.every(function (l) { return /^\s*-\s+/.test(l); });
+      if (isList) {
+        out.push("<ul>" + lines.map(function (l) {
+          return "<li>" + inline(l.replace(/^\s*-\s+/, "")) + "</li>";
+        }).join("") + "</ul>");
+        return;
+      }
+      out.push("<p>" + inline(p) + "</p>");
+    });
+    return out.join("");
+
+    function inline(text) {
+      var t = esc(text);
+      t = t.replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,
+        '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+      t = t.replace(/__((?:(?!__).)+)__/g, "<strong>$1</strong>");
+      t = t.replace(/(^|[^*\w])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>");
+      return t;
+    }
+  }
+
+  function fmtDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+    if (!m) return iso || "";
+    var names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return names[Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1];
+  }
+
+  // ── State ─────────────────────────────────────────────────────────────────
+  var ITEMS = [];
+  var activeCases = {};
+  var expanded = {};
+  var _savedState = null;
+  var FILTER_KEY = "ub-case-filter-state";
+
   function loadFilterState() {
     try { _savedState = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}"); } catch (e) {}
   }
   function saveFilterState() {
-    try {
-      localStorage.setItem(FILTER_KEY, JSON.stringify({ activeThemes: activeThemes }));
-    } catch (e) {}
+    try { localStorage.setItem(FILTER_KEY, JSON.stringify({ activeCases: activeCases })); } catch (e) {}
   }
 
   function filterLabel() {
     var total = ITEMS.length;
-    if (!total) return "Themes";
-    var on = ITEMS.filter(function (i) { return !!activeThemes[i.slug]; }).length;
-    if (on === total) return "Themes: All (" + total + ")";
-    if (!on) return "Themes: None";
-    return "Themes: " + on + " of " + total;
+    if (!total) return "Cases";
+    var on = ITEMS.filter(function (i) { return !!activeCases[i.slug]; }).length;
+    if (on === total) return "Cases: All (" + total + ")";
+    if (!on) return "Cases: None";
+    return "Cases: " + on + " of " + total;
   }
 
-  function renderThemeFilter() {
+  function renderCaseFilter() {
     var btn = document.getElementById("ud-case-dd-btn");
     var panel = document.getElementById("ud-case-dd-panel");
     if (!btn || !panel) return;
@@ -268,106 +142,128 @@
         '<button type="button" class="ud-dd-quick" data-act="none">Deselect all</button>' +
       "</div>";
     var rows = ITEMS.map(function (i) {
-      var t = themeOf(i.slug);
       return (
-        '<label class="ud-dd-row" title="' + esc(t.name) + '">' +
-          '<input type="checkbox" data-slug="' + esc(i.slug) + '"' + (activeThemes[i.slug] ? " checked" : "") + ">" +
-          '<span class="ud-pill ud-pill-sq" style="background:' + t.bg + ";color:" + t.fg + (t.border ? ";border:1.5px solid " + t.border : "") + '">' + t.emoji + " " + esc(t.name) + "</span>" +
-          '<span class="ud-dd-spacer"></span>' +
-          '<button type="button" class="ud-gear-btn" data-gear="' + esc(i.slug) + '" title="Colors for ' + esc(t.name) + '">\u2699</button>' +
+        '<label class="ud-dd-row" title="' + esc(i.case_name) + '">' +
+          '<input type="checkbox" data-slug="' + esc(i.slug) + '"' + (activeCases[i.slug] ? " checked" : "") + ">" +
+          casePill(i.slug, i.short_name || i.case_name) +
         "</label>"
       );
     }).join("");
-    panel.innerHTML = head + rows + '<button type="button" class="ud-dd-save-btn ud-dd-saveview" data-close-panel>Save view</button>';
-
-    var saveView = panel.querySelector("[data-close-panel]");
-    if (saveView) {
-      saveView.addEventListener("click", function () { panel.style.display = "none"; });
-    }
+    panel.innerHTML = head + rows;
     panel.querySelectorAll(".ud-dd-quick").forEach(function (q) {
       q.addEventListener("click", function () {
         var on = q.getAttribute("data-act") === "all";
-        ITEMS.forEach(function (i) { activeThemes[i.slug] = on; });
+        ITEMS.forEach(function (i) { activeCases[i.slug] = on; });
         saveFilterState();
-        renderThemeFilter();
+        renderCaseFilter();
         render();
-      });
-    });
-    panel.querySelectorAll(".ud-gear-btn").forEach(function (g) {
-      g.addEventListener("click", function (ev) {
-        ev.preventDefault();
-        ev.stopPropagation();
-        openThemePopover(g.getAttribute("data-gear"), g);
       });
     });
     panel.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
       cb.addEventListener("change", function () {
-        activeThemes[cb.getAttribute("data-slug")] = cb.checked;
+        activeCases[cb.getAttribute("data-slug")] = cb.checked;
         saveFilterState();
-        renderThemeFilter();
+        renderCaseFilter();
         render();
       });
     });
   }
 
-  function fmtDate(iso) {
-    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
-    if (!m) return iso || "";
-    var names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    return names[Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1];
+  function statusCell(i) {
+    if (i.moved) return '<span class="ub-chip ub-chip-moved">Moved</span>';
+    if (i.no_change_since) {
+      return '<span class="ub-chip">No change since ' + esc(fmtDate(i.no_change_since)) + "</span>";
+    }
+    return '<span class="ub-chip">Quiet</span>';
   }
 
   function render() {
     var tbody = document.getElementById("ub-tbody");
     var countEl = document.getElementById("ud-count");
-    var list = ITEMS.filter(function (i) { return !!activeThemes[i.slug]; });
-    if (countEl) countEl.textContent = list.length + " briefing" + (list.length === 1 ? "" : "s");
+    var list = ITEMS.filter(function (i) { return !!activeCases[i.slug]; });
+    if (countEl) countEl.textContent = list.length + " case" + (list.length === 1 ? "" : "s");
     if (!tbody) return;
     if (!list.length) {
-      tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">No themes selected.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">No cases selected.</td></tr>';
       return;
     }
     tbody.innerHTML = list.map(function (i) {
-      var t = themeOf(i.slug);
-      var pill = '<span class="ud-pill ud-pill-sq" style="background:' + t.bg + ";color:" + t.fg + (t.border ? ";border:1.5px solid " + t.border : "") + '">' +
-        t.emoji + " " + esc(t.name) + "</span>";
-      var lede = (i.body || i.stat || "").trim();
-      return (
-        "<tr>" +
-          '<td class="ud-date">' + esc(fmtDate(i.updated)) + "</td>" +
-          '<td class="ud-case">' + pill + "</td>" +
-          '<td class="ud-entry"><span class="ud-desc">' + esc(lede) + "</span></td>" +
-          '<td class="ud-doc"><a class="ud-link" href="' + esc(i.slug) + '/dashboard.html">Read briefing</a></td>' +
-        "</tr>"
-      );
+      var tags = (i.themes || []).map(themeTag).join(" ");
+      var lede = (i.lede || "").trim();
+      var hasBody = !!(i.body_md || "").trim();
+      var open = !!expanded[i.slug];
+      var main =
+        "<tr" + (i.moved ? ' class="ub-row-moved"' : "") + ">" +
+          '<td class="ud-date">' + esc(fmtDate(i.date) || "—") + "</td>" +
+          '<td class="ub-case-cell">' + casePill(i.slug, i.short_name || i.case_name) +
+            '<div class="ub-tags">' + tags + "</div>" +
+            '<div class="ub-court">' + esc(i.court || "") + "</div>" +
+          "</td>" +
+          '<td class="ud-entry">' + statusCell(i) + " " +
+            (lede ? '<span class="ud-desc">' + esc(lede) + "</span>"
+                  : '<span class="ud-desc" style="color:var(--ink-40)">No briefing yet — it generates the first time this case moves.</span>') +
+          "</td>" +
+          '<td class="ub-open-cell">' +
+            (hasBody
+              ? '<button type="button" class="pr-btn" data-toggle="' + esc(i.slug) + '">' + (open ? "Close" : "Read") + "</button>"
+              : "") +
+            ' <a class="ud-link" href="cases/' + esc(i.slug) + '.html">Docket</a>' +
+          "</td>" +
+        "</tr>";
+      var detail = "";
+      if (open && hasBody) {
+        detail =
+          '<tr class="ub-detail-row" id="ub-detail-' + esc(i.slug) + '"><td colspan="4">' +
+            '<div class="ub-body">' +
+              '<div class="ub-body-head">' + esc(i.emoji || "⚖️") + " " + esc(i.case_name) +
+                ' <span class="ub-body-date">' + esc(fmtDate(i.date)) + "</span></div>" +
+              mdToHtml(i.body_md) +
+            "</div>" +
+          "</td></tr>";
+      }
+      return main + detail;
     }).join("");
-  }
-
-  function fetchJson(url) {
-    return fetch(url).then(function (r) {
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      return r.json();
+    tbody.querySelectorAll("[data-toggle]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var slug = b.getAttribute("data-toggle");
+        expanded[slug] = !expanded[slug];
+        render();
+      });
     });
   }
 
+  function applyHash() {
+    var m = /case=([a-z0-9-]+)/.exec(location.hash || "");
+    if (!m) return;
+    var slug = m[1];
+    if (!ITEMS.some(function (i) { return i.slug === slug; })) return;
+    activeCases[slug] = true;
+    expanded[slug] = true;
+    render();
+    var row = document.getElementById("ub-detail-" + slug);
+    if (row) row.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   function init() {
-    fetchJson("briefings.json").then(function (d) {
+    fetchJson("case-briefings.json").then(function (d) {
       ITEMS = (d && d.items) || [];
-      ITEMS.sort(function (a, b) { return themeOf(a.slug).name.localeCompare(themeOf(b.slug).name); });
-      var saved = _savedState && _savedState.activeThemes;
+      var saved = _savedState && _savedState.activeCases;
       ITEMS.forEach(function (i) {
-        activeThemes[i.slug] = saved ? !!saved[i.slug] : true;
+        activeCases[i.slug] = saved && (i.slug in saved) ? !!saved[i.slug] : true;
       });
       var meta = document.getElementById("ud-meta");
       if (meta) {
-        var latest = ITEMS.reduce(function (acc, i) { return i.updated > acc ? i.updated : acc; }, "");
-        meta.textContent = ITEMS.length + " themes · updated " + fmtDate(latest);
+        var latest = ITEMS.reduce(function (acc, i) { return (i.updated || "") > acc ? i.updated : acc; }, "");
+        var movedN = ITEMS.filter(function (i) { return i.moved; }).length;
+        meta.textContent = ITEMS.length + " tracked cases · " + movedN + " moved in the last cycle" +
+          (latest ? " · updated " + fmtDate(latest) : "");
       }
-      renderThemeFilter();
+      renderCaseFilter();
       render();
+      applyHash();
     }).catch(function () {
       var tbody = document.getElementById("ub-tbody");
-      if (tbody) tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">Failed to load briefings.</td></tr>';
+      if (tbody) tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">No case briefings yet — they generate on the next daily run.</td></tr>';
     });
   }
 
@@ -382,19 +278,38 @@
       });
       document.addEventListener("click", function (ev) {
         if (ddPanel.style.display === "none") return;
-        if (ev.target && !ev.target.isConnected) return;  // click landed on re-rendered UI inside the panel
+        if (ev.target && !ev.target.isConnected) return;
         if (ddPanel.contains(ev.target) || ddBtn.contains(ev.target)) return;
         ddPanel.style.display = "none";
       });
     }
-    document.addEventListener("click", function (ev) {
-      if (popEl && !popEl.contains(ev.target) && !ev.target.closest(".ud-gear-btn")) closePop();
-    });
-    document.addEventListener("keydown", function (ev) {
-      if (ev.key === "Escape") closePop();
-    });
-    loadThemeNames();
-    hydrateColors();
+    window.addEventListener("hashchange", applyHash);
+
+    // Display names for theme tags follow /admin/intelligence renames.
+    fetchJson("themes.json").then(function (d) {
+      ((d && d.themes) || []).forEach(function (t) {
+        if (!t || !t.slug) return;
+        var c = THEME_COLORS[t.slug] || { bg: "#E0E7FF", fg: "#3730a3" };
+        THEMES[t.slug] = { name: t.display_name || t.slug, emoji: t.emoji || "📰", bg: c.bg, fg: c.fg };
+      });
+      render();
+    }).catch(function () {});
+
+    // Case pill colors + manifest defaults roam with the shared prefs store.
+    fetchJson("cases/data/_manifest.json").then(function (man) {
+      MANIFEST = man || [];
+      renderCaseFilter();
+      render();
+    }).catch(function () {});
+    fetchJson("api/prefs").then(function (p) {
+      if (p && p.ok && p.colors) {
+        Object.keys(p.colors).forEach(function (k) { savedColors[k] = p.colors[k]; });
+        try { localStorage.setItem("ud-case-colors", JSON.stringify(savedColors)); } catch (e) {}
+        renderCaseFilter();
+        render();
+      }
+    }).catch(function () {});
+
     init();
   });
 })();

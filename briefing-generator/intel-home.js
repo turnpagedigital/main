@@ -1,12 +1,18 @@
 (function () {
   "use strict";
 
-  /* Intel dashboard (landing) — four side-by-side columns previewing the top 7
-     from Briefings, Docket, Calendar, and Notes.
+  /* Intel dashboard (landing) — cases-not-themes model.
 
+     - The briefing grid renders one card PER TRACKED CASE (case-briefings.json,
+       written by scripts/generate_case_briefings.py): moved cases lead with a
+       fresh lede, quiet cases show "no change since <date>".
+     - Themes are prospecting lenses + tags: the Themes dropdown filters cases
+       by their topic tags and filters the Prospects tile; theme pills are
+       SQUARE to distinguish them from case pills.
+     - The Prospects tile lists candidate new cases from scan_prospects.py
+       (api/prospects, fallback prospects.json) — Dismiss inline, Track on
+       prospects.html.
      - Case pills use the shared color store (ud-case-colors + intel-prefs).
-     - Theme pills are SQUARE to distinguish themes from cases, and honor the
-       same store (theme slugs never collide with case slugs).
      - The Cases and Themes dropdowns choose what appears here; selections
        persist in localStorage (ih-filter-state) as this browser's default.
      - Calendar parsing mirrors calendar.js (trimmed copy). */
@@ -298,7 +304,8 @@
   // ── Data stores + render-on-demand ────────────────────────────────────────
   var MANIFEST = [];
   var CASE_DATA = [];       // [{m, c}]
-  var BRIEFING_ITEMS = [];
+  var BRIEFING_ITEMS = [];   // per-case briefings (case-briefings.json items)
+  var PROSPECT_ITEMS = [];   // candidate cases (api/prospects → prospects.json)
   var NOTES_LIST = [];
   var FEED_ITEMS = [];
 
@@ -387,20 +394,16 @@
     return t.getFullYear() + "-" + pad2(t.getMonth() + 1) + "-" + pad2(t.getDate());
   }
 
-  // ── Per-theme joins: filings, news, and dates that belong to a theme ──────
-  function themeFilings(slug, sinceIso) {
+  // ── Per-case joins: filings, news, and the next date for ONE case ─────────
+  function caseFilings(x, sinceIso) {
+    var short = x.m.short_name || x.m.display_name || x.m.slug;
     var out = [];
-    CASE_DATA.forEach(function (x) {
-      if (!caseOn(x.m.slug)) return;
-      if ((x.m.topics || []).indexOf(slug) === -1) return;
-      var short = x.m.short_name || x.m.display_name || x.m.slug;
-      ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
-        if (!e.date_filed || !(e.description || "").trim()) return;
-        if (e.date_filed < sinceIso.slice(0, 10)) return;
-        out.push({ kind: "filing", date: e.date_filed, num: e.entry_number,
-                   text: e.description, caseSlug: x.m.slug, caseShort: short,
-                   color: x.m.default_color });
-      });
+    ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
+      if (!e.date_filed || !(e.description || "").trim()) return;
+      if (e.date_filed < sinceIso.slice(0, 10)) return;
+      out.push({ kind: "filing", date: e.date_filed, num: e.entry_number,
+                 text: e.description, caseSlug: x.m.slug, caseShort: short,
+                 color: x.m.default_color });
     });
     out.sort(function (a, b) {
       if (a.date !== b.date) return a.date < b.date ? 1 : -1;
@@ -409,43 +412,48 @@
     return out;
   }
 
-  function themeNews(slug, sinceIso) {
+  function caseNews(slug, sinceIso) {
     var out = [];
     FEED_ITEMS.forEach(function (b) {
       if (!b.url || !b.title) return;
-      var mine = b.theme_slug === slug ||
-        (b.case_slug && caseThemes(b.case_slug).indexOf(slug) !== -1);
-      if (!mine) return;
-      if (b.case_slug && !caseOn(b.case_slug)) return;
+      if (b.case_slug !== slug) return;
       var when = b.published_at || (b.date ? b.date + "T00:00:00Z" : "");
       if (!when || when < sinceIso) return;
       out.push({ kind: "news", date: b.date || "", text: b.title,
                  source: b.source || "", bkind: (b.kind || "news"), url: b.url,
-                 caseSlug: b.case_slug || "" });
+                 caseSlug: slug });
     });
     return out;
   }
 
-  function themeNextDate(slug) {
+  // A case is visible when its own toggle is on AND at least one of its theme
+  // tags is on (untagged cases always pass the theme filter).
+  function caseVisible(m) {
+    if (!caseOn(m.slug)) return false;
+    var topics = m.topics || [];
+    if (!topics.length) return true;
+    for (var i = 0; i < topics.length; i++) {
+      if (themeOn(topics[i])) return true;
+    }
+    return false;
+  }
+
+  function caseNextDate(x) {
     var today = todayIso();
+    var short = x.m.short_name || x.m.display_name || x.m.slug;
     var best = null;
-    CASE_DATA.forEach(function (x) {
-      if (!caseOn(x.m.slug)) return;
-      if ((x.m.topics || []).indexOf(slug) === -1) return;
-      var short = x.m.short_name || x.m.display_name || x.m.slug;
-      ((x.c && x.c.events) || []).forEach(function (ev) {
-        if (!ev.date || ev.date < today) return;
+    ((x.c && x.c.events) || []).forEach(function (ev) {
+      if (!ev.date || ev.date < today) return;
+      if (!best || ev.date < best.date) {
+        best = { kind: "date", date: ev.date, text: (ev.kind ? ev.kind + ": " : "") + (ev.title || ""), caseShort: short, caseSlug: x.m.slug, color: x.m.default_color };
+      }
+    });
+    ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
+      extractEvents(e, short).forEach(function (ev) {
+        if (ev.date < today) return;
         if (!best || ev.date < best.date) {
-          best = { kind: "date", date: ev.date, text: (ev.kind ? ev.kind + ": " : "") + (ev.title || ""), caseShort: short, caseSlug: x.m.slug, color: x.m.default_color };
+          best = { kind: "date", date: ev.date, text: ev.kind + " \u2014 " + ev.title.slice(0, 80), caseShort: short, caseSlug: x.m.slug, color: x.m.default_color };
         }
-      });
-      ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
-        extractEvents(e, short).forEach(function (ev) {
-          if (ev.date < today) return;
-          if (!best || ev.date < best.date) {
-            best = { kind: "date", date: ev.date, text: ev.kind + " \u2014 " + ev.title.slice(0, 80), caseShort: short, caseSlug: x.m.slug, color: x.m.default_color };
-          }
-        });
       });
     });
     return best;
@@ -482,51 +490,97 @@
       ' <span style="color:var(--ink-40)">\u00b7 ' + daysUntil(item.date) + "</span></a>";
   }
 
-  function renderThemeGrid() {
+  function briefingOf(slug) {
+    for (var i = 0; i < BRIEFING_ITEMS.length; i++) {
+      if (BRIEFING_ITEMS[i].slug === slug) return BRIEFING_ITEMS[i];
+    }
+    return null;
+  }
+
+  // Emoji-only square theme tags \u2014 the case pill carries the identity, the
+  // tags just say which prospecting lenses the case belongs to.
+  function themeTags(topics) {
+    return (topics || []).map(function (slug) {
+      var t = themeOf(slug);
+      return '<span class="ih-tag-sq" style="background:' + t.bg + ";color:" + t.fg + '" title="' + esc(t.name) + '">' + t.emoji + "</span>";
+    }).join("");
+  }
+
+  function renderCaseGrid() {
     var grid = document.getElementById("ih-theme-grid");
     if (!grid) return;
-    var slugs = Object.keys(THEMES).filter(themeOn);
-    if (!slugs.length) {
-      grid.innerHTML = '<div class="ih-empty">No themes selected.</div>';
+    if (!MANIFEST.length) {
+      grid.innerHTML = '<div class="ih-empty">Loading cases\u2026</div>';
+      return;
+    }
+    var visible = MANIFEST.filter(caseVisible);
+    if (!visible.length) {
+      grid.innerHTML = '<div class="ih-empty">No cases selected.</div>';
       return;
     }
     var since = hoursAgoIso(26);
-    grid.innerHTML = slugs.map(function (slug) {
-      var brief = null;
-      for (var i = 0; i < BRIEFING_ITEMS.length; i++) {
-        if (BRIEFING_ITEMS[i].slug === slug) { brief = BRIEFING_ITEMS[i]; break; }
-      }
-      var filings = themeFilings(slug, since);
-      var news = themeNews(slug, since);
-      var nextDate = themeNextDate(slug);
+    var dataBySlug = {};
+    CASE_DATA.forEach(function (x) { dataBySlug[x.m.slug] = x; });
+
+    var cards = visible.map(function (m) {
+      var x = dataBySlug[m.slug] || { m: m, c: null };
+      var brief = briefingOf(m.slug);
+      var filings = caseFilings(x, since);
+      var news = caseNews(m.slug, since);
+      var nextDate = caseNextDate(x);
       var devCount = filings.length + news.length;
 
       var rows = [];
-      filings.slice(0, 5).forEach(function (f) { rows.push(codedRow(f)); });
-      news.slice(0, 5).forEach(function (n) { rows.push(codedRow(n)); });
-      rows = rows.slice(0, 7);
+      filings.slice(0, 4).forEach(function (f) { rows.push(codedRow(f)); });
+      news.slice(0, 3).forEach(function (n) { rows.push(codedRow(n)); });
+      rows = rows.slice(0, 5);
       if (nextDate) rows.push(codedRow(nextDate));
-      var hidden = devCount - Math.min(devCount, 7);
+      var hidden = devCount - Math.min(devCount, 5);
 
-      // Full opening paragraph of the advisory (falls back to the short summary).
-      var lede = brief ? (brief.lede || brief.body || brief.stat || "").trim() : "";
-      var quiet = devCount === 0;
-      var ledeHtml = lede
-        ? '<div class="ih-tc-lede' + (quiet ? " ih-quiet" : "") + '">' + esc(lede.slice(0, 900)) +
-          (lede.length > 900 ? "\u2026" : "") + ' <a href="' + BASE + slug + '/dashboard.html">Read \u2192</a></div>'
-        : '<div class="ih-tc-lede ih-quiet">No briefing yet for this theme. <a href="' + BASE + slug + '/dashboard.html">Open \u2192</a></div>';
+      var moved = !!(brief && brief.moved);
+      var count;
+      if (devCount > 0) count = devCount + " today";
+      else if (brief && brief.no_change_since) count = "no change since " + fmtDate(brief.no_change_since);
+      else count = "quiet";
 
-      return (
-        '<section class="ih-theme-card">' +
-          '<div class="ih-tc-head">' + themePill(slug) +
-            '<span class="ih-tc-count">' + (quiet ? "quiet" : devCount + " today") + "</span>" +
-          "</div>" +
-          ledeHtml +
-          rows.join("") +
+      var lede = brief ? (brief.lede || "").trim() : "";
+      var readHref = BASE + "briefings.html#case=" + encodeURIComponent(m.slug);
+      var ledeHtml;
+      if (lede) {
+        ledeHtml = '<div class="ih-tc-lede' + (moved ? "" : " ih-quiet") + '">' +
+          (brief.date ? '<span class="ih-tc-date">' + esc(fmtDate(brief.date)) + " \u00b7 </span>" : "") +
+          esc(lede.slice(0, 700)) + (lede.length > 700 ? "\u2026" : "") +
+          ' <a href="' + readHref + '">Read \u2192</a></div>';
+      } else {
+        ledeHtml = '<div class="ih-tc-lede ih-quiet">No briefing yet for this case. ' +
+          '<a href="' + BASE + "cases/" + esc(m.slug) + '.html">Docket \u2192</a></div>';
+      }
+
+      var head =
+        '<div class="ih-tc-head">' +
+          '<a href="' + BASE + "cases/" + esc(m.slug) + '.html" style="text-decoration:none">' +
+            casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) + "</a>" +
+          '<span class="ih-tc-tags">' + themeTags(m.topics) + "</span>" +
+          '<span class="ih-tc-count">' + esc(count) + "</span>" +
+        "</div>";
+
+      var html =
+        '<section class="ih-theme-card' + (moved ? " ih-card-moved" : "") + '">' +
+          head + ledeHtml + rows.join("") +
           (hidden > 0 ? '<div class="ih-more-rows">+' + hidden + ' more \u00b7 <a href="' + BASE + 'docket.html">docket</a> / <a href="' + BASE + 'news.html">news</a></div>' : "") +
-        "</section>"
-      );
-    }).join("");
+        "</section>";
+
+      var latest = (brief && brief.activity && brief.activity.latest) || "";
+      return { html: html, moved: moved, dev: devCount, latest: latest };
+    });
+
+    // Moved briefings first, then cases with fresh docket/news, freshest first.
+    cards.sort(function (a, b) {
+      if (a.moved !== b.moved) return a.moved ? -1 : 1;
+      if ((a.dev > 0) !== (b.dev > 0)) return a.dev > 0 ? -1 : 1;
+      return (b.latest || "").localeCompare(a.latest || "");
+    });
+    grid.innerHTML = cards.map(function (c) { return c.html; }).join("");
     _carouselSync();
   }
 
@@ -700,12 +754,66 @@
   }
 
   function renderAll() {
-    renderThemeGrid();
+    renderCaseGrid();
+    renderProspects();
     renderUnassigned();
     renderDates();
     renderNotes();
     renderMarkets();
     updateFilterButtons();
+  }
+
+  // ── Prospects tile — candidate cases from the theme scans ─────────────────
+  function renderProspects() {
+    var box = document.getElementById("ih-prospects");
+    if (!box) return;
+    var fresh = PROSPECT_ITEMS.filter(function (p) {
+      return p && p.status === "new" && (!p.theme || themeOn(p.theme));
+    });
+    var countEl = document.getElementById("ih-prospects-count");
+    if (countEl) countEl.textContent = fresh.length ? fresh.length + " to triage →" : "Triage →";
+    if (!fresh.length) {
+      box.innerHTML = '<div class="ih-empty">No new prospects — the theme scans surface candidate cases here.</div>';
+      return;
+    }
+    box.innerHTML = fresh.slice(0, 6).map(function (p) {
+      var t = themeOf(p.theme);
+      var themePillHtml = '<span class="ih-pill ih-pill-sq" style="background:' + t.bg + ";color:" + t.fg + '">' + t.emoji + " " + esc(t.name) + "</span>";
+      var meta = [p.court, p.case_number].filter(Boolean).join(" · ");
+      return (
+        '<div class="ih-prospect-row" data-prospect="' + esc(p.id) + '">' +
+          '<div class="ih-prospect-main">' +
+            '<div class="ih-date">' + themePillHtml + "<span>" + esc(fmtDate(p.date || p.first_seen)) + (meta ? " · " + esc(meta) : "") + "</span></div>" +
+            '<div class="ih-text"><strong>' + esc(p.case_name) + "</strong> — " + esc(p.why || "") +
+              (p.source_url ? ' <a href="' + esc(p.source_url) + '" target="_blank" rel="noopener">' + esc(p.source_name || "source") + " ↗</a>" : "") +
+            "</div>" +
+          "</div>" +
+          '<div class="ih-prospect-actions">' +
+            '<a class="ih-pr-btn ih-pr-track" href="' + BASE + 'prospects.html#track=' + encodeURIComponent(p.id) + '">Track</a>' +
+            '<button type="button" class="ih-pr-btn ih-pr-dismiss" data-dismiss="' + esc(p.id) + '">Dismiss</button>' +
+          "</div>" +
+        "</div>"
+      );
+    }).join("");
+    box.querySelectorAll("[data-dismiss]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-dismiss");
+        b.disabled = true;
+        b.textContent = "…";
+        fetch(BASE + "api/prospects", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: id, status: "dismissed" }),
+        }).then(function (r) { return r.json(); }).then(function (j) {
+          if (!j || !j.ok) throw new Error((j && j.error) || "failed");
+          PROSPECT_ITEMS.forEach(function (p) { if (p.id === id) p.status = "dismissed"; });
+          renderProspects();
+        }).catch(function () {
+          b.disabled = false;
+          b.textContent = "Dismiss";
+        });
+      });
+    });
   }
 
   // ── Filter dropdowns ──────────────────────────────────────────────────────
@@ -849,15 +957,28 @@
   }
 
   // ── Loads ─────────────────────────────────────────────────────────────────
-  fetchJson(BASE + "briefings.json").then(function (d) {
-    BRIEFING_ITEMS = ((d && d.items) || []).slice()
-      .sort(function (a, b) { return (b.updated || "").localeCompare(a.updated || ""); });
-    renderThemeGrid();
+  fetchJson(BASE + "case-briefings.json").then(function (d) {
+    BRIEFING_ITEMS = ((d && d.items) || []).slice();
+    renderCaseGrid();
     updateFilterButtons();
-  }).catch(function () { fill("ih-briefings", ""); });
+  }).catch(function () { renderCaseGrid(); });
+
+  // Prospects: live API first (fresh triage state), static file as fallback.
+  fetchJson(BASE + "api/prospects")
+    .then(function (p) { return (p && p.ok && p.items) || []; })
+    .catch(function () {
+      return fetchJson(BASE + "prospects.json")
+        .then(function (f) { return (f && f.items) || []; })
+        .catch(function () { return []; });
+    })
+    .then(function (items) {
+      PROSPECT_ITEMS = items;
+      renderProspects();
+    });
 
   fetchJson(BASE + "cases/data/_manifest.json").then(function (man) {
     MANIFEST = man || [];
+    renderCaseGrid();
     return Promise.all(MANIFEST.map(function (m) {
       return fetchJson(BASE + "cases/data/" + m.slug + ".json")
         .then(function (c) { return { m: m, c: c }; })
@@ -865,7 +986,7 @@
     }));
   }).then(function (cases) {
     CASE_DATA = cases.filter(Boolean);
-    renderThemeGrid();
+    renderCaseGrid();
     renderDates();
     renderNotes();
     updateFilterButtons();
@@ -877,7 +998,7 @@
   fetchJson(BASE + "bondoro.json").then(function (d) {
     FEED_ITEMS = ((d && d.items) || []).slice()
       .sort(function (a, b) { return (b.published_at || b.date || "").localeCompare(a.published_at || a.date || ""); });
-    renderThemeGrid();
+    renderCaseGrid();
     renderUnassigned();
   }).catch(function () { fill("ih-unassigned", ""); });
 
