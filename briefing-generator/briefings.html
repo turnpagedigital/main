@@ -540,10 +540,12 @@
       <div class="ce-section-h">Tracking source</div>
       <div class="ce-field">
         <label class="ce-label">Source type</label>
-        <select class="ce-select" id="ce-srctype" style="max-width:340px;">
+        <select class="ce-select" id="ce-srctype" style="max-width:400px;">
           <option value="courtlistener">Court docket (CourtListener)</option>
           <option value="claims_agent">Claims agent</option>
+          <option value="watch">Watch — threatened litigation / distress (no docket yet)</option>
         </select>
+        <div class="ce-hint" id="ce-watch-note" style="display:none;">Tracked by name and themes — news, briefings, notes, and calendar events still flow in. Add a court docket later by switching the source type once a case number exists.</div>
       </div>
       <div id="ce-cl-fields">
         <div class="ce-field">
