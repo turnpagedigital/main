@@ -132,44 +132,6 @@ def auto_match_cases(items):
 
 
 
-THEMES_PATH = Path(__file__).resolve().parents[2] / "src" / "data" / "themes.json"
-_STOP = {"the", "and", "for", "with", "from", "that", "this", "case", "court",
-         "lawsuit", "settlement", "filing", "news", "class", "action", "legal"}
-
-def auto_match_themes(items):
-    """Tag untagged items with a theme when the headline clearly matches one
-    theme's keyword vocabulary (2+ distinct keyword words, and strictly more
-    than any other theme). Manual tags are never touched."""
-    themes = []
-    try:
-        data = json.loads(THEMES_PATH.read_text(encoding="utf-8"))
-        for t in (data.get("themes") or []):
-            if not t.get("slug") or t.get("active") is False:
-                continue
-            words = set()
-            for kw in list(t.get("keywords") or []) + [t.get("display_name") or ""]:
-                for w in re.findall(r"[a-z0-9]+", str(kw).lower()):
-                    if len(w) > 3 and w not in _STOP:
-                        words.add(w)
-            if words:
-                themes.append((t["slug"], words))
-    except Exception:
-        return 0
-    if not themes:
-        return 0
-    tagged = 0
-    for it in items:
-        if it.get("theme_slug") or it.get("case_slug") or it.get("group_name"):
-            continue
-        hay = set(re.findall(r"[a-z0-9]+",
-                             ((it.get("title") or "") + " " + (it.get("excerpt") or "")).lower()))
-        scores = sorted(((slug, len(w & hay)) for slug, w in themes), key=lambda x: -x[1])
-        if scores[0][1] >= 2 and (len(scores) == 1 or scores[0][1] > scores[1][1]):
-            it["theme_slug"] = scores[0][0]
-            it["auto_theme"] = True
-            tagged += 1
-    return tagged
-
 
 def main():
     try:
@@ -205,9 +167,6 @@ def main():
     matched = auto_match_cases(items)
     if matched:
         print(f"  ✓ auto-matched {matched} item(s) to tracked cases")
-    themed = auto_match_themes(items)
-    if themed:
-        print(f"  ✓ auto-tagged {themed} item(s) with themes")
     OUT.write_text(json.dumps({"items": items}, indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8")
     print(f"=== Feed scan done: +{added} new, {len(items)} stored ===")
