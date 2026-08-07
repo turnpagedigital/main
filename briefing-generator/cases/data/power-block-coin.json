@@ -14,12 +14,32 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
-    "date_last_filing": "2026-07-23",
-    "fetched_at": "2026-08-07T15:14:30.703141+00:00",
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-07T20:03:56.073004+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 534,
+        "date_filed": "2026-08-07",
+        "time_filed": "11:37:59",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of Rescheduled Hearing (Chambers)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 533,
+        "date_filed": "2026-08-07",
+        "time_filed": "11:34:29",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of Rescheduled Hearing (Chambers)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 532,
         "date_filed": "2026-07-23",
@@ -29,29 +49,29 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.utb.464722/gov.uscourts.utb.464722.532.0.pdf"
-      },
-      {
-        "entry_number": 531,
-        "date_filed": "2026-07-06",
-        "time_filed": "09:08:46",
-        "date_display": "Jul 6, 2026",
-        "description": "Notice of Rescheduled Hearing (Chambers)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 530,
-        "date_filed": "2026-07-06",
-        "time_filed": "09:07:15",
-        "date_display": "Jul 6, 2026",
-        "description": "Notice of Rescheduled Hearing (Chambers)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 534,
+        "date_filed": "2026-08-07",
+        "time_filed": "11:37:59",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of Rescheduled Hearing (Chambers)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 533,
+        "date_filed": "2026-08-07",
+        "time_filed": "11:34:29",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of Rescheduled Hearing (Chambers)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 532,
         "date_filed": "2026-07-23",

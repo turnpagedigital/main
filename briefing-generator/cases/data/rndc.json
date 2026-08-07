@@ -14,12 +14,32 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
-    "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-07T15:14:36.684230+00:00",
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-07T20:04:02.298570+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 18,
+    "new_in_72h": 20,
     "recent": [
+      {
+        "entry_number": 146,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:51:44",
+        "date_display": "Aug 7, 2026",
+        "description": "Relief from Stay",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:52:55",
+        "date_display": "Aug 7, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 145,
         "date_filed": "2026-08-06",
@@ -29,29 +49,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 144,
-        "date_filed": "2026-08-06",
-        "time_filed": "15:33:47",
-        "date_display": "Aug 6, 2026",
-        "description": "Statement",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 143,
-        "date_filed": "2026-08-06",
-        "time_filed": "12:27:38",
-        "date_display": "Aug 6, 2026",
-        "description": "Notice of Appearance and Request for Notice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 146,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:51:44",
+        "date_display": "Aug 7, 2026",
+        "description": "Relief from Stay",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-07",
+        "time_filed": "13:52:55",
+        "date_display": "Aug 7, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 145,
         "date_filed": "2026-08-06",
