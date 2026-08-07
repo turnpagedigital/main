@@ -1,18 +1,18 @@
 {
   "case": {
     "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
-    "display_name": "In re FTX Trading Ltd. — Fifth Distribution (July 31, 2026)",
+    "display_name": "FTX",
     "case_name": "FTX Trading Ltd. d/b/a FTX.com and FTX Recovery Trust",
-    "court": "Bankr. D. Del.",
-    "case_number": "22-11068 (JTD)",
-    "judge": "Owens",
-    "docket_id": null,
+    "court": "United States Bankruptcy Court, D. Delaware",
+    "case_number": "22-11068",
+    "judge": "Jud Karen B. Owens",
+    "docket_id": "65748821",
     "status": "active",
     "sync": "active"
   },
   "docket": {
-    "source": "seed",
-    "awaiting_sync": true,
+    "source": "courtlistener",
+    "awaiting_sync": false,
     "docket_url": null,
     "new_in_72h": 0,
     "recent": [],
@@ -59,6 +59,5 @@
       "date": "2026-07-17",
       "summary": "FTX Trading Ltd. and the FTX Recovery Trust will distribute ~$900 million beginning July 31, with Class 7 Convenience Claims reaching a cumulative 120% recovery and other classes hitting 103–105%. The estate has not announced a date for a sixth distribution, and disputed-claims resolution and final wind-down work continue."
     }
-  ],
-  "events": []
+  ]
 }

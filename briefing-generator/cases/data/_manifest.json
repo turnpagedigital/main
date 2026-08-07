@@ -69,17 +69,17 @@
   },
   {
     "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
-    "display_name": "In re FTX Trading Ltd. — Fifth Distribution (July 31, 2026)",
-    "short_name": "In re",
+    "display_name": "FTX",
+    "short_name": "FTX",
     "docket_url": "",
     "default_color": "#94C6F8",
     "category": "bankruptcy",
     "topics": [
-      "bankruptcy-creditor-rights",
       "crypto-insolvency",
-      "fraud-recovery"
+      "fraud-recovery",
+      "bankruptcy-creditor-rights"
     ],
-    "court": "Bankr. D. Del.",
+    "court": "United States Bankruptcy Court, D. Delaware",
     "sync": "active"
   },
   {
@@ -113,7 +113,7 @@
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
     "short_name": "Papaya Gaming",
-    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "default_color": "#1B3A4B",
     "category": "bankruptcy",
     "topics": [
@@ -155,7 +155,7 @@
     "slug": "rndc",
     "display_name": "RNDC",
     "short_name": "RNDC",
-    "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
+    "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc-and-official-committee-of/",
     "default_color": "#ffb8e0",
     "category": "bankruptcy",
     "topics": [
@@ -175,7 +175,7 @@
       "bankruptcy-creditor-rights"
     ],
     "court": "United States Bankruptcy Court, S.D. New York",
-    "sync": "active"
+    "sync": "archived"
   },
   {
     "slug": "terraform-labs",
