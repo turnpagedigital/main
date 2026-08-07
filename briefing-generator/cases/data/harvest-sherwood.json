@@ -14,45 +14,74 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
-    "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-07T13:42:20.645259+00:00",
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-07T14:45:41.245682+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": false,
-    "new_in_72h": 24,
+    "new_in_72h": 27,
     "recent": [
       {
-        "entry_number": 1163,
-        "date_filed": "2026-08-06",
-        "time_filed": "18:45:39",
-        "date_display": "Aug 6, 2026",
-        "description": "Certificate (generic)",
+        "entry_number": 1165,
+        "date_filed": "2026-08-07",
+        "time_filed": "08:37:01",
+        "date_display": "Aug 7, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1162,
-        "date_filed": "2026-08-06",
-        "time_filed": "16:29:46",
-        "date_display": "Aug 6, 2026",
-        "description": "Relief from stay",
+        "entry_number": 1164,
+        "date_filed": "2026-08-07",
+        "time_filed": "08:36:08",
+        "date_display": "Aug 7, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1161,
-        "date_filed": "2026-08-06",
-        "time_filed": "12:53:01",
-        "date_display": "Aug 6, 2026",
-        "description": "Application For Admission Pro Hac Vice",
+        "entry_number": null,
+        "date_filed": "2026-08-07",
+        "time_filed": "08:37:44",
+        "date_display": "Aug 7, 2026",
+        "description": "none AND none",
         "is_new": true,
         "landmark": "",
-        "doc_url": "",
-        "titled_from_upload": true
+        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1165,
+        "date_filed": "2026-08-07",
+        "time_filed": "08:37:01",
+        "date_display": "Aug 7, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1164,
+        "date_filed": "2026-08-07",
+        "time_filed": "08:36:08",
+        "date_display": "Aug 7, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-07",
+        "time_filed": "08:37:44",
+        "date_display": "Aug 7, 2026",
+        "description": "none AND none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1163,
         "date_filed": "2026-08-06",
@@ -269,7 +298,7 @@
         "date_filed": "2026-08-05",
         "time_filed": "",
         "date_display": "Aug 5, 2026",
-        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A34023592, amount $ 28.00 (re: Doc# 1147). (U.S. Treasury)",
+        "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A34025041, amount $ 28.00 (re: Doc# 1150). (U.S. Treasury)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -13715,7 +13744,7 @@
         "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=58"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70143231&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=62"
   },
   "claims_administrator": {
     "name": "Epiq11",
