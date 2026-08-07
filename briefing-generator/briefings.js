@@ -225,13 +225,35 @@
           '<tr class="ub-detail-row" id="ub-detail-' + esc(i.slug) + '"><td colspan="4">' +
             '<div class="ub-body">' +
               '<div class="ub-body-head">' + esc(i.emoji || "⚖️") + " " + esc(i.case_name) +
-                ' <span class="ub-body-date">' + esc(fmtDate(i.date)) + "</span></div>" +
+                ' <span class="ub-body-date">' + esc(fmtDate(i.date)) + "</span>" +
+                '<button type="button" class="pr-btn ub-send-btn" data-send="' + esc(i.slug) + '" title="Queue this briefing as an unpublished draft post in Admin → Posts &amp; Briefings">Send to site queue</button>' +
+              "</div>" +
               mdToHtml(i.body_md) +
             "</div>" +
           "</td></tr>";
       }
       return main + detail;
     }).join("");
+    tbody.querySelectorAll("[data-send]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var slug = b.getAttribute("data-send");
+        b.disabled = true;
+        b.textContent = "Sending…";
+        fetch("api/send-to-site", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ slug: slug }),
+        }).then(function (r) { return r.json(); }).then(function (j) {
+          if (!j || !j.ok) throw new Error((j && j.error) || "send failed");
+          b.textContent = j.updated ? "Draft refreshed ✓" : "Queued as draft ✓";
+          b.title = "Review it in Admin → Content → Posts & Briefings (Queue)";
+        }).catch(function (e) {
+          b.disabled = false;
+          b.textContent = "Send to site queue";
+          alert("Could not queue: " + e.message);
+        });
+      });
+    });
     tbody.querySelectorAll("[data-toggle]").forEach(function (b) {
       b.addEventListener("click", function () {
         var slug = b.getAttribute("data-toggle");
