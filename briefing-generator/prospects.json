@@ -31,7 +31,8 @@
       "date": "2026-08-07",
       "first_seen": "2026-08-07",
       "status": "new",
-      "vote": -1
+      "vote": -1,
+      "hidden": true
     },
     {
       "id": "908ad26544",
