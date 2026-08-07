@@ -175,5 +175,19 @@
     ],
     "court": "Bankr. D. Del.",
     "sync": "active"
+  },
+  {
+    "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
+    "display_name": "In re FTX Trading Ltd. — Fifth Distribution (July 31, 2026)",
+    "short_name": "In re",
+    "docket_url": "",
+    "court": "Bankr. D. Del.",
+    "topics": [
+      "bankruptcy-creditor-rights",
+      "crypto-insolvency",
+      "fraud-recovery"
+    ],
+    "sync": "active",
+    "default_color": "#94C6F8"
   }
 ]
