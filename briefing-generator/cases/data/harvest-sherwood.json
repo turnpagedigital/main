@@ -15,15 +15,15 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T21:03:01.176543+00:00",
+    "fetched_at": "2026-08-07T21:58:11.722971+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 38,
+    "new_in_72h": 43,
     "recent": [
       {
-        "entry_number": 1175,
+        "entry_number": 1180,
         "date_filed": "2026-08-07",
-        "time_filed": "15:09:00",
+        "time_filed": "16:16:45",
         "date_display": "Aug 7, 2026",
         "description": "Notice of hearing",
         "is_new": true,
@@ -31,27 +31,77 @@
         "doc_url": ""
       },
       {
-        "entry_number": 1174,
+        "entry_number": 1179,
         "date_filed": "2026-08-07",
-        "time_filed": "13:23:39",
+        "time_filed": "15:52:25",
         "date_display": "Aug 7, 2026",
-        "description": "Notice of hearing",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 1173,
+        "entry_number": 1178,
         "date_filed": "2026-08-07",
-        "time_filed": "13:08:26",
+        "time_filed": "15:47:48",
         "date_display": "Aug 7, 2026",
-        "description": "Relief from stay",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1180,
+        "date_filed": "2026-08-07",
+        "time_filed": "16:16:45",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1179,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:52:25",
+        "date_display": "Aug 7, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1178,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:47:48",
+        "date_display": "Aug 7, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1177,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:43:38",
+        "date_display": "Aug 7, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1176,
+        "date_filed": "2026-08-07",
+        "time_filed": "15:37:57",
+        "date_display": "Aug 7, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1175,
         "date_filed": "2026-08-07",
@@ -186,7 +236,7 @@
       {
         "entry_number": null,
         "date_filed": "2026-08-07",
-        "time_filed": "13:10:09",
+        "time_filed": "15:38:56",
         "date_display": "Aug 7, 2026",
         "description": "none",
         "is_new": true,
