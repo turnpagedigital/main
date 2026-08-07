@@ -125,14 +125,26 @@ def stretto_fetch(base_url, docket_number):
 
     with sync_playwright() as pw:
         browser, ctx, page = _launch(pw)
+        # Warm the AWS WAF challenge on the plain case page first: its
+        # challenge.js computes an `aws-waf-token` cookie the browser must
+        # hold before content loads. Wait for that cookie, THEN hit search.
+        page.goto(f"{origin}/{case_seg[0]}/court-docket/",
+                  wait_until="networkidle", timeout=45000)
+        for _ in range(20):
+            if any(c["name"] == "aws-waf-token" for c in ctx.cookies()):
+                break
+            page.wait_for_timeout(1000)
         page.goto(docket_url, wait_until="networkidle", timeout=45000)
-        # The WAF challenge resolves in-browser; give the table a moment.
         try:
             page.wait_for_selector("table tbody tr a[href$='.pdf']", timeout=30000)
         except Exception:
+            diag = page.evaluate(
+                "() => ({ title: document.title, tables: document.querySelectorAll('table').length,"
+                " pdfs: document.querySelectorAll(\"a[href$='.pdf']\").length,"
+                " waf: document.body.innerText.slice(0,120) })")
             browser.close()
-            fail(f"no PDF rows rendered on the Stretto docket for {case_seg[0]} "
-                 f"(WAF challenge or Dkt. {docket_number} absent)")
+            fail(f"no PDF rows on the Stretto docket for {case_seg[0]} — "
+                 f"diag={diag}")
         page.wait_for_timeout(1000)
 
         target_href = title = link_handle = None
@@ -187,13 +199,20 @@ def epiq_fetch(base_url, docket_number):
 
     with sync_playwright() as pw:
         browser, ctx, page = _launch(pw)
-        page.goto(dockets_url, wait_until="networkidle", timeout=45000)
-        # Angular renders docket rows after an API round-trip; wait for links.
+        # Epiq deep-links a single docket via ?docket=N, which loads that entry
+        # directly (no client-side paging through 1,000+ rows to find it).
+        page.goto(f"{dockets_url}?docket={int(docket_number)}",
+                  wait_until="networkidle", timeout=45000)
         try:
-            page.wait_for_selector("a[href*='docketId']", timeout=35000)
+            page.wait_for_selector("a[href*='docketId'], a[href*='DownloadDocument']", timeout=35000)
         except Exception:
+            diag = page.evaluate(
+                "() => ({ title: document.title,"
+                " docketLinks: document.querySelectorAll(\"a[href*='docketId']\").length,"
+                " anchors: document.querySelectorAll('a').length,"
+                " body: document.body.innerText.slice(0,120) })")
             browser.close()
-            fail(f"Epiq dockets did not render for case {code} (challenge or SPA change)")
+            fail(f"Epiq dockets did not render for case {code} — diag={diag}")
         page.wait_for_timeout(1500)
 
         # Match the row whose docket-number text equals N, take its View link.
