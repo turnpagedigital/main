@@ -15,43 +15,123 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc-and-official-committee-of/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T22:00:45.222998+00:00",
-    "as_of": "Aug 7, 2026",
+    "fetched_at": "2026-08-08T21:02:17.040748+00:00",
+    "as_of": "Aug 8, 2026",
     "backfilled": true,
-    "new_in_72h": 23,
+    "new_in_72h": 22,
     "recent": [
       {
-        "entry_number": 149,
+        "entry_number": 157,
         "date_filed": "2026-08-07",
-        "time_filed": "16:28:51",
+        "time_filed": "21:49:37",
         "date_display": "Aug 7, 2026",
-        "description": "Order to Appear pro hac vice",
+        "description": "Affidavit",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 148,
+        "entry_number": 156,
         "date_filed": "2026-08-07",
-        "time_filed": "15:40:41",
+        "time_filed": "21:44:45",
         "date_display": "Aug 7, 2026",
-        "description": "Notice of Appearance and Request for Notice",
+        "description": "Affidavit",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 147,
+        "entry_number": 155,
         "date_filed": "2026-08-07",
-        "time_filed": "14:42:48",
+        "time_filed": "19:05:50",
         "date_display": "Aug 7, 2026",
-        "description": "Notice of Appearance and Request for Notice",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 157,
+        "date_filed": "2026-08-07",
+        "time_filed": "21:49:37",
+        "date_display": "Aug 7, 2026",
+        "description": "Affidavit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 156,
+        "date_filed": "2026-08-07",
+        "time_filed": "21:44:45",
+        "date_display": "Aug 7, 2026",
+        "description": "Affidavit",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 155,
+        "date_filed": "2026-08-07",
+        "time_filed": "19:05:50",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 154,
+        "date_filed": "2026-08-07",
+        "time_filed": "19:00:54",
+        "date_display": "Aug 7, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 153,
+        "date_filed": "2026-08-07",
+        "time_filed": "17:43:48",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 152,
+        "date_filed": "2026-08-07",
+        "time_filed": "17:38:05",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 151,
+        "date_filed": "2026-08-07",
+        "time_filed": "17:32:51",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 150,
+        "date_filed": "2026-08-07",
+        "time_filed": "17:28:23",
+        "date_display": "Aug 7, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 149,
         "date_filed": "2026-08-07",
@@ -198,7 +278,7 @@
         "time_filed": "22:42:17",
         "date_display": "Aug 5, 2026",
         "description": "Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -208,7 +288,7 @@
         "time_filed": "21:25:33",
         "date_display": "Aug 5, 2026",
         "description": "Affidavit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -218,7 +298,7 @@
         "time_filed": "19:14:40",
         "date_display": "Aug 5, 2026",
         "description": "Notice of Appearance and Request for Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -228,7 +308,7 @@
         "time_filed": "19:13:10",
         "date_display": "Aug 5, 2026",
         "description": "Notice of Appearance and Request for Notice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -238,7 +318,7 @@
         "time_filed": "14:42:29",
         "date_display": "Aug 5, 2026",
         "description": "Notice of Appearance and Request for Notice Filed by Melissa T Harris Filed by on behalf of Pension Benefit Guaranty Corporation (Harris, Melissa) (Entered: 08/05/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -248,7 +328,7 @@
         "time_filed": "14:36:20",
         "date_display": "Aug 5, 2026",
         "description": "Notice of Appearance and Request for Notice Filed by Andrea Wong Filed by on behalf of Pension Benefit Guaranty Corporation (Wong, Andrea) (Entered: 08/05/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -258,7 +338,7 @@
         "time_filed": "11:40:41",
         "date_display": "Aug 5, 2026",
         "description": "Order Granting Motion for Dakota Pearce To Appear pro hac vice (Related Doc # 124) Note: Instructions to request Texas Southern CM/ECF registration through PACER are found here Signed on 8/5/2026. (yml4) (Entered: 08/05/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -268,7 +348,7 @@
         "time_filed": "09:22:47",
         "date_display": "Aug 5, 2026",
         "description": "AO 435 TRANSCRIPT ORDER FORM (Daily (24 hours)) by Eli Christopher. This is to order a transcript of Hearing on 07/27/2026 before Judge Christopher Lopez. Court Reporter/Transcriber: Veritext Legal Solutions (Filed By Christopher Eli ). (jgr4) Copy Request Electronically forwarded to Veritext Legal Solutions on 08/05/2026. Estimated completion date: 08/06/2026. Modified on 8/5/2026 (lnc4). (Entered: 08/05/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -278,7 +358,7 @@
         "time_filed": "00:45:13",
         "date_display": "Aug 5, 2026",
         "description": "MOTION to Appear Pro Hac Vice for Monique D. Jewett-Brewster (Fee Paid: $100, receipt number A27453647) Filed by Creditor J. Lohr Winery Corporation (Jewett-Brewster, Monique) (Entered: 08/05/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

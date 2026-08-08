@@ -14,11 +14,11 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
-    "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-07T22:01:05.786254+00:00",
-    "as_of": "Aug 7, 2026",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-08T21:03:12.441940+00:00",
+    "as_of": "Aug 8, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 1319,
@@ -26,7 +26,7 @@
         "time_filed": "10:43:04",
         "date_display": "Aug 5, 2026",
         "description": "Objection",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -59,7 +59,7 @@
         "time_filed": "10:43:04",
         "date_display": "Aug 5, 2026",
         "description": "Objection",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

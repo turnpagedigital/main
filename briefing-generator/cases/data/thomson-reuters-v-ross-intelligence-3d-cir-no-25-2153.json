@@ -2,21 +2,1209 @@
   "case": {
     "slug": "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153",
     "display_name": "Thomson Reuters v. Ross Intelligence (3d Cir. No. 25-2153)",
-    "case_name": "Thomson Reuters Enterprise Centre GmbH et al. v. Ross Intelligence, Inc.",
+    "case_name": "Thomson Reuters Enterprise Centre GmbH v. Ross Intelligence Inc",
     "court": "U.S. Court of Appeals for the Third Circuit",
     "case_number": "25-2153",
     "judge": "Not yet assigned",
     "docket_id": "70622297",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70622297/thomson-reuters-enterprise-centre-gmbh-v-ross-intelligence-inc/",
+    "date_last_filing": "2026-06-24",
+    "fetched_at": "2026-08-08T21:03:39.701118+00:00",
+    "as_of": "Aug 8, 2026",
+    "backfilled": false,
     "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "recent": [
+      {
+        "entry_number": 205,
+        "date_filed": "2026-06-24",
+        "time_filed": "",
+        "date_display": "Jun 24, 2026",
+        "description": "ECF FILER: Transcript of oral argument on 06/11/2026 prepared at the direction of the Court. [25-2153] (KL) [Entered: 06/24/2026 03:20 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 204,
+        "date_filed": "2026-06-11",
+        "time_filed": "",
+        "date_display": "Jun 11, 2026",
+        "description": "CLERK'S LETTER to counsel written at the direction of the Court, the counsel are hereby directed to file a transcript of oral argument by Thursday, June 25, 2026 in the above entitled case. Liaison counsel should immediately advise the Clerk's Office of the Court Reporter or agency handling the Transcription of oral argument. The parties shall divide the cost of the preparation of the transcript. (Please see letter attached for full text) (PM) [Entered: 06/11/2026 03:05 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 202,
+        "date_filed": "2026-06-11",
+        "time_filed": "",
+        "date_display": "Jun 11, 2026",
+        "description": "COURT MINUTES OF ARGUED/SUBMITTED CASES. [25-2502, 25-2153, 25-2653, 25-1824, 25-2359, 25-2507, 25-2850] (PM) [Entered: 06/11/2026 01:09 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 205,
+        "date_filed": "2026-06-24",
+        "time_filed": "",
+        "date_display": "Jun 24, 2026",
+        "description": "ECF FILER: Transcript of oral argument on 06/11/2026 prepared at the direction of the Court. [25-2153] (KL) [Entered: 06/24/2026 03:20 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 204,
+        "date_filed": "2026-06-11",
+        "time_filed": "",
+        "date_display": "Jun 11, 2026",
+        "description": "CLERK'S LETTER to counsel written at the direction of the Court, the counsel are hereby directed to file a transcript of oral argument by Thursday, June 25, 2026 in the above entitled case. Liaison counsel should immediately advise the Clerk's Office of the Court Reporter or agency handling the Transcription of oral argument. The parties shall divide the cost of the preparation of the transcript. (Please see letter attached for full text) (PM) [Entered: 06/11/2026 03:05 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 202,
+        "date_filed": "2026-06-11",
+        "time_filed": "",
+        "date_display": "Jun 11, 2026",
+        "description": "COURT MINUTES OF ARGUED/SUBMITTED CASES. [25-2502, 25-2153, 25-2653, 25-1824, 25-2359, 25-2507, 25-2850] (PM) [Entered: 06/11/2026 01:09 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 201,
+        "date_filed": "2026-06-11",
+        "time_filed": "",
+        "date_display": "Jun 11, 2026",
+        "description": "ARGUED on Thursday, June 11, 2026. Panel: RESTREPO, MONTGOMERY-REEVES and BOVE, Circuit Judges. Dale M. Cendali arguing for Appellee Thomson Reuters Enterprise Centre GmbH; Mark S. Davies arguing for Appellant Ross Intelligence Inc. (PM) [Entered: 06/11/2026 01:04 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 200,
+        "date_filed": "2026-06-04",
+        "time_filed": "",
+        "date_display": "Jun 4, 2026",
+        "description": "ECF FILER: Response filed by Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp to Rule 28(j) letter. Certificate of Service dated 06/04/2026. Service made by ECF. This document will be SENT TO THE MERITS PANEL, if/when applicable. [25-2153] (DMC) [Entered: 06/04/2026 04:39 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.200.0.pdf"
+      },
+      {
+        "entry_number": 199,
+        "date_filed": "2026-05-28",
+        "time_filed": "",
+        "date_display": "May 28, 2026",
+        "description": "ECF FILER: SUMMARY OF ORAL ARGUMENT submitted by Attorney Miranda D. Means, Esq. for Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp. Case Summary: Whether a legal-research company that copied original editorial content from its competitor to build its own commercial product is not liable for copyright infringement because the copied content is not copyrightable or its copying was fair use.. Post Video: YES. [25-2153] (MDM) [Entered: 05/28/2026 04:59 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 198,
+        "date_filed": "2026-05-28",
+        "time_filed": "",
+        "date_display": "May 28, 2026",
+        "description": "ECF FILER: Letter dated 05/28/2026, filed pursuant to Rule 28(j) from counsel for Appellant Ross Intelligence Inc. Service made by ECF. This document will be SENT TO THE MERITS PANEL, if/when applicable. [25-2153] (MSD) [Entered: 05/28/2026 03:54 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.198.0.pdf"
+      },
+      {
+        "entry_number": 197,
+        "date_filed": "2026-05-26",
+        "time_filed": "",
+        "date_display": "May 26, 2026",
+        "description": "ECF FILER: SUMMARY OF ORAL ARGUMENT submitted by Attorney Mark S. Davies, Esq. for Appellant Ross Intelligence Inc. Case Summary: Is a short quote or paraphrase of judicial holding copyrightable and does the fair use doctrine protect ROSS's internal use of Westlaw's headnotes in memos that served as training data for an AI legal search engine?. Post Video: YES. [25-2153] (MSD) [Entered: 05/26/2026 10:38 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 196,
+        "date_filed": "2026-05-20",
+        "time_filed": "",
+        "date_display": "May 20, 2026",
+        "description": "Oral Argument Notification for Thursday, 06/11/2026. Setting & Time: Maris Courtroom / 10:00am. Location: Philadelphia, PA. (PM) [Entered: 05/20/2026 12:19 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.196.0.pdf"
+      },
+      {
+        "entry_number": 195,
+        "date_filed": "2026-05-11",
+        "time_filed": "",
+        "date_display": "May 11, 2026",
+        "description": "ECF FILER: ELECTRONIC SUPPLEMENTAL BRIEF on behalf of Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp. Certificate of Service dated 05/11/2026 by ECF. [25-2153] (DMC) [Entered: 05/11/2026 04:39 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.195.0.pdf"
+      },
+      {
+        "entry_number": 194,
+        "date_filed": "2026-05-11",
+        "time_filed": "",
+        "date_display": "May 11, 2026",
+        "description": "ECF FILER: ELECTRONIC SUPPLEMENTAL BRIEF on behalf of Appellant Ross Intelligence Inc. Certificate of Service dated 05/11/2026 by ECF. [25-2153] (MSD) [Entered: 05/11/2026 04:10 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.194.0.pdf"
+      },
+      {
+        "entry_number": 193,
+        "date_filed": "2026-04-29",
+        "time_filed": "",
+        "date_display": "Apr 29, 2026",
+        "description": "TEXT ORDER (Clerk) The motions to seal Volunes 7 through 18 of the joint appendix are granted at the direction of the Court. (KAG) [Entered: 04/29/2026 03:25 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 192,
+        "date_filed": "2026-04-27",
+        "time_filed": "",
+        "date_display": "Apr 27, 2026",
+        "description": "TEXT ORDER (Clerk) At the direction of the Court, the parties are ordered to file supplemental briefing addressing what impact, if any, this Court's opinion in Amer. Society for Testing and Materials v. UpCodes Inc., 2026 WL 935309 (3d Cir. April 7, 2026), has on this appeal. The supplemental briefs must not exceed 7 pages double-spaced in 12 pt. font and must be filed within 14 days of the date of this order. Answer due 05/11/2026. (KAG) [Entered: 04/27/2026 01:13 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 191,
+        "date_filed": "2026-04-24",
+        "time_filed": "",
+        "date_display": "Apr 24, 2026",
+        "description": "ECF FILER: Motion filed by Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp to seal Joint Appendix Volumes 7-18. Certificate of Service dated 04/24/2026. Service made by ECF. [25-2153] (DMC) [Entered: 04/24/2026 06:27 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.191.0.pdf"
+      },
+      {
+        "entry_number": 190,
+        "date_filed": "2026-04-21",
+        "time_filed": "",
+        "date_display": "Apr 21, 2026",
+        "description": "ECF FILER: AMENDED Motion filed by Appellant Ross Intelligence Inc to seal Volumes 7-18 of Corrected Joint Appendix. Certificate of Service dated 04/21/2026. Service made by ECF. [25-2153] (MSD) [Entered: 04/21/2026 06:00 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.190.0.pdf"
+      },
+      {
+        "entry_number": 189,
+        "date_filed": "2026-04-20",
+        "time_filed": "",
+        "date_display": "Apr 20, 2026",
+        "description": "ORDER (RESTREPO, MONTGOMERY-REEVES and BOVE, Circuit Judges) Appellant’s Motion to Seal the Opening Brief (ECF No. 26); Appellees’ Motion to Seal Confidential Page Proof Brief (ECF No. 87); Appellant’s Motion to Seal Reply Brief (ECF No. 147); Appellant’s Motion to Seal Final Opening and Reply Briefs (ECF No. 160); and Appellees’ Motion to file Confidential Final Brief under Seal (ECF No. 172) are GRANTED. Appellant’s Motion to Seal Appendix Volumes 7-18 (ECF No. 155) is DENIED as presented. Appellant contends that volumes 7 through 18 of the Joint Appendix include “business and competitive strategies, research development information, and other information that parties have a valid interest in preserving under seal,” which, if made public, “may harm the ‘competitive standing’ of one or more parties.” ECF No. 155 at 2–3. Although a court may seal records “where they are sources of…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.189.0.pdf"
+      },
+      {
+        "entry_number": 188,
+        "date_filed": "2026-04-16",
+        "time_filed": "",
+        "date_display": "Apr 16, 2026",
+        "description": "ECF FILER: Response filed by Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp to Rule 28(j) letter. Certificate of Service dated 04/16/2026. Service made by ECF. This document will be SENT TO THE MERITS PANEL, if/when applicable. [25-2153] (DMC) [Entered: 04/16/2026 11:45 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.188.0_1.pdf"
+      },
+      {
+        "entry_number": 187,
+        "date_filed": "2026-04-15",
+        "time_filed": "",
+        "date_display": "Apr 15, 2026",
+        "description": "ECF FILER: ARGUMENT ACKNOWLEDGMENT filed by Attorney Dale M. Cendali, Esq. for Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp. Certificate of Service dated 04/15/2026. Service made by ECF. [25-2153] (DMC) [Entered: 04/15/2026 04:46 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.187.0.pdf"
+      },
+      {
+        "entry_number": 186,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "ECF FILER: ARGUMENT ACKNOWLEDGMENT filed by Attorney Mark S. Davies, Esq. for Appellant Ross Intelligence Inc. Certificate of Service dated 04/13/2026. Service made by ECF. [25-2153] (MSD) [Entered: 04/13/2026 05:30 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.186.0.pdf"
+      },
+      {
+        "entry_number": 185,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "Calendared for Thursday, 06/11/2026. Calendar Clerk: PM. (PM) [Entered: 04/13/2026 04:04 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.185.0.pdf"
+      },
+      {
+        "entry_number": 184,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "HARD COPY RECEIVED from Amicus Appellee AI Coalition for Data Integrity - Amicus Brief. Copies: 7. (JD) [Entered: 04/13/2026 11:29 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 183,
+        "date_filed": "2026-04-09",
+        "time_filed": "",
+        "date_display": "Apr 9, 2026",
+        "description": "TEXT ORDER (Clerk) directing Attorney Tod H. Cohen, Esq. for Amicus Appellee AI Coalition for Data Integrity to submit 7 hard copies in green front and back covers for the amicus brief e-filed on 11/26/2025. Due on or before 04/15/2026. (EMA) [Entered: 04/09/2026 04:30 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 182,
+        "date_filed": "2026-04-08",
+        "time_filed": "",
+        "date_display": "Apr 8, 2026",
+        "description": "ECF FILER: Letter dated 04/08/2026, filed pursuant to Rule 28(j) from counsel for Appellant Ross Intelligence Inc. Service made by ECF. This document will be SENT TO THE MERITS PANEL, if/when applicable. [25-2153] (MSD) [Entered: 04/08/2026 08:21 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 181,
+        "date_filed": "2026-04-06",
+        "time_filed": "",
+        "date_display": "Apr 6, 2026",
+        "description": "ECF FILER: LETTER from Attorney Mark S. Davies, Esq. for Appellant Ross Intelligence Inc. Counsel is unavailable for the following dates: 06/08/2026, 06/09/2026, [25-2153] (MSD) [Entered: 04/06/2026 12:54 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 180,
+        "date_filed": "2026-03-26",
+        "time_filed": "",
+        "date_display": "Mar 26, 2026",
+        "description": "ECF FILER: Response filed by Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp to Rule 28(j) letter. Certificate of Service dated 03/26/2026. Service made by ECF. This document will be SENT TO THE MERITS PANEL, if/when applicable. [25-2153] (DMC) [Entered: 03/26/2026 03:26 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.180.0.pdf"
+      },
+      {
+        "entry_number": 179,
+        "date_filed": "2026-03-12",
+        "time_filed": "",
+        "date_display": "Mar 12, 2026",
+        "description": "ECF FILER: Letter dated 03/12/2026, filed pursuant to Rule 28(j) from counsel for Appellant Ross Intelligence Inc. Service made by ECF. This document will be SENT TO THE MERITS PANEL, if/when applicable. [25-2153] (MSD) [Entered: 03/12/2026 04:03 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.179.0.pdf"
+      },
+      {
+        "entry_number": 178,
+        "date_filed": "2026-02-04",
+        "time_filed": "",
+        "date_display": "Feb 4, 2026",
+        "description": "ORDER (Clerk) The foregoing Motions are referred to the merits panel. The Clerk wil hold the unredacted versions of the parties' final briefs and Volumes 7-18 of the Corrected Joint Appendix provisionally under seal pending a ruling by the Court. (MCW) [Entered: 02/04/2026 01:08 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.178.0.pdf"
+      },
+      {
+        "entry_number": 177,
+        "date_filed": "2026-01-20",
+        "time_filed": "",
+        "date_display": "Jan 20, 2026",
+        "description": "HARD COPY RECEIVED from Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp - SEALED Brief. Copies: 7. (JD) [Entered: 01/20/2026 11:19 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 176,
+        "date_filed": "2026-01-20",
+        "time_filed": "",
+        "date_display": "Jan 20, 2026",
+        "description": "HARD COPY RECEIVED from Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp - Brief (REDACTED). Copies: 7. (JD) [Entered: 01/20/2026 11:18 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 175,
+        "date_filed": "2026-01-16",
+        "time_filed": "",
+        "date_display": "Jan 16, 2026",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Irina Tarsis on behalf of Amicus Curiae Center for Art Law. [25-2153] (IT) [Entered: 01/16/2026 03:13 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 174,
+        "date_filed": "2026-01-16",
+        "time_filed": "",
+        "date_display": "Jan 16, 2026",
+        "description": "ECF FILER: REDACTED ELECTRONIC BRIEF on behalf of Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp. Certificate of Service dated 01/16/2026 by ECF. [25-2153]--[Edited 01/20/2026 by MCW] (DMC) [Entered: 01/16/2026 02:02 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.174.0.pdf"
+      },
+      {
+        "entry_number": 173,
+        "date_filed": "2026-01-16",
+        "time_filed": "",
+        "date_display": "Jan 16, 2026",
+        "description": "ECF FILER: SEALED ELECTRONIC BRIEF on behalf of Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp. Certificate of Service dated 01/16/2026 by ECF. [25-2153] (DMC) [Entered: 01/16/2026 01:57 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 172,
+        "date_filed": "2026-01-16",
+        "time_filed": "",
+        "date_display": "Jan 16, 2026",
+        "description": "ECF FILER: Motion filed by Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp to file Confidential Final Brief under seal. Certificate of Service dated 01/16/2026. Service made by ECF. [25-2153][[SEND TO MERITS]--[Edited 02/04/2026 by MCW] (DMC) [Entered: 01/16/2026 01:52 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 171,
+        "date_filed": "2026-01-14",
+        "time_filed": "",
+        "date_display": "Jan 14, 2026",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Tod Cohen on behalf of Amicus Curiae AI Coalition for Data Integrity (AICDI). [25-2153] (THC) [Entered: 01/14/2026 02:44 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.171.0.pdf"
+      },
+      {
+        "entry_number": 170,
+        "date_filed": "2026-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2026",
+        "description": "HARD COPY RECEIVED from Appellant Ross Intelligence Inc - REDACTED Reply Brief. Copies: 1. (JD) [Entered: 01/13/2026 12:00 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 169,
+        "date_filed": "2026-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2026",
+        "description": "HARD COPY RECEIVED from Appellant Ross Intelligence Inc - REDACTED Brief. Copies: 1. (JD) [Entered: 01/13/2026 11:54 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 168,
+        "date_filed": "2026-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2026",
+        "description": "HARD COPY RECEIVED from Appellant Ross Intelligence Inc - SEALED Reply Brief. Copies: 7. (JD) [Entered: 01/13/2026 11:51 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 167,
+        "date_filed": "2026-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2026",
+        "description": "HARD COPY RECEIVED from Appellant Ross Intelligence Inc - SEALED Opening Brief. Copies: 7. (JD) [Entered: 01/13/2026 11:50 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 166,
+        "date_filed": "2026-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2026",
+        "description": "TEXT ORDER (Clerk) directing Attorney Irina Tarsis, Esq. for Amicus Appellee Center for Art Law to file an Entry of Appearance pursuant to L.A.R. 46.2. Due on or before 01/16/2026. (SB) [Entered: 01/13/2026 09:50 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 165,
+        "date_filed": "2026-01-13",
+        "time_filed": "",
+        "date_display": "Jan 13, 2026",
+        "description": "TEXT ORDER (Clerk) directing Attorney Tod H. Cohen, Esq. for Amicus Appellee AI Coalition for Data Integrity to file an Entry of Appearance pursuant to L.A.R. 46.2. Due on or before 01/16/2026. (SB) [Entered: 01/13/2026 09:48 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 164,
+        "date_filed": "2026-01-12",
+        "time_filed": "",
+        "date_display": "Jan 12, 2026",
+        "description": "ECF FILER: REDACTED ELECTRONIC REPLY BRIEF on behalf of Appellant Ross Intelligence Inc. Certificate of Service dated 01/12/2026 by ECF. [25-2153] (MSD) [Entered: 01/12/2026 02:05 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.164.0.pdf"
+      },
+      {
+        "entry_number": 163,
+        "date_filed": "2026-01-12",
+        "time_filed": "",
+        "date_display": "Jan 12, 2026",
+        "description": "ECF FILER: REDACTED ELECTRONIC BRIEF on behalf of Appellant Ross Intelligence Inc. Certificate of Service dated 01/12/2026 by ECF. [25-2153] (MSD) [Entered: 01/12/2026 02:03 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.163.0.pdf"
+      },
+      {
+        "entry_number": 162,
+        "date_filed": "2026-01-12",
+        "time_filed": "",
+        "date_display": "Jan 12, 2026",
+        "description": "ECF FILER: SEALED ELECTRONIC REPLY BRIEF on behalf of Appellant Ross Intelligence Inc. Certificate of Service dated 01/12/2026 by ECF. [25-2153] (MSD) [Entered: 01/12/2026 02:00 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 161,
+        "date_filed": "2026-01-12",
+        "time_filed": "",
+        "date_display": "Jan 12, 2026",
+        "description": "ECF FILER: SEALED ELECTRONIC BRIEF on behalf of Appellant Ross Intelligence Inc. Certificate of Service dated 01/12/2026 by ECF. [25-2153] (MSD) [Entered: 01/12/2026 01:59 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 160,
+        "date_filed": "2026-01-12",
+        "time_filed": "",
+        "date_display": "Jan 12, 2026",
+        "description": "ECF FILER: Motion filed by Appellant Ross Intelligence Inc to seal Final Opening and Reply Briefs. Certificate of Service dated 01/12/2026. Service made by ECF. [25-2153][SEND TO MERITS]--[Edited 02/04/2026 by MCW] (MSD) [Entered: 01/12/2026 01:54 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 159,
+        "date_filed": "2026-01-05",
+        "time_filed": "",
+        "date_display": "Jan 5, 2026",
+        "description": "HARD COPY RECEIVED from Appellant Ross Intelligence Inc - Corrected Appendix. Copies: 4. Volumes: 18. Volumes 7 - 18 submitted UNDER SEAL. (MS) [Entered: 01/05/2026 11:14 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 158,
+        "date_filed": "2026-01-05",
+        "time_filed": "",
+        "date_display": "Jan 5, 2026",
+        "description": "EXHIBIT(S) [DVD 4 each exhibits 34, 35 & 36] on behalf of Appellant Ross Intelligence Inc. Copies: 12. (PAR) [Entered: 01/05/2026 10:45 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 157,
+        "date_filed": "2026-01-02",
+        "time_filed": "",
+        "date_display": "Jan 2, 2026",
+        "description": "ECF FILER: SEALED CORRECTED ELECTRONIC JOINT APPENDIX on behalf of Appellant Ross Intelligence Inc. Certificate of Service dated 01/02/2026 by ECF. [25-2153] (MSD) [Entered: 01/02/2026 04:36 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 156,
+        "date_filed": "2026-01-02",
+        "time_filed": "",
+        "date_display": "Jan 2, 2026",
+        "description": "ECF FILER: CORRECTED ELECTRONIC JOINT APPENDIX on behalf of Appellant Ross Intelligence Inc. Certificate of service dated 01/02/2026 by ECF. [25-2153] (MSD) [Entered: 01/02/2026 04:28 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.156.1.pdf"
+      },
+      {
+        "entry_number": 155,
+        "date_filed": "2026-01-02",
+        "time_filed": "",
+        "date_display": "Jan 2, 2026",
+        "description": "ECF FILER: Motion filed by Appellant Ross Intelligence Inc to seal Appendix Volumes 7-18. Certificate of Service dated 01/02/2026. Service made by ECF. [25-2153][SEND TO MERITS]--[Edited 02/04/2026 by MCW] (MSD) [Entered: 01/02/2026 04:19 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 154,
+        "date_filed": "2026-01-02",
+        "time_filed": "",
+        "date_display": "Jan 2, 2026",
+        "description": "ECF FILER: AUDIO/VIDEO SUBMISSION FORM from Attorney Mark S. Davies, Esq. for Appellant Ross Intelligence Inc. Certificate of Service dated 01/02/2026. Service made by ECF. [25-2153] (MSD) [Entered: 01/02/2026 04:18 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 153,
+        "date_filed": "2026-01-02",
+        "time_filed": "",
+        "date_display": "Jan 2, 2026",
+        "description": "ORDER (Clerk) The foregoing motions are considered. The motion by Appellant for leave to file a corrected joint appendix is granted and must be filed and served within (7) seven days from the date of this order. The joint appendix previously filed by Appellant at [ECF No. 144] will be stricken. Unopposed motion by Appellant for extension of time to file final briefs is granted. The final briefs must be filed within (14) fourteen days from the filing of the correct joint appendix. (EMA) [Entered: 01/02/2026 04:15 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 152,
+        "date_filed": "2026-01-02",
+        "time_filed": "",
+        "date_display": "Jan 2, 2026",
+        "description": "ORDER (Clerk) The foregoing motions are referred to the merits panel. The Clerk will hold the unredacted versions of Appellees' proof brief and Appellant's proof reply brief provisionally under seal pending a ruling by the Court. (EMA) [Entered: 01/02/2026 03:49 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 151,
+        "date_filed": "2025-12-26",
+        "time_filed": "",
+        "date_display": "Dec 26, 2025",
+        "description": "TEXT ORDER (Clerk) directing Attorney Mark S. Davies, Esq. for Appellant Ross Intelligence Inc to submit a motion to seal for the sealed appendix volumes V - XII e-filed on 12/19/2025. Due on or before 01/02/2026. (EMA) [Entered: 12/26/2025 08:32 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 150,
+        "date_filed": "2025-12-22",
+        "time_filed": "",
+        "date_display": "Dec 22, 2025",
+        "description": "ECF FILER: REDACTED ELECTRONIC PROOF REPLY BRIEF on behalf of Appellant Ross Intelligence Inc. Certificate of Service dated 12/22/2025 by ECF. [25-2153] (MSD) [Entered: 12/22/2025 04:39 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.150.0.pdf"
+      },
+      {
+        "entry_number": 149,
+        "date_filed": "2025-12-22",
+        "time_filed": "",
+        "date_display": "Dec 22, 2025",
+        "description": "ECF FILER: UNOPPOSED Motion filed by Appellant Ross Intelligence Inc for Extension of Time to file Final Form Briefs until/for 01/09/2026. Certificate of Service dated 12/22/2025. Service made by ECF. [25-2153] (MSD) [Entered: 12/22/2025 04:24 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 148,
+        "date_filed": "2025-12-22",
+        "time_filed": "",
+        "date_display": "Dec 22, 2025",
+        "description": "ECF FILER: SEALED ELECTRONIC PROOF REPLY BRIEF on behalf of Appellant Ross Intelligence Inc. Certificate of Service dated 12/22/2025 by ECF. [25-2153] (MSD) [Entered: 12/22/2025 04:17 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 147,
+        "date_filed": "2025-12-22",
+        "time_filed": "",
+        "date_display": "Dec 22, 2025",
+        "description": "ECF FILER: Motion filed by Appellant Ross Intelligence Inc to seal Reply Brief. Certificate of Service dated 12/22/2025. Service made by ECF. SEND TO MERITS PANEL [25-2153]--[Edited 01/02/2026 by EMA] (MSD) [Entered: 12/22/2025 04:08 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 146,
+        "date_filed": "2025-12-19",
+        "time_filed": "",
+        "date_display": "Dec 19, 2025",
+        "description": "ECF FILER: Motion filed by Appellant Ross Intelligence Inc to amend Joint Appendix. Certificate of Service dated 12/19/2025. Service made by ECF. [25-2153] (MSD) [Entered: 12/19/2025 03:45 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 144,
+        "date_filed": "2025-12-19",
+        "time_filed": "",
+        "date_display": "Dec 19, 2025",
+        "description": "ECF FILER: ELECTRONIC JOINT APPENDIX on behalf of Appellant Ross Intelligence Inc. Certificate of service dated 12/19/2025 by ECF. (STRICKEN per Clerk Order dated 12/19/2025) [25-2153]--[Edited 01/08/2026 by EMA] (MSD) [Entered: 12/19/2025 02:18 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.144.1.pdf"
+      },
+      {
+        "entry_number": 143,
+        "date_filed": "2025-12-18",
+        "time_filed": "",
+        "date_display": "Dec 18, 2025",
+        "description": "TEXT ORDER (Clerk) granting unopposed motion filed by Appellant Ross Intelligence Inc. for extension of time to file appendix. Appellant's appendix must be filed and served on or before December 19, 2025. (CLW) [Entered: 12/18/2025 12:29 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 142,
+        "date_filed": "2025-12-17",
+        "time_filed": "",
+        "date_display": "Dec 17, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Ji Won Oh on behalf of Appellant(s) Ross Intelligence Inc. [25-2153] (JO) [Entered: 12/17/2025 11:22 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 141,
+        "date_filed": "2025-12-10",
+        "time_filed": "",
+        "date_display": "Dec 10, 2025",
+        "description": "ECF FILER: UNOPPOSED Motion filed by Appellant Ross Intelligence Inc for Extension of Time to file deferred appendix until/for 12/19/2025. Certificate of Service dated 12/10/2025. Service made by ECF. [25-2153] (MSD) [Entered: 12/10/2025 04:40 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 140,
+        "date_filed": "2025-12-02",
+        "time_filed": "",
+        "date_display": "Dec 2, 2025",
+        "description": "COMPLIANCE RECEIVED. Addendum to amicus brief containing consent of all parties received from Amicus Appellee AI Coalition for Data Integrity. (MS) [Entered: 12/02/2025 03:29 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 139,
+        "date_filed": "2025-12-02",
+        "time_filed": "",
+        "date_display": "Dec 2, 2025",
+        "description": "ECF FILER: ELECTRONIC ADDENDUM to AMICUS BRIEF on behalf of Amicus Appellee AI Coalition for Data Integrity containing statement of consent of all parties for filing of the brief.. Certificate of Service dated 12/02/2025 by ECF. [25-2153]--[Edited 12/02/2025 by MS] (THC) [Entered: 12/02/2025 02:10 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 138,
+        "date_filed": "2025-12-02",
+        "time_filed": "",
+        "date_display": "Dec 2, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellee Center for Art Law - Amicus Brief. Copies: 7. (JD) [Entered: 12/02/2025 11:49 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 137,
+        "date_filed": "2025-12-02",
+        "time_filed": "",
+        "date_display": "Dec 2, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellee Jonathan Iwry, Esq. - Corrected Amicus Brief. Copies: 7. (JD) [Entered: 12/02/2025 11:47 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 136,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellees Sandra Aistars, Robert Brauneis, Megan Carpenter, Kevin Casini, Jon M. Garon, Timothy T. Hsieh, Joshua Kresh, Jake Linford, Philippa Loengard, Loren E. Mulraine, Sean A. Pager, Eric Priest, Zvi Rosen, Mark F. Schultz and Bhamati Viswanathan - Amicus Brief. Copies: 7. (SJB) [Entered: 12/02/2025 10:58 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 135,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "COMPLIANCE RECEIVED. Electronic Addendum to Amicus Brief received from Amicus Appellee Jonathan Iwry, Esq.. (MCW) [Entered: 12/02/2025 10:17 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 134,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "ECF FILER: ELECTRONIC ADDENDUM to AMICUS BRIEF containing consent of all parties for filing of the brief on behalf of Amicus Appellee Jonathan Iwry, Esq.. Certificate of Service dated 12/01/2025 by ECF. [25-2153][Edited docket text]--[Edited 12/02/2025 by MCW] (JI) [Entered: 12/01/2025 09:38 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 133,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Jonathan Iwry on behalf of Amicus Curiae Jonathan Iwry. [25-2153] (JI) [Entered: 12/01/2025 09:03 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 132,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Jonathan Z. King on behalf of Amicus Curiae Recording Industry Association of America and National Music Publishers Association. [25-2153] (JZK) [Entered: 12/01/2025 05:11 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 131,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "TEXT ORDER (Clerk) directing Attorney Jonathan Z. King, Esq. for Amicus Appellees Recording Industry Association of America and National Music Publishers Association to file an Entry of Appearance pursuant to L.A.R. 46.2. Due on or before 12/04/2025. (EAF) [Entered: 12/01/2025 04:49 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 130,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "HARD COPY RECEIVED from - Disney Enterprises, Inc., Paramount Pictures Corporation, Sony Pictures Entertainment Inc., Universal City Studios LLC, and Warner Bros. Entertainment Inc. in Support of Plaintiffs-Appellees. Amicus Brief. Copies: 7. (SJB) [Entered: 12/01/2025 02:08 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 129,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellee American National Standards Institute and Six Standards Organizations - Amicus Brief. Copies: 7. (SJB) [Entered: 12/01/2025 12:41 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 128,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellee News Media Alliance - Amicus Brief. Copies: 7. (SJB) [Entered: 12/01/2025 12:30 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 125,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellee RELX Inc - Amicus Brief. Copies: 7. (SJB) [Entered: 12/01/2025 12:17 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 124,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "TEXT ORDER (Clerk) directing Attorney Jonathan Iwry, Esq., for Amicus Appellee Jonathan Iwry to file an Addendum to Amicus Brief containing statement of consent of all parties for filing of the brief. If parties did not consent to filing of the brief, a Motion to file Amicus Brief must be filed. Also,counsel must electronically file an Appearance Form. Due on or before 12/04/2025. (MCW) [Entered: 12/01/2025 12:12 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 123,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "ECF FILER: ELECTRONIC ADDENDUM to BRIEF on behalf of Amicus Appellee Center for Art Law containing Consent to the filing and virus check. Certificate of Service dated 12/01/2025 by ECF. [25-2153]--[Edited 12/01/2025 by MS] (IT) [Entered: 12/01/2025 11:09 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.123.0.pdf"
+      },
+      {
+        "entry_number": 122,
+        "date_filed": "2025-12-01",
+        "time_filed": "",
+        "date_display": "Dec 1, 2025",
+        "description": "TEXT ORDER (Clerk) directing Attorney Tod H. Cohen, Esq. for Amicus Appellee AI Coalition for Data Integrity to file Addendum to Amicus Brief containing statement of consent of all parties for filing of the brief. If parties did not consent to filing of the brief, a motion to file amicus brief must be filed. Due on or before 12/04/2025. (MS) [Entered: 12/01/2025 09:53 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 121,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: CORRECTED ELECTRONIC AMICUS BRIEF on the merits on behalf of Jonathan Iwry in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153][Edited docket text]--[Edited 12/01/2025 by MCW] (JI) [Entered: 11/26/2025 11:40 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.121.0.pdf"
+      },
+      {
+        "entry_number": 120,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of AI Coalition for Data Integrity in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (THC) [Entered: 11/26/2025 05:42 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.120.0.pdf"
+      },
+      {
+        "entry_number": 119,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of Jonathan Iwry in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153][Attachment removed by Clerk; Corrected Amicus Brief filed on 11/26/2025, Docket No.121]--[Edited 12/01/2025 by MCW] (JI) [Entered: 11/26/2025 05:00 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 117,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of Center for Art Law in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (IT) [Entered: 11/26/2025 04:34 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.117.0.pdf"
+      },
+      {
+        "entry_number": 116,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellee Association of American Publishers Inc - Brief. Copies: 7. (PAR) [Entered: 11/26/2025 03:21 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 115,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellee Association of American Publishers Inc - Amicus Brief. Copies: 7. (PAR) [Entered: 11/26/2025 03:15 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 114,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of Disney Enterprises, Inc.; Paramount Pictures Corporation; Sony Pictures Entertainment Inc.; Universal City Studios LLC, and Warner Bros Entertainment Inc. in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (AGU) [Entered: 11/26/2025 03:09 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.114.0.pdf"
+      },
+      {
+        "entry_number": 113,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Adam G. Unikowsky on behalf of Amicus Curiae Disney Enterprises, Inc.; Paramount Pictures Corporation; Sony Pictures Entertainment Inc.; Universal City Studios LLC, and Warner Bros Entertainment Inc.. [25-2153] (AGU) [Entered: 11/26/2025 02:55 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 112,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of Copyright Alliance in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (NEW) [Entered: 11/26/2025 12:39 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.112.0.pdf"
+      },
+      {
+        "entry_number": 111,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Nancy E. Wolff on behalf of Amicus Curiae The Copyright Alliance. [25-2153] (NEW) [Entered: 11/26/2025 12:15 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 110,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Regan A. Smith on behalf of Amicus Curiae News/Media Alliance. [25-2153] (RAS) [Entered: 11/26/2025 12:07 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 109,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Nicholas M. Medellin on behalf of Amicus Curiae News/Media Alliance. [25-2153] (NMM) [Entered: 11/26/2025 12:04 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 107,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of News/Media Alliance in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (JC) [Entered: 11/26/2025 12:02 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.107.0.pdf"
+      },
+      {
+        "entry_number": 106,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of Sandra Aistars, Robert Brauneis, Megan Carpenter, Kevin Casini, Jon M. Garon, Timothy T. Hsieh, Joshua Kresh, Jake Linford in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (FK) [Entered: 11/26/2025 11:56 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.106.0.pdf"
+      },
+      {
+        "entry_number": 105,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Felicity S. Kohn on behalf of Amicus Curiae Sandra Aistars, Robert Brauneis, Megan Carpenter, Kevin Casini, Jon M. Garon, Timothy T. Hsieh, Joshua Kresh, Jake Linford. [25-2153] (FK) [Entered: 11/26/2025 11:54 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 104,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of ANSI, ASTM, ICC, IAPMO, NFPA, NEMA, UL in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (JKF) [Entered: 11/26/2025 11:25 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.104.0.pdf"
+      },
+      {
+        "entry_number": 103,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Stanley J. Panikowski on behalf of Amicus Curiae ANSI, ASTM, ICC, IAPMO, NFPA, NEMA, UL. [25-2153] (JWW) [Entered: 11/26/2025 11:14 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 102,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Austin Padgett on behalf of Amicus Curiae Relx, Inc.. [25-2153] (ADP) [Entered: 11/26/2025 09:56 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 101,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Brooke R. Watson on behalf of Amicus Curiae Relx, Inc.. [25-2153] (BRW) [Entered: 11/26/2025 09:51 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 100,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of Relx, Inc. in support of Appellee/Respondent. Certificate of Service dated 11/26/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (MDH) [Entered: 11/26/2025 09:00 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.100.0.pdf"
+      },
+      {
+        "entry_number": 99,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Michael Hobbs on behalf of Amicus Curiae Relx, Inc.. [25-2153] (MDH) [Entered: 11/26/2025 08:59 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 98,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Jane W. Wise on behalf of Amicus Curiae ASTM, ICC, IAPMO, NFPA, NEMA, UL. [25-2153] (JWW) [Entered: 11/26/2025 08:54 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 97,
+        "date_filed": "2025-11-26",
+        "time_filed": "",
+        "date_display": "Nov 26, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from J. Kevin Fee on behalf of Amicus Curiae ASTM, ICC, IAPMO, NFPA, NEMA, UL. [25-2153] (JKF) [Entered: 11/26/2025 08:49 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 96,
+        "date_filed": "2025-11-25",
+        "time_filed": "",
+        "date_display": "Nov 25, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellee Phoenix Center for Advanced Legal and Economic Public Policy Studies - Amicus Brief. Copies: 7. (SJB) [Entered: 11/25/2025 04:30 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 95,
+        "date_filed": "2025-11-25",
+        "time_filed": "",
+        "date_display": "Nov 25, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of Association of American Publishers in support of Appellee/Respondent. Certificate of Service dated 11/25/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (LDN) [Entered: 11/25/2025 03:23 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.95.0.pdf"
+      },
+      {
+        "entry_number": 94,
+        "date_filed": "2025-11-25",
+        "time_filed": "",
+        "date_display": "Nov 25, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Lucy Grace D. Noyola on behalf of Amicus Curiae Association of American Publishers. [25-2153] (LDN) [Entered: 11/25/2025 03:19 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 93,
+        "date_filed": "2025-11-25",
+        "time_filed": "",
+        "date_display": "Nov 25, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of Recording Industry Association Of America And National Music Publishers Association in support of Appellee/Respondent. Certificate of Service dated 11/25/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (JZK) [Entered: 11/25/2025 01:26 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.93.0.pdf"
+      },
+      {
+        "entry_number": 92,
+        "date_filed": "2025-11-21",
+        "time_filed": "",
+        "date_display": "Nov 21, 2025",
+        "description": "Appellant Ross Intelligence Inc verbally granted an extension of time to file reply brief until 12/24/2025 pursuant to 3d Cir. L.A.R. 31.4. (MS) [Entered: 11/21/2025 03:05 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 91,
+        "date_filed": "2025-11-21",
+        "time_filed": "",
+        "date_display": "Nov 21, 2025",
+        "description": "ECF FILER: ENTRY OF APPEARANCE from Lawrence Spiwak on behalf of Amicus Curiae Phoenix Center for Advance Legal and Economic Public Policy Studies. [25-2153] (LJS) [Entered: 11/21/2025 01:44 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 90,
+        "date_filed": "2025-11-21",
+        "time_filed": "",
+        "date_display": "Nov 21, 2025",
+        "description": "ECF FILER: ELECTRONIC AMICUS BRIEF on the merits on behalf of Phoenix Center for Advance Legal and Economic Public Policy Studies in support of Appellee/Respondent. Certificate of Service dated 11/21/2025 by ECF. F.R.A.P. 29(a) Permission: YES. [25-2153] (LJS) [Entered: 11/21/2025 12:20 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.90.0.pdf"
+      },
+      {
+        "entry_number": 89,
+        "date_filed": "2025-11-19",
+        "time_filed": "",
+        "date_display": "Nov 19, 2025",
+        "description": "ECF FILER: REDACTED ELECTRONIC PROOF BRIEF on behalf of Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp. Certificate of Service dated 11/19/2025 by ECF. [25-2153] (DMC) [Entered: 11/19/2025 02:23 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.89.0.pdf"
+      },
+      {
+        "entry_number": 88,
+        "date_filed": "2025-11-19",
+        "time_filed": "",
+        "date_display": "Nov 19, 2025",
+        "description": "ECF FILER: SEALED ELECTRONIC PROOF BRIEF on behalf of Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp. Certificate of Service dated 11/19/2025 by ECF. [25-2153] (DMC) [Entered: 11/19/2025 02:19 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 87,
+        "date_filed": "2025-11-19",
+        "time_filed": "",
+        "date_display": "Nov 19, 2025",
+        "description": "ECF FILER: Motion filed by Appellees Thomson Reuters Enterprise Centre GmbH and West Publishing Corp to seal Confidential Page Proof Brief. Certificate of Service dated 11/19/2025. Service made by ECF. SEND TO MERITS PANEL [25-2153]--[Edited 01/02/2026 by EMA] (DMC) [Entered: 11/19/2025 02:16 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.87.0_1.pdf"
+      },
+      {
+        "entry_number": 86,
+        "date_filed": "2025-11-19",
+        "time_filed": "",
+        "date_display": "Nov 19, 2025",
+        "description": "HARD COPY RECEIVED from Amicus Appellants Matthew Blaszczyk, Brian L. Frye and Jess Miers - Amicus Brief. Copies: 7. (SJB) [Entered: 11/19/2025 12:10 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 85,
+        "date_filed": "2025-11-03",
+        "time_filed": "",
+        "date_display": "Nov 3, 2025",
+        "description": "ORDER (Clerk) The application for admission by eligible law student on behalf of Amici Appellants Cicerai Corporation, Dispute Resolution AI, Free Law Project, Juristai Legal Technology Group Inc., Paxton AI, Inc., and Trellis Research, Inc. is granted. August Gebhard-Koenigstein is permitted to enter his appearances as an eligible law student. Mr. Gebhard-Koenigstein satisfies the requirements for eligibility under Third Circuit Local Appellate Rule 46.3. It is noted that Phillip R. Malone, Esq., the supervising attorney, has approved the entry of appearance. (SB) [Entered: 11/03/2025 08:33 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.85.0.pdf"
+      }
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70622297&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
   },
   "claims_administrator": null,
   "coverage": [
