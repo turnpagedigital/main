@@ -2,7 +2,7 @@
   "case": {
     "slug": "in-re-cashcall-inc",
     "display_name": "In re CashCall, Inc.",
-    "case_name": "CashCall, Inc. (debtor); judgment creditors holding $400M+ in adverse litigation awards",
+    "case_name": "CashCall, Inc.",
     "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
     "case_number": "26-03102",
     "judge": "Barrett Marum",
@@ -15,11 +15,11 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
-    "date_last_filing": "",
-    "fetched_at": "2026-08-07T23:51:55.738864+00:00",
-    "as_of": "Aug 7, 2026",
-    "backfilled": false,
-    "new_in_72h": 5,
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-08T17:50:01.370674+00:00",
+    "as_of": "Aug 8, 2026",
+    "backfilled": true,
+    "new_in_72h": 3,
     "recent": [
       {
         "entry_number": 46,
@@ -89,7 +89,7 @@
         "time_filed": "14:21:42",
         "date_display": "Aug 5, 2026",
         "description": "Intended Action & Opportunity for Hearing (Notice) (CSD 1180) [14 day opp",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -99,7 +99,7 @@
         "time_filed": "14:14:54",
         "date_display": "Aug 5, 2026",
         "description": "Employ (Application)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -533,8 +533,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73643729&order_by=-date_filed&fields=entry_number,date_filed,time_filed,description,recap_documents"
+    ]
   },
   "claims_administrator": null,
   "coverage": [

@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T23:51:49.888924+00:00",
-    "as_of": "Aug 7, 2026",
+    "fetched_at": "2026-08-08T17:49:55.671942+00:00",
+    "as_of": "Aug 8, 2026",
     "backfilled": true,
-    "new_in_72h": 44,
+    "new_in_72h": 29,
     "recent": [
       {
         "entry_number": 1181,
@@ -246,7 +246,7 @@
       {
         "entry_number": null,
         "date_filed": "2026-08-07",
-        "time_filed": "18:18:38",
+        "time_filed": "18:32:25",
         "date_display": "Aug 7, 2026",
         "description": "none",
         "is_new": true,
@@ -350,7 +350,7 @@
         "time_filed": "23:29:46",
         "date_display": "Aug 5, 2026",
         "description": "BNC certificate of mailing - PDF document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -360,7 +360,7 @@
         "time_filed": "23:29:46",
         "date_display": "Aug 5, 2026",
         "description": "BNC certificate of mailing - PDF document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -370,7 +370,7 @@
         "time_filed": "20:54:11",
         "date_display": "Aug 5, 2026",
         "description": "Clerk's correspondence",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -380,7 +380,7 @@
         "time_filed": "15:25:44",
         "date_display": "Aug 5, 2026",
         "description": "Certificate of no objection",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -390,7 +390,7 @@
         "time_filed": "14:07:47",
         "date_display": "Aug 5, 2026",
         "description": "Request for transcript/audio",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -400,7 +400,7 @@
         "time_filed": "11:34:04",
         "date_display": "Aug 5, 2026",
         "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Highland Farms Ltd. (Claim No. 10324, Amount $433,351.16) To Lake Avenue CS, LLC. Filed by Creditor Lake Avenue CS, LLC. (McLaren, Tyler)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -410,7 +410,7 @@
         "time_filed": "10:15:26",
         "date_display": "Aug 5, 2026",
         "description": "(1 pg) Court admitted exhibits (Declarations), date of hearing August 5, 2026 (RE: related document(s) 1131 Amended chapter 11 plan filed by Debtor Harvest Sherwood Food Distributors, Inc. (RE: related document(s) 759 Chapter 11 plan)(Court admitted into evidence as direct testimony, Declarations of Emily Young found at doc. #1134; Declaration of Samir Saleem found at doc. #1135 & Declaration of Eric Kamp Chief Restructuring Officer found at doc #1135, offered into evidence by attorney Ryan Fink.) (Edmond, Michael)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -420,7 +420,7 @@
         "time_filed": "09:02:07",
         "date_display": "Aug 5, 2026",
         "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Landes Fresh Meats, Inc. (Claim No. 10048, Amount $123,900.23) To Jefferies Leveraged Credit Products, LLC. Filed by Creditor Jefferies Leveraged Credit Products, LLC. (Wooten, Ryan)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -430,7 +430,7 @@
         "time_filed": "08:59:51",
         "date_display": "Aug 5, 2026",
         "description": "Assignment/Transfer of Claim. Fee Amount $28. Transfer Agreement 3001 (e) 2 Transferors: Ace Trailer Repair LLC (Claim No. 10140, Amount $186,408.73) To Jefferies Leveraged Credit Products, LLC. Filed by Creditor Jefferies Leveraged Credit Products, LLC. (Wooten, Ryan)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -440,7 +440,7 @@
         "time_filed": "08:18:55",
         "date_display": "Aug 5, 2026",
         "description": "Notice of Stipulation and Agreed Order of Harvest Sherwood Food Distributors, Inc. and Michigan Conference of Teamsters Welfare Fund Regarding Timeliness of Claim filed by Debtor Harvest Sherwood Food Distributors, Inc.. (Fink, Ryan)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -450,7 +450,7 @@
         "time_filed": "07:16:51",
         "date_display": "Aug 5, 2026",
         "description": "Certificate of service re: Debtors Witness and Exhibit List for Hearing Scheduled for August 5, 2026, at 9:30 a.m. (Prevailing Central Time) filed by Claims Agent Epiq Corporate Restructuring, LLC (RE: related document(s)1126 List (witness/exhibit/generic)). (Mailloux, Kathryn)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -460,7 +460,7 @@
         "time_filed": "09:05:03",
         "date_display": "Aug 5, 2026",
         "description": "none AND none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -470,7 +470,7 @@
         "time_filed": "",
         "date_display": "Aug 5, 2026",
         "description": "Receipt of filing fee for Assignment/Transfer of claim (Claims Agent)( 25-80109-sgj11) [claims,trclmagt] ( 28.00). Receipt number A34025041, amount $ 28.00 (re: Doc# 1150). (U.S. Treasury)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -480,7 +480,7 @@
         "time_filed": "11:36:17",
         "date_display": "Aug 5, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -490,7 +490,7 @@
         "time_filed": "16:27:20",
         "date_display": "Aug 5, 2026",
         "description": "Hearing held",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

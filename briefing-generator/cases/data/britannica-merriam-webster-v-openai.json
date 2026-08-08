@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T23:50:32.668776+00:00",
-    "as_of": "Aug 7, 2026",
+    "fetched_at": "2026-08-08T17:48:49.106444+00:00",
+    "as_of": "Aug 8, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 2,
     "recent": [
       {
         "entry_number": 58,
@@ -29,7 +29,7 @@
         "description": "Order AND ~Util - Set Deadlines",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.58.0.pdf"
       },
       {
         "entry_number": 57,
@@ -39,7 +39,7 @@
         "description": "Order AND ~Util - Set Deadlines",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.57.0.pdf"
       },
       {
         "entry_number": 56,
@@ -47,7 +47,7 @@
         "time_filed": "17:34:43",
         "date_display": "Aug 5, 2026",
         "description": "Proposed Stipulation and Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.56.0.pdf"
       }
@@ -61,7 +61,7 @@
         "description": "Order AND ~Util - Set Deadlines",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.58.0.pdf"
       },
       {
         "entry_number": 57,
@@ -71,7 +71,7 @@
         "description": "Order AND ~Util - Set Deadlines",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.57.0.pdf"
       },
       {
         "entry_number": 56,
@@ -79,7 +79,7 @@
         "time_filed": "17:34:43",
         "date_display": "Aug 5, 2026",
         "description": "Proposed Stipulation and Order",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.56.0.pdf"
       },
@@ -89,7 +89,7 @@
         "time_filed": "17:23:30",
         "date_display": "Aug 5, 2026",
         "description": "Letter",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.55.0.pdf"
       },
