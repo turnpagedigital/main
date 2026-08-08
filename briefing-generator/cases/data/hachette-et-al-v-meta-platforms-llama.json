@@ -2,7 +2,7 @@
   "case": {
     "slug": "hachette-et-al-v-meta-platforms-llama",
     "display_name": "Hachette et al. v. Meta Platforms (Llama)",
-    "case_name": "Hachette Book Group, Inc.; Macmillan Publishers; McGraw Hill; Elsevier Inc.; Cengage Learning; Scott Turow v. Meta Platforms, Inc.",
+    "case_name": "Elsevier Inc. v. Meta Platforms, Inc.",
     "court": "To be confirmed (filed May 5, 2026)",
     "case_number": "1:26-cv-03689",
     "judge": "P. Kevin Castel",
@@ -15,12 +15,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
-    "date_last_filing": "",
-    "fetched_at": "2026-08-07T23:00:25.021860+00:00",
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-07T23:51:33.605740+00:00",
     "as_of": "Aug 7, 2026",
-    "backfilled": false,
-    "new_in_72h": 1,
+    "backfilled": true,
+    "new_in_72h": 2,
     "recent": [
+      {
+        "entry_number": 92,
+        "date_filed": "2026-08-07",
+        "time_filed": "18:59:18",
+        "date_display": "Aug 7, 2026",
+        "description": "Letter",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 91,
         "date_filed": "2026-08-07",
@@ -40,19 +50,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.663308/gov.uscourts.nysd.663308.90.0.pdf"
-      },
-      {
-        "entry_number": 89,
-        "date_filed": "2026-07-24",
-        "time_filed": "16:04:09",
-        "date_display": "Jul 24, 2026",
-        "description": "ORDER granting 88 Letter Motion for Conference. The conference, including any argument of the motion to transfer, is adjourned to September 15, 2026 at 3pm in Courtroom 11D. SO ORDERED. Initial Conference set for 9/15/2026 at 03:00 PM in Courtroom 11D, 500 Pearl Street, New York, NY 10007 before Judge P. Kevin Castel. (Signed by Judge P. Kevin Castel on 7/24/2026) (vfr) (Entered: 07/24/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 92,
+        "date_filed": "2026-08-07",
+        "time_filed": "18:59:18",
+        "date_display": "Aug 7, 2026",
+        "description": "Letter",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 91,
         "date_filed": "2026-08-07",
@@ -964,6 +974,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 23,
+        "date_filed": "2026-05-07",
+        "time_filed": "17:04:06",
+        "date_display": "May 7, 2026",
+        "description": "NOTICE OF APPEARANCE by Abigail Emily Liles on behalf of Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., Macmillan Publishing Group, LLC d/b/a Macmillan Publishers, McGraw Hill LLC, S.C.R.I.B.E., Inc., Scott Turow..(Liles, Abigail) (Entered: 05/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 22,
         "date_filed": "2026-05-07",
         "time_filed": "17:01:33",
@@ -992,9 +1012,308 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 19,
+        "date_filed": "2026-05-07",
+        "time_filed": "16:47:44",
+        "date_display": "May 7, 2026",
+        "description": "NOTICE OF APPEARANCE by Megan Bannigan on behalf of Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., Macmillan Publishing Group, LLC d/b/a Macmillan Publishers, McGraw Hill LLC, S.C.R.I.B.E., Inc., Scott Turow..(Bannigan, Megan) (Entered: 05/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 18,
+        "date_filed": "2026-05-07",
+        "time_filed": "10:36:57",
+        "date_display": "May 7, 2026",
+        "description": "NOTICE OF APPEARANCE by Daryl Lian Kleiman on behalf of Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., Macmillan Publishing Group, LLC d/b/a Macmillan Publishers, McGraw Hill LLC, S.C.R.I.B.E., Inc., Scott Turow..(Kleiman, Daryl) (Entered: 05/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 17,
+        "date_filed": "2026-05-07",
+        "time_filed": "",
+        "date_display": "May 7, 2026",
+        "description": "ORDER granting 12 Motion for Jeffrey Gould to Appear Pro Hac Vice (HEREBY ORDERED by Judge P. Kevin Castel)(Text Only Order) (Nacanther, Florence) (Entered: 05/07/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-07",
+        "time_filed": "10:07:33",
+        "date_display": "May 7, 2026",
+        "description": "Order on Motion to Appear Pro Hac Vice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 16,
+        "date_filed": "2026-05-06",
+        "time_filed": "16:55:08",
+        "date_display": "May 6, 2026",
+        "description": "ORDER INITIAL PRETRIAL CONFERENCE: Initial Conference set for 6/29/2026 at 11:30 AM before Judge P. Kevin Castel. COUNSEL FOR PLAINTIFF (OR THE REMOVING DEFENDANT) SHALL IMMEDIATELY SEND A COPY OF THIS ORDER TO ALL PARTIES. The call-in information for all teleconferences is: Dial-in: 1-855-244-8681 Access Code: 2305 810 3970 #. Attention is called to Local Rule 1.8 that prohibits the recording or transmission of any proceeding. SO ORDERED. (Signed by Judge P. Kevin Castel on 5/6/2026) (vfr) (Entered: 05/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.663308/gov.uscourts.nysd.663308.16.0.pdf"
+      },
+      {
+        "entry_number": 15,
+        "date_filed": "2026-05-06",
+        "time_filed": "14:33:57",
+        "date_display": "May 6, 2026",
+        "description": "AO 121 FORM COPYRIGHT - CASE OPENING - SUBMITTED. In compliance with the provisions of 17 U.S.C. 508, the Register of Copyrights is hereby advised that a court action has been filed on the following copyright(s) in the U.S. District Court Southern District of New York. Form e-mailed to Register of Copyrights..(pc) (Entered: 05/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 14,
+        "date_filed": "2026-05-06",
+        "time_filed": "10:15:56",
+        "date_display": "May 6, 2026",
+        "description": "ELECTRONIC SUMMONS ISSUED as to Meta Platforms, Inc...(jgo) (Entered: 05/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 13,
+        "date_filed": "2026-05-06",
+        "time_filed": "10:15:10",
+        "date_display": "May 6, 2026",
+        "description": "ELECTRONIC SUMMONS ISSUED as to Mark Zuckerberg..(jgo) (Entered: 05/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-06",
+        "time_filed": "",
+        "date_display": "May 6, 2026",
+        "description": "CASE OPENING INITIAL ASSIGNMENT NOTICE: The above-entitled action is assigned to Judge P. Kevin Castel. Please download and review the Individual Practices of the assigned District Judge, located at https://nysd.uscourts.gov/judges/district-judges. Attorneys are responsible for providing courtesy copies to judges where their Individual Practices require such. Please download and review the ECF Rules and Instructions, located at https://nysd.uscourts.gov/rules/ecf-related-instructions..(jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-06",
+        "time_filed": "",
+        "date_display": "May 6, 2026",
+        "description": "***NOTICE TO ATTORNEY REGARDING PARTY MODIFICATION. Notice to attorney Matthew Jan Oppenheim. The party information for the following party/parties has been modified: Elsevier Inc.; Cengage Learning, Inc.; Hachette Book Group, Inc.; Macmillan Publishing Group, LLC d/b/a Macmillan Publishers; McGraw Hill LLC; Scott Turow; S.C.R.I.B.E., Inc.. The information for the party/parties has been modified for the following reason/reasons: party text was omitted;. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-06",
+        "time_filed": "",
+        "date_display": "May 6, 2026",
+        "description": "***NOTICE TO ATTORNEY REGARDING CIVIL CASE OPENING STATISTICAL ERROR CORRECTION: Notice to attorney Matthew Jan Oppenheim. The following case opening statistical information was erroneously selected/entered: Arbitration code v (Voluntary);. The following correction(s) have been made to your case entry: the Arbitration code has been deleted;. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-06",
+        "time_filed": "",
+        "date_display": "May 6, 2026",
+        "description": "Case Designated ECF. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-06",
+        "time_filed": "10:06:38",
+        "date_display": "May 6, 2026",
+        "description": "Notice to Attorney Regarding Case Opening Statistical Error Correction",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-06",
+        "time_filed": "10:07:56",
+        "date_display": "May 6, 2026",
+        "description": "Notice to Attorney Regarding Party Modification",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-06",
+        "time_filed": "10:09:22",
+        "date_display": "May 6, 2026",
+        "description": "Case Opening Initial Assignment Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-06",
+        "time_filed": "",
+        "date_display": "May 6, 2026",
+        "description": "Magistrate Judge Robyn F. Tarnofsky is designated to handle matters that may be referred in this case. Pursuant to 28 U.S.C. Section 636(c) and Fed. R. Civ. P. 73(b)(1) parties are notified that they may consent to proceed before a United States Magistrate Judge. Parties who wish to consent may access the necessary form at the following link: https://nysd.uscourts.gov/sites/default/files/2018-06/AO-3.pdf. (jgo)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 12,
+        "date_filed": "2026-05-05",
+        "time_filed": "12:08:20",
+        "date_display": "May 5, 2026",
+        "description": "MOTION for Jeffrey Gould to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-32800201. Motion and supporting papers to be reviewed by Clerk's Office staff. Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., Macmillan Publishing Group, LLC d/b/a Macmillan Publishers, McGraw Hill LLC, S.C.R.I.B.E., Inc., Scott Turow. (Attachments: # 1 Exhibit Declaration of Jeffrey Gould, # 2 Exhibit A - Certificate of Good Standing, # 3 Proposed Order Granting Motion).(Gould, Jeffrey) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 11,
+        "date_filed": "2026-05-05",
+        "time_filed": "10:24:35",
+        "date_display": "May 5, 2026",
+        "description": "RULE 7.1 CORPORATE DISCLOSURE STATEMENT. No Corporate Parent. Document filed by S.C.R.I.B.E., Inc., Scott Turow..(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2026-05-05",
+        "time_filed": "10:18:58",
+        "date_display": "May 5, 2026",
+        "description": "RULE 7.1 CORPORATE DISCLOSURE STATEMENT. Identifying Corporate Parent McGraw-Hill Education, Inc., Corporate Parent Mav Intermediate Holding II Corporation, Corporate Parent Mav Intermediate Holding Corporation, Corporate Parent McGraw Hill, Inc. for McGraw Hill LLC. Document filed by McGraw Hill LLC..(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2026-05-05",
+        "time_filed": "10:12:03",
+        "date_display": "May 5, 2026",
+        "description": "RULE 7.1 CORPORATE DISCLOSURE STATEMENT. Identifying Corporate Parent Macmillan Holdings, LLC for Macmillan Publishing Group, LLC d/b/a Macmillan Publishers. Document filed by Macmillan Publishing Group, LLC d/b/a Macmillan Publishers..(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2026-05-05",
+        "time_filed": "10:00:26",
+        "date_display": "May 5, 2026",
+        "description": "RULE 7.1 CORPORATE DISCLOSURE STATEMENT. Identifying Corporate Parent Louis Hachette Group, Other Affiliate Bollore SE for Hachette Book Group, Inc.. Document filed by Hachette Book Group, Inc...(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 7,
+        "date_filed": "2026-05-05",
+        "time_filed": "09:54:46",
+        "date_display": "May 5, 2026",
+        "description": "RULE 7.1 CORPORATE DISCLOSURE STATEMENT. Identifying Corporate Parent Cengage Learning Holdings II, Inc., Corporate Parent Cengage Learning Holdco, Inc., Other Affiliate KKR Credit Advisors (US) LLC, Other Affiliate KKR & Co. Inc., Other Affiliate Apollo Global Management, Inc., Other Affiliate AP X Bright Holdings, L.P. for Cengage Learning, Inc.. Document filed by Cengage Learning, Inc...(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2026-05-05",
+        "time_filed": "09:42:26",
+        "date_display": "May 5, 2026",
+        "description": "RULE 7.1 CORPORATE DISCLOSURE STATEMENT. Identifying Corporate Parent Elsevier STM Inc., Corporate Parent RELX plc, Corporate Parent RELX Inc., Corporate Parent Elsevier Holdings Inc. for Elsevier Inc.. Document filed by Elsevier Inc...(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2026-05-05",
+        "time_filed": "09:22:00",
+        "date_display": "May 5, 2026",
+        "description": "REQUEST FOR ISSUANCE OF SUMMONS as to Mark Zuckerberg, re: 1 Complaint,. Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., Macmillan Publishing Group, LLC d/b/a Macmillan Publishers, McGraw Hill LLC, S.C.R.I.B.E., Inc., Scott Turow..(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2026-05-05",
+        "time_filed": "09:17:35",
+        "date_display": "May 5, 2026",
+        "description": "REQUEST FOR ISSUANCE OF SUMMONS as to Meta Platforms, Inc., re: 1 Complaint,. Document filed by Cengage Learning, Inc., Elsevier Inc., Hachette Book Group, Inc., Macmillan Publishing Group, LLC d/b/a Macmillan Publishers, McGraw Hill LLC, S.C.R.I.B.E., Inc., Scott Turow..(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2026-05-05",
+        "time_filed": "09:10:07",
+        "date_display": "May 5, 2026",
+        "description": "AO 121 FORM COPYRIGHT - NOTICE OF SUBMISSION BY ATTORNEY. AO 121 Form Copyright for case opening submitted to court for review. (Attachments: # 1 Exhibit A - Sample Works).(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2026-05-05",
+        "time_filed": "09:03:04",
+        "date_display": "May 5, 2026",
+        "description": "CIVIL COVER SHEET filed..(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.663308/gov.uscourts.nysd.663308.2.0.pdf"
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2026-05-05",
+        "time_filed": "08:51:35",
+        "date_display": "May 5, 2026",
+        "description": "COMPLAINT against Meta Platforms, Inc., Mark Zuckerberg. (Filing Fee $ 405.00, Receipt Number ANYSDC-32797950)Document filed by Scott Turow, Hachette Book Group, Inc., S.C.R.I.B.E., Inc., Cengage Learning, Inc., Elsevier Inc., Macmillan Publishing Group, LLC d/b/a Macmillan Publishers, McGraw Hill LLC. (Attachments: # 1 Exhibit A - Sample Works).(Oppenheim, Matthew) (Entered: 05/05/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.663308/gov.uscourts.nysd.663308.1.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-05",
+        "time_filed": "",
+        "date_display": "May 5, 2026",
+        "description": ">>>NOTICE REGARDING PRO HAC VICE MOTION. Regarding Document No. 12 MOTION for Jeffrey Gould to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-32800201. Motion and supporting papers to be reviewed by Clerk's Office staff.. The document has been reviewed and there are no deficiencies. (rju)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-05-05",
+        "time_filed": "12:12:50",
+        "date_display": "May 5, 2026",
+        "description": "Notice Regarding Pro Hac Vice Motion",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73294740&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=6"
+    ]
   },
   "claims_administrator": null,
   "coverage": []
