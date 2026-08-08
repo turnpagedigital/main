@@ -16,7 +16,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
     "date_last_filing": "2026-07-15",
-    "fetched_at": "2026-08-08T22:54:38.372875+00:00",
+    "fetched_at": "2026-08-08T23:52:52.309943+00:00",
     "as_of": "Aug 8, 2026",
     "backfilled": false,
     "new_in_72h": 0,
@@ -1742,9 +1742,1179 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.307.0.pdf"
+      },
+      {
+        "entry_number": 306,
+        "date_filed": "2025-12-04",
+        "time_filed": "22:13:57",
+        "date_display": "Dec 4, 2025",
+        "description": "OPPOSITION/RESPONSE (re 298 MOTION for Sanctions ) (Redacted) filed byConsolidated Plaintiffs. (Attachments: # 1 Proposed Order)(Weaver, Lesley) (Filed on 12/4/2025) (Entered: 12/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.306.0.pdf"
+      },
+      {
+        "entry_number": 305,
+        "date_filed": "2025-12-03",
+        "time_filed": "14:54:06",
+        "date_display": "Dec 3, 2025",
+        "description": "OPPOSITION/RESPONSE (re 303 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Joint Discovery Letter Brief Regarding Named Plaintiff and Class Discovery ) filed byGoogle LLC. (Attachments: # 1 Proposed Order)(Sampson, Paul) (Filed on 12/3/2025) (Entered: 12/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 304,
+        "date_filed": "2025-12-01",
+        "time_filed": "19:42:14",
+        "date_display": "Dec 1, 2025",
+        "description": "Corrected Joint Declaration of Mark Richards, Gregory Mullens, and Christopher Young Regarding Plaintiffs' Google Accounts. Amendment to 278 Declaration in Support by Consolidated Plaintiffs. (Richards, Mark) (Filed on 12/1/2025) (Entered: 12/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 303,
+        "date_filed": "2025-11-26",
+        "time_filed": "18:05:18",
+        "date_display": "Nov 26, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Joint Discovery Letter Brief Regarding Named Plaintiff and Class Discovery filed by Consolidated Plaintiffs. (Attachments: # 1 Proposed Order, # 2 Joint Discovery Letter Brief Regarding Named Plaintiff and Class Discovery (Sealed), # 3 Exhibit 1 - Parties' Joint Chart Regarding Google's Production of Named Plaintiff and Class Discovery (Sealed))(Weaver, Lesley) (Filed on 11/26/2025) (Entered: 11/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 302,
+        "date_filed": "2025-11-26",
+        "time_filed": "17:58:06",
+        "date_display": "Nov 26, 2025",
+        "description": "Joint Discovery Letter Brief Regarding Named Plaintiff and Class Discovery (Redacted) filed by Consolidated Plaintiffs. (Attachments: # 1 Exhibit 1 - Parties' Joint Chart Regarding Google's Production of Named Plaintiff and Class Discovery (Redacted), # 2 Plaintiffs' Proposed Order, # 3 Defendant's Proposed Order)(Weaver, Lesley) (Filed on 11/26/2025) (Entered: 11/26/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.302.0.pdf"
+      },
+      {
+        "entry_number": 301,
+        "date_filed": "2025-11-21",
+        "time_filed": "15:15:11",
+        "date_display": "Nov 21, 2025",
+        "description": "Interim Administrative Motion to File Under Seal [Corrected] re Motions to Exclude Testimony from Plaintiffs' Proposed Experts filed by Google LLC. (Attachments: # 1 Google's Motion to Exclude Testimony from Plaintiffs' Proposed Experts David S. Doermann, Michael D. Smith, and Victoria Furniss [Sealed], # 2 Exhibit A to Knoll Declaration [Sealed], # 3 Exhibit B to Knoll Declaration [Sealed], # 4 Exhibit C to Knoll Declaration [Sealed], # 5 Exhibit D to Knoll Declaration [Sealed])(Sampson, Paul) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 300,
+        "date_filed": "2025-11-21",
+        "time_filed": "00:04:09",
+        "date_display": "Nov 21, 2025",
+        "description": "Interim Administrative Motion to File Under Seal re Motion for Sanctions filed by Google LLC. (Attachments: # 1 Motion for Sanctions [Sealed], # 2 Certificate/Proof of Service)(Rees, Maura) (Filed on 11/21/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 299,
+        "date_filed": "2025-11-20",
+        "time_filed": "",
+        "date_display": "Nov 20, 2025",
+        "description": "Declaration of Paul Harold in Support of 298 MOTION for Sanctions filed byGoogle LLC. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Exhibit C, # 4 Exhibit D)(Related document(s) 298 ) (Rees, Maura) (Filed on 11/20/2025) (Entered: 11/21/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 298,
+        "date_filed": "2025-11-20",
+        "time_filed": "23:58:57",
+        "date_display": "Nov 20, 2025",
+        "description": "MOTION for Sanctions filed by Google LLC. Motion Hearing set for 2/4/2026 10:00 AM in San Jose, Courtroom 7, 4th Floor before Judge Eumi K. Lee. Responses due by 12/30/2025. Replies due by 1/6/2026. (Attachments: # 1 Proposed Order)(Rees, Maura) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.298.0.pdf"
+      },
+      {
+        "entry_number": 297,
+        "date_filed": "2025-11-20",
+        "time_filed": "23:53:46",
+        "date_display": "Nov 20, 2025",
+        "description": "Interim Administrative Motion to File Under Seal re Motions to Exclude Testimony from Plaintiffs' Proposed Experts filed by Google LLC. (Attachments: # 1 Exhibit A to Knoll Declaration [Sealed], # 2 Exhibit B to Knoll Declaration [Sealed], # 3 Exhibit C to Knoll Declaration [Sealed], # 4 Exhibit D to Knoll Declaration [Sealed], # 5 Certificate/Proof of Service)(Sampson, Paul) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 296,
+        "date_filed": "2025-11-20",
+        "time_filed": "23:49:14",
+        "date_display": "Nov 20, 2025",
+        "description": "Declaration of Kelly M. Knoll in Support of 294 MOTION to Exclude Testimony from Plaintiffs' Proposed Experts David S. Doermann, Michael D. Smith, and Victoria Furniss, 295 MOTION to Exclude Testimony from Plaintiffs' Proposed Expert Meredith McCarron filed byGoogle LLC. (Attachments: # 1 Exhibit A [Public], # 2 Exhibit B [Public], # 3 Exhibit C [Public], # 4 Exhibit D [Public])(Related document(s) 294, 295 ) (Sampson, Paul) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 295,
+        "date_filed": "2025-11-20",
+        "time_filed": "23:44:28",
+        "date_display": "Nov 20, 2025",
+        "description": "MOTION to Exclude Testimony from Plaintiffs' Proposed Expert Meredith McCarron filed by Google LLC. Motion Hearing set for 2/4/2026 10:00 AM in San Jose, Courtroom 7, 4th Floor before Judge Eumi K. Lee. Responses due by 12/30/2025. Replies due by 1/6/2026. (Attachments: # 1 Proposed Order)(Sampson, Paul) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.295.0.pdf"
+      },
+      {
+        "entry_number": 293,
+        "date_filed": "2025-11-20",
+        "time_filed": "23:24:04",
+        "date_display": "Nov 20, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Non-Party Macmillan Publishing Group, LLC filed by Google LLC. (Attachments: # 1 Exhibit 27 to Auster Declaration [Sealed], # 2 Proposed Order, # 3 Certificate/Proof of Service)(Kramer, David) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 292,
+        "date_filed": "2025-11-20",
+        "time_filed": "23:19:55",
+        "date_display": "Nov 20, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Non-Party Hachette Book Group, Inc. filed by Google LLC. (Attachments: # 1 Exhibit 83 to Auster Declaration [Sealed], # 2 Exhibit 84 to Auster Declaration [Sealed], # 3 Proposed Order, # 4 Certificate/Proof of Service)(Kramer, David) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 291,
+        "date_filed": "2025-11-20",
+        "time_filed": "23:06:21",
+        "date_display": "Nov 20, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Non-Party Andrews McMeel Universal, Inc. filed by Google LLC. (Attachments: # 1 Exhibit 40 to Auster Declaration [Sealed], # 2 Exhibit 43 to Auster Declaration [Sealed], # 3 Proposed Order, # 4 Certificate/Proof of Service)(Kramer, David) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 290,
+        "date_filed": "2025-11-20",
+        "time_filed": "22:56:29",
+        "date_display": "Nov 20, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Non-Party Penguin Random House LLC filed by Google LLC. (Attachments: # 1 Exhibit 85 to Auster Declaration [Sealed], # 2 Exhibit 103 to Auster Declaration [Sealed], # 3 Exhibit 112 Auster Declaration [Sealed], # 4 Proposed Order, # 5 Certificate/Proof of Service)(Kramer, David) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 289,
+        "date_filed": "2025-11-20",
+        "time_filed": "22:48:53",
+        "date_display": "Nov 20, 2025",
+        "description": "Interim Administrative Motion to File Under Seal and to Consider Whether Another Party's (Plaintiffs) Material Should be Sealed re ECF Nos. 282-288 filed by Google LLC. (Attachments: # 1 Google's Opposition to Plaintiffs' Motion for Class Certification [Sealed], # 2 Declaration of Brian Carver [Sealed], # 3 Declaration of David Price [Sealed], # 4 Exhibit B to Price Declaration [Sealed], # 5 Exhibit C to Price Declaration [Sealed], # 6 Exhibit D to Price Declaration [Sealed], # 7 Exhibit E to Price Declaration [Sealed], # 8 Exhibit F to Price Declaration [Sealed], # 9 Exhibit G to Price Declaration [Sealed], # 10 Declaration of Patrick Marcus [Sealed], # 11 Exhibit A to Marcus Declaration [Sealed], # 12 Exhibit B to Marcus Declaration [Sealed], # 13 Declaration of Jeremy Auster [Sealed], # 14 Exhibit 5 to Auster Declaration [Sealed], # 15 Exhibit 6 to Auster Declaration [Sealed], # 16…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 288,
+        "date_filed": "2025-11-20",
+        "time_filed": "20:39:49",
+        "date_display": "Nov 20, 2025",
+        "description": "ADDITIONAL EXHIBITS to re 286 Declaration in Support filed by Google LLC. (Attachments: # 1 Exhibit 121 [Public], # 2 Exhibit 122 [Public], # 3 Exhibit 123 [Public], # 4 Exhibit 124, # 5 Exhibit 125 [Public], # 6 Exhibit 126, # 7 Exhibit 127, # 8 Exhibit 128, # 9 Exhibit 129, # 10 Exhibit 130, # 11 Exhibit 131, # 12 Exhibit 132, # 13 Exhibit 133, # 14 Exhibit 134, # 15 Exhibit 135, # 16 Exhibit 136, # 17 Exhibit 137, # 18 Exhibit 138, # 19 Exhibit 139, # 20 Exhibit 140, # 21 Exhibit 141, # 22 Exhibit 142, # 23 Exhibit 143, # 24 Exhibit 144, # 25 Exhibit 145 [Public], # 26 Exhibit 146 [Public], # 27 Exhibit 147, # 28 Exhibit 148 [Public], # 29 Exhibit 149 [Public], # 30 Exhibit 150 [Public], # 31 Exhibit 151 [Public], # 32 Exhibit 152 [Public], # 33 Exhibit 153 [Public], # 34 Exhibit 154 [Public], # 35 Exhibit 155 [Public], # 36 Exhibit 156 [Public], # 37 Exhibit 157 [Public], # 38…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 287,
+        "date_filed": "2025-11-20",
+        "time_filed": "20:17:09",
+        "date_display": "Nov 20, 2025",
+        "description": "ADDITIONAL EXHIBITS to re 286 Declaration in Support filed by Google LLC. (Attachments: # 1 Exhibit 61, # 2 Exhibit 62, # 3 Exhibit 63, # 4 Exhibit 64, # 5 Exhibit 65, # 6 Exhibit 66, # 7 Exhibit 67, # 8 Exhibit 68, # 9 Exhibit 69, # 10 Exhibit 70, # 11 Exhibit 71, # 12 Exhibit 72, # 13 Exhibit 73, # 14 Exhibit 74, # 15 Exhibit 75, # 16 Exhibit 76, # 17 Exhibit 77, # 18 Exhibit 78, # 19 Exhibit 79, # 20 Exhibit 80, # 21 Exhibit 81, # 22 Exhibit 82 [Public], # 23 Exhibit 83 [Public], # 24 Exhibit 84 [Public], # 25 Exhibit 85 [Public], # 26 Exhibit 86 [Public], # 27 Exhibit 87 [Public], # 28 Exhibit 88, # 29 Exhibit 89, # 30 Exhibit 90, # 31 Exhibit 91, # 32 Exhibit 92, # 33 Exhibit 93, # 34 Exhibit 94, # 35 Exhibit 95, # 36 Exhibit 96, # 37 Exhibit 97, # 38 Exhibit 98, # 39 Exhibit 99, # 40 Exhibit 100, # 41 Exhibit 101, # 42 Exhibit 102, # 43 Exhibit 103 [Public], # 44 Exhibit 104, # 45…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 286,
+        "date_filed": "2025-11-20",
+        "time_filed": "19:46:25",
+        "date_display": "Nov 20, 2025",
+        "description": "Declaration of Jeremy P. Auster in Support of 282 Opposition/Response to Motion filed byGoogle LLC. (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3, # 4 Exhibit 4, # 5 Exhibit 5 [Public], # 6 Exhibit 6 [Public], # 7 Exhibit 7 [Public], # 8 Exhibit 8, # 9 Exhibit 9, # 10 Exhibit 10 [Public], # 11 Exhibit 11 [Public], # 12 Exhibit 12 [Public], # 13 Exhibit 13 [Public], # 14 Exhibit 14, # 15 Exhibit 15, # 16 Exhibit 16, # 17 Exhibit 17, # 18 Exhibit 18, # 19 Exhibit 19, # 20 Exhibit 20, # 21 Exhibit 21, # 22 Exhibit 22, # 23 Exhibit 23, # 24 Exhibit 24, # 25 Exhibit 25, # 26 Exhibit 26, # 27 Exhibit 27 [Public], # 28 Exhibit 28 [Public], # 29 Exhibit 29, # 30 Exhibit 30, # 31 Exhibit 31, # 32 Exhibit 32, # 33 Exhibit 33, # 34 Exhibit 34, # 35 Exhibit 35, # 36 Exhibit 36, # 37 Exhibit 37, # 38 Exhibit 38, # 39 Exhibit 39, # 40 Exhibit 40 [Public], # 41 Exhibit 41 [Public], # 42…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 285,
+        "date_filed": "2025-11-20",
+        "time_filed": "19:13:32",
+        "date_display": "Nov 20, 2025",
+        "description": "Declaration of Patrick Marcus in Support of 282 Opposition/Response to Motion filed byGoogle LLC. (Attachments: # 1 Exhibit A [Public], # 2 Exhibit B [Public])(Related document(s) 282 ) (Kramer, David) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 284,
+        "date_filed": "2025-11-20",
+        "time_filed": "19:10:55",
+        "date_display": "Nov 20, 2025",
+        "description": "Declaration of David Price in Support of 282 Opposition/Response to Motion filed byGoogle LLC. (Attachments: # 1 Exhibit A, # 2 Exhibit B [Public], # 3 Exhibit C [Public], # 4 Exhibit D [Public], # 5 Exhibit E [Public], # 6 Exhibit F [Public], # 7 Exhibit G [Public], # 8 Exhibit H, # 9 Exhibit I, # 10 Exhibit J, # 11 Exhibit K, # 12 Exhibit L)(Related document(s) 282 ) (Kramer, David) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 282,
+        "date_filed": "2025-11-20",
+        "time_filed": "18:49:55",
+        "date_display": "Nov 20, 2025",
+        "description": "OPPOSITION/RESPONSE (re 251 MOTION to Certify Class (Redacted) ) filed byGoogle LLC. (Attachments: # 1 Proposed Order)(Kramer, David) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.282.0.pdf"
+      },
+      {
+        "entry_number": 281,
+        "date_filed": "2025-11-19",
+        "time_filed": "",
+        "date_display": "Nov 19, 2025",
+        "description": "**Erroneous Docket Entry - Pls. Disregard** - NOTICE of Appearance filed by Alexandra Fernandez on behalf of Steve Almond, Sarah Andersen, Burl Barer, Jessica Fink, Hope Larson, Jill Leovy, Connie McLennan, Jingna Zhang (Fernandez, Alexandra) (Filed on 11/19/2025) Modified on 11/20/2025 (tn, COURT STAFF). (Entered: 11/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-19",
+        "time_filed": "16:15:12",
+        "date_display": "Nov 19, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 280,
+        "date_filed": "2025-11-18",
+        "time_filed": "17:06:03",
+        "date_display": "Nov 18, 2025",
+        "description": "NOTICE by Google LLC of Filing of Redacted Document (Attachments: # 1 Exhibit 1 - Redacted Order re Discovery Disputes)(Sampson, Paul) (Filed on 11/18/2025) (Entered: 11/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 279,
+        "date_filed": "2025-11-18",
+        "time_filed": "15:09:12",
+        "date_display": "Nov 18, 2025",
+        "description": "ORDER Granting 277 Administrative Motion to File Under Seal; Google to file public, redacted copy of Dkt. 272 . Signed by Judge Susan van Keulen on November 18, 2025. (svklc2, COURT STAFF) (Filed on 11/18/2025) (Entered: 11/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 278,
+        "date_filed": "2025-11-17",
+        "time_filed": "23:26:38",
+        "date_display": "Nov 17, 2025",
+        "description": "Declaration of Mark Richards, Gregory Mullens, and Christopher Young Regarding Plaintiffs Google Accounts filed byConsolidated Plaintiffs. (Richards, Mark) (Filed on 11/17/2025) (Entered: 11/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 277,
+        "date_filed": "2025-11-17",
+        "time_filed": "19:08:28",
+        "date_display": "Nov 17, 2025",
+        "description": "Administrative Motion to File Under Seal Portions of Court's Order Resolving Discovery Disputes (Dkt. 272) filed by Google LLC. (Attachments: # 1 Proposed Order, # 2 Exhibit A - Parties' Joint Proposed Redactions [Filed Under Seal], # 3 Certificate/Proof of Service)(Sampson, Paul) (Filed on 11/17/2025) (Entered: 11/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 276,
+        "date_filed": "2025-11-13",
+        "time_filed": "08:43:16",
+        "date_display": "Nov 13, 2025",
+        "description": "ORDER GRANTING 275 STIPULATION EXTENDING BRIEFING SCHEDULE RELATED TO CLASS CERTIFICATION. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 11/13/2025) (Entered: 11/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.276.0.pdf"
+      },
+      {
+        "entry_number": 275,
+        "date_filed": "2025-11-12",
+        "time_filed": "17:24:37",
+        "date_display": "Nov 12, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Extending Briefing Schedule Related to Class Certification filed by Google LLC. (Kramer, David) (Filed on 11/12/2025) (Entered: 11/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.275.0_3.pdf"
+      },
+      {
+        "entry_number": 274,
+        "date_filed": "2025-11-10",
+        "time_filed": "16:59:35",
+        "date_display": "Nov 10, 2025",
+        "description": "ORDER Granting 238, 241, 244 Administrative Motions to Consider Whether Another Party's Material Should be Sealed. Signed by Judge Susan van Keulen on November 10, 2025. (svklc2, COURT STAFF) (Filed on 11/10/2025) (Entered: 11/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.274.0.pdf"
+      },
+      {
+        "entry_number": 273,
+        "date_filed": "2025-11-10",
+        "time_filed": "16:58:04",
+        "date_display": "Nov 10, 2025",
+        "description": "REDACTION ORDER re Dkt. 272 . Signed by Judge Susan van Keulen on November 10, 2025. (svklc2, COURT STAFF) (Filed on 11/10/2025) (Entered: 11/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 271,
+        "date_filed": "2025-10-31",
+        "time_filed": "18:37:55",
+        "date_display": "Oct 31, 2025",
+        "description": "EXHIBITS re 253 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Plaintiffs' Motion for Class Certification filed byConsolidated Plaintiffs. (Attachments: # 1 Exhibit 4 (Sealed) - CORRECTION OF DOCKET # [253-7])(Related document(s) 253 ) (Hart, Yana) (Filed on 10/31/2025) (Entered: 10/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 270,
+        "date_filed": "2025-10-27",
+        "time_filed": "17:07:38",
+        "date_display": "Oct 27, 2025",
+        "description": "OPPOSITION/RESPONSE (re 269 ADMINISTRATIVE MOTION for Leave to File Supplemental Authority re 251 MOTION to Certify Class (Redacted) ) filed byGoogle LLC. (Sampson, Paul) (Filed on 10/27/2025) (Entered: 10/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.270.0.pdf"
+      },
+      {
+        "entry_number": 269,
+        "date_filed": "2025-10-23",
+        "time_filed": "18:24:11",
+        "date_display": "Oct 23, 2025",
+        "description": "ADMINISTRATIVE MOTION for Leave to File Supplemental Authority re 251 MOTION to Certify Class (Redacted) filed by Jill Leovy, Jingna Zhang, Sarah Andersen, Hope Larson, Jessica Fink, Burl Barer, Connie McLennan, Steve Almond. Responses due by 10/27/2025. (Attachments: # 1 Notice of Supplemental Authority, # 2 Exhibit A - Readers Prefer Outputs of AI Trained on Copyrighted Books over Expert Human Writers, # 3 Proposed Order)(Saveri, Joseph) (Filed on 10/23/2025) (Entered: 10/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 268,
+        "date_filed": "2025-10-23",
+        "time_filed": "",
+        "date_display": "Oct 23, 2025",
+        "description": "Remark: Manual filings (ECF No. 253-27 Exhibit 35 (Sealed); ECF No. 253-74 Exhibit 82 (Sealed); ECF No. 253-93 Exhibit 101 (Sealed)) uploaded to Clerk's Office digital archive. (lrt, COURT STAFF) (Filed on 10/23/2025) (Entered: 10/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-23",
+        "time_filed": "15:32:00",
+        "date_display": "Oct 23, 2025",
+        "description": "Remark",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 267,
+        "date_filed": "2025-10-20",
+        "time_filed": "21:43:53",
+        "date_display": "Oct 20, 2025",
+        "description": "CORRECTED EXHIBITS 156 TO 181 to re 252 Declaration of Gregory S. Mullens in Support of Motion for Class Certification filed by Consolidated Plaintiffs. (Attachments: # 1 Exhibit 156 (Public) CORRECTION OF DOCKET # [252-156], # 2 Exhibit 157 (Public) CORRECTION OF DOCKET # [252-157], # 3 Exhibit 158 (Public) CORRECTION OF DOCKET # [252-158], # 4 Exhibit 159 (Public) CORRECTION OF DOCKET # [252-159], # 5 Exhibit 160 (Public) CORRECTION OF DOCKET # [252-160], # 6 Exhibit 161 (Public) CORRECTION OF DOCKET # [252-161], # 7 Exhibit 162 (Public) CORRECTION OF DOCKET # [252-162], # 8 Exhibit 163 (Public) CORRECTION OF DOCKET # [252-163], # 9 Exhibit 164 (Public) CORRECTION OF DOCKET # [252-164], # 10 Exhibit 165 (Public) CORRECTION OF DOCKET # [252-165], # 11 Exhibit 166 (Public) CORRECTION OF DOCKET # [252-166], # 12 Exhibit 167 (Public) CORRECTION OF DOCKET # [252-167], # 13 Exhibit 168…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.267.0.pdf"
+      },
+      {
+        "entry_number": 266,
+        "date_filed": "2025-10-20",
+        "time_filed": "21:18:59",
+        "date_display": "Oct 20, 2025",
+        "description": "CORRECTED EXHIBIT 1 to the Declaration of Gregory S. Mullens in Support of Plaintiffs' Motion for Class Certification re 253 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Plaintiffs' Motion for Class Certification filed by Consolidated Plaintiffs. (Attachments: # 1 Exhibit 1 (Sealed) - CORRECTION OF DOCKET # [253-4])(Related document(s) 253 ) (Weaver, Lesley) (Filed on 10/20/2025) (Entered: 10/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 265,
+        "date_filed": "2025-10-20",
+        "time_filed": "13:02:24",
+        "date_display": "Oct 20, 2025",
+        "description": "ORDER AUTHORIZING OMNIBUS SEALING MOTION. Signed by Judge Eumi K. Lee on 10/20/2025. (lrt, COURT STAFF) (Filed on 10/20/2025) (Entered: 10/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.265.0.pdf"
+      },
+      {
+        "entry_number": 264,
+        "date_filed": "2025-10-17",
+        "time_filed": "18:53:03",
+        "date_display": "Oct 17, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Sealing in Connection with ECF Nos. 249 and 253 filed by Google LLC. (Sampson, Paul) (Filed on 10/17/2025) (Entered: 10/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.264.0.pdf"
+      },
+      {
+        "entry_number": 263,
+        "date_filed": "2025-10-17",
+        "time_filed": "18:07:20",
+        "date_display": "Oct 17, 2025",
+        "description": "OPPOSITION/RESPONSE (re 241 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed ) filed byConsolidated Plaintiffs. (Hart, Yana) (Filed on 10/17/2025) (Entered: 10/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 262,
+        "date_filed": "2025-10-16",
+        "time_filed": "18:31:40",
+        "date_display": "Oct 16, 2025",
+        "description": "Answer to Amended Complaint 234 Amended Complaint, by Google LLC. (Tuttle, Eric) (Filed on 10/16/2025) (Entered: 10/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.262.0.pdf"
+      },
+      {
+        "entry_number": 261,
+        "date_filed": "2025-10-16",
+        "time_filed": "12:45:41",
+        "date_display": "Oct 16, 2025",
+        "description": "NOTICE filed by Google LLC of Notice of Filing of Redacted Document re 248 Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed, Order on Administrative Motion to File Under Seal. (Attachments: # 1 Exhibit 1 - [Redacted] Plaintiffs' Proposed Training Data Security and Review Protocol)(Sampson, Paul) (Filed on 10/16/2025) (Entered: 10/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 260,
+        "date_filed": "2025-10-16",
+        "time_filed": "11:59:02",
+        "date_display": "Oct 16, 2025",
+        "description": "OPPOSITION/RESPONSE (re 244 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Joint Discovery Letter Brief Regarding Defendant's Clawbacks and Privilege Assertions ) filed byGoogle LLC. (Attachments: # 1 Proposed Order)(Sampson, Paul) (Filed on 10/16/2025) (Entered: 10/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 259,
+        "date_filed": "2025-10-15",
+        "time_filed": "09:20:02",
+        "date_display": "Oct 15, 2025",
+        "description": "ORDER granting 258 Plaintiffs' Motion to Remove Incorrectly Filed Documents. The Clerk of the Court is directed to remove from the docket Dkt. Nos. 249, MOTION to Certify Class (Redacted) filed by Consolidated Plaintiffs, and 249-1, Plaintiffs' Proposed Trial Plan. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 10/15/2025) (Entered: 10/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.259.0.pdf"
+      },
+      {
+        "entry_number": 258,
+        "date_filed": "2025-10-15",
+        "time_filed": "07:00:45",
+        "date_display": "Oct 15, 2025",
+        "description": "MOTION to Remove Incorrectly Filed Document (Dkt. Nos. 249, 249-1) filed by Consolidated Plaintiffs. (Attachments: # 1 Proposed Order)(Weaver, Lesley) (Filed on 10/15/2025) (Entered: 10/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.258.0.pdf"
+      },
+      {
+        "entry_number": 257,
+        "date_filed": "2025-10-15",
+        "time_filed": "06:55:36",
+        "date_display": "Oct 15, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Microsoft Corp.'s Materials filed by Consolidated Plaintiffs. (Attachments: # 1 Exhibit 130 (Sealed), # 2 Exhibit 131 (Sealed), # 3 Exhibit 132 (Sealed), # 4 Exhibit 133 (Sealed), # 5 Exhibit 134 (Sealed), # 6 Exhibit 135 (Sealed), # 7 Exhibit 136 (Sealed), # 8 Exhibit 137 (Sealed), # 9 Exhibit 138 (Sealed), # 10 Exhibit 139 (Sealed), # 11 Exhibit 140 (Sealed), # 12 Exhibit 141 (Sealed), # 13 Exhibit 142 (Sealed), # 14 Exhibit 143 (Sealed), # 15 Exhibit 144 (Sealed), # 16 Exhibit 145 (Sealed), # 17 Exhibit 146 (Sealed), # 18 Proposed Order re Sealing)(Weaver, Lesley) (Filed on 10/15/2025) (Entered: 10/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 256,
+        "date_filed": "2025-10-15",
+        "time_filed": "06:41:08",
+        "date_display": "Oct 15, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re John Wiley & Sons, Inc.'s Materials filed by Consolidated Plaintiffs. (Attachments: # 1 Exhibit 148 (Sealed), # 2 Exhibit 149 (Sealed), # 3 Exhibit 150 (Sealed), # 4 Exhibit 151 (Sealed), # 5 Exhibit 152 (Sealed), # 6 Exhibit 153 (Sealed), # 7 Exhibit 154 (Sealed), # 8 Exhibit 155 (Sealed), # 9 Proposed Order re Sealing)(Weaver, Lesley) (Filed on 10/15/2025) (Entered: 10/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 255,
+        "date_filed": "2025-10-15",
+        "time_filed": "06:25:46",
+        "date_display": "Oct 15, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Dotdash Meredith, Inc.'s Materials filed by Consolidated Plaintiffs. (Attachments: # 1 Exhibit 128 (Sealed), # 2 Exhibit 129 (Sealed), # 3 Proposed Order re Sealing)(Weaver, Lesley) (Filed on 10/15/2025) (Entered: 10/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 254,
+        "date_filed": "2025-10-15",
+        "time_filed": "06:12:59",
+        "date_display": "Oct 15, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re The Atlantic's Materials filed by Consolidated Plaintiffs. (Attachments: # 1 Exhibit 147 (Sealed), # 2 Proposed Order re Sealing)(Weaver, Lesley) (Filed on 10/15/2025) (Entered: 10/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 253,
+        "date_filed": "2025-10-15",
+        "time_filed": "05:54:22",
+        "date_display": "Oct 15, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Plaintiffs' Motion for Class Certification filed by Consolidated Plaintiffs. (Attachments: # 1 Plaintiffs' Motion for Class Certification (Sealed), # 2 Plaintiffs' Proposed Trial Plan (Sealed), # 3 Declaration Joseph R. Saveri and Lesley E. Weaver (Sealed), # 4 Exhibit 1 (Sealed), # 5 Exhibit 2 (Sealed), # 6 Exhibit 3 (Sealed), # 7 Exhibit 4 (Sealed), # 8 Exhibit 6 (Sealed), # 9 Exhibit 13 (Sealed), # 10 Exhibit 14 (Sealed), # 11 Exhibit 15 (Sealed), # 12 Exhibit 16 (Sealed), # 13 Exhibit 17 (Sealed), # 14 Exhibit 18 (Sealed), # 15 Exhibit 19 (Sealed), # 16 Exhibit 20 (Sealed), # 17 Exhibit 21 (Sealed), # 18 Exhibit 22 (Sealed), # 19 Exhibit 27 (Sealed), # 20 Exhibit 28 (Sealed), # 21 Exhibit 29 (Sealed), # 22 Exhibit 30 (Sealed), # 23 Exhibit 31 (Sealed), # 24 Exhibit 32 (Sealed), # 25 Exhibit 33…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.253.0.pdf"
+      },
+      {
+        "entry_number": 252,
+        "date_filed": "2025-10-15",
+        "time_filed": "03:54:15",
+        "date_display": "Oct 15, 2025",
+        "description": "Declaration of Gregory S. Mullens in Support of 249 MOTION to Certify Class (Redacted) filed byConsolidated Plaintiffs. (Attachments: # 1 Exhibit 1 (Redacted), # 2 Exhibit 2 (Redacted), # 3 Exhibit 3 (Redacted), # 4 Exhibit 4 (Redacted), # 5 Exhibit 5 (Public), # 6 Exhibit 6 (Redacted), # 7 Exhibit 7 (Public), # 8 Exhibit 8 (Public), # 9 Exhibit 9 (Public), # 10 Exhibit 10 (Public), # 11 Exhibit 11 (Public), # 12 Exhibit 12 (Public), # 13 Exhibit 13 (Redacted), # 14 Exhibit 14 (Redacted), # 15 Exhibit 15 (Redacted), # 16 Exhibit 16 (Redacted), # 17 Exhibit 17 (Redacted), # 18 Exhibit 18 (Redacted), # 19 Exhibit 19 (Redacted), # 20 Exhibit 20 (Redacted), # 21 Exhibit 21 (Redacted), # 22 Exhibit 22 (Redacted), # 23 Exhibit 23 (Public), # 24 Exhibit 24 (Public), # 25 Exhibit 25 (Public), # 26 Exhibit 26 (Public), # 27 Exhibit 27 (Redacted), # 28 Exhibit 28 (Redacted), # 29 Exhibit 29…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.252.0.pdf"
+      },
+      {
+        "entry_number": 251,
+        "date_filed": "2025-10-15",
+        "time_filed": "02:19:05",
+        "date_display": "Oct 15, 2025",
+        "description": "MOTION to Certify Class (Redacted) filed by Consolidated Plaintiffs. Motion to Certify Class Hearing set for 2/4/2026 10:00 AM in San Jose, Courtroom 7, 4th Floor before Judge Eumi K. Lee. Responses due by 11/19/2025. Replies due by 12/29/2025. (Attachments: # 1 Plaintiffs' Proposed Trial Plan (Redacted), # 2 Proposed Order Granting Class Certification)(Weaver, Lesley) (Filed on 10/15/2025) (Entered: 10/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.251.0.pdf"
+      },
+      {
+        "entry_number": 250,
+        "date_filed": "2025-10-14",
+        "time_filed": "",
+        "date_display": "Oct 14, 2025",
+        "description": "Declaration of Joseph R. Saveri and Lesley E. Weaver in Support of 249 MOTION to Certify Class (Redacted) filed byConsolidated Plaintiffs. (Attachments: # 1 Exhibit A - JSLF Firm Resume, # 2 Exhibit B - BFA Firm Resume, # 3 Exhibit C - LGN Firm Resume, # 4 Exhibit D - CLF Firm Resume)(Related document(s) 249 ) (Weaver, Lesley) (Filed on 10/14/2025) (Entered: 10/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.250.0.pdf"
+      },
+      {
+        "entry_number": 249,
+        "date_filed": "2025-10-14",
+        "time_filed": "23:56:55",
+        "date_display": "Oct 14, 2025",
+        "description": "MOTION FOR CLASS CERTIFICATION (Redacted) filed by Consolidated Plaintiffs. Motion to Certify Class Hearing set for 2/4/2026 10:00 AM in San Jose, Courtroom 7, 4th Floor before Judge Eumi K. Lee. Responses due by 11/19/2025. Replies due by 12/29/2025. (Attachments: # 1 Plaintiffs' Proposed Trial Plan, # 2 Proposed Order Granting Class Certification)(Weaver, Lesley) (Filed on 10/14/2025) ***DOCUMENT PLACED UNDER SEAL PER COUNSEL'S REQUEST*** Modified on 10/15/2025 (tn, COURT STAFF). (Entered: 10/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 248,
+        "date_filed": "2025-10-14",
+        "time_filed": "12:13:33",
+        "date_display": "Oct 14, 2025",
+        "description": "SEALING ORDER re Dkts. 146, 150, 160, 168 and 242 . Signed by Judge Susan van Keulen on October 14, 2025. (svklc2, COURT STAFF) (Filed on 10/14/2025) (Entered: 10/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 247,
+        "date_filed": "2025-10-13",
+        "time_filed": "17:18:25",
+        "date_display": "Oct 13, 2025",
+        "description": "NOTICE of Voluntary Dismissal of Plaintiff Mike Lemos by Consolidated Plaintiffs (Weaver, Lesley) (Filed on 10/13/2025) (Entered: 10/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.247.0.pdf"
+      },
+      {
+        "entry_number": 246,
+        "date_filed": "2025-10-13",
+        "time_filed": "17:18:10",
+        "date_display": "Oct 13, 2025",
+        "description": "NOTICE of Voluntary Dismissal of Plaintiff Kirsten Hubbard by Consolidated Plaintiffs (Weaver, Lesley) (Filed on 10/13/2025) (Entered: 10/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.246.0.pdf"
+      },
+      {
+        "entry_number": 245,
+        "date_filed": "2025-10-10",
+        "time_filed": "14:59:52",
+        "date_display": "Oct 10, 2025",
+        "description": "OPPOSITION/RESPONSE (re 238 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed ) filed byGoogle LLC. (Attachments: # 1 Proposed Order)(Sampson, Paul) (Filed on 10/10/2025) (Entered: 10/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.245.0.pdf"
+      },
+      {
+        "entry_number": 244,
+        "date_filed": "2025-10-09",
+        "time_filed": "22:27:39",
+        "date_display": "Oct 9, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Re Joint Discovery Letter Brief Regarding Defendant's Clawbacks and Privilege Assertions filed by Consolidated Plaintiffs. (Attachments: # 1 Proposed Order, # 2 Joint Discovery Letter Brief Regarding Defendant's Clawbacks and Privilege Assertions (Sealed), # 3 Exhibit A - Challenged Entries on Google's Clawback Privilege Log (Sealed))(Weaver, Lesley) (Filed on 10/9/2025) (Entered: 10/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 243,
+        "date_filed": "2025-10-09",
+        "time_filed": "22:21:01",
+        "date_display": "Oct 9, 2025",
+        "description": "Joint Discovery Letter Brief Regarding Defendant's Clawbacks and Privilege Assertions (Redacted) filed by Consolidated Plaintiffs. (Attachments: # 1 Exhibit A - Challenged Entries on Google's Clawback Privilege Log (Redacted), # 2 Plaintiffs' Proposed Order, # 3 Defendant's Proposed Order)(Weaver, Lesley) (Filed on 10/9/2025) (Entered: 10/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.243.0.pdf"
+      },
+      {
+        "entry_number": 242,
+        "date_filed": "2025-10-09",
+        "time_filed": "21:40:43",
+        "date_display": "Oct 9, 2025",
+        "description": "NOTICE by Google LLC re 232 Order on Discovery Letter Brief, Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed, Joint Summary Chart re Unresolved Sealing Requests (Sampson, Paul) (Filed on 10/9/2025) (Entered: 10/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 241,
+        "date_filed": "2025-10-09",
+        "time_filed": "21:35:02",
+        "date_display": "Oct 9, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Google LLC. (Attachments: # 1 Exhibit A - [Confidential Version] Excerpts of McLennan Deposition Transcript., # 2 Proposed Order)(Kramer, David) (Filed on 10/9/2025) (Entered: 10/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 240,
+        "date_filed": "2025-10-09",
+        "time_filed": "21:30:21",
+        "date_display": "Oct 9, 2025",
+        "description": "Joint Discovery Letter Brief re Plaintiffs' Email Addresses filed by Google LLC. (Attachments: # 1 Exhibit A - REDACTED Excerpts of McLennan Deposition Transcript, # 2 Exhibit B - Joint Chart to JLB re Plaintiff Email Addresses, # 3 Proposed Order DEFENDANTS Proposed Order re Motion for Sanctions, # 4 Proposed Order PLAINTIFFS Proposed Order re Plaintiffs' Emails)(Kramer, David) (Filed on 10/9/2025) (Entered: 10/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.240.0.pdf"
+      },
+      {
+        "entry_number": 239,
+        "date_filed": "2025-10-09",
+        "time_filed": "12:08:45",
+        "date_display": "Oct 9, 2025",
+        "description": "NOTICE by Consolidated Plaintiffs of Filing of Unsealed Documents Regarding ECF Nos. 187-2, 187-3, 191-2, 191-3, 224-2, 224-3, and 224-4 Pursuant to ECF No. 236 (Attachments: # 1 Plaintiffs' Reply in Support of Motion to Amend Case Schedule (Unsealed), # 2 Exhibit 4 - Supplemental Declaration of Meredith McCarron (Unsealed), # 3 Plaintiffs' Corrected Reply in Support of Motion to Amend Case Schedule (Unsealed), # 4 Exhibit 4 - Supplemental Declaration of Meredith McCarron (Unsealed), # 5 Plaintiffs' Motion to Amend Case Schedule (Unsealed), # 6 Declaration of Stephen J. Teti (Unsealed), # 7 Exhibit 1 - Declaration of Meredith McCarron (Unsealed))(Weaver, Lesley) (Filed on 10/9/2025) (Entered: 10/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 238,
+        "date_filed": "2025-10-03",
+        "time_filed": "19:38:50",
+        "date_display": "Oct 3, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Jill Leovy, Jingna Zhang, Hope Larson, Jessica Fink, Kirsten Hubbard, Burl Barer, Mike Lemos, Connie McLennan, Steve Almond. (Attachments: # 1 Proposed Order GRANTING PLAINTIFFS ADMINISTRATIVE MOTION TO CONSIDER WHETHER ANOTHER PARTYS MATERIAL SHOULD BE SEALED, # 2 Exhibit A - Joint Letter Brief Regarding Datasets (Unredacted), # 3 Exhibit 1 - Joint Chart Regarding Datasets (Unredacted), # 4 Exhibit 2 - Plaintiffs' Excerpts of Deposition Transcript of Li Xiao, # 5 Exhibit 3 - Defendants Excerpts of Deposition Transcript of Li Xiao)(Saveri, Joseph) (Filed on 10/3/2025) (Entered: 10/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 237,
+        "date_filed": "2025-10-03",
+        "time_filed": "19:31:01",
+        "date_display": "Oct 3, 2025",
+        "description": "Joint Discovery Letter Brief filed by Jill Leovy, Jingna Zhang, Sarah Andersen, Hope Larson, Jessica Fink, Kirsten Hubbard, Burl Barer, Mike Lemos, Connie McLennan, Steve Almond. (Attachments: # 1 Exhibit 1 - Joint Chart Regarding Datasets (REDACTED), # 2 Exhibit 2 - ENTIRE EXHIBIT FILED UNDER SEAL], # 3 Exhibit 3 - ENTIRE EXHIBIT FILED UNDER SEAL], # 4 Proposed Order GRANTING PLAINTIFFS MOTION TO COMPEL PRODUCTION OF DATASETS, # 5 Proposed Order DENYING PLAINTIFFS MOTION TO COMPEL PRODUCTION OF DATASETS)(Saveri, Joseph) (Filed on 10/3/2025) (Entered: 10/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.237.0.pdf"
+      },
+      {
+        "entry_number": 236,
+        "date_filed": "2025-10-02",
+        "time_filed": "16:13:15",
+        "date_display": "Oct 2, 2025",
+        "description": "ORDER VACATING CASE MANAGEMENT CONFERENCE; DENYING ADMINISTRATIVE MOTIONS TO SEAL. Signed by Judge Eumi K. Lee on 10/2/2025. (lrt, COURT STAFF) (Filed on 10/2/2025) (Entered: 10/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.236.0.pdf"
+      },
+      {
+        "entry_number": 235,
+        "date_filed": "2025-10-01",
+        "time_filed": "19:26:29",
+        "date_display": "Oct 1, 2025",
+        "description": "CASE MANAGEMENT STATEMENT [JOINT] filed by Jill Leovy, Jingna Zhang, Sarah Andersen, Hope Larson, Jessica Fink, Kirsten Hubbard, Burl Barer, Mike Lemos, Connie McLennan, Steve Almond. (Saveri, Joseph) (Filed on 10/1/2025) (Entered: 10/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.235.0.pdf"
+      },
+      {
+        "entry_number": 234,
+        "date_filed": "2025-09-25",
+        "time_filed": "20:20:04",
+        "date_display": "Sep 25, 2025",
+        "description": "Second Amended Consolidated Class Action Complaint against Google LLC. Filed by Consolidated Plaintiffs. (Attachments: # 1 Exhibit A - Plaintiff Copyright Registrations, # 2 Exhibit B - Plaintiff Images in LAION-400M, # 3 Second Amended Consolidated Class Action Complaint (Redline))(Weaver, Lesley) (Filed on 9/25/2025) (Entered: 09/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.234.0.pdf"
+      },
+      {
+        "entry_number": 233,
+        "date_filed": "2025-09-22",
+        "time_filed": "19:03:23",
+        "date_display": "Sep 22, 2025",
+        "description": "NOTICE filed by Google LLC of Filing Updated Redacted Copies of Sealed Documents re ECF Nos. 205-2 and 207-2 Pursuant to ECF No. 232 re 232 Order on Discovery Letter Brief, Order on Administrative Motion to Consider Whether Another Partys Material Should Be Sealed (Attachments: # 1 Exhibit 1, # 2 Exhibit 2)(Sampson, Paul) (Filed on 9/22/2025) (Entered: 09/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.233.0.pdf"
+      },
+      {
+        "entry_number": 232,
+        "date_filed": "2025-09-18",
+        "time_filed": "15:40:57",
+        "date_display": "Sep 18, 2025",
+        "description": "ORDER Granting in Part and Denying in Part 205, 207 Administrative Motion to Consider Whether Another Party's Materials Should be Sealed and Denying 209 Administrative Motion to Consider Whether Another Party's Materials Should be Sealed; ORDER Directing Summary Chart re Dkts. 145, 146, 150, 160, 168 . (svklc2, COURT STAFF) (Filed on 9/18/2025) (Entered: 09/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.232.0.pdf"
+      },
+      {
+        "entry_number": 231,
+        "date_filed": "2025-09-18",
+        "time_filed": "13:12:10",
+        "date_display": "Sep 18, 2025",
+        "description": "ORDER granting in part 223 Plaintiffs' Motion to Amend Case Schedule. Signed by Judge Eumi K. Lee.(lrt, COURT STAFF) (Filed on 9/18/2025) (Entered: 09/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.231.0.pdf"
+      },
+      {
+        "entry_number": 230,
+        "date_filed": "2025-09-16",
+        "time_filed": "16:41:49",
+        "date_display": "Sep 16, 2025",
+        "description": "Declaration of Paul J. Sampson in Support of 229 Opposition/Response to Motion filed byGoogle LLC. (Related document(s) 229 ) (Sampson, Paul) (Filed on 9/16/2025) (Entered: 09/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 229,
+        "date_filed": "2025-09-16",
+        "time_filed": "16:39:35",
+        "date_display": "Sep 16, 2025",
+        "description": "OPPOSITION/RESPONSE (re 223 MOTION to Amend Case Schedule (Redacted) ) filed byGoogle LLC. (Sampson, Paul) (Filed on 9/16/2025) (Entered: 09/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.229.0.pdf"
+      },
+      {
+        "entry_number": 227,
+        "date_filed": "2025-09-15",
+        "time_filed": "11:00:36",
+        "date_display": "Sep 15, 2025",
+        "description": "Transcript of Proceedings held on 09/11/25, before Judge Susan van Keulen. Court Reporter/Transcriber Echo Reporting, Inc., telephone number echoreporting@yahoo.com. Tape Number: 2:30 - 4:24. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 219 Transcript Order, 218 Transcript Order, ) Redaction Request due 10/6/2025. Redacted Transcript Deadline set for 10/16/2025. Release of Transcript Restriction set for 12/15/2025. (Related documents(s) 219, 218 ) (Jauregui, Tara) (Filed on 9/15/2025) (Entered: 09/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 226,
+        "date_filed": "2025-09-13",
+        "time_filed": "",
+        "date_display": "Sep 13, 2025",
+        "description": "ORDER: Plaintiffs' 225 Motion to Shorten Time is GRANTED in part. Google shall file its opposition to Plaintiffs' 223 Motion to Amend Case Schedule by 9/16/2025 at 5:00 p.m. Plaintiffs shall not file a reply brief. After briefing concludes, the Court will determine whether to set a hearing. Entered by Judge Eumi K. Lee on 9/13/2025. (This is a text-only entry generated by the court. There is no document associated with this entry.) (ekllc2, COURT STAFF) (Filed on 9/13/2025) (Entered: 09/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-13",
+        "time_filed": "15:01:40",
+        "date_display": "Sep 13, 2025",
+        "description": "Order on Motion to Shorten Time",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 225,
+        "date_filed": "2025-09-12",
+        "time_filed": "23:09:28",
+        "date_display": "Sep 12, 2025",
+        "description": "MOTION to Shorten Time and Expedite Hearing Regarding Plaintiffs' Motion to Amend Case Schedule filed by Consolidated Plaintiffs. (Attachments: # 1 Declaration of Stephen J. Teti, # 2 Proposed Order)(Weaver, Lesley) (Filed on 9/12/2025) (Entered: 09/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.225.0.pdf"
+      },
+      {
+        "entry_number": 224,
+        "date_filed": "2025-09-12",
+        "time_filed": "23:06:34",
+        "date_display": "Sep 12, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Plaintiffs' Motion to Amend Case Schedule filed by Consolidated Plaintiffs. (Attachments: # 1 Proposed Order, # 2 Plaintiffs' Motion to Amend Case Schedule (Sealed), # 3 Declaration of Stephen J. Teti (Sealed), # 4 Exhibit 1 - Declaration of Meredith McCarron (Sealed))(Weaver, Lesley) (Filed on 9/12/2025) (Entered: 09/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.224.0.pdf"
+      },
+      {
+        "entry_number": 223,
+        "date_filed": "2025-09-12",
+        "time_filed": "23:01:34",
+        "date_display": "Sep 12, 2025",
+        "description": "MOTION to Amend Case Schedule (Redacted) filed by Consolidated Plaintiffs. Motion Hearing set for 11/5/2025 10:00 AM in San Jose, Courtroom 7, 4th Floor before Judge Eumi K. Lee. Responses due by 9/26/2025. Replies due by 10/3/2025. (Attachments: # 1 Declaration of Stephen J. Teti (Redacted), # 2 Exhibit 1 - Declaration of Meredith McCarron (Redacted), # 3 Exhibit 2 - Declaration of Ayyub Ibrahim, # 4 Proposed Order)(Weaver, Lesley) (Filed on 9/12/2025) (Entered: 09/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.223.0.pdf"
+      },
+      {
+        "entry_number": 222,
+        "date_filed": "2025-09-12",
+        "time_filed": "18:04:47",
+        "date_display": "Sep 12, 2025",
+        "description": "STIPULATION re 221 Order on Discovery Letter Brief,, Order on Motion for Discovery filed by Google LLC. (Tuttle, Eric) (Filed on 9/12/2025) (Entered: 09/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.222.0_1.pdf"
+      },
+      {
+        "entry_number": 221,
+        "date_filed": "2025-09-12",
+        "time_filed": "14:43:43",
+        "date_display": "Sep 12, 2025",
+        "description": "ORDER re 204, 206 and 208 Discovery Disputes. Signed by Judge Susan van Keulen on September 12, 2025. (svklc2, COURT STAFF) (Filed on 9/12/2025) (Entered: 09/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.221.0.pdf"
+      },
+      {
+        "entry_number": 220,
+        "date_filed": "2025-09-11",
+        "time_filed": "19:07:33",
+        "date_display": "Sep 11, 2025",
+        "description": "OPPOSITION/RESPONSE (re 205 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed, 207 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Rule 30(b)(6) Deposition Timing & Scope ) filed byGoogle LLC. (Attachments: # 1 Declaration of Jeremiah R. Torres, # 2 Proposed Order)(Sampson, Paul) (Filed on 9/11/2025) (Entered: 09/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 219,
+        "date_filed": "2025-09-11",
+        "time_filed": "17:45:05",
+        "date_display": "Sep 11, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on September 11, 2025 before Magistrate Judge Susan van Keulen by Google LLC, for Recorded Proceeding - San Jose. (Huang, Qifan) (Filed on 9/11/2025) Transcriber - Tara Jauregui, email: echoreporting@yahoo.com. Modified on 9/11/2025 (lmh, COURT STAFF). (Entered: 09/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 218,
+        "date_filed": "2025-09-11",
+        "time_filed": "16:43:59",
+        "date_display": "Sep 11, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on September 11, 2025 before Magistrate Judge Susan van Keulen by Consolidated Plaintiffs, for Recorded Proceeding - San Jose. (Weaver, Lesley) (Filed on 9/11/2025) Transcriber - Tara Jauregui, email: echoreporting@yahoo.com Modified on 9/11/2025 (lmh, COURT STAFF). (Entered: 09/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 217,
+        "date_filed": "2025-09-11",
+        "time_filed": "",
+        "date_display": "Sep 11, 2025",
+        "description": "Minute Entry for proceedings held before Magistrate Judge Susan van Keulen: Discovery Hearing held on 9/11/2025.Court to issue summary order. Plaintiff Attorney: Joseph Saveri, Lesley Weaver, Gregory Mullens, Stephen Teti, Yana Hart, Mark Richards, and Christopher Young. Defendant Attorney: Eric Tuttle and Paul Sampson. Zoom Recording: 2:30 PM - 4:24 PM. (Total time: 1 hour and 54 minutes). Transcriber - Tara Jauregui, email: echoreporting@yahoo.com. (This is a text-only entry generated by the court. There is no document associated with this entry.) (aea2, COURT STAFF) (Date Filed: 9/11/2025) Modified on 9/11/2025 (lmh, COURT STAFF). (Entered: 09/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 216,
+        "date_filed": "2025-09-11",
+        "time_filed": "12:20:12",
+        "date_display": "Sep 11, 2025",
+        "description": "ORDER GRANTING 95 MOTION TO DISMISS IN PART. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 9/11/2025) (Entered: 09/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.216.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-11",
+        "time_filed": "16:36:13",
+        "date_display": "Sep 11, 2025",
+        "description": "Discovery Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 215,
+        "date_filed": "2025-09-10",
+        "time_filed": "15:48:05",
+        "date_display": "Sep 10, 2025",
+        "description": "ORDER RE BAR ADMISSION TO PRACTICE (Alexander Zeng). Signed by Judge Eumi K. Lee on 9/10/2025. (lrt, COURT STAFF) (Filed on 9/10/2025) (Entered: 09/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.215.0.pdf"
+      },
+      {
+        "entry_number": 214,
+        "date_filed": "2025-09-10",
+        "time_filed": "14:55:16",
+        "date_display": "Sep 10, 2025",
+        "description": "Response re 208 MOTION for Discovery - to Enforce Discovery Order and to Appoint a Special Master Pursuant to Rule 53 (Redacted), 211 Order on Motion to Shorten Time,,, by Google LLC, Alphabet Inc.. (Sampson, Paul) (Filed on 9/10/2025) (Entered: 09/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 213,
+        "date_filed": "2025-09-10",
+        "time_filed": "",
+        "date_display": "Sep 10, 2025",
+        "description": "NOTICE of Appearance filed by Alexander Zeng on behalf of Jill Leovy, Jingna Zhang, Sarah Andersen, Hope Larson, Jessica Fink, Kirsten Hubbard, Burl Barer, Mike Lemos, Connie McLennan, Steve Almond (Zeng, Alexander) (Filed on 9/10/2025) (Entered: 09/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-10",
+        "time_filed": "14:30:18",
+        "date_display": "Sep 10, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 212,
+        "date_filed": "2025-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2025",
+        "description": "CLERK'S NOTICE SETTING DISCOVERY HEARING. Discovery Hearing set for 9/11/2025 02:30 PM - Videoconference Only.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/svk Court Appearances: Advanced notice is required of counsel or parties who wish to be identified by the court as making an appearance or will be participating in the argument at the hearing. A list of names and emails must be sent to the CRD at svkcrd@cand.uscourts.gov no later than September 10, 2025 at 4:00 PM PST.General Order 58. Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing, recording, and rebroadcasting of court proceedings, including screenshots or other visual copying of a hearing, is absolutely prohibited.Zoom Guidance and Setup: https://www.cand.uscourts.gov/zoom/. (This is…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 211,
+        "date_filed": "2025-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2025",
+        "description": "ORDER by Judge Susan van Keulen on September 9, 2025. The Court has received Plaintiffs' 208 Motion to Enforce Discovery Order and Appoint a Special Master and accompanying 210 Motion to Shorten Time and Expedite Hearing. The Court hereby ORDERS the Parties to appear for a hearing on September 11, 2025 at 2:30pm via videoconference to address the status of Defendant's compliance with this Court's June 18, 2025 Order (Dkt. 155 ). The Court will not take up Plaintiffs' request for a special master at this time. Defendant may, but is not required, to file a response not to exceed 5 pages addressing the status of its compliance no later than 3:00pm on September 10, 2025. No other responses to Dkts. 208 or 210 shall be accepted. (This is a text-only entry generated by the court. There is no document associated with this entry.) (svklc2, COURT STAFF) (Filed on 9/9/2025) (Entered: 09/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 210,
+        "date_filed": "2025-09-09",
+        "time_filed": "00:08:37",
+        "date_display": "Sep 9, 2025",
+        "description": "MOTION to Shorten Time and Expedite Hearing filed by Consolidated Plaintiffs. (Attachments: # 1 Declaration of Stephen J. Teti, # 2 Proposed Order)(Weaver, Lesley) (Filed on 9/9/2025) (Entered: 09/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 209,
+        "date_filed": "2025-09-09",
+        "time_filed": "00:05:16",
+        "date_display": "Sep 9, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Plaintiffs' Motion to Enforce Discovery Order and to Appoint a Special Master Pursuant to Rule 53 filed by Consolidated Plaintiffs. (Attachments: # 1 Proposed Order, # 2 Motion to Enforce Discovery Order and to Appoint a Special Master Pursuant to Rule 53 (Sealed), # 3 Declaration of Stephen J. Teti (Sealed), # 4 Exhibit 1 - Declaration of Meredith McCarron (Sealed))(Weaver, Lesley) (Filed on 9/9/2025) (Entered: 09/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-09",
+        "time_filed": "15:13:52",
+        "date_display": "Sep 9, 2025",
+        "description": "Order on Motion to Shorten Time",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-09",
+        "time_filed": "15:45:38",
+        "date_display": "Sep 9, 2025",
+        "description": "Clerk's Notice AND ~Util - In-Courtroom Zoom Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 208,
+        "date_filed": "2025-09-08",
+        "time_filed": "23:59:18",
+        "date_display": "Sep 8, 2025",
+        "description": "MOTION for Discovery - to Enforce Discovery Order and to Appoint a Special Master Pursuant to Rule 53 (Redacted) filed by Consolidated Plaintiffs. Motion Hearing set for 10/14/2025 10:00 AM in San Jose, Courtroom 6, 4th Floor before Magistrate Judge Susan van Keulen. Responses due by 9/22/2025. Replies due by 9/29/2025. (Attachments: # 1 Declaration of Stephen J. Teti (Redacted), # 2 Exhibit 1 - Declaration of Meredith McCarron (Redacted), # 3 Exhibit 2 - Declaration of Ayyub Ibrahim, # 4 Proposed Order)(Weaver, Lesley) (Filed on 9/8/2025) (Entered: 09/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.208.0.pdf"
+      },
+      {
+        "entry_number": 207,
+        "date_filed": "2025-09-05",
+        "time_filed": "22:25:41",
+        "date_display": "Sep 5, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed Regarding Rule 30(b)(6) Deposition Timing & Scope filed by Jill Leovy, Jingna Zhang, Sarah Andersen, Hope Larson, Jessica Fink, Kirsten Hubbard, Burl Barer, Mike Lemos, Connie McLennan, Steve Almond. (Attachments: # 1 Proposed Order, # 2 Exhibit 1 - Joint Letter Brief Re Rule 30(b)(6) Deposition Timing & Scope, # 3 Exhibit A - Notice of 30(b)(6) Deposition, # 4 Exhibit B - Google's Responses and Objections to Notice of 30(b)(6) Deposition, # 5 Exhibit C - Joint Chart re Amended Topic 4 Testimony, # 6 Exhibit D - Excerpts of Liechty Deposition Transcript)(Saveri, Joseph) (Filed on 9/5/2025) (Entered: 09/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 206,
+        "date_filed": "2025-09-05",
+        "time_filed": "22:11:12",
+        "date_display": "Sep 5, 2025",
+        "description": "Joint Discovery Letter Brief[Redacted] filed by Jill Leovy, Jingna Zhang, Sarah Andersen, Hope Larson, Jessica Fink, Kirsten Hubbard, Burl Barer, Mike Lemos, Connie McLennan, Steve Almond. (Attachments: # 1 Exhibit A - Notice of 30(b)6) Deposition [Filed Entirely Under Seal], # 2 Exhibit B - Google's Responses and Objections to Notice of 30(b)(6) Deposition [Filed Entirely Under Seal], # 3 Exhibit C - Joint Chart re Amended Topic 4 Testimony [Redacted], # 4 Exhibit D - Excerpts of Liechty Depo Transcript [Filed Entirely Under Seal], # 5 Proposed Order - Plaintiffs, # 6 Proposed Order - Defendants)(Saveri, Joseph) (Filed on 9/5/2025) (Entered: 09/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.206.0.pdf"
+      },
+      {
+        "entry_number": 205,
+        "date_filed": "2025-09-04",
+        "time_filed": "22:14:57",
+        "date_display": "Sep 4, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Jill Leovy, Jingna Zhang, Hope Larson, Jessica Fink, Kirsten Hubbard, Burl Barer, Mike Lemos, Connie McLennan, Steve Almond. (Attachments: # 1 Proposed Order GRANTING PLAINTIFFS ADMINISTRATIVE MOTION TO CONSIDER WHETHER ANOTHER PARTYS MATERIAL SHOULD BE FILED UNDER SEAL, # 2 Exhibit A - Filed Under Seal - Plaintiffs Letter Brief Re: Certain Requests for Admission, # 3 Exhibit B - Filed Under Seal - Google LLCS Responses and Objections to Plaintiffs Second Set of Requests for Admission)(Saveri, Joseph) (Filed on 9/4/2025) (Entered: 09/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 204,
+        "date_filed": "2025-09-04",
+        "time_filed": "22:07:42",
+        "date_display": "Sep 4, 2025",
+        "description": "Joint Discovery Letter Brief filed by Jill Leovy, Jingna Zhang, Sarah Andersen, Hope Larson, Jessica Fink, Kirsten Hubbard, Burl Barer, Mike Lemos, Connie McLennan, Steve Almond. (Attachments: # 1 Exhibit 1: Joint Chart Regarding Certain Requests for Admission, # 2 Exhibit 2: Plaintiffs Second Set of Requests for Admission to Defendant Google LLC, # 3 Exhibit 3: Google LLCS Responses and Objections to Plaintiffs Second Set of Requests for Admission EXHIBIT 3 [ENTIRE EXHIBIT FILED UNDER SEAL], # 4 Proposed Order GRANTING PLAINTIFFS MOTION TO COMPEL RESPONSES TO CERTAIN REQUESTS FOR ADMISSION, # 5 Proposed Order DENYING PLAINTIFFS MOTION TO COMPEL RE CERTAIN REQUESTS FOR ADMISSION)(Saveri, Joseph) (Filed on 9/4/2025) (Entered: 09/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 203,
+        "date_filed": "2025-09-02",
+        "time_filed": "17:21:37",
+        "date_display": "Sep 2, 2025",
+        "description": "ORDER granting 202 Motion for Pro Hac Vice as to attorney Madison J. Welsh. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 9/2/2025) (Entered: 09/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 202,
+        "date_filed": "2025-09-02",
+        "time_filed": "13:01:03",
+        "date_display": "Sep 2, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice of Madison Welsh for Defendants Google LLC and Alphabet Inc. ( Filing fee $ 328, receipt number ACANDC-21077161.) filed by Google LLC, Alphabet Inc.. (Attachments: # 1 Certificate of Google Standing)(Welsh, Madison) (Filed on 9/2/2025) (Entered: 09/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 201,
+        "date_filed": "2025-09-02",
+        "time_filed": "",
+        "date_display": "Sep 2, 2025",
+        "description": "NOTICE of Appearance filed by Kelly Marie Knoll on behalf of Google LLC, Alphabet Inc. (Knoll, Kelly) (Filed on 9/2/2025) (Entered: 09/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-02",
+        "time_filed": "12:42:40",
+        "date_display": "Sep 2, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 200,
+        "date_filed": "2025-08-20",
+        "time_filed": "",
+        "date_display": "Aug 20, 2025",
+        "description": "NOTICE of Appearance filed by Louis Andrew Kessler on behalf of Jill Leovy, Jingna Zhang, Sarah Andersen, Hope Larson, Jessica Fink, Kirsten Hubbard, Burl Barer, Mike Lemos, Connie McLennan, Steve Almond (Kessler, Louis) (Filed on 8/20/2025) (Entered: 08/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-20",
+        "time_filed": "15:08:14",
+        "date_display": "Aug 20, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 199,
+        "date_filed": "2025-08-15",
+        "time_filed": "15:33:24",
+        "date_display": "Aug 15, 2025",
+        "description": "ORDER granting **AS MODIFIED** 198 Stipulation Regarding Amended Case Schedule. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 8/15/2025) (Entered: 08/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.199.0.pdf"
+      },
+      {
+        "entry_number": 198,
+        "date_filed": "2025-08-13",
+        "time_filed": "17:59:53",
+        "date_display": "Aug 13, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Amended Case Schedule filed by Consolidated Plaintiffs. (Weaver, Lesley) (Filed on 8/13/2025) (Entered: 08/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 197,
+        "date_filed": "2025-08-05",
+        "time_filed": "11:12:05",
+        "date_display": "Aug 5, 2025",
+        "description": "ORDER AMENDING CASE SCHEDULE. Signed by Judge Eumi K. Lee. (lrt, COURT STAFF) (Filed on 8/5/2025) (Entered: 08/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415223/gov.uscourts.cand.415223.197.0.pdf"
+      },
+      {
+        "entry_number": 196,
+        "date_filed": "2025-08-04",
+        "time_filed": "18:04:19",
+        "date_display": "Aug 4, 2025",
+        "description": "OPPOSITION/RESPONSE (re 194 ADMINISTRATIVE MOTION for Leave to File Response to Defendants' Objection to New Evidence in Plaintiffs' Reply in Support of Motion to Amend Case Schedule ) filed byGoogle LLC, Alphabet Inc.. (Sampson, Paul) (Filed on 8/4/2025) (Entered: 08/04/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 194,
+        "date_filed": "2025-07-30",
+        "time_filed": "20:26:49",
+        "date_display": "Jul 30, 2025",
+        "description": "ADMINISTRATIVE MOTION for Leave to File Response to Defendants' Objection to New Evidence in Plaintiffs' Reply in Support of Motion to Amend Case Schedule filed by Consolidated Plaintiffs. Responses due by 8/4/2025. (Attachments: # 1 Proposed Order)(Weaver, Lesley) (Filed on 7/30/2025) (Entered: 07/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=67599029&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=10"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=67599029&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=16"
   },
   "claims_administrator": null,
   "coverage": [],
