@@ -15,12 +15,32 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
-    "date_last_filing": "2026-08-05",
-    "fetched_at": "2026-08-07T22:57:52.876648+00:00",
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-07T23:50:32.668776+00:00",
     "as_of": "Aug 7, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 58,
+        "date_filed": "2026-08-07",
+        "time_filed": "17:54:46",
+        "date_display": "Aug 7, 2026",
+        "description": "Order AND ~Util - Set Deadlines",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 57,
+        "date_filed": "2026-08-07",
+        "time_filed": "17:50:04",
+        "date_display": "Aug 7, 2026",
+        "description": "Order AND ~Util - Set Deadlines",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 56,
         "date_filed": "2026-08-05",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.56.0.pdf"
-      },
-      {
-        "entry_number": 55,
-        "date_filed": "2026-08-05",
-        "time_filed": "17:23:30",
-        "date_display": "Aug 5, 2026",
-        "description": "Letter",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.659697/gov.uscourts.nysd.659697.55.0.pdf"
-      },
-      {
-        "entry_number": 54,
-        "date_filed": "2026-07-24",
-        "time_filed": "22:12:03",
-        "date_display": "Jul 24, 2026",
-        "description": "Summons Returned Executed",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 58,
+        "date_filed": "2026-08-07",
+        "time_filed": "17:54:46",
+        "date_display": "Aug 7, 2026",
+        "description": "Order AND ~Util - Set Deadlines",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 57,
+        "date_filed": "2026-08-07",
+        "time_filed": "17:50:04",
+        "date_display": "Aug 7, 2026",
+        "description": "Order AND ~Util - Set Deadlines",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 56,
         "date_filed": "2026-08-05",
