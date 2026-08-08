@@ -19,5 +19,42 @@
     "entries": []
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Third Circuit Hears Oral Argument in Ross v. Reuters AI Training Copyright Case",
+      "url": "https://www.bakerbotts.com/thought-leadership/publications/2026/july/third-circuit-hears-oral-argument",
+      "source": "Baker Botts",
+      "date": "2026-07-01",
+      "summary": "Baker Botts published a detailed analysis of the June 11 Third Circuit oral argument in Thomson Reuters v. Ross Intelligence, describing it as the first federal appellate case to squarely address whether using copyrighted works to train an AI model qualifies as fair use, with the panel's decision still pending."
+    },
+    {
+      "headline": "Third Circuit Poised to Decide Whether Training an AI Model on Copyrighted Content Is Fair Use",
+      "url": "https://www.stevenslee.com/appellate/third-circuit-poised-to-decide-whether-training-an-ai-model-on-copyrighted-content-is-fair-use/",
+      "source": "Stevens & Lee",
+      "date": "2026-06-29",
+      "summary": "Stevens & Lee's appellate team summarizes the June 11 argument and the competing positions: ROSS argued its non-generative training use was transformative, while Thomson Reuters contended the copying was systematic, commercially harmful, and made in bad faith after a license was refused. The Third Circuit's forthcoming ruling is expected to influence AI training models broadly."
+    },
+    {
+      "headline": "IP Hot Topic: Third Circuit Probes Fair Use in Thomson Reuters v. Ross Intelligence",
+      "url": "https://www.sternekessler.com/news-insights/client-alerts/ip-hot-topic-third-circuit-probes-fair-use-in-thomson-reuters-v-ross-intelligence/",
+      "source": "Sterne Kessler",
+      "date": "2026-06-24",
+      "summary": "Sterne Kessler's client alert analyzes the June 11 oral argument, noting the panel pressed ROSS to articulate concretely what made its product transformative and appeared skeptical that a system serving the same end function as Westlaw could satisfy fair use. ROSS leaned heavily on the Third Circuit's recent ASTM v. UpCodes ruling."
+    },
+    {
+      "headline": "At 3rd Circuit, Judges Press ROSS and Thomson Reuters on Fair Use, AI Training and Market Harm",
+      "url": "https://www.lawnext.com/2026/06/at-3rd-circuit-judges-press-ross-and-thomson-reuters-on-fair-use-ai-training-and-market-harm.html",
+      "source": "LawNext (LawSites)",
+      "date": "2026-06-23",
+      "summary": "Bob Ambrogi reports that a three-judge Third Circuit panel—Judges Restrepo, Montgomery-Reeves, and Bove—focused its June 11 questioning on whether ROSS's use was transformative and whether it harmed an actual or potential market for Thomson Reuters' works. The court also released the hearing transcript that week."
+    },
+    {
+      "headline": "First AI Copyright Appeal's Reach Hinges on Market Impact Issue",
+      "url": "https://law.fsu.edu/sites/default/files/2026-06/First%20AI%20Copyright%20Appeal%E2%80%99s%20Reach%20Hinges%20on%20Market%20Impact%20Issue.pdf",
+      "source": "Bloomberg Law",
+      "date": "2026-06-11",
+      "summary": "Bloomberg Law reporter Kyle Jahner covers the Third Circuit oral argument in Thomson Reuters v. Ross Intelligence, focusing on how the case's outcome hinges on the market-impact (fourth fair-use factor) question. The piece notes the case differs from broader generative-AI copyright suits against Anthropic, Meta, and OpenAI."
+    }
+  ],
+  "events": []
 }
