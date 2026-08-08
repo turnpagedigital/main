@@ -537,5 +537,65 @@
     "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=73643729&order_by=-date_filed&fields=entry_number,date_filed,time_filed,description,recap_documents"
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "New Chapter 11 Bankruptcy Filing — CashCall, Inc.",
+      "url": "https://www.petition11.com/p/cashcall-chapter-11-bankruptcy-filing",
+      "source": "Petition (PETITION LLC)",
+      "date": "2026-08-02",
+      "summary": "Petition's in-depth analysis of the CashCall Chapter 11 filing covers the debtor's unusual posture as a fully non-operating entity seeking insider DIP financing, the first-day hearing on July 24 at which Judge Marum limited interim borrowings to $300,000 over UST and CFPB objections, and the pending fraudulent-transfer claim against sole shareholder J. Paul Reddam stemming from an October 2021 distribution."
+    },
+    {
+      "headline": "Catching Up With New Bankruptcy Case Action",
+      "url": "https://www.law360.com/bankruptcy-authority/articles/2506655/catching-up-with-new-bankruptcy-case-action",
+      "source": "Law360",
+      "date": "2026-07-28",
+      "summary": "Law360's weekly roundup notes that subprime lender CashCall entered Chapter 11 after facing more than $400 million in legal judgments, alongside other notable new filings including a century-old alcohol distributor and a Bitcoin miner. CashCall is highlighted as one of several significant new bankruptcy cases filed that week."
+    },
+    {
+      "headline": "CashCall Gets Interim DIP Cash After Lender Eases Terms",
+      "url": "https://www.law360.com/bankruptcy-authority/articles/2505568/cashcall-gets-interim-dip-cash-after-lender-eases-terms",
+      "source": "Law360",
+      "date": "2026-07-25",
+      "summary": "A California bankruptcy judge approved CashCall's access to a roughly $4 million Chapter 11 financing package after the insider lender — owned by the debtor's CEO — agreed to remove a lien on avoidance actions, partially addressing concerns raised by the U.S. Trustee and the CFPB. The court limited interim borrowings to $300,000 and scheduled a second-day hearing for August 26, 2026."
+    },
+    {
+      "headline": "Subprime Lender CashCall Files for Bankruptcy After Losing Suits",
+      "url": "https://news.bloomberglaw.com/bankruptcy-law/subprime-lender-cashcall-files-for-bankruptcy-after-losing-suits",
+      "source": "Bloomberg Law",
+      "date": "2026-07-21",
+      "summary": "CashCall Inc., a personal loan lender targeting consumers with poor credit, filed for Chapter 11 in California after losing legal battles over its tribal-lending model, entering bankruptcy with $1M–$10M in assets and two judgments totaling $245M and $157M. The company employed more than 1,100 people at its peak and terminated its remaining employees in June 2026."
+    },
+    {
+      "headline": "Subprime Lender CashCall Hits Ch. 11 With Over $400M In Debt",
+      "url": "https://www.law360.com/bankruptcy-authority/articles/2504018/subprime-lender-cashcall-hits-ch-11-with-over-400m-in-debt",
+      "source": "Law360",
+      "date": "2026-07-21",
+      "summary": "Law360 reports that CashCall Inc., a subprime lender that once charged interest rates exceeding 130%, filed for Chapter 11 protection in a California bankruptcy court facing legal judgments totaling more than $400 million. The filing was precipitated by the exhaustion of the company's appellate options in two long-running matters."
+    },
+    {
+      "headline": "CashCall Files for Ch. 11 Bankruptcy in Southern California",
+      "url": "https://news.bloomberglaw.com/bankruptcy-law/cashcall-files-for-ch-11-bankruptcy-in-southern-california",
+      "source": "Bloomberg Law",
+      "date": "2026-07-20",
+      "summary": "Bloomberg Law's breaking-news alert on CashCall Inc.'s Chapter 11 filing in the Southern District of California, with estimated total liabilities of $100M–$500M and total assets of $1M–$10M."
+    },
+    {
+      "headline": "CashCall Asks Judge to Overturn $134 Million Judgment",
+      "url": "https://www.americanbanker.com/news/cashcall-asks-judge-to-overturn-134-million-judgment",
+      "source": "American Banker",
+      "date": "2026-06-30",
+      "summary": "CashCall sought to vacate a $134 million CFPB judgment, claiming the bureau acted in 'bad faith' by abandoning a settlement agreement, and argued that the Trump administration's revised enforcement posture — which led to dismissals against other companies — provided no policy basis for distinguishing its case. The motion cited four recent Supreme Court decisions as further undermining the legal foundation for the CFPB's enforcement action."
+    }
+  ],
+  "events": [
+    {
+      "title": "CashCall Ch. 11 — Final DIP / Second Day Hearing (Judge Marum)",
+      "date": "2026-08-26",
+      "time": "11:00 AM CT",
+      "kind": "Deadline",
+      "url": "https://www.petition11.com/p/cashcall-chapter-11-bankruptcy-filing",
+      "source": "U.S. Bankruptcy Court, Southern District of California (via Petition LLC docket reporting)"
+    }
+  ]
 }

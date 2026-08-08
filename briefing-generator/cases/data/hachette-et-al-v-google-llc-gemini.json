@@ -436,5 +436,28 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "Google Faces Another AI Copyright Suit By Publishers",
+      "url": "https://www.law360.com/articles/2500754/google-faces-another-ai-copyright-suit-by-publishers",
+      "source": "Law360",
+      "date": "2026-07-14",
+      "summary": "Law360 reports that book publishers Hachette, Cengage, and Elsevier, along with novelist Scott Turow, filed a copyright infringement suit in S.D.N.Y. alleging Google used their works to train its Gemini AI models, following an earlier suit the same group brought against Meta."
+    },
+    {
+      "headline": "Publishers, Authors File Class Action Lawsuit Against Google",
+      "url": "https://www.publishersweekly.com/pw/by-topic/digital/copyright/article/100820-new-lawsuit-aims-to-stop-google-from-copyright-infringement-in-creating-ai-models.html",
+      "source": "Publishers Weekly",
+      "date": "2026-07-14",
+      "summary": "Publishers Weekly reports that Hachette, Cengage, Elsevier, and Scott Turow filed a proposed class action seeking to block Google from alleged copyright infringement of millions of texts used to develop Gemini; the suit follows the plaintiffs' withdrawal from the 2023 In re Google Generative AI Copyright Litigation in California to preserve broader claims and avoid statute-of-limitations issues."
+    },
+    {
+      "headline": "Google faces another AI training lawsuit from major publishers",
+      "url": "https://techcrunch.com/2026/07/14/google-faces-another-ai-training-lawsuit-from-major-publishers/",
+      "source": "TechCrunch",
+      "date": "2026-07-14",
+      "summary": "TechCrunch reports that Hachette, Cengage, Elsevier, Scott Turow, and S.C.R.I.B.E. filed a class action against Google alleging it used copyrighted works to train Gemini and intentionally removed or altered copyright management information to conceal the practice."
+    }
+  ],
+  "events": []
 }
