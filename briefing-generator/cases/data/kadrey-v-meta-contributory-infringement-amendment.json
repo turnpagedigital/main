@@ -16,7 +16,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-08T20:53:44.716784+00:00",
+    "fetched_at": "2026-08-08T22:52:48.016472+00:00",
     "as_of": "Aug 8, 2026",
     "backfilled": false,
     "new_in_72h": 4,
@@ -1232,9 +1232,1179 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-26",
+        "time_filed": "",
+        "date_display": "Mar 26, 2026",
+        "description": "Set Deadlines/Hearings: Opening Reports due by 9/18/2026. Rebuttal Reports due by 10/16/2026. Reply Expert Reports due by 10/30/2026. Close of Expert Discovery due by 11/20/2026. Deadline for Summary Judgment Brief 1 (Plaintiffs Opening Brief) due by 12/11/2026. Deadline for Summary Judgment Brief 2 (Defendants Opening Brief & Opposition) due by 1/11/2027. Deadline for Summary Judgment Brief 3 (Plaintiffs Opposition & Reply) due by 1/29/2027. Deadline for Summary Judgment Brief 4 (Defendants Reply) due by 2/12/2027. Dispositive Motion Hearing set for 2/25/2027 at 10:00 AM in San Francisco, Courtroom 04, 17th Floor before Judge Vince Chhabria. (bxs, COURT STAFF) (Filed on 3/26/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-03-26",
+        "time_filed": "11:10:14",
+        "date_display": "Mar 26, 2026",
+        "description": "Set Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 701,
+        "date_filed": "2026-03-25",
+        "time_filed": "13:43:44",
+        "date_display": "Mar 25, 2026",
+        "description": "Discovery Order re: 695 Joint Discovery Letter Brief. Signed by Judge Thomas S. Hixson on 3/25/2026. (tshlc1, COURT STAFF) (Filed on 3/25/2026) (Entered: 03/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.701.0_2.pdf"
+      },
+      {
+        "entry_number": 700,
+        "date_filed": "2026-03-25",
+        "time_filed": "10:19:50",
+        "date_display": "Mar 25, 2026",
+        "description": "Order Granting 658 Motion for Leave to File Fourth Amended Complaint; Denying 668 Motion for Class Discovery. Signed by Judge Vince Chhabria on 3/25/26. (vclc2, COURT STAFF) (Filed on 3/25/2026) (Entered: 03/25/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.700.0_1.pdf"
+      },
+      {
+        "entry_number": 699,
+        "date_filed": "2026-03-24",
+        "time_filed": "11:21:43",
+        "date_display": "Mar 24, 2026",
+        "description": "Administrative Motion to File Under Seal filed by Meta Platforms, Inc.. (Attachments: # 1 Declaration Michelle Woodhouse, # 2 Proposed Order, # 3 Exhibit 1)(Morton, Phillip) (Filed on 3/24/2026) (Entered: 03/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.699.0.pdf"
+      },
+      {
+        "entry_number": 698,
+        "date_filed": "2026-03-24",
+        "time_filed": "11:17:35",
+        "date_display": "Mar 24, 2026",
+        "description": "RESPONSE re 697 Order by Meta Platforms, Inc.. (Attachments: # 1 Exhibit D)(Morton, Phillip) (Filed on 3/24/2026) (Entered: 03/24/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.698.0.pdf"
+      },
+      {
+        "entry_number": 697,
+        "date_filed": "2026-03-23",
+        "time_filed": "16:53:47",
+        "date_display": "Mar 23, 2026",
+        "description": "DISCOVERY ORDER re 695 Joint Discovery Letter Brief. The Court ORDERS Meta to file the revised Exhibit D. Signed by Judge Thomas S. Hixson on 3/23/2026. (tshlc1, COURT STAFF) (Filed on 3/23/2026) (Entered: 03/23/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.697.0.pdf"
+      },
+      {
+        "entry_number": 696,
+        "date_filed": "2026-03-20",
+        "time_filed": "14:14:26",
+        "date_display": "Mar 20, 2026",
+        "description": "Administrative Motion to File Under Seal DEFENDANT META PLATFORMS, INC.S ADMINISTRATIVE MOTION TO FILE UNDER SEAL RE: JOINT LETTER BRIEF filed by Meta Platforms, Inc.. (Attachments: # 1 Declaration Michelle Woodhouse, # 2 Proposed Order, # 3 Exhibit 1, # 4 Exhibit 2, # 5 Exhibit 3, # 6 Exhibit 4, # 7 Exhibit 5)(Morton, Phillip) (Filed on 3/20/2026) (Entered: 03/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.696.0.pdf"
+      },
+      {
+        "entry_number": 695,
+        "date_filed": "2026-03-20",
+        "time_filed": "14:04:13",
+        "date_display": "Mar 20, 2026",
+        "description": "Joint Discovery Letter Briefre In Camera Review filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Appendix A, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C, # 5 Exhibit D, # 6 Exhibit E, # 7 Exhibit F, # 8 Exhibit G, # 9 Exhibit H, # 10 Exhibit I)(Pritt, Maxwell) (Filed on 3/20/2026) (Entered: 03/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.695.0.pdf"
+      },
+      {
+        "entry_number": 694,
+        "date_filed": "2026-03-04",
+        "time_filed": "15:47:03",
+        "date_display": "Mar 4, 2026",
+        "description": "Letter from Plaintiffs' Interim Lead Counsel re: Reply re: Pending Motions and Supplemental Briefing . (Panuccio, Jesse) (Filed on 3/4/2026) (Entered: 03/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.694.0.pdf"
+      },
+      {
+        "entry_number": 693,
+        "date_filed": "2026-03-04",
+        "time_filed": "15:45:31",
+        "date_display": "Mar 4, 2026",
+        "description": "NOTICE of Change of Address by Joseph R. Saveri Change of Firm Name and Address (Saveri, Joseph) (Filed on 3/4/2026) (Entered: 03/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 692,
+        "date_filed": "2026-03-03",
+        "time_filed": "16:45:49",
+        "date_display": "Mar 3, 2026",
+        "description": "Letter Brief re 690 Letter in Response to Letter from Plaintiffs' Interim Lead Counsel re: Pending Motions and Supplemental Briefing [Dkt. 690] filed byMeta Platforms, Inc.. (Related document(s) 690 ) (Hartnett, Kathleen) (Filed on 3/3/2026) (Entered: 03/03/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.692.0.pdf"
+      },
+      {
+        "entry_number": 691,
+        "date_filed": "2026-03-02",
+        "time_filed": "12:56:28",
+        "date_display": "Mar 2, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Letter from Plaintiffs' Interim Lead Counsel re: Pending Motions and Supplemental Briefing filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Letter from Plaintiffs' Interim Lead Counsel re: Pending Motions and Supplemental Briefing, # 2 Exhibit B, # 3 Exhibit C, # 4 Proposed Order)(Panuccio, Jesse) (Filed on 3/2/2026) (Entered: 03/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.691.0.pdf"
+      },
+      {
+        "entry_number": 690,
+        "date_filed": "2026-03-02",
+        "time_filed": "12:52:43",
+        "date_display": "Mar 2, 2026",
+        "description": "Letter from Plaintiffs' Interim Lead Counsel re: Pending Motions and Supplemental Briefing . (Attachments: # 1 Declaration of Jesse Panuccio, # 2 Exhibit A, # 3 Exhibit B, # 4 Exhibit C)(Panuccio, Jesse) (Filed on 3/2/2026) (Entered: 03/02/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.690.0.pdf"
+      },
+      {
+        "entry_number": 689,
+        "date_filed": "2026-02-21",
+        "time_filed": "11:44:11",
+        "date_display": "Feb 21, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on February 5, 2026 before Judge Vince Chhabria for Court Reporter Marla Knox (Knox, Marla) (Filed on 2/21/2026) (Entered: 02/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 688,
+        "date_filed": "2026-02-21",
+        "time_filed": "11:16:43",
+        "date_display": "Feb 21, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Supplemental Brief re Motion for Leave to Amend, Motion for Class Discovery and Certification, and Case Schedule [CORRECTED] filed by Ta-Nehisi Coates, Junot Diaz, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Supplemental Brief re Motion for Leave to Amend, Motion for Class Discovery and Certification, and Case Schedule, # 2 Appendix A, # 3 Proposed Order)(Pritt, Maxwell) (Filed on 2/21/2026) (Entered: 02/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.688.0.pdf"
+      },
+      {
+        "entry_number": 687,
+        "date_filed": "2026-02-21",
+        "time_filed": "11:13:00",
+        "date_display": "Feb 21, 2026",
+        "description": "Supplemental Brief re 668 ADMINISTRATIVE MOTION for Leave to Conduct Class Discovery and Class Certification Briefing Schedule re Dkt. 666, 658 MOTION to Amend/Correct re Leave to File Fourth Amended Complaint [CORRECTED] filed byTa-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Appendix A, # 2 Appendix B, # 3 Appendix C)(Related document(s) 668, 658 ) (Pritt, Maxwell) (Filed on 2/21/2026) (Entered: 02/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.687.0.pdf"
+      },
+      {
+        "entry_number": 686,
+        "date_filed": "2026-02-21",
+        "time_filed": "11:09:41",
+        "date_display": "Feb 21, 2026",
+        "description": "ERRATA re 684 Supplemental Brief,, by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Pritt, Maxwell) (Filed on 2/21/2026) (Entered: 02/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.686.0.pdf"
+      },
+      {
+        "entry_number": 685,
+        "date_filed": "2026-02-20",
+        "time_filed": "23:48:55",
+        "date_display": "Feb 20, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Supplemental Brief re Motion for Leave to Amend, Motion for Class Discovery and Certification, and Case Schedule filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Supplemental Brief re Motion for Leave to Amend and Proposed Schedule., # 2 Appendix A, # 3 Proposed Order)(Pritt, Maxwell) (Filed on 2/20/2026) (Entered: 02/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.685.0.pdf"
+      },
+      {
+        "entry_number": 684,
+        "date_filed": "2026-02-20",
+        "time_filed": "23:41:44",
+        "date_display": "Feb 20, 2026",
+        "description": "Supplemental Brief re 668 ADMINISTRATIVE MOTION for Leave to Conduct Class Discovery and Class Certification Briefing Schedule re Dkt. 666, 658 MOTION to Amend/Correct re Leave to File Fourth Amended Complaint filed byTa-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Appendix A, # 2 Appendix B, # 3 Appendix C)(Related document(s) 668, 658 ) (Pritt, Maxwell) (Filed on 2/20/2026) (Entered: 02/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.684.0.pdf"
+      },
+      {
+        "entry_number": 683,
+        "date_filed": "2026-02-20",
+        "time_filed": "22:36:04",
+        "date_display": "Feb 20, 2026",
+        "description": "Statement Regarding Proposed Case Schedules by Entrepreneur Media LLC. (Linderman, Lee) (Filed on 2/20/2026) (Entered: 02/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.683.0.pdf"
+      },
+      {
+        "entry_number": 682,
+        "date_filed": "2026-02-13",
+        "time_filed": "19:21:19",
+        "date_display": "Feb 13, 2026",
+        "description": "Brief re 675 Motion Hearing,,,,, 668 ADMINISTRATIVE MOTION for Leave to Conduct Class Discovery and Class Certification Briefing Schedule re Dkt. 666 DEFENDANT META PLATFORMS, INC.S FURTHER BRIEFING RE MOTION FOR LEAVE, MOTION FOR CLASS DISCOVERY AND CERTIFICATION BRIEFING, AND PROPOSED SCHEDULE PER DKT. 675 filed byMeta Platforms, Inc.. (Attachments: # 1 Appendix A)(Related document(s) 675, 668 ) (Hartnett, Kathleen) (Filed on 2/13/2026) (Entered: 02/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.682.0.pdf"
+      },
+      {
+        "entry_number": 681,
+        "date_filed": "2026-02-12",
+        "time_filed": "19:51:38",
+        "date_display": "Feb 12, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on February 5, 2026 before Judge Vince Chhabria for Court Reporter Marla Knox (Kint) (Knox, Marla) (Filed on 2/12/2026) (Entered: 02/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 680,
+        "date_filed": "2026-02-12",
+        "time_filed": "19:28:22",
+        "date_display": "Feb 12, 2026",
+        "description": "Transcript of Proceedings held on February 5, 2026, before Judge Vince Chhabria. Court Reporter, Marla F. Knox, RPR, CRR, RMR, telephone number (602) 391-6990/email marla_knox@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 676 Transcript Order ) Release of Transcript Restriction set for 5/13/2026. (Related documents(s) 676 ) (Knox, Marla) (Filed on 2/12/2026) (Entered: 02/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.680.0.pdf"
+      },
+      {
+        "entry_number": 679,
+        "date_filed": "2026-02-11",
+        "time_filed": "11:53:07",
+        "date_display": "Feb 11, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 02/05/2026 before Judge Vince Chhabria by Strike 3 Holdings, LLC, for Court Reporter Marla Knox. (Bandlow, Lincoln) (Filed on 2/11/2026) (Entered: 02/11/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.679.0.pdf"
+      },
+      {
+        "entry_number": 678,
+        "date_filed": "2026-02-10",
+        "time_filed": "10:47:51",
+        "date_display": "Feb 10, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 02/05/2026 before Judge Vince Chhabria by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson, for Court Reporter Marla Knox. (Stein, Joshua) (Filed on 2/10/2026) (Entered: 02/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.678.0_3.pdf"
+      },
+      {
+        "entry_number": 677,
+        "date_filed": "2026-02-06",
+        "time_filed": "15:02:46",
+        "date_display": "Feb 6, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 02/05/2026 before Judge Vince Chhabria by Joseph Farris, for Court Reporter Marla Knox. (Farris, Joseph) (Filed on 2/6/2026) (Entered: 02/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 676,
+        "date_filed": "2026-02-06",
+        "time_filed": "09:39:42",
+        "date_display": "Feb 6, 2026",
+        "description": "TRANSCRIPT ORDER for proceedings held on 02/05/2026 before Judge Vince Chhabria by Meta Platforms, Inc., for Court Reporter Marla Knox. (Stameshkin, Elizabeth) (Filed on 2/6/2026) (Entered: 02/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-02-06",
+        "time_filed": "09:20:40",
+        "date_display": "Feb 6, 2026",
+        "description": "Motion Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 675,
+        "date_filed": "2026-02-05",
+        "time_filed": "",
+        "date_display": "Feb 5, 2026",
+        "description": "Minute Entry for proceedings held before Judge Vince Chhabria: Motion Hearing held on 2/5/2026 re 658 MOTION to Amend/Correct re Leave to File Fourth Amended Complaint, 668 ADMINISTRATIVE MOTION for Leave to Conduct Class Discovery and Class Certification Briefing Schedule re Dkt. 666 filed by Christopher Farnsworth, Sarah Silverman, Junot Diaz, Christopher Golden, Laura Lippman, Lysa TerKeurst, Matthew Klam, Ta-Nehisi Coates, Andrew Sean Greer, Jacqueline Woodson, Richard Kadrey, David Henry Hwang, Rachel Louise Snyder. Oral arguments made and heard. Court provided tentative views. Meta's brief due by 2/13/2026. Plaintiff's brief due by 2/20/2026. Court denied request to stay the case. Total Time in Court: 1 hour, 22 minutes. Court Reporter: Marla Knox. Plaintiff Attorney: Maxwell Pritt, Jesse Panuccio, Rachel Geman, Daniel Hutchinson, Margaux Poueymirou. Defendant Attorney: Karen…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 674,
+        "date_filed": "2026-01-21",
+        "time_filed": "20:11:41",
+        "date_display": "Jan 21, 2026",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Reply re 658 Motion for Leave to Amend and Opposition re 670 Request for Stay, # 2 Declaration of David R. Choffnes, # 3 Proposed Order)(Pritt, Maxwell) (Filed on 1/21/2026) (Entered: 01/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.674.0.pdf"
+      },
+      {
+        "entry_number": 673,
+        "date_filed": "2026-01-21",
+        "time_filed": "20:00:32",
+        "date_display": "Jan 21, 2026",
+        "description": "REPLY (re 658 MOTION to Amend/Correct re Leave to File Fourth Amended Complaint ) and OPPOSITION/RESPONSE (re 670 Request for Stay) filed byTa-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Declaration of Margaux Poueymirou, # 2 Declaration of David R. Choffnes)(Pritt, Maxwell) (Filed on 1/21/2026) (Entered: 01/21/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.673.0_2.pdf"
+      },
+      {
+        "entry_number": 672,
+        "date_filed": "2026-01-14",
+        "time_filed": "12:15:56",
+        "date_display": "Jan 14, 2026",
+        "description": "Order by Judge Vince Chhabria granting 671 Motion for Pro Hac Vice as to Jessica Phillips. (bxs, COURT STAFF) (Filed on 1/14/2026) (Entered: 01/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 671,
+        "date_filed": "2026-01-14",
+        "time_filed": "11:25:43",
+        "date_display": "Jan 14, 2026",
+        "description": "MOTION for leave to appear in Pro Hac Vice ( Filing fee $ 328, receipt number ACANDC-21542762.) filed by Meta Platforms, Inc.. (Phillips, Jessica) (Filed on 1/14/2026) (Entered: 01/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 670,
+        "date_filed": "2026-01-12",
+        "time_filed": "22:52:11",
+        "date_display": "Jan 12, 2026",
+        "description": "OPPOSITION/RESPONSE (re 658 MOTION to Amend/Correct re Leave to File Fourth Amended Complaint, 668 ADMINISTRATIVE MOTION for Leave to Conduct Class Discovery and Class Certification Briefing Schedule re Dkt. 666 ) filed byMeta Platforms, Inc.. (Hartnett, Kathleen) (Filed on 1/12/2026) (Entered: 01/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.670.0.pdf"
+      },
+      {
+        "entry_number": 669,
+        "date_filed": "2026-01-08",
+        "time_filed": "",
+        "date_display": "Jan 8, 2026",
+        "description": "CLERK'S NOTICE VACATING 1/15/2026 MOTION HEARING. (This is a text-only entry generated by the court. There is no document associated with this entry.) (bxs, COURT STAFF) (Filed on 1/8/2026) (Entered: 01/08/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-01-08",
+        "time_filed": "11:33:57",
+        "date_display": "Jan 8, 2026",
+        "description": "Clerk's Notice",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 668,
+        "date_filed": "2026-01-06",
+        "time_filed": "17:30:01",
+        "date_display": "Jan 6, 2026",
+        "description": "ADMINISTRATIVE MOTION for Leave to Conduct Class Discovery and Class Certification Briefing Schedule re Dkt. 666 filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. Responses due by 1/12/2026. (Attachments: # 1 Declaration of Maxwell V. Pritt, # 2 Exhibit 1, # 3 Proposed Order)(Pritt, Maxwell) (Filed on 1/6/2026) (Entered: 01/06/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.668.0.pdf"
+      },
+      {
+        "entry_number": 667,
+        "date_filed": "2025-12-23",
+        "time_filed": "09:25:03",
+        "date_display": "Dec 23, 2025",
+        "description": "Transcript of Proceedings held on 12/19/25, before Judge Vince Chhabria. Court Reporter/Transcriber Echo Reporting, Inc., telephone number echoreporting@yahoo.com. Tape Number: 10:40 - 11:30. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re (664 in 3:23-cv-03417-VC) Transcript Order, (665 in 3:23-cv-03417-VC) Transcript Order ) Redaction Request due 1/13/2026. Redacted Transcript Deadline set for 1/23/2026. Release of Transcript Restriction set for 3/23/2026. (Jauregui, Tara) (Filed on 12/23/2025) (Entered: 12/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.667.0.pdf"
+      },
+      {
+        "entry_number": 665,
+        "date_filed": "2025-12-22",
+        "time_filed": "08:26:41",
+        "date_display": "Dec 22, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 12/19/2025 before Judge Vince Chhabria by Meta Platforms, Inc., for Recorded Proceeding - San Francisco. (Stameshkin, Elizabeth) (Filed on 12/22/2025) (Entered: 12/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.665.0.pdf"
+      },
+      {
+        "entry_number": 664,
+        "date_filed": "2025-12-22",
+        "time_filed": "07:44:23",
+        "date_display": "Dec 22, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 12/19/2025 before Judge Vince Chhabria by Ta-Nehisi Coates, Junot Diaz, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson, for Recorded Proceeding - San Francisco. (Stein, Joshua) (Filed on 12/22/2025) (Entered: 12/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-22",
+        "time_filed": "10:50:35",
+        "date_display": "Dec 22, 2025",
+        "description": "Case Management Conference - Further AND Case Management Conference - Initial AND Order on Stipulation AND Order on Stipulation AND ~Util - Set Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 666,
+        "date_filed": "2025-12-19",
+        "time_filed": "",
+        "date_display": "Dec 19, 2025",
+        "description": "Minute Entry for proceedings held before Judge Vince Chhabria: Case Management Conferences held via Zoom on 12/19/2025; Further Case Management Conference held in 3:23-cv-03417-VC, Initial Case Management Conference held in 3:25-cv-09579-VC. Discussion held regarding setting case schedule in Entrepreneur and how Kadrey will proceed in light of the proceedings in Entrepreneur. Discovery is open in Entrepreneur. By 1/8/2026 Parties to meet and confer and file joint or competing proposed schedules in alignment with the parameters set by the Court and inform the Court re ADR selection. Court granted 660 in 3:23-cv-03417-VC. Court granted 662 in 3:23-cv-03417-VC as modified below:Request to open class cert discovery due by 1/6/2026. Meta's brief re stay issue, class cert issue, and amended complaint issue due by 1/12/2026. Pltf response due by 1/21/2026. Motion Hearing set for 2/5/2026 at…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 663,
+        "date_filed": "2025-12-18",
+        "time_filed": "21:23:55",
+        "date_display": "Dec 18, 2025",
+        "description": "Declaration of Michelle Woodhouse in Support of 659 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Motion for Leave to File Fourth Amended Complaint filed byMeta Platforms, Inc.. (Attachments: # 1 Exhibit A to M. Woodhouse Declaration, # 2 Exhibit B to M. Woodhouse Declaration, # 3 Exhibit C to M. Woodhouse Declaration, # 4 Exhibit D to M. Woodhouse Declaration, # 5 Exhibit F to M. Woodhouse Declaration, # 6 Exhibit G to M. Woodhouse Declaration, # 7 Exhibit H to M. Woodhouse Declaration, # 8 Exhibit J to M. Woodhouse Declaration)(Related document(s) 659 ) (Stameshkin, Elizabeth) (Filed on 12/18/2025) (Entered: 12/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.663.0.pdf"
+      },
+      {
+        "entry_number": 662,
+        "date_filed": "2025-12-18",
+        "time_filed": "16:56:14",
+        "date_display": "Dec 18, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER re 658 MOTION to Amend/Correct re Leave to File Fourth Amended Complaint Briefing Schedule filed by Meta Platforms, Inc.. (Morton, Phillip) (Filed on 12/18/2025) (Entered: 12/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.662.0.pdf"
+      },
+      {
+        "entry_number": 661,
+        "date_filed": "2025-12-12",
+        "time_filed": "23:26:43",
+        "date_display": "Dec 12, 2025",
+        "description": "JOINT CASE MANAGEMENT STATEMENT filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Hutchinson, Daniel) (Filed on 12/12/2025) (Entered: 12/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.661.0.pdf"
+      },
+      {
+        "entry_number": 660,
+        "date_filed": "2025-12-12",
+        "time_filed": "18:19:45",
+        "date_display": "Dec 12, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Case Schedule filed by Meta Platforms, Inc.. (Morton, Phillip) (Filed on 12/12/2025) (Entered: 12/12/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.660.0.pdf"
+      },
+      {
+        "entry_number": 659,
+        "date_filed": "2025-12-11",
+        "time_filed": "18:57:57",
+        "date_display": "Dec 11, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Motion for Leave to File Fourth Amended Complaint filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Motion for Leave to Amend, # 2 Declaration of David R. Choffnes, # 3 Exhibit 1, # 4 Exhibit 2, # 5 Exhibit 3, # 6 Exhibit 4, # 7 Exhibit 5, # 8 Exhibit 9, # 9 Exhibit 10, # 10 Exhibit 11, # 11 Exhibit 12, # 12 Exhibit 13, # 13 Appendix A - Proposed Fourth Amended Complaint, # 14 Appendix B - Redline, # 15 Proposed Order)(Pritt, Maxwell) (Filed on 12/11/2025) (Entered: 12/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 658,
+        "date_filed": "2025-12-11",
+        "time_filed": "18:30:03",
+        "date_display": "Dec 11, 2025",
+        "description": "MOTION to Amend/Correct re Leave to File Fourth Amended Complaint filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. Motion Hearing set for 1/15/2026 10:00 AM in San Francisco, Courtroom 04, 17th Floor before Judge Vince Chhabria. Responses due by 12/26/2025. Replies due by 1/2/2026. (Attachments: # 1 Declaration of David R. Choffnes, # 2 Declaration of Joshua M. Stein, # 3 Exhibit 1 [Filed Under Seal], # 4 Exhibit 2 [Filed Under Seal], # 5 Exhibit 3 [Filed Under Seal], # 6 Exhibit 4 [Filed Under Seal], # 7 Exhibit 5 [Filed Under Seal], # 8 Exhibit 6, # 9 Exhibit 7, # 10 Exhibit 8, # 11 Exhibit 9 [Filed Under Seal], # 12 Exhibit 10 [Filed Under Seal], # 13 Exhibit 11 [Filed Under Seal], # 14 Exhibit…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.658.0.pdf"
+      },
+      {
+        "entry_number": 657,
+        "date_filed": "2025-12-09",
+        "time_filed": "",
+        "date_display": "Dec 9, 2025",
+        "description": "NOTICE of Appearance filed by Jalle H. Dafa on behalf of Christopher Farnsworth (Dafa, Jalle) (Filed on 12/9/2025) (Entered: 12/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-12-09",
+        "time_filed": "12:27:48",
+        "date_display": "Dec 9, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 656,
+        "date_filed": "2025-11-25",
+        "time_filed": "",
+        "date_display": "Nov 25, 2025",
+        "description": "CLERK'S NOTICE SCHEDULING FURTHER CASE MANAGEMENT CONFERENCE. Joint Case Management Statement due by 12/12/2025. Further Case Management Conference set for 12/19/2025 at 10:00 AM by Videoconference Only. This proceeding will be held via a Zoom webinar.Webinar Access: All counsel, members of the public, and media may access the webinar information at https://www.cand.uscourts.gov/vc Court Appearances: Advanced notice is required of counsel or parties who wish to be identified by the court as making an appearance or will be participating in the argument at the hearing. One list of names of all counsel appearing for all parties must be sent in one email to the CRD at vccrd@cand.uscourts.gov no later than Friday, December 12, 2025, by no later than 12:00PM.Civ LR 77-3(d). Persons granted access to court proceedings held by telephone or videoconference are reminded that photographing,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 655,
+        "date_filed": "2025-11-25",
+        "time_filed": "10:08:16",
+        "date_display": "Nov 25, 2025",
+        "description": "ORDER RELATING CASES: 23-cv-03417-VC & 25-cv-09579-BLF. Signed by Judge Vince Chhabria on 11/25/2025. (bxs, COURT STAFF) (Filed on 11/25/2025) (Entered: 11/25/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.655.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-25",
+        "time_filed": "12:09:00",
+        "date_display": "Nov 25, 2025",
+        "description": "Clerk's Notice AND ~Util - Teleconference Zoom",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 654,
+        "date_filed": "2025-11-20",
+        "time_filed": "14:03:49",
+        "date_display": "Nov 20, 2025",
+        "description": "Brief re Public Refiling of Dkt. 635 (Administrative Motion Requesting Leave to Obtain Limited Additional Discovery) filed byTa-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Declaration David R. Choffnes, # 2 Declaration Maxwell V. Pritt, # 3 Appendix A, # 4 Appendix B, # 5 Appendix C, # 6 Exhibit A, # 7 Exhibit B, # 8 Exhibit C, # 9 Exhibit D, # 10 Exhibit E, # 11 Exhibit F, # 12 Exhibit G, # 13 Exhibit H, # 14 Exhibit I, # 15 Exhibit J, # 16 Exhibit K, # 17 Exhibit L, # 18 Exhibit M, # 19 Exhibit N, # 20 Exhibit O, # 21 Exhibit P, # 22 Exhibit Q, # 23 Exhibit R, # 24 Exhibit S, # 25 Exhibit T, # 26 Exhibit U)(Pritt, Maxwell) (Filed on 11/20/2025) (Entered: 11/20/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.654.0.pdf"
+      },
+      {
+        "entry_number": 653,
+        "date_filed": "2025-11-19",
+        "time_filed": "20:29:09",
+        "date_display": "Nov 19, 2025",
+        "description": "Letter from Kathleen R. Hartnett to Court. (Hartnett, Kathleen) (Filed on 11/19/2025) (Entered: 11/19/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.653.0_2.pdf"
+      },
+      {
+        "entry_number": 652,
+        "date_filed": "2025-11-18",
+        "time_filed": "16:28:37",
+        "date_display": "Nov 18, 2025",
+        "description": "CORRECTION OF DOCKET # 650, [650-1] and [650-2Statement of Non-Opposition re 651 ADMINISTRATIVE MOTION to Relate Case Entrepreneur Media, LLC v. Meta Platforms, LLC, 5:25-cv-09579-BLF filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Related document(s) 651 ) (Pritt, Maxwell) (Filed on 11/18/2025) Modified on 11/21/2025 (kmg, COURT STAFF). (Entered: 11/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 651,
+        "date_filed": "2025-11-18",
+        "time_filed": "13:57:23",
+        "date_display": "Nov 18, 2025",
+        "description": "(CORRECTION OF DOCKET # 650, [650-1] and [650-2]) filed by Entrepreneur Media LLC. ADMINISTRATIVE MOTION to Relate Case Entrepreneur Media, LLC v. Meta Platforms, LLC, 5:25-cv-09579-BLF Responses due by 11/24/2025. (Attachments: # 1 Declaration of Moez Kaba ISO Corrected Administrative Motion to Relate Case, # 2 Proposed Order)(Kaba, Moez) (Filed on 11/18/2025) Modified on 11/21/2025 (kmg, COURT STAFF). (Entered: 11/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.651.0.pdf"
+      },
+      {
+        "entry_number": 650,
+        "date_filed": "2025-11-18",
+        "time_filed": "12:10:50",
+        "date_display": "Nov 18, 2025",
+        "description": "ADMINISTRATIVE MOTION to Relate Case Entrepreneur Media, LLC v. Meta Platforms, LLC, 3:25-CV-3579-BLF filed by Entrepreneur Media LLC. Responses due by 11/24/2025. (Attachments: # 1 Declaration of Moez Kaba ISO Administrative Motion to Relate Case, # 2 Proposed Order)(Kaba, Moez) (Filed on 11/18/2025) (Entered: 11/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.650.0_1.pdf"
+      },
+      {
+        "entry_number": 649,
+        "date_filed": "2025-11-14",
+        "time_filed": "09:36:52",
+        "date_display": "Nov 14, 2025",
+        "description": "Transcript of Proceedings held on November 10, 2025, before Judge Vince Chhabria. Court Reporter Kendra Steppler, email at kendra_steppler@cand.uscourts.gov. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter until the deadline for the Release of Transcript Restriction. After that date, it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 645 Transcript Order, ) Release of Transcript Restriction set for 2/12/2026. (Related documents(s) 645 ) (Steppler, Kendra) (Filed on 11/14/2025) (Entered: 11/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.649.0.pdf"
+      },
+      {
+        "entry_number": 648,
+        "date_filed": "2025-11-13",
+        "time_filed": "14:14:37",
+        "date_display": "Nov 13, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 11/10/2025 before Judge Vince Chhabria by Meta Platforms, Inc., for Court Reporter Kendra Steppler. (Stameshkin, Elizabeth) (Filed on 11/13/2025) (Entered: 11/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.648.0.pdf"
+      },
+      {
+        "entry_number": 647,
+        "date_filed": "2025-11-13",
+        "time_filed": "11:03:57",
+        "date_display": "Nov 13, 2025",
+        "description": "Order Granting Plaintiffs' Motion for Additional Discovery; Order re Sealing. Signed by Judge Vince Chhabria on 11/13/25. (vclc2, COURT STAFF) (Filed on 11/13/2025) (Entered: 11/13/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.647.0.pdf"
+      },
+      {
+        "entry_number": 646,
+        "date_filed": "2025-11-11",
+        "time_filed": "17:41:58",
+        "date_display": "Nov 11, 2025",
+        "description": "Letter from Counsel for Meta Regarding Docket 644. (Hartnett, Kathleen) (Filed on 11/11/2025) (Entered: 11/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.646.0.pdf"
+      },
+      {
+        "entry_number": 645,
+        "date_filed": "2025-11-11",
+        "time_filed": "12:46:37",
+        "date_display": "Nov 11, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 11/10/2025 before Judge Vince Chhabria by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson, for Court Reporter Kendra Steppler. (Stein, Joshua) (Filed on 11/11/2025) (Entered: 11/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 644,
+        "date_filed": "2025-11-11",
+        "time_filed": "12:38:48",
+        "date_display": "Nov 11, 2025",
+        "description": "Letter from Plaintiffs' Interim Lead Counsel Regarding Dkt. 635 . (Attachments: # 1 Exhibit 1)(Pritt, Maxwell) (Filed on 11/11/2025) (Entered: 11/11/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.644.0.pdf"
+      },
+      {
+        "entry_number": 643,
+        "date_filed": "2025-11-10",
+        "time_filed": "",
+        "date_display": "Nov 10, 2025",
+        "description": "Minute Entry for proceedings held before Judge Vince Chhabria: Motion Hearing held on 11/10/2025 re 635 ADMINISTRATIVE MOTION Requesting Leave to Obtain Limited Additional Discovery filed by Christopher Farnsworth, Sarah Silverman, Junot Diaz, Christopher Golden, Laura Lippman, Lysa TerKeurst, Matthew Klam, Ta-Nehisi Coates, Andrew Sean Greer, Jacqueline Woodson, Richard Kadrey, David Henry Hwang, Rachel Louise Snyder. Oral arguments made and heard. Court to issue written ruling. Total Time in Court: 59 minutes. Court Reporter: Kendra Steppler. Plaintiff Attorney: Maxwell Pritt, Daniel Hutchinson, Margaux Poueymirou. Defendant Attorney: Kathleen Hartnett, Bobby Ghajar, Anna Stapleton, Phillip Morton, Elizabeth Stameshkin. (This is a text-only entry generated by the court. There is no document associated with this entry.) (bxs, COURT STAFF) (Date Filed: 11/10/2025) (Entered: 11/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-10",
+        "time_filed": "15:43:59",
+        "date_display": "Nov 10, 2025",
+        "description": "Motion Hearing",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 642,
+        "date_filed": "2025-11-07",
+        "time_filed": "",
+        "date_display": "Nov 7, 2025",
+        "description": "CLERK'S NOTICE ADVANCING MOTION HEARING RE 635 . 635 ADMINISTRATIVE MOTION Requesting Leave to Obtain Limited Additional Discovery Hearing advanced to 11/10/2025 at 02:00 PM in San Francisco, Courtroom 04, 17th Floor before Judge Vince Chhabria. (This is a text-only entry generated by the court. There is no document associated with this entry.)(bxs, COURT STAFF) (Filed on 11/7/2025) (Entered: 11/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-07",
+        "time_filed": "10:41:37",
+        "date_display": "Nov 7, 2025",
+        "description": "Clerk's Notice AND ~Util - Set Motion and Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 641,
+        "date_filed": "2025-11-06",
+        "time_filed": "12:17:27",
+        "date_display": "Nov 6, 2025",
+        "description": "Order by Judge Vince Chhabria granting 638 Stipulation Modifying Scheduling Order. Designation of Experts due by 12/19/2025. Rebuttal Reports due by 1/22/2026. Expert Depositions Deadline 02/06/2026. Brief #1 due 2/12/2026. Brief #2 due 3/12/2026. Brief #3 due 4/2/2026. Brief #4 due 4/16/2026. Motion Hearing reset to 4/30/2026 at 10:00 AM in San Francisco, Courtroom 04, 17th Floor before Judge Vince Chhabria. (bxs, COURT STAFF) (Filed on 11/6/2025) (Entered: 11/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.641.0.pdf"
+      },
+      {
+        "entry_number": 640,
+        "date_filed": "2025-11-06",
+        "time_filed": "",
+        "date_display": "Nov 6, 2025",
+        "description": "CLERK'S NOTICE SCHEDULING MOTION HEARING RE 635 Administrative Motion Requesting Leave to Obtain Limited Additional Discovery. Motion Hearing set for 11/12/2025 at 10:00 AM in San Francisco, Courtroom 04, 17th Floor before Judge Vince Chhabria. (This is a text-only entry generated by the court. There is no document associated with this entry.)(bxs, COURT STAFF) (Filed on 11/6/2025) (Entered: 11/06/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-11-06",
+        "time_filed": "10:07:03",
+        "date_display": "Nov 6, 2025",
+        "description": "Clerk's Notice AND ~Util - Set Motion and Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 639,
+        "date_filed": "2025-11-05",
+        "time_filed": "18:01:04",
+        "date_display": "Nov 5, 2025",
+        "description": "Declaration of Michelle Woodhouse in Support of 636 Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Plaintiffs' Administrative Motion Requesting Leave to Obtain Limited Additional Discovery filed byMeta Platforms, Inc.. (Attachments: # 1 Exhibit 1, # 2 Exhibit 2, # 3 Exhibit 3, # 4 Exhibit 4)(Related document(s) 636 ) (Stameshkin, Elizabeth) (Filed on 11/5/2025) (Entered: 11/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.639.0.pdf"
+      },
+      {
+        "entry_number": 638,
+        "date_filed": "2025-11-05",
+        "time_filed": "17:40:45",
+        "date_display": "Nov 5, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER re 628 Order, Modifying Scheduling Order filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Pritt, Maxwell) (Filed on 11/5/2025) (Entered: 11/05/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.638.0.pdf"
+      },
+      {
+        "entry_number": 637,
+        "date_filed": "2025-11-03",
+        "time_filed": "20:48:14",
+        "date_display": "Nov 3, 2025",
+        "description": "OPPOSITION/RESPONSE (re 635 ADMINISTRATIVE MOTION Requesting Leave to Obtain Limited Additional Discovery ) filed byMeta Platforms, Inc.. (Attachments: # 1 Declaration Elizabeth L. Stameshkin, # 2 Exhibit 1, # 3 Proposed Order)(Hartnett, Kathleen) (Filed on 11/3/2025) (Entered: 11/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.637.0.pdf"
+      },
+      {
+        "entry_number": 636,
+        "date_filed": "2025-10-29",
+        "time_filed": "19:05:36",
+        "date_display": "Oct 29, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Plaintiffs' Administrative Motion Requesting Leave to Obtain Limited Additional Discovery filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. (Attachments: # 1 Administrative Motion Requesting Leave to Obtain Limited Additional Discovery, # 2 Declaration of David R. Choffnes, # 3 Appendix A, # 4 Appendix B, # 5 Appendix C, # 6 Exhibit A, # 7 Exhibit B, # 8 Exhibit C, # 9 Exhibit D, # 10 Exhibit E, # 11 Exhibit G, # 12 Exhibit I, # 13 Exhibit J, # 14 Exhibit K, # 15 Exhibit L, # 16 Exhibit M, # 17 Exhibit P, # 18 Exhibit Q, # 19 Exhibit R, # 20 Exhibit S, # 21 Exhibit T, # 22 Exhibit U, # 23 Proposed Order)(Pritt,…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 635,
+        "date_filed": "2025-10-29",
+        "time_filed": "18:49:49",
+        "date_display": "Oct 29, 2025",
+        "description": "ADMINISTRATIVE MOTION Requesting Leave to Obtain Limited Additional Discovery filed by Ta-Nehisi Coates, Junot Diaz, Christopher Farnsworth, Christopher Golden, Andrew Sean Greer, David Henry Hwang, Richard Kadrey, Matthew Klam, Laura Lippman, Sarah Silverman, Rachel Louise Snyder, Lysa TerKeurst, Jacqueline Woodson. Responses due by 11/3/2025. (Attachments: # 1 Declaration of David R. Choffnes, # 2 Declaration of Maxwell V. Pritt, # 3 Appendix A, # 4 Appendix B, # 5 Appendix C, # 6 Exhibit A, # 7 Exhibit B, # 8 Exhibit C, # 9 Exhibit D, # 10 Exhibit E, # 11 Exhibit F, # 12 Exhibit G, # 13 Exhibit H, # 14 Exhibit I, # 15 Exhibit J, # 16 Exhibit K, # 17 Exhibit L, # 18 Exhibit M, # 19 Exhibit N, # 20 Exhibit O, # 21 Exhibit P, # 22 Exhibit Q, # 23 Exhibit R, # 24 Exhibit S, # 25 Exhibit T, # 26 Exhibit U, # 27 Proposed Order)(Pritt, Maxwell) (Filed on 10/29/2025) (Entered: 10/29/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.635.0.pdf"
+      },
+      {
+        "entry_number": 634,
+        "date_filed": "2025-10-10",
+        "time_filed": "",
+        "date_display": "Oct 10, 2025",
+        "description": "ORDER. The Court apologizes for missing the stipulation to toll the deadline to seek relief from Judge Hixson's order. The Court would like Meta to file a response to the motion for relief, but it may make sense to wait for Meta to complete its investigation of the Strike Three issue. The parties should confer and submit another stipulation about the schedule for adjudication of the plaintiffs' motion for relief. Signed by Judge Vince Chhabria on 10/10/25. (This is a text-only entry generated by the court. There is no document associated with this entry.) (vclc2, COURT STAFF) (Filed on 10/10/2025) (Entered: 10/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 633,
+        "date_filed": "2025-10-10",
+        "time_filed": "14:42:33",
+        "date_display": "Oct 10, 2025",
+        "description": "Order by Judge Vince Chhabria granting 632 Motion to Withdraw as Attorney. (bxs, COURT STAFF) (Filed on 10/10/2025) (Entered: 10/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-10-10",
+        "time_filed": "15:01:06",
+        "date_display": "Oct 10, 2025",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 632,
+        "date_filed": "2025-10-09",
+        "time_filed": "11:57:26",
+        "date_display": "Oct 9, 2025",
+        "description": "MOTION to Withdraw as Attorney filed by HarperCollins Publishers L.L.C.. Responses due by 10/23/2025. Replies due by 10/30/2025. (Attachments: # 1 Proposed Order Granting Motion to Withdraw)(McCormick, Terence) (Filed on 10/9/2025) (Entered: 10/09/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.632.0.pdf"
+      },
+      {
+        "entry_number": 631,
+        "date_filed": "2025-10-08",
+        "time_filed": "21:12:25",
+        "date_display": "Oct 8, 2025",
+        "description": "Administrative Motion to Consider Whether Another Party's Material Should Be Sealed re Motion for Relief from Non-Dispositive Pretrial Order of Magistrate Judge filed by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth. (Attachments: # 1 Motion for Relief, # 2 Exhibit A, # 3 Proposed Order)(Panuccio, Jesse) (Filed on 10/8/2025) (Entered: 10/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.631.0.pdf"
+      },
+      {
+        "entry_number": 630,
+        "date_filed": "2025-10-08",
+        "time_filed": "21:02:01",
+        "date_display": "Oct 8, 2025",
+        "description": "MOTION for Relief from Non-Dispositive Pretrial Order of Magistrate Judge re 627 Discovery Order, Terminate Motions filed by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth. Responses due by 10/22/2025. Replies due by 10/29/2025. (Attachments: # 1 Declaration of Maxwell V. Pritt, # 2 Exhibit A (Slipsheet), # 3 Proposed Order)(Panuccio, Jesse) (Filed on 10/8/2025) (Entered: 10/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.630.0_2.pdf"
+      },
+      {
+        "entry_number": 629,
+        "date_filed": "2025-09-30",
+        "time_filed": "17:42:31",
+        "date_display": "Sep 30, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER re 627 Discovery Order, Terminate Motions filed by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth. (Schuffenhauer, Jay) (Filed on 9/30/2025) (Entered: 09/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.629.0_2.pdf"
+      },
+      {
+        "entry_number": 628,
+        "date_filed": "2025-09-30",
+        "time_filed": "",
+        "date_display": "Sep 30, 2025",
+        "description": "ORDER. Pursuant to the 626 stipulation of the parties, the Court grants the parties' request to amend the case schedule. Signed by Judge Vince Chhabria on 9/30/25. (This is a text-only entry generated by the court. There is no document associated with this entry.) (vclc2, COURT STAFF) (Filed on 9/30/2025) Modified on 9/30/2025 (vclc2, COURT STAFF). (Entered: 09/30/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-30",
+        "time_filed": "11:17:27",
+        "date_display": "Sep 30, 2025",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 627,
+        "date_filed": "2025-09-24",
+        "time_filed": "13:29:48",
+        "date_display": "Sep 24, 2025",
+        "description": "Discovery Order re: 624 Joint Discovery Letter Brief re In Camera Review. Signed by Judge Thomas S. Hixson on 9/24/2025. (tshlc1, COURT STAFF) (Filed on 9/24/2025) (Entered: 09/24/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.627.0.pdf"
+      },
+      {
+        "entry_number": 626,
+        "date_filed": "2025-09-23",
+        "time_filed": "19:56:58",
+        "date_display": "Sep 23, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Case Schedule filed by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth. (Pritt, Maxwell) (Filed on 9/23/2025) (Entered: 09/23/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.626.0.pdf"
+      },
+      {
+        "entry_number": 625,
+        "date_filed": "2025-09-17",
+        "time_filed": "14:14:07",
+        "date_display": "Sep 17, 2025",
+        "description": "ORDER re 624 Joint Discovery Letter Brief. The Court ORDERS Meta to email the document for in camera review by September 18, 2025. Signed by Judge Thomas S. Hixson on 9/17/2025. (tshlc1, COURT STAFF) (Filed on 9/17/2025) (Entered: 09/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.625.0_5.pdf"
+      },
+      {
+        "entry_number": 624,
+        "date_filed": "2025-09-16",
+        "time_filed": "17:22:23",
+        "date_display": "Sep 16, 2025",
+        "description": "Joint Discovery Letter Brief re In Camera Review filed by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth. (Attachments: # 1 Exhibit A, # 2 Exhibit B, # 3 Exhibit C, # 4 Exhibit D)(Pritt, Maxwell) (Filed on 9/16/2025) (Entered: 09/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.624.0.pdf"
+      },
+      {
+        "entry_number": 623,
+        "date_filed": "2025-09-02",
+        "time_filed": "",
+        "date_display": "Sep 2, 2025",
+        "description": "ORDER.The parties' 622 stipulation as to the schedule for expert reports and depositions and the procedures for sealing materials is granted. As for the briefing schedule for the cross-motions for summary judgment, after considering the parties' competing proposals, the Court sets the following deadlines: Brief 1 is due 11/21/25; Brief 2 is due 12/19/25; Brief 3 is due 1/15/26; and Brief 4 is due 1/29/26. The hearing will be set for 2/12/26. Signed by Judge Vince Chhabria on 9/2/25. (This is a text-only entry generated by the court. There is no document associated with this entry.) (vclc2, COURT STAFF) (Filed on 9/2/2025) (Entered: 09/02/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-02",
+        "time_filed": "11:48:58",
+        "date_display": "Sep 2, 2025",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-02",
+        "time_filed": "",
+        "date_display": "Sep 2, 2025",
+        "description": "Set Deadlines/Hearings re Dkt 623: Designation of Experts due by 9/30/2025. Rebuttal Reports due by 10/30/2025. Expert Depositions due by 11/10/2025. Brief 1 due by 11/21/25. Brief 2 due by 12/19/25. Brief 3 due by 1/15/26. Brief 4 due by 1/29/26. Motion Hearing set for 2/12/2026 at 10:00 AM in San Francisco, Courtroom 04, 17th Floor before Judge Vince Chhabria. (bxs, COURT STAFF) (Filed on 9/2/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-09-02",
+        "time_filed": "12:30:03",
+        "date_display": "Sep 2, 2025",
+        "description": "Set Deadlines/Hearings",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 622,
+        "date_filed": "2025-08-22",
+        "time_filed": "20:28:56",
+        "date_display": "Aug 22, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Competing Case Schedule Proposals filed by Meta Platforms, Inc.. (Stameshkin, Elizabeth) (Filed on 8/22/2025) Modified on 8/25/2025 (kmg, COURT STAFF). (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.622.0.pdf"
+      },
+      {
+        "entry_number": 621,
+        "date_filed": "2025-08-22",
+        "time_filed": "16:22:46",
+        "date_display": "Aug 22, 2025",
+        "description": "Order by Judge Vince Chhabria granting 618 Motion for Pro Hac Vice as to Kyle Smith. (bxs, COURT STAFF) (Filed on 8/22/2025) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 619,
+        "date_filed": "2025-08-22",
+        "time_filed": "",
+        "date_display": "Aug 22, 2025",
+        "description": "NOTICE of Appearance filed by Mark R. Weinstein on behalf of Meta Platforms, Inc. (Weinstein, Mark) (Filed on 8/22/2025) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 618,
+        "date_filed": "2025-08-22",
+        "time_filed": "13:56:13",
+        "date_display": "Aug 22, 2025",
+        "description": "MOTION for leave to appear in Pro Hac Vice of Kyle N. Smith ( Filing fee $ 328, receipt number ACANDC-21043571.) filed by Meta Platforms, Inc.. (Smith, Kyle) (Filed on 8/22/2025) (Entered: 08/22/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-22",
+        "time_filed": "15:31:02",
+        "date_display": "Aug 22, 2025",
+        "description": "Notice of Appearance/Substitution/Change/Withdrawal of Attorney",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 616,
+        "date_filed": "2025-08-01",
+        "time_filed": "14:03:42",
+        "date_display": "Aug 1, 2025",
+        "description": "Discovery Order re: 615 Joint Discovery Letter Brief re Outstanding Discovery Issues. Signed by Judge Thomas S. Hixson on 8/1/2025. (tshlc1, COURT STAFF) (Filed on 8/1/2025) (Entered: 08/01/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.616.0.pdf"
+      },
+      {
+        "entry_number": 615,
+        "date_filed": "2025-07-31",
+        "time_filed": "17:09:32",
+        "date_display": "Jul 31, 2025",
+        "description": "Joint Discovery Letter Brief re Outstanding Discovery Issues filed by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth. (Pritt, Maxwell) (Filed on 7/31/2025) (Entered: 07/31/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.615.0_1.pdf"
+      },
+      {
+        "entry_number": 614,
+        "date_filed": "2025-07-28",
+        "time_filed": "12:58:37",
+        "date_display": "Jul 28, 2025",
+        "description": "Order by Judge Vince Chhabria granting 613 Stipulation Regarding Case Schedule Proposals. (bxs, COURT STAFF) (Filed on 7/28/2025) (Entered: 07/28/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.614.0_1.pdf"
+      },
+      {
+        "entry_number": 613,
+        "date_filed": "2025-07-18",
+        "time_filed": "13:52:06",
+        "date_display": "Jul 18, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Regarding Case Schedule Proposals filed by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth. (Attachments: # 1 Proposed Order)(Panuccio, Jesse) (Filed on 7/18/2025) Modified on 7/18/2025 (kmg, COURT STAFF). (Entered: 07/18/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.613.0.pdf"
+      },
+      {
+        "entry_number": 612,
+        "date_filed": "2025-07-17",
+        "time_filed": "19:46:05",
+        "date_display": "Jul 17, 2025",
+        "description": "NOTICE by Meta Platforms, Inc. re 606 Order, of Compliance and Response to Order (Attachments: # 1 Exhibit 1 - Redacted Ex. 42, # 2 Exhibit 2 - Redacted Ex. 43, # 3 Exhibit 3 - Redacted Ex. 45, # 4 Exhibit 4 - Redacted Ex. 141)(Brigham, Matthew) (Filed on 7/17/2025) Modified on 7/18/2025 (kmg, COURT STAFF). (Entered: 07/17/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.612.0.pdf"
+      },
+      {
+        "entry_number": 611,
+        "date_filed": "2025-07-16",
+        "time_filed": "15:34:24",
+        "date_display": "Jul 16, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 07/11/2025 before Judge Vince Chhabria by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth, for Recorded Proceeding - San Francisco. (Stein, Joshua) (Filed on 7/16/2025) (Entered: 07/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 610,
+        "date_filed": "2025-07-16",
+        "time_filed": "14:26:25",
+        "date_display": "Jul 16, 2025",
+        "description": "Transcript of Proceedings held on 07/11/25, before Judge Vince Chhabria. Court Reporter/Transcriber Echo Reporting, Inc., telephone number echoreporting@yahoo.com. Tape Number: 10:52 - 11:23. Per General Order No. 59 and Judicial Conference policy, this transcript may be viewed only at the Clerk's Office public terminal or may be purchased through the Court Reporter/Transcriber until the deadline for the Release of Transcript Restriction. After that date it may be obtained through PACER. Any Notice of Intent to Request Redaction, if required, is due no later than 5 business days from date of this filing. (Re 609 Transcript Order, 608 Transcript Order ) Redaction Request due 8/6/2025. Redacted Transcript Deadline set for 8/18/2025. Release of Transcript Restriction set for 10/14/2025. (Related documents(s) 609, 608 ) (Jauregui, Tara) (Filed on 7/16/2025) (Entered: 07/16/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.610.0.pdf"
+      },
+      {
+        "entry_number": 609,
+        "date_filed": "2025-07-15",
+        "time_filed": "13:33:44",
+        "date_display": "Jul 15, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 07/11/2025 before Judge Vince Chhabria by Meta Platforms, Inc., for Recorded Proceeding - San Francisco. (Morton, Phillip) (Filed on 7/15/2025) (Entered: 07/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.609.0.pdf"
+      },
+      {
+        "entry_number": 608,
+        "date_filed": "2025-07-15",
+        "time_filed": "09:25:42",
+        "date_display": "Jul 15, 2025",
+        "description": "TRANSCRIPT ORDER for proceedings held on 07/11/2025 before Judge Vince Chhabria by OpenAI OpCo, L.L.C., for Recorded Proceeding - San Francisco. (McManus, Spencer) (Filed on 7/15/2025) (Entered: 07/15/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-14",
+        "time_filed": "13:31:30",
+        "date_display": "Jul 14, 2025",
+        "description": "Case Management Conference - Further",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 607,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "Minute Entry for proceedings held before Judge Vince Chhabria: Further Case Management Conference held via Zoom on 7/11/2025. Stipulation or competing proposed schedules re motion for summary judgment on the distribution claim due within 7 days. Total Time in Court: 31 minutes. Court Reporter: Hearing recorded via Zoom: 10:52 - 11:23. Plaintiff Attorney: Jesse Panuccio, Joshua Stein, Margaux Poueymirou, Joseph Saveri, Rachel Geman, Daniel Hutchinson, Nada Djordjevic, Mohammed Rathur. Defendant Attorney: Bobby Ghajar, Angela Dunning, Mark Weinstein. (This is a text-only entry generated by the court. There is no document associated with this entry.) (bxs, COURT STAFF) (Date Filed: 7/11/2025) Proceedings transcribed by Tara Jauregui of Echo Reporting (Echoreporting@yahoo.com) Modified on 7/15/2025 (bxl, COURT STAFF). (Entered: 07/14/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 606,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "ORDER re All Outstanding Sealing Motions. The motions to seal are granted as to all documents listed in the Dkt. No. 602 chart, except for the emails with third parties regarding licensing. For those, the names of the third parties may be redacted but the emails should otherwise be unsealed. The parties are ordered to refile those emails in accordance with this order by 7/17/25. Signed by Judge Vince Chhabria on 7/10/25. (This is a text-only entry generated by the court. There is no document associated with this entry.) (vclc3, COURT STAFF) (Filed on 7/10/2025) (Entered: 07/10/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-10",
+        "time_filed": "13:48:55",
+        "date_display": "Jul 10, 2025",
+        "description": "Order",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 605,
+        "date_filed": "2025-07-08",
+        "time_filed": "22:05:58",
+        "date_display": "Jul 8, 2025",
+        "description": "JOINT CASE MANAGEMENT STATEMENT filed by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth. (Panuccio, Jesse) (Filed on 7/8/2025) (Entered: 07/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.605.0.pdf"
+      },
+      {
+        "entry_number": 604,
+        "date_filed": "2025-07-08",
+        "time_filed": "09:10:37",
+        "date_display": "Jul 8, 2025",
+        "description": "Order by Judge Vince Chhabria granting 603 Stipulation Enlarging Time for Case Management Statement. Case Management Statement due by 7/8/2025. (bxs, COURT STAFF) (Filed on 7/8/2025) (Entered: 07/08/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.604.0.pdf"
+      },
+      {
+        "entry_number": 603,
+        "date_filed": "2025-07-07",
+        "time_filed": "19:36:05",
+        "date_display": "Jul 7, 2025",
+        "description": "STIPULATION WITH PROPOSED ORDER Enlarging Time for Case Management Statement filed by Jacqueline Woodson, Richard Kadrey, Andrew Sean Greer, Rachel Louise Snyder, David Henry Hwang, Ta-Nehisi Coates, Laura Lippman, Matthew Klam, Junot Diaz, Sarah Silverman, Lysa TerKeurst, Christopher Golden, Christopher Farnsworth. (Attachments: # 1 Declaration of Maxwell V. Pritt)(Pritt, Maxwell) (Filed on 7/7/2025) (Entered: 07/07/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.603.0.pdf"
+      },
+      {
+        "entry_number": 602,
+        "date_filed": "2025-07-03",
+        "time_filed": "14:58:16",
+        "date_display": "Jul 3, 2025",
+        "description": "RESPONSE re 600 Order, re Outstanding Sealing Motions by Meta Platforms, Inc.. (Attachments: # 1 Exhibit A)(Brigham, Matthew) (Filed on 7/3/2025) (Entered: 07/03/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.602.0.pdf"
+      },
+      {
+        "entry_number": 601,
+        "date_filed": "2025-06-27",
+        "time_filed": "10:12:58",
+        "date_display": "Jun 27, 2025",
+        "description": "ORDER Granting Meta's 501 Motion for Partial Summary Judgment as to the Plaintiffs' DMCA claim. Signed by Judge Vince Chhabria on 6/27/2025. (vclc1, COURT STAFF) (Filed on 6/27/2025) (Entered: 06/27/2025)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.601.0_2.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=67569326&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=7"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=67569326&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=13"
   },
   "claims_administrator": null,
   "coverage": [],

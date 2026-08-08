@@ -14,38 +14,38 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T22:00:12.261541+00:00",
-    "as_of": "Aug 7, 2026",
+    "date_last_filing": "2026-08-08",
+    "fetched_at": "2026-08-08T22:53:55.225606+00:00",
+    "as_of": "Aug 8, 2026",
     "backfilled": true,
     "new_in_72h": 13,
     "recent": [
       {
-        "entry_number": 51,
-        "date_filed": "2026-08-07",
-        "time_filed": "16:20:59",
-        "date_display": "Aug 7, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "entry_number": 55,
+        "date_filed": "2026-08-08",
+        "time_filed": "11:48:16",
+        "date_display": "Aug 8, 2026",
+        "description": "Notice of Deposition of Pinni Yaniv in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 50,
-        "date_filed": "2026-08-07",
-        "time_filed": "16:19:36",
-        "date_display": "Aug 7, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "entry_number": 54,
+        "date_filed": "2026-08-08",
+        "time_filed": "11:47:04",
+        "date_display": "Aug 8, 2026",
+        "description": "Notice of Deposition of Oriel Bachar in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 49,
-        "date_filed": "2026-08-06",
-        "time_filed": "17:40:31",
-        "date_display": "Aug 6, 2026",
-        "description": "Appear pro hac vice",
+        "entry_number": 53,
+        "date_filed": "2026-08-08",
+        "time_filed": "11:45:34",
+        "date_display": "Aug 8, 2026",
+        "description": "Notice of Deposition of James Kong in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -53,11 +53,51 @@
     ],
     "entries": [
       {
+        "entry_number": 55,
+        "date_filed": "2026-08-08",
+        "time_filed": "11:48:16",
+        "date_display": "Aug 8, 2026",
+        "description": "Notice of Deposition of Pinni Yaniv in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 54,
+        "date_filed": "2026-08-08",
+        "time_filed": "11:47:04",
+        "date_display": "Aug 8, 2026",
+        "description": "Notice of Deposition of Oriel Bachar in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 53,
+        "date_filed": "2026-08-08",
+        "time_filed": "11:45:34",
+        "date_display": "Aug 8, 2026",
+        "description": "Notice of Deposition of James Kong in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 52,
+        "date_filed": "2026-08-08",
+        "time_filed": "11:43:49",
+        "date_display": "Aug 8, 2026",
+        "description": "Notice of Service Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 51,
         "date_filed": "2026-08-07",
         "time_filed": "16:20:59",
         "date_display": "Aug 7, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Michael Ardeljan of Latham & Watkins LLP. Receipt Number 5036927, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/07/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -67,7 +107,7 @@
         "date_filed": "2026-08-07",
         "time_filed": "16:19:36",
         "date_display": "Aug 7, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Amy C. Quartarolo of Latham & Watkins LLP. Receipt Number 5036927, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/07/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -77,7 +117,7 @@
         "date_filed": "2026-08-06",
         "time_filed": "17:40:31",
         "date_display": "Aug 6, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Approving Motion for Admission pro hac vice of Adam J. Goldberg (Related Doc # 46) Signed on 8/6/2026. (LMC) (Entered: 08/06/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -87,7 +127,7 @@
         "date_filed": "2026-08-06",
         "time_filed": "17:39:51",
         "date_display": "Aug 6, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Approving Motion for Admission pro hac vice of Christopher Harris (Related Doc # 45) Signed on 8/6/2026. (LMC) (Entered: 08/06/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -97,7 +137,7 @@
         "date_filed": "2026-08-06",
         "time_filed": "17:39:10",
         "date_display": "Aug 6, 2026",
-        "description": "Appear pro hac vice",
+        "description": "Order Approving Motion for Admission pro hac vice of Ray C. Schrock (Related Doc # 44) Signed on 8/6/2026. (LMC) (Entered: 08/06/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -107,7 +147,7 @@
         "date_filed": "2026-08-06",
         "time_filed": "16:13:19",
         "date_display": "Aug 6, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Adam J. Goldberg of Latham & Watkins LLP. Receipt Number 5035603, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/06/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -117,7 +157,7 @@
         "date_filed": "2026-08-06",
         "time_filed": "16:12:18",
         "date_display": "Aug 6, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Christopher Harris of Latham & Watkins LLP. Receipt Number 5035603, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/06/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -127,7 +167,7 @@
         "date_filed": "2026-08-06",
         "time_filed": "16:11:16",
         "date_display": "Aug 6, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "description": "Motion to Appear pro hac vice of Ray C. Schrock of Latham & Watkins LLP. Receipt Number 5035603, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/06/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -137,7 +177,7 @@
         "date_filed": "2026-08-06",
         "time_filed": "16:09:55",
         "date_display": "Aug 6, 2026",
-        "description": "Appearance - Notice",
+        "description": "Notice of Appearance. Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/06/2026)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
@@ -147,8 +187,8 @@
         "date_filed": "2026-08-05",
         "time_filed": "17:18:11",
         "date_display": "Aug 5, 2026",
-        "description": "Certificate of Service",
-        "is_new": true,
+        "description": "Certificate of Service (related document(s)39, 40, 41) Filed by Oriel Bachar. (Attachments: # 1 Service List) (Malow, Jennifer) (Entered: 08/05/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -157,8 +197,8 @@
         "date_filed": "2026-08-05",
         "time_filed": "12:52:49",
         "date_display": "Aug 5, 2026",
-        "description": "Hearing - Notice",
-        "is_new": true,
+        "description": "Notice of Hearing / Notice of (A) Filing of Chapter 15 Petition and Related Chapter 15 Documents Seeking Recognition of Israeli Proceeding as Foreign Main Proceeding or, Alternatively, as a Foreign Nonmain Proceeding and (B) Recogntion Hearing (related document(s)1, 4, 40) Filed by Oriel Bachar. Hearing scheduled for 9/3/2026 at 09:30 AM at Virtual Hearing: Refer to Notice of Zoom Hearing. Objections due by 8/27/2026. (Attachments: # 1 Exhibit A # 2 Exhibit B) (Tarr, Stanley) (Entered: 08/05/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -168,7 +208,7 @@
         "time_filed": "09:47:41",
         "date_display": "Aug 5, 2026",
         "description": "Order (A) Scheduling Hearing on Recognition of Chapter 15 Petition and (B) Specifying Form and Manner of Service of Notice (Related Doc # 8, 38) Signed on 8/5/2026. (Attachments: # 1) (LMC) (Entered: 08/05/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -178,7 +218,7 @@
         "time_filed": "09:46:30",
         "date_display": "Aug 5, 2026",
         "description": "Order Granting Provisional Relief Pursuant to Section 1519 of the Bankruptcy Code (Related Doc # 7, 37) Signed on 8/5/2026. (LMC) (Entered: 08/05/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
