@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-07T22:00:04.798944+00:00",
-    "as_of": "Aug 7, 2026",
+    "fetched_at": "2026-08-08T20:54:54.075615+00:00",
+    "as_of": "Aug 8, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 6,
     "recent": [
       {
         "entry_number": 72,
@@ -118,7 +118,7 @@
         "time_filed": "16:31:44",
         "date_display": "Aug 5, 2026",
         "description": "Affidavit Of Service",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "",
         "titled_from_upload": true
