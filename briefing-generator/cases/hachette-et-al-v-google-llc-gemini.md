@@ -1,6 +1,6 @@
 ---
 slug: hachette-et-al-v-google-llc-gemini
-display_name: Hachette et al. v. Google LLC (Gemini)
+display_name: Hachette v. Google (Gemini)
 type: case
 status: active
 sync: active
