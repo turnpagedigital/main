@@ -210,6 +210,10 @@
     .ih-tp-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
     .ih-tp-btn:hover { background: var(--paper-2); color: var(--ink); }
     .ih-tp-btn.on { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+    /* Cases section header — title left, view + sort controls right */
+    .ih-cases-head { max-width: 1680px; margin: 26px auto 12px; padding: 0 32px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .ih-cases-title { display: flex; align-items: center; gap: 8px; margin-right: auto; }
+    .ih-cases-tools { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     /* Filter dropdowns (Cases / Themes) — same language as the press-page filter bar */
     .ih-dd-wrap { position: relative; }
     .ih-dd-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 26px 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; position: relative; transition: background 0.15s, color 0.15s, border-color 0.15s; }
@@ -421,20 +425,9 @@
   <!-- Dashboard: top 7 from each section, four columns -->
   <div class="ih-controls">
     <div class="ih-theme-pills" id="ih-theme-pills" role="group" aria-label="Filter by theme"></div>
-    <div class="ih-sort" id="ih-view-tgl" role="group" aria-label="Briefing view">
-      <button type="button" class="ih-sort-btn" data-view="cards" title="Card view — lede + latest rows per case">▦ Cards</button>
-      <button type="button" class="ih-sort-btn" data-view="list" title="List view — one row per case">≣ List</button>
-    </div>
     <div class="ih-dd-wrap">
       <button type="button" id="ih-cases-btn" class="ih-dd-btn">Cases: All</button>
       <div id="ih-cases-panel" class="ih-dd-panel" style="display:none;"></div>
-    </div>
-    <div class="ih-sort" id="ih-sort" role="group" aria-label="Arrange case cards">
-      <button type="button" class="ih-sort-btn on" data-sort="activity" title="Cases that moved today first, then recent activity">Activity</button>
-      <button type="button" class="ih-sort-btn" data-sort="az" title="Alphabetical by case name — click again to flip">A–Z</button>
-      <button type="button" class="ih-sort-btn" data-sort="date" title="By when the case was added — click again to flip">Newest</button>
-      <button type="button" class="ih-sort-btn" data-sort="priority" title="High-priority cases pinned on top">Priority</button>
-      <button type="button" class="ih-sort-btn" data-sort="theme" title="Grouped by practice area">Theme</button>
     </div>
   </div>
   <div class="ih-band">
@@ -454,6 +447,23 @@
       <a class="ih-head" href="../notes.html"><span class="ih-emoji">🗒️</span><span class="ih-name">Notes</span><span class="ih-more">View all →</span></a>
       <div class="ih-list" id="ih-notes"><div class="ih-empty">Loading…</div></div>
     </section>
+  </div>
+
+  <div class="ih-cases-head">
+    <div class="ih-cases-title"><span class="ih-emoji">🗂️</span><span class="ih-name">Cases</span></div>
+    <div class="ih-cases-tools">
+      <div class="ih-sort" id="ih-view-tgl" role="group" aria-label="Briefing view">
+        <button type="button" class="ih-sort-btn" data-view="cards" title="Card view — lede + latest rows per case">▦ Cards</button>
+        <button type="button" class="ih-sort-btn" data-view="list" title="List view — one row per case">≣ List</button>
+      </div>
+      <div class="ih-sort" id="ih-sort" role="group" aria-label="Arrange case cards">
+        <button type="button" class="ih-sort-btn on" data-sort="activity" title="Cases that moved today first, then recent activity">Activity</button>
+        <button type="button" class="ih-sort-btn" data-sort="az" title="Alphabetical by case name — click again to flip">A–Z</button>
+        <button type="button" class="ih-sort-btn" data-sort="date" title="By when the case was added — click again to flip">Newest</button>
+        <button type="button" class="ih-sort-btn" data-sort="priority" title="High-priority cases pinned on top">Priority</button>
+        <button type="button" class="ih-sort-btn" data-sort="theme" title="Grouped by practice area">Theme</button>
+      </div>
+    </div>
   </div>
 
   <div class="ih-carousel">
