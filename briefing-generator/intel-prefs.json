@@ -85,6 +85,10 @@
     "publishers-v-google-llc-gemini-books": {
       "bg": "#1b3a4b",
       "fg": "#ffffff"
+    },
+    "britannica-merriam-webster-v-openai": {
+      "bg": "#d9d9d9",
+      "fg": "#000000"
     }
   },
   "groups": [
