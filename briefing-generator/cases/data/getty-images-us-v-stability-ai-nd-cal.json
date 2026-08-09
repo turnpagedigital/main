@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
     "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-08T22:50:24.823127+00:00",
-    "as_of": "Aug 8, 2026",
+    "fetched_at": "2026-08-09T02:32:11.411235+00:00",
+    "as_of": "Aug 9, 2026",
     "backfilled": true,
-    "new_in_72h": 1,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 68,
@@ -27,7 +27,7 @@
         "time_filed": "19:38:08",
         "date_display": "Aug 6, 2026",
         "description": "Administrative Motion per Civil Local Rule 7-11",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -59,7 +59,7 @@
         "time_filed": "19:38:08",
         "date_display": "Aug 6, 2026",
         "description": "Administrative Motion per Civil Local Rule 7-11",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-08T23:50:22.951855+00:00",
-    "as_of": "Aug 8, 2026",
+    "fetched_at": "2026-08-09T02:33:06.547581+00:00",
+    "as_of": "Aug 9, 2026",
     "backfilled": true,
-    "new_in_72h": 29,
+    "new_in_72h": 20,
     "recent": [
       {
         "entry_number": 1181,
@@ -259,7 +259,7 @@
         "time_filed": "18:45:39",
         "date_display": "Aug 6, 2026",
         "description": "Certificate (generic)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -269,7 +269,7 @@
         "time_filed": "16:29:46",
         "date_display": "Aug 6, 2026",
         "description": "Relief from stay",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -279,7 +279,7 @@
         "time_filed": "12:53:01",
         "date_display": "Aug 6, 2026",
         "description": "Application For Admission Pro Hac Vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "",
         "titled_from_upload": true
@@ -290,7 +290,7 @@
         "time_filed": "12:51:47",
         "date_display": "Aug 6, 2026",
         "description": "Appear pro hac vice",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -300,7 +300,7 @@
         "time_filed": "12:32:12",
         "date_display": "Aug 6, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -310,7 +310,7 @@
         "time_filed": "12:22:57",
         "date_display": "Aug 6, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -320,7 +320,7 @@
         "time_filed": "11:03:01",
         "date_display": "Aug 6, 2026",
         "description": "Compensation",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -330,7 +330,7 @@
         "time_filed": "16:30:53",
         "date_display": "Aug 6, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -340,7 +340,7 @@
         "time_filed": "12:54:52",
         "date_display": "Aug 6, 2026",
         "description": "none AND none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
