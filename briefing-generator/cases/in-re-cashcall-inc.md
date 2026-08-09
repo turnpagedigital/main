@@ -1,6 +1,6 @@
 ---
 slug: in-re-cashcall-inc
-display_name: In re CashCall, Inc.
+display_name: CashCall
 type: case
 status: active
 sync: active
