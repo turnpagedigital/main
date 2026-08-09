@@ -94,6 +94,12 @@ Ciao
 
 > Meet The Attorneys Guiding Omnis Pleasants In Ch. 11 — Young Conaway Stargatt & Taylor LLP and Herbert Smith Freehills Kramer LLP are serving as bankruptcy counsel for Omnis Pleasants LLC as it naviga
 
+## Papaya Gaming
+
+### (no docket number) — 2026-08-03 ★
+
+> Papaya Gaming Files Ch. 15 To Shield Against $719M Verdict — Israeli mobile gaming company Papaya Gaming filed a Chapter 15 bankruptcy petition in Delaware's U.S. Bankruptcy Court after being hit with
+
 ## Poolin
 
 ### (no docket number) — 2026-08-02 ★
