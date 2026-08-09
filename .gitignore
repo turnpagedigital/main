@@ -4,6 +4,11 @@ dist
 *.zip
 zifPZjEa
 
+# macOS + Office/LibreOffice owner-lock temp files (were committed by accident)
+.DS_Store
+~$*
+.~lock.*
+
 # Local worktree and temp files
 .claude/
 Pitchdeck.pptx

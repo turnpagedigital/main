@@ -305,6 +305,11 @@ function Wizard({ flow, pageKey, eyebrow, title, accent, layout, colorScheme, ba
     .filter(Boolean)
     .every(fieldId => answers[fieldId]);
 
+  // No step to show — a flow with no steps, or whose only steps are gated
+  // behind a branch that no current answer satisfies. Bail gracefully instead
+  // of dereferencing an undefined `step` below (which would blank the section).
+  if (!step) return null;
+
   const formNode = (
     <>
       {/* Split layout already shows the intro under the left-column heading —

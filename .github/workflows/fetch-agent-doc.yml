@@ -50,6 +50,9 @@ jobs:
         run: python scripts/fetch_agent_doc.py
 
       - name: Commit to main if anything changed
+        env:
+          SLUG: ${{ github.event.inputs.slug }}
+          ENTRY_NUMBER: ${{ github.event.inputs.entry_number }}
         run: |
           if git diff --quiet -- briefing-generator; then
             echo "Nothing fetched"; exit 0
@@ -57,7 +60,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "Agent Fetch Bot"
           git add briefing-generator/uploads briefing-generator/uploads.json briefing-generator/cases/data
-          git commit -m "Agent fetch: Dkt. ${{ github.event.inputs.entry_number }} (${{ github.event.inputs.slug }})"
+          git commit -m "Agent fetch: Dkt. ${ENTRY_NUMBER} (${SLUG})"
           for attempt in 1 2 3 4 5; do
             if git pull --rebase origin main && git push; then
               echo "pushed on attempt ${attempt}"; break

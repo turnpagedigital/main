@@ -320,7 +320,7 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
                 rowGap: "0.55rem",
                 columnGap: "2.5rem",
               }}>
-                {dropContent.links.slice(0, 8).map((l, i) => (
+                {(dropContent.links || []).slice(0, 8).map((l, i) => (
                   <li key={i}>
                     <a
                       href={l.href}
@@ -345,6 +345,7 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
               </ul>
             </div>
 
+            {dropContent.cta && (
             <div style={{ alignSelf: "center" }}>
               <a
                 href={dropContent.cta.href}
@@ -368,6 +369,7 @@ export default function NavBar({ currentPage, open, onOpenChange }) {
                 </svg>
               </a>
             </div>
+            )}
           </div>
         </div>
       )}

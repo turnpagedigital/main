@@ -8,7 +8,7 @@
 
 
 /intel/*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 
 # Intel app code ships fixes several times a day — don't let browsers sit on
 # a 4-hour cached copy (the Pages default). 5 minutes keeps refreshes honest.
@@ -16,8 +16,36 @@
   Cache-Control: public, max-age=300, must-revalidate
 /intel/*.html
   Cache-Control: public, max-age=60, must-revalidate
+
+# Vite content-hashes every file under /assets, so the bytes at a given URL
+# never change — cache them for a year and skip revalidation entirely. This is
+# the biggest repeat-visit / SPA-navigation win and is safe because a code
+# change ships a new filename.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Root-level media (images, video, fonts) isn't content-hashed, so cap the
+# cache at one day: repeat visitors skip the re-download, but replacing a file
+# in place still refreshes within 24h instead of being stuck for a year.
+/*.jpg
+  Cache-Control: public, max-age=86400
+/*.jpeg
+  Cache-Control: public, max-age=86400
+/*.png
+  Cache-Control: public, max-age=86400
+/*.webp
+  Cache-Control: public, max-age=86400
+/*.avif
+  Cache-Control: public, max-age=86400
+/*.svg
+  Cache-Control: public, max-age=86400
+/*.mp4
+  Cache-Control: public, max-age=86400
+/*.woff2
+  Cache-Control: public, max-age=604800
+
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-IAi1pLQE5+KAIuArgNXn6zyVZNw3AXpIN96yYUJWAu4=' https://conversations-widget.brevo.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://conversations-widget.brevo.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://*.brevo.com wss://*.brevo.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.google.com https://*.doubleclick.net; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://*.brevo.com https://td.doubleclick.net https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-IAi1pLQE5+KAIuArgNXn6zyVZNw3AXpIN96yYUJWAu4=' https://conversations-widget.brevo.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://conversations-widget.brevo.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://*.brevo.com wss://*.brevo.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.google.com https://*.doubleclick.net; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://*.brevo.com https://td.doubleclick.net https://www.googletagmanager.com https://challenges.cloudflare.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()

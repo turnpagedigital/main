@@ -58,7 +58,7 @@ src/
   data/
     tokens.js              — Color and font tokens
     css.js                 — Global CSS (injected at runtime)
-    cases.js               — Top 12 AI copyright cases (edit to update tracker)
+    (cases live in the intelligence system, not a static file — edit via /admin/intelligence/cases, served by /api/admin/cases)
     deals.json             — Deal cards for Home + Crypto (edit via chat OR /#/admin)
     translations.js        — 8-language string table (en/es/fr/de/it/pt/ko/zh)
   lib/
@@ -99,7 +99,7 @@ index.html                 — Vite entry, meta + OG tags
 ```
 
 ### Editing common things
-- **Update a case** → edit `src/data/cases.js`. Each entry has `rank`, `name`, `defendants`, `court`, `status`, `damages`, `summary`.
+- **Update a case** → edit via Admin → Intelligence → Cases (`/admin/intelligence/cases`), served/saved through `/api/admin/cases`. (The old static `src/data/cases.js` was removed Aug 2026 — it was orphaned and no longer powered the tracker.)
 - **Post a briefing** → see "Posting a Briefing" below.
 - **Replace Crypto placeholder copy** → edit `src/pages/Crypto.jsx`. Structure mirrors AICopyright.jsx.
 - **Hero copy** → home is in `src/pages/Home.jsx`; AI Copyright hero is in `src/pages/AICopyright.jsx` (uses the shared `Hero` component).
