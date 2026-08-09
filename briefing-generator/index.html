@@ -423,6 +423,7 @@
   /* Late overrides in their own style element so parse errors above can't swallow them. */
   /* Uniform control height — emoji glyphs otherwise stretch their buttons taller */
   .ih-tp-btn, .ih-sort-btn, .ih-dd-btn { height: 30px; padding-top: 0; padding-bottom: 0; display: inline-flex; align-items: center; line-height: 1; }
+  a.ih-sort-btn { text-decoration: none; }
   /* Section titles sit on the gray canvas in black; content is the white box below */
   .ih-tile { background: transparent; border: none; }
   .ih-tile > .ih-head { border-bottom: none; padding: 0 2px 8px; }
@@ -505,6 +506,7 @@
         <button type="button" class="ih-sort-btn" data-sort="priority" title="High-priority cases pinned on top">Priority</button>
         <button type="button" class="ih-sort-btn" data-sort="theme" title="Grouped by practice area">Theme</button>
       </div>
+      <a class="ih-sort-btn" href="manage.html" title="Case, theme, group &amp; settings management">⚙ Manage</a>
     </div>
   </div>
 

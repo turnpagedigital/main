@@ -1,0 +1,805 @@
+(function () {
+  "use strict";
+
+  /* Manage — intel-site management console (replaces admin → Intelligence →
+     Cases/Themes, Aug 2026). Four tabs:
+       #cases    — tracked-case CRUD (same /api/admin/cases backing store)
+       #themes   — theme CRUD (/api/admin/themes → src/data/themes.json)
+       #groups   — FILTER groups (quick-select sets in the dashboard Cases
+                   dropdown; localStorage ud-case-groups + api/prefs roaming).
+                   Briefing groups (cases briefed as one unit) live in the
+                   dashboard GROUPS menu, not here.
+       #settings — default 12-color pill palette (ud-theme-presets + prefs).
+     Saves need the ADMIN session cookie (same origin); a login overlay
+     appears on 401. External file — CSP kills inline JS on /intel/*. */
+
+  var BASE = location.pathname.indexOf("/intel") === 0 ? "/intel/" : "/";
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function $(id) { return document.getElementById(id); }
+  function slugify(s) {
+    return String(s || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+  function autoFg(bg) {
+    var r = parseInt(String(bg).slice(1, 3), 16) || 136;
+    var g = parseInt(String(bg).slice(3, 5), 16) || 136;
+    var b = parseInt(String(bg).slice(5, 7), 16) || 136;
+    return (0.299 * r + 0.587 * g + 0.114 * b) / 255 > 0.55 ? "#0A0A0A" : "#FFFFFF";
+  }
+
+  // ── Admin-session fetch with login overlay on 401 ─────────────────────────
+  function apiFetch(path, opts) {
+    opts = opts || {};
+    opts.credentials = "include";
+    return fetch(path, opts).then(function (res) {
+      if (res.status === 401 || res.status === 403) {
+        return requireLogin().then(function () { return fetch(path, opts); });
+      }
+      return res;
+    });
+  }
+
+  var _loginPending = null;
+  function requireLogin() {
+    if (_loginPending) return _loginPending;
+    _loginPending = new Promise(function (resolve) {
+      var ov = document.createElement("div");
+      ov.className = "mg-login";
+      ov.innerHTML =
+        '<div class="mg-login-card">' +
+          "<h2>Admin sign-in required</h2>" +
+          "<p>Saving here uses the same admin session as /admin. Enter the admin password to continue.</p>" +
+          '<div class="mg-field"><input type="password" id="mg-login-pw" placeholder="Admin password" autocomplete="current-password"></div>' +
+          '<div id="mg-login-err" class="mg-banner err" style="display:none;"></div>' +
+          '<div class="mg-actions"><button type="button" class="mg-btn mg-btn-primary" id="mg-login-go">Sign in</button></div>' +
+        "</div>";
+      document.body.appendChild(ov);
+      var pw = ov.querySelector("#mg-login-pw");
+      pw.focus();
+      function go() {
+        var err = ov.querySelector("#mg-login-err");
+        err.style.display = "none";
+        fetch("/api/admin/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ password: pw.value }),
+        }).then(function (r) { return r.json().catch(function () { return {}; }); }).then(function (j) {
+          if (j && j.ok) {
+            document.body.removeChild(ov);
+            _loginPending = null;
+            resolve();
+          } else {
+            err.textContent = (j && j.error) || "Wrong password.";
+            err.style.display = "block";
+          }
+        }).catch(function () {
+          err.textContent = "Login failed — network error.";
+          err.style.display = "block";
+        });
+      }
+      ov.querySelector("#mg-login-go").addEventListener("click", go);
+      pw.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); });
+    });
+    return _loginPending;
+  }
+
+  // ── State ──────────────────────────────────────────────────────────────────
+  var CASES = [];        // /api/admin/cases
+  var CASES_ERR = "";    // load failure surfaced in the Cases tab (page still works)
+  var THEMES = [          // /api/admin/themes overwrites; fallback keeps editors usable
+    { slug: "rewind-tariffs", display_name: "Tariffs / Trade", emoji: "⚖️" },
+    { slug: "llm-class-action", display_name: "LLM / Copyright", emoji: "🤖" },
+    { slug: "crypto-insolvency", display_name: "Crypto Insolvency", emoji: "🪙" },
+    { slug: "fraud-recovery", display_name: "Ponzi / Fraud Recovery", emoji: "🕵️" },
+    { slug: "billion-dollar-class-actions", display_name: "$1B+ Class Actions & Mass Arb", emoji: "💰" },
+    { slug: "bankruptcy-creditor-rights", display_name: "Bankruptcy Creditor Rights", emoji: "📜" },
+  ];
+  var MANIFEST = [];     // cases/data/_manifest.json (colors)
+  var savedColors = {};
+  try { savedColors = JSON.parse(localStorage.getItem("ud-case-colors") || "{}") || {}; } catch (e) {}
+
+  var FALLBACK_SWATCHES = [
+    { bg: "#D4FF00", fg: "#0A0A0A" }, { bg: "#E9F98A", fg: "#4A5500" },
+    { bg: "#1B3A4B", fg: "#FFFFFF" }, { bg: "#94C6F8", fg: "#123A66" },
+    { bg: "#3B78D8", fg: "#FFFFFF" }, { bg: "#B3A8F0", fg: "#2A1E6E" },
+    { bg: "#4A3DE0", fg: "#FFFFFF" }, { bg: "#7EF4C2", fg: "#0B4A32" },
+    { bg: "#3FA07A", fg: "#FFFFFF" }, { bg: "#F2AAEC", fg: "#6E1466" },
+    { bg: "#CC33CC", fg: "#FFFFFF" }, { bg: "#3A3A3A", fg: "#FFFFFF" },
+  ];
+
+  function caseColor(slug) {
+    if (savedColors[slug] && savedColors[slug].bg) return savedColors[slug].bg;
+    for (var i = 0; i < MANIFEST.length; i++) {
+      if (MANIFEST[i].slug === slug) return MANIFEST[i].default_color || "#888888";
+    }
+    return "#888888";
+  }
+  function casePill(slug, name) {
+    var bg = caseColor(slug);
+    var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
+    return '<span class="mg-pill" style="background:' + bg + ";color:" + fg + '">' + esc(name) + "</span>";
+  }
+  function themeEmoji(slug) {
+    for (var i = 0; i < THEMES.length; i++) if (THEMES[i].slug === slug) return THEMES[i].emoji || "🏷️";
+    return "🏷️";
+  }
+  function themeName(slug) {
+    for (var i = 0; i < THEMES.length; i++) if (THEMES[i].slug === slug) return THEMES[i].display_name || slug;
+    return slug;
+  }
+
+  // ── Tiny view helpers ──────────────────────────────────────────────────────
+  var root = $("mg-root");
+  var _banner = { kind: "", text: "" };
+  function setBanner(kind, text) { _banner = { kind: kind, text: text }; }
+  function bannerHtml() {
+    if (!_banner.text) return "";
+    var h = '<div class="mg-banner ' + _banner.kind + '">' + esc(_banner.text) + "</div>";
+    _banner = { kind: "", text: "" };
+    return h;
+  }
+  function confirmModal(html, onYes, yesLabel) {
+    var ov = document.createElement("div");
+    ov.className = "mg-modal";
+    ov.innerHTML =
+      '<div class="mg-modal-card">' + html +
+        '<div class="mg-actions">' +
+          '<button type="button" class="mg-btn mg-btn-danger" data-yes>' + esc(yesLabel || "Delete") + "</button>" +
+          '<button type="button" class="mg-btn" data-no>Cancel</button>' +
+        "</div></div>";
+    document.body.appendChild(ov);
+    ov.querySelector("[data-yes]").addEventListener("click", function () { document.body.removeChild(ov); onYes(); });
+    ov.querySelector("[data-no]").addEventListener("click", function () { document.body.removeChild(ov); });
+  }
+
+  // ── Tab router ─────────────────────────────────────────────────────────────
+  var TABS = { cases: renderCases, themes: renderThemes, groups: renderGroups, settings: renderSettings };
+  function currentTab() {
+    var m = /#(cases|themes|groups|settings)/.exec(location.hash || "");
+    return m ? m[1] : "cases";
+  }
+  function paintTabs() {
+    var t = currentTab();
+    var tabs = document.querySelectorAll("#mg-tabs .mg-tab");
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].classList.toggle("on", tabs[i].getAttribute("data-tab") === t);
+    }
+  }
+  function route() {
+    paintTabs();
+    (TABS[currentTab()] || renderCases)();
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route);
+
+  /* ══ CASES ═══════════════════════════════════════════════════════════════ */
+
+  var SYNC_MODES = [
+    { value: "active", label: "Active Sync", hint: "Hourly + nightly syncing, live docket polling, daily news search." },
+    { value: "manual", label: "Manual Sync", hint: "Updates only when you press Sync now. No scheduled searching." },
+    { value: "archived", label: "Archived", hint: "Docket entries are kept but the case is never searched again." },
+  ];
+  function defaultCase() {
+    return {
+      slug: "", display_name: "", short_name: "", type: "case", status: "active", sync: "active",
+      topics: [],
+      case: { parties: "", court: "", case_number: "", judge: "" },
+      docket_source: { type: "courtlistener", docket_id: null, url: "", awaiting_sync: false },
+      claims_administrator: null,
+      scan_guidance: "",
+    };
+  }
+
+  function renderCases() {
+    var rows = CASES.map(function (c) {
+      var sync = c.sync || "active";
+      var dockUrl = (c.docket_source && c.docket_source.url) || (c.claims_administrator && c.claims_administrator.url) || "";
+      return (
+        "<tr" + (sync === "archived" ? ' style="opacity:0.55"' : "") + ">" +
+          "<td>" + casePill(c.slug, c.short_name || c.display_name) +
+            '<div class="mg-slug">' + esc(c.slug) + "</div></td>" +
+          '<td><span class="mg-sync ' + esc(sync) + '">' + esc(sync) + "</span>" +
+            (c.status && c.status !== "active" ? '<div class="mg-slug">' + esc(c.status) + "</div>" : "") + "</td>" +
+          '<td title="' + esc((c.topics || []).map(themeName).join(", ")) + '">' + (c.topics || []).map(themeEmoji).join(" ") + "</td>" +
+          '<td class="mg-right">' +
+            (dockUrl ? '<a class="mg-btn mg-btn-ghost" href="' + esc(dockUrl) + '" target="_blank" rel="noopener">Docket ↗</a> ' : "") +
+            (sync !== "archived" ? '<button type="button" class="mg-btn" data-sync="' + esc(c.slug) + '">Sync now</button> ' : "") +
+            '<button type="button" class="mg-btn" data-export="' + esc(c.slug) + '">Export</button> ' +
+            '<button type="button" class="mg-btn" data-edit="' + esc(c.slug) + '">Edit</button> ' +
+            '<button type="button" class="mg-btn mg-btn-danger" data-del="' + esc(c.slug) + '">Delete</button>' +
+          "</td>" +
+        "</tr>"
+      );
+    }).join("");
+
+    root.innerHTML =
+      bannerHtml() +
+      (CASES_ERR ? '<div class="mg-banner err">Cases failed to load: ' + esc(CASES_ERR) + "</div>" : "") +
+      '<div class="mg-head"><h2>Tracked cases</h2>' +
+        '<button type="button" class="mg-btn mg-btn-primary" id="mg-new-case">＋ New case</button></div>' +
+      '<p class="mg-hint">Every matter the pipeline follows. A case can span multiple themes and carries its own scan guidance. Colors are set from the pill ⚙ menus on the dashboard; the default palette lives in Settings.</p>' +
+      '<div class="mg-box"><table class="mg-table">' +
+        "<thead><tr><th>Case</th><th>Sync</th><th>Themes</th><th class=\"mg-right\">Actions</th></tr></thead>" +
+        "<tbody>" + (rows || '<tr><td colspan="4" class="mg-empty">No cases yet — create the first one.</td></tr>') + "</tbody>" +
+      "</table></div>";
+
+    $("mg-new-case").addEventListener("click", function () { renderCaseEditor(null); });
+    root.querySelectorAll("[data-edit]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var c = CASES.filter(function (x) { return x.slug === b.getAttribute("data-edit"); })[0];
+        renderCaseEditor(JSON.parse(JSON.stringify(c)));
+      });
+    });
+    root.querySelectorAll("[data-del]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var slug = b.getAttribute("data-del");
+        confirmModal(
+          "<p>Delete case <strong>" + esc(slug) + "</strong>? This removes its configuration, docket data, case page, and uploaded documents — and can’t be undone. Consider <strong>Export</strong> first.</p>",
+          function () {
+            apiFetch("/api/admin/cases?slug=" + encodeURIComponent(slug), { method: "DELETE" })
+              .then(function (r) { return r.json(); })
+              .then(function (j) {
+                if (!j.ok) throw new Error(j.error || "Delete failed");
+                setBanner("ok", "Case deleted.");
+                return loadCases();
+              })
+              .then(renderCases)
+              .catch(function (e) { setBanner("err", String(e.message || e)); renderCases(); });
+          }
+        );
+      });
+    });
+    root.querySelectorAll("[data-sync]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        b.disabled = true; b.textContent = "…";
+        apiFetch("/api/admin/sync-case", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ slug: b.getAttribute("data-sync") }),
+        }).then(function (r) { return r.json(); }).then(function (j) {
+          if (!j.ok) throw new Error(j.error || "Sync dispatch failed");
+          setBanner("ok", j.note || "Sync started."); renderCases();
+        }).catch(function (e) { setBanner("err", String(e.message || e)); renderCases(); });
+      });
+    });
+    root.querySelectorAll("[data-export]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var slug = b.getAttribute("data-export");
+        b.disabled = true; b.textContent = "…";
+        apiFetch("/api/admin/case-export?slug=" + encodeURIComponent(slug))
+          .then(function (res) {
+            if (!res.ok) throw new Error("Export failed (" + res.status + ")");
+            var cd = res.headers.get("Content-Disposition") || "";
+            var m = /filename="([^"]+)"/.exec(cd);
+            return res.blob().then(function (blob) {
+              var a = document.createElement("a");
+              a.href = URL.createObjectURL(blob);
+              a.download = m ? m[1] : "case-" + slug + ".zip";
+              document.body.appendChild(a); a.click(); a.remove();
+              URL.revokeObjectURL(a.href);
+              b.disabled = false; b.textContent = "Export";
+            });
+          })
+          .catch(function (e) { setBanner("err", String(e.message || e)); renderCases(); });
+      });
+    });
+  }
+
+  function renderCaseEditor(c) {
+    var isNew = !c;
+    var form = c || defaultCase();
+    if (!form.case) form.case = { parties: "", court: "", case_number: "", judge: "" };
+    if (!form.docket_source) form.docket_source = { type: "courtlistener", docket_id: null, url: "", awaiting_sync: false };
+    var isCL = form.docket_source.type !== "claims_agent";
+
+    var themeChecks = THEMES.map(function (t) {
+      var on = (form.topics || []).indexOf(t.slug) >= 0;
+      return '<label class="mg-check' + (on ? " on" : "") + '"><input type="checkbox" data-topic="' + esc(t.slug) + '"' + (on ? " checked" : "") + "> " + esc(t.emoji) + " " + esc(t.display_name) + "</label>";
+    }).join("");
+
+    root.innerHTML =
+      bannerHtml() +
+      '<div class="mg-head"><h2>' + (isNew ? "New case" : "Edit: " + esc(form.display_name || form.slug)) + "</h2>" +
+        '<button type="button" class="mg-btn" id="mg-back">← All cases</button></div>' +
+      '<div class="mg-form" id="mg-case-form">' +
+        "<h3>Basics</h3>" +
+        '<div class="mg-field"><label>Display name *</label><input type="text" id="cf-name" value="' + esc(form.display_name) + '" placeholder="e.g. Bartz v. Anthropic"></div>' +
+        '<div class="mg-grid3">' +
+          '<div class="mg-field"><label>Slug ' + (isNew ? "(auto if blank)" : "(fixed)") + "</label><input type=\"text\" id=\"cf-slug\" value=\"" + esc(form.slug) + '"' + (isNew ? "" : " disabled") + "></div>" +
+          '<div class="mg-field"><label>Short name (pill label)</label><input type="text" id="cf-short" value="' + esc(form.short_name || "") + '" placeholder="Bartz"></div>' +
+          '<div class="mg-field"><label>Display status (badge)</label><input type="text" id="cf-status" value="' + esc(form.status || "") + '" placeholder="e.g. Settlement — final approval pending"></div>' +
+        "</div>" +
+        '<div class="mg-field" style="max-width:360px"><label>Sync mode</label><select id="cf-sync">' +
+          SYNC_MODES.map(function (s) { return '<option value="' + s.value + '"' + ((form.sync || "active") === s.value ? " selected" : "") + ">" + s.label + "</option>"; }).join("") +
+        '</select><div class="mg-note" id="cf-sync-hint"></div></div>' +
+
+        "<h3>Themes (tag one or more)</h3>" +
+        '<div class="mg-grid2" id="cf-topics">' + themeChecks + "</div>" +
+
+        "<h3>Tracking source</h3>" +
+        '<div class="mg-field" style="max-width:360px"><label>Source type</label><select id="cf-srctype">' +
+          '<option value="courtlistener"' + (isCL ? " selected" : "") + ">Court docket (CourtListener)</option>" +
+          '<option value="claims_agent"' + (isCL ? "" : " selected") + ">Claims agent</option>" +
+        "</select></div>" +
+        '<div id="cf-src-cl" style="display:' + (isCL ? "block" : "none") + '">' +
+          '<div class="mg-field"><label>Docket ID *</label>' +
+            '<div style="display:flex;gap:8px"><input type="text" id="cf-docketid" value="' + esc(form.docket_source.docket_id || "") + '" placeholder="e.g. 69058235">' +
+            '<button type="button" class="mg-btn" id="cf-lookup">Look up</button></div>' +
+            '<div class="mg-note" id="cf-lookup-msg">Enter the CourtListener docket ID and click Look up to auto-fill parties, court, case number, and judge.</div></div>' +
+          '<div class="mg-field"><label>Docket URL</label><input type="url" id="cf-docketurl" value="' + esc(form.docket_source.url || "") + '" placeholder="https://www.courtlistener.com/docket/…"></div>' +
+          '<label class="mg-check" style="max-width:420px"><input type="checkbox" id="cf-awaiting"' + (form.docket_source.awaiting_sync ? " checked" : "") + "> Awaiting sync (dormant until docket refresh)</label>" +
+        "</div>" +
+        '<div id="cf-src-ca" style="display:' + (isCL ? "none" : "block") + '">' +
+          '<div class="mg-field"><label>Claims-agent URL *</label><input type="url" id="cf-claimsurl" value="' + esc((form.claims_administrator && form.claims_administrator.url) || "") + '" placeholder="https://www.examplesettlement.com/"></div>' +
+          '<div class="mg-field"><label>Key dates URL</label><input type="url" id="cf-keydates" value="' + esc((form.claims_administrator && form.claims_administrator.key_dates_url) || "") + '" placeholder="https://…/dates"></div>' +
+        "</div>" +
+
+        "<h3>Case details</h3>" +
+        '<div class="mg-field"><label>Parties *</label><input type="text" id="cf-parties" value="' + esc(form.case.parties || "") + '" placeholder="e.g. Bartz, et al. v. Anthropic PBC"></div>' +
+        '<div class="mg-grid3">' +
+          '<div class="mg-field"><label>Court</label><input type="text" id="cf-court" value="' + esc(form.case.court || "") + '" placeholder="N.D. Cal."></div>' +
+          '<div class="mg-field"><label>Case number</label><input type="text" id="cf-number" value="' + esc(form.case.case_number || "") + '" placeholder="3:24-cv-05417"></div>' +
+          '<div class="mg-field"><label>Judge</label><input type="text" id="cf-judge" value="' + esc(form.case.judge || "") + '" placeholder="Hon. …"></div>' +
+        "</div>" +
+
+        "<h3>Scan guidance</h3>" +
+        '<div class="mg-field"><textarea id="cf-guidance" placeholder="What to watch for on this specific case — and what to ignore.">' + esc(form.scan_guidance || "") + "</textarea></div>" +
+
+        '<div class="mg-actions">' +
+          '<button type="button" class="mg-btn mg-btn-primary" id="cf-save">' + (isNew ? "Create case" : "Save changes") + "</button>" +
+          '<button type="button" class="mg-btn" id="cf-cancel">Cancel</button>' +
+          '<span class="mg-note" id="cf-err" style="color:var(--danger);align-self:center"></span>' +
+        "</div>" +
+      "</div>";
+
+    function syncHint() {
+      var v = $("cf-sync").value;
+      var m = SYNC_MODES.filter(function (s) { return s.value === v; })[0];
+      $("cf-sync-hint").textContent = m ? m.hint : "";
+    }
+    syncHint();
+    $("cf-sync").addEventListener("change", syncHint);
+    $("mg-back").addEventListener("click", renderCases);
+    $("cf-cancel").addEventListener("click", renderCases);
+    $("cf-srctype").addEventListener("change", function () {
+      var cl = $("cf-srctype").value === "courtlistener";
+      $("cf-src-cl").style.display = cl ? "block" : "none";
+      $("cf-src-ca").style.display = cl ? "none" : "block";
+    });
+    root.querySelectorAll("#cf-topics .mg-check").forEach(function (l) {
+      l.querySelector("input").addEventListener("change", function (e) {
+        l.classList.toggle("on", e.target.checked);
+      });
+    });
+    $("cf-lookup").addEventListener("click", function () {
+      var id = $("cf-docketid").value.trim();
+      var msg = $("cf-lookup-msg");
+      if (!id) { msg.textContent = "Enter a docket ID first."; return; }
+      msg.textContent = "Looking up…";
+      apiFetch("/api/admin/courtlistener-lookup?docket_id=" + encodeURIComponent(id))
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d.ok) throw new Error(d.error || "Lookup failed");
+          if (d.case_name) $("cf-parties").value = d.case_name;
+          if (d.court) $("cf-court").value = d.court;
+          if (d.docket_number) $("cf-number").value = d.docket_number;
+          if (d.judge) $("cf-judge").value = d.judge;
+          if (d.docket_url) $("cf-docketurl").value = d.docket_url;
+          msg.textContent = "Filled from CourtListener ✓";
+        })
+        .catch(function (e) { msg.textContent = String(e.message || e); });
+    });
+
+    $("cf-save").addEventListener("click", function () {
+      var isCLNow = $("cf-srctype").value === "courtlistener";
+      var topics = [];
+      root.querySelectorAll("#cf-topics input:checked").forEach(function (i) { topics.push(i.getAttribute("data-topic")); });
+      var slug = isNew ? slugify($("cf-slug").value || $("cf-name").value) : form.slug;
+      var payload = {
+        slug: slug,
+        display_name: $("cf-name").value.trim(),
+        short_name: $("cf-short").value.trim(),
+        type: form.type || "case",
+        status: $("cf-status").value.trim() || "active",
+        sync: $("cf-sync").value,
+        topics: topics,
+        case: {
+          parties: $("cf-parties").value.trim(),
+          court: $("cf-court").value.trim(),
+          case_number: $("cf-number").value.trim(),
+          judge: $("cf-judge").value.trim(),
+        },
+        docket_source: isCLNow
+          ? { type: "courtlistener", docket_id: $("cf-docketid").value.trim() || null, url: $("cf-docketurl").value.trim(), awaiting_sync: $("cf-awaiting").checked }
+          : { type: "claims_agent", docket_id: null, url: "", awaiting_sync: false },
+        claims_administrator: isCLNow
+          ? form.claims_administrator || null
+          : { name: "", url: $("cf-claimsurl").value.trim(), key_dates_url: $("cf-keydates").value.trim() },
+        scan_guidance: $("cf-guidance").value,
+      };
+
+      var err = $("cf-err");
+      err.textContent = "";
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(payload.slug)) { err.textContent = "Slug must be kebab-case."; return; }
+      if (isNew && CASES.some(function (x) { return x.slug === payload.slug; })) { err.textContent = "That slug already exists."; return; }
+      if (!payload.display_name) { err.textContent = "Display name is required."; return; }
+      if (!payload.topics.length) { err.textContent = "Tag at least one theme."; return; }
+      if (!payload.case.parties) { err.textContent = "Parties are required."; return; }
+      if (isCLNow) {
+        if (!payload.docket_source.docket_id) { err.textContent = "Docket ID is required for a CourtListener docket."; return; }
+        if (!payload.case.court || !payload.case.case_number || !payload.case.judge) { err.textContent = "Court, case number, and judge are required."; return; }
+      } else if (!payload.claims_administrator.url) { err.textContent = "A claims-agent URL is required."; return; }
+
+      var btn = $("cf-save");
+      btn.disabled = true; btn.textContent = "Saving…";
+      apiFetch("/api/admin/cases", {
+        method: isNew ? "POST" : "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        if (!j.ok) throw new Error(j.error || "Save failed");
+        setBanner("ok", "Case " + (isNew ? "created" : "updated") + ".");
+        return loadCases();
+      }).then(renderCases).catch(function (e) {
+        btn.disabled = false; btn.textContent = isNew ? "Create case" : "Save changes";
+        err.textContent = String(e.message || e);
+      });
+    });
+  }
+
+  /* ══ THEMES ══════════════════════════════════════════════════════════════ */
+
+  function renderThemes() {
+    var rows = THEMES.map(function (t) {
+      return (
+        "<tr" + (t.active === false ? ' style="opacity:0.55"' : "") + ">" +
+          "<td>" + esc(t.emoji || "🏷️") + " <strong>" + esc(t.display_name || t.slug) + "</strong>" +
+            '<div class="mg-slug">' + esc(t.slug) + "</div></td>" +
+          "<td>" + (t.active === false ? "Paused" : "Active") + "</td>" +
+          "<td>" + esc(t.schedule || "daily") + "</td>" +
+          "<td>" + (t.keywords || []).length + " keywords</td>" +
+          '<td class="mg-right">' +
+            '<button type="button" class="mg-btn" data-edit="' + esc(t.slug) + '">Edit</button> ' +
+            '<button type="button" class="mg-btn mg-btn-danger" data-del="' + esc(t.slug) + '">Delete</button>' +
+          "</td>" +
+        "</tr>"
+      );
+    }).join("");
+
+    root.innerHTML =
+      bannerHtml() +
+      '<div class="mg-head"><h2>Themes</h2>' +
+        '<button type="button" class="mg-btn mg-btn-primary" id="mg-new-theme">＋ New theme</button></div>' +
+      '<p class="mg-hint">The standing practice areas. Each theme drives its own scan (keywords + guidance) and appears as a filter pill on the dashboard.</p>' +
+      '<div class="mg-box"><table class="mg-table">' +
+        "<thead><tr><th>Theme</th><th>Status</th><th>Schedule</th><th>Scan</th><th class=\"mg-right\">Actions</th></tr></thead>" +
+        "<tbody>" + (rows || '<tr><td colspan="5" class="mg-empty">No themes.</td></tr>') + "</tbody>" +
+      "</table></div>";
+
+    $("mg-new-theme").addEventListener("click", function () { renderThemeEditor(null); });
+    root.querySelectorAll("[data-edit]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var t = THEMES.filter(function (x) { return x.slug === b.getAttribute("data-edit"); })[0];
+        renderThemeEditor(JSON.parse(JSON.stringify(t)));
+      });
+    });
+    root.querySelectorAll("[data-del]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var slug = b.getAttribute("data-del");
+        var used = CASES.filter(function (c) { return (c.topics || []).indexOf(slug) >= 0; }).length;
+        confirmModal(
+          "<p>Delete theme <strong>" + esc(slug) + "</strong>?" +
+          (used ? " <strong>" + used + " case(s)</strong> are tagged with it — they keep the tag but it stops meaning anything." : "") + "</p>",
+          function () {
+            apiFetch("/api/admin/themes?slug=" + encodeURIComponent(slug), { method: "DELETE" })
+              .then(function (r) { return r.json(); })
+              .then(function (j) {
+                if (!j.ok) throw new Error(j.error || "Delete failed");
+                setBanner("ok", "Theme deleted.");
+                return loadThemes();
+              })
+              .then(renderThemes)
+              .catch(function (e) { setBanner("err", String(e.message || e)); renderThemes(); });
+          }
+        );
+      });
+    });
+  }
+
+  function chipEditor(containerId, items) {
+    var list = items.slice();
+    var box = $(containerId);
+    function paint() {
+      box.innerHTML =
+        list.map(function (k, i) {
+          return '<span class="mg-chip">' + esc(k) + ' <button type="button" data-x="' + i + '">✕</button></span>';
+        }).join("") +
+        '<input type="text" data-add placeholder="add + Enter" style="border:1px dashed var(--line-strong);background:transparent;font-family:inherit;font-size:12px;padding:3px 8px;color:var(--ink);outline:none;min-width:110px">';
+      box.querySelectorAll("[data-x]").forEach(function (b) {
+        b.addEventListener("click", function () { list.splice(Number(b.getAttribute("data-x")), 1); paint(); });
+      });
+      var inp = box.querySelector("[data-add]");
+      inp.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" && inp.value.trim()) {
+          if (list.indexOf(inp.value.trim()) < 0) list.push(inp.value.trim());
+          paint();
+          box.querySelector("[data-add]").focus();
+        }
+      });
+    }
+    paint();
+    return function () { return list.slice(); };
+  }
+
+  function renderThemeEditor(t) {
+    var isNew = !t;
+    var form = t || { slug: "", display_name: "", emoji: "⚖️", active: true, schedule: "daily", keywords: [], sources: { whitelist: [] }, key_focus_cases: [], guidance_prompt: "" };
+    var focusChecks = CASES.map(function (c) {
+      var on = (form.key_focus_cases || []).indexOf(c.slug) >= 0;
+      return '<label class="mg-check' + (on ? " on" : "") + '"><input type="checkbox" data-focus="' + esc(c.slug) + '"' + (on ? " checked" : "") + "> " + esc(c.short_name || c.display_name) + "</label>";
+    }).join("");
+
+    root.innerHTML =
+      bannerHtml() +
+      '<div class="mg-head"><h2>' + (isNew ? "New theme" : "Edit: " + esc(form.display_name || form.slug)) + "</h2>" +
+        '<button type="button" class="mg-btn" id="mg-back">← All themes</button></div>' +
+      '<div class="mg-form">' +
+        "<h3>Basics</h3>" +
+        '<div class="mg-grid3">' +
+          '<div class="mg-field"><label>Display name *</label><input type="text" id="tf-name" value="' + esc(form.display_name) + '"></div>' +
+          '<div class="mg-field"><label>Emoji</label><input type="text" id="tf-emoji" value="' + esc(form.emoji || "") + '" maxlength="3"></div>' +
+          '<div class="mg-field"><label>Slug ' + (isNew ? "(auto if blank)" : "(fixed)") + '</label><input type="text" id="tf-slug" value="' + esc(form.slug) + '"' + (isNew ? "" : " disabled") + "></div>" +
+        "</div>" +
+        '<div class="mg-grid2">' +
+          '<label class="mg-check' + (form.active !== false ? " on" : "") + '"><input type="checkbox" id="tf-active"' + (form.active !== false ? " checked" : "") + "> Active (scanned on schedule)</label>" +
+          '<div class="mg-field"><label>Schedule</label><select id="tf-schedule">' +
+            ["daily", "weekly", "manual"].map(function (s) { return '<option value="' + s + '"' + ((form.schedule || "daily") === s ? " selected" : "") + ">" + s + "</option>"; }).join("") +
+          "</select></div>" +
+        "</div>" +
+        "<h3>Scan keywords</h3>" +
+        '<div class="mg-chips" id="tf-keywords"></div>' +
+        "<h3>Trusted sources (whitelist)</h3>" +
+        '<div class="mg-chips" id="tf-whitelist"></div>' +
+        "<h3>Key focus cases</h3>" +
+        '<p class="mg-hint" style="margin:0 0 10px">Spotlighted as priority ground truth in this theme’s scans.</p>' +
+        '<div class="mg-grid3" id="tf-focus">' + (focusChecks || '<span class="mg-note">No cases yet.</span>') + "</div>" +
+        "<h3>Guidance prompt</h3>" +
+        '<div class="mg-field"><textarea id="tf-guidance" placeholder="Standing instruction for this beat’s scan.">' + esc(form.guidance_prompt || "") + "</textarea></div>" +
+        '<div class="mg-actions">' +
+          '<button type="button" class="mg-btn mg-btn-primary" id="tf-save">' + (isNew ? "Create theme" : "Save changes") + "</button>" +
+          '<button type="button" class="mg-btn" id="tf-cancel">Cancel</button>' +
+          '<span class="mg-note" id="tf-err" style="color:var(--danger);align-self:center"></span>' +
+        "</div>" +
+      "</div>";
+
+    var getKeywords = chipEditor("tf-keywords", form.keywords || []);
+    var getWhitelist = chipEditor("tf-whitelist", (form.sources && form.sources.whitelist) || []);
+    $("mg-back").addEventListener("click", renderThemes);
+    $("tf-cancel").addEventListener("click", renderThemes);
+    root.querySelectorAll("#tf-focus .mg-check input, #tf-active").forEach(function (i) {
+      i.addEventListener("change", function () { i.closest(".mg-check").classList.toggle("on", i.checked); });
+    });
+
+    $("tf-save").addEventListener("click", function () {
+      var focus = [];
+      root.querySelectorAll("#tf-focus input:checked").forEach(function (i) { focus.push(i.getAttribute("data-focus")); });
+      var payload = {
+        slug: isNew ? slugify($("tf-slug").value || $("tf-name").value) : form.slug,
+        display_name: $("tf-name").value.trim(),
+        emoji: $("tf-emoji").value.trim() || "⚖️",
+        active: $("tf-active").checked,
+        page: form.page || null,
+        schedule: $("tf-schedule").value,
+        keywords: getKeywords(),
+        sources: { whitelist: getWhitelist() },
+        key_focus_cases: focus,
+        guidance_prompt: $("tf-guidance").value,
+      };
+      var err = $("tf-err");
+      err.textContent = "";
+      if (!payload.display_name) { err.textContent = "Display name is required."; return; }
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(payload.slug)) { err.textContent = "Slug must be kebab-case."; return; }
+      var btn = $("tf-save");
+      btn.disabled = true; btn.textContent = "Saving…";
+      apiFetch("/api/admin/themes", {
+        method: isNew ? "POST" : "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        if (!j.ok) throw new Error(j.error || "Save failed");
+        setBanner("ok", "Theme " + (isNew ? "created" : "updated") + ".");
+        return loadThemes();
+      }).then(renderThemes).catch(function (e) {
+        btn.disabled = false; btn.textContent = isNew ? "Create theme" : "Save changes";
+        err.textContent = String(e.message || e);
+      });
+    });
+  }
+
+  /* ══ GROUPS (filter groups) ══════════════════════════════════════════════ */
+
+  function loadFilterGroups() {
+    try { return JSON.parse(localStorage.getItem("ud-case-groups") || "[]") || []; } catch (e) { return []; }
+  }
+  function saveFilterGroups(groups) {
+    try { localStorage.setItem("ud-case-groups", JSON.stringify(groups)); } catch (e) {}
+    // Roam via api/prefs alongside colors/priorities (merge-write like the dashboard does).
+    return fetch(BASE + "api/prefs").then(function (r) { return r.json(); }).catch(function () { return {}; })
+      .then(function (p) {
+        return fetch(BASE + "api/prefs", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            colors: (p && p.colors) || {},
+            groups: groups,
+            presets: (p && p.presets) || [],
+            theme_presets: (p && p.theme_presets) || [],
+            priorities: (p && p.priorities) || {},
+          }),
+        });
+      }).catch(function () {});
+  }
+
+  function renderGroups() {
+    var groups = loadFilterGroups();
+    var blocks = groups.map(function (g, gi) {
+      var members = CASES.map(function (c) {
+        var on = (g.slugs || []).indexOf(c.slug) >= 0;
+        return '<label class="mg-check' + (on ? " on" : "") + '"><input type="checkbox" data-g="' + gi + '" data-slug="' + esc(c.slug) + '"' + (on ? " checked" : "") + "> " + casePill(c.slug, c.short_name || c.display_name) + "</label>";
+      }).join("");
+      return (
+        '<div class="mg-form" data-group="' + gi + '">' +
+          '<div class="mg-head" style="margin-bottom:10px">' +
+            '<input type="text" data-gname="' + gi + '" value="' + esc(g.name || "") + '" style="font-family:inherit;font-size:14px;font-weight:800;border:none;border-bottom:1px dashed var(--line-strong);background:transparent;color:var(--ink);padding:2px 0;outline:none;max-width:280px">' +
+            '<span class="mg-note">' + (g.slugs || []).length + " cases</span>" +
+            '<button type="button" class="mg-btn mg-btn-danger" data-delg="' + gi + '" style="margin-left:auto">Delete group</button>' +
+          "</div>" +
+          '<div class="mg-grid3">' + members + "</div>" +
+        "</div>"
+      );
+    }).join("");
+
+    root.innerHTML =
+      bannerHtml() +
+      '<div class="mg-head"><h2>Filter groups</h2>' +
+        '<button type="button" class="mg-btn mg-btn-primary" id="mg-new-group">＋ New group</button>' +
+        '<button type="button" class="mg-btn" id="mg-save-groups">Save groups</button></div>' +
+      '<p class="mg-hint">One-click case selections for the dashboard’s Cases filter (e.g. “AI Copyright only”). These only affect filtering. Briefing groups — cases briefed together as one unit — are managed from the GROUPS menu on the dashboard toolbar.</p>' +
+      (blocks || '<div class="mg-box"><div class="mg-empty">No filter groups yet — create one and tick its member cases.</div></div>');
+
+    $("mg-new-group").addEventListener("click", function () {
+      groups.push({ name: "New group", slugs: [] });
+      saveFilterGroups(groups).then(function () { renderGroups(); });
+    });
+    $("mg-save-groups").addEventListener("click", function () {
+      collect();
+      saveFilterGroups(groups).then(function () { setBanner("ok", "Groups saved (this browser + roaming prefs)."); renderGroups(); });
+    });
+    function collect() {
+      root.querySelectorAll("[data-gname]").forEach(function (i) {
+        groups[Number(i.getAttribute("data-gname"))].name = i.value.trim() || "Untitled group";
+      });
+      groups.forEach(function (g) { g.slugs = []; });
+      root.querySelectorAll("input[data-slug]:checked").forEach(function (i) {
+        groups[Number(i.getAttribute("data-g"))].slugs.push(i.getAttribute("data-slug"));
+      });
+    }
+    root.querySelectorAll("input[data-slug]").forEach(function (i) {
+      i.addEventListener("change", function () { i.closest(".mg-check").classList.toggle("on", i.checked); });
+    });
+    root.querySelectorAll("[data-delg]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var gi = Number(b.getAttribute("data-delg"));
+        confirmModal("<p>Delete filter group <strong>" + esc(groups[gi].name) + "</strong>?</p>", function () {
+          collect();
+          groups.splice(gi, 1);
+          saveFilterGroups(groups).then(function () { setBanner("ok", "Group deleted."); renderGroups(); });
+        });
+      });
+    });
+  }
+
+  /* ══ SETTINGS (default palette) ══════════════════════════════════════════ */
+
+  function currentSwatches() {
+    try {
+      var p = JSON.parse(localStorage.getItem("ud-theme-presets") || "null");
+      if (Array.isArray(p) && p.length === 12) return p;
+    } catch (e) {}
+    return FALLBACK_SWATCHES.map(function (s) { return { bg: s.bg, fg: s.fg }; });
+  }
+
+  function renderSettings() {
+    var presets = currentSwatches().map(function (s) { return { bg: s.bg, fg: s.fg || "#0A0A0A" }; });
+
+    function swatchesHtml() {
+      return presets.map(function (p, i) {
+        return (
+          '<div class="mg-sw" data-i="' + i + '">' +
+            '<span class="mg-sw-preview" style="background:' + esc(p.bg) + ";color:" + esc(p.fg) + '">Aa</span>' +
+            "<label>Bg <input type=\"color\" data-bg=\"" + i + '" value="' + esc(p.bg) + '"></label>' +
+            "<label>Text <input type=\"color\" data-fg=\"" + i + '" value="' + esc(p.fg) + '"></label>' +
+          "</div>"
+        );
+      }).join("");
+    }
+
+    root.innerHTML =
+      bannerHtml() +
+      '<div class="mg-head"><h2>Settings — default color palette</h2>' +
+        '<button type="button" class="mg-btn" id="mg-palette-reset">Reset to factory</button>' +
+        '<button type="button" class="mg-btn mg-btn-primary" id="mg-palette-save">Save palette</button></div>' +
+      '<p class="mg-hint">The 12 preset swatches offered in every pill color picker (case ⚙ menus on the dashboard and docket). This is the only place the default palette can be changed; the pickers themselves just choose from it.</p>' +
+      '<div class="mg-swatches" id="mg-swatches">' + swatchesHtml() + "</div>";
+
+    function wire() {
+      root.querySelectorAll("[data-bg], [data-fg]").forEach(function (inp) {
+        inp.addEventListener("input", function () {
+          var i = Number(inp.getAttribute("data-bg") || inp.getAttribute("data-fg"));
+          if (inp.hasAttribute("data-bg")) presets[i].bg = inp.value;
+          else presets[i].fg = inp.value;
+          var prev = root.querySelector('.mg-sw[data-i="' + i + '"] .mg-sw-preview');
+          prev.style.background = presets[i].bg;
+          prev.style.color = presets[i].fg;
+        });
+      });
+    }
+    wire();
+
+    $("mg-palette-reset").addEventListener("click", function () {
+      confirmModal("<p>Reset all 12 swatches to the factory palette?</p>", function () {
+        presets = FALLBACK_SWATCHES.map(function (s) { return { bg: s.bg, fg: s.fg }; });
+        $("mg-swatches").innerHTML = swatchesHtml();
+        wire();
+      }, "Reset");
+    });
+
+    $("mg-palette-save").addEventListener("click", function () {
+      try { localStorage.setItem("ud-theme-presets", JSON.stringify(presets)); } catch (e) {}
+      fetch(BASE + "api/prefs").then(function (r) { return r.json(); }).catch(function () { return {}; })
+        .then(function (p) {
+          return fetch(BASE + "api/prefs", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              colors: (p && p.colors) || {},
+              groups: (p && p.groups) || [],
+              presets: (p && p.presets) || [],
+              theme_presets: presets,
+              priorities: (p && p.priorities) || {},
+            }),
+          });
+        })
+        .then(function () { setBanner("ok", "Palette saved (this browser + roaming prefs)."); renderSettings(); })
+        .catch(function () { setBanner("err", "Saved locally; roaming prefs sync failed."); renderSettings(); });
+    });
+  }
+
+  /* ══ Loads + boot ════════════════════════════════════════════════════════ */
+
+  function loadCases() {
+    return apiFetch("/api/admin/cases").then(function (r) { return r.json(); }).then(function (j) {
+      if (!j.ok) throw new Error(j.error || "Failed to load cases");
+      CASES = j.cases || [];
+      CASES_ERR = "";
+    }).catch(function (e) { CASES_ERR = String(e.message || e); });
+  }
+  function loadThemes() {
+    return apiFetch("/api/admin/themes").then(function (r) { return r.json(); }).then(function (j) {
+      if (j.ok && Array.isArray(j.themes) && j.themes.length) THEMES = j.themes;
+    }).catch(function () { /* keep fallback list */ });
+  }
+  function loadManifest() {
+    return fetch(BASE + "cases/data/_manifest.json").then(function (r) { return r.json(); })
+      .then(function (m) { MANIFEST = Array.isArray(m) ? m : []; }).catch(function () {});
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Each loader degrades on its own — the page always routes.
+    Promise.all([loadManifest(), loadThemes(), loadCases()]).then(route);
+  });
+})();

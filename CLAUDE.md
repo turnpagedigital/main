@@ -58,7 +58,7 @@ src/
   data/
     tokens.js              — Color and font tokens
     css.js                 — Global CSS (injected at runtime)
-    (cases live in the intelligence system, not a static file — edit via /admin/intelligence/cases, served by /api/admin/cases)
+    (cases live in the intelligence system, not a static file — edit via the intel site: Dashboard → Cases → ⚙ Manage at /intel/manage.html, served by /api/admin/cases)
     deals.json             — Deal cards for Home + Crypto (edit via chat OR /#/admin)
     translations.js        — 8-language string table (en/es/fr/de/it/pt/ko/zh)
   lib/
@@ -99,7 +99,7 @@ index.html                 — Vite entry, meta + OG tags
 ```
 
 ### Editing common things
-- **Update a case** → edit via Admin → Intelligence → Cases (`/admin/intelligence/cases`), served/saved through `/api/admin/cases`. (The old static `src/data/cases.js` was removed Aug 2026 — it was orphaned and no longer powered the tracker.)
+- **Update a case** → edit on the intel site: Dashboard → Cases → **⚙ Manage** (`/intel/manage.html`, tabs for Cases / Themes / Groups / Settings), or the per-case edit actions on each briefing page. Both save through `/api/admin/cases` (admin session cookie; the Manage page shows a login prompt if needed). Admin's Intelligence → Cases/Themes tabs were removed Aug 2026; the default pill color palette is editable only in Manage → Settings.
 - **Post a briefing** → see "Posting a Briefing" below.
 - **Replace Crypto placeholder copy** → edit `src/pages/Crypto.jsx`. Structure mirrors AICopyright.jsx.
 - **Hero copy** → home is in `src/pages/Home.jsx`; AI Copyright hero is in `src/pages/AICopyright.jsx` (uses the shared `Hero` component).
@@ -161,7 +161,7 @@ Both paths write to the same files. Git enforces ordering — latest commit wins
 | `/admin/registration` | Flows, Pricing | `forms.json` (multi-step registration wizards rendered by the `registration-flow` section) + `functions/api/_pricing-config.json` (PRIVATE Bartz offer inputs — recovery $ per self-pub/publisher work, payout %, volume premium % + threshold; served only to logged-in admins via `/api/admin/pricing`, priced server-side by `/api/quote` and `/api/register`) |
 | `/admin/assets` | — | `file-library.json` — archive, rename cascade, permanent delete cascade |
 | `/admin/structure` | Favicons, Site Meta, Navigation, Footer, Routes | `file-library.json` (favicons), `page-meta.json`, `nav.json`, `footer.json`, `routes.json` |
-| `/admin/intelligence` | Themes, Cases, Defaults | Briefing-system config (`themes.json`, cases, intelligence settings) |
+| `/admin/intelligence` | X Accounts, Defaults | Intelligence settings only — Cases & Themes moved to the intel site (`/intel/manage.html`, Aug 2026) but still save via `/api/admin/cases` + `/api/admin/themes` |
 | `/admin/css` | Colors & Tokens, Section Palettes, Design System | `tokens.js` (global design tokens — editing NEON etc. restyles the whole site after rebuild) + `section-palettes.json` (drives the real colors of FAQ/Testimonials/CTA sections via `src/lib/palette-resolver.js`) |
 
 Sub-tab URLs follow `/admin/<master>/<sub>` (e.g. `/admin/structure/navigation`), except the Pages hub which keeps its sub-tab in local state. Each sub-tab owns its own fetch/save/dirty lifecycle and reports dirty state up via `onDirtyChange`.
