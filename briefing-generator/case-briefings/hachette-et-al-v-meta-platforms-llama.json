@@ -1,0 +1,34 @@
+{
+  "slug": "hachette-et-al-v-meta-platforms-llama",
+  "case_name": "Hachette et al. v. Meta Platforms (Llama)",
+  "items": [
+    {
+      "date": "2026-08-08",
+      "updated": "2026-08-08",
+      "lede": "The 72-hour window produced two docket entries, both filed August 7. The more substantive is Dkt. 91: a Notice of Appearance by Anna M. Rennich on behalf of the full plaintiff group — Cengage Learning, Elsevier, Hachette Book Group, Macmillan Publishing Group, McGraw Hill, S.C.R.I.B.E., and Scott Turow.",
+      "body_md": "The 72-hour window produced two docket entries, both filed August 7. The more substantive is Dkt. 91: a Notice of Appearance by Anna M. Rennich on behalf of the full plaintiff group — Cengage Learning, Elsevier, Hachette Book Group, Macmillan Publishing Group, McGraw Hill, S.C.R.I.B.E., and Scott Turow. An appearance notice is a procedural filing, not a substantive development, but in the context of a case that already carries a crowded plaintiffs' counsel table — Oppenheim + Zebrak, Keller Rohrback, and Debevoise & Plimpton among the firms of record — the addition of Rennich signals continued staffing-up on the plaintiffs' side as the case moves toward the September 15 conference. That conference, set by Judge P. Kevin Castel's July 24 order (Dkt. 89), is the next hard milestone and will include argument on Meta's pending venue transfer motions (Dkts. 59, 60).\n\nThe second filing, Dkt. 92, is a letter but its content is not publicly reproduced in available reporting and the docket entry is not yet indexed beyond the filing date of August 7. It is noted here as filed; its substance remains unconfirmed pending public docket access. What is confirmed from prior context: the letter is filed one business week after the plaintiffs' August 3 letter-motion seeking leave to file a motion to strike (Dkt. 90), addressed to Judge Castel from Derek Loeser. The sequencing is consistent with a responsive or related letter — possibly from Meta — but that characterization is not verified and should not be relied upon until the document is reviewed directly on PACER.\n\nThe motion-to-strike request (Dkt. 90) is the live substantive thread worth tracking into the September 15 conference. Whatever plaintiffs sought to strike — the target is not specified in the docket entry available here — the letter-motion procedure requires Castel's leave before formal briefing begins, meaning the court has not yet acted on it. If the Dkt. 92 letter is a Meta opposition to that leave request, the issue may be ripe for discussion at the September 15 conference alongside the transfer argument. The recovery posture for rights-holders turns significantly on venue: plaintiffs filed in the Southern District of New York, where they sit, and Meta's transfer motions seek to move the case to the Northern District of California, the forum where related AI copyright litigation has proceeded and where Meta contends witnesses and evidence are located. Castel's ruling on transfer — expected at or shortly after September 15 — will determine which court shapes discovery, class certification, and ultimately the damages calculus on what is pleaded as a willful infringement claim spanning millions of copyrighted works.\n\nThe next concrete milestone is the Initial Pretrial Conference on **September 15, 2026 at 3:00 PM in Courtroom 11D, 500 Pearl Street, New York, before Judge Castel**, at which the transfer motions will be fully argued.\n\n## Sources\n\n- [Elsevier Inc. et al v. Meta Platforms, Inc. et al — Law360 Case Tracker](https://www.law360.com/cases/69f9ecd574ebfa91a1cfb4ef) — Law360, May 5, 2026\n- [Elsevier Inc. v. Meta Platforms, Inc., 1:26-cv-03689 — CourtListener](https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/) — CourtListener, May 5, 2026\n- [Major Publishers Challenge AI Training Practices in Landmark Copyright Suit Against Meta](https://www.hklaw.com/en/insights/publications/2026/05/major-publishers-challenge-ai-training-practices) — Holland & Knight, May 20, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Elsevier Inc. et al v. Meta Platforms, Inc. et al — Law360 Case Tracker",
+          "url": "https://www.law360.com/cases/69f9ecd574ebfa91a1cfb4ef",
+          "note": "Law360, May 5, 2026"
+        },
+        {
+          "title": "Elsevier Inc. v. Meta Platforms, Inc., 1:26-cv-03689 — CourtListener",
+          "url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
+          "note": "CourtListener, May 5, 2026"
+        },
+        {
+          "title": "Major Publishers Challenge AI Training Practices in Landmark Copyright Suit Against Meta",
+          "url": "https://www.hklaw.com/en/insights/publications/2026/05/major-publishers-challenge-ai-training-practices",
+          "note": "Holland & Knight, May 20, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-07"
+      }
+    }
+  ]
+}

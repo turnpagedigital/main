@@ -105,15 +105,41 @@
   var ADMIN = {};        // slug -> full editable case (/api/admin/cases)
   var THEME_LIST = [];   // [{slug,display_name,emoji}] for the editor
   var CURRENT = null;    // case slug being read
+  var HISTORY = [];      // past briefings for CURRENT (case-briefings/<slug>.json)
+  var VIEW_DATE = null;  // null = latest; else a date from HISTORY
 
   function currentSlug() {
     var m = /[#&]case=([a-z0-9-]+)/.exec(location.hash || "");
+    return m ? m[1] : null;
+  }
+  function currentDate() {
+    var m = /[#&]date=(\d{4}-\d{2}-\d{2})/.exec(location.hash || "");
     return m ? m[1] : null;
   }
 
   function briefOf(slug) {
     for (var i = 0; i < BRIEFS.length; i++) if (BRIEFS[i].slug === slug) return BRIEFS[i];
     return null;
+  }
+
+  // History list = archive file + the latest edition (in case the archive
+  // hasn't caught up to today's run yet). Newest first.
+  function historyList() {
+    var list = HISTORY.slice();
+    var b = briefOf(CURRENT);
+    if (b && (b.body_md || "").trim() && b.date &&
+        !list.some(function (e) { return e.date === b.date; })) {
+      list.unshift({ date: b.date, updated: b.updated, lede: b.lede, body_md: b.body_md, sources: b.sources });
+      list.sort(function (a, x) { return (x.date || "").localeCompare(a.date || ""); });
+    }
+    return list;
+  }
+
+  function loadHistory(slug) {
+    HISTORY = [];
+    return fetchJson("case-briefings/" + encodeURIComponent(slug) + ".json")
+      .then(function (d) { HISTORY = (d && d.items) || []; })
+      .catch(function () { HISTORY = []; });
   }
 
   // ── Standalone render ─────────────────────────────────────────────────────
@@ -146,12 +172,19 @@
         ' <span style="display:inline-flex;gap:4px;vertical-align:middle">' + themes.map(themeTag).join("") + "</span>";
     }
 
+    var history = historyList();
+    var viewing = null;
+    if (VIEW_DATE) {
+      for (var hi = 0; hi < history.length; hi++) if (history[hi].date === VIEW_DATE) viewing = history[hi];
+    }
+    var isLatestView = !viewing;
+
     var actions = document.getElementById("bf-actions");
     if (actions) {
       actions.innerHTML =
         '<a class="pr-btn" href="index.html">← Dashboard</a>' +
         '<span class="spacer"></span>' +
-        (b && (b.body_md || "").trim()
+        (isLatestView && b && (b.body_md || "").trim()
           ? '<button type="button" class="pr-btn pr-btn-track" data-send="' + esc(slug) + '">Send to site queue</button>'
           : "") +
         '<button type="button" class="pr-btn" data-edit="' + esc(slug) + '">Edit case</button>' +
@@ -192,14 +225,43 @@
       if (nb) nb.addEventListener("click", function () { openEditor(null); });
     }
 
+    // Past-briefings strip — one date pill per archived edition.
+    var hist = document.getElementById("bf-history");
+    if (hist) {
+      if (history.length > 1 || (history.length === 1 && viewing)) {
+        hist.style.display = "";
+        hist.innerHTML = '<span class="bf-hist-label">Briefings:</span>' +
+          history.map(function (e, idx) {
+            var on = viewing ? e.date === VIEW_DATE : idx === 0;
+            return '<button type="button" class="bf-date-btn' + (on ? " on" : "") + '" data-date="' +
+              esc(e.date) + '">' + esc(fmtDate(e.date)) + (idx === 0 ? " · latest" : "") + "</button>";
+          }).join("");
+        hist.querySelectorAll("[data-date]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var d = btn.getAttribute("data-date");
+            var latest = history[0] && history[0].date === d;
+            location.hash = "case=" + slug + (latest ? "" : "&date=" + d);
+          });
+        });
+      } else {
+        hist.style.display = "none";
+        hist.innerHTML = "";
+      }
+    }
+
+    var shown = viewing || b;
     var body = document.getElementById("bf-body");
     if (body) {
-      if (b && (b.body_md || "").trim()) {
+      if (shown && (shown.body_md || "").trim()) {
         body.innerHTML =
+          (viewing
+            ? '<div class="bf-old-note">Viewing the ' + esc(fmtDate(viewing.date)) +
+              ' briefing — <a href="#case=' + encodeURIComponent(slug) + '">show latest</a></div>'
+            : "") +
           '<div class="ub-body-head">' + esc(emoji) + " " + esc(name) +
-            ' <span class="ub-body-date">' + esc(fmtDate(b.date)) + "</span></div>" +
-          mdToHtml(b.body_md) +
-          (b.checked ? '<p style="font-size:11px;color:var(--ink-40)">Checked ' + esc(String(b.checked).slice(0, 16).replace("T", " ")) + " UTC · regenerates when the case moves</p>" : "");
+            ' <span class="ub-body-date">' + esc(fmtDate(shown.date)) + "</span></div>" +
+          mdToHtml(shown.body_md) +
+          (isLatestView && b && b.checked ? '<p style="font-size:11px;color:var(--ink-40)">Checked ' + esc(String(b.checked).slice(0, 16).replace("T", " ")) + " UTC · regenerates when the case moves</p>" : "");
       } else if (b || m || a) {
         body.innerHTML = '<div class="ud-empty">No briefing yet for ' + esc(name) +
           " — it generates the first time the case moves (new docket entries or coverage). " +
@@ -407,17 +469,24 @@
   // ── Boot ──────────────────────────────────────────────────────────────────
   document.addEventListener("DOMContentLoaded", function () {
     CURRENT = currentSlug();
+    VIEW_DATE = currentDate();
     if (!CURRENT) {
       // The dashboard IS the briefing overview — this page only reads one.
       location.replace("index.html");
       return;
     }
     wireEditor();
+    loadHistory(CURRENT).then(render);
     window.addEventListener("hashchange", function () {
       var next = currentSlug();
       if (!next) { location.replace("index.html"); return; }
-      CURRENT = next;
-      render();
+      VIEW_DATE = currentDate();
+      if (next !== CURRENT) {
+        CURRENT = next;
+        loadHistory(CURRENT).then(render);
+      } else {
+        render();
+      }
     });
 
     // Display names for theme tags follow /admin/intelligence renames.

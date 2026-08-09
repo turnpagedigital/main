@@ -1,0 +1,49 @@
+{
+  "slug": "britannica-merriam-webster-v-openai",
+  "case_name": "Britannica / Merriam-Webster v. OpenAI",
+  "items": [
+    {
+      "date": "2026-08-08",
+      "updated": "2026-08-08",
+      "lede": "Yesterday's docket produced two entries — Dkt. 57 and Dkt. 58, both filed August 7 — each captioned \"Order AND ~Util - Set Deadlines.\" Two simultaneous deadline-setting orders from Judge Sidney H. Stein in No. 1:26-cv-02097 (S.D.N.Y.) on the same date is a routine but consequential procedural step: it signals the court has digested the parties' proposed stipulation (Dkt. 56, filed August 5, in the wake of the August…",
+      "body_md": "Yesterday's docket produced two entries — Dkt. 57 and Dkt. 58, both filed August 7 — each captioned \"Order AND ~Util - Set Deadlines.\" Two simultaneous deadline-setting orders from Judge Sidney H. Stein in No. 1:26-cv-02097 (S.D.N.Y.) on the same date is a routine but consequential procedural step: it signals the court has digested the parties' proposed stipulation (Dkt. 56, filed August 5, in the wake of the August 5 letter at Dkt. 55) and has now converted that proposal into court-ordered schedule. The substance of those deadlines — answer date, discovery cutoffs, motion briefing windows — is not publicly available from secondary sources confirmed in this run, and the orders themselves are behind the PACER paywall. What can be stated with confidence is the posture: the case has moved from the service-and-summons phase, with eight returned summonses logged July 24 (Dkts. 47–54), into active case management under a judicially imposed schedule. That is a material step for rights-holders; it means defendants can no longer defer engagement and that the clock on responsive pleadings is now a court obligation, not a stipulated courtesy.\n\nThe MDL relationship is the structural variable that shapes every recovery timeline here. \nThis case is associated with MDL No. 1:25-md-03143-SHS-OTW\n, the consolidated OpenAI copyright litigation also before Judge Stein. \nThe 20 million anonymized ChatGPT conversation logs ordered produced by Judge Stein on January 5, 2026 are the operational center of that consolidated case; once plaintiffs' experts analyze them for systematic reproduction of copyrighted content, the results are expected by legal analysts to dictate settlement terms across the consolidated litigation.\n The deadline orders entered yesterday at Dkts. 57 and 58 will need to be read against that MDL schedule: if Britannica/Merriam-Webster is coordinated into the MDL's discovery track, the new deadlines may largely mirror those of the consolidated proceedings rather than establish an independent timeline. \nAnalysts tracking the litigation landscape have noted that the Britannica-OpenAI case will very likely be transferred to that MDL and then stayed pending its outcome, meaning a resolution on the merits could be years away.\n That risk to recovery pace is real, though a stay does not extinguish the claim, and the plaintiffs' damages theory — lost traffic, lost ad revenue, and verbatim reproduction of registered copyrighted works including the dictionary's own definition of \"plagiarize\" — remains intact pending that determination.\n\nThe broader fair-use landscape continues to move slowly against rights-holders' near-term interests. \nThe anticipated \"summer 2026 fair-use ruling\" is off the calendar: the Massachusetts court's June 30, 2026 scheduling order sets dispositive motions for April 9, 2027, and the S.D.N.Y. Udio case extended discovery to August 25, 2026.\n \nThe fair-use question for training data is far from closed, and courts sitting in the same district have reached different conclusions when confronted with similar facts — a split that may encourage appellate courts to weigh in on whether training generative AI on pirated works can ever constitute fair use.\n For Britannica and Merriam-Webster, that unsettled landscape cuts both ways: it sustains settlement leverage but extends the timeline to any final adjudication. The immediate next milestone is obtaining the text of Dkts. 57 and 58 from PACER to confirm the specific deadlines now binding on OpenAI — in particular, the deadline to answer or otherwise respond to the complaint, which will be the first public test of whether OpenAI intends to challenge the pleading on a motion to dismiss.\n\n---\n\n## Sources\n\n- [Encyclopaedia Britannica, Inc. v. OpenAI, Inc. — CourtListener Docket](https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/) — CourtListener / RECAP, March 2026\n- [Britannica, Merriam-Webster Accuse OpenAI of Copying Their Works](https://news.bloomberglaw.com/ip-law/britannica-merriam-webster-accuse-openai-of-copying-their-works) — Bloomberg Law, March 16, 2026\n- [Encyclopedia Britannica and Merriam-Webster sue OpenAI](https://thenextweb.com/news/britannica-merriam-webster-openai-lawsuit-copyright) — The Next Web, May 1, 2026\n- [AI Copyright Lawsuits Tracker 2026 — Every Case, Live Status](https://axis-intelligence.com/ai-copyright-lawsuits-tracker/) — Axis Intelligence, July 2026\n- [Music Industry AI Lawsuits Tracker 2026](https://www.chartlex.com/blog/business/music-industry-ai-lawsuits-tracker-2026) — Chartlex, July 2026\n- [AI in litigation series: An update on AI copyright cases in 2026](https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026) — Norton Rose Fulbright, March 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Encyclopaedia Britannica, Inc. v. OpenAI, Inc. — CourtListener Docket",
+          "url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
+          "note": "CourtListener / RECAP, March 2026"
+        },
+        {
+          "title": "Britannica, Merriam-Webster Accuse OpenAI of Copying Their Works",
+          "url": "https://news.bloomberglaw.com/ip-law/britannica-merriam-webster-accuse-openai-of-copying-their-works",
+          "note": "Bloomberg Law, March 16, 2026"
+        },
+        {
+          "title": "Encyclopedia Britannica and Merriam-Webster sue OpenAI",
+          "url": "https://thenextweb.com/news/britannica-merriam-webster-openai-lawsuit-copyright",
+          "note": "The Next Web, May 1, 2026"
+        },
+        {
+          "title": "AI Copyright Lawsuits Tracker 2026 — Every Case, Live Status",
+          "url": "https://axis-intelligence.com/ai-copyright-lawsuits-tracker/",
+          "note": "Axis Intelligence, July 2026"
+        },
+        {
+          "title": "Music Industry AI Lawsuits Tracker 2026",
+          "url": "https://www.chartlex.com/blog/business/music-industry-ai-lawsuits-tracker-2026",
+          "note": "Chartlex, July 2026"
+        },
+        {
+          "title": "AI in litigation series: An update on AI copyright cases in 2026",
+          "url": "https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026",
+          "note": "Norton Rose Fulbright, March 2026"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-07"
+      }
+    }
+  ]
+}
