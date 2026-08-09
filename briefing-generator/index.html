@@ -165,6 +165,15 @@
     .ih-more-rows a { color: var(--ink-60); }
     /* Per-case briefing cards */
     .ih-tc-date { font-weight: 700; color: var(--ink-60); }
+    /* List view: one row per case */
+    .ih-theme-grid.ih-list-mode { display: flex; flex-direction: column; gap: 6px; }
+    .ih-case-listrow { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--line); padding: 10px 16px; text-decoration: none; color: inherit; }
+    .ih-case-listrow:hover { border-color: var(--ink-40); }
+    .ih-case-listrow.ih-lr-moved { border-left: 3px solid var(--neon-block); }
+    .ih-lr-count { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-60); white-space: nowrap; flex: 0 0 auto; }
+    .ih-lr-lede { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; color: var(--ink); }
+    .ih-lr-lede.ih-quiet { color: var(--ink-60); }
+    .ih-lr-read { font-size: 11px; font-weight: 800; white-space: nowrap; color: var(--ink); border-bottom: 1px solid var(--neon-block); flex: 0 0 auto; }
     .ih-card-moved { border-top: 3px solid var(--neon-block); }
     /* Card arrangement: sort control, priority star, group headers */
     .ih-tc-right { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
@@ -338,7 +347,7 @@
   <!-- Brand strip -->
   <div class="tn-wrap-line">
   <div class="tn-row brand">
-    <a href="index.html" style="text-decoration:none;color:inherit"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo.png"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo-dark.png"></a><div class="tn-navlinks"><a class="tn-back" href="index.html">🏠 Dashboard</a><a class="tn-back" href="docket.html">⚖️ Docket</a><a class="tn-back" href="calendar.html">📅 Calendar</a><a class="tn-back" href="notes.html">🗒️ Notes</a><a class="tn-back" href="briefings.html">📰 Briefings</a><a class="tn-back" href="news.html">📡 News</a><a class="tn-back" href="prospects.html">🔭 Prospects</a></div>
+    <a href="index.html" style="text-decoration:none;color:inherit"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo.png"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo-dark.png"></a><div class="tn-navlinks"><a class="tn-back" href="index.html">🏠 Dashboard</a><a class="tn-back" href="docket.html">⚖️ Docket</a><a class="tn-back" href="calendar.html">📅 Calendar</a><a class="tn-back" href="notes.html">🗒️ Notes</a><a class="tn-back" href="news.html">📡 News</a><a class="tn-back" href="prospects.html">🔭 Prospects</a></div>
     <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">G</span> then <span class="tn-key">H</span> Home · <span class="tn-key">D</span> Docket · <span class="tn-key">C</span> Calendar · <span class="tn-key">P</span> Prospects · <span class="tn-key">N</span> Notes · <span class="tn-key">R</span> News</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case <em>Docket · News · Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
   </div>
 </div>
@@ -361,6 +370,10 @@
       <button type="button" class="ih-sort-btn" data-sort="az" title="Alphabetical by case name">A–Z</button>
       <button type="button" class="ih-sort-btn" data-sort="priority" title="High-priority cases pinned on top">Priority</button>
       <button type="button" class="ih-sort-btn" data-sort="theme" title="Grouped by practice area">Theme</button>
+    </div>
+    <div class="ih-sort" id="ih-view-tgl" role="group" aria-label="Briefing view">
+      <button type="button" class="ih-sort-btn" data-view="cards" title="Card view — lede + latest rows per case">▦ Cards</button>
+      <button type="button" class="ih-sort-btn" data-view="list" title="List view — one row per case">≣ List</button>
     </div>
     <div class="ih-dd-wrap">
       <button type="button" id="ih-cases-btn" class="ih-dd-btn">Cases: All</button>

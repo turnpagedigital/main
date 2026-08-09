@@ -7,14 +7,14 @@
       "active": true,
       "attioLabel": "bartz-landing",
       "attioProject": "Bartz",
-      "intro": "Enter your claim information to get an instant quote and fast payment.\nPlease make sure you have a valid form of ID (driver's license, passport or permanent residency card), proof of address and the unique identification number assigned to you by the Settlement Administrator (JND).",
+      "intro": "Enter your claim information to get an instant quote and fast payment.\nPlease make sure you have a valid form of ID (driver's license, passport or permanent residency card), proof of address and the unique identification number assigned to you by the Settlement Administrator (JND). If your claim form is available that will speed up your offer and payment.",
       "submitLabel": "Submit",
-      "successTitle": "You're registered.",
+      "successTitle": "Got it!",
       "successBody": "We've received your details and will be in touch within 48 hours with your offer and next steps.",
       "steps": [
         {
           "id": "role",
-          "title": "I am a—",
+          "title": "I have a claim based on works that I —",
           "fields": [
             {
               "id": "role",
@@ -22,8 +22,8 @@
               "label": "Select one",
               "required": true,
               "options": [
-                "Author",
-                "Publisher"
+                "Authored",
+                "Published"
               ]
             }
           ]
@@ -70,13 +70,13 @@
               "id": "firstName",
               "type": "text",
               "label": "First name",
-              "required": false
+              "required": true
             },
             {
               "id": "lastName",
               "type": "text",
               "label": "Last name",
-              "required": false
+              "required": true
             },
             {
               "id": "email",
@@ -91,20 +91,21 @@
           "title": "Your Details",
           "showIf": {
             "fieldId": "role",
-            "equals": "Publisher"
+            "equals": "Published"
           },
           "fields": [
             {
               "id": "p",
               "type": "text",
-              "label": "Company Name",
+              "label": "Publisher name",
               "required": true
             },
             {
               "id": "e",
               "type": "number",
-              "label": "Number of Covered Works",
+              "label": "Covered works",
               "required": false,
+              "placeholder": "Enter number of works",
               "help": "Provide an estimate if unknown"
             }
           ]
@@ -150,7 +151,7 @@
               "publisherField": "publisher_count",
               "prefix": "$",
               "suffix": "",
-              "help": "Estimate only — we confirm your final offer after reviewing your claim form."
+              "help": "This is an estimate — we will confirm your final offer by email."
             }
           ]
         },

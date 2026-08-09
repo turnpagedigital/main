@@ -404,6 +404,13 @@
   .ub-body li{margin-bottom:6px;}
   .ub-body a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--neon);}
   .ub-body em{font-style:italic;}
+  /* Standalone briefing view */
+  .bf-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .bf-actions .spacer{flex:1;}
+  .ub-detail-standalone{background:var(--surface);border:1px solid var(--line-strong);}
+  .ub-detail-standalone .ub-body{max-width:900px;padding:26px 30px 30px;font-size:15px;line-height:1.8;}
+  .bf-chip{display:inline-block;font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);border:1px solid var(--line-strong);padding:5px 10px;line-height:1.2;white-space:nowrap;}
+  .bf-chip.moved{background:var(--neon);border-color:var(--neon);color:#0A0A0A;}
   /* ── Case management (edit/create in place) ─────────────────────────────── */
   .ce-new-btn{font-weight:800;}
   .ub-actions{display:inline-flex;gap:6px;align-items:center;}
@@ -455,7 +462,6 @@
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
-      <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
@@ -464,7 +470,7 @@
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · Daily Case Briefings</div>
+  <div class="eyebrow">Intelligence · Case Briefing</div>
   <h1>📰 Briefings</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
@@ -473,31 +479,11 @@
 
 <div class="ud-page">
 
-  <div class="ud-controls">
-    <div class="ud-filter-row">
-      <div class="ud-case-dd" id="ud-case-dd">
-        <button type="button" id="ud-case-dd-btn" class="ud-type-select ud-case-dd-btn">Cases <span class="ud-dd-caret">▾</span></button>
-        <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
-      </div>
-      <button type="button" id="ce-new" class="ud-type-select ce-new-btn">＋ New case</button>
-    </div>
-  </div>
+  <div class="bf-actions" id="bf-actions"></div>
 
-  <div class="ud-toolbar">
-    <span id="ud-count"></span>
-  </div>
-
-  <table class="ud-table">
-    <thead><tr>
-      <th style="width:116px">Briefed</th>
-      <th style="width:250px">Case</th>
-      <th>Latest briefing</th>
-      <th style="width:170px;text-align:right">Open</th>
-    </tr></thead>
-    <tbody id="ub-tbody">
-      <tr><td colspan="4" class="ud-empty">Loading…</td></tr>
-    </tbody>
-  </table>
+  <article class="ub-detail-standalone">
+    <div class="ub-body" id="bf-body"><div class="ud-empty">Loading briefing…</div></div>
+  </article>
 
 </div>
 
