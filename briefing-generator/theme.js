@@ -16,6 +16,48 @@
     var n=ST[(ST.indexOf(c)+1)%ST.length];
     localStorage.setItem(K,n);apply();
   };
+
+  // ── Text size — resize the intel pages without the browser's Cmd +/- zoom.
+  // Persisted per browser; applied as a body zoom, with the sticky-footer
+  // 100vh min-height divided by the same factor so the page stays exactly one
+  // viewport tall at any size. ────────────────────────────────────────────────
+  var FK='ud-font-scale';
+  function fontScale(){ var n=parseInt(localStorage.getItem(FK)||'100',10); return (n>=80&&n<=150)?n:100; }
+  function applyFont(){
+    if(!document.body)return;
+    var z=fontScale()/100;
+    document.body.style.zoom=z;
+    document.body.style.minHeight='calc(100vh / '+z+')';
+    var lab=document.getElementById('tn-fs-label');
+    if(lab)lab.textContent=fontScale()+'%';
+  }
+  window.stepFont=function(d){
+    var s=Math.max(80,Math.min(150,fontScale()+d*10));
+    localStorage.setItem(FK,String(s));applyFont();
+  };
+  function injectFontControl(){
+    var tg=document.getElementById('theme-toggle');
+    if(!tg||document.getElementById('tn-fs'))return;
+    if(!document.getElementById('tn-fs-style')){
+      var st=document.createElement('style');st.id='tn-fs-style';
+      st.textContent=
+        '#tn-fs{display:inline-flex;align-items:center;gap:4px;margin-right:8px;}'+
+        '#tn-fs button{background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:99px;padding:2px 7px;cursor:pointer;font-family:inherit;font-size:11px;font-weight:800;line-height:1;}'+
+        '#tn-fs button:hover{border-color:var(--neon,#D4FF00);}'+
+        '#tn-fs #tn-fs-label{font-size:10px;color:rgba(255,255,255,0.6);min-width:30px;text-align:center;font-variant-numeric:tabular-nums;}'+
+        '[data-theme=light] #tn-fs button{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}'+
+        '[data-theme=light] #tn-fs #tn-fs-label{color:rgba(10,10,10,0.6);}';
+      document.head.appendChild(st);
+    }
+    var fs=document.createElement('span');fs.id='tn-fs';
+    fs.setAttribute('title','Text size (in-page — no browser zoom needed)');
+    fs.innerHTML='<button type="button" id="tn-fs-dn" title="Smaller text" aria-label="Smaller text">A−</button>'+
+      '<span id="tn-fs-label">100%</span>'+
+      '<button type="button" id="tn-fs-up" title="Larger text" aria-label="Larger text">A+</button>';
+    tg.parentNode.insertBefore(fs,tg);
+    document.getElementById('tn-fs-dn').addEventListener('click',function(){window.stepFont(-1);});
+    document.getElementById('tn-fs-up').addEventListener('click',function(){window.stepFont(1);});
+  }
   // ── g-then-key section navigation (works on every intel page) ──────────
   // g+h Dashboard · g+d Docket · g+c Calendar · g+p Prospects · g+n Notes ·
   // g+r News · Registered in the CAPTURE phase so the second
@@ -56,6 +98,8 @@
     });
     var b=document.getElementById('theme-toggle');
     if(b)b.addEventListener('click',window.cycleTheme);
+    injectFontControl();
+    applyFont();
     document.addEventListener('keydown',function(e){
       if(e.metaKey||e.ctrlKey||e.altKey)return;
       if(e.key!=='/')return;
