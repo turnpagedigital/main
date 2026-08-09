@@ -165,6 +165,8 @@
     .ih-more-rows a { color: var(--ink-60); }
     /* Per-case briefing cards */
     .ih-tc-date { font-weight: 700; color: var(--ink-60); }
+    .ih-filter-note { grid-column: 1 / -1; padding: 10px 16px; font-size: 12px; color: var(--ink-60); background: var(--surface); border: 1px dashed var(--line-strong); }
+    .ih-filter-note button { font-family: inherit; font-size: 12px; font-weight: 800; background: none; border: none; color: var(--ink); cursor: pointer; text-decoration: underline; padding: 0; }
     /* List view: one row per case */
     .ih-theme-grid.ih-list-mode { display: flex; flex-direction: column; gap: 6px; }
     .ih-case-listrow { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--line); padding: 10px 16px; text-decoration: none; color: inherit; }
@@ -185,6 +187,30 @@
     .ih-sort-btn:first-child { margin-left: 0; }
     .ih-sort-btn:hover { background: var(--paper-2); }
     .ih-sort-btn.on { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
+    /* Filter dropdowns (Cases / Themes) — same language as the press-page filter bar */
+    .ih-dd-wrap { position: relative; }
+    .ih-dd-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 26px 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; position: relative; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+    .ih-dd-btn::after { content: ""; position: absolute; right: 10px; top: 50%; margin-top: -2px; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; }
+    .ih-dd-btn:hover { background: var(--paper-2); color: var(--ink); }
+    .ih-dd-btn.filtered { background: var(--neon-block); border-color: var(--neon-block); color: var(--neon-on-block); }
+    .ih-dd-btn.open { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+    .ih-dd-btn.open::after { border-top: none; border-bottom: 5px solid currentColor; }
+    .ih-dd-panel { position: absolute; top: calc(100% + 8px); right: 0; z-index: 80; min-width: 320px; max-width: min(440px, calc(100vw - 48px)); max-height: min(540px, 72vh); overflow: auto; background: var(--surface); border: 1px solid var(--ink); box-shadow: 0 16px 44px rgba(10,10,10,0.18); padding: 14px 14px 12px; }
+    [data-theme="dark"] .ih-dd-panel { border-color: var(--line-strong); box-shadow: 0 16px 44px rgba(0,0,0,0.55); }
+    .ih-dd-quick-row { display: flex; gap: 6px; margin-bottom: 10px; }
+    .ih-dd-quick-row button { font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+    .ih-dd-quick-row button:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+    .ih-dd-title { font-size: 10px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-40); margin: 12px 0 6px; padding-bottom: 5px; border-bottom: 1px solid var(--line-strong); }
+    .ih-dd-group { font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; margin: 0 4px 6px 0; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+    .ih-dd-group:hover { background: var(--neon-block); border-color: var(--neon-block); color: var(--neon-on-block); }
+    .ih-dd-row { display: flex; align-items: center; gap: 9px; padding: 6px 8px; margin: 0 -8px; cursor: pointer; user-select: none; }
+    .ih-dd-row:hover { background: var(--paper-2); }
+    [data-theme="dark"] .ih-dd-row:hover { background: rgba(229,231,235,0.07); }
+    .ih-dd-row input[type="checkbox"] { width: 15px; height: 15px; flex: 0 0 auto; margin: 0; accent-color: var(--neon-block); cursor: pointer; }
+    .ih-dd-row .ih-gear { opacity: 0; transition: opacity 0.12s; }
+    .ih-dd-row:hover .ih-gear, .ih-dd-row .ih-gear:focus-visible { opacity: 1; }
+    @media (hover: none) { .ih-dd-row .ih-gear { opacity: 1; } }
+    @media (max-width: 700px) { .ih-dd-panel { left: 0; right: auto; max-width: calc(100vw - 40px); } }
     .ih-grp-head { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 8px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-60); margin: 12px 0 0; padding-bottom: 7px; border-bottom: 1px solid var(--line-strong); }
     .ih-grp-head:first-child { margin-top: 0; }
     .ih-grp-head span { font-size: 11px; color: var(--ink-40); font-weight: 700; letter-spacing: 0.04em; }

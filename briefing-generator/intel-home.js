@@ -639,7 +639,23 @@
         return (b.latest || "").localeCompare(a.latest || "");
       }));
     }
+    // Filters can quietly hide cases — say so, with a one-click way back.
+    var hiddenN = MANIFEST.length - visible.length;
+    if (hiddenN > 0) {
+      htmlOut += '<div class="ih-filter-note">' + hiddenN + " case" + (hiddenN === 1 ? "" : "s") +
+        ' hidden by your Cases/Themes filters · <button type="button" data-show-all-cases>Show all</button></div>';
+    }
     grid.innerHTML = htmlOut;
+    var showAll = grid.querySelector("[data-show-all-cases]");
+    if (showAll) {
+      showAll.addEventListener("click", function () {
+        MANIFEST.forEach(function (m) { activeCases[m.slug] = true; });
+        Object.keys(THEMES).forEach(function (s) { activeThemes[s] = true; });
+        activeCases.__unassigned__ = true;
+        saveFilters();
+        renderAll();
+      });
+    }
 
     grid.querySelectorAll("[data-star]").forEach(function (b) {
       b.addEventListener("click", function (ev) {
@@ -868,12 +884,14 @@
     if (cb && MANIFEST.length) {
       var on = MANIFEST.filter(function (m) { return caseOn(m.slug); }).length;
       cb.textContent = on === MANIFEST.length ? "Cases: All" : "Cases: " + on + "/" + MANIFEST.length;
+      cb.classList.toggle("filtered", on !== MANIFEST.length);
     }
     var tb = document.getElementById("ih-themes-btn");
     if (tb) {
       var slugs = Object.keys(THEMES);
       var tOn = slugs.filter(themeOn).length;
       tb.textContent = tOn === slugs.length ? "Themes: All" : "Themes: " + tOn + "/" + slugs.length;
+      tb.classList.toggle("filtered", tOn !== slugs.length);
     }
   }
 
@@ -989,9 +1007,11 @@
       ev.stopPropagation();
       var open = panel.style.display !== "none";
       document.querySelectorAll(".ih-dd-panel").forEach(function (p) { p.style.display = "none"; });
+      document.querySelectorAll(".ih-dd-btn").forEach(function (b) { b.classList.remove("open"); });
       if (!open) {
         builder(panel);
         panel.style.display = "block";
+        btn.classList.add("open");
       }
     });
     document.addEventListener("click", function (ev) {
@@ -999,6 +1019,7 @@
       if (ev.target && !ev.target.isConnected) return;
       if (panel.contains(ev.target) || btn.contains(ev.target)) return;
       panel.style.display = "none";
+      btn.classList.remove("open");
     });
   }
 
