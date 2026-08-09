@@ -181,7 +181,6 @@
     persistColors();
     pushPrefs();
     renderAll();
-    rebuildThemesPanelIfOpen();
     rebuildCasesPanelIfOpen();
   }
 
@@ -231,8 +230,7 @@
     });
   }
 
-  // Theme gears pass themeOf(slug); case gears pass the case's color base.
-  function openThemePopover(slug, anchor) { openColorPopover(slug, anchor, themeOf(slug)); }
+  // Case gears pass the case's color base.
   function openCasePopover(slug, anchor) {
     var m = null;
     for (var i = 0; i < MANIFEST.length; i++) { if (MANIFEST[i].slug === slug) { m = MANIFEST[i]; break; } }
@@ -287,16 +285,11 @@
       persistColors();
       pushPrefs();
       renderAll();
-      rebuildThemesPanelIfOpen();
       rebuildCasesPanelIfOpen();
       closePop();
     });
   }
 
-  function rebuildThemesPanelIfOpen() {
-    var p = document.getElementById("ih-themes-panel");
-    if (p && p.style.display !== "none") buildThemesPanel(p);
-  }
 
   document.addEventListener("click", function (ev) {
     if (popEl && !popEl.contains(ev.target) && !ev.target.closest("[data-gear],[data-case-gear]")) closePop();
@@ -648,12 +641,34 @@
       var rest = cards.filter(function (c) { return !seen[c.slug]; }).sort(byName);
       if (rest.length) htmlOut += grpHead("📰 Other", rest.length) + join(rest);
     } else {
-      // Activity (default): moved briefings first, then fresh docket/news, freshest first.
-      htmlOut = join(cards.slice().sort(function (a, b) {
+      // Activity (default): recency buckets — 24h / 72h / last week / earlier —
+      // each bucket ordered moved-first, freshest first.
+      function dayAgo(n) {
+        var d = new Date();
+        d.setDate(d.getDate() - n);
+        return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate());
+      }
+      var c24 = dayAgo(1), c72 = dayAgo(3), cWk = dayAgo(7);
+      var buckets = [
+        { label: "⚡ Major updates — last 24 hours", test: function (c) { return (c.latest || "") >= c24; }, list: [] },
+        { label: "Last 72 hours", test: function (c) { return (c.latest || "") >= c72; }, list: [] },
+        { label: "Last week", test: function (c) { return (c.latest || "") >= cWk; }, list: [] },
+        { label: "Earlier", test: function () { return true; }, list: [] },
+      ];
+      cards.slice().sort(function (a, b) {
         if (a.moved !== b.moved) return a.moved ? -1 : 1;
         if ((a.dev > 0) !== (b.dev > 0)) return a.dev > 0 ? -1 : 1;
         return (b.latest || "").localeCompare(a.latest || "");
-      }));
+      }).forEach(function (c) {
+        for (var bi = 0; bi < buckets.length; bi++) {
+          if (buckets[bi].test(c)) { buckets[bi].list.push(c); break; }
+        }
+      });
+      htmlOut = "";
+      buckets.forEach(function (bk) {
+        if (!bk.list.length) return;
+        htmlOut += grpHead(bk.label, bk.list.length) + join(bk.list);
+      });
     }
     // Filters can quietly hide cases — say so, with a one-click way back.
     var hiddenN = MANIFEST.length - visible.length;
@@ -902,13 +917,48 @@
       cb.textContent = on === MANIFEST.length ? "Cases: All" : "Cases: " + on + "/" + MANIFEST.length;
       cb.classList.toggle("filtered", on !== MANIFEST.length);
     }
-    var tb = document.getElementById("ih-themes-btn");
-    if (tb) {
-      var slugs = Object.keys(THEMES);
-      var tOn = slugs.filter(themeOn).length;
-      tb.textContent = tOn === slugs.length ? "Themes: All" : "Themes: " + tOn + "/" + slugs.length;
-      tb.classList.toggle("filtered", tOn !== slugs.length);
-    }
+    paintThemePills();
+  }
+
+  // ── Inline theme pills (press-page style: black = on, outline = off) ──────
+  function themePillOrder() {
+    var seen = {};
+    var order = [];
+    THEME_ORDER.forEach(function (s) { if (THEMES[s]) { order.push(s); seen[s] = 1; } });
+    Object.keys(THEMES).forEach(function (s) { if (!seen[s]) order.push(s); });
+    return order;
+  }
+
+  function paintThemePills() {
+    var box = document.getElementById("ih-theme-pills");
+    if (!box) return;
+    var slugs = themePillOrder();
+    var allOn = slugs.every(themeOn);
+    var html = '<button type="button" class="ih-tp-btn' + (allOn ? " on" : "") + '" data-tp="__all__">All</button>';
+    slugs.forEach(function (s) {
+      var t = themeOf(s);
+      html += '<button type="button" class="ih-tp-btn' + (!allOn && themeOn(s) ? " on" : "") + '" data-tp="' + esc(s) + '">' + t.emoji + " " + esc(t.name) + "</button>";
+    });
+    box.innerHTML = html;
+    box.querySelectorAll("[data-tp]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-tp");
+        var all = themePillOrder();
+        var wasAll = all.every(themeOn);
+        if (key === "__all__") {
+          all.forEach(function (s) { activeThemes[s] = true; });
+        } else if (wasAll) {
+          // From "All", picking a theme narrows to just that theme (press behavior).
+          all.forEach(function (s) { activeThemes[s] = (s === key); });
+        } else {
+          activeThemes[key] = !themeOn(key);
+          // Nothing left on = back to All.
+          if (!all.some(themeOn)) all.forEach(function (s) { activeThemes[s] = true; });
+        }
+        saveFilters();
+        renderAll();
+      });
+    });
   }
 
   function buildCasesPanel(panel) {
@@ -973,44 +1023,6 @@
         ev.preventDefault();
         ev.stopPropagation();
         openCasePopover(g.getAttribute("data-case-gear"), g);
-      });
-    });
-  }
-
-  function buildThemesPanel(panel) {
-    var html =
-      '<div class="ih-dd-quick-row">' +
-        '<button type="button" data-all="1">Select all</button>' +
-        '<button type="button" data-none="1">Deselect all</button>' +
-      "</div>";
-    Object.keys(THEMES).forEach(function (slug) {
-      html +=
-        '<label class="ih-dd-row">' +
-          '<input type="checkbox" data-theme="' + slug + '"' + (themeOn(slug) ? " checked" : "") + ">" +
-          themePill(slug) +
-          '<button type="button" class="ih-gear" data-gear="' + slug + '" title="Colors">\u2699</button>' +
-        "</label>";
-    });
-    panel.innerHTML = html;
-    panel.querySelector("[data-all]").addEventListener("click", function () {
-      Object.keys(THEMES).forEach(function (s) { activeThemes[s] = true; });
-      saveFilters(); buildThemesPanel(panel); renderAll();
-    });
-    panel.querySelector("[data-none]").addEventListener("click", function () {
-      Object.keys(THEMES).forEach(function (s) { activeThemes[s] = false; });
-      saveFilters(); buildThemesPanel(panel); renderAll();
-    });
-    panel.querySelectorAll("[data-theme]").forEach(function (cb) {
-      cb.addEventListener("change", function () {
-        activeThemes[cb.getAttribute("data-theme")] = cb.checked;
-        saveFilters(); renderAll();
-      });
-    });
-    panel.querySelectorAll("[data-gear]").forEach(function (g) {
-      g.addEventListener("click", function (ev) {
-        ev.preventDefault();
-        ev.stopPropagation();
-        openThemePopover(g.getAttribute("data-gear"), g);
       });
     });
   }
@@ -1317,7 +1329,6 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
-    wireDropdown("ih-themes-btn", "ih-themes-panel", buildThemesPanel);
     updateFilterButtons();
     wireCarousel();
     wireSortBar();
