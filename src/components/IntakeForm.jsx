@@ -33,31 +33,47 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
   const [formState, setFormState] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
+  // If the Turnstile widget fails to load or render (bad key, CSP, network,
+  // outage), we degrade instead of trapping the visitor behind a disabled
+  // button — the server + honeypot + rate limiting still guard the endpoint.
+  const [turnstileError, setTurnstileError] = useState(false);
   const formRef = useRef(null);
   const turnstileRef = useRef(null);
   const turnstileWidgetId = useRef(null);
+  const gotTurnstileToken = useRef(false);
 
   useEffect(() => {
     if (!TURNSTILE_SITE_KEY || !turnstileRef.current) return;
     let interval = null;
+    let failTimer = null;
     const tryRender = () => {
       if (!window.turnstile || turnstileWidgetId.current != null) return;
-      turnstileWidgetId.current = window.turnstile.render(turnstileRef.current, {
-        sitekey: TURNSTILE_SITE_KEY,
-        callback: (token) => setTurnstileToken(token),
-        "expired-callback": () => setTurnstileToken(""),
-        "error-callback": () => setTurnstileToken(""),
-        theme: "light",
-      });
+      try {
+        turnstileWidgetId.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token) => { gotTurnstileToken.current = true; setTurnstileToken(token); setTurnstileError(false); },
+          "expired-callback": () => setTurnstileToken(""),
+          // Bad sitekey / domain (e.g. Turnstile error 400020), network, etc.
+          "error-callback": () => { setTurnstileToken(""); setTurnstileError(true); },
+          theme: "light",
+        });
+      } catch {
+        setTurnstileError(true);
+      }
     };
     // Script may still be loading — retry until turnstile is available
     if (window.turnstile) { tryRender(); } else {
       interval = setInterval(() => { if (window.turnstile) { clearInterval(interval); interval = null; tryRender(); } }, 200);
     }
+    // Safety net: if no token has arrived in 8s (script blocked by CSP/adblock,
+    // widget never rendered), stop blocking the form and fall back to the
+    // server-side honeypot + rate limiting.
+    failTimer = setTimeout(() => { if (!gotTurnstileToken.current) setTurnstileError(true); }, 8000);
     // Single cleanup covers both paths: clear a pending poll AND remove the
     // widget so a late-loading script can't leave an orphaned iframe on unmount.
     return () => {
       if (interval) clearInterval(interval);
+      if (failTimer) clearTimeout(failTimer);
       if (turnstileWidgetId.current != null) {
         window.turnstile?.remove(turnstileWidgetId.current);
         turnstileWidgetId.current = null;
@@ -154,7 +170,7 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       <Field label={t("form.message")} name="message" type="textarea" placeholder={t("form.message_placeholder")} required />
 
       {TURNSTILE_SITE_KEY && (
-        <div ref={turnstileRef} style={{ margin: "0.5rem 0" }} />
+        <div ref={turnstileRef} style={{ margin: "0.5rem 0", display: turnstileError ? "none" : "block" }} />
       )}
 
       {formState === "error" && (
@@ -165,7 +181,7 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
 
       <button
         type="submit"
-        disabled={formState === "submitting" || (TURNSTILE_SITE_KEY && !turnstileToken)}
+        disabled={formState === "submitting" || (TURNSTILE_SITE_KEY && !turnstileToken && !turnstileError)}
         aria-busy={formState === "submitting"}
         aria-describedby={formState === "error" ? "intake-form-error" : undefined}
         className="btn-neon"
