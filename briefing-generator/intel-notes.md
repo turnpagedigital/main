@@ -1,8 +1,12 @@
 # Intel Docket Notes
 
-_Updated 2026-08-09 04:09 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-09 12:48 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
+
+### (no docket number) — 2026-08-07 ★
+
+> Bartz v Anthropic: When to Expect Payments, Next Steps — Class counsel confirmed that class members will not begin receiving payments until at least end of 2026, with disbursement contingent on whethe
 
 ### (no docket number) — 2026-07-28
 
