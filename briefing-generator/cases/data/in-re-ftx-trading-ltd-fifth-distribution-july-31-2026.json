@@ -15,8 +15,8 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-09T19:06:02.270183+00:00",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-09T19:52:23.700401+00:00",
     "as_of": "Aug 9, 2026",
     "backfilled": false,
     "new_in_72h": 3,
@@ -6454,6 +6454,16 @@
         "doc_url": ""
       },
       {
+        "entry_number": 35404,
+        "date_filed": "2026-04-20",
+        "time_filed": "10:32:53",
+        "date_display": "Apr 20, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/20/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35404.0.pdf"
+      },
+      {
         "entry_number": 35403,
         "date_filed": "2026-04-20",
         "time_filed": "10:27:10",
@@ -6482,9 +6492,829 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 35400,
+        "date_filed": "2026-04-18",
+        "time_filed": "",
+        "date_display": "Apr 18, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12638061, amount $ 28.00. (U.S. Treasury) (Entered: 04/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35399,
+        "date_filed": "2026-04-18",
+        "time_filed": "17:57:50",
+        "date_display": "Apr 18, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Joshua Doonquah (Claim No. 39538) To Rohan Pandit. Filed by Rohan Pandit. (Woods, Adrienne) (Entered: 04/18/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35399.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-18",
+        "time_filed": "18:01:18",
+        "date_display": "Apr 18, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35397,
+        "date_filed": "2026-04-17",
+        "time_filed": "15:51:04",
+        "date_display": "Apr 17, 2026",
+        "description": "Motion to Approve . Motion of Kihyuk Nam to Prohibit Reversal of Established Distribution Treatment of Schedule No. 5694766 Absent Formal Claim-Specific Filing, and for Related Relief. Filed by Kihyuk Nam. The case judge is Karen B Owens. (Attachments: # 1 Exhibits) (KR) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35397.0.pdf"
+      },
+      {
+        "entry_number": 35396,
+        "date_filed": "2026-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 84.00). Receipt Number B12636866, amount $ 84.00. (U.S. Treasury) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35395,
+        "date_filed": "2026-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 280.00). Receipt Number B12636866, amount $ 280.00. (U.S. Treasury) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35394,
+        "date_filed": "2026-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 280.00). Receipt Number B12636866, amount $ 280.00. (U.S. Treasury) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35393,
+        "date_filed": "2026-04-17",
+        "time_filed": "11:18:40",
+        "date_display": "Apr 17, 2026",
+        "description": "Transfer/Assignment of Claim. Transferors: Fire Bouvardia, L.L.C. (Claim No. 5958747); Fire Bouvardia, L.L.C. (Claim No. 6833905); Fire Bouvardia, L.L.C. (Claim No. 1953) To Ceratosaurus Investors, L.L.C.. Filed by Ceratosaurus Investors, L.L.C.. (Jones, Andrew) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35393.0.pdf"
+      },
+      {
+        "entry_number": 35392,
+        "date_filed": "2026-04-17",
+        "time_filed": "11:16:18",
+        "date_display": "Apr 17, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Fire Bouvardia, L.L.C. (Claim No. 5505906); Fire Bouvardia, L.L.C. (Claim No. 61217); Fire Bouvardia, L.L.C. (Claim No. 36937); Fire Bouvardia, L.L.C. (Claim No. 6119239); Fire Bouvardia, L.L.C. (Claim No. 39731); Fire Bouvardia, L.L.C. (Claim No. 5716220); Fire Bouvardia, L.L.C. (Claim No. 35684); Fire Bouvardia, L.L.C. (Claim No. 10409); Fire Bouvardia, L.L.C. (Claim No. 6415306); Fire Bouvardia, L.L.C. (Claim No. 3323) To Ceratosaurus Investors, L.L.C.. Filed by Ceratosaurus Investors, L.L.C.. (Jones, Andrew) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35392.0.pdf"
+      },
+      {
+        "entry_number": 35390,
+        "date_filed": "2026-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12636822, amount $ 28.00. (U.S. Treasury) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35389,
+        "date_filed": "2026-04-17",
+        "time_filed": "11:04:05",
+        "date_display": "Apr 17, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: name (redacted) To Phoenix TF, LLC. Filed by Phoenix TF, LLC. (Forsgren, Jonathan) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35389.0.pdf"
+      },
+      {
+        "entry_number": 35388,
+        "date_filed": "2026-04-17",
+        "time_filed": "10:45:05",
+        "date_display": "Apr 17, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: TAM NAI HIM LESLIE To CLAIM NEXUS C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35388.0.pdf"
+      },
+      {
+        "entry_number": 35387,
+        "date_filed": "2026-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12636383, amount $ 28.00. (U.S. Treasury) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35386,
+        "date_filed": "2026-04-17",
+        "time_filed": "",
+        "date_display": "Apr 17, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12636383, amount $ 28.00. (U.S. Treasury) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35385,
+        "date_filed": "2026-04-17",
+        "time_filed": "05:42:48",
+        "date_display": "Apr 17, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35385.0.pdf"
+      },
+      {
+        "entry_number": 35384,
+        "date_filed": "2026-04-17",
+        "time_filed": "05:40:07",
+        "date_display": "Apr 17, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/17/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35384.0.pdf"
+      },
+      {
+        "entry_number": 35383,
+        "date_filed": "2026-04-16",
+        "time_filed": "19:33:45",
+        "date_display": "Apr 16, 2026",
+        "description": "Motion to File Under Seal (Sealing Motion of the FTX Recovery Trust) Filed by FTX Recovery Trust. Hearing scheduled for 5/14/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Attachments: # 1 Notice # 2 Exhibit A) (Brown, Kimberly) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35383.0.pdf"
+      },
+      {
+        "entry_number": 35382,
+        "date_filed": "2026-04-16",
+        "time_filed": "19:27:20",
+        "date_display": "Apr 16, 2026",
+        "description": "(REDACTED) Declaration of Kimberly A. Brown in Support of the FTX Recovery Trust's Objection to Proofs of Claim Filed by ELD Capital LLC (related document(s)35329) Filed by FTX Recovery Trust. (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5) (Brown, Kimberly) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35382.0.pdf"
+      },
+      {
+        "entry_number": 35381,
+        "date_filed": "2026-04-16",
+        "time_filed": "",
+        "date_display": "Apr 16, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12636210, amount $ 28.00. (U.S. Treasury) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35380,
+        "date_filed": "2026-04-16",
+        "time_filed": "19:16:04",
+        "date_display": "Apr 16, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Name (Redacted) (Claim No. 49593) To Ceratosaurus Investors, L.L.C.. Filed by Ceratosaurus Investors, L.L.C.. (Haskel, Paul) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35380.0.pdf"
+      },
+      {
+        "entry_number": 35379,
+        "date_filed": "2026-04-16",
+        "time_filed": "18:20:35",
+        "date_display": "Apr 16, 2026",
+        "description": "In-Person/Zoom Hearing Held/Court Sign-In Sheet (related document(s)35364) (Mml) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35379.0.pdf"
+      },
+      {
+        "entry_number": 35378,
+        "date_filed": "2026-04-16",
+        "time_filed": "16:12:33",
+        "date_display": "Apr 16, 2026",
+        "description": "Affidavit/Declaration of Mailing of Sonia Akter Regarding Objection of the FTX Recovery Trust to Motion of Grigorii Levchenko to Compel FTX Recovery Trust to (I) Disclose Basis for Excluded Party Designation and (II) Administer Class 5A Dotcom Customer Entitlement Claim. Filed by Kroll Restructuring Administration LLC. (related document(s)35307) (Steele, Benjamin) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35378.0.pdf"
+      },
+      {
+        "entry_number": 35377,
+        "date_filed": "2026-04-16",
+        "time_filed": "15:40:05",
+        "date_display": "Apr 16, 2026",
+        "description": "Court Date & Time [04/16/2026 01:03:00 PM]. File Size [ 63374 KB ]. Run Time [ 02:25:14 ]. (admin). (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35376,
+        "date_filed": "2026-04-16",
+        "time_filed": "13:23:06",
+        "date_display": "Apr 16, 2026",
+        "description": "Affidavit/Declaration of Mailing of Engels Medina Regarding Amended Notice of Agenda for Hearing Scheduled for April 16, 2026 at 1:00 p.m. (ET), Before the Honorable Karen B. Owens, Chief Judge at the United States Bankruptcy Court for the District of Delaware, Located at 824 North Market Street, 6th Floor, Courtroom No. 3, Wilmington, Delaware 19801, Second Amended Notice of Agenda for Hearing Scheduled for April 16, 2026 at 1:00 p.m. (ET), Before the Honorable Karen B. Owens, Chief Judge at the United States Bankruptcy Court for the District of Delaware, Located at 824 North Market Street, 6th Floor, Courtroom No. 3, Wilmington, Delaware 19801, FTX Recovery Trusts Witness and Exhibit List for Hearing on April 16, 2026 at 1:00 p.m. (ET), Third Amended Notice of Agenda for Hearing Scheduled for April 16, 2026 at 1:00 p.m.(ET), before the Honorable Karen B. Owens, Chief Judge at the…",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35376.0.pdf"
+      },
+      {
+        "entry_number": 35375,
+        "date_filed": "2026-04-16",
+        "time_filed": "",
+        "date_display": "Apr 16, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12635217, amount $ 28.00. (U.S. Treasury) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35374,
+        "date_filed": "2026-04-16",
+        "time_filed": "",
+        "date_display": "Apr 16, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12635217, amount $ 28.00. (U.S. Treasury) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35373,
+        "date_filed": "2026-04-16",
+        "time_filed": "",
+        "date_display": "Apr 16, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12635217, amount $ 28.00. (U.S. Treasury) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35372,
+        "date_filed": "2026-04-16",
+        "time_filed": "",
+        "date_display": "Apr 16, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12635217, amount $ 28.00. (U.S. Treasury) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35371,
+        "date_filed": "2026-04-16",
+        "time_filed": "",
+        "date_display": "Apr 16, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12635217, amount $ 28.00. (U.S. Treasury) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35370,
+        "date_filed": "2026-04-16",
+        "time_filed": "11:15:31",
+        "date_display": "Apr 16, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C I, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35370.0.pdf"
+      },
+      {
+        "entry_number": 35369,
+        "date_filed": "2026-04-16",
+        "time_filed": "11:10:15",
+        "date_display": "Apr 16, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35366,
+        "date_filed": "2026-04-16",
+        "time_filed": "10:58:25",
+        "date_display": "Apr 16, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/16/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35366.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-16",
+        "time_filed": "19:20:36",
+        "date_display": "Apr 16, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35365,
+        "date_filed": "2026-04-15",
+        "time_filed": "23:06:55",
+        "date_display": "Apr 15, 2026",
+        "description": "Affidavit/Declaration of Mailing of Alain B. Francoeur Regarding Hearing Agenda Notice. Filed by Kroll Restructuring Administration LLC. (related document(s)35331) (Steele, Benjamin) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35365.0.pdf"
+      },
+      {
+        "entry_number": 35364,
+        "date_filed": "2026-04-15",
+        "time_filed": "23:05:25",
+        "date_display": "Apr 15, 2026",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by FTX Recovery Trust. Hearing scheduled for 4/16/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Brown, Kimberly) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35364.0.pdf"
+      },
+      {
+        "entry_number": 35363,
+        "date_filed": "2026-04-15",
+        "time_filed": "22:24:16",
+        "date_display": "Apr 15, 2026",
+        "description": "Exhibit(s) - FTX Recovery Trust's Amended Witness and Exhibit List for Hearing on April 16, 2026 at 1:00 P.M. (ET) (related document(s)34251) Filed by FTX Recovery Trust. (Brown, Kimberly) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35363.0.pdf"
+      },
+      {
+        "entry_number": 35362,
+        "date_filed": "2026-04-15",
+        "time_filed": "16:32:59",
+        "date_display": "Apr 15, 2026",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by FTX Recovery Trust. Hearing scheduled for 4/16/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Brown, Kimberly) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35362.0.pdf"
+      },
+      {
+        "entry_number": 35361,
+        "date_filed": "2026-04-15",
+        "time_filed": "13:04:28",
+        "date_display": "Apr 15, 2026",
+        "description": "Exhibit(s) ELD Capital LLC's Witness and Exhibit List for Hearing on April 16, 2026 at 1:00 p.m. (ET) (related document(s)34251) Filed by ELD Capital LLC. (Hughes, Peter) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35361.0.pdf"
+      },
+      {
+        "entry_number": 35360,
+        "date_filed": "2026-04-15",
+        "time_filed": "10:47:40",
+        "date_display": "Apr 15, 2026",
+        "description": "Transfer/Assignment of Claim.Receipt Number 10096139 Transfer Agreement 3001 (e) 2 Transferors: Redacted (Claim No. 80475) To Haixin Ma. Filed by Redacted Redacted. (KR) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35360.0.pdf"
+      },
+      {
+        "entry_number": 35359,
+        "date_filed": "2026-04-15",
+        "time_filed": "10:44:50",
+        "date_display": "Apr 15, 2026",
+        "description": "Transfer/Assignment of Claim.Receipt Number 10096140 Transfer Agreement 3001 (e) 2 Transferors: Redacted (Claim No. 9459) To Haixin Ma. Filed by Redacted Redacted. (KR) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35359.0.pdf"
+      },
+      {
+        "entry_number": 35358,
+        "date_filed": "2026-04-15",
+        "time_filed": "10:09:16",
+        "date_display": "Apr 15, 2026",
+        "description": "Amended Notice of Agenda of Matters Scheduled for Hearing Filed by FTX Recovery Trust. Hearing scheduled for 4/16/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Brown, Kimberly) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35358.0_1.pdf"
+      },
+      {
+        "entry_number": 35357,
+        "date_filed": "2026-04-15",
+        "time_filed": "09:20:34",
+        "date_display": "Apr 15, 2026",
+        "description": "Exhibit(s) - FTX Recovery Trust's Witness and Exhibit List for Hearing on April 16, 2026 at 1:00 p.m. (ET) (related document(s)34251) Filed by FTX Recovery Trust. (Brown, Kimberly) (Entered: 04/15/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35357.0.pdf"
+      },
+      {
+        "entry_number": 35355,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12632800, amount $ 28.00. (U.S. Treasury) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35354,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12632800, amount $ 28.00. (U.S. Treasury) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35352,
+        "date_filed": "2026-04-14",
+        "time_filed": "17:39:01",
+        "date_display": "Apr 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35352.0.pdf"
+      },
+      {
+        "entry_number": 35351,
+        "date_filed": "2026-04-14",
+        "time_filed": "17:35:22",
+        "date_display": "Apr 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35351.0.pdf"
+      },
+      {
+        "entry_number": 35349,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12632127, amount $ 28.00. (U.S. Treasury) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35347,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12632127, amount $ 28.00. (U.S. Treasury) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35346,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12632127, amount $ 28.00. (U.S. Treasury) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35345,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12632127, amount $ 28.00. (U.S. Treasury) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35344,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12632127, amount $ 28.00. (U.S. Treasury) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35339,
+        "date_filed": "2026-04-14",
+        "time_filed": "12:18:01",
+        "date_display": "Apr 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: JEFFERIES LEVERAGED CREDIT PRODUCTS, LLC To SP Multi Claims Holdings, LLC. Filed by SP Multi Claims Holdings, LLC. (Beacher, Ronald) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35339.0.pdf"
+      },
+      {
+        "entry_number": 35337,
+        "date_filed": "2026-04-14",
+        "time_filed": "12:12:16",
+        "date_display": "Apr 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: JEFFERIES LEVERAGED CREDIT PRODUCTS, LLC To SP Multi Claims Holdings, LLC. Filed by SP Multi Claims Holdings, LLC. (Beacher, Ronald) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35337.0.pdf"
+      },
+      {
+        "entry_number": 35336,
+        "date_filed": "2026-04-14",
+        "time_filed": "12:09:07",
+        "date_display": "Apr 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: JEFFERIES LEVERAGED CREDIT PRODUCTS, LLC To SP Multi Claims Holdings, LLC. Filed by SP Multi Claims Holdings, LLC. (Beacher, Ronald) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35336.0.pdf"
+      },
+      {
+        "entry_number": 35335,
+        "date_filed": "2026-04-14",
+        "time_filed": "12:05:28",
+        "date_display": "Apr 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: JEFFERIES LEVERAGED CREDIT PRODUCTS, LLC To SP Multi Claims Holdings, LLC. Filed by SP Multi Claims Holdings, LLC. (Beacher, Ronald) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35335.0.pdf"
+      },
+      {
+        "entry_number": 35334,
+        "date_filed": "2026-04-14",
+        "time_filed": "12:02:29",
+        "date_display": "Apr 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: JEFFERIES LEVERAGED CREDIT PRODUCTS, LLC To SP Multi Claims Holdings, LLC. Filed by SP Multi Claims Holdings, LLC. (Beacher, Ronald) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35334.0.pdf"
+      },
+      {
+        "entry_number": 35333,
+        "date_filed": "2026-04-14",
+        "time_filed": "11:58:48",
+        "date_display": "Apr 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: JEFFERIES LEVERAGED CREDIT PRODUCTS, LLC To SP Multi Claims Holdings, LLC. Filed by SP Multi Claims Holdings, LLC. (Beacher, Ronald) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35333.0.pdf"
+      },
+      {
+        "entry_number": 35332,
+        "date_filed": "2026-04-14",
+        "time_filed": "11:52:52",
+        "date_display": "Apr 14, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: JEFFERIES LEVERAGED CREDIT PRODUCTS, LLC To SP Multi Claims Holdings, LLC. Filed by SP Multi Claims Holdings, LLC. (Beacher, Ronald) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35332.0.pdf"
+      },
+      {
+        "entry_number": 35331,
+        "date_filed": "2026-04-14",
+        "time_filed": "11:46:22",
+        "date_display": "Apr 14, 2026",
+        "description": "Notice of Agenda of Matters Scheduled for Hearing Filed by FTX Recovery Trust. Hearing scheduled for 4/16/2026 at 01:00 PM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom #3, Wilmington, Delaware. (Brown, Kimberly) (Entered: 04/14/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35331.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-14",
+        "time_filed": "17:45:10",
+        "date_display": "Apr 14, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-14",
+        "time_filed": "15:30:13",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt Number and Filing Fee - Generic",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt of filing fee for 197 Transfer/Assignment of Claims. Receipt Number 10096138, Fee Amount $5,516.00 (related document(s)35332, 35333, 35334, 35335, 35336, 35337, 35338, 35339, 35340) (SAP)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-14",
+        "time_filed": "",
+        "date_display": "Apr 14, 2026",
+        "description": "Receipt Number 10096138, Fee Amount $5,516.00 (related document(s)35332, 35333, 35334, 35335, 35336, 35337, 35338, 35339, 35340) (SAP)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35330,
+        "date_filed": "2026-04-13",
+        "time_filed": "19:12:11",
+        "date_display": "Apr 13, 2026",
+        "description": "Affidavit/Declaration of Mailing of Sonia Akter Regarding Motion, and Declaration. Filed by Kroll Restructuring Administration LLC. (related document(s)35243, 35244) (Steele, Benjamin) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35330.0.pdf"
+      },
+      {
+        "entry_number": 35329,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "[SEALED] Declaration of Kimberly A. Brown in Support of the FTX Recovery Trust's Objection to Proofs of Claim Filed by ELD Capital LLC (related document(s)35327) Filed by FTX Recovery Trust. (Attachments: # 1 Exhibit 1 # 2 Exhibit 2 # 3 Exhibit 3 # 4 Exhibit 4 # 5 Exhibit 5) (Pierce, Matthew) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35328,
+        "date_filed": "2026-04-13",
+        "time_filed": "15:54:14",
+        "date_display": "Apr 13, 2026",
+        "description": "Supplemental Declaration of Kumanan Ramanathan in Support of the FTX Recovery Trust's Objection to Proofs of Claim Filed by ELD Capital LLC (related document(s)35327) Filed by FTX Recovery Trust. (Attachments: # 1 Exhibit A) (Pierce, Matthew) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35328.0.pdf"
+      },
+      {
+        "entry_number": 35327,
+        "date_filed": "2026-04-13",
+        "time_filed": "15:50:39",
+        "date_display": "Apr 13, 2026",
+        "description": "Reply (FTX Recovery Trust's Reply in Support of Its Objection to the Proofs of Claim Filed by ELD Capital LLC) (related document(s)34251, 34252, 34703) Filed by FTX Recovery Trust (Pierce, Matthew) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35327.0.pdf"
+      },
+      {
+        "entry_number": 35326,
+        "date_filed": "2026-04-13",
+        "time_filed": "15:15:16",
+        "date_display": "Apr 13, 2026",
+        "description": "Order Sustaining FTX Recovery Trust's One Hundred Ninety-Ninth (Substantive) Omnibus Objection to Certain No Liability Proofs of Claim (Non-Customer Claims) (related document(s)34863, 35316) Signed on 4/13/2026. (Attachments: # 1 Schedule 1) (Mml) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35326.0.pdf"
+      },
+      {
+        "entry_number": 35325,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "Transcript regarding Hearing Held 04/08/26 RE: Oral Argument (24-50222). Remote electronic access to the transcript is restricted until 7/13/2026. The transcript may be viewed at the Bankruptcy Court Clerk's Office after 7/13/2026. For information about how to obtain a transcript, Contact the Court Reporter/Transcriber, RELIABLE, at Telephone number 302-654-8080. Filed by FTX Trading Ltd. . Notice of Intent to Request Redaction Deadline Due By 4/20/2026. Redaction Request Due By 5/4/2026. Redacted Transcript Submission Due By 5/14/2026. Transcript access will be restricted through 7/13/2026. (KR) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35324,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12630184, amount $ 28.00. (U.S. Treasury) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35323,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12629879, amount $ 28.00. (U.S. Treasury) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35322,
+        "date_filed": "2026-04-13",
+        "time_filed": "",
+        "date_display": "Apr 13, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12629879, amount $ 28.00. (U.S. Treasury) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35321,
+        "date_filed": "2026-04-13",
+        "time_filed": "06:45:56",
+        "date_display": "Apr 13, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35321.0.pdf"
+      },
+      {
+        "entry_number": 35320,
+        "date_filed": "2026-04-13",
+        "time_filed": "06:42:39",
+        "date_display": "Apr 13, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C I, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/13/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35320.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-13",
+        "time_filed": "16:01:29",
+        "date_display": "Apr 13, 2026",
+        "description": "Declaration",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-13",
+        "time_filed": "10:58:58",
+        "date_display": "Apr 13, 2026",
+        "description": "Transcript",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-13",
+        "time_filed": "09:24:33",
+        "date_display": "Apr 13, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35319,
+        "date_filed": "2026-04-12",
+        "time_filed": "",
+        "date_display": "Apr 12, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12629799, amount $ 28.00. (U.S. Treasury) (Entered: 04/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35318,
+        "date_filed": "2026-04-12",
+        "time_filed": "10:40:10",
+        "date_display": "Apr 12, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 04/12/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35318.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-04-12",
+        "time_filed": "10:44:50",
+        "date_display": "Apr 12, 2026",
+        "description": "none",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35312,
+        "date_filed": "2026-04-10",
+        "time_filed": "14:01:39",
+        "date_display": "Apr 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: [Redacted] To Next Claims Capital Limited. Filed by Next Claims Capital Limited. (Chen, Jinfeng) (Entered: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35312.0.pdf"
+      },
+      {
+        "entry_number": 35309,
+        "date_filed": "2026-04-10",
+        "time_filed": "",
+        "date_display": "Apr 10, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12628358, amount $ 28.00. (U.S. Treasury) (Entered: 04/10/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=65748821&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=38"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=65748821&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=43"
   },
   "claims_administrator": {
     "name": "Kroll",
