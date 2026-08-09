@@ -159,52 +159,52 @@
   ],
   "theme_presets": [
     {
-      "bg": "#ffffff",
-      "fg": "#696969"
-    },
-    {
-      "bg": "#d9ff00",
+      "bg": "#5cbc93",
       "fg": "#000000"
     },
     {
-      "bg": "#1B3A4B",
-      "fg": "#FFFFFF"
+      "bg": "#a494ff",
+      "fg": "#000000"
     },
     {
-      "bg": "#000000",
+      "bg": "#8f9cff",
+      "fg": "#000000"
+    },
+    {
+      "bg": "#c1da2f",
+      "fg": "#000000"
+    },
+    {
+      "bg": "#9cf2ce",
+      "fg": "#0e5338"
+    },
+    {
+      "bg": "#d4ccff",
+      "fg": "#362880"
+    },
+    {
+      "bg": "#dbe0ff",
+      "fg": "#2d42e1"
+    },
+    {
+      "bg": "#dfeaa4",
+      "fg": "#5a6a0b"
+    },
+    {
+      "bg": "#0e5338",
       "fg": "#ffffff"
     },
     {
-      "bg": "#3B78D8",
-      "fg": "#FFFFFF"
-    },
-    {
-      "bg": "#B3A8F0",
-      "fg": "#2A1E6E"
-    },
-    {
-      "bg": "#b4e03e",
+      "bg": "#362880",
       "fg": "#ffffff"
     },
     {
-      "bg": "#7EF4C2",
-      "fg": "#0B4A32"
-    },
-    {
-      "bg": "#3FA07A",
+      "bg": "#2d42e1",
       "fg": "#FFFFFF"
     },
     {
-      "bg": "#F2AAEC",
-      "fg": "#6E1466"
-    },
-    {
-      "bg": "#CC33CC",
-      "fg": "#FFFFFF"
-    },
-    {
-      "bg": "#3A3A3A",
-      "fg": "#FFFFFF"
+      "bg": "#5a6a0b",
+      "fg": "#ffffff"
     }
   ],
   "priorities": {
