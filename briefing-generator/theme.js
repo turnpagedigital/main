@@ -42,11 +42,17 @@
   function wire(){
     apply();
     // Mark the current page's nav link (black bold + full-color emoji via CSS).
-    var here=(location.pathname.split('/').pop()||'index.html');
-    if(here==='intel'||here==='')here='index.html';   // /intel and /intel/ are the dashboard
+    // Normalize ".html" away on BOTH sides — Cloudflare Pages serves clean
+    // URLs in production (/intel/docket) while links say "docket.html".
+    function navKey(p){
+      p=(p||'').split('#')[0].split('?')[0].replace('../','');
+      p=p.split('/').pop()||'';
+      if(p===''||p==='intel')p='index';
+      return p.replace(/\.html$/,'');
+    }
+    var here=navKey(location.pathname);
     document.querySelectorAll('a.tn-back').forEach(function(a){
-      var h=(a.getAttribute('href')||'').split('#')[0].split('?')[0].replace('../','');
-      if(h===here)a.classList.add('tn-on');
+      if(navKey(a.getAttribute('href'))===here)a.classList.add('tn-on');
     });
     var b=document.getElementById('theme-toggle');
     if(b)b.addEventListener('click',window.cycleTheme);
