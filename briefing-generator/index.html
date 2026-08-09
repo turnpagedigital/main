@@ -25,14 +25,22 @@
     html, body { background: var(--bg); color: var(--ink); font-family: 'Archivo', sans-serif; }
     body { line-height: 1.72; }
 
-    /* Brand strip */
-    .tn-wrap-line { border-bottom: 1px solid var(--line-strong); }
-    .tn-row.brand { max-width: 1680px; margin: 0 auto; padding: 10px 32px; display: flex; align-items: center; justify-content: space-between; }
-    .tn-brand-logo { height: 36px; width: auto; }
+    /* Standard intel nav (same as docket/news/calendar/notes/prospects) */
+    .tn { background: #000; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 10px 0; position: sticky; top: 0; z-index: 100; }
+    .tn-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: space-between; max-width: 1680px; margin: 0 auto; padding: 0 32px; }
+    .tn-left { display: flex; align-items: center; gap: 16px; }
+    .tn-brand { display: inline-flex; align-items: center; padding: 4px 0; text-decoration: none; }
+    .tn-brand-logo { height: 34px; width: auto; }
     .tn-logo-dark { display: none; }
     [data-theme="dark"] .tn-logo-light { display: none; }
     [data-theme="dark"] .tn-logo-dark { display: block; }
-    #theme-toggle { background: none; border: none; font-size: 20px; cursor: pointer; padding: 4px; }
+    .tn-back { color: rgba(255,255,255,0.72); font-size: 12px; text-decoration: none; border-left: 1px solid rgba(255,255,255,0.18); padding-left: 16px; filter: grayscale(1); }
+    .tn-back:hover, .tn-back.tn-on { color: #fff; font-weight: 700; filter: none; }
+    [data-theme="light"] .tn { background: #fff; border-bottom-color: rgba(10,10,10,0.08); }
+    [data-theme="light"] .tn-back { color: rgba(10,10,10,0.6); border-left-color: rgba(10,10,10,0.14); }
+    [data-theme="light"] .tn-back:hover, [data-theme="light"] .tn-back.tn-on { color: #0A0A0A; }
+    #theme-toggle { background: transparent; border: 1px solid rgba(255,255,255,0.25); border-radius: 99px; padding: 2px 8px; cursor: pointer; font-size: 13px; font-family: inherit; line-height: 1; color: #fff; }
+    [data-theme="light"] #theme-toggle { border-color: rgba(10,10,10,0.14); color: #0A0A0A; }
 
     /* Topic tabs row */
     .tn-tabs-row { max-width: 1680px; margin: 0 auto; padding: 0 32px; display: flex; gap: 8px; flex-wrap: wrap; position: relative; }
@@ -69,7 +77,7 @@
     .tn-dd-cta:hover { opacity: 0.9; }
 
     /* Page title */
-    .page-title { max-width: 1680px; margin: 32px auto 24px; padding: 0 32px; border-bottom: 2px solid var(--ink); padding-bottom: 24px; }
+    .page-title { max-width: 1680px; margin: 32px auto 24px; padding: 0 32px; border-bottom: 1px solid var(--line-strong); padding-bottom: 24px; }
     .page-title .eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-60); font-weight: 700; margin-bottom: 6px; }
     .page-title h1 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
     .stamp { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-60); }
@@ -193,11 +201,15 @@
     .ih-star { background: none; border: none; cursor: pointer; font-size: 15px; line-height: 1; color: var(--ink-40); padding: 0; }
     .ih-star:hover { color: var(--ink-60); }
     .ih-star.on { color: #E0A100; }
-    .ih-sort { display: inline-flex; margin-right: auto; }
-    .ih-sort-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; margin-left: -1px; }
-    .ih-sort-btn:first-child { margin-left: 0; }
+    .ih-sort { display: inline-flex; gap: 6px; }
+    .ih-sort-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; }
     .ih-sort-btn:hover { background: var(--paper-2); }
     .ih-sort-btn.on { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
+    /* Inline theme filter — press-page type pills: black when on, thin gray outline when off */
+    .ih-theme-pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-right: auto; }
+    .ih-tp-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
+    .ih-tp-btn:hover { background: var(--paper-2); color: var(--ink); }
+    .ih-tp-btn.on { background: var(--ink); border-color: var(--ink); color: var(--bg); }
     /* Filter dropdowns (Cases / Themes) — same language as the press-page filter bar */
     .ih-dd-wrap { position: relative; }
     .ih-dd-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 26px 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; position: relative; transition: background 0.15s, color 0.15s, border-color 0.15s; }
@@ -272,9 +284,9 @@
        pixel and the page looks cut off above the fold's leftover white. */
     html, body { background: var(--paper-2); }
     body { min-height: 100vh; }
-    .tn-wrap-line, .page-title { background: var(--surface); }
-    .page-title { max-width: none; }
-    .page-title > * { max-width: 1440px; margin-left: auto; margin-right: auto; padding-left: 32px; padding-right: 32px; }
+    /* Title band sits on the gray canvas (no white strip). */
+    /* Title column matches the nav container so the text lines up with the
+       Turnpage logo (1680px + 32px padding, same as .tn-row). */
     .ih-band { margin-top: 26px; }
     .ih-tile, .ih-theme-card { border: 1px solid var(--line); }
     .ih-head { border-bottom: 1px solid var(--line); padding: 14px 18px 11px; }
@@ -294,9 +306,7 @@
     .ih-tc-head { align-items: baseline; }
     .ih-tc-count { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-60); }
     .ih-tc-lede { font-size: 13px; line-height: 1.62; }
-    .tn-navlinks { display: flex; gap: 16px; align-items: center; margin-left: 22px; flex-wrap: wrap; }
-    .tn-back { font-size: 12px; font-weight: 700; color: var(--ink-60); text-decoration: none; white-space: nowrap; border-left: 1px solid var(--line-strong); padding-left: 16px; }
-    .tn-back:hover { color: var(--ink); }
+
   .tn-kbd{position:relative;display:inline-flex;align-items:center;margin-left:auto;margin-right:10px;}
   .tn-kbd-btn{font-family:inherit;font-size:11.5px;font-weight:800;letter-spacing:0.04em;background:transparent;border:1px solid var(--line-strong);color:var(--ink-60);cursor:pointer;padding:5px 10px;line-height:1;white-space:nowrap;}
   .tn-kbd-btn:hover{color:var(--ink);}
@@ -384,15 +394,20 @@
   <!-- AUTH GATE END -->
 </head>
 <body>
-  <!-- Brand strip -->
-  <div class="tn-wrap-line">
-  <div class="tn-row brand">
-    <a href="index.html" style="text-decoration:none;color:inherit"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo.png"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo-dark.png"></a><div class="tn-navlinks"><a class="tn-back" href="index.html">🏠 Dashboard</a><a class="tn-back" href="docket.html">⚖️ Docket</a><a class="tn-back" href="calendar.html">📅 Calendar</a><a class="tn-back" href="notes.html">🗒️ Notes</a><a class="tn-back" href="news.html">📡 News</a><a class="tn-back" href="prospects.html">🔭 Prospects</a></div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">G</span> then <span class="tn-key">H</span> Home · <span class="tn-key">D</span> Docket · <span class="tn-key">C</span> Calendar · <span class="tn-key">P</span> Prospects · <span class="tn-key">N</span> Notes · <span class="tn-key">R</span> News</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case</div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><button id="theme-toggle">🖥️</button>
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="index.html"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo.png"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo-dark.png"></a>
+      <a class="tn-back" href="index.html">🏠 Dashboard</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="prospects.html">🔭 Prospects</a>
+    </div>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">G</span> then <span class="tn-key">H</span> Home · <span class="tn-key">D</span> Docket · <span class="tn-key">C</span> Calendar · <span class="tn-key">P</span> Prospects · <span class="tn-key">N</span> Notes · <span class="tn-key">R</span> News</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case</div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div><button id="theme-toggle">🖥️</button>
   </div>
-</div>
-  </div>
-  </div>
+</nav>
 
   <!-- Page title -->
   <div class="page-title">
@@ -405,17 +420,14 @@
 
   <!-- Dashboard: top 7 from each section, four columns -->
   <div class="ih-controls">
-    <div class="ih-sort" id="ih-view-tgl" role="group" aria-label="Briefing view" style="margin-right:auto;">
+    <div class="ih-theme-pills" id="ih-theme-pills" role="group" aria-label="Filter by theme"></div>
+    <div class="ih-sort" id="ih-view-tgl" role="group" aria-label="Briefing view">
       <button type="button" class="ih-sort-btn" data-view="cards" title="Card view — lede + latest rows per case">▦ Cards</button>
       <button type="button" class="ih-sort-btn" data-view="list" title="List view — one row per case">≣ List</button>
     </div>
     <div class="ih-dd-wrap">
       <button type="button" id="ih-cases-btn" class="ih-dd-btn">Cases: All</button>
       <div id="ih-cases-panel" class="ih-dd-panel" style="display:none;"></div>
-    </div>
-    <div class="ih-dd-wrap">
-      <button type="button" id="ih-themes-btn" class="ih-dd-btn">Themes: All</button>
-      <div id="ih-themes-panel" class="ih-dd-panel" style="display:none;"></div>
     </div>
     <div class="ih-sort" id="ih-sort" role="group" aria-label="Arrange case cards">
       <button type="button" class="ih-sort-btn on" data-sort="activity" title="Cases that moved today first, then recent activity">Activity</button>
