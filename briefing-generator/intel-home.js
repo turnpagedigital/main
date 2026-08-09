@@ -86,6 +86,10 @@
   var VALID_SORTS = { activity: 1, az: 1, priority: 1, theme: 1 };
   var sortMode = "activity";
   try { var _sm = localStorage.getItem("ud-case-sort"); if (VALID_SORTS[_sm]) sortMode = _sm; } catch (e) {}
+
+  // Briefing view: cards (default) or a compact one-row-per-case list.
+  var briefView = "cards";
+  try { if (localStorage.getItem("ih-brief-view") === "list") briefView = "list"; } catch (e) {}
   var savedPriorities = {};
   try { savedPriorities = JSON.parse(localStorage.getItem("ud-case-priorities") || "{}") || {}; } catch (e) { savedPriorities = {}; }
   function isPriority(slug) { return !!savedPriorities[slug]; }
@@ -580,8 +584,19 @@
           (hidden > 0 ? '<div class="ih-more-rows">+' + hidden + ' more \u00b7 <a href="' + BASE + 'docket.html#case=' + encodeURIComponent(m.slug) + '">docket</a> / <a href="' + BASE + 'news.html">news</a></div>' : "") +
         "</section>";
 
+      // Compact list-view row for the same case — same data, one line.
+      var listHtml =
+        '<a class="ih-case-listrow' + (moved ? " ih-lr-moved" : "") + '" href="' + readHref + '">' +
+          casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) +
+          '<span class="ih-lr-count">' + esc(count) + "</span>" +
+          '<span class="ih-lr-lede' + (moved ? "" : " ih-quiet") + '">' +
+            (lede ? esc(lede) : "No briefing yet — generates when the case moves.") + "</span>" +
+          star +
+          '<span class="ih-lr-read">Read →</span>' +
+        "</a>";
+
       var latest = (brief && brief.activity && brief.activity.latest) || "";
-      return { html: html, moved: moved, dev: devCount, latest: latest,
+      return { html: html, listHtml: listHtml, moved: moved, dev: devCount, latest: latest,
                slug: m.slug, name: (m.short_name || m.display_name || m.slug),
                theme: (m.topics && m.topics[0]) || "" };
     });
@@ -590,7 +605,9 @@
     function grpHead(label, n) {
       return '<div class="ih-grp-head">' + esc(label) + ' <span>' + n + "</span></div>";
     }
-    function join(list) { return list.map(function (c) { return c.html; }).join(""); }
+    var asList = briefView === "list";
+    grid.classList.toggle("ih-list-mode", asList);
+    function join(list) { return list.map(function (c) { return asList ? c.listHtml : c.html; }).join(""); }
 
     var htmlOut;
     if (sortMode === "az") {
@@ -1120,11 +1137,32 @@
     paint();
   }
 
+  // Cards ⇄ List view toggle for the briefing grid.
+  function wireViewToggle() {
+    var tgl = document.getElementById("ih-view-tgl");
+    if (!tgl) return;
+    function paint() {
+      tgl.querySelectorAll("[data-view]").forEach(function (b) {
+        b.classList.toggle("on", b.getAttribute("data-view") === briefView);
+      });
+    }
+    tgl.querySelectorAll("[data-view]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        briefView = b.getAttribute("data-view") === "list" ? "list" : "cards";
+        try { localStorage.setItem("ih-brief-view", briefView); } catch (e) {}
+        paint();
+        renderCaseGrid();
+      });
+    });
+    paint();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
     wireDropdown("ih-themes-btn", "ih-themes-panel", buildThemesPanel);
     updateFilterButtons();
     wireCarousel();
     wireSortBar();
+    wireViewToggle();
   });
 })();

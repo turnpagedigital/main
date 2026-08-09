@@ -1,11 +1,13 @@
 (function () {
   "use strict";
 
-  /* Briefings — one row per TRACKED CASE (cases-not-themes model).
-     Data: case-briefings.json, written daily by generate_case_briefings.py.
-     Rows expand in place to the full briefing body; #case=<slug> deep-links
-     from the dashboard cards. Theme tags are labels/filters only — themes no
-     longer have briefings of their own. */
+  /* Briefing — STANDALONE reader for ONE case's current briefing.
+     The dashboard is the overview (cards or list); "Read" lands here at
+     #case=<slug> with every action in one place: send to the site queue,
+     edit/sync/export the case, and filtered Docket/Calendar/News jumps.
+     Without a #case= the page bounces straight back to the dashboard.
+     Data: case-briefings.json (daily pipeline) + /api/admin/cases for the
+     in-page case editor. External file — CSP kills inline JS on /intel/*. */
 
   function esc(s) {
     return String(s)
@@ -20,21 +22,10 @@
     });
   }
 
-  // ── Theme labels (tags on rows + filter) ──────────────────────────────────
+  // ── Theme labels (tags in the meta line) ──────────────────────────────────
   var THEMES = {};
-  var THEME_COLORS = {
-    "rewind-tariffs":               { bg: "#ECFCCB", fg: "#3f6212" },
-    "llm-class-action":             { bg: "#DBEAFE", fg: "#1e40af" },
-    "crypto-insolvency":            { bg: "#FFEDD5", fg: "#9a3412" },
-    "fraud-recovery":               { bg: "#F3E8FF", fg: "#6b21a8" },
-    "billion-dollar-class-actions": { bg: "#D1FAE5", fg: "#065f46" },
-    "bankruptcy-creditor-rights":   { bg: "#FEE2E2", fg: "#991b1b" },
-  };
   function themeOf(slug) {
-    var t = THEMES[slug];
-    if (t) return t;
-    var c = THEME_COLORS[slug] || { bg: "#E0E7FF", fg: "#3730a3" };
-    return { name: slug, emoji: "📰", bg: c.bg, fg: c.fg };
+    return THEMES[slug] || { name: slug, emoji: "📰" };
   }
   // Monochrome outline tag — white bg / black outline+text, inverted in dark.
   function themeTag(slug) {
@@ -65,7 +56,7 @@
     var m = manifestOf(slug);
     var bg = (savedColors[slug] && savedColors[slug].bg) || (m && m.default_color) || "#888888";
     var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
-    return '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(name) + "</span>";
+    return '<span class="ud-pill" style="background:' + bg + ";color:" + fg + ';font-size:13px;padding:3px 14px">' + esc(name) + "</span>";
   }
 
   // ── Minimal markdown → HTML for our own generated briefing bodies ─────────
@@ -103,254 +94,142 @@
   }
 
   function fmtDate(iso) {
-    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
     if (!m) return iso || "";
     var names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     return names[Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1];
   }
 
   // ── State ─────────────────────────────────────────────────────────────────
-  var ITEMS = [];
-  var activeCases = {};
-  var expanded = {};
-  var _savedState = null;
+  var BRIEFS = [];
   var ADMIN = {};        // slug -> full editable case (/api/admin/cases)
   var THEME_LIST = [];   // [{slug,display_name,emoji}] for the editor
-  var FILTER_KEY = "ub-case-filter-state";
+  var CURRENT = null;    // case slug being read
 
-  function loadFilterState() {
-    try { _savedState = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}"); } catch (e) {}
-  }
-  function saveFilterState() {
-    try { localStorage.setItem(FILTER_KEY, JSON.stringify({ activeCases: activeCases })); } catch (e) {}
+  function currentSlug() {
+    var m = /[#&]case=([a-z0-9-]+)/.exec(location.hash || "");
+    return m ? m[1] : null;
   }
 
-  function filterLabel() {
-    var total = ITEMS.length;
-    if (!total) return "Cases";
-    var on = ITEMS.filter(function (i) { return !!activeCases[i.slug]; }).length;
-    if (on === total) return "Cases: All (" + total + ")";
-    if (!on) return "Cases: None";
-    return "Cases: " + on + " of " + total;
+  function briefOf(slug) {
+    for (var i = 0; i < BRIEFS.length; i++) if (BRIEFS[i].slug === slug) return BRIEFS[i];
+    return null;
   }
 
-  function renderCaseFilter() {
-    var btn = document.getElementById("ud-case-dd-btn");
-    var panel = document.getElementById("ud-case-dd-panel");
-    if (!btn || !panel) return;
-    btn.innerHTML = esc(filterLabel()) + ' <span class="ud-dd-caret">▾</span>';
-    var head =
-      '<div class="ud-dd-head">' +
-        '<button type="button" class="ud-dd-quick" data-act="all">Select all</button>' +
-        '<button type="button" class="ud-dd-quick" data-act="none">Deselect all</button>' +
-      "</div>";
-    var rows = ITEMS.map(function (i) {
-      return (
-        '<label class="ud-dd-row" title="' + esc(i.case_name) + '">' +
-          '<input type="checkbox" data-slug="' + esc(i.slug) + '"' + (activeCases[i.slug] ? " checked" : "") + ">" +
-          casePill(i.slug, i.short_name || i.case_name) +
-        "</label>"
-      );
-    }).join("");
-    panel.innerHTML = head + rows;
-    panel.querySelectorAll(".ud-dd-quick").forEach(function (q) {
-      q.addEventListener("click", function () {
-        var on = q.getAttribute("data-act") === "all";
-        ITEMS.forEach(function (i) { activeCases[i.slug] = on; });
-        saveFilterState();
-        renderCaseFilter();
-        render();
-      });
-    });
-    panel.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
-      cb.addEventListener("change", function () {
-        activeCases[cb.getAttribute("data-slug")] = cb.checked;
-        saveFilterState();
-        renderCaseFilter();
-        render();
-      });
-    });
-  }
-
-  function statusCell(i) {
-    if (i.moved) return '<span class="ub-chip ub-chip-moved">Moved</span>';
-    if (i.no_change_since) {
-      return '<span class="ub-chip">No change since ' + esc(fmtDate(i.no_change_since)) + "</span>";
-    }
-    return '<span class="ub-chip">Quiet</span>';
+  // ── Standalone render ─────────────────────────────────────────────────────
+  function statusChip(b) {
+    if (!b) return '<span class="bf-chip">No briefing yet</span>';
+    if (b.moved) return '<span class="bf-chip moved">Moved</span>';
+    if (b.no_change_since) return '<span class="bf-chip">No change since ' + esc(fmtDate(b.no_change_since)) + "</span>";
+    return '<span class="bf-chip">Quiet</span>';
   }
 
   function render() {
-    var tbody = document.getElementById("ub-tbody");
-    var countEl = document.getElementById("ud-count");
-    var list = ITEMS.filter(function (i) { return !!activeCases[i.slug]; });
-    if (countEl) countEl.textContent = list.length + " case" + (list.length === 1 ? "" : "s");
-    if (!tbody) return;
-    if (!list.length) {
-      tbody.innerHTML = '<tr><td colspan="4" class="ud-empty">No cases selected.</td></tr>';
-      return;
+    var slug = CURRENT;
+    var b = briefOf(slug);
+    var m = manifestOf(slug);
+    var a = ADMIN[slug];
+    var name = (b && b.case_name) || (m && m.display_name) || (a && a.display_name) || slug;
+    var short = (b && b.short_name) || (m && m.short_name) || name;
+    var court = (b && b.court) || (m && m.court) || "";
+    var themes = (b && b.themes) || (m && m.topics) || [];
+    var emoji = (b && b.emoji) || "⚖️";
+
+    document.title = name + " — Briefing | Turnpage Intelligence";
+    var h1 = document.querySelector(".page-title h1");
+    if (h1) h1.innerHTML = esc(emoji) + " " + casePill(slug, name);
+    var meta = document.getElementById("ud-meta");
+    if (meta) {
+      meta.innerHTML = statusChip(b) +
+        (b && b.date ? ' <span>Briefed ' + esc(fmtDate(b.date)) + "</span>" : "") +
+        (court ? " <span>" + esc(court) + "</span>" : "") +
+        ' <span style="display:inline-flex;gap:4px;vertical-align:middle">' + themes.map(themeTag).join("") + "</span>";
     }
-    tbody.innerHTML = list.map(function (i) {
-      var tags = (i.themes || []).map(themeTag).join(" ");
-      var lede = (i.lede || "").trim();
-      var hasBody = !!(i.body_md || "").trim();
-      var open = !!expanded[i.slug];
-      var main =
-        "<tr" + (i.moved ? ' class="ub-row-moved"' : "") + ">" +
-          '<td class="ud-date">' + esc(fmtDate(i.date) || "—") + "</td>" +
-          '<td class="ub-case-cell">' + casePill(i.slug, i.short_name || i.case_name) +
-            '<div class="ub-tags">' + tags + "</div>" +
-            '<div class="ub-court">' + esc(i.court || "") + "</div>" +
-          "</td>" +
-          '<td class="ud-entry">' + statusCell(i) + " " +
-            (lede ? '<span class="ud-desc">' + esc(lede) + "</span>"
-                  : '<span class="ud-desc" style="color:var(--ink-40)">No briefing yet — it generates the first time this case moves.</span>') +
-          "</td>" +
-          '<td class="ub-open-cell">' +
-            (hasBody
-              ? '<button type="button" class="pr-btn" data-toggle="' + esc(i.slug) + '">' + (open ? "Close" : "Read") + "</button> "
-              : "") +
-            '<a class="ud-link" href="docket.html#case=' + encodeURIComponent(i.slug) + '">Docket</a>' +
-            '<div class="ub-actions" style="margin-top:6px;">' +
-              '<button type="button" class="ub-mini" data-edit="' + esc(i.slug) + '">Edit</button>' +
-              ((i.sync || "active") !== "archived"
-                ? '<button type="button" class="ub-mini" data-syncnow="' + esc(i.slug) + '">Sync</button>' : "") +
-              '<button type="button" class="ub-mini" data-export="' + esc(i.slug) + '">Export</button>' +
-            "</div>" +
-          "</td>" +
-        "</tr>";
-      var detail = "";
-      if (open && hasBody) {
-        detail =
-          '<tr class="ub-detail-row" id="ub-detail-' + esc(i.slug) + '"><td colspan="4">' +
-            '<div class="ub-body">' +
-              '<div class="ub-body-head">' + esc(i.emoji || "⚖️") + " " + esc(i.case_name) +
-                ' <span class="ub-body-date">' + esc(fmtDate(i.date)) + "</span>" +
-                '<button type="button" class="pr-btn ub-send-btn" data-send="' + esc(i.slug) + '" title="Queue this briefing as an unpublished draft post in Admin → Posts &amp; Briefings">Send to site queue</button>' +
-              "</div>" +
-              mdToHtml(i.body_md) +
-            "</div>" +
-          "</td></tr>";
-      }
-      return main + detail;
-    }).join("");
-    tbody.querySelectorAll("[data-send]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var slug = b.getAttribute("data-send");
-        b.disabled = true;
-        b.textContent = "Sending…";
-        fetch("api/send-to-site", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ slug: slug }),
-        }).then(function (r) { return r.json(); }).then(function (j) {
-          if (!j || !j.ok) throw new Error((j && j.error) || "send failed");
-          b.textContent = j.updated ? "Draft refreshed ✓" : "Queued as draft ✓";
-          b.title = "Review it in Admin → Content → Posts & Briefings (Queue)";
-        }).catch(function (e) {
-          b.disabled = false;
-          b.textContent = "Send to site queue";
-          alert("Could not queue: " + e.message);
+
+    var actions = document.getElementById("bf-actions");
+    if (actions) {
+      actions.innerHTML =
+        '<a class="pr-btn" href="index.html">← Dashboard</a>' +
+        '<span class="spacer"></span>' +
+        (b && (b.body_md || "").trim()
+          ? '<button type="button" class="pr-btn pr-btn-track" data-send="' + esc(slug) + '">Send to site queue</button>'
+          : "") +
+        '<button type="button" class="pr-btn" data-edit="' + esc(slug) + '">Edit case</button>' +
+        '<button type="button" class="pr-btn" data-syncnow="' + esc(slug) + '">Sync</button>' +
+        '<button type="button" class="pr-btn" data-export="' + esc(slug) + '">Export</button>' +
+        '<a class="pr-btn" href="docket.html#case=' + encodeURIComponent(slug) + '">Docket</a>' +
+        '<a class="pr-btn" href="calendar.html#case=' + encodeURIComponent(slug) + '">Calendar</a>' +
+        '<a class="pr-btn" href="news.html#case=' + encodeURIComponent(slug) + '">News</a>' +
+        '<button type="button" class="pr-btn" id="ce-new" title="Create a new tracked case">＋ New case</button>';
+
+      var send = actions.querySelector("[data-send]");
+      if (send) {
+        send.addEventListener("click", function () {
+          send.disabled = true;
+          send.textContent = "Sending…";
+          fetch("api/send-to-site", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ slug: slug }),
+          }).then(function (r) { return r.json(); }).then(function (j) {
+            if (!j || !j.ok) throw new Error((j && j.error) || "send failed");
+            send.textContent = j.updated ? "Draft refreshed ✓" : "Queued as draft ✓";
+            send.title = "Review it in Admin → Content → Posts & Briefings (Queue)";
+          }).catch(function (e) {
+            send.disabled = false;
+            send.textContent = "Send to site queue";
+            alert("Could not queue: " + e.message);
+          });
         });
-      });
-    });
-    tbody.querySelectorAll("[data-toggle]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var slug = b.getAttribute("data-toggle");
-        expanded[slug] = !expanded[slug];
-        render();
-      });
-    });
-    tbody.querySelectorAll("[data-edit]").forEach(function (b) {
-      b.addEventListener("click", function () { openEditor(b.getAttribute("data-edit")); });
-    });
-    tbody.querySelectorAll("[data-syncnow]").forEach(function (b) {
-      b.addEventListener("click", function () { syncNow(b.getAttribute("data-syncnow"), b); });
-    });
-    tbody.querySelectorAll("[data-export]").forEach(function (b) {
-      b.addEventListener("click", function () { exportCase(b.getAttribute("data-export")); });
-    });
-  }
+      }
+      var ed = actions.querySelector("[data-edit]");
+      if (ed) ed.addEventListener("click", function () { openEditor(slug); });
+      var sn = actions.querySelector("[data-syncnow]");
+      if (sn) sn.addEventListener("click", function () { syncNow(slug, sn); });
+      var ex = actions.querySelector("[data-export]");
+      if (ex) ex.addEventListener("click", function () { exportCase(slug); });
+      var nb = actions.querySelector("#ce-new");
+      if (nb) nb.addEventListener("click", function () { openEditor(null); });
+    }
 
-  function applyHash() {
-    var m = /case=([a-z0-9-]+)/.exec(location.hash || "");
-    if (!m) return;
-    var slug = m[1];
-    if (!ITEMS.some(function (i) { return i.slug === slug; })) return;
-    activeCases[slug] = true;
-    expanded[slug] = true;
-    render();
-    var row = document.getElementById("ub-detail-" + slug);
-    if (row) row.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  var BRIEFS = [];
-  function rebuildItems() {
-    var byBrief = {};
-    BRIEFS.forEach(function (b) { byBrief[b.slug] = b; });
-    var slugs = Object.keys(ADMIN);
-    BRIEFS.forEach(function (b) { if (slugs.indexOf(b.slug) < 0) slugs.push(b.slug); });
-    ITEMS = slugs.map(function (slug) {
-      var a = ADMIN[slug] || {};
-      var b = byBrief[slug] || {};
-      var m = manifestOf(slug) || {};
-      return {
-        slug: slug,
-        case_name: a.display_name || b.case_name || slug,
-        short_name: m.short_name || b.short_name || a.display_name || slug,
-        court: (a.case && a.case.court) || b.court || "",
-        themes: (a.topics && a.topics.length ? a.topics : b.themes) || [],
-        sync: a.sync || "active",
-        emoji: b.emoji || "⚖️",
-        date: b.date || "", updated: b.updated || "",
-        lede: b.lede || "", body_md: b.body_md || "",
-        moved: !!b.moved, no_change_since: b.no_change_since || "",
-      };
-    });
-    ITEMS.sort(function (x, y) {
-      if (x.moved !== y.moved) return x.moved ? -1 : 1;
-      return (y.date || "") < (x.date || "") ? -1 : (y.date || "") > (x.date || "") ? 1
-        : x.case_name.localeCompare(y.case_name);
-    });
-    var saved = _savedState && _savedState.activeCases;
-    ITEMS.forEach(function (i) {
-      if (!(i.slug in activeCases)) activeCases[i.slug] = saved && (i.slug in saved) ? !!saved[i.slug] : true;
-    });
+    var body = document.getElementById("bf-body");
+    if (body) {
+      if (b && (b.body_md || "").trim()) {
+        body.innerHTML =
+          '<div class="ub-body-head">' + esc(emoji) + " " + esc(name) +
+            ' <span class="ub-body-date">' + esc(fmtDate(b.date)) + "</span></div>" +
+          mdToHtml(b.body_md) +
+          (b.checked ? '<p style="font-size:11px;color:var(--ink-40)">Checked ' + esc(String(b.checked).slice(0, 16).replace("T", " ")) + " UTC · regenerates when the case moves</p>" : "");
+      } else if (b || m || a) {
+        body.innerHTML = '<div class="ud-empty">No briefing yet for ' + esc(name) +
+          " — it generates the first time the case moves (new docket entries or coverage). " +
+          'Meanwhile the <a href="docket.html#case=' + encodeURIComponent(slug) + '">docket</a> is live.</div>';
+      } else {
+        body.innerHTML = '<div class="ud-empty">Unknown case. <a href="index.html">Back to the dashboard →</a></div>';
+      }
+    }
   }
 
   function loadAdminCases() {
     return fetch("/api/admin/cases", { credentials: "include" })
       .then(function (r) { return r.json(); })
       .then(function (d) {
-        if (d && d.ok && d.cases) {
+        if (d && d.ok && Array.isArray(d.cases)) {
           ADMIN = {};
           d.cases.forEach(function (c) { ADMIN[c.slug] = c; });
-          if (d.topics || d.themes) THEME_LIST = d.themes || d.topics || THEME_LIST;
         }
       }).catch(function () {});
   }
 
-  function init() {
+  function reloadCases() {
     Promise.all([
       loadAdminCases(),
-      fetchJson("case-briefings.json").then(function (d) { BRIEFS = (d && d.items) || []; }).catch(function () { BRIEFS = []; }),
-    ]).then(function () {
-      rebuildItems();
-      var meta = document.getElementById("ud-meta");
-      if (meta) {
-        var latest = ITEMS.reduce(function (acc, i) { return (i.updated || "") > acc ? i.updated : acc; }, "");
-        var movedN = ITEMS.filter(function (i) { return i.moved; }).length;
-        meta.textContent = ITEMS.length + " tracked cases · " + movedN + " moved in the last cycle" +
-          (latest ? " · updated " + fmtDate(latest) : "");
-      }
-      renderCaseFilter();
-      render();
-      applyHash();
-    });
+      fetchJson("case-briefings.json").then(function (d) { BRIEFS = (d && d.items) || []; }).catch(function () {}),
+      fetchJson("cases/data/_manifest.json").then(function (man) { MANIFEST = man || []; }).catch(function () {}),
+    ]).then(render);
   }
 
-
-  // ── Case editor / wizard (writes via /api/admin/cases; same admin session) ──
+  /* ── In-page case editor (create / edit / delete / sync / export) ───────── */
   var editingSlug = null;
   var editingClaims = null;
 
@@ -381,7 +260,6 @@
     ceEl("ce-cl-fields").style.display = t === "courtlistener" ? "" : "none";
     ceEl("ce-agent-fields").style.display = t === "claims_agent" ? "" : "none";
     var wn = ceEl("ce-watch-note"); if (wn) wn.style.display = t === "watch" ? "" : "none";
-    var pl = document.querySelector('label[for-parties]');
     var pe = ceEl("ce-parties");
     if (pe) pe.placeholder = t === "watch" ? "Company or matter name (e.g. Acme Corp — distress watch)" : "e.g. Bartz, et al. v. Anthropic PBC";
   }
@@ -472,7 +350,9 @@
       .then(function (r) { return r.json(); }).then(function (d) {
         ceEl("ce-save").disabled = false;
         if (!d || !d.ok) { ceErr((d && d.error) || "Failed to save"); ceFootMsg(""); return; }
-        closeEditor(); reloadCases();
+        closeEditor();
+        if (!editingSlug && slug !== CURRENT) { location.hash = "case=" + slug; }
+        reloadCases();
       }).catch(function () { ceEl("ce-save").disabled = false; ceErr("Save failed — network error"); ceFootMsg(""); });
   }
 
@@ -483,7 +363,8 @@
     fetch("/api/admin/cases?slug=" + encodeURIComponent(editingSlug), { method: "DELETE", credentials: "include" })
       .then(function (r) { return r.json(); }).then(function (d) {
         if (!d || !d.ok) { ceErr((d && d.error) || "Failed to delete"); ceFootMsg(""); return; }
-        closeEditor(); reloadCases();
+        closeEditor();
+        location.href = "index.html";
       }).catch(function () { ceErr("Delete failed — network error"); ceFootMsg(""); });
   }
 
@@ -493,7 +374,8 @@
       .then(function (r) { return r.json(); }).then(function (d) {
         if (btn) { btn.disabled = false; btn.textContent = "Sync"; }
         var meta = document.getElementById("ud-meta");
-        if (meta) meta.textContent = (d && d.ok) ? (d.note || "Sync started for " + slug) : ("Sync failed: " + ((d && d.error) || "error"));
+        if (meta && d && !d.ok) meta.textContent = "Sync failed: " + (d.error || "error");
+        else if (meta && d && d.note) meta.textContent = d.note;
       }).catch(function () { if (btn) { btn.disabled = false; btn.textContent = "Sync"; } });
   }
 
@@ -510,16 +392,7 @@
       }).catch(function () { var meta = document.getElementById("ud-meta"); if (meta) meta.textContent = "Export failed for " + slug; });
   }
 
-  function reloadCases() {
-    Promise.all([
-      loadAdminCases(),
-      fetchJson("case-briefings.json").then(function (d) { BRIEFS = (d && d.items) || []; }).catch(function () {}),
-      fetchJson("cases/data/_manifest.json").then(function (man) { MANIFEST = man || []; }).catch(function () {}),
-    ]).then(function () { rebuildItems(); renderCaseFilter(); render(); });
-  }
-
   function wireEditor() {
-    var nb = ceEl("ce-new"); if (nb) nb.addEventListener("click", function () { openEditor(null); });
     var x = ceEl("ce-close"); if (x) x.addEventListener("click", closeEditor);
     var c = ceEl("ce-cancel"); if (c) c.addEventListener("click", closeEditor);
     var sv = ceEl("ce-save"); if (sv) sv.addEventListener("click", saveCase);
@@ -531,23 +404,21 @@
     document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && ceEl("ce-overlay") && ceEl("ce-overlay").style.display !== "none") closeEditor(); });
   }
 
+  // ── Boot ──────────────────────────────────────────────────────────────────
   document.addEventListener("DOMContentLoaded", function () {
-    loadFilterState();
-    var ddBtn = document.getElementById("ud-case-dd-btn");
-    var ddPanel = document.getElementById("ud-case-dd-panel");
-    if (ddBtn && ddPanel) {
-      ddBtn.addEventListener("click", function (ev) {
-        ev.stopPropagation();
-        ddPanel.style.display = ddPanel.style.display === "none" ? "block" : "none";
-      });
-      document.addEventListener("click", function (ev) {
-        if (ddPanel.style.display === "none") return;
-        if (ev.target && !ev.target.isConnected) return;
-        if (ddPanel.contains(ev.target) || ddBtn.contains(ev.target)) return;
-        ddPanel.style.display = "none";
-      });
+    CURRENT = currentSlug();
+    if (!CURRENT) {
+      // The dashboard IS the briefing overview — this page only reads one.
+      location.replace("index.html");
+      return;
     }
-    window.addEventListener("hashchange", applyHash);
+    wireEditor();
+    window.addEventListener("hashchange", function () {
+      var next = currentSlug();
+      if (!next) { location.replace("index.html"); return; }
+      CURRENT = next;
+      render();
+    });
 
     // Display names for theme tags follow /admin/intelligence renames.
     fetchJson("themes.json").then(function (d) {
@@ -556,28 +427,20 @@
         .map(function (t) { return { slug: t.slug, display_name: t.display_name || t.slug, emoji: t.emoji || "📰" }; });
       list.forEach(function (t) {
         if (!t || !t.slug) return;
-        var c = THEME_COLORS[t.slug] || { bg: "#E0E7FF", fg: "#3730a3" };
-        THEMES[t.slug] = { name: t.display_name || t.slug, emoji: t.emoji || "📰", bg: c.bg, fg: c.fg };
+        THEMES[t.slug] = { name: t.display_name || t.slug, emoji: t.emoji || "📰" };
       });
       render();
     }).catch(function () {});
-    wireEditor();
 
-    // Case pill colors + manifest defaults roam with the shared prefs store.
-    fetchJson("cases/data/_manifest.json").then(function (man) {
-      MANIFEST = man || [];
-      renderCaseFilter();
-      render();
-    }).catch(function () {});
+    // Case pill colors roam with the shared prefs store.
     fetchJson("api/prefs").then(function (p) {
       if (p && p.ok && p.colors) {
         Object.keys(p.colors).forEach(function (k) { savedColors[k] = p.colors[k]; });
         try { localStorage.setItem("ud-case-colors", JSON.stringify(savedColors)); } catch (e) {}
-        renderCaseFilter();
         render();
       }
     }).catch(function () {});
 
-    init();
+    reloadCases();
   });
 })();

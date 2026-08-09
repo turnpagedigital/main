@@ -686,7 +686,6 @@ def render_case_page(case):
       <a class="tn-back" href="../docket.html">⚖️ Docket</a>
       <a class="tn-back" href="../calendar.html">📅 Calendar</a>
       <a class="tn-back" href="../notes.html">🗒️ Notes</a>
-      <a class="tn-back" href="../briefings.html">📰 Briefings</a>
       <a class="tn-back" href="../news.html">📡 News</a>
       <a class="tn-back" href="../prospects.html">🔭 Prospects</a>
     </div>
@@ -829,7 +828,6 @@ def render_unified_docket(cases):
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
-      <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
@@ -1103,7 +1101,6 @@ def render_news_page(cases):
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
-      <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
@@ -1357,7 +1354,6 @@ def render_unified_calendar(cases):
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
-      <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
@@ -1493,7 +1489,6 @@ def render_unified_notes(cases):
       <a class="tn-back" href="docket.html">⚖️ Docket</a>
       <a class="tn-back" href="calendar.html">📅 Calendar</a>
       <a class="tn-back" href="notes.html">🗒️ Notes</a>
-      <a class="tn-back" href="briefings.html">📰 Briefings</a>
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
