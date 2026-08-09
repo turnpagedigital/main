@@ -211,10 +211,12 @@
     .ud-pal-empty { padding: 12px 14px; font-size: 13px; color: var(--ink-60); }
     .ud-pal-hint { padding: 7px 14px; font-size: 10.5px; color: var(--ink-60); border-top: 1px solid var(--line-strong); letter-spacing: 0.03em; }
     /* List view: one row per case */
-    .ih-theme-grid.ih-list-mode { display: flex; flex-direction: column; gap: 6px; }
-    .ih-case-listrow { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--line); padding: 10px 16px; text-decoration: none; color: inherit; }
-    .ih-case-listrow:hover { border-color: var(--ink-40); }
-    .ih-case-listrow.ih-lr-moved { border-left: 3px solid var(--neon-block); }
+    .ih-theme-grid.ih-list-mode { display: flex; flex-direction: column; gap: 0; }
+    .ih-case-listrow { display: flex; align-items: center; gap: 12px; background: var(--surface); border: none; border-left: 3px solid transparent; border-bottom: 1px solid var(--line); padding: 10px 16px; text-decoration: none; color: inherit; }
+    .ih-case-listrow:last-child { border-bottom: none; }
+    .ih-case-listrow:hover { background: rgba(10,10,10,0.03); }
+    [data-theme="dark"] .ih-case-listrow:hover { background: rgba(229,231,235,0.05); }
+    .ih-case-listrow.ih-lr-moved { border-left-color: var(--neon-block); }
     .ih-lr-count { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-60); white-space: nowrap; flex: 0 0 auto; }
     .ih-lr-lede { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; color: var(--ink); }
     .ih-lr-lede.ih-quiet { color: var(--ink-60); }
@@ -237,6 +239,7 @@
     /* Cases section header — title left, view + sort controls right */
     .ih-cases-head { max-width: 1680px; margin: 26px auto 12px; padding: 0 32px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
     .ih-cases-title { display: flex; align-items: center; gap: 8px; margin-right: auto; }
+    .ih-cases-title .ih-name { color: var(--ink); }
     .ih-cases-tools { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     /* Filter dropdowns (Cases / Themes) — same language as the press-page filter bar */
     .ih-dd-wrap { position: relative; }
@@ -414,6 +417,12 @@
       background: linear-gradient(180deg, transparent 0 65%, var(--neon-block) 65% 95%, transparent 95%);
       color: var(--ink); padding: 0 3px; }
       display: flex; gap: 6px; align-items: baseline; }
+
+    /* Section titles sit on the gray canvas in black; content is the white box below */
+    .ih-tile { background: transparent; border: none; }
+    .ih-tile > .ih-head { border-bottom: none; padding: 0 2px 8px; }
+    .ih-tile .ih-name { color: var(--ink); }
+    .ih-tile > .ih-list, .ih-tile > .ih-dates { background: var(--surface); border: 1px solid var(--line); flex: 1; }
 
 </style>
   <!-- AUTH GATE START -->

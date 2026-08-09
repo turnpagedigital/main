@@ -717,7 +717,7 @@
       }
       var c24 = dayAgo(1), c72 = dayAgo(3), cWk = dayAgo(7);
       var buckets = [
-        { label: "⚡ Major updates — last 24 hours", test: function (c) { return (c.latest || "") >= c24; }, list: [] },
+        { label: "Last 24 hours", test: function (c) { return (c.latest || "") >= c24; }, list: [] },
         { label: "Last 72 hours", test: function (c) { return (c.latest || "") >= c72; }, list: [] },
         { label: "Last week", test: function (c) { return (c.latest || "") >= cWk; }, list: [] },
         { label: "Earlier", test: function () { return true; }, list: [] },
