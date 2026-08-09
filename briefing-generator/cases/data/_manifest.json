@@ -233,14 +233,14 @@
   {
     "slug": "power-block-coin",
     "added": "2026-06-11",
-    "display_name": "Power Block Coin, LLC",
-    "short_name": "Power Block Coin, LLC",
+    "display_name": "Power Block Coin",
+    "short_name": "Power Block Coin",
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "default_color": "#fff7d1",
     "category": "bankruptcy",
     "topics": [
-      "fraud-recovery",
       "crypto-insolvency",
+      "fraud-recovery",
       "bankruptcy-creditor-rights"
     ],
     "court": "Bankr. D. Utah",
