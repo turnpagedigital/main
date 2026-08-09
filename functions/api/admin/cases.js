@@ -69,7 +69,7 @@ async function updateManifest(env, action, c) {
         ...prev,
         slug: c.slug,
         display_name: c.display_name,
-        short_name: shortName(c.display_name),
+        short_name: c.short_name || shortName(c.display_name),
         docket_url: (adminId && adminId !== prevId) ? adminUrl : (prev.docket_url || adminUrl),
         court: (c.case && c.case.court) || "",
         topics: c.topics || prev.topics || [],
@@ -103,7 +103,7 @@ const TOPICS = [
 ];
 
 const MODELED_KEYS = new Set([
-  "slug", "display_name", "type", "status", "sync", "topics",
+  "slug", "display_name", "short_name", "type", "status", "sync", "topics",
   "case", "docket_source", "claims_administrator", "scan_guidance",
 ]);
 
@@ -150,6 +150,8 @@ function normalizeCase(raw) {
   return {
     slug: (c.slug || "").trim(),
     display_name: (c.display_name || "").trim(),
+    // Manual pill label. Empty = fall back to the derived shortName(display_name).
+    short_name: (c.short_name || "").trim(),
     type: c.type || "case",
     status: coerceStatus(c.status),
     sync: coerceSync(c.sync),
@@ -212,6 +214,7 @@ function frontMatterBody(c) {
   let y = "";
   y += `slug: ${c.slug}\n`;
   y += `display_name: ${c.display_name}\n`;
+  if (c.short_name) y += `short_name: ${dq(c.short_name)}\n`;
   y += `type: ${c.type}\n`;
   y += /^[a-z0-9-]+$/.test(c.status) ? `status: ${c.status}\n` : `status: ${dq(c.status)}\n`;
   y += `sync: ${c.sync}\n`;
@@ -336,6 +339,7 @@ function parseCaseMd(md, fallbackSlug) {
   return {
     slug: top("slug") || fallbackSlug,
     display_name: top("display_name") || fallbackSlug,
+    short_name: byKey["short_name"] ? unescapeDq(top("short_name")) : "",
     type: top("type") || "case",
     status: coerceStatus(top("status") || ""),
     sync: coerceSync(top("sync") || ""),
@@ -457,7 +461,8 @@ export async function onRequest({ request, env }) {
   }
 
   if (method === "PUT") {
-    const c = normalizeCase(await request.json());
+    const raw = await request.json();
+    const c = normalizeCase(raw);
     const err = validateCase(c);
     if (err) return jsonResponse({ ok: false, error: err }, 400);
 
@@ -467,6 +472,10 @@ export async function onRequest({ request, env }) {
 
     // Preserve unmodeled front-matter blocks + the markdown body verbatim.
     const prev = parseCaseMd(existing.text, c.slug);
+    // A client that doesn't model the pill label (e.g. the admin Cases tab)
+    // omits short_name entirely — keep the stored one rather than wiping it.
+    // An explicit empty string DOES clear it (back to the derived default).
+    if (!("short_name" in raw)) c.short_name = prev.short_name;
     const md = buildCaseMarkdown(c, prev._preserved, prev._body);
     const mdRes = await commitFileToGitHub(env, mdPath, md, existing.sha, `Update case: ${c.display_name}`, briefingRepo(env), branch);
     if (!mdRes.ok) return jsonResponse({ ok: false, error: `Failed to update case file: ${mdRes.error}` }, 500);

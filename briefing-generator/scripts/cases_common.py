@@ -64,6 +64,8 @@ def parse_case_config(text):
     return {
         "slug": _scalar(fm, "slug"),
         "display_name": _scalar(fm, "display_name"),
+        # Optional manual pill label; empty → derived from display_name.
+        "short_name": _scalar(fm, "short_name") or "",
         "type": _scalar(fm, "type"),
         "emoji": _scalar(fm, "emoji") or "⚖️",
         "status": _scalar(fm, "status") or "",

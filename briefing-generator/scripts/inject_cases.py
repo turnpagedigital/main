@@ -780,7 +780,7 @@ def render_unified_docket(cases):
         manifest.append({
             "slug": c["slug"],
             "display_name": c["config"]["display_name"],
-            "short_name": _short_name(c["config"]["display_name"]),
+            "short_name": (c["config"].get("short_name") or "").strip() or _short_name(c["config"]["display_name"]),
             "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
             "default_color": bl,
             "category": _case_category(c["config"].get("topics") or []),
@@ -1054,7 +1054,7 @@ def render_news_page(cases):
         manifest.append({
             "slug": c["slug"],
             "display_name": c["config"]["display_name"],
-            "short_name": _short_name(c["config"]["display_name"]),
+            "short_name": (c["config"].get("short_name") or "").strip() or _short_name(c["config"]["display_name"]),
             "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
             "default_color": bl,
             "category": _case_category(c["config"].get("topics") or []),
