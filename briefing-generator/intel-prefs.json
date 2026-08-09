@@ -81,6 +81,10 @@
     "omnis-pleasants": {
       "bg": "#fff5c7",
       "fg": "#92410e"
+    },
+    "publishers-v-google-llc-gemini-books": {
+      "bg": "#1b3a4b",
+      "fg": "#ffffff"
     }
   },
   "groups": [
