@@ -9,7 +9,7 @@ const XSourcesTab = lazy(() => import("./XSourcesTab.jsx"));
 /* IntelligenceHubTab — master wrapper for the Intelligence config layer.
 
    Cases and Themes moved OUT of admin (Aug 2026) — they're managed on the
-   intel site itself: Dashboard → Cases → ⚙ Manage (/intel/manage.html),
+   intel site itself: the ⚙️ Settings link in the intel nav (/intel/manage.html),
    which talks to the same /api/admin/cases and /api/admin/themes endpoints.
 
    URL: /admin/intelligence            → defaults to "defaults"
@@ -40,7 +40,7 @@ export default function IntelligenceHubTab({ onDirtyChange }) {
   return (
     <div>
       <p style={{ fontSize: "0.8rem", color: INK_60, margin: "0.6rem auto 0", maxWidth: 1080, padding: "0 clamp(1rem,3vw,2rem)" }}>
-        Cases and Themes are managed on the intel site: Dashboard → Cases → ⚙ Manage.
+        Cases and Themes are managed on the intel site — the ⚙️ Settings link in the intel nav.
       </p>
       <SubTabStrip tabs={SUB_TABS} active={sub} dirtyFlags={dirtyFlags} onSelect={selectSub} />
 
