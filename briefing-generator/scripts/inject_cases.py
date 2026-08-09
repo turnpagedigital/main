@@ -840,7 +840,6 @@ def render_unified_docket(cases):
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · Live Docket Monitor</div>
   <h1>⚖️ Docket</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
@@ -1116,7 +1115,6 @@ def render_news_page(cases):
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · News Monitor</div>
   <h1>📡 News</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
@@ -1371,7 +1369,6 @@ def render_unified_calendar(cases):
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · Hearings &amp; Deadlines</div>
   <h1>📅 Calendar</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
@@ -1508,7 +1505,6 @@ def render_unified_notes(cases):
 </nav>
 
 <div class="page-title">
-  <div class="eyebrow">Intelligence · Docket Notes</div>
   <h1>🗒️ Notes</h1>
   <div class="case-meta">
     <span id="ud-meta">Loading…</span>
