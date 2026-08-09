@@ -1,23 +1,19 @@
 {
   "case": {
     "slug": "concord-anthropic",
-    "display_name": "Concord Music Group v. Anthropic",
+    "display_name": "Concord v. Anthropic",
     "case_name": "Concord Music Group, Inc. v. Anthropic PBC",
     "court": "District Court, N.D. California",
     "case_number": "5:24-cv-03811",
     "judge": "Eumi K. Lee",
     "docket_id": "68889092",
     "status": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
-    "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-08-09T22:53:25.207898+00:00",
-    "as_of": "Aug 9, 2026",
-    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -8377,7 +8373,11 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-07-29",
+    "fetched_at": "2026-08-09T22:53:25.207898+00:00",
+    "as_of": "Aug 9, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
   "coverage": [
@@ -8436,32 +8436,6 @@
       "source": "Bloomberg Law",
       "date": "2025-08-07",
       "summary": "A California federal judge denied music publishers' request for the personal data of Claude users who sought copyrighted lyrics, ruling the production of third-party user information was not necessary for the infringement litigation in Concord I (5:24-cv-03811). Publishers had argued the data was critical to identify users who received copyrighted lyric outputs that Anthropic did not preserve before the lawsuit."
-    }
-  ],
-  "events": [
-    {
-      "title": "Case Management Conference – Concord Music Group v. Anthropic (5:24-cv-03811), Judge Eumi K. Lee (Zoom Hearing)",
-      "date": "2026-09-02",
-      "time": "03:00 PM PT",
-      "kind": "Call",
-      "url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/?order_by=desc",
-      "source": "U.S. District Court, N.D. California"
-    },
-    {
-      "title": "Summary Judgment Hearing – Concord Music Group v. Anthropic (5:24-cv-03811), Judge Eumi K. Lee",
-      "date": "2026-10-21",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://chatgptiseatingtheworld.com/concord-music-group-v-anthropic-i/",
-      "source": "U.S. District Court, N.D. California (via ChatGPT Is Eating the World docket tracker)"
-    },
-    {
-      "title": "Summary Judgment Hearing – Concord Music Group v. Anthropic (Concord I & II Cross-Motions)",
-      "date": "2026-11-04",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://www.musicbusinessworldwide.com/anthropic-seeks-partial-dismissal-in-music-publishers-3b-lyrics-suit-as-ceo-moves-to-drop-the-direct-infringement-claim-against-him/",
-      "source": "U.S. District Court, N.D. California (Judge Eumi K. Lee)"
     }
   ]
 }
