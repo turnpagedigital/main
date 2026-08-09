@@ -43,6 +43,7 @@
     apply();
     // Mark the current page's nav link (black bold + full-color emoji via CSS).
     var here=(location.pathname.split('/').pop()||'index.html');
+    if(here==='intel'||here==='')here='index.html';   // /intel and /intel/ are the dashboard
     document.querySelectorAll('a.tn-back').forEach(function(a){
       var h=(a.getAttribute('href')||'').split('#')[0].split('?')[0].replace('../','');
       if(h===here)a.classList.add('tn-on');
