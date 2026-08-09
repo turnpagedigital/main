@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "slug": "2026-08-08-bartz-anthropic-briefing",
+      "date": "2026-08-08",
+      "type": "briefing",
+      "author": "Turnpage Intelligence",
+      "title": "Bartz v. Anthropic Briefing — August 8, 2026",
+      "summary": "The sole development in the 72-hour window is a class-counsel-sourced update published yesterday by the Textbook & Academic Authors Association. Class counsel confirmed that class members will not begin receiving payments until at least the end of 2026, with disbursement contingent on whether any appeals are filed before the August 19 deadline.",
+      "tags": [
+        "Bartz",
+        "Case Briefing"
+      ],
+      "active": false
+    },
+    {
       "slug": "2026-08-05-bankruptcy-advisory",
       "date": "2026-08-05",
       "type": "briefing",
