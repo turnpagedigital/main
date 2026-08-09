@@ -1,13 +1,14 @@
 {
   "case": {
     "slug": "power-block-coin",
-    "display_name": "Power Block Coin, LLC",
+    "display_name": "Power Block Coin",
     "case_name": "Power Block Coin, LLC",
     "court": "Bankr. D. Utah",
     "case_number": "24-23041",
     "judge": "Cathleen D. Parker",
     "docket_id": "68873409",
     "status": "active",
+    "sync": "active",
     "court_id": ""
   },
   "docket": {
@@ -15,7 +16,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-09T22:57:01.860035+00:00",
+    "fetched_at": "2026-08-09T23:55:26.990506+00:00",
     "as_of": "Aug 9, 2026",
     "backfilled": true,
     "new_in_72h": 2,
@@ -6575,15 +6576,5 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": [],
-  "events": [
-    {
-      "title": "Hearing: Motion to Pay or for Direction or Approval Regarding Liquidation of Certain Assets in the Debtor's B2C2 Account [Dkt. 472]",
-      "date": "2026-08-11",
-      "time": "09:30 AM MT",
-      "kind": "Deadline",
-      "url": "https://www.utb.uscourts.gov/content/24-23041-motion-pay-or-direction-or-approval-regarding-liquidation-certain-assets-debtors",
-      "source": "U.S. Bankruptcy Court, District of Utah (Judge Cathleen D. Parker)"
-    }
-  ]
+  "coverage": []
 }

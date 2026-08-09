@@ -1,7 +1,7 @@
 {
   "case": {
     "slug": "publishers-v-google-llc-gemini-books",
-    "display_name": "Publishers v. Google (Gemini)",
+    "display_name": "Publishers v. Google",
     "case_name": "In re Google Generative AI Copyright Litigation",
     "court": "District Court, N.D. California",
     "case_number": "5:23-cv-03440",
@@ -16,7 +16,7 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
     "date_last_filing": "2026-07-15",
-    "fetched_at": "2026-08-09T22:57:14.639688+00:00",
+    "fetched_at": "2026-08-09T23:55:51.063053+00:00",
     "as_of": "Aug 9, 2026",
     "backfilled": true,
     "new_in_72h": 0,
