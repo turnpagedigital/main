@@ -1,6 +1,7 @@
 ---
 slug: hachette-et-al-v-meta-platforms-llama
 display_name: Hachette et al. v. Meta Platforms (Llama)
+short_name: "Hachette (Meta)"
 type: case
 status: active
 sync: active
