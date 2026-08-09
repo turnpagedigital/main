@@ -84,6 +84,10 @@ Ciao
 
 > Pleasants Power Station's Omnis firm reports 600+ creditors — Omnis Pleasants LLC disclosed more than 600 creditors—70 of them in West Virginia—burdened by over $70 million in debt including a $50.9 m
 
+### (no docket number) — 2026-08-04
+
+> Meet The Attorneys Guiding Omnis Pleasants In Ch. 11 — Young Conaway Stargatt & Taylor LLP and Herbert Smith Freehills Kramer LLP are serving as bankruptcy counsel for Omnis Pleasants LLC as it naviga
+
 ## Poolin
 
 ### (no docket number) — 2026-08-02 ★
