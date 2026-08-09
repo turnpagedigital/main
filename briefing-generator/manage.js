@@ -428,6 +428,18 @@
           SYNC_MODES.map(function (s) { return '<option value="' + s.value + '"' + ((form.sync || "active") === s.value ? " selected" : "") + ">" + s.label + "</option>"; }).join("") +
         '</select><div class="mg-note" id="cf-sync-hint"></div></div>' +
 
+        (isNew ? "" :
+          "<h3>Pill color</h3>" +
+          '<div class="mg-field"><span data-pill="' + esc(form.slug) + '">' + casePill(form.slug, form.short_name || form.display_name || form.slug) + "</span>" +
+            '<span class="mg-note" style="margin-left:10px">Saves instantly (this browser + roaming prefs) — separate from the case fields below.</span></div>' +
+          '<div class="mg-pop-sws" id="cf-sws" style="max-width:300px"></div>' +
+          '<div class="mg-pop-row"><label>Bg <input type="color" id="cf-col-bg"></label>' +
+            '<label>Text <input type="color" id="cf-col-fg"></label>' +
+            '<label><input type="checkbox" id="cf-col-border-on"> Border</label>' +
+            '<input type="color" id="cf-col-border">' +
+            '<button type="button" class="mg-btn" id="cf-col-reset" style="margin-left:8px">Reset to default</button></div>'
+        ) +
+
         "<h3>Themes (tag one or more)</h3>" +
         '<div class="mg-grid2" id="cf-topics">' + themeChecks + "</div>" +
 
@@ -486,6 +498,58 @@
         l.classList.toggle("on", e.target.checked);
       });
     });
+
+    // Pill color controls (existing cases only) — same store as the row gears.
+    if (!isNew) {
+      var initColor = function () {
+        var cur = savedColors[form.slug] || {};
+        var bg = cur.bg || caseColor(form.slug);
+        $("cf-col-bg").value = bg;
+        $("cf-col-fg").value = cur.fg || autoFg(bg);
+        $("cf-col-border-on").checked = !!cur.border;
+        $("cf-col-border").value = cur.border || cur.fg || autoFg(bg);
+        paintEditorSwatches(bg);
+      };
+      var paintEditorSwatches = function (activeBg) {
+        $("cf-sws").innerHTML = currentSwatches().map(function (s, i) {
+          var on = String(s.bg).toLowerCase() === String(activeBg || "").toLowerCase();
+          return '<button type="button" class="mg-pop-sw' + (on ? " on" : "") + '" data-sw="' + i + '" style="background:' + esc(s.bg) + '" title="' + esc(s.bg) + '"></button>';
+        }).join("");
+        $("cf-sws").querySelectorAll("[data-sw]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var s = currentSwatches()[Number(b.getAttribute("data-sw"))];
+            $("cf-col-bg").value = s.bg;
+            $("cf-col-fg").value = s.fg || autoFg(s.bg);
+            applyEditorColor();
+            paintEditorSwatches(s.bg);
+          });
+        });
+      };
+      var applyEditorColor = function () {
+        var entry = { bg: $("cf-col-bg").value, fg: $("cf-col-fg").value };
+        if ($("cf-col-border-on").checked) entry.border = $("cf-col-border").value;
+        savedColors[form.slug] = entry;
+        persistColors();
+        repaintPill(form.slug);
+        pushColorsToPrefs();
+      };
+      ["cf-col-bg", "cf-col-fg", "cf-col-border"].forEach(function (id) {
+        $(id).addEventListener("input", function () {
+          if (id === "cf-col-border") $("cf-col-border-on").checked = true;
+          applyEditorColor();
+          paintEditorSwatches($("cf-col-bg").value);
+        });
+      });
+      $("cf-col-border-on").addEventListener("change", applyEditorColor);
+      $("cf-col-reset").addEventListener("click", function () {
+        delete savedColors[form.slug];
+        persistColors();
+        repaintPill(form.slug);
+        pushColorsToPrefs();
+        initColor();
+      });
+      initColor();
+    }
     $("cf-lookup").addEventListener("click", function () {
       var id = $("cf-docketid").value.trim();
       var msg = $("cf-lookup-msg");
@@ -676,7 +740,7 @@
         "<h3>Trusted sources (whitelist)</h3>" +
         '<div class="mg-chips" id="tf-whitelist"></div>' +
         "<h3>Key focus cases</h3>" +
-        '<p class="mg-hint" style="margin:0 0 10px">Spotlighted as priority ground truth in this theme’s scans.</p>' +
+        '<p class="mg-hint" style="margin:0 0 10px">Adds the case to this theme’s coverage — its briefings prioritize these matters.</p>' +
         '<div class="mg-grid3" id="tf-focus">' + (focusChecks || '<span class="mg-note">No cases yet.</span>') + "</div>" +
         "<h3>Guidance prompt</h3>" +
         '<div class="mg-field"><textarea id="tf-guidance" placeholder="Standing instruction for this beat’s scan.">' + esc(form.guidance_prompt || "") + "</textarea></div>" +
