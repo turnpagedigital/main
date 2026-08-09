@@ -47,6 +47,8 @@ except ImportError:
 
 MODEL = "claude-sonnet-4-6"
 OUT_PATH = REPO_ROOT / "case-briefings.json"
+ARCHIVE_DIR = REPO_ROOT / "case-briefings"   # per-case history: <slug>.json
+ARCHIVE_CAP = 120                            # briefings kept per case
 INDEX_HTML = REPO_ROOT / "index.html"
 SITE_ROOT = REPO_ROOT.parent
 INTELLIGENCE_FILE = SITE_ROOT / "src" / "data" / "intelligence-settings.json"
@@ -394,6 +396,27 @@ def parse_briefing_md(md):
     return body, _first_sentences(lede_para) if lede_para else "", sources
 
 
+def archive_briefing(item):
+    """Append a freshly generated briefing to the case's history file
+    (case-briefings/<slug>.json, newest first) — the standalone briefing page
+    renders past editions from it. Same-date regenerations replace."""
+    if not item.get("moved") or not (item.get("body_md") or "").strip():
+        return
+    ARCHIVE_DIR.mkdir(exist_ok=True)
+    path = ARCHIVE_DIR / f"{item['slug']}.json"
+    try:
+        arch = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        arch = {}
+    entries = [e for e in (arch.get("items") or []) if e.get("date") != item.get("date")]
+    entries.append({k: item.get(k) for k in ("date", "updated", "lede", "body_md", "sources", "activity")})
+    entries.sort(key=lambda e: e.get("date") or "", reverse=True)
+    path.write_text(json.dumps(
+        {"slug": item["slug"], "case_name": item.get("case_name", item["slug"]),
+         "items": entries[:ARCHIVE_CAP]},
+        indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def update_landing_stamp():
     """Refresh the dashboard's date stamp (same regex as generate.py)."""
     if not INDEX_HTML.exists():
@@ -554,8 +577,10 @@ def main():
 
     OUT_PATH.write_text(json.dumps({"generated_at": now_iso, "items": items},
                                    indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    for i in items:
+        archive_briefing(i)
     print(f"✓ wrote {OUT_PATH.relative_to(REPO_ROOT)} ({len(items)} case(s), "
-          f"{sum(1 for i in items if i['moved'])} regenerated)")
+          f"{sum(1 for i in items if i['moved'])} regenerated, history in case-briefings/)")
     update_landing_stamp()
 
 

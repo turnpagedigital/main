@@ -1,0 +1,34 @@
+{
+  "slug": "terraform-labs",
+  "case_name": "Terraform Labs",
+  "items": [
+    {
+      "date": "2026-08-07",
+      "updated": "2026-08-07",
+      "lede": "In re Terraform Labs Pte. Ltd., Bankr. D. Del., Case No. 24-10070-BLS, Judge Brendan Linehan Shannon",
+      "body_md": "*In re Terraform Labs Pte. Ltd., Bankr. D. Del., Case No. 24-10070-BLS, Judge Brendan Linehan Shannon*\n\nThe only new docket activity since Wednesday's edition is Dkt. 1319, an Objection filed August 5, 2026. The docket entry designation — \"Objection\" without further qualification in the publicly available record — places it squarely in the pattern that has defined this estate's post-confirmation phase: contested claim allowance, disputed claim transfers, or resistance to a pending motion. The filing lands two days after a cluster of four claim transfers (Dkts. 1309–1312, August 3), the most recent of which assigned a $3,454,036.42 claim from a redacted transferor to Serrur Investment Partners, LP via TerraClaim LLC, signaling continued secondary-market activity in the claims pool. Whether Dkt. 1319 targets one of those transfers, challenges a valuation determination on the crypto loss claims register, or contests some other pending matter cannot be confirmed from publicly available sources as of this briefing; the filing's substance requires PACER access to the full document.\n\nWhat is clear is the structural context: \nmore than two years after Terraform Labs entered chapter 11, its confirmed liquidating plan remains in active administration, and as of the post-confirmation report for the quarter ending March 31, 2026, the Wind Down Trust had distributed nothing to plan creditors, even as the plan administrator continued reconciling more than 16,000 crypto loss claims and pressing a $4 billion lawsuit against Jump Trading as the estate's largest affirmative recovery effort\n (__[Elevenflo](https://elevenflo.com/blog/terraform-labs-bankruptcy)__). An objection at Dkt. 1319 — whatever its precise target — lands in an estate where claim allowance determinations are the direct gating mechanism for eventual distributions. Any successful objection that disallows or reduces a claim expands the recoverable pool for remaining allowed creditors; any objection that fails preserves a competing draw on that pool. The post-confirmation reports filed July 30 (Dkts. 1306–1307) will also repay review once accessible, as they will reflect the trust's asset position for the most recent quarterly period and may reveal whether the cash runway supports the litigation posture in the Jump and Jane Street proceedings.\n\nThe next concrete milestone to track is any response deadline or hearing date tied to Dkt. 1319, which under Local Rule 9006-1(c) would typically run 14 days from service absent a separate scheduling order. On the litigation front, the plan administrator's motion to dismiss the Chang adversary proceeding (Adv. Proc. 26-50229) remains pending before Judge Shannon following the July 2026 filing reported last month (__[Law360](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2504885)__), and the Jane Street insider-trading action in the Southern District of New York continues to be contested on the motion-to-dismiss briefing that closed in June (__[Law360](https://www.law360.com/bankruptcy/articles/2489043)__). Neither of those proceedings generated new docket activity in the lookback window.\n\n## Sources\n\n- [Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan](https://elevenflo.com/blog/terraform-labs-bankruptcy) — Elevenflo, January 17, 2026\n- [Under The Radar: Bankruptcy News You May Have Missed](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2504885) — Law360, July 20, 2026\n- [Jane Street Used Tips To Dodge Losses, Terraform Says](https://www.law360.com/bankruptcy/articles/2489043) — Law360, June 12, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Terraform Labs: $4.47B SEC Settlement Shapes Liquidating Plan",
+          "url": "https://elevenflo.com/blog/terraform-labs-bankruptcy",
+          "note": "Elevenflo, January 17, 2026"
+        },
+        {
+          "title": "Under The Radar: Bankruptcy News You May Have Missed",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2504885",
+          "note": "Law360, July 20, 2026"
+        },
+        {
+          "title": "Jane Street Used Tips To Dodge Losses, Terraform Says",
+          "url": "https://www.law360.com/bankruptcy/articles/2489043",
+          "note": "Law360, June 12, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-05"
+      }
+    }
+  ]
+}

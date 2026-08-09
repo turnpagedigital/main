@@ -1,0 +1,39 @@
+{
+  "slug": "concord-anthropic",
+  "case_name": "Concord Music Group v. Anthropic",
+  "items": [
+    {
+      "date": "2026-08-07",
+      "updated": "2026-08-07",
+      "lede": "The press coverage that landed August 5–6 fills in the structural detail on Anthropic's Concord II partial dismissal motions that yesterday's edition flagged at the level of their existence and general thrust. The more precise picture, now confirmed across multiple sources, is that Anthropic is not seeking to dismiss the core torrenting and training allegations — those remain live — but is instead targeting two…",
+      "body_md": "The press coverage that landed August 5–6 fills in the structural detail on Anthropic's Concord II partial dismissal motions that yesterday's edition flagged at the level of their existence and general thrust. The more precise picture, now confirmed across multiple sources, is that Anthropic is not seeking to dismiss the core torrenting and training allegations — those remain live — but is instead targeting two specific, downstream claims: the output-based infringement count, and a Digital Millennium Copyright Act count. \nAnthropic argued that the complaint, covering roughly 21,000 works, never cites one instance of Claude reproducing a lyric, and asked that the output claim be dismissed with prejudice.\n The \"with prejudice\" ask is the sharpest edge here: if granted, the publishers would be barred from replying that claim in its current form, eliminating what would otherwise be the most direct mechanism to show consumer-facing harm at trial. \nAnthropic also moved to dismiss the DMCA count, arguing the statute reaches only the stripping of copyright management information from a complete work, and that the publishers never allege Anthropic held their full compositions.\n That DMCA theory, if it had survived, would have provided a separate damages floor independent of statutory copyright damages — its loss narrows the publishers' damages architecture in Concord II, though it has no direct bearing on the infringement claims already advancing in 5:24-cv-03811. \nThe two filings landed on Monday, August 3, in the U.S. District Court for the Northern District of California.\n\n\n\nConcord II carries case number 5:26-cv-00880, was filed January 28, 2026, and names Anthropic CEO Dario Amodei and co-founder Benjamin Mann as individual defendants\n — the confirmed case number is worth logging cleanly given the parallel docket management now running alongside 5:24-cv-03811. \nAmodei filed separately to get the direct infringement count against him personally dropped; Anthropic did not move against the torrenting and training claims, which it continues to contest.\n The strategic implication for rights-holders in both proceedings is that Anthropic has chosen to fight the input-side allegations on the merits while attempting to clear the output-side and DMCA theories at the pleading stage — a posture that, if successful, would concentrate the entire evidentiary burden of the litigation on the training-data conduct and away from anything Claude does in response to user prompts. Whether the publishers can amend to supply the missing output examples, or whether the court grants dismissal with prejudice on that count, will materially affect the damages ceiling they can present to any jury in Concord II.\n\nNothing new has landed on the Concord I docket (5:24-cv-03811) since yesterday's edition. The next concrete event remains the Case Management Conference before Judge Lee on Zoom on September 2, 2026, followed by the Summary Judgment Hearing on October 21, 2026 — at which the fair use and direct infringement questions in the original case will be the focus. The Concord II partial dismissal argument on November 4 then follows, meaning Judge Lee will have issued her summary judgment ruling in Concord I, or will be close to doing so, at the point she hears the threshold pleading challenges in Concord II. That sequencing matters: a summary judgment ruling adverse to Anthropic on training-data fair use in Concord I would substantially undercut the legal premise of the same argument Anthropic is mounting in Concord II.\n\n## Sources\n\n- [Anthropic seeks partial dismissal in music publishers' $3B lyrics suit – as CEO moves to drop the direct-infringement claim against him](https://www.musicbusinessworldwide.com/anthropic-seeks-partial-dismissal-in-music-publishers-3b-lyrics-suit-as-ceo-moves-to-drop-the-direct-infringement-claim-against-him/) — Music Business Worldwide, August 6, 2026\n- [Anthropic Seeks Partial Dismissal in 'Concord II' Copyright Lawsuit](https://www.digitalmusicnews.com/2026/08/05/concord-v-anthropic-ii-dismissal-motion/) — Digital Music News, August 5, 2026\n- [Anthropic moves to dismiss the output and DMCA claims in the publishers' $3B lyrics suit as Amodei seeks to drop his own count](https://www.shopifreaks.com/anthropic-moves-to-dismiss-the-output-and-dmca-claims-in-the-publishers-3b-lyrics-suit-as-amodei-seeks-to-drop-his-own-count/) — Shopifreaks, August 6, 2026\n- [Music Industry AI Lawsuits Tracker 2026: Live Status](https://www.chartlex.com/blog/business/music-industry-ai-lawsuits-tracker-2026) — Chartlex, April 28, 2026 (updated July 11, 2026)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Anthropic seeks partial dismissal in music publishers' $3B lyrics suit – as CEO moves to drop the direct-infringement claim against him",
+          "url": "https://www.musicbusinessworldwide.com/anthropic-seeks-partial-dismissal-in-music-publishers-3b-lyrics-suit-as-ceo-moves-to-drop-the-direct-infringement-claim-against-him/",
+          "note": "Music Business Worldwide, August 6, 2026"
+        },
+        {
+          "title": "Anthropic Seeks Partial Dismissal in 'Concord II' Copyright Lawsuit",
+          "url": "https://www.digitalmusicnews.com/2026/08/05/concord-v-anthropic-ii-dismissal-motion/",
+          "note": "Digital Music News, August 5, 2026"
+        },
+        {
+          "title": "Anthropic moves to dismiss the output and DMCA claims in the publishers' $3B lyrics suit as Amodei seeks to drop his own count",
+          "url": "https://www.shopifreaks.com/anthropic-moves-to-dismiss-the-output-and-dmca-claims-in-the-publishers-3b-lyrics-suit-as-amodei-seeks-to-drop-his-own-count/",
+          "note": "Shopifreaks, August 6, 2026"
+        },
+        {
+          "title": "Music Industry AI Lawsuits Tracker 2026: Live Status",
+          "url": "https://www.chartlex.com/blog/business/music-industry-ai-lawsuits-tracker-2026",
+          "note": "Chartlex, April 28, 2026 (updated July 11, 2026)"
+        }
+      ],
+      "activity": {
+        "filings": 0,
+        "articles": 2,
+        "latest": "2026-08-06"
+      }
+    }
+  ]
+}
