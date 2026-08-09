@@ -418,12 +418,16 @@
       color: var(--ink); padding: 0 3px; }
       display: flex; gap: 6px; align-items: baseline; }
 
-    /* Section titles sit on the gray canvas in black; content is the white box below */
-    .ih-tile { background: transparent; border: none; }
-    .ih-tile > .ih-head { border-bottom: none; padding: 0 2px 8px; }
-    .ih-tile .ih-name { color: var(--ink); }
-    .ih-tile > .ih-list, .ih-tile > .ih-dates { background: var(--surface); border: 1px solid var(--line); flex: 1; }
-
+</style>
+<style>
+  /* Late overrides in their own style element so parse errors above can't swallow them. */
+  /* Uniform control height — emoji glyphs otherwise stretch their buttons taller */
+  .ih-tp-btn, .ih-sort-btn, .ih-dd-btn { height: 30px; padding-top: 0; padding-bottom: 0; display: inline-flex; align-items: center; line-height: 1; }
+  /* Section titles sit on the gray canvas in black; content is the white box below */
+  .ih-tile { background: transparent; border: none; }
+  .ih-tile > .ih-head { border-bottom: none; padding: 0 2px 8px; }
+  .ih-tile .ih-name { color: var(--ink); }
+  .ih-tile > .ih-list, .ih-tile > .ih-dates { background: var(--surface); border: 1px solid var(--line); flex: 1; }
 </style>
   <!-- AUTH GATE START -->
   <script src="/auth/config.js"></script>
@@ -448,7 +452,6 @@
 
   <!-- Page title -->
   <div class="page-title">
-    <div class="eyebrow">Intelligence · Case Command Center</div>
     <h1>🏠 Dashboard</h1>
     <div class="stamp">2:35 PM ET · SUNDAY, AUGUST 9, 2026</div>
   </div>
