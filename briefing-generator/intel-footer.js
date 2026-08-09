@@ -37,7 +37,11 @@
   }
 
   var css =
-    "#tn-site-footer{background:var(--paper-2,#F4F5F7);color:var(--ink,#0A0A0A);border-top:1px solid var(--line-strong,rgba(10,10,10,0.14));margin-top:56px;}" +
+    // Sticky footer: make the page a full-height flex column so the footer's
+    // margin-top:auto pushes it to the bottom of the viewport when the content
+    // above is too short to fill the page (and sits right after it otherwise).
+    "body{min-height:100vh;display:flex;flex-direction:column;}" +
+    "#tn-site-footer{background:var(--paper-2,#F4F5F7);color:var(--ink,#0A0A0A);border-top:1px solid var(--line-strong,rgba(10,10,10,0.14));margin-top:auto;}" +
     "#tn-site-footer .tf-inner{max-width:1440px;margin:0 auto;padding:clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem) 2rem;}" +
     "#tn-site-footer .tf-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(var(--tf-cols,4),minmax(0,1fr));gap:clamp(2rem,4vw,3.5rem);margin-bottom:clamp(3rem,5vw,4rem);}" +
     "#tn-site-footer .tf-logo img{height:56px;width:auto;display:block;}" +

@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #FFFFFF; --surface: #FFFFFF; --paper-2: #F4F5F7;
+      --bg: #FFFFFF; --surface: #FFFFFF; --paper-2: #F4F5F7; --canvas: #F7F8F9;
       --ink: #0A0A0A; --ink-60: rgba(10,10,10,0.6); --ink-40: rgba(10,10,10,0.4); --ink-20: rgba(10,10,10,0.18);
       --line: rgba(10,10,10,0.08); --line-strong: rgba(10,10,10,0.14);
       --neon: #D4FF00; --neon-block: #D4FF00; --neon-on-block: #0A0A0A;
@@ -138,7 +138,7 @@
     .ih-pill-theme { background: var(--surface); color: var(--ink); border: 1px solid var(--ink); }
     /* Band: Prospects full-width first, then News (1) · Calendar (2) · Notes (1),
        all stretched to the same row height. */
-    .ih-band { max-width: 1680px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
+    .ih-band { max-width: 1680px; margin: 0 auto 10px; padding: 0 32px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
     .ih-tile-full { grid-column: 1 / -1; }
     .ih-span-2 { grid-column: span 2; }
     @media (max-width: 1100px) { .ih-band { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -222,6 +222,10 @@
     .ih-lr-lede.ih-quiet { color: var(--ink-60); }
     .ih-lr-read { font-size: 11px; font-weight: 800; white-space: nowrap; color: var(--ink); border-bottom: 1px solid var(--neon-block); flex: 0 0 auto; }
     .ih-card-moved { border-top: 3px solid var(--neon-block); }
+    /* Case-card hover — same rollover tint as the news rows */
+    .ih-theme-card { transition: background 0.12s; }
+    .ih-theme-card:hover { background: rgba(10,10,10,0.03); }
+    [data-theme="dark"] .ih-theme-card:hover { background: rgba(229,231,235,0.05); }
     /* Card arrangement: sort control, priority star, group headers */
     .ih-tc-right { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
     .ih-star { background: none; border: none; cursor: pointer; font-size: 15px; line-height: 1; color: var(--ink-40); padding: 0; }
@@ -300,6 +304,7 @@
     .ih-wk-col.today .ih-wk-dayhd { border-bottom-color: #C84141; }
     .ih-wk-ev { display: block; border-left: 3px solid #888; padding: 4px 6px; margin-bottom: 4px; font-size: 11px; line-height: 1.45; color: var(--ink); text-decoration: none; }
     .ih-wk-ev strong { font-weight: 800; }
+  .ih-wk-time { font-weight: 700; color: var(--ink-60); font-variant-numeric: tabular-nums; }
     .ih-wk-ev:hover { filter: brightness(0.96); }
     .ih-wk-more { display: block; font-size: 9px; color: var(--ink-40); padding-left: 5px; }
     .ih-mm-dow { font-size: 9px; font-weight: 800; letter-spacing: 0.08em; color: var(--ink-40); padding-bottom: 2px; }
@@ -313,7 +318,7 @@
     /* ── Press-page look: gray canvas, white cards, uppercase micro-labels ── */
     /* html carries the canvas too — otherwise the gray ends at the body's last
        pixel and the page looks cut off above the fold's leftover white. */
-    html, body { background: var(--paper-2); }
+    html, body { background: var(--canvas, var(--paper-2)); }
     body { min-height: 100vh; }
     /* Title band sits on the gray canvas (no white strip). */
     /* Title column matches the nav container so the text lines up with the
@@ -460,7 +465,7 @@
       <a class="tn-back" href="news.html">📡 News</a>
       <a class="tn-back" href="prospects.html">🔭 Prospects</a>
     </div>
-    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">G</span> then <span class="tn-key">H</span> Home · <span class="tn-key">D</span> Docket · <span class="tn-key">C</span> Calendar · <span class="tn-key">P</span> Prospects · <span class="tn-key">N</span> Notes · <span class="tn-key">R</span> News</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case</div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div><a class="tn-back" href="manage.html">⚙️ Settings</a><button id="theme-toggle">🖥️</button>
+    <div class="tn-kbd" id="tn-kbd"><button type="button" class="tn-kbd-btn" id="tn-kbd-btn" title="Keyboard shortcuts" aria-haspopup="true">⌨ Shortcuts</button><div class="tn-kbd-panel"><div class="tn-kbd-title">Keyboard shortcuts</div><div class="tn-kbd-row"><span class="tn-key">G</span> then <span class="tn-key">H</span> Home · <span class="tn-key">D</span> Docket · <span class="tn-key">C</span> Calendar · <span class="tn-key">P</span> Prospects · <span class="tn-key">N</span> Notes · <span class="tn-key">R</span> News</div><div class="tn-kbd-row"><span class="tn-key">⌘K</span> Filter to a case</div><div class="tn-kbd-row"><span class="tn-key">/</span> Focus search</div><div class="tn-kbd-row"><span class="tn-key">T</span> Today <em>Calendar · Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">S</span> then <span class="tn-key">A</span> Show all cases</div><div class="tn-kbd-row"><span class="tn-key">L</span> <span class="tn-key">M</span> <span class="tn-key">W</span> List / Month / Week <em>Calendar</em></div><div class="tn-kbd-row"><span class="tn-key">↑</span> <span class="tn-key">↓</span> Move through rows <em>Docket · News</em></div><div class="tn-kbd-row"><span class="tn-key">R</span> Read / open the row’s document</div><div class="tn-kbd-row"><span class="tn-key">N</span> Note · <span class="tn-key">H</span> Hide · <span class="tn-key">X</span> Delete</div><div class="tn-kbd-row"><span class="tn-key">Z</span> Snooze · <span class="tn-key">U</span> Upload · <span class="tn-key">D</span> Download</div></div></div><a class="tn-back" href="manage.html">⚙️ Settings</a><button id="theme-toggle">🖥️</button>
   </div>
 </nav>
 
