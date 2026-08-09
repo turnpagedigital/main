@@ -38,8 +38,7 @@
     },
     "bartz-anthropic": {
       "bg": "#146747",
-      "fg": "#ffffff",
-      "border": "#000000"
+      "fg": "#ffffff"
     },
     "power-block-coin": {
       "bg": "#e6e6e6",
