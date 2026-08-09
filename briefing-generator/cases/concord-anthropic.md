@@ -1,9 +1,9 @@
 ---
-added: 2026-06-11
 slug: concord-anthropic
-display_name: Concord Music Group v. Anthropic
+display_name: Concord v. Anthropic
 type: case
 status: active
+sync: active
 topics:
   - llm-class-action
 case:
@@ -15,6 +15,7 @@ docket_source:
   type: courtlistener
   docket_id: 68889092
   url: "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/"
+added: 2026-06-11
 emoji: ⚖️
 research:
   themes:
