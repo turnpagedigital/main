@@ -394,13 +394,7 @@
 
   <!-- Dashboard: top 7 from each section, four columns -->
   <div class="ih-controls">
-    <div class="ih-sort" id="ih-sort" role="group" aria-label="Arrange case cards">
-      <button type="button" class="ih-sort-btn on" data-sort="activity" title="Cases that moved today first, then recent activity">Activity</button>
-      <button type="button" class="ih-sort-btn" data-sort="az" title="Alphabetical by case name">A–Z</button>
-      <button type="button" class="ih-sort-btn" data-sort="priority" title="High-priority cases pinned on top">Priority</button>
-      <button type="button" class="ih-sort-btn" data-sort="theme" title="Grouped by practice area">Theme</button>
-    </div>
-    <div class="ih-sort" id="ih-view-tgl" role="group" aria-label="Briefing view">
+    <div class="ih-sort" id="ih-view-tgl" role="group" aria-label="Briefing view" style="margin-right:auto;">
       <button type="button" class="ih-sort-btn" data-view="cards" title="Card view — lede + latest rows per case">▦ Cards</button>
       <button type="button" class="ih-sort-btn" data-view="list" title="List view — one row per case">≣ List</button>
     </div>
@@ -411,6 +405,13 @@
     <div class="ih-dd-wrap">
       <button type="button" id="ih-themes-btn" class="ih-dd-btn">Themes: All</button>
       <div id="ih-themes-panel" class="ih-dd-panel" style="display:none;"></div>
+    </div>
+    <div class="ih-sort" id="ih-sort" role="group" aria-label="Arrange case cards">
+      <button type="button" class="ih-sort-btn on" data-sort="activity" title="Cases that moved today first, then recent activity">Activity</button>
+      <button type="button" class="ih-sort-btn" data-sort="az" title="Alphabetical by case name — click again to flip">A–Z</button>
+      <button type="button" class="ih-sort-btn" data-sort="date" title="By when the case was added — click again to flip">Newest</button>
+      <button type="button" class="ih-sort-btn" data-sort="priority" title="High-priority cases pinned on top">Priority</button>
+      <button type="button" class="ih-sort-btn" data-sort="theme" title="Grouped by practice area">Theme</button>
     </div>
   </div>
   <div class="ih-band">

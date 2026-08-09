@@ -1,4 +1,5 @@
 ---
+added: 2026-06-11
 slug: power-block-coin
 display_name: Power Block Coin, LLC
 type: case

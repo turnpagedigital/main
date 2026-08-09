@@ -1,4 +1,5 @@
 ---
+added: 2026-08-03
 slug: omnis-pleasants
 display_name: Omnis Pleasants
 type: case

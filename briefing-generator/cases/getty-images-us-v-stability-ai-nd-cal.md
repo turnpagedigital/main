@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: getty-images-us-v-stability-ai-nd-cal
 display_name: Getty Images (US) v. Stability AI (N.D. Cal.)
 type: case

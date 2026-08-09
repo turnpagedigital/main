@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153
 display_name: Thomson Reuters v. Ross Intelligence (3d Cir. No. 25-2153)
 type: case

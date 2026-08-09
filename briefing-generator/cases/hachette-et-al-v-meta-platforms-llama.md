@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: hachette-et-al-v-meta-platforms-llama
 display_name: Hachette et al. v. Meta Platforms (Llama)
 short_name: "Hachette (Meta)"

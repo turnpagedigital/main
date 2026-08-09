@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: state-of-oregon-v-united-states-burlap-and-barrel-v-united-s
 display_name: Burlap and Barrel
 type: case

@@ -1,4 +1,5 @@
 ---
+added: 2026-08-06
 slug: in-re-ftx-trading-ltd-fifth-distribution-july-31-2026
 display_name: FTX
 type: case

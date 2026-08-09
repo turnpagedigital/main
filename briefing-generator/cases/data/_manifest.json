@@ -1,6 +1,7 @@
 [
   {
     "slug": "bartz-anthropic",
+    "added": "2026-06-11",
     "display_name": "Bartz v. Anthropic",
     "short_name": "Bartz",
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
@@ -15,6 +16,7 @@
   },
   {
     "slug": "blockfills",
+    "added": "2026-06-12",
     "display_name": "BlockFills",
     "short_name": "BlockFills",
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
@@ -29,8 +31,9 @@
   },
   {
     "slug": "britannica-merriam-webster-v-openai",
-    "display_name": "Britannica v. OpenAI",
-    "short_name": "Britannica",
+    "added": "2026-08-07",
+    "display_name": "Britannica / Merriam-Webster v. OpenAI",
+    "short_name": "Britannica /",
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
     "default_color": "#7EF4C2",
     "category": "class-action",
@@ -42,6 +45,7 @@
   },
   {
     "slug": "concord-anthropic",
+    "added": "2026-06-11",
     "display_name": "Concord Music Group v. Anthropic",
     "short_name": "Concord Music",
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
@@ -55,6 +59,7 @@
   },
   {
     "slug": "getty-images-us-v-stability-ai-nd-cal",
+    "added": "2026-08-07",
     "display_name": "Getty Images (US) v. Stability AI (N.D. Cal.)",
     "short_name": "Getty Images",
     "docket_url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
@@ -68,6 +73,7 @@
   },
   {
     "slug": "goliath",
+    "added": "2026-07-30",
     "display_name": "Goliath",
     "short_name": "Goliath",
     "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
@@ -82,6 +88,7 @@
   },
   {
     "slug": "hachette-et-al-v-google-llc-gemini",
+    "added": "2026-08-07",
     "display_name": "Hachette v. Google (Gemini)",
     "short_name": "Hachette (Google)",
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
@@ -95,12 +102,14 @@
   },
   {
     "slug": "hachette-et-al-v-meta-platforms-llama",
+    "added": "2026-08-07",
     "display_name": "Hachette et al. v. Meta Platforms (Llama)",
     "short_name": "Hachette (Meta)",
     "docket_url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
     "default_color": "#F2AAEC",
     "category": "class-action",
     "topics": [
+      "billion-dollar-class-actions",
       "llm-class-action"
     ],
     "court": "To be confirmed (filed May 5, 2026)",
@@ -108,6 +117,7 @@
   },
   {
     "slug": "harvest-sherwood",
+    "added": "2026-07-30",
     "display_name": "Harvest Sherwood",
     "short_name": "Harvest Sherwood",
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
@@ -121,8 +131,9 @@
   },
   {
     "slug": "in-re-cashcall-inc",
-    "display_name": "CashCall",
-    "short_name": "CashCall",
+    "added": "2026-08-07",
+    "display_name": "In re CashCall, Inc.",
+    "short_name": "In re",
     "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
     "default_color": "#1B3A4B",
     "category": "bankruptcy",
@@ -134,6 +145,7 @@
   },
   {
     "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
+    "added": "2026-08-06",
     "display_name": "FTX",
     "short_name": "FTX",
     "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
@@ -149,6 +161,7 @@
   },
   {
     "slug": "kadrey-v-meta-contributory-infringement-amendment",
+    "added": "2026-08-07",
     "display_name": "Kadrey v. Meta — Contributory Infringement Amendment",
     "short_name": "Kadrey",
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
@@ -162,6 +175,7 @@
   },
   {
     "slug": "kahan",
+    "added": "2026-07-30",
     "display_name": "Kahan",
     "short_name": "Kahan",
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
@@ -176,6 +190,7 @@
   },
   {
     "slug": "omnis-pleasants",
+    "added": "2026-08-03",
     "display_name": "Omnis Pleasants",
     "short_name": "Omnis Pleasants",
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
@@ -189,6 +204,7 @@
   },
   {
     "slug": "papaya-gaming",
+    "added": "2026-08-03",
     "display_name": "Papaya Gaming",
     "short_name": "Papaya Gaming",
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
@@ -202,6 +218,7 @@
   },
   {
     "slug": "poolin",
+    "added": "2026-07-31",
     "display_name": "Poolin",
     "short_name": "Poolin",
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
@@ -216,6 +233,7 @@
   },
   {
     "slug": "power-block-coin",
+    "added": "2026-06-11",
     "display_name": "Power Block Coin, LLC",
     "short_name": "Power Block",
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
@@ -231,7 +249,8 @@
   },
   {
     "slug": "publishers-v-google-llc-gemini-books",
-    "display_name": "Publishers v. Google (Gemini)",
+    "added": "2026-08-07",
+    "display_name": "Publishers v. Google LLC (Gemini Books)",
     "short_name": "Publishers",
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
     "default_color": "#B3A8F0",
@@ -244,6 +263,7 @@
   },
   {
     "slug": "rndc",
+    "added": "2026-07-29",
     "display_name": "RNDC",
     "short_name": "RNDC",
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc-and-official-committee-of/",
@@ -257,6 +277,7 @@
   },
   {
     "slug": "sleep-number",
+    "added": "2026-06-12",
     "display_name": "Sleep Number",
     "short_name": "Sleep Number",
     "docket_url": "https://www.courtlistener.com/docket/73476260/sleep-number-corporation/",
@@ -270,20 +291,22 @@
   },
   {
     "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
-    "display_name": "Burlap and Barrel",
-    "short_name": "Burlap and",
+    "added": "2026-08-07",
+    "display_name": "State of Oregon v. United States / Burlap and Barrel v. United States (Section 122 — Federal Circuit appeal)",
+    "short_name": "State of",
     "docket_url": "https://www.courtlistener.com/docket/72381015/burlap-and-barrel-inc-v-trump/",
     "default_color": "#D4FF00",
     "category": "class-action",
     "topics": [
-      "rewind-tariffs",
-      "billion-dollar-class-actions"
+      "billion-dollar-class-actions",
+      "rewind-tariffs"
     ],
     "court": "U.S. Court of Appeals for the Federal Circuit (on appeal from CIT)",
     "sync": "active"
   },
   {
     "slug": "terraform-labs",
+    "added": "2026-07-30",
     "display_name": "Terraform Labs",
     "short_name": "Terraform Labs",
     "docket_url": "https://www.courtlistener.com/docket/68180454/terraform-labs-pte-ltd/",
@@ -298,6 +321,7 @@
   },
   {
     "slug": "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153",
+    "added": "2026-08-07",
     "display_name": "Thomson Reuters v. Ross Intelligence (3d Cir. No. 25-2153)",
     "short_name": "Thomson Reuters",
     "docket_url": "https://www.courtlistener.com/docket/70622297/thomson-reuters-enterprise-centre-gmbh-v-ross-intelligence-inc/",

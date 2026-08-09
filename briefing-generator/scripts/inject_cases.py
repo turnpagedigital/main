@@ -780,6 +780,7 @@ def render_unified_docket(cases):
         bl = prior_colors.get(c["slug"]) or _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
         manifest.append({
             "slug": c["slug"],
+            "added": c["config"].get("added") or "",
             "display_name": c["config"]["display_name"],
             "short_name": (c["config"].get("short_name") or "").strip() or _short_name(c["config"]["display_name"]),
             "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",
@@ -1055,6 +1056,7 @@ def render_news_page(cases):
         bl = prior_colors.get(c["slug"]) or _PILL_PALETTE[i % len(_PILL_PALETTE)][0]
         manifest.append({
             "slug": c["slug"],
+            "added": c["config"].get("added") or "",
             "display_name": c["config"]["display_name"],
             "short_name": (c["config"].get("short_name") or "").strip() or _short_name(c["config"]["display_name"]),
             "docket_url": d.get("docket_url") or c["config"]["docket_source"].get("url") or "",

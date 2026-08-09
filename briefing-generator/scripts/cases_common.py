@@ -73,6 +73,9 @@ def parse_case_config(text):
         # "manual" (updates only via the admin Sync-now button), "archived"
         # (docket kept, never searched again). Absent → active.
         "sync": sync if sync in ("active", "manual", "archived") else "active",
+        # When Andrew started tracking the case (ISO date) — drives the
+        # dashboard's Newest/Oldest sort.
+        "added": _scalar(fm, "added") or "",
         "topics": _list(fm, "topics"),
         "case": {
             "parties": _scalar(case_sub, "parties") or "",

@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: in-re-cashcall-inc
 display_name: CashCall
 type: case

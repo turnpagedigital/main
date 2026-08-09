@@ -74,6 +74,7 @@ async function updateManifest(env, action, c) {
         court: (c.case && c.case.court) || "",
         topics: c.topics || prev.topics || [],
         sync: c.sync || "active",
+        added: prev.added || new Date().toISOString().slice(0, 10),
         default_color: prev.default_color || PILL_PALETTE[colorIdx % PILL_PALETTE.length],
       };
       if (idx >= 0) manifest[idx] = entry;
@@ -445,7 +446,8 @@ export async function onRequest({ request, env }) {
     const exists = await getFileSha(env, mdPath, briefingRepo(env), branch);
     if (exists) return jsonResponse({ ok: false, error: "A case with that slug already exists" }, 400);
 
-    const md = buildCaseMarkdown(c, "", "");
+    // Stamp the tracking-start date — unmodeled, so later edits preserve it.
+    const md = buildCaseMarkdown(c, `added: ${new Date().toISOString().slice(0, 10)}\n`, "");
     const mdRes = await commitFileToGitHub(env, mdPath, md, null, `Add case: ${c.display_name}`, briefingRepo(env), branch);
     if (!mdRes.ok) return jsonResponse({ ok: false, error: `Failed to create case file: ${mdRes.error}` }, 500);
 

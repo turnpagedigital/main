@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: britannica-merriam-webster-v-openai
 display_name: Britannica v. OpenAI
 type: case
