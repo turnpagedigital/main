@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-08",
-    "fetched_at": "2026-08-08T23:52:34.564555+00:00",
-    "as_of": "Aug 8, 2026",
+    "fetched_at": "2026-08-09T20:58:30.084025+00:00",
+    "as_of": "Aug 9, 2026",
     "backfilled": true,
-    "new_in_72h": 12,
+    "new_in_72h": 5,
     "recent": [
       {
         "entry_number": 100,
@@ -108,7 +108,7 @@
         "time_filed": "20:39:37",
         "date_display": "Aug 6, 2026",
         "description": "Document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -118,7 +118,7 @@
         "time_filed": "20:31:33",
         "date_display": "Aug 6, 2026",
         "description": "Support",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -128,7 +128,7 @@
         "time_filed": "20:29:48",
         "date_display": "Aug 6, 2026",
         "description": "Support",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -138,7 +138,7 @@
         "time_filed": "20:28:02",
         "date_display": "Aug 6, 2026",
         "description": "Support",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -148,7 +148,7 @@
         "time_filed": "20:26:12",
         "date_display": "Aug 6, 2026",
         "description": "Support",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -158,7 +158,7 @@
         "time_filed": "20:24:03",
         "date_display": "Aug 6, 2026",
         "description": "Support",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -168,7 +168,7 @@
         "time_filed": "20:21:00",
         "date_display": "Aug 6, 2026",
         "description": "Support",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

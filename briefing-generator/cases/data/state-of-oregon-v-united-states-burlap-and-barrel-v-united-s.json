@@ -8,12 +8,17 @@
     "judge": "Timothy C. Stanceu",
     "docket_id": "72381015",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72381015/burlap-and-barrel-inc-v-trump/",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-09T21:00:10.791991+00:00",
+    "as_of": "Aug 9, 2026",
+    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -558,11 +563,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "date_last_filing": "2026-06-11",
-    "fetched_at": "2026-08-08T23:54:14.939009+00:00",
-    "as_of": "Aug 8, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": null,
   "coverage": []
