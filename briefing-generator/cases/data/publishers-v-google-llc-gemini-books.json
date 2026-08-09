@@ -1,24 +1,19 @@
 {
   "case": {
     "slug": "publishers-v-google-llc-gemini-books",
-    "display_name": "Publishers v. Google LLC (Gemini Books)",
-    "case_name": "In re Google Generative AI Copyright Litigation",
+    "display_name": "Publishers v. Google (Gemini)",
+    "case_name": "Major book publishers v. Google LLC",
     "court": "District Court, N.D. California",
     "case_number": "5:23-cv-03440",
     "judge": "Eumi K. Lee",
     "docket_id": "67599029",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
-    "date_last_filing": "2026-07-15",
-    "fetched_at": "2026-08-08T23:52:52.309943+00:00",
-    "as_of": "Aug 8, 2026",
-    "backfilled": false,
     "new_in_72h": 0,
     "recent": [
       {
@@ -2914,9 +2909,12 @@
         "doc_url": ""
       }
     ],
+    "date_last_filing": "2026-07-15",
+    "fetched_at": "2026-08-08T23:52:52.309943+00:00",
+    "as_of": "Aug 8, 2026",
+    "backfilled": false,
     "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=67599029&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=16"
   },
   "claims_administrator": null,
-  "coverage": [],
-  "events": []
+  "coverage": []
 }
