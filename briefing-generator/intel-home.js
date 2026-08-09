@@ -256,7 +256,6 @@
       '<div class="ud-sw-row" style="margin-bottom:10px;"><label><input type="checkbox" data-in-border-on' + (hasBorder ? " checked" : "") + "> Border</label>" +
         '<label><input type="color" data-in-border value="' + ((savedColors[slug] && savedColors[slug].border) || t.fg) + '"></label></div>' +
       '<div style="display:flex;gap:10px;align-items:center;">' +
-        '<button type="button" class="ud-dd-quick" data-palette>Edit palette…</button>' +
         '<button type="button" class="ud-dd-quick" data-reset style="margin-left:auto;">Reset to default</button>' +
       "</div>";
     document.body.appendChild(pop);
@@ -274,12 +273,7 @@
       });
     });
     pop.querySelector("[data-in-border-on]").addEventListener("change", popApply);
-    pop.querySelector("[data-palette]").addEventListener("click", function () {
-      popEditingPalette = !popEditingPalette;
-      pop.querySelector("[data-palette]").textContent = popEditingPalette ? "Done editing palette" : "Edit palette…";
-      if (popEditingPalette) popRenderPaletteEditor();
-      else popRenderSwatches();
-    });
+    // Default-palette editing moved to Manage → Settings (manage.html).
     pop.querySelector("[data-reset]").addEventListener("click", function () {
       delete savedColors[slug];
       persistColors();

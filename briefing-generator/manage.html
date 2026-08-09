@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
+<title>Manage — Turnpage Intelligence</title>
+<script src="theme.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F4F5F7; --surface: #FFFFFF; --paper-2: #ECEDEF;
+    --ink: #0A0A0A; --ink-60: rgba(10,10,10,0.6); --ink-40: rgba(10,10,10,0.4); --ink-20: rgba(10,10,10,0.18);
+    --line: rgba(10,10,10,0.08); --line-strong: rgba(10,10,10,0.14);
+    --neon: #D4FF00; --neon-block: #D4FF00; --neon-on-block: #0A0A0A;
+    --ok: #1a7f37; --warn: #9a6700; --danger: #c0392b;
+  }
+  [data-theme="dark"] {
+    --bg: #16161B; --surface: #1F1F25; --paper-2: #26262D;
+    --ink: #E5E7EB; --ink-60: rgba(229,231,235,0.62); --ink-40: rgba(229,231,235,0.42); --ink-20: rgba(229,231,235,0.18);
+    --line: rgba(229,231,235,0.1); --line-strong: rgba(229,231,235,0.18);
+    --neon-block: #5D7A00; --neon-on-block: #FFFFFF;
+    --ok: #4cc38a; --warn: #d4a72c; --danger: #e5726a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--ink); font-family: 'Archivo', sans-serif; }
+  body { line-height: 1.6; }
+
+  /* Standard intel nav */
+  .tn{background:#000;border-bottom:1px solid rgba(255,255,255,0.12);padding:10px 0;position:sticky;top:0;z-index:100;}
+  .tn-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 32px;}
+  .tn-left{display:flex;align-items:center;gap:16px;}
+  .tn-brand{display:inline-flex;align-items:center;padding:4px 0;text-decoration:none;}
+  .tn-brand-logo{height:34px;width:auto;}
+  .tn-logo-dark{display:none;}
+  [data-theme="dark"] .tn-logo-light{display:none;}
+  [data-theme="dark"] .tn-logo-dark{display:block;}
+  .tn-back{color:rgba(255,255,255,0.72);font-size:12px;text-decoration:none;border-left:1px solid rgba(255,255,255,0.18);padding-left:16px;filter:grayscale(1);}
+  .tn-back:hover,.tn-back.tn-on{color:#fff;font-weight:700;filter:none;}
+  [data-theme="light"] .tn{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}
+  [data-theme="light"] .tn-back{color:rgba(10,10,10,0.6);border-left-color:rgba(10,10,10,0.14);}
+  [data-theme="light"] .tn-back:hover,[data-theme="light"] .tn-back.tn-on{color:#0A0A0A;}
+  #theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);border-radius:99px;padding:2px 8px;cursor:pointer;font-size:13px;font-family:inherit;line-height:1;color:#fff;margin-left:auto;}
+  [data-theme="light"] #theme-toggle{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}
+
+  .mg-wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px 80px; }
+  .mg-title { margin: 32px 0 8px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .mg-title h1 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 800; letter-spacing: -0.02em; }
+  .mg-title .mg-sub { font-size: 13px; color: var(--ink-60); }
+
+  /* Press-style tab strip */
+  .mg-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 18px 0 32px; }
+  .mg-tab { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; height: 30px; padding: 0 14px; display: inline-flex; align-items: center; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; text-decoration: none; transition: background .15s, color .15s, border-color .15s; }
+  .mg-tab:hover { background: var(--paper-2); color: var(--ink); }
+  .mg-tab.on { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+
+  /* Panels, tables, forms */
+  .mg-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+  .mg-head h2 { font-size: 15px; font-weight: 800; margin-right: auto; }
+  .mg-hint { font-size: 12.5px; color: var(--ink-60); margin: -6px 0 16px; max-width: 760px; }
+  .mg-box { background: var(--surface); border: 1px solid var(--line-strong); }
+  .mg-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .mg-table th { text-align: left; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-40); padding: 10px 14px; border-bottom: 1px solid var(--line-strong); white-space: nowrap; }
+  .mg-table td { padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  .mg-table tr:last-child td { border-bottom: none; }
+  .mg-table tr:hover td { background: rgba(10,10,10,0.02); }
+  [data-theme="dark"] .mg-table tr:hover td { background: rgba(229,231,235,0.04); }
+  .mg-slug { font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--ink-40); }
+  .mg-right { text-align: right; white-space: nowrap; }
+  .mg-empty { padding: 26px; color: var(--ink-60); font-size: 13.5px; }
+
+  .mg-pill { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 10px; border-radius: 99px; white-space: nowrap; }
+  .mg-sync { font-size: 10px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+  .mg-sync.active { color: var(--ok); } .mg-sync.manual { color: var(--warn); } .mg-sync.archived { color: var(--ink-40); }
+
+  .mg-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; height: 28px; padding: 0 11px; display: inline-flex; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; text-decoration: none; transition: background .15s, color .15s, border-color .15s; }
+  .mg-btn:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .mg-btn[disabled] { opacity: 0.4; pointer-events: none; }
+  .mg-btn-primary { background: var(--neon-block); border-color: var(--neon-block); color: var(--neon-on-block); }
+  .mg-btn-primary:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .mg-btn-danger { color: var(--danger); border-color: var(--danger); }
+  .mg-btn-danger:hover { background: var(--danger); border-color: var(--danger); color: #fff; }
+  .mg-btn-ghost { border-color: transparent; }
+
+  .mg-banner { padding: 10px 14px; font-size: 13px; margin-bottom: 14px; border: 1px solid; }
+  .mg-banner.err { color: var(--danger); border-color: var(--danger); background: rgba(192,57,43,0.06); }
+  .mg-banner.ok { color: var(--ok); border-color: var(--ok); background: rgba(26,127,55,0.06); }
+
+  .mg-form { background: var(--surface); border: 1px solid var(--line-strong); padding: 22px; margin-bottom: 40px; }
+  .mg-form h3 { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  .mg-form h3:first-child { margin-top: 0; }
+  .mg-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .mg-grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 760px) { .mg-grid2, .mg-grid3 { grid-template-columns: 1fr; } }
+  .mg-field { margin-bottom: 12px; }
+  .mg-field label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.03em; color: var(--ink-60); margin-bottom: 4px; }
+  .mg-field input[type="text"], .mg-field input[type="url"], .mg-field select, .mg-field textarea {
+    width: 100%; font-family: inherit; font-size: 13.5px; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line-strong); padding: 8px 10px; outline: none;
+  }
+  .mg-field input:focus, .mg-field select:focus, .mg-field textarea:focus { outline: 2px solid var(--neon); outline-offset: 1px; }
+  .mg-field textarea { min-height: 110px; resize: vertical; }
+  .mg-field .mg-note { font-size: 11.5px; color: var(--ink-40); margin-top: 4px; }
+  .mg-check { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 7px 10px; border: 1px solid var(--line); }
+  .mg-check input { accent-color: var(--neon-block); width: 14px; height: 14px; }
+  .mg-check.on { border-color: var(--ink); background: var(--paper-2); }
+  .mg-actions { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+
+  .mg-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .mg-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; border: 1px solid var(--line-strong); padding: 3px 8px; }
+  .mg-chip button { background: none; border: none; cursor: pointer; color: var(--ink-40); font-size: 12px; padding: 0; line-height: 1; }
+  .mg-chip button:hover { color: var(--danger); }
+
+  /* Settings palette */
+  .mg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+  .mg-sw { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); padding: 10px; background: var(--surface); }
+  .mg-sw-preview { width: 52px; height: 30px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; border-radius: 99px; flex: none; }
+  .mg-sw label { font-size: 10.5px; color: var(--ink-60); display: flex; align-items: center; gap: 5px; }
+  .mg-sw input[type="color"] { width: 30px; height: 24px; border: 1px solid var(--line-strong); background: none; padding: 0; cursor: pointer; }
+
+  /* Login overlay */
+  .mg-login { position: fixed; inset: 0; background: rgba(10,10,10,0.5); display: flex; align-items: center; justify-content: center; z-index: 500; padding: 16px; }
+  .mg-login-card { background: var(--surface); border: 1px solid var(--ink); padding: 26px; width: 360px; max-width: 100%; box-shadow: 0 18px 50px rgba(0,0,0,0.3); }
+  .mg-login-card h2 { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
+  .mg-login-card p { font-size: 12.5px; color: var(--ink-60); margin-bottom: 14px; }
+
+  /* Confirm modal */
+  .mg-modal { position: fixed; inset: 0; background: rgba(10,10,10,0.5); display: flex; align-items: center; justify-content: center; z-index: 400; padding: 16px; }
+  .mg-modal-card { background: var(--surface); border: 1px solid var(--ink); padding: 22px; width: 440px; max-width: 100%; font-size: 13.5px; }
+</style>
+<!-- AUTH GATE START -->
+<script src="/auth/config.js"></script>
+<script type="module" src="/auth/auth.js"></script>
+<!-- AUTH GATE END -->
+</head>
+<body>
+
+<nav class="tn">
+  <div class="tn-row">
+    <div class="tn-left">
+      <a class="tn-brand" href="index.html"><img class="tn-brand-logo tn-logo-light" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo.png"><img class="tn-brand-logo tn-logo-dark" alt="Turnpage Intelligence" src="assets/turnpage-intel-logo-dark.png"></a>
+      <a class="tn-back" href="index.html">🏠 Dashboard</a>
+      <a class="tn-back" href="docket.html">⚖️ Docket</a>
+      <a class="tn-back" href="calendar.html">📅 Calendar</a>
+      <a class="tn-back" href="notes.html">🗒️ Notes</a>
+      <a class="tn-back" href="news.html">📡 News</a>
+      <a class="tn-back" href="prospects.html">🔭 Prospects</a>
+    </div>
+    <button id="theme-toggle">🖥️</button>
+  </div>
+</nav>
+
+<div class="mg-wrap">
+  <div class="mg-title">
+    <h1>🗂️ Manage</h1>
+    <span class="mg-sub">Cases, themes, filter groups, and intelligence settings — changes commit to the repo like any admin save.</span>
+  </div>
+
+  <div class="mg-tabs" id="mg-tabs">
+    <a class="mg-tab" href="#cases" data-tab="cases">Cases</a>
+    <a class="mg-tab" href="#themes" data-tab="themes">Themes</a>
+    <a class="mg-tab" href="#groups" data-tab="groups">Groups</a>
+    <a class="mg-tab" href="#settings" data-tab="settings">Settings</a>
+  </div>
+
+  <div id="mg-root"><div class="mg-empty">Loading…</div></div>
+</div>
+
+<script src="manage.js"></script>
+<footer id="tn-site-footer"></footer>
+<script src="intel-footer.js"></script>
+</body>
+</html>
