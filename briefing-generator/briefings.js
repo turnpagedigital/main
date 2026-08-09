@@ -393,6 +393,7 @@
     ceErr(""); ceFootMsg("");
     ceEl("ce-title").textContent = slug ? ("Edit: " + (a.display_name || slug)) : "New case";
     ceEl("ce-name").value = a.display_name || "";
+    ceEl("ce-shortname").value = a.short_name || "";
     ceEl("ce-slug").value = a.slug || "";
     ceEl("ce-slug").disabled = !!slug;
     ceEl("ce-slug-note").textContent = slug ? "(fixed)" : "(auto from name if blank)";
@@ -453,7 +454,7 @@
       ? { name: "", url: (ceEl("ce-claimsurl").value || "").trim(), key_dates_url: (ceEl("ce-keydates").value || "").trim() }
       : srctype === "watch" ? null : editingClaims;
     var payload = {
-      slug: slug, display_name: name, type: "case",
+      slug: slug, display_name: name, short_name: (ceEl("ce-shortname").value || "").trim(), type: "case",
       status: (ceEl("ce-status").value || "").trim() || "active",
       sync: ceEl("ce-sync").value, topics: themes,
       case: { parties: (ceEl("ce-parties").value || "").trim(), court: (ceEl("ce-court").value || "").trim(),
