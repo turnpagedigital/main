@@ -202,5 +202,8 @@
       "bg": "#3A3A3A",
       "fg": "#FFFFFF"
     }
-  ]
+  ],
+  "priorities": {
+    "bartz-anthropic": true
+  }
 }
