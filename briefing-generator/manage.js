@@ -73,6 +73,8 @@
             document.body.removeChild(ov);
             _loginPending = null;
             resolve();
+            // A lite (manifest) roster can now upgrade to the full editable one.
+            if (CASES_LITE) loadCases().then(function () { route(); });
           } else {
             err.textContent = (j && j.error) || "Wrong password.";
             err.style.display = "block";
@@ -91,6 +93,7 @@
   // ── State ──────────────────────────────────────────────────────────────────
   var CASES = [];        // /api/admin/cases
   var CASES_ERR = "";    // load failure surfaced in the Cases tab (page still works)
+  var CASES_LITE = false; // true = roster built from the static manifest (read-only editing)
   var THEMES = [          // /api/admin/themes overwrites; fallback keeps editors usable
     { slug: "rewind-tariffs", display_name: "Tariffs / Trade", emoji: "⚖️" },
     { slug: "llm-class-action", display_name: "LLM / Copyright", emoji: "🤖" },
@@ -184,6 +187,105 @@
     { value: "manual", label: "Manual Sync", hint: "Updates only when you press Sync now. No scheduled searching." },
     { value: "archived", label: "Archived", hint: "Docket entries are kept but the case is never searched again." },
   ];
+  // ── Pill color popover (same store the dashboard gears use) ───────────────
+  function persistColors() {
+    try { localStorage.setItem("ud-case-colors", JSON.stringify(savedColors)); } catch (e) {}
+  }
+  function pushColorsToPrefs() {
+    fetch(BASE + "api/prefs").then(function (r) { return r.json(); }).catch(function () { return {}; })
+      .then(function (p) {
+        var colors = (p && p.colors) || {};
+        Object.keys(savedColors).forEach(function (k) { colors[k] = savedColors[k]; });
+        CASES.forEach(function (c) { if (savedColors[c.slug] === undefined) delete colors[c.slug]; });
+        return fetch(BASE + "api/prefs", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            colors: colors,
+            groups: (p && p.groups) || [],
+            presets: (p && p.presets) || [],
+            theme_presets: (p && p.theme_presets) || [],
+            priorities: (p && p.priorities) || {},
+          }),
+        });
+      }).catch(function () {});
+  }
+  function repaintPill(slug) {
+    var c = CASES.filter(function (x) { return x.slug === slug; })[0];
+    var span = root.querySelector('[data-pill="' + slug + '"]');
+    if (c && span) span.innerHTML = casePill(slug, c.short_name || c.display_name);
+  }
+
+  var popEl = null;
+  function closePop() { if (popEl && popEl.parentNode) popEl.parentNode.removeChild(popEl); popEl = null; }
+  document.addEventListener("click", function (ev) {
+    if (popEl && !popEl.contains(ev.target)) closePop();
+  });
+
+  function colorPopover(slug, anchor) {
+    closePop();
+    var c = CASES.filter(function (x) { return x.slug === slug; })[0] || {};
+    var cur = savedColors[slug] || {};
+    var bg = cur.bg || caseColor(slug);
+    var fg = cur.fg || autoFg(bg);
+    var hasBorder = !!cur.border;
+
+    var pop = document.createElement("div");
+    pop.className = "mg-pop";
+    var sws = currentSwatches();
+    pop.innerHTML =
+      '<div class="mg-pop-title">' + esc(c.short_name || c.display_name || slug) + "</div>" +
+      '<div class="mg-pop-sws">' +
+        sws.map(function (s, i) {
+          var on = String(s.bg).toLowerCase() === String(bg).toLowerCase();
+          return '<button type="button" class="mg-pop-sw' + (on ? " on" : "") + '" data-sw="' + i + '" style="background:' + esc(s.bg) + '" title="' + esc(s.bg) + '"></button>';
+        }).join("") +
+      "</div>" +
+      '<div class="mg-pop-row"><label>Bg <input type="color" data-bg value="' + esc(bg) + '"></label>' +
+        '<label>Text <input type="color" data-fg value="' + esc(fg) + '"></label></div>' +
+      '<div class="mg-pop-row"><label><input type="checkbox" data-border-on' + (hasBorder ? " checked" : "") + "> Border</label>" +
+        '<input type="color" data-border value="' + esc(cur.border || fg) + '"></div>' +
+      '<button type="button" class="mg-btn mg-pop-reset" data-reset>Reset to default</button>';
+
+    document.body.appendChild(pop);
+    var rect = anchor.getBoundingClientRect();
+    pop.style.top = (rect.bottom + window.scrollY + 6) + "px";
+    pop.style.left = Math.max(8, Math.min(rect.left + window.scrollX - 90, window.innerWidth - 280)) + "px";
+    popEl = pop;
+
+    function apply() {
+      var entry = { bg: pop.querySelector("[data-bg]").value, fg: pop.querySelector("[data-fg]").value };
+      if (pop.querySelector("[data-border-on]").checked) entry.border = pop.querySelector("[data-border]").value;
+      savedColors[slug] = entry;
+      persistColors();
+      repaintPill(slug);
+      pushColorsToPrefs();
+    }
+    pop.querySelectorAll("[data-sw]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var s = currentSwatches()[Number(b.getAttribute("data-sw"))];
+        pop.querySelector("[data-bg]").value = s.bg;
+        pop.querySelector("[data-fg]").value = s.fg || autoFg(s.bg);
+        pop.querySelectorAll(".mg-pop-sw").forEach(function (x) { x.classList.toggle("on", x === b); });
+        apply();
+      });
+    });
+    pop.querySelectorAll("[data-bg], [data-fg], [data-border]").forEach(function (inp) {
+      inp.addEventListener("input", function () {
+        if (inp.hasAttribute("data-border")) pop.querySelector("[data-border-on]").checked = true;
+        apply();
+      });
+    });
+    pop.querySelector("[data-border-on]").addEventListener("change", apply);
+    pop.querySelector("[data-reset]").addEventListener("click", function () {
+      delete savedColors[slug];
+      persistColors();
+      repaintPill(slug);
+      pushColorsToPrefs();
+      closePop();
+    });
+  }
+
   function defaultCase() {
     return {
       slug: "", display_name: "", short_name: "", type: "case", status: "active", sync: "active",
@@ -201,7 +303,8 @@
       var dockUrl = (c.docket_source && c.docket_source.url) || (c.claims_administrator && c.claims_administrator.url) || "";
       return (
         "<tr" + (sync === "archived" ? ' style="opacity:0.55"' : "") + ">" +
-          "<td>" + casePill(c.slug, c.short_name || c.display_name) +
+          '<td><span data-pill="' + esc(c.slug) + '">' + casePill(c.slug, c.short_name || c.display_name) + "</span>" +
+            '<button type="button" class="mg-gear" data-color="' + esc(c.slug) + '" title="Pill colors">⚙</button>' +
             '<div class="mg-slug">' + esc(c.slug) + "</div></td>" +
           '<td><span class="mg-sync ' + esc(sync) + '">' + esc(sync) + "</span>" +
             (c.status && c.status !== "active" ? '<div class="mg-slug">' + esc(c.status) + "</div>" : "") + "</td>" +
@@ -210,8 +313,9 @@
             (dockUrl ? '<a class="mg-btn mg-btn-ghost" href="' + esc(dockUrl) + '" target="_blank" rel="noopener">Docket ↗</a> ' : "") +
             (sync !== "archived" ? '<button type="button" class="mg-btn" data-sync="' + esc(c.slug) + '">Sync now</button> ' : "") +
             '<button type="button" class="mg-btn" data-export="' + esc(c.slug) + '">Export</button> ' +
-            '<button type="button" class="mg-btn" data-edit="' + esc(c.slug) + '">Edit</button> ' +
-            '<button type="button" class="mg-btn mg-btn-danger" data-del="' + esc(c.slug) + '">Delete</button>' +
+            (CASES_LITE ? "" :
+              '<button type="button" class="mg-btn" data-edit="' + esc(c.slug) + '">Edit</button> ' +
+              '<button type="button" class="mg-btn mg-btn-danger" data-del="' + esc(c.slug) + '">Delete</button>') +
           "</td>" +
         "</tr>"
       );
@@ -220,6 +324,7 @@
     root.innerHTML =
       bannerHtml() +
       (CASES_ERR ? '<div class="mg-banner err">Cases failed to load: ' + esc(CASES_ERR) + "</div>" : "") +
+      (CASES_LITE ? '<div class="mg-banner warn">Showing the pipeline manifest (roster + colors only) — the admin API isn’t reachable yet. Editing prompts for sign-in.</div>' : "") +
       '<div class="mg-head"><h2>Tracked cases</h2>' +
         '<button type="button" class="mg-btn mg-btn-primary" id="mg-new-case">＋ New case</button></div>' +
       '<p class="mg-hint">Every matter the pipeline follows. A case can span multiple themes and carries its own scan guidance. Colors are set from the pill ⚙ menus on the dashboard; the default palette lives in Settings.</p>' +
@@ -229,6 +334,12 @@
       "</table></div>";
 
     $("mg-new-case").addEventListener("click", function () { renderCaseEditor(null); });
+    root.querySelectorAll("[data-color]").forEach(function (b) {
+      b.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        colorPopover(b.getAttribute("data-color"), b);
+      });
+    });
     root.querySelectorAll("[data-edit]").forEach(function (b) {
       b.addEventListener("click", function () {
         var c = CASES.filter(function (x) { return x.slug === b.getAttribute("data-edit"); })[0];
@@ -786,7 +897,24 @@
       if (!j.ok) throw new Error(j.error || "Failed to load cases");
       CASES = j.cases || [];
       CASES_ERR = "";
-    }).catch(function (e) { CASES_ERR = String(e.message || e); });
+      CASES_LITE = false;
+    }).catch(function (e) {
+      // Degrade to the pipeline manifest: roster + colors still work; editing
+      // stays disabled because a save from this partial data would wipe fields.
+      if (MANIFEST.length) {
+        CASES = MANIFEST.map(function (m) {
+          return {
+            slug: m.slug, display_name: m.display_name, short_name: m.short_name,
+            sync: m.sync || "active", topics: m.topics || [],
+            case: { court: m.court || "" }, docket_source: { url: m.docket_url || "" },
+          };
+        });
+        CASES_LITE = true;
+        CASES_ERR = "";
+      } else {
+        CASES_ERR = String(e.message || e);
+      }
+    });
   }
   function loadThemes() {
     return apiFetch("/api/admin/themes").then(function (r) { return r.json(); }).then(function (j) {
