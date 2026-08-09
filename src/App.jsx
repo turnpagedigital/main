@@ -6,6 +6,7 @@ import { I18nProvider } from "./lib/i18n.js";
 import { captureAttribution, trackPageView } from "./lib/analytics.js";
 import AppHeader from "./components/AppHeader.jsx";
 import Footer from "./components/Footer.jsx";
+import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import pageMeta from "./data/page-meta.json";
 import pageCompositions from "./data/page-compositions.json";
 import routesData from "./data/routes.json";
@@ -180,9 +181,13 @@ export default function App() {
   return (
     <I18nProvider>
       {!standalone && <AppHeader currentPage={route.page} />}
-      <Suspense fallback={<LoadingFallback />}>
-        <main id="main-content">{renderPage(route)}</main>
-      </Suspense>
+      {/* Keyed by route so navigating away from a crashed page resets the
+          boundary and clears the error instead of staying stuck on the fallback. */}
+      <ErrorBoundary key={route.page + (route.slug || "")}>
+        <Suspense fallback={<LoadingFallback />}>
+          <main id="main-content">{renderPage(route)}</main>
+        </Suspense>
+      </ErrorBoundary>
       {!standalone && <Footer />}
     </I18nProvider>
   );

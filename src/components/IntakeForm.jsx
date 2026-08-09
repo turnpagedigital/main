@@ -39,8 +39,9 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
 
   useEffect(() => {
     if (!TURNSTILE_SITE_KEY || !turnstileRef.current) return;
+    let interval = null;
     const tryRender = () => {
-      if (!window.turnstile) return;
+      if (!window.turnstile || turnstileWidgetId.current != null) return;
       turnstileWidgetId.current = window.turnstile.render(turnstileRef.current, {
         sitekey: TURNSTILE_SITE_KEY,
         callback: (token) => setTurnstileToken(token),
@@ -51,10 +52,17 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
     };
     // Script may still be loading — retry until turnstile is available
     if (window.turnstile) { tryRender(); } else {
-      const interval = setInterval(() => { if (window.turnstile) { clearInterval(interval); tryRender(); } }, 200);
-      return () => clearInterval(interval);
+      interval = setInterval(() => { if (window.turnstile) { clearInterval(interval); interval = null; tryRender(); } }, 200);
     }
-    return () => { if (turnstileWidgetId.current != null) window.turnstile?.remove(turnstileWidgetId.current); };
+    // Single cleanup covers both paths: clear a pending poll AND remove the
+    // widget so a late-loading script can't leave an orphaned iframe on unmount.
+    return () => {
+      if (interval) clearInterval(interval);
+      if (turnstileWidgetId.current != null) {
+        window.turnstile?.remove(turnstileWidgetId.current);
+        turnstileWidgetId.current = null;
+      }
+    };
   }, []);
 
   async function handleSubmit(e) {
@@ -71,6 +79,7 @@ export default function IntakeForm({ source = "", defaultSubject = "" }) {
       subject: fd.get("subject"),
       message: fd.get("message"),
       source: fd.get("source") || "",
+      website: fd.get("website") || "",   // honeypot — server silently drops if filled
       turnstileToken,
       // Ad-click attribution captured from the landing URL (hidden fields)
       utm_source: fd.get("utm_source") || "",

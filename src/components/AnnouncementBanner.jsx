@@ -32,14 +32,17 @@ export default function AnnouncementBanner({ page = "home" }) {
   // Rotation — only runs when there are multiple alerts for this page
   useEffect(() => {
     if (alerts.length <= 1) return;
+    let fadeTimer = null;
     const interval = setInterval(() => {
       setFading(true);
-      setTimeout(() => {
+      fadeTimer = setTimeout(() => {
         setIdx(i => (i + 1) % alerts.length);
         setFading(false);
       }, FADE_MS);
     }, ROTATE_MS);
-    return () => clearInterval(interval);
+    // Clear BOTH timers on unmount — the inner fade timeout could otherwise
+    // fire setState after the banner has unmounted.
+    return () => { clearInterval(interval); if (fadeTimer) clearTimeout(fadeTimer); };
   }, [alerts.length]); // alerts is a static import — length never changes at runtime
 
   const alert = alerts.length > 0 ? alerts[Math.min(idx, alerts.length - 1)] : null;
