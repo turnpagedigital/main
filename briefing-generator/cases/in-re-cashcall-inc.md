@@ -15,5 +15,5 @@ docket_source:
   type: courtlistener
   docket_id: 73643729
   url: "https://www.courtlistener.com/docket/73643729/cashcall-inc/"
-scan_guidance: "Subprime personal lender CashCall filed Chapter 11 circa July 21, 2026 in the face of more than $400M in adverse litigation judgments — a textbook free-fall foreshadowing a plan fight over whether judgment creditors constitute a separate class, cramdown feasibility, and whether estate assets can satisfy any material recovery to unsecured creditors. The case joins a record surge of financials-sector Chapter 11s in the $100M–$500M liability band in 2026, making it a bellwether for how courts treat"
+scan_guidance: "Subprime personal lender CashCall filed Chapter 11 circa July 21, 2026 in the face of more than $400M in adverse litigation judgments — a textbook free-fall foreshadowing a plan fight over whether judgment creditors constitute a separate class, cramdown feasibility, and whether estate assets can satisfy any material recovery to unsecured creditors."
 ---
