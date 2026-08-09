@@ -1405,7 +1405,12 @@
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ groups: groups }),
-    }).then(function (r) { return r.json(); }).then(function (j) {
+    }).then(function (r) {
+      if (r.status === 429) throw new Error("Cloudflare rate limit hit — wait a minute and retry (the WAF rule needs loosening for /intel/api).");
+      return r.json().catch(function () {
+        throw new Error("Unexpected non-JSON response (" + r.status + ") — likely the WAF rate-limit page. Wait a minute and retry.");
+      });
+    }).then(function (j) {
       if (!j || !j.ok) throw new Error((j && j.error) || "save failed");
       BRIEFING_GROUPS = j.groups;
       renderAll();
