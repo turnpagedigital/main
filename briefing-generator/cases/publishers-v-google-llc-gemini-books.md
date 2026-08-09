@@ -1,6 +1,6 @@
 ---
 slug: publishers-v-google-llc-gemini-books
-display_name: Publishers v. Google (Gemini)
+display_name: Publishers v. Google
 type: case
 status: active
 sync: active
