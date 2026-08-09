@@ -717,6 +717,8 @@ def render_case_page(case):
   Provided for informational purposes only and does not constitute legal advice.
 </footer>
 
+<footer id="tn-site-footer"></footer>
+<script src="../intel-footer.js"></script>
 </body>
 </html>
 """
@@ -1017,6 +1019,8 @@ def render_unified_docket(cases):
 
 <script src="docket.js"></script>
 
+<footer id="tn-site-footer"></footer>
+<script src="intel-footer.js"></script>
 </body>
 </html>
 """
@@ -1273,6 +1277,8 @@ def render_news_page(cases):
 
 <script src="news.js"></script>
 
+<footer id="tn-site-footer"></footer>
+<script src="intel-footer.js"></script>
 </body>
 </html>
 """
@@ -1441,6 +1447,8 @@ def render_unified_calendar(cases):
 
 <script src="calendar.js"></script>
 
+<footer id="tn-site-footer"></footer>
+<script src="intel-footer.js"></script>
 </body>
 </html>
 """
@@ -1588,6 +1596,8 @@ def render_unified_notes(cases):
 
 <script src="notes.js"></script>
 
+<footer id="tn-site-footer"></footer>
+<script src="intel-footer.js"></script>
 </body>
 </html>
 """

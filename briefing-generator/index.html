@@ -137,7 +137,7 @@
     @media (max-width: 720px) { .ih-band { grid-template-columns: 1fr; } .ih-span-2 { grid-column: 1 / -1; } }
     .ih-tile { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
     /* Briefings carousel: 3 cards visible, horizontal scroll for the rest */
-    .ih-carousel { max-width: 1680px; margin: 0 auto 48px; padding: 0 32px; display: flex; align-items: stretch; gap: 6px; }
+    .ih-carousel { max-width: 1680px; margin: 0 auto 96px; padding: 0 32px; display: flex; align-items: stretch; gap: 6px; }
     .ih-theme-grid { flex: 1; min-width: 0; display: flex; gap: 10px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 6px; }
     .ih-theme-grid::-webkit-scrollbar { height: 6px; }
     .ih-theme-grid::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
@@ -257,7 +257,10 @@
     .ih-mm-dot { display: inline-block; width: 4px; height: 4px; border-radius: 50%; }
 
     /* ── Press-page look: gray canvas, white cards, uppercase micro-labels ── */
-    body { background: var(--paper-2); }
+    /* html carries the canvas too — otherwise the gray ends at the body's last
+       pixel and the page looks cut off above the fold's leftover white. */
+    html, body { background: var(--paper-2); }
+    body { min-height: 100vh; }
     .tn-wrap-line, .page-title { background: var(--surface); }
     .page-title { max-width: none; }
     .page-title > * { max-width: 1440px; margin-left: auto; margin-right: auto; padding-left: 32px; padding-right: 32px; }
@@ -439,5 +442,7 @@
 
 <script src="intel-home.js"></script>
 <script src="theme.js"></script>
+<footer id="tn-site-footer"></footer>
+<script src="intel-footer.js"></script>
 </body>
 </html>
