@@ -80,6 +80,10 @@ Ciao
 
 > Pleasants Power Station's Omnis firm reports 600+ creditors — The Herald-Dispatch reports that the bankruptcy court set a September 3 hearing to consider final approval of first-day operational orders
 
+### (no docket number) — 2026-08-04
+
+> Pleasants Power Station's Omnis firm reports 600+ creditors — Omnis Pleasants LLC disclosed more than 600 creditors—70 of them in West Virginia—burdened by over $70 million in debt including a $50.9 m
+
 ## Poolin
 
 ### (no docket number) — 2026-08-02 ★

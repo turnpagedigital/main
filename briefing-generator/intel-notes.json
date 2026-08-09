@@ -280,15 +280,29 @@
       "bookmarked": true,
       "note": "",
       "snooze_until": "",
-      "hidden": true,
+      "hidden": false,
       "deleted_at": "",
-      "updated_at": "2026-08-09T04:08:09.922Z",
+      "updated_at": "2026-08-09T04:08:08.156Z",
       "case_slug": "concord-anthropic",
       "case_name": "Concord Music Group v. Anthropic",
       "entry_number": null,
       "date_filed": "2026-08-05",
       "snippet": "Anthropic Seeks Partial Dismissal in 'Concord II' Copyright Lawsuit — Anthropic has moved for partial dismissal of the 'Concord II' $3 billion lawsuit, including seeking to drop a direct copyright inf",
       "url": "https://www.digitalmusicnews.com/2026/08/05/concord-v-anthropic-ii-dismissal-motion/"
+    },
+    "omnis-pleasants|d2026-08-04|Pleasants Power Station's Omnis firm reports 600+ creditors ": {
+      "bookmarked": false,
+      "note": "",
+      "snooze_until": "",
+      "hidden": true,
+      "deleted_at": "",
+      "updated_at": "2026-08-09T04:08:11.569Z",
+      "case_slug": "omnis-pleasants",
+      "case_name": "Omnis Pleasants",
+      "entry_number": null,
+      "date_filed": "2026-08-04",
+      "snippet": "Pleasants Power Station's Omnis firm reports 600+ creditors — Omnis Pleasants LLC disclosed more than 600 creditors—70 of them in West Virginia—burdened by over $70 million in debt including a $50.9 m",
+      "url": "https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html"
     }
   }
 }
