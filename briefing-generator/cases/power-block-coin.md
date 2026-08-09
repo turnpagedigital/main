@@ -1,12 +1,12 @@
 ---
-added: 2026-06-11
 slug: power-block-coin
-display_name: Power Block Coin, LLC
+display_name: Power Block Coin
 type: case
 status: active
+sync: active
 topics:
-  - fraud-recovery
   - crypto-insolvency
+  - fraud-recovery
   - bankruptcy-creditor-rights
 case:
   parties: "Power Block Coin, LLC"
@@ -18,4 +18,5 @@ docket_source:
   docket_id: 68873409
   url: "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/"
 scan_guidance: "Look for any updates regarding asset sales, adversary proceedings, claim sales, retention apps or other material developments. "
+added: 2026-06-11
 ---
