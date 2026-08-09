@@ -84,26 +84,30 @@ export async function onRequestPost(context) {
     const body = await request.json();
     const { firstName, lastName, email, contactMethod, contactHandle, subject, message, source } = body;
 
-    // Turnstile verification — only enforced when secret key is configured
+    // Turnstile verification — graceful-degradation policy:
+    // A token that IS supplied gets verified strictly (a forged/expired one is
+    // rejected). But a submission that arrives WITHOUT a token is NOT hard-
+    // blocked — if the widget fails to load (bad key like error 400020, CSP,
+    // adblock, a Cloudflare outage) a real visitor can't produce one either,
+    // and blocking them silently kills genuine leads. Token-less requests fall
+    // through to the honeypot below + the Cloudflare rate-limit rule on /api/*.
+    // The client (IntakeForm.jsx) degrades the same way. Only enforced when the
+    // secret key is configured.
     if (env.TURNSTILE_SECRET_KEY) {
       const token = body.turnstileToken || "";
-      if (!token) {
-        return new Response(
-          JSON.stringify({ error: "Security check required. Please complete the verification and try again." }),
-          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
-      }
-      const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v1/siteverify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ secret: env.TURNSTILE_SECRET_KEY, response: token }),
-      });
-      const verifyData = await verifyRes.json().catch(() => ({}));
-      if (!verifyData.success) {
-        return new Response(
-          JSON.stringify({ error: "Security check failed. Please refresh and try again." }),
-          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
+      if (token) {
+        const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v1/siteverify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ secret: env.TURNSTILE_SECRET_KEY, response: token }),
+        });
+        const verifyData = await verifyRes.json().catch(() => ({}));
+        if (!verifyData.success) {
+          return new Response(
+            JSON.stringify({ error: "Security check failed. Please refresh and try again." }),
+            { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+          );
+        }
       }
     }
 
