@@ -12,6 +12,10 @@ Need to research fair use question and write a long-form article about this
 
 ## Concord Music Group v. Anthropic
 
+### (no docket number) — 2026-08-05 ★
+
+> Anthropic Seeks Partial Dismissal in 'Concord II' Copyright Lawsuit — Anthropic has moved for partial dismissal of the 'Concord II' $3 billion lawsuit, including seeking to drop a direct copyright inf
+
 ### (no docket number) — 2026-07-29
 
 > Order on Administrative Motion per Civil Local Rule 7-11
