@@ -32,16 +32,6 @@ const CASES_DIR = "briefing-generator/cases";
 // Pill palette — matches inject_cases.py _PILL_PALETTE (bg colors only)
 const PILL_PALETTE = ["#D4FF00", "#94C6F8", "#B3A8F0", "#7EF4C2", "#F2AAEC", "#1B3A4B"];
 
-function shortName(displayName) {
-  const m = (displayName || "").match(/^(.+?)\s+vs?\.\s+/i);
-  if (m) {
-    const words = m[1].trim().split(/\s+/);
-    return words.slice(0, 2).join(" ");
-  }
-  const words = (displayName || "").trim().split(/\s+/);
-  return words.slice(0, 2).join(" ");
-}
-
 // Updates cases/data/_manifest.json (lightweight case index consumed by docket.js).
 // Non-fatal: if this fails the main case write already succeeded; manifest refreshes on next pipeline run.
 async function updateManifest(env, action, c) {
@@ -69,7 +59,7 @@ async function updateManifest(env, action, c) {
         ...prev,
         slug: c.slug,
         display_name: c.display_name,
-        short_name: c.short_name || shortName(c.display_name),
+        short_name: c.short_name || c.display_name,
         docket_url: (adminId && adminId !== prevId) ? adminUrl : (prev.docket_url || adminUrl),
         court: (c.case && c.case.court) || "",
         topics: c.topics || prev.topics || [],

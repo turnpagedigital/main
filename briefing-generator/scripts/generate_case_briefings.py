@@ -277,7 +277,7 @@ def build_prompt(case, prev_item, filings, articles, house_voice):
     cfg = case["config"]
     data = case["data"] or {}
     c = cfg.get("case", {}) or {}
-    short = (cfg.get("display_name") or case["slug"]).split(" v.")[0].strip()
+    short = (cfg.get("short_name") or "").strip() or cfg.get("display_name") or case["slug"]
     emoji = cfg.get("emoji", "⚖️")
 
     voice_block = ""
@@ -631,7 +631,7 @@ def main():
         if p["kind"] == "case":
             case, cfg = p["case"], p["case"]["config"]
             slug = case["slug"]
-            short = (cfg.get("display_name") or slug).split(" v.")[0].strip()
+            short = (cfg.get("short_name") or "").strip() or cfg.get("display_name") or slug
             base = {
                 "slug": slug,
                 "case_name": cfg.get("display_name") or slug,
