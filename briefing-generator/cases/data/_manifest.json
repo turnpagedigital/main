@@ -83,7 +83,7 @@
   {
     "slug": "hachette-et-al-v-google-llc-gemini",
     "display_name": "Hachette v. Google (Gemini)",
-    "short_name": "Hachette",
+    "short_name": "Hachette (Google)",
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
     "default_color": "#94C6F8",
     "category": "class-action",
@@ -96,7 +96,7 @@
   {
     "slug": "hachette-et-al-v-meta-platforms-llama",
     "display_name": "Hachette et al. v. Meta Platforms (Llama)",
-    "short_name": "Hachette et",
+    "short_name": "Hachette (Meta)",
     "docket_url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
     "default_color": "#F2AAEC",
     "category": "class-action",
