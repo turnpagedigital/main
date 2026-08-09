@@ -352,7 +352,7 @@
     .ih-note-sticky { background: rgba(212,255,0,0.10); padding: 6px 9px; margin: 0 14px 8px; font-size: 11.5px; font-style: italic; color: var(--ink-60); line-height: 1.45; text-decoration: none; display: block; }
     [data-theme="dark"] .ih-note-sticky { background: rgba(212,255,0,0.07); }
     .ih-note-sticky .who { font-style: normal; font-size: 10px; color: var(--ink-40); }
-    .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 14px; padding: 0 2px; }
+    .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 17px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
     .ih-color-pop { position: absolute; z-index: 1000; background: var(--surface); border: 1px solid var(--line-strong); padding: 14px; width: 240px; box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
     .ih-color-pop .ud-pop-title { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
@@ -424,6 +424,9 @@
   /* Uniform control height — emoji glyphs otherwise stretch their buttons taller */
   .ih-tp-btn, .ih-sort-btn, .ih-dd-btn { height: 30px; padding-top: 0; padding-bottom: 0; display: inline-flex; align-items: center; line-height: 1; }
   a.ih-sort-btn { text-decoration: none; }
+  /* Breathing room between the Cards/List toggle and the sort buttons */
+  .ih-cases-tools #ih-view-tgl { margin-right: 28px; }
+  .ih-mg-gear { font-size: 15px; line-height: 1; margin-right: 2px; }
   /* Section titles sit on the gray canvas in black; content is the white box below */
   .ih-tile { background: transparent; border: none; }
   .ih-tile > .ih-head { border-bottom: none; padding: 0 2px 8px; }
@@ -506,7 +509,7 @@
         <button type="button" class="ih-sort-btn" data-sort="priority" title="High-priority cases pinned on top">Priority</button>
         <button type="button" class="ih-sort-btn" data-sort="theme" title="Grouped by practice area">Theme</button>
       </div>
-      <a class="ih-sort-btn" href="manage.html" title="Case, theme, group &amp; settings management">⚙ Manage</a>
+      <a class="ih-sort-btn" href="manage.html" title="Case, theme, group &amp; settings management"><span class="ih-mg-gear">⚙</span> Manage</a>
     </div>
   </div>
 
