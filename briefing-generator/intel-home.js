@@ -1521,4 +1521,83 @@
       if (ev.key === "Escape") closeGroupEditor();
     });
   });
+
+  // ── List view: draggable pill/status column widths ────────────────────────
+  // Grips overlay the list at the column boundaries; widths persist per
+  // browser via --lrw-pill / --lrw-count on the grid (CSS in index.html).
+  (function () {
+    var KEY = "ih-list-colw";
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) {}
+
+    function gridEl() { return document.getElementById("ih-theme-grid"); }
+    function applyVars() {
+      var grid = gridEl();
+      if (!grid) return;
+      if (saved.pill) grid.style.setProperty("--lrw-pill", saved.pill + "px");
+      if (saved.count) grid.style.setProperty("--lrw-count", saved.count + "px");
+    }
+
+    function attach() {
+      var grid = gridEl();
+      if (!grid) return;
+      grid.querySelectorAll(".ih-lr-grip").forEach(function (g) { g.parentNode.removeChild(g); });
+      if (!grid.classList.contains("ih-list-mode")) return;
+      var row = grid.querySelector(".ih-case-listrow");
+      if (!row) return;
+      applyVars();
+      grid.style.position = "relative";
+      [["pill", row.querySelector(".ih-pill")], ["count", row.querySelector(".ih-lr-count")]].forEach(function (pair) {
+        var name = pair[0], el = pair[1];
+        if (!el) return;
+        var g = document.createElement("div");
+        g.className = "ih-lr-grip";
+        g.title = "Drag to resize column";
+        grid.appendChild(g);
+        function place() {
+          var gr = grid.getBoundingClientRect(), er = el.getBoundingClientRect();
+          g.style.left = (er.right - gr.left + 5) + "px";
+        }
+        place();
+        g.addEventListener("mousedown", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var x0 = e.clientX, w0 = el.getBoundingClientRect().width;
+          g.classList.add("on");
+          document.body.style.cursor = "col-resize";
+          function mv(ev) {
+            saved[name] = Math.max(40, Math.round(w0 + (ev.clientX - x0)));
+            applyVars();
+            place();
+          }
+          function up() {
+            document.removeEventListener("mousemove", mv);
+            document.removeEventListener("mouseup", up);
+            g.classList.remove("on");
+            document.body.style.cursor = "";
+            try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e2) {}
+            attach();
+          }
+          document.addEventListener("mousemove", mv);
+          document.addEventListener("mouseup", up);
+        });
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var grid = gridEl();
+      if (!grid) return;
+      applyVars();
+      attach();
+      // Re-attach after each render, ignoring our own grip add/remove churn.
+      new MutationObserver(function (muts) {
+        var isGrip = function (n) { return n.classList && n.classList.contains("ih-lr-grip"); };
+        var relevant = muts.some(function (m) {
+          return Array.prototype.some.call(m.addedNodes, function (n) { return !isGrip(n); }) ||
+                 Array.prototype.some.call(m.removedNodes, function (n) { return !isGrip(n); });
+        });
+        if (relevant) attach();
+      }).observe(grid, { childList: true });
+    });
+  })();
 })();

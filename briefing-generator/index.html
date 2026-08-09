@@ -426,6 +426,12 @@
   a.ih-sort-btn { text-decoration: none; }
   /* Breathing room between the Cards/List toggle and the sort buttons */
   .ih-cases-tools #ih-view-tgl { margin-right: 28px; }
+  /* List view: adjustable pill/status column widths (drag the grips) */
+  .ih-list-mode .ih-case-listrow > .ih-pill { flex: 0 0 var(--lrw-pill, auto); overflow: hidden; text-overflow: ellipsis; }
+  .ih-list-mode .ih-lr-count { flex: 0 0 var(--lrw-count, auto); overflow: hidden; text-overflow: ellipsis; }
+  .ih-lr-grip { position: absolute; top: 0; bottom: 0; width: 10px; margin-left: -5px; cursor: col-resize; z-index: 30; }
+  .ih-lr-grip::after { content: ""; position: absolute; top: 0; bottom: 0; left: 4px; width: 2px; background: transparent; }
+  .ih-lr-grip:hover::after, .ih-lr-grip.on::after { background: var(--neon-block); }
   /* Section titles sit on the gray canvas in black; content is the white box below */
   .ih-tile { background: transparent; border: none; }
   .ih-tile > .ih-head { border-bottom: none; padding: 0 2px 8px; }
