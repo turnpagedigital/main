@@ -803,7 +803,7 @@
       if (!caseOn(x.m.slug)) return;
       var short = x.m.short_name || x.m.display_name || x.m.slug;
       ((x.c && x.c.events) || []).forEach(function (ev) {
-        if (ev.date) events.push({ date: ev.date, short: short, title: ev.title || ev.kind || "", slug: x.m.slug, default_color: x.m.default_color });
+        if (ev.date) events.push({ date: ev.date, time: (ev.time || "").trim(), short: short, title: ev.title || ev.kind || "", slug: x.m.slug, default_color: x.m.default_color });
       });
       ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
         extractEvents(e, short).forEach(function (ev) {
@@ -859,10 +859,13 @@
           '<span class="ih-wk-num">' + d.getDate() + '</span></div>';
       col += evs.slice(0, 5).map(function (ev) {
         var cbg = caseColor(ev.slug, ev.default_color);
-        var label = ev.title ? ev.short + " \u2014 " + ev.title : ev.short;
+        var t = ev.time || "";
+        var label = (t ? t + " \u00b7 " : "") + (ev.title ? ev.short + " \u2014 " + ev.title : ev.short);
         return '<a class="ih-wk-ev" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" ' +
           'href="' + BASE + 'calendar.html#case=' + encodeURIComponent(ev.slug) + '&d=' + iso + '" title="' + esc(label) + '">' +
-          "<strong>" + esc(ev.short) + "</strong>" + (ev.title ? " " + esc(ev.title.slice(0, 110)) : "") + "</a>";
+          "<strong>" + esc(ev.short) + "</strong>" +
+          (t ? ' <span class="ih-wk-time">' + esc(t) + "</span>" : "") +
+          (ev.title ? " " + esc(ev.title.slice(0, 110)) : "") + "</a>";
       }).join("");
       if (evs.length > 5) col += '<span class="ih-wk-more">+' + (evs.length - 5) + " more</span>";
       col += "</div>";
