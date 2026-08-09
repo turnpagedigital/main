@@ -1,11 +1,14 @@
 /* Intelligence global settings endpoint.
 
    Storage: src/data/intelligence-settings.json in the MAIN repo.
-   v1 manages only voice.default; voice.external / voice.internal are reserved
-   (kept as null) for a future public-vs-internal voice split.
+   voice.default = the HOUSE voice (briefings), edited in Admin → Intelligence
+   → Defaults. voice.andrew = the PERSONAL "drafting as Andrew" voice (social
+   posts), edited on the intel site (Manage → Settings). Both editors PUT here;
+   fields are merged so neither overwrites the other. voice.external / internal
+   remain reserved (kept as null).
 
    GET  → { ok, settings }
-   PUT  → save { voice:{ default, external, internal } }
+   PUT  → save { voice:{ default, andrew, external, internal } } (partial ok)
 */
 
 import { isAuthed, jsonResponse } from "./_utils.js";
@@ -27,6 +30,11 @@ function normalizeSettings(raw, prev) {
   return {
     voice: {
       default: typeof v.default === "string" ? v.default : (prevVoice.default || ""),
+      // "drafting as Andrew" — the personal/social voice, edited on the intel
+      // site (Manage → Settings). Merged field-by-field so an Admin save of
+      // voice.default doesn't wipe it, and an intel save of voice.andrew
+      // doesn't wipe voice.default.
+      andrew: typeof v.andrew === "string" ? v.andrew : (prevVoice.andrew ?? ""),
       // external/internal are reserved — accept a string if provided, else preserve/keep null
       external: typeof v.external === "string" ? v.external : (prevVoice.external ?? null),
       internal: typeof v.internal === "string" ? v.internal : (prevVoice.internal ?? null),

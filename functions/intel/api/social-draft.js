@@ -3,7 +3,13 @@
 
    Behind the /intel/_middleware admin gate. Uses the site's ANTHROPIC_API_KEY.
    Grounded in the prospect's already-verified fields (scan_prospects surfaced
-   them with a source + rationale), so no web search / no extra latency. */
+   them with a source + rationale), so no web search / no extra latency.
+
+   Writes AS ANDREW: the tone comes from the "drafting as Andrew" voice
+   (intelligence-settings.json → voice.andrew), edited on the intel site
+   (Manage → Voice). Same voice the nightly social pass uses. */
+
+import { getFileFromGitHub } from "../../api/admin/_github.js";
 
 const MODEL = "claude-sonnet-4-6";
 
@@ -20,8 +26,19 @@ export async function onRequestPost({ request, env }) {
   const name = String(p.case_name || "").trim();
   if (!name) return json({ ok: false, error: "Missing case_name" }, 400);
 
+  // "Drafting as Andrew" voice, edited on the intel site (Manage → Voice).
+  // Best-effort: if the read fails, fall through to the content guardrails only.
+  let andrewVoice = "";
+  try {
+    const vs = await getFileFromGitHub(env, "src/data/intelligence-settings.json", "intelligence-settings.json");
+    andrewVoice = String((vs && vs.ok && vs.data && vs.data.voice && vs.data.voice.andrew) || "").trim();
+  } catch { /* guardrails-only */ }
+  const voiceBlock = andrewVoice
+    ? `VOICE — write as Andrew, in his personal voice (managed on the intel site → Manage → Voice; authoritative for tone):\n\n${andrewVoice.slice(0, 6000)}\n\n`
+    : "";
+
   const prompt =
-`You are writing a ONE-TIME situational briefing and social posts for Turnpage Digital Markets about a specific legal matter. Use ONLY the verified facts below — do not invent facts, numbers, dates, or outcomes.
+`You are writing a ONE-TIME situational briefing and social posts for Turnpage Digital Markets about a specific legal matter — written AS ANDREW, in his own voice. Use ONLY the verified facts below — do not invent facts, numbers, dates, or outcomes.
 
 MATTER
 Headline: ${name}
@@ -31,9 +48,8 @@ Why it matters: ${p.why || "—"}
 Source: ${p.source_name || "—"} — ${p.source_url || "—"}
 Date: ${p.date || "—"}
 
-VOICE (house rules)
+${voiceBlock}CONTENT RULES (always apply, on top of the voice above)
 - Lead with the single sharpest development — a number, a date, or a ruling. No throat-clearing, no "exciting news".
-- Sound like a desk note from someone who reads dockets, not a content marketer. Plain words, short sentences, no hype adjectives.
 - Be concrete: case names, courts, dollar figures, record dates.
 - Never promise outcomes or returns. Never give legal advice. No emojis except an optional single one in the LinkedIn first line.
 
