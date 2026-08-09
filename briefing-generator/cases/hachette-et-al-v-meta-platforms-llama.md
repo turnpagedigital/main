@@ -6,7 +6,6 @@ type: case
 status: active
 sync: active
 topics:
-  - billion-dollar-class-actions
   - llm-class-action
 case:
   parties: "Hachette Book Group, Inc.; Macmillan Publishers; McGraw Hill; Elsevier Inc.; Cengage Learning; Scott Turow v. Meta Platforms, Inc."
@@ -16,6 +15,5 @@ case:
 docket_source:
   type: courtlistener
   docket_id: 73294740
-  url: "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/"
 scan_guidance: "Filed May 5, 2026, five major publishers plus Turow brought a proposed class action alleging Meta used their works to train its Llama models — the same publisher coalition that just filed the Google Gemini suit, signaling a coordinated litigation campaign whose per-work damages and class-certification rulings will directly cross-reference Bartz's $3,000-per-work benchmark and the Kadrey/Meta seeding claims still pending."
 ---
