@@ -41,6 +41,12 @@
 
   function wire(){
     apply();
+    // Mark the current page's nav link (black bold + full-color emoji via CSS).
+    var here=(location.pathname.split('/').pop()||'index.html');
+    document.querySelectorAll('a.tn-back').forEach(function(a){
+      var h=(a.getAttribute('href')||'').split('#')[0].split('?')[0].replace('../','');
+      if(h===here)a.classList.add('tn-on');
+    });
     var b=document.getElementById('theme-toggle');
     if(b)b.addEventListener('click',window.cycleTheme);
     document.addEventListener('keydown',function(e){
