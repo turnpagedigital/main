@@ -1,4 +1,5 @@
 ---
+added: 2026-07-30
 slug: harvest-sherwood
 display_name: Harvest Sherwood
 type: case

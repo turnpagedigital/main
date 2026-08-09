@@ -1,4 +1,5 @@
 ---
+added: 2026-08-03
 slug: papaya-gaming
 display_name: Papaya Gaming
 type: case

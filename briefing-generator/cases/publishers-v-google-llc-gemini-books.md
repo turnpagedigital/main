@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: publishers-v-google-llc-gemini-books
 display_name: Publishers v. Google LLC (Gemini Books)
 type: case

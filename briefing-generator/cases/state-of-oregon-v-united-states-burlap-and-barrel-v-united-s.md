@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: state-of-oregon-v-united-states-burlap-and-barrel-v-united-s
 display_name: State of Oregon v. United States / Burlap and Barrel v. United States (Section 122 — Federal Circuit appeal)
 type: case

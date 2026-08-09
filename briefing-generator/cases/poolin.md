@@ -1,4 +1,5 @@
 ---
+added: 2026-07-31
 slug: poolin
 display_name: Poolin
 type: case

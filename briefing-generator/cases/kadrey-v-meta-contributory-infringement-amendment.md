@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: kadrey-v-meta-contributory-infringement-amendment
 display_name: Kadrey v. Meta — Contributory Infringement Amendment
 type: case

@@ -83,8 +83,13 @@
 
   // Card arrangement — persisted per-device; high-priority flags roam across
   // devices via api/prefs (alongside the shared pill colors).
-  var VALID_SORTS = { activity: 1, az: 1, priority: 1, theme: 1 };
+  var VALID_SORTS = { activity: 1, az: 1, priority: 1, theme: 1, date: 1 };
   var sortMode = "activity";
+  // Clicking the active A–Z / date button flips its direction.
+  var azDir = "asc";     // asc = A–Z, desc = Z–A
+  var dateDir = "desc";  // desc = newest first, asc = oldest first
+  try { if (localStorage.getItem("ih-sort-az-dir") === "desc") azDir = "desc"; } catch (e) {}
+  try { if (localStorage.getItem("ih-sort-date-dir") === "asc") dateDir = "asc"; } catch (e) {}
   try { var _sm = localStorage.getItem("ud-case-sort"); if (VALID_SORTS[_sm]) sortMode = _sm; } catch (e) {}
 
   // Briefing view: cards (default) or a compact one-row-per-case list.
@@ -598,6 +603,7 @@
       var latest = (brief && brief.activity && brief.activity.latest) || "";
       return { html: html, listHtml: listHtml, moved: moved, dev: devCount, latest: latest,
                slug: m.slug, name: (m.short_name || m.display_name || m.slug),
+               added: m.added || "",
                theme: (m.topics && m.topics[0]) || "" };
     });
 
@@ -611,7 +617,17 @@
 
     var htmlOut;
     if (sortMode === "az") {
-      htmlOut = join(cards.slice().sort(byName));
+      var azSorted = cards.slice().sort(byName);
+      if (azDir === "desc") azSorted.reverse();
+      htmlOut = join(azSorted);
+    } else if (sortMode === "date") {
+      // By tracking-start date; cases with no recorded date go last either way.
+      htmlOut = join(cards.slice().sort(function (a, b) {
+        var av = a.added || (dateDir === "desc" ? "0000" : "9999");
+        var bv = b.added || (dateDir === "desc" ? "0000" : "9999");
+        var cmp = av.localeCompare(bv);
+        return dateDir === "desc" ? -cmp : cmp;
+      }));
     } else if (sortMode === "priority") {
       var hi = cards.filter(function (c) { return isPriority(c.slug); }).sort(byName);
       var lo = cards.filter(function (c) { return !isPriority(c.slug); }).sort(byName);
@@ -1138,18 +1154,36 @@
   }
   var _carouselSync = function () {};
 
-  // Card-arrangement control (Activity / A–Z / Priority / Theme).
+  // Card-arrangement control (Activity / A–Z / Priority / Theme / date).
+  // Clicking the active A–Z or Newest/Oldest button again flips its direction.
   function wireSortBar() {
     var bar = document.getElementById("ih-sort");
     if (!bar) return;
     function paint() {
       bar.querySelectorAll("[data-sort]").forEach(function (b) {
-        b.classList.toggle("on", b.getAttribute("data-sort") === sortMode);
+        var mode = b.getAttribute("data-sort");
+        b.classList.toggle("on", mode === sortMode);
+        if (mode === "az") {
+          b.textContent = azDir === "asc" ? "A–Z" : "Z–A";
+          b.title = "Alphabetical by case name — click again to flip to " + (azDir === "asc" ? "Z–A" : "A–Z");
+        }
+        if (mode === "date") {
+          b.textContent = dateDir === "desc" ? "Newest" : "Oldest";
+          b.title = "By when the case was added — click again to flip to " + (dateDir === "desc" ? "oldest first" : "newest first");
+        }
       });
     }
     bar.querySelectorAll("[data-sort]").forEach(function (b) {
       b.addEventListener("click", function () {
-        sortMode = b.getAttribute("data-sort");
+        var mode = b.getAttribute("data-sort");
+        if (mode === sortMode && mode === "az") {
+          azDir = azDir === "asc" ? "desc" : "asc";
+          try { localStorage.setItem("ih-sort-az-dir", azDir); } catch (e) {}
+        } else if (mode === sortMode && mode === "date") {
+          dateDir = dateDir === "desc" ? "asc" : "desc";
+          try { localStorage.setItem("ih-sort-date-dir", dateDir); } catch (e) {}
+        }
+        sortMode = mode;
         try { localStorage.setItem("ud-case-sort", sortMode); } catch (e) {}
         paint();
         renderCaseGrid();

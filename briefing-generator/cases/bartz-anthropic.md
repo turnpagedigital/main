@@ -1,4 +1,5 @@
 ---
+added: 2026-06-11
 slug: bartz-anthropic
 display_name: Bartz v. Anthropic
 type: case

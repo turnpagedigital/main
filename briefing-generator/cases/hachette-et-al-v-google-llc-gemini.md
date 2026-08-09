@@ -1,4 +1,5 @@
 ---
+added: 2026-08-07
 slug: hachette-et-al-v-google-llc-gemini
 display_name: Hachette v. Google (Gemini)
 short_name: "Hachette (Google)"

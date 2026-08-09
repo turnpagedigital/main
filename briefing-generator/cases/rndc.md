@@ -1,4 +1,5 @@
 ---
+added: 2026-07-29
 slug: rndc
 display_name: RNDC
 type: case

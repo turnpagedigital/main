@@ -1,4 +1,5 @@
 ---
+added: 2026-07-30
 slug: kahan
 display_name: Kahan
 type: case

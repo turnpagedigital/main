@@ -1,4 +1,5 @@
 ---
+added: 2026-06-12
 slug: sleep-number
 display_name: Sleep Number
 type: case

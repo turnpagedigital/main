@@ -1,4 +1,5 @@
 ---
+added: 2026-07-30
 slug: terraform-labs
 display_name: Terraform Labs
 type: case

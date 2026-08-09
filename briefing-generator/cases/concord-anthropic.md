@@ -1,4 +1,5 @@
 ---
+added: 2026-06-11
 slug: concord-anthropic
 display_name: Concord Music Group v. Anthropic
 type: case
