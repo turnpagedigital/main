@@ -5,6 +5,7 @@ import BottomCTA from "../components/BottomCTA.jsx";
 import pressData       from "../data/press.json";
 import bioData         from "../data/bio.json";
 import pageCompositions from "../data/page-compositions.json";
+import topicsData      from "../data/topics.json";
 
 // Read the bottom-cta section content from the page builder so admin edits
 // made in Page Builder → Press take effect without a code change.
@@ -72,14 +73,12 @@ const OUTLET_DOMAINS = {
   "the economist": "economist.com",
 };
 
-/* ── Sub-page label map ─────────────────────────────────────────────────── */
-const PAGE_LABELS = {
-  "copyright":  "Copyright Claims",
-  "crypto":     "Locked Crypto",
-  "litigation": "Litigation Claims",
-  "tariffs":    "Tariff Refunds",
-  "bankruptcy": "Bankruptcy Claims",
-};
+/* ── Sub-page label map ─────────────────────────────────────────────────────
+   Topic taxonomy lives in src/data/topics.json (Admin → Content → Topics),
+   read at build time. Independent of the intel themes in briefing-generator. */
+const PAGE_LABELS = Object.fromEntries(
+  (topicsData.topics || []).map(t => [t.key, t.label])
+);
 
 /* ── Media type labels for filter pills ─────────────────────────────────── */
 const TYPE_OPTS = [

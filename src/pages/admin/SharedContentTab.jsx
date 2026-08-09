@@ -7,6 +7,7 @@ const BioTab           = lazy(() => import("./BioTab.jsx"));
 const PostsTab         = lazy(() => import("./PostsTab.jsx"));
 const DealsTab         = lazy(() => import("./DealsTab.jsx"));
 const PressTab         = lazy(() => import("./PressTab.jsx"));
+const TopicsTab        = lazy(() => import("./TopicsTab.jsx"));
 const AlertsTab        = lazy(() => import("./AlertsTab.jsx"));
 const FAQsTab          = lazy(() => import("./FAQsTab.jsx"));
 const TestimonialsTab  = lazy(() => import("./TestimonialsTab.jsx"));
@@ -29,6 +30,7 @@ const SUB_TABS = [
   { key: "posts",         label: "Posts & Briefings" },
   { key: "deals",         label: "Deals" },
   { key: "press",         label: "Press" },
+  { key: "topics",        label: "Topics" },
   { key: "alerts",        label: "Alerts" },
   { key: "faqs",          label: "FAQs" },
   { key: "testimonials",  label: "Testimonials" },
@@ -67,6 +69,7 @@ export default function SharedContentTab({ onDirtyChange }) {
         {sub === "posts"         && <PostsTab        onDirtyChange={makeDirty("posts")} />}
         {sub === "deals"         && <DealsTab        onDirtyChange={makeDirty("deals")} />}
         {sub === "press"         && <PressTab        onDirtyChange={makeDirty("press")} />}
+        {sub === "topics"        && <TopicsTab       onDirtyChange={makeDirty("topics")} />}
         {sub === "alerts"        && <AlertsTab       onDirtyChange={makeDirty("alerts")} />}
         {sub === "faqs"          && <FAQsTab         onDirtyChange={makeDirty("faqs")} />}
         {sub === "testimonials"  && <TestimonialsTab onDirtyChange={makeDirty("testimonials")} />}

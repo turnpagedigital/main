@@ -104,6 +104,7 @@ index.html                 — Vite entry, meta + OG tags
 - **Replace Crypto placeholder copy** → edit `src/pages/Crypto.jsx`. Structure mirrors AICopyright.jsx.
 - **Hero copy** → home is in `src/pages/Home.jsx`; AI Copyright hero is in `src/pages/AICopyright.jsx` (uses the shared `Hero` component).
 - **Subject options on contact form** → edit subjects in `src/data/contact-form.json` (or via Admin → Content → Contact Form). `IntakeForm.jsx` reads them at build time. The `id` field is what gets submitted; use a readable value like "Copyright claims". The email notification shows the `id` value directly.
+- **Add/rename a public Topic (press filter + item tags)** → Admin → Content → Topics (`src/data/topics.json`, served by `/api/admin/topics`). Press.jsx and PressTab read it at build time — changes go live on the next deploy. Topics are deliberately INDEPENDENT of the intel themes in `briefing-generator` (scan beats, managed at `/intel/manage.html`).
 - **Change a site-wide color (NEON, INK, …)** → `/admin/css` → Colors & Tokens, or edit `src/data/tokens.js`. Everything importing the token follows on the next deploy.
 - **Change FAQ/Testimonials/CTA section colors** → `/admin/css` → Section Palettes, or edit `src/data/section-palettes.json`. Those sections resolve colors from this file at render time (`src/lib/palette-resolver.js`); `tests/palette-equivalence.test.js` snapshots the expected values — update it when intentionally changing a palette.
 
@@ -156,7 +157,7 @@ Both paths write to the same files. Git enforces ordering — latest commit wins
 
 | Master tab URL | Sub-tabs | What they manage |
 |---|---|---|
-| `/admin/content` | Bio, Posts, Briefings, Deals, Press, Alerts, FAQs, Testimonials, Contact Form | `bio.json`, `public/briefings/*`, `deals.json`, `press.json`, `alerts.json`, `faqs.json`, `testimonials.json`, `contact-form.json` |
+| `/admin/content` | Bio, Posts, Briefings, Deals, Press, Topics, Alerts, FAQs, Testimonials, Contact Form | `bio.json`, `public/briefings/*`, `deals.json`, `press.json`, `topics.json`, `alerts.json`, `faqs.json`, `testimonials.json`, `contact-form.json` |
 | `/admin/page-builder` | Builder, Section Types | `page-compositions.json` (+ registers routes in `routes.json` on page create/delete; changes page URLs via `/api/admin/page-path` cascade) |
 | `/admin/registration` | Flows, Pricing | `forms.json` (multi-step registration wizards rendered by the `registration-flow` section) + `functions/api/_pricing-config.json` (PRIVATE Bartz offer inputs — recovery $ per self-pub/publisher work, payout %, volume premium % + threshold; served only to logged-in admins via `/api/admin/pricing`, priced server-side by `/api/quote` and `/api/register`) |
 | `/admin/assets` | — | `file-library.json` — archive, rename cascade, permanent delete cascade |

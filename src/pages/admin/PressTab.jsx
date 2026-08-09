@@ -3,19 +3,16 @@ import { NEON, FONT, INK, INK_60, LINE } from "../../data/tokens.js";
 import { inputStyle, selectStyle, btnStyle, btnPrimaryStyle, iconBtnStyle, filterSelectStyle, formatTime, CenteredMessage, ErrorBanner } from "./shared.jsx";
 import { useTabData } from "./useTabData.js";
 import AssetPicker from "../../components/admin/AssetPicker.jsx";
+import topicsData from "../../data/topics.json";
 
 // Default suggestions shown in the datalist dropdowns — user can type anything else
 const PRESS_TYPE_SUGGESTIONS   = ["publication", "podcast", "article", "social post", "blog post", "news"];
 const PRESS_AUTHOR_SUGGESTIONS = ["Andrew", "Other"];
 
-const PRESS_PAGE_VALUES = ["copyright", "crypto", "litigation", "tariffs", "bankruptcy"];
-const PRESS_PAGE_LABELS = {
-  "copyright":  "Copyright Claims",
-  "crypto":     "Locked Crypto",
-  "litigation": "Litigation Claims",
-  "tariffs":    "Tariff Refunds",
-  "bankruptcy": "Bankruptcy Claims",
-};
+// Topic taxonomy from src/data/topics.json (Admin → Content → Topics) —
+// independent of the intel themes in briefing-generator.
+const PRESS_PAGE_VALUES = (topicsData.topics || []).map(t => t.key);
+const PRESS_PAGE_LABELS = Object.fromEntries((topicsData.topics || []).map(t => [t.key, t.label]));
 
 /* Parse freeform date strings into a sortable timestamp (0 = unknown → bottom) */
 function parseDateForSort(str) {
