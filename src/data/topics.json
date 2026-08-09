@@ -1,0 +1,10 @@
+{
+  "_comment": "Public-site Topics taxonomy — tags press/posts items (their `pages` arrays) and drives the Press page Topics filter. Fully independent of the intel themes in briefing-generator (those are scan beats, managed at /intel/manage.html). Edit via Admin → Content → Topics. Renaming a label is safe; changing/removing a key orphans that tag on existing items (they just stop matching the filter).",
+  "topics": [
+    { "key": "copyright",  "label": "Copyright Claims" },
+    { "key": "crypto",     "label": "Locked Crypto" },
+    { "key": "litigation", "label": "Litigation Claims" },
+    { "key": "tariffs",    "label": "Tariff Refunds" },
+    { "key": "bankruptcy", "label": "Bankruptcy Claims" }
+  ]
+}
