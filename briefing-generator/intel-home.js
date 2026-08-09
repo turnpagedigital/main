@@ -1192,6 +1192,109 @@
     paint();
   }
 
+  // ── ⌘K case palette + S-then-A show-all (same behavior as the docket) ─────
+  var palEl = null;
+  var palIdx = 0;
+  var palEntries = [];
+
+  function paletteApply(slug) {
+    closePalette();
+    MANIFEST.forEach(function (m) { activeCases[m.slug] = slug === null ? true : m.slug === slug; });
+    activeCases.__unassigned__ = slug === null;
+    // Solo-filtering must always SHOW the pick — open every theme lens too.
+    Object.keys(THEMES).forEach(function (s) { activeThemes[s] = true; });
+    saveFilters();
+    renderAll();
+  }
+
+  function closePalette() {
+    if (palEl && palEl.parentNode) palEl.parentNode.removeChild(palEl);
+    palEl = null;
+    palEntries = [];
+    palIdx = 0;
+  }
+
+  function paletteMatches(q) {
+    q = (q || "").toLowerCase().trim();
+    var out = [];
+    MANIFEST.forEach(function (m) {
+      var label = m.short_name || m.display_name || m.slug;
+      if (!q ||
+          (m.display_name || "").toLowerCase().indexOf(q) !== -1 ||
+          label.toLowerCase().indexOf(q) !== -1 ||
+          (m.slug || "").toLowerCase().indexOf(q) !== -1) {
+        out.push({ slug: m.slug, label: m.display_name || label, note: m.slug });
+      }
+    });
+    return out.slice(0, 14);
+  }
+
+  function paletteRender(q) {
+    var ul = palEl.querySelector(".ud-pal-list");
+    palEntries = paletteMatches(q);
+    if (palIdx >= palEntries.length) palIdx = Math.max(0, palEntries.length - 1);
+    ul.innerHTML = palEntries.length
+      ? palEntries.map(function (e, i) {
+          return '<li class="ud-pal-item' + (i === palIdx ? " ud-pal-cur" : "") + '" data-idx="' + i + '">' +
+            esc(e.label) + ' <span class="ud-pal-slug">' + esc(e.note) + "</span></li>";
+        }).join("")
+      : '<li class="ud-pal-empty">No case matches.</li>';
+    ul.querySelectorAll("[data-idx]").forEach(function (li) {
+      li.addEventListener("click", function () {
+        paletteApply(palEntries[Number(li.getAttribute("data-idx"))].slug);
+      });
+    });
+  }
+
+  function openPalette() {
+    if (palEl || !MANIFEST.length) return;
+    var wrap = document.createElement("div");
+    wrap.className = "ud-pal-overlay";
+    wrap.innerHTML =
+      '<div class="ud-pal-box">' +
+        '<input type="text" class="ud-pal-input" placeholder="Filter the dashboard to a case…" aria-label="Filter to a case">' +
+        '<ul class="ud-pal-list"></ul>' +
+        '<div class="ud-pal-hint">↑↓ choose · Enter filters to that case · Esc closes · S then A shows all</div>' +
+      "</div>";
+    document.body.appendChild(wrap);
+    palEl = wrap;
+    var input = wrap.querySelector(".ud-pal-input");
+    paletteRender("");
+    input.focus();
+    input.addEventListener("input", function () { palIdx = 0; paletteRender(input.value); });
+    input.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowDown") { ev.preventDefault(); palIdx = Math.min(palEntries.length - 1, palIdx + 1); paletteRender(input.value); }
+      else if (ev.key === "ArrowUp") { ev.preventDefault(); palIdx = Math.max(0, palIdx - 1); paletteRender(input.value); }
+      else if (ev.key === "Enter") { ev.preventDefault(); if (palEntries[palIdx]) paletteApply(palEntries[palIdx].slug); }
+      else if (ev.key === "Escape") { closePalette(); }
+    });
+    wrap.addEventListener("mousedown", function (ev) { if (ev.target === wrap) closePalette(); });
+  }
+
+  function wireShortcuts() {
+    var sAt = 0;
+    document.addEventListener("keydown", function (ev) {
+      if ((ev.metaKey || ev.ctrlKey) && !ev.altKey && (ev.key === "k" || ev.key === "K")) {
+        ev.preventDefault();
+        openPalette();
+        return;
+      }
+      if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+      var t = ev.target || {}, tag = (t.tagName || "").toLowerCase();
+      if (tag === "input" || tag === "textarea" || tag === "select" || t.isContentEditable) return;
+      var k = (ev.key || "").toLowerCase();
+      var now = Date.now();
+      if (k === "s") { sAt = now; return; }
+      if (k === "a" && sAt && now - sAt < 900) {
+        ev.preventDefault();
+        sAt = 0;
+        paletteApply(null);   // show all cases + all themes
+        return;
+      }
+      sAt = 0;
+    });
+  }
+
   // Cards ⇄ List view toggle for the briefing grid.
   function wireViewToggle() {
     var tgl = document.getElementById("ih-view-tgl");
@@ -1219,5 +1322,6 @@
     wireCarousel();
     wireSortBar();
     wireViewToggle();
+    wireShortcuts();
   });
 })();
