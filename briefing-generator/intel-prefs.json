@@ -89,6 +89,10 @@
     "britannica-merriam-webster-v-openai": {
       "bg": "#d9d9d9",
       "fg": "#000000"
+    },
+    "in-re-cashcall-inc": {
+      "bg": "#2d42e1",
+      "fg": "#ffffff"
     }
   },
   "groups": [
