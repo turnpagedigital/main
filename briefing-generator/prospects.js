@@ -103,7 +103,10 @@
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.assign({ id: id }, fields)),
-    }).then(function (r) { return r.json(); }).then(function (j) {
+    }).then(function (r) {
+      if (r.status === 429) throw new Error("rate-limited — wait a minute and retry");
+      return r.json().catch(function () { throw new Error("non-JSON response (" + r.status + ") — retry in a minute"); });
+    }).then(function (j) {
       if (!j || !j.ok) throw new Error((j && j.error) || "save failed");
       var it = findItem(id);
       if (it) {
