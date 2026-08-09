@@ -101,7 +101,6 @@
     "default_color": "#F2AAEC",
     "category": "class-action",
     "topics": [
-      "billion-dollar-class-actions",
       "llm-class-action"
     ],
     "court": "To be confirmed (filed May 5, 2026)",
@@ -271,14 +270,14 @@
   },
   {
     "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
-    "display_name": "State of Oregon v. United States / Burlap and Barrel v. United States (Section 122 — Federal Circuit appeal)",
-    "short_name": "State of",
+    "display_name": "Burlap and Barrel",
+    "short_name": "Burlap and",
     "docket_url": "https://www.courtlistener.com/docket/72381015/burlap-and-barrel-inc-v-trump/",
     "default_color": "#D4FF00",
     "category": "class-action",
     "topics": [
-      "billion-dollar-class-actions",
-      "rewind-tariffs"
+      "rewind-tariffs",
+      "billion-dollar-class-actions"
     ],
     "court": "U.S. Court of Appeals for the Federal Circuit (on appeal from CIT)",
     "sync": "active"
