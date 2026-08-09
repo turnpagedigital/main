@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-08",
-    "fetched_at": "2026-08-08T23:52:29.053236+00:00",
-    "as_of": "Aug 8, 2026",
+    "fetched_at": "2026-08-09T20:58:24.548633+00:00",
+    "as_of": "Aug 9, 2026",
     "backfilled": true,
-    "new_in_72h": 13,
+    "new_in_72h": 6,
     "recent": [
       {
         "entry_number": 55,
@@ -118,7 +118,7 @@
         "time_filed": "17:40:31",
         "date_display": "Aug 6, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Adam J. Goldberg (Related Doc # 46) Signed on 8/6/2026. (LMC) (Entered: 08/06/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -128,7 +128,7 @@
         "time_filed": "17:39:51",
         "date_display": "Aug 6, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Christopher Harris (Related Doc # 45) Signed on 8/6/2026. (LMC) (Entered: 08/06/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -138,7 +138,7 @@
         "time_filed": "17:39:10",
         "date_display": "Aug 6, 2026",
         "description": "Order Approving Motion for Admission pro hac vice of Ray C. Schrock (Related Doc # 44) Signed on 8/6/2026. (LMC) (Entered: 08/06/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -148,7 +148,7 @@
         "time_filed": "16:13:19",
         "date_display": "Aug 6, 2026",
         "description": "Motion to Appear pro hac vice of Adam J. Goldberg of Latham & Watkins LLP. Receipt Number 5035603, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/06/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -158,7 +158,7 @@
         "time_filed": "16:12:18",
         "date_display": "Aug 6, 2026",
         "description": "Motion to Appear pro hac vice of Christopher Harris of Latham & Watkins LLP. Receipt Number 5035603, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/06/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -168,7 +168,7 @@
         "time_filed": "16:11:16",
         "date_display": "Aug 6, 2026",
         "description": "Motion to Appear pro hac vice of Ray C. Schrock of Latham & Watkins LLP. Receipt Number 5035603, Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/06/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -178,7 +178,7 @@
         "time_filed": "16:09:55",
         "date_display": "Aug 6, 2026",
         "description": "Notice of Appearance. Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/06/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

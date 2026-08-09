@@ -32,8 +32,8 @@
   {
     "slug": "britannica-merriam-webster-v-openai",
     "added": "2026-08-07",
-    "display_name": "Britannica / Merriam-Webster v. OpenAI",
-    "short_name": "Britannica /",
+    "display_name": "Britannica v. OpenAI",
+    "short_name": "Britannica",
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
     "default_color": "#7EF4C2",
     "category": "class-action",
@@ -109,7 +109,6 @@
     "default_color": "#F2AAEC",
     "category": "class-action",
     "topics": [
-      "billion-dollar-class-actions",
       "llm-class-action"
     ],
     "court": "To be confirmed (filed May 5, 2026)",
@@ -132,8 +131,8 @@
   {
     "slug": "in-re-cashcall-inc",
     "added": "2026-08-07",
-    "display_name": "In re CashCall, Inc.",
-    "short_name": "In re",
+    "display_name": "CashCall",
+    "short_name": "CashCall",
     "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
     "default_color": "#1B3A4B",
     "category": "bankruptcy",
@@ -250,7 +249,7 @@
   {
     "slug": "publishers-v-google-llc-gemini-books",
     "added": "2026-08-07",
-    "display_name": "Publishers v. Google LLC (Gemini Books)",
+    "display_name": "Publishers v. Google (Gemini)",
     "short_name": "Publishers",
     "docket_url": "https://www.courtlistener.com/docket/67599029/in-re-google-generative-ai-copyright-litigation/",
     "default_color": "#B3A8F0",
@@ -292,14 +291,14 @@
   {
     "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
     "added": "2026-08-07",
-    "display_name": "State of Oregon v. United States / Burlap and Barrel v. United States (Section 122 — Federal Circuit appeal)",
-    "short_name": "State of",
+    "display_name": "Burlap and Barrel",
+    "short_name": "Burlap and",
     "docket_url": "https://www.courtlistener.com/docket/72381015/burlap-and-barrel-inc-v-trump/",
     "default_color": "#D4FF00",
     "category": "class-action",
     "topics": [
-      "billion-dollar-class-actions",
-      "rewind-tariffs"
+      "rewind-tariffs",
+      "billion-dollar-class-actions"
     ],
     "court": "U.S. Court of Appeals for the Federal Circuit (on appeal from CIT)",
     "sync": "active"
