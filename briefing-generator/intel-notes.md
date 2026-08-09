@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-09 04:07 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-09 04:08 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -67,6 +67,10 @@ Ciao
 ### (no docket number) — 2026-08-05
 
 > Meet The Attorneys Guiding Omnis Pleasants In Ch. 11 — Young Conaway Stargatt & Taylor LLP and Herbert Smith Freehills Kramer LLP are serving as counsel for Omnis Pleasants LLC as it navigates roughly
+
+### (no docket number) — 2026-08-05
+
+> Pleasants Power Station's Omnis firm reports 600+ creditors — The Herald-Dispatch reports that the bankruptcy court set a September 3 hearing to consider final approval of first-day operational orders
 
 ## Poolin
 
