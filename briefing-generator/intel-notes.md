@@ -22,6 +22,12 @@ Need to research fair use question and write a long-form article about this
 
 hi
 
+## Crypto Distress
+
+### (no docket number) — 2026-08-06 ★
+
+> Crypto Trader Wintermute Steps Onto Regulated Wall Street With Broker License — One of many digital currency firms pushing into traditional finance services, Wintermute aims to take on Jane Street, Ci
+
 ## Goliath
 
 ### (no docket number) — 2026-07-28
