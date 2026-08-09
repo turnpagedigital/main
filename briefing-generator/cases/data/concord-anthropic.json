@@ -8,12 +8,17 @@
     "judge": "Eumi K. Lee",
     "docket_id": "68889092",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
+    "date_last_filing": "2026-07-29",
+    "fetched_at": "2026-08-09T23:50:11.517373+00:00",
+    "as_of": "Aug 9, 2026",
+    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -8373,11 +8378,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-08-09T22:53:25.207898+00:00",
-    "as_of": "Aug 9, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": null,
   "coverage": [
