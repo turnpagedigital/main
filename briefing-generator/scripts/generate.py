@@ -294,7 +294,7 @@ def build_case_truth_block(topic_slug, key_focus_slugs=()):
             except Exception:
                 pass
         blocks.append(entry)
-    header = ("# Tracked-case ground truth (AUTHORITATIVE — overrides anything "
+    header = ("# Tracked-case docket record (AUTHORITATIVE — overrides anything "
               "you believe from memory; never contradict this)\n")
     if focus:
         header += ("\nCases marked ★ KEY FOCUS are the priority matters for this beat — open today's "
@@ -372,8 +372,8 @@ Inline citations must use the format `(__[Source Name](https://url)__)` for ever
 
 VERIFICATION RULES (hard requirements):
 - You have a web_search tool. USE IT to verify every case posture, docket number, judge, dollar figure, percentage, and date before asserting it, and to find the specific article or primary-source page for each citation.
-- Every factual proposition must cite a specific URL you confirmed THIS run: from the news scan above, your web_search results, or the tracked-case ground truth. Cite the article/filing page itself — never a bare outlet homepage.
-- The tracked-case ground truth block is authoritative. If your memory of a case conflicts with it, the block wins.
+- Every factual proposition must cite a specific URL you confirmed THIS run: from the news scan above, your web_search results, or the tracked-case docket record. Cite the article/filing page itself — never a bare outlet homepage.
+- The tracked-case docket record block is authoritative. If your memory of a case conflicts with it, the block wins.
 - If you cannot verify a claim, OMIT it entirely. Do not write "plausible" developments. Never use the phrase "needs verification".
 
 Output: markdown only. Start with `# {topic['emoji']}`. End with the "informational purposes" disclaimer line. No prose outside the markdown.
@@ -783,7 +783,7 @@ def main():
         if case_truth_block:
             kf = topic.get('key_focus_cases') or []
             extra = f" (key focus: {', '.join(kf)})" if kf else ""
-            print(f"  ground truth: tracked-case block included{extra}")
+            print(f"  docket record: tracked-case block included{extra}")
         prompt = build_prompt(topic, news_block, case_truth_block)
 
         response = create_with_retry(
