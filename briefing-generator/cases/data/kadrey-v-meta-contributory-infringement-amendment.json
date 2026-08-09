@@ -2,23 +2,18 @@
   "case": {
     "slug": "kadrey-v-meta-contributory-infringement-amendment",
     "display_name": "Kadrey v. Meta — Contributory Infringement Amendment",
-    "case_name": "Kadrey v. Meta Platforms, Inc.",
+    "case_name": "Richard Kadrey et al. v. Meta Platforms, Inc.",
     "court": "District Court N.D. Cal.",
     "case_number": "3:23-cv-03417",
     "judge": "Vince Chhabria",
     "docket_id": "67569326",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-09T22:55:19.766072+00:00",
-    "as_of": "Aug 9, 2026",
-    "backfilled": false,
     "new_in_72h": 2,
     "recent": [
       {
@@ -6114,9 +6109,12 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.415175/gov.uscourts.cand.415175.256.0.pdf"
       }
     ],
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-09T22:55:19.766072+00:00",
+    "as_of": "Aug 9, 2026",
+    "backfilled": false,
     "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=67569326&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=32"
   },
   "claims_administrator": null,
-  "coverage": [],
-  "events": []
+  "coverage": []
 }
