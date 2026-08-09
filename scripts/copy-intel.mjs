@@ -43,6 +43,10 @@ await cp(SRC, DEST, {
 // Admin-managed theme names (display_name/emoji) — the intel pages read
 // this so renames in /admin/intelligence show up after the next build.
 await copyFile("src/data/themes.json", join(DEST, "themes.json"));
+// Site footer data — intel-footer.js renders the public site's footer from
+// these, so admin Footer/Contact edits reach /intel on the next build.
+await copyFile("src/data/footer.json", join(DEST, "footer.json"));
+await copyFile("src/data/contact-form.json", join(DEST, "contact-form.json"));
 
 async function* walk(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
