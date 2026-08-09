@@ -1,3 +1,16 @@
 {
-  "groups": []
+  "groups": [
+    {
+      "id": "other-copyright-suits",
+      "name": "Other Copyright Suits",
+      "members": [
+        "britannica-merriam-webster-v-openai",
+        "getty-images-us-v-stability-ai-nd-cal",
+        "hachette-et-al-v-google-llc-gemini",
+        "hachette-et-al-v-meta-platforms-llama",
+        "kadrey-v-meta-contributory-infringement-amendment",
+        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153"
+      ]
+    }
+  ]
 }
