@@ -90,11 +90,42 @@ function sanitizeFlow(f) {
   };
 }
 
+// Field ids must be unique within a flow (the server rejects duplicates, and
+// showIf / computed fields reference them by id). Keep every id that's already
+// unique — so existing references stay valid — and re-mint only blank or
+// duplicated ids from the field's own label. Safety net over per-field id
+// generation: two fields that both ended up "p" become "phone" and
+// "publisher_name" on save.
+function dedupeFieldIds(flow) {
+  const counts = {};
+  (flow.steps || []).forEach(s => (s.fields || []).forEach(f => {
+    if (f && f.id) counts[f.id] = (counts[f.id] || 0) + 1;
+  }));
+  const used = new Set(Object.keys(counts).filter(id => counts[id] === 1));
+  const mint = (base) => {
+    const root = base || "field";
+    let id = root, n = 2;
+    while (used.has(id)) id = `${root}_${n++}`;
+    used.add(id);
+    return id;
+  };
+  return {
+    ...flow,
+    steps: (flow.steps || []).map(s => ({
+      ...s,
+      fields: (s.fields || []).map(f => {
+        if (f && f.id && counts[f.id] === 1) return f; // unique → keep (preserves references)
+        return { ...f, id: mint(slugify((f && f.label) || (f && f.id) || "field").replace(/-/g, "_")) };
+      }),
+    })),
+  };
+}
+
 export default function FlowsTab({ onDirtyChange }) {
   const { data, setData, phase, error, dirty, lastSavedAt, save, load, conflict } = useTabData({
     endpoint: "/api/admin/forms",
     parse: body => ({ flows: (body.data.flows || []).map(sanitizeFlow), _baseVersion: sectionsFingerprint(body.data.flows || []) }),
-    serialize: data => ({ flows: data.flows, baseVersion: data._baseVersion }),
+    serialize: data => ({ flows: data.flows.map(dedupeFieldIds), baseVersion: data._baseVersion }),
     onDirtyChange,
   });
   const [openFlow, setOpenFlow] = useState(null);
@@ -442,7 +473,8 @@ function FieldRow({ field, index, total, priorFields = [], onChange, onRemove, o
     <div style={{ border: `1px solid ${LINE}`, borderRadius: 5, padding: "0.6rem", marginBottom: "0.55rem", background: "#fff" }}>
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr auto auto auto auto", gap: 8, alignItems: "center" }}>
         <input style={inputStyle} placeholder="Question / label" value={field.label}
-          onChange={e => onChange({ label: e.target.value, id: field.id || slugify(e.target.value).replace(/-/g, "_") })} />
+          onChange={e => onChange({ label: e.target.value })}
+          onBlur={e => { if (!field.id) onChange({ id: slugify(e.target.value).replace(/-/g, "_") }); }} />
         <select style={selectStyle} value={field.type} onChange={e => onChange({ type: e.target.value })}>
           {FIELD_TYPES.map(t => <option key={t.value} value={t.value}>{t.label}</option>)}
         </select>
