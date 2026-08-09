@@ -1,24 +1,19 @@
 {
   "case": {
     "slug": "britannica-merriam-webster-v-openai",
-    "display_name": "Britannica / Merriam-Webster v. OpenAI",
-    "case_name": "Encyclopaedia Britannica, Inc. v. OpenAI, Inc.",
+    "display_name": "Britannica v. OpenAI",
+    "case_name": "Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.",
     "court": "U.S. District Court (filed March 2026; district not confirmed in sources)",
     "case_number": "1:26-cv-02097",
     "judge": "Sidney H. Stein",
     "docket_id": "72492986",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-09T02:32:00.128154+00:00",
-    "as_of": "Aug 9, 2026",
-    "backfilled": true,
     "new_in_72h": 2,
     "recent": [
       {
@@ -963,7 +958,11 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-09T02:32:00.128154+00:00",
+    "as_of": "Aug 9, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
   "coverage": [
@@ -974,6 +973,5 @@
       "date": "2026-03-16",
       "summary": "Bloomberg Law reports that Encyclopaedia Britannica and Merriam-Webster filed suit against OpenAI in the S.D.N.Y. (No. 1:26-cv-02097) alleging massive copyright infringement, including copying the dictionary's own definition of 'plagiarize,' and trademark infringement when ChatGPT hallucinates false information attributed to the publishers. Both complaints were filed by Susman Godfrey LLP, which also represents news organizations in other AI copyright suits."
     }
-  ],
-  "events": []
+  ]
 }
