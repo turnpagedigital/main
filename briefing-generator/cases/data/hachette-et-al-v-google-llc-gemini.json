@@ -2,18 +2,23 @@
   "case": {
     "slug": "hachette-et-al-v-google-llc-gemini",
     "display_name": "Hachette v. Google (Gemini)",
-    "case_name": "Hachette Book Group, Inc.; Cengage Learning, Inc.; Elsevier Inc.; Scott Turow; S.C.R.I.B.E. v. Google LLC",
+    "case_name": "Hachette Book Group, Inc. v. Google LLC",
     "court": "S.D.N.Y.",
     "case_number": "1:26-cv-05870",
     "judge": "Loretta A. Preska",
     "docket_id": "73603888",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-09T17:51:18.179571+00:00",
+    "as_of": "Aug 9, 2026",
+    "backfilled": true,
     "new_in_72h": 3,
     "recent": [
       {
@@ -438,11 +443,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.nysd.668114/gov.uscourts.nysd.668114.1.0.pdf"
       }
-    ],
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-09T02:32:54.543053+00:00",
-    "as_of": "Aug 9, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": null,
   "coverage": [
