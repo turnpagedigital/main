@@ -198,7 +198,7 @@ STYLE_SPEC = """# Briefing register (structural spec — the house voice above g
   rounded shorthand.
 - Ground every statement in a primary source — docket entry, ruling, agency release —
   cited inline in the exact format (__[Source Name](https://url)__). Chain multiple
-  sources where needed. The docket ground truth below needs no citation; everything
+  sources where needed. The docket data below needs no citation; everything
   from the press or the web does.
 - When only secondary reporting exists (a wire report of a settlement before anything
   hits the docket), include it, cite the outlet, state explicitly that it is
@@ -320,7 +320,7 @@ def build_prompt(case, prev_item, filings, articles, house_voice):
 
     moved_lines = []
     if filings:
-        moved_lines.append("New docket entries (ground truth — the docket is authoritative):")
+        moved_lines.append("New docket entries (the docket is authoritative):")
         moved_lines += [fmt_entry(e) for e in sorted(
             filings, key=lambda e: ((e.get("date_filed") or ""), e.get("entry_number") or 0), reverse=True)[:15]]
     if articles:
@@ -334,7 +334,7 @@ TODAY: {DATE_PRETTY}
 
 {voice_block}{STYLE_SPEC}
 
-# Case ground truth (AUTHORITATIVE — overrides anything you believe from memory)
+# Case docket record (AUTHORITATIVE — overrides anything you believe from memory)
 
 {chr(10).join(gt)}
 
@@ -366,8 +366,8 @@ Write TODAY's briefing for this one case — what moved, why it matters to the r
 
 VERIFICATION RULES (hard requirements):
 - You have a web_search tool; use it (sparingly — at most 3 searches) to confirm any fact you would otherwise assert from memory and to find the primary-source page for anything the materials above don't already source.
-- Every press-sourced proposition must cite a URL you confirmed this run — from the materials above or your searches. Never a bare outlet homepage. The docket ground truth needs no citation.
-- If your memory of the case conflicts with the ground truth block, the block wins.
+- Every press-sourced proposition must cite a URL you confirmed this run — from the materials above or your searches. Never a bare outlet homepage. The docket data needs no citation.
+- If your memory of the case conflicts with the docket record block, the block wins.
 - If you cannot verify a claim, omit it. Never write "needs verification".
 
 End with the line: *This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*
@@ -395,7 +395,7 @@ def build_group_prompt(group, member_plans, prev_item, house_voice):
                  f"Court: {c.get('court', '')} · Case no. {c.get('case_number', '')} · Judge {c.get('judge', '')}",
                  f"Status: {cfg.get('status', '')}"]
         if mp["filings"]:
-            lines.append("New docket entries (ground truth — authoritative):")
+            lines.append("New docket entries (authoritative):")
             lines += [fmt_entry(e) for e in sorted(
                 mp["filings"], key=lambda e: ((e.get("date_filed") or ""), e.get("entry_number") or 0),
                 reverse=True)[:10]]
@@ -442,8 +442,8 @@ Write TODAY's consolidated briefing for the group — ONE flowing narrative acro
 
 VERIFICATION RULES (hard requirements):
 - You have a web_search tool; use it (sparingly — at most 3 searches) to confirm any fact you would otherwise assert from memory.
-- Every press-sourced proposition must cite a URL you confirmed this run. Never a bare outlet homepage. The docket ground truth needs no citation.
-- If your memory conflicts with the ground truth sections, the sections win.
+- Every press-sourced proposition must cite a URL you confirmed this run. Never a bare outlet homepage. The docket data needs no citation.
+- If your memory conflicts with the docket record sections, the sections win.
 - If you cannot verify a claim, omit it. Never write "needs verification".
 
 End with the line: *This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*
