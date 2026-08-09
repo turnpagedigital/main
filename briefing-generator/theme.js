@@ -69,6 +69,52 @@
       kb.addEventListener('click',function(e){e.stopPropagation();kw.classList.toggle('open');});
       document.addEventListener('click',function(e){if(!kw.contains(e.target))kw.classList.remove('open');});
     }
+    wireColResize();
+  }
+
+  // ── Draggable column widths on the data tables (docket/news/notes/…) ─────
+  // Grab the right edge of any header cell and drag; widths persist per page.
+  function wireColResize(){
+    var ths=document.querySelectorAll('table.ud-table thead th');
+    if(!ths.length)return;
+    var st=document.createElement('style');
+    st.textContent='table.ud-table thead th{position:relative;}'+
+      '.tn-col-grip{position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:5;}'+
+      '.tn-col-grip::after{content:"";position:absolute;top:0;bottom:0;left:4px;width:2px;background:transparent;}'+
+      '.tn-col-grip:hover::after,.tn-col-grip.on::after{background:var(--neon,#D4FF00);}';
+    document.head.appendChild(st);
+    var key='tn-colw-'+((location.pathname.split('/').pop()||'index.html').replace(/\.html$/,'')||'index');
+    var saved={};
+    try{saved=JSON.parse(localStorage.getItem(key)||'{}')||{};}catch(e){}
+    ths.forEach(function(th,i){
+      var id=th.id||('col'+i);
+      if(saved[id])th.style.width=saved[id]+'px';
+      var g=document.createElement('span');
+      g.className='tn-col-grip';
+      g.title='Drag to resize column';
+      th.appendChild(g);
+      g.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();});
+      g.addEventListener('mousedown',function(e){
+        e.preventDefault();e.stopPropagation();
+        var x0=e.clientX,w0=th.getBoundingClientRect().width;
+        g.classList.add('on');
+        document.body.style.cursor='col-resize';
+        function mv(ev){
+          var w=Math.max(48,Math.round(w0+(ev.clientX-x0)));
+          th.style.width=w+'px';
+          saved[id]=w;
+        }
+        function up(){
+          document.removeEventListener('mousemove',mv);
+          document.removeEventListener('mouseup',up);
+          g.classList.remove('on');
+          document.body.style.cursor='';
+          try{localStorage.setItem(key,JSON.stringify(saved));}catch(e2){}
+        }
+        document.addEventListener('mousemove',mv);
+        document.addEventListener('mouseup',up);
+      });
+    });
   }
   apply();
   if(document.readyState!=='loading') wire();
