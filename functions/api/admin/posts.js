@@ -154,30 +154,44 @@ export async function onRequest({ request, env }) {
       }
       const slugSet = new Set(slugs.map(String));
 
-      // 1 — Fetch index and remove all targeted slugs
-      const indexResult = await getFileFromGitHub(env, INDEX_PATH);
-      if (!indexResult.ok) return jsonResponse({ ok: false, error: indexResult.error }, 502);
+      // Which markdown files actually exist — one lookup each, done ONCE up
+      // front (skips a stray index entry whose file is already gone, which
+      // would otherwise error the tree).
+      const paths = [...slugSet].map(s => `public/briefings/${s}.md`);
+      const exist = await Promise.all(paths.map(p => getFileFromGitHub(env, p)));
+      const mdPaths = paths.filter((_, i) => exist[i].ok);
 
-      const items = (Array.isArray(indexResult.data?.items) ? indexResult.data.items : [])
-        .filter(x => !slugSet.has(x.slug));
+      // Read → filter → commit, retried a few times so a bot writing a fresh
+      // briefing to index.json mid-delete doesn't fail the whole batch.
+      //
+      // GitHub-call budget: a Pages Function is capped at 50 subrequests. The
+      // old code ALSO passed each markdown file's sha, so commitFilesToGitHub
+      // re-fetched every one to "lock" it — a 20-item batch spent ~48, and any
+      // refRace retry (which repeats the commit) tipped it over and crashed the
+      // request (hence "Batch 3 failed"). Deleting by PATH only (content:null →
+      // a tree entry with sha:null removes it) drops that second per-file
+      // lookup, so only the index carries a sha. A whole batch now costs a
+      // handful of calls plus one existence probe per file.
+      let lastErr = "Bulk delete failed";
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const indexResult = await getFileFromGitHub(env, INDEX_PATH);
+        if (!indexResult.ok) return jsonResponse({ ok: false, error: indexResult.error }, 502);
 
-      const newIndexText = JSON.stringify({ items }, null, 2) + "\n";
-      const files = [{ path: INDEX_PATH, content: newIndexText, sha: indexResult.sha }];
+        const items = (Array.isArray(indexResult.data?.items) ? indexResult.data.items : [])
+          .filter(x => !slugSet.has(x.slug));
+        const newIndexText = JSON.stringify({ items }, null, 2) + "\n";
 
-      // 2 — Fetch markdown SHAs in parallel, then add deletions
-      const mdResults = await Promise.all(
-        [...slugSet].map(s => getFileFromGitHub(env, `public/briefings/${s}.md`))
-      );
-      [...slugSet].forEach((s, i) => {
-        if (mdResults[i].ok) {
-          files.push({ path: `public/briefings/${s}.md`, content: null, sha: mdResults[i].sha });
-        }
-      });
+        const files = [{ path: INDEX_PATH, content: newIndexText, sha: indexResult.sha }];
+        for (const p of mdPaths) files.push({ path: p, content: null });
 
-      const saved = await commitFilesToGitHub(env, files, `Posts: bulk delete ${slugs.length} post${slugs.length !== 1 ? "s" : ""}`);
-      if (!saved.ok) return jsonResponse({ ok: false, error: saved.error }, 502);
-
-      return jsonResponse({ ok: true, deleted: slugs.length });
+        const saved = await commitFilesToGitHub(env, files, `Posts: bulk delete ${slugs.length} post${slugs.length !== 1 ? "s" : ""}`);
+        if (saved.ok) return jsonResponse({ ok: true, deleted: slugs.length });
+        lastErr = saved.error || "Bulk delete failed";
+        // Only an index-moved-under-us race is worth re-reading and retrying;
+        // other errors are terminal.
+        if (!/changed elsewhere/i.test(lastErr)) break;
+      }
+      return jsonResponse({ ok: false, error: lastErr }, 502);
     }
 
     return jsonResponse({ ok: false, error: "Unknown action" }, 400);
