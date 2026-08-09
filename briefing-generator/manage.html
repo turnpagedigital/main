@@ -86,6 +86,7 @@
   .mg-banner { padding: 10px 14px; font-size: 13px; margin-bottom: 14px; border: 1px solid; }
   .mg-banner.err { color: var(--danger); border-color: var(--danger); background: rgba(192,57,43,0.06); }
   .mg-banner.ok { color: var(--ok); border-color: var(--ok); background: rgba(26,127,55,0.06); }
+  .mg-banner.warn { color: var(--warn); border-color: var(--warn); background: rgba(154,103,0,0.06); }
 
   .mg-form { background: var(--surface); border: 1px solid var(--line-strong); padding: 22px; margin-bottom: 40px; }
   .mg-form h3 { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
@@ -118,6 +119,19 @@
   .mg-sw-preview { width: 52px; height: 30px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; border-radius: 99px; flex: none; }
   .mg-sw label { font-size: 10.5px; color: var(--ink-60); display: flex; align-items: center; gap: 5px; }
   .mg-sw input[type="color"] { width: 30px; height: 24px; border: 1px solid var(--line-strong); background: none; padding: 0; cursor: pointer; }
+
+  /* Row color-picker popover */
+  .mg-gear { background: none; border: none; cursor: pointer; color: var(--ink-40); font-size: 17px; padding: 0 4px; line-height: 1; vertical-align: middle; }
+  .mg-gear:hover { color: var(--ink); }
+  .mg-pop { position: absolute; z-index: 300; width: 264px; background: var(--surface); border: 1px solid var(--ink); box-shadow: 0 14px 40px rgba(10,10,10,0.22); padding: 14px; }
+  [data-theme="dark"] .mg-pop { border-color: var(--line-strong); box-shadow: 0 14px 40px rgba(0,0,0,0.55); }
+  .mg-pop-title { font-size: 12px; font-weight: 800; margin-bottom: 10px; }
+  .mg-pop-sws { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
+  .mg-pop-sw { width: 100%; aspect-ratio: 1; border: 1px solid var(--line-strong); cursor: pointer; padding: 0; }
+  .mg-pop-sw.on { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .mg-pop-row { display: flex; align-items: center; gap: 10px; font-size: 11.5px; color: var(--ink-60); margin-bottom: 8px; }
+  .mg-pop-row input[type="color"] { width: 30px; height: 24px; border: 1px solid var(--line-strong); background: none; padding: 0; cursor: pointer; }
+  .mg-pop-reset { margin-top: 4px; }
 
   /* Login overlay */
   .mg-login { position: fixed; inset: 0; background: rgba(10,10,10,0.5); display: flex; align-items: center; justify-content: center; z-index: 500; padding: 16px; }
