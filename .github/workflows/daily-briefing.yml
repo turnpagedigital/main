@@ -111,6 +111,7 @@ jobs:
           mkdir -p dev-site/briefing-generator/cases/data
           cp -f briefing-generator/index.html dev-site/briefing-generator/index.html 2>/dev/null || true
           cp -f briefing-generator/case-briefings.json dev-site/briefing-generator/case-briefings.json 2>/dev/null || true
+          cp -f briefing-generator/briefing-groups.json dev-site/briefing-generator/briefing-groups.json 2>/dev/null || true
           mkdir -p dev-site/briefing-generator/case-briefings
           cp -f briefing-generator/case-briefings/*.json dev-site/briefing-generator/case-briefings/ 2>/dev/null || true
           cp -f briefing-generator/cases/data/*.json dev-site/briefing-generator/cases/data/ 2>/dev/null || true

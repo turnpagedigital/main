@@ -1172,10 +1172,15 @@
       });
       // #case=<slug> deep link (dashboard cards/date strip) — solo-filter to
       // that case, same behavior as picking it in the ⌘K palette.
-      var mCase = /[#&]case=([a-z0-9-]+)/.exec(location.hash || "");
-      if (mCase && CASES.some(function (c) { return c.slug === mCase[1]; })) {
-        CASES.forEach(function (c) { activeCases[c.slug] = c.slug === mCase[1]; });
-        saveFilterState();
+      var mCase = /[#&]case=([a-z0-9,-]+)/.exec(location.hash || "");
+      if (mCase) {
+        var wanted = mCase[1].split(",").filter(function (s) {
+          return CASES.some(function (c) { return c.slug === s; });
+        });
+        if (wanted.length) {
+          CASES.forEach(function (c) { activeCases[c.slug] = wanted.indexOf(c.slug) !== -1; });
+          saveFilterState();
+        }
       }
       rebuildEvents();
       updateMeta();

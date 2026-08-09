@@ -175,6 +175,30 @@
     .ih-tc-date { font-weight: 700; color: var(--ink-60); }
     .ih-filter-note { grid-column: 1 / -1; padding: 10px 16px; font-size: 12px; color: var(--ink-60); background: var(--surface); border: 1px dashed var(--line-strong); }
     .ih-filter-note button { font-family: inherit; font-size: 12px; font-weight: 800; background: none; border: none; color: var(--ink); cursor: pointer; text-decoration: underline; padding: 0; }
+    /* Briefing-groups editor */
+    .ih-grp-overlay { position: fixed; inset: 0; background: rgba(10,10,10,0.4); z-index: 1300; display: flex; align-items: flex-start; justify-content: center; padding: 8vh 20px 20px; overflow-y: auto; }
+    .ih-grp-box { background: var(--surface); border: 1px solid var(--line-strong); width: min(560px, 100%); padding: 22px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+    .ih-grp-box h2 { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+    .ih-grp-sub { font-size: 12.5px; color: var(--ink-60); line-height: 1.5; border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 10px; }
+    .ih-grp-row { font-size: 13px; padding: 7px 0; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 8px; }
+    .ih-grp-row strong { white-space: nowrap; }
+    .ih-grp-del { margin-left: auto; background: none; border: none; color: var(--ink-40); font-size: 16px; cursor: pointer; }
+    .ih-grp-del:hover { color: #C84141; }
+    .ih-grp-none { font-size: 12.5px; color: var(--ink-40); font-style: italic; padding: 6px 0; }
+    .ih-grp-newhead { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-40); margin: 14px 0 8px; }
+    .ih-grp-name { width: 100%; padding: 9px 11px; font-family: inherit; font-size: 14px; background: var(--paper-2); border: 1px solid var(--line-strong); color: var(--ink); outline: none; margin-bottom: 10px; }
+    .ih-grp-name:focus { border-color: var(--neon); }
+    .ih-grp-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; max-height: 260px; overflow-y: auto; margin-bottom: 12px; }
+    .ih-grp-check { font-size: 12.5px; display: flex; align-items: center; gap: 6px; }
+    .ih-grp-check input { accent-color: var(--neon); }
+    .ih-grp-check.taken { color: var(--ink-40); }
+    .ih-grp-taken { font-size: 10.5px; color: var(--ink-40); }
+    .ih-grp-actions { display: flex; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; }
+    .ih-grp-status { flex: 1; font-size: 12px; color: var(--ink-60); }
+    .pr-btn { font-family: inherit; font-size: 11.5px; font-weight: 800; letter-spacing: 0.04em; padding: 6px 14px; border: 1px solid var(--line-strong); background: transparent; color: var(--ink); cursor: pointer; text-decoration: none; display: inline-block; line-height: 1.2; }
+    .pr-btn:hover { background: var(--paper-2); }
+    .pr-btn-track { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
+    .pr-btn-track:hover { filter: brightness(0.94); }
     /* ⌘K case palette (docket-style) */
     .ud-pal-overlay { position: fixed; inset: 0; background: rgba(10,10,10,0.35); z-index: 1300; display: flex; align-items: flex-start; justify-content: center; padding-top: 14vh; }
     .ud-pal-box { background: var(--surface); border: 1px solid var(--line-strong); width: min(520px, 92vw); box-shadow: 0 12px 40px rgba(0,0,0,0.18); }
@@ -425,6 +449,7 @@
   <!-- Dashboard: top 7 from each section, four columns -->
   <div class="ih-controls">
     <div class="ih-theme-pills" id="ih-theme-pills" role="group" aria-label="Filter by theme"></div>
+    <button type="button" id="ih-groups-btn" class="ih-dd-btn" title="Group cases so they brief together as one unit">⛓ Groups</button>
     <div class="ih-dd-wrap">
       <button type="button" id="ih-cases-btn" class="ih-dd-btn">Cases: All</button>
       <div id="ih-cases-panel" class="ih-dd-panel" style="display:none;"></div>

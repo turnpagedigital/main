@@ -1,0 +1,12 @@
+{
+  "groups": [
+    {
+      "id": "hachette-suits",
+      "name": "Hachette Suits",
+      "members": [
+        "hachette-et-al-v-google-llc-gemini",
+        "hachette-et-al-v-meta-platforms-llama"
+      ]
+    }
+  ]
+}

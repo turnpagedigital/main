@@ -49,6 +49,18 @@ MODEL = "claude-sonnet-4-6"
 OUT_PATH = REPO_ROOT / "case-briefings.json"
 ARCHIVE_DIR = REPO_ROOT / "case-briefings"   # per-case history: <slug>.json
 ARCHIVE_CAP = 120                            # briefings kept per case
+GROUPS_PATH = REPO_ROOT / "briefing-groups.json"
+
+
+def load_groups():
+    """Briefing groups: [{id, name, members}] — member cases consolidate into
+    ONE briefing (and one dashboard card) per group."""
+    try:
+        data = json.loads(GROUPS_PATH.read_text(encoding="utf-8"))
+        return [g for g in data.get("groups", [])
+                if g.get("id") and g.get("name") and len(g.get("members") or []) >= 2]
+    except Exception:
+        return []
 INDEX_HTML = REPO_ROOT / "index.html"
 SITE_ROOT = REPO_ROOT.parent
 INTELLIGENCE_FILE = SITE_ROOT / "src" / "data" / "intelligence-settings.json"
@@ -363,6 +375,82 @@ No prose outside the markdown. Start with `# {emoji}`.
 """
 
 
+def build_group_prompt(group, member_plans, prev_item, house_voice):
+    """One consolidated briefing across the group's member cases, led by
+    whichever members actually moved. member_plans: [{case, filings, articles,
+    moved}] in member order."""
+    voice_block = ""
+    if house_voice:
+        voice_block = ("# House voice (admin-managed — authoritative for tone; "
+                       "follow it exactly)\n\n" + house_voice[:9000] + "\n\n")
+
+    sections = []
+    for mp in member_plans:
+        case, cfg = mp["case"], mp["case"]["config"]
+        data = case["data"] or {}
+        c = cfg.get("case", {}) or {}
+        flag = "MOVED in the window — lead with this matter" if mp["moved"] else "quiet in the window"
+        lines = [f"## {cfg.get('display_name', case['slug'])}  ({flag})",
+                 f"Parties: {c.get('parties', '')}",
+                 f"Court: {c.get('court', '')} · Case no. {c.get('case_number', '')} · Judge {c.get('judge', '')}",
+                 f"Status: {cfg.get('status', '')}"]
+        if mp["filings"]:
+            lines.append("New docket entries (ground truth — authoritative):")
+            lines += [fmt_entry(e) for e in sorted(
+                mp["filings"], key=lambda e: ((e.get("date_filed") or ""), e.get("entry_number") or 0),
+                reverse=True)[:10]]
+        if mp["articles"]:
+            lines.append("New press coverage (verified URLs):")
+            lines += [fmt_article(a) for a in mp["articles"][:6]]
+        entries = (data.get("docket") or {}).get("entries") or []
+        ctx = entries[:5]
+        if ctx:
+            lines.append("Recent docket context (already covered — orientation only):")
+            lines += [fmt_entry(e) for e in ctx]
+        sections.append("\n".join(lines))
+
+    prev_block = ""
+    if prev_item and prev_item.get("body_md"):
+        prev_block = (
+            f"# Your previous briefing for this group ({prev_item.get('date', 'earlier')}) — "
+            "the reader has read this; do NOT repeat it, cover what changed since\n\n"
+            + prev_item["body_md"][:6000] + "\n\n")
+
+    return f"""You are the case desk covering the "{group['name']}" matters for Andrew at Turnpage Digital Markets — a GROUP of related cases briefed together. Write at the standard of a specialist firm writing to sophisticated clients who pay for judgment rather than summary.
+
+TODAY: {DATE_PRETTY}
+
+{voice_block}{STYLE_SPEC}
+
+# The group's cases (each section flags whether it moved in the window)
+
+{chr(10).join(sections)}
+
+{prev_block}# Your task
+
+Write TODAY's consolidated briefing for the group — ONE flowing narrative across the member cases, led by whichever moved (their sections are flagged). Where a development in one member bears on another, draw the connection in a clause. Members that are quiet get at most a passing clause, or silence. Output MARKDOWN ONLY in exactly this shape:
+
+```
+# ⚖️ {group['name']} | {DATE_PRETTY}
+
+[1-4 flowing paragraphs per the style spec — only the delta across the group, with inline (__[Source](url)__) citations for every press-sourced proposition]
+
+## Sources
+
+- [Title](URL) — Publisher, Date
+```
+
+VERIFICATION RULES (hard requirements):
+- You have a web_search tool; use it (sparingly — at most 3 searches) to confirm any fact you would otherwise assert from memory.
+- Every press-sourced proposition must cite a URL you confirmed this run. Never a bare outlet homepage. The docket ground truth needs no citation.
+- If your memory conflicts with the ground truth sections, the sections win.
+- If you cannot verify a claim, omit it. Never write "needs verification".
+
+End with the line: *This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*
+No prose outside the markdown. Start with `# ⚖️`.
+"""
+
+
 # ── Response parsing ─────────────────────────────────────────────────────────
 def parse_briefing_md(md):
     """(body_md_without_h1, lede, sources). Tolerant of preamble/code fences."""
@@ -449,8 +537,6 @@ def main():
     prev_by_slug = {i.get("slug"): i for i in prev.get("items", [])}
 
     cases = load_cases()
-    if only:
-        cases = [c for c in cases if c["slug"] == only]
     active = [c for c in cases
               if c["config"].get("sync", "active") == "active" and c["data"] is not None]
     if not active:
@@ -460,27 +546,74 @@ def main():
     client = Anthropic(api_key=api_key)
     house_voice = load_house_voice()
     now_iso = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+    since = (TODAY - dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
+
+    # ── Units: briefing groups consolidate members into one briefing ─────────
+    case_by_slug = {c["slug"]: c for c in active}
+    grouped = set()
+    units = []
+    for g in load_groups():
+        if g["id"] in case_by_slug:
+            print(f"  ! group id '{g['id']}' collides with a case slug — group skipped", file=sys.stderr)
+            continue
+        members = [case_by_slug[m] for m in g["members"] if m in case_by_slug]
+        if len(members) < 2:
+            continue
+        grouped.update(m["slug"] for m in members)
+        units.append({"kind": "group", "group": g, "members": members})
+    for case in active:
+        if case["slug"] not in grouped:
+            units.append({"kind": "case", "case": case})
+    if only:
+        units = [u for u in units if
+                 (u["kind"] == "case" and u["case"]["slug"] == only) or
+                 (u["kind"] == "group" and (u["group"]["id"] == only or
+                                            only in u["group"]["members"]))]
 
     # Decide who moved, then cap the generation list by freshest activity.
     plan = []
-    for case in active:
-        sig, latest, filings, articles = activity_of(case["data"])
-        prev_item = prev_by_slug.get(case["slug"])
-        since = (TODAY - dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
-        moved = bool((filings or articles) and latest >= since
-                     and (force or not prev_item or prev_item.get("signature") != sig))
-        plan.append({"case": case, "sig": sig, "latest": latest,
-                     "filings": filings, "articles": articles,
-                     "prev": prev_item, "moved": moved})
+    for u in units:
+        if u["kind"] == "case":
+            case = u["case"]
+            sig, latest, filings, articles = activity_of(case["data"])
+            prev_item = prev_by_slug.get(case["slug"])
+            moved = bool((filings or articles) and latest >= since
+                         and (force or not prev_item or prev_item.get("signature") != sig))
+            plan.append({"kind": "case", "case": case, "sig": sig, "latest": latest,
+                         "filings": filings, "articles": articles,
+                         "prev": prev_item, "moved": moved})
+        else:
+            g = u["group"]
+            member_plans = []
+            for m in u["members"]:
+                msig, mlatest, mfilings, marticles = activity_of(m["data"])
+                member_plans.append({"case": m, "sig": msig, "latest": mlatest,
+                                     "filings": mfilings, "articles": marticles,
+                                     "moved": bool((mfilings or marticles) and mlatest >= since)})
+            sig = hashlib.sha1("|".join(mp["sig"] for mp in member_plans).encode()).hexdigest()[:12]
+            latest = max((mp["latest"] for mp in member_plans), default="")
+            any_active = any(mp["moved"] for mp in member_plans)
+            prev_item = prev_by_slug.get(g["id"])
+            moved = bool(any_active and
+                         (force or not prev_item or prev_item.get("signature") != sig))
+            plan.append({"kind": "group", "group": g, "members": member_plans,
+                         "sig": sig, "latest": latest,
+                         "filings": [f for mp in member_plans for f in mp["filings"]],
+                         "articles": [a for mp in member_plans for a in mp["articles"]],
+                         "prev": prev_item, "moved": moved})
+
+    def plan_slug(p):
+        return p["case"]["slug"] if p["kind"] == "case" else p["group"]["id"]
 
     movers = [p for p in plan if p["moved"]]
     movers.sort(key=lambda p: p["latest"], reverse=True)
     if len(movers) > MAX_GENERATIONS:
         for p in movers[MAX_GENERATIONS:]:
             p["moved"] = False
-            print(f"  ! {p['case']['slug']}: over the {MAX_GENERATIONS}-generation cap — deferred to tomorrow")
+            print(f"  ! {plan_slug(p)}: over the {MAX_GENERATIONS}-generation cap — deferred to tomorrow")
         movers = movers[:MAX_GENERATIONS]
-    print(f"=== Case briefings: {len(active)} active case(s), {len(movers)} moved ===")
+    n_groups = sum(1 for p in plan if p["kind"] == "group")
+    print(f"=== Case briefings: {len(plan)} unit(s) ({n_groups} group(s), {len(active)} active case(s)), {len(movers)} moved ===")
 
     def create_with_retry(**kwargs):
         for attempt in range(4):
@@ -494,23 +627,47 @@ def main():
     items = []
     first = True
     for p in plan:
-        case, cfg = p["case"], p["case"]["config"]
-        slug = case["slug"]
         prev_item = p["prev"] or {}
-        short = (cfg.get("display_name") or slug).split(" v.")[0].strip()
-        base = {
-            "slug": slug,
-            "case_name": cfg.get("display_name") or slug,
-            "short_name": short,
-            "emoji": cfg.get("emoji", "⚖️"),
-            "themes": cfg.get("topics") or [],
-            "court": (cfg.get("case") or {}).get("court", ""),
-            "status": cfg.get("status", ""),
-            "signature": p["sig"],
-            "activity": {"filings": len(p["filings"]), "articles": len(p["articles"]),
-                         "latest": p["latest"]},
-            "checked": now_iso,
-        }
+        if p["kind"] == "case":
+            case, cfg = p["case"], p["case"]["config"]
+            slug = case["slug"]
+            short = (cfg.get("display_name") or slug).split(" v.")[0].strip()
+            base = {
+                "slug": slug,
+                "case_name": cfg.get("display_name") or slug,
+                "short_name": short,
+                "emoji": cfg.get("emoji", "⚖️"),
+                "themes": cfg.get("topics") or [],
+                "court": (cfg.get("case") or {}).get("court", ""),
+                "status": cfg.get("status", ""),
+                "signature": p["sig"],
+                "activity": {"filings": len(p["filings"]), "articles": len(p["articles"]),
+                             "latest": p["latest"]},
+                "checked": now_iso,
+            }
+        else:
+            g = p["group"]
+            slug = g["id"]
+            themes = []
+            for mp in p["members"]:
+                for t in mp["case"]["config"].get("topics") or []:
+                    if t not in themes:
+                        themes.append(t)
+            base = {
+                "slug": slug,
+                "case_name": g["name"],
+                "short_name": g["name"],
+                "emoji": "⚖️",
+                "is_group": True,
+                "members": [mp["case"]["slug"] for mp in p["members"]],
+                "themes": themes,
+                "court": f"{len(p['members'])} related cases",
+                "status": "",
+                "signature": p["sig"],
+                "activity": {"filings": len(p["filings"]), "articles": len(p["articles"]),
+                             "latest": p["latest"]},
+                "checked": now_iso,
+            }
 
         if not p["moved"]:
             items.append({
@@ -531,12 +688,15 @@ def main():
         first = False
         print(f"=== Generating {slug} ===", flush=True)
         try:
+            if p["kind"] == "group":
+                prompt = build_group_prompt(p["group"], p["members"], prev_item, house_voice)
+            else:
+                prompt = build_prompt(p["case"], prev_item, p["filings"], p["articles"], house_voice)
             response = create_with_retry(
                 model=MODEL,
                 max_tokens=3000,
                 tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 3}],
-                messages=[{"role": "user",
-                           "content": build_prompt(case, prev_item, p["filings"], p["articles"], house_voice)}],
+                messages=[{"role": "user", "content": prompt}],
             )
             text = "\n".join(b.text for b in response.content
                              if getattr(b, "type", "") == "text").strip()
