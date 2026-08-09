@@ -62,6 +62,12 @@ Ciao
 
 > The Preference Wave Is Coming- What Vendors Should Do Now — If you sold goods or services to a customer that filed Chapter 11 in the last two years, the window to prepare is right now. It closes the d
 
+## Omnis Pleasants
+
+### (no docket number) — 2026-08-05
+
+> Meet The Attorneys Guiding Omnis Pleasants In Ch. 11 — Young Conaway Stargatt & Taylor LLP and Herbert Smith Freehills Kramer LLP are serving as counsel for Omnis Pleasants LLC as it navigates roughly
+
 ## Poolin
 
 ### (no docket number) — 2026-08-02 ★
