@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-09 04:08 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-09 04:09 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -105,6 +105,12 @@ Ciao
 ### (no docket number) — 2026-08-02 ★
 
 > New Chapter 11 Bankruptcy Filing — Poolin Technology PTE LTD — Petition's legal trade newsletter covers the July 22 Chapter 11 filing before Judge O'Hagan in the District of New Jersey, noting that Po
+
+## RNDC
+
+### (no docket number) — 2026-08-03
+
+> RNDC court filings reveal scale of distributor's financial collapse — Court documents show RNDC had been sinking into financial difficulty for several years, with the COVID-19 pandemic and its afterma
 
 ## Sleep Number
 
