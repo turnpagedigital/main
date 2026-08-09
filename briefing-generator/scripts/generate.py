@@ -385,8 +385,18 @@ Output: markdown only. Start with `# {topic['emoji']}`. End with the "informatio
 # "I used this post" preference signal — all already built there).
 SOCIAL_TOPICS = {"llm-class-action", "crypto-insolvency", "bankruptcy-creditor-rights"}
 
-def build_social_prompt(topic, advisory_md):
-    return f"""You write Turnpage Digital Markets' social drafts for the {topic['display']} desk.
+def build_social_prompt(topic, advisory_md, andrew_voice=""):
+    # These posts go out AS ANDREW. Tone comes from the "drafting as Andrew"
+    # voice managed on the intel site (voice.andrew); the CONTENT RULES below
+    # are guardrails that hold regardless of voice.
+    voice_block = ""
+    if andrew_voice and andrew_voice.strip():
+        voice_block = (
+            "VOICE — write as Andrew, in his personal voice (managed on the intel "
+            "site → Manage → Settings; authoritative for tone):\n\n"
+            f"{andrew_voice.strip()[:6000]}\n\n"
+        )
+    return f"""You write Turnpage Digital Markets' social drafts for the {topic['display']} desk. These go out AS ANDREW, in his own voice — not as the firm briefing a client.
 
 SOURCE — today's verified advisory (every fact below was verified this morning; do NOT add facts that aren't in it, do NOT re-verify):
 
@@ -394,11 +404,9 @@ SOURCE — today's verified advisory (every fact below was verified this morning
 
 Write TWO posts from this advisory.
 
-VOICE (house rules):
+{voice_block}CONTENT RULES (always apply, on top of the voice above):
 - Lead with the single sharpest development — a number, a date, or a ruling. No throat-clearing, no "exciting news".
-- Sound like a desk note from someone who reads dockets, not a content marketer. Plain words, short sentences, no hype adjectives.
 - Concrete: case names, courts, dollar figures, record dates. Bullet case-status lines with "•" where listing estates/cases.
-- End the LinkedIn post with one practical takeaway for claimants/creditors, then 3-5 CamelCase hashtags on the final line.
 - Never promise outcomes or returns. Never give legal advice. No emojis except an optional single one in the first line.
 
 FORMAT — return EXACTLY this markdown structure and nothing else:
@@ -407,7 +415,7 @@ FORMAT — return EXACTLY this markdown structure and nothing else:
 
 ## LinkedIn
 
-<900-1400 character LinkedIn post>
+<900-1400 character LinkedIn post; end with one practical takeaway for claimants/creditors, then 3-5 CamelCase hashtags on the final line>
 
 ## X.com
 
@@ -456,14 +464,14 @@ def inject_posts_html(topic, li_text, x_text):
     posts_path.write_text(html, encoding="utf-8")
     return True
 
-def generate_social_posts(create_with_retry, topic, advisory_md):
+def generate_social_posts(create_with_retry, topic, advisory_md, andrew_voice=""):
     """Second short generation per social topic: advisory → LinkedIn/X drafts.
     Writes <topic>/posts/DATE.md and refreshes <topic>/posts.html. Failures
     are contained — the advisory run must never die over a social draft."""
     response = create_with_retry(
         model="claude-sonnet-4-6",
         max_tokens=2000,
-        messages=[{"role": "user", "content": build_social_prompt(topic, advisory_md)}],
+        messages=[{"role": "user", "content": build_social_prompt(topic, advisory_md, andrew_voice)}],
     )
     social_md = "\n".join(
         b.text for b in response.content if getattr(b, "type", "") == "text"
@@ -721,16 +729,20 @@ def main():
     whitelist, blacklist = parse_source_lists(sources_md)
     intel = load_intelligence_settings()
     house_voice = ""
+    andrew_voice = ""
     if intel:
         global_wl = set(intel.get("sources", {}).get("whitelist", []))
         global_bl = set(intel.get("sources", {}).get("blacklist", []))
         whitelist = whitelist | global_wl
         blacklist = blacklist | global_bl
         house_voice = (intel.get("voice", {}) or {}).get("default", "") or ""
+        andrew_voice = (intel.get("voice", {}) or {}).get("andrew", "") or ""
         print(f"Source lists merged with intelligence-settings.json: "
               f"{len(whitelist)} whitelisted, {len(blacklist)} blacklisted")
         if house_voice.strip():
             print(f"House voice loaded from Defaults ({len(house_voice.strip())} chars)")
+        if andrew_voice.strip():
+            print(f"Andrew (social) voice loaded from intel Settings ({len(andrew_voice.strip())} chars)")
     else:
         print(f"Source lists: {len(whitelist)} whitelisted, {len(blacklist)} blacklisted domains")
 
@@ -852,7 +864,7 @@ def main():
         if topic['slug'] in SOCIAL_TOPICS:
             try:
                 time.sleep(10)  # breathing room under the input-tokens/min limit
-                generate_social_posts(create_with_retry, topic, advisory_md)
+                generate_social_posts(create_with_retry, topic, advisory_md, andrew_voice)
             except Exception as e:
                 print(f"  ! social drafts failed for {topic['slug']}: {e}", file=sys.stderr)
 

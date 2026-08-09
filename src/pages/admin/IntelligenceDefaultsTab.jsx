@@ -82,10 +82,11 @@ export default function IntelligenceDefaultsTab({ onDirtyChange }) {
         {toast && <Banner kind="ok">{toast}</Banner>}
 
         <div style={card}>
-          <h3 style={sectionH}>Default voice &amp; tone</h3>
+          <h3 style={sectionH}>House voice &amp; tone (briefings)</h3>
           <p style={{ fontSize: "0.8rem", color: INK_60, marginBottom: "0.8rem" }}>
-            The house writing style for all briefing output. Applies everywhere unless a per-theme or
-            per-case override is added later.
+            The firm&rsquo;s analytical writing style for all <strong>briefing</strong> output. The
+            separate personal voice for content written <em>as Andrew</em> (social / LinkedIn posts)
+            now lives on the intel site &rarr; Manage &rarr; Voice.
           </p>
           <label style={labelStyle}>Voice</label>
           <textarea

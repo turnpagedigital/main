@@ -2,14 +2,17 @@
   "use strict";
 
   /* Manage — intel-site management console (replaces admin → Intelligence →
-     Cases/Themes, Aug 2026). Four tabs:
+     Cases/Themes, Aug 2026). Tabs:
        #cases    — tracked-case CRUD (same /api/admin/cases backing store)
        #themes   — theme CRUD (/api/admin/themes → src/data/themes.json)
        #groups   — FILTER groups (quick-select sets in the dashboard Cases
                    dropdown; localStorage ud-case-groups + api/prefs roaming).
                    Briefing groups (cases briefed as one unit) live in the
                    dashboard GROUPS menu, not here.
-       #settings — default 12-color pill palette (ud-theme-presets + prefs).
+       #voice    — the "drafting as Andrew" personal/social voice
+                   (/api/admin/intelligence-settings → voice.andrew). The
+                   analytical house voice for briefings stays in Admin.
+       #colors   — default 12-color pill palette (ud-theme-presets + prefs).
      Saves need the ADMIN session cookie (same origin); a login overlay
      appears on 401. External file — CSP kills inline JS on /intel/*. */
 
@@ -162,9 +165,9 @@
   }
 
   // ── Tab router ─────────────────────────────────────────────────────────────
-  var TABS = { cases: renderCases, themes: renderThemes, groups: renderGroups, settings: renderSettings };
+  var TABS = { cases: renderCases, themes: renderThemes, groups: renderGroups, voice: renderVoice, colors: renderColors };
   function currentTab() {
-    var m = /#(cases|themes|groups|settings)/.exec(location.hash || "");
+    var m = /#(cases|themes|groups|voice|colors)/.exec(location.hash || "");
     return m ? m[1] : "cases";
   }
   function paintTabs() {
@@ -328,7 +331,7 @@
       (CASES_LITE ? '<div class="mg-banner warn">Showing the pipeline manifest (roster + colors only) — the admin API isn’t reachable yet. Editing prompts for sign-in.</div>' : "") +
       '<div class="mg-head"><h2>Tracked cases</h2>' +
         '<button type="button" class="mg-btn mg-btn-primary" id="mg-new-case">＋ New case</button></div>' +
-      '<p class="mg-hint">Every matter the pipeline follows. A case can span multiple themes and carries its own scan guidance. Colors are set from the pill ⚙ menus on the dashboard; the default palette lives in Settings.</p>' +
+      '<p class="mg-hint">Every matter the pipeline follows. A case can span multiple themes and carries its own scan guidance. Colors are set from the pill ⚙ menus on the dashboard; the default palette lives in Colors.</p>' +
       '<div class="mg-box"><table class="mg-table">' +
         "<thead><tr><th>Case</th><th>Sync</th><th>Themes</th><th class=\"mg-right\">Actions</th></tr></thead>" +
         "<tbody>" + (rows || '<tr><td colspan="4" class="mg-empty">No cases yet — create the first one.</td></tr>') + "</tbody>" +
@@ -879,7 +882,49 @@
     });
   }
 
-  /* ══ SETTINGS (default palette) ══════════════════════════════════════════ */
+  /* ══ VOICE (drafting as Andrew) ════════════════════════════════════════ */
+
+  function renderVoice() {
+    root.innerHTML =
+      bannerHtml() +
+      '<div class="mg-head"><h2>Voice — drafting as Andrew</h2>' +
+        '<button type="button" class="mg-btn mg-btn-primary" id="mg-voice-save" disabled>Save voice</button></div>' +
+      '<p class="mg-hint">The personal voice used whenever content is written <strong>as Andrew</strong> — the nightly LinkedIn / X drafts and the Prospects &ldquo;Create social post&rdquo; button. The firm&rsquo;s analytical <em>house</em> voice for the briefings is separate and lives in Admin &rarr; Intelligence &rarr; Defaults.</p>' +
+      '<div class="mg-box" style="padding:14px;">' +
+        '<textarea id="mg-voice-text" style="width:100%;min-height:440px;box-sizing:border-box;font-family:inherit;font-size:13px;line-height:1.6;padding:12px;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;resize:vertical;" placeholder="Loading&hellip;" disabled></textarea>' +
+      "</div>";
+
+    var ta = $("mg-voice-text"), btn = $("mg-voice-save");
+    var loaded = "";
+    ta.addEventListener("input", function () { btn.disabled = ta.value === loaded; });
+
+    apiFetch("/api/admin/intelligence-settings").then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.ok) throw new Error((d && d.error) || "load failed");
+        loaded = ((((d.settings || {}).voice) || {}).andrew) || "";
+        ta.value = loaded;
+        ta.disabled = false;
+        ta.placeholder = "Describe how Andrew sounds in social posts…";
+      })
+      .catch(function (e) { ta.disabled = false; ta.placeholder = "Couldn’t load the voice: " + String(e.message || e); });
+
+    btn.addEventListener("click", function () {
+      var val = ta.value;
+      btn.disabled = true;
+      apiFetch("/api/admin/intelligence-settings", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ voice: { andrew: val } }),
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (!d || !d.ok) throw new Error((d && d.error) || "save failed");
+        loaded = val;
+        setBanner("ok", "Andrew’s voice saved — applied on the next social draft.");
+        renderVoice();
+      }).catch(function (e) { setBanner("err", "Save failed: " + String(e.message || e)); btn.disabled = false; });
+    });
+  }
+
+  /* ══ COLORS (default palette) ══════════════════════════════════════════ */
 
   function currentSwatches() {
     try {
@@ -889,7 +934,7 @@
     return FALLBACK_SWATCHES.map(function (s) { return { bg: s.bg, fg: s.fg }; });
   }
 
-  function renderSettings() {
+  function renderColors() {
     var presets = currentSwatches().map(function (s) { return { bg: s.bg, fg: s.fg || "#0A0A0A" }; });
 
     function swatchesHtml() {
@@ -906,7 +951,7 @@
 
     root.innerHTML =
       bannerHtml() +
-      '<div class="mg-head"><h2>Settings — default color palette</h2>' +
+      '<div class="mg-head"><h2>Colors — default palette</h2>' +
         '<button type="button" class="mg-btn" id="mg-palette-reset">Reset to factory</button>' +
         '<button type="button" class="mg-btn mg-btn-primary" id="mg-palette-save">Save palette</button></div>' +
       '<p class="mg-hint">The 12 preset swatches offered in every pill color picker (case ⚙ menus on the dashboard and docket). This is the only place the default palette can be changed; the pickers themselves just choose from it.</p>' +
@@ -950,8 +995,8 @@
             }),
           });
         })
-        .then(function () { setBanner("ok", "Palette saved (this browser + roaming prefs)."); renderSettings(); })
-        .catch(function () { setBanner("err", "Saved locally; roaming prefs sync failed."); renderSettings(); });
+        .then(function () { setBanner("ok", "Palette saved (this browser + roaming prefs)."); renderColors(); })
+        .catch(function () { setBanner("err", "Saved locally; roaming prefs sync failed."); renderColors(); });
     });
   }
 
