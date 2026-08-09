@@ -58,7 +58,7 @@ src/
   data/
     tokens.js              — Color and font tokens
     css.js                 — Global CSS (injected at runtime)
-    (cases live in the intelligence system, not a static file — edit via the intel site: Dashboard → Cases → ⚙ Manage at /intel/manage.html, served by /api/admin/cases)
+    (cases live in the intelligence system, not a static file — edit via the intel site: the ⚙️ Settings link in the intel nav (/intel/manage.html), served by /api/admin/cases)
     deals.json             — Deal cards for Home + Crypto (edit via chat OR /#/admin)
     translations.js        — 8-language string table (en/es/fr/de/it/pt/ko/zh)
   lib/
@@ -99,7 +99,7 @@ index.html                 — Vite entry, meta + OG tags
 ```
 
 ### Editing common things
-- **Update a case** → edit on the intel site: Dashboard → Cases → **⚙ Manage** (`/intel/manage.html`, tabs for Cases / Themes / Groups / Settings), or the per-case edit actions on each briefing page. Both save through `/api/admin/cases` (admin session cookie; the Manage page shows a login prompt if needed). Admin's Intelligence → Cases/Themes tabs were removed Aug 2026; the default pill color palette is editable only in Manage → Settings.
+- **Update a case** → edit on the intel site: the intel nav’s **⚙️ Settings** link (`/intel/manage.html`, tabs for Cases / Themes / Groups / Settings), or the per-case edit actions on each briefing page. Both save through `/api/admin/cases` (admin session cookie; the Manage page shows a login prompt if needed). Admin's Intelligence → Cases/Themes tabs were removed Aug 2026; the default pill color palette is editable only in Manage → Settings.
 - **Post a briefing** → see "Posting a Briefing" below.
 - **Replace Crypto placeholder copy** → edit `src/pages/Crypto.jsx`. Structure mirrors AICopyright.jsx.
 - **Hero copy** → home is in `src/pages/Home.jsx`; AI Copyright hero is in `src/pages/AICopyright.jsx` (uses the shared `Hero` component).
