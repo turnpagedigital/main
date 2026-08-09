@@ -324,6 +324,46 @@
   var CASE_DATA = [];       // [{m, c}]
   var BRIEFING_ITEMS = [];   // per-case briefings (case-briefings.json items)
   var PROSPECT_ITEMS = [];   // candidate cases (api/prospects → prospects.json)
+  var BRIEFING_GROUPS = [];  // [{id, name, members}] — consolidated briefing units
+
+  function groupOfCase(slug) {
+    for (var i = 0; i < BRIEFING_GROUPS.length; i++) {
+      if ((BRIEFING_GROUPS[i].members || []).indexOf(slug) !== -1) return BRIEFING_GROUPS[i];
+    }
+    return null;
+  }
+
+  // Display units for the briefing grid: each group renders as ONE card/row
+  // (group name on the pill), everything else stays a single case.
+  function displayUnits() {
+    var bySlug = {};
+    MANIFEST.forEach(function (m) { bySlug[m.slug] = m; });
+    var used = {};
+    var units = [];
+    BRIEFING_GROUPS.forEach(function (g) {
+      var members = (g.members || []).map(function (s) { return bySlug[s]; }).filter(Boolean);
+      if (members.length < 2) return;
+      members.forEach(function (m) { used[m.slug] = 1; });
+      var topics = [];
+      var added = "";
+      members.forEach(function (m) {
+        (m.topics || []).forEach(function (t) { if (topics.indexOf(t) === -1) topics.push(t); });
+        if (m.added && (!added || m.added < added)) added = m.added;
+      });
+      units.push({
+        slug: g.id,
+        display_name: g.name,
+        short_name: g.name,
+        default_color: members[0].default_color,
+        topics: topics,
+        added: added,
+        group: g,
+        members: members,
+      });
+    });
+    MANIFEST.forEach(function (m) { if (!used[m.slug]) units.push(m); });
+    return units;
+  }
   var NOTES_LIST = [];
   var FEED_ITEMS = [];
 
@@ -447,6 +487,8 @@
   // A case is visible when its own toggle is on AND at least one of its theme
   // tags is on (untagged cases always pass the theme filter).
   function caseVisible(m) {
+    // A group unit is visible when ANY member passes the case/theme filters.
+    if (m.members) return m.members.some(caseVisible);
     if (!caseOn(m.slug)) return false;
     var topics = m.topics || [];
     if (!topics.length) return true;
@@ -489,20 +531,24 @@
       : "d" + (item.date || "") + "|" + (item.text || "").slice(0, 60));
   }
 
-  // Rows live INSIDE a case card whose header already carries the case pill \u2014
-  // no per-row pill or case name.
-  function codedRow(item) {
+  // Rows live INSIDE a case card whose header already carries the case pill —
+  // no per-row pill or case name. Group cards pass withCase=true so rows from
+  // different member cases identify themselves.
+  function codedRow(item, withCase) {
+    var who = withCase && item.caseShort
+      ? "<strong>" + esc(item.caseShort) + "</strong> \u00b7 "
+      : "";
     if (item.kind === "filing") {
-      return '<a class="ih-row-coded ih-code-filing" href="' + BASE + 'docket.html#case=' + encodeURIComponent(item.caseSlug) + '&e=' + encodeURIComponent(filingNoteKey(item)) + '"><span class="ih-code-ico">\u2696\ufe0f</span> ' +
+      return '<a class="ih-row-coded ih-code-filing" href="' + BASE + 'docket.html#case=' + encodeURIComponent(item.caseSlug) + '&e=' + encodeURIComponent(filingNoteKey(item)) + '"><span class="ih-code-ico">\u2696\ufe0f</span> ' + who +
         "Dkt. " + (item.num != null ? item.num : "\u2014") + " \u00b7 " + esc(item.text.slice(0, 95)) + "</a>";
     }
     if (item.kind === "news") {
-      return '<a class="ih-row-coded ih-code-news" href="' + BASE + 'news.html#case=' + encodeURIComponent(item.caseSlug) + '&u=' + encodeURIComponent(item.url || "") + '"><span class="ih-code-ico">\ud83d\udce1</span> ' +
+      return '<a class="ih-row-coded ih-code-news" href="' + BASE + 'news.html#case=' + encodeURIComponent(item.caseSlug) + '&u=' + encodeURIComponent(item.url || "") + '"><span class="ih-code-ico">\ud83d\udce1</span> ' + who +
         esc(item.source) + " \u2014 " + esc(item.text.slice(0, 95)) + "</a>";
     }
     // Calendar event: colored left border + a lighter tint of the case color.
     var cbg = caseColor(item.caseSlug, item.color);
-    return '<a class="ih-row-coded ih-code-date" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" href="' + BASE + 'calendar.html#case=' + encodeURIComponent(item.caseSlug) + '&ev=' + encodeURIComponent((item.date || "") + "|" + (item.caseShort || "")) + '"><span class="ih-code-ico">\ud83d\udcc5</span> ' +
+    return '<a class="ih-row-coded ih-code-date" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" href="' + BASE + 'calendar.html#case=' + encodeURIComponent(item.caseSlug) + '&ev=' + encodeURIComponent((item.date || "") + "|" + (item.caseShort || "")) + '"><span class="ih-code-ico">\ud83d\udcc5</span> ' + who +
       esc(fmtDate(item.date)) + " \u00b7 " + esc(item.text.slice(0, 70)) +
       ' <span style="color:var(--ink-40)">\u00b7 ' + daysUntil(item.date) + "</span></a>";
   }
@@ -521,7 +567,8 @@
       grid.innerHTML = '<div class="ih-empty">Loading cases\u2026</div>';
       return;
     }
-    var visible = MANIFEST.filter(caseVisible);
+    var allUnits = displayUnits();
+    var visible = allUnits.filter(caseVisible);
     if (!visible.length) {
       grid.innerHTML = '<div class="ih-empty">No cases selected.</div>';
       return;
@@ -531,19 +578,39 @@
     CASE_DATA.forEach(function (x) { dataBySlug[x.m.slug] = x; });
 
     var cards = visible.map(function (m) {
-      var x = dataBySlug[m.slug] || { m: m, c: null };
+      var isGroup = !!m.members;
       var brief = briefingOf(m.slug);
-      var filings = caseFilings(x, since);
-      var news = caseNews(m.slug, since);
-      var nextDate = caseNextDate(x);
+      var filings = [], news = [], nextDate = null;
+      if (isGroup) {
+        m.members.forEach(function (mm) {
+          var mx = dataBySlug[mm.slug] || { m: mm, c: null };
+          filings = filings.concat(caseFilings(mx, since));
+          news = news.concat(caseNews(mm.slug, since));
+          var nd = caseNextDate(mx);
+          if (nd && (!nextDate || nd.date < nextDate.date)) nextDate = nd;
+        });
+        filings.sort(function (a, b) {
+          if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+          return (b.num || 0) - (a.num || 0);
+        });
+      } else {
+        var x = dataBySlug[m.slug] || { m: m, c: null };
+        filings = caseFilings(x, since);
+        news = caseNews(m.slug, since);
+        nextDate = caseNextDate(x);
+      }
       var devCount = filings.length + news.length;
 
+      // Inside a group card the rows come from different cases — name them.
       var rows = [];
-      filings.slice(0, 4).forEach(function (f) { rows.push(codedRow(f)); });
-      news.slice(0, 3).forEach(function (n) { rows.push(codedRow(n)); });
+      filings.slice(0, 4).forEach(function (f) { rows.push(codedRow(f, isGroup)); });
+      news.slice(0, 3).forEach(function (n) { rows.push(codedRow(n, isGroup)); });
       rows = rows.slice(0, 5);
-      if (nextDate) rows.push(codedRow(nextDate));
+      if (nextDate) rows.push(codedRow(nextDate, isGroup));
       var hidden = devCount - Math.min(devCount, 5);
+      var docketTarget = isGroup
+        ? m.members.map(function (mm) { return mm.slug; }).join(",")
+        : m.slug;
 
       var moved = !!(brief && brief.moved);
       var count;
@@ -560,8 +627,8 @@
           esc(lede.slice(0, 700)) + (lede.length > 700 ? "\u2026" : "") +
           ' <a href="' + readHref + '">Read \u2192</a></div>';
       } else {
-        ledeHtml = '<div class="ih-tc-lede ih-quiet">No briefing yet for this case. ' +
-          '<a href="' + BASE + 'docket.html#case=' + encodeURIComponent(m.slug) + '">Docket \u2192</a></div>';
+        ledeHtml = '<div class="ih-tc-lede ih-quiet">No briefing yet for this ' + (isGroup ? "group" : "case") + '. ' +
+          '<a href="' + BASE + 'docket.html#case=' + docketTarget + '">Docket \u2192</a></div>';
       }
 
       var pri = isPriority(m.slug);
@@ -571,7 +638,7 @@
         (pri ? "★" : "☆") + "</button>";
       var head =
         '<div class="ih-tc-head">' +
-          '<a href="' + BASE + 'docket.html#case=' + encodeURIComponent(m.slug) + '" style="text-decoration:none">' +
+          '<a href="' + BASE + 'docket.html#case=' + docketTarget + '" style="text-decoration:none">' +
             casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) + "</a>" +
           '<span class="ih-tc-right"><span class="ih-tc-count">' + esc(count) + "</span>" + star + "</span>" +
         "</div>";
@@ -579,7 +646,7 @@
       var html =
         '<section class="ih-theme-card' + (moved ? " ih-card-moved" : "") + '">' +
           head + ledeHtml + rows.join("") +
-          (hidden > 0 ? '<div class="ih-more-rows">+' + hidden + ' more \u00b7 <a href="' + BASE + 'docket.html#case=' + encodeURIComponent(m.slug) + '">docket</a> / <a href="' + BASE + 'news.html">news</a></div>' : "") +
+          (hidden > 0 ? '<div class="ih-more-rows">+' + hidden + ' more \u00b7 <a href="' + BASE + 'docket.html#case=' + docketTarget + '">docket</a> / <a href="' + BASE + 'news.html">news</a></div>' : "") +
         "</section>";
 
       // Compact list-view row for the same case — same data, one line.
@@ -671,7 +738,7 @@
       });
     }
     // Filters can quietly hide cases — say so, with a one-click way back.
-    var hiddenN = MANIFEST.length - visible.length;
+    var hiddenN = allUnits.length - visible.length;
     if (hiddenN > 0) {
       htmlOut += '<div class="ih-filter-note">' + hiddenN + " case" + (hiddenN === 1 ? "" : "s") +
         ' hidden by your Cases/Themes filters · <button type="button" data-show-all-cases>Show all</button></div>';
@@ -1058,6 +1125,19 @@
     updateFilterButtons();
   }).catch(function () { renderCaseGrid(); });
 
+  // Briefing groups: live API first, static build copy as fallback.
+  fetchJson(BASE + "api/briefing-groups")
+    .then(function (p) { return (p && p.ok && p.groups) || []; })
+    .catch(function () {
+      return fetchJson(BASE + "briefing-groups.json")
+        .then(function (f) { return (f && f.groups) || []; })
+        .catch(function () { return []; });
+    })
+    .then(function (groups) {
+      BRIEFING_GROUPS = groups;
+      renderCaseGrid();
+    });
+
   // Prospects: live API first (fresh triage state), static file as fallback.
   fetchJson(BASE + "api/prospects")
     .then(function (p) { return (p && p.ok && p.items) || []; })
@@ -1307,6 +1387,107 @@
     });
   }
 
+  // ── Briefing-groups editor — consolidate cases into one briefing unit ─────
+  var grpEl = null;
+
+  function closeGroupEditor() {
+    if (grpEl && grpEl.parentNode) grpEl.parentNode.removeChild(grpEl);
+    grpEl = null;
+  }
+
+  function slugifyGroup(name) {
+    return String(name || "").toLowerCase().replace(/['’.]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50);
+  }
+
+  function saveGroupsList(groups, status) {
+    status.textContent = "Saving…";
+    return fetch(BASE + "api/briefing-groups", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ groups: groups }),
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      if (!j || !j.ok) throw new Error((j && j.error) || "save failed");
+      BRIEFING_GROUPS = j.groups;
+      renderAll();
+      return true;
+    });
+  }
+
+  function openGroupEditor() {
+    closeGroupEditor();
+    var grouped = {};
+    BRIEFING_GROUPS.forEach(function (g) {
+      (g.members || []).forEach(function (m) { grouped[m] = g.name; });
+    });
+    var existing = BRIEFING_GROUPS.length
+      ? BRIEFING_GROUPS.map(function (g, gi) {
+          var names = (g.members || []).map(function (s) {
+            var m = MANIFEST.find(function (x) { return x.slug === s; });
+            return m ? (m.short_name || m.display_name) : s;
+          }).join(", ");
+          return '<div class="ih-grp-row"><strong>' + esc(g.name) + "</strong> — " + esc(names) +
+            ' <button type="button" class="ih-grp-del" data-del="' + gi + '" title="Ungroup — members go back to their own briefings">×</button></div>';
+        }).join("")
+      : '<div class="ih-grp-none">No groups yet.</div>';
+    var checks = MANIFEST.map(function (m) {
+      var taken = grouped[m.slug];
+      return '<label class="ih-grp-check' + (taken ? " taken" : "") + '">' +
+        '<input type="checkbox" value="' + esc(m.slug) + '"' + (taken ? " disabled" : "") + "> " +
+        esc(m.short_name || m.display_name || m.slug) +
+        (taken ? ' <span class="ih-grp-taken">(' + esc(taken) + ")</span>" : "") +
+      "</label>";
+    }).join("");
+
+    var wrap = document.createElement("div");
+    wrap.className = "ih-grp-overlay";
+    wrap.innerHTML =
+      '<div class="ih-grp-box">' +
+        "<h2>Briefing groups</h2>" +
+        '<p class="ih-grp-sub">Grouped cases are briefed TOGETHER — one card, one briefing, generated from whichever members are actually moving. Groups don\'t affect themes or the sort groupings.</p>' +
+        '<div class="ih-grp-list">' + existing + "</div>" +
+        '<div class="ih-grp-newhead">New group</div>' +
+        '<input type="text" class="ih-grp-name" placeholder="Group name (e.g. Hachette Suits) — becomes the pill label">' +
+        '<div class="ih-grp-checks">' + checks + "</div>" +
+        '<div class="ih-grp-actions">' +
+          '<span class="ih-grp-status"></span>' +
+          '<button type="button" class="pr-btn" data-grp-cancel>Close</button>' +
+          '<button type="button" class="pr-btn pr-btn-track" data-grp-create>Create group</button>' +
+        "</div>" +
+      "</div>";
+    document.body.appendChild(wrap);
+    grpEl = wrap;
+    var status = wrap.querySelector(".ih-grp-status");
+
+    wrap.addEventListener("mousedown", function (ev) { if (ev.target === wrap) closeGroupEditor(); });
+    wrap.querySelector("[data-grp-cancel]").addEventListener("click", closeGroupEditor);
+    wrap.querySelectorAll("[data-del]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var next = BRIEFING_GROUPS.filter(function (_, i) { return i !== Number(b.getAttribute("data-del")); });
+        saveGroupsList(next, status).then(function () { openGroupEditor(); })
+          .catch(function (e) { status.textContent = e.message; });
+      });
+    });
+    wrap.querySelector("[data-grp-create]").addEventListener("click", function () {
+      var name = wrap.querySelector(".ih-grp-name").value.trim();
+      var members = Array.prototype.slice.call(wrap.querySelectorAll(".ih-grp-checks input:checked"))
+        .map(function (c) { return c.value; });
+      if (!name) { status.textContent = "Give the group a name."; return; }
+      if (members.length < 2) { status.textContent = "Pick at least 2 cases."; return; }
+      var id = slugifyGroup(name);
+      if (!id) { status.textContent = "Name needs some letters or numbers."; return; }
+      if (MANIFEST.some(function (m) { return m.slug === id; }) ||
+          BRIEFING_GROUPS.some(function (g) { return g.id === id; })) {
+        status.textContent = "That name collides with an existing case or group.";
+        return;
+      }
+      var next = BRIEFING_GROUPS.concat([{ id: id, name: name, members: members }]);
+      saveGroupsList(next, status).then(function () {
+        status.textContent = "Group created — its consolidated briefing generates on the next run.";
+        setTimeout(closeGroupEditor, 1400);
+      }).catch(function (e) { status.textContent = e.message; });
+    });
+  }
+
   // Cards ⇄ List view toggle for the briefing grid.
   function wireViewToggle() {
     var tgl = document.getElementById("ih-view-tgl");
@@ -1334,5 +1515,10 @@
     wireSortBar();
     wireViewToggle();
     wireShortcuts();
+    var gb = document.getElementById("ih-groups-btn");
+    if (gb) gb.addEventListener("click", openGroupEditor);
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape") closeGroupEditor();
+    });
   });
 })();

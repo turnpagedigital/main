@@ -52,8 +52,8 @@
     return null;
   }
 
-  function casePill(slug, name) {
-    var m = manifestOf(slug);
+  function casePill(slug, name, fallbackSlug) {
+    var m = manifestOf(slug) || (fallbackSlug ? manifestOf(fallbackSlug) : null);
     var bg = (savedColors[slug] && savedColors[slug].bg) || (m && m.default_color) || "#888888";
     var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
     return '<span class="ud-pill" style="background:' + bg + ";color:" + fg + ';font-size:13px;padding:3px 14px">' + esc(name) + "</span>";
@@ -155,6 +155,8 @@
     var b = briefOf(slug);
     var m = manifestOf(slug);
     var a = ADMIN[slug];
+    var isGroup = !!(b && b.is_group);
+    var filterTarget = isGroup && (b.members || []).length ? b.members.join(",") : slug;
     var name = (b && b.case_name) || (m && m.display_name) || (a && a.display_name) || slug;
     var short = (b && b.short_name) || (m && m.short_name) || name;
     var court = (b && b.court) || (m && m.court) || "";
@@ -163,7 +165,7 @@
 
     document.title = name + " — Briefing | Turnpage Intelligence";
     var h1 = document.querySelector(".page-title h1");
-    if (h1) h1.innerHTML = esc(emoji) + " " + casePill(slug, name);
+    if (h1) h1.innerHTML = esc(emoji) + " " + casePill(slug, name, isGroup ? (b.members || [])[0] : null);
     var meta = document.getElementById("ud-meta");
     if (meta) {
       meta.innerHTML = statusChip(b) +
@@ -187,12 +189,13 @@
         (isLatestView && b && (b.body_md || "").trim()
           ? '<button type="button" class="pr-btn pr-btn-track" data-send="' + esc(slug) + '">Send to site queue</button>'
           : "") +
-        '<button type="button" class="pr-btn" data-edit="' + esc(slug) + '">Edit case</button>' +
-        '<button type="button" class="pr-btn" data-syncnow="' + esc(slug) + '">Sync</button>' +
-        '<button type="button" class="pr-btn" data-export="' + esc(slug) + '">Export</button>' +
-        '<a class="pr-btn" href="docket.html#case=' + encodeURIComponent(slug) + '">Docket</a>' +
-        '<a class="pr-btn" href="calendar.html#case=' + encodeURIComponent(slug) + '">Calendar</a>' +
-        '<a class="pr-btn" href="news.html#case=' + encodeURIComponent(slug) + '">News</a>' +
+        (isGroup ? "" :
+          '<button type="button" class="pr-btn" data-edit="' + esc(slug) + '">Edit case</button>' +
+          '<button type="button" class="pr-btn" data-syncnow="' + esc(slug) + '">Sync</button>' +
+          '<button type="button" class="pr-btn" data-export="' + esc(slug) + '">Export</button>') +
+        '<a class="pr-btn" href="docket.html#case=' + filterTarget + '">Docket</a>' +
+        '<a class="pr-btn" href="calendar.html#case=' + filterTarget + '">Calendar</a>' +
+        '<a class="pr-btn" href="news.html#case=' + filterTarget + '">News</a>' +
         '<button type="button" class="pr-btn" id="ce-new" title="Create a new tracked case">＋ New case</button>';
 
       var send = actions.querySelector("[data-send]");
