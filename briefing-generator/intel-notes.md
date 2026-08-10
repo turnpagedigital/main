@@ -216,6 +216,10 @@ Ciao
 
 > Versant Media Shares Jump After Raising Outlook on Strong Viewership — Versant Media shares climbed after the company raised its full-year outlook despite recording lower sales in its third earnings r
 
+### (no docket number) — 2026-08-06
+
+> U.K. Waves Through $81 Billion Paramount-Warner Bros. Deal — The deal still faces substantial legal challenges in the U.S., where state attorneys general have sued to block the purchase.
+
 ## Unknown case
 
 ### (no docket number) — undated
