@@ -198,10 +198,30 @@ STYLE_SPEC = """# Briefing register (structural spec — the house voice above g
   inside the body. Dense paragraphs of five to seven sentences. Never open with
   throat-clearing ("it's worth noting", "here's the thing" and that family).
 - Lead with the latest developments. This is a DELTA briefing for a reader who read
-  yesterday's edition: cover what moved since the previous briefing (docket filings,
-  rulings, coverage, deadlines that newly ripened). Where a development can't be
-  understood without prior context, a short anchoring clause is fine ("the lift-stay
-  motion filed July 30"); a recap paragraph is not.
+  yesterday's edition: cover what substantively moved since the previous briefing
+  (docket filings, rulings, coverage, deadlines that newly ripened). Where a
+  development can't be understood without prior context, a short anchoring clause is
+  fine ("the lift-stay motion filed July 30"); a recap paragraph is not.
+- MATERIALITY FILTER: before writing, sort what moved into substantive vs.
+  administrative. Only substantive items earn the lead sentence or a paragraph of
+  their own. Substantive, bankruptcy/insolvency: schedules and statements, a
+  disclosure statement (filed, amended, objected to, or approved), a plan of
+  reorganization or liquidation (filed, amended, confirmed, or denied), a 363 sale
+  (bid procedures, stalking horse, auction, sale order), DIP or exit financing, a
+  material adversary proceeding (especially high-dollar), a 9019 settlement, a claims
+  bar date order, a dispositive ruling, a committee formation or objection with
+  teeth. Substantive, litigation: a ruling on a dispositive motion (dismiss, summary
+  judgment, class certification), a settlement or judgment amount, an injunction, a
+  verdict, a significant appellate ruling, a material new claim or amended
+  complaint. The test in every case type: would this move recoveries, timing, or the
+  merits? Administrative — omit, or fold into a single clause only if needed to
+  anchor a substantive item, never the lead: notices or certificates of service,
+  hearing notices and scheduling orders, deposition notices and other discovery
+  logistics, pro hac vice admissions, notices of appearance, corporate ownership
+  statements, transcript orders, BNC certificates of mailing, routine deadline
+  stipulations, agenda filings. If everything that moved is administrative, that's a
+  thin day per the rule below — don't manufacture significance out of a notice of
+  service or a certificate of mailing.
 - Match tone to the weight of the update: a procedural entry, a status change, and a
   substantive development each get a different register — never dress up a scheduling
   order as a turning point. Some updates are just updates; don't manufacture an arc.
