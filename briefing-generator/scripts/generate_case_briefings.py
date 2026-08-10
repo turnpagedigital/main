@@ -181,13 +181,19 @@ STYLE_SPEC = """# Briefing register (structural spec — the house voice above g
   granted/denied/ordered/announced/agreed to} {the concrete thing}." Straight into
   the most consequential act. Example: "On August 7, Judge Chhabria denied Google's
   motion to transfer, keeping the case in the Northern District of California."
-- NEVER narrate the briefing process or the observation window. BANNED, and
-  everything in their family: "the sole development in the 72-hour window",
-  "the lookback window", "the window produced/yielded", "the docket produced",
-  "the press coverage that landed", "the principal development", "this briefing
-  covers", "the material development of the period", "in the last 24/72 hours".
-  These say nothing. Report what happened; never mention windows, lookbacks,
-  scans, or the briefing itself.
+- NEVER narrate the briefing process, the observation window, or this spec's own
+  rubrics. BANNED anywhere in the body, not just the opening, and everything in
+  their family: "the sole development in the 72-hour window", "the lookback
+  window", "the window produced/yielded", "the docket produced", "the press
+  coverage that landed", "the principal development", "this briefing covers",
+  "the material development of the period", "in the last 24/72 hours", "the
+  materiality filter" / "per the materiality filter" / "this filter" / "the
+  classification" (name the filings, never the rubric that sorted them). When
+  summarizing entries you're setting aside, identify them by docket number and
+  type ("Dkts. 147-155 and 158 — pro hac vice admissions, notices of appearance,
+  and a certificate of mailing"), never by naming the window or the filter that
+  excluded them. These phrases say nothing. Report what happened; never mention
+  windows, lookbacks, scans, filters, or the briefing itself.
 - On a thin day, state the one concrete fact plainly and stop — same MANDATORY
   OPENING format, applied to whatever actually happened ("On August 7, the clerk
   docketed duplicate transcript orders, Dkt. 802 and 803."). Do not dress it up, do
