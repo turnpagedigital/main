@@ -195,6 +195,27 @@ async function stampCss(html, fileDir) {
   return html;
 }
 
+// Same idea again, for logo/favicon <img src>/<link href> references under
+// assets/. Unlike .js/.css these aren't behind a short Cache-Control cap —
+// /intel/* is entirely function-fronted (see _middleware.js), so the
+// _headers file's /*.png rule never applies here, and the middleware itself
+// only caps .js/.json. Without a version-stamped URL, a logo/favicon swap
+// (same filename, new bytes) sits behind whatever Pages' uncapped default
+// image cache is until it expires on its own, in both the browser and
+// Cloudflare's edge — this is what actually broke the Aug 2026 logo update.
+async function stampImages(html, fileDir) {
+  const tags = [...html.matchAll(/(?:src|href)="((?:\.\.\/|\/intel\/)?assets\/[\w.-]+\.(?:png|jpe?g))"/g)];
+  for (const m of tags) {
+    const ref = m[1];
+    const local = ref.startsWith("/intel/")
+      ? join(DEST, ref.slice("/intel/".length))
+      : join(fileDir, ref);
+    const v = await versionOf(local);
+    if (v) html = html.replaceAll(`"${ref}"`, `"${ref}?v=${v}"`);
+  }
+  return html;
+}
+
 let rewritten = 0;
 for await (const file of walk(DEST)) {
   if (!/\.(html|js)$/.test(file)) continue;
@@ -219,6 +240,7 @@ for await (const file of walk(DEST)) {
   if (file.endsWith(".html")) {
     after = await stampScripts(after, dirname(file));
     after = await stampCss(after, dirname(file));
+    after = await stampImages(after, dirname(file));
   }
   if (after !== before) {
     await writeFile(file, after);
