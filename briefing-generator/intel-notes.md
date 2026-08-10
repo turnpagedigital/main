@@ -232,6 +232,10 @@ Ciao
 
 > Partners Group in Talks to Buy Aroma-Zone Stake in Deal that Values Company at $2.3 Billion — Exclusive talks are underway with Eurazeo about a majority stake in France’s Aroma-Zone, which sells beaut
 
+### (no docket number) — 2026-08-06
+
+> Krispy Kreme Narrows Loss Despite Lower Revenue — Krispy Kreme once again narrowed its loss and expanded margins during its latest quarter, as the doughnut chain continued to make progress with its tu
+
 ## Unknown case
 
 ### (no docket number) — undated
