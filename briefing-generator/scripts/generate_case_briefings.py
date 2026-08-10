@@ -248,6 +248,13 @@ STYLE_SPEC = """# Briefing register (structural spec — the house voice above g
   (e.g. doubling as a sanctions/dismissal threat). A notice attaching a substantive
   document (e.g. "notice of filing of plan supplement") takes the classification of
   the attachment, not the cover notice. Mixed filings classify by dominant effect.
+  Certificates of service, certificates of mailing, and BNC certificates are NEVER a
+  reportable event, an opening beat, or an anchor — not even for timing. When a
+  deadline runs from service, state it from the underlying motion's own filed/
+  served date directly ("Dkt. 146, filed August 7, drew a response deadline of
+  August 21") — never frame the certificate itself as something that happened
+  ("the BNC issued a certificate..." is banned; it is filing infrastructure, not
+  news, even when it is technically true that it started a clock).
 
   AXIS 2 — Important vs. Routine, independent of Axis 1. Important: dispositive of
   a claim, the case, or a discrete contested issue; sets or shortens a near-term
@@ -359,6 +366,61 @@ def build_x_block(cfg, short):
         lines.append(f"- @{p.get('handle', '')} {stamp} UTC — \"{p.get('text', '')}\" ({p.get('url', '')})")
     return "\n".join(lines) + "\n\n"
 
+def build_uploads_block(slug, entries=None):
+    """Full extracted text of documents pulled for this case — uploads.json,
+    populated by the docket page's one-click RECAP/claims-agent/PACER fetch
+    plus the hourly extract_uploads.py text-extraction pass. This is PRIMARY
+    SOURCE: the actual pleading text, not a docket-line description or a news
+    summary. Not window-scoped — a disclosure statement pulled last month is
+    still the disclosure statement; case knowledge doesn't expire."""
+    path = REPO_ROOT / "uploads.json"
+    try:
+        idx = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return ""
+    docs = idx.get("docs") or {}
+    date_by_entry = {}
+    for e in (entries or []):
+        n = e.get("entry_number")
+        if n is not None:
+            date_by_entry[n] = e.get("date_filed", "")
+    mine = []
+    for key, doclist in docs.items():
+        key_slug, sep, rest = key.partition("|")
+        if not sep or key_slug != slug:
+            continue
+        entry_number = int(rest[1:]) if rest.startswith("n") and rest[1:].isdigit() else None
+        for d in doclist:
+            text = (d.get("text") or "").strip()
+            if not text:
+                continue
+            mine.append({"entry_number": entry_number,
+                         "date_filed": date_by_entry.get(entry_number, ""),
+                         "title": d.get("title") or d.get("name") or "Untitled document",
+                         "text": text})
+    if not mine:
+        return ""
+    mine.sort(key=lambda m: (m["entry_number"] is None, m["entry_number"] or 0))
+    lines = ["# Full text of documents pulled for this case (PRIMARY SOURCE — no",
+              "citation needed; strictly more authoritative than a docket-line",
+              "description or a web search. State what a document actually says",
+              "instead of hedging \"unverified without a PACER pull\" for anything",
+              "answered below. This is accumulated case knowledge, not limited to",
+              "this window — weigh it against overall case dynamics, not just today.)", ""]
+    budget = 16000
+    for m in mine:
+        if m["entry_number"] is not None:
+            when = f" (filed {m['date_filed']})" if m["date_filed"] else ""
+            head = f"## Dkt. {m['entry_number']}{when} — {m['title']}"
+        else:
+            head = f"## {m['title']}"
+        block = f"{head}\n\n{m['text'][:8000]}\n"
+        if len(block) > budget:
+            break
+        lines.append(block)
+        budget -= len(block)
+    return "\n".join(lines) + "\n\n"
+
 def build_prompt(case, prev_item, filings, articles, house_voice):
     cfg = case["config"]
     data = case["data"] or {}
@@ -428,7 +490,7 @@ TODAY: {DATE_PRETTY}
 
 {chr(10).join(moved_lines)}
 
-# Recent docket context (already covered — for orientation only)
+{build_uploads_block(case['slug'], entries)}# Recent docket context (already covered — for orientation only)
 
 {chr(10).join(fmt_entry(e) for e in context_entries) or '(none)'}
 
@@ -452,7 +514,7 @@ Write TODAY's briefing for this one case — what moved, why it matters to the r
 
 VERIFICATION RULES (hard requirements):
 - You have a web_search tool; use it (sparingly — at most 3 searches) to confirm any fact you would otherwise assert from memory and to find the primary-source page for anything the materials above don't already source.
-- Every press-sourced proposition must cite a URL you confirmed this run — from the materials above or your searches. Never a bare outlet homepage. The docket data needs no citation.
+- Every press-sourced proposition must cite a URL you confirmed this run — from the materials above or your searches. Never a bare outlet homepage. The docket data and any pulled-document full text above need no citation — they're primary source.
 - If your memory of the case conflicts with the docket record block, the block wins.
 - If you cannot verify a claim, omit it. Never write "needs verification".
 
@@ -489,6 +551,9 @@ def build_group_prompt(group, member_plans, prev_item, house_voice):
             lines.append("New press coverage (verified URLs):")
             lines += [fmt_article(a) for a in mp["articles"][:6]]
         entries = (data.get("docket") or {}).get("entries") or []
+        uploads = build_uploads_block(case["slug"], entries).strip()
+        if uploads:
+            lines.append(uploads)
         ctx = entries[:5]
         if ctx:
             lines.append("Recent docket context (already covered — orientation only):")
@@ -528,7 +593,7 @@ Write TODAY's consolidated briefing for the group — ONE flowing narrative acro
 
 VERIFICATION RULES (hard requirements):
 - You have a web_search tool; use it (sparingly — at most 3 searches) to confirm any fact you would otherwise assert from memory.
-- Every press-sourced proposition must cite a URL you confirmed this run. Never a bare outlet homepage. The docket data needs no citation.
+- Every press-sourced proposition must cite a URL you confirmed this run. Never a bare outlet homepage. The docket data and any pulled-document full text needs no citation — it's primary source.
 - If your memory conflicts with the docket record sections, the sections win.
 - If you cannot verify a claim, omit it. Never write "needs verification".
 
