@@ -112,6 +112,12 @@ Ciao
 
 > Papaya Gaming Files Ch. 15 To Shield Against $719M Verdict — Israeli mobile gaming company Papaya Gaming filed a Chapter 15 bankruptcy petition in Delaware's U.S. Bankruptcy Court after being hit with
 
+## Ponzi / Fraud
+
+### (no docket number) — 2026-08-06
+
+> The Investors Whose SpaceX Shares Vanished Before They Could Cash In — One bought in to an SPV fund touting pre-IPO “exposure” to the rocket company. He was told later the shares were sold before trad
+
 ## Poolin
 
 ### (no docket number) — 2026-08-02 ★
