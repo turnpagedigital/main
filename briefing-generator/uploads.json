@@ -138,13 +138,13 @@
         "size": 195927,
         "uploaded_at": "2026-08-10T16:46:50.595972+00:00",
 =======
-    "omnis-pleasants|n49": [
+    "omnis-pleasants|n53": [
       {
-        "name": "Dkt-49.pdf",
-        "path": "briefing-generator/uploads/omnis-pleasants-n49/Dkt-49.pdf",
-        "size": 180346,
-        "uploaded_at": "2026-08-10T16:46:56.134213+00:00",
->>>>>>> 7a782e5 (Agent fetch: Dkt. 49 (omnis-pleasants))
+        "name": "Dkt-53.pdf",
+        "path": "briefing-generator/uploads/omnis-pleasants-n53/Dkt-53.pdf",
+        "size": 211757,
+        "uploaded_at": "2026-08-10T16:47:02.350816+00:00",
+>>>>>>> 4500f8a (Agent fetch: Dkt. 53 (omnis-pleasants))
         "text": "",
         "source": "claims-agent"
       }
