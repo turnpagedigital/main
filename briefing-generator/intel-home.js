@@ -1630,7 +1630,7 @@
       "#ih-view-tgl .ih-sort-btn:hover{background:none;color:var(--ink-60);}" +
       "#ih-view-tgl .ih-sort-btn.on{background:none;color:var(--ink);}" +
       ".ih-vt-track{width:34px;height:18px;border-radius:99px;background:var(--ink-20);position:relative;flex:0 0 auto;cursor:pointer;}" +
-      ".ih-vt-knob{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,0.3);transition:left 0.15s ease;}";
+      ".ih-vt-knob{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,0.3);transition:left 0.15s ease;cursor:pointer;}";
     function sync() {
       var tgl = document.getElementById("ih-view-tgl");
       if (!tgl) return;
@@ -1655,8 +1655,9 @@
         track.innerHTML = '<span class="ih-vt-knob"></span>';
         var listBtn = tgl.querySelector('[data-view="list"]');
         if (listBtn) tgl.insertBefore(track, listBtn);
-        // Clicking the track flips to whichever view is inactive.
-        track.addEventListener("click", function (e) {
+        // Clicking anywhere on the switch — track or the knob itself —
+        // flips to whichever view is inactive.
+        function flip(e) {
           e.stopPropagation();
           var t = document.getElementById("ih-view-tgl");
           if (!t) return;
@@ -1665,7 +1666,9 @@
             : t.querySelector('[data-view="list"]');
           if (other) other.click();
           setTimeout(sync, 0);
-        });
+        }
+        track.addEventListener("click", flip);
+        track.querySelector(".ih-vt-knob").addEventListener("click", flip);
       }
       sync();
     }
