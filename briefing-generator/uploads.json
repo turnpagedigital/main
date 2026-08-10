@@ -129,6 +129,16 @@
         "source": "claims-agent",
         "title": "Transfer Of Claim Other Than For Security"
       }
+    ],
+    "omnis-pleasants|n52": [
+      {
+        "name": "Dkt-52.pdf",
+        "path": "briefing-generator/uploads/omnis-pleasants-n52/Dkt-52.pdf",
+        "size": 195927,
+        "uploaded_at": "2026-08-10T16:46:50.595972+00:00",
+        "text": "",
+        "source": "claims-agent"
+      }
     ]
   }
 }
