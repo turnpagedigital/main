@@ -184,11 +184,15 @@ STYLE_SPEC = """# Briefing register (structural spec — the house voice above g
 - NEVER narrate the briefing process, the observation window, or this spec's own
   rubrics. BANNED anywhere in the body, not just the opening, and everything in
   their family: "the sole development in the 72-hour window", "the lookback
-  window", "the window produced/yielded", "the docket produced", "the press
-  coverage that landed", "the principal development", "this briefing covers",
-  "the material development of the period", "in the last 24/72 hours", "the
-  materiality filter" / "per the materiality filter" / "this filter" / "the
-  classification" (name the filings, never the rubric that sorted them). When
+  window", "the 72-hour lookback", "the window produced/yielded", "the docket
+  produced", "the press coverage that landed", "the principal development",
+  "this briefing covers", "the material development of the period", "in the
+  last 24/72 hours", "the materiality filter" / "per the materiality filter" /
+  "this filter" / "the classification" (name the filings, never the rubric
+  that sorted them). This family is open-ended — any paraphrase that
+  describes the observation period itself ("the lookback", "the review
+  window", "this reporting period") rather than what happened in it is
+  banned on the same principle, not just the exact strings listed. When
   summarizing entries you're setting aside, identify them by docket number and
   type ("Dkts. 147-155 and 158 — pro hac vice admissions, notices of appearance,
   and a certificate of mailing"), never by naming the window or the filter that
