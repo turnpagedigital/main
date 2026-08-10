@@ -3036,9 +3036,12 @@
       var dr = document.getElementById("ud-daterange");
       if (dr) dr.style.display = lookback === "custom" ? "" : "none";
     }
+    var LB_LABELS = { "24h": "Last 24 hours", "7d": "Last 7 days", "30d": "Last 30 days", "90d": "Last 90 days", all: "All time", custom: "Custom range" };
     function syncTimeHeader() {
       var th = document.getElementById("ud-th-time");
       if (th) th.classList.toggle("ud-th-on", lookback !== "all");
+      var lbl = document.getElementById("ud-lookback-label");
+      if (lbl) lbl.textContent = LB_LABELS[lookback] || "All time";
       var menu = document.getElementById("ud-th-timemenu");
       if (menu) menu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
         b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === lookback);

@@ -1472,9 +1472,12 @@
       var dr = document.getElementById("ud-daterange");
       if (dr) dr.style.display = lookahead === "custom" ? "" : "none";
     }
+    var LB_LABELS = { "7d": "Next 7 days", "30d": "Next 30 days", "90d": "Next 90 days", all: "All dates", custom: "Custom range" };
     function syncTimeHeader() {
       var th = document.getElementById("ud-th-time");
       if (th) th.classList.toggle("ud-th-on", lookahead !== "all");
+      var lbl = document.getElementById("ud-lookback-label");
+      if (lbl) lbl.textContent = LB_LABELS[lookahead] || "All dates";
       var menu = document.getElementById("ud-th-timemenu");
       if (menu) menu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
         b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === lookahead);
