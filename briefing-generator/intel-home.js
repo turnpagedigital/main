@@ -936,6 +936,15 @@
   }
 
 
+  function manifestOf(slug) {
+    for (var i = 0; i < MANIFEST.length; i++) if (MANIFEST[i].slug === slug) return MANIFEST[i];
+    return null;
+  }
+
+  function deriveTitle(note) {
+    return (note || "").trim().split(/\s+/).slice(0, 3).join(" ");
+  }
+
   function renderNotes() {
     var list = NOTES_LIST.filter(function (n) {
       if (!n.case_slug) return caseOn("__unassigned__");
@@ -952,27 +961,13 @@
     }
     NOTE_STACK = list.slice(0, 8);
     if (noteFront >= NOTE_STACK.length) noteFront = 0;
-    box.innerHTML =
-      '<div class="ih-notes-wrap" id="ih-notes-wrap">' +
-        '<div class="ih-notes-stack" id="ih-notes-stack"></div>' +
-        (NOTE_STACK.length > 1
-          ? '<div class="ih-notes-nav">' +
-              '<button type="button" class="ih-notes-arrow" id="ih-notes-prev" aria-label="Previous note">\u2039</button>' +
-              '<div class="ih-notes-dots" id="ih-notes-dots"></div>' +
-              '<button type="button" class="ih-notes-arrow" id="ih-notes-next" aria-label="Next note">\u203a</button>' +
-            "</div>"
-          : "") +
-      "</div>";
+    box.innerHTML = '<div class="ih-notes-wrap" id="ih-notes-wrap"><div class="ih-notes-stack" id="ih-notes-stack"></div></div>';
     renderNoteStack();
     var wrap = document.getElementById("ih-notes-wrap");
     if (wrap) {
       wrap.addEventListener("mouseenter", function () { noteHovered = true; });
       wrap.addEventListener("mouseleave", function () { noteHovered = false; });
     }
-    var prevBtn = document.getElementById("ih-notes-prev");
-    var nextBtn = document.getElementById("ih-notes-next");
-    if (prevBtn) prevBtn.addEventListener("click", function () { stepNote(-1); });
-    if (nextBtn) nextBtn.addEventListener("click", function () { stepNote(1); });
     startNoteAuto();
   }
 
@@ -991,10 +986,14 @@
       var idx = (noteFront + i) % NOTE_STACK.length;
       var n = NOTE_STACK[idx];
       var body = (n.note || "").trim() || n.snippet || "(bookmark)";
+      var noteTitle = (n.title && n.title.trim()) || deriveTitle(body);
+      var m = manifestOf(n.case_slug);
+      var cc = caseColor(n.case_slug, m ? m.default_color : null);
       var tint = NOTE_TINTS[idx % NOTE_TINTS.length];
-      html += '<a class="ih-note-card" data-pos="' + i + '" data-idx="' + idx + '" style="--nc:' + tint.bg + ";--ncd:" + tint.bgd + '" ' +
+      html += '<a class="ih-note-card" data-pos="' + i + '" data-idx="' + idx + '" style="--nc:' + tint.bg + ";--ncd:" + tint.bgd + ";--cc:" + cc + '" ' +
         'href="' + BASE + 'notes.html#e=' + encodeURIComponent(n._key || "") + '">' +
-        '<span class="body">\u201c' + esc(body.slice(0, 160)) + '\u201d</span>' +
+        '<span class="title">' + esc(noteTitle) + "</span>" +
+        '<span class="body">' + esc(body.slice(0, 160)) + "</span>" +
         '<span class="who">\u2014 ' + esc(n.case_name || n.case_slug || "Uncategorized") +
         (n.bookmarked ? " \u2605" : "") + "</span></a>";
     }
@@ -1008,18 +1007,6 @@
         }
       });
     });
-    var dots = document.getElementById("ih-notes-dots");
-    if (dots) {
-      dots.innerHTML = NOTE_STACK.map(function (_, i) {
-        return '<button type="button" class="ih-notes-dot' + (i === noteFront ? " on" : "") + '" data-i="' + i + '" aria-label="Note ' + (i + 1) + '"></button>';
-      }).join("");
-      dots.querySelectorAll(".ih-notes-dot").forEach(function (d) {
-        d.addEventListener("click", function () {
-          noteFront = Number(d.getAttribute("data-i")) || 0;
-          renderNoteStack();
-        });
-      });
-    }
   }
 
   function startNoteAuto() {

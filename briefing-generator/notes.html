@@ -236,6 +236,8 @@
   .ud-note-meta{font-size:12px;color:var(--ink-60);line-height:1.5;border-bottom:1px solid var(--line);padding-bottom:10px;}
   .ud-note-text{width:100%;min-height:180px;resize:vertical;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.55;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
   .ud-note-text:focus{border-color:var(--neon);}
+  .ud-note-titlefield{width:100%;padding:9px 12px;font-family:inherit;font-size:14px;font-weight:700;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);outline:none;box-sizing:border-box;}
+  .ud-note-titlefield:focus{border-color:var(--neon);}
   .ud-note-actions{display:flex;align-items:center;gap:8px;}
   .ud-note-status{font-size:12px;color:var(--ink-40);}
   .ud-upload-btn{background:none;border:none;cursor:pointer;padding:1px 2px;color:var(--ink-40);vertical-align:middle;margin-left:4px;}
@@ -396,6 +398,7 @@
   .uc-snippet{color:var(--ink-60);font-size:inherit;}
   .un-note-cell{max-width:420px;}
   .un-note-text{white-space:pre-wrap;font-size:inherit;line-height:1.5;}
+  .un-note-title{font-weight:800;color:var(--ink);margin-bottom:2px;}
   .un-export{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 </style>
 <!-- AUTH GATE START -->
@@ -446,6 +449,7 @@
   <div class="ud-note-box">
     <div class="ud-note-title" id="ud-note-title"></div>
     <div class="ud-note-meta" id="ud-note-meta"></div>
+    <input type="text" id="ud-note-titlefield" class="ud-note-titlefield" placeholder="Title (optional — defaults to the note's first few words)" maxlength="200">
     <textarea id="ud-note-text" class="ud-note-text" placeholder="Notes for this entry…"></textarea>
     <div class="ud-note-actions">
       <button type="button" id="ud-note-delete" class="ud-clear-btn">Delete note</button>

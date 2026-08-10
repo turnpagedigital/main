@@ -26,6 +26,7 @@ function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
 function cleanEntry(raw) {
   if (!raw || typeof raw !== "object") return null;
   const note = typeof raw.note === "string" ? raw.note.slice(0, 20000) : "";
+  const title = typeof raw.title === "string" ? raw.title.slice(0, 200) : "";
   const bookmarked = !!raw.bookmarked;
   const snooze = typeof raw.snooze_until === "string" && /^\d{4}-\d{2}-\d{2}T/.test(raw.snooze_until)
     ? raw.snooze_until.slice(0, 30) : "";
@@ -36,6 +37,7 @@ function cleanEntry(raw) {
   return {
     bookmarked,
     note,
+    title,
     snooze_until: snooze,
     hidden,
     deleted_at: deletedAt,
@@ -77,7 +79,8 @@ function renderMarkdown(map) {
     for (const e of items) {
       const dkt = e.entry_number != null ? `Dkt. ${e.entry_number}` : "(no docket number)";
       const star = e.bookmarked ? " ★" : "";
-      lines.push(`### ${dkt} — ${e.date_filed || "undated"}${star}`, "");
+      const heading = e.title && e.title.trim() ? e.title.trim() : `${dkt} — ${e.date_filed || "undated"}`;
+      lines.push(`### ${heading}${star}`, "");
       if (e.snippet) lines.push(`> ${e.snippet}`, "");
       if (e.note && e.note.trim()) lines.push(e.note.trim(), "");
     }
