@@ -180,6 +180,10 @@ Ciao
 
 > Treasury Yields Rise Amid Low Job Cuts, Low Claims — Treasury yields rose ahead of Friday’s U.S. payrolls report, as job-cut plans remained calm in July alongside low weekly jobless-claims figures.
 
+### (no docket number) — 2026-08-06
+
+> Hedge Fund Turning Up Pressure on Voya Financial to Sell Itself — Toms Capital Investment Management is bringing its push for the asset manager to explore a sale directly to shareholders.
+
 ## Unknown case
 
 ### (no docket number) — undated
