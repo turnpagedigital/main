@@ -152,8 +152,14 @@ UD_CSS = r"""
   .ud-table tbody tr:not(.ud-day-row) td:first-child{border-left:1px solid var(--line-strong);}
   .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right:1px solid var(--line-strong);}
   .ud-table tbody tr:last-child td{border-bottom:1px solid var(--line-strong);}
+  [data-theme="dark"] .ud-table thead th:first-child{border-left-color:var(--bg);}
+  [data-theme="dark"] .ud-table thead th:last-child{border-right-color:var(--bg);}
+  [data-theme="dark"] .ud-table tbody tr:not(.ud-day-row) td:first-child{border-left-color:var(--bg);}
+  [data-theme="dark"] .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right-color:var(--bg);}
+  [data-theme="dark"] .ud-table tbody tr:last-child td{border-bottom-color:var(--bg);}
   .ud-table th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-40);padding:11px 14px;border-bottom:1px solid var(--line-strong);font-weight:700;}
   .ud-table td{padding:12px 14px;font-size:13.5px;border-bottom:1px solid var(--line);vertical-align:top;}
+  [data-theme="dark"] .ud-table td{border-bottom-color:var(--bg);}
   .ud-table tr:last-child td{border-bottom:none;}
   .ud-row-new .ud-entry{font-weight:700;}  /* highlight new rows via the entry text only — dates and parties stay regular */
   .ud-table tr.ud-day-row{background:transparent;}
