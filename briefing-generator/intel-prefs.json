@@ -91,8 +91,8 @@
       "fg": "#c9c6fb"
     },
     "in-re-cashcall-inc": {
-      "bg": "#2d42e1",
-      "fg": "#ffffff"
+      "bg": "#000000",
+      "fg": "#2569d4"
     },
     "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026": {
       "bg": "#0892b4",
@@ -116,7 +116,7 @@
     },
     "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s": {
       "bg": "#000000",
-      "fg": "#ff6c5c"
+      "fg": "#ff6352"
     },
     "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153": {
       "bg": "#6f6e81",
