@@ -176,6 +176,21 @@ def activity_of(data):
 # ── Prompt assembly ──────────────────────────────────────────────────────────
 STYLE_SPEC = """# Briefing register (structural spec — the house voice above governs tone)
 
+- MANDATORY OPENING: the first sentence of every briefing is
+  "On {date — or Today/Yesterday}, {person/entity/court} {filed/ruled/held/decided/
+  granted/denied/ordered/announced/agreed to} {the concrete thing}." Straight into
+  the most consequential act. Example: "On August 7, Judge Chhabria denied Google's
+  motion to transfer, keeping the case in the Northern District of California."
+- NEVER narrate the briefing process or the observation window. BANNED, and
+  everything in their family: "the sole development in the 72-hour window",
+  "the lookback window", "the window produced/yielded", "the docket produced",
+  "the press coverage that landed", "the principal development", "this briefing
+  covers", "the material development of the period", "in the last 24/72 hours".
+  These say nothing. Report what happened; never mention windows, lookbacks,
+  scans, or the briefing itself.
+- On a thin day, state the one concrete fact plainly and stop ("On August 7, the
+  clerk docketed duplicate transcript orders, Dkt. 802 and 803."). Do not dress
+  it up, do not comment on its thinness.
 - You are an analyst, not a commentator: no editorializing, no personal opinions, no
   sweeping generalizations. Straight, clean, factual analysis of the details that
   matter to an investor and a legal professional.
