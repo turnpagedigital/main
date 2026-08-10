@@ -2,7 +2,7 @@
   "case": {
     "slug": "papaya-gaming",
     "display_name": "Papaya Gaming",
-    "case_name": "Papaya Gaming Ltd.",
+    "case_name": "Oriel Bachar and Papaya Gaming Ltd.",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "26-11217",
     "judge": "Mary F. Walrath",
@@ -13,45 +13,75 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73709081/papaya-gaming-ltd/",
+    "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T21:08:56.219645+00:00",
+    "fetched_at": "2026-08-10T23:02:26.131893+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 9,
     "recent": [
       {
-        "entry_number": 57,
+        "entry_number": 60,
         "date_filed": "2026-08-10",
-        "time_filed": "12:32:19",
+        "time_filed": "18:11:21",
         "date_display": "Aug 10, 2026",
-        "description": "Order Approving Motion for Admission pro hac vice of Michael Ardeljan (Related Doc # 51) Signed on 8/10/2026. (LMC) (Entered: 08/10/2026)",
+        "description": "Pro Hac Vice Admission - Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 56,
+        "entry_number": 59,
         "date_filed": "2026-08-10",
-        "time_filed": "12:31:49",
+        "time_filed": "18:10:09",
         "date_display": "Aug 10, 2026",
-        "description": "Order Approving Motion for Admission pro hac vice of Amy C. Quartarolo (Related Doc # 50) Signed on 8/10/2026. (LMC) (Entered: 08/10/2026)",
+        "description": "Pro Hac Vice Admission - Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 55,
-        "date_filed": "2026-08-08",
-        "time_filed": "11:48:16",
-        "date_display": "Aug 8, 2026",
-        "description": "Notice of Deposition of Pinni Yaniv in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
+        "entry_number": 58,
+        "date_filed": "2026-08-10",
+        "time_filed": "18:08:54",
+        "date_display": "Aug 10, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 60,
+        "date_filed": "2026-08-10",
+        "time_filed": "18:11:21",
+        "date_display": "Aug 10, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 59,
+        "date_filed": "2026-08-10",
+        "time_filed": "18:10:09",
+        "date_display": "Aug 10, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 58,
+        "date_filed": "2026-08-10",
+        "time_filed": "18:08:54",
+        "date_display": "Aug 10, 2026",
+        "description": "Pro Hac Vice Admission - Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 57,
         "date_filed": "2026-08-10",

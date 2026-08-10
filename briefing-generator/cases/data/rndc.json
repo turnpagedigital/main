@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc-and-official-committee-of/",
     "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T21:09:32.308915+00:00",
+    "fetched_at": "2026-08-10T23:03:26.564999+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": true,
-    "new_in_72h": 10,
+    "new_in_72h": 11,
     "recent": [
+      {
+        "entry_number": 168,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:35:09",
+        "date_display": "Aug 10, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 167,
         "date_filed": "2026-08-10",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 165,
-        "date_filed": "2026-08-10",
-        "time_filed": "15:35:50",
-        "date_display": "Aug 10, 2026",
-        "description": "Order to Appear pro hac vice",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 168,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:35:09",
+        "date_display": "Aug 10, 2026",
+        "description": "Notice of Appearance and Request for Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 167,
         "date_filed": "2026-08-10",

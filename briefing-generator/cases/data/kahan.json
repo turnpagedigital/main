@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
     "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T21:08:05.497003+00:00",
+    "fetched_at": "2026-08-10T23:02:07.456561+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": true,
-    "new_in_72h": 3,
+    "new_in_72h": 4,
     "recent": [
+      {
+        "entry_number": 362,
+        "date_filed": "2026-08-10",
+        "time_filed": "17:05:59",
+        "date_display": "Aug 10, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.362.0.pdf"
+      },
       {
         "entry_number": 361,
         "date_filed": "2026-08-10",
@@ -28,7 +38,7 @@
         "description": "Certificate of Service",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.361.0.pdf"
       },
       {
         "entry_number": 360,
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 359,
-        "date_filed": "2026-08-10",
-        "time_filed": "14:04:08",
-        "date_display": "Aug 10, 2026",
-        "description": "Compel",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.359.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 362,
+        "date_filed": "2026-08-10",
+        "time_filed": "17:05:59",
+        "date_display": "Aug 10, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.362.0.pdf"
+      },
       {
         "entry_number": 361,
         "date_filed": "2026-08-10",
@@ -60,7 +70,7 @@
         "description": "Certificate of Service",
         "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.361.0.pdf"
       },
       {
         "entry_number": 360,

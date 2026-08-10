@@ -15,11 +15,31 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T21:06:09.064435+00:00",
+    "fetched_at": "2026-08-10T23:00:08.759482+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": true,
-    "new_in_72h": 12,
+    "new_in_72h": 14,
     "recent": [
+      {
+        "entry_number": 1198,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:37:57",
+        "date_display": "Aug 10, 2026",
+        "description": "Notice of hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1197,
+        "date_filed": "2026-08-10",
+        "time_filed": "15:58:42",
+        "date_display": "Aug 10, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1196,
         "date_filed": "2026-08-10",
@@ -29,29 +49,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 1198,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:37:57",
+        "date_display": "Aug 10, 2026",
+        "description": "Notice of hearing",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
       },
       {
-        "entry_number": 1195,
+        "entry_number": 1197,
         "date_filed": "2026-08-10",
-        "time_filed": "14:31:58",
+        "time_filed": "15:58:42",
         "date_display": "Aug 10, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
-      {
-        "entry_number": 1194,
-        "date_filed": "2026-08-10",
-        "time_filed": "14:19:56",
-        "date_display": "Aug 10, 2026",
-        "description": "Certificate of service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      }
-    ],
-    "entries": [
       {
         "entry_number": 1196,
         "date_filed": "2026-08-10",
