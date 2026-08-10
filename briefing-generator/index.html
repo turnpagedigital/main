@@ -345,7 +345,6 @@
     .ih-more { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
     .ih-row, .ih-empty { padding-left: 18px; padding-right: 18px; }
     .ih-dates { padding: 10px 18px 14px; }
-    .ih-note-sticky { margin: 0 18px 8px; }
     .ih-carousel { display: block; }
     .ih-carousel-nav, .ih-carousel-prev, .ih-carousel-next { display: none; }
     .ih-theme-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; overflow: visible; padding-bottom: 0; }
@@ -368,9 +367,29 @@
   .tn-kbd-row em{font-style:normal;color:var(--ink-40);font-size:10.5px;margin-left:auto;padding-left:10px;}
   .tn-key{display:inline-block;font-size:10.5px;font-weight:800;border:1px solid var(--line-strong);padding:1px 6px;background:var(--paper-2);color:var(--ink);min-width:13px;text-align:center;}
 
-    .ih-note-sticky { background: rgba(212,255,0,0.10); padding: 6px 9px; margin: 0 14px 8px; font-size: 11.5px; font-style: italic; color: var(--ink-60); line-height: 1.45; text-decoration: none; display: block; }
-    [data-theme="dark"] .ih-note-sticky { background: rgba(212,255,0,0.07); }
-    .ih-note-sticky .who { font-style: normal; font-size: 10px; color: var(--ink-40); }
+    /* Notes tile — stacked sticky notes with carousel paging */
+    .ih-notes-wrap { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 10px 16px 14px; }
+    .ih-notes-stack { position: relative; height: 148px; margin: 8px 6px 4px; }
+    /* Cards are solid opaque "paper" (--nc is a hex, not a tint) so a card
+       fully occludes whatever is stacked behind it — text/ink color is fixed
+       dark regardless of site theme, same as real paper doesn't change color
+       when the room lights dim. */
+    .ih-note-card { position: absolute; inset: 0; background: var(--nc); border-radius: 2px; padding: 13px 15px; box-shadow: 0 4px 12px rgba(10,10,10,0.22); text-decoration: none; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.32s cubic-bezier(.2,.8,.2,1), box-shadow 0.2s ease; }
+    [data-theme="dark"] .ih-note-card { box-shadow: 0 4px 16px rgba(0,0,0,0.6); }
+    .ih-note-card .body { font-size: 12.5px; font-style: italic; line-height: 1.5; color: #21201A; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    .ih-note-card .who { font-style: normal; font-size: 10.5px; font-weight: 700; color: rgba(10,10,10,0.58); margin-top: auto; padding-top: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ih-note-card[data-pos="0"] { transform: rotate(-1.5deg) translate(0,0); z-index: 4; }
+    .ih-note-card[data-pos="0"]:hover { transform: rotate(-1.5deg) translate(0,-3px); box-shadow: 0 8px 20px rgba(10,10,10,0.3); }
+    [data-theme="dark"] .ih-note-card[data-pos="0"]:hover { box-shadow: 0 8px 22px rgba(0,0,0,0.65); }
+    .ih-note-card[data-pos="1"] { transform: rotate(2deg) translate(6px,8px); z-index: 3; }
+    .ih-note-card[data-pos="2"] { transform: rotate(-2.5deg) translate(-5px,15px); z-index: 2; }
+    .ih-note-card[data-pos="3"] { transform: rotate(1deg) translate(4px,21px); z-index: 1; }
+    .ih-notes-nav { display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .ih-notes-arrow { background: none; border: none; color: var(--ink-40); font-size: 16px; cursor: pointer; padding: 2px 5px; line-height: 1; }
+    .ih-notes-arrow:hover { color: var(--ink); }
+    .ih-notes-dots { display: flex; align-items: center; gap: 5px; }
+    .ih-notes-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--line-strong); border: none; padding: 0; cursor: pointer; }
+    .ih-notes-dot.on { background: var(--neon-block); width: 14px; border-radius: 3px; transition: width 0.2s, border-radius 0.2s, background 0.2s; }
     .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 17px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
     .ih-color-pop { position: absolute; z-index: 1000; background: var(--surface); border: 1px solid var(--line-strong); padding: 14px; width: 240px; box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
