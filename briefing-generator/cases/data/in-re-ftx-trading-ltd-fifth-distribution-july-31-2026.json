@@ -16,43 +16,93 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
     "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T19:21:10.358424+00:00",
+    "fetched_at": "2026-08-10T21:06:22.938426+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": false,
-    "new_in_72h": 10,
+    "new_in_72h": 16,
     "recent": [
       {
-        "entry_number": 36102,
+        "entry_number": 36107,
         "date_filed": "2026-08-10",
-        "time_filed": "14:57:54",
+        "time_filed": "16:53:40",
         "date_display": "Aug 10, 2026",
-        "description": "Quarterly Claims Register . Filed by Kroll Restructuring Administration LLC. (Attachments: (1) (Numeric) Quarterly Claims Register) (Adler, Adam)",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Name on file (Claim No. 8231) To GreenWulf Master Fund, LP. Filed by Cherokee Acquisition. (Faucher, Lisa)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36102.0.pdf"
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36107.0.pdf"
       },
       {
-        "entry_number": 36096,
+        "entry_number": 36106,
         "date_filed": "2026-08-10",
-        "time_filed": "12:04:15",
+        "time_filed": "16:37:39",
         "date_display": "Aug 10, 2026",
-        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "description": "Omnibus Objection to Claims . Filed by FTX Recovery Trust. Hearing scheduled for 9/17/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. Objections due by 9/10/2026. (Attachments: (1) Notice (2) Exhibit A (3) Exhibit B) (Pierce, Matthew)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36096.0.pdf"
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36106.0.pdf"
       },
       {
-        "entry_number": 36095,
+        "entry_number": 36105,
         "date_filed": "2026-08-10",
-        "time_filed": "11:59:59",
+        "time_filed": "16:32:59",
         "date_display": "Aug 10, 2026",
-        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "description": "(REDACTED) (related document(s)[36104]) Filed by FTX Recovery Trust. (Attachments: (1) Notice (2) Exhibit A (3) Exhibit B) (Pierce, Matthew)",
         "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36095.0.pdf"
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36105.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 36107,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:53:40",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Name on file (Claim No. 8231) To GreenWulf Master Fund, LP. Filed by Cherokee Acquisition. (Faucher, Lisa)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36107.0.pdf"
+      },
+      {
+        "entry_number": 36106,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:37:39",
+        "date_display": "Aug 10, 2026",
+        "description": "Omnibus Objection to Claims . Filed by FTX Recovery Trust. Hearing scheduled for 9/17/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. Objections due by 9/10/2026. (Attachments: (1) Notice (2) Exhibit A (3) Exhibit B) (Pierce, Matthew)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36106.0.pdf"
+      },
+      {
+        "entry_number": 36105,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:32:59",
+        "date_display": "Aug 10, 2026",
+        "description": "(REDACTED) (related document(s)[36104]) Filed by FTX Recovery Trust. (Attachments: (1) Notice (2) Exhibit A (3) Exhibit B) (Pierce, Matthew)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36105.0.pdf"
+      },
+      {
+        "entry_number": 36104,
+        "date_filed": "2026-08-10",
+        "time_filed": "",
+        "date_display": "Aug 10, 2026",
+        "description": "[SEALED] Omnibus Objection to Claims . Filed by FTX Recovery Trust. Hearing scheduled for 9/17/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. Objections due by 9/10/2026. (Attachments: (1) Notice (2) Exhibit A (3) Exhibit B) (Pierce, Matthew)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 36103,
+        "date_filed": "2026-08-10",
+        "time_filed": "15:49:53",
+        "date_display": "Aug 10, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[36005]) (Steele, Benjamin)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36103.0.pdf"
+      },
       {
         "entry_number": 36102,
         "date_filed": "2026-08-10",
@@ -146,9 +196,19 @@
       {
         "entry_number": null,
         "date_filed": "2026-08-10",
-        "time_filed": "12:05:52",
+        "time_filed": "16:55:44",
         "date_display": "Aug 10, 2026",
         "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:19:54",
+        "date_display": "Aug 10, 2026",
+        "description": "Objection to Claims (Omnibus)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""

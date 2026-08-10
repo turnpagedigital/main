@@ -14,19 +14,19 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73673073/omnis-pleasants-llc/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-09T23:54:35.006443+00:00",
-    "as_of": "Aug 9, 2026",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-10T21:08:19.668157+00:00",
+    "as_of": "Aug 10, 2026",
     "backfilled": true,
-    "new_in_72h": 6,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 72,
         "date_filed": "2026-08-07",
         "time_filed": "10:16:04",
         "date_display": "Aug 7, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
+        "description": "Order Granting Motion for Admission pro hac vice of Ira J. Schacter, Esquire (Related Doc # 70) Order Signed on 8/7/2026. (CEB) (Entered: 08/07/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -35,8 +35,8 @@
         "date_filed": "2026-08-07",
         "time_filed": "10:14:53",
         "date_display": "Aug 7, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
+        "description": "Order Granting Motion for Admission pro hac vice of Douglas I. Koff, Esquire (Related Doc # 69) Order Signed on 8/7/2026. (CEB) (Entered: 08/07/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -45,8 +45,8 @@
         "date_filed": "2026-08-07",
         "time_filed": "09:47:23",
         "date_display": "Aug 7, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
-        "is_new": true,
+        "description": "Motion to Appear pro hac vice of Ira J. Schacter. Receipt Number 5036074, Filed by RG Energy LLC, TRAG LLC. (Hurst, David) (Entered: 08/07/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -57,8 +57,8 @@
         "date_filed": "2026-08-07",
         "time_filed": "10:16:04",
         "date_display": "Aug 7, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
+        "description": "Order Granting Motion for Admission pro hac vice of Ira J. Schacter, Esquire (Related Doc # 70) Order Signed on 8/7/2026. (CEB) (Entered: 08/07/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -67,8 +67,8 @@
         "date_filed": "2026-08-07",
         "time_filed": "10:14:53",
         "date_display": "Aug 7, 2026",
-        "description": "Appear pro hac vice",
-        "is_new": true,
+        "description": "Order Granting Motion for Admission pro hac vice of Douglas I. Koff, Esquire (Related Doc # 69) Order Signed on 8/7/2026. (CEB) (Entered: 08/07/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -77,8 +77,8 @@
         "date_filed": "2026-08-07",
         "time_filed": "09:47:23",
         "date_display": "Aug 7, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
-        "is_new": true,
+        "description": "Motion to Appear pro hac vice of Ira J. Schacter. Receipt Number 5036074, Filed by RG Energy LLC, TRAG LLC. (Hurst, David) (Entered: 08/07/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -87,8 +87,8 @@
         "date_filed": "2026-08-07",
         "time_filed": "09:45:43",
         "date_display": "Aug 7, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
-        "is_new": true,
+        "description": "Motion to Appear pro hac vice of Douglas I. Koff. Receipt Number 5036074, Filed by RG Energy LLC, TRAG LLC. (Hurst, David) (Entered: 08/07/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -97,8 +97,8 @@
         "date_filed": "2026-08-07",
         "time_filed": "09:36:58",
         "date_display": "Aug 7, 2026",
-        "description": "Appearance - Notice",
-        "is_new": true,
+        "description": "Notice of Appearance. Filed by RG Energy LLC, TRAG LLC. (Hurst, David) (Entered: 08/07/2026)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -108,7 +108,17 @@
         "time_filed": "09:43:47",
         "date_display": "Aug 7, 2026",
         "description": "Add Attorney",
-        "is_new": true,
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-07",
+        "time_filed": "",
+        "date_display": "Aug 7, 2026",
+        "description": "Attorney Harrison S. Carpenter and David R. Hurst for RG Energy LLC and TRAG LLC, Douglas I. Koff and David R. Hurst for RG Energy LLC and TRAG LLC, Ira J. Schacter and David R. Hurst for RG Energy LLC and TRAG LLC added to case Filed by RG Energy LLC, TRAG LLC. (Hurst, David)",
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -133,6 +143,16 @@
         "landmark": "",
         "doc_url": "",
         "titled_from_upload": true
+      },
+      {
+        "entry_number": 65,
+        "date_filed": "2026-08-04",
+        "time_filed": "",
+        "date_display": "Aug 4, 2026",
+        "description": "Transcript regarding Hearing Held 07/29/26 RE: First Day Motions. Remote electronic access to the transcript is restricted until 11/2/2026. The transcript may be viewed at the Bankruptcy Court Clerk's Office. For information about how to obtain a transcript, Contact the Court Reporter/Transcriber, Reliable, at Telephone number 302-654-8080. Notice of Intent to Request Redaction Deadline Due By 8/11/2026. Redaction Request Due By 8/25/2026. Redacted Transcript Submission Due By 9/4/2026. Transcript access will be restricted through 11/2/2026. (JMC) (Entered: 08/04/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
       },
       {
         "entry_number": null,
