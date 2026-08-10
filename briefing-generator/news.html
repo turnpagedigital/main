@@ -519,12 +519,6 @@
       <div class="ud-search-wrap">
         <input type="text" id="ud-search" class="ud-search-input" placeholder="Search entries, parties, dates…">
       </div>
-      <div class="ud-date-range" id="ud-daterange" style="display:none;">
-        <span class="ud-date-label">Custom range</span>
-        <input type="date" id="ud-date-from" class="ud-date-input">
-        <span class="ud-date-sep">–</span>
-        <input type="date" id="ud-date-to" class="ud-date-input">
-      </div>
       <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
       <div id="ud-th-timemenu" class="ud-th-menu" style="display:none;">
         <button type="button" class="ud-th-menu-item" data-val="24h">Last 24 hours</button>
@@ -554,6 +548,15 @@
   </div>
 
   <div class="ud-toolbar">
+    <span class="ud-lookback-box">
+      <span id="ud-lookback-label">All time</span>
+      <span class="ud-date-range" id="ud-daterange" style="display:none;">
+        <span class="ud-date-sep">·</span>
+        <input type="date" id="ud-date-from" class="ud-date-input" aria-label="From date">
+        <span class="ud-date-sep">–</span>
+        <input type="date" id="ud-date-to" class="ud-date-input" aria-label="To date">
+      </span>
+    </span>
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
     <button id="ud-sort-btn">Date ↓</button>

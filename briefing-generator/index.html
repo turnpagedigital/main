@@ -226,10 +226,11 @@
     .ih-lr-lede.ih-quiet { color: var(--ink-60); }
     .ih-lr-read { font-size: 11px; font-weight: 800; white-space: nowrap; color: var(--ink); border-bottom: 1px solid var(--neon-block); flex: 0 0 auto; }
     .ih-card-moved { border-top: 3px solid var(--neon-block); }
-    /* Case-card hover — same rollover tint as the news rows */
-    .ih-theme-card { transition: background 0.12s; }
-    .ih-theme-card:hover { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
-    [data-theme="dark"] .ih-theme-card:hover { background: linear-gradient(rgba(229,231,235,0.05), rgba(229,231,235,0.05)), var(--surface); }
+    /* Hover: same lift treatment as the public press cards */
+    .ih-theme-card { transition: transform 0.18s ease, box-shadow 0.18s ease; box-shadow: 0 1px 3px rgba(10,10,10,0.04); }
+    .ih-theme-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(10,10,10,0.13); }
+    [data-theme="dark"] .ih-theme-card { box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+    [data-theme="dark"] .ih-theme-card:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.5); }
     /* Card arrangement: sort control, priority star, group headers */
     .ih-tc-right { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
     .ih-star { background: none; border: none; cursor: pointer; font-size: 15px; line-height: 1; color: var(--ink-40); padding: 0; }
@@ -436,6 +437,11 @@
   a.ih-sort-btn { text-decoration: none; }
   /* Breathing room between the Cards/List toggle and the sort buttons */
   .ih-cases-tools #ih-view-tgl { margin-right: 28px; }
+  /* Cards/List renders as ONE segmented toggle, not two separate buttons */
+  #ih-view-tgl { gap: 0; border: 1px solid var(--line-strong); }
+  #ih-view-tgl .ih-sort-btn { border: none; }
+  #ih-view-tgl .ih-sort-btn + .ih-sort-btn { border-left: 1px solid var(--line-strong); }
+  #ih-view-tgl .ih-sort-btn.on { background: var(--neon-block); color: var(--neon-on-block); }
   /* List view: adjustable pill/status column widths (drag the grips) */
   .ih-list-mode .ih-case-listrow > .ih-pill { flex: 0 0 var(--lrw-pill, auto); overflow: hidden; text-overflow: ellipsis; }
   .ih-list-mode .ih-lr-count { flex: 0 0 var(--lrw-count, auto); overflow: hidden; text-overflow: ellipsis; }
