@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-10 16:45 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-10 22:13 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -39,6 +39,10 @@ hi
 > Auto-Docket of Credit Card
 
 ## Harvest Sherwood
+
+### Dkt. 1195 — 2026-08-10
+
+> Assignment/Transfer of claim (Claims Agent)
 
 ### (no docket number) — 2026-08-06
 
