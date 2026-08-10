@@ -184,6 +184,10 @@ Ciao
 
 > Hedge Fund Turning Up Pressure on Voya Financial to Sell Itself — Toms Capital Investment Management is bringing its push for the asset manager to explore a sale directly to shareholders.
 
+### (no docket number) — 2026-08-06
+
+> Basic Materials Roundup: Market Talk — Find insight on Glencore, Henkel and more in the latest Market Talks covering basic materials.
+
 ## Unknown case
 
 ### (no docket number) — undated
