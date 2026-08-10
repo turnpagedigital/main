@@ -1629,7 +1629,7 @@
       "#ih-view-tgl .ih-sort-btn{border:none;background:none;padding:0 2px;color:var(--ink-40);}" +
       "#ih-view-tgl .ih-sort-btn:hover{background:none;color:var(--ink-60);}" +
       "#ih-view-tgl .ih-sort-btn.on{background:none;color:var(--ink);}" +
-      ".ih-vt-track{width:34px;height:18px;border-radius:99px;background:var(--ink-20);position:relative;flex:0 0 auto;pointer-events:none;}" +
+      ".ih-vt-track{width:34px;height:18px;border-radius:99px;background:var(--ink-20);position:relative;flex:0 0 auto;cursor:pointer;}" +
       ".ih-vt-knob{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,0.3);transition:left 0.15s ease;}";
     function sync() {
       var tgl = document.getElementById("ih-view-tgl");
@@ -1650,10 +1650,22 @@
       if (!tgl.querySelector(".ih-vt-track")) {
         var track = document.createElement("span");
         track.className = "ih-vt-track";
-        track.setAttribute("aria-hidden", "true");
+        track.setAttribute("role", "switch");
+        track.setAttribute("title", "Switch view");
         track.innerHTML = '<span class="ih-vt-knob"></span>';
         var listBtn = tgl.querySelector('[data-view="list"]');
         if (listBtn) tgl.insertBefore(track, listBtn);
+        // Clicking the track flips to whichever view is inactive.
+        track.addEventListener("click", function (e) {
+          e.stopPropagation();
+          var t = document.getElementById("ih-view-tgl");
+          if (!t) return;
+          var other = t.querySelector('[data-view="list"].on')
+            ? t.querySelector('[data-view="cards"]')
+            : t.querySelector('[data-view="list"]');
+          if (other) other.click();
+          setTimeout(sync, 0);
+        });
       }
       sync();
     }
@@ -1664,81 +1676,45 @@
     });
   })();
 
-  // ── List view: draggable pill/status column widths ────────────────────────
-  // Grips overlay the list at the column boundaries; widths persist per
-  // browser via --lrw-pill / --lrw-count on the grid (CSS in index.html).
+  // ── List view: columns auto-align (SELF-BUILDING, no user resizing) ───────
+  // Every render measures the widest pill and status label and sets shared
+  // widths so all rows line up. Injects its own CSS; caps keep it sane.
   (function () {
-    var KEY = "ih-list-colw";
-    var saved = {};
-    try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) {}
-
-    function gridEl() { return document.getElementById("ih-theme-grid"); }
-    function applyVars() {
-      var grid = gridEl();
-      if (!grid) return;
-      if (saved.pill) grid.style.setProperty("--lrw-pill", saved.pill + "px");
-      if (saved.count) grid.style.setProperty("--lrw-count", saved.count + "px");
+    var CSS =
+      ".ih-list-mode .ih-case-listrow > .ih-pill{flex:0 0 var(--lrw-pill,auto);overflow:hidden;text-overflow:ellipsis;}" +
+      ".ih-list-mode .ih-lr-count{flex:0 0 var(--lrw-count,auto);overflow:hidden;text-overflow:ellipsis;}";
+    function ensureCss() {
+      if (document.getElementById("ih-lrw-style")) return;
+      var st = document.createElement("style");
+      st.id = "ih-lrw-style";
+      st.textContent = CSS;
+      document.head.appendChild(st);
     }
-
-    function attach() {
-      var grid = gridEl();
-      if (!grid) return;
-      grid.querySelectorAll(".ih-lr-grip").forEach(function (g) { g.parentNode.removeChild(g); });
-      if (!grid.classList.contains("ih-list-mode")) return;
-      var row = grid.querySelector(".ih-case-listrow");
-      if (!row) return;
-      applyVars();
-      grid.style.position = "relative";
-      [["pill", row.querySelector(".ih-pill")], ["count", row.querySelector(".ih-lr-count")]].forEach(function (pair) {
-        var name = pair[0], el = pair[1];
-        if (!el) return;
-        var g = document.createElement("div");
-        g.className = "ih-lr-grip";
-        g.title = "Drag to resize column";
-        grid.appendChild(g);
-        function place() {
-          var gr = grid.getBoundingClientRect(), er = el.getBoundingClientRect();
-          g.style.left = (er.right - gr.left + 5) + "px";
-        }
-        place();
-        g.addEventListener("mousedown", function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          var x0 = e.clientX, w0 = el.getBoundingClientRect().width;
-          g.classList.add("on");
-          document.body.style.cursor = "col-resize";
-          function mv(ev) {
-            saved[name] = Math.max(40, Math.round(w0 + (ev.clientX - x0)));
-            applyVars();
-            place();
-          }
-          function up() {
-            document.removeEventListener("mousemove", mv);
-            document.removeEventListener("mouseup", up);
-            g.classList.remove("on");
-            document.body.style.cursor = "";
-            try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e2) {}
-            attach();
-          }
-          document.addEventListener("mousemove", mv);
-          document.addEventListener("mouseup", up);
-        });
+    function autoSize() {
+      var grid = document.getElementById("ih-theme-grid");
+      if (!grid || !grid.classList.contains("ih-list-mode")) return;
+      ensureCss();
+      // Measure natural widths, then pin every row to the shared maximum.
+      grid.style.setProperty("--lrw-pill", "auto");
+      grid.style.setProperty("--lrw-count", "auto");
+      var maxP = 0, maxC = 0;
+      grid.querySelectorAll(".ih-case-listrow > .ih-pill").forEach(function (p) {
+        maxP = Math.max(maxP, p.getBoundingClientRect().width);
       });
+      grid.querySelectorAll(".ih-lr-count").forEach(function (c) {
+        maxC = Math.max(maxC, c.getBoundingClientRect().width);
+      });
+      if (maxP) grid.style.setProperty("--lrw-pill", Math.min(Math.ceil(maxP) + 2, 240) + "px");
+      if (maxC) grid.style.setProperty("--lrw-count", Math.min(Math.ceil(maxC) + 2, 220) + "px");
     }
-
     document.addEventListener("DOMContentLoaded", function () {
-      var grid = gridEl();
+      var grid = document.getElementById("ih-theme-grid");
       if (!grid) return;
-      applyVars();
-      attach();
-      // Re-attach after each render, ignoring our own grip add/remove churn.
+      // Old drag-resize widths no longer apply.
+      try { localStorage.removeItem("ih-list-colw"); } catch (e) {}
+      autoSize();
       new MutationObserver(function (muts) {
-        var isGrip = function (n) { return n.classList && n.classList.contains("ih-lr-grip"); };
-        var relevant = muts.some(function (m) {
-          return Array.prototype.some.call(m.addedNodes, function (n) { return !isGrip(n); }) ||
-                 Array.prototype.some.call(m.removedNodes, function (n) { return !isGrip(n); });
-        });
-        if (relevant) attach();
+        if (muts.some(function (m) { return m.addedNodes.length || m.removedNodes.length; })) autoSize();
       }).observe(grid, { childList: true });
     });
   })();
