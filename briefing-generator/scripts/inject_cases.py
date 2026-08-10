@@ -230,7 +230,7 @@ UD_CSS = r"""
   .ud-pal-empty{padding:12px 14px;font-size:13px;color:var(--ink-60);}
   .ud-pal-hint{padding:7px 14px;font-size:10.5px;color:var(--ink-60);border-top:1px solid var(--line-strong);letter-spacing:0.03em;}
   .ud-rename-input{width:100%;font-family:inherit;font-size:13px;padding:5px 7px;border:1.5px solid var(--neon);background:var(--surface);color:var(--ink);box-sizing:border-box;}
-  .ud-due{background:rgba(212,255,0,0.5);border:1px solid var(--line-strong);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
+  .ud-due{background:rgba(212,255,0,0.5);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;border-radius:10px;}
   [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.22);color:#F4F5F7;}
   .ud-due-head{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
   .ud-due-card{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-top:1px solid var(--line);}
