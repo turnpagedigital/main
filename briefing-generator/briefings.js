@@ -56,7 +56,7 @@
     var m = manifestOf(slug) || (fallbackSlug ? manifestOf(fallbackSlug) : null);
     var bg = (savedColors[slug] && savedColors[slug].bg) || (m && m.default_color) || "#888888";
     var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
-    return '<span class="ud-pill" style="background:' + bg + ";color:" + fg + ';font-size:13px;padding:3px 14px">' + esc(name) + "</span>";
+    return '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + ';font-size:13px;padding:3px 14px">' + esc(name) + "</span>";
   }
 
   // ── Minimal markdown → HTML for our own generated briefing bodies ─────────

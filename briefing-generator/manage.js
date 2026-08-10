@@ -129,7 +129,7 @@
   function casePill(slug, name) {
     var bg = caseColor(slug);
     var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
-    return '<span class="mg-pill" style="background:' + bg + ";color:" + fg + '">' + esc(name) + "</span>";
+    return '<span class="mg-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(name) + "</span>";
   }
   function themeEmoji(slug) {
     for (var i = 0; i < THEMES.length; i++) if (THEMES[i].slug === slug) return THEMES[i].emoji || "🏷️";

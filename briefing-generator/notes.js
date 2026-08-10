@@ -161,7 +161,7 @@
       return (
         '<label class="ud-dd-row" title="' + esc(c.display_name) + '">' +
           '<input type="checkbox" data-slug="' + esc(c.slug) + '"' + (active ? " checked" : "") + ">" +
-          '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(c.short_name) + "</span>" +
+          '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(c.short_name) + "</span>" +
           '<span class="ud-dd-spacer"></span>' +
           '<button type="button" class="ud-gear-btn" data-slug="' + esc(c.slug) + '" title="Color settings for ' + esc(c.display_name) + '">⚙</button>' +
         "</label>"
@@ -539,7 +539,7 @@
       } else if (c) {
         var bg = getBg(n.slug, c.default_color);
         var fg = getFg(n.slug, bg);
-        pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(c.short_name) + "</span>";
+        pill = '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(c.short_name) + "</span>";
       } else {
         var uLabel = n.case_name && n.case_name !== "Uncategorized" ? n.case_name : "Uncategorized";
         pill = '<span class="ud-pill" style="background:transparent;color:var(--ink-60);border:1px dashed var(--ink-40)">' + esc(uLabel) + "</span>";

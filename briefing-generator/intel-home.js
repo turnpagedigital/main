@@ -53,7 +53,7 @@
   function casePill(slug, name, defaultColor) {
     var bg = (savedColors[slug] && savedColors[slug].bg) || defaultColor || "#888888";
     var fg = (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
-    return '<span class="ih-pill" style="background:' + bg + ";color:" + fg + '">' + esc(name) + "</span>";
+    return '<span class="ih-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(name) + "</span>";
   }
 
   // The case's pill background color, and a translucent tint of it.
