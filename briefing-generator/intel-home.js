@@ -373,7 +373,15 @@
   var FEED_ITEMS = [];
   var NOTE_STACK = [];   // current filtered notes shown in the dashboard sticky-stack
   var noteFront = 0;     // index into NOTE_STACK of the card currently on top
-  var NOTE_TINTS = ["#EEFFA3", "#D7E9FB", "#E4E0FA", "#FBE0F8"];
+  // Light bg is a pale paper tone; dark bg is the same hue's rich/saturated
+  // variant from the site's existing case-color dark palette (never a muted
+  // olive substitute — see BRAND_STYLING.md).
+  var NOTE_TINTS = [
+    { bg: "#C9F7E3", bgd: "#3FA07A" },
+    { bg: "#D7E9FB", bgd: "#3B78D8" },
+    { bg: "#E4E0FA", bgd: "#4A3DE0" },
+    { bg: "#FBE0F8", bgd: "#CC33CC" },
+  ];
   var NOTE_AUTO_MS = 6000;
   var noteAutoTimer = null;
   var noteHovered = false;
@@ -961,7 +969,7 @@
       var n = NOTE_STACK[idx];
       var body = (n.note || "").trim() || n.snippet || "(bookmark)";
       var tint = NOTE_TINTS[idx % NOTE_TINTS.length];
-      html += '<a class="ih-note-card" data-pos="' + i + '" data-idx="' + idx + '" style="--nc:' + tint + '" ' +
+      html += '<a class="ih-note-card" data-pos="' + i + '" data-idx="' + idx + '" style="--nc:' + tint.bg + ";--ncd:" + tint.bgd + '" ' +
         'href="' + BASE + 'notes.html#e=' + encodeURIComponent(n._key || "") + '">' +
         '<span class="body">\u201c' + esc(body.slice(0, 160)) + '\u201d</span>' +
         '<span class="who">\u2014 ' + esc(n.case_name || n.case_slug || "Uncategorized") +
