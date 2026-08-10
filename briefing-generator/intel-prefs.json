@@ -100,7 +100,11 @@
     },
     "kahan": {
       "bg": "#ededed",
-      "fg": "#808080"
+      "fg": "#757575"
+    },
+    "omnis-pleasants": {
+      "bg": "#ffd500",
+      "fg": "#0a0a0a"
     }
   },
   "groups": [
