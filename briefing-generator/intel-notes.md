@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-10 22:13 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-10 23:43 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -43,10 +43,6 @@ hi
 ### Dkt. 1195 — 2026-08-10
 
 > Assignment/Transfer of claim (Claims Agent)
-
-### Dkt. 1194 — 2026-08-10
-
-> Certificate of service
 
 ### Dkt. 1193 — 2026-08-10
 
