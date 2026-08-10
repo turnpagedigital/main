@@ -1619,6 +1619,24 @@
     });
   });
 
+  // ── View-slider knob: mirror the active view onto the container ───────────
+  // Inline left is set too because class-driven repaints proved flaky.
+  (function () {
+    function syncKnob() {
+      var tgl = document.getElementById("ih-view-tgl");
+      if (!tgl) return;
+      var listOn = !!tgl.querySelector('[data-view="list"].on');
+      tgl.classList.toggle("vt-list", listOn);
+      var knob = tgl.querySelector(".ih-vt-knob");
+      if (knob) knob.style.left = listOn ? "18px" : "2px";
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      syncKnob();
+      var tgl = document.getElementById("ih-view-tgl");
+      if (tgl) tgl.addEventListener("click", function () { setTimeout(syncKnob, 0); });
+    });
+  })();
+
   // ── List view: draggable pill/status column widths ────────────────────────
   // Grips overlay the list at the column boundaries; widths persist per
   // browser via --lrw-pill / --lrw-count on the grid (CSS in index.html).
