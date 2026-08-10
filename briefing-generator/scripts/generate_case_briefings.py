@@ -542,8 +542,9 @@ def main():
         print("ANTHROPIC_API_KEY not set — case briefings skipped.")
         return
 
-    only = _arg_value("slug") or os.environ.get("BRIEFING_CASE") or None
-    force = _arg("force")
+    only_raw = _arg_value("slug") or os.environ.get("BRIEFING_CASE") or ""
+    only = {x.strip() for x in only_raw.split(",") if x.strip()}
+    force = _arg("force") or os.environ.get("BRIEFING_FORCE") == "1"
 
     try:
         prev = json.loads(OUT_PATH.read_text(encoding="utf-8"))
@@ -581,9 +582,9 @@ def main():
             units.append({"kind": "case", "case": case})
     if only:
         units = [u for u in units if
-                 (u["kind"] == "case" and u["case"]["slug"] == only) or
-                 (u["kind"] == "group" and (u["group"]["id"] == only or
-                                            only in u["group"]["members"]))]
+                 (u["kind"] == "case" and u["case"]["slug"] in only) or
+                 (u["kind"] == "group" and (u["group"]["id"] in only or
+                                            any(m in only for m in u["group"]["members"])))]
 
     # Decide who moved, then cap the generation list by freshest activity.
     plan = []
