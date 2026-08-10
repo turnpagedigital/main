@@ -40,10 +40,6 @@ hi
 
 ## Harvest Sherwood
 
-### Dkt. 1193 — 2026-08-10
-
-> Certificate of service
-
 ### Dkt. 1191 — 2026-08-10
 
 > Notice of hearing
