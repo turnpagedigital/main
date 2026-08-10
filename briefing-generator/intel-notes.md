@@ -228,10 +228,6 @@ Ciao
 
 > Apollo to Buy European Budget Airline easyJet for $7.7 Billion — The deal for the British airline caps a weekslong bidding war with American private equity and aircraft leasing group Castlelake.
 
-### (no docket number) — 2026-08-06
-
-> Partners Group in Talks to Buy Aroma-Zone Stake in Deal that Values Company at $2.3 Billion — Exclusive talks are underway with Eurazeo about a majority stake in France’s Aroma-Zone, which sells beaut
-
 ## Unknown case
 
 ### (no docket number) — undated
