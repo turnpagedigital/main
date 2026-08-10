@@ -15,12 +15,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
-    "date_last_filing": "",
-    "fetched_at": "2026-08-10T18:08:56.373821+00:00",
+    "date_last_filing": "2026-08-10",
+    "fetched_at": "2026-08-10T19:21:10.358424+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": false,
-    "new_in_72h": 9,
+    "new_in_72h": 10,
     "recent": [
+      {
+        "entry_number": 36102,
+        "date_filed": "2026-08-10",
+        "time_filed": "14:57:54",
+        "date_display": "Aug 10, 2026",
+        "description": "Quarterly Claims Register . Filed by Kroll Restructuring Administration LLC. (Attachments: (1) (Numeric) Quarterly Claims Register) (Adler, Adam)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36102.0.pdf"
+      },
       {
         "entry_number": 36096,
         "date_filed": "2026-08-10",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36095.0.pdf"
-      },
-      {
-        "entry_number": 36094,
-        "date_filed": "2026-08-10",
-        "time_filed": "11:54:55",
-        "date_display": "Aug 10, 2026",
-        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36094.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 36102,
+        "date_filed": "2026-08-10",
+        "time_filed": "14:57:54",
+        "date_display": "Aug 10, 2026",
+        "description": "Quarterly Claims Register . Filed by Kroll Restructuring Administration LLC. (Attachments: (1) (Numeric) Quarterly Claims Register) (Adler, Adam)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36102.0.pdf"
+      },
       {
         "entry_number": 36096,
         "date_filed": "2026-08-10",
@@ -8384,7 +8394,157 @@
         "doc_url": ""
       },
       {
+        "entry_number": 35196,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35195,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35190,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35189,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 35188,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35180,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35179,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35170,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35167,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35165,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35163,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35162,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35161,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35159,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35158,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35157,
         "date_filed": "2026-03-31",
         "time_filed": "",
         "date_display": "Mar 31, 2026",
@@ -8404,6 +8564,36 @@
         "doc_url": ""
       },
       {
+        "entry_number": 35152,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35151,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35135,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 35134,
         "date_filed": "2026-03-31",
         "time_filed": "",
@@ -8414,7 +8604,77 @@
         "doc_url": ""
       },
       {
+        "entry_number": 35132,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35117,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 35116,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35114,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35113,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35112,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35111,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35110,
         "date_filed": "2026-03-31",
         "time_filed": "",
         "date_display": "Mar 31, 2026",
@@ -8504,6 +8764,106 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35086.0.pdf"
       },
       {
+        "entry_number": 35058,
+        "date_filed": "2026-03-31",
+        "time_filed": "21:31:27",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4696) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35058.0.pdf"
+      },
+      {
+        "entry_number": 35057,
+        "date_filed": "2026-03-31",
+        "time_filed": "21:30:11",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4695) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35057.0.pdf"
+      },
+      {
+        "entry_number": 35052,
+        "date_filed": "2026-03-31",
+        "time_filed": "21:21:36",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4687) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35052.0.pdf"
+      },
+      {
+        "entry_number": 35036,
+        "date_filed": "2026-03-31",
+        "time_filed": "20:47:42",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4640) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35036.0.pdf"
+      },
+      {
+        "entry_number": 35035,
+        "date_filed": "2026-03-31",
+        "time_filed": "20:46:16",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4638) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35035.0.pdf"
+      },
+      {
+        "entry_number": 35032,
+        "date_filed": "2026-03-31",
+        "time_filed": "20:41:20",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4626) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35032.0.pdf"
+      },
+      {
+        "entry_number": 35031,
+        "date_filed": "2026-03-31",
+        "time_filed": "20:39:44",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4614) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35031.0.pdf"
+      },
+      {
+        "entry_number": 35025,
+        "date_filed": "2026-03-31",
+        "time_filed": "20:27:35",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4583) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35025.0.pdf"
+      },
+      {
+        "entry_number": 35015,
+        "date_filed": "2026-03-31",
+        "time_filed": "19:47:33",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4361) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35015.0.pdf"
+      },
+      {
+        "entry_number": 35014,
+        "date_filed": "2026-03-31",
+        "time_filed": "19:45:56",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4358) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35014.0.pdf"
+      },
+      {
         "entry_number": 35012,
         "date_filed": "2026-03-31",
         "time_filed": "19:41:53",
@@ -8512,6 +8872,16 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35012.0.pdf"
+      },
+      {
+        "entry_number": 35008,
+        "date_filed": "2026-03-31",
+        "time_filed": "19:33:30",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4301) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35008.0.pdf"
       },
       {
         "entry_number": 35005,
@@ -8574,7 +8944,7 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.34994.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=65748821&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=50"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=65748821&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=52"
   },
   "claims_administrator": {
     "name": "Kroll",
