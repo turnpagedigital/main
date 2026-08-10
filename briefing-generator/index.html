@@ -143,9 +143,10 @@
     .ih-span-2 { grid-column: span 2; }
     .ih-band > .ih-tile { position: relative; }
     /* Drag the boundary between News / Calendar / Notes to resize them */
-    .ih-band-grip { position: absolute; top: 0; bottom: 0; right: -8px; width: 16px; cursor: col-resize; z-index: 6; display: flex; align-items: center; justify-content: center; }
-    .ih-band-grip::after { content: ""; width: 2px; height: 44px; background: var(--line-strong); border-radius: 2px; transition: background 0.12s; }
-    .ih-band-grip:hover::after, .ih-band-grip.on::after { background: var(--neon-block); }
+    .ih-band-grip { position: absolute; top: 0; bottom: 0; right: -15px; width: 15px; cursor: col-resize; z-index: 6; display: flex; align-items: center; justify-content: center; }
+    .ih-band-grip::after { content: ""; width: 2px; height: 44px; background: transparent; border-radius: 2px; transition: background 0.12s; }
+    .ih-band-grip:hover::after { background: var(--line-strong); }
+    .ih-band-grip.on::after { background: var(--neon-block); }
     @media (max-width: 1100px) { .ih-band { grid-template-columns: 1fr; } .ih-band-grip { display: none; } }
     .ih-tile { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
     /* Briefings carousel: 3 cards visible, horizontal scroll for the rest */
