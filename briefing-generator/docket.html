@@ -219,7 +219,9 @@
   .ud-table tr:last-child td{border-bottom:none;}
   .ud-row-new .ud-entry{font-weight:700;}  /* highlight new rows via the entry text only — dates and parties stay regular */
   .ud-table tr.ud-day-row{background:transparent;}
-  .ud-day-row td{background:transparent;border-left:none;border-right:none;border-top:2px solid var(--line-strong);border-bottom:1px solid var(--line-strong);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-60);padding:7px 14px;}
+  .ud-day-row td{background:transparent;border-left:none;border-right:none;border-top:2px solid var(--line-strong);border-bottom:1px solid var(--line-strong);font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-60);padding:26px 14px 8px;cursor:pointer;user-select:none;}
+  .ud-day-chevron{display:inline-block;width:1.1em;color:var(--ink-40);}
+  .ud-row-daycollapsed{display:none;}
   .ud-row-article td{background:var(--paper-2);}
   .ud-mark-cell{text-align:center;white-space:nowrap;padding-left:1px;padding-right:1px;}
   .ud-table thead th:last-child,.ud-table tbody tr:not(.ud-day-row) td:last-child{padding-right:14px;}
@@ -384,7 +386,7 @@
   .ud-doc{white-space:nowrap;text-align:right;overflow:hidden;}
   .ud-landmark{display:inline-block;font-size:10px;font-weight:700;color:var(--ink);background:var(--paper-2);border:1px solid var(--line-strong);padding:1px 6px;margin-right:4px;vertical-align:middle;border-radius:3px;}
   .ud-news-tag{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--ink);padding:1px 7px;margin-right:5px;vertical-align:middle;}
-  .ud-new-pill{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#0A0A0A;background:var(--neon);padding:1px 7px;margin-left:6px;vertical-align:middle;}
+  .ud-new-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--neon);margin-right:7px;vertical-align:middle;}
   #ud-sync{margin-left:10px;font-size:12px;}
   .ud-sync-live{color:var(--ink-60);}
   .ud-sync-live::before{content:"\25CF";color:var(--neon);margin-right:5px;font-size:10px;}
