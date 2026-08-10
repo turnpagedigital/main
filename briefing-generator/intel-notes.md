@@ -208,6 +208,10 @@ Ciao
 
 > WSJ Dollar Index Rises 0.24% to 96.23 — The WSJ Dollar Index rose 0.2%, snapping a two-trading-day losing streak.
 
+### (no docket number) — 2026-08-06
+
+> Scott Bessent’s Yen Trade Has Unintended Consequences for the Markets — The way it’s being done should make us worry that the Federal Reserve is being roped into easing monetary conditions.
+
 ## Unknown case
 
 ### (no docket number) — undated
