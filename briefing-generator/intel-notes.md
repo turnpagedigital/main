@@ -154,6 +154,10 @@ Ciao
 
 > ‘Perps’ Are the Risky New Derivatives That Could Amplify Stock Blowups — Plus, computer memory stocks slump
 
+### (no docket number) — 2026-08-06
+
+> Deal or No Deal, AstraZeneca Stock Is a Bargain — The logic of a pharma megamerger is questionable, but AstraZeneca’s record isn’t.
+
 ## Unknown case
 
 ### (no docket number) — undated
