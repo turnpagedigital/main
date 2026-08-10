@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-09 12:48 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-10 16:45 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -97,6 +97,10 @@ Ciao
 ### (no docket number) — 2026-08-04
 
 > Meet The Attorneys Guiding Omnis Pleasants In Ch. 11 — Young Conaway Stargatt & Taylor LLP and Herbert Smith Freehills Kramer LLP are serving as bankruptcy counsel for Omnis Pleasants LLC as it naviga
+
+### (no docket number) — 2026-07-31 ★
+
+> Power Struggle: New Pleasants Power Leadership Fights With Former Management In Bankruptcy Filings — The Intelligencer covers the competing declarations in the Omnis Pleasants bankruptcy, including al
 
 ## Papaya Gaming
 
