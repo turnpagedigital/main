@@ -1619,21 +1619,48 @@
     });
   });
 
-  // ── View-slider knob: mirror the active view onto the container ───────────
-  // Inline left is set too because class-driven repaints proved flaky.
+  // ── View slider (SELF-BUILDING) ────────────────────────────────────────────
+  // index.html keeps getting regenerated, so the slider's track, knob, and
+  // styles are all created here at runtime from the two data-view buttons.
+  // Labels flank a small track; no outline, no neon (Andrew, Aug 2026).
   (function () {
-    function syncKnob() {
+    var CSS =
+      "#ih-view-tgl{gap:8px;border:none;align-items:center;}" +
+      "#ih-view-tgl .ih-sort-btn{border:none;background:none;padding:0 2px;color:var(--ink-40);}" +
+      "#ih-view-tgl .ih-sort-btn:hover{background:none;color:var(--ink-60);}" +
+      "#ih-view-tgl .ih-sort-btn.on{background:none;color:var(--ink);}" +
+      ".ih-vt-track{width:34px;height:18px;border-radius:99px;background:var(--ink-20);position:relative;flex:0 0 auto;pointer-events:none;}" +
+      ".ih-vt-knob{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,0.3);transition:left 0.15s ease;}";
+    function sync() {
       var tgl = document.getElementById("ih-view-tgl");
       if (!tgl) return;
       var listOn = !!tgl.querySelector('[data-view="list"].on');
-      tgl.classList.toggle("vt-list", listOn);
       var knob = tgl.querySelector(".ih-vt-knob");
       if (knob) knob.style.left = listOn ? "18px" : "2px";
     }
-    document.addEventListener("DOMContentLoaded", function () {
-      syncKnob();
+    function build() {
       var tgl = document.getElementById("ih-view-tgl");
-      if (tgl) tgl.addEventListener("click", function () { setTimeout(syncKnob, 0); });
+      if (!tgl) return;
+      if (!document.getElementById("ih-vt-style")) {
+        var st = document.createElement("style");
+        st.id = "ih-vt-style";
+        st.textContent = CSS;
+        document.head.appendChild(st);
+      }
+      if (!tgl.querySelector(".ih-vt-track")) {
+        var track = document.createElement("span");
+        track.className = "ih-vt-track";
+        track.setAttribute("aria-hidden", "true");
+        track.innerHTML = '<span class="ih-vt-knob"></span>';
+        var listBtn = tgl.querySelector('[data-view="list"]');
+        if (listBtn) tgl.insertBefore(track, listBtn);
+      }
+      sync();
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      build();
+      var tgl = document.getElementById("ih-view-tgl");
+      if (tgl) tgl.addEventListener("click", function () { setTimeout(sync, 0); });
     });
   })();
 
