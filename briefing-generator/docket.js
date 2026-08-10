@@ -2763,8 +2763,6 @@
     });
 
     // Case editor
-    var caseAdd = document.getElementById("ud-case-add");
-    if (caseAdd) caseAdd.addEventListener("click", function () { openCaseEditor(null); });
     var popEdit = document.getElementById("ud-pop-edit");
     if (popEdit) {
       popEdit.addEventListener("click", function () {
