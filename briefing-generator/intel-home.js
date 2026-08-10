@@ -294,15 +294,25 @@
   var FILTER_KEY = "ih-filter-state";
   var activeCases = {};
   var activeThemes = {};
+  // Theme filter model: single-click a pill to FOCUS just that theme (others
+  // deselect); double-click to PIN it (stays selected alongside others). The
+  // visible set is derived = pinned ∪ {focus}; empty = All.
+  var stickyThemes = {};   // slug -> true (pinned via double-click)
+  var focusTheme = null;   // the single-clicked theme (replaced on the next single-click)
   try {
     var st = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
     activeCases = st.activeCases || {};
     activeThemes = st.activeThemes || {};
+    stickyThemes = st.stickyThemes || {};
+    focusTheme = st.focusTheme || null;
   } catch (e) {}
 
   function saveFilters() {
     try {
-      localStorage.setItem(FILTER_KEY, JSON.stringify({ activeCases: activeCases, activeThemes: activeThemes }));
+      localStorage.setItem(FILTER_KEY, JSON.stringify({
+        activeCases: activeCases, activeThemes: activeThemes,
+        stickyThemes: stickyThemes, focusTheme: focusTheme,
+      }));
     } catch (e) {}
   }
 
@@ -994,34 +1004,59 @@
     return order;
   }
 
+  function themeHasSelection() {
+    if (focusTheme) return true;
+    for (var k in stickyThemes) if (stickyThemes[k]) return true;
+    return false;
+  }
+  // Rebuild activeThemes from the pinned set + the focused theme. No selection
+  // at all = show everything (the "All" state).
+  function applyThemeState() {
+    themePillOrder().forEach(function (s) {
+      activeThemes[s] = !themeHasSelection() || !!stickyThemes[s] || s === focusTheme;
+    });
+    saveFilters();
+    renderAll();
+  }
+  function themePillSingle(key) {
+    if (key === "__all__") { stickyThemes = {}; focusTheme = null; }
+    else if (stickyThemes[key]) { delete stickyThemes[key]; }   // single-click a pin unpins it
+    else { focusTheme = key; }                                   // isolate to this theme (+ any pins)
+    applyThemeState();
+  }
+  function themePillDouble(key) {
+    if (key === "__all__") { stickyThemes = {}; focusTheme = null; }
+    else if (stickyThemes[key]) { delete stickyThemes[key]; }    // unpin
+    else { stickyThemes[key] = true; if (focusTheme === key) focusTheme = null; }  // pin (additive)
+    applyThemeState();
+  }
+
   function paintThemePills() {
     var box = document.getElementById("ih-theme-pills");
     if (!box) return;
     var slugs = themePillOrder();
     var allOn = slugs.every(themeOn);
-    var html = '<button type="button" class="ih-tp-btn' + (allOn ? " on" : "") + '" data-tp="__all__">All</button>';
+    var html = '<button type="button" class="ih-tp-btn' + (allOn ? " on" : "") + '" data-tp="__all__" title="Show all themes">All</button>';
     slugs.forEach(function (s) {
       var t = themeOf(s);
-      html += '<button type="button" class="ih-tp-btn' + (!allOn && themeOn(s) ? " on" : "") + '" data-tp="' + esc(s) + '">' + t.emoji + " " + esc(t.name) + "</button>";
+      var pin = !!stickyThemes[s];
+      html += '<button type="button" class="ih-tp-btn' + (!allOn && themeOn(s) ? " on" : "") + (pin ? " pin" : "") + '" data-tp="' + esc(s) + '"' +
+        ' title="' + (pin ? "Pinned — stays selected. Click to unpin." : "Click to focus this theme · double-click to pin (multi-select)") + '">' +
+        t.emoji + " " + esc(t.name) + "</button>";
     });
     box.innerHTML = html;
+    // Single vs. double click: delay the single-click action briefly so a
+    // double-click can cancel it (a double fires two clicks + a dblclick).
+    var pillTimer = null;
     box.querySelectorAll("[data-tp]").forEach(function (b) {
+      var key = b.getAttribute("data-tp");
       b.addEventListener("click", function () {
-        var key = b.getAttribute("data-tp");
-        var all = themePillOrder();
-        var wasAll = all.every(themeOn);
-        if (key === "__all__") {
-          all.forEach(function (s) { activeThemes[s] = true; });
-        } else if (wasAll) {
-          // From "All", picking a theme narrows to just that theme (press behavior).
-          all.forEach(function (s) { activeThemes[s] = (s === key); });
-        } else {
-          activeThemes[key] = !themeOn(key);
-          // Nothing left on = back to All.
-          if (!all.some(themeOn)) all.forEach(function (s) { activeThemes[s] = true; });
-        }
-        saveFilters();
-        renderAll();
+        if (pillTimer) clearTimeout(pillTimer);
+        pillTimer = setTimeout(function () { pillTimer = null; themePillSingle(key); }, 200);
+      });
+      b.addEventListener("dblclick", function () {
+        if (pillTimer) { clearTimeout(pillTimer); pillTimer = null; }
+        themePillDouble(key);
       });
     });
   }
