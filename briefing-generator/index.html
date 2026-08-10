@@ -438,11 +438,14 @@
   a.ih-sort-btn { text-decoration: none; }
   /* Breathing room between the Cards/List toggle and the sort buttons */
   .ih-cases-tools #ih-view-tgl { margin-right: 28px; }
-  /* Cards/List renders as ONE segmented toggle, not two separate buttons */
-  #ih-view-tgl { gap: 0; border: 1px solid var(--line-strong); }
-  #ih-view-tgl .ih-sort-btn { border: none; }
-  #ih-view-tgl .ih-sort-btn + .ih-sort-btn { border-left: 1px solid var(--line-strong); }
-  #ih-view-tgl .ih-sort-btn.on { background: var(--neon-block); color: var(--neon-on-block); }
+  /* Cards/List is a slider: labels either side of a small track, no outline, no neon */
+  #ih-view-tgl { gap: 8px; border: none; align-items: center; }
+  #ih-view-tgl .ih-sort-btn { border: none; background: none; padding: 0 2px; color: var(--ink-40); }
+  #ih-view-tgl .ih-sort-btn:hover { background: none; color: var(--ink-60); }
+  #ih-view-tgl .ih-sort-btn.on { background: none; color: var(--ink); }
+  .ih-vt-track { width: 34px; height: 18px; border-radius: 99px; background: var(--ink-20); position: relative; flex: 0 0 auto; pointer-events: none; }
+  .ih-vt-knob { position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); box-shadow: 0 1px 3px rgba(0,0,0,0.3); transition: left 0.15s ease; }
+  #ih-view-tgl.vt-list .ih-vt-knob { left: 18px; }
   /* List view: adjustable pill/status column widths (drag the grips) */
   .ih-list-mode .ih-case-listrow > .ih-pill { flex: 0 0 var(--lrw-pill, auto); overflow: hidden; text-overflow: ellipsis; }
   .ih-list-mode .ih-lr-count { flex: 0 0 var(--lrw-count, auto); overflow: hidden; text-overflow: ellipsis; }
@@ -484,7 +487,7 @@
   <!-- Page title -->
   <div class="page-title">
     <h1>🏠 Dashboard</h1>
-    <div class="stamp">2:35 PM ET · SUNDAY, AUGUST 9, 2026</div>
+    <div class="stamp">3:23 AM ET · MONDAY, AUGUST 10, 2026</div>
   </div>
 
 
@@ -522,6 +525,7 @@
     <div class="ih-cases-tools">
       <div class="ih-sort" id="ih-view-tgl" role="group" aria-label="Briefing view">
         <button type="button" class="ih-sort-btn" data-view="cards" title="Card view — lede + latest rows per case">▦ Cards</button>
+        <span class="ih-vt-track" aria-hidden="true"><span class="ih-vt-knob"></span></span>
         <button type="button" class="ih-sort-btn" data-view="list" title="List view — one row per case">≣ List</button>
       </div>
       <div class="ih-sort" id="ih-sort" role="group" aria-label="Arrange case cards">
