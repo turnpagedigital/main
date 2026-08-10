@@ -195,36 +195,36 @@
   ],
   "theme_presets": [
     {
-      "bg": "#e6e6e6",
+      "bg": "#bababa",
       "fg": "#000000"
     },
     {
-      "bg": "#696969",
+      "bg": "#6f6e81",
       "fg": "#ffffff"
     },
     {
-      "bg": "#ffebb3",
-      "fg": "#a66407"
+      "bg": "#cd9723",
+      "fg": "#ffffff"
     },
     {
       "bg": "#a66407",
       "fg": "#ffffff"
     },
     {
-      "bg": "#b2f5d9",
-      "fg": "#0e5338"
+      "bg": "#0091ad",
+      "fg": "#ffffff"
     },
     {
-      "bg": "#e8d3fd",
-      "fg": "#5c2097"
+      "bg": "#d13353",
+      "fg": "#ffffff"
     },
     {
-      "bg": "#dbe0ff",
-      "fg": "#2d42e1"
+      "bg": "#694abf",
+      "fg": "#ffffff"
     },
     {
-      "bg": "#ffd6d1",
-      "fg": "#a00e0e"
+      "bg": "#7b982a",
+      "fg": "#ffffff"
     },
     {
       "bg": "#146747",
