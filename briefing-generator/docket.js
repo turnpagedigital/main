@@ -563,7 +563,7 @@
       return (
         '<label class="ud-dd-row" title="' + esc(c.display_name) + '">' +
           '<input type="checkbox" data-slug="' + esc(c.slug) + '"' + (active ? " checked" : "") + ">" +
-          '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(c.short_name) + "</span>" +
+          '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(c.short_name) + "</span>" +
           '<span class="ud-dd-spacer"></span>' +
           '<button type="button" class="ud-gear-btn" data-slug="' + esc(c.slug) + '" title="Color settings for ' + esc(c.display_name) + '">⚙</button>' +
         "</label>"
@@ -978,12 +978,12 @@
         var pillStyle;
         if (e.unassigned) pillStyle = "background:transparent;color:var(--ink-60);border-color:var(--ink-40)";
         else if (e.group_name) pillStyle = "background:var(--paper-2);color:var(--ink);border-color:var(--ink-40)";
-        else pillStyle = "background:" + bg + ";color:" + fg;
+        else pillStyle = "--pb:" + bg + ";--pf:" + fg;
         pill = '<button type="button" class="ud-pill ud-pill-assign" data-bondoro="' + esc(e.bondoro_url) + '" ' +
           'style="' + pillStyle + '" title="Click to assign to a case">' +
           esc(e.short) + "</button>";
       } else {
-        pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' +
+        pill = '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' +
           esc(e.short) + "</span>";
       }
       var badges = "";

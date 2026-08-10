@@ -410,7 +410,7 @@
       return (
         '<label class="ud-dd-row" title="' + esc(c.display_name) + '">' +
           '<input type="checkbox" data-slug="' + esc(c.slug) + '"' + (active ? " checked" : "") + ">" +
-          '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(c.short_name) + "</span>" +
+          '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(c.short_name) + "</span>" +
           '<span class="ud-dd-spacer"></span>' +
           '<button type="button" class="ud-gear-btn" data-slug="' + esc(c.slug) + '" title="Color settings for ' + esc(c.display_name) + '">⚙</button>' +
         "</label>"
@@ -966,7 +966,7 @@
     var bg = getBg(ev.slug, ev.default_color);
     var fg = getFg(ev.slug, bg);
     return '<span class="uc-cal-chip" data-evkey="' + esc((ev.date || "") + "|" + (ev.short || "")) +
-      '" style="background:' + bg + ";color:" + fg + '" title="' +
+      '" style="--pb:' + bg + ";--pf:" + fg + '" title="' +
       esc(ev.short + " \u2014 " + ev.kind + (ev.time ? " " + ev.time : "") + "\n" + (ev.snippet || "")) + '">' +
       esc(ev.short + " \u00b7 " + ev.kind) + "</span>";
   }
@@ -1034,7 +1034,7 @@
             var fg = getFg(ev.slug, bg);
             return '<div class="uc-week-card" data-evkey="' + esc((ev.date || "") + "|" + (ev.short || "")) +
               '" style="border-left-color:' + bg + '">' +
-              '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' + esc(ev.short) + "</span>" +
+              '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(ev.short) + "</span>" +
               '<div class="uc-week-kind">' + esc(ev.kind) + (ev.time ? " \u00b7 " + esc(ev.time) : "") + "</div>" +
               (ev.snippet ? '<div class="uc-week-snip">' + esc(ev.snippet) + "</div>" : "") +
               '<div class="uc-week-links">' + entryLink(ev) +
@@ -1099,7 +1099,7 @@
     tbody.innerHTML = list.map(function (ev) {
       var bg = getBg(ev.slug, ev.default_color);
       var fg = getFg(ev.slug, bg);
-      var pill = '<span class="ud-pill" style="background:' + bg + ";color:" + fg + '">' +
+      var pill = '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' +
         esc(ev.short) + "</span>";
       var rel = relLabel(ev.date);
       var relHtml = ev.date === today
