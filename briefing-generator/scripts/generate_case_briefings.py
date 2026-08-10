@@ -211,29 +211,62 @@ STYLE_SPEC = """# Briefing register (structural spec — the house voice above g
   (docket filings, rulings, coverage, deadlines that newly ripened). Where a
   development can't be understood without prior context, a short anchoring clause is
   fine ("the lift-stay motion filed July 30"); a recap paragraph is not.
-- MATERIALITY FILTER: before writing, sort what moved into substantive vs.
-  administrative. Only substantive items earn the lead sentence or a paragraph of
-  their own. Substantive, bankruptcy/insolvency: schedules and statements, a
-  disclosure statement (filed, amended, objected to, or approved), a plan of
-  reorganization or liquidation (filed, amended, confirmed, or denied), a 363 sale
-  (bid procedures, stalking horse, auction, sale order), DIP or exit financing, a
-  material adversary proceeding (especially high-dollar), a 9019 settlement, a claims
-  bar date order, a dispositive ruling, a committee formation or objection with
-  teeth. Substantive, litigation: a ruling on a dispositive motion (dismiss, summary
-  judgment, class certification), a settlement or judgment amount, an injunction, a
-  verdict, a significant appellate ruling, a material new claim or amended
-  complaint. The test in every case type: would this move recoveries, timing, or the
-  merits? Administrative — omit, or fold into a single clause only if needed to
-  anchor a substantive item, never the lead: notices or certificates of service,
-  hearing notices and scheduling orders, deposition notices and other discovery
-  logistics, pro hac vice admissions, notices of appearance, corporate ownership
-  statements, transcript orders, BNC certificates of mailing, routine deadline
-  stipulations, agenda filings. If everything that moved is administrative, apply the
-  thin-day rule above: open with the administrative fact itself in MANDATORY OPENING
-  form, one sentence, and stop. Don't manufacture significance out of a notice of
-  service or a certificate of mailing, and don't write a paragraph explaining that
-  nothing substantive happened — that IS the "narrate the process" mistake this spec
-  bans, just aimed at materiality instead of the window.
+- MATERIALITY FILTER: classify every docket entry that moved on TWO independent
+  axes before writing a word.
+
+  AXIS 1 — Substantive vs. Procedural. Substantive = affects legal rights,
+  obligations, claims, property interests, or the case's ultimate outcome.
+  Bankruptcy substantive: claim allowance/disallowance/subordination/estimation; a
+  363 sale, DIP financing, or cash-collateral use; relief from the automatic stay
+  (either side); a plan or disclosure statement (filed, objected to, or confirmed);
+  an adversary proceeding (preference, fraudulent transfer, dischargeability,
+  turnover); appointment or removal of a trustee/examiner, or any change in estate
+  control; conversion or dismissal of the case; a 9019 settlement; the scope of
+  discharge, exemptions, or estate property; injunctive relief. Litigation
+  substantive: complaints, counterclaims, amended pleadings adding or dropping
+  claims or parties; dispositive motions (dismiss, summary judgment, judgment on
+  the pleadings); TROs and preliminary injunctions; a settlement or judgment
+  amount; a significant appellate ruling. An order is substantive iff the motion it
+  resolves is substantive. Procedural, and nothing more: notices of appearance,
+  substitution of counsel, pro hac vice; certificates of service or no objection;
+  scheduling/case-management orders and deadline-only stipulations; routine
+  extension requests (schedules, SOFA, lease assume/reject) absent a real dispute;
+  retention/fee applications unless contested on grounds touching estate value or
+  conduct; notices of hearing, agenda letters, witness/exhibit lists; motions to
+  seal absent a real disclosure dispute; transcript requests; ministerial orders
+  (shorten notice, set a hearing date) resolving nothing contested; a withdrawal
+  notice or notice of settlement-in-principle (the settlement itself, once filed
+  for approval, is substantive — the notice announcing it is not); corporate
+  ownership statements and other local-rule compliance filings; discovery motions
+  (to compel, protective order) unless one functions as case-dispositive leverage
+  (e.g. doubling as a sanctions/dismissal threat). A notice attaching a substantive
+  document (e.g. "notice of filing of plan supplement") takes the classification of
+  the attachment, not the cover notice. Mixed filings classify by dominant effect.
+
+  AXIS 2 — Important vs. Routine, independent of Axis 1. Important: dispositive of
+  a claim, the case, or a discrete contested issue; sets or shortens a near-term
+  deadline (objection/response deadline, bar date, hearing on shortened notice);
+  signals an emergency posture (first-day motions, TRO applications, motions to
+  shorten time); materially changes financial exposure or recovery prospects (a
+  large claim objection, DIP terms, a sale-price fight, a class's plan treatment);
+  is contested where the analogous filing is normally routine (an opposed fee
+  application, an opposed routine extension); changes case trajectory (conversion,
+  dismissal, trustee/examiner appointment, loss of DIP status); is the first
+  substantive filing in a new case or adversary proceeding; names a claimant or
+  creditor of interest by name. A substantive filing can still be routine (a
+  boilerplate unopposed claim objection under the case's standard omnibus
+  procedure); a procedural filing can still be important (an order shortening
+  notice on an emergency motion). Scale to the case: a $50,000 claim objection is
+  routine in a billion-dollar Chapter 11, important in a small estate.
+
+  WHAT TO WRITE: substantive-and-important carries the lead and earns a paragraph.
+  Substantive-but-routine and procedural-but-important each get at most a clause —
+  never the headline. Procedural-and-routine — omit, full stop. When genuinely
+  uncertain, classify UP (toward substantive/important), not down: missing
+  something material costs more than a sentence on something that turns out
+  routine. If nothing substantive-and-important moved, this is a thin day — see the
+  rule above, and don't manufacture significance out of a notice of service or a
+  certificate of mailing to avoid saying so.
 - Match tone to the weight of the update: a procedural entry, a status change, and a
   substantive development each get a different register — never dress up a scheduling
   order as a turning point. Some updates are just updates; don't manufacture an arc.
