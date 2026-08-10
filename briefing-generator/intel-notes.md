@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-10 23:43 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-10 23:44 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -139,6 +139,12 @@ Ciao
 ### (no docket number) — 2026-08-05
 
 > Thomson Reuters Lifts Revenue Guidance After Growth — Thomson Reuters bumped up its revenue targets for the year after logging double-digit growth across its three big business segments in the latest 
+
+## Uncategorized
+
+### (no docket number) — 2026-08-06
+
+> 10 of the Best Financial Advisor Companies: Well-Known Fiduciary Investment Firms to Consider — We analyzed everything from advisor credentials to fees to portfolio options at some of the larger and m
 
 ## Unknown case
 
