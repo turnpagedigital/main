@@ -48,7 +48,11 @@
     },
     "bartz-anthropic": {
       "bg": "#7b982a",
-      "fg": "#ddff9e"
+      "fg": "#eaffc2"
+    },
+    "blockfills": {
+      "bg": "#2d42e1",
+      "fg": "#ffffff"
     }
   },
   "groups": [
