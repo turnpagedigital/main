@@ -53,6 +53,10 @@
     "blockfills": {
       "bg": "#b8c0ff",
       "fg": "#152bd1"
+    },
+    "britannica-merriam-webster-v-openai": {
+      "bg": "#7ef4c2",
+      "fg": "#7ef4c3"
     }
   },
   "groups": [
