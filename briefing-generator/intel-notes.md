@@ -214,7 +214,7 @@ Ciao
 
 ### (no docket number) — 2026-08-06
 
-> ConocoPhillips CEO Ryan Lance to Retire, as Finance Chief Takes the Helm — CFO Andy O’Brien will take on the lead role at the U.S. oil giant in September.
+> Versant Media Shares Jump After Raising Outlook on Strong Viewership — Versant Media shares climbed after the company raised its full-year outlook despite recording lower sales in its third earnings r
 
 ## Unknown case
 
