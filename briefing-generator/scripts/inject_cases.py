@@ -673,8 +673,6 @@ def render_case_page(case):
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 {PAGE_CSS}
 <!-- AUTH GATE START -->
-<script src="/auth/config.js"></script>
-<script type="module" src="/auth/auth.js"></script>
 <!-- AUTH GATE END -->
 </head>
 <body>
@@ -818,8 +816,6 @@ def render_unified_docket(cases):
 {UD_CSS}
 </style>
 <!-- AUTH GATE START -->
-<script src="/auth/config.js"></script>
-<script type="module" src="/auth/auth.js"></script>
 <!-- AUTH GATE END -->
 </head>
 <body>
@@ -1093,8 +1089,6 @@ def render_news_page(cases):
 {UD_CSS}
 </style>
 <!-- AUTH GATE START -->
-<script src="/auth/config.js"></script>
-<script type="module" src="/auth/auth.js"></script>
 <!-- AUTH GATE END -->
 </head>
 <body>
@@ -1347,8 +1341,6 @@ def render_unified_calendar(cases):
   @media (max-width:900px){{.uc-week-grid{{grid-template-columns:1fr;}}.uc-week-col{{min-height:0;}}}}
 </style>
 <!-- AUTH GATE START -->
-<script src="/auth/config.js"></script>
-<script type="module" src="/auth/auth.js"></script>
 <!-- AUTH GATE END -->
 </head>
 <body>
@@ -1483,8 +1475,6 @@ def render_unified_notes(cases):
   .un-export{{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}}
 </style>
 <!-- AUTH GATE START -->
-<script src="/auth/config.js"></script>
-<script type="module" src="/auth/auth.js"></script>
 <!-- AUTH GATE END -->
 </head>
 <body>
