@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
     "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-09T23:55:26.990506+00:00",
-    "as_of": "Aug 9, 2026",
+    "fetched_at": "2026-08-10T21:09:09.450835+00:00",
+    "as_of": "Aug 10, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 534,
@@ -27,7 +27,7 @@
         "time_filed": "11:37:59",
         "date_display": "Aug 7, 2026",
         "description": "Notice of Rescheduled Hearing (Chambers)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -37,7 +37,7 @@
         "time_filed": "11:34:29",
         "date_display": "Aug 7, 2026",
         "description": "Notice of Rescheduled Hearing (Chambers)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -59,7 +59,7 @@
         "time_filed": "11:37:59",
         "date_display": "Aug 7, 2026",
         "description": "Notice of Rescheduled Hearing (Chambers)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -69,7 +69,7 @@
         "time_filed": "11:34:29",
         "date_display": "Aug 7, 2026",
         "description": "Notice of Rescheduled Hearing (Chambers)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
