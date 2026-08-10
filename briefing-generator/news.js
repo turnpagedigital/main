@@ -141,6 +141,7 @@
   var searchText = "";
   var dateFrom = "";
   var dateTo = "";
+  var lookback = "all";       // 24h | 7d | 30d | 90d | all | custom (docket-style header menu)
   var activeGearSlug = null;
   var activeSources = {};
   var _savedState = null;
@@ -165,6 +166,7 @@
       if (s.markedFilter === "bookmarked" || s.markedFilter === "either") bmOnly = true;
       if (s.markedFilter === "noted") noteOnly = true;
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
+      if (["24h", "7d", "30d", "90d", "all", "custom"].indexOf(s.lookback) !== -1) lookback = s.lookback;
       _savedState = s;
     } catch (e) {}
   }
@@ -180,10 +182,20 @@
         bmOnly:         bmOnly,
         noteOnly:       noteOnly,
         sortDir:        sortDir,
+        lookback:       lookback,
         activeCases:    activeCases,
         activeSources:  activeSources,
       }));
     } catch (e) {}
+  }
+
+  function lookbackCutoffIso() {
+    var days = lookback === "24h" ? 1 : lookback === "7d" ? 7
+      : lookback === "30d" ? 30 : lookback === "90d" ? 90 : 0;
+    if (!days) return "";
+    var d = new Date();
+    d.setDate(d.getDate() - days);
+    return d.toISOString().slice(0, 10);
   }
 
   // ── Helpers ────────────────────────────────────────────────────────────────
@@ -342,6 +354,8 @@
         if (entryFilter === "news" && kind !== "news") return false;
         if (entryFilter === "sales" && kind !== "asset sale") return false;
       }
+      var lbCut = lookbackCutoffIso();
+      if (lbCut && e.date_filed && e.date_filed < lbCut) return false;
       if (dateFrom && e.date_filed && e.date_filed < dateFrom) return false;
       if (dateTo && e.date_filed && e.date_filed > dateTo) return false;
       if (sq) {
@@ -3017,6 +3031,57 @@
       });
     }
 
+    // Docket-style lookback menu on the Time header.
+    function applyCustomVisibility() {
+      var dr = document.getElementById("ud-daterange");
+      if (dr) dr.style.display = lookback === "custom" ? "" : "none";
+    }
+    function syncTimeHeader() {
+      var th = document.getElementById("ud-th-time");
+      if (th) th.classList.toggle("ud-th-on", lookback !== "all");
+      var menu = document.getElementById("ud-th-timemenu");
+      if (menu) menu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === lookback);
+      });
+    }
+    var thTimeEl = document.getElementById("ud-th-time");
+    var thTimeMenuEl = document.getElementById("ud-th-timemenu");
+    if (thTimeEl && thTimeMenuEl) {
+      thTimeEl.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = thTimeMenuEl.style.display !== "none";
+        if (open) { thTimeMenuEl.style.display = "none"; return; }
+        var rect = thTimeEl.getBoundingClientRect();
+        thTimeMenuEl.style.display = "block";
+        thTimeMenuEl.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        thTimeMenuEl.style.left = Math.max(8, Math.min(rect.left + window.scrollX, window.innerWidth - 200)) + "px";
+        syncTimeHeader();
+      });
+      thTimeMenuEl.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.addEventListener("click", function () {
+          lookback = b.getAttribute("data-val");
+          if (lookback !== "custom") {
+            dateFrom = ""; dateTo = "";
+            if (dateFromEl) dateFromEl.value = "";
+            if (dateToEl) dateToEl.value = "";
+          }
+          thTimeMenuEl.style.display = "none";
+          saveFilterState();
+          syncTimeHeader();
+          applyCustomVisibility();
+          render();
+          if (lookback === "custom" && dateFromEl) dateFromEl.focus();
+        });
+      });
+      document.addEventListener("click", function (ev) {
+        if (thTimeMenuEl.style.display !== "none" && !thTimeMenuEl.contains(ev.target)) {
+          thTimeMenuEl.style.display = "none";
+        }
+      });
+    }
+    applyCustomVisibility();
+    syncTimeHeader();
+
     // Clear button
     var clearBtn = document.getElementById("ud-clear-search");
     if (clearBtn) {
@@ -3024,6 +3089,10 @@
         searchText = "";
         dateFrom = "";
         dateTo = "";
+        lookback = "all";
+        saveFilterState();
+        syncTimeHeader();
+        applyCustomVisibility();
         if (searchInput) searchInput.value = "";
         if (dateFromEl) dateFromEl.value = "";
         if (dateToEl) dateToEl.value = "";

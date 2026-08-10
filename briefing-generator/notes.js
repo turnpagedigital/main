@@ -69,6 +69,7 @@
   var searchText = "";
   var dateFrom = "";
   var dateTo = "";
+  var lookback = "all";       // 24h | 7d | 30d | 90d | all | custom (docket-style header menu)
   var activeGearSlug = null;
   var activeNoteKey = null;
   var UPLOADS = {};
@@ -79,15 +80,24 @@
     try {
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
+      if (["24h", "7d", "30d", "90d", "all", "custom"].indexOf(s.lookback) !== -1) lookback = s.lookback;
       _savedState = s;
     } catch (e) {}
   }
   function saveFilterState() {
     try {
       localStorage.setItem(FILTER_KEY, JSON.stringify({
-        sortDir: sortDir, activeCases: activeCases,
+        sortDir: sortDir, activeCases: activeCases, lookback: lookback,
       }));
     } catch (e) {}
+  }
+  function lookbackCutoffIso() {
+    var days = lookback === "24h" ? 1 : lookback === "7d" ? 7
+      : lookback === "30d" ? 30 : lookback === "90d" ? 90 : 0;
+    if (!days) return "";
+    var d = new Date();
+    d.setDate(d.getDate() - days);
+    return d.toISOString().slice(0, 10);
   }
 
   function caseOf(slug) {
@@ -446,6 +456,8 @@
         } else if (!activeCases[UNASSIGNED_KEY]) return false;
       }
       var edited = (n.updated_at || "").slice(0, 10);
+      var cut = lookbackCutoffIso();
+      if (cut && edited && edited < cut) return false;
       if (dateFrom && edited && edited < dateFrom) return false;
       if (dateTo && edited && edited > dateTo) return false;
       if (sq) {
@@ -832,13 +844,69 @@
     var toEl = document.getElementById("ud-date-to");
     if (fromEl) fromEl.addEventListener("change", function () { dateFrom = fromEl.value; render(); });
     if (toEl) toEl.addEventListener("change", function () { dateTo = toEl.value; render(); });
+
+    // Docket-style lookback menu on the "Last edited" header.
+    function applyCustomVisibility() {
+      var dr = document.getElementById("ud-daterange");
+      if (dr) dr.style.display = lookback === "custom" ? "" : "none";
+    }
+    function syncTimeHeader() {
+      var th = document.getElementById("ud-th-time");
+      if (th) th.classList.toggle("ud-th-on", lookback !== "all");
+      var menu = document.getElementById("ud-th-timemenu");
+      if (menu) menu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === lookback);
+      });
+    }
+    var thTimeEl = document.getElementById("ud-th-time");
+    var thTimeMenuEl = document.getElementById("ud-th-timemenu");
+    if (thTimeEl && thTimeMenuEl) {
+      thTimeEl.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = thTimeMenuEl.style.display !== "none";
+        if (open) { thTimeMenuEl.style.display = "none"; return; }
+        var rect = thTimeEl.getBoundingClientRect();
+        thTimeMenuEl.style.display = "block";
+        thTimeMenuEl.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        thTimeMenuEl.style.left = Math.max(8, Math.min(rect.left + window.scrollX, window.innerWidth - 200)) + "px";
+        syncTimeHeader();
+      });
+      thTimeMenuEl.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.addEventListener("click", function () {
+          lookback = b.getAttribute("data-val");
+          if (lookback !== "custom") {
+            dateFrom = ""; dateTo = "";
+            if (fromEl) fromEl.value = "";
+            if (toEl) toEl.value = "";
+          }
+          thTimeMenuEl.style.display = "none";
+          saveFilterState();
+          syncTimeHeader();
+          applyCustomVisibility();
+          render();
+          if (lookback === "custom" && fromEl) fromEl.focus();
+        });
+      });
+      document.addEventListener("click", function (ev) {
+        if (thTimeMenuEl.style.display !== "none" && !thTimeMenuEl.contains(ev.target)) {
+          thTimeMenuEl.style.display = "none";
+        }
+      });
+    }
+    applyCustomVisibility();
+    syncTimeHeader();
+
     var clearBtn = document.getElementById("ud-clear-search");
     if (clearBtn) {
       clearBtn.addEventListener("click", function () {
         searchText = ""; dateFrom = ""; dateTo = "";
+        lookback = "all";
         if (searchInput) searchInput.value = "";
         if (fromEl) fromEl.value = "";
         if (toEl) toEl.value = "";
+        saveFilterState();
+        syncTimeHeader();
+        applyCustomVisibility();
         render();
       });
     }
