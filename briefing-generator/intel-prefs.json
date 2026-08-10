@@ -65,6 +65,10 @@
     "in-re-cashcall-inc": {
       "bg": "#ffd6d1",
       "fg": "#b14235"
+    },
+    "concord-anthropic": {
+      "bg": "#dbd6f5",
+      "fg": "#0a0a0a"
     }
   },
   "groups": [
