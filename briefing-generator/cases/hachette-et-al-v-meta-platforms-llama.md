@@ -1,7 +1,6 @@
 ---
-added: 2026-08-07
 slug: hachette-et-al-v-meta-platforms-llama
-display_name: Hachette et al. v. Meta Platforms (Llama)
+display_name: Hachette v. Meta (Llama)
 short_name: "Hachette (Meta)"
 type: case
 status: active
@@ -17,4 +16,5 @@ docket_source:
   type: courtlistener
   docket_id: 73294740
 scan_guidance: "Filed May 5, 2026, five major publishers plus Turow brought a proposed class action alleging Meta used their works to train its Llama models — the same publisher coalition that just filed the Google Gemini suit, signaling a coordinated litigation campaign whose per-work damages and class-certification rulings will directly cross-reference Bartz's $3,000-per-work benchmark and the Kadrey/Meta seeding claims still pending."
+added: 2026-08-07
 ---
