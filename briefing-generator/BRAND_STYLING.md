@@ -25,13 +25,13 @@ CSS variables. Define in `:root` and override in `[data-theme="dark"]` so all re
   --neon: #D4FF00;
 }
 [data-theme="dark"] {
-  --bg: #16161B; --surface: #1F1F25; --paper-2: #1F1F25;
+  --bg: #0D0D0D; --surface: #17171B; --paper-2: #17171B;
   --ink: #E5E7EB; --ink-60: rgba(229,231,235,0.62); --ink-40: rgba(229,231,235,0.42); --ink-20: rgba(229,231,235,0.18);
   --line: rgba(229,231,235,0.1); --line-strong: rgba(229,231,235,0.18);
 }
 ```
 
-Soft-white text on dark `#16161B` (lift-1) — not pure white on pure black. Lower contrast = easier to read in long-form prose.
+Soft-white text on dark `#0D0D0D` (near-black canvas, `#17171B` card surfaces — a deliberately subtle gap, not a strong light/dark split). Lower contrast = easier to read in long-form prose.
 
 ### Highlighter (same in both modes)
 
