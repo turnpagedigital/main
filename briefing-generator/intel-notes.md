@@ -196,6 +196,10 @@ Ciao
 
 > Health Care Roundup: Market Talk — Find insight on Hikma Pharmaceuticals, Novo Nordisk and more in the latest Market Talks covering health care.
 
+### (no docket number) — 2026-08-06
+
+> European Indexes Rise as Earnings Drive Markets — Corporate earnings drove European stock indexes higher in early trade, with the Europe-wide Stoxx 600 index up and led by consumer-facing stocks and h
+
 ## Unknown case
 
 ### (no docket number) — undated
