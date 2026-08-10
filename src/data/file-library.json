@@ -20,15 +20,6 @@
       "addedAt": "2026-07-22T22:44:32.814Z"
     },
     {
-      "id": "mqgsmw31-2fyuw",
-      "name": "Desk",
-      "url": "/library/desk.svg",
-      "type": "image",
-      "companies": [],
-      "source": "upload",
-      "addedAt": "2026-06-16T15:25:06.925Z"
-    },
-    {
       "id": "mqg6gzgm-hvhzm",
       "name": "giphy",
       "url": "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHg5d2V3bWxzZHQ1Nm9rcHNvaGFmenZrbHNoMGl5Mmk4OGRnMm1rNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JkADkL9786mQBORwCS/giphy.gif",
@@ -228,15 +219,6 @@
       "addedAt": "2026-05-27T03:13:48.811Z"
     },
     {
-      "id": "mig-mpnhpe6t-hz9ph",
-      "name": "Logotype green",
-      "url": "/Logotype green.png",
-      "type": "logo",
-      "companies": [],
-      "source": "url",
-      "addedAt": "2026-05-27T03:13:48.811Z"
-    },
-    {
       "id": "mig-mpnhpe6u-ekgao",
       "name": "New TPDM Logo",
       "url": "/New TPDM Logo.png",
@@ -276,15 +258,6 @@
       "id": "mig-mpnhpe6u-6pwdm",
       "name": "TPDM Logo on Black",
       "url": "/TPDM Logo on Black.png",
-      "type": "logo",
-      "companies": [],
-      "source": "url",
-      "addedAt": "2026-05-27T03:13:48.811Z"
-    },
-    {
-      "id": "mig-mpnhpe6u-460ng",
-      "name": "TPDM Logo on Green",
-      "url": "/TPDM Logo on Green.png",
       "type": "logo",
       "companies": [],
       "source": "url",
@@ -790,7 +763,6 @@
         "Turnpage"
       ],
       "source": "upload",
-      "archived": false,
       "addedAt": "2026-07-31"
     }
   ],
