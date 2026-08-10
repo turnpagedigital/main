@@ -16,43 +16,133 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
     "date_last_filing": "",
-    "fetched_at": "2026-08-10T02:38:43.855660+00:00",
+    "fetched_at": "2026-08-10T18:08:56.373821+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": false,
-    "new_in_72h": 0,
+    "new_in_72h": 9,
     "recent": [
       {
-        "entry_number": 36086,
-        "date_filed": "2026-08-07",
-        "time_filed": "16:04:31",
-        "date_display": "Aug 7, 2026",
-        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Redacted To Next Claims Capital Limited. Filed by Next Claims Capital Limited. (Chen, Jinfeng)",
-        "is_new": false,
+        "entry_number": 36096,
+        "date_filed": "2026-08-10",
+        "time_filed": "12:04:15",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36086.0.pdf"
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36096.0.pdf"
       },
       {
-        "entry_number": 36085,
-        "date_filed": "2026-08-07",
-        "time_filed": "13:22:26",
-        "date_display": "Aug 7, 2026",
-        "description": "Transfer/Assignment of Claim.Receipt Number 10096320 Transfer Agreement 3001 (e) 2 Transferors: Cenjun Zhu (Claim No. 03428491) To Peng Xu. Filed by Cenjun Zhu. (Attachments: (1) Receipt) (KR)",
-        "is_new": false,
+        "entry_number": 36095,
+        "date_filed": "2026-08-10",
+        "time_filed": "11:59:59",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": true,
         "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36085.0.pdf"
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36095.0.pdf"
       },
       {
-        "entry_number": null,
-        "date_filed": "2026-08-07",
-        "time_filed": "16:05:19",
-        "date_display": "Aug 7, 2026",
-        "description": "none",
-        "is_new": false,
+        "entry_number": 36094,
+        "date_filed": "2026-08-10",
+        "time_filed": "11:54:55",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": true,
         "landmark": "",
-        "doc_url": ""
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36094.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 36096,
+        "date_filed": "2026-08-10",
+        "time_filed": "12:04:15",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36096.0.pdf"
+      },
+      {
+        "entry_number": 36095,
+        "date_filed": "2026-08-10",
+        "time_filed": "11:59:59",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36095.0.pdf"
+      },
+      {
+        "entry_number": 36094,
+        "date_filed": "2026-08-10",
+        "time_filed": "11:54:55",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36094.0.pdf"
+      },
+      {
+        "entry_number": 36093,
+        "date_filed": "2026-08-10",
+        "time_filed": "11:48:25",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To GRAND TETON C II, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36093.0.pdf"
+      },
+      {
+        "entry_number": 36092,
+        "date_filed": "2026-08-10",
+        "time_filed": "11:39:22",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To FTXCREDITOR, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36092.0.pdf"
+      },
+      {
+        "entry_number": 36090,
+        "date_filed": "2026-08-10",
+        "time_filed": "11:11:18",
+        "date_display": "Aug 10, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: REDACTED To DINGDINGKE LTD. Filed by Dingdingke Ltd. (Yan, Xianmin)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36090.0.pdf"
+      },
+      {
+        "entry_number": 36089,
+        "date_filed": "2026-08-10",
+        "time_filed": "11:01:14",
+        "date_display": "Aug 10, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[36060]) (Steele, Benjamin)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36089.0.pdf"
+      },
+      {
+        "entry_number": 36088,
+        "date_filed": "2026-08-10",
+        "time_filed": "10:42:31",
+        "date_display": "Aug 10, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[36049]) (Steele, Benjamin)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36088.0.pdf"
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2026-08-10",
+        "time_filed": "12:05:52",
+        "date_display": "Aug 10, 2026",
+        "description": "none",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 36086,
         "date_filed": "2026-08-07",
