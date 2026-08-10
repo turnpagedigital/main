@@ -403,7 +403,7 @@ PAGE_CSS = """<style>
   .stat{padding:16px 18px;border-bottom:1px solid var(--line-strong);}
   .stat .big{font-size:30px;font-weight:800;line-height:1;color:var(--ink);}
   .stat .big .accent{box-shadow:inset 0 -0.34em 0 var(--neon);}
-  [data-theme="dark"] .stat .big .accent{box-shadow:inset 0 -0.34em 0 #5D7A00;}
+  [data-theme="dark"] .stat .big .accent{box-shadow:inset 0 -0.34em 0 #D4FF00;}
   .stat .sub{font-size:12px;color:var(--ink-60);margin-top:7px;}
   .dates{list-style:none;margin:0;padding:6px 18px;}
   .dates li{padding:11px 0 11px 22px;border-bottom:1px solid var(--line);position:relative;font-size:12.5px;}
@@ -727,7 +727,7 @@ def render_case_page(case):
 
 # Distinct pill colors: (bg-light, fg-light, bg-dark, fg-dark)
 _PILL_PALETTE = [
-    ("#D4FF00", "#0A0A0A", "#5D7A00", "#FFFFFF"),
+    ("#D4FF00", "#0A0A0A", "#D4FF00", "#0A0A0A"),
     ("#94C6F8", "#0A0A0A", "#3B78D8", "#FFFFFF"),
     ("#B3A8F0", "#0A0A0A", "#4A3DE0", "#FFFFFF"),
     ("#7EF4C2", "#0A0A0A", "#3FA07A", "#FFFFFF"),

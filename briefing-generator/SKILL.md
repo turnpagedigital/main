@@ -326,11 +326,11 @@ See `BRAND_STYLING.md` for the full visual spec. Key invariants for dashboards:
 - **Nav alignment:** `.tn-row.brand` and `.tn-tabs-row` constrained to `max-width: 1440px; margin: 0 auto; padding: 0 32px; box-sizing: border-box` so the Turnpage logo aligns with the left edge of `.page-title`, `.three-col`, and `.sources`.
 - **Polestar-style hover dropdowns** with neon-bg `#D4FF00` panels flush against the active tab. **No drop shadow** on `.tn-dropdown` — the panel is flat.
 - **Dropdown 3-column grid:** Overview (1.4fr) | Quick Links (1fr) | CTA (auto). The "Open Daily Briefing" button lives in its own third column to the RIGHT of Quick Links — never below the link list. (Failure mode: a stray `</details>` tag where `</div>` should be closes the wrong element and pulls the CTA into the Links column.)
-- **Calendar squares:** white background, thin gray border, neon highlighter under the day number. In dark mode the highlighter switches to muted `#5D7A00` with white text.
+- **Calendar squares:** white background, thin gray border, neon highlighter under the day number. Same full `#D4FF00` neon in dark mode — no muted variant.
 - **Source-arrow tooltips:** 16×16 light-gray icon with hover panel showing publisher + excerpt.
-- **H3 subheadings** in advisory body: neon left-bar accent (`border-left: 4px solid var(--neon-block)` with 14px left padding), auto-switching to `#5D7A00` in dark mode.
+- **H3 subheadings** in advisory body: neon left-bar accent (`border-left: 4px solid var(--neon-block)` with 14px left padding), same full `#D4FF00` in dark mode.
 - **Three button styles** — Primary ink, Ghost outlined, Neon CTA — all square corners.
-- **Dark mode:** `#16161B` background, `#E5E7EB` ink. Large neon highlighter blocks (`.stat-anchor`, `.accent`, `.cal-day`, `.card-stat-anchor`) switch to `#5D7A00` with white text. Small accents (tab pill, source-arrow icon) stay full `#D4FF00`.
+- **Dark mode:** `#000000` background, `#E5E7EB` ink. Neon stays full `#D4FF00` everywhere, same as light mode — no muted/olive variant for large blocks (`.stat-anchor`, `.accent`, `.cal-day`, `.card-stat-anchor`) or small accents (tab pill, source-arrow icon).
 - **No consolidated dashboard** at the daily-briefing root.
 - **Storylines** (right column) are vertical-accordion collapsible `<details>`/`<summary>` per storyline.
 
