@@ -1,24 +1,19 @@
 {
   "case": {
     "slug": "hachette-et-al-v-meta-platforms-llama",
-    "display_name": "Hachette et al. v. Meta Platforms (Llama)",
-    "case_name": "Elsevier Inc. v. Meta Platforms, Inc.",
+    "display_name": "Hachette v. Meta (Llama)",
+    "case_name": "Hachette Book Group, Inc.; Macmillan Publishers; McGraw Hill; Elsevier Inc.; Cengage Learning; Scott Turow v. Meta Platforms, Inc.",
     "court": "To be confirmed (filed May 5, 2026)",
     "case_number": "1:26-cv-03689",
     "judge": "P. Kevin Castel",
     "docket_id": "73294740",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73294740/elsevier-inc-v-meta-platforms-inc/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-09T23:52:22.819518+00:00",
-    "as_of": "Aug 9, 2026",
-    "backfilled": true,
     "new_in_72h": 2,
     "recent": [
       {
@@ -1313,7 +1308,11 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-09T23:52:22.819518+00:00",
+    "as_of": "Aug 9, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
   "coverage": []
