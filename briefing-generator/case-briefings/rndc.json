@@ -3,6 +3,29 @@
   "case_name": "RNDC",
   "items": [
     {
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "lede": "On August 8, the clerk docketed a BNC Certificate of Mailing at Dkt. 158, the sole filing to land since Friday's close. The certificate confirms that the court's noticing agent dispatched service on one or more of the documents filed August 7 — most likely the lift-stay motion at Dkt. 146 or the notices of appearance at Dkts.",
+      "body_md": "On August 8, the clerk docketed a BNC Certificate of Mailing at Dkt. 158, the sole filing to land since Friday's close. The certificate confirms that the court's noticing agent dispatched service on one or more of the documents filed August 7 — most likely the lift-stay motion at Dkt. 146 or the notices of appearance at Dkts. 147, 148, and 154, all of which require formal service under Bankr. S.D. Tex. local rules. A BNC certificate is purely administrative and carries no independent substantive weight; it is noted here because it closes the service loop on the August 7 cluster and starts the clock on any response period tied to those filings.\n\nThe lift-stay motion at Dkt. 146 therefore remains the live substantive issue. The movant's identity, the asset or claim at issue, and the relief sought have not been confirmed from a primary-source pull of the document, and that verification remains outstanding. What the BNC mailing certificate now establishes is that service has been completed, meaning the response clock — typically 14 days under Bankr. S.D. Tex. practice before Judge Lopez absent an agreed order — has begun to run. If the certificate reflects service executed on August 7, a response deadline of approximately August 21 would fall three days before the August 24 second-day hearing, creating a realistic scenario in which Dkt. 146 appears on that hearing agenda either as a contested matter or by agreed resolution. Whether the debtors and the Official Committee of Unsecured Creditors (constituted August 6, Dkt. 137) file a joint opposition or proceed independently will be an early signal of how aligned estate interests and committee interests are on collateral perimeter questions. The two affidavits at Dkts. 156 and 157, also filed August 7, remain unconfirmed as to subject matter; they are most likely evidentiary support for either the lift-stay motion or the emergency motion at Dkt. 145, but neither interpretation should be treated as established until the documents are pulled.\n\nThe next concrete milestone is August 24, 2026 (Bankr. S.D. Tex., Case No. 26-90737, Judge Lopez, 1:00 p.m. CT): the second-day hearing at which interim first-day orders are expected to convert to final, the committee makes its first formal public appearance, and any unresolved lift-stay or emergency motion matter is likely to be addressed. The schedules of assets and liabilities and statements of financial affairs remain due September 23, 2026.\n\n## Sources\n\n- [New Chapter 11 Bankruptcy Filing – Republic National Distributing Company LLC](https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing) — Petition, 2026-07-29\n- [RNDC begins bankruptcy process](https://www.thespiritsbusiness.com/2026/07/rndc-begins-bankruptcy-process/) — The Spirits Business, 2026-07-28\n\n---\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "New Chapter 11 Bankruptcy Filing – Republic National Distributing Company LLC",
+          "url": "https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing",
+          "note": "Petition, 2026-07-29"
+        },
+        {
+          "title": "RNDC begins bankruptcy process",
+          "url": "https://www.thespiritsbusiness.com/2026/07/rndc-begins-bankruptcy-process/",
+          "note": "The Spirits Business, 2026-07-28"
+        }
+      ],
+      "activity": {
+        "filings": 14,
+        "articles": 0,
+        "latest": "2026-08-08"
+      }
+    },
+    {
       "date": "2026-08-09",
       "updated": "2026-08-09",
       "lede": "The August 7 docket is procedurally dense but substantively mixed: twelve entries across Dkts. 146–157, dominated by attorney appearances and two affidavits, with one entry of real structural consequence — Dkt. 146, a motion for relief from the automatic stay.",
