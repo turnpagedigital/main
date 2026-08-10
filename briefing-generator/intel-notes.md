@@ -212,6 +212,10 @@ Ciao
 
 > Scott Bessent’s Yen Trade Has Unintended Consequences for the Markets — The way it’s being done should make us worry that the Federal Reserve is being roped into easing monetary conditions.
 
+### (no docket number) — 2026-08-06
+
+> ConocoPhillips CEO Ryan Lance to Retire, as Finance Chief Takes the Helm — CFO Andy O’Brien will take on the lead role at the U.S. oil giant in September.
+
 ## Unknown case
 
 ### (no docket number) — undated
