@@ -194,7 +194,7 @@ Ciao
 
 ### (no docket number) — 2026-08-06
 
-> Tech, Media & Telecom Roundup: Market Talk — Find insight on AppLovin, Warner Bros. Discovery and more in the latest Market Talks covering technology, media and telecom.
+> Health Care Roundup: Market Talk — Find insight on Hikma Pharmaceuticals, Novo Nordisk and more in the latest Market Talks covering health care.
 
 ## Unknown case
 
