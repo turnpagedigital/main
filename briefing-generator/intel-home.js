@@ -1546,11 +1546,70 @@
     paint();
   }
 
+  // Drag the boundaries between the News / Calendar / Notes tiles to resize
+  // them. Persists the column fractions; only active in the wide 3-column
+  // layout (the narrow layout stacks and hides the grips).
+  function wireBandResize() {
+    var band = document.querySelector(".ih-band");
+    if (!band) return;
+    var tiles = Array.prototype.filter.call(band.children, function (el) {
+      return el.classList && el.classList.contains("ih-tile") && !el.classList.contains("ih-tile-full");
+    });
+    if (tiles.length < 2) return;
+    var fr;
+    try {
+      var saved = JSON.parse(localStorage.getItem("ih-band-cols") || "null");
+      if (Array.isArray(saved) && saved.length === tiles.length &&
+          saved.every(function (n) { return typeof n === "number" && n > 0; })) fr = saved.slice();
+    } catch (e) {}
+    if (!fr) fr = tiles.map(function (_, i) { return i === 1 ? 2 : 1; });   // News 1 · Calendar 2 · Notes 1
+    function applyCols() {
+      band.style.setProperty("--band-cols", fr.map(function (f) { return f.toFixed(3) + "fr"; }).join(" "));
+    }
+    applyCols();
+    tiles.forEach(function (tile, i) {
+      if (i >= tiles.length - 1) return;                  // no grip after the last tile
+      if (tile.querySelector(".ih-band-grip")) return;
+      var grip = document.createElement("div");
+      grip.className = "ih-band-grip";
+      grip.title = "Drag to resize";
+      tile.appendChild(grip);
+      grip.addEventListener("mousedown", function (e) {
+        if (window.matchMedia("(max-width: 1100px)").matches) return;   // stacked layout
+        e.preventDefault();
+        grip.classList.add("on");
+        document.body.style.cursor = "col-resize";
+        var startX = e.clientX;
+        var bandW = band.getBoundingClientRect().width || 1;
+        var total = fr.reduce(function (a, b) { return a + b; }, 0);
+        var pairSum = fr[i] + fr[i + 1];
+        var f0 = fr[i];
+        function mv(ev) {
+          var dFr = (ev.clientX - startX) / bandW * total;
+          var nf0 = Math.max(0.4, Math.min(pairSum - 0.4, f0 + dFr));   // keep the adjacent pair's total fixed
+          fr[i] = nf0;
+          fr[i + 1] = pairSum - nf0;
+          applyCols();
+        }
+        function up() {
+          document.removeEventListener("mousemove", mv);
+          document.removeEventListener("mouseup", up);
+          grip.classList.remove("on");
+          document.body.style.cursor = "";
+          try { localStorage.setItem("ih-band-cols", JSON.stringify(fr)); } catch (e2) {}
+        }
+        document.addEventListener("mousemove", mv);
+        document.addEventListener("mouseup", up);
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
     updateFilterButtons();
     wireCarousel();
     wireSortBar();
+    wireBandResize();
     wireViewToggle();
     wireShortcuts();
     var gb = document.getElementById("ih-groups-btn");
