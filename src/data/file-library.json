@@ -2,6 +2,15 @@
   "_comment": "File library — centralised store for images, logos, favicons, documents, and videos used across the site. Managed via /admin/assets (file list) and /admin/pages (favicon picker). Files live in public/library/ (uploaded) or as external URLs. favicons map { production, preview, admin } → URL from this library or a static path under /. Schema: { files: [{ id, name, url, type, companies, source, addedAt }], favicons: { production, preview, admin } }.",
   "files": [
     {
+      "id": "msni4dcp-u3szn",
+      "name": "favicon-black-fa9f19",
+      "url": "/library/favicon-black-fa9f19.png",
+      "type": "favicon",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-08-10T17:24:34.585Z"
+    },
+    {
       "id": "mrx1zxj5-nl5wj",
       "name": "scanning-books-2",
       "url": "/library/scanning-books-2-f1296f.jpg",
@@ -18,6 +27,15 @@
       "companies": [],
       "source": "upload",
       "addedAt": "2026-07-22T22:44:32.814Z"
+    },
+    {
+      "id": "mqgsmw31-2fyuw",
+      "name": "Desk",
+      "url": "/library/desk.svg",
+      "type": "image",
+      "companies": [],
+      "source": "upload",
+      "addedAt": "2026-06-16T15:25:06.925Z"
     },
     {
       "id": "mqg6gzgm-hvhzm",
@@ -219,6 +237,15 @@
       "addedAt": "2026-05-27T03:13:48.811Z"
     },
     {
+      "id": "mig-mpnhpe6t-hz9ph",
+      "name": "Logotype green",
+      "url": "/Logotype green.png",
+      "type": "logo",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
       "id": "mig-mpnhpe6u-ekgao",
       "name": "New TPDM Logo",
       "url": "/New TPDM Logo.png",
@@ -258,6 +285,15 @@
       "id": "mig-mpnhpe6u-6pwdm",
       "name": "TPDM Logo on Black",
       "url": "/TPDM Logo on Black.png",
+      "type": "logo",
+      "companies": [],
+      "source": "url",
+      "addedAt": "2026-05-27T03:13:48.811Z"
+    },
+    {
+      "id": "mig-mpnhpe6u-460ng",
+      "name": "TPDM Logo on Green",
+      "url": "/TPDM Logo on Green.png",
       "type": "logo",
       "companies": [],
       "source": "url",
