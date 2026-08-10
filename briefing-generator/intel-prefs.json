@@ -97,6 +97,10 @@
     "harvest-sherwood": {
       "bg": "#ffffff",
       "fg": "#0a0a0a"
+    },
+    "kahan": {
+      "bg": "#748690",
+      "fg": "#ffffff"
     }
   },
   "groups": [
