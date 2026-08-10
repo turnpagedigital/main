@@ -1,6 +1,384 @@
 {
-  "generated_at": "2026-08-10T03:21:11+00:00",
+  "generated_at": "2026-08-10T14:57:09+00:00",
   "items": [
+    {
+      "slug": "harvest-sherwood",
+      "case_name": "Harvest Sherwood",
+      "short_name": "Harvest Sherwood",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "N.D. Tex.",
+      "status": "active",
+      "signature": "127f95a5f680",
+      "activity": {
+        "filings": 21,
+        "articles": 0,
+        "latest": "2026-08-08"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 7, the clerk docketed three separate relief-from-stay motions (Dkt. 1169, 1173, 1181) together with corresponding notices of hearing (Dkt. 1174, 1175, 1180) and a generic order (Dkt. 1168), the first material cluster of lift-stay activity since plan confirmation on August 5. The simultaneous filing of three distinct motions — each a separate creditor or counterparty seeking to liquidate claims outside the…",
+      "body_md": "On August 7, the clerk docketed three separate relief-from-stay motions (Dkt. 1169, 1173, 1181) together with corresponding notices of hearing (Dkt. 1174, 1175, 1180) and a generic order (Dkt. 1168), the first material cluster of lift-stay activity since plan confirmation on August 5. The simultaneous filing of three distinct motions — each a separate creditor or counterparty seeking to liquidate claims outside the automatic stay — is not unusual at this stage of a confirmed liquidating plan, where the stay remains in place until the effective date but creditors with contingent claims against third-party insurers or co-defendants have reason to move promptly. The motions' subject matter, movants, and proposed hearing dates are not yet legible from the docket titles alone; the notices of hearing at Dkt. 1174, 1175, and 1180 will carry the scheduled dates, which are not yet reflected in the docket record provided.\n\nFour claim assignments (Dkt. 1175–1178) were logged the same day via the claims agent, continuing the pattern of secondary-market trading in Harvest Sherwood claims that has run throughout the case. Two pro hac vice admissions (Dkt. 1170, 1171) also appeared August 7, indicating that at least one new firm or out-of-district practitioner entered an appearance around the time of the lift-stay filings — a pairing that may reflect counsel for one of the lift-stay movants, though that connection is not confirmed on the face of the docket. On August 8, Dkt. 1186 recorded a BNC certificate of mailing, the administrative confirmation that the August 7 notices went out to all scheduled recipients. \nPlan confirmation was entered at the August 5 hearing, where Judge Jernigan overruled the remaining U.S. Trustee objection\n — __[Law360](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval)__ — so the lift-stay cluster landing two days later reflects the predictable post-confirmation sprint by parties needing stay relief before the plan goes effective.\n\nThe recovery posture for claimants is unchanged by this cluster: the confirmed plan's mechanism centers on \nmaximizing value of more than $1 billion in antitrust litigation claims against more than 25 defendants across the chicken, pork, and beef producer industries\n — __[Atlas Grove/PRNewswire](https://www.prnewswire.com/news-releases/atlas-grove-announces-court-approval-of-180-million-financing-commitment-for-harvest-sherwood-bankruptcy-estate-302821009.html)__ — with distributions flowing after that litigation trust is funded and operational. The lift-stay motions, if granted, would allow individual movants to pursue their own claims in other forums, which is recoverable neutral or marginally positive for the estate to the extent it reduces administrative claim exposure rather than extracting estate assets. The next concrete milestone is September 21, when the adversary proceeding against Sprouts Farmers Market (Adv. Pro. 25-08002) goes to trial before Judge Jernigan — the proceeding through which the estate is pursuing its damages claim arising from Sprouts' transition to self-distribution.\n\n## Sources\n\n- [Harvest Sherwood Wins Ch. 11 Plan Approval](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval) — Law360, August 5, 2026\n- [Atlas Grove Announces Court Approval of $180 Million Financing Commitment for Harvest Sherwood Bankruptcy Estate](https://www.prnewswire.com/news-releases/atlas-grove-announces-court-approval-of-180-million-financing-commitment-for-harvest-sherwood-bankruptcy-estate-302821009.html) — PR Newswire, July 8, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Harvest Sherwood Wins Ch. 11 Plan Approval",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval",
+          "note": "Law360, August 5, 2026"
+        },
+        {
+          "title": "Atlas Grove Announces Court Approval of $180 Million Financing Commitment for Harvest Sherwood Bankruptcy Estate",
+          "url": "https://www.prnewswire.com/news-releases/atlas-grove-announces-court-approval-of-180-million-financing-commitment-for-harvest-sherwood-bankruptcy-estate-302821009.html",
+          "note": "PR Newswire, July 8, 2026"
+        }
+      ]
+    },
+    {
+      "slug": "in-re-cashcall-inc",
+      "case_name": "CashCall",
+      "short_name": "CashCall",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
+      "status": "active",
+      "signature": "74502b6f5622",
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-08"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 7, the court entered an order admitting Schuyler G. Carroll of Manatt, Phelps & Phillips LLP pro hac vice to represent the debtor and debtor-in-possession (Dkt. 46). The BNC certificate of notice confirming service of that order followed on August 8 (Dkt. 47).",
+      "body_md": "On August 7, the court entered an order admitting Schuyler G. Carroll of Manatt, Phelps & Phillips LLP pro hac vice to represent the debtor and debtor-in-possession (Dkt. 46). The BNC certificate of notice confirming service of that order followed on August 8 (Dkt. 47). Both entries are administrative in character and carry no immediate consequence for the recovery posture of judgment creditors, but Carroll's admission is a structural marker: \nthe order formally seats Carroll — already named as debtor's counsel — as admitted counsel of record in the Southern District of California proceeding\n, completing the appearance of Manatt's restructuring team ahead of the August 26 final DIP hearing.\n\nThe weightier backdrop is unchanged and worth holding in view as that hearing approaches. \nAt the July 24 first-day hearing, arguments from the U.S. Trustee and the CFPB resonated with Judge Marum, who limited interim DIP borrowings to $300,000 — well below the requested $1.3 million — and set the final DIP hearing for August 26, 2026.\n \nThat compressed interim window means debtor professionals will almost certainly go without a cumulative ~$290,000 budgeted for the carve-out account, and the debtor is riding into the August 26 hearing on thin liquidity.\n The DIP lender is an affiliate owned by the debtor's CEO, J. Paul Reddam — a conflict that drew scrutiny at the first-day hearing and has not been resolved on the docket. The August 26 final DIP hearing is therefore the next substantive event at which the court will determine the full DIP facility terms, the adequacy of creditor protections, and — critically for judgment creditors — whether the lien carve-out structure ultimately shields avoidance action proceeds from the insider lender. \nA related fraudulent-transfer case challenging an October 2021 distribution to Reddam as intended to hinder the San Mateo judgment remains pending, with the debtor's summary-judgment motion having been denied on July 14, 2026;\n the estate's ability to prosecute that claim is directly tied to whether DIP financing survives and on what terms.\n\nThe next concrete milestone is the second-day / final DIP hearing on **August 26, 2026** (Case No. 26-03102, Courtroom 2, 11:00 a.m.), at which Judge Marum will consider final approval of the DIP facility and any remaining first-day relief. Judgment creditors should monitor whether any objections to the DIP order — particularly from the U.S. Trustee or CFPB — are filed in the days preceding that hearing.\n\n## Sources\n\n- [New Chapter 11 Bankruptcy Filing — CashCall, Inc.](https://www.petition11.com/p/cashcall-chapter-11-bankruptcy-filing) — PETITION LLC, August 2, 2026\n- [CashCall Gets Interim DIP Cash After Lender Eases Terms](https://www.law360.com/bankruptcy-authority/articles/2505568/cashcall-gets-interim-dip-cash-after-lender-eases-terms) — Law360, July 25, 2026\n- [Filing Alert: CashCall Chapter 11](https://bondoro.com/cashcall-filing-alert/) — Bondoro Insights, July 2026\n- [CashCall, Inc. Bankruptcy (3:26-bk-03102)](https://www.pacermonitor.com/public/case/65796349/CashCall,_Inc) — PacerMonitor\n- [CashCall, Inc. Bankruptcy Case — ElevenFlo](https://elevenflo.com/cases/17382) — ElevenFlo\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "New Chapter 11 Bankruptcy Filing — CashCall, Inc.",
+          "url": "https://www.petition11.com/p/cashcall-chapter-11-bankruptcy-filing",
+          "note": "PETITION LLC, August 2, 2026"
+        },
+        {
+          "title": "CashCall Gets Interim DIP Cash After Lender Eases Terms",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2505568/cashcall-gets-interim-dip-cash-after-lender-eases-terms",
+          "note": "Law360, July 25, 2026"
+        },
+        {
+          "title": "Filing Alert: CashCall Chapter 11",
+          "url": "https://bondoro.com/cashcall-filing-alert/",
+          "note": "Bondoro Insights, July 2026"
+        },
+        {
+          "title": "CashCall, Inc. Bankruptcy (3:26-bk-03102)",
+          "url": "https://www.pacermonitor.com/public/case/65796349/CashCall,_Inc",
+          "note": "PacerMonitor"
+        },
+        {
+          "title": "CashCall, Inc. Bankruptcy Case — ElevenFlo",
+          "url": "https://elevenflo.com/cases/17382",
+          "note": "ElevenFlo"
+        }
+      ]
+    },
+    {
+      "slug": "other-copyright-suits",
+      "case_name": "Other Copyright Suits",
+      "short_name": "Other Copyright Suits",
+      "emoji": "⚖️",
+      "is_group": true,
+      "members": [
+        "britannica-merriam-webster-v-openai",
+        "getty-images-us-v-stability-ai-nd-cal",
+        "hachette-et-al-v-google-llc-gemini",
+        "hachette-et-al-v-meta-platforms-llama",
+        "kadrey-v-meta-contributory-infringement-amendment",
+        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153"
+      ],
+      "themes": [
+        "llm-class-action"
+      ],
+      "court": "6 related cases",
+      "status": "",
+      "signature": "142f2e08ae22",
+      "activity": {
+        "filings": 9,
+        "articles": 0,
+        "latest": "2026-08-07"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 7, Judge Sidney H. Stein entered two deadline-setting orders (Dkt. 57 and Dkt. 58) in Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al., No. 1:26-cv-02097 (S.D.N.Y.), building on the proposed stipulation the parties filed August 5 (Dkt. 56). The docket entries are styled as utility orders, so the operative effect — whether they govern a response schedule, a service deadline…",
+      "body_md": "On August 7, Judge Sidney H. Stein entered two deadline-setting orders (Dkt. 57 and Dkt. 58) in *Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al.*, No. 1:26-cv-02097 (S.D.N.Y.), building on the proposed stipulation the parties filed August 5 (Dkt. 56). The docket entries are styled as utility orders, so the operative effect — whether they govern a response schedule, a service deadline, or some other procedural step — cannot be confirmed from the docket text alone; the substance will require PACER access. What the pair of orders does confirm is that Judge Stein is actively managing the schedule rather than letting the case drift. The case \nwas originally filed in the Southern District of New York and concerns OpenAI's ChatGPT-based AI products\n; the primary claims turn on \nallegations that OpenAI copied nearly 100,000 Britannica articles and Merriam-Webster dictionary entries without permission to train ChatGPT\n, with \nadditional claims for trademark violations arising from false attributions in AI responses\n. The scheduling activity on August 7 is a routine procedural beat, not a substantive development, but it signals the case is moving toward an ordered pretrial posture.\n\nAlso on August 7, two filings moved in *Hachette Book Group, Inc. et al. v. Meta Platforms, Inc.*, No. 1:26-cv-03689 (S.D.N.Y.), before Judge P. Kevin Castel. Anna M. Rennich entered an appearance for all plaintiffs (Dkt. 91), and a letter was filed at Dkt. 92, the contents of which are not visible from the docket description alone. The appearance of new counsel is a staffing addition, not a strategic inflection, but it arrives at a meaningful moment: the August 3 letter motion for leave to file a motion to strike (Dkt. 90) is pending before Judge Castel, and the court has already set a September 15, 2026 conference at 3:00 p.m. in Courtroom 11D that will include argument on Meta's transfer motion (Dkt. 89). That transfer question is the near-term gating issue for claimants — a transfer to the Northern District of California could bring this case within the orbit of Judge Chhabria, whose fair use ruling against the *Kadrey* plaintiffs last year creates an unfavorable precedent backdrop. The publisher plaintiffs here are structured to distinguish that outcome: \nthe complaint alleges Meta trained its Llama models on more than 267 terabytes of copyrighted material from notorious pirate sites and masked its IP addresses to avoid detection when torrenting, stripped copyright management information from the acquired works, and abandoned legitimate licensing negotiations at Zuckerberg's direction\n — allegations framed precisely to establish willfulness and market harm that were absent from *Kadrey*. The next concrete milestone is the September 15 conference.\n\nIn *Hachette Book Group, Inc. et al. v. Google LLC*, No. 1:26-cv-05870 (S.D.N.Y.), before Judge Loretta A. Preska, the August 7 activity was procedural. A response to motion was filed at Dkt. 25, and the clerk issued a deficiency notice requiring counsel Benjamin Blystad Gould to re-file his pro hac vice application (Dkt. 24) with a Certificate of Good Standing from the Supreme Court of California — the only missing item. The underlying $200.00 fee receipt (ANYSDC-33253987) stands; only the certificate needs to be supplied. Judge Preska had granted three other pro hac vice admissions the prior day (Dkt. 23: Derek W. Loeser, Paul J. Sampson, and Chris Nathaniel Ryder), so this is a cure-and-refile matter, not a contested one. The pro hac vice build-out across both Hachette cases — *Google* and *Meta* — reflects the same plaintiffs' counsel team (led by Keller Loeser) staffing up across parallel fronts.\n\nIn *Kadrey et al. v. Meta Platforms, Inc.*, No. 3:23-cv-03417 (N.D. Cal.), before Judge Vince Chhabria, the August 7 docket produced duplicate transcript orders (Dkt. 802 and 803) for the July 31, 2026 proceedings before Judge Chhabria, ordered by court reporter Layli Phillips. This follows the August 5 discovery hearing before Magistrate Judge Thomas S. Hixson (Dkt. 799) at which counsel for both parties appeared via Zoom, and the two transcript orders filed August 6 covering that Magistrate hearing (Dkt. 800 and 801). The duplication of the Dkt. 802/803 transcript request appears administrative. Judge Chhabria granted plaintiffs leave to add the contributory infringement claim in March 2026 (Dkt. 700), noting that \nregardless of whether the plaintiffs were allowed to add the contributory infringement claim, Meta would be required to litigate it given the parallel *Entrepreneur Media* case, which already includes that claim and shares a discovery schedule\n. The active discovery posture before Magistrate Judge Hixson, evidenced by the August 5 hearing and the transcript orders that followed, is consistent with that shared schedule running.\n\n*Getty Images (US), Inc. v. Stability AI, Inc. et al.*, No. 3:25-cv-06891 (N.D. Cal.), before Judge Trina L. Thompson, and *Thomson Reuters Enterprise Centre GmbH et al. v. Ross Intelligence, Inc.*, No. 25-2153 (3d Cir.), were quiet. The Third Circuit panel in *Thomson Reuters* — Judges Restrepo, Montgomery-Reeves, and Bove — heard oral argument June 11 and directed the parties to file a transcript by June 25 (Dkt. 205). No ruling has issued publicly. The next concrete milestone across the active dockets is the September 15, 2026 conference in *Hachette v. Meta (Llama)* before Judge Castel.\n\n## Sources\n\n- [Encyclopedia Britannica v. OpenAI, CourtListener Docket 1:26-cv-02097](https://www.courtlistener.com/docket/72492986/encyclopedia-britannica-inc-v-openai-inc/) — CourtListener, August 2026\n- [Generative AI – IP Cases and Policy Tracker](https://www.mishcon.com/generative-ai-intellectual-property-cases-and-policy-tracker) — Mishcon de Reya, August 2026\n- [Encyclopedia Britannica and Merriam-Webster sue OpenAI](https://thenextweb.com/news/britannica-merriam-webster-openai-lawsuit-copyright) — The Next Web, May 1, 2026\n- [Major Publishers Challenge AI Training Practices in Landmark Copyright Suit Against Meta](https://www.hklaw.com/en/insights/publications/2026/05/major-publishers-challenge-ai-training-practices) — Holland & Knight, May 20, 2026\n- [Publishers and Authors File Class Action Lawsuit Against Meta](https://www.hachettebookgroup.com/articles/publishers-and-authors-file-class-action-lawsuit-against-meta-and-zuckerberg-for-willful-copyright-infringement-to-develop-llama-ai-models/) — Hachette Book Group, May 5, 2026\n- [Kadrey v. Meta Order Granting Motion for Leave, Dkt. 700](https://cdn.arstechnica.net/wp-content/uploads/2026/03/Kadrey-v-Meta-Order-Granting-Motion-for-Leave-3-25-26.pdf) — Ars Technica (court document), March 25, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Encyclopedia Britannica v. OpenAI, CourtListener Docket 1:26-cv-02097",
+          "url": "https://www.courtlistener.com/docket/72492986/encyclopedia-britannica-inc-v-openai-inc/",
+          "note": "CourtListener, August 2026"
+        },
+        {
+          "title": "Generative AI – IP Cases and Policy Tracker",
+          "url": "https://www.mishcon.com/generative-ai-intellectual-property-cases-and-policy-tracker",
+          "note": "Mishcon de Reya, August 2026"
+        },
+        {
+          "title": "Encyclopedia Britannica and Merriam-Webster sue OpenAI",
+          "url": "https://thenextweb.com/news/britannica-merriam-webster-openai-lawsuit-copyright",
+          "note": "The Next Web, May 1, 2026"
+        },
+        {
+          "title": "Major Publishers Challenge AI Training Practices in Landmark Copyright Suit Against Meta",
+          "url": "https://www.hklaw.com/en/insights/publications/2026/05/major-publishers-challenge-ai-training-practices",
+          "note": "Holland & Knight, May 20, 2026"
+        },
+        {
+          "title": "Publishers and Authors File Class Action Lawsuit Against Meta",
+          "url": "https://www.hachettebookgroup.com/articles/publishers-and-authors-file-class-action-lawsuit-against-meta-and-zuckerberg-for-willful-copyright-infringement-to-develop-llama-ai-models/",
+          "note": "Hachette Book Group, May 5, 2026"
+        },
+        {
+          "title": "Kadrey v. Meta Order Granting Motion for Leave, Dkt. 700",
+          "url": "https://cdn.arstechnica.net/wp-content/uploads/2026/03/Kadrey-v-Meta-Order-Granting-Motion-for-Leave-3-25-26.pdf",
+          "note": "Ars Technica (court document), March 25, 2026"
+        }
+      ]
+    },
+    {
+      "slug": "bartz-anthropic",
+      "case_name": "Bartz v. Anthropic",
+      "short_name": "Bartz v. Anthropic",
+      "emoji": "⚖️",
+      "themes": [
+        "llm-class-action",
+        "billion-dollar-class-actions"
+      ],
+      "court": "U.S. District Court, N.D. Cal. (San Francisco)",
+      "status": "active",
+      "signature": "92319f613cc7",
+      "activity": {
+        "filings": 0,
+        "articles": 1,
+        "latest": "2026-08-07"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 7, the Textbook & Academic Authors Association published a summary of class counsel's confirmed guidance on payment timing, the first direct statement from counsel on the post-final-approval distribution timeline. Class counsel confirmed that class members will not begin receiving payments until at least the end of 2026.",
+      "body_md": "On August 7, the Textbook & Academic Authors Association published a summary of class counsel's confirmed guidance on payment timing, the first direct statement from counsel on the post-final-approval distribution timeline. \nClass counsel confirmed that class members will not begin receiving payments until at least the end of 2026.\n The gate is the August 19 appeal deadline: \nunder the settlement agreement, payments begin one business day after the \"Effective Date,\" defined as the date on which the time to appeal the final judgment expires, and the Ninth Circuit generally allows 30 days to appeal.\n \nPayments could be further delayed if anyone files an appeal before that August 19 deadline.\n With nine days remaining in the appeal window, no appeal has been publicly reported or docketed; confirmation would require a notice of appeal appearing on the docket.\n\n\nPayments will be made in two stages, roughly 70% in the first stage and 30% in the second, as Anthropic will be making settlement payments in installments through September 2027.\n That structure maps directly onto the funded installments: $600 million is already in the settlement fund (the October 2025 and April 2026 tranches), with the third installment of $450 million due September 25, 2026, and a fourth of $450 million due September 25, 2027, per the settlement agreement. \nIf no appeals are filed, an online portal will be launched by end of August containing claimants' consolidated claim forms\n — a concrete operational step that would signal the distribution machinery is running. For claimants, the recovery posture is straightforward: the August 19 deadline is the single controlling variable between here and first payment; a clean passage through it puts initial disbursements on track for late 2026, while any appeal filed by a disgruntled class member or the Passman opt-out litigation restarts the clock.\n\nThe next concrete milestone is August 19 — the expiration of the 30-day appeal window from Judge Martínez-Olguín's July 20 final approval order (Dkt. 680). A clean passage triggers the \"Effective Date\" under the settlement agreement and, per class counsel's guidance, unlocks portal launch and first-wave distribution. The milestone after that is September 25, 2026: Anthropic's third installment payment of $450 million.\n\n---\n\n## Sources\n\n- [Bartz v Anthropic: When to Expect Payments, Next Steps](https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/) — Textbook & Academic Authors Association (TAA), August 7, 2026\n- [Bartz v. Anthropic Settlement Receives Final Approval](https://www.authorsalliance.org/2026/07/21/bartz-v-anthropic-settlement-receives-final-approval/) — Authors Alliance, July 21, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Bartz v Anthropic: When to Expect Payments, Next Steps",
+          "url": "https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/",
+          "note": "Textbook & Academic Authors Association (TAA), August 7, 2026"
+        },
+        {
+          "title": "Bartz v. Anthropic Settlement Receives Final Approval",
+          "url": "https://www.authorsalliance.org/2026/07/21/bartz-v-anthropic-settlement-receives-final-approval/",
+          "note": "Authors Alliance, July 21, 2026"
+        }
+      ]
+    },
+    {
+      "slug": "blockfills",
+      "case_name": "BlockFills",
+      "short_name": "BlockFills",
+      "emoji": "⚖️",
+      "themes": [
+        "crypto-insolvency",
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "Bankr. D. Del.",
+      "status": "active",
+      "signature": "a880285c03bf",
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-07"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 7, the clerk docketed a Certificate of No Objection at Dkt. 560 in In re Reliz Technology Group Holdings Inc., et al., Case No. 26-10371 (Bankr. D. Del., Judge Horan). The filing is procedural and carries no substantive weight on its own.",
+      "body_md": "On August 7, the clerk docketed a Certificate of No Objection at Dkt. 560 in *In re Reliz Technology Group Holdings Inc., et al.*, Case No. 26-10371 (Bankr. D. Del., Judge Horan). The filing is procedural and carries no substantive weight on its own. Read against the immediately preceding docket — Dkt. 557, a Certificate of No Objection filed August 6 with no order required, and the attorney compensation application at Dkt. 550 filed July 30 — the pattern is consistent with the ordinary post-confirmation professional-fee clearance cycle: an application goes unopposed, a CNO is filed, and relief is entered without further hearing. Neither CNO identifies a contested matter, and neither has triggered judicial action.\n\nThe broader post-confirmation posture is static. \nOn July 13, 2026, Judge Horan entered the Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates (Dkt. 527).\n \nConfirmation came 122 days after the March 15, 2026 petition.\n The asset side of the case closed before that: \na Delaware bankruptcy judge agreed to approve the $3.25 million sale of BlockFills to a Belgian digital asset investment group\n, and __[CoinDesk](https://www.coindesk.com/business/2026/07/16/keyrock-acquires-blockfills-trading-assets-to-expand-institutional-crypto-business)__ and __[The Block](https://www.theblock.co/post/408639/keyrock-closes-deal-blockfill-institutional-trading-brokerage-assets)__ reported on July 16 that Keyrock completed that acquisition, gaining proprietary trading technology and institutional client relationships. Sale proceeds fund the estate; the plan provides the distribution framework. What remains is the post-confirmation administration: fee applications, certificates of service, and the wind-down mechanics.\n\nThe next hard deadline visible in the public record is \nSeptember 11, 2026 at 4:00 p.m. ET\n, as listed on the Verita claims-administration site — __[Verita Global](https://www.veritaglobal.net/blockfills)__. The nature of that deadline (claims bar date or other administrative cutoff) is not specified in available public materials and should be confirmed against the plan and confirmation order directly. Recovery posture for unsecured claimants turns on the pace and accuracy of claims reconciliation; any material claims objection practice will be the next substantive signal to watch.\n\n## Sources\n\n- [McDermott Secures Record-Fast Chapter 11 Confirmation for BlockFills](https://www.mcdermottlaw.com/news/mcdermott-secures-record-fast-chapter-11-confirmation-for-blockfills/) — McDermott Will & Emery, July 31, 2026\n- [Keyrock acquires BlockFills trading assets in institutional crypto expansion](https://www.coindesk.com/business/2026/07/16/keyrock-acquires-blockfills-trading-assets-to-expand-institutional-crypto-business) — CoinDesk, July 16, 2026\n- [Keyrock closes deal for BlockFills' institutional trading and brokerage assets](https://www.theblock.co/post/408639/keyrock-closes-deal-blockfill-institutional-trading-brokerage-assets) — The Block, July 16, 2026\n- [Crypto Firm BlockFills Gets OK For $3.25M Ch. 11 Sale](https://www.law360.com/bankruptcy-authority/articles/2490218/crypto-firm-blockfills-gets-ok-for-3-25m-ch-11-sale) — Law360, June 16, 2026\n- [Reliz Technology Group Holdings Inc., et al. — Claims Administration](https://www.veritaglobal.net/blockfills) — Verita Global (KCC), ongoing\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "McDermott Secures Record-Fast Chapter 11 Confirmation for BlockFills",
+          "url": "https://www.mcdermottlaw.com/news/mcdermott-secures-record-fast-chapter-11-confirmation-for-blockfills/",
+          "note": "McDermott Will & Emery, July 31, 2026"
+        },
+        {
+          "title": "Keyrock acquires BlockFills trading assets in institutional crypto expansion",
+          "url": "https://www.coindesk.com/business/2026/07/16/keyrock-acquires-blockfills-trading-assets-to-expand-institutional-crypto-business",
+          "note": "CoinDesk, July 16, 2026"
+        },
+        {
+          "title": "Keyrock closes deal for BlockFills' institutional trading and brokerage assets",
+          "url": "https://www.theblock.co/post/408639/keyrock-closes-deal-blockfill-institutional-trading-brokerage-assets",
+          "note": "The Block, July 16, 2026"
+        },
+        {
+          "title": "Crypto Firm BlockFills Gets OK For $3.25M Ch. 11 Sale",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2490218/crypto-firm-blockfills-gets-ok-for-3-25m-ch-11-sale",
+          "note": "Law360, June 16, 2026"
+        },
+        {
+          "title": "Reliz Technology Group Holdings Inc., et al. — Claims Administration",
+          "url": "https://www.veritaglobal.net/blockfills",
+          "note": "Verita Global (KCC), ongoing"
+        }
+      ]
+    },
+    {
+      "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
+      "case_name": "FTX",
+      "short_name": "FTX",
+      "emoji": "⚖️",
+      "themes": [
+        "crypto-insolvency",
+        "fraud-recovery",
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "United States Bankruptcy Court, D. Delaware",
+      "status": "active",
+      "signature": "98231688510f",
+      "activity": {
+        "filings": 3,
+        "articles": 0,
+        "latest": "2026-08-07"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 7, Next Claims Capital Limited filed a transfer of an unnamed claimant's allowed claim (Dkt. 36086), and separately, Cenjun Zhu filed a transfer of Claim No. 03428491 to Peng Xu (Dkt. 36085), both under Fed. R. Bankr. P. 3001(e)(2) in the United States Bankruptcy Court for the District of Delaware, Case No. 22-11068, before Judge Karen B. Owens. These are the only docket entries in the 72-hour window.",
+      "body_md": "On August 7, Next Claims Capital Limited filed a transfer of an unnamed claimant's allowed claim (Dkt. 36086), and separately, Cenjun Zhu filed a transfer of Claim No. 03428491 to Peng Xu (Dkt. 36085), both under Fed. R. Bankr. P. 3001(e)(2) in the United States Bankruptcy Court for the District of Delaware, Case No. 22-11068, before Judge Karen B. Owens. These are the only docket entries in the 72-hour window. No substantive filings, rulings, or orders moved across the docket this weekend.\n\nBoth transfers are routine secondary-market transactions. Their significance is structural rather than event-specific: institutional buyers and individual transferees continue acquiring allowed claims against a live distribution backdrop. \nHolders of allowed claims who do not successfully onboard with a distribution service provider within six months from the July 31, 2026 distribution date risk forfeiting their right to receive distributions on those claims\n — a deadline that creates near-term pressure on transferees to complete onboarding promptly. The Next Claims Capital transfer involves a redacted transferor, consistent with the docket's standard practice for claimants who have elected confidentiality. The Zhu-to-Xu transfer attaches a receipt (Dkt. 36085, Attachment 1), indicating the filing fee was paid and the transfer is procedurally complete. Neither transfer alters the aggregate recovery pool or the Trust's distribution mechanics.\n\nThe broader recovery posture remains shaped by the two developments reported last week: \nFTX's fifth creditor distribution of approximately $900 million commenced July 31, covering allowed Convenience and Non-Convenience claims under the Chapter 11 plan, with payments processed through BitGo, Kraken, and Payoneer for claimants who met the June 16 record date and completed pre-distribution requirements\n. \nThat payout lifts cumulative repayments since the wind-down began to nearly $10 billion.\n The Junho Bang settlement — \nin which the FTX Recovery Trust asked the Delaware bankruptcy judge to approve a deal with Bang's foreign representative that would return more than $160 million to the fraudster's victims\n — remains pending court approval; confirmation would appear as a signed order on the docket. \nThe deal involves Soogeun Oh, the court-appointed receiver for Bang's estate; Bang was linked to funds deposited into high-volume FTX trading accounts sourced from a June 2022 crypto investment program; recovered funds are routed to victims through South Korean insolvency proceedings, and the agreement bars Bang and his affiliates from receiving any proceeds\n — __[Law360](https://www.law360.com/bankruptcy-authority/articles/2507863/ftx-deal-would-route-160m-to-victims-of-korean-fraudster)__, __[CoinCentral](https://coincentral.com/ftx-starts-900m-creditor-distribution-as-repayments-near-10b/)__. The next concrete milestone is the Bang settlement approval hearing; no date has been publicly confirmed, and it has not yet appeared on the docket as a scheduled matter.\n\n## Sources\n\n- [FTX Deal Would Route $160M To Victims Of Korean Fraudster](https://www.law360.com/bankruptcy-authority/articles/2507863/ftx-deal-would-route-160m-to-victims-of-korean-fraudster) — Law360, July 30, 2026\n- [FTX Starts $900M Creditor Distribution as Repayments Near $10B](https://coincentral.com/ftx-starts-900m-creditor-distribution-as-repayments-near-10b/) — CoinCentral, July 31, 2026\n- [FTX Sets Next Distribution Date and Amends Proposed Disputed Claims Reserve Reduction](https://www.prnewswire.com/news-releases/ftx-sets-next-distribution-date-and-amends-proposed-disputed-claims-reserve-reduction-302782254.html) — PR Newswire / FTX Recovery Trust, May 26, 2026\n- [Distributions Dashboard FAQs](https://support.ftx.com/hc/en-us/articles/34522100742804-Distributions-Dashboard-FAQs) — FTX Support, accessed August 10, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "FTX Deal Would Route $160M To Victims Of Korean Fraudster",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2507863/ftx-deal-would-route-160m-to-victims-of-korean-fraudster",
+          "note": "Law360, July 30, 2026"
+        },
+        {
+          "title": "FTX Starts $900M Creditor Distribution as Repayments Near $10B",
+          "url": "https://coincentral.com/ftx-starts-900m-creditor-distribution-as-repayments-near-10b/",
+          "note": "CoinCentral, July 31, 2026"
+        },
+        {
+          "title": "FTX Sets Next Distribution Date and Amends Proposed Disputed Claims Reserve Reduction",
+          "url": "https://www.prnewswire.com/news-releases/ftx-sets-next-distribution-date-and-amends-proposed-disputed-claims-reserve-reduction-302782254.html",
+          "note": "PR Newswire / FTX Recovery Trust, May 26, 2026"
+        },
+        {
+          "title": "Distributions Dashboard FAQs",
+          "url": "https://support.ftx.com/hc/en-us/articles/34522100742804-Distributions-Dashboard-FAQs",
+          "note": "FTX Support, accessed August 10, 2026"
+        }
+      ]
+    },
+    {
+      "slug": "omnis-pleasants",
+      "case_name": "Omnis Pleasants",
+      "short_name": "Omnis Pleasants",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "United States Bankruptcy Court, D. Delaware",
+      "status": "active",
+      "signature": "097a660100cb",
+      "activity": {
+        "filings": 6,
+        "articles": 0,
+        "latest": "2026-08-07"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 7, four attorneys filed notices and motions to appear in Case No. 26-11169 before Judge Karen Owens in the U.S. Bankruptcy Court for the District of Delaware, with two pro hac vice admissions granted (Dkt. 71–72) and two motions pending (Dkt. 69–70), accompanied by a notice of appearance (Dkt. 68). The cluster of new entrants — five docket entries in a single day — signals that additional parties, beyond…",
+      "body_md": "On August 7, four attorneys filed notices and motions to appear in Case No. 26-11169 before Judge Karen Owens in the U.S. Bankruptcy Court for the District of Delaware, with two pro hac vice admissions granted (Dkt. 71–72) and two motions pending (Dkt. 69–70), accompanied by a notice of appearance (Dkt. 68). The cluster of new entrants — five docket entries in a single day — signals that additional parties, beyond Industrial Accessories Company (which appeared July 31 via Dkt. 60) and Kuro Infrastructure Delaware, Inc. (whose counsel was admitted pro hac vice July 31, Dkt. 59), are now formally inserting themselves into the proceeding. The identities of those counsel are not disclosed on the face of the docket entries available; confirmation of who they represent will appear on the underlying appearance pleadings, which should be treated as the primary source once accessible.\n\nThat said, the directional read matters for recovery posture. \nAs of the petition date, the debtor carried prepetition funded debt and guarantee obligations of approximately $70.8 million, comprising the approximately $50.9 million unsecured WVEDA loan guarantee (matured June 2026 and in default) and a purported $20 million unsecured Bilt note (in payment default), alongside a first-priority lien on substantially all of the debtor's assets granted to TRAG/RGE to secure more than $80 million of loans made to the debtor's non-debtor parent entities.\n With no unsecured creditors' committee yet appointed — confirmed by Dkt. 66 filed August 4 — the arrival of new appearing parties is the primary mechanism by which creditor constituencies are currently self-organizing. \nThe debtor has stated it intends to investigate and prosecute estate claims against former management for the benefit of stakeholders,\n and the governance dispute between the Gassheimer/Quantum Pleasants faction and incumbent management — including \nDynamic Finance Corp.'s delivery of a $75.64 million check purporting to fulfill all obligations under loan documents\n — remains unresolved on the docket. Creditors tracking recovery should monitor whether any newly appearing party has a nexus to either the TRAG/RGE lien position or the contested governance narrative, as that would materially affect whether the section 363 sale process runs cleanly or faces competing bids for control.\n\nThe procedural move for the week is straightforward: the docket is in its early-stage coalition-formation phase. \nYoung Conaway Stargatt & Taylor LLP and Herbert Smith Freehills Kramer LLP are representing Omnis Pleasants LLC\n on the debtor side, and the next concrete milestone is the September 3 final hearing on the first-day critical operations orders covering employee wages, utility payments, and critical vendor payments — the session at which interim relief approved at the outset of the case will either be made permanent or modified.\n\n---\n\n## Sources\n\n- [Pleasants Power Station's Omnis firm reports 600+ creditors](https://www.herald-dispatch.com/news/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_5b21adc9-1c75-433a-be51-5ed26f74a819.html) — Herald-Dispatch, 2026-08-05\n- [Pleasants Power Station's Omnis firm reports 600+ creditors](https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html) — Charleston Gazette-Mail, 2026-08-04\n- [Meet The Attorneys Guiding Omnis Pleasants In Ch. 11](https://www.law360.com/bankruptcy-authority/articles/2509427/meet-the-attorneys-guiding-omnis-pleasants-in-ch-11) — Law360, 2026-08-05\n- [Filing Alert: Omnis Pleasants Chapter 11](https://bondoro.com/omnis-pleasants-filing-alert/) — Bondoro, 2026-07-27\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Pleasants Power Station's Omnis firm reports 600+ creditors",
+          "url": "https://www.herald-dispatch.com/news/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_5b21adc9-1c75-433a-be51-5ed26f74a819.html",
+          "note": "Herald-Dispatch, 2026-08-05"
+        },
+        {
+          "title": "Pleasants Power Station's Omnis firm reports 600+ creditors",
+          "url": "https://www.wvgazettemail.com/news/legal_affairs/omnis-pleasants-reports-600-creditors-70-in-wv-amid-uncertain-coal-plant-future/article_1f5045c2-ed17-4993-b2e5-8c7ede971f62.html",
+          "note": "Charleston Gazette-Mail, 2026-08-04"
+        },
+        {
+          "title": "Meet The Attorneys Guiding Omnis Pleasants In Ch. 11",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2509427/meet-the-attorneys-guiding-omnis-pleasants-in-ch-11",
+          "note": "Law360, 2026-08-05"
+        },
+        {
+          "title": "Filing Alert: Omnis Pleasants Chapter 11",
+          "url": "https://bondoro.com/omnis-pleasants-filing-alert/",
+          "note": "Bondoro, 2026-07-27"
+        }
+      ]
+    },
+    {
+      "slug": "power-block-coin",
+      "case_name": "Power Block Coin",
+      "short_name": "Power Block Coin",
+      "emoji": "⚖️",
+      "themes": [
+        "crypto-insolvency",
+        "fraud-recovery",
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "Bankr. D. Utah",
+      "status": "active",
+      "signature": "e98e6efe259c",
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-07"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "moved": true,
+      "no_change_since": null,
+      "lede": "On August 7, Judge Cathleen D. Parker's chambers issued two Notices of Rescheduled Hearing, Dkt. 533 and Dkt. 534, in Bankr. D. Utah Case No. 24-23041. The docket does not disclose which specific matters were rescheduled or their new dates; the content of both notices is not publicly available through secondary sources reviewed this run.",
+      "body_md": "On August 7, Judge Cathleen D. Parker's chambers issued two Notices of Rescheduled Hearing, Dkt. 533 and Dkt. 534, in Bankr. D. Utah Case No. 24-23041. The docket does not disclose which specific matters were rescheduled or their new dates; the content of both notices is not publicly available through secondary sources reviewed this run. This pattern mirrors the three chambers-issued rescheduling notices filed on July 6 (Dkt. 529, 530, 531), which also appeared without attached detail in the docket index, suggesting routine administrative calendar management rather than a substantive shift in case trajectory.\n\nThe scheduling activity is procedural and carries no independent implications for recovery posture. What remains materially relevant is the cluster of open matters that any rescheduled hearings likely concern. The motion to employ counsel (Dkt. 527, filed July 1) remains pending under a pending order (Dkt. 528), and the adversary proceeding trustee Angela Somers filed on June 24 against Coinbase Global, Inc., Coinbase Inc., Coinbase Financial Markets, Aaron Tilton, and Brad Jones (Adv. Pro. 26-02122, Dkt. 526) — a recovery-of-money action — remains at the pleading stage. A complaint was also filed on July 23 (Dkt. 532), the most recent substantive filing before this week's notices; its parties and nature are not yet confirmed through available secondary sources and should be treated as unverified pending docket access. Confirmation of which hearings were rescheduled, and to what dates, requires the full text of Dkt. 533 and 534 from PACER. Separately, \na hearing on the motion to pay or for direction regarding liquidation of certain assets in the debtor's B2C2 account (Dkt. 472) was calendared for Tuesday, August 11, 2026, at 9:30 a.m., with Brian Rothschild as the moving party\n — __[U.S. Bankruptcy Court, D. Utah](https://www.utb.uscourts.gov/content/24-23041-motion-pay-or-direction-or-approval-regarding-liquidation-certain-assets-debtors)__. That hearing is the next concrete milestone. Its outcome will determine whether the estate can liquidate the B2C2 account assets and push proceeds toward the distribution waterfall, making it the most consequential near-term event for creditors regardless of what the August 7 rescheduling notices ultimately affect.\n\n## Sources\n\n- [24-23041 Motion to Pay or for Direction or Approval Regarding Liquidation of Certain Assets in the Debtor's B2C2 Account](https://www.utb.uscourts.gov/content/24-23041-motion-pay-or-direction-or-approval-regarding-liquidation-certain-assets-debtors) — U.S. Bankruptcy Court, District of Utah, August 2026\n- [Power Block Coin, LLC Bankruptcy (2:24-bk-23041)](https://www.pacermonitor.com/public/case/53997795/Power_Block_Coin,_LLC) — PacerMonitor\n- [Creditors' Committee Proposes Liquidation Plan for Utah Crypto Firm Power Block Coin](https://chapter11cases.com/blogs/news/creditors-committee-proposes-liquidation-plan-for-utah-crypto-firm-power-block-coin) — Chapter11Cases.com, February 2, 2025\n\n---\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "24-23041 Motion to Pay or for Direction or Approval Regarding Liquidation of Certain Assets in the Debtor's B2C2 Account",
+          "url": "https://www.utb.uscourts.gov/content/24-23041-motion-pay-or-direction-or-approval-regarding-liquidation-certain-assets-debtors",
+          "note": "U.S. Bankruptcy Court, District of Utah, August 2026"
+        },
+        {
+          "title": "Power Block Coin, LLC Bankruptcy (2:24-bk-23041)",
+          "url": "https://www.pacermonitor.com/public/case/53997795/Power_Block_Coin,_LLC",
+          "note": "PacerMonitor"
+        },
+        {
+          "title": "Creditors' Committee Proposes Liquidation Plan for Utah Crypto Firm Power Block Coin",
+          "url": "https://chapter11cases.com/blogs/news/creditors-committee-proposes-liquidation-plan-for-utah-crypto-firm-power-block-coin",
+          "note": "Chapter11Cases.com, February 2, 2025"
+        }
+      ]
+    },
     {
       "slug": "papaya-gaming",
       "case_name": "Papaya Gaming",
@@ -17,11 +395,11 @@
         "articles": 1,
         "latest": "2026-08-09"
       },
-      "checked": "2026-08-10T03:21:11+00:00",
+      "checked": "2026-08-10T14:57:09+00:00",
       "date": "2026-08-10",
       "updated": "2026-08-10",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-09",
       "lede": "On August 8, Skillz Platform Inc., through Delaware counsel Sean Beach, filed three deposition notices targeting Oriel Bachar (Dkt. 54), Pinni Yaniv (Dkt. 55), and James Kong (Dkt. 53), each expressly framed as taken \"in connection with the Chapter 15 petition for recognition of a foreign proceeding.\" Dkt. 52, a notice of service filed the same day, confirms that the deposition package was served on the relevant…",
       "body_md": "On August 8, Skillz Platform Inc., through Delaware counsel Sean Beach, filed three deposition notices targeting Oriel Bachar (Dkt. 54), Pinni Yaniv (Dkt. 55), and James Kong (Dkt. 53), each expressly framed as taken \"in connection with the Chapter 15 petition for recognition of a foreign proceeding.\" Dkt. 52, a notice of service filed the same day, confirms that the deposition package was served on the relevant parties. The identity of James Kong and his relationship to the proceeding is not confirmed in available materials. Pinni Yaniv is Papaya's Israeli counsel at Meitar Law Offices, making him an obvious target for examination on the structure and bona fides of the Tel Aviv proceeding. Bachar, as co-founder and petitioner, is the primary factual witness on the assets, the proposed fund mechanism, and the claim that Israel constitutes the center of main interests.\n\nThe deposition campaign is Skillz's pre-recognition offensive, and its likely objectives are not difficult to read. Recognition as a foreign main proceeding under 11 U.S.C. § 1517 turns on whether the Israeli proceeding qualifies — and Skillz has every incentive to contest that characterization, to probe the adequacy of the court-supervised fund as creditor protection, and to develop a factual record for its objection brief, which is due August 27, 2026. That posture is consistent with the bench strength Skillz has assembled: Dkts. 50 and 51 added Latham & Watkins' Michael Ardeljan and Amy C. Quartarolo on pro hac vice motions filed August 7, bringing the Latham roster to five practitioners alongside local counsel Beach. This is not the profile of a party planning a perfunctory objection. Also worth noting: Papaya issued a public statement welcoming \n\"the Delaware court's decision, which gives the company the certainty necessary to continue its regular operations until the recognition hearing\"\n — a reference to Judge Walrath's temporary injunction reported by __[Calcalist / CTech](https://www.calcalistech.com/ctechnews/article/idop8ipjs)__ on August 9, which stays collection and enforcement against U.S. assets pending the September 3 hearing.\n\nThe structural gap in the recovery picture is unchanged. \nJudge Cote ordered Papaya to pay approximately $719 million in disgorgement, as well as approximately $10.1 million in attorneys' fees and legal costs\n, per __[Calcalist / CTech](https://www.calcalistech.com/ctechnews/article/idop8ipjs)__. Against that, \nthe proposed arrangement places available cash into a designated fund overseen by a court-appointed official, expected to contain around $100 million during 2026, along with additional annual contributions, which could support claim payments if the U.S. ruling is ultimately enforced in Israel\n, per __[World Casino Directory](https://news.worldcasinodirectory.com/papaya-gaming-files-chapter-15-after-719m-verdict-123873)__. The deposition schedule adds procedural friction but does not move that ceiling. The next hard milestone is the objection deadline of August 27, 2026; the recognition hearing before Judge Walrath is set for September 3, 2026 at 9:30 AM (virtual).\n\n## Sources\n\n- [Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling](https://www.calcalistech.com/ctechnews/article/idop8ipjs) — Calcalist / CTech, August 9, 2026\n- [Papaya Gaming Seeks Chapter 15 Protection](https://news.worldcasinodirectory.com/papaya-gaming-files-chapter-15-after-719m-verdict-123873) — World Casino Directory, August 7, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -54,11 +432,11 @@
         "articles": 0,
         "latest": "2026-08-08"
       },
-      "checked": "2026-08-10T03:21:11+00:00",
+      "checked": "2026-08-10T14:57:09+00:00",
       "date": "2026-08-10",
       "updated": "2026-08-10",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-08",
       "lede": "On August 7, an unidentified party filed Dkt. 98, an Objection, on the same day the deadline for objections to the bidding procedures and sale motion expired. Objections to the bidding procedures and sale motion were due August 7.",
       "body_md": "On August 7, an unidentified party filed Dkt. 98, an Objection, on the same day the deadline for objections to the bidding procedures and sale motion expired. \nObjections to the bidding procedures and sale motion were due August 7.\n The objecting party and the substance of Dkt. 98 are not confirmed from available docket text; what is confirmed is that at least one objection is now on record ahead of the August 14 hearing. Also filed August 7: Dkt. 99, a Document of unspecified type; Dkt. 97, reflecting the Meeting of Creditors under Chapter 11; and a Notice of Docketing Error with no docket number assigned. Dkt. 100, filed August 8 and logged as an Exhibit, remains the most recent entry and was covered in yesterday's briefing as likely supplementing the bidding-procedures record or responding to Dkt. 98 — that characterization is unconfirmed.\n\nThe more consequential open variable from yesterday's briefing has not resolved. \nThor's no-cause diligence exit expired August 9, 2026.\n As of this briefing, no termination notice has appeared on the docket and no press report has confirmed either an exercise of that right or its waiver. Thor may transmit a termination notice directly to the debtors without an immediate docket filing, so the absence of a docket entry is not dispositive. What confirmation would look like: a docket-filed termination notice, a debtors' statement representing the purchase agreements remain operative, or a procedural filing at the August 14 hearing that proceeds on that assumption. Until one of those surfaces, the status of the stalking-horse commitment is unverified. \nThat gap matters most for power: because the debtors contract through FlowX rather than directly with TNMP, the record does not yet establish which supply, scheduling, or interconnection agreements would transfer with the assets.\n The Assigned Contracts Schedule and proposed cure amounts — which would answer that question — \nare due August 21, 2026.\n\n\n\nThe court has scheduled the bidding-procedures and sale hearing for August 14 at 11 a.m. ET.\n That hearing will arrive with at least one live objection (Dkt. 98), an exhibit filing (Dkt. 100) whose relationship to that objection is unconfirmed, and no docket-confirmed representation that the stalking-horse agreements remain in effect. Whether Judge O'Hagan proceeds, adjourns, or takes the matter on a contested basis will depend on those facts as they stand Thursday morning. The recovery posture of the 11,700 wallet holders carrying $163,723,500 in unsecured IOU claims is entirely downstream of whether the bidding procedures are approved and a floor bid is in place to anchor the September process. \nThe proposed downstream schedule calls for a September 8 qualified-bid deadline, a September 10 auction, and a September 16 sale hearing\n — none of which advances without a successful August 14 outcome. August 14 at 11 a.m. ET before Judge O'Hagan is the next concrete milestone.\n\n## Sources\n\n- [Poolin owes wallet users $163.7M, and its $52M Texas sale can still unravel next week](https://cryptoslate.com/poolin-owes-wallet-users-163-7m-and-its-52m-texas-sale-can-still-unravel-next-week/) — CryptoSlate, August 4, 2026\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro, July 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -90,11 +468,11 @@
         "articles": 0,
         "latest": "2026-08-08"
       },
-      "checked": "2026-08-10T03:21:11+00:00",
+      "checked": "2026-08-10T14:57:09+00:00",
       "date": "2026-08-10",
       "updated": "2026-08-10",
-      "moved": true,
-      "no_change_since": null,
+      "moved": false,
+      "no_change_since": "2026-08-08",
       "lede": "On August 8, the clerk docketed a BNC Certificate of Mailing at Dkt. 158, the sole filing to land since Friday's close. The certificate confirms that the court's noticing agent dispatched service on one or more of the documents filed August 7 — most likely the lift-stay motion at Dkt. 146 or the notices of appearance at Dkts.",
       "body_md": "On August 8, the clerk docketed a BNC Certificate of Mailing at Dkt. 158, the sole filing to land since Friday's close. The certificate confirms that the court's noticing agent dispatched service on one or more of the documents filed August 7 — most likely the lift-stay motion at Dkt. 146 or the notices of appearance at Dkts. 147, 148, and 154, all of which require formal service under Bankr. S.D. Tex. local rules. A BNC certificate is purely administrative and carries no independent substantive weight; it is noted here because it closes the service loop on the August 7 cluster and starts the clock on any response period tied to those filings.\n\nThe lift-stay motion at Dkt. 146 therefore remains the live substantive issue. The movant's identity, the asset or claim at issue, and the relief sought have not been confirmed from a primary-source pull of the document, and that verification remains outstanding. What the BNC mailing certificate now establishes is that service has been completed, meaning the response clock — typically 14 days under Bankr. S.D. Tex. practice before Judge Lopez absent an agreed order — has begun to run. If the certificate reflects service executed on August 7, a response deadline of approximately August 21 would fall three days before the August 24 second-day hearing, creating a realistic scenario in which Dkt. 146 appears on that hearing agenda either as a contested matter or by agreed resolution. Whether the debtors and the Official Committee of Unsecured Creditors (constituted August 6, Dkt. 137) file a joint opposition or proceed independently will be an early signal of how aligned estate interests and committee interests are on collateral perimeter questions. The two affidavits at Dkts. 156 and 157, also filed August 7, remain unconfirmed as to subject matter; they are most likely evidentiary support for either the lift-stay motion or the emergency motion at Dkt. 145, but neither interpretation should be treated as established until the documents are pulled.\n\nThe next concrete milestone is August 24, 2026 (Bankr. S.D. Tex., Case No. 26-90737, Judge Lopez, 1:00 p.m. CT): the second-day hearing at which interim first-day orders are expected to convert to final, the committee makes its first formal public appearance, and any unresolved lift-stay or emergency motion matter is likely to be addressed. The schedules of assets and liabilities and statements of financial affairs remain due September 23, 2026.\n\n## Sources\n\n- [New Chapter 11 Bankruptcy Filing – Republic National Distributing Company LLC](https://www.petition11.com/p/rndc-chapter-11-bankruptcy-filing) — Petition, 2026-07-29\n- [RNDC begins bankruptcy process](https://www.thespiritsbusiness.com/2026/07/rndc-begins-bankruptcy-process/) — The Spirits Business, 2026-07-28\n\n---\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
       "sources": [
@@ -109,6 +487,160 @@
           "note": "The Spirits Business, 2026-07-28"
         }
       ]
+    },
+    {
+      "slug": "concord-anthropic",
+      "case_name": "Concord v. Anthropic",
+      "short_name": "Concord v. Anthropic",
+      "emoji": "⚖️",
+      "themes": [
+        "llm-class-action"
+      ],
+      "court": "District Court, N.D. California",
+      "status": "active",
+      "signature": "bc41bc1f6b59",
+      "activity": {
+        "filings": 0,
+        "articles": 0,
+        "latest": "2026-08-06"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-06",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "terraform-labs",
+      "case_name": "Terraform Labs",
+      "short_name": "Terraform Labs",
+      "emoji": "⚖️",
+      "themes": [
+        "crypto-insolvency",
+        "bankruptcy-creditor-rights"
+      ],
+      "court": "Bankr. D. Del.",
+      "status": "active",
+      "signature": "4a16728a6ca1",
+      "activity": {
+        "filings": 0,
+        "articles": 0,
+        "latest": "2026-08-05"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-05",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "kahan",
+      "case_name": "Kahan",
+      "short_name": "Kahan",
+      "emoji": "⚖️",
+      "themes": [
+        "bankruptcy-creditor-rights",
+        "crypto-insolvency"
+      ],
+      "court": "Bankr. D. Mass",
+      "status": "active",
+      "signature": "9d6a45664667",
+      "activity": {
+        "filings": 0,
+        "articles": 0,
+        "latest": "2026-08-03"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-08-03",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "goliath",
+      "case_name": "Goliath",
+      "short_name": "Goliath",
+      "emoji": "⚖️",
+      "themes": [
+        "fraud-recovery",
+        "crypto-insolvency"
+      ],
+      "court": "S.D. Fl.",
+      "status": "active",
+      "signature": "d71c533116ba",
+      "activity": {
+        "filings": 0,
+        "articles": 0,
+        "latest": "2026-07-28"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-07-28",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "publishers-v-google-llc-gemini-books",
+      "case_name": "Publishers v. Google",
+      "short_name": "Publishers v. Google",
+      "emoji": "⚖️",
+      "themes": [
+        "llm-class-action"
+      ],
+      "court": "District Court, N.D. California",
+      "status": "active",
+      "signature": "96d6f2bf2b28",
+      "activity": {
+        "filings": 0,
+        "articles": 0,
+        "latest": "2026-07-15"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-07-15",
+      "lede": "",
+      "body_md": "",
+      "sources": []
+    },
+    {
+      "slug": "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
+      "case_name": "Burlap and Barrel",
+      "short_name": "Burlap",
+      "emoji": "⚖️",
+      "themes": [
+        "rewind-tariffs",
+        "billion-dollar-class-actions"
+      ],
+      "court": "U.S. Court of Appeals for the Federal Circuit (on appeal from CIT)",
+      "status": "active",
+      "signature": "ede27479b3ff",
+      "activity": {
+        "filings": 0,
+        "articles": 0,
+        "latest": "2026-06-11"
+      },
+      "checked": "2026-08-10T14:57:09+00:00",
+      "date": "",
+      "updated": "",
+      "moved": false,
+      "no_change_since": "2026-06-11",
+      "lede": "",
+      "body_md": "",
+      "sources": []
     }
   ]
 }

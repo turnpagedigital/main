@@ -3,6 +3,44 @@
   "case_name": "BlockFills",
   "items": [
     {
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "lede": "On August 7, the clerk docketed a Certificate of No Objection at Dkt. 560 in In re Reliz Technology Group Holdings Inc., et al., Case No. 26-10371 (Bankr. D. Del., Judge Horan). The filing is procedural and carries no substantive weight on its own.",
+      "body_md": "On August 7, the clerk docketed a Certificate of No Objection at Dkt. 560 in *In re Reliz Technology Group Holdings Inc., et al.*, Case No. 26-10371 (Bankr. D. Del., Judge Horan). The filing is procedural and carries no substantive weight on its own. Read against the immediately preceding docket — Dkt. 557, a Certificate of No Objection filed August 6 with no order required, and the attorney compensation application at Dkt. 550 filed July 30 — the pattern is consistent with the ordinary post-confirmation professional-fee clearance cycle: an application goes unopposed, a CNO is filed, and relief is entered without further hearing. Neither CNO identifies a contested matter, and neither has triggered judicial action.\n\nThe broader post-confirmation posture is static. \nOn July 13, 2026, Judge Horan entered the Findings of Fact, Conclusions of Law, and Order Confirming the Second Amended Joint Chapter 11 Plan of Reliz Technology Group Holdings Inc. and Its Debtor Affiliates (Dkt. 527).\n \nConfirmation came 122 days after the March 15, 2026 petition.\n The asset side of the case closed before that: \na Delaware bankruptcy judge agreed to approve the $3.25 million sale of BlockFills to a Belgian digital asset investment group\n, and __[CoinDesk](https://www.coindesk.com/business/2026/07/16/keyrock-acquires-blockfills-trading-assets-to-expand-institutional-crypto-business)__ and __[The Block](https://www.theblock.co/post/408639/keyrock-closes-deal-blockfill-institutional-trading-brokerage-assets)__ reported on July 16 that Keyrock completed that acquisition, gaining proprietary trading technology and institutional client relationships. Sale proceeds fund the estate; the plan provides the distribution framework. What remains is the post-confirmation administration: fee applications, certificates of service, and the wind-down mechanics.\n\nThe next hard deadline visible in the public record is \nSeptember 11, 2026 at 4:00 p.m. ET\n, as listed on the Verita claims-administration site — __[Verita Global](https://www.veritaglobal.net/blockfills)__. The nature of that deadline (claims bar date or other administrative cutoff) is not specified in available public materials and should be confirmed against the plan and confirmation order directly. Recovery posture for unsecured claimants turns on the pace and accuracy of claims reconciliation; any material claims objection practice will be the next substantive signal to watch.\n\n## Sources\n\n- [McDermott Secures Record-Fast Chapter 11 Confirmation for BlockFills](https://www.mcdermottlaw.com/news/mcdermott-secures-record-fast-chapter-11-confirmation-for-blockfills/) — McDermott Will & Emery, July 31, 2026\n- [Keyrock acquires BlockFills trading assets in institutional crypto expansion](https://www.coindesk.com/business/2026/07/16/keyrock-acquires-blockfills-trading-assets-to-expand-institutional-crypto-business) — CoinDesk, July 16, 2026\n- [Keyrock closes deal for BlockFills' institutional trading and brokerage assets](https://www.theblock.co/post/408639/keyrock-closes-deal-blockfill-institutional-trading-brokerage-assets) — The Block, July 16, 2026\n- [Crypto Firm BlockFills Gets OK For $3.25M Ch. 11 Sale](https://www.law360.com/bankruptcy-authority/articles/2490218/crypto-firm-blockfills-gets-ok-for-3-25m-ch-11-sale) — Law360, June 16, 2026\n- [Reliz Technology Group Holdings Inc., et al. — Claims Administration](https://www.veritaglobal.net/blockfills) — Verita Global (KCC), ongoing\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "McDermott Secures Record-Fast Chapter 11 Confirmation for BlockFills",
+          "url": "https://www.mcdermottlaw.com/news/mcdermott-secures-record-fast-chapter-11-confirmation-for-blockfills/",
+          "note": "McDermott Will & Emery, July 31, 2026"
+        },
+        {
+          "title": "Keyrock acquires BlockFills trading assets in institutional crypto expansion",
+          "url": "https://www.coindesk.com/business/2026/07/16/keyrock-acquires-blockfills-trading-assets-to-expand-institutional-crypto-business",
+          "note": "CoinDesk, July 16, 2026"
+        },
+        {
+          "title": "Keyrock closes deal for BlockFills' institutional trading and brokerage assets",
+          "url": "https://www.theblock.co/post/408639/keyrock-closes-deal-blockfill-institutional-trading-brokerage-assets",
+          "note": "The Block, July 16, 2026"
+        },
+        {
+          "title": "Crypto Firm BlockFills Gets OK For $3.25M Ch. 11 Sale",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2490218/crypto-firm-blockfills-gets-ok-for-3-25m-ch-11-sale",
+          "note": "Law360, June 16, 2026"
+        },
+        {
+          "title": "Reliz Technology Group Holdings Inc., et al. — Claims Administration",
+          "url": "https://www.veritaglobal.net/blockfills",
+          "note": "Verita Global (KCC), ongoing"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-07"
+      }
+    },
+    {
       "date": "2026-08-08",
       "updated": "2026-08-08",
       "lede": "The 72-hour window through this morning produced four docket entries, none of which moves the substantive needle. Dkt. 560, filed August 7, is a Certificate of No Objection; Dkts.",

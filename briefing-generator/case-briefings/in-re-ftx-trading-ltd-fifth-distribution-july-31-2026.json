@@ -3,6 +3,39 @@
   "case_name": "FTX",
   "items": [
     {
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "lede": "On August 7, Next Claims Capital Limited filed a transfer of an unnamed claimant's allowed claim (Dkt. 36086), and separately, Cenjun Zhu filed a transfer of Claim No. 03428491 to Peng Xu (Dkt. 36085), both under Fed. R. Bankr. P. 3001(e)(2) in the United States Bankruptcy Court for the District of Delaware, Case No. 22-11068, before Judge Karen B. Owens. These are the only docket entries in the 72-hour window.",
+      "body_md": "On August 7, Next Claims Capital Limited filed a transfer of an unnamed claimant's allowed claim (Dkt. 36086), and separately, Cenjun Zhu filed a transfer of Claim No. 03428491 to Peng Xu (Dkt. 36085), both under Fed. R. Bankr. P. 3001(e)(2) in the United States Bankruptcy Court for the District of Delaware, Case No. 22-11068, before Judge Karen B. Owens. These are the only docket entries in the 72-hour window. No substantive filings, rulings, or orders moved across the docket this weekend.\n\nBoth transfers are routine secondary-market transactions. Their significance is structural rather than event-specific: institutional buyers and individual transferees continue acquiring allowed claims against a live distribution backdrop. \nHolders of allowed claims who do not successfully onboard with a distribution service provider within six months from the July 31, 2026 distribution date risk forfeiting their right to receive distributions on those claims\n — a deadline that creates near-term pressure on transferees to complete onboarding promptly. The Next Claims Capital transfer involves a redacted transferor, consistent with the docket's standard practice for claimants who have elected confidentiality. The Zhu-to-Xu transfer attaches a receipt (Dkt. 36085, Attachment 1), indicating the filing fee was paid and the transfer is procedurally complete. Neither transfer alters the aggregate recovery pool or the Trust's distribution mechanics.\n\nThe broader recovery posture remains shaped by the two developments reported last week: \nFTX's fifth creditor distribution of approximately $900 million commenced July 31, covering allowed Convenience and Non-Convenience claims under the Chapter 11 plan, with payments processed through BitGo, Kraken, and Payoneer for claimants who met the June 16 record date and completed pre-distribution requirements\n. \nThat payout lifts cumulative repayments since the wind-down began to nearly $10 billion.\n The Junho Bang settlement — \nin which the FTX Recovery Trust asked the Delaware bankruptcy judge to approve a deal with Bang's foreign representative that would return more than $160 million to the fraudster's victims\n — remains pending court approval; confirmation would appear as a signed order on the docket. \nThe deal involves Soogeun Oh, the court-appointed receiver for Bang's estate; Bang was linked to funds deposited into high-volume FTX trading accounts sourced from a June 2022 crypto investment program; recovered funds are routed to victims through South Korean insolvency proceedings, and the agreement bars Bang and his affiliates from receiving any proceeds\n — __[Law360](https://www.law360.com/bankruptcy-authority/articles/2507863/ftx-deal-would-route-160m-to-victims-of-korean-fraudster)__, __[CoinCentral](https://coincentral.com/ftx-starts-900m-creditor-distribution-as-repayments-near-10b/)__. The next concrete milestone is the Bang settlement approval hearing; no date has been publicly confirmed, and it has not yet appeared on the docket as a scheduled matter.\n\n## Sources\n\n- [FTX Deal Would Route $160M To Victims Of Korean Fraudster](https://www.law360.com/bankruptcy-authority/articles/2507863/ftx-deal-would-route-160m-to-victims-of-korean-fraudster) — Law360, July 30, 2026\n- [FTX Starts $900M Creditor Distribution as Repayments Near $10B](https://coincentral.com/ftx-starts-900m-creditor-distribution-as-repayments-near-10b/) — CoinCentral, July 31, 2026\n- [FTX Sets Next Distribution Date and Amends Proposed Disputed Claims Reserve Reduction](https://www.prnewswire.com/news-releases/ftx-sets-next-distribution-date-and-amends-proposed-disputed-claims-reserve-reduction-302782254.html) — PR Newswire / FTX Recovery Trust, May 26, 2026\n- [Distributions Dashboard FAQs](https://support.ftx.com/hc/en-us/articles/34522100742804-Distributions-Dashboard-FAQs) — FTX Support, accessed August 10, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "FTX Deal Would Route $160M To Victims Of Korean Fraudster",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2507863/ftx-deal-would-route-160m-to-victims-of-korean-fraudster",
+          "note": "Law360, July 30, 2026"
+        },
+        {
+          "title": "FTX Starts $900M Creditor Distribution as Repayments Near $10B",
+          "url": "https://coincentral.com/ftx-starts-900m-creditor-distribution-as-repayments-near-10b/",
+          "note": "CoinCentral, July 31, 2026"
+        },
+        {
+          "title": "FTX Sets Next Distribution Date and Amends Proposed Disputed Claims Reserve Reduction",
+          "url": "https://www.prnewswire.com/news-releases/ftx-sets-next-distribution-date-and-amends-proposed-disputed-claims-reserve-reduction-302782254.html",
+          "note": "PR Newswire / FTX Recovery Trust, May 26, 2026"
+        },
+        {
+          "title": "Distributions Dashboard FAQs",
+          "url": "https://support.ftx.com/hc/en-us/articles/34522100742804-Distributions-Dashboard-FAQs",
+          "note": "FTX Support, accessed August 10, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 3,
+        "articles": 0,
+        "latest": "2026-08-07"
+      }
+    },
+    {
       "date": "2026-08-08",
       "updated": "2026-08-08",
       "lede": "The 72-hour window produced light movement: two claim transfers, a fee examiner report, a Kroll mailing affidavit, and a cancellation of the August 7 hearing. None of these are substantive developments for recovery posture; the briefing is proportioned accordingly.",
