@@ -373,14 +373,11 @@
   var FEED_ITEMS = [];
   var NOTE_STACK = [];   // current filtered notes shown in the dashboard sticky-stack
   var noteFront = 0;     // index into NOTE_STACK of the card currently on top
-  // Light bg is a pale paper tone; dark bg is the same hue's rich/saturated
-  // variant from the site's existing case-color dark palette (never a muted
-  // olive substitute — see BRAND_STYLING.md).
+  // Every card is the same very-light neon-green paper in light mode; dark
+  // mode swaps in the full-strength brand neon (never a muted olive
+  // substitute — see BRAND_STYLING.md).
   var NOTE_TINTS = [
-    { bg: "#C9F7E3", bgd: "#3FA07A" },
-    { bg: "#D7E9FB", bgd: "#3B78D8" },
-    { bg: "#E4E0FA", bgd: "#4A3DE0" },
-    { bg: "#FBE0F8", bgd: "#CC33CC" },
+    { bg: "#EEFFA3", bgd: "#D4FF00" },
   ];
   var NOTE_AUTO_MS = 6000;
   var noteAutoTimer = null;
@@ -827,11 +824,11 @@
       if (!caseOn(x.m.slug)) return;
       var short = x.m.short_name || x.m.display_name || x.m.slug;
       ((x.c && x.c.events) || []).forEach(function (ev) {
-        if (ev.date) events.push({ date: ev.date, time: (ev.time || "").trim(), short: short, title: ev.title || ev.kind || "", slug: x.m.slug, default_color: x.m.default_color });
+        if (ev.date) events.push({ date: ev.date, time: (ev.time || "").trim(), short: short, kind: ev.kind || "", title: ev.title || "", slug: x.m.slug, default_color: x.m.default_color });
       });
       ((x.c && x.c.docket && x.c.docket.entries) || []).forEach(function (e) {
         extractEvents(e, short).forEach(function (ev) {
-          events.push({ date: ev.date, short: short, title: ev.kind, slug: x.m.slug, default_color: x.m.default_color });
+          events.push({ date: ev.date, short: short, kind: ev.kind, title: ev.title || "", slug: x.m.slug, default_color: x.m.default_color });
         });
       });
     });
@@ -845,71 +842,97 @@
     var byDay = {};
     events.forEach(function (ev) { (byDay[ev.date] = byDay[ev.date] || []).push(ev); });
 
-    // Rolling view \u2014 the NEXT 7 days from today (+ weekOffset windows), or the
-    // next 5 BUSINESS days when the weekday toggle is on. Each day lists its
-    // events by NAME, color-coded by case (border + tint).
-    var start = new Date();
-    start.setHours(12, 0, 0, 0);
-    start.setDate(start.getDate() + weekOffset * 7);
+    // Rolling view — the NEXT 7 days from today (+ weekOffset windows), or
+    // the next 5 BUSINESS days when the weekday toggle is on. Grid columns stay
+    // fixed at calDays; an expanded render just adds more days, which wrap to
+    // a 2nd row for free under CSS grid's default row-first flow.
     function isoOf(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
     var MABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     var DOWL = ["S", "M", "T", "W", "T", "F", "S"];
-    var days = [];
-    var cur = new Date(start);
-    while (days.length < calDays) {
-      if (calDays === 7 || (cur.getDay() !== 0 && cur.getDay() !== 6)) days.push(new Date(cur));
-      cur.setDate(cur.getDate() + 1);
-    }
-    var a = days[0], b = days[days.length - 1];
-    var range = a.getMonth() === b.getMonth()
-      ? MABBR[a.getMonth()] + " " + a.getDate() + " \u2013 " + b.getDate()
-      : MABBR[a.getMonth()] + " " + a.getDate() + " \u2013 " + MABBR[b.getMonth()] + " " + b.getDate();
 
-    var html = '<div class="ih-mm-head">' +
-      '<button type="button" class="ih-mm-nav" data-wk="-1">\u2039</button>' +
-      '<span>' + range + '</span>' +
-      '<span class="ih-wk-tgl">' +
-        '<button type="button" data-days="7" class="' + (calDays === 7 ? "on" : "") + '" title="Next 7 days">7d</button>' +
-        '<button type="button" data-days="5" class="' + (calDays === 5 ? "on" : "") + '" title="Next 5 business days">5d</button>' +
-      '</span>' +
-      '<button type="button" class="ih-mm-nav" data-wk="1">\u203a</button></div>';
-    html += '<div class="ih-wk-grid" style="grid-template-columns:repeat(' + calDays + ',1fr)">';
-    days.forEach(function (d) {
-      var iso = isoOf(d);
-      var evs = byDay[iso] || [];
-      var isToday = iso === today;
-      var col = '<div class="ih-wk-col' + (isToday ? " today" : "") + '">' +
-        '<div class="ih-wk-dayhd"><span class="ih-wk-dow">' + DOWL[d.getDay()] + '</span>' +
-          '<span class="ih-wk-num">' + d.getDate() + '</span></div>';
-      col += evs.slice(0, 5).map(function (ev) {
-        var cbg = caseColor(ev.slug, ev.default_color);
-        var t = ev.time || "";
-        var label = (t ? t + " \u00b7 " : "") + (ev.title ? ev.short + " \u2014 " + ev.title : ev.short);
-        return '<a class="ih-wk-ev" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" ' +
-          'href="' + BASE + 'calendar.html#case=' + encodeURIComponent(ev.slug) + '&d=' + iso + '" title="' + esc(label) + '">' +
-          "<strong>" + esc(ev.short) + "</strong>" +
-          (t ? ' <span class="ih-wk-time">' + esc(t) + "</span>" : "") +
-          (ev.title ? " " + esc(ev.title.slice(0, 110)) : "") + "</a>";
-      }).join("");
-      if (evs.length > 5) col += '<span class="ih-wk-more">+' + (evs.length - 5) + " more</span>";
-      col += "</div>";
-      html += col;
-    });
-    html += "</div>";
-    box.innerHTML = html;
-    box.querySelectorAll(".ih-mm-nav").forEach(function (bn) {
-      bn.addEventListener("click", function () {
-        weekOffset += Number(bn.getAttribute("data-wk"));
-        renderDates();
+    function buildDays(totalDays) {
+      var start = new Date();
+      start.setHours(12, 0, 0, 0);
+      start.setDate(start.getDate() + weekOffset * 7);
+      var out = [];
+      var cur = new Date(start);
+      while (out.length < totalDays) {
+        if (calDays === 7 || (cur.getDay() !== 0 && cur.getDay() !== 6)) out.push(new Date(cur));
+        cur.setDate(cur.getDate() + 1);
+      }
+      return out;
+    }
+
+    function buildHtml(expanded) {
+      var days = buildDays(expanded ? calDays * 2 : calDays);
+      var a = days[0], b = days[days.length - 1];
+      var range = a.getMonth() === b.getMonth()
+        ? MABBR[a.getMonth()] + " " + a.getDate() + " – " + b.getDate()
+        : MABBR[a.getMonth()] + " " + a.getDate() + " – " + MABBR[b.getMonth()] + " " + b.getDate();
+
+      var h = '<div class="ih-mm-head">' +
+        '<button type="button" class="ih-mm-nav" data-wk="-1">‹</button>' +
+        '<span>' + range + (expanded ? ' <span class="ih-wk-2wk">2 weeks</span>' : "") + '</span>' +
+        '<span class="ih-wk-tgl">' +
+          '<button type="button" data-days="7" class="' + (calDays === 7 ? "on" : "") + '" title="Next 7 days">7d</button>' +
+          '<button type="button" data-days="5" class="' + (calDays === 5 ? "on" : "") + '" title="Next 5 business days">5d</button>' +
+        '</span>' +
+        '<button type="button" class="ih-mm-nav" data-wk="1">›</button></div>';
+      h += '<div class="ih-wk-grid' + (expanded ? " ih-wk-grid-2wk" : "") + '" style="grid-template-columns:repeat(' + calDays + ',1fr)">';
+      days.forEach(function (d) {
+        var iso = isoOf(d);
+        var evs = byDay[iso] || [];
+        var isToday = iso === today;
+        var col = '<div class="ih-wk-col' + (isToday ? " today" : "") + '">' +
+          '<div class="ih-wk-dayhd"><span class="ih-wk-dow">' + DOWL[d.getDay()] + '</span>' +
+            '<span class="ih-wk-num">' + d.getDate() + '</span></div>';
+        col += evs.slice(0, 4).map(function (ev) {
+          var cbg = caseColor(ev.slug, ev.default_color);
+          var t = ev.time || "";
+          var snippet = ev.title && ev.title !== ev.kind ? ev.title.slice(0, 110) : "";
+          var label = (t ? t + " · " : "") + ev.short + (ev.kind ? " — " + ev.kind : "") + (snippet ? ": " + snippet : "");
+          return '<a class="ih-wk-ev" style="border-left-color:' + cbg + ';background:' + tint(cbg, 0.14) + '" ' +
+            'href="' + BASE + 'calendar.html#case=' + encodeURIComponent(ev.slug) + '&d=' + iso + '" title="' + esc(label) + '">' +
+            '<div class="ih-wk-ev-top"><strong>' + esc(ev.short) + '</strong>' +
+            (ev.kind ? ' <span class="ih-wk-kind">' + esc(ev.kind) + '</span>' : "") +
+            (t ? ' <span class="ih-wk-time">' + esc(t) + '</span>' : "") + '</div>' +
+            (snippet ? '<div class="ih-wk-ev-snip">' + esc(snippet) + '</div>' : "") +
+            '</a>';
+        }).join("");
+        if (evs.length > 4) col += '<span class="ih-wk-more">+' + (evs.length - 4) + " more</span>";
+        col += "</div>";
+        h += col;
       });
-    });
-    box.querySelectorAll(".ih-wk-tgl button").forEach(function (bn) {
-      bn.addEventListener("click", function () {
-        calDays = Number(bn.getAttribute("data-days")) === 5 ? 5 : 7;
-        try { localStorage.setItem(CAL_DAYS_KEY, String(calDays)); } catch (e) {}
-        renderDates();
+      h += "</div>";
+      return h;
+    }
+
+    function wireControls() {
+      box.querySelectorAll(".ih-mm-nav").forEach(function (bn) {
+        bn.addEventListener("click", function () {
+          weekOffset += Number(bn.getAttribute("data-wk"));
+          renderDates();
+        });
       });
-    });
+      box.querySelectorAll(".ih-wk-tgl button").forEach(function (bn) {
+        bn.addEventListener("click", function () {
+          calDays = Number(bn.getAttribute("data-days")) === 5 ? 5 : 7;
+          try { localStorage.setItem(CAL_DAYS_KEY, String(calDays)); } catch (e) {}
+          renderDates();
+        });
+      });
+    }
+
+    // Under-filled? Each day column has a min-height regardless of content,
+    // so a pixel-height comparison can't tell a busy week from an empty one —
+    // count days with zero events instead. Half or more empty (the "leaves
+    // half blank" case) widens to a 2-week window so the space isn't wasted.
+    var firstWeek = buildDays(calDays);
+    var emptyDays = firstWeek.filter(function (d) { return !(byDay[isoOf(d)] || []).length; }).length;
+    var expand = emptyDays >= firstWeek.length / 2;
+
+    box.innerHTML = buildHtml(expand);
+    wireControls();
   }
 
 
