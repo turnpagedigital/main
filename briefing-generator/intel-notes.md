@@ -222,7 +222,7 @@ Ciao
 
 ### (no docket number) — 2026-08-06
 
-> Commerzbank CEO Calls For Dialogue With UniCredit — Bettina Orlopp appealed for constructive dialogue with UniCredit after the Italian bank achieved a near majority stake in its German rival.
+> The Morning Risk Report: U.S. to Halt Key Metal Waste Exports in Push to Break China Reliance — Plus: White House AI guidelines exempt U.S. open models from government review, and U.K. regulator eases
 
 ## Unknown case
 
