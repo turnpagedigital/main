@@ -176,6 +176,10 @@ Ciao
 
 > Where REIT Investors Have Earned the Best Returns — The U.S. market has been best for real-estate investment trusts over the past 10 years, led by funds focused on data centers.
 
+### (no docket number) — 2026-08-06
+
+> Treasury Yields Rise Amid Low Job Cuts, Low Claims — Treasury yields rose ahead of Friday’s U.S. payrolls report, as job-cut plans remained calm in July alongside low weekly jobless-claims figures.
+
 ## Unknown case
 
 ### (no docket number) — undated
