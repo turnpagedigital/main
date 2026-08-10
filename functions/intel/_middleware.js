@@ -18,7 +18,7 @@ export async function onRequest(context) {
     // max-age left stale tabs running hours-old JS. _headers rules don't
     // modify function-fronted responses, so cap the cache here.
     const path = new URL(request.url).pathname;
-    if (/\.js(\?|$)/.test(path)) {
+    if (/\.(js|css)(\?|$)/.test(path)) {
       const capped = new Response(res.body, res);
       capped.headers.set("Cache-Control", "public, max-age=300, must-revalidate");
       return capped;

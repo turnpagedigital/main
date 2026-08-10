@@ -29,6 +29,13 @@ const DEST = "dist/intel";
 const EXCLUDE = new Set([
   "scripts", "supabase", "config", "__pycache__",
   "auth", "login.html",
+  // "rewind-tariffs" is also a topic slug used elsewhere (intel-home.js,
+  // manage.js) for the Tariffs/Trade theme pill — unrelated to this
+  // directory. This is the standalone rewindtariffs.com generator's own
+  // dashboard/advisories (14 MB, incl. a 5.8 MB video + 3.99 MB backup PNG);
+  // verified unreferenced by anything that actually ships to dist/intel —
+  // the only real hrefs into it are in index.canonical.html, already excluded.
+  "rewind-tariffs",
   ".gitignore", "_headers", "_redirects",
   "SKILL.md", "BRAND_STYLING.md", "DEPLOY.md", "README.md",
   "sources.md", "tickers.md", "index.canonical.html",
@@ -174,6 +181,20 @@ async function stampScripts(html, fileDir) {
   return html;
 }
 
+// Same idea as stampScripts, for the shared intel-base.css link.
+async function stampCss(html, fileDir) {
+  const tags = [...html.matchAll(/href="((?:\.\.\/|\/intel\/)?[\w-]+\.css)"/g)];
+  for (const m of tags) {
+    const ref = m[1];
+    const local = ref.startsWith("/intel/")
+      ? join(DEST, ref.slice("/intel/".length))
+      : join(fileDir, ref);
+    const v = await versionOf(local);
+    if (v) html = html.replaceAll(`href="${ref}"`, `href="${ref}?v=${v}"`);
+  }
+  return html;
+}
+
 let rewritten = 0;
 for await (const file of walk(DEST)) {
   if (!/\.(html|js)$/.test(file)) continue;
@@ -197,6 +218,7 @@ for await (const file of walk(DEST)) {
   }
   if (file.endsWith(".html")) {
     after = await stampScripts(after, dirname(file));
+    after = await stampCss(after, dirname(file));
   }
   if (after !== before) {
     await writeFile(file, after);
