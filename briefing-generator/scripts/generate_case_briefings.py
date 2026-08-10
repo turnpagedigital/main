@@ -188,9 +188,18 @@ STYLE_SPEC = """# Briefing register (structural spec — the house voice above g
   covers", "the material development of the period", "in the last 24/72 hours".
   These say nothing. Report what happened; never mention windows, lookbacks,
   scans, or the briefing itself.
-- On a thin day, state the one concrete fact plainly and stop ("On August 7, the
-  clerk docketed duplicate transcript orders, Dkt. 802 and 803."). Do not dress
-  it up, do not comment on its thinness.
+- On a thin day, state the one concrete fact plainly and stop — same MANDATORY
+  OPENING format, applied to whatever actually happened ("On August 7, the clerk
+  docketed duplicate transcript orders, Dkt. 802 and 803."). Do not dress it up, do
+  not comment on its thinness. When the ONLY things that moved are administrative
+  (see MATERIALITY FILTER below), open the same way with the administrative fact
+  itself, in one sentence, and stop: "On August 8, RNDC's docket recorded five pro
+  hac vice admissions and three notices of appearance — procedural, with no bearing
+  on recovery or timing." Never write ABOUT the docket, the window, or what got
+  covered instead of just stating the fact — BANNED here too: "the docket
+  produced", "is administrative" (as a standalone verdict), "carries no independent
+  weight", "collectively signal", "72-hour window", "beyond what was covered". State
+  the fact; do not narrate the absence of one.
 - You are an analyst, not a commentator: no editorializing, no personal opinions, no
   sweeping generalizations. Straight, clean, factual analysis of the details that
   matter to an investor and a legal professional.
@@ -219,9 +228,12 @@ STYLE_SPEC = """# Briefing register (structural spec — the house voice above g
   hearing notices and scheduling orders, deposition notices and other discovery
   logistics, pro hac vice admissions, notices of appearance, corporate ownership
   statements, transcript orders, BNC certificates of mailing, routine deadline
-  stipulations, agenda filings. If everything that moved is administrative, that's a
-  thin day per the rule below — don't manufacture significance out of a notice of
-  service or a certificate of mailing.
+  stipulations, agenda filings. If everything that moved is administrative, apply the
+  thin-day rule above: open with the administrative fact itself in MANDATORY OPENING
+  form, one sentence, and stop. Don't manufacture significance out of a notice of
+  service or a certificate of mailing, and don't write a paragraph explaining that
+  nothing substantive happened — that IS the "narrate the process" mistake this spec
+  bans, just aimed at materiality instead of the window.
 - Match tone to the weight of the update: a procedural entry, a status change, and a
   substantive development each get a different register — never dress up a scheduling
   order as a turning point. Some updates are just updates; don't manufacture an arc.
