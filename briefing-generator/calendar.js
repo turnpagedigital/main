@@ -149,6 +149,9 @@
   var scope = "upcoming";
   var sortDir = "asc";
   var searchText = "";
+  var lookahead = "all";      // 7d | 30d | 90d | all | custom (docket-style Date-header menu)
+  var dateFrom = "";
+  var dateTo = "";
   var activeGearSlug = null;
   var dismissed = {};       // event key → true
   var mergedInto = {};      // event key → primary key
@@ -165,6 +168,7 @@
       if (s.scope) scope = s.scope;
       if (s.sortDir === "asc" || s.sortDir === "desc") sortDir = s.sortDir;
       if (s.calMode === "month" || s.calMode === "week" || s.calMode === "list") calMode = s.calMode;
+      if (["7d", "30d", "90d", "all", "custom"].indexOf(s.lookahead) !== -1) lookahead = s.lookahead;
       _savedState = s;
     } catch (e) {}
   }
@@ -172,6 +176,7 @@
     try {
       localStorage.setItem(FILTER_KEY, JSON.stringify({
         scope: scope, sortDir: sortDir, activeCases: activeCases, calMode: calMode,
+        lookahead: lookahead,
       }));
     } catch (e) {}
   }
@@ -321,6 +326,15 @@
       if (!activeCases[ev.slug]) return false;
       if (!ignoreScope && scope === "upcoming" && ev.date < today) return false;
       if (!ignoreScope && scope === "past" && ev.date >= today) return false;
+      if (!ignoreScope && lookahead !== "all") {
+        if (lookahead === "custom") {
+          if (dateFrom && ev.date < dateFrom) return false;
+          if (dateTo && ev.date > dateTo) return false;
+        } else {
+          var horizon = addDaysISO(today, lookahead === "7d" ? 7 : lookahead === "30d" ? 30 : 90);
+          if (ev.date < today || ev.date > horizon) return false;
+        }
+      }
       if (sq) {
         var hay = [ev.date, ev.kind, ev.name, ev.short, ev.snippet].join(" ").toLowerCase();
         if (hay.indexOf(sq) === -1) return false;
@@ -1449,11 +1463,73 @@
       });
     }
 
+    // Docket-style date-window menu on the list view's Date header.
+    var lbFromEl = document.getElementById("ud-date-from");
+    var lbToEl = document.getElementById("ud-date-to");
+    if (lbFromEl) lbFromEl.addEventListener("change", function () { dateFrom = lbFromEl.value; render(); });
+    if (lbToEl) lbToEl.addEventListener("change", function () { dateTo = lbToEl.value; render(); });
+    function applyCustomVisibility() {
+      var dr = document.getElementById("ud-daterange");
+      if (dr) dr.style.display = lookahead === "custom" ? "" : "none";
+    }
+    function syncTimeHeader() {
+      var th = document.getElementById("ud-th-time");
+      if (th) th.classList.toggle("ud-th-on", lookahead !== "all");
+      var menu = document.getElementById("ud-th-timemenu");
+      if (menu) menu.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.classList.toggle("ud-th-menu-on", b.getAttribute("data-val") === lookahead);
+      });
+    }
+    var thTimeEl = document.getElementById("ud-th-time");
+    var thTimeMenuEl = document.getElementById("ud-th-timemenu");
+    if (thTimeEl && thTimeMenuEl) {
+      thTimeEl.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = thTimeMenuEl.style.display !== "none";
+        if (open) { thTimeMenuEl.style.display = "none"; return; }
+        var rect = thTimeEl.getBoundingClientRect();
+        thTimeMenuEl.style.display = "block";
+        thTimeMenuEl.style.top = (rect.bottom + window.scrollY + 4) + "px";
+        thTimeMenuEl.style.left = Math.max(8, Math.min(rect.left + window.scrollX, window.innerWidth - 200)) + "px";
+        syncTimeHeader();
+      });
+      thTimeMenuEl.querySelectorAll(".ud-th-menu-item").forEach(function (b) {
+        b.addEventListener("click", function () {
+          lookahead = b.getAttribute("data-val");
+          if (lookahead !== "custom") {
+            dateFrom = ""; dateTo = "";
+            if (lbFromEl) lbFromEl.value = "";
+            if (lbToEl) lbToEl.value = "";
+          }
+          thTimeMenuEl.style.display = "none";
+          saveFilterState();
+          syncTimeHeader();
+          applyCustomVisibility();
+          render();
+          if (lookahead === "custom" && lbFromEl) lbFromEl.focus();
+        });
+      });
+      document.addEventListener("click", function (ev) {
+        if (thTimeMenuEl.style.display !== "none" && !thTimeMenuEl.contains(ev.target)) {
+          thTimeMenuEl.style.display = "none";
+        }
+      });
+    }
+    applyCustomVisibility();
+    syncTimeHeader();
+
     var clearBtn = document.getElementById("ud-clear-search");
     if (clearBtn) {
       clearBtn.addEventListener("click", function () {
         searchText = "";
+        lookahead = "all";
+        dateFrom = ""; dateTo = "";
+        if (lbFromEl) lbFromEl.value = "";
+        if (lbToEl) lbToEl.value = "";
         if (searchInput) searchInput.value = "";
+        saveFilterState();
+        syncTimeHeader();
+        applyCustomVisibility();
         render();
       });
     }
