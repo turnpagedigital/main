@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-10 23:44 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-10 23:45 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -203,6 +203,10 @@ Ciao
 ### (no docket number) — 2026-08-06
 
 > Oil Rises With Market Still Waiting for Strait of Hormuz Deal — Oil futures recovered ground as the market is left waiting for a deal between the U.S. and Iran to reopen the Strait of Hormuz after Ira
+
+### (no docket number) — 2026-08-06
+
+> Comex Gold Settles 0.09% Lower at $4242.00 — Gold and silver prices dropped, snapping two- and three-day winning streaks, respectively.
 
 ## Unknown case
 
