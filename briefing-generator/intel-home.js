@@ -1629,7 +1629,7 @@
       "#ih-view-tgl .ih-sort-btn{border:none;background:none;padding:0 2px;color:var(--ink-40);}" +
       "#ih-view-tgl .ih-sort-btn:hover{background:none;color:var(--ink-60);}" +
       "#ih-view-tgl .ih-sort-btn.on{background:none;color:var(--ink);}" +
-      ".ih-vt-track{width:34px;height:18px;border-radius:99px;background:var(--ink-20);position:relative;flex:0 0 auto;cursor:pointer;}" +
+      ".ih-vt-track{width:34px;height:18px;border-radius:99px;background:var(--ink-20);position:relative;flex:0 0 auto;cursor:pointer;pointer-events:auto !important;}" +
       ".ih-vt-knob{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,0.3);transition:left 0.15s ease;cursor:pointer;}";
     function sync() {
       var tgl = document.getElementById("ih-view-tgl");
@@ -1647,29 +1647,33 @@
         st.textContent = CSS;
         document.head.appendChild(st);
       }
-      if (!tgl.querySelector(".ih-vt-track")) {
-        var track = document.createElement("span");
-        track.className = "ih-vt-track";
-        track.setAttribute("role", "switch");
-        track.setAttribute("title", "Switch view");
-        track.innerHTML = '<span class="ih-vt-knob"></span>';
-        var listBtn = tgl.querySelector('[data-view="list"]');
-        if (listBtn) tgl.insertBefore(track, listBtn);
-        // Clicking anywhere on the switch — track or the knob itself —
-        // flips to whichever view is inactive.
-        function flip(e) {
-          e.stopPropagation();
-          var t = document.getElementById("ih-view-tgl");
-          if (!t) return;
-          var other = t.querySelector('[data-view="list"].on')
-            ? t.querySelector('[data-view="cards"]')
-            : t.querySelector('[data-view="list"]');
-          if (other) other.click();
-          setTimeout(sync, 0);
-        }
-        track.addEventListener("click", flip);
-        track.querySelector(".ih-vt-knob").addEventListener("click", flip);
+      // Always tear down and rebuild fresh — do NOT gate on "a .ih-vt-track
+      // already exists". A stale static copy (no click handlers) sat in
+      // index.html's own markup for hours; that guard silently skipped
+      // ever attaching a listener because the element "already existed."
+      var existing = tgl.querySelector(".ih-vt-track");
+      if (existing) existing.parentNode.removeChild(existing);
+      var track = document.createElement("span");
+      track.className = "ih-vt-track";
+      track.setAttribute("role", "switch");
+      track.setAttribute("title", "Switch view");
+      track.innerHTML = '<span class="ih-vt-knob"></span>';
+      var listBtn = tgl.querySelector('[data-view="list"]');
+      if (listBtn) tgl.insertBefore(track, listBtn);
+      // Clicking anywhere on the switch — track or the knob itself —
+      // flips to whichever view is inactive.
+      function flip(e) {
+        e.stopPropagation();
+        var t = document.getElementById("ih-view-tgl");
+        if (!t) return;
+        var other = t.querySelector('[data-view="list"].on')
+          ? t.querySelector('[data-view="cards"]')
+          : t.querySelector('[data-view="list"]');
+        if (other) other.click();
+        setTimeout(sync, 0);
       }
+      track.addEventListener("click", flip);
+      track.querySelector(".ih-vt-knob").addEventListener("click", flip);
       sync();
     }
     document.addEventListener("DOMContentLoaded", function () {

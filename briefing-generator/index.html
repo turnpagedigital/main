@@ -438,17 +438,17 @@
   a.ih-sort-btn { text-decoration: none; }
   /* Breathing room between the Cards/List toggle and the sort buttons */
   .ih-cases-tools #ih-view-tgl { margin-right: 28px; }
-  /* Cards/List is a slider: labels either side of a small track, no outline, no neon */
+  /* Cards/List slider + list-column auto-align: both fully owned by the
+     self-building block in intel-home.js (it injects its own <style> and
+     DOM) so they survive this file's regeneration. Do NOT re-add static
+     .ih-vt-track/.ih-vt-knob/.vt-list or .ih-lr-count rules here — an
+     earlier stale copy set `pointer-events: none` on .ih-vt-track and,
+     because CSS cascades per-property, silently ate every click on the
+     track/knob for hours even after the JS version was fixed. */
   #ih-view-tgl { gap: 8px; border: none; align-items: center; }
   #ih-view-tgl .ih-sort-btn { border: none; background: none; padding: 0 2px; color: var(--ink-40); }
   #ih-view-tgl .ih-sort-btn:hover { background: none; color: var(--ink-60); }
   #ih-view-tgl .ih-sort-btn.on { background: none; color: var(--ink); }
-  .ih-vt-track { width: 34px; height: 18px; border-radius: 99px; background: var(--ink-20); position: relative; flex: 0 0 auto; pointer-events: none; }
-  .ih-vt-knob { position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); box-shadow: 0 1px 3px rgba(0,0,0,0.3); transition: left 0.15s ease; }
-  #ih-view-tgl.vt-list .ih-vt-knob { left: 18px; }
-  /* List view: adjustable pill/status column widths (drag the grips) */
-  .ih-list-mode .ih-case-listrow > .ih-pill { flex: 0 0 var(--lrw-pill, auto); overflow: hidden; text-overflow: ellipsis; }
-  .ih-list-mode .ih-lr-count { flex: 0 0 var(--lrw-count, auto); overflow: hidden; text-overflow: ellipsis; }
   .ih-lr-grip { position: absolute; top: 0; bottom: 0; width: 10px; margin-left: -5px; cursor: col-resize; z-index: 30; }
   .ih-lr-grip::after { content: ""; position: absolute; top: 0; bottom: 0; left: 4px; width: 2px; background: transparent; }
   .ih-lr-grip:hover::after, .ih-lr-grip.on::after { background: var(--neon-block); }
@@ -525,7 +525,6 @@
     <div class="ih-cases-tools">
       <div class="ih-sort" id="ih-view-tgl" role="group" aria-label="Briefing view">
         <button type="button" class="ih-sort-btn" data-view="cards" title="Card view — lede + latest rows per case">▦ Cards</button>
-        <span class="ih-vt-track" aria-hidden="true"><span class="ih-vt-knob"></span></span>
         <button type="button" class="ih-sort-btn" data-view="list" title="List view — one row per case">≣ List</button>
       </div>
       <div class="ih-sort" id="ih-sort" role="group" aria-label="Arrange case cards">
