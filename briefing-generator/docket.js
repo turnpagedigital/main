@@ -107,6 +107,7 @@
   var bmOnly = false;
   var noteOnly = false;
   var docFilter = "all";  // all | with | without
+  var COLLAPSED_DAYS = {};  // date_filed ("" for Undated) -> true when the reader collapsed it
   var NOTES = {};
   var BONDORO = [];
   var VOTES = {};
@@ -962,11 +963,14 @@
         var wd = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][new Date(d + "T00:00:00").getDay()];
         label = wd + " \u00b7 " + (e.date_display || d);
       }
-      return '<tr class="ud-day-row"><td colspan="10">' + esc(label) + "</td></tr>";
+      var collapsed = !!COLLAPSED_DAYS[d];
+      return '<tr class="ud-day-row' + (collapsed ? " ud-day-collapsed" : "") + '" data-day="' + esc(d) + '">' +
+        '<td colspan="10"><span class="ud-day-chevron">' + (collapsed ? "\u25b8" : "\u25be") + "</span>" + esc(label) + "</td></tr>";
     }
     RENDERED = entries;
     tbody.innerHTML = entries.map(function (e, ridx) {
       var header = dayHeader(e);
+      var dayHidden = !!COLLAPSED_DAYS[e.date_filed || ""];
       var bg = getBg(e.slug, e.default_color);
       var fg = getFg(e.slug, bg);
       var pill;
@@ -991,19 +995,20 @@
       if (e.landmark) {
         badges += '<span class="ud-landmark">' + esc(e.landmark) + "</span> ";
       }
-      var newPill = e.is_new ? ' <span class="ud-new-pill">NEW</span>' : "";
+      var newDot = e.is_new ? '<span class="ud-new-dot" title="New"></span>' : "";
       var descFull = e.description || "";
       var descShown = descFull.length > 700 ? descFull.slice(0, 700).replace(/\s+\S*$/, "") + "\u2026" : descFull;
       var descHtml = e.description
-        ? badges + '<span class="ud-desc">' + esc(descShown) + "</span>" + newPill
-        : badges + '<span class="ud-desc ud-desc-empty">—</span>' + newPill;
+        ? newDot + badges + '<span class="ud-desc">' + esc(descShown) + "</span>"
+        : newDot + badges + '<span class="ud-desc ud-desc-empty">—</span>';
       var partyHtml = e.party
         ? esc(e.party)
         : '<span class="ud-party-empty">—</span>';
       if (e.is_article) {
         var artRowCls = "ud-row-article" +
           (e.is_bondoro && e.unassigned ? " ud-row-bondoro" : "") +
-          (e.is_new ? " ud-row-new" : "");
+          (e.is_new ? " ud-row-new" : "") +
+          (dayHidden ? " ud-row-daycollapsed" : "");
         return (
           header +
           '<tr class="' + artRowCls + '" data-ridx="' + ridx + '">' +
@@ -1034,7 +1039,10 @@
       } else {
         linkHtml = '<span class="ud-link-empty">—</span>';
       }
-      var rowCls = e.is_new ? ' class="ud-row-new"' : "";
+      var rowClsParts = [];
+      if (e.is_new) rowClsParts.push("ud-row-new");
+      if (dayHidden) rowClsParts.push("ud-row-daycollapsed");
+      var rowCls = rowClsParts.length ? ' class="' + rowClsParts.join(" ") + '"' : "";
       return (
         header +
         "<tr" + rowCls + ' data-ridx="' + ridx + '">' +
@@ -3035,6 +3043,13 @@
         startRename(Number(tr.getAttribute("data-ridx")));
       });
       tbodyEl.addEventListener("click", function (ev) {
+        var dr = ev.target.closest(".ud-day-row");
+        if (dr) {
+          var day = dr.getAttribute("data-day") || "";
+          COLLAPSED_DAYS[day] = !COLLAPSED_DAYS[day];
+          render();
+          return;
+        }
         // Any click inside a row moves the keyboard cursor there, so arrows
         // and row shortcuts continue from the clicked row.
         var selRow = ev.target.closest("tr[data-ridx]");
