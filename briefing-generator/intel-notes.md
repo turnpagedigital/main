@@ -202,7 +202,7 @@ Ciao
 
 ### (no docket number) — 2026-08-06
 
-> U.S. Natural Gas Futures Fall as Storage Expands — U.S. natural gas futures settled lower after a weekly inventory build came in slightly above expectations while increasing the storage surplus over t
+> Oil Rises With Market Still Waiting for Strait of Hormuz Deal — Oil futures recovered ground as the market is left waiting for a deal between the U.S. and Iran to reopen the Strait of Hormuz after Ira
 
 ## Unknown case
 
