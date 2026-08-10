@@ -6,8 +6,7 @@
     },
     "blockfills": {
       "bg": "#0892b4",
-      "fg": "#c7f4ff",
-      "border": "#ffffff"
+      "fg": "#c7f4ff"
     },
     "concord-anthropic": {
       "bg": "#694abf",
@@ -38,7 +37,7 @@
       "fg": "#ffffff"
     },
     "bartz-anthropic": {
-      "bg": "#146747",
+      "bg": "#0b4c33",
       "fg": "#c7ffe2"
     },
     "power-block-coin": {
