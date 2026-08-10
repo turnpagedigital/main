@@ -33,9 +33,9 @@ CSS variables. Define in `:root` and override in `[data-theme="dark"]` so all re
 
 Soft-white text on dark `#16161B` (lift-1) — not pure white on pure black. Lower contrast = easier to read in long-form prose.
 
-### Highlighter (dark-mode override)
+### Highlighter (same in both modes)
 
-In light mode, large highlighter blocks (stat anchors, headline `.accent` linear-gradient, calendar-day highlight) use neon `#D4FF00` with dark `#0A0A0A` text. In dark mode the high-saturation neon at scale becomes harsh against the dark background, so large blocks switch to a darker olive-green with white text:
+Neon `#D4FF00` with dark `#0A0A0A` text, at every scale, in both light and dark mode — no muted/olive variant. (A darker `#5D7A00` olive substitute for large highlighter blocks in dark mode existed briefly in Aug 2026 and was reverted: Andrew's explicit call, full neon everywhere, no exceptions.)
 
 ```css
 :root {
@@ -43,14 +43,11 @@ In light mode, large highlighter blocks (stat anchors, headline `.accent` linear
   --neon-on-block: #0A0A0A;
 }
 [data-theme="dark"] {
-  --neon-block: #5D7A00 !important;
-  --neon-on-block: #FFFFFF !important;
+  /* no override — inherits the same --neon-block / --neon-on-block as light mode */
 }
 ```
 
-Applies to: `.stat-anchor`, `.anchor-stat`, `.stat-callout`, `.lead-headline .accent`, `h1 .accent`, `.accent`, `.cal-day` (highlighter gradient stops switch from `#D4FF00` to `#5D7A00`), `.card-stat-anchor`, `.stat-anchor-value`.
-
-**Small accents stay full neon** in both modes: `.tn-pill.active`, source-arrow icons, eyebrow underlines, neon-CTA buttons. The principle: small visual punctuation reads cleanly at neon brightness; large highlighter blocks need the muted variant in dark mode.
+Applies to: `.stat-anchor`, `.anchor-stat`, `.stat-callout`, `.lead-headline .accent`, `h1 .accent`, `.accent`, `.cal-day`, `.card-stat-anchor`, `.stat-anchor-value`, `.tn-pill.active`, source-arrow icons, eyebrow underlines, neon-CTA buttons — all full neon, all the time.
 
 ---
 
