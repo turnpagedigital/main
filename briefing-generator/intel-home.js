@@ -371,6 +371,12 @@
   }
   var NOTES_LIST = [];
   var FEED_ITEMS = [];
+  var NOTE_STACK = [];   // current filtered notes shown in the dashboard sticky-stack
+  var noteFront = 0;     // index into NOTE_STACK of the card currently on top
+  var NOTE_TINTS = ["#EEFFA3", "#D7E9FB", "#E4E0FA", "#FBE0F8"];
+  var NOTE_AUTO_MS = 6000;
+  var noteAutoTimer = null;
+  var noteHovered = false;
 
   function fill(id, html) {
     var n = document.getElementById(id);
@@ -909,14 +915,93 @@
     if (!box) return;
     if (!list.length) {
       box.innerHTML = '<div class="ih-empty">No notes yet.</div>';
+      NOTE_STACK = [];
+      stopNoteAuto();
       return;
     }
-    box.innerHTML = '<div style="height:8px"></div>' + list.slice(0, 4).map(function (n) {
+    NOTE_STACK = list.slice(0, 8);
+    if (noteFront >= NOTE_STACK.length) noteFront = 0;
+    box.innerHTML =
+      '<div class="ih-notes-wrap" id="ih-notes-wrap">' +
+        '<div class="ih-notes-stack" id="ih-notes-stack"></div>' +
+        (NOTE_STACK.length > 1
+          ? '<div class="ih-notes-nav">' +
+              '<button type="button" class="ih-notes-arrow" id="ih-notes-prev" aria-label="Previous note">\u2039</button>' +
+              '<div class="ih-notes-dots" id="ih-notes-dots"></div>' +
+              '<button type="button" class="ih-notes-arrow" id="ih-notes-next" aria-label="Next note">\u203a</button>' +
+            "</div>"
+          : "") +
+      "</div>";
+    renderNoteStack();
+    var wrap = document.getElementById("ih-notes-wrap");
+    if (wrap) {
+      wrap.addEventListener("mouseenter", function () { noteHovered = true; });
+      wrap.addEventListener("mouseleave", function () { noteHovered = false; });
+    }
+    var prevBtn = document.getElementById("ih-notes-prev");
+    var nextBtn = document.getElementById("ih-notes-next");
+    if (prevBtn) prevBtn.addEventListener("click", function () { stepNote(-1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { stepNote(1); });
+    startNoteAuto();
+  }
+
+  function stepNote(dir) {
+    if (!NOTE_STACK.length) return;
+    noteFront = (noteFront + dir + NOTE_STACK.length) % NOTE_STACK.length;
+    renderNoteStack();
+  }
+
+  function renderNoteStack() {
+    var stackEl = document.getElementById("ih-notes-stack");
+    if (!stackEl || !NOTE_STACK.length) return;
+    var depth = Math.min(4, NOTE_STACK.length);
+    var html = "";
+    for (var i = 0; i < depth; i++) {
+      var idx = (noteFront + i) % NOTE_STACK.length;
+      var n = NOTE_STACK[idx];
       var body = (n.note || "").trim() || n.snippet || "(bookmark)";
-      return '<a class="ih-note-sticky" href="' + BASE + 'notes.html#e=' + encodeURIComponent(n._key || "") + '">\u201c' + esc(body.slice(0, 90)) + '\u201d ' +
+      var tint = NOTE_TINTS[idx % NOTE_TINTS.length];
+      html += '<a class="ih-note-card" data-pos="' + i + '" data-idx="' + idx + '" style="--nc:' + tint + '" ' +
+        'href="' + BASE + 'notes.html#e=' + encodeURIComponent(n._key || "") + '">' +
+        '<span class="body">\u201c' + esc(body.slice(0, 160)) + '\u201d</span>' +
         '<span class="who">\u2014 ' + esc(n.case_name || n.case_slug || "Uncategorized") +
         (n.bookmarked ? " \u2605" : "") + "</span></a>";
-    }).join("");
+    }
+    stackEl.innerHTML = html;
+    stackEl.querySelectorAll(".ih-note-card").forEach(function (card) {
+      card.addEventListener("click", function (ev) {
+        if (card.getAttribute("data-pos") !== "0") {
+          ev.preventDefault();
+          noteFront = Number(card.getAttribute("data-idx")) || 0;
+          renderNoteStack();
+        }
+      });
+    });
+    var dots = document.getElementById("ih-notes-dots");
+    if (dots) {
+      dots.innerHTML = NOTE_STACK.map(function (_, i) {
+        return '<button type="button" class="ih-notes-dot' + (i === noteFront ? " on" : "") + '" data-i="' + i + '" aria-label="Note ' + (i + 1) + '"></button>';
+      }).join("");
+      dots.querySelectorAll(".ih-notes-dot").forEach(function (d) {
+        d.addEventListener("click", function () {
+          noteFront = Number(d.getAttribute("data-i")) || 0;
+          renderNoteStack();
+        });
+      });
+    }
+  }
+
+  function startNoteAuto() {
+    stopNoteAuto();
+    if (NOTE_STACK.length < 2) return;
+    noteAutoTimer = setInterval(function () {
+      if (noteHovered) return;
+      stepNote(1);
+    }, NOTE_AUTO_MS);
+  }
+
+  function stopNoteAuto() {
+    if (noteAutoTimer) { clearInterval(noteAutoTimer); noteAutoTimer = null; }
   }
 
   function renderAll() {
