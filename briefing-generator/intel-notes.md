@@ -150,6 +150,10 @@ Ciao
 
 > Stock Market Today: Dow Falls 460 Points, Breaks Winning Streak — Oil prices gain amid talks to reopen the Strait of Hormuz
 
+### (no docket number) — 2026-08-06
+
+> ‘Perps’ Are the Risky New Derivatives That Could Amplify Stock Blowups — Plus, computer memory stocks slump
+
 ## Unknown case
 
 ### (no docket number) — undated
