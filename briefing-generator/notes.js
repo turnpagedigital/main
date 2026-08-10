@@ -358,6 +358,7 @@
       key: nk,
       bookmarked: !!rec.bookmarked,
       note: rec.note || "",
+      title: rec.title || "",
       context: {
         case_slug: rec.case_slug,
         case_name: rec.case_name,
@@ -547,7 +548,7 @@
       var entryMeta = (n.date_filed ? esc(n.date_filed) + " · " : "") +
         '<span class="uc-snippet">' + esc(n.snippet || "") + "</span>";
       var noteHtml = n.note
-        ? '<div class="un-note-text">' + esc(n.note) + "</div>"
+        ? (n.title ? '<div class="un-note-title">' + esc(n.title) + "</div>" : "") + '<div class="un-note-text">' + esc(n.note) + "</div>"
         : '<span class="ud-party-empty">(bookmark only)</span>';
       return (
         "<tr>" +
@@ -587,9 +588,13 @@
   }
 
   // ── Modal (edit in place; prospect notes save to api/prospects) ────────────
+  function deriveTitle(note) {
+    return (note || "").trim().split(/\s+/).slice(0, 3).join(" ");
+  }
   function openNoteModal(nk) {
     var title = document.getElementById("ud-note-title");
     var meta = document.getElementById("ud-note-meta");
+    var titleField = document.getElementById("ud-note-titlefield");
     var text = document.getElementById("ud-note-text");
     if (nk.indexOf("prospect|") === 0) {
       var p = prospectByKey(nk);
@@ -597,6 +602,7 @@
       activeNoteKey = nk;
       if (title) title.textContent = (p.case_name || "Prospect") + " — Prospect";
       if (meta) meta.textContent = [p.court, p.case_number, (p.why || "").slice(0, 160)].filter(Boolean).join(" · ");
+      if (titleField) { titleField.value = ""; titleField.disabled = true; }
       if (text) text.value = p.note || "";
     } else {
       var rec = NOTES[nk];
@@ -608,6 +614,7 @@
           (rec.entry_number != null ? "Dkt. " + rec.entry_number : "Entry");
       }
       if (meta) meta.textContent = (rec.date_filed || "") + " · " + (rec.snippet || "");
+      if (titleField) { titleField.disabled = false; titleField.value = rec.title || ""; }
       if (text) text.value = rec.note || "";
     }
     var overlay = document.getElementById("ud-note-overlay");
@@ -645,7 +652,10 @@
     }
     var rec = NOTES[nk];
     if (!rec) return;
+    var titleField = document.getElementById("ud-note-titlefield");
+    var titleVal = deleteNote ? "" : (titleField ? titleField.value.trim() : "");
     rec.note = val;
+    rec.title = titleVal || (val.trim() ? deriveTitle(val) : "");
     rec.updated_at = new Date().toISOString();
     if (!(val || "").trim() && !rec.bookmarked) delete NOTES[nk];
     queuePush(nk);

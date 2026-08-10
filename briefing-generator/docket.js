@@ -2124,6 +2124,7 @@
       key: nk,
       bookmarked: !!rec.bookmarked,
       note: rec.note || "",
+      title: rec.title || "",
       snooze_until: rec.snooze_until || "",
       hidden: !!rec.hidden,
       deleted_at: rec.deleted_at || "",
@@ -2184,6 +2185,10 @@
     render();
   }
 
+  function deriveTitle(note) {
+    return (note || "").trim().split(/\s+/).slice(0, 3).join(" ");
+  }
+
   function openNoteModal(nk) {
     var e = findEntryByKey(nk);
     if (!e) return;
@@ -2191,6 +2196,7 @@
     var rec = NOTES[nk] || {};
     var title = document.getElementById("ud-note-title");
     var meta = document.getElementById("ud-note-meta");
+    var titleField = document.getElementById("ud-note-titlefield");
     var text = document.getElementById("ud-note-text");
     var status = document.getElementById("ud-note-status");
     if (title) {
@@ -2201,6 +2207,7 @@
       meta.textContent = (e.date_display || e.date_filed || "") + " \u00b7 " +
         (e.description || "").slice(0, 180);
     }
+    if (titleField) titleField.value = rec.title || "";
     if (text) text.value = rec.note || "";
     if (status) status.textContent = "";
     var overlay = document.getElementById("ud-note-overlay");
@@ -2218,9 +2225,12 @@
     if (!activeNoteKey) return;
     var nk = activeNoteKey;
     var text = document.getElementById("ud-note-text");
+    var titleField = document.getElementById("ud-note-titlefield");
     var val = deleteNote ? "" : (text ? text.value : "");
+    var titleVal = deleteNote ? "" : (titleField ? titleField.value.trim() : "");
     var rec = NOTES[nk] || {};
     rec.note = val;
+    rec.title = titleVal || (val.trim() ? deriveTitle(val) : "");
     if (!(val || "").trim() && !rec.bookmarked && !rec.snooze_until) delete NOTES[nk];
     else NOTES[nk] = rec;
     pushNote(nk);
