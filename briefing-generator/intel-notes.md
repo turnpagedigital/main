@@ -188,6 +188,10 @@ Ciao
 
 > Basic Materials Roundup: Market Talk — Find insight on Glencore, Henkel and more in the latest Market Talks covering basic materials.
 
+### (no docket number) — 2026-08-06
+
+> Dow Poised to Break Winning Streak — The Dow industrials led U.S. stocks mostly lower as oil prices rose amid uncertainty in the Middle East.
+
 ## Unknown case
 
 ### (no docket number) — undated
