@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
     "date_last_filing": "2026-08-08",
-    "fetched_at": "2026-08-09T23:52:34.626819+00:00",
-    "as_of": "Aug 9, 2026",
+    "fetched_at": "2026-08-10T02:38:38.290765+00:00",
+    "as_of": "Aug 10, 2026",
     "backfilled": true,
-    "new_in_72h": 2,
+    "new_in_72h": 1,
     "recent": [
       {
         "entry_number": 47,
@@ -37,7 +37,7 @@
         "time_filed": "11:20:28",
         "date_display": "Aug 7, 2026",
         "description": "Pro Hac Vice Application and Order Thereon (CSD 3005)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -69,7 +69,7 @@
         "time_filed": "11:20:28",
         "date_display": "Aug 7, 2026",
         "description": "Pro Hac Vice Application and Order Thereon (CSD 3005)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

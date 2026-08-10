@@ -15,11 +15,11 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-09T23:53:09.529479+00:00",
-    "as_of": "Aug 9, 2026",
+    "date_last_filing": "",
+    "fetched_at": "2026-08-10T02:38:43.855660+00:00",
+    "as_of": "Aug 10, 2026",
     "backfilled": false,
-    "new_in_72h": 3,
+    "new_in_72h": 0,
     "recent": [
       {
         "entry_number": 36086,
@@ -27,7 +27,7 @@
         "time_filed": "16:04:31",
         "date_display": "Aug 7, 2026",
         "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Redacted To Next Claims Capital Limited. Filed by Next Claims Capital Limited. (Chen, Jinfeng)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36086.0.pdf"
       },
@@ -37,7 +37,7 @@
         "time_filed": "13:22:26",
         "date_display": "Aug 7, 2026",
         "description": "Transfer/Assignment of Claim.Receipt Number 10096320 Transfer Agreement 3001 (e) 2 Transferors: Cenjun Zhu (Claim No. 03428491) To Peng Xu. Filed by Cenjun Zhu. (Attachments: (1) Receipt) (KR)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36085.0.pdf"
       },
@@ -47,7 +47,7 @@
         "time_filed": "16:05:19",
         "date_display": "Aug 7, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       }
@@ -59,7 +59,7 @@
         "time_filed": "16:04:31",
         "date_display": "Aug 7, 2026",
         "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Redacted To Next Claims Capital Limited. Filed by Next Claims Capital Limited. (Chen, Jinfeng)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36086.0.pdf"
       },
@@ -69,7 +69,7 @@
         "time_filed": "13:22:26",
         "date_display": "Aug 7, 2026",
         "description": "Transfer/Assignment of Claim.Receipt Number 10096320 Transfer Agreement 3001 (e) 2 Transferors: Cenjun Zhu (Claim No. 03428491) To Peng Xu. Filed by Cenjun Zhu. (Attachments: (1) Receipt) (KR)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36085.0.pdf"
       },
@@ -79,7 +79,7 @@
         "time_filed": "16:05:19",
         "date_display": "Aug 7, 2026",
         "description": "none",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -8282,9 +8282,209 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
+      },
+      {
+        "entry_number": 35198,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35188,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35153,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35134,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35116,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617794, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35103,
+        "date_filed": "2026-03-31",
+        "time_filed": "22:47:37",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4801) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35095,
+        "date_filed": "2026-03-31",
+        "time_filed": "22:32:01",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4784) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35095.0.pdf"
+      },
+      {
+        "entry_number": 35094,
+        "date_filed": "2026-03-31",
+        "time_filed": "22:30:23",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4782) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35094.0.pdf"
+      },
+      {
+        "entry_number": 35093,
+        "date_filed": "2026-03-31",
+        "time_filed": "22:28:49",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4778) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35093.0.pdf"
+      },
+      {
+        "entry_number": 35091,
+        "date_filed": "2026-03-31",
+        "time_filed": "22:25:52",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4774) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35091.0.pdf"
+      },
+      {
+        "entry_number": 35089,
+        "date_filed": "2026-03-31",
+        "time_filed": "22:22:29",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4767) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35089.0.pdf"
+      },
+      {
+        "entry_number": 35087,
+        "date_filed": "2026-03-31",
+        "time_filed": "22:19:16",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4763) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35087.0.pdf"
+      },
+      {
+        "entry_number": 35086,
+        "date_filed": "2026-03-31",
+        "time_filed": "22:17:43",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4761) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35086.0.pdf"
+      },
+      {
+        "entry_number": 35012,
+        "date_filed": "2026-03-31",
+        "time_filed": "19:41:53",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transferors: Silvergate Bank and Silvergate Capital Corporation (Claim No. 4344) To Argent Liquidation Trust. Filed by Argent Liquidation Trust. (Good, L. Katherine) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.35012.0.pdf"
+      },
+      {
+        "entry_number": 35005,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617252, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35004,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617252, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 35003,
+        "date_filed": "2026-03-31",
+        "time_filed": "",
+        "date_display": "Mar 31, 2026",
+        "description": "Receipt of filing fee for Transfer/Assignment of Claim - Ch 11 with Claims Agent Assigned( 22-11068-KBO) [claims,trclm11] ( 28.00). Receipt Number A12617248, amount $ 28.00. (U.S. Treasury) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 34998,
+        "date_filed": "2026-03-31",
+        "time_filed": "15:13:21",
+        "date_display": "Mar 31, 2026",
+        "description": "Transfer/Assignment of Claim. Transfer Agreement 3001 (e) 2 Transferors: PAXTIBI LLP To OROBOROS FTX I, LLC. Filed by FTXCREDITOR, LLC. (Dorigny, Louis) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.34998.0.pdf"
+      },
+      {
+        "entry_number": 34997,
+        "date_filed": "2026-03-31",
+        "time_filed": "15:09:06",
+        "date_display": "Mar 31, 2026",
+        "description": "Certificate of Service of Order Extending Response Deadline to FTX Recovery Trusts First Amended Objection to Proofs of Claim Filed by Alex Mashinsky (related document(s)34994) Filed by FTX Recovery Trust. (Pierce, Matthew) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.34997.0.pdf"
+      },
+      {
+        "entry_number": 34994,
+        "date_filed": "2026-03-31",
+        "time_filed": "08:00:16",
+        "date_display": "Mar 31, 2026",
+        "description": "Order Extending Response Deadline to FTX Recovery Trusts First Amended Objection to Proofs of Claim Filed by Alex Mashinsky (related document(s)34798) Order Signed on 3/31/2026. (CEB) (Entered: 03/31/2026)",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.34994.0.pdf"
       }
     ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=65748821&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=49"
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=65748821&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=50"
   },
   "claims_administrator": {
     "name": "Kroll",
