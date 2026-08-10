@@ -164,6 +164,10 @@ Ciao
 
 > Deal or No Deal, AstraZeneca Stock Is a Bargain — The logic of a pharma megamerger is questionable, but AstraZeneca’s record isn’t.
 
+### (no docket number) — 2026-08-06
+
+> Financial Services Roundup: Market Talk — Find insight on home sales, Apollo Global Management, Gulf stock markets, offshore insurance policies and more in the latest Market Talks covering financial s
+
 ## Unknown case
 
 ### (no docket number) — undated
