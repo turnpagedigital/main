@@ -15,11 +15,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T18:08:12.779868+00:00",
+    "fetched_at": "2026-08-10T19:20:57.654579+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 8,
     "recent": [
+      {
+        "entry_number": 1192,
+        "date_filed": "2026-08-10",
+        "time_filed": "13:45:14",
+        "date_display": "Aug 10, 2026",
+        "description": "Assignment/Transfer of claim (Claims Agent)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1191,
         "date_filed": "2026-08-10",
@@ -39,19 +49,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 1189,
+        "entry_number": 1192,
         "date_filed": "2026-08-10",
-        "time_filed": "06:44:27",
+        "time_filed": "13:45:14",
         "date_display": "Aug 10, 2026",
         "description": "Assignment/Transfer of claim (Claims Agent)",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      }
-    ],
-    "entries": [
+      },
       {
         "entry_number": 1191,
         "date_filed": "2026-08-10",
@@ -95,7 +105,7 @@
       {
         "entry_number": null,
         "date_filed": "2026-08-10",
-        "time_filed": "06:44:57",
+        "time_filed": "13:46:01",
         "date_display": "Aug 10, 2026",
         "description": "none",
         "is_new": true,
