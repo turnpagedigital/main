@@ -146,6 +146,10 @@ Ciao
 
 > 10 of the Best Financial Advisor Companies: Well-Known Fiduciary Investment Firms to Consider — We analyzed everything from advisor credentials to fees to portfolio options at some of the larger and m
 
+### (no docket number) — 2026-08-06
+
+> Stock Market Today: Dow Falls 460 Points, Breaks Winning Streak — Oil prices gain amid talks to reopen the Strait of Hormuz
+
 ## Unknown case
 
 ### (no docket number) — undated
