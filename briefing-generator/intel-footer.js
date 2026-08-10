@@ -12,6 +12,21 @@
   if (!mount) return;
   var P = location.pathname.indexOf("/cases/") !== -1 ? "../" : "";
 
+  // Sticky footer WITHOUT making <body> a flex container directly — that broke
+  // the max-width + margin:auto centering of the page sections (they shrank to
+  // content and centered instead of spanning full width). Wrap everything above
+  // the footer in one flex-growing block; inside it, normal block flow (and so
+  // margin:auto centering) is restored, while the wrapper's flex:1 still pushes
+  // the footer to the bottom on short pages.
+  if (!document.getElementById("tn-content-wrap")) {
+    var wrap = document.createElement("div");
+    wrap.id = "tn-content-wrap";
+    var moved = [], n = document.body.firstChild;
+    while (n && n !== mount) { var nx = n.nextSibling; moved.push(n); n = nx; }
+    document.body.insertBefore(wrap, mount);
+    moved.forEach(function (node) { wrap.appendChild(node); });
+  }
+
   function esc(s) {
     return String(s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;")
@@ -41,7 +56,8 @@
     // margin-top:auto pushes it to the bottom of the viewport when the content
     // above is too short to fill the page (and sits right after it otherwise).
     "body{min-height:100vh;display:flex;flex-direction:column;}" +
-    "#tn-site-footer{background:var(--paper-2,#F4F5F7);color:var(--ink,#0A0A0A);border-top:1px solid var(--line-strong,rgba(10,10,10,0.14));margin-top:auto;}" +
+    "#tn-content-wrap{flex:1 0 auto;min-width:0;}" +
+    "#tn-site-footer{background:var(--paper-2,#F4F5F7);color:var(--ink,#0A0A0A);border-top:1px solid var(--line-strong,rgba(10,10,10,0.14));flex-shrink:0;}" +
     "#tn-site-footer .tf-inner{max-width:1440px;margin:0 auto;padding:clamp(3rem,5vw,4.5rem) clamp(1.5rem,5vw,4rem) 2rem;}" +
     "#tn-site-footer .tf-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(var(--tf-cols,4),minmax(0,1fr));gap:clamp(2rem,4vw,3.5rem);margin-bottom:clamp(3rem,5vw,4rem);}" +
     "#tn-site-footer .tf-logo img{height:56px;width:auto;display:block;}" +

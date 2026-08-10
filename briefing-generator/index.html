@@ -214,8 +214,8 @@
     .ih-theme-grid.ih-list-mode { display: flex; flex-direction: column; gap: 0; }
     .ih-case-listrow { display: flex; align-items: center; gap: 12px; background: var(--surface); border: none; border-left: 3px solid transparent; border-bottom: 1px solid var(--line); padding: 10px 16px; text-decoration: none; color: inherit; }
     .ih-case-listrow:last-child { border-bottom: none; }
-    .ih-case-listrow:hover { background: rgba(10,10,10,0.03); }
-    [data-theme="dark"] .ih-case-listrow:hover { background: rgba(229,231,235,0.05); }
+    .ih-case-listrow:hover { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
+    [data-theme="dark"] .ih-case-listrow:hover { background: linear-gradient(rgba(229,231,235,0.05), rgba(229,231,235,0.05)), var(--surface); }
     .ih-case-listrow.ih-lr-moved { border-left-color: var(--neon-block); }
     .ih-lr-count { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-60); white-space: nowrap; flex: 0 0 auto; }
     .ih-lr-lede { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 13px; color: var(--ink); }
@@ -224,8 +224,8 @@
     .ih-card-moved { border-top: 3px solid var(--neon-block); }
     /* Case-card hover — same rollover tint as the news rows */
     .ih-theme-card { transition: background 0.12s; }
-    .ih-theme-card:hover { background: rgba(10,10,10,0.03); }
-    [data-theme="dark"] .ih-theme-card:hover { background: rgba(229,231,235,0.05); }
+    .ih-theme-card:hover { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
+    [data-theme="dark"] .ih-theme-card:hover { background: linear-gradient(rgba(229,231,235,0.05), rgba(229,231,235,0.05)), var(--surface); }
     /* Card arrangement: sort control, priority star, group headers */
     .ih-tc-right { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
     .ih-star { background: none; border: none; cursor: pointer; font-size: 15px; line-height: 1; color: var(--ink-40); padding: 0; }
@@ -481,7 +481,7 @@
   <!-- Dashboard: top 7 from each section, four columns -->
   <div class="ih-controls">
     <div class="ih-theme-pills" id="ih-theme-pills" role="group" aria-label="Filter by theme"></div>
-    <button type="button" id="ih-groups-btn" class="ih-dd-btn" title="Group cases so they brief together as one unit">⛓ Groups</button>
+    <button type="button" id="ih-groups-btn" class="ih-dd-btn" title="Group cases so they brief together as one unit">Groups</button>
     <div class="ih-dd-wrap">
       <button type="button" id="ih-cases-btn" class="ih-dd-btn">Cases: All</button>
       <div id="ih-cases-panel" class="ih-dd-panel" style="display:none;"></div>
