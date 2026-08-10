@@ -220,6 +220,10 @@ Ciao
 
 > U.K. Waves Through $81 Billion Paramount-Warner Bros. Deal — The deal still faces substantial legal challenges in the U.S., where state attorneys general have sued to block the purchase.
 
+### (no docket number) — 2026-08-06
+
+> Commerzbank CEO Calls For Dialogue With UniCredit — Bettina Orlopp appealed for constructive dialogue with UniCredit after the Italian bank achieved a near majority stake in its German rival.
+
 ## Unknown case
 
 ### (no docket number) — undated
