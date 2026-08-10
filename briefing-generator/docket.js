@@ -1354,6 +1354,17 @@
   }
 
   function init() {
+    // These don't depend on case data — fire them alongside the case fetch
+    // instead of behind it (each safely re-renders once its own data lands).
+    startLiveSync();
+    loadServerPrefs();
+    loadNotes();
+    loadBondoro();
+    loadVotes();
+    loadUploads();
+    loadFeedSourcesForRender();
+    loadThemeInfo();
+
     Promise.all([
       fetchJson("cases/data/_manifest.json"),
       fetchJson("cases/data/_summary.json"),
@@ -1400,14 +1411,6 @@
 
       renderCaseFilter();
       render();
-      startLiveSync();
-      loadServerPrefs();
-      loadNotes();
-      loadBondoro();
-      loadVotes();
-      loadUploads();
-      loadFeedSourcesForRender();
-      loadThemeInfo();
     }).catch(function (err) {
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {

@@ -17,9 +17,19 @@ export async function onRequest(context) {
     // Intel app code ships fixes several times a day; Pages' default 4h
     // max-age left stale tabs running hours-old JS. _headers rules don't
     // modify function-fronted responses, so cap the cache here.
-    if (/\.js(\?|$)/.test(new URL(request.url).pathname)) {
+    const path = new URL(request.url).pathname;
+    if (/\.js(\?|$)/.test(path)) {
       const capped = new Response(res.body, res);
       capped.headers.set("Cache-Control", "public, max-age=300, must-revalidate");
+      return capped;
+    }
+    // Data JSON (case summaries, bondoro feed, notes, votes, …) updates
+    // multiple times a day via bots and admin edits — same function-fronted
+    // gap as .js above, but capped much shorter since staleness here means
+    // showing outdated filings/news, not just a stale script.
+    if (/\.json(\?|$)/.test(path)) {
+      const capped = new Response(res.body, res);
+      capped.headers.set("Cache-Control", "public, max-age=60, must-revalidate");
       return capped;
     }
     return res;

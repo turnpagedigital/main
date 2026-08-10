@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/intel/assets/intel-favicon.png">
   <title>Dashboard — Turnpage Intelligence</title>
+  <script src="theme.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap"></noscript>
   <style>
     :root {
       --bg: #FFFFFF; --surface: #FFFFFF; --paper-2: #F4F5F7; --canvas: #F4F5F7;
@@ -545,9 +547,8 @@
     <button type="button" class="ih-carousel-nav ih-carousel-next" id="ih-carousel-next" aria-label="More briefings">›</button>
   </div>
 
-<script src="intel-home.js"></script>
-<script src="theme.js"></script>
+<script src="intel-home.js" defer></script>
 <footer id="tn-site-footer"></footer>
-<script src="intel-footer.js"></script>
+<script src="intel-footer.js" defer></script>
 </body>
 </html>

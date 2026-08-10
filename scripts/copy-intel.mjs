@@ -20,6 +20,7 @@ import { cp, rm, copyFile, readFile, writeFile, readdir } from "node:fs/promises
 import { join, sep, dirname, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
+import { transform } from "esbuild";
 
 const SRC = "briefing-generator";
 const DEST = "dist/intel";
@@ -116,6 +117,25 @@ async function* walk(dir) {
     else yield p;
   }
 }
+
+// Minify every app script before hashing/version-stamping below, so the
+// content hash (and therefore the cache-busting URL) reflects what's
+// actually served. docket.js/news.js run 100+ KB unminified — smaller
+// download and less to parse. A file esbuild can't transform is left as-is
+// rather than failing the whole build over it.
+let minified = 0;
+for await (const file of walk(DEST)) {
+  if (!file.endsWith(".js")) continue;
+  try {
+    const src = await readFile(file, "utf8");
+    const { code } = await transform(src, { minify: true, loader: "js" });
+    await writeFile(file, code);
+    minified++;
+  } catch (err) {
+    console.warn(`intel: skipped minifying ${file}: ${err.message}`);
+  }
+}
+console.log(`intel: minified ${minified} JS files`);
 
 // Matches the Supabase gate tags whether or not earlier runs prefixed them
 const AUTH_SCRIPT_RE =

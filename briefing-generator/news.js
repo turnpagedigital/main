@@ -1296,6 +1296,17 @@
     // rowKind === "__never__" branch) — the field only feeds inline-rename
     // lookups and the live-sync merge, both of which only ever touch recent
     // (bondoro-surfaced) entries, so the windowed summary is equivalent here.
+    // These don't depend on case data — fire them alongside the case fetch
+    // instead of behind it (each safely re-renders once its own data lands).
+    startLiveSync();
+    loadServerPrefs();
+    loadNotes();
+    loadBondoro();
+    loadVotes();
+    loadUploads();
+    loadFeedSourcesForRender();
+    loadThemeInfo();
+
     Promise.all([
       fetchJson("cases/data/_manifest.json"),
       fetchJson("cases/data/_summary.json"),
@@ -1338,14 +1349,6 @@
 
       renderCaseFilter();
       render();
-      startLiveSync();
-      loadServerPrefs();
-      loadNotes();
-      loadBondoro();
-      loadVotes();
-      loadUploads();
-      loadFeedSourcesForRender();
-      loadThemeInfo();
     }).catch(function (err) {
       var tbody = document.getElementById("ud-tbody");
       if (tbody) {
@@ -1359,7 +1362,9 @@
 
   // ── Bondoro filing alerts & case summaries (bondoro.json, daily scrape) ────
   function loadBondoro() {
-    fetchJson("api/bondoro")
+    // The sole initial bondoro load (live API first, static fallback).
+    // startLiveSync() no longer re-fetches this on startup — see below.
+    return fetchJson("api/bondoro")
       .then(function (p) { return (p && p.ok && p.items) || []; })
       .catch(function () {
         return fetchJson("bondoro.json")
@@ -1370,6 +1375,9 @@
         BONDORO = items;
         buildAllEntries();
         render();
+        var t = new Date();
+        setSyncStatus("Feeds · refreshed " +
+          t.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }), true);
       });
   }
 
@@ -2529,10 +2537,20 @@
     return true;
   }
 
+  var bondoroEtag = null;
   function syncLive() {
     // Articles refresh from the repo-backed feed store — no CourtListener
-    // quota is spent from this page (the docket page owns that).
-    fetchJson("bondoro.json").then(function (d) {
+    // quota is spent from this page (the docket page owns that). Conditional
+    // GET: an unchanged 211 KB file comes back as a 304 with no body instead
+    // of a full re-download + re-parse every poll. Falls back to a plain GET
+    // if the server ever doesn't honor If-None-Match — no regression either way.
+    var opts = bondoroEtag ? { headers: { "If-None-Match": bondoroEtag } } : {};
+    fetch("bondoro.json", opts).then(function (r) {
+      if (r.status === 304) return null;
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      bondoroEtag = r.headers.get("ETag") || bondoroEtag;
+      return r.json();
+    }).then(function (d) {
       if (d && d.items) {
         BONDORO = d.items;
         buildAllEntries();
@@ -2547,7 +2565,8 @@
   }
 
   function startLiveSync() {
-    syncLive();
+    // loadBondoro() (fired alongside this from init()) already does the
+    // initial fetch and sets the status — this only arms subsequent polls.
     setInterval(function () {
       if (!document.hidden) syncLive();
     }, LIVE_SYNC_MS);
