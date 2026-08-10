@@ -6,7 +6,8 @@
     },
     "blockfills": {
       "bg": "#0892b4",
-      "fg": "#c7f4ff"
+      "fg": "#c7f4ff",
+      "border": "#d1cccc"
     },
     "concord-anthropic": {
       "bg": "#694abf",
