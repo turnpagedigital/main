@@ -117,6 +117,10 @@
     "publishers-v-google-llc-gemini-books": {
       "bg": "#31bfb5",
       "fg": "#000000"
+    },
+    "rndc": {
+      "bg": "#b14135",
+      "fg": "#ffffff"
     }
   },
   "groups": [
