@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-10 23:45 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-10 23:46 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -231,10 +231,6 @@ Ciao
 ### (no docket number) — 2026-08-06
 
 > Partners Group in Talks to Buy Aroma-Zone Stake in Deal that Values Company at $2.3 Billion — Exclusive talks are underway with Eurazeo about a majority stake in France’s Aroma-Zone, which sells beaut
-
-### (no docket number) — 2026-08-06
-
-> Krispy Kreme Narrows Loss Despite Lower Revenue — Krispy Kreme once again narrowed its loss and expanded margins during its latest quarter, as the doughnut chain continued to make progress with its tu
 
 ## Unknown case
 
