@@ -172,6 +172,10 @@ Ciao
 
 > Retirees Love Dividends, but the Stock Market Surge Is Making Them Think Again — With the S&P 500 dividend yield near generational lows, chasing income in the stock market is getting tougher.
 
+### (no docket number) — 2026-08-06
+
+> Where REIT Investors Have Earned the Best Returns — The U.S. market has been best for real-estate investment trusts over the past 10 years, led by funds focused on data centers.
+
 ## Unknown case
 
 ### (no docket number) — undated
