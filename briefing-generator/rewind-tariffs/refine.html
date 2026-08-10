@@ -7,7 +7,7 @@
 <script src="../theme.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,800&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#000000; --surface:#0A0A0A; --surface-2:#16161B; --border:rgba(255,255,255,0.12); --text:#FFFFFF; --text-dim:rgba(255,255,255,0.6); --text-muted:rgba(255,255,255,0.4); --accent:#D4FF00; --accent-dim:#A8CC00; --good:#D4FF00; }
+  :root { --bg:#000000; --surface:#0A0A0A; --surface-2:#0D0D0D; --border:rgba(255,255,255,0.12); --text:#FFFFFF; --text-dim:rgba(255,255,255,0.6); --text-muted:rgba(255,255,255,0.4); --accent:#D4FF00; --accent-dim:#A8CC00; --good:#D4FF00; }
   *{box-sizing:border-box;} body{margin:0;font-family:'Archivo',-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;}
   header{padding:28px 40px 20px;}
   .topic-row{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
@@ -52,7 +52,7 @@
   .btn-refine{font-size:12.5px;padding:9px 18px;border-radius:6px;border:1px solid #D4FF00;background:#D4FF00;color:#0A0A0A;cursor:pointer;font-family:inherit;font-weight:700;}
   .btn-refine:hover{background:#E2FF4D;}
   [data-theme="light"] .btn-refine{background:#0A0A0A;color:#D4FF00;border-color:#0A0A0A;}
-  [data-theme="light"] .btn-refine:hover{background:#16161B;}
+  [data-theme="light"] .btn-refine:hover{background:#0D0D0D;}
   .btn-refine-secondary{font-size:12px;padding:8px 14px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;font-family:inherit;font-weight:600;}
   .btn-refine-secondary:hover{background:var(--surface-2);color:var(--text);}
   .refine-status{color:#D4FF00;font-size:11.5px;font-weight:700;display:none;}
@@ -173,9 +173,9 @@
   }
   /* PRIMARY (dashboard-btn, open-btn): ink bg + white text */
   .dashboard-btn, .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border: 1px solid #0A0A0A !important; }
-  .dashboard-btn:hover, .open-btn:hover { background: #16161B !important; border-color: #16161B !important; }
+  .dashboard-btn:hover, .open-btn:hover { background: #0D0D0D !important; border-color: #0D0D0D !important; }
   [data-theme="light"] .dashboard-btn, [data-theme="light"] .open-btn { background: #0A0A0A !important; color: #FFFFFF !important; border-color: #0A0A0A !important; }
-  [data-theme="light"] .dashboard-btn:hover, [data-theme="light"] .open-btn:hover { background: #16161B !important; }
+  [data-theme="light"] .dashboard-btn:hover, [data-theme="light"] .open-btn:hover { background: #0D0D0D !important; }
 
   /* GHOST (approval-btn, btn-cal, .btn-send-feedback, .btn-refine-secondary): outlined */
   .approval-btn { background: transparent !important; color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.4) !important; }
