@@ -40,10 +40,6 @@ hi
 
 ## Harvest Sherwood
 
-### Dkt. 1195 — 2026-08-10
-
-> Assignment/Transfer of claim (Claims Agent)
-
 ### Dkt. 1193 — 2026-08-10
 
 > Certificate of service
