@@ -222,10 +222,6 @@ Ciao
 
 ### (no docket number) — 2026-08-06
 
-> The Morning Risk Report: U.S. to Halt Key Metal Waste Exports in Push to Break China Reliance — Plus: White House AI guidelines exempt U.S. open models from government review, and U.K. regulator eases
-
-### (no docket number) — 2026-08-06
-
 > Apollo to Buy European Budget Airline easyJet for $7.7 Billion — The deal for the British airline caps a weekslong bidding war with American private equity and aircraft leasing group Castlelake.
 
 ## Unknown case
