@@ -1676,12 +1676,12 @@
     });
   })();
 
-  // ── List view: columns auto-align (SELF-BUILDING, no user resizing) ───────
-  // Every render measures the widest pill and status label and sets shared
-  // widths so all rows line up. Injects its own CSS; caps keep it sane.
+  // ── List view: status column auto-aligns; pills stay content-sized ────────
+  // Pills keep their natural width (Andrew: width follows the label). The
+  // status column is pinned to the widest label each render so it stays a
+  // clean column. Injects its own CSS to survive index.html regeneration.
   (function () {
     var CSS =
-      ".ih-list-mode .ih-case-listrow > .ih-pill{flex:0 0 var(--lrw-pill,auto);overflow:hidden;text-overflow:ellipsis;}" +
       ".ih-list-mode .ih-lr-count{flex:0 0 var(--lrw-count,auto);overflow:hidden;text-overflow:ellipsis;}";
     function ensureCss() {
       if (document.getElementById("ih-lrw-style")) return;
@@ -1694,17 +1694,12 @@
       var grid = document.getElementById("ih-theme-grid");
       if (!grid || !grid.classList.contains("ih-list-mode")) return;
       ensureCss();
-      // Measure natural widths, then pin every row to the shared maximum.
-      grid.style.setProperty("--lrw-pill", "auto");
+      grid.style.setProperty("--lrw-pill", "auto"); // neutralize any older pinned width
       grid.style.setProperty("--lrw-count", "auto");
-      var maxP = 0, maxC = 0;
-      grid.querySelectorAll(".ih-case-listrow > .ih-pill").forEach(function (p) {
-        maxP = Math.max(maxP, p.getBoundingClientRect().width);
-      });
+      var maxC = 0;
       grid.querySelectorAll(".ih-lr-count").forEach(function (c) {
         maxC = Math.max(maxC, c.getBoundingClientRect().width);
       });
-      if (maxP) grid.style.setProperty("--lrw-pill", Math.min(Math.ceil(maxP) + 2, 240) + "px");
       if (maxC) grid.style.setProperty("--lrw-count", Math.min(Math.ceil(maxC) + 2, 220) + "px");
     }
     document.addEventListener("DOMContentLoaded", function () {
