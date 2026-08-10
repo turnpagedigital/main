@@ -1,0 +1,34 @@
+{
+  "slug": "power-block-coin",
+  "case_name": "Power Block Coin",
+  "items": [
+    {
+      "date": "2026-08-10",
+      "updated": "2026-08-10",
+      "lede": "On August 7, Judge Cathleen D. Parker's chambers issued two Notices of Rescheduled Hearing, Dkt. 533 and Dkt. 534, in Bankr. D. Utah Case No. 24-23041. The docket does not disclose which specific matters were rescheduled or their new dates; the content of both notices is not publicly available through secondary sources reviewed this run.",
+      "body_md": "On August 7, Judge Cathleen D. Parker's chambers issued two Notices of Rescheduled Hearing, Dkt. 533 and Dkt. 534, in Bankr. D. Utah Case No. 24-23041. The docket does not disclose which specific matters were rescheduled or their new dates; the content of both notices is not publicly available through secondary sources reviewed this run. This pattern mirrors the three chambers-issued rescheduling notices filed on July 6 (Dkt. 529, 530, 531), which also appeared without attached detail in the docket index, suggesting routine administrative calendar management rather than a substantive shift in case trajectory.\n\nThe scheduling activity is procedural and carries no independent implications for recovery posture. What remains materially relevant is the cluster of open matters that any rescheduled hearings likely concern. The motion to employ counsel (Dkt. 527, filed July 1) remains pending under a pending order (Dkt. 528), and the adversary proceeding trustee Angela Somers filed on June 24 against Coinbase Global, Inc., Coinbase Inc., Coinbase Financial Markets, Aaron Tilton, and Brad Jones (Adv. Pro. 26-02122, Dkt. 526) — a recovery-of-money action — remains at the pleading stage. A complaint was also filed on July 23 (Dkt. 532), the most recent substantive filing before this week's notices; its parties and nature are not yet confirmed through available secondary sources and should be treated as unverified pending docket access. Confirmation of which hearings were rescheduled, and to what dates, requires the full text of Dkt. 533 and 534 from PACER. Separately, \na hearing on the motion to pay or for direction regarding liquidation of certain assets in the debtor's B2C2 account (Dkt. 472) was calendared for Tuesday, August 11, 2026, at 9:30 a.m., with Brian Rothschild as the moving party\n — __[U.S. Bankruptcy Court, D. Utah](https://www.utb.uscourts.gov/content/24-23041-motion-pay-or-direction-or-approval-regarding-liquidation-certain-assets-debtors)__. That hearing is the next concrete milestone. Its outcome will determine whether the estate can liquidate the B2C2 account assets and push proceeds toward the distribution waterfall, making it the most consequential near-term event for creditors regardless of what the August 7 rescheduling notices ultimately affect.\n\n## Sources\n\n- [24-23041 Motion to Pay or for Direction or Approval Regarding Liquidation of Certain Assets in the Debtor's B2C2 Account](https://www.utb.uscourts.gov/content/24-23041-motion-pay-or-direction-or-approval-regarding-liquidation-certain-assets-debtors) — U.S. Bankruptcy Court, District of Utah, August 2026\n- [Power Block Coin, LLC Bankruptcy (2:24-bk-23041)](https://www.pacermonitor.com/public/case/53997795/Power_Block_Coin,_LLC) — PacerMonitor\n- [Creditors' Committee Proposes Liquidation Plan for Utah Crypto Firm Power Block Coin](https://chapter11cases.com/blogs/news/creditors-committee-proposes-liquidation-plan-for-utah-crypto-firm-power-block-coin) — Chapter11Cases.com, February 2, 2025\n\n---\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "24-23041 Motion to Pay or for Direction or Approval Regarding Liquidation of Certain Assets in the Debtor's B2C2 Account",
+          "url": "https://www.utb.uscourts.gov/content/24-23041-motion-pay-or-direction-or-approval-regarding-liquidation-certain-assets-debtors",
+          "note": "U.S. Bankruptcy Court, District of Utah, August 2026"
+        },
+        {
+          "title": "Power Block Coin, LLC Bankruptcy (2:24-bk-23041)",
+          "url": "https://www.pacermonitor.com/public/case/53997795/Power_Block_Coin,_LLC",
+          "note": "PacerMonitor"
+        },
+        {
+          "title": "Creditors' Committee Proposes Liquidation Plan for Utah Crypto Firm Power Block Coin",
+          "url": "https://chapter11cases.com/blogs/news/creditors-committee-proposes-liquidation-plan-for-utah-crypto-firm-power-block-coin",
+          "note": "Chapter11Cases.com, February 2, 2025"
+        }
+      ],
+      "activity": {
+        "filings": 2,
+        "articles": 0,
+        "latest": "2026-08-07"
+      }
+    }
+  ]
+}
