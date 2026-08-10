@@ -1294,45 +1294,75 @@
     });
   }
 
-  function init() {
-    fetchJson("cases/data/_manifest.json").then(function (manifest) {
+  var CASES_FULL_LOADED = false;
+  var _fullHistoryPromise = null;
+
+  function trackProtectedTitles(slug, entries) {
+    entries.forEach(function (en) {
+      if (en.titled_from_upload && en.entry_number != null) {
+        PROTECTED_TITLES[slug + "|n" + en.entry_number] = en.description || "";
+      }
+    });
+  }
+
+  function caseFromData(m, caseData) {
+    var entries = (caseData && caseData.docket && caseData.docket.entries) || [];
+    trackProtectedTitles(m.slug, entries);
+    return {
+      slug:          m.slug,
+      display_name:  m.display_name,
+      short_name:    m.short_name,
+      docket_url:    (caseData && caseData.docket && caseData.docket.docket_url) || m.docket_url || "",
+      default_color: m.default_color || "#888888",
+      category:      m.category || "other",
+      entries:       entries,
+      articles:      (caseData && caseData.coverage) || [],
+      claims_url:    (caseData && caseData.claims_administrator && caseData.claims_administrator.url) || "",
+      claims_name:   (caseData && caseData.claims_administrator && caseData.claims_administrator.name) || "",
+    };
+  }
+
+  // The default view only loads a ~90-day summary (see copy-intel.mjs). Full
+  // per-case history is fetched on demand — only when the user actually asks
+  // to look further back, via a custom date range or a search, both of which
+  // should reach every filing rather than silently searching a partial set.
+  function ensureFullHistory() {
+    if (CASES_FULL_LOADED) return _fullHistoryPromise || Promise.resolve();
+    if (_fullHistoryPromise) return _fullHistoryPromise;
+    _fullHistoryPromise = fetchJson("cases/data/_manifest.json").then(function (manifest) {
       return Promise.all(manifest.map(function (m) {
         return fetchJson("cases/data/" + m.slug + ".json").then(function (caseData) {
-          return {
-            slug:          m.slug,
-            display_name:  m.display_name,
-            short_name:    m.short_name,
-            docket_url:    (caseData.docket && caseData.docket.docket_url) || m.docket_url || "",
-            default_color: m.default_color || "#888888",
-            category:      m.category || "other",
-            entries:       (function () {
-              var ens = (caseData.docket && caseData.docket.entries) || [];
-              ens.forEach(function (en) {
-                if (en.titled_from_upload && en.entry_number != null) {
-                  PROTECTED_TITLES[m.slug + "|n" + en.entry_number] = en.description || "";
-                }
-              });
-              return ens;
-            })(),
-            articles:      caseData.coverage || [],
-            claims_url:    (caseData.claims_administrator && caseData.claims_administrator.url) || "",
-            claims_name:   (caseData.claims_administrator && caseData.claims_administrator.name) || "",
-          };
-        }).catch(function () {
-          return {
-            slug:          m.slug,
-            display_name:  m.display_name,
-            short_name:    m.short_name,
-            docket_url:    m.docket_url || "",
-            default_color: m.default_color || "#888888",
-            category:      m.category || "other",
-            entries:       [],
-            articles:      [],
-            claims_url:    "",
-            claims_name:   "",
-          };
-        });
+          return { slug: m.slug, entries: (caseData.docket && caseData.docket.entries) || [] };
+        }).catch(function () { return null; });
       }));
+    }).then(function (fulls) {
+      var bySlug = {};
+      (fulls || []).forEach(function (f) { if (f) bySlug[f.slug] = f; });
+      CASES.forEach(function (c) {
+        var full = bySlug[c.slug];
+        if (!full) return;
+        trackProtectedTitles(c.slug, full.entries);
+        c.entries = full.entries;
+      });
+      CASES_FULL_LOADED = true;
+      buildAllEntries();
+      render();
+    }).catch(function () {
+      // Keep the windowed data on failure — don't break the page over it.
+    });
+    return _fullHistoryPromise;
+  }
+
+  function init() {
+    Promise.all([
+      fetchJson("cases/data/_manifest.json"),
+      fetchJson("cases/data/_summary.json"),
+    ]).then(function (res) {
+      var manifest = res[0] || [];
+      var summaries = res[1] || [];
+      var bySlug = {};
+      summaries.forEach(function (s) { bySlug[s.slug] = s; });
+      return manifest.map(function (m) { return caseFromData(m, bySlug[m.slug]); });
     }).then(function (cases) {
       CASES = cases;
       var savedAC = _savedState && _savedState.activeCases;
@@ -1341,6 +1371,9 @@
         activeCases[c.slug] = savedAC ? savedAC[c.slug] !== false : true;
       });
       activeCases[UNASSIGNED_KEY] = savedAC ? savedAC[UNASSIGNED_KEY] !== false : true;
+      // Saved state may have left the lookback on "custom" — that reaches
+      // further back than the ~90-day summary window, so top up right away.
+      if (lookback === "custom") ensureFullHistory();
       // #case=<slug> deep link (dashboard cards, briefings page) — solo-filter
       // to that case, same behavior as picking it in the ⌘K palette.
       var mCase = /[#&]case=([a-z0-9,-]+)/.exec(location.hash || "");
@@ -1352,6 +1385,7 @@
           CASES.forEach(function (c) { activeCases[c.slug] = wanted.indexOf(c.slug) !== -1; });
           activeCases[UNASSIGNED_KEY] = false;
           saveFilterState();
+          ensureFullHistory(); // deep-linking into one case reads as "show me everything"
         }
       }
       buildAllEntries();
@@ -2946,6 +2980,8 @@
             var f = document.getElementById("ud-date-from");
             var t = document.getElementById("ud-date-to");
             if (f) f.value = ""; if (t) t.value = "";
+          } else {
+            ensureFullHistory();
           }
           thTimeMenuEl.style.display = "none";
           saveFilterState();
@@ -3164,6 +3200,7 @@
     if (searchInput) {
       searchInput.addEventListener("input", function () {
         searchText = searchInput.value;
+        if (searchText.trim()) ensureFullHistory();
         render();
       });
     }

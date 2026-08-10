@@ -1269,45 +1269,42 @@
     });
   }
 
+  function caseFromData(m, caseData) {
+    var entries = (caseData && caseData.docket && caseData.docket.entries) || [];
+    entries.forEach(function (en) {
+      if (en.titled_from_upload && en.entry_number != null) {
+        PROTECTED_TITLES[m.slug + "|n" + en.entry_number] = en.description || "";
+      }
+    });
+    return {
+      slug:          m.slug,
+      display_name:  m.display_name,
+      short_name:    m.short_name,
+      docket_url:    (caseData && caseData.docket && caseData.docket.docket_url) || m.docket_url || "",
+      default_color: m.default_color || "#888888",
+      category:      m.category || "other",
+      entries:       entries,
+      articles:      (caseData && caseData.coverage) || [],
+      claims_url:    (caseData && caseData.claims_administrator && caseData.claims_administrator.url) || "",
+      claims_name:   (caseData && caseData.claims_administrator && caseData.claims_administrator.name) || "",
+    };
+  }
+
   function init() {
-    fetchJson("cases/data/_manifest.json").then(function (manifest) {
-      return Promise.all(manifest.map(function (m) {
-        return fetchJson("cases/data/" + m.slug + ".json").then(function (caseData) {
-          return {
-            slug:          m.slug,
-            display_name:  m.display_name,
-            short_name:    m.short_name,
-            docket_url:    (caseData.docket && caseData.docket.docket_url) || m.docket_url || "",
-            default_color: m.default_color || "#888888",
-            category:      m.category || "other",
-            entries:       (function () {
-              var ens = (caseData.docket && caseData.docket.entries) || [];
-              ens.forEach(function (en) {
-                if (en.titled_from_upload && en.entry_number != null) {
-                  PROTECTED_TITLES[m.slug + "|n" + en.entry_number] = en.description || "";
-                }
-              });
-              return ens;
-            })(),
-            articles:      caseData.coverage || [],
-            claims_url:    (caseData.claims_administrator && caseData.claims_administrator.url) || "",
-            claims_name:   (caseData.claims_administrator && caseData.claims_administrator.name) || "",
-          };
-        }).catch(function () {
-          return {
-            slug:          m.slug,
-            display_name:  m.display_name,
-            short_name:    m.short_name,
-            docket_url:    m.docket_url || "",
-            default_color: m.default_color || "#888888",
-            category:      m.category || "other",
-            entries:       [],
-            articles:      [],
-            claims_url:    "",
-            claims_name:   "",
-          };
-        });
-      }));
+    // One compact ~90-day summary instead of a 23-file/~5.5 MB fan-out. News
+    // never renders raw docket entries as rows (see buildAllEntries's
+    // rowKind === "__never__" branch) — the field only feeds inline-rename
+    // lookups and the live-sync merge, both of which only ever touch recent
+    // (bondoro-surfaced) entries, so the windowed summary is equivalent here.
+    Promise.all([
+      fetchJson("cases/data/_manifest.json"),
+      fetchJson("cases/data/_summary.json"),
+    ]).then(function (res) {
+      var manifest = res[0] || [];
+      var summaries = res[1] || [];
+      var bySlug = {};
+      summaries.forEach(function (s) { bySlug[s.slug] = s; });
+      return manifest.map(function (m) { return caseFromData(m, bySlug[m.slug]); });
     }).then(function (cases) {
       CASES = cases;
       var savedAC = _savedState && _savedState.activeCases;

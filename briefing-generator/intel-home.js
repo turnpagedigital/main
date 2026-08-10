@@ -1187,13 +1187,15 @@
   fetchJson(BASE + "cases/data/_manifest.json").then(function (man) {
     MANIFEST = man || [];
     renderCaseGrid();
-    return Promise.all(MANIFEST.map(function (m) {
-      return fetchJson(BASE + "cases/data/" + m.slug + ".json")
-        .then(function (c) { return { m: m, c: c }; })
-        .catch(function () { return null; });
-    }));
-  }).then(function (cases) {
-    CASE_DATA = cases.filter(Boolean);
+    // One compact ~90-day summary instead of a 23-file/~5.5 MB fan-out — the
+    // dashboard only ever renders recent filings + upcoming events anyway.
+    return fetchJson(BASE + "cases/data/_summary.json");
+  }).then(function (summaries) {
+    var bySlug = {};
+    (summaries || []).forEach(function (c) { bySlug[c.slug] = c; });
+    CASE_DATA = MANIFEST.map(function (m) {
+      return { m: m, c: bySlug[m.slug] || {} };
+    });
     renderCaseGrid();
     renderDates();
     renderNotes();
