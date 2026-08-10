@@ -32,6 +32,17 @@ export async function onRequest(context) {
       capped.headers.set("Cache-Control", "public, max-age=60, must-revalidate");
       return capped;
     }
+    // Logo/favicon/etc under assets/ — same function-fronted gap as above
+    // (the _headers file's /*.png rule never reaches a function-fronted
+    // response), but these are content-hash-stamped in the HTML that
+    // references them (copy-intel.mjs stampImages()), so a real change
+    // always ships a new ?v= URL. Safe to cache hard, matching the main
+    // site's own immutable policy for its content-hashed /assets/*.
+    if (/\.(png|jpe?g|svg|webp|ico)(\?|$)/.test(path)) {
+      const capped = new Response(res.body, res);
+      capped.headers.set("Cache-Control", "public, max-age=31536000, immutable");
+      return capped;
+    }
     return res;
   }
   return new Response(GATE_HTML, {
