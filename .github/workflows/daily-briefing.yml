@@ -11,9 +11,13 @@ on:
         required: false
         default: ""
       case:
-        description: "Run only this case slug (e.g. bartz-anthropic). Empty = all tracked cases."
+        description: "Run only these case slugs, comma-separated (e.g. bartz-anthropic,poolin). Empty = all tracked cases."
         required: false
         default: ""
+      force:
+        description: "Regenerate even when the activity signature is unchanged (true/false)"
+        required: false
+        default: "false"
   # Fired by the admin's "Run Now" button via POST /repos/{repo}/dispatches —
   # works with a fine-grained token that has Contents: write (no Actions
   # permission needed, unlike workflow_dispatch).
@@ -62,6 +66,7 @@ jobs:
           # Single-case mode from the manual-run form or the admin "Run Now"
           # dispatch payload. Empty = every tracked case.
           BRIEFING_CASE: ${{ github.event.inputs.case || github.event.client_payload.case || '' }}
+          BRIEFING_FORCE: ${{ (github.event.inputs.force == 'true' || github.event.client_payload.force == true) && '1' || '' }}
           # Optional: X API bearer (read tier) — followed accounts feed briefings
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: |
