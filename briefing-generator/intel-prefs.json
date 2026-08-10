@@ -61,6 +61,10 @@
     "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s": {
       "bg": "#f4d99f",
       "fg": "#a66407"
+    },
+    "in-re-cashcall-inc": {
+      "bg": "#2d42e1",
+      "fg": "#ffffff"
     }
   },
   "groups": [
