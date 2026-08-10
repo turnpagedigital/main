@@ -57,6 +57,10 @@
     "britannica-merriam-webster-v-openai": {
       "bg": "#7ef4c2",
       "fg": "#0a5736"
+    },
+    "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s": {
+      "bg": "#d4ff00",
+      "fg": "#d5ff02"
     }
   },
   "groups": [
