@@ -113,7 +113,49 @@
       kb.addEventListener('click',function(e){e.stopPropagation();kw.classList.toggle('open');});
       document.addEventListener('click',function(e){if(!kw.contains(e.target))kw.classList.remove('open');});
     }
+    wireGearMenu();
     wireColResize();
+    wirePillFlip();
+  }
+
+  // ── Case-color pills — flip background/text in dark mode ──────────────────
+  // Pill markup sets only --pb/--pf (case bg/fg) inline; this rule maps them
+  // to background/color normally, and swaps the mapping under [data-theme=dark].
+  // Runs once per page load (idempotent — safe if called more than once).
+  function wirePillFlip() {
+    if (document.getElementById('tn-pill-flip')) return;
+    var st = document.createElement('style');
+    st.id = 'tn-pill-flip';
+    var sel = ['.ud-pill', '.mg-pill', '.ih-pill', '.uc-cal-chip'].map(function (c) {
+      return c + '[style*="--pb"]';
+    });
+    st.textContent =
+      sel.join(',') + '{background:var(--pb);color:var(--pf);}' +
+      sel.map(function (s) { return '[data-theme="dark"] ' + s; }).join(',') +
+      '{background:var(--pf);color:var(--pb);}';
+    document.head.appendChild(st);
+  }
+
+  // ── Settings nav item — gear icon only, hover/click dropdown to manage.html's
+  // sub-tabs. CSS injected here (same trick as wireColResize below) so every
+  // page gets it from this one shared script instead of duplicating a style
+  // block per page. ──────────────────────────────────────────────────────────
+  function wireGearMenu(){
+    var gw=document.getElementById('tn-gear'),gb=document.getElementById('tn-gear-btn');
+    if(!gw||!gb)return;
+    var st=document.createElement('style');
+    st.textContent=
+      '.tn-gear{position:relative;display:inline-flex;align-items:center;}'+
+      '.tn-gear-btn{font-size:15px;background:transparent;border:none;color:inherit;opacity:0.7;cursor:pointer;padding:4px 6px;line-height:1;}'+
+      '.tn-gear-btn:hover{opacity:1;}'+
+      '.tn-gear-panel{display:none;flex-direction:column;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:6px;min-width:130px;box-shadow:0 10px 30px rgba(0,0,0,0.14);}'+
+      '.tn-gear-panel a{display:block;padding:8px 10px;font-size:12.5px;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap;}'+
+      '.tn-gear-panel a:hover{background:var(--paper-2);}'+
+      '@media (hover:hover){.tn-gear:hover .tn-gear-panel{display:flex;}}'+
+      '.tn-gear.open .tn-gear-panel{display:flex;}';
+    document.head.appendChild(st);
+    gb.addEventListener('click',function(e){e.stopPropagation();gw.classList.toggle('open');});
+    document.addEventListener('click',function(e){if(!gw.contains(e.target))gw.classList.remove('open');});
   }
 
   // ── Draggable column widths on the data tables (docket/news/notes/…) ─────
