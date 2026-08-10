@@ -206,7 +206,7 @@ Ciao
 
 ### (no docket number) — 2026-08-06
 
-> Comex Gold Settles 0.09% Lower at $4242.00 — Gold and silver prices dropped, snapping two- and three-day winning streaks, respectively.
+> WSJ Dollar Index Rises 0.24% to 96.23 — The WSJ Dollar Index rose 0.2%, snapping a two-trading-day losing streak.
 
 ## Unknown case
 
