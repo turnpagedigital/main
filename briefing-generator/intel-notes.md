@@ -200,6 +200,10 @@ Ciao
 
 > European Indexes Rise as Earnings Drive Markets — Corporate earnings drove European stock indexes higher in early trade, with the Europe-wide Stoxx 600 index up and led by consumer-facing stocks and h
 
+### (no docket number) — 2026-08-06
+
+> U.S. Natural Gas Futures Fall as Storage Expands — U.S. natural gas futures settled lower after a weekly inventory build came in slightly above expectations while increasing the storage surplus over t
+
 ## Unknown case
 
 ### (no docket number) — undated
