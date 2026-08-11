@@ -418,6 +418,8 @@
   function classifyWindow(w) {
     var d = w.toLowerCase();
     if (NOISE_RE.test(d.slice(-30))) return null;
+    if (/transcript/.test(d)) return null;
+    if (/auction/.test(d)) return "Auction";
     if (/hearing/.test(d)) return "Hearing";
     if (/conference/.test(d)) return "Conference";
     if (/\btrial\b/.test(d)) return "Trial";
