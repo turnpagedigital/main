@@ -16,12 +16,12 @@
   }
 
   var DEFAULT_PRESETS = [
-    {bg:"#D4FF00", fg:"#0A0A0A"}, {bg:"#E9F98A", fg:"#4A5500"},
-    {bg:"#1B3A4B", fg:"#FFFFFF"}, {bg:"#94C6F8", fg:"#123A66"},
-    {bg:"#3B78D8", fg:"#FFFFFF"}, {bg:"#B3A8F0", fg:"#2A1E6E"},
-    {bg:"#4A3DE0", fg:"#FFFFFF"}, {bg:"#7EF4C2", fg:"#0B4A32"},
-    {bg:"#3FA07A", fg:"#FFFFFF"}, {bg:"#F2AAEC", fg:"#6E1466"},
-    {bg:"#CC33CC", fg:"#FFFFFF"}, {bg:"#3A3A3A", fg:"#FFFFFF"},
+    {bg:"#fff5c7", fg:"#92410e"}, {bg:"#fde864", fg:"#5f3306"},
+    {bg:"#cafb67", fg:"#415819"}, {bg:"#8df7e0", fg:"#124f51"},
+    {bg:"#ffca9e", fg:"#683608"}, {bg:"#ffc2c8", fg:"#74070c"},
+    {bg:"#ffc2c9", fg:"#75070c"}, {bg:"#d7cdff", fg:"#380e77"},
+    {bg:"#c2d7ff", fg:"#1c469c"}, {bg:"#a9e2ff", fg:"#04496c"},
+    {bg:"#ffc2e7", fg:"#8b1387"}, {bg:"#e6e6e6", fg:"#0A0A0A"},
   ];
   var PRESETS_KEY = "ud-swatch-presets";
   function loadPresets() {
