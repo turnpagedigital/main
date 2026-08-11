@@ -141,6 +141,13 @@
         "terraform-labs",
         "poolin"
       ]
+    },
+    {
+      "name": "Tariffs",
+      "slugs": [
+        "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
+        "vos-selections-v-trump"
+      ]
     }
   ],
   "presets": [
