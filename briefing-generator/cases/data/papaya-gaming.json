@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
     "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T23:02:26.131893+00:00",
-    "as_of": "Aug 10, 2026",
+    "fetched_at": "2026-08-11T00:01:11.907701+00:00",
+    "as_of": "Aug 11, 2026",
     "backfilled": true,
-    "new_in_72h": 9,
+    "new_in_72h": 5,
     "recent": [
       {
         "entry_number": 60,
@@ -108,7 +108,7 @@
         "time_filed": "11:48:16",
         "date_display": "Aug 8, 2026",
         "description": "Notice of Deposition of Pinni Yaniv in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -118,7 +118,7 @@
         "time_filed": "11:47:04",
         "date_display": "Aug 8, 2026",
         "description": "Notice of Deposition of Oriel Bachar in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -128,7 +128,7 @@
         "time_filed": "11:45:34",
         "date_display": "Aug 8, 2026",
         "description": "Notice of Deposition of James Kong in Connection With Chapter 15 Petition for Recognition of a Foreign Proceeding Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
@@ -138,7 +138,7 @@
         "time_filed": "11:43:49",
         "date_display": "Aug 8, 2026",
         "description": "Notice of Service Filed by Skillz Platform Inc.. (Beach, Sean) (Entered: 08/08/2026)",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },

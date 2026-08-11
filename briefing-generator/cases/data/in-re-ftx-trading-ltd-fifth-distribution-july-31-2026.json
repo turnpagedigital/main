@@ -16,11 +16,21 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
     "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T23:00:32.049370+00:00",
+    "fetched_at": "2026-08-10T23:59:10.604748+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": false,
-    "new_in_72h": 16,
+    "new_in_72h": 17,
     "recent": [
+      {
+        "entry_number": 36109,
+        "date_filed": "2026-08-10",
+        "time_filed": "19:09:29",
+        "date_display": "Aug 10, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[36065]) (Steele, Benjamin)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36109.0.pdf"
+      },
       {
         "entry_number": 36107,
         "date_filed": "2026-08-10",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36106.0.pdf"
-      },
-      {
-        "entry_number": 36105,
-        "date_filed": "2026-08-10",
-        "time_filed": "16:32:59",
-        "date_display": "Aug 10, 2026",
-        "description": "(REDACTED) (related document(s)[36104]) Filed by FTX Recovery Trust. (Attachments: (1) Notice (2) Exhibit A (3) Exhibit B) (Pierce, Matthew)",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36105.0.pdf"
       }
     ],
     "entries": [
+      {
+        "entry_number": 36109,
+        "date_filed": "2026-08-10",
+        "time_filed": "19:09:29",
+        "date_display": "Aug 10, 2026",
+        "description": "Affidavit/Declaration of Mailing . Filed by Kroll Restructuring Administration LLC. (related document(s)[36065]) (Steele, Benjamin)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.36109.0.pdf"
+      },
       {
         "entry_number": 36107,
         "date_filed": "2026-08-10",

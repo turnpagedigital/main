@@ -15,12 +15,22 @@
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73603888/hachette-book-group-inc-v-google-llc/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-10T22:59:56.156945+00:00",
+    "date_last_filing": "2026-08-10",
+    "fetched_at": "2026-08-10T23:57:18.598030+00:00",
     "as_of": "Aug 10, 2026",
     "backfilled": true,
-    "new_in_72h": 0,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 26,
+        "date_filed": "2026-08-10",
+        "time_filed": "18:47:31",
+        "date_display": "Aug 10, 2026",
+        "description": "Reply to Response to Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 25,
         "date_filed": "2026-08-07",
@@ -40,19 +50,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": null,
-        "date_filed": "2026-08-07",
-        "time_filed": "",
-        "date_display": "Aug 7, 2026",
-        "description": ">>>NOTICE REGARDING DEFICIENT MOTION TO APPEAR PRO HAC VICE. Notice to RE-FILE Document No. 24 MOTION for Benjamin Blystad Gould to Appear Pro Hac Vice . Filing fee $ 200.00, receipt number ANYSDC-33253987. Motion and supporting papers to be reviewed by Clerk's Office staff... The filing is deficient for the following reason(s): missing Certificate of Good Standing from Supreme Court of California;. Re-file the motion as a Motion to Appear Pro Hac Vice - attach the correct signed PDF - select the correct named filer/filers - attach valid Certificates of Good Standing issued within the past 30 days - attach Proposed Order.. (rju)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 26,
+        "date_filed": "2026-08-10",
+        "time_filed": "18:47:31",
+        "date_display": "Aug 10, 2026",
+        "description": "Reply to Response to Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 25,
         "date_filed": "2026-08-07",
