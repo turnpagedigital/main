@@ -143,6 +143,12 @@
   function getFg(slug, bg) {
     return (savedColors[slug] && savedColors[slug].fg) || autoFg(bg);
   }
+  function tint(hex, alpha) {
+    var m = /^#?([0-9a-f]{6})$/i.exec(String(hex || ""));
+    if (!m) return "rgba(136,136,136," + alpha + ")";
+    var n = parseInt(m[1], 16);
+    return "rgba(" + (n >> 16 & 255) + "," + (n >> 8 & 255) + "," + (n & 255) + "," + alpha + ")";
+  }
 
   // ── State ──────────────────────────────────────────────────────────────────
   var CASES = [];
@@ -1035,7 +1041,7 @@
             var bg = getBg(ev.slug, ev.default_color);
             var fg = getFg(ev.slug, bg);
             return '<div class="uc-week-card" data-evkey="' + esc((ev.date || "") + "|" + (ev.short || "")) +
-              '" style="border-left-color:' + bg + '">' +
+              '" style="border-left-color:' + bg + ';background:' + tint(bg, 0.14) + '">' +
               '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(ev.short) + "</span>" +
               '<div class="uc-week-kind">' + esc(ev.kind) + (ev.time ? " \u00b7 " + esc(ev.time) : "") + "</div>" +
               (ev.snippet ? '<div class="uc-week-snip">' + esc(ev.snippet) + "</div>" : "") +
