@@ -1,5 +1,4 @@
 ---
-added: 2026-07-30
 slug: terraform-labs
 display_name: Terraform Labs
 type: case
@@ -20,4 +19,6 @@ claims_administrator:
   name: "Epiq11"
   url: "https://dm.epiq11.com/case/terraform/dockets"
   key_dates_url: ""
+scan_guidance: "Watch for anything that signals claim pool size, asset recoveries, litigation outcomes, or distributions. "
+added: 2026-07-30
 ---
