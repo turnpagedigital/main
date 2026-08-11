@@ -72,12 +72,6 @@ hi
 
 > Harvest Sherwood Wins Ch. 11 Plan Approval — Defunct food distributor Harvest Sherwood received confirmation of its Chapter 11 plan at a hearing on Wednesday after a Texas bankruptcy judge overruled a
 
-### Dkt. 1119 — 2026-07-29
-
-> Objection to confirmation of plan 11/12/13
-
-Ciao
-
 ## Omnis Pleasants
 
 ### (no docket number) — 2026-08-05
