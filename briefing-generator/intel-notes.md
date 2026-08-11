@@ -20,12 +20,6 @@ Need to research fair use question and write a long-form article about this
 
 > Anthropic Seeks Partial Dismissal in 'Concord II' Copyright Lawsuit — Anthropic has moved for partial dismissal of the 'Concord II' $3 billion lawsuit, including seeking to drop a direct copyright inf
 
-### (no docket number) — 2026-07-29
-
-> Order on Administrative Motion per Civil Local Rule 7-11
-
-hi
-
 ## Crypto Distress
 
 ### (no docket number) — 2026-08-06 ★
@@ -113,6 +107,12 @@ Note is this leroum ipeum
 ### (no docket number) — 2026-08-02 ★
 
 > New Chapter 11 Bankruptcy Filing — Poolin Technology PTE LTD — Petition's legal trade newsletter covers the July 22 Chapter 11 filing before Judge O'Hagan in the District of New Jersey, noting that Po
+
+## Sleep Number
+
+### (no docket number) — 2026-08-03
+
+> Notice of Adjournment of Hearing
 
 ## Terraform Labs
 

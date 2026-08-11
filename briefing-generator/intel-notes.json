@@ -1,15 +1,5 @@
 {
   "entries": {
-    "concord-anthropic|d2026-07-29|Order on Administrative Motion per Civil Local Rule 7-11": {
-      "bookmarked": false,
-      "note": "hi",
-      "updated_at": "2026-07-30T15:58:03.820Z",
-      "case_slug": "concord-anthropic",
-      "case_name": "Concord Music Group v. Anthropic",
-      "entry_number": null,
-      "date_filed": "2026-07-29",
-      "snippet": "Order on Administrative Motion per Civil Local Rule 7-11"
-    },
     "|d2026-07-24|Case Summary: Poolin Chapter 11 — Poolin, once the world's l": {
       "bookmarked": false,
       "note": "$60M in proceeds\n$10M admin\n$50M net \n$100-$500M liabilities = 2-10c recoveries",
@@ -51,6 +41,20 @@
       "date_filed": "2026-08-02",
       "snippet": "New Chapter 11 Bankruptcy Filing — Poolin Technology PTE LTD — Petition's legal trade newsletter covers the July 22 Chapter 11 filing before Judge O'Hagan in the District of New Jersey, noting that Po",
       "url": "https://www.petition11.com/p/poolin-chapter-11-bankruptcy-filing"
+    },
+    "sleep-number|d2026-08-03|Notice of Adjournment of Hearing": {
+      "bookmarked": false,
+      "note": "",
+      "snooze_until": "",
+      "hidden": false,
+      "deleted_at": "2026-08-03T23:18:54.615Z",
+      "updated_at": "2026-08-03T23:18:54.763Z",
+      "case_slug": "sleep-number",
+      "case_name": "Sleep Number",
+      "entry_number": null,
+      "date_filed": "2026-08-03",
+      "snippet": "Notice of Adjournment of Hearing",
+      "url": ""
     },
     "bartz-anthropic|d2026-07-28|Anthropic's $1.5 billion copyright settlement gets final app": {
       "bookmarked": false,
