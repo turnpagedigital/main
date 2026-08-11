@@ -753,6 +753,30 @@ def render_case_page(case):
 """
 
 
+# Docket-only light-mode restyle: dashboard-style gray canvas, white entry rows,
+# gray news rows, and a floating neumorphic header. Every rule is
+# [data-theme="light"]-scoped so dark mode is untouched. Mirror of the same
+# <style> block in docket.html — keep the two in sync.
+DOCKET_LIGHT_CSS = """<style>
+  [data-theme="light"], [data-theme="light"] body { background: var(--paper-2); }
+  [data-theme="light"] .ud-table { border-collapse: separate; border-spacing: 0; }
+  [data-theme="light"] .ud-table tbody tr { background: var(--surface); }
+  [data-theme="light"] .ud-table tbody tr.ud-day-row { background: transparent; }
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
+  [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
+  [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
+  [data-theme="light"] .ud-table thead th {
+    background: #EDEFF3; border: none;
+    box-shadow: 0 4px 10px rgba(10,10,10,0.13), inset 0 1px 0 rgba(255,255,255,0.95);
+    padding-bottom: 13px;
+  }
+  [data-theme="light"] .ud-table thead th:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+  [data-theme="light"] .ud-table thead th:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+  [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 15px; }
+</style>"""
+
+
 # ── 3) unified docket page ────────────────────────────────────────────────────
 
 # Distinct pill colors: (bg-light, fg-light, bg-dark, fg-dark)
@@ -845,6 +869,7 @@ def render_unified_docket(cases):
 <style>
 {UD_CSS}
 </style>
+{DOCKET_LIGHT_CSS}
 <!-- AUTH GATE START -->
 <!-- AUTH GATE END -->
 </head>
