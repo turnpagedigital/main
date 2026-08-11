@@ -4,13 +4,45 @@
       "bg": "#51ecd2",
       "fg": "#000000"
     },
+    "blockfills": {
+      "bg": "#d9d9d9",
+      "fg": "#000000"
+    },
+    "concord-anthropic": {
+      "bg": "#d9d9d9",
+      "fg": "#000000"
+    },
     "sleep-number": {
-      "bg": "#e0e0e0",
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
+    },
+    "kahan": {
+      "bg": "#d9d9d9",
+      "fg": "#000000"
+    },
+    "goliath": {
+      "bg": "#d9d9d9",
+      "fg": "#000000"
+    },
+    "harvest-sherwood": {
+      "bg": "#d9d9d9",
+      "fg": "#000000"
+    },
+    "rndc": {
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
+    },
+    "poolin": {
+      "bg": "#cccccc",
+      "fg": "#000000"
+    },
+    "bartz-anthropic": {
+      "bg": "#d5ff02",
       "fg": "#000000"
     },
     "power-block-coin": {
-      "bg": "#e0e0e0",
-      "fg": "#000000"
+      "bg": "#e6e6e6",
+      "fg": "#0a0a0a"
     },
     "bankruptcy-creditor-rights": {
       "bg": "#000000",
@@ -42,88 +74,56 @@
       "fg": "#ffffff",
       "border": "#000000"
     },
-    "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153": {
-      "bg": "#cccccc",
+    "papaya-gaming": {
+      "bg": "#ffef42",
       "fg": "#000000"
     },
-    "bartz-anthropic": {
-      "bg": "#d5ff02",
+    "omnis-pleasants": {
+      "bg": "#5dd1ee",
       "fg": "#000000"
     },
-    "blockfills": {
-      "bg": "#e0e0e0",
+    "publishers-v-google-llc-gemini-books": {
+      "bg": "#cc99ff",
       "fg": "#000000"
     },
     "britannica-merriam-webster-v-openai": {
-      "bg": "#e0e0e0",
-      "fg": "#000000"
-    },
-    "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s": {
-      "bg": "#e0e0e0",
+      "bg": "#d9d9d9",
       "fg": "#000000"
     },
     "in-re-cashcall-inc": {
       "bg": "#75b8ff",
       "fg": "#000000"
     },
-    "concord-anthropic": {
-      "bg": "#5dd1ee",
-      "fg": "#000000"
-    },
     "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026": {
       "bg": "#999cff",
       "fg": "#000000"
     },
-    "getty-images-us-v-stability-ai-nd-cal": {
-      "bg": "#e0e0e0",
-      "fg": "#000000"
-    },
-    "goliath": {
-      "bg": "#cccccc",
+    "hachette-et-al-v-meta-platforms-llama": {
+      "bg": "#d9d9d9",
       "fg": "#000000"
     },
     "hachette-et-al-v-google-llc-gemini": {
-      "bg": "#ffa552",
+      "bg": "#d9d9d9",
+      "fg": "#000000"
+    },
+    "getty-images-us-v-stability-ai-nd-cal": {
+      "bg": "#d9d9d9",
       "fg": "#000000"
     },
     "kadrey-v-meta-contributory-infringement-amendment": {
-      "bg": "#e0e0e0",
+      "bg": "#d9d9d9",
       "fg": "#000000"
     },
-    "hachette-et-al-v-meta-platforms-llama": {
-      "bg": "#e0e0e0",
-      "fg": "#000000"
-    },
-    "harvest-sherwood": {
-      "bg": "#e0e0e0",
-      "fg": "#000000"
-    },
-    "kahan": {
-      "bg": "#e0e0e0",
-      "fg": "#000000"
-    },
-    "omnis-pleasants": {
-      "bg": "#ffef42",
-      "fg": "#000000"
-    },
-    "poolin": {
-      "bg": "#cc99ff",
-      "fg": "#000000"
-    },
-    "papaya-gaming": {
+    "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s": {
       "bg": "#88ee63",
       "fg": "#000000"
     },
-    "publishers-v-google-llc-gemini-books": {
-      "bg": "#fb8eb9",
-      "fg": "#000000"
-    },
-    "rndc": {
-      "bg": "#ff7c70",
+    "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153": {
+      "bg": "#e6e6e6",
       "fg": "#000000"
     },
     "vos-selections-v-trump": {
-      "bg": "#cccccc",
+      "bg": "#88ee63",
       "fg": "#000000"
     }
   },
@@ -266,7 +266,6 @@
     "bartz-anthropic": true,
     "papaya-gaming": true,
     "omnis-pleasants": true,
-    "terraform-labs": true,
-    "other-copyright-suits": true
+    "terraform-labs": true
   }
 }
