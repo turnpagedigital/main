@@ -1,9 +1,9 @@
 ---
-added: 2026-07-30
 slug: kahan
 display_name: Kahan
 type: case
 status: active
+sync: active
 topics:
   - bankruptcy-creditor-rights
   - crypto-insolvency
@@ -16,4 +16,6 @@ docket_source:
   type: courtlistener
   docket_id: 69021491
   url: "https://www.courtlistener.com/docket/69021491/jason-m-kahan/"
+scan_guidance: "Watch for any movements in the appeal. "
+added: 2026-07-30
 ---
