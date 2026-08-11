@@ -8,18 +8,40 @@
     "judge": "Bostwick",
     "docket_id": "69021491",
     "status": "active",
+    "sync": "active",
     "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69021491/jason-m-kahan/",
-    "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-11T00:00:51.001738+00:00",
+    "date_last_filing": "2026-08-11",
+    "meta_fetched_at": "2026-08-11T18:10:25.387472+00:00",
+    "fetched_at": "2026-08-11T18:10:25.387472+00:00",
     "as_of": "Aug 11, 2026",
     "backfilled": true,
-    "new_in_72h": 4,
+    "new_in_72h": 6,
     "recent": [
+      {
+        "entry_number": 364,
+        "date_filed": "2026-08-11",
+        "time_filed": "13:40:17",
+        "date_display": "Aug 11, 2026",
+        "description": "Order on Motion to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 363,
+        "date_filed": "2026-08-11",
+        "time_filed": "07:13:26",
+        "date_display": "Aug 11, 2026",
+        "description": "Notice of Fee Due (Pro Hac Vice)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 362,
         "date_filed": "2026-08-10",
@@ -29,29 +51,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.362.0.pdf"
-      },
-      {
-        "entry_number": 361,
-        "date_filed": "2026-08-10",
-        "time_filed": "16:56:37",
-        "date_display": "Aug 10, 2026",
-        "description": "Certificate of Service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.mab.515907/gov.uscourts.mab.515907.361.0.pdf"
-      },
-      {
-        "entry_number": 360,
-        "date_filed": "2026-08-10",
-        "time_filed": "15:16:11",
-        "date_display": "Aug 10, 2026",
-        "description": "Order To Set Hearing",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 364,
+        "date_filed": "2026-08-11",
+        "time_filed": "13:40:17",
+        "date_display": "Aug 11, 2026",
+        "description": "Order on Motion to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 363,
+        "date_filed": "2026-08-11",
+        "time_filed": "07:13:26",
+        "date_display": "Aug 11, 2026",
+        "description": "Notice of Fee Due (Pro Hac Vice)",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 362,
         "date_filed": "2026-08-10",
@@ -3840,6 +3862,5 @@
     ]
   },
   "claims_administrator": null,
-  "coverage": [],
-  "events": []
+  "coverage": []
 }
