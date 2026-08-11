@@ -22,7 +22,7 @@ import os, re, sys, json, time
 import datetime as dt
 import urllib.error, urllib.parse, urllib.request
 
-from cases_common import load_cases, DATA_DIR, pretty_date
+from cases_common import load_cases, DATA_DIR, REPO_ROOT, pretty_date
 
 API = "https://www.courtlistener.com/api/rest/v4"
 TOKEN = os.environ.get("COURTLISTENER_TOKEN")
@@ -147,15 +147,37 @@ def crawl_history(cursor_url, page_budget):
     return raw, url, url is None
 
 
-def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next, now):
-    """Assemble the normalized `docket` sub-object from merged entries."""
+def _is_stale(iso_ts, now, days):
+    if not iso_ts:
+        return True
     try:
-        meta = get_json(
-            f"{API}/dockets/{docket_id}/?fields=id,case_name,docket_number,court_id,date_filed,date_last_filing,absolute_url",
-            retries=1,
-        )
+        last = dt.datetime.fromisoformat(iso_ts.replace("Z", "+00:00"))
+        return (now - last) > dt.timedelta(days=days)
     except Exception:
-        meta = {}  # cosmetic fields only — never discard a successful crawl over these
+        return True
+
+
+def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next, now, prior, fetch_meta):
+    """Assemble the normalized `docket` sub-object from merged entries.
+
+    The metadata GET (case name, docket number, last-filing date) is the one
+    request every case pays on every run regardless of whether anything
+    changed — at 21+ live cases x 24 runs/day that's the single biggest
+    fixed cost against CourtListener's 600-request rolling-24h budget.
+    `fetch_meta` gates it: skip when this run found nothing new AND the
+    metadata was fetched recently, carrying the prior values forward instead
+    of blanking them out."""
+    meta = {}
+    meta_fetched_at = prior.get("meta_fetched_at", "")
+    if fetch_meta:
+        try:
+            meta = get_json(
+                f"{API}/dockets/{docket_id}/?fields=id,case_name,docket_number,court_id,date_filed,date_last_filing,absolute_url",
+                retries=1,
+            )
+            meta_fetched_at = now.isoformat()
+        except Exception:
+            meta = {}  # cosmetic fields only — never discard a successful crawl over these
     for e in merged.values():
         if e.get("is_new") and e.get("date_filed"):
             try:
@@ -189,7 +211,8 @@ def build_docket_block(docket_id, docket_url, merged, backfilled, backfill_next,
         "awaiting_sync": False,
         "docket_url": cl_url,
         "case_name_api": meta.get("case_name") or "",
-        "date_last_filing": meta.get("date_last_filing") or "",
+        "date_last_filing": meta.get("date_last_filing") or prior.get("date_last_filing") or "",
+        "meta_fetched_at": meta_fetched_at,
         "fetched_at": now.isoformat(),
         "as_of": pretty_date(now.date().isoformat()),
         "backfilled": bool(backfilled),
@@ -256,12 +279,19 @@ def refresh_case(case, history_pages=0, force=False):
                     ne["is_new"] = cur.get("is_new", ne.get("is_new"))
                 merged[key] = ne
 
+    # Only spend the metadata request when something actually moved, or the
+    # last one is stale — a quiet case's cosmetic fields don't need
+    # refreshing every single hourly run.
+    need_meta = (len(merged) != len(existing) or crawled > 0
+                 or _is_stale(prior.get("meta_fetched_at"), now, days=7))
+
     try:
         # Prefer the previously healed (sluged) URL over the config's, so a
         # throttled metadata fetch never regresses links to the bare form.
         block = build_docket_block(ds["docket_id"],
                                    prior.get("docket_url") or ds.get("url"), merged,
-                                   backfilled, None if backfilled else cursor, now)
+                                   backfilled, None if backfilled else cursor, now,
+                                   prior, need_meta)
     except Exception as ex:
         print(f"  ! {slug}: metadata fetch failed ({ex}); seed kept", file=sys.stderr)
         return False
@@ -285,9 +315,23 @@ def refresh_case(case, history_pages=0, force=False):
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     case["data_path"].write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     tail = "complete" if block["backfilled"] else "in progress"
+    meta_tail = "meta fetched" if need_meta else "meta skipped (quiet + fresh)"
     print(f"  ✓ {slug}: {len(block['entries'])} entries "
-          f"(+{crawled} history, backfill {tail}), {block['new_in_72h']} new in 72h")
+          f"(+{crawled} history, backfill {tail}), {block['new_in_72h']} new in 72h, {meta_tail}")
     return True
+
+
+def load_priorities():
+    """Slugs starred high-priority on the dashboard (roamed via
+    intel-prefs.json — the same file the dashboard's ★ toggle writes to).
+    The hourly trickle spends its limited CourtListener budget on these
+    first, so a quota-exhausted run always sacrifices a rotating set of
+    the REST instead of whichever cases happen to sort first alphabetically."""
+    try:
+        prefs = json.loads((REPO_ROOT / "intel-prefs.json").read_text(encoding="utf-8"))
+        return {slug for slug, on in (prefs.get("priorities") or {}).items() if on}
+    except Exception:
+        return set()
 
 
 def main():
@@ -315,12 +359,23 @@ def main():
     # The token's budget is 600 requests per rolling 24h (CL "600/day" 429s,
     # 2026-08-04); a full 13-case history re-pull alone nearly drains it and
     # starves the live endpoint + hourly syncs for the rest of the day. So a
-    # backfill run deep-syncs only the first few cases — rotated daily so
-    # every case gets a turn across nights — and freshness-refreshes the rest.
+    # backfill run deep-syncs only the first few cases, and both run types
+    # order the case list priority-first, then rotate the rest — so the
+    # circuit breaker below always sacrifices a DIFFERENT set of non-priority
+    # cases when the budget is already spent, instead of whichever cases
+    # happen to sort first alphabetically (bartz-anthropic, every time).
     backfill_cap = int(os.environ.get("DOCKET_BACKFILL_CASES", "4") or 0)
+    priority = load_priorities()
+    pri_cases = [c for c in cases if c["slug"] in priority]
+    rest = [c for c in cases if c["slug"] not in priority]
+    if rest:
+        shift = (dt.date.today().toordinal() if backfill_all
+                  else int(dt.datetime.now(dt.timezone.utc).timestamp() // 3600)) % len(rest)
+        rest = rest[shift:] + rest[:shift]
+    cases = pri_cases + rest
+    if pri_cases:
+        print(f"  priority-first: {', '.join(c['slug'] for c in pri_cases)}")
     if backfill_all and cases:
-        shift = dt.date.today().toordinal() % len(cases)
-        cases = cases[shift:] + cases[:shift]
         deep = ", ".join(c["slug"] for c in cases[:backfill_cap])
         print(f"  backfill rotation: deep-syncing {deep}; freshness pass for the rest")
     print(f"=== Refreshing {len(cases)} tracked case(s) "
