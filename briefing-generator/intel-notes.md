@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-11 15:32 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-11 15:33 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -109,6 +109,10 @@ Note is this leroum ipeum
 > The Investors Whose SpaceX Shares Vanished Before They Could Cash In — One bought in to an SPV fund touting pre-IPO “exposure” to the rocket company. He was told later the shares were sold before trad
 
 ## Poolin
+
+### (no docket number) — 2026-08-10
+
+> Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers — A creditor of bankrupt cryptocurrency miner Poolin Technology moved for the appointment of a Chapter 11 trustee, alleging the company's princi
 
 ### (no docket number) — 2026-08-02 ★
 
