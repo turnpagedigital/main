@@ -121,6 +121,10 @@
     "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153": {
       "bg": "#e6e6e6",
       "fg": "#000000"
+    },
+    "vos-selections-v-trump": {
+      "bg": "#88ee63",
+      "fg": "#000000"
     }
   },
   "groups": [
