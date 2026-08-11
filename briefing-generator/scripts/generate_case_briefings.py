@@ -720,11 +720,15 @@ def main():
     for case in active:
         if case["slug"] not in grouped:
             units.append({"kind": "case", "case": case})
-    if only:
-        units = [u for u in units if
-                 (u["kind"] == "case" and u["case"]["slug"] in only) or
-                 (u["kind"] == "group" and (u["group"]["id"] in only or
-                                            any(m in only for m in u["group"]["members"])))]
+    # `only` scopes a manual/forced rerun to specific case(s) — but it must
+    # only gate whether THIS run is allowed to regenerate a unit, never which
+    # units exist. Filtering `units` itself (the old behavior) dropped every
+    # other active case out of `plan`, and therefore out of `items` below —
+    # a scoped rerun silently wiped every case it wasn't asked to touch from
+    # case-briefings.json. Every active unit stays in `units`/`plan`; `only`
+    # is applied per-unit against `moved` instead, the same way the
+    # MAX_GENERATIONS cap below forces stragglers to `moved = False` and
+    # carries their previous briefing forward untouched.
 
     # Decide who moved, then cap the generation list by freshest activity.
     plan = []
@@ -733,7 +737,8 @@ def main():
             case = u["case"]
             sig, latest, filings, articles = activity_of(case["data"])
             prev_item = prev_by_slug.get(case["slug"])
-            moved = bool((filings or articles) and latest >= since
+            in_scope = not only or case["slug"] in only
+            moved = bool(in_scope and (filings or articles) and latest >= since
                          and (force or not prev_item or prev_item.get("signature") != sig))
             plan.append({"kind": "case", "case": case, "sig": sig, "latest": latest,
                          "filings": filings, "articles": articles,
@@ -750,7 +755,8 @@ def main():
             latest = max((mp["latest"] for mp in member_plans), default="")
             any_active = any(mp["moved"] for mp in member_plans)
             prev_item = prev_by_slug.get(g["id"])
-            moved = bool(any_active and
+            in_scope = not only or g["id"] in only or any(mp["case"]["slug"] in only for mp in member_plans)
+            moved = bool(in_scope and any_active and
                          (force or not prev_item or prev_item.get("signature") != sig))
             plan.append({"kind": "group", "group": g, "members": member_plans,
                          "sig": sig, "latest": latest,
