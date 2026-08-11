@@ -4,7 +4,7 @@ display_name: Thomson Reuters v. Ross Intelligence (3d Cir. No. 25-2153)
 short_name: "Reuters v. Ross"
 type: case
 status: active
-sync: active
+sync: archived
 topics:
   - llm-class-action
 case:
