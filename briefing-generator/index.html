@@ -380,7 +380,7 @@
        forward. The actual tile "card" background lives on .ih-tile > .ih-list
        (see the press-page override below), not on .ih-tile itself — override
        the #id directly so it wins regardless of source order. */
-    #ih-notes { background: transparent; border: none; }
+    #ih-notes { background: transparent; border: none; border-radius: 0; box-shadow: none; overflow: visible; }
     .ih-notes-wrap { flex: 1; display: flex; flex-direction: column; padding: 0; }
     .ih-notes-stack { position: relative; flex: 1; min-height: 160px; margin: 100px 0 0; }
     /* Cards are solid opaque "paper" (--nc is a hex, not a tint) so a card
@@ -416,7 +416,12 @@
        full color, so a long title that would otherwise be covered by the
        card(s) in front is fully readable — without changing which card is
        actually "front" until it's clicked. */
-    .ih-note-card:not([data-pos="0"]):hover { transform: translateY(-4px); z-index: 10; filter: none; box-shadow: 0 10px 24px -6px rgba(10,10,10,0.4); }
+    /* z-index only, no transform — moving the card under a stationary cursor
+       would push it out from under the pointer, dropping :hover, which
+       snaps it back and re-triggers hover: an infinite flicker loop. Leaving
+       the position untouched keeps the whole card under whatever pixel
+       triggered the hover in the first place. */
+    .ih-note-card:not([data-pos="0"]):hover { z-index: 10; filter: none; box-shadow: 0 10px 24px -6px rgba(10,10,10,0.4); }
     [data-theme="dark"] .ih-note-card:not([data-pos="0"]):hover { box-shadow: 0 10px 26px -6px rgba(0,0,0,0.7); }
     .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 17px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
@@ -510,7 +515,8 @@
   .ih-tile { background: transparent; border: none; }
   .ih-tile > .ih-head { border-bottom: none; padding: 0 2px 8px; }
   .ih-tile .ih-name { color: var(--ink); }
-  .ih-tile > .ih-list, .ih-tile > .ih-dates { background: var(--surface); border: 1px solid var(--line); flex: 1; }
+  .ih-tile > .ih-list, .ih-tile > .ih-dates { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 2px 10px rgba(10,10,10,0.08); overflow: hidden; flex: 1; }
+  [data-theme="dark"] .ih-tile > .ih-list, [data-theme="dark"] .ih-tile > .ih-dates { box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
   /* Consistent 48px vertical rhythm between sections; 8px from a title to its box */
   .ih-controls { margin-bottom: 48px; }
   .ih-band { margin-top: 0; margin-bottom: 0; gap: 48px 15px; }
