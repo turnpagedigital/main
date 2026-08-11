@@ -163,6 +163,8 @@
   .ud-filter-right{display:flex;align-items:center;gap:12px;flex-shrink:0;flex-wrap:wrap;}
   .ud-type-select{padding:7px 10px;font-size:14px;font-family:inherit;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;outline:none;}
   .ud-type-select:focus{border-color:var(--neon);}
+  .ud-new-label{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;color:var(--ink);}
+  .ud-new-label input{accent-color:var(--neon);cursor:pointer;}
   /* Color popover */
   .ud-pill.ud-pill-sq{border-radius:0;}
   .ud-color-pop{position:absolute;z-index:1000;background:var(--surface);border:1px solid var(--line-strong);padding:16px;width:232px;box-shadow:0 6px 24px rgba(0,0,0,0.22);}
@@ -293,41 +295,14 @@
   .ud-pal-empty{padding:12px 14px;font-size:13px;color:var(--ink-60);}
   .ud-pal-hint{padding:7px 14px;font-size:10.5px;color:var(--ink-60);border-top:1px solid var(--line-strong);letter-spacing:0.03em;}
   .ud-rename-input{width:100%;font-family:inherit;font-size:13px;padding:5px 7px;border:1.5px solid var(--neon);background:var(--surface);color:var(--ink);box-sizing:border-box;}
-  .ud-due{background:transparent;padding:0;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;}
-  .ud-due-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
-  .ud-due-head-label{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
-  /* Pager sits on the page background above the cards, not on any one card —
-     up to DUE_PAGE_SIZE (4) reminders show at once; this only appears when
-     there are more than that. */
-  .ud-due-pager{display:flex;align-items:center;gap:8px;flex:0 0 auto;}
-  .ud-due-pg-btn{background:none;border:none;cursor:pointer;font-size:14px;color:var(--ink-40);padding:2px 4px;line-height:1;}
-  .ud-due-pg-btn:hover{color:var(--ink);}
-  .ud-due-pg-count{font-size:11px;font-weight:700;color:var(--ink-40);white-space:nowrap;}
-  /* Non-overlapping cards, as many per row as fit at >=240px each — 4 max
-     since a page never holds more than DUE_PAGE_SIZE items. */
-  .ud-due-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
-  /* Each snoozed reminder is styled to match the dashboard Notes card exactly
-     — same paper color, title + artifact + date-prefixed body — so a due
-     reminder reads as the same kind of object as a note. */
-  .ud-due-card{background:#EEFFA3;border-top:4px solid var(--cc, transparent);border-radius:14px;padding:14px 17px;box-shadow:0 6px 10px -7px rgba(10,10,10,0.4);}
-  [data-theme="dark"] .ud-due-card{background:#2B2723;box-shadow:0 6px 14px -7px rgba(0,0,0,0.7);}
-  .ud-due-title{font-size:15px;font-weight:800;color:#21201A;padding-bottom:7px;margin-bottom:10px;border-bottom:1px solid rgba(10,10,10,0.14);}
-  .ud-due-artifact{display:flex;align-items:center;gap:6px;font-size:12px;font-style:italic;color:rgba(10,10,10,0.5);margin-bottom:10px;}
-  .ud-due-artifact svg{flex:0 0 auto;opacity:0.8;}
-  .ud-due-body{font-size:13px;line-height:1.55;color:#21201A;opacity:0.8;}
-  .ud-due-body strong{opacity:1;}
-  [data-theme="dark"] .ud-due-title{color:#EDE7DE;border-bottom-color:rgba(237,231,222,0.16);}
-  [data-theme="dark"] .ud-due-artifact{color:rgba(237,231,222,0.55);}
-  [data-theme="dark"] .ud-due-body{color:#EDE7DE;}
-  /* Icon-only actions — the same snooze-clock / trash glyphs as the row
-     actions in the table below, not text buttons. */
-  .ud-due-foot{display:flex;gap:10px;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid rgba(10,10,10,0.1);}
-  [data-theme="dark"] .ud-due-foot{border-top-color:rgba(237,231,222,0.12);}
-  .ud-due-resnooze,.ud-due-dismiss{background:none;border:none;cursor:pointer;padding:2px 4px;line-height:1;color:rgba(10,10,10,0.45);}
-  [data-theme="dark"] .ud-due-resnooze,[data-theme="dark"] .ud-due-dismiss{color:rgba(237,231,222,0.5);}
-  .ud-due-resnooze:hover{color:#21201A;}
-  [data-theme="dark"] .ud-due-resnooze:hover{color:#EDE7DE;}
-  .ud-due-dismiss:hover{color:#C84141;}
+  .ud-due{background:rgba(212,255,0,0.5);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;border-radius:10px;}
+  [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.22);color:#F4F5F7;}
+  .ud-due-head{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
+  .ud-due-card{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-top:1px solid var(--line);}
+  .ud-due-card:first-of-type{border-top:none;}
+  .ud-due-body{flex:1;font-size:13.5px;line-height:1.5;}
+  .ud-due-meta{font-size:12px;color:var(--ink-60);margin-bottom:3px;}
+  .ud-due-actions{display:flex;gap:8px;flex-shrink:0;align-items:center;}
   .ud-case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
   .ud-case-grid label{display:flex;flex-direction:column;gap:4px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);}
   .ud-case-grid input,.ud-case-grid textarea{font-size:13.5px;}
@@ -337,6 +312,16 @@
   .ud-case-topics{display:flex;flex-wrap:wrap;gap:8px;}
   .ud-case-topics label{display:flex;flex-direction:row;align-items:center;gap:5px;font-weight:400;text-transform:none;letter-spacing:0;font-size:13px;color:var(--ink);cursor:pointer;}
   .ud-case-topics input{accent-color:var(--neon);}
+  .ud-src-list{display:flex;flex-direction:column;gap:6px;max-height:300px;overflow-y:auto;}
+  .ud-src-row{display:flex;align-items:center;gap:10px;padding:7px 8px;background:var(--paper-2);border:1px solid var(--line);}
+  .ud-src-row input[type="checkbox"]{accent-color:var(--neon);margin:0;flex-shrink:0;}
+  .ud-src-name{font-weight:700;flex:0 0 120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ud-src-url{flex:1;font-size:12px;color:var(--ink-60);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ud-src-kind{font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--ink);padding:1px 7px;flex-shrink:0;}
+  .ud-src-del{background:none;border:none;color:var(--ink-40);font-size:14px;cursor:pointer;padding:0 3px;}
+  .ud-src-del:hover{color:#C84141;}
+  .ud-src-add{display:flex;gap:6px;align-items:center;border-top:1px solid var(--line);padding-top:10px;}
+  .ud-src-mode{font-family:inherit;font-size:11.5px;padding:3px 4px;background:var(--surface);color:var(--ink);border:1px solid var(--line-strong);}
   /* ── Mobile (≤720px): tables become stacked cards ─────────────────────── */
   @media (max-width: 720px) {
     .tn-left{flex-wrap:wrap;gap:8px 14px;}
@@ -374,6 +359,10 @@
     .ud-case-dd-panel{max-width:calc(100vw - 16px);min-width:240px;}
     .ud-th-menu{max-width:calc(100vw - 16px);}
     .ud-case-grid{grid-template-columns:1fr;}
+    .ud-src-add{flex-wrap:wrap;}
+    .ud-src-add input{flex:1 1 100% !important;}
+    .ud-due{padding:12px;}
+    .ud-due-card{flex-direction:column;gap:8px;}
     .ud-note-box{padding:16px;}
     .uc-merge-bar{flex-wrap:wrap;}
   }
@@ -500,6 +489,26 @@
   </div>
 </div>
 
+<!-- Feed sources modal -->
+<div id="ud-src-overlay" class="ud-note-overlay" style="display:none;">
+  <div class="ud-note-box" style="width:min(680px,100%);">
+    <div class="ud-note-title">News feed sources</div>
+    <div class="ud-note-meta">Each source's RSS feed is pulled once a day. “All entries” puts every item on the docket (unassigned until tied to a case). “Case matches only” shows a feed's items solely when they match a tracked case — matching runs automatically on each pull, and you can still assign by hand.</div>
+    <div id="ud-src-list" class="ud-src-list"></div>
+    <div class="ud-src-add">
+      <input type="text" id="ud-src-name" class="ud-dd-save-input" placeholder="Name (e.g. PETITION)" style="flex:0 0 140px;">
+      <input type="text" id="ud-src-url" class="ud-dd-save-input" placeholder="RSS feed URL (https://…/rss)" style="flex:1;">
+      <input type="text" id="ud-src-kind" class="ud-dd-save-input" placeholder="Tag (News)" style="flex:0 0 90px;">
+      <button type="button" id="ud-src-add-btn" class="ud-dd-save-btn">Add</button>
+    </div>
+    <div class="ud-note-actions">
+      <span id="ud-src-status" class="ud-note-status"></span>
+      <span style="flex:1"></span>
+      <button type="button" id="ud-src-close" class="ud-clear-btn">Close</button>
+      <button type="button" id="ud-src-save" class="ud-dd-save-btn">Save sources</button>
+    </div>
+  </div>
+</div>
 
 <!-- Entry-type header menu (positioned under the Entry column header) -->
 <div id="ud-th-menu" class="ud-th-menu" style="display:none;">
@@ -507,15 +516,6 @@
   <button type="button" class="ud-th-menu-item" data-val="substantive">Substantive only</button>
   <button type="button" class="ud-th-menu-item" data-val="orders">Orders only</button>
   <button type="button" class="ud-th-menu-item" data-val="transfers">Transfers only</button>
-</div>
-
-<div id="ud-th-timemenu" class="ud-th-menu" style="display:none;">
-  <button type="button" class="ud-th-menu-item" data-val="all">All time</button>
-  <button type="button" class="ud-th-menu-item" data-val="24h">Last 24 hours</button>
-  <button type="button" class="ud-th-menu-item" data-val="7d">Last 7 days</button>
-  <button type="button" class="ud-th-menu-item" data-val="30d">Last 30 days</button>
-  <button type="button" class="ud-th-menu-item" data-val="90d">Last 90 days</button>
-  <button type="button" class="ud-th-menu-item" data-val="custom">Set custom date range…</button>
 </div>
 
 <div class="ud-page">
@@ -527,11 +527,19 @@
       <div class="ud-search-wrap">
         <input type="text" id="ud-search" class="ud-search-input" placeholder="Search entries, parties, dates…">
       </div>
-      <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
+      <div class="ud-date-range">
+        <span class="ud-date-label">From</span>
+        <input type="date" id="ud-date-from" class="ud-date-input">
+        <span class="ud-date-sep">–</span>
+        <span class="ud-date-label">To</span>
+        <input type="date" id="ud-date-to" class="ud-date-input">
+        <button id="ud-clear-search" class="ud-clear-btn">× Clear</button>
+      </div>
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
         <button type="button" id="ud-case-add" class="ud-type-select" title="Add a tracked case">＋ Case</button>
+        <button type="button" id="ud-sources-btn" class="ud-type-select" title="Manage news feed sources">Sources</button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
@@ -539,20 +547,14 @@
           <option value="all">All news</option>
           <option value="related">Cases &amp; themes only</option>
         </select>
+        <label class="ud-new-label">
+          <input type="checkbox" id="ud-new-only"> New only (24h)
+        </label>
       </div>
     </div>
   </div>
 
   <div class="ud-toolbar">
-    <span class="ud-lookback-box">
-      <span id="ud-lookback-label">All time</span>
-      <span class="ud-date-range" id="ud-date-range" style="display:none;">
-        <span class="ud-date-sep">·</span>
-        <input type="date" id="ud-date-from" class="ud-date-input" aria-label="From date">
-        <span class="ud-date-sep">–</span>
-        <input type="date" id="ud-date-to" class="ud-date-input" aria-label="To date">
-      </span>
-    </span>
     <span id="ud-count"></span>
     <span id="ud-hidden-info" class="uc-curation-info"></span>
     <button id="ud-sort-btn">Date ↓</button>
@@ -560,7 +562,7 @@
 
   <table class="ud-table">
     <thead><tr>
-      <th id="ud-th-time" class="ud-th-filter" style="width:82px" title="Change the lookback window"><span class="ud-th-label">Time</span> <span class="ud-th-caret">▾</span></th>
+      <th style="width:82px">Time</th>
       <th id="ud-th-case" class="ud-th-filter" style="width:150px" title="Select cases"><span class="ud-th-label">Case</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-source" class="ud-th-filter" style="width:150px" title="Show or hide news sources"><span class="ud-th-label">Author</span> <span class="ud-th-caret">▾</span></th>
       <th id="ud-th-entry" class="ud-th-filter" title="Filter by story type"><span class="ud-th-label">Entry</span> <span class="ud-th-caret">▾</span></th>
