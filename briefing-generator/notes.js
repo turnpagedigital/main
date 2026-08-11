@@ -561,6 +561,7 @@
             (n.kind === "prospect" ? "" :
               '<button type="button" class="ud-bm-btn' + (n.bookmarked ? " ud-bm-on" : "") + '" data-nk="' + esc(n.key) + '" title="Toggle bookmark">' + (n.bookmarked ? "★" : "☆") + "</button>") +
             '<button type="button" class="ud-note-btn ud-note-on" data-nk="' + esc(n.key) + '" title="Edit note"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z\"/></svg></button>' +
+            '<button type="button" class="ud-del-btn" data-nk="' + esc(n.key) + '" title="Delete note"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"vertical-align:middle\"><polyline points=\"3 6 5 6 21 6\"/><path d=\"M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3-3h8a1 1 0 0 1 1 1v2H7V4a1 1 0 0 1 1-1z\"/></svg></button>' +
           "</td>" +
         "</tr>"
       );
@@ -626,11 +627,54 @@
     var overlay = document.getElementById("ud-note-overlay");
     if (overlay) overlay.style.display = "none";
   }
+  // Clears a note's text (and title/bookmark, if unstarred, drops the record
+  // entirely) — shared by the modal's "Delete note" button and the one-click
+  // trash icon on each row. No confirm() here; callers that need one (the
+  // one-click path) ask before calling this.
+  function deleteNoteRecord(nk) {
+    if (nk.indexOf("prospect|") === 0) {
+      var p = prospectByKey(nk);
+      if (!p) return;
+      fetch("api/prospects", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: p.id, note: "" }),
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        if (!j || !j.ok) throw new Error((j && j.error) || "save failed");
+        p.note = "";
+        p.triaged_at = new Date().toISOString();
+        render();
+      }).catch(function (e) {
+        noteToast("Prospect note failed: " + e.message, true);
+      });
+      return;
+    }
+    var rec = NOTES[nk];
+    if (!rec) return;
+    rec.note = "";
+    rec.title = "";
+    rec.updated_at = new Date().toISOString();
+    if (!rec.bookmarked) delete NOTES[nk];
+    queuePush(nk);
+  }
+
+  function quickDeleteNote(nk) {
+    if (!confirm("Delete this note?")) return;
+    deleteNoteRecord(nk);
+    render();
+  }
+
   function saveNoteFromModal(deleteNote) {
     if (!activeNoteKey) return;
     var nk = activeNoteKey;
+    if (deleteNote) {
+      deleteNoteRecord(nk);
+      closeNoteModal();
+      render();
+      return;
+    }
     var text = document.getElementById("ud-note-text");
-    var val = deleteNote ? "" : (text ? text.value : "");
+    var val = text ? text.value : "";
     if (nk.indexOf("prospect|") === 0) {
       var p = prospectByKey(nk);
       if (!p) return;
@@ -653,7 +697,7 @@
     var rec = NOTES[nk];
     if (!rec) return;
     var titleField = document.getElementById("ud-note-titlefield");
-    var titleVal = deleteNote ? "" : (titleField ? titleField.value.trim() : "");
+    var titleVal = titleField ? titleField.value.trim() : "";
     rec.note = val;
     rec.title = titleVal || (val.trim() ? deriveTitle(val) : "");
     rec.updated_at = new Date().toISOString();
@@ -822,6 +866,8 @@
       tbody.addEventListener("click", function (ev) {
         var bm = ev.target.closest(".ud-bm-btn");
         if (bm) { toggleBookmark(bm.getAttribute("data-nk")); return; }
+        var del = ev.target.closest(".ud-del-btn");
+        if (del) { quickDeleteNote(del.getAttribute("data-nk")); return; }
         var nb = ev.target.closest(".ud-note-btn");
         if (nb) openNoteModal(nb.getAttribute("data-nk"));
       });
