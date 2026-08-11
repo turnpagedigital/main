@@ -74,6 +74,10 @@
   .mg-pill { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 10px; border-radius: 99px; white-space: nowrap; }
   .mg-sync { font-size: 10px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
   .mg-sync.active { color: var(--ok); } .mg-sync.manual { color: var(--warn); } .mg-sync.archived { color: var(--ink-40); }
+  .mg-sync-select { appearance: none; -webkit-appearance: none; background: transparent; border: none; padding: 2px 14px 2px 0; margin: 0; font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; cursor: pointer; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: right 5px top 60%, right 1px top 60%; background-size: 4px 4px, 4px 4px; background-repeat: no-repeat; }
+  .mg-sync-select:focus { outline: 2px solid var(--neon); outline-offset: 1px; }
+  .mg-sync-select[disabled] { opacity: 0.5; cursor: default; background-image: none; }
+  .mg-sync-select option { color: initial; text-transform: none; background: var(--bg); }
 
   .mg-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; height: 28px; padding: 0 11px; display: inline-flex; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; text-decoration: none; transition: background .15s, color .15s, border-color .15s; }
   .mg-btn:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
