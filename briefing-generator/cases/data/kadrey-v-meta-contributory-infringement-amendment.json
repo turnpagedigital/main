@@ -7717,5 +7717,28 @@
     "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=67569326&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=40"
   },
   "claims_administrator": null,
-  "coverage": []
+  "coverage": [
+    {
+      "headline": "AI vs. Authors Update: Court Approves Historic Anthropic Settlement While Meta Litigation Continues",
+      "url": "https://natlawreview.com/article/ai-vs-authors-update-court-approves-historic-anthropic-settlement-while-meta",
+      "source": "National Law Review",
+      "date": "2026-07-28",
+      "summary": "With the Bartz v. Anthropic class action receiving final approval of its $1.5 billion settlement on July 20, 2026, the article contrasts that resolution with the ongoing Kadrey v. Meta case, which remains active through further pleading and discovery. Disputed privilege claims over internal Meta communications about torrenting and uploading copyrighted material have been resolved by a magistrate judge in Meta's favor."
+    },
+    {
+      "headline": "AI in Litigation Series: An Update on AI Copyright Cases in 2026",
+      "url": "https://www.nortonrosefulbright.com/en/knowledge/publications/ce8eaa5f/ai-in-litigation-series-an-update-on-ai-copyright-cases-in-2026",
+      "source": "Norton Rose Fulbright",
+      "date": "2026-07-01",
+      "summary": "Norton Rose Fulbright's litigation update notes that while the court granted partial summary judgment for Meta on fair use grounds regarding LLM training, claims related to reproduction of pirated works during 'seeding' in the torrenting process remain active in the Northern District of California. The piece situates Kadrey among six landmark AI copyright cases reshaping copyright law."
+    },
+    {
+      "headline": "AI Infringement Case Updates: June 18, 2026",
+      "url": "https://www.mckoolsmith.com/newsroom-ailitigation-62",
+      "source": "McKool Smith",
+      "date": "2026-06-18",
+      "summary": "The Kadrey plaintiffs moved to certify summary judgment issues for interlocutory appeal to the Ninth Circuit, arguing that whether acquisition-by-piracy can be excused by an ultimately fair use is an unresolved question and that resolving the divergence between the Kadrey and Bartz rulings is needed. The case's active contributory and distribution claims continue on the existing schedule."
+    }
+  ],
+  "events": []
 }
