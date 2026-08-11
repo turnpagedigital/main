@@ -2424,6 +2424,12 @@
   }
 
   var DUE_ARTIFACT_ICON = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>';
+  // Identical markup to .ud-snz-btn / .ud-del-btn in the table's mark cells \u2014
+  // same icons everywhere "snooze" or "delete" appears as an action.
+  var DUE_SNOOZE_ICON = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var DUE_DELETE_ICON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle"><path d="M3 6h18"/><path d="M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>';
+  var DUE_PAGE_SIZE = 4;
+  var duePage = 0;
 
   function renderDue() {
     var box = document.getElementById("ud-due");
@@ -2434,20 +2440,39 @@
       var rec = NOTES[nk];
       if (rec && rec.snooze_until && rec.snooze_until <= now) due.push({ nk: nk, rec: rec });
     });
-    if (!due.length) { box.style.display = "none"; box.innerHTML = ""; return; }
+    if (!due.length) { box.style.display = "none"; box.innerHTML = ""; duePage = 0; return; }
+
+    var totalPages = Math.ceil(due.length / DUE_PAGE_SIZE);
+    if (duePage >= totalPages) duePage = 0;
+    var pageItems = due.slice(duePage * DUE_PAGE_SIZE, duePage * DUE_PAGE_SIZE + DUE_PAGE_SIZE);
+
+    var pagerHtml = totalPages > 1
+      ? '<div class="ud-due-pager">' +
+          '<button type="button" class="ud-due-pg-btn" data-dir="-1" aria-label="Previous reminders">\u2190</button>' +
+          '<span class="ud-due-pg-count">' + (duePage + 1) + " / " + totalPages + "</span>" +
+          '<button type="button" class="ud-due-pg-btn" data-dir="1" aria-label="Next reminders">\u2192</button>' +
+        "</div>"
+      : "";
 
     // Styled to match the dashboard Notes card (same paper color, title +
     // artifact + date-prefixed body) so a snoozed reminder reads as the same
-    // kind of object as a note, not a separate visual language.
-    var html = ['<div class="ud-due-head"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" style=\"vertical-align:middle\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg> Snoozed reminders \u2014 ' + due.length + " due</div>"];
-    due.forEach(function (d) {
+    // kind of object as a note, not a separate visual language. Up to
+    // DUE_PAGE_SIZE cards show at once, arranged horizontally; the pager
+    // above only appears once there are more than that.
+    var html =
+      '<div class="ud-due-head">' +
+        '<span class="ud-due-head-label"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Snoozed reminders \u2014 ' + due.length + " due</span>" +
+        pagerHtml +
+      "</div>" +
+      '<div class="ud-due-cards">';
+    pageItems.forEach(function (d) {
       var e = findEntryByKey(d.nk);
       var title = e ? e.short : (d.rec.case_name || d.rec.case_slug || "Entry");
       var desc = e ? (e.description || "").slice(0, 180) : (d.rec.snippet || "");
       var artifact = d.rec.entry_number != null ? "Docket No. " + d.rec.entry_number : (d.rec.url ? "News article" : "");
       var readUrl = (e && e.doc_url) || d.rec.url || "";
       var cc = e ? getBg(e.slug, e.default_color) : (d.rec.case_slug ? getBg(d.rec.case_slug, null) : "");
-      html.push(
+      html +=
         '<div class="ud-due-card" style="--cc:' + esc(cc) + '">' +
           '<div class="ud-due-title">' + esc(title) + "</div>" +
           (artifact ? '<div class="ud-due-artifact">' + DUE_ARTIFACT_ICON + esc(artifact) + "</div>" : "") +
@@ -2455,13 +2480,14 @@
             (readUrl ? ' <a class="ud-link" href="' + esc(readUrl) + '" target="_blank" rel="noopener">Read</a>' : "") +
           "</div>" +
           '<div class="ud-due-foot">' +
-            '<button type="button" class="ud-clear-btn ud-due-resnooze" data-nk="' + esc(d.nk) + '">Snooze again</button>' +
-            '<button type="button" class="ud-dd-save-btn ud-due-dismiss" data-nk="' + esc(d.nk) + '">Dismiss</button>' +
+            '<button type="button" class="ud-due-resnooze" data-nk="' + esc(d.nk) + '" title="Snooze again">' + DUE_SNOOZE_ICON + "</button>" +
+            '<button type="button" class="ud-due-dismiss" data-nk="' + esc(d.nk) + '" title="Dismiss">' + DUE_DELETE_ICON + "</button>" +
           "</div>" +
-        "</div>"
-      );
+        "</div>";
     });
-    box.innerHTML = html.join("");
+    html += "</div>";
+
+    box.innerHTML = html;
     box.style.display = "flex";
     box.querySelectorAll(".ud-due-dismiss").forEach(function (b) {
       b.addEventListener("click", function () { setSnooze(b.getAttribute("data-nk"), ""); });
@@ -2470,6 +2496,12 @@
       b.addEventListener("click", function (ev) {
         ev.stopPropagation();
         openSnoozeMenu(b.getAttribute("data-nk"), b);
+      });
+    });
+    box.querySelectorAll(".ud-due-pg-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        duePage = (duePage + Number(b.getAttribute("data-dir")) + totalPages) % totalPages;
+        renderDue();
       });
     });
   }
