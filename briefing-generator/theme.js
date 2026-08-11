@@ -116,6 +116,50 @@
     wireGearMenu();
     wireColResize();
     wirePillFlip();
+    wireMobileNav();
+  }
+
+  // ── Mobile nav — collapse the page links (Dashboard/Docket/Calendar/Notes/
+  // News/Prospects) behind a hamburger under 720px (the breakpoint every
+  // other mobile rule on the site already uses). Injected here, not in each
+  // page's own HTML, so it fixes every page from one file — including the
+  // dashboard, Prospects, Manage, and the 23 case pages, none of which had
+  // ANY mobile nav handling before this (the page links rendered fully
+  // off-screen with no way to reach them on a phone). Keyboard-shortcuts and
+  // text-size controls are hidden at this width too — no keyboard to use
+  // shortcuts with, and phones already have OS-level zoom. ───────────────────
+  function wireMobileNav(){
+    var left=document.querySelector('.tn-left');
+    if(!left||document.getElementById('tn-hamburger'))return;
+    var st=document.createElement('style');
+    st.textContent=
+      '.tn-hamburger{display:none;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:4px;width:32px;height:30px;font-size:16px;line-height:1;cursor:pointer;flex:0 0 auto;}'+
+      '[data-theme="light"] .tn-hamburger{border-color:rgba(10,10,10,0.14);color:#0A0A0A;}'+
+      '@media (max-width:720px){'+
+        '.tn-kbd,#tn-fs{display:none !important;}'+
+        '.tn-hamburger{display:inline-flex;}'+
+        '.tn-left{flex-wrap:nowrap;}'+
+        '.tn-back{display:none;}'+
+        '.tn-left.open{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:2px 20px 12px;z-index:200;border-bottom:1px solid rgba(255,255,255,0.12);}'+
+        '[data-theme="light"] .tn-left.open{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
+        '.tn-left.open .tn-back{display:block;width:100%;padding:12px 0;border-left:none;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}'+
+        '[data-theme="light"] .tn-left.open .tn-back{border-top-color:rgba(10,10,10,0.08);}'+
+      '}';
+    document.head.appendChild(st);
+    var row=document.querySelector('.tn-row');
+    if(row)row.style.position='relative';
+    var btn=document.createElement('button');
+    btn.type='button';
+    btn.className='tn-hamburger';
+    btn.id='tn-hamburger';
+    btn.title='Menu';
+    btn.setAttribute('aria-haspopup','true');
+    btn.setAttribute('aria-label','Menu');
+    btn.textContent='☰';
+    left.appendChild(btn);
+    btn.addEventListener('click',function(e){e.stopPropagation();left.classList.toggle('open');});
+    left.querySelectorAll('.tn-back').forEach(function(a){a.addEventListener('click',function(){left.classList.remove('open');});});
+    document.addEventListener('click',function(e){if(!left.contains(e.target))left.classList.remove('open');});
   }
 
   // ── Case-color pills — flip background/text in dark mode ──────────────────
