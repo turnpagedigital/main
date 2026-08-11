@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-10 23:51 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-11 00:36 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -221,10 +221,6 @@ Note is this leroum ipeum
 ### (no docket number) — 2026-08-06
 
 > U.K. Waves Through $81 Billion Paramount-Warner Bros. Deal — The deal still faces substantial legal challenges in the U.S., where state attorneys general have sued to block the purchase.
-
-### (no docket number) — 2026-08-06
-
-> Apollo to Buy European Budget Airline easyJet for $7.7 Billion — The deal for the British airline caps a weekslong bidding war with American private equity and aircraft leasing group Castlelake.
 
 ## Unknown case
 
