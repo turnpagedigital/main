@@ -8,15 +8,654 @@
     "judge": "Gary S. Katzmann",
     "docket_id": "70394463",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70394463/vos-selections-inc-v-trump/",
+    "date_last_filing": "2026-03-24",
+    "meta_fetched_at": "2026-08-11T19:28:50.562907+00:00",
+    "fetched_at": "2026-08-11T19:28:50.562907+00:00",
+    "as_of": "Aug 11, 2026",
+    "backfilled": false,
     "new_in_72h": 0,
-    "recent": [],
-    "entries": []
+    "recent": [
+      {
+        "entry_number": 175,
+        "date_filed": "2026-03-24",
+        "time_filed": "",
+        "date_display": "Mar 24, 2026",
+        "description": "Certified judgment of the U.S. Supreme Court issued on 03/24/2026 for 25-250. [1155049] [25-1812, 25-1813] [MVH] [Entered: 03/24/2026 10:51 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.175.0.pdf"
+      },
+      {
+        "entry_number": 174,
+        "date_filed": "2026-03-02",
+        "time_filed": "",
+        "date_display": "Mar 2, 2026",
+        "description": "Mandate issued to the United States Court of International Trade. Service as of this date by the Clerk of Court. [1150266] [25-1812, 25-1813] [JCA] [Entered: 03/02/2026 12:19 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.174.0_1.pdf"
+      },
+      {
+        "entry_number": 173,
+        "date_filed": "2026-03-02",
+        "time_filed": "",
+        "date_display": "Mar 2, 2026",
+        "description": "ORDER filed granting motion to issue mandates [169] filed by Appellees and denying [171] motion to stay mandates filed by Appellants. The stay of the mandates entered August 29, 2025, is dissolved. The mandates shall issue forthwith By: En Banc (Per Curiam). Service as of this date by the Clerk of Court. [1150264] [25-1812, 25-1813] [JCA] [Entered: 03/02/2026 12:16 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.173.0_2.pdf"
+      }
+    ],
+    "entries": [
+      {
+        "entry_number": 175,
+        "date_filed": "2026-03-24",
+        "time_filed": "",
+        "date_display": "Mar 24, 2026",
+        "description": "Certified judgment of the U.S. Supreme Court issued on 03/24/2026 for 25-250. [1155049] [25-1812, 25-1813] [MVH] [Entered: 03/24/2026 10:51 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.175.0.pdf"
+      },
+      {
+        "entry_number": 174,
+        "date_filed": "2026-03-02",
+        "time_filed": "",
+        "date_display": "Mar 2, 2026",
+        "description": "Mandate issued to the United States Court of International Trade. Service as of this date by the Clerk of Court. [1150266] [25-1812, 25-1813] [JCA] [Entered: 03/02/2026 12:19 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.174.0_1.pdf"
+      },
+      {
+        "entry_number": 173,
+        "date_filed": "2026-03-02",
+        "time_filed": "",
+        "date_display": "Mar 2, 2026",
+        "description": "ORDER filed granting motion to issue mandates [169] filed by Appellees and denying [171] motion to stay mandates filed by Appellants. The stay of the mandates entered August 29, 2025, is dissolved. The mandates shall issue forthwith By: En Banc (Per Curiam). Service as of this date by the Clerk of Court. [1150264] [25-1812, 25-1813] [JCA] [Entered: 03/02/2026 12:16 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.173.0_2.pdf"
+      },
+      {
+        "entry_number": 172,
+        "date_filed": "2026-03-02",
+        "time_filed": "",
+        "date_display": "Mar 2, 2026",
+        "description": "REPLY of Appellees V.O.S. Selections, Inc., Plastic Services and Products, LLC, MicroKits, LLC, FishUSA Inc. and Terry Precision Cycling LLC to response [171]. Service: 03/02/2026 by email, US mail. [1150177] [25-1812] [Neal Katyal] [Entered: 03/02/2026 10:05 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.172.0.pdf"
+      },
+      {
+        "entry_number": 171,
+        "date_filed": "2026-02-27",
+        "time_filed": "",
+        "date_display": "Feb 27, 2026",
+        "description": "MODIFIED ENTRY: RESPONSE of Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Rodney S. Scott, Donald J. Trump, US, United States Customs and Border Protection and United States Department of Homeland Security to the motion to issue mandate [169] with MOTION to to stay the mandate. Service: 02/27/2026 by email, US mail [1150122]--[Edited 03/02/2026 by JCA - Reason: to correct filing event] [Sophia Shams] [Entered: 02/27/2026 08:47 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.171.0_4.pdf"
+      },
+      {
+        "entry_number": 170,
+        "date_filed": "2026-02-25",
+        "time_filed": "",
+        "date_display": "Feb 25, 2026",
+        "description": "ORDER filed directing a response to the motion to issue mandate [169]. The Appellants are directed to respond to the motion on or before February 27, 2026. By: En Banc (Per Curiam). Service as of this date by the Clerk of Court. [1149506] [JCA] [Entered: 02/25/2026 02:17 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.170.0_2.pdf"
+      },
+      {
+        "entry_number": 169,
+        "date_filed": "2026-02-24",
+        "time_filed": "",
+        "date_display": "Feb 24, 2026",
+        "description": "MOTION of Appellees V.O.S. Selections, Inc., Plastic Services and Products, LLC, MicroKits, LLC, FishUSA Inc. and Terry Precision Cycling LLC to issue mandate. Service: 02/24/2026 by email, US mail. [1149303] [25-1812] [Neal Katyal] [Entered: 02/24/2026 03:52 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.169.0_1.pdf"
+      },
+      {
+        "entry_number": 168,
+        "date_filed": "2026-02-20",
+        "time_filed": "",
+        "date_display": "Feb 20, 2026",
+        "description": "Opinion filed by the U.S. Supreme Court on 02/20/2026 in No. 25-250. The judgment or decision is affirmed. [1148604] [MVH] [Entered: 02/20/2026 05:07 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.168.1.pdf"
+      },
+      {
+        "entry_number": 166,
+        "date_filed": "2025-09-10",
+        "time_filed": "",
+        "date_display": "Sep 10, 2025",
+        "description": "Record sent to the U.S. Supreme Court on 09/10/2025. [1113878] [MVH] [Entered: 09/10/2025 04:27 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.166.1.pdf"
+      },
+      {
+        "entry_number": 165,
+        "date_filed": "2025-09-10",
+        "time_filed": "",
+        "date_display": "Sep 10, 2025",
+        "description": "Letter from the U.S. Supreme Court requesting the entire record and briefs. [1113861] [25-1812, 25-1813] [MVH] [Entered: 09/10/2025 03:11 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.165.0.pdf"
+      },
+      {
+        "entry_number": 167,
+        "date_filed": "2025-09-09",
+        "time_filed": "",
+        "date_display": "Sep 9, 2025",
+        "description": "Notice from the U.S. Supreme Court regarding the order entered 9/9/25. Please see the document for full details. [1114181] [MVH] [Entered: 09/11/2025 03:46 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.167.0.pdf"
+      },
+      {
+        "entry_number": 164,
+        "date_filed": "2025-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2025",
+        "description": "Petition for writ of certiorari filed on 09/03/2025 in the U.S. Supreme Court. No.: 25-250, Donald J. Trump v. Inc. V.O.S. Selections. [1112884] [25-1812, 25-1813] [MVH] [Entered: 09/05/2025 05:12 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.164.0.pdf"
+      },
+      {
+        "entry_number": 163,
+        "date_filed": "2025-09-04",
+        "time_filed": "",
+        "date_display": "Sep 4, 2025",
+        "description": "Letter from Appellants Executive Office of the President, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Rodney S. Scott, US, Donald J. Trump, United States Customs and Border Protection and United States Department of Homeland Security Regarding Filing of Petition for a Writ of Certiorari. Service: 09/04/2025 by email. [1112504] [25-1812] [Brett Shumate] [Entered: 09/04/2025 04:38 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.163.0_3.pdf"
+      },
+      {
+        "entry_number": 162,
+        "date_filed": "2025-09-02",
+        "time_filed": "09:24:15",
+        "date_display": "Sep 2, 2025",
+        "description": "ERRATA to the Precedential Per Curiam Opinion Doc No.: [159]. Service as of this date by the Clerk of Court. [1111629] [25-1812, 25-1813] [MVH] [Entered: 09/02/2025 09:24 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.162.0.pdf"
+      },
+      {
+        "entry_number": 161,
+        "date_filed": "2025-08-29",
+        "time_filed": "",
+        "date_display": "Aug 29, 2025",
+        "description": "ORDER filed withholding the issuance of the mandate. By: En Banc (Per Curiam). Service as of this date by the Clerk of Court. [1111568] [25-1812, 25-1813] [JCA] [Entered: 08/29/2025 05:32 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.161.0_2.pdf"
+      },
+      {
+        "entry_number": 160,
+        "date_filed": "2025-08-29",
+        "time_filed": "17:23:18",
+        "date_display": "Aug 29, 2025",
+        "description": "JUDGMENT. AFFIRMED-IN-PART, VACATED-IN-PART, and REMANDED-IN-PART. Terminated on the merits after oral argument. COSTS: No Costs. Mandate to issue in due course. For information regarding costs, petitions for rehearing, and petitions for writs of certiorari click here. Service as of this date by the Clerk of Court. [1111567] [25-1812, 25-1813] [JCA] [Entered: 08/29/2025 05:23 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.160.0_1.pdf"
+      },
+      {
+        "entry_number": 159,
+        "date_filed": "2025-08-29",
+        "time_filed": "17:21:45",
+        "date_display": "Aug 29, 2025",
+        "description": "OPINION filed for the court Per Curiam. Opinion for the court joined by Circuit Judges Lourie, Dyk, Reyna, Hughes, Stoll, Cunningham, and Stark. Additional views filed by Circuit Judge Cunningham, joined by Circuit Judges Lourie, Reyna, and Stark. Dissenting Opinion filed by Circuit Judge Taranto, joined by Chief Judge Moore and Circuit Judges Prost and Chen. Precedential Per Curiam Opinion. Service as of this date by the Clerk of Court. [1111566] [25-1812, 25-1813]. An Errata to the dissent has issued. See Doc. No. [162] [JCA] [Entered: 08/29/2025 05:21 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.159.0_1.pdf"
+      },
+      {
+        "entry_number": 158,
+        "date_filed": "2025-08-29",
+        "time_filed": "",
+        "date_display": "Aug 29, 2025",
+        "description": "Citation of Supplemental Authority pursuant to Fed. R. App. P. 28(j) for Appellants Executive Office of the President, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Rodney S. Scott, Donald J. Trump, United States Customs and Border Protection, United States Department of Homeland Security and US. Service: 08/29/2025 by email, US mail. [1111473] [25-1812] [Brett Shumate] [Entered: 08/29/2025 12:38 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.158.0_1.pdf"
+      },
+      {
+        "entry_number": 157,
+        "date_filed": "2025-08-14",
+        "time_filed": "",
+        "date_display": "Aug 14, 2025",
+        "description": "Notice from Appellees V.O.S. Selections, Inc., Plastic Services and Products, LLC, Terry Precision Cycling LLC, FishUSA Inc. and MicroKits, LLC Notice of Ezra Louvis to Withdraw as Counsel for Plaintiffs-Appellees. Service: 08/14/2025 by email. [1108423] [25-1812] [Ezra Louvis] [Entered: 08/14/2025 05:48 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.157.0.pdf"
+      },
+      {
+        "entry_number": 156,
+        "date_filed": "2025-08-14",
+        "time_filed": "",
+        "date_display": "Aug 14, 2025",
+        "description": "26 paper copies of Doc. No. [65] received from Amicus Curiae Crutchfield Corporation. [1108408] [CDL] [Entered: 08/14/2025 04:43 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-08-14",
+        "time_filed": "",
+        "date_display": "Aug 14, 2025",
+        "description": "26 paper copies of Doc. No. 65 received from Amicus Curiae Crutchfield Corporation. 1108408 [CDL]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 155,
+        "date_filed": "2025-08-12",
+        "time_filed": "",
+        "date_display": "Aug 12, 2025",
+        "description": "RESPONSE of Appellees V.O.S. Selections, Inc., FishUSA Inc., MicroKits, LLC, Plastic Services and Products, LLC and Terry Precision Cycling LLC to Doc No. [154]. Service: 08/12/2025 by email, US mail. [1107830] [25-1812] [Michael McConnell] [Entered: 08/12/2025 05:38 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.155.0_2.pdf"
+      },
+      {
+        "entry_number": 154,
+        "date_filed": "2025-08-11",
+        "time_filed": "",
+        "date_display": "Aug 11, 2025",
+        "description": "Citation of Supplemental Authority pursuant to Fed. R. App. P. 28(j) for Appellants Executive Office of the President, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Rodney S. Scott, Donald J. Trump, United States Customs and Border Protection, United States Department of Homeland Security and US. Service: 08/11/2025 by email. [1107340] [25-1812] [Brett Shumate] [Entered: 08/11/2025 10:39 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.154.0_1.pdf"
+      },
+      {
+        "entry_number": 153,
+        "date_filed": "2025-07-31",
+        "time_filed": "",
+        "date_display": "Jul 31, 2025",
+        "description": "Submitted after ORAL ARGUMENT to Panel: Moore, Chief Judge; Lourie, Circuit Judge; Dyk, Circuit Judge; Prost, Circuit Judge; Reyna, Circuit Judge; Taranto, Circuit Judge; Chen, Circuit Judge; Hughes, Circuit Judge; Stoll, Circuit Judge; Cunningham, Circuit Judge and Stark, Circuit Judge.Arguing counsel: Mr. Brett Shumate for US, United States Customs and Border Protection, United States Department of Homeland Security, Office of the United States Trade Representative, Donald J. Trump, Kristi Noem, Executive Office of the President, Jamieson Greer, Howard Lutnick and Rodney S. Scott, Mr. Benjamin N. Gutman for State of Oregon and Mr. Neal Kumar Katyal for V.O.S. Selections, Inc., Plastic Services and Products, LLC, MicroKits, LLC, FishUSA Inc. and Terry Precision Cycling LLC.Oral Argument Audio available here. [1105669] [MVH] [Entered: 07/31/2025 12:59 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 152,
+        "date_filed": "2025-07-23",
+        "time_filed": "",
+        "date_display": "Jul 23, 2025",
+        "description": "Official caption revised to substitute Rodney S. Scott, Commissioner for U.S. Customs and Border Protection, as appellant. (see attached). Service as of this date by the Clerk of Court. [1103909] [25-1812, 25-1813] [MVH] [Entered: 07/23/2025 09:23 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.152.0.pdf"
+      },
+      {
+        "entry_number": 151,
+        "date_filed": "2025-07-21",
+        "time_filed": "",
+        "date_display": "Jul 21, 2025",
+        "description": "ORDER filed denying [146] motion for leave to file reply brief filed by Amicus Curiae America First Policy Institute. By: Merits Panel (Per Curiam). Service as of this date by the Clerk of Court. [1103554] [JCA] [Entered: 07/21/2025 05:18 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.151.0.pdf"
+      },
+      {
+        "entry_number": 150,
+        "date_filed": "2025-07-21",
+        "time_filed": "",
+        "date_display": "Jul 21, 2025",
+        "description": "26 paper copies of Doc. No. [148] received from Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Donald J. Trump, US, United States Customs and Border Protection and United States Department of Homeland Security. [1103543] [CDL] [Entered: 07/21/2025 04:40 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 149,
+        "date_filed": "2025-07-21",
+        "time_filed": "",
+        "date_display": "Jul 21, 2025",
+        "description": "26 paper copies of Doc. No. [147] received from Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Donald J. Trump, US, United States Customs and Border Protection and United States Department of Homeland Security. [1103388] [MVH] [Entered: 07/21/2025 12:29 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-21",
+        "time_filed": "",
+        "date_display": "Jul 21, 2025",
+        "description": "26 paper copies of Doc. No. 148 received from Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Donald J. Trump, US, United States Customs and Border Protection and United States Department of Homeland Security. 1103543 [CDL]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 148,
+        "date_filed": "2025-07-20",
+        "time_filed": "",
+        "date_display": "Jul 20, 2025",
+        "description": "MODIFIED ENTRY: APPENDIX FILED by Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Donald J. Trump, US, United States Customs and Border Protection and United States Department of Homeland Security. Service: 07/20/2025 by email. [1103294] --[Edited 07/21/2025 by MMA - Reason: compliance review complete] [Daniel Winik] [Entered: 07/20/2025 09:36 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.148.0_1.pdf"
+      },
+      {
+        "entry_number": 147,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "MODIFIED ENTRY: REPLY BRIEF FILED by Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Donald J. Trump, US, United States Customs and Border Protection and United States Department of Homeland Security. Service: 07/18/2025 by email. [1103265] --[Edited 07/21/2025 by MMA - Reason: compliance review complete] [Daniel Winik] [Entered: 07/18/2025 05:15 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.147.0.pdf"
+      },
+      {
+        "entry_number": 146,
+        "date_filed": "2025-07-18",
+        "time_filed": "",
+        "date_display": "Jul 18, 2025",
+        "description": "MOTION of Amicus Curiae America First Policy Institute Permission to File Reply Brief Amicus Curiae. Service: 07/18/2025 by email. [1103238] [25-1812] [Jed Rubenfeld] [Entered: 07/18/2025 04:02 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.146.1.pdf"
+      },
+      {
+        "entry_number": 145,
+        "date_filed": "2025-07-16",
+        "time_filed": "",
+        "date_display": "Jul 16, 2025",
+        "description": "26 paper copies of Doc. No. [108] received from Amici Curiae Chamber of Commerce of the United States of America and Consumer Technology Association. [1102841] [CDL] [Entered: 07/16/2025 05:04 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-16",
+        "time_filed": "",
+        "date_display": "Jul 16, 2025",
+        "description": "26 paper copies of Doc. No. 108 received from Amici Curiae Chamber of Commerce of the United States of America and Consumer Technology Association. 1102841 [CDL]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-15",
+        "time_filed": "",
+        "date_display": "Jul 15, 2025",
+        "description": "26 paper copies of Doc. No. 106 received from Amicus Curiae Former Government Officials and Legal Scholars. 1102515 [CDL]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 144,
+        "date_filed": "2025-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2025",
+        "description": "26 paper copies of Doc. No. [106] received from Amicus Curiae Former Government Officials and Legal Scholars. [1102515] [CDL] [Entered: 07/15/2025 04:42 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 143,
+        "date_filed": "2025-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2025",
+        "description": "26 paper copies of Doc. No. [101] received from Amici Curiae Dallas Market Center and Goldwater Institute. [1102337] [CDL] [Entered: 07/15/2025 11:40 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 142,
+        "date_filed": "2025-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2025",
+        "description": "26 paper copies of Doc. No. [103] received from Amici Curiae 191 Members of the United States Congress. [1102333]--[Edited 07/15/2025 by CDL] [CDL] [Entered: 07/15/2025 11:39 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 141,
+        "date_filed": "2025-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2025",
+        "description": "Response to notice of oral argument from Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Donald J. Trump, United States Customs and Border Protection, United States Department of Homeland Security and US. Service: 07/14/2025 by email, US mail. [1101941] [25-1812] [Brett Shumate] [Entered: 07/14/2025 11:49 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.141.0.pdf"
+      },
+      {
+        "entry_number": 140,
+        "date_filed": "2025-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2025",
+        "description": "Entry of Appearance for Brett A. Shumate as counsel for Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Kristi Noem, Office of the United States Trade Representative, Donald J. Trump, United States Customs and Border Protection, United States Customs and Border Protection, United States Department of Homeland Security and US. Service: 07/14/2025 by email. [1101905] [25-1812] [Brett Shumate] [Entered: 07/14/2025 10:37 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-14",
+        "time_filed": "",
+        "date_display": "Jul 14, 2025",
+        "description": "26 paper copies of Doc. No. 101 received from Amici Curiae Dallas Market Center and Goldwater Institute. 1102337 [CDL]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 139,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "ORDER filed denying as moot motion for leave to file an amicus curiae brief [50]. By: Per Curiam. Service as of this date by the Clerk of Court. [1101762] [MVH] [Entered: 07/11/2025 04:06 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.139.0.pdf"
+      },
+      {
+        "entry_number": 138,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "26 paper copies of Doc. No. [90] received from Amici Curiae George F. Allen, Joshua A. Claybourn, John C. Danforth, Richard A. Epstein, Charles T. Hagel, Harold Hongju Koh, Gerard N. Magliocca, Michael B. Mukasey, Alan O. Sykes, John Daniel Tinder, Alexander Volokh, Peter J. Wallison and Philip Zelikow. [1101680] [JCP] [Entered: 07/11/2025 01:44 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 137,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "26 paper copies of Doc. No. [98] received from Amici Curiae Advancing American Freedom, Inc., Frontline Policy Council, Independent Institute, Mountain States Policy Center, Rio Grande Foundation and Paul Stam. [1101678] [JCP] [Entered: 07/11/2025 01:40 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 136,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "26 paper copies of Doc. No. [104] received from Amici Curiae Vikram David Amar and Mickey Edwards. [1101676] [JCP] [Entered: 07/11/2025 01:34 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 135,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "20 paper copies of Doc. No. [84] received from Amicus Curiae Peter W. Sage. [1101674] [JCP] [Entered: 07/11/2025 01:32 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 133,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "26 paper copies of Doc. No. [80] received from Amicus Curiae Cato Institute. [1101657] [JCP] [Entered: 07/11/2025 12:15 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 132,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "Entry of Appearance for J. Marc Wheat; Timothy Harper as counsel for Amici Curiae Advancing American Freedom, Inc., Paul Stam, Frontline Policy Council, Independent Institute, Mountain States Policy Center and Rio Grande Foundation. Service: 07/11/2025 by email, US mail. [1101595] [25-1812] [Timothy Harper] [Entered: 07/11/2025 08:17 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-11",
+        "time_filed": "",
+        "date_display": "Jul 11, 2025",
+        "description": "26 paper copies of Doc. No. 90 received from Amici Curiae George F. Allen, Joshua A. Claybourn, John C. Danforth, Richard A. Epstein, Charles T. Hagel, Harold Hongju Koh, Gerard N. Magliocca, Michael B. Mukasey, Alan O. Sykes, John Daniel Tinder, Alexander Volokh, Peter J. Wallison and Philip Zelikow. 1101680 [JCP]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 131,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "26 paper copies of Doc. No. [115] received from Amicus Curiae Brennan Center for Justice at NYU School of Law. [1101590] [JCP] [Entered: 07/11/2025 07:29 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 130,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "26 paper copies of Doc. No. [119] received from Amici Curiae Daron Acemoglu, Andrew G. Biggs, Alex Brill, Daniel Bunn, James C. Capretta, Kimberly Clausing, Steven Davis, Mihir A. Desai, Karen Dynan, Douglas Elmendorf, Jason Furman, Samuel Gregg, Keith Hall, Kyle Handley, Ben Harris, Douglas Holtz-Eakin, Steven B. Kamin, Mary E. Lovely, Philip A. Luck, N. Gregory Mankiw, Jeffrey Miron, Brent Neiman, Kyle Pomerleau, Michael R. Strain, Stan Veuger, Alan D. Viard, Mark J. Warshawsky and Owen Zidar. [1101482] [JCP] [Entered: 07/10/2025 03:01 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 128,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "CLERK'S OFFICE QUALITY CONTROL MESSAGE: re: Doc No. [127], ERROR: Insufficient number of copies received for amicus brief (6 copies received). CORRECTION: Per Fed. Cir. R. 25(c)(3), 20 additional copies of the amicus brief should be submitted. THIS MESSAGE IS FOR INFORMATIONAL PURPOSES ONLY. [1101395] [JCP] [Entered: 07/10/2025 12:32 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 127,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "6 paper copies of Doc. No. [84] received from Amicus Curiae Peter W. Sage. [1101394] [JCP] [Entered: 07/10/2025 12:27 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 126,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "26 paper copies of Doc. No. [81] received from Amicus Curiae Institute for Policy Integrity at NYU School of Law. [1101392] [JCP] [Entered: 07/10/2025 12:24 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 125,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "26 paper copies of Doc. No. [97] received from Amici Curiae 300 Below, Inc., KingSeal Corp., Mischief, LLC, Princess Awesome, LLC, Reclamation Studio, LLC, Rookie Mage Games, LLC, Spielcraft Games, LLC, Stonemaier, LLC, Tinkerhouse, Inc., Upward Glance, LLC and XYZ Game Labs, Inc. [1101390] [JCP] [Entered: 07/10/2025 12:21 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 124,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "26 paper copies of Doc. No. [99] received from Amicus Curiae New Civil Liberties Alliance. [1101386] [JCP] [Entered: 07/10/2025 12:06 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 123,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "26 paper copies of Doc. No. [100] received from Appellees State of Arizona, State of Colorado, State of Connecticut, State of Delaware, State of Illinois, State of Maine, State of Minnesota, State of Nevada, State of New Mexico, State of New York, State of Oregon and State of Vermont. [1101381] [JCP] [Entered: 07/10/2025 11:56 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 122,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "26 paper copies of Doc. No. [78] received from Amicus Curiae Consumer Watchdog. [1101327] [JCP] [Entered: 07/10/2025 10:45 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "26 paper copies of Doc. No. 92 received from Appellees FishUSA Inc., MicroKits, LLC, Plastic Services and Products, LLC, Terry Precision Cycling LLC and V.O.S. Selections, Inc. 1101671 [JCP]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": null,
+        "date_filed": "2025-07-10",
+        "time_filed": "",
+        "date_display": "Jul 10, 2025",
+        "description": "CLERK'S OFFICE QUALITY CONTROL MESSAGE: re: Doc No. 127, ERROR: Insufficient number of copies received for amicus brief (6 copies received). CORRECTION: Per Fed. Cir. R. 25(c)(3), 20 additional copies of the amicus brief should be submitted. THIS MESSAGE IS FOR INFORMATIONAL PURPOSES ONLY. 1101395 [JCP]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      }
+    ],
+    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70394463&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=4"
   },
   "claims_administrator": null,
   "coverage": []
