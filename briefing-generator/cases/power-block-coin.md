@@ -3,7 +3,7 @@ slug: power-block-coin
 display_name: Power Block Coin
 type: case
 status: active
-sync: manual
+sync: archived
 topics:
   - crypto-insolvency
   - fraud-recovery
