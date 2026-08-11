@@ -18,7 +18,7 @@ import { getFileFromGitHub, commitFileToGitHub } from "../../api/admin/_github.j
 const PREFS_PATH = "briefing-generator/intel-prefs.json";
 
 function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main"; }
-function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
+function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || env.GITHUB_BRANCH || "dev"; }
 
 const HEX = /^#[0-9a-fA-F]{6}$/;
 
