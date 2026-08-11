@@ -8,16 +8,12 @@
     "judge": "Robert Mark",
     "docket_id": "72497647",
     "status": "active",
-    "court_id": ""
+    "sync": "manual"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72497647/goliath-ventures-inc/",
-    "date_last_filing": "2026-07-28",
-    "fetched_at": "2026-08-10T22:59:19.222371+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -333,7 +329,11 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-07-28",
+    "fetched_at": "2026-08-10T22:59:19.222371+00:00",
+    "as_of": "Aug 10, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
   "coverage": [
@@ -364,56 +364,6 @@
       "source": "Daily Business Review (Law.com / ALM)",
       "date": "2026-03-03",
       "summary": "A Broward Circuit Court approved the motion to appoint Michael Budwick of Meland Budwick as receiver over collapsed cryptocurrency hedge fund Goliath Ventures. The receiver subsequently filed Chapter 11 bankruptcy petitions for both Goliath entities on March 16, 2026."
-    }
-  ],
-  "events": [
-    {
-      "title": "Governmental Units Proof of Claim Filing Deadline — Goliath Ventures Inc. (Case No. 26-13174-RAM)",
-      "date": "2026-09-14",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://www.dehek.com/wp-content/uploads/2026/03/Goliath_Ventures_Inc__flsbke-26-13174__0010.0.pdf",
-      "source": "U.S. Bankruptcy Court, S.D. Florida — Official Notice of Chapter 11 Case"
-    },
-    {
-      "title": "Proof of Claim Bar Date — Goliath Ventures Chapter 11 (Case No. 26-13174-RAM)",
-      "date": "2026-09-30",
-      "time": "05:00 PM ET",
-      "kind": "Deadline",
-      "url": "https://goliathventuresbk.com/",
-      "source": "Meland Budwick, P.A. / Goliath Ventures Bankruptcy Case Website"
-    },
-    {
-      "title": "Goliath Ventures Proof of Claim Bar Date (Extended Claims Deadline)",
-      "date": "2026-09-30",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://www.dehek.com/general/scam-fraud-investigations/goliath-ventures-us-bankruptcy-hearing-328m-collapse-victim-questions-answered-explained/",
-      "source": "U.S. Bankruptcy Court, S.D. Florida (via dehek.com)"
-    },
-    {
-      "title": "Sentencing Hearing — United States v. Christopher Alexander Delgado",
-      "date": "2026-10-08",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://www.coindesk.com/policy/2026/07/01/goliath-ventures-ceo-pleads-guilty-in-usd400-million-crypto-ponzi-case",
-      "source": "U.S. Attorney's Office, Middle District of Florida"
-    },
-    {
-      "title": "Sentencing Hearing — United States v. Christopher Alexander Delgado (related criminal matter, M.D. Fla.)",
-      "date": "2026-10-08",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://www.justice.gov/usao-mdfl/pr/goliath-ventures-ceo-pleads-guilty-cryptocurrency-fraud-scheme-conspiracy",
-      "source": "U.S. Attorney's Office, Middle District of Florida"
-    },
-    {
-      "title": "United States v. Christopher Alexander Delgado — Sentencing Hearing",
-      "date": "2026-10-08",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://www.justice.gov/usao-mdfl/goliath_ventures",
-      "source": "U.S. Attorney's Office, Middle District of Florida"
     }
   ]
 }
