@@ -106,7 +106,6 @@
   var ALL = [];
   var activeCases = {};
   var entryFilter = "all";
-  var newOnly = false;
   var rowKind = "articles";  // pinned — this page is the news side of the split
   var bmOnly = false;
   var noteOnly = false;
@@ -157,7 +156,6 @@
     try {
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.entryFilter)   entryFilter   = s.entryFilter;
-      if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
       if (typeof s.relatedOnly === "boolean" && s.relV === 2) relatedOnly = s.relatedOnly;
       rowKind = "articles";
       if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
@@ -177,7 +175,6 @@
         relV:           2,
         relatedOnly:    relatedOnly,
         entryFilter:    entryFilter,
-        newOnly:        newOnly,
         rowKind:        rowKind,
         bmOnly:         bmOnly,
         noteOnly:       noteOnly,
@@ -352,7 +349,6 @@
         if (bmOnly && !(mrec && mrec.bookmarked)) return false;
         if (noteOnly && !(mrec && (mrec.note || "").trim())) return false;
       }
-      if (newOnly && !e.is_new) return false;
       // Searching reaches the whole store (same rule as archived items).
       if (relatedOnly && !searchText.trim() && e.is_article && !e.slug && !e.group_name && !e.theme_slug) return false;
       // Entry-type filters only apply to docket entries — the Articles
@@ -2958,17 +2954,6 @@
       });
     }
 
-    // New-only checkbox
-    var newCb = document.getElementById("ud-new-only");
-    if (newCb) {
-      newCb.checked = newOnly;
-      newCb.addEventListener("change", function () {
-        newOnly = newCb.checked;
-        saveFilterState();
-        render();
-      });
-    }
-
     // Search input (not persisted — too transient)
     var searchInput = document.getElementById("ud-search");
     if (searchInput) {
@@ -2996,7 +2981,7 @@
 
     // Docket-style lookback menu on the Time header.
     function applyCustomVisibility() {
-      var dr = document.getElementById("ud-daterange");
+      var dr = document.getElementById("ud-date-range");
       if (dr) dr.style.display = lookback === "custom" ? "" : "none";
     }
     var LB_LABELS = { "24h": "Last 24 hours", "7d": "Last 7 days", "30d": "Last 30 days", "90d": "Last 90 days", all: "All time", custom: "Custom range" };

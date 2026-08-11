@@ -102,7 +102,6 @@
   var ALL = [];
   var activeCases = {};
   var entryFilter = "all";
-  var newOnly = false;
   var rowKind = "both";  // both | filings | articles
   var bmOnly = false;
   var noteOnly = false;
@@ -168,7 +167,6 @@
     try {
       var s = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
       if (s.entryFilter)   entryFilter   = s.entryFilter;
-      if (typeof s.newOnly === "boolean") newOnly = s.newOnly;
       if (s.rowKind === "both" || s.rowKind === "filings" || s.rowKind === "articles") rowKind = s.rowKind;
       else if (s.showArticles === false) rowKind = "filings";  // migrate the retired checkbox
       if (typeof s.bmOnly === "boolean") bmOnly = s.bmOnly;
@@ -188,7 +186,6 @@
     try {
       localStorage.setItem(FILTER_KEY, JSON.stringify({
         entryFilter:    entryFilter,
-        newOnly:        newOnly,
         rowKind:        rowKind,
         bmOnly:         bmOnly,
         noteOnly:       noteOnly,
@@ -362,7 +359,6 @@
         if (docFilter === "with" && !hasDoc) return false;
         if (docFilter === "without" && hasDoc) return false;
       }
-      if (newOnly && !e.is_new) return false;
       // Entry-type filters only apply to docket entries — the Articles
       // checkbox is the sole gate for news rows.
       if (!e.is_article) {
@@ -3142,17 +3138,6 @@
       rowKindSel.value = rowKind;
       rowKindSel.addEventListener("change", function () {
         rowKind = rowKindSel.value;
-        saveFilterState();
-        render();
-      });
-    }
-
-    // New-only checkbox
-    var newCb = document.getElementById("ud-new-only");
-    if (newCb) {
-      newCb.checked = newOnly;
-      newCb.addEventListener("change", function () {
-        newOnly = newCb.checked;
         saveFilterState();
         render();
       });
