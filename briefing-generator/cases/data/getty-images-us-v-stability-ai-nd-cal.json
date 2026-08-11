@@ -2,23 +2,18 @@
   "case": {
     "slug": "getty-images-us-v-stability-ai-nd-cal",
     "display_name": "Getty Images (US) v. Stability AI (N.D. Cal.)",
-    "case_name": "Getty Images (US), Inc. v. Stability AI, Ltd.",
+    "case_name": "Getty Images (US), Inc. v. Stability AI, Inc. et al.",
     "court": "U.S. District Court for the Northern District of California",
     "case_number": "3:25-cv-06891",
     "judge": "Trina L. Thompson",
     "docket_id": "71112094",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
-    "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-10T22:59:12.453587+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -883,18 +878,12 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.454636/gov.uscourts.cand.454636.1.0.pdf"
       }
-    ]
+    ],
+    "date_last_filing": "2026-08-06",
+    "fetched_at": "2026-08-10T22:59:12.453587+00:00",
+    "as_of": "Aug 10, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
-  "coverage": [],
-  "events": [
-    {
-      "title": "Further Case Management Conference — Getty Images v. Stability AI (3:25-cv-06891)",
-      "date": "2026-11-05",
-      "time": "02:00 PM PT",
-      "kind": "Call",
-      "url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
-      "source": "U.S. District Court for the Northern District of California (Judge Trina L. Thompson)"
-    }
-  ]
+  "coverage": []
 }
