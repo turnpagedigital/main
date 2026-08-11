@@ -295,14 +295,23 @@
   .ud-pal-empty{padding:12px 14px;font-size:13px;color:var(--ink-60);}
   .ud-pal-hint{padding:7px 14px;font-size:10.5px;color:var(--ink-60);border-top:1px solid var(--line-strong);letter-spacing:0.03em;}
   .ud-rename-input{width:100%;font-family:inherit;font-size:13px;padding:5px 7px;border:1.5px solid var(--neon);background:var(--surface);color:var(--ink);box-sizing:border-box;}
-  .ud-due{background:rgba(212,255,0,0.5);padding:14px 18px;margin-bottom:14px;display:flex;flex-direction:column;gap:10px;border-radius:10px;}
-  [data-theme="dark"] .ud-due{background:rgba(212,255,0,0.22);color:#F4F5F7;}
+  .ud-due{background:transparent;padding:0;margin-bottom:14px;display:flex;flex-direction:column;gap:12px;}
   .ud-due-head{font-size:11px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-60);}
-  .ud-due-card{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-top:1px solid var(--line);}
-  .ud-due-card:first-of-type{border-top:none;}
-  .ud-due-body{flex:1;font-size:13.5px;line-height:1.5;}
-  .ud-due-meta{font-size:12px;color:var(--ink-60);margin-bottom:3px;}
-  .ud-due-actions{display:flex;gap:8px;flex-shrink:0;align-items:center;}
+  /* Each snoozed reminder is styled to match the dashboard Notes card exactly
+     — same paper color, title + artifact + date-prefixed body — so a due
+     reminder reads as the same kind of object as a note. */
+  .ud-due-card{background:#EEFFA3;border-top:4px solid var(--cc, transparent);border-radius:14px;padding:14px 17px;box-shadow:0 6px 10px -7px rgba(10,10,10,0.4);}
+  [data-theme="dark"] .ud-due-card{background:#2B2723;box-shadow:0 6px 14px -7px rgba(0,0,0,0.7);}
+  .ud-due-title{font-size:15px;font-weight:800;color:#21201A;padding-bottom:7px;margin-bottom:10px;border-bottom:1px solid rgba(10,10,10,0.14);}
+  .ud-due-artifact{display:flex;align-items:center;gap:6px;font-size:12px;font-style:italic;color:rgba(10,10,10,0.5);margin-bottom:10px;}
+  .ud-due-artifact svg{flex:0 0 auto;opacity:0.8;}
+  .ud-due-body{font-size:13px;line-height:1.55;color:#21201A;opacity:0.8;}
+  .ud-due-body strong{opacity:1;}
+  [data-theme="dark"] .ud-due-title{color:#EDE7DE;border-bottom-color:rgba(237,231,222,0.16);}
+  [data-theme="dark"] .ud-due-artifact{color:rgba(237,231,222,0.55);}
+  [data-theme="dark"] .ud-due-body{color:#EDE7DE;}
+  .ud-due-foot{display:flex;gap:8px;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid rgba(10,10,10,0.1);}
+  [data-theme="dark"] .ud-due-foot{border-top-color:rgba(237,231,222,0.12);}
   .ud-case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;}
   .ud-case-grid label{display:flex;flex-direction:column;gap:4px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-60);}
   .ud-case-grid input,.ud-case-grid textarea{font-size:13.5px;}
@@ -361,8 +370,6 @@
     .ud-case-grid{grid-template-columns:1fr;}
     .ud-src-add{flex-wrap:wrap;}
     .ud-src-add input{flex:1 1 100% !important;}
-    .ud-due{padding:12px;}
-    .ud-due-card{flex-direction:column;gap:8px;}
     .ud-note-box{padding:16px;}
     .uc-merge-bar{flex-wrap:wrap;}
   }

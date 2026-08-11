@@ -253,6 +253,16 @@
     return "";
   }
 
+  // Sortable moment string — full ISO for feed items (published_at already
+  // carries a time), date+time_filed for docket entries that have a court
+  // time, otherwise just the bare date so undated-time entries still land in
+  // the right day but sort after their same-day, time-stamped neighbors.
+  function entryMoment(e) {
+    if (e.published_at) return e.published_at;
+    if (e.date_filed && e.time_filed) return e.date_filed + "T" + e.time_filed;
+    return e.date_filed || "";
+  }
+
   function fmtDisplayDate(iso) {
     var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
     if (!m) return iso || "";
@@ -374,9 +384,11 @@
     });
     list.sort(function (a, b) {
       if (!a.date_filed !== !b.date_filed) return a.date_filed ? -1 : 1;
-      var cmp = a.date_filed < b.date_filed ? -1 : a.date_filed > b.date_filed ? 1 : 0;
+      var am = entryMoment(a), bm = entryMoment(b);
+      var cmp = am < bm ? -1 : am > bm ? 1 : 0;
       if (cmp === 0 && a.slug === b.slug) {
-        // Same day, same case → docket number decides (filing order within the day)
+        // Same moment (or same day with neither timestamped), same case →
+        // docket number decides (filing order within the day)
         var an = a.entry_number == null ? -Infinity : Number(a.entry_number);
         var bn = b.entry_number == null ? -Infinity : Number(b.entry_number);
         if (isNaN(an)) an = -Infinity;
@@ -2411,6 +2423,8 @@
     }
   }
 
+  var DUE_ARTIFACT_ICON = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>';
+
   function renderDue() {
     var box = document.getElementById("ud-due");
     if (!box) return;
@@ -2422,20 +2436,25 @@
     });
     if (!due.length) { box.style.display = "none"; box.innerHTML = ""; return; }
 
+    // Styled to match the dashboard Notes card (same paper color, title +
+    // artifact + date-prefixed body) so a snoozed reminder reads as the same
+    // kind of object as a note, not a separate visual language.
     var html = ['<div class="ud-due-head"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" style=\"vertical-align:middle\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg> Snoozed reminders \u2014 ' + due.length + " due</div>"];
     due.forEach(function (d) {
       var e = findEntryByKey(d.nk);
-      var label = e
-        ? e.short + " \u00b7 " + (e.date_display || "") + " \u2014 " + (e.description || "").slice(0, 180)
-        : (d.rec.case_name || d.rec.case_slug || "Entry") + " \u2014 " + (d.rec.snippet || "");
+      var title = e ? e.short : (d.rec.case_name || d.rec.case_slug || "Entry");
+      var desc = e ? (e.description || "").slice(0, 180) : (d.rec.snippet || "");
+      var artifact = d.rec.entry_number != null ? "Docket No. " + d.rec.entry_number : (d.rec.url ? "News article" : "");
+      var readUrl = (e && e.doc_url) || d.rec.url || "";
+      var cc = e ? getBg(e.slug, e.default_color) : (d.rec.case_slug ? getBg(d.rec.case_slug, null) : "");
       html.push(
-        '<div class="ud-due-card">' +
-          '<div class="ud-due-body">' +
-            '<div class="ud-due-meta">Due ' + esc(new Date(d.rec.snooze_until).toLocaleString()) + "</div>" +
-            esc(label) +
-            (e && e.doc_url ? ' \u00b7 <a class="ud-link" href="' + esc(e.doc_url) + '" target="_blank" rel="noopener">Read</a>' : "") +
+        '<div class="ud-due-card" style="--cc:' + esc(cc) + '">' +
+          '<div class="ud-due-title">' + esc(title) + "</div>" +
+          (artifact ? '<div class="ud-due-artifact">' + DUE_ARTIFACT_ICON + esc(artifact) + "</div>" : "") +
+          '<div class="ud-due-body"><strong>Due ' + esc(new Date(d.rec.snooze_until).toLocaleString()) + "</strong> \u2014 " + esc(desc) +
+            (readUrl ? ' <a class="ud-link" href="' + esc(readUrl) + '" target="_blank" rel="noopener">Read</a>' : "") +
           "</div>" +
-          '<div class="ud-due-actions">' +
+          '<div class="ud-due-foot">' +
             '<button type="button" class="ud-clear-btn ud-due-resnooze" data-nk="' + esc(d.nk) + '">Snooze again</button>' +
             '<button type="button" class="ud-dd-save-btn ud-due-dismiss" data-nk="' + esc(d.nk) + '">Dismiss</button>' +
           "</div>" +
