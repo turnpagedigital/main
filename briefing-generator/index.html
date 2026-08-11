@@ -297,7 +297,7 @@
     .ih-grp-head span { font-size: 11px; color: var(--ink-40); font-weight: 700; letter-spacing: 0.04em; }
     .ih-grp-hint { grid-column: 1 / -1; font-size: 12px; color: var(--ink-40); padding: 4px 0 2px; }
     /* Prospects tile */
-    .ih-prospect-row { display: flex; gap: 10px; align-items: center; padding: 8px 18px; border-bottom: 1px solid var(--line); }
+    .ih-prospect-row { display: flex; gap: 10px; align-items: center; padding: 14px 18px; border-bottom: 1px solid var(--line); }
     .ih-prospect-row:last-child { border-bottom: none; }
     [data-theme="dark"] .ih-prospect-row { border-bottom-color: var(--bg); }
     .ih-prospect-main { flex: 1; min-width: 0; }
@@ -406,13 +406,16 @@
     [data-theme="dark"] .ih-note-link .title { color: #EDE7DE; border-bottom-color: rgba(237,231,222,0.16); }
     [data-theme="dark"] .ih-note-link .artifact { color: rgba(237,231,222,0.55); }
     [data-theme="dark"] .ih-note-link .body { color: #EDE7DE; }
-    .ih-note-foot { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 10px 14px; }
-    .ih-note-nav { background: none; border: none; cursor: pointer; font-size: 15px; color: rgba(10,10,10,0.5); padding: 4px 6px; line-height: 1; }
+    /* space-between pins the arrows to the outside corners so they hold
+       still — only the counter text between them grows/shrinks with the
+       case name's length. */
+    .ih-note-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; }
+    .ih-note-nav { flex: 0 0 auto; background: none; border: none; cursor: pointer; font-size: 15px; color: rgba(10,10,10,0.5); padding: 4px 6px; line-height: 1; }
     .ih-note-nav:hover:not(:disabled) { color: #21201A; }
     .ih-note-nav:disabled { opacity: 0.3; cursor: default; }
     [data-theme="dark"] .ih-note-nav { color: rgba(237,231,222,0.45); }
     [data-theme="dark"] .ih-note-nav:hover:not(:disabled) { color: #EDE7DE; }
-    .ih-note-counter { font-size: 11px; font-weight: 700; color: rgba(10,10,10,0.58); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ih-note-counter { flex: 1; min-width: 0; text-align: center; font-size: 11px; font-weight: 700; color: rgba(10,10,10,0.58); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     [data-theme="dark"] .ih-note-counter { color: rgba(237,231,222,0.6); }
     .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 17px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
