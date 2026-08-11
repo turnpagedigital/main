@@ -3,7 +3,7 @@ slug: concord-anthropic
 display_name: Concord v. Anthropic
 type: case
 status: active
-sync: active
+sync: manual
 topics:
   - llm-class-action
 case:
