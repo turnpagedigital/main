@@ -121,6 +121,10 @@
     "rndc": {
       "bg": "#ff7c70",
       "fg": "#000000"
+    },
+    "vos-selections-v-trump": {
+      "bg": "#cccccc",
+      "fg": "#000000"
     }
   },
   "groups": [
