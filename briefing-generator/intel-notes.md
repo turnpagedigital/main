@@ -78,12 +78,6 @@ hi
 
 Ciao
 
-## New Filing
-
-### (no docket number) — 2026-07-23 ★
-
-> The Preference Wave Is Coming- What Vendors Should Do Now — If you sold goods or services to a customer that filed Chapter 11 in the last two years, the window to prepare is right now. It closes the d
-
 ## Omnis Pleasants
 
 ### (no docket number) — 2026-08-05
