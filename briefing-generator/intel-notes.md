@@ -128,10 +128,6 @@ Note is this leroum ipeum
 
 ## Terraform Labs
 
-### Dkt. 1305 — 2026-07-30 ★
-
-> Chapter 11 Post-Confirmation Report
-
 ### Dkt. 1307 — 2026-07-30 ★
 
 > Chapter 11 Post-Confirmation Report
