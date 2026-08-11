@@ -2335,7 +2335,9 @@
     var due = [];
     Object.keys(NOTES).forEach(function (nk) {
       var rec = NOTES[nk];
-      if (rec && rec.snooze_until && rec.snooze_until <= now) due.push({ nk: nk, rec: rec });
+      // Notes are a shared store across docket.html and news.html — only
+      // surface article reminders here; docket.js mirrors this for filings.
+      if (rec && rec.snooze_until && rec.snooze_until <= now && rec.entry_number == null) due.push({ nk: nk, rec: rec });
     });
     if (!due.length) { box.style.display = "none"; box.innerHTML = ""; duePage = 0; return; }
 
