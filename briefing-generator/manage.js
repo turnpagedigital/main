@@ -310,7 +310,9 @@
           '<td><span data-pill="' + esc(c.slug) + '">' + casePill(c.slug, c.short_name || c.display_name) + "</span>" +
             '<button type="button" class="mg-gear" data-color="' + esc(c.slug) + '" title="Pill colors">⚙</button>' +
             '<div class="mg-slug">' + esc(c.slug) + "</div></td>" +
-          '<td><span class="mg-sync ' + esc(sync) + '">' + esc(sync) + "</span>" +
+          '<td><select class="mg-sync-select mg-sync ' + esc(sync) + '" data-sync-select="' + esc(c.slug) + '" title="Sync mode">' +
+            SYNC_MODES.map(function (s) { return '<option value="' + s.value + '"' + (sync === s.value ? " selected" : "") + ">" + esc(s.label) + "</option>"; }).join("") +
+            "</select>" +
             (c.status && c.status !== "active" ? '<div class="mg-slug">' + esc(c.status) + "</div>" : "") + "</td>" +
           '<td title="' + esc((c.topics || []).map(themeName).join(", ")) + '">' + (c.topics || []).map(themeEmoji).join(" ") + "</td>" +
           '<td class="mg-right">' +
@@ -367,6 +369,28 @@
               .catch(function (e) { setBanner("err", String(e.message || e)); renderCases(); });
           }
         );
+      });
+    });
+    root.querySelectorAll("[data-sync-select]").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        var slug = sel.getAttribute("data-sync-select");
+        var c = CASES.filter(function (x) { return x.slug === slug; })[0];
+        if (!c) return;
+        var next = sel.value;
+        var payload = JSON.parse(JSON.stringify(c));
+        payload.sync = next;
+        sel.disabled = true;
+        apiFetch("/api/admin/cases", {
+          method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload),
+        }).then(function (r) { return r.json(); }).then(function (j) {
+          if (!j.ok) throw new Error(j.error || "Save failed");
+          c.sync = next;
+          setBanner("ok", "Sync mode updated for " + (c.short_name || c.display_name || slug) + ".");
+          renderCases();
+        }).catch(function (e) {
+          setBanner("err", "Sync mode change failed for " + (c.short_name || c.display_name || slug) + ": " + String(e.message || e));
+          renderCases();
+        });
       });
     });
     root.querySelectorAll("[data-sync]").forEach(function (b) {
