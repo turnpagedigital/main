@@ -2,23 +2,18 @@
   "case": {
     "slug": "kadrey-v-meta-contributory-infringement-amendment",
     "display_name": "Kadrey v. Meta — Contributory Infringement Amendment",
-    "case_name": "Kadrey v. Meta Platforms, Inc.",
+    "case_name": "Richard Kadrey et al. v. Meta Platforms, Inc.",
     "court": "District Court N.D. Cal.",
     "case_number": "3:23-cv-03417",
     "judge": "Vince Chhabria",
     "docket_id": "67569326",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "manual"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
-    "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T23:59:46.306222+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": false,
     "new_in_72h": 5,
     "recent": [
       {
@@ -7714,6 +7709,10 @@
         "doc_url": ""
       }
     ],
+    "date_last_filing": "2026-08-10",
+    "fetched_at": "2026-08-10T23:59:46.306222+00:00",
+    "as_of": "Aug 10, 2026",
+    "backfilled": false,
     "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=67569326&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=40"
   },
   "claims_administrator": null,
@@ -7739,6 +7738,5 @@
       "date": "2026-06-18",
       "summary": "The Kadrey plaintiffs moved to certify summary judgment issues for interlocutory appeal to the Ninth Circuit, arguing that whether acquisition-by-piracy can be excused by an ultimately fair use is an unresolved question and that resolving the divergence between the Kadrey and Bartz rulings is needed. The case's active contributory and distribution claims continue on the existing schedule."
     }
-  ],
-  "events": []
+  ]
 }
