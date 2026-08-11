@@ -8,17 +8,12 @@
     "judge": "Cathleen D. Parker",
     "docket_id": "68873409",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "archived"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68873409/power-block-coin-llc/",
-    "date_last_filing": "2026-08-07",
-    "fetched_at": "2026-08-11T00:01:38.614381+00:00",
-    "as_of": "Aug 11, 2026",
-    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -6573,9 +6568,12 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-08-07",
+    "fetched_at": "2026-08-11T00:01:38.614381+00:00",
+    "as_of": "Aug 11, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
-  "coverage": [],
-  "events": []
+  "coverage": []
 }
