@@ -788,6 +788,20 @@
   }
 
   // ── Top band: unassigned news, date strip, latest notes ───────────────────
+  var BAND_ROWS_KEY = "ih-band-rows";
+  var NEWS_MIN_ROWS = 4, NEWS_MAX_ROWS = 14;
+  var bandLevel = 0.3;
+  try {
+    var savedBandLevel = Number(localStorage.getItem(BAND_ROWS_KEY));
+    if (savedBandLevel >= 0 && savedBandLevel <= 1) bandLevel = savedBandLevel;
+  } catch (e) {}
+  function newsRowsForLevel() {
+    return Math.round(NEWS_MIN_ROWS + bandLevel * (NEWS_MAX_ROWS - NEWS_MIN_ROWS));
+  }
+  function calWantsTwoWeeks() {
+    return bandLevel > 0.5;
+  }
+
   function renderUnassigned() {
     // Only case- or theme-related news makes the dashboard; the full feed
     // lives on the News page under "All news".
@@ -796,7 +810,7 @@
     });
     var countEl = document.getElementById("ih-unassigned-count");
     if (countEl) countEl.textContent = "View all \u2192";
-    fill("ih-unassigned", items.slice(0, 7).map(function (b) {
+    fill("ih-unassigned", items.slice(0, newsRowsForLevel()).map(function (b) {
       var pill = "";
       var mc = b.case_slug && MANIFEST.find(function (m) { return m.slug === b.case_slug; });
       if (mc) {
@@ -928,9 +942,11 @@
     // so a pixel-height comparison can't tell a busy week from an empty one —
     // count days with zero events instead. Half or more empty (the "leaves
     // half blank" case) widens to a 2-week window so the space isn't wasted.
+    // The band-density slider can also force it past the halfway point,
+    // independent of how sparse the data actually is.
     var firstWeek = buildDays(calDays);
     var emptyDays = firstWeek.filter(function (d) { return !(byDay[isoOf(d)] || []).length; }).length;
-    var expand = emptyDays >= firstWeek.length / 2;
+    var expand = calWantsTwoWeeks() || emptyDays >= firstWeek.length / 2;
 
     box.innerHTML = buildHtml(expand);
     wireControls();
@@ -1710,12 +1726,51 @@
     });
   }
 
+  // Drag vertically to show more/less content in the News/Calendar/Notes
+  // band: News rows scale continuously, the calendar flips to a 2nd week
+  // past the midpoint (see bandLevel/newsRowsForLevel/calWantsTwoWeeks
+  // above). Same interaction shape as wireBandResize — drag delta over a
+  // fixed pixel range maps to the parameter, committed to localStorage only
+  // on release — just vertical, and driving a re-render instead of a CSS var
+  // since "more rows" is actual content, not a width.
+  function wireBandRowResize() {
+    var grip = document.getElementById("ih-band-vgrip");
+    if (!grip) return;
+    var DRAG_RANGE = 260;   // px of vertical drag spanning the full 0..1 sweep
+    grip.addEventListener("mousedown", function (e) {
+      e.preventDefault();
+      grip.classList.add("on");
+      document.body.style.cursor = "row-resize";
+      var startY = e.clientY;
+      var startLevel = bandLevel;
+      function mv(ev) {
+        var next = Math.max(0, Math.min(1, startLevel + (ev.clientY - startY) / DRAG_RANGE));
+        if (next === bandLevel) return;
+        var oldRows = newsRowsForLevel();
+        var oldTwoWeeks = calWantsTwoWeeks();
+        bandLevel = next;
+        if (newsRowsForLevel() !== oldRows) renderUnassigned();
+        if (calWantsTwoWeeks() !== oldTwoWeeks) renderDates();
+      }
+      function up() {
+        document.removeEventListener("mousemove", mv);
+        document.removeEventListener("mouseup", up);
+        grip.classList.remove("on");
+        document.body.style.cursor = "";
+        try { localStorage.setItem(BAND_ROWS_KEY, String(bandLevel)); } catch (e2) {}
+      }
+      document.addEventListener("mousemove", mv);
+      document.addEventListener("mouseup", up);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
     updateFilterButtons();
     wireCarousel();
     wireSortBar();
     wireBandResize();
+    wireBandRowResize();
     wireViewToggle();
     wireShortcuts();
     var gb = document.getElementById("ih-groups-btn");
