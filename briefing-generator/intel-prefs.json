@@ -137,9 +137,16 @@
         "blockfills",
         "goliath",
         "kahan",
+        "poolin",
         "power-block-coin",
-        "terraform-labs",
-        "poolin"
+        "terraform-labs"
+      ]
+    },
+    {
+      "name": "Tariffs",
+      "slugs": [
+        "state-of-oregon-v-united-states-burlap-and-barrel-v-united-s",
+        "vos-selections-v-trump"
       ]
     }
   ],
