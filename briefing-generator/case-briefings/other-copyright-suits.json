@@ -3,6 +3,44 @@
   "case_name": "Other Copyright Suits",
   "items": [
     {
+      "date": "2026-08-11",
+      "updated": "2026-08-11",
+      "lede": "On August 10, Judge Vince Chhabria granted Meta's administrative motion for leave to serve discovery in Kadrey v. Meta Platforms, Inc., No. 3:23-cv-03417 (N.D. Cal.), Dkt. 806 — authorizing discovery requests the court characterized as facially reasonable based on the sample RFPs and interrogatories the parties submitted. The order preserves plaintiffs' ability to challenge any individual request that \"greatly…",
+      "body_md": "On August 10, Judge Vince Chhabria granted Meta's administrative motion for leave to serve discovery in *Kadrey v. Meta Platforms, Inc.*, No. 3:23-cv-03417 (N.D. Cal.), Dkt. 806 — authorizing discovery requests the court characterized as facially reasonable based on the sample RFPs and interrogatories the parties submitted. The order preserves plaintiffs' ability to challenge any individual request that \"greatly exceeds\" the scope of the samples, but the baseline grant is clear and unqualified. That ruling is material: it opens Meta to written discovery on the contributory-infringement amendment Judge Chhabria allowed in March, and fact discovery under the operative scheduling order closes December 18, 2026, leaving approximately four months to complete it. The same day, Dkt. 805 resolved the sealing dispute over the Dkt. 781 motion: the court granted limited redactions as specified in the Dkt. 796 declaration, but ordered Meta to file public copies of all attached documents — including entirely unredacted versions of any documents not covered by that declaration — within seven days, placing that compliance deadline on or before August 17. The transcript of Magistrate Judge Thomas S. Hixson's August 5 hearing was docketed at Dkt. 804; it is currently restricted per General Order No. 59 pending the standard release period.\n\nIn *Hachette Book Group et al. v. Google LLC*, No. 1:26-cv-05870 (S.D.N.Y.), Judge Loretta A. Preska received the plaintiffs' reply brief at Dkt. 26, filed August 10, completing briefing on Google's letter motion for a pre-motion conference concerning a potential transfer of this action to the Northern District of California (Dkt. 21, filed August 4). Plaintiffs' opposition letter, filed August 7 by Jeffrey M. Gould of Oppenheim & Zebrak (Dkt. 25), had already closed the three-round exchange; the reply advances the transfer dispute to Judge Preska for a ruling or a conference order. The transfer question matters beyond forum logistics: Google's preferred venue is the N.D. Cal., where the parallel *In re Google Generative AI Copyright Litigation* is already pending, and consolidation there would reshape discovery coordination and potentially dilute plaintiffs' SDNY litigation choices. The Dkt. 24 pro hac vice deficiency for Benjamin Blystad Gould — missing a California Supreme Court Certificate of Good Standing — remains a ministerial open item and carries no substantive consequence.\n\nThe remaining group members were quiet. In *Hachette v. Meta (Llama)*, No. 1:26-cv-03689 (S.D.N.Y., Judge Castel), the September 15, 2026, conference on venue and Meta's anticipated transfer motion remains the next fixed event; the competing letters on the motion-to-strike question (Dkts. 90 and 92) are before Judge Castel and unresolved. *Britannica v. OpenAI*, No. 1:26-cv-02097 (Judge Stein), and *Getty Images (US) v. Stability AI*, No. 3:25-cv-06891 (N.D. Cal., Judge Thompson), recorded no substantive movement.\n\nThe next concrete milestone across the group is Meta's seven-day deadline to file the unsealed Dkt. 781 documents in *Kadrey* — on or before August 17 — followed by Judge Preska's forthcoming disposition of the Google transfer conference request in *Hachette v. Google*.\n\n---\n\n## Sources\n\n- [Hachette Book Group, Inc. et al. v. Google LLC — Mishcon AI/IP Tracker](https://www.mishcon.com/generative-ai-intellectual-property-cases-and-policy-tracker) — Mishcon de Reya, July 2026\n- [Publishers and Authors File Class Action Lawsuit Against Google for Willful Copyright Infringement](https://www.hachettebookgroup.com/hachette-book-group-news/publishers-and-authors-file-class-action-lawsuit-against-google-for-willful-copyright-infringement-to-develop-gemini-ai-models/) — Hachette Book Group, July 13, 2026\n- [Kadrey v. Meta Platforms, Inc. — CourtListener Docket](https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/) — CourtListener (PACER/RECAP), last updated July 27, 2026\n- [Kadrey v. Meta — Order Granting Motion for Leave (March 25, 2026)](https://cdn.arstechnica.net/wp-content/uploads/2026/03/Kadrey-v-Meta-Order-Granting-Motion-for-Leave-3-25-26.pdf) — Ars Technica (court document), March 25, 2026\n- [AI Infringement Case Updates: January 19, 2026](https://www.mckoolsmith.com/newsroom-ailitigation-51) — McKool Smith, January 19, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Hachette Book Group, Inc. et al. v. Google LLC — Mishcon AI/IP Tracker",
+          "url": "https://www.mishcon.com/generative-ai-intellectual-property-cases-and-policy-tracker",
+          "note": "Mishcon de Reya, July 2026"
+        },
+        {
+          "title": "Publishers and Authors File Class Action Lawsuit Against Google for Willful Copyright Infringement",
+          "url": "https://www.hachettebookgroup.com/hachette-book-group-news/publishers-and-authors-file-class-action-lawsuit-against-google-for-willful-copyright-infringement-to-develop-gemini-ai-models/",
+          "note": "Hachette Book Group, July 13, 2026"
+        },
+        {
+          "title": "Kadrey v. Meta Platforms, Inc. — CourtListener Docket",
+          "url": "https://www.courtlistener.com/docket/67569326/kadrey-v-meta-platforms-inc/",
+          "note": "CourtListener (PACER/RECAP), last updated July 27, 2026"
+        },
+        {
+          "title": "Kadrey v. Meta — Order Granting Motion for Leave (March 25, 2026)",
+          "url": "https://cdn.arstechnica.net/wp-content/uploads/2026/03/Kadrey-v-Meta-Order-Granting-Motion-for-Leave-3-25-26.pdf",
+          "note": "Ars Technica (court document), March 25, 2026"
+        },
+        {
+          "title": "AI Infringement Case Updates: January 19, 2026",
+          "url": "https://www.mckoolsmith.com/newsroom-ailitigation-51",
+          "note": "McKool Smith, January 19, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 6,
+        "articles": 0,
+        "latest": "2026-08-10"
+      }
+    },
+    {
       "date": "2026-08-10",
       "updated": "2026-08-10",
       "lede": "On August 7, Judge Sidney H. Stein entered two deadline-setting orders (Dkt. 57 and Dkt. 58) in Encyclopaedia Britannica, Inc. and Merriam-Webster, Inc. v. OpenAI, Inc. et al., No. 1:26-cv-02097 (S.D.N.Y.), building on the proposed stipulation the parties filed August 5 (Dkt. 56). The docket entries are styled as utility orders, so the operative effect — whether they govern a response schedule, a service deadline…",

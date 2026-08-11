@@ -3,6 +3,24 @@
   "case_name": "Harvest Sherwood",
   "items": [
     {
+      "date": "2026-08-11",
+      "updated": "2026-08-11",
+      "lede": "On August 10, an unidentified movant filed a motion for relief from the automatic stay (Dkt. 1190, N.D. Tex. Case No. 25-80109-sgj11), the second such motion in four days following Dkts.",
+      "body_md": "On August 10, an unidentified movant filed a motion for relief from the automatic stay (Dkt. 1190, N.D. Tex. Case No. 25-80109-sgj11), the second such motion in four days following Dkts. 1173 and 1181 filed August 7. The full text of Dkt. 1190 has not been pulled, so the identity of the movant, the collateral at issue, and the relief sought remain unconfirmed pending a PACER pull — confirmation would require review of the motion itself. What is clear is that lift-stay activity has accelerated in the immediate wake of plan confirmation on August 5, __[Law360](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval)__, a predictable post-confirmation dynamic in a liquidating estate where creditors holding security interests in specific property move quickly once the plan is locked. Notices of hearing were docketed at Dkts. 1191 and 1198 on the same date; at least one of those hearings is likely associated with one or both of the pending lift-stay motions filed this week, though the docket lines do not specify which underlying motions they schedule.\n\nAlso on August 10, Dkt. 1188 reflects a withdrawal. Without the full text, the subject of the withdrawal — whether a claim, a motion, or an adversary filing — cannot be confirmed; a PACER pull of Dkt. 1188 would resolve this. Given the active lift-stay motion practice and ongoing claims trading, a withdrawal of a lift-stay motion or a related objection is the most probable candidate, but that is unverified. Five additional claim transfers were docketed by the claims agent (Dkts. 1189, 1192, 1195, 1196, 1197), continuing the pattern of secondary-market claim purchases that has run steadily through August. The mechanics are identical to the CRG Financial / Technical Truck And Trailer transfer (Dkt. 1165, filed August 7, $5,314.76): a trade creditor sells its allowed claim to a claim purchaser under Rule 3001(e)(2), with a 20-day objection window running from mailing before substitution becomes effective without further order. At the scale of this estate — with confirmed plan value anchored to more than $1 billion in antitrust litigation — individual small-balance transfers carry no meaningful recovery impact, but the volume signals active secondary-market interest in Harvest Sherwood paper in the weeks immediately following confirmation.\n\nThe next concrete milestone is September 21, 2026, when trial begins in Adversary Proceeding 25-08002, Harvest Sherwood v. Sprouts Farmers Market, before Judge Jernigan. That proceeding is the most proximate litigation event bearing on estate recovery, and any pre-trial motion practice or stipulation filed before then will carry the highest near-term materiality.\n\n## Sources\n\n- [Harvest Sherwood Wins Ch. 11 Plan Approval](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval) — Law360, August 5, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Harvest Sherwood Wins Ch. 11 Plan Approval",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval",
+          "note": "Law360, August 5, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 13,
+        "articles": 0,
+        "latest": "2026-08-10"
+      }
+    },
+    {
       "date": "2026-08-10",
       "updated": "2026-08-10",
       "lede": "On August 7, the clerk docketed three separate relief-from-stay motions (Dkt. 1169, 1173, 1181) together with corresponding notices of hearing (Dkt. 1174, 1175, 1180) and a generic order (Dkt. 1168), the first material cluster of lift-stay activity since plan confirmation on August 5. The simultaneous filing of three distinct motions — each a separate creditor or counterparty seeking to liquidate claims outside the…",

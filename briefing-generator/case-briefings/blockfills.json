@@ -3,6 +3,34 @@
   "case_name": "BlockFills",
   "items": [
     {
+      "date": "2026-08-11",
+      "updated": "2026-08-11",
+      "lede": "On August 10, the BlockFills estate filed Dkt. 561, an employment application, the first substantive docket entry since plan confirmation.",
+      "body_md": "On August 10, the BlockFills estate filed Dkt. 561, an employment application, the first substantive docket entry since plan confirmation.\n\nThe application's identity — which professional, which role, and at what compensation — is not disclosed in the docket metadata provided, so the specific terms cannot be confirmed without access to the filed document. What is clear from the docket type (\"Employ (Application)\") is that the estate is seeking court authority to retain a professional post-confirmation. In the context of where this case stands — \nJudge Thomas M. Horan confirmed the Chapter 11 plan on July 13, 2026, 122 days after the March 15 petition\n — a post-confirmation employment application is consistent with the wind-down or plan-administration phase: a plan administrator, special counsel, or distribution agent typically requires separate authorization once the confirmation order is entered, even where a professional served in an analogous capacity pre-confirmation. Whether the application is contested will govern its weight; an unopposed retention on standard terms is substantive but routine, while a disputed application or one involving unusual compensation structure would be important and contested. The distinction matters for estate economics: professional fees incurred post-confirmation are typically administrative expenses payable from the distributable estate, reducing the pool available to creditors.\n\n\nMcDermott ran a competitive, court-supervised sale that resulted in a purchase of substantially all BlockFills assets, with the sale funding the estates and supporting the expedited plan process.\n \nConfirmation arrived faster than BlockFi (309 days), Celsius (484 days), Genesis Global (498 days), and FTX (697 days).\n With that sale closed and the plan confirmed, the principal remaining creditor-facing questions are the effective date's satisfaction of any outstanding conditions precedent, the timing and quantum of distributions, and the resolution of any disputed claims — all of which the professional engaged under Dkt. 561 may directly support. No objection deadline is visible on the face of the docket record; that deadline will run from service of the application and will govern when the court can enter an approval order.\n\nThe next concrete milestone is the hearing on, or approval of, Dkt. 561. The full application document, once accessible, will confirm the professional's identity, scope of engagement, rate structure, and any retainer — the details that determine whether this is a routine wind-down retention or something warranting closer scrutiny.\n\n## Sources\n\n- [McDermott Secures Record-Fast Chapter 11 Confirmation for BlockFills](https://www.mcdermottlaw.com/news/mcdermott-secures-record-fast-chapter-11-confirmation-for-blockfills/) — McDermott Will & Emery, July 31, 2026\n- [Keyrock acquires BlockFills trading assets in institutional crypto expansion](https://www.coindesk.com/business/2026/07/16/keyrock-acquires-blockfills-trading-assets-to-expand-institutional-crypto-business) — CoinDesk, July 16, 2026\n- [Keyrock closes deal for BlockFills' institutional trading and brokerage assets](https://www.theblock.co/post/408639/keyrock-closes-deal-blockfill-institutional-trading-brokerage-assets) — The Block, July 16, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "McDermott Secures Record-Fast Chapter 11 Confirmation for BlockFills",
+          "url": "https://www.mcdermottlaw.com/news/mcdermott-secures-record-fast-chapter-11-confirmation-for-blockfills/",
+          "note": "McDermott Will & Emery, July 31, 2026"
+        },
+        {
+          "title": "Keyrock acquires BlockFills trading assets in institutional crypto expansion",
+          "url": "https://www.coindesk.com/business/2026/07/16/keyrock-acquires-blockfills-trading-assets-to-expand-institutional-crypto-business",
+          "note": "CoinDesk, July 16, 2026"
+        },
+        {
+          "title": "Keyrock closes deal for BlockFills' institutional trading and brokerage assets",
+          "url": "https://www.theblock.co/post/408639/keyrock-closes-deal-blockfill-institutional-trading-brokerage-assets",
+          "note": "The Block, July 16, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 1,
+        "articles": 0,
+        "latest": "2026-08-10"
+      }
+    },
+    {
       "date": "2026-08-10",
       "updated": "2026-08-10",
       "lede": "On August 7, the clerk docketed a Certificate of No Objection at Dkt. 560 in In re Reliz Technology Group Holdings Inc., et al., Case No. 26-10371 (Bankr. D. Del., Judge Horan). The filing is procedural and carries no substantive weight on its own.",

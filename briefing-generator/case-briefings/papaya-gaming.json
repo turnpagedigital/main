@@ -3,6 +3,34 @@
   "case_name": "Papaya Gaming",
   "items": [
     {
+      "date": "2026-08-11",
+      "updated": "2026-08-11",
+      "lede": "On August 9, Judge Mary F. Walrath of the U.S. Bankruptcy Court for the District of Delaware granted Papaya Gaming's motion for a temporary injunction. The order immediately stays collection and enforcement proceedings against Papaya's U.S. assets and preserves the status quo pending a hearing on Papaya's petition for formal recognition under Chapter 15.",
+      "body_md": "On August 9, Judge Mary F. Walrath of the U.S. Bankruptcy Court for the District of Delaware granted Papaya Gaming's motion for a temporary injunction. \nThe order immediately stays collection and enforcement proceedings against Papaya's U.S. assets and preserves the status quo pending a hearing on Papaya's petition for formal recognition under Chapter 15.\n \nThe relief was granted over strong opposition from Firy Inc. (formerly Skillz), whose demands Judge Walrath rejected.\n The injunction is the central near-term protection Papaya sought when it filed: without it, Firy could have moved to attach U.S. assets before recognition is adjudicated, potentially disrupting the Israeli-supervised fund structure on which any eventual recovery to claimants depends.\n\n\nJudge Cote's underlying July 27 order required Papaya to pay approximately $719 million in disgorgement plus approximately $10.1 million in attorneys' fees and costs.\n The temporary injunction does not disturb that judgment or Papaya's pending appeal of it; it only freezes enforcement in the U.S. pending the Chapter 15 recognition hearing. For Firy as the sole material creditor, the practical consequence is that U.S.-side collection — including any post-judgment asset discovery or attachment — is halted for now. \nUnder the terms Papaya presented to the Israeli court, it will transfer available cash into a designated fund overseen by a court-appointed official, with the fund expected to hold approximately $100 million during 2026 and additional tens of millions annually, constituting the potential source for claim settlement if the U.S. ruling becomes enforceable in Israel.\n The gap between that fund and the $729 million total exposure remains the defining recovery variable; the recognition hearing will be the next moment at which that gap is formally tested.\n\nDkts. 56 through 60 — pro hac vice orders for Michael Ardeljan and Amy C. Quartarolo of Latham & Watkins (on Skillz/Firy's behalf) and three further pro hac vice motions filed August 10 — confirm that Firy is assembling a full Latham team alongside its existing Weil Gotshal roster. That concentration of outside counsel on Firy's side signals active preparation for the recognition hearing, consistent with the deposition notices Skillz filed August 8 targeting Oriel Bachar, Pinni Yaniv, and James Kong (Dkts. 53–55). The next concrete milestone is the recognition hearing before Judge Walrath, at which she will determine whether to grant Chapter 15 recognition to the Israeli proceeding and whether the temporary injunction should be extended, modified, or dissolved — no date for that hearing is reflected on the docket as of this briefing.\n\n## Sources\n\n- [Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling](https://www.calcalistech.com/ctechnews/article/idop8ipjs) — Calcalist / CTech, August 9, 2026\n- [Why a popular gaming company filed Chapter 15 bankruptcy](https://www.thestreet.com/retail/gambling-company-papaya-gaming-files-bankruptcy-after-719-million-verdict) — TheStreet, August 5, 2026\n- ['Solitaire Cash' Maker Papaya Files Chapter 15 Over $719M Skillz Verdict](https://www.casino.org/news/papaya-files-chapter-15-bankruptcy-concedes-it-cant-pay-719m-judgment/) — Casino.org, August 4, 2026\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling",
+          "url": "https://www.calcalistech.com/ctechnews/article/idop8ipjs",
+          "note": "Calcalist / CTech, August 9, 2026"
+        },
+        {
+          "title": "Why a popular gaming company filed Chapter 15 bankruptcy",
+          "url": "https://www.thestreet.com/retail/gambling-company-papaya-gaming-files-bankruptcy-after-719-million-verdict",
+          "note": "TheStreet, August 5, 2026"
+        },
+        {
+          "title": "'Solitaire Cash' Maker Papaya Files Chapter 15 Over $719M Skillz Verdict",
+          "url": "https://www.casino.org/news/papaya-files-chapter-15-bankruptcy-concedes-it-cant-pay-719m-judgment/",
+          "note": "Casino.org, August 4, 2026"
+        }
+      ],
+      "activity": {
+        "filings": 5,
+        "articles": 1,
+        "latest": "2026-08-10"
+      }
+    },
+    {
       "date": "2026-08-10",
       "updated": "2026-08-10",
       "lede": "On August 7–8, Skillz filed pro hac vice motions for Michael Ardeljan and Amy C. Quartarolo of Latham & Watkins (Dkts. 50–51), bringing Skillz's admitted Latham team in this proceeding to five attorneys following the Goldberg, Harris, and Schrock admissions entered August 6.",

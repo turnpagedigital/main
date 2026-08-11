@@ -3,6 +3,29 @@
   "case_name": "FTX",
   "items": [
     {
+      "date": "2026-08-11",
+      "updated": "2026-08-11",
+      "lede": "On August 10, the FTX Recovery Trust filed two omnibus objections to claims — one public (Dkt. 36106) and one sealed (Dkt. 36104), with a redacted public counterpart (Dkt. 36105) — setting a response deadline of September 10, 2026 and a hearing for September 17 at 9:30 a.m. before Judge Owens in Wilmington. The sealed filing is notable: the Trust's standard omnibus objection practice has proceeded almost entirely on…",
+      "body_md": "On August 10, the FTX Recovery Trust filed two omnibus objections to claims — one public (Dkt. 36106) and one sealed (Dkt. 36104), with a redacted public counterpart (Dkt. 36105) — setting a response deadline of September 10, 2026 and a hearing for September 17 at 9:30 a.m. before Judge Owens in Wilmington. The sealed filing is notable: the Trust's standard omnibus objection practice has proceeded almost entirely on the public docket, so a sealed objection with a simultaneously filed redacted version indicates the targeted claims involve confidential identifying information or settlement terms that the Trust has reason to protect from public disclosure. The grounds and claim count are not ascertainable from the public record. The public objection (Dkt. 36106) is a standard omnibus in the Trust's ongoing reconciliation campaign, which has now reached at least 186 omnibus objections across the life of the case — the September 17 hearing date aligns with the next omnibus hearing already on the calendar (August 19 is the upcoming omnibus hearing; the September date is a newly calendared session).\n\nAlso filed August 10, Kroll filed the quarterly claims register (Dkt. 36102), a routine administrative snapshot of the current state of the claims docket. Seven claim transfers appeared the same day: FTXCREDITOR, LLC transferred four separate redacted claims to Grand Teton C II, LLC (Dkts. 36093–36096) and one to itself (Dkt. 36092); Cherokee Acquisition transferred Claim No. 8231 to GreenWulf Master Fund, LP (Dkt. 36107); and Dingdingke Ltd. recorded one additional transfer (Dkt. 36090). The volume — five transfers to Grand Teton alone in a single day through FTXCREDITOR, LLC — suggests a coordinated portfolio acquisition by a secondary-market buyer consolidating positions ahead of what the Trust has signaled will be continued distributions. Individual transfer amounts are redacted and claim values are not ascertainable from the docket entries. Dkts. 36088, 36089, 36103, and 36109 are Kroll affidavits of mailing related to prior docket entries and carry no independent weight on recovery.\n\nThe sealed omnibus objection pair (Dkts. 36104/36105) is the item to watch before the September 10 objection deadline. Affected claimants who received notice but whose claims are sealed will need to respond without the benefit of a public record to compare against — a procedural asymmetry that could draw objections from claimants who argue inadequate disclosure. The next concrete milestone is the August 19 omnibus hearing before Judge Owens (Case No. 22-11068), which will address the queue of previously filed objections and any matters noticed for that session.\n\n## Sources\n\n- [FTX Fifth Creditor Payout of $900M, Total Repayments Reach $10B](https://cryptorank.io/news/feed/bc44a-ftx-fifth-creditor-payout-900m) — CryptoRank (via CoinEdition), July 31, 2026\n- [FTX Recovery Trust Seeks $1.93 Billion Reduction in Disputed Claims Reserve](https://chapter11cases.com/blogs/news/ftx-recovery-trust-seeks-1-93-billion-reduction-in-disputed-claims-reserve) — Stretto/Chapter11Cases.com, June 29, 2025\n\n---\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "FTX Fifth Creditor Payout of $900M, Total Repayments Reach $10B",
+          "url": "https://cryptorank.io/news/feed/bc44a-ftx-fifth-creditor-payout-900m",
+          "note": "CryptoRank (via CoinEdition), July 31, 2026"
+        },
+        {
+          "title": "FTX Recovery Trust Seeks $1.93 Billion Reduction in Disputed Claims Reserve",
+          "url": "https://chapter11cases.com/blogs/news/ftx-recovery-trust-seeks-1-93-billion-reduction-in-disputed-claims-reserve",
+          "note": "Stretto/Chapter11Cases.com, June 29, 2025"
+        }
+      ],
+      "activity": {
+        "filings": 17,
+        "articles": 0,
+        "latest": "2026-08-10"
+      }
+    },
+    {
       "date": "2026-08-10",
       "updated": "2026-08-10",
       "lede": "On August 7, Next Claims Capital Limited filed a transfer of an unnamed claimant's allowed claim (Dkt. 36086), and separately, Cenjun Zhu filed a transfer of Claim No. 03428491 to Peng Xu (Dkt. 36085), both under Fed. R. Bankr. P. 3001(e)(2) in the United States Bankruptcy Court for the District of Delaware, Case No. 22-11068, before Judge Karen B. Owens. These are the only docket entries in the 72-hour window.",

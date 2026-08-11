@@ -3,6 +3,29 @@
   "case_name": "Poolin",
   "items": [
     {
+      "date": "2026-08-11",
+      "updated": "2026-08-11",
+      "lede": "On August 10, a creditor filed Dkt. 103 — a motion to appoint a Chapter 11 trustee in Bankr. D.N.J. Case No. 26-18325 — alleging that Zhibiao \"Kevin\" Pan, Poolin's principal and sole equity holder, absconded from China to the U.S. with customer funds. That motion is the sharpest development in the case to date.",
+      "body_md": "On August 10, a creditor filed Dkt. 103 — a motion to appoint a Chapter 11 trustee in Bankr. D.N.J. Case No. 26-18325 — alleging that Zhibiao \"Kevin\" Pan, Poolin's principal and sole equity holder, \nabsconded from China to the U.S. with customer funds.\n That motion is the sharpest development in the case to date. Trustee appointment under 11 U.S.C. § 1104 displaces existing management and shifts control of the estate to a court-supervised fiduciary; if granted, it would remove Pan — and, by extension, the debtor's current restructuring professionals acting at his direction — from any role in administering the sale process or the liquidating plan. The allegation of pre-petition fund transfers by the principal sits squarely within § 1104(a)(1) grounds (fraud, dishonesty, gross mismanagement), making this motion substantively weightier than a routine creditor complaint.\n\nDkt. 104 — a motion to shorten time — was filed the same day, almost certainly tied to the trustee motion, signaling the moving creditor is pressing for an expedited hearing rather than waiting for a standard briefing schedule. Dkt. 105 and Dkt. 106 are a response and an objection, respectively, filed on the same date; their precise targets cannot be confirmed from the docket metadata alone, but given the clustering with the trustee motion, they most likely address either the trustee motion or the shorten-time request, and may indicate that the debtor or another party moved immediately to oppose. The creditor's identity is not disclosed in the docket entry or in the paywalled __[Law360 article](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097)__, which confirms the motion was filed but does not name the movant in its visible text.\n\nThe trustee motion lands at a structurally sensitive moment. The qualified-bid deadline for the West Texas auction (Pyote at $15 million; Tarbush at $37 million; combined floor $52 million from stalking-horse Thor CALAP LLC) is September 8, with the auction scheduled for September 10. \nThe debtors — Poolin Technology, Lonestar Dream Inc., and Lonestar Taproot LLC — are all directly or indirectly owned by Pan.\n A trustee appointment before the auction would transfer control of bid evaluation, stalking-horse negotiations, and plan drafting to an independent fiduciary, with unknown consequences for deal timing and terms already in place. Even if the motion ultimately fails, the expedited posture (Dkt. 104) means Judge O'Hagan is likely to be asked to set a prompt hearing — one that may compete with, or run directly into, the September 8 bid deadline. The next concrete milestone is the court's ruling on the motion to shorten time, which will set the hearing date for the trustee motion and determine whether this fight resolves before or after qualified bids are due.\n\nDkts. 101–102 — two pro hac vice admissions — are omitted as procedural and routine.\n\n## Sources\n\n- [Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers](https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097) — Law360, August 10, 2026\n- [Case Summary: Poolin Chapter 11](https://bondoro.com/poolin/) — Bondoro (for Pan ownership structure)\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Poolin Creditor Seeks Ch. 11 Trustee To Probe Transfers",
+          "url": "https://www.law360.com/bankruptcy-authority/mid-cap/articles/2511097",
+          "note": "Law360, August 10, 2026"
+        },
+        {
+          "title": "Case Summary: Poolin Chapter 11",
+          "url": "https://bondoro.com/poolin/",
+          "note": "Bondoro (for Pan ownership structure)"
+        }
+      ],
+      "activity": {
+        "filings": 6,
+        "articles": 1,
+        "latest": "2026-08-10"
+      }
+    },
+    {
       "date": "2026-08-10",
       "updated": "2026-08-10",
       "lede": "On August 7, the clerk docketed the notice scheduling the § 341 meeting of creditors (Dkt. 97), setting the first formal opportunity for the U.S. Trustee and creditors to examine the debtors under oath. The § 341 meeting is procedural but carries timing significance: its scheduling confirms the case is moving on the standard Chapter 11 administrative track in parallel with the sale process, and any creditor …",
