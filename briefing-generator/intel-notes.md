@@ -98,6 +98,10 @@ Note is this leroum ipeum
 
 ## Papaya Gaming
 
+### (no docket number) — 2026-08-09
+
+> Papaya Gaming wins U.S. bankruptcy protection after $719 million ruling — Judge Mary F. Walrath of the U.S. Bankruptcy Court for the District of Delaware granted Papaya Gaming a temporary injunction, 
+
 ### (no docket number) — 2026-08-03 ★
 
 > Papaya Gaming Files Ch. 15 To Shield Against $719M Verdict — Israeli mobile gaming company Papaya Gaming filed a Chapter 15 bankruptcy petition in Delaware's U.S. Bankruptcy Court after being hit with
