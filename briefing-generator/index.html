@@ -398,6 +398,11 @@
     .ih-note-card .title { font-size: 15px; font-weight: 800; color: #21201A; padding-bottom: 7px; margin-bottom: 6px; border-bottom: 1px solid rgba(10,10,10,0.14); }
     .ih-note-card .body { flex: 1; font-size: 13px; line-height: 1.55; color: #21201A; opacity: 0.75; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
     .ih-note-card .who { font-size: 11px; font-weight: 700; color: rgba(10,10,10,0.58); margin-top: auto; padding-top: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    /* Dark mode's card is a warm gray, not a pale/bright paper — flip to
+       warm-white ink instead of the light-mode dark ink. */
+    [data-theme="dark"] .ih-note-card .title { color: #EDE7DE; border-bottom-color: rgba(237,231,222,0.16); }
+    [data-theme="dark"] .ih-note-card .body { color: #EDE7DE; }
+    [data-theme="dark"] .ih-note-card .who { color: rgba(237,231,222,0.6); }
     /* Apple Wallet-style stack: no rotation, straight edges, each card behind
        peeks far enough to show its own title (grayed out), not just a sliver
        of color. */

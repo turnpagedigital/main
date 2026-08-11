@@ -374,10 +374,11 @@
   var NOTE_STACK = [];   // current filtered notes shown in the dashboard sticky-stack
   var noteFront = 0;     // index into NOTE_STACK of the card currently on top
   // Every card is the same very-light neon-green paper in light mode; dark
-  // mode swaps in the full-strength brand neon (never a muted olive
-  // substitute — see BRAND_STYLING.md).
+  // mode swaps in a warm dark gray — brighter and warmer than the site's own
+  // near-black surface, so the card still reads as distinct paper rather
+  // than blending into the canvas.
   var NOTE_TINTS = [
-    { bg: "#EEFFA3", bgd: "#D4FF00" },
+    { bg: "#EEFFA3", bgd: "#2B2723" },
   ];
   var NOTE_AUTO_MS = 6000;
   var noteAutoTimer = null;
