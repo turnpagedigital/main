@@ -371,18 +371,15 @@
   }
   var NOTES_LIST = [];
   var FEED_ITEMS = [];
-  var NOTE_STACK = [];   // current filtered notes shown in the dashboard sticky-stack
-  var noteFront = 0;     // index into NOTE_STACK of the card currently on top
-  // Every card is the same very-light neon-green paper in light mode; dark
-  // mode swaps in a warm dark gray — brighter and warmer than the site's own
-  // near-black surface, so the card still reads as distinct paper rather
-  // than blending into the canvas.
+  var NOTE_STACK = [];   // current filtered notes shown in the dashboard tile
+  var noteFront = 0;     // index into NOTE_STACK of the note currently shown
+  // The note card is the same very-light neon-green paper in light mode;
+  // dark mode swaps in a warm dark gray — brighter and warmer than the
+  // site's own near-black surface, so the card still reads as distinct
+  // paper rather than blending into the canvas.
   var NOTE_TINTS = [
     { bg: "#EEFFA3", bgd: "#2B2723" },
   ];
-  var NOTE_AUTO_MS = 6000;
-  var noteAutoTimer = null;
-  var noteHovered = false;
 
   function fill(id, html) {
     var n = document.getElementById(id);
@@ -962,6 +959,8 @@
     return (note || "").trim().split(/\s+/).slice(0, 3).join(" ");
   }
 
+  var NOTE_ARTIFACT_ICON = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>';
+
   function renderNotes() {
     var list = NOTES_LIST.filter(function (n) {
       if (!n.case_slug) return caseOn("__unassigned__");
@@ -973,70 +972,51 @@
     if (!list.length) {
       box.innerHTML = '<div class="ih-empty">No notes yet.</div>';
       NOTE_STACK = [];
-      stopNoteAuto();
       return;
     }
-    NOTE_STACK = list.slice(0, 8);
+    NOTE_STACK = list.slice(0, 20);
     if (noteFront >= NOTE_STACK.length) noteFront = 0;
-    box.innerHTML = '<div class="ih-notes-wrap" id="ih-notes-wrap"><div class="ih-notes-stack" id="ih-notes-stack"></div></div>';
-    renderNoteStack();
-    var wrap = document.getElementById("ih-notes-wrap");
-    if (wrap) {
-      wrap.addEventListener("mouseenter", function () { noteHovered = true; });
-      wrap.addEventListener("mouseleave", function () { noteHovered = false; });
-    }
-    startNoteAuto();
+    box.innerHTML = '<div class="ih-notes-wrap" id="ih-notes-wrap"></div>';
+    renderNoteCard();
   }
 
   function stepNote(dir) {
     if (!NOTE_STACK.length) return;
     noteFront = (noteFront + dir + NOTE_STACK.length) % NOTE_STACK.length;
-    renderNoteStack();
+    renderNoteCard();
   }
 
-  function renderNoteStack() {
-    var stackEl = document.getElementById("ih-notes-stack");
-    if (!stackEl || !NOTE_STACK.length) return;
-    var depth = Math.min(4, NOTE_STACK.length);
-    var html = "";
-    for (var i = 0; i < depth; i++) {
-      var idx = (noteFront + i) % NOTE_STACK.length;
-      var n = NOTE_STACK[idx];
-      var body = (n.note || "").trim() || n.snippet || "(bookmark)";
-      var noteTitle = (n.title && n.title.trim()) || deriveTitle(body);
-      var m = manifestOf(n.case_slug);
-      var cc = caseColor(n.case_slug, m ? m.default_color : null);
-      var tint = NOTE_TINTS[idx % NOTE_TINTS.length];
-      html += '<a class="ih-note-card" data-pos="' + i + '" data-idx="' + idx + '" style="--nc:' + tint.bg + ";--ncd:" + tint.bgd + ";--cc:" + cc + '" ' +
-        'href="' + BASE + 'notes.html#e=' + encodeURIComponent(n._key || "") + '">' +
-        '<span class="title">' + esc(noteTitle) + "</span>" +
-        '<span class="body">' + esc(body.slice(0, 160)) + "</span>" +
-        '<span class="who">\u2014 ' + esc(n.case_name || n.case_slug || "Uncategorized") +
-        (n.bookmarked ? " \u2605" : "") + "</span></a>";
-    }
-    stackEl.innerHTML = html;
-    stackEl.querySelectorAll(".ih-note-card").forEach(function (card) {
-      card.addEventListener("click", function (ev) {
-        if (card.getAttribute("data-pos") !== "0") {
-          ev.preventDefault();
-          noteFront = Number(card.getAttribute("data-idx")) || 0;
-          renderNoteStack();
-        }
-      });
+  function renderNoteCard() {
+    var wrap = document.getElementById("ih-notes-wrap");
+    if (!wrap || !NOTE_STACK.length) return;
+    var n = NOTE_STACK[noteFront];
+    var body = (n.note || "").trim() || n.snippet || "(bookmark)";
+    var noteTitle = (n.title && n.title.trim()) || deriveTitle(body);
+    var m = manifestOf(n.case_slug);
+    var cc = caseColor(n.case_slug, m ? m.default_color : null);
+    var tint = NOTE_TINTS[0];
+    var artifact = n.entry_number != null ? "Docket No. " + n.entry_number : (n.url ? "News article" : "");
+    var when = fmtDate(n.updated_at);
+    var caseName = n.case_name || (m && (m.display_name || m.short_name)) || "";
+    var canPage = NOTE_STACK.length > 1;
+    wrap.innerHTML =
+      '<div class="ih-note-card" style="--nc:' + tint.bg + ";--ncd:" + tint.bgd + ";--cc:" + cc + '">' +
+        '<a class="ih-note-link" href="' + BASE + 'notes.html#e=' + encodeURIComponent(n._key || "") + '">' +
+          '<span class="title">' + esc(noteTitle) + "</span>" +
+          (artifact ? '<span class="artifact">' + NOTE_ARTIFACT_ICON + esc(artifact) + "</span>" : "") +
+          '<span class="body">' + (when ? "<strong>" + esc(when) + "</strong> \u2014 " : "") + esc(body.slice(0, 240)) +
+          (n.bookmarked ? " \u2605" : "") + "</span>" +
+        "</a>" +
+        '<div class="ih-note-foot">' +
+          '<button type="button" class="ih-note-nav" data-dir="-1"' + (canPage ? "" : " disabled") + ' aria-label="Previous note">\u2190</button>' +
+          '<span class="ih-note-counter">' + (noteFront + 1) + " of " + NOTE_STACK.length +
+            (caseName ? ' <span class="case">| ' + esc(caseName) + "</span>" : "") + "</span>" +
+          '<button type="button" class="ih-note-nav" data-dir="1"' + (canPage ? "" : " disabled") + ' aria-label="Next note">\u2192</button>' +
+        "</div>" +
+      "</div>";
+    wrap.querySelectorAll(".ih-note-nav").forEach(function (btn) {
+      btn.addEventListener("click", function () { stepNote(Number(btn.getAttribute("data-dir"))); });
     });
-  }
-
-  function startNoteAuto() {
-    stopNoteAuto();
-    if (NOTE_STACK.length < 2) return;
-    noteAutoTimer = setInterval(function () {
-      if (noteHovered) return;
-      stepNote(1);
-    }, NOTE_AUTO_MS);
-  }
-
-  function stopNoteAuto() {
-    if (noteAutoTimer) { clearInterval(noteAutoTimer); noteAutoTimer = null; }
   }
 
   function renderAll() {
