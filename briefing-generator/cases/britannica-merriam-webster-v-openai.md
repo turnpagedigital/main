@@ -1,10 +1,9 @@
 ---
-added: 2026-08-07
 slug: britannica-merriam-webster-v-openai
 display_name: Britannica v. OpenAI
 type: case
 status: active
-sync: active
+sync: manual
 topics:
   - llm-class-action
 case:
@@ -17,4 +16,5 @@ docket_source:
   docket_id: 72492986
   url: "https://www.courtlistener.com/docket/72492986/encyclopaedia-britannica-inc-v-openai-inc/"
 scan_guidance: "Filed March 2026, this reference-publisher action is a distinct doctrinal sub-track — reference works (encyclopedias, dictionaries) present a purer market-substitution argument than narrative books because ChatGPT directly replaces look-up queries, strengthening the § 107(4) fourth-factor claim."
+added: 2026-08-07
 ---
