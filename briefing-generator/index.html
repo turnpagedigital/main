@@ -151,6 +151,13 @@
     .ih-band-grip:hover::after { background: var(--line-strong); }
     .ih-band-grip.on::after { background: var(--neon-block); }
     @media (max-width: 1100px) { .ih-band { grid-template-columns: 1fr; } .ih-band-grip { display: none; } }
+    /* Drag vertically to show more/less: News rows, and an extra calendar
+       week — same "thin bar, highlights on hover/drag" language as the
+       column-width grips above, just turned 90deg. */
+    .ih-band-vgrip { max-width: 1680px; margin: 0 auto; padding: 6px 32px; height: 15px; box-sizing: content-box; cursor: row-resize; display: flex; align-items: center; justify-content: center; }
+    .ih-band-vgrip span { width: 44px; height: 2px; background: transparent; border-radius: 2px; transition: background 0.12s; }
+    .ih-band-vgrip:hover span { background: var(--line-strong); }
+    .ih-band-vgrip.on span { background: var(--neon-block); }
     .ih-tile { background: var(--surface); border: 1px solid var(--line-strong); display: flex; flex-direction: column; }
     /* Briefings carousel: 3 cards visible, horizontal scroll for the rest */
     .ih-carousel { max-width: 1680px; margin: 0 auto 96px; padding: 0 32px; display: flex; align-items: stretch; gap: 6px; }
@@ -382,17 +389,15 @@
        the #id directly so it wins regardless of source order. */
     #ih-notes { background: transparent; border: none; border-radius: 0; box-shadow: none; overflow: visible; }
     .ih-notes-wrap { flex: 1; display: flex; flex-direction: column; padding: 0; }
-    .ih-notes-stack { position: relative; flex: 1; min-height: 160px; margin: 100px 0 0; }
+    .ih-notes-stack { position: relative; flex: 1; min-height: 160px; margin: 0; }
     /* Cards are solid opaque "paper" (--nc is a hex, not a tint) so a card
        fully occludes whatever is stacked behind it — text/ink color is fixed
        dark regardless of site theme, same as real paper doesn't change color
-       when the room lights dim. Offsets are % (of the card's own size) rather
-       than px so the fan still reads once the stack stretches to fill the
-       tile's full height. The top stripe is the note's case color — the same
-       raw value a case pill shows as its light-mode background and (via the
-       pill dark-mode flip) its dark-mode text. Shadow spread is negative so
-       it reads as "sitting above the one behind" without a visible halo on
-       the sides. */
+       when the room lights dim. The top stripe is the note's case color —
+       the same raw value a case pill shows as its light-mode background and
+       (via the pill dark-mode flip) its dark-mode text. Shadow spread is
+       negative so it reads as "sitting above the one behind" without a
+       visible halo on the sides. */
     .ih-note-card { position: absolute; inset: 0; background: var(--nc); border-top: 4px solid var(--cc, transparent); border-radius: 14px; padding: 14px 17px 15px; box-shadow: 0 6px 10px -7px rgba(10,10,10,0.4); text-decoration: none; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.32s cubic-bezier(.2,.8,.2,1), box-shadow 0.2s ease, filter 0.32s ease; }
     [data-theme="dark"] .ih-note-card { background: var(--ncd); box-shadow: 0 6px 14px -7px rgba(0,0,0,0.7); }
     .ih-note-card .title { font-size: 15px; font-weight: 800; color: #21201A; padding-bottom: 7px; margin-bottom: 6px; border-bottom: 1px solid rgba(10,10,10,0.14); }
@@ -405,13 +410,16 @@
     [data-theme="dark"] .ih-note-card .who { color: rgba(237,231,222,0.6); }
     /* Apple Wallet-style stack: no rotation, straight edges, each card behind
        peeks far enough to show its own title (grayed out), not just a sliver
-       of color. */
-    .ih-note-card[data-pos="0"] { transform: translateY(0); z-index: 4; }
-    .ih-note-card[data-pos="0"]:hover { transform: translateY(-3px); box-shadow: 0 10px 16px -7px rgba(10,10,10,0.45); }
+       of color. Positions are framed from the DEEPEST card (data-pos="3") at
+       translateY(0) — i.e. flush with the stack's own top edge, which is why
+       .ih-notes-stack needs no top margin — so the whole pile's top aligns
+       with the News/Calendar tiles beside it, same as their content does. */
+    .ih-note-card[data-pos="0"] { transform: translateY(92px); z-index: 4; }
+    .ih-note-card[data-pos="0"]:hover { transform: translateY(89px); box-shadow: 0 10px 16px -7px rgba(10,10,10,0.45); }
     [data-theme="dark"] .ih-note-card[data-pos="0"]:hover { box-shadow: 0 10px 18px -7px rgba(0,0,0,0.75); }
-    .ih-note-card[data-pos="1"] { transform: translateY(-36px); z-index: 3; filter: grayscale(0.7) brightness(0.94); }
-    .ih-note-card[data-pos="2"] { transform: translateY(-66px); z-index: 2; filter: grayscale(0.75) brightness(0.9); }
-    .ih-note-card[data-pos="3"] { transform: translateY(-92px); z-index: 1; filter: grayscale(0.8) brightness(0.86); }
+    .ih-note-card[data-pos="1"] { transform: translateY(56px); z-index: 3; filter: grayscale(0.7) brightness(0.94); }
+    .ih-note-card[data-pos="2"] { transform: translateY(26px); z-index: 2; filter: grayscale(0.75) brightness(0.9); }
+    .ih-note-card[data-pos="3"] { transform: translateY(0); z-index: 1; filter: grayscale(0.8) brightness(0.86); }
     /* Hovering a peeking card lifts it to (nearly) the front position, in
        full color, so a long title that would otherwise be covered by the
        card(s) in front is fully readable — without changing which card is
@@ -577,6 +585,8 @@
       <div class="ih-list" id="ih-notes"><div class="ih-empty">Loading…</div></div>
     </section>
   </div>
+
+  <div class="ih-band-vgrip" id="ih-band-vgrip" title="Drag to show more or less"><span></span></div>
 
   <div class="ih-cases-head">
     <div class="ih-cases-title"><span class="ih-emoji">🗂️</span><span class="ih-name">Cases</span></div>
