@@ -3,7 +3,7 @@ slug: publishers-v-google-llc-gemini-books
 display_name: Publishers v. Google
 type: case
 status: active
-sync: active
+sync: manual
 topics:
   - llm-class-action
 case:
