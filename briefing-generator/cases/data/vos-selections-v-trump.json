@@ -16,10 +16,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70394463/vos-selections-inc-v-trump/",
     "date_last_filing": "2026-03-24",
-    "meta_fetched_at": "2026-08-11T21:08:21.095397+00:00",
-    "fetched_at": "2026-08-11T21:08:21.095397+00:00",
+    "meta_fetched_at": "2026-08-11T22:08:30.130506+00:00",
+    "fetched_at": "2026-08-11T22:08:30.130506+00:00",
     "as_of": "Aug 11, 2026",
-    "backfilled": false,
+    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -1755,6 +1755,46 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.12.0.pdf"
       },
       {
+        "entry_number": 11,
+        "date_filed": "2025-05-29",
+        "time_filed": "",
+        "date_display": "May 29, 2025",
+        "description": "Entry of Appearance for Peter J. Farrell as counsel for Appellee State of Minnesota. Service: 05/29/2025 by email. [1092975] [25-1812] [Peter Farrell] [Entered: 05/29/2025 05:51 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.11.0_2.pdf"
+      },
+      {
+        "entry_number": 10,
+        "date_filed": "2025-05-29",
+        "time_filed": "",
+        "date_display": "May 29, 2025",
+        "description": "Entry of Appearance for Joshua Bendor; Syreeta Tyrell as counsel for Appellee State of Arizona. Service: 05/29/2025 by email. [1092946] [25-1812] [Joshua Bendor] [Entered: 05/29/2025 04:45 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.10.0.pdf"
+      },
+      {
+        "entry_number": 9,
+        "date_filed": "2025-05-29",
+        "time_filed": "",
+        "date_display": "May 29, 2025",
+        "description": "Clerk's Note to the File: The following cases are consolidated: 25-1812 (lead); 25-1813. The parties must file all documents in the lead appeal only. [1092919] [25-1812, 25-1813]--[Edited 05/29/2025 by MVH] [MVH] [Entered: 05/29/2025 03:53 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 8,
+        "date_filed": "2025-05-29",
+        "time_filed": "",
+        "date_display": "May 29, 2025",
+        "description": "NOTE TO FILE: FOR PRIOR ENTRIES SEE 25-1813. [1092917] [MVH] [Entered: 05/29/2025 03:51 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
         "entry_number": 7,
         "date_filed": "2025-05-29",
         "time_filed": "",
@@ -1763,9 +1803,68 @@
         "is_new": false,
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.7.0_2.pdf"
+      },
+      {
+        "entry_number": 6,
+        "date_filed": "2025-05-29",
+        "time_filed": "",
+        "date_display": "May 29, 2025",
+        "description": "MOTION of Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Office of the United States Trade Representative, Donald J. Trump, United States Customs and Border Protection and US for an emergency stay pending appeal under Rule 8/18. Service: 05/29/2025 by email. [1092776] [25-1812] [Daniel Winik] [Entered: 05/29/2025 11:24 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.6.0_4.pdf"
+      },
+      {
+        "entry_number": 5,
+        "date_filed": "2025-05-29",
+        "time_filed": "",
+        "date_display": "May 29, 2025",
+        "description": "Official caption revised to reflect Howard Lutnick, in his official capacity as Secretary of Commerce. (see attached). Service as of this date by the Clerk of Court. [1092707] [MMA] [Entered: 05/29/2025 09:56 AM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.5.0.pdf"
+      },
+      {
+        "entry_number": 4,
+        "date_filed": "2025-05-28",
+        "time_filed": "",
+        "date_display": "May 28, 2025",
+        "description": "CORRECTED MOTION of Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Office of the United States Trade Representative, Donald J. Trump, United States Customs and Border Protection and US to consolidate appeals (25-1812, 25-1813). Service: 05/28/2025 by email. [1092676] [25-1812] --[Edited 05/29/2025 by CAB to attach pdf] [Bradley Hinshelwood] [Entered: 05/28/2025 11:17 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.4.0.pdf"
+      },
+      {
+        "entry_number": 3,
+        "date_filed": "2025-05-28",
+        "time_filed": "",
+        "date_display": "May 28, 2025",
+        "description": "FILED IN ERROR: MOTION of Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Office of the United States Trade Representative, Donald J. Trump, United States Customs and Border Protection and US to consolidate appeals (25-1812, 25-1813). Service: 05/28/2025 by email. [1092674] [25-1812] --[Edited 05/29/2025 by CAB to modify entry] [Bradley Hinshelwood] [Entered: 05/28/2025 11:12 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.3.0.pdf"
+      },
+      {
+        "entry_number": 2,
+        "date_filed": "2025-05-28",
+        "time_filed": "",
+        "date_display": "May 28, 2025",
+        "description": "Entry of Appearance for Daniel Winik; Brad Hinshelwood; Michael S. Raab as counsel for Appellants Executive Office of the President, Pete R. Flores, Jamieson Greer, Howard Lutnick, Office of the United States Trade Representative, Donald J. Trump, United States Customs and Border Protection and US. Service: 05/28/2025 by email. [1092672] [25-1812] [Bradley Hinshelwood] [Entered: 05/28/2025 10:46 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.2.0.pdf"
+      },
+      {
+        "entry_number": 1,
+        "date_filed": "2025-05-28",
+        "time_filed": "",
+        "date_display": "May 28, 2025",
+        "description": "Appeal docketed. Received: 05/28/2025. [1092663]Entry of Appearance due 06/11/2025. Certificate of Interest is due on 06/11/2025. Docketing Statement due 06/27/2025. Appellant/Petitioner's brief is due 07/28/2025. [JCA] [Entered: 05/28/2025 08:45 PM]",
+        "is_new": false,
+        "landmark": "",
+        "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cafc.23105/gov.uscourts.cafc.23105.1.1_2.pdf"
       }
-    ],
-    "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=70394463&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=10"
+    ]
   },
   "claims_administrator": null,
   "coverage": []
