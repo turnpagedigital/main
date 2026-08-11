@@ -2,22 +2,18 @@
   "case": {
     "slug": "bartz-anthropic",
     "display_name": "Bartz v. Anthropic",
-    "case_name": "Bartz v. Anthropic PBC",
+    "case_name": "Bartz, et al. v. Anthropic PBC",
     "court": "U.S. District Court, N.D. Cal. (San Francisco)",
-    "court_id": "",
     "case_number": "3:24-cv-05417",
     "judge": "Hon. Araceli Martínez-Olguín",
     "docket_id": "69058235",
-    "status": "active"
+    "status": "active",
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/69058235/bartz-v-anthropic-pbc/",
-    "date_last_filing": "2026-07-21",
-    "fetched_at": "2026-08-10T23:52:44.558523+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -7377,40 +7373,16 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.1.0.pdf"
       }
-    ]
+    ],
+    "date_last_filing": "2026-07-21",
+    "fetched_at": "2026-08-10T23:52:44.558523+00:00",
+    "as_of": "Aug 10, 2026",
+    "backfilled": true
   },
   "claims_administrator": {
     "name": "JND Legal Administration",
-    "key_dates_url": "https://www.anthropiccopyrightsettlement.com/dates",
-    "stat_big": "92.77%",
-    "stat_sub": "447,576 / 482,460 works claimed · ~120,000 authors",
-    "dates": [
-      {
-        "date": "Apr 30, 2026",
-        "label": "2nd installment funded ($300M) → $600M of $1.5B",
-        "done": true
-      },
-      {
-        "date": "May 14, 2026",
-        "label": "Final fairness hearing (held)",
-        "done": true
-      },
-      {
-        "date": "May 21, 2026",
-        "label": "Supplemental briefs due (late opt-outs; fees / lead-plaintiff payments)",
-        "done": false
-      },
-      {
-        "date": "Jun 11, 2026",
-        "label": "Administrator calculates distributions",
-        "done": false
-      },
-      {
-        "date": "Jun 2026 +",
-        "label": "Payments begin (subject to any appeals)",
-        "done": false
-      }
-    ]
+    "url": "",
+    "key_dates_url": "https://www.anthropiccopyrightsettlement.com/dates"
   },
   "coverage": [
     {
@@ -7536,24 +7508,6 @@
       "source": "Bloomberg Law",
       "date": "2026-07-20",
       "summary": "A California federal judge gave final approval to Anthropic's $1.5 billion copyright class action settlement with authors, setting aside roughly $101.5 million in attorney fees for class counsel. The case, Bartz v. Anthropic PBC, is described as the largest copyright class action settlement in U.S. history."
-    }
-  ],
-  "events": [
-    {
-      "title": "Appeal Deadline — 30-Day Window to Appeal Final Judgment in Bartz v. Anthropic",
-      "date": "2026-08-19",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://blog.taaonline.net/2026/08/bartz-v-anthropic-when-to-expect-payments-next-steps/",
-      "source": "Textbook & Academic Authors Association (TAA)"
-    },
-    {
-      "title": "Anthropic Settlement Fund – Third Installment Payment Due",
-      "date": "2026-09-25",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://press.princeton.edu/news/bartz-v-anthropic",
-      "source": "Princeton University Press (citing settlement agreement)"
     }
   ]
 }
