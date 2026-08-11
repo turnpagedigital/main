@@ -128,18 +128,26 @@
       "name": "AI Copyright",
       "slugs": [
         "bartz-anthropic",
-        "concord-anthropic"
+        "britannica-merriam-webster-v-openai",
+        "concord-anthropic",
+        "getty-images-us-v-stability-ai-nd-cal",
+        "hachette-et-al-v-google-llc-gemini",
+        "hachette-et-al-v-meta-platforms-llama",
+        "kadrey-v-meta-contributory-infringement-amendment",
+        "publishers-v-google-llc-gemini-books",
+        "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153"
       ]
     },
     {
       "name": "Crypto Distress",
       "slugs": [
         "blockfills",
+        "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
         "goliath",
         "kahan",
+        "poolin",
         "power-block-coin",
-        "terraform-labs",
-        "poolin"
+        "terraform-labs"
       ]
     },
     {
