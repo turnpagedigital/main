@@ -15,10 +15,10 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73657689/poolin-technology-pte-ltd/",
     "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T23:02:33.176849+00:00",
-    "as_of": "Aug 10, 2026",
+    "fetched_at": "2026-08-11T00:01:25.423661+00:00",
+    "as_of": "Aug 11, 2026",
     "backfilled": true,
-    "new_in_72h": 7,
+    "new_in_72h": 6,
     "recent": [
       {
         "entry_number": 106,
@@ -118,7 +118,7 @@
         "time_filed": "15:37:03",
         "date_display": "Aug 8, 2026",
         "description": "Exhibit",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
