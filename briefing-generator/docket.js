@@ -3201,6 +3201,72 @@
       });
     }
 
+    // Sync button — pull fresh docket + news for one case, refresh its
+    // briefing if the last one is more than 12h old (manual-case-sync.yml).
+    var syncBtn = document.getElementById("ud-sync-btn");
+    var syncPanel = document.getElementById("ud-sync-panel");
+    function runManualSync(slug) {
+      if (!syncBtn) return;
+      syncBtn.disabled = true;
+      syncBtn.textContent = "Syncing…";
+      fetch("api/admin/manual-sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ slug: slug }),
+      }).then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, body: j }; });
+      }).then(function (res) {
+        if (res.status === 401 || res.status === 403) {
+          noteToast("Session expired — reload the page and try again", true);
+        } else if (res.body && res.body.ok) {
+          noteToast(res.body.note || "Sync started.", false);
+        } else {
+          noteToast((res.body && res.body.error) || "Sync failed to start", true);
+        }
+      }).catch(function () {
+        noteToast("Sync failed — network error", true);
+      }).then(function () {
+        syncBtn.disabled = false;
+        syncBtn.textContent = "⟳ Sync case";
+      });
+    }
+    if (syncBtn && syncPanel) {
+      function closeSyncPanel() { syncPanel.style.display = "none"; }
+      function buildSyncPanel() {
+        var sorted = CASES.slice().sort(function (a, b) {
+          return (a.short_name || a.display_name || "").localeCompare(b.short_name || b.display_name || "");
+        });
+        var html = '<div class="ud-sync-hint">Pulls fresh docket entries + news, and refreshes the briefing if it hasn’t run in 12h.</div>';
+        html += sorted.map(function (c) {
+          var bg = getBg(c.slug, c.default_color);
+          var fg = getFg(c.slug, bg);
+          return '<button type="button" class="ud-sync-row" data-sync-slug="' + esc(c.slug) + '">' +
+            '<span class="ud-pill" style="--pb:' + bg + ";--pf:" + fg + '">' + esc(c.short_name || c.display_name) + "</span>" +
+          "</button>";
+        }).join("");
+        syncPanel.innerHTML = html || '<div class="ud-sync-hint">No cases tracked yet.</div>';
+        syncPanel.querySelectorAll("[data-sync-slug]").forEach(function (row) {
+          row.addEventListener("click", function () {
+            closeSyncPanel();
+            runManualSync(row.getAttribute("data-sync-slug"));
+          });
+        });
+      }
+      syncBtn.addEventListener("click", function (ev) {
+        ev.stopPropagation();
+        var open = syncPanel.style.display !== "none";
+        if (open) { closeSyncPanel(); return; }
+        buildSyncPanel();
+        syncPanel.style.display = "block";
+      });
+      document.addEventListener("click", function (ev) {
+        if (syncPanel.style.display === "none") return;
+        if (syncPanel.contains(ev.target) || syncBtn.contains(ev.target)) return;
+        closeSyncPanel();
+      });
+    }
+
     init();
   });
 })();

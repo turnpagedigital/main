@@ -693,8 +693,12 @@ def main():
     prev_by_slug = {i.get("slug"): i for i in prev.get("items", [])}
 
     cases = load_cases()
+    # A manual/scoped rerun (`only`) targets a specific case by explicit
+    # request — same "ignores sync mode" rule as the docket Sync-now button —
+    # so it isn't silently dropped just because the case is on manual sync.
     active = [c for c in cases
-              if c["config"].get("sync", "active") == "active" and c["data"] is not None]
+              if c["data"] is not None
+              and (c["config"].get("sync", "active") == "active" or c["slug"] in only)]
     if not active:
         print("No active cases with data files found.")
         return
