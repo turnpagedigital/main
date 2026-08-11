@@ -16,6 +16,6 @@ docket_source:
   type: courtlistener
   docket_id: 69021491
   url: "https://www.courtlistener.com/docket/69021491/jason-m-kahan/"
-scan_guidance: "Watch for any movements in the appeal. "
+scan_guidance: "Watch for updates in the appeals process"
 added: 2026-07-30
 ---
