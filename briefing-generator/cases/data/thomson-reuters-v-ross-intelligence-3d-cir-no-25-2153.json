@@ -2,23 +2,18 @@
   "case": {
     "slug": "thomson-reuters-v-ross-intelligence-3d-cir-no-25-2153",
     "display_name": "Thomson Reuters v. Ross Intelligence (3d Cir. No. 25-2153)",
-    "case_name": "Thomson Reuters Enterprise Centre GmbH v. Ross Intelligence Inc",
+    "case_name": "Thomson Reuters Enterprise Centre GmbH et al. v. Ross Intelligence, Inc.",
     "court": "U.S. Court of Appeals for the Third Circuit",
     "case_number": "25-2153",
     "judge": "Not yet assigned",
     "docket_id": "70622297",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "archived"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70622297/thomson-reuters-enterprise-centre-gmbh-v-ross-intelligence-inc/",
-    "date_last_filing": "2026-06-24",
-    "fetched_at": "2026-08-11T00:02:39.593378+00:00",
-    "as_of": "Aug 11, 2026",
-    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -2043,7 +2038,11 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.1.1.pdf"
       }
-    ]
+    ],
+    "date_last_filing": "2026-06-24",
+    "fetched_at": "2026-08-11T00:02:39.593378+00:00",
+    "as_of": "Aug 11, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
   "coverage": [
@@ -2082,6 +2081,5 @@
       "date": "2026-06-11",
       "summary": "Bloomberg Law reporter Kyle Jahner covers the Third Circuit oral argument in Thomson Reuters v. Ross Intelligence, focusing on how the case's outcome hinges on the market-impact (fourth fair-use factor) question. The piece notes the case differs from broader generative-AI copyright suits against Anthropic, Meta, and OpenAI."
     }
-  ],
-  "events": []
+  ]
 }
