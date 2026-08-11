@@ -513,6 +513,13 @@
     }
     return false;
   }
+  // Same rule, looked up by slug — for feed/note items that only carry a
+  // case_slug, not a full manifest-shaped unit. Unknown slugs (e.g. a
+  // briefing-group id) default to visible rather than disappearing silently.
+  function caseVisibleBySlug(slug) {
+    var m = MANIFEST.find(function (x) { return x.slug === slug; });
+    return m ? caseVisible(m) : true;
+  }
 
   function caseNextDate(x) {
     var today = todayIso();
@@ -805,7 +812,10 @@
     // Only case- or theme-related news makes the dashboard; the full feed
     // lives on the News page under "All news".
     var items = FEED_ITEMS.filter(function (b) {
-      return b.url && b.title && (b.case_slug || b.group_name || b.theme_slug);
+      if (!b.url || !b.title || !(b.case_slug || b.group_name || b.theme_slug)) return false;
+      if (b.case_slug) return caseVisibleBySlug(b.case_slug);
+      if (b.theme_slug) return themeOn(b.theme_slug);
+      return true; // group_name-only items carry no theme info to filter on
     });
     var countEl = document.getElementById("ih-unassigned-count");
     if (countEl) countEl.textContent = "View all \u2192";
@@ -835,7 +845,7 @@
     var today = todayIso();
     var events = [];
     CASE_DATA.forEach(function (x) {
-      if (!caseOn(x.m.slug)) return;
+      if (!caseVisible(x.m)) return;
       var short = x.m.short_name || x.m.display_name || x.m.slug;
       ((x.c && x.c.events) || []).forEach(function (ev) {
         if (ev.date) events.push({ date: ev.date, time: (ev.time || "").trim(), short: short, kind: ev.kind || "", title: ev.title || "", slug: x.m.slug, default_color: x.m.default_color });
@@ -967,7 +977,7 @@
     var list = NOTES_LIST.filter(function (n) {
       if (!n.case_slug) return caseOn("__unassigned__");
       var known = MANIFEST.some(function (m) { return m.slug === n.case_slug; });
-      return known ? caseOn(n.case_slug) : true;
+      return known ? caseVisibleBySlug(n.case_slug) : true;
     });
     var box = document.getElementById("ih-notes");
     if (!box) return;
