@@ -310,14 +310,16 @@
     .ih-pr-dismiss:hover { background: var(--paper-2); }
     .ih-pr-btn[disabled] { opacity: 0.45; cursor: default; }
     .ih-dates { padding: 8px 14px 12px; }
-    .ih-mm-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; font-size: 12px; font-weight: 800; }
+    .ih-mm-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 12px; font-weight: 800; }
+    .ih-mm-label { margin-right: auto; }
     .ih-mm-nav { font-family: inherit; font-size: 13px; font-weight: 700; padding: 1px 8px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink); cursor: pointer; }
     .ih-mm-nav:hover { background: var(--paper-2); }
     .ih-wk-tgl { display: inline-flex; gap: 0; }
     .ih-wk-tgl button { font-family: inherit; font-size: 10px; font-weight: 800; letter-spacing: 0.04em; padding: 2px 9px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; margin-left: -1px; }
     .ih-wk-tgl button:first-child { margin-left: 0; }
     .ih-wk-tgl button:hover { background: var(--paper-2); }
-    .ih-wk-tgl button.on { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
+    .ih-wk-tgl button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    [data-theme="dark"] .ih-wk-tgl button.on { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
     .ih-mm-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; }
     .ih-wk-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
     .ih-wk-col { min-height: 150px; }

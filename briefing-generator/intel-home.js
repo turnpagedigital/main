@@ -871,7 +871,7 @@
     // fixed at calDays; an expanded render just adds more days, which wrap to
     // a 2nd row for free under CSS grid's default row-first flow.
     function isoOf(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
-    var MABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var MFULL = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var DOWL = ["S", "M", "T", "W", "T", "F", "S"];
 
     function buildDays(totalDays) {
@@ -890,13 +890,14 @@
     function buildHtml(expanded) {
       var days = buildDays(expanded ? calDays * 2 : calDays);
       var a = days[0], b = days[days.length - 1];
+      // Just the month name(s) — the per-day dates are shown in the grid below.
       var range = a.getMonth() === b.getMonth()
-        ? MABBR[a.getMonth()] + " " + a.getDate() + " – " + b.getDate()
-        : MABBR[a.getMonth()] + " " + a.getDate() + " – " + MABBR[b.getMonth()] + " " + b.getDate();
+        ? MFULL[a.getMonth()]
+        : MFULL[a.getMonth()] + " – " + MFULL[b.getMonth()];
 
       var h = '<div class="ih-mm-head">' +
         '<button type="button" class="ih-mm-nav" data-wk="-1">‹</button>' +
-        '<span>' + range + (expanded ? ' <span class="ih-wk-2wk">2 weeks</span>' : "") + '</span>' +
+        '<span class="ih-mm-label">' + range + (expanded ? ' <span class="ih-wk-2wk">2 weeks</span>' : "") + '</span>' +
         '<span class="ih-wk-tgl">' +
           '<button type="button" data-days="7" class="' + (calDays === 7 ? "on" : "") + '" title="Next 7 days">7d</button>' +
           '<button type="button" data-days="5" class="' + (calDays === 5 ? "on" : "") + '" title="Next 5 business days">5d</button>' +
