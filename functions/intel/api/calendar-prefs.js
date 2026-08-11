@@ -14,7 +14,7 @@ import { getFileFromGitHub, commitFileToGitHub } from "../../api/admin/_github.j
 const PATH = "briefing-generator/intel-calendar.json";
 
 function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main"; }
-function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
+function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || env.GITHUB_BRANCH || "dev"; }
 
 function sanitize(body) {
   const keyOk = (k) => typeof k === "string" && k.length > 0 && k.length <= 300;

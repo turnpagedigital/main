@@ -14,7 +14,7 @@ import { getFileFromGitHub, commitFileToGitHub } from "../../api/admin/_github.j
 const PATH = "briefing-generator/bondoro.json";
 
 function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main"; }
-function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
+function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || env.GITHUB_BRANCH || "dev"; }
 
 export async function onRequestGet(context) {
   const res = await getFileFromGitHub(context.env, PATH, null, briefingRepo(context.env), briefingBranch(context.env));

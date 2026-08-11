@@ -15,7 +15,7 @@ import { jsonResponse } from "../../api/admin/_utils.js";
 import { getFileFromGitHub, commitFileToGitHub } from "../../api/admin/_github.js";
 
 function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main"; }
-function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
+function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || env.GITHUB_BRANCH || "dev"; }
 
 export async function onRequestPut(context) {
   const { request, env } = context;

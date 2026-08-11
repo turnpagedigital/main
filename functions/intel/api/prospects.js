@@ -26,7 +26,7 @@ const JSON_PATH = "briefing-generator/prospects.json";
 const STATUSES = ["new", "dismissed", "tracked"];
 
 function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main"; }
-function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
+function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || env.GITHUB_BRANCH || "dev"; }
 
 async function loadStore(env) {
   const res = await getFileFromGitHub(env, JSON_PATH, null, briefingRepo(env), briefingBranch(env));

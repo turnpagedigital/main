@@ -23,7 +23,7 @@ import { getFileFromGitHub, commitFilesToGitHub } from "../../api/admin/_github.
 const JSON_PATH = "briefing-generator/briefing-groups.json";
 
 function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main"; }
-function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
+function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || env.GITHUB_BRANCH || "dev"; }
 
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 

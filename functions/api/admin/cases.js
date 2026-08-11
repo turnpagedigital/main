@@ -26,7 +26,7 @@ import {
 } from "./_github.js";
 
 function briefingRepo(env) { return env.GITHUB_BRIEFING_REPO || env.GITHUB_REPO || "turnpagedigital/main"; }
-function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || "main"; }
+function briefingBranch(env) { return env.GITHUB_BRIEFING_BRANCH || env.GITHUB_BRANCH || "dev"; }
 const CASES_DIR = "briefing-generator/cases";
 
 // Pill palette — matches inject_cases.py _PILL_PALETTE (bg colors only)
