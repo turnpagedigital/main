@@ -2,22 +2,18 @@
   "case": {
     "slug": "blockfills",
     "display_name": "BlockFills",
-    "case_name": "Reliz Technology Group Holdings Inc.",
+    "case_name": "Reliz Technology Group Holdings Inc., et al. (BlockFills)",
     "court": "Bankr. D. Del.",
     "case_number": "26-10371",
     "judge": "Thomas M. Horan",
     "docket_id": "72494188",
     "status": "active",
-    "court_id": ""
+    "sync": "archived"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/72494188/reliz-technology-group-holdings-inc/",
-    "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T23:52:50.304449+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true,
     "new_in_72h": 1,
     "recent": [
       {
@@ -5875,7 +5871,11 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-08-10",
+    "fetched_at": "2026-08-10T23:52:50.304449+00:00",
+    "as_of": "Aug 10, 2026",
+    "backfilled": true
   },
   "claims_administrator": {
     "name": "Veritaglobal",
@@ -5953,6 +5953,5 @@
       "date": "2026-03-16",
       "summary": "BlockFills filed for Chapter 11 bankruptcy after halting customer withdrawals in February following approximately $75 million in losses and a lawsuit alleging misappropriation of customer assets. The firm said the filing was intended to preserve business value and maximize recoveries for stakeholders through a court-supervised restructuring process."
     }
-  ],
-  "events": []
+  ]
 }
