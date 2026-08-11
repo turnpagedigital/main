@@ -77,6 +77,10 @@ def parse_case_config(text):
         # dashboard's Newest/Oldest sort.
         "added": _scalar(fm, "added") or "",
         "topics": _list(fm, "topics"),
+        # Free-text steer for generate_case_briefings.py / scan_news.py —
+        # was written to the front matter by the admin editor but never
+        # parsed back out here, so it silently never reached either prompt.
+        "scan_guidance": _scalar(fm, "scan_guidance") or "",
         "case": {
             "parties": _scalar(case_sub, "parties") or "",
             "court": _scalar(case_sub, "court") or "",

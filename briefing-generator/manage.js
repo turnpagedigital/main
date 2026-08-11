@@ -165,9 +165,9 @@
   }
 
   // ── Tab router ─────────────────────────────────────────────────────────────
-  var TABS = { cases: renderCases, themes: renderThemes, groups: renderGroups, voice: renderVoice, colors: renderColors };
+  var TABS = { cases: renderCases, themes: renderThemes, groups: renderGroups, voice: renderVoice, colors: renderColors, briefing: renderBriefingInputs };
   function currentTab() {
-    var m = /#(cases|themes|groups|voice|colors)/.exec(location.hash || "");
+    var m = /#(cases|themes|groups|voice|colors|briefing)/.exec(location.hash || "");
     return m ? m[1] : "cases";
   }
   function paintTabs() {
@@ -997,6 +997,255 @@
         })
         .then(function () { setBanner("ok", "Palette saved (this browser + roaming prefs)."); renderColors(); })
         .catch(function () { setBanner("err", "Saved locally; roaming prefs sync failed."); renderColors(); });
+    });
+  }
+
+  /* ══ BRIEFING INPUTS ═══════════════════════════════════════════════════════
+     Everything that shapes a case/group briefing prompt, gathered in one
+     view: house voice, X accounts, briefing groups, and news feed sources
+     (edited elsewhere — shown here with a preview + link so nothing is
+     hidden), plus the one thing genuinely edited here: every actively-synced
+     case's scan guidance, all at once instead of one popup at a time. */
+
+  function biVoicePreview() {
+    var el = $("mg-bi-voice-preview");
+    if (!el) return;
+    apiFetch("/api/admin/intelligence-settings").then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.ok) throw new Error();
+        var text = ((((d.settings || {}).voice) || {}).default) || "";
+        el.textContent = text || "(empty — set the house voice in Admin → Intelligence → Defaults)";
+      })
+      .catch(function () { el.textContent = "Couldn’t load."; });
+  }
+
+  function biXAccounts() {
+    var el = $("mg-bi-x");
+    if (!el) return;
+    apiFetch("/api/admin/x-sources").then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.ok) throw new Error();
+        var active = ((d.data && d.data.accounts) || []).filter(function (a) { return a.active !== false; });
+        if (!active.length) { el.innerHTML = '<span class="mg-hint" style="margin:0;">No accounts followed yet.</span>'; return; }
+        el.innerHTML = '<div class="mg-chips">' + active.map(function (a) {
+          return '<span class="mg-chip">@' + esc(a.handle || "") + "</span>";
+        }).join("") + "</div>" +
+          '<p class="mg-hint" style="margin:10px 0 0;">Posts from these accounts mentioning a case by name feed that case’s briefing — not used for group briefings.</p>';
+      })
+      .catch(function () { el.textContent = "Couldn’t load."; });
+  }
+
+  function biGroups() {
+    var el = $("mg-bi-groups");
+    if (!el) return;
+    apiFetch(BASE + "api/briefing-groups").then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.ok) throw new Error();
+        var groups = d.groups || [];
+        if (!groups.length) { el.innerHTML = '<span class="mg-hint" style="margin:0;">No briefing groups — every case gets its own briefing.</span>'; return; }
+        el.innerHTML = groups.map(function (g) {
+          var members = (g.members || []).map(function (slug) {
+            var c = CASES.filter(function (x) { return x.slug === slug; })[0];
+            return c ? casePill(c.slug, c.short_name || c.display_name) : esc(slug);
+          }).join(" ");
+          return '<div style="margin-bottom:8px;"><strong style="font-size:12.5px;">' + esc(g.name) + "</strong> — " + members + "</div>";
+        }).join("");
+      })
+      .catch(function () { el.textContent = "Couldn’t load."; });
+  }
+
+  // ── News feed sources — relocated from the docket/news toolbar "Sources"
+  // button (same /intel/api/feed-sources data; docket.js/news.js keep only
+  // the read side, feedSourceMode(), for their own row filtering). ─────────
+  var BI_FEED_SOURCES = [];
+
+  function biRenderSourceList() {
+    var list = $("mg-bi-src-list");
+    if (!list) return;
+    if (!BI_FEED_SOURCES.length) {
+      list.innerHTML = '<div class="mg-empty" style="padding:14px;">No sources configured.</div>';
+      return;
+    }
+    list.innerHTML = '<div class="ud-src-list">' + BI_FEED_SOURCES.map(function (s, i) {
+      return (
+        '<div class="ud-src-row">' +
+          '<input type="checkbox" data-idx="' + i + '"' + (s.enabled !== false ? " checked" : "") + ' title="Enabled">' +
+          '<span class="ud-src-name">' + esc(s.name) + "</span>" +
+          '<span class="ud-src-url" title="' + esc(s.url) + '">' + esc(s.url) + "</span>" +
+          '<select class="ud-src-mode" data-mode-idx="' + i + '" title="All entries: every item appears on the docket. Case matches only: items appear once tied to a tracked case.">' +
+            '<option value="all"' + (s.mode !== "case-only" ? " selected" : "") + ">All entries</option>" +
+            '<option value="case-only"' + (s.mode === "case-only" ? " selected" : "") + ">Case matches only</option>" +
+          "</select>" +
+          '<span class="ud-src-kind">' + esc(s.kind || "News") + "</span>" +
+          '<button type="button" class="ud-src-del" data-idx="' + i + '" title="Remove source">×</button>' +
+        "</div>"
+      );
+    }).join("") + "</div>";
+    list.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        BI_FEED_SOURCES[Number(cb.getAttribute("data-idx"))].enabled = cb.checked;
+      });
+    });
+    list.querySelectorAll(".ud-src-mode").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        BI_FEED_SOURCES[Number(sel.getAttribute("data-mode-idx"))].mode = sel.value;
+      });
+    });
+    list.querySelectorAll(".ud-src-del").forEach(function (b) {
+      b.addEventListener("click", function () {
+        BI_FEED_SOURCES.splice(Number(b.getAttribute("data-idx")), 1);
+        biRenderSourceList();
+      });
+    });
+  }
+
+  function biSrcStatus(text, isError) {
+    var el = $("mg-bi-src-status");
+    if (el) { el.textContent = text; el.style.color = isError ? "var(--danger)" : ""; }
+  }
+
+  function biLoadSources() {
+    var list = $("mg-bi-src-list");
+    if (list) list.innerHTML = '<div class="mg-empty" style="padding:14px;">Loading…</div>';
+    apiFetch(BASE + "api/feed-sources").then(function (r) { return r.json(); })
+      .then(function (p) {
+        BI_FEED_SOURCES = (p && p.ok && p.sources) || [];
+        biRenderSourceList();
+      })
+      .catch(function () {
+        BI_FEED_SOURCES = [];
+        biRenderSourceList();
+        biSrcStatus("Couldn’t load sources.", true);
+      });
+  }
+
+  function biAddSourceFromForm() {
+    var name = ($("mg-bi-src-name").value || "").trim();
+    var url = ($("mg-bi-src-url").value || "").trim();
+    var kind = ($("mg-bi-src-kind").value || "").trim() || "News";
+    if (!name || !/^https?:\/\//.test(url)) {
+      biSrcStatus("Name and a valid feed URL are required", true);
+      return;
+    }
+    BI_FEED_SOURCES.push({ name: name, url: url, kind: kind, mode: "all", enabled: true });
+    $("mg-bi-src-name").value = "";
+    $("mg-bi-src-url").value = "";
+    $("mg-bi-src-kind").value = "";
+    biSrcStatus("");
+    biRenderSourceList();
+  }
+
+  function biSaveSources() {
+    biSrcStatus("Saving…");
+    apiFetch(BASE + "api/feed-sources", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sources: BI_FEED_SOURCES }),
+    }).then(function (r) { return r.json(); }).then(function (p) {
+      if (p && p.ok) biSrcStatus("Saved — new sources pull on the next daily scan");
+      else biSrcStatus((p && p.error) || "Save failed", true);
+    }).catch(function () { biSrcStatus("Save failed — network error", true); });
+  }
+
+  function renderBriefingInputs() {
+    var rows = CASES.filter(function (c) { return (c.sync || "active") === "active"; })
+      .sort(function (a, b) {
+        return (a.short_name || a.display_name || "").localeCompare(b.short_name || b.display_name || "");
+      });
+    var rowsHtml = rows.length
+      ? rows.map(function (c) {
+          return (
+            '<div class="mg-bi-row">' +
+              '<div class="mg-bi-case">' + casePill(c.slug, c.short_name || c.display_name) + "</div>" +
+              '<textarea class="mg-bi-guidance" data-slug="' + esc(c.slug) + '" placeholder="What to watch for on this case — and what to ignore.">' + esc(c.scan_guidance || "") + "</textarea>" +
+              '<button type="button" class="mg-btn mg-bi-save" disabled>Save</button>' +
+            "</div>"
+          );
+        }).join("")
+      : '<div class="mg-empty">No actively-synced cases yet.</div>';
+
+    root.innerHTML =
+      bannerHtml() +
+      '<div class="mg-head"><h2>Briefing inputs</h2></div>' +
+      '<p class="mg-hint">Everything that shapes what the model writes for a case or group briefing, gathered in one place — the house voice and every case’s scan guidance are read together on every run.</p>' +
+
+      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>House voice</h3><a class="mg-btn mg-btn-ghost" href="/admin/intelligence/defaults" target="_blank" rel="noopener">Edit in Admin ↗</a></div>' +
+        '<div class="mg-box mg-bi-voice-preview" id="mg-bi-voice-preview">Loading…</div>' +
+      "</div>" +
+
+      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>Global sources</h3></div>' +
+        '<p class="mg-hint" style="margin:0;">Trusted / blocked outlet lists, in Admin → Intelligence → Defaults. Not currently read by case briefings — only the retired theme-based generator consults them.</p>' +
+      "</div>" +
+
+      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>X accounts</h3><a class="mg-btn mg-btn-ghost" href="/admin/intelligence/x" target="_blank" rel="noopener">Edit in Admin ↗</a></div>' +
+        '<div class="mg-box" style="padding:14px;" id="mg-bi-x">Loading…</div>' +
+      "</div>" +
+
+      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>Briefing groups</h3><span class="mg-hint" style="margin:0 0 0 auto;">Edited from the dashboard’s GROUPS menu</span></div>' +
+        '<div class="mg-box" style="padding:14px;" id="mg-bi-groups">Loading…</div>' +
+      "</div>" +
+
+      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>News feed sources</h3></div>' +
+        '<p class="mg-hint" style="margin:-4px 0 10px;">Each source’s RSS feed is pulled once a day. “All entries” puts every item on the docket (unassigned until tied to a case). “Case matches only” shows a feed’s items solely once matched to a tracked case.</p>' +
+        '<div class="mg-box" style="padding:14px;">' +
+          '<div id="mg-bi-src-list">Loading…</div>' +
+          '<div class="ud-src-add">' +
+            '<input type="text" id="mg-bi-src-name" placeholder="Name (e.g. PETITION)" style="flex:0 0 140px;">' +
+            '<input type="text" id="mg-bi-src-url" placeholder="RSS feed URL (https://…/rss)" style="flex:1;min-width:200px;">' +
+            '<input type="text" id="mg-bi-src-kind" placeholder="Tag (News)" style="flex:0 0 90px;">' +
+            '<button type="button" class="mg-btn" id="mg-bi-src-add-btn">Add</button>' +
+          "</div>" +
+          '<div style="display:flex;align-items:center;gap:10px;margin-top:10px;">' +
+            '<span id="mg-bi-src-status" class="mg-hint" style="margin:0;"></span>' +
+            '<span style="flex:1"></span>' +
+            '<button type="button" class="mg-btn mg-btn-primary" id="mg-bi-src-save">Save sources</button>' +
+          "</div>" +
+        "</div>" +
+      "</div>" +
+
+      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>Scan guidance — per case</h3></div>' +
+        '<p class="mg-hint" style="margin:-4px 0 10px;">Free-text steer read alongside the house voice for every briefing (and news scan) on that case. Every actively-synced case, in one place instead of one popup at a time.</p>' +
+        '<div class="mg-bi-rows">' + rowsHtml + "</div>" +
+      "</div>";
+
+    biVoicePreview();
+    biXAccounts();
+    biGroups();
+    biLoadSources();
+
+    $("mg-bi-src-add-btn").addEventListener("click", biAddSourceFromForm);
+    $("mg-bi-src-save").addEventListener("click", biSaveSources);
+
+    root.querySelectorAll(".mg-bi-row").forEach(function (row) {
+      var ta = row.querySelector(".mg-bi-guidance");
+      var btn = row.querySelector(".mg-bi-save");
+      var loaded = ta.value;
+      ta.addEventListener("input", function () { btn.disabled = ta.value === loaded; });
+      btn.addEventListener("click", function () {
+        var slug = ta.getAttribute("data-slug");
+        var c = CASES.filter(function (x) { return x.slug === slug; })[0];
+        if (!c) return;
+        var payload = JSON.parse(JSON.stringify(c));
+        payload.scan_guidance = ta.value;
+        btn.disabled = true;
+        btn.textContent = "Saving…";
+        apiFetch("/api/admin/cases", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }).then(function (r) { return r.json(); }).then(function (j) {
+          if (!j.ok) throw new Error(j.error || "Save failed");
+          c.scan_guidance = ta.value;
+          loaded = ta.value;
+          btn.textContent = "Saved";
+          setTimeout(function () { btn.textContent = "Save"; }, 1200);
+        }).catch(function (e) {
+          btn.disabled = false;
+          btn.textContent = "Save";
+          setBanner("err", "Save failed for " + (c.short_name || c.display_name || slug) + ": " + String(e.message || e));
+          renderBriefingInputs();
+        });
+      });
     });
   }
 
