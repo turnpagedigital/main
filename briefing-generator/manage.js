@@ -111,12 +111,12 @@
 
   // Factory palette = Andrew's Aug 2026 light/dark pairings (was the neon set).
   var FALLBACK_SWATCHES = [
-    { bg: "#e6e6e6", fg: "#000000" }, { bg: "#696969", fg: "#ffffff" },
-    { bg: "#ffebb3", fg: "#a66407" }, { bg: "#a66407", fg: "#ffffff" },
-    { bg: "#b2f5d9", fg: "#0e5338" }, { bg: "#e8d3fd", fg: "#5c2097" },
-    { bg: "#dbe0ff", fg: "#2d42e1" }, { bg: "#ffd6d1", fg: "#a00e0e" },
-    { bg: "#146747", fg: "#ffffff" }, { bg: "#8a56bd", fg: "#ffffff" },
-    { bg: "#2d42e1", fg: "#FFFFFF" }, { bg: "#b14135", fg: "#ffffff" },
+    { bg: "#cccccc", fg: "#000000" }, { bg: "#88ee63", fg: "#000000" },
+    { bg: "#ffef42", fg: "#000000" }, { bg: "#ffa552", fg: "#000000" },
+    { bg: "#fb8eb9", fg: "#000000" }, { bg: "#51ecd2", fg: "#000000" },
+    { bg: "#5dd1ee", fg: "#000000" }, { bg: "#d5ff02", fg: "#000000" },
+    { bg: "#75b8ff", fg: "#000000" }, { bg: "#cc99ff", fg: "#000000" },
+    { bg: "#999cff", fg: "#000000" }, { bg: "#ff7c70", fg: "#000000" },
   ];
 
   function caseColor(slug) {
