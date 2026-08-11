@@ -407,6 +407,12 @@
     .ih-note-card[data-pos="1"] { transform: translateY(-36px); z-index: 3; filter: grayscale(0.7) brightness(0.94); }
     .ih-note-card[data-pos="2"] { transform: translateY(-66px); z-index: 2; filter: grayscale(0.75) brightness(0.9); }
     .ih-note-card[data-pos="3"] { transform: translateY(-92px); z-index: 1; filter: grayscale(0.8) brightness(0.86); }
+    /* Hovering a peeking card lifts it to (nearly) the front position, in
+       full color, so a long title that would otherwise be covered by the
+       card(s) in front is fully readable — without changing which card is
+       actually "front" until it's clicked. */
+    .ih-note-card:not([data-pos="0"]):hover { transform: translateY(-4px); z-index: 10; filter: none; box-shadow: 0 10px 24px -6px rgba(10,10,10,0.4); }
+    [data-theme="dark"] .ih-note-card:not([data-pos="0"]):hover { box-shadow: 0 10px 26px -6px rgba(0,0,0,0.7); }
     .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 17px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
     .ih-color-pop { position: absolute; z-index: 1000; background: var(--surface); border: 1px solid var(--line-strong); padding: 14px; width: 240px; box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
