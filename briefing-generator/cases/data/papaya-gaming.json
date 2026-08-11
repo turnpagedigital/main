@@ -8,16 +8,12 @@
     "judge": "Mary F. Walrath",
     "docket_id": "73709081",
     "status": "active",
-    "court_id": ""
+    "sync": "active"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-11T00:01:11.907701+00:00",
-    "as_of": "Aug 11, 2026",
-    "backfilled": true,
     "new_in_72h": 5,
     "recent": [
       {
@@ -712,7 +708,11 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-08-10",
+    "fetched_at": "2026-08-11T00:01:11.907701+00:00",
+    "as_of": "Aug 11, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
   "coverage": [
@@ -793,6 +793,5 @@
       "date": "2026-07-28",
       "summary": "A New York federal judge granted Firy Inc.'s request ordering Papaya Gaming Ltd. to disgorge $719 million and pay $10.1 million in attorney fees, on top of a $420 million jury verdict from April for alleged misrepresentations about its mobile games using bots. The disgorgement figure replaced, rather than supplemented, the original damages award."
     }
-  ],
-  "events": []
+  ]
 }
