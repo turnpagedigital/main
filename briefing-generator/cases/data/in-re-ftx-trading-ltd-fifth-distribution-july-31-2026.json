@@ -9030,6 +9030,13 @@
       "summary": "The FTX Recovery Trust initiated its fifth creditor distribution of $900 million on July 31, with verified claimants receiving funds via wire transfers or designated exchanges, bringing cumulative repayments to approximately $10 billion since FTX's Chapter 11 filing in November 2022."
     },
     {
+      "headline": "FTX Begins $900M Payout: Kroll Breach Left Creditors Exposed to Scammers",
+      "url": "https://www.techtimes.com/articles/322510/20260731/ftx-begins-900m-payout-kroll-breach-left-creditors-exposed-scammers.htm",
+      "source": "TechTimes",
+      "date": "2026-07-31",
+      "summary": "FTX's fifth creditor distribution of approximately $900 million launched July 31, 2026, pushing total recoveries past $10 billion; the piece also examines how the earlier Kroll data breach left creditors vulnerable to phishing scams, and notes a $525 million individual lawsuit against Fenwick & West remains unresolved alongside the settled $54 million class action."
+    },
+    {
       "headline": "FTX Deal Would Route $160M To Victims Of Korean Fraudster",
       "url": "https://www.law360.com/bankruptcy-authority/articles/2507863/ftx-deal-would-route-160m-to-victims-of-korean-fraudster",
       "source": "Law360",
@@ -9063,7 +9070,23 @@
       "source": "Bitcoin News",
       "date": "2026-07-17",
       "summary": "FTX Trading Ltd. and the FTX Recovery Trust will distribute ~$900 million beginning July 31, with Class 7 Convenience Claims reaching a cumulative 120% recovery and other classes hitting 103–105%. The estate has not announced a date for a sixth distribution, and disputed-claims resolution and final wind-down work continue."
+    },
+    {
+      "headline": "FTX Sets $900M Creditor Payout as SBF Clemency Push Loses Support",
+      "url": "https://crypto.news/ftx-sets-900m-creditor-payout-as-sbf-clemency-push-loses-support/",
+      "source": "Crypto News",
+      "date": "2026-07-17",
+      "summary": "FTX Recovery Trust confirmed a ~$900 million fifth distribution on July 31, 2026, with convenience-class creditors (claims under $50,000) receiving 120% of allowed claim value and larger claimants receiving approximately 103–105%; the piece also covers Sam Bankman-Fried's failed clemency bid."
     }
   ],
-  "events": []
+  "events": [
+    {
+      "title": "FTX Recovery Trust Omnibus Hearing",
+      "date": "2026-08-19",
+      "time": "09:30 AM ET",
+      "kind": "Hearing",
+      "url": "https://restructuring.ra.kroll.com/FTX/",
+      "source": "U.S. Bankruptcy Court, D. Delaware / Kroll Restructuring Administration"
+    }
+  ]
 }
