@@ -16,6 +16,6 @@ docket_source:
   type: courtlistener
   docket_id: 71112094
   url: "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/"
-scan_guidance: "Focus on legal developments regarding AI model training on copyrighted works that may have implications for creator recoveries in this case or others."
+scan_guidance: "Watch for legal developments that could impact creator recoveries in this case and others"
 added: 2026-08-07
 ---
