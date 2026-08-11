@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-11 00:37 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-11 15:32 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -59,6 +59,12 @@ Need to research fair use question and write a long-form article about this
 ### (no docket number) — 2026-08-05
 
 > Harvest Sherwood Wins Ch. 11 Plan Approval — Defunct food distributor Harvest Sherwood received confirmation of its Chapter 11 plan at a hearing on Wednesday after a Texas bankruptcy judge overruled a
+
+## Kahan
+
+### Dkt. 360 — 2026-08-10
+
+> Order To Set Hearing
 
 ## Omnis Pleasants
 
