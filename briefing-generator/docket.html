@@ -338,7 +338,11 @@
     .ud-table{border:1px solid var(--line-strong);background:var(--surface);}
     .ud-table tbody tr:not(.ud-day-row) td:first-child{border-left:none;}
     .ud-table tbody tr:not(.ud-day-row) td:last-child{border-right:none;}
-    .ud-table thead{display:none;}
+    .ud-table thead{display:block;border-bottom:1px solid var(--line-strong);}
+    .ud-table thead tr{display:flex;flex-wrap:wrap;gap:6px;padding:9px 10px;}
+    .ud-table thead th{display:inline-flex !important;align-items:center;gap:3px;width:auto !important;text-align:left !important;background:var(--paper-2);border:1px solid var(--line-strong);border-radius:99px;padding:5px 11px;font-weight:700;color:var(--ink-60);}
+    .ud-table thead th.ud-th-on{color:var(--ink);border-color:var(--ink-40);}
+    .ud-table thead th:not(.ud-th-filter):not(.ud-th-toggle){display:none !important;}
     .ud-table tr{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 10px;padding:12px 10px;border-bottom:1px solid var(--line);}
     .ud-table td{display:inline-block;border-bottom:none;padding:0;width:auto !important;}
     .ud-date{order:1;font-size:12px;color:var(--ink-60);}
