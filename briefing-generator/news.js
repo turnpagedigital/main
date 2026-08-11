@@ -1864,56 +1864,11 @@
     );
   }
 
-  // ── News feed sources manager (feed-sources.json via /intel/api/feed-sources)
+  // ── News feed sources (feed-sources.json via /intel/api/feed-sources) —
+  // read-only here now; managing the list moved to Manage → Briefing Inputs.
+  // FEED_SOURCES still drives feedSourceMode() below, which decides whether
+  // an unassigned feed item shows on the docket at all.
   var FEED_SOURCES = [];
-
-  function renderSourceList() {
-    var list = document.getElementById("ud-src-list");
-    if (!list) return;
-    if (!FEED_SOURCES.length) {
-      list.innerHTML = '<div class="ud-dd-empty">No sources configured.</div>';
-      return;
-    }
-    list.innerHTML = FEED_SOURCES.map(function (s, i) {
-      return (
-        '<div class="ud-src-row">' +
-          '<input type="checkbox" data-idx="' + i + '"' + (s.enabled !== false ? " checked" : "") + ' title="Enabled">' +
-          '<span class="ud-src-name">' + esc(s.name) + "</span>" +
-          '<span class="ud-src-url" title="' + esc(s.url) + '">' + esc(s.url) + "</span>" +
-          '<select class="ud-src-mode" data-mode-idx="' + i + '" title="All entries: every item appears on the docket. Case matches only: items appear once tied to a tracked case (auto-matched daily or assigned by hand).">' +
-            '<option value="all"' + (s.mode !== "case-only" ? " selected" : "") + ">All entries</option>" +
-            '<option value="case-only"' + (s.mode === "case-only" ? " selected" : "") + ">Case matches only</option>" +
-          "</select>" +
-          '<span class="ud-src-kind">' + esc(s.kind || "News") + "</span>" +
-          '<button type="button" class="ud-src-del" data-idx="' + i + '" title="Remove source">\u00d7</button>' +
-        "</div>"
-      );
-    }).join("");
-    list.querySelectorAll('input[type="checkbox"]').forEach(function (cb) {
-      cb.addEventListener("change", function () {
-        FEED_SOURCES[Number(cb.getAttribute("data-idx"))].enabled = cb.checked;
-      });
-    });
-    list.querySelectorAll(".ud-src-mode").forEach(function (sel) {
-      sel.addEventListener("change", function () {
-        FEED_SOURCES[Number(sel.getAttribute("data-mode-idx"))].mode = sel.value;
-      });
-    });
-    list.querySelectorAll(".ud-src-del").forEach(function (b) {
-      b.addEventListener("click", function () {
-        FEED_SOURCES.splice(Number(b.getAttribute("data-idx")), 1);
-        renderSourceList();
-      });
-    });
-  }
-
-  function srcStatus(text, isError) {
-    var el = document.getElementById("ud-src-status");
-    if (el) {
-      el.textContent = text;
-      el.style.color = isError ? "#C84141" : "";
-    }
-  }
 
   function loadFeedSourcesForRender() {
     fetchJson("api/feed-sources")
@@ -1931,60 +1886,6 @@
           render();
         }
       });
-  }
-
-  function openSourcesModal() {
-    var overlay = document.getElementById("ud-src-overlay");
-    if (overlay) overlay.style.display = "flex";
-    srcStatus("Loading\u2026");
-    fetchJson("api/feed-sources")
-      .then(function (p) { return (p && p.ok && p.sources) || null; })
-      .catch(function () {
-        return fetchJson("feed-sources.json")
-          .then(function (f) { return (f && f.sources) || []; })
-          .catch(function () { return []; });
-      })
-      .then(function (sources) {
-        FEED_SOURCES = sources || [];
-        renderSourceList();
-        srcStatus("");
-      });
-  }
-
-  function closeSourcesModal() {
-    var overlay = document.getElementById("ud-src-overlay");
-    if (overlay) overlay.style.display = "none";
-  }
-
-  function addSourceFromForm() {
-    var name = (document.getElementById("ud-src-name").value || "").trim();
-    var url = (document.getElementById("ud-src-url").value || "").trim();
-    var kind = (document.getElementById("ud-src-kind").value || "").trim() || "News";
-    if (!name || !/^https?:\/\//.test(url)) {
-      srcStatus("Name and a valid feed URL are required", true);
-      return;
-    }
-    FEED_SOURCES.push({ name: name, url: url, kind: kind, mode: "all", enabled: true });
-    document.getElementById("ud-src-name").value = "";
-    document.getElementById("ud-src-url").value = "";
-    document.getElementById("ud-src-kind").value = "";
-    srcStatus("");
-    renderSourceList();
-  }
-
-  function saveSources() {
-    srcStatus("Saving\u2026");
-    fetch("api/feed-sources", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sources: FEED_SOURCES }),
-    }).then(function (r) { return r.json(); }).then(function (p) {
-      if (p && p.ok) {
-        srcStatus("Saved \u2014 new sources pull on the next daily scan");
-      } else {
-        srcStatus((p && p.error) || "Save failed", true);
-      }
-    }).catch(function () { srcStatus("Save failed \u2014 network error", true); });
   }
 
   // ── Bookmarks + notes (stored in the repo via /intel/api/notes) ────────────
@@ -2762,21 +2663,6 @@
         openCaseEditor(s);
       });
     }
-    var srcBtn = document.getElementById("ud-sources-btn");
-    if (srcBtn) srcBtn.addEventListener("click", openSourcesModal);
-    var srcClose = document.getElementById("ud-src-close");
-    if (srcClose) srcClose.addEventListener("click", closeSourcesModal);
-    var srcSave = document.getElementById("ud-src-save");
-    if (srcSave) srcSave.addEventListener("click", saveSources);
-    var srcAdd = document.getElementById("ud-src-add-btn");
-    if (srcAdd) srcAdd.addEventListener("click", addSourceFromForm);
-    var srcOverlay = document.getElementById("ud-src-overlay");
-    if (srcOverlay) {
-      srcOverlay.addEventListener("click", function (ev) {
-        if (ev.target === srcOverlay) closeSourcesModal();
-      });
-    }
-
     var cfSave = document.getElementById("cf-save");
     var cfCancel = document.getElementById("cf-cancel");
     var cfLookupBtn = document.getElementById("cf-lookup");
