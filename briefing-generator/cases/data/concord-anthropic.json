@@ -8,17 +8,12 @@
     "judge": "Eumi K. Lee",
     "docket_id": "68889092",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "manual"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/68889092/concord-music-group-inc-v-anthropic-pbc/",
-    "date_last_filing": "2026-07-29",
-    "fetched_at": "2026-08-10T23:53:01.708026+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true,
     "new_in_72h": 0,
     "recent": [
       {
@@ -8378,7 +8373,11 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-07-29",
+    "fetched_at": "2026-08-10T23:53:01.708026+00:00",
+    "as_of": "Aug 10, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
   "coverage": [
@@ -8437,16 +8436,6 @@
       "source": "Bloomberg Law",
       "date": "2025-08-07",
       "summary": "A California federal judge denied music publishers' request for the personal data of Claude users who sought copyrighted lyrics, ruling the production of third-party user information was not necessary for the infringement litigation in Concord I (5:24-cv-03811). Publishers had argued the data was critical to identify users who received copyrighted lyric outputs that Anthropic did not preserve before the lawsuit."
-    }
-  ],
-  "events": [
-    {
-      "title": "Summary Judgment Hearing – Concord Music Group v. Anthropic (5:24-cv-03811)",
-      "date": "2026-10-21",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://chatgptiseatingtheworld.com/concord-music-group-v-anthropic-i/",
-      "source": "U.S. District Court, N.D. California (Judge Eumi K. Lee)"
     }
   ]
 }

@@ -2,23 +2,18 @@
   "case": {
     "slug": "in-re-ftx-trading-ltd-fifth-distribution-july-31-2026",
     "display_name": "FTX",
-    "case_name": "FTX Trading Ltd.",
+    "case_name": "FTX Trading Ltd. d/b/a FTX.com and FTX Recovery Trust",
     "court": "United States Bankruptcy Court, D. Delaware",
     "case_number": "22-11068",
     "judge": "Jud Karen B. Owens",
     "docket_id": "65748821",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "manual"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/65748821/ftx-trading-ltd/",
-    "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T23:59:10.604748+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": false,
     "new_in_72h": 17,
     "recent": [
       {
@@ -9014,6 +9009,10 @@
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.deb.188450/gov.uscourts.deb.188450.34994.0.pdf"
       }
     ],
+    "date_last_filing": "2026-08-10",
+    "fetched_at": "2026-08-10T23:59:10.604748+00:00",
+    "as_of": "Aug 10, 2026",
+    "backfilled": false,
     "backfill_next": "https://www.courtlistener.com/api/rest/v4/docket-entries/?docket=65748821&fields=entry_number%2Cdate_filed%2Ctime_filed%2Cdescription%2Crecap_documents&order_by=-date_filed&page=52"
   },
   "claims_administrator": {
@@ -9077,16 +9076,6 @@
       "source": "Crypto News",
       "date": "2026-07-17",
       "summary": "FTX Recovery Trust confirmed a ~$900 million fifth distribution on July 31, 2026, with convenience-class creditors (claims under $50,000) receiving 120% of allowed claim value and larger claimants receiving approximately 103–105%; the piece also covers Sam Bankman-Fried's failed clemency bid."
-    }
-  ],
-  "events": [
-    {
-      "title": "FTX Recovery Trust Omnibus Hearing",
-      "date": "2026-08-19",
-      "time": "09:30 AM ET",
-      "kind": "Hearing",
-      "url": "https://restructuring.ra.kroll.com/FTX/",
-      "source": "U.S. Bankruptcy Court, D. Delaware / Kroll Restructuring Administration"
     }
   ]
 }
