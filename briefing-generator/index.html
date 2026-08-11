@@ -382,60 +382,38 @@
   .tn-kbd-row em{font-style:normal;color:var(--ink-40);font-size:10.5px;margin-left:auto;padding-left:10px;}
   .tn-key{display:inline-block;font-size:10.5px;font-weight:800;border:1px solid var(--line-strong);padding:1px 6px;background:var(--paper-2);color:var(--ink);min-width:13px;text-align:center;}
 
-    /* Notes tile — stacked cards, no card chrome of its own (the note cards
-       are the only surface); click a peeking card's exposed top to bring it
-       forward. The actual tile "card" background lives on .ih-tile > .ih-list
-       (see the press-page override below), not on .ih-tile itself — override
-       the #id directly so it wins regardless of source order. */
+    /* Notes tile — one note at a time, paged with the footer arrows (no
+       auto-rotation, no stack). The tile "card" background lives on the note
+       card itself, not on .ih-tile — override the #id directly so it wins
+       regardless of source order. */
     #ih-notes { background: transparent; border: none; border-radius: 0; box-shadow: none; overflow: visible; }
-    .ih-notes-wrap { flex: 1; display: flex; flex-direction: column; padding: 0; }
-    .ih-notes-stack { position: relative; flex: 1; min-height: 260px; margin: 0; }
-    /* Cards are solid opaque "paper" (--nc is a hex, not a tint) so a card
-       fully occludes whatever is stacked behind it — text/ink color is fixed
-       dark regardless of site theme, same as real paper doesn't change color
-       when the room lights dim. The top stripe is the note's case color —
-       the same raw value a case pill shows as its light-mode background and
-       (via the pill dark-mode flip) its dark-mode text. Shadow spread is
-       negative so it reads as "sitting above the one behind" without a
-       visible halo on the sides. */
-    .ih-note-card { position: absolute; top: 0; right: 0; left: 0; bottom: 92px; background: var(--nc); border-top: 4px solid var(--cc, transparent); border-radius: 14px; padding: 14px 17px 15px; box-shadow: 0 6px 10px -7px rgba(10,10,10,0.4); text-decoration: none; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.32s cubic-bezier(.2,.8,.2,1), box-shadow 0.2s ease, filter 0.32s ease; }
+    .ih-notes-wrap { flex: 1; display: flex; flex-direction: column; padding: 0; min-height: 260px; }
+    /* The card is solid opaque "paper" (--nc is a hex, not a tint) — text/ink
+       color is fixed dark regardless of site theme, same as real paper
+       doesn't change color when the room lights dim. The top stripe is the
+       note's case color, the same raw value a case pill shows as its
+       light-mode background. */
+    .ih-note-card { flex: 1; display: flex; flex-direction: column; min-height: 0; background: var(--nc); border-top: 4px solid var(--cc, transparent); border-radius: 14px; box-shadow: 0 6px 10px -7px rgba(10,10,10,0.4); overflow: hidden; }
     [data-theme="dark"] .ih-note-card { background: var(--ncd); box-shadow: 0 6px 14px -7px rgba(0,0,0,0.7); }
-    .ih-note-card .title { font-size: 15px; font-weight: 800; color: #21201A; padding-bottom: 7px; margin-bottom: 6px; border-bottom: 1px solid rgba(10,10,10,0.14); }
-    .ih-note-card .body { flex: 1; font-size: 13px; line-height: 1.55; color: #21201A; opacity: 0.75; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
-    .ih-note-card .who { font-size: 11px; font-weight: 700; color: rgba(10,10,10,0.58); margin-top: auto; padding-top: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ih-note-link { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 14px 17px 4px; text-decoration: none; cursor: pointer; }
+    .ih-note-link .title { font-size: 15px; font-weight: 800; color: #21201A; padding-bottom: 7px; margin-bottom: 10px; border-bottom: 1px solid rgba(10,10,10,0.14); }
+    .ih-note-link .artifact { display: flex; align-items: center; gap: 6px; font-size: 12px; font-style: italic; color: rgba(10,10,10,0.5); margin-bottom: 10px; }
+    .ih-note-link .artifact svg { flex: 0 0 auto; opacity: 0.8; }
+    .ih-note-link .body { font-size: 13px; line-height: 1.55; color: #21201A; opacity: 0.8; display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical; overflow: hidden; }
+    .ih-note-link .body strong { opacity: 1; }
     /* Dark mode's card is a warm gray, not a pale/bright paper — flip to
        warm-white ink instead of the light-mode dark ink. */
-    [data-theme="dark"] .ih-note-card .title { color: #EDE7DE; border-bottom-color: rgba(237,231,222,0.16); }
-    [data-theme="dark"] .ih-note-card .body { color: #EDE7DE; }
-    [data-theme="dark"] .ih-note-card .who { color: rgba(237,231,222,0.6); }
-    /* Apple Wallet-style stack: no rotation, straight edges, each card behind
-       peeks far enough to show its own title (grayed out), not just a sliver
-       of color. Positions are framed from the DEEPEST card (data-pos="3") at
-       translateY(0) — i.e. flush with the stack's own top edge, which is why
-       .ih-notes-stack needs no top margin — so the whole pile's top aligns
-       with the News/Calendar tiles beside it, same as their content does.
-       Each card is inset 92px short at the bottom (matching data-pos="0"'s
-       92px push-down) so translating the front card down doesn't push its
-       own bottom edge — and the tile below it — past the stack's own
-       bottom; every position ends up fitting inside the same box, just
-       framed from a different corner. */
-    .ih-note-card[data-pos="0"] { transform: translateY(92px); z-index: 4; }
-    .ih-note-card[data-pos="0"]:hover { transform: translateY(89px); box-shadow: 0 10px 16px -7px rgba(10,10,10,0.45); }
-    [data-theme="dark"] .ih-note-card[data-pos="0"]:hover { box-shadow: 0 10px 18px -7px rgba(0,0,0,0.75); }
-    .ih-note-card[data-pos="1"] { transform: translateY(56px); z-index: 3; filter: grayscale(0.7) brightness(0.94); }
-    .ih-note-card[data-pos="2"] { transform: translateY(26px); z-index: 2; filter: grayscale(0.75) brightness(0.9); }
-    .ih-note-card[data-pos="3"] { transform: translateY(0); z-index: 1; filter: grayscale(0.8) brightness(0.86); }
-    /* Hovering a peeking card lifts it to (nearly) the front position, in
-       full color, so a long title that would otherwise be covered by the
-       card(s) in front is fully readable — without changing which card is
-       actually "front" until it's clicked. */
-    /* z-index only, no transform — moving the card under a stationary cursor
-       would push it out from under the pointer, dropping :hover, which
-       snaps it back and re-triggers hover: an infinite flicker loop. Leaving
-       the position untouched keeps the whole card under whatever pixel
-       triggered the hover in the first place. */
-    .ih-note-card:not([data-pos="0"]):hover { z-index: 10; filter: none; box-shadow: 0 10px 24px -6px rgba(10,10,10,0.4); }
-    [data-theme="dark"] .ih-note-card:not([data-pos="0"]):hover { box-shadow: 0 10px 26px -6px rgba(0,0,0,0.7); }
+    [data-theme="dark"] .ih-note-link .title { color: #EDE7DE; border-bottom-color: rgba(237,231,222,0.16); }
+    [data-theme="dark"] .ih-note-link .artifact { color: rgba(237,231,222,0.55); }
+    [data-theme="dark"] .ih-note-link .body { color: #EDE7DE; }
+    .ih-note-foot { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 10px 14px; }
+    .ih-note-nav { background: none; border: none; cursor: pointer; font-size: 15px; color: rgba(10,10,10,0.5); padding: 4px 6px; line-height: 1; }
+    .ih-note-nav:hover:not(:disabled) { color: #21201A; }
+    .ih-note-nav:disabled { opacity: 0.3; cursor: default; }
+    [data-theme="dark"] .ih-note-nav { color: rgba(237,231,222,0.45); }
+    [data-theme="dark"] .ih-note-nav:hover:not(:disabled) { color: #EDE7DE; }
+    .ih-note-counter { font-size: 11px; font-weight: 700; color: rgba(10,10,10,0.58); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    [data-theme="dark"] .ih-note-counter { color: rgba(237,231,222,0.6); }
     .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 17px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
     .ih-color-pop { position: absolute; z-index: 1000; background: var(--surface); border: 1px solid var(--line-strong); padding: 14px; width: 240px; box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
