@@ -140,6 +140,8 @@
         '.tn-hamburger{display:inline-flex;}'+
         '.tn-left{flex-wrap:nowrap;}'+
         '.tn-back{display:none;}'+
+        '.tn-row{justify-content:flex-start;}'+
+        '.tn-gear{margin-left:auto;}'+
         '.tn-left.open{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:2px 20px 12px;z-index:200;border-bottom:1px solid rgba(255,255,255,0.12);}'+
         '[data-theme="light"] .tn-left.open{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
         '.tn-left.open .tn-back{display:block;width:100%;padding:12px 0;border-left:none;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}'+
