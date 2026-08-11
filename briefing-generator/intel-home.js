@@ -1744,8 +1744,53 @@
     });
   }
 
+  // ── Manual sync: pull fresh docket + news for one case, refresh its
+  // briefing if the last one is more than 12h old (manual-case-sync.yml). ──
+  function buildSyncPanel(panel) {
+    var sorted = MANIFEST.slice().sort(function (a, b) {
+      return (a.short_name || a.display_name || "").localeCompare(b.short_name || b.display_name || "");
+    });
+    var html = '<div class="ih-dd-title">Sync a case</div>';
+    html += sorted.map(function (m) {
+      return '<button type="button" class="ih-dd-row" data-sync-slug="' + esc(m.slug) + '" style="width:100%;background:none;border:none;font-family:inherit">' +
+        casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) +
+      "</button>";
+    }).join("");
+    panel.innerHTML = html || '<div class="ih-empty">No cases tracked yet.</div>';
+    panel.querySelectorAll("[data-sync-slug]").forEach(function (row) {
+      row.addEventListener("click", function () {
+        panel.style.display = "none";
+        runManualSync(row.getAttribute("data-sync-slug"));
+      });
+    });
+  }
+  function runManualSync(slug) {
+    var btn = document.getElementById("ih-sync-btn");
+    if (!btn) return;
+    var reset = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = "Syncing…";
+    fetch("api/admin/manual-sync", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ slug: slug }),
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, body: j }; });
+    }).then(function (res) {
+      if (res.status === 401 || res.status === 403) btn.textContent = "Session expired — reload";
+      else if (res.body && res.body.ok) btn.textContent = "✓ Sync started";
+      else btn.textContent = "✗ Sync failed";
+    }).catch(function () {
+      btn.textContent = "✗ Sync failed";
+    }).then(function () {
+      setTimeout(function () { btn.disabled = false; btn.textContent = reset; }, 2500);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
+    wireDropdown("ih-sync-btn", "ih-sync-panel", buildSyncPanel);
     updateFilterButtons();
     wireCarousel();
     wireSortBar();

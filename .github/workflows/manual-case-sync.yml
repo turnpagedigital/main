@@ -1,0 +1,178 @@
+name: Manual Case Sync
+
+# On-demand, single-case refresh triggered by the admin's Sync button
+# (dashboard + docket page): pulls fresh docket entries and news for one
+# case, then regenerates its briefing if the last one is more than 12 hours
+# old. Ignores sync mode — this is an explicit per-case request, same as
+# the docket "Sync now" button (docket-sync.yml's DOCKET_ONLY_CASE).
+
+on:
+  workflow_dispatch:
+    inputs:
+      case:
+        description: "Case slug to sync (required)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: manual-case-sync-${{ github.event.inputs.case }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: briefing-generator/scripts/requirements.txt
+
+      - name: Install dependencies
+        working-directory: briefing-generator
+        run: |
+          pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Fetch fresh docket entries for this case
+        working-directory: briefing-generator
+        env:
+          COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DOCKET_ONLY_CASE: ${{ github.event.inputs.case }}
+          DOCKET_HISTORY_PAGES: "6"
+        run: |
+          python scripts/fetch_dockets.py
+          python scripts/extract_uploads.py
+
+      - name: Scan related news for this case
+        working-directory: briefing-generator
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CASE_SLUG: ${{ github.event.inputs.case }}
+        run: python scripts/scan_news.py --slug "$CASE_SLUG"
+
+      - name: Decide whether the briefing is due
+        id: gate
+        working-directory: briefing-generator
+        env:
+          CASE_SLUG: ${{ github.event.inputs.case }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, datetime as dt
+          slug = os.environ["CASE_SLUG"]
+          try:
+              items = json.loads(open("case-briefings.json", encoding="utf-8").read()).get("items", [])
+          except Exception:
+              items = []
+          item = next((i for i in items if i.get("slug") == slug), None)
+          due = True
+          if item and item.get("checked"):
+              try:
+                  checked = dt.datetime.fromisoformat(item["checked"])
+                  age_h = (dt.datetime.now(dt.timezone.utc) - checked).total_seconds() / 3600
+                  due = age_h >= 12
+                  print(f"last checked {age_h:.1f}h ago")
+              except Exception as ex:
+                  print(f"could not parse checked timestamp ({ex}) — treating as due")
+          else:
+              print("no prior briefing on record")
+          print("briefing due:", due)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f'due={"true" if due else "false"}\n')
+          PYEOF
+
+      - name: Generate briefing for this case (if due)
+        if: steps.gate.outputs.due == 'true'
+        working-directory: briefing-generator
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BRIEFING_CASE: ${{ github.event.inputs.case }}
+        run: python scripts/generate_case_briefings.py
+
+      - name: Regenerate case pages
+        working-directory: briefing-generator
+        run: python scripts/inject_cases.py
+
+      - name: Commit to main if anything changed
+        env:
+          CASE_SLUG: ${{ github.event.inputs.case }}
+        run: |
+          if git diff -I '"fetched_at":' -I '"as_of":' -I '"checked":' --exit-code -- briefing-generator > /dev/null; then
+            echo "No changes — skipping commit"
+            git checkout -- briefing-generator
+            echo "CHANGED=0" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          echo "CHANGED=1" >> "$GITHUB_ENV"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Manual Sync Bot"
+          git add briefing-generator
+          git commit -m "Manual sync: ${CASE_SLUG} ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then
+              echo "pushed to main on attempt ${attempt}"; break
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "main push attempt ${attempt} failed; retrying in 5s"; sleep 5
+          done
+
+      # ── Mirror the refreshed artifacts to dev (same pattern as the other
+      # sync workflows: artifacts only, never scripts/configs). ─────────────
+      - name: Checkout dev branch
+        if: env.CHANGED == '1'
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: dev-site
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy refreshed artifacts into dev
+        if: env.CHANGED == '1'
+        run: |
+          mkdir -p dev-site/briefing-generator/cases/data
+          mkdir -p dev-site/briefing-generator/case-briefings
+          cp -f briefing-generator/cases/data/*.json dev-site/briefing-generator/cases/data/ 2>/dev/null || true
+          cp -f briefing-generator/cases/*.html dev-site/briefing-generator/cases/ 2>/dev/null || true
+          cp -f briefing-generator/case-briefings/*.json dev-site/briefing-generator/case-briefings/ 2>/dev/null || true
+          cp -f briefing-generator/case-briefings.json dev-site/briefing-generator/case-briefings.json 2>/dev/null || true
+          cp -f briefing-generator/index.html dev-site/briefing-generator/index.html 2>/dev/null || true
+          cp -f briefing-generator/docket.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/news.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/calendar.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/notes.html dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/bondoro.json dev-site/briefing-generator/ 2>/dev/null || true
+          cp -f briefing-generator/uploads.json dev-site/briefing-generator/ 2>/dev/null || true
+          cp -rf briefing-generator/uploads dev-site/briefing-generator/ 2>/dev/null || true
+
+      - name: Commit to dev
+        if: env.CHANGED == '1'
+        working-directory: dev-site
+        env:
+          CASE_SLUG: ${{ github.event.inputs.case }}
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Manual Sync Bot"
+          git add briefing-generator
+          if git diff --staged --quiet; then
+            echo "Nothing new for dev"
+          else
+            git commit -m "Manual sync: ${CASE_SLUG} — refresh dev"
+            for attempt in 1 2 3 4 5; do
+              if git pull --rebase origin dev && git push origin HEAD:dev; then
+                echo "pushed to dev on attempt ${attempt}"; break
+              fi
+              git rebase --abort 2>/dev/null || true
+              echo "dev push attempt ${attempt} failed; retrying in 5s"; sleep 5
+            done
+          fi
