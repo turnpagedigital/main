@@ -8,46 +8,102 @@
     "judge": "Mary F. Walrath",
     "docket_id": "73709081",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73709081/oriel-bachar-and-papaya-gaming-ltd/",
-    "new_in_72h": 5,
+    "date_last_filing": "2026-08-11",
+    "meta_fetched_at": "2026-08-11T18:09:30.196250+00:00",
+    "fetched_at": "2026-08-11T18:09:30.196250+00:00",
+    "as_of": "Aug 11, 2026",
+    "backfilled": true,
+    "new_in_72h": 10,
     "recent": [
       {
-        "entry_number": 60,
-        "date_filed": "2026-08-10",
-        "time_filed": "18:11:21",
-        "date_display": "Aug 10, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "entry_number": 65,
+        "date_filed": "2026-08-11",
+        "time_filed": "08:39:24",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 59,
-        "date_filed": "2026-08-10",
-        "time_filed": "18:10:09",
-        "date_display": "Aug 10, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "entry_number": 64,
+        "date_filed": "2026-08-11",
+        "time_filed": "08:38:55",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 58,
-        "date_filed": "2026-08-10",
-        "time_filed": "18:08:54",
-        "date_display": "Aug 10, 2026",
-        "description": "Pro Hac Vice Admission - Motion",
+        "entry_number": 63,
+        "date_filed": "2026-08-11",
+        "time_filed": "08:38:24",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 65,
+        "date_filed": "2026-08-11",
+        "time_filed": "08:39:24",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 64,
+        "date_filed": "2026-08-11",
+        "time_filed": "08:38:55",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 63,
+        "date_filed": "2026-08-11",
+        "time_filed": "08:38:24",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 62,
+        "date_filed": "2026-08-11",
+        "time_filed": "08:14:11",
+        "date_display": "Aug 11, 2026",
+        "description": "Deposition - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 61,
+        "date_filed": "2026-08-11",
+        "time_filed": "08:11:11",
+        "date_display": "Aug 11, 2026",
+        "description": "Deposition - Notice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 60,
         "date_filed": "2026-08-10",
@@ -708,11 +764,7 @@
         "landmark": "",
         "doc_url": ""
       }
-    ],
-    "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-11T00:01:11.907701+00:00",
-    "as_of": "Aug 11, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": null,
   "coverage": [

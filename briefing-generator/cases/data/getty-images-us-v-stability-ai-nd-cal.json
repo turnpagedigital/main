@@ -2,20 +2,36 @@
   "case": {
     "slug": "getty-images-us-v-stability-ai-nd-cal",
     "display_name": "Getty Images (US) v. Stability AI (N.D. Cal.)",
-    "case_name": "Getty Images (US), Inc. v. Stability AI, Inc. et al.",
+    "case_name": "Getty Images (US), Inc. v. Stability AI, Ltd.",
     "court": "U.S. District Court for the Northern District of California",
     "case_number": "3:25-cv-06891",
     "judge": "Trina L. Thompson",
     "docket_id": "71112094",
     "status": "active",
-    "sync": "active"
+    "sync": "active",
+    "court_id": ""
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/71112094/getty-images-us-inc-v-stability-ai-ltd/",
-    "new_in_72h": 0,
+    "date_last_filing": "2026-08-10",
+    "meta_fetched_at": "2026-08-11T18:09:50.212362+00:00",
+    "fetched_at": "2026-08-11T18:09:50.212362+00:00",
+    "as_of": "Aug 11, 2026",
+    "backfilled": true,
+    "new_in_72h": 1,
     "recent": [
+      {
+        "entry_number": 69,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:11:36",
+        "date_display": "Aug 10, 2026",
+        "description": "Opposition/Response to Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 68,
         "date_filed": "2026-08-06",
@@ -35,19 +51,19 @@
         "is_new": false,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 66,
-        "date_filed": "2026-06-23",
-        "time_filed": "13:35:51",
-        "date_display": "Jun 23, 2026",
-        "description": "ORDER granting 61 Protective Order. Signed by Judge Trina L. Thompson on 6/23/2026. (tltlc2, COURT STAFF) (Filed on 6/23/2026) (Entered: 06/23/2026)",
-        "is_new": false,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 69,
+        "date_filed": "2026-08-10",
+        "time_filed": "16:11:36",
+        "date_display": "Aug 10, 2026",
+        "description": "Opposition/Response to Motion",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 68,
         "date_filed": "2026-08-06",
@@ -878,11 +894,7 @@
         "landmark": "",
         "doc_url": "https://www.courtlistener.com/recap/gov.uscourts.cand.454636/gov.uscourts.cand.454636.1.0.pdf"
       }
-    ],
-    "date_last_filing": "2026-08-06",
-    "fetched_at": "2026-08-10T22:59:12.453587+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true
+    ]
   },
   "claims_administrator": null,
   "coverage": []
