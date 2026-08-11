@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-11 15:33 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-11 16:20 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -31,6 +31,12 @@ Need to research fair use question and write a long-form article about this
 ### (no docket number) — 2026-08-06 ★
 
 > Crypto Trader Wintermute Steps Onto Regulated Wall Street With Broker License — One of many digital currency firms pushing into traditional finance services, Wintermute aims to take on Jane Street, Ci
+
+## FTX
+
+### Dkt. 36106 — 2026-08-10
+
+> Omnibus Objection to Claims . Filed by FTX Recovery Trust. Hearing scheduled for 9/17/2026 at 09:30 AM at US Bankruptcy Court, 824 Market St., 6th Fl., Courtroom 3, Wilmington, Delaware. Objections du
 
 ## Harvest Sherwood
 
