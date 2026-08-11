@@ -2,23 +2,18 @@
   "case": {
     "slug": "in-re-cashcall-inc",
     "display_name": "CashCall",
-    "case_name": "CashCall, Inc.",
+    "case_name": "CashCall, Inc. (debtor); judgment creditors holding $400M+ in adverse litigation awards",
     "court": "To be confirmed (financials sector Ch. 11, filed ~July 21, 2026)",
     "case_number": "26-03102",
     "judge": "Barrett Marum",
     "docket_id": "73643729",
     "status": "active",
-    "sync": "active",
-    "court_id": ""
+    "sync": "manual"
   },
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/73643729/cashcall-inc/",
-    "date_last_filing": "2026-08-10",
-    "fetched_at": "2026-08-10T23:59:04.911510+00:00",
-    "as_of": "Aug 10, 2026",
-    "backfilled": true,
     "new_in_72h": 1,
     "recent": [
       {
@@ -573,7 +568,11 @@
         "landmark": "",
         "doc_url": ""
       }
-    ]
+    ],
+    "date_last_filing": "2026-08-10",
+    "fetched_at": "2026-08-10T23:59:04.911510+00:00",
+    "as_of": "Aug 10, 2026",
+    "backfilled": true
   },
   "claims_administrator": null,
   "coverage": [
@@ -625,24 +624,6 @@
       "source": "American Banker",
       "date": "2026-06-30",
       "summary": "CashCall sought to vacate a $134 million CFPB judgment, claiming the bureau acted in 'bad faith' by abandoning a settlement agreement, and argued that the Trump administration's revised enforcement posture — which led to dismissals against other companies — provided no policy basis for distinguishing its case. The motion cited four recent Supreme Court decisions as further undermining the legal foundation for the CFPB's enforcement action."
-    }
-  ],
-  "events": [
-    {
-      "title": "CashCall Ch. 11 Second-Day / DIP Final Hearing (Case No. 26-03102)",
-      "date": "2026-08-26",
-      "time": "11:00 AM CT",
-      "kind": "Deadline",
-      "url": "https://www.petition11.com/p/cashcall-chapter-11-bankruptcy-filing",
-      "source": "U.S. Bankruptcy Court, Southern District of California (via Petition newsletter)"
-    },
-    {
-      "title": "CashCall Chapter 11 Plan and Disclosure Statement Deadline",
-      "date": "2026-11-17",
-      "time": "",
-      "kind": "Deadline",
-      "url": "https://www.pacermonitor.com/public/filings/DF6FACUA/CashCall_Inc__casbke-26-03102__0001.0.pdf",
-      "source": "U.S. Bankruptcy Court, Southern District of California (PACER via PacerMonitor)"
     }
   ]
 }
