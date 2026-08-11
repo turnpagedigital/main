@@ -1309,8 +1309,24 @@
       .then(function (m) { MANIFEST = Array.isArray(m) ? m : []; }).catch(function () {});
   }
 
+  // Roaming filter groups: /api/prefs is the source of truth, but nothing
+  // previously pulled its `groups` field back into localStorage on load —
+  // a group created on one browser/device never showed up on any other,
+  // even though saving correctly pushed it to the server. Mirrors the same
+  // fetch-and-hydrate pattern the dashboard uses for colors/presets.
+  function hydrateFilterGroups() {
+    fetch(BASE + "api/prefs").then(function (r) { return r.json(); }).catch(function () { return {}; })
+      .then(function (p) {
+        if (p && p.ok && Array.isArray(p.groups)) {
+          try { localStorage.setItem("ud-case-groups", JSON.stringify(p.groups)); } catch (e) {}
+          if (currentTab() === "groups") renderGroups();
+        }
+      });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     // Each loader degrades on its own — the page always routes.
     Promise.all([loadManifest(), loadThemes(), loadCases()]).then(route);
+    hydrateFilterGroups();
   });
 })();

@@ -1352,6 +1352,9 @@
     if (p && p.ok && Array.isArray(p.theme_presets) && p.theme_presets.length === 12) {
       try { localStorage.setItem("ud-theme-presets", JSON.stringify(p.theme_presets)); } catch (e) {}
     }
+    if (p && p.ok && Array.isArray(p.groups)) {
+      try { localStorage.setItem("ud-case-groups", JSON.stringify(p.groups)); } catch (e) {}
+    }
     if (p && p.ok && p.priorities && typeof p.priorities === "object") {
       savedPriorities = {};
       Object.keys(p.priorities).forEach(function (k) { if (p.priorities[k]) savedPriorities[k] = true; });
