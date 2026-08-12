@@ -1,6 +1,6 @@
 # Intel Docket Notes
 
-_Updated 2026-08-09 12:48 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
+_Updated 2026-08-12 02:16 UTC · auto-generated from the unified docket — edit on /intel/docket.html_
 
 ## Bartz v. Anthropic
 
@@ -13,6 +13,10 @@ _Updated 2026-08-09 12:48 UTC · auto-generated from the unified docket — edit
 > Anthropic's $1.5 billion copyright settlement gets final approval but authors aren't cheering — Judge Martínez-Olguín granted final approval of the settlement on July 20, 2026, with authors set to rec
 
 Need to research fair use question and write a long-form article about this
+
+### Dkt. 681 — 2026-07-21
+
+> REPORT on the determination of an action regarding Copyright(cc: form emailed to register). (hdj, COURT STAFF) (Filed on 7/21/2026) (Entered: 07/21/2026)
 
 ## Concord Music Group v. Anthropic
 
