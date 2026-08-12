@@ -15,12 +15,32 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-11",
-    "meta_fetched_at": "2026-08-11T18:09:55.959974+00:00",
-    "fetched_at": "2026-08-11T22:08:59.008862+00:00",
-    "as_of": "Aug 11, 2026",
+    "meta_fetched_at": "2026-08-12T00:02:56.859016+00:00",
+    "fetched_at": "2026-08-12T00:02:56.859016+00:00",
+    "as_of": "Aug 12, 2026",
     "backfilled": true,
-    "new_in_72h": 17,
+    "new_in_72h": 18,
     "recent": [
+      {
+        "entry_number": 1203,
+        "date_filed": "2026-08-11",
+        "time_filed": "17:46:17",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1202,
+        "date_filed": "2026-08-11",
+        "time_filed": "17:38:58",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1201,
         "date_filed": "2026-08-11",
@@ -30,29 +50,29 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
-      {
-        "entry_number": 1200,
-        "date_filed": "2026-08-11",
-        "time_filed": "10:03:48",
-        "date_display": "Aug 11, 2026",
-        "description": "Certificate of service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
-      },
-      {
-        "entry_number": 1199,
-        "date_filed": "2026-08-11",
-        "time_filed": "09:58:46",
-        "date_display": "Aug 11, 2026",
-        "description": "Certificate of service",
-        "is_new": true,
-        "landmark": "",
-        "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 1203,
+        "date_filed": "2026-08-11",
+        "time_filed": "17:46:17",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 1202,
+        "date_filed": "2026-08-11",
+        "time_filed": "17:38:58",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1201,
         "date_filed": "2026-08-11",
@@ -219,7 +239,7 @@
         "time_filed": "23:22:48",
         "date_display": "Aug 9, 2026",
         "description": "BNC certificate of mailing - PDF document",
-        "is_new": true,
+        "is_new": false,
         "landmark": "",
         "doc_url": ""
       },
