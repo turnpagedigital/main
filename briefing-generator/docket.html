@@ -435,11 +435,20 @@
   [data-theme="light"] .ud-table thead::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: #FDFDFE; border-radius: 14px; box-shadow: 0 6px 14px rgba(163,177,198,0.45), inset 0 1px 0 rgba(255,255,255,0.9); }
   [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
+  .ud-table tr.ud-row-daycollapsed { display: none; }
   @media (max-width: 720px) {
     .ud-table { background: transparent; border: none; }
     [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--paper-2); }
     [data-theme="light"] .ud-table tbody tr.ud-row-article { background: #E7E9EE; }
     [data-theme="dark"] .ud-table tbody tr { border-bottom-color: var(--bg); }
+    .ud-table thead { display: block !important; margin-bottom: 10px; }
+    .ud-table thead::after { content: none !important; }
+    .ud-table thead tr { display: flex; flex-wrap: wrap; gap: 7px; padding: 0; border: none; }
+    .ud-table thead th { display: inline-flex !important; align-items: center; gap: 5px; width: auto !important; border: 1px solid var(--line-strong) !important; border-radius: 999px !important; padding: 7px 13px !important; background: var(--surface) !important; box-shadow: none !important; position: static !important; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; text-align: left !important; color: var(--ink-60); }
+    .ud-table thead th.ud-th-on { background: var(--ink) !important; color: var(--bg) !important; border-color: var(--ink) !important; }
+    .ud-table thead th.ud-th-icon:not(.ud-th-toggle) { display: none !important; }
+    .ud-table thead th.ud-th-icon.ud-th-toggle { padding: 7px 11px !important; }
+    .ud-case-dd-panel, #ud-source-dd-panel, .ud-th-menu { position: fixed !important; top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; min-width: 0 !important; max-height: 72vh; overflow-y: auto; border-radius: 16px 16px 0 0 !important; box-shadow: 0 -10px 34px rgba(0,0,0,0.28) !important; padding-bottom: 20px !important; }
   }
 </style>
 <!-- AUTH GATE START -->
