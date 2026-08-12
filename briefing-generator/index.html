@@ -258,6 +258,9 @@
     .ih-sort-btn:hover { background: var(--paper-2); }
     .ih-sort-btn.on { background: var(--neon-block); color: var(--neon-on-block); border-color: var(--neon-block); }
     /* Inline theme filter — press-page type pills: black when on, thin gray outline when off */
+    .ih-themes-wrap { margin-right: auto; }
+    .ih-themes-wrap .ih-dd-panel { left: 0; right: auto; min-width: 260px; }
+    #ih-themes-panel .ih-theme-pills { margin-right: 0; }
     .ih-theme-pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-right: auto; }
     .ih-tp-btn { font-family: inherit; font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; padding: 7px 12px; background: transparent; border: 1px solid var(--line-strong); color: var(--ink-60); cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s; }
     .ih-tp-btn:hover { background: var(--paper-2); color: var(--ink); }
@@ -570,7 +573,12 @@
 
   <!-- Dashboard: top 7 from each section, four columns -->
   <div class="ih-controls">
-    <div class="ih-theme-pills" id="ih-theme-pills" role="group" aria-label="Filter by theme"></div>
+    <div class="ih-dd-wrap ih-themes-wrap">
+      <button type="button" id="ih-themes-btn" class="ih-dd-btn" title="Filter by claim theme">Themes: All</button>
+      <div id="ih-themes-panel" class="ih-dd-panel" style="display:none;">
+        <div class="ih-theme-pills" id="ih-theme-pills" role="group" aria-label="Filter by theme"></div>
+      </div>
+    </div>
     <button type="button" id="ih-groups-btn" class="ih-dd-btn" title="Group cases so they brief together as one unit">Groups</button>
     <div class="ih-dd-wrap">
       <button type="button" id="ih-cases-btn" class="ih-dd-btn">Cases: All</button>
