@@ -429,6 +429,9 @@
     [data-theme="dark"] .ih-note-counter { color: rgba(237,231,222,0.6); }
     .ih-gear { margin-left: auto; background: none; border: none; cursor: pointer; color: var(--ink-60); font-size: 17px; padding: 0 2px; }
     .ih-gear:hover { color: var(--ink); }
+    .ih-sync-case { background: none; border: none; cursor: pointer; font-size: 14px; line-height: 1; padding: 0 4px; opacity: 0.75; flex: 0 0 auto; }
+    .ih-sync-case:hover { opacity: 1; }
+    .ih-sync-case:disabled { cursor: default; opacity: 0.5; }
     .ih-color-pop { position: absolute; z-index: 1000; background: var(--surface); border: 1px solid var(--line-strong); padding: 14px; width: 240px; box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
     .ih-color-pop .ud-pop-title { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
     .ih-color-pop .ud-pop-swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
@@ -581,10 +584,6 @@
     <div class="ih-dd-wrap">
       <button type="button" id="ih-cases-btn" class="ih-dd-btn">Cases: All</button>
       <div id="ih-cases-panel" class="ih-dd-panel" style="display:none;"></div>
-    </div>
-    <div class="ih-dd-wrap">
-      <button type="button" id="ih-sync-btn" class="ih-dd-btn" title="Pull fresh docket entries + news for one case, and refresh its briefing if due">⟳ Sync case</button>
-      <div id="ih-sync-panel" class="ih-dd-panel" style="display:none;"></div>
     </div>
   </div>
   <div class="ih-band">

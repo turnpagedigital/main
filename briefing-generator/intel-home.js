@@ -1233,6 +1233,7 @@
           '<input type="checkbox" data-case="' + esc(m.slug) + '"' + (caseOn(m.slug) ? " checked" : "") + ">" +
           casePill(m.slug, m.short_name || m.display_name || m.slug, m.default_color) +
           '<span style="flex:1"></span>' +
+          '<button type="button" class="ih-sync-case" data-sync-slug="' + esc(m.slug) + '" title="Sync this case now — pull fresh docket + news">🔄</button>' +
           '<button type="button" class="ih-gear" data-case-gear="' + esc(m.slug) + '" title="Colors">⚙</button>' +
         "</label>";
     });
@@ -1275,6 +1276,13 @@
         ev.preventDefault();
         ev.stopPropagation();
         openCasePopover(g.getAttribute("data-case-gear"), g);
+      });
+    });
+    panel.querySelectorAll("[data-sync-slug]").forEach(function (s) {
+      s.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        runManualSync(s.getAttribute("data-sync-slug"), s);
       });
     });
   }
@@ -1819,12 +1827,13 @@
       });
     });
   }
-  function runManualSync(slug) {
-    var btn = document.getElementById("ih-sync-btn");
+  function runManualSync(slug, btn) {
+    btn = btn || document.getElementById("ih-sync-btn");
     if (!btn) return;
-    var reset = btn.textContent;
+    var reset = btn.textContent, resetTitle = btn.getAttribute("title");
     btn.disabled = true;
-    btn.textContent = "Syncing…";
+    btn.textContent = "⏳";
+    btn.setAttribute("title", "Syncing…");
     fetch("api/admin/manual-sync", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -1833,20 +1842,22 @@
     }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, body: j }; });
     }).then(function (res) {
-      if (res.status === 401 || res.status === 403) btn.textContent = "Session expired — reload";
-      else if (res.body && res.body.ok) btn.textContent = "✓ Sync started";
-      else btn.textContent = "✗ Sync failed";
+      if (res.status === 401 || res.status === 403) { btn.textContent = "🔒"; btn.setAttribute("title", "Session expired — reload"); }
+      else if (res.body && res.body.ok) { btn.textContent = "✓"; btn.setAttribute("title", "Sync started"); }
+      else { btn.textContent = "✗"; btn.setAttribute("title", "Sync failed"); }
     }).catch(function () {
-      btn.textContent = "✗ Sync failed";
+      btn.textContent = "✗"; btn.setAttribute("title", "Sync failed");
     }).then(function () {
-      setTimeout(function () { btn.disabled = false; btn.textContent = reset; }, 2500);
+      setTimeout(function () {
+        btn.disabled = false; btn.textContent = reset;
+        if (resetTitle) btn.setAttribute("title", resetTitle);
+      }, 2500);
     });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     wireDropdown("ih-themes-btn", "ih-themes-panel", function () { paintThemePills(); });
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
-    wireDropdown("ih-sync-btn", "ih-sync-panel", buildSyncPanel);
     updateFilterButtons();
     var _reflowTimer;
     window.addEventListener("resize", function () {
