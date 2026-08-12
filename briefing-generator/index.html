@@ -573,11 +573,10 @@
 
   <!-- Dashboard: top 7 from each section, four columns -->
   <div class="ih-controls">
-    <div class="ih-dd-wrap ih-themes-wrap">
+    <div class="ih-theme-pills" id="ih-theme-pills" role="group" aria-label="Filter by theme"></div>
+    <div class="ih-dd-wrap ih-themes-wrap" id="ih-themes-wrap" style="display:none;">
       <button type="button" id="ih-themes-btn" class="ih-dd-btn" title="Filter by claim theme">Themes: All</button>
-      <div id="ih-themes-panel" class="ih-dd-panel" style="display:none;">
-        <div class="ih-theme-pills" id="ih-theme-pills" role="group" aria-label="Filter by theme"></div>
-      </div>
+      <div id="ih-themes-panel" class="ih-dd-panel" style="display:none;"></div>
     </div>
     <button type="button" id="ih-groups-btn" class="ih-dd-btn" title="Group cases so they brief together as one unit">Groups</button>
     <div class="ih-dd-wrap">
