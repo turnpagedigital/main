@@ -15,12 +15,22 @@
     "awaiting_sync": false,
     "docket_url": "https://www.courtlistener.com/docket/70143231/harvest-sherwood-food-distributors-inc/",
     "date_last_filing": "2026-08-11",
-    "meta_fetched_at": "2026-08-12T00:02:56.859016+00:00",
-    "fetched_at": "2026-08-12T00:02:56.859016+00:00",
+    "meta_fetched_at": "2026-08-12T02:48:21.695633+00:00",
+    "fetched_at": "2026-08-12T02:48:21.695633+00:00",
     "as_of": "Aug 12, 2026",
     "backfilled": true,
-    "new_in_72h": 18,
+    "new_in_72h": 19,
     "recent": [
+      {
+        "entry_number": 1204,
+        "date_filed": "2026-08-11",
+        "time_filed": "20:55:30",
+        "date_display": "Aug 11, 2026",
+        "description": "Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 1203,
         "date_filed": "2026-08-11",
@@ -40,19 +50,19 @@
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      },
+      }
+    ],
+    "entries": [
       {
-        "entry_number": 1201,
+        "entry_number": 1204,
         "date_filed": "2026-08-11",
-        "time_filed": "12:01:19",
+        "time_filed": "20:55:30",
         "date_display": "Aug 11, 2026",
         "description": "Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
-      }
-    ],
-    "entries": [
+      },
       {
         "entry_number": 1203,
         "date_filed": "2026-08-11",
