@@ -1859,8 +1859,7 @@
     wireBandRowResize();
     wireViewToggle();
     wireShortcuts();
-    var gb = document.getElementById("ih-groups-btn");
-    if (gb) gb.addEventListener("click", openGroupEditor);
+    // Briefing-groups editing moved to Settings → Briefings (manage.html#briefing).
     document.addEventListener("keydown", function (ev) {
       if (ev.key === "Escape") closeGroupEditor();
     });

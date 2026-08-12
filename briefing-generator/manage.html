@@ -132,6 +132,18 @@
   .mg-bi-guidance:focus { outline: 2px solid var(--neon); outline-offset: 1px; }
   .mg-bi-row .mg-btn { flex: 0 0 auto; margin-top: 3px; }
 
+  /* Briefing groups editor — cases briefed together as one unit. */
+  .mg-bi-grp-row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; font-size: 12.5px; }
+  .mg-bi-grp-del { background: none; border: none; color: var(--ink-40); font-size: 16px; line-height: 1; cursor: pointer; padding: 0 4px; }
+  .mg-bi-grp-del:hover { color: #C84141; }
+  .mg-bi-grp-new { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 12px; }
+  .mg-bi-grp-name { width: 100%; max-width: 360px; margin-bottom: 10px; }
+  .mg-bi-grp-checks { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 4px 14px; max-height: 220px; overflow-y: auto; margin-bottom: 10px; }
+  .mg-bi-grp-check { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink); cursor: pointer; }
+  .mg-bi-grp-check input { accent-color: var(--neon-block); margin: 0; }
+  .mg-bi-grp-check.taken { color: var(--ink-40); cursor: default; }
+  .mg-bi-grp-foot { display: flex; align-items: center; gap: 10px; }
+
   /* News feed sources — relocated here from the docket/news toolbar. */
   .ud-src-list { display: flex; flex-direction: column; gap: 6px; }
   .ud-src-row { display: flex; align-items: center; gap: 10px; padding: 7px 8px; background: var(--paper-2); border: 1px solid var(--line); }
@@ -208,7 +220,7 @@
     <a class="mg-tab" href="#groups" data-tab="groups">Groups</a>
     <a class="mg-tab" href="#voice" data-tab="voice">Voice</a>
     <a class="mg-tab" href="#colors" data-tab="colors">Colors</a>
-    <a class="mg-tab" href="#briefing" data-tab="briefing">Briefing Inputs</a>
+    <a class="mg-tab" href="#briefing" data-tab="briefing">Briefings</a>
   </div>
 
   <div id="mg-root"><div class="mg-empty">Loading…</div></div>
