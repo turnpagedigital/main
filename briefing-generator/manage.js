@@ -1059,6 +1059,25 @@
       .catch(function () { el.textContent = "Couldn’t load."; });
   }
 
+  function slugifyGroup(name) {
+    return String(name || "").toLowerCase().replace(/['’.]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 50);
+  }
+
+  function biSaveGroups(groups, status) {
+    if (status) status.textContent = "Saving…";
+    apiFetch(BASE + "api/briefing-groups", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ groups: groups }),
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      if (!j || !j.ok) throw new Error((j && j.error) || "save failed");
+      setBanner("ok", "Briefing groups saved.");
+      biGroups();
+    }).catch(function (e) {
+      if (status) status.textContent = "Save failed: " + String(e.message || e);
+    });
+  }
+
   function biGroups() {
     var el = $("mg-bi-groups");
     if (!el) return;
@@ -1066,14 +1085,49 @@
       .then(function (d) {
         if (!d || !d.ok) throw new Error();
         var groups = d.groups || [];
-        if (!groups.length) { el.innerHTML = '<span class="mg-hint" style="margin:0;">No briefing groups — every case gets its own briefing.</span>'; return; }
-        el.innerHTML = groups.map(function (g) {
-          var members = (g.members || []).map(function (slug) {
-            var c = CASES.filter(function (x) { return x.slug === slug; })[0];
-            return c ? casePill(c.slug, c.short_name || c.display_name) : esc(slug);
-          }).join(" ");
-          return '<div style="margin-bottom:8px;"><strong style="font-size:12.5px;">' + esc(g.name) + "</strong> — " + members + "</div>";
+        var grouped = {};
+        groups.forEach(function (g) { (g.members || []).forEach(function (m) { grouped[m] = g.name; }); });
+        var existing = groups.length
+          ? groups.map(function (g, gi) {
+              var members = (g.members || []).map(function (slug) {
+                var c = CASES.filter(function (x) { return x.slug === slug; })[0];
+                return c ? casePill(c.slug, c.short_name || c.display_name) : esc(slug);
+              }).join(" ");
+              return '<div class="mg-bi-grp-row"><strong style="font-size:12.5px;">' + esc(g.name) + "</strong> — " + members +
+                ' <button type="button" class="mg-bi-grp-del" data-del="' + gi + '" title="Ungroup — members go back to their own briefings">×</button></div>';
+            }).join("")
+          : '<div class="mg-hint" style="margin:0 0 10px;">No briefing groups yet — every case gets its own briefing.</div>';
+        var checks = MANIFEST.map(function (m) {
+          var taken = grouped[m.slug];
+          return '<label class="mg-bi-grp-check' + (taken ? " taken" : "") + '"><input type="checkbox" value="' + esc(m.slug) + '"' +
+            (taken ? " disabled" : "") + "> " + esc(m.short_name || m.display_name || m.slug) +
+            (taken ? ' <span class="mg-hint" style="margin:0;">(' + esc(taken) + ")</span>" : "") + "</label>";
         }).join("");
+        el.innerHTML =
+          '<div class="mg-bi-grp-list">' + existing + "</div>" +
+          '<div class="mg-bi-grp-new">' +
+            '<input type="text" class="mg-input mg-bi-grp-name" placeholder="Group name (e.g. Hachette Suits) — becomes the pill label">' +
+            '<div class="mg-bi-grp-checks">' + checks + "</div>" +
+            '<div class="mg-bi-grp-foot"><span class="mg-hint mg-bi-grp-status" style="margin:0;"></span><span style="flex:1"></span>' +
+            '<button type="button" class="mg-btn mg-btn-primary mg-bi-grp-create">Create group</button></div>' +
+          "</div>";
+        el.querySelectorAll(".mg-bi-grp-del").forEach(function (b) {
+          b.addEventListener("click", function () {
+            var i = Number(b.getAttribute("data-del"));
+            biSaveGroups(groups.filter(function (_, j) { return j !== i; }), el.querySelector(".mg-bi-grp-status"));
+          });
+        });
+        var createBtn = el.querySelector(".mg-bi-grp-create");
+        if (createBtn) createBtn.addEventListener("click", function () {
+          var status = el.querySelector(".mg-bi-grp-status");
+          var name = (el.querySelector(".mg-bi-grp-name").value || "").trim();
+          var members = [].map.call(el.querySelectorAll(".mg-bi-grp-checks input:checked"), function (c) { return c.value; });
+          if (!name) { if (status) status.textContent = "Name the group first."; return; }
+          if (members.length < 2) { if (status) status.textContent = "Pick at least two cases."; return; }
+          var id = slugifyGroup(name);
+          if (groups.some(function (g) { return g.id === id; })) { if (status) status.textContent = "A group with that name already exists."; return; }
+          biSaveGroups(groups.concat([{ id: id, name: name, members: members }]), status);
+        });
       })
       .catch(function () { el.textContent = "Couldn’t load."; });
   }
@@ -1190,7 +1244,7 @@
 
     root.innerHTML =
       bannerHtml() +
-      '<div class="mg-head"><h2>Briefing inputs</h2></div>' +
+      '<div class="mg-head"><h2>Briefings</h2></div>' +
       '<p class="mg-hint">Everything that shapes what the model writes for a case or group briefing, gathered in one place — the house voice and every case’s scan guidance are read together on every run.</p>' +
 
       '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>House voice</h3><a class="mg-btn mg-btn-ghost" href="/admin/intelligence/defaults" target="_blank" rel="noopener">Edit in Admin ↗</a></div>' +
@@ -1205,7 +1259,7 @@
         '<div class="mg-box" style="padding:14px;" id="mg-bi-x">Loading…</div>' +
       "</div>" +
 
-      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>Briefing groups</h3><span class="mg-hint" style="margin:0 0 0 auto;">Edited from the dashboard’s GROUPS menu</span></div>' +
+      '<div class="mg-bi-section"><div class="mg-bi-section-head"><h3>Briefing groups</h3><span class="mg-hint" style="margin:0 0 0 auto;">Cases briefed together as one unit</span></div>' +
         '<div class="mg-box" style="padding:14px;" id="mg-bi-groups">Loading…</div>' +
       "</div>" +
 

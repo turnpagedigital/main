@@ -251,6 +251,12 @@
       '@media (max-width:720px){#theme-toggle{display:none !important;}.tn-gear-theme{display:flex;}}';
     document.head.appendChild(st);
     var panel=gw.querySelector('.tn-gear-panel');
+    if(panel&&!panel.querySelector('[data-gear-briefings]')){
+      var _bl=document.createElement('a');
+      _bl.href='manage.html#briefing';_bl.textContent='Briefings';
+      _bl.setAttribute('data-gear-briefings','1');
+      panel.appendChild(_bl);
+    }
     function markTheme(){
       if(!panel)return;
       var cur=localStorage.getItem(K)||'system';
