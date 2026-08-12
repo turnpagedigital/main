@@ -1864,6 +1864,11 @@
       clearTimeout(_reflowTimer);
       _reflowTimer = setTimeout(reflowThemeFilter, 150);
     });
+    // Re-measure once the web font has loaded and the page has fully settled —
+    // the first pass can run before Archivo is ready and under-measure the pills.
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(reflowThemeFilter);
+    window.addEventListener("load", reflowThemeFilter);
+    setTimeout(reflowThemeFilter, 400);
     wireCarousel();
     wireSortBar();
     wireBandResize();
