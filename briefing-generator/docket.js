@@ -106,6 +106,7 @@
   var bmOnly = false;
   var noteOnly = false;
   var docFilter = "all";  // all | with | without
+  var filterBtnRefresh = function () {};  // set by the mobile filter modal — keeps its badge current
   var COLLAPSED_DAYS = {};  // date_filed ("" for Undated) -> true when the reader collapsed it
   var NOTES = {};
   var BONDORO = [];
@@ -196,6 +197,7 @@
         activeSources:  activeSources,
       }));
     } catch (e) {}
+    filterBtnRefresh();
   }
 
   // ── Helpers ────────────────────────────────────────────────────────────────
@@ -3266,6 +3268,117 @@
         closeSyncPanel();
       });
     }
+
+    // ── Mobile filter modal ──────────────────────────────────────────────────
+    // On mobile the column-header filters are unreachable (the thead is hidden),
+    // so a single "Filter" button opens a sheet listing every filter. Tapping a
+    // row opens that filter's existing picker (as a bottom sheet); the toggles
+    // flip in place. All the real filtering stays in the original handlers.
+    (function setupFilterModal() {
+      var frow = document.querySelector(".ud-filter-row");
+      if (!frow) return;
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.id = "ud-filter-btn";
+      btn.innerHTML = '<span>Filter</span><span class="ud-fb-badge" id="ud-fb-badge" style="display:none"></span>';
+      frow.appendChild(btn);
+
+      var ov = document.createElement("div");
+      ov.id = "ud-fm-overlay";
+      ov.className = "ud-fm-overlay";
+      ov.style.display = "none";
+      ov.innerHTML = '<div class="ud-fm-sheet" id="ud-fm-sheet"></div>';
+      document.body.appendChild(ov);
+      var sheet = ov.querySelector("#ud-fm-sheet");
+
+      var CATS = [
+        { label: "Cases", th: "ud-th-case" },
+        { label: "Author", th: "ud-th-source" },
+        { label: "Entry type", th: "ud-th-entry" },
+        { label: "Documents", th: "ud-th-doc" },
+        { label: "Time range", th: "ud-th-time" },
+      ];
+      function cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
+      function caseVal() {
+        var total = CASES.length; if (!total) return "All";
+        var on = CASES.filter(function (c) { return !!activeCases[c.slug]; }).length;
+        return on >= total ? "All" : on + " of " + total;
+      }
+      function catVal(th) {
+        if (th === "ud-th-case") return caseVal();
+        if (th === "ud-th-entry") return entryFilter === "all" ? "All" : cap(entryFilter);
+        if (th === "ud-th-doc") return docFilter === "all" ? "All" : docFilter === "with" ? "With doc" : "No doc";
+        if (th === "ud-th-time") { var l = document.getElementById("ud-lookback-label"); return l ? l.textContent : "All"; }
+        var src = document.getElementById("ud-th-source");
+        return src && src.classList.contains("ud-th-on") ? "Some" : "All";
+      }
+      function activeCount() {
+        var n = 0;
+        if (caseVal() !== "All") n++;
+        if (entryFilter !== "all") n++;
+        if (docFilter !== "all") n++;
+        if (lookback !== "90d") n++;
+        var src = document.getElementById("ud-th-source");
+        if (src && src.classList.contains("ud-th-on")) n++;
+        if (bmOnly) n++;
+        if (noteOnly) n++;
+        return n;
+      }
+      function refreshBtn() {
+        var b = document.getElementById("ud-fb-badge");
+        var n = activeCount();
+        if (b) { if (n) { b.textContent = n; b.style.display = ""; } else b.style.display = "none"; }
+        btn.classList.toggle("on", n > 0);
+      }
+      function renderSheet() {
+        var rows = CATS.map(function (c) {
+          var v = catVal(c.th);
+          return '<button type="button" class="ud-fm-row" data-th="' + c.th + '">' +
+            '<span class="ud-fm-label">' + c.label + "</span>" +
+            '<span class="ud-fm-val' + (v !== "All" ? " on" : "") + '">' + v +
+            ' <span class="ud-fm-chev">›</span></span></button>';
+        }).join("");
+        sheet.innerHTML =
+          '<div class="ud-fm-head"><h3>Filter docket</h3><button type="button" class="ud-fm-x" data-close aria-label="Close">×</button></div>' +
+          rows +
+          '<div class="ud-fm-toggle"><span class="ud-fm-label">★ Bookmarked only</span><span class="ud-fm-sw' + (bmOnly ? " on" : "") + '" data-toggle="ud-th-bm"></span></div>' +
+          '<div class="ud-fm-toggle"><span class="ud-fm-label">✎ With notes only</span><span class="ud-fm-sw' + (noteOnly ? " on" : "") + '" data-toggle="ud-th-note"></span></div>' +
+          '<div class="ud-fm-foot"><button type="button" class="ud-fm-reset" data-reset>Reset all</button><button type="button" class="ud-fm-done" data-close>Done</button></div>';
+      }
+      function openModal() { renderSheet(); ov.style.display = "flex"; }
+      function closeModal() { ov.style.display = "none"; refreshBtn(); }
+
+      btn.addEventListener("click", openModal);
+      ov.addEventListener("click", function (ev) {
+        if (ev.target === ov || ev.target.closest("[data-close]")) { closeModal(); return; }
+        var row = ev.target.closest(".ud-fm-row");
+        if (row) {
+          closeModal();
+          var t = document.getElementById(row.getAttribute("data-th"));
+          if (t) setTimeout(function () { t.click(); }, 50);
+          return;
+        }
+        var sw = ev.target.closest(".ud-fm-sw");
+        if (sw) {
+          var tg = document.getElementById(sw.getAttribute("data-toggle"));
+          if (tg) tg.click();
+          setTimeout(renderSheet, 60);
+          return;
+        }
+        if (ev.target.closest("[data-reset]")) {
+          bmOnly = false; noteOnly = false;
+          setAllCases(true);
+          Object.keys(activeSources).forEach(function (k) { activeSources[k] = true; });
+          entryFilter = "all"; docFilter = "all"; lookback = "90d";
+          saveFilterState(); renderCaseFilter(); renderSourceFilter(); syncHeaderStates(); render();
+          closeModal();
+          return;
+        }
+      });
+
+      filterBtnRefresh = refreshBtn;
+      refreshBtn();
+    })();
 
     init();
   });
