@@ -761,7 +761,7 @@ DOCKET_LIGHT_CSS = """<style>
   [data-theme="light"], [data-theme="light"] body { background: var(--paper-2); }
   [data-theme="light"] .page-title { border-bottom: 1px solid var(--line-strong); }
   [data-theme="light"] .ud-table { border-collapse: collapse; }
-  [data-theme="light"] .ud-table tbody tr { background: #F9FAFB; }
+  [data-theme="light"] .ud-table tbody tr { background: #FCFDFD; }
   [data-theme="light"] .ud-table tbody tr.ud-day-row { background: transparent; }
   [data-theme="light"] .ud-table td { border-bottom-color: var(--paper-2); }
   [data-theme="light"] .ud-day-row td { border-top: none; border-bottom: none; }
@@ -774,6 +774,12 @@ DOCKET_LIGHT_CSS = """<style>
   [data-theme="light"] .ud-table thead::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: #FDFDFE; border-radius: 14px; box-shadow: 0 6px 14px rgba(163,177,198,0.45), inset 0 1px 0 rgba(255,255,255,0.9); }
   [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
+  @media (max-width: 720px) {
+    .ud-table { background: transparent; border: none; }
+    [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--paper-2); }
+    [data-theme="light"] .ud-table tbody tr.ud-row-article { background: #E7E9EE; }
+    [data-theme="dark"] .ud-table tbody tr { border-bottom-color: var(--bg); }
+  }
 </style>"""
 
 
