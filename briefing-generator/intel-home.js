@@ -1114,6 +1114,37 @@
       tb.classList.toggle("filtered", !tall);
     }
     paintThemePills();
+    reflowThemeFilter();
+  }
+
+  // Theme filter shows the pills inline while they fit on one row; the moment
+  // they'd wrap, collapse them into the "Themes" dropdown. Measured (not a fixed
+  // breakpoint) so it adapts to however many themes are configured.
+  function reflowThemeFilter() {
+    var controls = document.querySelector(".ih-controls");
+    var pills = document.getElementById("ih-theme-pills");
+    var wrap = document.getElementById("ih-themes-wrap");
+    var panel = document.getElementById("ih-themes-panel");
+    var btn = document.getElementById("ih-themes-btn");
+    if (!controls || !pills || !wrap || !panel) return;
+    if (btn && btn.classList.contains("open")) return;  // don't reshuffle while the menu is open
+    // Measure with the pills inline.
+    if (pills.parentNode !== controls) controls.insertBefore(pills, controls.firstChild);
+    wrap.style.display = "none";
+    var prev = pills.style.flexWrap;
+    pills.style.flexWrap = "nowrap";
+    var need = pills.scrollWidth;
+    pills.style.flexWrap = prev;
+    var gap = parseFloat(getComputedStyle(controls).columnGap) || 10;
+    [].forEach.call(controls.children, function (c) {
+      if (c === pills || c === wrap) return;
+      if (getComputedStyle(c).display === "none") return;
+      need += c.getBoundingClientRect().width + gap;
+    });
+    if (need > controls.clientWidth + 1) {   // wouldn't fit on one line → collapse
+      panel.appendChild(pills);
+      wrap.style.display = "";
+    }
   }
 
   // ── Inline theme pills (press-page style: black = on, outline = off) ──────
@@ -1817,6 +1848,11 @@
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
     wireDropdown("ih-sync-btn", "ih-sync-panel", buildSyncPanel);
     updateFilterButtons();
+    var _reflowTimer;
+    window.addEventListener("resize", function () {
+      clearTimeout(_reflowTimer);
+      _reflowTimer = setTimeout(reflowThemeFilter, 150);
+    });
     wireCarousel();
     wireSortBar();
     wireBandResize();
