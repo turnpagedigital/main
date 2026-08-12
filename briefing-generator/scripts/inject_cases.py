@@ -771,10 +771,17 @@ DOCKET_LIGHT_CSS = """<style>
   [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
   [data-theme="light"] .ud-table thead { position: relative; }
   [data-theme="light"] .ud-table thead th { background: transparent; border: none; box-shadow: none; position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
-  [data-theme="light"] .ud-table thead::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: #FDFDFE; border-radius: 14px; box-shadow: 0 6px 14px rgba(163,177,198,0.45), inset 0 1px 0 rgba(255,255,255,0.9); }
+  [data-theme="light"] .ud-table thead::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: #FDFDFE; border-radius: 14px; box-shadow: 0 2px 10px rgba(10,10,10,0.08); }
   [data-theme="light"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   [data-theme="light"] .ud-search-input:focus { background: #FFFFFF; }
+  [data-theme="dark"] .page-title { border-bottom: 1px solid var(--line-strong); }
+  [data-theme="dark"] .ud-day-row td { border-top: none; }
+  [data-theme="dark"] .ud-table thead { position: relative; }
+  [data-theme="dark"] .ud-table thead th { background: transparent; border: none; box-shadow: none; position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
+  [data-theme="dark"] .ud-table thead::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: var(--surface); border-radius: 14px; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
+  [data-theme="dark"] .ud-table tbody tr:first-child td { padding-top: 20px; }
   .ud-table tr.ud-row-daycollapsed { display: none; }
+  .ud-table tbody tr.ud-day-row td { padding-top: 30px; }
   #ud-filter-btn { display: none; align-items: center; gap: 7px; font-family: inherit; font-size: 14px; font-weight: 700; padding: 9px 16px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink); cursor: pointer; }
   #ud-filter-btn.on { border-color: var(--ink); }
   #ud-filter-btn .ud-fb-badge { background: var(--ink); color: var(--bg); border-radius: 999px; font-size: 11px; font-weight: 800; padding: 1px 7px; }
