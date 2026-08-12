@@ -1286,13 +1286,19 @@
         '<div class="mg-bi-rows">' + rowsHtml + "</div>" +
       "</div>";
 
-    biVoicePreview();
-    biXAccounts();
-    biGroups();
-    biLoadSources();
-
-    $("mg-bi-src-add-btn").addEventListener("click", biAddSourceFromForm);
-    $("mg-bi-src-save").addEventListener("click", biSaveSources);
+    // Wrap the section loaders + feed-source wiring so a null element or a
+    // failed load can't abort before the per-case guidance Save buttons below
+    // get wired (that abort is what left them stuck disabled / "not clickable").
+    try {
+      biVoicePreview();
+      biXAccounts();
+      biGroups();
+      biLoadSources();
+      var _srcAdd = $("mg-bi-src-add-btn");
+      if (_srcAdd) _srcAdd.addEventListener("click", biAddSourceFromForm);
+      var _srcSave = $("mg-bi-src-save");
+      if (_srcSave) _srcSave.addEventListener("click", biSaveSources);
+    } catch (e) { /* keep going — the per-case guidance wiring below must still run */ }
 
     root.querySelectorAll(".mg-bi-row").forEach(function (row) {
       var ta = row.querySelector(".mg-bi-guidance");
