@@ -64,21 +64,36 @@
   // key never leaks into a page's own single-key handlers (h=hide, n=note…).
   var GOTO={h:'index.html',d:'docket.html',c:'calendar.html',p:'prospects.html',n:'notes.html',r:'news.html'};
   var gAt=0;
+  // d-then-m / l-then-m / s-then-m  →  set the theme (m = "mode"). Same
+  // capture-phase trick as the g-prefix: the first key still reaches a page's
+  // own single-key handlers (d = Download on docket), but 'm' completing the
+  // sequence flips the theme instead of leaking through to the page.
+  var THEME_SEQ={d:'dark',l:'light',s:'system'};
+  var tAt=0,tMode=null;
+  var markGearTheme=function(){};
   document.addEventListener('keydown',function(e){
     if(e.metaKey||e.ctrlKey||e.altKey)return;
     var t=e.target||{},tag=(t.tagName||'').toLowerCase();
     if(tag==='input'||tag==='textarea'||tag==='select'||t.isContentEditable)return;
     var k=(e.key||'').toLowerCase();
     var now=Date.now();
-    if(k==='g'){gAt=now;e.stopPropagation();return;}
+    if(k==='g'){gAt=now;tAt=0;e.stopPropagation();return;}
     if(gAt&&now-gAt<900&&GOTO[k]){
       e.preventDefault();e.stopPropagation();
-      gAt=0;
+      gAt=0;tAt=0;
       var prefix=location.pathname.indexOf('/cases/')!==-1?'../':'';
       location.href=prefix+GOTO[k];
       return;
     }
     gAt=0;
+    if(tAt&&now-tAt<700&&k==='m'&&tMode){
+      e.preventDefault();e.stopPropagation();
+      localStorage.setItem(K,tMode);apply();markGearTheme();
+      tAt=0;tMode=null;
+      return;
+    }
+    if(THEME_SEQ[k]){tMode=THEME_SEQ[k];tAt=now;return;}
+    tAt=0;tMode=null;
   },true);
 
   function wire(){
@@ -112,6 +127,13 @@
     if(kw&&kb){
       kb.addEventListener('click',function(e){e.stopPropagation();kw.classList.toggle('open');});
       document.addEventListener('click',function(e){if(!kw.contains(e.target))kw.classList.remove('open');});
+    }
+    var kp=kw&&kw.querySelector('.tn-kbd-panel');
+    if(kp&&!kp.querySelector('.tn-kbd-theme-row')){
+      var trow=document.createElement('div');
+      trow.className='tn-kbd-row tn-kbd-theme-row';
+      trow.innerHTML='<span class="tn-key">D</span> · <span class="tn-key">L</span> · <span class="tn-key">S</span> then <span class="tn-key">M</span> Dark / Light / System theme';
+      kp.appendChild(trow);
     }
     wireGearMenu();
     wireColResize();
@@ -148,10 +170,25 @@
         '[data-theme="light"] .tn-left.open{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
         '.tn-left.open .tn-back{display:block;width:100%;padding:12px 0;border-left:none;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}'+
         '[data-theme="light"] .tn-left.open .tn-back{border-top-color:rgba(10,10,10,0.08);}'+
+      '}'+
+      // Landscape phones: the bar has room for the links but not icon+label —
+      // show icons only (short viewport, but wide enough the hamburger is off).
+      '@media (max-height:520px) and (min-width:721px){'+
+        '.tn-back .tn-lbl{display:none;}'+
+        '.tn-back{padding:6px 5px;}'+
+        '.tn-back .tn-ico{font-size:17px;}'+
+        '.tn-kbd-btn{font-size:0;}.tn-kbd-btn::before{content:"⌨";font-size:15px;}'+
       '}';
     document.head.appendChild(st);
     var row=document.querySelector('.tn-row');
     if(row)row.style.position='relative';
+    // Split "🏠 Dashboard" into icon + label spans so landscape can drop the label.
+    left.querySelectorAll('.tn-back').forEach(function(a){
+      if(a.querySelector('.tn-lbl'))return;
+      var txt=(a.textContent||'').trim(),sp=txt.indexOf(' ');
+      if(sp<1)return;
+      a.innerHTML='<span class="tn-ico">'+txt.slice(0,sp)+'</span> <span class="tn-lbl">'+txt.slice(sp+1)+'</span>';
+    });
     var btn=document.createElement('button');
     btn.type='button';
     btn.className='tn-hamburger';
@@ -221,6 +258,7 @@
         b.classList.toggle('on',b.getAttribute('data-theme-set')===cur);
       });
     }
+    markGearTheme=markTheme;  // let the d/l/s-then-m keyboard shortcut refresh the checkmark
     if(panel&&!panel.querySelector('.tn-gear-theme')){
       var wrap=document.createElement('div');
       wrap.className='tn-gear-theme';
