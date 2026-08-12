@@ -1105,6 +1105,14 @@
       cb.textContent = on === MANIFEST.length ? "Cases: All" : "Cases: " + on + "/" + MANIFEST.length;
       cb.classList.toggle("filtered", on !== MANIFEST.length);
     }
+    var tb = document.getElementById("ih-themes-btn");
+    if (tb) {
+      var tslugs = themePillOrder();
+      var ton = tslugs.filter(themeOn).length;
+      var tall = !tslugs.length || ton === tslugs.length;
+      tb.textContent = tall ? "Themes: All" : "Themes: " + ton + "/" + tslugs.length;
+      tb.classList.toggle("filtered", !tall);
+    }
     paintThemePills();
   }
 
@@ -1805,6 +1813,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    wireDropdown("ih-themes-btn", "ih-themes-panel", function () { paintThemePills(); });
     wireDropdown("ih-cases-btn", "ih-cases-panel", buildCasesPanel);
     wireDropdown("ih-sync-btn", "ih-sync-panel", buildSyncPanel);
     updateFilterButtons();
