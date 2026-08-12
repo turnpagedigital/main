@@ -2,7 +2,7 @@
   "case": {
     "slug": "rndc",
     "display_name": "RNDC",
-    "case_name": "Republic National Distributing Company, LLC and Official Committee of Unsecured Creditors of Repub",
+    "case_name": "Republic National Distributing Company, LLC",
     "court": "Bankr. S.D.Tx.",
     "case_number": "26-90737",
     "judge": "Hon. Christopher M. Lopez",
@@ -13,46 +13,86 @@
   "docket": {
     "source": "courtlistener",
     "awaiting_sync": false,
-    "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc-and-official-committee-of/",
+    "docket_url": "https://www.courtlistener.com/docket/73673083/republic-national-distributing-company-llc/",
     "date_last_filing": "2026-08-12",
-    "meta_fetched_at": "2026-08-12T21:06:30.983201+00:00",
-    "fetched_at": "2026-08-12T22:07:29.496507+00:00",
+    "meta_fetched_at": "2026-08-12T23:05:07.931687+00:00",
+    "fetched_at": "2026-08-12T23:05:07.931687+00:00",
     "as_of": "Aug 12, 2026",
     "backfilled": true,
-    "new_in_72h": 19,
+    "new_in_72h": 23,
     "recent": [
       {
-        "entry_number": 177,
+        "entry_number": 181,
         "date_filed": "2026-08-12",
-        "time_filed": "14:17:46",
+        "time_filed": "17:48:48",
         "date_display": "Aug 12, 2026",
-        "description": "Notice of Appearance and Request for Notice",
+        "description": "Order to Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 176,
+        "entry_number": 180,
         "date_filed": "2026-08-12",
-        "time_filed": "13:49:31",
+        "time_filed": "17:46:39",
         "date_display": "Aug 12, 2026",
-        "description": "Generic Motion",
+        "description": "Order to Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       },
       {
-        "entry_number": 175,
+        "entry_number": 179,
         "date_filed": "2026-08-12",
-        "time_filed": "08:30:12",
+        "time_filed": "17:45:41",
         "date_display": "Aug 12, 2026",
-        "description": "Notice of Appearance and Request for Notice",
+        "description": "Order to Appear pro hac vice",
         "is_new": true,
         "landmark": "",
         "doc_url": ""
       }
     ],
     "entries": [
+      {
+        "entry_number": 181,
+        "date_filed": "2026-08-12",
+        "time_filed": "17:48:48",
+        "date_display": "Aug 12, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 180,
+        "date_filed": "2026-08-12",
+        "time_filed": "17:46:39",
+        "date_display": "Aug 12, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 179,
+        "date_filed": "2026-08-12",
+        "time_filed": "17:45:41",
+        "date_display": "Aug 12, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
+      {
+        "entry_number": 178,
+        "date_filed": "2026-08-12",
+        "time_filed": "17:44:06",
+        "date_display": "Aug 12, 2026",
+        "description": "Order to Appear pro hac vice",
+        "is_new": true,
+        "landmark": "",
+        "doc_url": ""
+      },
       {
         "entry_number": 177,
         "date_filed": "2026-08-12",
