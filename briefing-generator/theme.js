@@ -140,7 +140,9 @@
         '.tn-hamburger{display:inline-flex;}'+
         '.tn-left{flex-wrap:nowrap;}'+
         '.tn-back{display:none;}'+
-        '.tn-row{justify-content:flex-start;}'+
+        '.tn{padding:6px 0;}'+
+        '.tn-row{justify-content:flex-start;flex-wrap:nowrap;}'+
+        '.tn-brand-logo{height:26px;}'+
         '.tn-gear{margin-left:auto;}'+
         '.tn-left.open{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:2px 20px 12px;z-index:200;border-bottom:1px solid rgba(255,255,255,0.12);}'+
         '[data-theme="light"] .tn-left.open{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
@@ -158,7 +160,9 @@
     btn.setAttribute('aria-haspopup','true');
     btn.setAttribute('aria-label','Menu');
     btn.textContent='☰';
-    left.appendChild(btn);
+    // Append to the row (not tn-left) so on mobile it sits to the RIGHT of the
+    // gear — logo … gear ☰ on one shorter row. Still toggles the tn-left menu.
+    (row||left).appendChild(btn);
     btn.addEventListener('click',function(e){e.stopPropagation();left.classList.toggle('open');});
     left.querySelectorAll('.tn-back').forEach(function(a){a.addEventListener('click',function(){left.classList.remove('open');});});
     document.addEventListener('click',function(e){if(!left.contains(e.target))left.classList.remove('open');});
@@ -194,13 +198,43 @@
       '.tn-gear{position:relative;display:inline-flex;align-items:center;}'+
       '.tn-gear-btn{font-size:15px;background:transparent;border:none;color:inherit;opacity:0.7;cursor:pointer;padding:4px 6px;line-height:1;}'+
       '.tn-gear-btn:hover{opacity:1;}'+
-      '.tn-gear-panel{display:none;flex-direction:column;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:6px;min-width:130px;box-shadow:0 10px 30px rgba(0,0,0,0.14);}'+
+      '.tn-gear-panel{display:none;flex-direction:column;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:6px;min-width:150px;box-shadow:0 10px 30px rgba(0,0,0,0.14);}'+
       '.tn-gear-panel a{display:block;padding:8px 10px;font-size:12.5px;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap;}'+
       '.tn-gear-panel a:hover{background:var(--paper-2);}'+
       '@media (hover:hover){.tn-gear:hover .tn-gear-panel{display:flex;}}'+
-      '.tn-gear.open .tn-gear-panel{display:flex;}';
+      '.tn-gear.open .tn-gear-panel{display:flex;}'+
+      // Theme (System/Dark/Light) folded into the gear on mobile, where the
+      // standalone toggle is hidden — so settings + theme live in one menu.
+      '.tn-gear-theme{display:none;flex-direction:column;border-top:1px solid var(--line);margin-top:4px;padding-top:4px;}'+
+      '.tn-gear-theme .tn-gt-lbl{font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);padding:4px 10px 3px;}'+
+      '.tn-gear-theme button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;padding:8px 10px;}'+
+      '.tn-gear-theme button:hover{background:var(--paper-2);}'+
+      '.tn-gear-theme button .tn-gt-check{margin-left:auto;color:var(--ink-60);visibility:hidden;}'+
+      '.tn-gear-theme button.on .tn-gt-check{visibility:visible;}'+
+      '@media (max-width:720px){#theme-toggle{display:none !important;}.tn-gear-theme{display:flex;}}';
     document.head.appendChild(st);
-    gb.addEventListener('click',function(e){e.stopPropagation();gw.classList.toggle('open');});
+    var panel=gw.querySelector('.tn-gear-panel');
+    function markTheme(){
+      if(!panel)return;
+      var cur=localStorage.getItem(K)||'system';
+      panel.querySelectorAll('.tn-gear-theme button').forEach(function(b){
+        b.classList.toggle('on',b.getAttribute('data-theme-set')===cur);
+      });
+    }
+    if(panel&&!panel.querySelector('.tn-gear-theme')){
+      var wrap=document.createElement('div');
+      wrap.className='tn-gear-theme';
+      wrap.innerHTML='<div class="tn-gt-lbl">Theme</div>'+ST.map(function(t){
+        return '<button type="button" data-theme-set="'+t+'">'+IC[t]+' <span>'+LB[t]+'</span><span class="tn-gt-check">✓</span></button>';
+      }).join('');
+      panel.appendChild(wrap);
+      wrap.addEventListener('click',function(e){
+        var b=e.target.closest('[data-theme-set]');
+        if(!b)return;
+        localStorage.setItem(K,b.getAttribute('data-theme-set'));apply();markTheme();
+      });
+    }
+    gb.addEventListener('click',function(e){e.stopPropagation();gw.classList.toggle('open');if(gw.classList.contains('open'))markTheme();});
     document.addEventListener('click',function(e){if(!gw.contains(e.target))gw.classList.remove('open');});
   }
 

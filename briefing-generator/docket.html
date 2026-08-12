@@ -372,8 +372,9 @@
     .ud-case{order:3;overflow:visible;}
     .ud-party{order:4;font-size:12px;color:var(--ink-60);}
     .ud-entry, .un-note-cell{order:5;flex-basis:100%;max-width:none;}
-    .ud-doc{order:6;text-align:left;}
-    .ud-mark-cell, .uc-curate-cell{order:7;margin-left:auto;}
+    .ud-doc{order:6;flex-basis:100%;text-align:right;}
+    .ud-mark-cell, .uc-curate-cell{order:7;}
+    .ud-doc + .ud-mark-cell{margin-left:auto;}
     .ud-mark-cell button{font-size:16px;padding:4px 6px;}
     .ud-day-row{padding:0;border-bottom:none;}
     .ud-day-row td{flex-basis:100%;padding:7px 10px;}
@@ -422,14 +423,16 @@
   [data-theme="light"], [data-theme="light"] body { background: var(--paper-2); }
   [data-theme="light"] .page-title { border-bottom: 1px solid var(--line-strong); }
   [data-theme="light"] .ud-table { border-collapse: collapse; }
-  [data-theme="light"] .ud-table tbody tr { background: #FCFDFD; }
+  [data-theme="light"] .ud-table tbody tr { background: var(--surface); }
+  [data-theme="light"] .ud-table tbody tr:not(.ud-day-row):hover { background: linear-gradient(rgba(10,10,10,0.03), rgba(10,10,10,0.03)), var(--surface); }
   [data-theme="light"] .ud-table tbody tr.ud-day-row { background: transparent; }
-  [data-theme="light"] .ud-table td { border-bottom-color: var(--paper-2); }
-  [data-theme="light"] .ud-day-row td { border-top: none; border-bottom: none; }
+  [data-theme="light"] .ud-table td { border-bottom-color: var(--line); }
+  [data-theme="light"] .ud-day-row td { border-top: none; border-bottom: 1px solid var(--line-strong); }
   [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:first-child { border-left: none; }
   [data-theme="light"] .ud-table tbody tr:not(.ud-day-row) td:last-child { border-right: none; }
   [data-theme="light"] .ud-table tbody tr:last-child td { border-bottom: none; }
   [data-theme="light"] .ud-row-article td { background: #E7E9EE; }
+  [data-theme="light"] .ud-row-article:hover td { background: #F0F1F4; }
   [data-theme="light"] .ud-table thead { position: relative; }
   [data-theme="light"] .ud-table thead th { background: transparent; border: none; box-shadow: none; position: relative; z-index: 1; padding-top: 13px; padding-bottom: 13px; }
   [data-theme="light"] .ud-table thead::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: #FDFDFE; border-radius: 14px; box-shadow: 0 2px 10px rgba(10,10,10,0.08); }
@@ -446,6 +449,8 @@
   #ud-filter-btn { display: none; align-items: center; gap: 7px; font-family: inherit; font-size: 14px; font-weight: 700; padding: 9px 16px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink); cursor: pointer; }
   #ud-filter-btn.on { border-color: var(--ink); }
   #ud-filter-btn .ud-fb-badge { background: var(--ink); color: var(--bg); border-radius: 999px; font-size: 11px; font-weight: 800; padding: 1px 7px; }
+  .ud-clear-filters { display: none; background: none; border: none; font-family: inherit; font-size: 13px; font-weight: 600; color: var(--ink-60); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; padding: 4px 2px; }
+  .ud-clear-filters:hover { color: var(--ink); }
   .ud-fm-overlay { position: fixed; inset: 0; z-index: 1200; background: rgba(10,10,10,0.42); display: flex; align-items: flex-end; }
   .ud-fm-sheet { background: var(--surface); width: 100%; max-height: 88vh; overflow-y: auto; border-radius: 18px 18px 0 0; box-shadow: 0 -12px 40px rgba(0,0,0,0.3); }
   .ud-fm-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px 12px; position: sticky; top: 0; background: var(--surface); border-bottom: 1px solid var(--line); }
@@ -468,10 +473,13 @@
   .ud-fm-done { background: var(--ink); border: 1px solid var(--ink); color: var(--bg); }
   @media (max-width: 720px) {
     .ud-table { background: transparent; border: none; }
-    [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--paper-2); }
+    [data-theme="light"] .ud-table tbody tr { border-bottom-color: var(--line); }
+    [data-theme="light"] .ud-table tbody tr.ud-day-row { border-bottom: 1px solid var(--line-strong); }
     [data-theme="light"] .ud-table tbody tr.ud-row-article { background: #E7E9EE; }
     [data-theme="dark"] .ud-table tbody tr { border-bottom-color: var(--bg); }
     #ud-filter-btn { display: inline-flex; }
+    #ud-count, #ud-hidden-info { display: none; }
+    .ud-clear-filters { display: block; margin: 4px 2px 0; }
     .ud-case-dd-panel, #ud-source-dd-panel, .ud-th-menu { position: fixed !important; top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: none !important; min-width: 0 !important; max-height: 72vh; overflow-y: auto; border-radius: 16px 16px 0 0 !important; box-shadow: 0 -10px 34px rgba(0,0,0,0.28) !important; padding-bottom: 20px !important; z-index: 1300 !important; }
   }
 </style>
@@ -602,7 +610,6 @@
     </div>
     <div class="ud-filter-row">
       <div class="ud-case-dd" id="ud-case-dd">
-        <button type="button" id="ud-case-add" class="ud-type-select" title="Add a tracked case">＋ Case</button>
         <div id="ud-case-dd-panel" class="ud-case-dd-panel" style="display:none;"></div>
       </div>
       <div class="ud-filter-right">
