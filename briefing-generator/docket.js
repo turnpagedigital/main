@@ -3283,6 +3283,23 @@
       btn.innerHTML = '<span>Filter</span><span class="ud-fb-badge" id="ud-fb-badge" style="display:none"></span>';
       frow.appendChild(btn);
 
+      function resetAllFilters() {
+        bmOnly = false; noteOnly = false;
+        setAllCases(true);
+        Object.keys(activeSources).forEach(function (k) { activeSources[k] = true; });
+        entryFilter = "all"; docFilter = "all"; lookback = "90d";
+        saveFilterState(); renderCaseFilter(); renderSourceFilter(); syncHeaderStates(); render();
+      }
+
+      // Mobile-only "Clear filters" link, sits just below the filter row (see docket CSS).
+      var clearLink = document.createElement("button");
+      clearLink.type = "button";
+      clearLink.id = "ud-clear-filters";
+      clearLink.className = "ud-clear-filters";
+      clearLink.textContent = "Clear filters";
+      clearLink.addEventListener("click", function () { resetAllFilters(); });
+      if (frow.parentNode) frow.parentNode.insertBefore(clearLink, frow.nextSibling);
+
       var ov = document.createElement("div");
       ov.id = "ud-fm-overlay";
       ov.className = "ud-fm-overlay";
@@ -3366,11 +3383,7 @@
           return;
         }
         if (ev.target.closest("[data-reset]")) {
-          bmOnly = false; noteOnly = false;
-          setAllCases(true);
-          Object.keys(activeSources).forEach(function (k) { activeSources[k] = true; });
-          entryFilter = "all"; docFilter = "all"; lookback = "90d";
-          saveFilterState(); renderCaseFilter(); renderSourceFilter(); syncHeaderStates(); render();
+          resetAllFilters();
           closeModal();
           return;
         }

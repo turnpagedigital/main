@@ -523,6 +523,23 @@
   .ih-band { margin-top: 0; margin-bottom: 0; gap: 50px 15px; }
   .unified-calendar { margin-top: 48px; margin-bottom: 48px; }
   .ih-cases-head { margin-top: 23px; margin-bottom: 8px; }
+  /* ── Mobile: halve the outside padding (32→16) and keep every card inside the viewport ── */
+  @media (max-width: 760px) {
+    .page-title, .ih-controls, .ih-band, .ih-carousel, .ih-cases-head, .unified-calendar { padding-left: 16px; padding-right: 16px; }
+    .ih-band-vgrip { padding-left: 16px; padding-right: 16px; }
+    .ih-band > .ih-tile { min-width: 0; }
+    .ih-tile, .ih-list, .ih-head, .ih-prospect-row, .ih-prospect-main, .ih-text, .ih-dates { min-width: 0; }
+    .ih-wk-grid, .ih-mm-grid { overflow-x: auto; }
+    .ih-cases-tools, .ih-cases-tools > *, .ih-sort { min-width: 0; }
+    .ih-sort { flex-wrap: wrap; }
+  }
+  /* ── Landscape phones (short viewport): shrink the news/prospects text so more fits ── */
+  @media (max-height: 520px) and (orientation: landscape) {
+    .ih-text, .ih-list a, .ih-prospect-main, .ih-prospect-text { font-size: 11px; line-height: 1.32; }
+    .ih-name { font-size: 10px; }
+    .ih-date { font-size: 9.5px; }
+    .ih-prospect-row { padding-top: 8px; padding-bottom: 8px; }
+  }
 </style>
   <!-- AUTH GATE START -->
   <!-- AUTH GATE END -->

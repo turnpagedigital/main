@@ -64,21 +64,36 @@
   // key never leaks into a page's own single-key handlers (h=hide, n=note…).
   var GOTO={h:'index.html',d:'docket.html',c:'calendar.html',p:'prospects.html',n:'notes.html',r:'news.html'};
   var gAt=0;
+  // d-then-m / l-then-m / s-then-m  →  set the theme (m = "mode"). Same
+  // capture-phase trick as the g-prefix: the first key still reaches a page's
+  // own single-key handlers (d = Download on docket), but 'm' completing the
+  // sequence flips the theme instead of leaking through to the page.
+  var THEME_SEQ={d:'dark',l:'light',s:'system'};
+  var tAt=0,tMode=null;
+  var markGearTheme=function(){};
   document.addEventListener('keydown',function(e){
     if(e.metaKey||e.ctrlKey||e.altKey)return;
     var t=e.target||{},tag=(t.tagName||'').toLowerCase();
     if(tag==='input'||tag==='textarea'||tag==='select'||t.isContentEditable)return;
     var k=(e.key||'').toLowerCase();
     var now=Date.now();
-    if(k==='g'){gAt=now;e.stopPropagation();return;}
+    if(k==='g'){gAt=now;tAt=0;e.stopPropagation();return;}
     if(gAt&&now-gAt<900&&GOTO[k]){
       e.preventDefault();e.stopPropagation();
-      gAt=0;
+      gAt=0;tAt=0;
       var prefix=location.pathname.indexOf('/cases/')!==-1?'../':'';
       location.href=prefix+GOTO[k];
       return;
     }
     gAt=0;
+    if(tAt&&now-tAt<700&&k==='m'&&tMode){
+      e.preventDefault();e.stopPropagation();
+      localStorage.setItem(K,tMode);apply();markGearTheme();
+      tAt=0;tMode=null;
+      return;
+    }
+    if(THEME_SEQ[k]){tMode=THEME_SEQ[k];tAt=now;return;}
+    tAt=0;tMode=null;
   },true);
 
   function wire(){
@@ -113,6 +128,13 @@
       kb.addEventListener('click',function(e){e.stopPropagation();kw.classList.toggle('open');});
       document.addEventListener('click',function(e){if(!kw.contains(e.target))kw.classList.remove('open');});
     }
+    var kp=kw&&kw.querySelector('.tn-kbd-panel');
+    if(kp&&!kp.querySelector('.tn-kbd-theme-row')){
+      var trow=document.createElement('div');
+      trow.className='tn-kbd-row tn-kbd-theme-row';
+      trow.innerHTML='<span class="tn-key">D</span> · <span class="tn-key">L</span> · <span class="tn-key">S</span> then <span class="tn-key">M</span> Dark / Light / System theme';
+      kp.appendChild(trow);
+    }
     wireGearMenu();
     wireColResize();
     wirePillFlip();
@@ -140,16 +162,33 @@
         '.tn-hamburger{display:inline-flex;}'+
         '.tn-left{flex-wrap:nowrap;}'+
         '.tn-back{display:none;}'+
-        '.tn-row{justify-content:flex-start;}'+
+        '.tn{padding:6px 0;}'+
+        '.tn-row{justify-content:flex-start;flex-wrap:nowrap;}'+
+        '.tn-brand-logo{height:26px;}'+
         '.tn-gear{margin-left:auto;}'+
         '.tn-left.open{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#000;padding:2px 20px 12px;z-index:200;border-bottom:1px solid rgba(255,255,255,0.12);}'+
         '[data-theme="light"] .tn-left.open{background:#fff;border-bottom-color:rgba(10,10,10,0.08);}'+
         '.tn-left.open .tn-back{display:block;width:100%;padding:12px 0;border-left:none;border-top:1px solid rgba(255,255,255,0.12);font-size:14px;}'+
         '[data-theme="light"] .tn-left.open .tn-back{border-top-color:rgba(10,10,10,0.08);}'+
+      '}'+
+      // Landscape phones: the bar has room for the links but not icon+label —
+      // show icons only (short viewport, but wide enough the hamburger is off).
+      '@media (max-height:520px) and (min-width:721px){'+
+        '.tn-back .tn-lbl{display:none;}'+
+        '.tn-back{padding:6px 5px;}'+
+        '.tn-back .tn-ico{font-size:17px;}'+
+        '.tn-kbd-btn{font-size:0;}.tn-kbd-btn::before{content:"⌨";font-size:15px;}'+
       '}';
     document.head.appendChild(st);
     var row=document.querySelector('.tn-row');
     if(row)row.style.position='relative';
+    // Split "🏠 Dashboard" into icon + label spans so landscape can drop the label.
+    left.querySelectorAll('.tn-back').forEach(function(a){
+      if(a.querySelector('.tn-lbl'))return;
+      var txt=(a.textContent||'').trim(),sp=txt.indexOf(' ');
+      if(sp<1)return;
+      a.innerHTML='<span class="tn-ico">'+txt.slice(0,sp)+'</span> <span class="tn-lbl">'+txt.slice(sp+1)+'</span>';
+    });
     var btn=document.createElement('button');
     btn.type='button';
     btn.className='tn-hamburger';
@@ -158,7 +197,9 @@
     btn.setAttribute('aria-haspopup','true');
     btn.setAttribute('aria-label','Menu');
     btn.textContent='☰';
-    left.appendChild(btn);
+    // Append to the row (not tn-left) so on mobile it sits to the RIGHT of the
+    // gear — logo … gear ☰ on one shorter row. Still toggles the tn-left menu.
+    (row||left).appendChild(btn);
     btn.addEventListener('click',function(e){e.stopPropagation();left.classList.toggle('open');});
     left.querySelectorAll('.tn-back').forEach(function(a){a.addEventListener('click',function(){left.classList.remove('open');});});
     document.addEventListener('click',function(e){if(!left.contains(e.target))left.classList.remove('open');});
@@ -194,13 +235,44 @@
       '.tn-gear{position:relative;display:inline-flex;align-items:center;}'+
       '.tn-gear-btn{font-size:15px;background:transparent;border:none;color:inherit;opacity:0.7;cursor:pointer;padding:4px 6px;line-height:1;}'+
       '.tn-gear-btn:hover{opacity:1;}'+
-      '.tn-gear-panel{display:none;flex-direction:column;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:6px;min-width:130px;box-shadow:0 10px 30px rgba(0,0,0,0.14);}'+
+      '.tn-gear-panel{display:none;flex-direction:column;position:absolute;top:100%;right:0;z-index:250;background:var(--surface);border:1px solid var(--line-strong);padding:6px;min-width:150px;box-shadow:0 10px 30px rgba(0,0,0,0.14);}'+
       '.tn-gear-panel a{display:block;padding:8px 10px;font-size:12.5px;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap;}'+
       '.tn-gear-panel a:hover{background:var(--paper-2);}'+
       '@media (hover:hover){.tn-gear:hover .tn-gear-panel{display:flex;}}'+
-      '.tn-gear.open .tn-gear-panel{display:flex;}';
+      '.tn-gear.open .tn-gear-panel{display:flex;}'+
+      // Theme (System/Dark/Light) folded into the gear on mobile, where the
+      // standalone toggle is hidden — so settings + theme live in one menu.
+      '.tn-gear-theme{display:none;flex-direction:column;border-top:1px solid var(--line);margin-top:4px;padding-top:4px;}'+
+      '.tn-gear-theme .tn-gt-lbl{font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-40);padding:4px 10px 3px;}'+
+      '.tn-gear-theme button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:none;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--ink);cursor:pointer;padding:8px 10px;}'+
+      '.tn-gear-theme button:hover{background:var(--paper-2);}'+
+      '.tn-gear-theme button .tn-gt-check{margin-left:auto;color:var(--ink-60);visibility:hidden;}'+
+      '.tn-gear-theme button.on .tn-gt-check{visibility:visible;}'+
+      '@media (max-width:720px){#theme-toggle{display:none !important;}.tn-gear-theme{display:flex;}}';
     document.head.appendChild(st);
-    gb.addEventListener('click',function(e){e.stopPropagation();gw.classList.toggle('open');});
+    var panel=gw.querySelector('.tn-gear-panel');
+    function markTheme(){
+      if(!panel)return;
+      var cur=localStorage.getItem(K)||'system';
+      panel.querySelectorAll('.tn-gear-theme button').forEach(function(b){
+        b.classList.toggle('on',b.getAttribute('data-theme-set')===cur);
+      });
+    }
+    markGearTheme=markTheme;  // let the d/l/s-then-m keyboard shortcut refresh the checkmark
+    if(panel&&!panel.querySelector('.tn-gear-theme')){
+      var wrap=document.createElement('div');
+      wrap.className='tn-gear-theme';
+      wrap.innerHTML='<div class="tn-gt-lbl">Theme</div>'+ST.map(function(t){
+        return '<button type="button" data-theme-set="'+t+'">'+IC[t]+' <span>'+LB[t]+'</span><span class="tn-gt-check">✓</span></button>';
+      }).join('');
+      panel.appendChild(wrap);
+      wrap.addEventListener('click',function(e){
+        var b=e.target.closest('[data-theme-set]');
+        if(!b)return;
+        localStorage.setItem(K,b.getAttribute('data-theme-set'));apply();markTheme();
+      });
+    }
+    gb.addEventListener('click',function(e){e.stopPropagation();gw.classList.toggle('open');if(gw.classList.contains('open'))markTheme();});
     document.addEventListener('click',function(e){if(!gw.contains(e.target))gw.classList.remove('open');});
   }
 
