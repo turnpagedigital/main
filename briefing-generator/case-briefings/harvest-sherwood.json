@@ -3,6 +3,29 @@
   "case_name": "Harvest Sherwood",
   "items": [
     {
+      "date": "2026-08-12",
+      "updated": "2026-08-12",
+      "lede": "On August 10 and 11, the claims agent docketed four additional assignments and transfers of claim (Dkts. 1192, 1195, 1196, and 1197), extending the unbroken run of secondary-market claim purchases that has characterized the docket since plan confirmation on August 5.",
+      "body_md": "On August 10 and 11, the claims agent docketed four additional assignments and transfers of claim (Dkts. 1192, 1195, 1196, and 1197), extending the unbroken run of secondary-market claim purchases that has characterized the docket since plan confirmation on August 5. The mechanics mirror the CRG Financial / Technical Truck And Trailer transfer (Dkt. 1165): each is a Rule 3001(e)(2) transfer other than for security, with a 20-day objection window running from mailing before the transferee is substituted without further order. Individual transfer amounts are not in the pulled document text for this batch, but at the scale of this estate — where unsecured creditor recovery turns on the outcome of more than $1 billion in antitrust litigation being pursued by plan funder Atlas Grove, __[Law360](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval)__ — no individual small-balance transfer changes the recovery calculus. The volume, now running across at least nine transfers since August 7 (Dkts. 1176–1179 and 1192–1197), does signal continued secondary-market appetite for Harvest Sherwood paper at confirmed-plan pricing.\n\nDkts. 1191 and 1198 — notices of hearing filed August 10 — remain unresolved as to which underlying motions they schedule. The most probable candidates remain the lift-stay motions filed at Dkts. 1181 and 1190 (August 7 and 10), whose full text has not been pulled; a PACER pull of either notice would confirm the connection and reveal the hearing date. Dkts. 1201–1204 are four pro hac vice admissions filed August 11, procedural-and-routine. The receipt and filing fee entry carries no independent significance.\n\nThe next concrete milestone remains trial in Adversary Proceeding 25-08002, Harvest Sherwood v. Sprouts Farmers Market, Inc., set for September 21, 2026, at 9:30 a.m. before Judge Jernigan in Dallas — confirmed by the amended notice of trial on the adversary docket, __[Epiq](https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030)__. That proceeding, in which the estate seeks approximately $41.8 million plus punitive damages on claims of fraudulent transfer, breach of contract, fraud, and unjust enrichment, is the highest-materiality near-term event for unsecured creditor recovery alongside the antitrust portfolio. Any pre-trial motion — in limine, summary judgment, or stipulation — filed in Adv. Pro. 25-08002 before September 21 will carry the highest priority for this desk.\n\n## Sources\n\n- [Harvest Sherwood Wins Ch. 11 Plan Approval](https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval) — Law360, August 5, 2026\n- [Harvest Sherwood Food Distributors, Inc. Adversary Proceedings](https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030) — Epiq, Case No. 25-08002\n\n*This briefing is provided for informational purposes by Turnpage Digital Markets and does not constitute legal advice.*",
+      "sources": [
+        {
+          "title": "Harvest Sherwood Wins Ch. 11 Plan Approval",
+          "url": "https://www.law360.com/bankruptcy-authority/articles/2510100/harvest-sherwood-wins-ch-11-plan-approval",
+          "note": "Law360, August 5, 2026"
+        },
+        {
+          "title": "Harvest Sherwood Food Distributors, Inc. Adversary Proceedings",
+          "url": "https://dm.epiq11.com/case/hvs/advproc/223?debtorId=15030",
+          "note": "Epiq, Case No. 25-08002"
+        }
+      ],
+      "activity": {
+        "filings": 19,
+        "articles": 0,
+        "latest": "2026-08-11"
+      }
+    },
+    {
       "date": "2026-08-11",
       "updated": "2026-08-11",
       "lede": "On August 10, an unidentified movant filed a motion for relief from the automatic stay (Dkt. 1190, N.D. Tex. Case No. 25-80109-sgj11), the second such motion in four days following Dkts.",
